@@ -1,0 +1,18 @@
+---
+const { evidence } = Astro.props;
+---
+<section class="ev-stack">
+  <h2>Evidence and statements</h2>
+  {evidence.map((item) => (
+    <div class:list={["ev-item", item.kind === "Document" ? "k-doc" : "k-stmt"]}>
+      <div class="ev-tags">
+        <span class:list={["tag", item.kind === "Document" ? "t-doc" : "t-stmt"]}>{item.kind}</span>
+        <span class:list={["tag", item.sourceKind === "First-hand" ? "t-doc" : "t-rep"]}>{item.sourceKind}</span>
+        {item.claimantSource && <span class="tag t-claimant">Claimant source</span>}
+        <span class="tag t-stmt">Named speaker</span>
+      </div>
+      <blockquote>{item.quote}</blockquote>
+      <p class="ev-src">{item.source} &middot; Said by <b>{item.speaker}</b> &middot; {item.location}</p>
+    </div>
+  ))}
+</section>

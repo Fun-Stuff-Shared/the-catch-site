@@ -1,0 +1,18 @@
+---
+const { record, presentation } = Astro.props;
+const correctedAt = record.correction_event?.observed_at?.slice(0, 10) ?? presentation.eventDate;
+---
+{record.publication_status === "corrected" && <aside class="correction">
+  <div class="head">Corrected &middot; {correctedAt}</div>
+  <div class="bod">
+    <h3>Original wording, retained</h3>
+    <p>{presentation.originalClaimText}</p>
+    <h3>Corrected wording</h3>
+    <p>{record.claim_text}</p>
+    <p class="reason">The corrected entry is displayed alongside the original.</p>
+  </div>
+</aside>}
+{record.publication_status === "pulled" && <section class="correction">
+  <div class="head">Withdrawn &middot; {presentation.eventDate}</div>
+  <div class="bod"><p>This record is no longer served as a claim.</p></div>
+</section>}

@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Locator from "../../../components/Locator.astro";
+import StatusBlock from "../../../components/StatusBlock.astro";
+import EvidenceStack from "../../../components/EvidenceStack.astro";
+import CorrectionPanel from "../../../components/CorrectionPanel.astro";
+import RecordRail from "../../../components/RecordRail.astro";
+import { records } from "../../../lib/export.mjs";
+import { presentationFor } from "../../../lib/presentation.mjs";
+
+export function getStaticPaths() {
+  return records.map((record) => ({ params: { id: record.claim_id }, props: { record } }));
+}
+
+const { record } = Astro.props;
+const presentation = presentationFor(record);
+---
+<BaseLayout title={`${record.claim_id} | The Catch`}>
+  <Locator slot="locator" record={record} presentation={presentation} />
+  {record.publication_status === "pulled" ? <div class="content"><main class="main"><section class="status contradicted"><div class="kicker">Claim status</div><div class="finding">{presentation.verificationStatus}</div><p class="scope">Withdrawal date: {presentation.eventDate}</p></section><CorrectionPanel record={record} presentation={presentation} /></main><RecordRail presentation={presentation} /></div> : <div class="content"><main class="main"><p class="matter-kicker">Record &middot; {presentation.matterPath}</p><h1 class="proposition">{presentation.matterTitle}</h1><p class="finding-line">{presentation.findingLine}</p><div class="instances"><span class="inst-label">Claimed by</span>{presentation.instances.map((instance) => <span class="inst"><b>{instance.speaker}</b>, {instance.role}, {instance.date}</span>)}</div><StatusBlock record={record} presentation={presentation} /><CorrectionPanel record={record} presentation={presentation} /><EvidenceStack evidence={presentation.evidence} /><p class="body-note">The record preserves the source wording, its location, and the dated history of review.</p></main><RecordRail presentation={presentation} /></div>}
+</BaseLayout>

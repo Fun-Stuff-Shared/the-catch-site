@@ -1,71 +1,20 @@
 ---
-const built = new Date().toISOString().slice(0, 10);
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { records } from "../lib/export.mjs";
+import { presentationFor } from "../lib/presentation.mjs";
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Catch</title>
-    <meta name="description" content="A public record of checked claims." />
-    <style>
-      :root {
-        --ink: #14181b;
-        --sheet: #ffffff;
-        --ground: #e9ebee;
-        --slate: #5b6470;
-        --record: #1e4f7a;
-        --signal: #c8102e;
-      }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body {
-        background: var(--ground);
-        color: var(--ink);
-        font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-      }
-      main {
-        background: var(--sheet);
-        border-top: 3px solid var(--ink);
-        padding: 3.5rem 3rem 3rem;
-        max-width: 34rem;
-        width: calc(100% - 2rem);
-      }
-      h1 {
-        font-family: Newsreader, Georgia, serif;
-        font-weight: 700;
-        font-size: 2.6rem;
-        letter-spacing: -0.01em;
-      }
-      h1 span { color: var(--signal); }
-      p.finding {
-        font-family: Newsreader, Georgia, serif;
-        font-size: 1.15rem;
-        line-height: 1.55;
-        margin-top: 1.4rem;
-        padding-left: 1rem;
-        border-left: 3px solid var(--record);
-        color: var(--ink);
-      }
-      .meta {
-        margin-top: 2.2rem;
-        font-family: "IBM Plex Mono", ui-monospace, monospace;
-        font-size: 0.72rem;
-        letter-spacing: 0.04em;
-        color: var(--slate);
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>The Catch<span>.</span></h1>
-      <p class="finding">
-        A public record of checked claims: what was said, what the records
-        show, and every correction, kept permanently.
-      </p>
-      <div class="meta">Record surface in preparation &middot; built {built}</div>
+<BaseLayout title="The Catch">
+  <div slot="locator" class="locator"><span>RECORDS</span><span>PUBLIC RECORD</span></div>
+  <div class="content">
+    <main class="method-main">
+      <h1>The Catch</h1>
+      <p class="lede">Verified public record surface.</p>
+      <ul class="matters-grid">
+        {records.map((record) => {
+          const presentation = presentationFor(record);
+          return <li><a href={`/claims/${record.claim_id}`}><span class:list={["mt-status", record.publication_status === "active" ? "st-blue" : "st-red"]}>{record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
+        })}
+      </ul>
     </main>
-  </body>
-</html>
+  </div>
+</BaseLayout>

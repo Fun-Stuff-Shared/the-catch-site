@@ -1,0 +1,32 @@
+---
+const { title, current = "Records" } = Astro.props;
+const navItems = [["Records", "/"], ["Events", "/events"], ["Methodology", "/methodology"]];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/assets/the-catch.css" />
+  </head>
+  <body>
+    <div class="sheet">
+      <header class="band">
+        <div class="band-inner">
+          <a class="wordmark" href="/">The Catch<b>.</b></a>
+          <span class="desc">A permanent record of checked claims</span>
+          <nav>
+            {navItems.map(([label, href]) => <a href={href} aria-current={label === current ? "page" : undefined}>{label}</a>)}
+          </nav>
+        </div>
+      </header>
+      <slot name="locator" />
+      <slot />
+      <footer class="colophon">
+        <p>Every record is signed and reviewed before publication. Corrections and withdrawals are permanent, dated, and public.</p>
+        <p><a href="/">The Catch</a> &middot; <a href="/methodology">Methodology</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

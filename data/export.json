@@ -1,0 +1,86 @@
+{
+  "payload": {
+    "claims": [
+      {
+        "claim_id": "fixture-active-1",
+        "claim_text": "Fixture active claim.",
+        "corrections_history": [],
+        "evidence_refs": [
+          "fixture:evidence:active-1"
+        ],
+        "provenance_ref": "fixture:provenance:active-1",
+        "publication_status": "active",
+        "source_family": "fixture_news"
+      },
+      {
+        "claim_id": "fixture-corrected-1",
+        "claim_text": "Fixture corrected claim.",
+        "correction_event": {
+          "admitted_at": "2026-07-15T12:00:00Z",
+          "correct_or_pull_deadline": "2026-07-15T13:00:00Z",
+          "event_id": "fixture-correction-event-1",
+          "evidence_refs": [
+            "fixture:evidence:correction-1"
+          ],
+          "mutation_state": "mutated_content",
+          "observed_at": "2026-07-15T12:05:00Z",
+          "status": "corrected"
+        },
+        "corrections_history": [
+          {
+            "event_id": "fixture-correction-event-1",
+            "status": "corrected"
+          }
+        ],
+        "evidence_refs": [
+          "fixture:evidence:corrected-1"
+        ],
+        "original_claim_text": "Fixture original claim.",
+        "provenance_ref": "fixture:provenance:corrected-1",
+        "publication_status": "corrected",
+        "source_family": "fixture_news"
+      },
+      {
+        "claim_id": "fixture-pulled-1",
+        "correction_event": {
+          "admitted_at": "2026-07-15T12:00:00Z",
+          "correct_or_pull_deadline": "2026-07-15T13:00:00Z",
+          "event_id": "fixture-pull-event-1",
+          "evidence_refs": [
+            "fixture:evidence:correction-1"
+          ],
+          "mutation_state": "dead_link",
+          "observed_at": "2026-07-15T12:05:00Z",
+          "status": "pulled"
+        },
+        "corrections_history": [
+          {
+            "event_id": "fixture-pull-event-1",
+            "status": "pulled"
+          }
+        ],
+        "evidence_refs": [
+          "fixture:evidence:pulled-1"
+        ],
+        "provenance_ref": "fixture:provenance:pulled-1",
+        "publication_status": "pulled",
+        "source_family": "fixture_news"
+      }
+    ],
+    "content_hash": "sha256:5b7562a161a3e8c749b5bf075de9e643e309817b9bcebd4cbade28743e7f8bd6",
+    "expires_at": "2026-07-15T13:00:00Z",
+    "exported_families": [
+      "fixture_news"
+    ],
+    "freshness_ttl_seconds": 3600,
+    "gate_config_hash": "sha256:b0159482c39690a76d0c042e95dc2c181d37adbcfaa7e068f7f1b4f50cc94fbf",
+    "gate_config_id": "news-fqs-public-gate-v1-candidate",
+    "generated_at": "2026-07-15T12:00:00Z",
+    "posting_schema_version": "portico-posting-export-v1",
+    "promotion_authorization_ref": "fixture-zain-authorization-1",
+    "public_claim_eligible": true,
+    "schema_version": "portico-public-export-v0.1",
+    "version_stamp": "export:fixture-posting-v1"
+  },
+  "signature": "hmac-sha256:ac617f025c720cf2e45d96bba035d78a71f1f361dcda9f409eaef8933d243daa"
+}

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="How The Catch works | The Catch" current="Methodology">
+  <div slot="locator" class="locator"><span>METHODOLOGY</span><span>PUBLIC RECORD</span></div>
+  <div class="content">
+    <main class="method-main">
+      <h1>How The Catch works</h1>
+      <p class="lede">The Catch is a permanent record of checked public claims. Each record shows what was said, what the source says, and what changed.</p>
+      <section><h2>Anatomy of a record</h2><ol class="anatomy"><li>A proposition stated in plain language.</li><li>The event and speaker that put it into the record.</li><li>Evidence with source type, provenance, and quoted location.</li><li>A dated status that can be corrected or pulled, never silently replaced.</li></ol></section>
+      <section><h2>Status</h2><table class="status-table"><thead><tr><th>Mark</th><th>State</th><th>What it means</th></tr></thead><tbody><tr><td class="st-glyph s-blue">&#10003;</td><td class="st-name">Supported</td><td>The checked proposition is supported by the cited record.</td></tr><tr><td class="st-glyph s-blue">&#8635;</td><td class="st-name">Corrected</td><td>New wording is shown alongside the original, with the change dated.</td></tr><tr><td class="st-glyph s-red">&#10005;</td><td class="st-name">Pulled</td><td>The claim body is withdrawn; the dated record remains content-free.</td></tr><tr><td class="st-glyph s-amber">&#8212;</td><td class="st-name">Unavailable</td><td>A serving refusal returns a generic 503 page rather than stale material.</td></tr></tbody></table></section>
+      <section><h2>Sources stay visible</h2><p class="m-line">Quoted text stays attached to its source and location.</p><p class="m-line">First-hand records and reporting are tagged distinctly.</p><p class="m-line">A claimant's wording is retained when the record checks it.</p></section>
+      <section><h2>Corrections stay visible</h2><p class="m-line">A correction adds a dated entry rather than overwriting history.</p><p class="m-line">A withdrawal leaves a public, content-free tombstone.</p></section>
+    </main>
+  </div>
+</BaseLayout>
