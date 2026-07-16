@@ -9,6 +9,13 @@ import { presentationFor } from "../lib/presentation.mjs";
     <main class="method-main">
       <h1>The Catch</h1>
       <p class="lede">Verified public record surface.</p>
+      {records.length === 0 && (
+        <p class="lede">
+          The first records are in preparation. The <a href="/methodology">methodology</a> is
+          published; every record will carry its source quote, verification status, and full
+          correction history from day one.
+        </p>
+      )}
       <ul class="matters-grid">
         {records.map((record) => {
           const presentation = presentationFor(record);
