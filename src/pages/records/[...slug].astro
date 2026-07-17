@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArchiveRecordList from "../../components/ArchiveRecordList.astro";
+import { archiveGroups } from "../../lib/date-archive.mjs";
+import { records } from "../../lib/export.mjs";
+
+export function getStaticPaths() {
+  const staticArchive = archiveGroups(records);
+  return staticArchive.unresolved.length > 0 ? [{ params: { slug: "unresolved" }, props: { unresolved: staticArchive.unresolved } }] : [];
+}
+
+const { unresolved } = Astro.props;
+---
+<BaseLayout title="Date unresolved | The Catch">
+  <div slot="locator" class="locator"><span>RECORDS</span><span>DATE UNRESOLVED</span></div>
+  <div class="content"><main class="method-main"><p class="matter-kicker">Archive &middot; Occurrence date</p><h1>Date unresolved</h1><p class="lede">These records cannot be placed under a publication date because the source records do not resolve their occurrence time.</p><ArchiveRecordList records={unresolved} /></main></div>
+</BaseLayout>

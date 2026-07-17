@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ArchiveNav from "../components/ArchiveNav.astro";
 import { records } from "../lib/export.mjs";
+import { archiveGroups } from "../lib/date-archive.mjs";
 import { presentationFor } from "../lib/presentation.mjs";
+
+const archive = archiveGroups(records);
 ---
 <BaseLayout title="The Catch">
   <div slot="locator" class="locator"><span>RECORDS</span><span>PUBLIC RECORD</span></div>
@@ -16,10 +20,11 @@ import { presentationFor } from "../lib/presentation.mjs";
           correction history from day one.
         </p>
       )}
+      <ArchiveNav archive={archive} />
       <ul class="matters-grid">
         {records.map((record) => {
           const presentation = presentationFor(record);
-          return <li><a href={`/claims/${record.claim_id}`}><span class:list={["mt-status", record.publication_status === "active" ? "st-blue" : "st-red"]}>{record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
+          return <li><a href={`/claims/${record.claim_id}`}><span class:list={["mt-status", presentation.previewOnly || record.publication_status === "active" ? "st-blue" : "st-red"]}>{presentation.previewOnly ? "preview" : record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
         })}
       </ul>
     </main>

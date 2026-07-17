@@ -21,11 +21,11 @@ function loadVocabulary() {
 export const STATUS_VOCABULARY = new Set(loadVocabulary());
 
 export function statusLabelFor(record) {
-  const label = record.publication_status === "pulled"
+  const label = record.verification_status ?? (record.publication_status === "pulled"
     ? "Withdrawn"
-    : record.publication_status === "corrected"
-      ? "Supported by reporting"
-      : "Supported by original record";
+      : record.publication_status === "corrected"
+        ? "Supported by reporting"
+      : "Supported by original record");
   if (!STATUS_VOCABULARY.has(label)) {
     throw new Error("astro_status_not_in_python_vocabulary");
   }

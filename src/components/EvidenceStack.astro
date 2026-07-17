@@ -1,5 +1,6 @@
 ---
-const { evidence } = Astro.props;
+import SourceExcerpt from "./SourceExcerpt.astro";
+const { evidence, viewer } = Astro.props;
 ---
 <section class="ev-stack">
   <h2>Evidence and statements</h2>
@@ -9,10 +10,11 @@ const { evidence } = Astro.props;
         <span class:list={["tag", item.kind === "Document" ? "t-doc" : "t-stmt"]}>{item.kind}</span>
         <span class:list={["tag", item.sourceKind === "First-hand" ? "t-doc" : "t-rep"]}>{item.sourceKind}</span>
         {item.claimantSource && <span class="tag t-claimant">Claimant source</span>}
-        <span class="tag t-stmt">Named speaker</span>
+        <span class="tag t-stmt">{item.attributionLabel ?? "Named speaker"}</span>
       </div>
       <blockquote>{item.quote}</blockquote>
-      <p class="ev-src">{item.source} &middot; Said by <b>{item.speaker}</b> &middot; {item.location}</p>
+      <p class="ev-src">{item.source} &middot; Said by <b>{item.speaker}</b> &middot; {item.location}{item.venue && <> &middot; Venue: {item.venue}</>}</p>
     </div>
   ))}
+  <SourceExcerpt viewer={viewer} />
 </section>

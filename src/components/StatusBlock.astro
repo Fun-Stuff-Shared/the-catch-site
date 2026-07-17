@@ -4,8 +4,11 @@ const { record, presentation } = Astro.props;
 <section class="status supported" aria-label="Verification status">
   <div class="kicker">Checked proposition</div>
   <p class="prop-line">{presentation.checkedProposition}</p>
+  {presentation.checkedPropositionNote && <p class="normalization-note">{presentation.checkedPropositionNote}</p>}
   <div class="kicker" style="margin-top:.7rem">Verification status</div>
   <div class="finding">{presentation.verificationStatus}</div>
+  <div class="kicker" style="margin-top:.7rem">Correction state</div>
+  <div class="finding">{presentation.correctionState}</div>
   <p class="scope">Scope: {presentation.scope}</p>
-  <div class="checked">CHECKED {presentation.eventDate} &middot; STATUS {presentation.verificationStatus.toUpperCase()}</div>
+  <div class="checked">CHECKED {presentation.checkedAt ?? "Unavailable"} &middot; STATUS {presentation.verificationStatus.toUpperCase()}</div>
 </section>

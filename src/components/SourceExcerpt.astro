@@ -1,0 +1,16 @@
+---
+const { viewer } = Astro.props;
+---
+{viewer?.status === "available" && (
+  <section class="source-viewer" aria-label="Source excerpt">
+    <div class="source-viewer-head">
+      <h3>Source excerpt</h3>
+      {viewer.source_url && <a href={viewer.source_url}>Open source document</a>}
+    </div>
+    <p class="source-excerpt"><span>{viewer.excerpt.before}</span><mark>{viewer.excerpt.quote}</mark><span>{viewer.excerpt.after}</span></p>
+    <p class="source-viewer-meta">Exact quote highlighted · custody bytes {viewer.byte_range.start}-{viewer.byte_range.end}</p>
+  </section>
+)}
+{viewer?.status === "withheld" && (
+  <p class="source-viewer-refusal">Source excerpt unavailable for this record tier.</p>
+)}

@@ -1,0 +1,10 @@
+---
+const { archive } = Astro.props;
+---
+{(archive.years.length > 0 || archive.unresolved.length > 0) && <section class="archive-nav">
+  <h2>Browse by occurrence date</h2>
+  <div class="archive-links">
+    {archive.years.map((group) => <a href={`/records/${group.year}/`}><b>{group.year}</b><span>{group.records.length + group.months.reduce((total, month) => total + month.records.length, 0)} records</span></a>)}
+    {archive.unresolved.length > 0 && <a href="/records/unresolved/"><b>Date unresolved</b><span>{archive.unresolved.length} records</span></a>}
+  </div>
+</section>}

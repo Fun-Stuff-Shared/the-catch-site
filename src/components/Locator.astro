@@ -2,11 +2,12 @@
 const { record, presentation } = Astro.props;
 const statusClass = record.publication_status === "active" ? "loc-status-blue" : "loc-status-red";
 const historyCount = presentation.history.length;
+const displayStatus = presentation.previewOnly ? "PREVIEW" : record.publication_status.toUpperCase();
 ---
 <div class="locator">
-  <span>RECORD {record.claim_id}</span>
+  <span>RECORD</span>
   <span>{presentation.tierLabel.toUpperCase()}</span>
-  <span class={statusClass}>{record.publication_status.toUpperCase()}</span>
-  <a class="loc-event" href={presentation.matterPath}>EVENT: {presentation.eventTitle} &rarr;</a>
+  <span class={presentation.previewOnly ? "loc-status-blue" : statusClass}>{displayStatus}</span>
+  {presentation.matterPath ? <a class="loc-event" href={presentation.matterPath}>EVENT: {presentation.eventTitle} &rarr;</a> : <span class="loc-event">EVENT: {presentation.eventTitle} &rarr;</span>}
   <a class="loc-history" href={`/claims/${record.claim_id}/history`} title="Version history"><span class="h-glyph">&#8635;</span>HISTORY ({historyCount})</a>
 </div>

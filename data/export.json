@@ -1,1 +1,168 @@
-{"payload": {"claims": [], "content_hash": "sha256:5b7562a161a3e8c749b5bf075de9e643e309817b9bcebd4cbade28743e7f8bd6", "expires_at": "2026-07-15T13:00:00Z", "exported_families": ["fixture_news"], "freshness_ttl_seconds": 3600, "gate_config_hash": "sha256:b0159482c39690a76d0c042e95dc2c181d37adbcfaa7e068f7f1b4f50cc94fbf", "gate_config_id": "news-fqs-public-gate-v1-candidate", "generated_at": "2026-07-15T12:00:00Z", "posting_schema_version": "portico-posting-export-v1", "promotion_authorization_ref": "fixture-zain-authorization-1", "public_claim_eligible": true, "schema_version": "portico-public-export-v0.1", "version_stamp": "export:fixture-posting-v1"}, "signature": "hmac-sha256:ac617f025c720cf2e45d96bba035d78a71f1f361dcda9f409eaef8933d243daa"}
+{
+  "payload": {
+    "claims": [
+      {
+        "checked_proposition": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent (3.50 to 3.75 percent).",
+        "checked_proposition_note": "Editorial normalization; the source quote remains verbatim.",
+        "claim_id": "fomc_minutes_20260617::fomc_target_range_maintained_v2::001",
+        "claim_text": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.",
+        "correction_state": "Current",
+        "event_date": "2026-06-17",
+        "event_title": "Federal funds rate decision",
+        "evidence": [
+          {
+            "attributionLabel": "Institutional author",
+            "claimantSource": false,
+            "kind": "Document",
+            "location": "fomc_minutes_20260617:bytes:36081-36103",
+            "quote": "3-1/2 to 3-3/4 percent",
+            "source": "Federal Reserve",
+            "sourceKind": "First-hand",
+            "speaker": "Federal Reserve"
+          }
+        ],
+        "evidence_viewer": {
+          "artifact_id": "fomc_minutes_20260617",
+          "artifact_sha256": "sha256:ab52e815c97a669d03bf6e66045b83446648e99cbcd3aebbb2fc9e725f69316f",
+          "byte_range": {
+            "end": 89693,
+            "start": 89671
+          },
+          "excerpt": {
+            "after": ", in support of the Federal Reserve's dual mandate. The Committee reaffirmed its policy of maintaining ample reserves in the banking system. Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East. Product",
+            "before": "Treasury bills.\" The vote also encompassed approval of the statement below for release at 2:00 p.m.: \"The Federal Open Market Committee approved the following statement for release by a 12 \u2013 0 vote: The Committee decided to maintain the target range for the federal funds rate at ",
+            "quote": "3-1/2 to 3-3/4 percent"
+          },
+          "normalization": "html_visible_text_whitespace_v1",
+          "policy": "original_record_public_domain",
+          "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+          "status": "available"
+        },
+        "finding_line": "The Federal Open Market Committee decision is recorded in the cited primary document.",
+        "history": [
+          {
+            "date": "2026-06-17",
+            "status": "Current",
+            "text": "The original record is current; no admitted correction is recorded."
+          }
+        ],
+        "instances": [
+          {
+            "date": "2026-06-17",
+            "role": "original record",
+            "speaker": "Federal Open Market Committee"
+          }
+        ],
+        "matter_title": "Federal funds rate maintained at 3-1/2 to 3-3/4 percent - FOMC minutes, June 17, 2026",
+        "occurrence_time": {
+          "end": "2026-06-17",
+          "precision": "day",
+          "start": "2026-06-17",
+          "status": "resolved"
+        },
+        "provenance": {
+          "capture": "fomc_minutes_20260617:bytes:36081-36103",
+          "source": "Federal Reserve"
+        },
+        "publication_status": "active",
+        "quote": "3-1/2 to 3-3/4 percent",
+        "quote_location": "fomc_minutes_20260617:bytes:36081-36103",
+        "related_claims": [
+          {
+            "claim_id": "fomc_statement_20260617::fomc_target_range_maintained_v2::001",
+            "title": "Federal funds rate maintained at 3-1/2 to 3-3/4 percent - FOMC statement, June 17, 2026"
+          }
+        ],
+        "scope": "This record checks the stated proposition against the cited Federal Reserve primary document.",
+        "source_label": "Federal Reserve",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+        "tier_label": "Original record",
+        "verification_status": "Supported by original record",
+        "verified_at": "2026-07-17T13:01:00Z"
+      },
+      {
+        "checked_proposition": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent (3.50 to 3.75 percent).",
+        "checked_proposition_note": "Editorial normalization; the source quote remains verbatim.",
+        "claim_id": "fomc_statement_20260617::fomc_target_range_maintained_v2::001",
+        "claim_text": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.",
+        "correction_state": "Current",
+        "event_date": "2026-06-17",
+        "event_title": "Federal funds rate decision",
+        "evidence": [
+          {
+            "attributionLabel": "Institutional author",
+            "claimantSource": false,
+            "kind": "Document",
+            "location": "fomc_statement_20260617:bytes:7807-7829",
+            "quote": "3-1/2 to 3-3/4 percent",
+            "source": "Federal Reserve",
+            "sourceKind": "First-hand",
+            "speaker": "Federal Reserve"
+          }
+        ],
+        "evidence_viewer": {
+          "artifact_id": "fomc_statement_20260617",
+          "artifact_sha256": "sha256:d5286cc4bc324182ada27a127f7f8ab052651ce9e7f64603fc137fcfd26d0fb6",
+          "byte_range": {
+            "end": 62770,
+            "start": 62748
+          },
+          "excerpt": {
+            "after": ", in support of the Federal Reserve's dual mandate. The Committee reaffirmed its policy of maintaining ample reserves in the banking system. Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East. Product",
+            "before": "ss Release PDF June 17, 2026 Federal Reserve issues FOMC statement For release at 2:00 p.m. EDT Share The Federal Open Market Committee approved the following statement for release by a 12 \u2013 0 vote: The Committee decided to maintain the target range for the federal funds rate at ",
+            "quote": "3-1/2 to 3-3/4 percent"
+          },
+          "normalization": "html_visible_text_whitespace_v1",
+          "policy": "original_record_public_domain",
+          "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+          "status": "available"
+        },
+        "finding_line": "The Federal Open Market Committee decision is recorded in the cited primary document.",
+        "history": [
+          {
+            "date": "2026-06-17",
+            "status": "Current",
+            "text": "The original record is current; no admitted correction is recorded."
+          }
+        ],
+        "instances": [
+          {
+            "date": "2026-06-17",
+            "role": "original record",
+            "speaker": "Federal Open Market Committee"
+          }
+        ],
+        "matter_title": "Federal funds rate maintained at 3-1/2 to 3-3/4 percent - FOMC statement, June 17, 2026",
+        "occurrence_time": {
+          "end": "2026-06-17",
+          "precision": "day",
+          "start": "2026-06-17",
+          "status": "resolved"
+        },
+        "provenance": {
+          "capture": "fomc_statement_20260617:bytes:7807-7829",
+          "source": "Federal Reserve"
+        },
+        "publication_status": "active",
+        "quote": "3-1/2 to 3-3/4 percent",
+        "quote_location": "fomc_statement_20260617:bytes:7807-7829",
+        "related_claims": [
+          {
+            "claim_id": "fomc_minutes_20260617::fomc_target_range_maintained_v2::001",
+            "title": "Federal funds rate maintained at 3-1/2 to 3-3/4 percent - FOMC minutes, June 17, 2026"
+          }
+        ],
+        "scope": "This record checks the stated proposition against the cited Federal Reserve primary document.",
+        "source_label": "Federal Reserve",
+        "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "tier_label": "Original record",
+        "verification_status": "Supported by original record",
+        "verified_at": "2026-07-17T13:01:00Z"
+      }
+    ],
+    "generated_at": "2026-07-17T13:01:00Z",
+    "preview_only": false,
+    "public_claim_eligible": true,
+    "schema_version": "portico-news-preview-v0.1"
+  }
+}

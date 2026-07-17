@@ -11,7 +11,7 @@ export function getStaticPaths() {
 const { record } = Astro.props;
 const presentation = presentationFor(record);
 ---
-<BaseLayout title={`Version history | ${record.claim_id}`}>
+<BaseLayout title={`Version history | ${presentation.matterTitle}`}>
   <Locator slot="locator" record={record} presentation={presentation} />
   <div class="content"><main class="method-main"><h1>Version history</h1><p class="lede">A dated ledger for this record.</p><ol class="ledger">{presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}</ol></main></div>
 </BaseLayout>

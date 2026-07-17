@@ -5,8 +5,8 @@ const { presentation } = Astro.props;
   <section>
     <h2>Provenance</h2>
     <dl class="kv">
-      <div><dt>Source</dt><dd><a href={presentation.sourceUrl}>{presentation.sourceLabel}</a><span class="doc-title">{presentation.provenance.source}</span></dd></div>
-      <div><dt>Archived copy</dt><dd class="nw"><a href={presentation.sourceUrl}>capture</a> &middot; {presentation.eventDate}</dd></div>
+      <div><dt>Source</dt><dd>{presentation.sourceUrl ? <a href={presentation.sourceUrl}>{presentation.sourceLabel}</a> : <span>{presentation.sourceLabel}</span>}{presentation.provenance.source !== presentation.sourceLabel && <span class="doc-title">{presentation.provenance.source}</span>}</dd></div>
+      {presentation.archiveCapture && <div><dt>Archive capture</dt><dd class="nw">Archive capture held in record custody, dated {presentation.archiveCapture.date}</dd></div>}
       <div><dt>Record tier</dt><dd><span class="tier-chip">{presentation.tierLabel}</span></dd></div>
       <div><dt>Event date</dt><dd class="nw">{presentation.eventDate}</dd></div>
       <div><dt>Method</dt><dd><a href="/methodology">Methodology</a></dd></div>
