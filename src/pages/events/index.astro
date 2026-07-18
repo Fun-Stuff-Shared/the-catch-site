@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { records } from "../../lib/export.mjs";
+import { eventGroups, eventPath } from "../../lib/events.mjs";
+import { formatDate } from "../../lib/presentation.mjs";
+
+const groups = eventGroups(records);
+---
+<BaseLayout title="Events | The Catch" current="Events">
+  <div slot="locator" class="locator"><span>EVENTS</span><span>PUBLIC RECORD</span></div>
+  <div class="content">
+    <main class="method-main">
+      <h1>Events</h1>
+      <p class="lede">Browse records grouped by the event they describe.</p>
+      {groups.length === 0 ? <p class="lede">No events are currently available.</p> : <ul class="matters-grid">
+        {groups.map((group) => <li><a href={eventPath(group.slug)}><span class="mt-status st-blue">{formatDate(group.date)}</span><span class="mt-title">{group.title}</span><span class="mt-finding">{group.records.length} {group.records.length === 1 ? "record" : "records"}</span><span class="mt-meta">Open event record</span></a></li>)}
+      </ul>}
+    </main>
+  </div>
+</BaseLayout>

@@ -1,6 +1,7 @@
 ---
+import { formatTimestamp } from "../lib/presentation.mjs";
 const { record, presentation } = Astro.props;
-const correctedAt = record.correction_event?.observed_at?.slice(0, 10) ?? presentation.eventDate;
+const correctedAt = record.correction_event?.observed_at ? formatTimestamp(record.correction_event.observed_at) : presentation.eventDate;
 ---
 {record.publication_status === "corrected" && <aside class="correction">
   <div class="head">Corrected &middot; {correctedAt}</div>

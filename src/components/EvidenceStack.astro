@@ -1,6 +1,6 @@
 ---
 import SourceExcerpt from "./SourceExcerpt.astro";
-const { evidence, viewer } = Astro.props;
+const { evidence, viewer, normalizationNote } = Astro.props;
 ---
 <section class="ev-stack">
   <h2>Evidence and statements</h2>
@@ -13,8 +13,8 @@ const { evidence, viewer } = Astro.props;
         <span class="tag t-stmt">{item.attributionLabel ?? "Named speaker"}</span>
       </div>
       <blockquote>{item.quote}</blockquote>
-      <p class="ev-src">{item.source} &middot; Said by <b>{item.speaker}</b> &middot; {item.location}{item.venue && <> &middot; Venue: {item.venue}</>}</p>
+      <p class="ev-src">{item.source} &middot; Said by <b>{item.speaker}</b>{item.locationLabel && <> &middot; {item.locationLabel}</>}{item.venue && <> &middot; Venue: {item.venue}</>}</p>
     </div>
   ))}
-  <SourceExcerpt viewer={viewer} />
+  <SourceExcerpt viewer={viewer} normalizationNote={normalizationNote} />
 </section>

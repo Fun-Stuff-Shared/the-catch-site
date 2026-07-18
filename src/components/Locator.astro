@@ -8,6 +8,6 @@ const displayStatus = presentation.previewOnly ? "PREVIEW" : record.publication_
   <span>RECORD</span>
   <span>{presentation.tierLabel.toUpperCase()}</span>
   <span class={presentation.previewOnly ? "loc-status-blue" : statusClass}>{displayStatus}</span>
-  {presentation.matterPath ? <a class="loc-event" href={presentation.matterPath}>EVENT: {presentation.eventTitle} &rarr;</a> : <span class="loc-event">EVENT: {presentation.eventTitle} &rarr;</span>}
-  <a class="loc-history" href={`/claims/${record.claim_id}/history`} title="Version history"><span class="h-glyph">&#8635;</span>HISTORY ({historyCount})</a>
+  {presentation.eventPath ? <a class="loc-event" href={presentation.eventPath}>EVENT: {presentation.eventTitle} &rarr;</a> : <span class="loc-event">EVENT: {presentation.eventTitle}</span>}
+  {historyCount > 0 && <a class="loc-history" href={`/claims/${record.reader_slug}/history/`} title="Version history"><span class="h-glyph">&#8635;</span>HISTORY ({historyCount})</a>}
 </div>

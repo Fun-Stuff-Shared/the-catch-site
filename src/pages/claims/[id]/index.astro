@@ -8,14 +8,24 @@ import RecordRail from "../../../components/RecordRail.astro";
 import { records } from "../../../lib/export.mjs";
 import { presentationFor } from "../../../lib/presentation.mjs";
 
+
 export function getStaticPaths() {
-  return records.map((record) => ({ params: { id: record.claim_id }, props: { record } }));
+  return records.flatMap((record) => record.reader_slug === record.claim_id
+    ? [{ params: { id: record.reader_slug }, props: { record, legacy: false } }]
+    : [
+      { params: { id: record.reader_slug }, props: { record, legacy: false } },
+      { params: { id: record.claim_id }, props: { record, legacy: true } },
+    ]);
 }
 
-const { record } = Astro.props;
+const { record, legacy = false } = Astro.props;
 const presentation = presentationFor(record);
 ---
-<BaseLayout title={`${presentation.matterTitle} | The Catch`}>
+{legacy ? <>
+  <BaseLayout title={`${presentation.pageTitle} | The Catch`} canonicalPath={`/claims/${record.reader_slug}/`} redirectPath={`/claims/${record.reader_slug}/`}>
+    <div class="content"><main class="method-main"><h1>This record has moved</h1><p class="lede">Opening the permanent record address.</p><p><a href={`/claims/${record.reader_slug}/`}>Continue to the record</a></p></main></div>
+  </BaseLayout>
+</> : <BaseLayout title={`${presentation.pageTitle} | The Catch`}>
   <Locator slot="locator" record={record} presentation={presentation} />
-  {record.publication_status === "pulled" ? <div class="content"><main class="main"><section class="status contradicted"><div class="kicker">Claim status</div><div class="finding">{presentation.verificationStatus}</div><p class="scope">Withdrawal date: {presentation.eventDate}</p></section><CorrectionPanel record={record} presentation={presentation} /></main><RecordRail presentation={presentation} /></div> : <div class="content"><main class="main"><p class="matter-kicker">{presentation.matterPath ? <>Record &middot; {presentation.matterPath}</> : "Record"}</p><h1 class="proposition">{presentation.matterTitle}</h1><p class="finding-line">{presentation.findingLine}</p><div class="instances"><span class="inst-label">Claimed by</span>{presentation.instances.map((instance) => <span class="inst"><b>{instance.speaker}</b>, {instance.role}, {instance.date}</span>)}</div><StatusBlock record={record} presentation={presentation} /><CorrectionPanel record={record} presentation={presentation} /><EvidenceStack evidence={presentation.evidence} viewer={presentation.evidenceViewer} />{presentation.relatedClaims.length > 0 && <section class="related-records"><h2>Related record</h2><p>This decision is also recorded in:</p><ul>{presentation.relatedClaims.map((related) => <li><a href={`/claims/${related.claim_id}`}>{related.title}</a></li>)}</ul></section>}<p class="body-note">The record preserves the source wording, its location, and the dated history of review.</p></main><RecordRail presentation={presentation} /></div>}
-</BaseLayout>
+  {record.publication_status === "pulled" ? <div class="content"><main class="main"><section class="status contradicted"><div class="kicker">Claim status</div><div class="finding">{presentation.verificationStatus}</div><p class="scope">Withdrawal date: {presentation.eventDate}</p></section><CorrectionPanel record={record} presentation={presentation} /></main><RecordRail presentation={presentation} /></div> : <div class="content"><main class="main"><p class="matter-kicker">Record</p><p class="source-byline">{presentation.sourceByline}</p><h1 class="proposition">{presentation.matterTitle}</h1><p class="finding-line">{presentation.findingLine}</p><div class="instances"><span class="inst-label">Claimed by</span>{presentation.instances.map((instance) => <span class="inst"><b>{instance.speaker}</b>, {instance.role}, {instance.date}</span>)}</div><StatusBlock record={record} presentation={presentation} /><CorrectionPanel record={record} presentation={presentation} /><EvidenceStack evidence={presentation.evidence} viewer={presentation.evidenceViewer} normalizationNote={presentation.checkedPropositionNote} />{presentation.relatedClaims.length > 0 && <section class="related-records"><h2>Related record</h2><p>This decision is also recorded in:</p><ul>{presentation.relatedClaims.map((related) => <li><a href={`/claims/${related.reader_slug}/`}>{related.title}</a></li>)}</ul></section>}{presentation.coverageOutlets.length > 0 && presentation.eventPath && <p class="coverage-xref">Reporting on this event from {presentation.coverageOutlets.slice(0, 3).join(", ")}{presentation.coverageOutlets.length > 3 ? ` and ${presentation.coverageOutlets.length - 3} more` : ""} is collected on the <a href={presentation.eventPath}>event page</a>, separate from this record.</p>}<p class="body-note">The record preserves the source wording, its location, and the dated history of review.</p></main><RecordRail presentation={presentation} /></div>}
+</BaseLayout>}

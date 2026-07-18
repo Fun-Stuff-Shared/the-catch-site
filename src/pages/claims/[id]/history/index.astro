@@ -5,13 +5,18 @@ import { records } from "../../../../lib/export.mjs";
 import { presentationFor } from "../../../../lib/presentation.mjs";
 
 export function getStaticPaths() {
-  return records.map((record) => ({ params: { id: record.claim_id }, props: { record } }));
+  return records.flatMap((record) => record.reader_slug === record.claim_id
+    ? [{ params: { id: record.reader_slug }, props: { record, legacy: false } }]
+    : [
+      { params: { id: record.reader_slug }, props: { record, legacy: false } },
+      { params: { id: record.claim_id }, props: { record, legacy: true } },
+    ]);
 }
 
-const { record } = Astro.props;
+const { record, legacy = false } = Astro.props;
 const presentation = presentationFor(record);
 ---
-<BaseLayout title={`Version history | ${presentation.matterTitle}`}>
+<BaseLayout title={`Version history | ${presentation.pageTitle}`}>
   <Locator slot="locator" record={record} presentation={presentation} />
-  <div class="content"><main class="method-main"><h1>Version history</h1><p class="lede">A dated ledger for this record.</p><ol class="ledger">{presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}</ol></main></div>
+  {legacy ? <div class="content"><main class="method-main"><h1>This record has moved</h1><p class="lede">Opening the permanent record address.</p><p><a href={`/claims/${record.reader_slug}/history/`}>Continue to the record history</a></p></main></div> : <div class="content"><main class="method-main"><h1>Version history</h1><p class="lede">A dated ledger for this record.</p><ol class="ledger">{presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}</ol></main></div>}
 </BaseLayout>

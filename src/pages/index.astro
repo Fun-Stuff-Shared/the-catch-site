@@ -24,7 +24,7 @@ const archive = archiveGroups(records);
       <ul class="matters-grid">
         {records.map((record) => {
           const presentation = presentationFor(record);
-          return <li><a href={`/claims/${record.claim_id}`}><span class:list={["mt-status", presentation.previewOnly || record.publication_status === "active" ? "st-blue" : "st-red"]}>{presentation.previewOnly ? "preview" : record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
+          return <li><a href={`/claims/${record.reader_slug}/`}><span class:list={["mt-status", presentation.previewOnly || record.publication_status === "active" ? "st-blue" : "st-red"]}>{presentation.previewOnly ? "preview" : record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
         })}
       </ul>
     </main>

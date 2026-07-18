@@ -1,6 +1,6 @@
 ---
-const { title, current = "Records" } = Astro.props;
-const navItems = [["Records", "/"], ["Events", "/events"], ["Methodology", "/methodology"]];
+const { title, current = "Records", canonicalPath = null, redirectPath = null } = Astro.props;
+const navItems = [["Records", "/"], ["Events", "/events/"], ["Methodology", "/methodology"]];
 ---
 <!doctype html>
 <html lang="en">
@@ -8,6 +8,8 @@ const navItems = [["Records", "/"], ["Events", "/events"], ["Methodology", "/met
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    {canonicalPath && <link rel="canonical" href={canonicalPath} />}
+    {redirectPath && <meta http-equiv="refresh" content={`0; url=${redirectPath}`} />}
     <link rel="stylesheet" href="/assets/the-catch.css" />
   </head>
   <body>

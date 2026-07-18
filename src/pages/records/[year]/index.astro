@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import ArchiveRecordList from "../../../components/ArchiveRecordList.astro";
 import { archiveGroups } from "../../../lib/date-archive.mjs";
+import { formatMonth } from "../../../lib/presentation.mjs";
 import { records } from "../../../lib/export.mjs";
 
 const archive = archiveGroups(records);
@@ -14,5 +15,5 @@ const { group } = Astro.props;
 ---
 <BaseLayout title={`${group.year} records | The Catch`}>
   <div slot="locator" class="locator"><span>RECORDS</span><span>OCCURRENCE {group.year}</span></div>
-  <div class="content"><main class="method-main"><p class="matter-kicker">Archive &middot; Occurrence date</p><h1>{group.year}</h1><p class="lede">Records grouped by the time the underlying event occurred.</p>{group.records.length > 0 && <section class="archive-section"><h2>{group.year} occurrence records</h2><ArchiveRecordList records={group.records} /></section>}<div class="archive-links">{group.months.map((month) => <a href={`/records/${group.year}/${month.month}/`}><b>{month.month}</b><span>{month.records.length} records</span></a>)}</div>{group.months.map((month) => <section class="archive-section"><h2>{month.month}</h2><ArchiveRecordList records={month.records} /></section>)}</main></div>
+  <div class="content"><main class="method-main"><p class="matter-kicker">Archive &middot; Occurrence date</p><h1>{group.year}</h1><p class="lede">Records grouped by the time the underlying event occurred.</p>{group.yearOnly.length > 0 && <section class="archive-section"><h2>{group.year} records without a resolved month</h2><ArchiveRecordList records={group.yearOnly} /></section>}<div class="archive-links">{group.months.map((month) => <a href={`/records/${group.year}/${month.month}/`}><b>{formatMonth(group.year, month.month)}</b><span>{month.records.length} records</span></a>)}</div></main></div>
 </BaseLayout>

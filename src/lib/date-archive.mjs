@@ -15,7 +15,7 @@ export function occurrenceFor(record) {
   if (/^\d{4}-(0[1-9]|1[0-2])-\d{2}$/.test(start)) {
     const date = new Date(`${start}T00:00:00Z`);
     if (date.toISOString().slice(0, 10) === start) {
-      return { kind: "month", date: start, year: start.slice(0, 4), month: start.slice(5, 7) };
+      return { kind: "day", date: start, year: start.slice(0, 4), month: start.slice(5, 7), day: start.slice(8, 10) };
     }
   }
   return { kind: "unresolved", status: UNRESOLVED_STATUS };
@@ -30,21 +30,35 @@ export function archiveGroups(records) {
       unresolved.push(record);
       continue;
     }
-    if (!years.has(occurrence.year)) years.set(occurrence.year, { records: [], months: new Map() });
+    if (!years.has(occurrence.year)) years.set(occurrence.year, { records: [], yearOnly: [], months: new Map() });
     const year = years.get(occurrence.year);
+    year.records.push(record);
     if (occurrence.kind === "year") {
-      year.records.push(record);
+      year.yearOnly.push(record);
       continue;
     }
     const months = year.months;
-    if (!months.has(occurrence.month)) months.set(occurrence.month, []);
-    months.get(occurrence.month).push(record);
+    if (!months.has(occurrence.month)) months.set(occurrence.month, { records: [], monthOnly: [], days: new Map() });
+    const month = months.get(occurrence.month);
+    month.records.push(record);
+    if (occurrence.kind === "month") {
+      month.monthOnly.push(record);
+      continue;
+    }
+    if (!month.days.has(occurrence.day)) month.days.set(occurrence.day, []);
+    month.days.get(occurrence.day).push(record);
   }
   return {
     years: [...years.entries()].sort(([left], [right]) => right.localeCompare(left)).map(([year, group]) => ({
       year,
       records: group.records,
-      months: [...group.months.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([month, monthRecords]) => ({ month, records: monthRecords })),
+      yearOnly: group.yearOnly,
+      months: [...group.months.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([month, monthGroup]) => ({
+        month,
+        records: monthGroup.records,
+        monthOnly: monthGroup.monthOnly,
+        days: [...monthGroup.days.entries()].sort(([left], [right]) => left.localeCompare(right)).map(([day, dayRecords]) => ({ day, records: dayRecords })),
+      })),
     })),
     unresolved,
   };

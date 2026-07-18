@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import ArchiveRecordList from "../../../../../components/ArchiveRecordList.astro";
+import { archiveGroups } from "../../../../../lib/date-archive.mjs";
+import { formatDay, formatMonth } from "../../../../../lib/presentation.mjs";
+import { records } from "../../../../../lib/export.mjs";
+
+export function getStaticPaths() {
+  const staticArchive = archiveGroups(records);
+  return staticArchive.years.flatMap((group) => group.months.flatMap((month) => month.days.map((day) => ({
+    params: { year: group.year, month: month.month, day: day.day },
+    props: { group, month, day },
+  }))));
+}
+
+const { group, month, day } = Astro.props;
+const label = formatDay(group.year, month.month, day.day);
+---
+<BaseLayout title={`${label} records | The Catch`}>
+  <div slot="locator" class="locator"><span>RECORDS</span><span>OCCURRENCE {formatMonth(group.year, month.month)}</span></div>
+  <div class="content"><main class="method-main"><p class="matter-kicker">Archive &middot; Occurrence date</p><h1>{label}</h1><p class="lede">Records grouped by the time the underlying event occurred.</p><ArchiveRecordList records={day.records} /></main></div>
+</BaseLayout>

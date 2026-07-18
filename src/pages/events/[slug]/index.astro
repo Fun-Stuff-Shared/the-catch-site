@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { records } from "../../../lib/export.mjs";
+import { eventGroups } from "../../../lib/events.mjs";
+import { formatDate, presentationFor } from "../../../lib/presentation.mjs";
+
+export function getStaticPaths() {
+  return eventGroups(records).map((group) => ({ params: { slug: group.slug }, props: { group } }));
+}
+
+const { group } = Astro.props;
+
+---
+<BaseLayout title={`${group.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">EVENTS</a><span>{formatDate(group.date)}</span></div>
+  <div class="content">
+    <main class="method-main">
+      <p class="matter-kicker">Event</p>
+      <h1>{group.title}</h1>
+      <p class="source-byline">{formatDate(group.date)} · {group.records.length} {group.records.length === 1 ? "record" : "records"}</p>
+      <ul class="matters-grid">
+        {group.records.map((record) => {
+          const presentation = presentationFor(record);
+          return <li><a href={`/claims/${record.reader_slug}/`}><span class:list={["mt-status", presentation.previewOnly || record.publication_status === "active" ? "st-blue" : "st-red"]}>{presentation.previewOnly ? "preview" : record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.tierLabel}</span></a></li>;
+        })}
+      </ul>
+      {group.coverage.length > 0 && <section class="event-coverage" aria-label="Coverage">
+        <h2>Coverage</h2>
+        <p class="coverage-intro">Reporting around this event, shown separately from the record.</p>
+        <ul class="coverage-list">
+          {group.coverage.map((item) => <li><a href={item.source_url} rel="noreferrer"><span class="coverage-outlet">{item.outlet}</span><span class="coverage-headline">{item.headline}</span>{item.date && <span class="coverage-date">{formatDate(item.date)}</span>}</a></li>)}
+        </ul>
+      </section>}
+    </main>
+  </div>
+</BaseLayout>

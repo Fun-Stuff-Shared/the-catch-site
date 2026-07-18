@@ -1,5 +1,5 @@
 ---
-const { viewer } = Astro.props;
+const { viewer, normalizationNote } = Astro.props;
 ---
 {viewer?.status === "available" && (
   <section class="source-viewer" aria-label="Source excerpt">
@@ -8,7 +8,7 @@ const { viewer } = Astro.props;
       {viewer.source_url && <a href={viewer.source_url}>Open source document</a>}
     </div>
     <p class="source-excerpt"><span>{viewer.excerpt.before}</span><mark>{viewer.excerpt.quote}</mark><span>{viewer.excerpt.after}</span></p>
-    <p class="source-viewer-meta">Exact quote highlighted · custody bytes {viewer.byte_range.start}-{viewer.byte_range.end}</p>
+    {normalizationNote && <p class="source-viewer-note">{normalizationNote}</p>}
   </section>
 )}
 {viewer?.status === "withheld" && (

@@ -1,5 +1,7 @@
 ---
 const { presentation } = Astro.props;
+const checkedAgainstText = presentation.checkedAgainst.join(", ");
+const checkedAgainstLong = checkedAgainstText.length > 24;
 ---
 <aside class="rail">
   <section>
@@ -12,10 +14,18 @@ const { presentation } = Astro.props;
       <div><dt>Method</dt><dd><a href="/methodology">Methodology</a></dd></div>
     </dl>
   </section>
-  <section>
+  {presentation.history.length > 0 && <section>
     <h2>Record history</h2>
     <ol class="ledger">
       {presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}
     </ol>
+  </section>}
+  <section>
+    <h2>Verification</h2>
+    <dl class="kv">
+      <div><dt>First retrieved</dt><dd class="nw">{presentation.firstRetrievedAt ?? "Unavailable"}</dd></div>
+      <div><dt>Last checked</dt><dd class="nw">{presentation.checkedAt ?? "Unavailable"}</dd></div>
+      <div class:list={checkedAgainstLong ? ["kv-row", "stacked"] : ["kv-row"]}><dt>Checked against</dt><dd>{presentation.checkedAgainst.map((source) => <div>{source}</div>)}</dd></div>
+    </dl>
   </section>
 </aside>
