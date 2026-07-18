@@ -1,5 +1,6 @@
 import { payload } from "./export.mjs";
 import { statusLabelFor } from "./status-contract.mjs";
+import { coverageRowsFor } from "./coverage.mjs";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -100,6 +101,10 @@ export function presentationFor(record) {
     : null;
   const sourceLabel = record.source_label ?? source;
   const documentTitle = documentTitleFor(record);
+  const coverageRows = coverageRowsFor(record).map((item) => ({
+    ...item,
+    dateLabel: item.date ? formatDate(item.date) : null,
+  }));
   const authoredTitle = normalizeAuthoredText(record.matter_title ?? claimText);
   const readerHeadline = normalizeAuthoredText(record.reader_headline ?? authoredTitle);
   const pageTitle = normalizeAuthoredText(record.page_title ?? authoredTitle);
@@ -112,7 +117,8 @@ export function presentationFor(record) {
     findingLine: pulled ? "" : normalizeAuthoredText(record.finding_line ?? (corrected ? "The initial wording was narrowed after the source record was checked." : "The original record supports the event as stated.")),
     eventTitle: record.event_title ?? record.source_family ?? "Recorded event",
     eventPath: record.event_slug ? `/events/${record.event_slug}/` : null,
-    coverageOutlets: Array.isArray(record.coverage) ? [...new Set(record.coverage.map((item) => item.outlet).filter(Boolean))] : [],
+    coverageRows,
+    coverageOutlets: [...new Set(coverageRows.map((item) => item.outlet).filter(Boolean))],
     eventDate: formatDate(date),
     tierLabel: record.tier_label ?? (corrected ? "Reporting" : "Original record"),
     sourceUrl: record.source_url ?? null,

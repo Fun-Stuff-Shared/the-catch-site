@@ -28,7 +28,7 @@ const { group } = Astro.props;
         <h2>Coverage</h2>
         <p class="coverage-intro">Reporting around this event, shown separately from the record.</p>
         <ul class="coverage-list">
-          {group.coverage.map((item) => <li><a href={item.source_url} rel="noreferrer"><span class="coverage-outlet">{item.outlet}</span><span class="coverage-headline">{item.headline}</span>{item.date && <span class="coverage-date">{formatDate(item.date)}</span>}</a></li>)}
+          {group.coverage.map((item) => <li class="coverage-item"><a href={item.source_url} rel="noreferrer"><span class="coverage-outlet">{item.outlet}</span><span class="coverage-headline">{item.headline}</span>{item.date && <span class="coverage-date">{formatDate(item.date)}</span>}</a></li>)}
         </ul>
       </section>}
     </main>

@@ -6,6 +6,15 @@ const exportPath = process.env.PORTICO_ACQUISITION_EXPORT_PATH ?? path.resolve(p
 const document = JSON.parse(fs.readFileSync(exportPath, "utf8"));
 const payload = document.payload;
 
+const stableValue = (value) => {
+  if (Array.isArray(value)) return value.map(stableValue);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableValue(value[key])]));
+  }
+  return value;
+};
+const snapshotHash = (value) => `sha256:${createHash("sha256").update(JSON.stringify(stableValue(value))).digest("hex")}`;
+
 if (!payload || !Array.isArray(payload.claims)) {
   throw new Error("acquisition_export_payload_invalid");
 }
@@ -20,35 +29,28 @@ if (payload.acquisition_policy.source_status !== "candidate_policy_pending_activ
 }
 
 const exclusion = payload.exclusions?.[0];
-const manifestPath = process.env.PORTICO_FULTON_CAPTURE_MANIFEST_PATH ?? exclusion?.manifest_path;
-if (!exclusion || typeof manifestPath !== "string") {
-  throw new Error("fulton_capture_manifest_missing");
+if (!exclusion || !exclusion.manifest_snapshot || !Array.isArray(exclusion.manifest_snapshot.records)) {
+  throw new Error("fulton_capture_manifest_snapshot_missing");
 }
-const manifestBytes = fs.readFileSync(manifestPath);
-const manifestHash = `sha256:${createHash("sha256").update(manifestBytes).digest("hex")}`;
-if (manifestHash !== exclusion.manifest_sha256) {
-  throw new Error("fulton_capture_manifest_hash_mismatch");
+if (snapshotHash({ records: exclusion.manifest_snapshot.records }) !== exclusion.manifest_snapshot.snapshot_sha256) {
+  throw new Error("fulton_capture_manifest_snapshot_hash_mismatch");
 }
-const manifest = JSON.parse(manifestBytes.toString("utf8"));
-if (!Array.isArray(manifest.records)) {
-  throw new Error("fulton_capture_manifest_records_missing");
-}
-const derivedExclusionCount = manifest.records.length;
+const derivedExclusionCount = exclusion.manifest_snapshot.records.length;
 if (derivedExclusionCount !== exclusion.expected_count) {
   throw new Error("fulton_capture_derived_count_mismatch");
 }
 
-const registryPath = process.env.PORTICO_SCAN_REGISTRY_PATH ?? payload.acquisition_policy.registry_path;
-const registryBytes = fs.readFileSync(registryPath);
-const registryHash = `sha256:${createHash("sha256").update(registryBytes).digest("hex")}`;
-if (registryHash !== payload.acquisition_policy.registry_sha256) {
-  throw new Error("scan_policy_registry_hash_mismatch");
+const registrySnapshot = payload.acquisition_policy.registry_snapshot;
+if (!registrySnapshot || !Array.isArray(registrySnapshot.entries)) {
+  throw new Error("scan_policy_registry_snapshot_missing");
 }
-const registry = JSON.parse(registryBytes.toString("utf8"));
-if (registry.candidate_status !== "pending_fable_p3_record") {
+if (snapshotHash(registrySnapshot) !== payload.acquisition_policy.registry_snapshot_sha256) {
+  throw new Error("scan_policy_registry_snapshot_hash_mismatch");
+}
+if (registrySnapshot.candidate_status !== "pending_fable_p3_record") {
   throw new Error("scan_policy_candidate_status_refused");
 }
-const registryEntries = Array.isArray(registry.entries) ? registry.entries : [];
+const registryEntries = registrySnapshot.entries;
 const policyFamilies = payload.acquisition_policy.families;
 const policyFamilyMap = new Map(policyFamilies.map((family) => [family.family_id, family]));
 const registryFamilyIds = registryEntries.map((entry) => entry.family_id).sort();

@@ -185,6 +185,11 @@
   .event-coverage h2 { font-family: var(--sans); font-size: .7rem; font-weight: 700;
     letter-spacing: .16em; text-transform: uppercase; margin: 0 0 .35rem; }
   .event-coverage .coverage-intro { color: var(--slate); margin: 0 0 1rem; }
+  .coverage-details { border-top: 1px solid var(--rule); margin-top: 1rem; padding-top: .85rem; }
+  .coverage-details > summary { color: var(--slate); cursor: pointer; line-height: 1.45; }
+  .coverage-details > summary::marker { color: var(--blue); }
+  .coverage-details > summary a { color: var(--blue); }
+  .coverage-expanded { margin-top: 1rem; }
   .coverage-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
   .coverage-list li { padding: .85rem 0; border-bottom: 1px solid var(--rule); }
   .coverage-list a { display: block; color: var(--ink); text-decoration: none; }
