@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { acquisitionExclusions, acquisitionInterventions, acquisitionPayload, acquisitionPolicy } from "../../../lib/acquisition.mjs";
+import { formatTimestamp } from "../../../lib/presentation.mjs";
+
+const cadenceText = (seconds) => {
+  if (seconds === 3600) return "hourly";
+  if (seconds === 86400) return "daily";
+  if (seconds === 604800) return "weekly";
+  if (seconds === 2592000) return "monthly";
+  return "on the declared schedule";
+};
+const resolvedCadence = (family) => {
+  const intake = family.scan_policy.intake_cadence;
+  const changeWatch = family.scan_policy.changewatch_cadence;
+  const intakeText = intake.mode === "scheduled_event" ? "scheduled event" : cadenceText(intake.poll_interval_seconds);
+  return `${intakeText} intake · ${changeWatch.tier} change watch, ${cadenceText(changeWatch.revisit_interval_seconds)}`;
+};
+const exclusion = acquisitionExclusions[0];
+---
+<BaseLayout title="Acquisition policy | The Catch" current="Methodology">
+  <div slot="locator" class="locator"><span>METHODOLOGY</span><span>ACQUISITION POLICY</span><span class="loc-status-red">PREVIEW · NOT PUBLISHED</span></div>
+  <div class="content">
+    <main class="method-main acquisition-main">
+      <p class="acquisition-eyebrow">How the record begins</p>
+      <h1>Acquisition policy</h1>
+      <p class="lede">The Catch names the source families and venues that enter the record, the cadence observed for each live adapter, and the boundaries that remain visible when a source is not captured.</p>
+      <div class="acquisition-notice"><strong>Candidate policy pending activation</strong><br />These proposed values are not live behavior. This page is not public and does not promote claims.</div>
+      <p class="acquisition-observed">Policy observed {formatTimestamp(acquisitionPolicy.observed_at)} · candidate values pending activation</p>
+
+      <section>
+        <h2>Source families and cadence</h2>
+        <table class="acquisition-table">
+          <thead><tr><th>Family</th><th>Venue</th><th>What enters</th><th>Observed cadence</th></tr></thead>
+          <tbody>
+            {acquisitionPolicy.families.map((family) => <tr>
+              <th scope="row">{family.display_name}</th>
+              <td>{family.venue}</td>
+              <td>{family.collection}</td>
+              <td class="acquisition-cadence">{resolvedCadence(family)}</td>
+            </tr>)}
+          </tbody>
+        </table>
+        <p class="acquisition-note">The intake and change-watch values above come from the candidate scan policy. They are not presented as active service behavior.</p>
+      </section>
+
+      <section>
+        <h2>Known exclusions</h2>
+        <p>Coverage is shown as a ledger of what was not ingested, not as an implied completeness claim.</p>
+        {exclusion ? <article class="acquisition-ledger-entry">
+          <div class="acquisition-ledger-head"><b>{exclusion.venue}</b><span>Coverage boundary</span></div>
+          <p>Official-print records not captured · {exclusion.count} records</p>
+        </article> : <p class="acquisition-empty">No exclusions recorded.</p>}
+      </section>
+
+      <section>
+        <h2>Human intervention ledger</h2>
+        {acquisitionInterventions.length === 0 ? <p class="acquisition-empty">No interventions recorded.</p> : <table class="acquisition-table">
+          <thead><tr><th>Event</th><th>Recorded</th><th>Target</th><th>Public effect</th></tr></thead>
+          <tbody>{acquisitionInterventions.map((entry) => <tr><th scope="row">{entry.event_type}</th><td>{formatTimestamp(entry.occurred_at)}</td><td>{entry.target_type}</td><td>{entry.public_effect}</td></tr>)}</tbody>
+        </table>}
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .acquisition-main { max-width: 58rem; }
+  .acquisition-eyebrow { color: var(--red); font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+  .acquisition-main h1 { font-family: var(--serif); font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin: .4rem 0 1rem; }
+  .acquisition-notice { border-left: 4px solid var(--red); background: #fff2f1; padding: .9rem 1rem; margin: 1.5rem 0 1rem; max-width: 44rem; }
+  .acquisition-notice strong { color: var(--red); }
+  .acquisition-observed, .acquisition-note { color: var(--slate); font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; }
+  .acquisition-table { border-collapse: collapse; width: 100%; font-size: .86rem; }
+  .acquisition-table th, .acquisition-table td { border-top: 1px solid var(--rule); padding: .75rem .55rem; text-align: left; vertical-align: top; }
+  .acquisition-table thead th { color: var(--slate); font-family: var(--mono); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; }
+  .acquisition-cadence { color: var(--blue); white-space: nowrap; }
+  .acquisition-typed { color: var(--slate); font-style: italic; }
+  .acquisition-ledger-entry { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 1rem 0; max-width: 48rem; }
+  .acquisition-ledger-head { display: flex; justify-content: space-between; gap: 1rem; }
+  .acquisition-ledger-head span { color: var(--red); font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; }
+  .acquisition-empty { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--slate); padding: 1rem 0; }
+  @media (max-width: 760px) { .acquisition-table { font-size: .8rem; } .acquisition-table th, .acquisition-table td { padding: .6rem .35rem; } }
+</style>

@@ -1,0 +1,106 @@
+{
+  "schema": "catch_acquisition_publication_object_v1",
+  "payload": {
+    "claims": [],
+    "preview_only": true,
+    "public_claim_eligible": false,
+    "publication_status": "preview",
+    "acquisition_policy": {
+      "policy_version": "scan_policy_v1_escalation",
+      "source_status": "candidate_policy_pending_activation",
+      "registry_source_sha256": "sha256:3bb9697019271b9a89f6f091f3c97ca040c7e2e40942e61359a1235c92efc722",
+      "registry_snapshot_sha256": "sha256:167da0272623d8d02c114f27fa12b6fa6dc68e121e00362007e42538ebc13057",
+      "registry_snapshot": {
+        "candidate_status": "pending_fable_p3_record",
+        "entries": [
+          {
+            "family_id": "federal_register_trade_notice_primary",
+            "scan_policy": {
+              "changewatch_cadence": {"revisit_interval": "every_7d", "revisit_interval_seconds": 604800, "tier": "warm"},
+              "changewatch_scope": "primaries_always",
+              "declared_at": "2026-07-17T00:00:00Z",
+              "family_id": "federal_register_trade_notice_primary",
+              "fetch_escalation": {"403_streak_limit": 3, "receipt_field": "fetch_method", "reset_on_non_403": true, "rungs": ["normal_fetch", "browser_ua", "scrapling-stealth"], "terminal_outcome": "typed_gated"},
+              "intake_cadence": {"mode": "poll", "poll_interval_seconds": 86400},
+              "policy_version": "scan_policy_v1_escalation",
+              "tier_justification": "Published primary notices can anchor active claims and may receive corrections; daily intake with weekly revisit is bounded."
+            }
+          },
+          {
+            "family_id": "fulton_boe_official_meeting_record",
+            "scan_policy": {
+              "changewatch_cadence": {"revisit_interval": "every_30d", "revisit_interval_seconds": 2592000, "tier": "cold"},
+              "changewatch_scope": "primaries_always",
+              "declared_at": "2026-07-17T00:00:00Z",
+              "family_id": "fulton_boe_official_meeting_record",
+              "fetch_escalation": {"403_streak_limit": 3, "receipt_field": "fetch_method", "reset_on_non_403": true, "rungs": ["normal_fetch", "browser_ua", "scrapling-stealth"], "terminal_outcome": "typed_gated"},
+              "intake_cadence": {"mode": "poll", "poll_interval_seconds": 604800},
+              "policy_version": "scan_policy_v1_escalation",
+              "tier_justification": "Custodied official meeting records are slow-changing and not yet claim-level active; weekly intake with monthly revisit limits fetch pressure."
+            }
+          },
+          {
+            "family_id": "wire_service_trade_reporting",
+            "scan_policy": {
+              "changewatch_cadence": {"revisit_interval": "every_24h", "revisit_interval_seconds": 86400, "tier": "hot"},
+              "changewatch_scope": "primaries_and_coverage",
+              "declared_at": "2026-07-17T00:00:00Z",
+              "family_id": "wire_service_trade_reporting",
+              "fetch_escalation": {"403_streak_limit": 3, "receipt_field": "fetch_method", "reset_on_non_403": true, "rungs": ["normal_fetch", "browser_ua", "scrapling-stealth"], "terminal_outcome": "typed_gated"},
+              "intake_cadence": {"mode": "poll", "poll_interval_seconds": 3600},
+              "policy_version": "scan_policy_v1_escalation",
+              "tier_justification": "Active wire coverage is correction-prone and can affect checked claims quickly; hourly intake with daily revisit is appropriate."
+            }
+          },
+          {
+            "family_id": "federal_reserve_fomc_primary",
+            "scan_policy": {
+              "changewatch_cadence": {"revisit_interval": "every_7d", "revisit_interval_seconds": 604800, "tier": "warm"},
+              "changewatch_scope": "primaries_always",
+              "declared_at": "2026-07-18T00:00:00Z",
+              "family_id": "federal_reserve_fomc_primary",
+              "fetch_escalation": {"403_streak_limit": 3, "receipt_field": "fetch_method", "reset_on_non_403": true, "rungs": ["normal_fetch", "browser_ua", "scrapling-stealth"], "terminal_outcome": "typed_gated"},
+              "intake_cadence": {"event_calendar_ref": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm", "mode": "scheduled_event"},
+              "policy_version": "scan_policy_v1_escalation",
+              "tier_justification": "The two live Catch claim pages fomc_minutes_20260617::fomc_target_range_maintained_v2::001 (June 17, 2026 FOMC minutes) and fomc_statement_20260617::fomc_target_range_maintained_v2::001 (June 17, 2026 FOMC statement) are checked against Federal Reserve documents; scheduled-event intake follows the FOMC meeting calendar, and warm weekly change-watch keeps those checked_against primary records revisitable."
+            }
+          }
+        ],
+        "scan_policy_schema": "scan_policy_v1",
+        "schema": "source_family_registry_v1",
+        "version": "v3-scan-policy-fomc-candidate"
+      },
+      "scan_policy_schema": "scan_policy_v1",
+      "families": [
+        {"family_id": "federal_reserve_fomc_primary", "display_name": "Federal Reserve FOMC", "venue": "federalreserve.gov", "collection": "FOMC statements, decisions, and meeting materials"},
+        {"family_id": "federal_register_trade_notice_primary", "display_name": "Federal Register", "venue": "federalregister.gov", "collection": "Federal Register notices in the active source profile"},
+        {"family_id": "wire_service_trade_reporting", "display_name": "AP reporting", "venue": "AP hub", "collection": "Wire-service trade reporting available to the active adapter"},
+        {"family_id": "fulton_boe_official_meeting_record", "display_name": "CHAMP minutes", "venue": "Fulton County Schools CHAMP archive", "collection": "Rendered board and committee meeting records"}
+      ]
+    },
+    "exclusions": [
+      {
+        "venue": "Simbli Fulton official-print minutes endpoint",
+        "reason_code": "uncaptured_official_print",
+        "expected_count": 9,
+        "manifest_source_sha256": "sha256:e4a56ee5ecce7aaa386bf97b72356de5030d0e4d15939812b041a68ce2074fae",
+        "manifest_snapshot": {
+          "snapshot_sha256": "sha256:91ca2c326931f0cb3d50f8cfafd2a8343d0f8e3f75dc3c26249acb8cff60b3bf",
+          "records": [
+            {"file": "simbli-minutes_130818.html", "bytes": 674718, "sha256": "fd8d92c5ed27bf1e2af1d7d5862636bde26d370786431db3a1bb693674cecfaf", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_131187.html", "bytes": 689387, "sha256": "cad7b03f8ce07ad9603fccaf67c41d6190e3f8190c5401197129f70be3ae2f7a", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_132004.html", "bytes": 675785, "sha256": "3aa61bfefbbda28fe1f7593e036ec209782922ecad58cd2b35f4f57c8773bf9c", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_133494.html", "bytes": 963102, "sha256": "5f3557bbdf499fdcb4e9f390c66f9cf71bf8a1c1790dfced706154e35ea92220", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_133951.html", "bytes": 681955, "sha256": "98f3d18a7a5179b0bbb29ad6ba1b25fe2b9e1adeb8a56ff6dc90e3f19b05ac02", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_134173.html", "bytes": 966147, "sha256": "24e6aa2868479aa1d73a82f7bcd14aedbe0816f9a95f8ea533b01adcb73ef282", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_136052.html", "bytes": 676155, "sha256": "5ddf9456deef1aefc95bd34da1d6ff15c879eeb49727e3a68812c35710985b34", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_136376.html", "bytes": 977216, "sha256": "3767c5faf358d4a22674c558ce8039101e28d113d0adf08e6e0067fe8843e8c3", "starts_html": true, "has_minutes": true},
+            {"file": "simbli-minutes_136586.html", "bytes": 659456, "sha256": "98c080eb49713b3e05dddd456ab13416bf7cf421825afcf8b7fa30d4c9a6b199", "starts_html": true, "has_minutes": true}
+          ]
+        },
+        "count_source": "embedded_manifest_snapshot.records.length"
+      }
+    ],
+    "interventions": []
+  }
+}
