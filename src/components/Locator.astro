@@ -13,6 +13,6 @@ const displayStatus = presentation.previewOnly
   <span>RECORD</span>
   <span>{presentation.tierLabel.toUpperCase()}</span>
   {displayStatus && <span class={displayStatus.tone}>{displayStatus.label}</span>}
-  {presentation.eventPath ? <a class="loc-event" href={presentation.eventPath}>EVENT: {presentation.eventTitle} &rarr;</a> : <span class="loc-event">EVENT: {presentation.eventTitle}</span>}
+  {presentation.eventPath && <a class="loc-event" href={presentation.eventPath}>EVENT: {presentation.eventTitle} &rarr;</a>}
   {historyCount > 0 && <a class="loc-history" href={`/claims/${record.reader_slug}/history/`} title="Version history"><span class="h-glyph">&#8635;</span>HISTORY ({historyCount})</a>}
 </div>
