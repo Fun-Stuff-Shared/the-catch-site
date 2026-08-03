@@ -27,7 +27,10 @@ function outletForms(outlet) {
 }
 
 export function normalizeCoverageHeadline(headline, outlet) {
-  let value = String(headline ?? "").trim();
+  let value = String(headline ?? "")
+    .replace(/[\u{E000}-\u{F8FF}\u{FFF0}-\u{FFFF}\u{F0000}-\u{FFFFD}\u{100000}-\u{10FFFD}\u{FE00}-\u{FE0F}\u{200B}-\u{200D}]/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
   for (const form of outletForms(outlet)) {
     const pattern = new RegExp(`(?:\\s*(?:\\||·|-)\\s*|\\s+)${escapeRegex(form)}\\s*$`, "i");
     while (pattern.test(value)) value = value.replace(pattern, "").trim();

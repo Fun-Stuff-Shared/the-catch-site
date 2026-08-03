@@ -19,7 +19,7 @@ const { group } = Astro.props;
       <p class="matter-kicker">Event</p>
       <h1>{group.title}</h1>
       <p class="source-byline">{formatDate(group.date)} · {group.records.length} {group.records.length === 1 ? "record" : "records"}</p>
-      <RecordCardList records={group.records} mode="documents" />
+      <RecordCardList records={group.records} mode="documents" groupedLink="claim" />
       {group.coverage.length > 0 && <section class="event-coverage" aria-label="Coverage">
         <h2>Coverage</h2>
         <p class="coverage-intro">Reporting around this event, shown separately from the record.</p>
