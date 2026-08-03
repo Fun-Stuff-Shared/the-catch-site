@@ -1,4 +1,5 @@
 import { coverageRowsFor, mergeCoverageRows } from "./coverage.mjs";
+import { collapseByHeadline } from "./headline.mjs";
 
 export function eventGroups(records) {
   const groups = new Map();
@@ -33,5 +34,5 @@ export function eventPath(slug) {
 }
 
 export function warrantedEvents(records) {
-  return eventGroups(records).filter((group) => group.records.length > 1 || group.coverage.length > 0);
+  return eventGroups(records).filter((group) => collapseByHeadline(group.records).length > 1);
 }

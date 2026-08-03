@@ -2,6 +2,7 @@ import { payload } from "./export.mjs";
 import { statusLabelFor } from "./status-contract.mjs";
 import { coverageRowsFor } from "./coverage.mjs";
 import { warrantedEvents } from "./events.mjs";
+export { splitHeadline, collapseByHeadline } from "./headline.mjs";
 
 let warrantedSlugCache = null;
 function warrantedEventSlugs() {
@@ -103,30 +104,6 @@ const BOILERPLATE_FINDING_LINES = new Set([
 function findingLineFor(record) {
   const line = record.finding_line;
   return line && !BOILERPLATE_FINDING_LINES.has(line) ? line : null;
-}
-
-export function splitHeadline(headline) {
-  const match = /^(.*\S)\s\(([^()]+)\)$/.exec(String(headline ?? ""));
-  return match ? { base: match[1], docLabel: match[2] } : { base: String(headline ?? ""), docLabel: null };
-}
-
-export function collapseByHeadline(records) {
-  const items = [];
-  const groups = new Map();
-  for (const record of records) {
-    const headline = record.reader_headline ?? record.matter_title ?? "";
-    const { base } = splitHeadline(headline);
-    const key = `${record.event_slug ?? ""}::${base}`;
-    const existing = groups.get(key);
-    if (existing) {
-      existing.records.push(record);
-      continue;
-    }
-    const group = { base, records: [record] };
-    groups.set(key, group);
-    items.push(group);
-  }
-  return items;
 }
 
 export function presentationFor(record) {

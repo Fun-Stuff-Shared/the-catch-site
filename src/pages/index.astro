@@ -4,11 +4,12 @@ import ArchiveNav from "../components/ArchiveNav.astro";
 import { records } from "../lib/export.mjs";
 import { archiveGroups } from "../lib/date-archive.mjs";
 import RecordCardList from "../components/RecordCardList.astro";
-import { eventPath, warrantedEvents } from "../lib/events.mjs";
+import { eventGroups, eventPath, warrantedEvents } from "../lib/events.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 
 const archive = archiveGroups(records);
-const events = warrantedEvents(records).slice().reverse();
+const events = eventGroups(records).slice().reverse();
+const warrantedSlugs = new Set(warrantedEvents(records).map((group) => group.slug));
 const latestEvent = events[0];
 const earlierEvents = events.slice(1);
 const ungrouped = records.filter((record) => !record.event_slug);
@@ -35,7 +36,7 @@ const latestRecords = latestEvent ? latestEvent.records : records;
       {earlierEvents.length > 0 && <section aria-label="Earlier events">
         <h2 class="home-section">Earlier events</h2>
         <ul class="event-index">
-          {earlierEvents.map((event) => <li><a href={eventPath(event.slug)}><span class="ei-title">{event.title}</span><span class="ei-meta">{event.date ? `${formatDate(event.date)} · ` : ""}{event.records.length} {event.records.length === 1 ? "record" : "records"}</span></a></li>)}
+          {earlierEvents.map((event) => <li><a href={warrantedSlugs.has(event.slug) ? eventPath(event.slug) : `/claims/${event.records[0].reader_slug}/`}><span class="ei-title">{event.title}</span><span class="ei-meta">{event.date ? `${formatDate(event.date)} · ` : ""}{event.records.length} {event.records.length === 1 ? "record" : "records"}</span></a></li>)}
         </ul>
       </section>}
       {ungrouped.length > 0 && <RecordCardList records={ungrouped} />}

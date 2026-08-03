@@ -1,6 +1,9 @@
 ---
 import { collapseByHeadline, presentationFor, splitHeadline, statusChip } from "../lib/presentation.mjs";
-import { eventPath } from "../lib/events.mjs";
+import { eventPath, warrantedEvents } from "../lib/events.mjs";
+import { records as allRecords } from "../lib/export.mjs";
+
+const warrantedSlugs = new Set(warrantedEvents(allRecords).map((group) => group.slug));
 
 const { records, mode = "collapse", extraClass, groupedLink = "event" } = Astro.props;
 const groups = collapseByHeadline(records);
@@ -12,7 +15,7 @@ const groups = collapseByHeadline(records);
     const chip = statusChip(presentation, record);
     const { base, docLabel } = splitHeadline(presentation.matterTitle);
     const grouped = group.records.length > 1;
-    const href = grouped && groupedLink === "event" && record.event_slug ? eventPath(record.event_slug) : `/claims/${record.reader_slug}/`;
+    const href = grouped && groupedLink === "event" && record.event_slug && warrantedSlugs.has(record.event_slug) ? eventPath(record.event_slug) : `/claims/${record.reader_slug}/`;
     const title = mode === "documents" || grouped ? base : presentation.matterTitle;
     const docNote = grouped
       ? group.records
