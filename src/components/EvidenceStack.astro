@@ -9,6 +9,7 @@ const { evidence, viewer, normalizationNote } = Astro.props;
       <div class="ev-tags">
         <span class:list={["tag", item.kind === "Document" ? "t-doc" : "t-stmt"]}>{item.kind}</span>
         {item.sourceKind && <span class:list={["tag", item.sourceKind === "First-hand" ? "t-doc" : "t-rep"]}>{item.sourceKind}</span>}
+        {item.documentRole && <span class="tag t-doc">{item.documentRole}</span>}
         {item.claimantSource && <span class="tag t-claimant">Claimant source</span>}
         {item.speaker && item.speaker !== item.source && <span class="tag t-stmt">{item.attributionLabel ?? "Named speaker"}</span>}
       </div>

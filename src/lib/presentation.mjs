@@ -6,7 +6,7 @@ export { splitHeadline, collapseByHeadline } from "./headline.mjs";
 
 let warrantedSlugCache = null;
 function warrantedEventSlugs() {
-  if (!warrantedSlugCache) warrantedSlugCache = new Set(warrantedEvents(payload.claims ?? []).map((group) => group.slug));
+  if (!warrantedSlugCache) warrantedSlugCache = new Set(warrantedEvents((payload.claims ?? []).filter((record) => record.record_kind !== "alias")).map((group) => group.slug));
   return warrantedSlugCache;
 }
 
@@ -62,10 +62,27 @@ export function formatDay(year, month, day) {
   return formatDate(`${year}-${month}-${day}`);
 }
 
+const HISTORY_STATUS_LABELS = { superseded_by_merge: "Superseded by merge" };
+
 function formatHistory(entries) {
   return entries
     .filter((entry) => entry.status !== "Current")
-    .map((entry) => ({ ...entry, date: formatTimestamp(entry.date) }));
+    .map((entry) => ({ ...entry, status: HISTORY_STATUS_LABELS[entry.status] ?? entry.status, date: formatTimestamp(entry.date) }));
+}
+
+function normalizeEvidence(entry) {
+  return {
+    kind: entry.kind,
+    sourceKind: entry.sourceKind ?? entry.source_kind ?? null,
+    claimantSource: entry.claimantSource ?? entry.claimant_source ?? false,
+    speaker: entry.speaker,
+    quote: entry.quote,
+    source: entry.source,
+    attributionLabel: entry.attributionLabel ?? null,
+    locationLabel: entry.locationLabel ?? entry.location_label ?? entry.location ?? null,
+    venue: entry.venue ?? null,
+    documentRole: entry.document_role ?? null,
+  };
 }
 
 function formatInstances(entries) {
@@ -125,7 +142,11 @@ export function presentationFor(record) {
     ? { ...record.archive_capture, date: formatDate(record.archive_capture.date) }
     : null;
   const sourceLabel = record.source_label ?? source;
-  const documentTitle = documentTitleFor(record);
+  const documents = Array.isArray(record.documents) ? record.documents : [];
+  const documentTitles = documents.length > 1
+    ? documents.map((doc) => documentTitleFor({ document_title: doc.document_title ?? null, source_url: doc.source_url }))
+    : null;
+  const documentTitle = documentTitles ? documentTitles.join(" and ") : documentTitleFor(record);
   const coverageRows = coverageRowsFor(record).map((item) => ({
     ...item,
     dateLabel: item.date ? formatDate(item.date) : null,
@@ -151,7 +172,9 @@ export function presentationFor(record) {
     quote: record.quote ?? claimText,
     quoteLocation: record.quote_location ?? record.evidence_refs?.join(", ") ?? "Cited source location",
     firstRetrievedAt: record.first_retrieved_at ? formatDate(record.first_retrieved_at) : null,
-    checkedAgainst: Array.isArray(record.checked_against) ? record.checked_against : [record.source_label ?? "Source record"],
+    checkedAgainst: documentTitles
+      ? documentTitles.map((title) => `${title}, ${eventDateLabel}`)
+      : Array.isArray(record.checked_against) ? record.checked_against : [record.source_label ?? "Source record"],
     evidenceViewer: record.evidence_viewer ?? null,
     verificationStatus: statusLabelFor(record),
     previewOnly,
@@ -163,7 +186,7 @@ export function presentationFor(record) {
     checkedAt: record.verified_at ? formatTimestamp(record.verified_at) : null,
     scope: record.scope ?? (pulled ? "" : "This record checks only the proposition described by the cited export."),
     instances: pulled ? [] : formatInstances(record.instances ?? []),
-    evidence: pulled ? [] : record.evidence ?? [{
+    evidence: pulled ? [] : (record.evidence ?? [{
       kind: corrected ? "Statement" : "Document",
       sourceKind: corrected ? "Reporting" : "First-hand",
       claimantSource: corrected,
@@ -171,7 +194,7 @@ export function presentationFor(record) {
       quote: claimText,
       source,
       location: record.evidence_refs?.join(", ") ?? "Cited source location",
-    }],
+    }]).map(normalizeEvidence),
     provenance: record.provenance ?? { source, capture: record.provenance_ref ?? "Signed export" },
     archiveCapture,
     history,

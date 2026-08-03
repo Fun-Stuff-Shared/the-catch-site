@@ -2,6 +2,183 @@
   "payload": {
     "claims": [
       {
+        "canonical_record_id": "fomc_decision_20260617::target_range_maintained::001",
+        "checked_against": [
+          "FOMC minutes, June 17, 2026"
+        ],
+        "checked_proposition": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3.50% to 3.75%.",
+        "checked_proposition_note": "Wording standardized for clarity; the source quote is shown unchanged.",
+        "claim_id": "fomc_decision_20260617::target_range_maintained::001",
+        "claim_text": "The Federal Open Market Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.",
+        "correction_state": "Current",
+        "coverage": [
+          {
+            "artifact_id": "fomc_cov_001_cnbc_decision",
+            "headline": "Fed interest rate decision June 2026: Fed holds rates steady",
+            "outlet": "CNBC",
+            "source_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html"
+          },
+          {
+            "artifact_id": "fomc_cov_002_foxbusiness_decision",
+            "headline": "June FOMC: Fed holds interest rates steady as Warsh era begins",
+            "outlet": "Fox Business",
+            "source_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026"
+          },
+          {
+            "artifact_id": "fomc_cov_003_tradingkey",
+            "headline": "June Fed Decision Delivered: Rates Held Unchanged but Dot Plot Significantly Raised, 9 Back Continued Rate Hikes in 2026. \ue64f",
+            "outlet": "TradingKey",
+            "source_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey"
+          },
+          {
+            "artifact_id": "fomc_cov_004_cnbc_minutes",
+            "headline": "Fed minutes June 2026: officials split on rates",
+            "outlet": "CNBC",
+            "source_url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html"
+          },
+          {
+            "artifact_id": "fomc_cov_007_stocktitan",
+            "headline": "Fed Holds Rates June 2026; Dot Plot Flips to a Hike",
+            "outlet": "StockTitan",
+            "source_url": "https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026"
+          }
+        ],
+        "custody_receipts": [
+          {
+            "captured_sha256": "sha256:4824177bc137251e2055ae1fd4a1343c518791bfd57441043e00735ee44b721c",
+            "document_id": "fomc_minutes_20260617::fomc_target_range_maintained_v2::001",
+            "outcome": "captured",
+            "receipt_path": "runs/live1f-cross-source-custody-20260803T000000Z/capture-receipts.jsonl",
+            "receipt_target_id": "fomc-june-2026-minutes",
+            "role": "minutes"
+          },
+          {
+            "captured_sha256": "sha256:990c8b6536694256efa9f53d5eccd3d6e4e0a39364d0c5c9f55f14fdce877a15",
+            "document_id": "fomc_statement_20260617::fomc_target_range_maintained_v2::001",
+            "outcome": "captured",
+            "receipt_path": "runs/live1f-cross-source-custody-20260803T000000Z/capture-receipts.jsonl",
+            "receipt_target_id": "fomc-june-2026-statement",
+            "role": "statement"
+          }
+        ],
+        "document_title": "FOMC minutes",
+        "documents": [
+          {
+            "document_id": "fomc_minutes_20260617::fomc_target_range_maintained_v2::001",
+            "reader_slug": "fomc-minutes-june-17-2026-rate-range-maintained",
+            "role": "minutes",
+            "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm"
+          },
+          {
+            "document_id": "fomc_statement_20260617::fomc_target_range_maintained_v2::001",
+            "reader_slug": "fomc-statement-june-17-2026-rate-range-maintained",
+            "role": "statement",
+            "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+          }
+        ],
+        "event_date": "2026-06-17",
+        "event_key": "Federal funds rate decision:2026-06-17",
+        "event_slug": "federal-funds-rate-decision-2026-06-17",
+        "event_title": "Federal funds rate decision",
+        "evidence": [
+          {
+            "attributionLabel": "Institutional author",
+            "claimantSource": false,
+            "custody_receipt_target_id": "fomc-june-2026-minutes",
+            "document_id": "fomc_minutes_20260617::fomc_target_range_maintained_v2::001",
+            "document_role": "minutes",
+            "kind": "Document",
+            "location_label": "See source excerpt below",
+            "quote": "3-1/2 to 3-3/4 percent",
+            "source": "Federal Reserve",
+            "sourceKind": "First-hand",
+            "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+            "speaker": "Federal Reserve"
+          },
+          {
+            "attributionLabel": "Institutional author",
+            "claimantSource": false,
+            "custody_receipt_target_id": "fomc-june-2026-statement",
+            "document_id": "fomc_statement_20260617::fomc_target_range_maintained_v2::001",
+            "document_role": "statement",
+            "kind": "Document",
+            "location_label": "See source excerpt below",
+            "quote": "3-1/2 to 3-3/4 percent",
+            "source": "Federal Reserve",
+            "sourceKind": "First-hand",
+            "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+            "speaker": "Federal Reserve"
+          }
+        ],
+        "evidence_viewer": {
+          "artifact_id": "fomc_minutes_20260617",
+          "artifact_sha256": "sha256:ab52e815c97a669d03bf6e66045b83446648e99cbcd3aebbb2fc9e725f69316f",
+          "byte_range": {
+            "end": 89693,
+            "start": 89671
+          },
+          "excerpt": {
+            "after": ", in support of the Federal Reserve's dual mandate. The Committee reaffirmed its policy of maintaining ample reserves in the banking system. Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East. Product",
+            "before": "Treasury bills.\" The vote also encompassed approval of the statement below for release at 2:00 p.m.: \"The Federal Open Market Committee approved the following statement for release by a 12 \u2013 0 vote: The Committee decided to maintain the target range for the federal funds rate at ",
+            "quote": "3-1/2 to 3-3/4 percent"
+          },
+          "normalization": "html_visible_text_whitespace_v1",
+          "policy": "original_record_public_domain",
+          "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+          "status": "available"
+        },
+        "finding_line": "The Federal Open Market Committee decision is recorded in the cited primary document.",
+        "first_retrieved_at": "2026-07-12T06:57:20.758651Z",
+        "history": [
+          {
+            "date": "2026-08-03",
+            "status": "Merged",
+            "text": "Minutes and statement source records merged into one canonical FOMC decision record; both prior reader addresses remain permanent aliases."
+          }
+        ],
+        "instances": [
+          {
+            "date": "2026-06-17",
+            "role": "original record",
+            "speaker": "Federal Open Market Committee"
+          }
+        ],
+        "matter_title": "Federal funds rate maintained at 3.50% to 3.75% - FOMC decision, June 17, 2026",
+        "occurrence_time": {
+          "end": "2026-06-17",
+          "precision": "day",
+          "start": "2026-06-17",
+          "status": "resolved"
+        },
+        "page_title": "Federal funds rate maintained at 3.50% to 3.75% - FOMC decision, June 17, 2026",
+        "provenance": {
+          "source": "Federal Reserve"
+        },
+        "publication_status": "active",
+        "quote": "3-1/2 to 3-3/4 percent",
+        "quote_location": "fomc_minutes_20260617:bytes:36081-36103",
+        "reader_headline": "Federal funds rate maintained at 3.50% to 3.75%",
+        "reader_slug": "fomc-june-17-2026-rate-range-maintained",
+        "recheck_events": [
+          {
+            "event_id": "recheck:fomc_minutes_20260617::fomc_target_range_maintained_v2::001:2026-07-19T02:11:45+00:00",
+            "kind": "recheck",
+            "prior_verified_at": "2026-07-18T03:11:00Z",
+            "text": "The record was rechecked against the listed source record; the prior record remains in this ledger.",
+            "verified_at": "2026-07-19T02:11:45Z"
+          }
+        ],
+        "record_kind": "canonical",
+        "related_claims": [],
+        "scope": "This record checks the stated proposition against the cited Federal Reserve primary document.",
+        "source_label": "Federal Reserve",
+        "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
+        "tier_label": "Original record",
+        "verification_status": "Supported by original record",
+        "verified_at": "2026-08-03T09:07:31Z"
+      },
+      {
+        "canonical_record_id": "fomc_decision_20260617::target_range_maintained::001",
         "checked_against": [
           "FOMC minutes, June 17, 2026"
         ],
@@ -78,7 +255,13 @@
         },
         "finding_line": "The Federal Open Market Committee decision is recorded in the cited primary document.",
         "first_retrieved_at": "2026-07-12T06:57:20.758651Z",
-        "history": [],
+        "history": [
+          {
+            "date": "2026-08-03",
+            "status": "superseded_by_merge",
+            "text": "The minutes source record remains addressable as a permanent alias and redirects to /claims/fomc-june-17-2026-rate-range-maintained/."
+          }
+        ],
         "instances": [
           {
             "date": "2026-06-17",
@@ -97,7 +280,7 @@
         "provenance": {
           "source": "Federal Reserve"
         },
-        "publication_status": "active",
+        "publication_status": "superseded",
         "quote": "3-1/2 to 3-3/4 percent",
         "quote_location": "fomc_minutes_20260617:bytes:36081-36103",
         "reader_headline": "Federal funds rate maintained at 3.50% to 3.75% (FOMC minutes)",
@@ -111,13 +294,13 @@
             "verified_at": "2026-07-19T02:11:45Z"
           }
         ],
-        "related_claims": [
-          {
-            "reader_headline": "Federal funds rate maintained at 3.50% to 3.75%",
-            "reader_slug": "fomc-statement-june-17-2026-rate-range-maintained",
-            "title": "Federal funds rate maintained at 3.50% to 3.75%"
-          }
-        ],
+        "record_kind": "alias",
+        "redirect": {
+          "canonical_reader_slug": "fomc-june-17-2026-rate-range-maintained",
+          "status": 301,
+          "target": "/claims/fomc-june-17-2026-rate-range-maintained/"
+        },
+        "related_claims": [],
         "scope": "This record checks the stated proposition against the cited Federal Reserve primary document.",
         "source_label": "Federal Reserve",
         "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm",
@@ -126,6 +309,7 @@
         "verified_at": "2026-08-03T09:07:31Z"
       },
       {
+        "canonical_record_id": "fomc_decision_20260617::target_range_maintained::001",
         "checked_against": [
           "FOMC statement, June 17, 2026"
         ],
@@ -202,7 +386,13 @@
         },
         "finding_line": "The Federal Open Market Committee decision is recorded in the cited primary document.",
         "first_retrieved_at": "2026-07-12T06:57:19.282472Z",
-        "history": [],
+        "history": [
+          {
+            "date": "2026-08-03",
+            "status": "superseded_by_merge",
+            "text": "The statement source record remains addressable as a permanent alias and redirects to /claims/fomc-june-17-2026-rate-range-maintained/."
+          }
+        ],
         "instances": [
           {
             "date": "2026-06-17",
@@ -221,7 +411,7 @@
         "provenance": {
           "source": "Federal Reserve"
         },
-        "publication_status": "active",
+        "publication_status": "superseded",
         "quote": "3-1/2 to 3-3/4 percent",
         "quote_location": "fomc_statement_20260617:bytes:7807-7829",
         "reader_headline": "Federal funds rate maintained at 3.50% to 3.75% (FOMC statement)",
@@ -235,13 +425,13 @@
             "verified_at": "2026-07-19T02:11:45Z"
           }
         ],
-        "related_claims": [
-          {
-            "reader_headline": "Federal funds rate maintained at 3.50% to 3.75%",
-            "reader_slug": "fomc-minutes-june-17-2026-rate-range-maintained",
-            "title": "Federal funds rate maintained at 3.50% to 3.75%"
-          }
-        ],
+        "record_kind": "alias",
+        "redirect": {
+          "canonical_reader_slug": "fomc-june-17-2026-rate-range-maintained",
+          "status": 301,
+          "target": "/claims/fomc-june-17-2026-rate-range-maintained/"
+        },
+        "related_claims": [],
         "scope": "This record checks the stated proposition against the cited Federal Reserve primary document.",
         "source_label": "Federal Reserve",
         "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
@@ -1471,11 +1661,11 @@
         "verified_at": "2026-08-03T09:07:47Z"
       }
     ],
-    "content_hash": "sha256:3645f920269fabf3ddeec9f82705c27abd4859e67e0db27ac18de662a8debddc",
+    "content_hash": "sha256:665c767b7ca04e0809530d7b1460b3c9781183ca27fa4f21636a71ed50d70aaa",
     "generated_at": "2026-08-03T08:12:36.981197Z",
     "preview_only": false,
     "public_claim_eligible": true,
     "schema_version": "portico-news-preview-v0.1"
   },
-  "signature": "hmac-sha256:7266eda1545b756fff98e9a4e7da7c9d86d8ab4fcb11ea531e898e8c65a7be1c"
+  "signature": "hmac-sha256:9e7d8c98aa0245c86d2e70e879f7485ef85708f872caeb03ca75a44b750cc45e"
 }

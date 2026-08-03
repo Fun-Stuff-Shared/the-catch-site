@@ -14,8 +14,9 @@ if (!document.payload || !Array.isArray(document.payload.claims)) {
 
 export const exportDocument = document;
 export const payload = document.payload;
-export const records = payload.claims;
+export const allClaims = payload.claims;
+export const records = payload.claims.filter((record) => record.record_kind !== "alias");
 
 export function recordFor(id) {
-  return records.find((record) => record.claim_id === id);
+  return allClaims.find((record) => record.claim_id === id);
 }

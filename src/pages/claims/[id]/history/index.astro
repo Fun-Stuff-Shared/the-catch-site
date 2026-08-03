@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../../../../layouts/BaseLayout.astro";
 import Locator from "../../../../components/Locator.astro";
-import { records } from "../../../../lib/export.mjs";
+import { allClaims } from "../../../../lib/export.mjs";
 import { presentationFor } from "../../../../lib/presentation.mjs";
 
 export function getStaticPaths() {
-  return records.flatMap((record) => record.reader_slug === record.claim_id
+  return allClaims.flatMap((record) => record.reader_slug === record.claim_id
     ? [{ params: { id: record.reader_slug }, props: { record, legacy: false } }]
     : [
       { params: { id: record.reader_slug }, props: { record, legacy: false } },
@@ -18,5 +18,5 @@ const presentation = presentationFor(record);
 ---
 <BaseLayout title={`Version history | ${presentation.pageTitle}`}>
   <Locator slot="locator" record={record} presentation={presentation} />
-  {legacy ? <div class="content"><main class="method-main"><h1>This record has moved</h1><p class="lede">Opening the permanent record address.</p><p><a href={`/claims/${record.reader_slug}/history/`}>Continue to the record history</a></p></main></div> : <div class="content"><main class="method-main"><h1>Version history</h1><p class="lede">A dated ledger for this record.</p><ol class="ledger">{presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}</ol></main></div>}
+  {record.record_kind === "alias" ? <div class="content"><main class="method-main"><h1>This record has been merged</h1><p class="lede">Its history continues on the canonical record.</p><p><a href={`${record.redirect.target}history/`}>Continue to the record history</a></p></main></div> : legacy ? <div class="content"><main class="method-main"><h1>This record has moved</h1><p class="lede">Opening the permanent record address.</p><p><a href={`/claims/${record.reader_slug}/history/`}>Continue to the record history</a></p></main></div> : <div class="content"><main class="method-main"><h1>Version history</h1><p class="lede">A dated ledger for this record.</p><ol class="ledger">{presentation.history.map((entry) => <li class={entry.status === "Corrected" ? "event-corrected" : undefined}><span class="stamp">{entry.status} &middot; {entry.date}</span><p>{entry.text}</p></li>)}</ol></main></div>}
 </BaseLayout>

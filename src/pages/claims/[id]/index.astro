@@ -5,12 +5,12 @@ import StatusBlock from "../../../components/StatusBlock.astro";
 import EvidenceStack from "../../../components/EvidenceStack.astro";
 import CorrectionPanel from "../../../components/CorrectionPanel.astro";
 import RecordRail from "../../../components/RecordRail.astro";
-import { records } from "../../../lib/export.mjs";
+import { allClaims, records } from "../../../lib/export.mjs";
 import { presentationFor, splitHeadline } from "../../../lib/presentation.mjs";
 
 
 export function getStaticPaths() {
-  return records.flatMap((record) => record.reader_slug === record.claim_id
+  return allClaims.flatMap((record) => record.reader_slug === record.claim_id
     ? [{ params: { id: record.reader_slug }, props: { record, legacy: false } }]
     : [
       { params: { id: record.reader_slug }, props: { record, legacy: false } },
@@ -30,7 +30,11 @@ const docSiblings = presentation.relatedClaims
   .filter((related) => related.base === headlineBase);
 const eventRecordCount = record.event_slug ? records.filter((item) => item.event_slug === record.event_slug).length : 0;
 ---
-{legacy ? <>
+{record.record_kind === "alias" ? <>
+  <BaseLayout title="Record merged | The Catch" canonicalPath={record.redirect.target} redirectPath={record.redirect.target}>
+    <div class="content"><main class="method-main"><h1>This record has been merged</h1><p class="lede">This decision is now served as a single record covering all of its source documents.</p><p><a href={record.redirect.target}>Continue to the record</a></p></main></div>
+  </BaseLayout>
+</> : legacy ? <>
   <BaseLayout title={`${presentation.pageTitle} | The Catch`} canonicalPath={`/claims/${record.reader_slug}/`} redirectPath={`/claims/${record.reader_slug}/`}>
     <div class="content"><main class="method-main"><h1>This record has moved</h1><p class="lede">Opening the permanent record address.</p><p><a href={`/claims/${record.reader_slug}/`}>Continue to the record</a></p></main></div>
   </BaseLayout>
