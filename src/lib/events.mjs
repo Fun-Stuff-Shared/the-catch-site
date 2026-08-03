@@ -18,6 +18,13 @@ export function eventGroups(records) {
       coverage: coverageRowsFor(record),
     });
   }
+  for (const group of groups.values()) {
+    const dayDates = group.records
+      .map((record) => String(record.event_date ?? ""))
+      .filter((date) => /^\d{4}-\d{2}-\d{2}$/.test(date))
+      .sort();
+    if (dayDates.length > 0) group.date = dayDates[0];
+  }
   return [...groups.values()].sort((a, b) => String(a.date ?? "").localeCompare(String(b.date ?? "")) || a.title.localeCompare(b.title));
 }
 

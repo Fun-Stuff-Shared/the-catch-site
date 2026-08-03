@@ -25,8 +25,13 @@ function dateParts(value) {
 }
 
 export function formatDate(value) {
-  const parts = dateParts(value);
-  return parts ? `${MONTHS[parts.month - 1]} ${parts.day}, ${parts.year}` : "Date unavailable";
+  const raw = String(value ?? "");
+  const parts = dateParts(raw);
+  if (parts) return `${MONTHS[parts.month - 1]} ${parts.day}, ${parts.year}`;
+  const yearMonth = /^(\d{4})-(0[1-9]|1[0-2])$/.exec(raw);
+  if (yearMonth) return `${MONTHS[Number(yearMonth[2]) - 1]} ${yearMonth[1]}`;
+  if (/^\d{4}$/.test(raw)) return raw;
+  return "Date unavailable";
 }
 
 export function formatTimestamp(value) {
@@ -153,4 +158,11 @@ export function presentationFor(record) {
     originalClaimText: record.original_claim_text ?? "",
     relatedClaims: Array.isArray(record.related_claims) ? record.related_claims : [],
   };
+}
+
+export function statusChip(presentation, record) {
+  if (presentation.previewOnly) return { label: "Preview", tone: "st-blue" };
+  if (record.publication_status === "corrected") return { label: "Corrected", tone: "st-amber" };
+  if (record.publication_status === "pulled") return { label: "Withdrawn", tone: "st-red" };
+  return null;
 }

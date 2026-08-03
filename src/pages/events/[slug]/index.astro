@@ -2,7 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { records } from "../../../lib/export.mjs";
 import { eventGroups } from "../../../lib/events.mjs";
-import { formatDate, presentationFor } from "../../../lib/presentation.mjs";
+import { formatDate, presentationFor, statusChip } from "../../../lib/presentation.mjs";
 
 export function getStaticPaths() {
   return eventGroups(records).map((group) => ({ params: { slug: group.slug }, props: { group } }));
@@ -21,7 +21,8 @@ const { group } = Astro.props;
       <ul class="matters-grid">
         {group.records.map((record) => {
           const presentation = presentationFor(record);
-          return <li><a href={`/claims/${record.reader_slug}/`}><span class:list={["mt-status", presentation.previewOnly || record.publication_status === "active" ? "st-blue" : "st-red"]}>{presentation.previewOnly ? "preview" : record.publication_status}</span><span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.tierLabel}</span></a></li>;
+          const chip = statusChip(presentation, record);
+          return <li><a href={`/claims/${record.reader_slug}/`}>{chip && <span class:list={["mt-status", chip.tone]}>{chip.label}</span>}<span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.tierLabel}</span></a></li>;
         })}
       </ul>
       {group.coverage.length > 0 && <section class="event-coverage" aria-label="Coverage">

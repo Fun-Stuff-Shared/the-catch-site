@@ -136,7 +136,8 @@
   .kv div.stacked { display: block; }
   .kv div.stacked dd { margin-top: .25rem; text-align: left; width: 100%; }
   .kv dd.nw { white-space: nowrap; }
-  .kv dd .doc-title { display: block; font-size: .8rem; color: var(--slate); }
+  .kv dd .doc-title { display: block; font-size: .8rem; color: var(--slate);
+    overflow-wrap: break-word; word-break: break-word; }
   .tier-chip { font-family: var(--mono); font-size: .7rem; color: var(--blue);
     border: 1px solid var(--blue); padding: .05rem .45rem; letter-spacing: .05em;
     text-transform: uppercase; white-space: nowrap; }
@@ -311,7 +312,8 @@
 
 
   .matters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-    gap: 0; border: 1px solid var(--rule); border-right: none; margin: .8rem 0 0; }
+    gap: 0; border: 1px solid var(--rule); border-right: none; margin: .8rem 0 0;
+    list-style: none; padding: 0; }
   .matters-grid a { display: block; padding: 1rem 1.2rem 1.15rem;
     border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
     text-decoration: none; color: var(--ink); min-width: 0; }
@@ -328,6 +330,18 @@
   .mt-meta { display: block; font-family: var(--mono); font-size: .62rem;
     color: var(--slate); margin-top: .55rem; letter-spacing: .04em; }
 
+  .home-section { font-family: var(--sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .16em; text-transform: uppercase; margin: 2rem 0 .3rem; }
+  .event-index { list-style: none; padding: 0; margin: .8rem 0 0;
+    border: 1px solid var(--rule); border-bottom: none; }
+  .event-index a { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1rem;
+    justify-content: space-between; padding: .8rem 1.2rem; color: var(--ink);
+    text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .event-index a:hover .ei-title { color: var(--blue); text-decoration: underline; }
+  .ei-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 700;
+    letter-spacing: -.01em; }
+  .ei-meta { font-family: var(--mono); font-size: .62rem; color: var(--slate);
+    letter-spacing: .04em; }
   .archive-nav { border-top: 2px solid var(--rule-strong); margin: 1.8rem 0 2rem; padding-top: 1rem; }
   .archive-nav h2, .archive-section h2 { font-family: var(--sans); font-size: .7rem; font-weight: 700;
     letter-spacing: .16em; text-transform: uppercase; margin: 0 0 .7rem; }

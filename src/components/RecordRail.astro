@@ -23,8 +23,8 @@ const checkedAgainstLong = checkedAgainstText.length > 24;
   <section>
     <h2>Verification</h2>
     <dl class="kv">
-      <div><dt>First retrieved</dt><dd class="nw">{presentation.firstRetrievedAt ?? "Unavailable"}</dd></div>
-      <div><dt>Last checked</dt><dd class="nw">{presentation.checkedAt ?? "Unavailable"}</dd></div>
+      {presentation.firstRetrievedAt && <div><dt>First retrieved</dt><dd class="nw">{presentation.firstRetrievedAt}</dd></div>}
+      {presentation.checkedAt && <div><dt>Last checked</dt><dd class="nw">{presentation.checkedAt}</dd></div>}
       <div class:list={checkedAgainstLong ? ["kv-row", "stacked"] : ["kv-row"]}><dt>Checked against</dt><dd>{presentation.checkedAgainst.map((source) => <div>{source}</div>)}</dd></div>
     </dl>
   </section>
