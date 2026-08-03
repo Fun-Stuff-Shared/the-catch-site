@@ -86,6 +86,40 @@ function documentTitleFor(record) {
   return "Source record";
 }
 
+const BOILERPLATE_FINDING_LINES = new Set([
+  "The original record supports the event as stated.",
+  "The Federal Open Market Committee decision is recorded in the cited primary document.",
+]);
+
+function findingLineFor(record) {
+  const line = record.finding_line;
+  return line && !BOILERPLATE_FINDING_LINES.has(line) ? line : null;
+}
+
+export function splitHeadline(headline) {
+  const match = /^(.*\S)\s\(([^()]+)\)$/.exec(String(headline ?? ""));
+  return match ? { base: match[1], docLabel: match[2] } : { base: String(headline ?? ""), docLabel: null };
+}
+
+export function collapseByHeadline(records) {
+  const items = [];
+  const groups = new Map();
+  for (const record of records) {
+    const headline = record.reader_headline ?? record.matter_title ?? "";
+    const { base } = splitHeadline(headline);
+    const key = `${record.event_slug ?? ""}::${base}`;
+    const existing = groups.get(key);
+    if (existing) {
+      existing.records.push(record);
+      continue;
+    }
+    const group = { base, records: [record] };
+    groups.set(key, group);
+    items.push(group);
+  }
+  return items;
+}
+
 export function presentationFor(record) {
   const pulled = record.publication_status === "pulled";
   const corrected = record.publication_status === "corrected";
@@ -119,7 +153,7 @@ export function presentationFor(record) {
     matterTitle: pulled ? "Claim withdrawn" : readerHeadline,
     pageTitle: pulled ? "Claim withdrawn" : pageTitle,
     sourceByline: `${sourceLabel} · ${documentTitle}, ${eventDateLabel}`,
-    findingLine: pulled ? "" : normalizeAuthoredText(record.finding_line ?? (corrected ? "The initial wording was narrowed after the source record was checked." : "The original record supports the event as stated.")),
+    findingLine: pulled ? "" : normalizeAuthoredText(findingLineFor(record) ?? (corrected ? "The initial wording was narrowed after the source record was checked." : "")),
     eventTitle: record.event_title ?? record.source_family ?? "Recorded event",
     eventPath: record.event_slug ? `/events/${record.event_slug}/` : null,
     coverageRows,

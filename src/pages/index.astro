@@ -3,8 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ArchiveNav from "../components/ArchiveNav.astro";
 import { records } from "../lib/export.mjs";
 import { archiveGroups } from "../lib/date-archive.mjs";
+import RecordCardList from "../components/RecordCardList.astro";
 import { eventGroups, eventPath } from "../lib/events.mjs";
-import { formatDate, presentationFor, statusChip } from "../lib/presentation.mjs";
+import { formatDate } from "../lib/presentation.mjs";
 
 const archive = archiveGroups(records);
 const events = eventGroups(records).slice().reverse();
@@ -31,26 +32,14 @@ const latestRecords = latestEvent ? latestEvent.records : records;
         <h2 class="home-section">Latest{latestEvent.title ? `: ${latestEvent.title}` : ""}</h2>
         {latestEvent.date && <p class="source-byline">{formatDate(latestEvent.date)} · {latestRecords.length} {latestRecords.length === 1 ? "record" : "records"}</p>}
       </section>}
-      <ul class="matters-grid">
-        {latestRecords.map((record) => {
-          const presentation = presentationFor(record);
-          const chip = statusChip(presentation, record);
-          return <li><a href={`/claims/${record.reader_slug}/`}>{chip && <span class:list={["mt-status", chip.tone]}>{chip.label}</span>}<span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
-        })}
-      </ul>
+      <RecordCardList records={latestRecords} />
       {earlierEvents.length > 0 && <section aria-label="Earlier events">
         <h2 class="home-section">Earlier events</h2>
         <ul class="event-index">
           {earlierEvents.map((event) => <li><a href={eventPath(event.slug)}><span class="ei-title">{event.title}</span><span class="ei-meta">{event.date ? `${formatDate(event.date)} · ` : ""}{event.records.length} {event.records.length === 1 ? "record" : "records"}</span></a></li>)}
         </ul>
       </section>}
-      {ungrouped.length > 0 && <ul class="matters-grid">
-        {ungrouped.map((record) => {
-          const presentation = presentationFor(record);
-          const chip = statusChip(presentation, record);
-          return <li><a href={`/claims/${record.reader_slug}/`}>{chip && <span class:list={["mt-status", chip.tone]}>{chip.label}</span>}<span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
-        })}
-      </ul>}
+      {ungrouped.length > 0 && <RecordCardList records={ungrouped} />}
     </main>
   </div>
 </BaseLayout>

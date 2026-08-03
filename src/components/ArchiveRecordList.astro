@@ -1,11 +1,5 @@
 ---
-import { presentationFor, statusChip } from "../lib/presentation.mjs";
+import RecordCardList from "./RecordCardList.astro";
 const { records } = Astro.props;
 ---
-<ul class="matters-grid archive-records">
-  {records.map((record) => {
-    const presentation = presentationFor(record);
-    const chip = statusChip(presentation, record);
-    return <li><a href={`/claims/${record.reader_slug}/`}>{chip && <span class:list={["mt-status", chip.tone]}>{chip.label}</span>}<span class="mt-title">{presentation.matterTitle}</span><span class="mt-finding">{presentation.findingLine}</span><span class="mt-meta">{presentation.eventDate} &middot; {presentation.tierLabel}</span></a></li>;
-  })}
-</ul>
+<RecordCardList records={records} extraClass="archive-records" />

@@ -1,0 +1,35 @@
+---
+import { collapseByHeadline, presentationFor, splitHeadline, statusChip } from "../lib/presentation.mjs";
+import { eventPath } from "../lib/events.mjs";
+
+const { records, mode = "collapse", extraClass } = Astro.props;
+const groups = mode === "collapse" ? collapseByHeadline(records) : records.map((record) => ({ records: [record] }));
+---
+<ul class:list={["matters-grid", extraClass]}>
+  {groups.map((group) => {
+    const record = group.records[0];
+    const presentation = presentationFor(record);
+    const chip = statusChip(presentation, record);
+    const { base, docLabel } = splitHeadline(presentation.matterTitle);
+    const grouped = group.records.length > 1;
+    const href = grouped && record.event_slug ? eventPath(record.event_slug) : `/claims/${record.reader_slug}/`;
+    const title = mode === "documents" || grouped ? base : presentation.matterTitle;
+    const docNote = grouped
+      ? group.records
+          .map((item) => splitHeadline(presentationFor(item).matterTitle).docLabel)
+          .filter(Boolean)
+          .join(" and ")
+      : null;
+    return (
+      <li>
+        <a href={href}>
+          {chip && <span class:list={["mt-status", chip.tone]}>{chip.label}</span>}
+          {mode === "documents" && docLabel && <span class="mt-doc">{docLabel}</span>}
+          <span class="mt-title">{title}</span>
+          {grouped && <span class="mt-finding">{docNote ? `Recorded in the ${docNote}.` : `${group.records.length} source documents.`}</span>}
+          <span class="mt-meta">{presentation.eventDate} &middot; {grouped ? `${group.records.length} source documents` : presentation.tierLabel}</span>
+        </a>
+      </li>
+    );
+  })}
+</ul>
