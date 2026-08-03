@@ -16,6 +16,7 @@ const ungrouped = records.filter((record) => !record.event_slug);
 const latestRecords = latestEvent ? latestEvent.records : records;
 ---
 <BaseLayout title="The Catch">
+  <div slot="locator" class="locator"><span>RECORDS</span><span>PUBLIC RECORD</span></div>
   <div class="content">
     <main class="method-main">
       <h1>The Catch</h1>
