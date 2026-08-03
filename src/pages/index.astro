@@ -4,18 +4,17 @@ import ArchiveNav from "../components/ArchiveNav.astro";
 import { records } from "../lib/export.mjs";
 import { archiveGroups } from "../lib/date-archive.mjs";
 import RecordCardList from "../components/RecordCardList.astro";
-import { eventGroups, eventPath } from "../lib/events.mjs";
+import { eventPath, warrantedEvents } from "../lib/events.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 
 const archive = archiveGroups(records);
-const events = eventGroups(records).slice().reverse();
+const events = warrantedEvents(records).slice().reverse();
 const latestEvent = events[0];
 const earlierEvents = events.slice(1);
 const ungrouped = records.filter((record) => !record.event_slug);
 const latestRecords = latestEvent ? latestEvent.records : records;
 ---
 <BaseLayout title="The Catch">
-  <div slot="locator" class="locator"><span>RECORDS</span><span>PUBLIC RECORD</span></div>
   <div class="content">
     <main class="method-main">
       <h1>The Catch</h1>

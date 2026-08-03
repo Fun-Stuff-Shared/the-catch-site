@@ -31,3 +31,7 @@ export function eventGroups(records) {
 export function eventPath(slug) {
   return `/events/${slug}/`;
 }
+
+export function warrantedEvents(records) {
+  return eventGroups(records).filter((group) => group.records.length > 1 || group.coverage.length > 0);
+}

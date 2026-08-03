@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { records } from "../../lib/export.mjs";
-import { eventGroups, eventPath } from "../../lib/events.mjs";
+import { eventPath, warrantedEvents } from "../../lib/events.mjs";
 import { formatDate } from "../../lib/presentation.mjs";
 
-const groups = eventGroups(records);
+const groups = warrantedEvents(records);
 ---
 <BaseLayout title="Events | The Catch" current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>PUBLIC RECORD</span></div>
   <div class="content">
     <main class="method-main">
       <h1>Events</h1>

@@ -1,6 +1,13 @@
 import { payload } from "./export.mjs";
 import { statusLabelFor } from "./status-contract.mjs";
 import { coverageRowsFor } from "./coverage.mjs";
+import { warrantedEvents } from "./events.mjs";
+
+let warrantedSlugCache = null;
+function warrantedEventSlugs() {
+  if (!warrantedSlugCache) warrantedSlugCache = new Set(warrantedEvents(payload.claims ?? []).map((group) => group.slug));
+  return warrantedSlugCache;
+}
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -55,7 +62,9 @@ export function formatDay(year, month, day) {
 }
 
 function formatHistory(entries) {
-  return entries.map((entry) => ({ ...entry, date: formatTimestamp(entry.date) }));
+  return entries
+    .filter((entry) => entry.status !== "Current")
+    .map((entry) => ({ ...entry, date: formatTimestamp(entry.date) }));
 }
 
 function formatInstances(entries) {
@@ -155,7 +164,7 @@ export function presentationFor(record) {
     sourceByline: `${sourceLabel} · ${documentTitle}, ${eventDateLabel}`,
     findingLine: pulled ? "" : normalizeAuthoredText(findingLineFor(record) ?? (corrected ? "The initial wording was narrowed after the source record was checked." : "")),
     eventTitle: record.event_title ?? record.source_family ?? "Recorded event",
-    eventPath: record.event_slug ? `/events/${record.event_slug}/` : null,
+    eventPath: record.event_slug && warrantedEventSlugs().has(record.event_slug) ? `/events/${record.event_slug}/` : null,
     coverageRows,
     coverageOutlets: [...new Set(coverageRows.map((item) => item.outlet).filter(Boolean))],
     eventDate: formatDate(date),
@@ -176,7 +185,7 @@ export function presentationFor(record) {
       : record.checked_proposition_note ?? null,
     checkedAt: record.verified_at ? formatTimestamp(record.verified_at) : null,
     scope: record.scope ?? (pulled ? "" : "This record checks only the proposition described by the cited export."),
-    instances: pulled ? [] : formatInstances(record.instances ?? [{ speaker: "Recorded source", role: corrected ? "reporting source" : "original record", date }]),
+    instances: pulled ? [] : formatInstances(record.instances ?? []),
     evidence: pulled ? [] : record.evidence ?? [{
       kind: corrected ? "Statement" : "Document",
       sourceKind: corrected ? "Reporting" : "First-hand",

@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { records } from "../../../lib/export.mjs";
-import { eventGroups } from "../../../lib/events.mjs";
+import { warrantedEvents } from "../../../lib/events.mjs";
 import RecordCardList from "../../../components/RecordCardList.astro";
 import { formatDate } from "../../../lib/presentation.mjs";
 
 export function getStaticPaths() {
-  return eventGroups(records).map((group) => ({ params: { slug: group.slug }, props: { group } }));
+  return warrantedEvents(records).map((group) => ({ params: { slug: group.slug }, props: { group } }));
 }
 
 const { group } = Astro.props;
