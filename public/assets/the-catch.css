@@ -314,7 +314,8 @@
   .matters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     gap: 0; border: 1px solid var(--rule); border-right: none; margin: .8rem 0 0;
     list-style: none; padding: 0; }
-  .matters-grid a { display: block; padding: 1rem 1.2rem 1.15rem;
+  .matters-grid li { display: flex; }
+  .matters-grid a { flex: 1; display: block; padding: 1rem 1.2rem 1.15rem;
     border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
     text-decoration: none; color: var(--ink); min-width: 0; }
   .matters-grid a:hover .mt-title { color: var(--blue); text-decoration: underline; }
