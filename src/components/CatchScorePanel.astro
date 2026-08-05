@@ -1,0 +1,63 @@
+---
+import stageData from "../data/catch-score-v2-stage.json";
+
+const { record, presentation } = Astro.props;
+const staged = stageData.signed_claims.find((claim) => claim.claim_id === record.claim_id);
+const index = stageData.index_legs.find((claim) => claim.claim_id === record.claim_id);
+const labels = {
+  "Source record": "Source record check",
+  "Quote fidelity": "Quote fidelity",
+  "Source provenance": "Source provenance",
+  Review: "Editorial review",
+  "Correction watch": "Correction watch",
+  "Correction history": "Correction history",
+};
+const states = {
+  "Original record": "Source identified",
+  "Verbatim quote located in source": "Located in source",
+  "Archived and hash-pinned at intake": "Record retained",
+  "Verified against primary source": "Verified",
+  "not yet checked": "Awaiting review",
+  "Active, 24-hour SLA": "Active",
+  None: "No entries",
+};
+const legs = (index?.legs ?? []).filter((leg) => leg.name !== "Primary verification").map((leg) => ({
+  name: labels[leg.name] ?? leg.name,
+  state: states[leg.state] ?? leg.state,
+}));
+---
+
+{staged && index && <section class="catch-score" aria-labelledby="catch-score-title">
+  <div class="catch-score__header">
+    <div>
+      <p class="catch-score__kicker">Catch score</p>
+      <h2 id="catch-score-title">How this record was checked</h2>
+    </div>
+    <p class="catch-score__summary">{presentation.verificationStatus}</p>
+  </div>
+  <details class="catch-score__details">
+    <summary>See the checks</summary>
+    <div class="catch-score__body">
+      <ol class="catch-score__list">
+        {legs.map((leg) => <li><span>{leg.name}</span><b>{leg.state}</b></li>)}
+      </ol>
+    </div>
+  </details>
+</section>}
+
+<style>
+  .catch-score { border-top: 2px solid var(--rule-strong); border-bottom: 1px solid var(--rule); margin: 0 0 1.7rem; }
+  .catch-score__header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; padding: .9rem 0 .65rem; }
+  .catch-score__kicker, .catch-score__label { font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin: 0 0 .25rem; }
+  .catch-score h2 { font-family: var(--sans); font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin: 0; }
+  .catch-score__summary { font-size: .78rem; color: var(--slate); margin: 0; white-space: nowrap; }
+  .catch-score__summary { color: var(--blue); font-family: var(--serif); font-size: 1.05rem; }
+  .catch-score__details { border-top: 1px solid var(--rule); }
+  .catch-score__details > summary { color: var(--blue); cursor: pointer; font-size: .88rem; padding: .75rem 0; }
+  .catch-score__details > summary::marker { color: var(--blue); }
+  .catch-score__body { padding: .1rem 0 1rem; }
+  .catch-score__list { list-style: none; margin: 0 0 1rem; padding: 0; border-top: 1px solid var(--rule); }
+  .catch-score__list li { display: flex; justify-content: space-between; gap: 1rem; padding: .55rem 0; border-bottom: 1px solid var(--rule); font-size: .84rem; }
+  .catch-score__list b { color: var(--blue); font-weight: 600; white-space: nowrap; }
+  @media (max-width: 760px) { .catch-score__header { display: block; } .catch-score__summary { margin-top: .5rem; } }
+</style>

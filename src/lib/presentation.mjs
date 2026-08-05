@@ -169,6 +169,7 @@ export function presentationFor(record) {
     tierLabel: record.tier_label ?? (corrected ? "Reporting" : "Original record"),
     sourceUrl: record.source_url ?? null,
     sourceLabel,
+    documentTitle,
     quote: record.quote ?? claimText,
     quoteLocation: record.quote_location ?? record.evidence_refs?.join(", ") ?? "Cited source location",
     firstRetrievedAt: record.first_retrieved_at ? formatDate(record.first_retrieved_at) : null,

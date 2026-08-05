@@ -1,11 +1,11 @@
 ---
-const { viewer, normalizationNote } = Astro.props;
+const { viewer, normalizationNote, showLink = true } = Astro.props;
 ---
 {viewer?.status === "available" && (
   <section class="source-viewer" aria-label="Source excerpt">
     <div class="source-viewer-head">
       <h3>Source excerpt</h3>
-      {viewer.source_url && <a href={viewer.source_url}>Open source document</a>}
+      {showLink && viewer.source_url && <a href={viewer.source_url}>Open source document</a>}
     </div>
     <p class="source-excerpt"><span>{viewer.excerpt.before}</span><mark>{viewer.excerpt.quote}</mark><span>{viewer.excerpt.after}</span></p>
     {normalizationNote && <p class="source-viewer-note">{normalizationNote}</p>}

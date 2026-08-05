@@ -1,10 +1,10 @@
 ---
 import SourceExcerpt from "./SourceExcerpt.astro";
-const { evidence, viewer, normalizationNote } = Astro.props;
+const { evidence, viewer, normalizationNote, showSummary = true, showViewerLink = true } = Astro.props;
 ---
 <section class="ev-stack">
-  <h2>Evidence and statements</h2>
-  {evidence.map((item) => (
+  {showSummary && <h2>Evidence and statements</h2>}
+  {showSummary && evidence.map((item) => (
     <div class:list={["ev-item", item.kind === "Document" ? "k-doc" : "k-stmt"]}>
       <div class="ev-tags">
         <span class:list={["tag", item.kind === "Document" ? "t-doc" : "t-stmt"]}>{item.kind}</span>
@@ -17,5 +17,5 @@ const { evidence, viewer, normalizationNote } = Astro.props;
       <p class="ev-src">{item.source}{item.speaker && item.speaker !== item.source && <> &middot; Said by <b>{item.speaker}</b></>}{item.locationLabel && <> &middot; {item.locationLabel}</>}{item.venue && <> &middot; Venue: {item.venue}</>}</p>
     </div>
   ))}
-  <SourceExcerpt viewer={viewer} normalizationNote={normalizationNote} />
+  <SourceExcerpt viewer={viewer} normalizationNote={normalizationNote} showLink={showViewerLink} />
 </section>

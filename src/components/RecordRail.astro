@@ -1,13 +1,11 @@
 ---
 const { presentation } = Astro.props;
-const checkedAgainstText = presentation.checkedAgainst.join(", ");
-const checkedAgainstLong = checkedAgainstText.length > 24;
 ---
 <aside class="rail">
   <section>
     <h2>Provenance</h2>
     <dl class="kv">
-      <div><dt>Source</dt><dd>{presentation.sourceUrl ? <a href={presentation.sourceUrl}>{presentation.sourceLabel}</a> : <span>{presentation.sourceLabel}</span>}{presentation.provenance.source !== presentation.sourceLabel && !/^https?:\/\//.test(presentation.provenance.source) && <span class="doc-title">{presentation.provenance.source}</span>}</dd></div>
+      <div><dt>Source</dt><dd>{presentation.sourceLabel}<span class="doc-title">{presentation.documentTitle}</span>{presentation.sourceUrl && <a href={presentation.sourceUrl}>Open source document</a>}</dd></div>
       {presentation.archiveCapture && <div><dt>Archive capture</dt><dd class="nw">Archive capture held in record custody, dated {presentation.archiveCapture.date}</dd></div>}
       <div><dt>Record tier</dt><dd><span class="tier-chip">{presentation.tierLabel}</span></dd></div>
       <div><dt>Event date</dt><dd class="nw">{presentation.eventDate}</dd></div>
@@ -24,7 +22,6 @@ const checkedAgainstLong = checkedAgainstText.length > 24;
     <h2>Verification</h2>
     <dl class="kv">
       {presentation.firstRetrievedAt && <div><dt>First retrieved</dt><dd class="nw">{presentation.firstRetrievedAt}</dd></div>}
-      <div class:list={checkedAgainstLong ? ["kv-row", "stacked"] : ["kv-row"]}><dt>Checked against</dt><dd>{presentation.checkedAgainst.map((source) => <div>{source}</div>)}</dd></div>
     </dl>
   </section>
 </aside>
