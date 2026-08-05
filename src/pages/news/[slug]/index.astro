@@ -4,7 +4,6 @@ import NewsArticleHeader from "../../../components/NewsArticleHeader.astro";
 import NewsClaimCard from "../../../components/NewsClaimCard.astro";
 import newsData from "../../../data/news-data.json";
 
-const humanCorroboration = (label) => label === "cross_publisher" ? "Reported by multiple outlets" : label === "single_source" ? "Single source" : "Corroboration unavailable";
 export function getStaticPaths() {
   const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").toLowerCase();
   const grouped = new Map();
@@ -34,11 +33,11 @@ const corrections = newsData.corrections.filter((correction) => core.some((row) 
       <NewsArticleHeader article={rows} articleId={articleId} count={rows.length} />
       <section class="news-claims" aria-label="Core claims">
         <h2 class="news-section-title">Core claims</h2>
-        {core.length === 0 ? <p class="m-note">No core claims are present in this article record.</p> : core.map((claim) => <NewsClaimCard claim={claim} corroborationLabel={humanCorroboration(claim.corroboration_label)} />)}
+        {core.length === 0 ? <p class="m-note">No core claims are present in this article record.</p> : core.map((claim) => <NewsClaimCard claim={claim} />)}
       </section>
       <section class="news-context" aria-label="Attached context">
         <h2 class="news-section-title">Attached context</h2>
-        {contextRows.length === 0 ? <p class="m-note">No attached context entries are present.</p> : contextRows.map((claim) => <NewsClaimCard claim={claim} context={true} corroborationLabel={humanCorroboration(claim.corroboration_label)} />)}
+        {contextRows.length === 0 ? <p class="m-note">No attached context entries are present.</p> : contextRows.map((claim) => <NewsClaimCard claim={claim} context={true} />)}
       </section>
       <section class="news-corrections">
         <h2 class="news-section-title">Corrections</h2>

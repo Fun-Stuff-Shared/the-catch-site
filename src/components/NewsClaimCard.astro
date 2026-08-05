@@ -1,13 +1,12 @@
 ---
-const { claim, context = false, corroborationLabel } = Astro.props;
+const { claim, context = false } = Astro.props;
 const sourceLabel = claim.publisher || "Publisher unavailable";
 const claimKind = context ? "Context" : "Core claim";
-const sourceClass = claim.corroboration_label === "cross_publisher" ? "t-doc" : "t-rep";
 ---
 <article class:list={["ev-item", context ? "k-rep" : "k-doc"]}>
   <div class="ev-tags">
     <span class:list={["tag", context ? "t-rep" : "t-doc"]}>{claimKind}</span>
-    <span class:list={["tag", sourceClass]}>{corroborationLabel}</span>
+    <span class="tag t-doc">Quote-verified</span>
     <span class="tag t-stmt">{sourceLabel}</span>
   </div>
   <h2 class="news-claim-title">{claim.proposition}</h2>
