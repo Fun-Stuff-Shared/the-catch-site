@@ -1,0 +1,19 @@
+---
+const { article, articleId, count } = Astro.props;
+const publishers = [...new Set(article.map((row) => row.publisher).filter(Boolean))];
+const sourceUrl = article.find((row) => row.source_url)?.source_url;
+const headline = article.find((row) => row.headline)?.headline;
+const date = article.find((row) => row.date || row.publication_date)?.date ?? article.find((row) => row.publication_date)?.publication_date;
+---
+<header class="matter-header news-article-header">
+  <p class="matter-kicker">News article record</p>
+  <h1>{headline ?? "Headline unavailable in eligibility export"}</h1>
+  {!headline && <p class="lede">The eligibility export does not carry an article headline for this record.</p>}
+  <p class="source-byline">
+    {publishers.length > 0 ? publishers.join(", ") : "Publisher unavailable"}
+    &middot; {date ?? "Date unavailable"}
+    &middot; {count} {count === 1 ? "eligible claim" : "eligible claims"}
+    {sourceUrl && <> &middot; <a href={sourceUrl} rel="noreferrer">Open source article</a></>}
+  </p>
+  <p class="news-article-id">Article record: {articleId}</p>
+</header>

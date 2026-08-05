@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NewsArticleHeader from "../../components/NewsArticleHeader.astro";
+import newsData from "../../data/news-data.json";
+
+const rows = newsData.rows;
+const articleMap = new Map();
+for (const row of rows) {
+  if (!articleMap.has(row.article_id)) articleMap.set(row.article_id, []);
+  articleMap.get(row.article_id).push(row);
+}
+const articles = [...articleMap.entries()]
+  .map(([articleId, articleRows]) => ({ articleId, rows: articleRows }))
+  .sort((a, b) => a.articleId.localeCompare(b.articleId));
+const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").toLowerCase();
+const humanCorroboration = (label) => label === "cross_publisher" ? "Reported by multiple outlets" : label === "single_source" ? "Single source" : "Corroboration unavailable";
+const corrections = newsData.corrections.length;
+const coreCount = rows.filter((row) => row.claim_class === "core").length;
+const contextCount = rows.filter((row) => row.claim_class === "context").length;
+const multipleCount = rows.filter((row) => row.corroboration_label === "cross_publisher").length;
+const singleCount = rows.filter((row) => row.corroboration_label === "single_source").length;
+---
+<BaseLayout title="News · The Catch" current="News">
+  <div class="content">
+    <main class="method-main">
+      <p class="matter-kicker">News &middot; eligibility export</p>
+      <h1>News records</h1>
+      <p class="lede">Checked claims grouped by the article they came from. Each article opens to its claims, source quotes, and attached context.</p>
+      <section class="news-summary" aria-label="News coverage summary">
+        <h2>Current coverage</h2>
+        <div class="news-counts">
+          <span><b>{articles.length}</b> articles</span>
+          <span><b>{rows.length}</b> eligible claims</span>
+          <span><b>{coreCount}</b> core</span>
+          <span><b>{contextCount}</b> context</span>
+          <span><b>{multipleCount}</b> reported by multiple outlets</span>
+          <span><b>{singleCount}</b> single source</span>
+          <span><b>{corrections}</b> corrections</span>
+        </div>
+      </section>
+      {articles.length === 0 ? <p class="lede">No eligible news articles are currently available.</p> : <section class="news-article-index">
+        <h2>Articles</h2>
+        <ul class="matters-grid">
+          {articles.map(({ articleId, rows: articleRows }) => {
+            const first = articleRows[0];
+            const publishers = [...new Set(articleRows.map((row) => row.publisher).filter(Boolean))];
+            const headline = first.headline ?? "Headline unavailable in eligibility export";
+            return <li><a href={`/news/${slugFor(articleId)}/`}>
+              <span class="mt-status st-blue">{articleRows.length} {articleRows.length === 1 ? "eligible claim" : "eligible claims"}</span>
+              <span class="mt-title">{headline}</span>
+              <span class="mt-finding">{publishers.length > 0 ? publishers.join(", ") : "Publisher unavailable"} &middot; {first.date ?? "Date unavailable"}</span>
+              <span class="mt-meta">{articleRows.filter((row) => row.claim_class === "core").length} core &middot; {articleRows.filter((row) => row.claim_class === "context").length} context</span>
+            </a></li>;
+          })}
+        </ul>
+      </section>}
+      <section class="news-corrections">
+        <h2>Corrections</h2>
+        {corrections === 0 ? <p class="m-note">No corrections recorded.</p> : <p class="m-note">{corrections} correction {corrections === 1 ? "is" : "are"} recorded in the visible ledger.</p>}
+      </section>
+      <p class="m-note">This page is generated from the pinned eligibility export and renders only rows marked eligible.</p>
+    </main>
+  </div>
+</BaseLayout>
