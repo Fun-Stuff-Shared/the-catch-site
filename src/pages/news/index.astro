@@ -26,10 +26,15 @@ const contextCount = rows.filter((row) => row.claim_class === "context").length;
         <h2>Current coverage</h2>
         <div class="news-counts">
           <span><b>{articles.length}</b> articles</span>
+          <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{rows.length}</b> eligible claims</span>
+          <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{coreCount}</b> core</span>
+          <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{contextCount}</b> context</span>
+          <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{rows.length}</b> quote verified</span>
+          <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{corrections}</b> corrections</span>
         </div>
       </section>
@@ -39,11 +44,16 @@ const contextCount = rows.filter((row) => row.claim_class === "context").length;
           {articles.map(({ articleId, rows: articleRows }) => {
             const first = articleRows[0];
             const publishers = [...new Set(articleRows.map((row) => row.publisher).filter(Boolean))];
-            const headline = first.headline ?? "Headline unavailable in eligibility export";
+            const articleTitle = articleRows.find((row) => row.article_title)?.article_title
+              ?? articleRows.find((row) => row.claim_class === "core")?.proposition
+              ?? articleRows.find((row) => row.proposition)?.proposition
+              ?? "News article record";
+            const publishedAt = articleRows.find((row) => row.published_at)?.published_at;
+            const articleMeta = [publishers.join(", "), publishedAt].filter(Boolean).join(" · ");
             return <li><a href={`/news/${slugFor(articleId)}/`}>
               <span class="mt-status st-blue">{articleRows.length} {articleRows.length === 1 ? "eligible claim" : "eligible claims"}</span>
-              <span class="mt-title">{headline}</span>
-              <span class="mt-finding">{publishers.length > 0 ? publishers.join(", ") : "Publisher unavailable"} &middot; {first.date ?? "Date unavailable"}</span>
+              <span class="mt-title">{articleTitle}</span>
+              {articleMeta && <span class="mt-finding">{articleMeta}</span>}
               <span class="mt-meta">{articleRows.filter((row) => row.claim_class === "core").length} core &middot; {articleRows.filter((row) => row.claim_class === "context").length} context</span>
             </a></li>;
           })}
