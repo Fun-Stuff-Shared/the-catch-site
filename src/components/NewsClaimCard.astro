@@ -1,12 +1,14 @@
 ---
 const { claim, context = false } = Astro.props;
 const sourceLabel = claim.publisher;
+const paywalled = claim.source_tier === "paywalled";
 const claimKind = context ? "Context" : "Core claim";
 ---
 <article class:list={["ev-item", context ? "k-rep" : "k-doc"]}>
   <div class="ev-tags">
     <span class:list={["tag", context ? "t-rep" : "t-doc"]}>{claimKind}</span>
     <span class="tag t-doc">Quote-verified</span>
+    {paywalled && <span class="tag t-stmt">Paywalled source</span>}
     {sourceLabel && <span class="tag t-stmt">{sourceLabel}</span>}
   </div>
   <h2 class="news-claim-title">{claim.proposition}</h2>
@@ -14,6 +16,6 @@ const claimKind = context ? "Context" : "Core claim";
   <p class="ev-src">
     {sourceLabel}
     {claim.context_type && <>{sourceLabel && " · "}{claim.context_type.replaceAll("_", " ")}</>}
-    {claim.source_url && <> &middot; <a href={claim.source_url} rel="noreferrer">Open source</a></>}
+    {claim.source_url && <> &middot; <a href={claim.source_url} rel="noreferrer">{paywalled ? "Open paywalled source" : "Open source"}</a></>}
   </p>
 </article>
