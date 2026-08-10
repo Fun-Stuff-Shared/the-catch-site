@@ -15,6 +15,7 @@ const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").
 const corrections = newsData.corrections.length;
 const coreCount = rows.filter((row) => row.claim_class === "core").length;
 const contextCount = rows.filter((row) => row.claim_class === "context").length;
+const matchedToCitedPassageCount = rows.filter((row) => typeof row.quote === "string" && row.quote.trim()).length;
 ---
 <BaseLayout title="News · The Catch" current="News">
   <div class="content">
@@ -33,7 +34,7 @@ const contextCount = rows.filter((row) => row.claim_class === "context").length;
           <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{contextCount}</b> context</span>
           <span class="news-count-separator" aria-hidden="true">&middot;</span>
-          <span><b>{rows.length}</b> quote verified</span>
+          <span><b>{matchedToCitedPassageCount}</b> matched to cited passage</span>
           <span class="news-count-separator" aria-hidden="true">&middot;</span>
           <span><b>{corrections}</b> corrections</span>
         </div>

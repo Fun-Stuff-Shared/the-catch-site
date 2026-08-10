@@ -20,13 +20,13 @@ const latestRecords = latestEvent ? latestEvent.records : records;
   <div class="content">
     <main class="method-main">
       <h1>The Catch</h1>
-      <p class="lede">Verified public record surface.</p>
+      <p class="lede">Sourced public record surface.</p>
       {records.length === 0 && (
         <p class="lede">
-          Verified claims from recent wire coverage are live on
-          the&nbsp;<a href="/news/">News</a> page, each quote-verified against its source.
+          Claims from recent wire coverage are live on
+          the&nbsp;<a href="/news/">News</a> page, each matched to its cited source passage.
           The&nbsp;<a href="/methodology">methodology</a> is published; every record carries its
-          source quote, verification status, and full correction history.
+          source quote, evidence label, and full correction history.
         </p>
       )}
       <ArchiveNav archive={archive} />

@@ -1,15 +1,15 @@
 ---
+import { labelsForNewsClaim } from "../lib/stage2-public-labels.mjs";
 const { claim, context = false } = Astro.props;
 const sourceLabel = claim.publisher;
 const paywalled = claim.source_tier === "paywalled";
 const corroboratingOutlets = claim.corroboration_outlets ?? [];
 const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").toLowerCase();
-const claimKind = context ? "Context" : "Core claim";
+const publicLabels = labelsForNewsClaim(claim);
 ---
 <article class:list={["ev-item", context ? "k-rep" : "k-doc"]}>
   <div class="ev-tags">
-    <span class:list={["tag", context ? "t-rep" : "t-doc"]}>{claimKind}</span>
-    <span class="tag t-doc">Quote-verified</span>
+    {publicLabels.map(({ axis, label }) => <span class="tag t-doc stage2-public-label" data-public-axis={axis}>{label}</span>)}
     {paywalled && <span class="tag t-stmt">Paywalled source</span>}
     {sourceLabel && <span class="tag t-stmt">{sourceLabel}</span>}
   </div>
