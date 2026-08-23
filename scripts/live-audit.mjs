@@ -14,7 +14,7 @@ const POOL = 12;
 async function probe(route) {
   const url = BASE + route;
   try {
-    const res = await fetch(url, { redirect: "follow" });
+    const res = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(15000) });
     if (res.status !== 200) bad.push(`${res.status} ${route}`);
     else if (new URL(res.url).host !== new URL(BASE).host) bad.push(`OFFHOST ${route} -> ${res.url}`);
   } catch (e) {
