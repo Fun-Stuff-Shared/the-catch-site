@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="FOMC minutes, July 29, 2026 | The Catch" current="Records">
+  <div slot="locator" class="locator"><span>RECORD</span><span>July 28&ndash;29, 2026</span></div>
+  <div class="content">
+    <main class="record-page">
+      <p class="record-kicker"><a href="/events/fed-rate/">&larr; The federal funds rate</a></p>
+      <h1>The minutes: the hike case was wider than the three votes</h1>
+      <p class="record-sub">Minutes of the July 28&ndash;29, 2026 FOMC meeting, released August 19. They record who argued what behind the 9&ndash;3 hold.</p>
+
+      <div class="excerpt">
+        <p class="excerpt-label">From the minutes</p>
+        <blockquote>
+          <p>&ldquo;In their consideration of monetary policy at this meeting, most participants supported
+          maintaining the current target range for the federal funds rate&hellip; Several participants favored
+          an increase of 25 basis points in the target range at this meeting. These participants remarked that
+          price pressures appeared broad based and judged that the Committee should adopt a more restrictive
+          policy stance to meet its commitment to achieving its price-stability and maximum-employment goals
+          on a sustained basis.&rdquo;</p>
+          <p>&ldquo;Many participants assessed that policy tightening would likely be necessary if inflation
+          did not decline&hellip; A few of the participants who favored raising the target range for the
+          federal funds rate at this meeting judged that doing so would likely help forestall the need for a
+          steeper and potentially more costly sequence of tightening moves at a later stage.&rdquo;</p>
+          <p>&ldquo;Voting against this action: Beth M. Hammack, Neel Kashkari, and Lorie K. Logan, who
+          preferred to raise the target range for the federal funds rate by 1/4 percentage point at this
+          meeting.&rdquo;</p>
+        </blockquote>
+        <p class="excerpt-source">Full text: <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm" rel="noreferrer">federalreserve.gov</a></p>
+      </div>
+
+      <p class="record-note">
+        What this record is: the Committee's own account of its discussion, released three weeks after the
+        decision. Note the vocabulary: &ldquo;several&rdquo; participants wanted a hike, but only three of
+        the twelve voters formally dissented; participants include regional presidents who do not vote this
+        year. For the decision itself and the coverage checked against it, read
+        the&nbsp;<a href="/events/fed-rate/july-2026/">event page</a> and the
+        companion&nbsp;<a href="/claims/fomc-statement-july-29-2026-three-dissents-for-hike/">statement record</a>.
+      </p>
+
+      <details class="how-checked">
+        <summary>How we checked this</summary>
+        <p>The quotes above were captured directly from the Federal Reserve's website and compared
+        word-for-word against the published minutes. The source page was saved at capture time so the record
+        stays verifiable even if the page changes. Details of our process are on the <a href="/methodology">methodology page</a>.</p>
+      </details>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .record-page { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .record-kicker { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; margin: 1.25rem 0 0.5rem; }
+  .record-kicker a { color: #5b6470; text-decoration: none; }
+  .record-kicker a:hover { text-decoration: underline; }
+  .record-page h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.15; margin: 0 0 0.5rem; text-wrap: balance; }
+  .record-sub { font-family: "Public Sans", system-ui, sans-serif; color: #5b6470; font-size: 0.95rem; margin: 0 0 1.5rem; }
+  .excerpt { border: 1px solid #e3e0da; border-left: 3px solid #2e7d5b; background: #fbfaf8; padding: 1rem 1.25rem; }
+  .excerpt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
+  .excerpt blockquote { margin: 0; }
+  .excerpt blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.6; margin: 0 0 0.8rem; }
+  .excerpt blockquote p:last-child { margin-bottom: 0; }
+  .excerpt-source { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin: 0.75rem 0 0; }
+  .record-note { font-family: "Newsreader", Georgia, serif; font-size: 1.02rem; line-height: 1.6; margin: 1.5rem 0; }
+  .how-checked { margin-top: 1.5rem; }
+  .how-checked summary { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #5b6470; cursor: pointer; }
+  .how-checked p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.88rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.8rem 1rem; border-radius: 3px; margin: 0.5rem 0 0; }
+</style>

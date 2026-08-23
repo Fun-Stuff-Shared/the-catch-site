@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { event, ratePath } from "../../../data/fomc20260617.mjs";
+import { event } from "../../../data/fomc20260729.mjs";
+import { ratePath } from "../../../data/fomc20260617.mjs";
 
-// Build the step-chart geometry from the rate path.
+// Step-chart geometry from the shared rate path, extended to this meeting.
 const W = 720, H = 200, PAD = 8;
-const t0 = Date.parse(ratePath.start.date), t1 = Date.parse(ratePath.end.date);
+const t0 = Date.parse(ratePath.start.date), t1 = Date.parse("2026-07-29");
 const vMin = 3.4, vMax = 5.7;
 const x = (d) => PAD + ((Date.parse(d) - t0) / (t1 - t0)) * (W - 2 * PAD);
 const y = (v) => H - PAD - ((v - vMin) / (vMax - vMin)) * (H - 2 * PAD);
@@ -15,15 +16,15 @@ for (const c of ratePath.changes) {
   pts.push(`${x(c.date)},${y(c.value)}`);
   prev = c.value;
 }
-pts.push(`${x(ratePath.end.date)},${y(prev)}`);
+pts.push(`${x("2026-07-29")},${y(prev)}`);
 const path = "M" + pts.join(" L");
-const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
+const endX = x("2026-07-29"), endY = y(prev);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; June 2026</span></div>
+  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; July 2026</span></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; June 2026 decision &middot; updated August 23, 2026</p>
+      <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; July 2026 decision &middot; updated August 23, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
@@ -39,9 +40,9 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
       <aside class="three-things">
         <p class="tt-label">Three things to know</p>
         <ol>
-          <li>The Fed held at 3.50&ndash;3.75 percent, unanimously, in Kevin Warsh's first meeting as chair.</li>
-          <li>The projections flipped from a cut to a hike: the 2026 median rose to 3.8, with nine of eighteen dots above today's rate.</li>
-          <li>Six weeks later the split went public: three officials dissented for a hike on July 29.</li>
+          <li>The Fed held at 3.50&ndash;3.75 percent for the fifth straight meeting, but the vote split 9&ndash;3.</li>
+          <li>All three dissenters, Beth Hammack, Neel Kashkari, and Lorie Logan, wanted a quarter-point <em>hike</em>: the first three-dissent split in one direction since September 2016.</li>
+          <li>Before the meeting, markets put roughly a one-in-three chance on a hike, the most doubt around a Fed decision in years. The hold won; the argument did not end.</li>
         </ol>
       </aside>
 
@@ -50,7 +51,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <ol>
           <li><a href="#what-happened">What happened</a></li>
           <li><a href="#where-this-sits">Where this sits</a></li>
-          <li><a href="#the-projections">The projections told a different story</a></li>
+          <li><a href="#the-statement">The statement barely moved</a></li>
           <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
           <li><a href="#claim-check">Claim checked against the record</a></li>
           <li><a href="#who-feels-it">Who feels it</a></li>
@@ -64,24 +65,27 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <p class="sec-kicker">The decision</p>
         <h2>What happened</h2>
         <p class="railed rail-record">
-          The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on June 17, by a&nbsp;<strong>12&ndash;0</strong> vote. It was
-          Kevin Warsh's first meeting as chair. <span class="chip chip-record">record</span>
+          The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on July 29, by a&nbsp;<strong>9&ndash;3</strong> vote.
+          Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) voted no; each
+          &ldquo;preferred to raise the target range for the federal funds rate by 1/4 percentage point at
+          this meeting.&rdquo; <span class="chip chip-record">record</span>
         </p>
         <details class="receipt"><summary>the record</summary>
-          <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 12&ndash;0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.&rdquo;
-          Voting: Warsh, Williams, Barr, Bowman, Cook, Hammack, Jefferson, Kashkari, Logan, Paulson, Powell, Waller. Voting against: none (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">minutes</a></p>
+          <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 9&ndash;3 vote&hellip; Voting against the monetary policy action were Beth M. Hammack, Neel Kashkari, and Lorie K. Logan, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.&rdquo;
+          Voting for: Warsh, Williams, Barr, Bowman, Cook, Jefferson, Paulson, Powell, Waller (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm" rel="noreferrer">minutes</a></p>
         </details>
         <p class="railed rail-record">
-          The statement itself was the news as much as the decision: dramatically shorter than its predecessors,
-          stripped of the language markets had read as a bias toward further cuts, and ending on a single
-          declarative line: <em>&ldquo;The Committee will deliver price stability.&rdquo;</em>
-          <span class="chip chip-record">their words</span>
+          The minutes, released August 19, show the hike camp was wider than the vote: <em>&ldquo;several
+          participants favored an increase of 25 basis points in the target range at this meeting,&rdquo;</em>
+          judging that <em>&ldquo;price pressures appeared broad based.&rdquo;</em> A few of them argued a hike
+          now <em>&ldquo;would likely help forestall the need for a steeper and potentially more costly sequence
+          of tightening moves at a later stage.&rdquo;</em> <span class="chip chip-record">their words</span>
         </p>
         <p class="railed rail-record">
-          The Committee's stated read of the economy: activity expanding at a solid pace despite uncertainty
-          from the conflict in the Middle East; productivity and capital investment strong; job gains keeping
-          pace with the workforce; inflation still elevated relative to the 2&nbsp;percent goal, partly from
-          supply shocks including energy. <span class="chip chip-record">their words</span>
+          Chair Kevin Warsh, who has pushed the committee toward open disagreement over stage-managed
+          consensus, told reporters he welcomed the split. His inflation line was categorical:&nbsp;
+          <em>&ldquo;There is no soft implicit target, not on this committee's watch.&rdquo;</em>
+          <span class="chip chip-record">their words</span>
         </p>
       </section>
 
@@ -89,16 +93,17 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <p class="sec-kicker">History</p>
         <h2>Where this sits</h2>
         <p class="railed rail-computed">
-          The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>188 days</strong> as of this meeting, the end of a run of six cuts from the 5.25&ndash;5.50
-          cycle peak, with no upward move in the span. <span class="chip chip-computed">computed</span>
+          The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>230 days</strong> as of this meeting, and this was the&nbsp;<strong>fifth consecutive
+          meeting</strong> (January, March, April, June, July) to leave it there.&nbsp;
+          <span class="chip chip-computed">computed</span>
         </p>
         <figure class="rate-chart">
-          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to June 2026: six steps down from 5.50 to 3.75, then flat">
+          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to July 2026: six steps down from 5.50 to 3.75, then flat">
             <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
             <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
             <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
             <text x={x("2024-06-20")} y={y(4.0)} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
-            <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; held 188 days</text>
+            <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; held 230 days</text>
             <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
             <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
             <text x={x("2026-01-05")} y={H + 16} class="chart-axis">2026</text>
@@ -106,77 +111,75 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
           <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
         </figure>
         <p class="railed rail-computed">
-          Against the full 1982&ndash;2026 daily history of the Fed's target, all 15,970 observations,
-          the 3.75 upper bound sits at the&nbsp;<strong>48th percentile</strong>: almost exactly the middle of four
-          decades of policy, just under the 3.82 mean and the 4.00 median. Not a high-rate regime by historical
-          standards, and not the near-zero world of 2009&ndash;2015 either. <span class="chip chip-computed">computed</span>
+          Against the full 1982&ndash;2026 daily history of the Fed's target, 16,036 observations, today's
+          range sits at the&nbsp;<strong>47th percentile</strong>: the middle of four decades of policy.
+          What is rare is not the level but the argument about it. <span class="chip chip-computed">computed</span>
         </p>
         <details class="receipt"><summary>computation</summary>
-          <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-06-17:
-          15,970 observations; 3.75 percentile 48.5 (midpoint method); mean 3.82; median 4.00. Days held:
-          2025-12-11 to 2026-06-17 = 188. The full daily series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+          <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-08-22:
+          16,036 observations; 47 percent sit below the current 3.625 midpoint. Days held: 2025-12-11 to
+          2026-07-29 = 230. Meeting count from the Federal Reserve's own 2026 calendar. The full daily series
+          is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
         </details>
-        <p class="railed rail-computed">
-          The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
-          cycles treated as ordinary. <span class="chip chip-computed">computed</span>
+        <p class="railed rail-record">
+          Three dissents at one meeting, all pulling the same way, last happened in&nbsp;<strong>September
+          2016</strong>, when Esther George, Loretta Mester, and Eric Rosengren each preferred a hike the
+          committee did not deliver. That episode is checked against the record below.&nbsp;
+          <span class="chip chip-record">record</span>
         </p>
       </section>
 
-      <section id="the-projections">
+      <section id="the-statement">
         <p class="sec-kicker">The real signal</p>
-        <h2>The projections told a different story</h2>
-        <p class="railed rail-record">
-          The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
-          with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>3.8&nbsp;percent, up from 3.4 in March</strong>: from a level that implied a rate cut
-          this year to one implying a hike. The central tendency moved to 3.6&ndash;4.1, the full range to
-          3.4&ndash;4.4. <span class="chip chip-record">record</span>
+        <h2>The statement barely moved</h2>
+        <p class="railed rail-computed">
+          We compared the July statement to June's, word by word. Outside the vote line, exactly one verb
+          changed: June's &ldquo;The Committee <em>reaffirmed</em> its policy of maintaining ample
+          reserves&rdquo; became &ldquo;The Committee <em>is continuing</em> its policy.&rdquo; Every other
+          sentence, the solid-pace economy, the Middle East conflict, the elevated-inflation line, and the
+          closing &ldquo;The Committee will deliver price stability,&rdquo; carried over unchanged. The only
+          real addition was the dissent paragraph. <span class="chip chip-computed">computed</span>
         </p>
-        <details class="receipt"><summary>the SEP table</summary>
-          <p>June 17, 2026 SEP: federal funds rate medians 3.8 (2026), 3.6 (2027), 3.4 (2028), 3.1 (longer run);
-          March medians 3.4 / 3.1 / 3.1 / 3.1. PCE inflation median for 2026 raised to 3.6 from 2.7; core PCE
-          to 3.3 from 2.7. <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a></p>
+        <details class="receipt"><summary>the comparison</summary>
+          <p>Both statements captured from the Federal Reserve's website and diffed sentence by sentence:
+          one verb substitution plus the new &ldquo;Voting against&rdquo; paragraph naming Hammack, Kashkari,
+          and Logan. <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">June statement</a> &middot; <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">July statement</a></p>
         </details>
         <p class="railed rail-record">
-          The minutes, released July 8, show the hike case already forming inside the room: <em>&ldquo;a few
-          participants commented that&hellip; there was a case for raising the target range,&rdquo;</em> though
-          they supported the hold at this meeting, and <em>&ldquo;several participants remarked that they did
-          not see the current policy stance as restrictive.&rdquo;</em> All participants supported maintaining
-          the range in June. <span class="chip chip-record">their words</span>
-        </p>
-        <p class="railed rail-outlet">
-          One projection was missing: CNBC reported that Warsh, a longtime critic of the dot plot and of
-          the Fed's forward-guidance apparatus, did not submit projections to his own first SEP. No other
-          captured outlet reported this. <span class="chip chip-outlet">single outlet</span>
+          That silence is deliberate. Warsh has withdrawn the forward guidance his predecessors used to
+          steer markets, and told reporters the resulting repricing was partly the point: <em>&ldquo;Markets
+          have made decisions because we stepped back, in part, from trying to influence those
+          markets.&rdquo;</em> <span class="chip chip-record">their words</span>
         </p>
       </section>
 
       <section id="outlets">
         <p class="sec-kicker">Cross-source check</p>
         <h2>What the outlets got right, and what they got wrong</h2>
-        <p class="section-lede">Four outlets' decision coverage, checked against the primary record.</p>
+        <p class="section-lede">Five outlets' decision coverage, checked against the primary record.</p>
 
         <div class="outlet-check ok">
-          <p class="oc-head"><strong>CNBC</strong>, &ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;</p>
-          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike).</p>
-        </div>
-
-        <div class="outlet-check warn">
-          <p class="oc-head"><strong>Fox Business</strong>, &ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;</p>
-          <p class="oc-verdict"><span class="chip chip-warn">mislabeled</span> The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.</p>
+          <p class="oc-head"><strong>CBS News</strong>, &ldquo;the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%. The last time Fed officials voted to change interest rates was in December 2025, when it reduced its key rate by 0.25 percentage points.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Both halves match: the Fed's daily rate history shows a quarter-point cut on December 11, 2025 and no move since, and the Fed's 2026 calendar shows exactly five meetings from January through July.</p>
         </div>
 
         <div class="outlet-check ok">
-          <p class="oc-head"><strong>TradingKey</strong>, the dot-by-dot breakdown: one participant penciling 75bp of hikes, five at 50bp, three at 25bp.</p>
-          <p class="oc-verdict"><span class="chip chip-ok">consistent</span> That sums to the same nine-above-midpoint reading, and fits the SEP's published 3.4&ndash;4.4 range.</p>
+          <p class="oc-head"><strong>AP</strong>, &ldquo;the fifth straight meeting at which the benchmark rate was kept at around 3.6%.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> The midpoint of the 3.50&ndash;3.75 range is 3.625, and the five-meeting count matches the calendar.</p>
         </div>
 
         <div class="outlet-check ok">
-          <p class="oc-head"><strong>StockTitan</strong>, the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk.</p>
-          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version.</p>
+          <p class="oc-head"><strong>Axios</strong>, &ldquo;the statement was virtually unchanged from the last meeting, offering no clues as to whether or in what circumstances the committee might raise rates.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Our own word-by-word comparison found one changed verb plus the dissent paragraph, nothing else.</p>
+        </div>
+
+        <div class="outlet-check ok">
+          <p class="oc-head"><strong>CNBC</strong>, &ldquo;this is the first time since September 2016 that three policymakers dissented with a unified view of which direction rates should head.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-ok">consistent</span> The 2016 anchor checks out against the September 2016 statement: George, Mester, and Rosengren all preferred a hike. NBC and CNN carried the same first-since-2016 line. We verified the anchor; we did not recount every meeting in between.</p>
         </div>
 
         <div class="outlet-check note">
-          <p class="oc-head">Framing differences worth seeing side by side: the statement says <em>&ldquo;the conflict in the Middle East&rdquo;</em>; Fox Business rendered it as <em>&ldquo;the war in Iran.&rdquo;</em> And Fox carried Warsh's press-conference line: <em>&ldquo;I am pleased to report that members of the FOMC are unambiguous and unanimous: this committee will deliver price stability.&rdquo;</em></p>
+          <p class="oc-head">Framing worth seeing side by side: the statement's stated reason for holding is the dual mandate; <strong>USA Today</strong> led with President Trump's calls for a cut, <strong>CBS</strong> with the Iran war's effect on energy costs, and <strong>Axios</strong> with the internal dissent. All are in the record; the emphasis is the editorial choice.</p>
         </div>
       </section>
 
@@ -185,12 +188,12 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <h2>Claim checked against the record</h2>
         <div class="checked-block">
           <p class="cb-label">The recurring premise: inflation above target &ldquo;for more than five years&rdquo;</p>
-          <p>The Fed's own staff briefing and most coverage lean on one factual claim: inflation has run above the 2&nbsp;percent goal for over five years. We ran it against the PCE price index: <strong>Confirmed.</strong> PCE inflation has printed above 2&nbsp;percent year-over-year for&nbsp;<strong>63 consecutive months</strong> since March 2021, which is 5.3 years, with the latest
-          pre-meeting reading at 4.1&nbsp;percent (May 2026). <span class="chip chip-computed">computed</span></p>
+          <p>The June story confirmed this claim through May 2026. It is still true, and one month longer: PCE inflation has now printed above 2&nbsp;percent year-over-year for&nbsp;<strong>64 consecutive months</strong> since March 2021. At the time of this meeting the latest reading was May's 4.1&nbsp;percent; June data, released after the meeting, came in at 3.7&nbsp;percent, the easing the doves pointed to. <span class="chip chip-computed">computed</span></p>
           <details class="receipt"><summary>computation</summary>
-            <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through May 2026
-            exceeds 2.0 percent; May 2026 = 4.08 percent. The CPI, a different index, ran hotter
-            (4.2 percent in May per coverage). The series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+            <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through June 2026
+            exceeds 2.0 percent; May 2026 = 4.08 percent, June 2026 = 3.67 percent. The minutes' own staff
+            review states total PCE inflation &ldquo;was 4.1 percent in May.&rdquo; The series is published by
+            the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
           </details>
         </div>
       </section>
@@ -199,10 +202,10 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <p class="sec-kicker">On the ground</p>
         <h2>Who feels it</h2>
         <p class="railed rail-official">
-          While the policy rate holds at its 40-year midpoint, the rates households face are elsewhere:
-          the 30-year fixed mortgage averaged&nbsp;<strong>6.47&nbsp;percent</strong> the week of the decision,
-          against a 2021 low of 2.65. Unemployment stood at&nbsp;<strong>4.3&nbsp;percent</strong> in May 2026
-          (it printed 4.2 for June after the meeting). <span class="chip chip-official">official data</span>
+          While the committee argued over a quarter point, the rates households face held high: the 30-year
+          fixed mortgage averaged&nbsp;<strong>6.66&nbsp;percent</strong> the week of the decision.
+          Unemployment stood at&nbsp;<strong>4.2&nbsp;percent</strong> in the June reading available at the
+          meeting; July printed 4.1 afterward. <span class="chip chip-official">official data</span>
         </p>
       </section>
 
@@ -210,10 +213,10 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <p class="sec-kicker">Aftermath</p>
         <h2>What happened next</h2>
         <p class="railed rail-record">
-          The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
-          with Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) each dissenting
-          in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split;
-          the July decision has <a href="/events/fed-rate/july-2026/">its own story</a>. <span class="chip chip-record">record</span>
+          The minutes arrived&nbsp;<strong>August 19</strong> and confirmed the hike camp extends beyond the
+          three dissenters: several participants favored an increase, and <em>&ldquo;many participants
+          assessed that policy tightening would likely be necessary if inflation did not decline.&rdquo;</em>
+          <span class="chip chip-record">record</span>
         </p>
         <p class="railed rail-note" id="still-held-line">
           The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
@@ -226,7 +229,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
             if (now > checked) {
               var days = Math.floor((now - start) / 86400000);
               var el = document.getElementById("held-counter");
-              if (el) el.textContent = "That is " + days + " days at 3.50\u20133.75 and counting. If the Fed moves, this page gets a dated correction.";
+              if (el) el.textContent = "That is " + days + " days at 3.50–3.75 and counting. If the Fed moves, this page gets a dated correction.";
               var kv = document.getElementById("kpi-days");
               if (kv) kv.firstChild.nodeValue = String(days);
               var kl = document.getElementById("kpi-days-label");
@@ -255,23 +258,25 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
           })();
         </script>
         <p class="railed rail-note">
-          Watching: the September decision and its refreshed projections; monthly PCE prints against the
-          63-month streak; whether the hike dots become hike votes.
+          Watching: the September 15&ndash;16 meeting, which brings refreshed projections; monthly PCE prints
+          against the 64-month streak; whether the three dissents become a majority.
         </p>
       </section>
 
       <section id="markets">
         <p class="sec-kicker">Pricing</p>
         <h2>What the markets said</h2>
-        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <span class="chip chip-outlet">reported pricing</span></p>
-        <details class="receipt"><summary>the quotes</summary>
-          <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
-          Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
-          &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. June 13 FedWatch reading of 97.1% posted
-          on X (@D0Vlad, June 15). Kalshi's Tuesday close of 97.8% per @e23miranda. CME does not allow its
-          tool pages to be saved directly, so these dated quotes are the record. The full list with links is
-          kept with this page's sources.</p>
-        </details>
+        <p class="railed rail-record">
+          For once the pricing story is in the Fed's own record. The minutes' desk briefing: while no action
+          was the base case, <em>&ldquo;the market priced in about a one-in-three chance of an increase in
+          the target range,&rdquo;</em> and at longer horizons <em>&ldquo;the market was fully pricing in a
+          25 basis point hike by the September meeting.&rdquo;</em> <span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-outlet">
+          After the hold, NBC News quoted CME's FedWatch tool putting the odds of a September quarter-point
+          hike at&nbsp;<strong>59 percent</strong>. No other captured outlet carried a post-decision odds
+          figure. <span class="chip chip-outlet">reported pricing</span>
+        </p>
       </section>
 
       <section id="records">
@@ -281,38 +286,32 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
         <h3 class="src-group">Our records</h3>
         <ul class="record-links">
-          <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
+          <li><a href="/claims/fomc-statement-july-29-2026-three-dissents-for-hike/">
             <span class="rl-title">FOMC statement: decision day</span>
-            <span class="rl-meta">Released 2:00 p.m. June 17 &middot; the decision, the vote, the Committee's stated reasons</span></a></li>
-          <li><a href="/claims/fomc-minutes-june-17-2026-rate-range-maintained/">
+            <span class="rl-meta">Released 2:00 p.m. July 29 &middot; the 9&ndash;3 vote and the three dissents, in the Committee's words</span></a></li>
+          <li><a href="/claims/fomc-minutes-july-29-2026-three-dissents-for-hike/">
             <span class="rl-title">FOMC minutes: the discussion behind it</span>
-            <span class="rl-meta">Released July 8 &middot; who argued what, including the case a few made for a hike</span></a></li>
+            <span class="rl-meta">Released August 19 &middot; the hike case, wider than the vote</span></a></li>
         </ul>
 
         <h3 class="src-group">Primary documents</h3>
         <ul class="src-list">
-          <li><a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">Summary of Economic Projections, June 17, 2026</a> &middot; the dot plot and forecast tables behind the hawkish flip</li>
-          <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">FOMC statement, July 29, 2026</a> &middot; the 9&ndash;3 hold with three dissents for a hike</li>
+          <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20160921a.htm" rel="noreferrer">FOMC statement, September 21, 2016</a> &middot; the last three-dissent split in one direction, used to check the outlets' claim</li>
+          <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" rel="noreferrer">The Fed's meeting calendar</a> &middot; the five-meeting count and the September 15&ndash;16 date</li>
         </ul>
 
         <h3 class="src-group">Official data</h3>
         <ul class="src-list">
-          <li><a href="https://fred.stlouisfed.org/series/DFEDTARU" rel="noreferrer">Fed target range, daily, 1982&ndash;2026</a> &middot; the chart, the 188-day count, the 48th percentile</li>
-          <li><a href="https://fred.stlouisfed.org/series/PCEPI" rel="noreferrer">PCE price index</a> &middot; the 63-month above-target streak</li>
+          <li><a href="https://fred.stlouisfed.org/series/DFEDTARU" rel="noreferrer">Fed target range, daily, 1982&ndash;2026</a> &middot; the chart, the 230-day count, the 47th percentile</li>
+          <li><a href="https://fred.stlouisfed.org/series/PCEPI" rel="noreferrer">PCE price index</a> &middot; the 64-month above-target streak</li>
           <li><a href="https://fred.stlouisfed.org/series/MORTGAGE30US" rel="noreferrer">30-year mortgage average</a> and <a href="https://fred.stlouisfed.org/series/UNRATE" rel="noreferrer">unemployment rate</a> &middot; who feels it</li>
         </ul>
 
         <h3 class="src-group">Coverage checked</h3>
         <ul class="src-list">
-          <li><a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" rel="noreferrer">CNBC, decision day</a> &middot; and <a href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html" rel="noreferrer">CNBC on the minutes</a></li>
-          <li><a href="https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026" rel="noreferrer">Fox Business</a> &middot; carries the mislabeled voting-members line checked above</li>
-          <li><a href="https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey" rel="noreferrer">TradingKey</a> and <a href="https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026" rel="noreferrer">StockTitan</a></li>
-        </ul>
-
-        <h3 class="src-group">Market pricing quotes</h3>
-        <ul class="src-list">
-          <li><a href="https://www.wsj.com/livecoverage/fed-meeting-warsh-interest-rate-06-17-2026/card/what-do-traders-expect-from-the-fed--YOgQcOuxfWIS0TbILWec" rel="noreferrer">WSJ live coverage, June 17</a> &middot; the 99.6 percent morning-of figure</li>
-          <li><a href="https://www.investopedia.com/what-to-expect-from-june-fed-decision-flat-interest-rates-and-new-direction-11996530" rel="noreferrer">Investopedia</a>, <a href="https://defirate.com/news/fed-prediction-markets-shift-to-warshs-words-as-june-rate-decision-looks-settled/" rel="noreferrer">DeFi Rate</a> on Polymarket and Kalshi, and dated posts on X</li>
+          <li><a href="https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html" rel="noreferrer">CNBC</a>, <a href="https://apnews.com/article/federal-reserve-inflation-interest-rates-iran-war-ad10c177cb8d96f9e3ed122e12352a74" rel="noreferrer">AP</a>, and <a href="https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/" rel="noreferrer">CBS News</a>, decision day</li>
+          <li><a href="https://www.axios.com/2026/07/29/fed-warsh-rates-inflation" rel="noreferrer">Axios</a> &middot; direct capture was blocked by the site, so its text was recovered through an assisted web reader and kept with this page's sources</li>
+          <li><a href="https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536" rel="noreferrer">NBC News</a> &middot; carries the post-decision FedWatch figure quoted above</li>
         </ul>
 
         <p class="sources-line"><a href="/methodology">How we check</a> &middot; every figure above traces to one of these sources; captured copies are kept so the record stays verifiable if pages change.</p>
@@ -380,7 +379,6 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
   .chip-outlet { background: #f6eedb; color: #8a6412; }
   .chip-ok { background: #e7f2ec; color: #22604a; }
   .chip-warn { background: #f9e7e4; color: #a03a2a; }
-  .chip-unconfirmed { background: #f9e7e4; color: #a03a2a; }
 
   .receipt { margin: -0.2rem 0 1rem 1rem; }
   .receipt summary { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: #5b6470; cursor: pointer; }
@@ -402,8 +400,6 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
   .checked-block { border: 1px solid #cfe0d7; border-left: 3px solid #2e7d5b; background: #f7fbf9; padding: 0.9rem 1.1rem; }
   .cb-label { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
-  .contested-block { border: 1px solid #ecd4cf; border-left: 3px solid #b3402e; background: #fdf8f7; padding: 0.9rem 1.1rem; }
-  .contested-block p { margin: 0.35rem 0; }
 
   .record-links { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.6rem; }
   .record-links a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }

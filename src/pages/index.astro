@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { event } from "../data/fomc20260617.mjs";
+import { event } from "../data/fomc20260729.mjs";
 ---
 <BaseLayout title="The Catch" current="Home">
   <div slot="locator" class="locator"><span>THE CATCH</span><span>Checked claims, kept permanently</span></div>
@@ -10,12 +10,12 @@ import { event } from "../data/fomc20260617.mjs";
       primary record, and check the coverage against it. Corrections are permanent, dated, and public.</p>
 
       <section class="front-feature">
-        <p class="ff-kicker">Latest story &middot; June 2026</p>
+        <p class="ff-kicker">Latest story &middot; July 2026</p>
         <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
         <p class="ff-dek">{event.dek}</p>
         <div class="ff-kpis">
           {event.kpis.map((k) => (
-            <span class="ff-kpi"><b>{k.value}{k.unit && k.unit !== "pctile" ? k.unit : ""}</b> {k.label}</span>
+            <span class="ff-kpi"><b>{k.value}{k.unit === "%" ? "%" : ""}{k.unit && k.unit !== "%" && k.unit !== "pctile" ? ` ${k.unit}` : ""}</b> {k.label}</span>
           ))}
         </div>
         <p class="ff-link"><a href={`/events/${event.slug}/`}>Read the story &rarr;</a> <span class="ff-sep">&middot;</span> <a href="/events/fed-rate/">The federal funds rate, the standing record</a></p>
