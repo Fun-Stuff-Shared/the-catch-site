@@ -10,15 +10,15 @@ import { event } from "../data/fomc20260617.mjs";
       primary record, and check the coverage against it. Corrections are permanent, dated, and public.</p>
 
       <section class="front-feature">
-        <p class="ff-kicker">Featured event <span class="ff-live">ongoing</span></p>
-        <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
-        <p class="ff-dek">{event.dek}</p>
+        <p class="ff-kicker">Standing record <span class="ff-live">current</span></p>
+        <h2><a href="/events/fed-rate/">The federal funds rate</a></h2>
+        <p class="ff-dek">Tracked decision by decision. Latest story: <a href={`/events/${event.slug}/`}>{event.title}</a>.</p>
         <div class="ff-kpis">
           {event.kpis.map((k) => (
             <span class="ff-kpi"><b>{k.value}{k.unit && k.unit !== "pctile" ? k.unit : ""}</b> {k.label}</span>
           ))}
         </div>
-        <p class="ff-link"><a href={`/events/${event.slug}/`}>Read the event record &rarr;</a></p>
+        <p class="ff-link"><a href="/events/fed-rate/">Open the standing record &rarr;</a></p>
       </section>
 
       <section class="front-cols">

@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { ratePath } from "../../../data/fomc20260617.mjs";
+
+const W = 720, H = 200, PAD = 8;
+const t0 = Date.parse(ratePath.start.date), t1 = Date.parse("2026-08-23");
+const vMin = 3.4, vMax = 5.7;
+const x = (d) => PAD + ((Date.parse(d) - t0) / (t1 - t0)) * (W - 2 * PAD);
+const y = (v) => H - PAD - ((v - vMin) / (vMax - vMin)) * (H - 2 * PAD);
+let pts = [`${x(ratePath.start.date)},${y(ratePath.start.value)}`];
+let prev = ratePath.start.value;
+for (const c of ratePath.changes) {
+  pts.push(`${x(c.date)},${y(prev)}`);
+  pts.push(`${x(c.date)},${y(c.value)}`);
+  prev = c.value;
+}
+pts.push(`${x("2026-08-23")},${y(prev)}`);
+const path = "M" + pts.join(" L");
+const endX = x("2026-08-23"), endY = y(prev);
+---
+<BaseLayout title="The federal funds rate | The Catch" current="Events">
+  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate</span></div>
+  <div class="content">
+    <main class="subject">
+      <p class="subject-kicker">Standing record &middot; Federal Reserve &middot; updated August 23, 2026</p>
+      <h1>The federal funds rate</h1>
+      <p class="subject-dek">The Fed's benchmark rate, tracked decision by decision: what was decided, what
+      the record shows, and what the coverage got right and wrong. This page is always current; each
+      decision keeps its own dated story.</p>
+
+      <div class="kpi-strip">
+        <div class="kpi"><span class="kpi-value">3.50&ndash;3.75<small> %</small></span><span class="kpi-label">current target range</span></div>
+        <div class="kpi"><span class="kpi-value" id="kpi-days">255<small> days</small></span><span class="kpi-label" id="kpi-days-label">held, and counting</span></div>
+        <div class="kpi"><span class="kpi-value">9&ndash;3</span><span class="kpi-label">latest vote, July 29</span></div>
+        <div class="kpi"><span class="kpi-value">48th<small> pctile</small></span><span class="kpi-label">of 44 years of policy</span></div>
+      </div>
+
+      <figure class="rate-chart">
+        <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to today: six steps down from 5.50 to 3.75, then flat">
+          <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
+          <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
+          <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
+          <text x={x("2024-06-20")} y={y(4.0)} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
+          <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; holding</text>
+          <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
+          <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
+          <text x={x("2026-01-05")} y={H + 16} class="chart-axis">2026</text>
+        </svg>
+        <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
+      </figure>
+
+      <section>
+        <h2>The decisions</h2>
+        <ol class="decision-timeline">
+          <li>
+            <span class="dt-date">July 29, 2026</span>
+            <div class="dt-body">
+              <p class="dt-head">Held at 3.50&ndash;3.75, but the vote split 9&ndash;3</p>
+              <p class="dt-sub">Hammack, Kashkari, and Logan each dissented in favor of a quarter-point hike.
+              Dated story coming; the <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">statement</a> is on the record.</p>
+            </div>
+          </li>
+          <li>
+            <span class="dt-date">June 17, 2026</span>
+            <div class="dt-body">
+              <p class="dt-head"><a href="/events/fed-rate/june-2026/">Warsh's first unanimous vote, with half the committee penciling in a hike</a></p>
+              <p class="dt-sub">12&ndash;0 hold; the projections flipped from a cut to a hike. Full story, with
+              the coverage checked against the record.</p>
+            </div>
+          </li>
+          <li>
+            <span class="dt-date">December 11, 2025</span>
+            <div class="dt-body">
+              <p class="dt-head">The last move: a quarter-point cut to 3.50&ndash;3.75</p>
+              <p class="dt-sub">The sixth cut of the easing run that began September 2024. The range has not
+              moved since.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>The records</h2>
+        <ul class="rec-list">
+          <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
+            <span class="rec-title">FOMC statement, June 17, 2026</span>
+            <span class="rec-meta">The 12&ndash;0 hold, in the Committee's words</span></a></li>
+          <li><a href="/claims/fomc-minutes-june-17-2026-rate-range-maintained/">
+            <span class="rec-title">FOMC minutes, June 17, 2026</span>
+            <span class="rec-meta">Released July 8 &middot; the case a few made for a hike</span></a></li>
+        </ul>
+        <p class="subject-note">If the Fed moves, this page updates with a dated entry; decision stories are
+        never rewritten. <a href="/methodology">How we check</a>.</p>
+      </section>
+
+      <script>
+        (function () {
+          var start = Date.UTC(2025, 11, 11);
+          var checked = Date.UTC(2026, 7, 23);
+          var now = Date.now();
+          if (now > checked) {
+            var days = Math.floor((now - start) / 86400000);
+            var kv = document.getElementById("kpi-days");
+            if (kv) kv.firstChild.nodeValue = String(days);
+          }
+        })();
+      </script>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .subject { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .subject-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 1.5rem 0 0.75rem; }
+  .subject h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.12; margin: 0 0 0.6rem; }
+  .subject-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.12rem; line-height: 1.5; color: #3c434b; margin: 0 0 1.6rem; }
+  .subject h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.4rem; margin: 2.4rem 0 0.9rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e3e0da; }
+  .subject h2::after { content: ""; display: block; width: 3.5rem; border-bottom: 2px solid #c98a1b; margin-bottom: -1px; margin-top: 0.35rem; }
+  .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1.25rem; }
+  .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.4rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .kpi-value small { font-size: 0.8rem; color: #5b6470; }
+  .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
+  .rate-chart { margin: 1rem 0 0; }
+  .rate-chart svg { width: 100%; height: auto; }
+  .chart-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #5b6470; }
+  .chart-note-accent { fill: #b9770e; }
+  .chart-axis { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #9aa1a9; }
+  .rate-chart figcaption { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.75rem; color: #8b929b; margin-top: 0.3rem; }
+  .decision-timeline { list-style: none; padding: 0; margin: 0; }
+  .decision-timeline li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1.25rem; padding: 0.9rem 0; border-bottom: 1px solid #efece6; }
+  .dt-date { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #5b6470; padding-top: 0.2rem; }
+  .dt-head { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.1rem; line-height: 1.3; margin: 0 0 0.25rem; }
+  .dt-head a { color: inherit; }
+  .dt-sub { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.88rem; line-height: 1.5; color: #5b6470; margin: 0; }
+  @media (max-width: 600px) { .decision-timeline li { grid-template-columns: 1fr; gap: 0.2rem; } }
+  .rec-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+  .rec-list a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }
+  .rec-list a:hover { border-color: #b9b4aa; }
+  .rec-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
+  .rec-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
+  .subject-note { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; margin-top: 1.25rem; }
+</style>

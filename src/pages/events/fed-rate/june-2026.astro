@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { event, ratePath } from "../../data/fomc20260617.mjs";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { event, ratePath } from "../../../data/fomc20260617.mjs";
 
 // Build the step-chart geometry from the rate path.
 const W = 720, H = 200, PAD = 8;
@@ -20,10 +20,10 @@ const path = "M" + pts.join(" L");
 const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The 2026 rate hold</span></div>
+  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; June 2026</span></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker">Event &middot; Federal Reserve &middot; {event.span} &middot; updated August 23, 2026</p>
+      <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; June 2026 decision &middot; updated August 23, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
