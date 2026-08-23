@@ -10,7 +10,7 @@ import { event } from "../data/fomc20260617.mjs";
       primary record, and check the coverage against it. Corrections are permanent, dated, and public.</p>
 
       <section class="front-feature">
-        <p class="ff-kicker">Featured event &middot; June 17, 2026</p>
+        <p class="ff-kicker">Featured event &middot; {event.span}</p>
         <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
         <p class="ff-dek">{event.dek}</p>
         <div class="ff-kpis">

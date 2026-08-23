@@ -19,11 +19,11 @@ pts.push(`${x(ratePath.end.date)},${y(prev)}`);
 const path = "M" + pts.join(" L");
 const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 ---
-<BaseLayout title="Federal funds rate decision, June 17, 2026 | The Catch" current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>June 17, 2026</span></div>
+<BaseLayout title="The 2026 rate hold | The Catch" current="Events">
+  <div slot="locator" class="locator"><span>EVENTS</span><span>The 2026 rate hold</span></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker">Event &middot; Federal Reserve &middot; June 17, 2026 &middot; updated August 23, 2026</p>
+      <p class="story-kicker">Event &middot; Federal Reserve &middot; {event.span} &middot; updated August 23, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
@@ -232,6 +232,26 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
               if (kl) kl.textContent = "held at this level, and counting";
             }
           })();
+          (function () {
+            var links = document.querySelectorAll(".story-toc a[href^='#']");
+            if (!links.length || !("IntersectionObserver" in window)) return;
+            var map = {};
+            links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a.parentElement; });
+            var current = null;
+            var obs = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  if (current) current.classList.remove("toc-active");
+                  current = map[e.target.id];
+                  if (current) current.classList.add("toc-active");
+                }
+              });
+            }, { rootMargin: "-15% 0px -70% 0px" });
+            Object.keys(map).forEach(function (id) {
+              var el = document.getElementById(id);
+              if (el) obs.observe(el);
+            });
+          })();
         </script>
         <p class="railed rail-note">
           Watching: the September decision and its refreshed projections; monthly PCE prints against the
@@ -273,6 +293,11 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
   </div>
 </BaseLayout>
 
+<style is:global>
+  .sheet:has(.story) { max-width: 88rem; }
+  .sheet:has(.story) footer.colophon { max-width: 62rem; margin-left: auto; margin-right: auto; }
+</style>
+
 <style>
   .story { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
   .sec-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b9770e; margin: 2.4rem 0 -0.6rem; }
@@ -290,12 +315,16 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
   .story-toc a:hover { text-decoration: underline; }
   .story section { scroll-margin-top: 4.5rem; }
   @media (min-width: 1150px) {
-    .story { display: grid; grid-template-columns: 15rem minmax(0, 46rem); gap: 0 3rem; max-width: 68rem; }
+    .story { display: grid; grid-template-columns: 16rem minmax(0, 52rem); gap: 0 4rem; max-width: 84rem; padding-left: 2rem; }
+    .story p, .story li { font-size: 1.02rem; }
     .story > * { grid-column: 2; }
-    .story > nav.story-toc { grid-column: 1; grid-row: 1 / span 40; position: sticky; top: 1.25rem; align-self: start; border: none; padding: 0; margin: 2.5rem 0 0; }
-    .story-toc ol { flex-direction: column; gap: 0.45rem; }
-    .story-toc a { font-size: 0.82rem; color: #5b6470; }
-    .story-toc a:hover { color: #14181b; }
+    .story > nav.story-toc { grid-column: 1; grid-row: 1 / span 40; position: sticky; top: 1.5rem; align-self: start; border: none; padding: 0; margin: 3.2rem 0 0; }
+    .story-toc ol { flex-direction: column; gap: 0; border-left: 1px solid #e3e0da; }
+    .story-toc li { padding: 0; }
+    .story-toc li::before { content: none; }
+    .story-toc a { display: block; font-size: 0.84rem; color: #6b727c; padding: 0.38rem 0 0.38rem 0.9rem; margin-left: -1px; border-left: 2px solid transparent; line-height: 1.35; }
+    .story-toc a:hover { color: #14181b; text-decoration: none; border-left-color: #c9c3b8; }
+    .story-toc li.toc-active a { color: #14181b; border-left-color: #c98a1b; font-weight: 600; }
   }
   .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
   .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
