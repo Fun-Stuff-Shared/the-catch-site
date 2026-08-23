@@ -19,7 +19,7 @@ pts.push(`${x(ratePath.end.date)},${y(prev)}`);
 const path = "M" + pts.join(" L");
 const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 ---
-<BaseLayout title="The 2026 rate hold | The Catch" current="Events">
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><span>EVENTS</span><span>The 2026 rate hold</span></div>
   <div class="content">
     <main class="story">
@@ -97,7 +97,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
             <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
             <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
             <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
-            <text x={x("2025-02-15")} y={y(4.45) - 14} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
+            <text x={x("2024-06-20")} y={y(4.0)} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
             <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; held 188 days</text>
             <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
             <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
@@ -276,6 +276,9 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
       <section id="records">
         <p class="sec-kicker">Sources</p>
         <h2>The records</h2>
+        <p class="section-lede">Everything this page rests on, by kind.</p>
+
+        <h3 class="src-group">Our records</h3>
         <ul class="record-links">
           <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
             <span class="rl-title">FOMC statement: decision day</span>
@@ -284,10 +287,34 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
             <span class="rl-title">FOMC minutes: the discussion behind it</span>
             <span class="rl-meta">Released July 8 &middot; who argued what, including the case a few made for a hike</span></a></li>
         </ul>
-        <p class="sources-line">
-          <a href="/methodology">How we check</a> &middot; every figure above traces to the Federal Reserve's
-          statement, minutes, and projection tables, official data series, or a named outlet's coverage.
-        </p>
+
+        <h3 class="src-group">Primary documents</h3>
+        <ul class="src-list">
+          <li><a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">Summary of Economic Projections, June 17, 2026</a> &middot; the dot plot and forecast tables behind the hawkish flip</li>
+          <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">FOMC statement, July 29, 2026</a> &middot; the 9&ndash;3 hold with three dissents for a hike</li>
+        </ul>
+
+        <h3 class="src-group">Official data</h3>
+        <ul class="src-list">
+          <li><a href="https://fred.stlouisfed.org/series/DFEDTARU" rel="noreferrer">Fed target range, daily, 1982&ndash;2026</a> &middot; the chart, the 188-day count, the 48th percentile</li>
+          <li><a href="https://fred.stlouisfed.org/series/PCEPI" rel="noreferrer">PCE price index</a> &middot; the 63-month above-target streak</li>
+          <li><a href="https://fred.stlouisfed.org/series/MORTGAGE30US" rel="noreferrer">30-year mortgage average</a> and <a href="https://fred.stlouisfed.org/series/UNRATE" rel="noreferrer">unemployment rate</a> &middot; who feels it</li>
+        </ul>
+
+        <h3 class="src-group">Coverage checked</h3>
+        <ul class="src-list">
+          <li><a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" rel="noreferrer">CNBC, decision day</a> &middot; and <a href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html" rel="noreferrer">CNBC on the minutes</a></li>
+          <li><a href="https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026" rel="noreferrer">Fox Business</a> &middot; carries the mislabeled voting-members line checked above</li>
+          <li><a href="https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey" rel="noreferrer">TradingKey</a> and <a href="https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026" rel="noreferrer">StockTitan</a></li>
+        </ul>
+
+        <h3 class="src-group">Market pricing quotes</h3>
+        <ul class="src-list">
+          <li><a href="https://www.wsj.com/livecoverage/fed-meeting-warsh-interest-rate-06-17-2026/card/what-do-traders-expect-from-the-fed--YOgQcOuxfWIS0TbILWec" rel="noreferrer">WSJ live coverage, June 17</a> &middot; the 99.6 percent morning-of figure</li>
+          <li><a href="https://www.investopedia.com/what-to-expect-from-june-fed-decision-flat-interest-rates-and-new-direction-11996530" rel="noreferrer">Investopedia</a>, <a href="https://defirate.com/news/fed-prediction-markets-shift-to-warshs-words-as-june-rate-decision-looks-settled/" rel="noreferrer">DeFi Rate</a> on Polymarket and Kalshi, and dated posts on X</li>
+        </ul>
+
+        <p class="sources-line"><a href="/methodology">How we check</a> &middot; every figure above traces to one of these sources; captured copies are kept so the record stays verifiable if pages change.</p>
       </section>
     </main>
   </div>
@@ -383,4 +410,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
   .rl-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
   .rl-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
   .sources-line { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; }
+  .src-group { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 1.4rem 0 0.4rem; }
+  .src-list { list-style: none; padding: 0; margin: 0; }
+  .src-list li { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.6; padding: 0.25rem 0; border-bottom: 1px solid #efece6; }
 </style>
