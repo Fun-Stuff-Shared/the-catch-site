@@ -72,7 +72,9 @@ subject page. Nothing is overwritten.
    tag boundaries (text touching inline tags with no space) - all must be zero.
 2. Route regression: every previously-live route still resolves in dist.
 3. Deploy is git push (Workers git build); poll the live URL until the new content serves.
-4. Live audit: curl the live bytes and re-run the language greps; screenshot at 100% zoom.
+4. Live audit: `node scripts/live-audit.mjs` probes EVERY route in checks/routes.txt on the
+   live site (200 after redirects, same host), then curl the new page's bytes and re-run the
+   language greps; screenshot at 100% zoom.
 
 ## The gate (enforced at build, added 2026-08-23)
 
