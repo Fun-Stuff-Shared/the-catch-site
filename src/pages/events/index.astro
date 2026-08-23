@@ -16,9 +16,9 @@ const groups = warrantedEvents(records).filter((group) => group.slug !== fomcEve
       coverage against them, and tells you what actually happened.</p>
       <ul class="matters-grid">
         <li><a href={`/events/${fomcEvent.slug}/`}>
-          <span class="mt-status st-blue">{fomcEvent.span}</span>
+          <span class="mt-status st-blue">Ongoing</span>
           <span class="mt-title">{fomcEvent.title}</span>
-          <span class="mt-finding">The 2026 rate hold &middot; 2 records</span>
+          <span class="mt-finding">Records: June 17 and July 8, 2026 &middot; hold running since December 2025</span>
           <span class="mt-meta">Read the event record</span></a></li>
         {groups.map((group) => <li><a href={eventPath(group.slug)}><span class="mt-status st-blue">{formatDate(group.date)}</span><span class="mt-title">{group.title}</span><span class="mt-finding">{group.records.length} {group.records.length === 1 ? "record" : "records"}</span><span class="mt-meta">Open event record</span></a></li>)}
       </ul>

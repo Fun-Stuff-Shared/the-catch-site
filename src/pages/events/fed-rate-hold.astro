@@ -1,0 +1,386 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { event, ratePath } from "../../data/fomc20260617.mjs";
+
+// Build the step-chart geometry from the rate path.
+const W = 720, H = 200, PAD = 8;
+const t0 = Date.parse(ratePath.start.date), t1 = Date.parse(ratePath.end.date);
+const vMin = 3.4, vMax = 5.7;
+const x = (d) => PAD + ((Date.parse(d) - t0) / (t1 - t0)) * (W - 2 * PAD);
+const y = (v) => H - PAD - ((v - vMin) / (vMax - vMin)) * (H - 2 * PAD);
+let pts = [`${x(ratePath.start.date)},${y(ratePath.start.value)}`];
+let prev = ratePath.start.value;
+for (const c of ratePath.changes) {
+  pts.push(`${x(c.date)},${y(prev)}`);
+  pts.push(`${x(c.date)},${y(c.value)}`);
+  prev = c.value;
+}
+pts.push(`${x(ratePath.end.date)},${y(prev)}`);
+const path = "M" + pts.join(" L");
+const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
+---
+<BaseLayout title="The 2026 rate hold | The Catch" current="Events">
+  <div slot="locator" class="locator"><span>EVENTS</span><span>The 2026 rate hold</span></div>
+  <div class="content">
+    <main class="story">
+      <p class="story-kicker">Event &middot; Federal Reserve &middot; {event.span} &middot; updated August 23, 2026</p>
+      <h1>{event.title}</h1>
+      <p class="story-dek">{event.dek}</p>
+
+      <div class="kpi-strip">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value" id={k.live ? "kpi-days" : undefined}>{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label" id={k.live ? "kpi-days-label" : undefined}>{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>The Fed held at 3.50&ndash;3.75 percent, unanimously, in Kevin Warsh's first meeting as chair.</li>
+          <li>The projections flipped from a cut to a hike: the 2026 median rose to 3.8, with nine of eighteen dots above today's rate.</li>
+          <li>Six weeks later the split went public: three officials dissented for a hike on July 29.</li>
+        </ol>
+      </aside>
+
+      <nav class="story-toc" aria-label="In this story">
+        <p class="toc-label">In this story</p>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#the-projections">The projections told a different story</a></li>
+          <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#what-next">What happened next</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </nav>
+
+      <section id="what-happened">
+        <p class="sec-kicker">The decision</p>
+        <h2>What happened</h2>
+        <p class="railed rail-record">
+          The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on June 17, by a&nbsp;<strong>12&ndash;0</strong> vote. It was
+          Kevin Warsh's first meeting as chair. <span class="chip chip-record">record</span>
+        </p>
+        <details class="receipt"><summary>the record</summary>
+          <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 12&ndash;0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.&rdquo;
+          Voting: Warsh, Williams, Barr, Bowman, Cook, Hammack, Jefferson, Kashkari, Logan, Paulson, Powell, Waller. Voting against: none (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">minutes</a></p>
+        </details>
+        <p class="railed rail-record">
+          The statement itself was the news as much as the decision: dramatically shorter than its predecessors,
+          stripped of the language markets had read as a bias toward further cuts, and ending on a single
+          declarative line: <em>&ldquo;The Committee will deliver price stability.&rdquo;</em>
+          <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-record">
+          The Committee's stated read of the economy: activity expanding at a solid pace despite uncertainty
+          from the conflict in the Middle East; productivity and capital investment strong; job gains keeping
+          pace with the workforce; inflation still elevated relative to the 2&nbsp;percent goal, partly from
+          supply shocks including energy. <span class="chip chip-record">their words</span>
+        </p>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker">History</p>
+        <h2>Where this sits</h2>
+        <p class="railed rail-computed">
+          The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>188 days</strong> as of this meeting, the end of a run of six cuts from the 5.25&ndash;5.50
+          cycle peak, with no upward move in the span. <span class="chip chip-computed">computed</span>
+        </p>
+        <figure class="rate-chart">
+          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to June 2026: six steps down from 5.50 to 3.75, then flat">
+            <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
+            <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
+            <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
+            <text x={x("2025-02-15")} y={y(4.45) - 14} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
+            <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; held 188 days</text>
+            <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
+            <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
+            <text x={x("2026-01-05")} y={H + 16} class="chart-axis">2026</text>
+          </svg>
+          <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
+        </figure>
+        <p class="railed rail-computed">
+          Against the full 1982&ndash;2026 daily history of the Fed's target, all 15,970 observations,
+          the 3.75 upper bound sits at the&nbsp;<strong>48th percentile</strong>: almost exactly the middle of four
+          decades of policy, just under the 3.82 mean and the 4.00 median. Not a high-rate regime by historical
+          standards, and not the near-zero world of 2009&ndash;2015 either. <span class="chip chip-computed">computed</span>
+        </p>
+        <details class="receipt"><summary>computation</summary>
+          <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-06-17:
+          15,970 observations; 3.75 percentile 48.5 (midpoint method); mean 3.82; median 4.00. Days held:
+          2025-12-11 to 2026-06-17 = 188. The full daily series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+        </details>
+        <p class="railed rail-computed">
+          The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
+          cycles treated as ordinary. <span class="chip chip-computed">computed</span>
+        </p>
+      </section>
+
+      <section id="the-projections">
+        <p class="sec-kicker">The real signal</p>
+        <h2>The projections told a different story</h2>
+        <p class="railed rail-record">
+          The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
+          with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>3.8&nbsp;percent, up from 3.4 in March</strong>: from a level that implied a rate cut
+          this year to one implying a hike. The central tendency moved to 3.6&ndash;4.1, the full range to
+          3.4&ndash;4.4. <span class="chip chip-record">record</span>
+        </p>
+        <details class="receipt"><summary>the SEP table</summary>
+          <p>June 17, 2026 SEP: federal funds rate medians 3.8 (2026), 3.6 (2027), 3.4 (2028), 3.1 (longer run);
+          March medians 3.4 / 3.1 / 3.1 / 3.1. PCE inflation median for 2026 raised to 3.6 from 2.7; core PCE
+          to 3.3 from 2.7. <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a></p>
+        </details>
+        <p class="railed rail-record">
+          The minutes, released July 8, show the hike case already forming inside the room: <em>&ldquo;a few
+          participants commented that&hellip; there was a case for raising the target range,&rdquo;</em> though
+          they supported the hold at this meeting, and <em>&ldquo;several participants remarked that they did
+          not see the current policy stance as restrictive.&rdquo;</em> All participants supported maintaining
+          the range in June. <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-outlet">
+          One projection was missing: CNBC reported that Warsh, a longtime critic of the dot plot and of
+          the Fed's forward-guidance apparatus, did not submit projections to his own first SEP. No other
+          captured outlet reported this. <span class="chip chip-outlet">single outlet</span>
+        </p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker">Cross-source check</p>
+        <h2>What the outlets got right, and what they got wrong</h2>
+        <p class="section-lede">Four outlets' decision coverage, checked against the primary record.</p>
+
+        <div class="outlet-check ok">
+          <p class="oc-head"><strong>CNBC</strong>, &ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike).</p>
+        </div>
+
+        <div class="outlet-check warn">
+          <p class="oc-head"><strong>Fox Business</strong>, &ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;</p>
+          <p class="oc-verdict"><span class="chip chip-warn">mislabeled</span> The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.</p>
+        </div>
+
+        <div class="outlet-check ok">
+          <p class="oc-head"><strong>TradingKey</strong>, the dot-by-dot breakdown: one participant penciling 75bp of hikes, five at 50bp, three at 25bp.</p>
+          <p class="oc-verdict"><span class="chip chip-ok">consistent</span> That sums to the same nine-above-midpoint reading, and fits the SEP's published 3.4&ndash;4.4 range.</p>
+        </div>
+
+        <div class="outlet-check ok">
+          <p class="oc-head"><strong>StockTitan</strong>, the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk.</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version.</p>
+        </div>
+
+        <div class="outlet-check note">
+          <p class="oc-head">Framing differences worth seeing side by side: the statement says <em>&ldquo;the conflict in the Middle East&rdquo;</em>; Fox Business rendered it as <em>&ldquo;the war in Iran.&rdquo;</em> And Fox carried Warsh's press-conference line: <em>&ldquo;I am pleased to report that members of the FOMC are unambiguous and unanimous: this committee will deliver price stability.&rdquo;</em></p>
+        </div>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker">Verified</p>
+        <h2>Claim checked against the record</h2>
+        <div class="checked-block">
+          <p class="cb-label">The recurring premise: inflation above target &ldquo;for more than five years&rdquo;</p>
+          <p>The Fed's own staff briefing and most coverage lean on one factual claim: inflation has run above the 2&nbsp;percent goal for over five years. We ran it against the PCE price index: <strong>Confirmed.</strong> PCE inflation has printed above 2&nbsp;percent year-over-year for&nbsp;<strong>63 consecutive months</strong> since March 2021, which is 5.3 years, with the latest
+          pre-meeting reading at 4.1&nbsp;percent (May 2026). <span class="chip chip-computed">computed</span></p>
+          <details class="receipt"><summary>computation</summary>
+            <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through May 2026
+            exceeds 2.0 percent; May 2026 = 4.08 percent. The CPI, a different index, ran hotter
+            (4.2 percent in May per coverage). The series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker">On the ground</p>
+        <h2>Who feels it</h2>
+        <p class="railed rail-official">
+          While the policy rate holds at its 40-year midpoint, the rates households face are elsewhere:
+          the 30-year fixed mortgage averaged&nbsp;<strong>6.47&nbsp;percent</strong> the week of the decision,
+          against a 2021 low of 2.65. Unemployment stood at&nbsp;<strong>4.3&nbsp;percent</strong> in May 2026
+          (it printed 4.2 for June after the meeting). <span class="chip chip-official">official data</span>
+        </p>
+      </section>
+
+      <section id="what-next">
+        <p class="sec-kicker">Aftermath</p>
+        <h2>What happened next</h2>
+        <p class="railed rail-record">
+          The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
+          with Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) each dissenting
+          in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split. <span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-note" id="still-held-line">
+          The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
+        </p>
+        <script>
+          (function () {
+            var start = Date.UTC(2025, 11, 11);
+            var checked = Date.UTC(2026, 7, 23);
+            var now = Date.now();
+            if (now > checked) {
+              var days = Math.floor((now - start) / 86400000);
+              var el = document.getElementById("held-counter");
+              if (el) el.textContent = "That is " + days + " days at 3.50\u20133.75 and counting. If the Fed moves, this page gets a dated correction.";
+              var kv = document.getElementById("kpi-days");
+              if (kv) kv.firstChild.nodeValue = String(days);
+              var kl = document.getElementById("kpi-days-label");
+              if (kl) kl.textContent = "held at this level, and counting";
+            }
+          })();
+          (function () {
+            var links = document.querySelectorAll(".story-toc a[href^='#']");
+            if (!links.length || !("IntersectionObserver" in window)) return;
+            var map = {};
+            links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a.parentElement; });
+            var current = null;
+            var obs = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  if (current) current.classList.remove("toc-active");
+                  current = map[e.target.id];
+                  if (current) current.classList.add("toc-active");
+                }
+              });
+            }, { rootMargin: "-15% 0px -70% 0px" });
+            Object.keys(map).forEach(function (id) {
+              var el = document.getElementById(id);
+              if (el) obs.observe(el);
+            });
+          })();
+        </script>
+        <p class="railed rail-note">
+          Watching: the September decision and its refreshed projections; monthly PCE prints against the
+          63-month streak; whether the hike dots become hike votes.
+        </p>
+      </section>
+
+      <section id="markets">
+        <p class="sec-kicker">Pricing</p>
+        <h2>What the markets said</h2>
+        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <span class="chip chip-outlet">reported pricing</span></p>
+        <details class="receipt"><summary>the quotes</summary>
+          <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
+          Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
+          &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. June 13 FedWatch reading of 97.1% posted
+          on X (@D0Vlad, June 15). Kalshi's Tuesday close of 97.8% per @e23miranda. CME does not allow its
+          tool pages to be saved directly, so these dated quotes are the record. The full list with links is
+          kept with this page's sources.</p>
+        </details>
+      </section>
+
+      <section id="records">
+        <p class="sec-kicker">Sources</p>
+        <h2>The records</h2>
+        <ul class="record-links">
+          <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
+            <span class="rl-title">FOMC statement: decision day</span>
+            <span class="rl-meta">Released 2:00 p.m. June 17 &middot; the decision, the vote, the Committee's stated reasons</span></a></li>
+          <li><a href="/claims/fomc-minutes-june-17-2026-rate-range-maintained/">
+            <span class="rl-title">FOMC minutes: the discussion behind it</span>
+            <span class="rl-meta">Released July 8 &middot; who argued what, including the case a few made for a hike</span></a></li>
+        </ul>
+        <p class="sources-line">
+          <a href="/methodology">How we check</a> &middot; every figure above traces to the Federal Reserve's
+          statement, minutes, and projection tables, official data series, or a named outlet's coverage.
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  @media (min-width: 1360px) { .sheet:has(.story) { max-width: 100%; } }
+</style>
+
+<style>
+  .story { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .sec-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b9770e; margin: 2.4rem 0 -0.6rem; }
+  .sec-kicker + h2 { margin-top: 0.8rem; }
+  .three-things { border: 1px solid #e0d6c2; background: #fdfaf3; padding: 1rem 1.25rem; margin: 1.25rem 0 1rem; }
+  .tt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a6412; margin: 0 0 0.5rem; }
+  .three-things ol { margin: 0; padding-left: 1.2rem; }
+  .three-things li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.55; margin: 0.3rem 0; }
+  .story-toc { border-top: 1px solid #e3e0da; border-bottom: 1px solid #e3e0da; padding: 0.7rem 0; margin: 0 0 1.5rem; }
+  .toc-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5b6470; margin: 0 0 0.4rem; }
+  .story-toc ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; counter-reset: toc; }
+  .story-toc li { counter-increment: toc; }
+  .story-toc li::before { content: counter(toc); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: #b9770e; margin-right: 0.35rem; }
+  .story-toc a { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #33404d; text-decoration: none; }
+  .story-toc a:hover { text-decoration: underline; }
+  .story section { scroll-margin-top: 4.5rem; }
+  .story { max-width: 52rem; }
+  @media (min-width: 1360px) {
+    .story p, .story li { font-size: 1.02rem; }
+    nav.story-toc { position: fixed; top: 13.5rem; left: max(1.25rem, calc(50vw - 26rem - 15.5rem)); width: 13rem; border: none; padding: 0; margin: 0; background: transparent; }
+    .story-toc ol { flex-direction: column; gap: 0; border-left: 1px solid #e3e0da; }
+    .story-toc li { padding: 0; }
+    .story-toc li::before { content: none; }
+    .story-toc .toc-label { font-size: 0.62rem; }
+    .story-toc a { display: block; font-size: 0.78rem; color: #6b727c; padding: 0.32rem 0 0.32rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; line-height: 1.3; }
+    .story-toc a:hover { color: #14181b; text-decoration: none; border-left-color: #c9c3b8; }
+    .story-toc li.toc-active a { color: #14181b; border-left-color: #c98a1b; font-weight: 600; }
+  }
+  .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
+  .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
+  .story-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.15rem; line-height: 1.5; color: #3c434b; font-style: italic; margin: 0 0 1.75rem; }
+  .story h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.45rem; margin: 2.5rem 0 0.9rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e3e0da; }
+  .story h2::after { content: ""; display: block; width: 3.5rem; border-bottom: 2px solid #c98a1b; margin-bottom: -1px; margin-top: 0.35rem; }
+  .story p, .story li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.62; }
+  .section-lede { color: #5b6470; margin-top: -0.35rem; }
+
+  .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1rem; }
+  .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .kpi-value small { font-size: 0.8rem; margin-left: 0.15rem; color: #5b6470; }
+  .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
+
+  .railed { border-left: 3px solid #d8d4cc; padding-left: 1rem; margin: 0.9rem 0; }
+  .rail-record { border-left-color: #2e7d5b; }
+  .rail-computed { border-left-color: #33658a; }
+  .rail-official { border-left-color: #33658a; }
+  .rail-outlet { border-left-color: #b98317; }
+  .rail-note { border-left-color: #d8d4cc; color: #5b6470; }
+
+  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 2px; vertical-align: 0.12em; white-space: nowrap; }
+  .chip-record { background: #e7f2ec; color: #22604a; }
+  .chip-computed, .chip-official { background: #e8eef4; color: #2b5474; }
+  .chip-outlet { background: #f6eedb; color: #8a6412; }
+  .chip-ok { background: #e7f2ec; color: #22604a; }
+  .chip-warn { background: #f9e7e4; color: #a03a2a; }
+  .chip-unconfirmed { background: #f9e7e4; color: #a03a2a; }
+
+  .receipt { margin: -0.2rem 0 1rem 1rem; }
+  .receipt summary { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: #5b6470; cursor: pointer; }
+  .receipt p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.7rem 0.9rem; border-radius: 3px; margin: 0.4rem 0 0; }
+
+  .rate-chart { margin: 1.25rem 0; }
+  .rate-chart svg { width: 100%; height: auto; }
+  .chart-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #5b6470; }
+  .chart-note-accent { fill: #b9770e; }
+  .chart-axis { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #9aa1a9; }
+  .rate-chart figcaption { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.75rem; color: #8b929b; margin-top: 0.3rem; }
+
+  .outlet-check { border: 1px solid #e3e0da; border-left-width: 3px; padding: 0.8rem 1rem 0.6rem; margin: 0.8rem 0; background: #fbfaf8; }
+  .outlet-check.ok { border-left-color: #2e7d5b; }
+  .outlet-check.warn { border-left-color: #b3402e; }
+  .outlet-check.note { border-left-color: #b98317; }
+  .oc-head { margin: 0 0 0.4rem; }
+  .oc-verdict { margin: 0 0 0.3rem; font-size: 0.98rem; }
+
+  .checked-block { border: 1px solid #cfe0d7; border-left: 3px solid #2e7d5b; background: #f7fbf9; padding: 0.9rem 1.1rem; }
+  .cb-label { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
+  .contested-block { border: 1px solid #ecd4cf; border-left: 3px solid #b3402e; background: #fdf8f7; padding: 0.9rem 1.1rem; }
+  .contested-block p { margin: 0.35rem 0; }
+
+  .record-links { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.6rem; }
+  .record-links a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }
+  .record-links a:hover { border-color: #b9b4aa; }
+  .rl-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
+  .rl-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
+  .sources-line { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; }
+</style>

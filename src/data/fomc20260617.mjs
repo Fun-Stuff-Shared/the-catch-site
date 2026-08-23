@@ -3,11 +3,11 @@
 // Computed values derive from the FRED series checked into data/sources/.
 
 export const event = {
-  slug: "federal-funds-rate-decision-2026-06-17",
+  slug: "fed-rate-hold",
   title: "Warsh's first unanimous vote, with half the committee penciling in a hike",
   dek: "The June 17 decision looked like calm: a 12–0 hold, a four-paragraph statement. The projections underneath flipped from a cut to a hike, and six weeks later the dissents arrived.",
   name: "The 2026 rate hold",
-  span: "June 2026 and ongoing",
+  span: "Ongoing since December 2025",
   date: "2026-06-17",
   updated: "2026-08-23",
   kpis: [
