@@ -74,6 +74,27 @@ subject page. Nothing is overwritten.
 3. Deploy is git push (Workers git build); poll the live URL until the new content serves.
 4. Live audit: curl the live bytes and re-run the language greps; screenshot at 100% zoom.
 
+## The gate (enforced at build, added 2026-08-23)
+
+`npm run build` runs `scripts/check-events.mjs` after the Astro build; the Workers git build
+runs the same command, so a gate failure blocks the deploy. Two layers:
+
+1. MANIFEST. Every story page (any non-index .astro under src/pages/events/<subject>/) must
+   have `checks/manifests/<subject>--<story>.json` in which the building agent attests each
+   judgment step of this standard as done WITH a real evidence line (not a stub): sources
+   admitted, derived numbers computed, outlet claims verified, section grammar, chip
+   vocabulary, live elements guarded, subject page updated, homepage updated. `completed_by`
+   and `date` are required. An unattested or stubbed step fails the build. Attest only what
+   was actually done; the manifest is the written form of the standard's checklist, and a
+   false attestation is a false SHIP.
+2. MECHANICAL. The script itself checks dist (events, claims, homepage): no em dashes, no
+   internal vocabulary in visible text, no text jammed against inline tags, and every route
+   in `checks/routes.txt` still resolves (append new routes when pages ship; never remove
+   a route without a ruling).
+
+Live audit (step 4 of ship verification) stays a post-deploy action and is not in the
+manifest: it cannot be honestly attested before the deploy exists.
+
 ## Home and index wiring
 
 The homepage features the LATEST STORY (headline as the link), with the subject's standing
