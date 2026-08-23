@@ -103,8 +103,9 @@ lists records by date.
 
 ## Known gaps carried forward (do not silently drop)
 
-- Records admission/display: captured source copies (SEP tables, the July 29 statement,
-  series CSVs) are in data/sources/ but have no record pages yet; each primary document
-  used by a story should surface as an admitted, displayed record.
+- Records admission/display: the four FOMC statements/minutes now have record pages
+  (June and July 2026), but the SEP tables, the September 2016 statement, and the series
+  CSVs still have no record pages; each primary document used by a story should surface
+  as an admitted, displayed record.
 - Chart/UI polish: Zain is holding graph/UI critique; expect a revision round.
-- July 29 decision needs its own july-2026 story page (timeline stub exists).
+- July 29 story shipped 2026-08-23 (/events/fed-rate/july-2026/); gap closed.
