@@ -162,7 +162,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
         <div class="outlet-check warn">
           <p class="oc-head"><strong>Fox Business</strong>, &ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;</p>
-          <p class="oc-verdict"><span class="chip chip-warn">wrong label</span> The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.</p>
+          <p class="oc-verdict"><span class="chip chip-warn">mislabeled</span> The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.</p>
         </div>
 
         <div class="outlet-check ok">
@@ -242,17 +242,15 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
       <section id="markets">
         <p class="sec-kicker">Pricing</p>
         <h2>What the markets said</h2>
-        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17. StockTitan's 97 percent figure, quoted from June 13, sits right in that early cluster. <span class="chip chip-outlet">reported pricing</span></p>
-        <div class="contested-block">
-          <p>One honest caveat: the pricing tools' own pages are not archived here. Every number above is a dated quote from a named outlet or account: the Journal's live coverage (June 17, 8:45 a.m.), Investopedia (99 percent, June 17), DeFi Rate on Polymarket and Kalshi (June 16), and a June 13 FedWatch reading of 97.1 percent posted on X. <span class="chip chip-unconfirmed">secondhand</span></p>
-          <details class="receipt"><summary>the quotes</summary>
-            <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
-            Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
-            &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. X post by @D0Vlad, June 15: &ldquo;as of
-            June 13, CME FedWatch shows a 97.1% probability of holding.&rdquo; Kalshi close per @e23miranda:
-            97.8%. CME's own site does not allow its tool pages to be saved by our capture, so the Journal's same-morning quote is the closest we can get to the source. The full list of dated quotes with links is kept with this page's sources.</p>
-          </details>
-        </div>
+        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <span class="chip chip-outlet">reported pricing</span></p>
+        <details class="receipt"><summary>the quotes</summary>
+          <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
+          Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
+          &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. June 13 FedWatch reading of 97.1% posted
+          on X (@D0Vlad, June 15). Kalshi's Tuesday close of 97.8% per @e23miranda. CME does not allow its
+          tool pages to be saved directly, so these dated quotes are the record. The full list with links is
+          kept with this page's sources.</p>
+        </details>
       </section>
 
       <section id="records">
@@ -291,8 +289,13 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
   .story-toc a { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #33404d; text-decoration: none; }
   .story-toc a:hover { text-decoration: underline; }
   .story section { scroll-margin-top: 4.5rem; }
-  @media (min-width: 1180px) {
-    .story-toc { position: sticky; top: 0; background: #ffffff; z-index: 5; }
+  @media (min-width: 1150px) {
+    .story { display: grid; grid-template-columns: 15rem minmax(0, 46rem); gap: 0 3rem; max-width: 68rem; }
+    .story > * { grid-column: 2; }
+    .story > nav.story-toc { grid-column: 1; grid-row: 1 / span 40; position: sticky; top: 1.25rem; align-self: start; border: none; padding: 0; margin: 2.5rem 0 0; }
+    .story-toc ol { flex-direction: column; gap: 0.45rem; }
+    .story-toc a { font-size: 0.82rem; color: #5b6470; }
+    .story-toc a:hover { color: #14181b; }
   }
   .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
   .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
