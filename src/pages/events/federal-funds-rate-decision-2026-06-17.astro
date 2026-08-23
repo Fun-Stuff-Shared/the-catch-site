@@ -36,7 +36,32 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         ))}
       </div>
 
-      <section>
+      <aside class="three-things">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>The Fed held at 3.50&ndash;3.75 percent, unanimously, in Kevin Warsh's first meeting as chair.</li>
+          <li>The projections flipped from a cut to a hike: the 2026 median rose to 3.8, with nine of eighteen dots above today's rate.</li>
+          <li>Six weeks later the split went public: three officials dissented for a hike on July 29.</li>
+        </ol>
+      </aside>
+
+      <nav class="story-toc" aria-label="In this story">
+        <p class="toc-label">In this story</p>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#the-projections">The projections told a different story</a></li>
+          <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#what-next">What happened next</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </nav>
+
+      <section id="what-happened">
+        <p class="sec-kicker">The decision</p>
         <h2>What happened</h2>
         <p class="railed rail-record">
           The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on June 17, by a&nbsp;<strong>12&ndash;0</strong> vote. It was
@@ -60,7 +85,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
       </section>
 
-      <section>
+      <section id="where-this-sits">
+        <p class="sec-kicker">History</p>
         <h2>Where this sits</h2>
         <p class="railed rail-computed">
           The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>188 days</strong> as of this meeting, the end of a run of six cuts from the 5.25&ndash;5.50
@@ -96,7 +122,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
       </section>
 
-      <section>
+      <section id="the-projections">
+        <p class="sec-kicker">The real signal</p>
         <h2>The projections told a different story</h2>
         <p class="railed rail-record">
           The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
@@ -123,7 +150,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
       </section>
 
-      <section>
+      <section id="outlets">
+        <p class="sec-kicker">Cross-source check</p>
         <h2>What the outlets got right, and what they got wrong</h2>
         <p class="section-lede">Four outlets' decision coverage, checked against the primary record.</p>
 
@@ -152,7 +180,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </div>
       </section>
 
-      <section>
+      <section id="claim-check">
+        <p class="sec-kicker">Verified</p>
         <h2>Claim checked against the record</h2>
         <div class="checked-block">
           <p class="cb-label">The recurring premise: inflation above target &ldquo;for more than five years&rdquo;</p>
@@ -166,7 +195,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </div>
       </section>
 
-      <section>
+      <section id="who-feels-it">
+        <p class="sec-kicker">On the ground</p>
         <h2>Who feels it</h2>
         <p class="railed rail-official">
           While the policy rate holds at its 40-year midpoint, the rates households face are elsewhere:
@@ -176,7 +206,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
       </section>
 
-      <section>
+      <section id="what-next">
+        <p class="sec-kicker">Aftermath</p>
         <h2>What happened next</h2>
         <p class="railed rail-record">
           The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
@@ -208,7 +239,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
       </section>
 
-      <section>
+      <section id="markets">
+        <p class="sec-kicker">Pricing</p>
         <h2>What the markets said</h2>
         <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17. StockTitan's 97 percent figure, quoted from June 13, sits right in that early cluster. <span class="chip chip-outlet">reported pricing</span></p>
         <div class="contested-block">
@@ -218,12 +250,13 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
             Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
             &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. X post by @D0Vlad, June 15: &ldquo;as of
             June 13, CME FedWatch shows a 97.1% probability of holding.&rdquo; Kalshi close per @e23miranda:
-            97.8%. The full list of dated quotes with links is kept with this page's sources.</p>
+            97.8%. CME's own site does not allow its tool pages to be saved by our capture, so the Journal's same-morning quote is the closest we can get to the source. The full list of dated quotes with links is kept with this page's sources.</p>
           </details>
         </div>
       </section>
 
-      <section>
+      <section id="records">
+        <p class="sec-kicker">Sources</p>
         <h2>The records</h2>
         <ul class="record-links">
           <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
@@ -244,6 +277,23 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
 <style>
   .story { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .sec-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b9770e; margin: 2.4rem 0 -0.6rem; }
+  .sec-kicker + h2 { margin-top: 0.8rem; }
+  .three-things { border: 1px solid #e0d6c2; background: #fdfaf3; padding: 1rem 1.25rem; margin: 1.25rem 0 1rem; }
+  .tt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a6412; margin: 0 0 0.5rem; }
+  .three-things ol { margin: 0; padding-left: 1.2rem; }
+  .three-things li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.55; margin: 0.3rem 0; }
+  .story-toc { border-top: 1px solid #e3e0da; border-bottom: 1px solid #e3e0da; padding: 0.7rem 0; margin: 0 0 1.5rem; }
+  .toc-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5b6470; margin: 0 0 0.4rem; }
+  .story-toc ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; counter-reset: toc; }
+  .story-toc li { counter-increment: toc; }
+  .story-toc li::before { content: counter(toc); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: #b9770e; margin-right: 0.35rem; }
+  .story-toc a { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #33404d; text-decoration: none; }
+  .story-toc a:hover { text-decoration: underline; }
+  .story section { scroll-margin-top: 4.5rem; }
+  @media (min-width: 1180px) {
+    .story-toc { position: sticky; top: 0; background: #ffffff; z-index: 5; }
+  }
   .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
   .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
   .story-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.15rem; line-height: 1.5; color: #3c434b; font-style: italic; margin: 0 0 1.75rem; }
@@ -254,7 +304,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
   .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1rem; }
   .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
-  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.45rem; font-variant-numeric: tabular-nums; }
+  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .kpi-value small { font-size: 0.8rem; margin-left: 0.15rem; color: #5b6470; }
   .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
 
