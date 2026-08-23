@@ -1,8 +1,9 @@
 # Admitted sources: June 17, 2026 FOMC event (captured 2026-08-23)
 
-Primary record and official data captured directly; outlet pages captured as served.
-StockTitan blocks automated retrieval; its article was recovered via an assisted search
-capture (grok) and its checkable figures verified against the Fed's own tables.
+Primary record and official data captured directly from the Federal Reserve and FRED.
+Outlet pages captured as served. StockTitan and the market-pricing quotes were gathered
+through a grok-assisted search on 2026-08-23; every pricing figure carries its own dated
+source URL in june17-market-odds-via-grok.txt.
 
 | File | Bytes | sha256 (first 16) |
 |---|---|---|
@@ -21,6 +22,7 @@ capture (grok) and its checkable figures verified against the Fed's own tables.
 | data/sources/coverage/cnbc-minutes.txt | 5660 | ed0562bc32a2c18b |
 | data/sources/coverage/foxbusiness.html | 226551 | d6d93cfc17caf70f |
 | data/sources/coverage/foxbusiness.txt | 9961 | b5c6538b28b3d4ed |
+| data/sources/coverage/june17-market-odds-via-grok.txt | 10309 | 43269e8a5b4cb26b |
 | data/sources/coverage/stocktitan-via-grok.txt | 12928 | bd10c11b84afdb53 |
 | data/sources/coverage/stocktitan.html | 77 | b0ad2fbea8292c8c |
 | data/sources/coverage/tradingkey.html | 432418 | 8df965af6fb2dc78 |

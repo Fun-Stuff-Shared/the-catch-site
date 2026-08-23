@@ -30,8 +30,8 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
       <div class="kpi-strip">
         {event.kpis.map((k) => (
           <div class="kpi">
-            <span class="kpi-value">{k.value}<small>{k.unit}</small></span>
-            <span class="kpi-label">{k.label}</span>
+            <span class="kpi-value" id={k.live ? "kpi-days" : undefined}>{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label" id={k.live ? "kpi-days-label" : undefined}>{k.label}</span>
           </div>
         ))}
       </div>
@@ -44,9 +44,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </p>
         <details class="receipt"><summary>the record</summary>
           <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 12&ndash;0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.&rdquo;
-          Voting: Warsh, Williams, Barr, Bowman, Cook, Hammack, Jefferson, Kashkari, Logan, Paulson, Powell, Waller. Voting against: none (minutes).
-          <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">statement</a> &middot;
-          <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">minutes</a></p>
+          Voting: Warsh, Williams, Barr, Bowman, Cook, Hammack, Jefferson, Kashkari, Logan, Paulson, Powell, Waller. Voting against: none (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">minutes</a></p>
         </details>
         <p class="railed rail-record">
           The statement itself was the news as much as the decision: dramatically shorter than its predecessors,
@@ -90,7 +88,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <details class="receipt"><summary>computation</summary>
           <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-06-17:
           15,970 observations; 3.75 percentile 48.5 (midpoint method); mean 3.82; median 4.00. Days held:
-          2025-12-11 to 2026-06-17 = 188. Series files are checked into this site's source data.</p>
+          2025-12-11 to 2026-06-17 = 188. The full daily series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
         </details>
         <p class="railed rail-computed">
           The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
@@ -146,7 +144,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 
         <div class="outlet-check ok">
           <p class="oc-head"><strong>StockTitan</strong>, the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk.</p>
-          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview updated through June 22.</p>
+          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version.</p>
         </div>
 
         <div class="outlet-check note">
@@ -163,7 +161,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
           <details class="receipt"><summary>computation</summary>
             <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through May 2026
             exceeds 2.0 percent; May 2026 = 4.08 percent. The CPI, a different index, ran hotter
-            (4.2 percent in May per coverage). Series file checked into site source data.</p>
+            (4.2 percent in May per coverage). The series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
           </details>
         </div>
       </section>
@@ -183,12 +181,10 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         <p class="railed rail-record">
           The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
           with Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) each dissenting
-          in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split.
-          <span class="chip chip-record">record</span>
+          in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split. <span class="chip chip-record">record</span>
         </p>
         <p class="railed rail-note" id="still-held-line">
-          The range is unchanged through this page's last check (August 23, 2026).
-          <span id="held-counter"></span>
+          The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
         </p>
         <script>
           (function () {
@@ -198,7 +194,11 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
             if (now > checked) {
               var days = Math.floor((now - start) / 86400000);
               var el = document.getElementById("held-counter");
-              if (el) el.textContent = "If the Fed has not moved since, that is " + days + " days at 3.50\u20133.75 and counting; any change gets a dated correction here.";
+              if (el) el.textContent = "That is " + days + " days at 3.50\u20133.75 and counting. If the Fed moves, this page gets a dated correction.";
+              var kv = document.getElementById("kpi-days");
+              if (kv) kv.firstChild.nodeValue = String(days);
+              var kl = document.getElementById("kpi-days-label");
+              if (kl) kl.textContent = "held at this level, and counting";
             }
           })();
         </script>
@@ -209,14 +209,17 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
       </section>
 
       <section>
-        <h2>Contested and uncaptured</h2>
+        <h2>What the markets said</h2>
+        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17. StockTitan's 97 percent figure, quoted from June 13, sits right in that early cluster. <span class="chip chip-outlet">reported pricing</span></p>
         <div class="contested-block">
-          <p>Market pricing ahead of the meeting, roughly a 97&nbsp;percent chance of a hold per CME
-          FedWatch quotes dated June 13, reaches us only through StockTitan's report; we did not capture
-          the pricing pages directly. <span class="chip chip-unconfirmed">unconfirmed</span></p>
-          <p>StockTitan's article itself could not be fetched directly (the site blocks automated retrieval)
-          and was recovered through an assisted search capture on August 23; its quoted figures were verified
-          against the Fed's own tables where checkable. <span class="chip chip-unconfirmed">retrieval note</span></p>
+          <p>One honest caveat: the pricing tools' own pages are not archived here. Every number above is a dated quote from a named outlet or account: the Journal's live coverage (June 17, 8:45 a.m.), Investopedia (99 percent, June 17), DeFi Rate on Polymarket and Kalshi (June 16), and a June 13 FedWatch reading of 97.1 percent posted on X. <span class="chip chip-unconfirmed">secondhand</span></p>
+          <details class="receipt"><summary>the quotes</summary>
+            <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
+            Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
+            &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. X post by @D0Vlad, June 15: &ldquo;as of
+            June 13, CME FedWatch shows a 97.1% probability of holding.&rdquo; Kalshi close per @e23miranda:
+            97.8%. The full list of dated quotes with links is kept with this page's sources.</p>
+          </details>
         </div>
       </section>
 

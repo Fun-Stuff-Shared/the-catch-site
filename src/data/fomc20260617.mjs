@@ -10,7 +10,7 @@ export const event = {
   updated: "2026-08-23",
   kpis: [
     { value: "3.50–3.75", unit: "%", label: "target range, unchanged" },
-    { value: "188", unit: "days", label: "held, as of this meeting" },
+    { value: "188", unit: "days", label: "held at this level (at the meeting)", live: true },
     { value: "12–0", unit: "", label: "the vote" },
     { value: "48th", unit: "pctile", label: "of 44 years of policy" },
   ],
