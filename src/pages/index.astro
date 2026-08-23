@@ -1,47 +1,59 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArchiveNav from "../components/ArchiveNav.astro";
-import { records } from "../lib/export.mjs";
-import { archiveGroups } from "../lib/date-archive.mjs";
-import RecordCardList from "../components/RecordCardList.astro";
-import { eventGroups, eventPath, warrantedEvents } from "../lib/events.mjs";
-import { formatDate } from "../lib/presentation.mjs";
-
-const archive = archiveGroups(records);
-const events = eventGroups(records).slice().reverse();
-const warrantedSlugs = new Set(warrantedEvents(records).map((group) => group.slug));
-const latestEvent = events[0];
-const earlierEvents = events.slice(1);
-const ungrouped = records.filter((record) => !record.event_slug);
-const latestRecords = latestEvent ? latestEvent.records : records;
+import { event } from "../data/fomc20260617.mjs";
 ---
-<BaseLayout title="The Catch">
-  <div slot="locator" class="locator"><span>RECORDS</span><span>PUBLIC RECORD</span></div>
+<BaseLayout title="The Catch" current="Home">
+  <div slot="locator" class="locator"><span>THE CATCH</span><span>Checked claims, kept permanently</span></div>
   <div class="content">
-    <main class="method-main">
-      <h1>The Catch</h1>
-      <p class="lede">Sourced public record surface.</p>
-      {records.length === 0 && (
-        <p class="lede">
-          Claims from recent wire coverage are live on
-          the&nbsp;<a href="/news/">News</a> page, each matched to its cited source passage.
-          The&nbsp;<a href="/methodology">methodology</a> is published; every record carries its
-          source quote, evidence label, and full correction history.
-        </p>
-      )}
-      <ArchiveNav archive={archive} />
-      {latestEvent && <section aria-label="Latest event">
-        <h2 class="home-section">Latest{latestEvent.title ? `: ${latestEvent.title}` : ""}</h2>
-        {latestEvent.date && <p class="source-byline">{formatDate(latestEvent.date)} · {latestRecords.length} {latestRecords.length === 1 ? "record" : "records"}</p>}
-      </section>}
-      <RecordCardList records={latestRecords} />
-      {earlierEvents.length > 0 && <section aria-label="Earlier events">
-        <h2 class="home-section">Earlier events</h2>
-        <ul class="event-index">
-          {earlierEvents.map((event) => <li><a href={warrantedSlugs.has(event.slug) ? eventPath(event.slug) : `/claims/${event.records[0].reader_slug}/`}><span class="ei-title">{event.title}</span><span class="ei-meta">{event.date ? `${formatDate(event.date)} · ` : ""}{event.records.length} {event.records.length === 1 ? "record" : "records"}</span></a></li>)}
-        </ul>
-      </section>}
-      {ungrouped.length > 0 && <RecordCardList records={ungrouped} />}
+    <main class="front">
+      <p class="front-lede">We capture what powerful institutions actually said and did, quote it from the
+      primary record, and check the coverage against it. Corrections are permanent, dated, and public.</p>
+
+      <section class="front-feature">
+        <p class="ff-kicker">Featured event &middot; June 17, 2026</p>
+        <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
+        <p class="ff-dek">{event.dek}</p>
+        <div class="ff-kpis">
+          {event.kpis.map((k) => (
+            <span class="ff-kpi"><b>{k.value}{k.unit && k.unit !== "pctile" ? k.unit : ""}</b> {k.label}</span>
+          ))}
+        </div>
+        <p class="ff-link"><a href={`/events/${event.slug}/`}>Read the event record &rarr;</a></p>
+      </section>
+
+      <section class="front-cols">
+        <div class="fc">
+          <h3><a href="/news/">News</a></h3>
+          <p>Claims from recent wire coverage, each matched to its cited source passage.</p>
+        </div>
+        <div class="fc">
+          <h3><a href="/records/">Records</a></h3>
+          <p>The primary documents themselves: statements, minutes, filings, quoted and linked.</p>
+        </div>
+        <div class="fc">
+          <h3><a href="/methodology">Methodology</a></h3>
+          <p>How records are captured, quoted, checked, and corrected.</p>
+        </div>
+      </section>
     </main>
   </div>
 </BaseLayout>
+
+<style>
+  .front { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .front-lede { font-family: "Newsreader", Georgia, serif; font-size: 1.2rem; line-height: 1.55; color: #3c434b; margin: 1.75rem 0 2rem; }
+  .front-feature { border: 1px solid #e3e0da; border-top: 3px solid #c98a1b; background: #fbfaf8; padding: 1.25rem 1.5rem 1.1rem; }
+  .ff-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 0 0 0.5rem; }
+  .front-feature h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.4rem, 3.5vw, 1.9rem); line-height: 1.18; margin: 0 0 0.5rem; text-wrap: balance; }
+  .front-feature h2 a { color: inherit; text-decoration: none; }
+  .front-feature h2 a:hover { text-decoration: underline; }
+  .ff-dek { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 1.02rem; line-height: 1.5; color: #3c434b; margin: 0 0 0.9rem; }
+  .ff-kpis { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin-bottom: 0.9rem; }
+  .ff-kpi { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; }
+  .ff-kpi b { font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; color: #14181b; }
+  .ff-link { margin: 0; }
+  .ff-link a { font-family: "Public Sans", system-ui, sans-serif; font-weight: 600; font-size: 0.9rem; }
+  .front-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .fc h3 { font-family: "Newsreader", Georgia, serif; font-size: 1.15rem; margin: 0 0 0.35rem; }
+  .fc p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; line-height: 1.5; color: #5b6470; margin: 0; }
+</style>

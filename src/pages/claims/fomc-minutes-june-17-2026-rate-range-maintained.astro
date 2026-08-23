@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="FOMC minutes, June 17, 2026 | The Catch" current="Records">
+  <div slot="locator" class="locator"><span>RECORD</span><span>June 17, 2026</span></div>
+  <div class="content">
+    <main class="record-page">
+      <p class="record-kicker"><a href="/events/federal-funds-rate-decision-2026-06-17/">&larr; Federal funds rate decision, June 17, 2026</a></p>
+      <h1>The minutes: unanimous on the hold, split on what comes next</h1>
+      <p class="record-sub">Minutes of the June 17, 2026 FOMC meeting, released July 8, 2026. They record who voted, and the case a few participants made for a hike.</p>
+
+      <div class="excerpt">
+        <p class="excerpt-label">From the minutes</p>
+        <blockquote>
+          <p>&ldquo;In their consideration of monetary policy at this meeting, all participants supported
+          maintaining the current target range for the federal funds rate. &hellip; A few participants commented
+          that, in light of these developments, there was a case for raising the target range for the federal
+          funds rate, but those participants indicated that they supported maintaining the current target range
+          at this meeting. Several participants remarked that they did not see the current policy stance as
+          restrictive.&rdquo;</p>
+        </blockquote>
+        <blockquote>
+          <p>&ldquo;Voting for this action: Kevin Warsh, John C. Williams, Michael S. Barr, Michelle W. Bowman,
+          Lisa D. Cook, Beth M. Hammack, Philip N. Jefferson, Neel Kashkari, Lorie K. Logan, Anna Paulson,
+          Jerome H. Powell, and Christopher J. Waller. Voting against this action: None.&rdquo;</p>
+        </blockquote>
+        <p class="excerpt-source">Full text: <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">federalreserve.gov</a></p>
+      </div>
+
+      <p class="record-note">
+        What this record is: the Committee's own account of its June discussion, published three weeks after
+        the decision. It shows the hike case forming behind a unanimous vote; at the next meeting, July 29,
+        three of these voters dissented in favor of an increase. The decision-day record is the companion
+        <a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">statement</a>; the full analysis
+        is on the <a href="/events/federal-funds-rate-decision-2026-06-17/">event page</a>.
+      </p>
+
+      <details class="how-checked">
+        <summary>How we checked this</summary>
+        <p>The quotes above were captured directly from the Federal Reserve's website and compared word-for-word
+        against the published minutes. The source page was saved at capture time so the record stays verifiable
+        even if the page changes. Details of our process are on the <a href="/methodology">methodology page</a>.</p>
+      </details>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .record-page { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .record-kicker { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; margin: 1.25rem 0 0.5rem; }
+  .record-kicker a { color: #5b6470; text-decoration: none; }
+  .record-kicker a:hover { text-decoration: underline; }
+  .record-page h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.15; margin: 0 0 0.5rem; text-wrap: balance; }
+  .record-sub { font-family: "Public Sans", system-ui, sans-serif; color: #5b6470; font-size: 0.95rem; margin: 0 0 1.5rem; }
+  .excerpt { border: 1px solid #e3e0da; border-left: 3px solid #2e7d5b; background: #fbfaf8; padding: 1rem 1.25rem; }
+  .excerpt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
+  .excerpt blockquote { margin: 0 0 0.9rem; }
+  .excerpt blockquote:last-of-type { margin-bottom: 0; }
+  .excerpt blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.6; margin: 0; }
+  .excerpt-source { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin: 0.75rem 0 0; }
+  .record-note { font-family: "Newsreader", Georgia, serif; font-size: 1.02rem; line-height: 1.6; margin: 1.5rem 0; }
+  .how-checked { margin-top: 1.5rem; }
+  .how-checked summary { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #5b6470; cursor: pointer; }
+  .how-checked p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.88rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.8rem 1rem; border-radius: 3px; margin: 0.5rem 0 0; }
+</style>

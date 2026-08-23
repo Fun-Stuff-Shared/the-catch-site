@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="FOMC statement, June 17, 2026 | The Catch" current="Records">
+  <div slot="locator" class="locator"><span>RECORD</span><span>June 17, 2026</span></div>
+  <div class="content">
+    <main class="record-page">
+      <p class="record-kicker"><a href="/events/federal-funds-rate-decision-2026-06-17/">&larr; Federal funds rate decision, June 17, 2026</a></p>
+      <h1>The Fed held its target range at 3.50 to 3.75 percent</h1>
+      <p class="record-sub">FOMC statement, released 2:00 p.m. EDT, June 17, 2026. The decision passed 12&ndash;0, Kevin Warsh's first meeting as chair.</p>
+
+      <div class="excerpt">
+        <p class="excerpt-label">From the statement</p>
+        <blockquote>
+          <p>&ldquo;The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to
+          3-3/4 percent, in support of the Federal Reserve's dual mandate. The Committee reaffirmed its policy
+          of maintaining ample reserves in the banking system. Economic activity is expanding at a solid pace
+          despite elevated uncertainty that owes, in part, to the conflict in the Middle East. Productivity
+          growth and capital investment are strong. Job gains have kept pace with the workforce, and the
+          unemployment rate has changed little. Inflation remains elevated relative to the Committee's 2 percent
+          goal, in part reflecting supply shocks that have driven price increases in certain sectors, including
+          energy. The Committee will deliver price stability.&rdquo;</p>
+        </blockquote>
+        <p class="excerpt-source">Full text: <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">federalreserve.gov</a></p>
+      </div>
+
+      <p class="record-note">
+        What this record is: the Federal Reserve's own words on decision day. For what the numbers mean, how
+        the vote compares to history, and what the press got right and wrong about it, read the
+        <a href="/events/federal-funds-rate-decision-2026-06-17/">event page</a>. The Committee's internal
+        discussion is in the companion record,
+        the <a href="/claims/fomc-minutes-june-17-2026-rate-range-maintained/">minutes</a>.
+      </p>
+
+      <details class="how-checked">
+        <summary>How we checked this</summary>
+        <p>The quote above was captured directly from the Federal Reserve's website and compared word-for-word
+        against the published statement. The source page was saved at capture time so the record stays
+        verifiable even if the page changes. The vote count comes from the statement's own release line and
+        the meeting minutes. Details of our process are on the <a href="/methodology">methodology page</a>.</p>
+      </details>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .record-page { max-width: 44rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .record-kicker { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; margin: 1.25rem 0 0.5rem; }
+  .record-kicker a { color: #5b6470; text-decoration: none; }
+  .record-kicker a:hover { text-decoration: underline; }
+  .record-page h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.15; margin: 0 0 0.5rem; text-wrap: balance; }
+  .record-sub { font-family: "Public Sans", system-ui, sans-serif; color: #5b6470; font-size: 0.95rem; margin: 0 0 1.5rem; }
+  .excerpt { border: 1px solid #e3e0da; border-left: 3px solid #2e7d5b; background: #fbfaf8; padding: 1rem 1.25rem; }
+  .excerpt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
+  .excerpt blockquote { margin: 0; }
+  .excerpt blockquote p { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.6; margin: 0; }
+  .excerpt-source { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin: 0.75rem 0 0; }
+  .record-note { font-family: "Newsreader", Georgia, serif; font-size: 1.02rem; line-height: 1.6; margin: 1.5rem 0; }
+  .how-checked { margin-top: 1.5rem; }
+  .how-checked summary { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #5b6470; cursor: pointer; }
+  .how-checked p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.88rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.8rem 1rem; border-radius: 3px; margin: 0.5rem 0 0; }
+</style>
