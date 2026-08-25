@@ -1,0 +1,282 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { event, payrollChanges } from "../../../data/jobs202607.mjs";
+
+// Bar chart of monthly payroll changes, computed from the module series
+// (which is recomputed from data/sources/PAYEMS.csv).
+const W = 720, H = 200, PAD = 10;
+const vals = payrollChanges.map((d) => d.change);
+const vMax = 220, vMin = -170;
+const zeroY = H - PAD - ((0 - vMin) / (vMax - vMin)) * (H - 2 * PAD);
+const bw = (W - 2 * PAD) / payrollChanges.length;
+const bars = payrollChanges.map((d, i) => {
+  const bx = PAD + i * bw + 3;
+  const by = H - PAD - ((Math.max(d.change, 0) - vMin) / (vMax - vMin)) * (H - 2 * PAD);
+  const bh = Math.abs(d.change) / (vMax - vMin) * (H - 2 * PAD);
+  return { x: bx, y: by, w: bw - 6, h: Math.max(bh, 1.5), neg: d.change < 0, label: d.month };
+});
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><span>EVENTS</span><span>Jobs report &middot; July 2026</span></div>
+  <div class="content">
+    <main class="story">
+      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 25, 2026</p>
+      <h1>{event.title}</h1>
+      <p class="story-dek">{event.dek}</p>
+
+      <div class="kpi-strip">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>The economy lost 23,000 jobs in July. Forecasters surveyed by Dow Jones had expected a <em>gain</em> of 83,000.</li>
+          <li>The bad news reaches backward: May was revised down from +129,000 to +63,000 and June from +57,000 to +20,000. Three months that once looked solid now read +63,000, +20,000, and minus 23,000.</li>
+          <li>The unemployment rate fell to 4.1 percent, but for an unwelcome reason: the share of adults working or looking for work dropped to 61.4 percent, its lowest since early in the decade.</li>
+        </ol>
+      </aside>
+
+      <nav class="story-toc" aria-label="In this story">
+        <p class="toc-label">In this story</p>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </nav>
+
+      <section id="what-happened">
+        <p class="sec-kicker">The report</p>
+        <h2>What happened</h2>
+        <p class="railed rail-record">
+          The Bureau of Labor Statistics reported on August 7 that total nonfarm payroll employment&nbsp;<strong>fell by 23,000</strong> in July and the unemployment rate was&nbsp;<strong>4.1&nbsp;percent</strong>. In the agency's own words, both &ldquo;changed little.&rdquo;
+          The declines were concentrated: local government education lost 50,000 jobs
+          &ldquo;after showing little net change over the prior 12 months,&rdquo; and retail trade lost
+          19,000. Health care, the economy's steadiest job creator, added 22,000, below its
+          12-month average of 36,000. <span class="chip chip-record">record</span>
+        </p>
+        <details class="receipt"><summary>the record</summary>
+          <p>Release: &ldquo;Both nonfarm payroll employment (-23,000) and the unemployment rate (4.1 percent) changed little in July&hellip; Employment in local government education declined by 50,000 in July, after showing little net change over the prior 12 months. Retail trade lost 19,000 jobs in July&hellip; In July, employment in health care continued its upward trend (+22,000) but at a slower pace than the average monthly gain over the prior 12 months (+36,000).&rdquo; <a href="https://www.bls.gov/news.release/empsit.nr0.htm" rel="noreferrer">The Employment Situation, July 2026</a> (pinned copy in the records list).</p>
+        </details>
+        <p class="railed rail-record">
+          The revisions cut deeper than the headline. May's gain was revised down by 66,000, from
+          +129,000 to +63,000, and June's by 37,000, from +57,000 to +20,000:&nbsp;<strong>103,000 jobs</strong> that were reported earlier in the summer are now gone from
+          the record. Average hourly earnings rose 2 cents to $37.62; over the year they are up
+          3.2&nbsp;percent. <span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-record">
+          The composition of the loss matters: private employers added 30,000 jobs in July while
+          government shed 53,000, so the headline decline is a public-sector story, led by the
+          50,000-job drop in local government education.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker">History</p>
+        <h2>Where this sits</h2>
+        <p class="railed rail-computed">
+          July was the <strong>fifth negative month in the past twelve</strong>, after August,
+          October, and December 2025 and February 2026. Over those twelve months the economy added
+          a net 316,000 jobs, about <strong>26,000 a month</strong>: a near-stall by the standard of
+          any recent expansion, and choppy rather than steadily weak, with swings from minus 156,000
+          to plus 214,000 in a single spring. <span class="chip chip-computed">computed</span>
+        </p>
+        <figure class="rate-chart">
+          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Monthly change in payrolls, June 2025 to July 2026: five negative months in the past twelve, ending at minus 23,000">
+            <line x1={PAD} y1={zeroY} x2={W - PAD} y2={zeroY} stroke="#8892a0" stroke-width="1" />
+            {bars.map((b) => (
+              <rect x={b.x} y={b.y} width={b.w} height={b.h} fill={b.neg ? "#c98a1b" : "#7a9cc4"} />
+            ))}
+            <text x={PAD} y={H + 16} class="chart-axis">Jun 2025</text>
+            <text x={PAD + 7 * bw} y={H + 16} class="chart-axis">Jan 2026</text>
+            <text x={W - PAD - 56} y={H + 16} class="chart-axis">Jul 2026</text>
+            <text x={W - PAD - 4} y={bars[bars.length - 1].y + bars[bars.length - 1].h + 14} text-anchor="end" class="chart-note chart-note-accent">-23,000</text>
+          </svg>
+          <figcaption>Monthly change in total nonfarm payrolls, thousands, seasonally adjusted. Amber bars are losses. Source: BLS via FRED (PAYEMS), series as captured August 25, 2026.</figcaption>
+        </figure>
+        <p class="railed rail-record">
+          The unemployment rate's dip from 4.2 to 4.1 percent is not the good news it appears.
+          The release attributes it to people leaving the labor force: participation fell to
+          61.4&nbsp;percent and is down 0.7 percentage point since January.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker">The coverage</p>
+        <h2>What the coverage got right, and what it got wrong</h2>
+        <p>
+          One outlet's report on this release is in our records so far: CNBC's, published the same
+          morning. Checked line by line against the release:
+        </p>
+        <p class="railed rail-record">
+          <strong>Right:</strong> the headline figures. CNBC's minus 23,000, the 4.1 percent rate,
+          the May and June revisions, retail's loss of 19,000, health care's below-trend 22,000, and
+          the 2-cent earnings gain all match the release exactly. Its explanation of the falling
+          unemployment rate, fewer people working or looking, matches the release's participation
+          numbers. <span class="chip chip-record">checked</span>
+        </p>
+        <p class="railed rail-computed">
+          <strong>Verified against the release's own tables:</strong> CNBC's figures of 40,000
+          jobs lost in leisure and hospitality, 53,000 lost in government, a 14,000 drop in
+          financial activities, and a 30,000 gain in private payrolls all match the release (its
+          text or its summary table). What separates the two documents is emphasis, not
+          arithmetic: the release classes leisure and hospitality among industries whose
+          employment &ldquo;showed little change over the month,&rdquo; while CNBC headlined the
+          sector's drop and attached a cause, &ldquo;a possible consequence of the World Cup
+          tournament ending,&rdquo; that appears nowhere in the release. The number is the
+          agency's; the explanation is the outlet's speculation.&nbsp;<span class="chip chip-computed">checked</span></p>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker">One claim, examined</p>
+        <h2>Claim checked against the record</h2>
+        <p class="railed rail-record">
+          <strong>The claim:</strong> &ldquo;The 12-month average [payroll gain is] down to just
+          34,000&rdquo; (CNBC, August 7, matching the release’s own “average monthly gain of 34,000 over the prior 12 months”). <strong>The record today:</strong> recomputing from the
+          current published series gives about 26,000 a month over the same window. Neither number
+          is an error: CNBC's was correct on the data available August 7, and later revisions pulled
+          the average lower still. The claim aged in one direction, downward, which is itself
+          informative: this year's first estimates have repeatedly overstated the job market.&nbsp;<span class="chip chip-computed">computed</span>
+        </p>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker">The people in the numbers</p>
+        <h2>Who feels it</h2>
+        <p class="railed rail-record">
+          The number of people on temporary layoff rose by 153,000 to 921,000. The long-term
+          unemployed, out of work 27 weeks or more, now make up 25.5 percent of all unemployed
+          people: one in four. The number working part time because they could not find full-time
+          work held at 4.8&nbsp;million. For teachers and school staff, the 50,000-job drop in local
+          government education landed in the month before the school year begins.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker">Open questions</p>
+        <h2>What we do not know yet</h2>
+        <ul>
+          <li>How markets reacted to this report. We have not yet added the market-pricing record for August 7 to our files, so this page does not describe it. The report landed nine days after the Federal Reserve's split decision to hold interest rates, covered in <a href="/events/fed-rate/july-2026/">our July FOMC story</a>.</li>
+          <li>What other outlets said. Only CNBC's report is in our records so far; the comparison above is one outlet wide.</li>
+          <li>Why local government education fell by 50,000 in one month. The release states the figure without a cause, and we will not guess at one.</li>
+          <li>How much this year's figures will change again on August 28, when BLS publishes its annual preliminary benchmark revision, announced in this release. This page will be checked against it.</li>
+        </ul>
+      </section>
+
+      <section id="records">
+        <p class="sec-kicker">Sources</p>
+        <h2>The records</h2>
+        <p>
+          Every figure on this page comes from one of three places: the Bureau of Labor Statistics
+          release for July 2026, which we keep a dated copy of; the government's published payroll
+          and unemployment data series, which we keep dated copies of and recompute our numbers
+          from; or CNBC's August 7 report, which we keep in our records and quote directly. Where
+          this page says <em>computed</em>, the arithmetic was done from those saved series, and
+          where it says <em>record</em> or <em>checked</em>, the words trace to a saved document.
+        </p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  @media (min-width: 1360px) { .sheet:has(.story) { max-width: 100%; } }
+</style>
+
+<style>
+  .story { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
+  .sec-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b9770e; margin: 2.4rem 0 -0.6rem; }
+  .sec-kicker + h2 { margin-top: 0.8rem; }
+  .three-things { border: 1px solid #e0d6c2; background: #fdfaf3; padding: 1rem 1.25rem; margin: 1.25rem 0 1rem; }
+  .tt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a6412; margin: 0 0 0.5rem; }
+  .three-things ol { margin: 0; padding-left: 1.2rem; }
+  .three-things li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.55; margin: 0.3rem 0; }
+  .story-toc { border-top: 1px solid #e3e0da; border-bottom: 1px solid #e3e0da; padding: 0.7rem 0; margin: 0 0 1.5rem; }
+  .toc-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5b6470; margin: 0 0 0.4rem; }
+  .story-toc ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; counter-reset: toc; }
+  .story-toc li { counter-increment: toc; }
+  .story-toc li::before { content: counter(toc); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: #b9770e; margin-right: 0.35rem; }
+  .story-toc a { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #33404d; text-decoration: none; }
+  .story-toc a:hover { text-decoration: underline; }
+  .story section { scroll-margin-top: 4.5rem; }
+  .story { max-width: 52rem; }
+  @media (min-width: 1360px) {
+    .story p, .story li { font-size: 1.02rem; }
+    nav.story-toc { position: fixed; top: 13.5rem; left: max(1.25rem, calc(50vw - 26rem - 15.5rem)); width: 13rem; border: none; padding: 0; margin: 0; background: transparent; }
+    .story-toc ol { flex-direction: column; gap: 0; border-left: 1px solid #e3e0da; }
+    .story-toc li { padding: 0; }
+    .story-toc li::before { content: none; }
+    .story-toc .toc-label { font-size: 0.62rem; }
+    .story-toc a { display: block; font-size: 0.78rem; color: #6b727c; padding: 0.32rem 0 0.32rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; line-height: 1.3; }
+    .story-toc a:hover { color: #14181b; text-decoration: none; border-left-color: #c9c3b8; }
+    .story-toc li.toc-active a { color: #14181b; border-left-color: #c98a1b; font-weight: 600; }
+  }
+  .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
+  .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
+  .story-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.15rem; line-height: 1.5; color: #3c434b; font-style: italic; margin: 0 0 1.75rem; }
+  .story h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.45rem; margin: 2.5rem 0 0.9rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e3e0da; }
+  .story h2::after { content: ""; display: block; width: 3.5rem; border-bottom: 2px solid #c98a1b; margin-bottom: -1px; margin-top: 0.35rem; }
+  .story p, .story li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.62; }
+  .section-lede { color: #5b6470; margin-top: -0.35rem; }
+
+  .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1rem; }
+  .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .kpi-value small { font-size: 0.8rem; margin-left: 0.15rem; color: #5b6470; }
+  .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
+
+  .railed { border-left: 3px solid #d8d4cc; padding-left: 1rem; margin: 0.9rem 0; }
+  .rail-record { border-left-color: #2e7d5b; }
+  .rail-computed { border-left-color: #33658a; }
+  .rail-official { border-left-color: #33658a; }
+  .rail-outlet { border-left-color: #b98317; }
+  .rail-note { border-left-color: #d8d4cc; color: #5b6470; }
+
+  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 2px; vertical-align: 0.12em; white-space: nowrap; }
+  .chip-record { background: #e7f2ec; color: #22604a; }
+  .chip-computed, .chip-official { background: #e8eef4; color: #2b5474; }
+  .chip-outlet { background: #f6eedb; color: #8a6412; }
+  .chip-ok { background: #e7f2ec; color: #22604a; }
+  .chip-warn { background: #f9e7e4; color: #a03a2a; }
+
+  .receipt { margin: -0.2rem 0 1rem 1rem; }
+  .receipt summary { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: #5b6470; cursor: pointer; }
+  .receipt p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.7rem 0.9rem; border-radius: 3px; margin: 0.4rem 0 0; }
+
+  .rate-chart { margin: 1.25rem 0; }
+  .rate-chart svg { width: 100%; height: auto; }
+  .chart-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #5b6470; }
+  .chart-note-accent { fill: #b9770e; }
+  .chart-axis { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #9aa1a9; }
+  .rate-chart figcaption { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.75rem; color: #8b929b; margin-top: 0.3rem; }
+
+  .outlet-check { border: 1px solid #e3e0da; border-left-width: 3px; padding: 0.8rem 1rem 0.6rem; margin: 0.8rem 0; background: #fbfaf8; }
+  .outlet-check.ok { border-left-color: #2e7d5b; }
+  .outlet-check.warn { border-left-color: #b3402e; }
+  .outlet-check.note { border-left-color: #b98317; }
+  .oc-head { margin: 0 0 0.4rem; }
+  .oc-verdict { margin: 0 0 0.3rem; font-size: 0.98rem; }
+
+  .checked-block { border: 1px solid #cfe0d7; border-left: 3px solid #2e7d5b; background: #f7fbf9; padding: 0.9rem 1.1rem; }
+  .cb-label { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
+
+  .record-links { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.6rem; }
+  .record-links a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }
+  .record-links a:hover { border-color: #b9b4aa; }
+  .rl-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
+  .rl-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
+  .sources-line { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; }
+  .src-group { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 1.4rem 0 0.4rem; }
+  .src-list { list-style: none; padding: 0; margin: 0; }
+  .src-list li { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.6; padding: 0.25rem 0; border-bottom: 1px solid #efece6; }
+</style>

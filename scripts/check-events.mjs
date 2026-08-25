@@ -5,6 +5,7 @@
 //   2. Mechanical: language and route checks the script runs itself on dist output,
 //      so the gate is not attestation alone.
 import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -41,6 +42,27 @@ for (const { subject, story } of storyPages) {
   let m;
   try { m = JSON.parse(readFileSync(mPath, "utf8")); }
   catch (e) { fail.push(`${mPath}: unreadable JSON (${e.message})`); continue; }
+  if (m.schema === "event_dossier_v1") {
+    const primary = m.primary_sources ?? [];
+    const coverage = m.coverage_records ?? [];
+    const needs = m.needs_ledger ?? [];
+    if (!m.dossier_sha256) fail.push(`${mPath}: event dossier hash is required`);
+    if (m.event_class === "coverage_only" && primary.length) fail.push(`${mPath}: coverage_only event cannot claim a pinned primary source`);
+    if (m.event_class !== "coverage_only" && (!primary.length || primary.some((s) => !s.sha256 || !s.path))) fail.push(`${mPath}: every primary source needs a pinned path and sha256`);
+    for (const source of primary) {
+      if (!source.path || !existsSync(source.path)) { fail.push(`${mPath}: primary source is not present at ${source.path}`); continue; }
+      const actual = `sha256:${createHash("sha256").update(readFileSync(source.path)).digest("hex")}`;
+      if (actual !== source.sha256) fail.push(`${mPath}: primary source hash does not recompute for ${source.id}`);
+    }
+    if (!Number.isInteger(m.coverage_threshold) || m.coverage_threshold < 1) fail.push(`${mPath}: coverage_threshold must be recipe-defined positive integer`);
+    if (coverage.length < m.coverage_threshold) fail.push(`${mPath}: coverage records ${coverage.length} below recipe threshold ${m.coverage_threshold}`);
+    if (coverage.some((r) => !r.source_url || !r.admission_row_hash)) fail.push(`${mPath}: coverage must cite source_url plus admission_row_hash`);
+    if (m.event_class === "coverage_only" && new Set(coverage.map((r) => r.publisher)).size < m.coverage_threshold) fail.push(`${mPath}: coverage_only needs ${m.coverage_threshold} independent admitted outlets`);
+    if (!needs.length || needs.some((n) => !n.status || !n.plain || n.plain.trim().length < 10)) fail.push(`${mPath}: needs ledger requires typed, plain-language entries`);
+    if (m.event_class === "coverage_only" && !needs.some((n) => n.status !== "have" && /primary/i.test(n.need || ""))) fail.push(`${mPath}: coverage_only needs an open plain-language primary-record need`);
+    if ((m.model_claims ?? []).some((claim) => !claim.admitted_record_id)) fail.push(`${mPath}: model-generated claims require an admitted record id`);
+    continue;
+  }
   if (!m.completed_by || !m.date) fail.push(`${mPath}: completed_by and date are required`);
   for (const step of REQUIRED_STEPS) {
     const s = m.steps?.[step];
@@ -49,11 +71,76 @@ for (const { subject, story } of storyPages) {
   }
 }
 
+const figuresDir = join(ROOT, "src/pages/figures");
+if (existsSync(figuresDir)) {
+  for (const figure of readdirSync(figuresDir)) {
+    const page = join(figuresDir, figure, "index.astro");
+    if (figure.startsWith("[") || !existsSync(page)) continue;
+    const manifestPath = join(ROOT, "checks/manifests", `figures--${figure}.json`);
+    if (!existsSync(manifestPath)) { fail.push(`figure /figures/${figure}/ has no manifest`); continue; }
+    try {
+      const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+      if (manifest.schema !== "figure_page_v1" || manifest.status !== "staged_zain_review" || manifest.not_published !== true || manifest.plain_language_checked !== true) {
+        fail.push(`${manifestPath}: staged figure manifest is incomplete`);
+      }
+    } catch (e) { fail.push(`${manifestPath}: unreadable JSON (${e.message})`); }
+  }
+}
+
+const indexManifestRoutes = [];
+for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name) => name.endsWith(".json"))) {
+  try {
+    const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
+    if (!manifest.story && !manifest.event) continue;
+    const route = manifest.story || (manifest.event ? `/events/${manifest.event}/` : null);
+    if (!route) fail.push(`checks/manifests/${filename}: event index requires story or event route`);
+    else indexManifestRoutes.push(route);
+  } catch (error) {
+    fail.push(`checks/manifests/${filename}: unreadable JSON (${error.message})`);
+  }
+}
+
 // ---- 2. Mechanical checks on dist -------------------------------------------------
 const dist = join(ROOT, "dist");
-const SCOPE = ["events", "claims"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
+const READER_EXCLUSIONS = [
+  {
+    route: "/news/",
+    prefix: true,
+    date: "2026-08-25",
+    reason: "demoted internal export; noindex and absent from public navigation",
+  },
+];
+const TODAY = new Date().toISOString().slice(0, 10);
+for (const exclusion of READER_EXCLUSIONS) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.date) || !exclusion.reason) fail.push(`reader exclusion ${exclusion.route} needs a date and reason`);
+  if (exclusion.expires && (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.expires) || exclusion.expires < TODAY)) fail.push(`reader exclusion ${exclusion.route} expired on ${exclusion.expires}`);
+}
+const SCOPE = ["events", "claims", "figures"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
-  "retrieval", "automated", "staging", "sha256", "checked into"];
+  "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
+  "eligibility", "eligible claim", "manifested", "dossier", "pipeline"];
+
+const eventsIndex = join(dist, "events", "index.html");
+if (!existsSync(eventsIndex)) fail.push("/events/ index missing from dist");
+else {
+  const html = readFileSync(eventsIndex, "utf8");
+  for (const route of indexManifestRoutes) {
+    if (!html.includes(`href="${route}"`)) fail.push(`/events/ index missing manifested route ${route}`);
+  }
+}
+
+const newsIndex = join(dist, "news", "index.html");
+if (!existsSync(newsIndex)) fail.push("demoted /news/ index missing from dist");
+else {
+  const html = readFileSync(newsIndex, "utf8");
+  if (!html.includes('<meta name="robots" content="noindex">')) fail.push("demoted /news/ needs noindex");
+  if (!/Internal source export/.test(html)) fail.push("demoted /news/ needs an internal export label");
+  for (const f of htmlFiles(join(dist, "news"))) {
+    if (!readFileSync(f, "utf8").includes('<meta name="robots" content="noindex">')) fail.push(`${f.slice(dist.length)}: demoted news page needs noindex`);
+  }
+}
+const homeNavigation = readFileSync(join(dist, "index.html"), "utf8").match(/<nav>[\s\S]*?<\/nav>/i)?.[0] ?? "";
+if (homeNavigation.includes('href="/news/"')) fail.push("demoted /news/ remains in public navigation");
 
 function* htmlFiles(p) {
   if (!existsSync(p)) return;
@@ -65,6 +152,9 @@ for (const base of SCOPE) {
   for (const f of htmlFiles(base)) {
     const html = readFileSync(f, "utf8");
     const rel = f.slice(dist.length);
+    const route = `/${rel.replace(/^\//, "").replace(/index\.html$/, "")}`;
+    const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
+    if (exclusion) continue;
     if (html.includes("—")) fail.push(`${rel}: em dash in public copy`);
     // strip tags to check visible text only for internal vocabulary
     const text = html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
