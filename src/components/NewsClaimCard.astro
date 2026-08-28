@@ -6,10 +6,17 @@ const paywalled = claim.source_tier === "paywalled";
 const corroboratingOutlets = claim.corroboration_outlets ?? [];
 const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").toLowerCase();
 const publicLabels = labelsForNewsClaim(claim);
+const corroborationLabel = {
+  corroborated_2plus: "Corroborated by 2+ independent sources",
+  corroborated_1: "Checked: one independent source found",
+  single_source_unchecked: "Single source: not yet checked",
+  check_ran_empty: "Checked: no independent source found",
+}[claim.corroboration_status];
 ---
 <article class:list={["ev-item", context ? "k-rep" : "k-doc"]}>
   <div class="ev-tags">
     {publicLabels.map(({ axis, label }) => <span class="tag t-doc stage2-public-label" data-public-axis={axis}>{label}</span>)}
+    {corroborationLabel && <span class="tag t-stmt news-corroboration-status">{corroborationLabel}</span>}
     {paywalled && <span class="tag t-stmt">Paywalled source</span>}
     {sourceLabel && <span class="tag t-stmt">{sourceLabel}</span>}
   </div>

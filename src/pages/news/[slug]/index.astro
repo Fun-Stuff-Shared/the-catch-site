@@ -27,7 +27,7 @@ for (const row of rows.filter((item) => item.claim_class === "context")) {
 const contextRows = [...attached.values()];
 const corrections = newsData.corrections.filter((correction) => core.some((row) => row.claim_id === correction.claim_id));
 ---
-<BaseLayout title={`News article · The Catch`} current="News">
+<BaseLayout title={`Internal news article · The Catch`} current="News" noindex>
   <div class="content">
     <main class="main">
       <NewsArticleHeader article={rows} articleId={articleId} count={rows.length} />
