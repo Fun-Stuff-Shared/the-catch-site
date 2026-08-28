@@ -71,13 +71,13 @@ for (const { subject, story } of storyPages) {
   }
 }
 
-const figuresDir = join(ROOT, "src/pages/figures");
+const figuresDir = join(ROOT, "src/pages/officials");
 if (existsSync(figuresDir)) {
   for (const figure of readdirSync(figuresDir)) {
     const page = join(figuresDir, figure, "index.astro");
     if (figure.startsWith("[") || !existsSync(page)) continue;
-    const manifestPath = join(ROOT, "checks/manifests", `figures--${figure}.json`);
-    if (!existsSync(manifestPath)) { fail.push(`figure /figures/${figure}/ has no manifest`); continue; }
+    const manifestPath = join(ROOT, "checks/manifests", `officials--${figure}.json`);
+    if (!existsSync(manifestPath)) { fail.push(`figure /officials/${figure}/ has no manifest`); continue; }
     try {
       const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
       if (manifest.schema !== "figure_page_v1" || manifest.status !== "staged_zain_review" || manifest.not_published !== true || manifest.plain_language_checked !== true) {
@@ -115,10 +115,10 @@ for (const exclusion of READER_EXCLUSIONS) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.date) || !exclusion.reason) fail.push(`reader exclusion ${exclusion.route} needs a date and reason`);
   if (exclusion.expires && (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.expires) || exclusion.expires < TODAY)) fail.push(`reader exclusion ${exclusion.route} expired on ${exclusion.expires}`);
 }
-const SCOPE = ["events", "claims", "figures"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
+const SCOPE = ["events", "claims", "officials"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
-  "eligibility", "eligible claim", "manifested", "dossier", "pipeline"];
+  "eligibility", "eligible claim", "manifested", "dossier", "pipeline", "staged", "zain review", "w7", "wave", "internal review"];
 
 const eventsIndex = join(dist, "events", "index.html");
 if (!existsSync(eventsIndex)) fail.push("/events/ index missing from dist");
