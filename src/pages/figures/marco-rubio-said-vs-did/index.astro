@@ -30,7 +30,7 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         <ol>
           <li><a href="#immigration">Immigration, 2013</a></li>
           <li><a href="#zika">Zika funding, 2016</a></li>
-          <li><a href="#how-to-read">How to read this page</a></li>
+          <li><a href="#how-to-read">Where this comes from</a></li>
           <li><a href="#records">The records</a></li>
         </ol>
       </nav>
@@ -47,8 +47,8 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         </div>
 
         <div class="howitworked">
-          <p class="hw-label">How the bill worked (read this first)</p>
-          <p>The bill created a three-stage path, and a different security requirement guarded each stage:</p>
+          <p class="hw-label">How the bill worked</p>
+          <p>The bill created a three-stage path with a different security requirement at each stage:</p>
           <div class="stages">
             {immigration.stages.map((s, i) => (
               <>
@@ -57,15 +57,15 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
               </>
             ))}
           </div>
-          <p class="note">Source: the bill's own trigger section, Section 3(c) of S.744 as passed by the Senate. <a class="src" href={immigration.billText} rel="noreferrer">Bill text</a> The whole 2013 fight, and this whole episode, is about which of those arrows the security requirements guard.</p>
+          <p class="note">Source: the bill's own trigger section, Section 3(c) of S.744 as passed by the Senate. <a class="src" href={immigration.billText} rel="noreferrer">Bill text</a></p>
         </div>
 
         <div class="lane said">
           <p class="lane-label">What he said</p>
           <p>Setting: the Senate floor, June 26, 2013, defending the immigration bill he had co-written to skeptical conservatives who wanted proof its border-security requirements were binding. <a class="src" href={immigration.record.url} title={immigration.record.title} rel="noreferrer">{immigration.record.label}</a></p>
           <blockquote>&ldquo;It requires and funds the completion of 700 miles of real border fence. It adds 20,000 new border agents&hellip; It requires E-Verify for every employer in America&hellip; These are all things that at a minimum <mark>must happen before those in the country illegally can apply for permanent status</mark>.&rdquo;</blockquote>
-          <p class="note">Note the exact words: before <strong>permanent</strong> status. That is the green-card arrow in the diagram above, the third stage. His sentence does not promise security before the first stage, provisional status. On the diagram, his exact words are accurate.</p>
-          <p class="note"><strong>Two different claims, kept separate.</strong> The sentence above is what he said on June 26, and it is what this episode tests. Separately, &ldquo;border security first&rdquo; was also the broader message around the bill, and whether that message was misleading was fought over <em>at the time</em>: critics said provisional legalization came before any security was finished; fact-checkers who compared his English and Spanish interviews found he generally described the bill's stages the same way in both, while emphasizing different stages to different audiences. <a class="src" href={immigration.politifact.url} rel="noreferrer">{immigration.politifact.label}</a> We only score the sentence he actually said against the votes he actually cast.</p>
+          <p class="note">Note the exact words: before <strong>permanent</strong> status. That is the green-card arrow in the diagram above, the third stage. His sentence does not promise security before the first stage, provisional status.</p>
+          <p class="note">Separately, &ldquo;border security first&rdquo; was also the broader message around the bill, and whether that message was misleading was fought over <em>at the time</em>: critics said provisional legalization came before any security was finished; fact-checkers who compared his English and Spanish interviews found he generally described the bill's stages the same way in both, while emphasizing different stages to different audiences. <a class="src" href={immigration.politifact.url} rel="noreferrer">{immigration.politifact.label}</a></p>
         </div>
 
         <div class="lane did">
@@ -96,14 +96,14 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         <div class="verdict strength">
           <p class="v-label">How strong is this, and what to watch out for</p>
           <p><strong>Strength:</strong> within this one episode, strong. The wording is his own, on the record, and the five votes above are the exact moments the Senate decided the question his sentence raises. The full 18-vote list below shows nothing was cherry-picked.</p>
-          <p><strong>Watch out:</strong> one episode is not a habit. Careful wording is also what good lawyers and good legislators do; the same record is consistent with &ldquo;he chose his words honestly and precisely,&rdquo; and the dispute over his framing was argued in real time, not discovered later. Whether the precision was candor or cover is exactly the question we do not answer for you. If the same shape shows up on other topics, that would be worth knowing; so far we have checked this one.</p>
+          <p><strong>Watch out:</strong> one episode is not a habit. Careful wording is also what good lawyers and good legislators do; the same record is consistent with &ldquo;he chose his words honestly and precisely,&rdquo; and the dispute over his framing was argued in real time, not discovered later.</p>
         </div>
 
         <div class="cant">
           <p class="v-label">What we can't determine</p>
           <ul>
-            <li><strong>Why he voted this way.</strong> Conviction, coalition strategy, or both. We never infer motive; we show the words and the votes.</li>
-            <li><strong>What he said about this bill in 2015 and 2016</strong>, when he publicly distanced himself from it. Those later statements are not yet in our searchable record. That is a coverage gap on our side, and this episode is incomplete until it is filled.</li>
+            <li><strong>Why he voted this way.</strong> Conviction, coalition strategy, or both.</li>
+            <li><strong>What he said about this bill in 2015 and 2016</strong>, when he publicly distanced himself from it. Those later statements are not yet in our searchable record. This episode is incomplete until they are.</li>
             <li><strong>Whether his audiences understood the provisional-vs-permanent distinction.</strong> His words drew it explicitly; how it was heard is not something a record can show.</li>
           </ul>
         </div>
@@ -113,7 +113,7 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         </dl>
 
         <details class="receipt votes-all">
-          <summary>All 18 of Rubio's recorded votes in this episode (complete list, nothing omitted)</summary>
+          <summary>All 18 of his recorded votes on this bill</summary>
           <div class="tblwrap">
             <table>
               <thead><tr><th>Date (2013)</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead>
@@ -146,7 +146,7 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         </div>
 
         <div class="howitworked">
-          <p class="hw-label">The sequence (read this first)</p>
+          <p class="hw-label">The sequence</p>
           <p>In February 2016 the White House asked Congress for roughly $1.9 billion in emergency Zika funding. By May 17 the Senate had three rival funding proposals teed up for votes on the same afternoon, including a full $1.9 billion amendment from Florida's two senators, Nelson and Rubio, and a smaller $1.1 billion bipartisan compromise from Senators Blunt and Murray. Advancing any of them required 60 votes (see &ldquo;cloture&rdquo; below). The $1.9 billion versions fell short; the $1.1 billion compromise advanced and passed. The fight then moved to House-Senate negotiations over the final bill.</p>
         </div>
 
@@ -179,13 +179,13 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         <div class="verdict strength">
           <p class="v-label">How strong is this, and what to watch out for</p>
           <p><strong>Strength:</strong> moderate. One episode, but a complete one: the stated ideal ($1.9 billion), a direct vote on that exact ideal, a stated fallback, and a vote matching the fallback. That is a harder test than a single aligned vote, and he passed each step of it.</p>
-          <p><strong>Watch out:</strong> alignment on a pressing home-state issue (Zika was spreading in Florida) is still the easiest kind to find; words and politics pointed the same way. It cannot tell you what he does when they pull apart. The immigration episode above is that harder test.</p>
+          <p><strong>Watch out:</strong> alignment on a pressing home-state issue (Zika was spreading in Florida) is still the easiest kind to find; words and politics pointed the same way. It cannot tell you what he does when they pull apart.</p>
         </div>
 
         <div class="cant">
           <p class="v-label">What we can't determine</p>
           <ul>
-            <li>Whether the compromise votes reflect conviction or vote-counting. As always, we show words and votes, never motive.</li>
+            <li>Whether the compromise votes reflect conviction or vote-counting.</li>
             <li>Voice votes and unanimous-consent actions leave no individual record, so any Zika action taken that way is invisible to a roll-call check.</li>
           </ul>
         </div>
@@ -195,7 +195,7 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
         </dl>
 
         <details class="receipt votes-all">
-          <summary>All 16 of Rubio's recorded votes on this bill in 2016 (complete list, nothing omitted)</summary>
+          <summary>All 16 of his recorded votes on this bill</summary>
           <div class="tblwrap">
             <table>
               <thead><tr><th>Date (2016)</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead>
@@ -219,17 +219,16 @@ import { figure, immigration, zika, records } from "../../../data/rubio-said-vs-
       <!-- ===================== METHOD ===================== -->
       <section id="how-to-read">
         <p class="sec-kicker">Method</p>
-        <h2>How to read this page</h2>
-        <p class="railed rail-record"><strong>Every sentence links to its source.</strong> Statements come from the Congressional Record, the official transcript of what is said on the Senate floor. Votes come from the Senate's official roll-call records. Bill mechanics come from the bill text itself. Open any source link to read the official record yourself. <span class="chip chip-record">record</span></p>
-        <p class="railed rail-note"><strong>We never tell you what to conclude.</strong> &ldquo;He said X and voted Y&rdquo; is a finding. &ldquo;He's a hypocrite&rdquo; or &ldquo;he's principled&rdquo; is your call, not ours. We also never infer motive; the record shows what happened, not why.</p>
-        <p class="railed rail-computed"><strong>What this page is built on, and its honest limits.</strong> The vote record here is essentially complete: every recorded Senate roll-call vote Rubio cast is in our system, checked against the Senate's own files. The statement record is not: of 18,444 collected documents of his public statements, about 5 percent are currently searchable. More findings will surface as that grows; until then, absence of a statement here means &ldquo;not yet searchable,&rdquo; never &ldquo;he never said it.&rdquo; <span class="chip chip-computed">computed</span></p>
-        <p class="railed rail-note"><strong>How each episode's vote list was built.</strong> A statement search first connects a statement to the record; then we reconstruct the full legislative episode around it, listing every roll call on the relevant bill and amendments in the period and Rubio's position on each, so the evidence set is the episode, not just whatever the search happened to link. The complete lists above are the result.</p>
+        <h2>Where this comes from</h2>
+        <p class="railed rail-record">Statements are from the Congressional Record, the official transcript of the Senate floor. Votes are from the Senate's roll-call files. Bill mechanics are from the bill text. <span class="chip chip-record">record</span></p>
+        <p class="railed rail-computed">The vote record is complete: every recorded Senate roll call Rubio cast is held and checked against the Senate's files. The statement record is not: of 18,444 collected documents of his public statements, about 5 percent are searchable so far. A statement missing from this page means not yet searchable, not never said. <span class="chip chip-computed">computed</span></p>
+        <p class="railed rail-note">Each episode's vote list was built by taking the statement's bill and listing every roll call on that bill and its amendments in the period, with his position on each.</p>
       </section>
 
       <section id="records">
         <p class="sec-kicker">Sources</p>
         <h2>The records</h2>
-        <p class="section-lede">Everything this page rests on. Each link opens the official file.</p>
+        
         <ul class="record-links">
           {records.map((r) => (
             <li><a href={r.url} rel="noreferrer"><span class="rl-title">{r.title}</span><span class="rl-meta">{r.what}</span></a></li>

@@ -9,7 +9,7 @@ const rc114 = (n) => `https://www.senate.gov/legislative/LIS/roll_call_votes/vot
 export const figure = {
   name: "Marco Rubio",
   title: "Marco Rubio: what he said vs. how he voted",
-  dek: "Two episodes from the official record. Every sentence links to its source: the Senate roll-call file or the Congressional Record page. We show where his words and his votes line up, where they don't, and what we can't determine. You decide what it means.",
+  dek: "Two episodes from the official record: what he said on the Senate floor, and every roll call he cast on the same bill.",
   updated: "2026-08-28",
   kpis: [
     { value: "2", label: "episodes" },
@@ -58,7 +58,7 @@ export const immigration = {
     { date: "Jun 27", rc: 167, what: "Final end-debate vote on the bill", rubio: "Yes", result: "Passed 68-32" },
     { date: "Jun 27", rc: 168, what: "Pass the bill", rubio: "Yes", result: "Passed 68-32", key: true },
   ].map((v) => ({ ...v, url: rc113(v.rc) })),
-  allVotesNote: "Dates and tallies are taken directly from the Senate's official roll-call vote files; each row links to the Senate's own record. \"Passed\" and \"Failed\" describe what happened to the motion being voted on, not whether Rubio's side won. The five highlighted rows are the votes this episode's finding rests on; the other 13 are included so you can see the complete record. Completeness check: all 291 Senate roll calls of 2013 were scanned by measure; these 18 are every one taken on this bill.",
+  allVotesNote: "\"Passed\" and \"Failed\" describe the motion, not Rubio's side. Marked rows are the votes the episode rests on. All 291 Senate roll calls of 2013 were scanned by measure; these 18 are every one on this bill.",
   gloss: [
     { term: "Motion to table", def: "a vote to kill an amendment without voting on it directly. Voting Yes on tabling means voting against the amendment." },
     { term: "Cloture, \"end debate\"", def: "a vote to cut off debate so something can move forward. It needs 60 votes, not a majority, which is why a 50-47 result can be a loss." },
@@ -95,7 +95,7 @@ export const zika = {
     { date: "Jul 14", rc: 134, what: "Advance the final negotiated package, second attempt", rubio: "Yes", result: "Failed 52-44" },
     { date: "Sep 6", rc: 135, what: "Advance the final negotiated package, third attempt", rubio: "Yes", result: "Failed 52-46" },
   ].map((v) => ({ ...v, url: rc114(v.rc) })),
-  allVotesNote: "Dates and tallies are taken directly from the Senate's official roll-call vote files; each row links to the Senate's own record. \"Passed\" and \"Failed\" describe what happened to the motion, not whether Rubio's side won. Roll calls 73, 74, 75, 112, 134, and 135 were 60-vote cloture votes, which is why 50-47 and 52-48 lost while 68-29 won. Completeness check: all 163 Senate roll calls of 2016 were scanned by measure; these 16 are every one taken on this bill, including the non-Zika amendments that rode on it.",
+  allVotesNote: "\"Passed\" and \"Failed\" describe the motion, not Rubio's side. Roll calls 73, 74, 75, 112, 134, and 135 were 60-vote cloture votes, which is why 50-47 and 52-48 lost while 68-29 won. All 163 Senate roll calls of 2016 were scanned by measure; these 16 are every one on this bill, including the non-Zika amendments that rode on it.",
   gloss: [
     { term: "Cloture, \"advance\"", def: "a vote to cut off debate so a proposal can get a final vote. It needs 60 votes. That is why the $1.9 billion amendment \"failed\" at 50-47: a majority said yes, but not sixty." },
     { term: "Motion to instruct conferees", def: "when the House and Senate pass different versions, negotiators (\"conferees\") work out the final one. This motion is the Senate telling its negotiators what to fight for. It is non-binding." },
