@@ -2,22 +2,20 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { event as juneRate } from "../../data/fomc20260617.mjs";
+import { event as julyRate } from "../../data/fomc20260729.mjs";
+import { event as julyJobs } from "../../data/jobs202607.mjs";
 
 const manifestDir = join(process.cwd(), "checks/manifests");
-const events = readdirSync(manifestDir)
+const manifestRoutes = new Set(readdirSync(manifestDir)
   .filter((name) => name.endsWith(".json"))
   .map((name) => JSON.parse(readFileSync(join(manifestDir, name), "utf8")))
   .filter((manifest) => manifest.story || manifest.event)
-  .map((manifest) => {
-    const route = manifest.story || (manifest.event ? `/events/${manifest.event}/` : null);
-    if (!route) throw new Error(`event manifest has no route: ${JSON.stringify(manifest)}`);
-    return {
-      route,
-      title: manifest.title || manifest.event || route,
-      finding: manifest.dek || "Open the event record",
-      date: manifest.date || manifest.generated_at || "",
-    };
-  })
+  .map((manifest) => manifest.story || `/events/${manifest.event}/`));
+const storyData = [juneRate, julyRate, julyJobs];
+const events = storyData
+  .filter((event) => manifestRoutes.has(`/events/${event.slug}/`))
+  .map((event) => ({ route: `/events/${event.slug}/`, title: event.title, finding: event.dek, date: event.date }))
   .sort((a, b) => b.date.localeCompare(a.date) || a.route.localeCompare(b.route));
 ---
 <BaseLayout title="Events | The Catch" current="Events">
@@ -28,6 +26,7 @@ const events = readdirSync(manifestDir)
       <p class="lede">Each event gathers the primary records around one story, checks the coverage against them,
       and tells you what actually happened.</p>
       <ul class="matters-grid">
+        <li><a href="/events/fed-rate/"><span class="mt-status st-blue">Standing</span><span class="mt-title">The federal funds rate</span><span class="mt-finding">Hold running since December 2025; the latest record is July 2026.</span><span class="mt-meta">Open the standing record</span></a></li>
         {events.map((event) => <li><a href={event.route}><span class="mt-status st-blue">{event.date.slice(0, 10) || "Event"}</span><span class="mt-title">{event.title}</span><span class="mt-finding">{event.finding}</span><span class="mt-meta">Open event record</span></a></li>)}
       </ul>
     </main>
