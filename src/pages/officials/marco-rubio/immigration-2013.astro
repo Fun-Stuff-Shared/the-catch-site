@@ -21,7 +21,7 @@ import "../../../styles/figure-story.css";
         <ol>
           <li>His exact words put border security before <em>permanent</em> status, not before any status. His five key votes sit exactly where his words did.</li>
           <li>Critics who heard &ldquo;security first&rdquo; as security before any legal status read the same votes as the opposite: he helped kill each amendment that would have made it work that way.</li>
-          <li>The bill changed between the No votes and the speech: the Corker-Hoeven deal toughened the green-card conditions, and he voted for that version the same day he described it.</li>
+          <li>Within four months he had walked away from the bill; by 2016 he was saying &ldquo;we tried it that way&rdquo; and that security must come before anything else. That later position is the one his 2013 votes rejected.</li>
         </ol>
       </aside>
       <nav class="story-toc" aria-label="In this story">
@@ -55,10 +55,14 @@ import "../../../styles/figure-story.css";
 
         <div class="lane said">
           <p class="lane-label">What he said</p>
-          <p>Setting: the Senate floor, June 26, 2013, defending the immigration bill he had co-written to skeptical conservatives who wanted proof its border-security requirements were binding. <a class="src" href={immigration.record.url} title={immigration.record.title} rel="noreferrer">{immigration.record.label}</a></p>
+          <p>Setting: Univision's Spanish-language Sunday show <em>Al Punto</em>, June 9, 2013, the week before the first key votes. Translated by PolitiFact. <a class="src" href={immigration.politifact.url} rel="noreferrer">{immigration.politifact.label}</a></p>
+          <blockquote>&ldquo;Nobody is talking here about preventing legalization. Legalization will take place&hellip; <mark>Legalization is not conditional</mark>.&rdquo;</blockquote>
+          <p class="note">A House Republican, Dana Rohrabacher, said this showed Rubio told Spanish-speaking audiences the opposite of &ldquo;security first.&rdquo; PolitiFact rated that Mostly False: in both languages Rubio described the same sequence (provisional status, then security requirements, then green cards), emphasizing different steps to different audiences. On June 12 Rubio told radio host Sean Hannity he &ldquo;probably should have been more artful in the use of terms.&rdquo;</p>
+          <p>Setting: the Senate floor, June 26, 2013, defending the bill to skeptical conservatives who wanted proof its border-security requirements were binding. <a class="src" href={immigration.record.url} title={immigration.record.title} rel="noreferrer">{immigration.record.label}</a></p>
           <blockquote>&ldquo;It requires and funds the completion of 700 miles of real border fence. It adds 20,000 new border agents&hellip; It requires E-Verify for every employer in America&hellip; These are all things that at a minimum <mark>must happen before those in the country illegally can apply for permanent status</mark>.&rdquo;</blockquote>
-          <p class="note">Note the exact words: before <strong>permanent</strong> status. That is the green-card arrow in the diagram above, the third stage. His sentence does not promise security before the first stage, provisional status.</p>
-          <p class="note">Separately, &ldquo;border security first&rdquo; was also the broader message around the bill, and whether that message was misleading was fought over <em>at the time</em>: critics said provisional legalization came before any security was finished; fact-checkers who compared his English and Spanish interviews found he generally described the bill's stages the same way in both, while emphasizing different stages to different audiences. <a class="src" href={immigration.politifact.url} rel="noreferrer">{immigration.politifact.label}</a></p>
+          <p>Later in the same speech, on what the provisional stage gives and what the green-card stage requires:</p>
+          <blockquote>&ldquo;In return, the only thing they get is a temporary work permit, and they can't renew it in 6 years unless they can prove they have been holding a job and paying their taxes. For at least 10 years, that is all they can have. After all that, they cannot even apply for permanent status until the fence is built, the Border Patrol agents are hired, and the border security technology, E-Verify, and <mark>the tracking system</mark> are fully in place.&rdquo;</blockquote>
+          <p class="note">Note the exact words: before <strong>permanent</strong> status. That is the green-card arrow in the diagram above, the third stage. Neither sentence promises security before the first stage, provisional status. And &ldquo;the tracking system&rdquo; is the entry-exit system the Vitter amendment, eight days earlier, had tried to require before any status at all.</p>
         </div>
 
         <div class="lane did">
@@ -86,6 +90,18 @@ import "../../../styles/figure-story.css";
           <p class="note">The refined version of this finding: he consistently resisted making <em>completed</em> enforcement a condition of provisional legalization, while supporting increasingly strict enforcement conditions on permanent residence. Whether that distinction matches what &ldquo;security first&rdquo; meant to any given listener is the open question.</p>
         </div>
 
+        <div class="lane said">
+          <p class="lane-label">What he said afterward</p>
+          <p>The bill passed the Senate on June 27, 2013 and died in the House. His later statements on it, in order:</p>
+          {immigration.later.map((q) => (
+            <div class="later">
+              <p class="note"><strong>{q.date}</strong> &middot; {q.who}. <a class="src" href={q.url} rel="noreferrer">{q.label}</a></p>
+              <blockquote>&ldquo;{q.quote}&rdquo;</blockquote>
+            </div>
+          ))}
+          <p class="note">Four months after the vote, his office said the House should pass separate bills and not use one to reach a conference with the Senate bill. By the 2016 campaign the position was that security must be done and &ldquo;proven&rdquo; before anything else, which is the sequence the 2013 amendments he voted against would have written into law.</p>
+        </div>
+
         <div class="verdict strength">
           <p class="v-label">How strong is this, and what to watch out for</p>
           <p><strong>Strength:</strong> within this one episode, strong. The wording is his own, on the record, and the five votes above are the exact moments the Senate decided the question his sentence raises. The full 18-vote list below shows nothing was cherry-picked.</p>
@@ -96,7 +112,6 @@ import "../../../styles/figure-story.css";
           <p class="v-label">What we can't determine</p>
           <ul>
             <li><strong>Why he voted this way.</strong> Conviction, coalition strategy, or both.</li>
-            <li><strong>What he said about this bill in 2015 and 2016</strong>, when he publicly distanced himself from it. Those later statements are not yet in our searchable record. This episode is incomplete until they are.</li>
             <li><strong>Whether his audiences understood the provisional-vs-permanent distinction.</strong> His words drew it explicitly; how it was heard is not something a record can show.</li>
           </ul>
         </div>

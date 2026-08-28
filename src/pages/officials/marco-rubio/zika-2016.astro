@@ -9,10 +9,10 @@ import "../../../styles/figure-story.css";
     <main class="story">
       <p class="story-kicker"><a href="/officials/marco-rubio/">Marco Rubio</a> &middot; Public health &middot; Zika emergency funding (2016) &middot; updated August 28, 2026</p>
       <h1>&ldquo;Fully fund the $1.9 billion.&rdquo; And the votes to match.</h1>
-      <p class="story-dek">On May 17, 2016 he asked the Senate for the full $1.9 billion and said in advance he would take the $1.1 billion compromise if that was all that could pass. The 16 roll calls he cast on the bill.</p>
+      <p class="story-dek">On May 17, 2016 he asked the Senate for the full $1.9 billion and said in advance he would take the $1.1 billion compromise if that was all that could pass. The 22 roll calls he cast on the two bills that carried the money, through the day it became law.</p>
       <div class="kpi-strip">
-        <div class="kpi"><span class="kpi-value">16</span><span class="kpi-label">roll calls on the bill</span></div>
-        <div class="kpi"><span class="kpi-value">5</span><span class="kpi-label">key votes</span></div>
+        <div class="kpi"><span class="kpi-value">22</span><span class="kpi-label">roll calls on the money</span></div>
+        <div class="kpi"><span class="kpi-value">6</span><span class="kpi-label">key votes</span></div>
         <div class="kpi"><span class="kpi-value">May 2016</span><span class="kpi-label">floor statement</span></div>
         <div class="kpi"><span class="kpi-value">50&ndash;47</span><span class="kpi-label">his amendment, 10 short of 60</span></div>
       </div>
@@ -21,7 +21,7 @@ import "../../../styles/figure-story.css";
         <ol>
           <li>He asked for $1.9 billion, co-sponsored the $1.9 billion amendment, and voted for it the same day. It fell 10 votes short of the 60 needed.</li>
           <li>He had said that morning he would support the $1.1 billion compromise if that was what remained. Minutes later he did.</li>
-          <li>When the final package stalled over the summer, he voted to advance it all three times it came up.</li>
+          <li>When the final package stalled over the summer, he voted to advance it all three times it came up, and for the September stopgap that finally carried the $1.1 billion into law.</li>
         </ol>
       </aside>
       <nav class="story-toc" aria-label="In this story">
@@ -41,7 +41,7 @@ import "../../../styles/figure-story.css";
 
         <div class="howitworked">
           <p class="hw-label">The sequence</p>
-          <p>In February 2016 the White House asked Congress for roughly $1.9 billion in emergency Zika funding. By May 17 the Senate had three rival funding proposals teed up for votes on the same afternoon, including a full $1.9 billion amendment from Florida's two senators, Nelson and Rubio, and a smaller $1.1 billion bipartisan compromise from Senators Blunt and Murray. Advancing any of them required 60 votes (see &ldquo;cloture&rdquo; below). The $1.9 billion versions fell short; the $1.1 billion compromise advanced and passed. The fight then moved to House-Senate negotiations over the final bill.</p>
+          <p>In February 2016 the White House asked Congress for roughly $1.9 billion in emergency Zika funding. By May 17 the Senate had three rival funding proposals teed up for votes on the same afternoon, the full $1.9 billion from Florida's two senators, Nelson and Rubio; $1.1 billion from Senator Cornyn, paid for by cutting a health-law prevention fund; and $1.1 billion with no offset from Senators Blunt and Murray, the bipartisan compromise. Advancing any of them required 60 votes (see &ldquo;cloture&rdquo; below). The first two fell short; the compromise advanced and passed. The fight then moved to House-Senate negotiations, stalled all summer, and ended on September 28 when the money rode on a stopgap spending bill.</p>
         </div>
 
         <div class="lane said">
@@ -50,6 +50,13 @@ import "../../../styles/figure-story.css";
           <blockquote>&ldquo;I support <mark>fully funding the request</mark> made&hellip; it is really the scientists' request, the doctors' request&hellip; Why take the chance? Let's do it once. Let's get it right.&rdquo;</blockquote>
           <p>He also named the amendment as his own, and said in advance what he would do if it failed:</p>
           <blockquote>&ldquo;I am proud of the amendment that my colleague from Florida, Senator Nelson, and I are proposing here today. I hope that the $1.9 billion amount passes, but <mark>if we are left with a vote on the Blunt-Murray amendment, I think that is better than nothing, and I will support it</mark>.&rdquo;</blockquote>
+          <p>On the House's smaller bill, the same morning:</p>
+          <blockquote>&ldquo;I am concerned about what I hear coming from the House. It is $622 million, and quite frankly, that will not cut it&hellip; the House would raid even more of the Ebola funds for the Zika response.&rdquo;</blockquote>
+          <p>His posts that day and after the vote:</p>
+          <ul class="posts">
+            {zika.posts.slice(0, 2).map((q) => (<li><strong>{q.date}</strong> &middot; &ldquo;{q.text}&rdquo; <a class="src" href={q.url} rel="noreferrer">Post</a></li>))}
+          </ul>
+          <p class="note">The second post says $1.2 billion. The amendment the Senate advanced that afternoon was $1.1 billion.</p>
         </div>
 
         <div class="lane did">
@@ -65,9 +72,20 @@ import "../../../styles/figure-story.css";
           </ol>
         </div>
 
+        <div class="howitworked">
+          <p class="hw-label">What happened next</p>
+          <p>The House passed its $622 million bill on May 18. In June the two chambers' negotiators settled on $1.1 billion, partly offset, and attached it to a military-construction and veterans bill. The Senate failed to advance that version three times (June 28, July 14, September 6), each short of 60 votes; Rubio voted to advance it each time. Local mosquito transmission was confirmed in Florida at the end of July. On September 28, $1.1 billion was folded into the stopgap bill that kept the government open past September 30. The Senate passed it 72 to 26; the House passed it that night; the President signed it September 29 as <a href={zika.law.url} rel="noreferrer">Public Law 114-223</a>. Ten months after the request.</p>
+          <p>His floor remarks that afternoon: <a class="src" href={zika.record2.url} title={zika.record2.title} rel="noreferrer">{zika.record2.label}</a></p>
+          <blockquote>&ldquo;After a lot of work, the Senate has finally passed funding to take on Zika&hellip; this is actually a very similar proposal that the Senate proposed in May&hellip; I have to reiterate that it is shameful that it took so long&hellip; It took far too long for colleagues in my own party to understand the gravity and severity of this outbreak, and, sad to say, the Democratic minority in the Senate used this as a political tool for much of the month of August.&rdquo;</blockquote>
+          <ul class="posts">
+            {zika.posts.slice(2).map((q) => (<li><strong>{q.date}</strong> &middot; &ldquo;{q.text}&rdquo; <a class="src" href={q.url} rel="noreferrer">Post</a></li>))}
+          </ul>
+          <p class="note">&ldquo;Voted 5 times&rdquo; was a re-election line against Rep. Patrick Murphy. Counted against the table below, by August 25 he had voted Yes on Zika money seven times (roll calls 73, 74, 75, 77, 82, 112, 134). Which five he was counting is not stated.</p>
+        </div>
+
         <div class="verdict aligned">
           <p class="v-label">Where it lines up</p>
-          <p>The votes match the words at every step, including the hard one. He asked for $1.9 billion and voted for $1.9 billion on his own co-sponsored amendment the same day. When it fell 10 votes short of the 60 needed, he did what he had promised that morning: voted for the $1.1 billion compromise rather than oppose partial funding. Voting for $1.1 billion after asking for $1.9 billion is not a contradiction here; he stated the fallback position himself, in advance, on the record. And when the final package stalled over the summer, he voted to advance it all three times it came up.</p>
+          <p>The votes match the words at every step, including the hard one. He asked for $1.9 billion and voted for $1.9 billion on his own co-sponsored amendment the same day. When it fell 10 votes short of the 60 needed, he did what he had promised that morning: voted for the $1.1 billion compromise rather than oppose partial funding. Voting for $1.1 billion after asking for $1.9 billion is not a contradiction here; he stated the fallback position himself, in advance, on the record. When the final package stalled over the summer, he voted to advance it all three times it came up, and he voted for the September stopgap that finally carried the money.</p>
         </div>
 
         <div class="verdict strength">
@@ -89,7 +107,7 @@ import "../../../styles/figure-story.css";
         </dl>
 
         <details class="receipt votes-all">
-          <summary>All 16 of his recorded votes on this bill</summary>
+          <summary>All 22 of his recorded votes on the two bills that carried the money</summary>
           <div class="tblwrap">
             <table>
               <thead><tr><th>Date (2016)</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead>
