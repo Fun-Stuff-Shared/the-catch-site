@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { immigration, zika, records } from "../../../data/rubio-said-vs-did.mjs";
+import "../../../styles/figure-story.css";
+---
+<BaseLayout title={`Marco Rubio on border security, 2013 | The Catch`} current="Figures">
+  <div slot="locator" class="locator"><a href="/figures/">FIGURES</a><a href="/figures/marco-rubio/">Marco Rubio</a><span>Immigration, 2013</span></div>
+  <div class="content">
+    <main class="story">
+      <p class="story-kicker"><a href="/figures/marco-rubio/">Marco Rubio</a> &middot; Immigration &middot; the 2013 &ldquo;Gang of Eight&rdquo; bill (S.744) &middot; updated August 28, 2026</p>
+      <h1>Border security first. But first before <em>what</em>?</h1>
+      <p class="story-dek">On June 26, 2013 he told the Senate the bill required 700 miles of fence, 20,000 agents, and E-Verify before anyone could apply for permanent status. The 18 roll calls he cast on the bill, and where each security requirement actually sat.</p>
+      <div class="kpi-strip">
+        <div class="kpi"><span class="kpi-value">18</span><span class="kpi-label">roll calls on the bill</span></div>
+        <div class="kpi"><span class="kpi-value">5</span><span class="kpi-label">key votes</span></div>
+        <div class="kpi"><span class="kpi-value">Jun 2013</span><span class="kpi-label">floor statement</span></div>
+        <div class="kpi"><span class="kpi-value">68&ndash;32</span><span class="kpi-label">final passage</span></div>
+      </div>
+      <aside class="three-things">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>His exact words put border security before <em>permanent</em> status, not before any status. His five key votes sit exactly where his words did.</li>
+          <li>Critics who heard &ldquo;security first&rdquo; as security before any legal status read the same votes as the opposite: he helped kill each amendment that would have made it work that way.</li>
+          <li>The bill changed between the No votes and the speech: the Corker-Hoeven deal toughened the green-card conditions, and he voted for that version the same day he described it.</li>
+        </ol>
+      </aside>
+      <nav class="story-toc" aria-label="In this story">
+        <p class="toc-label">In this story</p>
+        <ol>
+          <li><a href="#episode">The episode</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </nav>
+<section id="episode">
+
+        <div class="pattern-box">
+          <p class="p-name">Precise words, bigger impression</p>
+          <p class="p-meaning">What it looks like: his exact words draw a careful line (&ldquo;before <em>permanent</em> status&rdquo;), while the plain hearing of them (&ldquo;security first&rdquo;) suggests a stricter promise. His votes match the careful line, not the plain hearing.</p>
+          <p class="chip-row"><span class="chip chip-record">their words</span> <span class="chip chip-record">record</span> <span class="chip chip-computed">one episode, five key votes</span></p>
+        </div>
+
+        <div class="howitworked">
+          <p class="hw-label">How the bill worked</p>
+          <p>The bill created a three-stage path with a different security requirement at each stage:</p>
+          <div class="stages">
+            {immigration.stages.map((s, i) => (
+              <>
+                {i > 0 && <span class="stage-arrow" aria-hidden="true">&rarr;</span>}
+                <div class="stage"><p class="s-name">{s.name}</p><p class="s-gate" set:html={s.gate} /></div>
+              </>
+            ))}
+          </div>
+          <p class="note">Source: the bill's own trigger section, Section 3(c) of S.744 as passed by the Senate. <a class="src" href={immigration.billText} rel="noreferrer">Bill text</a></p>
+        </div>
+
+        <div class="lane said">
+          <p class="lane-label">What he said</p>
+          <p>Setting: the Senate floor, June 26, 2013, defending the immigration bill he had co-written to skeptical conservatives who wanted proof its border-security requirements were binding. <a class="src" href={immigration.record.url} title={immigration.record.title} rel="noreferrer">{immigration.record.label}</a></p>
+          <blockquote>&ldquo;It requires and funds the completion of 700 miles of real border fence. It adds 20,000 new border agents&hellip; It requires E-Verify for every employer in America&hellip; These are all things that at a minimum <mark>must happen before those in the country illegally can apply for permanent status</mark>.&rdquo;</blockquote>
+          <p class="note">Note the exact words: before <strong>permanent</strong> status. That is the green-card arrow in the diagram above, the third stage. His sentence does not promise security before the first stage, provisional status.</p>
+          <p class="note">Separately, &ldquo;border security first&rdquo; was also the broader message around the bill, and whether that message was misleading was fought over <em>at the time</em>: critics said provisional legalization came before any security was finished; fact-checkers who compared his English and Spanish interviews found he generally described the bill's stages the same way in both, while emphasizing different stages to different audiences. <a class="src" href={immigration.politifact.url} rel="noreferrer">{immigration.politifact.label}</a></p>
+        </div>
+
+        <div class="lane did">
+          <p class="lane-label">What he did</p>
+          <ol class="votes">
+            {immigration.keyVotes.map((v) => (
+              <li class="vote">
+                <span class="v-date">{v.date}</span>
+                <span class={`cast ${v.cast}`}>Voted {v.cast}</span>
+                <span class="v-text"><span set:html={"&hellip;" + v.text} /> <a class="src" href={v.url} rel="noreferrer">Roll call {v.rc}</a></span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="howitworked">
+          <p class="hw-label">One thing the dates hide</p>
+          <p>The bill <strong>changed</strong> between those votes and the speech. The No votes above came June 13 to 18, on a version with weaker security conditions. In the following week, the Corker-Hoeven deal made the green-card conditions much tougher: the 700 miles of fencing, roughly doubling the Border Patrol, E-Verify, new technology. The June 26 speech describes that strengthened version, and he voted for it the same day. So the sequence is: he voted down security-before-provisional-status amendments, then supported much stronger security-before-green-card requirements, then described the strengthened bill on the floor.</p>
+        </div>
+
+        <div class="verdict mixed">
+          <p class="v-label">Where it lines up, and where it doesn't</p>
+          <p>Measured against his exact words, his votes are consistent, and consistently placed: at every decision point, he voted to keep the security requirements on the green-card arrow and off the provisional-status arrow. He voted down each amendment that moved them earlier, and voted for the version that made the later requirements tougher.</p>
+          <p>But if you heard &ldquo;border security first&rdquo; as &ldquo;before anyone here illegally gets any legal status,&rdquo; the record reads differently: he helped kill the amendments that would have made it work that way, including one demanding six months of border control before provisional status and one demanding part of the fencing be built first. The Thune amendment's fencing and the final bill's fencing were not the same requirement moved in time: Thune put part of it <em>before provisional status</em>; the bill he voted for put the fencing requirement <em>before green cards</em>. That placement is the entire dispute.</p>
+          <p class="note">The refined version of this finding: he consistently resisted making <em>completed</em> enforcement a condition of provisional legalization, while supporting increasingly strict enforcement conditions on permanent residence. Whether that distinction matches what &ldquo;security first&rdquo; meant to any given listener is the open question.</p>
+        </div>
+
+        <div class="verdict strength">
+          <p class="v-label">How strong is this, and what to watch out for</p>
+          <p><strong>Strength:</strong> within this one episode, strong. The wording is his own, on the record, and the five votes above are the exact moments the Senate decided the question his sentence raises. The full 18-vote list below shows nothing was cherry-picked.</p>
+          <p><strong>Watch out:</strong> one episode is not a habit. Careful wording is also what good lawyers and good legislators do; the same record is consistent with &ldquo;he chose his words honestly and precisely,&rdquo; and the dispute over his framing was argued in real time, not discovered later.</p>
+        </div>
+
+        <div class="cant">
+          <p class="v-label">What we can't determine</p>
+          <ul>
+            <li><strong>Why he voted this way.</strong> Conviction, coalition strategy, or both.</li>
+            <li><strong>What he said about this bill in 2015 and 2016</strong>, when he publicly distanced himself from it. Those later statements are not yet in our searchable record. This episode is incomplete until they are.</li>
+            <li><strong>Whether his audiences understood the provisional-vs-permanent distinction.</strong> His words drew it explicitly; how it was heard is not something a record can show.</li>
+          </ul>
+        </div>
+
+        <dl class="gloss">
+          {immigration.gloss.map((g) => (<div><dt>{g.term}:</dt><dd>{g.def}</dd></div>))}
+        </dl>
+
+        <details class="receipt votes-all">
+          <summary>All 18 of his recorded votes on this bill</summary>
+          <div class="tblwrap">
+            <table>
+              <thead><tr><th>Date (2013)</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead>
+              <tbody>
+                {immigration.allVotes.map((v) => (
+                  <tr class={v.key ? "key" : undefined}>
+                    <td class="num">{v.date}</td>
+                    <td class="num"><a href={v.url} rel="noreferrer">{v.rc}</a></td>
+                    <td>{v.what}{v.key && <Fragment> <span class="keymark">&#9670; key vote</span></Fragment>}</td>
+                    <td>{v.rubio}</td>
+                    <td class="num">{v.result}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p class="tbl-note">{immigration.allVotesNote}</p>
+          </div>
+        </details>
+      </section>
+      <section id="records">
+        <p class="sec-kicker">Sources</p>
+        <h2>The records</h2>
+        <ul class="record-links">
+          {records.filter((r) => !r.url.includes("2016") && !r.url.includes("vote1142")).map((r) => (
+            <li><a href={r.url} rel="noreferrer"><span class="rl-title">{r.title}</span><span class="rl-meta">{r.what}</span></a></li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  @media (min-width: 1360px) { .sheet:has(.story) { max-width: 100%; } }
+</style>

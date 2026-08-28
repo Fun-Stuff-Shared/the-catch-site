@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { immigration, zika, records } from "../../../data/rubio-said-vs-did.mjs";
+import "../../../styles/figure-story.css";
+---
+<BaseLayout title={`Marco Rubio on Zika funding, 2016 | The Catch`} current="Figures">
+  <div slot="locator" class="locator"><a href="/figures/">FIGURES</a><a href="/figures/marco-rubio/">Marco Rubio</a><span>Zika funding, 2016</span></div>
+  <div class="content">
+    <main class="story">
+      <p class="story-kicker"><a href="/figures/marco-rubio/">Marco Rubio</a> &middot; Public health &middot; Zika emergency funding (2016) &middot; updated August 28, 2026</p>
+      <h1>&ldquo;Fully fund the $1.9 billion.&rdquo; And the votes to match.</h1>
+      <p class="story-dek">On May 17, 2016 he asked the Senate for the full $1.9 billion and said in advance he would take the $1.1 billion compromise if that was all that could pass. The 16 roll calls he cast on the bill.</p>
+      <div class="kpi-strip">
+        <div class="kpi"><span class="kpi-value">16</span><span class="kpi-label">roll calls on the bill</span></div>
+        <div class="kpi"><span class="kpi-value">5</span><span class="kpi-label">key votes</span></div>
+        <div class="kpi"><span class="kpi-value">May 2016</span><span class="kpi-label">floor statement</span></div>
+        <div class="kpi"><span class="kpi-value">50&ndash;47</span><span class="kpi-label">his amendment, 10 short of 60</span></div>
+      </div>
+      <aside class="three-things">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>He asked for $1.9 billion, co-sponsored the $1.9 billion amendment, and voted for it the same day. It fell 10 votes short of the 60 needed.</li>
+          <li>He had said that morning he would support the $1.1 billion compromise if that was what remained. Minutes later he did.</li>
+          <li>When the final package stalled over the summer, he voted to advance it all three times it came up.</li>
+        </ol>
+      </aside>
+      <nav class="story-toc" aria-label="In this story">
+        <p class="toc-label">In this story</p>
+        <ol>
+          <li><a href="#episode">The episode</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </nav>
+<section id="episode">
+
+        <div class="pattern-box">
+          <p class="p-name">Words and votes in step</p>
+          <p class="p-meaning">What it looks like: he asked publicly for the full emergency amount, co-sponsored the amendment providing it, and voted for it hours later. When it fell short, he voted for the smaller compromise rather than let funding fail, exactly as he said he would. One episode, not yet a pattern.</p>
+          <p class="chip-row"><span class="chip chip-record">their words</span> <span class="chip chip-record">record</span> <span class="chip chip-ok">checks out</span> <span class="chip chip-computed">one episode, 16 votes</span></p>
+        </div>
+
+        <div class="howitworked">
+          <p class="hw-label">The sequence</p>
+          <p>In February 2016 the White House asked Congress for roughly $1.9 billion in emergency Zika funding. By May 17 the Senate had three rival funding proposals teed up for votes on the same afternoon, including a full $1.9 billion amendment from Florida's two senators, Nelson and Rubio, and a smaller $1.1 billion bipartisan compromise from Senators Blunt and Murray. Advancing any of them required 60 votes (see &ldquo;cloture&rdquo; below). The $1.9 billion versions fell short; the $1.1 billion compromise advanced and passed. The fight then moved to House-Senate negotiations over the final bill.</p>
+        </div>
+
+        <div class="lane said">
+          <p class="lane-label">What he said</p>
+          <p>Setting: the Senate floor, May 17, 2016, hours before the votes, with the Zika virus spreading in Puerto Rico and Florida. <a class="src" href={zika.record.url} title={zika.record.title} rel="noreferrer">{zika.record.label}</a></p>
+          <blockquote>&ldquo;I support <mark>fully funding the request</mark> made&hellip; it is really the scientists' request, the doctors' request&hellip; Why take the chance? Let's do it once. Let's get it right.&rdquo;</blockquote>
+          <p>He also named the amendment as his own, and said in advance what he would do if it failed:</p>
+          <blockquote>&ldquo;I am proud of the amendment that my colleague from Florida, Senator Nelson, and I are proposing here today. I hope that the $1.9 billion amount passes, but <mark>if we are left with a vote on the Blunt-Murray amendment, I think that is better than nothing, and I will support it</mark>.&rdquo;</blockquote>
+        </div>
+
+        <div class="lane did">
+          <p class="lane-label">What he did</p>
+          <ol class="votes">
+            {zika.keyVotes.map((v) => (
+              <li class="vote">
+                <span class="v-date">{v.date}</span>
+                <span class={`cast ${v.cast}`}>{v.castLabel ?? `Voted ${v.cast}`}</span>
+                <span class="v-text"><span set:html={"&hellip;" + v.text} /> <a class="src" href={v.url} rel="noreferrer">Roll call {v.rc}</a>{v.extra?.map((e) => (<> <a class="src" href={e.url} rel="noreferrer">Roll call {e.rc}</a></>))}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="verdict aligned">
+          <p class="v-label">Where it lines up</p>
+          <p>The votes match the words at every step, including the hard one. He asked for $1.9 billion and voted for $1.9 billion on his own co-sponsored amendment the same day. When it fell 10 votes short of the 60 needed, he did what he had promised that morning: voted for the $1.1 billion compromise rather than oppose partial funding. Voting for $1.1 billion after asking for $1.9 billion is not a contradiction here; he stated the fallback position himself, in advance, on the record. And when the final package stalled over the summer, he voted to advance it all three times it came up.</p>
+        </div>
+
+        <div class="verdict strength">
+          <p class="v-label">How strong is this, and what to watch out for</p>
+          <p><strong>Strength:</strong> moderate. One episode, but a complete one: the stated ideal ($1.9 billion), a direct vote on that exact ideal, a stated fallback, and a vote matching the fallback. That is a harder test than a single aligned vote, and he passed each step of it.</p>
+          <p><strong>Watch out:</strong> alignment on a pressing home-state issue (Zika was spreading in Florida) is still the easiest kind to find; words and politics pointed the same way. It cannot tell you what he does when they pull apart.</p>
+        </div>
+
+        <div class="cant">
+          <p class="v-label">What we can't determine</p>
+          <ul>
+            <li>Whether the compromise votes reflect conviction or vote-counting.</li>
+            <li>Voice votes and unanimous-consent actions leave no individual record, so any Zika action taken that way is invisible to a roll-call check.</li>
+          </ul>
+        </div>
+
+        <dl class="gloss">
+          {zika.gloss.map((g) => (<div><dt>{g.term}:</dt><dd>{g.def}</dd></div>))}
+        </dl>
+
+        <details class="receipt votes-all">
+          <summary>All 16 of his recorded votes on this bill</summary>
+          <div class="tblwrap">
+            <table>
+              <thead><tr><th>Date (2016)</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead>
+              <tbody>
+                {zika.allVotes.map((v) => (
+                  <tr class={v.key ? "key" : undefined}>
+                    <td class="num">{v.date}</td>
+                    <td class="num"><a href={v.url} rel="noreferrer">{v.rc}</a></td>
+                    <td>{v.what}{v.key && <Fragment> <span class="keymark">&#9670; key vote</span></Fragment>}</td>
+                    <td>{v.rubio}</td>
+                    <td class="num">{v.result}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p class="tbl-note">{zika.allVotesNote}</p>
+          </div>
+        </details>
+      </section>
+      <section id="records">
+        <p class="sec-kicker">Sources</p>
+        <h2>The records</h2>
+        <ul class="record-links">
+          {records.filter((r) => r.url.includes("2016") || r.url.includes("vote1142")).map((r) => (
+            <li><a href={r.url} rel="noreferrer"><span class="rl-title">{r.title}</span><span class="rl-meta">{r.what}</span></a></li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  @media (min-width: 1360px) { .sheet:has(.story) { max-width: 100%; } }
+</style>
