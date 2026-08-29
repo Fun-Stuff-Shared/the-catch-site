@@ -1,0 +1,6 @@
+---
+const { votes } = Astro.props;
+---
+<ol class="votes">
+  {votes.map((vote) => <li class="vote"><span class="v-date">{vote.date}</span><span class:list={["cast", vote.cast === "Yea" ? "yes" : "no"]}>Voted {vote.cast}</span><span class="v-text">{vote.text} <a class="src" href={vote.url} rel="noreferrer">Roll call {vote.rc}</a></span></li>)}
+</ol>

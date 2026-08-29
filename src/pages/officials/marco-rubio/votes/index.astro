@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import VoteTable from "../../../../components/officials/VoteTable.astro";
+import { allRubioVotes, voteStoreMeta } from "../../../../lib/official-votes.mjs";
+
+const years = [...new Set(allRubioVotes.map((vote) => vote.date.slice(0, 4)))].sort((a, b) => b.localeCompare(a));
+---
+<BaseLayout title="Marco Rubio Senate votes | The Catch" current="Officials">
+  <div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>Votes</span></div>
+  <div class="content"><main class="story"><p class="story-kicker">Marco Rubio · Senate roll calls</p><h1>Every recorded Senate vote</h1><p class="story-dek">{allRubioVotes.length.toLocaleString()} recorded votes, 2011 to {voteStoreMeta.tenure_end.slice(0, 4)}. Each row is generated from the Senate’s roll-call XML.</p>{years.map((year) => { const votes = allRubioVotes.filter((vote) => vote.date.startsWith(year)); return <section><h2>{year} <small>({votes.length})</small></h2><VoteTable votes={votes} /></section>; })}</main></div>
+</BaseLayout>

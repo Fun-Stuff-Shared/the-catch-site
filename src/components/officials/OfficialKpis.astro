@@ -1,0 +1,4 @@
+---
+const { votes, keyVotes, statements } = Astro.props;
+---
+<div class="kpi-strip"><div class="kpi"><span class="kpi-value">{votes.length}</span><span class="kpi-label">recorded roll calls</span></div><div class="kpi"><span class="kpi-value">{keyVotes.length}</span><span class="kpi-label">key votes</span></div><div class="kpi"><span class="kpi-value">{statements.length}</span><span class="kpi-label">statements</span></div></div>

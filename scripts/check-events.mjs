@@ -6,6 +6,7 @@
 //      so the gate is not attestation alone.
 import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -87,6 +88,24 @@ if (existsSync(figuresDir)) {
   }
 }
 
+const officialVoteStore = join(ROOT, "src/data/votes/marco-rubio.json");
+if (!existsSync(officialVoteStore)) fail.push("official vote store missing");
+else {
+  try {
+    const store = JSON.parse(readFileSync(officialVoteStore, "utf8"));
+    const meta = store.meta ?? {};
+    if (meta.rows_written !== store.rows?.length) fail.push("official vote store row count does not match meta");
+    if (meta.files_scanned - meta.post_tenure_excluded !== meta.rows_written) fail.push("official vote store tenure accounting does not balance");
+    for (const name of ["immigration-2013.json", "zika-2016.json"]) {
+      const episode = JSON.parse(readFileSync(join(ROOT, "src/data/officials/marco-rubio/episodes", name), "utf8"));
+      const rows = store.rows.filter((row) => row.congress === episode.congress && row.session === episode.session && episode.measures.includes(row.measure));
+      for (const vote of episode.key_votes) if (!rows.some((row) => row.rc === vote.rc)) fail.push(`${episode.slug}: key roll call ${vote.rc} is not on its measures`);
+    }
+  } catch (error) { fail.push(`official vote store unreadable: ${error.message}`); }
+}
+try { execFileSync(process.execPath, [join(ROOT, "scripts/check-statements.mjs")], { stdio: "pipe" }); }
+catch (error) { fail.push(`official statement check failed: ${error.stderr?.toString() || error.message}`); }
+
 const indexManifestRoutes = [];
 for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name) => name.endsWith(".json"))) {
   try {
@@ -155,9 +174,10 @@ for (const base of SCOPE) {
     const route = `/${rel.replace(/^\//, "").replace(/index\.html$/, "")}`;
     const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
     if (exclusion) continue;
-    if (html.includes("—")) fail.push(`${rel}: em dash in public copy`);
-    // strip tags to check visible text only for internal vocabulary
-    const text = html.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
+    const readerHtml = html.replace(/<table[\s\S]*?<\/table>/gi, "");
+    if (readerHtml.includes("—")) fail.push(`${rel}: em dash in public copy`);
+    // Tables reproduce source-record language verbatim; scan authored reader copy only.
+    const text = readerHtml.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
     for (const w of INTERNAL) {
       if (text.toLowerCase().includes(w)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
     }
