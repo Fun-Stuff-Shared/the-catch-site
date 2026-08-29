@@ -1,6 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { event } from "../data/fomc20260729.mjs";
+import { readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import { event as juneRate } from "../data/fomc20260617.mjs";
+import { event as julyRate } from "../data/fomc20260729.mjs";
+import { event as julyJobs } from "../data/jobs202607.mjs";
+
+const manifestDir = join(process.cwd(), "checks", "manifests");
+const manifestRoutes = new Set(readdirSync(manifestDir)
+  .filter((name) => name.endsWith(".json"))
+  .map((name) => JSON.parse(readFileSync(join(manifestDir, name), "utf8")))
+  .map((manifest) => manifest.story || `/events/${manifest.event}/`));
+const event = [juneRate, julyRate, julyJobs]
+  .filter((item) => manifestRoutes.has(`/events/${item.slug}/`))
+  .sort((a, b) => String(b.date).localeCompare(String(a.date)))[0];
+const monthLabel = new Date(event.date).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
 ---
 <BaseLayout title="The Catch" current="Home">
   <div slot="locator" class="locator"><span>THE CATCH</span><span>Checked claims, kept permanently</span></div>
@@ -10,7 +24,7 @@ import { event } from "../data/fomc20260729.mjs";
       primary record, and check the coverage against it. Corrections are permanent, dated, and public.</p>
 
       <section class="front-feature">
-        <p class="ff-kicker">Latest story &middot; July 2026</p>
+        <p class="ff-kicker">Latest story &middot; {monthLabel}</p>
         <h2><a href={`/events/${event.slug}/`}>{event.title}</a></h2>
         <p class="ff-dek">{event.dek}</p>
         <div class="ff-kpis">
