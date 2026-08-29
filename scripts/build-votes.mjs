@@ -36,12 +36,23 @@ function isoDate(value, file) {
 }
 
 const files = filesAt(DROP).sort();
-const rows = files.map((file) => {
+const parsed = files.map((file) => {
   const xml = readFileSync(file, "utf8");
   const congress = Number(field(xml, "congress"));
   const session = Number(field(xml, "session"));
   const rc = Number(field(xml, "vote_number"));
   if (!congress || !session || !rc) throw new Error(`${file}: missing roll-call identity`);
+  return { file, xml, congress, session, rc, date: isoDate(field(xml, "vote_date"), file) };
+});
+const tenureEnd = parsed.filter(({ xml }) => (xml.match(/<member>[\s\S]*?<\/member>/g) ?? []).some((entry) => field(entry, "lis_member_id") === MEMBER_ID)).map(({ date }) => date).sort().at(-1);
+if (!tenureEnd) throw new Error(`no Senate XML file contains ${MEMBER_ID}`);
+const postTenure = parsed.filter(({ xml, date }) => date > tenureEnd && !(xml.match(/<member>[\s\S]*?<\/member>/g) ?? []).some((entry) => field(entry, "lis_member_id") === MEMBER_ID));
+for (const { file, xml, date } of parsed) {
+  if (date <= tenureEnd && !(xml.match(/<member>[\s\S]*?<\/member>/g) ?? []).some((entry) => field(entry, "lis_member_id") === MEMBER_ID)) {
+    throw new Error(`${file}: missing Senate member ${MEMBER_ID} on or before tenure end ${tenureEnd}`);
+  }
+}
+const rows = parsed.filter(({ file }) => !postTenure.some((excluded) => excluded.file === file)).map(({ file, xml, congress, session, rc, date }) => {
   const document = field(xml, "document_number");
   const amendmentToDocument = field(xml, "amendment_to_document_number");
   const amendment = field(xml, "amendment_number") || null;
@@ -49,7 +60,7 @@ const rows = files.map((file) => {
     rc,
     congress,
     session,
-    date: isoDate(field(xml, "vote_date"), file),
+    date,
     question: field(xml, "question"),
     title: field(xml, "vote_title"),
     measure: document || amendmentToDocument || null,
@@ -71,12 +82,14 @@ const output = {
     member_lis_id: MEMBER_ID,
     files_scanned: files.length,
     rows_written: rows.length,
+    tenure_end: tenureEnd,
+    post_tenure_excluded: postTenure.length,
     capture_manifest_sha256: `sha256:${createHash("sha256").update(captureManifest).digest("hex")}`,
   },
   rows,
 };
 
-if (output.meta.files_scanned !== output.meta.rows_written) throw new Error("row count does not equal XML file count");
+if (output.meta.files_scanned - output.meta.post_tenure_excluded !== output.meta.rows_written) throw new Error("row count does not equal XML file count minus post-tenure exclusions");
 mkdirSync(new URL("../src/data/votes/", import.meta.url), { recursive: true });
 writeFileSync(OUTPUT, `${JSON.stringify(output, null, 2)}\n`);
 console.log(`wrote ${output.meta.rows_written} Marco Rubio roll calls from ${output.meta.files_scanned} Senate XML files`);
