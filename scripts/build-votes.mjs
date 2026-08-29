@@ -53,7 +53,9 @@ for (const { file, xml, date } of parsed) {
   }
 }
 const rows = parsed.filter(({ file }) => !postTenure.some((excluded) => excluded.file === file)).map(({ file, xml, congress, session, rc, date }) => {
-  const document = field(xml, "document_number");
+  const documentNumber = field(xml, "document_number");
+  const documentType = field(xml, "document_type");
+  const document = documentNumber && documentType ? `${documentType.endsWith(".") ? documentType : `${documentType}.`} ${documentNumber}` : documentNumber;
   const amendmentToDocument = field(xml, "amendment_to_document_number");
   const amendment = field(xml, "amendment_number") || null;
   return {
