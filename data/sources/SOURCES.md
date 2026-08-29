@@ -17,6 +17,7 @@ disclosure, in coverage/axios-july-via-assisted.txt.
 | data/sources/UNRATE.csv | 14181 | b671b94c9381e263 |
 | data/sources/PAYEMS.csv | 18369 | 5d8f5b4f09b0179b |
 | data/sources/bls-empsit-2026-07.html | 200013 | 0a243825b0612ebb |
+| data/sources/bls-prebmk-2026.html | 38138 | b3fc4a4971dbde4c |
 | data/sources/fomccalendars.htm | 164831 | d79899296e7222b3 |
 | data/sources/fomcminutes20260617.htm | 116435 | a973c918a4a461be |
 | data/sources/fomcminutes20260729.htm | 120417 | 25d55d8846a6a49e |

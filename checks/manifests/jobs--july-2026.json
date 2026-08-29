@@ -1,0 +1,72 @@
+{
+  "coverage_records": [
+    {
+      "admission_row_hash": "sha256:a38203722bdeb59e15932e905b16408a001bc613cb8e929c6f783489d62c096a",
+      "article_id": "slice3:0201",
+      "source_url": "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html"
+    },
+    {
+      "admission_row_hash": "sha256:b18f4fdb12a04bc8a87ea81ffb4ace642a18ed4b674aa0befb5399369ccaecdc",
+      "article_id": "slice3:0192",
+      "source_url": "https://www.cnbc.com/2026/08/07/long-term-unemployment-job-market-workers-labor-force.html"
+    }
+  ],
+  "coverage_threshold": 2,
+  "dossier_sha256": "sha256:da7e4005a6b638f27d89814206dd6ff6779eda28c604fb2d7000f922e7ffe2c2",
+  "event": "jobs/july-2026",
+  "figures": [
+    {
+      "figure": "July payroll change",
+      "source_id": "bls-empsit-2026-07",
+      "value": "-23,000"
+    },
+    {
+      "figure": "Unemployment rate",
+      "source_id": "bls-empsit-2026-07",
+      "value": "4.1%"
+    },
+    {
+      "figure": "May and June revisions",
+      "source_id": "bls-empsit-2026-07",
+      "value": "-103,000"
+    }
+  ],
+  "model_calls": [],
+  "model_claims": [],
+  "needs_ledger": [
+    {
+      "need": "official payroll change",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "unemployment rate",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "prior-month revisions",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "sector breakdown",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    }
+  ],
+  "primary_sources": [
+    {
+      "bytes": 200013,
+      "id": "bls-empsit-2026-07",
+      "path": "/Volumes/4/CF/news-fqs-pilot/runs/spindle-event-jobs-july-20260824T000000Z/sources/bls-empsit-2026-07.html",
+      "sha256": "sha256:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "url": "https://www.bls.gov/news.release/empsit.htm"
+    }
+  ],
+  "schema": "event_dossier_v1"
+}

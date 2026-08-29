@@ -10,7 +10,7 @@ export const event = {
   name: "The July 2026 jobs report",
   span: "Reported August 7, 2026",
   date: "2026-08-07",
-  updated: "2026-08-25",
+  updated: "2026-08-29",
   kpis: [
     { value: "-23,000", unit: "", label: "payrolls in July" },
     { value: "4.1", unit: "%", label: "unemployment rate" },

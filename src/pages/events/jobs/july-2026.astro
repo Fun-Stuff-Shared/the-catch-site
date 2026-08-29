@@ -20,7 +20,7 @@ const bars = payrollChanges.map((d, i) => {
   <div slot="locator" class="locator"><span>EVENTS</span><span>Jobs report &middot; July 2026</span></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 25, 2026</p>
+      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 29, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
@@ -51,6 +51,7 @@ const bars = payrollChanges.map((d, i) => {
           <li><a href="#claim-check">Claim checked against the record</a></li>
           <li><a href="#who-feels-it">Who feels it</a></li>
           <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#benchmark">The August 28 benchmark check</a></li>
           <li><a href="#unknowns">What we do not know yet</a></li>
           <li><a href="#records">The records</a></li>
         </ol>
@@ -193,28 +194,53 @@ const bars = payrollChanges.map((d, i) => {
         </p>
       </section>
 
+      <section id="benchmark">
+        <p class="sec-kicker">Since this page was written</p>
+        <h2>The August 28 benchmark check</h2>
+        <p class="railed rail-record">
+          This release said a preliminary benchmark revision would follow on August 28. It did. Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records, and reports how far off the survey was in March. The answer for March 2026: <strong>79,000 jobs too high</strong>, or 0.1&nbsp;percent, with private payrolls 178,000 too high. The average size of this correction over the past ten years is 0.2 percent, so this one is smaller than usual. It does not change the figures on this page yet: the correction is applied to the published series in February 2027, with the January 2027 report.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+        <details class="receipt"><summary>the record</summary>
+          <p>Release: &ldquo;The preliminary estimate of the Current Employment Statistics (CES) national benchmark revision to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)&hellip; The preliminary benchmark revision for total private employment was -178,000 (-0.1 percent). The annual benchmark revisions over the last 10 years have an absolute average of 0.2 percent of total nonfarm employment. In accordance with usual practice, the final benchmark revision will be issued in February 2027 with the publication of the January 2027 Employment Situation news release.&rdquo; <a href="https://www.bls.gov/news.release/prebmk.nr0.htm" rel="noreferrer">Preliminary Benchmark (National), March 2026</a>, USDL-26-1425, August 28, 2026.</p>
+        </details>
+        <p class="railed rail-computed">
+          Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em>. So the direction this page describes, first estimates overstating private-sector hiring, holds in the benchmark too, at a modest size.&nbsp;<span class="chip chip-computed">computed</span>
+        </p>
+      </section>
       <section id="unknowns">
         <p class="sec-kicker">Open questions</p>
         <h2>What we do not know yet</h2>
         <ul>
-          
-          
           <li>Why local government education fell by 50,000 in one month. The release states the figure without a cause, and we will not guess at one.</li>
-          <li>How much this year's figures will change again on August 28, when BLS publishes its annual preliminary benchmark revision, announced in this release. This page will be checked against it.</li>
+          <li>How the benchmark will land on the months after March 2026. The preliminary figure covers March only; the month-by-month effect arrives with the final revision in February 2027.</li>
         </ul>
       </section>
-
       <section id="records">
         <p class="sec-kicker">Sources</p>
         <h2>The records</h2>
-        <p>
-          Every figure on this page comes from one of three places: the Bureau of Labor Statistics
-          release for July 2026, which we keep a dated copy of; the government's published payroll
-          and unemployment data series, which we keep dated copies of and recompute our numbers
-          from; or CNBC's August 7 report, which we keep in our records and quote directly. Where
-          this page says <em>computed</em>, the arithmetic was done from those saved series, and
-          where it says <em>record</em> or <em>checked</em>, the words trace to a saved document.
-        </p>
+        <p class="section-lede">Everything this page rests on, by kind. We keep a dated copy of each one.</p>
+
+        <h3 class="src-group">Primary documents</h3>
+        <ul class="src-list">
+          <li><a href="https://www.bls.gov/news.release/empsit.nr0.htm" rel="noreferrer">The Employment Situation, July 2026</a> &middot; released August 7 &middot; every <em>record</em> figure above</li>
+          <li><a href="https://www.bls.gov/news.release/prebmk.nr0.htm" rel="noreferrer">Preliminary Benchmark (National), March 2026</a> &middot; released August 28 &middot; the benchmark check</li>
+        </ul>
+
+        <h3 class="src-group">Official data</h3>
+        <ul class="src-list">
+          <li><a href="https://fred.stlouisfed.org/series/PAYEMS" rel="noreferrer">Total nonfarm payrolls, monthly</a> &middot; the chart, the five-in-twelve count, the 26,000 average</li>
+          <li><a href="https://fred.stlouisfed.org/series/UNRATE" rel="noreferrer">Unemployment rate, monthly</a> &middot; the 4.2 to 4.1 move</li>
+        </ul>
+
+        <h3 class="src-group">Coverage checked</h3>
+        <ul class="src-list">
+          <li><a href="https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html" rel="noreferrer">CNBC</a>, release day &middot; the headline figures, the World Cup explanation, the 34,000 claim, the market reaction</li>
+          <li><a href="https://www.cbsnews.com/news/july-jobs-report-unexpected-job-losses/" rel="noreferrer">CBS News</a>, release day &middot; the FactSet forecast of 95,000</li>
+          <li><a href="https://www.nbcnews.com/business/economy/july-2026-jobs-report-rcna591138" rel="noreferrer">NBC News</a>, captured the morning of the release &middot; the 83,000 expectation and the backdrop</li>
+          <li><a href="https://www.cnbc.com/2026/08/07/long-term-unemployment-job-market-workers-labor-force.html" rel="noreferrer">CNBC</a> on long-term unemployment &middot; context for the one-in-four figure</li>
+        </ul>
+
+        <p class="sources-line"><a href="/methodology">How we check</a> &middot; where this page says <em>computed</em>, the arithmetic was done from the saved data series; where it says <em>record</em> or <em>checked</em>, the words trace to a saved document.</p>
       </section>
     </main>
   </div>
