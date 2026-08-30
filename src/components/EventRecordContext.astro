@@ -1,6 +1,7 @@
 ---
 import { recordById } from "../lib/record-manifests.mjs";
 const { subEvents, recordIds } = Astro.props;
+for (const id of recordIds) if (!recordById.has(id)) throw new Error(`record chip names unknown record ${id}`);
 ---
 <nav class="sub-events" aria-label="Parts of this event">
   <span>In this event</span>
