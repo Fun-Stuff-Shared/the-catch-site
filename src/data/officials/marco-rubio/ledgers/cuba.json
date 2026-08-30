@@ -1,0 +1,50 @@
+{
+  "episode": "cuba",
+  "built_at": "2026-08-30T10:05:44Z",
+  "classes": [
+    {
+      "class": "bill_text_as_passed_engrossed",
+      "status": "absent",
+      "reason": "not_found_after_search: the requested BILLS-113s1197es GovInfo URL redirected to the GovInfo error page in capture-oneoff-20260830T100423Z; no bill-text artifact was retained."
+    },
+    {
+      "class": "crs_summary",
+      "status": "absent",
+      "reason": "not_found_after_search: the official Congress.gov S. 1197 page returned HTTP 403 to the capture CLI in capture-oneoff-20260830T100142Z; no CRS summary was captured."
+    },
+    {
+      "class": "roll_call_index_per_vehicle",
+      "status": "captured",
+      "record": {
+        "url": "https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_113_1.xml",
+        "publisher": "U.S. Senate",
+        "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/capture-oneoff-20260830T095829Z",
+        "text_sha256": "sha256:d856c871da7ce0c9f673f33351728704c8be4d0534bb622bcdf1e9feb5cd91fa",
+        "pinned_path": "data/sources/officials/d856c871da7ce0c9.xml"
+      }
+    },
+    {
+      "class": "figure_stated_reason_per_key_vote",
+      "status": "absent",
+      "reason": "not_found_after_search: searched the full November 19, 2013 Senate Record for S. 1197, the Ayotte 2255 and Levin 2175 amendments, Guantanamo transfer language, and Rubio; no Rubio-attributed statement explaining either roll call was located."
+    },
+    {
+      "class": "opposing_side_stated_reason",
+      "status": "absent",
+      "reason": "not_found_after_search: searched the full November 19, 2013 Senate Record for the Ayotte 2255 and Levin 2175 amendment debate and the vote entries; retained text supplies amendment text and roll calls but no speaker-attributed opposing reason suitable for display."
+    },
+    {
+      "class": "contemporaneous_fact_check",
+      "status": "captured",
+      "record": {
+        "url": "https://politifact.com/article/2015/jan/20/fact-checking-claims-about-cuba/",
+        "publisher": "PolitiFact",
+        "outlet": "PolitiFact",
+        "verdict": "Mostly True",
+        "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/capture-oneoff-20260830T095834Z",
+        "text_sha256": "sha256:b3c9a402b6c86aadf0484abf86f99f0eb1d9aafc86546436e42e9526c7118fc3",
+        "pinned_path": "data/sources/officials/b3c9a402b6c86aad.html"
+      }
+    }
+  ]
+}
