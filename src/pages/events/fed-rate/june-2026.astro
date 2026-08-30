@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EventRecordContext from "../../../components/EventRecordContext.astro";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
 
 // Build the step-chart geometry from the rate path.
@@ -60,6 +61,7 @@ const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
         </ol>
       </nav>
 
+      <EventRecordContext subEvents={[{ date: "June 17", label: "Federal Reserve decision", section_anchor: "what-happened" }]} recordIds={["fomc-statement-2026-06-17", "fomc-minutes-2026-06-17"]} />
       <section id="what-happened">
         <p class="sec-kicker">The decision</p>
         <h2>What happened</h2>

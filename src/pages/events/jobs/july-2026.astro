@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EventRecordContext from "../../../components/EventRecordContext.astro";
 import { event, payrollChanges } from "../../../data/jobs202607.mjs";
 
 // Bar chart of monthly payroll changes, computed from the module series
@@ -57,6 +58,7 @@ const bars = payrollChanges.map((d, i) => {
         </ol>
       </nav>
 
+      <EventRecordContext subEvents={[{ date: "August 7", label: "July employment release", section_anchor: "what-happened" }, { date: "August 28", label: "Preliminary benchmark check", section_anchor: "what-happened-next" }, { date: "February 2027", label: "Final benchmark update", section_anchor: "what-happened-next" }]} recordIds={["bls-empsit-2026-07", "bls-prebmk-2026"]} />
       <section id="what-happened">
         <p class="sec-kicker">The report</p>
         <h2>What happened</h2>

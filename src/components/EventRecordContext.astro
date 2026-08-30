@@ -1,0 +1,10 @@
+---
+import { recordById } from "../lib/record-manifests.mjs";
+const { subEvents, recordIds } = Astro.props;
+---
+<nav class="sub-events" aria-label="Parts of this event">
+  <span>In this event</span>
+  {subEvents.map((item) => <a href={`#${item.section_anchor}`}>{item.date} · {item.label}</a>)}
+</nav>
+<section class="story-records"><p>This story rests on {recordIds.length} records.</p><ul>{recordIds.map((id) => { const record = recordById.get(id); return <li><a data-record={id} href={`/records/${id}/`}>{record.title}</a><span>{record.publisher}</span></li>; })}</ul></section>
+<style>.sub-events{font:.76rem/1.4 "Public Sans",sans-serif;color:#5b6470;display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.sub-events span{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:.68rem}.sub-events a{color:#22604a}.story-records{border-top:1px solid #e3e0da;margin:2rem 0;padding-top:1rem}.story-records p{font:700 1rem "Newsreader",Georgia,serif}.story-records ul{list-style:none;padding:0}.story-records li{border-top:1px solid #e3e0da;padding:.5rem 0}.story-records a{font-family:"Newsreader",Georgia,serif;color:inherit}.story-records span{display:block;color:#5b6470;font:.75rem "Public Sans",sans-serif;margin-top:.15rem}</style>

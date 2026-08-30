@@ -172,6 +172,11 @@ for (const exclusion of READER_EXCLUSIONS) {
   if (exclusion.expires && (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.expires) || exclusion.expires < TODAY)) fail.push(`reader exclusion ${exclusion.route} expired on ${exclusion.expires}`);
 }
 const SCOPE = ["events", "claims", "officials"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
+const manifestRecordIds = new Set();
+for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name) => name.endsWith(".json"))) {
+  const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
+  for (const record of manifest.records ?? []) manifestRecordIds.add(record.id);
+}
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
   "eligibility", "eligible claim", "manifested", "dossier", "pipeline", "staged", "zain review", "w7", "wave", "internal review"];
@@ -212,6 +217,11 @@ for (const base of SCOPE) {
     const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
     if (exclusion) continue;
     const readerHtml = html.replace(/<table[\s\S]*?<\/table>/gi, "");
+    for (const match of html.matchAll(/data-record="([^"]+)"/g)) {
+      const id = match[1];
+      if (!manifestRecordIds.has(id)) fail.push(`${rel}: record chip names unknown record ${id}`);
+      else if (!html.includes(`href="/records/${id}/"`)) fail.push(`${rel}: record chip ${id} does not link to its record page`);
+    }
     if (readerHtml.includes("—")) fail.push(`${rel}: em dash in public copy`);
     // Tables reproduce source-record language verbatim; scan authored reader copy only.
     const text = readerHtml.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
