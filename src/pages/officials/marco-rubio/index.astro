@@ -1,82 +1,13 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { records } from "../../../data/rubio-said-vs-did.mjs";
+import immigration from "../../../data/officials/marco-rubio/episodes/immigration-2013.json";
+import zika from "../../../data/officials/marco-rubio/episodes/zika-2016.json";
+import { votesForEpisode, keyVotesForEpisode } from "../../../lib/official-votes.mjs";
+const episodes = [zika, immigration].map((episode) => ({ ...episode, votes: votesForEpisode(episode), keyVotes: keyVotesForEpisode(episode) }));
+const voteCount = episodes.reduce((total, episode) => total + episode.votes.length, 0);
+const keyVoteCount = episodes.reduce((total, episode) => total + episode.keyVotes.length, 0);
 ---
-<BaseLayout title="Marco Rubio | The Catch" current="Officials">
-  <div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><span>Marco Rubio</span></div>
-  <div class="content">
-    <main class="subject">
-      <p class="subject-kicker">Standing record &middot; Marco Rubio &middot; updated August 28, 2026</p>
-      <h1>Marco Rubio: what he said vs. how he voted</h1>
-      <p class="subject-dek">Secretary of State since 2025; U.S. Senator from Florida, 2011 to 2025. Each episode below takes one thing he said on the record and lists every roll call he cast on the same bill. This page is always current; each episode keeps its own dated page.</p>
-
-      <div class="kpi-strip">
-        <div class="kpi"><span class="kpi-value">2</span><span class="kpi-label">episodes</span></div>
-        <div class="kpi"><span class="kpi-value">40</span><span class="kpi-label">roll calls listed</span></div>
-        <div class="kpi"><span class="kpi-value">11</span><span class="kpi-label">key votes</span></div>
-        <div class="kpi"><span class="kpi-value">845<small> of 1,142</small></span><span class="kpi-label">collected statements searchable</span></div>
-      </div>
-
-      <section>
-        <h2>The episodes</h2>
-        <ol class="decision-timeline">
-          <li>
-            <span class="dt-date">May 2016</span>
-            <div class="dt-body">
-              <p class="dt-head"><a href="/officials/marco-rubio/zika-2016/">&ldquo;Fully fund the $1.9 billion.&rdquo; And the votes to match.</a></p>
-              <p class="dt-sub">Asked for the full Zika emergency amount, said in advance he would take the $1.1 billion compromise, and voted for both. Twenty-two roll calls, through the day the money became law. <span class="chip chip-ok">words and votes in step</span></p>
-            </div>
-          </li>
-          <li>
-            <span class="dt-date">June 2013</span>
-            <div class="dt-body">
-              <p class="dt-head"><a href="/officials/marco-rubio/immigration-2013/">Border security first. But first before <em>what</em>?</a></p>
-              <p class="dt-sub">His exact words put security before permanent status; his votes kept it there and off provisional status. Eighteen roll calls, plus what he said afterward. <span class="chip chip-mixed">precise words, bigger impression</span></p>
-            </div>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <h2>The records</h2>
-        <ul class="rec-list">
-          {records.map((r) => (
-            <li><a href={r.url} rel="noreferrer"><span class="rec-title">{r.title}</span><span class="rec-meta">{r.what}</span></a></li>
-          ))}
-        </ul>
-        <p class="subject-note">How these pages are made: an episode starts from one statement on the record. Every Senate roll call on the same bill is then listed from the Senate's own vote files, all of them, so nothing is picked to fit. Statements come from the Congressional Record, his office's press releases, debate transcripts, and his own posts; outside reporting is cited only for what he said, never for what it means. The pages show words beside votes and stop there: they do not say why he voted, or what he believed. The vote record is complete. Of the 1,142 statement-type records collected so far (floor speeches, hearings, interviews, debates, press briefings), 845 are searchable, so a statement missing here may be unsearched rather than unsaid.</p>
-      </section>
-    </main>
-  </div>
-</BaseLayout>
-
+<BaseLayout title="Marco Rubio | The Catch" current="Officials"><div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><span>Marco Rubio</span></div><div class="content"><main class="subject"><p class="subject-kicker">Standing record · Marco Rubio</p><h1>Marco Rubio: what he said and how he voted</h1><p class="subject-dek">Secretary of State since 2025; U.S. Senator from Florida from 2011 to 2025. Each episode pairs a statement with every recorded Senate roll call on the same measure.</p><div class="kpi-strip"><div class="kpi"><span class="kpi-value">{episodes.length}</span><span class="kpi-label">episodes</span></div><div class="kpi"><span class="kpi-value">{voteCount}</span><span class="kpi-label">roll calls listed</span></div><div class="kpi"><span class="kpi-value">{keyVoteCount}</span><span class="kpi-label">key votes</span></div></div><section><h2>The episodes</h2><ol class="decision-timeline">{episodes.map((episode) => <li><span class="dt-date">{episode.statements[0]?.date}</span><div class="dt-body"><p class="dt-head"><a href={`/officials/marco-rubio/${episode.slug}/`}>{episode.title}</a></p><p class="dt-sub">{episode.dek} <span class="chip chip-ok">{episode.votes.length} roll calls</span></p></div></li>)}</ol></section><p class="subject-note">The vote lists are generated from the Senate’s roll-call XML. Statements link to their checked source bytes. These pages show what was said and what was voted, without assigning motive.</p></main></div></BaseLayout>
 <style>
-  .subject { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
-  .subject-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 1.5rem 0 0.75rem; }
-  .subject h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.6rem); line-height: 1.12; margin: 0 0 0.6rem; text-wrap: balance; }
-  .subject-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.12rem; line-height: 1.5; color: #3c434b; margin: 0 0 1.6rem; }
-  .subject h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.4rem; margin: 2.4rem 0 0.9rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e3e0da; }
-  .subject h2::after { content: ""; display: block; width: 3.5rem; border-bottom: 2px solid #c98a1b; margin-bottom: -1px; margin-top: 0.35rem; }
-  .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1.25rem; }
-  .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
-  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.4rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .kpi-value small { font-size: 0.8rem; color: #5b6470; }
-  .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
-  .decision-timeline { list-style: none; padding: 0; margin: 0; }
-  .decision-timeline li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 1.25rem; padding: 0.9rem 0; border-bottom: 1px solid #efece6; }
-  .dt-date { font-family: "IBM Plex Mono", monospace; font-size: 0.8rem; color: #5b6470; padding-top: 0.2rem; }
-  .dt-head { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.1rem; line-height: 1.3; margin: 0 0 0.25rem; }
-  .dt-head a { color: inherit; text-decoration: none; }
-  .dt-head a:hover { text-decoration: underline; }
-  .dt-sub { font-family: "Newsreader", Georgia, serif; font-size: 0.98rem; line-height: 1.5; color: #3c434b; margin: 0; }
-  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 2px; vertical-align: 0.12em; white-space: nowrap; }
-  .chip-ok { background: #e7f2ec; color: #22604a; }
-  .chip-mixed { background: #f6eedb; color: #8a6412; }
-  .rec-list { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.6rem; }
-  .rec-list a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }
-  .rec-list a:hover { border-color: #b9b4aa; }
-  .rec-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
-  .rec-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
-  .subject-note { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; line-height: 1.55; margin-top: 1rem; }
-  @media (max-width: 640px) { .decision-timeline li { grid-template-columns: 1fr; gap: 0.3rem; } }
+  .subject { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }.subject-kicker,.dt-date,.kpi-label{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#5b6470}.subject h1,.subject h2,.dt-head{font-family:"Newsreader",Georgia,serif}.subject h1{font-size:clamp(1.9rem,4.5vw,2.6rem);margin:0}.subject-dek,.dt-sub,.subject-note{font-family:"Newsreader",Georgia,serif;font-size:1.08rem;line-height:1.5}.kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e3e0da;border:1px solid #e3e0da}.kpi{background:#fbfaf8;padding:.85rem}.kpi-value{font-family:"IBM Plex Mono",monospace;font-size:1.4rem}.decision-timeline{list-style:none;padding:0}.decision-timeline li{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;border-bottom:1px solid #e3e0da;padding:1rem 0}.dt-head{font-size:1.15rem;margin:0}.dt-sub{margin:.25rem 0}.chip{font-family:"IBM Plex Mono",monospace;font-size:.66rem;padding:.1rem .45rem;background:#e7f2ec;color:#22604a}@media(max-width:640px){.kpi-strip{grid-template-columns:1fr}.decision-timeline li{grid-template-columns:1fr}}
 </style>
