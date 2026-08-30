@@ -43,6 +43,7 @@ for (const { subject, story } of storyPages) {
   let m;
   try { m = JSON.parse(readFileSync(mPath, "utf8")); }
   catch (e) { fail.push(`${mPath}: unreadable JSON (${e.message})`); continue; }
+  validateRecordManifest(mPath, m);
   if (m.schema === "event_dossier_v1") {
     const primary = m.primary_sources ?? [];
     const coverage = m.coverage_records ?? [];
@@ -72,6 +73,40 @@ for (const { subject, story } of storyPages) {
   }
 }
 
+function validateRecordManifest(mPath, manifest) {
+  for (const field of ["subject", "event", "date", "sub_events", "records"]) {
+    if (!(field in manifest)) fail.push(`${mPath}: records manifest requires ${field}`);
+  }
+  if (!Array.isArray(manifest.sub_events) || !Array.isArray(manifest.records)) return;
+  const ids = new Set();
+  for (const record of manifest.records) {
+    for (const field of ["id", "title", "publisher", "date", "url", "pinned_path", "text_path", "text_sha256", "quote", "quote_span_check"]) {
+      if (!record[field]) fail.push(`${mPath}: record needs ${field}`);
+    }
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(record.id ?? "")) fail.push(`${mPath}: record id ${record.id} is not a stable slug`);
+    if (ids.has(record.id)) fail.push(`${mPath}: duplicate record id ${record.id}`);
+    ids.add(record.id);
+    if (record.quote_span_check === "quote_unverified") fail.push(`${mPath}: ${record.id} has an unverified quote`);
+    if (!['byte_exact', 'normalized'].includes(record.quote_span_check)) fail.push(`${mPath}: ${record.id} has an unknown quote check`);
+    const textPath = record.text_path && join(ROOT, record.text_path);
+    if (!textPath || !existsSync(textPath)) { fail.push(`${mPath}: ${record.id} text pin is missing`); continue; }
+    const actual = `sha256:${createHash("sha256").update(readFileSync(textPath)).digest("hex")}`;
+    if (actual !== record.text_sha256) fail.push(`${mPath}: ${record.id} text hash does not recompute`);
+    const text = readFileSync(textPath, "utf8");
+    const contains = record.quote_span_check === "byte_exact"
+      ? text.includes(record.quote)
+      : text.replace(/\s+/g, " ").includes(record.quote.replace(/\s+/g, " "));
+    if (!contains) fail.push(`${mPath}: ${record.id} quote is absent from its text pin`);
+  }
+  for (const subEvent of manifest.sub_events) {
+    for (const field of ["id", "date", "label", "section_anchor", "records"]) {
+      if (!(field in subEvent)) fail.push(`${mPath}: sub-event needs ${field}`);
+    }
+    if (!Array.isArray(subEvent.records)) continue;
+    for (const id of subEvent.records) if (!ids.has(id)) fail.push(`${mPath}: sub-event ${subEvent.id} names unknown record ${id}`);
+  }
+}
+
 const figuresDir = join(ROOT, "src/pages/officials");
 if (existsSync(figuresDir)) {
   for (const figure of readdirSync(figuresDir)) {
@@ -81,6 +116,7 @@ if (existsSync(figuresDir)) {
     if (!existsSync(manifestPath)) { fail.push(`figure /officials/${figure}/ has no manifest`); continue; }
     try {
       const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+      validateRecordManifest(manifestPath, manifest);
       if (manifest.schema !== "figure_page_v1" || manifest.status !== "staged_zain_review" || manifest.not_published !== true || manifest.plain_language_checked !== true) {
         fail.push(`${manifestPath}: staged figure manifest is incomplete`);
       }
@@ -111,6 +147,7 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
   try {
     const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
     if (!manifest.story && !manifest.event) continue;
+    if (manifest.subject?.startsWith("officials/")) continue;
     const route = manifest.story || (manifest.event ? `/events/${manifest.event}/` : null);
     if (!route) fail.push(`checks/manifests/${filename}: event index requires story or event route`);
     else indexManifestRoutes.push(route);

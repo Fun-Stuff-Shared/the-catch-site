@@ -13,7 +13,18 @@
   ],
   "coverage_threshold": 2,
   "dossier_sha256": "sha256:da7e4005a6b638f27d89814206dd6ff6779eda28c604fb2d7000f922e7ffe2c2",
+  "subject": "jobs",
   "event": "jobs/july-2026",
+  "date": "2026-08-07",
+  "sub_events": [
+    {"id":"jobs-release-2026-08-07","date":"2026-08-07","label":"July employment release","section_anchor":"what-happened","records":["bls-empsit-2026-07"]},
+    {"id":"jobs-benchmark-2026-08-28","date":"2026-08-28","label":"Preliminary benchmark check","section_anchor":"what-happened-next","records":["bls-prebmk-2026"]},
+    {"id":"jobs-benchmark-final-2027-02","date":"2027-02-01","label":"Final benchmark update","section_anchor":"what-happened-next","records":[]}
+  ],
+  "records": [
+    {"id":"bls-empsit-2026-07","title":"The Employment Situation, July 2026","publisher":"Bureau of Labor Statistics","date":"2026-08-07","url":"https://www.bls.gov/news.release/empsit.nr0.htm","pinned_path":"data/sources/bls-empsit-2026-07.txt","text_path":"data/sources/bls-empsit-2026-07.txt","text_sha256":"sha256:7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737","quote":"Total nonfarm payroll employment changed little in July (-23,000)","quote_span_check":"byte_exact"},
+    {"id":"bls-prebmk-2026","title":"Preliminary benchmark revision to establishment survey data","publisher":"Bureau of Labor Statistics","date":"2026-08-28","url":"https://www.bls.gov/news.release/embargo/prebmk.nr0.htm","pinned_path":"data/sources/bls-prebmk-2026.txt","text_path":"data/sources/bls-prebmk-2026.txt","text_sha256":"sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f","quote":"to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)","quote_span_check":"byte_exact"}
+  ],
   "figures": [
     {
       "figure": "July payroll change",
