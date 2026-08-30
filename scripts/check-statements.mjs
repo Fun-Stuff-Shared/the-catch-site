@@ -1,11 +1,19 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const SOURCE_DIR = new URL("../data/sources/officials/", import.meta.url).pathname;
 const EPISODE_DIR = new URL("../src/data/officials/marco-rubio/episodes/", import.meta.url).pathname;
 const XPOSTS = "/Volumes/4/CF/public-figure-pilots/rubio-2025/evidence_registry/promotion-review/w7-claim-vote-alignment/say-side-retrieval-20260823/xpost_zika.jsonl";
 const normalize = (value) => value.replace(/<[^>]+>/g, " ").replace(/&nbsp;/gi, " ").replace(/&amp;/gi, "&").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/\s+/g, " ").trim();
-const cache = readdirSync(SOURCE_DIR).filter((name) => name.endsWith(".json")).map((name) => ({ sidecar: JSON.parse(readFileSync(join(SOURCE_DIR, name), "utf8")), text: normalize(readFileSync(join(SOURCE_DIR, name.replace(/\.json$/, ".html")), "utf8")) }));
+function bodyPathFor(sidecarName) {
+  const base = sidecarName.replace(/\.json$/, "");
+  for (const extension of [".html", ".xml"]) {
+    const path = join(SOURCE_DIR, `${base}${extension}`);
+    if (existsSync(path)) return path;
+  }
+  throw new Error(`missing_source_body:${sidecarName}: expected .html or .xml`);
+}
+const cache = readdirSync(SOURCE_DIR).filter((name) => name.endsWith(".json")).map((name) => ({ sidecar: JSON.parse(readFileSync(join(SOURCE_DIR, name), "utf8")), text: normalize(readFileSync(bodyPathFor(name), "utf8")) }));
 const xPosts = readFileSync(XPOSTS, "utf8").trim().split("\n").map((line) => JSON.parse(line));
 const errors = [];
 for (const file of readdirSync(EPISODE_DIR).filter((name) => name.endsWith(".json"))) {
