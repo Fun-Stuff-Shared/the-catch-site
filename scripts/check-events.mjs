@@ -197,8 +197,10 @@ const outletUrls = new Set(outletRecordData.records.map((record) => record.url))
 const outletByUrl = new Map(outletRecordData.records.map((record) => [record.url, record]));
 for (const url of new Set(newsData.rows.map((row) => row.source_url))) if (!outletUrls.has(url)) fail.push(`news citation has no outlet record: ${url}`);
 for (const record of outletRecordData.records) {
-  if (!record.text_path || !existsSync(record.text_path)) fail.push(`outlet record ${record.id} text pin is missing`);
-  else if (`sha256:${createHash("sha256").update(readFileSync(record.text_path)).digest("hex")}` !== record.text_sha256) fail.push(`outlet record ${record.id} text hash does not recompute`);
+  if (!record.pinned_path || record.text_path !== record.pinned_path) fail.push(`outlet record ${record.id} requires a repository pinned_path`);
+  const textPath = record.pinned_path && join(ROOT, record.pinned_path);
+  if (!textPath || !existsSync(textPath)) fail.push(`outlet record ${record.id} repository pin is missing`);
+  else if (`sha256:${createHash("sha256").update(readFileSync(textPath)).digest("hex")}` !== record.text_sha256) fail.push(`outlet record ${record.id} repository pin hash does not recompute`);
 }
 for (const filename of ["fed-rate.mjs", "jobs.mjs"]) {
   const subjectPath = join(ROOT, "src/data/subjects", filename);
@@ -247,6 +249,12 @@ else {
 }
 const homeNavigation = readFileSync(join(dist, "index.html"), "utf8").match(/<nav>[\s\S]*?<\/nav>/i)?.[0] ?? "";
 if (homeNavigation.includes('href="/news/"')) fail.push("demoted /news/ remains in public navigation");
+for (const record of outletRecordData.records) {
+  const page = join(dist, "records", record.id, "index.html");
+  const savedCopy = join(dist, "records", "pins", record.id, "index.html");
+  if (!existsSync(savedCopy)) fail.push(`outlet record ${record.id} saved-copy page is missing from dist`);
+  else if (!existsSync(page) || !readFileSync(page, "utf8").includes(`href="/records/pins/${record.id}/"`)) fail.push(`outlet record ${record.id} does not link to its saved copy`);
+}
 
 function* htmlFiles(p) {
   if (!existsSync(p)) return;

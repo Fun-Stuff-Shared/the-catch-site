@@ -1,9 +1,11 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { createHash } from "node:crypto";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const CAPTURE_ROOT = "/Volumes/4/CF/news-fqs-pilot";
+const OUTLET_DIR = `${ROOT}/data/sources/outlets`;
+mkdirSync(OUTLET_DIR, { recursive: true });
 const news = JSON.parse(readFileSync(`${ROOT}/src/data/news-data.json`, "utf8"));
 const byUrl = new Map();
 for (const row of news.rows) if (!byUrl.has(row.source_url)) byUrl.set(row.source_url, row);
@@ -35,9 +37,12 @@ const records = [...byUrl.entries()].sort(([a], [b]) => a.localeCompare(b)).map(
   const { candidate: receipt, textPath, text, rawText } = ranked[0];
   if (`sha256:${createHash("sha256").update(rawText).digest("hex")}` !== receipt.text_sha256) throw new Error(`text hash mismatch for ${url}`);
   const id = `outlet-${createHash("sha256").update(url).digest("hex").slice(0, 16)}`;
+  const pinnedPath = `data/sources/outlets/${id}.txt`;
+  writeFileSync(`${ROOT}/${pinnedPath}`, rawText);
+  const textSha256 = `sha256:${createHash("sha256").update(readFileSync(`${ROOT}/${pinnedPath}`)).digest("hex")}`;
   const retrievedAt = receipt.retrieved_at;
   if (!retrievedAt) throw new Error(`receipt has no retrieval time for ${url}`);
-  return { id, url, publisher: row.publisher, title: row.article_title, quote: row.quote, date: retrievedAt.slice(0, 10), retrieved_at: retrievedAt, raw_sha256: receipt.raw_sha256, text_path: textPath, text_sha256: receipt.text_sha256, receipt_path: receipt.receipt_path };
+  return { id, url, publisher: row.publisher, title: row.article_title, quote: row.quote, date: retrievedAt.slice(0, 10), retrieved_at: retrievedAt, raw_sha256: receipt.raw_sha256, pinned_path: pinnedPath, text_path: pinnedPath, text_sha256: textSha256 };
 });
 writeFileSync(`${ROOT}/src/data/news-records.json`, JSON.stringify({ schema: "news_records_v1", source_sha256: news.source_sha256, count: records.length, records }, null, 2) + "\n");
 console.log(`news records built: ${records.length}`);
