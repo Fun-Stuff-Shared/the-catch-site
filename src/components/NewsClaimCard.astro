@@ -1,11 +1,13 @@
 ---
 import { labelsForNewsClaim } from "../lib/stage2-public-labels.mjs";
+import { outletRecordByUrl } from "../lib/record-manifests.mjs";
 const { claim, context = false } = Astro.props;
 const sourceLabel = claim.publisher;
 const paywalled = claim.source_tier === "paywalled";
 const corroboratingOutlets = claim.corroboration_outlets ?? [];
 const slugFor = (articleId) => encodeURIComponent(articleId).replace(/%/g, "-").toLowerCase();
 const publicLabels = labelsForNewsClaim(claim);
+const record = outletRecordByUrl.get(claim.source_url);
 const corroborationLabel = {
   corroborated_2plus: "Corroborated by 2+ independent sources",
   corroborated_1: "Checked: one independent source found",
@@ -26,6 +28,6 @@ const corroborationLabel = {
   <p class="ev-src">
     {sourceLabel}
     {claim.context_type && <>{sourceLabel && " · "}{claim.context_type.replaceAll("_", " ")}</>}
-    {claim.source_url && <> &middot; <a href={claim.source_url} rel="noreferrer">{paywalled ? "Open paywalled source" : "Open source"}</a></>}
+    {record && <> &middot; <a href={`/records/${record.id}/`}>Open record</a></>}
   </p>
 </article>

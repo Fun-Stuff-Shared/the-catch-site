@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -15,16 +15,25 @@ for (const receiptFile of receiptFiles) for (const line of readFileSync(receiptF
   if (receipt.typed_outcome !== "body_captured") continue;
   for (const url of [receipt.item_url, receipt.final_url]) if (byUrl.has(url)) {
     const candidate = { ...receipt, receipt_path: receiptFile, retrieved_at: receipt.completed_at ?? receipt.requested_at ?? receipt.captured_at ?? receipt.attempts?.[0]?.finished_at };
-    const prior = matches.get(url);
-    if (!prior || `${candidate.retrieved_at ?? ""}\0${candidate.receipt_path}` > `${prior.retrieved_at ?? ""}\0${prior.receipt_path}`) matches.set(url, candidate);
+    const textPath = `${candidate.receipt_path.replace(/\/article_receipts\.jsonl$/, "")}/${candidate.text_path}`;
+    if (!existsSync(textPath)) continue;
+    const candidates = matches.get(url) ?? [];
+    candidates.push(candidate);
+    matches.set(url, candidates);
   }
 }
 const records = [...byUrl.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([url, row]) => {
-  const receipt = matches.get(url);
-  if (!receipt) throw new Error(`missing body receipt for ${url}`);
-  const textPath = `${receipt.receipt_path.replace(/\/article_receipts\.jsonl$/, "")}/${receipt.text_path}`;
-  const text = readFileSync(textPath, "utf8");
-  if (`sha256:${createHash("sha256").update(text).digest("hex")}` !== receipt.text_sha256) throw new Error(`text hash mismatch for ${url}`);
+  const candidates = matches.get(url);
+  if (!candidates?.length) throw new Error(`missing body receipt for ${url}`);
+  const quotes = news.rows.filter((claim) => claim.source_url === url).map((claim) => claim.quote.replace(/\s+/g, " "));
+  const ranked = candidates.map((candidate) => {
+    const textPath = `${candidate.receipt_path.replace(/\/article_receipts\.jsonl$/, "")}/${candidate.text_path}`;
+    const rawText = readFileSync(textPath, "utf8");
+    const text = rawText.replace(/\s+/g, " ");
+    return { candidate, textPath, text, rawText, score: quotes.filter((quote) => text.includes(quote)).length };
+  }).sort((a, b) => b.score - a.score || `${b.candidate.retrieved_at ?? ""}\0${b.candidate.receipt_path}`.localeCompare(`${a.candidate.retrieved_at ?? ""}\0${a.candidate.receipt_path}`));
+  const { candidate: receipt, textPath, text, rawText } = ranked[0];
+  if (`sha256:${createHash("sha256").update(rawText).digest("hex")}` !== receipt.text_sha256) throw new Error(`text hash mismatch for ${url}`);
   const id = `outlet-${createHash("sha256").update(url).digest("hex").slice(0, 16)}`;
   const retrievedAt = receipt.retrieved_at;
   if (!retrievedAt) throw new Error(`receipt has no retrieval time for ${url}`);

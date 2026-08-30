@@ -191,6 +191,15 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
   const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
   for (const record of manifest.records ?? []) { manifestRecordIds.add(record.id); manifestRecords.set(record.id, record); }
 }
+const newsData = JSON.parse(readFileSync(join(ROOT, "src/data/news-data.json"), "utf8"));
+const outletRecordData = JSON.parse(readFileSync(join(ROOT, "src/data/news-records.json"), "utf8"));
+const outletUrls = new Set(outletRecordData.records.map((record) => record.url));
+const outletByUrl = new Map(outletRecordData.records.map((record) => [record.url, record]));
+for (const url of new Set(newsData.rows.map((row) => row.source_url))) if (!outletUrls.has(url)) fail.push(`news citation has no outlet record: ${url}`);
+for (const record of outletRecordData.records) {
+  if (!record.text_path || !existsSync(record.text_path)) fail.push(`outlet record ${record.id} text pin is missing`);
+  else if (`sha256:${createHash("sha256").update(readFileSync(record.text_path)).digest("hex")}` !== record.text_sha256) fail.push(`outlet record ${record.id} text hash does not recompute`);
+}
 for (const filename of ["fed-rate.mjs", "jobs.mjs"]) {
   const subjectPath = join(ROOT, "src/data/subjects", filename);
   if (!existsSync(subjectPath)) continue;

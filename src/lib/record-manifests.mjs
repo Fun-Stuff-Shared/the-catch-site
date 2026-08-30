@@ -8,3 +8,4 @@ const manifestRecords = manifests.flatMap((manifest) => (manifest.records ?? [])
 const outletRecords = newsRecordData.records.map((record) => ({ ...record, subject: "news", event: "news", story: "/news/", subEvents: [] }));
 export const records = [...manifestRecords, ...outletRecords];
 export const recordById = new Map(records.map((record) => [record.id, record]));
+export const outletRecordByUrl = new Map(outletRecords.map((record) => [record.url, record]));
