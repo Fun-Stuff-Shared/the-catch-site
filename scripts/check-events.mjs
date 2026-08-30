@@ -136,6 +136,18 @@ else {
       const episode = JSON.parse(readFileSync(join(ROOT, "src/data/officials/marco-rubio/episodes", name), "utf8"));
       const rows = store.rows.filter((row) => row.congress === episode.congress && row.session === episode.session && episode.measures.includes(row.measure));
       for (const vote of episode.key_votes) if (!rows.some((row) => row.rc === vote.rc)) fail.push(`${episode.slug}: key roll call ${vote.rc} is not on its measures`);
+      if ("source_ledger" in episode) {
+        if (!Array.isArray(episode.source_ledger)) fail.push(`${episode.slug}: source_ledger must be an array`);
+        else {
+          const officialManifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests/officials--marco-rubio.json"), "utf8"));
+          const subEvent = (officialManifest.sub_events ?? []).find((entry) => entry.id.endsWith(episode.slug));
+          if (!subEvent) fail.push(`${episode.slug}: no manifest sub-event for source ledger`);
+          else for (const entry of episode.source_ledger) {
+            if (!entry.record_id) fail.push(`${episode.slug}: source ledger entry needs record_id`);
+            else if (!subEvent.records.includes(entry.record_id)) fail.push(`${episode.slug}: source ledger record ${entry.record_id} is not cited by its manifest sub-event`);
+          }
+        }
+      }
     }
   } catch (error) { fail.push(`official vote store unreadable: ${error.message}`); }
 }
