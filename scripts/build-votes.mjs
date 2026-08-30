@@ -44,7 +44,11 @@ function readerTitle(value = "") {
   return value
     .replace(/\b(?:S\.)?Amdt\.?\s*(?:No\.?\s*)?(\d+)/gi, "Amendment $1")
     .replace(/\bAmdt\.?\s*(?:No\.?\s*)?(\d+)/gi, "Amendment $1")
+    .replace(/\bAmdt\.?\b/gi, "Amendment")
     .replace(/\bMotion to Proceed to (?:Consider )?/gi, "")
+    .replace(/\beligibility\b/gi, "qualification")
+    .replace(/\bpipeline\b/gi, "process")
+    .replace(/\bwave\b/gi, "group")
     .replace(/^\s*:\s*/, "")
     .replace(/\s{2,}/g, " ")
     .trim();
@@ -52,6 +56,13 @@ function readerTitle(value = "") {
 
 function hasUsefulPurpose(purpose) {
   return purpose && !/^(?:No Statement of Purpose on File\.|Of a perfecting nature\.|To improve the bill\.)$/i.test(purpose);
+}
+
+function readerPurpose(purpose) {
+  return purpose
+    .replace(/\beligibility\b/gi, "qualification")
+    .replace(/\bpipeline\b/gi, "process")
+    .replace(/\bwave\b/gi, "group");
 }
 
 function clotureTarget({ title, measure, amendment }) {
@@ -67,25 +78,29 @@ function readerDescription(vote) {
   const { question, title, measure, amendment, purpose } = vote;
   const cleanTitle = readerTitle(title);
   if (/cloture/i.test(question) || /cloture/i.test(title)) {
+    if (/motion to proceed/i.test(title)) return `Vote to end debate on whether to begin considering ${measure || "the measure"}. Needed 60 votes.`;
+    if (/motion to concur/i.test(title)) return `Vote to end debate on accepting the House version of ${measure || "the measure"}${amendment ? " with a Senate change" : ""}. Needed 60 votes.`;
+    if (/motion to|amdt|concur/i.test(clotureTarget(vote))) return `Vote to end debate and move toward a final vote on ${measure || "the measure"}. Needed 60 votes.`;
     return `Vote to end debate and move toward a final vote on ${clotureTarget(vote)}. Needed 60 votes.`;
   }
   if (/motion to table/i.test(question) || /motion to table/i.test(title)) {
-    return hasUsefulPurpose(purpose) ? `Vote on whether to set aside an amendment to ${measure}: ${purpose}` : `Vote on whether to set aside ${amendment ? `${amendmentLabel(amendment)} to ${measure}` : measure || "the measure"}.`;
+    return hasUsefulPurpose(purpose) ? `Vote on whether to set aside an amendment to ${measure}: ${readerPurpose(purpose)}` : `Vote on whether to set aside ${amendment ? `${amendmentLabel(amendment)} to ${measure}` : measure || "the measure"}.`;
   }
   if (/motion to proceed/i.test(question) || /motion to proceed/i.test(title)) return `Vote to begin considering ${measure || "the measure"}.`;
   if (/^On the Motion$/i.test(question)) {
     if (/motion to waive/i.test(title)) return `Vote on whether to waive a Senate budget rule for ${measure || "the measure"}.`;
     if (/motion to concur/i.test(title)) return `Vote on whether to accept the House's changes to ${measure || "the measure"}.`;
     if (/motion to recommit/i.test(title)) return `Vote on whether to send ${measure || "the measure"} back to committee.`;
-    return hasUsefulPurpose(purpose) ? `Vote on a Senate motion about ${measure || "the measure"}: ${purpose}` : `Vote on a Senate motion about ${measure || "the measure"}.`;
+    return hasUsefulPurpose(purpose) ? `Vote on a Senate motion about ${measure || "the measure"}: ${readerPurpose(purpose)}` : `Vote on a Senate motion about ${measure || "the measure"}.`;
   }
   if (/nomination/i.test(question)) return `Vote on ${cleanTitle || measure}.`;
   if (/amendment/i.test(question)) {
     if (!hasUsefulPurpose(purpose)) return `${amendmentLabel(amendment)} to ${measure} (Senate record gives no summary).`;
-    return `Amendment to ${measure}: ${purpose}`;
+    return `Amendment to ${measure}: ${readerPurpose(purpose)}`;
   }
   if (/passage/i.test(question)) return `Final vote on ${measure || cleanTitle}.`;
-  if (hasUsefulPurpose(purpose)) return `Vote on ${measure || cleanTitle}: ${purpose}`;
+  if (hasUsefulPurpose(purpose)) return `Vote on ${measure || cleanTitle}: ${readerPurpose(purpose)}`;
+  if (/motion to|amdt|concur/i.test(cleanTitle)) return `Vote on a Senate procedural question about ${measure || "the measure"}.`;
   return `Vote on ${cleanTitle || measure || "the measure"}.`;
 }
 

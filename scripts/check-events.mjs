@@ -224,7 +224,6 @@ const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed ex
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
   "eligibility", "eligible claim", "manifested", "dossier", "pipeline", "staged", "zain review", "w7", "wave", "internal review",
   "cloture", "perfecting nature", "voted not voting", "cloture motion"];
-const VOTE_TABLE_BANNED = ["cloture", "perfecting nature", "voted not voting", "cloture motion"];
 
 const eventsIndex = join(dist, "events", "index.html");
 if (!existsSync(eventsIndex)) fail.push("/events/ index missing from dist");
@@ -271,8 +270,7 @@ for (const base of SCOPE) {
     const route = `/${rel.replace(/^\//, "").replace(/index\.html$/, "")}`;
     const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
     if (exclusion) continue;
-    const readerHtml = html.replace(/<table[\s\S]*?<\/table>/gi, "");
-    const tableHtml = [...html.matchAll(/<table[\s\S]*?<\/table>/gi)].map(([table]) => table).join(" ");
+    const readerHtml = html;
     for (const match of html.matchAll(/data-record="([^"]+)"/g)) {
       const id = match[1];
       if (!manifestRecordIds.has(id)) fail.push(`${rel}: record chip names unknown record ${id}`);
@@ -282,10 +280,6 @@ for (const base of SCOPE) {
     const text = readerHtml.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
     for (const w of INTERNAL) {
       if (text.toLowerCase().includes(w)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
-    }
-    const tableText = tableHtml.replace(/<[^>]+>/g, " ").toLowerCase();
-    for (const w of VOTE_TABLE_BANNED) {
-      if (tableText.includes(w)) fail.push(`${rel}: vote-table vocabulary "${w}" in visible text`);
     }
     // jammed text-to-inline-tag boundaries (rendered artifact of template line joins)
     const deEntitied = html.replace(/&[a-zA-Z#0-9]+;/g, " ");
