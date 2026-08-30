@@ -1,6 +1,7 @@
 ---
 const { votes } = Astro.props;
+const textFor = (vote) => (vote.text || vote.reader_description).replace(/^Voted\s+(?:Yes|No|Not Voting)\s+/i, "").replace(/^Did not vote\s+/i, "").replace(/\bon a motion to table\b/i, "on whether to set aside");
 ---
 <ol class="votes">
-  {votes.map((vote) => <li class="vote"><span class="v-date">{vote.date}</span><span class:list={["cast", vote.cast === "Yea" ? "yes" : "no"]}>Voted {vote.cast}</span><span class="v-text">{vote.text} <a class="src" href={vote.url} rel="noreferrer">Roll call {vote.rc}</a></span></li>)}
+  {votes.map((vote) => <li class="vote"><span class="v-date">{vote.date}</span><span class:list={["cast", vote.cast === "Yea" ? "yes" : vote.cast === "Nay" ? "no" : "not-voting"]}>{vote.reader_cast}</span><span class="v-text">{textFor(vote)} <a class="src" href={vote.url} rel="noreferrer">Roll call {vote.rc}</a></span></li>)}
 </ol>

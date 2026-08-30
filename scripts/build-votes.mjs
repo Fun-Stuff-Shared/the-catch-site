@@ -35,6 +35,72 @@ function isoDate(value, file) {
   return parsed.toISOString().slice(0, 10);
 }
 
+function amendmentLabel(amendment) {
+  const number = amendment?.match(/(?:Amdt\.|Amendment)\s*(?:No\.\s*)?(\d+)/i)?.[1];
+  return number ? `Amendment ${number}` : amendment || "Amendment";
+}
+
+function readerTitle(value = "") {
+  return value
+    .replace(/\b(?:S\.)?Amdt\.?\s*(?:No\.?\s*)?(\d+)/gi, "Amendment $1")
+    .replace(/\bAmdt\.?\s*(?:No\.?\s*)?(\d+)/gi, "Amendment $1")
+    .replace(/\bMotion to Proceed to (?:Consider )?/gi, "")
+    .replace(/^\s*:\s*/, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
+function hasUsefulPurpose(purpose) {
+  return purpose && !/^(?:No Statement of Purpose on File\.|Of a perfecting nature\.|To improve the bill\.)$/i.test(purpose);
+}
+
+function clotureTarget({ title, measure, amendment }) {
+  const stripped = readerTitle(title
+    .replace(/^(?:Upon Reconsideration,?\s*)?(?:Motion\s*(?:to\s*)?Invoke\s+Cloture|Cloture)(?:\s+on)?\s*:?[\s]*/i, "")
+    .replace(/^(?:the )?Motion to Proceed to (?:Consider )?/i, ""));
+  if (stripped && !/cloture/i.test(stripped)) return stripped;
+  if (amendment) return `${amendmentLabel(amendment)} to ${measure}`;
+  return measure || "the measure";
+}
+
+function readerDescription(vote) {
+  const { question, title, measure, amendment, purpose } = vote;
+  const cleanTitle = readerTitle(title);
+  if (/cloture/i.test(question) || /cloture/i.test(title)) {
+    return `Vote to end debate and move toward a final vote on ${clotureTarget(vote)}. Needed 60 votes.`;
+  }
+  if (/motion to table/i.test(question) || /motion to table/i.test(title)) {
+    return hasUsefulPurpose(purpose) ? `Vote on whether to set aside an amendment to ${measure}: ${purpose}` : `Vote on whether to set aside ${amendment ? `${amendmentLabel(amendment)} to ${measure}` : measure || "the measure"}.`;
+  }
+  if (/motion to proceed/i.test(question) || /motion to proceed/i.test(title)) return `Vote to begin considering ${measure || "the measure"}.`;
+  if (/^On the Motion$/i.test(question)) {
+    if (/motion to waive/i.test(title)) return `Vote on whether to waive a Senate budget rule for ${measure || "the measure"}.`;
+    if (/motion to concur/i.test(title)) return `Vote on whether to accept the House's changes to ${measure || "the measure"}.`;
+    if (/motion to recommit/i.test(title)) return `Vote on whether to send ${measure || "the measure"} back to committee.`;
+    return hasUsefulPurpose(purpose) ? `Vote on a Senate motion about ${measure || "the measure"}: ${purpose}` : `Vote on a Senate motion about ${measure || "the measure"}.`;
+  }
+  if (/nomination/i.test(question)) return `Vote on ${cleanTitle || measure}.`;
+  if (/amendment/i.test(question)) {
+    if (!hasUsefulPurpose(purpose)) return `${amendmentLabel(amendment)} to ${measure} (Senate record gives no summary).`;
+    return `Amendment to ${measure}: ${purpose}`;
+  }
+  if (/passage/i.test(question)) return `Final vote on ${measure || cleanTitle}.`;
+  if (hasUsefulPurpose(purpose)) return `Vote on ${measure || cleanTitle}: ${purpose}`;
+  return `Vote on ${cleanTitle || measure || "the measure"}.`;
+}
+
+function readerCast(cast) {
+  if (cast === "Yea") return "Voted yes";
+  if (cast === "Nay") return "Voted no";
+  if (cast === "Not Voting") return "Did not vote";
+  return cast || "No vote recorded";
+}
+
+function readerResult(result, yeas, nays) {
+  const failed = /(?:Rejected|Failed|Defeated|Not Sustained|Not Well Taken|Guilty|Veto Sustained)$/i.test(result);
+  return `${failed ? "Failed" : "Passed"} ${yeas}-${nays}`;
+}
+
 const files = filesAt(DROP).sort();
 const parsed = files.map((file) => {
   const xml = readFileSync(file, "utf8");
@@ -58,7 +124,7 @@ const rows = parsed.filter(({ file }) => !postTenure.some((excluded) => excluded
   const document = documentNumber && documentType ? `${documentType.endsWith(".") ? documentType : `${documentType}.`} ${documentNumber}` : documentNumber;
   const amendmentToDocument = field(xml, "amendment_to_document_number");
   const amendment = field(xml, "amendment_number") || null;
-  return {
+  const vote = {
     rc,
     congress,
     session,
@@ -76,6 +142,7 @@ const rows = parsed.filter(({ file }) => !postTenure.some((excluded) => excluded
     cast: memberCast(xml, file),
     url: `https://www.senate.gov/legislative/LIS/roll_call_votes/vote${congress}${session}/vote_${congress}_${session}_${String(rc).padStart(5, "0")}.htm`,
   };
+  return { ...vote, reader_description: readerDescription(vote), reader_cast: readerCast(vote.cast), reader_result: readerResult(vote.result, vote.yeas, vote.nays) };
 });
 
 const captureManifest = readFileSync(join(DROP, "capture_manifest.json"));
