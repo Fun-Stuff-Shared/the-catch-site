@@ -230,6 +230,10 @@ else {
     if (!html.includes(`href="${route}"`)) fail.push(`/events/ index missing manifested route ${route}`);
   }
 }
+for (const file of htmlFiles(join(dist, "events"))) {
+  const html = readFileSync(file, "utf8");
+  for (const [url, record] of outletByUrl) if (html.includes(`href="${url}`)) fail.push(`${file.slice(dist.length)}: outlet citation must link to /records/${record.id}/`);
+}
 
 const newsIndex = join(dist, "news", "index.html");
 if (!existsSync(newsIndex)) fail.push("demoted /news/ index missing from dist");
