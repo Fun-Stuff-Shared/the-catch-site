@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ratePath } from "../../../data/fomc20260617.mjs";
+import { subject } from "../../../data/subjects/fed-rate.mjs";
 
 const W = 720, H = 200, PAD = 8;
 const t0 = Date.parse(ratePath.start.date), t1 = Date.parse("2026-08-23");
@@ -29,9 +30,9 @@ const endX = x("2026-08-23"), endY = y(prev);
       decision keeps its own dated story.</p>
 
       <div class="kpi-strip">
-        <div class="kpi"><span class="kpi-value">3.50&ndash;3.75<small> %</small></span><span class="kpi-label">current target range</span></div>
+        <div class="kpi"><span class="kpi-value">{subject.current[0].value}<small> {subject.current[0].unit}</small></span><span class="kpi-label">{subject.current[0].label}</span></div>
         <div class="kpi"><span class="kpi-value" id="kpi-days">255<small> days</small></span><span class="kpi-label" id="kpi-days-label">held, and counting</span></div>
-        <div class="kpi"><span class="kpi-value">9&ndash;3</span><span class="kpi-label">latest vote, July 29</span></div>
+        <div class="kpi"><span class="kpi-value">{subject.current[1].value}</span><span class="kpi-label">{subject.current[1].label}</span></div>
         <div class="kpi"><span class="kpi-value">48th<small> pctile</small></span><span class="kpi-label">of 44 years of policy</span></div>
       </div>
 

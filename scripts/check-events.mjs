@@ -8,6 +8,7 @@ import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -185,9 +186,28 @@ for (const exclusion of READER_EXCLUSIONS) {
 }
 const SCOPE = ["events", "claims", "officials"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
 const manifestRecordIds = new Set();
+const manifestRecords = new Map();
 for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name) => name.endsWith(".json"))) {
   const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
-  for (const record of manifest.records ?? []) manifestRecordIds.add(record.id);
+  for (const record of manifest.records ?? []) { manifestRecordIds.add(record.id); manifestRecords.set(record.id, record); }
+}
+for (const filename of ["fed-rate.mjs", "jobs.mjs"]) {
+  const subjectPath = join(ROOT, "src/data/subjects", filename);
+  if (!existsSync(subjectPath)) continue;
+  const { subject } = await import(pathToFileURL(subjectPath).href);
+  for (const value of subject.current ?? []) {
+    if (!value.record_id) continue;
+    const record = manifestRecords.get(value.record_id);
+    if (!record) { fail.push(`standing value ${value.label}: unknown record ${value.record_id}`); continue; }
+    if (!value.source_sentence || !value.value) { fail.push(`standing value ${value.label}: needs value and source_sentence`); continue; }
+    const text = readFileSync(join(ROOT, record.text_path), "utf8").replace(/\s+/g, " ");
+    const sentence = value.source_sentence.replace(/\s+/g, " ");
+    if (!text.includes(sentence)) fail.push(`standing value ${value.label}: source sentence is absent from ${value.record_id}`);
+    const sourceValue = value.source_value ?? value.value;
+    if (!sentence.includes(sourceValue)) fail.push(`standing value ${value.label}: source sentence does not contain ${sourceValue}`);
+    const sourceUnit = value.source_unit ?? (value.unit === "%" ? "percent" : value.unit);
+    if (sourceUnit && !sentence.toLowerCase().includes(sourceUnit.toLowerCase())) fail.push(`standing value ${value.label}: source sentence does not contain unit ${sourceUnit}`);
+  }
 }
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
