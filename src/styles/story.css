@@ -250,28 +250,67 @@
 
 /* ── Receipt toggles ── */
 .receipt {
-  margin: -0.15rem 0 1.2rem 1.15rem;
+  margin: 0.2rem 0 1.4rem 0;
 }
 .receipt summary {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  color: var(--slate);
-  cursor: pointer;
-  text-transform: uppercase;
-}
-.receipt summary::marker { color: var(--blue); }
-.receipt p {
   font-family: var(--sans);
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: var(--slate);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  cursor: pointer;
+  padding: 0.45rem 0.75rem;
+  background: var(--blue-tint);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+  transition: background 0.15s;
+}
+.receipt summary:hover {
+  background: #dfe8f0;
+  border-color: var(--blue);
+}
+.receipt summary::marker { content: ""; }
+.receipt summary::-webkit-details-marker { display: none; }
+.receipt summary::before {
+  content: "\25B6";
+  font-size: 0.55rem;
+  transition: transform 0.15s;
+  display: inline-block;
+}
+.receipt[open] summary::before {
+  transform: rotate(90deg);
+}
+.receipt .receipt-body {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink);
   background: #fbfcfd;
   border: 1px solid var(--rule);
-  padding: 0.75rem 1rem;
-  margin: 0.45rem 0 0;
+  border-top: none;
+  padding: 1rem 1.2rem;
+  margin: 0;
+}
+.receipt p {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: #fbfcfd;
+  border: 1px solid var(--rule);
+  border-top: none;
+  padding: 1rem 1.2rem;
+  margin: -1px 0 0;
+  border-radius: 0 0 2px 2px;
 }
 .receipt a { color: var(--blue); }
+.receipt table {
+  margin-top: 0;
+}
 
 /* ── Charts ── */
 .rate-chart { margin: 1.5rem 0; }
