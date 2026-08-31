@@ -33,8 +33,8 @@ const voteText = (vote) => (vote.text || vote.reader_description).replace(/^Vote
   <nav class="story-toc" aria-label="In this story" data-layer="fact"><p class="toc-label">In this story</p><ol>{tocEntries.map((entry) => <li><a href={`#${entry.anchor}`}>{entry.title}</a></li>)}<li><a href="#all-votes">Every recorded vote</a></li><li><a href="#the-records">The records</a></li></ol></nav>
   {sections.map((block, i) =>
     block.type === "statements" ? (
-      <section id="statements">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he said</h2>
-        {episode.statements.map((statement) => <div class="checked-block statement-block"><p class="cb-label">{statement.date} &middot; {statement.venue}</p><blockquote>{statement.quote}</blockquote><p class="st-source"><a href={statement.url} rel="noreferrer">{statement.source_label || "Read the source"}</a>{statement.quoted_via && <Fragment> &middot; quoted via {statement.quoted_via}</Fragment>}</p></div>)}
+      <section id="statements">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he said</h2>{block.intro && <p data-layer="narrative" set:html={block.intro} />}
+        {episode.statements.map((statement) => <div class="checked-block statement-block"><p class="cb-label">{statement.date} &middot; {statement.venue}</p>{statement.setup && <p class="st-setup" data-layer="narrative">{statement.setup}</p>}<blockquote>{statement.quote}</blockquote><p class="st-source"><a href={statement.url} rel="noreferrer">{statement.source_label || "Read the source"}</a>{statement.quoted_via && <Fragment> &middot; quoted via {statement.quoted_via}</Fragment>}</p></div>)}
       </section>
     ) : block.type === "key_votes" ? (
       <section id="votes">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he did</h2>
