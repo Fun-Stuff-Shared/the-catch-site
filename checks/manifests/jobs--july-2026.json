@@ -1,202 +1,202 @@
 {
-    "coverage_records": [
-        {
-            "admission_row_hash": "sha256:a38203722bdeb59e15932e905b16408a001bc613cb8e929c6f783489d62c096a",
-            "article_id": "slice3:0201",
-            "source_url": "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html"
-        },
-        {
-            "admission_row_hash": "sha256:b18f4fdb12a04bc8a87ea81ffb4ace642a18ed4b674aa0befb5399369ccaecdc",
-            "article_id": "slice3:0192",
-            "source_url": "https://www.cnbc.com/2026/08/07/long-term-unemployment-job-market-workers-labor-force.html"
-        }
-    ],
-    "coverage_threshold": 2,
-    "dossier_sha256": "sha256:da7e4005a6b638f27d89814206dd6ff6779eda28c604fb2d7000f922e7ffe2c2",
-    "subject": "jobs",
-    "event": "jobs/july-2026",
-    "date": "2026-08-07",
-    "sub_events": [
-        {
-            "id": "jobs-release-2026-08-07",
-            "date": "2026-08-07",
-            "label": "July employment release",
-            "section_anchor": "what-happened",
-            "records": [
-                "bls-empsit-2026-07"
-            ]
-        },
-        {
-            "id": "jobs-benchmark-2026-08-28",
-            "date": "2026-08-28",
-            "label": "Preliminary benchmark check",
-            "section_anchor": "what-happened-next",
-            "records": [
-                "bls-prebmk-2026"
-            ]
-        },
-        {
-            "id": "jobs-benchmark-final-2027-02",
-            "date": "2027-02-01",
-            "label": "Final benchmark update",
-            "section_anchor": "what-happened-next",
-            "records": []
-        },
-        {
-            "id": "jobs-realer-2026-08-12",
-            "date": "2026-08-12",
-            "label": "Real earnings release",
-            "section_anchor": "who-feels-it",
-            "records": [
-                "bls-realer-2026-07"
-            ]
-        }
-    ],
-    "records": [
-        {
-            "id": "bls-empsit-2026-07",
-            "title": "The Employment Situation, July 2026",
-            "publisher": "Bureau of Labor Statistics",
-            "date": "2026-08-07",
-            "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
-            "pinned_path": "data/sources/bls-empsit-2026-07.txt",
-            "text_path": "data/sources/bls-empsit-2026-07.txt",
-            "text_sha256": "sha256:7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737",
-            "quote": "Total nonfarm payroll employment changed little in July (-23,000)",
-            "quote_span_check": "byte_exact"
-        },
-        {
-            "id": "bls-prebmk-2026",
-            "title": "Preliminary benchmark revision to establishment survey data",
-            "publisher": "Bureau of Labor Statistics",
-            "date": "2026-08-28",
-            "url": "https://www.bls.gov/news.release/embargo/prebmk.nr0.htm",
-            "pinned_path": "data/sources/bls-prebmk-2026.txt",
-            "text_path": "data/sources/bls-prebmk-2026.txt",
-            "text_sha256": "sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f",
-            "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
-            "quote_span_check": "byte_exact"
-        },
-        {
-            "id": "bls-realer-2026-07",
-            "title": "Real Earnings, July 2026",
-            "publisher": "Bureau of Labor Statistics",
-            "date": "2026-08-12",
-            "url": "https://www.bls.gov/news.release/realer.nr0.htm",
-            "pinned_path": "data/sources/bls-realer-2026-07.txt",
-            "text_path": "data/sources/bls-realer-2026-07.txt",
-            "text_sha256": "sha256:2d5d010c1a8f50909c2dd45ab078ea99e3f242f7535c117309b63f6ca641b187",
-            "quote": "Real average hourly earnings for all employees decreased 0.1 percent from June to July",
-            "quote_span_check": "byte_exact"
-        },
-        {
-            "id": "fred-u6rate-2026-07",
-            "title": "U-6 underemployment rate, monthly (U6RATE)",
-            "publisher": "BLS via FRED",
-            "date": "2026-08-31",
-            "url": "https://fred.stlouisfed.org/series/U6RATE",
-            "pinned_path": "data/sources/U6RATE.csv",
-            "text_path": "data/sources/U6RATE.csv",
-            "text_sha256": "sha256:7150c174beae980836ff59e9b5f8f0e7e2a9986fb738bf3c1fea415bdba55f1f",
-            "quote": "2026-07-01,7.9",
-            "quote_span_check": "byte_exact"
-        },
-        {
-            "id": "fred-primeage-2026-07",
-            "title": "Labor force participation, ages 25-54, monthly (LNS11300060)",
-            "publisher": "BLS via FRED",
-            "date": "2026-08-31",
-            "url": "https://fred.stlouisfed.org/series/LNS11300060",
-            "pinned_path": "data/sources/LNS11300060.csv",
-            "text_path": "data/sources/LNS11300060.csv",
-            "text_sha256": "sha256:b5a3b57d63a240e52cbcf56a3e818caf58fb2d05348f2172c4c88c2632ae7533",
-            "quote": "2026-07-01,83.4",
-            "quote_span_check": "byte_exact"
-        },
-        {
-            "id": "alfred-payems-vintages-2026",
-            "title": "Payroll estimates as first published, 2026 vintages (ALFRED)",
-            "publisher": "BLS via ALFRED, St. Louis Fed",
-            "date": "2026-08-31",
-            "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
-            "pinned_path": "data/sources/alfred-payems-vintages-2026.csv",
-            "text_path": "data/sources/alfred-payems-vintages-2026.csv",
-            "text_sha256": "sha256:0d8c327a542429bde9bd7ae11a15f29b8d27661eb693e522b82f7ab5d06d14eb",
-            "quote": "# vintage_date=2026-08-11",
-            "quote_span_check": "byte_exact"
-        }
-    ],
-    "figures": [
-        {
-            "figure": "July payroll change",
-            "source_id": "bls-empsit-2026-07",
-            "value": "-23,000"
-        },
-        {
-            "figure": "Unemployment rate",
-            "source_id": "bls-empsit-2026-07",
-            "value": "4.1%"
-        },
-        {
-            "figure": "May and June revisions",
-            "source_id": "bls-empsit-2026-07",
-            "value": "-103,000"
-        }
-    ],
-    "model_calls": [],
-    "model_claims": [],
-    "needs_ledger": [
-        {
-            "need": "official payroll change",
-            "plain": "The official BLS release contains this item.",
-            "record_id": "bls-empsit-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "unemployment rate",
-            "plain": "The official BLS release contains this item.",
-            "record_id": "bls-empsit-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "prior-month revisions",
-            "plain": "The official BLS release contains this item.",
-            "record_id": "bls-empsit-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "sector breakdown",
-            "plain": "The official BLS release contains this item.",
-            "record_id": "bls-empsit-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "household survey detail (labor force, employment, U-6, prime-age)",
-            "plain": "The BLS release tables and FRED series contain these items.",
-            "record_id": "bls-empsit-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "inflation-adjusted earnings",
-            "plain": "The BLS Real Earnings release contains this item.",
-            "record_id": "bls-realer-2026-07",
-            "status": "have"
-        },
-        {
-            "need": "first-published payroll estimates for each 2026 month",
-            "plain": "ALFRED archives the numbers as first published, before revisions.",
-            "record_id": "alfred-payems-vintages-2026",
-            "status": "have"
-        }
-    ],
-    "primary_sources": [
-        {
-            "bytes": 200013,
-            "id": "bls-empsit-2026-07",
-            "path": "/Volumes/4/CF/news-fqs-pilot/runs/spindle-event-jobs-july-20260824T000000Z/sources/bls-empsit-2026-07.html",
-            "sha256": "sha256:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
-            "url": "https://www.bls.gov/news.release/empsit.htm"
-        }
-    ],
-    "schema": "event_dossier_v1"
+  "coverage_records": [
+    {
+      "admission_row_hash": "sha256:a38203722bdeb59e15932e905b16408a001bc613cb8e929c6f783489d62c096a",
+      "article_id": "slice3:0201",
+      "source_url": "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html"
+    },
+    {
+      "admission_row_hash": "sha256:b18f4fdb12a04bc8a87ea81ffb4ace642a18ed4b674aa0befb5399369ccaecdc",
+      "article_id": "slice3:0192",
+      "source_url": "https://www.cnbc.com/2026/08/07/long-term-unemployment-job-market-workers-labor-force.html"
+    }
+  ],
+  "coverage_threshold": 2,
+  "dossier_sha256": "sha256:da7e4005a6b638f27d89814206dd6ff6779eda28c604fb2d7000f922e7ffe2c2",
+  "subject": "jobs",
+  "event": "jobs/july-2026",
+  "date": "2026-08-07",
+  "sub_events": [
+    {
+      "id": "jobs-release-2026-08-07",
+      "date": "2026-08-07",
+      "label": "July employment release",
+      "section_anchor": "what-happened",
+      "records": [
+        "bls-empsit-2026-07"
+      ]
+    },
+    {
+      "id": "jobs-benchmark-2026-08-28",
+      "date": "2026-08-28",
+      "label": "Preliminary benchmark check",
+      "section_anchor": "what-happened-next",
+      "records": [
+        "bls-prebmk-2026"
+      ]
+    },
+    {
+      "id": "jobs-benchmark-final-2027-02",
+      "date": "2027-02-01",
+      "label": "Final benchmark update",
+      "section_anchor": "what-happened-next",
+      "records": []
+    },
+    {
+      "id": "jobs-realer-2026-08-12",
+      "date": "2026-08-12",
+      "label": "Real earnings release",
+      "section_anchor": "who-feels-it",
+      "records": [
+        "bls-realer-2026-07"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "bls-empsit-2026-07",
+      "title": "The Employment Situation, July 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-08-07",
+      "url": "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "pinned_path": "data/sources/bls-empsit-2026-07.txt",
+      "text_path": "data/sources/bls-empsit-2026-07.txt",
+      "text_sha256": "sha256:7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737",
+      "quote": "Total nonfarm payroll employment changed little in July (-23,000)",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "bls-prebmk-2026",
+      "title": "Preliminary benchmark revision to establishment survey data",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-08-28",
+      "url": "https://www.bls.gov/news.release/embargo/prebmk.nr0.htm",
+      "pinned_path": "data/sources/bls-prebmk-2026.txt",
+      "text_path": "data/sources/bls-prebmk-2026.txt",
+      "text_sha256": "sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f",
+      "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "bls-realer-2026-07",
+      "title": "Real Earnings, July 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-08-12",
+      "url": "https://www.bls.gov/news.release/realer.nr0.htm",
+      "pinned_path": "data/sources/bls-realer-2026-07.txt",
+      "text_path": "data/sources/bls-realer-2026-07.txt",
+      "text_sha256": "sha256:2d5d010c1a8f50909c2dd45ab078ea99e3f242f7535c117309b63f6ca641b187",
+      "quote": "Real average hourly earnings for all employees decreased 0.1 percent from June to July",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "fred-u6rate-2026-07",
+      "title": "U-6 underemployment rate, monthly (U6RATE)",
+      "publisher": "BLS via FRED",
+      "date": "2026-08-31",
+      "url": "https://fred.stlouisfed.org/series/U6RATE",
+      "pinned_path": "data/sources/U6RATE.csv",
+      "text_path": "data/sources/U6RATE.csv",
+      "text_sha256": "sha256:7150c174beae980836ff59e9b5f8f0e7e2a9986fb738bf3c1fea415bdba55f1f",
+      "quote": "2026-07-01,7.9",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "fred-primeage-2026-07",
+      "title": "Labor force participation, ages 25-54, monthly (LNS11300060)",
+      "publisher": "BLS via FRED",
+      "date": "2026-08-31",
+      "url": "https://fred.stlouisfed.org/series/LNS11300060",
+      "pinned_path": "data/sources/LNS11300060.csv",
+      "text_path": "data/sources/LNS11300060.csv",
+      "text_sha256": "sha256:b5a3b57d63a240e52cbcf56a3e818caf58fb2d05348f2172c4c88c2632ae7533",
+      "quote": "2026-07-01,83.4",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "title": "Payroll estimates as first published, 2026 vintages (ALFRED)",
+      "publisher": "BLS via ALFRED, St. Louis Fed",
+      "date": "2026-08-31",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_sha256": "sha256:0d8c327a542429bde9bd7ae11a15f29b8d27661eb693e522b82f7ab5d06d14eb",
+      "quote": "# vintage_date=2026-08-11",
+      "quote_span_check": "byte_exact"
+    }
+  ],
+  "figures": [
+    {
+      "figure": "July payroll change",
+      "source_id": "bls-empsit-2026-07",
+      "value": "-23,000"
+    },
+    {
+      "figure": "Unemployment rate",
+      "source_id": "bls-empsit-2026-07",
+      "value": "4.1%"
+    },
+    {
+      "figure": "May and June revisions",
+      "source_id": "bls-empsit-2026-07",
+      "value": "-103,000"
+    }
+  ],
+  "model_calls": [],
+  "model_claims": [],
+  "needs_ledger": [
+    {
+      "need": "official payroll change",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "unemployment rate",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "prior-month revisions",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "sector breakdown",
+      "plain": "The official BLS release contains this item.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "household survey detail (labor force, employment, U-6, prime-age)",
+      "plain": "The BLS release tables and FRED series contain these items.",
+      "record_id": "bls-empsit-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "inflation-adjusted earnings",
+      "plain": "The BLS Real Earnings release contains this item.",
+      "record_id": "bls-realer-2026-07",
+      "status": "have"
+    },
+    {
+      "need": "first-published payroll estimates for each 2026 month",
+      "plain": "ALFRED archives the numbers as first published, before revisions.",
+      "record_id": "alfred-payems-vintages-2026",
+      "status": "have"
+    }
+  ],
+  "primary_sources": [
+    {
+      "bytes": 200013,
+      "id": "bls-empsit-2026-07",
+      "path": "data/sources/bls-empsit-2026-07.html",
+      "sha256": "sha256:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "url": "https://www.bls.gov/news.release/empsit.htm"
+    }
+  ],
+  "schema": "event_dossier_v1"
 }

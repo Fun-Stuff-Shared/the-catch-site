@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 const SOURCE_DIR = new URL("../data/sources/officials/", import.meta.url).pathname;
 const EPISODE_DIR = new URL("../src/data/officials/marco-rubio/episodes/", import.meta.url).pathname;
-const XPOSTS = "/Volumes/4/CF/public-figure-pilots/rubio-2025/evidence_registry/promotion-review/w7-claim-vote-alignment/say-side-retrieval-20260823/xpost_zika.jsonl";
+const XPOSTS = new URL("../data/sources/officials/xpost_zika.jsonl", import.meta.url).pathname;
 const normalize = (value) => value.replace(/<[^>]+>/g, " ").replace(/&nbsp;/gi, " ").replace(/&amp;/gi, "&").replace(/[“”]/g, '"').replace(/[‘’]/g, "'").replace(/\s+/g, " ").trim();
 function bodyPathFor(sidecarName) {
   const base = sidecarName.replace(/\.json$/, "");
