@@ -1,0 +1,101 @@
+{
+  "type": "court-ruling",
+  "name": "Court ruling or judicial decision",
+  "cadence": "As decisions are issued",
+  "story_slug_pattern": "{descriptive-slug}",
+
+  "primary_sources": [
+    {
+      "name": "Opinion / order",
+      "url_template_examples": [
+        "https://www.supremecourt.gov/opinions/slipopinions.aspx",
+        "https://www.cadc.uscourts.gov/internet/opinions.nsf",
+        "PACER for federal district/circuit opinions"
+      ],
+      "extract": ["holding", "vote/split", "majority reasoning", "dissent reasoning", "concurrences", "remedy/injunction scope"],
+      "pin_as": "opinion-{court}-{docket}-{YYYY}.pdf",
+      "note": "PDF is the authoritative format; extract text and pin both"
+    },
+    {
+      "name": "Oral argument transcript",
+      "url_template_examples": [
+        "https://www.supremecourt.gov/oral_arguments/argument_transcript/{year}"
+      ],
+      "extract": ["key exchanges", "hypotheticals posed by justices", "concessions by counsel"],
+      "pin_as": "oral-arg-{docket}-{YYYY}.pdf",
+      "note": "Only for appellate courts; not always available before ruling"
+    },
+    {
+      "name": "Underlying statute or regulation",
+      "url_template_examples": [
+        "https://uscode.house.gov/",
+        "https://www.ecfr.gov/"
+      ],
+      "extract": ["statutory text at issue", "regulatory provision challenged"],
+      "pin_as": "statute-{title}-{section}.txt",
+      "note": "Pin the specific provision the ruling interprets"
+    }
+  ],
+
+  "data_series": [],
+
+  "computations": [
+    {
+      "id": "vote_split",
+      "description": "Parse the vote from the opinion (e.g. 6-3, per curiam, unanimous) and identify who joined which opinion",
+      "inputs": ["opinion PDF"],
+      "output_kpi": true
+    },
+    {
+      "id": "procedural_history",
+      "description": "Trace the case path: district court ruling, circuit court ruling, cert grant, oral argument, decision",
+      "inputs": ["opinion PDF", "docket"],
+      "output_timeline": true
+    }
+  ],
+
+  "outlet_check": {
+    "method": "Compare each outlet's characterization of the holding against the opinion's actual language",
+    "chip_vocabulary": ["checks out", "consistent", "mislabeled", "wrong", "single outlet", "oversimplified"],
+    "rule": "Legal holdings are precise; check whether the outlet's summary captures the actual scope of the ruling or broadens/narrows it"
+  },
+
+  "sections": [
+    { "id": "what-happened", "kicker": "The ruling", "required": true },
+    { "id": "what-it-says", "kicker": "The opinion", "required": true, "note": "Key passages from majority and dissent, quoted" },
+    { "id": "where-this-sits", "kicker": "History", "required": false, "note": "Procedural timeline if the case has a significant path", "components": ["DecisionTimeline"] },
+    { "id": "outlets", "kicker": "Cross-source check", "required": true, "components": ["OutletCheck"] },
+    { "id": "claim-check", "kicker": "Verified", "required": false, "components": ["CheckedBlock"] },
+    { "id": "what-next", "kicker": "What happens now", "required": true, "note": "Remedy, enforcement timeline, downstream cases" },
+    { "id": "records", "kicker": "Sources", "required": true, "components": ["RecordsList"] }
+  ],
+
+  "grok_scope": [
+    {
+      "purpose": "Amicus briefs or related filings",
+      "constraint": "Named parties only, from court docket or PACER, with filing dates",
+      "example": "Search for amicus briefs filed in [case name] [docket number]"
+    },
+    {
+      "purpose": "Post-ruling reaction from parties",
+      "constraint": "Official statements from named parties or counsel, dated, with source URLs",
+      "example": "Search for [party name] statement on [case name] ruling"
+    }
+  ],
+
+  "subject_page_updates": [
+    "Court rulings may not have a standing subject page unless they are part of a series (e.g. abortion rights, immigration enforcement)",
+    "If a subject page exists, append the new ruling to its timeline"
+  ],
+
+  "manifest_template": {
+    "steps": [
+      "sources_admitted",
+      "opinion_text_extracted",
+      "vote_split_verified",
+      "outlet_claims_verified",
+      "section_grammar_followed",
+      "chip_vocabulary_closed"
+    ]
+  }
+}
