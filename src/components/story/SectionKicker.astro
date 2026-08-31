@@ -1,0 +1,12 @@
+---
+/**
+ * Section kicker: mono-caps label above a section heading.
+ * Props:
+ *   text: string
+ */
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+<p class="sec-kicker">{text}</p>

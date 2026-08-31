@@ -1,0 +1,25 @@
+---
+/**
+ * KPI strip: a row of key figures at the top of a story.
+ * Props:
+ *   kpis: Array<{ value: string, unit?: string, label: string, live?: boolean }>
+ *   liveId?: string  — prefix for live-counter element IDs (default: "kpi")
+ */
+interface Props {
+  kpis: Array<{ value: string; unit?: string; label: string; live?: boolean }>;
+  liveId?: string;
+}
+const { kpis, liveId = "kpi" } = Astro.props;
+---
+<div class="kpi-strip">
+  {kpis.map((k) => (
+    <div class="kpi">
+      <span class="kpi-value" id={k.live ? `${liveId}-days` : undefined}>
+        {k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small>
+      </span>
+      <span class="kpi-label" id={k.live ? `${liveId}-days-label` : undefined}>
+        {k.label}
+      </span>
+    </div>
+  ))}
+</div>

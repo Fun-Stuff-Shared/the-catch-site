@@ -1,0 +1,54 @@
+---
+/**
+ * Client-side live counter that updates a KPI and displays a trailing note.
+ * Guarded: only activates after the last-checked date; carries a correction promise.
+ *
+ * Props:
+ *   startDate: string       — ISO date string for the start of the count (e.g. "2025-12-11")
+ *   checkedDate: string     — ISO date string for the last verification date
+ *   kpiId?: string          — element ID of the KPI value to update (default: "kpi-days")
+ *   kpiLabelId?: string     — element ID of the KPI label to update
+ *   kpiLabelText?: string   — updated label text when the counter is live
+ *   counterId?: string      — element ID of the trailing text element
+ *   counterTemplate: string — template string with {days} placeholder
+ *   correctionPromise: string — what happens if the thing being counted changes
+ */
+interface Props {
+  startDate: string;
+  checkedDate: string;
+  kpiId?: string;
+  kpiLabelId?: string;
+  kpiLabelText?: string;
+  counterId?: string;
+  counterTemplate: string;
+  correctionPromise: string;
+}
+const {
+  startDate, checkedDate,
+  kpiId = "kpi-days",
+  kpiLabelId,
+  kpiLabelText,
+  counterId = "held-counter",
+  counterTemplate,
+  correctionPromise,
+} = Astro.props;
+
+// Parse dates to UTC timestamps for the client script
+const startMs = Date.parse(startDate);
+const checkedMs = Date.parse(checkedDate);
+---
+<script define:vars={{ startMs, checkedMs, kpiId, kpiLabelId, kpiLabelText, counterId, counterTemplate, correctionPromise }}>
+  (function () {
+    var now = Date.now();
+    if (now <= checkedMs) return;
+    var days = Math.floor((now - startMs) / 86400000);
+    var el = document.getElementById(counterId);
+    if (el) el.textContent = counterTemplate.replace("{days}", String(days)) + " " + correctionPromise;
+    var kv = document.getElementById(kpiId);
+    if (kv) kv.firstChild.nodeValue = String(days);
+    if (kpiLabelId && kpiLabelText) {
+      var kl = document.getElementById(kpiLabelId);
+      if (kl) kl.textContent = kpiLabelText;
+    }
+  })();
+</script>

@@ -1,0 +1,17 @@
+---
+/**
+ * Three-things-to-know box at the top of a story.
+ * Props:
+ *   items: string[]  — the three summary bullets (HTML allowed)
+ */
+interface Props {
+  items: string[];
+}
+const { items } = Astro.props;
+---
+<aside class="three-things">
+  <p class="tt-label">Three things to know</p>
+  <ol>
+    {items.map((item) => <li set:html={item} />)}
+  </ol>
+</aside>

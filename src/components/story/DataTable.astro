@@ -1,0 +1,38 @@
+---
+/**
+ * Data table: a compact responsive table for revision histories, comparisons, etc.
+ * Props:
+ *   columns: string[]                    — header labels
+ *   rows: Array<Array<string | number>>  — cell values
+ *   caption?: string
+ *   highlightColumn?: number             — zero-indexed column to accent
+ */
+interface Props {
+  columns: string[];
+  rows: Array<Array<string | number>>;
+  caption?: string;
+  highlightColumn?: number;
+}
+const { columns, rows, caption, highlightColumn } = Astro.props;
+---
+<figure class="data-table-wrap">
+  <table class="data-table">
+    {caption && <caption>{caption}</caption>}
+    <thead>
+      <tr>
+        {columns.map((col, i) => (
+          <th class={highlightColumn === i ? "hl" : ""}>{col}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          {row.map((cell, i) => (
+            <td class={highlightColumn === i ? "hl" : ""}>{cell}</td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</figure>

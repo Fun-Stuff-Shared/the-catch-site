@@ -1,0 +1,147 @@
+{
+  "type": "jobs-report",
+  "name": "BLS employment situation",
+  "cadence": "Monthly (first Friday)",
+  "subject_slug": "jobs",
+  "story_slug_pattern": "{month-name}-{year}",
+
+  "primary_sources": [
+    {
+      "name": "Employment Situation release",
+      "url_template": "https://www.bls.gov/news.release/empsit.nr0.htm",
+      "extract": [
+        "total nonfarm change", "private sector change", "unemployment rate",
+        "household survey labor force/employed/unemployed changes",
+        "long-term unemployed", "marginally attached", "part-time for economic reasons",
+        "3-month average", "prior month revisions", "sectors summary"
+      ],
+      "pin_as": "bls-empsit-{YYYY}-{MM}.html",
+      "note": "Also save .txt extraction; release archive may 403, use current link"
+    },
+    {
+      "name": "Real Earnings report",
+      "url_template": "https://www.bls.gov/news.release/realer.nr0.htm",
+      "extract": ["real average hourly earnings MoM", "real weekly earnings", "YoY change"],
+      "pin_as": "bls-realer-{YYYY}-{MM}.html",
+      "recovery": "bls.gov blocks automated retrieval; use Internet Archive snapshot, disclose in SOURCES.md"
+    },
+    {
+      "name": "Preliminary benchmark revision",
+      "url_template": "https://www.bls.gov/web/empsit/cesprelbmk.htm",
+      "extract": ["revision direction", "revision magnitude", "affected period"],
+      "pin_as": "bls-prebmk-{YYYY}.html",
+      "note": "Published annually around February; check if the current benchmark affects the reporting period"
+    }
+  ],
+
+  "data_series": [
+    {
+      "name": "Total nonfarm payrolls",
+      "fred_id": "PAYEMS",
+      "format": "csv",
+      "pin_as": "PAYEMS.csv"
+    },
+    {
+      "name": "Unemployment rate",
+      "fred_id": "UNRATE",
+      "format": "csv",
+      "pin_as": "UNRATE.csv"
+    },
+    {
+      "name": "Prime-age participation rate",
+      "fred_id": "LNS11300060",
+      "format": "csv",
+      "pin_as": "LNS11300060.csv"
+    },
+    {
+      "name": "U-6 underemployment rate",
+      "fred_id": "U6RATE",
+      "format": "csv",
+      "pin_as": "U6RATE.csv"
+    }
+  ],
+
+  "data_series_optional": [
+    {
+      "name": "First-print payroll vintages (ALFRED)",
+      "source": "ALFRED",
+      "note": "Fetch per-vintage (comma syntax silently drops; fetch individually and concatenate). The 2026-02-10 vintage may lack January (use 2026-02-13 instead).",
+      "pin_as": "alfred-payems-vintages-{YYYY}.csv"
+    }
+  ],
+
+  "computations": [
+    {
+      "id": "monthly_changes",
+      "description": "Compute month-over-month change from PAYEMS for the trailing 12-14 months",
+      "inputs": ["PAYEMS.csv"],
+      "output_chart": true
+    },
+    {
+      "id": "negative_months",
+      "description": "Count months with negative payroll change in the trailing 12 months",
+      "inputs": ["PAYEMS.csv"],
+      "output_kpi": true
+    },
+    {
+      "id": "revision_table",
+      "description": "Compare first-published estimates to current for each month this year",
+      "inputs": ["alfred-payems-vintages-{YYYY}.csv", "PAYEMS.csv"],
+      "output_table": true,
+      "note": "Check whether the page's revision narrative (overstatement/understatement) matches the computed direction. Be ready for the page to be wrong."
+    },
+    {
+      "id": "three_month_average",
+      "description": "Verify the BLS's own 3-month average against PAYEMS",
+      "inputs": ["PAYEMS.csv"]
+    }
+  ],
+
+  "outlet_check": {
+    "method": "Compare each outlet's headline number, unemployment rate, and revision claims against the BLS release and FRED series",
+    "chip_vocabulary": ["checks out", "consistent", "mislabeled", "wrong", "single outlet", "unconfirmed"],
+    "rule": "A wrong claim is named plainly: who, what they wrote, what the record shows"
+  },
+
+  "sections": [
+    { "id": "what-happened", "kicker": "The report", "required": true },
+    { "id": "where-this-sits", "kicker": "History", "required": true, "components": ["BarChart"] },
+    { "id": "outlets", "kicker": "Cross-source check", "required": true, "components": ["OutletCheck"] },
+    { "id": "claim-check", "kicker": "Verified", "required": true, "components": ["CheckedBlock", "DataTable"] },
+    { "id": "who-feels-it", "kicker": "On the ground", "required": true },
+    { "id": "markets", "kicker": "The Fed connection", "required": false },
+    { "id": "benchmark", "kicker": "The benchmark", "required": false, "note": "Include when a benchmark revision is relevant" },
+    { "id": "unknowns", "kicker": "What we still do not know", "required": false },
+    { "id": "records", "kicker": "Sources", "required": true, "components": ["RecordsList"] }
+  ],
+
+  "grok_scope": [
+    {
+      "purpose": "Blocked BLS pages",
+      "constraint": "Use Internet Archive snapshots; disclose archive.org provenance in SOURCES.md and on the page",
+      "example": "Fetch archived version of bls.gov/news.release/realer.nr0.htm"
+    },
+    {
+      "purpose": "Market reaction quotes",
+      "constraint": "Dated quotes from named outlets with URLs, never estimates",
+      "example": "Search for Fed funds futures reaction to jobs report [date]"
+    }
+  ],
+
+  "subject_page_updates": [
+    "Add new story link",
+    "Refresh headline KPI (latest payroll change, unemployment rate)"
+  ],
+
+  "manifest_template": {
+    "steps": [
+      "sources_admitted",
+      "derived_numbers_computed",
+      "outlet_claims_verified",
+      "section_grammar_followed",
+      "chip_vocabulary_closed",
+      "subject_page_updated",
+      "homepage_updated"
+    ]
+  }
+}

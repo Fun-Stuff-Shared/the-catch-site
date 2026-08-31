@@ -1,0 +1,30 @@
+---
+/**
+ * Inline chip label for sourcing attribution.
+ * Props:
+ *   kind: "record" | "computed" | "official" | "outlet" | "ok" | "warn" | "unconfirmed"
+ *   label?: string  — override the display text (default: derived from kind)
+ *
+ * Closed chip vocabulary (EVENT-PAGE-STANDARD.md):
+ *   record, their words, computed, official data, single outlet,
+ *   reported pricing, one source, checks out, consistent,
+ *   mislabeled, unconfirmed
+ */
+interface Props {
+  kind: "record" | "computed" | "official" | "outlet" | "ok" | "warn" | "unconfirmed";
+  label?: string;
+}
+const { kind, label } = Astro.props;
+
+const defaults: Record<string, string> = {
+  record: "record",
+  computed: "computed",
+  official: "official data",
+  outlet: "single outlet",
+  ok: "checks out",
+  warn: "mislabeled",
+  unconfirmed: "unconfirmed",
+};
+const text = label ?? defaults[kind] ?? kind;
+---
+<span class={`chip chip-${kind}`}>{text}</span>
