@@ -45,3 +45,18 @@ disclosure, in coverage/axios-july-via-assisted.txt.
 | data/sources/coverage/stocktitan.html | 77 | b0ad2fbea8292c8c |
 | data/sources/coverage/tradingkey.html | 432418 | 8df965af6fb2dc78 |
 | data/sources/coverage/tradingkey.txt | 11400 | b96e93c0f9170595 |
+
+## Jobs July 2026 additions (captured 2026-08-31)
+
+The Real Earnings release was captured through the Internet Archive snapshot of
+2026-08-24 (direct bls.gov fetches were blocked at capture time); that provenance
+is disclosed here and the pinned text is the record. FRED/ALFRED series captured
+directly.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/bls-realer-2026-07.html | 61549 | via web.archive.org |
+| data/sources/bls-realer-2026-07.txt | 9213 | 2d5d010c1a8f5090 |
+| data/sources/U6RATE.csv | 216 | 7150c174beae9808 |
+| data/sources/LNS11300060.csv | 15113 | b5a3b57d63a240e5 |
+| data/sources/alfred-payems-vintages-2026.csv | 1050 | 0d8c327a542429bd |

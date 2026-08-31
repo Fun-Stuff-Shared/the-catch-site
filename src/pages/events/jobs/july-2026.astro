@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EventRecordContext from "../../../components/EventRecordContext.astro";
-import { event, payrollChanges } from "../../../data/jobs202607.mjs";
+import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
 
 // Bar chart of monthly payroll changes, computed from the module series
 // (which is recomputed from data/sources/PAYEMS.csv).
@@ -21,7 +21,7 @@ const bars = payrollChanges.map((d, i) => {
   <div slot="locator" class="locator"><span>EVENTS</span><span>Jobs report &middot; July 2026</span></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 29, 2026</p>
+      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 31, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
@@ -58,7 +58,7 @@ const bars = payrollChanges.map((d, i) => {
         </ol>
       </nav>
 
-      <EventRecordContext subEvents={[{ date: "August 7", label: "July employment release", section_anchor: "what-happened" }, { date: "August 28", label: "Preliminary benchmark check", section_anchor: "what-happened-next" }, { date: "February 2027", label: "Final benchmark update", section_anchor: "what-happened-next" }]} recordIds={["bls-empsit-2026-07", "bls-prebmk-2026"]} />
+      <EventRecordContext subEvents={[{ date: "August 7", label: "July employment release", section_anchor: "what-happened" }, { date: "August 12", label: "Real earnings release", section_anchor: "who-feels-it" }, { date: "August 28", label: "Preliminary benchmark check", section_anchor: "what-happened-next" }, { date: "February 2027", label: "Final benchmark update", section_anchor: "what-happened-next" }]} recordIds={["bls-empsit-2026-07", "bls-prebmk-2026", "bls-realer-2026-07"]} />
       <section id="what-happened">
         <p class="sec-kicker">The report</p>
         <h2>What happened</h2>
@@ -66,7 +66,11 @@ const bars = payrollChanges.map((d, i) => {
           The Bureau of Labor Statistics reported on August 7 that total nonfarm payroll employment&nbsp;<strong>fell by 23,000</strong> in July and the unemployment rate was&nbsp;<strong>4.1&nbsp;percent</strong>. In the agency's own words, both &ldquo;changed little.&rdquo;
           The declines were concentrated: local government education lost 50,000 jobs
           &ldquo;after showing little net change over the prior 12 months,&rdquo; and retail trade lost
-          19,000. Health care, the economy's steadiest job creator, added 22,000, below its
+          19,000. One caution before reading that 50,000 literally: these figures are seasonally
+          adjusted. School employment always swings enormously in summer, and the adjustment is
+          designed to remove that swing. The number does not mean 50,000 ordinary summer layoffs;
+          it means school employment came in roughly 50,000 below the seasonal pattern the agency
+          expected for July. Health care, the economy's steadiest job creator, added 22,000, below its
           12-month average of 36,000. <span class="chip chip-record">record</span>
         </p>
         <details class="receipt"><summary>the record</summary>
@@ -82,7 +86,8 @@ const bars = payrollChanges.map((d, i) => {
           The composition of the loss matters: private employers added 30,000 jobs in July while
           government shed 53,000, so the headline decline is a public-sector story, led by the
           50,000-job drop in local government education. The report landed nine days after the
-          Federal Reserve's split decision to hold interest rates, covered in&nbsp;<a href="/events/fed-rate/july-2026/">our July FOMC story</a>.&nbsp;<span class="chip chip-record">record</span>
+          Federal Reserve voted 9&ndash;3 to hold interest rates, with three regional Fed presidents
+          formally asking for a quarter-point <em>hike</em>, covered in&nbsp;<a href="/events/fed-rate/july-2026/">our July FOMC story</a>.&nbsp;<span class="chip chip-record">record</span>
         </p>
       </section>
 
@@ -110,9 +115,37 @@ const bars = payrollChanges.map((d, i) => {
           <figcaption>Monthly change in total nonfarm payrolls, thousands, seasonally adjusted. Amber bars are losses. Source: BLS via FRED (PAYEMS), series as captured August 25, 2026.</figcaption>
         </figure>
         <p class="railed rail-record">
+          The release's own three-month averages tell the same story on a shorter window than the
+          twelve-month view: total payroll growth averaged 20,000 a month through July, and private
+          payroll growth 40,000. The near-stall is not an artifact of one unusual year-long
+          window.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-record">
           The unemployment rate's dip from 4.2 to 4.1 percent is not the good news it appears.
-          The release attributes it to people leaving the labor force: participation fell to
-          61.4&nbsp;percent and is down 0.7 percentage point since January.&nbsp;<span class="chip chip-record">record</span>
+          The jobs report is really two surveys: a survey of employers, which produced the payroll
+          numbers above, and a survey of households, which produces the unemployment rate. The
+          household side moved the same direction, and it explains the falling rate: the measured
+          labor force shrank by 264,000 people in July while household employment fell by 87,000.
+          The rate fell because the labor force contracted by three times more than employment did,
+          not because more people found work. Unemployment fell by 178,000, participation slipped to
+          61.4&nbsp;percent, down 0.7 point since January, and the share of the population with a job
+          fell to 58.9&nbsp;percent.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+        <aside class="two-surveys">
+          <p class="tt-label">Two surveys, same weak direction (July, seasonally adjusted)</p>
+          <ul>
+            <li><b>&minus;23,000</b> payroll jobs <small>(employer survey)</small></li>
+            <li><b>&minus;87,000</b> people employed <small>(household survey)</small></li>
+            <li><b>&minus;264,000</b> in the labor force</li>
+            <li><b>&minus;178,000</b> unemployed</li>
+          </ul>
+        </aside>
+        <p class="railed rail-official">
+          The exit is not uniform across ages. Participation among workers 25 to 54, the ages least
+          affected by retirement and schooling, <em>rose</em> to 83.4 percent in July from 83.3 in
+          June, though it remains below the 83.8&ndash;83.9 of early spring and 84.0 in January. The
+          July decline in overall participation came from outside the prime working ages; the spring
+          slide touched prime-age workers too.&nbsp;<span class="chip chip-official">official data</span>
         </p>
       </section>
 
@@ -167,9 +200,28 @@ const bars = payrollChanges.map((d, i) => {
           34,000&rdquo; (CNBC, August 7, matching the release’s own “average monthly gain of 34,000 over the prior 12 months”). <strong>The record today:</strong> recomputing from the
           current published series gives about 26,000 a month over the same window. Neither number
           is an error: CNBC's was correct on the data available August 7, and later revisions pulled
-          the average lower still. The claim aged in one direction, downward, which is itself
-          informative: this year's first estimates have repeatedly overstated the job market.&nbsp;<span class="chip chip-computed">computed</span>
+          the average lower still.&nbsp;<span class="chip chip-computed">computed</span>
         </p>
+        <p class="railed rail-computed">
+          An earlier version of this page read that aging as proof that &ldquo;this year's first
+          estimates have repeatedly overstated the job market.&rdquo; The full first-print record,
+          recomputed from the archived numbers as they were first published, says something more
+          specific. Three months were revised down, three up, one is unchanged so far. The
+          overstatement is real but concentrated: May and June, the two months everyone was reading
+          when this report landed, were cut by 109,000 and 37,000. The spring months were revised <em>up</em>.&nbsp;<span class="chip chip-computed">computed</span>
+        </p>
+        <div class="rev-table-wrap">
+          <table class="rev-table">
+            <caption>2026 payroll changes: first estimate vs. today's estimate (thousands)</caption>
+            <thead><tr><th scope="col">Month</th><th scope="col">First estimate</th><th scope="col">Current</th><th scope="col">Revision</th></tr></thead>
+            <tbody>
+              {revisionHistory.map((r) => (
+                <tr><th scope="row">{r.month}</th><td>{r.first > 0 ? `+${r.first}` : r.first}</td><td>{r.current > 0 ? `+${r.current}` : r.current}</td><td class={r.current - r.first < 0 ? "rev-down" : ""}>{r.current - r.first > 0 ? `+${r.current - r.first}` : r.current - r.first === 0 ? "0" : r.current - r.first}</td></tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="rev-note">Across the seven months: average revision &minus;16,000; cumulative &minus;111,000; average miss in either direction 44,000. July's first estimate has not yet had a revision cycle. First estimates recomputed from the ALFRED vintage archive (in the records list); current estimates from the July release.</p>
+        </div>
       </section>
 
       <section id="who-feels-it">
@@ -177,10 +229,33 @@ const bars = payrollChanges.map((d, i) => {
         <h2>Who feels it</h2>
         <p class="railed rail-record">
           The number of people on temporary layoff rose by 153,000 to 921,000. The long-term
-          unemployed, out of work 27 weeks or more, now make up 25.5 percent of all unemployed
-          people: one in four. The number working part time because they could not find full-time
-          work held at 4.8&nbsp;million. For teachers and school staff, the 50,000-job drop in local
-          government education landed in the month before the school year begins.&nbsp;<span class="chip chip-record">record</span>
+          unemployed, out of work 27 weeks or more, make up 25.5 percent of all unemployed people,
+          one in four, even though their number actually <em>fell</em> in July, from 1.94 to 1.77
+          million; the share stays high because the whole pool of unemployed people shrank too. The
+          number working part time because they could not find full-time work held at
+          4.8&nbsp;million, and the number marginally attached to the labor force, people who want
+          work but have stopped looking recently, rose from 1.76 to 1.81 million.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-official">
+          The broadest underutilization measure the agency publishes, U-6, which adds those
+          marginally attached workers and the involuntary part-timers to the officially unemployed,
+          held at 7.9&nbsp;percent in July, unchanged from June and down from 8.2 in April. The
+          headline unemployment rate improved; the broadest measure did not.&nbsp;<span class="chip chip-official">official data</span>
+        </p>
+        <p class="railed rail-record">
+          Paychecks tell a similar quiet story. Average hourly earnings rose 2 cents to $37.62 in
+          July, up 3.2&nbsp;percent over the year. Adjusted for inflation, though, real hourly
+          earnings <em>fell</em> 0.1&nbsp;percent in July and are down 0.2&nbsp;percent over the
+          year: wages are rising about 3.2&nbsp;percent a year while prices rise faster. The
+          typical worker's purchasing power did not improve.&nbsp;<span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-computed">
+          Put together, the shape of July is a hiring stall more than a burst of layoffs: employment
+          growth has stopped and people are leaving the measured labor force, but neither the
+          unemployment rate, U-6, nor the count of permanent job losers shows a sudden broad surge
+          in joblessness. The 153,000 rise in temporary layoffs is the one caution in that picture.
+          For teachers and school staff, the seasonally adjusted 50,000-job drop in local government
+          education, whatever its cause, is the number to watch when schools reopen.&nbsp;<span class="chip chip-computed">computed</span>
         </p>
       </section>
 
@@ -188,11 +263,13 @@ const bars = payrollChanges.map((d, i) => {
         <p class="sec-kicker">The reaction</p>
         <h2>What the markets said</h2>
         <p class="railed rail-record">
-          Per CNBC's report in our records: stock futures rose on the news, with Dow futures up
-          close to 200 points, and Treasury yields fell sharply. Traders cut the odds of a
-          September Federal Reserve rate hike to 44 percent and put October at 58 percent, by the
-          CME FedWatch measure of futures prices. A weak jobs number made a rate increase look
-          less likely, and markets treated that as good news.&nbsp;<span class="chip chip-record">record</span>
+          The move, not the level, is the story. On July 29 the Fed had voted 9&ndash;3 to hold,
+          with three members formally asking for a quarter-point hike; after that decision NBC News
+          quoted CME FedWatch odds of a September hike at 59 percent. Nine days later this report
+          landed, and per CNBC's release-day story in our records, those odds fell to 44 percent
+          (with October at 58 percent). Stock futures rose, Dow futures up close to 200 points, and
+          Treasury yields fell sharply: one weak report took a rate increase from more likely than
+          not to less, and markets treated that as good news.&nbsp;<span class="chip chip-record">record</span>
         </p>
       </section>
 
@@ -206,7 +283,7 @@ const bars = payrollChanges.map((d, i) => {
           <p>Release: &ldquo;The preliminary estimate of the Current Employment Statistics (CES) national benchmark revision to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)&hellip; The preliminary benchmark revision for total private employment was -178,000 (-0.1 percent). The annual benchmark revisions over the last 10 years have an absolute average of 0.2 percent of total nonfarm employment. In accordance with usual practice, the final benchmark revision will be issued in February 2027 with the publication of the January 2027 Employment Situation news release.&rdquo; <a href="https://www.bls.gov/news.release/prebmk.nr0.htm" rel="noreferrer">Preliminary Benchmark (National), March 2026</a>, USDL-26-1425, August 28, 2026.</p>
         </details>
         <p class="railed rail-computed">
-          Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em>. So the direction this page describes, first estimates overstating private-sector hiring, holds in the benchmark too, at a modest size.&nbsp;<span class="chip chip-computed">computed</span>
+          Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em>. Two limits on what that proves. First, the benchmark measures the employment <em>level</em> in March; it does not yet say which monthly estimates created the gap, and it says nothing about months after March. It points the same broad direction as this page for the private-sector level, and no further. Second, it complicates July's public-sector story rather than confirming it: the survey had been undercounting government jobs as of March, a reminder that the monthly sector split, private up 30,000, government down 53,000, is a first draft.&nbsp;<span class="chip chip-computed">computed</span>
         </p>
       </section>
       <section id="unknowns">
@@ -214,7 +291,8 @@ const bars = payrollChanges.map((d, i) => {
         <h2>What we do not know yet</h2>
         <ul>
           <li>Why local government education fell by 50,000 in one month. The release states the figure without a cause, and we will not guess at one.</li>
-          <li>How the benchmark will land on the months after March 2026. The preliminary figure covers March only; the month-by-month effect arrives with the final revision in February 2027.</li>
+          <li>Which months created the benchmark gap. The preliminary figure covers the March 2026 level only; the month-by-month distribution, and any effect on months after March, arrives with the final revision in February 2027.</li>
+          <li>Whether the labor-force exit continues. One month of a shrinking labor force alongside flat U-6 reads as a hiring stall; a second month would start to read as something worse.</li>
         </ul>
       </section>
       <section id="records">
@@ -226,12 +304,16 @@ const bars = payrollChanges.map((d, i) => {
         <ul class="src-list">
           <li><a href="https://www.bls.gov/news.release/empsit.nr0.htm" rel="noreferrer">The Employment Situation, July 2026</a> &middot; released August 7 &middot; every <em>record</em> figure above</li>
           <li><a href="https://www.bls.gov/news.release/prebmk.nr0.htm" rel="noreferrer">Preliminary Benchmark (National), March 2026</a> &middot; released August 28 &middot; the benchmark check</li>
+          <li><a href="https://www.bls.gov/news.release/realer.nr0.htm" rel="noreferrer">Real Earnings, July 2026</a> &middot; released August 12 &middot; the inflation-adjusted wage figures (our copy captured via the Internet Archive; disclosed in the source ledger)</li>
         </ul>
 
         <h3 class="src-group">Official data</h3>
         <ul class="src-list">
           <li><a href="https://fred.stlouisfed.org/series/PAYEMS" rel="noreferrer">Total nonfarm payrolls, monthly</a> &middot; the chart, the five-in-twelve count, the 26,000 average</li>
           <li><a href="https://fred.stlouisfed.org/series/UNRATE" rel="noreferrer">Unemployment rate, monthly</a> &middot; the 4.2 to 4.1 move</li>
+          <li><a href="https://fred.stlouisfed.org/series/U6RATE" rel="noreferrer">U-6 underemployment rate, monthly</a> &middot; the 7.9 percent broad measure</li>
+          <li><a href="https://fred.stlouisfed.org/series/LNS11300060" rel="noreferrer">Prime-age (25&ndash;54) participation, monthly</a> &middot; the 83.4 percent counterweight</li>
+          <li><a href="https://alfred.stlouisfed.org/series?seid=PAYEMS" rel="noreferrer">Payroll estimates as first published (ALFRED vintages)</a> &middot; the revisions table</li>
         </ul>
 
         <h3 class="src-group">Coverage checked</h3>
@@ -312,6 +394,19 @@ const bars = payrollChanges.map((d, i) => {
   .receipt summary { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: #5b6470; cursor: pointer; }
   .receipt p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.7rem 0.9rem; border-radius: 3px; margin: 0.4rem 0 0; }
 
+  .two-surveys { border: 1px solid #dce4ea; background: #f4f7fa; padding: 0.9rem 1.15rem; margin: 1rem 0; }
+  .two-surveys .tt-label { color: #2b5474; }
+  .two-surveys ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.35rem 1rem; }
+  .two-surveys li { font-family: "IBM Plex Mono", monospace; font-size: 0.85rem; }
+  .two-surveys li b { font-size: 1.05rem; }
+  .two-surveys li small { display: block; font-family: "Public Sans", system-ui, sans-serif; color: #5b6470; }
+  .rev-table-wrap { overflow-x: auto; margin: 1.1rem 0; }
+  .rev-table { border-collapse: collapse; width: 100%; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.9rem; }
+  .rev-table caption { text-align: left; font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #5b6470; padding-bottom: 0.4rem; }
+  .rev-table th, .rev-table td { border-bottom: 1px solid #e3e0da; padding: 0.35rem 0.75rem 0.35rem 0; text-align: right; font-variant-numeric: tabular-nums; }
+  .rev-table th[scope="row"], .rev-table thead th:first-child { text-align: left; font-weight: 600; }
+  .rev-table .rev-down { color: #a03a2a; }
+  .rev-note { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; }
   .rate-chart { margin: 1.25rem 0; }
   .rate-chart svg { width: 100%; height: auto; }
   .chart-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #5b6470; }

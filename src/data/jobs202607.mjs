@@ -10,7 +10,7 @@ export const event = {
   name: "The July 2026 jobs report",
   span: "Reported August 7, 2026",
   date: "2026-08-07",
-  updated: "2026-08-29",
+  updated: "2026-08-31",
   kpis: [
     { value: "-23,000", unit: "", label: "payrolls in July" },
     { value: "4.1", unit: "%", label: "unemployment rate" },
@@ -37,4 +37,18 @@ export const payrollChanges = [
   { month: "2026-05", change: 63 },
   { month: "2026-06", change: 20 },
   { month: "2026-07", change: -23 },
+];
+
+// Payroll changes as FIRST PUBLISHED for each 2026 month versus the current
+// estimate. First prints recomputed from data/sources/alfred-payems-vintages-2026.csv
+// (ALFRED vintages dated just after each monthly release); current column from the
+// 2026-08-11 vintage, which matches the July release and PAYEMS.csv.
+export const revisionHistory = [
+  { month: "January", first: 130, current: 160 },
+  { month: "February", first: -92, current: -156 },
+  { month: "March", first: 178, current: 214 },
+  { month: "April", first: 115, current: 148 },
+  { month: "May", first: 172, current: 63 },
+  { month: "June", first: 57, current: 20 },
+  { month: "July", first: -23, current: -23 },
 ];
