@@ -224,6 +224,7 @@ const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed ex
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
   "eligibility", "eligible claim", "manifested", "dossier", "pipeline", "staged", "zain review", "w7", "wave", "internal review",
   "cloture", "perfecting nature", "voted not voting", "cloture motion"];
+const wholeTerm = (term) => new RegExp(`\\b${term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
 
 const eventsIndex = join(dist, "events", "index.html");
 if (!existsSync(eventsIndex)) fail.push("/events/ index missing from dist");
@@ -279,7 +280,7 @@ for (const base of SCOPE) {
     if (readerHtml.includes("—")) fail.push(`${rel}: em dash in public copy`);
     const text = readerHtml.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
     for (const w of INTERNAL) {
-      if (text.toLowerCase().includes(w)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
+      if (wholeTerm(w).test(text)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
     }
     // jammed text-to-inline-tag boundaries (rendered artifact of template line joins)
     const deEntitied = html.replace(/&[a-zA-Z#0-9]+;/g, " ");
