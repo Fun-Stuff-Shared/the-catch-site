@@ -2,14 +2,14 @@
 /**
  * Cross-source outlet check card.
  * Props:
- *   outlet: string          — outlet name (e.g. "CNBC")
+ *   outlet: string          — outlet name (e.g. "CNBC"); omit for an unattributed note
  *   claim: string           — what the outlet said (HTML allowed)
  *   verdict: string         — verdict text (HTML allowed)
  *   chip: string            — chip label ("checks out", "mislabeled", "consistent", etc.)
  *   status: "ok" | "warn" | "note"  — determines border color
  */
 interface Props {
-  outlet: string;
+  outlet?: string;
   claim: string;
   verdict?: string;
   chip?: string;
@@ -20,7 +20,9 @@ const { outlet, claim, verdict, chip, status = "ok" } = Astro.props;
 const chipClass = status === "ok" ? "chip-ok" : status === "warn" ? "chip-warn" : "chip-outlet";
 ---
 <div class={`outlet-check ${status}`}>
-  <p class="oc-head"><strong>{outlet}</strong>, <span set:html={claim} /></p>
+  <p class="oc-head">
+    {outlet ? <><strong>{outlet}</strong>, </> : null}<span set:html={claim} />
+  </p>
   {verdict && (
     <p class="oc-verdict">
       {chip && <span class={`chip ${chipClass}`}>{chip}</span>}
