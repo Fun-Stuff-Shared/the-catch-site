@@ -105,6 +105,15 @@ with their comparisons folded in, not teasers.
   suggest".
 - No adjective triplets; no "Similarly / Likewise / In the same way"
   transitions (a transition states what the next thing adds).
+- No unnamed attribution: "analysts say", "experts argue", "observers note"
+  never appear. Every voiced view carries a name and a record, or it is cut.
+  This is the site's whole premise applied to its own prose.
+- No trailing significance clauses: the "-ing" tail that inflates a fact
+  ("…, highlighting the growing importance of…", "…, reflecting broader
+  trends…"). State the fact; the reader judges its size.
+- Repeat the noun. Rotating synonyms for one thing (the release / the report /
+  the document / the publication) to avoid repetition trades clarity for
+  variety. One thing, one name, used every time.
 - Internal vocabulary never reaches the reader (already gated): tier names,
   claim ids, enum values, pipeline terms.
 
