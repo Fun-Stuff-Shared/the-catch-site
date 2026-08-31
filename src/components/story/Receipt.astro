@@ -1,0 +1,15 @@
+---
+/**
+ * Expandable receipt toggle for computation or source details.
+ * Props:
+ *   label: string  — the summary text shown when collapsed (e.g. "the record", "computation")
+ */
+interface Props {
+  label: string;
+}
+const { label } = Astro.props;
+---
+<details class="receipt">
+  <summary>{label}</summary>
+  <slot />
+</details>

@@ -1,0 +1,81 @@
+---
+/**
+ * Vertical bar chart: for monthly payroll changes, revisions, etc.
+ * Bars above zero are blue, bars below are red.
+ * Props:
+ *   bars: Array<{ label: string, value: number }>
+ *   unit?: string          — label for the value (e.g. "k")
+ *   caption?: string
+ *   width?: number
+ *   height?: number
+ *   ariaLabel?: string
+ *   highlightLast?: boolean — accent the rightmost bar
+ */
+interface Props {
+  bars: Array<{ label: string; value: number }>;
+  unit?: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  ariaLabel?: string;
+  highlightLast?: boolean;
+}
+const {
+  bars,
+  unit = "",
+  caption,
+  width: W = 720,
+  height: H = 200,
+  ariaLabel = "Bar chart",
+  highlightLast = false,
+} = Astro.props;
+
+const PAD = 8;
+const vals = bars.map((b) => b.value);
+const vMax = Math.max(...vals, 0);
+const vMin = Math.min(...vals, 0);
+const range = vMax - vMin || 1;
+const barW = Math.min(40, (W - 2 * PAD) / bars.length - 4);
+const gap = ((W - 2 * PAD) - barW * bars.length) / (bars.length + 1);
+const zeroY = H - PAD - ((0 - vMin) / range) * (H - 2 * PAD);
+
+function barX(i: number) { return PAD + gap + i * (barW + gap); }
+function barTop(v: number) { return H - PAD - ((Math.max(v, 0) - vMin) / range) * (H - 2 * PAD); }
+function barHeight(v: number) { return Math.abs(((v) / range) * (H - 2 * PAD)); }
+---
+<figure class="rate-chart">
+  <svg viewBox={`0 0 ${W} ${H + 28}`} role="img" aria-label={ariaLabel}>
+    <line x1={PAD} y1={zeroY} x2={W - PAD} y2={zeroY} stroke="#d8d4cc" stroke-width="1" />
+    {bars.map((b, i) => {
+      const isLast = highlightLast && i === bars.length - 1;
+      const fill = b.value >= 0 ? (isLast ? "#c98a1b" : "#7a9cc4") : (isLast ? "#c98a1b" : "#c47a7a");
+      return (
+        <g>
+          <rect
+            x={barX(i)}
+            y={barTop(b.value)}
+            width={barW}
+            height={Math.max(barHeight(b.value), 1)}
+            fill={fill}
+            rx="1"
+          />
+          <text
+            x={barX(i) + barW / 2}
+            y={b.value >= 0 ? barTop(b.value) - 4 : barTop(b.value) + barHeight(b.value) + 12}
+            text-anchor="middle"
+            class="chart-note"
+            font-size="9"
+          >{b.value > 0 ? "+" : ""}{b.value}{unit}</text>
+          <text
+            x={barX(i) + barW / 2}
+            y={H + 16}
+            text-anchor="middle"
+            class="chart-axis"
+            font-size="9"
+          >{b.label}</text>
+        </g>
+      );
+    })}
+  </svg>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

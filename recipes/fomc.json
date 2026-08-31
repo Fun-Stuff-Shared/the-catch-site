@@ -1,0 +1,142 @@
+{
+  "type": "fomc",
+  "name": "FOMC rate decision",
+  "cadence": "8 scheduled meetings per year",
+  "subject_slug": "fed-rate",
+  "story_slug_pattern": "{month-name}-{year}",
+
+  "primary_sources": [
+    {
+      "name": "FOMC statement",
+      "url_template": "https://www.federalreserve.gov/newsevents/pressreleases/monetary{YYYYMMDD}a.htm",
+      "extract": ["vote tally", "target range", "statement text", "voting roster"],
+      "pin_as": "monetary{YYYYMMDD}a.htm"
+    },
+    {
+      "name": "FOMC minutes",
+      "url_template": "https://www.federalreserve.gov/monetarypolicy/fomcminutes{YYYYMMDD}.htm",
+      "extract": ["voting roster", "dissent language", "hike/cut case quotes", "restrictive stance quotes"],
+      "pin_as": "fomcminutes{YYYYMMDD}.htm",
+      "note": "Released ~3 weeks after the meeting"
+    },
+    {
+      "name": "Summary of Economic Projections",
+      "url_template": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl{YYYYMMDD}.htm",
+      "extract": ["federal funds rate medians by year", "PCE/core PCE forecasts", "dot distribution", "central tendency", "full range"],
+      "pin_as": "fomcprojtabl{YYYYMMDD}.htm",
+      "note": "Only published at March, June, September, December meetings"
+    }
+  ],
+
+  "data_series": [
+    {
+      "name": "Target range upper bound (daily)",
+      "fred_id": "DFEDTARU",
+      "format": "csv",
+      "pin_as": "DFEDTARU.csv",
+      "companion": { "fred_id": "DFEDTAR", "note": "Pre-2008 single target, combined with DFEDTARU for full history" }
+    },
+    {
+      "name": "PCE price index",
+      "fred_id": "PCEPI",
+      "format": "csv",
+      "pin_as": "PCEPI.csv"
+    },
+    {
+      "name": "Unemployment rate",
+      "fred_id": "UNRATE",
+      "format": "csv",
+      "pin_as": "UNRATE.csv"
+    },
+    {
+      "name": "30-year fixed mortgage average",
+      "fred_id": "MORTGAGE30US",
+      "format": "csv",
+      "pin_as": "MORTGAGE30US.csv"
+    }
+  ],
+
+  "computations": [
+    {
+      "id": "days_held",
+      "description": "Count calendar days from the last change point in DFEDTARU to the meeting date",
+      "inputs": ["DFEDTARU.csv"],
+      "output_kpi": true
+    },
+    {
+      "id": "percentile",
+      "description": "Rank the current upper-bound rate against the full 1982-present DFEDTAR+DFEDTARU daily history (midpoint method)",
+      "inputs": ["DFEDTAR.csv", "DFEDTARU.csv"],
+      "output_kpi": true
+    },
+    {
+      "id": "pce_streak",
+      "description": "Count consecutive months where YoY PCE inflation exceeds 2%, ending at the latest pre-meeting reading",
+      "inputs": ["PCEPI.csv"],
+      "output_check": true
+    },
+    {
+      "id": "rate_path",
+      "description": "Extract change points from DFEDTARU for the step chart",
+      "inputs": ["DFEDTARU.csv"],
+      "output_chart": true
+    }
+  ],
+
+  "outlet_check": {
+    "method": "Compare each outlet's checkable factual claims against the primary documents",
+    "chip_vocabulary": ["checks out", "consistent", "mislabeled", "wrong", "single outlet", "unconfirmed"],
+    "rule": "A wrong claim is named plainly: who, what they wrote, what the record shows"
+  },
+
+  "sections": [
+    { "id": "what-happened", "kicker": "The decision", "required": true },
+    { "id": "where-this-sits", "kicker": "History", "required": true, "components": ["StepChart"] },
+    { "id": "the-projections", "kicker": "The real signal", "required": false, "note": "Only for SEP meetings (Mar/Jun/Sep/Dec)" },
+    { "id": "outlets", "kicker": "Cross-source check", "required": true, "components": ["OutletCheck"] },
+    { "id": "claim-check", "kicker": "Verified", "required": true, "components": ["CheckedBlock"] },
+    { "id": "who-feels-it", "kicker": "On the ground", "required": true },
+    { "id": "what-next", "kicker": "Aftermath", "required": true, "components": ["LiveCounter"] },
+    { "id": "markets", "kicker": "Pricing", "required": false },
+    { "id": "records", "kicker": "Sources", "required": true, "components": ["RecordsList"] }
+  ],
+
+  "grok_scope": [
+    {
+      "purpose": "Dissenter social posts",
+      "constraint": "Named officials only, dated URLs required, never verdicts",
+      "example": "Search for [official name] post about FOMC [date] on X"
+    },
+    {
+      "purpose": "Market pricing quotes",
+      "constraint": "Dated primary quotes from FedWatch/Polymarket/Kalshi with source URLs, no estimates",
+      "example": "Search for CME FedWatch odds [date range] with dated source URLs"
+    },
+    {
+      "purpose": "Blocked outlet recovery",
+      "constraint": "Specific named article that blocked automated capture, disclose recovery in SOURCES.md",
+      "example": "Fetch [URL] that returned 403 to automated retrieval"
+    }
+  ],
+
+  "subject_page_updates": [
+    "Append timeline row: date, vote tally, link to new story",
+    "Refresh KPI strip: current rate, days held (live counter), vote",
+    "Extend chart endpoint to new meeting date",
+    "Update 'last checked' date"
+  ],
+
+  "manifest_template": {
+    "steps": [
+      "sources_admitted",
+      "derived_numbers_computed",
+      "outlet_claims_verified",
+      "section_grammar_followed",
+      "chip_vocabulary_closed",
+      "live_elements_guarded",
+      "subject_page_updated",
+      "homepage_updated"
+    ],
+    "note": "Each step requires a real evidence line, not a stub. A false attestation is a false ship."
+  }
+}

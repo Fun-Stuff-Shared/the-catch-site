@@ -1,0 +1,70 @@
+---
+/**
+ * Records section: grouped source links at the bottom of a story.
+ * Props:
+ *   groups: Array<{ heading: string, items: SourceItem[] }>
+ *   records?: Array<{ href: string, title: string, meta: string }>  — "Our records" cards
+ *   methodologyHref?: string  — link target for "How we check" (default: /methodology)
+ *
+ * SourceItem: { href: string, text: string, note?: string }
+ */
+interface SourceItem {
+  href: string;
+  text: string;
+  note?: string;
+}
+
+interface Props {
+  groups: Array<{
+    heading: string;
+    items: SourceItem[];
+  }>;
+  records?: Array<{
+    href: string;
+    title: string;
+    meta: string;
+  }>;
+  methodologyHref?: string;
+}
+const { groups, records, methodologyHref = "/methodology" } = Astro.props;
+---
+<section id="records">
+  <p class="sec-kicker">Sources</p>
+  <h2>The records</h2>
+  <p class="section-lede">Everything this page rests on, by kind.</p>
+
+  {records && records.length > 0 && (
+    <>
+      <h3 class="src-group">Our records</h3>
+      <ul class="record-links">
+        {records.map((r) => (
+          <li>
+            <a href={r.href}>
+              <span class="rl-title">{r.title}</span>
+              <span class="rl-meta">{r.meta}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+
+  {groups.map((g) => (
+    <>
+      <h3 class="src-group">{g.heading}</h3>
+      <ul class="src-list">
+        {g.items.map((item) => (
+          <li>
+            <a href={item.href} rel="noreferrer">{item.text}</a>
+            {item.note && <>{" "}&middot; {item.note}</>}
+          </li>
+        ))}
+      </ul>
+    </>
+  ))}
+
+  <p class="sources-line">
+    <a href={methodologyHref}>How we check</a> &middot; every figure above traces to one
+    of these sources; captured copies are kept so the record stays verifiable if pages change.
+  </p>
+</section>

@@ -1,0 +1,73 @@
+{
+  "type": "coverage-only",
+  "name": "Breaking/coverage event (no primary anchor yet)",
+  "cadence": "As events happen",
+  "story_slug_pattern": "{descriptive-slug}",
+
+  "admission_threshold": {
+    "minimum_outlets": 3,
+    "note": "Admit when N independent outlets report the same event. The page's job is showing the differences, not declaring truth."
+  },
+
+  "primary_sources": [],
+
+  "primary_source_upgrade": {
+    "description": "When the official primary document lands (ruling, report, filing, data release), upgrade the event to anchored type and rebuild",
+    "page_status_before": "reported, awaiting primary record",
+    "page_status_after": "anchored to [document name]"
+  },
+
+  "data_series": [],
+
+  "computations": [],
+
+  "outlet_check": {
+    "method": "Compare what each outlet asserts. The product is the disagreement map, not a verdict.",
+    "show": [
+      "Where outlets agree (claimed by N of M)",
+      "Where outlets disagree (outlet A says X, outlet B says Y)",
+      "What is still single-source (only one outlet reports this)",
+      "What no outlet has sourced to a primary record"
+    ],
+    "chip_vocabulary": ["reported", "single outlet", "disputed", "consistent across N outlets"],
+    "rule": "No verdict without a primary record. Disagreement is the product, not a weakness."
+  },
+
+  "sections": [
+    { "id": "what-happened", "kicker": "What is being reported", "required": true },
+    { "id": "outlets", "kicker": "What each outlet says", "required": true, "components": ["OutletCheck"] },
+    { "id": "agreement", "kicker": "Where they agree", "required": true },
+    { "id": "disagreement", "kicker": "Where they disagree", "required": true },
+    { "id": "single-source", "kicker": "Single-source claims", "required": false },
+    { "id": "records", "kicker": "Sources", "required": true, "components": ["RecordsList"] }
+  ],
+
+  "grok_scope": [
+    {
+      "purpose": "Additional independent outlet coverage",
+      "constraint": "Search for independent coverage to reach the N-outlet threshold; each with dated URL",
+      "example": "Search for [event description] coverage from [date]"
+    },
+    {
+      "purpose": "Primary document discovery",
+      "constraint": "Check if an official primary has been released since the event; if found, upgrade to anchored",
+      "example": "Search for [agency/court/institution] official release about [event]"
+    }
+  ],
+
+  "subject_page_updates": [
+    "Coverage-only events may not have a standing subject page until a second occurrence",
+    "If a subject page exists, append the new event"
+  ],
+
+  "manifest_template": {
+    "steps": [
+      "sources_admitted",
+      "outlet_coverage_mapped",
+      "agreement_disagreement_identified",
+      "single_source_claims_flagged",
+      "section_grammar_followed",
+      "chip_vocabulary_closed"
+    ]
+  }
+}

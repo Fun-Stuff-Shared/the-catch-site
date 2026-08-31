@@ -1,419 +1,295 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EventRecordContext from "../../../components/EventRecordContext.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import ThreeThings from "../../../components/story/ThreeThings.astro";
+import StoryToc from "../../../components/story/StoryToc.astro";
+import SectionKicker from "../../../components/story/SectionKicker.astro";
+import StepChart from "../../../components/story/StepChart.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import CheckedBlock from "../../../components/story/CheckedBlock.astro";
+import Chip from "../../../components/story/Chip.astro";
+import RailedParagraph from "../../../components/story/RailedParagraph.astro";
+import Receipt from "../../../components/story/Receipt.astro";
+import RecordsList from "../../../components/story/RecordsList.astro";
+import LiveCounter from "../../../components/story/LiveCounter.astro";
+import "../../../styles/story.css";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
-
-// Build the step-chart geometry from the rate path.
-const W = 720, H = 200, PAD = 8;
-const t0 = Date.parse(ratePath.start.date), t1 = Date.parse(ratePath.end.date);
-const vMin = 3.4, vMax = 5.7;
-const x = (d) => PAD + ((Date.parse(d) - t0) / (t1 - t0)) * (W - 2 * PAD);
-const y = (v) => H - PAD - ((v - vMin) / (vMax - vMin)) * (H - 2 * PAD);
-let pts = [`${x(ratePath.start.date)},${y(ratePath.start.value)}`];
-let prev = ratePath.start.value;
-for (const c of ratePath.changes) {
-  pts.push(`${x(c.date)},${y(prev)}`);
-  pts.push(`${x(c.date)},${y(c.value)}`);
-  prev = c.value;
-}
-pts.push(`${x(ratePath.end.date)},${y(prev)}`);
-const path = "M" + pts.join(" L");
-const endX = x(ratePath.end.date), endY = y(ratePath.end.value);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; June 2026</span></div>
+  <div slot="locator" class="locator">
+    <span>EVENTS</span>
+    <a href="/events/fed-rate/" class="loc-event">The federal funds rate</a>
+    <span>June 2026</span>
+  </div>
   <div class="content">
     <main class="story">
       <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; June 2026 decision &middot; updated August 23, 2026</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
-      <div class="kpi-strip">
-        {event.kpis.map((k) => (
-          <div class="kpi">
-            <span class="kpi-value" id={k.live ? "kpi-days" : undefined}>{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
-            <span class="kpi-label" id={k.live ? "kpi-days-label" : undefined}>{k.label}</span>
-          </div>
-        ))}
-      </div>
+      <KpiStrip kpis={event.kpis} />
 
-      <aside class="three-things">
-        <p class="tt-label">Three things to know</p>
-        <ol>
-          <li>The Fed held at 3.50&ndash;3.75 percent, unanimously, in Kevin Warsh's first meeting as chair.</li>
-          <li>The projections flipped from a cut to a hike: the 2026 median rose to 3.8, with nine of eighteen dots above today's rate.</li>
-          <li>Six weeks later the split went public: three officials dissented for a hike on July 29.</li>
-        </ol>
-      </aside>
+      <ThreeThings items={[
+        "The Fed held at 3.50\u20133.75 percent, unanimously, in Kevin Warsh\u2019s first meeting as chair.",
+        "The projections flipped from a cut to a hike: the 2026 median rose to 3.8, with nine of eighteen dots above today\u2019s rate.",
+        "Six weeks later the split went public: three officials dissented for a hike on July 29.",
+      ]} />
 
-      <nav class="story-toc" aria-label="In this story">
-        <p class="toc-label">In this story</p>
-        <ol>
-          <li><a href="#what-happened">What happened</a></li>
-          <li><a href="#where-this-sits">Where this sits</a></li>
-          <li><a href="#the-projections">The projections told a different story</a></li>
-          <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
-          <li><a href="#claim-check">Claim checked against the record</a></li>
-          <li><a href="#who-feels-it">Who feels it</a></li>
-          <li><a href="#what-next">What happened next</a></li>
-          <li><a href="#markets">What the markets said</a></li>
-          <li><a href="#records">The records</a></li>
-        </ol>
-      </nav>
+      <StoryToc sections={[
+        { id: "what-happened", label: "What happened" },
+        { id: "where-this-sits", label: "Where this sits" },
+        { id: "the-projections", label: "The projections told a different story" },
+        { id: "outlets", label: "What the outlets got right, and what they got wrong" },
+        { id: "claim-check", label: "Claim checked against the record" },
+        { id: "who-feels-it", label: "Who feels it" },
+        { id: "what-next", label: "What happened next" },
+        { id: "markets", label: "What the markets said" },
+        { id: "records", label: "The records" },
+      ]} />
 
-      <EventRecordContext subEvents={[{ date: "June 17", label: "Federal Reserve decision", section_anchor: "what-happened" }]} recordIds={["fomc-statement-2026-06-17", "fomc-minutes-2026-06-17"]} />
       <section id="what-happened">
-        <p class="sec-kicker">The decision</p>
+        <SectionKicker text="The decision" />
         <h2>What happened</h2>
-        <p class="railed rail-record">
+        <RailedParagraph rail="record">
           The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on June 17, by a&nbsp;<strong>12&ndash;0</strong> vote. It was
-          Kevin Warsh's first meeting as chair. <span class="chip chip-record">record</span>
-        </p>
-        <details class="receipt"><summary>the record</summary>
+          Kevin Warsh's first meeting as chair. <Chip kind="record" />
+        </RailedParagraph>
+        <Receipt label="the record">
           <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 12&ndash;0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.&rdquo;
           Voting: Warsh, Williams, Barr, Bowman, Cook, Hammack, Jefferson, Kashkari, Logan, Paulson, Powell, Waller. Voting against: none (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260617.htm" rel="noreferrer">minutes</a></p>
-        </details>
-        <p class="railed rail-record">
+        </Receipt>
+        <RailedParagraph rail="record">
           The statement itself was the news as much as the decision: dramatically shorter than its predecessors,
           stripped of the language markets had read as a bias toward further cuts, and ending on a single
           declarative line: <em>&ldquo;The Committee will deliver price stability.&rdquo;</em>
-          <span class="chip chip-record">their words</span>
-        </p>
-        <p class="railed rail-record">
+          <Chip kind="record" label="their words" />
+        </RailedParagraph>
+        <RailedParagraph rail="record">
           The Committee's stated read of the economy: activity expanding at a solid pace despite uncertainty
           from the conflict in the Middle East; productivity and capital investment strong; job gains keeping
           pace with the workforce; inflation still elevated relative to the 2&nbsp;percent goal, partly from
-          supply shocks including energy. <span class="chip chip-record">their words</span>
-        </p>
+          supply shocks including energy. <Chip kind="record" label="their words" />
+        </RailedParagraph>
       </section>
 
       <section id="where-this-sits">
-        <p class="sec-kicker">History</p>
+        <SectionKicker text="History" />
         <h2>Where this sits</h2>
-        <p class="railed rail-computed">
+        <RailedParagraph rail="computed">
           The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>188 days</strong> as of this meeting, the end of a run of six cuts from the 5.25&ndash;5.50
-          cycle peak, with no upward move in the span. <span class="chip chip-computed">computed</span>
-        </p>
-        <figure class="rate-chart">
-          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to June 2026: six steps down from 5.50 to 3.75, then flat">
-            <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
-            <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
-            <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
-            <text x={x("2024-06-20")} y={y(4.0)} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
-            <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; held 188 days</text>
-            <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
-            <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
-            <text x={x("2026-01-05")} y={H + 16} class="chart-axis">2026</text>
-          </svg>
-          <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
-        </figure>
-        <p class="railed rail-computed">
+          cycle peak, with no upward move in the span. <Chip kind="computed" />
+        </RailedParagraph>
+        <StepChart
+          start={ratePath.start}
+          changes={ratePath.changes}
+          end={ratePath.end}
+          yRange={[3.4, 5.7]}
+          yearLabels={["2024", "2025", "2026"]}
+          annotations={[
+            { date: "2024-02-01", value: 5.5, text: "5.50 peak" },
+            { date: "2025-03-01", value: 4.6, text: "six cuts, Sep 2024 \u2192 Dec 2025" },
+            { date: "2026-06-17", value: 3.75, text: "3.75 \u00b7 held 188 days", anchor: "end", accent: true },
+          ]}
+          caption="Upper bound of the target range. Source: Federal Reserve daily history (FRED)."
+          ariaLabel="Fed target range upper bound, 2024 to June 2026: six steps down from 5.50 to 3.75, then flat"
+        />
+        <RailedParagraph rail="computed">
           Against the full 1982&ndash;2026 daily history of the Fed's target, all 15,970 observations,
           the 3.75 upper bound sits at the&nbsp;<strong>48th percentile</strong>: almost exactly the middle of four
           decades of policy, just under the 3.82 mean and the 4.00 median. Not a high-rate regime by historical
-          standards, and not the near-zero world of 2009&ndash;2015 either. <span class="chip chip-computed">computed</span>
-        </p>
-        <details class="receipt"><summary>computation</summary>
-          <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-06-17:
-          15,970 observations; 3.75 percentile 48.5 (midpoint method); mean 3.82; median 4.00. Days held:
-          2025-12-11 to 2026-06-17 = 188. The full daily series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
-        </details>
-        <p class="railed rail-computed">
+          standards, and not the near-zero world of 2009&ndash;2015 either. <Chip kind="computed" />
+        </RailedParagraph>
+        <Receipt label="how we got this number">
+          <p>We combined two Fed series (DFEDTAR for 1982&ndash;2008, DFEDTARU for 2008 onward) through June 17, 2026:
+          15,970 daily observations. At 3.75, the current rate sits at the 48.5th percentile; the average over
+          that span is 3.82, the median 4.00. Days held: December 11, 2025 to June 17, 2026 = 188. Both series
+          are published by the St. Louis Fed; we work from a copy saved August 23, 2026.</p>
+        </Receipt>
+        <RailedParagraph rail="computed">
           The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
-          cycles treated as ordinary. <span class="chip chip-computed">computed</span>
-        </p>
+          cycles treated as ordinary. <Chip kind="computed" />
+        </RailedParagraph>
       </section>
 
       <section id="the-projections">
-        <p class="sec-kicker">The real signal</p>
+        <SectionKicker text="The real signal" />
         <h2>The projections told a different story</h2>
-        <p class="railed rail-record">
+        <RailedParagraph rail="record">
           The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
           with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>3.8&nbsp;percent, up from 3.4 in March</strong>: from a level that implied a rate cut
           this year to one implying a hike. The central tendency moved to 3.6&ndash;4.1, the full range to
-          3.4&ndash;4.4. <span class="chip chip-record">record</span>
-        </p>
-        <details class="receipt"><summary>the SEP table</summary>
-          <p>June 17, 2026 SEP: federal funds rate medians 3.8 (2026), 3.6 (2027), 3.4 (2028), 3.1 (longer run);
-          March medians 3.4 / 3.1 / 3.1 / 3.1. PCE inflation median for 2026 raised to 3.6 from 2.7; core PCE
-          to 3.3 from 2.7. <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a></p>
-        </details>
-        <p class="railed rail-record">
+          3.4&ndash;4.4. <Chip kind="record" />
+        </RailedParagraph>
+        <Receipt label="the projections, March vs. June">
+          <table class="data-table">
+            <caption>Summary of Economic Projections: medians</caption>
+            <thead><tr><th></th><th>March</th><th>June</th><th>Shift</th></tr></thead>
+            <tbody>
+              <tr><td>Fed funds rate, end of 2026</td><td>3.4%</td><td>3.8%</td><td class="hl">+0.4 (cut &rarr; hike)</td></tr>
+              <tr><td>Fed funds rate, end of 2027</td><td>3.1%</td><td>3.6%</td><td>+0.5</td></tr>
+              <tr><td>Fed funds rate, end of 2028</td><td>3.1%</td><td>3.4%</td><td>+0.3</td></tr>
+              <tr><td>Fed funds rate, longer run</td><td>3.1%</td><td>3.1%</td><td>unchanged</td></tr>
+              <tr><td>PCE inflation, 2026</td><td>2.7%</td><td>3.6%</td><td class="hl">+0.9</td></tr>
+              <tr><td>Core PCE inflation, 2026</td><td>2.7%</td><td>3.3%</td><td>+0.6</td></tr>
+              <tr><td>Real GDP growth, 2026</td><td>2.4%</td><td>2.2%</td><td>&minus;0.2</td></tr>
+              <tr><td>Unemployment rate, 2026 Q4</td><td>4.0%</td><td>4.2%</td><td>+0.2</td></tr>
+            </tbody>
+          </table>
+          <p>From the Fed&rsquo;s own <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a>. The June range on the fed funds rate was 3.4&ndash;4.4, with a central tendency of 3.6&ndash;4.1. Nine of eighteen dots sat above the current midpoint.</p>
+        </Receipt>
+        <RailedParagraph rail="record">
           The minutes, released July 8, show the hike case already forming inside the room: <em>&ldquo;a few
           participants commented that&hellip; there was a case for raising the target range,&rdquo;</em> though
           they supported the hold at this meeting, and <em>&ldquo;several participants remarked that they did
           not see the current policy stance as restrictive.&rdquo;</em> All participants supported maintaining
-          the range in June. <span class="chip chip-record">their words</span>
-        </p>
-        <p class="railed rail-outlet">
+          the range in June. <Chip kind="record" label="their words" />
+        </RailedParagraph>
+        <RailedParagraph rail="outlet">
           One projection was missing: CNBC reported that Warsh, a longtime critic of the dot plot and of
           the Fed's forward-guidance apparatus, did not submit projections to his own first SEP. No other
-          captured outlet reported this. <span class="chip chip-outlet">single outlet</span>
-        </p>
+          captured outlet reported this. <Chip kind="outlet" />
+        </RailedParagraph>
       </section>
 
       <section id="outlets">
-        <p class="sec-kicker">Cross-source check</p>
+        <SectionKicker text="Cross-source check" />
         <h2>What the outlets got right, and what they got wrong</h2>
         <p class="section-lede">Four outlets' decision coverage, checked against the primary record.</p>
 
-        <div class="outlet-check ok">
-          <p class="oc-head"><strong>CNBC</strong>, &ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;</p>
-          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike).</p>
-        </div>
+        <OutletCheck
+          outlet="CNBC"
+          claim={`&ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;`}
+          verdict="Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike)."
+          chip="checks out"
+          status="ok"
+        />
 
-        <div class="outlet-check warn">
-          <p class="oc-head"><strong>Fox Business</strong>, &ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;</p>
-          <p class="oc-verdict"><span class="chip chip-warn">mislabeled</span> The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.</p>
-        </div>
+        <OutletCheck
+          outlet="Fox Business"
+          claim={`&ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;`}
+          verdict={`The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.`}
+          chip="mislabeled"
+          status="warn"
+        />
 
-        <div class="outlet-check ok">
-          <p class="oc-head"><strong>TradingKey</strong>, the dot-by-dot breakdown: one participant penciling 75bp of hikes, five at 50bp, three at 25bp.</p>
-          <p class="oc-verdict"><span class="chip chip-ok">consistent</span> That sums to the same nine-above-midpoint reading, and fits the SEP's published 3.4&ndash;4.4 range.</p>
-        </div>
+        <OutletCheck
+          outlet="TradingKey"
+          claim="the dot-by-dot breakdown: one participant penciling 75bp of hikes, five at 50bp, three at 25bp."
+          verdict="That sums to the same nine-above-midpoint reading, and fits the SEP&rsquo;s published 3.4&ndash;4.4 range."
+          chip="consistent"
+          status="ok"
+        />
 
-        <div class="outlet-check ok">
-          <p class="oc-head"><strong>StockTitan</strong>, the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk.</p>
-          <p class="oc-verdict"><span class="chip chip-ok">checks out</span> Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version.</p>
-        </div>
+        <OutletCheck
+          outlet="StockTitan"
+          claim="the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk."
+          verdict="Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version."
+          chip="checks out"
+          status="ok"
+        />
 
-        <div class="outlet-check note">
-          <p class="oc-head">Framing differences worth seeing side by side: the statement says <em>&ldquo;the conflict in the Middle East&rdquo;</em>; Fox Business rendered it as <em>&ldquo;the war in Iran.&rdquo;</em> And Fox carried Warsh's press-conference line: <em>&ldquo;I am pleased to report that members of the FOMC are unambiguous and unanimous: this committee will deliver price stability.&rdquo;</em></p>
-        </div>
+        <OutletCheck
+          claim={`Framing differences worth seeing side by side: the statement says <em>&ldquo;the conflict in the Middle East&rdquo;</em>; Fox Business rendered it as <em>&ldquo;the war in Iran.&rdquo;</em> And Fox carried Warsh&rsquo;s press-conference line: <em>&ldquo;I am pleased to report that members of the FOMC are unambiguous and unanimous: this committee will deliver price stability.&rdquo;</em>`}
+          status="note"
+        />
       </section>
 
       <section id="claim-check">
-        <p class="sec-kicker">Verified</p>
+        <SectionKicker text="Verified" />
         <h2>Claim checked against the record</h2>
-        <div class="checked-block">
-          <p class="cb-label">The recurring premise: inflation above target &ldquo;for more than five years&rdquo;</p>
+        <CheckedBlock label="The recurring premise: inflation above target &ldquo;for more than five years&rdquo;">
           <p>The Fed's own staff briefing and most coverage lean on one factual claim: inflation has run above the 2&nbsp;percent goal for over five years. We ran it against the PCE price index: <strong>Confirmed.</strong> PCE inflation has printed above 2&nbsp;percent year-over-year for&nbsp;<strong>63 consecutive months</strong> since March 2021, which is 5.3 years, with the latest
-          pre-meeting reading at 4.1&nbsp;percent (May 2026). <span class="chip chip-computed">computed</span></p>
-          <details class="receipt"><summary>computation</summary>
-            <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through May 2026
-            exceeds 2.0 percent; May 2026 = 4.08 percent. The CPI, a different index, ran hotter
-            (4.2 percent in May per coverage). The series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
-          </details>
-        </div>
+          pre-meeting reading at 4.1&nbsp;percent (May 2026). <Chip kind="computed" /></p>
+        </CheckedBlock>
+        <Receipt label="how we checked this">
+          <p>We took the PCE price index published by the St. Louis Fed and calculated the year-over-year
+          change for every month. Every reading from March 2021 through May 2026 exceeds 2.0 percent;
+          May 2026 came in at 4.08 percent. The CPI, a different index, ran hotter (4.2 percent in May
+          per coverage). We work from a copy of the series saved August 23, 2026.</p>
+        </Receipt>
       </section>
 
       <section id="who-feels-it">
-        <p class="sec-kicker">On the ground</p>
+        <SectionKicker text="On the ground" />
         <h2>Who feels it</h2>
-        <p class="railed rail-official">
+        <RailedParagraph rail="official">
           While the policy rate holds at its 40-year midpoint, the rates households face are elsewhere:
           the 30-year fixed mortgage averaged&nbsp;<strong>6.47&nbsp;percent</strong> the week of the decision,
           against a 2021 low of 2.65. Unemployment stood at&nbsp;<strong>4.3&nbsp;percent</strong> in May 2026
-          (it printed 4.2 for June after the meeting). <span class="chip chip-official">official data</span>
-        </p>
+          (it printed 4.2 for June after the meeting). <Chip kind="official" />
+        </RailedParagraph>
       </section>
 
       <section id="what-next">
-        <p class="sec-kicker">Aftermath</p>
+        <SectionKicker text="Aftermath" />
         <h2>What happened next</h2>
-        <p class="railed rail-record">
+        <RailedParagraph rail="record">
           The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
           with Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) each dissenting
           in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split;
-          the July decision has <a href="/events/fed-rate/july-2026/">its own story</a>. <span class="chip chip-record">record</span>
-        </p>
+          the July decision has <a href="/events/fed-rate/july-2026/">its own story</a>. <Chip kind="record" />
+        </RailedParagraph>
         <p class="railed rail-note" id="still-held-line">
           The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
         </p>
-        <script>
-          (function () {
-            var start = Date.UTC(2025, 11, 11);
-            var checked = Date.UTC(2026, 7, 23);
-            var now = Date.now();
-            if (now > checked) {
-              var days = Math.floor((now - start) / 86400000);
-              var el = document.getElementById("held-counter");
-              if (el) el.textContent = "That is " + days + " days at 3.50\u20133.75 and counting. If the Fed moves, this page gets a dated correction.";
-              var kv = document.getElementById("kpi-days");
-              if (kv) kv.firstChild.nodeValue = String(days);
-              var kl = document.getElementById("kpi-days-label");
-              if (kl) kl.textContent = "held at this level, and counting";
-            }
-          })();
-          (function () {
-            var links = document.querySelectorAll(".story-toc a[href^='#']");
-            if (!links.length || !("IntersectionObserver" in window)) return;
-            var map = {};
-            links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a.parentElement; });
-            var current = null;
-            var obs = new IntersectionObserver(function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  if (current) current.classList.remove("toc-active");
-                  current = map[e.target.id];
-                  if (current) current.classList.add("toc-active");
-                }
-              });
-            }, { rootMargin: "-15% 0px -70% 0px" });
-            Object.keys(map).forEach(function (id) {
-              var el = document.getElementById(id);
-              if (el) obs.observe(el);
-            });
-          })();
-        </script>
-        <p class="railed rail-note">
+        <LiveCounter
+          startDate="2025-12-11"
+          checkedDate="2026-08-23"
+          counterTemplate={`That is {days} days at 3.50\u20133.75 and counting.`}
+          correctionPromise="If the Fed moves, this page gets a dated correction."
+        />
+        <RailedParagraph rail="note">
           Watching: the September decision and its refreshed projections; monthly PCE prints against the
           63-month streak; whether the hike dots become hike votes.
-        </p>
+        </RailedParagraph>
       </section>
 
       <section id="markets">
-        <p class="sec-kicker">Pricing</p>
+        <SectionKicker text="Pricing" />
         <h2>What the markets said</h2>
-        <p class="railed rail-outlet">Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <span class="chip chip-outlet">reported pricing</span></p>
-        <details class="receipt"><summary>the quotes</summary>
+        <RailedParagraph rail="outlet">
+          Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <Chip kind="outlet" label="reported pricing" />
+        </RailedParagraph>
+        <Receipt label="the quotes">
           <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).
           Investopedia, updated June 17: &ldquo;99% chance&rdquo; (FedWatch). DeFi Rate, June 16: Polymarket
           &ldquo;no change at 100%&rdquo;, Kalshi &ldquo;99 cents&rdquo;. June 13 FedWatch reading of 97.1% posted
           on X (@D0Vlad, June 15). Kalshi's Tuesday close of 97.8% per @e23miranda. CME does not allow its
-          tool pages to be saved directly, so these dated quotes are the record. The full list with links is
-          kept with this page's sources.</p>
-        </details>
+          tool pages to be saved directly, so these dated quotes are the record.</p>
+        </Receipt>
       </section>
 
-      <section id="records">
-        <p class="sec-kicker">Sources</p>
-        <h2>The records</h2>
-        <p class="section-lede">Everything this page rests on, by kind.</p>
-
-        <h3 class="src-group">Our records</h3>
-        <ul class="record-links">
-          <li><a href="/claims/fomc-statement-june-17-2026-rate-range-maintained/">
-            <span class="rl-title">FOMC statement: decision day</span>
-            <span class="rl-meta">Released 2:00 p.m. June 17 &middot; the decision, the vote, the Committee's stated reasons</span></a></li>
-          <li><a href="/claims/fomc-minutes-june-17-2026-rate-range-maintained/">
-            <span class="rl-title">FOMC minutes: the discussion behind it</span>
-            <span class="rl-meta">Released July 8 &middot; who argued what, including the case a few made for a hike</span></a></li>
-        </ul>
-
-        <h3 class="src-group">Primary documents</h3>
-        <ul class="src-list">
-          <li><a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">Summary of Economic Projections, June 17, 2026</a> &middot; the dot plot and forecast tables behind the hawkish flip</li>
-          <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">FOMC statement, July 29, 2026</a> &middot; the 9&ndash;3 hold with three dissents for a hike</li>
-        </ul>
-
-        <h3 class="src-group">Official data</h3>
-        <ul class="src-list">
-          <li><a href="https://fred.stlouisfed.org/series/DFEDTARU" rel="noreferrer">Fed target range, daily, 1982&ndash;2026</a> &middot; the chart, the 188-day count, the 48th percentile</li>
-          <li><a href="https://fred.stlouisfed.org/series/PCEPI" rel="noreferrer">PCE price index</a> &middot; the 63-month above-target streak</li>
-          <li><a href="https://fred.stlouisfed.org/series/MORTGAGE30US" rel="noreferrer">30-year mortgage average</a> and <a href="https://fred.stlouisfed.org/series/UNRATE" rel="noreferrer">unemployment rate</a> &middot; who feels it</li>
-        </ul>
-
-        <h3 class="src-group">Coverage checked</h3>
-        <ul class="src-list">
-          <li><a href="https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html" rel="noreferrer">CNBC, decision day</a> &middot; and <a href="https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html" rel="noreferrer">CNBC on the minutes</a></li>
-          <li><a href="https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026" rel="noreferrer">Fox Business</a> &middot; carries the mislabeled voting-members line checked above</li>
-          <li><a href="https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey" rel="noreferrer">TradingKey</a> and <a href="https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026" rel="noreferrer">StockTitan</a></li>
-        </ul>
-
-        <h3 class="src-group">Market pricing quotes</h3>
-        <ul class="src-list">
-          <li><a href="https://www.wsj.com/livecoverage/fed-meeting-warsh-interest-rate-06-17-2026/card/what-do-traders-expect-from-the-fed--YOgQcOuxfWIS0TbILWec" rel="noreferrer">WSJ live coverage, June 17</a> &middot; the 99.6 percent morning-of figure</li>
-          <li><a href="https://www.investopedia.com/what-to-expect-from-june-fed-decision-flat-interest-rates-and-new-direction-11996530" rel="noreferrer">Investopedia</a>, <a href="https://defirate.com/news/fed-prediction-markets-shift-to-warshs-words-as-june-rate-decision-looks-settled/" rel="noreferrer">DeFi Rate</a> on Polymarket and Kalshi, and dated posts on X</li>
-        </ul>
-
-        <p class="sources-line"><a href="/methodology">How we check</a> &middot; every figure above traces to one of these sources; captured copies are kept so the record stays verifiable if pages change.</p>
-      </section>
+      <RecordsList
+        records={[
+          { href: "/claims/fomc-statement-june-17-2026-rate-range-maintained/", title: "FOMC statement: decision day", meta: "Released 2:00 p.m. June 17 \u00b7 the decision, the vote, the Committee\u2019s stated reasons" },
+          { href: "/claims/fomc-minutes-june-17-2026-rate-range-maintained/", title: "FOMC minutes: the discussion behind it", meta: "Released July 8 \u00b7 who argued what, including the case a few made for a hike" },
+        ]}
+        groups={[
+          { heading: "Primary documents", items: [
+            { href: "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm", text: "Summary of Economic Projections, June 17, 2026", note: "the dot plot and forecast tables behind the hawkish flip" },
+            { href: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm", text: "FOMC statement, July 29, 2026", note: "the 9\u20133 hold with three dissents for a hike" },
+          ]},
+          { heading: "Official data", items: [
+            { href: "https://fred.stlouisfed.org/series/DFEDTARU", text: "Fed target range, daily, 1982\u20132026", note: "the chart, the 188-day count, the 48th percentile" },
+            { href: "https://fred.stlouisfed.org/series/PCEPI", text: "PCE price index", note: "the 63-month above-target streak" },
+            { href: "https://fred.stlouisfed.org/series/MORTGAGE30US", text: "30-year mortgage average" },
+            { href: "https://fred.stlouisfed.org/series/UNRATE", text: "Unemployment rate" },
+          ]},
+          { heading: "Coverage checked", items: [
+            { href: "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html", text: "CNBC, decision day" },
+            { href: "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html", text: "CNBC on the minutes" },
+            { href: "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026", text: "Fox Business", note: "carries the mislabeled voting-members line checked above" },
+            { href: "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey", text: "TradingKey" },
+            { href: "https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026", text: "StockTitan" },
+          ]},
+          { heading: "Market pricing quotes", items: [
+            { href: "https://www.wsj.com/livecoverage/fed-meeting-warsh-interest-rate-06-17-2026/card/what-do-traders-expect-from-the-fed--YOgQcOuxfWIS0TbILWec", text: "WSJ live coverage, June 17", note: "the 99.6 percent morning-of figure" },
+            { href: "https://www.investopedia.com/what-to-expect-from-june-fed-decision-flat-interest-rates-and-new-direction-11996530", text: "Investopedia" },
+            { href: "https://defirate.com/news/fed-prediction-markets-shift-to-warshs-words-as-june-rate-decision-looks-settled/", text: "DeFi Rate on Polymarket and Kalshi" },
+          ]},
+        ]}
+      />
     </main>
   </div>
 </BaseLayout>
-
-<style is:global>
-  @media (min-width: 1360px) { .sheet:has(.story) { max-width: 100%; } }
-</style>
-
-<style>
-  .story { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1.25rem 4rem; }
-  .sec-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b9770e; margin: 2.4rem 0 -0.6rem; }
-  .sec-kicker + h2 { margin-top: 0.8rem; }
-  .three-things { border: 1px solid #e0d6c2; background: #fdfaf3; padding: 1rem 1.25rem; margin: 1.25rem 0 1rem; }
-  .tt-label { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8a6412; margin: 0 0 0.5rem; }
-  .three-things ol { margin: 0; padding-left: 1.2rem; }
-  .three-things li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.55; margin: 0.3rem 0; }
-  .story-toc { border-top: 1px solid #e3e0da; border-bottom: 1px solid #e3e0da; padding: 0.7rem 0; margin: 0 0 1.5rem; }
-  .toc-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: #5b6470; margin: 0 0 0.4rem; }
-  .story-toc ol { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.1rem; counter-reset: toc; }
-  .story-toc li { counter-increment: toc; }
-  .story-toc li::before { content: counter(toc); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: #b9770e; margin-right: 0.35rem; }
-  .story-toc a { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #33404d; text-decoration: none; }
-  .story-toc a:hover { text-decoration: underline; }
-  .story section { scroll-margin-top: 4.5rem; }
-  .story { max-width: 52rem; }
-  @media (min-width: 1360px) {
-    .story p, .story li { font-size: 1.02rem; }
-    nav.story-toc { position: fixed; top: 13.5rem; left: max(1.25rem, calc(50vw - 26rem - 15.5rem)); width: 13rem; border: none; padding: 0; margin: 0; background: transparent; }
-    .story-toc ol { flex-direction: column; gap: 0; border-left: 1px solid #e3e0da; }
-    .story-toc li { padding: 0; }
-    .story-toc li::before { content: none; }
-    .story-toc .toc-label { font-size: 0.62rem; }
-    .story-toc a { display: block; font-size: 0.78rem; color: #6b727c; padding: 0.32rem 0 0.32rem 0.8rem; margin-left: -1px; border-left: 2px solid transparent; line-height: 1.3; }
-    .story-toc a:hover { color: #14181b; text-decoration: none; border-left-color: #c9c3b8; }
-    .story-toc li.toc-active a { color: #14181b; border-left-color: #c98a1b; font-weight: 600; }
-  }
-  .story-kicker { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate, #5b6470); margin: 1.5rem 0 0.75rem; }
-  .story h1 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
-  .story-dek { font-family: "Newsreader", Georgia, serif; font-size: 1.15rem; line-height: 1.5; color: #3c434b; font-style: italic; margin: 0 0 1.75rem; }
-  .story h2 { font-family: "Newsreader", Georgia, serif; font-weight: 700; font-size: 1.45rem; margin: 2.5rem 0 0.9rem; padding-bottom: 0.35rem; border-bottom: 1px solid #e3e0da; }
-  .story h2::after { content: ""; display: block; width: 3.5rem; border-bottom: 2px solid #c98a1b; margin-bottom: -1px; margin-top: 0.35rem; }
-  .story p, .story li { font-family: "Newsreader", Georgia, serif; font-size: 1.05rem; line-height: 1.62; }
-  .section-lede { color: #5b6470; margin-top: -0.35rem; }
-
-  .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: #e3e0da; border: 1px solid #e3e0da; margin: 0 0 1rem; }
-  .kpi { background: #fbfaf8; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; }
-  .kpi-value { font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.45rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .kpi-value small { font-size: 0.8rem; margin-left: 0.15rem; color: #5b6470; }
-  .kpi-label { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #5b6470; }
-
-  .railed { border-left: 3px solid #d8d4cc; padding-left: 1rem; margin: 0.9rem 0; }
-  .rail-record { border-left-color: #2e7d5b; }
-  .rail-computed { border-left-color: #33658a; }
-  .rail-official { border-left-color: #33658a; }
-  .rail-outlet { border-left-color: #b98317; }
-  .rail-note { border-left-color: #d8d4cc; color: #5b6470; }
-
-  .chip { font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.04em; padding: 0.1rem 0.45rem; border-radius: 2px; vertical-align: 0.12em; white-space: nowrap; }
-  .chip-record { background: #e7f2ec; color: #22604a; }
-  .chip-computed, .chip-official { background: #e8eef4; color: #2b5474; }
-  .chip-outlet { background: #f6eedb; color: #8a6412; }
-  .chip-ok { background: #e7f2ec; color: #22604a; }
-  .chip-warn { background: #f9e7e4; color: #a03a2a; }
-  .chip-unconfirmed { background: #f9e7e4; color: #a03a2a; }
-
-  .receipt { margin: -0.2rem 0 1rem 1rem; }
-  .receipt summary { font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: #5b6470; cursor: pointer; }
-  .receipt p { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; line-height: 1.55; color: #454c55; background: #f6f5f2; padding: 0.7rem 0.9rem; border-radius: 3px; margin: 0.4rem 0 0; }
-
-  .rate-chart { margin: 1.25rem 0; }
-  .rate-chart svg { width: 100%; height: auto; }
-  .chart-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #5b6470; }
-  .chart-note-accent { fill: #b9770e; }
-  .chart-axis { font-family: "IBM Plex Mono", monospace; font-size: 11px; fill: #9aa1a9; }
-  .rate-chart figcaption { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.75rem; color: #8b929b; margin-top: 0.3rem; }
-
-  .outlet-check { border: 1px solid #e3e0da; border-left-width: 3px; padding: 0.8rem 1rem 0.6rem; margin: 0.8rem 0; background: #fbfaf8; }
-  .outlet-check.ok { border-left-color: #2e7d5b; }
-  .outlet-check.warn { border-left-color: #b3402e; }
-  .outlet-check.note { border-left-color: #b98317; }
-  .oc-head { margin: 0 0 0.4rem; }
-  .oc-verdict { margin: 0 0 0.3rem; font-size: 0.98rem; }
-
-  .checked-block { border: 1px solid #cfe0d7; border-left: 3px solid #2e7d5b; background: #f7fbf9; padding: 0.9rem 1.1rem; }
-  .cb-label { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: #22604a; margin: 0 0 0.5rem; }
-  .contested-block { border: 1px solid #ecd4cf; border-left: 3px solid #b3402e; background: #fdf8f7; padding: 0.9rem 1.1rem; }
-  .contested-block p { margin: 0.35rem 0; }
-
-  .record-links { list-style: none; padding: 0; margin: 0.75rem 0; display: grid; gap: 0.6rem; }
-  .record-links a { display: block; border: 1px solid #e3e0da; padding: 0.8rem 1rem; text-decoration: none; color: inherit; background: #fbfaf8; }
-  .record-links a:hover { border-color: #b9b4aa; }
-  .rl-title { display: block; font-weight: 700; font-family: "Newsreader", Georgia, serif; }
-  .rl-meta { display: block; font-family: "Public Sans", system-ui, sans-serif; font-size: 0.8rem; color: #5b6470; margin-top: 0.15rem; }
-  .sources-line { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.85rem; color: #5b6470; }
-  .src-group { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5b6470; margin: 1.4rem 0 0.4rem; }
-  .src-list { list-style: none; padding: 0; margin: 0; }
-  .src-list li { font-family: "Public Sans", system-ui, sans-serif; font-size: 0.9rem; line-height: 1.6; padding: 0.25rem 0; border-bottom: 1px solid #efece6; }
-</style>

@@ -1,0 +1,40 @@
+---
+/**
+ * In-this-story table of contents with scrollspy.
+ * Props:
+ *   sections: Array<{ id: string, label: string }>
+ */
+interface Props {
+  sections: Array<{ id: string; label: string }>;
+}
+const { sections } = Astro.props;
+---
+<nav class="story-toc" aria-label="In this story">
+  <p class="toc-label">In this story</p>
+  <ol>
+    {sections.map((s) => <li><a href={`#${s.id}`}>{s.label}</a></li>)}
+  </ol>
+</nav>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll(".story-toc a[href^='#']");
+    if (!links.length || !("IntersectionObserver" in window)) return;
+    var map: Record<string, HTMLElement> = {};
+    links.forEach(function (a) { map[a.getAttribute("href")!.slice(1)] = a.parentElement!; });
+    var current: HTMLElement | null = null;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          if (current) current.classList.remove("toc-active");
+          current = map[e.target.id] ?? null;
+          if (current) current.classList.add("toc-active");
+        }
+      });
+    }, { rootMargin: "-15% 0px -70% 0px" });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+  })();
+</script>

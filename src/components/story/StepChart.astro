@@ -1,0 +1,118 @@
+---
+/**
+ * Step chart: an inline SVG step-function chart for rate/series history.
+ * Props:
+ *   start: { date: string, value: number }
+ *   changes: Array<{ date: string, value: number }>
+ *   end: { date: string, value: number }
+ *   annotations?: Array<{ date: string, value: number, text: string, anchor?: string, accent?: boolean }>
+ *   yRange?: [number, number]  — [min, max] for the y axis (default: auto with 10% padding)
+ *   yearLabels?: string[]      — year strings to place on x axis (default: derived from date range)
+ *   caption?: string
+ *   width?: number
+ *   height?: number
+ *   ariaLabel?: string
+ */
+interface Annotation {
+  date: string;
+  value: number;
+  text: string;
+  anchor?: string;
+  accent?: boolean;
+}
+
+interface Props {
+  start: { date: string; value: number };
+  changes: Array<{ date: string; value: number }>;
+  end: { date: string; value: number };
+  annotations?: Annotation[];
+  yRange?: [number, number];
+  yearLabels?: string[];
+  caption?: string;
+  width?: number;
+  height?: number;
+  ariaLabel?: string;
+}
+
+const {
+  start, changes, end,
+  annotations = [],
+  yRange,
+  yearLabels,
+  caption,
+  width: W = 720,
+  height: H = 200,
+  ariaLabel = "Step chart",
+} = Astro.props;
+
+const PAD_L = 48; // left padding for Y axis labels
+const PAD_R = 8;
+const PAD_T = 8;
+const PAD_B = 8;
+const t0 = Date.parse(start.date);
+const t1 = Date.parse(end.date);
+
+// Compute y range
+const allValues = [start.value, ...changes.map((c) => c.value), end.value];
+const dataMin = Math.min(...allValues);
+const dataMax = Math.max(...allValues);
+const yPad = (dataMax - dataMin) * 0.15 || 0.5;
+const [vMin, vMax] = yRange ?? [dataMin - yPad, dataMax + yPad];
+
+const x = (d: string) => PAD_L + ((Date.parse(d) - t0) / (t1 - t0)) * (W - PAD_L - PAD_R);
+const y = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
+
+// Y axis ticks — round to nice intervals
+const yStep = (vMax - vMin) > 3 ? 1 : (vMax - vMin) > 1.5 ? 0.5 : 0.25;
+const yTicks: number[] = [];
+for (let v = Math.ceil(vMin / yStep) * yStep; v <= vMax; v += yStep) {
+  yTicks.push(Math.round(v * 100) / 100);
+}
+
+// Build step path
+let pts = [`${x(start.date)},${y(start.value)}`];
+let prev = start.value;
+for (const c of changes) {
+  pts.push(`${x(c.date)},${y(prev)}`);
+  pts.push(`${x(c.date)},${y(c.value)}`);
+  prev = c.value;
+}
+pts.push(`${x(end.date)},${y(prev)}`);
+const path = "M" + pts.join(" L");
+const endX = x(end.date);
+const endY = y(end.value);
+
+// Derive year labels if not provided
+const years = yearLabels ?? (() => {
+  const startYear = new Date(t0).getFullYear();
+  const endYear = new Date(t1).getFullYear();
+  const labels: string[] = [];
+  for (let yr = startYear; yr <= endYear; yr++) labels.push(String(yr));
+  return labels;
+})();
+---
+<figure class="rate-chart">
+  <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label={ariaLabel}>
+    {/* Y axis: tick lines and labels */}
+    {yTicks.map((v) => (
+      <g>
+        <line x1={PAD_L} y1={y(v)} x2={W - PAD_R} y2={y(v)} stroke="#e9ebee" stroke-width="1" />
+        <text x={PAD_L - 6} y={y(v) + 3.5} text-anchor="end" class="chart-axis">{v.toFixed(v % 1 === 0 ? 0 : 2)}%</text>
+      </g>
+    ))}
+    <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
+    <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
+    {annotations.map((a) => (
+      <text
+        x={x(a.date)}
+        y={y(a.value) - 8}
+        text-anchor={a.anchor ?? "start"}
+        class={`chart-note${a.accent ? " chart-note-accent" : ""}`}
+      >{a.text}</text>
+    ))}
+    {years.map((yr) => (
+      <text x={x(`${yr}-01-05`)} y={H + 16} class="chart-axis">{yr}</text>
+    ))}
+  </svg>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

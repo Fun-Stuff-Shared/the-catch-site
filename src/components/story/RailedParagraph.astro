@@ -1,0 +1,12 @@
+---
+/**
+ * Left-bordered paragraph indicating source type.
+ * Props:
+ *   rail: "record" | "computed" | "official" | "outlet" | "note"
+ */
+interface Props {
+  rail: "record" | "computed" | "official" | "outlet" | "note";
+}
+const { rail } = Astro.props;
+---
+<p class={`railed rail-${rail}`}><slot /></p>

@@ -301,6 +301,60 @@ if (existsSync(routesFile)) {
   fail.push("checks/routes.txt missing");
 }
 
+// ---- 3. Layer-typing check for three-projection pages -------------------------
+// Any story page using the mode-switcher (data-layer system) must have every
+// content element typed, either on itself or via an ancestor. Untyped blocks
+// render in every mode, which is the rot vector. No class exemptions: a block
+// that should always be visible is typed "fact", not skipped.
+const CONTENT_TAGS = new Set(["p", "ul", "ol", "aside", "figure", "table", "details", "blockquote", "h2", "h3"]);
+const VOID_TAGS = new Set(["br", "hr", "img", "input", "meta", "link", "source", "wbr", "col", "embed", "track", "area", "base"]);
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  const html = readFileSync(storyFile, "utf8");
+  if (!html.includes("mode-switcher")) continue;
+  const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/);
+  if (!mainMatch) continue;
+  const main = mainMatch[1];
+  const untyped = [];
+  const stack = []; // { tag, hasLayer }
+  for (const m of main.matchAll(/<(\/?)([a-zA-Z][a-zA-Z0-9-]*)((?:"[^"]*"|'[^']*'|[^"'>])*)>/g)) {
+    const closing = m[1] === "/";
+    const tag = m[2].toLowerCase();
+    const attrs = m[3];
+    if (closing) {
+      for (let i = stack.length - 1; i >= 0; i--) {
+        if (stack[i].tag === tag) { stack.length = i; break; }
+      }
+      continue;
+    }
+    const selfClosing = VOID_TAGS.has(tag) || attrs.endsWith("/");
+    const hasLayer = attrs.includes("data-layer");
+    const covered = hasLayer || stack.some((s) => s.hasLayer);
+    if (CONTENT_TAGS.has(tag) && !covered) {
+      untyped.push(`<${tag}> at offset ${m.index}${attrs.includes("class") ? " " + (attrs.match(/class="([^"]*)"/) || [])[1] : ""}`);
+    }
+    if (!selfClosing) stack.push({ tag, hasLayer });
+  }
+  if (untyped.length > 0) {
+    fail.push(`/events/${subject}/${story}/: ${untyped.length} untyped content element(s) in mode-switched page (layer-typing required): ${untyped.slice(0, 5).join(", ")}`);
+  }
+}
+
+// ---- 4. Citation resolution: every #src-N reference must resolve on its page ----
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  const html = readFileSync(storyFile, "utf8");
+  if (!html.includes("src-ref")) continue;
+  const refs = [...html.matchAll(/href="#(src-\d+)"/g)].map((m) => m[1]);
+  const ids = new Set([...html.matchAll(/id="(src-\d+)"/g)].map((m) => m[1]));
+  const dangling = [...new Set(refs.filter((r) => !ids.has(r)))];
+  if (dangling.length > 0) {
+    fail.push(`/events/${subject}/${story}/: citation(s) link to nothing: ${dangling.join(", ")}`);
+  }
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);

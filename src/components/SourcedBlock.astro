@@ -1,0 +1,9 @@
+---
+const { source, kind = "record" } = Astro.props;
+const CHIP_LABEL = { record: "record", computed: "computed", official: "official data", checked: "checked" };
+if (!CHIP_LABEL[kind]) throw new Error(`sourced_block_unknown_kind:${kind}`);
+---
+<div class="sourced-block" data-layer="fact" data-source={source}>
+  <slot />
+  <span class={`chip chip-${kind}`}>{CHIP_LABEL[kind]}</span>
+</div>

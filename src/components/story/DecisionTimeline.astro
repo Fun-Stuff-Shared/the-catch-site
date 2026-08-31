@@ -1,0 +1,32 @@
+---
+/**
+ * Decision timeline: a compact table of dated decisions on a subject page.
+ * Props:
+ *   entries: Array<{ date: string, title: string, sub?: string, link?: string, current?: boolean }>
+ */
+interface Props {
+  entries: Array<{
+    date: string;
+    title: string;
+    sub?: string;
+    link?: string;
+    current?: boolean;
+  }>;
+}
+const { entries } = Astro.props;
+---
+<div class="decision-timeline">
+  <div class="dt-head">
+    <span class="dt-date">Date</span>
+    <span class="dt-body">Decision</span>
+  </div>
+  {entries.map((e) => (
+    <div class={`dt-row${e.current ? " dt-current" : ""}`}>
+      <span class="dt-date">{e.date}</span>
+      <span class="dt-body">
+        {e.link ? <a href={e.link}>{e.title}</a> : e.title}
+        {e.sub && <span class="dt-sub">{e.sub}</span>}
+      </span>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,18 @@
+---
+/**
+ * Claim-checked-against-the-record block.
+ * Props:
+ *   label: string  — the premise being checked (displayed as mono-caps heading)
+ *   variant?: "confirmed" | "contested"  — green border (default) or red border
+ */
+interface Props {
+  label: string;
+  variant?: "confirmed" | "contested";
+}
+const { label, variant = "confirmed" } = Astro.props;
+const blockClass = variant === "contested" ? "contested-block" : "checked-block";
+---
+<div class={blockClass}>
+  <p class="cb-label">{label}</p>
+  <slot />
+</div>
