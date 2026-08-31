@@ -1,4 +1,7 @@
 ---
-const { votes, keyVotes, statements } = Astro.props;
+const { votes, keyVotes, statements, voteGroups, groupLabels } = Astro.props;
+const votesLabel = groupLabels?.votes_kpi ?? "recorded roll calls";
+const subsetKey = voteGroups && groupLabels?.subset_kpi ? Object.keys(voteGroups)[0] : null;
+const subsetCount = subsetKey ? voteGroups[subsetKey].length : null;
 ---
-<div class="kpi-strip"><div class="kpi"><span class="kpi-value">{votes.length}</span><span class="kpi-label">recorded roll calls</span></div><div class="kpi"><span class="kpi-value">{keyVotes.length}</span><span class="kpi-label">key votes</span></div><div class="kpi"><span class="kpi-value">{statements.length}</span><span class="kpi-label">statements</span></div></div>
+<div class="kpi-strip"><div class="kpi"><span class="kpi-value">{votes.length}</span><span class="kpi-label">{votesLabel}</span></div>{subsetCount != null && <div class="kpi"><span class="kpi-value">{subsetCount}</span><span class="kpi-label">{groupLabels.subset_kpi}</span></div>}<div class="kpi"><span class="kpi-value">{keyVotes.length}</span><span class="kpi-label">key votes</span></div><div class="kpi"><span class="kpi-value">{statements.length}</span><span class="kpi-label">statements</span></div></div>
