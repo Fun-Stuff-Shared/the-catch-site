@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { records } from "../../lib/record-manifests.mjs";
 export function getStaticPaths() { return records.map((record) => ({ params: { id: record.id }, props: { record } })); }
 const { record } = Astro.props;
-const usedIn = record.subject === "news" ? ["/news/"] : [record.story, `/events/${record.subject}/`];
+const usedIn = record.subject === "news" ? [] : [record.story, `/events/${record.subject}/`];
 ---
 <BaseLayout title={`${record.title} | The Catch`} current="Records">
   <div slot="locator" class="locator"><span>RECORD</span><span>{record.publisher}</span></div>
