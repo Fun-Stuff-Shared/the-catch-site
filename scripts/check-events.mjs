@@ -303,38 +303,41 @@ if (existsSync(routesFile)) {
 
 // ---- 3. Layer-typing check for three-projection pages -------------------------
 // Any story page using the mode-switcher (data-layer system) must have every
-// content element typed. Untyped blocks render in every mode, which is the
-// rot vector. The safe default: untyped inside a mode-switched page fails the build.
+// content element typed, either on itself or via an ancestor. Untyped blocks
+// render in every mode, which is the rot vector. No class exemptions: a block
+// that should always be visible is typed "fact", not skipped.
+const CONTENT_TAGS = new Set(["p", "ul", "ol", "aside", "figure", "table", "details", "blockquote", "h2", "h3"]);
+const VOID_TAGS = new Set(["br", "hr", "img", "input", "meta", "link", "source", "wbr", "col", "embed", "track", "area", "base"]);
 for (const { subject, story } of storyPages) {
   const storyFile = join(dist, "events", subject, story, "index.html");
   if (!existsSync(storyFile)) continue;
   const html = readFileSync(storyFile, "utf8");
-  // Only check pages that use the mode-switcher
-  if (!html.includes('mode-switcher')) continue;
-  // Extract the story main content (between <main and </main>)
+  if (!html.includes("mode-switcher")) continue;
   const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/);
   if (!mainMatch) continue;
   const main = mainMatch[1];
-  // Find content elements without data-layer: <p>, <div>, <aside>, <ul>, <ol>, <figure>, <details>
-  // that are direct children of <section> or <main> (not nested inside a typed parent)
-  // We check for <p> tags that lack data-layer AND are not inside a data-layer parent
-  const untypedPs = [];
-  for (const match of main.matchAll(/<p(?:\s[^>]*)?>(?!<\/p>)/g)) {
-    const before = main.slice(Math.max(0, match.index - 200), match.index);
-    const tag = match[0];
-    // Skip if this <p> has data-layer
-    if (tag.includes('data-layer')) continue;
-    // Skip if inside a parent with data-layer (sourced-block, receipt, etc.)
-    // Check for unclosed data-layer tags in the preceding context
-    const lastLayerOpen = before.lastIndexOf('data-layer=');
-    const lastCloseAfterLayer = lastLayerOpen >= 0 ? before.slice(lastLayerOpen).includes('</div>') || before.slice(lastLayerOpen).includes('</details>') || before.slice(lastLayerOpen).includes('</aside>') : true;
-    if (lastLayerOpen >= 0 && !lastCloseAfterLayer) continue;
-    // Skip structural elements (mode-switcher hint, figcaption, etc.)
-    if (tag.includes('mode-hint') || tag.includes('sec-kicker') || tag.includes('tt-label') || tag.includes('toc-label') || tag.includes('section-lede') || tag.includes('sources-line') || tag.includes('src-group') || tag.includes('rev-note') || tag.includes('fig-provenance') || tag.includes('story-kicker')) continue;
-    untypedPs.push(match.index);
+  const untyped = [];
+  const stack = []; // { tag, hasLayer }
+  for (const m of main.matchAll(/<(\/?)([a-zA-Z][a-zA-Z0-9-]*)((?:"[^"]*"|'[^']*'|[^"'>])*)>/g)) {
+    const closing = m[1] === "/";
+    const tag = m[2].toLowerCase();
+    const attrs = m[3];
+    if (closing) {
+      for (let i = stack.length - 1; i >= 0; i--) {
+        if (stack[i].tag === tag) { stack.length = i; break; }
+      }
+      continue;
+    }
+    const selfClosing = VOID_TAGS.has(tag) || attrs.endsWith("/");
+    const hasLayer = attrs.includes("data-layer");
+    const covered = hasLayer || stack.some((s) => s.hasLayer);
+    if (CONTENT_TAGS.has(tag) && !covered) {
+      untyped.push(`<${tag}> at offset ${m.index}${attrs.includes("class") ? " " + (attrs.match(/class="([^"]*)"/) || [])[1] : ""}`);
+    }
+    if (!selfClosing) stack.push({ tag, hasLayer });
   }
-  if (untypedPs.length > 0) {
-    fail.push(`/events/${subject}/${story}/: ${untypedPs.length} untyped <p> element(s) in mode-switched page (layer-typing required)`);
+  if (untyped.length > 0) {
+    fail.push(`/events/${subject}/${story}/: ${untyped.length} untyped content element(s) in mode-switched page (layer-typing required): ${untyped.slice(0, 5).join(", ")}`);
   }
 }
 
