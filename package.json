@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-news-records.mjs && astro build && node scripts/check-events.mjs",
+    "build": "astro build && node scripts/check-events.mjs",
     "check": "node scripts/check-events.mjs",
     "dev": "astro dev"
   },

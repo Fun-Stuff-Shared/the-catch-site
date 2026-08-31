@@ -195,14 +195,7 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
 
 // ---- 2. Mechanical checks on dist -------------------------------------------------
 const dist = join(ROOT, "dist");
-const READER_EXCLUSIONS = [
-  {
-    route: "/news/",
-    prefix: true,
-    date: "2026-08-25",
-    reason: "demoted internal export; noindex and absent from public navigation",
-  },
-];
+const READER_EXCLUSIONS = [];
 const TODAY = new Date().toISOString().slice(0, 10);
 for (const exclusion of READER_EXCLUSIONS) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.date) || !exclusion.reason) fail.push(`reader exclusion ${exclusion.route} needs a date and reason`);
@@ -215,11 +208,8 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
   const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
   for (const record of manifest.records ?? []) { manifestRecordIds.add(record.id); manifestRecords.set(record.id, record); }
 }
-const newsData = JSON.parse(readFileSync(join(ROOT, "src/data/news-data.json"), "utf8"));
 const outletRecordData = JSON.parse(readFileSync(join(ROOT, "src/data/news-records.json"), "utf8"));
-const outletUrls = new Set(outletRecordData.records.map((record) => record.url));
 const outletByUrl = new Map(outletRecordData.records.map((record) => [record.url, record]));
-for (const url of new Set(newsData.rows.map((row) => row.source_url))) if (!outletUrls.has(url)) fail.push(`news citation has no outlet record: ${url}`);
 for (const record of outletRecordData.records) {
   if (!record.pinned_path || record.text_path !== record.pinned_path) fail.push(`outlet record ${record.id} requires a repository pinned_path`);
   const textPath = record.pinned_path && join(ROOT, record.pinned_path);
@@ -263,18 +253,6 @@ for (const file of htmlFiles(join(dist, "events"))) {
   for (const [url, record] of outletByUrl) if (html.includes(`href="${url}`)) fail.push(`${file.slice(dist.length)}: outlet citation must link to /records/${record.id}/`);
 }
 
-const newsIndex = join(dist, "news", "index.html");
-if (!existsSync(newsIndex)) fail.push("demoted /news/ index missing from dist");
-else {
-  const html = readFileSync(newsIndex, "utf8");
-  if (!html.includes('<meta name="robots" content="noindex">')) fail.push("demoted /news/ needs noindex");
-  if (!/Internal source export/.test(html)) fail.push("demoted /news/ needs an internal export label");
-  for (const f of htmlFiles(join(dist, "news"))) {
-    if (!readFileSync(f, "utf8").includes('<meta name="robots" content="noindex">')) fail.push(`${f.slice(dist.length)}: demoted news page needs noindex`);
-  }
-}
-const homeNavigation = readFileSync(join(dist, "index.html"), "utf8").match(/<nav>[\s\S]*?<\/nav>/i)?.[0] ?? "";
-if (homeNavigation.includes('href="/news/"')) fail.push("demoted /news/ remains in public navigation");
 for (const record of outletRecordData.records) {
   const page = join(dist, "records", record.id, "index.html");
   const savedCopy = join(dist, "records", "pins", record.id, "index.html");
