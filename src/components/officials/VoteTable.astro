@@ -1,6 +1,6 @@
 ---
-const { votes, keyRcs = [] } = Astro.props;
+const { votes, keyRcs = [], voteGroups } = Astro.props;
 const keys = new Set(keyRcs);
 const cloture = votes.filter((vote) => vote.threshold === "3/5").map((vote) => vote.rc);
 ---
-<div class="tblwrap"><table><thead><tr><th>Date</th><th>Roll call</th><th>What was voted on</th><th>Rubio</th><th>Result</th></tr></thead><tbody>{votes.map((vote) => <tr class={keys.has(vote.rc) ? "key" : undefined}><td class="num">{vote.date}</td><td class="num"><a href={vote.url} rel="noreferrer">{vote.rc}</a></td><td>{vote.reader_description}</td><td>{vote.reader_cast}</td><td class="num">{vote.reader_result}</td></tr>)}</tbody></table><p class="tbl-note">{cloture.length ? `Roll calls ${cloture.join(", ")} needed 60 votes to end debate and move toward a final vote.` : "No listed roll call needed 60 votes to end debate."}</p></div>
+<div class="tblwrap"><table><thead><tr><th>Date</th><th>Roll call</th><th>What was voted on</th>{voteGroups && <th>Connection</th>}<th>Rubio</th><th>Result</th></tr></thead><tbody>{votes.map((vote) => <tr class={keys.has(vote.rc) ? "key" : undefined}><td class="num">{vote.date}</td><td class="num"><a href={vote.url} rel="noreferrer">{vote.rc}</a></td><td>{vote.reader_description}</td>{voteGroups && <td>{voteGroups.directly_zika?.includes(vote.rc) ? "Directly about the Zika money" : "Other matters on the same bills"}</td>}<td>{vote.reader_cast}</td><td class="num">{vote.reader_result}</td></tr>)}</tbody></table><p class="tbl-note">{cloture.length ? `Roll calls ${cloture.join(", ")} needed 60 votes to end debate and move toward a final vote.` : "No listed roll call needed 60 votes to end debate."}</p></div>

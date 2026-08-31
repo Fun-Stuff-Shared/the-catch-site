@@ -126,6 +126,30 @@ if (existsSync(figuresDir)) {
 }
 
 const officialVoteStore = join(ROOT, "src/data/votes/marco-rubio.json");
+for (const slug of ["immigration-2013", "zika-2016"]) {
+  const episode = JSON.parse(readFileSync(join(ROOT, "src/data/officials/marco-rubio/episodes", `${slug}.json`), "utf8"));
+  const ledgerPath = join(ROOT, "src/data/officials/marco-rubio/ledgers", `${slug}.json`);
+  if (!Array.isArray(episode.source_ledger) || !episode.source_ledger.length) fail.push(`${slug}: source_ledger is required`);
+  const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests/officials--marco-rubio.json"), "utf8"));
+  const subEvent = manifest.sub_events?.find((entry) => entry.id.endsWith(slug));
+  const ids = new Set(manifest.records?.map((record) => record.id));
+  for (const entry of episode.source_ledger ?? []) {
+    const id = entry.record_id ?? entry;
+    if (!ids.has(id)) fail.push(`${slug}: source_ledger names unknown record ${id}`);
+    else if (!subEvent?.records?.includes(id)) fail.push(`${slug}: source_ledger record ${id} is outside its manifest sub-event`);
+  }
+  if (!existsSync(ledgerPath)) { fail.push(`${slug}: needs ledger is missing`); continue; }
+  const ledger = JSON.parse(readFileSync(ledgerPath, "utf8"));
+  if (!Array.isArray(ledger.classes) || ledger.classes.length !== 6) { fail.push(`${slug}: needs ledger requires six classes`); continue; }
+  for (const entry of ledger.classes) {
+    if (entry.status === "captured") {
+      const record = entry.record;
+      const path = record?.pinned_path && join(ROOT, record.pinned_path);
+      if (!record?.pinned_path || !record?.text_sha256 || !path || !existsSync(path)) fail.push(`${slug}: captured needs class ${entry.class} lacks a pinned record`);
+      else if (`sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}` !== record.text_sha256) fail.push(`${slug}: captured needs class ${entry.class} pin hash does not recompute`);
+    } else if (entry.status !== "absent" || !entry.reason) fail.push(`${slug}: needs class ${entry.class} is unfilled`);
+  }
+}
 if (!existsSync(officialVoteStore)) fail.push("official vote store missing");
 else {
   try {
