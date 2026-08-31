@@ -1,0 +1,32 @@
+/* Officials episode extensions to the story system. Tokens only from story.css vars. */
+.statement-block blockquote {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  margin: 0.35rem 0 0.2rem;
+  padding: 0;
+  border: none;
+}
+.statement-block .st-source {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--slate);
+  margin: 0;
+}
+.statement-block .st-source a { color: var(--slate); }
+
+.vote-flow { list-style: none; margin: 1rem 0; padding: 0; border: 1px solid var(--rule); border-bottom: none; }
+.vote-flow li { display: flex; gap: 0.9rem; align-items: baseline; padding: 0.8rem 1.1rem; border-bottom: 1px solid var(--rule); }
+.vote-flow .v-date { font-family: var(--mono); font-size: 0.78rem; color: var(--slate); white-space: nowrap; }
+.vote-flow .cast { font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.5rem; border-radius: 2px; white-space: nowrap; }
+.vote-flow .cast.yes { background: var(--blue-tint); color: var(--blue); }
+.vote-flow .cast.no { background: #f7e8e6; color: var(--red); }
+.vote-flow .cast.not-voting { background: var(--paper-2, #f2f2ef); color: var(--slate); }
+.vote-flow .v-text { font-family: var(--serif); font-size: 0.98rem; line-height: 1.5; }
+.vote-flow .src { font-family: var(--sans); font-size: 0.8rem; color: var(--slate); white-space: nowrap; }
+
+.stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; align-items: start; margin: 0.9rem 0; }
+.stage, .stages article { border-top: 2px solid var(--blue); padding-top: 0.5rem; }
+.stages h3 { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue); margin: 0 0 0.3rem; }
+.stages p { font-family: var(--sans); font-size: 0.86rem; line-height: 1.45; margin: 0; color: var(--ink); }
+@media (max-width: 640px) { .stages { grid-template-columns: 1fr; } }

@@ -1,16 +1,53 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import OfficialKpis from "./OfficialKpis.astro";
-import StatementList from "./StatementList.astro";
-import VoteList from "./VoteList.astro";
+import ReadingModes from "./ReadingModes.astro";
 import VoteTable from "./VoteTable.astro";
+import DecisionTimeline from "../story/DecisionTimeline.astro";
 import { votesForEpisode, keyVotesForEpisode } from "../../lib/official-votes.mjs";
 import { recordById } from "../../lib/record-manifests.mjs";
-import "../../styles/figure-story.css";
+import "../../styles/story.css";
+import "../../styles/officials-story.css";
 const { episode } = Astro.props;
 const votes = votesForEpisode(episode);
 const keyVotes = keyVotesForEpisode(episode);
 const ledgerRecords = (episode.source_ledger ?? []).map((entry) => recordById.get(entry.record_id ?? entry)).filter(Boolean);
-const sections = Array.isArray(episode.sections) ? episode.sections : [];
+let sections = Array.isArray(episode.sections) ? [...episode.sections] : [];
+if (!sections.some((s) => s.type === "statements")) sections.unshift({ type: "statements" }, { type: "key_votes" });
+const anchorFor = (block, i) => (block.anchor ?? `s-${i}`);
+const tocEntries = sections.map((block, i) => ({ block, i }))
+  .filter(({ block }) => block.type === "statements" || block.type === "key_votes" || block.label || block.name)
+  .map(({ block, i }) => ({
+    anchor: block.type === "statements" ? "statements" : block.type === "key_votes" ? "votes" : anchorFor(block, i),
+    title: block.type === "statements" ? "What he said" : block.type === "key_votes" ? "What he did" : (block.name ?? block.label),
+  }));
+const layerFor = (block) => block.layer ?? ({ how_it_worked: "narrative", context: "narrative", pattern: "narrative", gloss: "narrative" }[block.type]);
+const voteText = (vote) => (vote.text || vote.reader_description).replace(/^Voted\s+(?:Yes|No|Not Voting)\s+/i, "").replace(/^Did not vote\s+/i, "").replace(/\bon a motion to table\b/i, "on whether to set aside");
 ---
-<BaseLayout title={`${episode.title} | The Catch`} current="Officials"><div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>{episode.kicker}</span></div><div class="content"><main class="story"><p class="story-kicker"><a href="/officials/marco-rubio/">Marco Rubio</a> &middot; {episode.kicker}</p><h1>{episode.title}</h1><p class="story-dek">{episode.dek}</p><OfficialKpis votes={votes} keyVotes={keyVotes} statements={episode.statements} voteGroups={episode.vote_groups} groupLabels={episode.vote_group_labels} /><nav class="story-toc" aria-label="In this story"><p class="toc-label">In this story</p><ol><li><a href="#statements">What he said</a></li><li><a href="#votes">What he did</a></li><li><a href="#all-votes">Every recorded vote</a></li></ol></nav><section id="statements"><StatementList statements={episode.statements} /></section><section id="votes"><div class="lane did"><p class="lane-label">What he did</p><VoteList votes={keyVotes} /></div></section>{sections.map((block) => <section class:list={["pattern-box", block.type]}>{block.label && <p class="lane-label">{block.label}</p>}{block.name && <h2>{block.name}</h2>}{block.meaning && <p>{block.meaning}</p>}{block.intro && <p>{block.intro}</p>}{block.stages && <div class="stages">{block.stages.map((stage) => <article><h3>{stage.name}</h3><p set:html={stage.gate} /></article>)}</div>}{block.html && <div set:html={block.html} />}{block.paragraphs?.map((paragraph) => <p set:html={paragraph} />)}{block.gate && <p set:html={block.gate} />}{block.gloss && <p set:html={block.gloss} />}{block.items && <ul>{block.items.map((item) => typeof item === "string" ? <li set:html={item} /> : <li><strong>{item.term}</strong>: {item.def}</li>)}</ul>}</section>)}<section id="all-votes"><h2>Every recorded vote in this episode</h2><VoteTable votes={votes} keyRcs={episode.key_votes.map((vote) => vote.rc)} voteGroups={episode.vote_groups} groupLabels={episode.vote_group_labels} /></section><section class="lane said"><p class="lane-label">The records</p><ul>{ledgerRecords.map((record) => <li><a href={`/records/${record.id}/`}>{record.title}</a>{record.plain ? ` — ${record.plain}` : ""}</li>)}</ul></section></main></div></BaseLayout>
+<BaseLayout title={`${episode.title} | The Catch`} current="Officials"><div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>{episode.kicker}</span></div><div class="content"><main class="story" id="story-root">
+  <ReadingModes />
+  <p class="story-kicker" data-layer="narrative"><a href="/officials/marco-rubio/">Marco Rubio</a> &middot; {episode.kicker}{episode.updated && <Fragment> &middot; updated {episode.updated}</Fragment>}</p>
+  <h1 data-layer="fact">{episode.title}</h1>
+  <p class="story-dek" data-layer="fact">{episode.dek}</p>
+  {episode.kpis && <div class="kpi-strip" data-layer="fact">{episode.kpis.map((k) => <div class="kpi"><span class="kpi-value">{k.value}</span><span class="kpi-label">{k.label}</span></div>)}</div>}
+  {episode.three_things && <aside class="three-things" data-layer="fact"><p class="tt-label">Three things to know</p><ol>{episode.three_things.map((item) => <li set:html={item} />)}</ol></aside>}
+  <nav class="story-toc" aria-label="In this story" data-layer="fact"><p class="toc-label">In this story</p><ol>{tocEntries.map((entry) => <li><a href={`#${entry.anchor}`}>{entry.title}</a></li>)}<li><a href="#all-votes">Every recorded vote</a></li><li><a href="#the-records">The records</a></li></ol></nav>
+  {sections.map((block, i) =>
+    block.type === "statements" ? (
+      <section id="statements">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he said</h2>
+        {episode.statements.map((statement) => <div class="checked-block statement-block"><p class="cb-label">{statement.date} &middot; {statement.venue}</p><blockquote>{statement.quote}</blockquote><p class="st-source"><a href={statement.url} rel="noreferrer">{statement.source_label || "Read the source"}</a>{statement.quoted_via && <Fragment> &middot; quoted via {statement.quoted_via}</Fragment>}</p></div>)}
+      </section>
+    ) : block.type === "key_votes" ? (
+      <section id="votes">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he did</h2>
+        <ol class="vote-flow">{keyVotes.map((vote) => <li><span class="v-date">{vote.date}</span><span class:list={["cast", vote.cast === "Yea" ? "yes" : vote.cast === "Nay" ? "no" : "not-voting"]}>{vote.reader_cast}</span><span class="v-text">{voteText(vote)} <a class="src" href={vote.url} rel="noreferrer">Roll call {vote.rc}</a></span></li>)}</ol>
+      </section>
+    ) : block.type === "timeline" ? (
+      <section id={anchorFor(block, i)} data-layer={layerFor(block)}>{block.kicker && <p class="sec-kicker">{block.kicker}</p>}{block.label && <h2>{block.label}</h2>}<DecisionTimeline entries={block.entries} /></section>
+    ) : block.type === "pattern" ? (
+      <aside id={anchorFor(block, i)} class="summary-box" data-layer={layerFor(block)}><p class="tt-label">{block.name}</p><p style="font-family: var(--sans); font-size: 0.92rem; line-height: 1.55; margin: 0;">{block.meaning}</p></aside>
+    ) : (
+      <section id={anchorFor(block, i)} data-layer={layerFor(block)}>{block.kicker && <p class="sec-kicker">{block.kicker}</p>}{block.label && <h2>{block.label}</h2>}{block.name && <h2>{block.name}</h2>}{block.meaning && <p>{block.meaning}</p>}{block.intro && <p set:html={block.intro} />}{block.stages && <div class="stages">{block.stages.map((stage) => <article><h3>{stage.name}</h3><p set:html={stage.gate} /></article>)}</div>}{block.html && <div set:html={block.html} />}{block.paragraphs?.map((paragraph) => <p set:html={paragraph} />)}{block.gate && <p set:html={block.gate} />}{block.gloss && <p set:html={block.gloss} />}{block.items && <ul>{block.items.map((item) => typeof item === "string" ? <li set:html={item} /> : <li><strong>{item.term}</strong>: {item.def}</li>)}</ul>}{block.note && <p class="rail-note" data-layer="proof" set:html={block.note} />}</section>
+    )
+  )}
+  <section id="all-votes"><p class="sec-kicker" data-layer="narrative">The full record</p><h2 data-layer="fact">Every recorded vote in this episode</h2><VoteTable votes={votes} keyRcs={episode.key_votes.map((vote) => vote.rc)} voteGroups={episode.vote_groups} groupLabels={episode.vote_group_labels} /></section>
+  <section id="the-records" data-layer="fact"><p class="sec-kicker" data-layer="narrative">Sources</p><h2>The records</h2><p class="section-lede">Everything this page rests on. We keep a dated copy of each one.</p><ul class="record-links">{ledgerRecords.map((record) => <li><a href={`/records/${record.id}/`}><span class="rl-title">{record.title}</span><span class="rl-meta">{record.date ? `${record.date}` : ""}{record.plain ? `${record.date ? " · " : ""}${record.plain}` : ""}</span></a></li>)}</ul><p class="sources-line"><a href="/methodology">How we check</a></p></section>
+</main></div></BaseLayout>

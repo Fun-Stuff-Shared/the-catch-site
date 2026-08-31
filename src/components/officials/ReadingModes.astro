@@ -1,0 +1,92 @@
+---
+/**
+ * Three reading modes for an episode page. Blocks tagged data-layer="narrative"
+ * hide in facts mode; data-layer="proof" shows only in work mode; untagged
+ * blocks show everywhere. Degrades to query-param links without JS.
+ */
+---
+<div class="mode-switcher" role="radiogroup" aria-label="Reading mode">
+  <a class="mode-btn active" href="?mode=story" data-mode="story" role="radio" aria-checked="true">The story</a>
+  <a class="mode-btn" href="?mode=facts" data-mode="facts" role="radio" aria-checked="false">Just the facts</a>
+  <a class="mode-btn" href="?mode=work" data-mode="work" role="radio" aria-checked="false">Show the work</a>
+  <span class="mode-hint">Every claim here traces to a source.</span>
+</div>
+
+<style is:global>
+  .mode-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    margin: 0 0 2rem;
+    overflow: hidden;
+  }
+  .mode-btn {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border: none;
+    background: transparent;
+    color: var(--slate);
+    cursor: pointer;
+    border-right: 1px solid var(--rule);
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+  }
+  .mode-btn:last-of-type { border-right: none; }
+  .mode-btn:hover { background: var(--blue-tint); color: var(--ink); }
+  .mode-btn.active { background: var(--ink); color: #fff; }
+  .mode-hint {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--slate);
+    margin-left: auto;
+    padding: 0 1rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .mode-switcher { flex-wrap: wrap; }
+    .mode-hint { width: 100%; padding: 0.4rem 0.8rem; border-top: 1px solid var(--rule); margin-left: 0; }
+  }
+
+  #story-root [data-layer="proof"] { display: none; }
+  #story-root.mode-facts [data-layer="narrative"] { display: none; }
+  #story-root.mode-work [data-layer="proof"] { display: revert; }
+  #story-root.mode-work .receipt { display: block; }
+  #story-root [data-layer] { transition: opacity 0.15s; }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.getElementById("story-root");
+    const buttons = document.querySelectorAll(".mode-btn");
+    if (!root || !buttons.length) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get("mode") || "story";
+    root.classList.add(`mode-${initial}`);
+    buttons.forEach((b) => {
+      const isActive = b.getAttribute("data-mode") === initial;
+      b.classList.toggle("active", isActive);
+      b.setAttribute("aria-checked", isActive ? "true" : "false");
+    });
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const mode = btn.getAttribute("data-mode");
+        root.className = root.className.replace(/mode-\w+/g, "").trim() + ` mode-${mode}`;
+        buttons.forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle("active", isActive);
+          b.setAttribute("aria-checked", isActive ? "true" : "false");
+        });
+        const url = new URL(window.location.href);
+        url.searchParams.set("mode", mode);
+        history.replaceState(null, "", url.toString());
+      });
+    });
+  });
+</script>

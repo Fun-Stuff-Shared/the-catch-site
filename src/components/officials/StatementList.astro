@@ -1,4 +1,0 @@
----
-const { statements } = Astro.props;
----
-<div class="lane said"><p class="lane-label">What he said</p>{statements.map((statement) => <article class="official-statement"><p class="note"><strong>{statement.date}</strong> &middot; {statement.venue}. <a class="src" href={statement.url} rel="noreferrer">{statement.source_label || "Read the source"}</a>{statement.quoted_via && <> &middot; quoted via {statement.quoted_via}</>}</p><blockquote>{statement.quote}</blockquote></article>)}</div>

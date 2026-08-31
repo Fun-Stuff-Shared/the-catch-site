@@ -25,7 +25,7 @@ const { entries } = Astro.props;
       <span class="dt-date">{e.date}</span>
       <span class="dt-body">
         {e.link ? <a href={e.link}>{e.title}</a> : e.title}
-        {e.sub && <span class="dt-sub">{e.sub}</span>}
+        {e.sub && <Fragment>{" "}<span class="dt-sub">{e.sub}</span></Fragment>}
       </span>
     </div>
   ))}
