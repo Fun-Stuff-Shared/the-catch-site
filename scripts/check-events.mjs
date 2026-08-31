@@ -301,6 +301,43 @@ if (existsSync(routesFile)) {
   fail.push("checks/routes.txt missing");
 }
 
+// ---- 3. Layer-typing check for three-projection pages -------------------------
+// Any story page using the mode-switcher (data-layer system) must have every
+// content element typed. Untyped blocks render in every mode, which is the
+// rot vector. The safe default: untyped inside a mode-switched page fails the build.
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  const html = readFileSync(storyFile, "utf8");
+  // Only check pages that use the mode-switcher
+  if (!html.includes('mode-switcher')) continue;
+  // Extract the story main content (between <main and </main>)
+  const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/);
+  if (!mainMatch) continue;
+  const main = mainMatch[1];
+  // Find content elements without data-layer: <p>, <div>, <aside>, <ul>, <ol>, <figure>, <details>
+  // that are direct children of <section> or <main> (not nested inside a typed parent)
+  // We check for <p> tags that lack data-layer AND are not inside a data-layer parent
+  const untypedPs = [];
+  for (const match of main.matchAll(/<p(?:\s[^>]*)?>(?!<\/p>)/g)) {
+    const before = main.slice(Math.max(0, match.index - 200), match.index);
+    const tag = match[0];
+    // Skip if this <p> has data-layer
+    if (tag.includes('data-layer')) continue;
+    // Skip if inside a parent with data-layer (sourced-block, receipt, etc.)
+    // Check for unclosed data-layer tags in the preceding context
+    const lastLayerOpen = before.lastIndexOf('data-layer=');
+    const lastCloseAfterLayer = lastLayerOpen >= 0 ? before.slice(lastLayerOpen).includes('</div>') || before.slice(lastLayerOpen).includes('</details>') || before.slice(lastLayerOpen).includes('</aside>') : true;
+    if (lastLayerOpen >= 0 && !lastCloseAfterLayer) continue;
+    // Skip structural elements (mode-switcher hint, figcaption, etc.)
+    if (tag.includes('mode-hint') || tag.includes('sec-kicker') || tag.includes('tt-label') || tag.includes('toc-label') || tag.includes('section-lede') || tag.includes('sources-line') || tag.includes('src-group') || tag.includes('rev-note') || tag.includes('fig-provenance') || tag.includes('story-kicker')) continue;
+    untypedPs.push(match.index);
+  }
+  if (untypedPs.length > 0) {
+    fail.push(`/events/${subject}/${story}/: ${untypedPs.length} untyped <p> element(s) in mode-switched page (layer-typing required)`);
+  }
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);

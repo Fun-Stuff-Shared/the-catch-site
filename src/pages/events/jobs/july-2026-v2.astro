@@ -21,19 +21,19 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
   <div class="content">
     <main class="story" id="story-root">
 
-      <!-- Mode switcher -->
+      <!-- Mode switcher: buttons degrade to query-param links without JS -->
       <div class="mode-switcher" role="radiogroup" aria-label="Reading mode">
-        <button class="mode-btn active" data-mode="story" aria-pressed="true">The story</button>
-        <button class="mode-btn" data-mode="facts" aria-pressed="false">Just the facts</button>
-        <button class="mode-btn" data-mode="work" aria-pressed="false">Show the work</button>
+        <a class="mode-btn active" href="?mode=story" data-mode="story" role="radio" aria-checked="true">The story</a>
+        <a class="mode-btn" href="?mode=facts" data-mode="facts" role="radio" aria-checked="false">Just the facts</a>
+        <a class="mode-btn" href="?mode=work" data-mode="work" role="radio" aria-checked="false">Show the work</a>
         <span class="mode-hint">Every claim here traces to a source.</span>
       </div>
 
-      <p class="story-kicker">The jobs report &middot; July 2026 &middot; updated August 31, 2026</p>
-      <h1>{event.title}</h1>
-      <p class="story-dek" data-layer="narrative">{event.dek}</p>
+      <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026 &middot; updated August 31, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
 
-      <div class="kpi-strip">
+      <div class="kpi-strip" data-layer="fact">
         {event.kpis.map((k) => (
           <div class="kpi">
             <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
@@ -42,7 +42,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         ))}
       </div>
 
-      <aside class="three-things" data-layer="narrative">
+      <aside class="three-things" data-layer="fact">
         <p class="tt-label">Three things to know</p>
         <ol>
           <li>The economy lost 23,000 jobs in July. Forecasters surveyed by Dow Jones had expected a <em>gain</em> of 83,000.</li>
@@ -51,14 +51,14 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         </ol>
       </aside>
 
-      <nav class="story-toc" aria-label="In this story" data-layer="narrative">
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <p class="toc-label">In this story</p>
         <ol>
           <li><a href="#what-happened">What happened</a></li>
           <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
           <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
           <li><a href="#claim-check">Claim checked against the record</a></li>
-          <li><a href="#who-feels-it">Who feels it</a></li>
           <li><a href="#markets">What the markets said</a></li>
           <li><a href="#benchmark">The August 28 benchmark check</a></li>
           <li><a href="#unknowns">What we do not know yet</a></li>
@@ -66,23 +66,41 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         </ol>
       </nav>
 
+      <!-- Proof: event record context, only visible in work mode -->
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on 3 records.</p>
+        <ul class="src-list">
+          <li><a href="/records/bls-empsit-2026-07/">The Employment Situation, July 2026</a> &middot; Bureau of Labor Statistics</li>
+          <li><a href="/records/bls-prebmk-2026/">Preliminary benchmark revision</a> &middot; Bureau of Labor Statistics</li>
+          <li><a href="/records/bls-realer-2026-07/">Real Earnings, July 2026</a> &middot; Bureau of Labor Statistics</li>
+        </ul>
+      </div>
+
       <!-- ═══ WHAT HAPPENED ═══ -->
       <section id="what-happened">
         <p class="sec-kicker" data-layer="narrative">The report</p>
-        <h2>What happened</h2>
+        <h2 data-layer="fact">What happened</h2>
 
-        <p data-layer="fact">The Bureau of Labor Statistics reported on August 7 that total nonfarm payroll employment fell by 23,000 in July and the unemployment rate was 4.1&nbsp;percent.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-empsit-2026-07">
+          <p>The Bureau of Labor Statistics reported on August 7 that total nonfarm payroll employment fell by 23,000 in July and the unemployment rate was 4.1&nbsp;percent.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">In the agency's own words, both &ldquo;changed little.&rdquo; The declines were concentrated: local government education lost 50,000 jobs &ldquo;after showing little net change over the prior 12 months,&rdquo; and retail trade lost 19,000. One caution before reading that 50,000 literally: these figures are seasonally adjusted. School employment always swings enormously in summer, and the adjustment is designed to remove that swing. The number does not mean 50,000 ordinary summer layoffs; it means school employment came in roughly 50,000 below the seasonal pattern the agency expected for July. Health care added 22,000, below its 12-month average of 36,000.</p>
 
-        <span class="chip chip-record" data-layer="proof">record</span>
         <details class="receipt" data-layer="proof"><summary>the record</summary>
           <p>Release: &ldquo;Both nonfarm payroll employment (-23,000) and the unemployment rate (4.1 percent) changed little in July&hellip; Employment in local government education declined by 50,000 in July, after showing little net change over the prior 12 months. Retail trade lost 19,000 jobs in July&hellip; In July, employment in health care continued its upward trend (+22,000) but at a slower pace than the average monthly gain over the prior 12 months (+36,000).&rdquo; <a href="https://www.bls.gov/news.release/empsit.nr0.htm" rel="noreferrer">The Employment Situation, July 2026</a>.</p>
         </details>
 
-        <p data-layer="fact">May's gain was revised down by 66,000, from +129,000 to +63,000. June's was revised down by 37,000, from +57,000 to +20,000. Combined: 103,000 jobs previously reported are now gone from the record.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-empsit-2026-07">
+          <p>May's gain was revised down by 66,000, from +129,000 to +63,000. June's was revised down by 37,000, from +57,000 to +20,000. Combined: 103,000 jobs previously reported are now gone from the record.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
-        <p data-layer="fact">Average hourly earnings rose 2 cents to $37.62; over the year they are up 3.2&nbsp;percent.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-empsit-2026-07">
+          <p>Average hourly earnings rose 2 cents to $37.62; over the year they are up 3.2&nbsp;percent.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">The composition of the loss matters: private employers added 30,000 jobs in July while government shed 53,000, so the headline decline is a public-sector story, led by the 50,000-job drop in local government education. The report landed nine days after the Federal Reserve voted 9&ndash;3 to hold interest rates, with three regional Fed presidents formally asking for a quarter-point <em>hike</em>, covered in&nbsp;<a href="/events/fed-rate/july-2026/">our July FOMC story</a>.</p>
       </section>
@@ -90,15 +108,16 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <!-- ═══ WHERE THIS SITS ═══ -->
       <section id="where-this-sits">
         <p class="sec-kicker" data-layer="narrative">History</p>
-        <h2>Where this sits</h2>
+        <h2 data-layer="fact">Where this sits</h2>
 
-        <p data-layer="fact">July was the fifth negative month in the past twelve. Over those twelve months the economy added a net 316,000 jobs, about 26,000 a month.</p>
+        <div class="sourced-block" data-layer="fact" data-source="fred-payems">
+          <p>July was the fifth negative month in the past twelve. Over those twelve months the economy added a net 316,000 jobs, about 26,000 a month.</p>
+          <span class="chip chip-computed">computed</span>
+        </div>
 
         <p data-layer="narrative">That is a near-stall by the standard of any recent expansion, and choppy rather than steadily weak, with swings from minus 156,000 to plus 214,000 in a single spring.</p>
 
-        <span class="chip chip-computed" data-layer="proof">computed</span>
-
-        <figure class="rate-chart">
+        <figure class="rate-chart" data-layer="fact">
           <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Monthly change in payrolls, June 2025 to July 2026: five negative months in the past twelve, ending at minus 23,000">
             {yTicks.map((v) => (
               <g>
@@ -115,13 +134,17 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
             <text x={W - PAD_R - 4} y={bars[bars.length - 1].y + bars[bars.length - 1].h + 14} text-anchor="end" class="chart-note chart-note-accent">-23,000</text>
           </svg>
           <figcaption>Monthly change in total nonfarm payrolls, thousands, seasonally adjusted. Amber bars are losses. Source: BLS via FRED (PAYEMS).</figcaption>
+          <span class="fig-provenance" data-layer="proof">Series as captured August 25, 2026.</span>
         </figure>
 
-        <p data-layer="fact">The unemployment rate dipped from 4.2 to 4.1 percent. The labor force shrank by 264,000 people while household employment fell by 87,000. The rate fell because the labor force contracted by three times more than employment did, not because more people found work.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-empsit-2026-07">
+          <p>The unemployment rate dipped from 4.2 to 4.1 percent. The labor force shrank by 264,000 people while household employment fell by 87,000. The rate fell because the labor force contracted by three times more than employment did, not because more people found work.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">The jobs report is really two surveys: a survey of employers, which produced the payroll numbers above, and a survey of households, which produces the unemployment rate. Both moved in the same weak direction.</p>
 
-        <aside class="two-surveys">
+        <aside class="two-surveys" data-layer="fact">
           <p class="tt-label">Two surveys, same weak direction (July, seasonally adjusted)</p>
           <ul>
             <li><b>&minus;23,000</b> payroll jobs <small>(employer survey)</small></li>
@@ -131,25 +154,35 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
           </ul>
         </aside>
 
-        <p data-layer="fact">Participation among workers 25 to 54 rose to 83.4 percent in July from 83.3 in June. It remains below 84.0 in January.</p>
+        <div class="sourced-block" data-layer="fact" data-source="fred-lns11300060">
+          <p>Participation among workers 25 to 54 rose to 83.4 percent in July from 83.3 in June. It remains below 84.0 in January.</p>
+          <span class="chip chip-official">official data</span>
+        </div>
 
         <p data-layer="narrative">The exit is not uniform across ages. The July decline in overall participation came from outside the prime working ages; the spring slide touched prime-age workers too.</p>
-
-        <span class="chip chip-official" data-layer="proof">official data</span>
       </section>
 
-      <!-- ═══ WHO FEELS IT (moved up) ═══ -->
+      <!-- ═══ WHO FEELS IT ═══ -->
       <section id="who-feels-it">
         <p class="sec-kicker" data-layer="narrative">The people in the numbers</p>
-        <h2>Who feels it</h2>
+        <h2 data-layer="fact">Who feels it</h2>
 
-        <p data-layer="fact">Average hourly earnings rose 2 cents to $37.62, up 3.2&nbsp;percent over the year. Adjusted for inflation, real hourly earnings fell 0.1&nbsp;percent in July and are down 0.2&nbsp;percent over the year.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-realer-2026-07">
+          <p>Average hourly earnings rose 2 cents to $37.62, up 3.2&nbsp;percent over the year. Adjusted for inflation, real hourly earnings fell 0.1&nbsp;percent in July and are down 0.2&nbsp;percent over the year.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">Wages are rising about 3.2&nbsp;percent a year while prices rise faster. The typical worker's purchasing power did not improve.</p>
 
-        <p data-layer="fact">People on temporary layoff rose by 153,000 to 921,000. The long-term unemployed (27 weeks or more) make up 25.5&nbsp;percent of all unemployed people, one in four. People working part time because they could not find full-time work held at 4.8&nbsp;million. People who want work but have stopped looking rose from 1.76 to 1.81&nbsp;million.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-empsit-2026-07">
+          <p>People on temporary layoff rose by 153,000 to 921,000. The long-term unemployed (27 weeks or more) make up 25.5&nbsp;percent of all unemployed people, one in four. People working part time because they could not find full-time work held at 4.8&nbsp;million. People who want work but have stopped looking rose from 1.76 to 1.81&nbsp;million.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
-        <p data-layer="fact">U-6, the broadest underutilization measure (adds those marginally attached workers and the involuntary part-timers to the officially unemployed), held at 7.9&nbsp;percent, unchanged from June. The headline unemployment rate improved; the broadest measure did not.</p>
+        <div class="sourced-block" data-layer="fact" data-source="fred-u6rate">
+          <p>U-6, the broadest underutilization measure (adds those marginally attached workers and the involuntary part-timers to the officially unemployed), held at 7.9&nbsp;percent, unchanged from June. The headline unemployment rate improved; the broadest measure did not.</p>
+          <span class="chip chip-official">official data</span>
+        </div>
 
         <p data-layer="narrative">Put together, the shape of July is a hiring stall more than a burst of layoffs: employment growth has stopped and people are leaving the measured labor force, but neither the unemployment rate, the broad measure, nor the count of permanent job losers shows a sudden broad surge in joblessness. The 153,000 rise in temporary layoffs is the one caution in that picture.</p>
       </section>
@@ -157,41 +190,45 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <!-- ═══ OUTLETS ═══ -->
       <section id="outlets">
         <p class="sec-kicker" data-layer="narrative">The coverage</p>
-        <h2>What the coverage got right, and what it got wrong</h2>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
 
         <p data-layer="narrative">Three outlets' coverage of this report is in our records: CNBC's and CBS's stories from release day, and NBC's morning-of preview, captured before the number came out. Checked against the release:</p>
 
-        <p data-layer="fact"><strong>CNBC</strong> reported minus 23,000, the 4.1 percent rate, the May and June revisions, retail's loss of 19,000, health care's below-trend 22,000, and the 2-cent earnings gain. All match the release exactly.</p>
+        <div class="sourced-block" data-layer="fact" data-source="outlet-38a539f4a7084988">
+          <p><strong>CNBC</strong> reported minus 23,000, the 4.1 percent rate, the May and June revisions, retail's loss of 19,000, health care's below-trend 22,000, and the 2-cent earnings gain. All match the release exactly.</p>
+          <span class="chip chip-record">checked</span>
+        </div>
 
         <p data-layer="narrative">Its explanation of the falling unemployment rate &mdash; fewer people working or looking &mdash; matches the release's participation numbers. CNBC's sector figures (40,000 lost in leisure and hospitality, 53,000 lost in government, 30,000 gain in private payrolls) all match the release. What separates the two documents is emphasis, not arithmetic: the release classes leisure and hospitality among industries whose employment &ldquo;showed little change,&rdquo; while CNBC headlined the sector's drop and attached a cause &mdash; &ldquo;a possible consequence of the World Cup tournament ending&rdquo; &mdash; that appears nowhere in the release. The number is the agency's; the explanation is the outlet's speculation.</p>
 
-        <span class="chip chip-record" data-layer="proof">checked</span>
+        <div class="sourced-block" data-layer="fact" data-source="outlet-85fbbbfbda7781f3">
+          <p><strong>CBS</strong> reported the 23,000 loss, the 50,000 and 19,000 sector losses, health care's 22,000, the combined 103,000 revision, and the participation explanation for the falling unemployment rate. All match the release. It adds a second forecast: economists polled by FactSet expected a gain of 95,000.</p>
+          <span class="chip chip-record">checked</span>
+        </div>
 
-        <p data-layer="fact"><strong>CBS</strong> reported the 23,000 loss, the 50,000 and 19,000 sector losses, health care's 22,000, the combined 103,000 revision, and the participation explanation for the falling unemployment rate. All match the release. It adds a second forecast: economists polled by FactSet expected a gain of 95,000.</p>
-
-        <span class="chip chip-record" data-layer="proof">checked</span>
-
-        <p data-layer="fact"><strong>NBC's</strong> morning-of preview expected hiring to pick up to 83,000 and unemployment to hold at 4.2 percent. Both were wrong by mid-morning.</p>
+        <div class="sourced-block" data-layer="fact" data-source="outlet-7708182891f7251f">
+          <p><strong>NBC's</strong> morning-of preview expected hiring to pick up to 83,000 and unemployment to hold at 4.2 percent. Both were wrong by mid-morning.</p>
+          <span class="chip chip-record">checked</span>
+        </div>
 
         <p data-layer="narrative">The preview also fixes the backdrop the report landed in: gasoline at $4.06 a gallon, up 36 percent since late February amid the war with Iran, and inflation at 3.5 percent against the Federal Reserve's 2 percent target.</p>
-
-        <span class="chip chip-record" data-layer="proof">checked</span>
       </section>
 
       <!-- ═══ CLAIM CHECK ═══ -->
       <section id="claim-check">
         <p class="sec-kicker" data-layer="narrative">One claim, examined</p>
-        <h2>Claim checked against the record</h2>
+        <h2 data-layer="fact">Claim checked against the record</h2>
 
-        <p data-layer="fact"><strong>The claim:</strong> &ldquo;The 12-month average [payroll gain is] down to just 34,000&rdquo; (CNBC, August 7). <strong>The record today:</strong> recomputing from the current published series gives about 26,000 a month over the same window.</p>
+        <div class="sourced-block" data-layer="fact" data-source="fred-payems">
+          <p><strong>The claim:</strong> &ldquo;The 12-month average [payroll gain is] down to just 34,000&rdquo; (CNBC, August 7). <strong>The record today:</strong> recomputing from the current published series gives about 26,000 a month over the same window.</p>
+          <span class="chip chip-computed">computed</span>
+        </div>
 
         <p data-layer="narrative">Neither number is an error: CNBC's was correct on the data available August 7, and later revisions pulled the average lower still.</p>
 
-        <span class="chip chip-computed" data-layer="proof">computed</span>
-
         <p data-layer="narrative">An earlier version of this page read that aging as proof that &ldquo;this year's first estimates have repeatedly overstated the job market.&rdquo; The full first-print record says something more specific. Three months were revised down, three up, one is unchanged so far. The overstatement is real but concentrated: May and June were cut by 109,000 and 37,000. The spring months were revised <em>up</em>.</p>
 
-        <div class="rev-table-wrap">
+        <div class="rev-table-wrap" data-layer="fact">
           <table class="rev-table">
             <caption>2026 payroll changes: first estimate vs. today's estimate (thousands)</caption>
             <thead><tr><th scope="col">Month</th><th scope="col">First estimate</th><th scope="col">Current</th><th scope="col">Revision</th></tr></thead>
@@ -208,21 +245,25 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <!-- ═══ MARKETS ═══ -->
       <section id="markets">
         <p class="sec-kicker" data-layer="narrative">The reaction</p>
-        <h2>What the markets said</h2>
+        <h2 data-layer="fact">What the markets said</h2>
 
-        <p data-layer="fact">Before this report, CME FedWatch odds of a September rate hike stood at 59 percent. After the report, those odds fell to 44 percent. Stock futures rose; Treasury yields fell.</p>
+        <div class="sourced-block" data-layer="fact" data-source="outlet-38a539f4a7084988">
+          <p>Before this report, CME FedWatch odds of a September rate hike stood at 59 percent. After the report, those odds fell to 44 percent. Stock futures rose; Treasury yields fell.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">The move, not the level, is the story. On July 29 the Fed had voted 9&ndash;3 to hold, with three members formally asking for a quarter-point hike. One weak jobs report took a rate increase from more likely than not to less, and markets treated that as good news.</p>
-
-        <span class="chip chip-record" data-layer="proof">record</span>
       </section>
 
       <!-- ═══ BENCHMARK ═══ -->
       <section id="benchmark">
         <p class="sec-kicker" data-layer="narrative">Since this page was written</p>
-        <h2>The August 28 benchmark check</h2>
+        <h2 data-layer="fact">The August 28 benchmark check</h2>
 
-        <p data-layer="fact">Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records. For March 2026: the survey was 79,000 jobs too high (0.1&nbsp;percent), with private payrolls 178,000 too high. The average size of this correction over the past ten years is 0.2 percent.</p>
+        <div class="sourced-block" data-layer="fact" data-source="bls-prebmk-2026">
+          <p>Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records. For March 2026: the survey was 79,000 jobs too high (0.1&nbsp;percent), with private payrolls 178,000 too high. The average size of this correction over the past ten years is 0.2 percent.</p>
+          <span class="chip chip-record">record</span>
+        </div>
 
         <p data-layer="narrative">This correction does not change the figures on this page yet: it is applied to the published series in February 2027. Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em>. It complicates July's public-sector story rather than confirming it.</p>
 
@@ -234,39 +275,44 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <!-- ═══ UNKNOWNS ═══ -->
       <section id="unknowns">
         <p class="sec-kicker" data-layer="narrative">Open questions</p>
-        <h2>What we do not know yet</h2>
-        <ul>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
           <li>Why local government education fell by 50,000 in one month. The release states the figure without a cause, and we will not guess at one.</li>
           <li>Which months created the benchmark gap. The month-by-month distribution arrives with the final revision in February 2027.</li>
           <li>Whether the labor-force exit continues. One month of a shrinking labor force alongside flat broad underutilization reads as a hiring stall; a second month would start to read as something worse.</li>
         </ul>
       </section>
 
-      <!-- ═══ RECORDS ═══ -->
+      <!-- ═══ RECORDS (proof-layer, visible in work mode) ═══ -->
       <section id="records" data-layer="proof">
         <p class="sec-kicker">Sources</p>
         <h2>The records</h2>
-        <p class="section-lede">Everything this page rests on, by kind.</p>
+        <p class="section-lede">Everything this page rests on, by kind. We keep a dated copy of each one.</p>
+
         <h3 class="src-group">Primary documents</h3>
         <ul class="src-list">
-          <li><a href="https://www.bls.gov/news.release/empsit.nr0.htm">The Employment Situation, July 2026</a> &middot; released August 7</li>
-          <li><a href="https://www.bls.gov/news.release/prebmk.nr0.htm">Preliminary Benchmark (National), March 2026</a> &middot; released August 28</li>
-          <li><a href="https://www.bls.gov/news.release/realer.nr0.htm">Real Earnings, July 2026</a> &middot; released August 12</li>
+          <li><a href="https://www.bls.gov/news.release/empsit.nr0.htm">The Employment Situation, July 2026</a> &middot; released August 7 &middot; every <em>record</em> figure above</li>
+          <li><a href="https://www.bls.gov/news.release/prebmk.nr0.htm">Preliminary Benchmark (National), March 2026</a> &middot; released August 28 &middot; the benchmark check</li>
+          <li><a href="https://www.bls.gov/news.release/realer.nr0.htm">Real Earnings, July 2026</a> &middot; released August 12 &middot; the inflation-adjusted wage figures (copy captured via the Internet Archive; disclosed in the source ledger)</li>
         </ul>
+
         <h3 class="src-group">Official data</h3>
         <ul class="src-list">
-          <li><a href="https://fred.stlouisfed.org/series/PAYEMS">Total nonfarm payrolls, monthly</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/UNRATE">Unemployment rate, monthly</a></li>
-          <li><a href="https://fred.stlouisfed.org/series/U6RATE">U-6 underemployment rate, monthly</a></li>
-          <li><a href="https://alfred.stlouisfed.org/series?seid=PAYEMS">Payroll estimates as first published (ALFRED vintages)</a></li>
+          <li><a href="https://fred.stlouisfed.org/series/PAYEMS">Total nonfarm payrolls, monthly</a> &middot; the chart, the five-in-twelve count, the 26,000 average</li>
+          <li><a href="https://fred.stlouisfed.org/series/UNRATE">Unemployment rate, monthly</a> &middot; the 4.2 to 4.1 move</li>
+          <li><a href="https://fred.stlouisfed.org/series/U6RATE">U-6 underemployment rate, monthly</a> &middot; the 7.9 percent broad measure</li>
+          <li><a href="https://alfred.stlouisfed.org/series?seid=PAYEMS">Payroll estimates as first published (ALFRED vintages)</a> &middot; the revisions table</li>
         </ul>
+
         <h3 class="src-group">Coverage checked</h3>
         <ul class="src-list">
-          <li><a href="/records/outlet-38a539f4a7084988/">CNBC</a>, release day</li>
-          <li><a href="/records/outlet-85fbbbfbda7781f3/">CBS News</a>, release day</li>
-          <li><a href="/records/outlet-7708182891f7251f/">NBC News</a>, morning-of preview</li>
-          <li><a href="/records/outlet-c74280ad9d4be041/">CNBC</a> on long-term unemployment</li>
+          <li><a href="/records/outlet-38a539f4a7084988/">CNBC</a>, release day &middot; the headline figures, the World Cup explanation, the 34,000 claim, the market reaction</li>
+          <li><a href="/records/outlet-85fbbbfbda7781f3/">CBS News</a>, release day &middot; the FactSet forecast of 95,000</li>
+          <li><a href="/records/outlet-7708182891f7251f/">NBC News</a>, morning-of preview &middot; the 83,000 expectation and the backdrop</li>
+          <li><a href="/records/outlet-c74280ad9d4be041/">CNBC</a> on long-term unemployment &middot; context for the one-in-four figure</li>
         </ul>
+
+        <p class="sources-line"><a href="/methodology">How we check</a> &middot; where this page says <em>computed</em>, the arithmetic was done from the saved data series; where it says <em>record</em> or <em>checked</em>, the words trace to a saved document.</p>
       </section>
     </main>
   </div>
@@ -294,6 +340,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
     cursor: pointer;
     border-right: 1px solid var(--rule);
     transition: background 0.15s, color 0.15s;
+    text-decoration: none;
   }
   .mode-btn:last-of-type { border-right: none; }
   .mode-btn:hover { background: var(--blue-tint); color: var(--ink); }
@@ -311,38 +358,60 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
     .mode-hint { width: 100%; padding: 0.4rem 0.8rem; border-top: 1px solid var(--rule); margin-left: 0; }
   }
 
-  /* ── Layer visibility ── */
-  /* Default: story mode = facts + narrative visible, proof hidden */
-  [data-layer="proof"] { display: none; }
+  /* ── Sourced block: binds paragraph + chip + receipt ── */
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
 
-  /* Facts mode */
-  .mode-facts [data-layer="narrative"] { display: none; }
-  .mode-facts [data-layer="proof"] { display: none; }
-  .mode-facts .sec-kicker { display: none; }
+  /* In story mode, chips inside sourced-blocks are hidden */
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
 
-  /* Story mode (default) */
-  .mode-story [data-layer="proof"] { display: none; }
-
-  /* Work mode */
-  .mode-work [data-layer="proof"] { display: revert; }
-  .mode-work .receipt { display: block; }
-  .mode-work .chip { display: inline; }
-
-  /* Chips: hidden by default, only shown in work mode */
-  .chip { display: none; }
-  .mode-work .chip {
-    display: inline-block;
-    margin: 0.2rem 0 0.4rem;
+  /* In work mode, sourced blocks get a subtle left border showing source binding */
+  .mode-work .sourced-block {
+    border-left: 3px solid var(--blue);
+    padding-left: 1rem;
+  }
+  .mode-work .sourced-block[data-source*="fred"],
+  .mode-work .sourced-block[data-source*="computed"] {
+    border-left-color: var(--ink);
+  }
+  .mode-work .sourced-block[data-source*="outlet"] {
+    border-left-color: var(--amber);
   }
 
-  /* Receipts: hidden by default */
-  .receipt { display: none; }
+  /* ── Figcaption provenance: proof-only ── */
+  .fig-provenance {
+    display: none;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--slate);
+  }
+  .mode-work .fig-provenance { display: block; }
 
-  /* In facts mode, railed paragraphs lose their rail */
-  .mode-facts .railed { border-left: none; padding-left: 0; }
+  /* ── Layer visibility ── */
+  /* Default (no JS / no mode class): story mode = facts + narrative, proof hidden */
+  [data-layer="proof"] { display: none; }
+
+  /* Facts mode: narrative hidden, proof hidden */
+  .mode-facts [data-layer="narrative"] { display: none; }
+  .mode-facts [data-layer="proof"] { display: none; }
+
+  /* Story mode (explicit): same as default */
+  .mode-story [data-layer="proof"] { display: none; }
+
+  /* Work mode: everything visible */
+  .mode-work [data-layer="proof"] { display: revert; }
+
+  /* Event record context: only in work mode */
+  .event-record-context { margin: 0 0 1.5rem; }
+
+  /* Receipts follow proof visibility */
+  .receipt { display: none; }
+  .mode-work .receipt { display: block; }
 
   /* Transition for smooth mode switches */
-  [data-layer] { transition: opacity 0.2s; }
+  [data-layer] { transition: opacity 0.15s; }
 </style>
 
 <script>
@@ -351,17 +420,31 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
     const buttons = document.querySelectorAll(".mode-btn");
     if (!root || !buttons.length) return;
 
-    // Set initial mode
-    root.classList.add("mode-story");
+    // Read mode from query param or default to story
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get("mode") || "story";
+    root.classList.add(`mode-${initial}`);
+    buttons.forEach((b) => {
+      const isActive = b.getAttribute("data-mode") === initial;
+      b.classList.toggle("active", isActive);
+      b.setAttribute("aria-checked", isActive ? "true" : "false");
+    });
 
+    // Click handler: update mode class + URL without reload
     buttons.forEach((btn) => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
         const mode = btn.getAttribute("data-mode");
         root.className = root.className.replace(/mode-\w+/g, "").trim() + ` mode-${mode}`;
         buttons.forEach((b) => {
-          b.classList.toggle("active", b === btn);
-          b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          const isActive = b === btn;
+          b.classList.toggle("active", isActive);
+          b.setAttribute("aria-checked", isActive ? "true" : "false");
         });
+        // Update URL without reload
+        const url = new URL(window.location.href);
+        url.searchParams.set("mode", mode);
+        history.replaceState(null, "", url.toString());
       });
     });
   });
