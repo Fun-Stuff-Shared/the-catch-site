@@ -1,0 +1,7 @@
+---
+import { citeNumber } from "../lib/record-manifests.mjs";
+const { s } = Astro.props;
+const cite = citeNumber(s);
+if (!cite) throw new Error(`cite_unknown_source:${s}`);
+---
+<sup class="src-ref"><a href={`#src-${cite.n}`}>{cite.n}</a></sup>

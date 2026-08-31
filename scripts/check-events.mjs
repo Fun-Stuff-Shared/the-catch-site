@@ -341,6 +341,20 @@ for (const { subject, story } of storyPages) {
   }
 }
 
+// ---- 4. Citation resolution: every #src-N reference must resolve on its page ----
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  const html = readFileSync(storyFile, "utf8");
+  if (!html.includes("src-ref")) continue;
+  const refs = [...html.matchAll(/href="#(src-\d+)"/g)].map((m) => m[1]);
+  const ids = new Set([...html.matchAll(/id="(src-\d+)"/g)].map((m) => m[1]));
+  const dangling = [...new Set(refs.filter((r) => !ids.has(r)))];
+  if (dangling.length > 0) {
+    fail.push(`/events/${subject}/${story}/: citation(s) link to nothing: ${dangling.join(", ")}`);
+  }
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);

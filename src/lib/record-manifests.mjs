@@ -9,3 +9,17 @@ const outletRecords = newsRecordData.records.map((record) => ({ ...record, subje
 export const records = [...manifestRecords, ...outletRecords];
 export const recordById = new Map(records.map((record) => [record.id, record]));
 export const outletRecordByUrl = new Map(outletRecords.map((record) => [record.url, record]));
+
+export function storySources(event) {
+  const manifest = manifests.find((m) => m.event === event);
+  const list = (manifest?.story_sources ?? []).map((s, i) => ({ ...s, n: i + 1, record: recordById.get(s.id) }));
+  return { list, num: Object.fromEntries(list.map((s) => [s.id, s.n])) };
+}
+
+export function citeNumber(sourceId) {
+  for (const manifest of manifests) {
+    const i = (manifest.story_sources ?? []).findIndex((s) => s.id === sourceId);
+    if (i >= 0) return { n: i + 1, event: manifest.event };
+  }
+  return null;
+}

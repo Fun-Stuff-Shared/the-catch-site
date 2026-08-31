@@ -1,0 +1,33 @@
+---
+import { storySources } from "../lib/record-manifests.mjs";
+const { event } = Astro.props;
+const GROUPS = [
+  ["primary", "Primary documents"],
+  ["official", "Official data"],
+  ["coverage", "Coverage checked"],
+];
+const { list } = storySources(event);
+if (list.length === 0) throw new Error(`story_sources_missing:${event}`);
+---
+<section id="records" data-layer="fact">
+  <p class="sec-kicker">Sources</p>
+  <h2>The records</h2>
+  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
+  {GROUPS.map(([group, title]) => {
+    const items = list.filter((s) => s.group === group);
+    if (items.length === 0) return null;
+    return (
+      <Fragment>
+        <h3 class="src-group">{title}</h3>
+        <ol class="src-list" start={items[0].n}>
+          {items.map((s) => (
+            <li id={`src-${s.n}`}>
+              <a href={`/records/${s.id}/`}>{s.label}</a>{s.meta} <span class="src-usage" data-layer="proof"> &middot; {s.usage}</span>
+            </li>
+          ))}
+        </ol>
+      </Fragment>
+    );
+  })}
+  <p class="sources-line"><a href="/methodology">How we check</a> <span data-layer="proof"> &middot; where this page says <em>computed</em>, the arithmetic was done from the saved data series; where it says <em>record</em> or <em>checked</em>, the words trace to a saved document</span>.</p>
+</section>
