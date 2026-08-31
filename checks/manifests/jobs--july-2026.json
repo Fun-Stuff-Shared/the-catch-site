@@ -63,7 +63,8 @@
       "text_path": "data/sources/bls-empsit-2026-07.txt",
       "text_sha256": "sha256:7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737",
       "quote": "Total nonfarm payroll employment changed little in July (-23,000)",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The government's monthly jobs report: the Bureau of Labor Statistics counts payroll jobs through a survey of employers and measures unemployment through a survey of households, and publishes both in this release."
     },
     {
       "id": "bls-prebmk-2026",
@@ -75,7 +76,8 @@
       "text_path": "data/sources/bls-prebmk-2026.txt",
       "text_sha256": "sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f",
       "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "Once a year the agency checks its survey-based payroll count against near-complete state unemployment-insurance records. This release reports how far off the survey was as of March 2026."
     },
     {
       "id": "bls-realer-2026-07",
@@ -87,7 +89,8 @@
       "text_path": "data/sources/bls-realer-2026-07.txt",
       "text_sha256": "sha256:2d5d010c1a8f50909c2dd45ab078ea99e3f242f7535c117309b63f6ca641b187",
       "quote": "Real average hourly earnings for all employees decreased 0.1 percent from June to July",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The agency's monthly comparison of wages against prices: what average hourly earnings are worth after inflation."
     },
     {
       "id": "fred-u6rate-2026-07",
@@ -99,7 +102,8 @@
       "text_path": "data/sources/U6RATE.csv",
       "text_sha256": "sha256:7150c174beae980836ff59e9b5f8f0e7e2a9986fb738bf3c1fea415bdba55f1f",
       "quote": "2026-07-01,7.9",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The broadest measure of underemployment the agency publishes: the unemployed plus people who want work but stopped looking plus people stuck in part-time jobs. Saved from FRED."
     },
     {
       "id": "fred-primeage-2026-07",
@@ -111,7 +115,8 @@
       "text_path": "data/sources/LNS11300060.csv",
       "text_sha256": "sha256:b5a3b57d63a240e52cbcf56a3e818caf58fb2d05348f2172c4c88c2632ae7533",
       "quote": "2026-07-01,83.4",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The share of people aged 25 to 54 who are working or looking for work, the ages least affected by retirement and schooling. Saved from FRED."
     },
     {
       "id": "alfred-payems-vintages-2026",
@@ -123,7 +128,8 @@
       "text_path": "data/sources/alfred-payems-vintages-2026.csv",
       "text_sha256": "sha256:0d8c327a542429bde9bd7ae11a15f29b8d27661eb693e522b82f7ab5d06d14eb",
       "quote": "# vintage_date=2026-08-11",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The payroll numbers as they were first published each month, before revisions, from the Federal Reserve's ALFRED archive. This is what lets us compare first estimates against today's figures."
     },
     {
       "id": "fred-payems-2026-07",
@@ -135,7 +141,8 @@
       "text_path": "data/sources/PAYEMS.csv",
       "text_sha256": "sha256:5d8f5b4f09b0179ba6901dedf2cc2a9aad084a1ce4220be27b07abbb0460d17f",
       "quote": "2026-07-01,158858",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The monthly count of nonfarm payroll jobs, as a data series going back to 1939. Our copy was saved from FRED, the Federal Reserve's public data service."
     },
     {
       "id": "fred-unrate-2026-07",
@@ -147,7 +154,8 @@
       "text_path": "data/sources/UNRATE.csv",
       "text_sha256": "sha256:b671b94c9381e263cafeb2c24f035b49829d805ee2650498c8eb08a33b156f60",
       "quote": "2026-07-01,4.1",
-      "quote_span_check": "byte_exact"
+      "quote_span_check": "byte_exact",
+      "about": "The monthly unemployment rate, as a data series going back to 1948, saved from FRED."
     }
   ],
   "figures": [
@@ -229,7 +237,7 @@
       "group": "primary",
       "label": "The Employment Situation, July 2026",
       "meta": " · released August 7",
-      "usage": "every record figure above"
+      "usage": "every figure the story marks as record"
     },
     {
       "id": "bls-prebmk-2026",
@@ -308,5 +316,6 @@
       "meta": " on long-term unemployment",
       "usage": "context for the one-in-four figure"
     }
-  ]
+  ],
+  "story_title": "The job market goes into reverse: payrolls fall by 23,000"
 }

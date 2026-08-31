@@ -1,12 +1,60 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { records } from "../../lib/record-manifests.mjs";
+import { records, manifests } from "../../lib/record-manifests.mjs";
 export function getStaticPaths() { return records.map((record) => ({ params: { id: record.id }, props: { record } })); }
 const { record } = Astro.props;
-const usedIn = record.subject === "news" ? [] : [record.story, `/events/${record.subject}/`];
+
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function publisherPhrase(p) {
+  if (p === "BLS via FRED") return "the Bureau of Labor Statistics, saved from FRED";
+  if (/^(Bureau|Federal Reserve|Congressional|Library|Department|Government)/.test(p)) return `the ${p}`;
+  return p;
+}
+
+function plainDate(iso) {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso ?? "");
+  if (!m) return iso;
+  return `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}`;
+}
+
+const citingStories = [];
+for (const manifest of manifests) {
+  const entry = (manifest.story_sources ?? []).find((s) => s.id === record.id);
+  if (entry && manifest.story_title) {
+    citingStories.push({ href: manifest.story ?? `/events/${manifest.event}/`, title: manifest.story_title, usage: entry.usage });
+  }
+}
+if (citingStories.length === 0 && record.subject !== "news" && record.story_title_fallback !== null) {
+  const manifest = manifests.find((m) => (m.records ?? []).some((r) => r.id === record.id));
+  if (manifest?.story_title) citingStories.push({ href: manifest.story ?? `/events/${manifest.event}/`, title: manifest.story_title, usage: null });
+}
 ---
 <BaseLayout title={`${record.title} | The Catch`} current="Records">
   <div slot="locator" class="locator"><span>RECORD</span><span>{record.publisher}</span></div>
-  <div class="content"><main class="record-page"><p class="record-kicker">A record is the original document behind a story.</p><h1>{record.title}</h1><p class="record-sub">{record.publisher} · {record.date}</p><section class="excerpt"><p class="excerpt-label">The document says</p><blockquote>{record.quote}</blockquote></section><p class="record-note">This passage is checked against the saved copy of the document.</p><p class="original"><a href={record.url} rel="noreferrer">Read the original</a>{record.pinned_path && <> <span>·</span> <a href={`/records/pins/${record.id}/`}>Open the saved copy</a></>}</p><section class="used"><h2>Used in</h2><ul>{usedIn.map((href, index) => <li><a href={href}>{index === 0 ? "This event story" : "Its standing record"}</a></li>)}</ul>{record.subEvents.length > 0 && <p>{record.subEvents.map((subEvent) => subEvent.label).join(", ")}.</p>}</section></main></div>
+  <div class="content"><main class="record-page">
+    <p class="record-kicker">Record &middot; the original document behind a story</p>
+    <h1>{record.title}</h1>
+    <p class="record-sub">Published by {publisherPhrase(record.publisher)} on {plainDate(record.date)}.</p>
+    {record.about && <p class="record-about">{record.about}</p>}
+    {citingStories.length > 0 && (
+      <section class="used">
+        <h2>Where we use it</h2>
+        <ul>
+          {citingStories.map((s) => (
+            <li><a href={s.href}>{s.title}</a>{s.usage && <> &middot; cited for {s.usage}</>}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+    <section class="excerpt">
+      <p class="excerpt-label">A passage we checked, word for word, against our saved copy</p>
+      <blockquote>{record.quote}</blockquote>
+    </section>
+    <p class="original">
+      <a href={record.url} rel="noreferrer">Read the original</a>
+      {record.pinned_path && <> <span>&middot;</span> <a href={`/records/pins/${record.id}/`}>Open the copy we saved</a></>}
+    </p>
+    {record.subEvents.length > 0 && <p class="record-note">Timeline entries this record anchors: {record.subEvents.map((subEvent) => subEvent.label).join("; ")}.</p>}
+  </main></div>
 </BaseLayout>
-<style>.record-page{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 4rem}.record-kicker,.excerpt-label{font:.72rem "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:#5b6470}h1{font:700 clamp(1.8rem,4vw,2.6rem)/1.1 "Newsreader",Georgia,serif;margin:.5rem 0}.record-sub,.record-note,.original,.used{font:.9rem/1.55 "Public Sans",sans-serif;color:#454c55}.excerpt{background:#fbfaf8;border:1px solid #e3e0da;border-top:3px solid #2e7d5b;padding:1rem 1.25rem;margin:1.5rem 0}blockquote{margin:.4rem 0 0;font:1.15rem/1.55 "Newsreader",Georgia,serif}.used{border-top:1px solid #e3e0da;margin-top:2rem;padding-top:1rem}.used h2{font:700 1.3rem "Newsreader",Georgia,serif;margin:0}.used ul{padding-left:1.2rem}</style>
+<style>.record-page{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 4rem}.record-kicker,.excerpt-label{font:.72rem "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:#5b6470}h1{font:700 clamp(1.8rem,4vw,2.6rem)/1.1 "Newsreader",Georgia,serif;margin:.5rem 0}.record-sub,.record-note,.original,.used{font:.9rem/1.55 "Public Sans",sans-serif;color:#454c55}.record-about{font:1.05rem/1.6 "Newsreader",Georgia,serif;color:#23282e;margin:1rem 0 1.5rem}.excerpt{background:#fbfaf8;border:1px solid #e3e0da;border-top:3px solid #2e7d5b;padding:1rem 1.25rem;margin:1.5rem 0}blockquote{margin:.4rem 0 0;font:1.15rem/1.55 "Newsreader",Georgia,serif}.used{border-top:1px solid #e3e0da;margin-top:1.5rem;padding-top:1rem}.used h2{font:700 1.3rem "Newsreader",Georgia,serif;margin:0 0 .4rem}.used ul{padding-left:1.2rem;margin:.3rem 0}</style>
