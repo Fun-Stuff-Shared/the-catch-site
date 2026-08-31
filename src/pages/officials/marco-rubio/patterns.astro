@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import data from "../../../data/officials/marco-rubio/patterns.json";
+const tensioned = data.patterns.filter((p) => p.status === "confirmed_with_tension");
+const consistent = data.patterns.filter((p) => p.status === "confirmed");
+const fmtDate = (d) => d ? new Date(`${d}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : null;
+---
+<BaseLayout title="Marco Rubio: patterns in the record | The Catch" current="Officials"><div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>Patterns</span></div><div class="content"><main class="subject">
+<p class="subject-kicker">Standing record · Marco Rubio</p>
+<h1>Patterns in the record</h1>
+<p class="subject-dek">Recurring positions found across Marco Rubio's statements, posts, bills, and all 4,612 of his recorded Senate votes. Each pattern links to the evidence behind it. Where his votes pull against his words, that tension is shown, not hidden.</p>
+<div class="kpi-strip"><div class="kpi"><span class="kpi-value">{data.counts.shown}</span><span class="kpi-label">patterns shown</span></div><div class="kpi"><span class="kpi-value">{data.counts.with_tension}</span><span class="kpi-label">carry tension</span></div><div class="kpi"><span class="kpi-value">4,612</span><span class="kpi-label">votes tested against</span></div></div>
+<p class="subject-note">{data.method} Twenty weaker candidates were held back as insufficiently evidenced.</p>
+
+<section><h2>Where the record pulls in two directions</h2>
+{tensioned.map((p) => <article class="pattern" id={p.id}>
+  <h3>{p.name}</h3>
+  <p class="pat-note">{p.reader_note}</p>
+  {p.examples.length > 0 && <ul class="ev-list">{p.examples.map((e) => <li><span class="ev-src">{e.url ? <a href={e.url}>{e.source}</a> : e.source}{fmtDate(e.date) ? ` · ${fmtDate(e.date)}` : ""}</span><span class="ev-quote">“{e.quote}”</span></li>)}</ul>}
+  {p.tension.map((t) => <div class="tension"><p class="tension-head">{t.kind === "say-do" ? "Votes that pull against this" : "Evidence that cuts against this"}</p><p class="tension-body">{t.explanation}</p>{t.evidence.length > 0 && <ul class="ev-list">{t.evidence.map((e) => <li><span class="ev-src">{e.url ? <a href={e.url}>{e.source}</a> : e.source}{fmtDate(e.date) ? ` · ${fmtDate(e.date)}` : ""}</span><span class="ev-quote">“{e.quote}”</span></li>)}</ul>}</div>)}
+</article>)}
+</section>
+
+<section><h2>Consistent positions</h2>
+{consistent.map((p) => <article class="pattern" id={p.id}>
+  <h3>{p.name}</h3>
+  <p class="pat-note">{p.reader_note}</p>
+  {p.examples.length > 0 && <ul class="ev-list">{p.examples.map((e) => <li><span class="ev-src">{e.url ? <a href={e.url}>{e.source}</a> : e.source}{fmtDate(e.date) ? ` · ${fmtDate(e.date)}` : ""}</span><span class="ev-quote">“{e.quote}”</span></li>)}</ul>}
+</article>)}
+</section>
+
+<p class="subject-note">These patterns describe stated positions and recorded actions only. They assign no motive. A vote that pulls against a stated position is tension in the record, not proof of bad faith. Generated {data.generated} from the checked evidence bank; quotes link to their sources.</p>
+</main></div></BaseLayout>
+<style>
+  .subject{max-width:52rem;margin:0 auto;padding:1.5rem 1.25rem 4rem}
+  .subject-kicker,.kpi-label,.ev-src,.tension-head{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#5b6470}
+  .subject h1,.subject h2,.pattern h3{font-family:"Newsreader",Georgia,serif}
+  .subject h1{font-size:clamp(1.9rem,4.5vw,2.6rem);margin:0}
+  .subject h2{font-size:1.5rem;border-bottom:2px solid #1a1a1a;padding-bottom:.35rem;margin-top:2.5rem}
+  .subject-dek,.subject-note,.pat-note,.tension-body{font-family:"Newsreader",Georgia,serif;font-size:1.08rem;line-height:1.5}
+  .subject-note{font-size:.95rem;color:#5b6470}
+  .kpi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e3e0da;border:1px solid #e3e0da;margin:1.25rem 0}
+  .kpi{background:#fbfaf8;padding:.85rem}
+  .kpi-value{font-family:"IBM Plex Mono",monospace;font-size:1.4rem;display:block}
+  .pattern{border-bottom:1px solid #e3e0da;padding:1.25rem 0}
+  .pattern h3{font-size:1.2rem;margin:0 0 .3rem}
+  .pat-note{margin:.2rem 0 .6rem}
+  .ev-list{list-style:none;padding:0;margin:.4rem 0}
+  .ev-list li{display:grid;grid-template-columns:11rem 1fr;gap:.75rem;padding:.35rem 0;border-top:1px dotted #e3e0da}
+  .ev-quote{font-family:"Newsreader",Georgia,serif;font-size:.98rem;line-height:1.45;color:#2c2c2c}
+  .ev-src a{color:#22604a}
+  .tension{background:#fdf6f0;border-left:3px solid #b4552d;padding:.6rem .9rem;margin:.75rem 0}
+  .tension-head{color:#b4552d;margin:0 0 .25rem}
+  .tension-body{margin:0;font-size:1rem}
+  @media(max-width:640px){.kpi-strip{grid-template-columns:1fr}.ev-list li{grid-template-columns:1fr;gap:.15rem}}
+</style>
