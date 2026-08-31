@@ -100,10 +100,11 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
           decades of policy, just under the 3.82 mean and the 4.00 median. Not a high-rate regime by historical
           standards, and not the near-zero world of 2009&ndash;2015 either. <Chip kind="computed" />
         </RailedParagraph>
-        <Receipt label="computation">
-          <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-06-17:
-          15,970 observations; 3.75 percentile 48.5 (midpoint method); mean 3.82; median 4.00. Days held:
-          2025-12-11 to 2026-06-17 = 188. The full daily series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+        <Receipt label="how we got this number">
+          <p>We combined two Fed series (DFEDTAR for 1982&ndash;2008, DFEDTARU for 2008 onward) through June 17, 2026:
+          15,970 daily observations. At 3.75, the current rate sits at the 48.5th percentile; the average over
+          that span is 3.82, the median 4.00. Days held: December 11, 2025 to June 17, 2026 = 188. Both series
+          are published by the St. Louis Fed; we work from a copy saved August 23, 2026.</p>
         </Receipt>
         <RailedParagraph rail="computed">
           The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
@@ -120,10 +121,22 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
           this year to one implying a hike. The central tendency moved to 3.6&ndash;4.1, the full range to
           3.4&ndash;4.4. <Chip kind="record" />
         </RailedParagraph>
-        <Receipt label="the SEP table">
-          <p>June 17, 2026 SEP: federal funds rate medians 3.8 (2026), 3.6 (2027), 3.4 (2028), 3.1 (longer run);
-          March medians 3.4 / 3.1 / 3.1 / 3.1. PCE inflation median for 2026 raised to 3.6 from 2.7; core PCE
-          to 3.3 from 2.7. <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a></p>
+        <Receipt label="the projections, March vs. June">
+          <table class="data-table">
+            <caption>Summary of Economic Projections: medians</caption>
+            <thead><tr><th></th><th>March</th><th>June</th><th>Shift</th></tr></thead>
+            <tbody>
+              <tr><td>Fed funds rate, end of 2026</td><td>3.4%</td><td>3.8%</td><td class="hl">+0.4 (cut &rarr; hike)</td></tr>
+              <tr><td>Fed funds rate, end of 2027</td><td>3.1%</td><td>3.6%</td><td>+0.5</td></tr>
+              <tr><td>Fed funds rate, end of 2028</td><td>3.1%</td><td>3.4%</td><td>+0.3</td></tr>
+              <tr><td>Fed funds rate, longer run</td><td>3.1%</td><td>3.1%</td><td>unchanged</td></tr>
+              <tr><td>PCE inflation, 2026</td><td>2.7%</td><td>3.6%</td><td class="hl">+0.9</td></tr>
+              <tr><td>Core PCE inflation, 2026</td><td>2.7%</td><td>3.3%</td><td>+0.6</td></tr>
+              <tr><td>Real GDP growth, 2026</td><td>2.4%</td><td>2.2%</td><td>&minus;0.2</td></tr>
+              <tr><td>Unemployment rate, 2026 Q4</td><td>4.0%</td><td>4.2%</td><td>+0.2</td></tr>
+            </tbody>
+          </table>
+          <p>From the Fed&rsquo;s own <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a>. The June range on the fed funds rate was 3.4&ndash;4.4, with a central tendency of 3.6&ndash;4.1. Nine of eighteen dots sat above the current midpoint.</p>
         </Receipt>
         <RailedParagraph rail="record">
           The minutes, released July 8, show the hike case already forming inside the room: <em>&ldquo;a few
@@ -189,10 +202,11 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
           <p>The Fed's own staff briefing and most coverage lean on one factual claim: inflation has run above the 2&nbsp;percent goal for over five years. We ran it against the PCE price index: <strong>Confirmed.</strong> PCE inflation has printed above 2&nbsp;percent year-over-year for&nbsp;<strong>63 consecutive months</strong> since March 2021, which is 5.3 years, with the latest
           pre-meeting reading at 4.1&nbsp;percent (May 2026). <Chip kind="computed" /></p>
         </CheckedBlock>
-        <Receipt label="computation">
-          <p>FRED PCEPI monthly index, year-over-year change; every month March 2021 through May 2026
-          exceeds 2.0 percent; May 2026 = 4.08 percent. The CPI, a different index, ran hotter
-          (4.2 percent in May per coverage). The series is published by the St. Louis Fed (FRED); we work from a copy saved August 23, 2026.</p>
+        <Receipt label="how we checked this">
+          <p>We took the PCE price index published by the St. Louis Fed and calculated the year-over-year
+          change for every month. Every reading from March 2021 through May 2026 exceeds 2.0 percent;
+          May 2026 came in at 4.08 percent. The CPI, a different index, ran hotter (4.2 percent in May
+          per coverage). We work from a copy of the series saved August 23, 2026.</p>
         </Receipt>
       </section>
 
