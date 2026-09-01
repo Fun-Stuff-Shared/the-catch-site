@@ -32,9 +32,13 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
 <BaseLayout title={`${record.title} | The Catch`} current="Records">
   <div slot="locator" class="locator"><span>RECORD</span><span>{record.publisher}</span></div>
   <div class="content"><main class="record-page">
-    <p class="record-kicker">Record &middot; the original document behind a story</p>
+    <p class="record-kicker">{record.record_kind === "corroboration"
+      ? "Corroboration record · an independent report we checked"
+      : "Record · the original document behind a story"}</p>
     <h1>{record.title}</h1>
-    <p class="record-sub">Published by {publisherPhrase(record.publisher)} on {plainDate(record.date)}.</p>
+    <p class="record-sub">{record.record_kind === "corroboration"
+      ? `Recorded from ${publisherPhrase(record.publisher)} during our corroboration check on ${plainDate(record.date)}.`
+      : `Published by ${publisherPhrase(record.publisher)} on ${plainDate(record.date)}.`}</p>
     {record.about && <p class="record-about">{record.about}</p>}
     {citingStories.length > 0 && (
       <section class="used">
@@ -47,7 +51,9 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
       </section>
     )}
     <section class="excerpt">
-      <p class="excerpt-label">A passage we checked, word for word, against our saved copy</p>
+      <p class="excerpt-label">{record.record_kind === "corroboration"
+        ? "A passage recorded during the corroboration check"
+        : "A passage we checked, word for word, against our saved copy"}</p>
       <blockquote>{record.quote}</blockquote>
     </section>
     <p class="original">
