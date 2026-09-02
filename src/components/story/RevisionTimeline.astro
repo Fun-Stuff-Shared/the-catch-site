@@ -2,6 +2,7 @@
 const { timeline, checkedAt } = Astro.props;
 const confirmations = timeline?.confirmations ?? [];
 const changes = timeline?.changes ?? [];
+const changesCheckedAt = timeline?.changes_checked_at ?? checkedAt;
 const plainDate = (value) => new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`));
 ---
 <section class="revision-timeline" data-layer="fact" data-revision-confirmations={confirmations.length} data-revision-changes={changes.length}>
@@ -12,5 +13,5 @@ const plainDate = (value) => new Intl.DateTimeFormat("en-US", { month: "long", d
   <h2>What changed since</h2>
   {changes.length > 0
     ? <ul>{changes.map((row) => <li data-revision-change>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul>
-    : <p data-revision-no-changes>No reported fact about this event has changed since this page was first published (checked {checkedAt}).</p>}
+    : <p data-revision-no-changes>No reported fact about this event has changed since this page was first published (checked {changesCheckedAt}).</p>}
 </section>

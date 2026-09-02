@@ -456,12 +456,14 @@ for (const [route, eventId] of foldChecks) {
   } else {
     revisionTimelineChecks.push(`revision_timeline_no_confirmations_matches_view ${page} confirmations=${confirmations.length}`);
   }
-  const noChangesSentence = `No reported fact about this event has changed since this page was first published (checked ${buildDate}).`;
+  const changesCheckedAt = timeline.changes_checked_at ?? buildDate;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(changesCheckedAt)) fail.push(`${page}: revision_timeline_changes_checked_at must be YYYY-MM-DD`);
+  const noChangesSentence = `No reported fact about this event has changed since this page was first published (checked ${changesCheckedAt}).`;
   const renderedNoChanges = [...section.matchAll(/\bdata-revision-no-changes\b/g)].length;
   if (renderedNoChanges !== (changes.length === 0 ? 1 : 0)) {
     fail.push(`${page}: revision_timeline_no_changes_matches_view expected ${changes.length === 0 ? 1 : 0}, rendered ${renderedNoChanges}`);
   } else if (changes.length === 0 && !section.includes(noChangesSentence)) {
-    fail.push(`${page}: revision_timeline_no_changes_matches_view fallback sentence is missing or uses a date other than ${buildDate}`);
+    fail.push(`${page}: revision_timeline_no_changes_matches_view fallback sentence is missing or uses a date other than ${changesCheckedAt}`);
   } else {
     revisionTimelineChecks.push(`revision_timeline_no_changes_matches_view ${page} changes=${changes.length}`);
   }
