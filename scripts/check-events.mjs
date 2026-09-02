@@ -9,6 +9,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
+import { normalizeFigure, rowsFromExport, verifyDerivedFigure } from "./derived-figures.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -361,18 +362,35 @@ const foldChecks = [
   ["fed-rate/july-2026", "event-fed-rate-july-2026", "src/data/fomc20260729.mjs"],
   ["jobs/july-2026", "event-jobs-july-2026", "src/data/jobs202607.mjs"],
 ];
-const normalize = (value) => `${value ?? ""}`.replace(/[–—]/g, "-").replace(/%/g, "").replace(/\s+/g, "").toLowerCase();
 const unitFor = (unit) => unit === "%" ? "percent" : unit;
+const derivedPath = process.env.DERIVED_FIGURES_PATH || join(ROOT, "data/state/derived-figures.json");
+let derivedRows = [];
+let derivedLoadError = null;
+if (existsSync(derivedPath)) {
+  try { derivedRows = rowsFromExport(JSON.parse(readFileSync(derivedPath, "utf8"))); }
+  catch (error) { derivedLoadError = error.message; }
+}
+const verifiedStrips = [];
 for (const [route, eventId, modulePath] of foldChecks) {
   const statePath = join(ROOT, "data/state", `${eventId}.json`);
   if (!existsSync(statePath)) { fail.push(`/events/${route}/: fold state missing`); continue; }
   const state = JSON.parse(readFileSync(statePath, "utf8"));
   const { event } = await import(pathToFileURL(join(ROOT, modulePath)).href);
-  const figures = [];
-  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) figures.push(occurrence.figure);
+  const acceptedOccurrences = new Map();
+  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) acceptedOccurrences.set(occurrence.id, occurrence);
   for (const kpi of event.kpis ?? []) {
-    const match = figures.some((figure) => normalize(figure.value) === normalize(kpi.value) && normalize(figure.unit) === normalize(unitFor(kpi.unit)) && normalize(figure.period) === normalize(kpi.period));
-    if (!match) fail.push(`/events/${route}/: strip figure ${kpi.value}${kpi.unit ? ` ${kpi.unit}` : ""} has no accepted fold occurrence with the same value, unit, and period`);
+    const matchingOccurrence = [...acceptedOccurrences.values()].find((occurrence) => normalizeFigure(occurrence.figure.value) === normalizeFigure(kpi.value) && normalizeFigure(occurrence.figure.unit) === normalizeFigure(unitFor(kpi.unit)) && normalizeFigure(occurrence.figure.period) === normalizeFigure(kpi.period));
+    const page = `/events/${route}/`;
+    const label = `${kpi.value}${kpi.unit ? ` ${kpi.unit}` : ""}`;
+    if (matchingOccurrence) {
+      verifiedStrips.push(`${page} ${label}: accepted occurrence ${matchingOccurrence.id}`);
+      continue;
+    }
+    if (derivedLoadError) { fail.push(`${page}: strip figure ${label} cannot load derived-figures export: ${derivedLoadError}`); continue; }
+    const row = derivedRows.find((candidate) => candidate.page === page && normalizeFigure(candidate.figure_text) === normalizeFigure(label));
+    const derived = verifyDerivedFigure({ page, kpi, row, acceptedOccurrences });
+    if (!derived.ok) { fail.push(derived.error); continue; }
+    verifiedStrips.push(`${page} ${label}: ${derived.path} ${derived.occurrenceIds.join(",")}`);
   }
 }
 
@@ -381,4 +399,5 @@ if (fail.length) {
   for (const f of fail) console.error("  - " + f);
   process.exit(1);
 }
-console.log(`event gate passed: ${storyPages.length} story page(s) manifested, mechanical checks clean`);
+for (const passed of verifiedStrips) console.log(`strip verified: ${passed}`);
+console.log(`event gate passed: ${storyPages.length} story page(s) manifested, mechanical checks clean; ${verifiedStrips.length}/12 strips verified`);
