@@ -161,26 +161,15 @@
       "withdrawn": false
     },
     "slot-event-fed-rate-july-2026-93ff7929970c310a": {
-      "as_of": "2026-07-29",
-      "as_of_source": "resolved_from_context",
-      "checkable_against": "official_statement_or_transcript",
-      "disputed": false,
-      "evidence_id": "pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a",
-      "figure": {
-        "period": null,
-        "unit": "percent",
-        "value": "3.5% to 3.75%"
-      },
+      "disputed": true,
       "heads": [
-        "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-2f42625cf9ea80f1"
+        "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-2f42625cf9ea80f1",
+        "occurrence-td-2ed160-fed-hold-start-july"
       ],
-      "occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-2f42625cf9ea80f1",
+      "occurrence_id": null,
       "primary": true,
-      "quote_span": "Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%",
-      "roots": 1,
+      "roots": 0,
       "slot": "federal_funds_rate",
-      "span_check": "byte_exact",
-      "speaker": "outlet's own",
       "uncertain_pairs": 0,
       "withdrawn": false
     },
@@ -312,22 +301,15 @@
       "withdrawn": false
     },
     "slot-event-fed-rate-july-2026-ee26ba77467b8431": {
-      "as_of": "2026-08-05",
-      "as_of_source": "publication_timestamp",
-      "checkable_against": "none",
-      "disputed": false,
-      "evidence_id": "17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a",
-      "figure": null,
+      "disputed": true,
       "heads": [
-        "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1"
+        "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
+        "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7"
       ],
-      "occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
+      "occurrence_id": null,
       "primary": false,
-      "quote_span": "Philadelphia Fed President Anna Paulson , who like Kashkari gets a vote this year on the FOMC, offered a differing view. Paulson told CNBC that she thinks there is evidence that the current interest rate level is \"mildly restrictive\" on economic conditions and favors holding steady as officials continue to evaluate the data. In addition, Paulson said voting to hold was \"not a close call\" for her at the meeting.",
-      "roots": 1,
+      "roots": 0,
       "slot": "rate_change_preference",
-      "span_check": "byte_exact",
-      "speaker": "outlet's own",
       "uncertain_pairs": 0,
       "withdrawn": false
     }
@@ -528,7 +510,7 @@
           "figure": null,
           "id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7",
           "quote_span": "Philadelphia Fed President Anna Paulson told CNBC on Tuesday that she is confident the current interest rate level is sufficient to bring inflation back to target.",
-          "slot_id": null,
+          "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431",
           "span_check": "byte_exact",
           "span_end": 1726,
           "span_start": 1563,
@@ -562,7 +544,7 @@
           "figure": null,
           "id": "occurrence-td-2ed160-fed-hold-start-july",
           "quote_span": "2025-12-11,3.75",
-          "slot_id": null,
+          "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
           "span_check": "byte_exact",
           "span_end": 99305,
           "span_start": 99290,
@@ -576,24 +558,7 @@
       "accepted": true,
       "id": "pin-v2:25d55d8846a6a49ea04b4e629ba163a4c78b3c4a26d8ee274197c123c76dbc90",
       "is_primary": true,
-      "occurrences": [
-        {
-          "as_of": "2026-07-30",
-          "as_of_source": "literal_in_quote",
-          "figure": {
-            "period": null,
-            "unit": "percent",
-            "value": "3.5-3.75"
-          },
-          "id": "occurrence-pin-v2:25d55d8846a6a49ea04b4e629ba163a4c78b3c4a26d8ee274197c123c76dbc90-fc0410c81afed9b6",
-          "quote_span": "nine members agreed to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent",
-          "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
-          "span_check": "byte_exact",
-          "span_end": 36693,
-          "span_start": 36592,
-          "speaker": "Board of Governors of the Federal Reserve System"
-        }
-      ],
+      "occurrences": [],
       "root_id": "www.federalreserve.gov",
       "source_family": "government_primary",
       "text_sha256": "a43501465ea063c366810fb94536cf95e52e6a5ffffaa37db5f7a840f8461e8c"
@@ -1002,15 +967,6 @@
       "root_id": "www.cnbc.com",
       "source_family": "major_outlet",
       "text_sha256": "bf0a4ede9672dd64f64e83b45a6d3da21e8f5bf22994f215bcd2823a96c53938"
-    },
-    {
-      "accepted": true,
-      "id": "pin-v2:f3a4e8f1c2f84542ef0930d3ca8a828031878f235bca1ad33811710750eb56c2",
-      "is_primary": true,
-      "occurrences": [],
-      "root_id": "www.federalreserve.gov",
-      "source_family": "government_primary",
-      "text_sha256": "acb2bcd7a54a735dc64f1ac71c3018bc5f9896faceca13eb21fb0c13e7790840"
     }
   ],
   "series_id": "fed-rate",
@@ -1070,9 +1026,20 @@
       "slot_id": "slot-event-fed-rate-july-2026-d90cf85219073f81"
     },
     {
+      "as_of": "2025-12-11",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-td-2ed160-fed-hold-start-july",
+      "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a"
+    },
+    {
       "as_of": "2026-07-29",
       "kind": "disputed",
       "slot_id": "slot-event-fed-rate-july-2026-00376466a31b940a"
+    },
+    {
+      "as_of": "2026-07-29",
+      "kind": "disputed",
+      "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a"
     },
     {
       "as_of": "2026-07-29",
@@ -1119,12 +1086,6 @@
     {
       "as_of": "2026-07-29",
       "kind": "first_value",
-      "occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
-      "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a"
-    },
-    {
-      "as_of": "2026-07-29",
-      "kind": "first_value",
       "occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-2b0fcb2a4c146494",
       "slot_id": "slot-event-fed-rate-july-2026-9d9eaaf5a7f9f800"
     },
@@ -1153,6 +1114,12 @@
     },
     {
       "as_of": "2026-08-04",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7",
+      "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431"
+    },
+    {
+      "as_of": "2026-08-04",
       "kind": "updated",
       "occurrence_id": "occurrence-24b1252518dc05b72a34a86e2fd3f2aa6b61ec8840a19e4457b9453474bfae49-5b967ef40c3cc3cc",
       "slot_id": "slot-event-fed-rate-july-2026-e15fb4914b81b27f"
@@ -1165,8 +1132,7 @@
     },
     {
       "as_of": "2026-08-05",
-      "kind": "first_value",
-      "occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
+      "kind": "disputed",
       "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431"
     }
   ]

@@ -1,5 +1,29 @@
 {
   "current_state": {
+    "slot-618fc50c-e1f1-4619-9651-05e7117e580d": {
+      "as_of": "2026-08-07",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Employment Situation News Release - 2026 M07 Results",
+      "disputed": false,
+      "evidence_id": "pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "figure": {
+        "period": "2026-05..2026-06",
+        "unit": "jobs",
+        "value": -103000
+      },
+      "heads": [
+        "occurrence-td-2ed160-jobs-july-revisions-103000"
+      ],
+      "occurrence_id": "occurrence-td-2ed160-jobs-july-revisions-103000",
+      "primary": true,
+      "quote_span": "The change in total nonfarm payroll employment for May was revised down by 66,000, from +129,000 to +63,000, and the change for June was revised down by 37,000, from +57,000 to +20,000. With these revisions, employment in May and June combined is 103,000 lower than previously reported.",
+      "roots": 0,
+      "slot": "nonfarm_payroll_revision_may_june",
+      "span_check": "normalized",
+      "speaker": "U.S. Bureau of Labor Statistics",
+      "uncertain_pairs": 0,
+      "withdrawn": false
+    },
     "slot-event-jobs-july-2026-0241606e996a2bbd": {
       "as_of": "2026-08-07",
       "as_of_source": "publication_timestamp",
@@ -45,6 +69,30 @@
       "slot": "nonfarm_payroll_employment_change",
       "span_check": "byte_exact",
       "speaker": "outlet's own",
+      "uncertain_pairs": 0,
+      "withdrawn": false
+    },
+    "slot-ffba924b-060b-4161-814f-a4794e2a0601": {
+      "disputed": true,
+      "heads": [
+        "occurrence-td-2ed160-payems-level-2025-07",
+        "occurrence-td-2ed160-payems-level-2025-08",
+        "occurrence-td-2ed160-payems-level-2025-09",
+        "occurrence-td-2ed160-payems-level-2025-10",
+        "occurrence-td-2ed160-payems-level-2025-11",
+        "occurrence-td-2ed160-payems-level-2025-12",
+        "occurrence-td-2ed160-payems-level-2026-01",
+        "occurrence-td-2ed160-payems-level-2026-02",
+        "occurrence-td-2ed160-payems-level-2026-03",
+        "occurrence-td-2ed160-payems-level-2026-04",
+        "occurrence-td-2ed160-payems-level-2026-05",
+        "occurrence-td-2ed160-payems-level-2026-06",
+        "occurrence-td-2ed160-payems-level-2026-07"
+      ],
+      "occurrence_id": null,
+      "primary": true,
+      "roots": 0,
+      "slot": "total_nonfarm_payroll_employment",
       "uncertain_pairs": 0,
       "withdrawn": false
     }
@@ -185,7 +233,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-07",
           "quote_span": "2025-07-01,158542",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18152,
           "span_start": 18135,
@@ -201,7 +249,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-08",
           "quote_span": "2025-08-01,158472",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18170,
           "span_start": 18153,
@@ -217,7 +265,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-09",
           "quote_span": "2025-09-01,158548",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18188,
           "span_start": 18171,
@@ -233,7 +281,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-10",
           "quote_span": "2025-10-01,158408",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18206,
           "span_start": 18189,
@@ -249,7 +297,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-11",
           "quote_span": "2025-11-01,158449",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18224,
           "span_start": 18207,
@@ -265,7 +313,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2025-12",
           "quote_span": "2025-12-01,158432",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18242,
           "span_start": 18225,
@@ -281,7 +329,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-01",
           "quote_span": "2026-01-01,158592",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18260,
           "span_start": 18243,
@@ -297,7 +345,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-02",
           "quote_span": "2026-02-01,158436",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18278,
           "span_start": 18261,
@@ -313,7 +361,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-03",
           "quote_span": "2026-03-01,158650",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18296,
           "span_start": 18279,
@@ -329,7 +377,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-04",
           "quote_span": "2026-04-01,158798",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18314,
           "span_start": 18297,
@@ -345,7 +393,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-05",
           "quote_span": "2026-05-01,158861",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18332,
           "span_start": 18315,
@@ -361,7 +409,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-06",
           "quote_span": "2026-06-01,158881",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18350,
           "span_start": 18333,
@@ -377,7 +425,7 @@
           },
           "id": "occurrence-td-2ed160-payems-level-2026-07",
           "quote_span": "2026-07-01,158858",
-          "slot_id": null,
+          "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
           "span_check": "byte_exact",
           "span_end": 18368,
           "span_start": 18351,
@@ -434,7 +482,7 @@
           },
           "id": "occurrence-td-2ed160-jobs-july-revisions-103000",
           "quote_span": "The change in total nonfarm payroll employment for May was revised down by 66,000, from +129,000 to +63,000, and the change for June was revised down by 37,000, from +57,000 to +20,000. With these revisions, employment in May and June combined is 103,000 lower than previously reported.",
-          "slot_id": null,
+          "slot_id": "slot-618fc50c-e1f1-4619-9651-05e7117e580d",
           "span_check": "normalized",
           "span_end": 10775,
           "span_start": 10487,
@@ -444,28 +492,14 @@
       "root_id": "www.bls.gov",
       "source_family": "government_primary",
       "text_sha256": "7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737"
-    },
-    {
-      "accepted": true,
-      "id": "pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a",
-      "is_primary": true,
-      "occurrences": [],
-      "root_id": "www.federalreserve.gov",
-      "source_family": "government_primary",
-      "text_sha256": "643fe1866ecf4f23ad99888e53ee4ab74e083bd171351d645447149cc033825c"
-    },
-    {
-      "accepted": true,
-      "id": "pin-v2:a973c918a4a461be66035b71c40003ea43926e7489d0537dc7f8f91d2bba1aeb",
-      "is_primary": true,
-      "occurrences": [],
-      "root_id": "www.federalreserve.gov",
-      "source_family": "government_primary",
-      "text_sha256": "f1202a9301c41c3667889aba19067aa59c822509a9c5373ae07aa9225024a5e7"
     }
   ],
   "series_id": "jobs",
   "timeline": [
+    {
+      "kind": "first_primary",
+      "slot_id": "slot-618fc50c-e1f1-4619-9651-05e7117e580d"
+    },
     {
       "kind": "first_primary",
       "slot_id": "slot-event-jobs-july-2026-0241606e996a2bbd"
@@ -473,6 +507,27 @@
     {
       "kind": "first_primary",
       "slot_id": "slot-event-jobs-july-2026-72c2c5422d33f63c"
+    },
+    {
+      "kind": "first_primary",
+      "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601"
+    },
+    {
+      "as_of": "2025-07-01",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-td-2ed160-payems-level-2025-07",
+      "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601"
+    },
+    {
+      "as_of": "2026-07-01",
+      "kind": "disputed",
+      "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601"
+    },
+    {
+      "as_of": "2026-08-07",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-td-2ed160-jobs-july-revisions-103000",
+      "slot_id": "slot-618fc50c-e1f1-4619-9651-05e7117e580d"
     },
     {
       "as_of": "2026-08-07",
