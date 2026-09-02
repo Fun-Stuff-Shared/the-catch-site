@@ -4,6 +4,8 @@ import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
 import { event } from "../../../data/fomc20260729.mjs";
 import { ratePath } from "../../../data/fomc20260617.mjs";
+import RevisionTimeline from "../../../components/story/RevisionTimeline.astro";
+import state from "../../../../data/state/event-fed-rate-july-2026.json";
 import derived from "../../../../data/state/derived-figures.json";
 const hold = derived.find((row) => row.page === "/events/fed-rate/july-2026/" && row.figure_text === "230 days");
 const holdStart = hold.formula.match(/'(\d{4}-\d{2}-\d{2})'/)[1];
@@ -270,6 +272,7 @@ const endX = x("2026-07-29"), endY = y(prev);
           against the 64-month streak; whether the three dissents become a majority.
         </p>
       </section>
+      <RevisionTimeline timeline={state.revision_timeline} />
 
       <section id="markets">
         <p class="sec-kicker">Pricing</p>

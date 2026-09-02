@@ -13,6 +13,8 @@ import RailedParagraph from "../../../components/story/RailedParagraph.astro";
 import Receipt from "../../../components/story/Receipt.astro";
 import RecordsList from "../../../components/story/RecordsList.astro";
 import LiveCounter from "../../../components/story/LiveCounter.astro";
+import RevisionTimeline from "../../../components/story/RevisionTimeline.astro";
+import state from "../../../../data/state/event-fed-rate-june-2026.json";
 import "../../../styles/story.css";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
 import derived from "../../../../data/state/derived-figures.json";
@@ -248,6 +250,7 @@ const lastChecked = new Date().toISOString().slice(0, 10);
           63-month streak; whether the hike dots become hike votes.
         </RailedParagraph>
       </section>
+      <RevisionTimeline timeline={state.revision_timeline} />
 
       <section id="markets">
         <SectionKicker text="Pricing" />

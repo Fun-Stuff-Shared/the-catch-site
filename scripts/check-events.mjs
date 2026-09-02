@@ -252,7 +252,8 @@ else {
 }
 for (const file of htmlFiles(join(dist, "events"))) {
   const html = readFileSync(file, "utf8");
-  for (const [url, record] of outletByUrl) if (html.includes(`href="${url}`)) fail.push(`${file.slice(dist.length)}: outlet citation must link to /records/${record.id}/`);
+  const prose = html.replace(/<section[^>]*class="[^"]*revision-timeline[^"]*"[^>]*>[\s\S]*?<\/section>/g, "");
+  for (const [url, record] of outletByUrl) if (prose.includes(`href="${url}`)) fail.push(`${file.slice(dist.length)}: outlet citation must link to /records/${record.id}/`);
 }
 
 for (const record of outletRecordData.records) {
@@ -424,6 +425,42 @@ const fedIndexSource = readFileSync(join(eventsDir, "fed-rate", "index.astro"), 
 if (/(?:updated|last check(?:ed)?)[^\n<]{0,40}?(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/.test(fedIndexSource)) fail.push("/events/fed-rate/: literal date in a live sentence in source");
 else liveDateChecks.push("no_literal_live_date /events/fed-rate/");
 
+// ---- 7. Revision timeline: rendered counts and article links match the state view ----
+const revisionTimelineChecks = [];
+for (const [route, eventId] of foldChecks) {
+  const page = `/events/${route}/`;
+  const state = JSON.parse(readFileSync(join(ROOT, "data/state", `${eventId}.json`), "utf8"));
+  const timeline = state.revision_timeline ?? {};
+  const confirmations = timeline.confirmations ?? [];
+  const changes = timeline.changes ?? [];
+  const html = readFileSync(join(ROOT, "dist/events", route, "index.html"), "utf8");
+  const renderedConfirmations = [...html.matchAll(/\bdata-revision-confirmation\b/g)].length;
+  const renderedChanges = [...html.matchAll(/\bdata-revision-change\b/g)].length;
+  if (renderedConfirmations !== confirmations.length || renderedChanges !== changes.length) {
+    fail.push(`${page}: revision_timeline_counts_match expected confirmations=${confirmations.length}, changes=${changes.length}; rendered confirmations=${renderedConfirmations}, changes=${renderedChanges}`);
+  } else {
+    revisionTimelineChecks.push(`revision_timeline_counts_match ${page} confirmations=${confirmations.length} changes=${changes.length}`);
+  }
+  const section = html.match(/<section[^>]*class="[^"]*revision-timeline[^"]*"[^>]*>([\s\S]*?)<\/section>/)?.[0] ?? "";
+  if ((confirmations.length || changes.length) && !section) fail.push(`${page}: revision timeline has rows in state but no rendered section`);
+  if (!(confirmations.length || changes.length) && section) fail.push(`${page}: revision timeline renders despite an empty state view`);
+  const expectedUrls = new Set([
+    ...confirmations.flatMap((row) => (row.reports ?? []).map((report) => report.url)),
+    ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url]),
+  ]);
+  const actualUrls = [...section.matchAll(/\bhref="([^"]+)"/g)].map((match) => match[1]);
+  for (const url of actualUrls) {
+    if (!expectedUrls.has(url)) fail.push(`${page}: revision_timeline_links_match_view rendered href is absent from state: ${url}`);
+    try {
+      if (new URL(url).pathname === "/") fail.push(`${page}: revision_timeline_links_match_view bare-host href is forbidden: ${url}`);
+    } catch { fail.push(`${page}: revision_timeline_links_match_view invalid href: ${url}`); }
+  }
+  for (const url of expectedUrls) if (!actualUrls.includes(url)) fail.push(`${page}: revision_timeline_links_match_view state href is absent from page: ${url}`);
+  if (!fail.some((entry) => entry.startsWith(`${page}: revision_timeline_links_match_view`))) {
+    revisionTimelineChecks.push(`revision_timeline_links_match_view ${page} links=${actualUrls.length}`);
+  }
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);
@@ -431,4 +468,5 @@ if (fail.length) {
 }
 for (const passed of verifiedStrips) console.log(`strip verified: ${passed}`);
 for (const passed of liveDateChecks) console.log(`live date check: ${passed}`);
+for (const passed of revisionTimelineChecks) console.log(`revision timeline check: ${passed}`);
 console.log(`event gate passed: ${storyPages.length} story page(s) manifested, mechanical checks clean; ${verifiedStrips.length}/12 strips verified`);

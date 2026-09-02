@@ -4,10 +4,10 @@ import "../../../styles/story.css";
 import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
+import RevisionTimeline from "../../../components/story/RevisionTimeline.astro";
 import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
 import state from "../../../../data/state/event-jobs-july-2026.json";
 const lastChecked = new Date().toISOString().slice(0, 10);
-const revisions = state.revision_timeline ?? [];
 
 const W = 720, H = 200, PAD_L = 48, PAD_R = 8, PAD_T = 10, PAD_B = 10;
 const vMax = 220, vMin = -170;
@@ -57,7 +57,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         </ol>
       </aside>
       <p class="railed rail-note" data-layer="fact">This page's last check was {lastChecked}.</p>
-      {revisions.length > 0 && <section data-layer="fact"><h2>What changed since</h2><ul>{revisions.map((row) => <li>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul></section>}
+      <RevisionTimeline timeline={state.revision_timeline} />
 
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <p class="toc-label">In this story</p>
