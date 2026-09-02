@@ -4,6 +4,11 @@ import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
 import { event } from "../../../data/fomc20260729.mjs";
 import { ratePath } from "../../../data/fomc20260617.mjs";
+import derived from "../../../../data/state/derived-figures.json";
+const hold = derived.find((row) => row.page === "/events/fed-rate/july-2026/" && row.figure_text === "230 days");
+const holdStart = hold.formula.match(/'(\d{4}-\d{2}-\d{2})'/)[1];
+const lastChecked = new Date().toISOString().slice(0, 10);
+const seededDays = Math.floor((Date.parse(`${lastChecked}T00:00:00Z`) - Date.parse(`${holdStart}T00:00:00Z`)) / 86400000);
 
 // Step-chart geometry from the shared rate path, extended to this meeting.
 const W = 720, H = 200, PAD = 8;
@@ -222,12 +227,12 @@ const endX = x("2026-07-29"), endY = y(prev);
           <span class="chip chip-record">record</span>
         </p>
         <p class="railed rail-note" id="still-held-line">
-          The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
+          The range is unchanged through this page's last check ({lastChecked}). <span id="held-counter">That is {seededDays} days at 3.50–3.75 and counting. If the Fed moves, this page gets a dated correction.</span>
         </p>
         <script>
           (function () {
-            var start = Date.UTC(2025, 11, 11);
-            var checked = Date.UTC(2026, 7, 23);
+            var start = Date.parse("{holdStart}T00:00:00Z");
+            var checked = Date.parse("{lastChecked}T00:00:00Z");
             var now = Date.now();
             if (now > checked) {
               var days = Math.floor((now - start) / 86400000);

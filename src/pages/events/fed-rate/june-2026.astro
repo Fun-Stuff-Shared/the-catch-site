@@ -15,6 +15,10 @@ import RecordsList from "../../../components/story/RecordsList.astro";
 import LiveCounter from "../../../components/story/LiveCounter.astro";
 import "../../../styles/story.css";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
+import derived from "../../../../data/state/derived-figures.json";
+const hold = derived.find((row) => row.page === "/events/fed-rate/june-2026/" && row.figure_text === "188 days");
+const holdStart = hold.formula.match(/'(\d{4}-\d{2}-\d{2})'/)[1];
+const lastChecked = new Date().toISOString().slice(0, 10);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator">
@@ -231,11 +235,11 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
           the July decision has <a href="/events/fed-rate/july-2026/">its own story</a>. <Chip kind="record" />
         </RailedParagraph>
         <p class="railed rail-note" id="still-held-line">
-          The range is unchanged through this page's last check (August 23, 2026). <span id="held-counter"></span>
+          The range is unchanged through this page's last check ({lastChecked}). <span id="held-counter"></span>
         </p>
         <LiveCounter
-          startDate="2025-12-11"
-          checkedDate="2026-08-23"
+          startDate={holdStart}
+          checkedDate={lastChecked}
           counterTemplate={`That is {days} days at 3.50\u20133.75 and counting.`}
           correctionPromise="If the Fed moves, this page gets a dated correction."
         />
