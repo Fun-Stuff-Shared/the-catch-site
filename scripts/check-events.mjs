@@ -439,10 +439,12 @@ for (const [route, eventId] of foldChecks) {
   const html = readFileSync(join(ROOT, "dist/events", route, "index.html"), "utf8");
   const renderedConfirmations = [...html.matchAll(/\bdata-revision-confirmation\b/g)].length;
   const renderedChanges = [...html.matchAll(/\bdata-revision-change\b/g)].length;
-  if (renderedConfirmations !== confirmations.length || renderedChanges !== changes.length) {
-    fail.push(`${page}: revision_timeline_counts_match expected confirmations=${confirmations.length}, changes=${changes.length}; rendered confirmations=${renderedConfirmations}, changes=${renderedChanges}`);
+  const quoteCount = confirmations.reduce((count, row) => count + (row.quotes ?? []).length, 0);
+  const renderedQuotes = [...html.matchAll(/\bdata-revision-quote\b/g)].length;
+  if (renderedConfirmations !== confirmations.length || renderedChanges !== changes.length || renderedQuotes !== quoteCount) {
+    fail.push(`${page}: revision_timeline_counts_match expected confirmations=${confirmations.length}, changes=${changes.length}, quotes=${quoteCount}; rendered confirmations=${renderedConfirmations}, changes=${renderedChanges}, quotes=${renderedQuotes}`);
   } else {
-    revisionTimelineChecks.push(`revision_timeline_counts_match ${page} confirmations=${confirmations.length} changes=${changes.length}`);
+    revisionTimelineChecks.push(`revision_timeline_counts_match ${page} confirmations=${confirmations.length} changes=${changes.length} quotes=${quoteCount}`);
   }
   const section = html.match(/<section[^>]*class="[^"]*revision-timeline[^"]*"[^>]*>([\s\S]*?)<\/section>/)?.[0] ?? "";
   if ((confirmations.length || changes.length) && !section) fail.push(`${page}: revision timeline has rows in state but no rendered section`);
@@ -456,7 +458,8 @@ for (const [route, eventId] of foldChecks) {
   } else {
     revisionTimelineChecks.push(`revision_timeline_no_confirmations_matches_view ${page} confirmations=${confirmations.length}`);
   }
-  const changesCheckedAt = timeline.changes_checked_at ?? buildDate;
+  const rawChangesCheckedAt = timeline.changes_checked_at;
+  const changesCheckedAt = rawChangesCheckedAt ? rawChangesCheckedAt.slice(0, 10) : buildDate;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(changesCheckedAt)) fail.push(`${page}: revision_timeline_changes_checked_at must be YYYY-MM-DD`);
   const noChangesSentence = `No reported fact about this event has changed since this page was first published (checked ${changesCheckedAt}).`;
   const renderedNoChanges = [...section.matchAll(/\bdata-revision-no-changes\b/g)].length;
@@ -469,6 +472,7 @@ for (const [route, eventId] of foldChecks) {
   }
   const expectedUrls = new Set([
     ...confirmations.flatMap((row) => (row.reports ?? []).map((report) => report.url)),
+    ...confirmations.flatMap((row) => (row.quotes ?? []).flatMap((quote) => (quote.reports ?? []).map((report) => report.url))),
     ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url]),
   ]);
   const actualUrls = [...section.matchAll(/\bhref="([^"]+)"/g)].map((match) => match[1]);
