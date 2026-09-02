@@ -1,8 +1,14 @@
-import { cpSync, mkdirSync, readdirSync, statSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 const root = new URL("..", import.meta.url).pathname;
 const source = "/Volumes/4/CF/catch-state/views";
 const ids = ["event-fed-rate-june-2026", "event-fed-rate-july-2026", "event-jobs-july-2026"];
+if (!existsSync(source)) {
+  for (const id of ids) statSync(`${root}/data/state/${id}.json`);
+  statSync(`${root}/data/state/derived-figures.json`);
+  console.log(`state refresh: ${source} is not mounted on this host; building from the committed data/state copies`);
+  process.exit(0);
+}
 mkdirSync(`${root}/data/state`, { recursive: true });
 const copyNewer = (from, to) => {
   if (!statSync(from).isFile()) throw new Error(`state source missing: ${from}`);
