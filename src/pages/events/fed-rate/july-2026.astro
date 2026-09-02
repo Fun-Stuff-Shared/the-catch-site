@@ -4,8 +4,6 @@ import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
 import { event } from "../../../data/fomc20260729.mjs";
 import { ratePath } from "../../../data/fomc20260617.mjs";
-import FoldState from "../../../components/story/FoldState.astro";
-import foldState from "../../../../data/state/event-fed-rate-july-2026.json";
 
 // Step-chart geometry from the shared rate path, extended to this meeting.
 const W = 720, H = 200, PAD = 8;
@@ -32,7 +30,14 @@ const endX = x("2026-07-29"), endY = y(prev);
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
-      <FoldState state={foldState} />
+      <div class="kpi-strip">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value" id={k.live ? "kpi-days" : undefined}>{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label" id={k.live ? "kpi-days-label" : undefined}>{k.label}</span>
+          </div>
+        ))}
+      </div>
 
       <aside class="three-things">
         <p class="tt-label">Three things to know</p>

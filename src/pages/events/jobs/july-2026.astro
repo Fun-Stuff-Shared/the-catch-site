@@ -4,9 +4,7 @@ import "../../../styles/story.css";
 import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
-import FoldState from "../../../components/story/FoldState.astro";
 import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
-import foldState from "../../../../data/state/event-jobs-july-2026.json";
 
 const W = 720, H = 200, PAD_L = 48, PAD_R = 8, PAD_T = 10, PAD_B = 10;
 const vMax = 220, vMin = -170;
@@ -38,7 +36,14 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
 
-      <div data-layer="fact"><FoldState state={foldState} /></div>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
 
       <aside class="three-things" data-layer="fact">
         <p class="tt-label">Three things to know</p>

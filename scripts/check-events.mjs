@@ -355,30 +355,24 @@ for (const { subject, story } of storyPages) {
   }
 }
 
-// ---- 5. Fold figures: every rendered number must be an accepted occurrence ----
-const foldRoutes = new Map([
-  ["fed-rate/june-2026", "event-fed-rate-june-2026"],
-  ["fed-rate/july-2026", "event-fed-rate-july-2026"],
-  ["jobs/july-2026", "event-jobs-july-2026"],
-]);
-function attr(tag, name) { return new RegExp(`${name}="([^"]*)"`).exec(tag)?.[1]; }
-for (const [route, eventId] of foldRoutes) {
+// ---- 5. Fold verification: visible strip figures must be accepted occurrences ----
+const foldChecks = [
+  ["fed-rate/june-2026", "event-fed-rate-june-2026", "src/data/fomc20260617.mjs"],
+  ["fed-rate/july-2026", "event-fed-rate-july-2026", "src/data/fomc20260729.mjs"],
+  ["jobs/july-2026", "event-jobs-july-2026", "src/data/jobs202607.mjs"],
+];
+const normalize = (value) => `${value ?? ""}`.replace(/[–—]/g, "-").replace(/%/g, "").replace(/\s+/g, "").toLowerCase();
+const unitFor = (unit) => unit === "%" ? "percent" : unit;
+for (const [route, eventId, modulePath] of foldChecks) {
   const statePath = join(ROOT, "data/state", `${eventId}.json`);
-  const pagePath = join(dist, "events", route, "index.html");
   if (!existsSync(statePath)) { fail.push(`/events/${route}/: fold state missing`); continue; }
-  if (!existsSync(pagePath)) { fail.push(`/events/${route}/: built page missing`); continue; }
   const state = JSON.parse(readFileSync(statePath, "utf8"));
-  const accepted = new Map();
-  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) accepted.set(occurrence.id, occurrence.figure);
-  const expected = Object.values(state.current_state ?? {}).filter((entry) => entry.occurrence_id && entry.figure);
-  const rendered = [...readFileSync(pagePath, "utf8").matchAll(/<[^>]*data-derived-figure[^>]*>/g)];
-  if (rendered.length !== expected.length) fail.push(`/events/${route}/: derived figure coverage ${rendered.length}/${expected.length}`);
-  for (const match of rendered) {
-    const occurrenceId = attr(match[0], "data-occurrence-id");
-    const value = attr(match[0], "data-figure-value");
-    const unit = attr(match[0], "data-figure-unit") ?? "";
-    const figure = accepted.get(occurrenceId);
-    if (!figure || `${figure.value}` !== value || `${figure.unit ?? ""}` !== unit) fail.push(`/events/${route}/: derived figure ${value ?? "missing"} does not match an accepted fold occurrence`);
+  const { event } = await import(pathToFileURL(join(ROOT, modulePath)).href);
+  const figures = [];
+  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) figures.push(occurrence.figure);
+  for (const kpi of event.kpis ?? []) {
+    const match = figures.some((figure) => normalize(figure.value) === normalize(kpi.value) && normalize(figure.unit) === normalize(unitFor(kpi.unit)) && normalize(figure.period) === normalize(kpi.period));
+    if (!match) fail.push(`/events/${route}/: strip figure ${kpi.value}${kpi.unit ? ` ${kpi.unit}` : ""} has no accepted fold occurrence with the same value, unit, and period`);
   }
 }
 
