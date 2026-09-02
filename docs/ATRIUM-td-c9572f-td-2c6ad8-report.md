@@ -1,0 +1,11 @@
+# ATRIUM reader-surface report
+
+- Reader-vocabulary check: `scripts/check-events.mjs` scans built reader pages for pipeline vocabulary and fails the build. The dated reader exclusion list is audited by the same gate: an expired exclusion is a build failure.
+- News: `/news/` is removed from primary navigation, labeled as an internal source export, and marked `noindex` on both the index and article pages. It is excluded from the reader gate as a non-reader surface because its current source rows have no event associations and only some have dates. Finding: event links cannot be truthfully rendered until the source data supplies those associations.
+- Homepage: the former News card is replaced with a Figures card. The built homepage has no `/news/` links and explains the say-vs-did record in plain language.
+- Footer: the unconditional signed-and-reviewed statement was removed; staged work is explicitly marked under review.
+- Events: event pages introduce their linked source records directly above the record links.
+- Figures: `/figures/` defines the say-vs-did track and links to a clearly STAGED Marco Rubio entry. The entry ports the full supplied W7 reader body at build time from the authorized read-only source. Its manifest records `staged_zain_review` and `not_published: true`.
+- Temporary reader exclusion: `/events/jobs/july-2026/` is excluded through 2026-08-27 for td-adacfb's rework-or-kill deadline. The page was not edited; the gate fails automatically after that date.
+- Render evidence: detached-HEAD before screenshots are `page-2026-08-25T04-57-56-587Z.png` (news), `page-2026-08-25T04-58-00-260Z.png` (event records), and `page-2026-08-25T04-58-03-825Z.png` (Figures absent, HTTP 404). After screenshots are `page-2026-08-25T04-57-15-707Z.png` (full staged W7 port), plus the earlier Figures, News, and event captures. These ignored local Playwright artifacts are in `.playwright-cli/`. The only browser-console error on served pages was the missing favicon.
+- Revert-fail evidence: after a temporary `dist/figures/atrium-vocab-probe.html` containing `eligibility` was added, `node scripts/check-events.mjs` failed with `internal vocabulary "eligibility"`; the probe was removed before the green build.
