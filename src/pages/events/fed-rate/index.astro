@@ -2,6 +2,7 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ratePath } from "../../../data/fomc20260617.mjs";
 import { subject } from "../../../data/subjects/fed-rate.mjs";
+const latestDecision = subject.current.map((entry) => entry.as_of).sort().at(-1);
 
 const W = 720, H = 200, PAD = 8;
 const t0 = Date.parse(ratePath.start.date), t1 = Date.parse("2026-08-23");
@@ -23,7 +24,7 @@ const endX = x("2026-08-23"), endY = y(prev);
   <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate</span></div>
   <div class="content">
     <main class="subject">
-      <p class="subject-kicker">Standing record &middot; Federal Reserve &middot; updated August 23, 2026</p>
+      <p class="subject-kicker">Standing record &middot; Federal Reserve &middot; updated {latestDecision}</p>
       <h1>The federal funds rate</h1>
       <p class="subject-dek">The Fed's benchmark rate, tracked decision by decision: what was decided, what
       the record shows, and what the coverage got right and wrong. This page is always current; each

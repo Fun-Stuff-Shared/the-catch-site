@@ -420,6 +420,9 @@ for (const { subject, story } of storyPages) {
   if (Number(shown[1]) !== expected) fail.push(`${page}: counter seed ${shown[1]} days, derived row gives ${expected} (start ${start}, build ${buildDate})`);
   else liveDateChecks.push(`counter_seed_matches_derived_row ${page} ${expected} days from ${start}`);
 }
+const fedIndexSource = readFileSync(join(eventsDir, "fed-rate", "index.astro"), "utf8");
+if (/(?:updated|last check(?:ed)?)[^\n<]{0,40}?(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/.test(fedIndexSource)) fail.push("/events/fed-rate/: literal date in a live sentence in source");
+else liveDateChecks.push("no_literal_live_date /events/fed-rate/");
 
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
