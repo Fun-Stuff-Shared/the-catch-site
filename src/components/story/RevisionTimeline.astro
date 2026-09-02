@@ -1,10 +1,15 @@
 ---
-const { timeline } = Astro.props;
+const { timeline, checkedAt } = Astro.props;
 const confirmations = timeline?.confirmations ?? [];
 const changes = timeline?.changes ?? [];
 ---
-{(confirmations.length > 0 || changes.length > 0) && <section class="revision-timeline" data-layer="fact" data-revision-confirmations={confirmations.length} data-revision-changes={changes.length}>
-  {confirmations.length > 0 && <><h2>Who reported this</h2>
-  <ul>{confirmations.map((row) => <li data-revision-confirmation>{row.sentence} {row.reports.map((report, index) => <>{index ? ", " : ""}<a href={report.url}>{report.publisher}</a></>)}</li>)}</ul></>}
-  {changes.length > 0 && <><h2>What changed since</h2><ul>{changes.map((row) => <li data-revision-change>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul></>}
-</section>}
+<section class="revision-timeline" data-layer="fact" data-revision-confirmations={confirmations.length} data-revision-changes={changes.length}>
+  <h2>Who reported this</h2>
+  {confirmations.length > 0
+    ? <ul>{confirmations.map((row) => <li data-revision-confirmation>{row.sentence} {row.reports.map((report, index) => <>{index ? ", " : ""}<a href={report.url}>{report.publisher}</a></>)}</li>)}</ul>
+    : <p data-revision-no-confirmations>This page does not yet list who reported each figure.</p>}
+  <h2>What changed since</h2>
+  {changes.length > 0
+    ? <ul>{changes.map((row) => <li data-revision-change>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul>
+    : <p data-revision-no-changes>No reported fact about this event has changed since this page was first published (checked {checkedAt}).</p>}
+</section>

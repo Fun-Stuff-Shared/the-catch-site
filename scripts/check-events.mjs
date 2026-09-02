@@ -427,6 +427,9 @@ else liveDateChecks.push("no_literal_live_date /events/fed-rate/");
 
 // ---- 7. Revision timeline: rendered counts and article links match the state view ----
 const revisionTimelineChecks = [];
+const revisionTimelineSource = readFileSync(join(ROOT, "src/components/story/RevisionTimeline.astro"), "utf8");
+if (/checked\s+(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/.test(revisionTimelineSource)) fail.push("revision timeline: literal date in no-changes sentence source");
+else revisionTimelineChecks.push("revision_timeline_no_literal_live_date");
 for (const [route, eventId] of foldChecks) {
   const page = `/events/${route}/`;
   const state = JSON.parse(readFileSync(join(ROOT, "data/state", `${eventId}.json`), "utf8"));
@@ -443,7 +446,25 @@ for (const [route, eventId] of foldChecks) {
   }
   const section = html.match(/<section[^>]*class="[^"]*revision-timeline[^"]*"[^>]*>([\s\S]*?)<\/section>/)?.[0] ?? "";
   if ((confirmations.length || changes.length) && !section) fail.push(`${page}: revision timeline has rows in state but no rendered section`);
-  if (!(confirmations.length || changes.length) && section) fail.push(`${page}: revision timeline renders despite an empty state view`);
+  if (!section) fail.push(`${page}: revision timeline section is missing`);
+  const noConfirmationSentence = "This page does not yet list who reported each figure.";
+  const renderedNoConfirmations = [...section.matchAll(/\bdata-revision-no-confirmations\b/g)].length;
+  if (renderedNoConfirmations !== (confirmations.length === 0 ? 1 : 0)) {
+    fail.push(`${page}: revision_timeline_no_confirmations_matches_view expected ${confirmations.length === 0 ? 1 : 0}, rendered ${renderedNoConfirmations}`);
+  } else if (confirmations.length === 0 && !section.includes(noConfirmationSentence)) {
+    fail.push(`${page}: revision_timeline_no_confirmations_matches_view fallback sentence is missing`);
+  } else {
+    revisionTimelineChecks.push(`revision_timeline_no_confirmations_matches_view ${page} confirmations=${confirmations.length}`);
+  }
+  const noChangesSentence = `No reported fact about this event has changed since this page was first published (checked ${buildDate}).`;
+  const renderedNoChanges = [...section.matchAll(/\bdata-revision-no-changes\b/g)].length;
+  if (renderedNoChanges !== (changes.length === 0 ? 1 : 0)) {
+    fail.push(`${page}: revision_timeline_no_changes_matches_view expected ${changes.length === 0 ? 1 : 0}, rendered ${renderedNoChanges}`);
+  } else if (changes.length === 0 && !section.includes(noChangesSentence)) {
+    fail.push(`${page}: revision_timeline_no_changes_matches_view fallback sentence is missing or uses a date other than ${buildDate}`);
+  } else {
+    revisionTimelineChecks.push(`revision_timeline_no_changes_matches_view ${page} changes=${changes.length}`);
+  }
   const expectedUrls = new Set([
     ...confirmations.flatMap((row) => (row.reports ?? []).map((report) => report.url)),
     ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url]),

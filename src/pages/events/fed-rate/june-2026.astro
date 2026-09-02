@@ -250,7 +250,7 @@ const lastChecked = new Date().toISOString().slice(0, 10);
           63-month streak; whether the hike dots become hike votes.
         </RailedParagraph>
       </section>
-      <RevisionTimeline timeline={state.revision_timeline} />
+      <RevisionTimeline timeline={state.revision_timeline} checkedAt={lastChecked} />
 
       <section id="markets">
         <SectionKicker text="Pricing" />

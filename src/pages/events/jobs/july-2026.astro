@@ -57,7 +57,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         </ol>
       </aside>
       <p class="railed rail-note" data-layer="fact">This page's last check was {lastChecked}.</p>
-      <RevisionTimeline timeline={state.revision_timeline} />
+      <RevisionTimeline timeline={state.revision_timeline} checkedAt={lastChecked} />
 
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <p class="toc-label">In this story</p>
