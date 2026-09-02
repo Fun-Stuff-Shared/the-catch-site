@@ -1,0 +1,51 @@
+[
+  {
+    "page": "/events/fed-rate/june-2026/",
+    "figure_text": "188 days",
+    "formula": "days_between('2025-12-11', '2026-06-17')",
+    "occurrence_ids": ["occurrence-td-2ed160-fed-hold-start"],
+    "recomputed_value": "188 days"
+  },
+  {
+    "page": "/events/fed-rate/june-2026/",
+    "figure_text": "12–0",
+    "formula": "parse_vote('12 – 0').for - parse_vote('12 – 0').against",
+    "occurrence_ids": ["occurrence-td-2ed160-fed-june-vote-12-0"],
+    "recomputed_value": "12–0"
+  },
+  {
+    "page": "/events/fed-rate/june-2026/",
+    "figure_text": "48th pctile",
+    "formula": "percentile_rank(days_between('2025-12-11', '2026-06-17'), DFEDTARU_hold_durations_1982_2026)",
+    "occurrence_ids": ["occurrence-td-2ed160-fed-hold-start"],
+    "recomputed_value": "48th pctile"
+  },
+  {
+    "page": "/events/fed-rate/july-2026/",
+    "figure_text": "230 days",
+    "formula": "days_between('2025-12-11', '2026-07-29')",
+    "occurrence_ids": ["occurrence-td-2ed160-fed-hold-start-july"],
+    "recomputed_value": "230 days"
+  },
+  {
+    "page": "/events/fed-rate/july-2026/",
+    "figure_text": "9–3",
+    "formula": "parse_vote('9 – 3').for - parse_vote('9 – 3').against",
+    "occurrence_ids": ["occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-9e221b9e12f678f1"],
+    "recomputed_value": "9–3"
+  },
+  {
+    "page": "/events/fed-rate/july-2026/",
+    "figure_text": "3 dissents",
+    "formula": "parse_vote('9 – 3').against",
+    "occurrence_ids": ["occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-9e221b9e12f678f1"],
+    "recomputed_value": "3 dissents"
+  },
+  {
+    "page": "/events/jobs/july-2026/",
+    "figure_text": "5 of 12",
+    "formula": "count_negative([{\"period\":\"2025-08\",\"value\":-70},{\"period\":\"2025-09\",\"value\":76},{\"period\":\"2025-10\",\"value\":-140},{\"period\":\"2025-11\",\"value\":41},{\"period\":\"2025-12\",\"value\":-17},{\"period\":\"2026-01\",\"value\":160},{\"period\":\"2026-02\",\"value\":-156},{\"period\":\"2026-03\",\"value\":214},{\"period\":\"2026-04\",\"value\":148},{\"period\":\"2026-05\",\"value\":63},{\"period\":\"2026-06\",\"value\":20},{\"period\":\"2026-07\",\"value\":-23}]) = 5 of 12",
+    "occurrence_ids": ["occurrence-td-2ed160-payems-level-2025-07", "occurrence-td-2ed160-payems-level-2025-08", "occurrence-td-2ed160-payems-level-2025-09", "occurrence-td-2ed160-payems-level-2025-10", "occurrence-td-2ed160-payems-level-2025-11", "occurrence-td-2ed160-payems-level-2025-12", "occurrence-td-2ed160-payems-level-2026-01", "occurrence-td-2ed160-payems-level-2026-02", "occurrence-td-2ed160-payems-level-2026-03", "occurrence-td-2ed160-payems-level-2026-04", "occurrence-td-2ed160-payems-level-2026-05", "occurrence-td-2ed160-payems-level-2026-06", "occurrence-td-2ed160-payems-level-2026-07"],
+    "recomputed_value": "5 of 12"
+  }
+]

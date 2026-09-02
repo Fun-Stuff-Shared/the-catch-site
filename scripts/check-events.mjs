@@ -12,6 +12,7 @@ import { pathToFileURL } from "node:url";
 import { normalizeFigure, rowsFromExport, verifyDerivedFigure } from "./derived-figures.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
+execFileSync(process.execPath, [join(ROOT, "scripts/pull-state.mjs")], { stdio: "inherit" });
 const fail = [];
 
 // ---- 1. Manifests for story pages -------------------------------------------------
@@ -377,19 +378,24 @@ for (const [route, eventId, modulePath] of foldChecks) {
   const state = JSON.parse(readFileSync(statePath, "utf8"));
   const { event } = await import(pathToFileURL(join(ROOT, modulePath)).href);
   const acceptedOccurrences = new Map();
-  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) acceptedOccurrences.set(occurrence.id, occurrence);
+  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) acceptedOccurrences.set(occurrence.id, occurrence);
   for (const kpi of event.kpis ?? []) {
-    const matchingOccurrence = [...acceptedOccurrences.values()].find((occurrence) => normalizeFigure(occurrence.figure.value) === normalizeFigure(kpi.value) && normalizeFigure(occurrence.figure.unit) === normalizeFigure(unitFor(kpi.unit)) && normalizeFigure(occurrence.figure.period) === normalizeFigure(kpi.period));
+    const expectedUnit = kpi.figure_unit ?? unitFor(kpi.unit);
+    const matchingOccurrence = [...acceptedOccurrences.values()].find((occurrence) => occurrence.figure && normalizeFigure(occurrence.figure.value) === normalizeFigure(kpi.value) && normalizeFigure(occurrence.figure.unit) === normalizeFigure(expectedUnit) && normalizeFigure(occurrence.figure.period) === normalizeFigure(kpi.period));
     const page = `/events/${route}/`;
     const label = `${kpi.value}${kpi.unit ? ` ${kpi.unit}` : ""}`;
     if (matchingOccurrence) {
       verifiedStrips.push(`${page} ${label}: accepted occurrence ${matchingOccurrence.id}`);
       continue;
     }
-    if (derivedLoadError) { fail.push(`${page}: strip figure ${label} cannot load derived-figures export: ${derivedLoadError}`); continue; }
+    const candidates = [...acceptedOccurrences.values()];
+    const withFigures = candidates.filter((occurrence) => occurrence.figure && !Array.isArray(occurrence.figure)).slice(0, 6);
+    const withoutFigures = candidates.length - withFigures.length;
+    const nearest = [...withFigures.map((occurrence) => `${occurrence.id}: figure: ${occurrence.figure.value}/${occurrence.figure.unit ?? ""}/${occurrence.figure.period ?? ""}`), ...(withoutFigures ? [`${withoutFigures} accepted occurrence(s): figure: none`] : [])].join("; ");
+    if (derivedLoadError) { fail.push(`${page}: strip figure ${label} cannot load derived-figures export: ${derivedLoadError}; accepted occurrences: ${nearest || "none"}`); continue; }
     const row = derivedRows.find((candidate) => candidate.page === page && normalizeFigure(candidate.figure_text) === normalizeFigure(label));
     const derived = verifyDerivedFigure({ page, kpi, row, acceptedOccurrences });
-    if (!derived.ok) { fail.push(derived.error); continue; }
+    if (!derived.ok) { fail.push(`${derived.error}; accepted occurrences: ${nearest || "none"}`); continue; }
     verifiedStrips.push(`${page} ${label}: ${derived.path} ${derived.occurrenceIds.join(",")}`);
   }
 }

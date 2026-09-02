@@ -11,7 +11,7 @@ export const event = {
   date: "2026-07-29",
   updated: "2026-08-23",
   kpis: [
-    { value: "3.50–3.75", unit: "%", label: "target range, unchanged" },
+    { value: "3.50–3.75", unit: "%", period: "2026-07-29", label: "target range, unchanged" },
     { value: "230", unit: "days", label: "held at this level (at the meeting)", live: true },
     { value: "9–3", unit: "", label: "the vote" },
     { value: "3", unit: "dissents", label: "each for a quarter-point hike" },

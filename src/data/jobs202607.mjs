@@ -12,9 +12,9 @@ export const event = {
   date: "2026-08-07",
   updated: "2026-08-31",
   kpis: [
-    { value: "-23,000", unit: "", label: "payrolls in July" },
-    { value: "4.1", unit: "%", label: "unemployment rate" },
-    { value: "-103,000", unit: "", label: "May + June, revised away" },
+    { value: "-23,000", unit: "", figure_unit: "jobs", period: "2026-07", label: "payrolls in July" },
+    { value: "4.1", unit: "%", period: "2026-07", label: "unemployment rate" },
+    { value: "-103,000", unit: "", figure_unit: "jobs", period: "2026-05..2026-06", label: "May + June, revised away" },
     { value: "5", unit: "of 12", label: "months negative in the past year" },
   ],
 };
