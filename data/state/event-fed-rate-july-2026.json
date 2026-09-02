@@ -2273,7 +2273,7 @@
       "to_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-598bc9bd3322c6eb"
     }
   ],
-  "evaluated_at": "2026-09-02T16:23:31.082125Z",
+  "evaluated_at": "2026-09-02T16:27:01.073527Z",
   "event": {
     "accepted": true,
     "envelope_seq": 161136,
@@ -6725,7 +6725,7 @@
       "text_sha256": "74fe6d2642bb8f830a3a07137cae99e9aff7a6c8c876f491d71787e6583d4f85"
     }
   ],
-  "produced_by_commit": "42deaec416",
+  "produced_by_commit": "e43148e1ac",
   "revision_timeline": {
     "changes": [],
     "confirmations": [
@@ -6760,6 +6760,20 @@
             "dates": [
               "2026-07-29"
             ],
+            "publisher": "CBS News",
+            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/"
+          },
+          {
+            "dates": [
+              "2026-08-05"
+            ],
+            "publisher": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
+          },
+          {
+            "dates": [
+              "2026-07-29"
+            ],
             "publisher": "Federal Reserve",
             "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
           },
@@ -6771,14 +6785,16 @@
             "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536"
           }
         ],
-        "sentence": "2025-12-11,3.75: reported by Federal Reserve on July 29 and NBC News on July 29.",
+        "sentence": "2025-12-11,3.75: reported by CBS News on July 29 and CNBC on August 5 and Federal Reserve on July 29 and NBC News on July 29.",
         "slot_ids": [
-          "slot-event-fed-rate-july-2026-93ff7929970c310a"
+          "slot-event-fed-rate-july-2026-93ff7929970c310a",
+          "slot-event-fed-rate-july-2026-ab9c73247a6da0b9",
+          "slot-event-fed-rate-july-2026-b9bc744311946df5"
         ],
         "value": "2025-12-11,3.75"
       },
       {
-        "label": "The number of dissenters / The number of dissenting votes / The target rate range",
+        "label": "The target rate range",
         "reports": [
           {
             "dates": [
@@ -6818,61 +6834,6 @@
         "value": "3 policymakers"
       },
       {
-        "label": "The federal funds rate target range",
-        "reports": [
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "CBS News",
-            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/"
-          },
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
-          }
-        ],
-        "sentence": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent: reported by CBS News on July 29 and Federal Reserve on July 29.",
-        "slot_ids": [
-          "slot-event-fed-rate-july-2026-b9bc744311946df5"
-        ],
-        "value": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent"
-      },
-      {
-        "label": "The voting result",
-        "reports": [
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
-          },
-          {
-            "dates": [
-              "2026-08-04"
-            ],
-            "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html"
-          },
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
-          }
-        ],
-        "sentence": "The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent: reported by CNBC on July 29 and CNBC on August 4 and Federal Reserve on July 29.",
-        "slot_ids": [
-          "slot-event-fed-rate-july-2026-272a4c4989c709bc"
-        ],
-        "value": "The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent"
-      },
-      {
         "label": "The decision",
         "reports": [
           {
@@ -6908,41 +6869,25 @@
           },
           {
             "dates": [
+              "2026-08-04"
+            ],
+            "publisher": "CNBC",
+            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html"
+          },
+          {
+            "dates": [
               "2026-07-29"
             ],
             "publisher": "Federal Reserve",
             "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
           }
         ],
-        "sentence": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.: reported by CNBC on July 29 and Federal Reserve on July 29.",
+        "sentence": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.: reported by CNBC on July 29 and CNBC on August 4 and Federal Reserve on July 29.",
         "slot_ids": [
+          "slot-event-fed-rate-july-2026-272a4c4989c709bc",
           "slot-event-fed-rate-july-2026-367256dcba557082"
         ],
         "value": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%."
-      },
-      {
-        "label": "The interest rate range",
-        "reports": [
-          {
-            "dates": [
-              "2026-08-05"
-            ],
-            "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
-          },
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "NBC News",
-            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536"
-          }
-        ],
-        "sentence": "This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.: reported by CNBC on August 5 and NBC News on July 29.",
-        "slot_ids": [
-          "slot-event-fed-rate-july-2026-ab9c73247a6da0b9"
-        ],
-        "value": "This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%."
       },
       {
         "label": "The dissenting officials",
