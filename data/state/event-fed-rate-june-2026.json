@@ -1659,7 +1659,7 @@
       "to_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-8c7d8e342ddfd6ae"
     }
   ],
-  "evaluated_at": "2026-09-02T16:27:00.125942Z",
+  "evaluated_at": "2026-09-02T17:30:27.288882Z",
   "event": {
     "accepted": true,
     "envelope_seq": 161138,
@@ -3276,12 +3276,16 @@
       "asserted_at": "2026-07-08T18:00:53Z",
       "asserted_at_source": "published_time_from_pinned_html",
       "content_path": "/Volumes/4/GitHub/the-catch-site/data/sources/coverage/cnbc-minutes.html",
-      "correction_reason": "canonical_url_from_pinned_html",
-      "envelope_seq": 162821,
+      "correction_reason": "published_time_from_pinned_html",
+      "correction_reasons": [
+        "canonical_url_from_pinned_html",
+        "published_time_from_pinned_html"
+      ],
+      "envelope_seq": 162823,
       "id": "pin-v2:9eef6c7338913317391f89131143d4ea1d7a695fe3dd12d9c90cd044b80c94eb",
       "is_primary": false,
       "is_primary_basis": "pin_registration",
-      "log_seq": 162822,
+      "log_seq": 162824,
       "occurrences": [
         {
           "accepted": false,
@@ -7171,105 +7175,107 @@
       "text_sha256": "643fe1866ecf4f23ad99888e53ee4ab74e083bd171351d645447149cc033825c"
     }
   ],
-  "produced_by_commit": "e43148e1ac",
+  "produced_by_commit": "5a760ce157",
   "revision_timeline": {
     "changes": [],
     "confirmations": [
       {
-        "label": "The dot plot hike projection",
+        "label": "Nine of 18 voting members projected a rate increase before the end of 2026",
         "reports": [
           {
             "dates": [
               "2026-07-08"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html"
+            "url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "Fox Business",
-            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026"
+            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+            "verb": "reported"
           }
         ],
-        "sentence": "9 members 2026: reported by CNBC on July 8 and Fox Business on June 17.",
+        "sentence": "Nine of 18 voting members projected a rate increase before the end of 2026",
         "slot_ids": [
           "slot-event-fed-rate-june-2026-1cb6fcbe174848be"
         ],
         "value": "9 members 2026"
       },
       {
-        "label": "The committee rate outlook distribution",
+        "label": "“Meeting participants were split on the path for rates this year, with eight expecting no change, one seeing a cut and nine anticipating at least one hike.”",
         "reports": [
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html"
+            "url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-08"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html"
+            "url": "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "TradingKey",
-            "url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey"
+            "url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+            "verb": "reported"
           }
         ],
-        "sentence": "Meeting participants were split on the path for rates this year, with eight expecting no change, one seeing a cut and nine anticipating at least one hike.: reported by CNBC on June 17 and CNBC on July 8 and TradingKey on June 17.",
+        "sentence": "“Meeting participants were split on the path for rates this year, with eight expecting no change, one seeing a cut and nine anticipating at least one hike.”",
         "slot_ids": [
           "slot-event-fed-rate-june-2026-508a3aa307c55875"
         ],
         "value": "Meeting participants were split on the path for rates this year, with eight expecting no change, one seeing a cut and nine anticipating at least one hike."
       },
       {
-        "label": "The federal funds rate",
+        "label": "“The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”",
         "reports": [
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html"
+            "url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm"
-          },
-          {
-            "dates": [
-              "2026-06-17"
-            ],
-            "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+            "verb": "said"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "Fox Business",
-            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026"
+            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "TradingKey",
-            "url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey"
+            "url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+            "verb": "reported"
           }
         ],
-        "sentence": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent: reported by CNBC on June 17 and Federal Reserve on June 17 and Federal Reserve on June 17 and Fox Business on June 17 and TradingKey on June 17.",
+        "sentence": "“The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”",
         "slot_ids": [
           "slot-event-fed-rate-june-2026-93ff7929970c310a",
           "slot-event-fed-rate-june-2026-c946915deb7dd00e"
@@ -7277,24 +7283,26 @@
         "value": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent"
       },
       {
-        "label": "The vote count",
+        "label": "“The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”",
         "reports": [
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+            "verb": "said"
           },
           {
             "dates": [
               "2026-06-17"
             ],
             "publisher": "Fox Business",
-            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026"
+            "url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+            "verb": "reported"
           }
         ],
-        "sentence": "The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:: reported by Federal Reserve on June 17 and Fox Business on June 17.",
+        "sentence": "“The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”",
         "slot_ids": [
           "slot-event-fed-rate-june-2026-367256dcba557082"
         ],

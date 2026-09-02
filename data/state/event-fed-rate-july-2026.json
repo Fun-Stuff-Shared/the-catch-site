@@ -2273,7 +2273,7 @@
       "to_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-598bc9bd3322c6eb"
     }
   ],
-  "evaluated_at": "2026-09-02T16:27:01.073527Z",
+  "evaluated_at": "2026-09-02T17:30:28.348554Z",
   "event": {
     "accepted": true,
     "envelope_seq": 161136,
@@ -6725,67 +6725,47 @@
       "text_sha256": "74fe6d2642bb8f830a3a07137cae99e9aff7a6c8c876f491d71787e6583d4f85"
     }
   ],
-  "produced_by_commit": "e43148e1ac",
+  "produced_by_commit": "5a760ce157",
   "revision_timeline": {
     "changes": [],
     "confirmations": [
       {
-        "label": "The proposed rate change",
-        "reports": [
-          {
-            "dates": [
-              "2026-07-29"
-            ],
-            "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
-          },
-          {
-            "dates": [
-              "2026-08-05"
-            ],
-            "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
-          }
-        ],
-        "sentence": "0.25 percentage point: reported by CNBC on July 29 and CNBC on August 5.",
-        "slot_ids": [
-          "slot-event-fed-rate-july-2026-d90cf85219073f81"
-        ],
-        "value": "0.25 percentage point"
-      },
-      {
-        "label": "The federal funds rate",
+        "label": "The rate has been held at 3.75 percent since December 11, 2025",
         "reports": [
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "CBS News",
-            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/"
+            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-08-05"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
+            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+            "verb": "said"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "NBC News",
-            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536"
+            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+            "verb": "reported"
           }
         ],
-        "sentence": "2025-12-11,3.75: reported by CBS News on July 29 and CNBC on August 5 and Federal Reserve on July 29 and NBC News on July 29.",
+        "sentence": "The rate has been held at 3.75 percent since December 11, 2025",
         "slot_ids": [
           "slot-event-fed-rate-july-2026-93ff7929970c310a",
           "slot-event-fed-rate-july-2026-ab9c73247a6da0b9",
@@ -6794,38 +6774,42 @@
         "value": "2025-12-11,3.75"
       },
       {
-        "label": "The target rate range",
+        "label": "Three policymakers dissented",
         "reports": [
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "CBS News",
-            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/"
+            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-08-04"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html"
+            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-08-05"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
+            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "NBC News",
-            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536"
+            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+            "verb": "reported"
           }
         ],
-        "sentence": "3 policymakers: reported by CBS News on July 29 and CNBC on August 4 and CNBC on August 5 and NBC News on July 29.",
+        "sentence": "Three policymakers dissented",
         "slot_ids": [
           "slot-event-fed-rate-july-2026-630db9813f0fe5d2",
           "slot-event-fed-rate-july-2026-9d633ce468e41cf5",
@@ -6834,55 +6818,60 @@
         "value": "3 policymakers"
       },
       {
-        "label": "The decision",
+        "label": "“The Federal Reserve said on Wednesday that it is leaving its benchmark interest rate unchanged”",
         "reports": [
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "CBS News",
-            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/"
+            "url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "NBC News",
-            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536"
+            "url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+            "verb": "reported"
           }
         ],
-        "sentence": "The Federal Reserve said on Wednesday that it is leaving its benchmark interest rate unchanged: reported by CBS News on July 29 and NBC News on July 29.",
+        "sentence": "“The Federal Reserve said on Wednesday that it is leaving its benchmark interest rate unchanged”",
         "slot_ids": [
           "slot-event-fed-rate-july-2026-86ae35d58a6aa3b5"
         ],
         "value": "The Federal Reserve said on Wednesday that it is leaving its benchmark interest rate unchanged"
       },
       {
-        "label": "The vote count",
+        "label": "“The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”",
         "reports": [
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
+            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-08-04"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html"
+            "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+            "verb": "said"
           }
         ],
-        "sentence": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.: reported by CNBC on July 29 and CNBC on August 4 and Federal Reserve on July 29.",
+        "sentence": "“The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”",
         "slot_ids": [
           "slot-event-fed-rate-july-2026-272a4c4989c709bc",
           "slot-event-fed-rate-july-2026-367256dcba557082"
@@ -6890,31 +6879,34 @@
         "value": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%."
       },
       {
-        "label": "The dissenting officials",
+        "label": "“Three regional presidents - Beth Hammack of Cleveland, Neel Kashkari of Minneapolis and Lorie Logan of Dallas – dissented as inflation has remained above the Fed's 2% target for more than five years.”",
         "reports": [
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html"
+            "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-08-05"
             ],
             "publisher": "CNBC",
-            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html"
+            "url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+            "verb": "reported"
           },
           {
             "dates": [
               "2026-07-29"
             ],
             "publisher": "Federal Reserve",
-            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm"
+            "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+            "verb": "said"
           }
         ],
-        "sentence": "Three regional presidents - Beth Hammack of Cleveland, Neel Kashkari of Minneapolis and Lorie Logan of Dallas – dissented as inflation has remained above the Fed's 2% target for more than five years.: reported by CNBC on July 29 and CNBC on August 5 and Federal Reserve on July 29.",
+        "sentence": "“Three regional presidents - Beth Hammack of Cleveland, Neel Kashkari of Minneapolis and Lorie Logan of Dallas – dissented as inflation has remained above the Fed's 2% target for more than five years.”",
         "slot_ids": [
           "slot-event-fed-rate-july-2026-132f60165d1e9523"
         ],

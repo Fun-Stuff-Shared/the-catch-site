@@ -2,11 +2,12 @@
 const { timeline, checkedAt } = Astro.props;
 const confirmations = timeline?.confirmations ?? [];
 const changes = timeline?.changes ?? [];
+const plainDate = (value) => new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${value}T00:00:00Z`));
 ---
 <section class="revision-timeline" data-layer="fact" data-revision-confirmations={confirmations.length} data-revision-changes={changes.length}>
   <h2>Who reported this</h2>
   {confirmations.length > 0
-    ? <ul>{confirmations.map((row) => <li data-revision-confirmation>{row.sentence} {row.reports.map((report, index) => <>{index ? ", " : ""}<a href={report.url}>{report.publisher}</a></>)}</li>)}</ul>
+    ? <ul>{confirmations.map((row) => <li data-revision-confirmation>{row.sentence} {row.reports.map((report, index) => <>{index ? "; " : ""}<a href={report.url}>{report.publisher}</a> {report.verb} on {report.dates.map(plainDate).join(" and ")}</>)}</li>)}</ul>
     : <p data-revision-no-confirmations>This page does not yet list who reported each figure.</p>}
   <h2>What changed since</h2>
   {changes.length > 0
