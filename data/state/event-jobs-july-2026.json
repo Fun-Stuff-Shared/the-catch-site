@@ -1,0 +1,328 @@
+{
+  "current_state": {
+    "slot-event-jobs-july-2026-0241606e996a2bbd": {
+      "as_of": "2026-08-07",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Employment Situation News Release - 2026 M07 Results",
+      "disputed": false,
+      "evidence_id": "pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "figure": null,
+      "heads": [
+        "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-a1a12067f0660e64"
+      ],
+      "occurrence_id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-a1a12067f0660e64",
+      "primary": true,
+      "quote_span": "Both nonfarm payroll employment (-23,000) and the unemployment rate (4.1 percent) changed little in July, the U.S. Bureau of Labor Statistics reported today.",
+      "roots": 1,
+      "slot": "nonfarm_payroll_change",
+      "span_check": "normalized",
+      "speaker": "outlet's own"
+    },
+    "slot-event-jobs-july-2026-72c2c5422d33f63c": {
+      "as_of": "2026-08-07",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Employment Situation News Release - 2026 M07 Results",
+      "disputed": false,
+      "evidence_id": "pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "figure": null,
+      "heads": [
+        "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-f773eed34787faa9"
+      ],
+      "occurrence_id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-f773eed34787faa9",
+      "primary": true,
+      "quote_span": "Total nonfarm payroll employment changed little in July (-23,000)",
+      "roots": 1,
+      "slot": "nonfarm_payroll_employment_change",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own"
+    },
+    "slot-event-jobs-july-2026-92929c7d813ebbeb": {
+      "as_of": "2026-06-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Airfare in the U.S. in June was up 26.5% compared with a year earlier, according to the latest federal data.",
+      "disputed": false,
+      "evidence_id": "193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca",
+      "figure": null,
+      "heads": [
+        "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-4a9246235ff29a8b"
+      ],
+      "occurrence_id": "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-4a9246235ff29a8b",
+      "primary": false,
+      "quote_span": "Airfare in the U.S. in June was up 26.5% compared with a year earlier, according to the latest federal data.",
+      "roots": 1,
+      "slot": "us_airfare_price_change",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own"
+    },
+    "slot-event-jobs-july-2026-c6ba58cfd7f4efda": {
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "agency_statistic",
+      "disputed": false,
+      "evidence_id": "c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64",
+      "figure": {
+        "period": "July 2026",
+        "unit": "jobs",
+        "value": "85000"
+      },
+      "heads": [
+        "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-7697d6ec0fac808b"
+      ],
+      "occurrence_id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-7697d6ec0fac808b",
+      "primary": false,
+      "quote_span": "Economists are expecting 85,000 jobs were gained in the month, according to Dow Jones",
+      "roots": 1,
+      "slot": "economist_estimate",
+      "span_check": "byte_exact",
+      "speaker": "CNBC"
+    },
+    "slot-event-jobs-july-2026-c97d5394500ff03b": {
+      "disputed": true,
+      "heads": [
+        "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-4fce4445052f6441",
+        "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-a224ebb9d7e71c34",
+        "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-c21cfd4de1e1eb30",
+        "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-fad7d942e8603837"
+      ],
+      "occurrence_id": null,
+      "primary": false,
+      "roots": 1,
+      "slot": "prediction_market_probability"
+    }
+  },
+  "evidence": [
+    {
+      "accepted": true,
+      "id": "193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca",
+      "is_primary": false,
+      "occurrences": [
+        {
+          "as_of": "2026-06-01",
+          "as_of_source": "resolved_from_context",
+          "figure": null,
+          "id": "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-4a9246235ff29a8b",
+          "quote_span": "Airfare in the U.S. in June was up 26.5% compared with a year earlier, according to the latest federal data.",
+          "slot_id": "slot-event-jobs-july-2026-92929c7d813ebbeb",
+          "span_check": "byte_exact",
+          "span_end": 2065,
+          "span_start": 1957,
+          "speaker": "outlet's own"
+        },
+        {
+          "as_of": "2026-07-16",
+          "as_of_source": "literal_in_quote",
+          "figure": null,
+          "id": "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-bb991dea62230bbc",
+          "quote_span": "\"We observed minimal to no negative impact on demand from higher price points, a trend we see continuing,\" United Chief Commercial Officer Andrew Nocella told Wall Street analysts on the company's July 16 earnings call.",
+          "slot_id": null,
+          "span_check": "byte_exact",
+          "span_end": 3535,
+          "span_start": 3316,
+          "speaker": "outlet's own"
+        },
+        {
+          "as_of": "2026-07-31",
+          "as_of_source": "resolved_from_context",
+          "figure": null,
+          "id": "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-c8ac2fa1510d2af2",
+          "quote_span": "The average Southwest one-way fare, for example, was $225.61 in the second quarter, up from $186.65 during the same span of 2025.",
+          "slot_id": null,
+          "span_check": "byte_exact",
+          "span_end": 2810,
+          "span_start": 2681,
+          "speaker": "outlet's own"
+        }
+      ],
+      "root_id": "www.cnbc.com",
+      "source_family": "cnbc_news_rss",
+      "text_sha256": "c3e72aa07893e14a5395fce856b4727708be1b1f6e757b5f7dabeb5636dedfbe"
+    },
+    {
+      "accepted": true,
+      "id": "c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64",
+      "is_primary": false,
+      "occurrences": [
+        {
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "figure": {
+            "period": "July 2026",
+            "unit": "percent",
+            "value": "33.3"
+          },
+          "id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-4fce4445052f6441",
+          "quote_span": "traders also think there's a one-in-three chance the number will come in below 60,000",
+          "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b",
+          "span_check": "byte_exact",
+          "span_end": 3128,
+          "span_start": 3043,
+          "speaker": "CNBC"
+        },
+        {
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "figure": {
+            "period": "July 2026",
+            "unit": "jobs",
+            "value": "85000"
+          },
+          "id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-7697d6ec0fac808b",
+          "quote_span": "Economists are expecting 85,000 jobs were gained in the month, according to Dow Jones",
+          "slot_id": "slot-event-jobs-july-2026-c6ba58cfd7f4efda",
+          "span_check": "byte_exact",
+          "span_end": 1853,
+          "span_start": 1768,
+          "speaker": "CNBC"
+        },
+        {
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "figure": {
+            "period": "July 2026",
+            "unit": "percent",
+            "value": "41"
+          },
+          "id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-a224ebb9d7e71c34",
+          "quote_span": "traders place a 41% chance employers added 90,000 jobs in July",
+          "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b",
+          "span_check": "byte_exact",
+          "span_end": 2951,
+          "span_start": 2889,
+          "speaker": "CNBC"
+        },
+        {
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "figure": {
+            "period": "July 2026",
+            "unit": "percent",
+            "value": "60"
+          },
+          "id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-c21cfd4de1e1eb30",
+          "quote_span": "they also give a 60% chance that they added more than 70,000 jobs in the month",
+          "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b",
+          "span_check": "byte_exact",
+          "span_end": 2569,
+          "span_start": 2491,
+          "speaker": "CNBC"
+        },
+        {
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "figure": {
+            "period": "July 2026",
+            "unit": "percent",
+            "value": "47"
+          },
+          "id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-fad7d942e8603837",
+          "quote_span": "Traders on the platform see just a 47% chance the nation added more than 80,000 jobs in July",
+          "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b",
+          "span_check": "byte_exact",
+          "span_end": 1766,
+          "span_start": 1674,
+          "speaker": "CNBC"
+        }
+      ],
+      "root_id": "www.cnbc.com",
+      "source_family": "cnbc_news_rss",
+      "text_sha256": "6baa3adb5f5dc15a970fb39c66b5c699a2a8e93278be74a0c83f31a0038a233a"
+    },
+    {
+      "accepted": true,
+      "id": "pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542",
+      "is_primary": true,
+      "occurrences": [
+        {
+          "as_of": "2026-08-07",
+          "as_of_source": "publication_timestamp",
+          "figure": null,
+          "id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-a1a12067f0660e64",
+          "quote_span": "Both nonfarm payroll employment (-23,000) and the unemployment rate (4.1 percent) changed little in July, the U.S. Bureau of Labor Statistics reported today.",
+          "slot_id": "slot-event-jobs-july-2026-0241606e996a2bbd",
+          "span_check": "normalized",
+          "span_end": 4976,
+          "span_start": 4818,
+          "speaker": "outlet's own"
+        },
+        {
+          "as_of": "2026-08-07",
+          "as_of_source": "publication_timestamp",
+          "figure": null,
+          "id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-f773eed34787faa9",
+          "quote_span": "Total nonfarm payroll employment changed little in July (-23,000)",
+          "slot_id": "slot-event-jobs-july-2026-72c2c5422d33f63c",
+          "span_check": "byte_exact",
+          "span_end": 8151,
+          "span_start": 8086,
+          "speaker": "outlet's own"
+        }
+      ],
+      "root_id": "www.bls.gov",
+      "source_family": "government_primary",
+      "text_sha256": "7fbdbd10442d09d848888e8b208d209d78e025d7b91a6705f1c323cb918d2737"
+    },
+    {
+      "accepted": true,
+      "id": "pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a",
+      "is_primary": true,
+      "occurrences": [],
+      "root_id": "www.federalreserve.gov",
+      "source_family": "government_primary",
+      "text_sha256": "643fe1866ecf4f23ad99888e53ee4ab74e083bd171351d645447149cc033825c"
+    },
+    {
+      "accepted": true,
+      "id": "pin-v2:a973c918a4a461be66035b71c40003ea43926e7489d0537dc7f8f91d2bba1aeb",
+      "is_primary": true,
+      "occurrences": [],
+      "root_id": "www.federalreserve.gov",
+      "source_family": "government_primary",
+      "text_sha256": "f1202a9301c41c3667889aba19067aa59c822509a9c5373ae07aa9225024a5e7"
+    }
+  ],
+  "timeline": [
+    {
+      "kind": "first_primary",
+      "slot_id": "slot-event-jobs-july-2026-0241606e996a2bbd"
+    },
+    {
+      "kind": "first_primary",
+      "slot_id": "slot-event-jobs-july-2026-72c2c5422d33f63c"
+    },
+    {
+      "as_of": "2026-06-01",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-193c2558ce5861a54205fa40a8ca0e4d7c200e972c0060f2a95ff65618d54fca-4a9246235ff29a8b",
+      "slot_id": "slot-event-jobs-july-2026-92929c7d813ebbeb"
+    },
+    {
+      "as_of": "2026-08-03",
+      "kind": "disputed",
+      "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b"
+    },
+    {
+      "as_of": "2026-08-03",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-7697d6ec0fac808b",
+      "slot_id": "slot-event-jobs-july-2026-c6ba58cfd7f4efda"
+    },
+    {
+      "as_of": "2026-08-03",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-c4c2a335d7a1f67158b74a7e1037b802255d5576b8bfce093b09fa2bad482f64-4fce4445052f6441",
+      "slot_id": "slot-event-jobs-july-2026-c97d5394500ff03b"
+    },
+    {
+      "as_of": "2026-08-07",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-a1a12067f0660e64",
+      "slot_id": "slot-event-jobs-july-2026-0241606e996a2bbd"
+    },
+    {
+      "as_of": "2026-08-07",
+      "kind": "first_value",
+      "occurrence_id": "occurrence-pin-v2:0a243825b0612ebb74e9593abbfe1a0a199fbf8a3a437387b915e150eb27c542-f773eed34787faa9",
+      "slot_id": "slot-event-jobs-july-2026-72c2c5422d33f63c"
+    }
+  ]
+}

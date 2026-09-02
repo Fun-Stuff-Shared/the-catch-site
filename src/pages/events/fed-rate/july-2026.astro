@@ -4,6 +4,8 @@ import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
 import { event } from "../../../data/fomc20260729.mjs";
 import { ratePath } from "../../../data/fomc20260617.mjs";
+import FoldState from "../../../components/story/FoldState.astro";
+import foldState from "../../../../data/state/event-fed-rate-july-2026.json";
 
 // Step-chart geometry from the shared rate path, extended to this meeting.
 const W = 720, H = 200, PAD = 8;
@@ -30,14 +32,7 @@ const endX = x("2026-07-29"), endY = y(prev);
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
-      <div class="kpi-strip">
-        {event.kpis.map((k) => (
-          <div class="kpi">
-            <span class="kpi-value" id={k.live ? "kpi-days" : undefined}>{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
-            <span class="kpi-label" id={k.live ? "kpi-days-label" : undefined}>{k.label}</span>
-          </div>
-        ))}
-      </div>
+      <FoldState state={foldState} />
 
       <aside class="three-things">
         <p class="tt-label">Three things to know</p>
@@ -75,7 +70,7 @@ const endX = x("2026-07-29"), endY = y(prev);
         </p>
         <details class="receipt"><summary>the record</summary>
           <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 9&ndash;3 vote&hellip; Voting against the monetary policy action were Beth M. Hammack, Neel Kashkari, and Lorie K. Logan, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.&rdquo;
-          Voting for: Warsh, Williams, Barr, Bowman, Cook, Jefferson, Paulson, Powell, Waller (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">statement</a> &middot; <a href="https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm" rel="noreferrer">minutes</a></p>
+          Voting for: Warsh, Williams, Barr, Bowman, Cook, Jefferson, Paulson, Powell, Waller (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">statement</a> &middot; <a href="/records/outlet-3a654fea6a558369/">minutes</a></p>
         </details>
         <p class="railed rail-record">
           The minutes, released August 19, show the hike camp was wider than the vote: <em>&ldquo;several
@@ -322,5 +317,3 @@ const endX = x("2026-07-29"), endY = y(prev);
     </main>
   </div>
 </BaseLayout>
-
-

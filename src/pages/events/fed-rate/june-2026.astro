@@ -13,8 +13,10 @@ import RailedParagraph from "../../../components/story/RailedParagraph.astro";
 import Receipt from "../../../components/story/Receipt.astro";
 import RecordsList from "../../../components/story/RecordsList.astro";
 import LiveCounter from "../../../components/story/LiveCounter.astro";
+import FoldState from "../../../components/story/FoldState.astro";
 import "../../../styles/story.css";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
+import foldState from "../../../../data/state/event-fed-rate-june-2026.json";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator">
@@ -28,7 +30,7 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
-      <KpiStrip kpis={event.kpis} />
+      <FoldState state={foldState} />
 
       <ThreeThings items={[
         "The Fed held at 3.50\u20133.75 percent, unanimously, in Kevin Warsh\u2019s first meeting as chair.",

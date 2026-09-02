@@ -355,6 +355,33 @@ for (const { subject, story } of storyPages) {
   }
 }
 
+// ---- 5. Fold figures: every rendered number must be an accepted occurrence ----
+const foldRoutes = new Map([
+  ["fed-rate/june-2026", "event-fed-rate-june-2026"],
+  ["fed-rate/july-2026", "event-fed-rate-july-2026"],
+  ["jobs/july-2026", "event-jobs-july-2026"],
+]);
+function attr(tag, name) { return new RegExp(`${name}="([^"]*)"`).exec(tag)?.[1]; }
+for (const [route, eventId] of foldRoutes) {
+  const statePath = join(ROOT, "data/state", `${eventId}.json`);
+  const pagePath = join(dist, "events", route, "index.html");
+  if (!existsSync(statePath)) { fail.push(`/events/${route}/: fold state missing`); continue; }
+  if (!existsSync(pagePath)) { fail.push(`/events/${route}/: built page missing`); continue; }
+  const state = JSON.parse(readFileSync(statePath, "utf8"));
+  const accepted = new Map();
+  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) if (occurrence.figure) accepted.set(occurrence.id, occurrence.figure);
+  const expected = Object.values(state.current_state ?? {}).filter((entry) => entry.occurrence_id && entry.figure);
+  const rendered = [...readFileSync(pagePath, "utf8").matchAll(/<[^>]*data-derived-figure[^>]*>/g)];
+  if (rendered.length !== expected.length) fail.push(`/events/${route}/: derived figure coverage ${rendered.length}/${expected.length}`);
+  for (const match of rendered) {
+    const occurrenceId = attr(match[0], "data-occurrence-id");
+    const value = attr(match[0], "data-figure-value");
+    const unit = attr(match[0], "data-figure-unit") ?? "";
+    const figure = accepted.get(occurrenceId);
+    if (!figure || `${figure.value}` !== value || `${figure.unit ?? ""}` !== unit) fail.push(`/events/${route}/: derived figure ${value ?? "missing"} does not match an accepted fold occurrence`);
+  }
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);
