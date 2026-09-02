@@ -400,10 +400,32 @@ for (const [route, eventId, modulePath] of foldChecks) {
   }
 }
 
+// ---- 6. Live-element dates: no literal date in source; counter recomputes from the derived row ----
+const liveDateChecks = [];
+const buildDate = new Date().toISOString().slice(0, 10);
+const daysBetween = (a, b) => Math.floor((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86400000);
+for (const { subject, story } of storyPages) {
+  const page = `/events/${subject}/${story}/`;
+  const source = readFileSync(join(eventsDir, subject, `${story}.astro`), "utf8");
+  const literal = source.match(/(?:updated|last check(?:ed)?)[^\n<]{0,40}?(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/);
+  if (literal) fail.push(`${page}: literal date in a live sentence in source ("${literal[0]}"); derive it from the build date`);
+  else liveDateChecks.push(`no_literal_live_date ${page}`);
+  const html = readFileSync(join(ROOT, "dist/events", subject, story, "index.html"), "utf8");
+  const shown = html.match(/That is (\d+) days/);
+  if (!shown) continue;
+  const row = derivedRows.find((candidate) => candidate.page === page && /days/.test(candidate.figure_text));
+  const start = row?.formula?.match(/'(\d{4}-\d{2}-\d{2})'/)?.[1];
+  if (!start) { fail.push(`${page}: counter shown but no derived-figures row gives its start date`); continue; }
+  const expected = daysBetween(start, buildDate);
+  if (Number(shown[1]) !== expected) fail.push(`${page}: counter seed ${shown[1]} days, derived row gives ${expected} (start ${start}, build ${buildDate})`);
+  else liveDateChecks.push(`counter_seed_matches_derived_row ${page} ${expected} days from ${start}`);
+}
+
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);
   process.exit(1);
 }
 for (const passed of verifiedStrips) console.log(`strip verified: ${passed}`);
+for (const passed of liveDateChecks) console.log(`live date check: ${passed}`);
 console.log(`event gate passed: ${storyPages.length} story page(s) manifested, mechanical checks clean; ${verifiedStrips.length}/12 strips verified`);

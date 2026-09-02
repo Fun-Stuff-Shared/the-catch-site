@@ -5,6 +5,9 @@ import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
+import state from "../../../../data/state/event-jobs-july-2026.json";
+const lastChecked = new Date().toISOString().slice(0, 10);
+const revisions = state.revision_timeline ?? [];
 
 const W = 720, H = 200, PAD_L = 48, PAD_R = 8, PAD_T = 10, PAD_B = 10;
 const vMax = 220, vMin = -170;
@@ -32,7 +35,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         <span class="mode-hint">Every claim here traces to a source.</span>
       </div>
 
-      <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026 &middot; updated August 31, 2026</p>
+      <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026</p>
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
 
@@ -53,6 +56,8 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
           <li>The unemployment rate fell to 4.1 percent, but for an unwelcome reason: the share of adults working or looking for work dropped to 61.4 percent, down 0.7 points since January.</li>
         </ol>
       </aside>
+      <p class="railed rail-note" data-layer="fact">This page's last check was {lastChecked}.</p>
+      {revisions.length > 0 && <section data-layer="fact"><h2>What changed since</h2><ul>{revisions.map((row) => <li>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul></section>}
 
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <p class="toc-label">In this story</p>
