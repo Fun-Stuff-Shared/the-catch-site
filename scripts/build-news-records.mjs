@@ -20,6 +20,14 @@ for (const record of corroborationRecords.records) {
   if (record.capture_path !== corroborationRecords.source_path || record.capture_sha256 !== captureSha256) throw new Error(`invalid capture pointer for ${record.id}`);
   if (record.capture_locator?.claim_id !== captured.claimId || record.capture_locator?.result_url !== record.url || record.capture_locator?.result_field !== "relevant_text") throw new Error(`invalid capture locator for ${record.id}`);
   if (record.title !== captured.result.headline || record.quote !== captured.result.relevant_text.replace(/\s+/g, " ").trim()) throw new Error(`capture content mismatch for ${record.id}`);
+  if (!record.pinned_path || record.text_path !== record.pinned_path || !record.text_sha256) throw new Error(`missing corroboration pin for ${record.id}`);
+  const pinnedPath = `${ROOT}/${record.pinned_path}`;
+  if (!existsSync(pinnedPath)) throw new Error(`missing corroboration pin file for ${record.id}`);
+  const pinnedText = readFileSync(pinnedPath, "utf8");
+  const pinnedSha256 = `sha256:${createHash("sha256").update(pinnedText).digest("hex")}`;
+  if (pinnedSha256 !== record.text_sha256) throw new Error(`corroboration pin hash mismatch for ${record.id}`);
+  if (!['body_capture', 'captured_excerpt'].includes(record.pin_capture?.kind)) throw new Error(`missing corroboration pin type for ${record.id}`);
+  if (record.pin_capture.kind === "captured_excerpt" && !pinnedText.replace(/\s+/g, " ").includes(record.quote.replace(/\s+/g, " "))) throw new Error(`corroboration excerpt absent from pin for ${record.id}`);
 }
 const records = [...claimRecords.records, ...corroborationRecords.records]
   .sort((a, b) => a.url.localeCompare(b.url));

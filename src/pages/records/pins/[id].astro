@@ -12,9 +12,10 @@ export function getStaticPaths() {
 
 const { record } = Astro.props;
 const text = readFileSync(join(process.cwd(), record.pinned_path), "utf8");
+const isExcerpt = record.pin_capture?.kind === "captured_excerpt";
 ---
-<BaseLayout title={`Saved copy: ${record.title} | The Catch`} current="Records">
+<BaseLayout title={`${isExcerpt ? "Saved passage" : "Saved copy"}: ${record.title} | The Catch`} current="Records">
   <div slot="locator" class="locator"><span>RECORD</span><span>SAVED COPY</span></div>
-  <div class="content"><main class="saved-copy"><p class="record-kicker">Saved copy of</p><h1>{record.title}</h1><p class="record-sub">{record.publisher} · {record.date}</p><p class="back"><a href={`/records/${record.id}/`}>Back to the record</a></p><pre>{text}</pre></main></div>
+  <div class="content"><main class="saved-copy"><p class="record-kicker">{isExcerpt ? "Saved passage from the corroboration check" : "Saved copy of"}</p><h1>{record.title}</h1><p class="record-sub">{record.publisher} · {record.date}</p><p class="back"><a href={`/records/${record.id}/`}>Back to the record</a></p><pre>{text}</pre></main></div>
 </BaseLayout>
 <style>.saved-copy{max-width:62rem;margin:0 auto;padding:2rem 1.25rem 4rem}.record-kicker{font:.72rem "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:#5b6470}.saved-copy h1{font:700 clamp(1.8rem,4vw,2.6rem)/1.1 "Newsreader",Georgia,serif;margin:.5rem 0}.record-sub,.back{font:.9rem/1.55 "Public Sans",sans-serif;color:#454c55}.saved-copy pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#fbfaf8;border:1px solid #e3e0da;border-top:3px solid #2e7d5b;padding:1rem 1.25rem;font:.86rem/1.6 "IBM Plex Mono",monospace;color:#252a30}</style>
