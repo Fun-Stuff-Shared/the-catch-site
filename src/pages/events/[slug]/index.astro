@@ -1,33 +1,10 @@
 ---
-import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { records } from "../../../lib/export.mjs";
-import { warrantedEvents } from "../../../lib/events.mjs";
-import RecordCardList from "../../../components/RecordCardList.astro";
-import { formatDate } from "../../../lib/presentation.mjs";
-
+import StateEvent from "../../../components/StateEvent.astro";
+import { readState, eventPath } from "../../../lib/state.mjs";
 export function getStaticPaths() {
-  return warrantedEvents(records).map((group) => ({ params: { slug: group.slug }, props: { group } }));
+  return [...readState().events].filter(([id]) => eventPath(id) === `/events/${encodeURIComponent(id)}/`).map(([id, view]) => ({ params: { slug: id }, props: { view } }));
 }
-
-const { group } = Astro.props;
-
+const { view } = Astro.props;
+if (view.status === "merged") return Astro.redirect(eventPath(view.survivor), 301);
 ---
-<BaseLayout title={`${group.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">EVENTS</a><span>{formatDate(group.date)}</span></div>
-  <div class="content">
-    <main class="method-main">
-      <p class="matter-kicker">Event</p>
-      <h1>{group.title}</h1>
-      <p class="source-byline">{formatDate(group.date)} · {group.records.length} {group.records.length === 1 ? "record" : "records"}</p>
-      <p class="lede">Open each record below to read the source document and the claim it supports.</p>
-      <RecordCardList records={group.records} mode="documents" groupedLink="claim" />
-      {group.coverage.length > 0 && <section class="event-coverage" aria-label="Coverage">
-        <h2>Coverage</h2>
-        <p class="coverage-intro">Reporting around this event, shown separately from the record.</p>
-        <ul class="coverage-list">
-          {group.coverage.map((item) => <li class="coverage-item"><a href={item.source_url} rel="noreferrer"><span class="coverage-outlet">{item.outlet}</span><span class="coverage-headline">{item.headline}</span>{item.date && <span class="coverage-date">{formatDate(item.date)}</span>}</a></li>)}
-        </ul>
-      </section>}
-    </main>
-  </div>
-</BaseLayout>
+<StateEvent view={view} />

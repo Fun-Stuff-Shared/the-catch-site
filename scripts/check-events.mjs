@@ -12,7 +12,6 @@ import { pathToFileURL } from "node:url";
 import { normalizeFigure, rowsFromExport, verifyDerivedFigure } from "./derived-figures.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
-execFileSync(process.execPath, [join(ROOT, "scripts/pull-state.mjs")], { stdio: "inherit" });
 const fail = [];
 
 // ---- 1. Manifests for story pages -------------------------------------------------

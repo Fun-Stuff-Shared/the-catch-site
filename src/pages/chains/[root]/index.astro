@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { readState, eventPath } from "../../../lib/state.mjs";
+import { formatDate } from "../../../lib/presentation.mjs";
+export function getStaticPaths() {
+  return [...readState().chains].map(([root, chain]) => ({ params: { root }, props: { chain } }));
+}
+const { chain } = Astro.props;
+const events = [...chain.events].sort((a, b) => String(b.period ?? "").localeCompare(String(a.period ?? "")) || a.id.localeCompare(b.id));
+---
+<BaseLayout title={`${chain.root.label} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">EVENTS</a><span>A story over time</span></div>
+  <div class="content"><main class="method-main" data-state-chain={chain.id}>
+    <h1>{chain.root.label}</h1>
+    {chain.root.status === "retired" && <p data-layer="fact">The first story was withdrawn: {chain.root.reason}</p>}
+    <p data-layer="fact">Reporting from {chain.outlet_count} {chain.outlet_count === 1 ? "publisher" : "publishers"}.</p>
+    {chain.tracked.length > 0 && <section data-layer="fact"><h2>The numbers over time</h2>{chain.tracked.map((track) => <article><h3>{track.name}</h3><ul>{track.values.map((value) => <li data-state-figure={value.occurrence_id} data-state-figure-event={value.event_id} data-figure-value={String(value.value)} data-figure-unit={value.unit ?? ""}><a href={eventPath(value.event_id)}>{formatDate(value.period)}</a>: {value.value} {value.unit}. {value.sentence}</li>)}</ul></article>)}</section>}
+    <section data-layer="fact"><h2>The developments</h2><ol>{events.map((event) => <li><a href={eventPath(event.id)}>{event.label}</a> · {formatDate(event.period)}{event.follows && <> · follows <a href={eventPath(event.follows)}>an earlier development</a></>}{event.status === "retired" && <> · withdrawn: {event.reason}</>}</li>)}</ol></section>
+  </main></div>
+</BaseLayout>

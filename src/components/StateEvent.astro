@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { eventPath, chainPath } from "../lib/state.mjs";
+import { formatDate } from "../lib/presentation.mjs";
+const { view, prose } = Astro.props;
+const event = view.event ?? view;
+const evidence = new Map((view.evidence ?? []).map((row) => [row.id, row]));
+const occurrences = new Map((view.occurrences ?? []).map((row) => [row.id, row]));
+const documents = (view.edges ?? []).filter((edge) => edge.label === "cites" && edge.accepted !== false && edge.refusal == null && !edge.retire);
+const transitions = view.revision_timeline?.changes ?? [];
+const slots = Object.entries(view.current_state ?? {});
+---
+<BaseLayout title={`${event.label} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">EVENTS</a><span>{view.desk ?? formatDate(event.period)}</span></div>
+  <div class="content"><main class="method-main" data-state-event={event.id}>
+    <h1>{event.label}</h1>
+    {view.status === "retired" ? <p data-layer="fact">This story has been withdrawn: {view.reason}</p> : <>
+      <p data-layer="fact">{formatDate(event.period)}{view.desk && <> · {view.desk}</>}</p>
+      {prose && <section data-layer="narrative" class="lede"><p>{prose}</p></section>}
+      <section data-layer="fact" data-state-derived>
+        <h2>The current record</h2>
+        {slots.length ? slots.map(([id, slot]) => <article data-state-slot={id}>
+          <h3>{slot.slot}</h3>
+          {slot.figure && <p><strong data-state-figure={slot.occurrence_id} data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{slot.figure.value} {slot.figure.unit}</strong></p>}
+          <p>{slot.quote_span}</p>
+          {evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id)?.url && <p><a href={evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id).url}>{evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id).publisher}</a></p>}
+        </article>) : <p>No tracked values have been established for this story.</p>}
+      </section>
+      {view.follows && <section data-layer="fact"><h2>Since the previous story</h2>
+        <p><a href={eventPath(view.follows)}>Read the previous story</a></p>
+        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{change.name}: {change.previous.value} {change.unit} previously; {change.current.value} {change.unit} in this story. {change.current.sentence}</p>)}
+        {(view.same_name_not_compared ?? []).map((change) => <p>{change.name}: {change.reason}</p>)}
+        {(view.new_slots ?? []).map((slot) => <p>{slot.name}: first tracked in this story. {slot.sentence}</p>)}
+      </section>}
+      {transitions.length > 0 && <section data-layer="fact"><h2>Changes in the record</h2><ul>{transitions.map((row) => <li>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul></section>}
+      {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
+        const document = evidence.get(edge.to_evidence_id);
+        return <li><a href={`/records/${document.id}/`}>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;
+      })}</ul></section>}
+      <section data-layer="proof"><h2>Sources</h2><ul>{[...evidence.values()].map((source) => <li><a href={source.url}>{source.publisher}</a> · {formatDate(source.asserted_at)}{source.title && <> · {source.title}</>}</li>)}</ul></section>
+    </>}
+    {view.root_id && <p data-layer="narrative"><a href={chainPath(view.root_id)}>Follow this story over time</a></p>}
+  </main></div>
+</BaseLayout>
