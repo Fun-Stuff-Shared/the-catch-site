@@ -1,3 +1,5 @@
+import { buildStateRecords } from "./build-state-records.mjs";
+import { readState } from "../src/lib/state.mjs";
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
@@ -29,22 +31,24 @@ for (const record of corroborationRecords.records) {
   if (!['body_capture', 'captured_excerpt'].includes(record.pin_capture?.kind)) throw new Error(`missing corroboration pin type for ${record.id}`);
   if (record.pin_capture.kind === "captured_excerpt" && !pinnedText.replace(/\s+/g, " ").includes(record.quote.replace(/\s+/g, " "))) throw new Error(`corroboration excerpt absent from pin for ${record.id}`);
 }
-const records = [...claimRecords.records, ...corroborationRecords.records]
-  .sort((a, b) => a.url.localeCompare(b.url));
-const duplicateUrls = records.filter((record, index) => index > 0 && record.url === records[index - 1].url);
+const stateRecords = buildStateRecords(readState());
+const legacyRecords = [...claimRecords.records, ...corroborationRecords.records].sort((a, b) => a.url.localeCompare(b.url));
+const duplicateUrls = legacyRecords.filter((record, index) => index > 0 && record.url === legacyRecords[index - 1].url);
+const records = [...legacyRecords, ...stateRecords].sort((a, b) => a.url.localeCompare(b.url) || a.id.localeCompare(b.id));
+if (new Set(records.map((record) => record.id)).size !== records.length) throw new Error("Duplicate news record id");
 
 if (claimRecords.count !== 1043) throw new Error(`expected 1,043 claim-source records, found ${claimRecords.count}`);
 if (corroborationRecords.count !== 173) throw new Error(`expected 173 corroboration records, found ${corroborationRecords.count}`);
 if (duplicateUrls.length) throw new Error(`duplicate news record URL: ${duplicateUrls[0].url}`);
 
 const sourceSha256 = `sha256:${createHash("sha256")
-  .update(`${claimRecords.source_sha256}\n${corroborationRecords.source_sha256}\n`)
+  .update(`${claimRecords.source_sha256}\n${corroborationRecords.source_sha256}\n${JSON.stringify(stateRecords)}\n`)
   .digest("hex")}`;
 writeFileSync(`${ROOT}/src/data/news-records.json`, JSON.stringify({
   schema: "news_records_v2",
   source_sha256: sourceSha256,
   count: records.length,
-  source_counts: { claim_source: claimRecords.count, corroboration: corroborationRecords.count },
+  source_counts: { claim_source: claimRecords.count, corroboration: corroborationRecords.count, cited_document: stateRecords.length },
   records,
 }, null, 2) + "\n");
-console.log(`news records built: ${records.length} (${claimRecords.count} claim-source + ${corroborationRecords.count} corroboration)`);
+console.log(`news records built: ${records.length} (${claimRecords.count} claim-source + ${corroborationRecords.count} corroboration + ${stateRecords.length} cited documents)`);

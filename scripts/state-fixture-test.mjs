@@ -56,3 +56,35 @@ test('pull replaces same-time copies and rejects an incomplete source before rep
   assert.equal(readState(destination.root).events.get('event-a').event.root_id, undefined);
   assert.equal(readState(destination.root).events.get('event-a').root_id, 'event-a');
 });
+
+import { buildStateRecords } from './build-state-records.mjs';
+import { createHash } from 'node:crypto';
+test('a cited document is pinned from verified text and a changed body refuses publication', (t) => {
+  const { root, write, view } = fixture(t);
+  const text = 'The original report text.';
+  const source = join(root, 'document.txt');
+  writeFileSync(source, text);
+  view.evidence = [{ id: 'doc', source_kind: 'document', title: 'Report', publisher: 'Agency', url: 'https://example.com/report', text_path: source, text_sha256: createHash('sha256').update(text).digest('hex') }];
+  view.edges = [{ id: 'cite', label: 'cites', to_evidence_id: 'doc', role: 'primary_record' }];
+  write('event-a', view);
+  const rows = buildStateRecords(readState(root), root);
+  assert.equal(rows[0].quote, text);
+  writeFileSync(source, 'Different text');
+  assert.throws(() => buildStateRecords(readState(root), root), /hash mismatch/);
+});
+
+test('a displayed figure must match an accepted occurrence and its evidence', (t) => {
+  const { root, write, view } = fixture(t);
+  view.evidence = [{ id: 'doc', accepted: true }];
+  view.occurrences = [{ id: 'o', evidence_id: 'doc', figure: { value: '105000', unit: 'jobs' }, accepted: true }];
+  view.current_state = { payroll: { occurrence_id: 'o', figure: { value: '105000', unit: 'jobs' } } };
+  write('event-a', view);
+  readState(root);
+  view.current_state.payroll.figure.value = '120000';
+  write('event-a', view);
+  assert.throws(() => readState(root), /no matching accepted occurrence/);
+  view.current_state.payroll.figure.value = '105000';
+  view.evidence[0].accepted = false;
+  write('event-a', view);
+  assert.throws(() => readState(root), /no matching accepted occurrence/);
+});

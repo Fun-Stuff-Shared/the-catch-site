@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { eventPath } from "../../lib/state.mjs";
 import { records, manifests } from "../../lib/record-manifests.mjs";
 export function getStaticPaths() { return records.map((record) => ({ params: { id: record.id }, props: { record } })); }
 const { record } = Astro.props;
@@ -17,7 +18,7 @@ function plainDate(iso) {
   return `${MONTHS[Number(m[2]) - 1]} ${Number(m[3])}, ${m[1]}`;
 }
 
-const citingStories = [];
+const citingStories = (record.citations ?? []).map((citation) => ({ href: eventPath(citation.event_id), title: citation.reason || "Read the citing story", usage: citation.role === "primary_record" ? "the original record" : "reference" }));
 for (const manifest of manifests) {
   const entry = (manifest.story_sources ?? []).find((s) => s.id === record.id);
   if (entry && manifest.story_title) {
@@ -38,7 +39,7 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
     <h1>{record.title}</h1>
     <p class="record-sub">{record.record_kind === "corroboration"
       ? `Recorded from ${publisherPhrase(record.publisher)} during our corroboration check on ${plainDate(record.date)}.`
-      : `Published by ${publisherPhrase(record.publisher)} on ${plainDate(record.date)}.`}</p>
+      : record.date ? `Published by ${publisherPhrase(record.publisher)} on ${plainDate(record.date)}.` : `Published by ${publisherPhrase(record.publisher)}. Publication date unavailable.`}</p>
     {record.about && <p class="record-about">{record.about}</p>}
     {citingStories.length > 0 && (
       <section class="used">

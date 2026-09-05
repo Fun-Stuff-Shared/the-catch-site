@@ -5,6 +5,15 @@ import { fileURLToPath } from "node:url";
 export const stateDirectory = fileURLToPath(new URL("../../data/state/", import.meta.url));
 const readable = (row) => row && row.accepted !== false && row.refusal == null && row.retire !== true;
 
+export function verifyFigure(view, occurrenceId, value, unit) {
+  const occurrence = (view.occurrences ?? []).find((row) => row.id === occurrenceId && readable(row));
+  const source = (view.evidence ?? []).find((row) => row.id === occurrence?.evidence_id && readable(row));
+  if (!occurrence?.figure || !source || String(occurrence.figure.value) !== String(value) || String(occurrence.figure.unit ?? "") !== String(unit ?? "")) {
+    throw new Error(`Figure has no matching accepted occurrence: ${view.event.id}/${occurrenceId}`);
+  }
+  return occurrence;
+}
+
 export function readState(directory = stateDirectory) {
   const events = new Map();
   const chains = new Map();
@@ -27,6 +36,21 @@ export function readState(directory = stateDirectory) {
     if (view.status === "merged" && !events.has(view.survivor)) throw new Error(`Missing survivor for ${id}`);
     if (view.status === "published" && !chains.has(view.root_id)) throw new Error(`Missing chain for ${id}`);
     if (view.follows && !events.has(view.follows)) throw new Error(`Missing previous story for ${id}`);
+    if (view.status === "published") {
+      if (!chains.get(view.root_id).events.some((event) => event.id === id)) throw new Error(`Chain omits story: ${id}`);
+      for (const slot of Object.values(view.current_state ?? {})) if (slot.figure) verifyFigure(view, slot.occurrence_id, slot.figure.value, slot.figure.unit);
+    }
+  }
+  for (const chain of chains.values()) {
+    for (const event of chain.events) {
+      const view = events.get(event.id);
+      if (!view || view.root_id !== chain.id || view.status !== event.status) throw new Error(`Chain member differs from its story view: ${event.id}`);
+    }
+    for (const track of chain.tracked ?? []) for (const value of track.values) {
+      const view = events.get(value.event_id);
+      if (!view || !Object.values(view.current_state ?? {}).some((slot) => slot.occurrence_id === value.occurrence_id)) throw new Error(`Chain figure is not a current story value: ${value.event_id}`);
+      verifyFigure(view, value.occurrence_id, value.value, value.unit);
+    }
   }
   return { events, chains };
 }
