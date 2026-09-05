@@ -9,6 +9,11 @@ const normalize = (value) => String(value ?? '').replace(/\s+/g, ' ').trim();
 function* nodes(node) { yield node; for (const child of node.childNodes ?? []) yield* nodes(child); }
 
 export function checkTimeline(html, timeline = {}) {
+  if (timeline.changes_checked_at != null) {
+    const day = String(timeline.changes_checked_at).slice(0, 10);
+    const parsed = new Date(`${day}T00:00:00Z`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !Number.isFinite(parsed.valueOf()) || parsed.toISOString().slice(0, 10) !== day) throw new Error('Revision check date is invalid');
+  }
   const all = [...nodes(parse(html))];
   const sections = all.filter((node) => (attr(node, 'class') ?? '').split(/\s+/).includes('revision-timeline'));
   if (sections.length !== 1) throw new Error('Revision evidence section is missing or duplicated');

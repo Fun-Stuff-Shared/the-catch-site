@@ -162,3 +162,7 @@ test('confirmation quotes and sources cannot disappear from the rendered evidenc
 test('retired-only chains do not enter the home feature', () => {
   assert.equal(frontChains({chains:new Map([['a',{id:'a',events:[{status:'retired'}],outlet_count:2}]])}).length,0);
 });
+
+test('malformed revision check dates cannot be published', () => {
+  for (const date of ['garbage','2026-99-99','2026-02-30']) assert.throws(()=>checkTimeline('',{changes_checked_at:date}),/check date is invalid/);
+});
