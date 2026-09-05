@@ -6,7 +6,7 @@ import { readState, citedDocuments } from "../src/lib/state.mjs";
 
 export function buildStateRecords(state, root = fileURLToPath(new URL("..", import.meta.url))) {
   return citedDocuments(state).map((document) => {
-    if (!/^[a-zA-Z0-9_-]+$/.test(document.id)) throw new Error(`Invalid record id: ${document.id}`);
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9_:-]*$/.test(document.id)) throw new Error(`Invalid record id: ${document.id}`);
     const pin = `data/sources/news-state/${document.id}.txt`;
     const destination = join(root, pin);
     const source = document.text_path && existsSync(document.text_path) ? document.text_path : destination;

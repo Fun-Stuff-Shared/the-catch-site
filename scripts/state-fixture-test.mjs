@@ -115,3 +115,35 @@ test('document records show the cited passage even when it occurs beyond the ope
   assert.equal(record.quote, quote);
   assert.equal(record.passages[0].occurrence_id,'o');
 });
+
+import { checkPageFigures } from './check-state-pages.mjs';
+test('the rendered figure text is checked, not just its data attributes', () => {
+  const state = {events:new Map([['event-a',{event:{id:'event-a'},status:'published',evidence:[{id:'doc'}],occurrences:[{id:'o',evidence_id:'doc',figure:{value:'105000',unit:'jobs'}}]}]])};
+  const html='<strong data-state-figure="o" data-figure-value="105000" data-figure-unit="jobs">105000 jobs</strong>';
+  assert.equal(checkPageFigures(html,state,'event-a').length,1);
+  assert.throws(()=>checkPageFigures(html.replace('>105000 jobs','>120000 jobs'),state,'event-a'),/Visible figure differs/);
+});
+
+import { storyChainPath } from '../src/lib/state.mjs';
+test('standing story URLs resolve through a merged seed to its surviving chain', () => {
+  const state = {events: new Map([
+    ['event-seed', {status: 'merged', survivor: 'event-next'}],
+    ['event-next', {status: 'published', root_id: 'event-root'}],
+  ])};
+  assert.equal(storyChainPath(state, 'event-seed'), '/chains/event-root/');
+  state.events.set('event-next', {status: 'merged', survivor: 'event-seed'});
+  assert.throws(() => storyChainPath(state, 'event-seed'), /Merge cycle/);
+});
+
+test('pinned evidence identifiers remain stable document record identifiers', (t) => {
+  const {root, write, view} = fixture(t);
+  const text = 'Original record.';
+  const source = join(root, 'document.txt');
+  writeFileSync(source, text);
+  view.evidence = [{id:'pin-v2:abc123', source_kind:'document', title:'Report', publisher:'Agency', url:'https://example.com/report', text_path:source, text_sha256:createHash('sha256').update(text).digest('hex')}];
+  view.edges = [{id:'cite', label:'cites',to_evidence_id:'pin-v2:abc123',role:'reference'}];
+  write('event-a',view);
+  const [record] = buildStateRecords(readState(root), root);
+  assert.equal(record.id, 'pin-v2:abc123');
+  assert.equal(record.pinned_path, 'data/sources/news-state/pin-v2:abc123.txt');
+});

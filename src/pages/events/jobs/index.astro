@@ -1,6 +1,4 @@
 ---
-import { readState, chainPath } from "../../../lib/state.mjs";
-const view = readState().events.get("event-jobs-july-2026");
-if (!view?.root_id) throw new Error("Missing story chain: event-jobs-july-2026");
-return Astro.redirect(chainPath(view.root_id), 301);
+import { readState, storyChainPath } from "../../../lib/state.mjs";
+return Astro.redirect(storyChainPath(readState(), "event-jobs-july-2026"), 301);
 ---

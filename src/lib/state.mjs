@@ -1,8 +1,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { fileURLToPath } from "node:url";
 
-export const stateDirectory = fileURLToPath(new URL("../../data/state/", import.meta.url));
+export const stateDirectory = join(process.cwd(), "data/state");
 const readable = (row) => row && row.accepted !== false && row.refusal == null && row.retire !== true;
 
 export function verifyFigure(view, occurrenceId, value, unit) {
@@ -76,6 +75,19 @@ export function chainPath(id) {
   return `/chains/${encodeURIComponent(id)}/`;
 }
 
+export function storyChainPath(state, id) {
+  const seen = new Set();
+  let view = state.events.get(id);
+  while (view?.status === 'merged') {
+    if (seen.has(id)) throw new Error(`Merge cycle: ${id}`);
+    seen.add(id);
+    id = view.survivor;
+    view = state.events.get(id);
+  }
+  if (!view?.root_id) throw new Error(`Missing story chain: ${id}`);
+  return chainPath(view.root_id);
+}
+
 export function rankedChains(state) {
   return [...state.chains.values()].sort((a, b) =>
     b.events.filter((event) => event.status === "published").length - a.events.filter((event) => event.status === "published").length ||
@@ -118,4 +130,9 @@ export function citedDocuments(state) {
     }
   }
   return [...documents.values()].sort((a, b) => a.id.localeCompare(b.id));
+}
+
+export function slotLabel(name) {
+  const label = String(name ?? "").replace(/_/g, " ");
+  return label.charAt(0).toUpperCase() + label.slice(1);
 }

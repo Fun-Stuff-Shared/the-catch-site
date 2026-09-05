@@ -9,7 +9,8 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { normalizeFigure, rowsFromExport, verifyDerivedFigure } from "./derived-figures.mjs";
+import { readState } from "../src/lib/state.mjs";
+import { checkStatePages, checkPageFigures } from "./check-state-pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -202,7 +203,7 @@ for (const exclusion of READER_EXCLUSIONS) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.date) || !exclusion.reason) fail.push(`reader exclusion ${exclusion.route} needs a date and reason`);
   if (exclusion.expires && (!/^\d{4}-\d{2}-\d{2}$/.test(exclusion.expires) || exclusion.expires < TODAY)) fail.push(`reader exclusion ${exclusion.route} expired on ${exclusion.expires}`);
 }
-const SCOPE = ["events", "claims", "officials"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
+const SCOPE = ["events", "chains", "claims", "officials"].map((d) => join(dist, d)).concat(join(dist, "index.html"));
 const manifestRecordIds = new Set();
 const manifestRecords = new Map();
 for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name) => name.endsWith(".json"))) {
@@ -357,142 +358,15 @@ for (const { subject, story } of storyPages) {
   }
 }
 
-// ---- 5. Fold verification: visible strip figures must be accepted occurrences ----
-const foldChecks = [
-  ["fed-rate/june-2026", "event-fed-rate-june-2026", "src/data/fomc20260617.mjs"],
-  ["fed-rate/july-2026", "event-fed-rate-july-2026", "src/data/fomc20260729.mjs"],
-  ["jobs/july-2026", "event-jobs-july-2026", "src/data/jobs202607.mjs"],
-];
-const unitFor = (unit) => unit === "%" ? "percent" : unit;
-const derivedPath = process.env.DERIVED_FIGURES_PATH || join(ROOT, "data/state/derived-figures.json");
-let derivedRows = [];
-let derivedLoadError = null;
-if (existsSync(derivedPath)) {
-  try { derivedRows = rowsFromExport(JSON.parse(readFileSync(derivedPath, "utf8"))); }
-  catch (error) { derivedLoadError = error.message; }
-}
-const verifiedStrips = [];
-for (const [route, eventId, modulePath] of foldChecks) {
-  const statePath = join(ROOT, "data/state", `${eventId}.json`);
-  if (!existsSync(statePath)) { fail.push(`/events/${route}/: fold state missing`); continue; }
-  const state = JSON.parse(readFileSync(statePath, "utf8"));
-  const { event } = await import(pathToFileURL(join(ROOT, modulePath)).href);
-  const acceptedOccurrences = new Map();
-  for (const record of state.evidence ?? []) if (record.accepted) for (const occurrence of record.occurrences ?? []) acceptedOccurrences.set(occurrence.id, occurrence);
-  for (const kpi of event.kpis ?? []) {
-    const expectedUnit = kpi.figure_unit ?? unitFor(kpi.unit);
-    const matchingOccurrence = [...acceptedOccurrences.values()].find((occurrence) => occurrence.figure && normalizeFigure(occurrence.figure.value) === normalizeFigure(kpi.value) && normalizeFigure(occurrence.figure.unit) === normalizeFigure(expectedUnit) && normalizeFigure(occurrence.figure.period) === normalizeFigure(kpi.period));
-    const page = `/events/${route}/`;
-    const label = `${kpi.value}${kpi.unit ? ` ${kpi.unit}` : ""}`;
-    if (matchingOccurrence) {
-      verifiedStrips.push(`${page} ${label}: accepted occurrence ${matchingOccurrence.id}`);
-      continue;
-    }
-    const candidates = [...acceptedOccurrences.values()];
-    const withFigures = candidates.filter((occurrence) => occurrence.figure && !Array.isArray(occurrence.figure)).slice(0, 6);
-    const withoutFigures = candidates.length - withFigures.length;
-    const nearest = [...withFigures.map((occurrence) => `${occurrence.id}: figure: ${occurrence.figure.value}/${occurrence.figure.unit ?? ""}/${occurrence.figure.period ?? ""}`), ...(withoutFigures ? [`${withoutFigures} accepted occurrence(s): figure: none`] : [])].join("; ");
-    if (derivedLoadError) { fail.push(`${page}: strip figure ${label} cannot load derived-figures export: ${derivedLoadError}; accepted occurrences: ${nearest || "none"}`); continue; }
-    const row = derivedRows.find((candidate) => candidate.page === page && normalizeFigure(candidate.figure_text) === normalizeFigure(label));
-    const derived = verifyDerivedFigure({ page, kpi, row, acceptedOccurrences });
-    if (!derived.ok) { fail.push(`${derived.error}; accepted occurrences: ${nearest || "none"}`); continue; }
-    verifiedStrips.push(`${page} ${label}: ${derived.path} ${derived.occurrenceIds.join(",")}`);
-  }
-}
-
-// ---- 6. Live-element dates: no literal date in source; counter recomputes from the derived row ----
-const liveDateChecks = [];
-const buildDate = new Date().toISOString().slice(0, 10);
-const daysBetween = (a, b) => Math.floor((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86400000);
-for (const { subject, story } of storyPages) {
-  const page = `/events/${subject}/${story}/`;
-  const source = readFileSync(join(eventsDir, subject, `${story}.astro`), "utf8");
-  const literal = source.match(/(?:updated|last check(?:ed)?)[^\n<]{0,40}?(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/);
-  if (literal) fail.push(`${page}: literal date in a live sentence in source ("${literal[0]}"); derive it from the build date`);
-  else liveDateChecks.push(`no_literal_live_date ${page}`);
-  const html = readFileSync(join(ROOT, "dist/events", subject, story, "index.html"), "utf8");
-  const shown = html.match(/That is (\d+) days/);
-  if (!shown) continue;
-  const row = derivedRows.find((candidate) => candidate.page === page && /days/.test(candidate.figure_text));
-  const start = row?.formula?.match(/'(\d{4}-\d{2}-\d{2})'/)?.[1];
-  if (!start) { fail.push(`${page}: counter shown but no derived-figures row gives its start date`); continue; }
-  const expected = daysBetween(start, buildDate);
-  if (Number(shown[1]) !== expected) fail.push(`${page}: counter seed ${shown[1]} days, derived row gives ${expected} (start ${start}, build ${buildDate})`);
-  else liveDateChecks.push(`counter_seed_matches_derived_row ${page} ${expected} days from ${start}`);
-}
-const fedIndexSource = readFileSync(join(eventsDir, "fed-rate", "index.astro"), "utf8");
-if (/(?:updated|last check(?:ed)?)[^\n<]{0,40}?(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/.test(fedIndexSource)) fail.push("/events/fed-rate/: literal date in a live sentence in source");
-else liveDateChecks.push("no_literal_live_date /events/fed-rate/");
-
-// ---- 7. Revision timeline: rendered counts and article links match the state view ----
-const revisionTimelineChecks = [];
-const revisionTimelineSource = readFileSync(join(ROOT, "src/components/story/RevisionTimeline.astro"), "utf8");
-if (/checked\s+(?:[A-Z][a-z]+ \d{1,2}, \d{4}|\d{4}-\d{2}-\d{2})/.test(revisionTimelineSource)) fail.push("revision timeline: literal date in no-changes sentence source");
-else revisionTimelineChecks.push("revision_timeline_no_literal_live_date");
-for (const [route, eventId] of foldChecks) {
-  const page = `/events/${route}/`;
-  const state = JSON.parse(readFileSync(join(ROOT, "data/state", `${eventId}.json`), "utf8"));
-  const timeline = state.revision_timeline ?? {};
-  const confirmations = timeline.confirmations ?? [];
-  const changes = timeline.changes ?? [];
-  const html = readFileSync(join(ROOT, "dist/events", route, "index.html"), "utf8");
-  const renderedConfirmations = [...html.matchAll(/\bdata-revision-confirmation\b/g)].length;
-  const renderedChanges = [...html.matchAll(/\bdata-revision-change\b/g)].length;
-  const quoteCount = confirmations.reduce((count, row) => count + (row.quotes ?? []).length, 0);
-  const renderedQuotes = [...html.matchAll(/\bdata-revision-quote\b/g)].length;
-  if (renderedConfirmations !== confirmations.length || renderedChanges !== changes.length || renderedQuotes !== quoteCount) {
-    fail.push(`${page}: revision_timeline_counts_match expected confirmations=${confirmations.length}, changes=${changes.length}, quotes=${quoteCount}; rendered confirmations=${renderedConfirmations}, changes=${renderedChanges}, quotes=${renderedQuotes}`);
-  } else {
-    revisionTimelineChecks.push(`revision_timeline_counts_match ${page} confirmations=${confirmations.length} changes=${changes.length} quotes=${quoteCount}`);
-  }
-  const section = html.match(/<section[^>]*class="[^"]*revision-timeline[^"]*"[^>]*>([\s\S]*?)<\/section>/)?.[0] ?? "";
-  if ((confirmations.length || changes.length) && !section) fail.push(`${page}: revision timeline has rows in state but no rendered section`);
-  if (!section) fail.push(`${page}: revision timeline section is missing`);
-  const noConfirmationSentence = "This page does not yet list who reported each figure.";
-  const renderedNoConfirmations = [...section.matchAll(/\bdata-revision-no-confirmations\b/g)].length;
-  if (renderedNoConfirmations !== (confirmations.length === 0 ? 1 : 0)) {
-    fail.push(`${page}: revision_timeline_no_confirmations_matches_view expected ${confirmations.length === 0 ? 1 : 0}, rendered ${renderedNoConfirmations}`);
-  } else if (confirmations.length === 0 && !section.includes(noConfirmationSentence)) {
-    fail.push(`${page}: revision_timeline_no_confirmations_matches_view fallback sentence is missing`);
-  } else {
-    revisionTimelineChecks.push(`revision_timeline_no_confirmations_matches_view ${page} confirmations=${confirmations.length}`);
-  }
-  const rawChangesCheckedAt = timeline.changes_checked_at;
-  const changesCheckedAt = rawChangesCheckedAt ? rawChangesCheckedAt.slice(0, 10) : buildDate;
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(changesCheckedAt)) fail.push(`${page}: revision_timeline_changes_checked_at must be YYYY-MM-DD`);
-  const noChangesSentence = `No reported fact about this event has changed since this page was first published (checked ${changesCheckedAt}).`;
-  const renderedNoChanges = [...section.matchAll(/\bdata-revision-no-changes\b/g)].length;
-  if (renderedNoChanges !== (changes.length === 0 ? 1 : 0)) {
-    fail.push(`${page}: revision_timeline_no_changes_matches_view expected ${changes.length === 0 ? 1 : 0}, rendered ${renderedNoChanges}`);
-  } else if (changes.length === 0 && !section.includes(noChangesSentence)) {
-    fail.push(`${page}: revision_timeline_no_changes_matches_view fallback sentence is missing or uses a date other than ${changesCheckedAt}`);
-  } else {
-    revisionTimelineChecks.push(`revision_timeline_no_changes_matches_view ${page} changes=${changes.length}`);
-  }
-  const expectedUrls = new Set([
-    ...confirmations.flatMap((row) => (row.reports ?? []).map((report) => report.url)),
-    ...confirmations.flatMap((row) => (row.quotes ?? []).flatMap((quote) => (quote.reports ?? []).map((report) => report.url))),
-    ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url]),
-  ]);
-  const actualUrls = [...section.matchAll(/\bhref="([^"]+)"/g)].map((match) => match[1]);
-  for (const url of actualUrls) {
-    if (!expectedUrls.has(url)) fail.push(`${page}: revision_timeline_links_match_view rendered href is absent from state: ${url}`);
-    try {
-      if (new URL(url).pathname === "/") fail.push(`${page}: revision_timeline_links_match_view bare-host href is forbidden: ${url}`);
-    } catch { fail.push(`${page}: revision_timeline_links_match_view invalid href: ${url}`); }
-  }
-  for (const url of expectedUrls) if (!actualUrls.includes(url)) fail.push(`${page}: revision_timeline_links_match_view state href is absent from page: ${url}`);
-  if (!fail.some((entry) => entry.startsWith(`${page}: revision_timeline_links_match_view`))) {
-    revisionTimelineChecks.push(`revision_timeline_links_match_view ${page} links=${actualUrls.length}`);
-  }
-}
+const stateViews = readState();
+const generated = checkStatePages(stateViews, dist);
+fail.push(...generated.failures);
+try { checkPageFigures(readFileSync(join(dist, 'index.html'), 'utf8'), stateViews); }
+catch (error) { fail.push(error.message); }
 
 if (fail.length) {
   console.error(`EVENT GATE FAILED (${fail.length}):`);
   for (const f of fail) console.error("  - " + f);
   process.exit(1);
 }
-for (const passed of verifiedStrips) console.log(`strip verified: ${passed}`);
-for (const passed of liveDateChecks) console.log(`live date check: ${passed}`);
-for (const passed of revisionTimelineChecks) console.log(`revision timeline check: ${passed}`);
-console.log(`event gate passed: ${storyPages.length} story page(s) manifested, mechanical checks clean; ${verifiedStrips.length}/12 strips verified`);
+console.log(`event gate passed: ${storyPages.length} prose manifests; ${generated.checked.length} generated stories verified; mechanical checks clean`);
