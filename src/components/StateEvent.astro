@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import RevisionTimeline from "./story/RevisionTimeline.astro";
 import { eventPath, chainPath, slotLabel } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 import { recordById, outletRecordByUrl } from "../lib/record-manifests.mjs";
@@ -8,7 +9,6 @@ const event = view.event ?? view;
 const evidence = new Map((view.evidence ?? []).map((row) => [row.id, row]));
 const occurrences = new Map((view.occurrences ?? []).map((row) => [row.id, row]));
 const documents = (view.edges ?? []).filter((edge) => edge.label === "cites" && edge.accepted !== false && edge.refusal == null && !edge.retire);
-const transitions = view.revision_timeline?.changes ?? [];
 const slots = Object.entries(view.current_state ?? {});
 const retirementReason = view.reason === "no_accepted_occurrence" ? "No supported facts were recorded." : view.reason;
 const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id}/` : outletRecordByUrl.has(source.url) ? `/records/${outletRecordByUrl.get(source.url).id}/` : source.url;
@@ -35,7 +35,7 @@ const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id
         {(view.same_name_not_compared ?? []).map((change) => <p>{slotLabel(change.name)}: {change.reason}</p>)}
         {(view.new_slots ?? []).map((slot) => <p>{slotLabel(slot.name)}: first tracked in this story. {slot.sentence}</p>)}
       </section>}
-      {transitions.length > 0 && <section class="revision-timeline" data-layer="fact"><h2>Changes in the record</h2><ul>{transitions.map((row) => <li data-state-transition>{row.sentence} <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul></section>}
+      <RevisionTimeline timeline={view.revision_timeline} />
       {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
         const document = evidence.get(edge.to_evidence_id);
         return <li><a href={`/records/${document.id}/`}>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;

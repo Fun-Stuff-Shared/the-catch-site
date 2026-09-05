@@ -147,3 +147,18 @@ test('pinned evidence identifiers remain stable document record identifiers', (t
   assert.equal(record.id, 'pin-v2:abc123');
   assert.equal(record.pinned_path, 'data/sources/news-state/pin-v2:abc123.txt');
 });
+
+import { checkTimeline } from './check-state-pages.mjs';
+test('confirmation quotes and sources cannot disappear from the rendered evidence', () => {
+  const timeline = {confirmations:[{sentence:'Confirmed.', reports:[{url:'https://example.com/report'}], quotes:[{text:'The recorded quote.', reports:[{url:'https://example.com/quote'}]}]}], changes:[]};
+  const html='<section class="revision-timeline"><li data-revision-confirmation>Confirmed. <a href="https://example.com/report">Report</a><li data-revision-quote>The recorded quote. <a href="https://example.com/quote">Quote</a></li></li><p data-revision-no-changes>No changes are recorded in this view. A check date has not been recorded.</p></section>';
+  const valid = html.replace('<li data-revision-quote>', '<ul><li data-revision-quote>').replace('</li></li>', '</li></ul></li>');
+  checkTimeline(valid,timeline);
+  assert.throws(()=>checkTimeline(valid.replace('data-revision-quote','missing-quote'),timeline),/quote count/);
+  assert.throws(()=>checkTimeline(valid.replace('/quote','/wrong'),timeline),/quote source/);
+  assert.throws(()=>checkTimeline(valid.replace('The recorded quote.','Wrong quote.'),timeline),/quote text/);
+});
+
+test('retired-only chains do not enter the home feature', () => {
+  assert.equal(frontChains({chains:new Map([['a',{id:'a',events:[{status:'retired'}],outlet_count:2}]])}).length,0);
+});

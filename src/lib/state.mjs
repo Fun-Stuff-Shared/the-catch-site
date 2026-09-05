@@ -96,7 +96,10 @@ export function rankedChains(state) {
 }
 
 export function frontChains(state) {
-  return rankedChains(state).filter((chain) => chain.events.filter((event) => event.status === "published").length > 1 || chain.outlet_count > 1);
+  return rankedChains(state).filter((chain) => {
+    const published = chain.events.filter((event) => event.status === "published").length;
+    return published > 0 && (published > 1 || chain.outlet_count > 1);
+  });
 }
 
 export function deskEvents(state) {
