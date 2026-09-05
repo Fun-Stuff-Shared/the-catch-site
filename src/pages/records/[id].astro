@@ -52,10 +52,10 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
       </section>
     )}
     <section class="excerpt">
-      <p class="excerpt-label">{record.record_kind === "corroboration"
+      <p class="excerpt-label">{record.excerpt_kind === 'document_opening' ? 'Opening of the saved document' : record.excerpt_kind === 'cited_passages' ? 'Passages cited in the stories above' : record.record_kind === "corroboration"
         ? "A passage recorded during the corroboration check"
         : "A passage we checked, word for word, against our saved copy"}</p>
-      <blockquote>{record.quote}</blockquote>
+      {record.passages?.length ? record.passages.map((passage) => <div><blockquote>{passage.text}</blockquote><p><a href={eventPath(passage.event_id)}>Read the citing story</a></p></div>) : <blockquote>{record.quote}</blockquote>}
     </section>
     <p class="original">
       <a href={record.url} rel="noreferrer">Read the original</a>

@@ -42,9 +42,17 @@ export function readState(directory = stateDirectory) {
     }
   }
   for (const chain of chains.values()) {
+    const rootView = events.get(chain.id);
+    const rootEvent = rootView?.event ?? rootView;
+    if (!rootEvent || ['label', 'status', 'reason'].some((key) => (chain.root[key] ?? null) !== (rootEvent[key] ?? null))) throw new Error(`Chain root differs from its story view: ${chain.id}`);
     for (const event of chain.events) {
       const view = events.get(event.id);
       if (!view || view.root_id !== chain.id || view.status !== event.status) throw new Error(`Chain member differs from its story view: ${event.id}`);
+      const fields = view.status === 'published' ? ['label', 'period', 'follows', 'reason'] : ['label', 'reason'];
+      const story = view.event ?? view;
+      if (fields.some((key) => (event[key] ?? null) !== (story[key] ?? null))) throw new Error(`Chain story metadata differs: ${event.id}`);
+      const slots = new Map(Object.entries(view.current_state ?? {}).map(([id, slot]) => [id, [slot.slot, slot.figure?.value ?? null, slot.figure?.unit ?? null, slot.quote_span ?? null, slot.occurrence_id ?? null]]));
+      if ((event.slots ?? []).length !== slots.size || (event.slots ?? []).some((slot) => JSON.stringify(slots.get(slot.slot_id)) !== JSON.stringify([slot.name, slot.value ?? null, slot.unit ?? null, slot.sentence ?? null, slot.occurrence_id ?? null]))) throw new Error(`Chain slot values differ: ${event.id}`);
     }
     for (const track of chain.tracked ?? []) for (const value of track.values) {
       const view = events.get(value.event_id);
@@ -101,8 +109,11 @@ export function citedDocuments(state) {
       const row = evidence.get(edge.to_evidence_id);
       if (!row || row.source_kind !== "document") throw new Error(`Citation ${edge.id} has no live document`);
       if (!["primary_record", "reference"].includes(edge.role)) throw new Error(`Citation ${edge.id} has an invalid role`);
-      const document = documents.get(row.id) ?? { ...row, citations: [] };
+      const document = documents.get(row.id) ?? { ...row, citations: [], passages: [] };
       document.citations.push({ event_id: view.event.id, role: edge.role, reason: edge.reason });
+      for (const occurrence of view.occurrences ?? []) {
+        if (readable(occurrence) && occurrence.evidence_id === row.id && occurrence.quote_span && !document.passages.some((passage) => passage.occurrence_id === occurrence.id)) document.passages.push({ occurrence_id: occurrence.id, event_id: view.event.id, text: occurrence.quote_span });
+      }
       documents.set(row.id, document);
     }
   }

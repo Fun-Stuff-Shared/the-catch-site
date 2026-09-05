@@ -11,9 +11,13 @@ function fixture(t) {
   const write = (name, value) => writeFileSync(join(root, `${name}.json`), JSON.stringify(value));
   const event = { id: 'event-a', label: 'Report', period: '2026-07', status: 'published' };
   const view = { event, status: 'published', root_id: event.id, desk: 'Economy', edges: [], evidence: [] };
-  write(event.id, view);
-  write(`chain-${event.id}`, { id: event.id, root: event, events: [event], outlet_count: 1, tracked: [] });
-  return { root, write, view, event };
+  const sync = () => {
+    write(event.id, view);
+    const slots = Object.entries(view.current_state ?? {}).map(([slot_id, slot]) => ({slot_id, name: slot.slot, value: slot.figure?.value ?? null, unit: slot.figure?.unit ?? null, sentence: slot.quote_span ?? null, occurrence_id: slot.occurrence_id ?? null}));
+    write(`chain-${event.id}`, { id: event.id, root: event, events: [{...event, slots}], outlet_count: 1, tracked: [] });
+  };
+  sync();
+  return { root, write, view, event, sync };
 }
 
 test('one-story one-outlet chains stay in their desk, outside the front', (t) => {
@@ -47,7 +51,7 @@ test('pull replaces same-time copies and rejects an incomplete source before rep
   const source = fixture(t);
   const destination = fixture(t);
   source.view.event.label = 'Changed report title';
-  source.write('event-a', source.view);
+  source.sync();
   pullState({ source: source.root, destination: destination.root });
   assert.equal(readState(destination.root).events.get('event-a').event.label, 'Changed report title');
   source.view.root_id = 'event-missing';
@@ -74,11 +78,11 @@ test('a cited document is pinned from verified text and a changed body refuses p
 });
 
 test('a displayed figure must match an accepted occurrence and its evidence', (t) => {
-  const { root, write, view } = fixture(t);
+  const { root, write, view, sync } = fixture(t);
   view.evidence = [{ id: 'doc', accepted: true }];
   view.occurrences = [{ id: 'o', evidence_id: 'doc', figure: { value: '105000', unit: 'jobs' }, accepted: true }];
   view.current_state = { payroll: { occurrence_id: 'o', figure: { value: '105000', unit: 'jobs' } } };
-  write('event-a', view);
+  sync();
   readState(root);
   view.current_state.payroll.figure.value = '120000';
   write('event-a', view);
@@ -87,4 +91,27 @@ test('a displayed figure must match an accepted occurrence and its evidence', (t
   view.evidence[0].accepted = false;
   write('event-a', view);
   assert.throws(() => readState(root), /no matching accepted occurrence/);
+});
+
+test('a stale chain label is rejected even when IDs and status agree', (t) => {
+  const { root, write, view } = fixture(t);
+  view.event.label = 'Changed title';
+  write('event-a', view);
+  assert.throws(() => readState(root), /Chain root differs/);
+});
+
+test('document records show the cited passage even when it occurs beyond the opening', (t) => {
+  const { root, write, view } = fixture(t);
+  const quote = 'The revised estimate is 105,000 jobs.';
+  const text = 'Cover information. '.repeat(150) + quote;
+  const source = join(root, 'source.txt');
+  writeFileSync(source, text);
+  view.evidence = [{id:'doc', source_kind:'document', title:'Report', publisher:'Agency', url:'https://example.com/report',text_path:source,text_sha256:createHash('sha256').update(text).digest('hex')}];
+  view.occurrences = [{id:'o', evidence_id:'doc', quote_span:quote}];
+  view.edges = [{id:'cite', label:'cites',to_evidence_id:'doc',role:'primary_record'}];
+  write('event-a',view);
+  const [record] = buildStateRecords(readState(root), root);
+  assert.equal(record.excerpt_kind, 'cited_passages');
+  assert.equal(record.quote, quote);
+  assert.equal(record.passages[0].occurrence_id,'o');
 });
