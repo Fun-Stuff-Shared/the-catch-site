@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T20:53:27Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0573.html",
+      "envelope_seq": 164385,
+      "id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:36.851058Z",
+      "root_evidence": "body:5196:5277",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+      "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+      "title": "Ohtani still not 100 percent, will not pitch on Sunday",
+      "url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+      "verbatim_level": "article",
+      "log_seq": 518032,
+      "recorded_at": "2026-09-06T01:33:23.190284Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-29T20:53:27Z",
+          "checkable_against": "MLB official player statistics and Los Angeles Dodgers game logs through August 29, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 431337,
+          "event_id": "event-29381b03-4398-4924-9ae9-ce091de50e53",
+          "evidence_id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+          "figure": {
+            "unit": "home runs",
+            "value": "12"
+          },
+          "id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-66bf181320adb0f1",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "he’s batting .274 with 12 homers in 45 games since his last pitching performance",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:36.851058Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 39594,
+          "span_start": 39512,
+          "speaker": "outlet's own",
+          "subject": "Shohei Ohtani",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+          "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+          "log_seq": 431338,
+          "recorded_at": "2026-09-05T08:51:33.264593Z",
+          "evidence_asserted_at": "2026-08-29T20:53:27Z",
+          "evidence_url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 596736,
+    "follows": null,
+    "id": "event-29381b03-4398-4924-9ae9-ce091de50e53",
+    "kind": "performance period",
+    "label": "Ohtani batting since last pitching performance",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Shohei Ohtani",
+    "log_seq": 596737
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-66bf181320adb0f1",
+      "envelope_seq": 431393,
+      "event_id": "event-29381b03-4398-4924-9ae9-ce091de50e53",
+      "id": "slot-94c09476-557c-4670-a65f-b72e00ef87b7",
+      "name": "home runs",
+      "refusal": null,
+      "log_seq": 431394,
+      "recorded_at": "2026-09-05T08:51:53.684493Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-29T20:53:27Z",
+      "checkable_against": "MLB official player statistics and Los Angeles Dodgers game logs through August 29, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 431337,
+      "event_id": "event-29381b03-4398-4924-9ae9-ce091de50e53",
+      "evidence_id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+      "figure": {
+        "unit": "home runs",
+        "value": "12"
+      },
+      "id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-66bf181320adb0f1",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "he’s batting .274 with 12 homers in 45 games since his last pitching performance",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:36.851058Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 39594,
+      "span_start": 39512,
+      "speaker": "outlet's own",
+      "subject": "Shohei Ohtani",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+      "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+      "log_seq": 431338,
+      "recorded_at": "2026-09-05T08:51:33.264593Z",
+      "evidence_asserted_at": "2026-08-29T20:53:27Z",
+      "evidence_url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-29381b03-4398-4924-9ae9-ce091de50e53",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

@@ -1,0 +1,152 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-20T14:58:16Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5131.html",
+      "envelope_seq": 169959,
+      "id": "4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:55.202343Z",
+      "root_evidence": "body:766:830",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5131.txt",
+      "text_sha256": "86e91a2265b6d989ef0ffd8fba6d617c9869d17dc9804cec9a31389fe4c2209a",
+      "url": "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html",
+      "verbatim_level": "article",
+      "log_seq": 520819,
+      "recorded_at": "2026-09-06T01:33:23.988522Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-20T14:58:16Z",
+          "checkable_against": "FactSet historical Nikkei 225 and S&P 500 index data",
+          "claim_type": "actual",
+          "envelope_seq": 415805,
+          "event_id": "event-1a39141a-6d55-4579-a771-a65475c65d51",
+          "evidence_id": "4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7",
+          "figure": {
+            "unit": "percent year-to-date increase in Nikkei 225",
+            "value": "30"
+          },
+          "id": "occurrence-4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7-9c1ce79db47b6355",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Despite a decline over the past month, Japan’s benchmark Nikkei 225 index remains almost 30 percent higher this year, while the S&P 500 is up 9.2 percent.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:55.202343Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 4466,
+          "span_start": 4310,
+          "speaker": "outlet's own",
+          "subject": "Japanese Nikkei 225 index and U.S. S&P 500 index",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5131.txt",
+          "text_sha256": "86e91a2265b6d989ef0ffd8fba6d617c9869d17dc9804cec9a31389fe4c2209a",
+          "log_seq": 415806,
+          "recorded_at": "2026-09-05T03:33:13.682670Z",
+          "evidence_asserted_at": "2026-08-20T14:58:16Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 596245,
+    "follows": null,
+    "id": "event-1a39141a-6d55-4579-a771-a65475c65d51",
+    "kind": "market performance",
+    "label": "Japan and U.S. stock performance in 2026",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Japanese Nikkei 225 index and U.S. S&P 500 index",
+    "log_seq": 596246
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7-9c1ce79db47b6355",
+      "envelope_seq": 415963,
+      "event_id": "event-1a39141a-6d55-4579-a771-a65475c65d51",
+      "id": "slot-07bd6b61-839b-4e58-b6d4-cf7fc1cfff1c",
+      "name": "index performance",
+      "refusal": null,
+      "log_seq": 415964,
+      "recorded_at": "2026-09-05T03:34:39.472294Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-20T14:58:16Z",
+      "checkable_against": "FactSet historical Nikkei 225 and S&P 500 index data",
+      "claim_type": "actual",
+      "envelope_seq": 415805,
+      "event_id": "event-1a39141a-6d55-4579-a771-a65475c65d51",
+      "evidence_id": "4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7",
+      "figure": {
+        "unit": "percent year-to-date increase in Nikkei 225",
+        "value": "30"
+      },
+      "id": "occurrence-4c5abe7be7a08f6277beef2c80b4ed53b89ddf1e881203333b326ff9c15f20c7-9c1ce79db47b6355",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Despite a decline over the past month, Japan’s benchmark Nikkei 225 index remains almost 30 percent higher this year, while the S&P 500 is up 9.2 percent.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:55.202343Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 4466,
+      "span_start": 4310,
+      "speaker": "outlet's own",
+      "subject": "Japanese Nikkei 225 index and U.S. S&P 500 index",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5131.txt",
+      "text_sha256": "86e91a2265b6d989ef0ffd8fba6d617c9869d17dc9804cec9a31389fe4c2209a",
+      "log_seq": 415806,
+      "recorded_at": "2026-09-05T03:33:13.682670Z",
+      "evidence_asserted_at": "2026-08-20T14:58:16Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/02/business/us-japan-yen.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-1a39141a-6d55-4579-a771-a65475c65d51",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

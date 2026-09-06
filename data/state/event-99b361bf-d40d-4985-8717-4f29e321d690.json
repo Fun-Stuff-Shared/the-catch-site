@@ -1,0 +1,163 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-05T13:26:03Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5440.html",
+      "envelope_seq": 170577,
+      "id": "56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:31.782062Z",
+      "root_evidence": "body:1660:1686",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5440.txt",
+      "text_sha256": "6d49bc6f41996d87f39472f37fdd81b352bb8369bece4210be6a9084a8b6a349",
+      "url": "https://www.nytimes.com/2026/08/05/briefing/michigan-democrat-senate-primary.html",
+      "verbatim_level": "article",
+      "log_seq": 521128,
+      "recorded_at": "2026-09-06T01:33:24.076141Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-05",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-05T13:26:03Z",
+          "checkable_against": "NFL contract filing and Atlanta Falcons contract announcement",
+          "claim_type": "actual",
+          "envelope_seq": 431709,
+          "event_id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+          "evidence_id": "56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3",
+          "figure": {
+            "unit": "years",
+            "value": "3"
+          },
+          "id": "occurrence-56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3-f5eb6bb70c041b5d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Bijan Robinson and the Atlanta Falcons agreed on a three-year deal that makes him the highest-paid running back in league history by average annual salary.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:31.782062Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 9040,
+          "span_start": 8885,
+          "speaker": "outlet's own",
+          "subject": "Bijan Robinson",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5440.txt",
+          "text_sha256": "6d49bc6f41996d87f39472f37fdd81b352bb8369bece4210be6a9084a8b6a349",
+          "log_seq": 431710,
+          "recorded_at": "2026-09-05T08:56:12.504748Z",
+          "evidence_asserted_at": "2026-08-05T13:26:03Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/05/briefing/michigan-democrat-senate-primary.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 600258,
+    "follows": null,
+    "id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+    "kind": "contract",
+    "label": "Bijan Robinson Atlanta Falcons contract",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Bijan Robinson",
+    "log_seq": 600259
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3-f5eb6bb70c041b5d",
+      "envelope_seq": 431663,
+      "event_id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+      "id": "slot-70c60ac0-284a-4f0d-9712-1d644bd63d97",
+      "name": "contract length",
+      "refusal": null,
+      "log_seq": 431664,
+      "recorded_at": "2026-09-05T08:54:43.435597Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3-f5eb6bb70c041b5d",
+      "envelope_seq": 431667,
+      "event_id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+      "id": "slot-8605bb9a-86f6-4522-8043-b03d337d3ae0",
+      "name": "contract length",
+      "refusal": "slot_name_duplicate",
+      "log_seq": 431668,
+      "recorded_at": "2026-09-05T08:54:56.510204Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-05",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-05T13:26:03Z",
+      "checkable_against": "NFL contract filing and Atlanta Falcons contract announcement",
+      "claim_type": "actual",
+      "envelope_seq": 431709,
+      "event_id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+      "evidence_id": "56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3",
+      "figure": {
+        "unit": "years",
+        "value": "3"
+      },
+      "id": "occurrence-56d150b2d6b9c4dae5ced0d3473bbfb55c6f7454b9ba030f2fde955c2252c9c3-f5eb6bb70c041b5d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Bijan Robinson and the Atlanta Falcons agreed on a three-year deal that makes him the highest-paid running back in league history by average annual salary.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:31.782062Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 9040,
+      "span_start": 8885,
+      "speaker": "outlet's own",
+      "subject": "Bijan Robinson",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5440.txt",
+      "text_sha256": "6d49bc6f41996d87f39472f37fdd81b352bb8369bece4210be6a9084a8b6a349",
+      "log_seq": 431710,
+      "recorded_at": "2026-09-05T08:56:12.504748Z",
+      "evidence_asserted_at": "2026-08-05T13:26:03Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/05/briefing/michigan-democrat-senate-primary.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-99b361bf-d40d-4985-8717-4f29e321d690",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

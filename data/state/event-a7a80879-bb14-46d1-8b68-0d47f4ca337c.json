@@ -1,0 +1,152 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-14T15:16:50Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6442.html",
+      "envelope_seq": 171089,
+      "id": "554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:10.410601Z",
+      "root_evidence": "body:5095:5098",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6442.txt",
+      "text_sha256": "f9b9761b4d9d7d6306d8620edfe9cca50de1d1e11abdc41c8794326c0d1fe912",
+      "url": "https://www.nytimes.com/2026/08/13/well/covid-vaccine-pregnancy-miscarriage-fauci.html",
+      "verbatim_level": "article",
+      "log_seq": 521384,
+      "recorded_at": "2026-09-06T01:33:24.150281Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2021",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-14T15:16:50Z",
+          "checkable_against": "National Center for Health Statistics maternal mortality data for 2019-2021",
+          "claim_type": "actual",
+          "envelope_seq": 428965,
+          "event_id": "event-a7a80879-bb14-46d1-8b68-0d47f4ca337c",
+          "evidence_id": "554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800",
+          "figure": {
+            "unit": "maternal deaths",
+            "value": "861"
+          },
+          "id": "occurrence-554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800-85ea682bdb40ddba",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Maternal deaths in the United States rose to 861 in 2020, from 754 the previous year, according to the National Center for Health Statistics, and increased to 1,205 in 2021, when the Delta variant of the virus began circulating.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:10.410601Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 6337,
+          "span_start": 6109,
+          "speaker": "National Center for Health Statistics",
+          "subject": "Maternal deaths in the United States",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6442.txt",
+          "text_sha256": "f9b9761b4d9d7d6306d8620edfe9cca50de1d1e11abdc41c8794326c0d1fe912",
+          "log_seq": 428966,
+          "recorded_at": "2026-09-05T07:34:21.912215Z",
+          "evidence_asserted_at": "2026-08-14T15:16:50Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/well/covid-vaccine-pregnancy-miscarriage-fauci.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 600687,
+    "follows": null,
+    "id": "event-a7a80879-bb14-46d1-8b68-0d47f4ca337c",
+    "kind": "report",
+    "label": "US maternal deaths during Covid pandemic",
+    "minted_by": "migration",
+    "period": "2021-12",
+    "refusal": null,
+    "status": "published",
+    "subject": "Maternal deaths in the United States",
+    "log_seq": 600688
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800-85ea682bdb40ddba",
+      "envelope_seq": 429025,
+      "event_id": "event-a7a80879-bb14-46d1-8b68-0d47f4ca337c",
+      "id": "slot-3b116057-744f-49f5-967b-acee2dc9add7",
+      "name": "maternal deaths",
+      "refusal": null,
+      "log_seq": 429026,
+      "recorded_at": "2026-09-05T07:35:44.236258Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2021",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-14T15:16:50Z",
+      "checkable_against": "National Center for Health Statistics maternal mortality data for 2019-2021",
+      "claim_type": "actual",
+      "envelope_seq": 428965,
+      "event_id": "event-a7a80879-bb14-46d1-8b68-0d47f4ca337c",
+      "evidence_id": "554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800",
+      "figure": {
+        "unit": "maternal deaths",
+        "value": "861"
+      },
+      "id": "occurrence-554ec1ed02d5fb267889cd26aafc565d5bf90c3805917f7e05ecca17a7467800-85ea682bdb40ddba",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Maternal deaths in the United States rose to 861 in 2020, from 754 the previous year, according to the National Center for Health Statistics, and increased to 1,205 in 2021, when the Delta variant of the virus began circulating.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:10.410601Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 6337,
+      "span_start": 6109,
+      "speaker": "National Center for Health Statistics",
+      "subject": "Maternal deaths in the United States",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6442.txt",
+      "text_sha256": "f9b9761b4d9d7d6306d8620edfe9cca50de1d1e11abdc41c8794326c0d1fe912",
+      "log_seq": 428966,
+      "recorded_at": "2026-09-05T07:34:21.912215Z",
+      "evidence_asserted_at": "2026-08-14T15:16:50Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/well/covid-vaccine-pregnancy-miscarriage-fauci.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-a7a80879-bb14-46d1-8b68-0d47f4ca337c",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

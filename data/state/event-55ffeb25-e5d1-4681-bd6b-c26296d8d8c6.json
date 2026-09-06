@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T19:49:43Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0198.html",
+      "envelope_seq": 163635,
+      "id": "489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:35.596478Z",
+      "root_evidence": "body:5217:5298",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0198.txt",
+      "text_sha256": "ede01efd02d33b0e1958cd883ea7a605a759b5d7db2f4a0621959f994c3c5ee4",
+      "title": "How the Aquarium of the Pacific scrambled to save hundreds of sea creatures",
+      "url": "https://apnews.com/article/aquarium-pacific-saving-trafficked-sea-creatures-2212d222689aaa53ae6380b586adbe7d",
+      "verbatim_level": "article",
+      "log_seq": 517657,
+      "recorded_at": "2026-09-06T01:33:23.083560Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T19:49:43Z",
+          "checkable_against": "Federal wildlife center transfer records and Aquarium of the Pacific intake records for late July 2026",
+          "claim_type": "actual",
+          "envelope_seq": 408157,
+          "event_id": "event-55ffeb25-e5d1-4681-bd6b-c26296d8d8c6",
+          "evidence_id": "489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1",
+          "figure": {
+            "unit": "marine animals",
+            "value": "300"
+          },
+          "id": "occurrence-489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1-bf2e65c0b2b7ef30",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Another operation near the end of July brought another 300 marine animals to the aquarium after a brief stay at a federal wildlife center in Torrance.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:35.596478Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 40861,
+          "span_start": 40711,
+          "speaker": "outlet's own",
+          "subject": "Late July wildlife trafficking operation",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0198.txt",
+          "text_sha256": "ede01efd02d33b0e1958cd883ea7a605a759b5d7db2f4a0621959f994c3c5ee4",
+          "log_seq": 408158,
+          "recorded_at": "2026-09-05T02:32:53.058384Z",
+          "evidence_asserted_at": "2026-08-28T19:49:43Z",
+          "evidence_url": "https://apnews.com/article/aquarium-pacific-saving-trafficked-sea-creatures-2212d222689aaa53ae6380b586adbe7d",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 598176,
+    "follows": null,
+    "id": "event-55ffeb25-e5d1-4681-bd6b-c26296d8d8c6",
+    "kind": "seizure",
+    "label": "Late July 2026 wildlife trafficking seizure marine animals",
+    "minted_by": "migration",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Late July wildlife trafficking operation",
+    "log_seq": 598177
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1-bf2e65c0b2b7ef30",
+      "envelope_seq": 408529,
+      "event_id": "event-55ffeb25-e5d1-4681-bd6b-c26296d8d8c6",
+      "id": "slot-4352a59a-a5a4-4881-8de9-4d28fad4e888",
+      "name": "marine animals transferred",
+      "refusal": null,
+      "log_seq": 408530,
+      "recorded_at": "2026-09-05T02:35:33.074878Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T19:49:43Z",
+      "checkable_against": "Federal wildlife center transfer records and Aquarium of the Pacific intake records for late July 2026",
+      "claim_type": "actual",
+      "envelope_seq": 408157,
+      "event_id": "event-55ffeb25-e5d1-4681-bd6b-c26296d8d8c6",
+      "evidence_id": "489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1",
+      "figure": {
+        "unit": "marine animals",
+        "value": "300"
+      },
+      "id": "occurrence-489e76915fc0019b2d9ba47b517ec33b437fe188679763fa98a1dc03973afae1-bf2e65c0b2b7ef30",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Another operation near the end of July brought another 300 marine animals to the aquarium after a brief stay at a federal wildlife center in Torrance.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:35.596478Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 40861,
+      "span_start": 40711,
+      "speaker": "outlet's own",
+      "subject": "Late July wildlife trafficking operation",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0198.txt",
+      "text_sha256": "ede01efd02d33b0e1958cd883ea7a605a759b5d7db2f4a0621959f994c3c5ee4",
+      "log_seq": 408158,
+      "recorded_at": "2026-09-05T02:32:53.058384Z",
+      "evidence_asserted_at": "2026-08-28T19:49:43Z",
+      "evidence_url": "https://apnews.com/article/aquarium-pacific-saving-trafficked-sea-creatures-2212d222689aaa53ae6380b586adbe7d",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-55ffeb25-e5d1-4681-bd6b-c26296d8d8c6",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

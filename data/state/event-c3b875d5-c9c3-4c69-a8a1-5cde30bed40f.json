@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-17T10:51:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_2034.html",
+      "envelope_seq": 165877,
+      "id": "44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b",
+      "publisher": "Deutsche Welle",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:18.083579Z",
+      "root_evidence": "body:766:776",
+      "root_id": "www.dw.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "international_public",
+      "source_id": "dw_english",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2034.txt",
+      "text_sha256": "01e171c986b4be57fe892545f30034a593fd702f19317fde1913bcd469c648d9",
+      "title": "Germany's AfD is labeled far right, populist or extremist",
+      "url": "https://www.dw.com/en/germany-s-afd-is-labeled-far-right-populist-or-extremist/a-78395043?maca=en-rss-en-all-1573-xml-mrss",
+      "verbatim_level": "article",
+      "log_seq": 518778,
+      "recorded_at": "2026-09-06T01:33:23.408892Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-17",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-17T10:51:00Z",
+          "checkable_against": "State-level classification decisions by Germany's Offices for the Protection of the Constitution",
+          "claim_type": "actual",
+          "envelope_seq": 401859,
+          "event_id": "event-c3b875d5-c9c3-4c69-a8a1-5cde30bed40f",
+          "evidence_id": "44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b",
+          "figure": {
+            "unit": "state branches",
+            "value": "5"
+          },
+          "id": "occurrence-44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b-66ed7a61bcf60654",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Notably, at the state level, five of the sixteen AfD state branches have already been classified as \"confirmed right-wing extremist.\"",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:18.083579Z",
+          "root_id": "www.dw.com",
+          "span_check": "byte_exact",
+          "span_end": 8552,
+          "span_start": 8419,
+          "speaker": "outlet's own",
+          "subject": "AfD state branches",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2034.txt",
+          "text_sha256": "01e171c986b4be57fe892545f30034a593fd702f19317fde1913bcd469c648d9",
+          "log_seq": 401860,
+          "recorded_at": "2026-09-05T00:53:41.826447Z",
+          "evidence_asserted_at": "2026-08-17T10:51:00Z",
+          "evidence_url": "https://www.dw.com/en/germany-s-afd-is-labeled-far-right-populist-or-extremist/a-78395043?maca=en-rss-en-all-1573-xml-mrss",
+          "evidence_publisher": "Deutsche Welle",
+          "evidence_source_id": "dw_english"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 601632,
+    "follows": null,
+    "id": "event-c3b875d5-c9c3-4c69-a8a1-5cde30bed40f",
+    "kind": "classification",
+    "label": "Five AfD state branches classified confirmed extremist",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "AfD state branches",
+    "log_seq": 601633
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b-66ed7a61bcf60654",
+      "envelope_seq": 401921,
+      "event_id": "event-c3b875d5-c9c3-4c69-a8a1-5cde30bed40f",
+      "id": "slot-3c42606b-ec58-4829-a278-dec131428eaa",
+      "name": "classified branches",
+      "refusal": null,
+      "log_seq": 401922,
+      "recorded_at": "2026-09-05T00:54:16.437333Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-17",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-17T10:51:00Z",
+      "checkable_against": "State-level classification decisions by Germany's Offices for the Protection of the Constitution",
+      "claim_type": "actual",
+      "envelope_seq": 401859,
+      "event_id": "event-c3b875d5-c9c3-4c69-a8a1-5cde30bed40f",
+      "evidence_id": "44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b",
+      "figure": {
+        "unit": "state branches",
+        "value": "5"
+      },
+      "id": "occurrence-44e8e0dca9afde49c9259bfc58ab9d1827f1ce6287d73bef0ffab4e7beb6614b-66ed7a61bcf60654",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Notably, at the state level, five of the sixteen AfD state branches have already been classified as \"confirmed right-wing extremist.\"",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:18.083579Z",
+      "root_id": "www.dw.com",
+      "span_check": "byte_exact",
+      "span_end": 8552,
+      "span_start": 8419,
+      "speaker": "outlet's own",
+      "subject": "AfD state branches",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2034.txt",
+      "text_sha256": "01e171c986b4be57fe892545f30034a593fd702f19317fde1913bcd469c648d9",
+      "log_seq": 401860,
+      "recorded_at": "2026-09-05T00:53:41.826447Z",
+      "evidence_asserted_at": "2026-08-17T10:51:00Z",
+      "evidence_url": "https://www.dw.com/en/germany-s-afd-is-labeled-far-right-populist-or-extremist/a-78395043?maca=en-rss-en-all-1573-xml-mrss",
+      "evidence_publisher": "Deutsche Welle",
+      "evidence_source_id": "dw_english"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-c3b875d5-c9c3-4c69-a8a1-5cde30bed40f",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

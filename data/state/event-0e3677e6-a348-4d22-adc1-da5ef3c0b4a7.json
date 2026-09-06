@@ -1,0 +1,152 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-04T20:31:15Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5322.html",
+      "envelope_seq": 170341,
+      "id": "4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:18.843091Z",
+      "root_evidence": "body:1153:1171",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5322.txt",
+      "text_sha256": "a4d6c7d12b722e562566265f951f97492889eeed62fc795bb0dae538f11500ed",
+      "url": "https://www.nytimes.com/2026/08/04/health/autism-therapy-medicaid.html",
+      "verbatim_level": "article",
+      "log_seq": 521010,
+      "recorded_at": "2026-09-06T01:33:24.041713Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-04",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-04T20:31:15Z",
+          "checkable_against": "Government audit reports for Indiana, Colorado, Wisconsin and Maine Medicaid programs",
+          "claim_type": "actual",
+          "envelope_seq": 400987,
+          "event_id": "event-0e3677e6-a348-4d22-adc1-da5ef3c0b4a7",
+          "evidence_id": "4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a",
+          "figure": {
+            "unit": "state Medicaid programs",
+            "value": "4"
+          },
+          "id": "occurrence-4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a-0852b3cb1b5a4506",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Recent government audits of four state Medicaid programs — in Indiana, Colorado, Wisconsin and Maine — found that clinics routinely billed Medicaid for nontherapeutic activities like lunch time and trips to the playground.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:18.843091Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5082,
+          "span_start": 4856,
+          "speaker": "outlet's own",
+          "subject": "State Medicaid autism therapy billing audits",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5322.txt",
+          "text_sha256": "a4d6c7d12b722e562566265f951f97492889eeed62fc795bb0dae538f11500ed",
+          "log_seq": 400988,
+          "recorded_at": "2026-09-05T00:46:55.447840Z",
+          "evidence_asserted_at": "2026-08-04T20:31:15Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/health/autism-therapy-medicaid.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 595890,
+    "follows": null,
+    "id": "event-0e3677e6-a348-4d22-adc1-da5ef3c0b4a7",
+    "kind": "audit",
+    "label": "State Medicaid autism therapy audits",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "State Medicaid autism therapy billing audits",
+    "log_seq": 595891
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a-0852b3cb1b5a4506",
+      "envelope_seq": 401271,
+      "event_id": "event-0e3677e6-a348-4d22-adc1-da5ef3c0b4a7",
+      "id": "slot-bd21f113-2761-4536-b783-b17318d437f4",
+      "name": "audited programs",
+      "refusal": null,
+      "log_seq": 401272,
+      "recorded_at": "2026-09-05T00:48:33.811174Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-04",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-04T20:31:15Z",
+      "checkable_against": "Government audit reports for Indiana, Colorado, Wisconsin and Maine Medicaid programs",
+      "claim_type": "actual",
+      "envelope_seq": 400987,
+      "event_id": "event-0e3677e6-a348-4d22-adc1-da5ef3c0b4a7",
+      "evidence_id": "4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a",
+      "figure": {
+        "unit": "state Medicaid programs",
+        "value": "4"
+      },
+      "id": "occurrence-4459f4a18cf4207e8faea768ef53f6ab4d2a3e0875b215390948327c1f6f483a-0852b3cb1b5a4506",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Recent government audits of four state Medicaid programs — in Indiana, Colorado, Wisconsin and Maine — found that clinics routinely billed Medicaid for nontherapeutic activities like lunch time and trips to the playground.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:18.843091Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5082,
+      "span_start": 4856,
+      "speaker": "outlet's own",
+      "subject": "State Medicaid autism therapy billing audits",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5322.txt",
+      "text_sha256": "a4d6c7d12b722e562566265f951f97492889eeed62fc795bb0dae538f11500ed",
+      "log_seq": 400988,
+      "recorded_at": "2026-09-05T00:46:55.447840Z",
+      "evidence_asserted_at": "2026-08-04T20:31:15Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/health/autism-therapy-medicaid.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-0e3677e6-a348-4d22-adc1-da5ef3c0b4a7",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

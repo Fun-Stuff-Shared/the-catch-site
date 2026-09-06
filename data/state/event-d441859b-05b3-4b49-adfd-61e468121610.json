@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T18:00:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8380.html",
+      "envelope_seq": 171425,
+      "id": "53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992",
+      "publisher": "Politico",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:37.221127Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.politico.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "politico_politics_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8380.txt",
+      "text_sha256": "bd7c36774ef154886a2bb8ba556c038ad57358094f1fb073ba04e5d092d2bbdb",
+      "title": "Progressives are learning the hard way how to survive Fox News",
+      "url": "https://www.politico.com/news/2026/08/29/fox-news-progressives-interviews-01053420",
+      "verbatim_level": "article",
+      "log_seq": 521552,
+      "recorded_at": "2026-09-06T01:33:24.198042Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T18:00:00Z",
+          "checkable_against": "Nielsen cable network audience ratings for August 2026",
+          "claim_type": "actual",
+          "envelope_seq": 426805,
+          "event_id": "event-d441859b-05b3-4b49-adfd-61e468121610",
+          "evidence_id": "53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992",
+          "figure": {
+            "unit": "million viewers during primetime",
+            "value": "2.5"
+          },
+          "id": "occurrence-53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992-64b63d20f7298360",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "When reached for comment, Fox News spokesperson Jessica Ketner pointed to viewership data from Nielsen indicating its spot as the most viewed cable network in the U.S., with an average of 2.5 million viewers during primetime.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:27:37.221127Z",
+          "root_id": "www.politico.com",
+          "span_check": "byte_exact",
+          "span_end": 5837,
+          "span_start": 5612,
+          "speaker": "Jessica Ketner",
+          "subject": "Fox News",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8380.txt",
+          "text_sha256": "bd7c36774ef154886a2bb8ba556c038ad57358094f1fb073ba04e5d092d2bbdb",
+          "log_seq": 426806,
+          "recorded_at": "2026-09-05T07:12:35.150871Z",
+          "evidence_asserted_at": "2026-08-29T18:00:00Z",
+          "evidence_url": "https://www.politico.com/news/2026/08/29/fox-news-progressives-interviews-01053420",
+          "evidence_publisher": "Politico",
+          "evidence_source_id": "politico_politics_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 602202,
+    "follows": null,
+    "id": "event-d441859b-05b3-4b49-adfd-61e468121610",
+    "kind": "report",
+    "label": "Fox News primetime viewership claim",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Fox News",
+    "log_seq": 602203
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992-64b63d20f7298360",
+      "envelope_seq": 427015,
+      "event_id": "event-d441859b-05b3-4b49-adfd-61e468121610",
+      "id": "slot-f2d43eab-c347-425a-b08c-1e9aae5e38bf",
+      "name": "primetime viewers",
+      "refusal": null,
+      "log_seq": 427016,
+      "recorded_at": "2026-09-05T07:13:32.352948Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T18:00:00Z",
+      "checkable_against": "Nielsen cable network audience ratings for August 2026",
+      "claim_type": "actual",
+      "envelope_seq": 426805,
+      "event_id": "event-d441859b-05b3-4b49-adfd-61e468121610",
+      "evidence_id": "53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992",
+      "figure": {
+        "unit": "million viewers during primetime",
+        "value": "2.5"
+      },
+      "id": "occurrence-53c5f71ea6027de6eb8b6657ef94c345139bfc5f63aad399973429f4b522d992-64b63d20f7298360",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "When reached for comment, Fox News spokesperson Jessica Ketner pointed to viewership data from Nielsen indicating its spot as the most viewed cable network in the U.S., with an average of 2.5 million viewers during primetime.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:37.221127Z",
+      "root_id": "www.politico.com",
+      "span_check": "byte_exact",
+      "span_end": 5837,
+      "span_start": 5612,
+      "speaker": "Jessica Ketner",
+      "subject": "Fox News",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8380.txt",
+      "text_sha256": "bd7c36774ef154886a2bb8ba556c038ad57358094f1fb073ba04e5d092d2bbdb",
+      "log_seq": 426806,
+      "recorded_at": "2026-09-05T07:12:35.150871Z",
+      "evidence_asserted_at": "2026-08-29T18:00:00Z",
+      "evidence_url": "https://www.politico.com/news/2026/08/29/fox-news-progressives-interviews-01053420",
+      "evidence_publisher": "Politico",
+      "evidence_source_id": "politico_politics_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-d441859b-05b3-4b49-adfd-61e468121610",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T05:05:07Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0283.html",
+      "envelope_seq": 163805,
+      "id": "5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:49.462704Z",
+      "root_evidence": "body:5233:5314",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0283.txt",
+      "text_sha256": "43003a7673e7691ba25a5b04b319428c073568a222e3563dea1c9d292b37043a",
+      "title": "Eldridge has 4 hits, drives in 4 runs as Giants beat Diamondbacks 7-2 to split doubleheader",
+      "url": "https://apnews.com/article/diamondbacks-giants-score-82dfc2304532e75c7ab518f6eba790bc",
+      "verbatim_level": "article",
+      "log_seq": 517742,
+      "recorded_at": "2026-09-06T01:33:23.108084Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-30T05:05:07Z",
+          "checkable_against": "MLB National League standings after games on 2026-08-29",
+          "claim_type": "actual",
+          "envelope_seq": 431175,
+          "event_id": "event-b844ed93-d077-48a7-b4e2-1d1f36ecdfff",
+          "evidence_id": "5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be",
+          "figure": {
+            "unit": "win-loss record",
+            "value": "73-65"
+          },
+          "id": "occurrence-5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be-e687b5ba5c32c889",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Arizona (73-65) is tied with the San Diego Padres for the NL’s third wild-card spot.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:49.462704Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 39978,
+          "span_start": 39892,
+          "speaker": "outlet's own",
+          "subject": "Arizona Diamondbacks",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0283.txt",
+          "text_sha256": "43003a7673e7691ba25a5b04b319428c073568a222e3563dea1c9d292b37043a",
+          "log_seq": 431176,
+          "recorded_at": "2026-09-05T08:50:13.818769Z",
+          "evidence_asserted_at": "2026-08-30T05:05:07Z",
+          "evidence_url": "https://apnews.com/article/diamondbacks-giants-score-82dfc2304532e75c7ab518f6eba790bc",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 601270,
+    "follows": null,
+    "id": "event-b844ed93-d077-48a7-b4e2-1d1f36ecdfff",
+    "kind": "season standing",
+    "label": "Arizona Diamondbacks 2026 season standings August 29",
+    "minted_by": "migration",
+    "period": "2026-08-29",
+    "refusal": null,
+    "status": "published",
+    "subject": "Arizona Diamondbacks",
+    "log_seq": 601271
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be-e687b5ba5c32c889",
+      "envelope_seq": 431515,
+      "event_id": "event-b844ed93-d077-48a7-b4e2-1d1f36ecdfff",
+      "id": "slot-396b088a-8210-4dd8-8f82-4e53fa8f1c09",
+      "name": "season record",
+      "refusal": null,
+      "log_seq": 431516,
+      "recorded_at": "2026-09-05T08:52:59.751055Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-30T05:05:07Z",
+      "checkable_against": "MLB National League standings after games on 2026-08-29",
+      "claim_type": "actual",
+      "envelope_seq": 431175,
+      "event_id": "event-b844ed93-d077-48a7-b4e2-1d1f36ecdfff",
+      "evidence_id": "5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be",
+      "figure": {
+        "unit": "win-loss record",
+        "value": "73-65"
+      },
+      "id": "occurrence-5711e30b37dc3f10813413fae3336b36e4b138adb46c846bb0f86c380e0d69be-e687b5ba5c32c889",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Arizona (73-65) is tied with the San Diego Padres for the NL’s third wild-card spot.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:49.462704Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 39978,
+      "span_start": 39892,
+      "speaker": "outlet's own",
+      "subject": "Arizona Diamondbacks",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0283.txt",
+      "text_sha256": "43003a7673e7691ba25a5b04b319428c073568a222e3563dea1c9d292b37043a",
+      "log_seq": 431176,
+      "recorded_at": "2026-09-05T08:50:13.818769Z",
+      "evidence_asserted_at": "2026-08-30T05:05:07Z",
+      "evidence_url": "https://apnews.com/article/diamondbacks-giants-score-82dfc2304532e75c7ab518f6eba790bc",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-b844ed93-d077-48a7-b4e2-1d1f36ecdfff",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

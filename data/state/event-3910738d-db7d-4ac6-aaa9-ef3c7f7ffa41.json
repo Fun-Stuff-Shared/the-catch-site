@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T00:48:30Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0235.html",
+      "envelope_seq": 163709,
+      "id": "4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:41.734185Z",
+      "root_evidence": "body:5232:5313",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0235.txt",
+      "text_sha256": "9929b05e875f66cd94227f7d3d3db1efd6765816d640033aaad8be68eeb66549",
+      "title": "Avs defenseman Cale Makar signs richest deal in NHL history at $163.2 million over 8 years",
+      "url": "https://apnews.com/article/cale-makar-avalanche-nhl-5b307fb172330652649ab6f4acf3b937",
+      "verbatim_level": "article",
+      "log_seq": 517694,
+      "recorded_at": "2026-09-06T01:33:23.094210Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-03-28",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T00:48:30Z",
+          "checkable_against": "NHL game and player statistics",
+          "claim_type": "actual",
+          "envelope_seq": 417759,
+          "event_id": "event-3910738d-db7d-4ac6-aaa9-ef3c7f7ffa41",
+          "evidence_id": "4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1",
+          "figure": {
+            "unit": "NHL points",
+            "value": "500"
+          },
+          "id": "occurrence-4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1-21eb06a366898d88",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "He also notched his 500th NHL point on March 28 in his 467th career game.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:41.734185Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 42708,
+          "span_start": 42635,
+          "speaker": "outlet's own",
+          "subject": "Cale Makar",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0235.txt",
+          "text_sha256": "9929b05e875f66cd94227f7d3d3db1efd6765816d640033aaad8be68eeb66549",
+          "log_seq": 417760,
+          "recorded_at": "2026-09-05T04:40:41.469229Z",
+          "evidence_asserted_at": "2026-08-29T00:48:30Z",
+          "evidence_url": "https://apnews.com/article/cale-makar-avalanche-nhl-5b307fb172330652649ab6f4acf3b937",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 597259,
+    "follows": null,
+    "id": "event-3910738d-db7d-4ac6-aaa9-ef3c7f7ffa41",
+    "kind": "milestone",
+    "label": "Cale Makar 500th NHL point",
+    "minted_by": "migration",
+    "period": "2026-03-28",
+    "refusal": null,
+    "status": "published",
+    "subject": "Cale Makar",
+    "log_seq": 597260
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1-21eb06a366898d88",
+      "envelope_seq": 417817,
+      "event_id": "event-3910738d-db7d-4ac6-aaa9-ef3c7f7ffa41",
+      "id": "slot-97ca4a31-8756-4aa4-a2d9-013d8c576cef",
+      "name": "NHL points",
+      "refusal": null,
+      "log_seq": 417818,
+      "recorded_at": "2026-09-05T04:41:16.922731Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-03-28",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T00:48:30Z",
+      "checkable_against": "NHL game and player statistics",
+      "claim_type": "actual",
+      "envelope_seq": 417759,
+      "event_id": "event-3910738d-db7d-4ac6-aaa9-ef3c7f7ffa41",
+      "evidence_id": "4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1",
+      "figure": {
+        "unit": "NHL points",
+        "value": "500"
+      },
+      "id": "occurrence-4d4bf0dcadc54cd8d303664183843453ea0234c6964706c4889f3715afe389e1-21eb06a366898d88",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "He also notched his 500th NHL point on March 28 in his 467th career game.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:41.734185Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 42708,
+      "span_start": 42635,
+      "speaker": "outlet's own",
+      "subject": "Cale Makar",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0235.txt",
+      "text_sha256": "9929b05e875f66cd94227f7d3d3db1efd6765816d640033aaad8be68eeb66549",
+      "log_seq": 417760,
+      "recorded_at": "2026-09-05T04:40:41.469229Z",
+      "evidence_asserted_at": "2026-08-29T00:48:30Z",
+      "evidence_url": "https://apnews.com/article/cale-makar-avalanche-nhl-5b307fb172330652649ab6f4acf3b937",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-3910738d-db7d-4ac6-aaa9-ef3c7f7ffa41",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

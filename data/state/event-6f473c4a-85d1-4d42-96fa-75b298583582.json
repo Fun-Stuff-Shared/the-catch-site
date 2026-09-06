@@ -1,0 +1,310 @@
+{
+  "current_state": {
+    "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34": {
+      "slot": "reserve level",
+      "occurrence_id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b",
+      "heads": [
+        "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Washington ha recurrido a sus reservas estratégicas de petróleo, que a principios de agosto cayeron por debajo de 300 millones de barriles, una disminución de más de 100 millones de barriles desde el inicio de 2026.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "million barrels",
+        "value": "300"
+      },
+      "as_of": "2026-08",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "U.S. Energy Information Administration strategic petroleum reserve inventory data",
+      "evidence_id": "54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5",
+      "basis": [
+        "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T01:42:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0628.html",
+      "envelope_seq": 164495,
+      "id": "44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:45.478863Z",
+      "root_evidence": "body:5203:5284",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0628.txt",
+      "text_sha256": "ba67d0a64a80bd6ae60fa958ad9da278e61fed457fa374188101d4a5588417d6",
+      "title": "Trump says US has reached deal with Venezuela on oil reserves",
+      "url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+      "verbatim_level": "article",
+      "log_seq": 518087,
+      "recorded_at": "2026-09-06T01:33:23.205895Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T01:42:00Z",
+          "checkable_against": "U.S. Strategic Petroleum Reserve inventory records",
+          "claim_type": "actual",
+          "envelope_seq": 400371,
+          "event_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+          "evidence_id": "44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5",
+          "figure": {
+            "unit": "barrels",
+            "value": "below 300 million; down more than 100 million"
+          },
+          "id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-969f610b9c187d3f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The U.S. has tapped its strategic petroleum reserves, which in early August fell below 300 million barrels, down by more than 100 million barrels since the start of 2026.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:45.478863Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 41280,
+          "span_start": 41110,
+          "speaker": "outlet's own",
+          "subject": "U.S. strategic petroleum reserves",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0628.txt",
+          "text_sha256": "ba67d0a64a80bd6ae60fa958ad9da278e61fed457fa374188101d4a5588417d6",
+          "log_seq": 400372,
+          "recorded_at": "2026-09-05T00:41:44.318984Z",
+          "evidence_asserted_at": "2026-08-29T01:42:00Z",
+          "evidence_url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T02:14:45Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0316.html",
+      "envelope_seq": 163871,
+      "id": "54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:54.666345Z",
+      "root_evidence": "body:5232:5313",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0316.txt",
+      "text_sha256": "0abd0e30439a6698d78a661d40a8c2c3bfa995faf7cbcf4fe7b8ae5a0702c685",
+      "title": "EEUU pactó con Venezuela tomar control de 65.000 millones de barriles de crudo, dice Trump",
+      "url": "https://apnews.com/article/eeuu-venezuela-trump-petroleo-22d58b56984792ab985d44ada8d508da",
+      "verbatim_level": "article",
+      "log_seq": 517775,
+      "recorded_at": "2026-09-06T01:33:23.117046Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T02:14:45Z",
+          "checkable_against": "U.S. Energy Information Administration strategic petroleum reserve inventory data",
+          "claim_type": "actual",
+          "envelope_seq": 427641,
+          "event_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+          "evidence_id": "54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5",
+          "figure": {
+            "unit": "million barrels",
+            "value": "300"
+          },
+          "id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Washington ha recurrido a sus reservas estratégicas de petróleo, que a principios de agosto cayeron por debajo de 300 millones de barriles, una disminución de más de 100 millones de barriles desde el inicio de 2026.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:54.666345Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 42041,
+          "span_start": 41822,
+          "speaker": "outlet's own",
+          "subject": "U.S. strategic petroleum reserves",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0316.txt",
+          "text_sha256": "0abd0e30439a6698d78a661d40a8c2c3bfa995faf7cbcf4fe7b8ae5a0702c685",
+          "log_seq": 427642,
+          "recorded_at": "2026-09-05T07:19:54.329210Z",
+          "slot_id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+          "evidence_asserted_at": "2026-08-29T02:14:45Z",
+          "evidence_url": "https://apnews.com/article/eeuu-venezuela-trump-petroleo-22d58b56984792ab985d44ada8d508da",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 598937,
+    "follows": null,
+    "id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+    "kind": "status report",
+    "label": "U.S. strategic petroleum reserve status",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. strategic petroleum reserves",
+    "log_seq": 598938
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-969f610b9c187d3f",
+      "envelope_seq": 400557,
+      "event_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+      "id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+      "name": "reserve level",
+      "refusal": null,
+      "log_seq": 400558,
+      "recorded_at": "2026-09-05T00:42:38.908804Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T01:42:00Z",
+      "checkable_against": "U.S. Strategic Petroleum Reserve inventory records",
+      "claim_type": "actual",
+      "envelope_seq": 400371,
+      "event_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+      "evidence_id": "44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5",
+      "figure": {
+        "unit": "barrels",
+        "value": "below 300 million; down more than 100 million"
+      },
+      "id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-969f610b9c187d3f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The U.S. has tapped its strategic petroleum reserves, which in early August fell below 300 million barrels, down by more than 100 million barrels since the start of 2026.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:45.478863Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 41280,
+      "span_start": 41110,
+      "speaker": "outlet's own",
+      "subject": "U.S. strategic petroleum reserves",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0628.txt",
+      "text_sha256": "ba67d0a64a80bd6ae60fa958ad9da278e61fed457fa374188101d4a5588417d6",
+      "log_seq": 400372,
+      "recorded_at": "2026-09-05T00:41:44.318984Z",
+      "evidence_asserted_at": "2026-08-29T01:42:00Z",
+      "evidence_url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T02:14:45Z",
+      "checkable_against": "U.S. Energy Information Administration strategic petroleum reserve inventory data",
+      "claim_type": "actual",
+      "envelope_seq": 427641,
+      "event_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+      "evidence_id": "54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5",
+      "figure": {
+        "unit": "million barrels",
+        "value": "300"
+      },
+      "id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Washington ha recurrido a sus reservas estratégicas de petróleo, que a principios de agosto cayeron por debajo de 300 millones de barriles, una disminución de más de 100 millones de barriles desde el inicio de 2026.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:54.666345Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 42041,
+      "span_start": 41822,
+      "speaker": "outlet's own",
+      "subject": "U.S. strategic petroleum reserves",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0316.txt",
+      "text_sha256": "0abd0e30439a6698d78a661d40a8c2c3bfa995faf7cbcf4fe7b8ae5a0702c685",
+      "log_seq": 427642,
+      "recorded_at": "2026-09-05T07:19:54.329210Z",
+      "slot_id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+      "evidence_asserted_at": "2026-08-29T02:14:45Z",
+      "evidence_url": "https://apnews.com/article/eeuu-venezuela-trump-petroleo-22d58b56984792ab985d44ada8d508da",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 427831,
+      "id": "attach-2c558134-4317-41ec-91cc-d9150e963254",
+      "occurrence_id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b",
+      "refusal": null,
+      "slot_id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+      "log_seq": 427832,
+      "recorded_at": "2026-09-05T07:21:41.845940Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-6f473c4a-85d1-4d42-96fa-75b298583582",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-45da1aa8-8f55-41b4-854c-5d965bcb8b34",
+      "name": "reserve level",
+      "value": "300",
+      "unit": "million barrels",
+      "sentence": "Washington ha recurrido a sus reservas estratégicas de petróleo, que a principios de agosto cayeron por debajo de 300 millones de barriles, una disminución de más de 100 millones de barriles desde el inicio de 2026.",
+      "occurrence_id": "occurrence-54044eda0d5a710811141dda280be72b143eac2a1578deca10cdc1fb8e8b38e5-12b1ef0e06e4cf2b"
+    }
+  ]
+}

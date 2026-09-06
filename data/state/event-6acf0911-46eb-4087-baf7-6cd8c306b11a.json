@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2025-03-13T21:14:25Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9290.html",
+      "envelope_seq": 172009,
+      "id": "565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b",
+      "publisher": "VOA",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:30:07.126165Z",
+      "root_evidence": "body:2526:2607",
+      "root_id": "www.voanews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "government_media",
+      "source_id": "voa_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9290.txt",
+      "text_sha256": "28a381add153ce38e5b015d56b644bcd0bfb025669e7894d9a4ff87e873e208f",
+      "title": "Wall Street tumbles 10% below its record after Trump escalates trade war",
+      "url": "https://www.voanews.com/a/wall-street-tumbles-10-below-its-record-after-trump-escalates-trade-war/8010009.html",
+      "verbatim_level": "article",
+      "log_seq": 521844,
+      "recorded_at": "2026-09-06T01:33:24.278814Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-03-13",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2025-03-13T21:14:25Z",
+          "checkable_against": "Donald Trump's March 13, 2025 public tariff statement and U.S. trade policy records",
+          "claim_type": "actual",
+          "envelope_seq": 430149,
+          "event_id": "event-6acf0911-46eb-4087-baf7-6cd8c306b11a",
+          "evidence_id": "565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b",
+          "figure": {
+            "unit": "percent tariff",
+            "value": "200"
+          },
+          "id": "occurrence-565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b-2ae53c2041ce99d4",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Trump's latest escalation came Thursday when he threatened 200% tariffs on Champagne and other European wines, unless the European Union rolls back a tariff it announced on U.S. whiskey.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:30:07.126165Z",
+          "root_id": "www.voanews.com",
+          "span_check": "byte_exact",
+          "span_end": 2370,
+          "span_start": 2184,
+          "speaker": "outlet's own",
+          "subject": "Donald Trump tariff threat on European wines",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9290.txt",
+          "text_sha256": "28a381add153ce38e5b015d56b644bcd0bfb025669e7894d9a4ff87e873e208f",
+          "log_seq": 430150,
+          "recorded_at": "2026-09-05T08:39:37.430737Z",
+          "evidence_asserted_at": "2025-03-13T21:14:25Z",
+          "evidence_url": "https://www.voanews.com/a/wall-street-tumbles-10-below-its-record-after-trump-escalates-trade-war/8010009.html",
+          "evidence_publisher": "VOA",
+          "evidence_source_id": "voa_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 598812,
+    "follows": null,
+    "id": "event-6acf0911-46eb-4087-baf7-6cd8c306b11a",
+    "kind": "threat",
+    "label": "Trump threat of 200% tariffs on European wines",
+    "minted_by": "migration",
+    "period": "2025-03-13",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump tariff threat on European wines",
+    "log_seq": 598813
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b-2ae53c2041ce99d4",
+      "envelope_seq": 430393,
+      "event_id": "event-6acf0911-46eb-4087-baf7-6cd8c306b11a",
+      "id": "slot-6130bab3-82d1-4890-a7e1-cee77a876501",
+      "name": "European wine tariff",
+      "refusal": null,
+      "log_seq": 430394,
+      "recorded_at": "2026-09-05T08:41:39.411768Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-03-13",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2025-03-13T21:14:25Z",
+      "checkable_against": "Donald Trump's March 13, 2025 public tariff statement and U.S. trade policy records",
+      "claim_type": "actual",
+      "envelope_seq": 430149,
+      "event_id": "event-6acf0911-46eb-4087-baf7-6cd8c306b11a",
+      "evidence_id": "565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b",
+      "figure": {
+        "unit": "percent tariff",
+        "value": "200"
+      },
+      "id": "occurrence-565e28b6e28437f5d87c804e8a10e20b0cecae45f271fba48e573ad7703a041b-2ae53c2041ce99d4",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Trump's latest escalation came Thursday when he threatened 200% tariffs on Champagne and other European wines, unless the European Union rolls back a tariff it announced on U.S. whiskey.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:30:07.126165Z",
+      "root_id": "www.voanews.com",
+      "span_check": "byte_exact",
+      "span_end": 2370,
+      "span_start": 2184,
+      "speaker": "outlet's own",
+      "subject": "Donald Trump tariff threat on European wines",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9290.txt",
+      "text_sha256": "28a381add153ce38e5b015d56b644bcd0bfb025669e7894d9a4ff87e873e208f",
+      "log_seq": 430150,
+      "recorded_at": "2026-09-05T08:39:37.430737Z",
+      "evidence_asserted_at": "2025-03-13T21:14:25Z",
+      "evidence_url": "https://www.voanews.com/a/wall-street-tumbles-10-below-its-record-after-trump-escalates-trade-war/8010009.html",
+      "evidence_publisher": "VOA",
+      "evidence_source_id": "voa_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-6acf0911-46eb-4087-baf7-6cd8c306b11a",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

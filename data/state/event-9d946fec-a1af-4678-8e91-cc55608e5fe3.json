@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T00:24:21Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0178.html",
+      "envelope_seq": 163595,
+      "id": "579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533",
+      "publisher": "ABC News",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:33.349784Z",
+      "root_evidence": "publisher_host",
+      "root_id": "abcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "abc_news_topstories",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0178.txt",
+      "text_sha256": "8e51cfb61f541b15aee5a065b66c478e4265a60c5fbfe5fbe265c3b816e704e0",
+      "title": "WATCH:  Car lands on Georgia home in deadly crash",
+      "url": "https://abcnews.com/video/136016859/",
+      "verbatim_level": "article",
+      "log_seq": 517637,
+      "recorded_at": "2026-09-06T01:33:23.077676Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-27",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T00:24:21Z",
+          "checkable_against": "Macon police and emergency-response records for the August 2026 vehicle crash",
+          "claim_type": "actual",
+          "envelope_seq": 432163,
+          "event_id": "event-9d946fec-a1af-4678-8e91-cc55608e5fe3",
+          "evidence_id": "579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533",
+          "figure": {
+            "unit": "years old",
+            "value": "78"
+          },
+          "id": "occurrence-579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533-7f42aa2c2a219bc5",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "A 78-year-old driver was killed after losing control of his SUV and crashing onto the roof of a home in Macon.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:33.349784Z",
+          "root_id": "abcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 563,
+          "span_start": 453,
+          "speaker": "outlet's own",
+          "subject": "78-year-old driver",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0178.txt",
+          "text_sha256": "8e51cfb61f541b15aee5a065b66c478e4265a60c5fbfe5fbe265c3b816e704e0",
+          "log_seq": 432164,
+          "recorded_at": "2026-09-05T09:00:46.715547Z",
+          "evidence_asserted_at": "2026-08-28T00:24:21Z",
+          "evidence_url": "https://abcnews.com/video/136016859/",
+          "evidence_publisher": "ABC News",
+          "evidence_source_id": "abc_news_topstories"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 432135,
+    "follows": null,
+    "id": "event-9d946fec-a1af-4678-8e91-cc55608e5fe3",
+    "kind": "crash",
+    "label": "Macon Georgia SUV crashed onto home roof driver killed",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "period": "2026-08-27",
+    "refusal": null,
+    "status": "published",
+    "subject": "78-year-old driver",
+    "log_seq": 432136
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533-7f42aa2c2a219bc5",
+      "envelope_seq": 432185,
+      "event_id": "event-9d946fec-a1af-4678-8e91-cc55608e5fe3",
+      "id": "slot-ebdfb10a-02f3-4708-bf2a-61eaadeb4853",
+      "name": "driver age",
+      "refusal": null,
+      "log_seq": 432186,
+      "recorded_at": "2026-09-05T09:00:53.692412Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-27",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T00:24:21Z",
+      "checkable_against": "Macon police and emergency-response records for the August 2026 vehicle crash",
+      "claim_type": "actual",
+      "envelope_seq": 432163,
+      "event_id": "event-9d946fec-a1af-4678-8e91-cc55608e5fe3",
+      "evidence_id": "579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533",
+      "figure": {
+        "unit": "years old",
+        "value": "78"
+      },
+      "id": "occurrence-579e91c34bb8d0828be9e6042c603f7c24973064bd58e653cb38984e279e8533-7f42aa2c2a219bc5",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "A 78-year-old driver was killed after losing control of his SUV and crashing onto the roof of a home in Macon.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:33.349784Z",
+      "root_id": "abcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 563,
+      "span_start": 453,
+      "speaker": "outlet's own",
+      "subject": "78-year-old driver",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0178.txt",
+      "text_sha256": "8e51cfb61f541b15aee5a065b66c478e4265a60c5fbfe5fbe265c3b816e704e0",
+      "log_seq": 432164,
+      "recorded_at": "2026-09-05T09:00:46.715547Z",
+      "evidence_asserted_at": "2026-08-28T00:24:21Z",
+      "evidence_url": "https://abcnews.com/video/136016859/",
+      "evidence_publisher": "ABC News",
+      "evidence_source_id": "abc_news_topstories"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-9d946fec-a1af-4678-8e91-cc55608e5fe3",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

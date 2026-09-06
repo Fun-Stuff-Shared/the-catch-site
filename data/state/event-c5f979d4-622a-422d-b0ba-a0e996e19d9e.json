@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T02:49:43.895000Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8410.html",
+      "envelope_seq": 171485,
+      "id": "500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c",
+      "publisher": "Reuters",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:41.653528Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.reuters.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "reuters_wire_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8410.txt",
+      "text_sha256": "89254e633f26a322d32ccf78b9a95114d09cd9ea8289c481ef6fb4305bae0761",
+      "title": "Vélez Sarsfield empata con Deportivo Riestra en liga argentina",
+      "url": "https://www.reuters.com/es/deportivo/KLVQD2VTBNKT5LS2CRHWTXNPRI-2026-08-30/",
+      "verbatim_level": "article",
+      "log_seq": 521582,
+      "recorded_at": "2026-09-06T01:33:24.206248Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-30T02:49:43.895000Z",
+          "checkable_against": "official match report and Argentine league records",
+          "claim_type": "actual",
+          "envelope_seq": 421191,
+          "event_id": "event-c5f979d4-622a-422d-b0ba-a0e996e19d9e",
+          "evidence_id": "500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c",
+          "figure": {
+            "unit": "final score",
+            "value": "4-1"
+          },
+          "id": "occurrence-500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c-44dd65f06d4c5886",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "la goleada por 4-1 de Unión de Santa Fe ​sobre Sarmiento de Junín.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:27:41.653528Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 3827,
+          "span_start": 3757,
+          "speaker": "outlet's own",
+          "subject": "Unión de Santa Fe vs Sarmiento de Junín",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8410.txt",
+          "text_sha256": "89254e633f26a322d32ccf78b9a95114d09cd9ea8289c481ef6fb4305bae0761",
+          "log_seq": 421192,
+          "recorded_at": "2026-09-05T05:15:33.527073Z",
+          "evidence_asserted_at": "2026-08-30T02:49:43.895000Z",
+          "evidence_url": "https://www.reuters.com/es/deportivo/KLVQD2VTBNKT5LS2CRHWTXNPRI-2026-08-30/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 601705,
+    "follows": null,
+    "id": "event-c5f979d4-622a-422d-b0ba-a0e996e19d9e",
+    "kind": "football match",
+    "label": "Unión de Santa Fe vs Sarmiento de Junín, 2026-08-28",
+    "minted_by": "migration",
+    "period": "2026-08-28",
+    "refusal": null,
+    "status": "published",
+    "subject": "Unión de Santa Fe vs Sarmiento de Junín",
+    "log_seq": 601706
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c-44dd65f06d4c5886",
+      "envelope_seq": 421317,
+      "event_id": "event-c5f979d4-622a-422d-b0ba-a0e996e19d9e",
+      "id": "slot-b8985b75-ac37-447f-b80b-3023e256ca36",
+      "name": "final score",
+      "refusal": null,
+      "log_seq": 421318,
+      "recorded_at": "2026-09-05T05:16:07.841200Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-30T02:49:43.895000Z",
+      "checkable_against": "official match report and Argentine league records",
+      "claim_type": "actual",
+      "envelope_seq": 421191,
+      "event_id": "event-c5f979d4-622a-422d-b0ba-a0e996e19d9e",
+      "evidence_id": "500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c",
+      "figure": {
+        "unit": "final score",
+        "value": "4-1"
+      },
+      "id": "occurrence-500f173165b1057d842e6c535e66074417ba014170cb2d015128e750d71a738c-44dd65f06d4c5886",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "la goleada por 4-1 de Unión de Santa Fe ​sobre Sarmiento de Junín.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:41.653528Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 3827,
+      "span_start": 3757,
+      "speaker": "outlet's own",
+      "subject": "Unión de Santa Fe vs Sarmiento de Junín",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8410.txt",
+      "text_sha256": "89254e633f26a322d32ccf78b9a95114d09cd9ea8289c481ef6fb4305bae0761",
+      "log_seq": 421192,
+      "recorded_at": "2026-09-05T05:15:33.527073Z",
+      "evidence_asserted_at": "2026-08-30T02:49:43.895000Z",
+      "evidence_url": "https://www.reuters.com/es/deportivo/KLVQD2VTBNKT5LS2CRHWTXNPRI-2026-08-30/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-c5f979d4-622a-422d-b0ba-a0e996e19d9e",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

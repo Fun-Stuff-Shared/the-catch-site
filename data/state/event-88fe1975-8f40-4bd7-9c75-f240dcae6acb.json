@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T20:53:27Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0573.html",
+      "envelope_seq": 164385,
+      "id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:36.851058Z",
+      "root_evidence": "body:5196:5277",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+      "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+      "title": "Ohtani still not 100 percent, will not pitch on Sunday",
+      "url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+      "verbatim_level": "article",
+      "log_seq": 518032,
+      "recorded_at": "2026-09-06T01:33:23.190284Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07-03",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T20:53:27Z",
+          "checkable_against": "San Diego Padres–Los Angeles Dodgers official July 3, 2026 box score",
+          "claim_type": "actual",
+          "envelope_seq": 431283,
+          "event_id": "event-88fe1975-8f40-4bd7-9c75-f240dcae6acb",
+          "evidence_id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+          "figure": {
+            "unit": "innings",
+            "value": "6"
+          },
+          "id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-98a419f38c550171",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The two-way star hasn’t pitched since throwing six innings in a 4-3 win against the San Diego Padres on July 3, and would have only pitched an inning or two on Sunday.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:36.851058Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 39301,
+          "span_start": 39132,
+          "speaker": "outlet's own",
+          "subject": "Shohei Ohtani",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+          "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+          "log_seq": 431284,
+          "recorded_at": "2026-09-05T08:51:04.989782Z",
+          "evidence_asserted_at": "2026-08-29T20:53:27Z",
+          "evidence_url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 599729,
+    "follows": null,
+    "id": "event-88fe1975-8f40-4bd7-9c75-f240dcae6acb",
+    "kind": "game",
+    "label": "Ohtani July 3 outing vs Padres",
+    "minted_by": "migration",
+    "period": "2026-07-03",
+    "refusal": null,
+    "status": "published",
+    "subject": "Shohei Ohtani",
+    "log_seq": 599730
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-98a419f38c550171",
+      "envelope_seq": 431409,
+      "event_id": "event-88fe1975-8f40-4bd7-9c75-f240dcae6acb",
+      "id": "slot-aae14e09-5b3f-4e39-b5cf-f1de9c3d97eb",
+      "name": "innings pitched",
+      "refusal": null,
+      "log_seq": 431410,
+      "recorded_at": "2026-09-05T08:52:00.767759Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07-03",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T20:53:27Z",
+      "checkable_against": "San Diego Padres–Los Angeles Dodgers official July 3, 2026 box score",
+      "claim_type": "actual",
+      "envelope_seq": 431283,
+      "event_id": "event-88fe1975-8f40-4bd7-9c75-f240dcae6acb",
+      "evidence_id": "57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc",
+      "figure": {
+        "unit": "innings",
+        "value": "6"
+      },
+      "id": "occurrence-57587895def8cb0beee0ee32e9fd67b59470a16652468fa7b9d4028b96716fbc-98a419f38c550171",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The two-way star hasn’t pitched since throwing six innings in a 4-3 win against the San Diego Padres on July 3, and would have only pitched an inning or two on Sunday.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:36.851058Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 39301,
+      "span_start": 39132,
+      "speaker": "outlet's own",
+      "subject": "Shohei Ohtani",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0573.txt",
+      "text_sha256": "d207657f54dc4769b4f57e6a1d76911208f41be3baa9ec5cc20d6b92b23df416",
+      "log_seq": 431284,
+      "recorded_at": "2026-09-05T08:51:04.989782Z",
+      "evidence_asserted_at": "2026-08-29T20:53:27Z",
+      "evidence_url": "https://apnews.com/article/shohei-ohtani-dodgers-ff735ab7e1decd36a3d86c5365cf5726",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-88fe1975-8f40-4bd7-9c75-f240dcae6acb",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-21T09:00:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8370.html",
+      "envelope_seq": 171405,
+      "id": "4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808",
+      "publisher": "Politico",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:36.139398Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.politico.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "politico_politics_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8370.txt",
+      "text_sha256": "9927326d600acc336ca3b6c364b523dbb909401489dede112926156a8c55cba3",
+      "title": "Trump is finally hitting the campaign trail. It’s not for a battleground member.",
+      "url": "https://www.politico.com/news/2026/08/21/trump-rally-south-carolina-darline-graham-01045166",
+      "verbatim_level": "article",
+      "log_seq": 521542,
+      "recorded_at": "2026-09-06T01:33:24.195100Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-21",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-21T09:00:00Z",
+          "checkable_against": "MAGA Inc. Federal Election Commission filings",
+          "claim_type": "actual",
+          "envelope_seq": 419871,
+          "event_id": "event-135d7c2e-a0f0-4b1e-8947-cac11730c07d",
+          "evidence_id": "4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808",
+          "figure": {
+            "unit": "dollars",
+            "value": "400000000"
+          },
+          "id": "occurrence-4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808-4119f35aee72229c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Trump ’s heavy hand and his grip over the Republican Party has continued to shape the outcome of several primaries this year, but the degree to which he will help ensure control of Congress this fall — both through campaign appearances and spending his $400 million MAGA Inc. war chest — remains an open question.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:27:36.139398Z",
+          "root_id": "www.politico.com",
+          "span_check": "byte_exact",
+          "span_end": 6106,
+          "span_start": 5787,
+          "speaker": "outlet's own",
+          "subject": "MAGA Inc.",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8370.txt",
+          "text_sha256": "9927326d600acc336ca3b6c364b523dbb909401489dede112926156a8c55cba3",
+          "log_seq": 419872,
+          "recorded_at": "2026-09-05T05:00:48.569201Z",
+          "evidence_asserted_at": "2026-08-21T09:00:00Z",
+          "evidence_url": "https://www.politico.com/news/2026/08/21/trump-rally-south-carolina-darline-graham-01045166",
+          "evidence_publisher": "Politico",
+          "evidence_source_id": "politico_politics_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 596056,
+    "follows": null,
+    "id": "event-135d7c2e-a0f0-4b1e-8947-cac11730c07d",
+    "kind": "campaign finance",
+    "label": "MAGA Inc. 400 million war chest",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "MAGA Inc.",
+    "log_seq": 596057
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808-4119f35aee72229c",
+      "envelope_seq": 419909,
+      "event_id": "event-135d7c2e-a0f0-4b1e-8947-cac11730c07d",
+      "id": "slot-74ded13e-79d9-49fc-9b7d-91870237813c",
+      "name": "MAGA war chest",
+      "refusal": null,
+      "log_seq": 419910,
+      "recorded_at": "2026-09-05T05:01:15.194712Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-21",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-21T09:00:00Z",
+      "checkable_against": "MAGA Inc. Federal Election Commission filings",
+      "claim_type": "actual",
+      "envelope_seq": 419871,
+      "event_id": "event-135d7c2e-a0f0-4b1e-8947-cac11730c07d",
+      "evidence_id": "4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808",
+      "figure": {
+        "unit": "dollars",
+        "value": "400000000"
+      },
+      "id": "occurrence-4eee89a5eb121f20dab059e3ccea366d7bc0b007f3e324a95d74fc3afce8f808-4119f35aee72229c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Trump ’s heavy hand and his grip over the Republican Party has continued to shape the outcome of several primaries this year, but the degree to which he will help ensure control of Congress this fall — both through campaign appearances and spending his $400 million MAGA Inc. war chest — remains an open question.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:36.139398Z",
+      "root_id": "www.politico.com",
+      "span_check": "byte_exact",
+      "span_end": 6106,
+      "span_start": 5787,
+      "speaker": "outlet's own",
+      "subject": "MAGA Inc.",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8370.txt",
+      "text_sha256": "9927326d600acc336ca3b6c364b523dbb909401489dede112926156a8c55cba3",
+      "log_seq": 419872,
+      "recorded_at": "2026-09-05T05:00:48.569201Z",
+      "evidence_asserted_at": "2026-08-21T09:00:00Z",
+      "evidence_url": "https://www.politico.com/news/2026/08/21/trump-rally-south-carolina-darline-graham-01045166",
+      "evidence_publisher": "Politico",
+      "evidence_source_id": "politico_politics_rss"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-135d7c2e-a0f0-4b1e-8947-cac11730c07d",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

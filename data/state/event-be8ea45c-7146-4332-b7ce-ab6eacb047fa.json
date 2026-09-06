@@ -1,0 +1,152 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-01T04:01:14Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5109.html",
+      "envelope_seq": 169915,
+      "id": "4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:52.239737Z",
+      "root_evidence": "body:1849:1930",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5109.txt",
+      "text_sha256": "7f63c9a108afda5c176063b0e22c2fa672e9240bc713daf765f89a28f7444dcb",
+      "url": "https://www.nytimes.com/2026/08/01/world/europe/spain-ceuta-migrants-morocco.html",
+      "verbatim_level": "article",
+      "log_seq": 520797,
+      "recorded_at": "2026-09-06T01:33:23.982162Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-01",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-01T04:01:14Z",
+          "checkable_against": "Spanish government residency regularization program records and application regulations",
+          "claim_type": "actual",
+          "envelope_seq": 419649,
+          "event_id": "event-be8ea45c-7146-4332-b7ce-ab6eacb047fa",
+          "evidence_id": "4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898",
+          "figure": {
+            "unit": "migrants allowed to apply for legal residency",
+            "value": "1000000"
+          },
+          "id": "occurrence-4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898-3b876375103f47b1",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "His government allowed more than one million migrants illegally living in Spain to apply for legal residency this year — a move that his opponents said had helped to entice the migrants this week.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:52.239737Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5142,
+          "span_start": 4944,
+          "speaker": "outlet's own",
+          "subject": "Spain's migrant legal residency application policy",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5109.txt",
+          "text_sha256": "7f63c9a108afda5c176063b0e22c2fa672e9240bc713daf765f89a28f7444dcb",
+          "log_seq": 419650,
+          "recorded_at": "2026-09-05T04:58:52.806091Z",
+          "evidence_asserted_at": "2026-08-01T04:01:14Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/01/world/europe/spain-ceuta-migrants-morocco.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 601478,
+    "follows": null,
+    "id": "event-be8ea45c-7146-4332-b7ce-ab6eacb047fa",
+    "kind": "policy",
+    "label": "Spain 2026 migrant residency regularization",
+    "minted_by": "migration",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Spain's migrant legal residency application policy",
+    "log_seq": 601479
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898-3b876375103f47b1",
+      "envelope_seq": 419787,
+      "event_id": "event-be8ea45c-7146-4332-b7ce-ab6eacb047fa",
+      "id": "slot-f2be6e69-0a8c-4a3d-9586-4284d091a573",
+      "name": "residency application count",
+      "refusal": null,
+      "log_seq": 419788,
+      "recorded_at": "2026-09-05T04:59:46.314258Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-01",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-01T04:01:14Z",
+      "checkable_against": "Spanish government residency regularization program records and application regulations",
+      "claim_type": "actual",
+      "envelope_seq": 419649,
+      "event_id": "event-be8ea45c-7146-4332-b7ce-ab6eacb047fa",
+      "evidence_id": "4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898",
+      "figure": {
+        "unit": "migrants allowed to apply for legal residency",
+        "value": "1000000"
+      },
+      "id": "occurrence-4e9ff893b15d832f9816dab36181aed83fa6f06409159c1fb6b716fd517ee898-3b876375103f47b1",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "His government allowed more than one million migrants illegally living in Spain to apply for legal residency this year — a move that his opponents said had helped to entice the migrants this week.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:52.239737Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5142,
+      "span_start": 4944,
+      "speaker": "outlet's own",
+      "subject": "Spain's migrant legal residency application policy",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5109.txt",
+      "text_sha256": "7f63c9a108afda5c176063b0e22c2fa672e9240bc713daf765f89a28f7444dcb",
+      "log_seq": 419650,
+      "recorded_at": "2026-09-05T04:58:52.806091Z",
+      "evidence_asserted_at": "2026-08-01T04:01:14Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/01/world/europe/spain-ceuta-migrants-morocco.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-be8ea45c-7146-4332-b7ce-ab6eacb047fa",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

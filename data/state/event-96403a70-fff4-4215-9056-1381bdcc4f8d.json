@@ -1,0 +1,153 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T21:15:14Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_2311.html",
+      "envelope_seq": 166337,
+      "id": "44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0",
+      "publisher": "Fox News",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:51.985788Z",
+      "root_evidence": "body:7506:7548",
+      "root_id": "www.foxnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "fox_news_latest",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2311.txt",
+      "text_sha256": "f977c2b4ddec6b80cfed77b6c9cc77e222bc585abea0dc8ffd7400b42de1263d",
+      "title": "NYC parolee accused of killing 2 during 48-hour robbery spree hauled in after manhunt, cops say",
+      "url": "https://www.foxnews.com/us/nyc-parolee-accused-killing-2-48-hour-robbery-spree-hauled-manhunt-cops-say",
+      "verbatim_level": "article",
+      "log_seq": 519008,
+      "recorded_at": "2026-09-06T01:33:23.475742Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-04",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T21:15:14Z",
+          "checkable_against": "New York state prison and parole records",
+          "claim_type": "actual",
+          "envelope_seq": 400313,
+          "event_id": "event-96403a70-fff4-4215-9056-1381bdcc4f8d",
+          "evidence_id": "44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0",
+          "figure": {
+            "unit": "years in state prison",
+            "value": "10"
+          },
+          "id": "occurrence-44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0-5e4f25ee94f1ae3c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Acosta had been on parole since April after serving 10 years in state prison for assault and criminal weapon possession, according to state prison records reported by the New York Post.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:51.985788Z",
+          "root_id": "www.foxnews.com",
+          "span_check": "byte_exact",
+          "span_end": 10275,
+          "span_start": 10090,
+          "speaker": "state prison records",
+          "subject": "Jesus Acosta",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2311.txt",
+          "text_sha256": "f977c2b4ddec6b80cfed77b6c9cc77e222bc585abea0dc8ffd7400b42de1263d",
+          "log_seq": 400314,
+          "recorded_at": "2026-09-05T00:41:22.654412Z",
+          "evidence_asserted_at": "2026-08-29T21:15:14Z",
+          "evidence_url": "https://www.foxnews.com/us/nyc-parolee-accused-killing-2-48-hour-robbery-spree-hauled-manhunt-cops-say",
+          "evidence_publisher": "Fox News",
+          "evidence_source_id": "fox_news_latest"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9d870716d",
+  "evaluated_at": "2026-09-06T04:19:06.602112Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 600138,
+    "follows": null,
+    "id": "event-96403a70-fff4-4215-9056-1381bdcc4f8d",
+    "kind": "criminal record",
+    "label": "Jesus Acosta parole and criminal history",
+    "minted_by": "migration",
+    "period": "2026-04",
+    "refusal": null,
+    "status": "published",
+    "subject": "Jesus Acosta",
+    "log_seq": 600139
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0-5e4f25ee94f1ae3c",
+      "envelope_seq": 400413,
+      "event_id": "event-96403a70-fff4-4215-9056-1381bdcc4f8d",
+      "id": "slot-8fc4495a-d80d-40da-a5ec-33ab2bc845b2",
+      "name": "parole status",
+      "refusal": null,
+      "log_seq": 400414,
+      "recorded_at": "2026-09-05T00:41:53.845573Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-04",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T21:15:14Z",
+      "checkable_against": "New York state prison and parole records",
+      "claim_type": "actual",
+      "envelope_seq": 400313,
+      "event_id": "event-96403a70-fff4-4215-9056-1381bdcc4f8d",
+      "evidence_id": "44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0",
+      "figure": {
+        "unit": "years in state prison",
+        "value": "10"
+      },
+      "id": "occurrence-44558f24dc824e99b4e8f69df7856f0c7815870b0fedc2f234b776d1ffc940f0-5e4f25ee94f1ae3c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Acosta had been on parole since April after serving 10 years in state prison for assault and criminal weapon possession, according to state prison records reported by the New York Post.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:51.985788Z",
+      "root_id": "www.foxnews.com",
+      "span_check": "byte_exact",
+      "span_end": 10275,
+      "span_start": 10090,
+      "speaker": "state prison records",
+      "subject": "Jesus Acosta",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2311.txt",
+      "text_sha256": "f977c2b4ddec6b80cfed77b6c9cc77e222bc585abea0dc8ffd7400b42de1263d",
+      "log_seq": 400314,
+      "recorded_at": "2026-09-05T00:41:22.654412Z",
+      "evidence_asserted_at": "2026-08-29T21:15:14Z",
+      "evidence_url": "https://www.foxnews.com/us/nyc-parolee-accused-killing-2-48-hour-robbery-spree-hauled-manhunt-cops-say",
+      "evidence_publisher": "Fox News",
+      "evidence_source_id": "fox_news_latest"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-96403a70-fff4-4215-9056-1381bdcc4f8d",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}
