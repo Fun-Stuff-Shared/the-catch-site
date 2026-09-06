@@ -14,6 +14,7 @@ const events = [...chain.events].sort((a, b) => String(b.period ?? "").localeCom
     <h1>{chain.root.label}</h1>
     {chain.root.status === "retired" && <p data-layer="fact">The first story was withdrawn: {chain.root.reason}</p>}
     <p data-layer="fact">Reporting from {chain.outlet_count} {chain.outlet_count === 1 ? "publisher" : "publishers"}.</p>
+    <p data-layer="fact">Automatically assembled from the linked source records.</p>
     {chain.tracked.length > 0 && <section data-layer="fact"><h2>The numbers over time</h2>{chain.tracked.map((track) => <article><h3>{slotLabel(track.name)}</h3><ul>{track.values.map((value) => <li><a href={eventPath(value.event_id)}>{formatDate(value.period)}</a>: <strong data-state-figure={value.occurrence_id} data-state-figure-role="tracked" data-state-figure-event={value.event_id} data-figure-value={String(value.value)} data-figure-unit={value.unit ?? ""}>{figureText(value.value, value.unit)}</strong>. <span data-source-copy>{value.sentence}</span></li>)}</ul></article>)}</section>}
     <section data-layer="fact"><h2>The developments</h2><ol>{events.map((event) => <li><a href={eventPath(event.id)}>{event.label}</a> · {formatDate(event.period)}{event.follows && <> · follows <a href={eventPath(event.follows)}>an earlier development</a></>}{event.status === "retired" && <> · withdrawn: {event.reason}</>}</li>)}</ol></section>
   </main></div>

@@ -20,6 +20,7 @@ const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id
     {view.status === "retired" ? <p data-layer="fact">This entry is no longer active. {retirementReason}</p> : <>
       <p data-layer="fact">{formatDate(event.period)}{view.desk && <> · {view.desk}</>}</p>
       {prose && <section data-layer="narrative" class="lede"><p>{prose}</p></section>}
+      {!prose && <p data-layer="fact" data-automated-record>Automatically assembled from source reports. Editorial review is not recorded here.</p>}
       <section data-layer="fact" data-state-derived>
         <h2>The current record</h2>
         {slots.length ? slots.map(([id, slot]) => <article data-state-slot={id}>
