@@ -10,7 +10,7 @@ import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { readState } from "../src/lib/state.mjs";
-import { checkStatePages, checkPageFigures } from "./check-state-pages.mjs";
+import { checkStatePages, checkPageFigures, readerCopy } from "./check-state-pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -238,7 +238,7 @@ for (const filename of ["fed-rate.mjs", "jobs.mjs"]) {
 }
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
-  "eligibility", "eligible claim", "manifested", "dossier", "pipeline", "staged", "zain review", "w7", "wave", "internal review",
+  "eligible claim", "manifested", "dossier", "extraction pipeline", "staged", "zain review", "w7", "internal review",
   "cloture", "perfecting nature", "voted not voting", "cloture motion"];
 const wholeTerm = (term) => new RegExp(`\\b${term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
 
@@ -276,14 +276,13 @@ for (const base of SCOPE) {
     const route = `/${rel.replace(/^\//, "").replace(/index\.html$/, "")}`;
     const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
     if (exclusion) continue;
-    const readerHtml = html;
+    const text = readerCopy(html);
     for (const match of html.matchAll(/data-record="([^"]+)"/g)) {
       const id = match[1];
       if (!manifestRecordIds.has(id)) fail.push(`${rel}: record chip names unknown record ${id}`);
       else if (!html.includes(`href="/records/${id}/"`)) fail.push(`${rel}: record chip ${id} does not link to its record page`);
     }
-    if (readerHtml.includes("—")) fail.push(`${rel}: em dash in public copy`);
-    const text = readerHtml.replace(/<script[\s\S]*?<\/script>/gi, "").replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<[^>]+>/g, " ");
+    if (text.includes("—")) fail.push(`${rel}: em dash in public copy`);
     for (const w of INTERNAL) {
       if (wholeTerm(w).test(text)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
     }

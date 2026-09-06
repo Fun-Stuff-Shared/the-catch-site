@@ -130,6 +130,10 @@ with their comparisons folded in, not teasers.
 
 ## Enforcement
 
+Literal source titles and quotations retain their original wording. House-style
+scans apply to text we write, including generated event and slot labels; topic
+words such as oil pipelines or heat waves are not internal system vocabulary.
+
 Build gate (check-events.mjs) holds: internal vocabulary, jammed inline tags,
 layer typing, citation resolution, and can hold the em-dash and
 banned-vocabulary scans next. Editor (or reviewing agent) holds: grounding,

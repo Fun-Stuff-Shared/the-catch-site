@@ -25,7 +25,7 @@ const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id
         {slots.length ? slots.map(([id, slot]) => <article data-state-slot={id}>
           <h3>{slotLabel(slot.slot)}</h3>
           {slot.figure && <p><strong data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{slot.figure.value} {slot.figure.unit}</strong></p>}
-          <p>{slot.quote_span || (slot.withdrawn ? "The recorded value was withdrawn." : slot.disputed ? "The sources disagree; no single current value is shown." : "A current value has not been established.")}</p>
+          <p data-source-copy={slot.quote_span ? true : undefined}>{slot.quote_span || (slot.withdrawn ? "The recorded value was withdrawn." : slot.disputed ? "The sources disagree; no single current value is shown." : "A current value has not been established.")}</p>
           {evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id)?.url && <p><a href={sourcePath(evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id))}>{evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id).publisher}</a></p>}
         </article>) : <p>No tracked values have been established for this story.</p>}
       </section>
@@ -38,9 +38,9 @@ const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id
       <RevisionTimeline timeline={view.revision_timeline} />
       {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
         const document = evidence.get(edge.to_evidence_id);
-        return <li><a href={`/records/${document.id}/`}>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;
+        return <li><a href={`/records/${document.id}/`} data-source-copy>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;
       })}</ul></section>}
-      <section data-layer="proof"><h2>Sources</h2><ul>{[...evidence.values()].map((source) => <li><a href={sourcePath(source)}>{source.publisher}</a> · {formatDate(source.asserted_at)}{source.title && <> · {source.title}</>}</li>)}</ul></section>
+      <section data-layer="proof"><h2>Sources</h2><ul>{[...evidence.values()].map((source) => <li><a href={sourcePath(source)} data-source-copy>{source.publisher}</a> · {formatDate(source.asserted_at)}{source.title && <> · <span data-source-copy>{source.title}</span></>}</li>)}</ul></section>
     </>}
     {view.root_id && <p data-layer="narrative"><a href={chainPath(view.root_id)}>Follow this story over time</a></p>}
   </main></div>

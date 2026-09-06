@@ -116,3 +116,12 @@ export function checkStatePages(state, dist) {
   }
   return { failures, checked };
 }
+
+export function readerCopy(html) {
+  function copy(node) {
+    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined) return '';
+    if (node.nodeName === '#text') return node.value;
+    return (node.childNodes ?? []).map(copy).join(' ');
+  }
+  return normalize(copy(parse(html)));
+}

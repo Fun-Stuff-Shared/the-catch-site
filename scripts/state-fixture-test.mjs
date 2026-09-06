@@ -166,3 +166,12 @@ test('retired-only chains do not enter the home feature', () => {
 test('malformed revision check dates cannot be published', () => {
   for (const date of ['garbage','2026-99-99','2026-02-30']) assert.throws(()=>checkTimeline('',{changes_checked_at:date}),/check date is invalid/);
 });
+
+
+test('copy checks separate quoted state wording from authored and interface copy', async () => {
+  const { readerCopy } = await import('./check-state-pages.mjs');
+  const html = '<head><title>A pipeline — news</title></head><body><h1>A pipeline — news</h1><p data-source-copy>Eligibility rules changed in the second wave.</p><section data-layer="narrative">Authored — copy</section><h2>Internal pipeline</h2><script>hidden</script></body>';
+  assert.equal(readerCopy(html), 'A pipeline — news Authored — copy Internal pipeline');
+  assert.equal(readerCopy('<p>Visible &mdash; punctuation</p>'), 'Visible — punctuation');
+  assert.equal(readerCopy('<p data-source-copy="false">Source wording</p><p>Keep this</p>'), 'Keep this');
+});
