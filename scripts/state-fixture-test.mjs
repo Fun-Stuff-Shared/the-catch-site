@@ -119,9 +119,9 @@ test('document records show the cited passage even when it occurs beyond the ope
 import { checkPageFigures } from './check-state-pages.mjs';
 test('the rendered figure text is checked, not just its data attributes', () => {
   const state = {events:new Map([['event-a',{event:{id:'event-a'},status:'published',evidence:[{id:'doc'}],occurrences:[{id:'o',evidence_id:'doc',figure:{value:'105000',unit:'jobs'}}]}]])};
-  const html='<strong data-state-figure="o" data-figure-value="105000" data-figure-unit="jobs">105000 jobs</strong>';
+  const html='<strong data-state-figure="o" data-figure-value="105000" data-figure-unit="jobs">105,000 jobs</strong>';
   assert.equal(checkPageFigures(html,state,'event-a').length,1);
-  assert.throws(()=>checkPageFigures(html.replace('>105000 jobs','>120000 jobs'),state,'event-a'),/Visible figure differs/);
+  assert.throws(()=>checkPageFigures(html.replace('>105,000 jobs','>120000 jobs'),state,'event-a'),/Visible figure differs/);
 });
 
 import { storyChainPath } from '../src/lib/state.mjs';
@@ -191,4 +191,15 @@ test('timeline segmentation exempts exact quoted spans, keeping generated framin
   assert.equal(parts.map((part) => part.text).join(''), sentence);
   assert.equal(parts.filter((part) => !part.source).map((part) => part.text).join(''), 'On Monday, the office reported ; on Tuesday it reported .');
   assert.deepEqual(quotedSegments('Generated — prose', ['different quote']), [{text:'Generated — prose',source:false}]);
+});
+
+
+test('figure display preserves digits and avoids duplicate percent units', async () => {
+  const { figureText } = await import('../src/lib/state.mjs');
+  assert.equal(figureText(-23000, 'jobs'), '-23,000 jobs');
+  assert.equal(figureText('9007199254740993', 'jobs'), '9,007,199,254,740,993 jobs');
+  assert.equal(figureText('3.800', 'percent'), '3.800 percent');
+  assert.equal(figureText('3.8%', 'percent'), '3.8%');
+  assert.equal(figureText('3.5% to 3.75%', 'percent'), '3.5% to 3.75%');
+  assert.equal(figureText('0.25', 'percentage point'), '0.25 percentage point');
 });

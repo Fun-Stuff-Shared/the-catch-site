@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'parse5';
-import { eventPath, chainPath, verifyFigure } from '../src/lib/state.mjs';
+import { eventPath, chainPath, verifyFigure, figureText } from '../src/lib/state.mjs';
 
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const text = (node) => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
@@ -61,7 +61,7 @@ export function checkPageFigures(html, state, eventId) {
     const unit = attr(node, 'data-figure-unit');
     if (value === undefined || unit === undefined) throw new Error(`Displayed figure lacks value or unit: ${id}`);
     verifyFigure(view, attr(node, 'data-state-figure'), value, unit);
-    if (normalize(text(node)) !== normalize(`${value} ${unit}`)) throw new Error(`Visible figure differs from its accepted value: ${id}`);
+    if (normalize(text(node)) !== normalize(figureText(value, unit))) throw new Error(`Visible figure differs from its accepted value: ${id}`);
   }
   return figures;
 }

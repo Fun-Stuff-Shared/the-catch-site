@@ -139,3 +139,13 @@ export function slotLabel(name) {
   const label = String(name ?? "").replace(/_/g, " ");
   return label.charAt(0).toUpperCase() + label.slice(1);
 }
+
+
+export function figureText(value, unit = '') {
+  const raw = String(value ?? '');
+  const number = /^-?\d+(?:\.\d+)?$/.test(raw)
+    ? raw.replace(/\d+(?=\.|$)/, (digits) => digits.replace(/\B(?=(\d{3})+(?!\d))/g, ','))
+    : raw;
+  const suffix = /^(percent|%)$/i.test(unit) && /(?:%|\bpercent)$/i.test(raw) ? '' : unit;
+  return `${number}${suffix ? ` ${suffix}` : ''}`;
+}

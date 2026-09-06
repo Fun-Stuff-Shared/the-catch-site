@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { readState, frontChains, chainPath, eventPath, slotLabel } from "../lib/state.mjs";
+import { readState, frontChains, chainPath, eventPath, slotLabel, figureText } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 const state = readState();
 const chain = frontChains(state)[0];
@@ -18,7 +18,7 @@ const figures = Object.values(view?.current_state ?? {}).filter((slot) => slot.f
       {chain && <section class="front-feature" data-layer="fact">
         <p class="ff-kicker">A story to follow · {formatDate(latest.period)}</p>
         <h2><a href={chainPath(chain.id)}>{chain.root.label}</a></h2>
-        {figures.map((slot) => <div class="ff-kpi"><p><strong data-state-figure={slot.occurrence_id} data-state-figure-event={latest.id} data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{slot.figure.value} {slot.figure.unit}</strong> · {slotLabel(slot.slot)}</p><p>{slot.quote_span}</p></div>)}
+        {figures.map((slot) => <div class="ff-kpi"><p><strong data-state-figure={slot.occurrence_id} data-state-figure-event={latest.id} data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong> · {slotLabel(slot.slot)}</p><p data-source-copy>{slot.quote_span}</p></div>)}
         <p class="ff-link"><a href={eventPath(latest.id)}>Read the latest development &rarr;</a></p>
       </section>}
 
