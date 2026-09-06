@@ -31,11 +31,11 @@ const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id
       </section>
       {view.follows && <section data-layer="fact"><h2>Since the previous story</h2>
         <p><a href={eventPath(view.follows)}>Read the previous story</a></p>
-        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{slotLabel(change.name)}: <strong data-state-figure={change.previous.occurrence_id} data-state-figure-event={view.follows} data-figure-value={String(change.previous.value)} data-figure-unit={change.unit}>{change.previous.value} {change.unit}</strong> previously; <strong data-state-figure={change.current.occurrence_id} data-figure-value={String(change.current.value)} data-figure-unit={change.unit}>{change.current.value} {change.unit}</strong> in this story. {change.current.sentence}</p>)}
+        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{slotLabel(change.name)}: <strong data-state-figure={change.previous.occurrence_id} data-state-figure-event={view.follows} data-figure-value={String(change.previous.value)} data-figure-unit={change.unit}>{change.previous.value} {change.unit}</strong> previously; <strong data-state-figure={change.current.occurrence_id} data-figure-value={String(change.current.value)} data-figure-unit={change.unit}>{change.current.value} {change.unit}</strong> in this story. <span data-source-copy>{change.current.sentence}</span></p>)}
         {(view.same_name_not_compared ?? []).map((change) => <p>{slotLabel(change.name)}: {change.reason}</p>)}
-        {(view.new_slots ?? []).map((slot) => <p>{slotLabel(slot.name)}: first tracked in this story. {slot.sentence}</p>)}
+        {(view.new_slots ?? []).map((slot) => <p>{slotLabel(slot.name)}: first tracked in this story. <span data-source-copy>{slot.sentence}</span></p>)}
       </section>}
-      <RevisionTimeline timeline={view.revision_timeline} />
+      <RevisionTimeline timeline={view.revision_timeline} occurrences={view.occurrences} />
       {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
         const document = evidence.get(edge.to_evidence_id);
         return <li><a href={`/records/${document.id}/`} data-source-copy>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;

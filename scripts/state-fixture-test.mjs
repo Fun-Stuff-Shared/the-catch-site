@@ -175,3 +175,20 @@ test('copy checks separate quoted state wording from authored and interface copy
   assert.equal(readerCopy('<p>Visible &mdash; punctuation</p>'), 'Visible — punctuation');
   assert.equal(readerCopy('<p data-source-copy="false">Source wording</p><p>Keep this</p>'), 'Keep this');
 });
+
+
+test('comparison and timeline quotes do not exempt surrounding copy', async () => {
+  const { readerCopy } = await import('./check-state-pages.mjs');
+  const html = '<p data-state-comparison>Payroll change: 4 jobs previously; 5 jobs in this story. <span data-source-copy>Employment rose — the source says.</span></p><p>New slot: first tracked in this story. <span data-source-copy>An automated pipeline updated.</span></p><li data-state-transition><span data-source-copy>The record reported “a second wave”.</span> <a>Earlier report</a>; <a>Later report</a>.</li>';
+  assert.equal(readerCopy(html), 'Payroll change: 4 jobs previously; 5 jobs in this story. New slot: first tracked in this story. Earlier report ; Later report .');
+});
+
+
+test('timeline segmentation exempts exact quoted spans, keeping generated framing', async () => {
+  const { quotedSegments } = await import('../src/lib/quoted-text.mjs');
+  const sentence = 'On Monday, the office reported “Jobs rose — including “temporary” work”; on Tuesday it reported “Jobs fell”.';
+  const parts = quotedSegments(sentence, ['Jobs rose — including “temporary” work', 'Jobs fell']);
+  assert.equal(parts.map((part) => part.text).join(''), sentence);
+  assert.equal(parts.filter((part) => !part.source).map((part) => part.text).join(''), 'On Monday, the office reported ; on Tuesday it reported .');
+  assert.deepEqual(quotedSegments('Generated — prose', ['different quote']), [{text:'Generated — prose',source:false}]);
+});

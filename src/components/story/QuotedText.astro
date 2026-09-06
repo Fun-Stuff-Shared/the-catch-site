@@ -1,0 +1,5 @@
+---
+import { quotedSegments } from '../../lib/quoted-text.mjs';
+const { text, quotes = [] } = Astro.props;
+---
+{quotedSegments(text, quotes).map((part) => part.source ? <span data-source-copy>{part.text}</span> : part.text)}
