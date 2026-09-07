@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847": {
+      "slot": "date issued",
+      "occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89",
+      "heads": [
+        "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Date Issued ')}\" th:utext=\"${entry.value}\">Metadata Value ')}\" th:utext=\"${entry.value}\">Metadata Value --> 1994",
+      "span_check": "byte_exact",
+      "speaker": "GovInfo bibliographic record",
+      "figure": null,
+      "as_of": "1994",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "GovInfo date-issued metadata for Daily Depository Shipping List 94-0823-M",
+      "evidence_id": "59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8",
+      "basis": [
+        "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89"
+      ],
+      "last_confirmed": "1994",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "as_of": "1994",
+      "occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -149,6 +182,7 @@
           "text_sha256": "d5f359f05086b0d6f60e52bfe7ffe9408ec39f1758e3a83d01fcf07f67f2f5dc",
           "log_seq": 442471,
           "recorded_at": "2026-09-05T20:00:39.757769Z",
+          "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
           "evidence_asserted_at": "2026-08-28T16:52:01Z",
           "evidence_url": "https://www.govinfo.gov/app/details/GOVPUB-GP3-d947ac912ab355c3a44fadb3e71aa61e",
           "evidence_publisher": "GovInfo / Government Publications (Bulk)",
@@ -222,8 +256,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "4becfdf9e0",
-  "evaluated_at": "2026-09-07T01:41:41.034765Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T19:41:33.697392Z",
   "event": {
     "accepted": true,
     "envelope_seq": 442460,
@@ -239,7 +273,23 @@
     "log_seq": 442461
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89",
+      "envelope_seq": 767301,
+      "event_id": "event-08dfd338-5c4b-49b4-aa09-0542c17c96af",
+      "id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "name": "date issued",
+      "refusal": null,
+      "source_feed": {
+        "selector": "https://www.govinfo.gov/app/details/GOVPUB-GP3-d947ac912ab355c3a44fadb3e71aa61e",
+        "source_id": "govinfo_govpub"
+      },
+      "log_seq": 767302,
+      "recorded_at": "2026-09-07T19:04:51.181803Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -364,6 +414,7 @@
       "text_sha256": "d5f359f05086b0d6f60e52bfe7ffe9408ec39f1758e3a83d01fcf07f67f2f5dc",
       "log_seq": 442471,
       "recorded_at": "2026-09-05T20:00:39.757769Z",
+      "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
       "evidence_asserted_at": "2026-08-28T16:52:01Z",
       "evidence_url": "https://www.govinfo.gov/app/details/GOVPUB-GP3-d947ac912ab355c3a44fadb3e71aa61e",
       "evidence_publisher": "GovInfo / Government Publications (Bulk)",
@@ -434,7 +485,34 @@
       "evidence_source_id": "govinfo_govpub"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 767306,
+      "id": "attach-18692aab-c171-46e5-991c-5f68adfd25ae",
+      "occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89",
+      "refusal": null,
+      "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "log_seq": 767307,
+      "recorded_at": "2026-09-07T19:05:05.408119Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 767303,
+      "id": "attach-anchor-slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89",
+      "refusal": null,
+      "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "log_seq": 767304,
+      "recorded_at": "2026-09-07T19:04:51.401513Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -451,5 +529,14 @@
   "root_id": "event-08dfd338-5c4b-49b4-aa09-0542c17c96af",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-7ec4ca1e-ab4e-40aa-9153-1dd914b6b847",
+      "name": "date issued",
+      "value": null,
+      "unit": null,
+      "sentence": "Date Issued ')}\" th:utext=\"${entry.value}\">Metadata Value ')}\" th:utext=\"${entry.value}\">Metadata Value --> 1994",
+      "occurrence_id": "occurrence-59df673fe9333ed27170f17c5dc852e5182887245704e9847196b668072ff9d8-6d0cd7ba9304ee89"
+    }
+  ]
 }

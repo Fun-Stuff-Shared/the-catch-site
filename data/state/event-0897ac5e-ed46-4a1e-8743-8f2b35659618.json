@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c": {
+      "slot": "chairs not responding",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8",
+      "heads": [
+        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Three of the four Republican county chairs in Mr. Miller’s district did not respond to questions on Monday about whether they supported his candidacy.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "Republican county chairs not responding",
+        "value": "3"
+      },
+      "as_of": "2026-08-03",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "The New York Times inquiry records and county party communications",
+      "evidence_id": "57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd",
+      "basis": [
+        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8"
+      ],
+      "last_confirmed": "2026-08-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c",
+      "as_of": "2026-08-03",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -87,6 +123,7 @@
           "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
           "log_seq": 432560,
           "recorded_at": "2026-09-05T09:02:58.881000Z",
+          "slot_id": "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c",
           "evidence_asserted_at": "2026-08-04T23:04:14Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
           "evidence_publisher": "The New York Times",
@@ -448,8 +485,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T19:41:33.697392Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432485,
@@ -541,6 +578,7 @@
       "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
       "log_seq": 432560,
       "recorded_at": "2026-09-05T09:02:58.881000Z",
+      "slot_id": "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c",
       "evidence_asserted_at": "2026-08-04T23:04:14Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
       "evidence_publisher": "The New York Times",
@@ -899,7 +937,21 @@
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 767291,
+      "id": "attach-b0f3f1cd-e5c2-4bfe-8fee-c9a50bde5ffa",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8",
+      "refusal": null,
+      "slot_id": "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c",
+      "log_seq": 767292,
+      "recorded_at": "2026-09-07T19:03:19.341866Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -916,5 +968,14 @@
   "root_id": "event-0897ac5e-ed46-4a1e-8743-8f2b35659618",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-16251044-6fcb-4da4-9a5e-c3aad1f3529c",
+      "name": "chairs not responding",
+      "value": "3",
+      "unit": "Republican county chairs not responding",
+      "sentence": "Three of the four Republican county chairs in Mr. Miller’s district did not respond to questions on Monday about whether they supported his candidacy.",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-0d577bde118621c8"
+    }
+  ]
 }

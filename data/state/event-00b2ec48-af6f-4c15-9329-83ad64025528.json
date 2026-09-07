@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-d8b1f37b-7268-459a-9763-de61277ccfb2": {
+      "slot": "monitor arrival time",
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e",
+      "heads": [
+        "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The monitors arrived soon after polls opened at 7 a.m. on primary day and said they intended to interview voters while assessing compliance with federal civil rights and voting rights laws, Laramie County Clerk Debra Lee said in a statement.",
+      "span_check": "byte_exact",
+      "speaker": "Debra Lee",
+      "figure": null,
+      "as_of": "2026-08-18",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Laramie County Clerk statement and election-day access logs",
+      "evidence_id": "5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98",
+      "basis": [
+        "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e"
+      ],
+      "last_confirmed": "2026-08-18",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
+      "as_of": "2026-08-18",
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -153,6 +186,7 @@
           "text_sha256": "9d981c085b4a77f86d3679c08d402c98ae9a063f36286ece524605e1ba145258",
           "log_seq": 753040,
           "recorded_at": "2026-09-07T08:22:21.456566Z",
+          "slot_id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
           "evidence_asserted_at": "2026-08-28T20:52:53Z",
           "evidence_url": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
           "evidence_publisher": "Associated Press",
@@ -822,8 +856,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "e94d8e5c13",
+  "evaluated_at": "2026-09-07T18:14:25.996759Z",
   "event": {
     "accepted": true,
     "envelope_seq": 752959,
@@ -843,7 +877,34 @@
     "log_seq": 752960
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e",
+      "envelope_seq": 763144,
+      "event_id": "event-00b2ec48-af6f-4c15-9329-83ad64025528",
+      "id": "slot-d08e264e-01f4-489b-acd5-b387bf2ee8c9",
+      "name": "monitor arrival time",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 763145,
+      "recorded_at": "2026-09-07T17:36:30.925610Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e",
+      "envelope_seq": 763164,
+      "event_id": "event-00b2ec48-af6f-4c15-9329-83ad64025528",
+      "id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
+      "name": "monitor arrival time",
+      "refusal": null,
+      "log_seq": 763165,
+      "recorded_at": "2026-09-07T17:37:37.387596Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -972,6 +1033,7 @@
       "text_sha256": "9d981c085b4a77f86d3679c08d402c98ae9a063f36286ece524605e1ba145258",
       "log_seq": 753040,
       "recorded_at": "2026-09-07T08:22:21.456566Z",
+      "slot_id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
       "evidence_asserted_at": "2026-08-28T20:52:53Z",
       "evidence_url": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
       "evidence_publisher": "Associated Press",
@@ -1638,7 +1700,21 @@
       "evidence_source_id": "ap_wire_rss"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 763166,
+      "id": "attach-anchor-slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e",
+      "refusal": null,
+      "slot_id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
+      "log_seq": 763167,
+      "recorded_at": "2026-09-07T17:37:37.629627Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -1655,5 +1731,14 @@
   "root_id": "event-00b2ec48-af6f-4c15-9329-83ad64025528",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-d8b1f37b-7268-459a-9763-de61277ccfb2",
+      "name": "monitor arrival time",
+      "value": null,
+      "unit": null,
+      "sentence": "The monitors arrived soon after polls opened at 7 a.m. on primary day and said they intended to interview voters while assessing compliance with federal civil rights and voting rights laws, Laramie County Clerk Debra Lee said in a statement.",
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-2f4c08bef036516e"
+    }
+  ]
 }

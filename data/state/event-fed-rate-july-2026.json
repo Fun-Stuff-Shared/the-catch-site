@@ -22,22 +22,29 @@
     },
     "slot-event-fed-rate-july-2026-ee26ba77467b8431": {
       "slot": "rate_change_preference",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7",
       "heads": [
-        "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
         "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "Philadelphia Fed President Anna Paulson told CNBC on Tuesday that she is confident the current interest rate level is sufficient to bring inflation back to target.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-04",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Philadelphia Fed President Anna Paulson told CNBC on Tuesday that she is confident the current interest rate level is sufficient to bring inflation back to target.",
+      "evidence_id": "4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f",
       "basis": [
         "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
         "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7"
       ],
       "last_confirmed": "2026-08-05",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     },
     "slot-event-fed-rate-july-2026-367256dcba557082": {
       "slot": "vote_count",
@@ -352,11 +359,6 @@
       "slot_id": "slot-event-fed-rate-july-2026-e15fb4914b81b27f",
       "as_of": "2026-08-04",
       "occurrence_id": "occurrence-24b1252518dc05b72a34a86e2fd3f2aa6b61ec8840a19e4457b9453474bfae49-84ba0e3681ae9a37"
-    },
-    {
-      "kind": "disputed",
-      "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431",
-      "as_of": "2026-08-05"
     }
   ],
   "evidence": [
@@ -1780,12 +1782,12 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T20:05:12.746095Z",
   "event": {
     "accepted": true,
     "envelope_seq": 603724,
-    "follows": null,
+    "follows": "event-fed-rate-june-2026",
     "id": "event-fed-rate-july-2026",
     "kind": "federal_funds_rate_decision",
     "label": "The quiet hold breaks: three officials vote to raise rates",
@@ -3238,6 +3240,546 @@
       "recorded_at": "2026-08-31T12:14:39.033448Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767437,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-6c8d7be46036f32c",
+      "id": "edge-relation-066431b58077c26480709ee9",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "The NEW quote (CNBC) states a range of '3.5%-3.75%', and the EXISTING quote (Federal Reserve) states '3-1/2 to 3-3/4 percent'. These are numerically equivalent ranges for the federal funds rate. The sources are independent (CNBC vs Federal Reserve).",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+      "log_seq": 767438,
+      "recorded_at": "2026-09-07T19:31:59.542277Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767417,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-4f8288028c00e476",
+      "id": "edge-relation-1eb179ab91bb1919237f6043",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both assertions state the range is 3.5% to 3.75% for the July 2026 event.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+      "log_seq": 767418,
+      "recorded_at": "2026-09-07T19:27:26.509514Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767373,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "last week",
+          "value": "9-3 divide"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-fd2a5d880fe89b85",
+      "id": "edge-relation-27d1e7c85cc248dea7cafd51",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "The NEW quote (published Aug 4) refers back to the vote from 'last week' (July 29) and mentions a '9-3 divide', which is equivalent to the '9-3' vote reported in the EXISTING quote from July 29.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d",
+      "log_seq": 767374,
+      "recorded_at": "2026-09-07T19:17:22.452602Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767386,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "three \"no\" votes"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-8881dd1dc73c90a8",
+      "id": "edge-relation-2dbf34000e4f07d84b063d53",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Retrying with a check on the quote: 'The three \"no\" votes were the first during Chairman Kevin Warsh 's tenure.' The requested span is 'three \"no\" votes'. I will use the exact quote string.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-7690c7a06961d583",
+      "log_seq": 767387,
+      "recorded_at": "2026-09-07T19:20:59.256710Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767370,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "9-3"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d",
+      "id": "edge-relation-3e7146d3f74b52f9fcbe23ec",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both sources report a 9-3 vote for the Federal Reserve/FOMC action on July 29, 2026. CNBC reports it as 'voted 9-3', and the Federal Reserve reports it as 'by a 9 – 3 vote'. These are equivalent.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-0cd972466303e92a",
+      "log_seq": 767371,
+      "recorded_at": "2026-09-07T19:17:19.950969Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767411,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+      "id": "edge-relation-4b4798dd0e965d35827d8136",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both assertions state the target range for the federal funds rate is 3.5% to 3.75% on July 29, 2026. One uses \"3.5% to 3.75%\" and the other \"3-1/2 to 3-3/4 percent\", which are equivalent.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+      "log_seq": 767412,
+      "recorded_at": "2026-09-07T19:27:21.266595Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767428,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-6c8d7be46036f32c",
+      "id": "edge-relation-6004572ce9da923a3cf9b950",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "NEW (3.5%-3.75%) and EXISTING (3.5% to 3.75%) describe the same rate range.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+      "log_seq": 767429,
+      "recorded_at": "2026-09-07T19:30:07.358343Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767425,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-4f8288028c00e476",
+      "id": "edge-relation-6c0612b0974a06b785afedfa",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "NEW specifies a range (3.5%-3.75%) while EXISTING specifies a single value (3.75). The range contains the value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start-july",
+      "log_seq": 767426,
+      "recorded_at": "2026-09-07T19:30:02.856809Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767380,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "three of the Federal Open Market Committee (FOMC)'s 12 voting members dissented from the decision."
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-d3ce4dade97b34f5",
+      "id": "edge-relation-8246f2745a77b07448fac425",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report that three members of the FOMC voted against the decision.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-75bb238bf97ae15f",
+      "log_seq": 767381,
+      "recorded_at": "2026-09-07T19:19:27.200238Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767406,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+      "id": "edge-relation-8565cbb35acfde11cc82d202",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes specify the target range of 3.5% to 3.75%.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+      "log_seq": 767407,
+      "recorded_at": "2026-09-07T19:24:54.417667Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767393,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-2f42625cf9ea80f1",
+      "id": "edge-relation-8a48278331e0060d6272d238",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report the same federal funds rate range of 3.5% to 3.75% (3-1/2 to 3-3/4 percent) for the same event date.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-50ddc299de2a6c91",
+      "log_seq": 767394,
+      "recorded_at": "2026-09-07T19:22:48.215255Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767450,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "CNBC",
+          "time": "",
+          "value": "current interest rate level is \"mildly restrictive\" on economic conditions and favors holding steady"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
+      "id": "edge-relation-8fffe67c27c6e8abd1d9ebe0",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both occurrences report Anna Paulson's view that the current interest rate level is appropriate (either \"sufficient\" or \"mildly restrictive\" and \"favors holding steady\"). While they use slightly different phrasing, the core sentiment that the current rate is at the correct level is equivalent. They are separate reports from CNBC on different days.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7",
+      "log_seq": 767451,
+      "recorded_at": "2026-09-07T19:33:44.439185Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767445,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "quarter percentage point rate hike"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-3cdea50db11d1e44",
+      "id": "edge-relation-a035d02cf39ecf4d79e66a9e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report that three dissenters wanted a quarter percentage point rate hike. Source relation is unclear because the quotes themselves do not explicitly state their shared origin.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-9864578b10cc570c",
+      "log_seq": 767446,
+      "recorded_at": "2026-09-07T19:33:11.192783Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767367,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "9-3"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-7455e6e7a0f138da",
+      "id": "edge-relation-ad1cf5ba2a85636fb146c529",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both sources report a 9-3 vote for the Federal Reserve/FOMC action on July 29, 2026. The CNBC quote mentions the vote count in the context of holding rates steady, while the Federal Reserve quote explicitly states the vote count for approving the statement. These are equivalent values reporting the same outcome.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-9e221b9e12f678f1",
+      "log_seq": 767368,
+      "recorded_at": "2026-09-07T19:17:17.478970Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767420,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+      "id": "edge-relation-b44b8a27c30ebc5979bdb65e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "The NEW assertion (July 2026) specifies a target range of 3.5% to 3.75%. The EXISTING assertion (Dec 2025) specifies a value of 3.75. The range [3.5, 3.75] contains the value 3.75, making the NEW value wider than the EXISTING value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start-july",
+      "log_seq": 767421,
+      "recorded_at": "2026-09-07T19:27:57.508956Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767399,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+      "id": "edge-relation-b5adc6548002d086f27accee",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state the federal funds rate was maintained at 3.5% to 3.75% (3-1/2 to 3-3/4 percent).",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-50ddc299de2a6c91",
+      "log_seq": 767400,
+      "recorded_at": "2026-09-07T19:24:47.267535Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767442,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "quarter percentage point rate hike"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-3cdea50db11d1e44",
+      "id": "edge-relation-d0e5d744a591d164f4d56637",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report that three dissenters wanted a quarter percentage point rate hike. Source relation is unclear because the quotes themselves do not explicitly state their shared origin (only metadata does).",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-9f47698bb7cd1197",
+      "log_seq": 767443,
+      "recorded_at": "2026-09-07T19:33:08.751328Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767414,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-4f8288028c00e476",
+      "id": "edge-relation-dc3466dcfaabbc821652fd1c",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both assertions state the range is 3.5% to 3.75% for the July 2026 event.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+      "log_seq": 767415,
+      "recorded_at": "2026-09-07T19:27:23.891281Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767403,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+      "id": "edge-relation-dd1b1370dc556979d4843350",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state the federal funds rate range is 3.5% to 3.75% (3-1/2 to 3-3/4 percent).",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+      "log_seq": 767404,
+      "recorded_at": "2026-09-07T19:24:51.918320Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767431,
+      "event_id": "event-fed-rate-july-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-july-2026",
+      "from_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-6c8d7be46036f32c",
+      "id": "edge-relation-f7848e9416e4a338ab1aa862",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "NEW specifies a range (3.5%-3.75%) while EXISTING specifies a single value (3.75). The range contains the value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-july-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start-july",
+      "log_seq": 767432,
+      "recorded_at": "2026-09-07T19:30:09.718168Z"
     },
     {
       "accepted": true,
@@ -5226,7 +5768,7 @@
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": "2026-08-05T13:06:35Z",
+    "changes_checked_at": "2026-08-23T00:00:00Z",
     "confirmations": [
       {
         "label": "The rate has been held at 3.75 percent since December 11, 2025",
@@ -5445,6 +5987,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
+        "relation": "supports",
+        "edge_id": "edge-relation-27d1e7c85cc248dea7cafd51",
+        "earlier_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d",
+        "later_occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-fd2a5d880fe89b85",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html",
+        "sentence": "On 2026-07-29, CNBC reported “The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”; on 2026-08-04, CNBC reported “The policymaker voted last week with the FOMC majority to hold rates steady and said it \"was not a close call\" for her, despite the 9-3 divide on the panel.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
         "relation": "same_fact",
         "edge_id": "phase2-edge-ba1df68a-4596-43d3-a823-394c55f3cd40",
         "earlier_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-7455e6e7a0f138da",
@@ -5475,6 +6027,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
+        "relation": "supports",
+        "edge_id": "edge-relation-3e7146d3f74b52f9fcbe23ec",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-0cd972466303e92a",
+        "later_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote:”; on the same day, CNBC reported “The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
         "relation": "same_fact",
         "edge_id": "phase2-edge-d5a7f51c-02fa-473c-bfc6-c5b33b0e21fe",
         "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-0cd972466303e92a",
@@ -5482,6 +6044,16 @@
         "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
         "later_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
         "sentence": "On 2026-07-29, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote:”; on the same day, CNBC reported “The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
+        "relation": "supports",
+        "edge_id": "edge-relation-ad1cf5ba2a85636fb146c529",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-9e221b9e12f678f1",
+        "later_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-7455e6e7a0f138da",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote”; on the same day, CNBC reported “The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.”."
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
@@ -5505,6 +6077,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-630db9813f0fe5d2",
+        "relation": "supports",
+        "edge_id": "edge-relation-2dbf34000e4f07d84b063d53",
+        "earlier_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-7690c7a06961d583",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-8881dd1dc73c90a8",
+        "earlier_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, CBS News reported “three of the Federal Open Market Committee (FOMC)'s 12 voting members dissented from the decision”; on 2026-08-05, CNBC reported “The three \"no\" votes were the first during Chairman Kevin Warsh 's tenure.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-630db9813f0fe5d2",
         "relation": "same_fact",
         "edge_id": "phase2-edge-c60533a4-4c94-44fe-afc1-277c66649e1c",
         "earlier_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-7690c7a06961d583",
@@ -5512,6 +6094,16 @@
         "earlier_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
         "later_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
         "sentence": "On 2026-07-29, CBS News reported “three of the Federal Open Market Committee (FOMC)'s 12 voting members dissented from the decision”; on the same day, CBS News reported “three of the Federal Open Market Committee (FOMC)'s 12 voting members dissented from the decision.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-630db9813f0fe5d2",
+        "relation": "supports",
+        "edge_id": "edge-relation-8246f2745a77b07448fac425",
+        "earlier_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-75bb238bf97ae15f",
+        "later_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-d3ce4dade97b34f5",
+        "earlier_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "later_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "sentence": "On 2026-07-29, NBC News reported “three policymakers saw the case for raising interest rates and chose to vote against the decision to stand pat”; on the same day, CBS News reported “three of the Federal Open Market Committee (FOMC)'s 12 voting members dissented from the decision.”."
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-630db9813f0fe5d2",
@@ -5535,6 +6127,46 @@
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-6004572ce9da923a3cf9b950",
+        "earlier_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-6c8d7be46036f32c",
+        "earlier_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, CBS News reported “This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.”; on 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-dc3466dcfaabbc821652fd1c",
+        "earlier_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-4f8288028c00e476",
+        "earlier_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, CBS News reported “This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.”; on 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-066431b58077c26480709ee9",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-6c8d7be46036f32c",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-4b4798dd0e965d35827d8136",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+        "later_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, CBS News reported “This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
         "relation": "same_fact",
         "edge_id": "phase2-edge-ce686252-f4e7-4665-99fd-1aa649036b41",
         "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-50ddc299de2a6c91",
@@ -5542,6 +6174,36 @@
         "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
         "later_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
         "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, CBS News reported “This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-8a48278331e0060d6272d238",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-50ddc299de2a6c91",
+        "later_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-2f42625cf9ea80f1",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-b5adc6548002d086f27accee",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-50ddc299de2a6c91",
+        "later_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-dd1b1370dc556979d4843350",
+        "earlier_occurrence_id": "occurrence-pin-v2:4a2d2cdd78153853133710bfef2dc9c8f77269bd64fd24d9d0ed4c6ce5842ce4-c6575084ff922458",
+        "later_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+        "later_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "sentence": "On 2026-07-29, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”."
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
@@ -5555,6 +6217,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-1eb179ab91bb1919237f6043",
+        "earlier_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-4f8288028c00e476",
+        "earlier_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”; on 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
         "relation": "same_fact",
         "edge_id": "phase2-edge-c3999e2f-60f5-4612-9573-e038bb0b1bb5",
         "earlier_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
@@ -5562,6 +6234,16 @@
         "earlier_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
         "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
         "sentence": "On 2026-07-29, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”; on 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-8565cbb35acfde11cc82d202",
+        "earlier_occurrence_id": "occurrence-pin-v2:8b19aabeef9e24da084f55d6e0b26ceac0cd09ee845cb71cd737839900717d2a-8b880bff8b7104c7",
+        "later_occurrence_id": "occurrence-pin-v2:dbafdba6bdd94c5dd97944ced0577d7adee37c0b8f6fe0bf3b0d20ed2cfef6b3-6c9fa5f7fd495d3c",
+        "earlier_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
+        "later_evidence_url": "https://www.cbsnews.com/news/federal-reserve-interest-rates-kevin-warsh-july-206/",
+        "sentence": "On 2026-07-29, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”; on the same day, CBS News reported “This marks the fifth consecutive time the central bank has kept interest rates in the target range of 3.5% to 3.75%.”."
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
@@ -5582,6 +6264,26 @@
         "earlier_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
         "later_evidence_url": "https://www.nbcnews.com/business/economy/fed-meeting-interest-rate-decision-kevin-warsh-rcna589536",
         "sentence": "On 2026-08-05, CNBC reported “the other nine voters disagreed, voting to hold the benchmark funds rate in a range between 3.5%-3.75%.”; on 2026-07-29, NBC News reported “Nine members of the Federal Open Market Committee voted to keep rates steady at 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-d90cf85219073f81",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-a035d02cf39ecf4d79e66a9e",
+        "earlier_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-9864578b10cc570c",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-3cdea50db11d1e44",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, CNBC reported “the three dissenters \"preferred to raise the target range for the federal funds rate by ¼ percentage point at this meeting.\"”; on 2026-08-05, CNBC reported “Kashkari was one of three dissenters at last week's Federal Open Market Committee meeting who wanted a quarter percentage point rate hike.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-d90cf85219073f81",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-d0e5d744a591d164f4d56637",
+        "earlier_occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-9f47698bb7cd1197",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-3cdea50db11d1e44",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-07-29, CNBC reported “the three dissenters \"preferred to raise the target range for the federal funds rate by ¼ percentage point at this meeting.\"”; on 2026-08-05, CNBC reported “Kashkari was one of three dissenters at last week's Federal Open Market Committee meeting who wanted a quarter percentage point rate hike.”."
       },
       {
         "slot_id": "slot-event-fed-rate-july-2026-d90cf85219073f81",
@@ -5632,39 +6334,75 @@
         "earlier_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
         "later_evidence_url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
         "sentence": "On 2026-08-05, CNBC reported “Kashkari was one of three dissenters at last week's Federal Open Market Committee meeting who wanted a quarter percentage point rate hike.”; on 2026-07-29, CNBC reported “the three dissenters \"preferred to raise the target range for the federal funds rate by ¼ percentage point at this meeting.\"”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431",
+        "relation": "supports",
+        "edge_id": "edge-relation-8fffe67c27c6e8abd1d9ebe0",
+        "earlier_occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7",
+        "later_occurrence_id": "occurrence-17e080aa819b4568080e363f00e992d5fd94b60a763ad7eaaad67e5cb641cc1a-7338b2d780aa20e1",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/05/feds-kashkari-says-now-is-the-time-to-start-slowly-moving-rates-up.html",
+        "sentence": "On 2026-08-04, CNBC reported “Philadelphia Fed President Anna Paulson told CNBC on Tuesday that she is confident the current interest rate level is sufficient to bring inflation back to target.”; on 2026-08-05, CNBC reported “Philadelphia Fed President Anna Paulson , who like Kashkari gets a vote this year on the FOMC, offered a differing view. Paulson told CNBC that she thinks there is evidence that the current interest rate level is \"mildly restrictive\" on economic conditions and favors holding steady as officials continue to evaluate the data. In addition, Paulson said voting to hold was \"not a close call\" for her at the meeting.”."
       }
     ]
   },
   "status": "published",
   "desk": null,
-  "follows": null,
-  "root_id": "event-fed-rate-july-2026",
-  "changed_since_previous": [],
-  "same_name_not_compared": [],
-  "new_slots": [
+  "follows": "event-fed-rate-june-2026",
+  "root_id": "event-fed-rate-june-2026",
+  "changed_since_previous": [
     {
-      "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+      "name": "vote_count",
+      "unit": "vote",
+      "previous": {
+        "slot_id": "slot-event-fed-rate-june-2026-367256dcba557082",
+        "name": "vote_count",
+        "value": "12-0",
+        "unit": "vote",
+        "sentence": "Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%",
+        "occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-c0b89291a9731c5f"
+      },
+      "current": {
+        "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
+        "name": "vote_count",
+        "value": "9-3",
+        "unit": "vote",
+        "sentence": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.",
+        "occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d"
+      }
+    }
+  ],
+  "same_name_not_compared": [
+    {
       "name": "federal_funds_rate",
-      "value": null,
-      "unit": null,
-      "sentence": null,
-      "occurrence_id": null
-    },
+      "previous": {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "name": "federal_funds_rate",
+        "value": null,
+        "unit": null,
+        "sentence": "2025-12-11,3.75",
+        "occurrence_id": "occurrence-td-2ed160-fed-hold-start"
+      },
+      "current": {
+        "slot_id": "slot-event-fed-rate-july-2026-93ff7929970c310a",
+        "name": "federal_funds_rate",
+        "value": null,
+        "unit": null,
+        "sentence": null,
+        "occurrence_id": null
+      },
+      "reason": "The units differ or are missing."
+    }
+  ],
+  "new_slots": [
     {
       "slot_id": "slot-event-fed-rate-july-2026-ee26ba77467b8431",
       "name": "rate_change_preference",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
-    },
-    {
-      "slot_id": "slot-event-fed-rate-july-2026-367256dcba557082",
-      "name": "vote_count",
-      "value": "9-3",
-      "unit": "vote",
-      "sentence": "The Federal Reserve voted 9-3 to hold its key interest rate steady in a range between 3.5% and 3.75%.",
-      "occurrence_id": "occurrence-pin-v2:e73aeb2fb92cc7ea7d0bc876c2db79a7a0a49a28efcac75e5406b62af2d35de0-e0ad43400aa23c0d"
+      "sentence": "Philadelphia Fed President Anna Paulson told CNBC on Tuesday that she is confident the current interest rate level is sufficient to bring inflation back to target.",
+      "occurrence_id": "occurrence-4f3b3e772d5e1ba9653a25f2ca34e420a00402f244d5b81b488c615a7321979f-c3ece55bf9a726e7"
     },
     {
       "slot_id": "slot-event-fed-rate-july-2026-76832d99a1811b58",

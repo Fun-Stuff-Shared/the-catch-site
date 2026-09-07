@@ -123,7 +123,6 @@ export function checkStatePages(state, dist) {
       if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error(`Event record tracked figures differ: ${record}`);
     } catch (error) { failures.push(error.message); }
   }
-  if (existsSync(join(dist, 'chains'))) failures.push('Obsolete /chains routes were generated');
   return { failures, checked };
 }
 

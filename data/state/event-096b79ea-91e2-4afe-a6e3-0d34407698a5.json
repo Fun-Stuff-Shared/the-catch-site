@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-28d8d92a-223e-4981-9f7e-affa1596db29": {
+      "slot": "date of arrival",
+      "occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47",
+      "heads": [
+        "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The students were right: Anopheles stephensi had reached Niger.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2024",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "molecular confirmation and mosquito surveillance records from Niger",
+      "evidence_id": "5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff",
+      "basis": [
+        "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -86,6 +119,7 @@
           "text_sha256": "2289e6c97e2df857b72ab38dd622df9712daef33d980286a245bfa1b2970a2ae",
           "log_seq": 753626,
           "recorded_at": "2026-09-07T08:33:09.991935Z",
+          "slot_id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
           "evidence_asserted_at": "2026-08-18T19:22:25Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/mosquito-africa-anopheles-stephensi.html",
           "evidence_publisher": "The New York Times",
@@ -95,8 +129,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T19:41:33.697392Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753445,
@@ -116,7 +150,34 @@
     "log_seq": 753446
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47",
+      "envelope_seq": 767312,
+      "event_id": "event-096b79ea-91e2-4afe-a6e3-0d34407698a5",
+      "id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
+      "name": "date of arrival",
+      "refusal": null,
+      "log_seq": 767313,
+      "recorded_at": "2026-09-07T19:06:36.931406Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47",
+      "envelope_seq": 767310,
+      "event_id": "event-096b79ea-91e2-4afe-a6e3-0d34407698a5",
+      "id": "slot-fb544c62-baa8-48a9-9707-4f9ed0c448fb",
+      "name": "date of arrival",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/us/politics/mosquito-africa-anopheles-stephensi.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 767311,
+      "recorded_at": "2026-09-07T19:06:12.326215Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -179,13 +240,28 @@
       "text_sha256": "2289e6c97e2df857b72ab38dd622df9712daef33d980286a245bfa1b2970a2ae",
       "log_seq": 753626,
       "recorded_at": "2026-09-07T08:33:09.991935Z",
+      "slot_id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
       "evidence_asserted_at": "2026-08-18T19:22:25Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/mosquito-africa-anopheles-stephensi.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 767314,
+      "id": "attach-anchor-slot-28d8d92a-223e-4981-9f7e-affa1596db29",
+      "occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47",
+      "refusal": null,
+      "slot_id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
+      "log_seq": 767315,
+      "recorded_at": "2026-09-07T19:06:37.222375Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -202,5 +278,14 @@
   "root_id": "event-096b79ea-91e2-4afe-a6e3-0d34407698a5",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-28d8d92a-223e-4981-9f7e-affa1596db29",
+      "name": "date of arrival",
+      "value": null,
+      "unit": null,
+      "sentence": "The students were right: Anopheles stephensi had reached Niger.",
+      "occurrence_id": "occurrence-5c6eff7b6f29903a8cb50aeca05186a6e736eabccaa2187822c362b8d8654dff-f5e6e1de8a0a9e47"
+    }
+  ]
 }

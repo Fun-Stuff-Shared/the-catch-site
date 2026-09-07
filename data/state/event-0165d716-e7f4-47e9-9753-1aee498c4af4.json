@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839": {
+      "slot": "early access price",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585",
+      "heads": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "A lawsuit filed Wednesday in federal court in New York challenges a plan to sell early access to President Trump’s posts on Truth Social for up to $100,000 a month, arguing the First Amendment “guarantees equal access to the President’s public announcements.”",
+      "span_check": "byte_exact",
+      "speaker": "The New York Times",
+      "figure": {
+        "unit": "dollars per month",
+        "value": "100000"
+      },
+      "as_of": "2026-08-12",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "federal court complaint filed in New York by Freedom of the Press Foundation and The Intercept",
+      "evidence_id": "57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344",
+      "basis": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+      ],
+      "last_confirmed": "2026-08-12",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
+      "as_of": "2026-08-12",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -55,6 +91,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432228,
           "recorded_at": "2026-09-05T09:01:20.720676Z",
+          "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -384,8 +421,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T19:41:33.697392Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432153,
@@ -445,6 +482,7 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432228,
       "recorded_at": "2026-09-05T09:01:20.720676Z",
+      "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
@@ -771,7 +809,21 @@
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 767227,
+      "id": "attach-49a1b9ae-aba2-4ae3-a6ce-79e4a39851c7",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585",
+      "refusal": null,
+      "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
+      "log_seq": 767228,
+      "recorded_at": "2026-09-07T18:55:53.382545Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -788,5 +840,14 @@
   "root_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
+      "name": "early access price",
+      "value": "100000",
+      "unit": "dollars per month",
+      "sentence": "A lawsuit filed Wednesday in federal court in New York challenges a plan to sell early access to President Trump’s posts on Truth Social for up to $100,000 a month, arguing the First Amendment “guarantees equal access to the President’s public announcements.”",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+    }
+  ]
 }

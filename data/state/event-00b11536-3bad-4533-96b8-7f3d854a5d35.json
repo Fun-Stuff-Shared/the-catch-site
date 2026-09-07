@@ -52,6 +52,31 @@
       ],
       "last_confirmed": "2026-08-29",
       "freshness": "aging"
+    },
+    "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60": {
+      "slot": "date of death",
+      "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976",
+      "heads": [
+        "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "A football player for William Jewell College in Missouri died Saturday after experiencing a medical emergency during the team's season opener, according to school officials.",
+      "span_check": "byte_exact",
+      "speaker": "William Jewell College officials",
+      "figure": null,
+      "as_of": "2026-08-29",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "William Jewell College official statement and game records",
+      "evidence_id": "597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a",
+      "basis": [
+        "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "aging"
     }
   },
   "timeline": [
@@ -66,6 +91,12 @@
       "slot_id": "slot-53e4616b-dab2-45e5-a81d-0110901dd9b9",
       "as_of": "2026-08-29",
       "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-86feee8518d9814b"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
+      "as_of": "2026-08-29",
+      "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976"
     }
   ],
   "evidence": [
@@ -352,6 +383,7 @@
           "text_sha256": "cb2167491cd18c442ede23171854b77524455069e41593b54eed7145d9ae701b",
           "log_seq": 442503,
           "recorded_at": "2026-09-05T21:14:48.826377Z",
+          "slot_id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
           "evidence_asserted_at": "2026-08-29T22:19:00Z",
           "evidence_url": "https://www.cbsnews.com/news/micahjo-barnett-william-jewell-football-player-dies/",
           "evidence_publisher": "CBS News",
@@ -465,8 +497,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "e94d8e5c13",
+  "evaluated_at": "2026-09-07T18:14:25.996759Z",
   "event": {
     "accepted": true,
     "envelope_seq": 442458,
@@ -553,6 +585,32 @@
       },
       "log_seq": 750650,
       "recorded_at": "2026-09-07T07:43:36.056171Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976",
+      "envelope_seq": 763126,
+      "event_id": "event-00b11536-3bad-4533-96b8-7f3d854a5d35",
+      "id": "slot-d07a87ee-9bd4-4be0-b1d8-7c0c17c90b1c",
+      "name": "date of death",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cbsnews.com/news/micahjo-barnett-william-jewell-football-player-dies/",
+        "source_id": "cbs_news_rss"
+      },
+      "log_seq": 763127,
+      "recorded_at": "2026-09-07T17:33:15.712774Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976",
+      "envelope_seq": 763136,
+      "event_id": "event-00b11536-3bad-4533-96b8-7f3d854a5d35",
+      "id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
+      "name": "date of death",
+      "refusal": null,
+      "log_seq": 763137,
+      "recorded_at": "2026-09-07T17:33:48.577699Z"
     },
     {
       "accepted": true,
@@ -826,6 +884,7 @@
       "text_sha256": "cb2167491cd18c442ede23171854b77524455069e41593b54eed7145d9ae701b",
       "log_seq": 442503,
       "recorded_at": "2026-09-05T21:14:48.826377Z",
+      "slot_id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
       "evidence_asserted_at": "2026-08-29T22:19:00Z",
       "evidence_url": "https://www.cbsnews.com/news/micahjo-barnett-william-jewell-football-player-dies/",
       "evidence_publisher": "CBS News",
@@ -953,6 +1012,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 763138,
+      "id": "attach-anchor-slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
+      "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976",
+      "refusal": null,
+      "slot_id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
+      "log_seq": 763139,
+      "recorded_at": "2026-09-07T17:33:48.831649Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 750701,
       "id": "attach-anchor-slot-e360033b-d519-4bb4-9416-01c79323b5fe",
       "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-9832e5c1189ebbc4",
@@ -996,6 +1068,14 @@
       "unit": null,
       "sentence": "The game between the NCAA Division II schools has been postponed.",
       "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-86feee8518d9814b"
+    },
+    {
+      "slot_id": "slot-dac3c856-de13-4e54-8c73-6060a1bd1a60",
+      "name": "date of death",
+      "value": null,
+      "unit": null,
+      "sentence": "A football player for William Jewell College in Missouri died Saturday after experiencing a medical emergency during the team's season opener, according to school officials.",
+      "occurrence_id": "occurrence-597bc77f7acf547c4c02daa404eeb5bdde485ad6c962f805f8986b88d90d916a-8d31dab5bc551976"
     }
   ]
 }

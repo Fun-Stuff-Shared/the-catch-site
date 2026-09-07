@@ -33,16 +33,23 @@
     },
     "slot-event-fed-rate-june-2026-93ff7929970c310a": {
       "slot": "federal_funds_rate",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-td-2ed160-fed-hold-start",
       "heads": [
-        "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-a25af7f53015b46a",
         "occurrence-td-2ed160-fed-hold-start"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "2025-12-11,3.75",
+      "span_check": "byte_exact",
+      "speaker": null,
+      "figure": null,
+      "as_of": "2025-12-11",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": null,
+      "evidence_id": "evidence-td-2ed160-dfedturu",
       "basis": [
         "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
         "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
@@ -51,7 +58,7 @@
         "occurrence-td-2ed160-fed-hold-start"
       ],
       "last_confirmed": "2026-06-17",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     },
     "slot-event-fed-rate-june-2026-ee254e90b55cb7cc": {
       "slot": "median_dot_plot_rate",
@@ -411,11 +418,6 @@
     {
       "kind": "disputed",
       "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
-      "as_of": "2026-06-17"
-    },
-    {
-      "kind": "disputed",
-      "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
       "as_of": "2026-06-17"
     },
     {
@@ -1950,8 +1952,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "c403097b53",
+  "evaluated_at": "2026-09-07T20:05:12.746095Z",
   "event": {
     "accepted": true,
     "envelope_seq": 595418,
@@ -3468,6 +3470,222 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "envelope_seq": 767467,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.50%–3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-ccaebe874a2dbe56",
+      "id": "edge-relation-049200e51a7a1c080e93a416",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "NEW states a range (3.50%-3.75%), while EXISTING states a single value (3.75), which is the upper bound of that range. Thus, NEW is wider. The sources are independent (TradingKey vs FRED).",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start",
+      "log_seq": 767468,
+      "recorded_at": "2026-09-07T19:37:51.477252Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767487,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%."
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-138893d362b7b7e6",
+      "id": "edge-relation-134f4c1ece0abac1b09a5772",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes from CNBC and Fox Business report the same rate range of 3.5% to 3.75% for the federal funds rate on June 17, 2026.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
+      "log_seq": 767488,
+      "recorded_at": "2026-09-07T19:39:27.384291Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767481,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+      "id": "edge-relation-1eda17f6232ddea338271404",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state the Federal Reserve kept the federal funds rate in the range of 3.5% to 3.75% on June 17, 2026. One is from Fox Business and the other is the official Federal Reserve statement.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+      "log_seq": 767482,
+      "recorded_at": "2026-09-07T19:39:20.536496Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767470,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.50%–3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-ccaebe874a2dbe56",
+      "id": "edge-relation-6a4e124fafcb8042cdef9983",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes describe the federal funds rate as 3.5% to 3.75% on June 17, 2026. TradingKey (NEW) and the Federal Reserve (EXISTING) provide equivalent values.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+      "log_seq": 767471,
+      "recorded_at": "2026-09-07T19:37:54.071944Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767473,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+      "id": "edge-relation-7c1ecc0f218db7a29c59e2a2",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes (Fox Business and TradingKey) state the federal funds rate was maintained at 3.5% to 3.75% on June 17, 2026.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+      "log_seq": 767474,
+      "recorded_at": "2026-09-07T19:37:56.546301Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767484,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
+      "id": "edge-relation-d570340cc222663143dfabd4",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "The NEW quote specifies a range of 3.5% to 3.75%, while the EXISTING occurrence from FEDTARU only provides a single figure '3.75' (likely the upper bound). The range contains the point.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start",
+      "log_seq": 767485,
+      "recorded_at": "2026-09-07T19:39:22.879587Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767476,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+      "id": "edge-relation-ea58da79f17b3f9c944abc7e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "NEW (Fox Business) specifies a range (3.5% to 3.75%), while EXISTING (FRED) lists a single value (3.75) as of 2025-12-11. The NEW value contains the EXISTING value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start",
+      "log_seq": 767477,
+      "recorded_at": "2026-09-07T19:37:59.019282Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 767461,
+      "event_id": "event-fed-rate-june-2026",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.50%–3.75%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-june-2026",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+      "id": "edge-relation-ff5ae93ae512f29f6ed323c8",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "The NEW occurrence (TradingKey) and EXISTING occurrence (Federal Reserve) both state the federal funds rate was maintained at 3.5% to 3.75% on 2026-06-17. These are equivalent values from independent reports of the same event.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-june-2026",
+      "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-bed5a113c4b6c6b3",
+      "log_seq": 767462,
+      "recorded_at": "2026-09-07T19:36:24.989274Z"
+    },
     {
       "accepted": true,
       "edge_kind": "attach",
@@ -4991,7 +5209,7 @@
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": "2026-07-08T18:00:53Z",
+    "changes_checked_at": "2026-08-23T00:00:00Z",
     "confirmations": [
       {
         "label": "“2.2% percent 2026”",
@@ -5326,6 +5544,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-1eda17f6232ddea338271404",
+        "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+        "later_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+        "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, Fox Business reported “Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
         "relation": "same_fact",
         "edge_id": "phase2-edge-7a0abb8f-013d-46a6-a897-6fcce02d0b2d",
         "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-bed5a113c4b6c6b3",
@@ -5333,6 +5561,26 @@
         "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
         "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
         "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, Fox Business reported “Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-6a4e124fafcb8042cdef9983",
+        "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-ccaebe874a2dbe56",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-ff5ae93ae512f29f6ed323c8",
+        "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-bed5a113c4b6c6b3",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”."
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
@@ -5366,6 +5614,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-134f4c1ece0abac1b09a5772",
+        "earlier_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
+        "later_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-138893d362b7b7e6",
+        "earlier_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+        "later_evidence_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
+        "sentence": "On 2026-06-17, Fox Business reported “leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%”; on the same day, CNBC reported “The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
         "relation": "same_fact",
         "edge_id": "phase2-edge-82819547-e669-4850-a341-7b63975820c2",
         "earlier_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
@@ -5373,6 +5631,16 @@
         "earlier_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
         "later_evidence_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
         "sentence": "On 2026-06-17, Fox Business reported “leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%”; on the same day, CNBC reported “The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "supports",
+        "edge_id": "edge-relation-7c1ecc0f218db7a29c59e2a2",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+        "later_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+        "sentence": "On 2026-06-17, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”; on the same day, Fox Business reported “Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%.”."
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
@@ -5436,8 +5704,8 @@
       "name": "federal_funds_rate",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "2025-12-11,3.75",
+      "occurrence_id": "occurrence-td-2ed160-fed-hold-start"
     },
     {
       "slot_id": "slot-event-fed-rate-june-2026-ee254e90b55cb7cc",
