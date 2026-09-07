@@ -1,0 +1,35 @@
+---
+import RevisionTimeline from "./story/RevisionTimeline.astro";
+import { eventPath, chainPath, slotLabel, figureText } from "../lib/state.mjs";
+import { formatDate } from "../lib/presentation.mjs";
+import { recordById, outletRecordByUrl } from "../lib/record-manifests.mjs";
+const { view } = Astro.props;
+const event = view.event ?? view;
+const evidence = new Map((view.evidence ?? []).map((row) => [row.id, row]));
+const occurrences = new Map((view.occurrences ?? []).map((row) => [row.id, row]));
+const documents = (view.edges ?? []).filter((edge) => edge.label === "cites" && edge.accepted !== false && edge.refusal == null && !edge.retire);
+const slots = Object.entries(view.current_state ?? {});
+const retirementReason = ({ no_accepted_occurrence: "No supported facts were recorded.", unfinished_legacy_identity: "The entry was incomplete." })[view.reason] ?? view.reason;
+const sourcePath = (source) => recordById.has(source.id) ? `/records/${source.id}/` : outletRecordByUrl.has(source.url) ? `/records/${outletRecordByUrl.get(source.url).id}/` : source.url;
+---
+      <section data-layer="fact" data-state-derived>
+        <h2>The current record</h2>
+        {slots.length ? slots.map(([id, slot]) => <article data-state-slot={id}>
+          <h3>{slotLabel(slot.slot)}</h3>
+          {slot.figure && <p><strong data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong></p>}
+          <p data-source-copy={slot.quote_span ? true : undefined}>{slot.quote_span || (slot.withdrawn ? "The recorded value was withdrawn." : slot.disputed ? "This record does not yet establish one current value." : "A current value has not been established.")}</p>
+          {evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id)?.url && <p><a href={sourcePath(evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id))}>{evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id).publisher}</a></p>}
+        </article>) : <p>No tracked values have been established for this story.</p>}
+      </section>
+      {view.follows && <section data-layer="fact"><h2>Since the previous story</h2>
+        <p><a href={eventPath(view.follows)}>Read the previous story</a></p>
+        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{slotLabel(change.name)}: <strong data-state-figure={change.previous.occurrence_id} data-state-figure-event={view.follows} data-figure-value={String(change.previous.value)} data-figure-unit={change.unit}>{figureText(change.previous.value, change.unit)}</strong> previously; <strong data-state-figure={change.current.occurrence_id} data-figure-value={String(change.current.value)} data-figure-unit={change.unit}>{figureText(change.current.value, change.unit)}</strong> in this story. <span data-source-copy>{change.current.sentence}</span></p>)}
+        {(view.same_name_not_compared ?? []).map((change) => <p>{slotLabel(change.name)}: {change.reason}</p>)}
+        {(view.new_slots ?? []).map((slot) => <p>{slotLabel(slot.name)}: first tracked in this story. <span data-source-copy>{slot.sentence}</span></p>)}
+      </section>}
+      <RevisionTimeline timeline={view.revision_timeline} occurrences={view.occurrences} />
+      {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
+        const document = evidence.get(edge.to_evidence_id);
+        return <li><a href={`/records/${document.id}/`} data-source-copy>{document.title ?? document.publisher}</a> · {edge.role === "primary_record" ? "Original record" : "Reference"}{edge.reason && <>. {edge.reason}</>}</li>;
+      })}</ul></section>}
+      <section data-layer="proof"><h2>Sources</h2><ul>{[...evidence.values()].map((source) => <li><a href={sourcePath(source)} data-source-copy>{source.publisher}</a> · {formatDate(source.asserted_at)}{source.title && <> · <span data-source-copy>{source.title}</span></>}</li>)}</ul></section>

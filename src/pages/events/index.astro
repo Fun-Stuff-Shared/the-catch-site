@@ -1,16 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { readPublishedState, frontChains, deskEvents, chainPath, eventPath } from "../../lib/state.mjs";
+import { readPublishedState, deskEvents, eventPath } from "../../lib/state.mjs";
 import { formatDate } from "../../lib/presentation.mjs";
 const state = readPublishedState();
-const front = frontChains(state);
 const desks = deskEvents(state);
 ---
 <BaseLayout title="Events | The Catch" current="Events">
   <div slot="locator" class="locator"><span>EVENTS</span><span>The record, in context</span></div>
   <div class="content"><main class="method-main">
     <h1>Events</h1>
-    {front.length > 0 && <section data-layer="fact"><h2>Stories to follow</h2><ul class="matters-grid">{front.map((chain) => <li><a href={chainPath(chain.id)}><span class="mt-title">{chain.root.label}</span><span class="mt-meta">{chain.events.filter((event) => event.status === "published").length} developments · {chain.outlet_count} publishers</span></a></li>)}</ul></section>}
+    <section data-layer="fact"><h2>Event records</h2><ul class="matters-grid">
+      <li><a href="/events/fed-rate/"><span class="mt-title">The federal funds rate</span></a></li>
+      <li><a href="/events/jobs/"><span class="mt-title">The jobs report</span></a></li>
+    </ul></section>
     {desks.map(([desk, events]) => <section data-layer="fact"><h2>{desk}</h2><ul>{events.map((view) => <li><a href={eventPath(view.event.id)}>{view.event.label}</a> · {formatDate(view.event.period)}</li>)}</ul></section>)}
   </main></div>
 </BaseLayout>
