@@ -73,6 +73,9 @@ test('a cited document is pinned from verified text and a changed body refuses p
   write('event-a', view);
   const rows = buildStateRecords(readState(root), root);
   assert.equal(rows[0].quote, text);
+  delete view.evidence[0].title;
+  write('event-a', view);
+  assert.equal(buildStateRecords(readState(root), root)[0].title, 'https://example.com/report');
   writeFileSync(source, 'Different text');
   assert.throws(() => buildStateRecords(readState(root), root), /hash mismatch/);
 });

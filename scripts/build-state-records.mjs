@@ -14,7 +14,7 @@ export function buildStateRecords(state, root = fileURLToPath(new URL("..", impo
     const text = readFileSync(source, "utf8");
     const hash = createHash("sha256").update(text).digest("hex");
     if (hash !== String(document.text_sha256 ?? "").replace(/^sha256:/, "")) throw new Error(`Cited document text hash mismatch: ${document.id}`);
-    if (!document.title || !document.publisher || !document.url) throw new Error(`Cited document metadata missing: ${document.id}`);
+    if (!document.publisher || !document.url) throw new Error(`Cited document metadata missing: ${document.id}`);
     const passages = document.passages.map((passage) => {
       const check = text.includes(passage.text) ? 'byte_exact' : text.replace(/\s+/g, ' ').includes(passage.text.replace(/\s+/g, ' ')) ? 'normalized' : null;
       if (!check) throw new Error(`Cited passage is absent from saved document: ${passage.occurrence_id}`);
@@ -23,7 +23,7 @@ export function buildStateRecords(state, root = fileURLToPath(new URL("..", impo
     mkdirSync(join(root, "data/sources/news-state"), { recursive: true });
     writeFileSync(destination, text);
     return {
-      id: document.id, title: document.title, publisher: document.publisher,
+      id: document.id, title: document.title?.trim() || document.url, publisher: document.publisher,
       date: document.asserted_at?.slice(0, 10) ?? null, url: document.url,
       record_kind: "cited_document", quote: passages[0]?.text ?? text.slice(0, 1600),
       excerpt_kind: passages.length ? 'cited_passages' : 'document_opening',
