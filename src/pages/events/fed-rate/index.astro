@@ -1,4 +1,5 @@
 ---
+import SeriesStories from "../../../components/SeriesStories.astro";
 import EventRecordStories from "../../../components/EventRecordStories.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ratePath } from "../../../data/fomc20260617.mjs";
@@ -22,14 +23,15 @@ const path = "M" + pts.join(" L");
 const endX = x("2026-08-23"), endY = y(prev);
 ---
 <BaseLayout title="The federal funds rate | The Catch" current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a><span>The federal funds rate</span></div>
   <div class="content">
     <main class="subject">
-      <p class="subject-kicker">Standing record &middot; Federal Reserve &middot; updated {latestDecision}</p>
+      <p class="subject-kicker">Series &middot; Federal Reserve &middot; updated {latestDecision}</p>
       <h1>The federal funds rate</h1>
       <p class="subject-dek">The Fed's benchmark rate, tracked decision by decision: what was decided, what
       the record shows, and what the coverage got right and wrong. Each decision keeps its own dated story.</p>
 
+<SeriesStories path="/events/fed-rate/" />
       <div class="kpi-strip">
         <div class="kpi"><span class="kpi-value">{subject.current[0].value}<small> {subject.current[0].unit}</small></span><span class="kpi-label">{subject.current[0].label}</span></div>
         <div class="kpi"><span class="kpi-value" id="kpi-days">255<small> days</small></span><span class="kpi-label" id="kpi-days-label">held as of August 23, 2026</span></div>

@@ -1,0 +1,7 @@
+---
+import StoryLink from './StoryLink.astro';
+import { storyCatalog } from '../lib/discovery.mjs';
+const { path } = Astro.props;
+const stories = storyCatalog().filter(s => s.series === path);
+---
+<section class="series-stories" data-layer="fact"><h2 class="section-title">Latest in this series</h2>{stories[0] && <StoryLink story={stories[0]} lead />}{stories.length > 1 && <><h2 class="section-title">Earlier stories</h2>{stories.slice(1).map(story => <StoryLink story={story} />)}</>}</section>

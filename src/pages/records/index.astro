@@ -2,14 +2,12 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { records } from "../../lib/record-manifests.mjs";
 const eventRecords = records.filter((record) => record.subject !== "news");
-const newsRecords = records.filter((record) => record.subject === "news");
 const ordered = [...eventRecords].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
 const subjects = [...new Set(ordered.map((record) => record.subject))];
-const newsCount = newsRecords.length;
 ---
-<BaseLayout title="Records | The Catch" current="Records">
-  <div slot="locator" class="locator"><span>RECORDS</span><span>Original documents</span></div>
-  <div class="content"><main class="records-index"><h1>Records</h1><p class="lede">A record is the original document behind an event. Start with the document, then see where its words are used.</p><nav aria-label="Record subjects" class="subjects">{subjects.map((subject) => <a href={`#${subject}`}>{subject.replaceAll("-", " ")}</a>)}</nav>{subjects.map((subject) => <section id={subject}><h2>{subject.replaceAll("-", " ")}</h2><ul>{ordered.filter((record) => record.subject === subject).map((record) => <li><a href={`/records/${record.id}/`}><span>{record.title}</span><small>{record.publisher} &middot; {record.date}</small></a></li>)}</ul></section>)}{newsCount > 0 && <section id="news" class="news-section"><h2>Outlet coverage</h2><p class="news-note">{newsCount} captured outlet articles are available as saved copies. These are the coverage we check against, not event records.</p></section>}</main></div>
+<BaseLayout title="Source library | The Catch" current="Records">
+  <div slot="locator" class="locator"><span>SOURCE LIBRARY</span><span>Original documents</span></div>
+  <div class="content"><main class="records-index"><h1>Source library</h1><p class="lede">The original documents behind the stories. Open a source to read the saved text and see where it is cited.</p><nav aria-label="Record subjects" class="subjects">{subjects.map((subject) => <a href={`#${subject}`}>{subject.replaceAll("-", " ")}</a>)}</nav>{subjects.map((subject) => <section id={subject}><h2>{subject.replaceAll("-", " ")}</h2><ul>{ordered.filter((record) => record.subject === subject).map((record) => <li><a href={`/records/${record.id}/`}><span>{record.title}</span><small>{record.publisher} &middot; {record.date}</small></a></li>)}</ul></section>)}</main></div>
 </BaseLayout>
 <style>
   .records-index { max-width: 48rem; margin: 0 auto; padding: 2rem 2rem 4rem; }

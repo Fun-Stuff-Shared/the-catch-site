@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
@@ -25,17 +26,11 @@ const yTicks = [-100, 0, 100, 200];
 const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>Jobs report &middot; July 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/jobs/">The job market</a><span>Jobs report &middot; July 2026</span></div>
   <div class="content">
     <main class="story" id="story-root">
 
-      <!-- Mode switcher: buttons degrade to query-param links without JS -->
-      <div class="mode-switcher" role="radiogroup" aria-label="Reading mode">
-        <a class="mode-btn active" href="?mode=story" data-mode="story" role="radio" aria-checked="true">The story</a>
-        <a class="mode-btn" href="?mode=facts" data-mode="facts" role="radio" aria-checked="false">Just the facts</a>
-        <a class="mode-btn" href="?mode=work" data-mode="work" role="radio" aria-checked="false">Show the work</a>
-        <span class="mode-hint">Every claim here traces to a source.</span>
-      </div>
+      <ReadingModes />
 
       <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026</p>
       <h1 data-layer="fact">{event.title}</h1>
@@ -100,10 +95,10 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         </details>
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
-          <p>May's gain was revised down by 66,000, from +129,000 to +63,000. June's was revised down by 37,000, from +57,000 to +20,000. Combined: 103,000 jobs previously reported are now gone from the record.<Cite s="bls-empsit-2026-07" /></p></SourcedBlock>
+          <p>May's gain was revised down by 66,000, from +129,000 to +63,000. June's was revised down by 37,000, from +57,000 to +20,000. Combined: 103,000 jobs previously reported are now gone from the record.<Cite s="bls-empsit-2026-07" passage="The change in total nonfarm payroll employment for May was revised down by 66,000, from +129,000 to +63,000, and the change for June was revised down by 37,000, from +57,000 to +20,000." /></p></SourcedBlock>
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
-          <p>Average hourly earnings rose 2 cents to $37.62; over the year they are up 3.2&nbsp;percent.<Cite s="bls-empsit-2026-07" /></p></SourcedBlock>
+          <p>Average hourly earnings rose 2 cents to $37.62; over the year they are up 3.2&nbsp;percent.<Cite s="bls-empsit-2026-07" passage="In July, average hourly earnings for all employees on private nonfarm payrolls, at $37.62, were little changed (+2 cents)." /></p></SourcedBlock>
 
         <p data-layer="narrative">The composition of the loss matters: private employers added 30,000 jobs in July while government shed 53,000, so the headline decline is a public-sector story, led by the 50,000-job drop in local government education. The report landed nine days after the Federal Reserve voted 9&ndash;3 to hold interest rates, with three regional Fed presidents formally asking for a quarter-point <em>hike</em>, covered in&nbsp;<a href="/events/fed-rate/july-2026/">our July FOMC story</a>.</p>
       </section>
@@ -170,7 +165,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
         <p data-layer="narrative">Wages are rising about 3.2&nbsp;percent a year while prices rise faster. The typical worker's purchasing power did not improve.</p>
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
-          <p>People on temporary layoff rose by 153,000 to 921,000. The long-term unemployed (27 weeks or more) make up 25.5&nbsp;percent of all unemployed people, one in four. People working part time because they could not find full-time work held at 4.8&nbsp;million. People who want work but have stopped looking rose from 1.76 to 1.81&nbsp;million.<Cite s="bls-empsit-2026-07" /></p></SourcedBlock>
+          <p>People on temporary layoff rose by 153,000 to 921,000. The long-term unemployed (27 weeks or more) make up 25.5&nbsp;percent of all unemployed people, one in four. People working part time because they could not find full-time work held at 4.8&nbsp;million. People who want work but have stopped looking rose from 1.76 to 1.81&nbsp;million.<Cite s="bls-empsit-2026-07" passage="Among the unemployed, the number of people on temporary layoff increased by 153,000 to 921,000 in July." /></p></SourcedBlock>
 
         <SourcedBlock source="fred-u6rate-2026-07" kind="official">
           <p>U-6, the broadest underutilization measure (adds those marginally attached workers and the involuntary part-timers to the officially unemployed), held at 7.9&nbsp;percent, unchanged from June. The headline unemployment rate improved; the broadest measure did not.<Cite s="fred-u6rate-2026-07" /></p></SourcedBlock>
@@ -264,51 +259,12 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
 
       <!-- ═══ RECORDS (proof-layer, visible in work mode) ═══ -->
       <StorySources event="jobs/july-2026" />
-      <StoryState view={state} />
+      <StoryState view={state} supporting />
     </main>
   </div>
 </BaseLayout>
 
 <style is:global>
-  /* ── Mode switcher ── */
-  .mode-switcher {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    margin: 0 0 2rem;
-    overflow: hidden;
-  }
-  .mode-btn {
-    font-family: var(--sans);
-    font-size: 0.82rem;
-    font-weight: 600;
-    padding: 0.55rem 1.1rem;
-    border: none;
-    background: transparent;
-    color: var(--slate);
-    cursor: pointer;
-    border-right: 1px solid var(--rule);
-    transition: background 0.15s, color 0.15s;
-    text-decoration: none;
-  }
-  .mode-btn:last-of-type { border-right: none; }
-  .mode-btn:hover { background: var(--blue-tint); color: var(--ink); }
-  .mode-btn.active { background: var(--ink); color: #fff; }
-  .mode-hint {
-    font-family: var(--sans);
-    font-size: 0.78rem;
-    color: var(--slate);
-    margin-left: auto;
-    padding: 0 1rem;
-    white-space: nowrap;
-  }
-  @media (max-width: 640px) {
-    .mode-switcher { flex-wrap: wrap; }
-    .mode-hint { width: 100%; padding: 0.4rem 0.8rem; border-top: 1px solid var(--rule); margin-left: 0; }
-  }
-
   /* ── Sourced block: binds paragraph + chip + receipt ── */
   .sourced-block { margin: 1rem 0; }
   .sourced-block > p { margin: 0; }
@@ -349,63 +305,5 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
   }
   .mode-work .fig-provenance { display: block; }
 
-  /* ── Layer visibility ── */
-  /* Default (no JS / no mode class): story mode = facts + narrative, proof hidden */
-  [data-layer="proof"] { display: none; }
-
-  /* Facts mode: narrative hidden, proof hidden */
-  .mode-facts [data-layer="narrative"] { display: none; }
-  .mode-facts [data-layer="proof"] { display: none; }
-
-  /* Story mode (explicit): same as default */
-  .mode-story [data-layer="proof"] { display: none; }
-
-  /* Work mode: everything visible */
-  .mode-work [data-layer="proof"] { display: revert; }
-
-  /* Event record context: only in work mode */
   .event-record-context { margin: 0 0 1.5rem; }
-
-  /* Receipts follow proof visibility */
-  .receipt { display: none; }
-  .mode-work .receipt { display: block; }
-
-  /* Transition for smooth mode switches */
-  [data-layer] { transition: opacity 0.15s; }
 </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const root = document.getElementById("story-root");
-    const buttons = document.querySelectorAll(".mode-btn");
-    if (!root || !buttons.length) return;
-
-    // Read mode from query param or default to story
-    const params = new URLSearchParams(window.location.search);
-    const initial = params.get("mode") || "story";
-    root.classList.add(`mode-${initial}`);
-    buttons.forEach((b) => {
-      const isActive = b.getAttribute("data-mode") === initial;
-      b.classList.toggle("active", isActive);
-      b.setAttribute("aria-checked", isActive ? "true" : "false");
-    });
-
-    // Click handler: update mode class + URL without reload
-    buttons.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const mode = btn.getAttribute("data-mode");
-        root.className = root.className.replace(/mode-\w+/g, "").trim() + ` mode-${mode}`;
-        buttons.forEach((b) => {
-          const isActive = b === btn;
-          b.classList.toggle("active", isActive);
-          b.setAttribute("aria-checked", isActive ? "true" : "false");
-        });
-        // Update URL without reload
-        const url = new URL(window.location.href);
-        url.searchParams.set("mode", mode);
-        history.replaceState(null, "", url.toString());
-      });
-    });
-  });
-</script>

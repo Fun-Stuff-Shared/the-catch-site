@@ -1,7 +1,7 @@
 ---
 import { citeNumber } from "../lib/record-manifests.mjs";
-const { s } = Astro.props;
+const { s, passage } = Astro.props;
 const cite = citeNumber(s);
 if (!cite) throw new Error(`cite_unknown_source:${s}`);
 ---
-<sup class="src-ref"><a href={`#src-${cite.n}`}>{cite.n}</a></sup>
+<sup class="src-ref"><a href={`#src-${cite.n}`} data-record-href={`/records/${s}/`} data-passage={passage} aria-label={`Source ${cite.n}: read the evidence`}>{cite.n}</a></sup>

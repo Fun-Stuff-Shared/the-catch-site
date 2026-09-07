@@ -1,6 +1,7 @@
 ---
-const { title, current = "Records", canonicalPath = null, redirectPath = null, noindex = false } = Astro.props;
-const navItems = [["Records", "/records/"], ["Events", "/events/"], ["Officials", "/officials/"], ["Methodology", "/methodology"]];
+import EvidenceReader from "../components/EvidenceReader.astro";
+const { title, current = "Records", canonicalPath = null, redirectPath = null, noindex = false, localSearch = false } = Astro.props;
+const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["People", "/officials/", "Officials"], ["How we check", "/methodology/", "Methodology"]];
 ---
 <!doctype html>
 <html lang="en">
@@ -12,24 +13,42 @@ const navItems = [["Records", "/records/"], ["Events", "/events/"], ["Officials"
     {canonicalPath && <link rel="canonical" href={canonicalPath} />}
     {redirectPath && <meta http-equiv="refresh" content={`0; url=${redirectPath}`} />}
     <link rel="stylesheet" href="/assets/the-catch.css" />
+    <link rel="stylesheet" href="/assets/reader.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="sheet">
       <header class="band">
         <div class="band-inner">
           <a class="wordmark" href="/">The Catch<b>.</b></a>
           <span class="desc">A permanent record of checked claims</span>
-          <nav>
-            {navItems.map(([label, href]) => <a href={href} aria-current={label === current ? "page" : undefined}>{label}</a>)}
+          <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
+          <nav id="site-navigation" aria-label="Main navigation">
+            {navItems.map(([label, href, key]) => <a href={href} aria-current={key === current ? "page" : undefined}>{label}</a>)}
           </nav>
+          {!localSearch && <a class="header-search" href="/?focus=search" aria-label="Search stories"><span>Search</span> <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></a>}
         </div>
       </header>
       <slot name="locator" />
       <slot />
       <footer class="colophon">
         <p>Published records carry their review status on the page. Work that has not been published is clearly labeled. Corrections and withdrawals are permanent, dated, and public.</p>
-        <p><a href="/">The Catch</a> &middot; <a href="/methodology">Methodology</a></p>
+        <p><a href="/">The Catch</a> <a href="/methodology">How we check</a> <a href="/records/">Source library</a></p>
       </footer>
     </div>
+    <EvidenceReader />
   </body>
 </html>
+
+<script>
+  import '../scripts/story-toc';
+  const menu = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const closeMenu = () => { menu?.setAttribute('aria-expanded', 'false'); };
+  menu?.addEventListener('click', () => menu.setAttribute('aria-expanded', String(menu.getAttribute('aria-expanded') !== 'true')));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
+  document.addEventListener('click', e => { if (!(e.target as Element).closest('.band')) closeMenu(); });
+  const main = document.querySelector('main');
+  if(main && !main.id) main.id = 'main-content';
+  document.querySelector('.skip-link')?.setAttribute('href', '#' + (main?.id ?? 'main-content'));
+  if(new URLSearchParams(location.search).get('focus') === 'search') document.querySelector<HTMLInputElement>('#story-query')?.focus();
+</script>

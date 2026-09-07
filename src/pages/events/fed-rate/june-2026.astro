@@ -22,7 +22,7 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator">
-    <span>EVENTS</span>
+    <a href="/events/">Series</a><a href="/events/fed-rate/">The federal funds rate</a>
     <a href="/events/fed-rate/" class="loc-event">The federal funds rate</a>
     <span>June 2026</span>
   </div>
@@ -239,7 +239,7 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
           63-month streak; whether the hike dots become hike votes.
         </RailedParagraph>
       </section>
-      <StoryState view={state} />
+      <StoryState view={state} supporting />
 
       <section id="markets">
         <SectionKicker text="Pricing" />

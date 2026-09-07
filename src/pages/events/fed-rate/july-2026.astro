@@ -28,7 +28,7 @@ const path = "M" + pts.join(" L");
 const endX = x("2026-07-29"), endY = y(prev);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; July 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fed-rate/">The federal funds rate</a><span>The federal funds rate &middot; July 2026</span></div>
   <div class="content">
     <main class="story">
       <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; July 2026 decision</p>
@@ -226,34 +226,12 @@ const endX = x("2026-07-29"), endY = y(prev);
           assessed that policy tightening would likely be necessary if inflation did not decline.&rdquo;</em>
           <span class="chip chip-record">record</span>
         </p>
-        <script>
-          (function () {
-            var links = document.querySelectorAll(".story-toc a[href^='#']");
-            if (!links.length || !("IntersectionObserver" in window)) return;
-            var map = {};
-            links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a.parentElement; });
-            var current = null;
-            var obs = new IntersectionObserver(function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  if (current) current.classList.remove("toc-active");
-                  current = map[e.target.id];
-                  if (current) current.classList.add("toc-active");
-                }
-              });
-            }, { rootMargin: "-15% 0px -70% 0px" });
-            Object.keys(map).forEach(function (id) {
-              var el = document.getElementById(id);
-              if (el) obs.observe(el);
-            });
-          })();
-        </script>
         <p class="railed rail-note">
           Watching: the September 15&ndash;16 meeting, which brings refreshed projections; monthly PCE prints
           against the 64-month streak; whether the three dissents become a majority.
         </p>
       </section>
-      <StoryState view={state} />
+      <StoryState view={state} supporting />
 
       <section id="markets">
         <p class="sec-kicker">Pricing</p>
