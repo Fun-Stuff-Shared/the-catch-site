@@ -1,8 +1,8 @@
 ---
 import StateEvent from "../../../components/StateEvent.astro";
-import { readState, eventPath } from "../../../lib/state.mjs";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import { event as prose } from "../../../data/jobs202607.mjs";
-const view = readState().events.get("event-jobs-july-2026");
+const view = readPublishedState().events.get("event-jobs-july-2026");
 if (!view) throw new Error("Missing story view: event-jobs-july-2026");
 if (view.status === "merged") return Astro.redirect(eventPath(view.survivor), 301);
 ---

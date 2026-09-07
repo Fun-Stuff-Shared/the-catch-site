@@ -1,4 +1,4 @@
 ---
-import { readState, storyChainPath } from "../../../lib/state.mjs";
-return Astro.redirect(storyChainPath(readState(), "event-fed-rate-june-2026"), 301);
+import { readPublishedState, storyChainPath } from "../../../lib/state.mjs";
+return Astro.redirect(storyChainPath(readPublishedState(), "event-fed-rate-june-2026"), 301);
 ---

@@ -9,7 +9,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { readState } from "../src/lib/state.mjs";
+import { readState, readPublishedState, eventPath, chainPath } from "../src/lib/state.mjs";
 import { checkStatePages, checkPageFigures, readerCopy } from "./check-state-pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -37,8 +37,18 @@ for (const subject of readdirSync(eventsDir)) {
   }
 }
 
-for (const { subject, story } of storyPages) {
-  const mPath = join(ROOT, "checks/manifests", `${subject}--${story}.json`);
+for (const name of readdirSync(join(ROOT, 'checks/manifests')).filter((name) => name.endsWith('.json'))) {
+  const manifest = JSON.parse(readFileSync(join(ROOT, 'checks/manifests', name), 'utf8'));
+  if (!manifest.state_event_id) continue;
+  const route = eventPath(manifest.state_event_id).replace(/^\/events\//, '').replace(/\/$/, '');
+  const parts = route.split('/');
+  const story = parts.pop();
+  const subject = parts.join('/');
+  if (!storyPages.some((row) => row.subject === subject && row.story === story)) storyPages.push({subject, story, manifestPath: join(ROOT, 'checks/manifests', name)});
+}
+
+for (const { subject, story, manifestPath } of storyPages) {
+  const mPath = manifestPath || join(ROOT, "checks/manifests", `${subject}--${story}.json`);
   if (!existsSync(mPath)) {
     fail.push(`story /events/${subject}/${story}/ has no manifest at checks/manifests/${subject}--${story}.json`);
     continue;
@@ -357,7 +367,14 @@ for (const { subject, story } of storyPages) {
   }
 }
 
-const stateViews = readState();
+const allStateViews = readState();
+const stateViews = readPublishedState();
+for (const id of allStateViews.events.keys()) {
+  if (!stateViews.events.has(id) && existsSync(join(dist, eventPath(id), 'index.html'))) fail.push(`Unselected event has a public route: ${id}`);
+}
+for (const id of allStateViews.chains.keys()) {
+  if (!stateViews.chains.has(id) && existsSync(join(dist, chainPath(id), 'index.html'))) fail.push(`Unselected chain has a public route: ${id}`);
+}
 const generated = checkStatePages(stateViews, dist);
 fail.push(...generated.failures);
 try { checkPageFigures(readFileSync(join(dist, 'index.html'), 'utf8'), stateViews); }

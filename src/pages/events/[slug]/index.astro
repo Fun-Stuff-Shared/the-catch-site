@@ -1,8 +1,8 @@
 ---
 import StateEvent from "../../../components/StateEvent.astro";
-import { readState, eventPath } from "../../../lib/state.mjs";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 export function getStaticPaths() {
-  return [...readState().events].filter(([id]) => eventPath(id) === `/events/${encodeURIComponent(id)}/`).map(([id, view]) => ({ params: { slug: id }, props: { view } }));
+  return [...readPublishedState().events].filter(([id]) => eventPath(id) === `/events/${encodeURIComponent(id)}/`).map(([id, view]) => ({ params: { slug: id }, props: { view } }));
 }
 const { view } = Astro.props;
 if (view.status === "merged") return Astro.redirect(eventPath(view.survivor), 301);

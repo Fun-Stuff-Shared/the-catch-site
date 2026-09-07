@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readState, frontChains, deskEvents, citedDocuments } from '../src/lib/state.mjs';
+import { readState, selectPublishedState, readPublishedState, frontChains, deskEvents, citedDocuments } from '../src/lib/state.mjs';
 
 function fixture(t) {
   const root = mkdtempSync(join(tmpdir(), 'catch-state-test-'));
@@ -205,4 +205,31 @@ test('figure display preserves digits and avoids duplicate percent units', async
   assert.equal(figureText('3.8%', 'percent'), '3.8%');
   assert.equal(figureText('3.5% to 3.75%', 'percent'), '3.5% to 3.75%');
   assert.equal(figureText('0.25', 'percentage point'), '0.25 percentage point');
+});
+
+test('backend acceptance does not publish an event, descendant, figure or cited record', (t) => {
+  const { root, view, event, write } = fixture(t);
+  const child = { id: 'event-private', label: 'Unselected forecast', status: 'published', period: '2051-12', follows: event.id };
+  write(child.id, {event: child, status: 'published', root_id: event.id, follows: event.id, evidence: [{id:'private-doc', publisher:'Private source', source_kind:'document'}], edges:[{label:'cites',to_evidence_id:'private-doc',role:'reference'}]});
+  write(`chain-${event.id}`, { id:event.id, root:event, events:[{...event,slots:[]},{...child,slots:[]}], outlet_count:20, tracked:[] });
+  const raw = readState(root);
+  const selected = selectPublishedState(raw, [event.id]);
+  assert.deepEqual([...selected.events.keys()], [event.id]);
+  assert.deepEqual(selected.chains.get(event.id).events.map((row)=>row.id), [event.id]);
+  assert.equal(selected.chains.get(event.id).outlet_count, 0);
+  assert.deepEqual(citedDocuments(selected), []);
+  assert.equal(raw.events.size, 2);
+  assert.throws(()=>selectPublishedState(raw,[child.id]), /unpublished chain root/);
+});
+
+test('only an explicit matching publication manifest admits a state event', (t) => {
+  const { root, event } = fixture(t);
+  const manifests = mkdtempSync(join(tmpdir(), 'catch-manifests-'));
+  t.after(()=>rmSync(manifests,{recursive:true,force:true}));
+  writeFileSync(join(manifests,'candidate.json'),JSON.stringify({event:event.id}));
+  assert.equal(readPublishedState(root, manifests).events.size,0);
+  writeFileSync(join(manifests,'story.json'),JSON.stringify({state_event_id:event.id,event:event.id}));
+  assert.equal(readPublishedState(root, manifests).events.size,1);
+  writeFileSync(join(manifests,'story.json'),JSON.stringify({state_event_id:event.id,event:'wrong'}));
+  assert.throws(()=>readPublishedState(root, manifests),/route differs/);
 });

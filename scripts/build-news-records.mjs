@@ -1,5 +1,5 @@
 import { buildStateRecords } from "./build-state-records.mjs";
-import { readState } from "../src/lib/state.mjs";
+import { readPublishedState } from "../src/lib/state.mjs";
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
@@ -31,7 +31,7 @@ for (const record of corroborationRecords.records) {
   if (!['body_capture', 'captured_excerpt'].includes(record.pin_capture?.kind)) throw new Error(`missing corroboration pin type for ${record.id}`);
   if (record.pin_capture.kind === "captured_excerpt" && !pinnedText.replace(/\s+/g, " ").includes(record.quote.replace(/\s+/g, " "))) throw new Error(`corroboration excerpt absent from pin for ${record.id}`);
 }
-const stateRecords = buildStateRecords(readState());
+const stateRecords = buildStateRecords(readPublishedState());
 const legacyRecords = [...claimRecords.records, ...corroborationRecords.records].sort((a, b) => a.url.localeCompare(b.url));
 const duplicateUrls = legacyRecords.filter((record, index) => index > 0 && record.url === legacyRecords[index - 1].url);
 const records = [...legacyRecords, ...stateRecords].sort((a, b) => a.url.localeCompare(b.url) || a.id.localeCompare(b.id));

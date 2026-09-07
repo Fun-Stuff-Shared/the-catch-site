@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
-import { readState, eventPath, slotLabel, figureText } from "../../../lib/state.mjs";
+import { readPublishedState, eventPath, slotLabel, figureText } from "../../../lib/state.mjs";
 import { formatDate } from "../../../lib/presentation.mjs";
 export function getStaticPaths() {
-  return [...readState().chains].map(([root, chain]) => ({ params: { root }, props: { chain } }));
+  return [...readPublishedState().chains].map(([root, chain]) => ({ params: { root }, props: { chain } }));
 }
 const { chain } = Astro.props;
 const events = [...chain.events].sort((a, b) => String(b.period ?? "").localeCompare(String(a.period ?? "")) || a.id.localeCompare(b.id));

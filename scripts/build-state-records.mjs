@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { readState, citedDocuments } from "../src/lib/state.mjs";
+import { citedDocuments } from "../src/lib/state.mjs";
 
 export function buildStateRecords(state, root = fileURLToPath(new URL("..", import.meta.url))) {
   return citedDocuments(state).map((document) => {

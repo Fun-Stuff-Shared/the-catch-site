@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { readState, frontChains, deskEvents, chainPath, eventPath } from "../../lib/state.mjs";
+import { readPublishedState, frontChains, deskEvents, chainPath, eventPath } from "../../lib/state.mjs";
 import { formatDate } from "../../lib/presentation.mjs";
-const state = readState();
+const state = readPublishedState();
 const front = frontChains(state);
 const desks = deskEvents(state);
 ---

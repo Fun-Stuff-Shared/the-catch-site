@@ -89,6 +89,15 @@ runs the same command, so a gate failure blocks the deploy. Two layers:
    and `date` are required. An unattested or stubbed step fails the build. Attest only what
    was actually done; the manifest is the written form of the standard's checklist, and a
    false attestation is a false SHIP.
+State-backed routes also require an explicit `state_event_id` in the story's existing
+publication manifest. That field selects the story; it does not attest the checklist.
+The same manifest gate runs for static and generated story routes. Backend event
+acceptance and story-selector candidates do not grant publication. Public event,
+chain, homepage, and cited-document consumers use only manifest-selected stories;
+unselected descendants and their tracked values stay internal. The existing
+`event_dossier_v1` manifest format retains its record, primary-source, coverage, and
+needs-ledger checks. Rubio uses its separate publication boundaries.
+
 2. MECHANICAL. The script itself checks dist (events, claims, homepage): no em dashes, no
    internal vocabulary in visible text, no text jammed against inline tags, and every route
    in `checks/routes.txt` still resolves (append new routes when pages ship; never remove

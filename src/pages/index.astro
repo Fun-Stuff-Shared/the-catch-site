@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { readState, frontChains, chainPath, eventPath, slotLabel, figureText } from "../lib/state.mjs";
+import { readPublishedState, frontChains, chainPath, eventPath, slotLabel, figureText } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
-const state = readState();
+const state = readPublishedState();
 const chain = frontChains(state)[0];
 const latest = chain && [...chain.events].filter((event) => event.status === "published").sort((a,b) => String(b.period ?? "").localeCompare(String(a.period ?? "")) || a.id.localeCompare(b.id))[0];
 const view = latest && state.events.get(latest.id);

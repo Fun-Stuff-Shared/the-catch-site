@@ -149,3 +149,38 @@ export function figureText(value, unit = '') {
   const suffix = /^(percent|%)$/i.test(unit) && /(?:%|\bpercent)$/i.test(raw) ? '' : unit;
   return `${number}${suffix ? ` ${suffix}` : ''}`;
 }
+
+export function selectPublishedState(state, ids) {
+  const selected = new Set(ids);
+  const events = new Map();
+  for (const id of selected) {
+    const source = state.events.get(id);
+    if (!source) throw new Error(`Publication manifest names missing event: ${id}`);
+    if (source.status === 'merged' && !selected.has(source.survivor)) throw new Error(`Published redirect has unpublished survivor: ${id}`);
+    if (source.root_id && !selected.has(source.root_id)) throw new Error(`Published story has unpublished chain root: ${id}`);
+    const follows = selected.has(source.follows) ? source.follows : null;
+    events.set(id, { ...source, event: source.event ? { ...source.event, follows } : undefined, follows, changed_since_previous: follows ? source.changed_since_previous : [] });
+  }
+  const chains = new Map();
+  for (const [id, chain] of state.chains) {
+    if (!selected.has(id)) continue;
+    const members = chain.events.filter((event) => selected.has(event.id)).map((event) => ({ ...event, follows: events.get(event.id).follows }));
+    const publishers = new Set(members.flatMap((event) => (events.get(event.id).evidence ?? []).filter(readable).map((row) => row.publisher).filter(Boolean)));
+    const tracked = chain.tracked.map((track) => ({ ...track, values: track.values.filter((value) => selected.has(value.event_id)) })).filter((track) => track.values.length);
+    chains.set(id, { ...chain, events: members, tracked, outlet_count: publishers.size });
+  }
+  return { events, chains };
+}
+
+export function readPublishedState(directory = stateDirectory, manifests = join(process.cwd(), 'checks/manifests')) {
+  const ids = new Set();
+  for (const name of readdirSync(manifests).filter((name) => name.endsWith('.json'))) {
+    const manifest = JSON.parse(readFileSync(join(manifests, name), 'utf8'));
+    if (!manifest.state_event_id) continue;
+    if (ids.has(manifest.state_event_id)) throw new Error(`Duplicate publication manifest: ${manifest.state_event_id}`);
+    const route = manifest.story || `/events/${manifest.event}/`;
+    if (route !== eventPath(manifest.state_event_id)) throw new Error(`Publication manifest route differs: ${name}`);
+    ids.add(manifest.state_event_id);
+  }
+  return selectPublishedState(readState(directory), ids);
+}
