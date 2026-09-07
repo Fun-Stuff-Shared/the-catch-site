@@ -1,0 +1,210 @@
+{
+  "current_state": {
+    "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914": {
+      "slot": "food programs status",
+      "occurrence_id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781",
+      "heads": [
+        "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In Indonesia, the government is scaling back food programs for school children and other vulnerable groups as the crisis has further strained its ability to fund them.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-06-18",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Indonesian government food-program budget and implementation records",
+      "evidence_id": "587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572",
+      "basis": [
+        "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781"
+      ],
+      "last_confirmed": "2026-06-18",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "as_of": "2026-06-18",
+      "occurrence_id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-06-18T19:14:33Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1634.html",
+      "envelope_seq": 165435,
+      "id": "587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572",
+      "publisher": "Brookings Institution",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:13:13.890575Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.brookings.edu",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "think_tank",
+      "source_id": "brookings_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1634.txt",
+      "text_sha256": "c803e69e4d203327ad9aadcfd1165c4c01d819db869007895639c92e339f90da",
+      "url": "https://www.brookings.edu/articles/the-fallout-in-southeast-asia/",
+      "verbatim_level": "article",
+      "log_seq": 518557,
+      "recorded_at": "2026-09-06T01:33:23.344341Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-06-18",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-06-18T19:14:33Z",
+          "checkable_against": "Indonesian government food-program budget and implementation records",
+          "claim_type": "actual",
+          "envelope_seq": 750067,
+          "event_id": "event-ed7e1fd8-bf0e-4832-b95b-1ce818fe5030",
+          "evidence_id": "587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572",
+          "figure": null,
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "In Indonesia, the government is scaling back food programs for school children and other vulnerable groups as the crisis has further strained its ability to fund them.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:13:13.890575Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 8979,
+          "span_start": 8812,
+          "speaker": "outlet's own",
+          "subject": "Indonesia government",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1634.txt",
+          "text_sha256": "c803e69e4d203327ad9aadcfd1165c4c01d819db869007895639c92e339f90da",
+          "log_seq": 750068,
+          "recorded_at": "2026-09-07T07:31:48.150410Z",
+          "slot_id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+          "evidence_asserted_at": "2026-06-18T19:14:33Z",
+          "evidence_url": "https://www.brookings.edu/articles/the-fallout-in-southeast-asia/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 749865,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-ed7e1fd8-bf0e-4832-b95b-1ce818fe5030",
+    "kind": "policy action",
+    "label": "Indonesia scales back food programs",
+    "minted_at": "2026-09-07T07:28:41.205641Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572",
+    "period": "2026-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "Indonesia government",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572/9b5be587ab414141bc2ba757ce162614.json",
+    "log_seq": 749866
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781",
+      "envelope_seq": 750261,
+      "event_id": "event-ed7e1fd8-bf0e-4832-b95b-1ce818fe5030",
+      "id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "name": "food programs status",
+      "refusal": null,
+      "log_seq": 750262,
+      "recorded_at": "2026-09-07T07:33:36.800169Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-06-18",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-06-18T19:14:33Z",
+      "checkable_against": "Indonesian government food-program budget and implementation records",
+      "claim_type": "actual",
+      "envelope_seq": 750067,
+      "event_id": "event-ed7e1fd8-bf0e-4832-b95b-1ce818fe5030",
+      "evidence_id": "587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572",
+      "figure": null,
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "In Indonesia, the government is scaling back food programs for school children and other vulnerable groups as the crisis has further strained its ability to fund them.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:13:13.890575Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 8979,
+      "span_start": 8812,
+      "speaker": "outlet's own",
+      "subject": "Indonesia government",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1634.txt",
+      "text_sha256": "c803e69e4d203327ad9aadcfd1165c4c01d819db869007895639c92e339f90da",
+      "log_seq": 750068,
+      "recorded_at": "2026-09-07T07:31:48.150410Z",
+      "slot_id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "evidence_asserted_at": "2026-06-18T19:14:33Z",
+      "evidence_url": "https://www.brookings.edu/articles/the-fallout-in-southeast-asia/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 750263,
+      "id": "attach-anchor-slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "occurrence_id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781",
+      "refusal": null,
+      "slot_id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "log_seq": 750264,
+      "recorded_at": "2026-09-07T07:33:37.045612Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-ed7e1fd8-bf0e-4832-b95b-1ce818fe5030",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c1f28e96-752e-48e2-a41f-29b5cdf65914",
+      "name": "food programs status",
+      "value": null,
+      "unit": null,
+      "sentence": "In Indonesia, the government is scaling back food programs for school children and other vulnerable groups as the crisis has further strained its ability to fund them.",
+      "occurrence_id": "occurrence-587fae28d775cb77dc42bcca3622f2ab59cd18a7beb689c53dc00fb109e7e572-9df141eb93c33781"
+    }
+  ]
+}

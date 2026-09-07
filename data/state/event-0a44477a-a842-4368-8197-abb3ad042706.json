@@ -152,22 +152,29 @@
     },
     "slot-05f55a96-9130-4a10-af59-4964ff45e4ec": {
       "slot": "Republican primary candidates",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-5f557bd63c0f35ce",
       "heads": [
-        "occurrence-08dd1174de38572174bb667e1d52a61d4d15aa232330ff95420aaf57d593a221-ee42d195e6b27bf0",
         "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-5f557bd63c0f35ce"
       ],
-      "roots": 0,
+      "roots": 2,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "But several of his Republican opponents take a more hardline approach by calling for an outright moratorium, like Sarnecki and Insurance Commissioner Vicki Schmidt, another candidate in the top tier of the field.",
+      "span_check": "byte_exact",
+      "speaker": "POLITICO's own",
+      "figure": null,
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Philip Sarnecki and Vicki Schmidt campaign platforms",
+      "evidence_id": "1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40",
       "basis": [
         "occurrence-08dd1174de38572174bb667e1d52a61d4d15aa232330ff95420aaf57d593a221-ee42d195e6b27bf0",
         "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-5f557bd63c0f35ce"
       ],
       "last_confirmed": "2026-08-04",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     },
     "slot-452f15f1-171a-40ac-a9d5-4c2d818bc08c": {
       "slot": "Trump endorsement status",
@@ -266,6 +273,11 @@
   },
   "timeline": [
     {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-05f55a96-9130-4a10-af59-4964ff45e4ec",
+      "roots": 2
+    },
+    {
       "kind": "first_value",
       "slot_id": "slot-f083e23a-6ab6-412c-ab4d-d61328465dd9",
       "as_of": "2018-11",
@@ -311,11 +323,6 @@
       "slot_id": "slot-82a2fdd6-5eb1-4398-90b5-f7377cb7a5f5",
       "as_of": "2026-08-02",
       "occurrence_id": "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-4251123aaae3cfc0"
-    },
-    {
-      "kind": "disputed",
-      "slot_id": "slot-05f55a96-9130-4a10-af59-4964ff45e4ec",
-      "as_of": "2026-08-04"
     },
     {
       "kind": "disputed",
@@ -1302,8 +1309,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "15cd67a357",
+  "evaluated_at": "2026-09-07T17:26:02.595813Z",
   "event": {
     "accepted": true,
     "envelope_seq": 595781,
@@ -2339,6 +2346,33 @@
   "edges": [
     {
       "accepted": true,
+      "envelope_seq": 763027,
+      "event_id": "event-0a44477a-a842-4368-8197-abb3ad042706",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "Philip Sarnecki, Insurance Commissioner Vicki Schmidt"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-0a44477a-a842-4368-8197-abb3ad042706",
+      "from_occurrence_id": "occurrence-08dd1174de38572174bb667e1d52a61d4d15aa232330ff95420aaf57d593a221-ee42d195e6b27bf0",
+      "id": "edge-relation-649bc41efba8a92918461e02",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes identify Philip Sarnecki and Vicki Schmidt as candidates in the Kansas Republican gubernatorial primary. The NEW quote (NYT) lists them among a larger field, while the EXISTING quote (Politico) mentions them as opponents taking a hardline approach. They refer to the same set of individuals in the same role.",
+      "refusal": null,
+      "to_event_id": "event-0a44477a-a842-4368-8197-abb3ad042706",
+      "to_occurrence_id": "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-5f557bd63c0f35ce",
+      "log_seq": 763028,
+      "recorded_at": "2026-09-07T17:03:17.021529Z"
+    },
+    {
+      "accepted": true,
       "edge_kind": "attach",
       "envelope_seq": 391683,
       "id": "identity-attach-35bae3e8-ad9d-4ea6-b384-78377482b36e",
@@ -2536,7 +2570,7 @@
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
+    "changes_checked_at": "2026-08-05T02:47:39Z",
     "confirmations": [],
     "quote_rows_unlinked": {
       "count": 0,
@@ -2604,8 +2638,8 @@
       "name": "Republican primary candidates",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "But several of his Republican opponents take a more hardline approach by calling for an outright moratorium, like Sarnecki and Insurance Commissioner Vicki Schmidt, another candidate in the top tier of the field.",
+      "occurrence_id": "occurrence-1a6450295fe0506b8163b4567b43afa66426157260cfb0a616e876be95c68d40-5f557bd63c0f35ce"
     },
     {
       "slot_id": "slot-452f15f1-171a-40ac-a9d5-4c2d818bc08c",

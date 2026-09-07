@@ -1,6 +1,38 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2": {
+      "slot": "adaptation release date",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-3268acbbae4fe3ee",
+        "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-3268acbbae4fe3ee",
+        "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681"
+      ],
+      "last_confirmed": "2016",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "as_of": "2016"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "as_of": "2016",
+      "occurrence_id": "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -52,6 +84,7 @@
           "text_sha256": "8035b016f553766187b82b7f77edafcdf43d1baf877bae6266d242dc5506e03c",
           "log_seq": 332899,
           "recorded_at": "2026-09-04T04:51:23.434584Z",
+          "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
           "evidence_asserted_at": "2026-08-13T21:08:05Z",
           "evidence_url": "https://www.nytimes.com/2026/08/13/books/best-21st-century-thrillers-movie-tv-adaptations.html",
           "evidence_publisher": "The New York Times",
@@ -84,6 +117,7 @@
           "text_sha256": "8035b016f553766187b82b7f77edafcdf43d1baf877bae6266d242dc5506e03c",
           "log_seq": 332815,
           "recorded_at": "2026-09-04T04:50:22.949819Z",
+          "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
           "evidence_asserted_at": "2026-08-13T21:08:05Z",
           "evidence_url": "https://www.nytimes.com/2026/08/13/books/best-21st-century-thrillers-movie-tv-adaptations.html",
           "evidence_publisher": "The New York Times",
@@ -93,8 +127,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
   "event": {
     "accepted": true,
     "envelope_seq": 595426,
@@ -110,7 +144,34 @@
     "log_seq": 595427
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681",
+      "envelope_seq": 758083,
+      "event_id": "event-0020bd60-8531-4ad5-b280-42cbb7b88b4f",
+      "id": "slot-3e5fca4f-b6c0-418f-9939-f0ceb4d685e0",
+      "name": "adaptation release date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/13/books/best-21st-century-thrillers-movie-tv-adaptations.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 758084,
+      "recorded_at": "2026-09-07T08:49:19.183464Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681",
+      "envelope_seq": 758085,
+      "event_id": "event-0020bd60-8531-4ad5-b280-42cbb7b88b4f",
+      "id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "name": "adaptation release date",
+      "refusal": null,
+      "log_seq": 758086,
+      "recorded_at": "2026-09-07T08:49:36.938798Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -139,6 +200,7 @@
       "text_sha256": "8035b016f553766187b82b7f77edafcdf43d1baf877bae6266d242dc5506e03c",
       "log_seq": 332899,
       "recorded_at": "2026-09-04T04:51:23.434584Z",
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
       "evidence_asserted_at": "2026-08-13T21:08:05Z",
       "evidence_url": "https://www.nytimes.com/2026/08/13/books/best-21st-century-thrillers-movie-tv-adaptations.html",
       "evidence_publisher": "The New York Times",
@@ -171,13 +233,41 @@
       "text_sha256": "8035b016f553766187b82b7f77edafcdf43d1baf877bae6266d242dc5506e03c",
       "log_seq": 332815,
       "recorded_at": "2026-09-04T04:50:22.949819Z",
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
       "evidence_asserted_at": "2026-08-13T21:08:05Z",
       "evidence_url": "https://www.nytimes.com/2026/08/13/books/best-21st-century-thrillers-movie-tv-adaptations.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 758087,
+      "id": "attach-anchor-slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "occurrence_id": "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-858885b85d315681",
+      "refusal": null,
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "log_seq": 758088,
+      "recorded_at": "2026-09-07T08:49:37.180686Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 758090,
+      "id": "attach-bd613930-3ab8-420f-9779-35de4dfc9ac3",
+      "occurrence_id": "occurrence-11d98c7a4116cdaf8535b1224fce185c2207e3b0630cb5b42f22d964662e91f2-3268acbbae4fe3ee",
+      "refusal": null,
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "log_seq": 758091,
+      "recorded_at": "2026-09-07T08:49:46.745141Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -194,5 +284,14 @@
   "root_id": "event-0020bd60-8531-4ad5-b280-42cbb7b88b4f",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-c955df7e-69fe-4d59-9bc6-44c03489cfe2",
+      "name": "adaptation release date",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
 }

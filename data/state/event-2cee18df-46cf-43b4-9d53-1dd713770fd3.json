@@ -208,24 +208,30 @@
     },
     "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f": {
       "slot": "negotiators of the agreement",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9",
       "heads": [
-        "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
-        "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
         "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9"
       ],
-      "roots": 0,
+      "roots": 2,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "Trump in a social media post announcing the agreement said it was negotiated by Secretary of State Marco Rubio , Defense Secretary Pete Hegseth and Venezuela’s acting President Delcy Rodríguez.",
+      "span_check": "byte_exact",
+      "speaker": "Donald Trump",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Trump's social media post and the agreement's negotiation records",
+      "evidence_id": "44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5",
       "basis": [
         "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
         "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
         "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "unknown_current"
+      "freshness": "aging"
     },
     "slot-93797fd2-f7c2-438c-8255-5b930d9b0edb": {
       "slot": "potential production increase capacity",
@@ -393,9 +399,9 @@
   },
   "timeline": [
     {
-      "kind": "disputed",
+      "kind": "confirmed_n_roots",
       "slot_id": "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f",
-      "as_of": "2026-08-28"
+      "roots": 2
     },
     {
       "kind": "disputed",
@@ -3890,8 +3896,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
   "event": {
     "accepted": true,
     "envelope_seq": 596851,
@@ -7341,6 +7347,87 @@
     },
     {
       "accepted": true,
+      "envelope_seq": 758158,
+      "event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "from_occurrence_id": "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
+      "id": "edge-relation-10abf23006e6e1590637b50e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both sources attribute the negotiation to the same three individuals based on Trump's announcement. PBS and AP are independent reporting agencies.",
+      "refusal": null,
+      "to_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "to_occurrence_id": "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
+      "log_seq": 758159,
+      "recorded_at": "2026-09-07T09:10:35.587067Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 758155,
+      "event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "from_occurrence_id": "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
+      "id": "edge-relation-a0fe5bb1fdf88bada7e483f5",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both sources attribute the negotiation to the same three individuals based on Trump's announcement. PBS and AP are independent reporting agencies.",
+      "refusal": null,
+      "to_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "to_occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9",
+      "log_seq": 758156,
+      "recorded_at": "2026-09-07T09:10:33.343660Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 758152,
+      "event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "announcing the agreement",
+          "value": "negotiated by Secretary of State Marco Rubio , Defense Secretary Pete Hegseth and Venezuela’s acting President Delcy Rodríguez"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "from_occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9",
+      "id": "edge-relation-cb4944a893bcb84b4871dbb6",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report on the same social media post by Trump naming the same three negotiators. Both are from the Associated Press.",
+      "refusal": null,
+      "to_event_id": "event-2cee18df-46cf-43b4-9d53-1dd713770fd3",
+      "to_occurrence_id": "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
+      "log_seq": 758153,
+      "recorded_at": "2026-09-07T09:10:31.109003Z"
+    },
+    {
+      "accepted": true,
       "edge_kind": "attach",
       "envelope_seq": 406781,
       "id": "identity-attach-07b3b4b3-a11e-4395-84b1-f1b531c13ea2",
@@ -7734,13 +7821,82 @@
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-29T19:44:42Z",
+    "confirmations": [
+      {
+        "label": "“Trump said the agreement was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez.”",
+        "value": "Trump said the agreement was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez.",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/live/donald-trump-news-updates-08-28-2026",
+            "dates": [
+              "2026-08-28"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "PBS NewsHour",
+            "url": "https://www.pbs.org/newshour/politics/what-we-know-about-trumps-deal-giving-u-s-access-to-vast-oil-reserves-in-venezuela",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f"
+        ],
+        "sentence": "“Trump said the agreement was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez.”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-cb4944a893bcb84b4871dbb6",
+        "earlier_occurrence_id": "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
+        "later_occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9",
+        "earlier_evidence_url": "https://apnews.com/live/donald-trump-news-updates-08-28-2026",
+        "later_evidence_url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+        "sentence": "On 2026-08-28, Associated Press reported “Trump in a social media post announced the agreement that he said was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Venezuela’s interim President Delcy Rodriguez.”; on 2026-08-29, Associated Press reported “Trump in a social media post announcing the agreement said it was negotiated by Secretary of State Marco Rubio , Defense Secretary Pete Hegseth and Venezuela’s acting President Delcy Rodríguez.”."
+      },
+      {
+        "slot_id": "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f",
+        "relation": "supports",
+        "edge_id": "edge-relation-10abf23006e6e1590637b50e",
+        "earlier_occurrence_id": "occurrence-2993efcc21dfbe3039259dcd5dd2003a7fa95b2d09fdde0aef32eb8239c8ad95-22774266acbea582",
+        "later_occurrence_id": "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
+        "earlier_evidence_url": "https://apnews.com/live/donald-trump-news-updates-08-28-2026",
+        "later_evidence_url": "https://www.pbs.org/newshour/politics/what-we-know-about-trumps-deal-giving-u-s-access-to-vast-oil-reserves-in-venezuela",
+        "sentence": "On 2026-08-28, Associated Press reported “Trump in a social media post announced the agreement that he said was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Venezuela’s interim President Delcy Rodriguez.”; on 2026-08-29, PBS NewsHour reported “Trump said the agreement was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez.”."
+      },
+      {
+        "slot_id": "slot-02b485e6-7d2d-4ae9-b0fa-5c2f09ad819f",
+        "relation": "supports",
+        "edge_id": "edge-relation-a0fe5bb1fdf88bada7e483f5",
+        "earlier_occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9",
+        "later_occurrence_id": "occurrence-3082d2aacb6a9404568416f2ad295d6e015d14f18c8b5420d6486b91790f7bea-31afddad5531d3e7",
+        "earlier_evidence_url": "https://apnews.com/article/trump-venezuela-oil-reserves-eb0ed5a1e99602c21a7f690c3368020e",
+        "later_evidence_url": "https://www.pbs.org/newshour/politics/what-we-know-about-trumps-deal-giving-u-s-access-to-vast-oil-reserves-in-venezuela",
+        "sentence": "On 2026-08-29, Associated Press reported “Trump in a social media post announcing the agreement said it was negotiated by Secretary of State Marco Rubio , Defense Secretary Pete Hegseth and Venezuela’s acting President Delcy Rodríguez.”; on the same day, PBS NewsHour reported “Trump said the agreement was negotiated by Secretary of State Marco Rubio, Defense Secretary Pete Hegseth and Rodríguez.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -7826,8 +7982,8 @@
       "name": "negotiators of the agreement",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "Trump in a social media post announcing the agreement said it was negotiated by Secretary of State Marco Rubio , Defense Secretary Pete Hegseth and Venezuela’s acting President Delcy Rodríguez.",
+      "occurrence_id": "occurrence-44213a6114aa0361f0a623954dd9e348548b03d998d13e70537b21e89fb3a6e5-471b6685da6598d9"
     },
     {
       "slot_id": "slot-93797fd2-f7c2-438c-8255-5b930d9b0edb",

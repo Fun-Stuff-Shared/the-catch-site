@@ -1,0 +1,301 @@
+{
+  "current_state": {
+    "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3": {
+      "slot": "lawsuit amount",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+      "heads": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "New York Attorney General Letitia James brought the $250 million lawsuit in September 2022",
+      "span_check": "byte_exact",
+      "speaker": "CNN",
+      "figure": {
+        "unit": "million dollars",
+        "value": "250"
+      },
+      "as_of": "2022-09",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "New York Attorney General civil complaint",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "basis": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f"
+      ],
+      "last_confirmed": "2022-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "as_of": "2022-09",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1829.html",
+      "envelope_seq": 165747,
+      "id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "publisher": "CNN",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_evidence": "body:10210:10236",
+      "root_id": "www.cnn.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "cnn_politics_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "title": "The notable legal clouds that continue to hang over Donald Trump",
+      "url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "verbatim_level": "article",
+      "log_seq": 518713,
+      "recorded_at": "2026-09-06T01:33:23.389355Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2022-09",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2022-12-08T03:36:24Z",
+          "checkable_against": "New York Attorney General civil complaint",
+          "claim_type": "actual",
+          "envelope_seq": 750297,
+          "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+          "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+          "figure": {
+            "unit": "million dollars",
+            "value": "250"
+          },
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "New York Attorney General Letitia James brought the $250 million lawsuit in September 2022",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:59.022846Z",
+          "root_id": "www.cnn.com",
+          "span_check": "byte_exact",
+          "span_end": 4655,
+          "span_start": 4565,
+          "speaker": "CNN",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+          "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+          "log_seq": 750298,
+          "recorded_at": "2026-09-07T07:33:59.791888Z",
+          "slot_id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+          "evidence_asserted_at": "2022-12-08T03:36:24Z",
+          "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+          "evidence_publisher": "CNN",
+          "evidence_source_id": "cnn_politics_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2022-12-08T03:36:24Z",
+          "checkable_against": "New York Supreme Court Engoron summary judgment ruling",
+          "claim_type": "actual",
+          "envelope_seq": 750299,
+          "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+          "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+          "figure": null,
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c273dd8ae0a5d11f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Judge Arthur Engoron has already ruled that Trump and his adult sons are liable for fraud",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:59.022846Z",
+          "root_id": "www.cnn.com",
+          "span_check": "byte_exact",
+          "span_end": 4933,
+          "span_start": 4844,
+          "speaker": "CNN",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+          "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+          "log_seq": 750300,
+          "recorded_at": "2026-09-07T07:34:05.251109Z",
+          "evidence_asserted_at": "2022-12-08T03:36:24Z",
+          "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+          "evidence_publisher": "CNN",
+          "evidence_source_id": "cnn_politics_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 750161,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+    "kind": "lawsuit",
+    "label": "Trump New York civil fraud lawsuit",
+    "minted_at": "2026-09-07T07:32:53.469499Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+    "period": "2022-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b/8d600051992a487d8e2472880905eb80.json",
+    "log_seq": 750162
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+      "envelope_seq": 750403,
+      "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+      "id": "slot-39cac55a-9dc4-4236-9334-3b7e1ad6295a",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "source_id": "cnn_politics_rss"
+      },
+      "log_seq": 750404,
+      "recorded_at": "2026-09-07T07:36:13.857816Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+      "envelope_seq": 750423,
+      "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+      "id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "name": "lawsuit amount",
+      "refusal": null,
+      "log_seq": 750424,
+      "recorded_at": "2026-09-07T07:36:34.579558Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2022-09",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "checkable_against": "New York Attorney General civil complaint",
+      "claim_type": "actual",
+      "envelope_seq": 750297,
+      "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "figure": {
+        "unit": "million dollars",
+        "value": "250"
+      },
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "New York Attorney General Letitia James brought the $250 million lawsuit in September 2022",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_id": "www.cnn.com",
+      "span_check": "byte_exact",
+      "span_end": 4655,
+      "span_start": 4565,
+      "speaker": "CNN",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "log_seq": 750298,
+      "recorded_at": "2026-09-07T07:33:59.791888Z",
+      "slot_id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "evidence_asserted_at": "2022-12-08T03:36:24Z",
+      "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "evidence_publisher": "CNN",
+      "evidence_source_id": "cnn_politics_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "checkable_against": "New York Supreme Court Engoron summary judgment ruling",
+      "claim_type": "actual",
+      "envelope_seq": 750299,
+      "event_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "figure": null,
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c273dd8ae0a5d11f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Judge Arthur Engoron has already ruled that Trump and his adult sons are liable for fraud",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_id": "www.cnn.com",
+      "span_check": "byte_exact",
+      "span_end": 4933,
+      "span_start": 4844,
+      "speaker": "CNN",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "log_seq": 750300,
+      "recorded_at": "2026-09-07T07:34:05.251109Z",
+      "evidence_asserted_at": "2022-12-08T03:36:24Z",
+      "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "evidence_publisher": "CNN",
+      "evidence_source_id": "cnn_politics_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 750425,
+      "id": "attach-anchor-slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f",
+      "refusal": null,
+      "slot_id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "log_seq": 750426,
+      "recorded_at": "2026-09-07T07:36:34.787811Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-b2c73130-57e5-48a4-8c69-e4013bbadde0",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-cf8bbcc4-33ff-4d99-ac1d-1e71ba2996f3",
+      "name": "lawsuit amount",
+      "value": "250",
+      "unit": "million dollars",
+      "sentence": "New York Attorney General Letitia James brought the $250 million lawsuit in September 2022",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-708fa3185471142f"
+    }
+  ]
+}

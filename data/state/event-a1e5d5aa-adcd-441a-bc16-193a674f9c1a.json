@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-952a8793-e933-4068-938a-50c63de8fee7": {
+      "slot": "suicide share",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20",
+      "heads": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "About 60 percent of all gun deaths are suicides.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "60"
+      },
+      "as_of": "2026-08-06",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "CDC firearm mortality data",
+      "evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+      "basis": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20"
+      ],
+      "last_confirmed": "2026-08-06",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "as_of": "2026-08-06",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-06T18:41:20Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5343.html",
+      "envelope_seq": 170383,
+      "id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:20.849728Z",
+      "root_evidence": "body:2249:2253",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5343.txt",
+      "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
+      "url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
+      "verbatim_level": "article",
+      "log_seq": 521031,
+      "recorded_at": "2026-09-06T01:33:24.047876Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-06",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-06T18:41:20Z",
+          "checkable_against": "CDC firearm mortality data",
+          "claim_type": "actual",
+          "envelope_seq": 753595,
+          "event_id": "event-a1e5d5aa-adcd-441a-bc16-193a674f9c1a",
+          "evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+          "figure": {
+            "unit": "percent",
+            "value": "60"
+          },
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "About 60 percent of all gun deaths are suicides.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:20.849728Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 4949,
+          "span_start": 4901,
+          "speaker": "outlet's own",
+          "subject": "U.S. firearm deaths",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5343.txt",
+          "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
+          "log_seq": 753596,
+          "recorded_at": "2026-09-07T08:32:46.675634Z",
+          "slot_id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+          "evidence_asserted_at": "2026-08-06T18:41:20Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 753481,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-a1e5d5aa-adcd-441a-bc16-193a674f9c1a",
+    "kind": "report",
+    "label": "US firearm deaths share attributable to suicide",
+    "minted_at": "2026-09-07T08:31:33.291105Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. firearm deaths",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85/2153d714acd4495cabc1e56ce2b3a51b.json",
+    "log_seq": 753482
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20",
+      "envelope_seq": 753789,
+      "event_id": "event-a1e5d5aa-adcd-441a-bc16-193a674f9c1a",
+      "id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "name": "suicide share",
+      "refusal": null,
+      "log_seq": 753790,
+      "recorded_at": "2026-09-07T08:35:05.794936Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-06",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-06T18:41:20Z",
+      "checkable_against": "CDC firearm mortality data",
+      "claim_type": "actual",
+      "envelope_seq": 753595,
+      "event_id": "event-a1e5d5aa-adcd-441a-bc16-193a674f9c1a",
+      "evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+      "figure": {
+        "unit": "percent",
+        "value": "60"
+      },
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "About 60 percent of all gun deaths are suicides.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:20.849728Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 4949,
+      "span_start": 4901,
+      "speaker": "outlet's own",
+      "subject": "U.S. firearm deaths",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5343.txt",
+      "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
+      "log_seq": 753596,
+      "recorded_at": "2026-09-07T08:32:46.675634Z",
+      "slot_id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "evidence_asserted_at": "2026-08-06T18:41:20Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 753791,
+      "id": "attach-anchor-slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20",
+      "refusal": null,
+      "slot_id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "log_seq": 753792,
+      "recorded_at": "2026-09-07T08:35:05.992279Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-a1e5d5aa-adcd-441a-bc16-193a674f9c1a",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-952a8793-e933-4068-938a-50c63de8fee7",
+      "name": "suicide share",
+      "value": "60",
+      "unit": "percent",
+      "sentence": "About 60 percent of all gun deaths are suicides.",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-b7d49604397e4c20"
+    }
+  ]
+}

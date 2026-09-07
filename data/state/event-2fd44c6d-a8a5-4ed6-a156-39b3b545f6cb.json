@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-b88d8be7-f120-4028-b791-7f9afb3afaca": {
+      "slot": "global IMAX box office",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b",
+      "heads": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Over the weekend, global Imax ticket sales for the film surpassed $400 million, the first film to exceed the benchmark in the company's history.",
+      "span_check": "byte_exact",
+      "speaker": "CNBC",
+      "figure": {
+        "unit": "million dollars",
+        "value": "400"
+      },
+      "as_of": "2026-08-23",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "IMAX box-office reporting for The Odyssey",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "basis": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b"
+      ],
+      "last_confirmed": "2026-08-23",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b88d8be7-f120-4028-b791-7f9afb3afaca",
+      "as_of": "2026-08-23",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -94,11 +130,110 @@
           "evidence_source_id": "cnbc_news_rss"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T11:54:53Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1796.html",
+      "envelope_seq": 165699,
+      "id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:54.295910Z",
+      "root_evidence": "body:2602:2683",
+      "root_id": "www.cnbc.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1796.txt",
+      "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
+      "title": "Imax says it's open to a sale. Why is no one buying?",
+      "url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+      "verbatim_level": "article",
+      "log_seq": 518689,
+      "recorded_at": "2026-09-06T01:33:23.382036Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-28T11:54:53Z",
+          "checkable_against": "Worldwide box-office data and global IMAX screen counts",
+          "claim_type": "actual",
+          "envelope_seq": 750709,
+          "event_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
+          "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+          "figure": {
+            "unit": "percent",
+            "value": "30"
+          },
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-49ff8aa5990af814",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "This haul represents nearly 30% of total global sales for \"The Odyssey\" — despite the fact that Imax screens represent less than 1% of movie screens worldwide.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:54.295910Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 3915,
+          "span_start": 3754,
+          "speaker": "CNBC",
+          "subject": "The Odyssey",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1796.txt",
+          "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
+          "log_seq": 750710,
+          "recorded_at": "2026-09-07T07:44:14.764386Z",
+          "evidence_asserted_at": "2026-08-28T11:54:53Z",
+          "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-23",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T11:54:53Z",
+          "checkable_against": "IMAX box-office reporting for The Odyssey",
+          "claim_type": "actual",
+          "envelope_seq": 750695,
+          "event_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
+          "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+          "figure": {
+            "unit": "million dollars",
+            "value": "400"
+          },
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Over the weekend, global Imax ticket sales for the film surpassed $400 million, the first film to exceed the benchmark in the company's history.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:54.295910Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 3753,
+          "span_start": 3609,
+          "speaker": "CNBC",
+          "subject": "The Odyssey",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1796.txt",
+          "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
+          "log_seq": 750696,
+          "recorded_at": "2026-09-07T07:44:05.662258Z",
+          "slot_id": "slot-b88d8be7-f120-4028-b791-7f9afb3afaca",
+          "evidence_asserted_at": "2026-08-28T11:54:53Z",
+          "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
   "event": {
     "accepted": true,
     "envelope_seq": 596934,
@@ -194,9 +329,111 @@
       "evidence_url": "https://www.cnbc.com/2026/08/29/imax-revenue-odyssey-box-office.html",
       "evidence_publisher": "CNBC",
       "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-28T11:54:53Z",
+      "checkable_against": "Worldwide box-office data and global IMAX screen counts",
+      "claim_type": "actual",
+      "envelope_seq": 750709,
+      "event_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "figure": {
+        "unit": "percent",
+        "value": "30"
+      },
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-49ff8aa5990af814",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "This haul represents nearly 30% of total global sales for \"The Odyssey\" — despite the fact that Imax screens represent less than 1% of movie screens worldwide.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:54.295910Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 3915,
+      "span_start": 3754,
+      "speaker": "CNBC",
+      "subject": "The Odyssey",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1796.txt",
+      "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
+      "log_seq": 750710,
+      "recorded_at": "2026-09-07T07:44:14.764386Z",
+      "evidence_asserted_at": "2026-08-28T11:54:53Z",
+      "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-23",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T11:54:53Z",
+      "checkable_against": "IMAX box-office reporting for The Odyssey",
+      "claim_type": "actual",
+      "envelope_seq": 750695,
+      "event_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "figure": {
+        "unit": "million dollars",
+        "value": "400"
+      },
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Over the weekend, global Imax ticket sales for the film surpassed $400 million, the first film to exceed the benchmark in the company's history.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:54.295910Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 3753,
+      "span_start": 3609,
+      "speaker": "CNBC",
+      "subject": "The Odyssey",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1796.txt",
+      "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
+      "log_seq": 750696,
+      "recorded_at": "2026-09-07T07:44:05.662258Z",
+      "slot_id": "slot-b88d8be7-f120-4028-b791-7f9afb3afaca",
+      "evidence_asserted_at": "2026-08-28T11:54:53Z",
+      "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 750861,
+      "id": "attach-31b67c25-f9eb-4eb8-90bb-71acaa98e35f",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b",
+      "refusal": null,
+      "slot_id": "slot-b88d8be7-f120-4028-b791-7f9afb3afaca",
+      "log_seq": 750862,
+      "recorded_at": "2026-09-07T07:46:11.297490Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": false,
+      "edge_kind": "cites",
+      "envelope_seq": 750607,
+      "from_event_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
+      "id": "cites-d918dfd5-1d8a-407b-a896-023619b766b0",
+      "reason": "CNBC reports The Odyssey IMAX ticket sales.",
+      "refusal": "citation_document_not_live",
+      "role": "reference",
+      "to_evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "log_seq": 750608,
+      "recorded_at": "2026-09-07T07:42:59.997925Z",
+      "family": "evidence_role",
+      "label": "cites"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -213,5 +450,14 @@
   "root_id": "event-2fd44c6d-a8a5-4ed6-a156-39b3b545f6cb",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-b88d8be7-f120-4028-b791-7f9afb3afaca",
+      "name": "global IMAX box office",
+      "value": "400",
+      "unit": "million dollars",
+      "sentence": "Over the weekend, global Imax ticket sales for the film surpassed $400 million, the first film to exceed the benchmark in the company's history.",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-e6a3416e16f0028b"
+    }
+  ]
 }

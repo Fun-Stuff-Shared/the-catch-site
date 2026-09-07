@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb": {
+      "slot": "match score",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+      "heads": [
+        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "the U.S. Team defeated the International Team, 19-11",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "score",
+        "value": "19-11"
+      },
+      "as_of": "2017",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "2017 Presidents Cup official final result",
+      "evidence_id": "58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377",
+      "basis": [
+        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+      ],
+      "last_confirmed": "2017",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "as_of": "2017",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -57,13 +93,50 @@
           "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
           "evidence_publisher": "Fox News",
           "evidence_source_id": "fox_news_latest"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2017",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-30T02:55:12Z",
+          "checkable_against": "2017 Presidents Cup official final result",
+          "claim_type": "actual",
+          "envelope_seq": 750743,
+          "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+          "evidence_id": "58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377",
+          "figure": {
+            "unit": "score",
+            "value": "19-11"
+          },
+          "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+          "id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "the U.S. Team defeated the International Team, 19-11",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:48.076498Z",
+          "root_id": "www.foxnews.com",
+          "span_check": "byte_exact",
+          "span_end": 4613,
+          "span_start": 4561,
+          "speaker": "outlet's own",
+          "subject": "2017 Presidents Cup",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2278.txt",
+          "text_sha256": "c2a2269c7e738a42e3a92f0dda1b210cc8564447f692dafb0ef4ec88ddcee629",
+          "log_seq": 750744,
+          "recorded_at": "2026-09-07T07:44:40.030232Z",
+          "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+          "evidence_asserted_at": "2026-08-30T02:55:12Z",
+          "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
+          "evidence_publisher": "Fox News",
+          "evidence_source_id": "fox_news_latest"
         }
       ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432623,
@@ -79,7 +152,19 @@
     "log_seq": 432624
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+      "envelope_seq": 750767,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "name": "match score",
+      "refusal": null,
+      "log_seq": 750768,
+      "recorded_at": "2026-09-07T07:44:58.031731Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -112,9 +197,60 @@
       "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
       "evidence_publisher": "Fox News",
       "evidence_source_id": "fox_news_latest"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2017",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-30T02:55:12Z",
+      "checkable_against": "2017 Presidents Cup official final result",
+      "claim_type": "actual",
+      "envelope_seq": 750743,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "evidence_id": "58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377",
+      "figure": {
+        "unit": "score",
+        "value": "19-11"
+      },
+      "fire_id": "d5b3ac699de521cc73c74e19c36ea8db",
+      "id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "the U.S. Team defeated the International Team, 19-11",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:48.076498Z",
+      "root_id": "www.foxnews.com",
+      "span_check": "byte_exact",
+      "span_end": 4613,
+      "span_start": 4561,
+      "speaker": "outlet's own",
+      "subject": "2017 Presidents Cup",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2278.txt",
+      "text_sha256": "c2a2269c7e738a42e3a92f0dda1b210cc8564447f692dafb0ef4ec88ddcee629",
+      "log_seq": 750744,
+      "recorded_at": "2026-09-07T07:44:40.030232Z",
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "evidence_asserted_at": "2026-08-30T02:55:12Z",
+      "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
+      "evidence_publisher": "Fox News",
+      "evidence_source_id": "fox_news_latest"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 750769,
+      "id": "attach-anchor-slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+      "refusal": null,
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "log_seq": 750770,
+      "recorded_at": "2026-09-07T07:44:58.265414Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -131,5 +267,14 @@
   "root_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "name": "match score",
+      "value": "19-11",
+      "unit": "score",
+      "sentence": "the U.S. Team defeated the International Team, 19-11",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+    }
+  ]
 }

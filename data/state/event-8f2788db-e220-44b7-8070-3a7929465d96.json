@@ -195,24 +195,30 @@
     },
     "slot-005795ae-df76-4c68-8d21-ef53f70ce985": {
       "slot": "alleged involvement of Moroccan border guards",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26",
       "heads": [
-        "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-11854232f12e6cf3",
-        "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-c78fe8f0f4398b66",
         "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "And some of the migrants themselves told “The Times” that Moroccan authorities had encouraged them to cross, an opportunity they felt they couldn’t turn down.",
+      "span_check": "byte_exact",
+      "speaker": "migrants interviewed by The New York Times",
+      "figure": null,
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "New York Times interview recordings and Moroccan border-authority records",
+      "evidence_id": "33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e",
       "basis": [
         "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-11854232f12e6cf3",
         "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-c78fe8f0f4398b66",
         "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26"
       ],
       "last_confirmed": "2026-08-03",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     },
     "slot-8411c46c-2a38-41dc-a1cd-9c88efd029bb": {
       "slot": "perceived motive for the crossing",
@@ -377,11 +383,6 @@
       "slot_id": "slot-fab3fd74-418e-4f29-ac95-33c8a947004a",
       "as_of": "2026-08-02",
       "occurrence_id": "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-c5e8db5aa1337183"
-    },
-    {
-      "kind": "disputed",
-      "slot_id": "slot-005795ae-df76-4c68-8d21-ef53f70ce985",
-      "as_of": "2026-08-03"
     },
     {
       "kind": "disputed",
@@ -2311,8 +2312,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "419997cb65",
-  "evaluated_at": "2026-09-06T05:18:20.777345Z",
+  "produced_by_commit": "0b6669c2d2",
+  "evaluated_at": "2026-09-07T09:34:56.876496Z",
   "event": {
     "accepted": true,
     "envelope_seq": 599946,
@@ -4272,6 +4273,60 @@
     },
     {
       "accepted": true,
+      "envelope_seq": 758145,
+      "event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "The Times",
+          "time": "",
+          "value": "Moroccan authorities had encouraged them to cross"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "from_occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26",
+      "id": "edge-relation-8fa949cc58e8a1088acec5ab",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report that migrants interviewed by the NYT said Moroccan authorities (specifically border guards in the existing quote) encouraged them to cross. They are from the same publisher (NYT) and describe the same event.",
+      "refusal": null,
+      "to_event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "to_occurrence_id": "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-11854232f12e6cf3",
+      "log_seq": 758146,
+      "recorded_at": "2026-09-07T08:57:59.283802Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 758142,
+      "event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "The Times",
+          "time": "",
+          "value": "Moroccan authorities had encouraged them to cross"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "from_occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26",
+      "id": "edge-relation-d368202651243ab72bd14503",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report that migrants interviewed by the NYT said Moroccan authorities (specifically police officers in the existing quote) encouraged them to cross. They are from the same publisher (NYT) and describe the same event.",
+      "refusal": null,
+      "to_event_id": "event-8f2788db-e220-44b7-8070-3a7929465d96",
+      "to_occurrence_id": "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-c78fe8f0f4398b66",
+      "log_seq": 758143,
+      "recorded_at": "2026-09-07T08:57:56.872574Z"
+    },
+    {
+      "accepted": true,
       "edge_kind": "attach",
       "envelope_seq": 403447,
       "id": "identity-attach-0df8b100-0efe-4170-af4e-5affd2891763",
@@ -4665,13 +4720,56 @@
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-03T10:00:10Z",
+    "confirmations": [
+      {
+        "label": "“Some of the migrants themselves, though, told stories about being waved forward by Moroccan border guards, who encouraged them to cross.”",
+        "value": "Some of the migrants themselves, though, told stories about being waved forward by Moroccan border guards, who encouraged them to cross.",
+        "reports": [
+          {
+            "publisher": "The New York Times",
+            "url": "https://www.nytimes.com/2026/08/02/world/spain-morocco-migration-iran.html",
+            "dates": [
+              "2026-08-03"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-005795ae-df76-4c68-8d21-ef53f70ce985"
+        ],
+        "sentence": "“Some of the migrants themselves, though, told stories about being waved forward by Moroccan border guards, who encouraged them to cross.”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-005795ae-df76-4c68-8d21-ef53f70ce985"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-005795ae-df76-4c68-8d21-ef53f70ce985",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-8fa949cc58e8a1088acec5ab",
+        "earlier_occurrence_id": "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-11854232f12e6cf3",
+        "later_occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/02/world/spain-morocco-migration-iran.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/03/podcasts/the-headlines/new-limits-on-trump-irs-immunity-deal-reflecting-pool-botched-college-football-logos.html",
+        "sentence": "On 2026-08-03, The New York Times reported “Some of the migrants themselves, though, told stories about being waved forward by Moroccan border guards, who encouraged them to cross.”; on the same day, The New York Times reported “And some of the migrants themselves told “The Times” that Moroccan authorities had encouraged them to cross, an opportunity they felt they couldn’t turn down.”."
+      },
+      {
+        "slot_id": "slot-005795ae-df76-4c68-8d21-ef53f70ce985",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-d368202651243ab72bd14503",
+        "earlier_occurrence_id": "occurrence-2d5630b61441973f7f2896f948179773db30b19dd85adb485e8b1d91fd59f7c6-c78fe8f0f4398b66",
+        "later_occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/02/world/spain-morocco-migration-iran.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/03/podcasts/the-headlines/new-limits-on-trump-irs-immunity-deal-reflecting-pool-botched-college-football-logos.html",
+        "sentence": "On 2026-08-03, The New York Times reported “The theory has been bolstered by some accounts from the migrants interviewed by my colleagues, who described being pointed in the right direction by Moroccan police officers: “They just kept saying, ‘Go that way, go that way,’” one recalled.”; on the same day, The New York Times reported “And some of the migrants themselves told “The Times” that Moroccan authorities had encouraged them to cross, an opportunity they felt they couldn’t turn down.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -4749,8 +4847,8 @@
       "name": "alleged involvement of Moroccan border guards",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "And some of the migrants themselves told “The Times” that Moroccan authorities had encouraged them to cross, an opportunity they felt they couldn’t turn down.",
+      "occurrence_id": "occurrence-33a3911bedf78f3b4ce241d91be3443c5dd4a11868ecad291e55d6c0cf89b53e-9fbf7f27dd988b26"
     },
     {
       "slot_id": "slot-8411c46c-2a38-41dc-a1cd-9c88efd029bb",
