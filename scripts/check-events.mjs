@@ -9,8 +9,8 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
-import { readState, readPublishedState, eventPath, chainPath } from "../src/lib/state.mjs";
-import { checkStatePages, checkPageFigures, readerCopy } from "./check-state-pages.mjs";
+import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
+import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy } from "./check-state-pages.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -57,6 +57,10 @@ for (const { subject, story, manifestPath } of storyPages) {
   try { m = JSON.parse(readFileSync(mPath, "utf8")); }
   catch (e) { fail.push(`${mPath}: unreadable JSON (${e.message})`); continue; }
   validateRecordManifest(mPath, m);
+  if (m.authored_sections) {
+    try { checkAuthoredSections(readFileSync(join(ROOT, 'dist', m.story || `/events/${m.event}/`, 'index.html'), 'utf8'), m.authored_sections); }
+    catch (error) { fail.push(`${mPath}: ${error.message}`); }
+  }
   if (m.schema === "event_dossier_v1") {
     const primary = m.primary_sources ?? [];
     const coverage = m.coverage_records ?? [];
@@ -371,9 +375,6 @@ const allStateViews = readState();
 const stateViews = readPublishedState();
 for (const id of allStateViews.events.keys()) {
   if (!stateViews.events.has(id) && existsSync(join(dist, eventPath(id), 'index.html'))) fail.push(`Unselected event has a public route: ${id}`);
-}
-for (const id of allStateViews.chains.keys()) {
-  if (!stateViews.chains.has(id) && existsSync(join(dist, chainPath(id), 'index.html'))) fail.push(`Unselected chain has a public route: ${id}`);
 }
 const generated = checkStatePages(stateViews, dist);
 fail.push(...generated.failures);

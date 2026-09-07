@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'parse5';
-import { eventPath, chainPath, verifyFigure, figureText } from '../src/lib/state.mjs';
+import { eventPath, eventRecordPath, verifyFigure, figureText } from '../src/lib/state.mjs';
 
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const text = (node) => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
@@ -105,15 +105,25 @@ export function checkStatePages(state, dist) {
       checked.push({id, figures: figures.length, transitions: transitions.length});
     } catch (error) { failures.push(error.message); }
   }
-  for (const [id, chain] of state.chains) {
+  const recordPaths = new Set([...state.events.keys()].map((id) => eventRecordPath(id)).filter(Boolean));
+  for (const record of recordPaths) {
     try {
-      const html = read(chainPath(id));
-      if (normalize(text(heading(html) ?? {})) !== normalize(chain.root.label)) throw new Error(`Rendered chain label differs: ${id}`);
+      const html = read(record);
+      const stories = [...state.events.values()].filter((view) => view.status === 'published' && eventRecordPath(view.event.id) === record);
+      const roots = new Set(stories.map((view) => view.root_id));
+      if (roots.size !== 1) throw new Error(`Event record series is disconnected: ${record}`);
+      const chain = state.chains.get(stories[0].root_id);
+      const section = [...nodes(parse(html))].find((node) => attr(node, 'data-event-record') === record);
+      if (!section || attr(section, 'data-series-root') !== chain.id) throw new Error(`Event record series differs: ${record}`);
+      const links = new Set([...nodes(section)].map((node) => attr(node, 'href')).filter(Boolean));
+      if (stories.some((view) => !links.has(eventPath(view.event.id)))) throw new Error(`Event record omits a selected story: ${record}`);
+      const ids = new Set(stories.map((view) => view.event.id));
+      const expected = chain.tracked.map((track) => track.values.filter((value) => ids.has(value.event_id))).filter((values) => values.length > 1).flatMap((values) => values.map((value) => `${value.event_id}/${value.occurrence_id}`)).sort();
       const actual = checkPageFigures(html, state).map((node) => `${attr(node, 'data-state-figure-event')}/${attr(node, 'data-state-figure')}`).sort();
-      const expected = chain.tracked.flatMap((track) => track.values.map((value) => `${value.event_id}/${value.occurrence_id}`)).sort();
-      if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error(`Rendered chain figures differ: ${id}`);
+      if (JSON.stringify(actual) !== JSON.stringify(expected)) throw new Error(`Event record tracked figures differ: ${record}`);
     } catch (error) { failures.push(error.message); }
   }
+  if (existsSync(join(dist, 'chains'))) failures.push('Obsolete /chains routes were generated');
   return { failures, checked };
 }
 
@@ -124,4 +134,16 @@ export function readerCopy(html) {
     return (node.childNodes ?? []).map(copy).join(' ');
   }
   return normalize(copy(parse(html)));
+}
+
+export function checkAuthoredSections(html, sections) {
+  if (!Array.isArray(sections) || !sections.length) throw new Error('Authored section inventory is missing');
+  const all = [...nodes(parse(html))];
+  const main = all.find((node) => node.tagName === 'main' && (attr(node, 'class') ?? '').split(/\s+/).includes('story'));
+  if (!main) throw new Error('Authored story body is missing');
+  const body = [...nodes(main)];
+  for (const id of sections) {
+    const section = body.find((node) => node.tagName === 'section' && attr(node, 'id') === id);
+    if (!section || ![...nodes(section)].some((node) => ['p', 'li', 'blockquote'].includes(node.tagName) && normalize(text(node)))) throw new Error(`Authored section is missing or empty: ${id}`);
+  }
 }

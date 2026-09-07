@@ -1,4 +1,5 @@
 ---
+import EventRecordStories from "../../../components/EventRecordStories.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import { ratePath } from "../../../data/fomc20260617.mjs";
 import { subject } from "../../../data/subjects/fed-rate.mjs";
@@ -50,38 +51,7 @@ const endX = x("2026-08-23"), endY = y(prev);
         <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
       </figure>
 
-      <section>
-        <h2>The decisions</h2>
-        <ol class="decision-timeline">
-          <li>
-            <span class="dt-date">July 29, 2026</span>
-            <div class="dt-body">
-              <p class="dt-head"><a href="/events/fed-rate/july-2026/">The quiet hold breaks: three officials vote to raise rates</a></p>
-              <p class="dt-sub">9&ndash;3 hold; Hammack, Kashkari, and Logan each dissented in favor of a
-              quarter-point hike, the first three-dissent split in one direction since 2016. Full story,
-              with the coverage checked against the record.</p>
-              <details class="event-records"><summary>2 records in this event</summary><ul><li><a href="/records/fomc-statement-2026-07-29/">FOMC statement, July 29, 2026</a></li><li><a href="/records/fomc-minutes-2026-07-29/">FOMC minutes, July 29, 2026</a></li></ul></details>
-            </div>
-          </li>
-          <li>
-            <span class="dt-date">June 17, 2026</span>
-            <div class="dt-body">
-              <p class="dt-head"><a href="/events/fed-rate/june-2026/">Warsh's first unanimous vote, with half the committee penciling in a hike</a></p>
-              <p class="dt-sub">12&ndash;0 hold; the projections flipped from a cut to a hike. Full story, with
-              the coverage checked against the record.</p>
-              <details class="event-records"><summary>2 records in this event</summary><ul><li><a href="/records/fomc-statement-2026-06-17/">FOMC statement, June 17, 2026</a></li><li><a href="/records/fomc-minutes-2026-06-17/">FOMC minutes, June 17, 2026</a></li></ul></details>
-            </div>
-          </li>
-          <li>
-            <span class="dt-date">December 11, 2025</span>
-            <div class="dt-body">
-              <p class="dt-head">The last move: a quarter-point cut to 3.50&ndash;3.75</p>
-              <p class="dt-sub">The sixth cut of the easing run that began September 2024. The range has not
-              moved since.</p>
-            </div>
-          </li>
-        </ol>
-      </section>
+      <EventRecordStories recordPath="/events/fed-rate/" />
 
 
     </main>

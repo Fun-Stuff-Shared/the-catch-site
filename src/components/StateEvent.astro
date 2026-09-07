@@ -1,10 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoryState from "./StoryState.astro";
-import { chainPath } from "../lib/state.mjs";
+import { eventRecordPath } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 const { view, prose } = Astro.props;
 const event = view.event ?? view;
+const recordPath = eventRecordPath(event.id);
 const retirementReason = ({ no_accepted_occurrence: "No supported facts were recorded.", unfinished_legacy_identity: "The entry was incomplete." })[view.reason] ?? view.reason;
 
 ---
@@ -18,6 +19,6 @@ const retirementReason = ({ no_accepted_occurrence: "No supported facts were rec
       {!prose && <p data-layer="fact" data-automated-record>Automatically assembled from source reports. Editorial review is not recorded here.</p>}
       <StoryState view={view} />
     </>}
-    {view.root_id && <p data-layer="narrative"><a href={chainPath(view.root_id)}>Follow this story over time</a></p>}
+    {recordPath && <p data-layer="narrative"><a href={recordPath}>Read the event record</a></p>}
   </main></div>
 </BaseLayout>

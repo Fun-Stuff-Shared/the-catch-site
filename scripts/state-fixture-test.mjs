@@ -127,17 +127,6 @@ test('the rendered figure text is checked, not just its data attributes', () => 
   assert.throws(()=>checkPageFigures(html.replace('>105,000 jobs','>120000 jobs'),state,'event-a'),/Visible figure differs/);
 });
 
-import { storyChainPath } from '../src/lib/state.mjs';
-test('standing story URLs resolve through a merged seed to its surviving chain', () => {
-  const state = {events: new Map([
-    ['event-seed', {status: 'merged', survivor: 'event-next'}],
-    ['event-next', {status: 'published', root_id: 'event-root'}],
-  ])};
-  assert.equal(storyChainPath(state, 'event-seed'), '/chains/event-root/');
-  state.events.set('event-next', {status: 'merged', survivor: 'event-seed'});
-  assert.throws(() => storyChainPath(state, 'event-seed'), /Merge cycle/);
-});
-
 test('pinned evidence identifiers remain stable document record identifiers', (t) => {
   const {root, write, view} = fixture(t);
   const text = 'Original record.';
@@ -232,4 +221,17 @@ test('only an explicit matching publication manifest admits a state event', (t) 
   assert.equal(readPublishedState(root, manifests).events.size,1);
   writeFileSync(join(manifests,'story.json'),JSON.stringify({state_event_id:event.id,event:'wrong'}));
   assert.throws(()=>readPublishedState(root, manifests),/route differs/);
+});
+
+import { checkAuthoredSections } from './check-state-pages.mjs';
+test('publication refuses retired stories despite an existing manifest', (t) => {
+  const {root, view, event, sync} = fixture(t);
+  view.status = event.status = 'retired'; sync();
+  assert.throws(() => selectPublishedState(readState(root), [event.id]), /retired event/);
+});
+test('headline and dek cannot replace an authored story body', () => {
+  const html = '<main class="story"><h1>Report</h1><p>Introduction.</p><section id="what-happened"><h2>The decision</h2><p>The board held its rate.</p></section></main>';
+  checkAuthoredSections(html, ['what-happened']);
+  assert.throws(() => checkAuthoredSections('<main><h1>Report</h1><p>Introduction.</p></main>', ['what-happened']), /body is missing/);
+  assert.throws(() => checkAuthoredSections(html.replace('<p>The board held its rate.</p>', ''), ['what-happened']), /missing or empty/);
 });

@@ -71,23 +71,6 @@ export function eventPath(id) {
   return `/events/${seeded[id] ?? encodeURIComponent(id)}/`;
 }
 
-export function chainPath(id) {
-  return `/chains/${encodeURIComponent(id)}/`;
-}
-
-export function storyChainPath(state, id) {
-  const seen = new Set();
-  let view = state.events.get(id);
-  while (view?.status === 'merged') {
-    if (seen.has(id)) throw new Error(`Merge cycle: ${id}`);
-    seen.add(id);
-    id = view.survivor;
-    view = state.events.get(id);
-  }
-  if (!view?.root_id) throw new Error(`Missing story chain: ${id}`);
-  return chainPath(view.root_id);
-}
-
 export function rankedChains(state) {
   return [...state.chains.values()].sort((a, b) =>
     b.events.filter((event) => event.status === "published").length - a.events.filter((event) => event.status === "published").length ||
@@ -156,6 +139,7 @@ export function selectPublishedState(state, ids) {
   for (const id of selected) {
     const source = state.events.get(id);
     if (!source) throw new Error(`Publication manifest names missing event: ${id}`);
+    if (source.status === 'retired') throw new Error(`Publication manifest names retired event: ${id}`);
     if (source.status === 'merged' && !selected.has(source.survivor)) throw new Error(`Published redirect has unpublished survivor: ${id}`);
     if (source.root_id && !selected.has(source.root_id)) throw new Error(`Published story has unpublished chain root: ${id}`);
     const follows = selected.has(source.follows) ? source.follows : null;
@@ -183,4 +167,15 @@ export function readPublishedState(directory = stateDirectory, manifests = join(
     ids.add(manifest.state_event_id);
   }
   return selectPublishedState(readState(directory), ids);
+}
+
+export function eventRecordPath(id, manifests = join(process.cwd(), 'checks/manifests')) {
+  for (const name of readdirSync(manifests).filter((name) => name.endsWith('.json'))) {
+    const manifest = JSON.parse(readFileSync(join(manifests, name), 'utf8'));
+    if (manifest.state_event_id !== id) continue;
+    const route = manifest.event_record;
+    if (route != null && !/^\/events\/[a-z0-9-]+\/$/.test(route)) throw new Error(`Invalid event record route: ${name}`);
+    return route ?? null;
+  }
+  return null;
 }
