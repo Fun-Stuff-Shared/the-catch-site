@@ -118,6 +118,10 @@ export function citedDocuments(state) {
   return [...documents.values()].sort((a, b) => a.id.localeCompare(b.id));
 }
 
+export function retirementReason(reason) {
+  return ({ no_accepted_occurrence: 'No supported facts were recorded.', unfinished_legacy_identity: 'The entry was incomplete.' })[reason] ?? reason;
+}
+
 export function slotLabel(name) {
   const label = String(name ?? "").replace(/_/g, " ");
   return label.charAt(0).toUpperCase() + label.slice(1);
@@ -139,18 +143,19 @@ export function selectPublishedState(state, ids) {
   for (const id of selected) {
     const source = state.events.get(id);
     if (!source) throw new Error(`Publication manifest names missing event: ${id}`);
-    if (source.status === 'retired') throw new Error(`Publication manifest names retired event: ${id}`);
+    const children = [...selected].filter((child) => child !== id && state.events.get(child)?.status === 'published' && state.events.get(child)?.root_id === id);
+    if (source.status === 'retired' && !children.length) throw new Error(`Publication manifest names retired event: ${id}`);
     if (source.status === 'merged' && !selected.has(source.survivor)) throw new Error(`Published redirect has unpublished survivor: ${id}`);
     if (source.root_id && !selected.has(source.root_id)) throw new Error(`Published story has unpublished chain root: ${id}`);
-    const follows = selected.has(source.follows) ? source.follows : null;
-    events.set(id, { ...source, event: source.event ? { ...source.event, follows } : undefined, follows, changed_since_previous: follows ? source.changed_since_previous : [] });
+    const follows = selected.has(source.follows) && state.events.get(source.follows)?.status === 'published' ? source.follows : null;
+    events.set(id, { ...source, selected_children: source.status === 'retired' ? children.map((child) => state.events.get(child).event) : [], event: source.event ? { ...source.event, follows } : undefined, follows, changed_since_previous: follows ? source.changed_since_previous : [] });
   }
   const chains = new Map();
   for (const [id, chain] of state.chains) {
     if (!selected.has(id)) continue;
     const members = chain.events.filter((event) => selected.has(event.id)).map((event) => ({ ...event, follows: events.get(event.id).follows }));
     const publishers = new Set(members.flatMap((event) => (events.get(event.id).evidence ?? []).filter(readable).map((row) => row.publisher).filter(Boolean)));
-    const tracked = chain.tracked.map((track) => ({ ...track, values: track.values.filter((value) => selected.has(value.event_id)) })).filter((track) => track.values.length);
+    const tracked = chain.tracked.map((track) => ({ ...track, values: track.values.filter((value) => events.get(value.event_id)?.status === 'published') })).filter((track) => track.values.length);
     chains.set(id, { ...chain, events: members, tracked, outlet_count: publishers.size });
   }
   return { events, chains };

@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'parse5';
-import { eventPath, eventRecordPath, verifyFigure, figureText } from '../src/lib/state.mjs';
+import { eventPath, eventRecordPath, verifyFigure, figureText, retirementReason } from '../src/lib/state.mjs';
 
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const text = (node) => node.nodeName === '#text' ? node.value : (node.childNodes ?? []).map(text).join('');
@@ -83,7 +83,14 @@ export function checkStatePages(state, dist) {
         continue;
       }
       if (normalize(text(heading(html) ?? {})) !== normalize((view.event ?? view).label)) throw new Error(`Rendered story label differs: ${id}`);
-      if (view.status === 'retired') continue;
+      if (view.status === 'retired') {
+        const stub = [...nodes(parse(html))].find((node) => attr(node, 'data-retired-root') !== undefined);
+        if (!stub || !normalize(text(stub)).includes(normalize(retirementReason(view.reason)))) throw new Error(`Retired root reason missing: ${id}`);
+        const links = new Set([...nodes(stub)].map((node) => attr(node, 'href')).filter(Boolean));
+        if (!(view.selected_children ?? []).length || view.selected_children.some((child) => !links.has(eventPath(child.id)))) throw new Error(`Retired root child links missing: ${id}`);
+        if ([...nodes(parse(html))].some((node) => attr(node, 'data-state-figure') !== undefined)) throw new Error(`Retired root contains figures: ${id}`);
+        continue;
+      }
       checkTimeline(html, view.revision_timeline);
       const figures = checkPageFigures(html, state, id);
       const current = figures.filter((node) => attr(node, 'data-state-figure-role') === 'current').map((node) => attr(node, 'data-state-figure')).sort();

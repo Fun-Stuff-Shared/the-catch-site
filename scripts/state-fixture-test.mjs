@@ -235,3 +235,20 @@ test('headline and dek cannot replace an authored story body', () => {
   assert.throws(() => checkAuthoredSections('<main><h1>Report</h1><p>Introduction.</p></main>', ['what-happened']), /body is missing/);
   assert.throws(() => checkAuthoredSections(html.replace('<p>The board held its rate.</p>', ''), ['what-happened']), /missing or empty/);
 });
+
+
+test('selected retired roots retain only stub navigation and never comparisons or figures', (t) => {
+  const {root, event, view, write, sync} = fixture(t);
+  event.status = view.status = 'retired';
+  event.reason = view.reason = 'Record ended.';
+  sync();
+  const child = {id:'event-child', label:'Later report', period:'2026-08', status:'published', follows:event.id};
+  write(child.id, {event:child,status:'published',root_id:event.id,follows:event.id,changed_since_previous:[{value:3}]});
+  write(`chain-${event.id}`, {id:event.id,root:event,events:[{...event,slots:[]},{...child,slots:[]}],tracked:[],outlet_count:1});
+  const selected = selectPublishedState(readState(root), [event.id,child.id]);
+  assert.equal(selected.events.get(event.id).reason, 'Record ended.');
+  assert.deepEqual(selected.events.get(event.id).selected_children, [child]);
+  assert.equal(selected.events.get(child.id).follows,null);
+  assert.deepEqual(selected.events.get(child.id).changed_since_previous,[]);
+  assert.throws(()=>selectPublishedState(readState(root), [event.id]), /retired event/);
+});

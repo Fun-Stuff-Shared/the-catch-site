@@ -4,6 +4,7 @@ import "../../../styles/story.css";
 import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
+import StateEvent from "../../../components/StateEvent.astro";
 import StoryState from "../../../components/StoryState.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
@@ -24,7 +25,7 @@ const bars = payrollChanges.map((d, i) => {
 const yTicks = [-100, 0, 100, 200];
 const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
 ---
-<BaseLayout title={`${event.title} | The Catch`} current="Events">
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><span>EVENTS</span><span>Jobs report &middot; July 2026</span></div>
   <div class="content">
     <main class="story" id="story-root">
@@ -267,7 +268,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
       <StoryState view={state} />
     </main>
   </div>
-</BaseLayout>
+</BaseLayout>}
 
 <style is:global>
   /* ── Mode switcher ── */

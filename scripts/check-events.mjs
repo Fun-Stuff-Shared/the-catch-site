@@ -14,6 +14,7 @@ import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy } 
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
+const stateViews = readPublishedState();
 
 // ---- 1. Manifests for story pages -------------------------------------------------
 const REQUIRED_STEPS = [
@@ -56,6 +57,7 @@ for (const { subject, story, manifestPath } of storyPages) {
   let m;
   try { m = JSON.parse(readFileSync(mPath, "utf8")); }
   catch (e) { fail.push(`${mPath}: unreadable JSON (${e.message})`); continue; }
+  if (m.state_event_id && stateViews.events.get(m.state_event_id)?.status === 'retired') continue;
   validateRecordManifest(mPath, m);
   if (m.authored_sections) {
     try { checkAuthoredSections(readFileSync(join(ROOT, 'dist', m.story || `/events/${m.event}/`, 'index.html'), 'utf8'), m.authored_sections); }
@@ -200,6 +202,7 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
   try {
     const manifest = JSON.parse(readFileSync(join(ROOT, "checks/manifests", filename), "utf8"));
     if (!manifest.story && !manifest.event) continue;
+    if (manifest.state_event_id && stateViews.events.get(manifest.state_event_id)?.status === 'retired') continue;
     if (manifest.subject?.startsWith("officials/")) continue;
     const route = manifest.story || (manifest.event ? `/events/${manifest.event}/` : null);
     if (!route) fail.push(`checks/manifests/${filename}: event index requires story or event route`);
@@ -372,7 +375,7 @@ for (const { subject, story } of storyPages) {
 }
 
 const allStateViews = readState();
-const stateViews = readPublishedState();
+
 for (const id of allStateViews.events.keys()) {
   if (!stateViews.events.has(id) && existsSync(join(dist, eventPath(id), 'index.html'))) fail.push(`Unselected event has a public route: ${id}`);
 }

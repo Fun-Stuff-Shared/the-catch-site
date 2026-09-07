@@ -4,6 +4,7 @@ import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
 import { event } from "../../../data/fomc20260729.mjs";
 import { ratePath } from "../../../data/fomc20260617.mjs";
+import StateEvent from "../../../components/StateEvent.astro";
 import StoryState from "../../../components/StoryState.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 const state = readPublishedState().events.get("event-fed-rate-july-2026");
@@ -27,7 +28,7 @@ pts.push(`${x("2026-07-29")},${y(prev)}`);
 const path = "M" + pts.join(" L");
 const endX = x("2026-07-29"), endY = y(prev);
 ---
-<BaseLayout title={`${event.title} | The Catch`} current="Events">
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; July 2026</span></div>
   <div class="content">
     <main class="story">
@@ -310,4 +311,4 @@ const endX = x("2026-07-29"), endY = y(prev);
       </section>
     </main>
   </div>
-</BaseLayout>
+</BaseLayout>}

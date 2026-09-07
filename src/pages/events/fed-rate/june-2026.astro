@@ -12,6 +12,7 @@ import Chip from "../../../components/story/Chip.astro";
 import RailedParagraph from "../../../components/story/RailedParagraph.astro";
 import Receipt from "../../../components/story/Receipt.astro";
 import RecordsList from "../../../components/story/RecordsList.astro";
+import StateEvent from "../../../components/StateEvent.astro";
 import StoryState from "../../../components/StoryState.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 const state = readPublishedState().events.get("event-fed-rate-june-2026");
@@ -20,7 +21,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 import "../../../styles/story.css";
 import { event, ratePath } from "../../../data/fomc20260617.mjs";
 ---
-<BaseLayout title={`${event.title} | The Catch`} current="Events">
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator">
     <span>EVENTS</span>
     <a href="/events/fed-rate/" class="loc-event">The federal funds rate</a>
@@ -288,4 +289,4 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
       />
     </main>
   </div>
-</BaseLayout>
+</BaseLayout>}

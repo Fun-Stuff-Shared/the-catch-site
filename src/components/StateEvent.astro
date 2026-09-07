@@ -1,19 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import StoryState from "./StoryState.astro";
-import { eventRecordPath } from "../lib/state.mjs";
+import { eventRecordPath, eventPath, retirementReason } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 const { view, prose } = Astro.props;
 const event = view.event ?? view;
 const recordPath = eventRecordPath(event.id);
-const retirementReason = ({ no_accepted_occurrence: "No supported facts were recorded.", unfinished_legacy_identity: "The entry was incomplete." })[view.reason] ?? view.reason;
+
 
 ---
 <BaseLayout title={`${event.label} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">EVENTS</a><span>{view.desk ?? formatDate(event.period)}</span></div>
   <div class="content"><main class="method-main" data-state-event={event.id}>
     <h1>{event.label}</h1>
-    {view.status === "retired" ? <p data-layer="fact">This entry is no longer active. {retirementReason}</p> : <>
+    {view.status === "retired" ? <section data-layer="fact" data-retired-root>
+      <p>This entry is retired. {retirementReason(view.reason)}</p>
+      <ul>{(view.selected_children ?? []).map((child) => <li><a href={eventPath(child.id)}>{child.label}</a></li>)}</ul>
+    </section> : <>
       <p data-layer="fact">{formatDate(event.period)}{view.desk && <> · {view.desk}</>}</p>
       {prose && <section data-layer="narrative" class="lede"><p>{prose}</p></section>}
       {!prose && <p data-layer="fact" data-automated-record>Automatically assembled from source reports. Editorial review is not recorded here.</p>}
