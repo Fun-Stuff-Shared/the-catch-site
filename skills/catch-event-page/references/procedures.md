@@ -323,3 +323,57 @@ A 404 or the old page after five minutes means the hosted build failed, almost a
 `pull-state.mjs` on the committed state (see step 8). The poll must exit nonzero in that
 case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got reported
 as shipped once.
+
+
+## Step 12. Read the story into the state record (per story, at authoring time)
+
+The tracked-figures block at the foot of a story is filled from the story's own pins. The
+pieces exist in the SAI checkout (`/Volumes/4/CF/sai`, run with `PYTHONPATH=src .venv/bin/python`)
+and the wiring for a single story is an open build (handoff td-36bb6e). What is known today:
+
+1. Registration. `sai state ingest-catch-pins --sources-root <dir> --state-dir /Volumes/4/CF/catch-state`
+   reads `<dir>/pins.jsonl`, one row per html file: `file`, `url`, `publisher`,
+   `source_family` (for example `government_primary`), `is_primary`, `verbatim_level`
+   (`record`), `asserted_at`. It walks every `.htm`/`.html` under the root and REWRITES the
+   sibling `.txt` with its own extractor, so never point it at `data/sources/` directly:
+   stage the story's html pins in a scratch directory with a generated `pins.jsonl` (from
+   the manifest's records), or the manifest text hashes break and the gate fails.
+2. Extraction. `sai extract` runs Phase 1 over state worklists (below). Model spend:
+   default provider `openai-codex`, model `gpt-5.6-luna`, one reservation of 60,000 tokens
+   per worklist row. Kill path: `pkill -TERM -f 'sai\.state\.extract'`; confirm with
+   `pgrep -alf 'sai\.state\.extract' || true`.
+3. Views. `sai state refresh-views --state-dir /Volumes/4/CF/catch-state --event <event-id>`
+   rebuilds one event view and its chain; then `npm run build` in the site pulls the views
+   (`scripts/pull-state.mjs`) and the foot block renders the tracked figures.
+4. Done means the built page's foot shows tracked values with source passages. Until the
+   per-story wiring lands, report the step as not done, with td-36bb6e, never as "the state
+   has not read this story" as if that were a fact about the world.
+
+```
+usage: sai extract [-h] [--worklist WORKLIST] [--drain]
+                   [--state-dir STATE_DIR] [--provider PROVIDER]
+                   [--model MODEL] [--concurrency CONCURRENCY]
+                   [--timeout-seconds TIMEOUT_SECONDS]
+                   [--time-budget-seconds TIME_BUDGET_SECONDS]
+                   [--requeue-defects] [--item-limit ITEM_LIMIT]
+                   [--thinking THINKING]
+
+options:
+  -h, --help            show this help message and exit
+  --worklist WORKLIST
+  --drain               every worklist that still has items without a terminal
+                        record
+  --state-dir STATE_DIR
+  --provider PROVIDER
+  --model MODEL
+  --concurrency CONCURRENCY
+  --timeout-seconds TIMEOUT_SECONDS
+  --time-budget-seconds TIME_BUDGET_SECONDS
+                        stop starting new items after this many seconds across
+                        all worklists; in-flight items finish
+  --requeue-defects     retry items whose last terminal status was a harness
+                        or infrastructure defect
+  --item-limit ITEM_LIMIT
+  --thinking THINKING   pi thinking level for reasoning models: off, low,
+                        medium, high
+```
