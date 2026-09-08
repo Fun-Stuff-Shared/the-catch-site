@@ -2,7 +2,7 @@
   "subject": "jobs",
   "event": "jobs/august-2026",
   "date": "2026-09-04",
-  "story_title": "Payrolls snap back: employment rises by 162,000, and July's loss becomes a gain",
+  "story_title": "Payrolls rise by 162,000 and July's loss becomes a gain, with two volatile categories supplying 101,000 of it",
   "state_event_id": "event-jobs-august-2026",
   "event_record": "/events/jobs/",
   "completed_by": "fable (keystone session), skill catch-event-page",
@@ -15,6 +15,16 @@
       "section_anchor": "what-happened",
       "records": [
         "bls-empsit-2026-08"
+      ]
+    },
+    {
+      "id": "september-8-indicators",
+      "date": "2026-09-08",
+      "label": "Two more labor readings land four days after the report",
+      "section_anchor": "who-feels-it",
+      "records": [
+        "conference-board-eti-2026-08",
+        "nyfed-sce-2026-08"
       ]
     }
   ],
@@ -536,6 +546,74 @@
       "quote_span_check": "byte_exact",
       "about": "An immigration advocacy group's estimates of Haitian TPS holders by occupation, the source for the elder-care figures.",
       "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "bls-empsit-t09-2026-08",
+      "title": "Employment Situation table A-9, selected employment indicators, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-04",
+      "url": "https://www.bls.gov/news.release/empsit.t09.htm",
+      "pinned_path": "data/sources/bls-empsit-t09-2026-08.html",
+      "text_path": "data/sources/bls-empsit-t09-2026-08.txt",
+      "quote": "Total multiple jobholders 8,479 8,585 8,505 8,796 8,434 8,428 8,554 8,693 8,805",
+      "about": "The household survey's table of selected employment indicators, which carries the count of people holding more than one job. The same table is inside the full release; this is the table on its own page, so the story can name it.",
+      "text_extraction": "tags stripped from the saved page here: the registry run's own extraction returned only the site navigation for this URL",
+      "text_sha256": "sha256:bde3ef0e2ef8e74c26b2cde66eb83b2629cf3df0df447f2ba676fd027f3eb3cb",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:23f0f417a07e287b5c59bc2329e1e14db58c8dadd2a9268708865457cc0a73a6",
+      "captured_at": "2026-09-08T23:21:07.029130Z",
+      "quote_span_check": "normalized"
+    },
+    {
+      "id": "nyfed-sce-2026-08",
+      "title": "Survey of Consumer Expectations, August 2026",
+      "publisher": "Federal Reserve Bank of New York",
+      "date": "2026-09-08",
+      "url": "https://www.newyorkfed.org/newsevents/news/research/2026/20260908",
+      "pinned_path": "data/sources/nyfed-sce-2026-08.html",
+      "text_path": "data/sources/nyfed-sce-2026-08.txt",
+      "quote": "Expectations of an increase in unemployment reached the highest level since April 2020.",
+      "about": "The New York Fed's monthly household survey, fielded August 3 to 31 and published four days after the jobs report. Households expected unemployment to rise and rated their own chances of finding a job lower, while rating their chances of losing one lower too.",
+      "text_extraction": "trafilatura_main_v1",
+      "text_sha256": "sha256:80ed834ba2d2fe4306142fad7c8d68bc8222e68075528d41daa585be139bfc44",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:5f346bba2e4ec9f326d93745aef7655d3dabbea75b41b1c3461f682f4f8459ab",
+      "captured_at": "2026-09-08T23:21:02.466788Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "conference-board-eti-2026-08",
+      "title": "The Conference Board Employment Trends Index increased in August",
+      "publisher": "The Conference Board",
+      "date": "2026-09-08",
+      "url": "https://www.conference-board.org/topics/employment-trends-index/",
+      "pinned_path": "data/sources/coverage/conference-board-eti-2026-08.html",
+      "text_path": "data/sources/coverage/conference-board-eti-2026-08.txt",
+      "quote": "increased to 108.53 in August, from an upwardly revised reading of 107.76 in July",
+      "about": "A private composite of eight labor-market indicators, published September 8. It rose for a second month; the group reads that as support for continued job growth.",
+      "text_extraction": "trafilatura_main_v1",
+      "text_sha256": "sha256:a45460e71339ac3ea31d691b2bea5dbaffae0b6bb778e367886d9f0c89caee48",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:3f4e40d4d8d1a410860e3ec31ecae7e319998f561bbe65cd2a3d9f707e719b9a",
+      "captured_at": "2026-09-08T23:20:57.710008Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "conference-board-august-jobs",
+      "title": "Solid labor market leaves spotlight on inflation for the Fed",
+      "publisher": "The Conference Board",
+      "date": "2026-09-04",
+      "url": "https://www.conference-board.org/research/labor-markets-briefs/jobs-report-insights-aug-2026",
+      "pinned_path": "data/sources/coverage/conference-board-august-jobs.html",
+      "text_path": "data/sources/coverage/conference-board-august-jobs.txt",
+      "quote": "the underlying trend remains one of modest positive job growth",
+      "about": "The Conference Board's release-day brief on the August report: strong on its face, but seasonal effects tied to the World Cup may have exaggerated the leisure and hospitality gain.",
+      "text_extraction": "tags stripped from the saved page here: the registry run's own extraction returned only the site navigation for this URL",
+      "text_sha256": "sha256:2e5b10841faeba4af698cc75147d4a5af7ebdde75a69acbc089f14c2ee953e06",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:f97c5a22160fe19a58c0ed5550252cb5a3bb57977321437012417aab4ba188d2",
+      "captured_at": "2026-09-08T23:20:52.522669Z",
+      "quote_span_check": "byte_exact"
     }
   ],
   "story_sources": [
@@ -580,6 +658,27 @@
       "label": "Preliminary benchmark revision, March 2026",
       "meta": " · released August 28",
       "usage": "the annual check of the payroll count"
+    },
+    {
+      "id": "fwd-haiti-tps-2026-01",
+      "group": "primary",
+      "label": "FWD.us Haiti TPS fact sheet, January 2026",
+      "meta": "",
+      "usage": "how many TPS holders worked in elder care"
+    },
+    {
+      "id": "bls-empsit-t09-2026-08",
+      "group": "primary",
+      "label": "Employment Situation table A-9, August 2026",
+      "meta": " · Bureau of Labor Statistics",
+      "usage": "the count of people holding more than one job"
+    },
+    {
+      "id": "nyfed-sce-2026-08",
+      "group": "primary",
+      "label": "Survey of Consumer Expectations, August 2026",
+      "meta": " · Federal Reserve Bank of New York, released September 8",
+      "usage": "what households expected of unemployment and their own job chances"
     },
     {
       "id": "fred-payems-2026-08",
@@ -629,6 +728,13 @@
       "label": "Average hourly earnings, monthly",
       "meta": " · saved September 8, reflects the September 4 release",
       "usage": "the wage growth check"
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "group": "official",
+      "label": "Nonfarm payrolls, first-published vintages (ALFRED)",
+      "meta": "",
+      "usage": "first estimates for January to July in the revision table"
     },
     {
       "id": "thehill-august-jobs",
@@ -785,18 +891,18 @@
       "usage": "the release-day reaction"
     },
     {
-      "id": "alfred-payems-vintages-2026",
-      "group": "official",
-      "label": "Nonfarm payrolls, first-published vintages (ALFRED)",
-      "meta": "",
-      "usage": "first estimates for January to July in the revision table"
+      "id": "conference-board-august-jobs",
+      "group": "coverage",
+      "label": "The Conference Board release-day brief",
+      "meta": " · published September 4",
+      "usage": "the seasonal reading and the underlying-trend judgment"
     },
     {
-      "id": "fwd-haiti-tps-2026-01",
-      "group": "primary",
-      "label": "FWD.us Haiti TPS fact sheet, January 2026",
-      "meta": "",
-      "usage": "how many TPS holders worked in elder care"
+      "id": "conference-board-eti-2026-08",
+      "group": "coverage",
+      "label": "The Conference Board Employment Trends Index",
+      "meta": " · published September 8",
+      "usage": "the index reading for August and July"
     }
   ],
   "figures": [
@@ -881,6 +987,24 @@
       "plain": "The saved release text carries the want-a-job count (on the page) but not the multiple-jobholder table; an enhancement, not a gap.",
       "record_id": "bls-empsit-2026-08",
       "status": "partly have"
+    },
+    {
+      "need": "a Federal Reserve policymaker's response to this report",
+      "plain": "Every statement by a named Fed policymaker in the records saved for this page was made before the report came out. The newest is Governor Waller's, the day before. Nothing published after the report is held.",
+      "record_id": "fed-waller-2026-09-03",
+      "status": "searched: none found in the records held"
+    },
+    {
+      "need": "September 8 readings on the labor market",
+      "plain": "The Conference Board's index and the New York Fed's household survey both came out four days after the report; both are saved.",
+      "record_id": "conference-board-eti-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "the count of people holding more than one job",
+      "plain": "Table A-9 of the release, saved on its own page so the story can name the table.",
+      "record_id": "bls-empsit-t09-2026-08",
+      "status": "have"
     }
   ],
   "steps": {
