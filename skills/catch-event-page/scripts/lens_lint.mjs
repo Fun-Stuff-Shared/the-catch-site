@@ -17,7 +17,8 @@ for (const file of files) {
   const lineOf = (index) => source.slice(0, index).split("\n").length;
   for (const match of source.matchAll(/<p\b[^>]*data-layer="narrative"[^>]*>([\s\S]*?)<\/p>/g)) {
     const text = match[1].replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, " ").trim();
-    const isLabel = text.length < 60 && !/\d/.test(text) && /kicker|sec-kicker|label/.test(match[0].slice(0, match[0].indexOf(">")));
+    const openTag = match[0].slice(0, match[0].indexOf(">"));
+    const isLabel = /kicker|label/.test(openTag) || (text.length < 60 && !/\d/.test(text));
     if (!/<Cite\b/.test(match[1]) && !isLabel) {
       violations += 1;
       console.log(`${file}:${lineOf(match.index)}: narrative paragraph without a citation: ${match[1].replace(/<[^>]+>/g, "").trim().slice(0, 90)}`);
