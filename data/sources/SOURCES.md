@@ -484,3 +484,52 @@ The White House fact sheet and September 2 release, Executive Order 14373, OFAC 
 | data/sources/venezuela-oil/wh-fact-sheet-2026-08-31.txt | 12094 | bca59ffea92f0926 |
 | data/sources/venezuela-oil/wh-release-2026-09-02.html | 263925 | 6c5bd6feeaf72a9e |
 | data/sources/venezuela-oil/wh-release-2026-09-02.txt | 11194 | 200d0ce6313dc0cd |
+
+## Venezuela oil, September 2026 rework (admitted 2026-09-08)
+
+Browser copies saved under the verify set were copied into `data/sources/coverage/` and `data/sources/venezuela-oil/`. Reuters.com pages returned 401 and had no archive.org snapshot as of September 8; the Reuters text used here is carried by BOE Report (`reuters-boe-antidilution-2026-09-04`), Investing.com (`reuters-investing-14of17-2026-08-31`, `reuters-investing-warrants-2026-09-04`), and MarketScreener (`reuters-marketscreener-machado-2026-09-03`). The Wall Street Journal report on penny warrants is carried by Dow Jones Newswires via TradingView (`djn-wsj-warrants-2026-08-29`). The hydrocarbons law PDF is Gaceta Oficial N° 6.978 Extraordinario (January 29, 2026).
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/venezuela-oil/eia-crude-oil-reserves-2024.html | 66814 | 252d38d2f208f2e2 |
+| data/sources/venezuela-oil/eia-crude-oil-reserves-2024.txt | 12097 | eabbfac21356dca0 |
+| data/sources/venezuela-oil/doe-fact-sheet-2026-09-02.html | 120518 | 0b84dcd4c4632a03 |
+| data/sources/venezuela-oil/doe-fact-sheet-2026-09-02.txt | 4479 | 079fbbf626ce36d2 |
+| data/sources/venezuela-oil/state-rubio-novelli-2026-09-01.html | 196920 | 274d2bfa932b8e2d |
+| data/sources/venezuela-oil/state-rubio-novelli-2026-09-01.txt | 22511 | dc096df04a94ad4a |
+| data/sources/coverage/france24-betancourt.html | 407298 | e6746bce4351a05c |
+| data/sources/coverage/france24-betancourt.txt | 10701 | af9c723ff3981838 |
+| data/sources/coverage/truthsocial-trump-venezuela-oil-2026-08-28.html | 143118 | 3cfde1403ecdec39 |
+| data/sources/coverage/truthsocial-trump-venezuela-oil-2026-08-28.txt | 2115 | a00eb7148ae6fddd |
+| data/sources/coverage/politico-55pct-2026-08-28.html | 269294 | 365f9716532c35fb |
+| data/sources/coverage/politico-55pct-2026-08-28.txt | 12255 | 816c8be125a6b2bb |
+| data/sources/coverage/bbc-venezuela-oil-2026-08-28.html | 426595 | ac11e20b13e59c7e |
+| data/sources/coverage/bbc-venezuela-oil-2026-08-28.txt | 12498 | 2fe3d9efc0ebde39 |
+| data/sources/coverage/fox-aaa-gas-2026-08-29.html | 452820 | 8d87e3a857e293a8 |
+| data/sources/coverage/fox-aaa-gas-2026-08-29.txt | 15217 | 63e4af59c4edc872 |
+| data/sources/coverage/djn-wsj-warrants-2026-08-29.html | 202952 | 77d23f4904a80cb8 |
+| data/sources/coverage/djn-wsj-warrants-2026-08-29.txt | 11278 | 92d1768a58ff491d |
+| data/sources/coverage/semafor-osc-2026-09-02.html | 158556 | 95f4aee133e6d486 |
+| data/sources/coverage/semafor-osc-2026-09-02.txt | 8651 | c6f2eabff2f38822 |
+| data/sources/coverage/reuters-boe-antidilution-2026-09-04.html | 110162 | 2d6b8ff2b5e5e33e |
+| data/sources/coverage/reuters-boe-antidilution-2026-09-04.txt | 5717 | c9a673b544ebc633 |
+| data/sources/coverage/guardian-machado-2026-09-03.html | 417206 | 21980470063ab5b4 |
+| data/sources/coverage/guardian-machado-2026-09-03.txt | 7209 | 86eb4049bf2626f6 |
+| data/sources/coverage/oilprice-machado-2026-09-03.html | 200899 | f5d293f0fbf6f48a |
+| data/sources/coverage/oilprice-machado-2026-09-03.txt | 12500 | 705763fcd91c45b7 |
+| data/sources/coverage/reed-statement-2026-08-29.html | 74848 | 3c4156053991d464 |
+| data/sources/coverage/reed-statement-2026-08-29.txt | 2901 | e947271ddf3d3215 |
+| data/sources/coverage/ap-kpbs-55pct-2026-08-28.html | 250240 | c2e987b4e7e53973 |
+| data/sources/coverage/ap-kpbs-55pct-2026-08-28.txt | 13778 | 9359e075c71b712f |
+| data/sources/coverage/ap-unknowns-2026-09-01.html | 980704 | 0865ed1596f4f09b |
+| data/sources/coverage/ap-unknowns-2026-09-01.txt | 55567 | 97e01910f590704f |
+| data/sources/coverage/reuters-investing-14of17-2026-08-31.html | 1023416 | 02073c68a0d64fe0 |
+| data/sources/coverage/reuters-investing-14of17-2026-08-31.txt | 17250 | d196736ae01bc5eb |
+| data/sources/coverage/reuters-investing-warrants-2026-09-04.html | 1016453 | c9a0d16dba78ae45 |
+| data/sources/coverage/reuters-investing-warrants-2026-09-04.txt | 16414 | a1d33f2e25f56cca |
+| data/sources/coverage/reuters-marketscreener-machado-2026-09-03.html | 261213 | c6b2b93a988e6093 |
+| data/sources/coverage/reuters-marketscreener-machado-2026-09-03.txt | 14355 | abf79daf834a8adb |
+| data/sources/venezuela-oil/ley-hidrocarburos-2026.pdf | 1185304 | 0429f4e7f67d469b |
+| data/sources/venezuela-oil/ley-hidrocarburos-2026.txt | 100553 | ba676d78572cb364 |
+| data/sources/coverage/wapo-venezuela-chevron-stub-2026-09-02.html | 877922 | 5f4ae5bda9ec41a6 |
+| data/sources/coverage/wapo-venezuela-chevron-stub-2026-09-02.txt | 3404 | 87a36755a0a42cdd |

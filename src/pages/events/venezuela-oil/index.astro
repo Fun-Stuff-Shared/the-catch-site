@@ -3,6 +3,6 @@ import SeriesOverview from '../../../components/SeriesOverview.astro';
 import SeriesFigures from '../../../components/SeriesFigures.astro';
 import { subject } from '../../../data/subjects/venezuela-oil.mjs';
 ---
-<SeriesOverview title={subject.title} description="The August 31, 2026, White House fact sheet named North American Blue Energy Partners, a 35 percent U.S. equity stake, and 100-year rights to 17 Venezuelan fields." path="/events/venezuela-oil/">
+<SeriesOverview title={subject.title} description={subject.dek} path="/events/venezuela-oil/">
   <SeriesFigures slot="visual" items={subject.current} />
 </SeriesOverview>

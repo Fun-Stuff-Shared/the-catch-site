@@ -5,9 +5,25 @@
   "story_title": "The White House named a private operator, a 35 percent stake, and 100-year rights to 17 Venezuelan oil fields",
   "state_event_id": "event-venezuela-oil-september-2026",
   "event_record": "/events/venezuela-oil/",
-  "completed_by": "grok, skill catch-event-page",
+  "completed_by": "grok, skill catch-event-page rework",
   "date_completed": "2026-09-08",
   "sub_events": [
+    {
+      "id": "friday-announce-2026-08-28",
+      "date": "2026-08-28",
+      "label": "Friday announcement and 55 percent briefings",
+      "section_anchor": "what-happened",
+      "records": [
+        "truthsocial-trump-venezuela-oil-2026-08-28",
+        "politico-55pct-2026-08-28",
+        "bbc-venezuela-oil-2026-08-28",
+        "fox-aaa-gas-2026-08-29",
+        "ap-kpbs-55pct-2026-08-28",
+        "mppre-7980",
+        "mppre-7986",
+        "guardian-delcy"
+      ]
+    },
     {
       "id": "fact-sheet-2026-08-31",
       "date": "2026-08-31",
@@ -19,6 +35,7 @@
         "ofac-gl-46d",
         "ofac-20260827",
         "wh-eo-2026-01-09",
+        "ley-hidrocarburos-2026",
         "ap-venezuela-oil-nabep",
         "thehill-venezuela-oil-deal",
         "aljazeera-venezuela-oil-details",
@@ -26,24 +43,15 @@
         "cbs-gas-prices",
         "npr-venezuela-oil",
         "reuters-chinese-russian",
-        "france24-betancourt"
-      ]
-    },
-    {
-      "id": "caracas-announce-2026-08-28",
-      "date": "2026-08-28",
-      "label": "Rodriguez announces the agreement",
-      "section_anchor": "what-happened",
-      "records": [
-        "mppre-7980",
-        "mppre-7986",
-        "guardian-delcy"
+        "reuters-investing-14of17-2026-08-31",
+        "france24-betancourt",
+        "djn-wsj-warrants-2026-08-29"
       ]
     },
     {
       "id": "follow-up-2026-09-02",
       "date": "2026-09-02",
-      "label": "White House follow-up and Wright in Caracas",
+      "label": "White House follow-up, warrants record, Wright in Caracas",
       "section_anchor": "what-happened-next",
       "records": [
         "wh-release-2026-09-02",
@@ -54,7 +62,14 @@
         "reuters-chevron-ongc",
         "fox-democrat-venezuela",
         "doe-fact-sheet-2026-09-02",
-        "state-rubio-novelli-2026-09-01"
+        "state-rubio-novelli-2026-09-01",
+        "semafor-osc-2026-09-02",
+        "reuters-boe-antidilution-2026-09-04",
+        "reuters-investing-warrants-2026-09-04",
+        "guardian-machado-2026-09-03",
+        "reuters-marketscreener-machado-2026-09-03",
+        "reed-statement-2026-08-29",
+        "ap-unknowns-2026-09-01"
       ]
     },
     {
@@ -67,7 +82,8 @@
         "gasallw-2026-09-08",
         "steo-venezuela-crude-2026-08",
         "eia-us-crude-proved",
-        "eia-crude-oil-reserves-2024"
+        "eia-crude-oil-reserves-2024",
+        "fox-aaa-gas-2026-08-29"
       ]
     }
   ],
@@ -157,7 +173,7 @@
       "date": "2026-08-28",
       "url": "https://mppre.gob.ve/publicacion/7980-venezuela-anuncia-historico-acuerdo-con-el-gobierno-de-eeuu",
       "pinned_path": "data/sources/venezuela-oil/mppre-7980-venezuela-anuncia-historico-acuerdo-con-el-gobierno-de-eeuu.html",
-      "quote": "más de 100 mil millones de dólares en inversiones directas",
+      "quote": "m\u00e1s de 100 mil millones de d\u00f3lares en inversiones directas",
       "about": "The Venezuelan foreign ministry's August 28 post of Rodriguez's Telegram announcement.",
       "text_path": "data/sources/venezuela-oil/mppre-7980-venezuela-anuncia-historico-acuerdo-con-el-gobierno-de-eeuu.txt",
       "text_sha256": "sha256:5fbe6fec7b77ca28691fafbcd17c7b4285fd7dc6aca5056e63092247014009f8",
@@ -170,7 +186,7 @@
       "date": "2026-08-29",
       "url": "https://mppre.gob.ve/publicacion/7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu",
       "pinned_path": "data/sources/venezuela-oil/mppre-7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu.html",
-      "quote": "209 mil 335 millones de dólares para el Estado venezolano",
+      "quote": "209 mil 335 millones de d\u00f3lares para el Estado venezolano",
       "about": "Rodriguez's address: $209.335 billion at $65 a barrel, about $19 a barrel, 16 percent royalties.",
       "text_path": "data/sources/venezuela-oil/mppre-7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu.txt",
       "text_sha256": "sha256:51c37fedb35e8b4f09acb4c1c657fd70ea060c8de8189fb3dc193dbb2d0ab082",
@@ -180,11 +196,11 @@
       "id": "mppre-7995",
       "title": "Arriba a Venezuela Secretario de Energia de EEUU",
       "publisher": "Ministerio del Poder Popular para Relaciones Exteriores",
-      "date": "2026-09-02",
+      "date": "2026-09-01",
       "url": "https://mppre.gob.ve/publicacion/7995-arriba-a-venezuela-secretario-de-energia-de-eeuu-en-su-segunda-visita-oficial",
       "pinned_path": "data/sources/venezuela-oil/mppre-7995-arriba-a-venezuela-secretario-de-energia-de-eeuu-en-su-segunda-visita-oficial.html",
       "quote": "Christopher Wright",
-      "about": "Energy Secretary Wright's September 2 arrival in La Guaira, as posted by the ministry.",
+      "about": "Energy Secretary Wright's arrival in La Guaira. The ministry page is dated 01-09-2026 and says he arrived 'este martes' (Tuesday, September 1). DOE says he traveled September 2.",
       "text_path": "data/sources/venezuela-oil/mppre-7995-arriba-a-venezuela-secretario-de-energia-de-eeuu-en-su-segunda-visita-oficial.txt",
       "text_sha256": "sha256:7fb87228a46695608bc0627347a8cc125f2663cda1f220f579bf6b2e407a2116",
       "quote_span_check": "byte_exact"
@@ -261,7 +277,7 @@
       "date": "2026-08-31",
       "url": "https://apnews.com/article/trump-venezuela-oil-nabep-reserves-7a4fa51f842e17b9b1d092fbeef2646a",
       "pinned_path": "data/sources/coverage/ap-venezuela-oil-nabep.html",
-      "quote": "oil refiners to discuss ways to increase America’s capacity to refine oil into gasoline",
+      "quote": "oil refiners to discuss ways to increase America\u2019s capacity to refine oil into gasoline",
       "about": "AP on the fact sheet: 17 fields, 35 percent, 20 percent, and a refiners meeting the next day.",
       "text_path": "data/sources/coverage/ap-venezuela-oil-nabep.txt",
       "text_sha256": "sha256:d5c7ea55f016515bc7b9b65df26b9d6bf28b075bf77851b28addb924231e811e",
@@ -340,7 +356,7 @@
       "url": "https://www.reuters.com/business/energy/under-us-venezuela-oil-deal-some-chinese-russian-operators-lose-out-officials-2026-08-31/",
       "pinned_path": "data/sources/coverage/reuters-chinese-russian.html",
       "quote": "Five of 14 contracts had been operated by Chinese companies",
-      "about": "Reuters, from officials: Chinese and Russian operators displaced; 14 contracts, not 17 fields.",
+      "about": "Reuters, from officials: 17 projects total, 14 newly granted; Chinese and Russian operators displaced; NABEP previously owned by Harry Sargeant.",
       "text_path": "data/sources/coverage/reuters-chinese-russian.txt",
       "text_sha256": "sha256:045ee8699f17e2dff8176c06a3c2aaf4874b9dfb57c430252e1e2ac96c701ea0",
       "quote_span_check": "byte_exact"
@@ -401,11 +417,11 @@
       "id": "fox-democrat-venezuela",
       "title": "Angie Nixon on the Venezuela deal",
       "publisher": "Fox News",
-      "date": "2026-08-31",
+      "date": "2026-09-01",
       "url": "https://www.foxnews.com/media/progressive-florida-democrat-insists-trump-pushing-communism-venezuela-deal",
       "pinned_path": "data/sources/coverage/fox-democrat-venezuela.html",
       "quote": "Angie Nixon",
-      "about": "Fox's record of Florida Representative Angie Nixon criticizing the deal. Not a congressional roll call.",
+      "about": "Fox's September 1 record of FL Senate candidate Angie Nixon criticizing the deal. Not a congressional roll call.",
       "text_path": "data/sources/coverage/fox-democrat-venezuela.txt",
       "text_sha256": "sha256:ecc2efcf343cfc1640624c41bc1d972c35885d35244a01298cc99fcce696d5a2",
       "quote_span_check": "byte_exact"
@@ -461,6 +477,227 @@
       "text_path": "data/sources/coverage/france24-betancourt.txt",
       "text_sha256": "sha256:af9c723ff3981838a05ceef318cfe194dd206bc480c77ccaea30fb984f65aa38",
       "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "truthsocial-trump-venezuela-oil-2026-08-28",
+      "title": "Truth Social post on the Venezuela oil agreement",
+      "publisher": "Donald J. Trump via Truth Social",
+      "date": "2026-08-28",
+      "url": "https://truthsocial.com/@realDonaldTrump",
+      "pinned_path": "data/sources/coverage/truthsocial-trump-venezuela-oil-2026-08-28.html",
+      "text_path": "data/sources/coverage/truthsocial-trump-venezuela-oil-2026-08-28.txt",
+      "quote": "entered into an Agreement with the Country of Venezuela",
+      "about": "Friday's announcement: majority control of more than 65 billion barrels, doubles American oil reserves, lower gas prices.",
+      "text_sha256": "sha256:a00eb7148ae6fdddf410c31c54244ac9f3ba05d0a2ec5f607ccfed96700d6b27",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "politico-55pct-2026-08-28",
+      "title": "Trump says US has a deal to take huge stake in Venezuela oil reserves",
+      "publisher": "POLITICO",
+      "date": "2026-08-28",
+      "url": "https://www.politico.com/news/2026/08/28/trump-venezuela-oil-deal",
+      "pinned_path": "data/sources/coverage/politico-55pct-2026-08-28.html",
+      "text_path": "data/sources/coverage/politico-55pct-2026-08-28.txt",
+      "quote": "effectively controlling 55 percent of the venture\u2019s output",
+      "about": "A U.S. official's Friday arithmetic: 55 percent effective control of output; second-largest after Saudi Aramco.",
+      "text_sha256": "sha256:816c8be125a6b2bb0252fc83235b46c246a33333cfce9f320a608251b5afbc25",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "bbc-venezuela-oil-2026-08-28",
+      "title": "BBC on the Venezuela oil agreement",
+      "publisher": "BBC News",
+      "date": "2026-08-28",
+      "url": "https://www.bbc.com/news/articles/venezuela-oil-2026-08-28",
+      "pinned_path": "data/sources/coverage/bbc-venezuela-oil-2026-08-28.html",
+      "text_path": "data/sources/coverage/bbc-venezuela-oil-2026-08-28.txt",
+      "quote": "the US government will retain 55% control of a joint venture",
+      "about": "BBC, from a U.S. official via CBS: 55 percent control; also records Hormuz supply disruption that week.",
+      "text_sha256": "sha256:2fe3d9efc0ebde3982368efeee87e9594dc23beb56cf288787c816a4549a8897",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "fox-aaa-gas-2026-08-29",
+      "title": "Fox on AAA gas prices and the 55 percent interest",
+      "publisher": "Fox News",
+      "date": "2026-08-29",
+      "url": "https://www.foxnews.com/politics/venezuela-oil-deal-gas-prices",
+      "pinned_path": "data/sources/coverage/fox-aaa-gas-2026-08-29.html",
+      "text_path": "data/sources/coverage/fox-aaa-gas-2026-08-29.txt",
+      "quote": "$4.08 per gallon for regular gasoline, up from $3.20 a year ago, according to AAA",
+      "about": "AAA regular-grade average $4.08; 55 percent effective interest; Iran war cited as pushing pump prices.",
+      "text_sha256": "sha256:63e4af59c4edc8721352e985e8ab8fd3c7668c161cf29917990e28d3c31fb4db",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "ap-kpbs-55pct-2026-08-28",
+      "title": "AP via KPBS on 55 percent effective output",
+      "publisher": "Associated Press via KPBS",
+      "date": "2026-08-28",
+      "url": "https://www.kpbs.org/news/2026/08/28/ap-venezuela-oil",
+      "pinned_path": "data/sources/coverage/ap-kpbs-55pct-2026-08-28.html",
+      "text_path": "data/sources/coverage/ap-kpbs-55pct-2026-08-28.txt",
+      "quote": "55% effective output of the new private company",
+      "about": "AP Friday dispatch via KPBS: 55 percent effective output; second largest after Saudi Aramco.",
+      "text_sha256": "sha256:9359e075c71b712f8915e53dca7565ce7c396e7291dd1fe96b2cdb5cffbd28e5",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "djn-wsj-warrants-2026-08-29",
+      "title": "Dow Jones on Pentagon penny warrants",
+      "publisher": "Dow Jones Newswires via TradingView",
+      "date": "2026-08-29",
+      "url": "https://www.tradingview.com/news/dow-jones-venezuela-warrants",
+      "pinned_path": "data/sources/coverage/djn-wsj-warrants-2026-08-29.html",
+      "text_path": "data/sources/coverage/djn-wsj-warrants-2026-08-29.txt",
+      "quote": "structure the investment through penny warrants",
+      "about": "WSJ text carried by Dow Jones via TradingView: OSC penny warrants, 35 percent passive stake, Betancourt investigations without formal charges.",
+      "text_sha256": "sha256:92d1768a58ff491d7001917810b9294403abf3e4bdb74286937ad7286635991f",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "semafor-osc-2026-09-02",
+      "title": "Semafor on the Office of Strategic Capital",
+      "publisher": "Semafor",
+      "date": "2026-09-02",
+      "url": "https://www.semafor.com/article/09/02/2026/pentagon-osc-venezuela",
+      "pinned_path": "data/sources/coverage/semafor-osc-2026-09-02.html",
+      "text_path": "data/sources/coverage/semafor-osc-2026-09-02.txt",
+      "quote": "does not take equity stakes",
+      "about": "Pentagon spokesman told Reuters OSC does not take equity; a U.S. official later said penny-warrant authority came with the statute.",
+      "text_sha256": "sha256:c6f2eabff2f388222d39d18b48ea9e4942c5aa7bc97f60c5a02c6f3b735d70fd",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "reuters-boe-antidilution-2026-09-04",
+      "title": "Reuters on anti-dilution warrants (via BOE Report)",
+      "publisher": "Reuters via BOE Report",
+      "date": "2026-09-04",
+      "url": "https://boereport.com/reuters-venezuela-warrants",
+      "pinned_path": "data/sources/coverage/reuters-boe-antidilution-2026-09-04.html",
+      "text_path": "data/sources/coverage/reuters-boe-antidilution-2026-09-04.txt",
+      "quote": "right but not the obligation to buy the equity at a later date",
+      "about": "Reuters text carried by BOE Report: 35 percent as penny warrants against dilution; concessions without a competitive process. reuters.com returned 401.",
+      "text_sha256": "sha256:c9a673b544ebc6337bc7db706dd36b68299e31ed7c51b4cd03210a366826757b",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "reuters-investing-warrants-2026-09-04",
+      "title": "Reuters on warrants and right of first offer (via Investing.com)",
+      "publisher": "Reuters via Investing.com",
+      "date": "2026-09-04",
+      "url": "https://www.investing.com/news/venezuela-warrants",
+      "pinned_path": "data/sources/coverage/reuters-investing-warrants-2026-09-04.html",
+      "text_path": "data/sources/coverage/reuters-investing-warrants-2026-09-04.txt",
+      "quote": "dividends before the warrants are ever exercised",
+      "about": "Same Reuters warrants story via Investing.com: dividends before exercise; right of first offer on output. reuters.com returned 401.",
+      "text_sha256": "sha256:a1d33f2e25f56cca1e2d64f2727e479cc588d07e69c04d394161c81206281e4b",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "reuters-investing-14of17-2026-08-31",
+      "title": "Reuters on 14 of 17 projects (via Investing.com)",
+      "publisher": "Reuters via Investing.com",
+      "date": "2026-08-31",
+      "url": "https://www.investing.com/news/venezuela-14-of-17",
+      "pinned_path": "data/sources/coverage/reuters-investing-14of17-2026-08-31.html",
+      "text_path": "data/sources/coverage/reuters-investing-14of17-2026-08-31.txt",
+      "quote": "Fourteen of those projects will be newly granted by the Venezuelan government",
+      "about": "Reuters text via Investing.com: 17 projects total, 14 newly granted; Chinese and Russian prior operators.",
+      "text_sha256": "sha256:d196736ae01bc5eb88368a3dd7bc983261ade794633a475f20387f8c22c9358d",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "guardian-machado-2026-09-03",
+      "title": "Guardian on Machado and the oil deal",
+      "publisher": "The Guardian",
+      "date": "2026-09-03",
+      "url": "https://www.theguardian.com/world/2026/sep/03/venezuela-machado-oil",
+      "pinned_path": "data/sources/coverage/guardian-machado-2026-09-03.html",
+      "text_path": "data/sources/coverage/guardian-machado-2026-09-03.txt",
+      "quote": "The wealth of our subsoil does not belong to an illegitimate regime",
+      "about": "Maria Corina Machado on September 3: subsoil belongs to the people; U.S. is the principal partner Venezuela needs.",
+      "text_sha256": "sha256:86eb4049bf2626f6c9a70f24dc216f07eafbca060d663f2263c0c9fb796d55a9",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "reuters-marketscreener-machado-2026-09-03",
+      "title": "Reuters on Machado via MarketScreener",
+      "publisher": "Reuters via MarketScreener",
+      "date": "2026-09-03",
+      "url": "https://www.marketscreener.com/reuters-machado-venezuela",
+      "pinned_path": "data/sources/coverage/reuters-marketscreener-machado-2026-09-03.html",
+      "text_path": "data/sources/coverage/reuters-marketscreener-machado-2026-09-03.txt",
+      "quote": "The United States is the principal partner Venezuela needs to fully develop its strategic potential",
+      "about": "Reuters text via MarketScreener: Machado video Thursday; also Reuters figure of about 1.25 million barrels a day. reuters.com returned 401.",
+      "text_sha256": "sha256:abf79daf834a8adb6cb3066d5a24c7ac0f50fb19bee631fd8051d974014f38ec",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "reed-statement-2026-08-29",
+      "title": "Senator Jack Reed statement on the Venezuela oil deal",
+      "publisher": "Office of Sen. Jack Reed",
+      "date": "2026-08-29",
+      "url": "https://www.reed.senate.gov/news/releases/reed-venezuela-oil",
+      "pinned_path": "data/sources/coverage/reed-statement-2026-08-29.html",
+      "text_path": "data/sources/coverage/reed-statement-2026-08-29.txt",
+      "quote": "blatant abuse of power and taxpayer dollars",
+      "about": "Reed's August 29 statement rejecting use of the military as an investor in Venezuelan oil.",
+      "text_sha256": "sha256:e947271ddf3d321599c1fe040305eb7c1ebca9245e3773fde3111e9c6237bb7f",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "ap-unknowns-2026-09-01",
+      "title": "AP: questions remain on the Venezuela oil deal",
+      "publisher": "Associated Press",
+      "date": "2026-09-01",
+      "url": "https://apnews.com/article/venezuela-oil-questions-remain",
+      "pinned_path": "data/sources/coverage/ap-unknowns-2026-09-01.html",
+      "text_path": "data/sources/coverage/ap-unknowns-2026-09-01.txt",
+      "quote": "corruption at epic scale",
+      "about": "Senate reactions from Moreno, Kaine, and Van Hollen.",
+      "text_sha256": "sha256:97e01910f590704f754d901a1eb9a7de821b3393e46742eee0bad54df0d27e26",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "ley-hidrocarburos-2026",
+      "title": "Ley de Reforma de la Ley Org\u00e1nica de Hidrocarburos",
+      "publisher": "Gaceta Oficial de la Rep\u00fablica Bolivariana de Venezuela",
+      "date": "2026-01-29",
+      "url": "https://www.imprentanacional.gob.ve/",
+      "pinned_path": "data/sources/venezuela-oil/ley-hidrocarburos-2026.pdf",
+      "text_path": "data/sources/venezuela-oil/ley-hidrocarburos-2026.txt",
+      "quote": "Duraci\u00f3n m\u00e1xima de veinticinco (25) a\u00f1os",
+      "about": "Gaceta Oficial N\u00b0 6.978 Extraordinario: mixed companies capped at 25 years plus up to 15. The new hydrocarbons law the White House fact sheet names.",
+      "text_sha256": "sha256:ba676d78572cb3647b709d7c4bee55f4b56c55742d23a4c8a664a97ef62848ec",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "oilprice-machado-2026-09-03",
+      "title": "OilPrice copy of Machado remarks",
+      "publisher": "OilPrice.com",
+      "date": "2026-09-03",
+      "url": "https://oilprice.com/Latest-Energy-News/World-News/Machado-Venezuela-Oil.html",
+      "pinned_path": "data/sources/coverage/oilprice-machado-2026-09-03.html",
+      "text_path": "data/sources/coverage/oilprice-machado-2026-09-03.txt",
+      "quote": "Machado Backs U.S. Oil Partnership",
+      "about": "Second copy of Machado's September 3 coverage.",
+      "text_sha256": "sha256:705763fcd91c45b7ef07dfd91da79ae336a7c99183a001654752d5cebb6075b3",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "wapo-venezuela-chevron-stub-2026-09-02",
+      "title": "Washington Post Venezuela/Chevron page (subscription stub)",
+      "publisher": "The Washington Post",
+      "date": "2026-09-02",
+      "url": "https://www.washingtonpost.com/business/2026/09/02/chevron-makes-its-own-deal-double-venezuelan-oil-production/",
+      "pinned_path": "data/sources/coverage/wapo-venezuela-chevron-stub-2026-09-02.html",
+      "text_path": "data/sources/coverage/wapo-venezuela-chevron-stub-2026-09-02.txt",
+      "quote": "Washington Post",
+      "about": "Saved page served only a subscription stub (3,404 characters of text), not the full article.",
+      "text_sha256": "sha256:87a36755a0a42cdd2fe8a2a70ca837d201d1c40af97be9f9194c7e6aca72617d",
+      "quote_span_check": "byte_exact"
     }
   ],
   "story_sources": [
@@ -468,211 +705,330 @@
       "id": "wh-fact-sheet-2026-08-31",
       "group": "primary",
       "label": "The White House fact sheet of August 31",
-      "meta": " · released August 31",
+      "meta": " \u00b7 released August 31",
       "usage": "every figure the story marks as the fact sheet"
     },
     {
       "id": "wh-release-2026-09-02",
       "group": "primary",
       "label": "White House release of September 2",
-      "meta": " · released September 2",
+      "meta": " \u00b7 released September 2",
       "usage": "the private-company line, 250,000 barrels a day, early next year"
     },
     {
       "id": "wh-eo-2026-01-09",
       "group": "primary",
       "label": "Executive Order 14373",
-      "meta": " · signed January 9",
+      "meta": " \u00b7 signed January 9",
       "usage": "the deposit-fund emergency that general license 46D points at"
     },
     {
       "id": "ofac-gl-46d",
       "group": "primary",
       "label": "OFAC general license 46D",
-      "meta": " · dated August 27",
+      "meta": " \u00b7 dated August 27",
       "usage": "who may buy Venezuelan oil and where the money must sit"
     },
     {
       "id": "ofac-20260827",
       "group": "official",
       "label": "OFAC recent-actions page, August 27",
-      "meta": " · Treasury",
+      "meta": " \u00b7 Treasury",
       "usage": "the list of amended Venezuela licenses that day"
     },
     {
       "id": "nabep-pr-2026-08-31",
       "group": "primary",
       "label": "NABEP statement",
-      "meta": " · dated August 31",
+      "meta": " \u00b7 dated August 31",
       "usage": "the company's $209 billion and 1 million barrel-a-day goal"
     },
     {
       "id": "mppre-7980",
       "group": "primary",
       "label": "Venezuelan foreign ministry, August 28",
-      "meta": " · Caracas",
+      "meta": " \u00b7 Caracas",
       "usage": "Rodriguez's first public announcement of the agreement"
     },
     {
       "id": "mppre-7986",
       "group": "primary",
       "label": "Rodriguez address on the energy agreement",
-      "meta": " · posted August 29",
+      "meta": " \u00b7 posted August 29",
       "usage": "$209.335 billion, $19 a barrel, 16 percent royalties"
     },
     {
       "id": "mppre-7995",
       "group": "primary",
       "label": "Wright arrives in La Guaira",
-      "meta": " · September 2",
-      "usage": "the Energy secretary's second official visit"
+      "meta": " \u00b7 ministry page dated 01-09-2026",
+      "usage": "Wright's arrival (ministry: Tuesday / arrib\u00f3 este martes)"
     },
     {
       "id": "mppre-8005",
       "group": "primary",
       "label": "Rodriguez on Chevron, September 2",
-      "meta": " · Caracas",
+      "meta": " \u00b7 Caracas",
       "usage": "Chevron expanding, a different operator from NABEP"
     },
     {
       "id": "dcoilwtico-2026-09-08",
       "group": "official",
       "label": "WTI Cushing daily prices",
-      "meta": " · saved September 8, EIA via FRED",
-      "usage": "August 31 and September 1 closes"
+      "meta": " \u00b7 saved September 8, EIA via FRED",
+      "usage": "August 31 and September 1 daily spot prices"
     },
     {
       "id": "gasallw-2026-09-08",
       "group": "official",
       "label": "EIA weekly U.S. gasoline",
-      "meta": " · saved September 8, EIA via FRED",
+      "meta": " \u00b7 saved September 8, EIA via FRED",
       "usage": "weeks ending August 24 and August 31"
     },
     {
       "id": "steo-venezuela-crude-2026-08",
       "group": "official",
       "label": "STEO Venezuela crude",
-      "meta": " · Outlook dated August 6",
+      "meta": " \u00b7 Outlook dated August 6",
       "usage": "January through July 2026 country production"
     },
     {
       "id": "eia-us-crude-proved",
       "group": "official",
       "label": "EIA U.S. crude proved reserves",
-      "meta": " · table released December 30, 2022",
+      "meta": " \u00b7 table released December 30, 2022",
       "usage": "41,151 million barrels at year-end 2021"
     },
     {
       "id": "ap-venezuela-oil-nabep",
       "group": "coverage",
       "label": "Associated Press on the fact sheet",
-      "meta": " · published August 31",
+      "meta": " \u00b7 published August 31",
       "usage": "the refiners meeting and the joint-venture wording"
     },
     {
       "id": "thehill-venezuela-oil-deal",
       "group": "coverage",
       "label": "The Hill",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "the 21 percent country-share line"
     },
     {
       "id": "aljazeera-venezuela-oil-details",
       "group": "coverage",
       "label": "Al Jazeera",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "the Pentagon one-fifth line"
     },
     {
       "id": "cbs-nabep",
       "group": "coverage",
       "label": "CBS News on NABEP",
-      "meta": " · published August 31",
+      "meta": " \u00b7 published August 31",
       "usage": "the split between one-fifth of reserves and 35 percent of the company"
     },
     {
       "id": "cbs-gas-prices",
       "group": "coverage",
       "label": "CBS News on gasoline",
-      "meta": " · published August 31",
+      "meta": " \u00b7 published August 31",
       "usage": "whether pump prices move quickly"
     },
     {
       "id": "npr-venezuela-oil",
       "group": "coverage",
       "label": "NPR",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "AP joint-venture wording on NPR"
     },
     {
       "id": "reuters-chinese-russian",
       "group": "coverage",
       "label": "Reuters on Chinese and Russian operators",
-      "meta": " · published August 31",
-      "usage": "14 contracts versus 17 fields"
+      "meta": " \u00b7 published August 31",
+      "usage": "17 projects, 14 newly granted; Chinese and Russian prior operators"
     },
     {
       "id": "ap-venezuela-chevron",
       "group": "coverage",
       "label": "Associated Press on Chevron",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "Chevron as a separate track"
     },
     {
       "id": "pbs-chevron-expand",
       "group": "coverage",
       "label": "PBS NewsHour on Chevron",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "a U.S. official on Chevron expanding"
     },
     {
       "id": "reuters-chevron-ongc",
       "group": "coverage",
       "label": "Reuters on Chevron, ONGC, GE Vernova",
-      "meta": " · published August 31",
+      "meta": " \u00b7 published August 31",
       "usage": "other pacts, not the NABEP concession"
     },
     {
       "id": "guardian-delcy",
       "group": "coverage",
       "label": "The Guardian",
-      "meta": " · published August 30",
+      "meta": " \u00b7 published August 30",
       "usage": "Rodriguez on ownership and domestic opposition"
     },
     {
       "id": "fox-democrat-venezuela",
       "group": "coverage",
       "label": "Fox News",
-      "meta": " · published August 31",
-      "usage": "Angie Nixon's statement, not a roll call"
+      "meta": " \u00b7 published September 1",
+      "usage": "FL Senate candidate Angie Nixon's statement, not a roll call"
     },
     {
       "id": "eia-crude-oil-reserves-2024",
       "group": "official",
       "label": "EIA proved reserves, year-end 2024",
-      "meta": " · released April 7, 2026",
+      "meta": " \u00b7 released April 7, 2026",
       "usage": "46.0 billion barrels, the figure the White House rounds as roughly 46 billion"
     },
     {
       "id": "doe-fact-sheet-2026-09-02",
       "group": "primary",
       "label": "Energy Department fact sheet, September 2",
-      "meta": " · Department of Energy",
+      "meta": " \u00b7 Department of Energy",
       "usage": "Wright's trip and the Chevron, Eni, GE Vernova signings"
     },
     {
       "id": "state-rubio-novelli-2026-09-01",
       "group": "primary",
       "label": "Rubio interview with Sergio Novelli",
-      "meta": " · State Department, September 1",
+      "meta": " \u00b7 State Department, September 1",
       "usage": "the private-company line a day before the White House restatement"
     },
     {
       "id": "france24-betancourt",
       "group": "coverage",
       "label": "France 24 on Betancourt",
-      "meta": " · published September 1",
+      "meta": " \u00b7 published September 1",
       "usage": "naming the operator the fact sheet omits"
+    },
+    {
+      "id": "truthsocial-trump-venezuela-oil-2026-08-28",
+      "group": "coverage",
+      "label": "Trump Truth Social post",
+      "meta": " \u00b7 August 28",
+      "usage": "Friday's majority-control and lower-gas-prices announcement"
+    },
+    {
+      "id": "politico-55pct-2026-08-28",
+      "group": "coverage",
+      "label": "POLITICO on 55 percent",
+      "meta": " \u00b7 published August 28",
+      "usage": "officials' 55 percent effective-output arithmetic"
+    },
+    {
+      "id": "bbc-venezuela-oil-2026-08-28",
+      "group": "coverage",
+      "label": "BBC on the agreement",
+      "meta": " \u00b7 published August 28",
+      "usage": "55 percent control and Hormuz supply disruption"
+    },
+    {
+      "id": "fox-aaa-gas-2026-08-29",
+      "group": "coverage",
+      "label": "Fox News on AAA gasoline",
+      "meta": " \u00b7 published August 29",
+      "usage": "$4.08 AAA regular and Iran-war pump-price line"
+    },
+    {
+      "id": "ap-kpbs-55pct-2026-08-28",
+      "group": "coverage",
+      "label": "AP via KPBS",
+      "meta": " \u00b7 published August 28",
+      "usage": "55 percent effective output on Friday"
+    },
+    {
+      "id": "djn-wsj-warrants-2026-08-29",
+      "group": "coverage",
+      "label": "Dow Jones / WSJ on penny warrants",
+      "meta": " \u00b7 published August 29, via TradingView",
+      "usage": "OSC penny warrants and Betancourt investigations without charges"
+    },
+    {
+      "id": "semafor-osc-2026-09-02",
+      "group": "coverage",
+      "label": "Semafor on OSC",
+      "meta": " \u00b7 published September 2",
+      "usage": "Pentagon spokesman on equity stakes and the statute authority"
+    },
+    {
+      "id": "reuters-boe-antidilution-2026-09-04",
+      "group": "coverage",
+      "label": "Reuters warrants story via BOE Report",
+      "meta": " \u00b7 published September 4",
+      "usage": "35 percent as penny warrants; reuters.com blocked"
+    },
+    {
+      "id": "reuters-investing-warrants-2026-09-04",
+      "group": "coverage",
+      "label": "Reuters warrants story via Investing.com",
+      "meta": " \u00b7 published September 4",
+      "usage": "dividends before exercise; right of first offer"
+    },
+    {
+      "id": "reuters-investing-14of17-2026-08-31",
+      "group": "coverage",
+      "label": "Reuters 14-of-17 via Investing.com",
+      "meta": " \u00b7 published August 31",
+      "usage": "17 projects, 14 newly granted"
+    },
+    {
+      "id": "guardian-machado-2026-09-03",
+      "group": "coverage",
+      "label": "Guardian on Machado",
+      "meta": " \u00b7 published September 3",
+      "usage": "Machado's September 3 video"
+    },
+    {
+      "id": "reuters-marketscreener-machado-2026-09-03",
+      "group": "coverage",
+      "label": "Reuters Machado via MarketScreener",
+      "meta": " \u00b7 published September 3",
+      "usage": "Machado Miraflores line; 1.25 million b/d Reuters figure"
+    },
+    {
+      "id": "reed-statement-2026-08-29",
+      "group": "coverage",
+      "label": "Sen. Jack Reed statement",
+      "meta": " \u00b7 August 29",
+      "usage": "military-as-investor rejection"
+    },
+    {
+      "id": "ap-unknowns-2026-09-01",
+      "group": "coverage",
+      "label": "AP on remaining questions",
+      "meta": " \u00b7 published September 1",
+      "usage": "Moreno, Kaine, and Van Hollen reactions"
+    },
+    {
+      "id": "ley-hidrocarburos-2026",
+      "group": "primary",
+      "label": "Venezuela hydrocarbons law reform",
+      "meta": " \u00b7 Gaceta Oficial January 29, 2026",
+      "usage": "25-year mixed-company cap plus 15-year extension"
+    },
+    {
+      "id": "oilprice-machado-2026-09-03",
+      "group": "coverage",
+      "label": "OilPrice on Machado",
+      "meta": " \u00b7 published September 3",
+      "usage": "second copy of Machado coverage"
+    },
+    {
+      "id": "wapo-venezuela-chevron-stub-2026-09-02",
+      "group": "coverage",
+      "label": "Washington Post stub",
+      "meta": " \u00b7 September 2",
+      "usage": "subscription stub only, 3,404 text characters"
     }
   ],
   "primary_sources": [
@@ -724,54 +1080,155 @@
       "bytes": 58032,
       "sha256": "sha256:8f98e50be44702a7c2c9e3aaae469d6e50573cb508a29874b06a201c87964f5e",
       "url": "https://mppre.gob.ve/publicacion/7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu"
+    },
+    {
+      "id": "ley-hidrocarburos-2026",
+      "path": "data/sources/venezuela-oil/ley-hidrocarburos-2026.pdf",
+      "bytes": 1185304,
+      "sha256": "sha256:0429f4e7f67d469b1a08904d677eb9305d50e8ecb8a38f2553982fb429a0fe22",
+      "url": "https://www.imprentanacional.gob.ve/"
+    },
+    {
+      "id": "doe-fact-sheet-2026-09-02",
+      "path": "data/sources/venezuela-oil/doe-fact-sheet-2026-09-02.html",
+      "bytes": 120518,
+      "sha256": "sha256:0b84dcd4c4632a032d9bb8a09548bf4c18450ba8490ee2fa02e5fa9dcf202f43",
+      "url": "https://www.energy.gov/articles/fact-sheet-delivering-president-trumps-promise-unleash-prosperity-and-security-united"
+    },
+    {
+      "id": "state-rubio-novelli-2026-09-01",
+      "path": "data/sources/venezuela-oil/state-rubio-novelli-2026-09-01.html",
+      "bytes": 196920,
+      "sha256": "sha256:274d2bfa932b8e2df168a580b3d297a7b59e023ad24520771c9217385fcbe18f",
+      "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/09/secretary-of-state-marco-rubio-with-sergio-novelli-on-al-dia-con-sergio-novelli"
     }
   ],
   "figures": [
     {
-      "figure": "fields",
+      "figure": "fields_17",
+      "label": "17 fields",
       "source_id": "wh-fact-sheet-2026-08-31",
       "value": "17"
     },
     {
-      "figure": "equity_percent",
+      "figure": "stake_35",
+      "label": "35 percent stake",
       "source_id": "wh-fact-sheet-2026-08-31",
       "value": "35"
     },
     {
-      "figure": "offtake_percent",
+      "figure": "offtake_20",
+      "label": "20 percent off-take",
       "source_id": "wh-fact-sheet-2026-08-31",
       "value": "20"
     },
     {
+      "figure": "effective_55",
+      "label": "55 percent effective output",
+      "source_id": "politico-55pct-2026-08-28",
+      "value": "55"
+    },
+    {
+      "figure": "reserves_65b",
+      "label": "65 billion barrels",
+      "source_id": "wh-fact-sheet-2026-08-31",
+      "value": "65"
+    },
+    {
+      "figure": "wti_aug28",
+      "label": "WTI Aug 28",
+      "source_id": "dcoilwtico-2026-09-08",
+      "value": "84.57"
+    },
+    {
       "figure": "wti_aug31",
+      "label": "WTI Aug 31",
       "source_id": "dcoilwtico-2026-09-08",
       "value": "87.03"
     },
     {
       "figure": "wti_sep1",
+      "label": "WTI Sep 1",
       "source_id": "dcoilwtico-2026-09-08",
       "value": "91.48"
     },
     {
       "figure": "wti_change",
+      "label": "WTI Mon to Tue change",
       "source_id": "dcoilwtico-2026-09-08",
       "value": "4.45"
     },
     {
+      "figure": "gasoline_aug24",
+      "label": "EIA gasoline Aug 24",
+      "source_id": "gasallw-2026-09-08",
+      "value": "4.218"
+    },
+    {
       "figure": "gasoline_aug31",
+      "label": "EIA gasoline Aug 31",
       "source_id": "gasallw-2026-09-08",
       "value": "4.207"
     },
     {
+      "figure": "aaa_408",
+      "label": "AAA regular $4.08",
+      "source_id": "fox-aaa-gas-2026-08-29",
+      "value": "4.08"
+    },
+    {
       "figure": "steo_jul_mbd",
+      "label": "EIA Venezuela July crude",
       "source_id": "steo-venezuela-crude-2026-08",
       "value": "1.15"
+    },
+    {
+      "figure": "nabep_current_250k",
+      "label": "NABEP current 250,000 b/d",
+      "source_id": "wh-release-2026-09-02",
+      "value": "250000"
+    },
+    {
+      "figure": "nabep_share_jul_pct",
+      "label": "250k / 1.15m share",
+      "source_id": "wh-release-2026-09-02",
+      "value": "21.7"
+    },
+    {
+      "figure": "eia_us_46",
+      "label": "U.S. proved 46.0 billion",
+      "source_id": "eia-crude-oil-reserves-2024",
+      "value": "46.0"
+    },
+    {
+      "figure": "eia_us_41151",
+      "label": "U.S. proved 41,151 million YE2021",
+      "source_id": "eia-us-crude-proved",
+      "value": "41151"
+    },
+    {
+      "figure": "rodriguez_1_5m",
+      "label": "Rodriguez 1.5 million b/d goal",
+      "source_id": "mppre-7986",
+      "value": "1.5"
+    },
+    {
+      "figure": "nabep_1m_goal",
+      "label": "NABEP 1 million b/d goal",
+      "source_id": "nabep-pr-2026-08-31",
+      "value": "1"
+    },
+    {
+      "figure": "reuters_1_25m",
+      "label": "Reuters country 1.25 million b/d",
+      "source_id": "reuters-marketscreener-machado-2026-09-03",
+      "value": "1.25"
     }
   ],
   "needs_ledger": [
     {
       "need": "Signed contract or term sheet",
-      "plain": "The fact sheet, NABEP statement, and ministry pages describe the deal. None of them is the agreement itself.",
+      "plain": "Searched whitehouse.gov, state.gov, nabep.net, MPPRE, and a Federal Register search on September 8. No signed contract text is on any page we saved.",
       "record_id": "wh-fact-sheet-2026-08-31",
       "status": "missing: no contract text on any page we saved"
     },
@@ -782,34 +1239,40 @@
       "status": "missing: no Federal Register notice for the concession in the records we hold"
     },
     {
-      "need": "State Department written statement",
-      "plain": "Rubio's words in the NABEP release are NABEP's record of a post on X. We have not saved that post or a state.gov release on the fact sheet.",
-      "record_id": "nabep-pr-2026-08-31",
-      "status": "partly have"
-    },
-    {
-      "need": "Energy Department written statement",
-      "plain": "DOE's September 2 fact sheet on Wright's trip is saved.",
-      "record_id": "doe-fact-sheet-2026-09-02",
-      "status": "have"
-    },
-    {
       "need": "Washington Post body",
-      "plain": "The saved Washington Post page was a subscription stub, a few thousand characters, not the article.",
-      "record_id": "ap-venezuela-oil-nabep",
+      "plain": "The saved Washington Post page at data/sources/coverage/wapo-venezuela-chevron-stub-2026-09-02.txt is 3,404 characters, a subscription stub, not the article.",
+      "record_id": "wapo-venezuela-chevron-stub-2026-09-02",
       "status": "missing: the Post did not let a full page be saved"
     },
     {
       "need": "House or Senate roll call",
-      "plain": "Fox recorded one Florida lawmaker. No congressional vote on this deal is in the records we hold.",
-      "record_id": "fox-democrat-venezuela",
+      "plain": "Reed, Crawford, Moreno, Kaine, Van Hollen, and Nixon are recorded. No floor vote on this deal is in the records we hold.",
+      "record_id": "ap-venezuela-oil-nabep",
       "status": "missing: no roll call in the saved records"
     },
     {
       "need": "Field list matching 17 versus 14",
-      "plain": "The fact sheet says 17 fields. Reuters, from officials, says 14 contracts. We do not have the concession list.",
+      "plain": "Reuters, from officials, says NABEP is expected to control 17 projects and that 14 of those will be newly granted. The pin does not name the other three field-by-field.",
       "record_id": "reuters-chinese-russian",
-      "status": "missing: no field-by-field list"
+      "status": "have: 17 = 14 newly granted + 3 already in NABEP's count; operators named for the Chinese and Russian fields; no field-by-field list of the other three"
+    },
+    {
+      "need": "OSC statute text",
+      "plain": "Dow Jones and Semafor describe OSC's capital-assistance power. The statute text itself is not pinned.",
+      "record_id": "semafor-osc-2026-09-02",
+      "status": "missing: statute text not pinned"
+    },
+    {
+      "need": "Whether the warrants have been exercised",
+      "plain": "A U.S. official described penny warrants as a right to buy later. No record we hold says they have been exercised.",
+      "record_id": "reuters-boe-antidilution-2026-09-04",
+      "status": "missing: exercise status not in the records we hold"
+    },
+    {
+      "need": "NABEP place of organization",
+      "plain": "An unverified interrogation note said Barbados. General license 46D defines an established U.S. entity as organized under U.S. laws on or before January 29, 2025. Not checked against a corporate filing.",
+      "record_id": "ofac-gl-46d",
+      "status": "not checked"
     },
     {
       "need": "EIA weekly gasoline CSV",
@@ -825,13 +1288,13 @@
     },
     {
       "need": "EIA year-end 2024 proved reserves",
-      "plain": "The April 7, 2026, EIA report puts U.S. crude and lease condensate proved reserves at 46.0 billion barrels at year-end 2024. That matches the White House's roughly 46 billion.",
+      "plain": "The April 7, 2026, EIA report puts U.S. crude and lease condensate proved reserves at 46.0 billion barrels at year-end 2024.",
       "record_id": "eia-crude-oil-reserves-2024",
       "status": "have"
     },
     {
       "need": "State Department Rubio interview",
-      "plain": "The September 1 transcript is saved. Rubio said the deal is with a private company, not the interim government.",
+      "plain": "The September 1 transcript is saved.",
       "record_id": "state-rubio-novelli-2026-09-01",
       "status": "have"
     },
@@ -840,21 +1303,43 @@
       "plain": "DOE's September 2 fact sheet on Wright's trip is saved.",
       "record_id": "doe-fact-sheet-2026-09-02",
       "status": "have"
+    },
+    {
+      "need": "Venezuela hydrocarbons law text",
+      "plain": "Gaceta Oficial N\u00b0 6.978 Extraordinario is pinned.",
+      "record_id": "ley-hidrocarburos-2026",
+      "status": "have"
     }
   ],
   "coverage_records": [
-    "ap-venezuela-oil-nabep",
-    "thehill-venezuela-oil-deal",
     "aljazeera-venezuela-oil-details",
-    "cbs-nabep",
-    "cbs-gas-prices",
-    "npr-venezuela-oil",
-    "reuters-chinese-russian",
+    "ap-kpbs-55pct-2026-08-28",
+    "ap-unknowns-2026-09-01",
     "ap-venezuela-chevron",
-    "pbs-chevron-expand",
-    "reuters-chevron-ongc",
+    "ap-venezuela-oil-nabep",
+    "bbc-venezuela-oil-2026-08-28",
+    "cbs-gas-prices",
+    "cbs-nabep",
+    "djn-wsj-warrants-2026-08-29",
+    "fox-aaa-gas-2026-08-29",
+    "fox-democrat-venezuela",
     "guardian-delcy",
-    "fox-democrat-venezuela"
+    "guardian-machado-2026-09-03",
+    "npr-venezuela-oil",
+    "oilprice-machado-2026-09-03",
+    "pbs-chevron-expand",
+    "politico-55pct-2026-08-28",
+    "reed-statement-2026-08-29",
+    "reuters-boe-antidilution-2026-09-04",
+    "reuters-chevron-ongc",
+    "reuters-chinese-russian",
+    "reuters-investing-14of17-2026-08-31",
+    "reuters-investing-warrants-2026-09-04",
+    "reuters-marketscreener-machado-2026-09-03",
+    "semafor-osc-2026-09-02",
+    "thehill-venezuela-oil-deal",
+    "truthsocial-trump-venezuela-oil-2026-08-28",
+    "wapo-venezuela-chevron-stub-2026-09-02"
   ],
   "coverage_threshold": 2,
   "authored_sections": [
@@ -871,19 +1356,19 @@
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "After independent review: EIA year-end 2024 reserves (46.0 billion), DOE September 2 fact sheet, State Department Rubio-Novelli transcript, and France 24 on Betancourt were added to the August 31 fact sheet, OFAC 46D, NABEP, ministry pages, EIA/FRED series, and the first coverage set."
+      "evidence": "VERIFY browser copies admitted under coverage/ and venezuela-oil/; SOURCES.md regenerated; hydrocarbons law PDF pinned."
     },
     "derived_numbers_computed": {
       "done": true,
-      "evidence": "WTI change 91.48 minus 87.03 equals 4.45; gasoline 4.207 minus 4.218 equals minus 0.011; NABEP 250,000 over STEO July 1,150,000 equals 21.7 percent, all in src/data/venezuelaoil202609.mjs."
+      "evidence": "WTI change, gasoline change, and 21.7 percent share recomputed from saved series."
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "Al Jazeera's Pentagon one-fifth line is wrong against the 35 percent equity. CBS splits the numbers correctly. AP and NPR joint-venture wording is not in the fact sheet. Reuters 14 contracts is not the fact sheet's 17 fields. Hill 21 percent is the outlet's share of a country total the fact sheet does not state."
+      "evidence": "Friday 55 percent, warrants, Machado, Reed/Crawford, and Defense/War title checked against pins."
     },
     "section_grammar": {
       "done": true,
-      "evidence": "what-happened, the-catch, where-this-sits, who-feels-it, outlets, claim-check, markets, what-happened-next, unknowns, records, in that order."
+      "evidence": "Fixed section order with Friday-first What happened, six-row catch, warrants block, claim check."
     },
     "chip_vocabulary": {
       "done": true,

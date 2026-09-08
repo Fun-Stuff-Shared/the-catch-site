@@ -5,20 +5,21 @@
 export const event = {
   slug: "venezuela-oil/september-2026",
   title: "The White House named a private operator, a 35 percent stake, and 100-year rights to 17 Venezuelan oil fields",
-  dek: "Monday's fact sheet said Venezuela's interim authorities granted the concessions to North American Blue Energy Partners. Two days later the White House said the deal was with a private company, not the interim government.",
+  dek: "Announced Friday as majority control and lower gas prices. Monday's fact sheet listed the instruments: a 35 percent stake and a 20 percent purchase right. By Thursday a U.S. official called the stake warrants.",
   name: "Venezuela oil",
   span: "August 28 to September 2, 2026",
   date: "2026-08-31",
   updated: "2026-09-08",
   kpis: [
     { value: "17", unit: "fields", label: "100-year concessions, White House fact sheet" },
-    { value: "35%", unit: "equity", label: "to the Department of War's Office of Strategic Capital" },
+    { value: "35%", unit: "stake", label: "warrants, per a U.S. official, September 4" },
     { value: "20%", unit: "off-take", label: "State can buy at production cost" },
     { value: "1.15", unit: "million b/d", label: "Venezuela crude, EIA July 2026" },
   ],
 };
 
-// WTI Cushing spot, EIA via FRED DCOILWTICO saved 2026-09-08.
+// WTI Cushing daily spot, EIA via FRED DCOILWTICO saved 2026-09-08.
+// These are daily spot prices, not exchange closes.
 export const wti = {
   aug28: 84.57,
   aug31: 87.03,
@@ -42,6 +43,10 @@ export const steoCrude = {
 // White House September 2: NABEP "already produces 250K barrels of oil a day."
 export const nabepCurrentBpd = 250000;
 export const nabepShareOfJulCrudePct = 21.7; // 250000 / 1_150_000 * 100, rounded to 1 decimal
+
+// Near-term production goals named on the records (barrels per day).
+export const nabepGoalBpd = 1000000;
+export const rodriguezGoalBpd = 1500000;
 
 // EIA proved U.S. crude at year-end 2021, last figure on the saved annual table.
 export const eiaUsProved2021Mmbbl = 41151;

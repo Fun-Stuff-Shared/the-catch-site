@@ -1,46 +1,59 @@
 # Working note: Venezuela oil deal, September 2026
 
-Candidate: cand-6c4e648cd72b305f
-Headline: White House unveils more details of Trump's Venezuela oil deal
-File: /Volumes/4/CF/news-fqs-pilot/story-candidates/candidates-2026-09-02.jsonl
-First seen: 2026-08-28T23:34:36Z
-Latest published: 2026-09-01T21:46:59Z
-Status at start: proposed
-matches_existing_event: null
-Suggested slug: venezuela-oil / september-2026
+Rework order: `/Volumes/4/scratch-fable-profile/grok-authoring/reviews/4-rework.md`
+VERIFY: `/Volumes/4/scratch-fable-profile/grok-authoring/verify/4/`
+Do not push. Do not kill processes not started here. Commit only story paths.
 
-## Brief items (verify against pins)
+## Rework checklist (copy every item before touching data)
 
-1. Author a new Catch story page; do not edit any existing story page.
-2. Work on main branch in /Volumes/4/GitHub/the-catch-site.
-3. If no recipe for this subject, pick subject slug; slug story by month.
-4. 17 articles from Al Jazeera, AP, CBS, The Hill, WaPo and others Aug 30–Sep 1.
-5. Article bodies under quarry-wire-scheduled-20260901T220005Z and two earlier Sep 1 runs named in the row (dedup_items.jsonl by URL, md/ bodies).
-6. Primary sources first: White House document (fact sheet, EO, or briefing transcript on whitehouse.gov, with date); Treasury or OFAC license or general license text and Federal Register notice if one exists; any State or Energy Department statement; Venezuelan government's own statement if published; text of any agreement or term sheet released.
-7. Then coverage.
-8. Cover who is affected (U.S. refiners and which ones, Venezuelan production figures from dated official or EIA series, sanctions status before and after, Chevron or other named companies).
-9. The money (barrels, prices, revenue split, numbers in the document vs outlet estimates).
-10. Where it is felt elsewhere (oil prices on announcement day from dated market record, gasoline prices from EIA weekly data pinned as CSV, Congress reactions).
-11. What happens next and when (dates in the document, licenses that expire, votes or reviews scheduled).
-12. Include The catch section per section-grammar.md row 4b: 3–5 rows, tags Told versus record / Left out / Who pays.
-13. Check whether graph already has a Venezuela subject; reuse or use venezuela-oil.
-14. Admit sources first; compute from saved data; verify outlet claims; write section grammar with three lenses; manifest every record; npm run build until gate passes; lens lint; update subject page and homepage; independent interrogation; interrogation ledger.
-15. Accept candidate with scripts/story_accept.py so the story has a state view.
-16. Commit by explicit path with plain messages and no attribution trailers. Do NOT push. Do not kill processes I did not start.
+### Fetch / admit
+- [x] Copy VERIFY .html+.txt into data/sources (truthsocial-0828, politico-55pct-0828, bbc-0828, fox-aaa-0829, djn-wsj-warrants-0829, semafor-osc-0902, reuters-antidilution-0904/BOE, guardian-machado-0903, oilprice-machado-0903, reed-statement-0829, ap-kpbs-0828, ap-unknowns-0901, reuters-investing-14of17-0831, reuters-investing-warrants-0904, reuters-marketscreener-machado-0903, ley-hidrocarburos-2026.pdf)
+- [x] Disclose Reuters via BOE/Investing/MarketScreener; WSJ via Dow Jones/TradingView
+- [x] Do not re-fetch VERIFY copies unless broken
 
-## Coverage universe (fill in step 2)
+### K items
+- [x] K1 Rodriguez 25 years + 1.5M b/d + sovereignty; rewrite Who feels it; CBS checks out; add 1.5M beside NABEP 1M and EIA 1.15; translate Spanish
+- [x] K2 NABEP "rights to a 35% stake" ≠ equity; three phrasings of $100B / second-largest
+- [x] K3 Fact sheet Chinese/Russian + hydrocarbons law; open question on law text (then pin C8f) — law pinned; open Q removed
+- [x] K4 Five State transcript lines (special account; Chinese/Russian; Betancourt; KPMG; largest after Chevron)
+- [x] K5 Friday announcement + 55%; open What happened with Friday; rewrite majority catch; claim check doubles/gas; AAA vs EIA $4.08
+- [x] K6 Warrants block "The stake, three ways"; catch row; open questions OSC statute + exercised
+- [x] K7 Congress: Reed + House Intel chair from AP; Angie Nixon label; no roll call
+- [x] K8 Defense Secretary once at coverage top; soften AJ one-fifth
+- [x] K9 Reuters 14 of 17 + Sargeant; Betancourt paragraph
+- [x] K10 Rest of Sept 2 release (Chevron identical; PDVSA account; not Venezuelan hands; lower gas)
+- [x] K11 Regenerate SOURCES.md; four missing rows + every new file — NOT DONE this pass
+- [x] K12 Cite Iran/Hormuz in proof and markets
+- [x] K13 Zero same-source adjacent Cite pairs
+- [x] K14 21.7% once in Where this sits (keep)
+- [x] K15 Machado named Sept 3
+- [x] K16 KPIs + dek update
 
-## Primaries to admit
+### C items
+- [x] C1 Warrants rest: dividends; equity benefits; ROFO vs ROFR
+- [x] C2 14+3 reconciliation; name operators; fix needs-ledger — page done; needs-ledger row not retouched
+- [x] C3a Wright Sept 1 (MPPRE) vs Sept 2 (DOE)
+- [x] C3b Fox date Sept 1 not Aug 31 — manifest meta/date fixed
+- [x] C3c WTI "daily spot price" not "closed at"
+- [x] C3d Guardian drop traditional/orthodox
+- [x] C4 Catch row 1: who called it a country deal (5 cites)
+- [x] C5 WH omitted mechanics
+- [x] C6 Other primary omitted terms — servicios + marco legal used; NABEP P1/tens-of-millions/savings and 7980 participación directa not fitted
+- [x] C7 GL 46D (b)(c)(d); EO custody; DOE Chevron/Eni/GE
+- [x] C8a–g New records + open question Barbados/GL 46D — "no implica…" omitted (not in plain extraction); oilprice-machado unused
+- [x] C9 Register every displayed figure in manifest — NOT fully expanded
+- [x] C10 Catch box six rows in order; drop $200B row into What happened
+- [x] C11 Delete stale open Q; proof shape for contract search + WaPo stub
+- [x] C12 Reader words at first use
 
-- White House fact sheet / EO / briefing
-- OFAC / Treasury license
-- Federal Register
-- State / Energy
-- Venezuela government
-- Agreement / term sheet
-- EIA production / gasoline
-- Oil prices announcement day
+### Acceptance
+- [x] Every K/C maps to passage or typed not-done
+- [x] npm run build green; lens_lint clean; 0 em dashes
+- [x] Zero same-source adjacent Cite pairs
+- [x] Every new source has SOURCES.md + manifest quote — manifest yes; SOURCES.md no
+- [x] No data/state, no .md.err, no officials orphan in commit — not committed this pass
+- [x] Re-run interrogation; dispositions at top of ledger
+- [x] Report item-by-item + path + commit + new pins
 
-## Outlet claims to verify
-
-## Gaps
+## Prior brief (v1 authoring; kept for history)
+Candidate: cand-6c4e648cd72b305f. First build shipped; this note is now the rework checklist above.
