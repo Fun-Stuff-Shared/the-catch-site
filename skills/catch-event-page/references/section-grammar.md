@@ -7,52 +7,60 @@ when it is truly empty.
 
 ## Shape rules (inverted pyramid, 2026-09-08, Zain)
 
-The page is an inverted pyramid. A reader who stops after Three things has the story; a
-reader who stops after The catch has the checking; everything deeper is there for the
-reader who wants it, behind a disclosure, never in the way. The depth stays on the page.
-It does not stay in the reader's path.
+Inverted pyramid is a writing order, not a layout trick. The most important thing comes
+first and each paragraph after it goes one level deeper, so a reader can stop anywhere and
+leave with a true picture, and a reader who keeps going is taken through the topic
+progressively. The depth stays on the page, in the open, in that order. It is never hidden
+in a collapsed box: a reader who wants it should be reading toward it, not clicking for it.
+The model is /officials/marco-rubio/zika-2016/: one dense What happened that explains each
+mechanism inline the moment it is needed ("a vote to cut off debate so a proposal can get a
+final vote, which takes 60 yes votes"), then a chronology table, then his words as quote
+cards, then the votes as a list, then findings, then how much this proves, then the full
+record table at the end. Read WRITING.md at the repo root before writing a word; it is the
+house style and it binds every page.
 
-1. **Budget the fact blocks.** A section carries at most four `SourcedBlock`s in the open.
-   Every further record goes inside a `<details class="receipt" data-layer="fact">` with a
-   plain summary line ("the filing, line by line", "the ballot and the calendar"). A
-   disclosure tagged `fact` stays visible in The story and Just the facts, collapsed; a
-   disclosure tagged `proof` shows only in Show the work. Method notes, capture dates, and
-   arithmetic are `proof`; records a curious reader might open are `fact`.
+0. **The story is the synthesis; the records are the facts view.** Narrative carries the
+   story in the Zika register. A `SourcedBlock` that restates a document line by line (the
+   filing itself, a committee's books, a ballot listing) is marked `detail` and shows in Just
+   the facts and Show the work, in the open; The story shows the figures, quote cards, the
+   catch, the checked claims, and the narrative. Facts a reader needs to follow the story are
+   written into the narrative with their cites, not left in a detail block.
+1. **Write it in descending order of importance.** Each section opens with the sentence a
+   reader most needs, and every paragraph after goes one step deeper. The full record (every
+   filing line, every vote, every quote) sits at the end of its section or in the closing
+   "full record" table, in the open. Collapsed `<details>` are for proof only (arithmetic,
+   capture dates, method), never for facts.
 2. **Every number series is a figure, not a paragraph.** Two or more comparable numbers
    (committees, months, candidates, outlets, years) render through `BarChart`, `DataTable`,
-   or `StepChart` from values in the data module, inside a `<figure class="story-figure"
-   data-layer="fact">` with a figcaption, a one-sentence `chart-source` line that says what
-   the figure shows, and a `chart-vintage` line tagged `proof`. A story with a numeric series
-   and no figure is not done.
-3. **One mechanism sentence per introduced term.** Before the first number that leans on a
-   term (independent expenditure, 48-hour notice, connected TV, margin of error, seasonal
-   adjustment, Global Gateway), one sentence says what the thing is in everyday words.
-   The jobs page's "the jobs report is really two surveys" is the model.
-4. **Every section ends on a "so what".** The last narrative sentence of a section says
-   what the section's records add up to for the reader ("a tie by the poll's own standard";
-   "a hiring stall more than a burst of layoffs"). A section that ends on a quote is not
+   `DecisionTimeline`, or `StepChart` from values in the data module, inside a
+   `<figure class="story-figure" data-layer="fact">` with a figcaption and a one-sentence
+   `chart-source` line; the `chart-vintage` line is `proof`. A story with a numeric series
+   and no figure is not done. A story with dated steps has a chronology table.
+3. **One mechanism sentence per introduced term, inline, at first use.** Independent
+   expenditure, 48-hour notice, connected TV, margin of error, seasonal adjustment, Global
+   Gateway: one sentence in everyday words, in the paragraph that first leans on the term.
+4. **Every section ends on a "so what".** The last narrative sentence says what the
+   section's records add up to for the reader. A section that ends on a quote is not
    finished.
-5. **Round in the story; cents in the proof.** Story and fact text carry `millions()`-style
-   rounding ($7.7 million, 2.5 percent). Exact figures live in the proof receipts and the
-   data module. Zero dollar figures to the cent in the story view is the check.
-6. **Rank the catch.** Rows in The catch are ordered by consequence, each carries a "Why it
-   matters:" clause of one sentence, and rows that cannot earn one (LLC versus Inc., a
-   pronoun, a rounding) go into a single `catch-minor` line under the list or out. A row
-   rests on two records that disagree, never on a label, a preview, a dateline correct in
-   local time, or a broader true word.
-7. **Coverage as cards, errors first.** The outlets section uses `OutletCheck` cards with
-   `status="warn"` rows first and one `ok` card per outlet or per shared dispatch, never
-   a paragraph per outlet that concludes the outlet was right. One narrative line above
-   the cards states the count ("Nine outlets. Six got the filing right. Three called
-   independent spending a donation.").
-8. **Who feels it is a dated list.** A `dated-list` of the reader's own facts in order
-   (deadlines, hearings, when the money lands, when the vote is), each cited, plus at most
-   two narrative paragraphs. It is the section readers come for; it is never the shortest.
-9. **Measure before you say done.** In a browser at 1280 wide: story-view height, words by
-   layer (fact, narrative, proof), fact blocks per section, dollar figures to the cent,
-   figures on the page. The gold jobs page is 7,100 px, 1,745 words, 15 fact blocks, one
-   chart and two tables. A page at twice that height with no figure is the anti-pattern.
-
+5. **Round in the story; cents in the proof.** Story and fact text carry rounded figures
+   ($7.7 million, 2.5 percent); exact figures live in proof receipts and the data module.
+6. **Rank the catch.** Rows ordered by consequence, each with a "Why it matters:" sentence;
+   rows that cannot earn one share a single `catch-minor` line or go. A row rests on two
+   records that disagree, never on a label, a preview, a dateline correct in local time, or
+   a broader true word.
+7. **Coverage as cards, errors first, with the closed chip set.** `OutletCheck` cards,
+   `status="warn"` first; chips are the vocabulary below (checks out, consistent,
+   mislabeled, unconfirmed), never invented words. Outlets that carried one dispatch share a
+   card. One count line above the cards.
+8. **Who feels it is a dated list of the reader's own facts**, in order, each cited, then
+   at most two narrative paragraphs. It is never the shortest section.
+9. **Quotes as cards.** A person's words are a quote card (date, venue, the words, the
+   record), not a paragraph that begins with an institution's name.
+10. **Measure before you say done.** In a browser at 1280 wide: story-view height, words by
+    layer, fact blocks per section, dollar figures to the cent, figures on the page. The
+    gold jobs page is 7,100 px, 1,745 words, 15 fact blocks, one chart and two tables. A
+    page at twice that height with no figure is the anti-pattern; so is a page that reaches
+    the target by collapsing its facts.
 
 ## Page skeleton (in order)
 
@@ -62,9 +70,9 @@ It does not stay in the reader's path.
 | 1 | In this story (`story-toc`) | fact | Ordered list of section anchors below. |
 | 2 | KPI strip | fact | Three to four values from `event.kpis`; values nowrap; units small. |
 | 3 | Three things to know | fact | Three declarative sentences, each a `SourcedBlock` with a `Cite`. |
-| 4 | What happened (`what-happened`) | fact + narrative | Three to five narrative paragraphs that tell it in order, citing the records, with the mechanism sentence for each new term; the record's own lines (`SourcedBlock kind="record"`) sit in a `fact` disclosure ("the filing, line by line") unless a quote is the story. |
+| 4 | What happened (`what-happened`) | fact + narrative | Three to five narrative paragraphs that tell it in order, citing the records, with the mechanism sentence for each new term; the record's own lines (`SourcedBlock kind="record"`) follow, in the open, in descending order of what a reader needs. |
 | 4b | The catch (`the-catch`) | fact | Pilot rule (2026-09-08, Zain). Three to five rows, each a record-bound takeaway: a bold lead phrase of two to four words, one or two cited sentences, and an anchor link to the section that holds the evidence. Exactly three tags, in these words: "Told versus record" (a headline or claim the record contradicts), "Left out" (a fact in the record or held coverage the coverage skipped), "Who pays" (the cost to a consumer, traveler, worker, or taxpayer, with its number). No row without a `Cite`; no opinion words. Ranked by consequence; each row ends with "Why it matters:" and one sentence; small slips share one `catch-minor` line. A bordered block like Three things, visually distinct from it, kicker "The catch". |
-| 5 | Where this sits (`where-this-sits`) | fact chart + proof provenance + narrative | Chart or table computed at build from the admitted series (`BarChart`, `DataTable`, `StepChart`); three or four narrative paragraphs that place the event (the race, the scale, the history); the rest of the record in `fact` disclosures. Vintage line and values table are proof. Percentiles, streaks, "held for N days" are `computed` chips with receipts. Capped at a quarter of the page. |
+| 5 | Where this sits (`where-this-sits`) | fact chart + proof provenance + narrative | Chart or table computed at build from the admitted series (`BarChart`, `DataTable`, `StepChart`); three or four narrative paragraphs that place the event (the race, the scale, the history), then the rest of the record in the open, deepest last. Vintage line and values table are proof. Percentiles, streaks, "held for N days" are `computed` chips with receipts. Capped at a quarter of the page. |
 | 6 | Projections / the real signal | fact + narrative | Only when the record has one (SEP tables, revision tables, household survey). |
 | 7 | Who feels it (`who-feels-it`) | fact + narrative | A `dated-list` of the reader's own facts in order, each cited, then the official series the reader lives with (mortgage rate, unemployment, real earnings). |
 | 8 | What the coverage got right, and what it got wrong (`outlets`) | fact | One count line, then `OutletCheck` cards, errors first: what they wrote, the chip verdict, what the record shows, the `Cite` in the card's slot. Outlets that carried the same dispatch share one card. |
@@ -101,10 +109,6 @@ use them; copy their shapes.
 
 <details class="receipt" data-layer="proof"><summary>how this was computed</summary>
   <p>Monthly change from the saved PAYEMS series, seasonally adjusted, first print against the August 11 vintage. Mean revision minus 16,000 across six months.</p>
-</details>
-
-<details class="receipt" data-layer="fact"><summary>the filing, line by line</summary>
-  <SourcedBlock source="fec-form24-cover" kind="record"><p>...<Cite s="fec-form24-cover" /></p></SourcedBlock>
 </details>
 
 <figure class="story-figure" data-layer="fact">

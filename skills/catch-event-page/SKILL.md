@@ -30,8 +30,8 @@ Every block on the page carries exactly one `data-layer`:
 
 | Layer | Who sees it | What goes in it |
 |---|---|---|
-| `fact` | every mode | KPIs, fact blocks, charts, the sources list. Each statement binds to one record. |
-| `narrative` | The story, Show the work | Explanation and framing. Every narrative paragraph cites at least one record with `<Cite>`. A narrative sentence that cannot cite a fact block does not ship. |
+| `fact` | every mode, except `detail` blocks which Just the facts and Show the work show | KPIs, figures, quote cards, the catch, checked claims, the sources list, and the record blocks. A record block that restates a document line by line is `<SourcedBlock detail>`: it stays out of The story and appears, in the open, in the other two views. |
+| `narrative` | The story, Show the work | The synthesis: tight reporting, most important first, mechanisms inline, a "so what" per section (WRITING.md, "What each view is for"). Every narrative paragraph cites at least one record with `<Cite>`. A narrative sentence that cannot cite a fact block does not ship. |
 | `proof` | Show the work only | Receipts, arithmetic, capture dates, revision warnings, source-usage notes. Auditor register. |
 
 "Just the facts" hides narrative. "The story" hides proof. "Show the work" shows all
@@ -84,13 +84,15 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    in a more specific way than the reviewer said; say so on the page with a dated
    correction.
 6. **Write in the section grammar, as an inverted pyramid.** Fixed order, sections dropped
-   only when truly empty. Read `references/section-grammar.md` before writing, its shape
-   rules first: four open fact blocks per section and the rest behind a `fact` disclosure,
-   every number series a figure from the data module (`BarChart`, `DataTable`, `StepChart`
-   in `src/components/story/`), one mechanism sentence per introduced term, a "so what"
-   closing each section, rounding in the story and cents in the proof, catch rows ranked
-   with a "Why it matters", coverage as `OutletCheck` cards with errors first, Who feels it
-   as a dated list. Use the components:
+   only when truly empty. Read `WRITING.md` at the repo root (house style; it binds every
+   sentence) and `references/section-grammar.md` before writing, the shape rules first:
+   most important first and each paragraph one level deeper, depth in the open and never
+   collapsed, every number series a figure from the data module (`BarChart`, `DataTable`,
+   `DecisionTimeline`, `StepChart` in `src/components/story/`), a chronology table for dated
+   steps, one mechanism sentence per introduced term at first use, a "so what" closing each
+   section, rounding in the story and cents in the proof, catch rows ranked with a "Why it
+   matters", coverage as `OutletCheck` cards with the closed chip set and errors first, Who
+   feels it as a dated list, quotes as cards. Use the components:
    `SourcedBlock` (fact with a chip), `Cite` (numbered source reference),
    `StorySources` (the records list), `ReadingModes`, `StoryState`.
 7. **Manifest every record, and every displayed number.** Append each new record to
@@ -116,7 +118,17 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    (`{ kind, source, from, to, latest, range, rangeCompact }`); the story page, the
    series page, and the homepage lead card all render from that one declaration
    (`<PayrollChart {...event.visual} />`). Never type chart props on a page.
-11. **Stage, then ship on a human's word, then audit live.** Publication is a human
+11. **Read the story into the state record.** The state record (the tracked-figures block at
+    the foot of every story) is filled from the story's own pins, at authoring time, not by a
+    separate batch: ingest the manifest's pins and run the extraction for this event (commands
+    in `references/procedures.md`, step 12), pull the state, rebuild. A story whose foot says
+    the state has not read its sources is not done.
+12. **Keep iterating.** A page is a living record. When a record the page names as missing
+    arrives (a transcript, a roll call, a later filing, a transcript of a spot that was on the
+    post all along), capture it that day, fold it in, re-check the claim, and add the dated
+    line to What happened next. "No transcript is saved" is a task with a date, never a
+    sentence that ships twice.
+13. **Stage, then ship on a human's word, then audit live.** Publication is a human
     decision: hand over the rendered page, not receipts. Commit by explicit path (page, data module, manifest,
     ledger, pins). Push. Poll the live URL until the new content serves, then re-run the
     language checks on the live bytes and screenshot at 100 percent zoom. Judge only the
@@ -143,9 +155,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - [ ] Every step above maps to an artifact, or is reported as not done.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative.
-- [ ] Measured in a browser at 1280 wide (section-grammar shape rule 9): at least one figure,
-      no section with more than four open fact blocks, zero dollar figures to the cent in
-      the story view, and the story view not more than about 9,000 px tall.
+- [ ] Measured in a browser at 1280 wide (section-grammar shape rule 10): at least one figure,
+      a chronology table if the story has dated steps, zero dollar figures to the cent in
+      the story view, no facts behind a collapsed element, and the story view not more than
+      about 9,000 px tall.
 - [ ] SOURCES.md regenerated after the last pin; every manifest `pinned_path` basename has a row.
 - [ ] Zero same-source adjacent `<Cite>` pairs; every computed number is visible or deleted.
 - [ ] The open-questions list asks for nothing the records list already holds.

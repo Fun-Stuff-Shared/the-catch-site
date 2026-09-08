@@ -47,6 +47,7 @@
 
   #story-root [data-layer="proof"] { display: none; }
   #story-root.mode-facts [data-layer="narrative"] { display: none; }
+  #story-root:not(.mode-facts):not(.mode-work) .sourced-block.detail { display: none; }
   #story-root.mode-work [data-layer="proof"] { display: revert; }
   #story-root.mode-work .receipt { display: block; }
   #story-root [data-layer] { transition: opacity 0.15s; }
