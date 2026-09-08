@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomePage from '../../components/HomePage.astro';
+import { series } from '../../lib/discovery.mjs';
+import { designStories } from '../../lib/design-stories.mjs';
+export function getStaticPaths() {
+  if (process.env.CATCH_DESIGN_PREVIEW !== '1') return [];
+  return [{params:{page:'coverage'}, props:{story:null}}, ...designStories.map((story, i) => ({params:{page:`story-${i + 1}`},props:{story}}))];
+}
+const { story } = Astro.props;
+---
+{story ? <BaseLayout title={`${story.title} | Design sample`} current="Home" noindex><div slot="locator" class="locator"><a href="/design/coverage/">15-story design preview</a><span>Fictional story</span></div><div class="content"><main><p class="sample-notice">Synthetic content for layout testing. This is not published reporting.</p><h1>{story.title}</h1><p class="lede">{story.summary}</p><p>This preview tests headline length, topic grouping, discovery, and navigation. No source evidence or reporting is attached to this fictional story.</p><p><a href="/design/coverage/">Back to the 15-story preview</a></p></main></div></BaseLayout> : <HomePage stories={designStories} series={series} synthetic />}

@@ -3,7 +3,7 @@ import { formatDate } from '../lib/presentation.mjs';
 const { story, lead = false } = Astro.props;
 ---
 <article class:list={['story-link', { 'story-link-lead': lead }]} data-story-item data-topic={story.topic} data-search={`${story.title} ${story.summary} ${story.topic} ${story.keywords ?? ''}`.toLowerCase()}>
-  <div class="story-meta"><span>{story.topic}</span><time datetime={story.date}>{formatDate(story.date)}</time></div>
+  <div class="story-meta"><span>{story.topic}</span>{story.synthetic && <span class="sample-mark">Sample</span>}<time datetime={story.date}>{formatDate(story.date)}</time></div>
   <h2><a href={story.href}>{story.title}</a></h2>
   {story.summary && <p>{story.summary}</p>}
   <a class="read-link" href={story.href} aria-label={`Read: ${story.title}`}>Read the story <span aria-hidden="true">↗</span></a>

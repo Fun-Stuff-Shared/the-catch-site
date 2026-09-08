@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StoryLink from './StoryLink.astro';
+const { stories, series, synthetic = false } = Astro.props;
+const topics = [...new Set(stories.map(s => s.topic))];
+---
+<BaseLayout title={synthetic ? '15-story design preview | The Catch' : 'The Catch'} current="Home" noindex={synthetic}>
+  <main class="discovery newsroom" id="main-content" data-home-catalog>
+    {synthetic && <p class="sample-notice">Design preview · {stories.length} fictional stories for testing this layout. <a href="/">Return to published reporting</a></p>}
+    <header class="edition-intro"><h1 class="sr-only">The Catch: latest reporting</h1><p>The story. The facts behind it.</p><a href="/methodology/">How our reporting works <span aria-hidden="true">↗</span></a></header>
+    <div class="topic-filters edition-topics" aria-label="Filter stories by topic"><button data-topic-filter="" aria-pressed="true">All topics</button>{topics.map(topic => <button data-topic-filter={topic} aria-pressed="false">{topic}</button>)}</div>
+    <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+    <div class="newsroom-layout">
+      <section class="front-stories" aria-label="Leading stories"><div data-featured-stories>{stories.slice(0, 3).map((story, i) => <StoryLink story={story} lead={i === 0} />)}</div></section>
+      <section class="reporting-archive" aria-labelledby="archive-heading"><header class="archive-heading"><h2 id="archive-heading">More reporting</h2><span data-result-count>{stories.length} stories</span></header><div class="archive-feed" data-archive-stories>{stories.slice(3).map(story => <StoryLink story={story} />)}</div><div class="search-empty" hidden><h3>No stories found</h3><p>Try another word or choose a different topic.</p><button data-clear-search>Clear search and filters</button></div><nav class="feed-pagination" aria-label="Story pages" hidden><button data-prev-page>Previous</button><span data-page-label></span><button data-next-page>Next</button></nav></section>
+      <aside class="series-aside"><h2>Follow a series</h2>{series.slice(0, 4).map(s => <div><h3><a href={s.path}>{s.title}</a></h3><p>{s.description}</p></div>)}<a class="read-link" href="/events/">Browse series <span aria-hidden="true">↗</span></a><div class="reading-note"><h3>How we check</h3><p>Open a citation to read the source in context. Follow the record when the evidence changes.</p><a href="/methodology/">Our approach to reporting</a></div></aside>
+    </div>
+  </main>
+</BaseLayout>
+<script>import '../scripts/discovery';</script>
