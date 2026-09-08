@@ -105,7 +105,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <p data-layer="narrative">That is a near-stall by the standard of any recent expansion, and choppy rather than steadily weak, with swings from minus 156,000 to plus 214,000 in a single spring.<Cite s="fred-payems-2026-07" /></p>
 
-        <PayrollChart />
+        <PayrollChart {...event.visual} />
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
           <p>The unemployment rate dipped from 4.2 to 4.1 percent. The labor force shrank by 264,000 people while household employment fell by 87,000. The rate fell because the labor force contracted by three times more than employment did, not because more people found work.<Cite s="bls-empsit-2026-07" /></p></SourcedBlock>

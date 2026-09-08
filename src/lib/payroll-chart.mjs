@@ -20,7 +20,4 @@ export function payrollChart(recordId, from, to) {
   return { source, series };
 }
 
-const july = payrollChart('fred-payems-2026-07', '2025-06-01', '2026-07-01');
-export const payrollSource = july.source;
-export const payrollSeries = july.series;
 

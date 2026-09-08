@@ -3,8 +3,9 @@ import SeriesOverview from '../../../components/SeriesOverview.astro';
 import SeriesFigures from '../../../components/SeriesFigures.astro';
 import PayrollChart from '../../../components/PayrollChart.astro';
 import { subject } from '../../../data/subjects/jobs.mjs';
+import { event as latest } from '../../../data/jobs202608.mjs';
 ---
 <SeriesOverview title={subject.title} description="Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work." path="/events/jobs/">
-  <PayrollChart slot="visual" source="fred-payems-2026-08" from="2025-07-01" to="2026-08-01" latest="August" range="July 2025–August 2026" rangeCompact="February–August 2026" />
+  <PayrollChart slot="visual" {...latest.visual} />
   <SeriesFigures items={subject.current} />
 </SeriesOverview>

@@ -1,8 +1,9 @@
 ---
-import { payrollChart, payrollSeries, payrollSource as defaultSource } from '../lib/payroll-chart.mjs';
+import { payrollChart } from '../lib/payroll-chart.mjs';
 import { formatDate } from '../lib/presentation.mjs';
-const { compact = false, source: recordId = null, from = '2025-06-01', to = '2026-07-01', latest = 'July', range = 'June 2025–July 2026', rangeCompact = 'January–July 2026' } = Astro.props;
-const chart = recordId ? payrollChart(recordId, from, to) : { source: defaultSource, series: payrollSeries };
+const { compact = false, source: recordId, from, to, latest, range, rangeCompact } = Astro.props;
+if (!recordId || !from || !to || !latest || !range || !rangeCompact) throw new Error('PayrollChart needs the story visual: source, from, to, latest, range, rangeCompact');
+const chart = payrollChart(recordId, from, to);
 const payrollSource = chart.source;
 const points = compact ? chart.series.slice(-7) : chart.series;
 const W = 720, H = 240, left = 48, right = 12, top = 20, bottom = 38;

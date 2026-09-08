@@ -113,7 +113,7 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
           <p>From the same saved series: 2026 January to August {averages.year2026} thousand a month; 2025 {averages.year2025}; 2023 and 2024 together {averages.years2023to2024}; 2022 {averages.year2022}; 2021 {averages.year2021}.</p>
         </details>
 
-        <PayrollChart source="fred-payems-2026-08" from="2025-07-01" to="2026-08-01" latest="August" range="July 2025–August 2026" rangeCompact="February–August 2026" />
+        <PayrollChart {...event.visual} />
 
         <SourcedBlock source="bls-empsit-2026-08" kind="record">
           <p>The household survey moved the same way for once. The labor force grew by 683,000, household employment by 569,000, and the participation rate edged up to 61.6 percent; the share of the whole population with a job rose to 59.1 percent. Participation is still half a point below January. The count of unemployed people also rose, by 115,000, which is why the rate held at 4.1 rather than falling: more people came in to look than found work.<Cite s="bls-empsit-2026-08" passage="The labor force participation rate edged up to 61.6 percent" /></p></SourcedBlock>

@@ -12,6 +12,7 @@ export const event = {
   span: "Reported September 4, 2026",
   date: "2026-09-04",
   updated: "2026-09-08",
+  visual: { kind: "payrolls", source: "fred-payems-2026-08", from: "2025-07-01", to: "2026-08-01", latest: "August", range: "July 2025–August 2026", rangeCompact: "February–August 2026" },
   kpis: [
     { value: "+162,000", unit: "", figure_unit: "jobs", period: "2026-08", label: "payrolls in August" },
     { value: "4.1", unit: "%", period: "2026-08", label: "unemployment rate" },
