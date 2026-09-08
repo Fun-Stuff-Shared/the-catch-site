@@ -51,7 +51,13 @@ export const computed = {
   plaintiffStates: 23,
   plaintiffJurisdictions: 25, // 23 states + D.C. + Pennsylvania's governor
   intervenorStates: 12,
-  applicationsToCourt: 3,
+  applicationsToCourt: 3, // filed by the solicitor general: 26A124, 26A297, 26A305
+  stayApplicationsInFight: 4, // plus the intervenor states' 26A139, denied as moot August 24
+  // EAVS 2022 report, page 22 and Table 4: mail ballots transmitted and returned, 2022 general election
+  eavsTransmitted2022: 61460139,
+  eavsReturned2022: 36683450,
+  eavsReturnRatePct: Math.round((36683450 / 61460139) * 1000) / 10, // 59.7
+  electionJurisdictions: 10000, // Talwani order, page 44, citing the Patrick declaration
 };
 
 event.dek = `On Sunday the solicitor general filed application 26A305, asking the justices to pause a September 4 injunction of Postal Service ballot-mail rules. That injunction covers elections on or before November 3. Sunday's filing is ${computed.daysFilingToElection} days before that election.`;
@@ -101,20 +107,27 @@ export const daysBars = [
 
 export const applicationsTable = [
   ["26A124", "July 27", "Stay the injunction of Executive Order 14399", "Granted August 24"],
+  ["26A139 (intervenor states)", "July 29", "Stay the same injunction", "Denied as moot August 24"],
   ["26A297", "September 3", "Stay the August 27 temporary restraining order of the USPS rule", "Withdrawn September 6"],
   ["26A305", "September 6", "Stay the September 4 preliminary injunction of the USPS rule", "Response due September 9, 4 p.m."],
 ];
 
 export const timeline = [
   { date: "Mar 31", title: "Executive Order 14399", sub: "Directs a Postal Service rulemaking on mail-in and absentee ballots" },
-  { date: "Jul 27", title: "Application 26A124 filed", sub: "Stay of the district court's injunction of the order" },
-  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day: Ballot Mail for Federal Elections" },
-  { date: "Aug 24", title: "The Court grants 26A124", sub: "Unsigned opinion: the States' challenge to the order was not ripe" },
+  { date: "Jun 2", title: "USPS proposes the rule", sub: "Notice of proposed rulemaking; more than 200,000 comments follow" },
+  { date: "Jun 25", title: "Judgment for the states", sub: "Talwani rules for 23 states and D.C.; final judgment July 7, elections through November 3" },
+  { date: "Jul 25", title: "First Circuit refuses a stay", sub: "Standing and ripeness arguments rejected" },
+  { date: "Jul 27", title: "Applications 26A124 and 26A139 filed", sub: "The government, then the intervenor states on July 29, ask the Court to stay that judgment" },
+  { date: "Aug 11", title: "Nationwide injunction", sub: "In the League of Women Voters case: no implementing Section 3, no completing the rulemaking" },
+  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day, while both injunctions stand" },
+  { date: "Aug 24", title: "The Court grants 26A124", sub: "Unsigned opinion: standing and ripeness, provision by provision; 26A139 denied as moot" },
+  { date: "Aug 25", title: "Violation found", sub: "Talwani: completing the rulemaking violated the August 11 injunction; no remedy beyond saying so" },
   { date: "Aug 26", title: "USPS final rule published", sub: "Federal Register, 91 Fed. Reg. 54,966" },
   { date: "Aug 27", title: "Temporary restraining order", sub: "Judge Talwani pauses mandatory parts of the rule for 14 days" },
   { date: "Sep 3", title: "Application 26A297 filed", sub: "Stay of that temporary order, submitted to Justice Jackson" },
   { date: "Sep 4", title: "Preliminary injunction", sub: "Talwani enjoins named sections of the rule through November 3" },
   { date: "Sep 6", title: "26A297 withdrawn; 26A305 filed", sub: "Stay of the September 4 injunction; response due September 9", current: true },
+  { date: "Sep 8", title: "Three amicus briefs", sub: "Members of Congress, the Society for the Rule of Law, and Whistleblower Aid" },
   { date: "Nov 3", title: "Federal election day", sub: "The Tuesday after the first Monday in November" },
 ];
 
@@ -140,4 +153,24 @@ export const mailingRows = [
   ["Alabama", "September 9"],
   ["At least five states", "Week of September 13"],
   ["Uniformed and overseas voters (UOCAVA)", "September 19 is the statutory mailing date for a validly requested absentee ballot. The Postal Service rule excludes UOCAVA ballots; that date is not a deadline under this rule."],
+];
+
+// State estimates quoted in the September 4 order, pages 32 and 33, from the declarations
+// filed in California v. Trump II. Each is the state's own forecast, not a count.
+export const stateEstimateRows = [
+  ["California", "more than 23 million"],
+  ["Washington", "about 5.1 million"],
+  ["Colorado", "more than 4 million"],
+  ["Arizona", "about 3.2 million"],
+  ["Oregon", "about 3 million"],
+  ["Nevada", "about 2.1 million"],
+  ["Michigan", "at least 1.9 million"],
+  ["Massachusetts", "about 1 million"],
+];
+
+// Whistleblower Aid amicus brief, page 11, quoting the disclosure: pieces scanned per batch.
+export const sampleRows = [
+  ["Under 1,000 ballots", "15"],
+  ["1,000 to 10,000", "350"],
+  ["More than 10,000", "400"],
 ];
