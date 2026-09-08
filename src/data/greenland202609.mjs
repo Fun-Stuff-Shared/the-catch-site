@@ -36,6 +36,9 @@ export const mipRenewable2027 = 90;
 export const mffProposalDate = "3 September 2025"; // ec-greenland-country.html
 export const doagEducationShare = 0.9;
 export const doagGreenGrowthShare = 0.1;
+export const aapEur = 21.15; // C(2026) 2542, Article 2
+export const cefCableEur = 54.7; // annex, four CEF grants
+export const blockGrantDkk2023 = 4141.5; // Greenland in Figures 2025, preliminary
 
 // ECB eurofxref daily, Cube time 2026-09-08.
 export const ecb = {
@@ -54,6 +57,11 @@ export const computed = {
   packageDkkMillion: 1494.96, // 200 * 7.4748
   packageDkkBillion: 1.5, // 1494.96 million kroner, rounded
   fisheriesAnnualRounded: 17.3, // IP/26/1800 rounding of 17296857
+  aapRemainderEur: 178.85, // 200 - 21.15
+  blockGrantEur: 554.06, // 4141.5 / 7.4748
+  packageShareOfBlockGrantPct: 36.1, // 200 / 554.06
+  doagAnnualEur: 32.14, // 225 / 7
+  doagShareOfBlockGrantPct: 5.8, // 32.14 / 554.06
 };
 
 export const moneyRows = [
@@ -62,6 +70,7 @@ export const moneyRows = [
   [`€${mffProposedEur} million`, `Proposal for 2028-2034, presented ${mffProposalDate}`, "Commission Greenland country page"],
   [`€${computed.fisheriesAnnualRounded} million a year`, "Fisheries protocol", "Commission press release"],
   [`€${satelliteEuEur} million over five years, plus ${satelliteDkDkkMillion} million kroner`, "Satellite internet project", "DR, 7 September"],
+  [`${blockGrantDkk2023.toLocaleString("en-US")} million kroner a year`, "Denmark's block grant to Greenland, 2023, preliminary", "Statistics Greenland, Greenland in Figures 2025"],
 ];
 
 export const weekTimeline = [
@@ -78,7 +87,7 @@ export const record2026Timeline = [
   { date: "Feb 11", title: "NATO Arctic Sentry", sub: "a new multi-domain activity in the Arctic and High North" },
   { date: "Jul 7", title: "Ankara, as carried by AP", sub: "That should be controlled by the United States, not by Denmark" },
   { date: "Jul 31 / Aug 1", title: "Arctic Today's account of the interview and the Hello, Greenland post", sub: "Real America's Voice, then a Truth Social image the next day" },
-  { date: "Sep 7", title: "Truth Social map post", sub: "dated 10:43 AM, no accompanying text", current: true },
+  { date: "Sep 7", title: "Truth Social map post", sub: "stamped 10:43 AM, time zone not shown, no text", current: true },
 ];
 
 event.visual = { kind: "timeline", title: "The week in Nuuk", note: "From the Danish announcement, DR, the Commission, and KNR", entries: weekTimeline.map(({ date, title, current }) => ({ date, title, current })) };

@@ -741,6 +741,22 @@
       "about": "What the €21.15 million buys, how it is managed, how long it may run (96 months), and that €8 million goes to Greenland's treasury as budget support.",
       "text_sha256": "sha256:734b27dd0ec4b6b067622af9c14badf987699921171925a838aacd8055236668",
       "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "stat-gl-greenland-in-figures-2025",
+      "title": "Greenland in Figures 2025, 22nd edition",
+      "publisher": "Statistics Greenland",
+      "date": "2025-05-31",
+      "url": "https://stat.gl/publ/en/GF/2025/pdf/Greenland%20in%20Figures%202025.pdf",
+      "pinned_path": "data/sources/greenland/stat-gl-greenland-in-figures-2025.pdf",
+      "text_path": "data/sources/greenland/stat-gl-greenland-in-figures-2025.txt",
+      "quote": "*4,141.5m DKK. *Preliminary figures",
+      "about": "Statistics Greenland's yearbook: Denmark's annual block grant to Greenland was 4,141.5 million kroner in 2023 (preliminary), the denominator the EU figures are compared against. Editorial deadline May 2025; the date here is the end of that month.",
+      "text_sha256": "sha256:f4b19c201d28950bddde642a66164b28d878c4887b3ffff82eb7dc3a79f385a3",
+      "quote_span_check": "byte_exact",
+      "capture_run": "capture-oneoff-20260908T224058Z",
+      "capture_raw_sha256": "sha256:dbc7648c9bfe0f1f404aba55224f14f3f1f277cbe6c1ab4f8d785d9b7020a3f1",
+      "captured_at": "2026-09-08T22:41:15.070810Z"
     }
   ],
   "story_sources": [
@@ -1058,6 +1074,13 @@
       "label": "Annex to C(2026) 2542: action document for the 2026 Greenland annual action plan",
       "meta": "",
       "usage": "the April financing decision behind the first €21.15 million"
+    },
+    {
+      "id": "stat-gl-greenland-in-figures-2025",
+      "group": "official",
+      "label": "Greenland in Figures 2025",
+      "meta": " · Statistics Greenland",
+      "usage": "Denmark's 2023 block grant, the denominator the EU figures are measured against"
     }
   ],
   "primary_sources": [
@@ -1158,6 +1181,13 @@
       "bytes": 439631,
       "sha256": "sha256:8cd74179b0ea70d3da3d8cf7afb4fb6ce32ce3ad48a6a53a9b5f67f6a24e7324",
       "url": "https://international-partnerships.ec.europa.eu/document/download/5f56a51b-7c23-4ba3-89b8-c14bf535c789_en?filename=mip-2021-c2021-9159-greenland-annex_en.pdf"
+    },
+    {
+      "id": "stat-gl-greenland-in-figures-2025",
+      "path": "data/sources/greenland/stat-gl-greenland-in-figures-2025.pdf",
+      "bytes": 3334865,
+      "sha256": "sha256:dbc7648c9bfe0f1f404aba55224f14f3f1f277cbe6c1ab4f8d785d9b7020a3f1",
+      "url": "https://stat.gl/publ/en/GF/2025/pdf/Greenland%20in%20Figures%202025.pdf"
     }
   ],
   "figures": [
@@ -1245,6 +1275,11 @@
       "figure": "mip_renewable_2027",
       "source_id": "mip-2021-greenland",
       "value": "90"
+    },
+    {
+      "figure": "block_grant_dkk_2023",
+      "source_id": "stat-gl-greenland-in-figures-2025",
+      "value": "4141.5"
     }
   ],
   "needs_ledger": [
@@ -1286,9 +1321,9 @@
     },
     {
       "need": "Financing decision splitting the €200 million",
-      "plain": "The press release and factsheet name a total and projects. No table splits the €200 million by project, year, or budget line.",
-      "record_id": "ip-26-1800",
-      "status": "missing: no financing-decision table in the saved Commission pages"
+      "plain": "The April 13, 2026 implementing decision sets EUR 21 150 000 on four budget lines of the EU's global development instrument, not the €225 million envelope. No decision for the rest of the €200 million is in the saved records, and the press release's word is mobilising.",
+      "record_id": "ec-aap-2026-greenland-decision",
+      "status": "partly have: one decision; the rest missing after a search of the Commission Greenland page and press pages"
     },
     {
       "need": "Satellite project budget",
@@ -1307,6 +1342,30 @@
       "plain": "The 7 September housing letter of intent is saved.",
       "record_id": "stm-housing-2026-09-08",
       "status": "have"
+    },
+    {
+      "need": "Danish block grant denominator",
+      "plain": "Statistics Greenland's 2025 yearbook: 4,141.5 million kroner in 2023, preliminary.",
+      "record_id": "stat-gl-greenland-in-figures-2025",
+      "status": "have"
+    },
+    {
+      "need": "Self-Government Act text (section 21, independence)",
+      "plain": "Five routes tried through the registry: retsinformation.dk page and API (script shells), stm.dk PDF and page (connection reset), naalakkersuisut.gl PDF (404), archive.org snapshot (failed). The page does not quote the Act.",
+      "record_id": "ec-aap-2026-greenland-annex",
+      "status": "missing: not served from this machine"
+    },
+    {
+      "need": "Status of the April financing agreement",
+      "plain": "The annex says a financing agreement with the Government of Greenland is envisaged. No signed agreement is in the saved records.",
+      "record_id": "ec-aap-2026-greenland-annex",
+      "status": "missing: no signed agreement located"
+    },
+    {
+      "need": "Basis of the Malmbjerg 90 million a year figure",
+      "plain": "Von der Leyen's statement names no study or metric. The April annex does not mention Malmbjerg.",
+      "record_id": "statement-26-1803",
+      "status": "missing: no study in the saved records"
     }
   ],
   "coverage_records": [

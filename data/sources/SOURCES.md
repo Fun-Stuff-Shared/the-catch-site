@@ -742,6 +742,8 @@ Held unused for greenland/september-2026 (saved, not cited on the page): ABC and
 | data/sources/coverage/euronews-greenland-eu-2026-09-07.txt | 15798 | 9eea6f6ca0dfb549 |
 | data/sources/coverage/politico-greenland-eu-2026-09-07.html | 291997 | 862ec74c951f20ae |
 | data/sources/coverage/politico-greenland-eu-2026-09-07.txt | 7811 | e2bc973a19d55765 |
+| data/sources/greenland/stat-gl-greenland-in-figures-2025.pdf | 3334865 | dbc7648c9bfe0f1f |
+| data/sources/greenland/stat-gl-greenland-in-figures-2025.txt | 140166 | f4b19c201d28950b |
 
 ## Mail voting, September 2026
 
