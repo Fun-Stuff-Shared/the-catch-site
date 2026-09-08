@@ -293,3 +293,5 @@ export function millions(n) {
 export function usd(n) {
   return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
+
+event.visual = { kind: "table", title: "Talarico to Paxton in the two August polls", note: "Registered voters in the UT poll, likely voters in the TPPF poll; neither lead clears its margin of error", rows: pollEnsemble.rows.slice(0, 2).map(([poll, field, , t, p, margin]) => [`${t} to ${p}`, `${poll}, ${field}, margin ${margin.split(" / ").pop()} points`]).concat([["No leader", "both results sit inside their margins"]]) };

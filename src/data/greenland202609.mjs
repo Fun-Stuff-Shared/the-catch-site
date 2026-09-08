@@ -80,3 +80,5 @@ export const record2026Timeline = [
   { date: "Jul 31 / Aug 1", title: "Arctic Today's account of the interview and the Hello, Greenland post", sub: "Real America's Voice, then a Truth Social image the next day" },
   { date: "Sep 7", title: "Truth Social map post", sub: "dated 10:43 AM, no accompanying text", current: true },
 ];
+
+event.visual = { kind: "timeline", title: "The week in Nuuk", note: "From the Danish announcement, DR, the Commission, and KNR", entries: weekTimeline.map(({ date, title, current }) => ({ date, title, current })) };

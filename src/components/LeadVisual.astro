@@ -1,0 +1,21 @@
+---
+// The one exhibit a lead card shows beside its headline. A story declares it once as
+// event.visual and every surface reads that declaration. Caps are hard: a timeline shows
+// at most four entries, a table at most three rows, so the card stays a glance.
+import PayrollChart from './PayrollChart.astro';
+const { kind, title, entries = [], rows = [], note, ...chartProps } = Astro.props;
+const CAPS = { timeline: 4, table: 3 };
+if (kind === 'timeline' && (entries.length === 0 || entries.length > CAPS.timeline)) throw new Error(`Lead timeline visual takes 1 to ${CAPS.timeline} entries, got ${entries.length}`);
+if (kind === 'table' && (rows.length === 0 || rows.length > CAPS.table)) throw new Error(`Lead table visual takes 1 to ${CAPS.table} rows, got ${rows.length}`);
+if (kind !== 'payrolls' && !title) throw new Error(`Lead ${kind} visual needs a title`);
+if (!['payrolls', 'timeline', 'table'].includes(kind)) throw new Error(`Unknown lead visual kind: ${kind}`);
+---
+{kind === 'payrolls' && <PayrollChart compact {...chartProps} />}
+{kind === 'timeline' && <figure class="lead-visual lead-timeline" data-layer="fact">
+  <figcaption><strong>{title}</strong>{note && <span>{note}</span>}</figcaption>
+  <ol>{entries.map(e => <li class:list={{ 'lead-current': e.current }}><time>{e.date}</time><span>{e.title}</span></li>)}</ol>
+</figure>}
+{kind === 'table' && <figure class="lead-visual lead-table" data-layer="fact">
+  <figcaption><strong>{title}</strong>{note && <span>{note}</span>}</figcaption>
+  <dl>{rows.map(([figure, what]) => <div><dt>{figure}</dt><dd>{what}</dd></div>)}</dl>
+</figure>}

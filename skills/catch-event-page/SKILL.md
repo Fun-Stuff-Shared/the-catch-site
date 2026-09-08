@@ -155,10 +155,15 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
    page is standalone and is never edited afterwards: a revision to last month's number is
    this month's story and goes on this month's page (its revisions table and claim check).
-   A story with a chart declares it once, in its data module, as `event.visual`
-   (`{ kind, source, from, to, latest, range, rangeCompact }`); the story page, the
-   series page, and the homepage lead card all render from that one declaration
-   (`<PayrollChart {...event.visual} />`). Never type chart props on a page.
+   Every story declares one lead visual in its data module as `event.visual`, and the
+   homepage lead card renders it through `LeadVisual`. Three kinds: `payrolls` (the chart,
+   `{ kind, source, from, to, latest, range, rangeCompact }`, also rendered on the story and
+   series pages as `<PayrollChart {...event.visual} />`), `timeline` (`{ kind, title, note,
+   entries }`, one to four dated lines, built from the page's own timeline data), and
+   `table` (`{ kind, title, note, rows }`, one to three `[figure, what it is]` rows built
+   from the page's own data). The caps are enforced at build time so the card stays one
+   glance; a story with no natural exhibit declares none and the card is text. Never type
+   chart or table values on a page or in the declaration; map them from the data.
 11. **Read the story into the state record.** The state record (the tracked-figures block at
     the foot of every story) is filled from the story's own pins, at authoring time, not by a
     separate batch: register the manifest's exact pinned text and deterministically fill its
