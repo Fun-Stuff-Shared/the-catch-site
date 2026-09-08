@@ -57,3 +57,5 @@ export const whUsProvedBillion = 46;
 export const eiaVenezuelaProvedBillion = 303;
 export const whVenezuelaFieldsBillion = 65;
 export const fieldsShareOfVenezuelaPct = Math.round((whVenezuelaFieldsBillion / eiaVenezuelaProvedBillion) * 1000) / 10; // 21.5
+export const yearsAt15Mbpd = 118.6; // 65e9 / 1.5e6 / 365.25
+export const csisNabepBpd = 124000; // CSIS independent estimate, last week of August

@@ -1070,3 +1070,9 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/coverage/guardian-deal-defended-2026-09-01.txt | 4687 | 8a77531949ccce6a |
 | data/sources/coverage/france24-afp-wright-2026-09-02.html | 369663 | 30850dd9c75c81a6 |
 | data/sources/coverage/france24-afp-wright-2026-09-02.txt | 4007 | 75e19d84b8960004 |
+| data/sources/coverage/icij-betancourt-2026-09-03.html | 93242 | ca87dfa19e288d5d |
+| data/sources/coverage/icij-betancourt-2026-09-03.txt | 3461 | 547720d5148e0146 |
+| data/sources/coverage/csis-venezuela-oil-deal-2026.html | 142151 | 087e96682e6d83c5 |
+| data/sources/coverage/csis-venezuela-oil-deal-2026.txt | 11669 | c5b5f50dac1d2d6a |
+| data/sources/coverage/boereport-reuters-chevron-2026-09-08.html | 107425 | 4a511ac1b303c779 |
+| data/sources/coverage/boereport-reuters-chevron-2026-09-08.txt | 1353 | 3e24d20d4ccdcd1c |
