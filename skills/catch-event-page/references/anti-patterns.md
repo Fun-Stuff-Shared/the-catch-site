@@ -140,3 +140,21 @@ text; the Cite passage proves a phrase exists, not that the sentence does. Sibli
 Same page: the ten-versus-eleven NATO count was "explained" as observers in the total; no
 record defines either count. A catch row states the disagreement and what each record
 says about its own denominator; it does not supply the missing reconciliation.
+
+
+### The explanation the records do not give, generalized
+When two records give different counts, dates, or names and neither defines the difference,
+write only what each record counts and say the records do not explain the gap. Do not
+supply a likely denominator, motive, embargo, observer category, timing, or "probably"
+sentence. Seven stories on 2026-09-08 produced this defect in five of them (a clerk
+ballot-printing mechanism, a reversed hemp mechanism, disputed rights written as settled
+equity, delivery inferred from a filing with no delivery data, an observer explanation for a
+10-versus-11 count). The reviewer names the class every time; write the gap, not the guess.
+
+### The regenerated paragraph
+A layout or rewrite instruction is not permission to regenerate prose from memory of the
+source set. The Greenland layout pass rebuilt the page well and introduced four stitched
+quote cards, an invented coverage claim, an invented explanation, two overstated mechanisms
+and a timezone error in one run, because each regenerated sentence was written from
+understanding rather than reread against the record. After any rewrite, every sentence that
+carries a fact is re-checked against the bytes as if it were new, and `quote_lint` runs.

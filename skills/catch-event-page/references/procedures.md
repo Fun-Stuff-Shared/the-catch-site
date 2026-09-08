@@ -171,6 +171,13 @@ mail-voting story's `eo-14399.html` and `eo-14399.pdf`). Name the page pin and t
 pin differently (`eo-14399-page.html`, `eo-14399.pdf`), and re-run the hash check on every
 `text_path` after any extraction pass.
 
+Preflight the candidate row before reading a single article body. Six of seven candidate
+rows on 2026-09-08 carried article paths from unrelated clusters (BLS releases, Fed
+minutes, an Ohio item) beside the right ones. Compare each article's title and named
+entities with the candidate headline in one pass; if any belong elsewhere, treat the seed
+as invalid and rebuild the coverage universe from the receipts and the registry once,
+instead of opening the remaining seed bodies one by one.
+
 Before capturing anything new, search the registry for the reactions too: on the August
 page the Fed governor's speech, the president's remarks, the ADP coverage and the stock
 close were all already held by the daily sweeps (`capture search "Waller" --since <date>`,
@@ -432,3 +439,14 @@ PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views \
 An active maintenance owner can refuse the optional read; its failure is visible in the
 run output. Do not clear another run's lock. The deterministic authoring fill and event
 view refresh are available without launching or interrupting that maintenance run.
+
+
+## Rework is a class sweep, not a line fix
+
+A rework dispatch lists instances. Each instance names a class (a stitched quote, a typed
+number, an outlet quoted with words it did not print, an unsupported explanation, internal
+vocabulary). After fixing the named line, search the whole page for every sibling of that
+class and fix those too; then rerun `lens_lint`, `quote_lint`, and the independent
+interrogation against the rebuilt page. A rework report lists, per class, the sibling count
+found and fixed. Reworks 1 to 3 on 2026-09-08 fixed the named lines and left the class to
+the next reviewer; that is the pattern this rule ends.
