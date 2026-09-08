@@ -114,6 +114,8 @@ function validateRecordManifest(mPath, manifest) {
       if (!record[field]) fail.push(`${mPath}: record needs ${field}`);
     }
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(record.id ?? "")) fail.push(`${mPath}: record id ${record.id} is not a stable slug`);
+    if (!record.capture_run && !record.capture_status) fail.push(`${mPath}: ${record.id} has no registry route: run it through \`capture news\` and record capture_run, or type capture_status with the reason it could not be admitted`);
+    if (record.capture_run && !/^capture-|^quarry-/.test(record.capture_run)) fail.push(`${mPath}: ${record.id} capture_run ${record.capture_run} is not a registry run id`);
     if (ids.has(record.id)) fail.push(`${mPath}: duplicate record id ${record.id}`);
     ids.add(record.id);
     if (record.quote_span_check === "quote_unverified") fail.push(`${mPath}: ${record.id} has an unverified quote`);
