@@ -7,11 +7,12 @@ import { event as missouriHouseMap } from '../data/missourihousemap202609.mjs';
 import { event as governmentFunding } from '../data/governmentfunding202609.mjs';
 import { event as venezuelaOil } from '../data/venezuelaoil202609.mjs';
 import { event as texasSenate } from '../data/texassenate202609.mjs';
+import { event as greenland } from '../data/greenland202609.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -20,6 +21,7 @@ export const series = [
   { path: '/events/government-funding/', title: 'Government funding', topic: 'Congress', keywords: 'continuing resolution shutdown appropriations Congress House Senate', description: 'The September 2026 stopgap keeps most federal agencies at fiscal year 2026 rates through December 11. The House vote was 370 to 48. The president signed the act the next day as Public Law 119-103.' },
   { path: '/events/venezuela-oil/', title: 'Venezuela oil', topic: 'Energy', keywords: 'Venezuela oil NABEP sanctions Chevron White House', description: 'The August 31, 2026, White House fact sheet named North American Blue Energy Partners, a 35 percent U.S. equity stake, and 100-year rights to 17 Venezuelan fields.' },
   { path: '/events/texas-senate/', title: 'The Texas Senate race', topic: 'Elections', keywords: 'Texas Senate Paxton Talarico MAGA Inc independent expenditure FEC', description: 'MAGA Inc. filed $10 million in independent expenditures for connected TV and digital ads in the Texas U.S. Senate race. The November 3 general election is between Ken Paxton and James Talarico.' },
+  { path: '/events/greenland/', title: 'Greenland', topic: 'Europe', keywords: 'Greenland EU von der Leyen Nuuk Global Gateway Denmark Nielsen Frederiksen', description: 'On September 7, 2026, the European Commission named a €200 million Global Gateway package for Greenland and signed a joint declaration with Greenland and Denmark. The declaration says it creates no legal or financial obligations.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();

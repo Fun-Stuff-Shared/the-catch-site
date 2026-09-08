@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/greenland.mjs';
+---
+<SeriesOverview title={subject.title} description={subject.dek} path="/events/greenland/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>

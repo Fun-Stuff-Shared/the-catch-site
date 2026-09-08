@@ -1,0 +1,310 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, packageEur, doagEur, mffProposedEur, fisheriesAnnualEuro, fisheriesSectoralEur, malmbjergAddedValueEur, satelliteEuEur, ecb, computed } from "../../../data/greenland202609.mjs";
+const state = readPublishedState().events.get("event-greenland-september-2026");
+if (!state) throw new Error("Missing publication selection: event-greenland-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/greenland/">Greenland</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Nuuk &middot; September 1 to 7, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On September 1 the Danish Prime Minister's Office said Jens-Frederik Nielsen, Premier of Greenland (formand for Naalakkersuisut, Greenland's government), would receive European Commission President Ursula von der Leyen and Danish Prime Minister Mette Frederiksen in Nuuk on September 6 and 7 to sign a joint declaration on a stronger EU-Greenland partnership.<Cite s="stm-visit-2026-09-01" passage="01.09.2026" /></li>
+          <li>On September 7 the Commission named a €{packageEur} million "Global Gateway Partnership Package" to be invested in and with Greenland this year and the next. Global Gateway is the EU's label for those projects.<Cite s="ip-26-1800" passage="€200 million Global Gateway Partnership Package" /></li>
+          <li>The joint declaration signed in Nuuk says it "is not intended to create any legal or financial obligations under domestic or international law." The money sits beside that text, not inside it.<Cite s="stm-joint-declaration-2026-09-07" passage="This Declaration is not intended to create any legal or financial obligations under domestic or international law" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the Danish Prime Minister's Office announcement of September 1, Commission press release IP/26/1800, von der Leyen's signing statement STATEMENT/26/1803, the joint declaration (Commission STATEMENT/26/1804 and the Danish government copy), the September 2026 partnership factsheet, Council Decision (EU) 2021/1764, the Commission's Greenland country page, the 2021-2027 programming document, the 2015 joint declaration, the European Central Bank's September 8 dollar and krone rates, Nielsen's words as carried by KNR, DR, and the Associated Press, and coverage checked against those records. The Commission's press-corner pages were saved with a browser because the empty shells have no article text. Greenland's own government news listing did not serve the September press release from this machine; KNR quotes that release.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">September 1 first, then Nuuk</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="stm-visit-2026-09-01" kind="record">
+          <p>On September 1, 2026, the Danish Prime Minister's Office said Nielsen would receive von der Leyen and Frederiksen in Nuuk on September 6 and 7. The three leaders were expected to sign a joint declaration on a stronger partnership between the EU and Greenland.<Cite s="stm-visit-2026-09-01" passage="modtager den 6. og 7. september" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-visit-2026-09-01" kind="record">
+          <p>Frederiksen said: "Europa har entydigt og uden tøven stået sammen med Grønland og Kongeriget. Stået værn om fundamentale principper som suverænitet og territoriel integritet." In English: Europe has stood with Greenland and the Danish Realm without hesitation, guarding sovereignty and territorial integrity.<Cite s="stm-visit-2026-09-01" passage="Europa har entydigt og uden tøven stået sammen med Grønland og Kongeriget" /></p></SourcedBlock>
+
+        <SourcedBlock source="knr-visit-preview-2026-08" kind="record">
+          <p>KNR wrote earlier that von der Leyen had been due in Greenland in March, and that the trip was put off after Frederiksen called a Danish Folketing election.<Cite s="knr-visit-preview-2026-08" passage="skulle besøge Grønland i marts" /></p></SourcedBlock>
+
+        <SourcedBlock source="knr-topmoede-2026-09-01" kind="record">
+          <p>On September 1 KNR wrote that Naalakkersuisut had issued a press release. It quoted Nielsen: "EU har meldt klart ud om støtten til os i den geopolitiske situation og samtidig imødekommet vores ønske om et endnu større partnerskab." The EU, he said, had stated its support in the geopolitical situation and had met Greenland's wish for a larger partnership.<Cite s="knr-topmoede-2026-09-01" passage="EU har meldt klart ud om støtten til os i den geopolitiske situation" /></p></SourcedBlock>
+
+        <SourcedBlock source="dr-ankomst-2026-09-06" kind="record">
+          <p>On September 6, DR reported that Frederiksen landed in Nuuk and was greeted by Nielsen, and that von der Leyen's plane landed shortly after. At the arrival press meeting Nielsen said the visit showed "et meget tæt venskab og et godt partnerskab" (a very close friendship and a good partnership). Von der Leyen said: "Vi deler de samme værdier og vi arbejder tæt sammen" (we share the same values and we work closely together).<Cite s="dr-ankomst-2026-09-06" passage="et meget tæt venskab og et godt partnerskab" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>On her visit to Nuuk, von der Leyen announced a €{packageEur} million Global Gateway Partnership Package, "to be invested in and with Greenland this year and the next." The EU, Greenland, and Denmark signed a new Joint Declaration in Nuuk.<Cite s="ip-26-1800" passage="€200 million Global Gateway Partnership Package" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>Von der Leyen said: "Greenland can count on the EU. That was my message during my last visit. Today, I am back to deliver the real results of our close cooperation. With a new EU-Greenland Partnership package, worth €200 million."<Cite s="ip-26-1800" passage="Greenland can count on the EU" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-joint-declaration-2026-09-07" kind="record">
+          <p>The Danish government's copy of the declaration is dated 07.09.2026 and ends: "Signed in Nuuk, on 7. september 2026, in three original copies in the English language," for the European Union, the Government of Greenland, and the Government of Denmark.<Cite s="stm-joint-declaration-2026-09-07" passage="Signed in Nuuk, on 7. september 2026" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>In the signing statement von der Leyen named three topics: the Joint Declaration, "the EU-Greenland Partnership Package of EUR 200 million for this year and next year," and "the first deliverables of our partnership package, which are ready to go now."<Cite s="statement-26-1803" passage="EUR 200 million of new investments for Greenland this year and next year" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>The package, she said, focuses on "the big C's: connectivity, clean energy, critical raw materials." A satellite project with Tusass, Greenland's telecoms company, would give northern communities better internet "as of tomorrow," and remote communities in East Greenland "by October."<Cite s="statement-26-1803" passage="connectivity, clean energy, critical raw materials" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>She said the European Union "stands in full solidarity with the Kingdom of Denmark and the people of Greenland," and: "Greenland's future is for the people of Greenland and Denmark to decide, no one else."<Cite s="statement-26-1803" passage="Greenland's future is for the people of Greenland and Denmark to decide, no one else" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-greenland-eu-2026-09-07" kind="record">
+          <p>Nielsen, speaking at the Nuuk news conference as carried by the Associated Press, called the EU "a loyal and trusted friend" at a time of "new challenges that we cannot tackle alone," and said: "Through these challenging times, your support to us is unfailing. You have stood by us and continue to stand by us. We feel it and are deeply grateful."<Cite s="ap-greenland-eu-2026-09-07" passage="a loyal and trusted friend" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-greenland-eu-2026-09-07" kind="record">
+          <p>Frederiksen told reporters, as carried by AP: "We have been under pressure. It has been very clear, and we are very thankful for the great support we have received from our European partners but, by the way, also globally."<Cite s="ap-greenland-eu-2026-09-07" passage="We have been under pressure" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>Jozef Síkela, Commissioner for International Partnerships, is quoted on the same Commission release: the partnership is "about creating opportunities that improve people's everyday lives," and "by investing together through Global Gateway, we are strengthening Europe's resilience."<Cite s="ip-26-1800" passage="creating opportunities that improve people's everyday lives" /></p></SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">A deal, or a text that binds nothing?</span>
+              Coverage called it a partnership deal. The signed declaration uses the same no-obligations sentence as the 2015 text: it "is not intended to create any legal or financial obligations under domestic or international law."<Cite s="stm-joint-declaration-2026-09-07" passage="not intended to create any legal or financial obligations" /> The €{packageEur} million figure is in the Commission press release, not as a line item in that declaration.<Cite s="ip-26-1800" passage="€200 million Global Gateway Partnership Package" /> <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">September 6, or September 7?</span>
+              The Commission's press-corner page for the declaration is labeled "Statement Sep 6, 2026."<Cite s="statement-26-1804" passage="Statement Sep 6, 2026" /> The Danish government's copy, and the signature block, say it was signed in Nuuk on 7 September 2026.<Cite s="stm-joint-declaration-2026-09-07" passage="Signed in Nuuk, on 7. september 2026" /> <a class="catch-jump" href="#what-happened">What happened</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">The map names no package.</span>
+              Arctic Today records that on Monday President Donald Trump posted a map on Truth Social showing Greenland under the U.S. flag "without accompanying text" and with "no policy statement or explanation."<Cite s="arctictoday-trump-map-2026-09-07" passage="without accompanying text" /> That post does not name the Commission package or the Nuuk declaration. <a class="catch-jump" href="#what-happened-next">What happened next</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">The 150 million preview.</span>
+              KNR, citing Euractiv before the visit, wrote that the EU had an investment package of 150 million euro "på tegnebrættet" (on the drawing board).<Cite s="knr-topmoede-2026-09-01" passage="investeringspakke på 150 millioner euro" /> The Commission release is €{packageEur} million.<Cite s="ip-26-1800" passage="€200 million Global Gateway Partnership Package" /> DR, quoting Tusass chief executive Jonas Hasselriis, puts the satellite internet project at about €{satelliteEuEur} million in EU funds over five years, raising speeds from 6 megabit to 15 megabit.<Cite s="dr-satellit-2026-09-07" passage="omkring 9,1 million euro" /> <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">EU money, Greenland projects.</span>
+              The Commission says the €{packageEur} million is "for investments in Greenland" and "will create new economic opportunities for the local population," with housing, tourism, satellite links, hydropower, and a Programme Management Unit inside Greenland's government.<Cite s="ip-26-1800" passage="for investments in Greenland" /> The declaration itself creates no payment obligation. <a class="catch-jump" href="#who-feels-it">Who feels it</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">The 2015 text, the 2021 decision, this year's cash</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="joint-declaration-2015" kind="record">
+          <p>The new declaration says it builds on a Joint Declaration signed in Brussels on 19 March 2015 by the EU, Greenland, and Denmark.<Cite s="joint-declaration-2015" passage="Done at Brussels, on 19 March 2015" /></p></SourcedBlock>
+
+        <SourcedBlock source="joint-declaration-2015" kind="record">
+          <p>That 2015 text said: "This Declaration is not intended to create any legal or financial obligations under domestic or international law."<Cite s="joint-declaration-2015" passage="This Declaration is not intended to create any legal or financial obligations under domestic or" /></p></SourcedBlock>
+
+        <SourcedBlock source="doag-2021-1764" kind="record">
+          <p>The legal envelope for the current seven-year budget is Council Decision (EU) 2021/1764 of 5 October 2021, the Decision on the Overseas Association, including Greenland. It allocates "EUR 225 000 000 in the form of grants for bilateral programmable support for the long term development of Greenland."<Cite s="doag-2021-1764" passage="EUR 225 000 000 in the form of grants for bilateral programmable support for the long term development of Greenland" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>The Commission release repeats that figure as €{doagEur} million for 2021-2027, "with 90% dedicated to education and 10% to green growth," and says the Commission has proposed €{mffProposedEur} million for Greenland under the next Multiannual Financial Framework 2028-2034, "more than doubling the current level of support."<Cite s="ip-26-1800" passage="earmarked €225 million for the period 2021-2027, with 90% dedicated to education and 10% to green growth" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="computed">
+          <p>{mffProposedEur} divided by {doagEur} is {computed.mffRatio}. That is more than double. The €{packageEur} million package is a separate figure for this year and next, not a rewrite of the €{doagEur} million seven-year envelope.<Cite s="ip-26-1800" passage="proposed €530 million for Greenland under the next Multiannual Financial Framework 2028-2034" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how the doubling was counted</summary>
+          <p>Commission release: €530 million proposed for 2028-2034 against €225 million earmarked for 2021-2027. 530 / 225 = {computed.mffRatio}. Education share of the current envelope: 225 × 0.9 = {computed.doagEducationEur} million. Green-growth share: 225 × 0.1 = {computed.doagGreenGrowthEur} million. Source file: IP/26/1800 as saved September 8.</p>
+        </details>
+
+        <SourcedBlock source="sfpa-greenland" kind="official">
+          <p>The Commission's fisheries page puts the current protocol, 12 December 2024 to 11 December 2030, at €{fisheriesAnnualEuro.toLocaleString("en-US")} a year, of which €{fisheriesSectoralEur} million supports Greenland's fisheries policy.<Cite s="sfpa-greenland" passage="€17,296,857 per year" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>The September press release rounds that annual total to €17.3 million.<Cite s="ip-26-1800" passage="€17.3 million to Greenland each year under the current fisheries protocol" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-joint-declaration-2026-09-07" kind="record">
+          <p>The 2026 declaration recalls that Greenland is an Overseas Country or Territory associated with the EU, and that "the citizens of Greenland, as citizens of the Kingdom of Denmark, have EU citizenship."<Cite s="stm-joint-declaration-2026-09-07" passage="the citizens of Greenland, as citizens of the Kingdom of Denmark, have EU citizenship" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-joint-declaration-2026-09-07" kind="record">
+          <p>The 2026 declaration's common objectives include "Resilience, including countering hybrid threats, foreign information manipulation and interference, cooperation on cybersecurity and secure communication."<Cite s="stm-joint-declaration-2026-09-07" passage="countering hybrid threats, foreign information manipulation and interference" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-joint-declaration-2026-09-07" kind="record">
+          <p>The 2026 declaration names Part IV of the Treaty on the Functioning of the European Union, the Overseas Association Decision, and the fisheries agreement as "an appropriate framework for the partnership and its continuous development." It also recalls the November 2023 memorandum on raw-material value chains and the 2024 Commission office in Nuuk.<Cite s="stm-joint-declaration-2026-09-07" passage="Council Decision on the Overseas Association, including Greenland" /></p></SourcedBlock>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Housing, internet, mines, fisheries</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>The Commission says the package "focuses on investments that improve everyday life in the country: better housing, sustainable tourism and stronger support for small businesses," and that a Programme Management Unit will sit with the Government of Greenland to deliver EU-backed programmes.<Cite s="ip-26-1800" passage="better housing, sustainable tourism and stronger support for small businesses" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>Von der Leyen said northern communities would have faster internet "as of tomorrow," and East Greenland remote communities by October, through the Tusass satellite project.<Cite s="statement-26-1803" passage="communities in the Northern part of Greenland" /></p></SourcedBlock>
+
+        <SourcedBlock source="dr-satellit-2026-09-07" kind="record">
+          <p>DR reported that the satellite agreement is expected to give about €{satelliteEuEur} million in EU funds over five years for satellite internet in East and North Greenland. Jonas Hasselriis, chief executive of Tusass, said speeds would rise from 6 megabit to 15 megabit, enough to stream as people usually do, and that the extra line matters if the radio chain along the coast fails.<Cite s="dr-satellit-2026-09-07" passage="fra 6 megabit til 15 megabit" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>The Commission also says it is supporting feasibility work on whether data centres could become viable as energy and digital infrastructure develops, and names Nukissiorfiit, Greenland's national energy utility, for hybrid renewable systems in settlements, and the Buksefjord hydropower plant serving Nuuk.<Cite s="ip-26-1800" passage="whether data centres could become a viable opportunity" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>On mines she named the Malmbjerg molybdenum project, which "could, if we get it right and done, generate up to EUR {malmbjergAddedValueEur} million a year for the country as added value," and GreenRoc's Amitsoq graphite project, which the factsheet and the press release call an EU Strategic Project under the Critical Raw Materials Act.<Cite s="statement-26-1803" passage="generate up to EUR 90 million a year" /></p></SourcedBlock>
+
+        <SourcedBlock source="ip-26-1800" kind="record">
+          <p>Coastal fisheries communities remain on the separate €{fisheriesAnnualEuro.toLocaleString("en-US")}-a-year protocol. The Commission says that money "contributes to economic stability in coastal communities."<Cite s="ip-26-1800" passage="contributes to economic stability in coastal communities" /></p></SourcedBlock>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">The euros, the dollars, the word annexation</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <SourcedBlock source="ap-greenland-eu-2026-09-07" kind="checked">
+          <p>The Associated Press wrote that von der Leyen offered 200 million euros ($232 million) over the next two years. The €200 million and the two-year window check out against IP/26/1800. The $232 million line is the euro figure at a round dollar rate; the ECB rate on September 8 makes €200 million ${computed.packageUsd} million.<Cite s="ap-greenland-eu-2026-09-07" passage="200 million euros ($232 million)" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-greenland-eu-2026-09-07" kind="checked">
+          <p>AP also wrote that she wants to "double EU budget support to Greenland to around half a billion euros ($580 million) from 2028." The Commission figure is €{mffProposedEur} million, not "around half a billion," and ${computed.mffProposedUsd} million at the September 8 ECB rate, not $580 million.<Cite s="ap-greenland-eu-2026-09-07" passage="around half a billion euros ($580 million)" /></p></SourcedBlock>
+
+        <SourcedBlock source="abc-greenland-eu-2026-09-07" kind="checked">
+          <p>ABC News carried the same AP dispatch under the headline "EU chief unveils $232M Greenland package as tensions heighten with Trump claims." The €200 million and the Nielsen and Frederiksen titles check out. The word "claims" is ABC's. The Commission statement does not use it.<Cite s="abc-greenland-eu-2026-09-07" passage="200-million-euro ($232 million) investment package" /></p></SourcedBlock>
+
+        <SourcedBlock source="pbs-greenland-eu-2026-09-07" kind="checked">
+          <p>PBS NewsHour carried the AP text, including the $580 million conversion of "around half a billion euros." Same miss as AP.<Cite s="pbs-greenland-eu-2026-09-07" passage="around half a billion euros ($580 million)" /></p></SourcedBlock>
+
+        <SourcedBlock source="cnbc-greenland-eu-2026-09-07" kind="checked">
+          <p>CNBC wrote "200-million-euro ($232.3 million)" and quoted Nielsen and Frederiksen from the news conference. $232.3 million is €200 million at 1.1615 dollars per euro; the ECB rate the next day is 1.1614, which is ${computed.packageUsd} million. That is the same number to one decimal place.<Cite s="cnbc-greenland-eu-2026-09-07" passage="200-million-euro ($232.3 million)" /></p></SourcedBlock>
+
+        <SourcedBlock source="upi-greenland-eu-2026-09-07" kind="checked">
+          <p>UPI wrote "$232.3 million" and then referred to Frederiksen as "He said Denmark." Frederiksen is Prime Minister of Denmark. The pronoun is wrong.<Cite s="upi-greenland-eu-2026-09-07" passage="He said Denmark" /></p></SourcedBlock>
+
+        <SourcedBlock source="aljazeera-greenland-eu-2026-09-08" kind="checked">
+          <p>Al Jazeera wrote "530 million euros ($616m)" for the next budget. 530 × 1.1614 = {computed.mffProposedUsd}, which rounds to $616 million. That conversion checks out. The word "annex" is Al Jazeera's; it is not in the Commission release.<Cite s="aljazeera-greenland-eu-2026-09-08" passage="530 million euros ($616m)" /></p></SourcedBlock>
+
+        <SourcedBlock source="france24-greenland-eu-2026-09-07" kind="checked">
+          <p>France 24's September 7 piece is written in the future tense: von der Leyen "is expected to unveil" a boost in EU investments. The Commission release and the Danish signature block are dated that day. The France 24 text we hold does not carry the €200 million figure.<Cite s="france24-greenland-eu-2026-09-07" passage="is expected to unveil on Monday a boost in EU investments" /></p></SourcedBlock>
+
+        <SourcedBlock source="reuters-greenland-eu-2026-09-06" kind="checked">
+          <p>Reuters datelined Nuuk, Sept 6, and wrote that von der Leyen "unveiled plans on Monday for €200 million ($232 million)." The dollars match AP's round number. The dateline is Sunday; the signature block is Monday.<Cite s="reuters-greenland-eu-2026-09-06" passage="unveiled plans on Monday for €200 million ($232 million)" /></p></SourcedBlock>
+
+        <SourcedBlock source="dw-greenland-eu-2026-09-07" kind="checked">
+          <p>Deutsche Welle wrote €200 million ($232 million) and placed the visit after "threats of US annexation earlier this year." The euro figure checks out. The annexation wording is DW's summary of earlier Trump statements, not a quote from the Nuuk records.<Cite s="dw-greenland-eu-2026-09-07" passage="€200 million ($232 million) investment package" /></p></SourcedBlock>
+
+        <SourcedBlock source="knr-topmoede-2026-09-01" kind="checked">
+          <p>KNR's September 1 story, citing Euractiv, put the package at 150 million euro. The Commission release is €200 million. We have not saved the Euractiv page.<Cite s="knr-topmoede-2026-09-01" passage="investeringspakke på 150 millioner euro" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">"More than doubling"</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="ip-26-1800" kind="computed">
+          <p>The Commission says it has proposed €{mffProposedEur} million for Greenland in 2028-2034, "more than doubling the current level of support." The current figure it names in the same paragraph is €{doagEur} million for 2021-2027. {mffProposedEur} / {doagEur} = {computed.mffRatio}. The claim checks out as arithmetic on those two Commission figures. It is a proposal for the next budget, not money voted.<Cite s="ip-26-1800" passage="more than doubling the current level of support" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>the two figures in one paragraph</summary>
+          <p>IP/26/1800: "The EU has earmarked €225 million for the period 2021-2027, with 90% dedicated to education and 10% to green growth. The Commission has proposed €530 million for Greenland under the next Multiannual Financial Framework 2028-2034, more than doubling the current level of support." Council Decision (EU) 2021/1764 is the €225 million legal line: "EUR 225 000 000 in the form of grants for bilateral programmable support for the long term development of Greenland."</p>
+        </details>
+      </section>
+
+      <section id="markets">
+        <p class="sec-kicker" data-layer="narrative">The dollar line</p>
+        <h2 data-layer="fact">What the markets said</h2>
+
+        <SourcedBlock source="ecb-eurofxref-2026-09-08" kind="official">
+          <p>The European Central Bank's reference rate on September 8 was {ecb.usdPerEur} dollars per euro. €{packageEur} million at that rate is ${computed.packageUsd} million. €{mffProposedEur} million is ${computed.mffProposedUsd} million. The same table gives {ecb.dkkPerEur} kroner per euro, so €{packageEur} million is {computed.packageDkkMillion} million kroner.<Cite s="ecb-eurofxref-2026-09-08" passage="currency='USD' rate='1.1614'" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how those dollars were computed</summary>
+          <p>ECB eurofxref daily XML, Cube time 2026-09-08, USD 1.1614, DKK 7.4748. 200 × 1.1614 = 232.28. 530 × 1.1614 = 615.542, shown as 615.54. 200 × 7.4748 = 1494.96. This is a conversion of the Commission figures. It is not a market price for a Greenland security.</p>
+        </details>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">The same Monday</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="arctictoday-trump-map-2026-09-07" kind="record">
+          <p>On Monday, Arctic Today recorded that Trump posted a map on Truth Social depicting North America, Central America, the Caribbean, Greenland, and Iceland covered by the U.S. flag and labeled "United States of America." The image "was published to his Truth Social account without accompanying text. It carried no policy statement or explanation."<Cite s="arctictoday-trump-map-2026-09-07" passage="without accompanying text" /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-trump-map-2026-09-07" kind="record">
+          <p>The Hill described the same post as a map with the American flag over the United States, Canada, Mexico, part of Central America, Greenland, Iceland, and Caribbean islands including Cuba and Jamaica. That description does not include a caption about the EU package.<Cite s="thehill-trump-map-2026-09-07" passage="American flag superimposed over the U.S., Canada, Mexico" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-greenland-eu-2026-09-07" kind="record">
+          <p>AP wrote that von der Leyen's visit came as 11 NATO countries began Arctic Shield exercises in Greenland on Monday, "involving around 400 military personnel," running September 7 to 18, with no U.S. troops taking part.<Cite s="ap-greenland-eu-2026-09-07" passage="Arctic Shield drills, which run Sept. 7-18" /></p></SourcedBlock>
+
+        <SourcedBlock source="forsvaret-arctic-shield-2026" kind="record">
+          <p>The Danish Defence release for Arctic Shield 2026 says "around 400 soldiers, sailors and airmen from 10 NATO nations" around Narsarsuaq and Kangerlussuaq from 7 to 18 September. That is 10 nations, not AP's 11.<Cite s="forsvaret-arctic-shield-2026" passage="from 10 NATO nations" /></p></SourcedBlock>
+
+        <SourcedBlock source="stm-housing-2026-09-08" kind="record">
+          <p>The Danish Prime Minister's Office published, dated 07.09.2026, a letter of intent with Naalakkersuisut on Greenland housing. It sets up a joint Greenlandic-Danish working group on publicly owned rental housing, where Naalakkersuisut's national-planning account estimates a maintenance backlog of more than 2.5 billion kroner, and says EU and private actors may be brought in.<Cite s="stm-housing-2026-09-08" passage="en fælles grønlandsk-dansk arbejdsgruppe" /></p></SourcedBlock>
+
+        <SourcedBlock source="dr-signing-2026-09-07" kind="record">
+          <p>DR's September 7 story on the signing recalled that on her 2024 visit von der Leyen was told by then-premier Múte B. Egede that "pæne ord ikke er nok for grønlænderne" (nice words are not enough for Greenlanders) and that concrete investment was needed.<Cite s="dr-signing-2026-09-07" passage="pæne ord ikke er nok for grønlænderne" /></p></SourcedBlock>
+
+        <SourcedBlock source="statement-26-1803" kind="record">
+          <p>Von der Leyen said the Commission is preparing "a new EU Arctic Strategy to be presented this autumn."<Cite s="statement-26-1803" passage="a new EU Arctic Strategy to be presented this autumn" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: whether the €{packageEur} million is written into a financing decision with dates and a legal basis beyond the press release, and whether the €{mffProposedEur} million survives the 2028-2034 budget talks.<Cite s="ip-26-1800" passage="proposed €530 million for Greenland under the next Multiannual Financial Framework 2028-2034" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">What the pins do not hold</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+
+        <p data-layer="narrative">Naalakkersuisut's own September press release is quoted by KNR. The government news listing we saved did not serve that page, so Nielsen's September 1 words here are KNR's quotation of it.<Cite s="knr-topmoede-2026-09-01" passage="Det oplyser naalakkersuisut i en pressemeddelelse" /></p>
+
+        <p data-layer="narrative">The Commission release names projects and a €{packageEur} million total. It does not publish a table that splits that total by project, year, or budget line. The declaration says it creates no financial obligation.<Cite s="stm-joint-declaration-2026-09-07" passage="not intended to create any legal or financial obligations" /></p>
+
+        <p data-layer="narrative">Arctic Today says the Monday Truth Social map had no accompanying text. We have not saved the Truth Social post itself. No White House or State Department statement from September 1-8 about the Commission package is in the records we hold.<Cite s="arctictoday-trump-map-2026-09-07" passage="no policy statement or explanation" /></p>
+      </section>
+
+      <StorySources event="greenland/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
