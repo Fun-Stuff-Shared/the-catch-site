@@ -4,12 +4,14 @@
 // 52 U.S.C. 20302 requires overseas ballots 45 days before the election.
 // November 3, 2026 minus 45 days is September 19, 2026.
 // The eighth Tuesday before November 3, 2026 is September 8, 2026 (RSMo 115.125).
-// Combined ballot work named in the stay application: 7 days to reassign voters + 14 days to design and test + 7 days to print = 28 days at best.
+// Ballot work as the stay application describes it (Jackson County's estimate): 7 to 10 days to move voters between maps under emergency hours,
+// then about 14 days to design and test ballots, then 7 days to print. 7 + 14 + 7 = 28 days at best. Boone County's clerk swore both maps were already loaded.
+// 1922 referendum on a sixteen-district congressional map, official return in the state appendix: 240,340 yes, 386,522 no.
 
 export const event = {
   slug: "missouri-house-map/september-2026",
   title: "Missouri's highest court says the new U.S. House map never became law and sends it to a November vote",
-  dek: "The ruling is unanimous. The November 3 House election uses the 2022 districts whether or not voters approve House Bill 1. Only a U.S. Supreme Court stay could put the 2025 map in force for that election.",
+  dek: "The ruling is unanimous. The November 3 House election uses the 2022 districts whether or not voters approve House Bill 1, unless a federal court steps in. As of September 8 none had: the state's stay request sat with the U.S. Supreme Court and two new federal suits sat in St. Louis. The referendum is on the ballot as Proposition A.",
   name: "Missouri House map",
   span: "September 3, 2026",
   date: "2026-09-03",
@@ -17,7 +19,7 @@ export const event = {
   kpis: [
     { value: "Unanimous", unit: "", label: "Missouri Supreme Court, September 3" },
     { value: "2022", unit: "map", label: "for November, whatever the referendum" },
-    { value: "Sept. 8", unit: "", label: "deadline to place the referendum on the ballot" },
+    { value: "Prop. A", unit: "", label: "certified for the ballot September 8, the court's deadline" },
     { value: "Sept. 19", unit: "", label: "45 days before November 3, overseas ballots" },
   ],
 };
@@ -34,9 +36,17 @@ export const calendar = {
   daysRulingToBallotDeadline: 5, // 2026-09-08 minus 2026-09-03
   daysRulingToUocava: 16, // 2026-09-19 minus 2026-09-03
   uocavaOffsetDays: 45, // 52 U.S.C. 20302
+  ballotReassignDaysBest: 7, // Jackson County's emergency-hours estimate, 7 to 10 days
   ballotDesignDays: 14,
   ballotPrintDays: 7,
-  combinedBallotDaysBest: 28,
+  combinedBallotDaysBest: 28, // 7 + 14 + 7
+  certified: "2026-09-08",
+};
+
+export const referendum1922 = {
+  yes: 240340,
+  no: 386522,
+  noShare: Math.round((386522 / (240340 + 386522)) * 1000) / 10, // 61.7
 };
 
 export const hb1Votes = {
