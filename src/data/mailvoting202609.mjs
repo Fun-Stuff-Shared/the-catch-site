@@ -16,6 +16,7 @@ export const event = {
 
 export const dates = {
   eo: "2026-03-31",
+  ruleEffective: "2026-08-21",
   rulePublished: "2026-08-26",
   scotusStay: "2026-08-24",
   tro: "2026-08-27",
@@ -38,11 +39,14 @@ export const computed = {
   daysFilingToElection: daysBetween(dates.app305, dates.election), // 58
   daysPiToElection: daysBetween(dates.pi, dates.election), // 60
   days297ToElection: daysBetween(dates.app297, dates.election), // 61
-  daysRuleToElection: daysBetween(dates.rulePublished, dates.election), // 69
+  daysRuleToElection: daysBetween(dates.rulePublished, dates.election), // 69, publication to election
+  // Rule line 73: "DATES: Effective August 21, 2026."
+  daysEffectiveToElection: daysBetween(dates.ruleEffective, dates.election), // 74
   daysEoToElection: daysBetween(dates.eo, dates.election), // 217
   daysFilingToUocava: daysBetween(dates.app305, dates.uocava), // 13
   daysFilingToJackson: daysBetween(dates.app305, dates.jacksonDeadline), // 3
-  daysStayToRule: daysBetween(dates.scotusStay, dates.rulePublished), // 2
+  daysStayToRule: daysBetween(dates.scotusStay, dates.rulePublished), // 2, stay to publication
+  daysEffectiveToStay: daysBetween(dates.ruleEffective, dates.scotusStay), // 3, issuance to Aug 24 opinion
   uocavaDaysBeforeElection: daysBetween(dates.uocava, dates.election), // 45
   plaintiffStates: 23,
   plaintiffJurisdictions: 25, // 23 states + D.C. + Pennsylvania's governor
@@ -88,7 +92,8 @@ export const orgPlaintiffs = [
 
 export const daysBars = [
   { label: "EO, Mar 31", value: computed.daysEoToElection },
-  { label: "USPS rule, Aug 26", value: computed.daysRuleToElection },
+  { label: "Rule effective, Aug 21", value: computed.daysEffectiveToElection },
+  { label: "Rule published, Aug 26", value: computed.daysRuleToElection },
   { label: "26A297, Sep 3", value: computed.days297ToElection },
   { label: "Injunction, Sep 4", value: computed.daysPiToElection },
   { label: "26A305, Sep 6", value: computed.daysFilingToElection },
@@ -103,8 +108,9 @@ export const applicationsTable = [
 export const timeline = [
   { date: "Mar 31", title: "Executive Order 14399", sub: "Directs a Postal Service rulemaking on mail-in and absentee ballots" },
   { date: "Jul 27", title: "Application 26A124 filed", sub: "Stay of the district court's injunction of the order" },
+  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day: Ballot Mail for Federal Elections" },
   { date: "Aug 24", title: "The Court grants 26A124", sub: "Unsigned opinion: the States' challenge to the order was not ripe" },
-  { date: "Aug 26", title: "USPS final rule published", sub: "Ballot Mail for Federal Elections, 91 Fed. Reg. 54,966" },
+  { date: "Aug 26", title: "USPS final rule published", sub: "Federal Register, 91 Fed. Reg. 54,966" },
   { date: "Aug 27", title: "Temporary restraining order", sub: "Judge Talwani pauses mandatory parts of the rule for 14 days" },
   { date: "Sep 3", title: "Application 26A297 filed", sub: "Stay of that temporary order, submitted to Justice Jackson" },
   { date: "Sep 4", title: "Preliminary injunction", sub: "Talwani enjoins named sections of the rule through November 3" },
@@ -113,7 +119,7 @@ export const timeline = [
 ];
 
 export const courtSteps = [
-  { date: "Aug 27", title: "Temporary restraining order", sub: "Talwani pauses mandatory parts of the August 26 rule for 14 days" },
+  { date: "Aug 27", title: "Temporary restraining order", sub: "Talwani pauses mandatory parts of the August 21 rule for 14 days" },
   { date: "Sep 3", title: "Application 26A297 filed", sub: "Stay of that temporary order, submitted to Justice Jackson" },
   { date: "Sep 4", title: "Preliminary injunction", sub: "Talwani enjoins named sections of the rule through November 3" },
   { date: "Sep 6", title: "Application 26A305 filed", sub: "26A297 withdrawn; stay of the September 4 injunction; response due September 9", current: true },
@@ -126,12 +132,12 @@ export const dmmRows = [
   ["705.24.4.2", "States that intend to receive mail ballots through the Postal Service must enroll each voter: name, address, outbound barcode, return barcode, and originating election-office state."],
   ["705.24.5.1", "Before accepting an outbound mailing, the Postal Service reviews it against those enrollment records."],
   ["705.24.5.2, first two sentences", "Outbound federal ballot mail is verified when presented for acceptance, and must be entered at a business-mail facility or a retail counter."],
-  ["705.24.5.3(a), (b), and (c)", "Noncompliant mailings will not be accepted and will be returned. The mailer may request further review. The Postal Service assumes no responsibility until a mailing is accepted."],
+  ["705.24.5.3(a), (b), and (c)", "Outbound mailings that do not comply will not be accepted and will be returned to the authorized ballot mailer. The mailer may request further review. The Postal Service assumes no responsibility until a mailing is accepted."],
 ];
 
 export const mailingRows = [
   ["North Carolina", "Already begun, as of the September 6 filing"],
   ["Alabama", "September 9"],
   ["At least five states", "Week of September 13"],
-  ["Uniformed and overseas voters", "September 19, for a validly requested absentee ballot whose request arrived at least 45 days before the election"],
+  ["Uniformed and overseas voters (UOCAVA)", "September 19 is the statutory mailing date for a validly requested absentee ballot. The Postal Service rule excludes UOCAVA ballots; that date is not a deadline under this rule."],
 ];
