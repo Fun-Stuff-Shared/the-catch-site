@@ -42,7 +42,7 @@ export function checkTimeline(html, timeline = {}) {
   if (empty.length !== Number(changes.length === 0)) throw new Error('No-change text differs');
   if (!changes.length) {
     const checked = timeline.changes_checked_at?.slice(0, 10);
-    const expected = `No changes are recorded in this view. ${checked ? `Changes last checked ${checked}.` : 'A check date has not been recorded.'}`;
+    const expected = `No changes are recorded in this view. ${checked ? `Changes last checked ${checked}.` : "The first check of this story's sources has not run yet."}`;
     if (normalize(text(empty[0])) !== expected) throw new Error('No-change check date differs');
   }
   const expectedUrls = new Set([...confirmations.flatMap((row) => [...(row.reports ?? []), ...(row.quotes ?? []).flatMap((quote) => quote.reports ?? [])].map((report) => report.url)), ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url])]);

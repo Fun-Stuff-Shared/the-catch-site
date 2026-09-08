@@ -447,6 +447,32 @@
       "quote": "August was a 'wow' jobs report",
       "quote_span_check": "normalized",
       "about": "An economist's release-day post. Saved on September 8 after an independent review of this page named it."
+    },
+    {
+      "id": "bls-jolts-2026-07",
+      "title": "Job Openings and Labor Turnover, July 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-01",
+      "url": "https://www.bls.gov/news.release/archives/jolts_09012026.htm",
+      "pinned_path": "data/sources/bls-jolts-2026-07.html",
+      "text_path": "data/sources/bls-jolts-2026-07.txt",
+      "text_sha256": "sha256:a817c443e0ba6763a3a2b05661496d2c7c300a7f2266ff85dace51fd1274eab7",
+      "quote": "The number of job openings was little changed at 7.3 million in July",
+      "quote_span_check": "normalized",
+      "about": "The agency's monthly count of openings, hires, quits and layoffs, released three days before the jobs report; saved as served on release day."
+    },
+    {
+      "id": "bls-prebmk-2026-for-august",
+      "title": "Preliminary benchmark revision to establishment survey data, March 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-08-28",
+      "url": "https://www.bls.gov/news.release/embargo/prebmk.nr0.htm",
+      "pinned_path": "data/sources/bls-prebmk-2026.txt",
+      "text_path": "data/sources/bls-prebmk-2026.txt",
+      "text_sha256": "sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f",
+      "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
+      "quote_span_check": "normalized",
+      "about": "Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records; this is the preliminary result, published one week before the August report."
     }
   ],
   "story_sources": [
@@ -477,6 +503,20 @@
       "label": "Weekly unemployment claims",
       "meta": " · released September 3",
       "usage": "the 206,000 claims figure"
+    },
+    {
+      "id": "bls-jolts-2026-07",
+      "group": "primary",
+      "label": "Job Openings and Labor Turnover, July 2026",
+      "meta": " · released September 1",
+      "usage": "openings, hires, quits and layoffs before the report"
+    },
+    {
+      "id": "bls-prebmk-2026-for-august",
+      "group": "primary",
+      "label": "Preliminary benchmark revision, March 2026",
+      "meta": " · released August 28",
+      "usage": "the annual check of the payroll count"
     },
     {
       "id": "fred-payems-2026-08",
@@ -757,6 +797,12 @@
       "need": "diffusion indexes and the unadjusted tables",
       "plain": "The saved release text carries the summary and detail tables but not the diffusion index page; the unadjusted restaurant figure comes from the bank note instead.",
       "record_id": "piedmont-august-jobs",
+      "status": "partly have"
+    },
+    {
+      "need": "multiple jobholders and the count outside the labor force who want a job",
+      "plain": "The saved release text carries the want-a-job count (on the page) but not the multiple-jobholder table; an enhancement, not a gap.",
+      "record_id": "bls-empsit-2026-08",
       "status": "partly have"
     }
   ],

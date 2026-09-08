@@ -18,7 +18,7 @@ const sourcePath = (source) => {
 };
 ---
       <details class="record-ledger" data-record-ledger data-layer="fact" data-state-derived open={!supporting}>
-        <summary>{slots.some(([, slot]) => !slot.figure && slot.quote_span) ? "Figures and source passages" : "Figures in the source documents"} <span class="series-count">{slots.length}</span></summary>
+        <summary>{slots.length === 0 ? "Tracked figures" : slots.some(([, slot]) => !slot.figure && slot.quote_span) ? "Figures and source passages" : "Figures in the source documents"}{slots.length > 0 && <> <span class="series-count">{slots.length}</span></>}</summary>
         {slots.length ? slots.map(([id, slot]) => {
           const source = evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id);
           const href = source ? sourcePath(source) : null;
@@ -32,7 +32,7 @@ const sourcePath = (source) => {
             {!href && source?.publisher && <p class="ledger-source">{source.publisher} · No document link in this record.</p>}
             {slot.figure && (!href || !href.startsWith('/records/')) && slot.quote_span && <details class="ledger-source-passage"><summary>Recorded passage</summary><blockquote data-source-copy>{slot.quote_span}</blockquote></details>}
           </article>;
-        }) : <p>No tracked values have been established for this story.</p>}
+        }) : <p>The figures on this page come from the saved records cited beside them. The state record has not yet read this story's sources, so it tracks no values for it; when it does, they appear here with their source passages.</p>}
       </details>
       {view.follows && <section data-layer="fact"><h2>Since the previous story</h2>
         <p><a href={eventPath(view.follows)}>Read the previous story</a></p>

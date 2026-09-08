@@ -18,5 +18,5 @@ const plainDate = (value) => new Intl.DateTimeFormat("en-US", { month: "long", d
   <h2>What changed since</h2>
   {changes.length > 0
     ? <ul>{changes.map((row) => <li data-revision-change data-state-transition><QuotedText text={row.sentence} quotes={[quotes.get(row.earlier_occurrence_id), quotes.get(row.later_occurrence_id)]} /> <a href={row.earlier_evidence_url}>Earlier report</a>; <a href={row.later_evidence_url}>Later report</a>.</li>)}</ul>
-    : <p data-revision-no-changes>No changes are recorded in this view. {changesCheckedAt ? `Changes last checked ${changesCheckedAt}.` : "A check date has not been recorded."}</p>}
+    : <p data-revision-no-changes>No changes are recorded in this view. {changesCheckedAt ? `Changes last checked ${changesCheckedAt}.` : "The first check of this story's sources has not run yet."}</p>}
 </section>

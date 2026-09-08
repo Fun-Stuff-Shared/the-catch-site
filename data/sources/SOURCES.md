@@ -136,3 +136,12 @@ The BLS release and the eight coverage articles were copied from the September 4
 | data/sources/coverage/x-casselman-august-jobs.txt | 1842 | f3f77387bf2cb30f |
 | data/sources/coverage/x-heatherlong-august-jobs.html | 189704 | 5a4b9fb46fc184c2 |
 | data/sources/coverage/x-heatherlong-august-jobs.txt | 813 | 3cb6365d5a94f416 |
+
+## Added after the second review (2026-09-08)
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/bls-jolts-2026-07.html | 752398 | 135838a0ad02e0c7 |
+| data/sources/bls-jolts-2026-07.txt | 70696 | a817c443e0ba6763 |
+| data/sources/coverage/ap-jolts-july-2026.html | 772237 | 56b39d32f089723b |
+| data/sources/coverage/ap-jolts-july-2026.txt | 43270 | 7e7da05f6633bab5 |
