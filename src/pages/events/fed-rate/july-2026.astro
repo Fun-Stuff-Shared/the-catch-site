@@ -29,13 +29,27 @@ const path = "M" + pts.join(" L");
 const endX = x("2026-07-29"), endY = y(prev);
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The federal funds rate &middot; July 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fed-rate/">The federal funds rate</a><span>July 2026</span></div>
   <div class="content">
     <main class="story">
       <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; July 2026 decision</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
+      <nav class="story-toc" aria-label="In this story">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#the-statement">The statement barely moved</a></li>
+          <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#what-next">What happened next</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
       <div class="kpi-strip">
         {event.kpis.map((k) => (
           <div class="kpi">
@@ -54,20 +68,7 @@ const endX = x("2026-07-29"), endY = y(prev);
         </ol>
       </aside>
 
-      <nav class="story-toc" aria-label="In this story">
-        <p class="toc-label">In this story</p>
-        <ol>
-          <li><a href="#what-happened">What happened</a></li>
-          <li><a href="#where-this-sits">Where this sits</a></li>
-          <li><a href="#the-statement">The statement barely moved</a></li>
-          <li><a href="#outlets">What the outlets got right, and what they got wrong</a></li>
-          <li><a href="#claim-check">Claim checked against the record</a></li>
-          <li><a href="#who-feels-it">Who feels it</a></li>
-          <li><a href="#what-next">What happened next</a></li>
-          <li><a href="#markets">What the markets said</a></li>
-          <li><a href="#records">The records</a></li>
-        </ol>
-      </nav>
+
 
       <EventRecordContext subEvents={[{ date: "July 29", label: "Federal Reserve decision", section_anchor: "what-happened" }]} recordIds={["fomc-statement-2026-07-29", "fomc-minutes-2026-07-29"]} />
       <section id="what-happened">
@@ -227,34 +228,12 @@ const endX = x("2026-07-29"), endY = y(prev);
           assessed that policy tightening would likely be necessary if inflation did not decline.&rdquo;</em>
           <span class="chip chip-record">record</span>
         </p>
-        <script>
-          (function () {
-            var links = document.querySelectorAll(".story-toc a[href^='#']");
-            if (!links.length || !("IntersectionObserver" in window)) return;
-            var map = {};
-            links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a.parentElement; });
-            var current = null;
-            var obs = new IntersectionObserver(function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  if (current) current.classList.remove("toc-active");
-                  current = map[e.target.id];
-                  if (current) current.classList.add("toc-active");
-                }
-              });
-            }, { rootMargin: "-15% 0px -70% 0px" });
-            Object.keys(map).forEach(function (id) {
-              var el = document.getElementById(id);
-              if (el) obs.observe(el);
-            });
-          })();
-        </script>
         <p class="railed rail-note">
           Watching: the September 15&ndash;16 meeting, which brings refreshed projections; monthly PCE prints
           against the 64-month streak; whether the three dissents become a majority.
         </p>
       </section>
-      <StoryState view={state} />
+      <StoryState view={state} supporting />
 
       <section id="markets">
         <p class="sec-kicker">Pricing</p>

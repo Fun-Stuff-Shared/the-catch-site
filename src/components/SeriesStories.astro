@@ -1,0 +1,13 @@
+---
+import StoryLink from './StoryLink.astro';
+import { storyCatalog } from '../lib/discovery.mjs';
+import { formatDate } from '../lib/presentation.mjs';
+const { path } = Astro.props;
+const stories = storyCatalog().filter(s => s.series === path);
+const latest = stories[0];
+---
+<section class="series-stories" data-layer="fact">
+  <div class="series-latest-heading"><h2>Start with the latest</h2>{latest?.updated && <p>Story updated <time datetime={latest.updated}>{formatDate(latest.updated)}</time></p>}</div>
+  <div class:list={['series-lead', {'series-lead-visual': Astro.slots.has('default')}]}>{latest && <StoryLink story={latest} lead />}<slot /></div>
+  <section class="series-history"><h2>Follow the story over time</h2>{stories.length > 1 ? <ol>{stories.slice(1).map(story => <li><time datetime={story.date}>{formatDate(story.date)}</time><div><h3><a href={story.href}>{story.title}</a></h3><p>{story.summary}</p></div></li>)}</ol> : <p>This is the first published story in this series. Future reports will appear here alongside it.</p>}</section>
+</section>

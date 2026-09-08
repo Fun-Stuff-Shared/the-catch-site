@@ -1,18 +1,20 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { readPublishedState, deskEvents, eventPath } from "../../lib/state.mjs";
-import { formatDate } from "../../lib/presentation.mjs";
-const state = readPublishedState();
-const desks = deskEvents(state);
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { series, storyCatalog } from '../../lib/discovery.mjs';
+import { formatDate } from '../../lib/presentation.mjs';
+const stories = storyCatalog();
+const directory = series.map(s => ({ ...s, entries: stories.filter(story => story.series === s.path) })).filter(s => s.entries.length).sort((a, b) => String(b.entries[0].date).localeCompare(String(a.entries[0].date)) || a.title.localeCompare(b.title));
+const topics = [...new Set(directory.map(s => s.topic))];
 ---
-<BaseLayout title="Events | The Catch" current="Events">
-  <div slot="locator" class="locator"><span>EVENTS</span><span>The record, in context</span></div>
-  <div class="content"><main class="method-main">
-    <h1>Events</h1>
-    <section data-layer="fact"><h2>Event records</h2><ul class="matters-grid">
-      <li><a href="/events/fed-rate/"><span class="mt-title">The federal funds rate</span></a></li>
-      <li><a href="/events/jobs/"><span class="mt-title">The jobs report</span></a></li>
-    </ul></section>
-    {desks.map(([desk, events]) => <section data-layer="fact"><h2>{desk}</h2><ul>{events.map((view) => <li><a href={eventPath(view.event.id)}>{view.event.label}</a> · {formatDate(view.event.period)}</li>)}</ul></section>)}
-  </main></div>
+<BaseLayout title="Series | The Catch" current="Events">
+  <main class="discovery" id="main-content" data-catalog="series">
+    <header class="page-intro"><h1>Stories that keep unfolding.</h1><p>A series follows an ongoing subject. Start with its latest story, or explore how it developed.</p></header>
+    <div class="browse-toolbar"><h2>{directory.length} published series · Latest first</h2><form class="story-search" role="search"><label class="sr-only" for="series-query">Search series</label><input id="series-query" name="q" type="search" placeholder="Search series" autocomplete="off" /><button type="submit" aria-label="Search series"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button></form></div>
+    <div class="topic-filters" aria-label="Filter series by topic"><button data-topic-filter="" aria-pressed="true">All topics</button>{topics.map(topic => <button data-topic-filter={topic} aria-pressed="false">{topic}</button>)}</div>
+    <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+    <div class="series-directory">{directory.map(s => { const latest = s.entries[0]; return <section class="series-entry" data-story-item data-topic={s.topic} data-search={`${s.title} ${s.description} ${s.topic} ${s.keywords} ${s.entries.map(e => e.title).join(' ')}`.toLowerCase()}><div><p class="story-meta"><span>{s.topic}</span><span class="series-count">{s.entries.length} {s.entries.length === 1 ? 'story' : 'stories'}</span></p><h2><a href={s.path}>{s.title}</a></h2><p>{s.description}</p><a class="read-link" href={s.path}>Explore the series <span aria-hidden="true">↗</span></a></div><div class="series-latest"><p class="story-meta">Latest story <time datetime={latest.date}>{formatDate(latest.date)}</time></p><h3><a href={latest.href}>{latest.title}</a></h3><a class="read-link" href={latest.href}>Read the story <span aria-hidden="true">↗</span></a>{s.entries.length > 1 && <details class="series-earlier"><summary>Earlier stories ({s.entries.length - 1})</summary>{s.entries.slice(1).map(story => <a href={story.href}>{story.title}</a>)}</details>}</div></section>; })}</div>
+    <div class="search-empty" hidden><h3>No series found</h3><p>Try another word or choose a different topic.</p><button data-clear-search>Clear search and filters</button></div>
+    <nav class="feed-pagination" aria-label="Series pages" hidden><button data-prev-page>Previous</button><span data-page-label></span><button data-next-page>Next</button></nav>
+  </main>
 </BaseLayout>
+<script>import '../../scripts/discovery';</script>

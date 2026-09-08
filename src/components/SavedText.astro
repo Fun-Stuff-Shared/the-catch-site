@@ -1,0 +1,51 @@
+---
+import { sourceContext } from '../lib/evidence-context.mjs';
+const { text, quote } = Astro.props;
+const passage = sourceContext(text, quote);
+---
+<div class="saved-text-tools">
+  <form role="search"><label for="saved-query">Find in this document</label><div><input id="saved-query" type="search" /><button type="submit">Find next</button></div><p data-find-status role="status" aria-live="polite"></p></form>
+  {passage && <a href="#cited-passage">Jump to the cited passage</a>}
+</div>
+<pre data-saved-text><span>{passage ? <Fragment>{text.slice(0, passage.start)}<mark id="cited-passage" tabindex="-1">{passage.match}</mark>{text.slice(passage.start + passage.match.length)}</Fragment> : text}</span></pre>
+<style is:global>
+.saved-text-tools { margin: 1.5rem 0; font: .85rem/1.4 var(--sans); }
+.saved-text-tools form { max-width: 32rem; }
+.saved-text-tools label { display: block; margin-bottom: .4rem; }
+.saved-text-tools form > div { display: flex; gap: .5rem; }
+.saved-text-tools input { min-width: 0; flex: 1; padding: .6rem; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font: inherit; }
+.saved-text-tools button { min-height: 44px; padding: .6rem; background: var(--paper); border: 1px solid var(--rule); color: var(--blue); font: inherit; }
+.saved-text-tools [data-find-status] { margin: .4rem 0; }
+.saved-copy pre[data-saved-text] { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--rule); background: var(--paper); padding: 1rem; font: .9rem/1.6 var(--mono); }
+#cited-passage { background: #fff0bb; color: var(--ink); scroll-margin-top: 2rem; }
+</style>
+<script>
+  const form = document.querySelector<HTMLFormElement>('.saved-text-tools form')!;
+  const input = form.querySelector<HTMLInputElement>('input')!;
+  const pre = document.querySelector<HTMLElement>('[data-saved-text]')!;
+  let previous = '', next = 0;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const query = input.value.toLocaleLowerCase().trim();
+    const text = pre.textContent!.toLocaleLowerCase();
+    if (query !== previous) next = 0;
+    previous = query;
+    let start = query ? text.indexOf(query, next) : -1;
+    if (start < 0 && next) start = text.indexOf(query);
+    const status = form.querySelector('[data-find-status]')!;
+    if (start < 0) { status.textContent = query ? 'No matches in this document.' : 'Enter a word or phrase.'; return; }
+    const walker = document.createTreeWalker(pre, NodeFilter.SHOW_TEXT);
+    const range = document.createRange();
+    let offset = 0, begun = false, node: Node | null;
+    while ((node = walker.nextNode())) {
+      const end = offset + node.textContent!.length;
+      if (!begun && start < end) { range.setStart(node, start - offset); begun = true; }
+      if (begun && start + query.length <= end) { range.setEnd(node, start + query.length - offset); break; }
+      offset = end;
+    }
+    const selection = getSelection(); selection?.removeAllRanges(); selection?.addRange(range);
+    window.scrollBy(0, range.getBoundingClientRect().top - innerHeight / 3);
+    next = start + query.length;
+    status.textContent = 'Match selected. Find next moves to the next match.';
+  });
+</script>

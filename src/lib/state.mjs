@@ -62,13 +62,14 @@ export function readState(directory = stateDirectory) {
   return { events, chains };
 }
 
+const MONTHS = "january|february|march|april|may|june|july|august|september|october|november|december";
+const STORY_ID = new RegExp(`^event-([a-z0-9-]+?)-((?:${MONTHS})-\\d{4})$`);
+
 export function eventPath(id) {
-  const seeded = {
-    "event-jobs-july-2026": "jobs/july-2026",
-    "event-fed-rate-june-2026": "fed-rate/june-2026",
-    "event-fed-rate-july-2026": "fed-rate/july-2026",
-  };
-  return `/events/${seeded[id] ?? encodeURIComponent(id)}/`;
+  // Hand-authored stories carry ids of the form event-<subject>-<month>-<year> and live at
+  // /events/<subject>/<month>-<year>/; every other event id is its own route segment.
+  const story = STORY_ID.exec(id);
+  return `/events/${story ? `${story[1]}/${story[2]}` : encodeURIComponent(id)}/`;
 }
 
 export function rankedChains(state) {
@@ -142,7 +143,8 @@ export function selectPublishedState(state, ids) {
   const events = new Map();
   for (const id of selected) {
     const source = state.events.get(id);
-    if (!source) throw new Error(`Publication manifest names missing event: ${id}`);
+    // A hand-authored story publishes on its manifest; its projection view can arrive at the next refresh.
+    if (!source) { console.warn(`Publication manifest names an event with no view yet: ${id}`); continue; }
     const children = [...selected].filter((child) => child !== id && state.events.get(child)?.status === 'published' && state.events.get(child)?.root_id === id);
     if (source.status === 'retired' && !children.length) throw new Error(`Publication manifest names retired event: ${id}`);
     if (source.status === 'merged' && !selected.has(source.survivor)) throw new Error(`Published redirect has unpublished survivor: ${id}`);

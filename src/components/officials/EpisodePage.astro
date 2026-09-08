@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ReadingModes from "./ReadingModes.astro";
+import ReadingModes from "../ReadingModes.astro";
 import VoteTable from "./VoteTable.astro";
 import DecisionTimeline from "../story/DecisionTimeline.astro";
 import { votesForEpisode, keyVotesForEpisode } from "../../lib/official-votes.mjs";
@@ -23,14 +23,16 @@ const tocEntries = sections.map((block, i) => ({ block, i }))
 const layerFor = (block) => block.layer ?? ({ how_it_worked: "narrative", context: "narrative", pattern: "narrative", gloss: "narrative" }[block.type]);
 const voteText = (vote) => (vote.text || vote.reader_description).replace(/^Voted\s+(?:Yes|No|Not Voting)\s+/i, "").replace(/^Did not vote\s+/i, "").replace(/\bon a motion to table\b/i, "on whether to set aside");
 ---
-<BaseLayout title={`${episode.title} | The Catch`} current="Officials"><div slot="locator" class="locator"><a href="/officials/">OFFICIALS</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>{episode.kicker}</span></div><div class="content"><main class="story" id="story-root">
-  <ReadingModes />
+<BaseLayout title={`${episode.title} | The Catch`} current="Officials"><div slot="locator" class="locator"><a href="/officials/">People</a><a href="/officials/marco-rubio/">Marco Rubio</a><span>{episode.kicker}</span></div><div class="content"><main class="story" id="story-root">
+
   <p class="story-kicker" data-layer="narrative"><a href="/officials/marco-rubio/">Marco Rubio</a> &middot; {episode.kicker}{episode.updated && <Fragment> &middot; updated {episode.updated}</Fragment>}</p>
   <h1 data-layer="fact">{episode.title}</h1>
   <p class="story-dek" data-layer="fact">{episode.dek}</p>
-  {episode.kpis && <div class="kpi-strip" data-layer="fact">{episode.kpis.map((k) => <div class="kpi"><span class="kpi-value">{k.value}</span><span class="kpi-label">{k.label}</span></div>)}</div>}
+      <ReadingModes />
+  <nav class="story-toc" aria-label="In this story" data-layer="fact"><details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary><ol>{tocEntries.map((entry) => <li><a href={`#${entry.anchor}`}>{entry.title}</a></li>)}<li><a href="#all-votes">Every recorded vote</a></li><li><a href="#the-records">The records</a></li></ol></details></nav>
+      {episode.kpis && <div class="kpi-strip" data-layer="fact">{episode.kpis.map((k) => <div class="kpi"><span class="kpi-value">{k.value}</span><span class="kpi-label">{k.label}</span></div>)}</div>}
   {episode.three_things && <aside class="three-things" data-layer="fact"><p class="tt-label">Three things to know</p><ol>{episode.three_things.map((item) => <li set:html={item} />)}</ol></aside>}
-  <nav class="story-toc" aria-label="In this story" data-layer="fact"><p class="toc-label">In this story</p><ol>{tocEntries.map((entry) => <li><a href={`#${entry.anchor}`}>{entry.title}</a></li>)}<li><a href="#all-votes">Every recorded vote</a></li><li><a href="#the-records">The records</a></li></ol></nav>
+
   {sections.map((block, i) =>
     block.type === "statements" ? (
       <section id="statements">{block.kicker && <p class="sec-kicker" data-layer="narrative">{block.kicker}</p>}<h2 data-layer="fact">What he said</h2>{block.intro && <p data-layer="narrative" set:html={block.intro} />}

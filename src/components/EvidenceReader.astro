@@ -1,0 +1,9 @@
+<div id="evidence-preview" class="evidence-preview" popover="manual" role="tooltip"><p class="preview-title"></p><p class="preview-copy"></p><span>Click to read in context</span></div>
+<dialog id="evidence-reader" class="evidence-reader" aria-labelledby="evidence-title">
+  <header class="evidence-toolbar"><span>Source reader</span><div><button type="button" data-expand-evidence aria-label="Expand source reader" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 9V4h5m6 0h5v5M4 15v5h5m6 0h5v-5"/></svg></button><button type="button" data-close-evidence aria-label="Close source reader"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div></header>
+  <div class="evidence-identity"><p class="evidence-status" role="status" aria-live="polite"></p><h2 id="evidence-title">Source</h2><p class="evidence-byline"></p><p class="evidence-purpose"></p><div class="evidence-view-controls" hidden><button type="button" data-context-view aria-pressed="true">Passage in context</button><button type="button" data-full-view aria-pressed="false">Full saved text</button></div></div><div class="evidence-scroll"><div class="evidence-text" tabindex="0"></div></div>
+  <footer class="evidence-footer"><button type="button" data-close-evidence>Back to reading</button><a data-source-page>Source details</a><a data-saved-page>Saved document ↗</a></footer>
+</dialog>
+<script>
+  import '../scripts/evidence-reader';
+</script>

@@ -2,14 +2,15 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { records } from "../../lib/record-manifests.mjs";
 const eventRecords = records.filter((record) => record.subject !== "news");
-const newsRecords = records.filter((record) => record.subject === "news");
 const ordered = [...eventRecords].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
+const subjectNames = { jobs: 'The job market', 'fed-rate': 'Interest rates', 'officials/marco-rubio': 'Marco Rubio' };
+const publishers = [...new Set(ordered.map(record => record.publisher))].sort();
+const years = [...new Set(ordered.map(record => record.date.slice(0, 4)))].sort().reverse();
 const subjects = [...new Set(ordered.map((record) => record.subject))];
-const newsCount = newsRecords.length;
 ---
-<BaseLayout title="Records | The Catch" current="Records">
-  <div slot="locator" class="locator"><span>RECORDS</span><span>Original documents</span></div>
-  <div class="content"><main class="records-index"><h1>Records</h1><p class="lede">A record is the original document behind an event. Start with the document, then see where its words are used.</p><nav aria-label="Record subjects" class="subjects">{subjects.map((subject) => <a href={`#${subject}`}>{subject.replaceAll("-", " ")}</a>)}</nav>{subjects.map((subject) => <section id={subject}><h2>{subject.replaceAll("-", " ")}</h2><ul>{ordered.filter((record) => record.subject === subject).map((record) => <li><a href={`/records/${record.id}/`}><span>{record.title}</span><small>{record.publisher} &middot; {record.date}</small></a></li>)}</ul></section>)}{newsCount > 0 && <section id="news" class="news-section"><h2>Outlet coverage</h2><p class="news-note">{newsCount} captured outlet articles are available as saved copies. These are the coverage we check against, not event records.</p></section>}</main></div>
+<BaseLayout title="Source library | The Catch" current="Records">
+  <div slot="locator" class="locator"><span>SOURCE LIBRARY</span><span>Original documents</span></div>
+  <div class="content"><main class="records-index"><h1>Source library</h1><p class="lede">The original documents behind the stories. Open a source to read the saved text and see where it is cited.</p><form class="document-filters" role="search"><label>Search documents<input type="search" name="q" id="document-query" placeholder="Title, publisher or subject" /></label><label>Publisher<select name="publisher"><option value="">All publishers</option>{publishers.map(publisher => <option>{publisher}</option>)}</select></label><label>Year<select name="year"><option value="">All years</option>{years.map(year => <option>{year}</option>)}</select></label><button type="reset">Clear filters</button></form><p data-document-status role="status" aria-live="polite"></p><p data-document-empty hidden>No documents match these filters.</p><nav aria-label="Record subjects" class="subjects">{subjects.map((subject) => <a href={`#${subject}`}>{subjectNames[subject] ?? subject.replaceAll("-", " ")}</a>)}</nav>{subjects.map((subject) => <section id={subject} data-document-group><h2>{subjectNames[subject] ?? subject.replaceAll("-", " ")}</h2><ul>{ordered.filter((record) => record.subject === subject).map((record) => <li data-document data-publisher={record.publisher} data-year={record.date.slice(0,4)} data-search={`${record.title} ${record.publisher} ${subjectNames[subject] ?? subject}`.toLowerCase()}><a href={`/records/${record.id}/`}><span>{record.title}</span><small>{record.publisher} &middot; {record.date}</small></a></li>)}</ul></section>)}</main></div>
 </BaseLayout>
 <style>
   .records-index { max-width: 48rem; margin: 0 auto; padding: 2rem 2rem 4rem; }
@@ -21,7 +22,7 @@ const newsCount = newsRecords.length;
   .subjects a:hover { border-color: var(--blue); background: var(--blue-tint); }
   section { margin-top: 2.5rem; }
   h2 { font: 700 1.4rem/1.2 var(--serif); border-bottom: 2px solid var(--rule-strong);
-    padding-bottom: .45rem; text-transform: capitalize; margin: 0 0 0; }
+    padding-bottom: .45rem;  margin: 0 0 0; }
   ul { list-style: none; padding: 0; margin: 0; }
   li { border-bottom: 1px solid var(--rule); }
   li:nth-child(even) { background: #fbfcfd; }
@@ -31,3 +32,41 @@ const newsCount = newsRecords.length;
   small { display: block; color: var(--slate); font: .8rem var(--sans); margin-top: .25rem; }
   .news-note { font: .88rem/1.5 var(--sans); color: var(--slate); }
 </style>
+
+<style>
+  .document-filters { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: .75rem; margin: 1.5rem 0 .5rem; }
+  .document-filters label { display: grid; gap: .35rem; font: 500 .8rem var(--sans); min-width: 0; }
+  .document-filters input, .document-filters select { width: 100%; min-width: 0; min-height: 44px; padding: .6rem; background: var(--paper); border: 1px solid var(--rule); color: var(--ink); font: .85rem var(--sans); }
+  .document-filters button { grid-column: 1 / -1; justify-self: start; background: none; border: 0; padding: .5rem 0; color: var(--blue); text-decoration: underline; min-height: 44px; cursor: pointer; }
+  [data-document-status], [data-document-empty] { font: .85rem/1.5 var(--sans); color: var(--slate); }
+  @media (max-width: 640px) { .document-filters { grid-template-columns: 1fr 1fr; } .document-filters label:first-child { grid-column: 1 / -1; } }
+</style>
+<script>
+  const form = document.querySelector<HTMLFormElement>('.document-filters')!;
+  const query = form.querySelector<HTMLInputElement>('input')!;
+  const publisher = form.querySelector<HTMLSelectElement>('[name=publisher]')!;
+  const year = form.querySelector<HTMLSelectElement>('[name=year]')!;
+  const rows = [...document.querySelectorAll<HTMLElement>('[data-document]')];
+  const url = new URL(location.href);
+  query.value = url.searchParams.get('q') ?? '';
+  publisher.value = url.searchParams.get('publisher') ?? '';
+  year.value = url.searchParams.get('year') ?? '';
+  const render = () => {
+    const words = query.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+    rows.forEach(row => { row.hidden = !words.every(word => row.dataset.search!.includes(word)) || !!publisher.value && row.dataset.publisher !== publisher.value || !!year.value && row.dataset.year !== year.value; });
+    document.querySelectorAll<HTMLElement>('[data-document-group]').forEach(group => {
+      group.hidden = !group.querySelector('[data-document]:not([hidden])');
+      const link = [...document.querySelectorAll<HTMLAnchorElement>('.subjects a')].find(link => decodeURIComponent(link.hash.slice(1)) === group.id);
+      if (link) link.hidden = group.hidden;
+    });
+    const count = rows.filter(row => !row.hidden).length;
+    document.querySelector('[data-document-status]')!.textContent = `${count} ${count === 1 ? 'document' : 'documents'}`;
+    document.querySelector<HTMLElement>('[data-document-empty]')!.hidden = count !== 0;
+    for (const [key, value] of [['q', query.value], ['publisher', publisher.value], ['year', year.value]]) value ? url.searchParams.set(key, value) : url.searchParams.delete(key);
+    history.replaceState(null, '', url);
+  };
+  form.addEventListener('input', render);
+  form.addEventListener('submit', event => { event.preventDefault(); render(); });
+  form.addEventListener('reset', () => { query.value = ''; publisher.value = ''; year.value = ''; render(); });
+  render();
+</script>

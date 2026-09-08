@@ -1,0 +1,111 @@
+<div class="mode-switcher" role="radiogroup" aria-label="Reading mode">
+  <a class="mode-btn active" href="?mode=story" data-mode="story" role="radio" aria-checked="true">The story</a>
+  <a class="mode-btn" href="?mode=facts" data-mode="facts" role="radio" aria-checked="false">Just the facts</a>
+  <a class="mode-btn" href="?mode=work" data-mode="work" role="radio" aria-checked="false">Show the work</a>
+
+</div>
+
+<style is:global>
+  .mode-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    margin: 0 0 2rem;
+    overflow: hidden;
+  }
+  .mode-btn {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border: none;
+    background: transparent;
+    color: var(--slate);
+    cursor: pointer;
+    border-right: 1px solid var(--rule);
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+  }
+  .mode-btn:last-of-type { border-right: none; }
+  .mode-btn:hover { background: var(--blue-tint); color: var(--ink); }
+  .mode-btn.active { background: var(--ink); color: #fff; }
+  .mode-hint {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--slate);
+    margin-left: auto;
+    padding: 0 1rem;
+    white-space: nowrap;
+  }
+  @media (max-width: 640px) {
+    .mode-switcher { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mode-btn { display: flex; align-items: center; justify-content: center; padding: .65rem .3rem; font-size: .72rem; min-height: 44px; text-align: center; }
+    .mode-hint { display: none; }
+  }
+
+  #story-root [data-layer="proof"] { display: none; }
+  #story-root.mode-facts [data-layer="narrative"] { display: none; }
+  #story-root.mode-work [data-layer="proof"] { display: revert; }
+  #story-root.mode-work .receipt { display: block; }
+  #story-root [data-layer] { transition: opacity 0.15s; }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const root = document.getElementById("story-root");
+    const buttons = document.querySelectorAll(".mode-btn");
+    if (!root || !buttons.length) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const initial = ["story", "facts", "work"].includes(params.get("mode")) ? params.get("mode") : "story";
+    root.classList.add(`mode-${initial}`);
+    const ledger = root.querySelector<HTMLDetailsElement>('[data-record-ledger]');
+    if (ledger) ledger.open = initial === "work";
+    buttons.forEach((b) => {
+      const isActive = b.getAttribute("data-mode") === initial;
+      b.classList.toggle("active", isActive);
+      b.setAttribute("aria-checked", isActive ? "true" : "false");
+      b.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    buttons.forEach((btn, index) => {
+      btn.addEventListener("keydown", (e) => {
+        const step = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+        if (!step && e.key !== "Home" && e.key !== "End" && e.key !== " ") return;
+        e.preventDefault();
+        const target = e.key === "Home" ? buttons[0] : e.key === "End" ? buttons[buttons.length - 1] : buttons[(index + step + buttons.length) % buttons.length];
+        target.click();
+        target.focus();
+      });
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const candidates = [...root.querySelectorAll<HTMLElement>('section[id], aside[id]')];
+        const linked = candidates.find(section => '#' + section.id === location.hash && section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < innerHeight);
+        const anchor = linked ?? candidates.filter(section => section.getBoundingClientRect().height && section.getBoundingClientRect().top <= 160).at(-1);
+        const mode = btn.getAttribute("data-mode");
+        if (ledger) ledger.open = mode === "work";
+        root.className = root.className.replace(/mode-\w+/g, "").trim() + ` mode-${mode}`;
+        buttons.forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle("active", isActive);
+          b.setAttribute("aria-checked", isActive ? "true" : "false");
+          b.setAttribute("tabindex", isActive ? "0" : "-1");
+        });
+        const url = new URL(window.location.href);
+        url.searchParams.set("mode", mode);
+        if (anchor) {
+          const index = candidates.indexOf(anchor);
+          const target = anchor.getBoundingClientRect().height ? anchor : [...candidates.slice(0, index).reverse(), ...candidates.slice(index + 1)].find(section => section.getBoundingClientRect().height);
+          if (target) {
+            requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+            url.hash = target.id;
+          }
+        }
+        history.replaceState(null, "", url.toString());
+        document.dispatchEvent(new Event('reading-mode-change'));
+      });
+    });
+  });
+</script>

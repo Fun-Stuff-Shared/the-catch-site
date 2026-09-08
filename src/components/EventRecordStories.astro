@@ -5,14 +5,14 @@ const { recordPath } = Astro.props;
 const state = readPublishedState();
 const stories = [...state.events.values()].filter((view) => view.status === 'published' && eventRecordPath(view.event.id) === recordPath).sort((a, b) => String(b.event.period).localeCompare(String(a.event.period)) || a.event.id.localeCompare(b.event.id));
 const roots = new Set(stories.map((view) => view.root_id));
-if (roots.size !== 1) throw new Error(`Event record requires one connected published series: ${recordPath}`);
-const chain = state.chains.get(stories[0].root_id);
+// A story accepted moments ago has its own root until the projection applies its follows link; the page still lists it under its record.
+if (roots.size !== 1) console.warn(`Event record ${recordPath} spans ${roots.size} chains until the projection refreshes: ${[...roots].join(', ')}`);
+const chain = state.chains.get(stories[0].root_id) ?? { id: stories[0].root_id, tracked: [] };
 const ids = new Set(stories.map((view) => view.event.id));
 const tracked = chain.tracked.map((track) => ({ ...track, values: track.values.filter((value) => ids.has(value.event_id)) })).filter((track) => track.values.length > 1);
 ---
 <section data-event-record={recordPath} data-series-root={chain.id} data-layer="fact">
-  <h2>Stories in this record</h2>
-  <p>Reporting from {chain.outlet_count} {chain.outlet_count === 1 ? 'publisher' : 'publishers'}.</p>
-  {tracked.length > 0 && <section><h3>The numbers over time</h3>{tracked.map((track) => <div><h4>{slotLabel(track.name)}</h4><ul>{track.values.map((value) => <li><a href={eventPath(value.event_id)}>{formatDate(value.period)}</a>: <strong data-state-figure={value.occurrence_id} data-state-figure-event={value.event_id} data-figure-value={String(value.value)} data-figure-unit={value.unit ?? ''}>{figureText(value.value, value.unit)}</strong>. <span data-source-copy>{value.sentence}</span></li>)}</ul></div>)}</section>}
-  <ol>{stories.map((view) => <li><a href={eventPath(view.event.id)}>{view.event.label}</a> · {formatDate(view.event.period)}</li>)}</ol>
+  <slot />
+  {tracked.length > 0 && <details class="series-background"><summary>Compare figures across stories</summary>{tracked.map((track) => <div><h4>{slotLabel(track.name)}</h4><ul>{track.values.map((value) => <li><a href={eventPath(value.event_id)}>{formatDate(value.period)}</a>: <strong data-state-figure={value.occurrence_id} data-state-figure-event={value.event_id} data-figure-value={String(value.value)} data-figure-unit={value.unit ?? ''}>{figureText(value.value, value.unit)}</strong>. <span data-source-copy>{value.sentence}</span></li>)}</ul></div>)}</details>}
+
 </section>

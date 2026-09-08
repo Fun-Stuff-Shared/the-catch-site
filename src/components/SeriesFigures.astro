@@ -1,0 +1,5 @@
+---
+import { formatDate } from '../lib/presentation.mjs';
+const { items } = Astro.props;
+---
+<div class="series-figures">{items.map(item => <article><h3>{item.label}</h3><strong>{item.value}<small> {item.unit}</small></strong><p>Reported {formatDate(item.as_of)}</p><a href={`/records/${item.record_id}/`} data-passage={item.source_sentence}>Read the source passage</a></article>)}</div>
