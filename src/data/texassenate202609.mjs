@@ -3,7 +3,8 @@
 // $5,000,000 + $5,000,000 = $10,000,000 from FEC Form 24 file 2010907 Schedule E.
 // Days from dissemination date 2026-09-05 to general election 2026-11-03: 59.
 // 10,000,000 / 403,450,026.85 MAGA Inc. cash on hand July 31 = 2.48 percent.
-// Talarico receipts 68,555,930.42 / Paxton receipts 9,248,698.53 = 7.4.
+// Talarico receipts 68,555,930.42 / Paxton receipts 9,248,698.53 = 7.4 (FEC summary windows differ: Talarico 2025-09-08 to 2026-06-30, Paxton 2025-04-01 to 2026-06-30).
+// Tribune tracker 72.0 / 16.8 = 4.2857 -> 4.3.
 // Talarico unitemized 36,717,034.10 / individual 65,585,741.88 = 56.0 percent.
 // Paxton unitemized 1,764,118.03 / individual 9,020,177.98 = 19.6 percent.
 // Republican approve strongly 29 + somewhat 32 = 61 (UT/Texas Politics Project Q8D, August 2026).
@@ -153,7 +154,8 @@ export const computed = {
   daysDisseminationToElection: 59, // 2026-11-03 minus 2026-09-05
   daysObligationToElection: 60, // 2026-11-03 minus 2026-09-04
   shareOfMagaCashPct: 2.48, // 100 * 10000000 / 403450026.85
-  receiptsRatio: 7.4, // 68555930.42 / 9248698.53
+  receiptsRatio: 7.4, // 68555930.42 / 9248698.53; FEC windows differ (see talarico.coverageStart vs paxton.coverageStart)
+  trackerRatio: 4.3, // 72.0 / 16.8 from tribune-tracker-2026-07-20
   talaricoUnitemizedPct: 56.0, // 100 * 36717034.10 / 65585741.88
   paxtonUnitemizedPct: 19.6, // 100 * 1764118.03 / 9020177.98
   gopApprovePaxtonPct: 61, // 29 + 32
@@ -220,10 +222,62 @@ export const sb2 = {
   signed: "2019-06-12",
 };
 
+export const propertyVotes = {
+  columns: ["Vote", "Date", "Tally", "Talarico"],
+  rows: [
+    ["2019 SB 2, House", "April 30, 2019", "107-40", "No"],
+    ["2023 SB 2, third reading", "July 13, 2023", "133-4", "Yes"],
+    ["2025 SB 4, third reading", "May 21, 2025", "143-0", "Yes"],
+  ],
+};
+
+export const pollEnsemble = {
+  columns: ["Poll", "Field", "Sample", "Talarico", "Paxton", "Margin"],
+  rows: [
+    ["UT / Texas Politics Project", "Aug 5 to 13", "1,200 registered", "42", "39", "2.83 / 3.58"],
+    ["TPPF / Overton", "Aug 24 to 26", "1,167 likely", "44.0", "43.4", "2.9"],
+    ["TPPF / Overton, with leaners", "Aug 24 to 26", "1,167 likely", "50.0", "50.0", "2.9"],
+  ],
+};
+
+// MAGA Inc. C00892471 Form 3X Schedule A line 17 receipts, summed across the nine 2025-26 CSV files in data/sources/texas-senate/fec-maga-inc-f3x/.
+export const magaDonors = {
+  columns: ["Name on the reports", "Line 17 total"],
+  rows: [
+    ["Miriam Adelson", "$25.0 million"],
+    ["Diane Hendricks", "$25.0 million"],
+    ["Greg Brockman", "$25.0 million"],
+    ["Foris DAX, Inc.", "$25.0 million"],
+    ["Konstantin Sokolov", "$12.0 million"],
+    ["Gemini Trust Company", "$11.5 million"],
+    ["Tyler Winklevoss", "$10.0 million"],
+    ["Cameron Winklevoss", "$10.0 million"],
+    ["Securing American Greatness, Inc.", "$7.5 million"],
+    ["JP Morgan Chase Bank, N.A.", "$6.8 million"],
+    ["RAI Services Company", "$6.0 million"],
+    ["a16z Capital Management LLC", "$6.0 million"],
+    ["GEO Reentry Services LLC", "$4.4 million"],
+  ],
+  adelson: 25000000,
+  hendricks: 25000000,
+  brockman: 25000000,
+  foris: 25000000,
+  sokolov: 12000000,
+  gemini: 11518449.91,
+  tyler: 10023720.88,
+  cameron: 10013208.94,
+  sag: 7500000,
+  jpmorgan: 6800003.01,
+  rai: 6000000,
+  a16z: 6000000,
+  geo: 4413000,
+};
+
 export const timeline = [
   { date: "Sep 4", title: "MAGA Inc. commits $10 million to Del Ray Media LLC for the ads", sub: "the obligation date on the notice; the same day Trump says he has close to a billion dollars in the super PAC" },
   { date: "Sep 5", title: "The 48-hour notice is signed and the two ads go public", sub: "MAGA Inc., Paxton and Talarico post; AP, CBS, Fox, NBC, USA Today report it" },
   { date: "Sep 6", title: "The Hill carries Gina Hinojosa welcoming the attention on Texas", sub: "" },
+  { date: "Sep 8", title: "Talarico posts an ad with former Paxton aide David Maxwell", sub: "a one-minute YouTube spot; a New York Times writeup the same day did not let its page be saved" },
   { date: "Sep 30", title: "Books close for the candidates' next FEC reports", sub: "due October 15" },
   { date: "Oct 14", title: "Books close for the pre-election reports", sub: "due October 22" },
   { date: "Oct 19", title: "Early voting in person begins", sub: "" },
