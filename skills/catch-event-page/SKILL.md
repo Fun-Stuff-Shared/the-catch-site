@@ -135,9 +135,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - The `?mode=` links on the switcher only work with JavaScript. Do not describe them as a
   no-JavaScript fallback; the no-JavaScript view is The story.
 - A story page under `src/pages/events/<subject>/` without a manifest fails the build.
-- A story page needs its event accepted into the state (accept step in procedures.md, step
-  10) and a published view for it before the build succeeds; the view arrives with the next
-  maintain refresh.
+- A new story is accepted into the state, linked to the previous story in its series, and
+  its view is refreshed with one command each (procedures.md, step 10); none of the three
+  waits on a maintenance fire.
 - The story slug is the data month (`august-2026` for the report released September 4), not
   the release month. `new-event.mjs` derives the slug from `--date`, so pass a date inside
   the data month or copy the previous month's page instead.

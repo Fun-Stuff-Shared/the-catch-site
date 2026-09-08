@@ -201,9 +201,20 @@ python3 scripts/story_accept.py accept <candidate_id> --by <you> --reason "..." 
   --label "<the headline>" --event-id event-jobs-august-2026
 ```
 
-The view `catch-state/views/event-<id>.json` appears at the next maintain fire's refresh
-step, or from `sai state refresh-views` when no fire holds `catch-state/maintain.lock`
-(the command refuses while one does). `npm run build` pulls the views first.
+Then link it into its series and build its view at once; neither waits on a maintenance fire:
+
+```bash
+cd /Volumes/4/CF/sai
+PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --op reparent --event event-jobs-august-2026 \
+  --target event-jobs-july-2026 --author <you> --reason "next story in the jobs series"
+PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --event event-jobs-august-2026
+```
+
+The first makes the new story follow the previous one (the subject page and the gate
+require every story under a subject to sit on one connected series). The second writes
+`catch-state/views/event-<id>.json` and the chain view under the views lock only, so it runs
+while a fire holds `maintain.lock`; the fire's own refresh folds the same records later.
+`npm run build` pulls the views first.
 
 
 ```bash
