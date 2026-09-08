@@ -384,3 +384,46 @@ The enrolled bill is the Congress.gov PDF of H.R. 6500 as enrolled. Congress.gov
 | data/sources/government-funding/senate-vote-228.html | 54027 | 5ac05c1f73804df3 |
 | data/sources/government-funding/senate-vote-227.xml | 29691 | f3dbef6567c10038 |
 | data/sources/government-funding/house-roll288.xml | 82663 | 6acbfdd2023fa643 |
+
+## Government funding September 2026 additions (saved 2026-09-08)
+
+Public Law 119-37, Public Law 119-86, the May 29 Federal Register grants notice, both Congressional Record PDFs, House rolls 014 and 272, the National Archives current-laws list, and the FEC election-dates page were fetched from the issuing sites on September 8. Axios (Golden; hemp) and Politico (hemp) copies were saved September 8 with a browser-imitating fetch, because those sites do not let a plain save through. MarketScreener returned 403 to a plain fetch the same day; the pinned copy was saved September 8 with a browser-imitating fetch. The Congressional Budget Office site returned 403 to a browser-imitating fetch on September 8, so no CBO file is pinned.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/government-funding/plaw-119-37.pdf | 551587 | e927893fc34a6fb4 |
+| data/sources/government-funding/plaw-119-37.txt | 602122 | 326f631f07eec4e5 |
+| data/sources/government-funding/plaw-119-86.pdf | 287660 | cf85ee41150ff58d |
+| data/sources/government-funding/plaw-119-86.txt | 301489 | fdfe6b89e6ea9935 |
+| data/sources/government-funding/fr-2026-10817.pdf | 690643 | 14c2540216f20f2e |
+| data/sources/government-funding/fr-2026-10817.txt | 1641175 | d32219f0d2b8e127 |
+| data/sources/government-funding/crec-2026-09-01.pdf | 1384868 | 1ea66f87cc82853a |
+| data/sources/government-funding/crec-2026-09-01.txt | 1332382 | f8d8cc9c50759b3c |
+| data/sources/government-funding/crec-2026-08-07.pdf | 1056946 | 275fd53f7331f289 |
+| data/sources/government-funding/crec-2026-08-07.txt | 1673992 | caf288557b41394b |
+| data/sources/government-funding/archives-laws-current.html | 45027 | 08aceb743c5ac519 |
+| data/sources/government-funding/archives-laws-current.txt | 8157 | 3f1596d58256ea14 |
+| data/sources/government-funding/fec-election-dates.html | 37579 | 598d72ba3976e144 |
+| data/sources/government-funding/fec-election-dates.txt | 9588 | 2b3324b98f7db705 |
+| data/sources/government-funding/house-roll014.xml | 82771 | eeaa32aaeb56ae28 |
+| data/sources/government-funding/house-roll272.xml | 82488 | 2b330f9c1ddc829f |
+| data/sources/coverage/guardian-house-funding.html | 310947 | 78f1e60b9223b5f9 |
+| data/sources/coverage/guardian-house-funding.txt | 8121 | d5fa2dda74b186b2 |
+| data/sources/coverage/axios-golden.html | 197044 | b46c6ed106f9642e |
+| data/sources/coverage/axios-golden.txt | 5982 | 6941de5460a2ba2b |
+| data/sources/coverage/rollcall-house-funding.html | 189559 | 6c6c58ba4c8a07dd |
+| data/sources/coverage/rollcall-house-funding.txt | 8701 | ca2c00502cb04366 |
+| data/sources/coverage/msnow-house-funding.html | 336656 | 57191ee1db94c420 |
+| data/sources/coverage/msnow-house-funding.txt | 13574 | 3f26308e9cb31319 |
+| data/sources/coverage/cnbc-house-funding.html | 779667 | cecea069330458ff |
+| data/sources/coverage/cnbc-house-funding.txt | 6956 | 13ff13b7bbdf8f7c |
+| data/sources/coverage/fox-schumer-funding.html | 439313 | d2e41bd29a0fb6af |
+| data/sources/coverage/fox-schumer-funding.txt | 15886 | fd75ba5a5129c318 |
+| data/sources/coverage/axios-hemp.html | 186295 | 3e9f4745c5e53e80 |
+| data/sources/coverage/axios-hemp.txt | 3468 | c1212faab7fd47f5 |
+| data/sources/coverage/politico-hemp.html | 256338 | 58c3c9c9ebe39c03 |
+| data/sources/coverage/politico-hemp.txt | 9330 | e0d3e293094bba4e |
+| data/sources/coverage/aashto-house-cr.html | 150782 | 0cb7768027e11b2c |
+| data/sources/coverage/aashto-house-cr.txt | 13151 | 86e1022a77d28ae9 |
+| data/sources/coverage/marketscreener-sept1.html | 295179 | 41a4d68609e400a4 |
+| data/sources/coverage/marketscreener-sept1.txt | 15393 | d17e9f1c3fc883ce |
