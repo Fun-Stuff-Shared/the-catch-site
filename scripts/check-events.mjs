@@ -48,6 +48,17 @@ for (const name of readdirSync(join(ROOT, 'checks/manifests')).filter((name) => 
   if (!storyPages.some((row) => row.subject === subject && row.story === story)) storyPages.push({subject, story, manifestPath: join(ROOT, 'checks/manifests', name)});
 }
 
+// A number in a story table is read from the data module, never typed into the page;
+// a typed cell is a second copy of the figure and the copy the auditor cannot recompute.
+for (const { subject, story } of storyPages) {
+  const src = join(eventsDir, subject, `${story}.astro`);
+  if (!existsSync(src)) continue;
+  const lines = readFileSync(src, "utf8").split("\n");
+  lines.forEach((line, i) => {
+    if (/<td[^>]*>\s*(?:[-−+]|\$|&minus;|&plus;)?\d/.test(line)) fail.push(`src/pages/events/${subject}/${story}.astro:${i + 1}: number typed into a table cell; render it from the data module`);
+  });
+}
+
 for (const { subject, story, manifestPath } of storyPages) {
   const mPath = manifestPath || join(ROOT, "checks/manifests", `${subject}--${story}.json`);
   if (!existsSync(mPath)) {

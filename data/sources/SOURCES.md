@@ -22,6 +22,7 @@ disclosure, in coverage/axios-july-via-assisted.txt.
 | data/sources/fomcminutes20260617.htm | 116435 | a973c918a4a461be |
 | data/sources/fomcminutes20260729.htm | 120417 | 25d55d8846a6a49e |
 | data/sources/fomcprojtabl20260617.htm | 232840 | f3a4e8f1c2f84542 |
+| data/sources/fomcprojtabl20260617.txt | 43063 | acb2bcd7a54a735d |
 | data/sources/monetary20160921a.htm | 83694 | e4191bf219bda633 |
 | data/sources/monetary20260617a.htm | 81083 | 0a774f92fb270c42 |
 | data/sources/monetary20260729a.htm | 81213 | 4a2d2cdd78153853 |

@@ -47,3 +47,76 @@ export const sources = [
   { id: "s11", name: "StockTitan, updated preview/report (June 16, updated June 22)", url: "https://www.stocktitan.net/articles/fed-rate-decision-june-17-2026", kind: "outlet" },
   { id: "s12", name: "CNBC, minutes report (July 8)", url: "https://www.cnbc.com/2026/07/08/fed-minutes-june-2026-.html", kind: "outlet" },
 ];
+
+// Summary of Economic Projections, Table 1, read from the pinned accessible version
+// (data/sources/fomcprojtabl20260617.txt). Medians, central tendencies, and ranges for
+// the June 2026 round and the March 2026 round, per variable and horizon.
+import { readFileSync } from "node:fs";
+
+const SEP_PIN = `${process.cwd()}/data/sources/fomcprojtabl20260617.txt`;
+const SEP_VARIABLES = [
+  { key: "gdp", name: "Change in real GDP", horizons: ["2026", "2027", "2028", "Longer run"] },
+  { key: "unemployment", name: "Unemployment rate", horizons: ["2026", "2027", "2028", "Longer run"] },
+  { key: "pce", name: "PCE inflation", horizons: ["2026", "2027", "2028", "Longer run"] },
+  { key: "corePce", name: "Core PCE inflation", horizons: ["2026", "2027", "2028"] },
+  { key: "fedFunds", name: "Federal funds rate", horizons: ["2026", "2027", "2028", "Longer run"] },
+];
+const CELL = /^\d\.\d(?:–\d\.\d)?$/;
+
+function readSep() {
+  const lines = readFileSync(SEP_PIN, "utf8").split(/\r?\n/).map((s) => s.trim());
+  const start = lines.findIndex((l) => l.startsWith("Table 1. Economic projections"));
+  if (start < 0) throw new Error("SEP pin: Table 1 not found");
+  const cellsAfter = (i, count) => {
+    const out = [];
+    let j = i + 1;
+    while (out.length < count) {
+      const l = lines[j++];
+      if (l === undefined) throw new Error(`SEP pin: ran out of cells after line ${i + 1}`);
+      if (/^\d$/.test(l)) continue;
+      if (!CELL.test(l)) throw new Error(`SEP pin: unexpected cell "${l}" at line ${j}`);
+      out.push(l);
+    }
+    return { cells: out, next: j - 1 };
+  };
+  const round = (i, horizons) => {
+    const k = horizons.length;
+    const { cells } = cellsAfter(i, 3 * k);
+    const pick = (offset) => Object.fromEntries(horizons.map((h, n) => [h, cells[offset + n]]));
+    return { median: pick(0), centralTendency: pick(k), range: pick(2 * k) };
+  };
+  const out = {};
+  for (const v of SEP_VARIABLES) {
+    const i = lines.indexOf(v.name, start);
+    if (i < 0) throw new Error(`SEP pin: variable "${v.name}" not found`);
+    const m = lines.indexOf("March projection", i);
+    out[v.key] = { name: v.name, june: round(i, v.horizons), march: round(m, v.horizons) };
+  }
+  return out;
+}
+
+export const sep = readSep();
+
+const shift = (march, june) => {
+  const d = Math.round((Number(june) - Number(march)) * 10) / 10;
+  if (d === 0) return "unchanged";
+  return `${d > 0 ? "+" : "−"}${Math.abs(d).toFixed(1)}`;
+};
+const sepRow = (label, key, horizon, note) => {
+  const march = sep[key].march.median[horizon];
+  const june = sep[key].june.median[horizon];
+  const d = Math.round((Number(june) - Number(march)) * 10) / 10;
+  return { label, march, june, shift: shift(march, june), note, highlight: Boolean(note) || Math.abs(d) >= 0.9 };
+};
+
+// The rows the story shows: medians, March round against June round.
+export const sepTable = [
+  sepRow("Fed funds rate, end of 2026", "fedFunds", "2026", "cut → hike"),
+  sepRow("Fed funds rate, end of 2027", "fedFunds", "2027"),
+  sepRow("Fed funds rate, end of 2028", "fedFunds", "2028"),
+  sepRow("Fed funds rate, longer run", "fedFunds", "Longer run"),
+  sepRow("PCE inflation, 2026", "pce", "2026"),
+  sepRow("Core PCE inflation, 2026", "corePce", "2026"),
+  sepRow("Real GDP growth, 2026", "gdp", "2026"),
+  sepRow("Unemployment rate, 2026 Q4", "unemployment", "2026"),
+];

@@ -19,7 +19,7 @@ const state = readPublishedState().events.get("event-fed-rate-june-2026");
 if (!state) throw new Error("Missing publication selection: event-fed-rate-june-2026");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 import "../../../styles/story.css";
-import { event, ratePath } from "../../../data/fomc20260617.mjs";
+import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator">
@@ -121,26 +121,26 @@ import { event, ratePath } from "../../../data/fomc20260617.mjs";
         <h2>The projections told a different story</h2>
         <RailedParagraph rail="record">
           The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
-          with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>3.8&nbsp;percent, up from 3.4 in March</strong>: from a level that implied a rate cut
-          this year to one implying a hike. The central tendency moved to 3.6&ndash;4.1, the full range to
-          3.4&ndash;4.4. <Chip kind="record" />
+          with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>{sep.fedFunds.june.median["2026"]}&nbsp;percent, up from {sep.fedFunds.march.median["2026"]} in March</strong>: from a level that implied a rate cut
+          this year to one implying a hike. The central tendency moved to {sep.fedFunds.june.centralTendency["2026"]}, the full range to
+          {sep.fedFunds.june.range["2026"]}. <Chip kind="record" />
         </RailedParagraph>
         <Receipt label="the projections, March vs. June">
           <table class="data-table">
             <caption>Summary of Economic Projections: medians</caption>
             <thead><tr><th></th><th>March</th><th>June</th><th>Shift</th></tr></thead>
             <tbody>
-              <tr><td>Fed funds rate, end of 2026</td><td>3.4%</td><td>3.8%</td><td class="hl">+0.4 (cut &rarr; hike)</td></tr>
-              <tr><td>Fed funds rate, end of 2027</td><td>3.1%</td><td>3.6%</td><td>+0.5</td></tr>
-              <tr><td>Fed funds rate, end of 2028</td><td>3.1%</td><td>3.4%</td><td>+0.3</td></tr>
-              <tr><td>Fed funds rate, longer run</td><td>3.1%</td><td>3.1%</td><td>unchanged</td></tr>
-              <tr><td>PCE inflation, 2026</td><td>2.7%</td><td>3.6%</td><td class="hl">+0.9</td></tr>
-              <tr><td>Core PCE inflation, 2026</td><td>2.7%</td><td>3.3%</td><td>+0.6</td></tr>
-              <tr><td>Real GDP growth, 2026</td><td>2.4%</td><td>2.2%</td><td>&minus;0.2</td></tr>
-              <tr><td>Unemployment rate, 2026 Q4</td><td>4.0%</td><td>4.2%</td><td>+0.2</td></tr>
+              {sepTable.map((row) => (
+                <tr>
+                  <td>{row.label}</td>
+                  <td>{row.march}%</td>
+                  <td>{row.june}%</td>
+                  <td class:list={{ hl: row.highlight }}>{row.shift}{row.note && ` (${row.note})`}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
-          <p>From the Fed&rsquo;s own <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a>. The June range on the fed funds rate was 3.4&ndash;4.4, with a central tendency of 3.6&ndash;4.1. Nine of eighteen dots sat above the current midpoint.</p>
+          <p>From the Fed&rsquo;s own <a href="https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260617.htm" rel="noreferrer">projection tables</a>. The June range on the fed funds rate was {sep.fedFunds.june.range["2026"]}, with a central tendency of {sep.fedFunds.june.centralTendency["2026"]}. Nine of eighteen dots sat above the current midpoint.</p>
         </Receipt>
         <RailedParagraph rail="record">
           The minutes, released July 8, show the hike case already forming inside the room: <em>&ldquo;a few
