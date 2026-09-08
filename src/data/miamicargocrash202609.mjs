@@ -33,7 +33,20 @@ export const runway30 = {
 export const halfwayGapFeet = Math.round((runway30.lengthFeet - runway30.landingDistanceAvailableFeet) / 2 / 100) * 100;
 
 // FAA Safety Briefing, March/April 2026 (data/sources/miami-cargo-crash/faa-safety-briefing-2026-03.txt)
+// and the FAA's own blog post, which counts the same 122 by runway end
+// (data/sources/miami-cargo-crash/faa-blog-runway-safety.txt).
 export const emasCount = { installations: 122, airports: 70 };
+
+// FAA newsroom page (data/sources/miami-cargo-crash/faa-newsroom-emas.txt): the design condition
+// and the arrest count; the FAA blog gives a different arrest count, carried here as blogArrests.
+export const emasDesign = { stopKnots: 70, stopMph: 80, arrests: 26, arrestsAboard: 497, blogArrests: 22, blogAboard: 432 };
+
+// Flightradar24 post and the FAA registry: manufactured 1994, cargo conversion 2015.
+// Age at the accident: 2026 - 1994 = 32, which matches the Reuters dispatch and Flightradar24.
+export const aircraft = { mfrYear: 1994, convertedYear: 2015, ageYears: 2026 - 1994 };
+
+// Sunday's injured count, resolved by Tuesday: 2 pilots + 3 people on the ground = 5.
+export const injured = { pilots: 2, ground: 3, total: 2 + 3 };
 
 // Flightradar24 incident post (data/sources/fr24-21air-7598-miami.txt), provisional ADS-B speeds
 export const adsb = { exitKnots: 112, lastKnots: 69 };

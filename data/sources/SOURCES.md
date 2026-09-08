@@ -1013,6 +1013,14 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/miami-cargo-crash/ntsb-dca26ma352-docket.txt | 984 | 94fdc5b603a3954c |
 | data/sources/miami-cargo-crash/ntsb-dca26ma352-page.html | 71745 | e204f21d9ef6d0e4 |
 | data/sources/miami-cargo-crash/ntsb-dca26ma352-page.txt | 2834 | e93df303e2654873 |
+| data/sources/coverage/cbs-21air-safety-record-2026-09-08.html | 636395 | 6e08f9b5ef8f8f56 |
+| data/sources/coverage/cbs-21air-safety-record-2026-09-08.txt | 8485 | 6169a30d14c41618 |
+| data/sources/miami-cargo-crash/faa-blog-runway-safety.html | 105493 | b48be00ccbc688ab |
+| data/sources/miami-cargo-crash/faa-blog-runway-safety.txt | 2667 | a42d30657bbd37fc |
+| data/sources/miami-cargo-crash/faa-newsroom-emas.html | 115819 | e50265cd057f4044 |
+| data/sources/miami-cargo-crash/faa-newsroom-emas.txt | 3767 | 6ec76f7740fa60e0 |
+| data/sources/coverage/spokesman-reuters-blackboxes-2026-09-07.html | 160666 | 3ed94b8e9ba34cd8 |
+| data/sources/coverage/spokesman-reuters-blackboxes-2026-09-07.txt | 3002 | 26579b70141d80d0 |
 | data/sources/missouri-house-map/healey-sc101570-justia.html | 128067 | b61a57c84a61d596 |
 | data/sources/missouri-house-map/healey-sc101570-justia.txt | 69826 | df0bed3433b530d2 |
 | data/sources/missouri-house-map/luther-sc101412-justia.html | 143383 | c50fe3ec81608241 |
