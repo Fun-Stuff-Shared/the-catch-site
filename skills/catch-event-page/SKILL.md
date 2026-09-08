@@ -102,6 +102,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 8. **Build with the real pipeline.** `npm run build` (never a partial build or a
    fallback). Fix what the gate reports and rebuild until clean. Then run
    `node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro`.
+   Then `node skills/catch-event-page/scripts/quote_lint.mjs <same page>`: every quoted span
+   on the page must be one contiguous run of bytes in a record the same element cites, and
+   an outlet's quoted words must come from that outlet's own pin. A finding is a defect on
+   the page, never a lint to silence: fix the quote, the cite, or the attribution.
 9. **Independent interrogation.** A model that did not write the page reads the built
    page with web and X search on and lists everything it does not cover: missing sources,
    reactions, drama, wrong sentences (`scripts/interrogate.sh <subject>/<story>`; prompt
@@ -158,7 +162,8 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - [ ] Step 12 ran: every manifest figure appears in the built state record with its unit
       and source passage; computed figures show their inputs and formula as computations.
       Registration preserved every pinned text hash, state verify passed, and the build gate is green.
-- [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative.
+- [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative;
+      `quote_lint.mjs` reports zero findings.
 - [ ] Measured in a browser at 1280 wide (section-grammar shape rule 10): at least one figure,
       a chronology table if the story has dated steps, zero dollar figures to the cent in
       the story view, no facts behind a collapsed element, and the story view not more than

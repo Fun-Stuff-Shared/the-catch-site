@@ -164,6 +164,13 @@ which falls back to Mistral OCR). CSV: the file is its own text. Video or audio:
 transcript `.txt` from undertone (step 2b). A record whose `text_path` is missing or whose
 hash does not match the file is not a record.
 
+One pinned file owns one text sibling, and two pins never share a stem. A loop that writes
+`<stem>.txt` for every `*.html` after `pdftotext` wrote `<stem>.txt` for every `*.pdf`
+silently replaces the PDF's text with the web page's when both pins share a name (the
+mail-voting story's `eo-14399.html` and `eo-14399.pdf`). Name the page pin and the document
+pin differently (`eo-14399-page.html`, `eo-14399.pdf`), and re-run the hash check on every
+`text_path` after any extraction pass.
+
 Before capturing anything new, search the registry for the reactions too: on the August
 page the Fed governor's speech, the president's remarks, the ADP coverage and the stock
 close were all already held by the daily sweeps (`capture search "Waller" --since <date>`,
@@ -282,6 +289,21 @@ node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/jobs/august-
 python3 -m http.server 4322 -d dist >/dev/null 2>&1 &   # or any static server
 agent-browser open http://localhost:4322/events/jobs/august-2026/ && agent-browser screenshot /tmp/page.png
 ```
+
+```bash
+node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
+```
+
+`quote_lint` reads every `Cite passage`, every quote card body, every quoted span inside an
+`OutletCheck` claim or verdict, and every quoted span in a paragraph or list item, and checks
+each one against the text pins of the records that element cites (a `SourcedBlock`'s
+`source` counts). It fails on: a passage absent from its record; a quote card that is not
+one contiguous substring of its record; an outlet quoted with words its own pin does not
+contain (the CBS "President Donald Trump" defect on the mail-voting story); a quoted span
+whose element cites no record, or cites records that do not contain it (the "week of
+September 13" miscite). Quotation marks mean quotation: no scare quotes, no paraphrase
+inside quote marks, no bytes changed inside a quote ("&" to "and", an inserted word, a
+comma for the record's dash). Cut the quote before the byte you cannot reproduce.
 
 Fix what the gate and the lint report, rebuild, look at the screenshot at 100 percent
 zoom (overflow, missing styles, unreadable sections), repeat until clean.
