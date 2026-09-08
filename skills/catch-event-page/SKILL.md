@@ -98,6 +98,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
    page is standalone and is never edited afterwards: a revision to last month's number is
    this month's story and goes on this month's page (its revisions table and claim check).
+   A story with a chart declares it once, in its data module, as `event.visual`
+   (`{ kind, source, from, to, latest, range, rangeCompact }`); the story page, the
+   series page, and the homepage lead card all render from that one declaration
+   (`<PayrollChart {...event.visual} />`). Never type chart props on a page.
 11. **Stage, then ship on a human's word, then audit live.** Publication is a human
     decision: hand over the rendered page, not receipts. Commit by explicit path (page, data module, manifest,
     ledger, pins). Push. Poll the live URL until the new content serves, then re-run the
