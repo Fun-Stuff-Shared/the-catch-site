@@ -12,18 +12,22 @@ The review as returned is appended below. Dispositions in this session:
 | 41 (air-carrier certificate sentence) | Fixed: rewritten. The FAA and NTSB posts name 21 Air; they do not publish the certificate. |
 | 42 ("mislabeled" on operated-by-Amazon) | Fixed: rewritten. The sheriff's wording skips the contractor the FAA named; Amazon's spokesperson kept both names. |
 | 3 (Boeing statement) | Typed: Seattle Times paywall; no Boeing page captured. Ledger row. |
-| 4, 5, 6, 20, 21 (FR24, AvHerald, CNN video, PBS O'Brien) | Declined for this page: Homendy said she would not release speed until the flight data recorder is read (CBS). Tracking-site numbers stay off the fact layer until that record exists. Ledger: no FDR speed in saved NTSB posts. |
-| 7, 8, 25, 30, 31 (N1997A, lessor, call sign, 21 Air corporate history) | Typed: not in the FAA/NTSB posts we saved. Ledger: tail number not in the saved FAA post. |
-| 9-12, 27-29 (briefing extras, Tuesday time, hospital name, cleaning-company VP) | Declined as extra color from coverage of the same briefing already cited (CBS/Reuters/CNBC). The van, Toyota, 1,300 feet, recorders, and surviving crew are on the page. |
-| 13 (C-SPAN is video) | Declined: the saved C-SPAN page has no transcript. The page already says so. |
-| 14-16, 35 (EMAS/RSA policy fight) | Typed: airport EMAS answer is in later local TV, not in the FAA or airport posts we saved. Already an unknowns row. |
-| 18, 19, 50 (FlightAware counts, Labor Day, ATCSCC) | Declined: disruption counts disagree across outlets and are not in the airport posts. The airport's own Sunday and Monday posts are on the page. |
+| 4, 5, 21 (FR24 identity, METAR, PBS O'Brien) | Fixed in the 2026-09-08 rework: Flightradar24 used only to name N1997A; NOAA METAR is the weather record; O'Brien and Schiavo are outside video reads, not NTSB. AvHerald speeds and CNN video still off the fact layer. |
+| 6, 20 (AvHerald speeds, CNN video) | Declined for speed: Homendy said she would not release speed until the flight data recorder is read (CBS). |
+| 7, 8 (N1997A, lessor) | Fixed: Flightradar24 plus the FAA registry. Call sign and 21 Air corporate history still off the page. |
+| 9-12, 28-29 (briefing extras, Tuesday time, cleaning-company VP) | Partly fixed: transcript now sources Homendy. Tuesday time still not in the NTSB posts we saved. Cleaning-company VP still declined. |
+| 27 (hospital names) | Fixed: Jackson Memorial and Ryder Trauma, from CBS quoting the sheriff. |
+| 13 (C-SPAN is video) | Fixed: the C-SPAN page carries a transcript; saved September 8. An earlier version of this page, and this row, said it did not. |
+| 14-16, 35 (EMAS/RSA policy fight) | Partly fixed: Homendy transcript plus the FAA 70-knot page and AP's 120-airport count. Whether a bed would have changed the result remains an open question. |
+| 18, 19 (FlightAware counts, Labor Day) | Fixed: AP Sunday 160/325 and USA Today Monday 55/100, attributed to FlightAware with timestamps. FAA command-center page not used. |
+| 50 (ATCSCC) | Declined: the command-center page only shows the current day. |
 | 22, 23 (Herald, NYT, BBC, trades) | Declined: coverage-check set is the held English bodies with enough text to verify. WaPo stubs and NYT/BBC were not body-captured in the listed run. |
-| 24 (agency web newsrooms empty) | Already on the page in unknowns. |
+| 24 (agency web newsrooms empty) | Partly fixed: FAA written statement now on the page. NTSB still has no written release. |
 | 26 (occupancy arithmetic) | Typed: official posts do not split the five dead between vehicles. Ledger row. |
-| 32, 33 (Atlas 3591, Fine Air 101) | Declined: other accidents, not this record. |
+| 32 (Atlas 3591) | Fixed: one bounded precedent from the NTSB's own page. Fine Air 101 not added. |
+| 33 (Fine Air 101) | Declined: other accident, not this record. |
 | 34 (freight rank) | Declined: CNBC cited the airport website; not needed for the overrun itself. |
-| 36-38 (mayor X, sheriff Monday, Homendy on Fox) | Declined: Sunday mayor statement is already on the page via ABC; extra posts do not change the counts. |
+| 36 (mayor) | Partly fixed: the mayor's September 7 release is now the county's own record; ABC still holds the Sunday fatality announcement. Sheriff Monday and Homendy on Fox declined. |
 | 39 (no White House/DeSantis/markets) | Declined: absence of a statement is not a record to pin. |
 | 40 (section order) | Declined: section grammar is fixed. Who died is in Three Things and Who feels it. |
 | 43 (1,300 vs 1,500 ft) | Typed: 1,300 is Homendy via three outlets; AvHerald 1,500 is a second reconstruction. The page already says the NTSB posts do not include the distance. |

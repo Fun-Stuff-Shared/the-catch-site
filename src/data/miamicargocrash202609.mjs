@@ -12,7 +12,7 @@ export const event = {
   updated: "2026-09-08",
   kpis: [
     { value: "5", unit: "dead", label: "named by the county mayor Sunday evening" },
-    { value: "5", unit: "taken to hospitals", label: "Miami-Dade Fire Rescue" },
+    { value: "5", unit: "injured, taken to hospitals", label: "Miami-Dade Fire Rescue" },
     { value: "7598", unit: "", label: "21 Air flight, from San Juan" },
     { value: "2 of 4", unit: "runways", label: "open Sunday evening" },
   ],

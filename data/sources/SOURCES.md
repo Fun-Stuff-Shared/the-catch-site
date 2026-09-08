@@ -148,7 +148,7 @@ The BLS release and the eight coverage articles were copied from the September 4
 
 # Miami cargo crash, September 2026 (saved 2026-09-08)
 
-Official posts from the FAA, NTSB, Miami International Airport, and Miami-Dade Fire Rescue were captured as served on September 8. 21 Air's website statement was saved the same day. C-SPAN's page for the Monday NTSB briefing was saved; it names the briefing and does not include a transcript. Coverage articles were copied from the September 6-8 capture runs. The NTSB press-release index and the FAA general-statements page were fetched September 8 and do not carry a written release on this accident.
+Official posts from the FAA, NTSB, Miami International Airport, and Miami-Dade Fire Rescue were captured as served on September 8. 21 Air's website statement was saved the same day. Coverage articles were copied from the September 6-8 capture runs. An earlier note on this ledger said the FAA aviation-accidents page had no written statement and that the C-SPAN briefing page had no transcript. Both were wrong: the FAA page carries a September 6 entry, and C-SPAN's page carries a transcript saved September 8. The NTSB press-release index still does not carry a written release on this accident.
 
 | File | Bytes | sha256 (first 16) |
 |---|---|---|
@@ -185,3 +185,71 @@ Official posts from the FAA, NTSB, Miami International Airport, and Miami-Dade F
 | data/sources/amazon-x-7598-2026-09-06.txt | 804 | 9d3e014d58626871 |
 | data/sources/duffy-x-7598-2026-09-06.txt | 887 | 502d260207b635f9 |
 | data/sources/iflymia-x-monday-2026-09-07.txt | 681 | a869265f3f77539f |
+
+## Miami cargo crash rework additions (saved 2026-09-08)
+
+New official pages were fetched September 8. The KMIA weather observations age out of the 72-hour feed, so that file is the copy saved this run. The Flightradar24 incident post was saved with a browser-impersonating fetch. The C-SPAN transcript was saved from the briefing page on September 8. Coverage files already on disk that this page now cites were added to the table. Every other `data/sources/coverage/*miami-cargo*` file on disk is listed as held and not used on the page.
+
+| File | Bytes | sha256 (first 16) | Note |
+|---|---|---|---|
+| data/sources/faa-statements-2026-09-06.html | 622894 | c58fdfcd854ec18e | |
+| data/sources/faa-statements-2026-09-06.txt | 2696 | f1a069abd4bf591b | |
+| data/sources/cspan-ntsb-briefing-2026-09-07-transcript.txt | 17905 | 6e530c14a0d0bf0c | |
+| data/sources/cspan-ntsb-briefing-2026-09-07-transcript.json | 20866 | 995cd12dc6103802 | |
+| data/sources/amazon-update-2026-09-06.html | 168878 | c272c69cf50adcae | |
+| data/sources/amazon-update-2026-09-06.txt | 2653 | 50a761946c0f5dfe | |
+| data/sources/mia-home-2026-09-08.html | 40545 | e7c35bcd867c4b34 | |
+| data/sources/mia-home-2026-09-08.txt | 4604 | d7d911fa266a2d11 | |
+| data/sources/mdc-mayor-2026-09-07.html | 84297 | 397fadfdfbc08323 | |
+| data/sources/mdc-mayor-2026-09-07.txt | 15646 | 65034ebbee2c6b36 | |
+| data/sources/noaa-metar-kmia-2026-09-06.txt | 10950 | f595184ec5c149c0 | |
+| data/sources/faa-registry-n1997a.html | 31924 | 7474787d52f2c605 | |
+| data/sources/faa-registry-n1997a.txt | 4727 | 16f60491919a80d7 | |
+| data/sources/dot-order-2016-9-22.pdf | 193201 | d50d9edbe2ce2165 | |
+| data/sources/dot-order-2016-9-22.txt | 12988 | 7b7c91a96888686a | |
+| data/sources/faa-emas.html | 107971 | fa1512ac4deb8265 | |
+| data/sources/faa-emas.txt | 13207 | 5618f0b84672aee2 | |
+| data/sources/ntsb-atlas-dca19ma086.html | 83386 | b0e5742d4cb7853b | |
+| data/sources/ntsb-atlas-dca19ma086.txt | 8537 | 8c9aa5c7ebc623f3 | |
+| data/sources/fr24-21air-7598-miami.html | 304153 | bbe99a00039ab6f2 | |
+| data/sources/fr24-21air-7598-miami.txt | 11937 | f929974916d7a9eb | |
+| data/sources/coverage/pbs-miami-cargo-what-went-wrong.html | 271946 | ae33aae3a6940bab | |
+| data/sources/coverage/pbs-miami-cargo-what-went-wrong.txt | 5615 | b9fbbf6959ad3c7d | |
+| data/sources/coverage/cnbc-miami-cargo-crash-probe.html | 750090 | b7bc176a91e723f7 | |
+| data/sources/coverage/cnbc-miami-cargo-crash-probe.txt | 4873 | df9f038b8a8e5d6d | |
+| data/sources/coverage/usatoday-miami-cargo-day2.html | 210801 | eecd7fe88f24478e | |
+| data/sources/coverage/usatoday-miami-cargo-day2.txt | 2350 | b75f7d26e2b12068 | |
+| data/sources/coverage/abc-miami-cargo-crash.html | 173592 | 9616d60977b84e93 | |
+| data/sources/coverage/nbc-miami-cargo-crash.html | 439910 | 86804c4b4f8e6230 | |
+| data/sources/coverage/npr-miami-cargo-crash.html | 132072 | caeef73dec1bdf78 | |
+| data/sources/coverage/pbs-miami-cargo-crash.html | 258288 | fedb3dbf66201468 | |
+| data/sources/coverage/cbs-miami-cargo-ntsb.html | 656087 | 74c3952608337737 | |
+| data/sources/coverage/reuters-miami-cargo-ntsb.html | 550529 | f1d4129d35819e53 | |
+| data/sources/coverage/cnbc-miami-cargo-ntsb.html | 752281 | 54c217490093ccf6 | |
+| data/sources/coverage/ap-miami-cargo-crash.html | 957949 | b5f0a86959920c1e | |
+| data/sources/coverage/aljazeera-miami-cargo-crash.html | 186480 | 6da44e33bb5d95f8 | held; not used on the page |
+| data/sources/coverage/aljazeera-miami-cargo-crash.txt | 2291 | 9d08c306a393b5b9 | held; not used on the page |
+| data/sources/coverage/cbs-miami-cargo-day1.html | 630768 | daa99f3ff8807217 | held; not used on the page |
+| data/sources/coverage/cbs-miami-cargo-day1.txt | 3417 | 20cb617fc1eb8151 | held; not used on the page |
+| data/sources/coverage/cnbc-miami-cargo-day1.html | 741659 | d97c99d8edda9b2e | held; not used on the page |
+| data/sources/coverage/cnbc-miami-cargo-day1.txt | 1965 | 810637ce574f9cdf | held; not used on the page |
+| data/sources/coverage/dw-miami-cargo-crash.html | 137403 | ebf702008902f3d9 | held; not used on the page |
+| data/sources/coverage/dw-miami-cargo-crash.txt | 2779 | 4748f59fe1f02f25 | held; not used on the page |
+| data/sources/coverage/fox-miami-cargo-crash.html | 443259 | 69a01ca9ab31535b | held; not used on the page |
+| data/sources/coverage/fox-miami-cargo-crash.txt | 3347 | e6a873ba5b181837 | held; not used on the page |
+| data/sources/coverage/fox-miami-cargo-ntsb.html | 435639 | 9394cfde895e5e61 | held; not used on the page |
+| data/sources/coverage/fox-miami-cargo-ntsb.txt | 2555 | 70af1fec02e41207 | held; not used on the page |
+| data/sources/coverage/france24-miami-cargo-crash.html | 376271 | 28eae51f279606b5 | held; not used on the page |
+| data/sources/coverage/france24-miami-cargo-crash.txt | 2268 | 3c360ad10651e7af | held; not used on the page |
+| data/sources/coverage/guardian-miami-cargo-crash.html | 309097 | b6b1b9182bdab83d | held; not used on the page |
+| data/sources/coverage/guardian-miami-cargo-crash.txt | 4808 | 60e2abfe39513c3a | held; not used on the page |
+| data/sources/coverage/guardian-miami-cargo-day1.html | 318940 | 1403d91f5e3e1b39 | held; not used on the page |
+| data/sources/coverage/guardian-miami-cargo-day1.txt | 3907 | 0def2c71ffcc228d | held; not used on the page |
+| data/sources/coverage/reuters-miami-cargo-day1.html | 488803 | 9a49bc54760d0c47 | held; not used on the page |
+| data/sources/coverage/reuters-miami-cargo-day1.txt | 2128 | bbb6116413fadfed | held; not used on the page |
+| data/sources/coverage/thehill-miami-cargo-crash.html | 394097 | 1df77046145c5eb4 | held; not used on the page |
+| data/sources/coverage/thehill-miami-cargo-crash.txt | 3708 | e862bcce4579118d | held; not used on the page |
+| data/sources/coverage/upi-miami-cargo-crash.html | 300287 | 3f184ba306ec2f7c | held; not used on the page |
+| data/sources/coverage/upi-miami-cargo-crash.txt | 1785 | 6394c55a0daf6089 | held; not used on the page |
+| data/sources/coverage/usatoday-miami-cargo-day1.html | 221245 | a77fc6ecaa2aa143 | held; not used on the page |
+| data/sources/coverage/usatoday-miami-cargo-day1.txt | 2477 | 781cc4a161d26e0b | held; not used on the page |
