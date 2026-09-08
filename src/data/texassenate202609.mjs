@@ -195,6 +195,29 @@ export const calendar = {
   election: "2026-11-03",
 };
 
+// General-election outside money on file before the MAGA Inc. notice (ieGeneral rows other than MAGA Inc.):
+// 7,720,655 + 1,751,220 + 1,751,968 + 1,487,645.67 + 124,595 + 1,416,599.96 + 709,564.75 + 301,848.62 = 15,264,097.00.
+// Weeks of ads at Thune's $8 million a week: 10 / 8 = 1.25.
+export const outsideMoney = {
+  generalBeforeNotice: 15264097,
+  weeksAtThuneRate: 1.25,
+  // Positive bars: for Paxton or against Talarico. Negative bars: for Talarico or against Paxton. Millions.
+  bars: [
+    { label: "MAGA Inc.", value: 10.0 },
+    { label: "Lone Star Liberty PAC", value: 9.47 },
+    { label: "Truth and Courage", value: 1.75 },
+    { label: "America PAC", value: 1.61 },
+    { label: "Protecting Am. Future", value: 0.30 },
+    { label: "Lone Star Rising", value: -2.13 },
+  ],
+};
+
+export function millions(n) {
+  const v = n / 1e6;
+  const digits = v >= 100 ? 0 : 1;
+  return `$${v.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits })} million`;
+}
+
 export function usd(n) {
   return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }

@@ -37,11 +37,13 @@ const vMin = Math.min(...vals, 0);
 const range = vMax - vMin || 1;
 const barW = Math.min(40, (W - 2 * PAD) / bars.length - 4);
 const gap = ((W - 2 * PAD) - barW * bars.length) / (bars.length + 1);
-const zeroY = H - PAD - ((0 - vMin) / range) * (H - 2 * PAD);
+const TOP = 18;
+const plotH = H - PAD - TOP;
+const zeroY = H - PAD - ((0 - vMin) / range) * plotH;
 
 function barX(i: number) { return PAD + gap + i * (barW + gap); }
-function barTop(v: number) { return H - PAD - ((Math.max(v, 0) - vMin) / range) * (H - 2 * PAD); }
-function barHeight(v: number) { return Math.abs(((v) / range) * (H - 2 * PAD)); }
+function barTop(v: number) { return H - PAD - ((Math.max(v, 0) - vMin) / range) * plotH; }
+function barHeight(v: number) { return Math.abs(((v) / range) * plotH); }
 ---
 <figure class="rate-chart">
   <svg viewBox={`0 0 ${W} ${H + 28}`} role="img" aria-label={ariaLabel}>
