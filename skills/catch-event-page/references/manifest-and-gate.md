@@ -8,7 +8,7 @@ The gate reads this file on every build. Fields you write by hand:
 |---|---|
 | `subject`, `event`, `date`, `story_title` | `jobs`, `jobs/july-2026`, release date, headline |
 | `state_event_id` | the tracked event id in the state log (`event-jobs-july-2026`); selects the story for state-backed routes |
-| `records[]` | one per saved document: `id`, `title`, `publisher`, `date`, `url`, `pinned_path`, `text_path`, `text_sha256`, `quote` (byte-exact words from the file; a CSV data line for series), `quote_span_check: "byte_exact"`, `about` (one plain sentence a stranger understands) |
+| `records[]` | one per saved document: `id`, `title`, `publisher`, `date`, `url`, `pinned_path`, `text_path`, `text_sha256`, `quote` (byte-exact words from the file; a CSV data line for series), `quote_span_check: "byte_exact"`, `about` (one plain sentence a stranger understands), `capture_run` + `capture_raw_sha256` + `captured_at` from the registry receipt, or `capture_status` naming why the registry could not admit it |
 | `story_sources[]` | the numbered list the page cites: `id`, `group` (`primary`, `official`, `coverage`), `label`, `meta` (" · released August 7"), `usage` (plain words: "every figure the story marks as record") |
 | `primary_sources[]` | `id`, `path`, `bytes`, `sha256`, `url` for each primary document |
 | `figures[]` | `figure`, `source_id`, `value` for each headline number |

@@ -174,3 +174,17 @@ verdicts under it were answers to a narrower claim than the ad made. Rule: a vid
 read frame by frame as well as by ear; every on-screen citation is transcribed into the
 record and checked before any verdict names what the ad does or does not cite
 (`procedures.md`, "A video is read twice").
+
+## Fetched around the registry
+
+Seen 2026-09-08 on every story of the week: primary documents (NTSB pages, FAA PDFs, court
+filings, statutes, member statements) saved with curl or a scraping script straight into
+`data/sources/`, while only coverage articles went through `capture news`. The manifest
+then carried a sha of bytes nobody had admitted, and the site's own procedures told authors
+to do exactly that for "institution pages." The registry is the admission process: receipt,
+raw bytes, extraction, stamp. A pin without a run id is a file, not a record.
+
+Rule: `capture news` first, for every URL, before any other tool touches it. Copy the
+run's `raw/` file as the pin. Put `capture_run` on the record. When the registry refuses a
+document, the record says so in `capture_status` and the reviewer decides; do not route
+around it silently. The gate refuses a record with neither field.

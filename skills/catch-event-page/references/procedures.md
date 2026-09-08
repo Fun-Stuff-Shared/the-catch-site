@@ -60,31 +60,46 @@ is the coverage universe. Ten minutes for a mature class; an hour for a new one.
 
 ## 3. Admit primary documents and official series
 
-Rule: save the bytes before you write a sentence. Every saved file gets a row in
-`data/sources/SOURCES.md` (file, bytes, sha256 prefix).
+Rule: nothing is admitted unless it went through the registry. `capture news <url>` is the
+only route for every URL this story will cite: agency pages, PDFs, court filings, statutes,
+member statements, data pages, and coverage alike. The registry is where the receipt, the
+raw bytes, the text extraction, and the admission stamp live; a file fetched any other way
+has no receipt and the gate refuses the record. Save the bytes before you write a
+sentence. Every saved file gets a row in `data/sources/SOURCES.md` (file, bytes, sha256
+prefix), and every manifest record carries `capture_run` (the run id the receipt sits in),
+`capture_raw_sha256`, and `captured_at` copied from that receipt.
 
-Check the registry before fetching: the three daily sweeps capture BLS, Fed and other
+Check the registry before capturing: the three daily sweeps capture BLS, Fed and other
 agency releases as served on release day (`capture search "Bureau of Labor" --since <date>`
-lists them with their run directory). A copy captured on the day beats a fetch made later,
-and bls.gov often refuses direct fetches afterwards. Copy the held body (see step 5 for the
-path mapping) into `data/sources/` as the pin.
+lists them with their run directory). A copy captured on the day beats a capture made
+later, and bls.gov often refuses fetches afterwards. Either way the pin is a copy of the
+run's `raw/` file (see step 5 for the path mapping), never a fresh download.
+
+```bash
+capture news --reason "<subject>/<story>: <what this record is for>" "<url>" "<url2>"   # several URLs in one run
+capture news --via-archive --reason "..." "<url>"                                       # blocked host: Wayback through the registry
+```
+
+When the registry cannot admit a document, the record says so instead of hiding it:
+`capture_status: "not admitted: <what the registry returned and what you did instead>"`.
+Two cases seen on 2026-09-08 and not yet solved in `capture`: a scanned PDF with no text
+layer is rejected as `empty_or_unextractable_body` (pin it directly, read it by OCR, and say
+so in `about`), and sos.mo.gov and cbo.gov refuse the registry's fetcher (sos.mo.gov served
+a plain curl with a browser User-Agent; cbo.gov refused every route). A `capture_status`
+record is a typed exception the reviewer sees, not a second admission route.
 
 Name every series file with its fetch date (`PAYEMS-2026-09-04.csv`, never `PAYEMS.csv`):
 an earlier story's manifest hashes its own copy, and overwriting it fails the gate.
 
 ```bash
-# Institution pages that accept a browser User-Agent (Fed, FRED, most agencies)
-node scripts/fetch-source.mjs "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
-#   -> data/sources/officials/<sha16>.html + .json receipt; falls back to an archive.org snapshot itself
-# Or curl with the same User-Agent into the event's own folder, then extract text:
-curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/139.0.0.0 Safari/537.36" \
-  "https://www.bls.gov/news.release/empsit.nr0.htm" -o data/sources/bls-empsit-2026-08.html
-python3 -c "import re,sys;t=open(sys.argv[1]).read();print(re.sub(r'<[^>]+>',' ',t))" data/sources/bls-empsit-2026-08.html > data/sources/bls-empsit-2026-08.txt
+# Every document, through the registry (agency pages, PDFs, filings, statutes, data pages)
+capture news --reason "fed-rate/june-2026: the decision statement" "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+capture search "monetary20260617a" --limit 1      # find the run dir; copy raw/<file> as the pin, text/<file> as the text sibling
 
-# FRED series, raw CSV (one call per series)
-curl -sL "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS" -o data/sources/PAYEMS-2026-09-04.csv
-# ALFRED vintages for first-print vs revised: ONE VINTAGE PER CALL (the comma form silently returns only the first)
-curl -sL "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07" -o data/sources/alfred-payems-2026-08-07.csv
+# FRED and ALFRED series go through the registry too, one URL per series and one vintage per call
+capture news --reason "jobs/august-2026: PAYEMS series" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS"
+capture news --reason "jobs/july-2026: PAYEMS first print" "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07"
+#   (the ALFRED comma form silently returns only the first vintage)
 
 # Ledger row (bytes and sha prefix) after every addition
 f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c < $f | tr -d ' ')" "$(shasum -a 256 $f | cut -c1-16)" >> data/sources/SOURCES.md
@@ -93,9 +108,10 @@ f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c 
 Blocked fetches (BLS release archive, CME tool pages, paywalled outlets) are recovered,
 never paraphrased:
 
-Fetch facts, recounted 2026-09-08 across four stories:
+Fetch facts, recounted 2026-09-08 across four stories (these describe what the registry's
+own fetcher can and cannot reach; they are not an invitation to fetch outside it):
 
-- `scrapling` chrome impersonation (`Fetcher.get(url, impersonate='chrome', timeout=60)`, interpreter `/Users/zain/spark/.venv/bin/python3`) served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
+- `scrapling` chrome impersonation, which is what `capture` uses, served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
 - Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
 - Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in SOURCES.md and in the records list, quote the carrier's bytes.
 - Sequential retries succeed where parallel coverage fetches fail.
