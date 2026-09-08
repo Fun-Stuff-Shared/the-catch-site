@@ -333,55 +333,80 @@ case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got 
 as shipped once.
 
 
-## Step 12. Read the story into the state record (per story, at authoring time)
+## Step 12. Fill the story's state record at authoring time
 
-The tracked-figures block at the foot of a story is filled from the story's own pins. The
-pieces exist in the SAI checkout (`/Volumes/4/CF/sai`, run with `PYTHONPATH=src .venv/bin/python`)
-and the wiring for a single story is an open build (handoff td-36bb6e). What is known today:
+Every record must already have `pinned_path`, `text_path`, and `text_sha256`, including
+PDFs, CSVs, posts, and video transcripts. Registration reads these files without rewriting
+or deriving text. A missing text file or changed hash stops registration before any writes.
 
-1. Registration. `sai state ingest-catch-pins --sources-root <dir> --state-dir /Volumes/4/CF/catch-state`
-   reads `<dir>/pins.jsonl`, one row per html file: `file`, `url`, `publisher`,
-   `source_family` (for example `government_primary`), `is_primary`, `verbatim_level`
-   (`record`), `asserted_at`. It walks every `.htm`/`.html` under the root and REWRITES the
-   sibling `.txt` with its own extractor, so never point it at `data/sources/` directly:
-   stage the story's html pins in a scratch directory with a generated `pins.jsonl` (from
-   the manifest's records), or the manifest text hashes break and the gate fails.
-2. Extraction. `sai extract` runs Phase 1 over state worklists (below). Model spend:
-   default provider `openai-codex`, model `gpt-5.6-luna`, one reservation of 60,000 tokens
-   per worklist row. Kill path: `pkill -TERM -f 'sai\.state\.extract'`; confirm with
-   `pgrep -alf 'sai\.state\.extract' || true`.
-3. Views. `sai state refresh-views --state-dir /Volumes/4/CF/catch-state --event <event-id>`
-   rebuilds one event view and its chain; then `npm run build` in the site pulls the views
-   (`scripts/pull-state.mjs`) and the foot block renders the tracked figures.
-4. Done means the built page's foot shows tracked values with source passages. Until the
-   per-story wiring lands, report the step as not done, with td-36bb6e, never as "the state
-   has not read this story" as if that were a fact about the world.
+Enrich every manifest figure before running the command:
 
+- Sourced: `figure` (slot name), `value`, `unit`, `kind: "sourced"`, and
+  `source: {source_id, quote_span}`. The passage must be byte-exact and contain the value.
+- Computed: `figure`, `value`, `unit`, `kind: "computed"`, `formula`, and `inputs`.
+  Each input has `source_id`, `quote_span`, `value`, and `unit`. Supported formulas are
+  `sum` (same units) and `date_difference_days` (first ISO date minus second; input unit
+  `date`, result unit `days`). Calculations are checked and displayed as computed,
+  with their inputs; the result is never presented as a quotation.
+- Keep scale in the unit: `USD` and `USD millions` are different. Passages need enough
+  context to establish which quantity the number measures; finding digits alone does not
+  establish their meaning. For a sum over selected records, record the selection rule too.
+
+Commit the enriched manifest first so the accepted figure records name the site commit
+and exact manifest hash. From the SAI checkout:
+
+```bash
+cd /Volumes/4/CF/sai
+PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story \
+  --site-root /Volumes/4/GitHub/the-catch-site \
+  --manifest /Volumes/4/GitHub/the-catch-site/checks/manifests/<subject>--<story>.json \
+  --state-dir /Volumes/4/CF/catch-state
 ```
-usage: sai extract [-h] [--worklist WORKLIST] [--drain]
-                   [--state-dir STATE_DIR] [--provider PROVIDER]
-                   [--model MODEL] [--concurrency CONCURRENCY]
-                   [--timeout-seconds TIMEOUT_SECONDS]
-                   [--time-budget-seconds TIME_BUDGET_SECONDS]
-                   [--requeue-defects] [--item-limit ITEM_LIMIT]
-                   [--thinking THINKING]
 
-options:
-  -h, --help            show this help message and exit
-  --worklist WORKLIST
-  --drain               every worklist that still has items without a terminal
-                        record
-  --state-dir STATE_DIR
-  --provider PROVIDER
-  --model MODEL
-  --concurrency CONCURRENCY
-  --timeout-seconds TIMEOUT_SECONDS
-  --time-budget-seconds TIME_BUDGET_SECONDS
-                        stop starting new items after this many seconds across
-                        all worklists; in-flight items finish
-  --requeue-defects     retry items whose last terminal status was a harness
-                        or infrastructure defect
-  --item-limit ITEM_LIMIT
-  --thinking THINKING   pi thinking level for reasoning models: off, low,
-                        medium, high
+This registers the pins as document evidence, accepts the authored figures through the
+gate, and refreshes the event and its chain view. It makes **zero model calls**. Rerunning
+unchanged figures creates no duplicate evidence or occurrences, even after another commit.
+It does not publish a page or wait for the scheduled maintenance fire.
+
+To register pins alone, use `state ingest-catch-pins --manifest <manifest> --sources-root
+<site-root> --state-dir <state-dir>`. Always supply `--manifest` for authored stories.
+
+Then verify and rebuild:
+
+```bash
+PYTHONPATH=src .venv/bin/python -m sai.cli state verify --state-dir /Volumes/4/CF/catch-state
+cd /Volumes/4/GitHub/the-catch-site
+npm run build
 ```
+
+The build pulls the refreshed views. Inspect the built story's tracked-figures block:
+every manifest figure has its value, unit, and source passage; every computed figure is
+labelled Computed and shows all inputs. Texas's acceptance example has 44 registered pins
+and 15 figures. A missing or empty block is not done. Do not commit generated `data/state/`
+files as part of authoring.
+
+### Optional Luna read
+
+Add `--luna-read` to the same `stage-story` command when an additional model read is wanted.
+This launches only the registered rows from this manifest, with the selected event as the
+default. It never drains the general worklist. Defaults use SAI's configured provider and
+model; explicit controls are `--provider`, `--model`, `--concurrency` (default 1), and
+`--timeout-seconds` (default 900 per item).
+
+The command prints `read.pid`, `read.stop_command`, and `read.run_dir`. Stop exactly that
+run with the printed `kill -TERM <pid>` command. It terminates that run's worker children;
+do not use a broad process-name kill. Progress and output remain under
+`<state-dir>/story-reads/<event-id>/`. A later launch resumes its item ledger and excludes
+terminal rows; it does not reset exhausted attempts. Check `RUN-MANIFEST.json` and
+`output.log` for completion or failure, then refresh the event again and rebuild to show
+any additional accepted facts:
+
+```bash
+cd /Volumes/4/CF/sai
+PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views \
+  --state-dir /Volumes/4/CF/catch-state --event <event-id>
+```
+
+An active maintenance owner can refuse the optional read; its failure is visible in the
+run output. Do not clear another run's lock. The deterministic authoring fill and event
+view refresh are available without launching or interrupting that maintenance run.

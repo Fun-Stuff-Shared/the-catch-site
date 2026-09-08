@@ -120,8 +120,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    (`<PayrollChart {...event.visual} />`). Never type chart props on a page.
 11. **Read the story into the state record.** The state record (the tracked-figures block at
     the foot of every story) is filled from the story's own pins, at authoring time, not by a
-    separate batch: ingest the manifest's pins and run the extraction for this event (commands
-    in `references/procedures.md`, step 12), pull the state, rebuild. A story whose foot says
+    separate batch: register the manifest's exact pinned text and deterministically fill its
+    sourced and computed figures (`references/procedures.md`, step 12), then rebuild. A Luna
+    read of only these pins is optional; the deterministic fill makes no model calls. A story whose foot says
     the state has not read its sources is not done.
 12. **Keep iterating.** A page is a living record. When a record the page names as missing
     arrives (a transcript, a roll call, a later filing, a transcript of a spot that was on the
@@ -154,6 +155,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 
 - [ ] Every step above maps to an artifact, or is reported as not done.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
+- [ ] Step 12 ran: every manifest figure appears in the built state record with its unit
+      and source passage; computed figures show their inputs and formula as computations.
+      Registration preserved every pinned text hash, state verify passed, and the build gate is green.
 - [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative.
 - [ ] Measured in a browser at 1280 wide (section-grammar shape rule 10): at least one figure,
       a chronology table if the story has dated steps, zero dollar figures to the cent in
