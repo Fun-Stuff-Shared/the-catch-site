@@ -57,7 +57,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 
 1. **Capture the ask as a checklist.** A review or brief is copied item by item into a
    working note before any data is touched. Reworks are verified against this list.
-2. **Admit sources first.** Check the capture registry before fetching: agency releases
+2. **Admit sources first, starting at the first public act.** The story span begins with the
+   announcement, the filing, or the first vote, not with the summary document coverage anchored
+   on. Check the capture registry before fetching: agency releases
    are usually already held as served on release day. Save every document under
    `data/sources/` before writing a sentence, series files under dated names: primary documents from the issuing institution, official series as raw CSV
    (FRED `fredgraph.csv?id=`), coverage articles as served. Blocked fetches are recovered
@@ -71,7 +73,11 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    tables, and comparisons are recomputed in-session from the admitted series. Put the
    values in the page's data module (`src/data/<subject><period>.mjs`) with a comment
    naming the source file, and render from it. A number is never typed twice.
-5. **Verify outlet claims against the record.** Each checkable claim in each coverage
+5. **Verify outlet claims against the record.** Before crediting an outlet for a fact, search
+   every primary pin for it (case-insensitive; uppercase and hyphenated headings defeat
+   case-sensitive searches). The primary takes the cite; the outlet row says it checks out.
+   Legal and financial terms appear first as the pin's word in quotation marks, then in reader
+   words. Each checkable claim in each coverage
    article is compared with the primary document. Verdicts use the closed chip set
    (see `references/section-grammar.md`). A wrong claim is named plainly: who, what they
    wrote, what the record shows. Be ready for the page's own earlier claim to be wrong
@@ -81,7 +87,7 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    Read `references/section-grammar.md` before writing. Use the components:
    `SourcedBlock` (fact with a chip), `Cite` (numbered source reference),
    `StorySources` (the records list), `ReadingModes`, `StoryState`.
-7. **Manifest every record.** Append each new record to
+7. **Manifest every record, and every displayed number.** Append each new record to
    `checks/manifests/<subject>--<story>.json` with `pinned_path`, `text_sha256`, and a
    byte-exact `quote` (for a CSV, a data line). Add it to `story_sources` with a plain
    `usage` line. The gate re-verifies every record on every build.
@@ -92,7 +98,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    page with web and X search on and lists everything it does not cover: missing sources,
    reactions, drama, wrong sentences (`scripts/interrogate.sh <subject>/<story>`; prompt
    and handling in `references/interrogation.md`). Every gap becomes a needs-ledger row,
-   fixed on the page, typed unreachable, or declined with its reason. Never dismiss the
+   fixed on the page, typed unreachable, or declined with its reason. An item that names a
+   fetchable public record is a fetch, not a decline. Write the catch box after this step:
+   each row names the two records that disagree. Never dismiss the
    list wholesale.
 10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
    refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
@@ -129,6 +137,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - [ ] Every step above maps to an artifact, or is reported as not done.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative.
+- [ ] SOURCES.md regenerated after the last pin; every manifest `pinned_path` basename has a row.
+- [ ] Zero same-source adjacent `<Cite>` pairs; every computed number is visible or deleted.
+- [ ] The open-questions list asks for nothing the records list already holds.
+- [ ] No `.md.err`, `data/state/`, or `data/sources/officials/` file in the commit.
 - [ ] Live bytes audited, not a staging copy.
 - [ ] The reader-facing delta is named in one sentence.
 
