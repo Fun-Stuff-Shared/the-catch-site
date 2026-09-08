@@ -5,8 +5,9 @@ const { recordPath } = Astro.props;
 const state = readPublishedState();
 const stories = [...state.events.values()].filter((view) => view.status === 'published' && eventRecordPath(view.event.id) === recordPath).sort((a, b) => String(b.event.period).localeCompare(String(a.event.period)) || a.event.id.localeCompare(b.event.id));
 const roots = new Set(stories.map((view) => view.root_id));
-if (roots.size !== 1) throw new Error(`Event record requires one connected published series: ${recordPath}`);
-const chain = state.chains.get(stories[0].root_id);
+// A story accepted moments ago has its own root until the projection applies its follows link; the page still lists it under its record.
+if (roots.size !== 1) console.warn(`Event record ${recordPath} spans ${roots.size} chains until the projection refreshes: ${[...roots].join(', ')}`);
+const chain = state.chains.get(stories[0].root_id) ?? { id: stories[0].root_id, tracked: [] };
 const ids = new Set(stories.map((view) => view.event.id));
 const tracked = chain.tracked.map((track) => ({ ...track, values: track.values.filter((value) => ids.has(value.event_id)) })).filter((track) => track.values.length > 1);
 ---
