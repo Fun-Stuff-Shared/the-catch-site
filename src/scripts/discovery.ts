@@ -12,6 +12,7 @@ if (input && (isHome || isSeries)) {
   if(isHome) catalog.sort((a,b) => b.date.localeCompare(a.date) || items.indexOf(a.element)-items.indexOf(b.element));
   const pageSize = 12;
   const params = new URLSearchParams(location.search);
+  page = Math.max(1, Number.parseInt(params.get('page') ?? '1', 10) || 1);
   input.value = params.get('q') ?? '';
   topic = params.get('topic') ?? '';
   if (!filters.some(f => f.dataset.topicFilter === topic)) topic = '';
@@ -49,6 +50,7 @@ if (input && (isHome || isSeries)) {
     const url = new URL(location.href);
     input.value.trim() ? url.searchParams.set('q', input.value.trim()) : url.searchParams.delete('q');
     topic ? url.searchParams.set('topic', topic) : url.searchParams.delete('topic');
+    page > 1 ? url.searchParams.set('page', String(page)) : url.searchParams.delete('page');
     history.replaceState(null, '', url);
   };
   input.addEventListener('input', () => { page = 1; render(); });

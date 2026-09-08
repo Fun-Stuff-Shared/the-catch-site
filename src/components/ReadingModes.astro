@@ -2,7 +2,7 @@
   <a class="mode-btn active" href="?mode=story" data-mode="story" role="radio" aria-checked="true">The story</a>
   <a class="mode-btn" href="?mode=facts" data-mode="facts" role="radio" aria-checked="false">Just the facts</a>
   <a class="mode-btn" href="?mode=work" data-mode="work" role="radio" aria-checked="false">Show the work</a>
-  <span class="mode-hint">Every claim here traces to a source.</span>
+
 </div>
 
 <style is:global>
@@ -81,6 +81,9 @@
       });
       btn.addEventListener("click", (e) => {
         e.preventDefault();
+        const candidates = [...root.querySelectorAll<HTMLElement>('section[id], aside[id]')];
+        const linked = candidates.find(section => '#' + section.id === location.hash && section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().top < innerHeight);
+        const anchor = linked ?? candidates.filter(section => section.getBoundingClientRect().height && section.getBoundingClientRect().top <= 160).at(-1);
         const mode = btn.getAttribute("data-mode");
         if (ledger) ledger.open = mode === "work";
         root.className = root.className.replace(/mode-\w+/g, "").trim() + ` mode-${mode}`;
@@ -92,7 +95,16 @@
         });
         const url = new URL(window.location.href);
         url.searchParams.set("mode", mode);
+        if (anchor) {
+          const index = candidates.indexOf(anchor);
+          const target = anchor.getBoundingClientRect().height ? anchor : [...candidates.slice(0, index).reverse(), ...candidates.slice(index + 1)].find(section => section.getBoundingClientRect().height);
+          if (target) {
+            requestAnimationFrame(() => target.scrollIntoView({ block: "start" }));
+            url.hash = target.id;
+          }
+        }
         history.replaceState(null, "", url.toString());
+        document.dispatchEvent(new Event('reading-mode-change'));
       });
     });
   });

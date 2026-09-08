@@ -1,5 +1,8 @@
 # Reader experience audit
 
+**Implementation follow-up:** visual and interaction fixes are implemented in the subsequent pass. See [CONTENT-HANDOFF.md](CONTENT-HANDOFF.md) for the completed UI changes and remaining content/publication work. The findings below record the audit before those fixes.
+
+
 September 7, 2026 · experimental `design/reader-experience` worktree · local preview at http://localhost:4322/
 
 The homepage is becoming a useful editorial front page. The next work should make discovery durable, explain how the reporting works, and make article navigation and evidence access predictable. Another wholesale homepage redesign is not the first priority.

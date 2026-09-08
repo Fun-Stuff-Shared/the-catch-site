@@ -19,12 +19,27 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
   <div class="content">
     <main class="story" id="story-root">
 
-      <ReadingModes />
+
 
       <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026</p>
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
 
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#benchmark">The August 28 benchmark check</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
       <div class="kpi-strip" data-layer="fact">
         {event.kpis.map((k) => (
           <div class="kpi">
@@ -44,20 +59,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       </aside>
       <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
 
-      <nav class="story-toc" aria-label="In this story" data-layer="fact">
-        <p class="toc-label">In this story</p>
-        <ol>
-          <li><a href="#what-happened">What happened</a></li>
-          <li><a href="#where-this-sits">Where this sits</a></li>
-          <li><a href="#who-feels-it">Who feels it</a></li>
-          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
-          <li><a href="#claim-check">Claim checked against the record</a></li>
-          <li><a href="#markets">What the markets said</a></li>
-          <li><a href="#benchmark">The August 28 benchmark check</a></li>
-          <li><a href="#unknowns">What we do not know yet</a></li>
-          <li><a href="#records">The records</a></li>
-        </ol>
-      </nav>
+
 
       <!-- Proof: event record context, only visible in work mode -->
       <div data-layer="proof" class="event-record-context">

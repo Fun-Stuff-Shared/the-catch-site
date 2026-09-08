@@ -16,7 +16,7 @@ const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["P
     <link rel="stylesheet" href="/assets/reader.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#page-content">Skip to content</a>
     <div class="sheet">
       <header class="band">
         <div class="band-inner">
@@ -32,6 +32,7 @@ const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["P
         </div>
       </header>
       <slot name="locator" />
+      <span id="page-content" tabindex="-1"></span>
       <slot />
       <footer class="colophon">
         <p>Published records carry their review status on the page. Work that has not been published is clearly labeled. Corrections and withdrawals are permanent, dated, and public.</p>
@@ -55,8 +56,5 @@ const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["P
   menu?.addEventListener('click', () => { searchToggle?.setAttribute('aria-expanded','false'); menu.setAttribute('aria-expanded', String(menu.getAttribute('aria-expanded') !== 'true')); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu?.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); } });
   document.addEventListener('click', e => { if (!(e.target as Element).closest('.band')) { closeMenu(); searchToggle?.setAttribute('aria-expanded', 'false'); } });
-  const main = document.querySelector('main');
-  if(main && !main.id) main.id = 'main-content';
-  document.querySelector('.skip-link')?.setAttribute('href', '#' + (main?.id ?? 'main-content'));
   if(new URLSearchParams(location.search).get('focus') === 'search') openSearch();
 </script>

@@ -10,8 +10,8 @@ interface Props {
 const { sections } = Astro.props;
 ---
 <nav class="story-toc" aria-label="In this story">
-  <p class="toc-label">In this story</p>
+  <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
   <ol>
     {sections.map((s) => <li><a href={`#${s.id}`}>{s.label}</a></li>)}
   </ol>
-</nav>
+</details></nav>
