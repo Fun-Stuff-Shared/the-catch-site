@@ -63,17 +63,17 @@ directly.
 
 ## August 2026 jobs report (captured 2026-09-04, saved 2026-09-08)
 
-The BLS release and the eight coverage articles were copied from the September 4 wire capture run, where each was saved as served with a receipt. bls.gov refused direct fetches on September 8 (Access Denied), so no fresh fetch was made; the capture copy is the pin. Series files carry the fetch date in their names so the July page keeps its own copies.
+The BLS release and the eight coverage articles were copied from the September 4 wire capture run, where each was saved as served with a receipt. bls.gov refused direct fetches on September 8 (Access Denied), so no fresh fetch was made; the capture copy is the pin. Series files were fetched from FRED and ALFRED on September 8 and carry that date in their names, so the July page keeps its own copies; their contents reflect the September 4 release.
 
 | File | Bytes | sha256 (first 16) |
 |---|---|---|
 | data/sources/bls-empsit-2026-08.html | 1064564 | 6d83eeecf867f1e8 |
 | data/sources/bls-empsit-2026-08.txt | 114789 | 3fc04a11ffd394d5 |
-| data/sources/PAYEMS-2026-09-04.csv | 18387 | bf5b48d21b9a84a0 |
-| data/sources/UNRATE-2026-09-04.csv | 14196 | ffe86c903f6944eb |
-| data/sources/U6RATE-2026-09-04.csv | 6039 | b7907446bf33fb32 |
-| data/sources/LNS11300060-2026-09-04.csv | 15129 | f7a37929302d7be6 |
-| data/sources/CES0500000003-2026-09-04.csv | 4213 | c602b6f2be66970c |
+| data/sources/PAYEMS-2026-09-08.csv | 18387 | bf5b48d21b9a84a0 |
+| data/sources/UNRATE-2026-09-08.csv | 14196 | ffe86c903f6944eb |
+| data/sources/U6RATE-2026-09-08.csv | 6039 | b7907446bf33fb32 |
+| data/sources/LNS11300060-2026-09-08.csv | 15129 | f7a37929302d7be6 |
+| data/sources/CES0500000003-2026-09-08.csv | 4213 | c602b6f2be66970c |
 | data/sources/alfred-payems-2026-09-04.csv | 18396 | 30390ad54c9385ab |
 | data/sources/alfred-payems-2026-08-07.csv | 18378 | 6c1aa8663e191636 |
 | data/sources/coverage/thehill-august-jobs.html | 401691 | ba030f0d9e3edce4 |
