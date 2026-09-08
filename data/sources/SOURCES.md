@@ -427,3 +427,60 @@ Public Law 119-37, Public Law 119-86, the May 29 Federal Register grants notice,
 | data/sources/coverage/aashto-house-cr.txt | 13151 | 86e1022a77d28ae9 |
 | data/sources/coverage/marketscreener-sept1.html | 295179 | 41a4d68609e400a4 |
 | data/sources/coverage/marketscreener-sept1.txt | 15393 | d17e9f1c3fc883ce |
+
+## Venezuela oil, September 2026 (saved 2026-09-08)
+
+The White House fact sheet and September 2 release, Executive Order 14373, OFAC general license 46D, NABEP's statement, and Venezuelan foreign-ministry pages were fetched as served on September 8. Coverage bodies were copied from the September 1 wire capture runs. EIA crude and gasoline series were fetched from FRED the same day. The STEO Venezuela crude row was read out of the August 2026 Outlook workbook. The Washington Post page in the wire run was a subscription stub and is not a record here.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/coverage/aljazeera-venezuela-oil-details.html | 196708 | d182e05627390d9d |
+| data/sources/coverage/aljazeera-venezuela-oil-details.txt | 5238 | 683359184c72dc52 |
+| data/sources/coverage/ap-venezuela-chevron.html | 824544 | 7541160fcdad2f7d |
+| data/sources/coverage/ap-venezuela-chevron.txt | 47459 | 690122f91d5d31ec |
+| data/sources/coverage/ap-venezuela-oil-nabep.html | 874022 | 31914b799ceafee1 |
+| data/sources/coverage/ap-venezuela-oil-nabep.txt | 47887 | d5c7ea55f016515b |
+| data/sources/coverage/cbs-gas-prices.html | 627725 | 2e503820e0dd31a5 |
+| data/sources/coverage/cbs-gas-prices.txt | 8761 | db28cd383755a62b |
+| data/sources/coverage/cbs-nabep.html | 626623 | 5f7e83f2be6b97bf |
+| data/sources/coverage/cbs-nabep.txt | 6992 | 17268aae3e46d1e5 |
+| data/sources/coverage/fox-democrat-venezuela.html | 444036 | 7b7460943925c82f |
+| data/sources/coverage/fox-democrat-venezuela.txt | 15721 | ecc2efcf343cfc16 |
+| data/sources/coverage/guardian-delcy.html | 459097 | 98484b3f7e680f02 |
+| data/sources/coverage/guardian-delcy.txt | 10710 | 62f9ead3e3bf9d1b |
+| data/sources/coverage/npr-venezuela-oil.html | 140400 | 4a6b1b6aa180842a |
+| data/sources/coverage/npr-venezuela-oil.txt | 8083 | f230d804ca8822d9 |
+| data/sources/coverage/pbs-chevron-expand.html | 257616 | 50bb65be8f9a87c0 |
+| data/sources/coverage/pbs-chevron-expand.txt | 9320 | 32c3481e60586f91 |
+| data/sources/coverage/reuters-chevron-ongc.html | 564658 | a31bda74543c50e6 |
+| data/sources/coverage/reuters-chevron-ongc.txt | 10187 | 115e8c6ab73c1fc2 |
+| data/sources/coverage/reuters-chinese-russian.html | 541739 | 81231cc1cc95f089 |
+| data/sources/coverage/reuters-chinese-russian.txt | 10479 | 045ee8699f17e2df |
+| data/sources/coverage/thehill-venezuela-oil-deal.html | 1228615 | 00dfda2fa129ed5e |
+| data/sources/coverage/thehill-venezuela-oil-deal.txt | 21863 | 16e7b2ca402272b6 |
+| data/sources/venezuela-oil/DCOILWTICO-2026-09-08.csv | 179085 | cdfb91a12bdbf108 |
+| data/sources/venezuela-oil/GASALLW-2026-09-08.csv | 29673 | 610f218d2d28fd3b |
+| data/sources/venezuela-oil/eia-us-crude-proved.html | 8378 | 7b5e3406ca79ad92 |
+| data/sources/venezuela-oil/eia-us-crude-proved.txt | 2171 | 881081a12efcdcce |
+| data/sources/venezuela-oil/mppre-7980-venezuela-anuncia-historico-acuerdo-con-el-gobierno-de-eeuu.html | 55217 | c20b809a6c3ce4c9 |
+| data/sources/venezuela-oil/mppre-7980-venezuela-anuncia-historico-acuerdo-con-el-gobierno-de-eeuu.txt | 5837 | 5fbe6fec7b77ca28 |
+| data/sources/venezuela-oil/mppre-7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu.html | 58032 | 8f98e50be44702a7 |
+| data/sources/venezuela-oil/mppre-7986-presidenta-delcy-rodriguez-se-dirige-al-pais-sobre-el-gran-acuerdo-energetico-con-eeuu.txt | 8890 | 51c37fedb35e8b4f |
+| data/sources/venezuela-oil/mppre-7995-arriba-a-venezuela-secretario-de-energia-de-eeuu-en-su-segunda-visita-oficial.html | 57880 | 8d5ed7e3d7c53968 |
+| data/sources/venezuela-oil/mppre-7995-arriba-a-venezuela-secretario-de-energia-de-eeuu-en-su-segunda-visita-oficial.txt | 4902 | 7fb87228a4669560 |
+| data/sources/venezuela-oil/mppre-8005-inicia-nueva-era-energetica-para-venezuela-tras-consolidacion-de-alianzas-con-chevron-y-socios-internacionales.html | 54601 | 1edb3f74592d196e |
+| data/sources/venezuela-oil/mppre-8005-inicia-nueva-era-energetica-para-venezuela-tras-consolidacion-de-alianzas-con-chevron-y-socios-internacionales.txt | 5017 | 861eaa6b087886b3 |
+| data/sources/venezuela-oil/nabep-pr-2026-08-31.html | 223450 | af992a1e61d56f54 |
+| data/sources/venezuela-oil/nabep-pr-2026-08-31.txt | 22082 | 42ea0df4771f2ed2 |
+| data/sources/venezuela-oil/ofac-20260827.html | 42252 | c74968ecee7eeb35 |
+| data/sources/venezuela-oil/ofac-20260827.txt | 5707 | 55728cb353322991 |
+| data/sources/venezuela-oil/ofac-gl-46d.pdf | 192538 | b46c0a853dfba837 |
+| data/sources/venezuela-oil/ofac-gl-46d.txt | 9507 | 829d8cc659cc7612 |
+| data/sources/venezuela-oil/steo-m.xlsx | 1096696 | 2f58e3cee31c68b3 |
+| data/sources/venezuela-oil/steo-venezuela-crude-2026-08.csv | 788 | 014099371841d484 |
+| data/sources/venezuela-oil/wh-eo-2026-01-09.html | 299808 | 163f0af00437b0f8 |
+| data/sources/venezuela-oil/wh-eo-2026-01-09.txt | 15241 | e423a2406da56b81 |
+| data/sources/venezuela-oil/wh-fact-sheet-2026-08-31.html | 266592 | 5ff91faf1cca2bc2 |
+| data/sources/venezuela-oil/wh-fact-sheet-2026-08-31.txt | 12094 | bca59ffea92f0926 |
+| data/sources/venezuela-oil/wh-release-2026-09-02.html | 263925 | 6c5bd6feeaf72a9e |
+| data/sources/venezuela-oil/wh-release-2026-09-02.txt | 11194 | 200d0ce6313dc0cd |
