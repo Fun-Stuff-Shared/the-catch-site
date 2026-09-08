@@ -235,7 +235,7 @@ for (const record of outletRecordData.records) {
   if (!textPath || !existsSync(textPath)) fail.push(`outlet record ${record.id} repository pin is missing`);
   else if (`sha256:${createHash("sha256").update(readFileSync(textPath)).digest("hex")}` !== record.text_sha256) fail.push(`outlet record ${record.id} repository pin hash does not recompute`);
 }
-for (const filename of ["fed-rate.mjs", "jobs.mjs", "miami-cargo-crash.mjs"]) {
+for (const filename of ["fed-rate.mjs", "jobs.mjs", "miami-cargo-crash.mjs", "missouri-house-map.mjs"]) {
   const subjectPath = join(ROOT, "src/data/subjects", filename);
   if (!existsSync(subjectPath)) continue;
   const { subject } = await import(pathToFileURL(subjectPath).href);

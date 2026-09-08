@@ -1,0 +1,252 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, calendar, hb1Votes } from "../../../data/missourihousemap202609.mjs";
+const state = readPublishedState().events.get("event-missouri-house-map-september-2026");
+if (!state) throw new Error("Missing publication selection: event-missouri-house-map-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/missouri-house-map/">The Missouri House map</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Missouri Supreme Court &middot; September 3, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>Missouri's Supreme Court ruled unanimously on September 3 that a referendum on House Bill 1, the 2025 U.S. House map, was legal, sufficient, and timely. The 2022 districts remain in force for November unless voters approve the bill.<Cite s="sc101805-summary" passage="The referendum petition was legal, sufficient, and timely." /></li>
+          <li>Secretary of State Denny Hoskins rejected the petition at about 4 p.m. on August 4, primary day, the last hour of the last day the statute allowed. The court said that delay caused the confusion the state now cites.<Cite s="sc101805-opinion" passage="At about 4:00 p.m. on August 4" /></li>
+          <li>The court denied a stay the next day. Attorney General Catherine Hanaway asked the U.S. Supreme Court to halt the order. Justice Brett Kavanaugh set a September 7 deadline for a response.<Cite s="sc101805-mandate" passage="overruled" /><Cite s="scotus-26a304-docket" passage="due by Noon (EDT) on September 7, 2026." /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the Missouri Supreme Court's September 3 opinion in von Glahn v. Hoskins, the court's own summary of that opinion, the September 3 mandate and September 4 stay denial, Missouri's constitution, the attorney general's U.S. Supreme Court stay application and the challenger's opposition, the U.S. Supreme Court docket, the attorney general's September 3 statement, and coverage checked against those records. Missouri's court website does not let its pages be saved from this machine; the opinion text was recovered from the appendix the attorney general filed with the U.S. Supreme Court.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The ruling</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="sc101805-summary" kind="record">
+          <p>On September 3, 2026, the Supreme Court of Missouri reversed a Cole County judgment that had upheld Secretary of State Denny Hoskins's rejection of a referendum on House Bill 1. Judge Ginger K. Gooch wrote the opinion. The decision is unanimous.<Cite s="sc101805-summary" passage="In a unanimous decision written by Judge Ginger K. Gooch" /><Cite s="sc101805-opinion" passage="All concur." /></p></SourcedBlock>
+
+        <p data-layer="narrative">A referendum is a statewide vote on a law the legislature already passed, after people gather enough signatures to put it on the ballot. House Bill 1 is the 2025 act that would repeal Missouri's 2022 U.S. House districts and draw new ones.<Cite s="sc101805-summary" passage="a referendum on House Bill 1 (the legislature’s 2025 act to repeal Missouri’s 2022 congressional districts" /><Cite s="mo-constitution" passage="reject by referendum any act of the general assembly, except as hereinafter provided." /></p>
+
+        <SourcedBlock source="sc101805-opinion" kind="record">
+          <p>The court asked one legal question: does the Missouri Constitution allow a referendum on a congressional redistricting act? There was no dispute that referendum petition 2026-R004 was filed on time, or that it had the number of signatures the constitution requires. Organizers submitted more than 300,000 signatures on December 9, 2025.<Cite s="sc101805-opinion" passage="permit a referendum on a congressional redistricting act passed by the General Assembly" /><Cite s="sc101805-opinion" passage="more than 300,000 signatures" /></p></SourcedBlock>
+
+        <SourcedBlock source="sc101805-opinion" kind="record">
+          <p>Hoskins issued a "Certificate of Insufficiency of Petition" at about 4 p.m. on August 4, 2026, about one hour before the statutory deadline. The certificate said the Missouri Constitution does not authorize a referendum on congressional redistricting plans passed by the General Assembly. Cole County Circuit Judge Daniel R. Green upheld that certificate. The Supreme Court reversed.<Cite s="sc101805-opinion" passage="At about 4:00 p.m. on August 4" /><Cite s="sc101805-opinion" passage="does not authorize a referendum on congressional redistricting plans passed by the" /></p></SourcedBlock>
+
+        <SourcedBlock source="sc101805-summary" kind="record">
+          <p>The court held that article III, section 49 of the Missouri Constitution subjects "any act of the general assembly" to referendum, that House Bill 1 is such an act, and that no exception applies. Because the petition was legal, sufficient, and timely, House Bill 1 is not the law and never has been the law. The 2022 congressional districts remain in full force for the November 2026 general election.<Cite s="sc101805-summary" passage="HB 1 is not the law and never has been the law." /><Cite s="sc101805-summary" passage="The 2022 congressional districts are in full force and effect for the November 2026 general election." /></p></SourcedBlock>
+
+        <SourcedBlock source="sc101805-summary" kind="record">
+          <p>The court's review of the certificate was limited to the single reason Hoskins stated: that the constitution does not allow a referendum on a congressional map. The summary says section 116.150 does not let the secretary attach and incorporate an attorney general "opinion" as the reason. Other arguments, including claimed federal-law violations, were treated as waived for that review.<Cite s="sc101805-summary" passage="incorporating by reference an attorney general “opinion” or other document prepared and signed by another person or entity." /></p></SourcedBlock>
+
+        <p data-layer="narrative">The opinion says it reaffirms Maggard. That is the earlier case in which the court had already said that if the December 9 petition was sufficient, House Bill 1 never took effect.<Cite s="sc101805-opinion" passage="this Court reaffirms Maggard." /></p>
+
+        <SourcedBlock source="sc101805-opinion" kind="record">
+          <p>The court ordered Hoskins to issue a certificate of sufficiency for petition 2026-R004, place the referendum on the November 2026 ballot, and take every step needed to do that before September 8, 2026. It barred him, and anyone acting with him, from using House Bill 1's districts for November or later unless and until voters approve the bill and it takes effect 30 days after that election.<Cite s="sc101805-opinion" passage="before September 8, 2026" /><Cite s="sc101805-opinion" passage="effect 30 days thereafter" /></p></SourcedBlock>
+
+        <SourcedBlock source="mo-constitution" kind="official">
+          <p>The constitution's referendum clause says the people reserve power to approve or reject by referendum any act of the general assembly, except as later provided. A measure referred to the people takes effect when approved by a majority of the votes cast on it, and not otherwise.<Cite s="mo-constitution" passage="reject by referendum any act of the general assembly, except as hereinafter provided." /><Cite s="mo-constitution" passage="take effect when approved by a majority of the votes cast thereon, and not otherwise." /></p></SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Not thrown out later.</span>
+              Headlines said a court blocked a map already used in the August primary. The court said House Bill 1 never became law, and that the 2022 map is the only map in effect.<Cite s="abc-missouri-house-map" passage="unanimously blocked" /><Cite s="sc101805-summary" passage="HB 1 is not the law and never has been the law." />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Not a 6-1 map.</span>
+              The Hill wrote that reverting to the prior map meant a "6-1 GOP-favored design." ABC and the Associated Press say Missouri currently has six Republicans and two Democrats in the U.S. House.<Cite s="thehill-scotus-missouri-house-map" passage="6-1 GOP-favored design" /><Cite s="abc-missouri-house-map" passage="six Republicans and two Democrats" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">The last hour.</span>
+              Hoskins waited until about 4 p.m. on primary day, the last hour the statute allowed, to reject a petition filed in December. The court said that delay caused the confusion, expense, and practical difficulties the state now cites.<Cite s="sc101805-opinion" passage="At about 4:00 p.m. on August 4" /><Cite s="sc101805-summary" passage="the secretary’s delay caused any potential confusion, expense, and practical difficulties." />
+              <a class="catch-jump" href="#where-this-sits">Where this sits</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">{calendar.daysRulingToBallotDeadline} days to reset ballots.</span>
+              The court set a September 8 deadline to place the referendum on the ballot, {calendar.daysRulingToBallotDeadline} days after the ruling. The attorney general told the U.S. Supreme Court that federal law requires overseas and military ballots by September 19, and that the state is "genuinely unsure" it can switch maps in time.<Cite s="sc101805-summary" passage="before September 8, 2026" /><Cite s="scotus-26a304-application" passage="September 19" /><Cite s="ap-missouri-house-map" passage="genuinely unsure whether it can switch its governing congressional map" />
+              <a class="catch-jump" href="#who-feels-it">Who feels it</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">How the map got here</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="sc101805-opinion" kind="record">
+          <p>The General Assembly passed House Bill 1 on September 12, 2025. If it became effective, it would repeal the 2022 districts and establish new ones. Organizers submitted a referendum form on September 29. The secretary approved it for circulation. On December 9 they submitted 691 boxes purporting to contain more than 300,000 signatures.<Cite s="sc101805-opinion" passage="September 12, 2025, the General Assembly passed HB 1" /><Cite s="sc101805-opinion" passage="691 boxes purporting to contain more than 300,000 signatures" /></p></SourcedBlock>
+
+        <SourcedBlock source="scotus-26a304-application" kind="record">
+          <p>The attorney general's stay application says House Bill 1 passed 21 to 11 in the Senate and 90 to 65 in the House.<Cite s="scotus-26a304-application" passage="21 to 11 in the Senate and 90 to 65 in the House of Representatives" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how the calendar was counted</summary>
+          <p>The ruling is dated September 3, 2026, in the court's summary and mandate. September 8 minus September 3 is {calendar.daysRulingToBallotDeadline} days. September 19 minus September 3 is {calendar.daysRulingToUocava} days. The September 19 date is the overseas-ballot date named in the stay application, not a date computed from another calendar.</p>
+        </details>
+
+        <p data-layer="narrative">The August 4 primary used House Bill 1's lines. The court still held that those lines never took effect, because a sufficient referendum petition filed on December 9 suspended the bill. The confusion of holding a primary under one map and a general election under another is, in the court's account, a product of the secretary's wait, not a reason to ignore the constitution.<Cite s="sc101805-summary" passage="the secretary’s delay caused any potential confusion, expense, and practical difficulties." /><Cite s="sc101805-opinion" passage="HB 1 is not the law and has never been the law." /></p>
+
+        <SourcedBlock source="abc-missouri-house-map" kind="checked">
+          <p>ABC, using an Associated Press dispatch, wrote that the new lines were drawn after President Donald Trump urged Republicans to redraw districts, and that Governor Mike Kehoe called a special session to reconfigure the Kansas City-based 5th District held by Democrat Emanuel Cleaver. Those political facts are not in the opinion. They are the coverage's account of how the bill arrived.<Cite s="abc-missouri-house-map" passage="After Trump urged Republicans to redraw congressional districts" /></p></SourcedBlock>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Voters, clerks, and the House</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <SourcedBlock source="abc-missouri-house-map" kind="checked">
+          <p>Missouri currently has six Republicans and two Democrats in the U.S. House, ABC and the Associated Press both wrote. The new map was drawn to help Republicans win an additional seat by stretching Cleaver's Kansas City district into rural Republican areas. About 59 percent of that reshaped district's voters were new, according to an Associated Press estimate reported by ABC.<Cite s="abc-missouri-house-map" passage="six Republicans and two Democrats" /><Cite s="abc-missouri-house-map" passage="About 59% of the district's voters were new" /></p></SourcedBlock>
+
+        <p data-layer="narrative">If the September 3 order stands, November voters use the 2022 lines. People who voted in the August primary under House Bill 1's lines may find themselves in a different district, with different nominees, than the one they voted in last month. The court did not name a process for matching primary winners to the 2022 map. If voters later approve House Bill 1, the opinion says it takes effect 30 days after the election, which is after this November House vote is already held.<Cite s="sc101805-summary" passage="The 2022 congressional districts are in full force and effect for the November 2026 general election." /><Cite s="sc101805-opinion" passage="effect 30 days thereafter" /></p>
+
+        <SourcedBlock source="scotus-26a304-application" kind="record">
+          <p>The attorney general told the U.S. Supreme Court that a "federal-election-administration disaster is unfolding in Missouri," that the order would move hundreds of thousands of voters into new districts, and that the state is unsure it can switch maps in time for a timely federal election. Those are the state's words in its stay application, not findings of the Missouri Supreme Court.<Cite s="scotus-26a304-application" passage="A federal-election-administration disaster is unfolding in Missouri" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-missouri-house-map" kind="checked">
+          <p>State law, as reported by the Associated Press, sets a Tuesday deadline to make changes to the November ballot. That Tuesday is September 8, the date in the court's order. The Associated Press also reported that Justice Kavanaugh, who hears emergency matters from the region, asked critics of the new map to respond by Monday.<Cite s="ap-missouri-house-map" passage="State law sets a Tuesday deadline to make changes to the November ballot." /><Cite s="scotus-26a304-docket" passage="due by Noon (EDT) on September 7, 2026." /></p></SourcedBlock>
+
+        <p data-layer="narrative">County clerks have to print ballots that match the map the court said is in force, and they have to do it before overseas and military ballots go out. The stay application names September 19 for those ballots. The people who feel that deadline are local election officials and the voters who use those ballots, including service members overseas.<Cite s="scotus-26a304-application" passage="September 19" /></p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">The coverage</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <p data-layer="narrative">The held articles were checked against the court's summary, the recovered opinion, the mandate, the stay application, and the U.S. Supreme Court docket. Political color (Trump's post, the governor's disappointment) is the outlets' record of those statements. We have not saved Trump's or the governor's own pages.<Cite s="sc101805-summary" /><Cite s="sc101805-opinion" /></p>
+
+        <SourcedBlock source="abc-missouri-house-map" kind="checked">
+          <p><strong>ABC</strong>, from an Associated Press dispatch, said the court unanimously blocked the new districts from November and ordered a statewide vote. That checks out against the court's holding that the petition was legal and the 2022 map remains in force. ABC quoted the court that the legislation "did not go into effect and will not go into effect unless and until approved by the voters." That matches the opinion.<Cite s="abc-missouri-house-map" passage="did not go into effect and will not go into effect unless and until approved by the voters" /><Cite s="sc101805-opinion" passage="referendum petition was legal, sufficient, and timely" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-missouri-house-map" kind="checked">
+          <p><strong>The Associated Press</strong>, writing after the Friday appeal, said Missouri asked the U.S. Supreme Court to allow the new districts in the midterms, that Kavanaugh asked for a Monday response, and that the state court had said the prior districts must be used in the general election. Those check out against the docket and the opinion.<Cite s="ap-missouri-house-map" passage="Missouri appealed to the U.S. Supreme Court on Friday" /><Cite s="scotus-26a304-docket" passage="due by Noon (EDT) on September 7, 2026." /></p></SourcedBlock>
+
+        <SourcedBlock source="fox-missouri-house-map" kind="checked">
+          <p><strong>Fox News</strong> reported Hanaway's Friday emergency appeal and quoted her calling the ruling catastrophic. That quote is Fox's record of her statement. Her office's own release, saved here, uses different words: "unprecedented" and "constitutional crisis." Both are her office. They are not the same sentence.<Cite s="fox-missouri-house-map" passage="catastrophic ruling" /><Cite s="ago-hanaway-2026-09-03" passage="This unprecedented decision clearly violates federal law" /></p></SourcedBlock>
+
+        <SourcedBlock source="politico-missouri-house-map" kind="checked">
+          <p><strong>Politico</strong> called the decision a unanimous 7-0 ruling and wrote that five of the justices were appointed by a Republican governor. The opinion says all concur. The court's own files we hold do not list seven names on the signature block, and they do not name who appointed the judges. The appointment split is Politico's.<Cite s="politico-missouri-house-map" passage="7-0" /><Cite s="sc101805-opinion" passage="All concur." /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-scotus-missouri-house-map" kind="checked">
+          <p><strong>The Hill</strong>, on the stay application, wrote that the state must revert to a "6-1 GOP-favored design." That is wrong. ABC and the Associated Press say the current House split is six Republicans and two Democrats. A 6-1 split would be seven seats. Missouri has eight.<Cite s="thehill-scotus-missouri-house-map" passage="6-1 GOP-favored design" /><Cite s="abc-missouri-house-map" passage="six Republicans and two Democrats" /></p></SourcedBlock>
+
+        <SourcedBlock source="usatoday-missouri-house-map" kind="checked">
+          <p><strong>USA Today</strong> reported the unanimous ruling, the order to use the 2022 maps in November, and Trump's post calling the decision "horrible, ridiculous, and unConstitutional." The ruling checks out. The Trump wording is USA Today's record of a social-media post. We have not saved the post itself.<Cite s="usatoday-missouri-house-map" passage="horrible, ridiculous, and unConstitutional" /><Cite s="sc101805-summary" passage="In a unanimous decision written by Judge Ginger K. Gooch" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">One claim, examined</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="sc101805-summary" kind="checked">
+          <p><strong>The claim:</strong> a court threw out, blocked, or paused a map after the primary. <strong>The record:</strong> the court said House Bill 1 never took effect. A sufficient referendum petition filed on December 9, 2025, referred the bill to the voters. The August primary used lines the court later said were never the law. The 2022 map, the court wrote, is the only congressional map in effect for November.<Cite s="sc101805-summary" passage="HB 1 is not the law and never has been the law." /><Cite s="sc101805-opinion" passage="HB 1 is not the law and has never been the law." /><Cite s="abc-missouri-house-map" passage="unanimously blocked" /></p></SourcedBlock>
+
+        <p data-layer="narrative">"Blocked" is not false about the practical result for November: those lines cannot be used unless voters approve them. It is the wrong description of the legal holding. The court did not take a live map off the books. It said the map never went on the books.<Cite s="sc101805-summary" passage="HB 1 is not the law and never has been the law." /></p>
+
+        <details class="receipt" data-layer="proof"><summary>how the petition numbers were read</summary>
+          <p>The recovered opinion names the petition 2026-R004. The court's own communications summary names it 2026-R0004, with an extra zero. Both files are saved. Quotes about the petition number follow the opinion when the holding is at issue, and note the summary's extra zero when the summary is the source.</p>
+        </details>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">September 4 and 5</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="sc101805-mandate" kind="record">
+          <p>On September 4 the Missouri Supreme Court denied Hoskins's motion to stay the injunction while he sought emergency relief from the U.S. Supreme Court. Chief Justice Brent Powell signed that one-sentence order. The September 3 mandate had already reversed the Cole County judgment.<Cite s="sc101805-mandate" passage="Respondent’s motion for a stay of injunction pending emergency appeal and application for stay" /><Cite s="sc101805-mandate" passage="overruled" /></p></SourcedBlock>
+
+        <SourcedBlock source="ago-hanaway-2026-09-03" kind="record">
+          <p>Hanaway's office said the decision "clearly violates federal law and has thrust our state into a full-fledged constitutional crisis," and that the office would seek relief from the U.S. Supreme Court.<Cite s="ago-hanaway-2026-09-03" passage="Never before in American history has a court overturned a congressional map after a primary and before a general election." /></p></SourcedBlock>
+
+        <SourcedBlock source="scotus-26a304-application" kind="record">
+          <p>The emergency application, docketed September 4 as 26A304, Hoskins v. Von Glahn, asks the U.S. Supreme Court to stay the Missouri order. Justice Kavanaugh asked for a response by noon Eastern on September 7.<Cite s="scotus-26a304-docket" passage="Application (26A304) for a stay, submitted to Justice Kavanaugh." /><Cite s="scotus-26a304-docket" passage="due by Noon (EDT) on September 7, 2026." /></p></SourcedBlock>
+
+        <SourcedBlock source="scotus-26a304-opposition" kind="record">
+          <p>Richard von Glahn's opposition argues that the U.S. Supreme Court lacks jurisdiction because the Missouri court's holding is a question of state law, and it quotes the Missouri opinion that House Bill 1 "is not the law and has never been the law."<Cite s="scotus-26a304-opposition" passage="This Court lacks jurisdiction because Applicants’ federal claims are" /><Cite s="scotus-26a304-opposition" passage="HB 1 is not the law and has never been the law." /></p></SourcedBlock>
+
+        <SourcedBlock source="scotus-26a304-docket" kind="record">
+          <p>The docket saved September 8 shows Hoskins's reply in support of the application, filed that day. The reply says that if the U.S. Supreme Court stays the injunction, the state will use the House Bill 1 map for the 2026 general election. The saved docket does not show a stay order.<Cite s="scotus-26a304-docket" passage="Reply of Denny Hoskins in support of application submitted." /><Cite s="scotus-26a304-reply" passage="the State will use the HB 1 map for the 2026 General" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: whether the U.S. Supreme Court issues a stay, whether Hoskins certifies the referendum on the September 8 ballot deadline named in the order, and how Missouri matches August nominees to the 2022 districts if the order stands.<Cite s="sc101805-summary" passage="before September 8, 2026" /><Cite s="scotus-26a304-docket" passage="Reply of Denny Hoskins in support of application submitted." /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li>Whether the U.S. Supreme Court will stay the Missouri order. The application, the opposition, and Hoskins's September 8 reply are on the saved docket. No stay order is in that file.<Cite s="scotus-26a304-docket" passage="Reply of Denny Hoskins in support of application submitted." /></li>
+          <li>How nominees chosen under House Bill 1's August primary appear on a 2022-map November ballot. The opinion orders use of the 2022 districts. It does not name a candidate-matching rule.<Cite s="sc101805-summary" passage="The 2022 congressional districts are in full force and effect for the November 2026 general election." /></li>
+          <li>Whether Missouri can meet the September 19 overseas-ballot date if it switches maps. That uncertainty is the attorney general's, stated in the stay application. It is not a finding of the Missouri court.<Cite s="ap-missouri-house-map" passage="genuinely unsure whether it can switch its governing congressional map" /></li>
+          <li>The secretary of state's own written certificate of sufficiency, if he has issued one since the order. The petitions page we saved is a general elections page. It does not list petition 2026-R004.<Cite s="sc101805-opinion" passage="certificate of sufficiency as to the referendum petition (2026-R004)" /></li>
+        </ul>
+      </section>
+
+      <StorySources event="missouri-house-map/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 1.15; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+</style>
