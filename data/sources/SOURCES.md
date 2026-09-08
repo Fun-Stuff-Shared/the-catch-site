@@ -335,3 +335,52 @@ Primary records: the Missouri Supreme Court’s own summary PDF of SC101805 (sav
 | data/sources/missouri-house-map/house-party-breakdown.txt | 2533 | 93a64e3951e10e4d |
 | data/sources/missouri-house-map/sos-2026-general-certified-candidates.pdf | 813890 | 614e004d0f051d1d |
 | data/sources/missouri-house-map/sos-2026-general-certified-candidates.txt | 20841 | 0a1c0e3bcc825d0b |
+
+## Government funding September 2026 (saved 2026-09-08)
+
+The enrolled bill is the Congress.gov PDF of H.R. 6500 as enrolled. Congress.gov HTML bill pages and the Congressional Budget Office site did not let their pages be saved from this machine. Coverage articles were copied from the September 1 and September 3 wire capture runs, each saved as served.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/government-funding/BILLS-119hr6500enr.pdf | 171025 | fd957b1a5f273f7c |
+| data/sources/government-funding/BILLS-119hr6500enr.txt | 72338 | 1b4c310cc16bb58b |
+| data/sources/government-funding/house-roll286.xml | 82724 | 65aec5da8a8d26f2 |
+| data/sources/government-funding/senate-vote-228.xml | 29896 | 9c70596862699cce |
+| data/sources/government-funding/wh-hr6500-signed.html | 269008 | b2b3c073eabee9df |
+| data/sources/government-funding/wh-hr6500-signed.txt | 6477 | 412f6f5e01925e95 |
+| data/sources/government-funding/omb-sap-hr6500.pdf | 56703 | fb9afc1d56cc6941 |
+| data/sources/government-funding/omb-sap-hr6500.txt | 1668 | 24fd273ae9c2f83f |
+| data/sources/government-funding/speaker-johnson-2026-09-01.html | 113703 | 140b2dcdaa3beacc |
+| data/sources/government-funding/speaker-johnson-2026-09-01.txt | 6658 | 48b67ea631225155 |
+| data/sources/government-funding/cole-floor-2026-09-01.html | 113920 | 076533c0690aeb10 |
+| data/sources/government-funding/cole-floor-2026-09-01.txt | 12761 | 67711a9d984fe4be |
+| data/sources/government-funding/cole-house-passage-2026-09-01.html | 109404 | 77a188d9ac498bb4 |
+| data/sources/government-funding/cole-house-passage-2026-09-01.txt | 8896 | 921be79c54e093ae |
+| data/sources/government-funding/delauro-house-passage-2026-09-01.html | 46477 | 8cb85b0c0449008c |
+| data/sources/government-funding/delauro-house-passage-2026-09-01.txt | 4486 | 5bced947bf0f3bd1 |
+| data/sources/government-funding/collins-house-passage-2026-09-01.html | 34329 | b73ad8e952cd6dd3 |
+| data/sources/government-funding/collins-house-passage-2026-09-01.txt | 5871 | 3c49b3bcab69baa9 |
+| data/sources/government-funding/murray-senate-passage-2026-08-08.html | 37218 | 890871bbcf975676 |
+| data/sources/government-funding/murray-senate-passage-2026-08-08.txt | 7981 | 7a160ea06d28f136 |
+| data/sources/coverage/abc-house-funding.html | 190080 | 330e777803150bb3 |
+| data/sources/coverage/abc-house-funding.txt | 3338 | 8b3b4f9cd8962d21 |
+| data/sources/coverage/ap-house-funding.html | 786916 | 7a5116cc597968ff |
+| data/sources/coverage/ap-house-funding.txt | 44778 | b8385a729d1c3fd2 |
+| data/sources/coverage/thehill-house-funding.html | 395324 | 9b157423814daa5e |
+| data/sources/coverage/thehill-house-funding.txt | 15162 | 6abe934929cb89e4 |
+| data/sources/coverage/cbs-house-funding.html | 622579 | 4f3b7fbebfccd003 |
+| data/sources/coverage/cbs-house-funding.txt | 6077 | 1db4bf70ebd007bf |
+| data/sources/coverage/nbc-house-funding.html | 289824 | 9864e89410875121 |
+| data/sources/coverage/nbc-house-funding.txt | 4639 | 1d1c8872b342f90a |
+| data/sources/coverage/npr-house-funding.html | 135677 | b374321413715e8a |
+| data/sources/coverage/npr-house-funding.txt | 4118 | 95e5eb0ba1ed8181 |
+| data/sources/coverage/pbs-house-funding.html | 252503 | 764204b9256b97c7 |
+| data/sources/coverage/pbs-house-funding.txt | 6050 | 53f2b70e51eef7a6 |
+| data/sources/coverage/upi-house-funding.html | 292916 | 31b472032f87821c |
+| data/sources/coverage/upi-house-funding.txt | 6427 | 3ceb90da7ee21969 |
+| data/sources/coverage/thehill-trump-signs-funding.html | 396993 | f77fe9baabdae758 |
+| data/sources/coverage/thehill-trump-signs-funding.txt | 12994 | cf1a41816320e720 |
+| data/sources/government-funding/house-clerk-2026286.html | 553344 | 1b85bd2ffcf2d3f4 |
+| data/sources/government-funding/senate-vote-228.html | 54027 | 5ac05c1f73804df3 |
+| data/sources/government-funding/senate-vote-227.xml | 29691 | f3dbef6567c10038 |
+| data/sources/government-funding/house-roll288.xml | 82663 | 6acbfdd2023fa643 |
