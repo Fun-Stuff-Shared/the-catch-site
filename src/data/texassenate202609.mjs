@@ -212,6 +212,24 @@ export const outsideMoney = {
   ],
 };
 
+// SB 2, 86th Legislature (2019): the property tax bill the ad refers to. House Journal record votes.
+export const sb2 = {
+  caption: "Relating to ad valorem taxation; authorizing fees.",
+  passage: { date: "2019-05-01", record: 839, yeas: 109, nays: 36, talarico: "no" },
+  conference: { date: "2019-05-25", record: 1939, yeas: 88, nays: 50, talarico: "no" },
+  signed: "2019-06-12",
+};
+
+export const timeline = [
+  { date: "Sep 4", title: "MAGA Inc. commits $10 million to Del Ray Media LLC for the ads", sub: "the obligation date on the notice; the same day Trump says he has close to a billion dollars in the super PAC" },
+  { date: "Sep 5", title: "The 48-hour notice is signed and the two ads go public", sub: "MAGA Inc., Paxton and Talarico post; AP, CBS, Fox, NBC, USA Today report it" },
+  { date: "Sep 6", title: "The Hill carries Gina Hinojosa welcoming the attention on Texas", sub: "" },
+  { date: "Sep 30", title: "Books close for the candidates' next FEC reports", sub: "due October 15" },
+  { date: "Oct 14", title: "Books close for the pre-election reports", sub: "due October 22" },
+  { date: "Oct 19", title: "Early voting in person begins", sub: "" },
+  { date: "Nov 3", title: "Election day", sub: "59 days after the ads went public", current: true },
+];
+
 export function millions(n) {
   const v = n / 1e6;
   const digits = v >= 100 ? 0 : 1;

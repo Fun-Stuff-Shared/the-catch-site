@@ -1,0 +1,3205 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title id="pageTitle">86(R) History for SB 2 | Texas Legislature Online</title>
+		
+<meta charset="UTF-8" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>		
+<link rel="Shortcut Icon" type="image/x-icon" href="/images/favicon.ico" />			
+<link rel="stylesheet" href="/stylesheets/W3C/w3.css"/>     
+<link rel="stylesheet" href="/stylesheets/tlo.css"/>     
+<link href="/stylesheets/sideBarMenu.css" type="text/css" rel="stylesheet"/>	
+<script type="text/javascript" src="/scripts/BillNumber.js"></script>
+
+
+
+		
+		<link href="../stylesheets/billHistory.css" type="text/css" rel="stylesheet"/>
+		<link href="../stylesheets/W3C/ModalDialog.css" type="text/css" rel="stylesheet" />
+		<script src="../scripts/W3C/ModalDialog.js" type="text/javascript"></script>
+	</head>
+	<body id="billlookup">
+
+		
+
+<a href="#maincontent" class="skip-main">Skip to main content</a>
+
+<a name="top"></a>
+
+<header role="banner">
+<div class="w3-top">
+
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+      <div class="header">
+          <a href="/Home.aspx" aria-label="Home"><img id="usrHeader_imgHeader" class="capImage" Width="162" Height="60" src="../Images/capitolLarge.jpg" alt="Texas Capitol" style="border-width:0px;" /></a>
+            <div id="desc">
+			<span class="applicationName"><span id="usrHeader_lblApplicationName" style="display:inline-block;color:White;font-size:14px;font-weight:normal;width:300px;">89th Legislature Second Called Session</span></span><br/>
+			<span class="pageDescription"><span id="usrHeader_lblPageTitle" style="display:inline-block;color:White;font-size:22px;font-weight:bold;width:420px;">Texas Legislature Online</span></span>
+          </div>
+          <div>              
+             <form method="post" aria-label="Search" role="search" name="search" action="/Search/HeaderSearch.aspx" class="search-form w3-hide-small w3-hide-medium" role="search">
+                  <label class="title" for="cboSearchLegSess">Search:</label>
+                  <select id="cboSearchLegSess" name="legSess" CssClass="cboLegSess" alt="Specify search legislative session"><option selected="selected" value="892">89(2)</option><option  value="891">89(1)</option><option  value="89R">89(R)</option><option  value="884">88(4)</option><option  value="883">88(3)</option><option  value="882">88(2)</option><option  value="881">88(1)</option><option  value="88R">88(R)</option><option  value="873">87(3)</option><option  value="872">87(2)</option><option  value="871">87(1)</option><option  value="87R">87(R)</option><option  value="86R">86(R)</option><option  value="851">85(1)</option><option  value="85R">85(R)</option><option  value="84R">84(R)</option><option  value="833">83(3)</option><option  value="832">83(2)</option><option  value="831">83(1)</option><option  value="83R">83(R)</option><option  value="821">82(1)</option><option  value="82R">82(R)</option><option  value="811">81(1)</option><option  value="81R">81(R)</option><option  value="80R">80(R)</option><option  value="793">79(3)</option><option  value="792">79(2)</option><option  value="791">79(1)</option><option  value="79R">79(R)</option><option  value="784">78(4)</option><option  value="783">78(3)</option><option  value="782">78(2)</option><option  value="781">78(1)</option><option  value="78R">78(R)</option><option  value="77R">77(R)</option><option  value="76R">76(R)</option><option  value="75R">75(R)</option><option  value="74R">74(R)</option><option  value="73R">73(R)</option><option  value="724">72(4)</option><option  value="723">72(3)</option><option  value="722">72(2)</option><option  value="721">72(1)</option><option  value="72R">72(R)</option><option  value="716">71(6)</option><option  value="715">71(5)</option><option  value="714">71(4)</option><option  value="713">71(3)</option><option  value="712">71(2)</option><option  value="711">71(1)</option><option  value="71R">71(R)</option></select>
+                  <label id="txtQueryLabel" for="txtQuery">-</label>
+                  <input type="text" id="txtQuery" name="query" style="width:160px" placeholder="Bill lookup or text search" alt="Specify search bill number or text" maxlength="30" />
+                  <button type="submit" id="btnSubmitSearch" class="search-submit">Go</button>
+              </form>
+          </div>
+          <div class="divider" style="float:left;height:1px"><p></p></div>
+      </div>   
+  </div>
+</div>
+</header>
+
+		
+
+<!-- Navbar -->
+<nav role="navigation" aria-label="site navigation">
+<div class="w3-middle navBarLinks">
+  <div class="w3-bar w3-theme w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-black w3-large" href="javascript:void(0)" onclick="w3_open()" aria-description="Open Menu" aria-label="Open Menu"><img src="/images/menu.svg" aria-hidden="true" focusable="false" alt="Menu icon" /></a>
+    <a href="/Home.aspx" class="nav-home w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Home</a>
+    <a href="/MnuMyTLO.aspx" class="nav-mytlo w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">My TLO</a>
+    <a href="/MnuHouse.aspx" class="nav-house w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">House</a>
+    <a href="/MnuSenate.aspx" class="nav-senate w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Senate</a>
+    <a href="/MnuLegislation.aspx" class="nav-billlookup w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Legislation</a>
+    <a href="/MnuSearch.aspx" class="nav-search w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Search</a>
+    <a href="/MnuCommittees.aspx" class="nav-committees w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Committees</a>
+    <a href="/MnuCalendars.aspx" class="nav-calendars w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Calendars</a>
+    
+    <div class="w3-hide-small w3-hide-medium" style="float:right; padding: 5px 5px 0 0">
+    <a href="https://capitol.texas.gov/tlodocs/webhelp/tlo.htm#t=default_topic.htm">Help</a> <span aria-hidden="true">|</span>
+    <a href="/resources/FAQ.aspx" title="Frequently asked questions">FAQ</a> <span aria-hidden="true">|</span>
+    <a href="/resources/siteMap.aspx">Site Map</a> <span aria-hidden="true">|</span>
+    <a href="/resources/contactText.aspx">Contact</a> <span aria-hidden="true">|</span>
+    
+        <a href="/MyTLO/Login/login.aspx?ReturnUrl=/BillLookup/History.aspx?LegSess=86R&Bill=SB2">Login</a>
+        
+  </div>
+    </div>
+</div>
+</nav>
+
+<div id="tloSidebar" style="display: none;">
+<nav aria-description="site navigation" class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu" aria-description="Close Menu" arial-label="Close Menu">
+      <img src="/images/close_menu.svg" aria-hidden="true" focusable="false" alt="Menu icon" />
+  </a>
+  <div class="w3-bar-item"><b>Menu</b></div>
+  <ul class="w3-bar-items">
+  <li><a class="w3-button" href="/Home.aspx">Home</a></li>
+  <li><a class="w3-button" href="/MnuMyTLO.aspx">My TLO</a></li>
+  <li><a class="w3-button" href="/MnuHouse.aspx">House</a></li>
+  <li><a class="w3-button" href="/MnuSenate.aspx">Senate</a></li>
+  <li><a class="w3-button" href="/MnuLegislation.aspx">Legislation</a></li>
+  <li><a class="w3-button" href="/MnuSearch.aspx">Search</a></li>
+  <li><a class="w3-button" href="/MnuCommittees.aspx">Committees</a></li>
+  <li><a class="w3-button" href="/MnuCalendars.aspx">Calendars</a></li>
+  </ul>
+  <p></p>
+    <label for="cboSearchLegSessMobile" style="padding-left: 16px;" aria-description="Specify search legislative session">Search:</label>
+    <br />
+  <form method="post" name="search" action="/Search/HeaderSearch.aspx" style="padding-left: 16px">
+    <select id="cboSearchLegSessMobile" name="legSess" CssClass="cboLegSess"><option selected="selected" value="892">89(2)</option><option  value="891">89(1)</option><option  value="89R">89(R)</option><option  value="884">88(4)</option><option  value="883">88(3)</option><option  value="882">88(2)</option><option  value="881">88(1)</option><option  value="88R">88(R)</option><option  value="873">87(3)</option><option  value="872">87(2)</option><option  value="871">87(1)</option><option  value="87R">87(R)</option><option  value="86R">86(R)</option><option  value="851">85(1)</option><option  value="85R">85(R)</option><option  value="84R">84(R)</option><option  value="833">83(3)</option><option  value="832">83(2)</option><option  value="831">83(1)</option><option  value="83R">83(R)</option><option  value="821">82(1)</option><option  value="82R">82(R)</option><option  value="811">81(1)</option><option  value="81R">81(R)</option><option  value="80R">80(R)</option><option  value="793">79(3)</option><option  value="792">79(2)</option><option  value="791">79(1)</option><option  value="79R">79(R)</option><option  value="784">78(4)</option><option  value="783">78(3)</option><option  value="782">78(2)</option><option  value="781">78(1)</option><option  value="78R">78(R)</option><option  value="77R">77(R)</option><option  value="76R">76(R)</option><option  value="75R">75(R)</option><option  value="74R">74(R)</option><option  value="73R">73(R)</option><option  value="724">72(4)</option><option  value="723">72(3)</option><option  value="722">72(2)</option><option  value="721">72(1)</option><option  value="72R">72(R)</option><option  value="716">71(6)</option><option  value="715">71(5)</option><option  value="714">71(4)</option><option  value="713">71(3)</option><option  value="712">71(2)</option><option  value="711">71(1)</option><option  value="71R">71(R)</option></select>
+    <label id="txtQueryMobileLabel" for="txtQueryMobile" aria-description="Specify search bill number or text">-</label>
+    <input type="text" id="txtQueryMobile" name="query" style="width:130px" placeholder="Bill or text search" maxlength="30" />
+      <br />
+      <br />
+    <button type="submit" id="btnSubmitSearchMobile" class="search-submit">Go</button>
+  </form>
+    <br/>
+    <div style="margin-left: 16px">
+    <a href="https://capitol.texas.gov/tlodocs/webhelp/tlo.htm#t=default_topic.htm">Help</a> <span aria-hidden="true">|</span>
+    <a href="/resources/FAQ.aspx" title="Frequently asked questions">FAQ</a> <span aria-hidden="true">|</span>
+    <a href="/resources/siteMap.aspx">Site Map</a> <span aria-hidden="true">|</span>
+    <a href="/resources/contactText.aspx">Contact</a> <span aria-hidden="true">|</span>
+
+    
+        <a href="/MyTLO/Login/login.aspx?ReturnUrl=/BillLookup/History.aspx?LegSess=86R&Bill=SB2">Login</a>
+      
+    </div>
+</nav>
+</div>
+
+		<main class="w3-main" role="main" id="maincontent">
+		
+		<div class="w3-row">
+		<div class="w3-container">
+		<form name="Form1" method="post" action="./History.aspx?LegSess=86R&amp;Bill=SB2" id="Form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE0MTIzNzc3ODVkZD86B2ncwqLJOE2StbyJf4BASdZc" />
+</div>
+
+<script type="text/javascript" src="/ajax/common.ashx"></script><script type="text/javascript" src="/ajax/TLC.TLO.Client.Controls.AddToBillList,TLC.TLO.Client.ashx"></script><script type="text/javascript" src="/ajax/TLC.TLO.Client.Controls.AddToAlert,TLC.TLO.Client.ashx"></script><script type="text/javascript" src="/ajax/TLC.TLO.Client.Controls.RecordVote,TLC.TLO.Client.ashx"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="05587D32" />
+</div>		
+		
+<br/>
+<link href="/Stylesheets/pagetabs.css" type="text/css" rel="stylesheet">
+
+
+    
+<nav role="navigation" aria-label="Related content">
+    <ul role="tablist" class="tabs">
+    
+            <li id="tab-1" 
+                    role="tab" aria-selected="true" 
+                    tabindex="-1" class="tabSelected">
+                <a href="History.aspx?LegSess=86R&Bill=SB2" aria-label="">History</a>
+            </li>
+        
+            <li id="tab-2" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Text.aspx?LegSess=86R&Bill=SB2" aria-label="">Text</a>
+            </li>
+        
+            <li id="tab-3" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Actions.aspx?LegSess=86R&Bill=SB2" aria-label="">Actions</a>
+            </li>
+        
+            <li id="tab-4" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Companions.aspx?LegSess=86R&Bill=SB2" aria-label="">Companions</a>
+            </li>
+        
+            <li id="tab-5" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Amendments.aspx?LegSess=86R&Bill=SB2" aria-label="">Amendments</a>
+            </li>
+        
+            <li id="tab-6" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Authors.aspx?LegSess=86R&Bill=SB2" aria-label="">Authors</a>
+            </li>
+        
+            <li id="tab-7" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Sponsors.aspx?LegSess=86R&Bill=SB2" aria-label="">Sponsors</a>
+            </li>
+        
+            <li id="tab-8" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="Captions.aspx?LegSess=86R&Bill=SB2" aria-label="">Captions</a>
+            </li>
+        
+            <li id="tab-9" 
+                    role="tab" aria-selected="false" 
+                    tabindex="-1" class="tabNotSelected">
+                <a href="BillStages.aspx?LegSess=86R&Bill=SB2" aria-label="">Bill Stages</a>
+            </li>
+        
+    </ul>
+</nav>
+	
+<div id="panelLinks">
+
+</div>
+<p></p>
+
+
+	<div style="padding: 0 10px 0 10px">
+	
+	
+	
+	
+	
+	
+	
+	
+	<h1>History for 86(R) SB 2 by Bettencourt</h1>
+	
+	<p></p>	
+
+				
+	
+
+    <div class="bill">
+	<div class="grid-item"><span id="usrBillInfoTabs_lblBill"></span></div>
+	<div class="grid-item"><b></b> </div>
+	<div class="grid-item"><b></b> </div>
+
+	
+
+			<script type="text/javascript">
+
+                var _legislature = "";
+                var _session = "";
+                var _bill = "";
+
+        function submitAddToBillListFormClearMsgs()
+		{
+			document.getElementById("lblAddToBillListError").innerHTML = "";
+            var txtCat = document.getElementById('txtNew');
+            txtCat.setAttribute('aria-invalid', 'true');
+		}
+		function submitAddToBillListFormAddMsg(msg)
+		{
+            document.getElementById("lblAddToBillListError").innerHTML += "<strong>" + msg + "</strong><br/>";
+            var txtCat = document.getElementById('txtNew');
+            txtCat.setAttribute('aria-invalid', 'true');
+		}
+        function submitAddToBillListForm()
+		{
+            submitAddToBillListFormClearMsgs();
+			var ok = true;
+			var billListNm;
+
+			if (document.getElementById("rbNew") == null ||
+                document.getElementById("rbNew").checked)
+			{
+				console.log('new');
+                if (document.getElementById("txtNew").value.trim() == "")
+				{
+                    submitAddToBillListFormAddMsg("Please enter a bill list name.");
+					if (ok)
+                        document.getElementById("txtNew").focus();
+					ok = false;
+				}
+                if (document.getElementById("txtNewDesc").value.trim() == "")
+				{
+                    submitAddToBillListFormAddMsg("Please enter a bill list description.");
+					if (ok)
+                        document.getElementById("txtNewDesc").focus();
+					ok = false;
+				}
+				if (ok)
+				{
+					billListNm = document.getElementById("txtNew").value.trim();
+					if (AddToBillList.BillListExists(
+									_legislature,
+									_session,
+									billListNm).value)
+					{
+                        submitAddToBillListFormAddMsg("Bill list already exists.");
+                        document.getElementById("txtNew").focus();
+						ok = false;
+						return ok;
+					}
+				}
+			}
+			else //existing
+				billListNm = document.getElementById("cboExisting").value;
+
+			if (ok)
+			{
+                if (_bill.trim() != "")
+				{
+					if (AddToBillList.BillExistsOnBillList(
+									_legislature,
+									_session,
+									billListNm,
+									_bill).value)
+					{
+                        submitAddToBillListFormAddMsg("Bill already exists on bill list.");
+                        if (document.getElementById("rbNew") == null ||
+                            document.getElementById("rbNew").checked)
+                            document.getElementById("txtNew").focus();
+						else
+							document.getElementById("cboExisting").focus();
+						ok = false;
+					}
+					else
+					{
+						var billCnt = AddToBillList.GetNumBillsOnBillList(
+									_legislature,
+									_session,
+									billListNm).value;
+						if (billCnt >= 200)
+						{
+                            submitAddToBillListFormAddMsg("Bill list already contains the maximum of 200 bills.");
+                            if (document.getElementById("rbNew") == null ||
+                                document.getElementById("rbNew").checked)
+                                document.getElementById("txtNew").focus();
+							else
+                                document.getElementById("cboExisting").focus();
+							ok = false;
+						}
+					}
+				}
+				else //Adding results
+				{
+					var numToBeAdded = AddToBillList.GetNumResultBillsToBeAddedToBillList(
+									_legislature,
+									_session,
+									billListNm).value;
+					if (numToBeAdded == 1000)
+					{
+                        submitAddToBillListFormAddMsg("Bill list already contains the maximum of 200 bills.");
+                        if (document.getElementById("rbNew") == null ||
+                            document.getElementById("rbNew").checked)
+                            document.getElementById("txtNew").focus();
+						else
+                            document.getElementById("cboExisting").focus();
+						ok = false;
+					}
+					else
+					if (numToBeAdded > 1000)
+					{
+						ok = confirm("A bill list may contain a maximum of 200 bills and only the first "+(numToBeAdded-1000)+" bills in the search results will be added.  Would you like to continue adding these bills to the bill list?");
+					}
+				}
+			}
+
+			if (ok)
+			{
+				var msg = "";
+				//Adding bill
+				if (_bill.trim() != "")
+				{
+					var cmt = "";
+                    if (document.getElementById("rbNew") == null ||
+                        document.getElementById("rbNew").checked)
+                        cmt = document.getElementById("txtNewComment").value.trim();
+					else
+                        cmt = document.getElementById("txtExistingComment").value.trim();
+					var msg = AddToBillList.AddBillToBillList(
+									_legislature,
+									_session,
+									billListNm,
+									document.getElementById("txtNewDesc").value.trim(),
+									_bill,
+									cmt).value;
+				}
+				//Adding results
+				else
+				{
+					var cmt = "";
+                    if (document.getElementById("rbNew") == null ||
+                        document.getElementById("rbNew").checked)
+                        cmt = document.getElementById("txtNewComment").value.trim();
+					else
+                        cmt = document.getElementById("txtExistingComment").value.trim();
+					var rc = AddToBillList.AddResultsToBillList(
+									document.Form1.RemoteAddr.value,
+									_legislature,
+									_session,
+									billListNm,
+                        document.getElementById("txtNewDesc").value.trim(),
+						cmt).value;
+
+					if (rc < 0)
+						msg = "Error adding bills to bill list.";
+					else
+						if (rc >= 1000)
+							msg = String(rc - 1000)+" bill(s) successfully added to bill list that were not previously added.";
+						else
+							msg = String(rc)+" bill(s) successfully added to bill list that were not previously added.";
+				}//end-if bill or results
+
+				if (msg.indexOf("success") > 0) {
+					alert(msg);
+					document.getElementById('btnAddToBillListDialogClose').click();
+				} else {
+                    submitAddToBillListFormAddMsg(msg);
+					return false;
+				}
+			}
+		}
+
+		function setAddToBillListParms(legislature, session, bill) {
+            _legislature = legislature;
+            _session = session;
+            _bill = bill;
+
+            var jsonString = AddToBillList.GetExistingBillLists(legislature, session).value;
+
+            var json = JSON.parse(jsonString);
+
+            var selectElement = document.getElementById('cboExisting');
+            json.map(item => selectElement.appendChild(new Option(item.WatchListName, item.WatchListName)).cloneNode(true));
+
+            document.getElementById("lblAddToBillListInfo").innerHTML = "Add " + bill.trim() + " to:"; 
+
+            document.getElementById('rbExisting').checked = true;
+			if (selectElement.children.length == 0) {                
+				document.getElementById('rbNew').checked = true;
+                document.getElementById('rbExisting').disabled = true;
+				document.getElementById('cboExisting').disabled = true;
+                document.getElementById('txtExistingComment').disabled = true;
+			}
+        }
+            </script>
+
+<style type="text/css">
+
+.addToBilllist > .key {
+  width: 180px;
+  white-space: nowrap;
+}
+
+.addToBilllist > .val {
+	padding: 4px 0 4px 4px;
+	padding-left: 8px;
+}
+
+.addToBilllist {
+    display: grid;
+    grid-template-areas: "key val";
+    gap: 6px;
+    grid-auto-flow: row;
+    padding-left: 5px;
+}
+
+@media (max-width: 600px) {
+
+.addToBilllist > .key {
+  width: 180px;
+  white-space: nowrap;
+}
+
+.addToBilllist > .val {
+	padding-left: 8px;
+}
+
+.addToBilllist {
+    display: grid;
+    grid-template-areas: "key"
+		"val";
+    gap: 10px;
+    grid-auto-flow: row;
+    padding-left: 5px;
+    margin: 10px 0 10px 0;
+}
+}
+
+</style>
+
+<div class="dialogs">
+  <div role="dialog" id="dialogAddToBillList" aria-labelledby="dialogAddToBillList" aria-modal="true" class="hidden">
+    <h1 class="dialog_label">Add Bill to Bill List</h1>
+    <div class="dialog_form">
+     
+     <div class="dialog_form_item">
+
+		<div role="main">
+
+				<div id="lblAddToBillListError" class="error"></div>
+				<div id="lblAddToBillListInfo" style="width:100%"></div>
+				<p></p>
+
+				<fieldset id="usrBillInfoTabs_usrAddToBillList_divExisting" style="width: 100%">
+				<legend></legend>
+				<div class="addToBilllist"> 
+
+				<div class="key">
+				<input type="radio" id="rbExisting" checked name="save"/><label for="rbExisting">Save to Existing Bill List</label>
+				</div>
+				<div class="val"></div>
+
+				<div class="key"><label for="cboExisting">Existing Bill List</label>:</div>
+
+				<div class="val"><select id="cboExisting" style="width:200px" aria-describedBy="lblAddToBillListError"></select></div>
+
+				<div class="key"><label for="txtExistingComment">Bill Comment</label>:</div>
+
+				<div class="val"><input id="txtExistingComment" style="width:315px" MaxLength="120" value=""></div>
+				</div>				
+
+				<p></p>
+
+				<div class="addToBilllist">
+					<div class="key"><input type="radio" id="rbNew" name="save"/><label for="rbNew">Save to New Bill List</label></div>
+					<div class="val"></div>
+					<div class="key"><label for="txtNew">New Bill List</label>:</div>
+					<div class="val"><input type="text" id="txtNew" style="width:200px" MaxLength="25" aria-describedBy="lblAddToBillListError"/></div>
+	
+					<div class="key">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="txtNewDesc">Bill List Description</label>:</div>
+					<div class="val"><input type="text" id="txtNewDesc" style="width:315px" MaxLength="50"/></div>
+
+					<div class="key">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="txtNewComment">Bill Comment</label>:</div>
+					<div class="val"><input type="text" id="txtNewComment" style="width:315px" MaxLength="120"/></div>
+
+					<div class="key"><div id="lblComment" style="width:456px"></div></div>
+					<div class="val"></div>
+					</div>
+				</fieldset>
+			
+		</div>
+
+	</div>
+    </div>
+
+    <div class="dialog_form_actions">      
+      <button type="submit" onclick="submitAddToBillListForm(); return false;">OK</button>
+      <button type="button" id="btnAddToBillListDialogClose" onclick="closeDialog(this)">Cancel</button>
+    </div>
+	</div>
+</div>
+        
+	
+
+		<script type="text/javascript">
+
+		var _legislature = "";
+		var _session = "";
+		var _bill = "";
+
+            function addToAlertFormClearMsgs()
+		{
+				document.getElementById("lblAddToAlertError").innerHTML = "";
+                var cboCat = document.getElementById('cboCategories');
+                cboCat.setAttribute('aria-invalid', 'false');
+		}
+        function addToAlertFormAddMsg(msg)
+		{
+            document.getElementById("lblAddToAlertError").innerHTML += "<strong>" + msg + "</strong><br/>";
+			var cboCat = document.getElementById('cboCategories');
+            cboCat.setAttribute('aria-invalid', 'true');
+		}
+          function submitAddToAlertForm()
+		{
+            addToAlertFormClearMsgs();
+            var msg = AddToAlert.AddToBillAlert(_legislature, _session, _bill,
+				document.getElementById('txtComment').value,
+                document.getElementById('cboCategories').value);
+			if (msg.value.toString().indexOf('success') > 0) {
+				alert(msg.value);
+                document.getElementById('btnAddToAlertDialogClose').click();
+			}
+			else {
+                addToAlertFormAddMsg(msg.value);
+				return false;
+			}
+		}
+
+		function setAddToAlertParms(legislature, session, bill) {
+				_legislature = legislature;
+				_session = session;
+				_bill = bill;
+				var jsonString = AddToAlert.GetCategories(legislature, session).value;
+
+				var json = JSON.parse(jsonString);
+
+                var selectElement = document.getElementById('cboCategories');
+                json.map(item => selectElement.appendChild(new Option(item.Description, item.CategoryCode)).cloneNode(true));
+ 
+				var labelElement = document.getElementById('lblAddToAlertInfo');
+				labelElement.innerHTML = "Add " + _bill + " to my bill alert list. Notification will be issued based on action category selected.";
+
+				var status = AddToAlert.CheckAlertLimit(legislature, session);
+				if (status.value > "") {
+					addMsg(status.value);
+                    document.getElementById('btnAddToAlertSave').disabled = true;
+				}
+			}
+
+        </script>
+
+<style type="text/css">
+
+.addToAlert > .key {
+  width: 100px;
+  white-space: nowrap;
+}
+
+.addToAlert > .val {
+	padding-left: 8px;
+}
+
+.addToAlert {
+    display: grid;
+    grid-template-areas: "key val";
+    gap: 10px;
+    grid-auto-flow: row;
+    padding-left: 5px;
+}
+
+@media (max-width: 600px) {
+
+.addToAlert > .key {
+  width: 200px;
+  white-space: nowrap;
+}
+
+.addToAlert > .val {
+	padding-left: 8px;
+}
+
+.addToAlert {
+    display: grid;
+    grid-template-areas: "key"
+		"val";
+    gap: 4px 4px;
+    grid-auto-flow: row;
+    padding-left: 5px;
+    margin: 10px 0 10px 0;
+}
+}
+
+.error {
+    color: Black;
+    background-color: Gainsboro;
+    border-color: White;
+    border-width: 5px;
+    border-style: Solid;
+    width: 95%;
+}
+
+</style>
+
+<div class="dialogs">
+  <div role="dialog" id="dialogAddToAlert" aria-labelledby="dialogAddToAlert" aria-modal="true" class="hidden">
+    <h1 class="dialog_label">Add to Bill Alert</h1>
+    <div class="dialog_form">
+     
+     <div class="dialog_form_item">
+		<div role="main">
+
+				<div id="lblAddToAlertError" class="error"></div>
+				<div id="lblAddToAlertInfo" style="width:100%"></div>
+                <p></p>
+				<div class="addToAlert">
+
+				<div class="key"><label for="cboCategories">Category</label>:</div>
+				<div class="val"><select id="cboCategories" style="width:300px" aria-describedBy="lblAddToAlertError" aria-invalid="false"></select></div>
+
+				<div class="key"><label for="txtComment">Comment:</label></div>
+				<div class="val"><input id="txtComment" style="width:300px; height:19px" MaxLength="50" value=""></div>
+				</div>
+
+		</div>
+    </div>
+
+    <div class="dialog_form_actions">      
+      <button type="submit" id="btnAddToAlertSave" onclick="submitAddToAlertForm(); return false;">OK</button>
+      <button type="button" id="btnAddToAlertDialogClose" onclick="closeDialog(this)">Cancel</button>
+    </div>
+	</div>
+</div>
+</div>
+	
+
+<script type="text/javascript">
+    function setRecordVoteParms(formId, legSess, bill, recordVote, chamber, actionDate, type) {
+
+		rv = RecordVote.GetVote(legSess, bill, recordVote, chamber, actionDate, type).value; 
+		recordVote = JSON.parse(rv);
+
+		if (recordVote.VoteExist) {
+			document.getElementById(formId + "lblLegSess").innerHTML = recordVote.LegSess;
+			document.getElementById(formId + "lblBillOrDesc").innerHTML = recordVote.Description;
+			document.getElementById(formId + "lblBillOrDescValue").innerHTML = recordVote.DescriptionValue;
+			document.getElementById(formId + "lblVoteNo").innerHTML = recordVote.VoteNo;
+			document.getElementById(formId + "lblVoteTotals").innerHTML = recordVote.Totals;
+			document.getElementById(formId + "lblPresent").innerHTML = recordVote.Present;
+			document.getElementById(formId + "lblYeas").innerHTML = recordVote.Yeas;
+			document.getElementById(formId + "lblNays").innerHTML = recordVote.Nays;
+			document.getElementById(formId + "lblPnv").innerHTML = recordVote.Pnv;
+			document.getElementById(formId + "lblAbsentExcused").innerHTML = recordVote.AbsentExcused;
+			document.getElementById(formId + "lblAbsentCommittee").innerHTML = recordVote.AbsentCommittee;
+			document.getElementById(formId + "lblAbsent").innerHTML = recordVote.Absent;
+            document.getElementById("pnlVote").style.visibility = "visible";
+            document.getElementById("pnlNoVote").style.display = "none";
+            document.getElementById("pnlNoVoteTypeH").style.display = "none";
+            document.getElementById("pnlNoVoteTypeS").style.display = "none";
+            document.getElementById("pnlNoVoteTypeV").style.display = "none";
+			document.getElementById("pnlDisclaimer").style.visibility = "visible";
+			document.getElementById("title").innerHTML = "Record Vote Taken";
+		}
+		else {
+			document.getElementById(formId + "lblLegSess").innerHTML = recordVote.LegSess;
+			document.getElementById(formId + "lblBillOrDesc").innerHTML = recordVote.Description;
+            document.getElementById(formId + "lblBillOrDescValue").innerHTML = recordVote.DescriptionValue;
+            document.getElementById("pnlNoVoteTypeH").style.display = "none";
+            document.getElementById("pnlNoVoteTypeS").style.display = "none";
+			document.getElementById("pnlNoVoteTypeV").style.display = "none";
+			document.getElementById("pnlNoVote").style.display = "none";
+			document.getElementById("pnlDisclaimer").style.display = "none";
+            document.getElementById("title").innerHTML = "Vote Information Not Available";
+			if (recordVote.Type == "H") {
+				document.getElementById("pnlNoVoteTypeH").style.visibility = "visible";
+                document.getElementById("pnlNoVoteTypeH").style.display = "inline";
+			}
+			if (recordVote.Type == "S") {
+				document.getElementById("pnlNoVoteTypeS").style.visibility = "visible";
+                document.getElementById("pnlNoVoteTypeS").style.display = "inline";
+			}
+			if (recordVote.Type == "V") {
+				document.getElementById("pnlNoVoteTypeV").style.visibility = "visible";
+                document.getElementById("pnlNoVoteTypeV").style.display = "inline";
+			}
+            document.getElementById("pnlVote").style.display = "none";
+			if (recordVote.Type == "") {
+                document.getElementById("pnlNoVote").style.visibility = "visible";
+                document.getElementById("pnlDisclaimer").style.visibility = "visible";
+			}
+		}
+    }
+</script>
+
+<div class="dialogs">
+  <div role="dialog" id="dialogRecordVote" aria-labelledby="dialogRecordVote" aria-modal="true" class="hidden">
+    <h1 class="dialog_label">Record Vote Taken</h1>
+    <div class="dialog_form">
+     
+     <div class="dialog_form_item">
+		<div role="main">
+
+				<div>
+					<font size="+2"><span id="title"></span></font>
+				</div>
+
+				<p>
+				<strong>Legislative Session:</strong> <span id="usrBillInfoTabs_usrRecordVote_lblLegSess"></span>
+				</p>
+				
+				<p><strong><span id="usrBillInfoTabs_usrRecordVote_lblBillOrDesc"></span></strong>
+				<span id="usrBillInfoTabs_usrRecordVote_lblBillOrDescValue"></span>
+				</p>
+
+				<div id="pnlDisclaimer" style="display:hidden">
+				<p><strong>Disclaimer:</strong> <span class="vote">This vote has not been certified by the House Journal Clerk. It is provided 
+				for informational purposes only. Once the vote is certified, it will be recorded in 
+				the journal according to Rule 5 of the <a href="https://house.texas.gov/resources/rules">
+									House Rules</a> and made available on this web site.</span>
+				</p>
+				</div>
+
+				<div id="pnlNoVote" style="display:hidden">
+					<strong>A vote was taken on this legislation, but the vote information is currently 
+								unavailable for display.</strong>
+						<ul>
+						<li>The vote link will reference unofficial vote information soon.</li>
+						<li>Once the journal for this day is available, the vote link will reference the 
+							official vote information in the journal.</li>
+						</ul>
+				</div>
+
+				<div id="pnlNoVoteTypeH" style="display:hidden">
+					<strong>A vote was taken on this legislation, but the vote information is currently 
+									unavailable for display.</strong>
+						<ul>
+						<li>If the vote was a record vote, the vote link will reference unofficial vote 
+							information soon.</li>
+						<li>Once the journal for this day is available, the vote link will reference the 
+							official vote information in the journal.</li>
+						</ul>
+				</div>
+
+				<div id="pnlNoVoteTypeS" style="display:hidden">
+					<strong>A vote was taken on this legislation, but the vote information is currently 
+									unavailable for display.</strong>
+						<ul>						
+						<li>Once the journal for this day is available, the vote link will reference the 
+							official vote information in the journal.</li>
+						</ul>
+				</div>
+
+				<div id="pnlNoVoteTypeV" style="display:hidden">
+					<strong>A voice vote or division vote was taken on this legislation, but the vote 
+									information is currently unavailable for display.</strong>
+						<ul>
+						<li>Once the journal for this day is available, the vote link will reference the 
+							official vote information in the journa</li>
+						</ul>
+				</div>
+
+				<div id="pnlVote" style="display:hidden; height: 300px; overflow-y: scroll;">
+					<a name="topvote" href="#bottomvote">Go to bottom of vote</a>
+					<p><strong>RV#
+						<span id="usrBillInfoTabs_usrRecordVote_lblVoteNo"></span></strong> — <strong>Unofficial Totals</strong>:
+								<span id="usrBillInfoTabs_usrRecordVote_lblVoteTotals"></span>
+							</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblPresent"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblYeas"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblNays"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblPnv"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblAbsentExcused"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblAbsentCommittee"></span>
+					</p>
+					<p>
+						<span id="usrBillInfoTabs_usrRecordVote_lblAbsent"></span></p>
+					<a name="bottomvote" href="#topvote">Go to top of vote</a>
+				</div>	
+		</div>
+    </div>
+
+    <div class="dialog_form_actions">            
+      <button type="button" id="btnRecordVoteDialogClose" onclick="closeDialog(this)">Close</button>
+    </div>
+	</div>
+</div>
+</div>
+
+	</div>
+	</div>	
+
+<div class="history">
+	
+	<div class="label"><b>Last Action:</b></div>
+	<div class="data"><span id="lblLastAction">06/12/2019 E See remarks for effective date</span></div>
+	
+        <div class="label"><b><span id="lblCouncilDocSenateDoc">Council Document:</span></b></div>
+        <div class="data"><span id="lblCouncilDocSenateDocData">86R 9367 CJC/TJB-F</span></div>
+    
+	<div class="label"><b>Caption Version:</b></div>
+	<div class="data"><span id="lblCaptionVersion">Enrolled</span></div>
+	
+	<div class="label"><b>Caption Text:</b></div>
+	<div class="data"><span id="lblCaptionText">Relating to ad valorem taxation; authorizing fees.</span></div>
+	
+	<div class="label"><b>Author:</b></div>
+	<div class="data"><span id="lblAuthor">Bettencourt | Creighton | Hancock | Paxton | Taylor</span></div>
+	
+	<div class="label"><b>Coauthor:</b></div>
+	<div class="data"><span id="lblCoauthor">Birdwell | Campbell | Fallon | Flores | Hall | Nelson | Schwertner</span></div>
+	
+	<div class="label"><b>Sponsor:</b></div>
+	<div class="data"><span id="lblSponsor">Burrows</span></div>
+	
+	<div class="label"><b>Cosponsor:</b></div>
+	<div class="data"><span id="lblCosponsor">Allison | Anderson, Charles "Doc" | Ashby | Bell, Cecil | Bell, Keith | Biedermann | Bohac | Bonnen, Greg | Buckley | Burns | Button | Cain | Canales | Capriglione | Clardy | Cyrier | Darby | Davis, Sarah | Dean | Flynn | Frank | Frullo | Goldman | Guerra | Harless | Harris | Hefner | Holland | Huberty | Hunter | King, Phil | Klick | Krause | Lambert | Landgraf | Lang | Larson | Leach | Leman | Lozano | Metcalf | Meyer | Middleton | Miller | Morrison | Murphy | Murr | Noble | Oliverson | Paddie | Patterson | Paul | Phelan | Raney | Raymond | Sanford | Schaefer | Shaheen | Sheffield | Shine | Smith | Springer | Stickland | Stucky | Swanson | Thompson, Ed | Tinderholt | Toth | White | Wray | Zedler | Zerwas</span></div>
+	
+	<div class="label"><b>Subjects:</b></div>
+	<div class="data"><span id="lblSubjects">Education--Primary & Secondary--Finance (I0250)<br/>Elections--Administration (I0277)<br/>Elections--General (I0310)<br/>Electronic Information Systems (I0311)<br/>Property Interests--Personal Property (I0600)<br/>State Agencies, Boards & Commissions--Newly Proposed (I0773)<br/>Taxation--General (I0815)<br/>Taxation--Property-Appeal of Tax Decisions (I0796)<br/>Taxation--Property-Appraisals & Appraisal Districts (I0792)<br/>Taxation--Property-Assessment & Collection (I0798)<br/>Taxation--Property-Exemptions (I0793)<br/>Taxation--Property-State Administration (I0791)<br/>Taxation--Property-Tax Rate (I0794)<br/>Taxation--School District (I0785)<br/>TEXAS PROPERTY TAX REFORM & TRANSPARENCY ACT OF 2019 (P0763)<br/>TEXAS PROPERTY TAX REFORM AND RELIEF ACT OF 2019 (P0724)<br/>TEXAS TAXPAYER TRANSPARENCY ACT OF 2019 (P0758)<br/>COUNTY TAX ASSESSOR-COLLECTORS (S0310)<br/>INTERNET (S0130)<br/>MEDIATION, DISPUTE RESOLUTION, & ARBITRATION (S8683)<br/>COMPTROLLER OF PUBLIC ACCOUNTS (V2608)<br/>PROPERTY TAX ADMINISTRATION ADVISORY BOARD (V1103)<br/></span></div>
+	
+	<div class="label"><b>Companion:</b></div>
+	<div class="data"><span id="lblCompanion"><a href="History.aspx?LegSess=86R&Bill=HB2">HB 2</a> by Burrows, Identical<br/></span></div>
+	
+	<div class="label"><b>Remarks:</b></div>
+	<div class="data"><span id="lblRemarks">This Act takes effect January 1, 2020, except Sections 106 and 118 of this Act take effect August 26, 2019; Section 92 of this Act takes effect September 1, 2019; Sections 6.41(b), (b-1), (b-2), (d-9), and (d-10), 6.414(d), 6.425, 41.44(d), 41.45(d), (d-1), (d-2), and (d-3), and 41.66(k) and (k-1), Tax Code, as added or amended by this Act, take effect September 1, 2020; Sections 25.19(b-3) and (b-4), 26.04(d-1), (d-2), (d-3), (e-1), (e-5), and (g), and 26.05(e), Tax Code, as added or amended by this Act, take effect January 1, 2021; and Sections 25.19(b) and (i), Tax Code, as amended by this Act, take effect January 1, 2022.</span></div>
+	
+		<div class="label"><b><span id="lblComm1CommitteeLabel">Senate Committee:</span></b></div>	
+		<div class="data"><span id="lblComm1CommitteeValue"><a href="../Committees/MembershipCmte.aspx?LegSess=86R&CmteCode=C586">Property Tax</a></span></div>
+	
+		<di class="label"v><b><span id="lblComm1CommitteeStatusLabel">Senate Committee Status:</span></b></di>
+		<div class="data"><span id="lblComm1CommitteeStatusValue">Out of committee</span></div>
+	
+		<div class="label"><b><span id="lblComm1CommitteeVoteLabel">Senate Committee Vote:</span></b></div>	
+		<div class="data"><span id="lblComm1CommitteeVoteValue">Ayes=4 &nbsp; Nays=0 &nbsp; Present Not Voting=1 &nbsp; Absent=0</span></div>
+	
+		<div class="label"><b><span id="lblComm2CommitteeLabel">House Committee:</span></b></div>	
+		<div class="data"><span id="lblComm2CommitteeValue"><a href="../Committees/MembershipCmte.aspx?LegSess=86R&CmteCode=C490">Ways & Means</a></span></div>
+			
+		<div class="label"><b><span id="lblComm2CommitteeStatusLabel">House Committee Status:</span></b></div>
+		<div class="data"><span id="lblComm2CommitteeStatusValue">Out of committee</span></div>
+	
+		<div class="label"><b><span id="lblComm2CommitteeVoteLabel">House Committee Vote:</span></b></div>	
+		<div class="data"><span id="lblComm2CommitteeVoteValue">Ayes=8 &nbsp; Nays=3 &nbsp; Present Not Voting=0 &nbsp; Absent=0</span></div>
+	
+		<div class="label"><b><span id="lblConferee1Label">Senate Conferees:</span></b></div>	
+		<div class="data"><span id="lblConferee1Value">Appointed (05/07/2019) <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A1015">Hancock</a> (Chair) | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A1055">Bettencourt</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A1040">Creighton</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A1250">Hinojosa</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A1045">Perry</a></span></div>
+	
+		<div class="label"><b><span id="lblConferee2Label">House Conferees:</span></b></div>	
+		<div class="data"><span id="lblConferee2Value">Appointed (05/10/2019) <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A3055">Burrows</a> (Chair) | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A2340">Canales</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A3045">Guillen</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A3875">Murphy</a> | <a href="../Committees/MembershipMbr.aspx?LegSess=86R&LegCode=A3740">Noble</a></span></div>
+	
+
+	</div>
+
+	</form>	
+
+		
+<style type="text/css">A.houvote { BACKGROUND-COLOR: #ffff99 }
+	.houvote { BACKGROUND-COLOR: #ffff99 }
+	A.senvote { BACKGROUND-COLOR: #ffff99 }
+	.senvote { BACKGROUND-COLOR: #ffff99 }
+	UNKNOWN { FONT-WEIGHT: bold }
+</style>
+
+
+<div style="padding-left: 10px">
+Actions are in descending date order.
+<br />
+Viewing Votes: <a class="houvote" href="#vote1149" title="Navigate to most recent house vote">Most Recent House Vote</a> | <a class="senvote" href="#vote1174" title="Navigate to most recent senate vote">Most Recent Senate Vote</a>
+
+<table border="1" frame="hsides" rules="rows" bordercolorlight="white" bordercolor="#d0d0d0"
+	cellspacing="1" class="actions">
+	<thead>
+	<tr style="background-color: #d0d0d0">
+		<th colspan="2" style="text-align: center" scope="col">Description</th>
+		<th style="text-align: center" scope="col" class="mobile">Comment</th>
+		<th style="text-align: center" scope="col"><a name="Actions" href="?LegSess=86R&Bill=SB2&Sort=A#Actions" title="Order in ascending date order">Date<img src="../images/downarrow.gif" id="Img1" width="13" height="10" alt="Sort descending"></a></th>
+		<th style="text-align: center" scope="col">
+			&nbsp; &nbsp; &nbsp; Time &nbsp; &nbsp; &nbsp;</th>
+		<th style="text-align: center" class="mobile"  scope="col">Journal Page</th>
+	</tr>
+	</thead>
+	
+			<tr>
+				<td data-label="Action Chamber">E&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;See remarks for effective date&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;06/12/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">E&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-27-F.PDF#page=41&seqNum=1219" target="_self" aria-label="Signed by the Governor action journal reference (PDF)">Signed by the Governor</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;06/12/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3983</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">E&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-27-F.PDF#page=39&seqNum=1214" target="_self" aria-label="Sent to the Governor action journal reference (PDF)">Sent to the Governor</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/28/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3981</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY76FINAL.PDF#page=29&seqNum=1209" target="_self" aria-label="Signed in the House action journal reference (PDF)">Signed in the House</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/27/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">6443</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-27-F.PDF#page=18&seqNum=1204" target="_self" aria-label="Signed in the Senate action journal reference (PDF)">Signed in the Senate</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/27/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3960</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-27-F.PDF#page=38&seqNum=1194" target="_self" aria-label="Reported enrolled action journal reference (PDF)">Reported enrolled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/27/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3980</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-27-F.PDF#page=9&seqNum=1189" target="_self" aria-label="Senate adopts resolution for tech. correction action journal reference (PDF)">Senate adopts resolution for tech. correction</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;HCR 192&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/27/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3951</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY76FINAL.PDF#page=5&seqNum=1184" target="_self" aria-label="House adopts resolution for tech. correction action journal reference (PDF)">House adopts resolution for tech. correction</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;HCR 192&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/27/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">6419</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY75FINAL.PDF#page=262&seqNum=1179" target="_self" aria-label="Senate adopts conf. comm. report-reported action journal reference (PDF)">Senate adopts conf. comm. report-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/26/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">6408</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote1174" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-25-F.PDF#page=97&seqNum=1174" target="_self" aria-label="Record vote action journal reference for vote 1174">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3591</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-25-F.PDF#page=97&seqNum=1169" target="_self" aria-label="Senate adopts conference committee report action journal reference (PDF)">Senate adopts conference committee report</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3591</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-25-F.PDF#page=88&seqNum=1164" target="_self" aria-label="Senate adopts resolution to go outside bounds action journal reference (PDF)">Senate adopts resolution to go outside bounds</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;SR 841&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3582</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-25-F.PDF#page=101&seqNum=1159" target="_self" aria-label="House adopts conf. comm. report-reported action journal reference (PDF)">House adopts conf. comm. report-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3595</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY74FINAL.PDF#page=55&seqNum=1154" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">5969</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote1149" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY74FINAL.PDF#page=55&seqNum=1149" target="_self" aria-label="Record vote action journal reference for vote 1149">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#1939&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">5969</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY74FINAL.PDF#page=55&seqNum=1144" target="_self" aria-label="House adopts conference committee report action journal reference (PDF)">House adopts conference committee report</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">5969</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY74FINAL.PDF#page=45&seqNum=1139" target="_self" aria-label="House adopts resolution to go outside bounds action journal reference (PDF)">House adopts resolution to go outside bounds</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;HR 2184&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">5959</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Corrected Conference Committee Report distributed&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/24/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;04:56 PM&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-24-F.PDF#page=203&seqNum=1133" target="_self" aria-label="Corrected Conference committee report filed action journal reference (PDF)">Corrected Conference committee report filed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/24/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3403</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Conf. Comm. Report distributed&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/24/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;02:19 PM&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-24-F.PDF#page=203&seqNum=1127" target="_self" aria-label="Conference committee report filed action journal reference (PDF)">Conference committee report filed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/24/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3403</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-10-F1.PDF#page=2&seqNum=1122" target="_self" aria-label="House appoints conferees-reported action journal reference (PDF)">House appoints conferees-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/10/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1810</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-10-F1.PDF#page=2&seqNum=1117" target="_self" aria-label="House grants request for conf comm-reported action journal reference (PDF)">House grants request for conf comm-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/10/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1810</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY62FINAL.PDF#page=162&seqNum=1112" target="_self" aria-label="House appoints conferees action journal reference (PDF)">House appoints conferees</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/10/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3464</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY62FINAL.PDF#page=162&seqNum=1107" target="_self" aria-label="House grants request for conference committee action journal reference (PDF)">House grants request for conference committee</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/10/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3464</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY60FINAL.PDF#page=123&seqNum=1102" target="_self" aria-label="Senate appoints conferees-reported action journal reference (PDF)">Senate appoints conferees-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3151</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY60FINAL.PDF#page=123&seqNum=1097" target="_self" aria-label="Senate requests conference committee-reported action journal reference (PDF)">Senate requests conference committee-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3151</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY60FINAL.PDF#page=123&seqNum=1092" target="_self" aria-label="Senate refuses to concur-reported action journal reference (PDF)">Senate refuses to concur-reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">3151</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-07-F.PDF#page=85&seqNum=1087" target="_self" aria-label="Senate appoints conferees action journal reference (PDF)">Senate appoints conferees</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1743</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-07-F.PDF#page=85&seqNum=1082" target="_self" aria-label="Senate requests conference committee action journal reference (PDF)">Senate requests conference committee</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1743</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-07-F.PDF#page=85&seqNum=1077" target="_self" aria-label="Senate refuses to concur action journal reference (PDF)">Senate refuses to concur</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1743</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-07-F.PDF#page=85&seqNum=1072" target="_self" aria-label="Read action journal reference (PDF)">Read</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1743</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-07-F.PDF#page=11&seqNum=1067" target="_self" aria-label="House amendment(s) laid before the Senate action journal reference (PDF)">House amendment(s) laid before the Senate</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/07/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1669</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-01-F.PDF#page=5&seqNum=1062" target="_self" aria-label="House passage as amended reported action journal reference (PDF)">House passage as amended reported</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1415</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY56FINAL.PDF#page=8&seqNum=1057" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2558</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote1052" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY56FINAL.PDF#page=7&seqNum=1052" target="_self" aria-label="Record vote action journal reference for vote 1052">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#839&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2557</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY56FINAL.PDF#page=7&seqNum=1047" target="_self" aria-label="Passed action journal reference (PDF)">Passed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2557</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY56FINAL.PDF#page=7&seqNum=1042" target="_self" aria-label="Read 3rd time action journal reference (PDF)">Read 3rd time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;05/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2557</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=91&seqNum=1032" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2521</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote1027" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=91&seqNum=1027" target="_self" aria-label="Record vote action journal reference for vote 1027">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#833&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2521</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=91&seqNum=1022" target="_self" aria-label="Passed to 3rd reading as amended action journal reference (PDF)">Passed to 3rd reading as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2521</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=90&seqNum=1017" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2520</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote1012" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=90&seqNum=1012" target="_self" aria-label="Record vote action journal reference for vote 1012">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#832&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2520</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=90&seqNum=1007" target="_self" aria-label="Amendment fails of adoption action journal reference (PDF)">Amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;48-Stickland&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2520</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=87&seqNum=1002" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;47-Murphy&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2517</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=84&seqNum=997" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;46-Dutton&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2514</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=84&seqNum=992" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;45-Clardy&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2514</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=84&seqNum=987" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;44-Shaheen&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2514</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=83&seqNum=982" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;43-Krause&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2513</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=83&seqNum=977" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;42-Geren&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2513</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=82&seqNum=972" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;41-P. King&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2512</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=81&seqNum=967" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2511</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote962" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=81&seqNum=962" target="_self" aria-label="Record vote action journal reference for vote 962">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#831&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2511</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=80&seqNum=957" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;40-Goodwin, Meza, Ortega, Bowers, Zwiener, Hinojosa, Rosenthal, and Dutton&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2510</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=80&seqNum=952" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;39-Zwiener, Murr, and K. King&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2510</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=79&seqNum=947" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;38-J. Turner&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2509</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=79&seqNum=942" target="_self" aria-label="Amendment adopted as amended action journal reference (PDF)">Amendment adopted as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;36-Martinez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2509</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=79&seqNum=937" target="_self" aria-label="Amendment amended action journal reference (PDF)">Amendment amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;37-Martinez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2509</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=79&seqNum=932" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;36-Martinez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2509</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=78&seqNum=927" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;35-Zwiener&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2508</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=78&seqNum=922" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2508</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote917" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=77&seqNum=917" target="_self" aria-label="Record vote action journal reference for vote 917">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#830&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2507</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=76&seqNum=912" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;34-Rodriguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2506</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=76&seqNum=907" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2506</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote902" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=76&seqNum=902" target="_self" aria-label="Record vote action journal reference for vote 902">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#829&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2506</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=75&seqNum=897" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;33-Martinez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2505</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=75&seqNum=892" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2505</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote887" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=74&seqNum=887" target="_self" aria-label="Record vote action journal reference for vote 887">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#828&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2504</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=74&seqNum=882" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;32-E. Johnson&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2504</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=73&seqNum=877" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2503</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote872" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=73&seqNum=872" target="_self" aria-label="Record vote action journal reference for vote 872">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#827&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2503</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=72&seqNum=867" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;31-E. Johnson&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2502</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=72&seqNum=862" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;30-Morrison, T. King, P. King, Nevárez, Darby, Lambert, VanDeaver, Paddie, Cyrier, Springer, <a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=72&seqNum=862" target="_self" aria-label="Amended action journal reference (PDF)">More</a>&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2502</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=71&seqNum=857" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2501</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote852" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=71&seqNum=852" target="_self" aria-label="Record vote action journal reference for vote 852">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#826&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2501</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=70&seqNum=847" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;29-Rodriguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2500</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=69&seqNum=842" target="_self" aria-label="Amendment withdrawn action journal reference (PDF)">Amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;28-Martinez Fischer&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2499</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=69&seqNum=837" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2499</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote832" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=68&seqNum=832" target="_self" aria-label="Record vote action journal reference for vote 832">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#825&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2498</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=67&seqNum=827" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;27-Martinez Fischer&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2497</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote822" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=67&seqNum=822" target="_self" aria-label="Record vote action journal reference for vote 822">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#824&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2497</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=66&seqNum=817" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;26-Goodwin, Talarico, Meza, Bowers, Hinojosa, Ortega, Bucy, Dutton, Zwiener, and Rosenthal&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2496</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=66&seqNum=812" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;25-Dominguez, Cain, Guillen, Hunter, Phelan, Morrison, Lucio, Herrero, White, Lozano, Calanni, <a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=66&seqNum=812" target="_self" aria-label="Amended action journal reference (PDF)">More</a>&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2496</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=66&seqNum=807" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2496</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote802" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=65&seqNum=802" target="_self" aria-label="Record vote action journal reference for vote 802">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#823&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2495</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=65&seqNum=797" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;24-Martinez Fischer&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2495</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=63&seqNum=792" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;23-Rodriguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2493</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=63&seqNum=787" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2493</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote782" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=63&seqNum=782" target="_self" aria-label="Record vote action journal reference for vote 782">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#822&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2493</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=62&seqNum=777" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;22-Ramos&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2492</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=62&seqNum=772" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;21-Darby&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2492</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=62&seqNum=767" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2492</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote762" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=61&seqNum=762" target="_self" aria-label="Record vote action journal reference for vote 762">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#821&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2491</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=61&seqNum=757" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;20-Calanni, Guillen, and Rosenthal&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2491</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=61&seqNum=752" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;19-Geren&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2491</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=60&seqNum=747" target="_self" aria-label="Point of order sustained (amendment) action journal reference (PDF)">Point of order sustained (amendment)</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;Rule 11, Section 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2490</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=53&seqNum=742" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;18-Gutierrez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2483</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=52&seqNum=737" target="_self" aria-label="Point of order sustained (amendment) action journal reference (PDF)">Point of order sustained (amendment)</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;Rule 11, Section 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2482</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=52&seqNum=732" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;17-Gutierrez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2482</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=51&seqNum=727" target="_self" aria-label="Point of order sustained (amendment) action journal reference (PDF)">Point of order sustained (amendment)</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;Rule 11, Section 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2481</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=50&seqNum=722" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;16-Stickland&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2480</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=50&seqNum=717" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;15-Beckley&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2480</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=50&seqNum=712" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;14-Y. Davis&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2480</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=50&seqNum=707" target="_self" aria-label="Point of order withdrawn (amendment) action journal reference (PDF)">Point of order withdrawn (amendment)</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;Rule 11, Section 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2480</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=50&seqNum=702" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;14-Y. Davis&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2480</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=49&seqNum=697" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;13-Murphy&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2479</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=49&seqNum=692" target="_self" aria-label="Amendment adopted as amended action journal reference (PDF)">Amendment adopted as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;11-Tinderholt&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2479</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=49&seqNum=687" target="_self" aria-label="Amendment amended action journal reference (PDF)">Amendment amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;12-K. King&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2479</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=48&seqNum=682" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;11-Tinderholt&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2478</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=47&seqNum=677" target="_self" aria-label="Point of order sustained (amendment) action journal reference (PDF)">Point of order sustained (amendment)</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;Rule 11, Section 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2477</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=47&seqNum=672" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;10-Bailes&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2477</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=46&seqNum=667" target="_self" aria-label="Statement(s) of vote recorded in Journal action journal reference (PDF)">Statement(s) of vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2476</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="houvote" name="vote662" href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=46&seqNum=662" target="_self" aria-label="Record vote action journal reference for vote 662">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;RV#820&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2476</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=43&seqNum=657" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;9-Ramos&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2473</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=43&seqNum=652" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;8-Lucio&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2473</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=42&seqNum=647" target="_self" aria-label="Amendment adopted as amended action journal reference (PDF)">Amendment adopted as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;6-J. Turner and Murr&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2472</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=42&seqNum=642" target="_self" aria-label="Amendment amended action journal reference (PDF)">Amendment amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;7-Shine&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2472</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=42&seqNum=637" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;6-J. Turner and Murr&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2472</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=42&seqNum=632" target="_self" aria-label="Amendment withdrawn action journal reference (PDF)">Amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;5-Cain&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2472</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=40&seqNum=627" target="_self" aria-label="Amendment tabled action journal reference (PDF)">Amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;4-Ramos&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2470</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=40&seqNum=622" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;3-Martinez Fischer&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2470</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=37&seqNum=617" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;2-Krause&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2467</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=37&seqNum=612" target="_self" aria-label="Nonrecord vote recorded in Journal action journal reference (PDF)">Nonrecord vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2467</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=36&seqNum=607" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;1-Geren&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2466</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=36&seqNum=602" target="_self" aria-label="Read 2nd time action journal reference (PDF)">Read 2nd time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2466</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY55FINAL.PDF#page=36&seqNum=597" target="_self" aria-label="Laid out in lieu of companion action journal reference (PDF)">Laid out in lieu of companion</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;CSHB 2&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/30/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2466</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Committee report sent to Calendars&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/29/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Committee report distributed&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/28/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;08:47 PM&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY54FINAL.PDF#page=70&seqNum=586" target="_self" aria-label="Comte report filed with Committee Coordinator action journal reference (PDF)">Comte report filed with Committee Coordinator</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/28/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">2430</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Reported favorably as substituted&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Committee substitute considered in committee&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Considered in formal meeting&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY47FINAL.PDF#page=113&seqNum=566" target="_self" aria-label="Referred to Ways & Means action journal reference (PDF)">Referred to Ways & Means</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/16/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;06:38 PM&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1773</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY47FINAL.PDF#page=113&seqNum=561" target="_self" aria-label="Read first time action journal reference (PDF)">Read first time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/16/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1773</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">H&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY47FINAL.PDF#page=115&seqNum=556" target="_self" aria-label="Received from the Senate action journal reference (PDF)">Received from the Senate</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/16/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1775</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-16-F.PDF#page=86&seqNum=551" target="_self" aria-label="Reported engrossed action journal reference (PDF)">Reported engrossed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1124</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=7&seqNum=541" target="_self" aria-label="Remarks ordered printed action journal reference (PDF)">Remarks ordered printed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1035</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=536" target="_self" aria-label="Reason for vote recorded in Journal action journal reference (PDF)">Reason for vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote531" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=531" target="_self" aria-label="Record vote action journal reference for vote 531">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=526" target="_self" aria-label="Passed as amended action journal reference (PDF)">Passed as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote521" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=521" target="_self" aria-label="Vote recorded in Journal action journal reference for vote 521">Vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=516" target="_self" aria-label="Amended action journal reference (PDF)">Amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=511" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA2 Menéndez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=4&seqNum=506" target="_self" aria-label="Amendment withdrawn action journal reference (PDF)">Amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1032</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=2&seqNum=501" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA1 Menéndez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1030</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=2&seqNum=496" target="_self" aria-label="Read 3rd time action journal reference (PDF)">Read 3rd time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1030</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote491" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=2&seqNum=491" target="_self" aria-label="Record vote action journal reference for vote 491">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1030</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F.PDF#page=2&seqNum=486" target="_self" aria-label="Rules suspended-Regular order of business action journal reference (PDF)">Rules suspended-Regular order of business</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1030</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=481" target="_self" aria-label="Remarks ordered printed action journal reference (PDF)">Remarks ordered printed</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote476" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=476" target="_self" aria-label="Record vote action journal reference for vote 476">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=471" target="_self" aria-label="Passed to engrossment as amended action journal reference (PDF)">Passed to engrossment as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote466" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=466" target="_self" aria-label="Record vote action journal reference for vote 466">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=461" target="_self" aria-label="Amendment adopted as amended action journal reference (PDF)">Amendment adopted as amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA1 Bettencourt&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote456" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=456" target="_self" aria-label="Record vote action journal reference for vote 456">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=91&seqNum=451" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1009</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=90&seqNum=446" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA26 Menéndez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1008</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote441" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=90&seqNum=441" target="_self" aria-label="Record vote action journal reference for vote 441">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1008</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=90&seqNum=436" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1008</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=89&seqNum=431" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA25 Rodríguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1007</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote426" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=89&seqNum=426" target="_self" aria-label="Record vote action journal reference for vote 426">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1007</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=89&seqNum=421" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1007</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=89&seqNum=416" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA24 Rodríguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1007</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote411" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=88&seqNum=411" target="_self" aria-label="Record vote action journal reference for vote 411">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1006</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=88&seqNum=406" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1006</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=87&seqNum=401" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA23 Alvarado&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1005</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=86&seqNum=396" target="_self" aria-label="Amendment to amendment withdrawn action journal reference (PDF)">Amendment to amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1004</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=86&seqNum=391" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA22 Hinojosa&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1004</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote386" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=86&seqNum=386" target="_self" aria-label="Record vote action journal reference for vote 386">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1004</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=86&seqNum=381" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1004</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=85&seqNum=376" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA21 West&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1003</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=85&seqNum=371" target="_self" aria-label="Amendment to amendment withdrawn action journal reference (PDF)">Amendment to amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1003</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=84&seqNum=366" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA20 Hinojosa&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1002</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote361" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=84&seqNum=361" target="_self" aria-label="Record vote action journal reference for vote 361">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1002</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=84&seqNum=356" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1002</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=83&seqNum=351" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA19 West&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1001</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote346" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=83&seqNum=346" target="_self" aria-label="Record vote action journal reference for vote 346">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1001</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=83&seqNum=341" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1001</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=83&seqNum=336" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA18 West&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1001</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote331" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=82&seqNum=331" target="_self" aria-label="Record vote action journal reference for vote 331">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1000</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=82&seqNum=326" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1000</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=82&seqNum=321" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA17 West&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1000</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote316" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=81&seqNum=316" target="_self" aria-label="Record vote action journal reference for vote 316">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">999</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=81&seqNum=311" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">999</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=81&seqNum=306" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA16 Zaffirini&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">999</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote301" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=81&seqNum=301" target="_self" aria-label="Record vote action journal reference for vote 301">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">999</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=81&seqNum=296" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">999</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=80&seqNum=291" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA15 Zaffirini&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">998</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote286" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=80&seqNum=286" target="_self" aria-label="Record vote action journal reference for vote 286">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">998</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=80&seqNum=281" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">998</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=79&seqNum=276" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA14 Zaffirini&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">997</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote271" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=79&seqNum=271" target="_self" aria-label="Record vote action journal reference for vote 271">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">997</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=79&seqNum=266" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">997</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=78&seqNum=261" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA13 Zaffirini&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">996</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote256" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=78&seqNum=256" target="_self" aria-label="Record vote action journal reference for vote 256">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">996</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=78&seqNum=251" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">996</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=78&seqNum=246" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA12 Johnson&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">996</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=78&seqNum=241" target="_self" aria-label="Amendment to amendment withdrawn action journal reference (PDF)">Amendment to amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">996</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=77&seqNum=236" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA11 Hinojosa&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">995</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=77&seqNum=231" target="_self" aria-label="Amendment to amendment withdrawn action journal reference (PDF)">Amendment to amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">995</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=76&seqNum=226" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA10 Menéndez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">994</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=76&seqNum=221" target="_self" aria-label="Amendment to amendment withdrawn action journal reference (PDF)">Amendment to amendment withdrawn</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">994</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=75&seqNum=216" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA9 West&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">993</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote211" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=74&seqNum=211" target="_self" aria-label="Record vote action journal reference for vote 211">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">992</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=74&seqNum=206" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">992</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=74&seqNum=201" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA8 Johnson&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">992</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote196" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=73&seqNum=196" target="_self" aria-label="Record vote action journal reference for vote 196">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">991</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=73&seqNum=191" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">991</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=186" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA7 Lucio&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote181" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=181" target="_self" aria-label="Record vote action journal reference for vote 181">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=176" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=171" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA6 Zaffirini&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote166" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=166" target="_self" aria-label="Record vote action journal reference for vote 166">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=71&seqNum=161" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">989</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=70&seqNum=156" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA5 Rodríguez&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">988</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote151" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=70&seqNum=151" target="_self" aria-label="Record vote action journal reference for vote 151">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">988</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=70&seqNum=146" target="_self" aria-label="Amendment to amendment fails of adoption action journal reference (PDF)">Amendment to amendment fails of adoption</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">988</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=70&seqNum=141" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA4 Powell&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">988</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote136" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=69&seqNum=136" target="_self" aria-label="Record vote action journal reference for vote 136">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">987</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=69&seqNum=131" target="_self" aria-label="Amendment to amendment tabled action journal reference (PDF)">Amendment to amendment tabled</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">987</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=69&seqNum=126" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA3 Watson&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">987</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote121" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=68&seqNum=121" target="_self" aria-label="Vote recorded in Journal action journal reference for vote 121">Vote recorded in Journal</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">986</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=68&seqNum=116" target="_self" aria-label="Amendment amended action journal reference (PDF)">Amendment amended</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">986</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=68&seqNum=111" target="_self" aria-label="Amendment to amendment offered action journal reference (PDF)">Amendment to amendment offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA2 Flores&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">986</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=9&seqNum=106" target="_self" aria-label="Amendment(s) offered action journal reference (PDF)">Amendment(s) offered</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;FA1 Bettencourt&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">927</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=9&seqNum=101" target="_self" aria-label="Read 2nd time action journal reference (PDF)">Read 2nd time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">927</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a class="senvote" name="vote96" href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=9&seqNum=96" target="_self" aria-label="Record vote action journal reference for vote 96">Record vote</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">927</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=9&seqNum=91" target="_self" aria-label="Rules suspended-Regular order of business action journal reference (PDF)">Rules suspended-Regular order of business</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">927</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-15-F1.PDF#page=108&seqNum=86" target="_self" aria-label="Co-author authorized action journal reference (PDF)">Co-author authorized</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">1026</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ04-08-F.PDF#page=22&seqNum=81" target="_self" aria-label="Co-author authorized action journal reference (PDF)">Co-author authorized</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/08/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">798</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Placed on intent calendar&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;04/03/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-25-F.PDF#page=6&seqNum=75" target="_self" aria-label="Co-author authorized action journal reference (PDF)">Co-author authorized</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/25/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">258</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-19-F.PDF#page=6&seqNum=70" target="_self" aria-label="Co-author authorized action journal reference (PDF)">Co-author authorized</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/19/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">230</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Committee report printed and distributed&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/15/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;11:53 AM&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-14-F.PDF#page=17&seqNum=60" target="_self" aria-label="Reported favorably as substituted action journal reference (PDF)">Reported favorably as substituted</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/14/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">223</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Considered in public hearing&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/11/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Scheduled for public hearing on  . . .&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/11/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Left pending in committee&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/06/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Testimony taken in committee&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/06/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Considered in public hearing&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/06/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Scheduled for public hearing on  . . .&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/06/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-06-F.PDF#page=17&seqNum=25" target="_self" aria-label="Co-author authorized action journal reference (PDF)">Co-author authorized</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/06/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">161</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-01-F.PDF#page=1&seqNum=20" target="_self" aria-label="Referred to Property Tax action journal reference (PDF)">Referred to Property Tax</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">107</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;<a href="http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ02-01-F.PDF#page=1&seqNum=15" target="_self" aria-label="Read first time action journal reference (PDF)">Read first time</a>&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;02/01/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center">107</td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Filed&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;01/31/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+			<tr>
+				<td data-label="Action Chamber">S&nbsp;</td>
+		        <td data-label="Action Description">&nbsp;Received by the Secretary of the Senate&nbsp;</td>
+				<td data-label="Action Comment" class="mobile">&nbsp;&nbsp;</td>
+				<td data-label="Action Date">&nbsp;01/31/2019&nbsp;</td>
+				<td data-label="Action Time">&nbsp;&nbsp;</td>
+				<td data-label="Journal Page Number" class="mobile" style="text-align: center"></td>
+			</tr>
+		
+</table>
+
+</div>
+
+
+
+		</div>
+		</div>
+		</main>
+		
+<p></p>
+<footer class="l-footer" aria-label="Footer navigation">
+  		<div class="row">
+  			<div style="text-align:center">
+  				<ul class="footer">
+                <li><a href="/Home.aspx" aria-label="Home footer menu item">Home</a></li>
+                <li><a href="/MnuMyTLO.aspx" aria-label="My TLO footer menu item">My TLO</a></li>
+                <li><a href="/MnuHouse.aspx" aria-label="House footer menu item">House</a></li>
+                <li><a href="/MnuSenate.aspx" aria-label="Senate footer menu item">Senate</a></li>
+                <li><a href="/MnuLegislation.aspx" aria-label="Legislation footer menu item">Legislation</a></li>
+                <li><a href="/MnuSearch.aspx" aria-label="Search footer menu item">Search</a></li>
+                <li><a href="/MnuCommittees.aspx" aria-label="Committees footer menu item">Committees</a></li>
+                <li><a href="/MnuCalendars.aspx" aria-label="Calendars footer menu item">Calendars</a></li>
+                <li><a href="#top">Top</a></li>
+  				</ul>
+  			</div>
+
+  			<div class="columns">
+  				<hr>
+  			</div>
+  		</div>
+  		<div class="row">
+  			<div style="text-align:center">
+                <ul class="footer">
+				
+              <li><a href="/resources/policies.aspx">Policies</a></li>				
+              <li><a href="/resources/accessibility.aspx">Accessibility</a></li>   
+			  			  			                                           
+  			  </ul>
+  			</div>
+  		</div>
+</footer>
+
+
+
+
+<script src="/scripts/sideMenu.js" type="text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0PD42KC8G7"></script>
+
+<script  type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-0PD42KC8G7');
+</script>
+
+
+	</body>
+</html>
