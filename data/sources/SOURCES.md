@@ -145,3 +145,43 @@ The BLS release and the eight coverage articles were copied from the September 4
 | data/sources/bls-jolts-2026-07.txt | 70696 | a817c443e0ba6763 |
 | data/sources/coverage/ap-jolts-july-2026.html | 772237 | 56b39d32f089723b |
 | data/sources/coverage/ap-jolts-july-2026.txt | 43270 | 7e7da05f6633bab5 |
+
+# Miami cargo crash, September 2026 (saved 2026-09-08)
+
+Official posts from the FAA, NTSB, Miami International Airport, and Miami-Dade Fire Rescue were captured as served on September 8. 21 Air's website statement was saved the same day. C-SPAN's page for the Monday NTSB briefing was saved; it names the briefing and does not include a transcript. Coverage articles were copied from the September 6-8 capture runs. The NTSB press-release index and the FAA general-statements page were fetched September 8 and do not carry a written release on this accident.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/21air-statement-2026-09-06.txt | 946 | 06d64d362fdefb1c |
+| data/sources/21air-statement-2026-09-06.html | 3517 | 34c63d6961d0aef6 |
+| data/sources/faa-x-7598-2026-09-06.txt | 630 | a9e41882f33b52cd |
+| data/sources/faa-x-7598-2026-09-06.html | 204885 | 881f759541c99578 |
+| data/sources/ntsb-x-goteam-2026-09-06.txt | 748 | 02264f58e0bf8b21 |
+| data/sources/ntsb-x-goteam-2026-09-06.html | 180294 | 57fc3b904e84ba94 |
+| data/sources/ntsb-x-briefing-notice-2026-09-07.txt | 754 | 87887d7fec0efd09 |
+| data/sources/ntsb-x-briefing-notice-2026-09-07.html | 195214 | ce5c2f1833718df5 |
+| data/sources/ntsb-x-wreckage-2026-09-07.txt | 832 | e693d2d8146fe21c |
+| data/sources/ntsb-x-wreckage-2026-09-07.html | 179581 | 08338d72d7a73894 |
+| data/sources/iflymia-x-groundstop-2026-09-06.txt | 711 | 69be53a1405a1db4 |
+| data/sources/iflymia-x-groundstop-2026-09-06.html | 789277 | 61491fa0dfcad4dd |
+| data/sources/iflymia-x-one-runway-2026-09-06.txt | 637 | f0fc6c6e637e6851 |
+| data/sources/iflymia-x-one-runway-2026-09-06.html | 757754 | 9a5e4fc4b20e1363 |
+| data/sources/iflymia-x-two-runways-2026-09-06.txt | 651 | f6c2d4e81d963afa |
+| data/sources/iflymia-x-two-runways-2026-09-06.html | 759208 | f2703af6d27cb48e |
+| data/sources/mdfr-x-update1-2026-09-06.txt | 758 | ad2a3a951b117ec4 |
+| data/sources/mdfr-x-update1-2026-09-06.html | 193125 | bc80c35496048b6d |
+| data/sources/mdfr-x-update2-2026-09-06.txt | 1567 | 89ce4dadc288a4b6 |
+| data/sources/mdfr-x-update2-2026-09-06.html | 196247 | 4a9a6edb40735f82 |
+| data/sources/cspan-ntsb-briefing-2026-09-07.txt | 20602 | 477837ce6c78a149 |
+| data/sources/cspan-ntsb-briefing-2026-09-07.html | 153698 | 85bd15b84bcbace5 |
+| data/sources/coverage/abc-miami-cargo-crash.txt | 1898 | d4c59f6bea07a32e |
+| data/sources/coverage/nbc-miami-cargo-crash.txt | 2640 | bf28f34e0d472fec |
+| data/sources/coverage/npr-miami-cargo-crash.txt | 2109 | 1d1c1b1081bc218e |
+| data/sources/coverage/pbs-miami-cargo-crash.txt | 3674 | 85226362365427e6 |
+| data/sources/coverage/cbs-miami-cargo-ntsb.txt | 6739 | 4f42be7001d2af7f |
+| data/sources/coverage/reuters-miami-cargo-ntsb.txt | 3196 | 7199331f613aaafb |
+| data/sources/coverage/cnbc-miami-cargo-ntsb.txt | 2870 | 94c3d73ca1d8d2cc |
+| data/sources/coverage/ap-miami-cargo-crash.txt | 4669 | 8b7b9ac9e850a19f |
+| data/sources/amazon-x-7598-2026-09-06.txt | 804 | 9d3e014d58626871 |
+| data/sources/duffy-x-7598-2026-09-06.txt | 887 | 502d260207b635f9 |
+| data/sources/iflymia-x-monday-2026-09-07.txt | 681 | a869265f3f77539f |
