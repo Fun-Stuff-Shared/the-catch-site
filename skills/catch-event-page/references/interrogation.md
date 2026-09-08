@@ -30,6 +30,23 @@ the same session:
 3. **Declined, with the reason.** The gap is out of the story's scope or is opinion rather
    than record. Write the reason in the ledger row. Never dismiss the list wholesale.
 
+Write the dispositions as a table keyed by the reviewer's gap numbers, then append the
+review as returned, into `checks/interrogations/<subject>--<story>-<date>.md`, and commit
+it with the page. The reviewer's text may carry em dashes; replace them (colon or comma)
+and say so in the heading, since the repo's hook refuses them. Shape:
+
+```markdown
+| Gaps | Disposition |
+|---|---|
+| 1, 2 (ADP, weekly claims) | Fixed: ADP's own release and the claims PDF saved and cited in What happened. |
+| 17 (diffusion indexes) | Typed: not in the saved release text; ledger row. |
+| 34 (opposition message) | Declined: no record captured. |
+```
+
+Expect the list to be long (52 on the first run) and expect most of it to be answerable
+from the pins you already hold. Budget about two hours for the round: recount, capture,
+pin, cite, rebuild.
+
 Two kinds of finding get special handling:
 
 - **A sentence flagged wrong or overstated.** Reopen the pinned record before deciding.

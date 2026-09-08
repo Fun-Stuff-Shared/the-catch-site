@@ -107,7 +107,16 @@ used, and the recovery (route, date, URL) is written in SOURCES.md and in the re
 
 ## 4. Recount against the pins before fetching anything new
 
-Open the pinned text and count. Most review numbers are already there.
+Open the pinned text and count. Most review numbers are already there. A saved BLS release
+text (`empsit_<date>.htm` as captured) carries the summary tables A and B and the detail
+tables: A-2 and A-3 (rates by race, sex, age, education), A-7 (nativity, year over year,
+unadjusted), A-8 (part time for economic reasons), A-12 (duration of unemployment, the
+long-term level and median weeks), A-15 (U-6), B-1 (sector detail including temporary
+help), B-2 (hours by industry), B-3 and B-8 (earnings, production workers), B-5 (women on
+payrolls by sector). The independent review of the August page named twenty figures that
+were all sitting in that pin; search the pin for the table name before typing anything as
+absent. What the pin does not carry: the diffusion indexes and the unadjusted sector
+tables (separate pages).
 
 ```bash
 grep -n "unemployment rate" data/sources/bls-empsit-2026-07.txt | head
@@ -136,9 +145,31 @@ python3 -c "import json,sys; [print(r['text_path'], r['raw_path'], r['item_url']
 ```
 
 Copy `text_path` to `data/sources/coverage/<outlet>-<slug>.txt` and `raw_path` to the
-matching `.html`, add both to SOURCES.md, and add the record to the manifest's `records[]`
-(with a `quote` that is present in the text pin) and `story_sources[]` (group `coverage`).
-The pin is what the gate verifies.
+matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the manifest's
+`records[]` (with a `quote` that is present in the text pin) and `story_sources[]` (group
+`coverage`). The pin is what the gate verifies.
+
+Before capturing anything new, search the registry for the reactions too: on the August
+page the Fed governor's speech, the president's remarks, the ADP coverage and the stock
+close were all already held by the daily sweeps (`capture search "Waller" --since <date>`,
+`capture search "Trump" --since <date>`). Capture many URLs in one call:
+
+```bash
+capture news --reason "gaps named by the independent review of <story> (<date>)" <url> <url> ...
+```
+
+Read the run's `article_receipts.jsonl` before pinning: `typed_outcome` other than
+`body_captured` (robots refusals: Reuters, The Wall Street Journal) and a `text_chars`
+under about 1,000 (a subscription stub: Bloomberg served 462 characters) are not records.
+Say so on the page in reader words: "do not let their pages be saved", "served only a
+subscription stub". The word "automated" trips the gate. Posts on X and PDF notes capture
+fine and pin like any article.
+
+Label conventions in `story_sources[].meta`: coverage rows " · published <date>"; series
+files " · saved <fetch date>, reflects the <release date> release"; official statements
+" · <institution>". Record ids: `<outlet>-<topic>-<story>` (`cnn-august-jobs`,
+`fed-waller-2026-09-03`, `adp-release-2026-08`). `needs_ledger[].status` vocabulary:
+`have`, `partly have`, `missing: <reason in reader words>`.
 
 ## 6. Compute every derived number from the admitted series
 

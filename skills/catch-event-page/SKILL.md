@@ -111,6 +111,8 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
   operator review, signed export, retrieval, automated, staging, sha256, checked into,
   admission row hash, eligible claim, manifested, dossier, extraction pipeline, staged,
   internal review, cloture, perfecting nature. Receipts speak in reader words.
+  A source that refuses capture is described as "does not let its pages be saved", never
+  as blocking automated retrieval.
 - No repo paths, bare hashes, enum values, or typed labels on the page. If reading a
   line requires knowing project vocabulary, rewrite it.
 - No text jammed against an inline tag (`<em>under</em>counting`). Keep the space on
