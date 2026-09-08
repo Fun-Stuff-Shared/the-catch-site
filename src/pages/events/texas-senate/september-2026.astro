@@ -1,0 +1,278 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, talarico, paxton, computed } from "../../../data/texassenate202609.mjs";
+const state = readPublishedState().events.get("event-texas-senate-september-2026");
+if (!state) throw new Error("Missing publication selection: event-texas-senate-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/texas-senate/">The Texas Senate race</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">MAGA INC. &middot; September 5, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On September 5, MAGA INC. signed a 48-hour notice of independent expenditures totaling $10,000,000 for the Texas Senate general election.<Cite s="fec-form24-cover" passage="48 HOUR NOTICE" /> The notice lists two $5,000,000 payments to Del Ray Media LLC for connected TV and digital ads: one opposing James Talarico, one supporting Warren Kenneth Paxton Jr.<Cite s="fec-form24-2010907" passage="DEL RAY MEDIA LLC" /></li>
+          <li>Texas's general election is November 3, 2026, {computed.daysDisseminationToElection} days after the ads' public date.<Cite s="sos-dates-2026" passage="General election day." /> Talarico's committees reported ${talarico.receipts.toLocaleString("en-US", { minimumFractionDigits: 2 })} in receipts through June 30.<Cite s="fec-talarico-july-quarterly" passage="$68,555,930.42" /> Paxton's committees reported ${paxton.receipts.toLocaleString("en-US", { minimumFractionDigits: 2 })} through the same date.<Cite s="fec-paxton-july-quarterly" passage="$9,248,698.53" /></li>
+          <li>A University of Texas / Texas Politics Project poll of 1,200 registered voters, taken August 5 to 13, found 42 percent for Talarico, 39 percent for Paxton, and 3 percent for Libertarian Ted Brown.<Cite s="ut-txpp-poll-2026-08" passage="42% of Texas voters preferring Democrat James Talarico and 39% planning to vote for Republican Ken Paxton" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on MAGA INC.'s September 5 48-hour notice (FEC file 2010907), the committee's August monthly report covering July, the Federal Election Commission's candidate pages for the July quarterlies, the Texas Secretary of State's 2026 dates page and November 3 election-law calendar, the Secretary of State's independent-candidate list, the University of Texas / Texas Politics Project August poll, MAGA Inc. and Ken Paxton's posts on X, and coverage checked against those records. The $10 million figure is the FEC filing. It is not an ad-tracking firm's estimate.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The filing</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="fec-form24-cover" kind="record">
+          <p>MAGA INC., committee C00892471, filed a 48-hour notice of independent expenditures, FEC file 2010907. Treasurer Charles Gantt signed it on September 5, 2026.<Cite s="fec-form24-cover" passage="Date Signed: 09/05/2026" /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-form24-2010907" kind="record">
+          <p>Schedule E lists two payments of $5,000,000 each to Del Ray Media LLC of Alexandria, Virginia. The purpose of both is "PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING." The date of disbursement or obligation is September 4. The date of public distribution is September 5. The election is the 2026 general.<Cite s="fec-form24-2010907" passage="PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING" /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-form24-2010907" kind="record">
+          <p>One $5,000,000 line opposes James Talarico, candidate S6TX00479, for Senate in Texas. The other $5,000,000 line supports Warren Kenneth Jr. Paxton, candidate S6TX00388. The notice totals $10,000,000 for the period.<Cite s="fec-form24-2010907" passage="Total Expenditures This Period = $10000000" /></p></SourcedBlock>
+
+        <p data-layer="narrative">An independent expenditure is money spent on a message that names a candidate and asks voters to elect or defeat that person, without giving the money to the campaign. MAGA INC. is a hybrid political committee with a non-contribution account. The $10 million here is that kind of spending, not a check to Paxton's campaign committee.<Cite s="fec-maga-inc-committee" passage="Hybrid PAC (with Non-Contribution Account) - Nonqualified" /></p>
+
+        <SourcedBlock source="pfeiffer-x-2026-09-05" kind="record">
+          <p>Alex Pfeiffer, posting the same day, wrote: "High Tax Talarico wants to take money out of Texans' pockets. MAGA Inc. is going to ensure Texas knows about Talarico's radical policies and elects Ken Paxton to the U.S. Senate."<Cite s="pfeiffer-x-2026-09-05" passage="High Tax Talarico wants to take money out of Texans' pockets." /></p></SourcedBlock>
+
+        <SourcedBlock source="magainc-x-paxton-taxes-2026-09-05" kind="record">
+          <p>The MAGA Inc. account on X posted an ad whose caption reads, "When it comes to taxes, Ken Paxton is the better choice."<Cite s="magainc-x-paxton-taxes-2026-09-05" passage="When it comes to taxes, Ken Paxton is the better choice." /></p></SourcedBlock>
+
+        <SourcedBlock source="magainc-x-talarico-taxes-2026-09-05" kind="record">
+          <p>A second MAGA Inc. ad the same day is captioned, "James Talarico means higher taxes for Texas."<Cite s="magainc-x-talarico-taxes-2026-09-05" passage="James Talarico means higher taxes for Texas." /></p></SourcedBlock>
+
+        <SourcedBlock source="paxton-x-2026-09-05" kind="record">
+          <p>Paxton quoted a post about the buy and wrote that Talarico "has a record of raising taxes on working families" while his "Protecting the Texas Promise Agenda cuts costs and makes life more affordable," thanking President Trump for his support.<Cite s="paxton-x-2026-09-05" passage="Protecting the Texas Promise Agenda" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-texas-senate-ad-blitz" kind="checked">
+          <p>JT Ennis, a Talarico campaign spokesperson, said in a statement carried by the Associated Press that "Billionaire-backed dark money groups are lying about James Talarico" and that Talarico "was proud to vote for the largest property tax cut in Texas history."<Cite s="ap-texas-senate-ad-blitz" passage="Billionaire-backed dark money groups are lying about James Talarico" /></p></SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Not a campaign gift.</span>
+              CBS wrote that Trump was "donating $10 million" and that "both donations" went to Del Ray Media Inc. The Hill wrote that MAGA Inc. "gave $10 million to the Texas attorney general's Senate campaign." The FEC notice is independent expenditures, not contributions to Ken Paxton for Senate.<Cite s="cbs-texas-senate-ad-blitz" passage="donating $10 million" /><Cite s="fec-form24-2010907" passage="Total Expenditures This Period = $10000000" />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Connected TV, not broadcast.</span>
+              The Associated Press wrote of "television and digital advertisements." The FEC purpose line is connected TV and digital advertising. Connected TV is streaming video on an internet-connected set, not a broadcast-TV reservation on its own.<Cite s="ap-texas-senate-ad-blitz" passage="television and digital advertisements" /><Cite s="fec-form24-2010907" passage="PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">LLC, not Inc.</span>
+              CBS named the vendor "Del Ray Media Inc." The notice names Del Ray Media LLC.<Cite s="cbs-texas-senate-ad-blitz" passage="Del Ray Media Inc" /><Cite s="fec-form24-2010907" passage="DEL RAY MEDIA LLC" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">The 42-39 trial ballot.</span>
+              CBS used the Texas Politics Project August poll for a 61 percent Republican job rating for Paxton and did not report that poll's Senate trial ballot: Talarico 42 percent, Paxton 39 percent, Ted Brown 3 percent.<Cite s="cbs-texas-senate-ad-blitz" passage="61% approval rate among Republicans" /><Cite s="ut-txpp-poll-2026-08" passage="42% of Texas voters preferring Democrat James Talarico and 39% planning to vote for Republican Ken Paxton" />
+              <a class="catch-jump" href="#where-this-sits">Where this sits</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">{computed.shareOfMagaCashPct} percent of MAGA Inc.'s July cash.</span>
+              The $10 million is {computed.shareOfMagaCashPct} percent of MAGA INC.'s $403,450,026.85 cash on hand at the end of July. Texas viewers of connected TV and digital ads will see the spots. Neither campaign receives the money.<Cite s="fec-maga-inc-august-monthly" passage="403450026.85" /><Cite s="fec-form24-2010907" passage="PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING" />
+              <a class="catch-jump" href="#who-feels-it">Who feels it</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">The race and the money already on the books</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="sos-dates-2026" kind="official">
+          <p>The Texas Secretary of State's 2026 dates page names Tuesday, November 3, 2026, as general election day, citing Texas Election Code section 41.002.<Cite s="sos-dates-2026" passage="General election day." /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-november-2026-election-date" kind="official">
+          <p>The Federal Election Commission likewise lists Tuesday, November 3, 2026, as the next regularly scheduled federal general election date.<Cite s="fec-november-2026-election-date" passage="Tuesday, November 3, 2026" /></p></SourcedBlock>
+
+        <SourcedBlock source="sos-advisory-2026-21" kind="official">
+          <p>The Secretary of State's November 3 election-law calendar sets a deadline for the office to certify names of party nominees for statewide and district offices to county election officers for that ballot. The calendar extends that deadline to Friday, August 28, 2026.<Cite s="sos-advisory-2026-21" passage="names of party nominees for statewide and district offices" /></p></SourcedBlock>
+
+        <SourcedBlock source="sos-independent-declarations-2026" kind="official">
+          <p>The Secretary of State's independent-candidate list for 2026 shows Jade Simmons's U.S. Senate filing as rejected. That page is the independent and write-in track, not the party-nominee certification table.<Cite s="sos-independent-declarations-2026" passage="Jade Simmons" /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-talarico-july-quarterly" kind="official">
+          <p>The FEC candidate page for James Talarico, S6TX00479, covering September 8, 2025, to June 30, 2026, shows total receipts of $68,555,930.42, including $36,717,034.10 in unitemized individual contributions, {computed.talaricoUnitemizedPct} percent of his individual total. Cash on hand at the end of that period is $21,548,155.08.<Cite s="fec-talarico-july-quarterly" passage="$21,548,155.08" /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-paxton-july-quarterly" kind="official">
+          <p>The FEC candidate page for Warren Kenneth Paxton Jr., S6TX00388, covering April 1, 2025, to June 30, 2026, shows total receipts of $9,248,698.53. Cash on hand is $1,755,783.35. Those two receipt totals are {computed.receiptsRatio} to 1. They are not the same start date: Talarico's page starts September 8, 2025; Paxton's starts April 1, 2025.<Cite s="fec-paxton-july-quarterly" passage="$9,248,698.53" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how the ratios were counted</summary>
+          <p>Talarico receipts $68,555,930.42 divided by Paxton receipts $9,248,698.53 is {computed.receiptsRatio}. Unitemized Talarico $36,717,034.10 divided by individual $65,585,741.88 is {computed.talaricoUnitemizedPct} percent. Unitemized Paxton $1,764,118.03 divided by individual $9,020,177.98 is {computed.paxtonUnitemizedPct} percent. MAGA Inc. $10,000,000 divided by July 31 cash $403,450,026.85 is {computed.shareOfMagaCashPct} percent. Days from September 5 to November 3 are {computed.daysDisseminationToElection}.</p>
+        </details>
+
+        <SourcedBlock source="fec-maga-inc-august-monthly" kind="official">
+          <p>MAGA INC.'s August monthly report covers July 1 through July 31, 2026. Cash on hand at the close of that period is $403,450,026.85. Receipts in July were $3,021,896.04. Disbursements in July were $131,658.17.<Cite s="fec-maga-inc-august-monthly" passage="403450026.85" /></p></SourcedBlock>
+
+        <SourcedBlock source="fec-form24-2009583" kind="record">
+          <p>The Texas notice is MAGA INC.'s first 2026 general-election independent expenditure. On August 24 the same committee filed a 24-hour notice for Darline Graham's South Carolina Senate runoff: $53,514.31 in text messages and $774,196.80 in get-out-the-vote phone calls, $827,711.11 year-to-date for that office.<Cite s="fec-form24-2009583" passage="Calendar YTD Per Election for Office Sought = $827711.11" /></p></SourcedBlock>
+
+        <SourcedBlock source="ut-txpp-poll-2026-08" kind="official">
+          <p>The University of Texas / Texas Politics Project August poll, fielded August 5 to 13 among 1,200 registered voters, found Talarico at 42 percent, Paxton at 39 percent, Ted Brown at 3 percent, and 14 percent with no preference. The margin of error is plus or minus 2.83 percent, or 3.58 percent accounting for the weighted sample. YouGov collected the interviews on the internet.<Cite s="ut-txpp-poll-2026-08" passage="The poll was conducted August 5-13, 2026, among 1200 registered voters" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The {computed.pollGapPoints}-point Talarico lead sits inside that weighted margin. The same poll's crosstabs ask how Texans rate Paxton's job as attorney general. Among Republicans, 29 percent approve strongly and 32 percent approve somewhat, {computed.gopApprovePaxtonPct} percent in all.<Cite s="ut-txpp-poll-crosstabs" passage="How would you rate the job Ken Paxton is doing as" /></p>
+
+        <SourcedBlock source="wh-pool-2026-09-04" kind="record">
+          <p>The White House in-town pool for September 4 recorded this answer when Trump was asked when the super PAC would spend on the midterms: "We already did. I think I have close to a billion dollars in the Super PAC." MAGA INC.'s July 31 cash on hand is $403,450,026.85, not a billion.<Cite s="wh-pool-2026-09-04" passage="We already did. I think I have close to a billion dollars in the Super PAC." /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-texas-senate-ad-blitz" kind="checked">
+          <p>The Associated Press quoted Trump the same day saying, "I'm going to spend whatever amount of money necessary to try and help us," and "This is my money," separate from Republican National Committee funds. The Texas 48-hour notice was signed the next calendar day. The obligation date on Schedule E is September 4, the same day as the pool report.<Cite s="ap-texas-senate-ad-blitz" passage="This is my money" /></p></SourcedBlock>
+
+        <SourcedBlock source="tribune-maga-inc-2026-09-05" kind="checked">
+          <p>The Texas Tribune, citing AdImpact, wrote that Talarico's campaign had spent $40.1 million on general-election advertising and that Paxton's campaign had logged about $264,000, mostly digital. The Tribune transcribed the MAGA Inc. spots as saying, "Talarico? Higher taxes," and "Paxton? Lower taxes. A clear choice."<Cite s="tribune-maga-inc-2026-09-05" passage="$40.1 million on general election advertising, per ad tracking firm AdImpact" /></p></SourcedBlock>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Viewers, donors, and the calendar</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <p data-layer="narrative">The people who see the ads are people watching connected television and digital video in Texas. The filing does not name broadcast stations or zip codes.<Cite s="fec-form24-2010907" passage="PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING" /></p>
+
+        <p data-layer="narrative">The people who already paid into the race through the campaigns are not the same. Talarico's unitemized individual contributions, the small gifts that do not have to be itemized, are $36.7 million through June 30, {computed.talaricoUnitemizedPct} percent of his individual total. Paxton's unitemized share is {computed.paxtonUnitemizedPct} percent.<Cite s="fec-talarico-july-quarterly" passage="$36,717,034.10" /></p>
+
+        <p data-layer="narrative">MAGA INC. still held more than $403 million at the end of July. The $10 million is {computed.shareOfMagaCashPct} percent of that pile. It does not move into Paxton's campaign account.<Cite s="fec-maga-inc-august-monthly" passage="403450026.85" /></p>
+
+        <SourcedBlock source="sos-dates-2026" kind="official">
+          <p>Early voting by personal appearance for the November 3 general election begins Monday, October 19, 2026.<Cite s="sos-dates-2026" passage="First day of early voting by personal appearance for November 3 general election." /></p></SourcedBlock>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">Checked against the notice</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <SourcedBlock source="ap-texas-senate-ad-blitz" kind="checked">
+          <p>The Associated Press, in a Saturday dispatch from Bridgewater, New Jersey, wrote that the group associated with Trump is spending $10 million on television and digital advertisements "according to a Saturday filing with the Federal Election Commission." The $10 million and the Saturday filing check out. "Television" does not match the connected-TV purpose line.<Cite s="ap-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /></p></SourcedBlock>
+
+        <SourcedBlock source="nbc-texas-senate-ad-blitz" kind="checked">
+          <p>NBC News wrote that MAGA Inc. "had more than $400 million in the bank as of July 31, according to the group's most recent fundraising report." The August monthly close is $403,450,026.85. That checks out as "more than $400 million."<Cite s="nbc-texas-senate-ad-blitz" passage="MAGA Inc. had more than $400 million in the bank as of July 31" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-texas-senate-ad-blitz" kind="checked">
+          <p>CBS News got the $5 million / $5 million split and the Saturday filing. It mislabeled the spending as a "donation" and named the vendor "Del Ray Media Inc."<Cite s="cbs-texas-senate-ad-blitz" passage="Del Ray Media Inc" /></p></SourcedBlock>
+
+        <SourcedBlock source="fox-texas-senate-ad-blitz" kind="checked">
+          <p>Fox News correctly attributed the $10 million to an FEC filing and carried Paxton's post and Pfeiffer's words. It attributed $72 million and $16.8 million in campaign fundraising to the Texas Tribune. Those figures are not the July quarterly totals on the FEC candidate pages, which use different coverage dates and stop at June 30.<Cite s="fox-texas-senate-ad-blitz" passage="according to the Texas Tribune" /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-hinojosa-texas-senate" kind="checked">
+          <p>The Hill, covering Gina Hinojosa on CNN, wrote that MAGA Inc. "gave $10 million to the Texas attorney general's Senate campaign, per Federal Election Commission (FEC) filings." The filings exist. A gift to the campaign is the wrong legal category.<Cite s="thehill-hinojosa-texas-senate" passage="gave $10 million to the Texas attorney general" /></p></SourcedBlock>
+
+        <SourcedBlock source="cnbc-texas-senate-ad-blitz" kind="checked">
+          <p>CNBC ran the Associated Press text under its own headline. The same $10 million and Saturday filing check out, with the same "television" wording as the AP copy.<Cite s="cnbc-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /></p></SourcedBlock>
+
+        <SourcedBlock source="pbs-texas-senate-ad-blitz" kind="checked">
+          <p>PBS NewsHour ran the same Associated Press dispatch. The Saturday filing and $10 million check out. The "television" wording is the AP line again.<Cite s="pbs-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /></p></SourcedBlock>
+
+        <SourcedBlock source="usatoday-maga-inc-2026-09-05" kind="checked">
+          <p>USA Today wrote that MAGA Inc. "has donated $10 million to the campaign" of Paxton. The FEC notice is independent expenditures to Del Ray Media LLC, not a donation to the campaign committee.<Cite s="usatoday-maga-inc-2026-09-05" passage="has donated $10 million to the campaign" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">The $10 million</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="fec-form24-2010907" kind="computed">
+          <p>Claim: MAGA Inc. is spending $10 million on Texas Senate ads. The 48-hour notice itemizes $5,000,000 opposing Talarico and $5,000,000 supporting Paxton. Added, that is $10,000,000. The figure is the FEC filing, not an ad-tracking firm's count.<Cite s="fec-form24-2010907" passage="Total Expenditures This Period = $10000000" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how this was added</summary>
+          <p>Schedule E line opposing Talarico: $5,000,000. Schedule E line supporting Paxton: $5,000,000. 5,000,000 + 5,000,000 = 10,000,000. The notice's own total for the period is $10,000,000. Vendor on both lines: Del Ray Media LLC. Purpose on both lines: placed media, connected TV and digital advertising.</p>
+        </details>
+
+        <p data-layer="narrative">Claim: this is a contribution to Paxton's campaign. The notice is Form 24, independent expenditures. The payee is a media vendor, not Ken Paxton for Senate.<Cite s="fec-form24-2010907" passage="DEL RAY MEDIA LLC" /></p>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">After Saturday</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="thehill-hinojosa-texas-senate" kind="checked">
+          <p>On September 6 The Hill reported Gina Hinojosa, the Democratic nominee for governor, telling CNN's Dana Bash she welcomed the attention on Texas after the $10 million buy in the Senate race.<Cite s="thehill-hinojosa-texas-senate" passage="I welcome the attention on Texas" /></p></SourcedBlock>
+
+        <SourcedBlock source="talarico-x-2026-09-05" kind="record">
+          <p>Talarico posted the same Saturday the ads dropped: "This is not capitalism; this is crony capitalism." He did not post the Ennis statement on that account that day.<Cite s="talarico-x-2026-09-05" passage="This is not capitalism; this is crony capitalism." /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: MAGA INC.'s next 24-hour or 48-hour notices, other committees' independent expenditures in Texas, the October 15 quarterly reports, and early voting beginning October 19.<Cite s="sos-dates-2026" passage="First day of early voting by personal appearance for November 3 general election." /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li>A Secretary of State table that lists Ken Paxton and James Talarico by name as certified November 3 nominees. What we have is the certification deadline, the independent-filings page, and the FEC candidate pages.<Cite s="sos-advisory-2026-21" passage="names of party nominees for statewide and district offices" /></li>
+          <li>The Talarico campaign's own posting of the Ennis statement. Talarico posted about crony capitalism the day of the ads. The Ennis words we use are still the Associated Press copy.<Cite s="talarico-x-2026-09-05" passage="This is not capitalism; this is crony capitalism." /></li>
+          <li>Broadcast-TV reservations, if any, beyond the connected-TV and digital purpose line on the notice, and AdImpact's underlying table rather than the Tribune's quotation of it.<Cite s="fec-form24-2010907" passage="PLACED MEDIA: CONNECTED TV & DIGITAL ADVERTISING" /></li>
+          <li>Campaign finance totals after June 30. The next regular candidate quarterly is not in the pins.</li>
+          <li>A dated Kalshi or Polymarket quote for this Senate race. None was saved this session.</li>
+        </ul>
+      </section>
+
+      <StorySources event="texas-senate/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 0; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+</style>

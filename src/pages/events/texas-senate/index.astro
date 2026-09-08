@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/texas-senate.mjs';
+---
+<SeriesOverview title={subject.title} description="MAGA Inc. filed $10 million in independent expenditures for connected TV and digital ads in the Texas U.S. Senate race. The November 3 general election is between Ken Paxton and James Talarico." path="/events/texas-senate/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>
