@@ -1,5 +1,23 @@
 # Working checklist: Greenland / EU investment, September 2026
 
+## Layout dispatch (from `/Volumes/4/scratch-fable-profile/grok-authoring/reviews/6-layout.md`, page at cf773ca1)
+
+Copied 2026-09-08. Facts stay; this pass is writing and shape. Tick with the artifact.
+
+- [x] 1. What happened: five narrative paragraphs Sept 1-8; week DecisionTimeline; five Nuuk QuoteCards; Commission lines and signature block in the open; closer on signed text vs press-release money.
+- [x] 2. The catch: four ranked rows with Why it matters; date row is label vs signature (which day the money was announced); catch-minor for 150 million, UPI pronoun, AP rounding.
+- [x] 3. Where this sits: money DataTable first; four narrative paragraphs; 2026 DecisionTimeline; Davos and Air Force One QuoteCards; rest of the record in the open; doubling in proof.
+- [x] 4. Who feels it: dated-list first, then two paragraphs (housing/tourism/small business; mines with Malmbjerg as a projection).
+- [x] 5. Coverage: one count line; OutletCheck cards, closed chip set; UPI first; AP+ABC+PBS+CNBC; Reuters; DW; Al Jazeera; France 24 preview; KNR provisional.
+- [x] 6. Claim check: confirmed on more than doubles; contested on coverage "deal" vs no-obligations.
+- [x] 7. Story/fact rounded (€17.3 million, $232 million, 1.5 billion kroner); cents in proof; KPI $232 million.
+- [x] 8. Next and unknowns trimmed; absences name the search.
+- [x] Acceptance: npm run build; lens_lint zero; zero em dashes; browser 1280 measured; screenshot checks/screenshots/greenland-september-2026-1280.png.
+
+---
+
+# Working checklist: Greenland / EU investment, September 2026
+
 Candidate: cand-2b5a527b0c9d5299
 Headline: EU to boost Greenland investment amid Trump annexation claims
 Subject slug: greenland (no existing subject on the site)

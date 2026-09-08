@@ -6,16 +6,16 @@
 export const event = {
   slug: "greenland/september-2026",
   title: "The Commission named a 200 million euro Greenland package and signed a joint declaration in Nuuk",
-  dek: "Denmark announced the visit on September 1. On September 7 the European Commission, Greenland, and Denmark signed a declaration that says it creates no legal or financial obligations. The Commission press release, not that declaration, named a €200 million Global Gateway package for this year and next.",
+  dek: "Denmark announced the visit on September 1. On September 7 the European Commission, Greenland, and Denmark signed a declaration that says it creates no legal or financial obligations. The Commission press release, not that declaration, named a €200 million package for this year and next.",
   name: "Greenland EU package",
-  span: "September 1 to September 7, 2026",
+  span: "September 1 to September 8, 2026",
   date: "2026-09-07",
   updated: "2026-09-08",
   kpis: [
     { value: "€200", unit: "million", label: "Global Gateway package, this year and next" },
     { value: "€225", unit: "million", label: "EU seven-year grant envelope, 2021-2027" },
     { value: "€530", unit: "million", label: "Commission proposal for 2028-2034, presented 3 September 2025" },
-    { value: "$232.28", unit: "million", label: "€200 million at the ECB dollar rate, September 8" },
+    { value: "$232", unit: "million", label: "€200 million at the ECB dollar rate, September 8" },
   ],
 };
 
@@ -46,9 +46,37 @@ export const ecb = {
 
 export const computed = {
   packageUsd: 232.28, // 200 * 1.1614
+  packageUsdRounded: 232, // story/KPI rounding of 232.28
   mffProposedUsd: 615.54, // 530 * 1.1614
   mffRatio: 2.3556, // 530 / 225
   doagEducationEur: 202.5, // 225 * 0.9
   doagGreenGrowthEur: 22.5, // 225 * 0.1
   packageDkkMillion: 1494.96, // 200 * 7.4748
+  packageDkkBillion: 1.5, // 1494.96 million kroner, rounded
+  fisheriesAnnualRounded: 17.3, // IP/26/1800 rounding of 17296857
 };
+
+export const moneyRows = [
+  [`€${packageEur} million`, "Global Gateway package, this year and next", "Commission press release"],
+  [`€${doagEur} million`, "Grant envelope, 2021-2027", "Council Decision (EU) 2021/1764"],
+  [`€${mffProposedEur} million`, `Proposal for 2028-2034, presented ${mffProposalDate}`, "Commission Greenland country page"],
+  [`€${computed.fisheriesAnnualRounded} million a year`, "Fisheries protocol", "Commission press release"],
+  [`€${satelliteEuEur} million over five years, plus ${satelliteDkDkkMillion} million kroner`, "Satellite internet project", "DR, 7 September"],
+];
+
+export const weekTimeline = [
+  { date: "Sep 1", title: "Denmark announces the Nuuk visit", sub: "Nielsen to receive von der Leyen and Frederiksen on September 6 and 7" },
+  { date: "Sep 6", title: "The planes land in Nuuk", sub: "DR: tomorrow they sign" },
+  { date: "Sep 7", title: "Signing, press release, satellite project, map post, Arctic Shield starts", sub: "declaration signed in Nuuk; Commission names €200 million; Truth Social map; exercises begin", current: true },
+  { date: "Sep 8", title: "Foreign, security and defence contact committee", sub: "KNR: the third day of the Nuuk meetings" },
+];
+
+export const record2026Timeline = [
+  { date: "Jan 15", title: "Danish Defence raises its activity in and around Greenland", sub: "aircraft, ships, and soldiers, including from NATO allies" },
+  { date: "Jan 21", title: "Davos remarks and the Truth Social framework post", sub: "right, title, and ownership; I won't use force; framework of a future deal" },
+  { date: "Jan 22", title: "Air Force One", sub: "Greenland is in negotiation; the time limit is infinity" },
+  { date: "Feb 11", title: "NATO Arctic Sentry", sub: "a new multi-domain activity in the Arctic and High North" },
+  { date: "Jul 7", title: "Ankara, as carried by AP", sub: "That should be controlled by the United States, not by Denmark" },
+  { date: "Jul 31 / Aug 1", title: "Arctic Today's account of the interview and the Hello, Greenland post", sub: "Real America's Voice, then a Truth Social image the next day" },
+  { date: "Sep 7", title: "Truth Social map post", sub: "dated 10:43 AM, no accompanying text", current: true },
+];
