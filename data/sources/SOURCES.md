@@ -675,3 +675,37 @@ Commission press-corner pages (IP/26/1800, STATEMENT/26/1803, STATEMENT/26/1804)
 | data/sources/greenland/stm-housing-2026-09-08.txt | 5921 | f397ba4de08dcac4 |
 | data/sources/greenland/sfpa-greenland.html | 148220 | 216679ea27aa42b2 |
 | data/sources/greenland/sfpa-greenland.txt | 8517 | 601929951bd8e083 |
+
+| data/sources/greenland/DCPD-202600046.pdf | 392751 | 26be6099f081983b |
+| data/sources/greenland/DCPD-202600046.htm | 121320 | e8bfc410dce971d1 |
+| data/sources/greenland/DCPD-202600046.txt | 87945 | ec2b2595769c5fba |
+| data/sources/greenland/dcpd-202600051.pdf | 308999 | d4268f43e216271f |
+| data/sources/greenland/dcpd-202600051.txt | 34825 | a6630f96dddb284f |
+| data/sources/greenland/nato-arctic-sentry-2026-02-11.html | 463404 | f7497dc937b0ed0d |
+| data/sources/greenland/nato-arctic-sentry-2026-02-11.txt | 5096 | d4c580b425012c33 |
+| data/sources/greenland/forsvaret-greenland-presence-2026-01-15.html | 74208 | 841544ad8f5ec3a7 |
+| data/sources/greenland/forsvaret-greenland-presence-2026-01-15.txt | 7537 | 65cd1654a8d3d8b2 |
+| data/sources/greenland/truthsocial-trump-map-2026-09-07.txt | 1193 | 62a50bdf8a37a24c |
+| data/sources/greenland/truthsocial-trump-framework-2026-01-21.txt | 2095 | 90fb68a031aa9bd2 |
+| data/sources/greenland/av-press-conference-2026-09-07.html | 324645 | 90e6e39db283d8e2 |
+| data/sources/greenland/av-press-conference-2026-09-07.txt | 3781 | f5ead2d2fc598b86 |
+| data/sources/greenland/wh-statements-releases.html | 260090 | e6b9af51502c3afa |
+| data/sources/greenland/wh-statements-releases.txt | 6850 | 215669ea8b22896b |
+| data/sources/greenland/state-press-releases.html | 220676 | 8ee1a3ed09386a86 |
+| data/sources/greenland/state-press-releases.txt | 26543 | d1fb5c60fa2b0da7 |
+| data/sources/coverage/ap-trump-greenland-2026-07-07.html | 1291085 | 884b290923fbf14a |
+| data/sources/coverage/ap-trump-greenland-2026-07-07.txt | 59978 | 04727995141b9140 |
+| data/sources/coverage/abc-trump-greenland-framework-2026-01-21.html | 194754 | 0471ff766ac83894 |
+| data/sources/coverage/abc-trump-greenland-framework-2026-01-21.txt | 9248 | ff4e1ff7bd7a7dea |
+| data/sources/coverage/cbs-trump-greenland-framework-2026-01-21.html | 626707 | b9d4bce2b2a27be2 |
+| data/sources/coverage/cbs-trump-greenland-framework-2026-01-21.txt | 4792 | ad5458f15da72c62 |
+| data/sources/coverage/ap-trump-davos-2026-01-21.html | 1159311 | 4ef8e0ce166947ef |
+| data/sources/coverage/ap-trump-davos-2026-01-21.txt | 56536 | c160a619e289fef2 |
+
+Held unused for greenland/september-2026 (saved, not cited on the page): ABC and CBS copies of the January 21 Truth Social post (the post itself is cited); AP Davos January 21 (the Compilation of Presidential Documents speech is cited instead); Politico 7 September (saved, unused); Arctic Today homepage fetch; forsvaret.dk/en/news/ listing (JavaScript shell with no article bodies; /en/news/2026/ returned 404); Commission audiovisual search shell; White House site search for Greenland; govinfo details shells for unused DCPD numbers. Euractiv preview and Iceland-ambassador pages returned a challenge page (403). Truth Social HTML shells are 71-byte stubs; extracted text is the record.
+| data/sources/coverage/berlingske-eu-membership-2026-09-07.html | 416825 | 7f2bca09b8501661 |
+| data/sources/coverage/berlingske-eu-membership-2026-09-07.txt | 5127 | e532cdbc1eb9bf91 |
+| data/sources/coverage/euronews-greenland-eu-2026-09-07.html | 423816 | 900d1b590a91cedc |
+| data/sources/coverage/euronews-greenland-eu-2026-09-07.txt | 15798 | 9eea6f6ca0dfb549 |
+| data/sources/coverage/politico-greenland-eu-2026-09-07.html | 291997 | 862ec74c951f20ae |
+| data/sources/coverage/politico-greenland-eu-2026-09-07.txt | 7811 | e2bc973a19d55765 |
