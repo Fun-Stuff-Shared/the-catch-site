@@ -653,6 +653,11 @@ Commission press-corner pages (IP/26/1800, STATEMENT/26/1803, STATEMENT/26/1804)
 | data/sources/greenland/doag-2021-1764.txt | 325569 | aa80a60b8a922534 |
 | data/sources/greenland/ec-greenland-country.html | 104646 | fa5ef62be26f2b91 |
 | data/sources/greenland/ec-greenland-country.txt | 11477 | d63b6989a329ca36 |
+| data/sources/greenland/ec-aap-2026-greenland.zip | 508962 | dc61b5d19fb9aaca |
+| data/sources/greenland/ec-aap-2026-greenland-decision.pdf | 96551 | b2b582a37535adff |
+| data/sources/greenland/ec-aap-2026-greenland-decision.txt | 10679 | 9e6e9b093b99f608 |
+| data/sources/greenland/ec-aap-2026-greenland-annex.pdf | 429898 | f7993a2227d8fc16 |
+| data/sources/greenland/ec-aap-2026-greenland-annex.txt | 106514 | 734b27dd0ec4b6b0 |
 | data/sources/greenland/joint-declaration-2015.pdf | 3031380 | 7b1fafc2a441db98 |
 | data/sources/greenland/joint-declaration-2015.txt | 10681 | f0323f95e1d38bb5 |
 | data/sources/greenland/ecb-eurofxref-2026-09-08.xml | 1547 | 6acf7b40d129599c |
