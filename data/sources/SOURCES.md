@@ -253,3 +253,47 @@ New official pages were fetched September 8. The KMIA weather observations age o
 | data/sources/coverage/upi-miami-cargo-crash.txt | 1785 | 6394c55a0daf6089 | held; not used on the page |
 | data/sources/coverage/usatoday-miami-cargo-day1.html | 221245 | a77fc6ecaa2aa143 | held; not used on the page |
 | data/sources/coverage/usatoday-miami-cargo-day1.txt | 2477 | 781cc4a161d26e0b | held; not used on the page |
+
+## Missouri House map, September 2026 (saved 2026-09-08)
+
+Primary records: the Missouri Supreme Court’s own summary PDF of SC101805 (saved from the court site), the opinion text recovered from the appendix the attorney general filed with the U.S. Supreme Court because the court site does not let its pages be saved from this machine, the mandate and stay denial extracted from that appendix, the Missouri Constitution, the attorney general’s statement and stay application, the U.S. Supreme Court docket, and the challenger’s opposition. Coverage articles were copied from the September 5 capture run as served.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/missouri-house-map/sc101805-summary.pdf | 179568 | 06182da47f61b405 |
+| data/sources/missouri-house-map/sc101805-summary.txt | 8241 | 790ca617792af0a5 |
+| data/sources/missouri-house-map/sc101805-opinion.pdf | 1584444 | bfbc11e0f8a765cd |
+| data/sources/missouri-house-map/sc101805-opinion.txt | 30539 | a87d6290c4826e3e |
+| data/sources/missouri-house-map/sc101805-mandate-and-stay-denial.pdf | 941135 | e0e14285f4031df4 |
+| data/sources/missouri-house-map/sc101805-mandate-and-stay-denial.txt | 2491 | 156b2081e81a5be7 |
+| data/sources/missouri-house-map/scotus-26A304-application.pdf | 692960 | 72eeb0b69a61587b |
+| data/sources/missouri-house-map/scotus-26A304-application.txt | 82233 | e0c1b1396e3d7f30 |
+| data/sources/missouri-house-map/scotus-26A304.html | 27810 | 4355d80093257f97 |
+| data/sources/missouri-house-map/scotus-26A304-opposition.pdf | 355218 | f1fa83717522ba71 |
+| data/sources/missouri-house-map/scotus-26A304-opposition.txt | 91802 | 95c393f6bdd7c408 |
+| data/sources/missouri-house-map/ago-hanaway-2026-09-03.html | 571835 | 2c2ea79d6fcc8884 |
+| data/sources/missouri-house-map/ago-hanaway-2026-09-03.txt | 4112 | 2ef84c42dad93d92 |
+| data/sources/missouri-house-map/mo-constitution.pdf | 1884546 | 6749d259f86dd934 |
+| data/sources/missouri-house-map/mo-constitution.txt | 1101232 | 948586c852b39c35 |
+| data/sources/coverage/abc-missouri-house-map.html | 188309 | fac0ee0afc1feb60 |
+| data/sources/coverage/abc-missouri-house-map.txt | 6341 | 7e73791fcd6ba8b9 |
+| data/sources/coverage/ap-missouri-house-map.html | 810851 | 42507776199a417d |
+| data/sources/coverage/ap-missouri-house-map.txt | 2907 | 759aca3291944248 |
+| data/sources/coverage/fox-missouri-house-map.html | 474330 | ce3655cf5fe8d1a8 |
+| data/sources/coverage/fox-missouri-house-map.txt | 4573 | 246838ac708f716d |
+| data/sources/coverage/politico-missouri-house-map.html | 224074 | da46b0acafe12738 |
+| data/sources/coverage/politico-missouri-house-map.txt | 4002 | db348018fcb536f0 |
+| data/sources/coverage/thehill-latest-missouri-house-map.html | 394310 | 19bebe2baca1dae0 |
+| data/sources/coverage/thehill-latest-missouri-house-map.txt | 5742 | 77cd9bf12a656c60 |
+| data/sources/coverage/thehill-missouri-house-map.html | 380732 | f785214b508fb79c |
+| data/sources/coverage/thehill-missouri-house-map.txt | 3594 | c5ea470192abdc82 |
+| data/sources/coverage/thehill-scotus-missouri-house-map.html | 391195 | 686fab43cb201add |
+| data/sources/coverage/thehill-scotus-missouri-house-map.txt | 3439 | a7a4ae820020a142 |
+| data/sources/coverage/thehill-trump-missouri-house-map.html | 391855 | a6e73ff37a2acb39 |
+| data/sources/coverage/thehill-trump-missouri-house-map.txt | 2671 | 42a8ad9223567b7f |
+| data/sources/coverage/usatoday-missouri-house-map.html | 229096 | d7f0511e86445070 |
+| data/sources/coverage/usatoday-missouri-house-map.txt | 3750 | 64039c4f8ae4595a |
+| data/sources/coverage/usatoday-scotus-missouri-house-map.html | 218338 | 51b70251c91ea430 |
+| data/sources/coverage/usatoday-scotus-missouri-house-map.txt | 3114 | ba9a25b6abba4b34 |
+| data/sources/missouri-house-map/scotus-26A304-reply.pdf | 337084 | e7f2da68dc809a03 |
+| data/sources/missouri-house-map/scotus-26A304-reply.txt | 69924 | 978b5d261d36dd7a |
