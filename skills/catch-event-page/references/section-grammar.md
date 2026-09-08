@@ -54,7 +54,14 @@ house style and it binds every page.
    card. One count line above the cards.
 8. **Who feels it is a dated list of the reader's own facts**, in order, each cited, then
    at most two narrative paragraphs. It is never the shortest section.
-9. **Quotes as cards.** A person's words are a quote card (date, venue, the words, the
+9. **Quote cards are byte-contiguous.** A `QuoteCard` holds one unbroken span of the record.
+Never join two sentences the record separates with attribution ("he said"), a question, or
+other text, and never lift a phrase the record reports indirectly ("described the EU as a
+loyal friend") into direct speech. If the best two sentences are not contiguous, show the
+contiguous one and put the other in the narrative with its own Cite. Byte-exact means the
+card text is a substring of the pinned text file; check it with a search before build.
+
+**Quotes as cards.** A person's words are a quote card (date, venue, the words, the
    record), not a paragraph that begins with an institution's name.
 10. **Measure before you say done.** In a browser at 1280 wide: story-view height, words by
     layer, fact blocks per section, dollar figures to the cent, figures on the page. The

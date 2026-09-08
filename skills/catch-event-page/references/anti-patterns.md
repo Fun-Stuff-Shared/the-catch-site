@@ -125,3 +125,18 @@ say what they are in one line.
 ### An interactive portal pinned as its empty shell
 The Texas Secretary of State candidate portal saved as an Angular shell with no candidates.
 Rule: if the pin has no data, it is not a pin; capture with a browser and save what rendered.
+
+### Stitched quotations in quote cards
+Greenland, layout pass (539c1f21): four of eight quote cards joined non-contiguous record
+text. The Davos card fused two passages 1,400 characters apart into one sentence that never
+appears in the transcript; the Nielsen card turned AP's indirect "described the EU as a loyal
+and trusted friend" into direct speech and welded it to a separate quotation; the Frederiksen
+and Air Force One cards bridged an attribution and a separate question. Each Cite passage
+was real, so the gate passed. Rule: a card is one byte-contiguous substring of the pinned
+text; the Cite passage proves a phrase exists, not that the sentence does. Sibling: any
+`QuotedText` or blockquote built from a coverage article that paraphrases.
+
+### The explanation the records do not give
+Same page: the ten-versus-eleven NATO count was "explained" as observers in the total; no
+record defines either count. A catch row states the disagreement and what each record
+says about its own denominator; it does not supply the missing reconciliation.
