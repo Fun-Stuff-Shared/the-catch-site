@@ -135,14 +135,22 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    on the page must be one contiguous run of bytes in a record the same element cites, and
    an outlet's quoted words must come from that outlet's own pin. A finding is a defect on
    the page, never a lint to silence: fix the quote, the cite, or the attribution.
-9. **Independent interrogation.** A model that did not write the page reads the built
-   page with web and X search on and lists everything it does not cover: missing sources,
-   reactions, drama, wrong sentences (`scripts/interrogate.sh <subject>/<story>`; prompt
-   and handling in `references/interrogation.md`). Every gap becomes a needs-ledger row,
-   fixed on the page, typed unreachable, or declined with its reason. An item that names a
-   fetchable public record is a fetch, not a decline. Write the catch box after this step:
-   each row names the two records that disagree. Never dismiss the
-   list wholesale.
+9. **Independent interrogation, then the completeness audit.** Two runs by models that
+   did not write the page, both required before staging. First the interrogation
+   (`scripts/interrogate.sh <subject>/<story>`, prompt and handling in
+   `references/interrogation.md`): a model with web and X search lists everything the page
+   does not cover. Then the completeness audit
+   (`scripts/completeness_audit.sh <subject>/<story>`, contract in
+   `references/completeness-audit.md`): three layers, verification of every material
+   proposition against its record, discovery before, after, and around the page's frame
+   with every citation the sources themselves make chased to its record, and an
+   independent reconstruction the auditor then tries to disprove. Every returned item gets
+   one of four dispositions the same session: admitted and fixed (a named record is a
+   fetch, never a decline), fixed from the pins, typed on the page in reader words after
+   one attempt, or declined with its reason. Rerun the audit after the fixes; stage on
+   COMPLETE, or on INCOMPLETE whose remaining checks are all typed on the page. Write the
+   catch box after this step: each row names the two records that disagree. Never dismiss
+   a list wholesale.
 10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
    refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
    page is standalone and is never edited afterwards: a revision to last month's number is
@@ -191,6 +199,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 ## Before you say done
 
 - [ ] Every step above maps to an artifact, or is reported as not done.
+- [ ] The completeness audit ran on the built page (`checks/audits/<subject>--<story>-<date>.md`),
+      every finding has a disposition, and the rerun returned COMPLETE or its remaining
+      checks are typed on the page.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Step 12 ran: every manifest figure appears in the built state record with its unit
       and source passage; computed figures show their inputs and formula as computations.
@@ -234,4 +245,5 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md ledger, gate checks, ship verification.
 - `references/anti-patterns.md`: the drift the audit found on the gold pages and the rule for each.
 - `references/procedures.md`: every command, step by step, from recipe scaffold to live audit.
+- `references/completeness-audit.md`: the three-layer audit, the four dispositions, the completion standard.
 - `references/interrogation.md`: the independent completeness review, its prompt, and how each gap is dispositioned.

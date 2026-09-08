@@ -346,6 +346,24 @@ Every returned gap becomes a needs-ledger row: fixed on the page, typed unreacha
 declined with its reason, all in the same session. Wholesale dismissal is the violation
 this step exists to prevent.
 
+## 11b. Completeness audit (gate 6, second half)
+
+After the interrogation dispositions are on the page and the build is green again:
+
+```bash
+skills/catch-event-page/scripts/completeness_audit.sh jobs/august-2026
+cat checks/audits/jobs--august-2026-<date>.md
+```
+
+The auditor (codex, network on, repo read-only) runs three layers: verification of each
+material proposition against its record, discovery before, after, and around the page's
+frame with every citation the page's own sources make chased to its record, and an
+independent reconstruction it then tries to disprove. Contract, completion standard, and
+the four dispositions (admitted and fixed, fixed from the pins, typed on the page,
+declined with reason) are in `completeness-audit.md`. Write the disposition table at the
+top of the audit file, fix, rebuild, rerun the audit, and commit the file with the page.
+A story is not staged before this step has run and closed.
+
 ## 12. Cross-link, stage, ship
 
 - Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
