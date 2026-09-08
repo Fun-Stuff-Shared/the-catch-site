@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SeriesStories from './SeriesStories.astro';
+import EventRecordStories from './EventRecordStories.astro';
+const { title, description, path } = Astro.props;
+---
+<BaseLayout title={`${title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><span>{title}</span></div>
+  <main class="series-overview" id="main-content">
+    <header class="series-heading"><p>Ongoing coverage</p><h1>{title}</h1><p>{description}</p></header>
+    <EventRecordStories recordPath={path}>
+      <SeriesStories path={path}><slot name="visual" /></SeriesStories>
+      <details class="series-background"><summary>Key figures and sources</summary><slot /></details>
+    </EventRecordStories>
+  </main>
+</BaseLayout>

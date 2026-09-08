@@ -1,9 +1,14 @@
 ---
+import { readFileSync } from "node:fs";
+import { sourceContext } from "../../lib/evidence-context.mjs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { eventPath } from "../../lib/state.mjs";
 import { records, manifests } from "../../lib/record-manifests.mjs";
 export function getStaticPaths() { return records.map((record) => ({ params: { id: record.id }, props: { record } })); }
 const { record } = Astro.props;
+const savedText = record.pinned_path ? readFileSync(record.pinned_path, 'utf8') : null;
+const excerpt = (text) => sourceContext(savedText, text, record.pinned_path?.endsWith('.csv') ? 150 : 400);
+const passages = record.passages?.length ? record.passages : [{text: record.quote}];
 
 const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 function publisherPhrase(p) {
@@ -33,6 +38,7 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
 <BaseLayout title={`${record.title} | The Catch`} current="Records">
   <div slot="locator" class="locator"><span>RECORD</span><span>{record.publisher}</span></div>
   <div class="content"><main class="record-page">
+    <a class="return-reading" data-return-reading hidden>Return to the story</a>
     <p class="record-kicker">{record.record_kind === "corroboration"
       ? "Corroboration record · an independent report we checked"
       : "Record · the original document behind a story"}</p>
@@ -41,6 +47,17 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
       ? `Recorded from ${publisherPhrase(record.publisher)} during our corroboration check on ${plainDate(record.date)}.`
       : record.date ? `Published by ${publisherPhrase(record.publisher)} on ${plainDate(record.date)}.` : `Published by ${publisherPhrase(record.publisher)}. Publication date unavailable.`}</p>
     {record.about && <p class="record-about">{record.about}</p>}
+    <section class="excerpt">
+      <p class="excerpt-label">{record.excerpt_kind === 'document_opening' ? 'Opening of the saved document' : record.excerpt_kind === 'cited_passages' ? 'Passages cited in the stories above' : record.record_kind === "corroboration"
+        ? "A passage recorded during the corroboration check"
+        : savedText && excerpt(record.quote) ? "The cited passage, with surrounding source text" : "The recorded passage"}</p>
+      {passages.map(passage => { const context = excerpt(passage.text); return <div><blockquote data-passage={passage.text}>{context ? <>{context.trimmedBefore && '…\n'}{context.before}<mark>{context.match}</mark>{context.after}{context.trimmedAfter && '\n…'}</> : passage.text}</blockquote>{passage.event_id && <p><a href={eventPath(passage.event_id)}>Read the citing story</a></p>}</div>; })}
+      {record.pinned_path && <p><a href={`/records/pins/${record.id}/`} data-record-href={`/records/${record.id}/`}>Read this passage in context</a></p>}
+    </section>
+    <p class="original">
+      <a href={record.url} rel="noreferrer">Read the original</a>
+      {record.pinned_path && <> <span>&middot;</span> <a href={`/records/pins/${record.id}/`}>Open the copy we saved</a></>}
+    </p>
     {citingStories.length > 0 && (
       <section class="used">
         <h2>Where we use it</h2>
@@ -51,18 +68,10 @@ if (citingStories.length === 0 && record.subject !== "news" && record.story_titl
         </ul>
       </section>
     )}
-    <section class="excerpt">
-      <p class="excerpt-label">{record.excerpt_kind === 'document_opening' ? 'Opening of the saved document' : record.excerpt_kind === 'cited_passages' ? 'Passages cited in the stories above' : record.record_kind === "corroboration"
-        ? "A passage recorded during the corroboration check"
-        : "A passage we checked, word for word, against our saved copy"}</p>
-      {record.passages?.length ? record.passages.map((passage) => <div><blockquote>{passage.text}</blockquote><p><a href={eventPath(passage.event_id)}>Read the citing story</a></p></div>) : <blockquote>{record.quote}</blockquote>}
-      {record.pinned_path && <p><a href={`/records/pins/${record.id}/`} data-record-href={`/records/${record.id}/`}>Read this passage in context</a></p>}
-    </section>
-    <p class="original">
-      <a href={record.url} rel="noreferrer">Read the original</a>
-      {record.pinned_path && <> <span>&middot;</span> <a href={`/records/pins/${record.id}/`}>Open the copy we saved</a></>}
-    </p>
+    {record.text_sha256 && <details class="source-provenance"><summary>About this saved copy</summary><p>The fingerprint identifies the saved text used for this record. A different copy has a different fingerprint.</p><dl><dt>Text fingerprint (SHA-256)</dt><dd><code>{record.text_sha256.replace(/^sha256:/, '')}</code></dd>{record.pin_capture?.captured_at && <><dt>Captured</dt><dd>{record.pin_capture.captured_at}</dd></>}</dl></details>}
     {record.subEvents.length > 0 && <p class="record-note">Timeline entries this record anchors: {record.subEvents.map((subEvent) => subEvent.label).join("; ")}.</p>}
   </main></div>
 </BaseLayout>
 <style>.record-page{max-width:44rem;margin:0 auto;padding:2rem 1.25rem 4rem}.record-kicker,.excerpt-label{font:.72rem "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:#5b6470}h1{overflow-wrap:anywhere;font:700 clamp(1.8rem,4vw,2.6rem)/1.1 "Newsreader",Georgia,serif;margin:.5rem 0}.record-sub,.record-note,.original,.used{font:.9rem/1.55 "Public Sans",sans-serif;color:#454c55}.record-about{font:1.05rem/1.6 "Newsreader",Georgia,serif;color:#23282e;margin:1rem 0 1.5rem}.excerpt{background:#fbfaf8;border:1px solid #e3e0da;border-top:3px solid #2e7d5b;padding:1rem 1.25rem;margin:1.5rem 0}blockquote{margin:.4rem 0 0;font:1.15rem/1.55 "Newsreader",Georgia,serif}.used{border-top:1px solid #e3e0da;margin-top:1.5rem;padding-top:1rem}.used h2{font:700 1.3rem "Newsreader",Georgia,serif;margin:0 0 .4rem}.used ul{padding-left:1.2rem;margin:.3rem 0}</style>
+
+<script>import '../../scripts/source-return';</script>

@@ -1,4 +1,5 @@
 ---
+import PayrollChart from "../../../components/PayrollChart.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -7,23 +8,11 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
-import { event, payrollChanges, revisionHistory } from "../../../data/jobs202607.mjs";
+import { event, revisionHistory } from "../../../data/jobs202607.mjs";
 const state = readPublishedState().events.get("event-jobs-july-2026");
 if (!state) throw new Error("Missing publication selection: event-jobs-july-2026");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 
-const W = 720, H = 200, PAD_L = 48, PAD_R = 8, PAD_T = 10, PAD_B = 10;
-const vMax = 220, vMin = -170;
-const zeroY = H - PAD_B - ((0 - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
-const bw = (W - PAD_L - PAD_R) / payrollChanges.length;
-const bars = payrollChanges.map((d, i) => {
-  const bx = PAD_L + i * bw + 3;
-  const by = H - PAD_B - ((Math.max(d.change, 0) - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
-  const bh = Math.abs(d.change) / (vMax - vMin) * (H - PAD_T - PAD_B);
-  return { x: bx, y: by, w: bw - 6, h: Math.max(bh, 1.5), neg: d.change < 0 };
-});
-const yTicks = [-100, 0, 100, 200];
-const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_T - PAD_B);
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/jobs/">The job market</a><span>Jobs report &middot; July 2026</span></div>
@@ -113,25 +102,7 @@ const yPos = (v: number) => H - PAD_B - ((v - vMin) / (vMax - vMin)) * (H - PAD_
 
         <p data-layer="narrative">That is a near-stall by the standard of any recent expansion, and choppy rather than steadily weak, with swings from minus 156,000 to plus 214,000 in a single spring.</p>
 
-        <figure class="rate-chart" data-layer="fact">
-          <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Monthly change in payrolls, June 2025 to July 2026: five negative months in the past twelve, ending at minus 23,000">
-            {yTicks.map((v) => (
-              <g>
-                <line x1={PAD_L} y1={yPos(v)} x2={W - PAD_R} y2={yPos(v)} stroke="#e9ebee" stroke-width="1" />
-                <text x={PAD_L - 6} y={yPos(v) + 3.5} text-anchor="end" class="chart-axis">{v > 0 ? `+${v}` : v}k</text>
-              </g>
-            ))}
-            {bars.map((b) => (
-              <rect x={b.x} y={b.y} width={b.w} height={b.h} fill={b.neg ? "#c98a1b" : "#7a9cc4"} />
-            ))}
-            <text x={PAD_L} y={H + 16} class="chart-axis">Jun 2025</text>
-            <text x={PAD_L + 7 * bw} y={H + 16} class="chart-axis">Jan 2026</text>
-            <text x={W - PAD_R - 56} y={H + 16} class="chart-axis">Jul 2026</text>
-            <text x={W - PAD_R - 4} y={bars[bars.length - 1].y + bars[bars.length - 1].h + 14} text-anchor="end" class="chart-note chart-note-accent">-23,000</text>
-          </svg>
-          <figcaption>Monthly change in total nonfarm payrolls, thousands, seasonally adjusted. Amber bars are losses. Source: BLS via FRED (PAYEMS).</figcaption>
-          <span class="fig-provenance" data-layer="proof">Series as captured August 25, 2026.</span>
-        </figure>
+        <PayrollChart />
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
           <p>The unemployment rate dipped from 4.2 to 4.1 percent. The labor force shrank by 264,000 people while household employment fell by 87,000. The rate fell because the labor force contracted by three times more than employment did, not because more people found work.<Cite s="bls-empsit-2026-07" /></p></SourcedBlock>

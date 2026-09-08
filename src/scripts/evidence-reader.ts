@@ -1,3 +1,4 @@
+import { readingReturn } from '../lib/reading-return.mjs';
 import { sourceContext } from '../lib/evidence-context.mjs';
 type Source = { title: string; byline: string; quote: string; saved: string | null; href: string; text?: string; excerpt?: boolean };
 const panel = document.querySelector<HTMLDialogElement>('#evidence-reader')!;
@@ -20,7 +21,7 @@ async function fetchHTML(href: string) {
 function source(href: string): Promise<Source> {
   if (!cache.has(href)) cache.set(href, fetchHTML(href).then(doc => {
     const saved = doc.querySelector<HTMLAnchorElement>('a[href^="/records/pins/"]')?.getAttribute('href') ?? null;
-    return { href, title: doc.querySelector('h1')?.textContent ?? 'Source', byline: doc.querySelector('.record-sub')?.textContent ?? '', quote: doc.querySelector('blockquote')?.textContent?.trim() ?? '', saved };
+    return { href, title: doc.querySelector('h1')?.textContent ?? 'Source', byline: doc.querySelector('.record-sub')?.textContent ?? '', quote: doc.querySelector<HTMLElement>('blockquote')?.dataset.passage ?? doc.querySelector('blockquote')?.textContent?.trim() ?? '', saved };
   }).catch(error => { cache.delete(href); throw error; }));
   return cache.get(href)!;
 }
@@ -80,7 +81,9 @@ async function openSource(a: HTMLAnchorElement) {
   status.textContent = 'Loading the saved source.';
   const details = panel.querySelector<HTMLAnchorElement>('[data-source-page]')!;
   const saved = panel.querySelector<HTMLAnchorElement>('[data-saved-page]')!;
-  details.href = href; saved.hidden = true;
+  const sectionId = a.closest('section[id], figure[id]')?.id;
+  const returnTo = readingReturn(new URLSearchParams(location.search).get('from'), location.origin) ?? location.pathname + location.search + (sectionId ? `#${sectionId}` : location.hash);
+  details.href = `${href}?from=${encodeURIComponent(returnTo)}`; saved.hidden = true;
   if (!panel.open) {
     const top = a.getBoundingClientRect().top;
     if (!isMobile()) returnScroll = scrollY;
@@ -96,7 +99,7 @@ async function openSource(a: HTMLAnchorElement) {
     panel.querySelector('.evidence-byline')!.textContent = data.byline;
     current = { ...data, quote: a.dataset.passage ?? data.quote };
     if (data.saved) {
-      saved.href = data.saved; saved.hidden = false;
+      saved.href = `${data.saved}?from=${encodeURIComponent(returnTo)}`; saved.hidden = false;
       try {
         const doc = await fetchHTML(data.saved);
         if (id !== request) return;
@@ -109,14 +112,14 @@ async function openSource(a: HTMLAnchorElement) {
   } catch { if (id === request) { status.textContent = 'The source could not load. Close this panel and try the citation again, or open source details.'; panel.querySelector('#evidence-title')!.textContent = 'Source unavailable'; } }
 }
 function close() { dismissedAnchor = origin; request++; panel.close(); document.body.classList.remove('evidence-open'); panel.classList.remove('expanded'); panel.querySelector('[data-expand-evidence]')!.setAttribute('aria-pressed','false'); restoringFocus = true; origin?.focus({preventScroll:true}); restoringFocus = false; if(returnScroll !== null) { window.scrollTo(0, returnScroll); returnScroll = null; } }
-panel.querySelector('[data-close-evidence]')!.addEventListener('click', close);
+panel.querySelectorAll('[data-close-evidence]').forEach(button => button.addEventListener('click', close));
 panel.addEventListener('cancel', e => { e.preventDefault(); close(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') { dismissedAnchor = document.activeElement instanceof HTMLAnchorElement ? document.activeElement : origin; hidePreview(); if(panel.open) { e.preventDefault(); close(); } } });
 panel.addEventListener('click', e => { if (e.target === panel) { const r = panel.getBoundingClientRect(); if(e.clientX < r.left || e.clientY < r.top || e.clientX > r.right || e.clientY > r.bottom) close(); } });
 panel.querySelector('[data-expand-evidence]')!.addEventListener('click', () => { const expanded=panel.classList.toggle('expanded');panel.querySelector('[data-expand-evidence]')!.setAttribute('aria-pressed', String(expanded)); });
 panel.querySelector('[data-context-view]')!.addEventListener('click', () => render(false));
 panel.querySelector('[data-full-view]')!.addEventListener('click', () => render(true));
-const links = [...document.querySelectorAll<HTMLAnchorElement>('main a[data-record-href], main a[href^="/records/"]')].filter(a => a.dataset.recordHref || /^\/records\/[^/]+\/$/.test(a.getAttribute('href')!) && a.getAttribute('href') !== '/records/pins/');
+const links = [...document.querySelectorAll<HTMLAnchorElement>('main a[data-record-href], main a[href^="/records/"]')].filter(a => !a.hasAttribute('data-source-navigation') && (a.dataset.recordHref || /^\/records\/[^/]+\/$/.test(a.getAttribute('href')!) && a.getAttribute('href') !== '/records/pins/'));
 links.forEach(a => {
   a.setAttribute('aria-haspopup', 'dialog'); a.setAttribute('aria-controls', 'evidence-reader');
   a.addEventListener('click', e => { if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return; e.preventDefault(); openSource(a); });

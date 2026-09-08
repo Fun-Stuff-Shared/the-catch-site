@@ -1,3 +1,4 @@
+import { frontPage } from '../lib/front-page.mjs';
 import { catalogPage } from '../lib/catalog-page.mjs';
 const isSeries = !!document.querySelector('[data-catalog=series]');
 const isHome = !!document.querySelector('[data-home-catalog]');
@@ -7,7 +8,8 @@ const filters = [...document.querySelectorAll<HTMLButtonElement>('[data-topic-fi
 if (input && (isHome || isSeries)) {
   let topic = '', page = 1;
 
-  const catalog = items.map(element => ({ element, topic: element.dataset.topic ?? '', search: element.dataset.search ?? '' }));
+  const catalog = items.map(element => ({ element, topic: element.dataset.topic ?? '', search: element.dataset.search ?? '', date: element.dataset.date ?? '', series: element.dataset.series ?? '' }));
+  if(isHome) catalog.sort((a,b) => b.date.localeCompare(a.date) || items.indexOf(a.element)-items.indexOf(b.element));
   const pageSize = 12;
   const params = new URLSearchParams(location.search);
   input.value = params.get('q') ?? '';
@@ -26,10 +28,16 @@ if (input && (isHome || isSeries)) {
       const front = document.querySelector<HTMLElement>('.front-stories')!;
       const isFrontPage = !topic && !terms.length && page === 1;
       front.hidden = !isFrontPage || !count;
-      result.items.forEach(({element}, i) => (isFrontPage && i < 3 ? featured : archive).append(element));
+      const selected = isFrontPage ? frontPage(result.items).featured : [];
+      result.items.forEach(item => {
+        const inFront = selected.includes(item);
+        item.element.classList.toggle('story-link-lead', selected[0] === item);
+        item.element.querySelectorAll<HTMLElement>('[data-related-stories], [data-story-visual]').forEach(el => el.hidden = !inFront);
+        (inFront ? featured : archive).append(item.element);
+      });
       document.querySelector('#archive-heading')!.textContent = isFrontPage ? 'More reporting' : topic || (terms.length ? 'Search results' : 'More reporting');
-      document.querySelector('[data-result-count]')!.textContent = `${count} ${count === 1 ? 'story' : 'stories'}`;
-      document.querySelector<HTMLElement>('.reporting-archive')!.hidden = isFrontPage && count <= 3;
+      document.querySelector('[data-result-count]')!.textContent = `${isFrontPage ? count - selected.length : count} ${count - (isFrontPage ? selected.length : 0) === 1 ? 'story' : 'stories'}`;
+      document.querySelector<HTMLElement>('.reporting-archive')!.hidden = isFrontPage && count === selected.length;
     }
     filters.forEach(f => f.setAttribute('aria-pressed', String(f.dataset.topicFilter === topic)));
     document.querySelector<HTMLElement>('.search-empty')!.hidden = count !== 0;
