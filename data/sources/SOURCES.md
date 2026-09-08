@@ -942,3 +942,11 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/texas-senate/tribune-paxton-plan-2026-07-31.txt | 34048 | cab555b5c33ee73c |
 | data/sources/texas-senate/txpp-senate-poll-tracker-2026-09-08.html | 29340 | 7736bfeadabc12d2 |
 | data/sources/texas-senate/txpp-senate-poll-tracker-2026-09-08.txt | 10723 | efa2a15165cc9d96 |
+| data/sources/mail-voting/usps-sorn-820-225.pdf | 215177 | 4564fc9404172eca |
+| data/sources/mail-voting/usps-sorn-820-225.txt | 47396 | 0eadcb902ff485b6 |
+| data/sources/mail-voting/usps-sorn-response-2026-09-01.pdf | 194685 | 361530c130f3fc4c |
+| data/sources/mail-voting/usps-sorn-response-2026-09-01.txt | 48129 | 1702f76473fe87a7 |
+| data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.html | 97167 | 08aef5997fae60cb |
+| data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.txt | 20114 | 744fd45d39e8ff48 |
+| data/sources/mail-voting/usps-portal-statement-2026-09-01.html | 35974 | c221ee10f59771f3 |
+| data/sources/mail-voting/usps-portal-statement-2026-09-01.txt | 5457 | 9a9a885a7c8b1063 |

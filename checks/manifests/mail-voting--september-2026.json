@@ -35,7 +35,9 @@
       "label": "USPS final rule published",
       "section_anchor": "what-happened",
       "records": [
-        "usps-final-rule"
+        "usps-final-rule",
+        "usps-sorn-820-225",
+        "usps-sorn-response-2026-09-01"
       ]
     },
     {
@@ -63,7 +65,9 @@
         "abc-pi-2026-09-04",
         "ap-pi-2026-09-04",
         "nbc-pi-2026-09-04",
-        "brown-2026-09-04"
+        "brown-2026-09-04",
+        "blumenthal-whistleblower-2026-09-01",
+        "usps-portal-statement-2026-09-01"
       ]
     },
     {
@@ -465,6 +469,58 @@
       "about": "September 8 amicus brief on 26A305 arguing the rule usurps Congress.",
       "text_sha256": "sha256:f9edb7da90ce7ff55e3e4bafac17c39b9b5e54616bcd523bde43b0af47d58a5e",
       "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "usps-sorn-820-225",
+      "title": "Privacy Act system of records notice, USPS 820.225 Federal Ballot Mail",
+      "publisher": "United States Postal Service",
+      "date": "2026-07-17",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-17/pdf/2026-14508.pdf",
+      "pinned_path": "data/sources/mail-voting/usps-sorn-820-225.pdf",
+      "text_path": "data/sources/mail-voting/usps-sorn-820-225.txt",
+      "quote": "Records are retained for 5 years.",
+      "about": "July 17 Federal Register notice creating Privacy Act system USPS 820.225 for federal ballot-mail records.",
+      "text_sha256": "sha256:0eadcb902ff485b6a8966189df8039906524e0d9775e565d2af77971044bd458",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "usps-sorn-response-2026-09-01",
+      "title": "Privacy Act response to comments on USPS 820.225",
+      "publisher": "United States Postal Service",
+      "date": "2026-09-01",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17986.pdf",
+      "pinned_path": "data/sources/mail-voting/usps-sorn-response-2026-09-01.pdf",
+      "text_path": "data/sources/mail-voting/usps-sorn-response-2026-09-01.txt",
+      "quote": "effective with this publication of the",
+      "about": "September 1 Federal Register response making system USPS 820.225 effective with that publication.",
+      "text_sha256": "sha256:1702f76473fe87a7a78022d870b30516800cf428ac20cf4d0aec7028df6a6f79",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "blumenthal-whistleblower-2026-09-01",
+      "title": "Blumenthal release on a USPS whistleblower disclosure about the ballot-mail portal",
+      "publisher": "Office of Senator Richard Blumenthal",
+      "date": "2026-09-01",
+      "url": "https://www.blumenthal.senate.gov/newsroom/press/release/following-new-whistleblower-disclosure-blumenthal-demands-usps-provide-documents-answers-about-shit-show-process-to-screen-ballots-and-potentially-catastrophic-impact-on-mail-in-voting",
+      "pinned_path": "data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.html",
+      "text_path": "data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.txt",
+      "quote": "zero-percent failure threshold",
+      "about": "September 1 Senate release and letter stating whistleblower allegations about the portal. Those remain allegations.",
+      "text_sha256": "sha256:744fd45d39e8ff48fcda3a64db5dbbe754270f11f5daa945d4dfff3d173da10c",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "title": "USPS statement on development of the U.S. Federal Ballot Mail Portal",
+      "publisher": "United States Postal Service",
+      "date": "2026-09-01",
+      "url": "https://about.usps.com/newsroom/statements/090126-statement-on-development-of-us-federal-ballot-mail-portal.htm",
+      "pinned_path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.html",
+      "text_path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.txt",
+      "quote": "spent months developing a U.S. Federal Ballot Mail Portal",
+      "about": "September 1 Postal Service statement on portal development, voluntary familiarization, and no pre-acceptance verification under the temporary order.",
+      "text_sha256": "sha256:9a9a885a7c8b10632c66c6a18ec43ae01827a91c566ea55ab66c4c475009ddac",
+      "quote_span_check": "byte_exact"
     }
   ],
   "story_sources": [
@@ -550,7 +606,7 @@
       "group": "primary",
       "label": "Postal Service final rule, Ballot Mail for Federal Elections",
       "meta": " \u00b7 91 Fed. Reg. 54,966, August 26, 2026",
-      "usage": "the August 26 rule, including the will-not-be-accepted line"
+      "usage": "the rule issued and effective August 21 and published August 26, including the outbound nonacceptance line, the UOCAVA exclusion, and the return-mail carve-out"
     },
     {
       "id": "usc-2-7",
@@ -670,6 +726,34 @@
       "label": "Amicus brief of bipartisan current and former members of Congress",
       "meta": " \u00b7 filed September 8, 2026",
       "usage": "the Elections Clause argument in the Congress amicus brief"
+    },
+    {
+      "id": "usps-sorn-820-225",
+      "group": "primary",
+      "label": "Privacy Act system of records notice, USPS 820.225 Federal Ballot Mail",
+      "meta": " \u00b7 July 17, 2026",
+      "usage": "the federal Privacy Act system for names, addresses, states, and barcodes, five-year retention, and the stated law-enforcement purpose"
+    },
+    {
+      "id": "usps-sorn-response-2026-09-01",
+      "group": "primary",
+      "label": "Privacy Act response to comments on USPS 820.225",
+      "meta": " \u00b7 September 1, 2026",
+      "usage": "the September 1 notice that the system is effective with that publication"
+    },
+    {
+      "id": "blumenthal-whistleblower-2026-09-01",
+      "group": "primary",
+      "label": "Blumenthal release on a USPS whistleblower disclosure about the ballot-mail portal",
+      "meta": " \u00b7 September 1, 2026",
+      "usage": "whistleblower allegations about the portal, labeled as allegations, and the September 8 document request"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "group": "primary",
+      "label": "USPS statement on development of the U.S. Federal Ballot Mail Portal",
+      "meta": " \u00b7 September 1, 2026",
+      "usage": "the Postal Service response: months of development, consistent with court orders, finalizing for voluntary familiarization, no pre-acceptance verification"
     }
   ],
   "primary_sources": [
@@ -763,6 +847,34 @@
       "bytes": 148464,
       "sha256": "sha256:8a666f24e3b7ad62ebd2c61ea4a4b157402b26db9414f9f4f2825d27eae90f08",
       "url": "https://www.supremecourt.gov/DocketPDF/26/26A305/423270/20260908102857397_26A305%20bsac%20Bipartisan%20Current%20and%20Former%20Members%20of%20Congress.pdf"
+    },
+    {
+      "id": "usps-sorn-820-225",
+      "path": "data/sources/mail-voting/usps-sorn-820-225.pdf",
+      "bytes": 215177,
+      "sha256": "sha256:4564fc9404172eca117ef20a8006dba58ec2b92f7516781403b67cac721544d7",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-17/pdf/2026-14508.pdf"
+    },
+    {
+      "id": "usps-sorn-response-2026-09-01",
+      "path": "data/sources/mail-voting/usps-sorn-response-2026-09-01.pdf",
+      "bytes": 194685,
+      "sha256": "sha256:361530c130f3fc4ca438adc45a33aa3940a516548c2642d7075fccdaa939cc5f",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17986.pdf"
+    },
+    {
+      "id": "blumenthal-whistleblower-2026-09-01",
+      "path": "data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.html",
+      "bytes": 97167,
+      "sha256": "sha256:08aef5997fae60cbbe1e75b9b6eef87c1b600db357acdcec67585765e2189fdd",
+      "url": "https://www.blumenthal.senate.gov/newsroom/press/release/following-new-whistleblower-disclosure-blumenthal-demands-usps-provide-documents-answers-about-shit-show-process-to-screen-ballots-and-potentially-catastrophic-impact-on-mail-in-voting"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.html",
+      "bytes": 35974,
+      "sha256": "sha256:c221ee10f59771f302f623a29c36f7fe0e77ce5229e8922ca29e7ae9b91f9c87",
+      "url": "https://about.usps.com/newsroom/statements/090126-statement-on-development-of-us-federal-ballot-mail-portal.htm"
     }
   ],
   "figures": [
@@ -953,6 +1065,27 @@
         "source_id": "scotus-26a297-application",
         "quote_span": "group of 23 States and the District of Columbia for elections before and on November 3, 2026"
       }
+    },
+    {
+      "figure": "days_effective_to_election",
+      "value": "74",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "usps-final-rule",
+          "value": "2026-08-21",
+          "unit": "date",
+          "quote_span": "Effective August 21, 2026"
+        }
+      ]
     }
   ],
   "needs_ledger": [
@@ -988,7 +1121,7 @@
     },
     {
       "need": "First Circuit stay order",
-      "plain": "The application lists stay motions filed September 5 in Nos. 26-2031 and 26-2029. The Circuit's order is not in our records.",
+      "plain": "The application lists stay motions filed September 5 in Nos. 26-2031 and 26-2029. The official First Circuit dockets and any order are not in our records.",
       "record_id": "scotus-26a305-application",
       "status": "missing: no First Circuit order captured"
     },
@@ -1003,6 +1136,30 @@
       "plain": "The Post URL served a short stub. The AP, Hill, and NBC Sunday writes are saved.",
       "record_id": "ap-2026-09-06",
       "status": "missing: Washington Post served a subscription stub"
+    },
+    {
+      "need": "USPS Privacy Act system USPS 820.225",
+      "plain": "The July 17 system-of-records notice and the September 1 response to comments are saved.",
+      "record_id": "usps-sorn-820-225",
+      "status": "have"
+    },
+    {
+      "need": "Whistleblower disclosure and USPS portal statement",
+      "plain": "Blumenthal's September 1 release and the Postal Service's September 1 statement are saved. The underlying disclosure letter as a standalone filing is excerpted in that release.",
+      "record_id": "blumenthal-whistleblower-2026-09-01",
+      "status": "have"
+    },
+    {
+      "need": "September 9 response and stay order on 26A305",
+      "plain": "The docket we hold shows the September 9 response deadline. No response or stay order is in our records.",
+      "record_id": "scotus-26a305-docket",
+      "status": "missing: no September 9 response or stay order captured"
+    },
+    {
+      "need": "USPS production due September 8",
+      "plain": "Blumenthal asked for portal records by September 8. We do not hold a production.",
+      "record_id": "blumenthal-whistleblower-2026-09-01",
+      "status": "missing: no USPS production captured"
     }
   ],
   "coverage_records": [
@@ -1091,19 +1248,19 @@
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "EO 14399, the USPS final rule PDF, Talwani's September 4 injunction, applications 26A124, 26A297, and 26A305 with dockets and the withdrawal letter, 2 U.S.C. 7, 52 U.S.C. 20302, and Sunday and Thursday coverage saved under data/sources/mail-voting/."
+      "evidence": "EO 14399, the USPS final rule PDF, the USPS 820.225 system-of-records notice and September 1 response, Talwani's September 4 injunction, applications 26A124, 26A297, and 26A305 with dockets and the withdrawal letter, 2 U.S.C. 7, 52 U.S.C. 20302, Blumenthal's September 1 whistleblower release, the USPS September 1 portal statement, and Sunday and Thursday coverage saved under data/sources/mail-voting/."
     },
     "derived_numbers_computed": {
       "done": true,
-      "evidence": "src/data/mailvoting202609.mjs counts 58, 60, 61, 69, 217, 13, and 45 days from the pinned dates, and 23 plaintiff states plus 12 intervenors from the Sunday application parties list."
+      "evidence": "src/data/mailvoting202609.mjs counts 58, 60, 61, 69, 74, 217, 13, and 45 days from the pinned dates, including 74 from the August 21 effective date at rule line 73, and 23 plaintiff states plus 12 intervenors from the Sunday application parties list."
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "AP/PBS/CNBC/CBS 'enforcing the executive order' is wrong against the injunction of the rule. Hill citizenship-data and indefinitely-halted are wrong against the portal fields and the November 3 limit. NBC federal-database is wrong against state-uploaded enrollment. NPR and Thursday Hill check out."
+      "evidence": "AP/PBS/CNBC/CBS 'enforcing the executive order' is wrong against the injunction of the rule. Hill citizenship-data is wrong against the portal fields. NBC federal-database checks out against the Privacy Act system notice. NPR and Thursday Hill check out."
     },
     "section_grammar": {
       "done": true,
-      "evidence": "what-happened, the-catch, where-this-sits, who-feels-it, outlets, claim-check, what-happened-next, unknowns, records, in that order; markets dropped because no dated pricing record was admitted."
+      "evidence": "what-happened (including why the judge blocked it), the-catch, where-this-sits, who-feels-it, outlets, claim-check, what-happened-next, unknowns, records, in that order; markets dropped because no dated pricing record was admitted."
     },
     "chip_vocabulary": {
       "done": true,
