@@ -8,11 +8,12 @@ import { event as governmentFunding } from '../data/governmentfunding202609.mjs'
 import { event as venezuelaOil } from '../data/venezuelaoil202609.mjs';
 import { event as texasSenate } from '../data/texassenate202609.mjs';
 import { event as greenland } from '../data/greenland202609.mjs';
+import { event as mailVoting } from '../data/mailvoting202609.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -22,6 +23,7 @@ export const series = [
   { path: '/events/venezuela-oil/', title: 'Venezuela oil', topic: 'Energy', keywords: 'Venezuela oil NABEP sanctions Chevron White House', description: 'The August 31, 2026, White House fact sheet named North American Blue Energy Partners, a 35 percent U.S. equity stake, and 100-year rights to 17 Venezuelan fields.' },
   { path: '/events/texas-senate/', title: 'The Texas Senate race', topic: 'Elections', keywords: 'Texas Senate Paxton Talarico MAGA Inc independent expenditure FEC', description: 'MAGA Inc. filed $10 million in independent expenditures for connected TV and digital ads in the Texas U.S. Senate race. The November 3 general election is between Ken Paxton and James Talarico.' },
   { path: '/events/greenland/', title: 'Greenland', topic: 'Europe', keywords: 'Greenland EU von der Leyen Nuuk Global Gateway Denmark Nielsen Frederiksen', description: 'On September 7, 2026, the European Commission named a €200 million Global Gateway package for Greenland and signed a joint declaration with Greenland and Denmark. The declaration says it creates no legal or financial obligations.' },
+  { path: '/events/mail-voting/', title: 'Mail voting', topic: 'Elections', keywords: 'mail voting Postal Service Supreme Court Talwani executive order 14399 ballot', description: 'On September 6, 2026, the solicitor general asked the Supreme Court to pause a federal judge\'s injunction of Postal Service mail-ballot rules. The injunction covers elections on or before November 3.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();

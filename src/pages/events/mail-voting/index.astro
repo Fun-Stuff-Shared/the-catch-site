@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/mail-voting.mjs';
+---
+<SeriesOverview title={subject.title} description="The Trump administration asked the Supreme Court on September 6 to pause a federal judge's block on Postal Service rules for mail ballots. The block covers elections on or before November 3." path="/events/mail-voting/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>
