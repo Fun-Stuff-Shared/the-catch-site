@@ -255,9 +255,8 @@ view committed without its chain view builds locally and fails on the host with
 you can see from git. Check before pushing:
 
 ```bash
-node -e "import('./src/lib/state.mjs').then(m=>{const s=m.readState(process.argv[1]);console.log(s.events.size,'events',s.chains.size,'chains')})" \
-  <(true) 2>/dev/null; git archive HEAD data/state | tar -x -C /tmp/committed-state && \
-  node -e "import('./src/lib/state.mjs').then(m=>m.readState('/tmp/committed-state/data/state')).then(()=>console.log('committed state ok'))"
+rm -rf /tmp/committed-state && mkdir -p /tmp/committed-state && git archive HEAD data/state | tar -x -C /tmp/committed-state
+node -e "import('./src/lib/state.mjs').then(m=>{const s=m.readState('/tmp/committed-state/data/state');console.log('committed state ok:',s.events.size,'stories',s.chains.size,'chains')})"
 ```
 
 
