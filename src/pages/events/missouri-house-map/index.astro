@@ -3,6 +3,6 @@ import SeriesOverview from '../../../components/SeriesOverview.astro';
 import SeriesFigures from '../../../components/SeriesFigures.astro';
 import { subject } from '../../../data/subjects/missouri-house-map.mjs';
 ---
-<SeriesOverview title={subject.title} description="Missouri's Supreme Court ruled that the 2025 U.S. House map never became law and ordered a November vote on it." path="/events/missouri-house-map/">
+<SeriesOverview title={subject.title} description="Missouri's Supreme Court ruled that the 2025 U.S. House map never became law. The November 3 House election uses the 2022 districts whether or not voters approve it." path="/events/missouri-house-map/">
   <SeriesFigures slot="visual" items={subject.current} />
 </SeriesOverview>

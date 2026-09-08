@@ -256,7 +256,7 @@ New official pages were fetched September 8. The KMIA weather observations age o
 
 ## Missouri House map, September 2026 (saved 2026-09-08)
 
-Primary records: the Missouri Supreme Court’s own summary PDF of SC101805 (saved from the court site), the opinion text recovered from the appendix the attorney general filed with the U.S. Supreme Court because the court site does not let its pages be saved from this machine, the mandate and stay denial extracted from that appendix, the Missouri Constitution, the attorney general’s statement and stay application, the U.S. Supreme Court docket, and the challenger’s opposition. Coverage articles were copied from the September 5 capture run as served.
+Primary records: the Missouri Supreme Court’s own summary PDF of SC101805 (saved from the court site), the opinion text recovered from the appendix the attorney general filed with the U.S. Supreme Court because the court site does not let its pages be saved from this machine (the court-origin file is https://www.courts.mo.gov/file/SC/Opinion_SC101805.pdf), the mandate and stay denial extracted from that appendix, the two appendix volumes the state filed with the U.S. Supreme Court, the Missouri Constitution, House Bill 1 as enrolled, the House and Senate journals, Maggard v. State and the two companion September 3 rulings (public copies hosted by Justia), the attorney general’s statement and stay application, Secretary Hoskins’s September 3 statement, the U.S. Supreme Court docket, and the challenger’s opposition. Coverage articles were copied from the September 5 capture run as served. Additional pins saved 2026-09-08.
 
 | File | Bytes | sha256 (first 16) |
 |---|---|---|
@@ -297,3 +297,41 @@ Primary records: the Missouri Supreme Court’s own summary PDF of SC101805 (sav
 | data/sources/coverage/usatoday-scotus-missouri-house-map.txt | 3114 | ba9a25b6abba4b34 |
 | data/sources/missouri-house-map/scotus-26A304-reply.pdf | 337084 | e7f2da68dc809a03 |
 | data/sources/missouri-house-map/scotus-26A304-reply.txt | 69924 | 978b5d261d36dd7a |
+| data/sources/missouri-house-map/sos-petitions.html | 23507 | 16a1142706244c5d |
+| data/sources/missouri-house-map/sos-petitions.txt | 3136 | 0545c456b9749efd |
+| data/sources/missouri-house-map/scotus-26A304-appendix-vol1.pdf | 9482417 | f527f286ff22ff8c |
+| data/sources/missouri-house-map/scotus-26A304-appendix-vol1.txt | 497602 | f3528df898afd84f |
+| data/sources/missouri-house-map/scotus-26A304-appendix-vol2.pdf | 12455973 | e6f8101c193c60a2 |
+| data/sources/missouri-house-map/scotus-26A304-appendix-vol2.txt | 391219 | 64e6a95eb2f0915d |
+| data/sources/missouri-house-map/maggard-sc101581-justia.html | 97213 | cdee9ed5caba4b4e |
+| data/sources/missouri-house-map/maggard-sc101581-justia.txt | 38823 | fb059ae0df190d63 |
+| data/sources/missouri-house-map/hb1-enrolled.pdf | 195397 | c9a293bc153ec9fb |
+| data/sources/missouri-house-map/hb1-enrolled.txt | 127396 | 6b82b0d63ae3080b |
+| data/sources/missouri-house-map/house-journal-2025-09-12.pdf | 123780 | f9dfdba9c7651a1f |
+| data/sources/missouri-house-map/house-journal-2025-09-12.txt | 17600 | c29d5d2092c9bf36 |
+| data/sources/missouri-house-map/senate-journal-2025-09-12.pdf | 271179 | 6a2af337c297e722 |
+| data/sources/missouri-house-map/senate-journal-2025-09-12.txt | 25043 | 888cc0d07119a19d |
+| data/sources/missouri-house-map/usc-52-20302.html | 186558 | 7e9be50252a490e6 |
+| data/sources/missouri-house-map/usc-52-20302.txt | 24387 | 73b2a46c28a9ae70 |
+| data/sources/missouri-house-map/governor-kehoe-hb1-signing.html | 33692 | d24c97fcb423f6a2 |
+| data/sources/missouri-house-map/governor-kehoe-hb1-signing.txt | 3333 | c50e3edde59e8462 |
+| data/sources/missouri-house-map/sos-hoskins-2026-09-03.html | 23094 | 8cb81e7886455519 |
+| data/sources/missouri-house-map/sos-hoskins-2026-09-03.txt | 3110 | 7fe5ce85d7a4b554 |
+| data/sources/missouri-house-map/sc101806-justia.html | 84588 | e8d3ae01a0ed554e |
+| data/sources/missouri-house-map/sc101806-justia.txt | 26041 | 561425e32952ed29 |
+| data/sources/missouri-house-map/sc101801-justia.html | 68428 | ea44d771a2cd4ade |
+| data/sources/missouri-house-map/sc101801-justia.txt | 11158 | 8e86731386ca77b1 |
+| data/sources/missouri-house-map/ncsl-mid-decade-redistricting.html | 116890 | 697fb2307646d55d |
+| data/sources/missouri-house-map/ncsl-mid-decade-redistricting.txt | 22324 | 693d510d9c2a5aa6 |
+| data/sources/missouri-house-map/abbott-lulac-25a608.pdf | 127615 | 980b35bc80a5e7fd |
+| data/sources/missouri-house-map/abbott-lulac-25a608.txt | 41607 | 80486130972181f8 |
+| data/sources/missouri-house-map/rsmo-115-367.html | 31845 | b02c7c2f19ffaceb |
+| data/sources/missouri-house-map/rsmo-115-367.txt | 3213 | ba9910f2b0f65a40 |
+| data/sources/missouri-house-map/rsmo-115-363.html | 35012 | 0c45b23e44d5a0ed |
+| data/sources/missouri-house-map/rsmo-115-363.txt | 5561 | 100e24435d257bcb |
+| data/sources/missouri-house-map/rsmo-115-125.html | 34442 | 100e59bba54b7817 |
+| data/sources/missouri-house-map/rsmo-115-125.txt | 4437 | 2a66139d296ba469 |
+| data/sources/missouri-house-map/house-party-breakdown.html | 51922 | 301a0522bcb464f6 |
+| data/sources/missouri-house-map/house-party-breakdown.txt | 2533 | 93a64e3951e10e4d |
+| data/sources/missouri-house-map/sos-2026-general-certified-candidates.pdf | 813890 | 614e004d0f051d1d |
+| data/sources/missouri-house-map/sos-2026-general-certified-candidates.txt | 20841 | 0a1c0e3bcc825d0b |

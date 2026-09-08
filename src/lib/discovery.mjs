@@ -13,7 +13,7 @@ export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
   { path: '/events/miami-cargo-crash/', title: 'The Miami cargo crash', topic: 'Aviation', keywords: 'Miami airport cargo plane 21 Air Amazon runway overrun', description: 'The September 6, 2026, runway overrun at Miami International Airport, the official record, and what coverage got right.' },
-  { path: '/events/missouri-house-map/', title: 'The Missouri House map', topic: 'Elections', keywords: 'Missouri redistricting House map referendum Supreme Court', description: 'Missouri’s Supreme Court ruled that the 2025 U.S. House map never became law and ordered a November vote on it.' },
+  { path: '/events/missouri-house-map/', title: 'The Missouri House map', topic: 'Elections', keywords: 'Missouri redistricting House map referendum Supreme Court', description: "Missouri's Supreme Court ruled that the 2025 U.S. House map never became law. The November 3 House election uses the 2022 districts whether or not voters approve it." },
 ];
 export function storyCatalog() {
   const state = readPublishedState();
