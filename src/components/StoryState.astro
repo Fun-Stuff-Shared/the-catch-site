@@ -22,15 +22,26 @@ const sourcePath = (source) => {
         {slots.length ? slots.map(([id, slot]) => {
           const source = evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id);
           const href = source ? sourcePath(source) : null;
+          const computed = slot.figure?.kind === "computed";
           const label = slot.slot === 'nonfarm_payroll_revision_may_june' ? 'Payroll revisions for May and June' : slotLabel(slot.slot);
           return <article class="ledger-row" data-state-slot={id}>
             <h3>{label}</h3>
             {slot.figure && <strong class="ledger-value" data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong>}
+            {computed && <div class="ledger-calculation" data-computed>
+              <p>Computed: {slot.figure.inputs.map(input => input.unit === 'date' ? formatDate(input.value) : input.value).join(slot.figure.formula === 'date_difference_days' ? ' minus ' : ' + ')} = {figureText(slot.figure.value, slot.figure.unit)}.</p>
+              {slot.figure.inputs.map(input => {
+                const record = evidence.get(input.evidence_id);
+                return <details class="ledger-source-passage"><summary>{input.unit === 'date' ? formatDate(input.value) : figureText(input.value, input.unit)} · {record?.publisher}</summary>
+                  <blockquote data-source-copy>{input.quote_span}</blockquote>
+                  {record && <a href={sourcePath(record)}>Read the source</a>}
+                </details>;
+              })}
+            </div>}
             {!slot.figure && !slot.quote_span && <p>{slot.withdrawn ? "The recorded value was withdrawn." : slot.disputed ? "This record does not yet establish one current value." : "A current value has not been established."}</p>}
             {!slot.figure && slot.quote_span && <p class="ledger-excerpt" data-source-copy>{slot.quote_span}</p>}
-            {href && <a class="ledger-source" href={href} data-passage={slot.quote_span || undefined} aria-label={`Read the source for ${label}`}>{source.publisher} <span aria-hidden="true">↗</span></a>}
+            {!computed && href && <a class="ledger-source" href={href} data-passage={slot.quote_span || undefined} aria-label={`Read the source for ${label}`}>{source.publisher} <span aria-hidden="true">↗</span></a>}
             {!href && source?.publisher && <p class="ledger-source">{source.publisher} · No document link in this record.</p>}
-            {slot.figure && (!href || !href.startsWith('/records/')) && slot.quote_span && <details class="ledger-source-passage"><summary>Recorded passage</summary><blockquote data-source-copy>{slot.quote_span}</blockquote></details>}
+            {slot.figure && !computed && slot.quote_span && <details class="ledger-source-passage"><summary>Recorded passage</summary><blockquote data-source-copy>{slot.quote_span}</blockquote></details>}
           </article>;
         }) : <p>The figures on this page come from the saved records cited beside them. The state record has not yet read this story's sources, so it tracks no values for it; when it does, they appear here with their source passages.</p>}
       </details>

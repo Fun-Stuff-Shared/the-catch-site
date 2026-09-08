@@ -143,7 +143,7 @@ test('pinned evidence identifiers remain stable document record identifiers', (t
 import { checkTimeline } from './check-state-pages.mjs';
 test('confirmation quotes and sources cannot disappear from the rendered evidence', () => {
   const timeline = {confirmations:[{sentence:'Confirmed.', reports:[{url:'https://example.com/report'}], quotes:[{text:'The recorded quote.', reports:[{url:'https://example.com/quote'}]}]}], changes:[]};
-  const html='<section class="revision-timeline"><li data-revision-confirmation>Confirmed. <a href="https://example.com/report">Report</a><li data-revision-quote>The recorded quote. <a href="https://example.com/quote">Quote</a></li></li><p data-revision-no-changes>No changes are recorded in this view. A check date has not been recorded.</p></section>';
+  const html='<section class="revision-timeline"><li data-revision-confirmation>Confirmed. <a href="https://example.com/report">Report</a><li data-revision-quote>The recorded quote. <a href="https://example.com/quote">Quote</a></li></li><p data-revision-no-changes>No changes are recorded in this view. The first check of this story\'s sources has not run yet.</p></section>';
   const valid = html.replace('<li data-revision-quote>', '<ul><li data-revision-quote>').replace('</li></li>', '</li></ul></li>');
   checkTimeline(valid,timeline);
   assert.throws(()=>checkTimeline(valid.replace('data-revision-quote','missing-quote'),timeline),/quote count/);
@@ -251,4 +251,20 @@ test('selected retired roots retain only stub navigation and never comparisons o
   assert.equal(selected.events.get(child.id).follows,null);
   assert.deepEqual(selected.events.get(child.id).changed_since_previous,[]);
   assert.throws(()=>selectPublishedState(readState(root), [event.id]), /retired event/);
+});
+
+test('computed figures require each input source in the reader view', (t) => {
+  const { root, view, sync } = fixture(t);
+  view.evidence = [{id: 'a'}, {id: 'b'}];
+  const figure = {kind: 'computed', value: '3', unit: 'items', formula: 'sum', inputs: [
+    {evidence_id: 'a', value: '1', quote_span: 'One item'},
+    {evidence_id: 'b', value: '2', quote_span: 'Two items'},
+  ]};
+  view.occurrences = [{id: 'sum', evidence_id: 'a', figure}];
+  view.current_state = {slot: {slot: 'sum', figure, occurrence_id: 'sum'}};
+  sync();
+  assert.equal(readState(root).events.get('event-a').current_state.slot.figure.kind, 'computed');
+  view.evidence.pop();
+  sync();
+  assert.throws(() => readState(root), /provenance is incomplete/);
 });

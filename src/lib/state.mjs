@@ -10,6 +10,13 @@ export function verifyFigure(view, occurrenceId, value, unit) {
   if (!occurrence?.figure || !source || String(occurrence.figure.value) !== String(value) || String(occurrence.figure.unit ?? "") !== String(unit ?? "")) {
     throw new Error(`Figure has no matching accepted occurrence: ${view.event.id}/${occurrenceId}`);
   }
+  const figure = occurrence.figure;
+  if (figure.kind) {
+    const sources = figure.kind === 'sourced' ? [figure.source] : figure.kind === 'computed' ? figure.inputs : [];
+    if (!sources?.length || sources.some(input => !input?.quote_span || !(view.evidence ?? []).some(row => row.id === input.evidence_id && readable(row)))) {
+      throw new Error(`Figure provenance is incomplete: ${occurrenceId}`);
+    }
+  }
   return occurrence;
 }
 
