@@ -611,7 +611,6 @@ Texas Senate MAGA Inc. independent expenditures (captured 2026-09-08). FEC Form 
 | data/sources/texas-senate/coverage/usatoday-maga-inc-2026-09-05.html | 226381 | fea65354c96368f5 |
 | data/sources/texas-senate/coverage/usatoday-maga-inc-2026-09-05.txt | 4714 | 3d007ca3fd0d7004 |
 | data/sources/texas-senate/talarico-x-2026-09-05.txt | 496 | 2c29985ec92a917e |
-| data/sources/texas-senate/talarico-x-2026-09-05.txt | 496 | 2c29985ec92a917e |
 
 Texas Senate rework additions (captured 2026-09-08). March 11 Form 24 HTML and CSV copied from the verify set. Independent-expenditure bulk file saved September 8. Tribune July 20 tracker and FEC quarterly-filer dates copied from the verify set. SOS Candidate Bio Portal captured in a browser for the 2026 November general and U.S. Senate office; the JSON is the portal API response for that query.
 | data/sources/texas-senate/fec-form24-1952643-se.html | 3783 | 3dd59d52162d8554 |
