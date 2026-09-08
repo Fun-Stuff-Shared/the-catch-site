@@ -843,6 +843,12 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/texas-senate/hoover-public-option-2020-10-20.html | 189396 | b38512d4f4340102 |
 | data/sources/texas-senate/hoover-public-option-2020-10-20.meta.txt | 110 | 023971cf00cc0976 |
 | data/sources/texas-senate/hoover-public-option-2020-10-20.txt | 7394 | fc15712c83af3723 |
+| data/sources/texas-senate/hoover-public-option-taxes-2020-10-20.pdf | 113431 | 93cb1eb9d3a07143 |
+| data/sources/texas-senate/hoover-public-option-taxes-2020-10-20.txt | 57942 | 4438b480da603677 |
+| data/sources/texas-senate/tpor-poll-2026-08-27.html | 392731 | 6bdc7b6d62921a87 |
+| data/sources/texas-senate/tpor-poll-2026-08-27.txt | 6589 | a1ad37975d5ef28e |
+| data/sources/texas-senate/ap-local10-2026-09-01.html | 239641 | 0c8a7cecc5cbac9c |
+| data/sources/texas-senate/ap-local10-2026-09-01.txt | 8622 | 67fd3b0d1f120c5d |
 | data/sources/texas-senate/house-journal-882-day06-2023-07-13.pdf | 145071 | d6eac298cd70e898 |
 | data/sources/texas-senate/house-journal-882-day06-2023-07-13.txt | 10242 | b4ce9f9e0cb24124 |
 | data/sources/texas-senate/house-journal-89r-day69.pdf | 746588 | 2ed8bff78641f598 |
