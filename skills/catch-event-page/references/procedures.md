@@ -93,6 +93,13 @@ f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c 
 Blocked fetches (BLS release archive, CME tool pages, paywalled outlets) are recovered,
 never paraphrased:
 
+Fetch facts, recounted 2026-09-08 across four stories:
+
+- `scrapling` chrome impersonation (`Fetcher.get(url, impersonate='chrome', timeout=60)`, interpreter `/Users/zain/spark/.venv/bin/python3`) served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
+- Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
+- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in SOURCES.md and in the records list, quote the carrier's bytes.
+- Sequential retries succeed where parallel coverage fetches fail.
+
 ```bash
 # Wayback snapshot through the registry (keeps the original URL in the receipt)
 capture news "https://www.bls.gov/news.release/realer.nr0.htm" --via-archive --reason "real earnings July 2026 for jobs/august-2026"
@@ -272,6 +279,8 @@ Fix what the gate and the lint report, rebuild, look at the screenshot at 100 pe
 zoom (overflow, missing styles, unreadable sections), repeat until clean.
 
 ## 11. Independent interrogation (gate 6)
+
+Run it only when the page is otherwise complete, then do three things with the list: (1) an item that names a fetchable public record is a fetch, not a decline; fetch it, verify the quote at the pin, and use it or type the block with the fetch attempt; (2) an item the pins already answer is fixed from the pins; (3) only an item that needs a paywalled or nonexistent record is declined, with the reason. Four of four first drafts (2026-09-08) declined the run-up records (the announcement post, the briefing figure, the prior votes) and the red team returned NO-SHIP on each.
 
 A model that did not write the page reads the built page and lists everything it does not
 cover or account for, using web search and X search. Read `interrogation.md` for the prompt
