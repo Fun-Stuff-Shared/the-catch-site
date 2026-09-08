@@ -731,3 +731,65 @@ Held unused for greenland/september-2026 (saved, not cited on the page): ABC and
 | data/sources/coverage/euronews-greenland-eu-2026-09-07.txt | 15798 | 9eea6f6ca0dfb549 |
 | data/sources/coverage/politico-greenland-eu-2026-09-07.html | 291997 | 862ec74c951f20ae |
 | data/sources/coverage/politico-greenland-eu-2026-09-07.txt | 7811 | e2bc973a19d55765 |
+
+## Mail voting, September 2026
+
+Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the California attorney general copy of the district-court order, and House Law Revision Counsel. Coverage copied from the news capture registry. The Federal Register HTML pages are a prototype and were not used as the record.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/mail-voting/scotus-26A305-application.pdf | 224742 | 953f894959db1db4 |
+| data/sources/mail-voting/scotus-26A305-application.txt | 79025 | d688c602b69b590d |
+| data/sources/mail-voting/scotus-26A305-docket.html | 17423 | 5e14f6141c2c38d8 |
+| data/sources/mail-voting/scotus-26A297-application.pdf | 745767 | 2cc1150cd197a8b0 |
+| data/sources/mail-voting/scotus-26A297-application.txt | 101002 | bcf75ccc4e962262 |
+| data/sources/mail-voting/scotus-26A297-docket.html | 19881 | cea022dd11459784 |
+| data/sources/mail-voting/scotus-26A297-withdrawal.pdf | 153585 | 86b47908d1c432da |
+| data/sources/mail-voting/scotus-26A297-withdrawal.txt | 4828 | f0e8b1ca60ec8435 |
+| data/sources/mail-voting/scotus-26A297-admin-stay-opp.pdf | 141504 | 3a11c5a56be88dd4 |
+| data/sources/mail-voting/scotus-26A297-admin-stay-opp.txt | 17257 | 321de5412ad40c8e |
+| data/sources/mail-voting/scotus-26A124-application.pdf | 1297139 | 997db19460c6ac50 |
+| data/sources/mail-voting/scotus-26A124-application.txt | 292444 | 5b1b4cf0e87cfda0 |
+| data/sources/mail-voting/scotus-26A124-docket.html | 49243 | 9a453c55dd38597f |
+| data/sources/mail-voting/scotus-26A124-opinion.pdf | 241750 | 9729f21f8a1810e1 |
+| data/sources/mail-voting/scotus-26A124-opinion.txt | 81221 | ada062d55da44eae |
+| data/sources/mail-voting/talwani-pi-2026-09-04.pdf | 430783 | 928517f543ecbdac |
+| data/sources/mail-voting/talwani-pi-2026-09-04.txt | 126518 | 92542590981f5796 |
+| data/sources/mail-voting/eo-14399.pdf | 197306 | 8648c1a925357a87 |
+| data/sources/mail-voting/eo-14399.txt | 31285 | 634300f7a66c912b |
+| data/sources/mail-voting/usps-final-rule-fr.pdf | 357195 | 2be10e972d41aec0 |
+| data/sources/mail-voting/usps-final-rule-plain.txt | 207386 | 37b8e29cbef79564 |
+| data/sources/mail-voting/usc-2-7.html | 149100 | 35a7e07bad05e32e |
+| data/sources/mail-voting/usc-2-7.txt | 3246 | 99294bae98d54702 |
+| data/sources/mail-voting/uocava-52usc20302.html | 186638 | a9c243d824f45fd1 |
+| data/sources/mail-voting/uocava-52usc20302.txt | 25017 | ee162eb8496ed3d8 |
+| data/sources/mail-voting/ap-2026-09-06.html | 930432 | b23da3c3a6301623 |
+| data/sources/mail-voting/ap-2026-09-06.txt | 3175 | 528965da48199d0c |
+| data/sources/mail-voting/pbs-2026-09-06.html | 263518 | e6de3d0b1664ca1a |
+| data/sources/mail-voting/pbs-2026-09-06.txt | 4296 | 711bfaee51b35a38 |
+| data/sources/mail-voting/cnbc-2026-09-06.html | 747467 | a9331ca43893ea2f |
+| data/sources/mail-voting/cnbc-2026-09-06.txt | 3028 | 79b28c786a88d4ef |
+| data/sources/mail-voting/cbs-2026-09-06.html | 619668 | 8d25b83755603f2c |
+| data/sources/mail-voting/cbs-2026-09-06.txt | 2947 | 432d3175ba822588 |
+| data/sources/mail-voting/nbc-2026-09-06.html | 300981 | 6aacd5bed3a84b0c |
+| data/sources/mail-voting/nbc-2026-09-06.txt | 3243 | 3a3f8370060dfab3 |
+| data/sources/mail-voting/hill-2026-09-06.html | 391893 | 125157a0322d5668 |
+| data/sources/mail-voting/hill-2026-09-06.txt | 3204 | 2fd6b1e4330c4c87 |
+| data/sources/mail-voting/hill-2026-09-03.html | 390084 | 7fbc80eeb0e59aa9 |
+| data/sources/mail-voting/hill-2026-09-03.txt | 12676 | 367a907c09f532d1 |
+| data/sources/mail-voting/cbs-2026-09-03.html | 630913 | 1cf07aa57d5d2631 |
+| data/sources/mail-voting/cbs-2026-09-03.txt | 8661 | 5521da0fa7eb7009 |
+| data/sources/mail-voting/npr-2026-09-03.html | 134813 | ddc0a11e35189765 |
+| data/sources/mail-voting/npr-2026-09-03.txt | 5012 | fd267b4174f63e72 |
+| data/sources/mail-voting/pbs-pi-2026-09-04.html | 259469 | 684f42338bd94c1b |
+| data/sources/mail-voting/pbs-pi-2026-09-04.txt | 4190 | c1f4d53ed6d7bc03 |
+| data/sources/mail-voting/abc-pi-2026-09-04.html | 182038 | 020f686dc1988c0b |
+| data/sources/mail-voting/abc-pi-2026-09-04.txt | 2976 | 5b727c912293615d |
+| data/sources/mail-voting/ap-pi-2026-09-04.html | 865116 | ab340e1ba60289a3 |
+| data/sources/mail-voting/ap-pi-2026-09-04.txt | 3095 | 9a4c405e052d27e6 |
+| data/sources/mail-voting/nbc-pi-2026-09-04.html | 315039 | 335e3d861e45376e |
+| data/sources/mail-voting/nbc-pi-2026-09-04.txt | 5289 | 3ef4a9880b29f632 |
+| data/sources/mail-voting/brown-2026-09-04.html | 85424 | 2e5832d8d2bf4f63 |
+| data/sources/mail-voting/brown-2026-09-04.txt | 27979 | 301c0dec503c5b23 |
+| data/sources/mail-voting/scotus-26A305-congress-amicus.pdf | 148464 | 8a666f24e3b7ad62 |
+| data/sources/mail-voting/scotus-26A305-congress-amicus.txt | 74013 | f9edb7da90ce7ff5 |
