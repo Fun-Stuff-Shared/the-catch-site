@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/miami-cargo-crash.mjs';
+---
+<SeriesOverview title={subject.title} description="A Boeing 767 flying as 21 Air Flight 7598 overran a Miami runway on September 6, 2026, struck vehicles, and killed people on the ground." path="/events/miami-cargo-crash/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>

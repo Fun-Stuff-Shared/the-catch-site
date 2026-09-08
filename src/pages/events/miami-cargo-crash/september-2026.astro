@@ -1,0 +1,214 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, overrunDistance } from "../../../data/miamicargocrash202609.mjs";
+const state = readPublishedState().events.get("event-miami-cargo-crash-september-2026");
+if (!state) throw new Error("Missing publication selection: event-miami-cargo-crash-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/miami-cargo-crash/">The Miami cargo crash</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Miami International Airport &middot; September 6, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>The FAA said 21 Air Flight 7598, a Boeing 767-300 cargo jet from San Juan, Puerto Rico, overran the runway at Miami International Airport around 2 p.m. on Sunday, September 6.<Cite s="faa-x-7598-2026-09-06" passage="21 Air Flight 7598 overran the runway" /></li>
+          <li>Miami-Dade Fire Rescue said more than 60 units and about 200 people responded, found the plane beyond the airport boundary on fire, and took five patients to hospitals. The county mayor said five people were dead.<Cite s="mdfr-x-update2-2026-09-06" passage="More than 60 #MDFR units and approximately 200 personnel responded" /><Cite s="abc-miami-cargo-crash" passage="Five people are dead and five people are injured" /></li>
+          <li>The FAA and 21 Air name 21 Air as the airline. Amazon's spokesperson, quoted by ABC, called it an Amazon Air plane operated by 21 Air. The National Transportation Safety Board is investigating and has not given a cause.<Cite s="faa-x-7598-2026-09-06" /><Cite s="21air-statement-2026-09-06" /><Cite s="abc-miami-cargo-crash" passage="an Amazon Air plane operated by 21 Air" /><Cite s="ntsb-x-goteam-2026-09-06" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on official posts from the FAA, the NTSB, Miami International Airport, and Miami-Dade Fire Rescue, the operator's statement, a C-SPAN page for the Monday briefing, and coverage checked against those records.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">Sunday afternoon</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="faa-x-7598-2026-09-06" kind="record">
+          <p>The Federal Aviation Administration wrote on Sunday that 21 Air Flight 7598 overran the runway after landing at Miami International Airport around 2 p.m. local time. It identified the airplane as a Boeing 767-300 cargo aircraft that had departed Luis Muñoz Marín International Airport in San Juan, Puerto Rico, and said the FAA would investigate.<Cite s="faa-x-7598-2026-09-06" passage="21 Air Flight 7598 overran the runway after landing at Miami International Airport around 2 p.m. local time on Sunday, Sept. 6." /></p></SourcedBlock>
+
+        <SourcedBlock source="iflymia-x-groundstop-2026-09-06" kind="record">
+          <p>Miami International Airport, posting as the Miami-Dade Aviation Department's airport account, said Prime Air Flight 7598 overran the airport's diagonal runway at about 2 p.m., leaving the aircraft disabled at the northwest end. All runways and taxiways were closed, and a full ground stop was in effect.<Cite s="iflymia-x-groundstop-2026-09-06" passage="All MIA runways and taxiways are currently closed, and a full ground stop is in effect." /></p></SourcedBlock>
+
+        <p data-layer="narrative">The airport used the Prime Air flight number. The FAA used 21 Air. Those are two names for the same landing: a cargo flight flown for Amazon's air network by 21 Air, a cargo airline.<Cite s="iflymia-x-groundstop-2026-09-06" passage="Prime Air Flight 7598" /><Cite s="faa-x-7598-2026-09-06" passage="21 Air Flight 7598" /><Cite s="21air-statement-2026-09-06" passage="the accident involving one of our aircraft" /></p>
+
+        <SourcedBlock source="mdfr-x-update1-2026-09-06" kind="record">
+          <p>At 3:25 p.m., Miami-Dade Fire Rescue said more than 60 of its units were on scene of a plane that overran a runway and struck multiple vehicles. Crews found an airplane on fire, with heavy flames and smoke.<Cite s="mdfr-x-update1-2026-09-06" passage="Over 60 Miami-Dade Fire Rescue units are on scene" /></p></SourcedBlock>
+
+        <SourcedBlock source="mdfr-x-update2-2026-09-06" kind="record">
+          <p>By 6:25 p.m. the department said it had received the call at 1:55 p.m. More than 60 units and about 200 personnel responded. The plane had stopped beyond the airport operational boundary. Firefighters used airport foam on a complex engine-compartment fire, shut down the aircraft's engine, and worked a fuel leak. One person trapped under a vehicle was extricated. Five patients were taken to local hospitals.<Cite s="mdfr-x-update2-2026-09-06" passage="MDFR transported five patients to local area hospitals." /></p></SourcedBlock>
+
+        <SourcedBlock source="abc-miami-cargo-crash" kind="record">
+          <p>Miami-Dade County Mayor Daniella Levine Cava said at a news conference Sunday evening that five people were dead and five were injured. ABC News recorded that statement. The fire department's own Sunday posts do not give a death count.<Cite s="abc-miami-cargo-crash" passage="Five people are dead and five people are injured" /></p></SourcedBlock>
+
+        <SourcedBlock source="ntsb-x-goteam-2026-09-06" kind="record">
+          <p>The National Transportation Safety Board said it had launched a go team for a runway excursion involving a Boeing 767-300 cargo airplane operated as 21 Air Flight 7598 from San Juan to Miami. Chairwoman Jennifer Homendy would be the board member on scene. A media briefing was set for Monday.<Cite s="ntsb-x-goteam-2026-09-06" passage="NTSB has launched a go team to investigate Sunday's runway excursion accident" /></p></SourcedBlock>
+
+        <SourcedBlock source="21air-statement-2026-09-06" kind="record">
+          <p>21 Air, on its website, said it was devastated by the accident involving one of its aircraft in Miami on September 6. Chief executive Keith Winters wrote that the company was cooperating with the NTSB, the FAA, and local authorities, and that the circumstances were under investigation. The statement acknowledges people who lost their lives. It does not give a number.<Cite s="21air-statement-2026-09-06" passage="We are devastated by the accident involving one of our aircraft in Miami on 09/06." /></p></SourcedBlock>
+
+        <SourcedBlock source="amazon-x-7598-2026-09-06" kind="record">
+          <p>Amazon News posted a statement from spokesperson Kelly Nantel: "We can confirm that an Amazon Air plane operated by 21 Air experienced an incident while attempting to land at Miami International Airport today."<Cite s="amazon-x-7598-2026-09-06" passage="We can confirm that an Amazon Air plane operated by 21 Air experienced an incident while attempting to land at Miami International Airport today." /></p></SourcedBlock>
+
+        <SourcedBlock source="duffy-x-7598-2026-09-06" kind="record">
+          <p>Transportation Secretary Sean Duffy wrote that a full ground stop was in effect at Miami International while first responders assessed the scene, and that people traveling through the area should expect delays and possible cancellations. He said FAA inspectors would investigate.<Cite s="duffy-x-7598-2026-09-06" passage="We’ve issued a full ground stop at Miami International while first responders assess the scene after an Amazon cargo plane overran the runway." /></p></SourcedBlock>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">The afternoon, in order</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="iflymia-x-groundstop-2026-09-06" kind="record">
+          <p>The airport's first public post closed every runway and taxiway. Later Sunday it said one runway was open, then two of four, with delays still in effect. Passengers were told to check with their airline before coming to the airport.<Cite s="iflymia-x-groundstop-2026-09-06" /><Cite s="iflymia-x-one-runway-2026-09-06" passage="One runway is currently open" /><Cite s="iflymia-x-two-runways-2026-09-06" passage="Two of our four runways are currently open" /></p></SourcedBlock>
+
+        <p data-layer="narrative">That sequence is the operational story of the day: a full stop after the overrun, then a partial reopening while wreckage, fuel, and the investigation still occupied the northwest end of the field.<Cite s="iflymia-x-two-runways-2026-09-06" passage="we are still experiencing impacts from this incident" /><Cite s="mdfr-x-update2-2026-09-06" passage="ongoing fuel leak" /></p>
+
+        <SourcedBlock source="ntsb-x-wreckage-2026-09-07" kind="record">
+          <p>On Monday the NTSB identified the runway as Runway 30 and the operator as 21 Air LLC Flight 7598.<Cite s="ntsb-x-wreckage-2026-09-07" passage="overran the end of Runway 30 while landing Sunday at Miami International Airport" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-miami-cargo-ntsb" kind="record">
+          <p>Coverage of Homendy's Monday briefing, consistent across CBS, Reuters, and CNBC, said the airplane traveled about 1,300 feet past the paved surface. That is 396 meters, converting 1,300 feet at 0.3048 meters per foot and rounding to the nearest meter.<Cite s="cbs-miami-cargo-ntsb" passage="In total, the plane traveled about 1,300 feet past the paved surface" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how 396 meters was computed</summary>
+          <p>1,300 feet times 0.3048 meters per foot equals 396.24 meters, rounded to {overrunDistance.meters}. The 1,300-foot figure is Homendy's, as reported by CBS, Reuters, and CNBC. The NTSB's own saved posts do not include the distance. C-SPAN has a page for the briefing video; the saved page has no transcript.</p>
+        </details>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">People on the ground, and people in the air</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <SourcedBlock source="cbs-miami-cargo-ntsb" kind="record">
+          <p>Homendy said Monday that everyone killed was in two vehicles the airplane hit: a white Ford Econoline van owned by Professional Ocean Service Corporation, a contract cleaning company, with seven people inside, on airport property; and a Toyota Corolla Cross on Northwest 67th Avenue, outside the perimeter fence. CBS, Reuters, and CNBC all report that account.<Cite s="cbs-miami-cargo-ntsb" passage="Homendy said all victims were in those two vehicles." /></p></SourcedBlock>
+
+        <p data-layer="narrative">Sunday night that was not yet known. Miami officials told reporters it was too soon to say whether the dead were on the airplane or in the vehicles. The fire chief said the pilot and copilot had been trapped in the cockpit. By Monday Homendy said two crew members were on board and had survived, and had not yet been interviewed.<Cite s="pbs-miami-cargo-crash" passage="too soon to determine whether the people who died were on board the plane or in the vehicles" /><Cite s="nbc-miami-cargo-crash" passage="retrieve the pilot and co-pilot, trapped in the plane" /><Cite s="reuters-miami-cargo-ntsb" passage="The two people aboard the plane, the pilot and co-pilot, survived" /></p>
+
+        <SourcedBlock source="mdfr-x-update2-2026-09-06" kind="record">
+          <p>Fire rescue took five patients to hospitals. NBC, quoting Fire Chief Raied Jadallah, said three were in critical condition at a trauma center and two went to a local hospital.<Cite s="mdfr-x-update2-2026-09-06" passage="MDFR transported five patients to local area hospitals." /><Cite s="nbc-miami-cargo-crash" passage="Three people are in critical condition" /></p></SourcedBlock>
+
+        <SourcedBlock source="iflymia-x-two-runways-2026-09-06" kind="record">
+          <p>Travelers through Miami spent Sunday under a ground stop, then a partial reopening with two of four runways open. The airport told passengers to check with their airline before heading in.<Cite s="iflymia-x-two-runways-2026-09-06" passage="Passengers with flights scheduled today should check directly with their airline" /></p></SourcedBlock>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">The coverage</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <p data-layer="narrative">Sunday's coverage was checked against the FAA, airport, fire, and NTSB posts. Monday's briefing details were checked across CBS, Reuters, and CNBC, because the NTSB has not posted a written account of what Homendy said, and the C-SPAN page for the briefing has no transcript.<Cite s="faa-x-7598-2026-09-06" /><Cite s="cspan-ntsb-briefing-2026-09-07" passage="NTSB Officials Hold Briefing on Deadly Amazon Prime Plane Crash in Miami" /></p>
+
+        <SourcedBlock source="abc-miami-cargo-crash" kind="checked">
+          <p><strong>ABC</strong> quoted the FAA statement on flight 7598, the Boeing 767-300, San Juan, and the 2 p.m. landing. That matches the FAA post. It quoted Mayor Levine Cava on five dead and five injured. It quoted Amazon spokesperson Kelly Nantel naming 21 Air as the operator.<Cite s="abc-miami-cargo-crash" /><Cite s="faa-x-7598-2026-09-06" /></p></SourcedBlock>
+
+        <SourcedBlock source="nbc-miami-cargo-crash" kind="checked">
+          <p><strong>NBC</strong> matched the FAA on the flight number, type, origin, and time. It quoted Sheriff Rosie Cordero-Stutz on Runway 30 and vehicles, and Jadallah on three people in critical condition, two others hospitalized, a complex engine fire, and the crew trapped in the airplane. Those quotes are the outlet's record of Sunday's local briefing; they are not in the fire department's saved posts.<Cite s="nbc-miami-cargo-crash" /><Cite s="mdfr-x-update2-2026-09-06" /></p></SourcedBlock>
+
+        <SourcedBlock source="npr-miami-cargo-crash" kind="checked">
+          <p><strong>NPR</strong> quoted the FAA and the Miami-Dade Aviation Department in line with the saved posts. It quoted the sheriff saying the plane was "operated by Amazon." The FAA's saved post names 21 Air. Amazon's spokesperson, in the same NPR story, said 21 Air was flying it.<Cite s="npr-miami-cargo-crash" passage="the plane, operated by Amazon" /><Cite s="faa-x-7598-2026-09-06" passage="21 Air Flight 7598" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-miami-cargo-ntsb" kind="checked">
+          <p><strong>CBS</strong>, after Monday's briefing, reported Homendy on Runway 30, the third flight of the day, 1,300 feet past the pavement, the van and the Toyota, two crew on board, and both recorders recovered. Reuters and CNBC report the same core facts.<Cite s="cbs-miami-cargo-ntsb" /><Cite s="reuters-miami-cargo-ntsb" /><Cite s="cnbc-miami-cargo-ntsb" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-miami-cargo-crash" kind="checked">
+          <p><strong>The Associated Press</strong>, writing Monday morning before the briefing, still said it was not clear whether the pilots survived. Homendy's briefing later that day, as reported by CBS, Reuters, and CNBC, said the two people on the airplane survived. AP's Sunday injury split (three critical, two less severe) matches NBC's quote of Jadallah.<Cite s="ap-miami-cargo-crash" passage="It wasn’t immediately clear if the pilots survived" /><Cite s="reuters-miami-cargo-ntsb" passage="The two people aboard the plane, the pilot and co-pilot, survived" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">One claim, examined</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="faa-x-7598-2026-09-06" kind="checked">
+          <p><strong>The claim:</strong> this was an "Amazon cargo plane," sometimes written as operated by Amazon. <strong>The record:</strong> the FAA named 21 Air Flight 7598. The NTSB named 21 Air LLC. 21 Air's own page calls it one of its aircraft. Amazon's spokesperson, quoted in ABC and NPR, said an Amazon Air plane operated by 21 Air. Homendy, quoted by CBS and CNBC, called it "an Amazon operation for transporting cargo, but it's actually contracted to 21 Air."<Cite s="faa-x-7598-2026-09-06" passage="21 Air Flight 7598" /><Cite s="21air-statement-2026-09-06" passage="one of our aircraft" /><Cite s="cbs-miami-cargo-ntsb" passage="This is an Amazon operation for transporting cargo, but it's actually contracted to 21 Air" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The FAA and NTSB posts we have name 21 Air as the operator. They do not publish the air-carrier certificate itself. NPR quoted the sheriff saying the plane was "operated by Amazon." That wording skips the contractor the FAA named. Amazon's own spokesperson, in the same coverage, kept both names.<Cite s="npr-miami-cargo-crash" passage="operated by Amazon" /><Cite s="faa-x-7598-2026-09-06" /><Cite s="abc-miami-cargo-crash" passage="an Amazon Air plane operated by 21 Air" /></p>
+
+        <SourcedBlock source="cbs-miami-cargo-ntsb" kind="checked">
+          <p><strong>A second claim:</strong> the van's model year. CBS wrote "2012 white Ford Econoline van." CNBC wrote "2021 white Ford Econoline van." Reuters described an Econoline van and did not give a year. The NTSB's saved posts do not give a year. That disagreement is unconfirmed against the primary record.<Cite s="cbs-miami-cargo-ntsb" passage="2012 white Ford Econoline van" /><Cite s="cnbc-miami-cargo-ntsb" passage="2021 white Ford Econoline van" /></p></SourcedBlock>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">Monday</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="ntsb-x-briefing-notice-2026-09-07" kind="record">
+          <p>The NTSB held a media briefing at 4 p.m. Eastern on Monday at Miami International Airport, Concourse J. C-SPAN listed a video of that briefing.<Cite s="ntsb-x-briefing-notice-2026-09-07" passage="NTSB will hold a media briefing today at 4 p.m. ET" /><Cite s="cspan-ntsb-briefing-2026-09-07" passage="NTSB Officials Hold Briefing on Deadly Amazon Prime Plane Crash in Miami" /></p></SourcedBlock>
+
+        <SourcedBlock source="reuters-miami-cargo-ntsb" kind="record">
+          <p>Homendy said the flight data recorder and cockpit voice recorder had been recovered and were going to NTSB headquarters. She described the scene as "utter devastation." She said investigators would not determine probable cause while still on scene.<Cite s="reuters-miami-cargo-ntsb" passage="Utter devastation" /><Cite s="cbs-miami-cargo-ntsb" passage="The NTSB said it has recovered both the flight data recorder and the cockpit voice recorder." /></p></SourcedBlock>
+
+        <SourcedBlock source="ntsb-x-wreckage-2026-09-07" kind="record">
+          <p>After the briefing the NTSB posted a photograph of investigators on the wreckage field, naming Runway 30 and 21 Air LLC Flight 7598.<Cite s="ntsb-x-wreckage-2026-09-07" /></p></SourcedBlock>
+
+        <SourcedBlock source="iflymia-x-monday-2026-09-07" kind="record">
+          <p>Monday morning the airport said two of four runways remained closed, and that cancellations from Sunday were still leaving aircraft and crews short.<Cite s="iflymia-x-monday-2026-09-07" passage="Two of MIA’s four runways remain closed this morning." /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: whether the NTSB posts a written briefing or a preliminary report, whether it releases speed from the flight data recorder (Homendy, as quoted by CBS, wanted that confirmation first), and whether Miami-Dade names the dead.<Cite s="cbs-miami-cargo-ntsb" passage="wants to confirm it against the flight data recorder before releasing it" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li>The cause of the overrun. Homendy said the team was still collecting evidence. The NTSB has not posted a probable cause.<Cite s="cbs-miami-cargo-ntsb" passage="Homendy said the NTSB would not be determining probable cause while on scene." /></li>
+          <li>The names of the dead and injured. The mayor's Sunday statement, as recorded by ABC, did not release them.<Cite s="abc-miami-cargo-crash" passage="The names of the deceased and the injured have not been released." /></li>
+          <li>A written NTSB or FAA press release on this accident. The NTSB press-release index we saved on September 8 does not carry one. The FAA general-statements page we saved does not either. What we have from those agencies are their posts on X.</li>
+          <li>Whether an engineered materials arresting system at the end of Runway 30 would have changed the result. Homendy said that would be examined. AP wrote that Miami does not have those beds. That airport fact is not in the FAA post we saved.<Cite s="cbs-miami-cargo-ntsb" passage="whether an Engineered Materials Arresting System, known as EMAS, should have been installed" /><Cite s="ap-miami-cargo-crash" passage="The Miami airport is not equipped with arresting systems" /></li>
+        </ul>
+      </section>
+
+      <StorySources event="miami-cargo-crash/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 0; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+</style>
