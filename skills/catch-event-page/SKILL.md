@@ -50,7 +50,10 @@ Two rules the gold pages themselves break, so hold them stricter than the exampl
 ## Workflow
 
 Work in this order. Each step names its artifact; an unmapped step is a finding you
-report, never an omission.
+report, never an omission. The exact commands for every step (registry search, index
+search, state-log check, fetch and pin, archive and assisted recovery, computation
+snippets, build, lint, screenshot, independent interrogation, live audit) are in
+`references/procedures.md`; read it before step 2 and keep it open.
 
 1. **Capture the ask as a checklist.** A review or brief is copied item by item into a
    working note before any data is touched. Reworks are verified against this list.
@@ -84,10 +87,15 @@ report, never an omission.
 8. **Build with the real pipeline.** `npm run build` (never a partial build or a
    fallback). Fix what the gate reports and rebuild until clean. Then run
    `node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro`.
-9. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
+9. **Independent interrogation.** A model that did not write the page reads the built
+   page and lists everything it does not cover or account for (command in
+   `references/procedures.md`, step 11). Every gap becomes a needs-ledger row, resolved
+   on the page or typed with its reason. Never dismiss the list wholesale.
+10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
    refresh on `/events/<subject>/`; the homepage features the latest story. Old stories
    are never rewritten; later developments are dated "what happened next" additions.
-10. **Ship and audit live.** Commit by explicit path (page, data module, manifest,
+11. **Stage, then ship on a human's word, then audit live.** Publication is a human
+    decision: hand over the rendered page, not receipts. Commit by explicit path (page, data module, manifest,
     ledger, pins). Push. Poll the live URL until the new content serves, then re-run the
     language checks on the live bytes and screenshot at 100 percent zoom. Judge only the
     live domain; local dev servers and browser caches serve stale HTML.
@@ -131,3 +139,4 @@ report, never an omission.
 - `references/gold-traces.md`: the two gold builds step by step, with the lessons each one produced.
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md ledger, gate checks, ship verification.
 - `references/anti-patterns.md`: the drift the audit found on the gold pages and the rule for each.
+- `references/procedures.md`: every command, step by step, from recipe scaffold to live audit.
