@@ -967,3 +967,17 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/mail-voting/blumenthal-whistleblower-2026-09-01.txt | 20114 | 744fd45d39e8ff48 |
 | data/sources/mail-voting/usps-portal-statement-2026-09-01.html | 35974 | c221ee10f59771f3 |
 | data/sources/mail-voting/usps-portal-statement-2026-09-01.txt | 5457 | 9a9a885a7c8b1063 |
+| data/sources/miami-cargo-crash/ap-victims-2026-09-08.html | 935319 | 63335c9b21ce0e3e |
+| data/sources/miami-cargo-crash/ap-victims-2026-09-08.txt | 5029 | 02b5c06d3d1ed093 |
+| data/sources/miami-cargo-crash/faa-aip-florida.html | 150914 | 9d7ca0179888789c |
+| data/sources/miami-cargo-crash/faa-aip-florida.txt | 74858 | fa4ac0d6d3e8cc51 |
+| data/sources/miami-cargo-crash/faa-safety-briefing-2026-03.pdf | 6029858 | a15427cecbab3755 |
+| data/sources/miami-cargo-crash/faa-safety-briefing-2026-03.txt | 108990 | dd07b50adeab5502 |
+| data/sources/miami-cargo-crash/local10-sheriff-2026-09-08.html | 357189 | 3e5f77fc5b4a9218 |
+| data/sources/miami-cargo-crash/local10-sheriff-2026-09-08.txt | 3885 | 68736aff66881277 |
+| data/sources/miami-cargo-crash/ntsb-dca25sr002-page.html | 81042 | ce0025b3041b2929 |
+| data/sources/miami-cargo-crash/ntsb-dca25sr002-page.txt | 5834 | 9bafc42482e7c956 |
+| data/sources/miami-cargo-crash/ntsb-dca26ma352-docket.html | 21130 | b713afb123bcc7e4 |
+| data/sources/miami-cargo-crash/ntsb-dca26ma352-docket.txt | 984 | 94fdc5b603a3954c |
+| data/sources/miami-cargo-crash/ntsb-dca26ma352-page.html | 71745 | 8ce251f5a2e9a544 |
+| data/sources/miami-cargo-crash/ntsb-dca26ma352-page.txt | 2834 | e93df303e2654873 |

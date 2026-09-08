@@ -11,8 +11,8 @@ export const event = {
   date: "2026-09-06",
   updated: "2026-09-08",
   kpis: [
-    { value: "5", unit: "dead", label: "named by the county mayor Sunday evening" },
-    { value: "5", unit: "injured, taken to hospitals", label: "Miami-Dade Fire Rescue" },
+    { value: "5", unit: "dead", label: "all in one van, named by the sheriff Tuesday" },
+    { value: "5", unit: "injured", label: "two pilots released, three still in hospital Tuesday" },
     { value: "7598", unit: "", label: "21 Air flight, from San Juan" },
     { value: "2 of 4", unit: "runways", label: "open Sunday evening" },
   ],
@@ -22,3 +22,19 @@ export const overrunDistance = {
   feet: 1300,
   meters: 396, // 1300 * 0.3048, rounded
 };
+
+// FAA Aeronautical Information Publication, Florida, Miami Intl, Runway 30 (data/sources/miami-cargo-crash/faa-aip-florida.txt)
+export const runway30 = {
+  lengthFeet: 9360,
+  landingDistanceAvailableFeet: 7913,
+  accelerateStopFeet: 8853,
+};
+// Half the pavement minus half the landing distance: (9360 - 7913) / 2 = 723.5, rounded to the nearest hundred.
+export const halfwayGapFeet = Math.round((runway30.lengthFeet - runway30.landingDistanceAvailableFeet) / 2 / 100) * 100;
+
+// FAA Safety Briefing, March/April 2026 (data/sources/miami-cargo-crash/faa-safety-briefing-2026-03.txt)
+export const emasCount = { installations: 122, airports: 70 };
+
+// Flightradar24 incident post (data/sources/fr24-21air-7598-miami.txt), provisional ADS-B speeds
+export const adsb = { exitKnots: 112, lastKnots: 69 };
+
