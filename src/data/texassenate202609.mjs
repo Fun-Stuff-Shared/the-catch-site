@@ -1,3 +1,4 @@
+import { scheduleAReceipts, independentExpendituresByCommittee } from "../lib/fec.mjs";
 // Texas Senate MAGA Inc. independent expenditures, September 2026.
 // Figures trace to pinned FEC, Texas Secretary of State, poll, and coverage files in data/sources/texas-senate/.
 // $5,000,000 + $5,000,000 = $10,000,000 from FEC Form 24 file 2010907 Schedule E.
@@ -198,33 +199,11 @@ export const calendar = {
 };
 
 // General-election outside money on file before the MAGA Inc. notice, read from the FEC bulk snapshot at build
-// time: Texas Senate rows for the two candidates, general election only, highest file number per committee,
-// candidate, and transaction id, received before September 5, 2026.
-function readGeneralBeforeNotice() {
-  const text = readFileSync(`${process.cwd()}/data/sources/texas-senate/fec-independent-expenditure-2026-snapshot-2026-09-08.csv`, "utf8");
-  const lines = text.split(/\r?\n/).filter(Boolean);
-  const header = parseCsvLine(lines[0]);
-  const col = (r, k) => r[header.indexOf(k)];
-  const months = { JAN: 1, FEB: 2, MAR: 3, APR: 4, MAY: 5, JUN: 6, JUL: 7, AUG: 8, SEP: 9, OCT: 10, NOV: 11, DEC: 12 };
-  const iso = (d) => { const [dd, mm, yy] = d.split("-"); return `20${yy}-${String(months[mm.toUpperCase()]).padStart(2, "0")}-${dd}`; };
-  const best = new Map();
-  for (const line of lines.slice(1)) {
-    const r = parseCsvLine(line);
-    if (col(r, "can_office") !== "S" || col(r, "can_office_state") !== "TX" || col(r, "ele_type") !== "G") continue;
-    if (![filing.talaricoId, filing.paxtonId].includes(col(r, "cand_id"))) continue;
-    const key = `${col(r, "spe_id")}|${col(r, "cand_id")}|${col(r, "tran_id")}`;
-    if (!best.has(key) || Number(col(r, "file_num")) > Number(col(best.get(key), "file_num"))) best.set(key, r);
-  }
-  const byCommittee = new Map();
-  for (const r of best.values()) {
-    if (iso(col(r, "receipt_dat")) >= "2026-09-05") continue;
-    const name = col(r, "spe_nam").trim();
-    byCommittee.set(name, (byCommittee.get(name) || 0) + Number(col(r, "exp_amo") || 0));
-  }
-  const committees = [...byCommittee.entries()].filter(([n]) => !n.toUpperCase().includes("MAGA INC")).sort((a, b) => b[1] - a[1]);
-  return { total: committees.reduce((a, [, v]) => a + v, 0), count: committees.length, committees };
-}
-const generalBeforeNotice = readGeneralBeforeNotice();
+// time: Texas Senate rows for the two candidates, general election only, amendments replacing originals,
+// received before September 5, 2026.
+const generalBeforeNotice = independentExpendituresByCommittee(`${process.cwd()}/data/sources/texas-senate/fec-independent-expenditure-2026-snapshot-2026-09-08.csv`, {
+  office: "S", state: "TX", candidateIds: [filing.talaricoId, filing.paxtonId], receivedBefore: "2026-09-05", exclude: (name) => name.toUpperCase().includes("MAGA INC"),
+});
 // Weeks of ads at Thune's $8 million a week: 10 / 8 = 1.25.
 export const outsideMoney = {
   generalBeforeNotice: generalBeforeNotice.total,
@@ -271,58 +250,22 @@ export const pollEnsemble = {
   ],
 };
 
-// MAGA Inc. C00892471 Form 3X Schedule A line 17 receipts, read from the nine 2025-26 CSV files in
-// data/sources/texas-senate/fec-maga-inc-f3x/ at build time. Memo rows (the FEC's cross-reference entries,
-// which restate money already counted on another line), bank interest, and the exchange rows for bitcoin the
-// committee sold are left out, so what remains is money from named givers.
-import { readFileSync, readdirSync } from "node:fs";
-function parseCsvLine(line) {
-  const out = []; let cur = ""; let q = false;
-  for (let i = 0; i < line.length; i++) {
-    const c = line[i];
-    if (q) { if (c === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += c; }
-    else if (c === '"') q = true; else if (c === ",") { out.push(cur); cur = ""; } else cur += c;
-  }
-  out.push(cur); return out;
-}
-function readMagaReceipts() {
-  const dir = `${process.cwd()}/data/sources/texas-senate/fec-maga-inc-f3x`;
-  const totals = new Map();
-  let excludedMemo = 0, excludedInterest = 0, excludedExchange = 0;
-  for (const file of readdirSync(dir).filter((f) => f.endsWith(".csv")).sort()) {
-    const text = readFileSync(`${dir}/${file}`, "utf8");
-    // A quoted field may span lines; join physical lines until quotes balance.
-    let buf = "";
-    for (const raw of text.split(/\r?\n/)) {
-      buf = buf ? `${buf}\n${raw}` : raw;
-      if ((buf.match(/"/g) || []).length % 2) continue;
-      const r = parseCsvLine(buf); buf = "";
-      if (r[0] !== "SA17") continue;
-      const org = (r[6] || "").trim();
-      const name = org || `${(r[8] || "").trim()} ${(r[7] || "").trim()}`.trim();
-      const amount = Number(r[20] || 0);
-      const desc = (r[22] || "").toUpperCase();
-      if (r.slice(38, 46).some((x) => (x || "").trim() === "X")) { excludedMemo += amount; continue; }
-      if (desc.includes("INTEREST")) { excludedInterest += amount; continue; }
-      if (org.toUpperCase().includes("GEMINI")) { excludedExchange += amount; continue; }
-      totals.set(name, (totals.get(name) || 0) + amount);
-    }
-  }
-  const titleCase = (n) => n.split(" ").map((w) => /^(LLC|INC\.?|N\.A\.|PAC|II|III)$/i.test(w) ? w.toUpperCase().replace("INC", "Inc") : w.length > 3 && w === w.toUpperCase() ? w[0] + w.slice(1).toLowerCase() : w).join(" ")
-    .replace(/\bDax\b/, "DAX").replace(/\bA16z\b/, "a16z").replace(/\bRai\b/, "RAI").replace(/\bGeo\b/, "GEO").replace(/\bD'souza\b/, "D'Souza");
-  const list = [...totals.entries()].sort((a, b) => b[1] - a[1]).map(([name, amount]) => ({ name: titleCase(name), amount }));
-  return { list, excludedMemo, excludedInterest, excludedExchange, givers: totals.size, total: list.reduce((a, r) => a + r.amount, 0) };
-}
-const magaReceipts = readMagaReceipts();
+// MAGA Inc. C00892471 Form 3X Schedule A line 17 receipts, read from the nine 2025-26 CSV files at build time.
+// Memo cross-references, bank interest, and the exchange that sold the committee's bitcoin are left out
+// (src/lib/fec.mjs says why), so what remains is money from named givers.
+const titleCase = (n) => n.split(" ").map((w) => /^(LLC|INC\.?|N\.A\.|PAC|II|III)$/i.test(w) ? w.toUpperCase().replace("INC", "Inc") : w.length > 3 && w === w.toUpperCase() ? w[0] + w.slice(1).toLowerCase() : w).join(" ")
+  .replace(/\bDax\b/, "DAX").replace(/\bA16z\b/, "a16z").replace(/\bRai\b/, "RAI").replace(/\bGeo\b/, "GEO").replace(/\bD'souza\b/, "D'Souza");
+const magaReceipts = scheduleAReceipts(`${process.cwd()}/data/sources/texas-senate/fec-maga-inc-f3x`);
+magaReceipts.list = magaReceipts.list.map((r) => ({ ...r, name: titleCase(r.name) }));
 export const magaDonors = {
   columns: ["Name on the reports", "Line 17 total"],
   rows: magaReceipts.list.slice(0, 14).map((r) => [r.name, `$${(r.amount / 1e6).toFixed(1)} million`]),
   top: magaReceipts.list.slice(0, 14),
   givers: magaReceipts.givers,
   total: magaReceipts.total,
-  excludedMemo: magaReceipts.excludedMemo,
-  excludedInterest: magaReceipts.excludedInterest,
-  excludedExchange: magaReceipts.excludedExchange,
+  excludedMemo: magaReceipts.excluded.memo,
+  excludedInterest: magaReceipts.excluded.interest,
+  excludedExchange: magaReceipts.excluded.exchange,
 };
 
 export const timeline = [
