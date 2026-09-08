@@ -63,6 +63,15 @@ is the coverage universe. Ten minutes for a mature class; an hour for a new one.
 Rule: save the bytes before you write a sentence. Every saved file gets a row in
 `data/sources/SOURCES.md` (file, bytes, sha256 prefix).
 
+Check the registry before fetching: the three daily sweeps capture BLS, Fed and other
+agency releases as served on release day (`capture search "Bureau of Labor" --since <date>`
+lists them with their run directory). A copy captured on the day beats a fetch made later,
+and bls.gov often refuses direct fetches afterwards. Copy the held body (see step 5 for the
+path mapping) into `data/sources/` as the pin.
+
+Name every series file with its fetch date (`PAYEMS-2026-09-04.csv`, never `PAYEMS.csv`):
+an earlier story's manifest hashes its own copy, and overwriting it fails the gate.
+
 ```bash
 # Institution pages that accept a browser User-Agent (Fed, FRED, most agencies)
 node scripts/fetch-source.mjs "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
@@ -73,12 +82,12 @@ curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 
 python3 -c "import re,sys;t=open(sys.argv[1]).read();print(re.sub(r'<[^>]+>',' ',t))" data/sources/bls-empsit-2026-08.html > data/sources/bls-empsit-2026-08.txt
 
 # FRED series, raw CSV (one call per series)
-curl -sL "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS" -o data/sources/PAYEMS.csv
+curl -sL "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS" -o data/sources/PAYEMS-2026-09-04.csv
 # ALFRED vintages for first-print vs revised: ONE VINTAGE PER CALL (the comma form silently returns only the first)
 curl -sL "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07" -o data/sources/alfred-payems-2026-08-07.csv
 
 # Ledger row (bytes and sha prefix) after every addition
-f=data/sources/PAYEMS.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c < $f | tr -d ' ')" "$(shasum -a 256 $f | cut -c1-16)" >> data/sources/SOURCES.md
+f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c < $f | tr -d ' ')" "$(shasum -a 256 $f | cut -c1-16)" >> data/sources/SOURCES.md
 ```
 
 Blocked fetches (BLS release archive, CME tool pages, paywalled outlets) are recovered,
@@ -116,10 +125,20 @@ capture news "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html" --reas
 capture search "cnbc.com/2026/08/07/jobs-report" --limit 1     # find the run dir and md path
 ```
 
-Copy the article text into `data/sources/coverage/<outlet>-<slug>.txt`, add it to
-SOURCES.md, and to the manifest's `records[]` (with a byte-exact `quote`) and
-`story_sources[]` (group `coverage`). The run dir's `md/article_NNNN.md` is the
-admitted body; the pin is what the gate verifies.
+To find a held article's body: the run directory's `article_receipts.jsonl` has one row
+per item with `item_url`, `final_url`, `typed_outcome` (`body_captured` is the good one),
+`raw_path` (the HTML as served), `text_path` (extracted text) and `md_path`.
+`dedup_items.jsonl` has titles and URLs but no paths.
+
+```bash
+cd /Volumes/4/CF/news-fqs-pilot/runs/<run>
+python3 -c "import json,sys; [print(r['text_path'], r['raw_path'], r['item_url']) for r in map(json.loads, open('article_receipts.jsonl')) if sys.argv[1] in r.get('item_url','') and r.get('typed_outcome')=='body_captured']" "cnbc.com/2026/09/04"
+```
+
+Copy `text_path` to `data/sources/coverage/<outlet>-<slug>.txt` and `raw_path` to the
+matching `.html`, add both to SOURCES.md, and add the record to the manifest's `records[]`
+(with a `quote` that is present in the text pin) and `story_sources[]` (group `coverage`).
+The pin is what the gate verifies.
 
 ## 6. Compute every derived number from the admitted series
 
@@ -168,7 +187,24 @@ is nearly empty every time.
 Every superlative or gloss ("lowest since", "fastest pace", "unexpected") either quotes
 a held record or does not appear.
 
-## 10. Manifest, ledger, build, lint, screenshot
+## 10. Accept the story, then manifest, ledger, build, lint, screenshot
+
+A story page reads its event from the published state (`state_event_id` in the manifest)
+and the build throws `Missing publication selection` when no view exists for it. So before
+the first build:
+
+```bash
+cd /Volumes/4/CF/news-fqs-pilot
+python3 scripts/story_accept.py list                       # find the candidate
+python3 scripts/story_accept.py accept <candidate_id> --by <you> --reason "..." \
+  --kind employment_situation_report --subject "U.S. employment situation" --period 2026-08 \
+  --label "<the headline>" --event-id event-jobs-august-2026
+```
+
+The view `catch-state/views/event-<id>.json` appears at the next maintain fire's refresh
+step, or from `sai state refresh-views` when no fire holds `catch-state/maintain.lock`
+(the command refuses while one does). `npm run build` pulls the views first.
+
 
 ```bash
 # manifest: checks/manifests/<subject>--<story>.json (fields in manifest-and-gate.md)

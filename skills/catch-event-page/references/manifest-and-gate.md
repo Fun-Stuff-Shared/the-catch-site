@@ -17,6 +17,9 @@ The gate reads this file on every build. Fields you write by hand:
 | `coverage_records[]`, `coverage_threshold` | outlet articles checked (at least two) |
 | `authored_sections[]` | the section anchors the page renders |
 
+| `completed_by`, `date` | who built it and when |
+| `steps` | attestation per gate step, each `{"done": true, "evidence": "<one real sentence>"}`. The keys the gate requires, exactly: `sources_admitted`, `derived_numbers_computed`, `outlet_claims_verified`, `section_grammar`, `chip_vocabulary`, `live_elements_guarded`, `subject_page_updated`, `homepage_updated`. A page with no live element still attests `live_elements_guarded` by saying so. |
+
 Attest only what was done. A stubbed or false line is a false ship.
 
 ## data/sources/SOURCES.md

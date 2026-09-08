@@ -57,8 +57,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 
 1. **Capture the ask as a checklist.** A review or brief is copied item by item into a
    working note before any data is touched. Reworks are verified against this list.
-2. **Admit sources first.** Save every document under `data/sources/` before writing a
-   sentence: primary documents from the issuing institution, official series as raw CSV
+2. **Admit sources first.** Check the capture registry before fetching: agency releases
+   are usually already held as served on release day. Save every document under
+   `data/sources/` before writing a sentence, series files under dated names: primary documents from the issuing institution, official series as raw CSV
    (FRED `fredgraph.csv?id=`), coverage articles as served. Blocked fetches are recovered
    (archive.org snapshot, ALFRED vintages, assisted search) and the recovery is disclosed
    in `data/sources/SOURCES.md` and in the page's records list, in reader words.
@@ -131,6 +132,14 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - The `?mode=` links on the switcher only work with JavaScript. Do not describe them as a
   no-JavaScript fallback; the no-JavaScript view is The story.
 - A story page under `src/pages/events/<subject>/` without a manifest fails the build.
+- A story page needs its event accepted into the state (accept step in procedures.md, step
+  10) and a published view for it before the build succeeds; the view arrives with the next
+  maintain refresh.
+- The story slug is the data month (`august-2026` for the report released September 4), not
+  the release month. `new-event.mjs` derives the slug from `--date`, so pass a date inside
+  the data month or copy the previous month's page instead.
+- The article search index lags the registry by a day or more; the registry is the coverage
+  universe, the index a second net.
 - The gate runs in the Workers git build too, so a failing gate blocks the deploy.
 
 ## References (read when the step calls for it)
