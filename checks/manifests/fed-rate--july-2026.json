@@ -12,7 +12,17 @@
       "section_anchor": "what-happened",
       "records": [
         "fomc-statement-2026-07-29",
-        "fomc-minutes-2026-07-29"
+        "fomc-minutes-2026-07-29",
+        "fomc-presconf-2026-07-29"
+      ]
+    },
+    {
+      "id": "warsh-jackson-hole-2026-08-28",
+      "date": "2026-08-28",
+      "label": "Warsh at Jackson Hole",
+      "section_anchor": "what-next",
+      "records": [
+        "fed-warsh-2026-08-28"
       ]
     }
   ],
@@ -42,12 +52,38 @@
       "quote": "Several participants favored an increase of 25 basis points in the target range at this meeting.",
       "quote_span_check": "byte_exact",
       "about": "The Federal Reserve's detailed account of its July 2026 meeting, published three weeks after the decision."
+    },
+    {
+      "id": "fomc-presconf-2026-07-29",
+      "title": "Chairman Warsh's press conference, July 29, 2026 (transcript)",
+      "publisher": "Federal Reserve",
+      "date": "2026-07-29",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20260729.pdf",
+      "pinned_path": "data/sources/FOMCpresconf20260729.pdf",
+      "text_path": "data/sources/FOMCpresconf20260729.txt",
+      "text_sha256": "sha256:49a0353d3fe05c36dd48abc78a0db76a04220e027727d4e5040a66a92900029b",
+      "quote": "there is no soft implicit target—not on this Committee’s watch.",
+      "quote_span_check": "byte_exact",
+      "about": "The Fed's own transcript of the chairman's press conference after the July decision: his answers on the three dissents and on pulling back from forward guidance."
+    },
+    {
+      "id": "fed-warsh-2026-08-28",
+      "title": "Chairman Warsh's keynote at Jackson Hole, August 28, 2026",
+      "publisher": "Federal Reserve",
+      "date": "2026-08-28",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "pinned_path": "data/sources/fed-warsh-2026-08-28.html",
+      "text_path": "data/sources/fed-warsh-2026-08-28.txt",
+      "text_sha256": "sha256:e981590b83640bc97e15ae8a17b35fcffc9ba10463145d5328c62c08e623f117",
+      "quote": "I stand here today committed to a discipline, not to a decision.",
+      "quote_span_check": "byte_exact",
+      "about": "The chairman's first major speech after the July split: why the majority waited, his view that financial conditions are not restrictive, and his refusal to signal September."
     }
   ],
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "July 29 statement + minutes and Sept 2016 statement captured from federalreserve.gov, FOMC calendar page, six FRED CSVs refreshed, four coverage captures (CNBC/AP/CBS/NBC html+txt) plus Axios recovered via assisted reader with disclosure in axios-july-via-assisted.txt; SOURCES.md sha ledger regenerated"
+      "evidence": "July 29 statement + minutes and Sept 2016 statement captured from federalreserve.gov, FOMC calendar page, six FRED CSVs refreshed, four coverage captures (CNBC/AP/CBS/NBC html+txt) plus Axios recovered via assisted reader with disclosure in axios-july-via-assisted.txt; SOURCES.md sha ledger regenerated; 2026-09-08 rework after the completeness audit: July press-conference transcript (PDF + text) and Warsh's August 28 speech admitted; June statement/minutes/projections, Waller September 3, and BLS August cited through their existing records"
     },
     "derived_numbers_computed": {
       "done": true,

@@ -98,6 +98,10 @@ The BLS release and the eight coverage articles were copied from the September 4
 |---|---|---|
 | data/sources/fed-waller-2026-09-03.html | 100516 | da1a543f8edae492 |
 | data/sources/fed-waller-2026-09-03.txt | 23950 | 516c796aac178672 |
+| data/sources/FOMCpresconf20260729.pdf | 203365 | be77d850144d9936 |
+| data/sources/FOMCpresconf20260729.txt | 44807 | 49a0353d3fe05c36 |
+| data/sources/fed-warsh-2026-08-28.html | 113630 | 645183ab0ea932d8 |
+| data/sources/fed-warsh-2026-08-28.txt | 36957 | e981590b83640bc9 |
 | data/sources/coverage/cnbc-adp-august-jobs.html | 774103 | 57bfa353b68a6f25 |
 | data/sources/coverage/cnbc-adp-august-jobs.txt | 4909 | ff1cd035ba3a14da |
 | data/sources/coverage/cnbc-trump-rates-august-jobs.html | 827064 | f4c2c6fb1131803d |

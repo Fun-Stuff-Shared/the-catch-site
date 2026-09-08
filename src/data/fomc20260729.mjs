@@ -5,11 +5,11 @@
 export const event = {
   slug: "fed-rate/july-2026",
   title: "The quiet hold breaks: three officials vote to raise rates",
-  dek: "The statement changed by one verb. The vote changed everything: a 9–3 hold, with three regional presidents formally asking for a hike, the first time since 2016 that three dissenters pulled in the same direction.",
+  dek: "Outside the vote line, the statement changed by one verb. The vote turned a split already visible in June into three formal dissents: a 9–3 hold, with three regional presidents asking for a hike, the first time since 2016 that three dissenters pulled in the same direction.",
   name: "The 2026 rate hold",
   span: "Ongoing since December 2025",
   date: "2026-07-29",
-  updated: "2026-08-23",
+  updated: "2026-09-08",
   kpis: [
     { value: "3.50–3.75", unit: "%", period: "2026-07-29", label: "target range, unchanged" },
     { value: "230", unit: "days", label: "held at this level (at the meeting)", live: true },

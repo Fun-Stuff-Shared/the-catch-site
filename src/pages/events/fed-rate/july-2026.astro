@@ -64,13 +64,13 @@ const endX = x("2026-07-29"), endY = y(prev);
         <ol>
           <li>The Fed held at 3.50&ndash;3.75 percent for the fifth straight meeting, but the vote split 9&ndash;3.</li>
           <li>All three dissenters, Beth Hammack, Neel Kashkari, and Lorie Logan, wanted a quarter-point <em>hike</em>: the first three-dissent split in one direction since September 2016.</li>
-          <li>Before the meeting, markets put roughly a one-in-three chance on a hike, the most doubt around a Fed decision in years. The hold won; the argument did not end.</li>
+          <li>Before the meeting, by the Fed&rsquo;s own account, markets put roughly a one-in-three chance on a hike. The hold won; the argument did not end.</li>
         </ol>
       </aside>
 
 
 
-      <EventRecordContext subEvents={[{ date: "July 29", label: "Federal Reserve decision", section_anchor: "what-happened" }]} recordIds={["fomc-statement-2026-07-29", "fomc-minutes-2026-07-29"]} />
+      <EventRecordContext subEvents={[{ date: "July 29", label: "Federal Reserve decision", section_anchor: "what-happened" }, { date: "August 28", label: "Warsh at Jackson Hole", section_anchor: "what-next" }]} recordIds={["fomc-statement-2026-07-29", "fomc-minutes-2026-07-29", "fomc-presconf-2026-07-29", "fomc-statement-2026-06-17", "fomc-minutes-2026-06-17", "fomc-projections-2026-06-17", "fed-warsh-2026-08-28", "fed-waller-2026-09-03", "bls-empsit-2026-08"]} />
       <section id="what-happened">
         <p class="sec-kicker">The decision</p>
         <h2>What happened</h2>
@@ -85,17 +85,27 @@ const endX = x("2026-07-29"), endY = y(prev);
           Voting for: Warsh, Williams, Barr, Bowman, Cook, Jefferson, Paulson, Powell, Waller (minutes). <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">statement</a> &middot; <a href="/records/outlet-3a654fea6a558369/">minutes</a></p>
         </details>
         <p class="railed rail-record">
-          The minutes, released August 19, show the hike camp was wider than the vote: <em>&ldquo;several
-          participants favored an increase of 25 basis points in the target range at this meeting,&rdquo;</em>
-          judging that <em>&ldquo;price pressures appeared broad based.&rdquo;</em> A few of them argued a hike
-          now <em>&ldquo;would likely help forestall the need for a steeper and potentially more costly sequence
-          of tightening moves at a later stage.&rdquo;</em> <span class="chip chip-record">their words</span>
+          The minutes, released August 19, give the majority&rsquo;s reason first: <em>&ldquo;most participants
+          supported maintaining the current target range,&rdquo;</em> because the information arriving before
+          the next meeting <em>&ldquo;could provide more clarity, and correspondingly reduce uncertainty, about
+          the inflation outlook.&rdquo;</em> Most expected inflation to <em>&ldquo;step down over the rest of the
+          year as the effects of tariffs and earlier energy price increases wane.&rdquo;</em> Nobody at the table
+          called inflation acceptable; the disagreement was whether to wait one more data cycle. <span class="chip chip-record">their words</span>
         </p>
         <p class="railed rail-record">
-          Chair Kevin Warsh, who has pushed the committee toward open disagreement over stage-managed
-          consensus, told reporters he welcomed the split. His inflation line was categorical:&nbsp;
-          <em>&ldquo;There is no soft implicit target, not on this committee's watch.&rdquo;</em>
+          The same minutes suggest the hike case reached beyond the three who voted for it: <em>&ldquo;several
+          participants favored an increase of 25 basis points in the target range at this meeting,&rdquo;</em>
+          judging that <em>&ldquo;price pressures appeared broad based.&rdquo;</em> The minutes count
+          participants, a wider group than the twelve who vote, and do not name or number them, so how much wider
+          is not knowable from the record. A few argued a hike now <em>&ldquo;would likely help forestall the need
+          for a steeper and potentially more costly sequence of tightening moves at a later stage.&rdquo;</em>
           <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-record">
+          Asked at the press conference where the disagreement lay, Chair Kevin Warsh said he would <em>&ldquo;let the dissenters speak for themselves,&rdquo;</em> and described <em>&ldquo;overwhelming
+          agreement on objectives and authority and commitment&rdquo;</em> with the argument confined to how best
+          to get there. His inflation line was categorical: <em>&ldquo;there is no soft implicit target&rdquo;</em>, he
+          said, <em>&ldquo;not on this Committee&rsquo;s watch.&rdquo;</em> <span class="chip chip-record">their words</span>
         </p>
       </section>
 
@@ -104,8 +114,7 @@ const endX = x("2026-07-29"), endY = y(prev);
         <h2>Where this sits</h2>
         <p class="railed rail-computed">
           The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>230 days</strong> as of this meeting, and this was the&nbsp;<strong>fifth consecutive
-          meeting</strong> (January, March, April, June, July) to leave it there.&nbsp;
-          <span class="chip chip-computed">computed</span>
+          meeting</strong> (January, March, April, June, July) to leave it there.&nbsp; <span class="chip chip-computed">computed</span>
         </p>
         <figure class="rate-chart">
           <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to July 2026: six steps down from 5.50 to 3.75, then flat">
@@ -121,9 +130,9 @@ const endX = x("2026-07-29"), endY = y(prev);
           <figcaption>Upper bound of the target range. Source: Federal Reserve daily history (FRED).</figcaption>
         </figure>
         <p class="railed rail-computed">
-          Against the full 1982&ndash;2026 daily history of the Fed's target, 16,036 observations, today's
-          range sits at the&nbsp;<strong>47th percentile</strong>: the middle of four decades of policy.
-          What is rare is not the level but the argument about it. <span class="chip chip-computed">computed</span>
+          Against the full 1982&ndash;2026 daily history of the Fed's target, 16,036 observations, <strong>47 percent</strong> of those days had a lower rate than today's midpoint: the middle of four
+          decades of policy. The early years set a single target rate and the later ones a range, so this is a
+          rough placement, not a ranking. What is rare is not the level but the argument about it. <span class="chip chip-computed">computed</span>
         </p>
         <details class="receipt"><summary>computation</summary>
           <p>Combined FRED DFEDTAR (1982&ndash;2008) and DFEDTARU (2008&ndash;) daily series through 2026-08-22:
@@ -134,8 +143,15 @@ const endX = x("2026-07-29"), endY = y(prev);
         <p class="railed rail-record">
           Three dissents at one meeting, all pulling the same way, last happened in&nbsp;<strong>September
           2016</strong>, when Esther George, Loretta Mester, and Eric Rosengren each preferred a hike the
-          committee did not deliver. That episode is checked against the record below.&nbsp;
-          <span class="chip chip-record">record</span>
+          committee did not deliver. That episode is checked against the record below.&nbsp; <span class="chip chip-record">record</span>
+        </p>
+        <p class="railed rail-record">
+          The split did not appear from nowhere. Six weeks earlier the June vote was 12&ndash;0, but the June
+          minutes record that <em>&ldquo;a few participants commented that, in light of these developments,
+          there was a case for raising the target range for the federal funds rate, but those participants
+          indicated that they supported maintaining the current target range at this meeting.&rdquo;</em> The
+          June projections put nine of eighteen year-end rate estimates above the current midpoint, as the <a href="/events/fed-rate/june-2026/">June story</a> showed. July turned a visible minority into three
+          recorded votes. <span class="chip chip-record">record</span>
         </p>
       </section>
 
@@ -156,10 +172,16 @@ const endX = x("2026-07-29"), endY = y(prev);
           and Logan. <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" rel="noreferrer">June statement</a> &middot; <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" rel="noreferrer">July statement</a></p>
         </details>
         <p class="railed rail-record">
-          That silence is deliberate. Warsh has withdrawn the forward guidance his predecessors used to
-          steer markets, and told reporters the resulting repricing was partly the point: <em>&ldquo;Markets
-          have made decisions because we stepped back, in part, from trying to influence those
-          markets.&rdquo;</em> <span class="chip chip-record">their words</span>
+          That silence is deliberate. Warsh has pulled the committee back from the forward guidance his
+          predecessors used to steer markets, and told reporters the resulting repricing was partly the point: <em>&ldquo;That&rsquo;s part of the reason why we&rsquo;ve been somewhat spare on our words when we
+          pulled back from forward guidance.&rdquo;</em> He also called it a transition, not a finished reform: <em>&ldquo;the pullback of forward guidance requires some transition.&rdquo;</em>
+          <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-record">
+          Warsh floated a second change in the room: the minutes record that he <em>&ldquo;observed that six
+          scheduled meetings per year, held roughly every two months, would allow more information to accumulate
+          between meetings than under current practice,&rdquo;</em> asked for input, and made no decision; <em>&ldquo;any change in practice would not affect the schedule over the balance of 2026.&rdquo;</em>
+          The committee now meets eight times a year. <span class="chip chip-record">record</span>
         </p>
       </section>
 
@@ -228,9 +250,30 @@ const endX = x("2026-07-29"), endY = y(prev);
           assessed that policy tightening would likely be necessary if inflation did not decline.&rdquo;</em>
           <span class="chip chip-record">record</span>
         </p>
+        <p class="railed rail-record">
+          <strong>August 28.</strong> At Jackson Hole, Warsh described the July hold as a majority choosing to
+          wait: <em>&ldquo;A good majority of my colleagues and I thought the wiser course was to await new
+          information in the intermeeting period.&rdquo;</em> He said he <em>&ldquo;would be hard pressed to
+          describe broad financial conditions as restrictive,&rdquo;</em> put <em>&ldquo;the responsibility for
+          65 months of sustained, elevated inflation&rdquo;</em> on the central bank, and declined to say what
+          September holds: <em>&ldquo;I stand here today committed to a discipline, not to a
+          decision.&rdquo;</em> <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-record">
+          <strong>September 3.</strong> Governor Christopher Waller, who voted to hold in July, set out both
+          doors: <em>&ldquo;If there is continued progress toward our 2 percent goal, then I am willing to
+          support holding the policy rate at its current level. But if inflation comes in hot, I would consider
+          a rate hike.&rdquo;</em> His test is the August inflation data due before the meeting. <span class="chip chip-record">their words</span>
+        </p>
+        <p class="railed rail-official">
+          <strong>September 4.</strong> The August jobs report gave the hawks nothing to point at and the doves
+          nothing to fear: payrolls up 162,000, unemployment unchanged at 4.1 percent, and June and July revised
+          up by 11,000 and 44,000. The story of that report is on the <a href="/events/jobs/august-2026/">August jobs page</a>. <span class="chip chip-official">official data</span>
+        </p>
         <p class="railed rail-note">
-          Watching: the September 15&ndash;16 meeting, which brings refreshed projections; monthly PCE prints
-          against the 64-month streak; whether the three dissents become a majority.
+          Watching: the August consumer price index on September 11, the test Waller named; then the September
+          15&ndash;16 meeting, which brings refreshed projections and shows whether three dissents become a
+          majority. Added September 8, 2026.
         </p>
       </section>
       <StoryState view={state} supporting />
@@ -246,8 +289,8 @@ const endX = x("2026-07-29"), endY = y(prev);
         </p>
         <p class="railed rail-outlet">
           After the hold, NBC News quoted CME's FedWatch tool putting the odds of a September quarter-point
-          hike at&nbsp;<strong>59 percent</strong>. No other captured outlet carried a post-decision odds
-          figure. <span class="chip chip-outlet">reported pricing</span>
+          hike at&nbsp;<strong>59 percent</strong>; CBS News, in the same hour, put the same odds at <em>&ldquo;roughly 53%.&rdquo;</em> Both read the same futures market, so the gap is timing, not
+          disagreement, and neither is a second source for the other. <span class="chip chip-outlet">reported pricing</span>
         </p>
       </section>
 
@@ -268,6 +311,10 @@ const endX = x("2026-07-29"), endY = y(prev);
 
         <h3 class="src-group">Primary documents</h3>
         <ul class="src-list">
+          <li><a href="/records/fomc-presconf-2026-07-29/">Chairman Warsh&rsquo;s press conference, July 29</a> &middot; the transcript, for his words on the dissents and forward guidance</li>
+          <li><a href="/records/fomc-statement-2026-06-17/">FOMC statement, June 17</a>, <a href="/records/fomc-minutes-2026-06-17/">June minutes</a>, and <a href="/records/fomc-projections-2026-06-17/">June projections</a> &middot; the statement comparison and the split that preceded the vote</li>
+          <li><a href="/records/fed-warsh-2026-08-28/">Warsh at Jackson Hole, August 28</a> and <a href="/records/fed-waller-2026-09-03/">Waller on the outlook, September 3</a> &middot; what happened next</li>
+          <li><a href="/records/bls-empsit-2026-08/">The August jobs report, September 4</a> &middot; what happened next</li>
           <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20160921a.htm" rel="noreferrer">FOMC statement, September 21, 2016</a> &middot; the last three-dissent split in one direction, used to check the outlets' claim</li>
           <li><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" rel="noreferrer">The Fed's meeting calendar</a> &middot; the five-meeting count and the September 15&ndash;16 date</li>
         </ul>
@@ -283,7 +330,7 @@ const endX = x("2026-07-29"), endY = y(prev);
         <ul class="src-list">
           <li><a href="/records/outlet-7f3aa3f02503cd13/">CNBC</a>, <a href="/records/outlet-0329441c4201b94b/">AP</a>, and <a href="/records/outlet-81580f2e91b3dfa8/">CBS News</a>, decision day</li>
           <li><a href="/records/outlet-eb2cef3bd525271c/">Axios</a> &middot; direct capture was blocked by the site, so its text was recovered through an assisted web reader and kept with this page's sources</li>
-          <li><a href="/records/outlet-1dccf05cb4b25801/">NBC News</a> &middot; carries the post-decision FedWatch figure quoted above</li>
+          <li><a href="/records/outlet-1dccf05cb4b25801/">NBC News</a> and CBS News &middot; carry the two post-decision odds figures quoted above</li>
         </ul>
 
         <p class="sources-line"><a href="/methodology">How we check</a> &middot; every figure above traces to one of these sources; captured copies are kept so the record stays verifiable if pages change.</p>
