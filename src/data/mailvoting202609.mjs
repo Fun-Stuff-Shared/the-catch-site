@@ -36,6 +36,8 @@ function daysBetween(from, to) {
 }
 
 export const computed = {
+  daysEoDeadlineToRule: 23, // August 21 minus July 29; the order gave 120 days from March 31
+  eoFinalRuleDeadline: "July 29",
   daysFilingToElection: daysBetween(dates.app305, dates.election), // 58
   daysPiToElection: daysBetween(dates.pi, dates.election), // 60
   days297ToElection: daysBetween(dates.app297, dates.election), // 61
@@ -115,19 +117,21 @@ export const applicationsTable = [
 export const timeline = [
   { date: "Mar 31", title: "Executive Order 14399", sub: "Directs a Postal Service rulemaking on mail-in and absentee ballots" },
   { date: "Jun 2", title: "USPS proposes the rule", sub: "Notice of proposed rulemaking; more than 200,000 comments follow" },
+  { date: "Jul 1", title: "Settlement case, Washington", sub: "A D.C. judge finds the proposed rule would break the 2021 NAACP settlement and blocks it" },
+  { date: "Jul 17", title: "D.C. Circuit stays that order", sub: "One paragraph: no final rule yet, and the order likely would not break the settlement" },
   { date: "Jun 25", title: "Judgment for the states", sub: "Talwani rules for 23 states and D.C.; final judgment July 7, elections through November 3" },
   { date: "Jul 25", title: "First Circuit refuses a stay", sub: "Standing and ripeness arguments rejected" },
   { date: "Jul 27", title: "Applications 26A124 and 26A139 filed", sub: "The government, then the intervenor states on July 29, ask the Court to stay that judgment" },
   { date: "Aug 11", title: "Nationwide injunction", sub: "In the League of Women Voters case: no implementing Section 3, no completing the rulemaking" },
-  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day, while both injunctions stand" },
+  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day, while both injunctions stand; 23 days after the order's own July 29 deadline" },
   { date: "Aug 24", title: "The Court grants 26A124", sub: "Unsigned opinion: standing and ripeness, provision by provision; 26A139 denied as moot" },
   { date: "Aug 25", title: "Violation found", sub: "Talwani: completing the rulemaking violated the August 11 injunction; no remedy beyond saying so" },
-  { date: "Aug 26", title: "USPS final rule published", sub: "Federal Register, 91 Fed. Reg. 54,966" },
+  { date: "Aug 26", title: "Rule published; the target changes", sub: "Talwani vacates the August 11 injunction; new complaints aimed at the issued rule are filed the same day" },
   { date: "Aug 27", title: "Temporary restraining order", sub: "Judge Talwani pauses mandatory parts of the rule for 14 days" },
   { date: "Sep 3", title: "Application 26A297 filed", sub: "Stay of that temporary order, submitted to Justice Jackson" },
   { date: "Sep 4", title: "Preliminary injunction", sub: "Talwani enjoins named sections of the rule through November 3" },
   { date: "Sep 6", title: "26A297 withdrawn; 26A305 filed", sub: "Stay of the September 4 injunction; response due September 9", current: true },
-  { date: "Sep 8", title: "Three amicus briefs", sub: "Members of Congress, the Society for the Rule of Law, and Whistleblower Aid" },
+  { date: "Sep 8", title: "Three amicus briefs; inspector general review", sub: "Members of Congress, the Society for the Rule of Law, Whistleblower Aid; the inspector general says it will review the allegations" },
   { date: "Nov 3", title: "Federal election day", sub: "The Tuesday after the first Monday in November" },
 ];
 

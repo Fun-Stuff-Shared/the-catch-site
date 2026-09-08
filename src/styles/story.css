@@ -635,3 +635,7 @@
 
 /* Consecutive citations read as separate numbers, never as one. */
 .src-ref + .src-ref::before { content: ", "; color: var(--muted, #6b7280); font-size: 0.72em; }
+
+.story-figure figcaption { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .6rem; }
+.story-figure figcaption strong { font: 600 .95rem/1.3 var(--sans); }
+.story-figure figcaption span { font: 400 .8rem/1.4 var(--sans); color: var(--slate); }
