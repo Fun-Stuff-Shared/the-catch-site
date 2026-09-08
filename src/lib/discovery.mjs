@@ -4,16 +4,18 @@ import { event as june } from '../data/fomc20260617.mjs';
 import { event as july } from '../data/fomc20260729.mjs';
 import { event as miamiCargo } from '../data/miamicargocrash202609.mjs';
 import { event as missouriHouseMap } from '../data/missourihousemap202609.mjs';
+import { event as governmentFunding } from '../data/governmentfunding202609.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
   { path: '/events/miami-cargo-crash/', title: 'The Miami cargo crash', topic: 'Aviation', keywords: 'Miami airport cargo plane 21 Air Amazon runway overrun', description: 'The September 6, 2026, runway overrun at Miami International Airport, the official record, and what coverage got right.' },
   { path: '/events/missouri-house-map/', title: 'The Missouri House map', topic: 'Elections', keywords: 'Missouri redistricting House map referendum Supreme Court', description: "Missouri's Supreme Court ruled that the 2025 U.S. House map never became law. The November 3 House election uses the 2022 districts whether or not voters approve it." },
+  { path: '/events/government-funding/', title: 'Government funding', topic: 'Congress', keywords: 'continuing resolution shutdown appropriations Congress House Senate', description: 'The September 2026 stopgap keeps most federal agencies at fiscal year 2026 rates through December 11. The House vote was 370 to 48. The president signed the act the next day.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();

@@ -1,0 +1,261 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, houseVote, senateVote, calendar } from "../../../data/governmentfunding202609.mjs";
+const state = readPublishedState().events.get("event-government-funding-september-2026");
+if (!state) throw new Error("Missing publication selection: event-government-funding-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/government-funding/">Government funding</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">U.S. Congress &middot; September 1, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On September 1 the House voted {houseVote.yeas} to {houseVote.nays} to suspend the rules and agree to the Senate's amendments to H.R. 6500. Republicans voted {houseVote.republican.yea} to {houseVote.republican.nay}. Democrats voted {houseVote.democratic.yea} to {houseVote.democratic.nay}. Independent Kiley of California voted yes. Fourteen members did not vote. The Clerk recorded {houseVote.yeas + houseVote.nays + houseVote.notVoting} names, three short of 435 seats.<Cite s="house-clerk-roll286" passage="Kiley (CA)" /></li>
+          <li>The enrolled bill funds most agencies at fiscal year 2026 rates through December 11, 2026, or until a full-year 2027 appropriations act is signed, whichever comes first. That date is {calendar.daysHouseVoteToExpiry} days after the House vote and {calendar.daysElectionToExpiry} days after November 3.<Cite s="hr6500-enrolled" passage="December 11, 2026" /></li>
+          <li>The Senate had already passed the same text {senateVote.yeas} to {senateVote.nays} at 3:37 a.m. on August 8, with one present and three not voting. The White House recorded the president's signature on September 2. The act is Public Law 119-103.<Cite s="senate-vote-228" passage="Bill Passed (90-6, 3/5 majority required)" /><Cite s="wh-hr6500-signed" passage="On Wednesday, September 2, 2026, the President signed into law:" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the enrolled text of H.R. 6500, the House Clerk's roll call 286, the Senate's roll call 228, the White House signing note, the Office of Management and Budget's August 3 policy statement, floor and press statements from the Speaker and the appropriations chairs, and coverage checked against those records. Congress.gov's bill pages and the Congressional Budget Office's site do not let their pages be saved from this machine. The enrolled PDF is the bill record.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The vote</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="house-clerk-roll286" kind="record">
+          <p>On September 1, 2026, at 2:03 p.m., the House voted on a motion to suspend the rules and concur in the Senate amendments to H.R. 6500. The Clerk recorded the result as passed, {houseVote.yeas} yeas to {houseVote.nays} nays, with a two-thirds majority required. The Clerk's description field on that roll call still reads "AGOA Extension Act."<Cite s="house-clerk-roll286" passage="AGOA Extension Act" /></p></SourcedBlock>
+
+        <SourcedBlock source="hr6500-enrolled" kind="record">
+          <p>The enrolled act's short title is the Continuing Appropriations and Extensions Act, 2027. Section 106 says the money lasts until a 2027 appropriations act is signed, or until December 11, 2026, whichever comes first. Section 101 sets the rate as the fiscal year 2026 appropriations acts named there, with listed exceptions.<Cite s="hr6500-enrolled" passage="December 11, 2026" /></p></SourcedBlock>
+
+        <p data-layer="narrative">A continuing resolution is a stopgap: it keeps agencies running at last year's rate while Congress has not finished the twelve full-year spending bills. Fiscal year 2027 begins October 1. If no new act were signed by September 30, the 2026 appropriations named in section 101 would have lapsed.<Cite s="hr6500-enrolled" passage="Such amounts as may be necessary, at a rate for" /><Cite s="omb-sap-hr6500" passage="current levels" /></p>
+
+        <SourcedBlock source="senate-vote-228" kind="record">
+          <p>The Senate passed H.R. 6500, as amended, {senateVote.yeas} to {senateVote.nays} at 3:37 a.m. on August 8, 2026. The Senate's own title on that vote is "An act making continuing appropriations and extensions for fiscal year 2027, and for other purposes." The nays were Cassidy, Kaine, Markey, Paul, Sanders, and Warren. Graham voted present. Lankford, McConnell, and Tillis did not vote.<Cite s="senate-vote-228" passage="Bill Passed (90-6, 3/5 majority required)" /></p></SourcedBlock>
+
+        <SourcedBlock source="senate-vote-227" kind="record">
+          <p>An hour earlier, at 2:36 a.m., the Senate tabled an amendment by Senator Ted Budd, 61 to 32. The Senate's title on that vote is "Motion to Table Budd Amdt. No. 6747." That is the recorded fight over the product-extension language later numbered section 2019.<Cite s="senate-vote-227" passage="Motion to Table Agreed to (61-32)" /></p></SourcedBlock>
+
+        <SourcedBlock source="cole-floor-2026-09-01" kind="record">
+          <p>House Appropriations Chairman Tom Cole, leading the floor debate, said the Senate-amended bill "gives the nation, and our constituents, certainty": that the government will remain open, that service members will be paid, that TSA will keep operating, and that Social Security checks will go out on time.<Cite s="cole-floor-2026-09-01" passage="certainty that the government will remain open" /></p></SourcedBlock>
+
+        <SourcedBlock source="speaker-johnson-2026-09-01" kind="record">
+          <p>After the vote, Speaker Mike Johnson said House Republicans had begun the work in July so the government would not shut down, and that troops, the Coast Guard, and TSA would not go unpaid. He credited "House Republicans' leadership and the foresight back in July."<Cite s="speaker-johnson-2026-09-01" passage="Thanks to the House Republicans" /></p></SourcedBlock>
+
+        <SourcedBlock source="delauro-house-passage-2026-09-01" kind="record">
+          <p>House Appropriations Ranking Member Rosa DeLauro issued a statement the same day: the deadline had been pushed to December 11, she remained committed to passing all twelve full-year bills before then, and "We have 101 days until government funding expires."<Cite s="delauro-house-passage-2026-09-01" passage="We have 101 days until government funding expires" /></p></SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Still labeled AGOA.</span>
+              The Clerk's roll call 286, the vote that sent the stopgap to the president, is titled "AGOA Extension Act." That was H.R. 6500's original name when it passed the House in January as a trade bill. The enrolled act's title is the Continuing Appropriations and Extensions Act, 2027.<Cite s="house-clerk-roll286" passage="AGOA Extension Act" /><Cite s="hr6500-enrolled" passage="This Act may be cited as the" />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">The vote was not the law.</span>
+              September 1 headlines said the House had avoided a shutdown. The House vote sent the Senate text to the president. The White House recorded the signature on September 2. Until then the September 30 lapse date had not moved.<Cite s="abc-house-funding" passage="avoiding shutdown ahead of midterm elections" /><Cite s="wh-hr6500-signed" passage="On Wednesday, September 2, 2026, the President signed into law:" />
+              <a class="catch-jump" href="#what-happened-next">What happened next</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">Section 2019, no "hemp."</span>
+              Several outlets said the Senate delayed a ban on intoxicating hemp products. The enrolled bill never uses that word. Its own heading is "SECTION 781 EXTENSION," and it limits, through December 11, how a 2025 amendment applies to certain products listed in the Agricultural Marketing Act. We have not saved that 2025 amendment's text.<Cite s="thehill-house-funding" passage="short-term delay of a ban on intoxicating hemp products" /><Cite s="hr6500-enrolled" passage="SEC. 2019. SECTION 781 EXTENSION." />
+              <a class="catch-jump" href="#where-this-sits">Where this sits</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">{calendar.daysHouseVoteToExpiry} days, last year's rate.</span>
+              The stopgap does not set a new annual total. It continues 2026 rates through December 11. WIC may be spent at the rate needed to maintain participation. Federal workers stay paid through that date. The next lapse date is {calendar.daysElectionToExpiry} days after Election Day.<Cite s="hr6500-enrolled" passage="maintain participation" /><Cite s="cole-floor-2026-09-01" passage="certainty that our servicemembers will be paid" />
+              <a class="catch-jump" href="#who-feels-it">Who feels it</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">How the stopgap got here</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="cole-floor-2026-09-01" kind="record">
+          <p>Cole told the House that in July it had passed H.R. 9770, a continuing resolution through December 4. The Senate, he said, built on that plan and passed an amended version before leaving for recess. The September 1 vote was to take up that Senate text.<Cite s="cole-floor-2026-09-01" passage="in July the House proactively passed H.R. 9770" /></p></SourcedBlock>
+
+        <p data-layer="narrative">H.R. 6500 began as a January trade bill, the AGOA Extension Act. The Senate used that bill number as the vehicle for the stopgap, changed the title, and sent the rewritten text back. That is why the Clerk's machine still prints the old name on roll call 286 while the enrolled parchment carries the new one.<Cite s="house-clerk-roll286" passage="AGOA Extension Act" /><Cite s="senate-vote-228" passage="An act making continuing appropriations and extensions for fiscal year 2027, and for other purposes." /></p>
+
+        <SourcedBlock source="omb-sap-hr6500" kind="record">
+          <p>On August 3, before the Senate vote, the Office of Management and Budget issued a Statement of Administration Policy supporting the Senate amendment. It called the bill a "clean, short-term continuing resolution" at current levels through December 11, and said the president's senior advisors would recommend he sign it.<Cite s="omb-sap-hr6500" passage="The Administration supports the Senate Amendment to H.R. 6500." /></p></SourcedBlock>
+
+        <SourcedBlock source="hr6500-enrolled" kind="record">
+          <p>Two Senate additions sit in the enrolled text. Section 157 bars, through December 11, a rule revising the Uniform Guidance for federal grants, the notice of proposed rulemaking titled "Regulation for Federal Financial Assistance" published May 29, 2026, or a substantially similar rule. Section 2019 limits a 2025 amendment about products listed in the Agricultural Marketing Act.<Cite s="hr6500-enrolled" passage="Uniform Guidance" /><Cite s="hr6500-enrolled" passage="SEC. 2019. SECTION 781 EXTENSION." /></p></SourcedBlock>
+
+        <SourcedBlock source="murray-senate-passage-2026-08-08" kind="record">
+          <p>Senate Appropriations Vice Chair Patty Murray, on August 8, said the negotiated stopgap "closes the loophole that would have allowed the Trump administration to transfer funding for other programs to Border Patrol." That sentence is Murray's. The enrolled bill continues Public Law 119-86 except division B; it does not use the words "Border Patrol."<Cite s="murray-senate-passage-2026-08-08" passage="It closes the loophole that would have allowed the Trump administration to transfer funding for other programs to Border Patrol." /></p></SourcedBlock>
+
+        <p data-layer="narrative">The coverage places this vote after two long funding lapses in the past year: a fall 2025 shutdown over health-insurance subsidies, and a 2026 Homeland Security lapse. Those durations are the outlets' and the Speaker's. This page does not restate a day count we have not recounted from a saved lapse table.<Cite s="speaker-johnson-2026-09-01" passage="They engineered the longest shutdown in U.S. history" /><Cite s="npr-house-funding" passage="This Congress has seen two record-long government shutdowns in the last year" /></p>
+
+        <details class="receipt" data-layer="proof"><summary>how the calendar was counted</summary>
+          <p>House vote date from the Clerk: September 1, 2026. Senate vote date from the Senate XML: August 8, 2026. Signature date from the White House note: September 2, 2026. Expiry date from enrolled section 106(3): December 11, 2026. Election Day 2026 is November 3. Subtraction of those dates yields {calendar.daysSenateToHouse} days from the Senate vote to the House vote, {calendar.daysHouseVoteToExpiry} days from the House vote to December 11, {calendar.daysHouseVoteToElection} days from the House vote to November 3, and {calendar.daysElectionToExpiry} days from November 3 to December 11. DeLauro's "101 days" matches the House-vote-to-expiry count.</p>
+        </details>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Workers, programs, and the next date</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <SourcedBlock source="cole-floor-2026-09-01" kind="record">
+          <p>Cole's list of who keeps getting paid or served is the floor record: service members, TSA, Social Security recipients, homebuyers seeking mortgages, people on nutrition assistance, disaster relief, and road and infrastructure projects. Those are the programs he named. The enrolled bill itself names the twelve 2026 appropriations acts it continues.<Cite s="cole-floor-2026-09-01" passage="certainty that our servicemembers will be paid" /><Cite s="hr6500-enrolled" passage="The Agriculture, Rural Development, Food and Drug" /></p></SourcedBlock>
+
+        <SourcedBlock source="hr6500-enrolled" kind="record">
+          <p>One named exception to a straight freeze is WIC, the Special Supplemental Nutrition Program for Women, Infants, and Children. Amounts for WIC "may be apportioned at the rate for operations necessary to maintain participation." The Commodity Supplemental Food Program, which serves low-income seniors, may be spent at the rate needed to keep current caseload.<Cite s="hr6500-enrolled" passage="maintain participation" /><Cite s="hr6500-enrolled" passage="Commodity Supplemental Food Program" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Federal workers whose pay comes from annual appropriations stay on the 2026 rate through December 11. The Office of Management and Budget's August 3 statement said a shutdown "forces Federal employees to go without pay." Some work continues in a lapse; that sentence is OMB's, about people going unpaid.<Cite s="omb-sap-hr6500" passage="forces Federal employees to go without pay" /></p>
+
+        <SourcedBlock source="wh-hr6500-signed" kind="record">
+          <p>The White House signing note also names surface transportation and veteran programs among the authorities the act extends. Those sit in the enrolled bill's later divisions, not in Cole's floor list.<Cite s="wh-hr6500-signed" passage="extends authorities for a broad range of programs including surface transportation and veteran programs" /></p></SourcedBlock>
+
+        <SourcedBlock source="hr6500-enrolled" kind="record">
+          <p>People and groups that receive federal grants live under section 157 until December 11: the Uniform Guidance rewrite published as a proposed rule on May 29 cannot be issued or take effect through that date. Collins, the Senate Appropriations chair, called that rule a plan that "would politicize the grant process."<Cite s="hr6500-enrolled" passage="issued or finalized prior to the enactment of this" /><Cite s="collins-house-passage-2026-09-01" passage="which would politicize the grant process" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The public that votes on November 3 is on the calendar the bill writes. The next funding fight is dated December 11, {calendar.daysElectionToExpiry} days after that election. DeLauro's statement treats those {calendar.daysHouseVoteToExpiry} days as the time left to finish the twelve full-year bills.<Cite s="delauro-house-passage-2026-09-01" passage="passing all twelve full-year funding bills before the expiration of this resolution" /></p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">The coverage</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <p data-layer="narrative">The held articles were checked against the enrolled bill, the Clerk's roll call, the Senate roll call, and the White House signing note. Political color (who "engineered" past shutdowns, who "waved the white flag") is the speaker's or the member's record, not a finding of the bill.<Cite s="house-clerk-roll286" passage="Passed" /></p>
+
+        <SourcedBlock source="abc-house-funding" kind="checked">
+          <p><strong>ABC</strong> (John Parkinson) wrote that the House passed a continuing resolution through December 11 by 370 to 48, with 19 Republicans and 29 Democrats opposed, and that the Senate had passed it on August 8. Those figures check out against the Clerk and the Senate XML. ABC wrote that the vote sent the measure to the president for signature. On September 1 that was true; it was not yet law.<Cite s="abc-house-funding" passage="By a count of 370 to 48" /><Cite s="house-clerk-roll286" passage="193" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-house-funding" kind="checked">
+          <p><strong>The Associated Press</strong> (Kevin Freking) reported the 370-48 vote, that the Senate had already approved the measure, and Cole's "certainty" line. Those check out. AP, through DeLauro, said the Senate text prevents Homeland Security from transferring funds to the Border Patrol and delays a grants rule. The grants delay is section 157. The Border Patrol sentence is DeLauro's and Murray's; it is not a phrase in the enrolled bill.<Cite s="ap-house-funding" passage="The House passed the bill by a vote of 370-48" /><Cite s="hr6500-enrolled" passage="Uniform Guidance" /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-house-funding" kind="checked">
+          <p><strong>The Hill</strong> reported 370-48, 19 Republicans and 29 Democrats opposed, and a Senate margin of 90-6. Those check out. It attributed opposition among some House Republicans to a hemp-ban delay and the grants rule. The grants rule is in the bill. The hemp characterization is The Hill's; the bill's own heading is "SECTION 781 EXTENSION."<Cite s="thehill-house-funding" passage="passed the House on a 370-48 vote" /><Cite s="senate-vote-228" passage="yeas>90" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-house-funding" kind="checked">
+          <p><strong>CBS</strong> reported a 370 to 48 vote after leaders fast-tracked the bill, a two-thirds majority, Senate approval in early August, and a December 11 expiry. Those check out. Its line that "Funding is now set to expire on Dec. 11" was, on September 1, a description of the bill the House had just passed, not of a signed law.<Cite s="cbs-house-funding" passage="passed the measure in a 370 to 48 vote" /></p></SourcedBlock>
+
+        <SourcedBlock source="nbc-house-funding" kind="checked">
+          <p><strong>NBC</strong> reported 370-48, funding through December 11, and that the bill would go to the president, who was expected to sign it. That checks out for a September 1 dispatch. The signature came the next day.<Cite s="nbc-house-funding" passage="sailed through the chamber by a vote of 370-48" /><Cite s="wh-hr6500-signed" passage="the President signed into law:" /></p></SourcedBlock>
+
+        <SourcedBlock source="npr-house-funding" kind="checked">
+          <p><strong>NPR</strong> reported 370-48, current levels with a few exceptions through December 11, and that the White House had encouraged the stopgap. The vote and the date check out. The administration's August 3 statement is the White House paper on that encouragement.<Cite s="npr-house-funding" passage="The legislation passed the House 370-48 with bipartisan support" /><Cite s="omb-sap-hr6500" passage="Every Member of" /></p></SourcedBlock>
+
+        <SourcedBlock source="pbs-house-funding" kind="checked">
+          <p><strong>PBS NewsHour</strong> ran the Associated Press dispatch. The 370-48 vote, the Cole quote, and the Senate-already-passed line are the same AP copy checked above.<Cite s="pbs-house-funding" passage="The House passed the bill by a vote of 370-48" /></p></SourcedBlock>
+
+        <SourcedBlock source="upi-house-funding" kind="checked">
+          <p><strong>UPI</strong> reported 370-48, 29 Democrats and 19 Republicans opposed, funding through December 11, and Senate approval in August. Those check out against the Clerk's party table.<Cite s="upi-house-funding" passage="Twenty-nine Democrats and 19 Republicans voted against it" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">One claim, examined</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="abc-house-funding" kind="checked">
+          <p><strong>The claim:</strong> the House passed a funding bill, avoiding a shutdown. <strong>The record:</strong> the House, by a two-thirds vote, agreed to Senate amendments to H.R. 6500. That vote did not itself appropriate a dollar. The enrolled bill appropriates at 2026 rates through December 11. The White House recorded the signature that made it Public Law 119-103 on September 2. "Avoiding a shutdown" is a fair description of the effect after that signature. It is the wrong description of what the September 1 roll call, standing alone, did.<Cite s="abc-house-funding" passage="House passes funding bill, avoiding shutdown" /><Cite s="wh-hr6500-signed" passage="H.R. 6500, the" /><Cite s="house-clerk-roll286" passage="On Motion to Suspend the Rules and Concur in the Senate Amendments" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The Clerk's surviving "AGOA Extension Act" label is the same mismatch in the other direction: the machine is describing the bill number's original cargo, not the text the House actually adopted that afternoon.<Cite s="house-clerk-roll286" passage="AGOA Extension Act" /></p>
+
+        <details class="receipt" data-layer="proof"><summary>how the party split was counted</summary>
+          <p>From house-roll286.xml totals-by-party: Republican 193 yea, 19 nay, 6 not voting; Democratic 176 yea, 29 nay, 8 not voting; Independent 1 yea. Sum of yeas 193 + 176 + 1 = 370. Sum of nays 19 + 29 = 48. Not voting 6 + 8 = 14. Member rows in that file: 432. Senate vote 228 XML: 90 yeas, 6 nays, 1 present, 3 absent.</p>
+        </details>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">September 2</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="wh-hr6500-signed" kind="record">
+          <p>The White House briefing note dated September 2 says that on Wednesday, September 2, 2026, the president signed H.R. 6500, the Continuing Appropriations and Extensions Act, 2027. The note says the act provides fiscal year 2027 appropriations through December 11, 2026, and extends authorities including surface transportation and veteran programs.<Cite s="wh-hr6500-signed" passage="On Wednesday, September 2, 2026, the President signed into law:" /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-trump-signs-funding" kind="checked">
+          <p>The Hill, writing that night, said the president signed the stopgap into law and restated the 90-6 and 370-48 margins. Those margins match the two roll calls. The Hill's "until at least Dec. 11" matches section 106: the date is a ceiling, not a floor, if a 2027 appropriations act is signed sooner.<Cite s="thehill-trump-signs-funding" passage="President Trump on Wednesday signed a stopgap government funding bill into law" /><Cite s="hr6500-enrolled" passage="whichever of the following first occurs" /></p></SourcedBlock>
+
+        <SourcedBlock source="collins-house-passage-2026-09-01" kind="record">
+          <p>Collins, after the House vote and before the signature, said she hoped the stopgap would "quickly be signed into law" so work could return to the twelve bills. The White House note is that signature.<Cite s="collins-house-passage-2026-09-01" passage="I hope this CR will quickly be signed into law" /></p></SourcedBlock>
+
+        <SourcedBlock source="house-clerk-roll288" kind="record">
+          <p>The same afternoon, after the stopgap, the House agreed to H. Res. 1499, a rule for other bills, 210 to 208. Republicans voted 207 to 5. Democrats voted 2 to 203. Independent Kiley voted yes. That rule is a second story. It is the day's close vote; the stopgap was not.<Cite s="house-clerk-roll288" passage="On Agreeing to the Resolution" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: whether any of the twelve full-year 2027 appropriations bills is signed before December 11; whether the Uniform Guidance rewrite or the section 2019 product limit is extended past that date, because both also end then; and whether a further stopgap is needed once the new Congress is organized.<Cite s="delauro-house-passage-2026-09-01" passage="passing all twelve full-year funding bills before the expiration of this resolution" /><Cite s="hr6500-enrolled" passage="through December" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li>A Congressional Budget Office cost estimate for H.R. 6500 as enacted. CBO's site did not let its pages be saved from this machine. The enrolled bill's section 2018 keeps the authorizing divisions off statutory pay-as-you-go scorecards. That is not a dollar total.<Cite s="hr6500-enrolled" passage="budgetary effects of this division and each succeeding division shall" /></li>
+          <li>A written statement from House Democratic Leader Hakeem Jeffries on this vote. His office newsroom address did not return a page we could save. DeLauro's statement is the ranking appropriator's record we have.<Cite s="delauro-house-passage-2026-09-01" passage="DeLauro Statement on House Passage of Continuing Resolution" /></li>
+          <li>Whether any of the twelve full-year 2027 bills will be signed before December 11. Cole said he wants to finish them and does not know if that can be done until after the election. That is his forecast, not a date in the act.<Cite s="nbc-house-funding" passage="I do want to finish all the bills before the end of the year" /></li>
+          <li>Market or ratings-agency reaction. No dated pricing quote or ratings statement is in the records we saved, so none is on this page.</li>
+        </ul>
+      </section>
+
+      <StorySources event="government-funding/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 1.15; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+</style>
