@@ -21,6 +21,29 @@ You are writing a page a stranger will read and a skeptic will audit. Every sent
 traces to a saved document, a saved data series, or arithmetic done from one. If you
 cannot point at the record for a sentence, the sentence does not ship.
 
+## Write from the record, not from your understanding of it
+
+The way this work fails is not arithmetic. Seven stories in one day recomputed every
+number correctly and still shipped invented coverage claims, overstated mechanisms,
+stitched quotations and explanations no record gives. The cause was the same each time:
+a real passage supported one phrase of a sentence, and the author treated that as support
+for the whole sentence. A citation is not a license for the words around it.
+
+So the unit of writing is the passage, not the paragraph. For each admitted record, list
+the passages that change the event, the mechanism, who is affected, the chronology, or an
+outlet verdict, and mark each one used, held unused with a reason, or out of scope. Draft
+only after that table exists, and draft each sentence with its passage open: the sentence
+may say what the passage says, in reader words, and nothing more. Where a term or a count
+needs a mechanism the passage does not give, write the gap ("the records do not say what
+the count includes"), never the likely explanation. Where two records differ, say what
+each one counts; do not reconcile them. Where an outlet is quoted, the words come from
+that outlet's own pin, byte for byte. Where you rewrite or restructure, every regenerated
+sentence is a new sentence and is checked against its passage again; a rewrite is not a
+retelling from memory.
+
+Four questions, asked of every sentence before it ships: which record, which passage,
+does the passage say all of this, and did I read it this session or remember it.
+
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Deploy is `git push` to main; the live site rebuilds in under a minute.
 
@@ -73,7 +96,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    tables, and comparisons are recomputed in-session from the admitted series. Put the
    values in the page's data module (`src/data/<subject><period>.mjs`) with a comment
    naming the source file, and render from it. A number is never typed twice.
-5. **Verify outlet claims against the record.** Before crediting an outlet for a fact, search
+5. **Disposition the passages, then verify outlet claims against the record.** Build the
+   passage table from the section above in the working note before any prose: record,
+   passage, what it establishes, disposition. It is the map the page is written from and
+   the interrogation is checked against. Then, before crediting an outlet for a fact, search
    every primary pin for it (case-insensitive; uppercase and hyphenated headings defeat
    case-sensitive searches). The primary takes the cite; the outlet row says it checks out.
    Legal and financial terms appear first as the pin's word in quotation marks, then in reader
@@ -83,8 +109,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    wrote, what the record shows. Be ready for the page's own earlier claim to be wrong
    in a more specific way than the reviewer said; say so on the page with a dated
    correction.
-6. **Write in the section grammar, as an inverted pyramid.** Fixed order, sections dropped
-   only when truly empty. Read `WRITING.md` at the repo root (house style; it binds every
+6. **Write in the section grammar, as an inverted pyramid, one passage at a time.** Fixed
+   order, sections dropped only when truly empty. Each sentence is written with its passage
+   on screen; a sentence with no passage in the table is a gap to state or a sentence to cut. Read `WRITING.md` at the repo root (house style; it binds every
    sentence) and `references/section-grammar.md` before writing, the shape rules first:
    most important first and each paragraph one level deeper, depth in the open and never
    collapsed, every number series a figure from the data module (`BarChart`, `DataTable`,
@@ -128,7 +155,11 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
     sourced and computed figures (`references/procedures.md`, step 12), then rebuild. A Luna
     read of only these pins is optional; the deterministic fill makes no model calls. A story whose foot says
     the state has not read its sources is not done.
-12. **Keep iterating.** A page is a living record. When a record the page names as missing
+12. **Rework the class, then keep iterating.** A review names instances; each instance
+    belongs to a class (a stitched quote, an outlet quoted with words it did not print, a
+    typed number, an unsupported explanation, internal vocabulary). Fix the named line,
+    sweep the whole page for the class, rerun both lints and the interrogation, and report
+    the sibling count per class. A page is a living record. When a record the page names as missing
     arrives (a transcript, a roll call, a later filing, a transcript of a spot that was on the
     post all along), capture it that day, fold it in, re-check the claim, and add the dated
     line to What happened next. "No transcript is saved" is a task with a date, never a
