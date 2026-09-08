@@ -93,8 +93,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    `references/procedures.md`, step 11). Every gap becomes a needs-ledger row, resolved
    on the page or typed with its reason. Never dismiss the list wholesale.
 10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
-   refresh on `/events/<subject>/`; the homepage features the latest story. Old stories
-   are never rewritten; later developments are dated "what happened next" additions.
+   refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
+   page is standalone and is never edited afterwards: a revision to last month's number is
+   this month's story and goes on this month's page (its revisions table and claim check).
 11. **Stage, then ship on a human's word, then audit live.** Publication is a human
     decision: hand over the rendered page, not receipts. Commit by explicit path (page, data module, manifest,
     ledger, pins). Push. Poll the live URL until the new content serves, then re-run the
