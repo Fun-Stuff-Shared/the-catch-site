@@ -16,6 +16,11 @@
 **Why it is bad:** the reviewer's memory can be wrong (58 vs 59), and the page's own earlier claim can be wrong in a more specific way than they said.
 **Rule:** recount from the pinned bytes; recompute from the admitted series; the pins win.
 
+### Verified with the method that produced it
+**What happens:** a table is "recounted" by a script that reads the source the same way the page did, and the match is reported as verification. The Texas donor table matched its recount to the cent while both counted bank interest, an exchange's sale proceeds, and the FEC's memo cross-references as givers, doubling two gifts.
+**Why it is bad:** agreement between two copies of one rule is not evidence; every fixture is coherent. The defect lived in the reading of the format, which the check inherited.
+**Rule:** numbers from a structured source come through a shared, tested reader (`src/lib/fec.mjs` for FEC filings and the independent-expenditure export; the tests in `scripts/fec-test.mjs` fail if memo rows or interest are ever counted). A check is independent only when it reads the source format on its own terms: open the raw rows, read the field definitions, and name what each excluded row is before summing.
+
 ### Numbers typed twice
 **What happens:** a value appears in prose and in a table, typed separately.
 **Rule:** derived values live in the data module and render from it.
