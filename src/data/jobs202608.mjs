@@ -6,8 +6,8 @@
 
 export const event = {
   slug: "jobs/august-2026",
-  title: "Payrolls snap back: employment rises by 162,000, and July's loss becomes a gain",
-  dek: "Forecasters expected about 53,000. The economy added three times that, restaurants and public schools led, and the July loss that opened this series was revised away to a gain of 21,000. The unemployment rate held at 4.1 percent.",
+  title: "Payrolls rise by 162,000 and July's loss becomes a gain, with two volatile categories supplying 101,000 of it",
+  dek: "Forecasters expected 53,000 to 65,000. The employer survey estimated payrolls rose by 162,000, two and a half to three times those forecasts. Restaurants and public schools supplied 101,000 of the gain, and the July loss that opened this series was revised to a gain of 21,000. The unemployment rate held at 4.1 percent.",
   name: "The August 2026 jobs report",
   span: "Reported September 4, 2026",
   date: "2026-09-04",
@@ -77,3 +77,33 @@ export const wageGrowth = [
   { month: "2026-07", yoy: 3.24 },
   { month: "2026-08", yoy: 3.09 },
 ];
+
+// Added after the external completeness review of 2026-09-09.
+
+// How far the estimate ran past the published forecasts, from the same release day:
+// 162 / 65 = 2.49 (FactSet), 162 / 56 = 2.89 (Reuters), 162 / 53 = 3.06 (Dow Jones and
+// The Wall Street Journal). Rounded to one decimal for the page.
+export const forecastMultiples = { low: 2.5, high: 3.1 };
+
+// Share of the August payroll gain from restaurants and bars plus local government
+// education: (59 + 42) / 162 = 0.6235, rounded to whole percent.
+export const volatileShare = 62;
+
+// People holding more than one job, from table A-9 of the August release
+// (data/sources/bls-empsit-t09-2026-08.txt). Thousands. The percent is the release's own
+// "Percent of total employed" line, not a recomputation.
+export const multipleJobholders = { august: 8805, july: 8693, percentOfEmployed: 5.4, unadjustedAugust: 8505 };
+
+// The two readings published on September 8, four days after the report.
+// Employment Trends Index from data/sources/coverage/conference-board-eti-2026-08.txt;
+// the survey figures from data/sources/nyfed-sce-2026-08.txt. The index change is
+// 108.53 - 107.76 = 0.77.
+export const sept8 = {
+  etiJuly: 107.76,
+  etiAugust: 108.53,
+  etiChange: 0.77,
+  unemploymentUp: 44.4,
+  findJob: 45.4,
+  loseJob: 13.8,
+  quit: 19.5,
+};

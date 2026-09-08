@@ -153,6 +153,19 @@ The BLS release and the eight coverage articles were copied from the September 4
 | data/sources/coverage/ap-jolts-july-2026.html | 772237 | 56b39d32f089723b |
 | data/sources/coverage/ap-jolts-july-2026.txt | 43270 | 7e7da05f6633bab5 |
 
+## Added after the external completeness review (2026-09-09)
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/bls-empsit-t09-2026-08.html | 111390 | 23f0f417a07e287b |
+| data/sources/bls-empsit-t09-2026-08.txt | 9911 | bde3ef0e2ef8e74c |
+| data/sources/nyfed-sce-2026-08.html | 105299 | 5f346bba2e4ec9f3 |
+| data/sources/nyfed-sce-2026-08.txt | 6191 | 80ed834ba2d2fe43 |
+| data/sources/coverage/conference-board-eti-2026-08.html | 302618 | 3f4e40d4d8d1a410 |
+| data/sources/coverage/conference-board-eti-2026-08.txt | 4623 | a45460e71339ac3e |
+| data/sources/coverage/conference-board-august-jobs.html | 392982 | f97c5a22160fe19a |
+| data/sources/coverage/conference-board-august-jobs.txt | 26066 | 2e5b10841faeba4a |
+
 # Miami cargo crash, September 2026 (saved 2026-09-08)
 
 Official posts from the FAA, NTSB, Miami International Airport, and Miami-Dade Fire Rescue were captured as served on September 8. 21 Air's website statement was saved the same day. Coverage articles were copied from the September 6-8 capture runs. An earlier note on this ledger said the FAA aviation-accidents page had no written statement and that the C-SPAN briefing page had no transcript. Both were wrong: the FAA page carries a September 6 entry, and C-SPAN's page carries a transcript saved September 8. The NTSB press-release index still does not carry a written release on this accident.
