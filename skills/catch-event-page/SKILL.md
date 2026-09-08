@@ -83,8 +83,14 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    wrote, what the record shows. Be ready for the page's own earlier claim to be wrong
    in a more specific way than the reviewer said; say so on the page with a dated
    correction.
-6. **Write in the section grammar.** Fixed order, sections dropped only when truly empty.
-   Read `references/section-grammar.md` before writing. Use the components:
+6. **Write in the section grammar, as an inverted pyramid.** Fixed order, sections dropped
+   only when truly empty. Read `references/section-grammar.md` before writing, its shape
+   rules first: four open fact blocks per section and the rest behind a `fact` disclosure,
+   every number series a figure from the data module (`BarChart`, `DataTable`, `StepChart`
+   in `src/components/story/`), one mechanism sentence per introduced term, a "so what"
+   closing each section, rounding in the story and cents in the proof, catch rows ranked
+   with a "Why it matters", coverage as `OutletCheck` cards with errors first, Who feels it
+   as a dated list. Use the components:
    `SourcedBlock` (fact with a chip), `Cite` (numbered source reference),
    `StorySources` (the records list), `ReadingModes`, `StoryState`.
 7. **Manifest every record, and every displayed number.** Append each new record to
@@ -137,6 +143,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - [ ] Every step above maps to an artifact, or is reported as not done.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative.
+- [ ] Measured in a browser at 1280 wide (section-grammar shape rule 9): at least one figure,
+      no section with more than four open fact blocks, zero dollar figures to the cent in
+      the story view, and the story view not more than about 9,000 px tall.
 - [ ] SOURCES.md regenerated after the last pin; every manifest `pinned_path` basename has a row.
 - [ ] Zero same-source adjacent `<Cite>` pairs; every computed number is visible or deleted.
 - [ ] The open-questions list asks for nothing the records list already holds.

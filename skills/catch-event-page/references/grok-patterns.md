@@ -64,3 +64,17 @@ Absorbed all 16 keystone and 12 codex items in one pass, about 25 minutes. Copie
 
 SKILL.md steps 2, 5, 7, 9 and the done checklist; references/anti-patterns.md, six new entries; references/procedures.md, fetch facts in step 3 and the interrogation rule in step 11. The same lessons ride in prompt-5.txt as extra asks so the next author run is the test of whether the skill text changes the first draft.
 
+
+## Stories 5 and 6 (Texas Senate, Greenland): after the first fold
+
+The first fold worked on the six recurring omissions: both first drafts opened on the first
+public act, pinned primaries before coverage, registered every figure, and had zero wrong
+numbers on recount. Four new patterns showed on both stories and are now anti-patterns:
+pinned coverage read for quotes rather than content; absence claims without a capture; an
+unrelated record framed as a response; a rounding, preview, label, or broader true word
+called a discrepancy. Two showed once: nobody introduced on first mention (Texas), an
+interactive portal pinned as an empty shell (Texas).
+
+What the fold did not touch and Zain caught on reading (2026-09-08): shape. Both pages
+were walls of record blocks with no figure; see section-grammar shape rules and the four
+shape anti-patterns. The rule for the next drafts: measure the page before saying done.

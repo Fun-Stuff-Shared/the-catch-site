@@ -65,3 +65,61 @@
 ### Same-source adjacent cites and proof-only numbers
 **What happens:** 11 of 34 adjacent cite pairs on one page cited the same record twice, rendering "1 , 1"; a share was computed into the data module and a proof block but never stated in visible text; paragraphs were split into one-sentence paragraphs to attach claim-sized passages.
 **Rule:** one Cite per sentence unless two different records support it; a computed number appears in the fact layer or is deleted with its proof block; passages attach to clauses, not to new paragraphs.
+
+### A wall of record blocks
+Texas Senate, first version (fcd3c048): 42 `SourcedBlock`s, 45 dollar figures to the cent,
+no figure, 10,555 px tall; the narrative layer was the same size as the gold jobs page, so
+the excess was records, not story. Three readers quit at the same place: the first run of
+paragraphs that each open with an institution's name. Rule: section-grammar shape rules 1,
+2, 5, and 9. Four open fact blocks per section, the rest behind a `fact` disclosure; every
+number series a figure; round in the story; measure the page before saying done.
+
+### Catch rows in identical furniture
+"LLC, not Inc." sat between "Not a campaign gift" and "Not the first outside money" in the
+same box, and a skeptical reader read the trivial row as padding that devalued the real
+ones. Rule: shape rule 6. Rank by consequence, one "Why it matters" per row, small slips on
+one line.
+
+### A paragraph per outlet that concludes the outlet was right
+Nine outlet paragraphs, six of them "checks out", read as roll call and every reader
+skipped the section. Rule: shape rule 7. `OutletCheck` cards, errors first, one card for a
+shared dispatch, a count line above.
+
+### The section readers came for is the shortest
+Who feels it on Texas was 358 px with the early-voting date under a paragraph about
+unitemized contributions; on Greenland the reader's own facts (6 to 15 megabit, the housing
+backlog, the soldiers arriving that week) sat in a catch box, in What happened next, and in
+a fact-check aside. Rule: shape rule 8. A dated list of the reader's facts, in order.
+
+### Pinned coverage read for quotes, not for content
+Texas (746e4523): the Tribune pin alone held the outside-spending picture, the race totals,
+Trump counting PACs and nonprofits toward "a billion", and Thune's $8 million a week; none
+reached the page. Greenland (d27c5d84): the factsheet and the 2021 programming document
+were named as sources and unused; DR and KNR pins held the 15 million kroner co-financing,
+the three-day meeting sequence, and the housing deadline. Rule: after pinning an article or
+document, list every passage that changes a reader's understanding, and place each or type
+why not.
+
+### An absence claim without the capture that would show the positive
+"Did not post the Ennis statement"; "first 2026 general-election independent expenditure"
+resting on one later filing; "no White House statement" with no listing saved. Rule: no
+negative without the capture that would show the positive, with the search named; check
+earlier filings before any "first".
+
+### An unrelated record framed as a response
+Talarico's "crony capitalism" post named nothing about the buy; the Trump map post named
+nothing about the Commission package, and no outlet tied them. Rule: quote what the record
+says about the event; if it names nothing about the event, say so or leave it out. A catch
+row needs an outlet that told the reader the thing the record contradicts.
+
+### A broader true word, a rounding, a preview, or a label called a discrepancy
+AP's "television" against "connected TV"; AP's "around half a billion" against €530 million;
+France 24's "expected to unveil" published the evening before; Reuters' Sunday dateline on a
+piece first published Sunday in Nuuk; the Commission press-corner "Sep 6" label against the
+7 September signature block. Rule: a catch row rests on two records that disagree. Rounding,
+previews, datelines correct in local time, and publication labels are not disagreements;
+say what they are in one line.
+
+### An interactive portal pinned as its empty shell
+The Texas Secretary of State candidate portal saved as an Angular shell with no candidates.
+Rule: if the pin has no data, it is not a pin; capture with a browser and save what rendered.
