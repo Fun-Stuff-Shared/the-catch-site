@@ -1,4 +1,4 @@
-# Dispositions (keystone, 2026-09-08, rework commit 26f62b67)
+# Dispositions (keystone, 2026-09-08, rework commit 7dabef26)
 
 Each finding checked at the pinned bytes before any edit. Verified = the record says what the auditor said it says.
 
