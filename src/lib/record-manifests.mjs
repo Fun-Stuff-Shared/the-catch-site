@@ -25,8 +25,9 @@ export function storySources(event) {
   return { list, num: Object.fromEntries(list.map((s) => [s.id, s.n])) };
 }
 
-export function citeNumber(sourceId) {
-  for (const manifest of manifests) {
+export function citeNumber(sourceId, event) {
+  const ordered = event ? [...manifests.filter((m) => m.event === event), ...manifests.filter((m) => m.event !== event)] : manifests;
+  for (const manifest of ordered) {
     const i = (manifest.story_sources ?? []).findIndex((s) => s.id === sourceId);
     if (i >= 0) return { n: i + 1, event: manifest.event };
   }

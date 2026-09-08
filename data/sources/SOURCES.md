@@ -98,6 +98,8 @@ The BLS release and the eight coverage articles were copied from the September 4
 |---|---|---|
 | data/sources/fed-waller-2026-09-03.html | 100516 | da1a543f8edae492 |
 | data/sources/fed-waller-2026-09-03.txt | 23950 | 516c796aac178672 |
+| data/sources/fwd-haiti-tps-2026-01.pdf | 227381 | 8cbad48271873f6b |
+| data/sources/fwd-haiti-tps-2026-01.txt | 11653 | 1a848e1924987c6e |
 | data/sources/FOMCpresconf20260729.pdf | 203365 | be77d850144d9936 |
 | data/sources/FOMCpresconf20260729.txt | 44807 | 49a0353d3fe05c36 |
 | data/sources/fed-warsh-2026-08-28.html | 113630 | 645183ab0ea932d8 |

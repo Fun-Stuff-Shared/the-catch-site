@@ -1,7 +1,10 @@
 ---
 import { citeNumber } from "../lib/record-manifests.mjs";
 const { s, passage } = Astro.props;
-const cite = citeNumber(s);
+// The footnote number is the page's own list; a source shared with another story keeps this page's numbering.
+const pageEvent = (Astro.url.pathname.match(/^\/events\/(.+?)\/?$/) || [])[1];
+const cite = citeNumber(s, pageEvent);
 if (!cite) throw new Error(`cite_unknown_source:${s}`);
+if (pageEvent && cite.event !== pageEvent) throw new Error(`cite_outside_page_sources:${s} on ${pageEvent} (found in ${cite.event})`);
 ---
 <sup class="src-ref"><a href={`#src-${cite.n}`} data-record-href={`/records/${s}/`} data-passage={passage} aria-label={`Source ${cite.n}: read the evidence`}>{cite.n}</a></sup>

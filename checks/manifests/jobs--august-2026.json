@@ -2,7 +2,7 @@
   "subject": "jobs",
   "event": "jobs/august-2026",
   "date": "2026-09-04",
-  "story_title": "Hiring snaps back: payrolls rise by 162,000, and July's loss becomes a gain",
+  "story_title": "Payrolls snap back: employment rises by 162,000, and July's loss becomes a gain",
   "state_event_id": "event-jobs-august-2026",
   "event_record": "/events/jobs/",
   "completed_by": "fable (keystone session), skill catch-event-page",
@@ -473,6 +473,32 @@
       "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
       "quote_span_check": "normalized",
       "about": "Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records; this is the preliminary result, published one week before the August report."
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "title": "Nonfarm payrolls, first-published vintages for January to July 2026 (ALFRED)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-08-07",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_sha256": "sha256:0d8c327a542429bde9bd7ae11a15f29b8d27661eb693e522b82f7ab5d06d14eb",
+      "quote": "observation_date,PAYEMS_20260213",
+      "quote_span_check": "byte_exact",
+      "about": "The archive of each month's first-published payroll level, one vintage per release date; the first-estimate column of the revision table is read from it."
+    },
+    {
+      "id": "fwd-haiti-tps-2026-01",
+      "title": "FWD.us, Haiti TPS fact sheet (January 2026)",
+      "publisher": "FWD.us",
+      "date": "2026-01-01",
+      "url": "https://www.fwd.us/wp-content/uploads/2026/01/Haiti-TPS-Fact-Sheet_January-2026.pdf",
+      "pinned_path": "data/sources/fwd-haiti-tps-2026-01.pdf",
+      "text_path": "data/sources/fwd-haiti-tps-2026-01.txt",
+      "text_sha256": "sha256:1a848e1924987c6e084a612b6c5fcc28ccb81ef4602acd858c688bc51231fca3",
+      "quote": "13,000 nursing assistants",
+      "quote_span_check": "byte_exact",
+      "about": "An immigration advocacy group's estimates of Haitian TPS holders by occupation, the source for the elder-care figures."
     }
   ],
   "story_sources": [
@@ -720,6 +746,20 @@
       "label": "Heather Long on X",
       "meta": " · posted September 4",
       "usage": "the release-day reaction"
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "group": "official",
+      "label": "Nonfarm payrolls, first-published vintages (ALFRED)",
+      "meta": "",
+      "usage": "first estimates for January to July in the revision table"
+    },
+    {
+      "id": "fwd-haiti-tps-2026-01",
+      "group": "primary",
+      "label": "FWD.us Haiti TPS fact sheet, January 2026",
+      "meta": "",
+      "usage": "how many TPS holders worked in elder care"
     }
   ],
   "figures": [

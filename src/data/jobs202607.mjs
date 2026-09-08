@@ -10,13 +10,13 @@ export const event = {
   name: "The July 2026 jobs report",
   span: "Reported August 7, 2026",
   date: "2026-08-07",
-  updated: "2026-08-31",
+  updated: "2026-09-08",
   visual: { kind: "payrolls", source: "fred-payems-2026-07", from: "2025-06-01", to: "2026-07-01", latest: "July", range: "June 2025–July 2026", rangeCompact: "January–July 2026" },
   kpis: [
     { value: "-23,000", unit: "", figure_unit: "jobs", period: "2026-07", label: "payrolls in July" },
     { value: "4.1", unit: "%", period: "2026-07", label: "unemployment rate" },
     { value: "-103,000", unit: "", figure_unit: "jobs", period: "2026-05..2026-06", label: "May + June, revised away" },
-    { value: "5", unit: "of 12", label: "months negative in the past year" },
+    { value: "5", unit: "of 12", label: "months negative in the past year, as first reported" },
   ],
 };
 

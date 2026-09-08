@@ -25,6 +25,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026</p>
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <p class="railed rail-note" data-layer="fact"><strong>Revised, September 4, 2026.</strong> The figures on this page are the July report as first published on August 7. In its September 4 release the agency revised July: "the change for July was revised up by 44,000, from -23,000 to +21,000," and June from 20,000 to 31,000. On today's series the twelve months to July hold four negative months, not five, and add 371,000 jobs; the seven-month revision total is minus 56,000, not minus 111,000. July gets a second revision on October 2. The <a href="/events/jobs/august-2026/">August story</a> carries the current figures.<Cite s="bls-empsit-2026-08-revision" passage="the change for July was revised up by 44,000, from -23,000 to +21,000" /></p>
       <ReadingModes />
 
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
@@ -53,7 +54,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <aside class="three-things" data-layer="fact">
         <p class="tt-label">Three things to know</p>
         <ol>
-          <li>The economy lost 23,000 jobs in July. Forecasters surveyed by Dow Jones had expected a <em>gain</em> of 83,000.</li>
+          <li>The first estimate showed the economy losing 23,000 jobs in July, a change the agency itself said "changed little." Forecasters surveyed by Dow Jones had expected a <em>gain</em> of 83,000.<Cite s="bls-empsit-2026-07" passage="changed little in July" /></li>
           <li>The bad news reaches backward: May was revised down from +129,000 to +63,000 and June from +57,000 to +20,000. Three months that once looked solid now read +63,000, +20,000, and minus 23,000.</li>
           <li>The unemployment rate fell to 4.1 percent, but for an unwelcome reason: the share of adults working or looking for work dropped to 61.4 percent, down 0.7 points since January.</li>
         </ol>
@@ -136,7 +137,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <SourcedBlock source="bls-realer-2026-07" kind="record">
           <p>Average hourly earnings rose 2 cents to $37.62, up 3.2&nbsp;percent over the year. Adjusted for inflation, real hourly earnings fell 0.1&nbsp;percent in July and are down 0.2&nbsp;percent over the year.<Cite s="bls-realer-2026-07" /></p></SourcedBlock>
 
-        <p data-layer="narrative">Wages are rising about 3.2&nbsp;percent a year while prices rise faster. The typical worker's purchasing power did not improve.<Cite s="bls-empsit-2026-07" passage="3.2 percent" /><Cite s="bls-realer-2026-07" passage="decreased 0.1 percent" /></p>
+        <p data-layer="narrative">Wages are rising about 3.2&nbsp;percent a year while prices rise faster. Average hourly pay bought slightly less than a year earlier; average weekly pay, which includes hours worked, bought slightly more, up 0.1 percent. Neither average says what happened to the typical worker.<Cite s="bls-empsit-2026-07" passage="3.2 percent" /><Cite s="bls-realer-2026-07" passage="decreased 0.1 percent" /><Cite s="bls-realer-2026-07" passage="increase in real average weekly earnings" /></p>
 
         <SourcedBlock source="bls-empsit-2026-07" kind="record">
           <p>People on temporary layoff rose by 153,000 to 921,000. The long-term unemployed (27 weeks or more) make up 25.5&nbsp;percent of all unemployed people, one in four. People working part time because they could not find full-time work held at 4.8&nbsp;million. People who want work but have stopped looking rose from 1.76 to 1.81&nbsp;million.<Cite s="bls-empsit-2026-07" passage="Among the unemployed, the number of people on temporary layoff increased by 153,000 to 921,000 in July." /></p></SourcedBlock>
@@ -190,7 +191,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               ))}
             </tbody>
           </table>
-          <p class="rev-note" data-layer="proof">Across the seven months: average revision &minus;16,000; cumulative &minus;111,000; average miss in either direction 44,000. First estimates from the ALFRED vintage archive; current estimates from the July release.</p>
+          <p class="rev-note" data-layer="proof">Across the seven months: average revision &minus;16,000; cumulative &minus;111,000; average miss in either direction 44,000. First estimates from the ALFRED vintage archive; current estimates from the July release of August 7. The revision note at the top of the page carries the September 4 figures.</p>
         </div>
       </section>
 
@@ -200,9 +201,9 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">What the markets said</h2>
 
         <SourcedBlock source="outlet-38a539f4a7084988" kind="record">
-          <p>Before this report, CME FedWatch odds of a September rate hike stood at 59 percent. After the report, those odds fell to 44 percent. Stock futures rose; Treasury yields fell.<Cite s="outlet-1dccf05cb4b25801" passage="59%" /><Cite s="outlet-38a539f4a7084988" passage="44%" /></p></SourcedBlock>
+          <p>Right after the Fed's July 29 decision, NBC News quoted CME FedWatch odds of a September rate hike at 59 percent. After this report, CNBC quoted them at 44 percent. Stock futures rose; Treasury yields fell.<Cite s="outlet-1dccf05cb4b25801" passage="59%" /><Cite s="outlet-38a539f4a7084988" passage="44%" /></p></SourcedBlock>
 
-        <p data-layer="narrative">The move, not the level, is the story. On July 29 the Fed had voted 9&ndash;3 to hold, with three members formally asking for a quarter-point hike. One weak jobs report took a rate increase from more likely than not to less, and markets treated that as good news.<Cite s="fomc-statement-2026-07-29" passage="preferred to raise the target range for the federal funds rate by 1/4 percentage point" /><Cite s="outlet-1dccf05cb4b25801" passage="59%" /><Cite s="outlet-38a539f4a7084988" passage="44%" /></p>
+        <p data-layer="narrative">The move, not the level, is the story. On July 29 the Fed had voted 9&ndash;3 to hold, with three members formally asking for a quarter-point hike. Between the Fed's decision and this report, nine days apart, a rate increase went from more likely than not to less; this report is the main event in that window, not the only one, and markets treated the move as good news.<Cite s="fomc-statement-2026-07-29" passage="preferred to raise the target range for the federal funds rate by 1/4 percentage point" /><Cite s="outlet-1dccf05cb4b25801" passage="59%" /><Cite s="outlet-38a539f4a7084988" passage="44%" /></p>
       </section>
 
       <!-- ═══ BENCHMARK ═══ -->
@@ -213,7 +214,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <SourcedBlock source="bls-prebmk-2026" kind="record">
           <p>Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records. For March 2026: the survey was 79,000 jobs too high (0.1&nbsp;percent), with private payrolls 178,000 too high. The average size of this correction over the past ten years is 0.2 percent.<Cite s="bls-prebmk-2026" /></p></SourcedBlock>
 
-        <p data-layer="narrative">This correction does not change the figures on this page yet: it is applied to the published series in February 2027. Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em>. It complicates July's public-sector story rather than confirming it.<Cite s="bls-prebmk-2026" passage="-178,000" /></p>
+        <p data-layer="narrative">This correction does not change the figures on this page yet: it is applied to the published series in February 2027. Private payrolls 178,000 too high and the total only 79,000 too high means government payrolls were counted about 99,000 too <em>low</em> as of March. The check covers one month, March, and does not say which months the error sits in, so it neither confirms nor complicates July's school figures.<Cite s="bls-prebmk-2026" passage="-178,000" /></p>
 
         <details class="receipt" data-layer="proof"><summary>the record</summary>
           <p>Release: &ldquo;The preliminary estimate of the CES national benchmark revision to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)&hellip; The preliminary benchmark revision for total private employment was -178,000 (-0.1 percent).&rdquo; <a href="/records/bls-prebmk-2026/" rel="noreferrer">Preliminary Benchmark (National), March 2026</a>, August 28, 2026.</p>

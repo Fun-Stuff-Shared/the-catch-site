@@ -6,7 +6,7 @@
 
 export const event = {
   slug: "jobs/august-2026",
-  title: "Hiring snaps back: payrolls rise by 162,000, and July's loss becomes a gain",
+  title: "Payrolls snap back: employment rises by 162,000, and July's loss becomes a gain",
   dek: "Forecasters expected about 53,000. The economy added three times that, restaurants and public schools led, and the July loss that opened this series was revised away to a gain of 21,000. The unemployment rate held at 4.1 percent.",
   name: "The August 2026 jobs report",
   span: "Reported September 4, 2026",
