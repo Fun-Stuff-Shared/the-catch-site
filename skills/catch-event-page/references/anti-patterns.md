@@ -71,8 +71,10 @@ Texas Senate, first version (fcd3c048): 42 `SourcedBlock`s, 45 dollar figures to
 no figure, 10,555 px tall; the narrative layer was the same size as the gold jobs page, so
 the excess was records, not story. Three readers quit at the same place: the first run of
 paragraphs that each open with an institution's name. Rule: section-grammar shape rules 1,
-2, 5, and 9. Four open fact blocks per section, the rest behind a `fact` disclosure; every
-number series a figure; round in the story; measure the page before saying done.
+2, 5, and 10. Write in descending order with the depth in the open at the end of each
+section; every number series a figure; round in the story; measure the page before saying
+done. Hiding the depth in collapsed boxes is not the fix (Zain, 2026-09-08, on the first
+Texas restructure): the reader should be reading toward it, not clicking for it.
 
 ### Catch rows in identical furniture
 "LLC, not Inc." sat between "Not a campaign gift" and "Not the first outside money" in the
