@@ -60,3 +60,33 @@ directly.
 | data/sources/U6RATE.csv | 216 | 7150c174beae9808 |
 | data/sources/LNS11300060.csv | 15113 | b5a3b57d63a240e5 |
 | data/sources/alfred-payems-vintages-2026.csv | 1050 | 0d8c327a542429bd |
+
+## August 2026 jobs report (captured 2026-09-04, saved 2026-09-08)
+
+The BLS release and the eight coverage articles were copied from the September 4 wire capture run, where each was saved as served with a receipt. bls.gov refused direct fetches on September 8 (Access Denied), so no fresh fetch was made; the capture copy is the pin. Series files carry the fetch date in their names so the July page keeps its own copies.
+
+| File | Bytes | sha256 (first 16) |
+|---|---|---|
+| data/sources/bls-empsit-2026-08.html | 1064564 | 6d83eeecf867f1e8 |
+| data/sources/bls-empsit-2026-08.txt | 114789 | 3fc04a11ffd394d5 |
+| data/sources/PAYEMS-2026-09-04.csv | 18387 | bf5b48d21b9a84a0 |
+| data/sources/UNRATE-2026-09-04.csv | 14196 | ffe86c903f6944eb |
+| data/sources/U6RATE-2026-09-04.csv | 6039 | b7907446bf33fb32 |
+| data/sources/LNS11300060-2026-09-04.csv | 15129 | f7a37929302d7be6 |
+| data/sources/CES0500000003-2026-09-04.csv | 4213 | c602b6f2be66970c |
+| data/sources/alfred-payems-2026-09-04.csv | 18396 | 30390ad54c9385ab |
+| data/sources/alfred-payems-2026-08-07.csv | 18378 | 6c1aa8663e191636 |
+| data/sources/coverage/thehill-august-jobs.html | 401691 | ba030f0d9e3edce4 |
+| data/sources/coverage/thehill-august-jobs.txt | 14257 | 8b7177e5fb9a7ea7 |
+| data/sources/coverage/aljazeera-august-jobs.html | 208209 | 084585d4c695b0cf |
+| data/sources/coverage/aljazeera-august-jobs.txt | 5709 | 1d62bf7633131a41 |
+| data/sources/coverage/upi-august-jobs.html | 305023 | 5600d30a4714e252 |
+| data/sources/coverage/upi-august-jobs.txt | 5813 | 18a83207abfc7422 |
+| data/sources/coverage/pbs-august-jobs.html | 260971 | ae2e7b70b421bc58 |
+| data/sources/coverage/pbs-august-jobs.txt | 8868 | 0c0c56c5ac8272dd |
+| data/sources/coverage/cnbc-women-august-jobs.html | 760810 | 1a65e2bc7a6f94a1 |
+| data/sources/coverage/cnbc-women-august-jobs.txt | 5985 | ebee195127cd367d |
+| data/sources/coverage/cnbc-yields-august-jobs.html | 789022 | a7dd43f996aa5058 |
+| data/sources/coverage/cnbc-yields-august-jobs.txt | 5096 | 311896316749c83f |
+| data/sources/coverage/wapo-august-jobs.html | 974954 | e311f396da5eb9ee |
+| data/sources/coverage/wapo-august-jobs.txt | 3127 | c181d8039dbc5d7f |

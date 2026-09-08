@@ -1,8 +1,10 @@
 ---
-import { payrollSeries, payrollSource } from '../lib/payroll-chart.mjs';
+import { payrollChart, payrollSeries, payrollSource as defaultSource } from '../lib/payroll-chart.mjs';
 import { formatDate } from '../lib/presentation.mjs';
-const { compact = false } = Astro.props;
-const points = compact ? payrollSeries.slice(-7) : payrollSeries;
+const { compact = false, source: recordId = null, from = '2025-06-01', to = '2026-07-01', latest = 'July', range = 'June 2025–July 2026', rangeCompact = 'January–July 2026' } = Astro.props;
+const chart = recordId ? payrollChart(recordId, from, to) : { source: defaultSource, series: payrollSeries };
+const payrollSource = chart.source;
+const points = compact ? chart.series.slice(-7) : chart.series;
 const W = 720, H = 240, left = 48, right = 12, top = 20, bottom = 38;
 const y = (value) => top + (220 - value) / 390 * (H - top - bottom);
 const width = (W - left - right) / points.length;
@@ -10,11 +12,11 @@ const signed = (n) => `${n > 0 ? '+' : ''}${(n * 1000).toLocaleString('en-US')}`
 const last = points.at(-1);
 ---
 <figure class:list={['payroll-chart', { 'payroll-chart-compact': compact }]} data-layer="fact" id="payroll-chart">
-  <figcaption><strong>Jobs gained and lost each month</strong><span>{compact ? 'January–July 2026' : 'June 2025–July 2026'} · Seasonally adjusted</span></figcaption>
-  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Monthly payroll change. July 2026: ${signed(last.change)} jobs. ${compact ? 'January' : 'June'} ${compact ? '2026' : '2025'} through July 2026. Positive bars show gains; negative bars show losses.`}>
+  <figcaption><strong>Jobs gained and lost each month</strong><span>{compact ? rangeCompact : range} · Seasonally adjusted</span></figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Monthly payroll change. ${latest} 2026: ${signed(last.change)} jobs. ${compact ? rangeCompact : range}. Positive bars show gains; negative bars show losses.`}>
     {[-100, 0, 100, 200].map(tick => <g><line x1={left} x2={W-right} y1={y(tick)} y2={y(tick)} class:list={['payroll-grid', { 'payroll-zero': tick === 0 }]} /><text x={left-8} y={y(tick)+4} text-anchor="end">{tick > 0 ? '+' : ''}{tick}k</text></g>)}
     {points.map((point, i) => <g><rect x={left+i*width+4} y={y(Math.max(0,point.change))} width={width-8} height={Math.abs(y(point.change)-y(0))} class:list={['payroll-bar', { 'payroll-loss': point.change<0 }]}><title>{formatDate(point.month)}: {signed(point.change)} jobs</title></rect>{(compact || i===0 || i===7 || i===points.length-1) && <text x={left+(i+.5)*width} y={H-12} text-anchor="middle">{formatDate(point.month).slice(0,3)}{!compact && ` ${point.month.slice(2,4)}`}</text>}</g>)}
   </svg>
-  <p class="chart-source">July: <strong>{signed(last.change)} jobs</strong>. <a href={`/records/${payrollSource.id}/`} data-passage={last.passage}>Inspect the source data</a></p>
+  <p class="chart-source">{latest}: <strong>{signed(last.change)} jobs</strong>. <a href={`/records/${payrollSource.id}/`} data-passage={last.passage}>Inspect the source data</a></p>
   {!compact && <><p class="chart-vintage">BLS via FRED. Figures from the saved series dated {formatDate(payrollSource.date)}; later releases may revise them.</p><details class="chart-values"><summary>Read the values and calculation</summary><p>Each bar subtracts the previous month's total jobs from that month's total. The saved series reports totals in thousands.</p><table><thead><tr><th scope="col">Month</th><th scope="col">Jobs gained or lost</th></tr></thead><tbody>{points.map(point => <tr><th scope="row">{formatDate(point.month)}</th><td><a href={`/records/${payrollSource.id}/`} data-passage={point.passage} aria-label={`Check ${formatDate(point.month)}: ${signed(point.change)} jobs`}>{signed(point.change)}</a></td></tr>)}</tbody></table></details></>}
 </figure>

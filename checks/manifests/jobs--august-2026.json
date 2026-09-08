@@ -1,0 +1,411 @@
+{
+  "subject": "jobs",
+  "event": "jobs/august-2026",
+  "date": "2026-09-04",
+  "story_title": "Hiring snaps back: payrolls rise by 162,000, and July's loss becomes a gain",
+  "state_event_id": "event-jobs-august-2026",
+  "event_record": "/events/jobs/",
+  "completed_by": "fable (keystone session), skill catch-event-page",
+  "date_completed": "2026-09-08",
+  "sub_events": [
+    {
+      "id": "jobs-release-2026-09-04",
+      "date": "2026-09-04",
+      "label": "August employment release",
+      "section_anchor": "what-happened",
+      "records": [
+        "bls-empsit-2026-08"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "bls-empsit-2026-08",
+      "title": "The Employment Situation, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-04",
+      "url": "https://www.bls.gov/news.release/archives/empsit_09042026.htm",
+      "pinned_path": "data/sources/bls-empsit-2026-08.html",
+      "text_path": "data/sources/bls-empsit-2026-08.txt",
+      "text_sha256": "sha256:3fc04a11ffd394d5e4b7207095447b89a73e9d7bdf6e7bc38faaa81e54c5277f",
+      "quote": "Total nonfarm payroll employment increased by 162,000 in August, and the unemployment rate was unchanged at 4.1 percent",
+      "quote_span_check": "normalized",
+      "about": "The government's monthly jobs report: the Bureau of Labor Statistics counts payroll jobs through a survey of employers and measures unemployment through a survey of households, and publishes both in this release. Our copy was saved the day it came out."
+    },
+    {
+      "id": "fred-payems-2026-08",
+      "title": "Total nonfarm payrolls, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-04",
+      "url": "https://fred.stlouisfed.org/series/PAYEMS",
+      "pinned_path": "data/sources/PAYEMS-2026-09-04.csv",
+      "text_path": "data/sources/PAYEMS-2026-09-04.csv",
+      "text_sha256": "sha256:bf5b48d21b9a84a0be71ece7268fad0cccb943cc89d863fdc01490bece8ab020",
+      "quote": "2026-08-01,159075",
+      "quote_span_check": "byte_exact",
+      "about": "The count of payroll jobs each month since 1939, as published by the statistics agency and mirrored by the St. Louis Fed. Saved after the August release; every monthly change and average on this page is arithmetic on this file."
+    },
+    {
+      "id": "fred-unrate-2026-08",
+      "title": "Unemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-04",
+      "url": "https://fred.stlouisfed.org/series/UNRATE",
+      "pinned_path": "data/sources/UNRATE-2026-09-04.csv",
+      "text_path": "data/sources/UNRATE-2026-09-04.csv",
+      "text_sha256": "sha256:ffe86c903f6944ebc8281e5474a15fc4ceaac61059bc51ec86a7241391d8713d",
+      "quote": "2026-08-01,4.1",
+      "quote_span_check": "byte_exact",
+      "about": "The share of the labor force that is unemployed, each month since 1948."
+    },
+    {
+      "id": "fred-u6rate-2026-08",
+      "title": "U-6 underemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-04",
+      "url": "https://fred.stlouisfed.org/series/U6RATE",
+      "pinned_path": "data/sources/U6RATE-2026-09-04.csv",
+      "text_path": "data/sources/U6RATE-2026-09-04.csv",
+      "text_sha256": "sha256:b7907446bf33fb327fa8432ee8f39240eac3c454ca097af5321cb95e2598cf34",
+      "quote": "2026-08-01,7.7",
+      "quote_span_check": "byte_exact",
+      "about": "The broadest measure of slack: the unemployed plus people who want work but stopped looking plus people working part time because they could not find full-time work."
+    },
+    {
+      "id": "fred-primeage-2026-08",
+      "title": "Prime-age (25 to 54) participation, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-04",
+      "url": "https://fred.stlouisfed.org/series/LNS11300060",
+      "pinned_path": "data/sources/LNS11300060-2026-09-04.csv",
+      "text_path": "data/sources/LNS11300060-2026-09-04.csv",
+      "text_sha256": "sha256:f7a37929302d7be6bcda2d885aac8a322649eba6cb5ca8f9ca0fb3cc36ad20a7",
+      "quote": "2026-08-01,83.4",
+      "quote_span_check": "byte_exact",
+      "about": "The share of people aged 25 to 54 who are working or looking for work."
+    },
+    {
+      "id": "fred-ahe-2026-08",
+      "title": "Average hourly earnings, all private employees, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-04",
+      "url": "https://fred.stlouisfed.org/series/CES0500000003",
+      "pinned_path": "data/sources/CES0500000003-2026-09-04.csv",
+      "text_path": "data/sources/CES0500000003-2026-09-04.csv",
+      "text_sha256": "sha256:c602b6f2be66970cf4d06fa376fd761ae6211e93c06bfe4ea337625a080d21e8",
+      "quote": "2026-08-01,37.75",
+      "quote_span_check": "byte_exact",
+      "about": "Average hourly pay for private-sector employees each month since 2006; the year-over-year wage growth on this page is arithmetic on this file."
+    },
+    {
+      "id": "alfred-payems-first-2026-08",
+      "title": "Payroll estimates as first published on September 4, 2026 (ALFRED vintage)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-09-04",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-2026-09-04.csv",
+      "text_path": "data/sources/alfred-payems-2026-09-04.csv",
+      "text_sha256": "sha256:30390ad54c9385ab0fe7e27b94629a47ed7bbf70f20a09834df095ca28408fcc",
+      "quote": "2026-08-01,159075",
+      "quote_span_check": "byte_exact",
+      "about": "The payroll series exactly as it stood on release day, kept so first estimates can be compared with later revisions."
+    },
+    {
+      "id": "alfred-payems-first-2026-07",
+      "title": "Payroll estimates as first published on August 7, 2026 (ALFRED vintage)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-08-07",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-2026-08-07.csv",
+      "text_path": "data/sources/alfred-payems-2026-08-07.csv",
+      "text_sha256": "sha256:6c1aa8663e1916362c44bf6b3272768d9abd6dfc0d2cf0215799fb108b6074c8",
+      "quote": "2026-07-01,158858",
+      "quote_span_check": "byte_exact",
+      "about": "The payroll series as it stood on August 7, 2026, when July was first reported as a loss of 23,000."
+    },
+    {
+      "id": "thehill-august-jobs",
+      "title": "US added 162,000 jobs in August, blowing past expectations",
+      "publisher": "The Hill",
+      "date": "2026-09-04",
+      "url": "https://thehill.com/business/6069875-august-jobs-data-us-economy-trump-administration/",
+      "pinned_path": "data/sources/coverage/thehill-august-jobs.html",
+      "text_path": "data/sources/coverage/thehill-august-jobs.txt",
+      "text_sha256": "sha256:8b7177e5fb9a7ea7d72e5234cebc958cf62e2acf2c789aa689f84f732d28de6d",
+      "quote": "economy added 162,000 jobs in August, according to new data released Friday by the Bureau of Labor Statistics",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4."
+    },
+    {
+      "id": "aljazeera-august-jobs",
+      "title": "US adds 162,000 jobs in August, raising Fed rate hike expectations",
+      "publisher": "Al Jazeera",
+      "date": "2026-09-04",
+      "url": "https://www.aljazeera.com/economy/2026/9/4/us-adds-jobs-in-august-beating-economic-forecasts",
+      "pinned_path": "data/sources/coverage/aljazeera-august-jobs.html",
+      "text_path": "data/sources/coverage/aljazeera-august-jobs.txt",
+      "text_sha256": "sha256:1d62bf7633131a41e34ecaff42507f703a9aa27711ae4b8ae6e2149934882d6e",
+      "quote": "Economists polled by Reuters had forecast 56,000 gains",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4."
+    },
+    {
+      "id": "upi-august-jobs",
+      "title": "Nonfarm payrolls grew by 162,000 in August, beat expectations",
+      "publisher": "UPI",
+      "date": "2026-09-04",
+      "url": "https://www.upi.com/Top_News/US/2026/09/04/nonfarm-payrolls-bureau-labor-statistics-august-2026/8801788532242/",
+      "pinned_path": "data/sources/coverage/upi-august-jobs.html",
+      "text_path": "data/sources/coverage/upi-august-jobs.txt",
+      "text_sha256": "sha256:18a83207abfc74220036b2a52bcab0b2502de807fdb67aba7c882eb0925367da",
+      "quote": "Nonfarm payrolls increased by 162,000 in August while the national unemployment rate remained firm at 4.1%",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4."
+    },
+    {
+      "id": "pbs-august-jobs",
+      "title": "Hiring burst of 162,000 jobs in August puts the focus squarely back on inflation in the U.S.",
+      "publisher": "PBS NewsHour (Associated Press)",
+      "date": "2026-09-04",
+      "url": "https://www.pbs.org/newshour/economy/hiring-burst-of-162000-jobs-in-august-puts-the-focus-squarely-back-on-inflation-in-the-u-s",
+      "pinned_path": "data/sources/coverage/pbs-august-jobs.html",
+      "text_path": "data/sources/coverage/pbs-august-jobs.txt",
+      "text_sha256": "sha256:0c0c56c5ac8272dde74fbbc87d11aeee140e243905a4ebeec2dc67c22c992aa9",
+      "quote": "employers added a surprising 162,000 jobs",
+      "quote_span_check": "normalized",
+      "about": "The Associated Press story as published by PBS NewsHour, saved as served on September 4."
+    },
+    {
+      "id": "cnbc-women-august-jobs",
+      "title": "Women accounted for almost all of job gains in August. Here's why",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/04/jobs-report-women-payrolls.html",
+      "pinned_path": "data/sources/coverage/cnbc-women-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-women-august-jobs.txt",
+      "text_sha256": "sha256:ebee195127cd367d52e4b2dacf2d82aabc2c74a9f3b2ea5964750d1e2ce9a50a",
+      "quote": "Women accounted for 158,000",
+      "quote_span_check": "normalized",
+      "about": "Release-day analysis, saved as served on September 4."
+    },
+    {
+      "id": "cnbc-yields-august-jobs",
+      "title": "2-year yield rises to highest since January 2025 after hot jobs report",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/04/treasurys-bonds-nonfarm-payrolls-unemployment-data.html",
+      "pinned_path": "data/sources/coverage/cnbc-yields-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-yields-august-jobs.txt",
+      "text_sha256": "sha256:311896316749c83fdd110bd7e038a0e27f635ee7a7ed615327cd6bdec38d1e88",
+      "quote": "The probability of a quarter percentage point increase rose to 58%",
+      "quote_span_check": "normalized",
+      "about": "Release-day market coverage, saved as served on September 4."
+    },
+    {
+      "id": "wapo-august-jobs",
+      "title": "The U.S. economy added 162,000 jobs in August, beating expectations",
+      "publisher": "The Washington Post",
+      "date": "2026-09-04",
+      "url": "https://www.washingtonpost.com/business/2026/09/04/us-economy-added-162000-jobs-august-beating-expectations/",
+      "pinned_path": "data/sources/coverage/wapo-august-jobs.html",
+      "text_path": "data/sources/coverage/wapo-august-jobs.txt",
+      "text_sha256": "sha256:c181d8039dbc5d7fae84cd823f87f3fab6ac01f7be268a51b9c88e6757809927",
+      "quote": "economy added 162,000 jobs in August, beating expectations",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage; only the opening of the article could be saved, the rest sits behind a subscription wall."
+    }
+  ],
+  "story_sources": [
+    {
+      "id": "bls-empsit-2026-08",
+      "group": "primary",
+      "label": "The Employment Situation, August 2026",
+      "meta": " · released September 4",
+      "usage": "every figure the story marks as record"
+    },
+    {
+      "id": "fred-payems-2026-08",
+      "group": "official",
+      "label": "Total nonfarm payrolls, monthly",
+      "meta": " · saved September 4",
+      "usage": "the chart, the three-in-twelve count, and every average"
+    },
+    {
+      "id": "alfred-payems-first-2026-08",
+      "group": "official",
+      "label": "Payroll estimates as first published, September 4",
+      "meta": "",
+      "usage": "August's first estimate in the revisions table"
+    },
+    {
+      "id": "alfred-payems-first-2026-07",
+      "group": "official",
+      "label": "Payroll estimates as first published, August 7",
+      "meta": "",
+      "usage": "July's first estimate in the revisions table"
+    },
+    {
+      "id": "fred-unrate-2026-08",
+      "group": "official",
+      "label": "Unemployment rate, monthly",
+      "meta": " · saved September 4",
+      "usage": "the 4.1 percent rate and its recent path"
+    },
+    {
+      "id": "fred-u6rate-2026-08",
+      "group": "official",
+      "label": "U-6 underemployment rate, monthly",
+      "meta": " · saved September 4",
+      "usage": "the 7.7 percent broad measure"
+    },
+    {
+      "id": "fred-primeage-2026-08",
+      "group": "official",
+      "label": "Prime-age (25 to 54) participation, monthly",
+      "meta": " · saved September 4",
+      "usage": "the 83.4 percent counterweight"
+    },
+    {
+      "id": "fred-ahe-2026-08",
+      "group": "official",
+      "label": "Average hourly earnings, monthly",
+      "meta": " · saved September 4",
+      "usage": "the wage growth check"
+    },
+    {
+      "id": "thehill-august-jobs",
+      "group": "coverage",
+      "label": "The Hill",
+      "meta": " · September 4",
+      "usage": "the 53,000 forecast and the revisions"
+    },
+    {
+      "id": "aljazeera-august-jobs",
+      "group": "coverage",
+      "label": "Al Jazeera",
+      "meta": " · September 4",
+      "usage": "the three forecasts, the sector figures, and the 60 percent odds"
+    },
+    {
+      "id": "upi-august-jobs",
+      "group": "coverage",
+      "label": "UPI",
+      "meta": " · September 4",
+      "usage": "the sector and wage figures"
+    },
+    {
+      "id": "pbs-august-jobs",
+      "group": "coverage",
+      "label": "PBS NewsHour (AP)",
+      "meta": " · September 4",
+      "usage": "the 65,000 forecast, the yearly averages, and the labor force jump"
+    },
+    {
+      "id": "cnbc-women-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · September 4",
+      "usage": "the women-and-men split of the gain"
+    },
+    {
+      "id": "cnbc-yields-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · September 4",
+      "usage": "the 58 percent odds and the Treasury yields"
+    },
+    {
+      "id": "wapo-august-jobs",
+      "group": "coverage",
+      "label": "The Washington Post",
+      "meta": " · September 4",
+      "usage": "headline and expectations only"
+    }
+  ],
+  "figures": [
+    {
+      "figure": "August payroll change",
+      "source_id": "bls-empsit-2026-08",
+      "value": "+162,000"
+    },
+    {
+      "figure": "Unemployment rate",
+      "source_id": "bls-empsit-2026-08",
+      "value": "4.1%"
+    },
+    {
+      "figure": "June and July combined revision",
+      "source_id": "bls-empsit-2026-08",
+      "value": "+55,000"
+    }
+  ],
+  "needs_ledger": [
+    {
+      "need": "official payroll change and unemployment rate",
+      "plain": "The official release, saved the day it came out, contains both.",
+      "record_id": "bls-empsit-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "first-print estimates for the revisions table",
+      "plain": "The St. Louis Fed keeps the series as it stood on each release day; we saved the August 7 and September 4 copies.",
+      "record_id": "alfred-payems-first-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "inflation-adjusted wages for August",
+      "plain": "The Real Earnings report for August comes out with the September 11 inflation release; this page uses the year-over-year wage growth from the payroll survey instead and says so.",
+      "record_id": null,
+      "status": "missing: not yet published"
+    },
+    {
+      "need": "forecast the outlets compare against",
+      "plain": "Three outlets quote three different surveys (53,000, 56,000, 65,000); each is attributed to its outlet and poll rather than treated as one number.",
+      "record_id": "aljazeera-august-jobs",
+      "status": "have"
+    }
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "BLS release copied from the September 4 capture run (bls_employment_situation source, receipt in that run); FRED and ALFRED CSVs fetched September 8 and saved under dated names; eight coverage articles copied from the same capture run; all listed in data/sources/SOURCES.md with bytes and sha256."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "Monthly changes, the three-in-twelve count, the 3-, 12-month and yearly averages, the revisions table and wage growth recomputed on September 8 from PAYEMS-2026-09-04.csv, the two ALFRED vintages and CES0500000003-2026-09-04.csv; values live in src/data/jobs202608.mjs."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Seven articles checked line by line against the release text: Al Jazeera health care 12,000 vs release 13,000; UPI workweek 0.1 percent vs release 0.1 hour; PBS yearly averages recomputed and matched; CNBC 58 vs Al Jazeera 60 percent odds at different times of day."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "what-happened, where-this-sits, who-feels-it, outlets, claim-check, markets, unknowns, records, in that order; benchmark section dropped because no benchmark release falls in this window."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "record, computed, official data, checks out, mislabeled, wrong, single outlet only."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element: every figure is a saved value with its record; no counter, no live odds."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "src/data/subjects/jobs.mjs current KPIs moved to the August release; the August story listed first."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "Homepage story order derives from the published state; the August event is the newest jobs story once its view is present."
+    }
+  },
+  "authored_sections": [
+    "what-happened",
+    "where-this-sits",
+    "who-feels-it",
+    "outlets",
+    "claim-check",
+    "markets",
+    "unknowns"
+  ]
+}
