@@ -219,18 +219,18 @@ zoom (overflow, missing styles, unreadable sections), repeat until clean.
 
 ## 11. Independent interrogation (gate 6)
 
-A model that did not write the page reads the finished page and is asked one question.
-Use whichever is available; the question is the same:
+A model that did not write the page reads the built page and lists everything it does not
+cover or account for, using web search and X search. Read `interrogation.md` for the prompt
+and what to do with the result, then:
 
 ```bash
-cd /Volumes/4/GitHub/the-catch-site
-codex exec -s read-only --skip-git-repo-check -C . "Read dist/events/jobs/august-2026/index.html and data/sources/SOURCES.md. Tell me everything this page does not cover or account for: sources it should have used, ordering, angles, context, numbers that should have been checked. Take your time. List each gap on its own line." </dev/null
-~/.grok/bin/grok --always-approve -p "$(cat dist/events/jobs/august-2026/index.html | sed 's/<[^>]*>/ /g' | head -c 60000) ... Tell me everything this page does not cover or account for: sources, ordering, angles, context. Take your time."
+skills/catch-event-page/scripts/interrogate.sh jobs/august-2026
+cat checks/interrogations/jobs--august-2026-<date>.md
 ```
 
-Every returned gap becomes a needs-ledger row: resolved on the page, or typed with its
-reason in the manifest's `needs_ledger` and in the page's unknowns section. Wholesale
-dismissal is the violation this step exists to prevent.
+Every returned gap becomes a needs-ledger row: fixed on the page, typed unreachable, or
+declined with its reason, all in the same session. Wholesale dismissal is the violation
+this step exists to prevent.
 
 ## 12. Cross-link, stage, ship
 

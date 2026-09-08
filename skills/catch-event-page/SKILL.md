@@ -89,9 +89,11 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    fallback). Fix what the gate reports and rebuild until clean. Then run
    `node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro`.
 9. **Independent interrogation.** A model that did not write the page reads the built
-   page and lists everything it does not cover or account for (command in
-   `references/procedures.md`, step 11). Every gap becomes a needs-ledger row, resolved
-   on the page or typed with its reason. Never dismiss the list wholesale.
+   page with web and X search on and lists everything it does not cover: missing sources,
+   reactions, drama, wrong sentences (`scripts/interrogate.sh <subject>/<story>`; prompt
+   and handling in `references/interrogation.md`). Every gap becomes a needs-ledger row,
+   fixed on the page, typed unreachable, or declined with its reason. Never dismiss the
+   list wholesale.
 10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
    refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
    page is standalone and is never edited afterwards: a revision to last month's number is
@@ -150,3 +152,4 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md ledger, gate checks, ship verification.
 - `references/anti-patterns.md`: the drift the audit found on the gold pages and the rule for each.
 - `references/procedures.md`: every command, step by step, from recipe scaffold to live audit.
+- `references/interrogation.md`: the independent completeness review, its prompt, and how each gap is dispositioned.
