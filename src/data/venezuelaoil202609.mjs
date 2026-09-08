@@ -4,14 +4,14 @@
 
 export const event = {
   slug: "venezuela-oil/september-2026",
-  title: "The White House named a private operator, a 35 percent stake, and 100-year rights to 17 Venezuelan oil fields",
-  dek: "Announced Friday as majority control and lower gas prices. Monday's fact sheet listed the instruments: a 35 percent stake and a 20 percent purchase right. By Thursday a U.S. official called the stake warrants.",
+  title: "The White House says 100-year rights to 17 Venezuelan oil fields. Caracas says 25 years, renewable.",
+  dek: "Eight months after U.S. forces captured Maduro, the White House announced majority control of 65 billion barrels through a private operator. The instruments are a 35 percent stake, later called warrants, and a 20 percent purchase right. No contract has been published.",
   name: "Venezuela oil",
-  span: "August 28 to September 2, 2026",
+  span: "January 3 to September 8, 2026",
   date: "2026-08-31",
   updated: "2026-09-08",
   kpis: [
-    { value: "17", unit: "fields", label: "100-year concessions, White House fact sheet" },
+    { value: "17", unit: "fields", label: "100 years per the White House; 25, renewable, per PDVSA" },
     { value: "35%", unit: "stake", label: "warrants, per a U.S. official, September 4" },
     { value: "20%", unit: "off-take", label: "State can buy at production cost" },
     { value: "1.15", unit: "million b/d", label: "Venezuela crude, EIA July 2026" },
@@ -52,3 +52,8 @@ export const rodriguezGoalBpd = 1500000;
 export const eiaUsProved2021Mmbbl = 41151;
 export const eiaUsProved2021Billion = 41.151;
 export const whUsProvedBillion = 46;
+
+// EIA Country Analysis Brief: Venezuela (February 2024): 303 billion barrels of proved reserves in 2023.
+export const eiaVenezuelaProvedBillion = 303;
+export const whVenezuelaFieldsBillion = 65;
+export const fieldsShareOfVenezuelaPct = Math.round((whVenezuelaFieldsBillion / eiaVenezuelaProvedBillion) * 1000) / 10; // 21.5

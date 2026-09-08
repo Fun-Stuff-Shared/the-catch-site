@@ -2,12 +2,23 @@
   "subject": "venezuela-oil",
   "event": "venezuela-oil/september-2026",
   "date": "2026-08-31",
-  "story_title": "The White House named a private operator, a 35 percent stake, and 100-year rights to 17 Venezuelan oil fields",
+  "story_title": "The White House says 100-year rights to 17 Venezuelan oil fields. Caracas says 25 years, renewable.",
   "state_event_id": "event-venezuela-oil-september-2026",
   "event_record": "/events/venezuela-oil/",
   "completed_by": "grok, skill catch-event-page rework",
   "date_completed": "2026-09-08",
   "sub_events": [
+    {
+      "id": "january-capture-and-first-deal-2026-01",
+      "date": "2026-01-03",
+      "label": "Maduro captured; the January oil arrangement",
+      "section_anchor": "what-happened",
+      "records": [
+        "ucsb-jan3-2026-press-conference",
+        "crec-2026-02-11-s3838",
+        "wh-eo-2026-01-09"
+      ]
+    },
     {
       "id": "friday-announce-2026-08-28",
       "date": "2026-08-28",
@@ -84,6 +95,19 @@
         "eia-us-crude-proved",
         "eia-crude-oil-reserves-2024",
         "fox-aaa-gas-2026-08-29"
+      ]
+    },
+    {
+      "id": "caracas-assembly-and-term-2026-09",
+      "date": "2026-09-07",
+      "label": "Assembly backing; PDVSA calls it 25 years renewable",
+      "section_anchor": "what-happened-next",
+      "records": [
+        "guardian-deal-defended-2026-09-01",
+        "france24-afp-wright-2026-09-02",
+        "abc-efe-obregon-2026-09-07",
+        "elpais-obregon-2026-09-08",
+        "oilprice-machado-2026-09-03"
       ]
     }
   ],
@@ -745,6 +769,166 @@
       "text_sha256": "sha256:87a36755a0a42cdd2fe8a2a70ca837d201d1c40af97be9f9194c7e6aca72617d",
       "quote_span_check": "byte_exact",
       "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "ucsb-jan3-2026-press-conference",
+      "title": "The President's News Conference in Palm Beach, Florida, January 3, 2026",
+      "publisher": "The American Presidency Project (UC Santa Barbara), transcript released by the White House Office of Communications",
+      "date": "2026-01-03",
+      "url": "https://presidency.ucsb.edu/documents/the-presidents-news-conference-palm-beach-florida",
+      "pinned_path": "data/sources/venezuela-oil/ucsb-jan3-2026-press-conference.html",
+      "text_path": "data/sources/venezuela-oil/ucsb-jan3-2026-press-conference.txt",
+      "quote": "successfully captured Maduro in the dead of night",
+      "about": "The January 3 press conference after Operation Absolute Resolve: the capture of Maduro, and Trump's first oil lines (rebuild the infrastructure, oil companies reimbursed).",
+      "text_sha256": "sha256:1bd0cec57337e1c43d43a94cd5fbd4f280f539444db86eb2933c64f36aa65982",
+      "capture_run": "capture-oneoff-20260908T215956Z",
+      "capture_raw_sha256": "sha256:93b7d12d121103d5e316fdd4518c72d07a4101e54e0b02542527fc023aa39bee",
+      "captured_at": "2026-09-08T22:00:02.814109Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "crec-2026-02-11-s3838",
+      "title": "Congressional Record, February 11, 2026, page S936: S. 3838, the Venezuela Oil Proceeds Transparency Act",
+      "publisher": "U.S. Government Publishing Office",
+      "date": "2026-02-11",
+      "url": "https://www.congress.gov/119/crec/2026/02/11/172/29/CREC-2026-02-11.pdf",
+      "pinned_path": "data/sources/venezuela-oil/crec-2026-02-11.pdf",
+      "text_path": "data/sources/venezuela-oil/crec-2026-02-11-p89.txt",
+      "quote": "Venezuela Oil Proceeds Transparency Act",
+      "about": "Schumer and Schiff's bill text as introduced: findings on the January 6 deal, U.S.-controlled accounts, and Rubio's unfinished audit process. Text sibling is our own extraction of page 89 of the saved PDF in reading order, with line-end hyphenation joined.",
+      "text_sha256": "sha256:991b1cbab48b29b0e8ba050a415d4e22e1fdc33bf47e431fa22469e8d40a8c64",
+      "capture_run": "capture-oneoff-20260908T215312Z",
+      "capture_raw_sha256": "sha256:54c0d8ba1dfa6a3a38130ae19b14c8bbf83cf79e56551c68a22d4825510240cd",
+      "captured_at": "2026-09-08T21:53:23.673754Z",
+      "quote_span_check": "normalized"
+    },
+    {
+      "id": "abc-efe-obregon-2026-09-07",
+      "title": "Presidente de estatal PDVSA dice que acuerdo petrolero entre Venezuela y EEUU es renovable",
+      "publisher": "ABC Color (Paraguay), carrying EFE",
+      "date": "2026-09-07",
+      "url": "https://www.abc.com.py/internacionales/2026/09/07/presidente-de-estatal-pdvsa-dice-que-acuerdo-petrolero-entre-venezuela-y-eeuu-es-renovable/",
+      "pinned_path": "data/sources/coverage/abc-efe-obregon-2026-09-07.html",
+      "text_path": "data/sources/coverage/abc-efe-obregon-2026-09-07.txt",
+      "quote": "El contrato está firmado 25 años",
+      "about": "PDVSA president Héctor Obregón on radio: signed for 25 years, renewable by mutual agreement, a three-party contract; oil minister Paula Henao's production figure.",
+      "text_sha256": "sha256:53c971c4b255e87c68ba247c15d3dd96e7f733abd58c9b0903a60e69d856f0a7",
+      "capture_run": "capture-oneoff-20260908T215312Z",
+      "capture_raw_sha256": "sha256:70b2e69c6fa3eba0ec309a48b98cb4b095d80cb598a14f528607cc5ee07c42b7",
+      "captured_at": "2026-09-08T21:53:28.936876Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "elpais-obregon-2026-09-08",
+      "title": "Trump's conditions cast a shadow over the US-Venezuela oil deal",
+      "publisher": "El País English",
+      "date": "2026-09-08",
+      "url": "https://english.elpais.com/international/2026-09-08/trumps-conditions-cast-a-shadow-over-the-us-venezuela-oil-deal.html",
+      "pinned_path": "data/sources/coverage/elpais-obregon-2026-09-08.html",
+      "text_path": "data/sources/coverage/elpais-obregon-2026-09-08.txt",
+      "quote": "The contract has been signed for 25 years, but by mutual agreement it can be renewed for similar periods",
+      "about": "Obregón's 25-year line in English, the unpublished signing, Monaldi on the reserve figures, and Obregón on the Treasury-controlled accounts.",
+      "text_sha256": "sha256:082ea46bb7216afcdc6ddc412921aa679e41bc37cad8f2804f240263eb00a354",
+      "capture_run": "capture-oneoff-20260908T215312Z",
+      "capture_raw_sha256": "sha256:9071703337be457e13c66812e745d72a0d8d0f7b82dd87f4f9bedcd90a23d998",
+      "captured_at": "2026-09-08T21:53:34.980014Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "usc-10-149",
+      "title": "10 U.S.C. 149, Office of Strategic Capital",
+      "publisher": "Office of the Law Revision Counsel, U.S. House",
+      "date": "2026-09-08",
+      "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title10-section149",
+      "pinned_path": "data/sources/venezuela-oil/usc-10-149.html",
+      "text_path": "data/sources/venezuela-oil/usc-10-149.txt",
+      "quote": "The term \"capital assistance\" means a loan, loan guarantee, or technical assistance.",
+      "about": "The statute that created the Office of Strategic Capital: what it may do, and how it defines capital assistance.",
+      "text_sha256": "sha256:1fd73b7f028d04ab09ac21db22b89f83d0f5898d6c995cb8c562a2e273170239",
+      "capture_run": "capture-oneoff-20260908T215312Z",
+      "capture_raw_sha256": "sha256:1a13f97d0cc289d14b21324d92c90924c7e44fe27d3e14b7b873e79e86a13fcb",
+      "captured_at": "2026-09-08T21:54:06.137188Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "eia-venezuela-cab-2024",
+      "title": "Country Analysis Brief: Venezuela",
+      "publisher": "U.S. Energy Information Administration",
+      "date": "2024-02-08",
+      "url": "https://www.eia.gov/international/content/analysis/countries_long/Venezuela/pdf/venezuela_2024.pdf",
+      "pinned_path": "data/sources/venezuela-oil/eia-venezuela-cab-2024.pdf",
+      "text_path": "data/sources/venezuela-oil/eia-venezuela-cab-2024.txt",
+      "quote": "303 billion barrels (Figure 5), accounting for approximately 17% of global reserves",
+      "about": "EIA's country brief, last updated February 8, 2024: 303 billion barrels of proved reserves in 2023, most of it extra-heavy Orinoco crude.",
+      "text_sha256": "sha256:4fa412ac51678eb80a748a61135330ff45b94d7f7dc1324c8245e465555b609d",
+      "capture_run": "capture-oneoff-20260908T215956Z",
+      "capture_raw_sha256": "sha256:b8c6661cb38be676bd41a74df937f8e9731149f3ffeccfddd16f456120e09914",
+      "captured_at": "2026-09-08T22:01:01.795728Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "nabep-contact",
+      "title": "Contact, NABEP",
+      "publisher": "North American Blue Energy Partners",
+      "date": "2026-09-08",
+      "url": "https://www.nabep.net/contact",
+      "pinned_path": "data/sources/venezuela-oil/nabep-contact.html",
+      "text_path": "data/sources/venezuela-oil/nabep-contact.txt",
+      "quote": "Bridgetown (Barbados)",
+      "about": "The company's own office list: Caracas, Maracaibo, and Lechería in Venezuela, and Bridgetown, Barbados.",
+      "text_sha256": "sha256:b1a807a3e80ea201edbc3873490fd6bca1dda91138b0f72f8c4cc0716e69d88d",
+      "capture_run": "capture-oneoff-20260908T215312Z",
+      "capture_raw_sha256": "sha256:330c76642b0a0bd5d9fceff4c67178b39b40b5f915df282609cfe99416bf1693",
+      "captured_at": "2026-09-08T21:54:24.300428Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "wapo-betancourt-2026-09-04",
+      "title": "Trump's huge Venezuela deal began with a call and a bet on an oilman",
+      "publisher": "The Washington Post",
+      "date": "2026-09-04",
+      "url": "https://www.washingtonpost.com/world/2026/09/04/trumps-huge-venezuela-deal-began-with-call-bet-an-oilman/",
+      "pinned_path": "data/sources/coverage/wapo-betancourt-2026-09-04.html",
+      "text_path": "data/sources/coverage/wapo-betancourt-2026-09-04.txt",
+      "quote": "On a phone call in March, a Trump administration emissary made a bold pitch.",
+      "about": "The Post's September 4 investigation as served to us: headline, subhead, and first paragraph only. The rest sits behind the subscription wall.",
+      "text_sha256": "sha256:6e421d80ade597de7dfb7197798be120118f3d44b3e3a6fb20d9c399dd4adb3f",
+      "capture_run": "quarry-wire-scheduled-20260904T220002Z",
+      "capture_raw_sha256": "sha256:e0fbce5a7af5fb88ed082e14190fa48be1fde32442ef85439cf83c2d7e986a82",
+      "captured_at": "2026-09-04T22:06:48.872934Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "guardian-deal-defended-2026-09-01",
+      "title": "US officials defend Venezuela oil deal amid questions over rebuilding plan",
+      "publisher": "The Guardian",
+      "date": "2026-09-01",
+      "url": "https://www.theguardian.com/us-news/2026/sep/01/trump-venezuela-oil-deal",
+      "pinned_path": "data/sources/coverage/guardian-deal-defended-2026-09-01.html",
+      "text_path": "data/sources/coverage/guardian-deal-defended-2026-09-01.txt",
+      "quote": "The agreement was backed by Venezuela’s national assembly",
+      "about": "The National Assembly's September 1 backing and the opposition's complaint that no election has been staged since January.",
+      "text_sha256": "sha256:8a77531949ccce6a242d52ebfe6ae08c99d4a09dc1f86cc87e687e9c71f1f5d6",
+      "capture_run": "capture-oneoff-20260908T215956Z",
+      "capture_raw_sha256": "sha256:98a04f3c0db13014b4254b7316e18da6761eae37bf1703e360dc2d6d57f31e8d",
+      "captured_at": "2026-09-08T22:01:07.661589Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "france24-afp-wright-2026-09-02",
+      "title": "US energy secretary in Venezuela to sign Trump's 'biggest' oil deal",
+      "publisher": "France 24, carrying AFP",
+      "date": "2026-09-02",
+      "url": "https://www.france24.com/en/live-news/20260901-us-defends-trump-s-venezuela-oil-deal",
+      "pinned_path": "data/sources/coverage/france24-afp-wright-2026-09-02.html",
+      "text_path": "data/sources/coverage/france24-afp-wright-2026-09-02.txt",
+      "quote": "Who benefits from this oil if it stays underground?",
+      "about": "AFP on Wright's signing trip, Assembly chief Jorge Rodríguez's line, and the midterm backdrop.",
+      "text_sha256": "sha256:75e19d84b89600048624c45dc8e2af3ee9bff5b12572b52d2b955aa3768e9ca7",
+      "capture_run": "capture-oneoff-20260908T215956Z",
+      "capture_raw_sha256": "sha256:30850dd9c75c81a6b54a4b05b47c1c27e93e85ca11e12791647aab71e0b97e37",
+      "captured_at": "2026-09-08T22:00:12.786285Z",
+      "quote_span_check": "byte_exact"
     }
   ],
   "story_sources": [
@@ -1076,6 +1260,76 @@
       "label": "Washington Post stub",
       "meta": " · September 2",
       "usage": "subscription stub only, 3,404 text characters"
+    },
+    {
+      "id": "ucsb-jan3-2026-press-conference",
+      "group": "primary",
+      "label": "January 3 press conference transcript",
+      "meta": " · released January 5",
+      "usage": "the capture of Maduro and the first oil lines, eight months before the deal"
+    },
+    {
+      "id": "crec-2026-02-11-s3838",
+      "group": "primary",
+      "label": "Congressional Record, S. 3838 as introduced",
+      "meta": " · February 11",
+      "usage": "the Senate bill's findings on the January deal and the audit that was not finalized"
+    },
+    {
+      "id": "abc-efe-obregon-2026-09-07",
+      "group": "coverage",
+      "label": "EFE via ABC Color on Obregón",
+      "meta": " · published September 7",
+      "usage": "25 years, renewable; the three-party contract; Henao's production figure"
+    },
+    {
+      "id": "elpais-obregon-2026-09-08",
+      "group": "coverage",
+      "label": "El País English",
+      "meta": " · published September 8",
+      "usage": "Obregón in English; the unpublished signing; Monaldi on the reserves"
+    },
+    {
+      "id": "usc-10-149",
+      "group": "primary",
+      "label": "10 U.S.C. 149",
+      "meta": " · as in force September 8",
+      "usage": "what the statute lets the Office of Strategic Capital do"
+    },
+    {
+      "id": "eia-venezuela-cab-2024",
+      "group": "official",
+      "label": "EIA Country Analysis Brief: Venezuela",
+      "meta": " · updated February 2024",
+      "usage": "the 303 billion barrel denominator and the extra-heavy crude line"
+    },
+    {
+      "id": "nabep-contact",
+      "group": "primary",
+      "label": "NABEP contact page",
+      "meta": " · saved September 8",
+      "usage": "the company's own office list"
+    },
+    {
+      "id": "wapo-betancourt-2026-09-04",
+      "group": "coverage",
+      "label": "The Washington Post on Betancourt (subscription stub)",
+      "meta": " · published September 4",
+      "usage": "headline and first paragraph only; the reporting behind them is not on any page we hold"
+    },
+    {
+      "id": "guardian-deal-defended-2026-09-01",
+      "group": "coverage",
+      "label": "The Guardian, September 1",
+      "meta": " · published September 1",
+      "usage": "the National Assembly's backing and the election complaint"
+    },
+    {
+      "id": "france24-afp-wright-2026-09-02",
+      "group": "coverage",
+      "label": "AFP via France 24 on Wright's trip",
+      "meta": " · published September 2",
+      "usage": "Jorge Rodríguez's line and the midterm backdrop"
     }
   ],
   "primary_sources": [
@@ -1148,6 +1402,34 @@
       "bytes": 196920,
       "sha256": "sha256:274d2bfa932b8e2df168a580b3d297a7b59e023ad24520771c9217385fcbe18f",
       "url": "https://www.state.gov/releases/office-of-the-spokesperson/2026/09/secretary-of-state-marco-rubio-with-sergio-novelli-on-al-dia-con-sergio-novelli"
+    },
+    {
+      "id": "ucsb-jan3-2026-press-conference",
+      "path": "data/sources/venezuela-oil/ucsb-jan3-2026-press-conference.html",
+      "bytes": 121022,
+      "sha256": "sha256:93b7d12d121103d5e316fdd4518c72d07a4101e54e0b02542527fc023aa39bee",
+      "url": "https://presidency.ucsb.edu/documents/the-presidents-news-conference-palm-beach-florida"
+    },
+    {
+      "id": "crec-2026-02-11-s3838",
+      "path": "data/sources/venezuela-oil/crec-2026-02-11.pdf",
+      "bytes": 1592382,
+      "sha256": "sha256:54c0d8ba1dfa6a3a38130ae19b14c8bbf83cf79e56551c68a22d4825510240cd",
+      "url": "https://www.congress.gov/119/crec/2026/02/11/172/29/CREC-2026-02-11.pdf"
+    },
+    {
+      "id": "usc-10-149",
+      "path": "data/sources/venezuela-oil/usc-10-149.html",
+      "bytes": 191661,
+      "sha256": "sha256:1a13f97d0cc289d14b21324d92c90924c7e44fe27d3e14b7b873e79e86a13fcb",
+      "url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title10-section149"
+    },
+    {
+      "id": "nabep-contact",
+      "path": "data/sources/venezuela-oil/nabep-contact.html",
+      "bytes": 444853,
+      "sha256": "sha256:330c76642b0a0bd5d9fceff4c67178b39b40b5f915df282609cfe99416bf1693",
+      "url": "https://www.nabep.net/contact"
     }
   ],
   "figures": [
@@ -1356,6 +1638,36 @@
       "plain": "Gaceta Oficial N° 6.978 Extraordinario is pinned.",
       "record_id": "ley-hidrocarburos-2026",
       "status": "have"
+    },
+    {
+      "need": "The January 3 origin",
+      "plain": "The deal followed the U.S. capture of Maduro on January 3 and a January 6 oil arrangement. The transcript and the Senate bill are pinned.",
+      "record_id": "ucsb-jan3-2026-press-conference",
+      "status": "have"
+    },
+    {
+      "need": "A reserve report for the 17 fields",
+      "plain": "No field list, auditor, or effective date is on any page we hold. The 65 billion figure is repeated by the White House, Caracas, and NABEP.",
+      "record_id": "wh-fact-sheet-2026-08-31",
+      "status": "missing: no reserve report on any page we saved"
+    },
+    {
+      "need": "Which contract form NABEP signed",
+      "plain": "The law's 25-year cap applies to mixed companies. Obregón calls it a PDVSA-NABEP contract. No record names the form.",
+      "record_id": "abc-efe-obregon-2026-09-07",
+      "status": "missing: contract form not named on any page we saved"
+    },
+    {
+      "need": "Machado's full September 3 video",
+      "plain": "The video stream itself is not saved; her questions are held through OilPrice, the Guardian, and Reuters via MarketScreener.",
+      "record_id": "oilprice-machado-2026-09-03",
+      "status": "partial: coverage copies only, no video file"
+    },
+    {
+      "need": "The Washington Post's September 4 investigation",
+      "plain": "Only the headline and first paragraph were served. Claims from the rest of that article are not on this page.",
+      "record_id": "wapo-betancourt-2026-09-04",
+      "status": "partial: subscription stub"
     }
   ],
   "coverage_records": [
@@ -1386,7 +1698,13 @@
     "semafor-osc-2026-09-02",
     "thehill-venezuela-oil-deal",
     "truthsocial-trump-venezuela-oil-2026-08-28",
-    "wapo-venezuela-chevron-stub-2026-09-02"
+    "wapo-venezuela-chevron-stub-2026-09-02",
+    "abc-efe-obregon-2026-09-07",
+    "elpais-obregon-2026-09-08",
+    "eia-venezuela-cab-2024",
+    "wapo-betancourt-2026-09-04",
+    "guardian-deal-defended-2026-09-01",
+    "france24-afp-wright-2026-09-02"
   ],
   "coverage_threshold": 2,
   "authored_sections": [
