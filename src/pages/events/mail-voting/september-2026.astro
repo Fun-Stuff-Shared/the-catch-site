@@ -16,7 +16,7 @@ import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event, computed, plaintiffs, plaintiffOther, intervenors, orgPlaintiffs,
-  daysBars, applicationsTable, timeline,
+  daysBars, applicationsTable, timeline, courtSteps, dmmRows, mailingRows,
 } from "../../../data/mailvoting202609.mjs";
 const state = readPublishedState().events.get("event-mail-voting-september-2026");
 if (!state) throw new Error("Missing publication selection: event-mail-voting-september-2026");
@@ -65,7 +65,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
 
       <div data-layer="proof" class="event-record-context">
-        <p class="sources-line">This story rests on Executive Order 14399 as published in the Federal Register, the Postal Service's August 26 final rule, Judge Talwani's September 4 injunction, the three Supreme Court applications and their dockets, Sauer's withdrawal letter, 2 U.S.C. 7, 52 U.S.C. 20302, and coverage checked against those records. The days on this page are counted from those dates. The Federal Register's web pages are a prototype; the figures come from the official PDFs.</p>
+        <p class="sources-line">This story rests on Executive Order 14399 as published in the Federal Register, the Postal Service's August 26 final rule, Judge Talwani's September 4 injunction, the three Supreme Court applications and their dockets, Sauer's withdrawal letter, 2 U.S.C. 7, 52 U.S.C. 20302, and coverage checked against those records. The days on this page are counted from those dates. The figures come from the official Federal Register PDFs.</p>
       </div>
 
       <section id="what-happened">
@@ -78,32 +78,52 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <p data-layer="narrative">A group of states had already sued over the executive order. On August 24 the Supreme Court granted application 26A124, staying the district court's injunction of that order. A stay is an order that pauses another court's order. The unsigned opinion said the states' challenge was not ripe because the Court did not yet know what a final rule would say. It added that the disposition "does not mean that any measure taken by the Government to implement the Order will necessarily be lawful."<Cite s="scotus-26a124-opinion" passage="any measure taken by the Government to implement" /></p>
 
-        <p data-layer="narrative">On August 27 Talwani entered a temporary restraining order against mandatory parts of the new rule. On September 3 Sauer asked the Court, in application 26A297, to stay that order. Justice Ketanji Brown Jackson, who handles emergency applications from the First Circuit, set a response for September 8. The emergency docket is the Court's fast track for those requests, usually without a full argument.<Cite s="scotus-26a297-docket" passage="Application (26A297) for a stay" /></p>
+        <p data-layer="narrative">On August 27 Talwani entered a temporary restraining order against mandatory parts of the new rule. On September 3 Sauer asked the Court, in application 26A297, to stay that order. The docket shows the application was submitted to Justice Jackson. She set a response for September 8. The emergency docket is the Court's fast track for those requests, usually without a full argument.<Cite s="scotus-26a297-docket" passage="submitted to Justice Jackson" /></p>
 
         <p data-layer="narrative">On September 4 Talwani issued a preliminary injunction. A preliminary injunction is a court order that forbids someone from doing something while a lawsuit continues. This one names specific Domestic Mail Manual sections and applies to elections on or before November 3. She dissolved the August 27 temporary order the same day.<Cite s="talwani-pi-2026-09-04" passage="The Temporary Restraining Order" /></p>
 
         <p data-layer="narrative">On September 6 Sauer wrote the clerk that the United States was withdrawing 26A297, and he filed 26A305 against the new injunction. Jackson's order on that docket set any response for 4 p.m. Eastern on September 9. Sunday is {computed.daysFilingToElection} days before November 3, the federal election day named in the injunction and in 2 U.S.C. 7 as the Tuesday after the first Monday in November of an even-numbered year.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /><Cite s="usc-2-7" passage="Tuesday next after the 1st Monday in November" /></p>
 
         <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>From the order to the election</strong><span>Dated steps in the pinned filings and dockets.</span></figcaption>
+          <figcaption><strong>From the order to the election</strong><span>Dated steps in the filings and dockets.</span></figcaption>
           <DecisionTimeline entries={timeline} />
           <p class="chart-source">Sunday's application is the third stay request in this fight.<Cite s="scotus-26a305-docket" passage="No. 26A305" /></p>
         </figure>
 
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The four court steps Sunday's application sits on</strong><span>Temporary order, Thursday's stay request, the injunction, Sunday's stay request.</span></figcaption>
+          <DecisionTimeline entries={courtSteps} />
+          <p class="chart-source">26A297 was withdrawn the day 26A305 was docketed.<Cite s="scotus-26a297-docket" passage="Application (26A297) withdrawn." /></p>
+        </figure>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The enjoined Domestic Mail Manual sections</strong><span>What each named section of the August 26 rule requires, in the rule's own terms.</span></figcaption>
+          <DataTable columns={["Section", "What it requires"]} rows={dmmRows} highlightColumn={0} />
+          <p class="chart-source">The September 4 injunction names these sections and the first two sentences of 705.24.5.2. It does not enjoin 705.24.5.3(d).<Cite s="talwani-pi-2026-09-04" passage="DMM Section 705.24.5.3(a), (b), (c)" /><Cite s="usps-final-rule" passage="24.3.1 Outbound Federal Ballot Mail" /></p>
+        </figure>
+
         <QuoteCard when="September 6, 2026" where="Application 26A305" label="Solicitor General D. John Sauer">
-          <p>Ballots have already begun to be mailed in North Carolina, and more States will begin the mailing process as the injunction remains in place, including Alabama on September 9 and at least five States the week of September 13.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /></p>
+          <p>Ballots have already begun to be mailed in North Carolina, and more States will begin the mailing process as the injunction remains in place.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /></p>
         </QuoteCard>
 
         <QuoteCard when="September 4, 2026" where="Memorandum and order, District of Massachusetts" label="Judge Indira Talwani">
-          <p>Immediate implementation of the Final Rule issued less than seventy days before the November 2026 election threatens disenfranchisement of millions of United States citizens who seek to vote by mail.<Cite s="talwani-pi-2026-09-04" passage="disenfranchisement of millions of United States citizens who" /></p>
+          <p>... the court finds, on one side, that immediate implementation of the Final Rule issued less than seventy days before the November 2026 election threatens disenfranchisement of millions of United States citizens who seek to vote by mail.<Cite s="talwani-pi-2026-09-04" passage="the court finds, on one side," /></p>
+        </QuoteCard>
+
+        <QuoteCard when="September 4, 2026" where="Memorandum and order, District of Massachusetts" label="Judge Indira Talwani">
+          <p>... fraudulent mail voting to support the rushed implementation of the Final Rule.<Cite s="talwani-pi-2026-09-04" passage="fraudulent mail voting to support the rushed implementation" /></p>
         </QuoteCard>
 
         <QuoteCard when="August 24, 2026" where="Dissent in Trump v. California, 26A124" label="Justice Ketanji Brown Jackson">
           <p>It also lets another shoe drop in the Kafkaesque nightmare that our precedents have been steadily creating for certain plaintiffs who seek to bring election-related challenges.<Cite s="scotus-26a124-opinion" passage="Kafkaesque" /></p>
         </QuoteCard>
 
+        <QuoteCard when="September 8, 2026" where="Amicus brief of bipartisan current and former members of Congress, 26A305" label="Heading I">
+          <p>THE ORDER AND FINAL RULE USURP CONGRESS’S CONSTITUTIONAL ROLE AS THE ULTIMATE AUTHORITY ON FEDERAL-ELECTION ADMINISTRATION.<Cite s="scotus-26a305-congress-amicus" passage="THE ORDER AND FINAL RULE USURP CONGRESS" /></p>
+        </QuoteCard>
+
         <SourcedBlock source="scotus-26a305-application" kind="record" detail>
-          <p>The Sunday application asks the Court to stay the September 4 injunction pending appeal to the First Circuit and any later petition, and it asks for an immediate administrative stay, a short pause while the justices decide the full request. Sauer writes that the rule imposes "modest envelope-design and addressee-infor-" mation requirements, and that states remain responsible for who may vote by mail.<Cite s="scotus-26a305-application" passage="immediate administrative stay" /></p></SourcedBlock>
+          <p>The Sunday application asks the Court to stay the September 4 injunction pending appeal to the First Circuit and any later petition, and it asks for an immediate administrative stay, a short pause while the justices decide the full request. Sauer writes that the rule imposes "modest envelope-design and addressee-information requirements", and that states remain responsible for who may vote by mail.<Cite s="scotus-26a305-application" passage="addressee-information requirements" /></p></SourcedBlock>
 
         <SourcedBlock source="talwani-pi-2026-09-04" kind="record" detail>
           <p>The injunction names Domestic Mail Manual sections 705.24.3.1, 705.24.3.2, 705.24.4.1, 705.24.4.2, 705.24.5.1, the first two sentences of 705.24.5.2, and 705.24.5.3(a), (b), and (c). Those are the envelope standards, portal registration and enrollment, and the noncompliance rules. It does not bar states from complying voluntarily. It does not enjoin the rule for elections after November 3.<Cite s="talwani-pi-2026-09-04" passage="DMM Section 705.24.5.3(a), (b), (c)" /></p></SourcedBlock>
@@ -116,25 +136,19 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             <li>
               <span class="catch-tag">Told versus record</span>
               <span class="catch-lead">The block is of the rule, not the order.</span>
-              The Associated Press, PBS NewsHour, CNBC, and CBS wrote that Talwani extended an order against the Postal Service "enforcing President Donald Trump's executive order." The September 4 injunction names sections of the August 26 Postal Service rule. The Court's August 24 stay had already paused her earlier injunction of the executive order itself. Why it matters: a reader of those dispatches can think the justices are being asked to revive the March order, when the live fight is the Postal Service's published rule.<Cite s="ap-2026-09-06" passage="enforcing President Donald Trump" /><Cite s="talwani-pi-2026-09-04" passage="Ballot Mail for Federal Elections" />
+              The Associated Press, PBS NewsHour, and CNBC wrote that Talwani extended an order against the Postal Service "enforcing President Donald Trump's executive order." CBS wrote "enforcing President Trump's executive order." The September 4 injunction names sections of the August 26 Postal Service rule. The Court's August 24 stay had already paused her earlier injunction of the executive order itself. Why it matters: a reader of those dispatches can think the justices are being asked to revive the March order, when the fight before the Court is the Postal Service's published rule.<Cite s="ap-2026-09-06" passage="enforcing President Donald Trump" /><Cite s="cbs-2026-09-06" passage="enforcing President Trump's executive order" /><Cite s="talwani-pi-2026-09-04" passage="Ballot Mail for Federal Elections" />
               <a class="catch-jump" href="#claim-check">Claim check</a>
             </li>
             <li>
               <span class="catch-tag">Told versus record</span>
               <span class="catch-lead">Citizenship lists are a different paper.</span>
-              The Hill wrote that Sauer asked the justices to let the Postal Service "bar" ballots to residents of states that have not submitted "a list of eligible voters based on citizenship data." The rule's portal fields are name, address, two barcodes, and originating state. The citizenship list sits in section 2 of the executive order, a Homeland Security task, not in the Postal Service rule's enrollment form. Why it matters: the restriction the Court is being asked to revive is a mail-acceptance screen, not a citizenship roll.<Cite s="hill-2026-09-06" passage="list of eligible voters based on citizenship data" /><Cite s="eo-14399" passage="State Citizenship List" />
+              The Hill wrote that Sauer asked the justices to "permit the administration to bar the U.S. Postal Service from sending mail-in ballots to residents of states that have not submitted a list of eligible voters based on citizenship data." The Sunday application asks the Court to stay the September 4 injunction of the Postal Service rule. The rule's portal fields are name, address, two barcodes, and originating state. The citizenship list sits in section 2 of the executive order, a Homeland Security task, not in the Postal Service rule's enrollment form. Why it matters: the restriction the Court is being asked to revive is a mail-acceptance screen, not a citizenship roll, and it is a Postal Service rule, not an order that the administration bar the Postal Service.<Cite s="hill-2026-09-06" passage="permit the administration to bar the U.S. Postal Service" /><Cite s="eo-14399" passage="State Citizenship List" />
               <a class="catch-jump" href="#claim-check">Claim check</a>
-            </li>
-            <li>
-              <span class="catch-tag">Told versus record</span>
-              <span class="catch-lead">Through November 3, not open-ended.</span>
-              The Hill wrote that Talwani "indefinitely halted" the plan. The order grants relief "as to elections occurring before or on November 3, 2026" and says she will not preliminarily enjoin the rule for later elections. Why it matters: the midterms are inside the injunction; later federal elections are not.<Cite s="hill-2026-09-06" passage="indefinitely halted" /><Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" />
-              <a class="catch-jump" href="#who-feels-it">Who feels it</a>
             </li>
             <li>
               <span class="catch-tag">Left out</span>
               <span class="catch-lead">Thursday's application is closed.</span>
-              Coverage of Sunday's filing called it "another" appeal. The docket for 26A297, the Thursday filing, shows it withdrawn the same day 26A305 was docketed. Jackson's Sunday order is a response deadline of 4 p.m. on September 9. Why it matters: the live paper is 26A305; the Thursday paper is not pending.<Cite s="scotus-26a297-docket" passage="Application (26A297) withdrawn." /><Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." />
+              Coverage of Sunday's filing called it "another" appeal. The docket for 26A297, the Thursday filing, shows it withdrawn the same day 26A305 was docketed. Jackson's Sunday order is a response deadline of 4 p.m. on September 9. Why it matters: Sunday's application is 26A305; the Thursday application is not pending.<Cite s="scotus-26a297-docket" passage="Application (26A297) withdrawn." /><Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." />
               <a class="catch-jump" href="#where-this-sits">Where this sits</a>
             </li>
             <li>
@@ -144,7 +158,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <a class="catch-jump" href="#who-feels-it">Who feels it</a>
             </li>
           </ol>
-          <p class="catch-minor">Smaller slips: NBC wrote that the rule could reject ballots to or from voters "not included in a federal database"; the portal is filled by state and local officials, not by a federal citizenship file. The Associated Press Sunday pin spells Biden as "Joe Bden."<Cite s="nbc-2026-09-06" passage="not included in a federal database" /><Cite s="ap-2026-09-06" passage="Joe Bden" /></p>
+          <p class="catch-minor">Smaller slips: NBC wrote that the rule could reject ballots to or from voters "not included in a federal database"; the Federal Ballot Mail Portal is a Postal Service system whose rows are loaded by state and local officials, not a federal citizenship file. The Associated Press Sunday story spells Biden as "Joe Bden."<Cite s="nbc-2026-09-06" passage="not included in a federal database" /><Cite s="ap-2026-09-06" passage="Joe Bden" /></p>
         </aside>
       </section>
 
@@ -153,10 +167,10 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">Where this sits</h2>
 
         <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>Days remaining to November 3, from each dated step</strong><span>Counted from the pinned dates to the election named in 2 U.S.C. 7 and in the injunction.</span></figcaption>
+          <figcaption><strong>Days remaining to November 3, from each dated step</strong><span>Counted from the dates in the filings to the election named in 2 U.S.C. 7 and in the injunction.</span></figcaption>
           <BarChart bars={daysBars} ariaLabel="Days from each dated step to November 3, 2026" highlightLast={true} />
-          <p class="chart-source">Sunday's filing is {computed.daysFilingToElection} days before the election. The Uniformed and Overseas Citizens Absentee Voting Act requires ballots to go out to covered voters not later than 45 days before a federal election, which is September 19 this year, {computed.daysFilingToUocava} days after the filing.<Cite s="usc-2-7" passage="Tuesday next after the 1st Monday in November" /><Cite s="uocava-52usc20302" passage="not later than 45 days before the election" /></p>
-          <p class="chart-vintage" data-layer="proof">Day counts are calendar days between the pinned dates at UTC midnight. 2026-11-03 minus 2026-09-06 is 58. September 19 is 45 days before November 3.</p>
+          <p class="chart-source">Sunday's filing is {computed.daysFilingToElection} days before the election. The Uniformed and Overseas Citizens Absentee Voting Act requires a state to send a validly requested absentee ballot not later than 45 days before a federal election when that request arrives at least 45 days before, which is September 19 this year, {computed.daysFilingToUocava} days after the filing. A later request has a different clock, and a state can seek a waiver.<Cite s="usc-2-7" passage="Tuesday next after the 1st Monday in November" /><Cite s="uocava-52usc20302" passage="the request is received at least 45 days before an election" /></p>
+          <p class="chart-vintage" data-layer="proof">Day counts are calendar days between those dates at UTC midnight. {computed.daysFilingToElection} is November 3 minus September 6. {computed.uocavaDaysBeforeElection} is November 3 minus September 19.</p>
         </figure>
 
         <figure class="story-figure" data-layer="fact">
@@ -165,11 +179,11 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="chart-source">26A139, a companion application by Alabama and other states in the first round, was denied as moot when 26A124 was granted.<Cite s="scotus-26a124-docket" passage="Application (26A124) granted by the Court." /></p>
         </figure>
 
-        <p data-layer="narrative">The Sunday application's caption lists {computed.plaintiffStates} states, the District of Columbia, and Josh Shapiro, Governor of Pennsylvania, as plaintiffs. Twelve states intervened on the government's side. Washington Attorney General Nick Brown's September 4 release said "25 states have secured a" preliminary injunction. The application is the party list we count from; Brown's "25" is a different total.<Cite s="scotus-26a305-application" passage="Josh Shapiro, Governor of Pennsylvania" /><Cite s="brown-2026-09-04" passage="25 states have secured a" /></p>
+        <p data-layer="narrative">The Sunday application's caption lists {computed.plaintiffStates} states, the District of Columbia, and Josh Shapiro, Governor of Pennsylvania, as plaintiffs. {computed.intervenorStates} states intervened on the government's side. Washington Attorney General Nick Brown's September 4 release said "25 states have secured a" preliminary injunction. The application is the party list we count from; Brown's "25" is a different total.<Cite s="scotus-26a305-application" passage="Josh Shapiro, Governor of Pennsylvania" /><Cite s="brown-2026-09-04" passage="25 states have secured a" /></p>
 
-        <p data-layer="narrative">August 24 was a win on procedure, not on the rule. The Court stayed an injunction of the executive order because, it said, the states had to speculate about a rule that had not issued. Three days later the rule was in the Federal Register, and Talwani enjoined named sections of that rule. Sunday's application argues that the new injunction is "materially identical" to the August 27 temporary order and that the Postal Service is regulating mail, not elections.<Cite s="scotus-26a124-opinion" passage="string of speculations" /><Cite s="scotus-26a305-application" passage="materially identical" /></p>
+        <p data-layer="narrative">August 24 was a win on procedure, not on the rule. The Court stayed an injunction of the executive order because, it said, the states had to speculate about a rule that had not issued. {computed.daysStayToRule} days later the rule was in the Federal Register, and Talwani enjoined named sections of that rule. Sunday's application argues that the new injunction is "materially identical" to the August 27 temporary order and that the Postal Service is regulating mail, not elections.<Cite s="scotus-26a124-opinion" passage="string of speculations" /><Cite s="scotus-26a305-application" passage="materially identical" /></p>
 
-        <p data-layer="narrative">The so what of this history is a clock. The public record of this fight starts with the March 31 order. The live paper is a stay request filed 58 days before the election the injunction names, 13 days before the overseas-ballot statutory date, and three days before Jackson's response deadline.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /></p>
+        <p data-layer="narrative">The dates leave little room. The public record of this fight starts with the March 31 order. Sunday's stay request was filed {computed.daysFilingToElection} days before the election the injunction names, {computed.daysFilingToUocava} days before the overseas-ballot date in the statute, and {computed.daysFilingToJackson} days before Jackson's response deadline.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /></p>
 
         <SourcedBlock source="scotus-26a305-application" kind="record" detail>
           <p>Plaintiff states named in the Sunday application: {plaintiffs.join(", ")}. Also {plaintiffOther.join("; ")}. Intervenors: {intervenors.join(", ")}. Organization plaintiffs: {orgPlaintiffs.join("; ")}.<Cite s="scotus-26a305-application" passage="League of Women Voters of Massachusetts" /></p></SourcedBlock>
@@ -185,41 +199,49 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <li><strong>September 4:</strong> North Carolina, Sauer told the Court, had already begun mailing ballots. NPR, writing the day before, said the state had to start mailing absentee ballots on Friday.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /><Cite s="npr-2026-09-03" passage="North Carolina has to start mailing out its absentee ballots on Friday" /></li>
           <li><strong>September 9, 4 p.m. Eastern:</strong> Jackson's deadline for a response to 26A305. The same calendar day is the Alabama mailing date Sauer named.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /></li>
           <li><strong>Week of September 13:</strong> "at least five States," Sauer wrote, begin mailing.<Cite s="scotus-26a305-application" passage="at least five States the week of September 13" /></li>
-          <li><strong>September 19:</strong> the federal 45-day deadline for transmitting ballots to uniformed and overseas voters under 52 U.S.C. 20302, {computed.daysFilingToUocava} days after Sunday's filing.<Cite s="uocava-52usc20302" passage="not later than 45 days before the election" /></li>
+          <li><strong>September 19:</strong> for a validly requested absentee ballot whose request arrived at least 45 days before the election, the date 52 U.S.C. 20302 sets for sending ballots to uniformed and overseas voters, {computed.daysFilingToUocava} days after Sunday's filing. A later request has a different clock.<Cite s="uocava-52usc20302" passage="the request is received at least 45 days before an election" /></li>
           <li><strong>November 3:</strong> federal election day, {computed.daysFilingToElection} days after the filing, {computed.daysPiToElection} days after the injunction.<Cite s="usc-2-7" passage="Tuesday next after the 1st Monday in November" /></li>
         </ol>
 
-        <p data-layer="narrative">Election offices that use the mail would have to reprint envelopes, load the portal, and certify designs if the stay is granted. Talwani wrote that the record includes "no evidence relating to" fraudulent mail voting to support rushing the rule. The injunction leaves voluntary compliance open.<Cite s="talwani-pi-2026-09-04" passage="fraudulent mail voting to support the rushed implementation" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Mailing dates Sauer named</strong><span>From the September 6 application, and the overseas-ballot date in the injunction record.</span></figcaption>
+          <DataTable columns={["Who", "When"]} rows={mailingRows} highlightColumn={0} />
+          <p class="chart-source">Sauer wrote that ballots had already begun to be mailed in North Carolina, with Alabama on September 9 and at least five states the week of September 13.<Cite s="scotus-26a305-application" passage="at least five States the week of September 13" /></p>
+        </figure>
+
+        <p data-layer="narrative">Election offices that use the mail would have to reprint envelopes, load the portal, and certify designs if the stay is granted. Talwani wrote that the record includes "no evidence relating to" fraudulent mail voting to support rushing the rule. The injunction leaves voluntary compliance open.<Cite s="talwani-pi-2026-09-04" passage="no evidence relating to" /></p>
       </section>
 
       <section id="outlets">
         <p class="sec-kicker" data-layer="narrative">Checked against the filings</p>
         <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
-        <p data-layer="narrative">Sunday's story ran on the Associated Press wire, on PBS, CNBC, and CBS in that form, and in separate writes at NBC and The Hill. Thursday's application had its own Hill, CBS, and NPR stories. The errors below are the ones the pinned filings contradict.<Cite s="ap-2026-09-06" passage="The appeal marks the third time" /></p>
+        <p data-layer="narrative">Sunday's story ran on the Associated Press wire and on PBS and CNBC in that form, on CBS with a shorter "President Trump" line, and in separate writes at NBC and The Hill. Thursday's application had its own Hill, CBS, and NPR stories. The errors below are the ones the filings contradict.<Cite s="ap-2026-09-06" passage="The appeal marks the third time" /></p>
+        <p data-layer="fact">Six outlet cards: three mislabeled, two consistent, one checks out.</p>
 
         <div data-layer="fact">
-          <OutletCheck outlet="The Hill" claim={`wrote on Sunday that Sauer asked the Court to let the Postal Service bar ballots to residents of states that have not submitted &ldquo;a list of eligible voters based on citizenship data,&rdquo; and that Talwani &ldquo;indefinitely halted&rdquo; the plan.`} verdict="The portal fields in the rule are name, address, barcodes, and originating state. The citizenship list is section 2 of the executive order. The injunction is dated through November 3, not open-ended. The 40-page count and the withdrawal of Thursday's application check out." chip="mislabeled" status="warn"><Cite s="hill-2026-09-06" passage="list of eligible voters based on citizenship data" /><Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" /></OutletCheck>
-          <OutletCheck outlet="Associated Press" claim={`wrote that Talwani extended an order against the Postal Service &ldquo;enforcing President Donald Trump's executive order.&rdquo; PBS NewsHour, CNBC, and CBS carried the same dispatch.`} verdict="The Sunday filing asks a stay of the September 4 injunction of the Postal Service rule. The August 24 Supreme Court stay had already paused the injunction of the executive order. The third-time count, the Sauer quotes, and the North Carolina mailing line check out against 26A305." chip="mislabeled" status="warn"><Cite s="ap-2026-09-06" passage="enforcing President Donald Trump" /><Cite s="pbs-2026-09-06" passage="enforcing President Donald Trump" /></OutletCheck>
-          <OutletCheck outlet="NBC News" claim={`wrote that the rule would let the Postal Service &ldquo;potentially reject ballots that are sent to and from voters not included in a federal database.&rdquo;`} verdict="The enrollment list is uploaded by state and local officials. The rule's noncompliance line is that noncompliant mailings will not be accepted and will be returned. Calling that list a federal database is the wrong owner." chip="mislabeled" status="warn"><Cite s="nbc-2026-09-06" passage="not included in a federal database" /><Cite s="usps-final-rule" passage="will not be accepted" /></OutletCheck>
+          <OutletCheck outlet="The Hill" claim={`wrote on Sunday that Sauer asked the justices to &ldquo;permit the administration to bar the U.S. Postal Service from sending mail-in ballots to residents of states that have not submitted a list of eligible voters based on citizenship data.&rdquo;`} verdict="The Sunday application asks the Court to stay the September 4 injunction of the Postal Service rule. The portal fields in the rule are name, address, barcodes, and originating state. The citizenship list is section 2 of the executive order. The 40-page count and the withdrawal of Thursday's application check out. Talwani's order covers elections on or before November 3; The Hill also wrote that she halted the plan 'while lower courts decided on the policy,' which is how long the injunction lasts during the case, not a claim about later elections." chip="mislabeled" status="warn"><Cite s="hill-2026-09-06" passage="permit the administration to bar the U.S. Postal Service" /></OutletCheck>
+          <OutletCheck outlet="Associated Press" claim={`wrote that Talwani extended an order against the Postal Service &ldquo;enforcing President Donald Trump's executive order.&rdquo; PBS NewsHour and CNBC carried the same dispatch.`} verdict="The Sunday filing asks a stay of the September 4 injunction of the Postal Service rule. The August 24 Supreme Court stay had already paused the injunction of the executive order. The third-time count, the Sauer quotes, and the North Carolina mailing line check out against 26A305." chip="mislabeled" status="warn"><Cite s="ap-2026-09-06" passage="enforcing President Donald Trump" /><Cite s="pbs-2026-09-06" passage="enforcing President Donald Trump" /></OutletCheck>
+          <OutletCheck outlet="CBS News" claim={`wrote that Talwani extended an order against the Postal Service &ldquo;enforcing President Trump's executive order.&rdquo;`} verdict="Same mismatch as the Associated Press dispatch: the September 4 injunction names sections of the Postal Service rule, not the March executive order. CBS did not write 'Donald' in that line." chip="mislabeled" status="warn"><Cite s="cbs-2026-09-06" passage="enforcing President Trump's executive order" /></OutletCheck>
+          <OutletCheck outlet="NBC News" claim={`wrote that the rule would let the Postal Service &ldquo;potentially reject ballots that are sent to and from voters not included in a federal database.&rdquo;`} verdict="The Federal Ballot Mail Portal is a Postal Service system. State and local officials load the rows: name, address, barcodes, and originating state. Calling that list a federal database is consistent with who runs the system; the rows are not a federal citizenship file." chip="consistent" status="ok"><Cite s="nbc-2026-09-06" passage="not included in a federal database" /><Cite s="usps-final-rule" passage="Federal Ballot Mail Portal" /></OutletCheck>
           <OutletCheck outlet="NPR" claim={`wrote on September 3 that key parts of the USPS plan were blocked by a temporary restraining order, that voting by mail was still available to eligible voters, and that the August ruling was on a procedural question.`} verdict="Checks out against the August 27 order then in force, 26A124's ripeness holding, and the September 3 docket." chip="checks out" status="ok"><Cite s="npr-2026-09-03" passage="currently blocked by a court order" /></OutletCheck>
           <OutletCheck outlet="The Hill" claim={`wrote on September 3 that the Court had lifted the judge's block on the executive order itself, and that she had now blocked the Postal Service's final plan.`} verdict="Consistent with 26A124 and the August 27 temporary order then before the Court." chip="consistent" status="ok"><Cite s="hill-2026-09-03" passage="The high court previously lifted the judge" /></OutletCheck>
         </div>
       </section>
 
       <section id="claim-check">
-        <p class="sec-kicker" data-layer="narrative">What Sunday's paper actually asks</p>
+        <p class="sec-kicker" data-layer="narrative">What Sunday's application actually asks</p>
         <h2 data-layer="fact">Claim checked against the record</h2>
 
         <div data-layer="fact">
           <CheckedBlock label="The coverage's claim: the administration is asking the Court to let it enforce the March executive order for the midterms" variant="contested">
-            <p>Too broad. Application 26A305 asks a stay of the September 4 injunction of named sections of the Postal Service's August 26 rule. The March order's own injunction was stayed on August 24, and that opinion said the stay did not decide whether later implementing measures would be lawful. The live restriction is the rule's acceptance screen, including the line that noncompliant mailings will not be accepted.<Cite s="scotus-26a305-application" passage="APPLICATION FOR A STAY OF THE INJUNCTION" /><Cite s="usps-final-rule" passage="will not be accepted" /></p>
+            <p>Too broad. Application 26A305 asks a stay of the September 4 injunction of named sections of the Postal Service's August 26 rule. The March order's own injunction was stayed on August 24, and that opinion said the stay did not decide whether later implementing measures would be lawful. The restriction now before the Court is the rule's acceptance screen, including the line that noncompliant mailings will not be accepted.<Cite s="scotus-26a305-application" passage="APPLICATION FOR A STAY OF THE INJUNCTION" /><Cite s="usps-final-rule" passage="will not be accepted" /></p>
           </CheckedBlock>
         </div>
 
         <p data-layer="narrative">The claim readers brought is the one in the candidate headlines: a new block, and another appeal. Both are true as dates. The new block is the September 4 injunction. The earlier appeal that "another" points to is 26A297 on Thursday, and behind that 26A124 in July.<Cite s="scotus-26a297-docket" passage="Application (26A297) withdrawn." /></p>
 
         <details class="receipt" data-layer="proof"><summary>how the day counts were made</summary>
-          <p>November 3, 2026, minus September 6 is 58 days. Minus September 4 is 60. Minus September 3 is 61. Minus August 26 is 69. Minus March 31 is 217. September 19 minus September 6 is 13. November 3 minus September 19 is 45, the UOCAVA figure. Plaintiff states were counted from the parties list in 26A305: 23 named states, plus the District of Columbia and the Pennsylvania governor, and 12 named intervenors.</p>
+          <p>November 3, 2026, minus September 6 is {computed.daysFilingToElection} days. Minus September 4 is {computed.daysPiToElection}. Minus September 3 is {computed.days297ToElection}. Minus August 26 is {computed.daysRuleToElection}. Minus March 31 is {computed.daysEoToElection}. September 19 minus September 6 is {computed.daysFilingToUocava}. November 3 minus September 19 is {computed.uocavaDaysBeforeElection}, the statutory 45-day overseas and military ballot date when a valid request arrived in time. August 26 minus August 24 is {computed.daysStayToRule}. Plaintiff states were counted from the parties list in 26A305: {computed.plaintiffStates} named states, plus the District of Columbia and the Pennsylvania governor, and {computed.intervenorStates} named intervenors.</p>
         </details>
       </section>
 
@@ -238,7 +260,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <ul data-layer="fact">
           <li>Whether the Court will stay the September 4 injunction, and on what timetable. Jackson's order on the docket is the September 9 response deadline.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /></li>
           <li>The First Circuit's ruling on the stay motions Sauer filed there. The application lists those motions as filed September 5. The Circuit's order is not in our records.<Cite s="scotus-26a305-application" passage="(stay motion" /></li>
-          <li>Which five states Sauer meant by "the week of September 13" in the Sunday paper. The Thursday application named Indiana, Florida, Michigan, Nevada, and Wisconsin among "at least 16 more States" if the temporary order were extended.<Cite s="scotus-26a297-application" passage="including Indiana, Florida," /></li>
+          <li>Which five states Sauer meant by "the week of September 13" in the Sunday application. The Thursday application named Indiana, Florida, Michigan, Nevada, and Wisconsin among "at least 16 more States" if the temporary order were extended.<Cite s="scotus-26a297-application" passage="including Indiana, Florida," /></li>
           <li>How many mail ballots each plaintiff state has already sent. Sauer names North Carolina as having begun; the application does not give a count.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /></li>
         </ul>
       </section>
