@@ -1,0 +1,296 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, wti, gasoline, steoCrude, nabepShareOfJulCrudePct } from "../../../data/venezuelaoil202609.mjs";
+const state = readPublishedState().events.get("event-venezuela-oil-september-2026");
+if (!state) throw new Error("Missing publication selection: event-venezuela-oil-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/venezuela-oil/">Venezuela oil</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">White House fact sheet &middot; August 31, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#markets">What the markets said</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On August 31 the White House published a fact sheet: Venezuela's interim authorities granted North American Blue Energy Partners, a private company, 100-year concessions on 17 oil fields with about 65 billion barrels of proved reserves.<Cite s="wh-fact-sheet-2026-08-31" passage="100-year concessions for 17 oil fields with proven reserves of approximately 65 billion barrels." /></li>
+          <li>The company granted the Department of War's Office of Strategic Capital a 35 percent equity stake in its parent, and granted the State Department the right to buy 20 percent of the oil at production cost, with first refusal on the rest.<Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" /><Cite s="wh-fact-sheet-2026-08-31" passage="guaranteed 20% of the off-take" /></li>
+          <li>West Texas Intermediate crude, the U.S. benchmark, closed at ${wti.aug31} a barrel on August 31 and ${wti.sep1} on September 1. The Energy Information Administration's weekly U.S. gasoline average for the week ending August 31 was ${gasoline.aug31} a gallon, {Math.abs(gasoline.change).toFixed(3)} below the week before.<Cite s="dcoilwtico-2026-09-08" passage="2026-08-31,87.03" /><Cite s="gasallw-2026-09-08" passage="2026-08-31,4.207" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the White House fact sheet of August 31, a White House release of September 2, Executive Order 14373 and its fact sheet, Treasury's Venezuela general license 46D dated August 27, the company's own statement, Venezuelan foreign ministry pages, Energy Information Administration series for crude prices, gasoline, U.S. proved reserves, and Venezuela production, and coverage checked against those records. The signed contract itself is not on any page we saved. The Washington Post page we saved was a subscription stub.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The fact sheet</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>The White House dated the fact sheet August 31, 2026. It says President Trump "has secured U.S. majority control of more than 65 billion barrels of proven oil reserves in Venezuela," compared with "roughly 46 billion barrels" of U.S. territorial proved reserves. It names the deal as signed by Secretary of State Marco Rubio and Secretary of War Pete Hegseth.<Cite s="wh-fact-sheet-2026-08-31" passage="signed by Secretary of State Marco Rubio and Secretary of War Pete Hegseth" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>The same page says Venezuela's interim authorities granted North American Blue Energy Partners, which it calls a privately held oil company and the second-largest private Venezuelan producer, 100-year concessions for 17 oil fields with proved reserves of about 65 billion barrels.<Cite s="wh-fact-sheet-2026-08-31" passage="the Venezuelan interim authorities have granted North American Blue Energy Partners" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>NABEP, the fact sheet says, granted the Department of War's Office of Strategic Capital a 35 percent equity stake in its corporate parent, "at no cost to the American taxpayer." Off-take here means the oil a buyer is entitled to take: the State Department received a right to buy, at production cost, a guaranteed 20 percent of output from current and future NABEP fields, and a right of first refusal on the remaining 80 percent. The 20 percent line names the Strategic Petroleum Reserve and military uses.<Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" /><Cite s="wh-fact-sheet-2026-08-31" passage="guaranteed 20% of the off-take" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>The U.S. government, the fact sheet says, has a veto over any board appointment, and a majority of NABEP's board must be U.S. citizens. The U.S. agreement with NABEP "is governed by U.S. law and is subject to the jurisdiction of U.S. courts."<Cite s="wh-fact-sheet-2026-08-31" passage="a majority of NABEP’s board of directors must be U.S. citizens" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>On money, the fact sheet gives two White House figures: NABEP "has developed an ambitious plan to rapidly scale production by investing up to $100 billion" in new oil infrastructure, and "NABEP will pay an expected $200 billion in royalty and tax payments over the first 25 years."<Cite s="wh-fact-sheet-2026-08-31" passage="investing up to $100 billion" /><Cite s="wh-fact-sheet-2026-08-31" passage="expected $200 billion in royalty and tax payments over the first 25 years" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Those are the administration's numbers. They are not a signed term sheet. The fact sheet does not attach the contract.<Cite s="wh-fact-sheet-2026-08-31" passage="100-year concessions for 17 oil fields" /></p>
+
+        <SourcedBlock source="nabep-pr-2026-08-31" kind="record">
+          <p>NABEP's own statement, dated August 31 from Caracas, matches the 35 percent stake and the 20 percent at-cost purchase right. It says the program "will generate more than $209 billion in tax revenue for the Venezuelan state," and that NABEP's near-term goal is "more than 1 million barrels of oil per day." It also says Alejandro Betancourt scaled the company from about 18,000 barrels a day to more than 200,000, with about $1 billion of company-funded investment, and that the company employs more than 5,000 people and supports more than 10,000 contractors.<Cite s="nabep-pr-2026-08-31" passage="more than $209 billion in tax revenue for the Venezuelan state." /><Cite s="nabep-pr-2026-08-31" passage="approximately 18,000 barrels per day to more than 200,000 barrels per day" /></p></SourcedBlock>
+
+        <SourcedBlock source="mppre-7980" kind="record">
+          <p>Venezuela's foreign ministry posted on August 28 that President Delcy Rodríguez had announced, on Telegram, a "histórico acuerdo" with the U.S. government. The ministry page says the agreement contemplates more than $100 billion in direct investment and more than $209 billion in taxes for the Venezuelan state.<Cite s="mppre-7980" passage="más de 100 mil millones de dólares en inversiones directas" /></p></SourcedBlock>
+
+        <SourcedBlock source="mppre-7986" kind="record">
+          <p>In a later address posted by the same ministry, Rodríguez put a finer number on that tax claim: $209.335 billion for the Venezuelan state, using a reference oil price of $65 a barrel. She said that works out to about $19 a barrel going directly to the country. She described minimum royalties of 16 percent and income tax of 34 percent on eight "greenfield" blocks in the Orinoco belt. The page's kicker says the scheme "preserva la soberanía estatal sobre las reservas": it preserves state sovereignty over the reserves.<Cite s="mppre-7986" passage="209 mil 335 millones de dólares para el Estado venezolano" /><Cite s="mppre-7986" passage="cerca de 19 dólares ingresan directamente a nuestro país" /></p></SourcedBlock>
+
+        <SourcedBlock source="ofac-gl-46d" kind="record">
+          <p>Four days before the fact sheet, on August 27, the Treasury's Office of Foreign Assets Control replaced Venezuela general license 46C with general license 46D. A general license is a standing permission: it lets a defined class of deals go ahead without a company-by-company license. 46D authorizes established U.S. entities, companies organized in the United States on or before January 29, 2025, to lift, sell, transport, and refine Venezuelan-origin oil for import into the United States, if payments to blocked persons (other than local taxes and fees) go into the Foreign Government Deposit Funds created by Executive Order 14373, or another account Treasury names.<Cite s="ofac-gl-46d" passage="Effective August 27, 2026, General License No. 46C" /><Cite s="ofac-gl-46d" passage="Foreign Government Deposit Funds, as specified in Executive" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-eo-2026-01-09" kind="record">
+          <p>That order, signed January 9, 2026, is Executive Order 14373. It declares a national emergency to keep Venezuelan oil revenue held in U.S. Treasury accounts from being attached by court process.<Cite s="wh-eo-2026-01-09" passage="Executive Order 14373" /></p></SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">Private company, or Caracas?</span>
+              The September 2 White House release says this is a deal with a private company, "not the Venezuelan interim government," and that "there was not a political process included in the negotiations." The August 31 fact sheet says the interim authorities granted the 100-year concessions.<Cite s="wh-release-2026-09-02" passage="not the Venezuelan interim government" /><Cite s="wh-fact-sheet-2026-08-31" passage="the Venezuelan interim authorities have granted North American Blue Energy Partners" />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">"Majority control" is not 35 plus 20.</span>
+              The fact sheet's headline claim is U.S. majority control of more than 65 billion barrels. The rights it lists are a 35 percent equity stake, a 20 percent cost-price purchase right, a veto on the board, and a U.S.-citizen board majority. Those are different instruments. Adding 35 and 20 does not turn them into ownership of the barrels.<Cite s="wh-fact-sheet-2026-08-31" passage="majority control of more than 65 billion barrels" /><Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">$200 billion is not $209.335 billion.</span>
+              The White House expects $200 billion in royalty and tax over 25 years. NABEP says more than $209 billion. Rodríguez gives $209.335 billion at a $65 reference price, about $19 a barrel. None of those figures is in a contract we have.<Cite s="wh-fact-sheet-2026-08-31" passage="expected $200 billion in royalty and tax payments over the first 25 years" /><Cite s="nabep-pr-2026-08-31" passage="more than $209 billion in tax revenue for the Venezuelan state." /><Cite s="mppre-7986" passage="209 mil 335 millones de dólares para el Estado venezolano" />
+              <a class="catch-jump" href="#what-happened">What happened</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">${gasoline.aug31} at the pump that week.</span>
+              The Energy Information Administration's weekly U.S. average for all grades was ${gasoline.aug31} a gallon for the week ending August 31, {Math.abs(gasoline.change).toFixed(3)} below the week ending August 24. West Texas Intermediate rose ${wti.changeAug31ToSep1} from the fact-sheet day to the next session. The 20 percent cost-price right is written for the Strategic Petroleum Reserve and military use, not as a retail gasoline formula.<Cite s="gasallw-2026-09-08" passage="2026-08-31,4.207" /><Cite s="dcoilwtico-2026-09-08" passage="2026-09-01,91.48" /><Cite s="wh-fact-sheet-2026-08-31" passage="refilling the Strategic Petroleum Reserve (SPR)" />
+              <a class="catch-jump" href="#markets">What the markets said</a>
+            </li>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">One-fifth of what?</span>
+              Al Jazeera wrote that the deal gives the Pentagon a stake in roughly one-fifth of Venezuela's oil reserves. CBS split the two numbers: the 17 fields hold about 65 billion barrels, roughly one-fifth of Venezuela's total, and the Defense Department gets a 35 percent stake in the company. The fact sheet never assigns one-fifth of the country to the Pentagon.<Cite s="aljazeera-venezuela-oil-details" passage="Pentagon a stake in roughly one-fifth" /><Cite s="cbs-nabep" passage="roughly one-fifth of Venezuela's total proven oil reserves" /><Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">Production, reserves, licenses</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <SourcedBlock source="steo-venezuela-crude-2026-08" kind="official">
+          <p>The Energy Information Administration's August 2026 Short-Term Energy Outlook, with a forecast date of August 6, puts Venezuela's crude oil production at {steoCrude.jul2026} million barrels a day in July 2026, up from {steoCrude.jan2026} million in January. That is the country total, not NABEP's share.<Cite s="steo-venezuela-crude-2026-08" passage="2026,Jul,1.15" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how that production line was read</summary>
+          <p>Saved STEO workbook, sheet 3dtab, row labeled Venezuela, columns for 2026. January is 0.8. July is 1.15. Values are million barrels per day. The Outlook says EIA finished modeling on Thursday, August 6, 2026. August 2026 and later months on that row are blank in the saved file.</p>
+        </details>
+
+        <SourcedBlock source="wh-release-2026-09-02" kind="record">
+          <p>The September 2 White House release says the private company "already produces 250K barrels of oil a day." CBS, quoting NABEP, wrote "more than 200,000 barrels of oil per day." Those are the company's figures. They are not the EIA country series.<Cite s="wh-release-2026-09-02" passage="already produces 250K barrels of oil a day" /><Cite s="cbs-nabep" passage="more than 200,000 barrels of oil per day" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how 21.7 percent was computed</summary>
+          <p>White House current output 250,000 barrels a day, divided by the EIA July country total of 1,150,000 barrels a day, times 100, rounded to one decimal: {nabepShareOfJulCrudePct} percent. The two numbers come from different issuers and different dates. The page does not treat that share as NABEP's legal interest in the 17 fields.</p>
+        </details>
+
+        <SourcedBlock source="eia-crude-oil-reserves-2024" kind="official">
+          <p>The White House compares the 65 billion barrels to "roughly 46 billion barrels" of U.S. territorial proved reserves. EIA's crude oil and natural gas proved reserves report for year-end 2024, released April 7, 2026, puts U.S. crude oil and lease condensate proved reserves at 46.0 billion barrels, down 1 percent from 46.4 billion at year-end 2023. The older annual table we also saved, last released December 30, 2022, still shows 41,151 million barrels at year-end 2021. The 46 billion line matches the 2024 report, not the 2021 table.<Cite s="eia-crude-oil-reserves-2024" passage="46.0 billion barrels at year-end 2024" /><Cite s="eia-us-crude-proved" passage="41,151" /><Cite s="wh-fact-sheet-2026-08-31" passage="roughly 46 billion barrels" /></p></SourcedBlock>
+
+        <SourcedBlock source="ofac-20260827" kind="record">
+          <p>OFAC's August 27 action list also amended licenses covering diluents, oil-and-gas operations of certain entities, minerals, PdVSA, and telecommunications. The blocking regime on Venezuela and PdVSA remains; the licenses are the holes in it. 46D does not name NABEP, and it does not expire on its face.<Cite s="ofac-20260827" passage="Issuance of Amended Venezuela-related General Licenses" /><Cite s="ofac-gl-46d" passage="Effective August 27, 2026, General License No. 46C" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Reuters, writing from officials, said NABEP would take over some fields previously run by Chinese and Russian firms, and that five of 14 contracts had been operated by Chinese companies. The White House names 17 fields. Reuters names 14 contracts. Those counts are not the same document.<Cite s="reuters-chinese-russian" passage="Five of 14 contracts had been operated by Chinese companies" /><Cite s="wh-fact-sheet-2026-08-31" passage="100-year concessions for 17 oil fields" /></p>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Refiners, Chevron, drivers, Caracas</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>The fact sheet says "millions of barrels of new Venezuelan output will be processed through U.S. refineries and pumped with American rigs and infrastructure." It does not name a refiner.<Cite s="wh-fact-sheet-2026-08-31" passage="processed through U.S. refineries" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-venezuela-oil-nabep" kind="record">
+          <p>The Associated Press, covering the fact sheet, wrote that it landed a day before Trump planned to meet large and small oil refiners about U.S. refining capacity, with pump prices then cited at a national average of $4.08. That $4.08 is AP's figure. The EIA weekly series we saved for the week ending August 31 is ${gasoline.aug31}.<Cite s="ap-venezuela-oil-nabep" passage="oil refiners to discuss ways to increase America’s capacity to refine oil into gasoline" /><Cite s="gasallw-2026-09-08" passage="2026-08-31,4.207" /></p></SourcedBlock>
+
+        <SourcedBlock source="ap-venezuela-chevron" kind="record">
+          <p>Chevron is not the concessionaire in the fact sheet. AP's Chevron story, and PBS quoting a U.S. official, said Chevron was expected to expand in Venezuela. Rodríguez, on September 2, celebrated Chevron expanding its presence, investment, and technology. Reuters separately reported that Chevron, India's ONGC, and GE Vernova were on track to sign final pacts, according to sources. Those are other tracks. They are not the 17-field NABEP concession the fact sheet describes.<Cite s="ap-venezuela-chevron" passage="Chevron" /><Cite s="pbs-chevron-expand" passage="Chevron expected to expand" /><Cite s="mppre-8005" passage="Chevron expande" /><Cite s="reuters-chevron-ongc" passage="Chevron, ONGC, GE Vernova" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-nabep" kind="record">
+          <p>CBS wrote that NABEP is run by Venezuelan executive Alejandro Betancourt and describes itself as Venezuela's second-largest private producer. Al Jazeera, France 24, and the NABEP statement name him too. The White House fact sheet does not.<Cite s="cbs-nabep" passage="Run by Venezuelan executive Alejandro Betancourt" /><Cite s="aljazeera-venezuela-oil-details" passage="Alejandro Betancourt" /><Cite s="france24-betancourt" passage="Alejandro Betancourt" /></p></SourcedBlock>
+
+        <SourcedBlock source="guardian-delcy" kind="record">
+          <p>The Guardian, on August 30, recorded Rodríguez saying Venezuela retains ownership of the resources, and that both the traditional opposition and orthodox Chavismo had denounced the deal. CBS wrote that she described it as a 25-year deal. The White House concessions are 100 years. Those durations sit on different pages and are not reconciled in a contract we have.<Cite s="guardian-delcy" passage="Venezuela retains the ownership and sovereignty over its resources." /><Cite s="cbs-nabep" passage="25-year deal" /><Cite s="wh-fact-sheet-2026-08-31" passage="100-year concessions" /></p></SourcedBlock>
+
+        <SourcedBlock source="fox-democrat-venezuela" kind="record">
+          <p>On the U.S. side, Fox News recorded Florida state Representative Angie Nixon calling the Venezuela deal a push toward communism. That is her statement, as Fox recorded it. It is not a House or Senate roll call. We did not save a floor vote on this deal.<Cite s="fox-democrat-venezuela" passage="Angie Nixon" /></p></SourcedBlock>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">The coverage</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+
+        <p data-layer="narrative">Monday and Tuesday coverage was checked against the August 31 fact sheet first, then against NABEP's statement, Rodríguez's ministry pages, and the EIA series.<Cite s="wh-fact-sheet-2026-08-31" /></p>
+
+        <SourcedBlock source="ap-venezuela-oil-nabep" kind="checked">
+          <p><strong>The Associated Press</strong> matched the fact sheet on 17 fields, 65 billion barrels, the 35 percent Pentagon stake, and the 20 percent State purchase right at cost. It called NABEP a joint venture the White House had withheld. The fact sheet describes equity in NABEP's parent, not the creation of a new joint-venture company. AP's $4.08 pump average is not the EIA weekly series we saved.<Cite s="ap-venezuela-oil-nabep" /><Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" /></p></SourcedBlock>
+
+        <SourcedBlock source="thehill-venezuela-oil-deal" kind="checked">
+          <p><strong>The Hill</strong> put the 65 billion barrels at "about 21 percent of Venezuela’s total estimated oil," and reported the 20 percent purchase right. The 21 percent is The Hill's share of a country total the fact sheet does not state. The 20 percent right checks out.<Cite s="thehill-venezuela-oil-deal" passage="21 percent" /><Cite s="wh-fact-sheet-2026-08-31" passage="guaranteed 20% of the off-take" /></p></SourcedBlock>
+
+        <SourcedBlock source="aljazeera-venezuela-oil-details" kind="checked">
+          <p><strong>Al Jazeera</strong> matched 17 fields, 65 billion barrels, $100 billion, and the 35 percent stake. It wrote that the deal gives the Pentagon a stake in roughly one-fifth of the country's reserves, and it called Hegseth "Defense Secretary." The fact sheet's title is Secretary of War. The one-fifth line attaches the country-share to the Pentagon stake. That is wrong as a description of the 35 percent equity.<Cite s="aljazeera-venezuela-oil-details" passage="Pentagon a stake in roughly one-fifth" /><Cite s="wh-fact-sheet-2026-08-31" passage="Secretary of War Pete Hegseth" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-nabep" kind="checked">
+          <p><strong>CBS</strong> split the one-fifth and the 35 percent correctly. It quoted NABEP at more than 200,000 barrels a day, against the White House's later 250,000. It recorded Rodríguez calling the arrangement a 25-year deal. That 25-year line is CBS's record of her speech, not the 100-year concession in the fact sheet.<Cite s="cbs-nabep" passage="roughly one-fifth of Venezuela's total proven oil reserves" /><Cite s="cbs-nabep" passage="25-year deal" /></p></SourcedBlock>
+
+        <SourcedBlock source="npr-venezuela-oil" kind="checked">
+          <p><strong>NPR</strong> used an Associated Press dispatch: a private company as a joint venture with NABEP, owned by Betancourt. Same joint-venture wording as AP. The fact sheet does not use "joint venture."<Cite s="npr-venezuela-oil" passage="creating a private company as a joint venture" /><Cite s="wh-fact-sheet-2026-08-31" passage="35% equity stake in its corporate parent" /></p></SourcedBlock>
+
+        <SourcedBlock source="reuters-chinese-russian" kind="checked">
+          <p><strong>Reuters</strong> reported, from officials, displacement of Chinese and Russian operators and "Five of 14 contracts had been operated by Chinese companies." That 14 is a Reuters official count. It is not the fact sheet's 17 fields.<Cite s="reuters-chinese-russian" passage="Five of 14 contracts had been operated by Chinese companies" /></p></SourcedBlock>
+
+        <SourcedBlock source="cbs-gas-prices" kind="checked">
+          <p><strong>CBS</strong>, on gasoline, wrote that the deal would not ease U.S. pump prices quickly. That is the outlet's conclusion. The EIA weekly average for the fact-sheet week was ${gasoline.aug31}, a cent below the prior week, and WTI was higher the next session. The fact sheet does not give a pump-price number.<Cite s="cbs-gas-prices" /><Cite s="gasallw-2026-09-08" passage="2026-08-31,4.207" /></p></SourcedBlock>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">One claim, examined</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="checked">
+          <p><strong>The claim:</strong> the United States has majority control of more than 65 billion barrels of Venezuelan proved reserves, at zero cost. <strong>The record:</strong> the fact sheet lists a 35 percent equity stake in NABEP's parent, a 20 percent cost-price purchase right, a board veto, a U.S.-citizen board majority, and U.S. law and courts. It also says the interim authorities granted the concessions to NABEP. The September 2 release then says the deal is with a private company, not the interim government. "Zero cost" in the fact sheet is "at no cost to the American taxpayer" for the equity. It is not a finding that the oil is free at the pump.<Cite s="wh-fact-sheet-2026-08-31" passage="majority control of more than 65 billion barrels" /><Cite s="wh-release-2026-09-02" passage="not the Venezuelan interim government" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The 65 billion barrels are the fact sheet's proved-reserve total for the 17 fields. The EIA country production series for July is {steoCrude.jul2026} million barrels a day. Turning reserves into barrels at the pump is not a step the fact sheet performs, and this page will not invent one.<Cite s="wh-fact-sheet-2026-08-31" passage="approximately 65 billion barrels" /><Cite s="steo-venezuela-crude-2026-08" passage="2026,Jul,1.15" /></p>
+      </section>
+
+      <section id="markets">
+        <p class="sec-kicker" data-layer="narrative">The days around the fact sheet</p>
+        <h2 data-layer="fact">What the markets said</h2>
+
+        <SourcedBlock source="dcoilwtico-2026-09-08" kind="official">
+          <p>West Texas Intermediate at Cushing, from the EIA daily series saved September 8, closed at ${wti.aug28} on Friday, August 28; ${wti.aug31} on Monday, August 31, the fact-sheet date; and ${wti.sep1} on Tuesday, September 1. That is a rise of ${wti.changeAug31ToSep1} from Monday to Tuesday.<Cite s="dcoilwtico-2026-09-08" passage="2026-08-31,87.03" /><Cite s="dcoilwtico-2026-09-08" passage="2026-09-01,91.48" /></p></SourcedBlock>
+
+        <details class="receipt" data-layer="proof"><summary>how the crude change was computed</summary>
+          <p>Saved EIA daily Cushing spot series, from the St. Louis Fed, dated September 8. Tuesday 91.48 minus Monday 87.03 equals 4.45. The series does not state a cause. Coverage that week also recorded U.S. and Iranian strikes. This page does not assign the rise to the fact sheet.</p>
+        </details>
+
+        <SourcedBlock source="gasallw-2026-09-08" kind="official">
+          <p>The EIA weekly U.S. average for all grades and formulations was ${gasoline.aug24} for the week ending August 24 and ${gasoline.aug31} for the week ending August 31, a change of {gasoline.change.toFixed(3)} dollars a gallon.<Cite s="gasallw-2026-09-08" passage="2026-08-24,4.218" /><Cite s="gasallw-2026-09-08" passage="2026-08-31,4.207" /></p></SourcedBlock>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">September 2</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <SourcedBlock source="wh-release-2026-09-02" kind="record">
+          <p>On September 2 the White House posted a follow-up release repeating the 65 billion barrels and the 46 billion U.S. comparison. It says material production, because of the off-take rights, will be coming to the United States "as soon as early next year." On the same page it also says, "By the end of the year, there will be at-cost oil flowing to the market."<Cite s="wh-release-2026-09-02" passage="as soon as early next year, material production will be coming to the United States" /><Cite s="wh-release-2026-09-02" passage="By the end of the year, there will be at-cost oil flowing to the market" /></p></SourcedBlock>
+
+        <SourcedBlock source="state-rubio-novelli-2026-09-01" kind="record">
+          <p>The private-company line appeared a day earlier in a State Department transcript of Secretary Rubio speaking with Sergio Novelli on September 1: "this really is not an agreement with the interim government. It is an agreement with a private company."<Cite s="state-rubio-novelli-2026-09-01" passage="this really is not an agreement with the interim government. It is an agreement with a private company" /></p></SourcedBlock>
+
+        <SourcedBlock source="doe-fact-sheet-2026-09-02" kind="record">
+          <p>The Energy Department published its own fact sheet the day Wright traveled. It says he went to Venezuela on September 2 "to oversee the signing of landmark energy agreements with Chevron, Eni, and GE Vernova," and it restates "U.S. majority control of an estimated 65 billion barrels of proven oil reserves."<Cite s="doe-fact-sheet-2026-09-02" passage="Secretary Wright traveled to Venezuela to oversee the signing of landmark energy agreements with Chevron, Eni, and GE Vernova" /></p></SourcedBlock>
+
+        <SourcedBlock source="mppre-7995" kind="record">
+          <p>Venezuela's foreign ministry said Wright arrived at Simón Bolívar International Airport in La Guaira on his second official visit.<Cite s="mppre-7995" passage="Christopher Wright" /></p></SourcedBlock>
+
+        <SourcedBlock source="mppre-8005" kind="record">
+          <p>Rodríguez, after meeting Wright, said Chevron was expanding in the country. That is her statement on a different operator from NABEP.<Cite s="mppre-8005" passage="Chevron expande" /></p></SourcedBlock>
+
+        <SourcedBlock source="wh-fact-sheet-2026-08-31" kind="record">
+          <p>The fact sheet says U.S.-sponsored reconciliation talks between the 2015 National Assembly and the interim authorities "will continue with additional meetings in September."<Cite s="wh-fact-sheet-2026-08-31" passage="additional meetings in September" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Watching: whether the contract or a Federal Register notice appears; whether OFAC names NABEP in a license; whether EIA's next Short-Term Energy Outlook, after August 6, raises Venezuela's crude line; and whether the September reconciliation meetings produce a public text.<Cite s="wh-fact-sheet-2026-08-31" passage="additional meetings in September" /><Cite s="ofac-gl-46d" passage="Effective August 27, 2026, General License No. 46C" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li>The signed contract, term sheet, or concession list naming the 17 fields. The fact sheet, NABEP statement, and ministry pages describe the deal. None of them is the agreement itself.<Cite s="wh-fact-sheet-2026-08-31" passage="100-year concessions for 17 oil fields" /></li>
+          <li>A Federal Register notice for the August 31 arrangement. General license 46D is Treasury's August 27 license text. It does not name this concession.<Cite s="ofac-gl-46d" passage="Effective August 27, 2026, General License No. 46C" /></li>
+          <li>How the White House turns a 35 percent equity stake and a 20 percent purchase right into majority control of 65 billion barrels. The fact sheet states the conclusion. It does not show the arithmetic.<Cite s="wh-fact-sheet-2026-08-31" passage="majority control of more than 65 billion barrels" /></li>
+          <li>A State Department or Energy Department written statement on the fact sheet, beyond Wright's arrival as recorded by Venezuela's foreign ministry. Rubio's words in the NABEP release are NABEP's record of a post on X. We have not saved that post.<Cite s="nabep-pr-2026-08-31" passage="In a statement posted to X" /><Cite s="mppre-7995" passage="Christopher Wright" /></li>
+          <li>A House or Senate vote, hearing date, or committee report on this deal in the records we hold. Fox recorded one Florida lawmaker. That is not a roll call.<Cite s="fox-democrat-venezuela" passage="Angie Nixon" /></li>
+        </ul>
+      </section>
+
+      <StorySources event="venezuela-oil/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 0; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+</style>
