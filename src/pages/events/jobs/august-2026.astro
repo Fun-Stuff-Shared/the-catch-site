@@ -57,7 +57,7 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
       <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
 
       <div data-layer="proof" class="event-record-context">
-        <p class="sources-line">This story rests on one primary record, seven official data files, and seven coverage articles, each saved the day it was published or fetched.</p>
+        <p class="sources-line">This story rests on four primary records, seven official data files, and twenty-four coverage records, each saved the day it was published or fetched. It was read by an independent reviewer after it was written; the gaps that review found are answered on the page or listed in the open questions.</p>
       </div>
 
       <section id="what-happened">
@@ -79,10 +79,16 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <SourcedBlock source="bls-empsit-2026-08" kind="record">
           <p>June was revised up by 11,000, from +20,000 to +31,000. July was revised up by 44,000, from a loss of 23,000 to a gain of 21,000. Combined, the two months are 55,000 higher than first reported.<Cite s="bls-empsit-2026-08" passage="employment in June and July combined is 55,000 higher than previously reported" /></p></SourcedBlock>
 
-        <p data-layer="narrative">Private employers added 127,000 and government 35,000, so unlike July this was not a public-sector story: the private gain alone exceeded every forecast. The revision to July also rewrites the July report's headline. The month that read as the first loss of the year now reads as a small gain, and every conclusion drawn from a negative July should be reread with that in mind.<Cite s="bls-empsit-2026-08" passage="Total private -20 26 71 127" /><Cite s="alfred-payems-first-2026-07" /></p>
+        <SourcedBlock source="bls-empsit-2026-08" kind="record">
+          <p>Restaurants and bars and public schools together account for 101,000 of the 162,000; the rest of the economy added about 61,000. The whole leisure and hospitality sector added 62,000 after losing jobs in June and July. Financial activities lost 11,000 for a second month. Professional and business services added 10,000, about 7,000 of it in temporary help.<Cite s="bls-empsit-2026-08" passage="Leisure and hospitality 22 -54 -21 62" /><Cite s="bls-empsit-2026-08" passage="Financial activities -19 2 -11 -11" /><Cite s="bls-empsit-2026-08" passage="Temporary help services -10.9 16.9 5.2 6.8" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Private employers added 127,000 and government 35,000. July's decline had been a public-sector story; August's gain was mostly private, and the private gain alone was larger than the highest forecast for total payrolls, though forecasts are made for the total and not for private employers. The revision to July also rewrites the July report's headline. The month that read as the first loss of the year now reads as a small gain, and every conclusion drawn from a negative July should be reread with that in mind.<Cite s="bls-empsit-2026-08" passage="Total private -20 26 71 127" /><Cite s="pbs-august-jobs" passage="65,000" /><Cite s="alfred-payems-first-2026-07" /></p>
 
         <SourcedBlock source="bls-empsit-2026-08" kind="record">
-          <p>Average hourly earnings rose 10 cents, or 0.3&nbsp;percent, to $37.75; over the year they are up 3.1&nbsp;percent. The average workweek edged up a tenth of an hour to 34.4 hours.<Cite s="bls-empsit-2026-08" passage="average hourly earnings for all employees on private nonfarm payrolls rose by 10 cents" /></p></SourcedBlock>
+          <p>Average hourly earnings rose 10 cents, or 0.3&nbsp;percent, to $37.75; over the year they are up 3.1&nbsp;percent. For production and nonsupervisory workers, the larger group that excludes managers, pay rose 11 cents to $32.53. The average workweek edged up a tenth of an hour to 34.4 hours.<Cite s="bls-empsit-2026-08" passage="average hourly earnings for all employees on private nonfarm payrolls rose by 10 cents" /><Cite s="bls-empsit-2026-08" passage="production and nonsupervisory employees rose by 11 cents, or 0.3 percent, to $32.53" /></p></SourcedBlock>
+
+        <SourcedBlock source="adp-release-2026-08" kind="record">
+          <p>The two labor readings that came just before pointed the other way. On September 2 the payroll processor ADP counted 38,000 private jobs added in August, its slowest month since January and below the 47,000 forecasters expected of it. On September 3 the Labor Department counted 206,000 new unemployment claims in the last week of August, a low level, with 1,779,000 people drawing benefits. The government's private count of 127,000 was more than three times ADP's; the two series often disagree month to month.<Cite s="adp-release-2026-08" passage="Private-sector employment increased by 38,000 jobs in August" /><Cite s="adp-release-2026-08" passage="slowest pace of job creation since January" /><Cite s="dol-claims-2026-09-03" passage="initial claims was 206,000" /><Cite s="cnbc-adp-august-jobs" passage="Dow Jones consensus estimate for 47,000" /></p></SourcedBlock>
       </section>
 
       <section id="where-this-sits">
@@ -96,7 +102,12 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
           <p>Monthly change is the difference between consecutive months of the saved payroll series (seasonally adjusted, thousands). Twelve-month average: the sum of the September 2025 to August 2026 changes divided by twelve, {averages.last12} thousand. Three-month average: June, July and August, {averages.last3} thousand. Negative months counted over the same twelve.</p>
         </details>
 
-        <p data-layer="narrative">The year so far averages about 80,000 a month, against roughly 10,000 a month in 2025 and about 166,000 a month across 2023 and 2024. One strong month does not restore the earlier pace; it does end the run of stalls that July appeared to start.<Cite s="fred-payems-2026-08" /></p>
+        <p data-layer="narrative">The year so far averages about 80,000 a month, against roughly 10,000 a month in 2025 and about 166,000 a month across 2023 and 2024. One strong month does not restore the earlier pace, and whether it ends the run of stalls that July appeared to start is disputed.<Cite s="fred-payems-2026-08" /></p>
+
+        <SourcedBlock source="piedmont-august-jobs" kind="record">
+          <p>The competing reading is payback. Before seasonal adjustment, restaurants and bars shed about 700 workers in August; measured against factors built for a midsummer roll-off, that printed as a gain of 59,000. Public schools' 42,000 is the second half of a swing that the agency itself calls largely offsetting and that has no counterpart in the unadjusted data. On that reading the three-month average of about 71,000 is the number to carry, not 162,000.<Cite s="piedmont-august-jobs" passage="shed just 700 workers in August" /><Cite s="piedmont-august-jobs" passage="The three-month average is 71,000" /><Cite s="bls-empsit-2026-08" passage="largely offsetting a decrease in the prior month" /></p></SourcedBlock>
+
+        <p data-layer="narrative">That reading is not a minority view. Bloomberg Economics said an unusually mild seasonal adjustment, likely reflecting the World Cup's disruption of normal summer hiring, explained almost all of the surprise. Pantheon Macroeconomics called the month payback after two weak ones rather than a shift to faster growth. The Times reported that the July school drop may have been a seasonal-adjustment quirk, and its economics reporter noted the same day that it was one. The headline of this page states what the published number says; this paragraph states what the people who work with the seasonal factors say about it.<Cite s="yahoo-chart-august-jobs" passage="an unusually mild seasonal adjustment" /><Cite s="cnn-august-jobs" passage="payback after two very weak months" /><Cite s="nyt-august-jobs" passage="attributable to some extent to seasonal adjustment quirks" /><Cite s="x-casselman-august-jobs" passage="looked like a seasonal quirk, and it was" /></p>
 
         <details class="receipt" data-layer="proof"><summary>the yearly averages</summary>
           <p>From the same saved series: 2026 January to August {averages.year2026} thousand a month; 2025 {averages.year2025}; 2023 and 2024 together {averages.years2023to2024}; 2022 {averages.year2022}; 2021 {averages.year2021}.</p>
@@ -105,7 +116,7 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <PayrollChart source="fred-payems-2026-08" from="2025-07-01" to="2026-08-01" latest="August" range="July 2025–August 2026" rangeCompact="February–August 2026" />
 
         <SourcedBlock source="bls-empsit-2026-08" kind="record">
-          <p>The household survey moved the same way for once. The labor force grew by 683,000, household employment by 569,000, and the participation rate edged up to 61.6 percent. Participation is still half a point below January.<Cite s="bls-empsit-2026-08" passage="The labor force participation rate edged up to 61.6 percent" /></p></SourcedBlock>
+          <p>The household survey moved the same way for once. The labor force grew by 683,000, household employment by 569,000, and the participation rate edged up to 61.6 percent; the share of the whole population with a job rose to 59.1 percent. Participation is still half a point below January. The count of unemployed people also rose, by 115,000, which is why the rate held at 4.1 rather than falling: more people came in to look than found work.<Cite s="bls-empsit-2026-08" passage="The labor force participation rate edged up to 61.6 percent" /><Cite s="bls-empsit-2026-08" passage="Employment-population ratio 59.6 59.0 58.9 59.1 0.2" /><Cite s="bls-empsit-2026-08" passage="Unemployed 7,380 7,094 6,916 7,031 115" /></p></SourcedBlock>
 
         <aside class="two-surveys" data-layer="fact">
           <p class="tt-label">Two surveys, same direction (August, seasonally adjusted)</p>
@@ -121,6 +132,17 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
           <p>Participation among workers 25 to 54 held at 83.4 percent, unchanged from July and still below the 84.0 of January.<Cite s="fred-primeage-2026-08" passage="2026-08-01,83.4" /></p></SourcedBlock>
 
         <p data-layer="narrative">In July the unemployment rate fell because people left the labor force. In August it held steady while 683,000 people came in, which is the version of a flat rate that reads as strength: more people looking, and most of them finding work.<Cite s="bls-empsit-2026-08" passage="Civilian labor force" /></p>
+
+        <SourcedBlock source="bls-empsit-2026-08" kind="record">
+          <p>The unemployment rate for Black workers fell to 6.0 percent from 6.3, and for Asian workers to 3.2 from 4.0; adult men (4.0), adult women (3.5), White workers (3.7) and Hispanic workers (4.8) showed little change. Teenagers rose to 14.1 percent.<Cite s="bls-empsit-2026-08" passage="Black or African American 7.6 6.6 6.3 6.0 -0.3" /><Cite s="bls-empsit-2026-08" passage="the unemployment rate for people who are Asian declined to 3.2 percent" /></p></SourcedBlock>
+
+        <SourcedBlock source="bls-empsit-2026-08" kind="record">
+          <p>The survey's unadjusted count by place of birth, which only compares August with a year earlier, shows the foreign-born labor force 379,000 smaller than in August 2025 and its participation rate down from 66.4 to 65.7 percent, while its unemployment rate fell from 4.4 to 3.4. The native-born labor force is 608,000 smaller than a year ago.<Cite s="bls-empsit-2026-08" passage="Civilian labor force 32,239 31,860" /><Cite s="bls-empsit-2026-08" passage="Civilian labor force 138,796 138,188" /></p></SourcedBlock>
+
+        <p data-layer="narrative">That is the record behind the argument the administration makes about slow hiring. Kevin Hassett, the president's economic adviser, called the numbers &ldquo;blockbuster&rdquo; and said &ldquo;the breakeven job number is a lot lower than it used to be because we've tightened the border.&rdquo; Treasury Secretary Scott Bessent said the day before the report that the country &ldquo;does not need to produce as many jobs&rdquo; because deportations and lower immigration have shrunk the workforce, and that the monthly numbers are &ldquo;quite noisy.&rdquo; The release gives year-over-year counts by place of birth and no monthly trend, so the page can confirm that the foreign-born labor force is smaller than a year ago and cannot say how many jobs a month that implies.<Cite s="yahoo-hassett-august-jobs" passage="The breakeven job number is a lot lower than it used to be" /><Cite s="newsweek-bessent-august-jobs" passage="does not need to produce as many jobs" /><Cite s="newsweek-bessent-august-jobs" passage="quite noisy" /><Cite s="bls-empsit-2026-08" passage="Foreign born, 16 years and over" /></p>
+
+        <SourcedBlock source="kpmg-august-jobs" kind="record">
+          <p>One specific supply shock sits inside the August figures. Temporary Protected Status for Haitian workers ended on July 27, and KPMG's economists read the pattern as employers losing those workers in July and scrambling to replace them in August, with more than 100,000 of them estimated to have worked in low-wage elder care. The Hill's coverage carried the same point from a bank economist on release day.<Cite s="kpmg-august-jobs" passage="the loss of the Temporary Protected Status (TPS) of Haitian workers" /><Cite s="kpmg-august-jobs" passage="more than 100,000 estimated to be working" /><Cite s="thehill-august-jobs" passage="Temporary Protected Status for Haitian refugees" /></p></SourcedBlock>
       </section>
 
       <section id="who-feels-it">
@@ -128,7 +150,7 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <h2 data-layer="fact">Who feels it</h2>
 
         <SourcedBlock source="fred-ahe-2026-08" kind="computed">
-          <p>Wages are rising 3.1 percent a year, the slowest pace since the spring of 2021. Growth was 3.4 percent as recently as May.<Cite s="fred-ahe-2026-08" passage="2026-08-01,37.75" /></p></SourcedBlock>
+          <p>Wages are rising 3.1 percent a year, the slowest pace since the spring of 2021; CNN called it a five-year low, which the saved series confirms. Growth was 3.4 percent as recently as May.<Cite s="fred-ahe-2026-08" passage="2026-08-01,37.75" /><Cite s="cnn-august-jobs" passage="five-year low" /></p></SourcedBlock>
 
         <details class="receipt" data-layer="proof"><summary>how this was computed</summary>
           <p>Year-over-year change in average hourly earnings from the saved series: {wageGrowth.map((w) => `${w.month} ${w.yoy.toFixed(2)}%`).join(", ")}. The last reading at or below 3.09 percent before August 2026 was May 2021.</p>
@@ -137,19 +159,22 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <p data-layer="narrative">The inflation-adjusted version arrives with the September 11 price report and is not on this page yet. Until then the honest reading is the one the payroll survey allows: pay is growing more slowly than at any point in five years, and whether it is beating prices depends on a number that has not been published.<Cite s="fred-ahe-2026-08" /></p>
 
         <SourcedBlock source="bls-empsit-2026-08" kind="record">
-          <p>People working part time because they could not find full-time work fell by 414,000 to 4.4 million. The long-term unemployed held at 1.9 million, 27 percent of all unemployed people. Discouraged workers held at 441,000.<Cite s="bls-empsit-2026-08" passage="The number of people employed part time for economic reasons decreased by 414,000" /></p></SourcedBlock>
+          <p>People working part time because they could not find full-time work fell by 414,000 to 4.4 million. The long-term unemployed, out of work 27 weeks or more, rose by 159,000 to 1.93 million and are now 27 percent of all unemployed people; the agency's summary calls that little changed, and the table shows the rise. The median spell of unemployment lengthened from 10.5 weeks to 11.4, and the share of the unemployed who have searched 15 weeks or more reached 43 percent, which CNN called a five-year high. Discouraged workers held at 441,000.<Cite s="bls-empsit-2026-08" passage="The number of people employed part time for economic reasons decreased by 414,000" /><Cite s="bls-empsit-2026-08" passage="27 weeks and over 1,924 1,937 1,771 1,930 159" /><Cite s="bls-empsit-2026-08" passage="Median duration, in weeks 9.8 9.5 11.3 9.9 11.0 11.6 11.0 10.5 11.4" /><Cite s="cnn-august-jobs" passage="43% in August" /></p></SourcedBlock>
+
+        <SourcedBlock source="bls-empsit-2026-08" kind="record">
+          <p>Women accounted for 158,000 of the 162,000 jobs added: the count of women on payrolls rose from 79,591,000 to 79,749,000, while the count of men rose by about 4,000. Health care and social assistance together added 28,000, with home health care up 11,000 and hospitals up 8,000.<Cite s="bls-empsit-2026-08" passage="Total nonfarm 79,254 79,586 79,591 79,749" /><Cite s="bls-empsit-2026-08" passage="Health care and social assistance 22.8 38.6 13.1 28.4" /></p></SourcedBlock>
 
         <SourcedBlock source="fred-u6rate-2026-08" kind="official">
           <p>U-6, the broadest underutilization measure, fell to 7.7 percent from 7.9, its lowest reading since June 2025.<Cite s="fred-u6rate-2026-08" passage="2026-08-01,7.7" /></p></SourcedBlock>
 
-        <p data-layer="narrative">The shape of August is the reverse of July: hiring resumed, involuntary part-time work fell sharply, and the broad measure improved, while the one soft spot is pay growth, which kept slowing even as hiring picked up.<Cite s="bls-empsit-2026-08" passage="decreased by 414,000" /><Cite s="fred-ahe-2026-08" /></p>
+        <p data-layer="narrative">The shape of August is mostly the reverse of July: hiring resumed, involuntary part-time work fell sharply, and the broad measure improved. Two soft spots remain: pay growth kept slowing even as hiring picked up, and the long-term unemployed grew, so the people already out of work the longest did not share in the month.<Cite s="bls-empsit-2026-08" passage="decreased by 414,000" /><Cite s="bls-empsit-2026-08" passage="27 weeks and over 1,924 1,937 1,771 1,930 159" /><Cite s="fred-ahe-2026-08" /></p>
       </section>
 
       <section id="outlets">
         <p class="sec-kicker" data-layer="narrative">The coverage</p>
         <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
 
-        <p data-layer="narrative">Seven release-day articles are in our records: The Hill, Al Jazeera, UPI, the Associated Press story as published by PBS NewsHour, two from CNBC, and the opening of The Washington Post's. Checked against the release:<Cite s="thehill-august-jobs" /><Cite s="aljazeera-august-jobs" /><Cite s="upi-august-jobs" /><Cite s="pbs-august-jobs" /><Cite s="cnbc-women-august-jobs" /><Cite s="cnbc-yields-august-jobs" /><Cite s="wapo-august-jobs" /></p>
+        <p data-layer="narrative">Seven release-day articles were checked line by line: The Hill, Al Jazeera, UPI, the Associated Press story as published by PBS NewsHour, two from CNBC, and the opening of The Washington Post's. A further dozen records, added after an independent review of this page, are cited where they are used and listed below. Reuters and The Wall Street Journal do not let their pages be saved and Bloomberg served only a subscription stub, so their reporting is not on this page. Checked against the release:<Cite s="thehill-august-jobs" /><Cite s="aljazeera-august-jobs" /><Cite s="upi-august-jobs" /><Cite s="pbs-august-jobs" /><Cite s="cnbc-women-august-jobs" /><Cite s="cnbc-yields-august-jobs" /><Cite s="wapo-august-jobs" /></p>
 
         <SourcedBlock source="thehill-august-jobs" kind="checked">
           <p><strong>The Hill</strong> reported 162,000, the 4.1 percent rate, the 53,000 forecast, the June and July revisions to 31,000 and 21,000, the 59,000 and 42,000 sector gains, and participation at 61.6 percent, half a point below January. Every figure matches the release. Checks out.<Cite s="thehill-august-jobs" /></p></SourcedBlock>
@@ -167,8 +192,8 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
           <p>Averages of monthly changes from the saved payroll series: 2026 through August {averages.year2026} thousand; 2025 {averages.year2025}; 2023 and 2024 {averages.years2023to2024}; 2021 and 2022 together {((averages.year2021 + averages.year2022) / 2).toFixed(1)}.</p>
         </details>
 
-        <SourcedBlock source="cnbc-women-august-jobs" kind="record">
-          <p><strong>CNBC</strong>'s analysis attributes 158,000 of the 162,000 jobs to women, with the women's unemployment rate at 3.9 percent and the men's at 4.4. The release's summary text does not break the monthly gain out by sex; the figures come from CNBC's reading of the release tables and are reported here as its own.<Cite s="cnbc-women-august-jobs" passage="Women accounted for 158,000" /></p></SourcedBlock>
+        <SourcedBlock source="cnbc-women-august-jobs" kind="checked">
+          <p><strong>CNBC</strong>'s analysis attributes 158,000 of the 162,000 jobs to women, with the women's unemployment rate at 3.9 percent and the men's at 4.4. The release's table of women on payrolls shows exactly that: 79,591,000 in July, 79,749,000 in August. Checks out.<Cite s="cnbc-women-august-jobs" passage="Women accounted for 158,000" /><Cite s="bls-empsit-2026-08" passage="Total nonfarm 79,254 79,586 79,591 79,749" /></p></SourcedBlock>
 
         <SourcedBlock source="wapo-august-jobs" kind="record">
           <p><strong>The Washington Post</strong>'s opening matches the headline and the beat-expectations framing; the rest of the article sits behind a subscription wall and was not checked.<Cite s="wapo-august-jobs" /></p></SourcedBlock>
@@ -199,7 +224,7 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
 
       <section id="markets">
         <p class="sec-kicker" data-layer="narrative">The reaction</p>
-        <h2 data-layer="fact">What the markets said</h2>
+        <h2 data-layer="fact">What the markets, the president, and the Fed said</h2>
 
         <SourcedBlock source="cnbc-yields-august-jobs" kind="record">
           <p>The two-year Treasury yield rose more than 4 basis points to 4.377 percent, its highest since January 2025. CME FedWatch odds of a quarter-point rate increase at the September 15 to 16 meeting rose to 58 percent, about 9 points higher than a day earlier.<Cite s="cnbc-yields-august-jobs" passage="rose to 58%" /></p></SourcedBlock>
@@ -207,7 +232,20 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <SourcedBlock source="aljazeera-august-jobs" kind="record">
           <p>Al Jazeera, writing later in the day, put the same FedWatch odds at 60 percent, up from 49 percent on Thursday. The two figures are snapshots of a moving number, not a disagreement.<Cite s="aljazeera-august-jobs" passage="60 percent chance" /></p></SourcedBlock>
 
-        <p data-layer="narrative">A month ago a weak jobs report pulled the odds of a September hike down from 59 percent to 44. This report pushed them back up to about six in ten. The Fed meets on September 15 and 16, with the August inflation report due first, on September 11.<Cite s="cnbc-yields-august-jobs" passage="Sept. 15-16 meeting" /><Cite s="thehill-august-jobs" passage="August inflation data" /></p>
+        <SourcedBlock source="cnbc-stocks-august-jobs" kind="record">
+          <p>Stocks fell on the news. The Dow closed down 271.86 points, or 0.51 percent, at 53,414.25; the S&amp;P 500 lost 0.38 percent and the Nasdaq 0.29 percent. Good news for hiring read as bad news for anyone hoping rates would not rise.<Cite s="cnbc-stocks-august-jobs" passage="The 30-stock Dow was down 271.86 points, or 0.51%, closing at 53,414.25." /></p></SourcedBlock>
+
+        <p data-layer="narrative">A month ago a weak jobs report pulled the odds of a September hike down from 59 percent to 44. This report pushed them back up to about six in ten. On Polymarket, where the odds are set by people risking money, a quarter-point increase was priced at 55 percent when the page was saved. The Fed meets on September 15 and 16, with the August inflation report due first, on September 11.<Cite s="cnbc-yields-august-jobs" passage="Sept. 15-16 meeting" /><Cite s="polymarket-fed-september" passage="25 bps increase surges to 55%" /><Cite s="thehill-august-jobs" passage="August inflation data" /></p>
+
+        <SourcedBlock source="cnbc-trump-rates-august-jobs" kind="record">
+          <p>The president welcomed the number and demanded a rate cut in the same breath. &ldquo;Great jobs number just announced, breaking all estimates (except mine!) by double and triple,&rdquo; he posted, then said in the Oval Office that &ldquo;we should be paying the lowest interest rate in the world&rdquo; and threatened to stop trading with countries that run surpluses with the United States unless rates come down.<Cite s="cnbc-trump-rates-august-jobs" passage="Great jobs number just announced" /><Cite s="cnbc-trump-rates-august-jobs" passage="we should be paying the lowest interest rate in the world" /><Cite s="thehill-trump-rates-august-jobs" passage="BE PATRIOTS for a change" /></p></SourcedBlock>
+
+        <p data-layer="narrative">The collision is the story of the day: a report strong enough to raise the odds of a rate increase, and a president responding by demanding a cut. The Fed's own reasoning, on the record the day before, ran the other way from both.<Cite s="thehill-trump-rates-august-jobs" passage="60 percent chance" /><Cite s="fed-waller-2026-09-03" passage="it may be appropriate to raise the policy rate" /></p>
+
+        <SourcedBlock source="fed-waller-2026-09-03" kind="record">
+          <p>Economists reacted in kind on release day: &ldquo;August was a 'wow' jobs report,&rdquo; Heather Long of Navy Federal Credit Union posted. Governor Christopher Waller, speaking on September 3, called the labor market &ldquo;in satisfactory shape&rdquo; and said it was not a large factor in his rate decision. His vote, he said, would be &ldquo;heavily influenced by what we learn about August inflation&rdquo;: hold if progress toward 2 percent continues, consider a hike if inflation comes in hot.<Cite s="fed-waller-2026-09-03" passage="Turning to the labor market, it is also in satisfactory shape." /><Cite s="fed-waller-2026-09-03" passage="heavily influenced by what we learn about August inflation" /><Cite s="fed-waller-2026-09-03" passage="But if inflation comes in hot, I would consider a rate hike." /><Cite s="x-heatherlong-august-jobs" passage="August was a 'wow' jobs report" /></p></SourcedBlock>
+
+        <p data-layer="narrative">Read together with the market odds, that puts the weight of the September decision on the inflation report of September 11, not on this one. A strong jobs report removed a reason to hold; it did not by itself supply a reason to raise.<Cite s="fed-waller-2026-09-03" passage="So my decision on the appropriate stance of policy will be heavily influenced" /></p>
       </section>
 
       <section id="unknowns">
@@ -216,6 +254,8 @@ const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
         <ul data-layer="fact">
           <li>Whether August's pay grew faster than prices. The inflation-adjusted earnings report for August comes out September 11.</li>
           <li>Whether the 162,000 survives its own revisions. August's first estimate meets its first revision on October 2.</li>
+          <li>Whether September gives back what August's school and restaurant hiring added. Both sectors swing with the calendar, and the seasonal adjustment that turned them into gains will face its next test in the September report.</li>
+          <li>Whether the household survey's numbers can bear this much weight. The Times reported that response rates to that survey have not improved, though they may have stabilized; the agency's release does not give them.<Cite s="nyt-live-august-jobs" passage="Response rates for the monthly survey of households" /></li>
         </ul>
       </section>
 

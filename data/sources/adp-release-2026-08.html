@@ -1,0 +1,2005 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- begin spin_special_output(head_start) -->
+<script type="text/javascript" src="js/jquery.js" wd_script_id="jquery.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<style type="text/css" wd_script_id="featureboxes_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+		.wd_featurebox_icon {
+			display: inline;
+		}
+		.wd_featurebox_icon img {
+			vertical-align: middle;
+		}
+		div.wd_featurebox_group div.wd_tabs_wrapper {
+			border: none;
+			border-bottom: 1px solid #E1E1E1;
+			padding: 0 0 5px 0;
+		}
+		div.wd_featurebox_group div.wd_featurebox {
+			border: none;
+			padding: 8px 0 0 0;
+		}
+		div.wd_featurebox_group li.wd_tab {
+			float: none;
+			color: #666666;
+		}
+		div.wd_featurebox_group li.wd_tab-active {
+			border: none;
+			background-color: transparent;
+			color: #000000;
+			font-weight: bold;
+		}
+		div.wd_featurebox_group li.wd_tab-inactive {
+			cursor: auto;
+		}
+	</style>
+<style type="text/css" wd_script_id="search_form_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+		.wd_search_form .wd_input_datepicker {
+			margin-right: 2px;
+		}
+		.wd_search_type_checkbox {
+			margin-left: 20px;
+		}
+		</style>
+<script type="text/javascript" src="js/jquery-webdriver.js" wd_script_id="jquery-webdriver.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" src="js/webdriver.js" wd_script_id="webdriver.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" wd_script_id="search_form_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+			function wd_toggle_search_form(link, advanced) {
+				var $ = webDriver.jQuery;
+				var $container = $(link).closest(".wd_search_form_container");
+				var basic_form = $container.find(".wd_search_form_basic");
+				var basic_query = basic_form.find('input[name="query"]');
+				var advanced_form = $container.find(".wd_search_form_advanced");
+				var advanced_query = advanced_form.find('input[name="query"]');
+
+				if (advanced) {
+					advanced_query.val(basic_query.val());
+					advanced_form.show();
+					basic_form.hide();
+				} else {
+					basic_query.val(advanced_query.val());
+					basic_form.show();
+					advanced_form.hide();
+				}
+			}
+
+			function wd_toggle_search_type_checkboxes(radio) {
+				var $ = webDriver.jQuery;
+				var $radio = $(radio);
+				var all = $radio.val() == "All" ? $radio.is(":checked") : !$radio.is(":checked");
+				var $checkboxes = $radio.closest(".wd_form_field").find(".wd_search_type_checkbox");
+				$checkboxes.find('input[type="checkbox"]').prop("disabled", all);
+				$checkboxes.toggle(!all);
+			}
+
+			webDriver.jQuery(function ($) {
+				$('.wd_search_type_radio input[type="radio"]').each(function() {wd_toggle_search_type_checkboxes(this);});
+			});
+		</script>
+<style type="text/css" wd_script_id="toolbar_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+			div.wd_toolbar {
+				border-top: 1px solid #cccccc;
+				border-bottom: 1px solid #cccccc;
+				margin: 15px 0px 15px 0px;
+				padding: 5px;
+				line-height: 1;
+			}
+			div.wd_toolbar-page {
+				clear: both;
+			}
+			div.wd_toolbar ul.wd_tools {
+				display: inline-block;
+				width: 100%;
+				margin: 0;
+				padding: 5px 0;
+			}
+			div.wd_toolbar ul.wd_tools li.wd_tool {
+				display: block;
+				list-style-type: none;
+				margin-right: 5px;
+				padding: 0;
+				float: right;
+			}
+			span.wd_tool_icon > a:link,
+			span.wd_tool_icon > a:visited {
+				border-radius: 2px;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 7px;
+				font-size: 16px;
+				line-height: 1;
+				text-align: center;
+				color: #ffffff;
+				background-color: #767676;
+			} 
+			span.wd_tool_icon > a:hover {
+				color: #ffffff;
+				background-color: #666666;
+				text-decoration: none;
+			}
+			div.wd_toolbar ul.wd_tools li.wd_tool-addthis {
+				float: left;
+			}
+		</style>
+<script type="text/javascript" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">webDriver.push_jQuery();</script>
+<script type="text/javascript" src="js/jquery-ui.js" wd_script_id="jquery-ui.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" src="js/wd_resize.js" wd_script_id="wd_resize.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<link href="css/wd_modal.css" type="text/css" rel="stylesheet" wd_script_id="wd_modal.css">
+<link href="css/wd_wcag.css" type="text/css" rel="stylesheet" wd_script_id="wd_wcag.css">
+<script type="text/javascript" wd_script_id="wd_modal_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+(function($) {
+	webDriver.resizeModal = function() {
+		$(this).find(".wd_modal").wd_modal("resize");
+		return false;
+	}
+	
+	var modals = [];
+		
+	function _value(value, base) {
+		if (typeof value == "string" && value.indexOf("%") > 0) {
+			return  base * parseInt(value, 10) / 100;
+		} else {
+			return parseInt(value, 10);
+		}
+	}
+	
+	var wd_modal = function(element, options) {
+		this.init(element, options);
+	};
+	
+	wd_modal.prototype = {
+		init: function(element, options) {
+			var self = this;
+			
+			this.isOpen = false;
+			this.opener = null;
+			
+			this.$element = $(element);
+			this._options = {
+				autoOpen: false,
+				closeExisting: false,
+				closeOnEscape: true,
+				closeOnOverlayClick: true,
+				fadeDuration: null,
+				margin: "10%",
+				padding: 10
+			};
+			
+			this.options(options);
+			
+			this.$overlay = $("<div>").addClass("wd_modal-overlay").attr("wd_resize","resizeModal").appendTo($("body")).hide();
+			this.$outer = $("<div>").addClass("wd_modal-outer").appendTo(this.$overlay);
+			this.$inner = $("<div>").addClass("wd_modal-inner").appendTo(this.$outer).append(this.$element);
+			// Hack because I can't figure out where the extra few pixels at the bottom of the content are coming from
+			this.$inner.css("overflow-y", "hidden");
+			this.$close = $("<a class=\"wd_modal-close fa fa-times\" href=\"#close\" title=\"Close\"><span class=\"wd_sr-only\">Close Dialog<\/span><\/a>")
+					.on("click", function(event) {self.close(); event.preventDefault();})
+					.appendTo(this.$outer);
+			this.$element.addClass("wd_modal");
+			
+			if (this._options.autoOpen)
+				this.open(this._options.closeExisting);
+		},
+		
+		options: function(options) {
+			if (options) {
+				$.extend(this._options, options);
+
+				this._options.fadeDuration = parseInt(this._options.fadeDuration, 10);
+				if (isNaN(this._options.fadeDuration))
+					this._options.fadeDuration = false;
+				
+				if (!$.isArray(this._options.margin))
+					this._options.margin = [this._options.margin];
+				if (this._options.margin.length < 2)
+					this._options.margin[1] = this._options.margin[0];
+				if (this._options.margin.length < 3)
+					this._options.margin[2] = this._options.margin[0];
+				if (this._options.margin.length < 4)
+					this._options.margin[3] = this._options.margin[1];
+				
+				if (!$.isArray(this._options.padding))
+					this._options.padding = [this._options.padding];
+				if (this._options.padding.length < 2)
+					this._options.padding[1] = this._options.padding[0];
+				if (this._options.padding.length < 3)
+					this._options.padding[2] = this._options.padding[0];
+				if (this._options.padding.length < 4)
+					this._options.padding[3] = this._options.padding[1];
+			} else {
+				return this._options;
+			}
+		},
+		
+		reload: function(options) {
+			if (options) {
+				this.options(options);
+			}
+			
+			this.resize();
+		},
+		
+		open: function(closeExisting, now) {
+			if (this.isOpen)
+				return;
+			
+			var self = this;
+			var myCloseExisting = closeExisting;
+			
+			if (!this.opener)
+				this.opener = document.activeElement;
+
+			if (closeExisting && modals.length > 0) {
+				for (var i = modals.length - 1; i >= 0; --i)
+					modals[i].close(true, true);
+			}
+
+			this.$overlay.addClass("wd_modal-current");
+			$("body").append(this.$overlay);
+
+			if (!now && this._options.fadeDuration) {
+				this.$overlay.fadeIn(this._options.fadeDuration, function() {self.open(myCloseExisting, true);});
+			} else {
+				if (modals.length == 0) {
+					$("body").css("overflow","hidden");
+					$(document).on("keydown.wd_modal", function (event) {
+						var current = modals[modals.length - 1];
+						if ((event.which == 27 || event.keyCode == 27) && current._options.closeOnEscape) {
+							current.close();
+							event.stopImmediatePropagation();
+							event.preventDefault();
+						}
+					});
+				}
+
+				if (this._options.closeOnOverlayClick) {
+					this.$overlay.on("click.wd_modal", function (event) {
+						if (event.target == this) {
+							self.close();
+							event.preventDefault();
+						}
+					});
+				}
+
+				modals.push(this);
+				
+				this.$overlay.show();
+				
+				var $focus = this.$element.find(":focusable");
+				if ($focus.length > 0)
+					$focus[0].focus();
+				
+				this.isOpen = true;
+
+				this.$element.trigger("open");
+			}
+		},
+		
+		close: function(skipCurrent, now) {
+			if (!this.isOpen)
+				return;
+			
+			this.$element.trigger("beforeClose");
+			
+			// TODO: allow closing of lower modals
+			modals.pop();
+			
+			if (modals.length == 0) {
+				$("body").css("overflow","");
+				$(document).off("keydown.wd_modal");
+			}
+			
+			this.$overlay.off("click.wd_modal");
+			
+			if (this.opener) {
+				this.opener.focus();
+				this.opener = null;
+			}
+			
+			this.isOpen = false;
+			this.$overlay.removeClass("wd_modal-current").hide();
+			
+			if (!skipCurrent && modals.length > 0)
+				modals[modals.length-1].$overlay.addClass("wd_modal-current");
+			
+			this.$element.trigger("close");
+		},
+		
+		destroy: function() {
+			this.close(false, true);
+			$("body").append(this.$element);
+			this.$overlay.remove();
+		},
+		
+		resize: function() {
+			if (!this.isOpen)
+				return;
+			
+			var self = this;
+			var winWidth = $(window).width();
+			var winHeight = $(window).height();
+			
+			var margin = this._options.margin;
+			var padding = this._options.padding;
+			
+			var width = winWidth - _value(margin[1], winWidth) - _value(margin[3], winWidth) - _value(padding[1], winWidth) - _value(padding[1], winWidth);
+			var height = winHeight - _value(margin[0], winHeight) - _value(margin[2], winHeight) - _value(padding[0], winHeight) - _value(padding[2], winHeight);
+			
+			this.$inner.css("max-width", width);
+			this.$inner.css("max-height", height);
+			
+			$.each(["Top", "Right", "Bottom", "Left"], function(i, v) {
+				self.$outer.css("padding" + v, _value(padding[i])+"px");
+			});
+			
+			var fixed = this.$element.find("[wd_need_fixed_container]").is(":visible");
+			
+			this.$inner.css("width", width);
+			this.$inner.css("height", height);
+
+			webDriver.doResize(this.$inner);
+			
+			if (!fixed) {
+				this.$inner.css("width", "auto");
+				this.$inner.css("height", "auto");
+				if (this.$element.outerHeight() > height)
+					this.$inner.css("height", height);
+				if (this.$element.outerWidth() > width)
+					this.$inner.css("width", width);
+			}
+		}
+	};
+
+	$.fn.wd_modal = function(options) {
+		if (options == "exists") {
+			return !!$(this).data("wd_modal");
+		} else if (typeof options == "string") {
+            var instance = $(this).data("wd_modal");
+			if (!instance)
+				return null;
+			var args = Array.prototype.slice.call(arguments, 1);
+            return instance[options].apply(instance, args);
+        } else {
+            return this.each(function() {
+                var instance = $(this).data("wd_modal");
+                if (instance) {
+                    instance.reload(options);
+                } else {
+                    $(this).data("wd_modal", new wd_modal(this, options));
+                }
+            });
+        }
+    };
+})(webDriver.jQuery);
+</script>
+<script type="text/javascript" src="js/wd_hashchange.js" wd_script_id="wd_hashchange.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" wd_script_id="asset_modal_support_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+			(function($) {
+				var prev_group_id = "";
+				var prev_type_id = "";
+				var prev_item_id = "";
+				var prev_hash = false;
+				var on_close = "back";
+				function hash_update() {
+					var hash = window.location.hash || "#";
+					if (hash == prev_hash) return;
+
+					var type_id = "";
+					var item_id = ""
+					var group_id = "main";
+
+					var apos = hash.indexOf("assets_");
+					if (apos >= 0) {
+						type_id = hash.substr(apos+7);
+
+						var dpos = type_id.indexOf("-");
+						if (dpos >= 0) {
+							group_id = type_id.substr(0, dpos);
+							type_id = type_id.substr(dpos+1);
+						}
+
+						var cpos = type_id.indexOf(":");
+						if (cpos >= 0) {
+							item_id = type_id.substr(cpos+1);
+							type_id = type_id.substr(0, cpos);
+						}
+					}
+
+					if (type_id == "")
+						type_id = "all";
+
+					if ((type_id != prev_type_id || group_id != prev_group_id) && item_id == "") {
+						var $carousel = $(".wd_asset_carousel_"+group_id+"_list")
+						if ($carousel.length > 0)
+							$carousel.wd_carousel("filter", (type_id == "all") ? false : ".wd_asset_type_"+type_id);
+
+						var $slideshow = $(".wd_asset_slideshow_"+group_id+"_list")
+						if ($slideshow.length > 0)
+							$slideshow.wd_slideshow("filter", (type_id == "all") ? false : ".wd_asset_type_"+type_id);
+
+						$(".wd_asset_carousel_type_link").removeClass("wd_active");
+						$(".wd_asset_carousel_type_link.wd_asset_type_"+type_id).addClass("wd_active");
+
+						prev_type_id = type_id;
+						on_close = "back";
+					}
+
+					if (type_id != prev_type_id || item_id != prev_item_id || group_id != prev_group_id) {
+						if (item_id == "") {
+							var save_close = on_close;
+							on_close = false;
+							hide_asset_modal();
+							on_close = save_close;
+						} else {
+							load_asset_modal(group_id, type_id, item_id);
+						}
+						set_social_share_data();
+
+						prev_item_id = item_id;
+
+						if (prev_hash === false)
+							on_close = "reset";
+					}
+
+					prev_group_id = group_id;
+					prev_hash = hash;
+				}
+
+				hide_asset_modal = function() {
+					$(".wd_asset_modal").wd_modal("close");
+				}
+
+				load_asset_modal = function(group_id, type_id, item_id) {
+					var $modal = $(".wd_asset_modal_"+group_id);;
+					if ($modal.length == 0)
+						return;
+
+					if (!$modal.wd_modal("exists")) {
+						$modal.wd_modal({
+							autoOpen: false,
+						});
+
+						$modal.show();
+
+						$modal.on("close", function() {
+							if (on_close == "back") {
+								history.back();
+							} else if (on_close == "reset") {
+								var href = window.location.href;
+								href = href.replace(/#.*$/, "#assets_all");
+								window.location.replace(href);
+							}
+						});
+					}
+
+					$modal.wd_modal("open", true);
+					
+					var $slideshow = $(".wd_asset_slideshow_"+group_id+"_list");
+					if ($slideshow.length > 0) {
+						var $slideshow_item = $slideshow.find(".wd_asset_"+type_id+"-"+item_id).not(".wd_clone");
+						if ($slideshow_item.length > 0)
+							$slideshow.wd_slideshow("scrollToItem", $slideshow_item);
+					}
+
+					var $carousel = $(".wd_asset_carousel_"+group_id+"_list");
+					if ($carousel.length > 0) {
+						var $carousel_item = $carousel.find(".wd_asset_"+type_id+"-"+item_id).not(".wd_clone");
+						if ($carousel_item.length > 0)
+							$carousel.wd_carousel("scrollToItem", $carousel_item);
+					}
+				}
+				
+				set_social_share_data = function() {
+					var href = window.location.href.replace("#", "#!");
+					window.addthis_share = {
+						url: href
+					}
+				}
+				
+				$(function() {
+					setTimeout(hash_update, 10);
+					$(window).hashchange(hash_update);
+				});
+			})(webDriver.jQuery);
+		</script>
+<style type="text/css" wd_script_id="asset_modal_support_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+			.wd_asset_modal .wd_captioned_image {
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.wd_asset_modal img {
+				max-width: 100%;
+				max-height: 100%;
+			}
+			.wd_asset_modal div.wd_toolbar.wd_toolbar-asset_modal {
+				position: fixed;
+				background: transparent;
+				top: 5%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				border: none;
+				margin: 0;
+			}
+		</style>
+<link href="thirdparty/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+<style type="text/css" wd_script_id="asset_inline_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+			.wd_asset_inline_list {
+				width: 50%;
+				float: right;
+				clear: right;
+				margin: 0 0 0 10px;
+			}
+			.wd_asset_inline {
+				background-color: #666666;
+			}
+			.wd_asset_inline_list div.wd_toolbar {
+				border: none;
+				font-size: 10px;
+				position: relative;
+			}
+			.wd_asset_inline_list span.wd_tool_icon a {
+				font-size: 10px;
+				width: 16px;
+				height: 16px;
+				padding: 3px;
+			}
+		</style>
+<script type="text/javascript" src="js/wd_imagesloaded.js" wd_script_id="wd_imagesloaded.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" src="js/wd_scriptloader.js" wd_script_id="wd_scriptloader.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<link href="css/wd_slideshow.css" type="text/css" rel="stylesheet" wd_script_id="wd_slideshow.css">
+<script type="text/javascript" wd_script_id="wd_slideshow_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+(function($, undefined) {
+	webDriver.resizeSlideshow = function() {
+		$(this).find(".wd_slideshow-list").wd_slideshow("resize");
+		return false;
+	}
+	
+	var wd_slideshow = function(element, options) {
+		this.init(element, options);
+	};
+	
+	wd_slideshow.prototype = {
+		init: function(element, options) {
+			var self = this;
+			
+			this.$element = $(element);
+			this._options = {
+				selector: "li",
+				preload: false,
+				"class": "",
+				resize: "container" // children, self, container
+			};
+			
+			this.options(options);
+			
+			this.$container = $("<div>").addClass("wd_slideshow").attr("wd_resize","resizeSlideshow").attr("tabindex","-1").insertBefore(this.$element);
+			if (this._options["class"])
+				this.$container.addClass(this._options["class"]);
+			this.$cropper = $("<div>").addClass("wd_slideshow-cropper").appendTo(this.$container);
+			this.$element
+					.addClass("wd_slideshow-list")
+					.appendTo(this.$cropper)
+			;
+			this.$prev = $("<a class=\"wd_slideshow-arrow wd_slideshow-prev fa fa-chevron-left\" href=\"#prev\" title=\"Previous\"><span class=\"wd_sr-only\">Previous Item<\/span><\/a>")
+					.on("click", function(event) {
+						self.prev();
+						event.preventDefault();
+					})
+					.appendTo(this.$container);
+			this.$next = $("<a class=\"wd_slideshow-arrow wd_slideshow-next fa fa-chevron-right\" href=\"#next\" title=\"Next\"><span class=\"wd_sr-only\">Next Item<\/span><\/a>")
+					.on("click", function(event) {
+						self.next();
+						event.preventDefault();
+					})
+					.appendTo(this.$container);
+			
+			this.$container.on("keydown.wd_slideshow", function (event) {
+				var key = event.which || event.keyCode;
+				if (key == 37) {
+					self.prev();
+					event.stopImmediatePropagation();
+					event.preventDefault();
+				}
+				if (key == 39) {
+					self.next();
+					event.stopImmediatePropagation();
+					event.preventDefault();
+				}
+			});
+
+			this.$items = this.$element.children(this._options.selector);
+			this.$items.addClass("wd_slideshow-item");
+			
+			// Remove any non-items (e.g. unintended text nodes)
+			this.$element.empty();
+			this.$element.append(this.$items);
+
+			this.navEnabled = true;
+			this.currentIndex = 0;
+			this.$currentItem = this.$items.eq(0);
+			
+			if (this._options.preload)
+				this.load_next();
+		},
+		
+		options: function(options) {
+			if (options) {
+				$.extend(this._options, options);
+			} else {
+				return this._options;
+			}
+		},
+		
+		reload: function(options) {
+			if (options) {
+				this.options(options);
+			}
+			
+			this.reset();
+		},
+
+		reset: function() {
+			this.$items.data("wd_slideshow-index", null);
+			
+			var $children = this.$element.children();
+			this.itemCount = $children.length;
+			$children.each(function(index) {
+				$(this).data("wd_slideshow-index", index);
+			});
+
+			this.hideNav(this.itemCount < 2);
+			
+			var index = this.$currentItem.data("wd_slideshow-index");
+			if (!index)
+				index = 0;
+			
+			this.scrollToIndex(index, false);
+		},
+				
+		hideNav: function(hide) {
+			this.$prev.toggle(!hide);
+			this.$next.toggle(!hide);
+			this.navEnabled = !hide;
+		},
+				
+		item_loaded: function(item) {
+			var $item = $(item);
+			return ($item.children().length > 0 || !$item.attr("wd_ajax_url"));
+		},
+				
+		load_next: function() {
+			var self = this;
+			var next = null;
+			var $children = this.$element.children().not(".wd_clone");
+
+			var after = this.currentIndex;
+			var before = this.currentIndex;
+			while (after < $children.length || before >= 0) {
+				if (after < $children.length && !this.item_loaded($children[after])) {
+					next = $children[after];
+					break;
+				}
+				++after;
+				if (before >= 0 && !this.item_loaded($children[before])) {
+					next = $children[before];
+					break;
+				}
+				--before;
+			}
+			
+			if (!next) {
+				var $filtered = this.$items.remove($children);
+
+				$filtered.each(function() {
+					if (!self.item_loaded(this)) {
+						next = this;
+						return false;
+					}
+				});
+			}
+			
+			if (next)
+				this.load_item(next, function() {self.load_next();});
+		},
+		
+		load_item: function(item, on_complete) {
+			var self = this;
+			var $item = $(item);
+			var complete = on_complete;
+			
+			if (!this.item_loaded($item)) {
+				$item.html("<div>Loading...</div>");
+				$item.addClass("wd_loading");
+				$item.load(
+					$item.attr("wd_ajax_url"),
+					function(response, status, xhr) {
+						if ($item.children().length == 0)
+							$item.append("<div>No content</div>");
+						webDriver.queueCallback(function() {
+							if ($item.hasClass("wd_slideshow-current"))
+								self.resize(self._options["resize"] == "container");
+							$item.removeClass("wd_loading");
+							if ($item.hasClass("wd_slideshow-current")) {
+								$item.wd_imagesloaded(
+									function() {
+										self.resize(self._options["resize"] == "container");
+									},
+									"size"
+								);
+							}
+						});
+
+						if (complete)
+							complete(response, status, xhr);
+					}
+				);
+			}
+		},
+				
+		next: function() {
+			return this.scrollBy(1);
+		},
+
+		prev: function() {
+			return this.scrollBy(-1);
+		},
+		
+		scrollBy: function(count) {
+			var index = this.currentIndex + count;
+			
+			return this.scrollToIndex(index, true);
+		},
+		
+		scrollToIndex: function(index, update_hash) {
+			var self = this;
+			var $children = this.$element.children().not(".wd_clone");
+			
+			var orig_index = index;
+			index = (index + $children.length) % $children.length;
+			var $child = $children.eq(index);
+			
+			if (update_hash && $child.attr("wd_item_hash")) {
+				var hash = "#"+$child.attr("wd_item_hash");
+				var current_hash = window.location.hash || "#";
+				if (hash != current_hash) {
+					var href = window.location.href+"#";
+					href = href.replace(/#.*$/, hash);
+					window.location.replace(href);
+					return;
+				}
+			}
+			
+			this.$element.find(".wd_slideshow-current").removeClass("wd_slideshow-current");
+			$child.addClass("wd_slideshow-current");
+			
+			if (!this.item_loaded($child))
+				this.load_item($child);
+			
+			this.$container[0].focus();
+
+			this.currentIndex = index;
+			this.$currentItem = $child;
+			
+			this.resize(this._options["resize"] == "container");
+		},
+				
+		scrollToItem: function(item) {
+			var index = $(item).data("wd_slideshow-index");
+			if (index !== null)
+				this.scrollToIndex(index, true);
+		},
+				
+		filter: function(selector) {
+			this.$element.children().detach();
+			var $items = this.$items;
+			if (selector)
+				$items = $items.filter(selector);
+			this.$element.append($items);
+			this.reset();
+		},
+		
+		destroy: function() {
+			this.filter(false);
+			this.$items
+				.removeClass("wd_slideshow-item")
+				.data("wd_slideshow-index", null)
+			;
+			this.$element
+				.removeClass("wd_slideshow-list")
+				.insertBefore(this.$container)
+			;
+			this.$container.remove();
+		},
+		
+		resize: function(resize_container) {
+			if (resize_container) {
+				webDriver.doResize(this.$container, "container");
+			} else if (this.$currentItem && !this.$currentItem.hasClass("wd_loading")) {
+				webDriver.doResize(this.$currentItem);
+			}
+		}
+	};
+
+	$.fn.wd_slideshow = function(options) {
+		var args = Array.prototype.slice.call(arguments, 1);
+		var result = this;
+		
+		this.each(function() {
+			var instance = $(this).data("wd_slideshow");
+			if (typeof options == "string") {
+				var res = instance[options].apply(instance, args);
+				if (typeof res != "undefined") {
+					result = res;
+					return false;
+				}
+			} else {
+                if (!instance) {
+					instance = new wd_slideshow(this, options);
+					$(this).data("wd_slideshow", instance);
+				}
+				
+                instance.reload(options);
+			}
+        });
+		
+		return result;
+    };
+})(webDriver.jQuery);
+</script>
+<script type="text/javascript" wd_script_id="template_list_slideshow_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+						webDriver.jQuery(function($) {
+							$(".wd_layout-slideshow").each(function() {
+								var $slideshow = $(this);
+								$slideshow.wd_slideshow({
+									preload: true,
+									"class": "wd_asset_slideshow_wrapper wd_asset_slideshow_main_wrapper"
+								});
+							});
+						});
+					</script>
+<script type="text/javascript" src="js/wd_equal_height.js" wd_script_id="wd_equal_height.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<style type="text/css" wd_script_id="template asset_masonry_item:gallery:system style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+.wd_gallery_asset {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	color: #ffffff;
+	min-height: 100px;
+}
+.wd_gallery_asset .wd_asset_image {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	font-size: 0px;
+}
+.wd_gallery_asset .wd_asset_image > div {
+	width: 100%;
+	text-align: center;
+}
+.wd_gallery_asset .wd_asset_image img {
+	max-width: 100%;
+	max-height: none;
+	margin: 0;
+	float: none;
+	flex-shrink: 0;
+}
+.wd_gallery_asset .wd_icon_overlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .75) none center center no-repeat;
+	opacity: 0.0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.wd_gallery_asset .wd_icon_overlay .wd_link_underlay {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+.wd_gallery_asset .wd_icon_overlay a.wd_link_underlay:hover {
+	background-color: transparent;
+}
+.wd_gallery_asset .wd_icon_overlay .wd_icon_container {
+	font-size: 50px;
+	position: relative;
+	text-align: center;
+}
+.wd_gallery_asset .wd_icon_overlay .wd_icon_container > a,
+.wd_gallery_asset .wd_icon_overlay .wd_icon_container > a:link,
+.wd_gallery_asset .wd_icon_overlay .wd_icon_container > a:visited {
+	color: #cccccc;
+}
+.wd_gallery_asset .wd_icon_overlay .wd_icon_container > a:hover {
+	text-decoration: none;
+	background-color: transparent;
+}
+.wd_gallery_asset .wd_title_overlay {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+	pointer-events: none;
+	opacity: 0.0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	-moz-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: end;
+	-webkit-align-items: flex-end;
+	-moz-box-align: end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+.wd_gallery_asset:hover .wd_icon_overlay,
+.wd_gallery_asset:hover .wd_title_overlay,
+.wd_gallery_asset:focus-within .wd_icon_overlay,
+.wd_gallery_asset:focus-within .wd_title_overlay {
+	opacity: 1.0;
+}</style>
+<script type="text/javascript" src="js/wd_masonry.js" wd_script_id="wd_masonry.js" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg=="></script>
+<script type="text/javascript" wd_script_id="template_list_masonry_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+						webDriver.jQuery(function($) {
+							var $container = $(".wd_layout-masonry");
+							$container.wd_masonry({"minWidth":250});
+							$container.wd_imagesloaded(function() {
+								$(this).wd_masonry("reflow");
+							});
+							$container.on("wd_more_loaded", function() {
+								$(this).wd_masonry("reflow");
+							});
+						});
+					</script>
+<style type="text/css" wd_script_id="template_list_masonry_style" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+						ul.wd_layout-masonry {
+							position: relative;
+							margin: 10px 0;
+							padding: 0;
+							list-style: none;
+						}
+					</style>
+<script type="text/javascript" wd_script_id="move_content_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+				(function($) {
+					function wd_move_content() {
+						$("[wd_move_after]").each(function() {
+							var $this = $(this);
+							var selectors = $this.attr("wd_move_after").split("|");
+							for (var i = 0; i < selectors.length; ++i) {
+								var $dest = $(selectors[i]);
+								if ($dest.length > 0) {
+									$this.insertAfter($dest.eq(0));
+									break;
+								}
+							}
+						});
+					}
+					
+					$(function() {
+						wd_move_content();
+					});
+				})(webDriver.jQuery);
+			</script>
+<script type="text/javascript" wd_script_id="view_printable_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+	function view_printable() {
+		var loc = window.location;
+		var sep = (loc.search == "") ? "?" : "&";
+		var url = loc.protocol+"//"+loc.host+loc.pathname+loc.search+sep+"printable"+loc.hash;
+		window.open(url, "_blank", "");
+	}
+</script>
+<script type="text/javascript" wd_script_id="format_news_script" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">
+(function($) {
+	webDriver.formatNews = function() {
+		var $news = $(this);
+		var print_url = $news.attr("wd_print_url");
+		$news.find("table").each(function() {
+			var $table = $(this);
+			var $parent = $table.parent();
+			if ($parent.innerWidth() < $table.outerWidth()) {
+				if ($parent.hasClass("wd_news_table")) {
+					$parent.find(".fullscreen-button").show();
+				} else {
+					var $btn = $("<button>View News Release Full Screen</button>")
+						.addClass("fullscreen-button")
+						.on("click", function() {
+							if (print_url)
+								window.open(print_url, "_blank", "");
+							else
+								view_printable();
+						})
+					;
+
+					var $div = $("<div></div>)")
+						.addClass("wd_news_table")
+						.css("overflow-x", "auto")
+						.append($btn)
+					;
+
+					$table.replaceWith($div);
+					$div.append($table);
+				}
+			} else {
+				if ($parent.hasClass("wd_news_table"))
+					$parent.find(".fullscreen-button").hide();
+			}
+		});
+	}
+})(webDriver.jQuery);
+</script>
+<script type="text/javascript" nonce="YTc0ZGRiZmJhZjM0YTlkNWQwZGVlODc5NzU4NmI5ZmU3YzQyZDEwNg==">webDriver.pop_jQuery();</script>
+
+<!-- end spin_special_output(head_start) -->
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="fonts/taubsansvariavf.woff2" as="font" type="font/woff2" crossorigin="">
+
+	<link rel="preload" href="css/css-main-base-mobile.css" as="style" media="screen and (max-width: 767px)">
+	<!-- mobile -->
+	<link rel="preload" href="css/css-main-base-desktop.css" as="style" media="screen and (min-width: 768px)">
+	<!-- desktop -->
+	<link rel="stylesheet" media="screen and (max-width: 767px)" href="css/css-main-base-mobile.css">
+	<!-- mobile -->
+	<link rel="stylesheet" media="screen and (min-width: 768px)" href="css/css-main-base-desktop.css">
+	<!-- desktop -->
+	<link rel="shortcut icon" href="images/touch-icons/favicon.ico">
+
+	<!-- <script defer="defer" src="js/js-vendor.js"></script> -->
+	<!-- RESKIN 2022 js-vendor refactor -->
+	<script defer="defer" src="js/js-main-base.js"></script>
+	<!-- RESKIN 2022 js-main-base refactor -->
+
+	<link href="images/touch-icons/ios_adplogo_120x120_en.png" rel="apple-touch-icon">
+	<!-- 120x120 -->
+	<link href="images/touch-icons/ios_adplogo_120x120_en.png" rel="apple-touch-icon-precomposed" sizes="120x120">
+	<!-- 120x120 precomposed -->
+	<link href="images/touch-icons/ios_adplogo_152x152_en.png" rel="apple-touch-icon" sizes="152x152">
+	<link href="images/touch-icons/ios_adplogo_167x167_en.png" rel="apple-touch-icon" sizes="167x167">
+	<link href="images/touch-icons/ios_adplogo_180x180_en.png?" rel="apple-touch-icon" sizes="180x180">
+	<link href="images/touch-icons/android_adplogo_192x192_en.png" rel="icon" sizes="192x192">
+	<link href="images/touch-icons/android_adplogo_128x128_en.png" rel="icon" sizes="128x128">
+
+	<title>ADP National Employment Report: Private-Sector Employment Increased by 38,000 Jobs in August - Sep 2, 2026</title>
+	
+ <meta name="keywords" content="" />
+ <meta name="description" content="" />
+ <meta name="twitter:card" content="summary" />
+ <meta name="twitter:title" content="ADP National Employment Report: Private-Sector Employment Increased by 38,000 Jobs in August" />
+ <meta name="twitter:description" content="Private-sector employment increased by 38,000 jobs in August, according to the ADP National Employment Report® produced by ADP Research in collaboration with the Stanford Digital Economy Lab..." />
+ <meta name="twitter:image" content="https://mmx.prnewswire.com/media/MS1980133/3_Pay-Insights_US_Chart-2.jpg?id=OA2925536&amp;p=twitter" />
+ <meta property="og:site_name" content="ADP Media Center" />
+ <meta property="og:url" content="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August" />
+ <meta property="og:title" content="ADP National Employment Report: Private-Sector Employment Increased by 38,000 Jobs in August" />
+ <meta property="og:description" content="Private-sector employment increased by 38,000 jobs in August, according to the ADP National Employment Report® produced by ADP Research in collaboration with the Stanford Digital Economy Lab..." />
+ <meta name="image" property="og:image" content="https://mmx.prnewswire.com/media/MS1980133/3_Pay-Insights_US_Chart-2.jpg?id=OA2925536&amp;p=facebook" />
+	<link rel="alternate" href="https://mediacenter.adp.com/press-releases?pagetemplate=rss" type="application/rss+xml" title="ADP Media Center">
+	<style>
+		@media (max-width: 869px) { 
+			button.cmp-revoke-consent { bottom: 55px !important; }
+		}
+	</style>
+	<!-- <script defer src="js/elqCfg.js"></script> -->
+
+	<!-- <script type="text/javascript" src="js/evergage.min.js"></script> -->
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MMKNHG5');</script>
+
+	<!-- SchemaApp -->
+	<script>window.schema_highlighter={accountId: "ADP/ADPMediaCenter", outputCache: true}</script>
+	<script async src="https://cdn.schemaapp.com/javascript/highlight.js"></script>
+
+	<!-- Schema Data for:
+		 News Briefs,
+		 Video Pages -->
+
+	
+	
+	
+	<!-- FontAwesome -->
+	<link href="thirdparty/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+	<link href="thirdparty/font-awesome/css/all.min.css" type="text/css" rel="stylesheet" wd_script_id="font-awesome.min.css">
+
+	<!-- FancyBox -->
+	<link href="css/jquery.fancybox.css" type="text/css" rel="stylesheet">
+	
+	<!-- Slick -->
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+	<!-- MediaRoom -->
+	<link rel="stylesheet" type="text/css" href="css/wdfunctionstyles.css">
+	<link rel="stylesheet" type="text/css" href="css/wdfeatureboxes.css">
+	<link rel="stylesheet" type="text/css" href="css/wdcontent.css">
+
+
+<!-- begin spin_special_output(head_end) -->
+<link rel="canonical" href="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August" />
+<!-- end spin_special_output(head_end) -->
+</head>
+
+<body class="en wd_pageid_20295 wd_item_page wd_item_123604" data-sitename="website">
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MMKNHG5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+	<div id="ph-pre-header"></div>
+
+	<header class="global-nav">
+		<div class="nav-wrap">
+			<a class="skip" href="#main-content">Skip to main content</a>
+			<div class="nav-bar">
+				<div class="nav-main">
+					<div class="nav-row">
+						<div class="mobile-nav visible-xs-flex">
+							<div class="mobile-nav-left">
+								<button class="hamburger visible-xs-inline" type="button" aria-label="toggle site navigation">
+									<span class="hamburger-box">
+										<span class="hamburger-inner"></span>
+									</span>
+								</button>
+							</div>
+							<div class="mobile-nav-right">
+								<a class="trigger-modal" href="#">Get Pricing</a>
+							</div>
+						</div>
+						<a href="https://www.adp.com/?_gl=1*1pb4zc3*_gcl_au*MjAxMTQwNzczMy4xNzc4NTAxMjg1*_ga*NTkwOTQ5MjcxLjE3Nzg1MDEyODc.*_ga_Z7FCJ8MYEN*czE3ODEyMDY0MDQkbzU4JGcxJHQxNzgxMjA2NDA5JGo1NSRsMCRoMA" class="logo"><img alt="ADP logo" src="images/logo-adp.svg" class="skiplazy" height="32" width="70" loading="eager" fetchpriority="high"></a>
+
+						<nav class="main-links" role="navigation">
+							<ul itemscope="" itemtype="https://www.schema.org/SiteNavigationElement">
+								<!-- What We Offer -->
+								<li itemprop="name" data-id="9334bb420e744175b9e4123603b4c083" class="">
+									<a href="https://www.adp.com/what-we-offer.aspx" class="level-1 level-1 plus " itemprop="url">What We Offer</a>
+								</li>
+								<!-- Who We Serve -->
+								<li itemprop="name" data-id="b11d663788864989b7a804aa948a408f" class="">
+									<a href="https://www.adp.com/who-we-serve.aspx" class="level-1 level-1 plus " itemprop="url">Who We Serve</a>
+								</li>
+								<!-- Why ADP -->
+								<li itemprop="name" data-id="a936969ce5c048518881c1cb8c2208e7" class="">
+									<a href="https://www.adp.com/how-we-differ.aspx" class="level-1 level-1 plus " itemprop="url">Why ADP</a>
+								</li>
+								<!-- Resources -->
+								<li itemprop="name" data-id="8e9dce854c264d85a7f9f4015936225f" class="">
+									<a href="https://www.adp.com/resources.aspx" class="level-1 level-1 plus " itemprop="url">Resources</a>
+								</li>
+								<!-- About ADP -->
+								<li itemprop="name" data-id="65b951bcbc924baa91b0144441959f67" class=" js-click-first-child">
+									<a href="https://www.adp.com/about-adp.aspx" class="level-1 plus " itemprop="url">About</a>
+								</li>
+								<!-- Support -->
+								<li itemprop="name" data-id="e586c8c66ec04fc29836a24ee5f37769" class="mobile-btns">
+									<a href="https://www.adp.com/contact-us/customer-service.aspx" class="level-1 btn2 btn-outline " itemprop="url">Support</a>
+								</li>
+								<!-- Login -->
+								<li itemprop="name" data-id="b24253a65adb490c9f5213d17e67642d" class="mobile-btns">
+									<a href="https://login.adp.com/welcome" class="level-1 btn2 " itemprop="url">Sign In</a>
+
+								</li>
+							</ul>
+						</nav>
+
+						<div class="controls">
+							<div class="utility">
+								<button onclick="window.location.href='https://www.adp.com/site-search.aspx'" class="nav-search search-trigger hidden-xs"><span>Search Site</span></button>
+								<a class="nav-support" href="https://www.adp.com/contact-us/customer-service.aspx">Support</a>
+								<a href="https://signin.adp.com/" class="btn btn-xs login-btn-desktop hidden-xs">Sign In</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="nav-bar wd_media-nav">
+				<div class="nav-row">
+					<nav class="nav-sub" data-source-title="MediaCenter Secondary Nav">
+						<div class="nav-row navTrans">
+							<div class="nav-sub-title"><span>Menu</span></div>
+							<ul class="nav-sub-links">
+									<li class=""><a href="https://mediacenter.adp.com/home" target="_self">Workforce Newsroom<span>®</span></a>
+			</li>
+	<li class="active"><a href="https://mediacenter.adp.com/news" target="_self">News</a>
+		<div class="drop-menu">
+		<ul class="list drop-menu-links wd_subnav">
+		<li class="active"><a href="https://mediacenter.adp.com/press-releases" target="_self">Press Releases</a></li>
+			<li><a href="https://mediacenter.adp.com/adp-in-the-media" target="_self">ADP in the Media</a></li>
+			<li><a href="https://mediacenter.adp.com/news-briefs" target="_self">News Briefs</a></li>
+			<li><a href="https://mediacenter.adp.com/workforce-data-releases" target="_self">Workforce Data Releases</a></li>
+			</ul>
+	</div>
+	</li>
+	<li class=""><a href="https://mediacenter.adp.com/video-insights" target="_self">Video Insights</a>
+			<div class="drop-menu">
+		<ul class="list drop-menu-links wd_subnav">
+		<li><a href="people-at-work?" target="_self">People at Work</a></li>
+			<li><a href="tech-in-action?" target="_self">Tech in Action </a></li>
+			<li><a href="small-business-smarts?" target="_self">Small Business Smarts</a></li>
+			<li><a href="decoding-compliance?" target="_self">Decoding Compliance</a></li>
+			</ul>
+	</div>
+	</li>
+	<li class=""><a href="https://mediacenter.adp.com/media-resources" target="_self">Media Resources</a>
+			<div class="drop-menu">
+		<ul class="list drop-menu-links wd_subnav">
+		<li><a href="image/ADP-Corporate_Fact_Sheet_2025.pdf" target="_blank">ADP Fact Sheet</a></li>
+			<li><a href="image/ADP+Innovation+Timeline.pdf" target="_blank">Innovation Timeline</a></li>
+			<li><a href="https://www.adp.com/about-adp/leadership.aspx" target="_blank">Executive Leadership</a></li>
+			<li><a href="https://feeds.acast.com/public/shows/66e1a60dcee9719c6b78d99a" target="_blank">Payroll Around the World Podcast</a></li>
+			</ul>
+	</div>
+	</li>
+
+								<li class="wd_global-search-wrap wd_mobile_dropdown">
+									<div class="wd_search_form_container"><form name="basic_search" method="get" action="https://mediacenter.adp.com/search-newsroom" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search Newsroom" title="Search Newsroom" /> <input type="submit" name="submit" value="Search"></form>
+</div>								</li>
+								<li class="wd_global-region-wrap wd_mobile_dropdown">
+									<i class="fa fa-light fa-globe"></i>
+									<select class="region-links" aria-label="Country"><!-- START select.region-links: used to be ul.region-links -->
+										<option value="index.php"> United States</option>
+										<option value="https://au.adp.com/about-adp/press-centre.aspx">Australia</option>
+										<option value="https://br.adp.com/sobre-a-adp/central-de-imprensa.aspx">Brazil</option>
+										<option value="https://mediacentre.adp.ca/">Canada (English)</option>
+										<option value="https://centredepresse.adp.ca/">Canada (French)</option>
+										<option value="https://cl.adp.com/sobre-adp/centro-de-prensa.aspx">Chile</option>
+										<option value="https://www.adpchina.com/about-adp/press-centre.aspx">China</option>
+										<option value="https://www.fr.adp.com/about-adp/press-centre.aspx">France</option>
+										<option value="https://de.adp.com/ueber-adp/news-presse.aspx">Germany</option>    
+										<option value="https://in.adp.com/about-adp/press-centre.aspx">India</option>
+										<option value="https://it.adp.com/chi-siamo/ufficio-stampa.aspx">Italy</option>
+										<option value="https://jp.adp.com/about-adp/press-centre.aspx ">Japan</option>
+										<option value="https://nl.adp.com/over-adp/perscentrum.aspx">Netherlands</option>
+										<option value="https://pe.adp.com/sobre-adp/centro-de-prensa.aspx">Peru</option>
+										<option value="https://pl.adp.com/o-adp/biuro-prasowe.aspx">Poland</option>
+										<option value="https://sg.adp.com/about-adp/press-centre.aspx">Singapore</option>
+										<option value="https://es.adp.com/sobre-adp/sala-de-prensa.aspx">Spain</option>
+										<option value="https://uk.adp.com/about-adp/press-centre.aspx">United Kingdom</option>
+									</select>
+								</li>
+
+							</ul>
+							<div class="wd_global-search-wrap wd_desktop">
+								<div class="wd_search_form_container"><form name="basic_search" method="get" action="https://mediacenter.adp.com/search-newsroom" class="wd_search_form wd_search_form_basic"><input type="hidden" name="s" value="search_results" /><input type="text" name="query" value="" size="32" placeholder="Search Newsroom" title="Search Newsroom" /> <input type="submit" name="submit" value="Search"></form>
+</div>							</div>
+							<div class="wd_global-region-wrap wd_desktop">
+								<i class="fa fa-light fa-globe"></i>
+								<select class="region-links" aria-label="Country"><!-- START select.region-links: used to be ul.region-links -->
+									<option value="index.php"> United States</option>
+									<option value="https://au.adp.com/about-adp/press-centre.aspx">Australia</option>
+									<option value="https://br.adp.com/sobre-a-adp/central-de-imprensa.aspx">Brazil</option>
+									<option value="https://mediacentre.adp.ca/">Canada (English)</option>
+									<option value="https://centredepresse.adp.ca/">Canada (French)</option>
+									<option value="https://cl.adp.com/sobre-adp/centro-de-prensa.aspx">Chile</option>
+									<option value="https://www.adpchina.com/about-adp/press-centre.aspx">China</option>
+									<option value="https://www.fr.adp.com/about-adp/press-centre.aspx">France</option>
+									<option value="https://de.adp.com/ueber-adp/news-presse.aspx">Germany</option>    
+									<option value="https://in.adp.com/about-adp/press-centre.aspx">India</option>
+									<option value="https://it.adp.com/chi-siamo/ufficio-stampa.aspx">Italy</option>
+									<option value="https://jp.adp.com/about-adp/press-centre.aspx ">Japan</option>
+									<option value="https://nl.adp.com/over-adp/perscentrum.aspx">Netherlands</option>
+									<option value="https://pe.adp.com/sobre-adp/centro-de-prensa.aspx">Peru</option>
+									<option value="https://pl.adp.com/o-adp/biuro-prasowe.aspx">Poland</option>
+									<option value="https://sg.adp.com/about-adp/press-centre.aspx">Singapore</option>
+									<option value="https://es.adp.com/sobre-adp/sala-de-prensa.aspx">Spain</option>
+									<option value="https://uk.adp.com/about-adp/press-centre.aspx">United Kingdom</option>
+								</select>
+							</div>
+							<div class="wd_button-wrap wd_mobile">
+					       		<a class="more-alt wd_fancybox" href="email-alerts?pagetemplate=popup">Subscribe</a>
+					       		<a class="more-alt" href="contact-us">Contact Us</a>
+					       	</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+
+			<div class="nav-contact wd_desktop">
+								 <div class="row center-block wd_desktop">
+			    	<div class="wd_button-wrap">
+			       		<a class="more-alt wd_fancybox" href="email-alerts?pagetemplate=popup">Subscribe</a>
+			       		<a class="more-alt" href="contact-us">Contact Us</a>
+			       	</div>
+			    </div>
+							</div>
+		</div>
+	</header>
+
+	<div id="main-content"></div>
+
+		<div id="ph-body" role="main">
+
+			<!-- Header Options Start -->
+			
+			<div class="container-fluid hero-wrap wd_header wd_detail-header wd_dkblue-bkgrd" data-source-title="Press Releases" data-source-id="">
+				<section class="row center-block hero-text">
+					<div class="wd_parent-title">Press Releases</div>
+					<h1 class="page_header wd_moved-header"></h1>
+					<div class="wd_moved-date-wrap"></div>
+					<div class="wd_flex-wrap">
+						<div class="wd_download-pdf more"></div>
+						<div class="wd_socialshare-wrap">Share to:<div class="wd_toolbar wd_toolbar-detail"><ul class="wd_tools"><li class="wd_tool wd_tool-socialshare_facebook"><span class="wd_tool_icon">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Facebook Share" style="background-color:#4267B2;">
+                    <span class="fa fa-facebook"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li><li class="wd_tool wd_tool-socialshare_linkedin"><span class="wd_tool_icon">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Linkedin Share" style="background-color:#0077B5;">
+                    <span class="fa fa-linkedin"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li><li class="wd_tool wd_tool-socialshare_twitter"><span class="wd_tool_icon">
+                    <a href="https://twitter.com/share?url=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Twitter Share" style="background-color:#000;">
+                    <span class="fa fa-twitter"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li></ul></div></div>
+					</div>
+				</section>
+			</div>
+			<div class="wd_breadcrumb wd_gray-bkgrd">
+				<section class="row center-block">
+					<div class="breadcrumb">
+<a href="https://mediacenter.adp.com/news" target="_self" class="nav">News</a>
+<span class="wd_spacer">></span><a href="https://mediacenter.adp.com/press-releases" target="_self" class="nav">Press Releases</a>
+</div>
+				</section>
+			</div>
+
+			<!-- Header Options End -->
+
+			
+						<div class="container-fluid wd_content">
+				<section class="clearfix row center-block"> 
+				
+				<div id="wd_printable_content" class="fr-view">
+<div class="wd_newsfeed_releases-detail">
+<div class="wd_remove">
+<div class="wd_title wd_language_left">ADP National Employment Report: Private-Sector Employment Increased by 38,000 Jobs in August</div>
+<div class="wd_release_pdf"><div class="wd_pdf_link"><a href="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August?asPDF">ADP National Employment Report: Private-Sector Employment Increased by 38,000 Jobs in August</a></div></div>
+<div class="wd_date">Sep 2, 2026</div>
+</div>
+
+<div class="row center-block">
+<div class="col-12 wd_fullwidth">
+
+<div wd_move_after=".wd_body &gt; p ~ p|.wd_body &gt; p">
+			<div class="wd_asset_modal wd_asset_modal_main" style="display:none;">
+				
+				<ul class="wd_layout-slideshow wd_asset_slideshow_list wd_asset_slideshow_main_list">
+					<li class="wd_asset_slideshow wd_asset_type_117 wd_asset_117-19567" wd_item_hash="assets_117:19567" wd_ajax_url="https://mediacenter.adp.com/press-releases?gallery=19567&ajax=ajax&op=modal">
+					</li>
+				</ul>
+			</div>
+		
+			<ul class="wd_layout-masonry wd_asset_list wd_asset_inline_list">
+				<li class="wd_asset_inline wd_item wd_asset_type_117 wd_asset_117-19567">
+					
+						<div class="wd_gallery_asset" wd_resize="adjustEqualHeight" wd_min_ratio="16:9">
+	<div class="wd_asset_image">
+		<div>
+			<img src="/file.php/181548/ADP-larger-0902.jpg?thumbnail=asset" alt="" title="ADP Pay Insights" border="0"/>
+		</div>
+	</div>
+	<div class="wd_icon_overlay">
+		<a href="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August#assets_117:19567" class="wd_link_underlay" tabindex="-1"></a>
+		<div>
+			<div class="wd_icon_container"><a href="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August#assets_117:19567"><span class="fa fa-search-plus"></span><span class="wd_sr-only wd_sr-only-focusable">View File</span></a> <a href="https://mmx.prnewswire.com/media/MS1980133/3_Pay-Insights_US_Chart-2.jpg?id=OA2925536&amp;p=original" target=""><span class="fa fa-download"></span><span class="wd_sr-only wd_sr-only-focusable">Download File</span></a></div>
+			
+		</div>
+	</div>
+	<div class="wd_title_overlay">
+		ADP Pay Insights
+	</div>
+</div>
+
+					
+				</li>
+			</ul>
+		</div>
+
+			
+		
+
+			
+		
+
+<style type="text/css">
+
+
+/* Style Definitions */
+span.prnews_span
+{
+font-size:8pt;
+font-family:"Arial";
+color:black;
+}
+a.prnews_a
+{
+color:blue;
+}
+li.prnews_li
+{
+font-size:8pt;
+font-family:"Arial";
+color:black;
+}
+p.prnews_p
+{
+font-size:0.62em;
+font-family:"Arial";
+color:black;
+margin:0in;
+}
+.prntac{
+TEXT-ALIGN: CENTER
+}
+
+
+					span.prnews_span{
+						font-size:inherit;
+						font-family:inherit;
+					}
+					li.prnews_li{
+						font-size: inherit;
+						font-family: inherit;           
+					}
+					p.prnews_p{
+						font-size: inherit;
+						font-family: inherit;           
+					}
+				
+					div.PRN_ImbeddedAssetReference{
+						display: none;
+					}
+					div[id^="prni_dvprne"]{
+						display: none;
+					}
+				</style>
+
+<div class="wd_body wd_news_body fr-view" wd_resize="formatNews" wd_print_url="https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August?printable=1"><p class="prntac"><i>Base pay rose 3.2%; gross pay was up 4.7% </i></p>
+
+<p><span class="legendSpanClass">ROSELAND, N.J.</span>, <span class="legendSpanClass">Sept. 2, 2026</span> /<a href="http://www.prnewswire.com/" target="_blank">PRNewswire</a>/ -- Private-sector employment increased by 38,000 jobs in August, according to the <a href="http://www.adpemploymentreport.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link1" rel="nofollow" target="_blank"><i>ADP National Employment Report&reg;</i></a>&nbsp;produced by ADP Research in collaboration with the Stanford Digital Economy Lab (&quot;Stanford Lab&quot;). &nbsp;</p>
+
+<p>For all private-sector workers in the United States, base pay rose 3.2% and gross pay was up 4.7% year over year, according to ADP Pay Insights.</p>
+
+<p>Base pay for job-stayers rose 3.0% year-over-year; base pay for job-changers increased 4.7%.</p>
+
+<p>Gross pay for job-stayers rose 4.4% year-over year; gross pay for job-changers increased 7.3%.</p>
+
+<p>Beginning with today&#39;s release of the August 2026 data, ADP Pay Insights offers deeper analytics, expanded geographic data, and an <a href="https://payinsights.adp.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link2" rel="nofollow" target="_blank">interactive data platform</a>. Key enhancements to the monthly report include tracking of the year-over-year change in base pay drawn from contracted pay rates in addition to the reported change in gross pay. Gross pay is drawn from base pay plus bonuses, commissions, tips, and other earnings. ADP Pay Insights also now reports pay trends for all workers, job-stayers and job-changers combined.</p>
+
+<p>Data on base and gross pay is available for 56 U.S. metropolitan areas. Base and gross pay data also is available by worker mobility, demographics, sector, employer size, and pay quartile.</p>
+
+<p>Base and gross pay each are valuable indicators of labor-market conditions. Base pay changes tend to be long-lasting, and any change in this structural metric can send a signal on labor-market tightness or inflationary pressure.</p>
+
+<p>Gross pay measures total compensation generated by labor-market activity, data that can be used to assess income growth and consumer spending power. Changes in gross pay can tell us how employers are responding to atypical economic conditions.</p>
+
+<div class="PRN_ImbeddedAssetReference" id="DivAssetPlaceHolder1958">
+<p><img alt="ADP Pay Insights now offers deeper analytics, expanded geographic data reporting across 56 metropolitan areas and an interactive website platform to compare various datasets. Key enhancements to the monthly report include base pay growth and gross pay growth across geography, worker mobility, demographics, sector, employer size, and pay quartile. " src="https://mmx.prnewswire.com/media/MS1980133/3_Pay-Insights_US_Chart-2.jpg?id=OA2925536" title="ADP Pay Insights now offers deeper analytics, expanded geographic data reporting across 56 metropolitan areas and an interactive website platform to compare various datasets. Key enhancements to the monthly report include base pay growth and gross pay growth across geography, worker mobility, demographics, sector, employer size, and pay quartile. " /></p>
+</div>
+
+<p>The&nbsp;ADP National Employment Report is an independent measure of the labor market based on the anonymized weekly payroll data of more than 26 million private-sector employees in the United States. ADP Pay Insights uses payroll transaction data to&nbsp;compare the wage growth of individual workers over 12-month intervals, resulting in more than 14.7&nbsp;million year-over-year pay-change observations each month. &nbsp;</p>
+
+<p>Together, these reports use ADP&#39;s finely-grained data to provide a representative and high-frequency picture of the private-sector labor market.</p>
+
+<p>&quot;Pay can tell us a lot about today&#39;s choppy hiring. To understand hiring patterns, you have to look deeply into where pay growth is accelerating, where it&#39;s slowing, and for whom,&quot; said Dr. Nela Richardson, chief economist, ADP.</p>
+
+<p>&quot;Once predictable wage growth has been overtaken by complexities of demographic change, persistent inflation, and AI&#39;s effects on jobs,&quot; Richardson said. &quot;Our new Pay Insights report, with its enhanced data, can more fully reveal the dynamics of today&#39;s labor market.&quot;</p>
+
+<p><b><u>August 2026 Report Highlights</u></b></p>
+
+<p>View the <i>ADP National Employment Report</i>&nbsp;and interactive charts at <a href="http://www.adpemploymentreport.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link3" rel="nofollow" target="_blank">http://www.adpemploymentreport.com/</a>.</p>
+
+<p><b><u>EMPLOYMENT REPORT</u></b></p>
+
+<p><b>Private employers added 38,000 jobs in August</b><br />
+Private employers posted their slowest pace of job creation since January. Manufacturing, professional services, and information shed jobs. Education and health care, construction, and leisure and hospitality all showed solid hiring.</p>
+
+<p><b><u>Change in U.S. Private Employment</u></b><b>:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>38,000</b></p>
+
+<p><b>Change by Sector</b></p>
+
+<p><b>- Goods-producing:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>-10,000</b></p>
+
+<ul type="disc">
+	<li>Natural resources and mining&nbsp; &nbsp; &nbsp;-5,000</li>
+	<li>Construction&nbsp; &nbsp; &nbsp;12,000</li>
+	<li>Manufacturing&nbsp; &nbsp; &nbsp;-17,000</li>
+</ul>
+
+<p><b>- Service-providing:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>48,000</b></p>
+
+<ul type="disc">
+	<li>Trade, transportation, and utilities&nbsp; &nbsp; &nbsp;-5,000</li>
+	<li>Information&nbsp; &nbsp; &nbsp;-4,000</li>
+	<li>Financial activities&nbsp; &nbsp; &nbsp;6,000</li>
+	<li>Professional and business services&nbsp; &nbsp; &nbsp;-16,000</li>
+	<li>Education and health services&nbsp; &nbsp; &nbsp;45,000</li>
+	<li>Leisure and hospitality&nbsp; &nbsp; &nbsp;16,000</li>
+	<li>Other services&nbsp; &nbsp; &nbsp;6,000</li>
+</ul>
+
+<p><b>Change by U.S. Regions </b></p>
+
+<p><b>- Northeast:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>38,000</b></p>
+
+<ul type="disc">
+	<li>New England&nbsp; &nbsp; &nbsp;12,000</li>
+	<li>Mid-Atlantic&nbsp; &nbsp; &nbsp;26,000</li>
+</ul>
+
+<p><b>- Midwest:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>5,000</b></p>
+
+<ul type="disc">
+	<li>East North Central&nbsp; &nbsp; &nbsp;-15,000</li>
+	<li>West North Central&nbsp; &nbsp; &nbsp;20,000</li>
+</ul>
+
+<p><b>- South:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>3,000</b></p>
+
+<ul type="disc">
+	<li>South Atlantic&nbsp; &nbsp; &nbsp;14,000</li>
+	<li>East South Central&nbsp; &nbsp; &nbsp;-2,000</li>
+	<li>West South Central&nbsp; &nbsp; &nbsp;-9,000</li>
+</ul>
+
+<p><b>- West:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>-8,000</b></p>
+
+<ul type="disc">
+	<li>Mountain&nbsp; &nbsp; &nbsp;-3,000</li>
+	<li>Pacific&nbsp; &nbsp; &nbsp;-5,000</li>
+</ul>
+
+<p><b>Change by Establishment Size </b></p>
+
+<p><b>- Small</b>&nbsp;<b>establishments</b><b>:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>3,000</b></p>
+
+<ul type="disc">
+	<li>1-19 employees&nbsp; &nbsp; &nbsp;20,000</li>
+	<li>20-49 employees&nbsp; &nbsp; &nbsp;-17,000</li>
+</ul>
+
+<p><b>- Medium establishments:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>0</b></p>
+
+<ul type="disc">
+	<li>50-249 employees&nbsp; &nbsp; &nbsp;2,000</li>
+	<li>250-499 employees&nbsp; &nbsp; &nbsp;-2,000</li>
+</ul>
+
+<p><b>- Large establishments:</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>34,000</b></p>
+
+<ul type="disc">
+	<li>500+ employees&nbsp; &nbsp; &nbsp;34,000</li>
+</ul>
+
+<p><b><u>PAY INSIGHTS</u></b><br />
+ADP Pay Insights provides base pay growth and gross pay growth data across worker mobility, demographics, sector, employer size, pay quartile, and 56 U.S. metropolitan areas. The report also now offers pay growth distribution. Drawn from ADP&#39;s industry-leading workforce dataset, ADP Pay Insights uses payroll transaction data to&nbsp;provide&nbsp;a view on the wage&nbsp;dynamics&nbsp;of more than 14.7&nbsp;million&nbsp;matched&nbsp;workers over a 12-month period.</p>
+
+<p>&quot;With its extended history, added dimensions of base pay and distribution, and granular metro information, Pay Insights more fully captures the pay structure of the U.S. labor market and how it&#39;s changing over time,&quot; said Liv Wang, lead data scientist, ADP Research.</p>
+
+<p>&quot;Our August release, for example, shows that pay growth has been decelerating for the past four years,&quot; Wang said. &quot;Among lower-paid workers in particular, base pay growth has lost momentum and now is slower than it was prior to the pandemic.&quot;</p>
+
+<p><b>Base pay growth slowed slightly in August</b><br />
+Pay growth for job-stayers was unchanged at 3 percent, while pay growth for job-changers edged down.</p>
+
+<p><b>Gross pay growth slowed slightly in August</b><br />
+Pay growth for job-stayers was unchanged at 4.4 percent, while pay growth for job-changers slowed from 7.5 percent to 7.3 percent.</p>
+
+<p>Visit our <a href="https://payinsights.adp.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link4" rel="nofollow" target="_blank">interactive platform</a>&nbsp;for more information.</p>
+
+<p><b><u>Median Change in Base Pay </u></b></p>
+
+<ul type="disc">
+	<li><b>All workers</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>3.2%</b></li>
+	<li><b>Job-stayers</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>3.0%</b></li>
+	<li><b>Job-changers </b>&nbsp;&nbsp;&nbsp; <b>4.7%</b></li>
+</ul>
+
+<p><b><u>Median Change in Gross Pay</u></b></p>
+
+<ul type="disc">
+	<li><b>All workers</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>4.7%</b></li>
+	<li><b>Job-stayers</b> &nbsp;&nbsp;&nbsp;&nbsp;<b>4.4%</b></li>
+	<li><b>Job-changers</b> &nbsp;&nbsp;&nbsp; <b>7.3%</b></li>
+</ul>
+
+<p><b><u>Median Change in Base Pay by Sector </u></b></p>
+
+<p><b>- Goods-producing:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<ul type="disc">
+	<li>Natural resources and mining&nbsp; &nbsp; &nbsp;3.3%</li>
+	<li>Construction&nbsp; &nbsp; &nbsp;4.0%</li>
+	<li>Manufacturing&nbsp; &nbsp; &nbsp;3.5%</li>
+</ul>
+
+<p><b>- Service-providing:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<ul type="disc">
+	<li>Trade, transportation, and utilities&nbsp; &nbsp; &nbsp;3.3%</li>
+	<li>Information&nbsp; &nbsp; &nbsp;3.1%</li>
+	<li>Financial activities&nbsp; &nbsp; &nbsp;3.5%</li>
+	<li>Professional and business services&nbsp; &nbsp; &nbsp;3.2%</li>
+	<li>Education and health services&nbsp; &nbsp; &nbsp;3.0%</li>
+	<li>Leisure and hospitality&nbsp; &nbsp; &nbsp;2.9%</li>
+	<li>Other services&nbsp; &nbsp; &nbsp;3.0%</li>
+</ul>
+
+<p><b><u>Median Change in Base Pay by Firm Size</u></b></p>
+
+<p><b>- Medium firms:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<ul type="disc">
+	<li>50-249 employees&nbsp; &nbsp; &nbsp;3.5%</li>
+	<li>250-499 employees&nbsp; &nbsp; &nbsp;3.3%</li>
+</ul>
+
+<p><b>- Large firms:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<ul type="disc">
+	<li>500+ employees&nbsp; &nbsp; &nbsp;3.2%</li>
+</ul>
+
+<p>To see Pay Insights by U.S. Metro, Gender, Age, and Pay Quartile, please visit <a href="https://payinsights.adp.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link5" rel="nofollow" target="_blank">https://payinsights.adp.com/</a>.</p>
+
+<p>The July total number of jobs added was revised from 44,000 to 46,000.</p>
+
+<p>For additional information about the ADP National Employment Report, including historical files, employment and pay data, methodology, and a calendar of release dates, please visit <a href="https://adpemploymentreport.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease090226link6" rel="nofollow" target="_blank">https://adpemploymentreport.com/</a>.&nbsp; &nbsp;&nbsp;</p>
+
+<p>The September 2026 <i>ADP National Employment Report </i>will be released on September 30, 2026 at 8:15 a.m. ET.</p>
+
+<p><b>About ADP Research</b><br />
+The mission of ADP Research is to make the future of work more productive through data-driven discovery. Companies, workers, and policy makers rely on our finely tuned data and unique perspective to make informed decisions that impact workplaces around the world.</p>
+
+<p>To subscribe to monthly email alerts or obtain additional information about ADP Research, including employment and pay data, methodology, and a calendar of release dates, please visit <a href="https://www.adpresearch.com" rel="nofollow">https://www.adpresearch.com</a>.&nbsp; &nbsp;&nbsp;</p>
+
+<p><b>About ADP (NASDAQ: ADP)</b><br />
+ADP has been shaping the world of work with innovation and expertise for more than 75 years. As a global leader in HR and payroll solutions, ADP continuously works to solve business challenges for our clients and their workers, from simple, easy-to-use tools for small businesses to fully integrated platforms for global enterprises &ndash; and everything in between. Always Designing for People means we&#39;re focused on just that &ndash; people.&nbsp;We use our unmatched AI-driven insights and proven expertise to design innovative solutions that help people achieve greater success at work. More than 1.1 million clients across 140+ countries rely on ADP&#39;s exceptional service to support their people and drive their business forward. HR, Talent, Time Management, Benefits, Compliance, and Payroll. Learn more at <a href="https://adp.com/?utm_source=PRnewsroom&amp;utm_medium=pressrelease&amp;utm_campaign=adpnerrelease&amp;utm_content=prrelease020426link7" rel="nofollow" target="_blank">ADP.com</a></p>
+
+<p><i>ADP, the ADP logo, and Always Designing for People, ADP National Employment Report, and ADP Research are registered trademarks of ADP, Inc. All other marks are the property of their respective owners. </i></p>
+
+<p><i>Copyright &copy; 2026 ADP, Inc. All rights reserved.</i></p>
+
+<p><b>ADP-Media</b></p>
+
+<div class="PRN_ImbeddedAssetReference" id="DivAssetPlaceHolder5628">
+<p><img alt="" src="https://mmx.prnewswire.com/media/MS505693/ADP-Logo.jpg?id=OA2925534" title="" /></p>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="PRN_ImbeddedAssetReference" id="DivAssetPlaceHolder0">
+<p><img alt="ADP Research" src="https://mmx.prnewswire.com/media/MS671268/ADP-Research-Logo.jpg?id=OA2925535" title="ADP Research" /></p>
+</div>
+
+<p>SOURCE ADP, Inc.</p>
+</div>
+<div class="wd_toolbar wd_toolbar-detail"><ul class="wd_tools"><li class="wd_tool wd_tool-socialshare_facebook"><span class="wd_tool_icon">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Facebook Share" style="background-color:#4267B2;">
+                    <span class="fa fa-facebook"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li><li class="wd_tool wd_tool-socialshare_linkedin"><span class="wd_tool_icon">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Linkedin Share" style="background-color:#0077B5;">
+                    <span class="fa fa-linkedin"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li><li class="wd_tool wd_tool-socialshare_twitter"><span class="wd_tool_icon">
+                    <a href="https://twitter.com/share?url=https%3A%2F%2Fmediacenter.adp.com%2Findex.php%3Fs%3D20295%26item%3D123604" target="_blank" title="Twitter Share" style="background-color:#000;">
+                    <span class="fa fa-twitter"></span>
+		    <span class="wd_sr-only wd_sr-only-focusable"></span>
+                    </a>
+                </span></li></ul></div>
+
+
+
+<div class="wd_contact">For further information: Michael Brown, ADP, Inc., (862) 399-6556, Michael.a.brown@adp.com</div>
+</div>
+
+
+</div>
+
+<!-- ITEMDATE: 2026-09-02 08:15:00 EDT -->
+
+</div>
+</div>				</section>
+			</div>
+			
+			
+			
+			
+						<div class="container-fluid wd_featurebox-wrap wd_dkblue-bkgrd" data-source-title="" data-source-id="">
+				<section class="clearfix row center-block"> 
+				<div class="wd_featureboxes_social wd_featureboxes-vertical fr-view">
+<div id="wd_featurebox-standard_3529" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title">Find Us on Social</div><div class="wd_featurebox"><ul>
+	<li><a href="https://www.facebook.com/AutomaticDataProcessing" target="_blank"><img alt="facebook icon" src="image/fb_60w_EN.png" />Facebook</a></li>
+	<li><a href="https://twitter.com/adp" target="_blank"><img alt="twitter icon" src="image/x_60w_EN.png" />X</a></li>
+	<li><a href="https://www.youtube.com/user/adp" target="_blank"><img alt="youtube icon" src="image/youtube_60w_EN.png" />YouTube</a></li>
+	<li><a href="https://www.linkedin.com/company/adp" target="_blank"><img alt="linkedin icon" src="image/linkedin_60w_EN.png" />LinkedIn</a></li>
+</ul>
+</div></div></div>
+				</section>
+			</div>
+			
+						<div class="container-fluid wd_featurebox-wrap wd_pink-bkgrd wd_bottom_left_right" data-source-title="" data-source-id="">
+				<section class="clearfix row center-block wd_flex"> 
+					<div class="wd_left wd_white-bkgrd">
+						<div class="wd_featureboxes_bottom_left wd_featureboxes-vertical fr-view">
+<div id="wd_featurebox-standard_3530" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title">Contact Media Relations</div><div class="wd_featurebox"><p>For media inquiries, connect with our media relations team for press materials, interviews and expert commentary or reach out directly to a member of our <a href="contact-us">team</a>.</p>
+
+<p><a class="btn" href="mailto:mediarelations@adp.com">Email Media Relations</a></p>
+</div></div></div>
+					</div>
+					<div class="wd_right wd_white-bkgrd">
+						<div class="wd_featureboxes_bottom_right wd_featureboxes-vertical fr-view">
+<div id="wd_featurebox-standard_3531" class="wd_featurebox_container wd_featurebox-standard"><div class="wd_featurebox_title">Email Alerts</div><div class="wd_featurebox"><p>Stay informed! Sign up for email notifications to receive updates from our Newsroom.</p>
+
+<p><a class="btn" href="email-alerts">Subscribe</a></p>
+</div></div></div>
+					</div>
+				</section>
+			</div>
+			
+				</div>
+
+	<footer id="footer-static" role="contentinfo">
+		<nav class="row center-block" role="navigation">
+			<div class="col-xs-12 col-sm-3">
+				<ul>
+					<li><a href="https://www.adp.com/contact-us/customer-service.aspx">Contact Us</a></li>
+					<li><a href="tel:8002555237">Talk to Sales &mdash; <span class="blue-ui taubsans-medium">800-255-5237</span></a></li>
+					<li><a href="https://www.adp.com/contact-us/customer-service.aspx">Get Support</a></li>
+					<li><a href="https://www.adp.com/logins.aspx"><span class="blue-ui taubsans-medium">Sign In</span></a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<ul>
+					<li><a href="https://www.adp.com/what-we-offer.aspx">What We Offer</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<ul>
+					<li><a href="https://www.adp.com/who-we-serve.aspx">Who We Serve</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<ul>
+					<li><a href="https://www.adp.com/how-we-differ.aspx">Why ADP</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-2">
+				<ul>
+					<li><a href="https://www.adp.com/resources.aspx">Resources</a></li>
+				</ul>
+			</div>
+			<div class="col-xs-6 col-sm-3">
+				<ul>
+					<li><a href="https://www.adp.com/about-adp.aspx">About</a></li>
+				</ul>
+			</div>
+			</nav>
+			<div class="row center-block mt-sm-40">
+			<div class="col-xs-12 col-sm-3 text-xs-center">
+				<p><a href="https://www.adp.com" class="logo"><img src="images/logo-adp.svg" alt="ADP"></a></p>
+
+				<select class="region-links" aria-label="Country"><!-- START select.region-links: used to be ul.region-links -->
+					<option>Unites States</option>
+					<option value="https://ar.adp.com">Argentina</option>
+					<option value="https://au.adp.com">Australia</option>
+					<option value="https://br.adp.com">Brazil</option>
+					<option value="https://www.adp.ca/en/">Canada (English)</option>
+					<option value="https://www.adp.ca/fr-ca/">Canada (French)</option>
+					<option value="https://cl.adp.com">Chile</option>
+					<option value="http://www.adpchina.com">China</option>
+					<option value="http://www.fr.adp.com">France</option>
+					<option value="https://de.adp.com">Germany</option>
+					<option value="https://hk.adp.com">Hong Kong</option>       
+					<option value="https://in.adp.com">India</option>
+					<option value="https://it.adp.com">Italy</option>
+					<option value="https://jp.adp.com">Japan</option>
+					<option value="https://nl.adp.com">Netherlands</option>
+					<option value="https://pe.adp.com">Peru</option>
+					<option value="https://ph.adp.com">Philippines</option>
+					<option value="https://pl.adp.com">Poland</option>
+					<option value="https://sg.adp.com">Singapore</option>
+					<option value="https://www.es.adp.com">Spain</option>
+					<option value="https://www.adp.ch">Switzerland</option>
+					<option value="https://uk.adp.com">United Kingdom</option>
+				</select>
+
+				<p class="mb-0"><a href="https://www.adp.com/worldwide-locations.aspx">All Worldwide Locations</a></p>
+			</div>
+			<div class="col-xs-12 col-sm-9 text-xs-center">
+				<ul class="sm-links">
+					<li><a class="sm-icn sm-icn-facebook" href="https://www.facebook.com/AutomaticDataProcessing" target="_blank"><span>ADP Facebook Page</span></a></li>
+					<li><a class="sm-icn sm-icn-twitter" href="https://twitter.com/adp" target="_blank"><span>ADP X (Twitter) Page</span></a></li>
+					<li><a class="sm-icn sm-icn-youtube" href="https://www.youtube.com/user/adp" target="_blank"><span>ADP YouTube Channel</span></a></li>
+					<li><a class="sm-icn sm-icn-linkedin" href="https://www.linkedin.com/company/adp" target="_blank"><span>ADP LinkedIn Page</span></a></li>
+				</ul>
+				<ul class="legal-links">
+					<li><a href="https://www.adp.com/legal.aspx">Terms</a></li>
+					<li><a href="https://www.adp.com/site-map.aspx">Site Map</a></li>
+					<li><a href="https://www.adp.com/privacy.aspx">Privacy</a></li>
+					<li class="d-xs-block"><a href="https://www.adp.com/modern-slavery-statement.aspx">Modern Slavery Statement</a></li>
+				</ul>
+				<p class="copyright">ADP and the ADP logo are registered trademarks of ADP, Inc. All other marks are the property of their respective owners. Copyright &copy; 2026 ADP, Inc.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/js-jquery-3-6-0-min.js"></script>
+
+	<script type="text/javascript" src="thirdparty/font-awesome/v4-shims.min.js"></script>
+
+	<!-- Slick -->
+	<script src="slick/slick.min.js"></script>
+
+	<!-- Fancybox -->
+	<script src="js/jquery.fancybox.js"></script>
+
+	<!-- MediaRoom -->
+	<script src="js/wdscripts.js"></script>
+
+	<!-- Homepage Slideshow -->
+	<script>
+	$(document).ready(function(){
+		
+		var slides = [{"id":"242","active":"Yes","title":"The Wall Street Journal Names ADP to \u201c2026 Best Companies for the Future\u201d Ranking","body":"<p class=\"more\"><a href=\"wall-street-journal-names-adp-to-2026-best-companies-for-the-future-ranking\">See More<\/a><\/p>\r\n\r\n<p class=\"wd_dots\">News Brief<\/p>","image":null,"image_url":"","image_url_target":"_blank","image_alt":"","sort_order":"100","_draft_status":"2","_publish_datetime":null,"slideshow_id":"1","embed_code":"<img src=\"image\/GettyImages-1094921688_B1+resized.jpg\" alt=\"\">","full_image_path":"\/image\/"},{"id":"241","active":"Yes","title":"ADP Reports Fourth Quarter and Fiscal 2026 Results","body":"<p class=\"more\"><a href=\"2026-07-29-ADP-Reports-Fourth-Quarter-and-Fiscal-2026-Results\">See More<\/a><\/p>\r\n\r\n<p class=\"wd_dots\">Press Release<\/p>","image":null,"image_url":"","image_url_target":"_blank","image_alt":"","sort_order":"200","_draft_status":"2","_publish_datetime":null,"slideshow_id":"1","embed_code":"<img src=\"image\/946575_Turn-Global-Compliance-Into-a-Competitive-Advantage (1).jpg\" alt=\"\">\r\n\r\n","full_image_path":"\/image\/"},{"id":"244","active":"Yes","title":"How ADP CEO Maria Black leads through uncertain times","body":"<p class=\"more\"><a href=\"https:\/\/hrexecutive.com\/how-adp-ceo-maria-black-leads-through-uncertain-times\/\">See More<\/a><\/p>\r\n\r\n<p class=\"wd_dots\">ADP in the Media<\/p>","image":null,"image_url":"","image_url_target":"_blank","image_alt":"","sort_order":"300","_draft_status":"2","_publish_datetime":null,"slideshow_id":"1","embed_code":"<img src=\"image\/MariaStageJune2026.jpg\" alt=\"\">\r\n\r\n<!-- <iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/uFq77OasLXg?si=5VUvjWP9So1lkbwK\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen><\/iframe> -->","full_image_path":"\/image\/"}];
+		//console.log(slides);
+		slides.forEach(function(slide) {
+				//console.log(slide);
+				var slideTitle = slide.title;
+				var slideBody = slide.body;
+				var slideEmbed = slide.embed_code;
+				
+				var slideHTML = '<div class="wd_videos-slider-content"><div class="wd_videos-slider"><div class="wd_embed-wrap">'+slideEmbed+'</div><div class="wd_info-wrap"><h3 class="wd_slider-heading">'+ slideTitle +'</h3><div class="wd_slider-description">'+slideBody+'</div></div></div></div>';
+				$('#wd_slideshow').prepend(slideHTML);
+		});
+
+		$('#wd_slideshow').slick({
+			arrows: false,
+			dots: true,
+			customPaging: function(slider, i) {
+			    var $slide = $(slider.$slides.get(i));
+			    var title = $slide.find('.wd_dots').text().trim() || 'Slide ' + (i + 1);
+			    // escape HTML in title
+			    var esc = function(s){ return $('<div/>').text(s).html(); };
+			    return '<button type="button" aria-label="' + esc(title) + '">' + esc(title) + '</button>';
+			},
+			centerMode: true,
+			centerPadding: '20px',
+			variableWidth: true,
+  			slidesToShow: 1,
+  			infinite: true, 
+  			autoplay: true,
+		 	autoplaySpeed: 6000,
+		});
+
+		$('#wd_slideshow .wd_videos-slider-content').each(function(){
+			var whatIsIt = $(this).find('.wd_embed-wrap').contents().eq(0);
+			//console.log(whatIsIt);
+			if(whatIsIt.is('iframe')){
+				$(this).addClass('wd_video');
+			}else if(whatIsIt.is('img')){
+				$(this).addClass('wd_image');
+			}
+			//might need other options?
+		});
+
+		$('#wd_slideshow .slick-dots').wrap('<div class="slick_bottom_section" />');
+		$('#pause, #play').insertAfter('#wd_slideshow .slick-dots');
+
+		$('#pause').click(function(e) {
+		 	e.preventDefault();
+    		$('#wd_slideshow').slick('slickPause');
+    		$(this).addClass('hide').removeClass('show');
+    		$('#play').addClass('show').removeClass('hide');
+		});
+
+		$('#play').click(function(e) {
+			e.preventDefault();
+    		$('#wd_slideshow').slick('slickPlay');
+    		$(this).addClass('hide').removeClass('show');
+    		$('#pause').addClass('show').removeClass('hide');
+		});
+
+		// keep buttons synced if slider state changes
+		$('#wd_slideshow').on('init afterChange', function(event, slick){
+  			const playing = !slick.paused;
+  			if(playing){
+			    $('#pause').removeClass('hide').addClass('show');
+			    $('#play').removeClass('show').addClass('hide');
+			} else {
+			    $('#pause').removeClass('show').addClass('hide');
+			    $('#play').removeClass('hide').addClass('show');
+			}
+		});
+
+	});
+	</script>
+	
+
+<!-- begin spin_special_output(body_end) -->
+<script wd_script_id="piwik_tracking_code"></script>
+<!-- Piwik Tracking Code -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+
+  _paq.push(["setCustomVariable", 4, "News Release Feed ID", "202609020815PR_NEWS_USPR_____NY39142", "page"]);
+
+  _paq.push(["setCustomVariable", 1, "Content Type", "News Releases Feed", "page"]);
+
+  _paq.push(["setCustomVariable", 3, "Navigation Page", "News : Press Releases", "page"]);
+
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+  (function() {
+    var u="//stats.drivetheweb.com/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", 7857]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0];
+    g.type="text/javascript"; g.async=true; g.defer=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+	<img src="https://stats.drivetheweb.com/piwik.php?idsite=7857&rec=1" style="border:0" alt="" />
+</noscript>
+<!-- End Piwik Tracking Code -->
+		
+<!-- end spin_special_output(body_end) -->
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a37c696c6babbfa4',t:'MTc4ODg1NDM0NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
