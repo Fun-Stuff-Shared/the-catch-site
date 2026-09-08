@@ -337,6 +337,20 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
 .chart-values td:last-child, .chart-values th:last-child { text-align: right; }
 .chart-values tbody th { font-weight: 400; }
 .payroll-chart-compact { margin: 1.5rem 0 0; padding: 1rem 0; border-bottom: 0; }
+.lead-visual { margin: 1.5rem 0 0; padding: 1rem 0 0; border-top: 1px solid var(--rule); max-width: 40rem; font-family: var(--sans); }
+.lead-visual figcaption { display: flex; flex-wrap: wrap; gap: .25rem .75rem; align-items: baseline; margin: 0 0 .7rem; }
+.lead-visual figcaption strong { font: 600 .8rem var(--sans); color: var(--ink); }
+.lead-visual figcaption span { font: .72rem var(--sans); color: var(--slate); }
+.lead-timeline ol { list-style: none; margin: 0; padding: 0; }
+.lead-timeline li { display: grid; grid-template-columns: 4.5rem minmax(0,1fr); gap: 1rem; padding: .45rem 0; border-top: 1px solid var(--rule); font: .88rem/1.4 var(--sans); }
+.lead-timeline li:first-child { border-top: 0; }
+.lead-timeline time { color: var(--slate); font-variant-numeric: tabular-nums; }
+.lead-timeline .lead-current { border-left: 3px solid var(--blue); padding-left: .6rem; }
+.lead-table dl { margin: 0; }
+.lead-table dl > div { display: grid; grid-template-columns: minmax(7rem,auto) minmax(0,1fr); gap: 1rem; align-items: baseline; padding: .45rem 0; border-top: 1px solid var(--rule); }
+.lead-table dl > div:first-child { border-top: 0; }
+.lead-table dt { font: 600 1.15rem var(--serif); color: var(--ink); font-variant-numeric: tabular-nums; }
+.lead-table dd { margin: 0; font: .88rem/1.4 var(--sans); color: var(--slate); }
 .series-overview { padding: 2rem var(--gutter) 4rem; }
 .series-heading { border-bottom: 2px solid var(--ink); padding-bottom: 1.75rem; }
 .series-heading > p:first-child { font: 600 .75rem var(--sans); color: var(--blue); margin: 0 0 .7rem; }
