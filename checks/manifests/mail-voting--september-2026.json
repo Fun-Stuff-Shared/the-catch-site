@@ -768,53 +768,191 @@
   "figures": [
     {
       "figure": "days_filing_to_election",
-      "source_id": "scotus-26a305-docket",
-      "value": "58"
+      "value": "58",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "scotus-26a305-docket",
+          "value": "2026-09-06",
+          "unit": "date",
+          "quote_span": "September 6, 2026"
+        }
+      ]
     },
     {
       "figure": "days_pi_to_election",
-      "source_id": "talwani-pi-2026-09-04",
-      "value": "60"
+      "value": "60",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-09-04",
+          "unit": "date",
+          "quote_span": "September 4, 2026"
+        }
+      ]
     },
     {
       "figure": "days_297_to_election",
-      "source_id": "scotus-26a297-docket",
-      "value": "61"
+      "value": "61",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "scotus-26a297-docket",
+          "value": "2026-09-03",
+          "unit": "date",
+          "quote_span": "September 3, 2026"
+        }
+      ]
     },
     {
       "figure": "days_rule_to_election",
-      "source_id": "usps-final-rule",
-      "value": "69"
+      "value": "69",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "usps-final-rule",
+          "value": "2026-08-26",
+          "unit": "date",
+          "quote_span": "Wednesday, August 26, 2026"
+        }
+      ]
     },
     {
       "figure": "days_eo_to_election",
-      "source_id": "eo-14399",
-      "value": "217"
+      "value": "217",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-11-03",
+          "unit": "date",
+          "quote_span": "elections occurring before or on November 3, 2026"
+        },
+        {
+          "source_id": "eo-14399",
+          "value": "2026-03-31",
+          "unit": "date",
+          "quote_span": "Executive Order 14399 of March 31, 2026"
+        }
+      ]
     },
     {
       "figure": "days_filing_to_uocava",
-      "source_id": "uocava-52usc20302",
-      "value": "13"
+      "value": "13",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "talwani-pi-2026-09-04",
+          "value": "2026-09-19",
+          "unit": "date",
+          "quote_span": "September 19, 2026 (45 days before the election)"
+        },
+        {
+          "source_id": "scotus-26a305-docket",
+          "value": "2026-09-06",
+          "unit": "date",
+          "quote_span": "September 6, 2026"
+        }
+      ]
+    },
+    {
+      "figure": "days_filing_to_jackson",
+      "value": "3",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "scotus-26a305-docket",
+          "value": "2026-09-09",
+          "unit": "date",
+          "quote_span": "September 9, 2026"
+        },
+        {
+          "source_id": "scotus-26a305-docket",
+          "value": "2026-09-06",
+          "unit": "date",
+          "quote_span": "September 6, 2026"
+        }
+      ]
+    },
+    {
+      "figure": "days_stay_to_rule",
+      "value": "2",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "usps-final-rule",
+          "value": "2026-08-26",
+          "unit": "date",
+          "quote_span": "Wednesday, August 26, 2026"
+        },
+        {
+          "source_id": "scotus-26a124-opinion",
+          "value": "2026-08-24",
+          "unit": "date",
+          "quote_span": "[August 24, 2026]"
+        }
+      ]
     },
     {
       "figure": "uocava_days",
-      "source_id": "uocava-52usc20302",
-      "value": "45"
+      "value": "45",
+      "unit": "days",
+      "kind": "sourced",
+      "source": {
+        "source_id": "uocava-52usc20302",
+        "quote_span": "the request is received at least 45 days before an election for Federal office, not later than 45 days before the election"
+      }
     },
     {
       "figure": "plaintiff_states",
-      "source_id": "scotus-26a305-application",
-      "value": "23"
-    },
-    {
-      "figure": "intervenor_states",
-      "source_id": "scotus-26a305-application",
-      "value": "12"
-    },
-    {
-      "figure": "applications_to_court",
-      "source_id": "scotus-26a305-docket",
-      "value": "3"
+      "value": "23",
+      "unit": "states",
+      "kind": "sourced",
+      "source": {
+        "source_id": "scotus-26a297-application",
+        "quote_span": "group of 23 States and the District of Columbia for elections before and on November 3, 2026"
+      }
     }
   ],
   "needs_ledger": [
