@@ -10,5 +10,5 @@ const { story, lead = false, related = [], visual = false, showSeries = false } 
   {visual && story.visual === 'payrolls' && <div data-story-visual><PayrollChart compact /></div>}
   <a class="read-link" href={story.href} aria-label={`Read: ${story.title}`}>Read the story <span aria-hidden="true">↗</span></a>
   {showSeries && story.series?.startsWith('/events/') && <a class="follow-series-link" href={story.series}>Follow this series <span aria-hidden="true">→</span></a>}
-  {related.length > 0 && <div class="related-developments" data-related-stories><p>Earlier in this series</p><ul>{related.slice(0, 2).map(item => <li><a href={item.href}>{item.title}</a></li>)}</ul></div>}
+  {related.length > 0 && <div class="related-developments" data-related-stories><p>Earlier in this series</p><ul>{related.slice(0, 2).map(item => <li><time datetime={item.date}>{formatDate(item.date)}</time><h3><a href={item.href}>{item.title}</a></h3>{item.summary && <p class="related-summary">{item.summary}</p>}</li>)}</ul></div>}
 </article>
