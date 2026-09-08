@@ -158,3 +158,14 @@ quote cards, an invented coverage claim, an invented explanation, two overstated
 and a timezone error in one run, because each regenerated sentence was written from
 understanding rather than reread against the record. After any rewrite, every sentence that
 carries a fact is re-checked against the bytes as if it were new, and `quote_lint` runs.
+
+### The audio-only ad check
+
+The Texas page checked two MAGA Inc. spots by running speech recognition on the audio and
+wrote "The other four name no vote, no bill, and no document." Both spots carry source
+slates on screen (Punchbowl News, Tax Foundation, Texas House Journal 5/25/19, Navigant,
+Hoover, CBS Texas 8/4/26) that the narration never speaks. The sentence was false, and the
+verdicts under it were answers to a narrower claim than the ad made. Rule: a video pin is
+read frame by frame as well as by ear; every on-screen citation is transcribed into the
+record and checked before any verdict names what the ad does or does not cite
+(`procedures.md`, "A video is read twice").

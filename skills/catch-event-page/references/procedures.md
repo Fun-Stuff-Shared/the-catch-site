@@ -164,6 +164,20 @@ which falls back to Mistral OCR). CSV: the file is its own text. Video or audio:
 transcript `.txt` from undertone (step 2b). A record whose `text_path` is missing or whose
 hash does not match the file is not a record.
 
+**A video is read twice: the audio and every frame.** An ad's citations, disclaimers, and
+the wording of its charge often exist only on screen, in a source slate the narration never
+speaks. Extract one frame a second, look at every frame, and transcribe every piece of
+on-screen text into the transcript sibling under its own heading with the frame number:
+
+```
+ffmpeg -v error -y -i data/sources/<subject>/<stem>.mp4 -vf "fps=1,scale=960:-1" /tmp/frames/<stem>-%03d.png
+```
+
+Pin each frame that carries a source slate or a claim in text as its own record
+(`<stem>-frame-024.png` with a `.txt` sibling holding the transcribed text), and check the
+claim against the sources the slate names before writing a verdict. "The ad names no
+document" is a claim about the frames, and it is false until every frame was read.
+
 One pinned file owns one text sibling, and two pins never share a stem. A loop that writes
 `<stem>.txt` for every `*.html` after `pdftotext` wrote `<stem>.txt` for every `*.pdf`
 silently replaces the PDF's text with the web page's when both pins share a name (the

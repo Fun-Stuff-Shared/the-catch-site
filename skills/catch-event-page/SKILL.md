@@ -109,6 +109,8 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    wrote, what the record shows. Be ready for the page's own earlier claim to be wrong
    in a more specific way than the reviewer said; say so on the page with a dated
    correction.
+   A video is a record twice over: the audio and every frame. Read both before any verdict
+   says what an ad does or does not cite (`references/procedures.md`).
 6. **Write in the section grammar, as an inverted pyramid, one passage at a time.** Fixed
    order, sections dropped only when truly empty. Each sentence is written with its passage
    on screen; a sentence with no passage in the table is a gap to state or a sentence to cut. Read `WRITING.md` at the repo root (house style; it binds every
