@@ -108,3 +108,49 @@ export const hemp = {
   daysAfterEnactment: 365,
   delayDays: 29,
 };
+
+export const timeline = [
+  { date: "Jan 12", title: "H.R. 6500 passes the House as a trade bill", sub: `AGOA Extension Act, ${januaryVote.yeas} to ${januaryVote.nays}, on suspension` },
+  { date: "Jul 21", title: "The House passes its own stopgap, H.R. 9770", sub: `Through December 4, ${julyVote.yeas} to ${julyVote.nays}; the Senate never votes on it` },
+  { date: "Aug 2", title: "Collins releases the Senate stopgap", sub: "Written into H.R. 6500 as a Senate amendment" },
+  { date: "Aug 3", title: "The White House backs the Senate text", sub: "Budget office policy statement: a clean, short-term continuing resolution" },
+  { date: "Aug 8", title: `The Senate passes it ${senateVote.yeas} to ${senateVote.nays} at 3:37 a.m.`, sub: `An hour earlier it tables the Budd hemp amendment, ${buddVote.yeas} to ${buddVote.nays}` },
+  { date: "Sep 1", title: `The House concurs, ${houseVote.yeas} to ${houseVote.nays}`, sub: "Suspension vote at 2:03 p.m.; the roll call still says AGOA", current: true },
+  { date: "Sep 2", title: "Signed: Public Law 119-103", sub: "White House note; 140 Stat. 987" },
+  { date: "Nov 3", title: "Federal election day", sub: `${calendar.daysElectionToExpiry} days before the money runs out` },
+  { date: "Nov 12", title: "New hemp definition takes effect, in part", sub: "Only the lab-made-cannabinoid part until December 11" },
+  { date: "Dec 11", title: "The stopgap ends", sub: "Or earlier, program by program, when a full-year act is signed" },
+];
+
+export const votesRows = [
+  ["House roll 14, Jan 12", "Pass H.R. 6500 as the AGOA Extension Act", `${januaryVote.yeas} to ${januaryVote.nays}`, `R ${januaryVote.republican.yea} to ${januaryVote.republican.nay}`, `D ${januaryVote.democratic.yea} to ${januaryVote.democratic.nay}`],
+  ["House roll 272, Jul 21", "Pass H.R. 9770, the House stopgap", `${julyVote.yeas} to ${julyVote.nays}`, `R ${julyVote.republican.yea} to ${julyVote.republican.nay}`, `D ${julyVote.democratic.yea} to ${julyVote.democratic.nay}`],
+  ["Senate vote 227, Aug 8", "Table the Budd amendment to strike the hemp section", `${buddVote.yeas} to ${buddVote.nays}`, `R ${buddVote.republican.yea} to ${buddVote.republican.nay}`, `D ${buddVote.democratic.yea} to ${buddVote.democratic.nay}`],
+  ["Senate vote 228, Aug 8", "Pass H.R. 6500 as amended", `${senateVote.yeas} to ${senateVote.nays}`, `${senateVote.present} present`, `${senateVote.absent} absent`],
+  ["House roll 286, Sep 1", "Concur in the Senate amendments", `${houseVote.yeas} to ${houseVote.nays}`, `R ${houseVote.republican.yea} to ${houseVote.republican.nay}`, `D ${houseVote.democratic.yea} to ${houseVote.democratic.nay}`],
+  ["House roll 288, Sep 1", "Adopt the rule for other bills, H. Res. 1499", `${ruleVote.yeas} to ${ruleVote.nays}`, `R ${ruleVote.republican.yea} to ${ruleVote.republican.nay}`, `D ${ruleVote.democratic.yea} to ${ruleVote.democratic.nay}`],
+];
+
+export const daysBars = [
+  { label: "Senate vote to House vote", value: calendar.daysSenateToHouse },
+  { label: "Hemp delay, Nov 12 to Dec 11", value: hemp.delayDays },
+  { label: "Election to Dec 11", value: calendar.daysElectionToExpiry },
+  { label: "House vote to election", value: calendar.daysHouseVoteToElection },
+  { label: "House vote to Dec 11", value: calendar.daysHouseVoteToExpiry },
+];
+
+export const exceptionRows = [
+  ["Sec. 101", "Continues the twelve 2026 appropriations acts at their rates, with listed exceptions"],
+  ["Sec. 104", "No money to start or resume a project or activity not funded in 2026"],
+  ["Secs. 109 and 110", "Programs that would front-load spending are held to the most limited funding action; no grants that would impinge on final funding decisions"],
+  ["Sec. 112", "Civilian pay may be apportioned at the rate needed to avoid furloughs"],
+  ["WIC", "May be apportioned at the rate needed to maintain participation"],
+  ["Sec. 127", "Up to $2,853,000,000 of defense procurement money for National Security Systems"],
+  ["Sec. 146", "Army, Navy, and Marine Corps military construction not otherwise authorized by law"],
+  ["Sec. 156", "A Housing and Urban Development competition to retire certain housing loans, through 2029"],
+  ["Sec. 157", "No Uniform Guidance rewrite for federal grants through December 11"],
+  ["Sec. 2006", "Temporary Medicaid disaster relief for the Northern Mariana Islands"],
+  ["Sec. 2008", "African Growth and Opportunity Act extended to 2028"],
+  ["Sec. 2019", "Hemp definition change delayed to December 11, except for lab-made cannabinoids"],
+  ["Sec. 4304", "$130,191,781 for supportive services for very low-income veteran families"],
+];
