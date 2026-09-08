@@ -590,3 +590,18 @@ Texas Senate MAGA Inc. independent expenditures (captured 2026-09-08). FEC Form 
 | data/sources/texas-senate/coverage/usatoday-maga-inc-2026-09-05.txt | 4714 | 3d007ca3fd0d7004 |
 | data/sources/texas-senate/talarico-x-2026-09-05.txt | 496 | 2c29985ec92a917e |
 | data/sources/texas-senate/talarico-x-2026-09-05.txt | 496 | 2c29985ec92a917e |
+
+Texas Senate rework additions (captured 2026-09-08). March 11 Form 24 HTML and CSV copied from the verify set. Independent-expenditure bulk file saved September 8. Tribune July 20 tracker and FEC quarterly-filer dates copied from the verify set. SOS Candidate Bio Portal captured in a browser for the 2026 November general and U.S. Senate office; the JSON is the portal API response for that query.
+| data/sources/texas-senate/fec-form24-1952643-se.html | 3783 | 3dd59d52162d8554 |
+| data/sources/texas-senate/fec-form24-1952643-se.txt | 2045 | 2e837253b2a0fa10 |
+| data/sources/texas-senate/fec-form24-1952643.csv | 895 | 825862831cce4960 |
+| data/sources/texas-senate/fec-independent-expenditure-2026-snapshot-2026-09-08.csv | 4124808 | b2e967a182b37505 |
+| data/sources/texas-senate/coverage/tribune-tracker-2026-07-20.html | 345152 | 2399cf43e3f33f69 |
+| data/sources/texas-senate/coverage/tribune-tracker-2026-07-20.txt | 192108 | fd83ef15004d73d9 |
+| data/sources/texas-senate/fec-2026-quarterly-filers.html | 37313 | 898e090812d72402 |
+| data/sources/texas-senate/fec-2026-quarterly-filers.txt | 8140 | 49515ddddbf45862 |
+| data/sources/texas-senate/sos-goelect-candidates-rendered.html | 204573 | 970d865e67f07074 |
+| data/sources/texas-senate/sos-goelect-candidates-rendered.txt | 2109 | 8d7f5bf87e2e58c6 |
+| data/sources/texas-senate/sos-goelect-candidates.png | 314611 | 30de054d9c8dc3ee |
+| data/sources/texas-senate/sos-goelect-find-qualified-senate.json | 6737 | 59f150d9f2834216 |
+| data/sources/texas-senate/sos-goelect-find-qualified-senate.txt | 947 | 17b1489a5b0b64e5 |

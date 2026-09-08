@@ -7,12 +7,19 @@
 // Talarico unitemized 36,717,034.10 / individual 65,585,741.88 = 56.0 percent.
 // Paxton unitemized 1,764,118.03 / individual 9,020,177.98 = 19.6 percent.
 // Republican approve strongly 29 + somewhat 32 = 61 (UT/Texas Politics Project Q8D, August 2026).
+// Statewide approve 14 + 19 = 33; disapprove 7 + 40 = 47 (same crosstabs).
 // Trial ballot 42 - 39 = 3 points (same poll Q19).
+// Independent-expenditure bulk file (15,363 rows, saved 2026-09-08): general-election (ele_type G)
+// totals by committee for S6TX00479 and S6TX00388, keeping the highest file_num per
+// (spe_id, cand_id, tran_id). Dedup dropped 5 of 263 Texas rows; G committee totals were unchanged.
+// Texans for a Conservative Majority P 13,689,777.52 + R 11,580,380.19 = 25,270,157.71 opposing Paxton.
+// MAGA Inc. Del Ray Media LLC, November 2025 Tennessee House special: eight rows sum to 1,211,668.00.
+// CLF four Del Ray rows dated 31-AUG-26 sum to 1,134,768.75.
 
 export const event = {
   slug: "texas-senate/september-2026",
   title: "MAGA Inc. files $10 million in Texas Senate ads, split against Talarico and for Paxton",
-  dek: "The Saturday 48-hour notice to the Federal Election Commission is two $5 million independent expenditures to Del Ray Media LLC for connected TV and digital ads. That $10 million is the filing, not an ad-tracking estimate, and it is not a contribution to Ken Paxton's campaign.",
+  dek: "The Saturday 48-hour notice to the Federal Election Commission is two $5 million independent expenditures to Del Ray Media LLC for connected TV and digital ads in the race for Sen. John Cornyn's seat. That $10 million is the filing, not an ad-tracking estimate, and it is not a contribution to Ken Paxton's campaign.",
   name: "Texas Senate ads",
   span: "September 5, 2026",
   date: "2026-09-05",
@@ -39,9 +46,29 @@ export const filing = {
   total: 10000000,
   obligation: "2026-09-04",
   dissemination: "2026-09-05",
-  election: "G2026",
+  electionCode: "G2026",
+  electionLabel: "2026 general election",
   talaricoId: "S6TX00479",
   paxtonId: "S6TX00388",
+};
+
+export const marchNotice = {
+  fileNumber: 1952643,
+  signed: "2026-03-11",
+  payee: "ELECTORAL COMMUNICATIONS GROUP, LLC",
+  purpose: "TEXT MESSAGES",
+  candidate: "CLAY FULLER",
+  office: "House, Georgia 14th district",
+  electionCode: "S2026",
+  electionLabel: "Special-General",
+  line: 8950.44,
+  total: 17900.88,
+};
+
+export const grahamNotice = {
+  fileNumber: 2009583,
+  signed: "2026-08-24",
+  ytd: 827711.11,
 };
 
 export const magaCash = {
@@ -50,6 +77,11 @@ export const magaCash = {
   cashOnHandEnd: 403450026.85,
   receiptsPeriod: 3021896.04,
   disbursementsPeriod: 131658.17,
+};
+
+export const monthlyPayees = {
+  pfeifferPublicAffairs: 7500,
+  trumpNationalGolfClub: 24132.75,
 };
 
 export const talarico = {
@@ -74,6 +106,49 @@ export const paxton = {
   coverageEnd: "2026-06-30",
 };
 
+export const tracker = {
+  talaricoSince2025: 72.0,
+  paxtonSince2025: 16.8,
+};
+
+export const fecDates = {
+  octoberQuarterlyClose: "2026-09-30",
+  octoberQuarterlyDue: "2026-10-15",
+  preGeneralClose: "2026-10-14",
+  preGeneralDue: "2026-10-22",
+};
+
+export const ieGeneral = {
+  fileRows: 15363,
+  saved: "2026-09-08",
+  texasRowsRaw: 263,
+  texasRowsDedup: 258,
+  gRows: 165,
+  magaOpposeTalarico: 5000000,
+  magaSupportPaxton: 5000000,
+  loneStarLibertyOpposeTalarico: 7720655,
+  loneStarLibertySupportPaxton: 1751220,
+  truthAndCourageOpposeTalarico: 1751968,
+  americaPacOpposeTalarico: 1487645.67,
+  americaPacSupportPaxton: 124595,
+  loneStarRisingOpposePaxton: 1416599.96,
+  loneStarRisingSupportTalarico: 709564.75,
+  protectingAmericasFutureOpposeTalarico: 301848.62,
+};
+
+export const tcm = {
+  primaryOpposePaxton: 13689777.52,
+  runoffOpposePaxton: 11580380.19,
+  primaryAndRunoff: 25270157.71,
+};
+
+export const delRay = {
+  magaTennesseeNov2025Rows: 8,
+  magaTennesseeNov2025: 1211668,
+  clfAug31Rows: 4,
+  clfAug31: 1134768.75,
+};
+
 export const computed = {
   daysDisseminationToElection: 59, // 2026-11-03 minus 2026-09-05
   daysObligationToElection: 60, // 2026-11-03 minus 2026-09-04
@@ -82,6 +157,8 @@ export const computed = {
   talaricoUnitemizedPct: 56.0, // 100 * 36717034.10 / 65585741.88
   paxtonUnitemizedPct: 19.6, // 100 * 1764118.03 / 9020177.98
   gopApprovePaxtonPct: 61, // 29 + 32
+  paxtonApproveStatewidePct: 33, // 14 + 19
+  paxtonDisapproveStatewidePct: 47, // 7 + 40
   pollGapPoints: 3, // 42 - 39
 };
 
@@ -89,6 +166,7 @@ export const poll = {
   sponsor: "University of Texas / Texas Politics Project",
   fieldStart: "2026-08-05",
   fieldEnd: "2026-08-13",
+  interviewed: 1218,
   n: 1200,
   moeSample: 2.83,
   moeWeighted: 3.58,
@@ -97,6 +175,15 @@ export const poll = {
   brown: 3,
   someoneElse: 1,
   noOpinion: 14,
+  demTalarico: 91,
+  gopPaxton: 79,
+  indTalarico: 37,
+  indPaxton: 11,
+  indNoOpinion: 43,
+  approveStrong: 14,
+  approveSomewhat: 19,
+  disapproveSomewhat: 7,
+  disapproveStrong: 40,
 };
 
 export const calendar = {
@@ -107,3 +194,7 @@ export const calendar = {
   earlyVotingEnd: "2026-10-30",
   election: "2026-11-03",
 };
+
+export function usd(n) {
+  return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
