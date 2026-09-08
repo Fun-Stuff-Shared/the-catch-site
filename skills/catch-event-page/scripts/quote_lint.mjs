@@ -27,7 +27,9 @@ for (const r of manifest.records) {
   let text = "";
   try { text = fs.readFileSync(tp, "utf8"); } catch { text = ""; }
   if (/\.html?$/i.test(tp)) text = text.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)));
-  records.set(r.id, { ...r, text: norm(text), rawHas: text.length > 0 });
+  // PDF extraction breaks words at line ends ("addressee-infor-\nmation"); keep a joined variant too.
+  const joined = text.replace(/(\p{L})-(?:\r?\n)+(\p{Ll})/gu, "$1$2");
+  records.set(r.id, { ...r, text: norm(text), textJoined: norm(joined), rawHas: text.length > 0 });
 }
 
 const stripTags = (s) => s.replace(/<Cite[^>]*\/>/g, "").replace(/<[^>]+>/g, " ");
@@ -46,7 +48,7 @@ const outletMatches = (outlet, publisher) => {
   return a && b && (a.includes(b) || b.includes(a) || (a === "ap" && b.startsWith("associated")) || (a.startsWith("associated") && b === "ap"));
 };
 
-const has = (rec, span) => !!rec && (rec.text.includes(span) || rec.text.toLowerCase().includes(span.toLowerCase()));
+const has = (rec, span) => !!rec && [rec.text, rec.textJoined].some((t) => t.includes(span) || t.toLowerCase().includes(span.toLowerCase()));
 const findings = [];
 const lineOf = (idx) => page.slice(0, idx).split("\n").length;
 
@@ -55,18 +57,19 @@ for (const mm of page.matchAll(/<Cite\s+s="([^"]+)"\s+passage="([^"]*)"/g)) {
   const rec = records.get(mm[1]);
   if (!rec) { findings.push(`L${lineOf(mm.index)} cite: record ${mm[1]} is not in the manifest`); continue; }
   if (!rec.rawHas) { findings.push(`L${lineOf(mm.index)} cite: record ${mm[1]} has no readable text pin`); continue; }
-  if (!rec.text.includes(norm(mm[2]))) findings.push(`L${lineOf(mm.index)} cite passage absent from ${mm[1]}: "${mm[2]}"`);
+  if (!has(rec, norm(mm[2]))) findings.push(`L${lineOf(mm.index)} cite passage absent from ${mm[1]}: "${mm[2]}"`);
 }
 
 // 2. Quote cards: the whole body is one contiguous substring of a cited record.
 for (const mm of page.matchAll(/<QuoteCard\b([^>]*)>([\s\S]*?)<\/QuoteCard>/g)) {
   const body = mm[2];
   const cites = citesOf(body);
-  let text = norm(stripTags(body));
+  // A card may open with an ellipsis to mark a cut; what follows must still be one contiguous span.
+  let text = norm(stripTags(body)).replace(/^(\.\.\.|\u2026)\s*/, "");
   const quoted = text.match(/^"([^"]+)"/);
   text = (quoted ? quoted[1] : text).replace(/^["']+|["']+$/g, "").replace(/\.$/, "");
   if (!cites.length) { findings.push(`L${lineOf(mm.index)} quote card has no Cite`); continue; }
-  const ok = cites.some((c) => records.get(c.s)?.text.includes(text));
+  const ok = cites.some((c) => has(records.get(c.s), text));
   if (!ok) findings.push(`L${lineOf(mm.index)} quote card is not a contiguous substring of ${cites.map((c) => c.s).join(",")}: "${text.slice(0, 90)}"`);
 }
 
