@@ -247,6 +247,19 @@ require every story under a subject to sit on one connected series). The second 
 while a fire holds `maintain.lock`; the fire's own refresh folds the same records later.
 `npm run build` pulls the views first.
 
+The hosted build has no access to the state directory: it reads the committed copy under
+`data/state/`. Commit BOTH files the refresh wrote, the story view and the chain view of
+its root (`data/state/event-<id>.json` and `data/state/chain-<root id>.json`). A story
+view committed without its chain view builds locally and fails on the host with
+`Chain omits story: <id>`; the site then keeps serving the previous build with no error
+you can see from git. Check before pushing:
+
+```bash
+node -e "import('./src/lib/state.mjs').then(m=>{const s=m.readState(process.argv[1]);console.log(s.events.size,'events',s.chains.size,'chains')})" \
+  <(true) 2>/dev/null; git archive HEAD data/state | tar -x -C /tmp/committed-state && \
+  node -e "import('./src/lib/state.mjs').then(m=>m.readState('/tmp/committed-state/data/state')).then(()=>console.log('committed state ok'))"
+```
+
 
 ```bash
 # manifest: checks/manifests/<subject>--<story>.json (fields in manifest-and-gate.md)
@@ -287,7 +300,18 @@ this step exists to prevent.
   greps on the live bytes, screenshot at 100 percent zoom.
 
 ```bash
-until curl -s https://thecatchengine.com/events/jobs/august-2026/ | grep -q "<marker from the new page>"; do sleep 15; done
+URL=https://thecatchengine.com/events/jobs/august-2026/
+for i in $(seq 1 30); do
+  code=$(curl -sL -o /tmp/live.html -w '%{http_code}' "$URL")
+  [ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html && break
+  sleep 10
+done
+[ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html || { echo "NOT LIVE after 5 min (last code $code): the hosted build failed; read its log"; exit 1; }
 node scripts/live-audit.mjs
-curl -s https://thecatchengine.com/events/jobs/august-2026/ | grep -c $'\u2014'     # count of em dashes, must be 0
+grep -c $'\u2014' /tmp/live.html     # count of em dashes, must be 0
 ```
+
+A 404 or the old page after five minutes means the hosted build failed, almost always in
+`pull-state.mjs` on the committed state (see step 8). The poll must exit nonzero in that
+case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got reported
+as shipped once.
