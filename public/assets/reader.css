@@ -5,7 +5,8 @@ button, input { font: inherit; }
 button, summary { cursor: pointer; }
 a, button, input, summary { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
-.sheet { width: 100%; max-width: none; min-height: 100vh; border: 0; }
+.sheet { width: 100%; max-width: none; min-height: 100vh; border: 0; display: flex; flex-direction: column; }
+.sheet > * { flex: 0 0 auto; }
 .band-inner { padding: 1.3rem var(--gutter); align-items: center; gap: 2rem; }
 .wordmark { font-size: 2rem; line-height: 1; }
 .band .desc { display: none; }
@@ -28,7 +29,7 @@ a, button, input, summary { -webkit-tap-highlight-color: transparent; }
 .sheet .content .rail { width: 100%; }
 .sheet main { overflow-wrap: break-word; }
 .sheet main img, .sheet main svg { max-width: 100%; }
-footer.colophon { padding: 2rem var(--gutter); margin-top: 2rem; font-size: .75rem; }
+footer.colophon { padding: 2rem var(--gutter); margin-top: auto; font-size: .75rem; }
 footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
 .discovery { padding: 0 var(--gutter) 4rem; }
 .discovery-intro { padding: 4.5rem 0 3rem; display: grid; grid-template-columns: 1.4fr 1fr; align-items: end; gap: 4rem; }
