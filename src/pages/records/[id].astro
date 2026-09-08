@@ -1,12 +1,12 @@
 ---
-import { readFileSync } from "node:fs";
 import { sourceContext } from "../../lib/evidence-context.mjs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { eventPath } from "../../lib/state.mjs";
 import { records, manifests } from "../../lib/record-manifests.mjs";
+import { savedText as readSavedText } from "../../lib/saved-text.mjs";
 export function getStaticPaths() { return records.map((record) => ({ params: { id: record.id }, props: { record } })); }
 const { record } = Astro.props;
-const savedText = record.pinned_path ? readFileSync(record.pinned_path, 'utf8') : null;
+const savedText = readSavedText(record)?.text ?? null;
 const excerpt = (text) => sourceContext(savedText, text, record.pinned_path?.endsWith('.csv') ? 150 : 400);
 const passages = record.passages?.length ? record.passages : [{text: record.quote}];
 
