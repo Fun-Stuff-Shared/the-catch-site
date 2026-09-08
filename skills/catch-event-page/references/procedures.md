@@ -156,6 +156,14 @@ matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the 
 `records[]` (with a `quote` that is present in the text pin) and `story_sources[]` (group
 `coverage`). The pin is what the gate verifies.
 
+**Every pin gets a text sibling at pin time, whatever its format.** The manifest's
+`text_path` and `text_sha256` are what registration and the gate read; nothing downstream
+re-extracts. HTML: the text pin from the capture. PDF: `pdftotext -layout file.pdf file.txt`
+(a scanned PDF with no text layer goes through `/Volumes/4/CF/news-fqs-pilot/scripts/capture.py`,
+which falls back to Mistral OCR). CSV: the file is its own text. Video or audio: the
+transcript `.txt` from undertone (step 2b). A record whose `text_path` is missing or whose
+hash does not match the file is not a record.
+
 Before capturing anything new, search the registry for the reactions too: on the August
 page the Fed governor's speech, the president's remarks, the ADP coverage and the stock
 close were all already held by the daily sweeps (`capture search "Waller" --since <date>`,
