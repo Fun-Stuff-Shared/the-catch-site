@@ -1254,5 +1254,21 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/annex-ii-alcohol-2026-07-20.txt | 19087 | 34459cd29da87253 |
 | data/sources/canada-tariffs/annex-ii-motor-2026-07-20.pdf | 110334 | 799a5e58a920ee61 |
 | data/sources/canada-tariffs/annex-ii-motor-2026-07-20.txt | 9674 | dee4201e50afa3d3 |
+| data/sources/canada-tariffs/budget-seu-2026-intro.html | 140653 | 62fa1f2b15c1ee49 |
+| data/sources/canada-tariffs/budget-seu-2026-intro.txt | 50847 | 6c0cba91074b5010 |
+| data/sources/canada-tariffs/boc-san-2025-18.html | 197773 | 53880af04b95ac2d |
+| data/sources/canada-tariffs/boc-san-2025-18.txt | 18172 | 4be2878a1581f003 |
+| data/sources/canada-tariffs/gazette-sor-2025-181.html | 46150 | 35e0cd7d15edd918 |
+| data/sources/canada-tariffs/gazette-sor-2025-181.txt | 23313 | ea622a54aae48f8e |
+| data/sources/canada-tariffs/pm-readout-marconi-2026-06-15.html | 44182 | 78fb454b87134181 |
+| data/sources/canada-tariffs/pm-readout-marconi-2026-06-15.txt | 2676 | f3a4c17d114bc561 |
+| data/sources/canada-tariffs/finance-sarnia-2026-08-27.html | 37746 | defaae2ac8786ee4 |
+| data/sources/canada-tariffs/finance-sarnia-2026-08-27.txt | 6789 | c3374f92baf4acb8 |
+| data/sources/canada-tariffs/finance-news-landing-2026-09-09.html | 22687 | bc0d308dcc00fed1 |
+| data/sources/canada-tariffs/finance-news-landing-2026-09-09.txt | 988 | 4db6ec3e65fa5cde |
+| data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-09.html | 263023 | 68da803216fcefb9 |
+| data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-09.txt | 5161 | 6bb101fb61190946 |
+| data/sources/canada-tariffs/fr-public-inspection-2026-09-09.html | 40055 | 8b6e9dd60ec0b558 |
+| data/sources/canada-tariffs/fr-public-inspection-2026-09-09.txt | 1645 | 7cb19a1d11eac77b |
 
 The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.

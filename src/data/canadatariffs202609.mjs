@@ -14,7 +14,7 @@ export const event = {
   updated: "2026-09-09",
   kpis: [
     { value: "C$27.6", unit: "billion", label: "U.S. imports covered, Finance Canada" },
-    { value: "15 / 25 / 50", unit: "percent", label: "matching rates on listed goods" },
+    { value: "15 / 25 / 50", unit: "percent", label: "Finance says matching rates on listed goods" },
     { value: "17", unit: "days", label: "from U.S. duties in force to Canada's" },
     { value: "629", unit: "tariff items", label: "Finance list, union of the two orders" },
   ],
@@ -225,13 +225,24 @@ export const moneyRows = [
   [`US$${computed.censusImports2025Rounded} billion`, "U.S. goods imports from Canada, 2025, U.S. dollars", "Census Bureau c1220"],
 ];
 
+// Canada Gazette SOR/2025-181, as printed, no currency tag.
+export const rollbackConsumer2025 = 30.3; // billion; " $30.3 billion worth of annually imported consumer and household goods"
+export const rollbackOther2025 = 14.4; // billion; "non-steel and non-aluminum goods ($14.4 billion in annual imports)"
+export const rollbackTotal2025 = 44.7; // billion; Gazette "duty-free market access for $44.7 billion"
+
+// Spring Economic Update 2026 intro, written before the July 20 duties.
+export const springUpdateTariffFreePct = 85; // "approximately 85%"
+export const springUpdateAvgTariffCanada = 5.2; // chart 0.7 text version
+export const springUpdateAvgTariffGlobal = 11.4;
+
 export const timeline = [
+  { date: "Sep 1, 2025", title: "Canada removes 2025 counter-tariffs", sub: `$${rollbackConsumer2025} billion of consumer goods and $${rollbackOther2025} billion of other goods; Gazette SOR/2025-181` },
   { date: "Feb 20", title: "Supreme Court holds IEEPA does not authorize tariffs", sub: "No. 24-1287, decided February 20, 2026" },
   { date: "Jul 1", title: "CUSMA joint review", sub: "Canada and Mexico asked for a 16-year renewal; the United States declined; the pact stays in force and is now reviewed every year" },
   { date: "Jul 20", title: "Three U.S. proclamations signed", sub: "50 percent additional duty under Section 338, originally from August 19" },
   { date: "Aug 18", title: "Proclamation 11056 delays the duties three days", sub: "new effective time 12:01 a.m. eastern, August 22" },
   { date: "Aug 21", title: "CBP guidance on the Section 338 headings", sub: "50 percent additional duty under 9903.03.12 to 9903.03.14; 0 percent additional under 9903.03.15 and 9903.03.16" },
-  { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
+  { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "Carney says match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
   { date: "Aug 25", title: "Finance Canada names C$27.6 billion", sub: "rates 15, 25, and 50 percent; C$7.5 billion in supports; 12:01 a.m. on September 8" },
   { date: "Aug 26", title: "Seafood comes off the list", sub: `All ${removedCodes} fish and seafood lines removed; ${addedCodes} industrial lines added; ${listItems} lines remain; C$27.6 billion unchanged` },
   { date: "Sep 4", title: "Two Orders in Council", sub: `PC 2026-0785, ${oic0785Items} codes at 15/25/50 percent; PC 2026-0786, ${oic0786Items} steel and aluminum codes at 25/50 percent; union ${oicUnionItems}` },
