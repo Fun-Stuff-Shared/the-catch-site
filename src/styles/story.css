@@ -131,11 +131,9 @@
 
 /* ── The catch ── */
 .the-catch {
-  border: 1px solid var(--rule);
   border-left: 4px solid var(--blue, #1e4f7a);
-  padding: 1.1rem 1.4rem 1rem;
+  padding: 0.2rem 0 0.2rem 1.2rem;
   margin: 0 0 1.5rem;
-  background: var(--paper, white);
 }
 .the-catch .tt-label {
   font-family: var(--sans);
@@ -164,24 +162,22 @@
   padding-bottom: 0;
   border-bottom: none;
 }
-.catch-tag {
+.the-catch .catch-tag { display: none; }
+.the-catch h3 {
   display: block;
-  font-family: var(--sans);
-  font-size: 0.62rem;
+  margin: 0 0 0.45rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--slate);
-  margin: 0 0 0.25rem;
+  line-height: 1.25;
 }
-.catch-lead {
-  font-weight: 700;
-  margin-right: 0.35em;
-}
-.catch-jump {
+.the-catch li:first-child h3 { font-size: 1.45rem; }
+.the-catch .catch-jump {
+  display: block;
+  width: fit-content;
   font-family: var(--sans);
   font-size: 0.82rem;
-  margin-left: 0.35rem;
+  margin: 0.45rem 0 0;
+  color: var(--blue);
 }
 
 /* ── TOC rail ── */
