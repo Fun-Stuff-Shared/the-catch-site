@@ -370,29 +370,32 @@
 
 /* ── Outlet checks ── */
 .outlet-check {
-  border: 1px solid var(--rule);
-  border-left: 4px solid var(--rule);
-  padding: 0.9rem 1.2rem 0.75rem;
-  margin: 0.9rem 0;
-}
-.outlet-check.ok { border-left-color: var(--blue); }
-.outlet-check.warn { border-left-color: var(--red); }
-.outlet-check.note { border-left-color: var(--amber, #9a6200); }
-.oc-head {
-  margin: 0 0 0.4rem;
-  font-family: var(--serif);
-  font-size: 1.02rem;
-  line-height: 1.5;
-}
-.oc-head strong {
-  font-family: var(--sans);
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.oc-verdict {
+  border-top: 1px solid var(--rule);
+  padding: 1rem 0;
   margin: 0;
-  font-size: 0.95rem;
+}
+.outlet-check:first-child { border-top: 0; }
+.outlet-check h3,
+.outlet-check-fold h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.outlet-check p,
+.outlet-check-fold p { margin: 0 0 0.45rem; }
+.outlet-check .oc-sources { margin-bottom: 0; }
+.outlet-check .oc-verdict strong,
+.outlet-check-fold .oc-verdict strong { color: var(--blue); }
+.outlet-check.warn .oc-verdict strong { color: var(--red); }
+.outlet-check.note .oc-verdict strong { color: var(--amber, #9a6200); }
+.outlet-check-fold {
+  border-top: 1px solid var(--rule);
+  padding: 1rem 0 0;
+}
+.outlet-check-fold .oc-folded {
+  margin: 0 0 0.45rem;
 }
 
 /* ── Checked/contested blocks ── */

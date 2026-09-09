@@ -11,6 +11,7 @@ import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import BarChart from "../../../components/story/BarChart.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
@@ -262,8 +263,10 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <OutletCheck outlet="CBS News" claim={`reported that the House "passed the measure in a 370 to 48 vote" after leaders fast-tracked it, a two-thirds majority, Senate approval in early August, and a December 11 expiry.`} verdict="Those check out. Its line that funding is now set to expire on December 11 was, on September 1, a description of the bill the House had just passed, not of a signed law." chip="checks out" status="ok"><Cite s="cbs-house-funding" passage="passed the measure in a 370 to 48 vote" /></OutletCheck>
           <OutletCheck outlet="NBC News" claim={`reported the bill "sailed through the chamber by a vote of 370-48," funding through December 11, and that it would go to the president, who was expected to sign it.`} verdict="Checks out for a September 1 dispatch. The signature came the next day." chip="checks out" status="ok"><Cite s="nbc-house-funding" passage="sailed through the chamber by a vote of 370-48" /><Cite s="wh-hr6500-signed" passage="the President signed into law:" /></OutletCheck>
           <OutletCheck outlet="NPR" claim={`reported "The legislation passed the House 370-48 with bipartisan support," current levels with a few exceptions through December 11, and that the White House had encouraged the stopgap.`} verdict="The vote and the date check out. The administration's August 3 statement is the White House paper on that encouragement." chip="checks out" status="ok"><Cite s="npr-house-funding" passage="The legislation passed the House 370-48 with bipartisan support" /><Cite s="omb-sap-hr6500" passage="Every Member of" /></OutletCheck>
-          <OutletCheck outlet="UPI" claim={`reported 370-48, that "Twenty-nine Democrats and 19 Republicans voted against it," funding through December 11, and Senate approval in August.`} verdict="Checks out against the Clerk's party table." chip="checks out" status="ok"><Cite s="upi-house-funding" passage="Twenty-nine Democrats and 19 Republicans voted against it" /></OutletCheck>
-          <OutletCheck outlet="PBS NewsHour" claim={`ran the Associated Press dispatch: "The House passed the bill by a vote of 370-48," the Cole quote, and the Senate-already-passed line.`} verdict="The same AP copy checked above." chip="checks out" status="ok"><Cite s="pbs-house-funding" passage="The House passed the bill by a vote of 370-48" /></OutletCheck>
+          <OutletCheckFold count={2} method="the enrolled bill, the Clerk's roll call, the Senate roll call, and the White House signing note.">
+            <OutletCheck folded outlet="UPI" claim={`reported 370-48, that "Twenty-nine Democrats and 19 Republicans voted against it," funding through December 11, and Senate approval in August.`} verdict="Checks out against the Clerk's party table." chip="checks out" status="ok"><Cite s="upi-house-funding" passage="Twenty-nine Democrats and 19 Republicans voted against it" /></OutletCheck>
+            <OutletCheck folded outlet="PBS NewsHour" claim={`ran the Associated Press dispatch: "The House passed the bill by a vote of 370-48," the Cole quote, and the Senate-already-passed line.`} verdict="The same AP copy checked above." chip="checks out" status="ok"><Cite s="pbs-house-funding" passage="The House passed the bill by a vote of 370-48" /></OutletCheck>
+          </OutletCheckFold>
         </div>
       </section>
 

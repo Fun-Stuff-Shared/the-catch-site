@@ -11,6 +11,7 @@ import BarChart from "../../../components/story/BarChart.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
@@ -237,8 +238,10 @@ const moneyRows = [
           <OutletCheck outlet="USA Today" claim={`wrote that MAGA Inc. &ldquo;has donated $10 million to the campaign&rdquo; of Paxton.`} verdict="The notice is independent spending paid to Del Ray Media LLC, not a donation to the campaign committee." chip="mislabeled" status="warn"><Cite s="usatoday-maga-inc-2026-09-05" passage="has donated $10 million to the campaign" /></OutletCheck>
           <OutletCheck outlet="Reuters" claim={`headlined that MAGA Inc. &ldquo;gives $10 million to&rdquo; &ldquo;Paxton's Senate campaign.&rdquo;`} verdict="The $10 million figure matches the notice. A gift to the campaign is the wrong legal category. The saved page is the Reuters dispatch as carried by Yahoo." chip="mislabeled" status="warn"><Cite s="reuters-via-yahoo-maga-inc-2026-09-05" passage="gives $10 million to" /><Cite s="reuters-via-yahoo-maga-inc-2026-09-05" passage="Paxton's Senate campaign" /></OutletCheck>
           <OutletCheck outlet="Associated Press" claim={`wrote that the group is spending $10 million on television and digital advertisements &ldquo;according to a Saturday filing with the Federal Election Commission.&rdquo; CNBC and PBS NewsHour ran the same dispatch.`} verdict="Checks out. Connected TV is television, so the wording matches the purpose line." chip="checks out" status="ok"><Cite s="ap-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /><Cite s="cnbc-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /><Cite s="pbs-texas-senate-ad-blitz" passage="Saturday filing with the Federal Election Commission" /></OutletCheck>
-          <OutletCheck outlet="NBC News" claim={`wrote that MAGA Inc. &ldquo;had more than $400 million in the bank as of July 31.&rdquo;`} verdict={`Checks out: the August monthly close is ${millions(magaCash.cashOnHandEnd)}.`} chip="checks out" status="ok"><Cite s="nbc-texas-senate-ad-blitz" passage="MAGA Inc. had more than $400 million in the bank as of July 31" /></OutletCheck>
           <OutletCheck outlet="Fox News" claim={`attributed the $10 million to an FEC filing and put the candidates' fundraising at $${tracker.talaricoSince2025.toFixed(1)} million and $${tracker.paxtonSince2025} million, citing the Texas Tribune.`} verdict="Checks out. The figures are the Tribune's July 20 tracker, cumulative since January 2025, which is why they differ from the FEC pages' shorter windows." chip="checks out" status="ok"><Cite s="fox-texas-senate-ad-blitz" passage="according to the Texas Tribune" /><Cite s="tribune-tracker-2026-07-20" passage="raising a cumulative $72.0 million compared to $16.8 million" /></OutletCheck>
+          <OutletCheckFold count={1} method="the notice.">
+            <OutletCheck folded outlet="NBC News" claim={`wrote that MAGA Inc. &ldquo;had more than $400 million in the bank as of July 31.&rdquo;`} verdict={`Checks out: the August monthly close is ${millions(magaCash.cashOnHandEnd)}.`} chip="checks out" status="ok"><Cite s="nbc-texas-senate-ad-blitz" passage="MAGA Inc. had more than $400 million in the bank as of July 31" /></OutletCheck>
+          </OutletCheckFold>
         </div>
       </section>
 

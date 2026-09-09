@@ -7,6 +7,7 @@ import StoryToc from "../../../components/story/StoryToc.astro";
 import SectionKicker from "../../../components/story/SectionKicker.astro";
 import StepChart from "../../../components/story/StepChart.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import Chip from "../../../components/story/Chip.astro";
 import RailedParagraph from "../../../components/story/RailedParagraph.astro";
@@ -162,15 +163,8 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         <p class="section-lede">Four outlets' decision coverage, checked against the primary record.</p>
 
         <OutletCheck
-          outlet="CNBC"
-          claim={`&ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;`}
-          verdict="Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike)."
-          chip="checks out"
-          status="ok"
-        />
-
-        <OutletCheck
           outlet="Fox Business"
+          date="June 17, 2026"
           claim={`&ldquo;nine of the 18 voting members project an interest rate hike before the end of the year.&rdquo;`}
           verdict={`The count is right, the label is wrong: the FOMC has&nbsp;<strong>12 voting members</strong>, and all 12 voted for the hold. The 18 are SEP <em>participants</em>, which includes regional presidents who do not vote. Nine of those 18 dots sat above the current midpoint.`}
           chip="mislabeled"
@@ -179,6 +173,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
 
         <OutletCheck
           outlet="TradingKey"
+          date="June 17, 2026"
           claim="the dot-by-dot breakdown: one participant penciling 75bp of hikes, five at 50bp, three at 25bp."
           verdict="That sums to the same nine-above-midpoint reading, and fits the SEP&rsquo;s published 3.4&ndash;4.4 range."
           chip="consistent"
@@ -187,6 +182,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
 
         <OutletCheck
           outlet="StockTitan"
+          date="June 22, 2026"
           claim="the only outlet that untangled the numbers explicitly: 12&ndash;0 on the vote, 8&ndash;1&ndash;9 on the dots, and near-unanimous upside inflation risk."
           verdict="Its SEP figures (median 3.8, PCE forecast 3.6) match the Fed's tables. Its piece began as a June 16 preview and was updated through June 22; we quote the June 22 version."
           chip="checks out"
@@ -197,6 +193,17 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           claim={`Framing differences worth seeing side by side: the statement says <em>&ldquo;the conflict in the Middle East&rdquo;</em>; Fox Business rendered it as <em>&ldquo;the war in Iran.&rdquo;</em> And Fox carried Warsh&rsquo;s press-conference line: <em>&ldquo;I am pleased to report that members of the FOMC are unambiguous and unanimous: this committee will deliver price stability.&rdquo;</em>`}
           status="note"
         />
+        <OutletCheckFold count={1} method="the primary record.">
+          <OutletCheck
+            folded
+            outlet="CNBC"
+            date="June 17, 2026"
+            claim={`&ldquo;Fed officials&hellip; removed their prior outlook for a rate cut this year and indicated that a hike is possible.&rdquo;`}
+            verdict="Matches the SEP: the 2026 median moved from 3.4 (a cut) to 3.8 (a hike)."
+            chip="checks out"
+            status="ok"
+          />
+        </OutletCheckFold>
       </section>
 
       <section id="claim-check">

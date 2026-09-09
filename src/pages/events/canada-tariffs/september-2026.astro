@@ -11,6 +11,7 @@ import BarChart from "../../../components/story/BarChart.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
@@ -286,8 +287,6 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <OutletCheck outlet="The Detroit News (Reuters)" claim={`carried the Reuters dispatch converting Finance as &ldquo;C$27.6 billion ($19.94 billion)&rdquo; of U.S. goods, and the same 700-product line as MarketScreener.`} verdict={`C$${financeCoveredCad} billion at the Bank of Canada August 25 rate is US$${computed.usdCovered} billion: consistent. The text is Reuters, as MarketScreener carried it. The 700-product attribution is the same unconfirmed count.`} chip="consistent" status="ok"><Cite s="detroitnews-canada-tariffs-2026-08-25" passage="C$27.6 billion ($19.94 billion)" /></OutletCheck>
 
-        <OutletCheck outlet="Associated Press" claim={`wrote that the Canadian tariffs &ldquo;cover about $20 billion in American goods, roughly 6% of the $333.6 billion the United States exported to Canada last year.&rdquo; PBS NewsHour carried the same dispatch.`} verdict={`The Census 2025 export total is ${census2025.exports.toLocaleString("en-US")} million dollars, US$${computed.censusExports2025Rounded} billion as rounded. Twenty billion is ${computed.share20OfUsExportsPct} percent of that total. The arithmetic checks out on the Census series.`} chip="checks out" status="ok"><Cite s="ap-canada-tariffs-2026-09-08" passage="roughly 6% of the $333.6 billion" /></OutletCheck>
-
         <OutletCheck outlet="BBC" claim={`wrote that the Canadian tariffs apply to &ldquo;nearly C$28bn ($20bn; £15bn)&rdquo; and that support programmes total &ldquo;C$7.5bn.&rdquo;`} verdict={`Finance Canada prints ${financeCoveredCad} billion and ${supportPackage} billion with no currency tag. The C$ conversion and the US$20 billion equivalent match the Bank of Canada rate as rounded.`} chip="consistent" status="ok"><Cite s="bbc-canada-tariffs-2026-08-25" passage="nearly C$28bn ($20bn; £15bn)" /></OutletCheck>
 
         <OutletCheck outlet="The Guardian" claim={`wrote that the tariffs apply to products covering &ldquo;C$27.6bn in imports from the US&rdquo; and quoted the government that they do not apply to goods in transit.`} verdict="The C$ label matches how Finance Canada writes. The in-transit exception is in the Order and in Customs Notice 26-23." chip="consistent" status="ok"><Cite s="guardian-canada-tariffs-2026-09-07" passage="C$27.6bn in imports from the US" /></OutletCheck>
@@ -299,6 +298,9 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <OutletCheck outlet="Reuters, as carried by Investing.com" claim={`wrote that Canada removed seafood and fish products from the counter-tariff list, quoting Finance: &ldquo;including removing seafood and fish products from our list of counter tariffs.&rdquo;`} verdict={`The saved tables match the removal. Reuters.com does not let its pages be saved; this card uses the Investing.com carrier. The reason is what Reuters reported Finance posted, not a government record held as its own file.`} chip="checks out" status="ok"><Cite s="investing-reuters-seafood-2026-08-27" passage="including removing seafood and fish products from our list of counter tariffs" /></OutletCheck>
 
         <OutletCheck outlet="White House fact sheet, September 8" claim={`wrote that Canada imposed new retaliatory tariffs on &ldquo;about $20 billion of U.S. exports, including steel, dairy, and agricultural equipment.&rdquo;`} verdict={`Finance printed C$${financeCoveredCad} billion of imports from the U.S., about US$${computed.usdCoveredRounded} billion at the August 25 Bank of Canada rate. Steel, dairy, and agricultural equipment are on the saved list. The fact sheet does not print the Canadian-dollar figure.`} chip="consistent" status="ok"><Cite s="wh-fact-sheet-2026-09-08" passage="about $20 billion of U.S. exports" /><Cite s="finance-countermeasures-2026-08-25" passage="products covering $27.6 billion in imports from the U.S." /></OutletCheck>
+        <OutletCheckFold count={1} method="the primary records.">
+          <OutletCheck folded outlet="Associated Press" claim={`wrote that the Canadian tariffs &ldquo;cover about $20 billion in American goods, roughly 6% of the $333.6 billion the United States exported to Canada last year.&rdquo; PBS NewsHour carried the same dispatch.`} verdict={`The Census 2025 export total is ${census2025.exports.toLocaleString("en-US")} million dollars, US$${computed.censusExports2025Rounded} billion as rounded. Twenty billion is ${computed.share20OfUsExportsPct} percent of that total. The arithmetic checks out on the Census series.`} chip="checks out" status="ok"><Cite s="ap-canada-tariffs-2026-09-08" passage="roughly 6% of the $333.6 billion" /></OutletCheck>
+        </OutletCheckFold>
         </div>
       </section>
 
