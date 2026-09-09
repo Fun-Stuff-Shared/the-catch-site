@@ -190,6 +190,7 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 ## Language rules (hard, enforced by the gate)
 
 - No em dashes anywhere in public copy.
+- Quote the record once per paragraph, then say what it means in the reader's words. A paragraph with two quotations is two paragraphs or one quotation.
 - No internal vocabulary in visible text. The gate's list: byte-captured, capture debt,
   operator review, signed export, retrieval, automated, staging, sha256, checked into,
   admission row hash, eligible claim, manifested, dossier, extraction pipeline, staged,
