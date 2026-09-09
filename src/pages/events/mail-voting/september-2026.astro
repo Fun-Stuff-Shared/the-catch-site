@@ -8,6 +8,7 @@ import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
 import BarChart from "../../../components/story/BarChart.astro";
+import DateLine from "../../../components/story/DateLine.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
@@ -17,7 +18,7 @@ import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event, computed, plaintiffs, plaintiffOther, intervenors, orgPlaintiffs, stateEstimateRows, sampleRows,
-  daysBars, applicationsTable, timeline, courtSteps, dmmRows, mailingRows,
+  dateLine, applicationsTable, timeline, courtSteps, dmmRows, mailingRows,
 } from "../../../data/mailvoting202609.mjs";
 const state = readPublishedState().events.get("event-mail-voting-september-2026");
 if (!state) throw new Error("Missing publication selection: event-mail-voting-september-2026");
@@ -202,7 +203,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Days remaining to November 3, from each dated step</strong><span>Counted from the dates in the filings to the election named in 2 U.S.C. 7 and in the injunction.</span></figcaption>
-          <BarChart bars={daysBars} ariaLabel="Days from each dated step to November 3, 2026" highlightLast={true} />
+          <DateLine {...dateLine} ariaLabel="Days from each dated step to November 3, 2026" />
           <p class="chart-source">{computed.daysEffectiveToElection} days run from the rule's August 21 effective date to November 3. {computed.daysRuleToElection} days run from August 26 publication to that election. Sunday's filing is {computed.daysFilingToElection} days before the election. September 19 is the UOCAVA statutory mailing date, {computed.daysFilingToUocava} days after the filing; the rule excludes UOCAVA ballots, so that date is context, not a deadline under this rule.<Cite s="usps-final-rule" passage="Effective August 21, 2026" /><Cite s="uocava-52usc20302" passage="the request is received at least 45 days before an election" /></p>
           <p class="chart-vintage" data-layer="proof">Day counts are calendar days between those dates at UTC midnight. {computed.daysEffectiveToElection} is November 3 minus August 21. {computed.daysRuleToElection} is November 3 minus August 26. {computed.daysFilingToElection} is November 3 minus September 6. {computed.uocavaDaysBeforeElection} is November 3 minus September 19.</p>
         </figure>

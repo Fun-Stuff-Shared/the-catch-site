@@ -98,14 +98,18 @@ export const orgPlaintiffs = [
   "Delta Sigma Theta Sorority, Inc.",
 ];
 
-export const daysBars = [
-  { label: "EO, Mar 31", value: computed.daysEoToElection },
-  { label: "Rule effective, Aug 21", value: computed.daysEffectiveToElection },
-  { label: "Rule published, Aug 26", value: computed.daysRuleToElection },
-  { label: "26A297, Sep 3", value: computed.days297ToElection },
-  { label: "Injunction, Sep 4", value: computed.daysPiToElection },
-  { label: "26A305, Sep 6", value: computed.daysFilingToElection },
-];
+export const dateLine = {
+  points: [
+    { date: "Mar 31", label: "Executive order" },
+    { date: "Aug 21", label: "Rule effective" },
+    { date: "Aug 26", label: "Rule published" },
+    { date: "Sep 3", label: "26A297" },
+    { date: "Sep 4", label: "Injunction" },
+    { date: "Sep 6", label: "26A305" },
+    { date: "Nov 3", label: "Election" },
+  ],
+  intervals: [{ days: 143 }, { days: 5 }, { days: 8 }, { days: 1 }, { days: 2 }, { days: computed.daysFilingToElection }],
+};
 
 export const applicationsTable = [
   ["26A124", "July 27", "Stay the injunction of Executive Order 14399", "Granted August 24"],

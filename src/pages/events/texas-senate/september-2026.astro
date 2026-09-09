@@ -161,7 +161,7 @@ const moneyRows = [
 
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Outside money in the general election, by committee</strong><span>Millions of dollars reported to the FEC. Bars above zero help Paxton or oppose Talarico; bars below zero help Talarico or oppose Paxton.</span></figcaption>
-          <BarChart bars={outsideMoney.bars} unit="m" ariaLabel="Independent expenditures in the Texas Senate general election by committee, in millions of dollars" highlightLast={false} />
+          <BarChart bars={outsideMoney.bars} unit="m" signed ariaLabel="Independent expenditures in the Texas Senate general election by committee, in millions of dollars" highlightLast={false} />
           <p class="chart-source">MAGA Inc.'s $10 million is the largest single filing. Before the notice, {outsideMoney.committeesBeforeNotice} other committees had reported {millions(outsideMoney.generalBeforeNotice)} in general-election spending on this race; the chart shows the five largest of them.<Cite s="fec-ie-2026-bulk" passage="LONE STAR LIBERTY PAC" /></p>
           <p class="chart-vintage" data-layer="proof">FEC independent-expenditure bulk file, saved September 8, 2026 ({ieGeneral.fileRows.toLocaleString("en-US")} rows). Later filings will add to these totals.</p>
           <details class="receipt" data-layer="proof"><summary>the rows behind the bars</summary>

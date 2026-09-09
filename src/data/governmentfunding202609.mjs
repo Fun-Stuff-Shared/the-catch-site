@@ -131,13 +131,16 @@ export const votesRows = [
   ["House roll 288, Sep 1", "Adopt the rule for other bills, H. Res. 1499", `${ruleVote.yeas} to ${ruleVote.nays}`, `R ${ruleVote.republican.yea} to ${ruleVote.republican.nay}`, `D ${ruleVote.democratic.yea} to ${ruleVote.democratic.nay}`],
 ];
 
-export const daysBars = [
-  { label: "Senate vote to House vote", value: calendar.daysSenateToHouse },
-  { label: "Hemp delay, Nov 12 to Dec 11", value: hemp.delayDays },
-  { label: "Election to Dec 11", value: calendar.daysElectionToExpiry },
-  { label: "House vote to election", value: calendar.daysHouseVoteToElection },
-  { label: "House vote to Dec 11", value: calendar.daysHouseVoteToExpiry },
-];
+export const dateLine = {
+  points: [
+    { date: "Sep 1", label: "House vote" },
+    { date: "Nov 3", label: "Election" },
+    { date: "Nov 12", label: "Hemp date" },
+    { date: "Dec 11", label: "Funding ends" },
+  ],
+  intervals: [{ days: calendar.daysHouseVoteToElection }, { days: 9 }, { days: hemp.delayDays }],
+  highlight: { label: "House vote to Dec 11", days: calendar.daysHouseVoteToExpiry },
+};
 
 export const exceptionRows = [
   ["Sec. 101", "Continues the twelve 2026 appropriations acts at their rates, with listed exceptions"],

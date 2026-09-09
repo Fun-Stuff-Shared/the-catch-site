@@ -10,12 +10,13 @@ import StateEvent from "../../../components/StateEvent.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import BarChart from "../../../components/story/BarChart.astro";
+import DateLine from "../../../components/story/DateLine.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
-import { event, houseVote, senateVote, calendar, hemp, julyVote, januaryVote, ruleVote, buddVote, timeline, votesRows, daysBars, exceptionRows } from "../../../data/governmentfunding202609.mjs";
+import { event, houseVote, senateVote, calendar, hemp, julyVote, januaryVote, ruleVote, buddVote, timeline, votesRows, dateLine, exceptionRows } from "../../../data/governmentfunding202609.mjs";
 const state = readPublishedState().events.get("event-government-funding-september-2026");
 if (!state) throw new Error("Missing publication selection: event-government-funding-september-2026");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
@@ -171,7 +172,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">Where this sits</h2>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>The days between the dates</strong><span>Counted from the roll-call dates, the election date, and the enrolled text's December 11.</span></figcaption>
-          <BarChart bars={daysBars} unit="days" ariaLabel="Elapsed days between the dated steps" highlightLast={true} />
+          <DateLine {...dateLine} ariaLabel="Elapsed days between the dated steps" />
           <p class="chart-source">{calendar.daysHouseVoteToExpiry} days from the House vote to December 11 is DeLauro's count. The election falls {calendar.daysHouseVoteToElection} days after the vote and {calendar.daysElectionToExpiry} days before the money ends.<Cite s="delauro-house-passage-2026-09-01" passage="We have 101 days until government funding expires" /><Cite s="fec-election-dates" passage="Tuesday, November 3, 2026 , is the next regularly scheduled federal General Election date" /></p>
         </figure>
         <p data-layer="narrative">H.R. 6500 began as a January trade bill. On January 12 the House passed it, as amended, {januaryVote.yeas} to {januaryVote.nays} on a motion to suspend the rules, titled "AGOA Extension Act." AGOA is the African Growth and Opportunity Act, a trade-preference law for sub-Saharan African countries. The Senate used that bill number as the vehicle for the stopgap, changed the title, and sent the rewritten text back. The Clerk's record still prints the old name on roll call 286. The enrolled parchment carries the new one, and keeps a two-year AGOA extension inside it.<Cite s="house-clerk-roll014" passage="On Motion to Suspend the Rules and Pass, as Amended" /><Cite s="house-clerk-roll286" passage="AGOA Extension Act" /><Cite s="hr6500-enrolled" passage="SEC. 2008. EXTENSION OF AFRICAN GROWTH AND OPPORTUNITY ACT." /></p>
