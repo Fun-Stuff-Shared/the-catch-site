@@ -1170,3 +1170,35 @@ Pinned September 8, 2026. Official PDFs from supremecourt.gov, govinfo, the Cali
 | data/sources/coverage/boereport-reuters-chevron-2026-09-08.txt | 1353 | 3e24d20d4ccdcd1c |
 
 The Canada-tariffs September 2026 pins include a Finance Canada HTML table extracted to text, a later complete-list page whose HTML table was extracted to text, a Census goods-with-Canada table extracted to CSV, and a Reuters August 25 dispatch as carried by MarketScreener because reuters.com does not let its pages be saved. The justice.gc.ca FullText URL for SOR/2026-187 and a White House alcohol-scope URL each returned a missing page.
+| data/sources/canada-tariffs/boc-fxusdcad-2026-08-25.json | 562 | 7326db1c6eab4b8e |
+| data/sources/canada-tariffs/boc-fxusdcad-2026-08-25.txt | 366 | 7ba3091948c691bc |
+| data/sources/canada-tariffs/annex-i-dairy-2026-09-08.pdf | 114009 | 6df69657f7f92d87 |
+| data/sources/canada-tariffs/annex-i-dairy-2026-09-08.txt | 2053 | 2eff8b67a4c87eb1 |
+| data/sources/canada-tariffs/annex-i-motor-vehicles-2026-09-08.pdf | 103322 | 6135b001a8ed0db2 |
+| data/sources/canada-tariffs/annex-i-motor-vehicles-2026-09-08.txt | 682 | 8a36b01b9fd1fc7e |
+| data/sources/canada-tariffs/annex-i-alcohol-2026-09-08.pdf | 159650 | 6e503577e5efe29e |
+| data/sources/canada-tariffs/annex-i-alcohol-2026-09-08.txt | 8275 | f0b3b3b91d91c1d9 |
+| data/sources/canada-tariffs/annex-i-auto-scope-2026-09-08.pdf | 173303 | 1db80c418a73075e |
+| data/sources/canada-tariffs/annex-i-auto-scope-2026-09-08.txt | 10683 | 4de8bfb7731dda6c |
+| data/sources/canada-tariffs/annex-ii-auto-scope-2026-09-08.pdf | 114381 | 12af1698a894001c |
+| data/sources/canada-tariffs/annex-ii-auto-scope-2026-09-08.txt | 2671 | 22fc363ec1a916e9 |
+| data/sources/canada-tariffs/finance-product-list-2026-08-25.html | 419343 | e234c80e336c9f81 |
+| data/sources/canada-tariffs/finance-product-list-2026-08-25.txt | 247334 | 491b8c86d8bce8fb |
+| data/sources/canada-tariffs/finance-advisory-2026-08-24.html | 33278 | 898e0ac659dc2942 |
+| data/sources/canada-tariffs/finance-advisory-2026-08-24.txt | 3544 | 37ad9def8e07039c |
+| data/sources/canada-tariffs/ontario-ford-2026-08-24.html | 1505 | 3c9b0f3b7e5fa284 |
+| data/sources/canada-tariffs/ontario-ford-2026-08-24.txt | 16 | a1ca2f6428a76055 |
+| data/sources/canada-tariffs/quebec-frechette-2026-09-07.html | 48242 | 39cc7c24597cde71 |
+| data/sources/canada-tariffs/quebec-frechette-2026-09-07.txt | 6297 | d833492e639c39b1 |
+| data/sources/canada-tariffs/cusma-joint-review.html | 39820 | ed6877e3f30762d8 |
+| data/sources/canada-tariffs/cusma-joint-review.txt | 8262 | 3b81aae43b984b91 |
+| data/sources/canada-tariffs/census-state-index.html | 29485 | aa5fc5f5ae1aa36a |
+| data/sources/canada-tariffs/census-state-index.txt | 453 | f06c881b1a58f129 |
+| data/sources/canada-tariffs/census-origin-movement-index.html | 1005349 | be40a84c57e9f5d4 |
+| data/sources/canada-tariffs/census-origin-movement-index.txt | 4725 | 4ded709b28f3c18e |
+| data/sources/canada-tariffs/census-exh2s-2512-table.xlsx | 23256 | b76aae9479e85607 |
+| data/sources/canada-tariffs/census-exh2s-2512-table.txt | 9062 | acad4c66a25eda81 |
+| data/sources/canada-tariffs/census-exh2s-2512-exhibit.pdf | 156910 | 4926e1117538faeb |
+| data/sources/canada-tariffs/census-exh2s-2512-exhibit.txt | 11339 | 89383f9af72aec45 |
+
+The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.
