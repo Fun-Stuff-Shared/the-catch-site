@@ -215,3 +215,9 @@ and a product are three units. Name the unit with every count and compare only l
 The first completeness audit ran on the page as it stood before the rework landed; its
 findings were half stale. Launch the audit only after the rework commit exists, and never
 as a child of the authoring run (the runbook launches it detached).
+
+## A count delta without its composition
+
+The page said the Finance table went from 874 lines to 629 and that no saved record named the reason. The diff was one regex away: 254 codes removed, every one in HS chapter 03 (fish), nine industrial lines added, and the C$27.6 billion headline unchanged. That composition is the story; the bare delta hid it through three reworks and two audits.
+
+Rule: whenever a page states two counts of the same list at two dates, compute the removed and added sets from the two pins, put the counts and the category breakdown in the data module with the source files named, and say on the page what left and what came in. Then check the issuing institution's releases for the days after the change before writing that no record explains it; a same-day or next-day release often does. A statute cited by an order gets its effective-date clause read against the order's own dates.
