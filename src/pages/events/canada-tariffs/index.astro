@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/canada-tariffs.mjs';
+---
+<SeriesOverview title={subject.title} description="Canada's counter-tariffs on $27.6 billion of U.S. goods took effect September 8, 17 days after the U.S. 50 percent Section 338 duties took effect." path="/events/canada-tariffs/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>

@@ -1,0 +1,282 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import BarChart from "../../../components/story/BarChart.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import CheckedBlock from "../../../components/story/CheckedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import {
+  event, financeCoveredCad, supportPackage, listItems, listRate50, listRate25, listRate15,
+  oicItems, oicRate15, oicRate25, oicRate50, census2025, computed, rateBars, moneyRows, timeline,
+  bbcCovered, bbcSupport, detroitCovered,
+} from "../../../data/canadatariffs202609.mjs";
+const state = readPublishedState().events.get("event-canada-tariffs-september-2026");
+if (!state) throw new Error("Missing publication selection: event-canada-tariffs-september-2026");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/canada-tariffs/">Canada tariffs</a><span>September 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Ottawa and Washington &middot; July 20 to September 8, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On July 20, 2026, President Donald J. Trump signed three proclamations under Section 338 of the Tariff Act of 1930 imposing an additional 50 percent duty on listed goods of Canada, originally from 12:01 a.m. eastern time on August 19.<Cite s="wh-fact-sheet-2026-07-20" passage="three Proclamations pursuant to Section 338 of the Tariff Act of 1930" /></li>
+          <li>On August 22 those duties took effect after a three-day pause, and Prime Minister Mark Carney said Canada would "match Washington’s new tariffs dollar for dollar," with Canadian measures "the Tuesday after Labour Day."<Cite s="proc-exclude-dairy-2026-09-08" passage="at 12:01 a.m. eastern time on August 22, 2026" /><Cite s="carney-remarks-2026-08-22" passage="match Washington’s new tariffs dollar for dollar" /></li>
+          <li>The United States Surtax Order (2026), Order in Council PC 2026-0785 dated September 4, came into force on September 8. Finance Canada had said the counter-tariffs cover ${financeCoveredCad} billion in imports from the United States at 15, 25, and 50 percent.<Cite s="oic-pc-2026-0785" passage="This Order comes into force on September 8, 2026" /><Cite s="finance-countermeasures-2026-08-25" passage="products covering $27.6 billion in imports from the U.S." /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the White House fact sheet of July 20, the three Section 338 proclamations, Proclamation 11056 as published in the Federal Register, the motor-vehicles proclamation's public-inspection PDF, Prime Minister Carney's August 22 remarks, the Department of Finance Canada release of August 25 and the product table updated August 26, Order in Council PC 2026-0785, Canada Border Services Agency Customs Notices 26-23 and 25-11, the motor-vehicle remission order in the Canada Gazette, the Census Bureau's goods-with-Canada series, Statistics Canada's Daily for December 2025, the USTR Canada page, the White House August 25 reply, the Bank of Canada September 2 rate decision, the September 8 White House proclamations on scope and import exclusion including alcoholic beverages, Carney's September 8 words as carried by the Winnipeg Free Press from the YouTube transcript, and coverage checked against those records. Days and item counts are counted from those files.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The U.S. proclamations first, then Canada's order</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <p data-layer="narrative">On July 20, 2026, Trump signed three proclamations under Section 338 of the Tariff Act of 1930. A proclamation here is a presidential order that changes the duty, the extra charge collected at the border, on named goods. Section 338 lets the president add a duty of up to 50 percent when he finds that another country discriminates against U.S. commerce. Each of the three proclamations imposed an additional 50 percent duty on a basket of Canadian goods, one framed around alcoholic beverages, one around dairy, and one around motor vehicles, "regardless of whether a good originates under the U.S.-Mexico-Canada Agreement (USMCA)."<Cite s="wh-fact-sheet-2026-07-20" passage="regardless of whether a good originates under the U.S.-Mexico-Canada Agreement" /></p>
+        <p data-layer="narrative">The original effective time in those proclamations was 12:01 a.m. eastern on August 19, 2026.<Cite s="proc-alcohol-2026-07-20" passage="12:01 a.m. eastern time on August 19, 2026" /></p>
+        <p data-layer="narrative">The July 20 fact sheet said that from March 2025 through February 2026, Canadian imports of U.S. alcoholic beverages "decreased by about 81%, or $582 million," and that "All but two Canadian provinces and territories have halted the purchase, distribution, or retailing of U.S. alcoholic beverages."<Cite s="wh-fact-sheet-2026-07-20" passage="decreased by about 81%, or $582 million" /></p>
+
+        <p data-layer="narrative">On August 18 he signed Proclamation 11056, which moved that effective time to 12:01 a.m. eastern on August 22. A later proclamation of September 8 records that the three-day pause then lapsed and the 50 percent duties "became effective."<Cite s="proc-11056-fr-2026-08-24" passage="12:01 a.m. eastern time on" /><Cite s="proc-exclude-dairy-2026-09-08" passage="the additional ad valorem duties imposed under Proclamation 11047 became effective" /></p>
+
+        <p data-layer="narrative">The same August 22, Carney told Canadians he had suspended the talks the evening before and that Canada would match the new U.S. tariffs "dollar for dollar." He said the Canadian measures would be concentrated in steel, dairy, appliances, agricultural equipment, pulp and paper, and electronics, and "will come into force the Tuesday after Labour Day." That Tuesday was September 8. He said Canada took the step "reluctantly," because "it will raise costs and reduce choice for Canadians."<Cite s="carney-remarks-2026-08-22" passage="the Tuesday after Labour Day" /></p>
+
+        <p data-layer="narrative">On August 25, François-Philippe Champagne, Minister of Finance and National Revenue, with Mélanie Joly, Minister of Industry, and colleagues, put numbers on that match. A tariff, in this story, is the extra charge on an imported good, stated as a percent of its value. Finance Canada called the Canadian reply "counter-tariffs" and "countermeasures": extra charges meant to answer the U.S. duties. The release said the United States had imposed a 50 percent tariff on ${financeCoveredCad} billion of Canadian goods effective August 22, and that Canada would "match the new U.S. tariffs dollar for dollar, rate for rate," with 15, 25, and 50 percent charges on products "covering ${financeCoveredCad} billion in imports from the U.S." It also named a ${supportPackage} billion support package for workers and businesses.<Cite s="finance-countermeasures-2026-08-25" passage="dollar for dollar, rate for rate" /></p>
+        <p data-layer="narrative">BBC the same day converted that coverage as {bbcCovered}, and printed the support as {bbcSupport}.<Cite s="bbc-canada-tariffs-2026-08-25" passage="nearly C$28bn ($20bn; £15bn)" /></p>
+        <p data-layer="narrative">BBC wrote that the Conservative opposition asked that the full text of the draft deal with the United States be released.<Cite s="bbc-canada-tariffs-2026-08-25" passage="the Conservative opposition asking that the full text of the draft deal with the US be released" /></p>
+        <p data-layer="narrative">The White House the same day said the United States had offered Canada "the most preferential market access of any country on Earth."<Cite s="wh-ending-free-ride-2026-08-25" passage="the most preferential market access of any country on Earth" /></p>
+        <p data-layer="narrative">The same White House release said, "Instead of partnership, Canada chose unreasonable demands, walk-backs, and flat-out rejection."<Cite s="wh-ending-free-ride-2026-08-25" passage="Instead of partnership, Canada chose unreasonable demands, walk-backs, and flat-out rejection" /></p>
+
+        <p data-layer="narrative">A tariff item is a line in the customs tariff, the numbered list used to classify a good at the border. The Finance table, "updated as of August 26, 2026," lists {listItems} such lines at those three rates. An Order in Council is a cabinet order, here made by the Governor General on the finance minister's recommendation. PC 2026-0785, dated September 4, makes the United States Surtax Order (2026). A surtax is the Canadian legal name for that extra charge. The order sets 15 percent on Schedule 1, 25 percent on Schedule 2, and 50 percent on Schedule 3, and says it "comes into force on September 8, 2026." The Canada Border Services Agency, which collects the charge, issued Customs Notice 26-23 on September 7 explaining how it applies, including that goods "in transit to Canada" that day are not charged.<Cite s="finance-product-list-2026-08-26" passage="List updated as of August 26, 2026" /><Cite s="oic-pc-2026-0785" passage="United States Surtax Order (2026)" /><Cite s="cbsa-cn26-23" passage="in transit to Canada" /></p>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the U.S. proclamations to Canada's order</strong><span>Dates from the White House proclamations, Carney's remarks, Finance Canada, the Order in Council, and CBSA.</span></figcaption>
+          <DecisionTimeline entries={timeline} />
+          <p class="chart-source">Seventeen days separate the U.S. duties taking effect on August 22 and Canada's order taking effect on September 8.<Cite s="oic-pc-2026-0785" passage="comes into force on September 8, 2026" /></p>
+        </figure>
+
+        <QuoteCard when="August 22, 2026" where="Remarks on Canada-U.S. trade negotiations" label="Prime Minister of Canada">
+          <p>Canada will match Washington’s new tariffs dollar for dollar in order to protect Canadian workers, farmers, families, and businesses.<Cite s="carney-remarks-2026-08-22" passage="match Washington’s new tariffs dollar for dollar" /></p>
+        </QuoteCard>
+
+        <QuoteCard when="August 25, 2026" where="Department of Finance Canada news release" label="Finance Canada">
+          <p>When the United States asked too much and offered too little, we chose to stand up for Canadians.<Cite s="finance-countermeasures-2026-08-25" passage="When the United States asked too much and offered too little, we chose to stand up for Canadians" /></p>
+        </QuoteCard>
+
+        <QuoteCard when="September 8, 2026" where="Forward Guidance video, as transcribed by the Winnipeg Free Press" label="Winnipeg Free Press, from the YouTube transcript">
+          <p>I don’t believe in escalating the conflict, that’s not constructive, but our tariffs are necessary to protect our workers, companies and communities.<Cite s="wfp-carney-forward-guidance-2026-09-08" passage="I don’t believe in escalating the conflict, that’s not constructive" /></p>
+        </QuoteCard>
+
+        <SourcedBlock source="oic-pc-2026-0785" kind="record" detail>
+          <p>PC 2026-0785: goods originating in the United States classified under Schedule 1, 2, or 3 "are subject to a surtax" of 15, 25, or 50 percent of the value for duty. Goods "in transit to Canada on the day on which this Order comes into force" are excepted.<Cite s="oic-pc-2026-0785" passage="in transit to Canada on the day on which this Order comes into force" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="cbsa-cn26-23" kind="record" detail>
+          <p>Customs Notice 26-23, Ottawa, September 7, 2026: effective September 8, listed U.S.-origin goods "are subject to a surtax of either 15%, 25% or 50% of the value for duty." Origin is the CUSMA marking rule. Remission, a later write-off of a charge already due, remains available under the 2025 remission order and the U.S. Remission Framework.<Cite s="cbsa-cn26-23" passage="surtax of either 15%, 25% or 50% of the value for duty" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <span class="catch-tag">Told versus record</span>
+              <span class="catch-lead">$27.6 billion, and $20 billion, and a currency the release does not print.</span>
+              Finance Canada uses ${financeCoveredCad} billion for both the U.S. 50 percent action and Canada's reply, with no currency tag.<Cite s="finance-countermeasures-2026-08-25" passage="$27.6 billion of Canadian goods effective August 22" /> BBC, on August 25, wrote that the Canadian tariffs apply to "{bbcCovered}."<Cite s="bbc-canada-tariffs-2026-08-25" passage="nearly C$28bn ($20bn; £15bn)" /> The Detroit News the same day wrote {detroitCovered}.<Cite s="detroitnews-canada-tariffs-2026-08-25" passage="C$27.6 billion ($19.94 billion)" /> The Associated Press later wrote they "cover about $20 billion in American goods, roughly 6% of the $333.6 billion the United States exported to Canada last year," a Census total in U.S. dollars; twenty billion is {computed.share20OfUsExportsPct} percent of that total.<Cite s="ap-canada-tariffs-2026-09-08" passage="about $20 billion in American goods, roughly 6%" /> The Hill put "around 6 percent" next to the unlabeled ${financeCoveredCad} billion and wrote "more than 700 U.S. products"; the saved Finance table has {listItems} tariff items.<Cite s="hill-canada-tariffs-2026-09-08" passage="more than 700 U.S. products" /> Why it matters: the two dollar totals can be one Canadian-dollar figure converted, or two different baskets, and Finance never says which. <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <span class="catch-tag">Left out</span>
+              <span class="catch-lead">Two Canadian instruments, not one list.</span>
+              The Finance table of {listItems} lines is the public schedule of goods Finance says face a counter-tariff from September 8, including steel and aluminum at 50 percent. The United States Surtax Order (2026) itself lists {oicItems} tariff items in English Schedules 1 to 3 ({oicRate15} at 15 percent, {oicRate25} at 25 percent, {oicRate50} at 50 percent). Steel and aluminum rate increases sit in a separate instrument: Customs Notice 25-11, updated September 7, points to the Order Amending the United States Surtax Order (Steel and Aluminum 2025), SOR/2026-187, raising those goods to 50 percent on September 8. Finance Canada's steel and aluminum page says Canada "maintains a non-stackable policy": only one of the U.S., China, or quota steel measures applies to a given good. Why it matters: a reader of only the 2026 Order misses the steel increase that Finance put on the public list, and an importer of U.S. steel needs the stacking rule to know which charge is due.<Cite s="cbsa-cn25-11" passage="surtax rate increases to 50%" /><Cite s="finance-steel-aluminum" passage="Canada maintains a non-stackable policy" /> <a class="catch-jump" href="#where-this-sits">Where this sits</a>
+            </li>
+            <li>
+              <span class="catch-tag">Who pays</span>
+              <span class="catch-lead">The charge is at Canada's border, on U.S.-origin goods.</span>
+              Carney said the step "will raise costs and reduce choice for Canadians." The Finance table puts a 50 percent rate on U.S. perfumes (3303.00.00), cotton T-shirts (6109.10.00), and smartphones (8517.13.00), and a 25 percent rate on specified cheeses (chapter 04.06). Goods already on the water or in a carrier's control bound for Canada on September 8 are excepted if the importer can prove it. Remission requests continue under the U.S. Remission Framework. Why it matters: a Canadian household meets the new charge as a higher import price on listed U.S. goods, not as a U.S. customs bill.<Cite s="carney-remarks-2026-08-22" passage="raise costs and reduce choice for Canadians" /><Cite s="finance-product-list-2026-08-26" passage="3303.00.00 | Perfumes and toilet waters" /><Cite s="cbsa-cn26-23" passage="U.S. Remission Framework" /> <a class="catch-jump" href="#who-feels-it">Who feels it</a>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">Two annual trade totals, and a three-rate list</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <p data-layer="narrative">The Census Bureau's goods-with-Canada series, saved from the country page, puts 2025 U.S. goods exports to Canada at ${computed.censusExports2025Rounded} billion and U.S. goods imports from Canada at ${computed.censusImports2025Rounded} billion. The USTR Canada page states the same 2025 goods-export and goods-import totals as $333.6 billion and $381.9 billion.<Cite s="census-c1220-canada" passage="TOTAL 2025" /><Cite s="ustr-canada" passage="U.S. goods exports to Canada in 2025 were $333.6 billion" /></p>
+
+        <p data-layer="narrative">Statistics Canada's Daily for December 2025, on a balance-of-payments basis, says 2025 exports to the United States were down 5.8 percent and imports from the United States decreased 2.9 percent, leaving a merchandise trade surplus with the United States of $81.6 billion. It says the United States took 71.7 percent of Canada's merchandise exports in 2025, down from 75.9 percent in 2024, and supplied 58.8 percent of imports, down from 62.3 percent.<Cite s="statcan-daily-2025-12" passage="merchandise trade surplus with the United States totalled $81.6 billion" /></p>
+
+        <p data-layer="narrative">Finance Canada's ${financeCoveredCad} billion is the figure the department uses for the slice of goods it says is now matched. The White House July 20 fact sheet names the 50 percent rate, Section 338, and the three baskets. It does not name a dollar value for the goods those proclamations cover.<Cite s="wh-fact-sheet-2026-07-20" passage="additional 50% tariffs on certain goods of Canada" /></p>
+        <p data-layer="narrative">BBC converted the Canadian figure the day Finance announced it, as {bbcCovered}.<Cite s="bbc-canada-tariffs-2026-08-25" passage="nearly C$28bn ($20bn; £15bn)" /></p>
+        <p data-layer="narrative">The Associated Press later used "about $20 billion" against the Census export total in U.S. dollars.<Cite s="ap-canada-tariffs-2026-09-08" passage="about $20 billion in American goods" /></p>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Finance Canada's August 26 table, by rate</strong><span>Tariff items counted from the saved product list.</span></figcaption>
+          <BarChart bars={rateBars} ariaLabel="Tariff items on the Finance Canada list by rate" />
+          <p class="chart-source">{listRate50} lines at 50 percent, {listRate25} at 25 percent, {listRate15} at 15 percent, {listItems} in all.<Cite s="finance-product-list-2026-08-26" passage="List updated as of August 26, 2026" /></p>
+          <p class="chart-vintage" data-layer="proof">Counted from the Finance Canada table saved August 26, 2026.</p>
+        </figure>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The coverage dollars against the Census 2025 export total</strong><span>Finance Canada's $27.6 billion is unlabeled. BBC printed a Canadian-dollar conversion. Census totals are in U.S. dollars.</span></figcaption>
+          <DataTable columns={["Figure", "What it is", "Record"]} rows={moneyRows} />
+          <p class="chart-source">Twenty billion is {computed.share20OfUsExportsPct} percent of the Census 2025 export total.<Cite s="census-c1220-canada" passage="333,619.7" /></p>
+          <p class="chart-vintage" data-layer="proof">Census annual totals taken from the saved goods-with-Canada table. Finance figures from the August 25 release.</p>
+        </figure>
+
+        <p data-layer="narrative">The so what is the scale: even at Finance's ${financeCoveredCad} billion, this is a slice of a goods relationship the Census Bureau puts above $700 billion a year, two ways. The rates on the listed lines are not a slice. They are 15, 25, or 50 percent of the value of those lines.<Cite s="ustr-canada" passage="U.S. goods trade (exports plus imports) with Canada totaled an estimated $715.5 billion in 2025" /></p>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">A dated list, then who pays</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <ul class="dated-list" data-layer="fact">
+          <li>August 22, 2026: Carney said some U.S. companies and states "are innocent bystanders in a dispute they did not want," and that the Canadian step "will raise costs and reduce choice for Canadians."<Cite s="carney-remarks-2026-08-22" passage="innocent bystanders in a dispute they did not want" /></li>
+          <li>August 25: Finance named steel, dairy, appliances, agricultural equipment, pulp and paper, and electronics as the focus, and said 50 percent would apply to steel and aluminum that had been at 25 percent, plus furniture and clothing.<Cite s="finance-countermeasures-2026-08-25" passage="steel, dairy, appliances, agricultural equipment, pulp and paper, and electronics" /></li>
+          <li>August 25: BBC named cotton T-shirts and fresh tuna on the Canadian list, and wrote that Trump had threatened to hike U.S. tariffs on Canadian automobiles to 50 percent as of January 1.<Cite s="bbc-canada-tariffs-2026-08-25" passage="hike US tariffs on Canadian automobiles to 50% as of 1 January" /></li>
+          <li>August 26: the saved table includes U.S. milk powders at 50 percent, specified cheeses at 25 percent, air-conditioning machines at 15 percent (8415.10.00), perfumes at 50 percent, cotton T-shirts at 50 percent, and smartphones at 50 percent.<Cite s="finance-product-list-2026-08-26" passage="8517.13.00 | Telephone sets, including smartphones" /></li>
+          <li>August 26: Finance's complete-list page, updated the same day, calls itself "the authoritative source for the complete list."<Cite s="finance-complete-list" passage="This page remains the authoritative source for the complete list" /></li>
+          <li>September 2: the Bank of Canada held its overnight rate at 2.25 percent and wrote that "New US tariffs and Canadian counter-tariffs will also raise costs for some businesses and could feed into consumer prices over time."<Cite s="boc-fad-2026-09-02" passage="New US tariffs and Canadian counter-tariffs will also raise costs for some businesses and could feed into consumer prices over time" /></li>
+          <li>September 7: CBSA said the surtax applies to commercial and casual imports of U.S.-origin goods, including shipments under de minimis thresholds, and that in-transit goods that day are excepted with proof.<Cite s="cbsa-cn26-23" passage="Surtax is applicable on shipments that fall under de minimis thresholds" /></li>
+          <li>September 8: Carney, in the video transcribed by the Winnipeg Free Press, named autos, forestry, steel, and aluminum as the sectors hit hardest by the U.S. duties, and said the ${supportPackage} billion is "on top of nearly $25 billion already delivered."<Cite s="wfp-carney-forward-guidance-2026-09-08" passage="targeted help for the sectors hit hardest: autos, forestry, steel, aluminum" /></li>
+        </ul>
+
+        <p data-layer="narrative">A Canadian household meets the new Canadian charge on listed U.S. goods: perfume, a cotton T-shirt, a phone, cheese, a window air conditioner. A U.S. exporter of those lines meets it as a higher Canadian landing price. Al Jazeera wrote that Canada is the largest buyer of U.S.-manufactured cars.<Cite s="aljazeera-canada-tariffs-2026-09-08" passage="Canada is the largest buyer of US-manufactured cars" /></p>
+        <p data-layer="narrative">Existing Canadian auto surtaxes "remain in place," Finance said.<Cite s="finance-countermeasures-2026-08-25" passage="including autos, remain in place" /></p>
+        <p data-layer="narrative">A separate Gazette remission order still writes off some vehicle surtax for importers who keep producing in Canada.<Cite s="gazette-si-2026-13-motor-remission" passage="United States Surtax Remission Order (Motor Vehicles 2026)" /></p>
+
+        <p data-layer="narrative">The so what is uneven: Carney said the U.S. tariffs "will hurt some Canadians more than others, and that was by design." The Canadian list then points the matching charge at U.S. consumer goods a shopper would recognize, while the support package is built for firms and workers in the sectors the U.S. already hit.<Cite s="wfp-carney-forward-guidance-2026-09-08" passage="hurt some Canadians more than others, and that was by design" /></p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">Errors first, then what checked out</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+        <p data-layer="fact">Nine outlets were checked against the primary records. Six cards below. Errors first.</p>
+
+        <div data-layer="fact">
+        <OutletCheck outlet="The Hill" claim={`wrote that the tariffs cover &ldquo;more than 700 U.S. products&rdquo; and &ldquo;around 6 percent of what the U.S. exported to Canada last year,&rdquo; next to a &ldquo;$27.6 billion&rdquo; lead.`} verdict={`The saved Finance table has ${listItems} tariff items. Six percent fits a $20 billion figure against the Census 2025 export total of $${computed.censusExports2025Rounded} billion, not $${financeCoveredCad} billion.`} chip="mislabeled" status="warn"><Cite s="hill-canada-tariffs-2026-09-08" passage="more than 700 U.S. products" /></OutletCheck>
+
+        <OutletCheck outlet="Al Jazeera" claim={`wrote that Canada &ldquo;would launch a $5.42bn support package&rdquo; and that the tariffs apply to &ldquo;nearly $20bn worth of US imports&rdquo; and &ldquo;more than 700 products.&rdquo;`} verdict={`Finance Canada announced a $${supportPackage} billion package, unlabeled. BBC printed that support as ${bbcSupport}. The $5.42 billion figure is not in the Finance release. The saved table has ${listItems} lines, not 700.`} chip="mislabeled" status="warn"><Cite s="aljazeera-canada-tariffs-2026-09-08" passage="$5.42bn support package" /></OutletCheck>
+
+        <OutletCheck outlet="USA Today" claim={`wrote that the U.S. imposed 50 percent tariffs on &ldquo;an estimated 5% worth of Canadian imports,&rdquo; and that Canada's reply covers &ldquo;about $20 billion worth of U.S. products.&rdquo;`} verdict={`Five percent of the Census 2025 U.S. import total from Canada ($${computed.censusImports2025Rounded} billion) is about $19 billion. The White House fact sheet does not state that 5 percent. The $20 billion line matches BBC's conversion of the Canadian figure, not a second White House total.`} chip="unconfirmed" status="warn"><Cite s="usatoday-canada-tariffs-2026-09-08" passage="estimated 5% worth of Canadian imports" /></OutletCheck>
+
+        <OutletCheck outlet="Associated Press" claim={`wrote that the Canadian tariffs &ldquo;cover about $20 billion in American goods, roughly 6% of the $333.6 billion the United States exported to Canada last year.&rdquo;`} verdict={`The Census 2025 export total is ${census2025.exports.toLocaleString("en-US")} million dollars, $${computed.censusExports2025Rounded} billion as rounded. Twenty billion is ${computed.share20OfUsExportsPct} percent of that total. The arithmetic checks out on the Census series. AP does not say the $20 billion is a conversion of Finance Canada's unlabeled $${financeCoveredCad} billion.`} chip="checks out" status="ok"><Cite s="ap-canada-tariffs-2026-09-08" passage="roughly 6% of the $333.6 billion" /></OutletCheck>
+
+        <OutletCheck outlet="BBC" claim={`wrote that the Canadian tariffs apply to &ldquo;nearly C$28bn ($20bn; £15bn)&rdquo; and that support programmes total &ldquo;C$7.5bn.&rdquo;`} verdict={`Finance Canada prints $${financeCoveredCad} billion and $${supportPackage} billion with no currency tag. The C$ conversion and the $20 billion U.S. equivalent are BBC's.`} chip="consistent" status="ok"><Cite s="bbc-canada-tariffs-2026-08-25" passage="nearly C$28bn ($20bn; £15bn)" /></OutletCheck>
+
+        <OutletCheck outlet="The Guardian" claim={`wrote that the tariffs apply to products covering &ldquo;C$27.6bn in imports from the US&rdquo; and quoted the government that they do not apply to goods in transit.`} verdict="The C$ label is the Guardian's. Finance Canada's release prints $27.6 billion without a currency tag. The in-transit exception is in the Order and in Customs Notice 26-23." chip="consistent" status="ok"><Cite s="guardian-canada-tariffs-2026-09-07" passage="C$27.6bn in imports from the US" /></OutletCheck>
+        </div>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">Dollar for dollar, rate for rate</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <div data-layer="fact">
+          <CheckedBlock label="Canada matched the U.S. action dollar for dollar" variant="contested">
+            <p>Finance Canada uses ${financeCoveredCad} billion for the U.S. 50 percent action and ${financeCoveredCad} billion for Canada's reply, and Champagne's quoted line is "dollar-for-dollar, rate for rate." Rate for rate is visible on the table: 15, 25, or 50 percent, "matching the corresponding U.S. rate." Dollar for dollar is Finance's own pairing of those two unlabeled ${financeCoveredCad} billion figures. The White House fact sheet does not print a matching dollar total. BBC converted the Canadian side as {bbcCovered}.<Cite s="finance-countermeasures-2026-08-25" passage="dollar-for-dollar, rate for rate" /></p>
+          </CheckedBlock>
+        </div>
+
+        <details class="receipt" data-layer="proof"><summary>how the 6 percent was counted</summary>
+          <p>Census c1220 TOTAL 2025 exports 333,619.7 million U.S. dollars. 20,000 / 333,619.7 = 0.05995, {computed.share20OfUsExportsPct} percent as rounded in the story. The 17 days are 2026-09-08 minus 2026-08-22. The 33 days are 2026-08-22 minus 2026-07-20. Item counts are row counts of the saved Finance table and of English Schedules 1 to 3 of PC 2026-0785. Support package 1.5 + 0.5 + 2 + 3.5 = {computed.supportSum}.</p>
+        </details>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">The same Tuesday in Washington</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <p data-layer="narrative">On September 8 the White House also issued proclamations that exclude certain Canadian products from importation, effective 12:01 a.m. eastern on September 29: one tied to dairy, one tied to motor vehicles, and one tied to alcoholic beverages. A further proclamation modifies the motor-vehicles basket from September 15. The White House URL named for a matching alcohol-basket scope change returned a missing page.<Cite s="proc-exclude-alcohol-2026-09-08" passage="12:01 a.m. eastern time on September 29, 2026" /></p>
+
+        <p data-layer="narrative">The Associated Press, writing from Toronto, said Trump directed the U.S. General Services Administration to declare Canadian products ineligible for large, long-term U.S. government contracts until Canada allows "full and fair reciprocity" for American products.<Cite s="ap-canada-tariffs-2026-09-08" passage="General Services Administration" /></p>
+        <p data-layer="narrative">Al Jazeera quoted a Truth Social post directing GSA, working with USTR, to "REMOVE Canadian-origin products from GSA’s Multiple Award Schedules." This page does not hold the Truth Social post as its own saved file.<Cite s="aljazeera-canada-tariffs-2026-09-08" passage="REMOVE Canadian-origin products from GSA’s Multiple Award Schedules" /></p>
+        <p data-layer="narrative">Al Jazeera also wrote that Trump threatened to block Bombardier from selling planes in the United States unless it began manufacturing them there, and that Bombardier said it employs thousands of workers in the United States.<Cite s="aljazeera-canada-tariffs-2026-09-08" passage="block Canada-based aircraft manufacturer Bombardier" /></p>
+
+        <p data-layer="narrative">Watching: whether CBSA publishes a later notice that changes the September 8 list, whether the September 29 U.S. import exclusions are carried out as written, and whether formal talks resume. Gabriel Brunet, a spokesman for Dominic LeBlanc, Minister responsible for Canada-U.S. Trade, told AP that officials "remain in contact even though formal talks have not resumed."<Cite s="ap-canada-tariffs-2026-09-08" passage="remain in contact even though formal talks have not resumed" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">What the records do not hold</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+
+        <p data-layer="narrative">Finance Canada's ${financeCoveredCad} billion is not labeled U.S. dollars or Canadian dollars on the August 25 release. BBC printed {bbcCovered}. The Detroit News printed {detroitCovered}. Those currency tags are the outlets', not Finance's.<Cite s="detroitnews-canada-tariffs-2026-08-25" passage="C$27.6 billion ($19.94 billion)" /></p>
+
+        <p data-layer="narrative">The White House fact sheet does not state a dollar value for the goods covered by the three July 20 proclamations. BBC's $20 billion conversion, and AP's later $20 billion against the Census export total, are not on that fact sheet.<Cite s="wh-fact-sheet-2026-07-20" passage="Section 338 of the Tariff Act of 1930" /></p>
+
+        <p data-layer="narrative">Al Jazeera attributed a Tuesday remark to U.S. Treasury Secretary Scott Bessent. This page does not hold a Treasury or Commerce transcript of that remark.<Cite s="aljazeera-canada-tariffs-2026-09-08" passage="US Treasury Secretary Scott Bessent" /></p>
+
+        <p data-layer="narrative">Carney's September 8 words here are the Winnipeg Free Press text of the YouTube transcript. The video file itself is not a saved record on this page.<Cite s="wfp-carney-forward-guidance-2026-09-08" passage="per the transcript of the YouTube video" /></p>
+        <p data-layer="narrative">The justice.gc.ca page for the steel-and-aluminum amending order, SOR/2026-187, returned a missing page. Customs Notice 25-11 still names that order.<Cite s="cbsa-cn25-11" passage="Order Amending the United States Surtax Order (Steel and Aluminum 2025)" /></p>
+      </section>
+
+      <StorySources event="canada-tariffs/september-2026" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
+
+<style is:global>
+  .sourced-block { margin: 1rem 0; }
+  .sourced-block > p { margin: 0; }
+  .sourced-block > .chip { margin: 0.15rem 0 0; }
+  .src-ref { font-size: 0.72em; line-height: 0; margin-left: 0.15rem; }
+  .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
+  .src-ref a:hover { color: var(--ink); text-decoration: underline; }
+  .src-list li { scroll-margin-top: 4rem; }
+  .sourced-block > .chip { display: none; }
+  .mode-work .sourced-block > .chip { display: inline-block; }
+  .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
+  .event-record-context { margin: 0 0 1.5rem; }
+  .the-catch .catch-minor { margin: 1rem 0 0; padding-top: .8rem; border-top: 1px solid var(--rule); font-size: .9rem; color: var(--slate); }
+  .story-figure { margin: 1.5rem 0; }
+  .story-figure figcaption { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .6rem; }
+  .story-figure figcaption strong { font: 600 .95rem/1.3 var(--sans); }
+  .story-figure figcaption span { font: 400 .8rem/1.4 var(--sans); color: var(--slate); }
+  .dated-list { padding-left: 1.2rem; margin: 1rem 0; }
+  .dated-list li { margin: .45rem 0; }
+  .outlet-check .src-ref, .checked-block .src-ref, .contested-block .src-ref { margin-left: .3rem; }
+  .checked-block + .checked-block, .contested-block + .contested-block, .checked-block + .contested-block, .contested-block + .checked-block { margin-top: 1rem; }
+</style>
