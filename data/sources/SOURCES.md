@@ -1220,5 +1220,9 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/carney-forward-guidance-youtube-2026-09-08.txt | 212 | f73b689aa2b17223 |
 | data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-08.html | 263023 | 68da803216fcefb9 |
 | data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-08.txt | 5161 | 6bb101fb61190946 |
+| data/sources/canada-tariffs/cbp-csms-69606660-2026-08-21.html | 82041 | f3c2a27a357d3ec0 |
+| data/sources/canada-tariffs/cbp-csms-69606660-2026-08-21.txt | 6367 | b13eb15d0f3fca3d |
+| data/sources/canada-tariffs/mpo-projects-transformative-strategies.html | 28728 | 9b2bca5a3535e5fa |
+| data/sources/canada-tariffs/mpo-projects-transformative-strategies.txt | 2282 | a8cbf4095d64f827 |
 
 The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.

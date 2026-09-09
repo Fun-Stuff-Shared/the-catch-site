@@ -1,6 +1,8 @@
-# Canada tariffs, September 2026: R10 to R16 dispositions
+# Canada tariffs, September 2026: R10 to R20 dispositions
 
-Rework 2 on local main from a31b82ec. Pins checked before edits. Completeness audit not run.
+Rework 2 on local main from a31b82ec (R10-R16). Rework 3 from a3558a6c, page commit 4c50ac15 (R17-R20). Pins checked before edits. Completeness audit not run.
+
+## R10 to R16 (rework 2)
 
 | # | Finding | Verified at the bytes | Disposition |
 |---|---|---|---|
@@ -12,9 +14,21 @@ Rework 2 on local main from a31b82ec. Pins checked before edits. Completeness au
 | R15 | Lineages and official video | 11 coverage outlets in the manifest; PBS is the AP dispatch; MarketScreener is Reuters. YouTube `watch?v=eYAwioM3RQI` capture saved the watch page titled "Forward Guidance: A Stronger Canada" (211 characters of chrome), not the video file. | Outlets section states 11 outlets and 9 independent lineages. Video typed: watch page saved, file not. |
 | R16 | USTR nearly $20 billion; USA Today 5% | USTR July 20: "imposing a 50 percent tariff on nearly $20 billion in imports from Canada." Census 2025 imports 381,922.1 million. 20,000 / 381,922.1 = 5.236, 5.2 percent in the data module. | Currency paragraph carries the USTR figure. USA Today re-verdicted consistent. |
 
+## R17 to R20 (rework 3)
+
+| # | Finding | Verified at the bytes (quote the pin) | Disposition |
+| --- | --- | --- | --- |
+| R17 | Page line 143 said Finance's 629 lines and PC 2026-0785's 335 items "cannot be reconciled line by line" and "are different units." | Recounted with regex `\d{4}\.\d{2}\.\d{2}`. PC 2026-0785 English Schedules 1 to 3 (`oic-pc-2026-0785.txt` offsets 7090-11003): Schedule 1 = 21 ("Goods Subject to 15% Surtax"), Schedule 2 = 172, Schedule 3 = 142, union 335. Schedule 4 from offset 11003 is 14 Chapter 98/99 exception codes, not covered goods. PC 2026-0786 English Schedules 1, 1.1, 2, 2.1 (`oic-pc-2026-0786.txt` offsets 3038-9151): 2 + 27 + 21 + 244 = 294 unique (Schedule 1 header: "Goods Subject to 25% Surtax" then Aluminum). Overlap 0. Union 629. Finance August 26 HTML table (`finance-product-list-2026-08-26.html`): 629 tbody rows, 629 unique codes, last-column rates 413 at 50, 195 at 25, 21 at 15. Finance minus orders: 0. Orders minus Finance: 0. Last-column rate versus schedule rate: 0 mismatches. | Replaced the catch row, Three things item 2, the two-orders paragraph in What happened, a Where-this-sits paragraph, the proof receipt, and added a count table rendered from `src/data/canadatariffs202609.mjs`. Title unchanged. |
+| R18 | Page line 77 said each of the three proclamations "imposed an additional 50 percent duty on a basket of Canadian goods." Audit: CBP assigns 50 percent to 9903.03.12-14 and 0 percent additional under 9903.03.15 and 9903.03.16. | Captured `https://content.govdelivery.com/accounts/USDHSCBP/bulletins/4261d04` as `capture-oneoff-20260909T033525Z`, `typed_outcome: body_captured`. Pin `cbp-csms-69606660-2026-08-21.txt`: "9903.03.12: Articles the product of Canada as provided in subdivision (b)(1) of U.S. note 51 50% additional ad valorem rate of duty"; "9903.03.15: Articles of aluminum, of steel or of copper or derivative aluminum or steel articles; passenger vehicles ... wood products; semiconductor articles; and patented pharmaceutical articles ... 0% additional ad valorem rate of duty"; "9903.03.16: Articles of civil aircraft ... 0% additional ad valorem rate of duty"; "shall continue to be subject to antidumping, countervailing, or other duties". The message does not say the 0 percent rate exists because Section 232 already applies. | Confirmed. Added a What-happened paragraph and an August 21 timeline entry from those bytes, plus a catch row. Did not author a Section 232 cause the pin does not state. Other duties that apply still apply, in the message's words. |
+| R19 | Page line 226 said "Nine independent reporting lineages." | Detroit News pin `detroitnews-canada-tariffs-2026-08-25.html`: `contentSource":"Reuters"`, keywords `source:Reuters`, byline Promit Mukherjee. Text lede: "Canada on Tuesday announced retaliatory tariffs on C$27.6 billion ($19.94 billion) worth of United States goods". MarketScreener lede is the same Reuters dispatch. PBS is AP. WFP is a transcript. | Eleven outlets, eight independent reporting lineages plus one transcript carrier. Detroit card now labeled "The Detroit News (Reuters)" and says the text is Reuters, as MarketScreener carried it. |
+| R20 | Carney video: "$500 billion in new private investment." Audit: MPO distinguishes $192 billion new from $500 billion future. | WFP transcript line 89: "new ports, mines, and energy corridors from every region of the country that now represent $500 billion in new private investment." Captured `https://www.canada.ca/en/privy-council/major-projects-office/our-priorities/projects-transformative-strategies.html` in the same run. Pin: "$192 billion in new investment" and "$500 billion in future private sector investment". | Confirmed. Coverage section, errors first: Winnipeg Free Press card, chip mislabeled. |
+
 Not done, typed:
+
 - Dairy-scope modification proclamation of September 8: referenced by the dairy ban; not on the saved presidential-actions listing; constructed URL was not a saved page.
 - Carney September 8 video file: watch page saved, not the video.
 - Completeness audit: not run, per dispatch.
+- State-layer reader ledger currency and revision timeline: keystone-owned.
+- Title/state rename: h1 unchanged, so no `data/state` files.
 
-Verification: quote_lint clean; lens_lint clean; zero em dashes in the page and data module; `npm run build` event gate passed.
+Verification: quote_lint clean; lens_lint clean; zero em dashes in the page; `npm run build` event gate passed.

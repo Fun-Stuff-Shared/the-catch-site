@@ -16,7 +16,7 @@ export const event = {
     { value: "C$27.6", unit: "billion", label: "U.S. imports covered, Finance Canada" },
     { value: "15 / 25 / 50", unit: "percent", label: "matching rates on listed goods" },
     { value: "17", unit: "days", label: "from U.S. duties in force to Canada's" },
-    { value: "629", unit: "tariff items", label: "Finance list, updated August 26" },
+    { value: "629", unit: "tariff items", label: "Finance list, union of the two orders" },
   ],
 };
 
@@ -41,12 +41,37 @@ export const listItems = 629;
 export const listRate50 = 413;
 export const listRate25 = 195;
 export const listRate15 = 21;
+event.kpis[3].value = String(listItems);
 
-// United States Surtax Order (2026), PC 2026-0785, English schedules 1-3.
-export const oicRate15 = 21;
-export const oicRate25 = 172;
-export const oicRate50 = 142;
-export const oicItems = 335; // 21 + 172 + 142
+// United States Surtax Order (2026), PC 2026-0785, English schedules.
+// Counted with regex \d{4}.\d{2}.\d{2} on oic-pc-2026-0785.txt:
+// Schedule 1 offsets 7090-7397 = 21; Schedule 2 7397-9365 = 172;
+// Schedule 3 9365-11003 = 142; union 335. Schedule 4 from 11003 (14 codes)
+// is the Chapter 98/99 exception list, not covered goods.
+export const oic0785Schedule1 = 21;
+export const oic0785Schedule2 = 172;
+export const oic0785Schedule3 = 142;
+export const oic0785Schedule4 = 14;
+export const oicRate15 = oic0785Schedule1;
+export const oicRate25 = oic0785Schedule2;
+export const oicRate50 = oic0785Schedule3;
+export const oic0785Items = oic0785Schedule1 + oic0785Schedule2 + oic0785Schedule3; // 335
+export const oicItems = oic0785Items;
+
+// Order Amending the United States Surtax Order (Steel and Aluminum 2025),
+// PC 2026-0786, English schedules. Counted with the same regex on
+// oic-pc-2026-0786.txt offsets 3038-9151:
+// Schedule 1 = 2, 1.1 = 27, 2 = 21, 2.1 = 244; unique 294.
+export const oic0786Schedule1 = 2;
+export const oic0786Schedule11 = 27;
+export const oic0786Schedule2 = 21;
+export const oic0786Schedule21 = 244;
+export const oic0786Items = oic0786Schedule1 + oic0786Schedule11 + oic0786Schedule2 + oic0786Schedule21; // 294
+export const oicOverlap = 0;
+export const oicUnionItems = oic0785Items + oic0786Items; // 629
+// Finance August 26 HTML table, last-column rate versus the schedule each
+// code sits in: 629 unique codes, 0 codes in only one set, 0 rate mismatches.
+export const financeRateMismatches = 0;
 
 // White House annex PDFs of September 8, 2026. Counted HTSUS lines.
 export const annexDairyBanItems = 14;
@@ -74,10 +99,22 @@ export const computed = {
   daysSignToCarney: 33, // 2026-08-22 minus 2026-07-20
   daysUsInForceToCanada: 17, // 2026-09-08 minus 2026-08-22
   daysSignToCanadaInForce: 50, // 2026-09-08 minus 2026-07-20
-  listItems: 629,
-  listItemsAug25: 874,
-  listSum: 629, // 413 + 195 + 21
-  oicItems: 335, // 21 + 172 + 142
+  listItems,
+  listItemsAug25,
+  listSum: listRate50 + listRate25 + listRate15, // 413 + 195 + 21
+  oic0785Schedule1,
+  oic0785Schedule2,
+  oic0785Schedule3,
+  oic0785Items,
+  oicItems,
+  oic0786Schedule1,
+  oic0786Schedule11,
+  oic0786Schedule2,
+  oic0786Schedule21,
+  oic0786Items,
+  oicOverlap,
+  oicUnionItems,
+  financeRateMismatches,
   supportSum: 7.5, // 1.5 + 0.5 + 2 + 3.5
   censusExports2025Rounded: 333.6, // 333619.7 million
   censusImports2025Rounded: 381.9,
@@ -105,6 +142,22 @@ export const rateBars = [
   { label: "15 percent", value: listRate15 },
 ];
 
+export const orderCountRows = [
+  [`${oic0785Schedule1}`, "PC 2026-0785 Schedule 1, 15 percent", "English schedule"],
+  [`${oic0785Schedule2}`, "PC 2026-0785 Schedule 2, 25 percent", "English schedule"],
+  [`${oic0785Schedule3}`, "PC 2026-0785 Schedule 3, 50 percent", "English schedule"],
+  [`${oic0785Items}`, "PC 2026-0785 Schedules 1 to 3, unique", `${oic0785Schedule1} + ${oic0785Schedule2} + ${oic0785Schedule3}`],
+  [`${oic0786Schedule1}`, "PC 2026-0786 Schedule 1, aluminum 25 percent", "English schedule"],
+  [`${oic0786Schedule11}`, "PC 2026-0786 Schedule 1.1, aluminum 50 percent", "English schedule"],
+  [`${oic0786Schedule2}`, "PC 2026-0786 Schedule 2, steel 25 percent", "English schedule"],
+  [`${oic0786Schedule21}`, "PC 2026-0786 Schedule 2.1, steel 50 percent", "English schedule"],
+  [`${oic0786Items}`, "PC 2026-0786 Schedules 1 to 2.1, unique", `${oic0786Schedule1} + ${oic0786Schedule11} + ${oic0786Schedule2} + ${oic0786Schedule21}`],
+  [`${oicOverlap}`, "Codes on both orders", "unique-code overlap"],
+  [`${oicUnionItems}`, "Union of the two orders", `${oic0785Items} + ${oic0786Items}`],
+  [`${listItems}`, "Finance August 26 table, unique codes", "saved table"],
+  [`${financeRateMismatches}`, "Finance last-column rate differs from its schedule", "saved table versus the two orders"],
+];
+
 export const bbcCovered = "nearly C$28bn ($20bn; £15bn)";
 export const bbcSupport = "C$7.5bn";
 export const detroitCovered = "C$27.6 billion ($19.94 billion)";
@@ -124,10 +177,11 @@ export const timeline = [
   { date: "Feb 20", title: "Supreme Court holds IEEPA does not authorize tariffs", sub: "No. 24-1287, decided February 20, 2026" },
   { date: "Jul 20", title: "Three U.S. proclamations signed", sub: "50 percent additional duty under Section 338, originally from August 19" },
   { date: "Aug 18", title: "Proclamation 11056 delays the duties three days", sub: "new effective time 12:01 a.m. eastern, August 22" },
+  { date: "Aug 21", title: "CBP guidance on the Section 338 headings", sub: "50 percent additional duty under 9903.03.12 to 9903.03.14; 0 percent additional under 9903.03.15 and 9903.03.16" },
   { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
   { date: "Aug 25", title: "Finance Canada names C$27.6 billion", sub: "rates 15, 25, and 50 percent; C$7.5 billion in supports; 12:01 a.m. on September 8" },
   { date: "Aug 26", title: "Product list updated", sub: `${listItems} tariff items in the saved table, down from ${listItemsAug25} the day before` },
-  { date: "Sep 4", title: "Two Orders in Council", sub: "PC 2026-0785, the new surtax; PC 2026-0786, steel and aluminum to 50 percent, in force with it" },
+  { date: "Sep 4", title: "Two Orders in Council", sub: `PC 2026-0785, ${oic0785Items} codes at 15/25/50 percent; PC 2026-0786, ${oic0786Items} steel and aluminum codes at 25/50 percent; union ${oicUnionItems}` },
   { date: "Sep 7", title: "CBSA Customs Notice 26-23", sub: "how the surtax is collected at the border" },
   { date: "Sep 8", title: "The Canadian order comes into force", sub: "Finance named 12:01 a.m.; the United States signs import-exclusion proclamations", current: true },
   { date: "Sep 15", title: "U.S. motor-vehicles and alcohol baskets change", sub: `Autos: ${annexAutoAddItems} lines added at 50 percent, ${annexAutoRemoveItems} removed. Alcohol: ${annexAlcoholScopeAddItems} added, ${annexAlcoholScopeRemoveItems} removed` },
