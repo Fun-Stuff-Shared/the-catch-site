@@ -12,6 +12,10 @@ Run it on the built page, after the gate passes and after the interrogation disp
 are on the page. It is a required step: a story is not staged until the audit has run
 and every finding has a disposition in `checks/audits/`.
 
+The auditor runs under `skills/story-completeness-audit/` (SKILL.md, investigation workflow,
+output schema): the script points the model at those files and adds only the Catch rules
+(no edits, no process signals, video pins frame by frame, the VERDICT line).
+
 ```bash
 skills/catch-event-page/scripts/completeness_audit.sh <subject>/<story>
 # writes checks/audits/<subject>--<story>-<date>.md (verdict) and .log (full run)
