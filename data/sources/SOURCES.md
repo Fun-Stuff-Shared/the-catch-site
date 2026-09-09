@@ -1200,5 +1200,25 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/census-exh2s-2512-table.txt | 9062 | acad4c66a25eda81 |
 | data/sources/canada-tariffs/census-exh2s-2512-exhibit.pdf | 156910 | 4926e1117538faeb |
 | data/sources/canada-tariffs/census-exh2s-2512-exhibit.txt | 11339 | 89383f9af72aec45 |
+| data/sources/canada-tariffs/crs-r48435.pdf | 1012883 | a66e908aec6a15a3 |
+| data/sources/canada-tariffs/crs-r48435.txt | 96602 | 8f99670f8a4bb51b |
+| data/sources/canada-tariffs/scotus-24-1287.pdf | 756072 | 6412456ead56a0b5 |
+| data/sources/canada-tariffs/scotus-24-1287.txt | 367410 | ff4fa01d7ecd777c |
+| data/sources/canada-tariffs/ustr-ieepa-2026-02-20.html | 39638 | 818317322647cacb |
+| data/sources/canada-tariffs/ustr-ieepa-2026-02-20.txt | 4709 | e7ac1e625b055301 |
+| data/sources/canada-tariffs/oic-pc-2026-0786.html | 43413 | 1c7238fcd5b67d22 |
+| data/sources/canada-tariffs/oic-pc-2026-0786.txt | 12991 | 08307db810f8310b |
+| data/sources/canada-tariffs/proc-modify-alcohol-2026-09-08.html | 308359 | 69c073f14359de41 |
+| data/sources/canada-tariffs/proc-modify-alcohol-2026-09-08.txt | 9462 | f075619905584954 |
+| data/sources/canada-tariffs/annex-i-alcohol-scope-2026-09-08.pdf | 155660 | 0b225eccfeb454be |
+| data/sources/canada-tariffs/annex-i-alcohol-scope-2026-09-08.txt | 7300 | 2d645e42b6a22528 |
+| data/sources/canada-tariffs/annex-ii-alcohol-scope-2026-09-08.pdf | 95883 | 53cbd5a8eb065308 |
+| data/sources/canada-tariffs/annex-ii-alcohol-scope-2026-09-08.txt | 1518 | cc2bfb017128e7f4 |
+| data/sources/canada-tariffs/ustr-section-338-2026-07-20.html | 38446 | a72bf393a52f7030 |
+| data/sources/canada-tariffs/ustr-section-338-2026-07-20.txt | 2221 | ff91be8faf144f46 |
+| data/sources/canada-tariffs/carney-forward-guidance-youtube-2026-09-08.html | 1361481 | ceb43f528e713ee3 |
+| data/sources/canada-tariffs/carney-forward-guidance-youtube-2026-09-08.txt | 212 | f73b689aa2b17223 |
+| data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-08.html | 263023 | 68da803216fcefb9 |
+| data/sources/canada-tariffs/wh-presidential-actions-listing-2026-09-08.txt | 5161 | 6bb101fb61190946 |
 
 The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.

@@ -54,6 +54,9 @@ export const annexMotorBanItems = 1;
 export const annexAlcoholBanItems = 53;
 export const annexAutoAddItems = 76; // Annex I Part A of the motor-vehicles scope modification
 export const annexAutoRemoveItems = 8; // Annex I Part B
+// Alcohol-scope annex I, September 8. Counted HTSUS product lines the same way as the auto-scope annex: a line that opens with a product code.
+export const annexAlcoholScopeAddItems = 34; // Annex I Part A
+export const annexAlcoholScopeRemoveItems = 2; // Annex I Part B (2208.30.6085, 2208.70.0060)
 
 // Census Bureau, Trade in Goods with Canada, millions of U.S. dollars, not seasonally adjusted.
 export const census2025 = {
@@ -92,6 +95,8 @@ export const computed = {
   annexAlcoholBanItems: 53,
   annexAutoAddItems: 76,
   annexAutoRemoveItems: 8,
+  annexAlcoholScopeAddItems: 34,
+  annexAlcoholScopeRemoveItems: 2,
 };
 
 export const rateBars = [
@@ -108,6 +113,7 @@ export const moneyRows = [
   [`C$${financeCoveredCad} billion`, "U.S. goods Canada says the new U.S. 50 percent duties cover, effective August 22. Finance prints no currency tag. Canadian dollars, as converted by BBC and the Detroit News and checked against the Bank of Canada rate", "Finance Canada, August 25"],
   [`C$${financeCoveredCad} billion`, "U.S. imports Canada says its counter-tariffs cover, from September 8. Same figure", "Finance Canada, August 25"],
   [`US$${computed.usdCovered} billion`, `C$${financeCoveredCad} billion divided by the Bank of Canada USD/CAD daily average of ${fxUsdCad20260825} on August 25`, "Bank of Canada valet"],
+  ["nearly US$20 billion", "USTR's July 20 figure for the goods the three Section 338 actions cover, as imports from Canada", "USTR, July 20"],
   [bbcCovered, "BBC conversion of the Canadian coverage figure on announcement day", "BBC, August 25"],
   [detroitCovered, "Detroit News conversion of the same figure", "Detroit News, August 25"],
   [`US$${computed.censusExports2025Rounded} billion`, "U.S. goods exports to Canada, 2025, U.S. dollars", "Census Bureau c1220"],
@@ -115,15 +121,16 @@ export const moneyRows = [
 ];
 
 export const timeline = [
+  { date: "Feb 20", title: "Supreme Court holds IEEPA does not authorize tariffs", sub: "No. 24-1287, decided February 20, 2026" },
   { date: "Jul 20", title: "Three U.S. proclamations signed", sub: "50 percent additional duty under Section 338, originally from August 19" },
   { date: "Aug 18", title: "Proclamation 11056 delays the duties three days", sub: "new effective time 12:01 a.m. eastern, August 22" },
   { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
   { date: "Aug 25", title: "Finance Canada names C$27.6 billion", sub: "rates 15, 25, and 50 percent; C$7.5 billion in supports; 12:01 a.m. on September 8" },
   { date: "Aug 26", title: "Product list updated", sub: `${listItems} tariff items in the saved table, down from ${listItemsAug25} the day before` },
-  { date: "Sep 4", title: "Order in Council PC 2026-0785", sub: "United States Surtax Order (2026), in force September 8" },
+  { date: "Sep 4", title: "Two Orders in Council", sub: "PC 2026-0785, the new surtax; PC 2026-0786, steel and aluminum to 50 percent, in force with it" },
   { date: "Sep 7", title: "CBSA Customs Notice 26-23", sub: "how the surtax is collected at the border" },
   { date: "Sep 8", title: "The Canadian order comes into force", sub: "Finance named 12:01 a.m.; the United States signs import-exclusion proclamations", current: true },
-  { date: "Sep 15", title: "U.S. motor-vehicles basket changes", sub: `${annexAutoAddItems} HTSUS lines added at 50 percent; ${annexAutoRemoveItems} lines removed` },
+  { date: "Sep 15", title: "U.S. motor-vehicles and alcohol baskets change", sub: `Autos: ${annexAutoAddItems} lines added at 50 percent, ${annexAutoRemoveItems} removed. Alcohol: ${annexAlcoholScopeAddItems} added, ${annexAlcoholScopeRemoveItems} removed` },
   { date: "Sep 29", title: "U.S. import bans take effect", sub: "dairy, motorcycles, and listed alcoholic beverages excluded from importation" },
 ];
 

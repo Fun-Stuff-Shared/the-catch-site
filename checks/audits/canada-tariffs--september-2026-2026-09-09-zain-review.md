@@ -1,0 +1,20 @@
+# Canada tariffs, September 2026: R10 to R16 dispositions
+
+Rework 2 on local main from a31b82ec. Pins checked before edits. Completeness audit not run.
+
+| # | Finding | Verified at the bytes | Disposition |
+|---|---|---|---|
+| R10 | Section 338 history: CRS never-used, SCOTUS IEEPA, USTR other tools | CRS R48435 (Feb 27, 2025): "As of the time of this writing, the United States has never imposed tariffs under" Section 338. SCOTUS No. 24-1287: "Decided February 20, 2026"; "Held: IEEPA does not authorize the President to impose tariffs." USTR Feb 20: "alternative tools would be implemented" and lists Section 122, 301, 232, not Section 338. | Admitted CRS PDF, opinion PDF, USTR statement. Two to three cited sentences in Where this sits. Timeline row for February 20. Wrote what USTR listed, not a Section 338 claim the pin does not make. |
+| R11 | Second Canadian order still called missing | orders-in-council attach=48944 served HTML, not a PDF. Text: "PC Number: 2026-0786"; 50 percent on Schedules 1.1 and 2.1; "This Order comes into force on the day on which the United States Surtax Order (2026) comes into force." CBSA still names it SOR/2026-187; captured order does not print that number. | Replaced both missing-order sentences. Catch row 2 and What happened now say the Canadian package is two coordinated orders. Pin is the served web page plus text. |
+| R12 | Alcohol-scope "missing page"; dairy-scope referenced | Alcohol-scope URL captured live. Annex I Part A: 34 product-code lines added at 50 percent from September 15; Part B: 2 lines removed (2208.30.6085, 2208.70.0060), counted as auto-scope annexes are. Dairy-ban pin names a dairy-scope proclamation. WH presidential-actions listing for September 8 lists alcohol-scope and dairy exclusion, not a dairy-scope title. URL built on the alcohol-scope pattern: capture typed http_status_404. | Alcohol-scope in Three things, September 15 timeline, Who feels it, the catch. Dairy-scope typed as referenced by the dairy ban and not located; listing named. |
+| R13 | Talks failed: slogans only | Carney Aug 22 lines 63-77: drop remaining retaliation on steel, aluminum, autos if U.S. duties came down; encourage provinces to restore U.S. alcohol; administrative dairy measures without changing supply management; refused sovereignty, French language and culture, key industries. U.S. proclamations: provincial alcohol boards; dairy TRQ USMCA vs CETA; motor vehicle tariff scheme. Alcohol-ban: Saskatchewan August 27 levy. | One paragraph per side, cited. U.S. draft terms stated as not a saved record. No new capture. |
+| R14 | Who pays overstated as household price | CBSA line 217: "Importers must declare imported goods as subject to a surtax." BoC: "could feed into consumer prices over time." | Catch Who-pays row and Who feels it rewritten: importer is who must declare and pay; pass-through is conditional. |
+| R15 | Lineages and official video | 11 coverage outlets in the manifest; PBS is the AP dispatch; MarketScreener is Reuters. YouTube `watch?v=eYAwioM3RQI` capture saved the watch page titled "Forward Guidance: A Stronger Canada" (211 characters of chrome), not the video file. | Outlets section states 11 outlets and 9 independent lineages. Video typed: watch page saved, file not. |
+| R16 | USTR nearly $20 billion; USA Today 5% | USTR July 20: "imposing a 50 percent tariff on nearly $20 billion in imports from Canada." Census 2025 imports 381,922.1 million. 20,000 / 381,922.1 = 5.236, 5.2 percent in the data module. | Currency paragraph carries the USTR figure. USA Today re-verdicted consistent. |
+
+Not done, typed:
+- Dairy-scope modification proclamation of September 8: referenced by the dairy ban; not on the saved presidential-actions listing; constructed URL was not a saved page.
+- Carney September 8 video file: watch page saved, not the video.
+- Completeness audit: not run, per dispatch.
+
+Verification: quote_lint clean; lens_lint clean; zero em dashes in the page and data module; `npm run build` event gate passed.
