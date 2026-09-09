@@ -188,3 +188,30 @@ Rule: `capture news` first, for every URL, before any other tool touches it. Cop
 run's `raw/` file as the pin. Put `capture_run` on the record. When the registry refuses a
 document, the record says so in `capture_status` and the reviewer decides; do not route
 around it silently. The gate refuses a record with neither field.
+
+## "Cannot be reconciled" without the arithmetic
+
+Seen 2026-09-09 on the Canada tariffs page: the story's central catch said the Finance
+table of 629 tariff items and the 335 items of the surtax order "cannot be reconciled line
+by line" and "are different units." The completeness audit did the set arithmetic the
+author never attempted: the order's 335 codes plus the 294 codes of the coordinated steel
+and aluminum order, zero overlap, equal the Finance list exactly. The page was wrong on the
+one sentence it existed to make.
+
+Rule: before any sentence says two official counts do not match, cannot be reconciled, or
+are different units, extract both code sets from the pinned bytes and compute the union,
+intersection, and both differences. The counts and the set relation go in the data module
+with the file offsets. The "do not invent an explanation for a gap" rule above still
+holds; it forbids explaining a gap, never checking whether one exists.
+
+## Product counts are different units
+
+Same page, same day: "700 products" in coverage was compared with 629 Finance table rows
+and 335 order tariff items as if all three counted the same thing. A row, a tariff item,
+and a product are three units. Name the unit with every count and compare only like units.
+
+## The audit runs on the current commit
+
+The first completeness audit ran on the page as it stood before the rework landed; its
+findings were half stale. Launch the audit only after the rework commit exists, and never
+as a child of the authoring run (the runbook launches it detached).
