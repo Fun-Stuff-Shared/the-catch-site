@@ -32,3 +32,25 @@ Not done, typed:
 - Title/state rename: h1 unchanged, so no `data/state` files.
 
 Verification: quote_lint clean; lens_lint clean; zero em dashes in the page; `npm run build` event gate passed.
+
+## R21 to R26 (rework 4)
+
+Rework 4 on local main from 921ef734. Pins checked before edits. Completeness audit not run.
+
+| # | Finding | Verified at the bytes (quote the pin) | Disposition |
+| --- | --- | --- | --- |
+| R21 | 874-to-629 is seafood withdrawal, not line-count drift | Recounted with `\b(\d{4}\.\d{2}\.\d{2})\b` on `finance-product-list-2026-08-25.txt` and `finance-product-list-2026-08-26.txt`: 874 unique to 629 unique; 254 removed, all chapter 03; 9 added (`4402.90.10`, `4402.90.90`, `4911.91.00`, `6809.11.00`, `7010.90.00`, `7408.11.10`, `7408.11.20`, `7408.11.30`, `7408.19.00`). 874 − 254 + 9 = 629. CBC pin: `the decision was based on "feedback."` Investing.com Reuters carrier: `including removing seafood and fish products from our list of counter tariffs`. ESDC August 28: `fish and seafood` among 25 percent goods; still `$27.6 billion in imports from the U.S.` | Confirmed. Counts in `src/data/canadatariffs202609.mjs` with source-file comments. Revision paragraph names seafood off, nine industrial lines on, C$27.6 billion unchanged, and the stale August 28 release. Aug 26 timeline sub-line. Catch row: count down 245, dollar unchanged, no saved government record shows how. Coverage cards for CBC and Reuters-via-Investing.com; reason cited as what the outlets reported, not as a government statement on the tables. Search for the stale release: canada.ca Employment and Social Development news of August 28, 2026, URL captured. |
+| R22 | July 1 CUSMA review outcome | `gac-monthly-2026-05.txt`: `The United States did not agree to renew the Agreement at this time`; `annual review process while the Agreement remains in force for another 10 years`; meeting `held on July 1, 2026`. | Admitted. Outcome added to the CUSMA paragraph. July 1 timeline entry before July 20. Did not write that this caused the July 20 proclamations. |
+| R23 | Section 338 untested; September 15 is seven days | Statute pin: `thirty days after the date of such proclamation there shall be levied, collected, and paid upon the articles enumerated in such proclamation`. July alcohol pin: `12:01 a.m. eastern time on August 19, 2026`. Motor modify pin: `12:01 a.m. eastern time on September 15, 2026`. AP pin: `has never been used, let alone tested in court`; `made no attempt to calculate the dollar amount of damage`. CRS: `As of the time of this writing, the United States has never imposed tariffs under`. | Statute captured and manifested. Where-this-sits paragraph: thirty-day clause, July 30 days, September 7 days, no court has ruled; interval stated as a checkable count, not called unlawful. AP card: never-used half checks out against CRS; no-attempt-to-calculate typed as AP's characterization. Capture of the AP URL was already held (`quarry-wire-scheduled-20260830T220000Z`, `typed_outcome: body_captured`). |
+| R24 | GSA directive is $50 billion; White House fact sheet exists | `wh-fact-sheet-2026-09-08.txt`: `remove $50 billion dollars’ worth of Canadian-origin products from GSA’s Multiple Award Schedules.` Also: `about $20 billion of U.S. exports, including steel, dairy, and agricultural equipment.` | Admitted. GSA paragraph rewritten from that record: the direction, US$50 billion claimed, catalogues federal agencies buy from, no saved record shows a removal carried out. Three things item 3, catch row, Sep 8 timeline sub-line. Coverage-style row: the $20 billion claim is consistent with Finance's C$27.6 billion converted; the fact sheet does not print the Canadian-dollar figure. No contradiction of the saved Canadian list's named sectors. |
+| R25 | Dairy dispute history | 2021 panel: `exclusively for the use of processors is inconsistent with Canada’s commitment`. USTR 2023: `Canada’s measures are not inconsistent with the USMCA provisions cited by the United States`; `In December 2021, a USMCA dispute settlement panel found`. | Both captured and confirmed. Two sentences on the dairy paragraph: U.S. win 2021, majority loss 2023, 2026 CETA comparison is an executive finding no panel has ruled on. |
+| R26 | July annexes not pinned | Annex I unique HTSUS 8-digit lines, same regex: dairy 52, alcohol 63, motor 440, overlap 0, union 555. Quote on each Annex I: `A 50% ad valorem Section 338 tariff shall apply`. Annex II files linked from the July proclamation HTML were captured (`Annex-II.pdf`, `Annex-II-1.pdf`, `Annex-II-2.pdf`). | All six PDFs admitted. Counts in the data module. Count table now places 555 HTSUS 8-digit lines next to Canada's 629 tariff items, units named. |
+
+Not done, typed:
+
+- Completeness audit: not run, per dispatch.
+- State-layer reader ledger currency and revision timeline: keystone-owned.
+- Title/state rename: h1 unchanged, so no `data/state` files.
+- Truth Social GSA post as its own file: still not held; the White House fact sheet is.
+
+Verification: quote_lint clean; lens_lint clean; zero em dashes in the page; `npm run build` event gate passed.

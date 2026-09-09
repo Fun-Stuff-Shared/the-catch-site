@@ -1224,5 +1224,35 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/cbp-csms-69606660-2026-08-21.txt | 6367 | b13eb15d0f3fca3d |
 | data/sources/canada-tariffs/mpo-projects-transformative-strategies.html | 28728 | 9b2bca5a3535e5fa |
 | data/sources/canada-tariffs/mpo-projects-transformative-strategies.txt | 2282 | a8cbf4095d64f827 |
+| data/sources/coverage/cbc-seafood-tariffs-2026-08-27.html | 172433 | 0da44f21029300ff |
+| data/sources/coverage/cbc-seafood-tariffs-2026-08-27.txt | 1714 | d06ac264933f8aad |
+| data/sources/coverage/investing-reuters-seafood-2026-08-27.html | 1030129 | 5d1ce8ecf5ba6ab4 |
+| data/sources/coverage/investing-reuters-seafood-2026-08-27.txt | 998 | 036bcac5f1f5fc47 |
+| data/sources/canada-tariffs/esdc-countermeasures-2026-08-28.html | 41302 | ece71c30db968e24 |
+| data/sources/canada-tariffs/esdc-countermeasures-2026-08-28.txt | 9735 | 5540f1b6b3d847db |
+| data/sources/canada-tariffs/gac-monthly-2026-05.html | 49961 | 477d55d9454ad6b0 |
+| data/sources/canada-tariffs/gac-monthly-2026-05.txt | 9576 | aeba1f01766359d6 |
+| data/sources/canada-tariffs/usc-19-1338.html | 154919 | 8135b92429f6facc |
+| data/sources/canada-tariffs/usc-19-1338.txt | 6816 | 861bb584f2cdabb3 |
+| data/sources/coverage/ap-section-338-2026-08-29.html | 922185 | 0597dd84c3d6071d |
+| data/sources/coverage/ap-section-338-2026-08-29.txt | 48213 | 2a545c2024b9636a |
+| data/sources/canada-tariffs/wh-fact-sheet-2026-09-08.html | 265770 | acd901e91a6b7096 |
+| data/sources/canada-tariffs/wh-fact-sheet-2026-09-08.txt | 5591 | 437e1e5c3faa632a |
+| data/sources/canada-tariffs/usmca-dairy-panel-2021.pdf | 608561 | b95719728789e860 |
+| data/sources/canada-tariffs/usmca-dairy-panel-2021.txt | 127974 | dda4cbe065b3c307 |
+| data/sources/canada-tariffs/ustr-dairy-panel-2023-11-24.html | 34875 | ea7235b556dcab5c |
+| data/sources/canada-tariffs/ustr-dairy-panel-2023-11-24.txt | 5014 | a8e73d465059eee9 |
+| data/sources/canada-tariffs/annex-i-dairy-2026-07-20.pdf | 158671 | fbe8bb74a7e4ee2a |
+| data/sources/canada-tariffs/annex-i-dairy-2026-07-20.txt | 9034 | b78c3432375bb53f |
+| data/sources/canada-tariffs/annex-i-alcohol-2026-07-20.pdf | 153594 | 055f714425c51050 |
+| data/sources/canada-tariffs/annex-i-alcohol-2026-07-20.txt | 7945 | 285c1d4216fa0a8d |
+| data/sources/canada-tariffs/annex-i-motor-2026-07-20.pdf | 289217 | 4adb59bafb85a0a5 |
+| data/sources/canada-tariffs/annex-i-motor-2026-07-20.txt | 54681 | 7e99f2e66fa05ab0 |
+| data/sources/canada-tariffs/annex-ii-dairy-2026-07-20.pdf | 114112 | 69dfbd01868412fd |
+| data/sources/canada-tariffs/annex-ii-dairy-2026-07-20.txt | 3496 | e820dce89fe7d7ec |
+| data/sources/canada-tariffs/annex-ii-alcohol-2026-07-20.pdf | 151746 | 2b9237b2dcaf7dbe |
+| data/sources/canada-tariffs/annex-ii-alcohol-2026-07-20.txt | 19087 | 34459cd29da87253 |
+| data/sources/canada-tariffs/annex-ii-motor-2026-07-20.pdf | 110334 | 799a5e58a920ee61 |
+| data/sources/canada-tariffs/annex-ii-motor-2026-07-20.txt | 9674 | dee4201e50afa3d3 |
 
 The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.

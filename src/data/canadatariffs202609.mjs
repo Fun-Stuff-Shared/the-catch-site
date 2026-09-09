@@ -33,15 +33,55 @@ export const priorSupports = 25; // "nearly $25 billion"
 // Daily value of the U.S. dollar expressed in Canadian dollars.
 export const fxUsdCad20260825 = 1.3839;
 
-// Finance product list, Internet Archive copy of August 25, 2026. Counted from the saved table.
+// Finance product list, Internet Archive copy of August 25, 2026.
+// Counted unique codes with regex \b(\d{4}\.\d{2}\.\d{2})\b on
+// data/sources/canada-tariffs/finance-product-list-2026-08-25.txt.
 export const listItemsAug25 = 874;
 
-// Finance product list, updated August 26, 2026. Counted from the saved table.
+// Finance product list, updated August 26, 2026. Same regex on
+// data/sources/canada-tariffs/finance-product-list-2026-08-26.txt.
 export const listItems = 629;
 export const listRate50 = 413;
 export const listRate25 = 195;
 export const listRate15 = 21;
 event.kpis[3].value = String(listItems);
+
+// Set difference of those two unique-code sets. Every removed code is
+// HS chapter 03 (fish and crustaceans). Added codes, in table order:
+// 4402.90.10, 4402.90.90 (charcoal), 4911.91.00 (printed pictures),
+// 6809.11.00 (gypsum board), 7010.90.00 (glass containers),
+// 7408.11.10, 7408.11.20, 7408.11.30, 7408.19.00 (copper wire).
+// 874 - 254 + 9 = 629.
+export const removedCodes = 254;
+export const removedChapter03 = 254;
+export const addedCodes = 9;
+export const addedCodeList = [
+  "4402.90.10",
+  "4402.90.90",
+  "4911.91.00",
+  "6809.11.00",
+  "7010.90.00",
+  "7408.11.10",
+  "7408.11.20",
+  "7408.11.30",
+  "7408.19.00",
+];
+export const listCountDrop = listItemsAug25 - listItems; // 874 - 629 = 245
+
+// White House July 20 Annex I PDFs. Same regex, unique HTSUS 8-digit lines.
+// annex-i-dairy-2026-07-20.txt = 52; annex-i-alcohol-2026-07-20.txt = 63;
+// annex-i-motor-2026-07-20.txt = 440; pairwise overlap 0; union 555.
+export const annexJulyDairyItems = 52;
+export const annexJulyAlcoholItems = 63;
+export const annexJulyMotorItems = 440;
+export const annexJulyItems = annexJulyDairyItems + annexJulyAlcoholItems + annexJulyMotorItems; // 555
+
+// White House fact sheet, September 8, 2026. Claimed scale of a GSA direction.
+export const gsaDirectedUsd = 50; // billion U.S. dollars as printed
+
+// July 20 to August 19 is 30 days. September 8 to September 15 is 7 days.
+export const daysJulyProcToOriginalEffective = 30;
+export const daysSeptModifyToEffective = 7;
 
 // United States Surtax Order (2026), PC 2026-0785, English schedules.
 // Counted with regex \d{4}.\d{2}.\d{2} on oic-pc-2026-0785.txt:
@@ -134,6 +174,17 @@ export const computed = {
   annexAutoRemoveItems: 8,
   annexAlcoholScopeAddItems: 34,
   annexAlcoholScopeRemoveItems: 2,
+  removedCodes,
+  removedChapter03,
+  addedCodes,
+  listCountDrop,
+  annexJulyDairyItems,
+  annexJulyAlcoholItems,
+  annexJulyMotorItems,
+  annexJulyItems,
+  gsaDirectedUsd,
+  daysJulyProcToOriginalEffective,
+  daysSeptModifyToEffective,
 };
 
 export const rateBars = [
@@ -153,8 +204,9 @@ export const orderCountRows = [
   [`${oic0786Schedule21}`, "PC 2026-0786 Schedule 2.1, steel 50 percent", "English schedule"],
   [`${oic0786Items}`, "PC 2026-0786 Schedules 1 to 2.1, unique", `${oic0786Schedule1} + ${oic0786Schedule11} + ${oic0786Schedule2} + ${oic0786Schedule21}`],
   [`${oicOverlap}`, "Codes on both orders", "unique-code overlap"],
-  [`${oicUnionItems}`, "Union of the two orders", `${oic0785Items} + ${oic0786Items}`],
-  [`${listItems}`, "Finance August 26 table, unique codes", "saved table"],
+  [`${oicUnionItems}`, "Union of the two orders, Canadian tariff items", `${oic0785Items} + ${oic0786Items}`],
+  [`${listItems}`, "Finance August 26 table, unique Canadian tariff items", "saved table"],
+  [`${annexJulyItems}`, "U.S. July 20 Annex I, unique HTSUS 8-digit lines", `${annexJulyDairyItems} dairy + ${annexJulyAlcoholItems} alcohol + ${annexJulyMotorItems} motor-vehicles basket`],
   [`${financeRateMismatches}`, "Finance last-column rate differs from its schedule", "saved table versus the two orders"],
 ];
 
@@ -175,15 +227,16 @@ export const moneyRows = [
 
 export const timeline = [
   { date: "Feb 20", title: "Supreme Court holds IEEPA does not authorize tariffs", sub: "No. 24-1287, decided February 20, 2026" },
+  { date: "Jul 1", title: "CUSMA joint review", sub: "Canada and Mexico asked for a 16-year renewal; the United States declined; the pact stays in force and is now reviewed every year" },
   { date: "Jul 20", title: "Three U.S. proclamations signed", sub: "50 percent additional duty under Section 338, originally from August 19" },
   { date: "Aug 18", title: "Proclamation 11056 delays the duties three days", sub: "new effective time 12:01 a.m. eastern, August 22" },
   { date: "Aug 21", title: "CBP guidance on the Section 338 headings", sub: "50 percent additional duty under 9903.03.12 to 9903.03.14; 0 percent additional under 9903.03.15 and 9903.03.16" },
   { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
   { date: "Aug 25", title: "Finance Canada names C$27.6 billion", sub: "rates 15, 25, and 50 percent; C$7.5 billion in supports; 12:01 a.m. on September 8" },
-  { date: "Aug 26", title: "Product list updated", sub: `${listItems} tariff items in the saved table, down from ${listItemsAug25} the day before` },
+  { date: "Aug 26", title: "Seafood comes off the list", sub: `All ${removedCodes} fish and seafood lines removed; ${addedCodes} industrial lines added; ${listItems} lines remain; C$27.6 billion unchanged` },
   { date: "Sep 4", title: "Two Orders in Council", sub: `PC 2026-0785, ${oic0785Items} codes at 15/25/50 percent; PC 2026-0786, ${oic0786Items} steel and aluminum codes at 25/50 percent; union ${oicUnionItems}` },
   { date: "Sep 7", title: "CBSA Customs Notice 26-23", sub: "how the surtax is collected at the border" },
-  { date: "Sep 8", title: "The Canadian order comes into force", sub: "Finance named 12:01 a.m.; the United States signs import-exclusion proclamations", current: true },
+  { date: "Sep 8", title: "The Canadian order comes into force", sub: `Finance named 12:01 a.m.; the United States signs import-exclusion proclamations and directs GSA to take US$${gsaDirectedUsd} billion of Canadian-origin products off federal purchasing catalogues`, current: true },
   { date: "Sep 15", title: "U.S. motor-vehicles and alcohol baskets change", sub: `Autos: ${annexAutoAddItems} lines added at 50 percent, ${annexAutoRemoveItems} removed. Alcohol: ${annexAlcoholScopeAddItems} added, ${annexAlcoholScopeRemoveItems} removed` },
   { date: "Sep 29", title: "U.S. import bans take effect", sub: "dairy, motorcycles, and listed alcoholic beverages excluded from importation" },
 ];
