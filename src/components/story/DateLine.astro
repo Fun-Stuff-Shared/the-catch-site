@@ -9,7 +9,7 @@ interface Props {
 const { points, intervals, highlight, ariaLabel = "Dated sequence" } = Astro.props;
 ---
 <figure class="date-line">
-  <svg viewBox="0 0 760 152" role="img" aria-label={ariaLabel}>
+  <svg viewBox={`0 0 760 ${highlight ? 152 : 100}`} role="img" aria-label={ariaLabel}>
     <line x1="44" y1="58" x2="716" y2="58" class="date-line-rule" />
     {points.map((point, index) => {
       const x = 44 + (672 * index) / Math.max(points.length - 1, 1);
@@ -18,7 +18,7 @@ const { points, intervals, highlight, ariaLabel = "Dated sequence" } = Astro.pro
         <circle cx={x} cy="58" r="4" class="date-line-point" />
         <text x={x} y="26" text-anchor="middle" class="chart-axis">{point.date}</text>
         <text x={x} y="88" text-anchor="middle" class="chart-note">{point.label}</text>
-        {interval && <text x={x + (672 / Math.max(points.length - 1, 1)) / 2} y="48" text-anchor="middle" class="chart-note">{interval.days} days</text>}
+        {interval && <text x={x + (672 / Math.max(points.length - 1, 1)) / 2} y="48" text-anchor="middle" class="chart-note">{interval.days} {interval.days === 1 ? "day" : "days"}</text>}
       </>;
     })}
     {highlight && <>

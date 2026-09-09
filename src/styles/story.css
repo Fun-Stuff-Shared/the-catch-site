@@ -162,7 +162,6 @@
   padding-bottom: 0;
   border-bottom: none;
 }
-.the-catch .catch-tag { display: none; }
 .the-catch h3 {
   display: block;
   margin: 0 0 0.45rem;
@@ -637,7 +636,8 @@
 }
 
 /* Consecutive citations read as separate numbers, never as one. */
-.src-ref + .src-ref::before { content: ","; color: var(--muted, #6b7280); font-size: 0.72em; }
+.src-ref + .src-ref { margin-left: 0; }
+.src-ref + .src-ref::before { content: ", "; white-space: pre; color: var(--muted, #6b7280); font-size: 0.72em; }
 
 .story-figure figcaption { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .6rem; }
 .story-figure figcaption strong { font: 600 .95rem/1.3 var(--sans); }

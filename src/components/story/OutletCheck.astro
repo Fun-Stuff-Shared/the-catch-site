@@ -17,13 +17,15 @@ const recordDate = sourceId ? recordById.get(sourceId)?.date : undefined;
 const displayDate = date ?? (recordDate
   ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${recordDate}T12:00:00Z`))
   : undefined);
-const verdictWord = chip ? `${chip.charAt(0).toUpperCase()}${chip.slice(1)}.` : undefined;
-const firstSentence = verdict?.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? verdict;
-const record = verdict && firstSentence ? verdict.slice(firstSentence.length).trim() : "";
+const sentence = verdict?.match(/^.*?[.!?](?=\s|$)/)?.[0] ?? verdict ?? "";
+const record = verdict ? verdict.slice(sentence.length).trim() : "";
+const restatesChip = chip ? sentence.toLowerCase().startsWith(chip.toLowerCase()) : false;
+const verdictWord = chip ? (restatesChip ? sentence.slice(0, chip.length) : `${chip.charAt(0).toUpperCase()}${chip.slice(1)}.`) : undefined;
+const firstSentence = restatesChip ? sentence.slice(chip.length) : sentence;
 ---
 {folded ? (
   <p class="oc-folded">
-    {outlet && <strong>{outlet}</strong>}{displayDate && `, ${displayDate}`}. <span set:html={claim} /> {verdict && <span set:html={verdict} />}<slot />
+    {outlet && <strong>{outlet}</strong>}{displayDate && `, ${displayDate}`}, <span set:html={claim} /> {verdict && <span set:html={verdict} />}<slot />
   </p>
 ) : (
   <article class={`outlet-check ${status}`}>
@@ -31,7 +33,7 @@ const record = verdict && firstSentence ? verdict.slice(firstSentence.length).tr
     <p class="oc-claim"><span set:html={claim} /></p>
     {verdict && (
       <p class="oc-verdict">
-        {verdictWord && <strong>{verdictWord}</strong>} {firstSentence && <span set:html={firstSentence} />}
+        {verdictWord && <strong>{verdictWord}</strong>}{firstSentence && <span set:html={restatesChip ? firstSentence : ` ${firstSentence}`} />}
       </p>
     )}
     {record && <p class="oc-record"><span set:html={record} /></p>}

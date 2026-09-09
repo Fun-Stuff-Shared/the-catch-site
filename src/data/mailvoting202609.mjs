@@ -108,7 +108,14 @@ export const dateLine = {
     { date: "Sep 6", label: "26A305" },
     { date: "Nov 3", label: "Election" },
   ],
-  intervals: [{ days: 143 }, { days: 5 }, { days: 8 }, { days: 1 }, { days: 2 }, { days: computed.daysFilingToElection }],
+  intervals: [
+    { days: daysBetween(dates.eo, dates.ruleEffective) },
+    { days: daysBetween(dates.ruleEffective, dates.rulePublished) },
+    { days: daysBetween(dates.rulePublished, dates.app297) },
+    { days: daysBetween(dates.app297, dates.pi) },
+    { days: daysBetween(dates.pi, dates.app305) },
+    { days: computed.daysFilingToElection },
+  ],
 };
 
 export const applicationsTable = [

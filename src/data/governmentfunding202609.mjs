@@ -131,6 +131,10 @@ export const votesRows = [
   ["House roll 288, Sep 1", "Adopt the rule for other bills, H. Res. 1499", `${ruleVote.yeas} to ${ruleVote.nays}`, `R ${ruleVote.republican.yea} to ${ruleVote.republican.nay}`, `D ${ruleVote.democratic.yea} to ${ruleVote.democratic.nay}`],
 ];
 
+function daysBetween(from, to) {
+  return Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86400000);
+}
+
 export const dateLine = {
   points: [
     { date: "Sep 1", label: "House vote" },
@@ -138,7 +142,7 @@ export const dateLine = {
     { date: "Nov 12", label: "Hemp date" },
     { date: "Dec 11", label: "Funding ends" },
   ],
-  intervals: [{ days: calendar.daysHouseVoteToElection }, { days: 9 }, { days: hemp.delayDays }],
+  intervals: [{ days: calendar.daysHouseVoteToElection }, { days: daysBetween(calendar.election, hemp.fullEffect) }, { days: hemp.delayDays }],
   highlight: { label: "House vote to Dec 11", days: calendar.daysHouseVoteToExpiry },
 };
 

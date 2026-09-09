@@ -7,7 +7,7 @@ interface Props {
 const { count, method } = Astro.props;
 ---
 <section class="outlet-check-fold">
-  <h3>{count} other report{count === 1 ? "" : "s"}</h3>
-  <p class="oc-verdict"><strong>Checks out.</strong> Each was checked the same way: {method}</p>
+  <h3>{count === 1 ? "One other report" : `${count} other reports`}</h3>
+  <p class="oc-verdict"><strong>Checks out.</strong> {count === 1 ? "It was checked the same way" : "Each was checked the same way"}: {method}</p>
   <slot />
 </section>
