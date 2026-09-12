@@ -241,7 +241,7 @@ export const timeline = [
   { date: "Jul 1", title: "CUSMA joint review", sub: "Canada and Mexico asked for a 16-year renewal; the United States declined; the pact stays in force and is now reviewed every year" },
   { date: "Jul 20", title: "Three U.S. proclamations signed", sub: "50 percent additional duty under Section 338, originally from August 19" },
   { date: "Aug 18", title: "Proclamation 11056 delays the duties three days", sub: "new effective time 12:01 a.m. eastern, August 22" },
-  { date: "Aug 21", title: "CBP guidance on the Section 338 headings", sub: "50 percent additional duty under 9903.03.12 to 9903.03.14; 0 percent additional under 9903.03.15 and 9903.03.16" },
+  { date: "Aug 21", title: "U.S. customs tells importers how to file the new charge", sub: "50 percent on the listed goods; the goods the proclamations leave out pay no Section 338 charge" },
   { date: "Aug 22", title: "U.S. duties take effect; Carney answers", sub: "Carney says match dollar for dollar; Canadian measures the Tuesday after Labour Day" },
   { date: "Aug 25", title: "Finance Canada names C$27.6 billion", sub: "rates 15, 25, and 50 percent; C$7.5 billion in supports; 12:01 a.m. on September 8" },
   { date: "Aug 26", title: "Seafood comes off the list", sub: `All ${removedCodes} fish and seafood lines removed; ${addedCodes} industrial lines added; ${listItems} lines remain; C$27.6 billion unchanged` },

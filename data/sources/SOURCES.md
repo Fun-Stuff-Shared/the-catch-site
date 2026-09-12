@@ -1186,8 +1186,6 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/finance-product-list-2026-08-25.txt | 247334 | 491b8c86d8bce8fb |
 | data/sources/canada-tariffs/finance-advisory-2026-08-24.html | 33278 | 898e0ac659dc2942 |
 | data/sources/canada-tariffs/finance-advisory-2026-08-24.txt | 3544 | 37ad9def8e07039c |
-| data/sources/canada-tariffs/ontario-ford-2026-08-24.html | 1505 | 3c9b0f3b7e5fa284 |
-| data/sources/canada-tariffs/ontario-ford-2026-08-24.txt | 16 | a1ca2f6428a76055 |
 | data/sources/canada-tariffs/quebec-frechette-2026-09-07.html | 48242 | 39cc7c24597cde71 |
 | data/sources/canada-tariffs/quebec-frechette-2026-09-07.txt | 6297 | d833492e639c39b1 |
 | data/sources/canada-tariffs/cusma-joint-review.html | 39820 | ed6877e3f30762d8 |
@@ -1272,3 +1270,8 @@ The Canada-tariffs September 2026 pins include a Finance Canada HTML table extra
 | data/sources/canada-tariffs/fr-public-inspection-2026-09-09.txt | 1645 | 7cb19a1d11eac77b |
 
 The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observation for August 25, the September 8 White House annex PDFs, an Internet Archive copy of the August 25 Finance product list, the Quebec September 7 release, the CUSMA joint-review page, and Census origin-of-movement files. The Ontario newsroom release was captured as a JavaScript shell. The Census origin-of-movement table is exports by state to all countries, not destination Canada.
+
+| data/sources/canada-tariffs/ontario-ford-2026-08-24.html | 22451 | 955d630025f36b96 |
+| data/sources/canada-tariffs/ontario-ford-2026-08-24.txt | 8549 | 6c59a0143c1cb5f2 |
+| data/sources/canada-tariffs/trump-truth-social-gsa-2026-09-08.html | 39482 | 2a7a05b1f1b85b7b |
+| data/sources/canada-tariffs/trump-truth-social-gsa-2026-09-08.txt | 1710 | ee135a22611e9366 |
