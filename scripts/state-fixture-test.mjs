@@ -232,6 +232,9 @@ test('figure display preserves digits and avoids duplicate percent units', async
   assert.equal(figureText('3.8%', 'percent'), '3.8%');
   assert.equal(figureText('3.5% to 3.75%', 'percent'), '3.5% to 3.75%');
   assert.equal(figureText('0.25', 'percentage point'), '0.25 percentage point');
+  assert.equal(figureText('1967', 'year'), '1967 year');
+  assert.equal(figureText('2026', 'fiscal year'), '2026 fiscal year');
+  assert.equal(figureText('1967', 'satellites'), '1,967 satellites');
 });
 
 test('backend acceptance does not publish an event, descendant, figure or cited record', (t) => {

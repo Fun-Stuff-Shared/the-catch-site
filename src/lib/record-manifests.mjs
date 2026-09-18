@@ -33,3 +33,9 @@ export function citeNumber(sourceId, event) {
   }
   return null;
 }
+
+export function figureLabel(storyPath, figureName) {
+  const manifest = manifests.find((m) => `/events/${m.event}/` === storyPath);
+  const figure = (manifest?.figures ?? []).find((f) => f.figure === figureName);
+  return figure?.label ?? null;
+}

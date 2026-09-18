@@ -2,7 +2,7 @@
 import RevisionTimeline from "./story/RevisionTimeline.astro";
 import { eventPath, slotLabel, figureText } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
-import { recordById, outletRecordByUrl } from "../lib/record-manifests.mjs";
+import { recordById, outletRecordByUrl, figureLabel } from "../lib/record-manifests.mjs";
 const { view, supporting = false } = Astro.props;
 const event = view.event ?? view;
 const evidence = new Map((view.evidence ?? []).map((row) => [row.id, row]));
@@ -23,7 +23,7 @@ const sourcePath = (source) => {
           const source = evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id);
           const href = source ? sourcePath(source) : null;
           const computed = slot.figure?.kind === "computed";
-          const label = slot.slot === 'nonfarm_payroll_revision_may_june' ? 'Payroll revisions for May and June' : slotLabel(slot.slot);
+          const label = figureLabel(eventPath(event.id), slot.slot) ?? (slot.slot === 'nonfarm_payroll_revision_may_june' ? 'Payroll revisions for May and June' : slotLabel(slot.slot));
           return <article class="ledger-row" data-state-slot={id}>
             <h3>{label}</h3>
             {slot.figure && <strong class="ledger-value" data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong>}

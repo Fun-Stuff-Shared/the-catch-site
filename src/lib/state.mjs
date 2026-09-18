@@ -138,7 +138,8 @@ export function slotLabel(name) {
 
 export function figureText(value, unit = '') {
   const raw = String(value ?? '');
-  const number = /^-?\d+(?:\.\d+)?$/.test(raw)
+  const year = /^(?:fy|fiscal year|year|years)$/i.test(unit) && /^\d{4}$/.test(raw);
+  const number = /^-?\d+(?:\.\d+)?$/.test(raw) && !year
     ? raw.replace(/\d+(?=\.|$)/, (digits) => digits.replace(/\B(?=(\d{3})+(?!\d))/g, ','))
     : raw;
   const suffix = /^(percent|%)$/i.test(unit) && /(?:%|\bpercent)$/i.test(raw) ? '' : unit;
