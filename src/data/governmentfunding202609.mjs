@@ -3,7 +3,7 @@
 // Calendar arithmetic from those dated records and the enrolled bill's December 11 date.
 
 export const event = {
-  slug: "government-funding/september-2026",
+  slug: "government-funding/2026-09-01-house-passes-stopgap",
   title: "The House sent a stopgap funding bill to the president, 370 to 48; he signed it the next day",
   dek: "H.R. 6500 keeps most federal agencies at fiscal year 2026 rates through December 11, 2026. The Senate had passed the same text 90 to 6 on August 8. The president signed it September 2 as Public Law 119-103.",
   name: "Government funding",

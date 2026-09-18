@@ -19,7 +19,7 @@ import { scheduleAReceipts, independentExpendituresByCommittee } from "../lib/fe
 // CLF four Del Ray rows dated 31-AUG-26 sum to 1,134,768.75.
 
 export const event = {
-  slug: "texas-senate/september-2026",
+  slug: "texas-senate/2026-09-05-maga-inc-10-million-ad-buy",
   title: "MAGA Inc. files $10 million in Texas Senate ads, split against Talarico and for Paxton",
   dek: "The Saturday 48-hour notice to the Federal Election Commission is two $5 million independent expenditures to Del Ray Media LLC for connected TV and digital ads in the race for Sen. John Cornyn's seat. That $10 million is the filing, not an ad-tracking estimate, and it is not a contribution to Ken Paxton's campaign.",
   name: "Texas Senate ads",

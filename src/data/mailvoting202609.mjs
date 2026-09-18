@@ -4,7 +4,7 @@
 // counts are the named parties in the September 6 stay application.
 
 export const event = {
-  slug: "mail-voting/september-2026",
+  slug: "mail-voting/2026-09-06-supreme-court-asked-to-lift-block",
   title: "The administration asks the Supreme Court to lift a new block on mail-ballot rules",
   dek: "",
   name: "Mail-voting stay applications",

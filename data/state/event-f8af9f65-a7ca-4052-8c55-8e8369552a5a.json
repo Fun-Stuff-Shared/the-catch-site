@@ -1,0 +1,224 @@
+{
+  "current_state": {
+    "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb": {
+      "slot": "filing status",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+      "heads": [
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Reply of applicant Donald J. Trump, President of the United States, et al. filed.",
+      "span_check": "byte_exact",
+      "speaker": "Supreme Court of the United States",
+      "figure": null,
+      "as_of": "2026-07-27",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Supreme Court docket No. 26A124",
+      "evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+      "basis": [
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709"
+      ],
+      "last_confirmed": "2026-07-27",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "as_of": "2026-07-27",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-07-27T00:00:00Z",
+      "content_path": "/Volumes/4/GitHub/the-catch-site/data/sources/mail-voting/scotus-26A124-docket.html",
+      "envelope_seq": 828985,
+      "id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+      "publisher": "Supreme Court of the United States",
+      "refusal": null,
+      "root_evidence": "publisher_host",
+      "root_id": "www.supremecourt.gov",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/GitHub/the-catch-site/checks/manifests",
+      "source_family": "story_pin",
+      "source_id": "scotus-26a124-docket",
+      "source_kind": "document",
+      "story_event_id": "event-mail-voting-september-2026",
+      "story_manifest": "/Volumes/4/GitHub/the-catch-site/checks/manifests/mail-voting--september-2026.json",
+      "text_path": "/Volumes/4/GitHub/the-catch-site/data/sources/mail-voting/scotus-26A124-docket.html",
+      "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
+      "title": "Supreme Court docket 26A124",
+      "url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+      "log_seq": 828986,
+      "recorded_at": "2026-09-08T19:24:08.814833Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07-27",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-07-27T00:00:00Z",
+          "checkable_against": "Supreme Court docket No. 26A124",
+          "claim_type": "actual",
+          "envelope_seq": 830529,
+          "event_id": "event-f8af9f65-a7ca-4052-8c55-8e8369552a5a",
+          "evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+          "figure": null,
+          "id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Reply of applicant Donald J. Trump, President of the United States, et al. filed.",
+          "refusal": null,
+          "retrieved_at": null,
+          "root_id": "www.supremecourt.gov",
+          "span_check": "byte_exact",
+          "span_end": 25839,
+          "span_start": 25758,
+          "speaker": "Supreme Court of the United States",
+          "subject": "Supreme Court application 26A124",
+          "text_path": "/Volumes/4/GitHub/the-catch-site/data/sources/mail-voting/scotus-26A124-docket.html",
+          "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
+          "log_seq": 830530,
+          "recorded_at": "2026-09-08T19:44:52.805954Z",
+          "slot_id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+          "evidence_asserted_at": "2026-07-27T00:00:00Z",
+          "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+          "evidence_publisher": "Supreme Court of the United States",
+          "evidence_source_id": "scotus-26a124-docket"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "0a2f62b478",
+  "evaluated_at": "2026-09-18T04:54:23.952825Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 830509,
+    "fire_id": "event-mail-voting-september-2026",
+    "follows": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+    "id": "event-f8af9f65-a7ca-4052-8c55-8e8369552a5a",
+    "kind": "filing",
+    "label": "Trump v. California stay application reply filed",
+    "minted_at": "2026-09-08T19:44:11.341358Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+    "period": "2026-08-04",
+    "refusal": null,
+    "status": "published",
+    "subject": "Supreme Court application 26A124",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/event-mail-voting-september-2026/story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595/1439c13321b745b7bbef8a07aa4a64a7.json",
+    "log_seq": 830510
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+      "envelope_seq": 899949,
+      "event_id": "event-f8af9f65-a7ca-4052-8c55-8e8369552a5a",
+      "id": "slot-1add3b23-b9a1-48e3-9561-1798af1ef1dc",
+      "name": "filing status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+        "source_id": "scotus-26a124-docket"
+      },
+      "log_seq": 899950,
+      "recorded_at": "2026-09-15T00:04:23.576990Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+      "envelope_seq": 899951,
+      "event_id": "event-f8af9f65-a7ca-4052-8c55-8e8369552a5a",
+      "id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "name": "filing status",
+      "refusal": null,
+      "log_seq": 899952,
+      "recorded_at": "2026-09-15T00:04:41.860865Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07-27",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-07-27T00:00:00Z",
+      "checkable_against": "Supreme Court docket No. 26A124",
+      "claim_type": "actual",
+      "envelope_seq": 830529,
+      "event_id": "event-f8af9f65-a7ca-4052-8c55-8e8369552a5a",
+      "evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+      "figure": null,
+      "id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Reply of applicant Donald J. Trump, President of the United States, et al. filed.",
+      "refusal": null,
+      "retrieved_at": null,
+      "root_id": "www.supremecourt.gov",
+      "span_check": "byte_exact",
+      "span_end": 25839,
+      "span_start": 25758,
+      "speaker": "Supreme Court of the United States",
+      "subject": "Supreme Court application 26A124",
+      "text_path": "/Volumes/4/GitHub/the-catch-site/data/sources/mail-voting/scotus-26A124-docket.html",
+      "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
+      "log_seq": 830530,
+      "recorded_at": "2026-09-08T19:44:52.805954Z",
+      "slot_id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "evidence_asserted_at": "2026-07-27T00:00:00Z",
+      "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+      "evidence_publisher": "Supreme Court of the United States",
+      "evidence_source_id": "scotus-26a124-docket"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 899953,
+      "id": "attach-anchor-slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709",
+      "refusal": null,
+      "slot_id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "log_seq": 899954,
+      "recorded_at": "2026-09-15T00:04:41.868313Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+  "root_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-680d8800-81cd-4924-a6ba-89ee1fb428fb",
+      "name": "filing status",
+      "value": null,
+      "unit": null,
+      "sentence": "Reply of applicant Donald J. Trump, President of the United States, et al. filed.",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ec0f4e1a8f651709"
+    }
+  ]
+}

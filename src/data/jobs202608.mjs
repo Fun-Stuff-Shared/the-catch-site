@@ -5,7 +5,7 @@
 // admitted coverage articles listed in the records section.
 
 export const event = {
-  slug: "jobs/august-2026",
+  slug: "jobs/2026-09-04-august-payrolls-rise-162000",
   title: "Payrolls rise by 162,000 and July's loss becomes a gain, with two volatile categories supplying 101,000 of it",
   dek: "Forecasters expected 53,000 to 65,000. The employer survey estimated payrolls rose by 162,000, two and a half to three times those forecasts. Restaurants and public schools supplied 101,000 of the gain, and the July loss that opened this series was revised to a gain of 21,000. The unemployment rate held at 4.1 percent.",
   name: "The August 2026 jobs report",

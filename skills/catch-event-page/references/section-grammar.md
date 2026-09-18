@@ -1,8 +1,8 @@
 # Section grammar, chip vocabulary, layers
 
-Ratified 2026-08-23 against /events/fed-rate/june-2026/, reworked 2026-08-31 on
-/events/jobs/july-2026/, and given the shape rules below on 2026-09-08 after Zain read
-/events/texas-senate/september-2026/ as a wall of text. Order is fixed. Drop a section only
+Ratified 2026-08-23 against /events/fed-rate/2026-06-17-unanimous-hold/, reworked 2026-08-31 on
+/events/jobs/2026-08-07-july-payrolls-fall-23000/, and given the shape rules below on 2026-09-08 after Zain read
+/events/texas-senate/2026-09-05-maga-inc-10-million-ad-buy/ as a wall of text. Order is fixed. Drop a section only
 when it is truly empty.
 
 ## Shape rules (inverted pyramid, 2026-09-08, Zain)
@@ -108,7 +108,7 @@ The story component library lives in `src/components/story/` (see its `index.ts`
 highlightColumn), `StepChart` (rate paths), `OutletCheck` (outlet, claim, verdict, chip,
 status ok/warn/note; put the `Cite` in the slot), `CheckedBlock` (label, variant
 confirmed/contested), `Receipt`, `DecisionTimeline`, `KpiStrip`, `ThreeThings`. Import each
-from its `.astro` file. /events/texas-senate/september-2026/ and /events/fed-rate/june-2026/
+from its `.astro` file. /events/texas-senate/2026-09-05-maga-inc-10-million-ad-buy/ and /events/fed-rate/2026-06-17-unanimous-hold/
 use them; copy their shapes.
 
 ```astro
@@ -131,7 +131,7 @@ use them; copy their shapes.
 
 <OutletCheck outlet="CBS News" claim={`wrote that Trump was &ldquo;donating $10 million&rdquo;`} verdict="The spending is independent, not a donation." chip="mislabeled" status="warn"><Cite s="cbs-texas-senate-ad-blitz" passage="donating $10 million" /></OutletCheck>
 
-<StorySources event="jobs/july-2026" />
+<StorySources event="jobs/2026-08-07-july-payrolls-fall-23000" />
 ```
 
 - `Cite s=` must name an id in the manifest's `story_sources`; the build throws otherwise.

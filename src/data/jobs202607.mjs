@@ -4,7 +4,7 @@
 // article identified in the records section.
 
 export const event = {
-  slug: "jobs/july-2026",
+  slug: "jobs/2026-08-07-july-payrolls-fall-23000",
   title: "The job market goes into reverse: payrolls fall by 23,000",
   dek: "Forecasters expected a gain of 83,000. Instead the economy lost jobs, the two prior months were revised down by a combined 103,000, and the unemployment rate fell for the wrong reason: fewer people working or looking.",
   name: "The July 2026 jobs report",

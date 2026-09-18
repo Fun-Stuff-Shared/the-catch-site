@@ -9,7 +9,7 @@
 // 1922 referendum on a sixteen-district congressional map, official return in the state appendix: 240,340 yes, 386,522 no.
 
 export const event = {
-  slug: "missouri-house-map/september-2026",
+  slug: "missouri-house-map/2026-09-03-map-never-became-law",
   title: "Missouri's highest court says the new U.S. House map never became law and sends it to a November vote",
   dek: "The ruling is unanimous. The November 3 House election uses the 2022 districts whether or not voters approve House Bill 1, unless a federal court steps in. As of September 8 none had: the state's stay request sat with the U.S. Supreme Court and two new federal suits sat in St. Louis. The referendum is on the ballot as Proposition A.",
   name: "Missouri House map",

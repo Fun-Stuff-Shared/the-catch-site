@@ -3,9 +3,9 @@
  * new-event: scaffold a new event page from a recipe.
  *
  * Usage:
- *   node scripts/new-event.mjs --recipe fomc --date 2026-09-17
- *   node scripts/new-event.mjs --recipe jobs-report --date 2026-09-05
- *   node scripts/new-event.mjs --recipe coverage-only --slug ukraine-ceasefire --title "..."
+ *   node scripts/new-event.mjs --recipe fomc --date 2026-09-17 --moment rates-held
+ *   node scripts/new-event.mjs --recipe jobs-report --date 2026-10-02 --moment september-payrolls
+ *   node scripts/new-event.mjs --recipe coverage-only --slug ukraine-ceasefire --date 2026-09-20 --moment ceasefire-signed --title "..."
  *
  * What it does:
  *   1. Reads the recipe JSON from recipes/<type>.json
@@ -25,21 +25,24 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+const ROOT = process.env.CATCH_SITE_ROOT || new URL("..", import.meta.url).pathname;
 const args = process.argv.slice(2);
 
 function flag(name) {
   const i = args.indexOf(`--${name}`);
-  return i >= 0 ? args[i + 1] : null;
+  const value = i >= 0 ? args[i + 1] : null;
+  return value == null || value.startsWith("--") ? null : value;
 }
 
 const recipeType = flag("recipe");
 const eventDate = flag("date");
 const customSlug = flag("slug");
+const moment = flag("moment");
 const customTitle = flag("title");
 
-if (!recipeType) {
-  console.error("Usage: node scripts/new-event.mjs --recipe <type> --date <YYYY-MM-DD> [--slug <slug>] [--title <title>]");
+if (!recipeType || !eventDate || !moment) {
+  console.error("Usage: node scripts/new-event.mjs --recipe <type> --date <YYYY-MM-DD> --moment <what-happened> [--slug <subject>] [--title <title>]");
+  console.error("A story is one dated moment: --date is the day it happened, --moment a few words naming it (counter-tariffs-take-effect).");
   console.error("Available recipes:");
   const { readdirSync } = await import("node:fs");
   for (const f of readdirSync(join(ROOT, "recipes")).filter((n) => n.endsWith(".json"))) {
@@ -56,17 +59,52 @@ if (!existsSync(recipePath)) {
 }
 
 const recipe = JSON.parse(readFileSync(recipePath, "utf8"));
-const date = eventDate ? new Date(eventDate) : new Date();
+// Recipe strings land in generated source: a name goes in a comment, section ids in HTML ids
+// and anchors, kickers in an attribute. Each is checked for its target grammar before any write.
+const oneLine = (value) => typeof value === "string" && !/[\r\n\u2028\u2029]/.test(value);
+if (!oneLine(recipe.name)) {
+  console.error(`recipe name must be one line: ${recipePath}`);
+  process.exit(1);
+}
+for (const section of recipe.sections || []) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(section.id ?? "")) {
+    console.error(`recipe section id must be lowercase words joined by single hyphens, got ${JSON.stringify(section.id)}`);
+    process.exit(1);
+  }
+  if (!oneLine(section.kicker ?? "")) {
+    console.error(`recipe section kicker must be one line: ${section.id}`);
+    process.exit(1);
+  }
+}
+if (!/^\d{4}-\d{2}-\d{2}$/.test(eventDate)) {
+  console.error(`--date must be YYYY-MM-DD, got ${eventDate}`);
+  process.exit(1);
+}
 const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-const monthName = monthNames[date.getMonth()];
-const year = date.getFullYear();
-const dateStr = eventDate || date.toISOString().slice(0, 10);
+const dateStr = eventDate;
+const [year, monthNumber, dayNumber] = dateStr.split("-").map(Number);
+const calendar = new Date(Date.UTC(year, monthNumber - 1, dayNumber));
+if (calendar.getUTCFullYear() !== year || calendar.getUTCMonth() !== monthNumber - 1 || calendar.getUTCDate() !== dayNumber) {
+  console.error(`--date is not a calendar day: ${eventDate}`);
+  process.exit(1);
+}
+const monthName = monthNames[monthNumber - 1];
 const yyyymmdd = dateStr.replace(/-/g, "");
+const dateLabel = `${monthName.charAt(0).toUpperCase() + monthName.slice(1)} ${Number(dateStr.slice(8, 10))}, ${year}`;
 
 // Derive slugs
 const subject = recipe.subject_slug || customSlug || recipeType;
-const storySlug = customSlug || `${monthName}-${year}`;
-const dataModuleName = customSlug || `${subject.replace(/-/g, "")}${yyyymmdd}`;
+if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(subject)) {
+  console.error(`subject slug must be lowercase words joined by single hyphens, got ${subject}`);
+  process.exit(1);
+}
+const momentSlug = moment.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+if (!momentSlug || /\d{4}-\d{2}-\d{2}/.test(momentSlug)) {
+  console.error("--moment names what happened in a few words and carries no date; the date is --date");
+  process.exit(1);
+}
+const storySlug = `${dateStr}-${momentSlug}`;
+const dataModuleName = `${subject}-${storySlug}`;
 
 console.log(`\n  Recipe: ${recipe.name}`);
 console.log(`  Date: ${dateStr}`);
@@ -94,7 +132,7 @@ if (existsSync(dataPath)) {
 
   const sources = (recipe.primary_sources || []).map((s) => {
     const url = (s.url_template || "").replace("{YYYYMMDD}", yyyymmdd);
-    return `  { id: "TODO", name: "${s.name}", url: "${url}", kind: "primary" },`;
+    return `  { id: "TODO", name: ${JSON.stringify(s.name)}, url: ${JSON.stringify(url)}, kind: "primary" },`;
   }).join("\n");
 
   const module = `// ${recipe.name}: ${dateStr}
@@ -103,7 +141,7 @@ if (existsSync(dataPath)) {
 
 export const event = {
   slug: "${subject}/${storySlug}",
-  title: "${customTitle || "TODO: headline"}",
+  title: ${JSON.stringify(customTitle || "TODO: headline")},
   dek: "TODO: one-sentence summary",
   name: "TODO: short name",
   date: "${dateStr}",
@@ -142,7 +180,7 @@ if (existsSync(pagePath)) {
   const tocEntries = sections.map((s) => `        { id: "${s.id}", label: "TODO" },`).join("\n");
   const sectionBlocks = sections.map((s) => `
       <section id="${s.id}">
-        <SectionKicker text="${s.kicker}" />
+        <SectionKicker text={${JSON.stringify(s.kicker ?? "")}} />
         <h2>TODO: ${s.id}</h2>
         <!-- Fill from dossier -->
       </section>`).join("\n");
@@ -166,11 +204,11 @@ import { event } from "${rel}data/${dataModuleName}.mjs";
   <div slot="locator" class="locator">
     <span>EVENTS</span>
     <a href="/events/${subject}/" class="loc-event">TODO: subject name</a>
-    <span>${monthName.charAt(0).toUpperCase() + monthName.slice(1)} ${year}</span>
+    <span>${dateLabel}</span>
   </div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker"><a href="/events/${subject}/">TODO: subject</a> &middot; ${monthName.charAt(0).toUpperCase() + monthName.slice(1)} ${year} &middot; updated {event.updated}</p>
+      <p class="story-kicker"><a href="/events/${subject}/">TODO: subject</a> &middot; ${dateLabel} &middot; updated {event.updated}</p>
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 

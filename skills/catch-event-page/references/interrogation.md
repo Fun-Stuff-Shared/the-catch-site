@@ -7,8 +7,8 @@ types what is absent. Run it after the gate passes and before the review ping.
 Run:
 
 ```bash
-node scripts/../skills/catch-event-page/scripts/interrogate.sh jobs/august-2026
-# writes checks/interrogations/jobs--august-2026-<date>.md
+node scripts/../skills/catch-event-page/scripts/interrogate.sh jobs/2026-09-04-august-payrolls-rise-162000
+# writes checks/interrogations/jobs--2026-09-04-august-payrolls-rise-162000-<date>.md
 ```
 
 The script uses grok with web search and X search on (`--always-approve`, no subagents), so

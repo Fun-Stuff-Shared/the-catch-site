@@ -4,7 +4,7 @@
 // government copy of the joint declaration.
 
 export const event = {
-  slug: "greenland/september-2026",
+  slug: "greenland/2026-09-07-eu-package-and-nuuk-declaration",
   title: "The Commission named a 200 million euro Greenland package and signed a joint declaration in Nuuk",
   dek: "Denmark announced the visit on September 1. On September 7 the European Commission, Greenland, and Denmark signed a declaration that says it creates no legal or financial obligations. The Commission press release, not that declaration, named a €200 million package for this year and next.",
   name: "Greenland EU package",

@@ -3,7 +3,7 @@
 // under data/sources/venezuela-oil/ and data/sources/coverage/.
 
 export const event = {
-  slug: "venezuela-oil/september-2026",
+  slug: "venezuela-oil/2026-08-31-100-year-oil-rights-claim",
   title: "The White House says 100-year rights to 17 Venezuelan oil fields. Caracas says 25 years, renewable.",
   dek: "Eight months after U.S. forces captured Maduro, the White House announced majority control of 65 billion barrels through a private operator. The instruments are a 35 percent stake, later called warrants, and a 20 percent purchase right. No contract has been published.",
   name: "Venezuela oil",

@@ -3,7 +3,7 @@
 // 1,300 feet to meters: 1300 * 0.3048 = 396.24, rounded to 396.
 
 export const event = {
-  slug: "miami-cargo-crash/september-2026",
+  slug: "miami-cargo-crash/2026-09-06-runway-overrun",
   title: "A cargo jet overran Miami's runway, struck vehicles, and killed five people on the ground",
   dek: "The FAA named the flight 21 Air 7598, a Boeing 767-300 arriving from San Juan. Fire crews found the plane beyond the airport boundary on fire. The National Transportation Safety Board is investigating and has not given a cause.",
   name: "Miami cargo crash",

@@ -25,7 +25,7 @@ Lessons that came out of it:
   pretending; market pricing came from dated quotes with URLs instead.
 - Custody machinery and internal prose came off the page in the first feedback round;
   one "How we checked this" toggle per record page is the whole visible apparatus.
-- Day-dates left the URLs: subject page, month-slugged story, record per document.
+- The URL names the moment: subject page, story slugged by its date and what happened, record per document.
 
 ## Shape B: absorb an expert review (Jobs, July 2026)
 

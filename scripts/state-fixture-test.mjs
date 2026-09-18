@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readState, selectPublishedState, readPublishedState, frontChains, deskEvents, citedDocuments } from '../src/lib/state.mjs';
+import { readState, selectPublishedState, readPublishedState, frontChains, deskEvents, citedDocuments, eventPath } from '../src/lib/state.mjs';
 
 function fixture(t) {
   const root = mkdtempSync(join(tmpdir(), 'catch-state-test-'));
@@ -267,4 +267,12 @@ test('computed figures require each input source in the reader view', (t) => {
   view.evidence.pop();
   sync();
   assert.throws(() => readState(root), /provenance is incomplete/);
+});
+
+test('eventPath routes a story by its last date-shaped segment and leaves other ids as one segment', () => {
+  assert.equal(eventPath('event-jobs-2026-09-04-august-payrolls-rise-162000'), '/events/jobs/2026-09-04-august-payrolls-rise-162000/');
+  // a date-shaped subject
+  assert.equal(eventPath('event-election-2024-11-05-review-2026-09-18-final-ruling'), '/events/election-2024-11-05-review/2026-09-18-final-ruling/');
+  assert.equal(eventPath('event-jobs-july-2026'), '/events/event-jobs-july-2026/');
+  assert.equal(eventPath('event-550e8400-e29b-41d4-a716-446655440000'), '/events/event-550e8400-e29b-41d4-a716-446655440000/');
 });

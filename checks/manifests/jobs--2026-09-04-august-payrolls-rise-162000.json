@@ -1,0 +1,1053 @@
+{
+  "subject": "jobs",
+  "event": "jobs/2026-09-04-august-payrolls-rise-162000",
+  "date": "2026-09-04",
+  "story_title": "Payrolls rise by 162,000 and July's loss becomes a gain, with two volatile categories supplying 101,000 of it",
+  "state_event_id": "event-jobs-2026-09-04-august-payrolls-rise-162000",
+  "event_record": "/events/jobs/",
+  "completed_by": "fable (keystone session), skill catch-event-page",
+  "date_completed": "2026-09-08",
+  "sub_events": [
+    {
+      "id": "jobs-release-2026-09-04",
+      "date": "2026-09-04",
+      "label": "August employment release",
+      "section_anchor": "what-happened",
+      "records": [
+        "bls-empsit-2026-08"
+      ]
+    },
+    {
+      "id": "september-8-indicators",
+      "date": "2026-09-08",
+      "label": "Two more labor readings land four days after the report",
+      "section_anchor": "who-feels-it",
+      "records": [
+        "conference-board-eti-2026-08",
+        "nyfed-sce-2026-08"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "bls-empsit-2026-08",
+      "title": "The Employment Situation, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-04",
+      "url": "https://www.bls.gov/news.release/archives/empsit_09042026.htm",
+      "pinned_path": "data/sources/bls-empsit-2026-08.html",
+      "text_path": "data/sources/bls-empsit-2026-08.txt",
+      "text_sha256": "sha256:3fc04a11ffd394d5e4b7207095447b89a73e9d7bdf6e7bc38faaa81e54c5277f",
+      "quote": "Total nonfarm payroll employment increased by 162,000 in August, and the unemployment rate was unchanged at 4.1 percent",
+      "quote_span_check": "normalized",
+      "about": "The government's monthly jobs report: the Bureau of Labor Statistics counts payroll jobs through a survey of employers and measures unemployment through a survey of households, and publishes both in this release. Our copy was saved the day it came out.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-payems-2026-08",
+      "title": "Total nonfarm payrolls, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-08",
+      "url": "https://fred.stlouisfed.org/series/PAYEMS",
+      "pinned_path": "data/sources/PAYEMS-2026-09-08.csv",
+      "text_path": "data/sources/PAYEMS-2026-09-08.csv",
+      "text_sha256": "sha256:bf5b48d21b9a84a0be71ece7268fad0cccb943cc89d863fdc01490bece8ab020",
+      "quote": "2026-08-01,159075",
+      "quote_span_check": "byte_exact",
+      "about": "The count of payroll jobs each month since 1939, as published by the statistics agency and mirrored by the St. Louis Fed. Saved September 8, after the August release; every monthly change and average on this page is arithmetic on this file.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-unrate-2026-08",
+      "title": "Unemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-08",
+      "url": "https://fred.stlouisfed.org/series/UNRATE",
+      "pinned_path": "data/sources/UNRATE-2026-09-08.csv",
+      "text_path": "data/sources/UNRATE-2026-09-08.csv",
+      "text_sha256": "sha256:ffe86c903f6944ebc8281e5474a15fc4ceaac61059bc51ec86a7241391d8713d",
+      "quote": "2026-08-01,4.1",
+      "quote_span_check": "byte_exact",
+      "about": "The share of the labor force that is unemployed, each month since 1948. Saved September 8; the series reflects the September 4 release.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-u6rate-2026-08",
+      "title": "U-6 underemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-08",
+      "url": "https://fred.stlouisfed.org/series/U6RATE",
+      "pinned_path": "data/sources/U6RATE-2026-09-08.csv",
+      "text_path": "data/sources/U6RATE-2026-09-08.csv",
+      "text_sha256": "sha256:b7907446bf33fb327fa8432ee8f39240eac3c454ca097af5321cb95e2598cf34",
+      "quote": "2026-08-01,7.7",
+      "quote_span_check": "byte_exact",
+      "about": "The broadest measure of slack: the unemployed plus people who want work but stopped looking plus people working part time because they could not find full-time work. Saved September 8; the series reflects the September 4 release.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-primeage-2026-08",
+      "title": "Prime-age (25 to 54) participation, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-08",
+      "url": "https://fred.stlouisfed.org/series/LNS11300060",
+      "pinned_path": "data/sources/LNS11300060-2026-09-08.csv",
+      "text_path": "data/sources/LNS11300060-2026-09-08.csv",
+      "text_sha256": "sha256:f7a37929302d7be6bcda2d885aac8a322649eba6cb5ca8f9ca0fb3cc36ad20a7",
+      "quote": "2026-08-01,83.4",
+      "quote_span_check": "byte_exact",
+      "about": "The share of people aged 25 to 54 who are working or looking for work. Saved September 8; the series reflects the September 4 release.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-ahe-2026-08",
+      "title": "Average hourly earnings, all private employees, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-09-08",
+      "url": "https://fred.stlouisfed.org/series/CES0500000003",
+      "pinned_path": "data/sources/CES0500000003-2026-09-08.csv",
+      "text_path": "data/sources/CES0500000003-2026-09-08.csv",
+      "text_sha256": "sha256:c602b6f2be66970cf4d06fa376fd761ae6211e93c06bfe4ea337625a080d21e8",
+      "quote": "2026-08-01,37.75",
+      "quote_span_check": "byte_exact",
+      "about": "Average hourly pay for private-sector employees each month since 2006; the year-over-year wage growth on this page is arithmetic on this file. Saved September 8; the series reflects the September 4 release.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "alfred-payems-first-2026-08",
+      "title": "Payroll estimates as first published on September 4, 2026 (ALFRED vintage)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-09-04",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-2026-09-04.csv",
+      "text_path": "data/sources/alfred-payems-2026-09-04.csv",
+      "text_sha256": "sha256:30390ad54c9385ab0fe7e27b94629a47ed7bbf70f20a09834df095ca28408fcc",
+      "quote": "2026-08-01,159075",
+      "quote_span_check": "byte_exact",
+      "about": "The payroll series exactly as it stood on release day, kept so first estimates can be compared with later revisions.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "alfred-payems-first-2026-07",
+      "title": "Payroll estimates as first published on August 7, 2026 (ALFRED vintage)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-08-07",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-2026-08-07.csv",
+      "text_path": "data/sources/alfred-payems-2026-08-07.csv",
+      "text_sha256": "sha256:6c1aa8663e1916362c44bf6b3272768d9abd6dfc0d2cf0215799fb108b6074c8",
+      "quote": "2026-07-01,158858",
+      "quote_span_check": "byte_exact",
+      "about": "The payroll series as it stood on August 7, 2026, when July was first reported as a loss of 23,000.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "thehill-august-jobs",
+      "title": "US added 162,000 jobs in August, blowing past expectations",
+      "publisher": "The Hill",
+      "date": "2026-09-04",
+      "url": "https://thehill.com/business/6069875-august-jobs-data-us-economy-trump-administration/",
+      "pinned_path": "data/sources/coverage/thehill-august-jobs.html",
+      "text_path": "data/sources/coverage/thehill-august-jobs.txt",
+      "text_sha256": "sha256:8b7177e5fb9a7ea7d72e5234cebc958cf62e2acf2c789aa689f84f732d28de6d",
+      "quote": "economy added 162,000 jobs in August, according to new data released Friday by the Bureau of Labor Statistics",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "aljazeera-august-jobs",
+      "title": "US adds 162,000 jobs in August, raising Fed rate hike expectations",
+      "publisher": "Al Jazeera",
+      "date": "2026-09-04",
+      "url": "https://www.aljazeera.com/economy/2026/9/4/us-adds-jobs-in-august-beating-economic-forecasts",
+      "pinned_path": "data/sources/coverage/aljazeera-august-jobs.html",
+      "text_path": "data/sources/coverage/aljazeera-august-jobs.txt",
+      "text_sha256": "sha256:1d62bf7633131a41e34ecaff42507f703a9aa27711ae4b8ae6e2149934882d6e",
+      "quote": "Economists polled by Reuters had forecast 56,000 gains",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "upi-august-jobs",
+      "title": "Nonfarm payrolls grew by 162,000 in August, beat expectations",
+      "publisher": "UPI",
+      "date": "2026-09-04",
+      "url": "https://www.upi.com/Top_News/US/2026/09/04/nonfarm-payrolls-bureau-labor-statistics-august-2026/8801788532242/",
+      "pinned_path": "data/sources/coverage/upi-august-jobs.html",
+      "text_path": "data/sources/coverage/upi-august-jobs.txt",
+      "text_sha256": "sha256:18a83207abfc74220036b2a52bcab0b2502de807fdb67aba7c882eb0925367da",
+      "quote": "Nonfarm payrolls increased by 162,000 in August while the national unemployment rate remained firm at 4.1%",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "pbs-august-jobs",
+      "title": "Hiring burst of 162,000 jobs in August puts the focus squarely back on inflation in the U.S.",
+      "publisher": "PBS NewsHour (Associated Press)",
+      "date": "2026-09-04",
+      "url": "https://www.pbs.org/newshour/economy/hiring-burst-of-162000-jobs-in-august-puts-the-focus-squarely-back-on-inflation-in-the-u-s",
+      "pinned_path": "data/sources/coverage/pbs-august-jobs.html",
+      "text_path": "data/sources/coverage/pbs-august-jobs.txt",
+      "text_sha256": "sha256:0c0c56c5ac8272dde74fbbc87d11aeee140e243905a4ebeec2dc67c22c992aa9",
+      "quote": "employers added a surprising 162,000 jobs",
+      "quote_span_check": "normalized",
+      "about": "The Associated Press story as published by PBS NewsHour, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnbc-women-august-jobs",
+      "title": "Women accounted for almost all of job gains in August. Here's why",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/04/jobs-report-women-payrolls.html",
+      "pinned_path": "data/sources/coverage/cnbc-women-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-women-august-jobs.txt",
+      "text_sha256": "sha256:ebee195127cd367d52e4b2dacf2d82aabc2c74a9f3b2ea5964750d1e2ce9a50a",
+      "quote": "Women accounted for 158,000",
+      "quote_span_check": "normalized",
+      "about": "Release-day analysis, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnbc-yields-august-jobs",
+      "title": "2-year yield rises to highest since January 2025 after hot jobs report",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/04/treasurys-bonds-nonfarm-payrolls-unemployment-data.html",
+      "pinned_path": "data/sources/coverage/cnbc-yields-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-yields-august-jobs.txt",
+      "text_sha256": "sha256:311896316749c83fdd110bd7e038a0e27f635ee7a7ed615327cd6bdec38d1e88",
+      "quote": "The probability of a quarter percentage point increase rose to 58%",
+      "quote_span_check": "normalized",
+      "about": "Release-day market coverage, saved as served on September 4.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "wapo-august-jobs",
+      "title": "The U.S. economy added 162,000 jobs in August, beating expectations",
+      "publisher": "The Washington Post",
+      "date": "2026-09-04",
+      "url": "https://www.washingtonpost.com/business/2026/09/04/us-economy-added-162000-jobs-august-beating-expectations/",
+      "pinned_path": "data/sources/coverage/wapo-august-jobs.html",
+      "text_path": "data/sources/coverage/wapo-august-jobs.txt",
+      "text_sha256": "sha256:c181d8039dbc5d7fae84cd823f87f3fab6ac01f7be268a51b9c88e6757809927",
+      "quote": "economy added 162,000 jobs in August, beating expectations",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage; only the opening of the article could be saved, the rest sits behind a subscription wall.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fed-waller-2026-09-03",
+      "title": "The Economic Outlook and Some Comments on My Policy Communication (Governor Waller, September 3, 2026)",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-09-03",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260903a.htm",
+      "pinned_path": "data/sources/fed-waller-2026-09-03.html",
+      "text_path": "data/sources/fed-waller-2026-09-03.txt",
+      "text_sha256": "sha256:516c796aac1786726c87df2143ff0b82b16031fe990f40ffb81db76ec3f77ec0",
+      "quote": "Turning to the labor market, it is also in satisfactory shape.",
+      "quote_span_check": "normalized",
+      "about": "A Fed governor's speech the day before the report, saved from the Fed's own site as published, setting out what would make him vote to hold or to raise rates on September 15 and 16.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnbc-adp-august-jobs",
+      "title": "Private payrolls rose by 38,000 in August, fewer than expected, ADP reports",
+      "publisher": "CNBC",
+      "date": "2026-09-02",
+      "url": "https://www.cnbc.com/2026/09/02/private-payrolls-rose-by-38000-in-august-fewer-than-expected-adp-reports.html",
+      "pinned_path": "data/sources/coverage/cnbc-adp-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-adp-august-jobs.txt",
+      "text_sha256": "sha256:ff1cd035ba3a14da974d1cb0f3174e07b88d5173364dcf6f3c1e29e576e76a01",
+      "quote": "firms added 38,000 workers, fewer than the upwardly revised 46,000 in July and below the Dow Jones consensus estimate for 47,000",
+      "quote_span_check": "normalized",
+      "about": "Coverage of the private payroll processor's own count, published two days before the government report; saved as served.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnbc-trump-rates-august-jobs",
+      "title": "Trump threatens to halt trade with top partners unless Fed cuts rates",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/04/trump-fed-rates-jobs-trade.html",
+      "pinned_path": "data/sources/coverage/cnbc-trump-rates-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-trump-rates-august-jobs.txt",
+      "text_sha256": "sha256:c1aea7e7931a36638f75ea55917d425172db788b58d21b821de27d62fdeb9d18",
+      "quote": "Great jobs number just announced, breaking all estimates (except mine!) by double and triple",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage of the president's reaction, quoting his post and his Oval Office remarks; saved as served.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "thehill-trump-rates-august-jobs",
+      "title": "Trump threatens trade war if rates aren't cut after strong jobs report",
+      "publisher": "The Hill",
+      "date": "2026-09-04",
+      "url": "https://thehill.com/business/6071563-trump-trade-war-fed-interest-rates-august-jobs-report",
+      "pinned_path": "data/sources/coverage/thehill-trump-rates-august-jobs.html",
+      "text_path": "data/sources/coverage/thehill-trump-rates-august-jobs.txt",
+      "text_sha256": "sha256:7cca0765d28f13d1f3df37f5d7ca4b90a5321fdd4b98eb62d171cafdcb2c1dfc",
+      "quote": "Traders are now pricing in a 60 percent chance that the Fed hikes rates by a quarter point at its next meeting this month",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage of the president's reaction and the rate-hike odds; saved as served.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnbc-stocks-august-jobs",
+      "title": "Dow tumbles more than 260 points after strong jobs report reignites rate hike fears",
+      "publisher": "CNBC",
+      "date": "2026-09-04",
+      "url": "https://www.cnbc.com/2026/09/03/stock-market-today-live-updates.html",
+      "pinned_path": "data/sources/coverage/cnbc-stocks-august-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-stocks-august-jobs.txt",
+      "text_sha256": "sha256:04fb74d5b93fc1f2f4b20315bece99a293f17b7858a39a3e4df4b73d81697bf7",
+      "quote": "The 30-stock Dow was down 271.86 points, or 0.51%, closing at 53,414.25.",
+      "quote_span_check": "normalized",
+      "about": "The day's market report with the closing levels of the three main stock indexes; saved as served.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "adp-release-2026-08",
+      "title": "ADP National Employment Report, August 2026",
+      "publisher": "ADP Research",
+      "date": "2026-09-02",
+      "url": "https://mediacenter.adp.com/2026-09-02-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-38,000-Jobs-in-August",
+      "pinned_path": "data/sources/adp-release-2026-08.html",
+      "text_path": "data/sources/adp-release-2026-08.txt",
+      "text_sha256": "sha256:780c7907faef3c50f220cac1c7df7b9f81352081f36e0c04be9063a86519529d",
+      "quote": "Private-sector employment increased by 38,000 jobs in August",
+      "quote_span_check": "normalized",
+      "about": "The payroll processor's own count of private hiring, published two days before the government report. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "dol-claims-2026-09-03",
+      "title": "Unemployment Insurance Weekly Claims, week ending August 29, 2026",
+      "publisher": "U.S. Department of Labor",
+      "date": "2026-09-03",
+      "url": "https://www.dol.gov/ui/data.pdf",
+      "pinned_path": "data/sources/dol-claims-2026-09-03.pdf",
+      "text_path": "data/sources/dol-claims-2026-09-03.txt",
+      "text_sha256": "sha256:27cdeb6751c8775c2ee41ab3e448d93c55dabc87d9cc6b25ff6cd0a5abc4d53f",
+      "quote": "the advance figure for seasonally adjusted initial claims was 206,000",
+      "quote_span_check": "normalized",
+      "about": "The weekly count of new unemployment claims, the last labor-market reading before the jobs report. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "piedmont-august-jobs",
+      "title": "August Employment Report: Not the Blowout Report it Appears",
+      "publisher": "Piedmont Crescent Capital (Mark Vitner)",
+      "date": "2026-09-04",
+      "url": "https://piedmontcrescentcapital.com/wp-content/uploads/2026/09/20260904_August-Employment-Report-Not-the-Blowout-Report-it-Appears-1.pdf",
+      "pinned_path": "data/sources/coverage/piedmont-august-jobs.pdf",
+      "text_path": "data/sources/coverage/piedmont-august-jobs.txt",
+      "text_sha256": "sha256:17e9cb78e1b37f479a1ca74407666ed9ecc88a4f52c827001e1bc43a9342dd84",
+      "quote": "Before seasonal adjustment restaurants and bars shed just 700 workers in August",
+      "quote_span_check": "normalized",
+      "about": "A bank economist's release-day note arguing the gain is seasonal payback, with the unadjusted figures. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "yahoo-chart-august-jobs",
+      "title": "The biggest August jobs beat in nearly 30 years may be less impressive than it looks",
+      "publisher": "Yahoo Finance",
+      "date": "2026-09-04",
+      "url": "https://finance.yahoo.com/markets/article/the-biggest-august-jobs-beat-in-nearly-30-years-may-be-less-impressive-than-it-looks-chart-of-the-day-114716694.html",
+      "pinned_path": "data/sources/coverage/yahoo-chart-august-jobs.html",
+      "text_path": "data/sources/coverage/yahoo-chart-august-jobs.txt",
+      "text_sha256": "sha256:88487a0a7b701360f1abe2ba1e89066aae4f7c699811b62302f7315cea9ef60f",
+      "quote": "an unusually mild seasonal adjustment",
+      "quote_span_check": "normalized",
+      "about": "Release-day analysis reporting Bloomberg Economics' seasonal-adjustment reading. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "cnn-august-jobs",
+      "title": "US jobs report, August 2026",
+      "publisher": "CNN",
+      "date": "2026-09-04",
+      "url": "https://www.cnn.com/2026/09/04/economy/us-jobs-report-august",
+      "pinned_path": "data/sources/coverage/cnn-august-jobs.html",
+      "text_path": "data/sources/coverage/cnn-august-jobs.txt",
+      "text_sha256": "sha256:1247c3dadfeaa7477d47579a722b15942a3be5c2cb986adfed7542abc39ebfe9",
+      "quote": "payback after two very weak months",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage quoting Pantheon Macroeconomics and Moody's. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "nyt-august-jobs",
+      "title": "Employers added 162,000 jobs and unemployment held at 4.1 percent",
+      "publisher": "The New York Times",
+      "date": "2026-09-04",
+      "url": "https://www.nytimes.com/2026/09/04/business/economy/jobs-unemployment.html",
+      "pinned_path": "data/sources/coverage/nyt-august-jobs.html",
+      "text_path": "data/sources/coverage/nyt-august-jobs.txt",
+      "text_sha256": "sha256:037c4be3baa6fd4d09c57a2d9fbc23e045dcb3c844005b6ee1019c61d1f14145",
+      "quote": "attributable to some extent to seasonal adjustment quirks",
+      "quote_span_check": "normalized",
+      "about": "Release-day coverage. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "nyt-live-august-jobs",
+      "title": "Jobs report live coverage, September 4, 2026",
+      "publisher": "The New York Times",
+      "date": "2026-09-04",
+      "url": "https://www.nytimes.com/live/2026/09/04/business/jobs-report-economy",
+      "pinned_path": "data/sources/coverage/nyt-live-august-jobs.html",
+      "text_path": "data/sources/coverage/nyt-live-august-jobs.txt",
+      "text_sha256": "sha256:85fe9a14dde3614d1440479af73f5fbb56bc60abd18f8999342e2706928b0c6a",
+      "quote": "Economists had expected a larger surge in leisure and hospitality employment during the World Cup in June and July",
+      "quote_span_check": "normalized",
+      "about": "Release-day live coverage, including the household-survey response rates. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "kpmg-august-jobs",
+      "title": "August 2026 jobs report",
+      "publisher": "KPMG Economics",
+      "date": "2026-09-04",
+      "url": "https://kpmg.com/us/en/articles/2026/august-2026-jobs-report.html",
+      "pinned_path": "data/sources/coverage/kpmg-august-jobs.html",
+      "text_path": "data/sources/coverage/kpmg-august-jobs.txt",
+      "text_sha256": "sha256:f0909a22f50b48ca0635d3e519f8d3a964104aa5552269fd1c0243b17b43fbc7",
+      "quote": "the loss of the Temporary Protected Status (TPS) of Haitian workers",
+      "quote_span_check": "normalized",
+      "about": "A consultancy's release-day note on the Haitian work-permit expiry and the care economy. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "yahoo-hassett-august-jobs",
+      "title": "Kevin Hassett says jobs numbers have been blockbuster",
+      "publisher": "Yahoo Finance",
+      "date": "2026-09-04",
+      "url": "https://finance.yahoo.com/economy/articles/kevin-hassett-says-jobs-numbers-205500419.html",
+      "pinned_path": "data/sources/coverage/yahoo-hassett-august-jobs.html",
+      "text_path": "data/sources/coverage/yahoo-hassett-august-jobs.txt",
+      "text_sha256": "sha256:7a7c49d48e33b6dcaac75686822f5bb101bc4b512e6544f65cd7fb6772d90417",
+      "quote": "The breakeven job number is a lot lower than it used to be because we've tightened the border",
+      "quote_span_check": "normalized",
+      "about": "The White House economic adviser's reaction, with the break-even argument. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "newsweek-bessent-august-jobs",
+      "title": "Treasury Secretary says US doesn't need more jobs",
+      "publisher": "Newsweek",
+      "date": "2026-09-03",
+      "url": "https://www.newsweek.com/job-market-bessent-unemployment-data-deportations-immigration-12348798",
+      "pinned_path": "data/sources/coverage/newsweek-bessent-august-jobs.html",
+      "text_path": "data/sources/coverage/newsweek-bessent-august-jobs.txt",
+      "text_sha256": "sha256:21192cbe2c199acb635b8632797635e5b6825a5be56e3b9e53c0f383d7d8fb1e",
+      "quote": "I think the jobs numbers are quite noisy",
+      "quote_span_check": "normalized",
+      "about": "The Treasury secretary's labor-supply argument, the day before the report. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "polymarket-fed-september",
+      "title": "Fed decision in September (prediction market)",
+      "publisher": "Polymarket",
+      "date": "2026-09-08",
+      "url": "https://polymarket.com/event/fed-decision-in-september-762",
+      "pinned_path": "data/sources/coverage/polymarket-fed-september.html",
+      "text_path": "data/sources/coverage/polymarket-fed-september.txt",
+      "text_sha256": "sha256:33d61a73e92fd20d0a96e2fb642176eaf490a14eaebc61154be3c60602ed2159",
+      "quote": "25 bps increase surges to 55%",
+      "quote_span_check": "normalized",
+      "about": "The real-money odds page for the September meeting, as it stood when saved. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "x-casselman-august-jobs",
+      "title": "Ben Casselman on X, September 4, 2026",
+      "publisher": "Ben Casselman (The New York Times), on X",
+      "date": "2026-09-04",
+      "url": "https://x.com/bencasselman/status/2095866438179242342",
+      "pinned_path": "data/sources/coverage/x-casselman-august-jobs.html",
+      "text_path": "data/sources/coverage/x-casselman-august-jobs.txt",
+      "text_sha256": "sha256:f3f77387bf2cb30ffcc56d16344b5754fb7e8cd3af9c79c9774d52c6d68d9e4c",
+      "quote": "The big drop in public school employment in July looked like a seasonal quirk, and it was",
+      "quote_span_check": "normalized",
+      "about": "A reporter's release-day post. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "x-heatherlong-august-jobs",
+      "title": "Heather Long on X, September 4, 2026",
+      "publisher": "Heather Long (Navy Federal Credit Union), on X",
+      "date": "2026-09-04",
+      "url": "https://x.com/byHeatherLong/status/2095858304979206588",
+      "pinned_path": "data/sources/coverage/x-heatherlong-august-jobs.html",
+      "text_path": "data/sources/coverage/x-heatherlong-august-jobs.txt",
+      "text_sha256": "sha256:3cb6365d5a94f4167ac4ad0a410a5d75a1941fb1812b8a755f3460f4116faa9d",
+      "quote": "August was a 'wow' jobs report",
+      "quote_span_check": "normalized",
+      "about": "An economist's release-day post. Saved on September 8 after an independent review of this page named it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "bls-jolts-2026-07",
+      "title": "Job Openings and Labor Turnover, July 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-01",
+      "url": "https://www.bls.gov/news.release/archives/jolts_09012026.htm",
+      "pinned_path": "data/sources/bls-jolts-2026-07.html",
+      "text_path": "data/sources/bls-jolts-2026-07.txt",
+      "text_sha256": "sha256:a817c443e0ba6763a3a2b05661496d2c7c300a7f2266ff85dace51fd1274eab7",
+      "quote": "The number of job openings was little changed at 7.3 million in July",
+      "quote_span_check": "normalized",
+      "about": "The agency's monthly count of openings, hires, quits and layoffs, released three days before the jobs report; saved as served on release day.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "bls-prebmk-2026-for-august",
+      "title": "Preliminary benchmark revision to establishment survey data, March 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-08-28",
+      "url": "https://www.bls.gov/news.release/embargo/prebmk.nr0.htm",
+      "pinned_path": "data/sources/bls-prebmk-2026.txt",
+      "text_path": "data/sources/bls-prebmk-2026.txt",
+      "text_sha256": "sha256:c31204e08e5e6746268d387176b3550d91f6c95f8ad5d2cb8428b8da7ea9cc8f",
+      "quote": "to total nonfarm employment for March 2026 was -79,000 (-0.1 percent)",
+      "quote_span_check": "normalized",
+      "about": "Once a year the agency checks its survey-based payroll count against near-complete counts from state unemployment-insurance records; this is the preliminary result, published one week before the August report.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "title": "Nonfarm payrolls, first-published vintages for January to July 2026 (ALFRED)",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-08-07",
+      "url": "https://alfred.stlouisfed.org/series?seid=PAYEMS",
+      "pinned_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_path": "data/sources/alfred-payems-vintages-2026.csv",
+      "text_sha256": "sha256:0d8c327a542429bde9bd7ae11a15f29b8d27661eb693e522b82f7ab5d06d14eb",
+      "quote": "observation_date,PAYEMS_20260213",
+      "quote_span_check": "byte_exact",
+      "about": "The archive of each month's first-published payroll level, one vintage per release date; the first-estimate column of the revision table is read from it.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fwd-haiti-tps-2026-01",
+      "title": "FWD.us, Haiti TPS fact sheet (January 2026)",
+      "publisher": "FWD.us",
+      "date": "2026-01-01",
+      "url": "https://www.fwd.us/wp-content/uploads/2026/01/Haiti-TPS-Fact-Sheet_January-2026.pdf",
+      "pinned_path": "data/sources/fwd-haiti-tps-2026-01.pdf",
+      "text_path": "data/sources/fwd-haiti-tps-2026-01.txt",
+      "text_sha256": "sha256:1a848e1924987c6e084a612b6c5fcc28ccb81ef4602acd858c688bc51231fca3",
+      "quote": "13,000 nursing assistants",
+      "quote_span_check": "byte_exact",
+      "about": "An immigration advocacy group's estimates of Haitian TPS holders by occupation, the source for the elder-care figures.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "bls-empsit-t09-2026-08",
+      "title": "Employment Situation table A-9, selected employment indicators, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-04",
+      "url": "https://www.bls.gov/news.release/empsit.t09.htm",
+      "pinned_path": "data/sources/bls-empsit-t09-2026-08.html",
+      "text_path": "data/sources/bls-empsit-t09-2026-08.txt",
+      "quote": "Total multiple jobholders 8,479 8,585 8,505 8,796 8,434 8,428 8,554 8,693 8,805",
+      "about": "The household survey's table of selected employment indicators, which carries the count of people holding more than one job. The same table is inside the full release; this is the table on its own page, so the story can name it.",
+      "text_extraction": "tags stripped from the saved page here: the registry run's own extraction returned only the site navigation for this URL",
+      "text_sha256": "sha256:bde3ef0e2ef8e74c26b2cde66eb83b2629cf3df0df447f2ba676fd027f3eb3cb",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:23f0f417a07e287b5c59bc2329e1e14db58c8dadd2a9268708865457cc0a73a6",
+      "captured_at": "2026-09-08T23:21:07.029130Z",
+      "quote_span_check": "normalized"
+    },
+    {
+      "id": "nyfed-sce-2026-08",
+      "title": "Survey of Consumer Expectations, August 2026",
+      "publisher": "Federal Reserve Bank of New York",
+      "date": "2026-09-08",
+      "url": "https://www.newyorkfed.org/newsevents/news/research/2026/20260908",
+      "pinned_path": "data/sources/nyfed-sce-2026-08.html",
+      "text_path": "data/sources/nyfed-sce-2026-08.txt",
+      "quote": "Expectations of an increase in unemployment reached the highest level since April 2020.",
+      "about": "The New York Fed's monthly household survey, fielded August 3 to 31 and published four days after the jobs report. Households expected unemployment to rise and rated their own chances of finding a job lower, while rating their chances of losing one lower too.",
+      "text_extraction": "trafilatura_main_v1",
+      "text_sha256": "sha256:80ed834ba2d2fe4306142fad7c8d68bc8222e68075528d41daa585be139bfc44",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:5f346bba2e4ec9f326d93745aef7655d3dabbea75b41b1c3461f682f4f8459ab",
+      "captured_at": "2026-09-08T23:21:02.466788Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "conference-board-eti-2026-08",
+      "title": "The Conference Board Employment Trends Index increased in August",
+      "publisher": "The Conference Board",
+      "date": "2026-09-08",
+      "url": "https://www.conference-board.org/topics/employment-trends-index/",
+      "pinned_path": "data/sources/coverage/conference-board-eti-2026-08.html",
+      "text_path": "data/sources/coverage/conference-board-eti-2026-08.txt",
+      "quote": "increased to 108.53 in August, from an upwardly revised reading of 107.76 in July",
+      "about": "A private composite of eight labor-market indicators, published September 8. It rose for a second month; the group reads that as support for continued job growth.",
+      "text_extraction": "trafilatura_main_v1",
+      "text_sha256": "sha256:a45460e71339ac3ea31d691b2bea5dbaffae0b6bb778e367886d9f0c89caee48",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:3f4e40d4d8d1a410860e3ec31ecae7e319998f561bbe65cd2a3d9f707e719b9a",
+      "captured_at": "2026-09-08T23:20:57.710008Z",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "conference-board-august-jobs",
+      "title": "Solid labor market leaves spotlight on inflation for the Fed",
+      "publisher": "The Conference Board",
+      "date": "2026-09-04",
+      "url": "https://www.conference-board.org/research/labor-markets-briefs/jobs-report-insights-aug-2026",
+      "pinned_path": "data/sources/coverage/conference-board-august-jobs.html",
+      "text_path": "data/sources/coverage/conference-board-august-jobs.txt",
+      "quote": "the underlying trend remains one of modest positive job growth",
+      "about": "The Conference Board's release-day brief on the August report: strong on its face, but seasonal effects tied to the World Cup may have exaggerated the leisure and hospitality gain.",
+      "text_extraction": "tags stripped from the saved page here: the registry run's own extraction returned only the site navigation for this URL",
+      "text_sha256": "sha256:2e5b10841faeba4af698cc75147d4a5af7ebdde75a69acbc089f14c2ee953e06",
+      "capture_run": "capture-oneoff-20260908T232045Z",
+      "capture_raw_sha256": "sha256:f97c5a22160fe19a58c0ed5550252cb5a3bb57977321437012417aab4ba188d2",
+      "captured_at": "2026-09-08T23:20:52.522669Z",
+      "quote_span_check": "byte_exact"
+    }
+  ],
+  "story_sources": [
+    {
+      "id": "bls-empsit-2026-08",
+      "group": "primary",
+      "label": "The Employment Situation, August 2026",
+      "meta": " · released September 4",
+      "usage": "every figure the story marks as record"
+    },
+    {
+      "id": "fed-waller-2026-09-03",
+      "group": "primary",
+      "label": "Governor Waller's speech, September 3",
+      "meta": " · Federal Reserve Board",
+      "usage": "what one Fed vote said it was waiting for"
+    },
+    {
+      "id": "adp-release-2026-08",
+      "group": "primary",
+      "label": "ADP National Employment Report, August",
+      "meta": " · released September 2",
+      "usage": "the 38,000 private count"
+    },
+    {
+      "id": "dol-claims-2026-09-03",
+      "group": "primary",
+      "label": "Weekly unemployment claims",
+      "meta": " · released September 3",
+      "usage": "the 206,000 claims figure"
+    },
+    {
+      "id": "bls-jolts-2026-07",
+      "group": "primary",
+      "label": "Job Openings and Labor Turnover, July 2026",
+      "meta": " · released September 1",
+      "usage": "openings, hires, quits and layoffs before the report"
+    },
+    {
+      "id": "bls-prebmk-2026-for-august",
+      "group": "primary",
+      "label": "Preliminary benchmark revision, March 2026",
+      "meta": " · released August 28",
+      "usage": "the annual check of the payroll count"
+    },
+    {
+      "id": "fwd-haiti-tps-2026-01",
+      "group": "primary",
+      "label": "FWD.us Haiti TPS fact sheet, January 2026",
+      "meta": "",
+      "usage": "how many TPS holders worked in elder care"
+    },
+    {
+      "id": "bls-empsit-t09-2026-08",
+      "group": "primary",
+      "label": "Employment Situation table A-9, August 2026",
+      "meta": " · Bureau of Labor Statistics",
+      "usage": "the count of people holding more than one job"
+    },
+    {
+      "id": "nyfed-sce-2026-08",
+      "group": "primary",
+      "label": "Survey of Consumer Expectations, August 2026",
+      "meta": " · Federal Reserve Bank of New York, released September 8",
+      "usage": "what households expected of unemployment and their own job chances"
+    },
+    {
+      "id": "fred-payems-2026-08",
+      "group": "official",
+      "label": "Total nonfarm payrolls, monthly",
+      "meta": " · saved September 8, reflects the September 4 release",
+      "usage": "the chart, the three-in-twelve count, and every average"
+    },
+    {
+      "id": "alfred-payems-first-2026-08",
+      "group": "official",
+      "label": "Payroll estimates as first published, September 4",
+      "meta": "",
+      "usage": "August's first estimate in the revisions table"
+    },
+    {
+      "id": "alfred-payems-first-2026-07",
+      "group": "official",
+      "label": "Payroll estimates as first published, August 7",
+      "meta": "",
+      "usage": "July's first estimate in the revisions table"
+    },
+    {
+      "id": "fred-unrate-2026-08",
+      "group": "official",
+      "label": "Unemployment rate, monthly",
+      "meta": " · saved September 8, reflects the September 4 release",
+      "usage": "the 4.1 percent rate and its recent path"
+    },
+    {
+      "id": "fred-u6rate-2026-08",
+      "group": "official",
+      "label": "U-6 underemployment rate, monthly",
+      "meta": " · saved September 8, reflects the September 4 release",
+      "usage": "the 7.7 percent broad measure"
+    },
+    {
+      "id": "fred-primeage-2026-08",
+      "group": "official",
+      "label": "Prime-age (25 to 54) participation, monthly",
+      "meta": " · saved September 8, reflects the September 4 release",
+      "usage": "the 83.4 percent counterweight"
+    },
+    {
+      "id": "fred-ahe-2026-08",
+      "group": "official",
+      "label": "Average hourly earnings, monthly",
+      "meta": " · saved September 8, reflects the September 4 release",
+      "usage": "the wage growth check"
+    },
+    {
+      "id": "alfred-payems-vintages-2026",
+      "group": "official",
+      "label": "Nonfarm payrolls, first-published vintages (ALFRED)",
+      "meta": "",
+      "usage": "first estimates for January to July in the revision table"
+    },
+    {
+      "id": "thehill-august-jobs",
+      "group": "coverage",
+      "label": "The Hill",
+      "meta": " · published September 4",
+      "usage": "the 53,000 forecast and the revisions"
+    },
+    {
+      "id": "aljazeera-august-jobs",
+      "group": "coverage",
+      "label": "Al Jazeera",
+      "meta": " · published September 4",
+      "usage": "the three forecasts, the sector figures, and the 60 percent odds"
+    },
+    {
+      "id": "upi-august-jobs",
+      "group": "coverage",
+      "label": "UPI",
+      "meta": " · published September 4",
+      "usage": "the sector and wage figures"
+    },
+    {
+      "id": "pbs-august-jobs",
+      "group": "coverage",
+      "label": "PBS NewsHour (AP)",
+      "meta": " · published September 4",
+      "usage": "the 65,000 forecast, the yearly averages, and the labor force jump"
+    },
+    {
+      "id": "cnbc-women-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · published September 4",
+      "usage": "the women-and-men split of the gain"
+    },
+    {
+      "id": "cnbc-yields-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · published September 4",
+      "usage": "the 58 percent odds and the Treasury yields"
+    },
+    {
+      "id": "wapo-august-jobs",
+      "group": "coverage",
+      "label": "The Washington Post",
+      "meta": " · published September 4",
+      "usage": "headline and expectations only"
+    },
+    {
+      "id": "cnbc-adp-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · published September 2",
+      "usage": "the ADP private payroll count two days earlier"
+    },
+    {
+      "id": "cnbc-trump-rates-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · published September 4",
+      "usage": "the president's post and Oval Office remarks"
+    },
+    {
+      "id": "thehill-trump-rates-august-jobs",
+      "group": "coverage",
+      "label": "The Hill",
+      "meta": " · published September 4",
+      "usage": "the president's reaction and the 60 percent odds"
+    },
+    {
+      "id": "cnbc-stocks-august-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " · published September 4",
+      "usage": "the stock market close"
+    },
+    {
+      "id": "piedmont-august-jobs",
+      "group": "coverage",
+      "label": "Piedmont Crescent Capital note",
+      "meta": " · published September 4",
+      "usage": "the payback reading and the unadjusted restaurant figure"
+    },
+    {
+      "id": "yahoo-chart-august-jobs",
+      "group": "coverage",
+      "label": "Yahoo Finance",
+      "meta": " · published September 4",
+      "usage": "the Bloomberg Economics seasonal reading"
+    },
+    {
+      "id": "cnn-august-jobs",
+      "group": "coverage",
+      "label": "CNN",
+      "meta": " · published September 4",
+      "usage": "the Pantheon quote and the 43 percent long-search share"
+    },
+    {
+      "id": "nyt-august-jobs",
+      "group": "coverage",
+      "label": "The New York Times",
+      "meta": " · published September 4",
+      "usage": "the seasonal-quirk reading of the school figure"
+    },
+    {
+      "id": "nyt-live-august-jobs",
+      "group": "coverage",
+      "label": "The New York Times live coverage",
+      "meta": " · published September 4",
+      "usage": "the World Cup expectation and survey response rates"
+    },
+    {
+      "id": "kpmg-august-jobs",
+      "group": "coverage",
+      "label": "KPMG Economics",
+      "meta": " · published September 4",
+      "usage": "the Haitian work-permit mechanism"
+    },
+    {
+      "id": "yahoo-hassett-august-jobs",
+      "group": "coverage",
+      "label": "Yahoo Finance",
+      "meta": " · published September 4",
+      "usage": "Hassett's break-even claim"
+    },
+    {
+      "id": "newsweek-bessent-august-jobs",
+      "group": "coverage",
+      "label": "Newsweek",
+      "meta": " · published September 3",
+      "usage": "Bessent's labor-supply argument"
+    },
+    {
+      "id": "polymarket-fed-september",
+      "group": "coverage",
+      "label": "Polymarket",
+      "meta": " · saved September 8",
+      "usage": "real-money odds of a September increase"
+    },
+    {
+      "id": "x-casselman-august-jobs",
+      "group": "coverage",
+      "label": "Ben Casselman on X",
+      "meta": " · posted September 4",
+      "usage": "the seasonal-quirk reading"
+    },
+    {
+      "id": "x-heatherlong-august-jobs",
+      "group": "coverage",
+      "label": "Heather Long on X",
+      "meta": " · posted September 4",
+      "usage": "the release-day reaction"
+    },
+    {
+      "id": "conference-board-august-jobs",
+      "group": "coverage",
+      "label": "The Conference Board release-day brief",
+      "meta": " · published September 4",
+      "usage": "the seasonal reading and the underlying-trend judgment"
+    },
+    {
+      "id": "conference-board-eti-2026-08",
+      "group": "coverage",
+      "label": "The Conference Board Employment Trends Index",
+      "meta": " · published September 8",
+      "usage": "the index reading for August and July"
+    }
+  ],
+  "figures": [
+    {
+      "figure": "August payroll change",
+      "source_id": "bls-empsit-2026-08",
+      "value": "+162,000"
+    },
+    {
+      "figure": "Unemployment rate",
+      "source_id": "bls-empsit-2026-08",
+      "value": "4.1%"
+    },
+    {
+      "figure": "June and July combined revision",
+      "source_id": "bls-empsit-2026-08",
+      "value": "+55,000"
+    },
+    {
+      "figure": "Women's share of the August gain",
+      "source_id": "bls-empsit-2026-08",
+      "value": "158,000 of 162,000"
+    }
+  ],
+  "needs_ledger": [
+    {
+      "need": "official payroll change and unemployment rate",
+      "plain": "The official release, saved the day it came out, contains both.",
+      "record_id": "bls-empsit-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "first-print estimates for the revisions table",
+      "plain": "The St. Louis Fed keeps the series as it stood on each release day; we saved the August 7 and September 4 copies.",
+      "record_id": "alfred-payems-first-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "inflation-adjusted wages for August",
+      "plain": "The Real Earnings report for August comes out with the September 11 inflation release; this page uses the year-over-year wage growth from the payroll survey instead and says so.",
+      "record_id": null,
+      "status": "missing: not yet published"
+    },
+    {
+      "need": "forecast the outlets compare against",
+      "plain": "Three outlets quote three different surveys (53,000, 56,000, 65,000); each is attributed to its outlet and poll rather than treated as one number.",
+      "record_id": "aljazeera-august-jobs",
+      "status": "have"
+    },
+    {
+      "need": "the competing reading that August is seasonal payback",
+      "plain": "Four saved sources carry it (a bank note with the unadjusted figures, Bloomberg Economics via Yahoo, Pantheon via CNN, and the Times); it is on the page beside the headline reading.",
+      "record_id": "piedmont-august-jobs",
+      "status": "have"
+    },
+    {
+      "need": "the administration's claims and the Haitian work-permit question",
+      "plain": "Hassett, Bessent, and the KPMG note on the permit expiry are saved and on the page; the president's post is quoted from two saved articles.",
+      "record_id": "yahoo-hassett-august-jobs",
+      "status": "have"
+    },
+    {
+      "need": "real-money prediction markets",
+      "plain": "The Polymarket page for the September decision is saved as it stood on September 8; the CME odds page itself blocks saving and the page carries the odds as three outlets reported them.",
+      "record_id": "polymarket-fed-september",
+      "status": "have"
+    },
+    {
+      "need": "Reuters, The Wall Street Journal, and Bloomberg coverage",
+      "plain": "Reuters and the Journal refuse automated saving; Bloomberg served only a subscription stub. Their reporting is not on the page and not paraphrased.",
+      "record_id": null,
+      "status": "missing: refused capture"
+    },
+    {
+      "need": "diffusion indexes and the unadjusted tables",
+      "plain": "The saved release text carries the summary and detail tables but not the diffusion index page; the unadjusted restaurant figure comes from the bank note instead.",
+      "record_id": "piedmont-august-jobs",
+      "status": "partly have"
+    },
+    {
+      "need": "multiple jobholders and the count outside the labor force who want a job",
+      "plain": "The saved release text carries the want-a-job count (on the page) but not the multiple-jobholder table; an enhancement, not a gap.",
+      "record_id": "bls-empsit-2026-08",
+      "status": "partly have"
+    },
+    {
+      "need": "a Federal Reserve policymaker's response to this report",
+      "plain": "Every statement by a named Fed policymaker in the records saved for this page was made before the report came out. The newest is Governor Waller's, the day before. Nothing published after the report is held.",
+      "record_id": "fed-waller-2026-09-03",
+      "status": "searched: none found in the records held"
+    },
+    {
+      "need": "September 8 readings on the labor market",
+      "plain": "The Conference Board's index and the New York Fed's household survey both came out four days after the report; both are saved.",
+      "record_id": "conference-board-eti-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "the count of people holding more than one job",
+      "plain": "Table A-9 of the release, saved on its own page so the story can name the table.",
+      "record_id": "bls-empsit-t09-2026-08",
+      "status": "have"
+    }
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "BLS release copied from the September 4 capture run (bls_employment_situation source, receipt in that run); FRED and ALFRED CSVs fetched September 8 and saved under dated names; eight coverage articles copied from the same capture run; all listed in data/sources/SOURCES.md with bytes and sha256."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "Monthly changes, the three-in-twelve count, the 3-, 12-month and yearly averages, the revisions table and wage growth recomputed on September 8 from PAYEMS-2026-09-08.csv, the two ALFRED vintages and CES0500000003-2026-09-08.csv; values live in src/data/jobs202608.mjs."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Seven articles checked line by line against the release text: Al Jazeera health care 12,000 vs release 13,000; UPI workweek 0.1 percent vs release 0.1 hour; PBS yearly averages recomputed and matched; CNBC 58 vs Al Jazeera 60 percent odds at different times of day. After the independent review: CNBC's women figure verified from the release's table B-5 (79,591 to 79,749 thousand)."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "what-happened, where-this-sits, who-feels-it, outlets, claim-check, markets, unknowns, records, in that order; benchmark section dropped because no benchmark release falls in this window."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "record, computed, official data, checks out, mislabeled, wrong, single outlet only."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element: every figure is a saved value with its record; no counter, no live odds."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "src/data/subjects/jobs.mjs current KPIs moved to the August release; the August story listed first."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "Homepage story order derives from the published state; the August event is the newest jobs story once its view is present."
+    }
+  },
+  "authored_sections": [
+    "what-happened",
+    "where-this-sits",
+    "who-feels-it",
+    "outlets",
+    "claim-check",
+    "markets",
+    "unknowns"
+  ]
+}

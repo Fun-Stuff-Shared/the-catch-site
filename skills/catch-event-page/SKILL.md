@@ -1,7 +1,7 @@
 ---
 name: catch-event-page
 description: >
-  Author or rework a story page for The Catch (the-catch-site, /events/SUBJECT/MONTH/)
+  Author or rework a story page for The Catch (the-catch-site, /events/SUBJECT/YYYY-MM-DD-MOMENT/)
   the way the two gold pages were built: admit sources first, compute every number from
   saved data, verify outlet claims against the record, write in the fixed section grammar
   with three reading lenses (The story / Just the facts / Show the work), then pass the
@@ -12,7 +12,7 @@ license: CC BY-NC 4.0
 metadata:
   author: the-catch
   version: "1.0"
-  gold_examples: /events/fed-rate/june-2026/ and /events/jobs/july-2026/
+  gold_examples: /events/fed-rate/2026-06-17-unanimous-hold/ and /events/jobs/2026-08-07-july-payrolls-fall-23000/
 ---
 
 # Catch event page
@@ -153,9 +153,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    catch box after this step: each row names the two records that disagree. Never dismiss
    a list wholesale.
 10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
-   refresh on `/events/<subject>/`; the homepage features the latest story. Each month's
-   page is standalone and is never edited afterwards: a revision to last month's number is
-   this month's story and goes on this month's page (its revisions table and claim check).
+   refresh on `/events/<subject>/`; the homepage features the latest story. Each story
+   is one dated moment and is never edited afterwards: a later development is a new story
+   under the same subject, and a revision to an earlier figure is reported there (its
+   revisions table and claim check).
    Every story declares one lead visual in its data module as `event.visual`, and the
    homepage lead card renders it through `LeadVisual`. Three kinds: `payrolls` (the chart,
    `{ kind, source, from, to, latest, range, rangeCompact }`, also rendered on the story and
@@ -201,7 +202,10 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - No text jammed against an inline tag (`<em>under</em>counting`). Keep the space on
   the same source line; Astro collapses a newline before an inline element.
 - Verdict words are plain: "checks out", "mislabeled", "wrong". No invented categories.
-- Day-dates never appear in URLs or section kickers; stories are slugged by month.
+- A story is one dated moment. Its slug is `<yyyy-mm-dd>-<moment>` under the subject
+  (`2026-09-08-counter-tariffs-take-effect`): the day it happened, then a few words naming
+  what happened, the way a news outlet's URL carries its date and headline. A month is never
+  a story; the subject page holds the current state and points to each story.
 
 ## Before you say done
 
@@ -238,9 +242,9 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 - A new story is accepted into the state, linked to the previous story in its series, and
   its view is refreshed with one command each (procedures.md, step 10); none of the three
   waits on a maintenance fire.
-- The story slug is the data month (`august-2026` for the report released September 4), not
-  the release month. `new-event.mjs` derives the slug from `--date`, so pass a date inside
-  the data month or copy the previous month's page instead.
+- The story date is the day the moment happened (the September 4 jobs report is
+  `2026-09-04-august-payrolls-rise-162000`), never the publish date. `new-event.mjs` needs
+  `--date` and `--moment`; copy the previous story's page for the section shape.
 - The article search index lags the registry by a day or more; the registry is the coverage
   universe, the index a second net.
 - The gate runs in the Workers git build too, so a failing gate blocks the deploy.

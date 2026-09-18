@@ -1,0 +1,135 @@
+{
+  "story": "/events/fed-rate/2026-07-29-three-dissents-for-a-hike/",
+  "subject": "fed-rate",
+  "completed_by": "primary-fable",
+  "date": "2026-07-29",
+  "event": "fed-rate/2026-07-29-three-dissents-for-a-hike",
+  "sub_events": [
+    {
+      "id": "fomc-decision-2026-07-29",
+      "date": "2026-07-29",
+      "label": "Federal Reserve decision",
+      "section_anchor": "what-happened",
+      "records": [
+        "fomc-statement-2026-07-29",
+        "fomc-minutes-2026-07-29",
+        "fomc-presconf-2026-07-29"
+      ]
+    },
+    {
+      "id": "warsh-jackson-hole-2026-08-28",
+      "date": "2026-08-28",
+      "label": "Warsh at Jackson Hole",
+      "section_anchor": "what-next",
+      "records": [
+        "fed-warsh-2026-08-28"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "fomc-statement-2026-07-29",
+      "title": "FOMC statement, July 29, 2026",
+      "publisher": "Federal Reserve",
+      "date": "2026-07-29",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm",
+      "pinned_path": "data/sources/monetary20260729a.txt",
+      "text_path": "data/sources/monetary20260729a.txt",
+      "text_sha256": "sha256:6f03bff37e49654ef34fca2a0c62cd935d3a1247463e5c6e070f23d4c0c1f279",
+      "quote": "Voting against the monetary policy action were Beth M. Hammack, Neel Kashkari, and Lorie K. Logan",
+      "quote_span_check": "byte_exact",
+      "about": "The Federal Reserve committee's official statement from its July 2026 meeting: the interest-rate decision and the vote.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fomc-minutes-2026-07-29",
+      "title": "FOMC minutes, July 29, 2026",
+      "publisher": "Federal Reserve",
+      "date": "2026-08-19",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm",
+      "pinned_path": "data/sources/fomcminutes20260729.txt",
+      "text_path": "data/sources/fomcminutes20260729.txt",
+      "text_sha256": "sha256:a43501465ea063c366810fb94536cf95e52e6a5ffffaa37db5f7a840f8461e8c",
+      "quote": "Several participants favored an increase of 25 basis points in the target range at this meeting.",
+      "quote_span_check": "byte_exact",
+      "about": "The Federal Reserve's detailed account of its July 2026 meeting, published three weeks after the decision.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fomc-presconf-2026-07-29",
+      "title": "Chairman Warsh's press conference, July 29, 2026 (transcript)",
+      "publisher": "Federal Reserve",
+      "date": "2026-07-29",
+      "url": "https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20260729.pdf",
+      "pinned_path": "data/sources/FOMCpresconf20260729.pdf",
+      "text_path": "data/sources/FOMCpresconf20260729.txt",
+      "text_sha256": "sha256:49a0353d3fe05c36dd48abc78a0db76a04220e027727d4e5040a66a92900029b",
+      "quote": "there is no soft implicit target—not on this Committee’s watch.",
+      "quote_span_check": "byte_exact",
+      "about": "The Fed's own transcript of the chairman's press conference after the July decision: his answers on the three dissents and on pulling back from forward guidance.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fed-warsh-2026-08-28",
+      "title": "Chairman Warsh's keynote at Jackson Hole, August 28, 2026",
+      "publisher": "Federal Reserve",
+      "date": "2026-08-28",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "pinned_path": "data/sources/fed-warsh-2026-08-28.html",
+      "text_path": "data/sources/fed-warsh-2026-08-28.txt",
+      "text_sha256": "sha256:e981590b83640bc97e15ae8a17b35fcffc9ba10463145d5328c62c08e623f117",
+      "quote": "I stand here today committed to a discipline, not to a decision.",
+      "quote_span_check": "byte_exact",
+      "about": "The chairman's first major speech after the July split: why the majority waited, his view that financial conditions are not restrictive, and his refusal to signal September.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    }
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "July 29 statement + minutes and Sept 2016 statement captured from federalreserve.gov, FOMC calendar page, six FRED CSVs refreshed, four coverage captures (CNBC/AP/CBS/NBC html+txt) plus Axios recovered via assisted reader with disclosure in axios-july-via-assisted.txt; SOURCES.md sha ledger regenerated; 2026-09-08 rework after the completeness audit: July press-conference transcript (PDF + text) and Warsh's August 28 speech admitted; June statement/minutes/projections, Waller September 3, and BLS August cited through their existing records"
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "days held (230 at meeting, from 2025-12-11 DFEDTARU change), 47th percentile of 16,036 daily obs, 64 months PCE yoy above 2% (March 2021 onward, May 4.08 / June 3.67), June-vs-July statement diff (one verb + dissent paragraph) all recomputed in session from admitted files; each carries a receipt toggle"
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "CBS fifth-consecutive-hold + Dec 2025 cut recounted against DFEDTARU and the Fed calendar -> checks out; AP around-3.6% midpoint -> checks out; Axios statement-virtually-unchanged verified by our own diff -> checks out; CNBC first-since-Sept-2016 anchor verified against monetary20160921a.htm (George, Mester, Rosengren), span not recounted -> consistent, said plainly on the page"
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "three-things, KPI strip, What happened, Where this sits (chart), The statement barely moved (real-signal section; no SEP at July meetings), outlets right/wrong, claim checked, who feels it, what happened next + watching, markets, records: all present in order"
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "chips used: record / their words / computed / official data / reported pricing / checks out / consistent; no invented categories"
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "days-held counter states checked-as-of date (August 23, 2026) and the dated-correction promise, same pattern as june-2026"
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "/events/fed-rate/ July 29 timeline row now links the story with its headline; July statement and minutes records added to the records list; KPI strip already carried the 9-3 vote"
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "homepage features Latest story July 2026 from fomc20260729.mjs with the story headline as the link; KPI unit spacing fixed so days/dissents no longer render jammed"
+    }
+  },
+  "story_title": "The quiet hold breaks: three officials vote to raise rates",
+  "state_event_id": "event-fed-rate-2026-07-29-three-dissents-for-a-hike",
+  "event_record": "/events/fed-rate/",
+  "authored_sections": [
+    "what-happened",
+    "where-this-sits",
+    "the-statement",
+    "outlets",
+    "claim-check",
+    "who-feels-it",
+    "what-next",
+    "markets",
+    "records"
+  ]
+}

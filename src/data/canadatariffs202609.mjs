@@ -5,7 +5,7 @@
 // December 2025, and USTR Canada page.
 
 export const event = {
-  slug: "canada-tariffs/september-2026",
+  slug: "canada-tariffs/2026-09-08-counter-tariffs-take-effect",
   title: "Canada's counter-tariffs on C$27.6 billion (about US$20 billion) of U.S. goods took effect September 8",
   dek: "The United States signed three 50 percent proclamations on July 20 under Section 338 of the Tariff Act of 1930. Canada answered on August 22. Finance Canada said the countermeasures would be effective as of 12:01 a.m. on September 8. The Canadian order names that date.",
   name: "Canada tariffs",

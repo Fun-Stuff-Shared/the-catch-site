@@ -1,6 +1,6 @@
 # The Catch: event page standard (v1, 2026-08-23)
 
-Ratified against the first page built to it: /events/fed-rate/june-2026/ (the June 17, 2026
+Ratified against the first page built to it: /events/fed-rate/2026-06-17-unanimous-hold/ (the June 17, 2026
 FOMC decision). Zain's defect report (25 items) and the fed-hold reference diagram are the
 origin; this document is the repeatable contract. A page that does not meet this standard
 does not ship as an event.
@@ -13,16 +13,18 @@ Three layers, each with its own relationship to time:
    current. Carries: current-state KPI strip (live counters where honest), the full-history
    chart, a dated decision timeline, links to records. Updated whenever a new story lands;
    never carries story prose of its own beyond timeline entries.
-2. STORY (decision page, e.g. /events/fed-rate/june-2026/): one per occurrence, slugged by
-   month under the subject (day-dates never appear in URLs). Written once, never rewritten;
-   later events are covered by "what happened next" additions and dated corrections only.
+2. STORY (e.g. /events/fed-rate/2026-06-17-unanimous-hold/): one per moment, slugged
+   `<yyyy-mm-dd>-<moment>` under the subject: the day it happened, then a few words naming
+   what happened. Its headline claim is what happened on that date and is never overturned.
+   Written once, never rewritten; a later development is a new story, and a dated correction
+   is the only later edit.
 3. RECORD (/claims/...): one per primary document, dated. The document's own words in a
    clean excerpt, one "How we checked this" toggle, links up to story and subject.
 
-Next occurrence = new month-slugged story + one timeline row + KPI/chart refresh on the
-subject page. Nothing is overwritten.
+Next moment = new story + one timeline row + KPI/chart refresh on the subject page.
+Nothing is overwritten.
 
-## Production steps (what was actually done for june-2026, in order)
+## Production steps (what was actually done for the June 17, 2026 decision, in order)
 
 1. ADMIT SOURCES FIRST. Fetch and save into data/sources/ before writing a sentence:
    - primary documents (statement, minutes, projection tables) from the issuing institution;
@@ -119,4 +121,4 @@ lists records by date.
   CSVs still have no record pages; each primary document used by a story should surface
   as an admitted, displayed record.
 - Chart/UI polish: Zain is holding graph/UI critique; expect a revision round.
-- July 29 story shipped 2026-08-23 (/events/fed-rate/july-2026/); gap closed.
+- July 29 story shipped 2026-08-23 (/events/fed-rate/2026-07-29-three-dissents-for-a-hike/); gap closed.

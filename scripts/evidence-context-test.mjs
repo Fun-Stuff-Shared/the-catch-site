@@ -17,7 +17,7 @@ test('refuses empty, missing, and merely similar quotations', () => {
   assert.equal(sourceContext('Price: $3x50', '$3.50'), null);
 });
 test('all authored passage anchors occur exactly in their saved source', () => {
-  const page = readFileSync(new URL('../src/pages/events/jobs/july-2026.astro', import.meta.url), 'utf8');
+  const page = readFileSync(new URL('../src/pages/events/jobs/2026-08-07-july-payrolls-fall-23000.astro', import.meta.url), 'utf8');
   const text = readFileSync(new URL('../data/sources/bls-empsit-2026-07.txt', import.meta.url), 'utf8');
   const anchors = [...page.matchAll(/<Cite s="bls-empsit-2026-07" passage="([^"]+)"/g)];
   assert.ok(anchors.length >= 3);

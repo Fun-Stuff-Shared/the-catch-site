@@ -69,12 +69,12 @@ export function readState(directory = stateDirectory) {
   return { events, chains };
 }
 
-const MONTHS = "january|february|march|april|may|june|july|august|september|october|november|december";
-const STORY_ID = new RegExp(`^event-([a-z0-9-]+?)-((?:${MONTHS})-\\d{4})$`);
+// The story begins at the last date-shaped segment, so a subject may carry a date of its own.
+const STORY_ID = /^event-([a-z0-9-]+)-(\d{4}-\d{2}-\d{2}-[a-z0-9-]+)$/;
 
 export function eventPath(id) {
-  // Hand-authored stories carry ids of the form event-<subject>-<month>-<year> and live at
-  // /events/<subject>/<month>-<year>/; every other event id is its own route segment.
+  // A story is one dated moment. Its id is event-<subject>-<yyyy-mm-dd>-<moment> and it lives
+  // at /events/<subject>/<yyyy-mm-dd>-<moment>/; every other event id is its own route segment.
   const story = STORY_ID.exec(id);
   return `/events/${story ? `${story[1]}/${story[2]}` : encodeURIComponent(id)}/`;
 }

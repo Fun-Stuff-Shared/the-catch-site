@@ -32,7 +32,7 @@ Acceptance: a reader can understand why counts differ; each number is generated 
 
 ## 3. Bring Fed stories onto reading modes
 
-**Owner:** reporting/editorial with frontend implementation. **Surfaces:** `src/pages/events/fed-rate/june-2026.astro`, `july-2026.astro`, their event data and manifests.
+**Owner:** reporting/editorial with frontend implementation. **Surfaces:** `src/pages/events/fed-rate/2026-06-17-unanimous-hold.astro`, `2026-07-29-three-dissents-for-a-hike.astro`, their event data and manifests.
 
 Type all relevant blocks as fact, narrative or proof before enabling modes. Decide which summaries and technical calculations belong to each depth. The shared controls and section rail can then be reused. The visual pass intentionally did not classify reporting by guessing from prose.
 

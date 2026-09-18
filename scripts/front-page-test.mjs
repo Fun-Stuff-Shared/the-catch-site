@@ -28,7 +28,7 @@ test('charted monthly changes agree with the saved source totals', () => {
 import { readingReturn } from '../src/lib/reading-return.mjs';
 test('reading returns preserve the section and reject external or source-page detours', () => {
   const origin='http://localhost:4322';
-  assert.equal(readingReturn('/events/jobs/july-2026/?mode=facts#payroll-chart',origin),'/events/jobs/july-2026/?mode=facts#payroll-chart');
+  assert.equal(readingReturn('/events/jobs/2026-08-07-july-payrolls-fall-23000/?mode=facts#payroll-chart',origin),'/events/jobs/2026-08-07-july-payrolls-fall-23000/?mode=facts#payroll-chart');
   assert.equal(readingReturn('/records/?q=jobs&year=2026#jobs', origin), '/records/?q=jobs&year=2026#jobs');
   for(const invalid of ['//example.com','/\\example.com','https://example.com','/records/one/',null]) assert.equal(readingReturn(invalid,origin),null);
 });

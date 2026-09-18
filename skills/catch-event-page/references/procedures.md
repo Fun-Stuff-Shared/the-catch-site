@@ -93,12 +93,12 @@ an earlier story's manifest hashes its own copy, and overwriting it fails the ga
 
 ```bash
 # Every document, through the registry (agency pages, PDFs, filings, statutes, data pages)
-capture news --reason "fed-rate/june-2026: the decision statement" "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
+capture news --reason "fed-rate/2026-06-17-unanimous-hold: the decision statement" "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm"
 capture search "monetary20260617a" --limit 1      # find the run dir; copy raw/<file> as the pin, text/<file> as the text sibling
 
 # FRED and ALFRED series go through the registry too, one URL per series and one vintage per call
-capture news --reason "jobs/august-2026: PAYEMS series" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS"
-capture news --reason "jobs/july-2026: PAYEMS first print" "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07"
+capture news --reason "jobs/2026-09-04-august-payrolls-rise-162000: PAYEMS series" "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS"
+capture news --reason "jobs/2026-08-07-july-payrolls-fall-23000: PAYEMS first print" "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07"
 #   (the ALFRED comma form silently returns only the first vintage)
 
 # Ledger row (bytes and sha prefix) after every addition
@@ -118,7 +118,7 @@ own fetcher can and cannot reach; they are not an invitation to fetch outside it
 
 ```bash
 # Wayback snapshot through the registry (keeps the original URL in the receipt)
-capture news "https://www.bls.gov/news.release/realer.nr0.htm" --via-archive --reason "real earnings July 2026 for jobs/august-2026"
+capture news "https://www.bls.gov/news.release/realer.nr0.htm" --via-archive --reason "real earnings July 2026 for jobs/2026-09-04-august-payrolls-rise-162000"
 # Assisted search leg for a named gap (dated quotes with URLs; forbid estimates in the prompt)
 ~/.grok/bin/grok --always-approve -p "Fetch the full text of <URL> as published, including every figure and table. Return the text verbatim, then list each numeric claim with the sentence it came from. Do not estimate or summarize."
 ~/.grok/bin/grok --always-approve -p "Find dated primary quotes (with URL and timestamp) of CME FedWatch, Polymarket, and Kalshi odds for the June 17 2026 FOMC decision between June 12 and June 17. Verbatim quotes only, no estimates."
@@ -153,7 +153,7 @@ The pins win over the reviewer's memory. Record each recount result in the check
 Coverage is captured as served through the registry, so it has a receipt and a record:
 
 ```bash
-capture news "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html" --reason "coverage checked for jobs/july-2026"
+capture news "https://www.cnbc.com/2026/08/07/jobs-report-july-2026.html" --reason "coverage checked for jobs/2026-08-07-july-payrolls-fall-23000"
 capture search "cnbc.com/2026/08/07/jobs-report" --limit 1     # find the run dir and md path
 ```
 
@@ -288,16 +288,16 @@ cd /Volumes/4/CF/news-fqs-pilot
 python3 scripts/story_accept.py list                       # find the candidate
 python3 scripts/story_accept.py accept <candidate_id> --by <you> --reason "..." \
   --kind employment_situation_report --subject "U.S. employment situation" --period 2026-08 \
-  --label "<the headline>" --event-id event-jobs-august-2026
+  --label "<the headline>" --event-id event-jobs-2026-09-04-august-payrolls-rise-162000
 ```
 
 Then link it into its series and build its view at once; neither waits on a maintenance fire:
 
 ```bash
 cd /Volumes/4/CF/sai
-PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --op reparent --event event-jobs-august-2026 \
-  --target event-jobs-july-2026 --author <you> --reason "next story in the jobs series"
-PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --event event-jobs-august-2026
+PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --op reparent --event event-jobs-2026-09-04-august-payrolls-rise-162000 \
+  --target event-jobs-2026-08-07-july-payrolls-fall-23000 --author <you> --reason "next story in the jobs series"
+PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --event event-jobs-2026-09-04-august-payrolls-rise-162000
 ```
 
 The first makes the new story follow the previous one (the subject page and the gate
@@ -322,9 +322,9 @@ node -e "import('./src/lib/state.mjs').then(m=>{const s=m.readState('/tmp/commit
 ```bash
 # manifest: checks/manifests/<subject>--<story>.json (fields in manifest-and-gate.md)
 npm run build                                   # pull state, build records, astro build, event gate, shell gate
-node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/jobs/august-2026.astro
+node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/jobs/2026-09-04-august-payrolls-rise-162000.astro
 python3 -m http.server 4322 -d dist >/dev/null 2>&1 &   # or any static server
-agent-browser open http://localhost:4322/events/jobs/august-2026/ && agent-browser screenshot /tmp/page.png
+agent-browser open http://localhost:4322/events/jobs/2026-09-04-august-payrolls-rise-162000/ && agent-browser screenshot /tmp/page.png
 ```
 
 ```bash
@@ -354,8 +354,8 @@ cover or account for, using web search and X search. Read `interrogation.md` for
 and what to do with the result, then:
 
 ```bash
-skills/catch-event-page/scripts/interrogate.sh jobs/august-2026
-cat checks/interrogations/jobs--august-2026-<date>.md
+skills/catch-event-page/scripts/interrogate.sh jobs/2026-09-04-august-payrolls-rise-162000
+cat checks/interrogations/jobs--2026-09-04-august-payrolls-rise-162000-<date>.md
 ```
 
 Every returned gap becomes a needs-ledger row: fixed on the page, typed unreachable, or
@@ -367,8 +367,8 @@ this step exists to prevent.
 After the interrogation dispositions are on the page and the build is green again:
 
 ```bash
-skills/catch-event-page/scripts/completeness_audit.sh jobs/august-2026
-cat checks/audits/jobs--august-2026-<date>.md
+skills/catch-event-page/scripts/completeness_audit.sh jobs/2026-09-04-august-payrolls-rise-162000
+cat checks/audits/jobs--2026-09-04-august-payrolls-rise-162000-<date>.md
 ```
 
 The auditor (codex, network on, repo read-only) runs three layers: verification of each
@@ -393,7 +393,7 @@ A story is not staged before this step has run and closed.
   greps on the live bytes, screenshot at 100 percent zoom.
 
 ```bash
-URL=https://thecatchengine.com/events/jobs/august-2026/
+URL=https://thecatchengine.com/events/jobs/2026-09-04-august-payrolls-rise-162000/
 for i in $(seq 1 30); do
   code=$(curl -sL -o /tmp/live.html -w '%{http_code}' "$URL")
   [ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html && break

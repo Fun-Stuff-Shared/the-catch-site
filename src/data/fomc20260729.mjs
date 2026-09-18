@@ -3,7 +3,7 @@
 // Computed values derive from the FRED series checked into data/sources/.
 
 export const event = {
-  slug: "fed-rate/july-2026",
+  slug: "fed-rate/2026-07-29-three-dissents-for-a-hike",
   title: "The quiet hold breaks: three officials vote to raise rates",
   dek: "Outside the vote line, the statement changed by one verb. The vote turned a split already visible in June into three formal dissents: a 9–3 hold, with three regional presidents asking for a hike, the first time since 2016 that three dissenters pulled in the same direction.",
   name: "The 2026 rate hold",
