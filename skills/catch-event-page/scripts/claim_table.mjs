@@ -19,6 +19,8 @@ const decode = (s) => s
   .replace(/\{`([^`]*)`\}/g, "$1").replace(/\s+/g, " ").trim();
 
 // Blocks that carry reader copy: paragraphs, list items, figcaptions, chart-source lines.
+// One row per block: its whole text and every passage it cites, because adjacent cites at
+// the end of a paragraph cover the paragraph jointly, not one sentence each.
 const blocks = [...page.matchAll(/<(p|li|figcaption)\b[^>]*>([\s\S]*?)<\/\1>/g)];
 const rows = [];
 let n = 0;
@@ -26,28 +28,17 @@ for (const m of blocks) {
   const body = m[2];
   if (!/<Cite\b/.test(body)) continue;
   const line = page.slice(0, m.index).split("\n").length;
-  // Split on Cite tags: each segment before a Cite is the text that Cite covers.
-  const parts = body.split(/(<Cite\s+[^>]*\/>)/);
-  let text = "", last = "";
-  for (const part of parts) {
-    const cite = part.match(/^<Cite\s+s="([^"]+)"(?:\s+passage="([^"]*)")?/);
-    if (!cite) { text += part; continue; }
-    const sentence = decode(text.replace(/<[^>]+>/g, " ")) || last;
-    last = sentence;
-    const record = records.get(cite[1]);
-    rows.push({
-      n: ++n, line, sentence,
-      record: cite[1], passage: cite[2] ? decode(cite[2]) : null,
-      text_path: record?.text_path || record?.pinned_path || null,
-      publisher: record?.publisher || null,
-    });
-    text = "";
-  }
+  const text = decode(body.replace(/<Cite\s+[^>]*\/>/g, " ").replace(/<[^>]+>/g, " "));
+  const cites = [...body.matchAll(/<Cite\s+s="([^"]+)"(?:\s+passage="([^"]*)")?/g)].map((c) => {
+    const record = records.get(c[1]);
+    return { record: c[1], passage: c[2] ? decode(c[2]) : null, text_path: record?.text_path || record?.pinned_path || null, publisher: record?.publisher || null };
+  });
+  rows.push({ n: ++n, line, text, cites });
 }
 
 if (asJson) { console.log(JSON.stringify({ story, rows }, null, 1)); process.exit(0); }
-console.log(`# Cited sentences on /events/${story}/ (${rows.length} rows)\n`);
-console.log("| # | line | sentence | record | passage | text pin |");
-console.log("|---|---|---|---|---|---|");
+console.log(`# Cited blocks on /events/${story}/ (${rows.length} rows, ${rows.reduce((a, r) => a + r.cites.length, 0)} citations)\n`);
+console.log("| # | line | block text | citations (record: passage; text pin) |");
+console.log("|---|---|---|---|");
 const cell = (s) => String(s ?? "").replace(/\|/g, "\\|");
-for (const r of rows) console.log(`| ${r.n} | ${r.line} | ${cell(r.sentence)} | ${r.record} | ${cell(r.passage ?? "(record quote)")} | ${cell(r.text_path)} |`);
+for (const r of rows) console.log(`| ${r.n} | ${r.line} | ${cell(r.text)} | ${r.cites.map((c) => `${c.record}: ${cell(c.passage ?? "(record quote)")}; ${cell(c.text_path)}`).join("<br>")} |`);
