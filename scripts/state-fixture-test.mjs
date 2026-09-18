@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, basename } from 'node:path';
 import { readState, selectPublishedState, readPublishedState, frontChains, deskEvents, citedDocuments, eventPath } from '../src/lib/state.mjs';
 
 function fixture(t) {
@@ -78,6 +78,44 @@ test('a cited document is pinned from verified text and a changed body refuses p
   assert.equal(buildStateRecords(readState(root), root)[0].title, 'https://example.com/report');
   writeFileSync(source, 'Different text');
   assert.throws(() => buildStateRecords(readState(root), root), /hash mismatch/);
+});
+
+test('a cited document written by another checkout is found by its repository path, never outside the repository', (t) => {
+  const { root, write, view } = fixture(t);
+  const text = 'Pinned by a worktree.';
+  const digest = createHash('sha256').update(text).digest('hex');
+  mkdirSync(join(root, 'data/sources/mail-voting'), { recursive: true });
+  writeFileSync(join(root, 'data/sources/mail-voting/ap.txt'), text);
+  const elsewhere = join(root, '..', `${basename(root)}-other-checkout`);
+  mkdirSync(join(elsewhere, 'data/sources/mail-voting'), { recursive: true });
+  writeFileSync(join(elsewhere, 'data/sources/mail-voting/ap.txt'), text);
+  t.after(() => rmSync(elsewhere, { recursive: true, force: true }));
+  view.evidence = [{ id: 'story-pin:ap', source_kind: 'document', title: 'Report', publisher: 'AP', url: 'https://example.com/ap', text_path: join(elsewhere, 'data/sources/mail-voting/ap.txt'), text_sha256: digest }];
+  view.edges = [{ id: 'cite', label: 'cites', to_evidence_id: 'story-pin:ap', role: 'primary_record' }];
+  write('event-a', view);
+  assert.equal(buildStateRecords(readState(root), root)[0].quote, text);
+  rmSync(join(root, 'data/sources/mail-voting/ap.txt'));
+  rmSync(join(root, 'data/sources/news-state/story-pin:ap.txt'));
+  assert.throws(() => buildStateRecords(readState(root), root), /no saved text inside the repository/);
+});
+
+test('a link inside the repository to a file outside it is refused, and a name starting with dots is not a parent path', (t) => {
+  const { root, write, view } = fixture(t);
+  const text = 'Linked from outside.';
+  const digest = createHash('sha256').update(text).digest('hex');
+  const outside = join(root, '..', `${basename(root)}-outside.txt`);
+  writeFileSync(outside, text);
+  t.after(() => rmSync(outside, { force: true }));
+  mkdirSync(join(root, 'data/sources/mail-voting'), { recursive: true });
+  symlinkSync(outside, join(root, 'data/sources/mail-voting/linked.txt'));
+  view.evidence = [{ id: 'story-pin:linked', source_kind: 'document', title: 'Report', publisher: 'AP', url: 'https://example.com/ap', text_path: join(root, 'data/sources/mail-voting/linked.txt'), text_sha256: digest }];
+  view.edges = [{ id: 'cite', label: 'cites', to_evidence_id: 'story-pin:linked', role: 'primary_record' }];
+  write('event-a', view);
+  assert.throws(() => buildStateRecords(readState(root), root), /no saved text inside the repository/);
+  writeFileSync(join(root, '..dotted.txt'), text);
+  view.evidence[0].text_path = join(root, '..dotted.txt');
+  write('event-a', view);
+  assert.equal(buildStateRecords(readState(root), root)[0].quote, text);
 });
 
 test('a displayed figure must match an accepted occurrence and its evidence', (t) => {
