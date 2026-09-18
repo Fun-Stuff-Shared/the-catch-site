@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/iran-war.mjs';
+---
+<SeriesOverview title={subject.title} description="CBO's September 15 letter puts the Pentagon's incremental cost of the Iran war at $38.1 billion through August 1. Another month would add $2 billion or $3 billion. PCE inflation in early 2027 is 0.5 percentage points higher than CBO's February forecast." path="/events/iran-war/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>

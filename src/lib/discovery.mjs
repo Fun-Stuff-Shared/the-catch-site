@@ -11,11 +11,13 @@ import { event as greenland } from '../data/greenland202609.mjs';
 import { event as mailVoting } from '../data/mailvoting202609.mjs';
 import { event as canadaTariffs } from '../data/canadatariffs202609.mjs';
 import { event as spaceWeapons } from '../data/spaceweapons202609.mjs';
+import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
 const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, iranWar].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -28,6 +30,7 @@ export const series = [
   { path: '/events/mail-voting/', title: 'Mail voting', topic: 'Elections', keywords: 'mail voting Postal Service Supreme Court Talwani executive order 14399 ballot', description: 'On September 6, 2026, the solicitor general asked the Supreme Court to pause a federal judge\'s injunction of Postal Service mail-ballot rules. The injunction covers elections on or before November 3.' },
   { path: '/events/canada-tariffs/', title: 'Canada tariffs', topic: 'Trade', keywords: 'Canada tariffs Carney Champagne Section 338 countermeasure surtax CBSA', description: 'Canada\'s counter-tariffs on C$27.6 billion (about US$20 billion) of U.S. goods took effect September 8, 17 days after the U.S. 50 percent Section 338 duties took effect.' },
   { path: '/events/space-weapons/', title: 'Space weapons', topic: 'Defense', keywords: 'space weapons on-orbit Space Force Meink Schiess Outer Space Treaty Golden Dome', description: 'On September 14, 2026, Air Force Secretary Troy Meink said the United States has on-orbit space control weapons. The Space Force chief said the next day that Guardians already operate them.' },
+  { path: '/events/iran-war/', title: 'Iran war cost', topic: 'Congress', keywords: 'Iran war CBO Congressional Budget Office Epic Fury Boyle Hegseth munitions inflation', description: 'CBO\'s September 15 letter puts the Pentagon\'s incremental cost of the Iran war at $38.1 billion through August 1. Another month would add $2 billion or $3 billion.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();
