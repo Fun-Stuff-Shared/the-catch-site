@@ -51,3 +51,16 @@ export const injured = { pilots: 2, ground: 3, total: 2 + 3 };
 // Flightradar24 incident post (data/sources/fr24-21air-7598-miami.txt), provisional ADS-B speeds
 export const adsb = { exitKnots: 112, lastKnots: 69 };
 
+// NTSB investigative update of September 9 (data/sources/miami-cargo-crash/ntsb-nr20260909.txt):
+// flight data recorder groundspeeds in knots, keyed by seconds before the recording ended.
+// Miles per hour = knots x 1.15078, rounded to the nearest whole number.
+const mph = (knots) => Math.round(knots * 1.15078);
+export const recorder = {
+  touchdownKnots: 158, touchdownMph: mph(158),
+  brakesKnots: 146, leftMainKnots: 134,
+  goAroundKnots: 120, goAroundMph: mph(120),
+  idleKnots: 117, joltKnots: 96, finalKnots: 65, finalMph: mph(65),
+  cvrHours: 2, fdrHours: 54, fdrParameters: 400,
+  terrainCallouts: 4 + 1,
+};
+

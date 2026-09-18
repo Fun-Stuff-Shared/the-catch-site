@@ -1275,3 +1275,11 @@ The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observ
 | data/sources/canada-tariffs/ontario-ford-2026-08-24.txt | 8549 | 6c59a0143c1cb5f2 |
 | data/sources/canada-tariffs/trump-truth-social-gsa-2026-09-08.html | 39482 | 2a7a05b1f1b85b7b |
 | data/sources/canada-tariffs/trump-truth-social-gsa-2026-09-08.txt | 1710 | ee135a22611e9366 |
+| data/sources/miami-cargo-crash/ntsb-nr20260909.html | 69986 | f10a1754cddc8594 |
+| data/sources/miami-cargo-crash/ntsb-nr20260909.txt | 4251 | d8f50eec2bffb261 |
+| data/sources/coverage/cnn-recorder-data-2026-09-09.html | 4579787 | 0f6d408739ded24e |
+| data/sources/coverage/cnn-recorder-data-2026-09-09.txt | 8720 | cdd80167ec3cd43d |
+| data/sources/coverage/npr-too-fast-2026-09-10.html | 146274 | 1620ff85e34cccdb |
+| data/sources/coverage/npr-too-fast-2026-09-10.txt | 4827 | 170ae71ae8ac165e |
+| data/sources/coverage/cbsmiami-go-around-2026-09-09.html | 639203 | aadb401369c4fc55 |
+| data/sources/coverage/cbsmiami-go-around-2026-09-09.txt | 2697 | ba2a0f6d49d3174c |
