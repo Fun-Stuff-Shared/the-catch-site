@@ -1,8 +1,8 @@
 # Procedures: the exact commands, in the order an authoring session runs them
 
-This is the runsheet of the corrected 2026-08-25 jobs run and the two gold builds, made
-executable. Every step names its command and its artifact. A skipped step is a finding
-you report in your own words, never a style choice. Paths are relative to
+Every step names its command and its artifact. A skipped step is a finding you report in
+your own words, never a style choice. SKILL.md is the order of work; this file is the
+commands for it. Paths are relative to
 `/Volumes/4/GitHub/the-catch-site` unless stated. Two other repos take part:
 `/Volumes/4/CF/news-fqs-pilot` (capture registry, `capture` CLI, news search index) and
 `/Volumes/4/CF/catch-state` (the tracked-event state log).
@@ -27,11 +27,13 @@ seed: the page is never bounded by it. The scaffold creates `data/sources/<event
 data module `src/data/<slug>.mjs`, and the story page. When the class already has a gold
 page, copy its structure rather than inventing one.
 
-## 1. Capture the ask as a checklist
+## 1. Open the working note
 
-Write the brief or review into a working note, one line per item, before touching data.
-For a review, keep the reviewer's numbers verbatim; you will check each against the pins
-in step 4. This note is what you verify the finished page against.
+`checks/working-notes/<subject>--<story>.md` holds, in this order: the ask or the patch
+list copied item by item; one line per census search (SKILL.md, step 1) with what was
+found and admitted or where you searched; a passage table per primary record (SKILL.md,
+step 2). For a review, keep the reviewer's numbers verbatim; you check each against the
+pins in step 4.
 
 ## 2. Build the coverage universe yourself (never trust a seed list)
 
@@ -82,10 +84,9 @@ capture news --via-archive --reason "..." "<url>"                               
 
 When the registry cannot admit a document, the record says so instead of hiding it:
 `capture_status: "not admitted: <what the registry returned and what you did instead>"`.
-Two cases seen on 2026-09-08 and not yet solved in `capture`: a scanned PDF with no text
-layer is rejected as `empty_or_unextractable_body` (pin it directly, read it by OCR, and say
-so in `about`), and sos.mo.gov and cbo.gov refuse the registry's fetcher (sos.mo.gov served
-a plain curl with a browser User-Agent; cbo.gov refused every route). A `capture_status`
+Two cases the registry does not yet handle: a scanned PDF with no text layer is rejected
+as `empty_or_unextractable_body` (pin it directly, read it by OCR, and say so in `about`),
+and some hosts (sos.mo.gov, cbo.gov) refuse the registry's fetcher. A `capture_status`
 record is a typed exception the reviewer sees, not a second admission route.
 
 Name every series file with its fetch date (`PAYEMS-2026-09-04.csv`, never `PAYEMS.csv`):
@@ -108,8 +109,7 @@ f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c 
 Blocked fetches (BLS release archive, CME tool pages, paywalled outlets) are recovered,
 never paraphrased:
 
-Fetch facts, recounted 2026-09-08 across four stories (these describe what the registry's
-own fetcher can and cannot reach; they are not an invitation to fetch outside it):
+What the registry's own fetcher can and cannot reach (not an invitation to fetch outside it):
 
 - `scrapling` chrome impersonation, which is what `capture` uses, served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
 - Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
@@ -136,9 +136,7 @@ tables: A-2 and A-3 (rates by race, sex, age, education), A-7 (nativity, year ov
 unadjusted), A-8 (part time for economic reasons), A-12 (duration of unemployment, the
 long-term level and median weeks), A-15 (U-6), B-1 (sector detail including temporary
 help), B-2 (hours by industry), B-3 and B-8 (earnings, production workers), B-5 (women on
-payrolls by sector). The independent review of the August page named twenty figures that
-were all sitting in that pin; search the pin for the table name before typing anything as
-absent. What the pin does not carry: the diffusion indexes and the unadjusted sector
+payrolls by sector). Search the pin for the table name before typing anything as absent. What the pin does not carry: the diffusion indexes and the unadjusted sector
 tables (separate pages).
 
 ```bash
@@ -201,17 +199,14 @@ mail-voting story's `eo-14399.html` and `eo-14399.pdf`). Name the page pin and t
 pin differently (`eo-14399-page.html`, `eo-14399.pdf`), and re-run the hash check on every
 `text_path` after any extraction pass.
 
-Preflight the candidate row before reading a single article body. Six of seven candidate
-rows on 2026-09-08 carried article paths from unrelated clusters (BLS releases, Fed
-minutes, an Ohio item) beside the right ones. Compare each article's title and named
-entities with the candidate headline in one pass; if any belong elsewhere, treat the seed
-as invalid and rebuild the coverage universe from the receipts and the registry once,
-instead of opening the remaining seed bodies one by one.
+Preflight the candidate row before reading a single article body. Compare each article's
+title and named entities with the candidate headline in one pass; if any belong elsewhere,
+treat the seed as invalid and rebuild the coverage universe from the receipts and the
+registry once, instead of opening the remaining seed bodies one by one.
 
-Before capturing anything new, search the registry for the reactions too: on the August
-page the Fed governor's speech, the president's remarks, the ADP coverage and the stock
-close were all already held by the daily sweeps (`capture search "Waller" --since <date>`,
-`capture search "Trump" --since <date>`). Capture many URLs in one call:
+Before capturing anything new, search the registry for the reactions too (a governor's
+speech, the president's remarks, the stock close are usually already held by the daily
+sweeps: `capture search "<name>" --since <date>`). Capture many URLs in one call:
 
 ```bash
 capture news --reason "gaps named by the independent review of <story> (<date>)" <url> <url> ...
@@ -345,9 +340,9 @@ comma for the record's dash). Cut the quote before the byte you cannot reproduce
 Fix what the gate and the lint report, rebuild, look at the screenshot at 100 percent
 zoom (overflow, missing styles, unreadable sections), repeat until clean.
 
-## 11. Independent interrogation (gate 6)
+## 11. Independent interrogation
 
-Run it only when the page is otherwise complete, then do three things with the list: (1) an item that names a fetchable public record is a fetch, not a decline; fetch it, verify the quote at the pin, and use it or type the block with the fetch attempt; (2) an item the pins already answer is fixed from the pins; (3) only an item that needs a paywalled or nonexistent record is declined, with the reason. Four of four first drafts (2026-09-08) declined the run-up records (the announcement post, the briefing figure, the prior votes) and the red team returned NO-SHIP on each.
+Run it when the page is otherwise complete, then do three things with the list: (1) an item that names a fetchable public record is a fetch, not a decline; fetch it, verify the quote at the pin, and use it or write the absence with the attempt; (2) an item the pins already answer is fixed from the pins; (3) only an item that needs a paywalled or nonexistent record is declined, with the reason.
 
 A model that did not write the page reads the built page and lists everything it does not
 cover or account for, using web search and X search. Read `interrogation.md` for the prompt
@@ -362,55 +357,7 @@ Every returned gap becomes a needs-ledger row: fixed on the page, typed unreacha
 declined with its reason, all in the same session. Wholesale dismissal is the violation
 this step exists to prevent.
 
-## 11b. Completeness audit (gate 6, second half)
-
-After the interrogation dispositions are on the page and the build is green again:
-
-```bash
-skills/catch-event-page/scripts/completeness_audit.sh jobs/2026-09-04-august-payrolls-rise-162000
-cat checks/audits/jobs--2026-09-04-august-payrolls-rise-162000-<date>.md
-```
-
-The auditor (codex, network on, repo read-only) runs three layers: verification of each
-material proposition against its record, discovery before, after, and around the page's
-frame with every citation the page's own sources make chased to its record, and an
-independent reconstruction it then tries to disprove. Contract, completion standard, and
-the four dispositions (admitted and fixed, fixed from the pins, typed on the page,
-declined with reason) are in `completeness-audit.md`. Write the disposition table at the
-top of the audit file, fix, rebuild, rerun the audit, and commit the file with the page.
-A story is not staged before this step has run and closed.
-
-## 12. Cross-link, stage, ship
-
-- Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
-  Related pages link both ways.
-- Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files.
-- The publication decision is a human's. Stage the build, add the staged row with a
-  ships-by date where the project tracks staging, and hand over the rendered page (URL or
-  screenshot), never a receipt list.
-- On the word to ship: `git push` (the live site rebuilds from main), poll the live URL
-  until the new content serves, then `node scripts/live-audit.mjs`, re-run the language
-  greps on the live bytes, screenshot at 100 percent zoom.
-
-```bash
-URL=https://thecatchengine.com/events/jobs/2026-09-04-august-payrolls-rise-162000/
-for i in $(seq 1 30); do
-  code=$(curl -sL -o /tmp/live.html -w '%{http_code}' "$URL")
-  [ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html && break
-  sleep 10
-done
-[ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html || { echo "NOT LIVE after 5 min (last code $code): the hosted build failed; read its log"; exit 1; }
-node scripts/live-audit.mjs
-grep -c $'\u2014' /tmp/live.html     # count of em dashes, must be 0
-```
-
-A 404 or the old page after five minutes means the hosted build failed, almost always in
-`pull-state.mjs` on the committed state (see step 8). The poll must exit nonzero in that
-case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got reported
-as shipped once.
-
-
-## Step 12. Fill the story's state record at authoring time
+## 12. Fill the story's state record at authoring time
 
 Every record must already have `pinned_path`, `text_path`, and `text_sha256`, including
 PDFs, CSVs, posts, and video transcripts. Registration reads these files without rewriting
@@ -488,13 +435,31 @@ An active maintenance owner can refuse the optional read; its failure is visible
 run output. Do not clear another run's lock. The deterministic authoring fill and event
 view refresh are available without launching or interrupting that maintenance run.
 
+## 13. Cross-link and commit (the reviewer stages and ships)
 
-## Rework is a class sweep, not a line fix
+- Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
+  Related pages link both ways.
+- Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files.
+- The publication decision is a human's. Stage the build, add the staged row with a
+  ships-by date where the project tracks staging, and hand over the rendered page (URL or
+  screenshot), never a receipt list.
+- On the word to ship: `git push` (the live site rebuilds from main), poll the live URL
+  until the new content serves, then `node scripts/live-audit.mjs`, re-run the language
+  greps on the live bytes, screenshot at 100 percent zoom.
 
-A rework dispatch lists instances. Each instance names a class (a stitched quote, a typed
-number, an outlet quoted with words it did not print, an unsupported explanation, internal
-vocabulary). After fixing the named line, search the whole page for every sibling of that
-class and fix those too; then rerun `lens_lint`, `quote_lint`, and the independent
-interrogation against the rebuilt page. A rework report lists, per class, the sibling count
-found and fixed. Reworks 1 to 3 on 2026-09-08 fixed the named lines and left the class to
-the next reviewer; that is the pattern this rule ends.
+```bash
+URL=https://thecatchengine.com/events/jobs/2026-09-04-august-payrolls-rise-162000/
+for i in $(seq 1 30); do
+  code=$(curl -sL -o /tmp/live.html -w '%{http_code}' "$URL")
+  [ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html && break
+  sleep 10
+done
+[ "$code" = 200 ] && grep -q "<marker from the new page>" /tmp/live.html || { echo "NOT LIVE after 5 min (last code $code): the hosted build failed; read its log"; exit 1; }
+node scripts/live-audit.mjs
+grep -c $'\u2014' /tmp/live.html     # count of em dashes, must be 0
+```
+
+A 404 or the old page after five minutes means the hosted build failed, almost always in
+`pull-state.mjs` on the committed state (see step 8). The poll must exit nonzero in that
+case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got reported
+as shipped once.

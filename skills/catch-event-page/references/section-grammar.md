@@ -1,11 +1,8 @@
 # Section grammar, chip vocabulary, layers
 
-Ratified 2026-08-23 against /events/fed-rate/2026-06-17-unanimous-hold/, reworked 2026-08-31 on
-/events/jobs/2026-08-07-july-payrolls-fall-23000/, and given the shape rules below on 2026-09-08 after Zain read
-/events/texas-senate/2026-09-05-maga-inc-10-million-ad-buy/ as a wall of text. Order is fixed. Drop a section only
-when it is truly empty.
+Order is fixed. Drop a section only when it is truly empty.
 
-## Shape rules (inverted pyramid, 2026-09-08, Zain)
+## Shape rules (inverted pyramid)
 
 Inverted pyramid is a writing order, not a layout trick. The most important thing comes
 first and each paragraph after it goes one level deeper, so a reader can stop anywhere and
@@ -52,8 +49,9 @@ house style and it binds every page.
    `status="warn"` first; chips are the vocabulary below (checks out, consistent,
    mislabeled, unconfirmed), never invented words. Outlets that carried one dispatch share a
    card. One count line above the cards.
-8. **Who feels it is a dated list of the reader's own facts**, in order, each cited, then
-   at most two narrative paragraphs. It is never the shortest section.
+8. **Who feels it is prose about named people and places, with dates**, each sentence
+   cited: the worker, the traveler, the town, the taxpayer, what changes for them and when.
+   Never a dated list of rows. It is never the shortest section.
 9. **Quote cards are byte-contiguous.** A `QuoteCard` holds one unbroken span of the record.
 Never join two sentences the record separates with attribution ("he said"), a question, or
 other text, and never lift a phrase the record reports indirectly ("described the EU as a
@@ -65,8 +63,7 @@ card text is a substring of the pinned text file; check it with a search before 
    the words, the record), not a paragraph that begins with an institution's name. The
    narrative paragraph immediately before the card says who is about to speak and why it
    matters; the card's `speaker` names them again. Never two cards in a row, and never a
-   card after a figure or a heading. The gate fails all three (Zain, 2026-09-09 and
-   2026-09-12: raw quotes with no context, stacked, and unattributed).
+   card after a figure or a heading.
 10. **Measure before you say done.** In a browser at 1280 wide: story-view height, words by
     layer, fact blocks per section, dollar figures to the cent, figures on the page. The
     gold jobs page is 7,100 px, 1,745 words, 15 fact blocks, one chart and two tables. A
@@ -82,10 +79,10 @@ card text is a substring of the pinned text file; check it with a search before 
 | 2 | KPI strip | fact | Three to four values from `event.kpis`; values nowrap; units small. |
 | 3 | Three things to know | fact | Three declarative sentences, each a `SourcedBlock` with a `Cite`. |
 | 4 | What happened (`what-happened`) | fact + narrative | Three to five narrative paragraphs that tell it in order, citing the records, with the mechanism sentence for each new term; the record's own lines (`SourcedBlock kind="record"`) follow, in the open, in descending order of what a reader needs. |
-| 4b | The catch (`the-catch`) | fact | Pilot rule (2026-09-08, Zain). Three to five rows, each a record-bound takeaway: a bold lead phrase of two to four words, one or two cited sentences, and an anchor link to the section that holds the evidence. Exactly three tags, in these words: "Told versus record" (a headline or claim the record contradicts), "Left out" (a fact in the record or held coverage the coverage skipped), "Who pays" (the cost to a consumer, traveler, worker, or taxpayer, with its number). No row without a `Cite`; no opinion words. Ranked by consequence; each row ends with "Why it matters:" and one sentence; small slips share one `catch-minor` line. A bordered block like Three things, visually distinct from it, kicker "The catch". |
+| 4b | The catch (`the-catch`) | fact | First among the sections after What happened. One headline claim as a bold lead phrase of two to four words, then short prose: one to three cited paragraphs that name the two records that disagree, what each says, and why it matters to the reader. Tags, in these words, only where they fit: "Told versus record", "Left out", "Who pays" (with its number). A row with one record is a fact block, not a catch. Small slips share one `catch-minor` line. A bordered block like Three things, visually distinct from it, kicker "The catch". |
 | 5 | Where this sits (`where-this-sits`) | fact chart + proof provenance + narrative | Chart or table computed at build from the admitted series (`BarChart`, `DataTable`, `StepChart`); three or four narrative paragraphs that place the event (the race, the scale, the history), then the rest of the record in the open, deepest last. Vintage line and values table are proof. Percentiles, streaks, "held for N days" are `computed` chips with receipts. Capped at a quarter of the page. |
 | 6 | Projections / the real signal | fact + narrative | Only when the record has one (SEP tables, revision tables, household survey). |
-| 7 | Who feels it (`who-feels-it`) | fact + narrative | A `dated-list` of the reader's own facts in order, each cited, then the official series the reader lives with (mortgage rate, unemployment, real earnings). |
+| 7 | Who feels it (`who-feels-it`) | fact + narrative | Prose about named people and places with dates, each sentence cited, then the official series the reader lives with (mortgage rate, unemployment, real earnings). |
 | 8 | What the coverage got right, and what it got wrong (`outlets`) | fact | One count line, then `OutletCheck` cards, errors first: what they wrote, the chip verdict, what the record shows, the `Cite` in the card's slot. Outlets that carried the same dispatch share one card. |
 | 9 | Claim checked against the record (`claim-check`) | fact + proof | The recurring premise in a `CheckedBlock` (`variant="contested"` when the claim is wrong), recomputed, with its computation receipt in proof. The block checks the claim readers came with; a page that declines it says in one sentence what record would let it. |
 | 10 | What the markets said (`markets`) | fact | Dated pricing quotes with source; single-outlet pricing gets the same treatment as any single-outlet fact, no special hand-wringing. |

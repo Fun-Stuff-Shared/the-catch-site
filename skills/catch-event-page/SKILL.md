@@ -1,260 +1,237 @@
 ---
 name: catch-event-page
 description: >
-  Author or rework a story page for The Catch (the-catch-site, /events/SUBJECT/YYYY-MM-DD-MOMENT/)
-  the way the two gold pages were built: admit sources first, compute every number from
-  saved data, verify outlet claims against the record, write in the fixed section grammar
-  with three reading lenses (The story / Just the facts / Show the work), then pass the
-  build gate and live audit. Use when asked to write, build, rework, or review a Catch
-  event page, story page, jobs or Fed page, or to absorb a review of one. Works for any
-  agent (Claude, Codex, grok); nothing here depends on a particular model.
+  Author or rework a story page for The Catch (the-catch-site, /events/SUBJECT/YYYY-MM-DD-MOMENT/):
+  census the record before drafting, admit every record through the registry, read every
+  pin whole, write each sentence from an open passage, build through the gate, commit.
+  Use when asked to write, build, rework, or patch a Catch story page, or to absorb a
+  review of one. Works for any agent (grok, Claude, Codex); nothing depends on a model.
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "1.0"
-  gold_examples: /events/fed-rate/2026-06-17-unanimous-hold/ and /events/jobs/2026-08-07-july-payrolls-fall-23000/
+  version: "2.0"
 ---
 
 # Catch event page
 
-You are writing a page a stranger will read and a skeptic will audit. Every sentence
-traces to a saved document, a saved data series, or arithmetic done from one. If you
-cannot point at the record for a sentence, the sentence does not ship.
-
-## Write from the record, not from your understanding of it
-
-The way this work fails is not arithmetic. Seven stories in one day recomputed every
-number correctly and still shipped invented coverage claims, overstated mechanisms,
-stitched quotations and explanations no record gives. The cause was the same each time:
-a real passage supported one phrase of a sentence, and the author treated that as support
-for the whole sentence. A citation is not a license for the words around it.
-
-So the unit of writing is the passage, not the paragraph. For each admitted record, list
-the passages that change the event, the mechanism, who is affected, the chronology, or an
-outlet verdict, and mark each one used, held unused with a reason, or out of scope. Draft
-only after that table exists, and draft each sentence with its passage open: the sentence
-may say what the passage says, in reader words, and nothing more. Where a term or a count
-needs a mechanism the passage does not give, write the gap ("the records do not say what
-the count includes"), never the likely explanation. Where two records differ, say what
-each one counts; do not reconcile them. Where an outlet is quoted, the words come from
-that outlet's own pin, byte for byte. Where you rewrite or restructure, every regenerated
-sentence is a new sentence and is checked against its passage again; a rewrite is not a
-retelling from memory.
-
-Four questions, asked of every sentence before it ships: which record, which passage,
-does the passage say all of this, and did I read it this session or remember it.
+You are writing a page a stranger will read in one sitting and a skeptic will audit line
+by line. Every sentence traces to a saved record or to arithmetic done from one. The page
+is judged on two things: it is right and whole (nothing a reader of the full record would
+say you left out or overstated), and it ships the same day. The order below is how both
+happen at once: the reading and searching come before the draft, so the review after you
+commit finds little.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
-Deploy is `git push` to main; the live site rebuilds in under a minute.
+Commands for every step are in `references/procedures.md`; open it before step 1 and keep
+it open. House style is `WRITING.md` at the repo root; the story-specific rules are
+`references/writing.md`; section order and components are `references/section-grammar.md`.
+Never push. Never edit a story that is already live. Do not kill, restart, or signal any
+process you did not start.
 
-## The three lenses (the page's contract)
+## Step 0. The candidate is one dated moment
 
-Every block on the page carries exactly one `data-layer`:
+Read the candidate row. Compare every article's title, URL and named entities with the
+headline in one pass; an article from another cluster means the seed is wrong, and you
+rebuild the coverage universe from the registry once instead of opening the rest of the
+seed bodies. The story is one dated moment: the day it happened, then a few words for what
+happened (`2026-09-08-counter-tariffs-take-effect`), under a subject slug. A month is never
+a story. Mint it with `new-event.mjs --date --moment`, copy the previous story's page for
+shape, and accept the candidate into the state so the story has a view (procedures, step 0
+and step 10). The story span starts at the first public act (the announcement, the filing,
+the first vote), not at the summary document coverage anchored on.
 
-| Layer | Who sees it | What goes in it |
-|---|---|---|
-| `fact` | every mode, except `detail` blocks which Just the facts and Show the work show | KPIs, figures, quote cards, the catch, checked claims, the sources list, and the record blocks. A record block that restates a document line by line is `<SourcedBlock detail>`: it stays out of The story and appears, in the open, in the other two views. |
-| `narrative` | The story, Show the work | The synthesis: tight reporting, most important first, mechanisms inline, a "so what" per section (WRITING.md, "What each view is for"). Every narrative paragraph cites at least one record with `<Cite>`. A narrative sentence that cannot cite a fact block does not ship. |
-| `proof` | Show the work only | Receipts, arithmetic, capture dates, revision warnings, source-usage notes. Auditor register. |
+## Step 1. Census the record before any sentence
 
-"Just the facts" hides narrative. "The story" hides proof. "Show the work" shows all
-three. The default (no JavaScript, print, crawler) is The story. The mode switcher is
-`<ReadingModes />`; do not reimplement it.
+Before drafting, run every search below over the subject and its dates, against the
+registry, the index, and the issuing institutions' own listings. Write one line per search
+in `checks/working-notes/<subject>--<story>.md`: what you found and admitted, or what you
+searched (which listings, which dates, which routes) and did not find. A search is done
+when its result is admitted or its absence is written with the search named. This is the
+list of what reviewers have found missing; each item is a search, not a question.
 
-Two rules the gold pages themselves break, so hold them stricter than the examples:
+1. For every package announced, the financing decision behind it: budget line, legal instrument, funding source, allocation, contract, disbursement, implementation period, each separately.
+2. For every actor receiving money, rights, equity, warrants, control, data access, or a contract, that actor's own current legal exposure: investigations, litigation, sanctions, arbitration, creditor claims, ownership, and its response.
+3. For every current case, the predecessor proceedings: settlements, enforcement orders, appeals, stays, vacaturs, new pleadings that changed what is in dispute.
+4. For every deal, the executed contract and every instrument that allocates power or risk: approval, bidding, financing, guarantees, insurance, audit rights, termination, liens, priority, warrants, dividends, vetoes, offtake, governing law, dispute resolution.
+5. For every headline number, its denominator before its meaning: annual baseline, historical average, total population, total trade, unique people, full asset base, reference period, unit of count.
+6. For every list or package that changed, the before and after components, and whether the published total changed; if it did not, the valuation workbook, reference period, methodology, or reconciliation.
+7. For every announcement, which state it is in: intention, authorization, signed agreement, legal obligation, committed, available, contracted, disbursed, completed. Never collapse these.
+8. For every policy described as new, its lineage: prior guidance, voluntary practice, legislation, pilots, existing standards, against the new mandate, enforcement mechanism, data system, penalty.
+9. For every claimed consequence, the full causal chain: mechanism, responsible actor, timing, thresholds, alternatives, mitigation, and what would separate the claim from its counterfactual.
+10. For every official statistic, the exact table, title, row, seasonal status, margin or significance threshold, vintage, revision policy, comparison window. Say estimate when the record does.
+11. For every legal claim, the operative instrument and its current procedural state: statute, regulation, order, docket, controlling precedent, service or notice record, implementation guidance, later challenge. Read a statute's effective-date clause against the order's own dates.
+12. For every regulated system involved in harm, both compliance and sufficiency: the site-specific determination, not only the national rule.
+13. For every actor affected on the ground, their own records and representation: local government, legislature, workers, vendors, communities, indigenous groups, regulators, counterparties, people exposed to the risk.
+14. For every company relationship, owner, controller, operator, customer, contractor, regulator, each from filings or the governing contract, never inferred from a brand name or headquarters.
+15. For every market or price reaction, causality attributed to a participant or not stated: contemporaneous analyst notes, competing shocks, timing, the later outcome series.
+16. For every forecast, comparison, count, and ranking, every denominator and unit enumerated. No "third trip", "majority", "largest", or "number of countries" until the counting rule is explicit.
+17. For every record repeated by several outlets, the source lineage from the pin's byline and source metadata, never from domains: syndicated copies, transcript carriers, shared briefings, and party restatements are one lineage.
+18. For every document that cannot be captured, a primary mirror, docket attachment, public archive, licensed carrier, or official listing; what remains unavailable and how it limits the story.
+19. For every developing event, a forward search through the cutoff: next filing, order, inspector general review, audit, implementation notice, regulator response, institutional statement, outcome data.
+20. Before saying done, the browser-visible page: built HTML, source list, citation targets, navigation text, labels, reader-facing state messages.
 
-1. **Uncited narrative is a defect.** Run `scripts/lens_lint.mjs` on the page; it lists
-   every narrative paragraph without a `<Cite>`. Fix each one or move the claim into a
-   `<SourcedBlock>`.
-2. **Proof content never rides inside a fact block.** A capture date, a "later releases
-   may revise" line, a values table, or a method note goes in its own `data-layer="proof"`
-   element, even inside a figure.
+Also every time: the capture registry and the article index for the subject and its dates;
+the issuing institution's own listing for every date on the page and the days after it;
+the next release of every series the page cites.
 
-## Workflow
+## Step 2. Admit every record, then read every pin whole
 
-Work in this order. Each step names its artifact; an unmapped step is a finding you
-report, never an omission. The exact commands for every step (registry search, index
-search, state-log check, fetch and pin, archive and assisted recovery, computation
-snippets, build, lint, screenshot, independent interrogation, live audit) are in
-`references/procedures.md`; read it before step 2 and keep it open.
+Every URL this story cites goes through `capture news --reason "<subject>/<story>: <what
+this record is for>"`, primaries first (the institution that acted; the filing, order, vote
+record, statement, release, data file), then coverage. The registry is the admission:
+receipt, raw bytes, text, stamp. A file fetched any other way is not a record; when the
+registry refuses a document, the manifest row says so in `capture_status` and you move on.
+Check the registry before fetching: the daily sweeps usually already hold the release as
+served on release day. Every pin gets a text sibling at pin time; a video is read twice,
+audio and every frame, with the on-screen text transcribed into the sibling. Series files
+carry their fetch date in the name. SOURCES.md is regenerated after every addition.
 
-1. **Capture the ask as a checklist.** A review or brief is copied item by item into a
-   working note before any data is touched. Reworks are verified against this list.
-2. **Admit sources first, starting at the first public act.** The story span begins with the
-   announcement, the filing, or the first vote, not with the summary document coverage anchored
-   on. Check the capture registry before fetching: agency releases
-   are usually already held as served on release day. Save every document under
-   `data/sources/` before writing a sentence, series files under dated names: primary documents from the issuing institution, official series as raw CSV
-   (FRED `fredgraph.csv?id=`), coverage articles as served. Blocked fetches are recovered
-   (archive.org snapshot, ALFRED vintages, assisted search) and the recovery is disclosed
-   in `data/sources/SOURCES.md` and in the page's records list, in reader words.
-   Regenerate SOURCES.md (file, bytes, sha256 prefix) after every addition.
-3. **Recount against existing pins before fetching.** Most numbers a reviewer raises are
-   already inside a pinned release. Open the pinned bytes and recount; pin new sources
-   only for what the pins lack. The pins win over the reviewer's memory.
-4. **Compute, never quote, derived numbers.** Days held, percentiles, streaks, revision
-   tables, and comparisons are recomputed in-session from the admitted series. Put the
-   values in the page's data module (`src/data/<subject><period>.mjs`) with a comment
-   naming the source file, and render from it. A number is never typed twice.
-5. **Disposition the passages, then verify outlet claims against the record.** Build the
-   passage table from the section above in the working note before any prose: record,
-   passage, what it establishes, disposition. It is the map the page is written from and
-   the interrogation is checked against. Then, before crediting an outlet for a fact, search
-   every primary pin for it (case-insensitive; uppercase and hyphenated headings defeat
-   case-sensitive searches). The primary takes the cite; the outlet row says it checks out.
-   Legal and financial terms appear first as the pin's word in quotation marks, then in reader
-   words. Each checkable claim in each coverage
-   article is compared with the primary document. Verdicts use the closed chip set
-   (see `references/section-grammar.md`). A wrong claim is named plainly: who, what they
-   wrote, what the record shows. Be ready for the page's own earlier claim to be wrong
-   in a more specific way than the reviewer said; say so on the page with a dated
-   correction.
-   A video is a record twice over: the audio and every frame. Read both before any verdict
-   says what an ad does or does not cite (`references/procedures.md`).
-6. **Write in the section grammar, as an inverted pyramid, one passage at a time.** Fixed
-   order, sections dropped only when truly empty. Each sentence is written with its passage
-   on screen; a sentence with no passage in the table is a gap to state or a sentence to cut. Read `WRITING.md` at the repo root (house style; it binds every
-   sentence) and `references/section-grammar.md` before writing, the shape rules first:
-   most important first and each paragraph one level deeper, depth in the open and never
-   collapsed, every number series a figure from the data module (`BarChart`, `DataTable`,
-   `DecisionTimeline`, `StepChart` in `src/components/story/`), a chronology table for dated
-   steps, one mechanism sentence per introduced term at first use, a "so what" closing each
-   section, rounding in the story and cents in the proof, catch rows ranked with a "Why it
-   matters", coverage as `OutletCheck` cards with the closed chip set and errors first, Who
-   feels it as a dated list, quotes as cards introduced by the paragraph before and headed
-   with the speaker. Use the components:
-   `SourcedBlock` (fact with a chip), `Cite` (numbered source reference),
-   `StorySources` (the records list), `ReadingModes`, `StoryState`.
-7. **Manifest every record, and every displayed number.** Append each new record to
-   `checks/manifests/<subject>--<story>.json` with `pinned_path`, `text_sha256`, and a
-   byte-exact `quote` (for a CSV, a data line). Add it to `story_sources` with a plain
-   `usage` line. The gate re-verifies every record on every build.
-8. **Build with the real pipeline.** `npm run build` (never a partial build or a
-   fallback). Fix what the gate reports and rebuild until clean. Then run
-   `node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro`.
-   Then `node skills/catch-event-page/scripts/quote_lint.mjs <same page>`: every quoted span
-   on the page must be one contiguous run of bytes in a record the same element cites, and
-   an outlet's quoted words must come from that outlet's own pin. A finding is a defect on
-   the page, never a lint to silence: fix the quote, the cite, or the attribution.
-9. **Independent interrogation, then the completeness audit.** Two runs by models that
-   did not write the page, both required before staging. First the interrogation
-   (`scripts/interrogate.sh <subject>/<story>`, prompt and handling in
-   `references/interrogation.md`): a model with web and X search lists everything the page
-   does not cover. Then the completeness audit
-   (`scripts/completeness_audit.sh <subject>/<story>`, contract in
-   `references/completeness-audit.md`): three layers, verification of every material
-   proposition against its record, discovery before, after, and around the page's frame
-   with every citation the sources themselves make chased to its record, and an
-   independent reconstruction the auditor then tries to disprove. Every returned item gets
-   one of four dispositions the same session: admitted and fixed (a named record is a
-   fetch, never a decline), fixed from the pins, typed on the page in reader words after
-   one attempt, or declined with its reason. Rerun the audit after the fixes; stage on
-   COMPLETE, or on INCOMPLETE whose remaining checks are all typed on the page. Write the
-   catch box after this step: each row names the two records that disagree. Never dismiss
-   a list wholesale.
-10. **Update the subject page and homepage.** New story = one timeline row + KPI/chart
-   refresh on `/events/<subject>/`; the homepage features the latest story. Each story
-   is one dated moment and is never edited afterwards: a later development is a new story
-   under the same subject, and a revision to an earlier figure is reported there (its
-   revisions table and claim check).
-   Every story declares one lead visual in its data module as `event.visual`, and the
-   homepage lead card renders it through `LeadVisual`. Three kinds: `payrolls` (the chart,
-   `{ kind, source, from, to, latest, range, rangeCompact }`, also rendered on the story and
-   series pages as `<PayrollChart {...event.visual} />`), `timeline` (`{ kind, title, note,
-   entries }`, one to four dated lines, built from the page's own timeline data), and
-   `table` (`{ kind, title, note, rows }`, one to three `[figure, what it is]` rows built
-   from the page's own data). The caps are enforced at build time so the card stays one
-   glance; a story with no natural exhibit declares none and the card is text. Never type
-   chart or table values on a page or in the declaration; map them from the data.
-11. **Read the story into the state record.** The state record (the tracked-figures block at
-    the foot of every story) is filled from the story's own pins, at authoring time, not by a
-    separate batch: register the manifest's exact pinned text and deterministically fill its
-    sourced and computed figures (`references/procedures.md`, step 12), then rebuild. A Luna
-    read of only these pins is optional; the deterministic fill makes no model calls. A story whose foot says
-    the state has not read its sources is not done.
-12. **Rework the class, then keep iterating.** A review names instances; each instance
-    belongs to a class (a stitched quote, an outlet quoted with words it did not print, a
-    typed number, an unsupported explanation, internal vocabulary). Fix the named line,
-    sweep the whole page for the class, rerun both lints and the interrogation, and report
-    the sibling count per class. A page is a living record. When a record the page names as missing
-    arrives (a transcript, a roll call, a later filing, a transcript of a spot that was on the
-    post all along), capture it that day, fold it in, re-check the claim, and add the dated
-    line to What happened next. "No transcript is saved" is a task with a date, never a
-    sentence that ships twice.
-13. **Stage, then ship on a human's word, then audit live.** Publication is a human
-    decision: hand over the rendered page, not receipts. Commit by explicit path (page, data module, manifest,
-    ledger, pins). Push. Poll the live URL until the new content serves, then re-run the
-    language checks on the live bytes and screenshot at 100 percent zoom. Judge only the
-    live domain; local dev servers and browser caches serve stale HTML.
+Then read every admitted primary record whole, not the span you plan to quote. In the
+working note, under the record's id, list each passage that changes the event, the
+mechanism, who is affected, the chronology, or an outlet verdict, and mark it: used
+(where), held unused (why), or out of scope. Most of what reviewers find is inside a pin
+the author already held. Before crediting an outlet for a fact, search every primary pin
+for it, case-insensitive; the primary takes the cite and the outlet row says it checks out.
+
+Recount every number a brief or review names against the pins before fetching anything
+new. The pins win over anyone's memory.
+
+## Step 3. Draft, each sentence from an open passage
+
+Data module first (`src/data/<slug>.mjs`: event, kpis, series, tables, every derived
+number computed from the admitted series with a comment naming the file), then the page.
+Read `references/writing.md` and `references/section-grammar.md` before the first sentence.
+
+Every factual sentence is written with its passage on screen and cites it (`Cite s=
+passage=`). The sentence says what the passage says, in reader words, and nothing more.
+Where the page needs more than the passage gives, admit the record that gives it or write
+the gap as a dated absence in reader words; never the likely explanation. Where two records
+differ, say what each one counts and do the set arithmetic before any sentence says they
+do not match. Where an outlet is quoted, the words are that outlet's own pin, byte for
+byte, one contiguous span. Numbers come from the data module by identifier; a number is
+never typed twice. Legal and financial terms appear first as the pin's word in quotation
+marks, then in reader words.
+
+The shape, in order: the headline states the outcome with its number; the dek adds the two
+facts a reader must know; What happened opens on the first public act in everyday words,
+most important first, each paragraph one level deeper, one mechanism sentence per new term
+at first use; the catch as one headline claim then short prose, first among the sections
+after What happened; every number series a figure from the data module; a chronology table
+for dated steps; quotes as cards, each introduced by the paragraph before and headed with
+the speaker; Who feels it as prose about named people and places with dates, cited, never
+the shortest section; coverage as cards, errors first, cited only there or in a sentence
+about what the outlet wrote; What happened next dated; What we do not know only after its
+disproof search; the records list. Every section ends on what its records add up to for
+the reader.
+
+Four questions of every sentence before you move on: which record, which passage, does the
+passage say all of this, and did I read it this session or remember it.
+
+## Step 4. Manifest, state, build, lints, interrogation
+
+Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
+`text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
+`about`; add it to `story_sources` with a plain `usage` line; enrich every displayed figure
+(sourced with its passage, or computed with formula and inputs, unit with scale). Fields:
+`references/manifest-and-gate.md`. Fill the story's state record from the manifest
+(procedures, step 12), then:
+
+```bash
+npm run build
+node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro
+node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
+skills/catch-event-page/scripts/interrogate.sh <subject>/<story>
+```
+
+The gate fails on a record whose quote is not in its pin or whose text hash does not
+recompute, a record with no registry run id and no `capture_status`, a `Cite` that does
+not resolve, a number typed into a table cell, em dashes, internal vocabulary, custody
+talk, schedule codes and statute paragraph codes in prose, jammed inline tags, a story
+with no manifest. A lint finding is a defect on the page, never a lint to silence. The interrogation is a
+model with web and X search listing what the page does not cover: every item is fixed from
+the pins, admitted and fixed, or written on the page as a dated absence after one attempt,
+in the same run; an item that names a public record is a fetch, not a decline. Write the
+dispositions at the top of the interrogation file.
+
+Then look at the built page in a browser at 1280 wide: at least one figure, no facts behind
+a collapsed element, no dollar figures to the cent in the story view, the story view under
+about 9,000 px, the first three sentences telling a cold reader what happened and why it
+matters to them.
+
+## Step 5. Update the subject page and homepage, commit, report
+
+One timeline row and the KPI or chart refresh on `/events/<subject>/`; the homepage
+features the latest story through `event.visual` (procedures, step 12 and the visual
+kinds). Regenerate SOURCES.md and re-read the open-questions list as the last two steps:
+the list asks for nothing the records list already holds.
+
+Commit by explicit path: page, data module, manifest, SOURCES.md, pins and text siblings,
+working note, interrogation file, the story's state view and its chain view. Never commit
+`.md.err` files, `data/sources/officials/`, or generated state beyond those two views.
+Plain messages, no attribution trailers. Do not push.
+
+The report is plain words: what ran, what the page covers, what you could not do and why,
+the local URL of the built page, and the commit hash. Everything in it is checkable from
+files in the repo.
+
+## After you commit: what happens to the page
+
+A completeness audit under `skills/story-completeness-audit/` and a red team read the
+page on your commit, in parallel, and a codex pass judges every cited sentence against its
+passage. The reviewer verifies their findings at the bytes, refutes what the pins refute,
+and sends you the rest as a numbered patch list. A patch changes only what the items name.
+Every regenerated sentence is a new sentence, checked against its passage again, and the
+lints run again. Fix each item's class across the whole page, not only the named line,
+and report the sibling count per class. A second audit runs on the patched commit. Rounds
+that survive it are the reviewer's problem to escalate, not yours to explain away.
 
 ## Language rules (hard, enforced by the gate)
 
 - No em dashes anywhere in public copy.
-- Quote the record once per paragraph, then say what it means in the reader's words. A paragraph with two quotations is two paragraphs or one quotation.
-- No internal vocabulary in visible text. The gate's list: byte-captured, capture debt,
-  operator review, signed export, retrieval, automated, staging, sha256, checked into,
-  admission row hash, eligible claim, manifested, dossier, extraction pipeline, staged,
-  internal review, cloture, perfecting nature. Receipts speak in reader words.
-  A source that refuses capture is described as "does not let its pages be saved", never
-  as blocking automated retrieval.
-- No repo paths, bare hashes, enum values, or typed labels on the page. If reading a
-  line requires knowing project vocabulary, rewrite it.
-- No text jammed against an inline tag (`<em>under</em>counting`). Keep the space on
-  the same source line; Astro collapses a newline before an inline element.
-- Verdict words are plain: "checks out", "mislabeled", "wrong". No invented categories.
-- A story is one dated moment. Its slug is `<yyyy-mm-dd>-<moment>` under the subject
-  (`2026-09-08-counter-tariffs-take-effect`): the day it happened, then a few words naming
-  what happened, the way a news outlet's URL carries its date and headline. A month is never
-  a story; the subject page holds the current state and points to each story.
+- One quotation per paragraph, then say what it means in the reader's words.
+- No internal vocabulary in visible text: byte-captured, capture debt, operator review,
+  signed export, retrieval, automated, staging, staged, sha256, checked into, admission row
+  hash, eligible claim, manifested, dossier, extraction pipeline, internal review, cloture,
+  perfecting nature. No custody talk (the saved copy, we hold, could not be fetched, not on
+  this page). A source that refuses capture "does not let its pages be saved".
+- No repo paths, hashes, enum values, typed labels, tariff headings (`9903.01.10`) or
+  statute paragraph codes (`(1)(C)(ii)`) in story prose.
+- No text jammed against an inline tag (`<em>under</em>counting`); keep the space on the
+  same source line.
+- Verdict words are plain: "checks out", "mislabeled", "wrong". Chips are the closed set in
+  `references/section-grammar.md`.
 
 ## Before you say done
 
-- [ ] Every step above maps to an artifact, or is reported as not done.
-- [ ] The completeness audit ran on the built page (`checks/audits/<subject>--<story>-<date>.md`),
-      every finding has a disposition, and the rerun returned COMPLETE or its remaining
-      checks are typed on the page.
+- [ ] The working note holds one line per census search and a passage table per primary record.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
-- [ ] Step 12 ran: every manifest figure appears in the built state record with its unit
-      and source passage; computed figures show their inputs and formula as computations.
-      Registration preserved every pinned text hash, state verify passed, and the build gate is green.
-- [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative;
-      `quote_lint.mjs` reports zero findings.
-- [ ] Measured in a browser at 1280 wide (section-grammar shape rule 10): at least one figure,
-      a chronology table if the story has dated steps, zero dollar figures to the cent in
-      the story view, no facts behind a collapsed element, and the story view not more than
-      about 9,000 px tall.
-- [ ] SOURCES.md regenerated after the last pin; every manifest `pinned_path` basename has a row.
-- [ ] Zero same-source adjacent `<Cite>` pairs; every computed number is visible or deleted.
-- [ ] The open-questions list asks for nothing the records list already holds.
-- [ ] No `.md.err`, `data/state/`, or `data/sources/officials/` file in the commit.
-- [ ] Live bytes audited, not a staging copy.
-- [ ] The reader-facing delta is named in one sentence.
+- [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
+- [ ] `npm run build` green; `lens_lint` and `quote_lint` zero; the interrogation dispositioned.
+- [ ] Every manifest figure appears in the built state record with its unit and passage.
+- [ ] SOURCES.md regenerated; every manifest `pinned_path` basename has a row.
+- [ ] Measured in a browser at 1280 wide (step 4).
+- [ ] Subject page and homepage updated; both state views committed with the page.
+- [ ] The report names the reader-facing delta in one sentence.
 
 ## Gotchas
 
-- Fed and FRED endpoints accept a browser User-Agent; BLS release archives and CME tool
-  pages block direct fetches. Recover and disclose; never paraphrase from memory.
-- ALFRED multi-vintage comma syntax silently returns only the first vintage: fetch one
-  vintage per call and concatenate.
-- The `?mode=` links on the switcher only work with JavaScript. Do not describe them as a
-  no-JavaScript fallback; the no-JavaScript view is The story.
-- A story page under `src/pages/events/<subject>/` without a manifest fails the build.
-- A new story is accepted into the state, linked to the previous story in its series, and
-  its view is refreshed with one command each (procedures.md, step 10); none of the three
-  waits on a maintenance fire.
-- The story date is the day the moment happened (the September 4 jobs report is
-  `2026-09-04-august-payrolls-rise-162000`), never the publish date. `new-event.mjs` needs
-  `--date` and `--moment`; copy the previous story's page for the section shape.
-- The article search index lags the registry by a day or more; the registry is the coverage
+- Fed and FRED endpoints accept a browser User-Agent; BLS release archives, CME tool pages,
+  reuters.com, nytimes.com, cbo.gov and congress.gov refuse fetches. Recover through the
+  registry (`--via-archive`, a carrier copy named in the records list); never paraphrase.
+- ALFRED multi-vintage comma syntax silently returns only the first vintage: one vintage per call.
+- Two pins never share a stem (`eo-14399-page.html` and `eo-14399.pdf`), or one text
+  sibling silently replaces the other.
+- A story view committed without its chain view builds locally and fails on the host.
+  Commit both files the refresh wrote (`data/state/event-<id>.json`, `data/state/chain-<root>.json`).
+- The article search index lags the registry by a day; the registry is the coverage
   universe, the index a second net.
-- The gate runs in the Workers git build too, so a failing gate blocks the deploy.
+- The `?mode=` links work only with JavaScript; the no-JavaScript view is The story.
+- The gate runs in the hosted build too; a failing gate blocks the deploy.
 
-## References (read when the step calls for it)
+## References
 
-- `references/section-grammar.md`: section order, chip vocabulary, component usage, layer rules per section.
-- `references/gold-traces.md`: the two gold builds step by step, with the lessons each one produced.
-- `references/manifest-and-gate.md`: manifest fields, SOURCES.md ledger, gate checks, ship verification.
-- `references/anti-patterns.md`: the drift the audit found on the gold pages and the rule for each.
-- `references/procedures.md`: every command, step by step, from recipe scaffold to live audit.
-- `references/completeness-audit.md`: the three-layer audit, the four dispositions, the completion standard.
-- `references/interrogation.md`: the independent completeness review, its prompt, and how each gap is dispositioned.
+- `references/procedures.md`: every command, in order, from scaffold to commit.
+- `references/writing.md`: the story-specific writing rules, with the everyday-word threshold.
+- `references/section-grammar.md`: section order, chip vocabulary, components, layer rules.
+- `references/manifest-and-gate.md`: manifest fields, SOURCES.md, what the gate checks.
+- `references/interrogation.md`: the interrogation prompt the script sends.

@@ -1,66 +1,18 @@
-# Independent interrogation (gate 6)
+# Independent interrogation
 
-A model that did not write the page reads the finished page and lists everything it does
-not cover or account for. The byte checks prove what is on the page is real; this step
-types what is absent. Run it after the gate passes and before the review ping.
+`scripts/interrogate.sh <subject>/<story>` sends the prompt block below, then the built
+page's text and the manifest's source list, to grok with web and X search on, and writes
+the numbered gap list to `checks/interrogations/<subject>--<story>-<date>.md`. The author
+runs it after the build is green (SKILL.md, step 4) and dispositions every item in the
+same run: fixed from the pins, admitted and fixed, or written on the page as a dated
+absence after one attempt. An item that names a public record is a fetch, not a decline.
+A reaction (a post, a statement) enters the page only through an admitted record.
 
-Run:
+Write the dispositions as a table keyed by the gap numbers at the top of the file, then
+the list as returned (replace any em dashes with a colon or comma), and commit it with
+the page.
 
-```bash
-node scripts/../skills/catch-event-page/scripts/interrogate.sh jobs/2026-09-04-august-payrolls-rise-162000
-# writes checks/interrogations/jobs--2026-09-04-august-payrolls-rise-162000-<date>.md
-```
-
-The script uses grok with web search and X search on (`--always-approve`, no subagents), so
-the reviewer can pull posts by economists and officials, the White House and Treasury
-reaction, prediction markets, and outlets the capture sweep did not hold. Any model with
-web access can run the same prompt; paste the prompt block below plus the page text and
-the source list.
-
-## What to do with the result
-
-Every numbered gap becomes a row in the needs ledger with one of three outcomes, written
-the same session:
-
-1. **Fixed on the page.** The gap named a held or fetchable record: admit it (procedures.md
-   steps 3 and 5), cite it, rebuild.
-2. **Typed, unreachable.** The record cannot be admitted (paywalled, deleted, a claim with no
-   document behind it). The manifest `needs_ledger` row says so in reader words, and the
-   page's "What we do not know yet" section carries it when a reader would miss it.
-3. **Declined, with the reason.** The gap is out of the story's scope or is opinion rather
-   than record. Write the reason in the ledger row. Never dismiss the list wholesale.
-
-Write the dispositions as a table keyed by the reviewer's gap numbers, then append the
-review as returned, into `checks/interrogations/<subject>--<story>-<date>.md`, and commit
-it with the page. The reviewer's text may carry em dashes; replace them (colon or comma)
-and say so in the heading, since the repo's hook refuses them. Shape:
-
-```markdown
-| Gaps | Disposition |
-|---|---|
-| 1, 2 (ADP, weekly claims) | Fixed: ADP's own release and the claims PDF saved and cited in What happened. |
-| 17 (diffusion indexes) | Typed: not in the saved release text; ledger row. |
-| 34 (opposition message) | Declined: no record captured. |
-```
-
-Expect the list to be long (52 on the first run) and expect most of it to be answerable
-from the pins you already hold. Budget about two hours for the round: recount, capture,
-pin, cite, rebuild.
-
-Two kinds of finding get special handling:
-
-- **A sentence flagged wrong or overstated.** Reopen the pinned record before deciding.
-  If the reviewer is right, fix the sentence and note the correction in the page's
-  "Story updated" date; if the reviewer is wrong, say why in the ledger row.
-- **Drama and reaction** (political statements, criticism of the agency, market bets, viral
-  posts). These enter the page only through an admitted record: capture the post or
-  statement through the registry (`capture news <url> --reason ...`), pin it, cite it. A
-  reaction the page cannot pin is typed, never paraphrased from the reviewer's summary.
-
-## The prompt
-
-The block between the markers is what the script sends, followed by the page text and the
-source list.
+The script reads the prompt between the two markers; keep them.
 
 === PROMPT ===
 You are reviewing a finished news analysis page for completeness. Below is the full text of the page, then the list of sources it used. Use web search and X (Twitter) search freely.
