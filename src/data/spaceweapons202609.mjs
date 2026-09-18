@@ -9,9 +9,9 @@ export const event = {
   name: "On-orbit space control weapons",
   span: "September 14, 2026",
   date: "2026-09-14",
-  updated: "2026-09-15",
+  updated: "2026-09-17",
   kpis: [
-    { value: "Sept 14", unit: "2026", label: "Meink's first public confirmation" },
+    { value: "Sept 14", unit: "2026", label: "First official acknowledgement they are already on orbit" },
     { value: "Sept 15", unit: "2026", label: "Schiess: Guardians operate them" },
     { value: "1967", unit: "", label: "Outer Space Treaty WMD ban" },
     { value: "$1.2", unit: "trillion", label: "CBO notional Golden Dome, 20 years" },
@@ -33,14 +33,21 @@ export const cboGoldenDome = {
   sbiSatellites: 7800,
   years: 20,
   icbmRaid: 10,
+  replacementPerYear: 1600, // spo-cbo-golden-dome-2026-05.txt: "plus nearly 1,600 each year thereafter"
+  fy2027ComptrollerBillions: 17.9, // same pin: Comptroller Budget Overview
+  ombDiscretionaryMillions: 398, // same pin
+  ombMandatoryBillions: 17.1, // same pin
 };
 
 export const chronology = {
   rows: [
     ["1967-10-10", "Outer Space Treaty in force; Article IV bans nuclear and other WMD in orbit"],
+    ["2023-04-18", "Saltzman tells Senate appropriations: substantial on-orbit capability by 2026"],
     ["2025-01-27", "Iron Dome for America EO orders proliferated space-based interceptors"],
     ["2025-03", "CSO Saltzman defines Space Control as kinetic and non-kinetic means"],
+    ["2025-05-20", "Saltzman tells SASC: counter-space systems designed to defeat hostile use of space"],
     ["2026-05-12", "CBO notional Golden Dome cost about $1.2 trillion over 20 years"],
+    ["2026-09-08", "Space Command announces Apollo Maneuvers live-fly exercise"],
     ["2026-09-14", "Meink: U.S. has on-orbit space control weapons"],
     ["2026-09-15", "Schiess: Guardians operate on-orbit weapons; China and Russia respond"],
   ],
@@ -91,4 +98,15 @@ export const quotes = {
     "total cost over 20 years is $1.2 trillion",
   spoSatellites: "constellation of 7,800 satellites",
   spoSbiCost: "about $720 billion",
+  spoReplacement: "plus nearly 1,600 each year thereafter",
+  spoFy2027: "DOD is requesting $17.9 billion for Golden Dome in FY2027",
+  saltzmanOnOrbit:
+    "a substantial on-orbit capability that allows us to com-",
+  saltzmanCounterspace: "counter-space systems designed to defeat",
+  apolloManeuvers:
+    "conducting coordinated maneuvers across low Earth orbit (LEO), medium Earth orbit (MEO), and geosynchronous orbit (GEO)",
+  whitingTargeting:
+    "Targeting in the space domain is maturing, but it still has a long way to go",
+  kendallLowDebris: "low-debris-causing weapons",
+  zakharovaWeapons: "оружейным потенциалом космического базирования",
 };

@@ -1,5 +1,29 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Patch list (review 2026-09-18, items 1–17)
+
+1. `updated` was 2026-09-15; page carries Whiting Sept 16 and searches through Sept 17. Set `event.updated` to 2026-09-17.
+2. Manifest figures: add reader-words `label` on each figure.
+3. Cut "the baseline rule most spacefaring states still cite" (OST pin does not say it).
+4. Cut author definition of kinetic/non-kinetic; keep Saltzman's March 2025 sentence.
+5/8. Who feels it: replace invented service-member list with Schiess Waze/Doordash, economy, and citizens; drop "the record does not name a civilian GPS user".
+6. Keep on-orbit / space-control gloss; drop "Pentagon's phrase".
+7. CBO $1.2T is CBO's notional architecture for a raid of 10 ICBMs with about 1,600 replacements a year (carrier line 9). Add FY2027 request from carrier line 12.
+9. Coverage: ten cards; NPR is AP lineage dated Sept 16; move NPR into the AP row.
+10/14. Qualify "first" as first explicit acknowledgement weapons are already on orbit. Kendall 2024 low-debris sentence from NYT pin. Capture Saltzman April 2023 (govinfo CHRG-118shrg50509) and May 2025 SASC; both admitted (`capture-oneoff-20260918T085713Z`); add chronology rows and one background sentence.
+11. One sentence that OST also has Articles III, IX, XI duties; no compliance ruling.
+12. Same as item 1.
+13. Quote Whiting targeting / target-folders sentences after retains-weapons.
+15. Manifest Russia MFA Zakharova page as primary (`capture-oneoff-20260918T082304Z`, already held, body_captured). Move TASS and RT to coverage group.
+16. Capture Apollo Maneuvers (spacecom.mil 4590678); admitted same 085713Z run. Dated row plus one sentence that Meink came a week after the announcement; exercise does not name the weapon.
+17. Meink, Schiess, Whiting, AFNS are one institution; floor coverage confirms the words were spoken.
+
+Capture outcomes (2026-09-18):
+- govinfo CHRG-118shrg50509 PDF: body_captured, run capture-oneoff-20260918T085713Z
+- SASC 5-20-25-full-transcript.pdf: body_captured, same run
+- spacecom Apollo article: body_captured, same run
+- mid.ru/ru/press_service/2141035/: already held body_captured, run capture-oneoff-20260918T082304Z
+
 Ask: candidate cand-cc461ec8d3f6c492, "US confirms for first time it has deployed weapons in space."
 Moment: Sept 14, 2026 Meink keynote at AFA Air, Space and Cyber Conference (first public act). Schiess and foreign responses are Sept 15.
 
@@ -88,6 +112,29 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 |---|---|
 | "Space Control encapsulates the mission areas... kinetic and non-kinetic... disruption, degradation, and even destruction" | used : catch / claim-check against DW spokesperson attribution |
 | offensive and defensive purposes | used |
+
+### govinfo-chrg-118shrg50509 (April 18, 2023)
+| Passage | Mark |
+|---|---|
+| "a substantial on-orbit capability that allows us to com-" / "pete in full spectrum operations" | used : chronology, where-this-sits |
+| "classified, high priority space programs" | held unused : funding dispute, not the confirmation sentence |
+
+### sasc-saltzman-2025-05-20 (May 20, 2025)
+| Passage | Mark |
+|---|---|
+| "counter-space systems designed to defeat" hostile use of space | used : chronology, where-this-sits |
+
+### spacecom-apollo-maneuvers-2026-09-08
+| Passage | Mark |
+|---|---|
+| inaugural live-fly exercise; coordinated maneuvers across LEO/MEO/GEO; first week of September | used : chronology, what-happened-next |
+| Whiting quotes on static orbit | held unused : does not identify the weapons |
+
+### russia-mfa-zakharova-2026-09-15
+| Passage | Mark |
+|---|---|
+| "оружейным потенциалом космического базирования" | used : Zakharova paragraph |
+| First Committee 81st session Oct 5–Nov 6 | used : same block |
 
 ### afas-meink-on-orbit-2026-09-14 (trade coverage of Q&A; treated as coverage with Meink words)
 | Passage | Mark |

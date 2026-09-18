@@ -1349,3 +1349,9 @@ Space-weapons story (2026-09-14): CBO Golden Dome PDF https://www.cbo.gov/system
 | data/sources/space-weapons/russia-mfa-zakharova-2026-09-15.html | 148766 | 70242d348fabf430 |
 | data/sources/space-weapons/ussf-whiting-amos-2026-09-16.html | 77290 | d675e3edec5d9f27 |
 | data/sources/space-weapons/russia-mfa-zakharova-2026-09-15.txt | 6831 | ff0ec1dc8dd7e5d8 |
+| data/sources/space-weapons/govinfo-chrg-118shrg50509.pdf | 5138019 | ee6757b6d5d930a5 |
+| data/sources/space-weapons/govinfo-chrg-118shrg50509.txt | 1390403 | 61a1d166f584cc06 |
+| data/sources/space-weapons/sasc-saltzman-2025-05-20.pdf | 842527 | 78c11b3c220f9527 |
+| data/sources/space-weapons/sasc-saltzman-2025-05-20.txt | 188580 | 3f0fcaf9702bbf80 |
+| data/sources/space-weapons/spacecom-apollo-maneuvers-2026-09-08.html | 58953 | 3cd61c0de88a1fd6 |
+| data/sources/space-weapons/spacecom-apollo-maneuvers-2026-09-08.txt | 3411 | 2f914c82d5b7b904 |
