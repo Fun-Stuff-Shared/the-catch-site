@@ -1,5 +1,15 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 2 (review items 18–24, 2026-09-18)
+
+18. Catch headline "Has, not launched this week." rewritten to "Has, with no launch date given." AFNS/Schiess possession prose and Hill launch line kept. Verified: AFNS has no launch date; Hill pin has "The United States has launched a weapon into orbit".
+19. Search for a Sept 14–16 Space Force release carrying the Saltzman encapsulate definition. Registry `capture search "space control encapsulates" --since 2026-09-01` returned 0. Space Force news listing (`https://www.spaceforce.mil/News/`, already held capture-oneoff-20260918T075007Z) lists Sept 15 "SecAF announces on-orbit space control weapons" (article 4601219). Captured 4601219 in capture-oneoff-20260918T093220Z, body_captured. Pin restates Meink/AFNS; does not contain "Space Control encapsulates" or "press release". ABC pin quotes a spokesperson on offensive/defensive use at combatant-command direction (lead for this search); that sentence is not the encapsulate definition. Catch row and DW card: definition is Saltzman March 2025; no September release carrying it was found; verdict "not found in the record", chip unconfirmed (not mislabeled).
+20. Removed the author's duplicate kicker/heading above StorySources. Component already prints Sources / The records.
+21. 2023 pin (govinfo text around lines 8357–8365): Tester "classified unfunded priorities"; Saltzman "we have accelerated the programs". Added to the 2023 sentence; link to 2026 disclosure stated as suggested, not proven.
+22. ABC pin: "These capabilities can be employed for offensive and defensive purposes at the direction of combatant commands." SASC pin: "believe those should be government systems" and "governmental control for those things in the kill chain." Unknowns now separate those established facts from hardware, count, orbit, effector.
+23. Captured spaceforce.mil article 4465543 (April 21, 2026), body_captured, run 093220Z. $21.6 billion Space Control, 158% increase from FY26, $71.1 billion Space Force total. Lead financial KPI and two paragraphs. CBO Golden Dome paragraph left as a separate program.
+24. Captured White House EO 14369 (Dec 18, 2025), body_captured: "from very low-Earth orbit and through cislunar space". Captured Space Force Sept 15 growth article 4601797, body_captured: "advanced offensive and defensive space control capabilities". Chronology rows plus one Where-this-sits sentence. Federal Register copy of the EO also captured in the same run; cited pin is the White House page.
+
 ## Patch list (review 2026-09-18, items 1–17)
 
 1. `updated` was 2026-09-15; page carries Whiting Sept 16 and searches through Sept 17. Set `event.updated` to 2026-09-17.
@@ -31,14 +41,14 @@ Seed preflight: candidate articles field listed 10 bodies. On-topic: AP EN, AP E
 
 ## Census searches (one line each)
 
-1. Financing behind the capability / Golden Dome: Iron Dome for America EO Jan 27 2025 orders proliferated space-based interceptors (admitted `eo-iron-dome-2025-01-27`). CBO May 12 2026 notional NMD cost $1.2T over 20 years; PDF refused (403 direct and Wayback); admitted SpacePolicyOnline carrier `spo-cbo-golden-dome-2026-05`. Meink AFNS ties SBI "flight-ready hardware" to same modernization speech, not as identity of the on-orbit "space control weapons."
+1. Financing behind the capability / Golden Dome: Iron Dome for America EO Jan 27 2025 orders proliferated space-based interceptors (admitted `eo-iron-dome-2025-01-27`). CBO May 12 2026 notional NMD cost $1.2T over 20 years; PDF refused (403 direct and Wayback); admitted SpacePolicyOnline carrier `spo-cbo-golden-dome-2026-05`. Meink AFNS ties SBI "flight-ready hardware" to same modernization speech, not as identity of the on-orbit "space control weapons." Round 2: Space Force FY2027 budget release admitted (`ussf-fy2027-budget-2026-04-21`): $21.6B Space Control, 158% from FY26, inside $71.1B Space Force total. Portfolio total, does not price the orbital weapons.
 2. Actor legal exposure (Space Force / DAF): no litigation or sanctions search hit tied to this disclosure in registry Sept 1–17; exposure here is treaty and adversary response, not a company filing.
 3. Predecessor proceedings: Saltzman March 2025 Warfare Symposium defined "Space Control" with kinetic/non-kinetic language (`ussf-saltzman-warfare-symposium-2025-03`). 2024 White House Russia ASAT warning appears only in coverage; White House 2024 page not separately admitted this session (coverage cites it; page notes absence of that primary).
 4. Executed contracts / SBI prize: AFAS and AFNS name SBI prize / Gate increments and "flight-ready hardware"; no contract PDF admitted; page does not invent contract dollars.
 5. Headline number denominators: "$1.2 trillion" is CBO 20-year develop+deploy+operate for a notional architecture, not a spent budget line (SPO). "7,800 satellites" is CBO notional SBI constellation to engage 10 nearly simultaneous ICBMs (SPO). "First time" is AFNS's own gloss on Meink's sentence.
 6. Before/after of a package: not a list package; N/A. Golden Dome cost estimate rose from prior CBO ~$542B (coverage memory) to $1.2T May 2026 (SPO); older CBO PDF not held.
 7. Announcement state: Meink/Schiess state possession/operation ("has" / "operate"), not a dated launch, not a new legal obligation. Type, count, orbit, and employment rules undisclosed in primaries.
-8. Policy lineage: Outer Space Treaty 1967 Art. IV bans WMD in orbit, not conventional weapons (`ost-1967-state-archive`). EO 2025-01-27 orders space-based interceptors. Saltzman 2025 doctrine language precedes the confirmation.
+8. Policy lineage: Outer Space Treaty 1967 Art. IV bans WMD in orbit, not conventional weapons (`ost-1967-state-archive`). EO 2025-01-27 orders space-based interceptors. Saltzman 2025 doctrine language precedes the confirmation. Round 2: EO 14369 Dec 18 2025 admitted (`eo-14369-2025-12-18`): very low-Earth orbit through cislunar space. Sept 15 growth panel admitted (`ussf-growth-space-control-2026-09-15`): advanced offensive and defensive space control capabilities.
 9. Claimed consequences: China MFA and Peskov diplomatic responses admitted. No kinetic incident in space on these dates in registry search.
 10. Official statistics: no BLS/FRED series. CBO figures only via carrier.
 11. Legal instruments: OST Art. IV; EO Iron Dome for America. No new statute on Sept 14.
@@ -135,6 +145,31 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 |---|---|
 | "оружейным потенциалом космического базирования" | used : Zakharova paragraph |
 | First Committee 81st session Oct 5–Nov 6 | used : same block |
+
+### ussf-secaf-announces-2026-09-15 (Sept 15 Space Force article)
+| Passage | Mark |
+|---|---|
+| Meink on-orbit space control weapons sentence | used : item 19 search; DW card; does not carry encapsulate definition |
+| Space-Based Interceptor flight-ready hardware | held unused : already in AFNS |
+
+### ussf-fy2027-budget-2026-04-21 (April 21, 2026)
+| Passage | Mark |
+|---|---|
+| "$21.6 billion- a 158% increase from FY26" Space Control | used : KPI, where-this-sits |
+| "$71.1 billion for the Space Force" | used : denominator sentence |
+| Space Control comprises activities to contest and control the domain | held unused : definition already from Saltzman |
+
+### eo-14369-2025-12-18 (Dec 18, 2025)
+| Passage | Mark |
+|---|---|
+| "from very low-Earth orbit and through cislunar space" | used : chronology, where-this-sits |
+| lunar outpost / Artemis dates | out of scope |
+
+### ussf-growth-space-control-2026-09-15 (Sept 15, 2026)
+| Passage | Mark |
+|---|---|
+| "advanced offensive and defensive space control capabilities" | used : chronology, where-this-sits |
+| "$71.1 billion FY27 budget" | held unused : budget pin is the source for the number |
 
 ### afas-meink-on-orbit-2026-09-14 (trade coverage of Q&A; treated as coverage with Meink words)
 | Passage | Mark |

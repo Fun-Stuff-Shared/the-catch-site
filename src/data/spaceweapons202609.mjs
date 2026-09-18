@@ -13,8 +13,8 @@ export const event = {
   kpis: [
     { value: "Sept 14", unit: "2026", label: "First official acknowledgement they are already on orbit" },
     { value: "Sept 15", unit: "2026", label: "Schiess: Guardians operate them" },
+    { value: "$21.6", unit: "billion", label: "FY2027 Space Control request" },
     { value: "1967", unit: "", label: "Outer Space Treaty WMD ban" },
-    { value: "$1.2", unit: "trillion", label: "CBO notional Golden Dome, 20 years" },
   ],
 };
 
@@ -39,6 +39,14 @@ export const cboGoldenDome = {
   ombMandatoryBillions: 17.1, // same pin
 };
 
+// Space Force FY2027 budget release, April 21, 2026
+// (data/sources/space-weapons/ussf-fy2027-budget-2026-04-21.txt).
+export const spaceControlFy2027 = {
+  billions: 21.6, // "The proposal requests $21.6 billion- a 158% increase from FY26-"
+  increasePct: 158,
+  ussfTotalBillions: 71.1, // "$71.1 billion for the Space Force"
+};
+
 export const chronology = {
   rows: [
     ["1967-10-10", "Outer Space Treaty in force; Article IV bans nuclear and other WMD in orbit"],
@@ -46,10 +54,13 @@ export const chronology = {
     ["2025-01-27", "Iron Dome for America EO orders proliferated space-based interceptors"],
     ["2025-03", "CSO Saltzman defines Space Control as kinetic and non-kinetic means"],
     ["2025-05-20", "Saltzman tells SASC: counter-space systems designed to defeat hostile use of space"],
+    ["2025-12-18", "EO 14369: counter threats from very low Earth orbit through cislunar space"],
+    ["2026-04-21", "FY2027 request: $21.6 billion for Space Control inside a $71.1 billion Space Force total"],
     ["2026-05-12", "CBO notional Golden Dome cost about $1.2 trillion over 20 years"],
     ["2026-09-08", "Space Command announces Apollo Maneuvers live-fly exercise"],
     ["2026-09-14", "Meink: U.S. has on-orbit space control weapons"],
     ["2026-09-15", "Schiess: Guardians operate on-orbit weapons; China and Russia respond"],
+    ["2026-09-15", "Space Force panel: field advanced offensive and defensive space control capabilities"],
   ],
 };
 
@@ -109,4 +120,15 @@ export const quotes = {
     "Targeting in the space domain is maturing, but it still has a long way to go",
   kendallLowDebris: "low-debris-causing weapons",
   zakharovaWeapons: "оружейным потенциалом космического базирования",
+  saltzmanAccelerated: "we have accelerated the programs",
+  testerUnfunded: "classified unfunded priorities",
+  abcSpokesperson:
+    "These capabilities can be employed for offensive and defensive purposes at the direction of combatant commands",
+  sascGovernmental:
+    "governmental control for those things in the kill chain",
+  fy2027SpaceControl: "$21.6 billion- a 158% increase from FY26",
+  fy2027UssfTotal: "$71.1 billion for the Space Force",
+  eo14369Vleo: "from very low-Earth orbit and through cislunar space",
+  growthOffensiveDefensive:
+    "advanced offensive and defensive space control capabilities",
 };

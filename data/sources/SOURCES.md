@@ -1332,7 +1332,7 @@ The Canada-tariffs September 2026 rework added the Bank of Canada USD/CAD observ
 | data/sources/space-weapons/ussf-schiess-remarks-2026-09-15.html | 99124 | 05ca2847e7e423ed |
 | data/sources/space-weapons/ussf-schiess-remarks-2026-09-15.txt | 19737 | 358778d3ae5bb917 |
 
-Space-weapons story (2026-09-14): CBO Golden Dome PDF https://www.cbo.gov/system/files/2026-05/62379-golden-dome.pdf returned 403 on direct fetch and Wayback; figures use SpacePolicyOnline carrier data/sources/space-weapons/spo-cbo-golden-dome-2026-05.html captured 2026-09-18.
+Space-weapons story (2026-09-14): CBO Golden Dome PDF https://www.cbo.gov/system/files/2026-05/62379-golden-dome.pdf returned 403 on direct fetch and Wayback; figures use SpacePolicyOnline carrier data/sources/space-weapons/spo-cbo-golden-dome-2026-05.html captured 2026-09-18. Round 2 (2026-09-18, capture-oneoff-20260918T093220Z): Space Force SecAF announcement article 4601219, FY2027 budget article 4465543, White House EO 14369, and Space Force growth panel 4601797 admitted body_captured. Federal Register copy of EO 14369 captured in the same run; the cited pin is the White House page.
 | data/sources/coverage/defenseone-meink-2026-09-14.html | 145051 | df56db221f7ed665 |
 | data/sources/coverage/nyt-space-weapon-2026-09-15.html | 297675 | dc9be5671ee350d2 |
 | data/sources/coverage/tass-zakharova-2026-09-15.txt | 1448 | ff8ef299cecf5dee |
@@ -1355,3 +1355,11 @@ Space-weapons story (2026-09-14): CBO Golden Dome PDF https://www.cbo.gov/system
 | data/sources/space-weapons/sasc-saltzman-2025-05-20.txt | 188580 | 3f0fcaf9702bbf80 |
 | data/sources/space-weapons/spacecom-apollo-maneuvers-2026-09-08.html | 58953 | 3cd61c0de88a1fd6 |
 | data/sources/space-weapons/spacecom-apollo-maneuvers-2026-09-08.txt | 3411 | 2f914c82d5b7b904 |
+| data/sources/space-weapons/ussf-secaf-announces-2026-09-15.html | 118121 | 3ed02f74b8e8c802 |
+| data/sources/space-weapons/ussf-secaf-announces-2026-09-15.txt | 6027 | 989cf933bdcf1508 |
+| data/sources/space-weapons/ussf-fy2027-budget-2026-04-21.html | 73622 | b8cb8f6479a815ec |
+| data/sources/space-weapons/ussf-fy2027-budget-2026-04-21.txt | 6113 | 4f7420e6af52c92a |
+| data/sources/space-weapons/eo-14369-2025-12-18.html | 304871 | 83cd2087344a6251 |
+| data/sources/space-weapons/eo-14369-2025-12-18.txt | 11976 | 6beca81c48b9ad0d |
+| data/sources/space-weapons/ussf-growth-space-control-2026-09-15.html | 119506 | 1786988964fbed28 |
+| data/sources/space-weapons/ussf-growth-space-control-2026-09-15.txt | 4894 | 4dd4f740bb702cee |
