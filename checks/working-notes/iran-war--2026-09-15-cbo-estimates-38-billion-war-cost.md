@@ -91,10 +91,34 @@ Seed articles (titles vs headline): ABC, AP, The Hill (CBO), The Hill (Pentagon 
 |---|---|
 | obliterate Iran's ballistic missile arsenal and production capacity | Stated aims; CBO cites this release |
 
+## Patch list (cbo-patch.md, 2026-09-18)
+
+1. Department of War: one sentence at first use in the catch; record's word in quotes, Defense Department elsewhere.
+2. Figure labels on all 18; `hegeseth_37_5` renamed `hegseth_37_5`.
+3. Fuel: $1.8 billion from $1,822 million; sum with $835 million is CBO's $2.7 billion.
+4. Unit string `billion USD` in KPIs and figures.
+5/9/17. Casualties: 7 KIA and 7 non-hostile through June 30, 417 wounded, 4 more KIA in July; Table 4 total 18 as of August 26; prose and table disagree.
+6. CBS monthly-range sentence cites CBS.
+7. "That money has not been enacted" cites AP.
+8. $42.3 billion sentence cites CBO.
+10. SAC hearing captured (capture-oneoff-20260918T093309Z); Reuters July 21 checks out; CBO still July 22 Armed Services.
+11/18. Clerk 2026307, 2026199, Senate floor 06_23_2026, Senate wrap-up 09-16 admitted; Boyle War Powers sentence; three chronology rows; What happened next votes.
+12. IG base-budget sentence; House Budget H.Con.Res. 113 admitted (216-214).
+13. DoD IG listing admitted: Sept. 14, 2026. AP Monday. September 9 is not in the report text pin (PDF modification date Sep 9 only).
+14. NBC share checks out; dropped from the list of what coverage got wrong.
+15. CENTCOM Feb 28 admitted; opening cites 1:15 am ET.
+16. KPI label reworded; PCE gloss kept in Three things.
+19. Brown May 18 admitted; Who feels it names it as a separate consumer estimate.
+20. AP UN Sep 17 force-captured (capture-oneoff-20260918T093839Z); dated paragraphs.
+21. Incremental vs disbursed/obligated near the top.
+22. Reuters row: June 19 and $184 million.
+23. CBO names CSIS; Last Rounds admitted; current-war vs future-war sentence.
+DCAS: captured, title only; capture history, not cited.
+
 ## Open questions after disproof search
 
-- Hegseth July 22 SASC transcript: not admitted; CBO's account used.
+- Hegseth Senate Armed Services transcript for July 22: CBO's letter still gives that date; the Appropriations page is July 21.
 - August 13 Pentagon $42 billion table: Hill aide only.
-- Official deaths after June 30: IG has seven; Reuters wrote eighteen.
 - Ground-force cost case Boyle asked for: not in the letter.
 - White House Kelly / Pentagon Parnell: coverage quotes, no primary pages.
+- DCAS monthly table: capture served only the title.

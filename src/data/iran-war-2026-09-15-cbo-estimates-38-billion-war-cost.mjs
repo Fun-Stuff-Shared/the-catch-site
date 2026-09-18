@@ -12,10 +12,10 @@ export const event = {
   date: "2026-09-15",
   updated: "2026-09-18",
   kpis: [
-    { value: "38.1", unit: "billion USD", label: "DoD cost through August 1, CBO Table 1" },
-    { value: "2 to 3", unit: "billion USD", label: "extra month, low or July intensity" },
-    { value: "0.5", unit: "pp", label: "PCE inflation, 2027 Q1 vs February forecast" },
-    { value: "21.7", unit: "billion USD", label: "replace expended munitions" },
+    { value: "38.1", unit: "USD billions", label: "DoD cost through August 1, CBO Table 1" },
+    { value: "2 to 3", unit: "USD billions", label: "extra month, low or July intensity" },
+    { value: "0.5", unit: "pp", label: "inflation, early 2027, above CBO's February path" },
+    { value: "21.7", unit: "USD billions", label: "replace expended munitions" },
   ],
 };
 
@@ -46,9 +46,11 @@ export const flyingHours = {
 };
 
 // Fuel: DLA surcharge $835 million plus $1,822 million expected loss.
+// Story rounds 1,822 million to $1.8 billion; exact millions stay here.
 export const fuel = {
   surchargeMillion: 835,
   dlaLossMillion: 1822,
+  dlaLossBillion: 1.8, // 1822 / 1000, rounded in the story
   totalBillion: 2.7,
 };
 
@@ -90,7 +92,7 @@ export const admin = {
   agriculture: 11.1,
   munitionsRequest: 21.0,
   operationalRequest: 17.3,
-  hegeseth: 37.5,
+  hegseth: 37.5,
 };
 
 export const ig = {
@@ -102,8 +104,37 @@ export const ig = {
   diplomaticMillion: 184,
   stateContingencyMillion: 79.2,
   stateTotalMillion: 113,
-  killedThroughJune30: 7,
+  kiaThroughJune30: 7,
+  nonHostileThroughJune30: 7,
+  woundedThroughJune30: 417,
+  kiaJuly: 4,
+  deathsThroughJune30: 14, // 7 killed in action + 7 non-hostile, prose through June 30
+  table4Kia: 11,
+  table4NonHostile: 7,
+  table4Total: 18,
+  table4AsOf: "2026-08-26",
   deployed: 50000,
+  disbursed: 4.9,
+};
+
+export const votes = {
+  hconres86HouseYea: 215,
+  hconres86HouseNay: 208,
+  hconres86SenateYea: 50,
+  hconres86SenateNay: 48,
+  hconres93HouseYea: 220,
+  hconres93HouseNay: 204,
+  hconres113HouseYea: 216,
+  hconres113HouseNay: 214,
+};
+
+export const brownEnergy = {
+  extraFuelBillion: 40,
+  householdDollars: 300,
+};
+
+export const unMission = {
+  civilians: 178,
 };
 
 // 21.7 / 38.1 from Table 1, percent, one decimal as in 57.0.
@@ -136,7 +167,7 @@ export const munitionsBars = [
 
 export const clocksRows = [
   ["DoD IG, as of June 29", `$${ig.total} billion`, "Obligations, expended munitions, equipment losses; not infrastructure"],
-  ["Hegseth, July 22", `$${admin.hegeseth} billion`, "CBO's account: costs of operations through September 2026"],
+  ["Hegseth, July 21 Senate Appropriations", `$${admin.hegseth} billion`, "Military Times and the hearing page: to date. CBO dates the same figure July 22 before Armed Services"],
   ["CBO Table 1, through August 1", `$${table1.total} billion`, "DoD incremental: munitions, flying hours, fuel, equipment, other operations"],
   ["Administration request, June 24, direct DoD", `$${admin.directRelated} billion`, "CBO's reading of the categories that look tied to the conflict"],
   ["Administration request, June 24, all agencies", `$${admin.supplementalTotal} billion`, "OMB letter total, including Agriculture, State, and other accounts"],
@@ -153,16 +184,20 @@ export const table1Rows = [
 ];
 
 export const timeline = [
-  { date: "Feb 28", title: "Operation Epic Fury begins", sub: "Air and cruise-missile strikes with Israel" },
+  { date: "Feb 28", title: "Operation Epic Fury begins", sub: "CENTCOM: strikes at 1:15 am ET" },
   { date: "Mar 5", title: "Boyle asks CBO for a cost estimate", sub: "Operational costs, extra costs, opportunity costs, prices" },
   { date: "Mar 12", title: "White House names the campaign's aims", sub: "Missiles, navy, proxies, nuclear weapons" },
   { date: "Apr 8", title: "A ceasefire begins", sub: "CBO: the first intense phase lasted just over a month" },
-  { date: "Jun 24", title: "OMB asks for $87.6 billion", sub: "$67.1 billion of that is for the Department of War" },
+  { date: "Jun 3", title: "House passes H.Con.Res. 86", sub: `${votes.hconres86HouseYea} to ${votes.hconres86HouseNay}, directing removal from hostilities` },
+  { date: "Jun 23", title: "Senate agrees to H.Con.Res. 86", sub: `${votes.hconres86SenateYea} to ${votes.hconres86SenateNay}` },
+  { date: "Jun 24", title: "OMB asks for $87.6 billion", sub: `$67.1 billion of that is for the Department of War` },
   { date: "Jul 10", title: "The president says the ceasefire is over", sub: "After Iranian attacks on tankers in the Strait of Hormuz" },
-  { date: "Jul 22", title: "Hegseth testifies: $37.5 billion", sub: "CBO: through September 2026" },
+  { date: "Jul 21", title: "Hegseth testifies: $37.5 billion", sub: "Senate Appropriations; CBO dates this July 22 before Armed Services" },
+  { date: "Jul 22", title: "House passes H.Con.Res. 113", sub: `${votes.hconres113HouseYea} to ${votes.hconres113HouseNay}, a reconciliation path` },
   { date: "Aug 1", title: "CBO's cost cutoff", sub: `Table 1 total $${table1.total} billion` },
-  { date: "Sep 9", title: "Inspector general quarterly report", sub: `DoW estimate $${ig.total} billion as of June 29` },
+  { date: "Sep 14", title: "Inspector general quarterly listing", sub: `Defense Department estimate $${ig.total} billion as of June 29` },
   { date: "Sep 15", title: "CBO dates the letter to Boyle", sub: "Nineteen pages, three tables", current: true },
+  { date: "Sep 15", title: "House passes H.Con.Res. 93", sub: `${votes.hconres93HouseYea} to ${votes.hconres93HouseNay}, another removal vote` },
 ];
 
 export const homeTable = [

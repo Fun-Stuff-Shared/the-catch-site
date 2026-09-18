@@ -1410,3 +1410,30 @@ CBO letter 62756 (Iran war cost, September 15, 2026) and its publication page we
 | data/sources/iran-war/warren-cbo-findings-2026-09-15.txt | 5775 | 3e01cf83e40d68cb |
 | data/sources/iran-war/militarytimes-hegseth-2026-07-21.html | 310955 | 7372427998414932 |
 | data/sources/iran-war/militarytimes-hegseth-2026-07-21.txt | 6082 | 695a212b00727889 |
+
+Patch-list captures of 2026-09-18 through the registry (capture-oneoff-20260918T093309Z and AP force capture-oneoff-20260918T093839Z). The DCAS monthly table served only its title.
+
+| data/sources/iran-war/sac-hearing-2026-07-21.html | 41498 | 6349a8c34732a08f |
+| data/sources/iran-war/sac-hearing-2026-07-21.txt | 561 | d3423ca4dd6c5fba |
+| data/sources/iran-war/clerk-hconres-93-2026307.html | 563136 | 2dfea21c00bbb7fb |
+| data/sources/iran-war/clerk-hconres-93-2026307.txt | 360 | a2364e98d7da578a |
+| data/sources/iran-war/senate-dems-wrapup-2026-09-16.html | 82831 | 0595289eed901a82 |
+| data/sources/iran-war/senate-dems-wrapup-2026-09-16.txt | 1022 | 86bcef2f1a19fbfd |
+| data/sources/iran-war/house-budget-hconres-113-2026-07-22.html | 52443 | 9fb8953bce345c11 |
+| data/sources/iran-war/house-budget-hconres-113-2026-07-22.txt | 845 | df1e06e0966f08d0 |
+| data/sources/iran-war/dodig-oef-listing.html | 51443 | 5838d0add230d9da |
+| data/sources/iran-war/dodig-oef-listing.txt | 529 | cafbd6ad0658dd0d |
+| data/sources/iran-war/centcom-epic-fury-2026-02-28.html | 64364 | c6f36327e9674423 |
+| data/sources/iran-war/centcom-epic-fury-2026-02-28.txt | 1425 | 1ecbc6140be9a86c |
+| data/sources/iran-war/clerk-hconres-86-2026199.html | 561089 | 221326dccee3fde8 |
+| data/sources/iran-war/clerk-hconres-86-2026199.txt | 360 | 3aec0fa45aa04757 |
+| data/sources/iran-war/senate-floor-2026-06-23.html | 31026 | c89a8e0310408231 |
+| data/sources/iran-war/senate-floor-2026-06-23.txt | 2014 | 0b76633ffb95494b |
+| data/sources/iran-war/brown-iran-war-energy-cost-2026-05-18.pdf | 275718 | 45ef52d6d642df46 |
+| data/sources/iran-war/brown-iran-war-energy-cost-2026-05-18.txt | 3509 | 5c20c15487a0aaad |
+| data/sources/iran-war/csis-last-rounds-2026-04.html | 163290 | 44419082a84e77a9 |
+| data/sources/iran-war/csis-last-rounds-2026-04.txt | 23311 | cdac90625c29d49e |
+| data/sources/iran-war/dcas-oefu-bymonth.html | 46036 | 08aeccfcc4b4997d |
+| data/sources/iran-war/dcas-oefu-bymonth.txt | 32 | 0983b90f5dd87273 |
+| data/sources/iran-war/ap-un-iran-2026-09-17.html | 808641 | affdc843f3636a6e |
+| data/sources/iran-war/ap-un-iran-2026-09-17.txt | 5841 | 0a3e3a1303ecf796 |
