@@ -9,7 +9,7 @@ export const event = {
   name: "Miami cargo crash",
   span: "September 6, 2026",
   date: "2026-09-06",
-  updated: "2026-09-08",
+  updated: "2026-09-09",
   kpis: [
     { value: "5", unit: "dead", label: "all in one van, named by the sheriff Tuesday" },
     { value: "5", unit: "injured", label: "two pilots released, three still in hospital Tuesday" },
