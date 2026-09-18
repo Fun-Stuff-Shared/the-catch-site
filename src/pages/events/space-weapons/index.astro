@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/space-weapons.mjs';
+---
+<SeriesOverview title={subject.title} description="On September 14, 2026, the Air Force secretary said the United States has on-orbit space control weapons. The Space Force chief said the next day that Guardians already operate them." path="/events/space-weapons/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>
