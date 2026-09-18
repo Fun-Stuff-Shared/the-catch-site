@@ -95,3 +95,21 @@ Disposition of checks/interrogations/mail-voting--2026-09-14-court-denies-stay-2
 
 ## Coverage universe
 Monday: SCOTUSblog, CBS, ABC, Politico, CNBC, BBC, WIRED, Roll Call, Examiner. Tuesday: AP/ABC slam, CNBC Trump post. Adjacent: Nichols PI (primary), Bonta on CA1 (official). Mixed seed: AP live blog, Spanish AP, second-judge AP from morning of Sept 14 treated as adjacent primary (Nichols), not as this story's act.
+
+## Patch list 2026-09-18 (mail-patch.md)
+
+1. `updated` set to 2026-09-18 (newest dated search on the page: 26A305 docket captured September 18). Cherry-pick of singular "1 day" already on this branch (cec2774b).
+2. Added the holding record's cite to the ten named sentences (order/docket, Nichols, 26A124, four court dates).
+3. Catch item on Nichols rewritten as the search of eleven coverage pins: nine do not name him; Politico and BBC do.
+4. Voluntary compliance: Talwani "States from voluntarily complying"; Nichols order in the supplemental brief "from implementing and enforcing the Final Rule"; page says the voluntary portal could not run unless Nichols was stayed. Two places (What happened; Who feels it).
+5. Rule and Who feels it name federal general, special, and runoff scope; UOCAVA exemption and primaries outside it. Cited to "exemption for UOCAVA ballots" and "the rule will not apply to primaries".
+6. Capture-first, all admitted, capture-oneoff-20260918T112424Z (SORN 14508, SORN response 17986, DV amicus 423743). Whistleblower Aid and Steiner already held (capture-oneoff-20260908T222008Z). Portal sentence now says what users must provide; one sentence from the SORN (five-year retention, law-enforcement purpose); one from the September 1 response (effective with that publication).
+7. League "over 50 million ballots" and Nichols "at least 54.4 million" ballot pieces to and from voters in 2022 placed beside Talwani's "disenfranchisement of millions", with units and direction.
+8. Where this sits: CA1 "lack of a presently operative portal" and Talwani "Portal is not currently operational". Whistleblower Aid "zero percent failure" beside Steiner "Testing and validation have been continuous", as disputed.
+9. Where this sits: CA1 "no record evidence of past fraud" and "minimal -- if any -- gains"; reply "harder to commit and easier to catch". Talwani's "fraudulent mail voting to support the rushed implementation" found at the bytes and used.
+10. Who feels it: Talwani confidentiality / "directly conflicts with these state laws". DV amicus admitted: 45 states plus D.C.; at least 150,000 confidential Colorado voters.
+11. What happened next: Nichols injunction has no election-date limit, so the present rule cannot start after November 3 unless that order is stayed or reversed.
+12. With item 7: Nichols "more than fifty million pieces of federal ballot mail"; 61 million transmitted / 36.6 million returned in 2022; Talwani 10,000 jurisdictions. Baseline, not a lost-ballot forecast.
+13. Coverage count line: Monday writes are one lineage on the unsigned order. OIG audit scope and settlement-enforcement track not captured; left outside.
+
+Census search updates for this patch: portal SORN and September 1 response admitted; Whistleblower Aid and Steiner admitted (held); DV amicus admitted. Talwani fraud sentence found. Nichols 2022 volume figures now used. Supplemental brief now used for the injunction language.

@@ -10,7 +10,7 @@ export const event = {
   name: "Stay denied in 26A305",
   span: "March 31 to September 15, 2026",
   date: "2026-09-14",
-  updated: "2026-09-15",
+  updated: "2026-09-18",
   kpis: [],
 };
 
@@ -49,6 +49,22 @@ export const computed = {
   unsignedOrderSentences: 3, // denied; unlikely to succeed; equities
   plaintiffStates: 23,
   intervenorStates: 12,
+  // League opposition pin: "Plaintiff States anticipate mailing over 50 million ballots"
+  leagueStatesBallotsMillion: 50,
+  // Nichols opinion: "delivered at least 54.4 million9 ballots to and from voters"
+  uspsDelivered2022Million: 54.4,
+  // Nichols opinion: "approximately 61 million ballots were transmitted to non-UOCAVA voters"
+  eavsTransmitted2022Million: 61,
+  // Nichols opinion: "36.6 million of those ballots were returned"
+  eavsReturned2022Million: 36.6,
+  // Talwani opinion: "10,000 different election jurisdictions"
+  electionJurisdictions: 10000,
+  // SORN pin: "Records are retained for 5 years."
+  sornRetentionYears: 5,
+  // DV amicus pin: "45 states and the District of Columbia have some type of ACP"
+  acpStates: 45,
+  // DV amicus pin: "at least 150,000 eligible but confidential Colorado voters"
+  coloradoConfidentialVoters: 150000,
 };
 
 event.dek = `On September 14 the Court denied application 26A305. Judge Indira Talwani's September 4 injunction of named Postal Service ballot-mail rules stays in force for elections on or before November 3, ${computed.daysDenialToElection} days after the denial.`;

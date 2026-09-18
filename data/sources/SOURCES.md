@@ -1494,3 +1494,5 @@ Mail-voting stay denial (2026-09-14): Court order, docket, First Circuit stay de
 | data/sources/coverage/npr-2026-09-15.txt | 6788 | 50f7ee30cee80a1f |
 | data/sources/coverage/rollcall-2026-09-14.html | 188563 | ca18590decd92f5d |
 | data/sources/coverage/rollcall-2026-09-14.txt | 5258 | 4012d36c3fc89512 |
+| data/sources/mail-voting/scotus-26A305-dv-amicus.pdf | 292725 | 98fa34c28f65887a |
+| data/sources/mail-voting/scotus-26A305-dv-amicus.txt | 45385 | 57d9152f7d70b495 |
