@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/pull-state.mjs && node scripts/build-news-records.mjs && astro build && node scripts/check-events.mjs && node scripts/check-shell.mjs",
+    "build": "node scripts/pull-state.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
     "build:news-records": "node scripts/build-news-records.mjs",
     "check": "node scripts/check-events.mjs",
     "dev": "astro dev",
@@ -11,7 +11,8 @@
     "test:copy": "node --test scripts/story-copy-rules-test.mjs",
     "test:reader": "node --test scripts/evidence-context-test.mjs scripts/catalog-page-test.mjs scripts/front-page-test.mjs",
     "test:fec": "node --test scripts/fec-test.mjs",
-    "test:scaffold": "node --test scripts/new-event-test.mjs"
+    "test:scaffold": "node --test scripts/new-event-test.mjs",
+    "test:cites": "node --test scripts/merge-cites-test.mjs"
   },
   "devDependencies": {
     "astro": "^7.0.9",

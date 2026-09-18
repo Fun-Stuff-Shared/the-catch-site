@@ -97,7 +97,7 @@ async function openSource(a: HTMLAnchorElement) {
     if (id !== request) return;
     panel.querySelector('#evidence-title')!.textContent = data.title;
     panel.querySelector('.evidence-byline')!.textContent = data.byline;
-    current = { ...data, quote: a.dataset.passage ?? data.quote };
+    current = { ...data, quote: a.dataset.passages ? `${a.dataset.passage}\n\n${a.dataset.passages}` : (a.dataset.passage ?? data.quote) };
     if (data.saved) {
       saved.href = `${data.saved}?from=${encodeURIComponent(returnTo)}`; saved.hidden = false;
       try {
