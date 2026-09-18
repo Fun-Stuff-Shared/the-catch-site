@@ -11,7 +11,7 @@ The gate reads this file on every build. Fields you write by hand:
 | `records[]` | one per saved document: `id`, `title`, `publisher`, `date`, `url`, `pinned_path`, `text_path`, `text_sha256`, `quote` (byte-exact words from the file; a CSV data line for series), `quote_span_check: "byte_exact"`, `about` (one plain sentence a stranger understands), `capture_run` + `capture_raw_sha256` + `captured_at` from the registry receipt, or `capture_status` naming why the registry could not admit it |
 | `story_sources[]` | the numbered list the page cites: `id`, `group` (`primary`, `official`, `coverage`), `label`, `meta` (" · released August 7"), `usage` (plain words: "every figure the story marks as record") |
 | `primary_sources[]` | `id`, `path`, `bytes`, `sha256`, `url` for each primary document |
-| `figures[]` | `figure`, `source_id`, `value` for each headline number |
+| `figures[]` | `figure`, `source_id`, `value`, `unit`, and `label` in reader words (the figures block prints the label; the identifier is never shown) for each headline number |
 | `needs_ledger[]` | `need`, `plain`, `record_id`, `status` (`have` or what is missing and why, in reader words) |
 | `sub_events[]` | `id`, `date`, `label`, `section_anchor`, `records[]` for each dated development on the page |
 | `coverage_records[]`, `coverage_threshold` | outlet articles checked (at least two) |

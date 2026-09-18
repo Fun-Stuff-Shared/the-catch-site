@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "2.0"
+  version: "2.1"
 ---
 
 # Catch event page
@@ -68,11 +68,15 @@ list of what reviewers have found missing; each item is a search, not a question
 17. For every record repeated by several outlets, the source lineage from the pin's byline and source metadata, never from domains: syndicated copies, transcript carriers, shared briefings, and party restatements are one lineage.
 18. For every document that cannot be captured, a primary mirror, docket attachment, public archive, licensed carrier, or official listing; what remains unavailable and how it limits the story.
 19. For every developing event, a forward search through the cutoff: next filing, order, inspector general review, audit, implementation notice, regulator response, institutional statement, outcome data.
+19b. For every subject a legislature can act on, its votes and resolutions in the story's span (roll calls, floor records, committee markups, hearings), from the chamber's own record, dated from that record and not from a later summary.
 20. Before saying done, the browser-visible page: built HTML, source list, citation targets, navigation text, labels, reader-facing state messages.
 
 Also every time: the capture registry and the article index for the subject and its dates;
 the issuing institution's own listing for every date on the page and the days after it;
 the next release of every series the page cites.
+
+The searches can run in parallel: fan them across subagents, each returning the record ids
+it admitted and its working-note lines. You merge the note, and you write every sentence.
 
 ## Step 2. Admit every record, then read every pin whole
 
@@ -92,6 +96,19 @@ mechanism, who is affected, the chronology, or an outlet verdict, and mark it: u
 (where), held unused (why), or out of scope. Most of what reviewers find is inside a pin
 the author already held. Before crediting an outlet for a fact, search every primary pin
 for it, case-insensitive; the primary takes the cite and the outlet row says it checks out.
+
+Then run the gap list and disposition every line before drafting:
+
+```bash
+node skills/catch-event-page/scripts/pin_gaps.mjs <subject>/<story>
+```
+
+It prints every unit-bearing number and every repeated or titled name in each primary pin
+that appears nowhere on the page or in the data module. Each line gets one of three words
+in the working note under the record: used (where), held unused (why), out of scope. Both
+trial stories lost their largest findings to lines on this list: a death count with two
+categories and a later table, a speech naming who depends on the satellites. Whole-pin
+reads by subagents are fine; the dispositions are yours.
 
 Recount every number a brief or review names against the pins before fetching anything
 new. The pins win over anyone's memory.

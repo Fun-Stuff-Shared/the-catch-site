@@ -35,6 +35,15 @@ found and admitted or where you searched; a passage table per primary record (SK
 step 2). For a review, keep the reviewer's numbers verbatim; you check each against the
 pins in step 4.
 
+After the primaries are admitted and before the first sentence, the gap list:
+
+```bash
+node skills/catch-event-page/scripts/pin_gaps.mjs <subject>/<story>        # numbers and names in primary pins the page does not carry
+```
+
+Every line is dispositioned in the working note under its record (used, held unused, out of
+scope). Rerun it after the draft; a line still undispositioned is a finding.
+
 ## 2. Build the coverage universe yourself (never trust a seed list)
 
 Three searches, all three every time, publisher-agnostic, date-windowed:

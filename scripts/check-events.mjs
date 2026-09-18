@@ -48,6 +48,9 @@ for (const name of readdirSync(join(ROOT, 'checks/manifests')).filter((name) => 
   const story = parts.pop();
   const subject = parts.join('/');
   if (!storyPages.some((row) => row.subject === subject && row.story === story)) storyPages.push({subject, story, manifestPath: join(ROOT, 'checks/manifests', name)});
+  // The figures block prints a figure's label; without one the reader sees the identifier.
+  const unlabeled = (manifest.figures ?? []).filter((figure) => !figure.label).map((figure) => figure.figure);
+  if (unlabeled.length) console.warn(`${name}: ${unlabeled.length} figure(s) without a reader label: ${unlabeled.join(', ')}`);
 }
 
 // A number in a story table is read from the data module, never typed into the page;

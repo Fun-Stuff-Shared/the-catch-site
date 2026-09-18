@@ -43,6 +43,15 @@ correct in local time, publication labels, and a broader true word ("television"
   words or they are not on the page.
 - An outlet is credited only for what its own pin prints. A fact that sits in a pinned
   primary takes the primary's cite; the outlet row says it checks out.
+- An outlet is called mislabeled or wrong only when a pinned record is quoted that says
+  otherwise. When the page's own record is a later summary of the event (a CBO letter
+  dating a hearing, a release describing a vote), capture the event's own record (the
+  hearing page, the roll call) before faulting anyone on it; the summary can be the one
+  that is wrong. When no record supports the outlet's claim and none contradicts it, the
+  chip is "not in the record" and the row says what was searched.
+- A definition, a list of who is affected, or a mechanism that is not in a record is not
+  written. The plain-words sentence at a term's first use says what the record says the
+  term means, or says only what the term is doing in that sentence.
 - Coverage is cited in the coverage section, or in a narrative sentence about what the
   outlet wrote. A narrative paragraph does not carry a coverage cite for a fact.
 - Every superlative and gloss ("lowest since", "unexpected", "first") quotes a held record
@@ -60,6 +69,10 @@ correct in local time, publication labels, and a broader true word ("television"
   nation's currency.
 - Every headline number carries its denominator: what was expected, what came before,
   what is normal, against what total.
+- Every headline figure names its kind in the sentence that carries it: an estimate, an
+  obligation, a disbursement, a replacement value, a request, a notional model, a cash
+  total. "Has cost" for a replacement-value estimate, or a modeled architecture's price
+  for a program's price, is the error the record lets a reader avoid.
 - Two counts of one list at two dates: compute the removed and added sets from the two
   pins, put the counts and the category breakdown in the data module, and say what left
   and what came in. A bare delta is not the story.
@@ -76,6 +89,11 @@ correct in local time, publication labels, and a broader true word ("television"
 - No negative ("did not post", "no statement", "the ad names no document") without the
   capture that would show the positive, with the search named: the listing for that date,
   every frame of the video, the earlier filings.
+- An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
+  names is in the working note. Never staple a record's cite onto a sentence the record
+  does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.
+- The story's `updated` date in the data module is the newest dated record or search on
+  the page, never the day of the first draft.
 - A record that names nothing about the event is not a response to it. Quote what the
   record says about the event; if it says nothing, say so or leave it out.
 - The actor receiving money, rights, or control is on the page with its own exposure and

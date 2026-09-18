@@ -19,7 +19,9 @@ for (const file of files) {
     const text = match[1].replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, " ").trim();
     const openTag = match[0].slice(0, match[0].indexOf(">"));
     const isLabel = /kicker|label/.test(openTag) || (text.length < 60 && !/\d/.test(text));
-    if (!/<Cite\b/.test(match[1]) && !isLabel) {
+    // An absence paragraph (what was searched and not found) has no record to cite; it carries data-absence.
+    const isAbsence = /\bdata-absence\b/.test(openTag);
+    if (!/<Cite\b/.test(match[1]) && !isLabel && !isAbsence) {
       violations += 1;
       console.log(`${file}:${lineOf(match.index)}: narrative paragraph without a citation: ${match[1].replace(/<[^>]+>/g, "").trim().slice(0, 90)}`);
     }
