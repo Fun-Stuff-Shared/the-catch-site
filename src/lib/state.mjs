@@ -142,7 +142,8 @@ export function figureText(value, unit = '') {
   const number = /^-?\d+(?:\.\d+)?$/.test(raw) && !year
     ? raw.replace(/\d+(?=\.|$)/, (digits) => digits.replace(/\B(?=(\d{3})+(?!\d))/g, ','))
     : raw;
-  const suffix = /^(percent|%)$/i.test(unit) && /(?:%|\bpercent)$/i.test(raw) ? '' : unit;
+  const single = raw === '1' && /^(days|weeks|months|years|hours|minutes|points|percentage points|justices|votes|people|satellites)$/i.test(unit) ? unit.replace(/s$/, '') : unit;
+  const suffix = /^(percent|%)$/i.test(single) && /(?:%|\bpercent)$/i.test(raw) ? '' : single;
   return `${number}${suffix ? ` ${suffix}` : ''}`;
 }
 
