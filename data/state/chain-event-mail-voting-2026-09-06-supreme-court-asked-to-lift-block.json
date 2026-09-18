@@ -480,11 +480,88 @@
           "occurrence_id": "story-figure:bdd1c7e16ca901fe517915e0aae89139bd43f6701cfa6b1b2be852e81a9e81d2"
         }
       ]
+    },
+    {
+      "id": "event-mail-voting-2026-09-14-court-denies-stay",
+      "label": "The Supreme Court leaves the mail-ballot rule blocked",
+      "status": "published",
+      "reason": null,
+      "period": "2026-09-14",
+      "follows": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+      "slots": [
+        {
+          "slot_id": "slot-1644e7ec-0f1b-450f-bbfe-1f1565517774",
+          "name": "days_denial_to_election",
+          "value": "50",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:345dc2e0233006a1f38d4e42bf0a69096aee61a1e81346c47ee58a1adf94f743"
+        },
+        {
+          "slot_id": "slot-dedbddcb-9e13-4aa9-85c6-6d93556e4c56",
+          "name": "days_pi_to_election",
+          "value": "60",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:be9c9b4d893adb841074df62e0b8cad0d5157717ff02ded603bad14d6f9d3833"
+        },
+        {
+          "slot_id": "slot-75df7c05-bb20-423c-9660-28a68918607b",
+          "name": "days_pi_to_denial",
+          "value": "10",
+          "unit": "days",
+          "sentence": "September 14, 2026",
+          "occurrence_id": "story-figure:41f6ac124a15d77e67d027d2d86d3223d80e8754446163a8ee7eecda7d3663fd"
+        },
+        {
+          "slot_id": "slot-9dd0d4c1-0878-489e-b7a2-81a55d7495ca",
+          "name": "days_ca1_to_denial",
+          "value": "4",
+          "unit": "days",
+          "sentence": "September 14, 2026",
+          "occurrence_id": "story-figure:661b6d51cc765b04ee9a43bc8905ba539f32e6d46a38135062106f2f91ba2a3e"
+        },
+        {
+          "slot_id": "slot-bcab3bc0-1a7b-45d4-9041-2a8637b7a15d",
+          "name": "days_nichols_to_denial",
+          "value": "1",
+          "unit": "days",
+          "sentence": "September 14, 2026",
+          "occurrence_id": "story-figure:22a58cc4ac93c81f652e5436b81f51df81d34498043c2b7cdea61d831b48edc9"
+        }
+      ]
     }
   ],
-  "outlet_count": 19,
+  "outlet_count": 21,
   "last_moved_at": "2026-09-09T10:36:35.382071Z",
-  "tracked": [],
+  "tracked": [
+    {
+      "name": "days_pi_to_election",
+      "unit": "days",
+      "values": [
+        {
+          "event_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+          "period": "2026-09-06",
+          "slot_id": "slot-a1d3f90f-da28-451b-8668-c75c2de2cb2e",
+          "name": "days_pi_to_election",
+          "value": "60",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:4c0ef2849b132eb85a118388e6b6f3392e2ec46a2ad292432a043bac52b8d351"
+        },
+        {
+          "event_id": "event-mail-voting-2026-09-14-court-denies-stay",
+          "period": "2026-09-14",
+          "slot_id": "slot-dedbddcb-9e13-4aa9-85c6-6d93556e4c56",
+          "name": "days_pi_to_election",
+          "value": "60",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:be9c9b4d893adb841074df62e0b8cad0d5157717ff02ded603bad14d6f9d3833"
+        }
+      ]
+    }
+  ],
   "same_name_not_compared": [],
-  "evaluated_at": "2026-09-18T04:54:23.952825Z"
+  "evaluated_at": "2026-09-18T10:42:01.284367Z"
 }

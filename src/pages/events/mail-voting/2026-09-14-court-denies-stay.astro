@@ -1,0 +1,258 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import DateLine from "../../../components/story/DateLine.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
+import CheckedBlock from "../../../components/story/CheckedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import {
+  event, computed, dateLine, timeline, courtSteps, opinionsTable, applicationsTable,
+} from "../../../data/mail-voting-2026-09-14-court-denies-stay.mjs";
+const state = readPublishedState().events.get("event-mail-voting-2026-09-14-court-denies-stay");
+if (!state) throw new Error("Missing publication selection: event-mail-voting-2026-09-14-court-denies-stay");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/mail-voting/">Mail voting</a><span>September 14, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Supreme Court &middot; September 14, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+      </details></nav>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>On Monday, September 14, the Supreme Court denied application 26A305. The unsigned order says the government is unlikely to succeed on the merits of its challenge to a September 4 preliminary injunction, and that the equities do not favor a stay.<Cite s="scotus-26a305-docket-2026-09-14" passage="The Government is unlikely to succeed on the merits of its challenge to the District Court's preliminary injunction" /></li>
+          <li>That injunction, from U.S. District Judge Indira Talwani in Boston, forbids the Postal Service from carrying out named mandatory sections of its Ballot Mail for Federal Elections rule for elections on or before November 3. A stay would have paused that block while the appeal continues. The Court refused.<Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" /></li>
+          <li>Justice Brett Kavanaugh concurred. Justices Samuel Alito and Clarence Thomas dissented. No other justice is named. The order does not print a 7-2 or 6-3 count.<Cite s="scotus-26a305-docket-2026-09-14" passage="Justice Kavanaugh, concurring" /><Cite s="scotus-26a305-docket-2026-09-14" passage="Justice Alito, joined by Justice Thomas, dissenting" /></li>
+        </ol>
+      </aside>
+      <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on the Court's September 14 order in 26A305, the docket as updated that day, Judge Talwani's September 4 injunction, the First Circuit's September 10 stay denial, Judge Carl Nichols's September 13 opinion in Washington, Executive Order 14399, the Postal Service's final rule, the September 6 stay application, a September 9 election-officials brief, 2 U.S.C. 7, and coverage checked against those records. The days on this page are counted from those dates.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">Monday night, then the two opinions</p>
+        <h2 data-layer="fact">What happened</h2>
+
+        <p data-layer="narrative">On September 14 the Supreme Court denied the government's emergency request to pause Talwani's injunction. An application is a request to a justice to freeze a lower-court order while an appeal continues. This one, 26A305, had been submitted to Justice Ketanji Brown Jackson on September 6. She referred it to the full Court. The unsigned order is three sentences.<Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /></p>
+
+        <p data-layer="narrative">The docket's entry for that night is the holding in one line.<Cite s="scotus-26a305-docket-2026-09-14" passage="The Government is unlikely to succeed on the merits of its challenge to the District Court's preliminary injunction" /></p>
+        <QuoteCard speaker="Supreme Court of the United States" when="September 14, 2026" where="Docket 26A305, unsigned order">
+          <p>Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied. The Government is unlikely to succeed on the merits of its challenge to the District Court's preliminary injunction. And the equitable factors applicable for obtaining emergency relief from this Court do not favor a stay.<Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /></p>
+        </QuoteCard>
+
+        <p data-layer="narrative">Kavanaugh wrote separately to say why he joined the denial. He thinks the Postal Service may have the power to issue the rule. He does not think the rule can lawfully be forced onto the 2026 elections. Arbitrary and capricious is the Administrative Procedure Act's phrase for an agency action that is not a reasoned one. He used it for timing, not for the envelope designs themselves.<Cite s="scotus-26a305-order" passage="fair prospect that" /></p>
+        <QuoteCard speaker="Brett Kavanaugh, Supreme Court justice" when="September 14, 2026" where="Concurrence in 26A305">
+          <p>In my view, based on the briefing the Court has received at this interim stage, there is at least a fair prospect that the final rule falls within the Postal Service's statutory authority.<Cite s="scotus-26a305-order" passage="fair prospect that" /></p>
+        </QuoteCard>
+
+        <p data-layer="narrative">The next sentence is the reason he still voted to deny.<Cite s="scotus-26a305-order" passage="do not have sufficient time to" /></p>
+        <QuoteCard speaker="Brett Kavanaugh, Supreme Court justice" when="September 14, 2026" where="Concurrence in 26A305">
+          <p>But applying the rule in the 2026 elections would be arbitrary and capricious in violation of the Administrative Procedure Act because state and local election officials do not have sufficient time to reasonably implement the rule before the elections.<Cite s="scotus-26a305-order" passage="do not have sufficient time to" /></p>
+        </QuoteCard>
+
+        <p data-layer="narrative">Alito, joined by Thomas, would have granted the stay. He calls the injunction universal, meaning it reaches beyond the plaintiffs. He says some of the organizations that sued likely lack standing, the legal right to be in court. He says the states' remaining claim is an ultra vires claim, a claim that the agency acted entirely beyond its power, which this Court has called a Hail Mary pass that rarely succeeds.<Cite s="scotus-26a305-order" passage="Hail Mary pass" /></p>
+        <QuoteCard speaker="Samuel Alito, Supreme Court justice" when="September 14, 2026" where="Dissent in 26A305, joined by Clarence Thomas">
+          <p>“ ‘essentially a Hail Mary pass’ ” that “ ‘rarely succeeds.’ ”<Cite s="scotus-26a305-order" passage="Hail Mary pass" /></p>
+        </QuoteCard>
+
+        <p data-layer="narrative">The thing being blocked is a Postal Service rule, not the March executive order as a whole. President Donald J. Trump signed Executive Order 14399 on March 31. Section 3 of that order directed a Postal Service rulemaking. The Postal Service issued Ballot Mail for Federal Elections on August 21, effective that day, and published it August 26. On August 24 the Court had already stayed Talwani's earlier injunction of the executive order itself, on standing and ripeness. Sunday's fight, and Monday's denial, are about named sections of the issued rule.<Cite s="usps-final-rule" passage="Effective August 21, 2026" /><Cite s="scotus-26a124-opinion" passage="Federal courts review final rules, not" /></p>
+
+        <p data-layer="narrative">The rule requires official Election Mail logos, automation-compatible envelopes, unique Intelligent Mail barcodes, and an online Federal Ballot Mail Portal where election officials enroll voters they intend to send a ballot. Outbound mailings that do not comply "will not be accepted." Talwani's injunction names those mandatory sections for elections on or before November 3. It does not bar voluntary compliance. It does not decide the case on the merits.<Cite s="usps-final-rule" passage="will not be accepted" /><Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" /></p>
+
+        <p data-layer="narrative">The First Circuit got there first. On September 10, Judges Gustavo Gelpí, Julie Rikelman, and Seth Aframe denied the government's stay motions in the Boston appeals. They wrote that to call the rule a modest regulation of the mails is to focus on the trees while ignoring the forest, and that a general postal statute is a wafer-thin reed on which to hang election rules. They also denied as moot a request for an administrative stay, a short pause while judges decide the full request.<Cite s="ca1-stay-denial-2026-09-10" passage="The motions for a stay are denied" /><Cite s="ca1-stay-denial-2026-09-10" passage="wafer-thin reed" /></p>
+
+        <p data-layer="narrative">Late on September 13, a second district judge entered his own injunction. Carl Nichols, in Washington, wrote that no statute grants the Postal Service the power to issue key parts of the rule, and that without an injunction there is an increased risk that a significant number of otherwise appropriate absentee or mail-in ballots will ultimately not be counted. That case is DSCC v. Trump and companion suits. It is not 26A305. It is a second nationwide block of the same rule, entered the night before the Court denied the stay of the first.<Cite s="nichols-pi-2026-09-13" passage="the Postal Service the power to issue key parts of the Rule" /><Cite s="nichols-pi-2026-09-13" passage="increased risk that a significant number of otherwise appropriate absentee or mail-in ballots" /></p>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the injunction to the denial</strong><span>Dated steps in the orders and dockets.</span></figcaption>
+          <DecisionTimeline entries={timeline} />
+          <p class="chart-source">Monday's denial leaves Talwani's September 4 injunction in place. Nichols's September 13 injunction is a separate case.<Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /></p>
+        </figure>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The four court steps in ten days</strong><span>Injunction, First Circuit, Nichols, Supreme Court.</span></figcaption>
+          <DecisionTimeline entries={courtSteps} />
+          <p class="chart-source">The First Circuit denied a stay on September 10. Nichols enjoined the rule on September 13. The Court denied 26A305 on September 14.<Cite s="ca1-stay-denial-2026-09-10" passage="The motions for a stay are denied" /></p>
+        </figure>
+
+        <SourcedBlock source="scotus-26a305-order" kind="record" detail>
+          <p>The unsigned order names no other justice. Kavanaugh's concurrence is one paragraph. Alito's dissent, joined by Thomas, is the rest of the PDF. The order does not say how the silent justices voted.<Cite s="scotus-26a305-order" passage="JUSTICE KAVANAUGH, concurring" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <h3>Unlikely to succeed is not Kavanaugh's line.</h3>
+              WIRED wrote that Kavanaugh, "in a concurring opinion with Justice Ketanji Brown Jackson," wrote the sentence about the government being unlikely to succeed on the merits. That sentence is the unsigned order. Kavanaugh's concurrence is the next paragraph, and it says there is at least a fair prospect the rule falls within the Postal Service's statutory authority. Why it matters: a reader of that dispatch can think Jackson joined a concurrence that says the government is likely to lose, when the unsigned order already said that and Kavanaugh wrote something narrower about 2026 timing.<Cite s="wired-2026-09-14" passage="concurring opinion with Justice Ketanji Brown Jackson" /><Cite s="scotus-26a305-order" passage="fair prospect that" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <h3>The order does not print 7-2.</h3>
+              WIRED wrote that the court "was divided 7-2." CNBC, covering Trump's reaction, wrote that two public dissents "implies a 7-2 vote." The order names two dissenters and one concurrence. It does not name the other six justices. Why it matters: a silent justice is not a counted vote. The record supports two public dissents, not a 7-2 division.<Cite s="wired-2026-09-14" passage="divided 7-2" /><Cite s="cnbc-trump-2026-09-15" passage="implies a 7-2 vote" />
+              <a class="catch-jump" href="#outlets">Coverage</a>
+            </li>
+            <li>
+              <h3>The block is of the rule, not the March order.</h3>
+              BBC wrote that Talwani imposed an injunction "blocking Trump's order" on September 4, and that Alito and Thomas wrote that the challenge to Trump's order was a "Hail Mary pass." The September 4 injunction names sections of the Postal Service rule. Alito's Hail Mary line is about an ultra vires claim against that rule. The Court's August 24 stay had already paused the injunction of the executive order itself. Why it matters: a reader can think the justices just revived or killed the March order, when Monday's denial leaves a block on named mail-manual sections in place through November 3.<Cite s="bbc-2026-09-15" passage="blocking Trump's order" /><Cite s="bbc-2026-09-15" passage="the challenge to Trump's order was a &quot;Hail Mary pass&quot;" /><Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" />
+              <a class="catch-jump" href="#claim-check">Claim check</a>
+            </li>
+            <li>
+              <h3>A second injunction sits in Washington.</h3>
+              Coverage of Monday's denial treated Talwani's order as the only block. Nichols entered a separate preliminary injunction the night before, finding key parts of the same rule likely ultra vires. Even a grant of 26A305 would have left that D.C. order to be separately stayed or dissolved. Why it matters: the Postal Service is under two injunctions, in two circuits, of one rule.<Cite s="nichols-pi-2026-09-13" passage="the Postal Service the power to issue key parts of the Rule" />
+              <a class="catch-jump" href="#where-this-sits">Where this sits</a>
+            </li>
+          </ol>
+          <p class="catch-minor">Smaller slips: ABC quoted Kavanaugh as writing "arbitrary and capricious violation," dropping the word in that the concurrence prints. The Washington Examiner wrote that the Court "decided in the Trump administration’s favor" regarding mail-in ballot restrictions. The order denied the stay.<Cite s="abc-2026-09-14" passage="arbitrary and capricious violation of the Administrative Procedure Act" /><Cite s="examiner-2026-09-14" passage="decided in the Trump administration’s favor" /></p>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">Three stay applications, two injunctions, one election date</p>
+        <h2 data-layer="fact">Where this sits</h2>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Elapsed days between the dated steps</strong><span>Gaps between Talwani, the filing, the First Circuit, Nichols, the denial, and November 3. The last gap is days remaining to the election named in 2 U.S.C. 7.</span></figcaption>
+          <DateLine {...dateLine} ariaLabel="Elapsed days between the dated steps" />
+          <p class="chart-source">Monday's denial is {computed.daysDenialToElection} days before November 3. Talwani's injunction is {computed.daysPiToElection} days before that election. The First Circuit denied a stay {computed.daysCa1ToDenial} days before the Court did. Nichols enjoined the rule the day before the denial.<Cite s="usc-2-7" passage="Tuesday next after the 1st Monday in November" /></p>
+          <p class="chart-vintage" data-layer="proof">Day counts are calendar days between those dates at UTC midnight. {computed.daysDenialToElection} is November 3 minus September 14. {computed.daysPiToElection} is November 3 minus September 4. {computed.daysCa1ToDenial} is September 14 minus September 10. {computed.daysNicholsToDenial} is September 14 minus September 13.</p>
+        </figure>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Who wrote what on September 14</strong><span>From the order PDF and the docket entry.</span></figcaption>
+          <DataTable columns={["Writing", "Who", "What it says"]} rows={opinionsTable} highlightColumn={0} />
+          <p class="chart-source">Named public dissents: {computed.namedPublicDissents}. Named concurrences: {computed.namedConcurrences}. The unsigned order is {computed.unsignedOrderSentences} sentences.<Cite s="scotus-26a305-order" passage="JUSTICE KAVANAUGH, concurring" /></p>
+        </figure>
+
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The solicitor general's stay applications in this fight</strong><span>From the Supreme Court dockets.</span></figcaption>
+          <DataTable columns={["Docket", "Filed", "Relief asked", "What the Court did"]} rows={applicationsTable} highlightColumn={0} />
+          <p class="chart-source">26A124 stayed the injunction of the executive order. 26A305 asked a stay of the injunction of the rule and was denied.<Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /></p>
+        </figure>
+
+        <p data-layer="narrative">Kavanaugh and the unsigned order are not the same holding restated. The unsigned order says the government is unlikely to succeed on the merits of its challenge to the injunction. Kavanaugh says there is at least a fair prospect the final rule falls within the Postal Service's statutory authority, and he denies the stay because applying that rule in 2026 would be arbitrary and capricious. Alito says the opposite on the stay and treats the states' claim as an ultra vires Hail Mary. Those three writings can all be true in the file at once: a merits sentence without a named author, a concurrence that saves the rule's statutory theory for later, and a dissent that would have let the rule run now.<Cite s="scotus-26a305-order" passage="fair prospect that" /><Cite s="scotus-26a305-docket-2026-09-14" passage="The Government is unlikely to succeed on the merits of its challenge to the District Court's preliminary injunction" /></p>
+
+        <p data-layer="narrative">The First Circuit confined its likelihood-of-success analysis to the Elections Clause, the constitutional clause that assigns the times, places, and manner of congressional elections to the states, subject to Congress. It did not reach Talwani's separate statutory holdings. Nichols, in a different circuit, granted relief on ultra vires grounds: no statute, he wrote, grants the power to issue key parts of the rule. Alito's dissent is aimed at that style of claim. The unsigned order does not say which of those grounds made the government unlikely to succeed.<Cite s="ca1-stay-denial-2026-09-10" passage="We confine our likelihood of success analysis to the constitutional claim based on the" /><Cite s="nichols-pi-2026-09-13" passage="the Postal Service the power to issue key parts of the Rule" /></p>
+
+        <p data-layer="narrative">Alito writes that twelve states supported the rule below and asserted that compliance at this time is practicable. Those are the intervenors on the government's side. The First Circuit still denied their stay. The unsigned order does not pick a side in that factual fight beyond the equities sentence.<Cite s="scotus-26a305-order" passage="Twelve States supported the rule below" /></p>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">Election offices already mailing, and a second injunction</p>
+        <h2 data-layer="fact">Who feels it</h2>
+
+        <p data-layer="narrative">The people this order lands on are the offices sending outbound federal ballots and the voters waiting on them. Sauer told the Court on September 6 that ballots had already begun to be mailed in North Carolina. Current and former election officials, filing as friends of the court on September 9 in support of neither party, wrote that changing the rules now will almost certainly lead to mistakes, delays, and confusion for both voters and officials. Monday's denial means those offices keep the old envelope and portal rules off their backs through November 3, at least as a mandate. Voluntary compliance remains open under Talwani's order.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /><Cite s="scotus-26a305-election-officials-amicus" passage="mistakes, delays, and confusion" /></p>
+
+        <p data-layer="narrative">Talwani found that immediate implementation of a final rule issued less than seventy days before the November 2026 election threatens disenfranchisement of millions of United States citizens who seek to vote by mail. Nichols found an increased risk that a significant number of otherwise appropriate absentee or mail-in ballots will ultimately not be counted. Neither order is a national headcount of 2026 mail ballots. Both are findings for a preliminary injunction, not a final judgment.<Cite s="talwani-pi-2026-09-04" passage="threatens disenfranchisement of millions" /><Cite s="nichols-pi-2026-09-13" passage="increased risk that a significant number of otherwise appropriate absentee or mail-in ballots" /></p>
+
+        <p data-layer="narrative">California Attorney General Rob Bonta, whose office is on the Boston caption, called the First Circuit's September 10 denial another rejection of the administration's attempt to disrupt mail voting. That statement is about the Boston appeals, four days before the Court acted. It is not a statement on 26A305.<Cite s="bonta-2026-09-10" passage="rejected the Trump Administration" /></p>
+
+        <p data-layer="narrative">BBC interviewed local officials the week of the ruling. Anne Dover, election director in Cherokee County, Georgia, told the BBC the rule changes would have resulted in thousands of people disenfranchised there. Josh Zygielbaum, the Adams County, Colorado clerk, said his envelopes were already printed. Those are interviews in one outlet's pin, not figures in the court orders.<Cite s="bbc-2026-09-15" passage="thousands of people disenfranchised" /></p>
+
+        <p data-layer="narrative">If the stay had been granted, election offices sending noncompliant outbound federal ballots would have faced the portal and envelope rules while some of those mailings were already moving. The denial keeps the September 4 command in force: the Postal Service may not treat those mailings as unaccepted for elections on or before November 3. Nichols's order is a second command to the same agency, from a different courtroom, entered the night before.<Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" /><Cite s="nichols-pi-2026-09-13" passage="DATE: September 13, 2026" /></p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">Checked against the order</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+        <p data-layer="narrative">Monday night's story ran on SCOTUSblog, CBS, ABC, Politico, CNBC, the Associated Press, BBC, WIRED, Roll Call, and the Washington Examiner, with a Trump-reaction write the next day. The errors below are the ones the order contradicts, or the ones the order does not contain.<Cite s="scotusblog-2026-09-14" passage="brief, unsigned order" /></p>
+        <p data-layer="fact">Eleven outlet cards: four wrong or mislabeled first, then the rest.</p>
+
+        <div data-layer="fact">
+          <OutletCheck outlet="WIRED" claim={`wrote that the court "was divided 7-2," and that Kavanaugh wrote the "unlikely to succeed" sentence "in a concurring opinion with Justice Ketanji Brown Jackson."`} verdict="The 7-2 count is not in the order. The unlikely-to-succeed sentence is the unsigned order, not Kavanaugh's concurrence, and Jackson is not named as joining that concurrence. Kavanaugh's own paragraph is the fair-prospect line about statutory authority and 2026 timing." chip="wrong" status="warn"><Cite s="wired-2026-09-14" passage="divided 7-2" /><Cite s="wired-2026-09-14" passage="concurring opinion with Justice Ketanji Brown Jackson" /><Cite s="scotus-26a305-order" passage="JUSTICE KAVANAUGH, concurring" /></OutletCheck>
+          <OutletCheck outlet="Washington Examiner" claim={`wrote that "the court decided in the Trump administration's favor regarding mail-in ballot restrictions" and "won't enforce them for the midterm elections."`} verdict="The order denied the stay. The administration asked the Court to pause Talwani's injunction so the rule could run. The Court refused." chip="wrong" status="warn"><Cite s="examiner-2026-09-14" passage="decided in the Trump administration’s favor" /><Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /></OutletCheck>
+          <OutletCheck outlet="BBC News" claim={`wrote that Talwani's September 4 injunction was "blocking Trump's order," and that Alito and Thomas wrote that the challenge to Trump's order was a "Hail Mary pass."`} verdict="The September 4 injunction names sections of the Postal Service rule. Alito's Hail Mary line is about an ultra vires claim against that rule. The March order's own injunction had already been stayed on August 24." chip="mislabeled" status="warn"><Cite s="bbc-2026-09-15" passage="blocking Trump's order" /><Cite s="bbc-2026-09-15" passage="the challenge to Trump's order was a &quot;Hail Mary pass&quot;" /></OutletCheck>
+          <OutletCheck outlet="ABC News" claim={`quoted Kavanaugh as writing that applying the rule would be an "arbitrary and capricious violation of the Administrative Procedure Act."`} verdict="The concurrence prints 'arbitrary and capricious in violation.' ABC dropped the word in." chip="mislabeled" status="warn"><Cite s="abc-2026-09-14" passage="arbitrary and capricious violation of the Administrative Procedure Act" /><Cite s="scotus-26a305-order" passage="arbitrary and capricious" /></OutletCheck>
+          <OutletCheck outlet="CNBC" claim={`wrote that two public dissents "implies a 7-2 vote to block the Postal Service rule."`} verdict="The order names two dissenters. It does not print a 7-2 count. A silent justice is not a counted vote." chip="not in the record" status="note"><Cite s="cnbc-trump-2026-09-15" passage="implies a 7-2 vote" /></OutletCheck>
+          <OutletCheckFold count={6} method="the September 14 order PDF and the 26A305 docket.">
+            <OutletCheck folded outlet="SCOTUSblog" claim={`wrote that the justices left in place a Boston judge's ruling in a brief, unsigned order, with a Kavanaugh concurrence on timing and an Alito dissent joined by Thomas.`} verdict="Checks out against the docket entry and the order PDF." chip="checks out" status="ok"><Cite s="scotusblog-2026-09-14" passage="brief, unsigned order" /></OutletCheck>
+            <OutletCheck folded outlet="CBS News" claim={`quoted the unlikely-to-succeed sentence, named Alito and Thomas as dissenters, and quoted Kavanaugh's fair-prospect line.`} verdict="Checks out against the order. CBS's 6-3 line is about the August 24 stay of the executive-order injunction, where Sotomayor, Kagan, and Jackson dissented." chip="checks out" status="ok"><Cite s="cbs-2026-09-14" passage="is unlikely to succeed on the merits of its challenge to the District Court's preliminary injunction" /></OutletCheck>
+            <OutletCheck folded outlet="Politico" claim={`wrote that the justices left in place a lower-court decision blocking the Postal Service from implementing the new requirements, with a Kavanaugh concurrence and an Alito-Thomas dissent, and noted Nichols's Sunday injunction.`} verdict="Checks out against the order, the docket, and Nichols's September 13 opinion." chip="checks out" status="ok"><Cite s="politico-2026-09-14" passage="left in place a lower-court decision" /></OutletCheck>
+            <OutletCheck folded outlet="Associated Press" claim={`wrote that Trump went after the Court after it "rejected his push to restrict mail-in voting" in this year's midterms.`} verdict="Consistent with the denial of 26A305. The Tuesday dispatch is Trump's reaction, not the Monday order itself." chip="consistent" status="ok"><Cite s="ap-2026-09-14" passage="rejected his push to restrict mail-in voting" /></OutletCheck>
+            <OutletCheck folded outlet="CNBC, Monday night" claim={`quoted the unlikely-to-succeed sentence and named Kavanaugh's concurrence and the Alito-Thomas dissent.`} verdict="Checks out against the unsigned order and the two signed writings." chip="checks out" status="ok"><Cite s="cnbc-2026-09-14" passage="is unlikely to succeed on the merits of its challenge to the" /></OutletCheck>
+            <OutletCheck folded outlet="NPR" claim={`aired a Tuesday interview in which David Becker said election officials feel a sense of relief and that there was no way to implement these rules in time.`} verdict="Consistent with Kavanaugh's timing sentence. The interview is reaction, not a court filing." chip="consistent" status="ok"><Cite s="npr-2026-09-15" passage="Election officials feel a sense of relief" /></OutletCheck>
+          </OutletCheckFold>
+        </div>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">What the Court actually denied</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+
+        <div data-layer="fact">
+          <CheckedBlock label="The coverage's claim: the Supreme Court rejected Trump's mail-ballot restrictions" variant="contested">
+            <p>Too broad. The Court denied a stay of Talwani's September 4 preliminary injunction of named sections of the Postal Service rule, for elections on or before November 3. The rule is not vacated. The March executive order is not the instrument the Court was asked to pause. Kavanaugh wrote that there is at least a fair prospect the rule falls within the Postal Service's statutory authority. Alito would have granted the stay. The denial is an emergency-docket refusal to let the rule run this fall, not a final holding that the restrictions are unlawful forever.<Cite s="scotus-26a305-docket-2026-09-14" passage="Application (26A305) for stay presented to Justice Jackson and by her referred to the Court is denied" /><Cite s="scotus-26a305-order" passage="fair prospect that" /></p>
+          </CheckedBlock>
+        </div>
+
+        <details class="receipt" data-layer="proof"><summary>how the day counts were made</summary>
+          <p>November 3, 2026, minus September 14 is {computed.daysDenialToElection} days. Minus September 4 is {computed.daysPiToElection}. Minus September 6 is {computed.daysFilingToElection}. Minus September 10 is {computed.daysCa1ToElection}. Minus September 13 is {computed.daysNicholsToElection}. September 14 minus September 4 is {computed.daysPiToDenial}. Minus September 6 is {computed.daysFilingToDenial}. Minus September 10 is {computed.daysCa1ToDenial}. Minus September 13 is {computed.daysNicholsToDenial}. Minus March 31 is {computed.daysEoToDenial}. Named public dissents and concurrences were counted from the order PDF: Alito joined by Thomas, and Kavanaugh.</p>
+        </details>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">Tuesday morning</p>
+        <h2 data-layer="fact">What happened next</h2>
+
+        <p data-layer="narrative">On Tuesday Trump wrote on Truth Social that Republicans just got another bad decision from the United States Supreme Court, and that it is a big loss for Republicans. CNBC and BBC carried those posts. The Court's own file has no presidential filing in it.<Cite s="cnbc-trump-2026-09-15" passage="Republicans just got another bad decision" /></p>
+
+        <p data-layer="narrative">Watching: the First Circuit merits appeal of Talwani's injunction; whether the government asks to stay or dissolve Nichols's order; whether the Postal Service inspector general publishes the review it said in early September it would conduct; and any later rulemaking for elections after November 3, which Talwani's injunction does not reach.<Cite s="talwani-pi-2026-09-04" passage="elections occurring before or on November 3" /><Cite s="nichols-pi-2026-09-13" passage="DATE: September 13, 2026" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li data-absence>How the silent justices voted. The September 14 order PDF and the 26A305 docket name Kavanaugh in concurrence and Alito joined by Thomas in dissent. They do not name Roberts, Thomas's vote beyond the Alito join, Gorsuch, Barrett, Kagan, Sotomayor, or Jackson on the denial. Searched: order PDF; docket entry for September 14.</li>
+          <li data-absence>Whether the government has asked the D.C. Circuit or the Supreme Court to stay Nichols's September 13 injunction. Searched: 26A305 docket as captured September 18; it lists the denial, not a Nichols application.</li>
+          <li data-absence>Whether the Postal Service inspector general has published the independent review of the whistleblower allegations it said in early September it would conduct. Searched: USPS OIG listings in the earlier story's pins; no later report in this story's captures.</li>
+          <li>Which five states Sauer meant by the week of September 13 in the September 6 application. The application still does not name them.<Cite s="scotus-26a305-application" passage="Ballots have already begun to be mailed in North Carolina" /></li>
+        </ul>
+      </section>
+
+      <StorySources event="mail-voting/2026-09-14-court-denies-stay" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
