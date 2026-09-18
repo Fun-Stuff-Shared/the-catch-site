@@ -1,22 +1,26 @@
 ---
 /**
- * Quote card: a person's or an ad's words as a record.
+ * Quote card: a person's or an ad's words as a record. The paragraph before the
+ * card introduces the speaker; the card names the speaker again in its header.
  * Props:
- *   when: string    — date or date and time
- *   where: string   — venue (Senate floor, X post, 30-second spot)
- *   label?: string  — the record's short name, shown at the foot
+ *   speaker: string - who said it (a person, or the ad or document that carries it)
+ *   when: string    - date or date and time
+ *   where: string   - venue (Senate floor, X post, 30-second spot)
+ *   label?: string  - the record's short name, shown at the foot
  */
-interface Props { when: string; where: string; label?: string; }
-const { when, where, label } = Astro.props;
+interface Props { speaker: string; when: string; where: string; label?: string; }
+const { speaker, when, where, label } = Astro.props;
+if (!speaker?.trim()) throw new Error("QuoteCard needs a speaker");
 ---
 <figure class="quote-card" data-layer="fact">
-  <figcaption class="qc-head"><span class="qc-when">{when}</span><span class="qc-sep">&middot;</span><span class="qc-where">{where}</span></figcaption>
+  <figcaption class="qc-head"><span class="qc-speaker">{speaker}</span><span class="qc-sep">&middot;</span><span class="qc-when">{when}</span><span class="qc-sep">&middot;</span><span class="qc-where">{where}</span></figcaption>
   <blockquote class="qc-words"><slot /></blockquote>
   {label && <p class="qc-label">{label}</p>}
 </figure>
 <style is:global>
   .quote-card { margin: 1.2rem 0; padding: .9rem 1.1rem; border-left: 3px solid var(--gold, #9a6200); background: var(--paper, white); }
   .quote-card .qc-head { font: 600 .72rem/1.3 var(--sans); letter-spacing: .04em; text-transform: uppercase; color: var(--slate); margin: 0 0 .5rem; }
+  .quote-card .qc-speaker { color: var(--ink, #1a1a1a); }
   .quote-card .qc-sep { margin: 0 .4rem; }
   .quote-card .qc-words { margin: 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; }
   .quote-card .qc-words p { margin: 0 0 .5rem; }

@@ -121,7 +121,8 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
    steps, one mechanism sentence per introduced term at first use, a "so what" closing each
    section, rounding in the story and cents in the proof, catch rows ranked with a "Why it
    matters", coverage as `OutletCheck` cards with the closed chip set and errors first, Who
-   feels it as a dated list, quotes as cards. Use the components:
+   feels it as a dated list, quotes as cards introduced by the paragraph before and headed
+   with the speaker. Use the components:
    `SourcedBlock` (fact with a chip), `Cite` (numbered source reference),
    `StorySources` (the records list), `ReadingModes`, `StoryState`.
 7. **Manifest every record, and every displayed number.** Append each new record to
@@ -131,8 +132,6 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
 8. **Build with the real pipeline.** `npm run build` (never a partial build or a
    fallback). Fix what the gate reports and rebuild until clean. Then run
    `node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro`.
-   Then run `node skills/catch-event-page/scripts/prose_lint.mjs src/pages/events/<subject>/<story>.astro`
-   for the 45-word narrative limit and one quotation per paragraph.
    Then `node skills/catch-event-page/scripts/quote_lint.mjs <same page>`: every quoted span
    on the page must be one contiguous run of bytes in a record the same element cites, and
    an outlet's quoted words must come from that outlet's own pin. A finding is a defect on
@@ -215,7 +214,7 @@ snippets, build, lint, screenshot, independent interrogation, live audit) are in
       and source passage; computed figures show their inputs and formula as computations.
       Registration preserved every pinned text hash, state verify passed, and the build gate is green.
 - [ ] `npm run build` passed with the gate; `lens_lint.mjs` reports zero uncited narrative;
-      `prose_lint.mjs` and `quote_lint.mjs` report zero findings.
+      `quote_lint.mjs` reports zero findings.
 - [ ] Measured in a browser at 1280 wide (section-grammar shape rule 10): at least one figure,
       a chronology table if the story has dated steps, zero dollar figures to the cent in
       the story view, no facts behind a collapsed element, and the story view not more than

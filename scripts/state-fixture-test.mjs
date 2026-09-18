@@ -143,7 +143,7 @@ test('pinned evidence identifiers remain stable document record identifiers', (t
 import { checkTimeline } from './check-state-pages.mjs';
 test('confirmation quotes and sources cannot disappear from the rendered evidence', () => {
   const timeline = {confirmations:[{sentence:'Confirmed.', reports:[{url:'https://example.com/report'}], quotes:[{text:'The recorded quote.', reports:[{url:'https://example.com/quote'}]}]}], changes:[]};
-  const html='<section class="revision-timeline"><li data-revision-confirmation>Confirmed. <a href="https://example.com/report">Report</a><li data-revision-quote>The recorded quote. <a href="https://example.com/quote">Quote</a></li></li><p data-revision-no-changes>No changes are recorded in this view. The first check of this story\'s sources has not run yet.</p></section>';
+  const html='<section class="revision-timeline"><li data-revision-confirmation>Confirmed. <a href="https://example.com/report">Report</a><li data-revision-quote>The recorded quote. <a href="https://example.com/quote">Quote</a></li></li></section>';
   const valid = html.replace('<li data-revision-quote>', '<ul><li data-revision-quote>').replace('</li></li>', '</li></ul></li>');
   checkTimeline(valid,timeline);
   assert.throws(()=>checkTimeline(valid.replace('data-revision-quote','missing-quote'),timeline),/quote count/);

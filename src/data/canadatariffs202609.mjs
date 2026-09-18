@@ -205,9 +205,9 @@ export const orderCountRows = [
   [`${oic0786Items}`, "PC 2026-0786 Schedules 1 to 2.1, unique", `${oic0786Schedule1} + ${oic0786Schedule11} + ${oic0786Schedule2} + ${oic0786Schedule21}`],
   [`${oicOverlap}`, "Codes on both orders", "unique-code overlap"],
   [`${oicUnionItems}`, "Union of the two orders, Canadian tariff items", `${oic0785Items} + ${oic0786Items}`],
-  [`${listItems}`, "Finance August 26 table, unique Canadian tariff items", "saved table"],
+  [`${listItems}`, "Finance August 26 table, unique Canadian tariff items", "Finance table"],
   [`${annexJulyItems}`, "U.S. July 20 Annex I, unique HTSUS 8-digit lines", `${annexJulyDairyItems} dairy + ${annexJulyAlcoholItems} alcohol + ${annexJulyMotorItems} motor-vehicles basket`],
-  [`${financeRateMismatches}`, "Finance last-column rate differs from its schedule", "saved table versus the two orders"],
+  [`${financeRateMismatches}`, "Finance last-column rate differs from its schedule", "Finance table versus the two orders"],
 ];
 
 export const bbcCovered = "nearly C$28bn ($20bn; £15bn)";

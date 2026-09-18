@@ -67,7 +67,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
 
       <div data-layer="proof" class="event-record-context">
-        <p class="sources-line">This story rests on the Danish Prime Minister's Office announcement of September 1, the Commission press release, von der Leyen's signing statement, the joint declaration (Commission copy and the Danish government copy), the September 2026 partnership factsheet, Council Decision (EU) 2021/1764, the Commission's Greenland country page, the 2021-2027 programming document, the 2015 joint declaration, the Compilation of Presidential Documents for January 21 and 22, a Truth Social post of January 21, NATO's Arctic Sentry announcement, Danish Defence pages of January 15 and September 1, the European Central Bank's September 8 dollar and krone rates, Statistics Greenland's 2025 yearbook, Nielsen's words as carried by KNR (Greenland's public broadcaster), DR (Denmark's public broadcaster), and the Associated Press, and coverage checked against those records. The Commission's press-corner pages were saved with a browser because the empty shells have no article text. Greenland's own government news listing did not serve the September press release from this machine; KNR quotes that release.</p>
+        <p class="sources-line">This story rests on the Danish Prime Minister's Office announcement of September 1, the Commission press release, von der Leyen's signing statement, the joint declaration (Commission copy and the Danish government copy), the September 2026 partnership factsheet, Council Decision (EU) 2021/1764, the Commission's Greenland country page, the 2021-2027 programming document, the 2015 joint declaration, the Compilation of Presidential Documents for January 21 and 22, a Truth Social post of January 21, NATO's Arctic Sentry announcement, Danish Defence pages of January 15 and September 1, the European Central Bank's September 8 dollar and krone rates, Statistics Greenland's 2025 yearbook, Nielsen's words as carried by KNR (Greenland's public broadcaster), DR (Denmark's public broadcaster), and the Associated Press, and coverage checked against those records. Greenland's government news listing could not be opened for the September press release; KNR quotes that release.</p>
       </div>
 
       <section id="what-happened">
@@ -90,23 +90,28 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="chart-source">Arctic Shield began the same Monday the declaration was signed.<Cite s="forsvaret-arctic-shield-2026" passage="from 10 NATO nations" /><Cite s="truthsocial-map-2026-09-07" passage="Sep 07, 2026, 10:43 AM" /></p>
         </figure>
 
-        <QuoteCard when="September 7, 2026" where="Signing statement, Nuuk" label="Commission STATEMENT/26/1803">
+        <p data-layer="narrative">Three leaders spoke at the signing. Ursula von der Leyen, the Commission president, put the sovereignty line in one sentence.<Cite s="statement-26-1803" passage="no one else" /></p>
+        <QuoteCard speaker="Ursula von der Leyen, European Commission president" when="September 7, 2026" where="Signing statement, Nuuk" label="Commission STATEMENT/26/1803">
           <p>Greenland's future is for the people of Greenland and Denmark to decide, no one else.<Cite s="statement-26-1803" passage="Greenland's future is for the people of Greenland and Denmark to decide, no one else" /></p>
         </QuoteCard>
 
-        <QuoteCard when="September 7, 2026" where="News conference, Nuuk, as carried by the Associated Press" label="AP dispatch">
+        <p data-layer="narrative">Jens-Frederik Nielsen, Greenland's premier, answered as a friend thanking a friend, as the Associated Press carried it.<Cite s="ap-greenland-eu-2026-09-07" passage="loyal and trusted friend" /></p>
+        <QuoteCard speaker="Jens-Frederik Nielsen, premier of Greenland" when="September 7, 2026" where="News conference, Nuuk, as carried by the Associated Press" label="AP dispatch">
           <p>You have stood by us and continue to stand by us. We feel it and are deeply grateful.<Cite s="ap-greenland-eu-2026-09-07" passage="You have stood by us and continue to stand by us" /></p>
         </QuoteCard>
 
-        <QuoteCard when="September 7, 2026" where="News conference, Nuuk, as carried by the Associated Press" label="AP dispatch">
+        <p data-layer="narrative">Mette Frederiksen, the Danish prime minister, said the pressure on Denmark had been plain and thanked the European partners for standing with it.<Cite s="ap-greenland-eu-2026-09-07" passage="We have been under pressure" /></p>
+        <QuoteCard speaker="Mette Frederiksen, prime minister of Denmark" when="September 7, 2026" where="News conference, Nuuk, as carried by the Associated Press" label="AP dispatch">
           <p>It has been very clear, and we are very thankful for the great support we have received from our European partners but, by the way, also globally.<Cite s="ap-greenland-eu-2026-09-07" passage="we are very thankful for the great support" /></p>
         </QuoteCard>
 
-        <QuoteCard when="September 1, 2026" where="Danish Prime Minister's Office announcement" label="Danish original, with a translation">
+        <p data-layer="narrative">A week earlier, announcing the trip, Frederiksen had already set the theme in Danish.<Cite s="stm-visit-2026-09-01" passage="siger statsminister Mette Frederiksen" /></p>
+        <QuoteCard speaker="Mette Frederiksen, prime minister of Denmark" when="September 1, 2026" where="Danish Prime Minister's Office announcement" label="Danish original, with a translation">
           <p>"Europa har entydigt og uden tøven stået sammen med Grønland og Kongeriget. Stået værn om fundamentale principper som suverænitet og territoriel integritet." In English: Europe has stood with Greenland and the Danish Realm without hesitation, guarding sovereignty and territorial integrity.<Cite s="stm-visit-2026-09-01" passage="Europa har entydigt og uden tøven stået sammen med Grønland og Kongeriget" /></p>
         </QuoteCard>
 
-        <QuoteCard when="September 1, 2026" where="KNR, quoting a Naalakkersuisut press release" label="Danish original, with a translation">
+        <p data-layer="narrative">Nielsen's own advance word came through KNR, quoting a government press release.<Cite s="knr-topmoede-2026-09-01" passage="siger, at han ser frem til besøget" /></p>
+        <QuoteCard speaker="Jens-Frederik Nielsen, premier of Greenland" when="September 1, 2026" where="KNR, quoting a Naalakkersuisut press release" label="Danish original, with a translation">
           <p>"EU har meldt klart ud om støtten til os i den geopolitiske situation og samtidig imødekommet vores ønske om et endnu større partnerskab." The EU, he said, had stated its support in the geopolitical situation and had met Greenland's wish for a larger partnership.<Cite s="knr-topmoede-2026-09-01" passage="EU har meldt klart ud om støtten til os i den geopolitiske situation" /></p>
         </QuoteCard>
 
@@ -174,15 +179,18 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="chart-source">Frederiksen's "We have been under pressure" and von der Leyen's "no one else" sit on this record, not on a blank week.<Cite s="ap-greenland-eu-2026-09-07" passage="We have been under pressure" /><Cite s="dcpd-202600046" passage="right, title, and ownership" /></p>
         </figure>
 
-        <QuoteCard when="January 21, 2026" where="World Economic Forum, Davos" label="Compilation of Presidential Documents DCPD-202600046">
+        <p data-layer="narrative">The record the visit sat inside begins with Donald Trump at Davos in January, describing what he was asking for.<Cite s="dcpd-202600046" passage="right, title, and ownership" /></p>
+        <QuoteCard speaker="Donald Trump, U.S. president" when="January 21, 2026" where="World Economic Forum, Davos" label="Compilation of Presidential Documents DCPD-202600046">
           <p>And all we're asking for is to get Greenland, including right, title, and ownership, because you need the ownership to defend it.<Cite s="dcpd-202600046" passage="right, title, and ownership" /></p>
         </QuoteCard>
 
-        <QuoteCard when="January 21, 2026" where="World Economic Forum, Davos" label="Compilation of Presidential Documents DCPD-202600046">
+        <p data-layer="narrative">In the same appearance he ruled out force three times in one breath.<Cite s="dcpd-202600046" passage="I won't use force" /></p>
+        <QuoteCard speaker="Donald Trump, U.S. president" when="January 21, 2026" where="World Economic Forum, Davos" label="Compilation of Presidential Documents DCPD-202600046">
           <p>I don't have to use force. I don't want to use force. I won't use force.<Cite s="dcpd-202600046" passage="I won't use force" /></p>
         </QuoteCard>
 
-        <QuoteCard when="January 22, 2026" where="Air Force One, en route to Joint Base Andrews" label="Compilation of Presidential Documents DCPD-202600051">
+        <p data-layer="narrative">The next day, aboard Air Force One, asked what the Greenland concept contained, he answered with the time frame.<Cite s="dcpd-202600051" passage="The time limit is infinity" /></p>
+        <QuoteCard speaker="Donald Trump, U.S. president" when="January 22, 2026" where="Air Force One, en route to Joint Base Andrews" label="Compilation of Presidential Documents DCPD-202600051">
           <p>The time limit is infinity, meaning there is no time limit. It's forever.<Cite s="dcpd-202600051" passage="The time limit is infinity" /></p>
         </QuoteCard>
 
@@ -199,7 +207,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p>AP later wrote that "Trump eventually backed down after NATO agreed to boost security in the Arctic region." "Backed down" is AP's word.<Cite s="ap-greenland-eu-2026-09-07" passage="Trump eventually backed down" /></p></SourcedBlock>
 
         <SourcedBlock source="ap-trump-greenland-2026-07-07" kind="record" detail>
-          <p>On July 7, in Ankara, Trump told reporters during a meeting with Turkish President Recep Tayyip Erdogan: "That should be controlled by the United States, not by Denmark." We did not find a Compilation of Presidential Documents transcript of that meeting; the sentence here is AP's.<Cite s="ap-trump-greenland-2026-07-07" passage="That should be controlled by the United States, not by Denmark" /></p></SourcedBlock>
+          <p>On July 7, in Ankara, Trump told reporters during a meeting with Turkish President Recep Tayyip Erdogan: "That should be controlled by the United States, not by Denmark." No Compilation of Presidential Documents transcript of that meeting is among this story's records; the sentence here is AP's.<Cite s="ap-trump-greenland-2026-07-07" passage="That should be controlled by the United States, not by Denmark" /></p></SourcedBlock>
 
         <SourcedBlock source="arctictoday-trump-map-2026-09-07" kind="record" detail>
           <p>Arctic Today, in its Monday map story, writes that in a July 31 interview on Real America's Voice Trump was asked about a host's prediction that Greenland would be under U.S. operational control before the end of his term, and that the following day he posted an image captioned "Hello, Greenland!" That is Arctic Today's account of those two acts.<Cite s="arctictoday-trump-map-2026-09-07" passage="Hello, Greenland!" /></p></SourcedBlock>
@@ -248,7 +256,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <section id="outlets">
         <p class="sec-kicker" data-layer="narrative">The euros, the dollars, the word annexation</p>
         <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
-        <p data-layer="narrative">Seven outlet stories are checked below; the records hold 19 coverage captures, because the AP dispatch ran under several mastheads and each copy was saved. One mislabeled the pronoun. France 24 is a preview. KNR's September 1 figure was labeled provisional.<Cite s="upi-greenland-eu-2026-09-07" passage="He said Denmark" /></p>
+        <p data-layer="narrative">Seven outlet stories are checked below; the records list 19 coverage items, because the AP dispatch ran under several mastheads and each is listed. One mislabeled the pronoun. France 24 is a preview. KNR's September 1 figure was labeled provisional.<Cite s="upi-greenland-eu-2026-09-07" passage="He said Denmark" /></p>
 
         <div data-layer="fact">
           <OutletCheck outlet="UPI" claim={`wrote "$232.3 million" and then referred to Frederiksen as "He said Denmark."`} verdict="Frederiksen is Prime Minister of Denmark. The pronoun is wrong. The dollar figure is the same round conversion CNBC used." chip="mislabeled" status="warn"><Cite s="upi-greenland-eu-2026-09-07" passage="He said Denmark" /></OutletCheck>
@@ -256,7 +264,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <OutletCheck outlet="Deutsche Welle" claim={`wrote €200 million ($232 million) and placed the visit after "threats of US annexation earlier this year."`} verdict={`The euro figure checks out. "Annexation" is DW's summary of the January record, including the Davos ask for "right, title, and ownership," not a quote from the Nuuk records.`} chip="consistent" status="ok"><Cite s="dw-greenland-eu-2026-09-07" passage="€200 million ($232 million) investment package" /><Cite s="dcpd-202600046" passage="right, title, and ownership" /></OutletCheck>
           <OutletCheck outlet="Al Jazeera" claim={`wrote "530 million euros ($616m)" for the next budget, and used "annex" of the January record.`} verdict={`The $616 million line is €530 million converted and rounded. That conversion checks out. "Annex" is Al Jazeera's summary of the January record, not a word in the Nuuk release.`} chip="consistent" status="ok"><Cite s="aljazeera-greenland-eu-2026-09-08" passage="530 million euros ($616m)" /></OutletCheck>
           <OutletCheck outlet="France 24" claim={`wrote that von der Leyen "is expected to unveil on Monday a boost in EU investments."`} verdict="The piece is a preview: datePublished 2026-09-07T00:27Z, which is 23:27 Sunday September 6 in Nuuk, written before the signing. What it expected, a Monday investment announcement, is what the Commission press release then said. A forecast that held, not an error." chip="consistent" status="ok"><Cite s="france24-greenland-eu-2026-09-07" passage="is expected to unveil on Monday a boost in EU investments" /></OutletCheck>
-          <OutletCheck outlet="KNR" claim={`wrote, citing Euractiv before the visit, that the EU had an investment package of 150 million euro "på tegnebrættet" (on the drawing board).`} verdict="A labeled provisional figure, later superseded by the €200 million Commission press release. We have not saved the Euractiv page." chip="unconfirmed" status="note"><Cite s="knr-topmoede-2026-09-01" passage="på tegnebrættet" /></OutletCheck>
+          <OutletCheck outlet="KNR" claim={`wrote, citing Euractiv before the visit, that the EU had an investment package of 150 million euro "på tegnebrættet" (on the drawing board).`} verdict="A labeled provisional figure, later superseded by the €200 million Commission press release. The Euractiv page is not among this story's records." chip="unconfirmed" status="note"><Cite s="knr-topmoede-2026-09-01" passage="på tegnebrættet" /></OutletCheck>
           <OutletCheckFold count={1} method="the Commission press release and the ECB rate.">
             <OutletCheck folded outlet="Reuters" claim={`wrote that von der Leyen "unveiled plans on Monday for €200 million ($232 million)."`} verdict="The euro figure checks out against the Commission press release. The $232 million line is the same round dollar figure AP used." chip="checks out" status="ok"><Cite s="reuters-greenland-eu-2026-09-06" passage="unveiled plans on Monday for €200 million ($232 million)" /></OutletCheck>
           </OutletCheckFold>
@@ -291,7 +299,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">What happened next</h2>
 
         <p data-layer="narrative">Arctic Today described the Monday Truth Social post as a map depicting North America, Central America, the Caribbean, Greenland, and Iceland covered by the U.S. flag and labeled "United States of America," "without accompanying text."<Cite s="arctictoday-trump-map-2026-09-07" passage="without accompanying text" /></p>
-        <p data-layer="narrative">The saved post is stamped "Sep 07, 2026, 10:43 AM" with no time zone shown and no text. Nothing in it refers to Nuuk, and the records do not say which came first, the signing or the post. Same day is what the records hold; a reply is not.<Cite s="truthsocial-map-2026-09-07" passage="Sep 07, 2026, 10:43 AM" /></p>
+        <p data-layer="narrative">The post is stamped "Sep 07, 2026, 10:43 AM" with no time zone shown and no text. Nothing in it refers to Nuuk, and the records do not say which came first, the signing or the post. Same day is what the records show; a reply is not.<Cite s="truthsocial-map-2026-09-07" passage="Sep 07, 2026, 10:43 AM" /></p>
 
         <p data-layer="narrative">The Hill described the same Monday post as a map with the American flag over the United States, Canada, Mexico, part of Central America, Greenland, Iceland, and Caribbean islands including Cuba and Jamaica. Separately, The Hill wrote that the White House official account posted on X a Sunday map of New Mexico labeled "New America." That Sunday post is not the Greenland map.<Cite s="thehill-trump-map-2026-09-07" passage="New America" /></p>
 
@@ -301,19 +309,19 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       </section>
 
       <section id="unknowns">
-        <p class="sec-kicker" data-layer="narrative">What the records do not hold</p>
+        <p class="sec-kicker" data-layer="narrative">What the records do not show</p>
         <h2 data-layer="fact">What we do not know yet</h2>
 
-        <p data-layer="narrative">Naalakkersuisut's own September press release is quoted by KNR. The government news listing we saved did not serve that page, so Nielsen's September 1 words here are KNR's quotation of it.<Cite s="knr-topmoede-2026-09-01" passage="Det oplyser naalakkersuisut i en pressemeddelelse" /></p>
+        <p data-layer="narrative">Naalakkersuisut's own September press release is quoted by KNR. The release itself could not be opened from the government's news listing, so Nielsen's September 1 words here are KNR's quotation of it.<Cite s="knr-topmoede-2026-09-01" passage="Det oplyser naalakkersuisut i en pressemeddelelse" /></p>
 
         <p data-layer="narrative">The Commission press release names projects and a €{packageEur} million total. A search of that release, and of the partnership factsheet, does not produce a table that splits that total by project, year, or budget line.<Cite s="ip-26-1800" passage="€200 million Global Gateway Partnership Package" /><Cite s="eu-greenland-factsheet-2026" passage="Through a new €200 million Global" /></p>
 
         <p data-layer="narrative">The April decision's annex says a financing agreement with the Government of Greenland "is envisaged." The records do not show it signed or in force, and the 96-month implementation clock runs from that date.<Cite s="ec-aap-2026-greenland-annex" passage="it is envisaged to conclude a financing agreement" /><Cite s="ec-aap-2026-greenland-annex" passage="96 months from the date" /></p>
         <p data-layer="narrative">Von der Leyen's "up to EUR 90 million a year for the country as added value" for the Malmbjerg mine names no study, no metric, and no year. A search of the April annex for the word Malmbjerg finds no mention, and the press release calls it an existing investment. Whether that figure is revenue to Greenland's treasury, the mine's output, or wages is not in the records.<Cite s="statement-26-1803" passage="generate up to EUR 90 million a year" /><Cite s="ip-26-1800" passage="such as the one in the Malmbjerg mining project" /></p>
-        <p data-layer="narrative">Greenland's 2009 Self-Government Act, which the April annex cites, could not be saved from any of five routes tried, so this page does not quote it. Von der Leyen's "people of Greenland and Denmark to decide" is her phrasing, and the Act's own words on who decides independence are not on this page.<Cite s="ec-aap-2026-greenland-annex" passage="Act on Greenland’s Self-Government" /><Cite s="statement-26-1803" passage="Greenland's future is for the people of Greenland and Denmark to decide, no one else" /></p>
-        <p data-layer="narrative">On the White House briefing-room statements-and-releases page saved September 8, a search for the word Greenland does not produce a hit.<Cite s="wh-statements-releases" passage="September 2, 2026" /></p>
+        <p data-layer="narrative">Greenland's 2009 Self-Government Act, which the April annex cites, could not be opened at any of the five addresses tried, so it is not quoted here. Von der Leyen's "people of Greenland and Denmark to decide" is her phrasing, and the Act's own words on who decides independence are not quoted here.<Cite s="ec-aap-2026-greenland-annex" passage="Act on Greenland’s Self-Government" /><Cite s="statement-26-1803" passage="Greenland's future is for the people of Greenland and Denmark to decide, no one else" /></p>
+        <p data-layer="narrative">The White House briefing-room statements-and-releases page, as of September 8, does not contain the word Greenland.<Cite s="wh-statements-releases" passage="September 2, 2026" /></p>
 
-        <p data-layer="narrative">A search of the State Department press-releases listing saved the same day does not name the Commission package.<Cite s="state-press-releases" passage="Press Releases" /></p>
+        <p data-layer="narrative">The State Department press-releases listing, as of the same day, does not name the Commission package.<Cite s="state-press-releases" passage="Press Releases" /></p>
       </section>
 
       <StorySources event="greenland/september-2026" />

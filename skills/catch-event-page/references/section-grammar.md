@@ -61,8 +61,12 @@ loyal friend") into direct speech. If the best two sentences are not contiguous,
 contiguous one and put the other in the narrative with its own Cite. Byte-exact means the
 card text is a substring of the pinned text file; check it with a search before build.
 
-**Quotes as cards.** A person's words are a quote card (date, venue, the words, the
-   record), not a paragraph that begins with an institution's name.
+**Quotes as cards, introduced.** A person's words are a quote card (speaker, date, venue,
+   the words, the record), not a paragraph that begins with an institution's name. The
+   narrative paragraph immediately before the card says who is about to speak and why it
+   matters; the card's `speaker` names them again. Never two cards in a row, and never a
+   card after a figure or a heading. The gate fails all three (Zain, 2026-09-09 and
+   2026-09-12: raw quotes with no context, stacked, and unattributed).
 10. **Measure before you say done.** In a browser at 1280 wide: story-view height, words by
     layer, fact blocks per section, dollar figures to the cent, figures on the page. The
     gold jobs page is 7,100 px, 1,745 words, 15 fact blocks, one chart and two tables. A

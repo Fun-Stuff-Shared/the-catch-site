@@ -11,6 +11,8 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
 import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy } from "./check-state-pages.mjs";
+import { storyFindings, citedPassages } from "./story-copy-rules.mjs";
+import { sourceContext } from "../src/lib/evidence-context.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
@@ -242,6 +244,7 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
 }
 const outletRecordData = JSON.parse(readFileSync(join(ROOT, "src/data/news-records.json"), "utf8"));
 const outletByUrl = new Map(outletRecordData.records.map((record) => [record.url, record]));
+const outletById = new Map(outletRecordData.records.map((record) => [record.id, record]));
 for (const record of outletRecordData.records) {
   if (!record.pinned_path || record.text_path !== record.pinned_path) fail.push(`outlet record ${record.id} requires a repository pinned_path`);
   const textPath = record.pinned_path && join(ROOT, record.pinned_path);
@@ -269,7 +272,7 @@ for (const filename of ["fed-rate.mjs", "jobs.mjs", "miami-cargo-crash.mjs", "mi
 const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
   "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
   "eligible claim", "manifested", "dossier", "extraction pipeline", "staged", "zain review", "w7", "internal review",
-  "cloture", "perfecting nature", "voted not voting", "cloture motion"];
+  "cloture", "perfecting nature", "voted not voting", "cloture motion", "quote card", "fact block", "sourced block"];
 const wholeTerm = (term) => new RegExp(`\\b${term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
 
 const eventsIndex = join(dist, "events", "index.html");
@@ -373,17 +376,35 @@ for (const { subject, story } of storyPages) {
   }
 }
 
+// ---- 3b. What the reader sees in The story and Just the facts ------------------
+// Proof is excluded: the auditor register may name files and dates. Everything else
+// is the page talking to a stranger. The rules and their fixtures live in
+// scripts/story-copy-rules.mjs.
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  fail.push(...storyFindings(readFileSync(storyFile, "utf8"), `/events/${subject}/${story}/`));
+}
+
 // ---- 4. Citation resolution: every #src-N reference must resolve on its page ----
 for (const { subject, story } of storyPages) {
   const storyFile = join(dist, "events", subject, story, "index.html");
   if (!existsSync(storyFile)) continue;
   const html = readFileSync(storyFile, "utf8");
-  if (!html.includes("src-ref")) continue;
   const refs = [...html.matchAll(/href="#(src-\d+)"/g)].map((m) => m[1]);
   const ids = new Set([...html.matchAll(/id="(src-\d+)"/g)].map((m) => m[1]));
   const dangling = [...new Set(refs.filter((r) => !ids.has(r)))];
   if (dangling.length > 0) {
     fail.push(`/events/${subject}/${story}/: citation(s) link to nothing: ${dangling.join(", ")}`);
+  }
+  // The evidence reader highlights data-passage inside the record's saved text; a passage
+  // that is not in the text opens a reader with nothing marked.
+  for (const { id, passage } of citedPassages(html)) {
+    const record = manifestRecords.get(id) ?? outletById.get(id);
+    if (!record) { fail.push(`/events/${subject}/${story}/: citation names unknown record ${id}`); continue; }
+    const textPath = record.text_path || record.pinned_path;
+    if (!textPath || !existsSync(join(ROOT, textPath))) { fail.push(`/events/${subject}/${story}/: record ${id} has no saved text to cite`); continue; }
+    if (!sourceContext(readFileSync(join(ROOT, textPath), "utf8"), passage)) fail.push(`/events/${subject}/${story}/: passage "${passage.slice(0, 80)}" is not in the saved text of ${id}`);
   }
 }
 

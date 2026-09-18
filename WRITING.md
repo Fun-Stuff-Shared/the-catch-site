@@ -23,7 +23,8 @@ other term is ours to introduce.
 
 The story is the synthesis: tight reporting in the register of the Zika page, most
 important first, each paragraph one level deeper, mechanisms explained in the sentence
-that needs them, quotes as cards, dated steps as a chronology, numbers as figures, and a
+that needs them, quotes as cards each introduced by the paragraph before it and headed
+with the speaker's name, dated steps as a chronology, numbers as figures, and a
 "so what" closing every section. It is compact. A raw record (the filing line by line, a
 committee's books, a ballot listing) is not story; it is marked `detail` on its
 `SourcedBlock` and appears in Just the facts and Show the work, where the reader who wants

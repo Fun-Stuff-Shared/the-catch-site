@@ -36,15 +36,8 @@ export function checkTimeline(html, timeline = {}) {
     const links = new Set([...nodes(node)].map((child) => attr(child, 'href')).filter(Boolean));
     if ((row.reports ?? []).some((report) => !links.has(report.url))) throw new Error('Rendered confirmation source differs');
   }
-  if (marked('data-revision-no-confirmations').length !== Number(confirmations.length === 0)) throw new Error('Missing-confirmation text differs');
+  if (marked('data-revision-no-confirmations').length || marked('data-revision-no-changes').length) throw new Error('Empty-state text rendered in the revision section');
   const changes = timeline.changes ?? [];
-  const empty = marked('data-revision-no-changes');
-  if (empty.length !== Number(changes.length === 0)) throw new Error('No-change text differs');
-  if (!changes.length) {
-    const checked = timeline.changes_checked_at?.slice(0, 10);
-    const expected = `No changes are recorded in this view. ${checked ? `Changes last checked ${checked}.` : "The first check of this story's sources has not run yet."}`;
-    if (normalize(text(empty[0])) !== expected) throw new Error('No-change check date differs');
-  }
   const expectedUrls = new Set([...confirmations.flatMap((row) => [...(row.reports ?? []), ...(row.quotes ?? []).flatMap((quote) => quote.reports ?? [])].map((report) => report.url)), ...changes.flatMap((row) => [row.earlier_evidence_url, row.later_evidence_url])]);
   const actualUrls = new Set(descendants.map((node) => attr(node, 'href')).filter(Boolean));
   if (actualUrls.size !== expectedUrls.size || [...actualUrls].some((url) => !expectedUrls.has(url))) throw new Error('Revision evidence links differ');
@@ -140,6 +133,38 @@ export function readerCopy(html) {
     return (node.childNodes ?? []).map(copy).join(' ');
   }
   return normalize(copy(parse(html)));
+}
+
+export function storyCopy(html) {
+  const all = [...nodes(parse(html))];
+  const main = all.find((node) => node.tagName === 'main');
+  if (!main) throw new Error('Story page has no <main>; reader copy cannot be scoped');
+  function copy(node) {
+    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined || attr(node, 'data-layer') === 'proof') return '';
+    if (node.nodeName === '#text') return node.value;
+    return (node.childNodes ?? []).map(copy).join(' ');
+  }
+  return normalize(copy(main));
+}
+
+export function quoteCards(html) {
+  const all = [...nodes(parse(html))];
+  const main = all.find((node) => node.tagName === 'main') ?? parse(html);
+  const cards = [];
+  for (const node of nodes(main)) {
+    if (node.tagName !== 'figure' || !(attr(node, 'class') ?? '').split(/\s+/).includes('quote-card')) continue;
+    const siblings = (node.parentNode?.childNodes ?? []).filter((child) => child.nodeName !== '#text' && child.nodeName !== '#comment');
+    const before = siblings[siblings.indexOf(node) - 1];
+    const speaker = normalize(text([...nodes(node)].find((child) => (attr(child, 'class') ?? '').split(/\s+/).includes('qc-speaker')) ?? { childNodes: [] }));
+    cards.push({
+      speaker,
+      words: normalize(text([...nodes(node)].find((child) => (attr(child, 'class') ?? '').split(/\s+/).includes('qc-words')) ?? { childNodes: [] })).slice(0, 60),
+      beforeTag: before?.tagName ?? null,
+      beforeIsNarrative: before?.tagName === 'p' && attr(before, 'data-layer') === 'narrative',
+      beforeIsCard: before?.tagName === 'figure' && (attr(before, 'class') ?? '').split(/\s+/).includes('quote-card'),
+    });
+  }
+  return cards;
 }
 
 export function checkAuthoredSections(html, sections) {
