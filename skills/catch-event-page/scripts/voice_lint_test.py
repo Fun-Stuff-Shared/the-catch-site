@@ -5,7 +5,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 import voice_lint as vl
 
 PAGE = """<html><body><main id="story-root">
-<p class="kicker" data-layer="fact">The federal funds rate · September 16, 2026 · updated 2026-09-19</p>
+<p data-layer="fact">The record was updated 2026-10-01 and carries the date 2026-10-02.</p>
+<p class="story-kicker" data-layer="fact"><a href="/events/fed-rate/">The federal funds rate</a> &middot; September 16, 2026 &middot; updated 2026-09-19</p>
 <section id="what-happened">
  <p data-layer="narrative">The Fed raised its target range by a quarter point on September 16, the first increase since 2023.</p>
  <p data-layer="narrative">A reader who stops here misses the vote.</p>
@@ -165,7 +166,10 @@ checks = [
     ("a historic 'as of' status with a year passes", "since 2023" not in text),
     ("an 'as of' date seven weeks before the page date passes", "June meeting had not" not in text),
     ("an 'as of' date nine days before the page date fails", any(k == "timestamped_absence" and "July meeting had not" in s for k, s in hits)),
-    ("the page date is read from the kicker", vl.page_date(PAGE) == __import__("datetime").date(2026, 9, 19)),
+    ("the page date is read from the story kicker, not the first date on the page", vl.page_date(PAGE) == __import__("datetime").date(2026, 9, 19)),
+    ("a kicker without an updated date gives no frame", vl.page_date('<p class="story-kicker">The rate &middot; September 16, 2026</p><p>updated 2026-09-19</p>') is None),
+    ("a page with no kicker gives no frame", vl.page_date('<p>updated 2026-09-19</p>') is None),
+    ("with no frame a dated absence fails", vl.timestamped_absence("As of August 1 the minutes had not been published.", None)),
     ("the reread list is the top ten plus two per question left out", (lambda r: len(r) == 12 and r[:10] == REV[:10] and [h[0] for h in r[10:]] == ["dictionary", "dictionary"])(vl.reread_list(REV))),
     ("a question inside the top ten gets no extra rows", len(vl.reread_list(REV[:3])) == 3),
 ]

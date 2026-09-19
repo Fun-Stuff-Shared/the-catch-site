@@ -57,12 +57,16 @@ clause as the frame; "as of Friday the rate was not 4 percent" negates a value, 
 September 8") is a positive fact, so neither is a hit. An "as of" date more than HISTORIC days before the page's own
 date is a historical status ("as of July 2024 the committee had not changed its range since 2023"), not the page's frame."""
 HISTORIC = 14
-PAGE_DATE = re.compile(r"updated (\d{4}-\d{2}-\d{2})|\b(\d{4}-\d{2}-\d{2})\b")
+KICKER = re.compile(r'<p class="story-kicker"[^>]*>(.*?)</p>', re.S)
+PAGE_DATE = re.compile(r"updated (\d{4}-\d{2}-\d{2})")
 
 
 def page_date(html):
-    m = PAGE_DATE.search(html)
-    return datetime.date.fromisoformat(m.group(1) or m.group(2)) if m else None
+    """The page's own date is the "updated" date in its story kicker and nowhere else; a page without one has
+    no frame and every timestamped absence on it fails."""
+    k = KICKER.search(html)
+    m = k and PAGE_DATE.search(k.group(1))
+    return datetime.date.fromisoformat(m.group(1)) if m else None
 
 
 def timestamped_absence(own, today):
