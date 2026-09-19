@@ -1,7 +1,7 @@
 # Procedures: the exact commands, in the order an authoring session runs them
 
 Every step names its command and its artifact. A skipped step is a finding you report in
-your own words, never a style choice. SKILL.md is the order of work; this file is the
+your own words, never a style choice. The turn skills (catch-record, catch-structure, catch-story) are the order of work; this file is the
 commands for it. Paths are relative to
 `/Volumes/4/GitHub/the-catch-site` unless stated. Two other repos take part:
 `/Volumes/4/CF/news-fqs-pilot` (capture registry, `capture` CLI, news search index) and
@@ -30,8 +30,8 @@ page, copy its structure rather than inventing one.
 ## 1. Open the working note
 
 `checks/working-notes/<subject>--<story>.md` holds, in this order: the ask or the patch
-list copied item by item; one line per census search (SKILL.md, step 1) with what was
-found and admitted or where you searched; a passage table per primary record (SKILL.md,
+list copied item by item; one line per census search (catch-record, step 1) with what was
+found and admitted or where you searched; a passage table per primary record (catch-record,
 step 2). For a review, keep the reviewer's numbers verbatim; you check each against the
 pins in step 4.
 

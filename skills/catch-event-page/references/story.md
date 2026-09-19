@@ -1,6 +1,6 @@
 # The story: the reader model, materiality, and what the story view carries
 
-This step runs after the record is built (SKILL.md, step 3) and before the first narrative
+This step runs after the record is built (catch-record, step 3) and before the first narrative
 sentence. Its artifact is `checks/reader-models/<subject>--<story>.md`, committed with the
 page. The red team reads it and grades its findings against it; the completeness audit ran
 before this step, on the record commit, and its findings are passages you grade here.
@@ -125,7 +125,7 @@ contexts, so that the knowledge of how hard a record was to get never decides wh
 stranger reads it, and so that what the story communicates is decided before a sentence
 of it exists.
 
-**Turn one, the record** (SKILL.md steps 0 to 3): census, admission, whole-pin reads, the
+**Turn one, the record** (the catch-record skill): census, admission, whole-pin reads, the
 passage tables, the gap list with dispositions, the data module, figures, the chronology,
 the detail blocks, the subject page row and homepage feature, the manifest with every gate
 attestation true in fact (`section_grammar` still `done: false`, which the record build
@@ -135,14 +135,14 @@ figures, chronology and the records list, with no narrative paragraphs yet. The 
 on that commit and a plain report: the working note is the deliverable. The completeness
 audit runs once, on this commit.
 
-**Turn two, the structure** (SKILL.md step 4): a fresh context reads the working note, the
+**Turn two, the structure** (the catch-structure skill): a fresh context reads the working note, the
 passage tables, the gap dispositions, the record audit and the built facts view, and
 writes the reader model: entering, exiting, grades, sections, an outline when the story
 needs one. Then `finish.sh <subject>/<story> structure`, which commits that file and
 nothing else. The reviewer reads it before dispatching turn three; an angle that is wrong
 is corrected here, in one file, not in a patch round on the prose.
 
-**Turn three, the story** (SKILL.md steps 5 to 7): a fresh context reads the reader model
+**Turn three, the story** (the catch-story skill): a fresh context reads the reader model
 commit, the working note and the built page, writes the narrative one passage at a time
 with the pin open, in the sections and the order the reader model chose, runs the lints,
 the interrogation and the entailment check, and ends with `finish.sh <subject>/<story>
