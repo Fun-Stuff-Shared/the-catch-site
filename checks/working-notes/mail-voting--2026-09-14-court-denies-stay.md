@@ -336,3 +336,29 @@ Ledgered for a later pass, not this round: 2020 service-change litigation and 20
 ### Self-check
 
 `checks/audits/mail-voting--2026-09-14-court-denies-stay-2026-09-19-since-407ede9c-entailment.md`: VERDICT: ENTAILED. One Minor (row 3): "the office that sent them" is narrower than the rule's "authorized ballot mailer", which can be an election official or an authorized vendor. Stands: item 29 prescribed that wording.
+
+## Round 6 (mail-patch.md items 37 to 39; entailment since-0e26334b, 2026-09-19)
+
+Worktree the-catch-site-wt-r3-mail, branch author/patch-r3-mail, start commit 5661ae44. No captures this round.
+
+### Recount at the pins
+
+- Item 37: talwani-pi-2026-09-04.txt line 2429, "the court has not and will not order injunctive relief that precludes" / line 2431 "States from voluntarily complying with the Final Rule". Claim-check line 208 said the refusal "keeps the rule off this fall's ballots".
+- Item 38: usps-final-rule-plain.txt lines 5918-5920 "will not be accepted and will be returned to the authorized ballot mailer"; lines 5643-5652 define authorized ballot mailer as an election official or an individual or entity such as a mail service provider that an election official has authorized. Body line 91 and the dek said "the office that sent them".
+- Item 39: uspsoig-primary-audit-2026.txt line 8, opportunities to increase understanding and enforcement of postmarking ballots; communication with customers affected by operational changes could be strengthened; line 10 "We made 11 recommendations to address the issues identified in the report". Page said the 11 recommendations included ones on postmarking ballots and on operational changes.
+
+### Items 37 to 39
+
+37. Done. Claim-check Too broad closer: the refusal keeps the rule's mandatory parts off this fall's ballots, and states may still comply voluntarily; appeal clause kept. Cited to "has not and will not order injunctive relief that precludes". Sibling of the phrase at catch line 125 ("keeping the rule off this fall's ballots") left: that sentence is the eight outlets omitting Nichols, not the voluntary-compliance overstatement. Sibling count rewritten: 0.
+
+38. Done. Body: returned to the authorized ballot mailer, an election official or a mail service provider that official has authorized to send the ballots; cited to "returned to the authorized" and "such as a mail service provider, that an". Dek first sentence uses the same recipient and definition. Sibling count: 2 (body and dek), both rewritten.
+
+39. Done. Count sentence now "recommendations to address the issues identified in the report". Findings sentence uses the pin's postmarking and communication-about-operational-changes clauses, cited to "increase understanding and enforcement of postmarking ballots". Sibling count: 0.
+
+Not admitted this run: none. No captures.
+
+Ledgered for a later pass, not this round: 2020 service-change litigation and 2021 settlement; bipartisan bills' scope; Postal Regulatory Commission process; Alaska mail-delay notice. Item 36 folded into 38.
+
+### Self-check
+
+`checks/audits/mail-voting--2026-09-14-court-denies-stay-2026-09-19-since-5661ae44-entailment.md`: VERDICT: ENTAILED. Blocks checked: 3; Critical 0, Major 0, Moderate 0, Minor 0.
