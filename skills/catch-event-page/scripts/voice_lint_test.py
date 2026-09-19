@@ -1,4 +1,4 @@
-"""Deterministic checks for voice_lint's fail tier: run with any python3, no SDK needed.
+"""Deterministic checks for voice_lint's three rules: run with any python3, no SDK needed.
 Usage: python3 skills/catch-event-page/scripts/voice_lint_test.py"""
 import os, sys, tempfile
 sys.path.insert(0, os.path.dirname(__file__))
@@ -18,7 +18,6 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">The benefit is not available through the federal exchange.</p>
  <p data-layer="fact">Single outlet centers are exempt from the licensing rule.</p>
  <p data-layer="fact">This page of the public docket lists the motion and its filing date.</p>
- <p data-layer="fact">Single outlet among the records here: AP says the vote was 9 to 3.</p>
  <p data-layer="fact">After the judge sealed it, the order was not available through the public docket.</p>
  <p data-layer="fact">We could not obtain the order through the public docket.</p>
  <p data-layer="fact">The clerk added this page to the public docket on Monday.</p>
@@ -46,6 +45,8 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">I-95 reopened on Monday after the crash.</p>
  <p data-layer="fact">Title I funds reached the district in August.</p>
  <p data-layer="fact">The docket page lists the motions heard on Monday.</p>
+ <p data-layer="narrative">If you saw one of these spots, the committee paid for it, not the campaign.</p>
+ <p data-layer="narrative">He told the crowd, "you saw the ballots with your own eyes," and left the stage.</p>
  <p data-layer="narrative">Wells Fargo said the loan was repaid in an hour.</p>
  <p data-layer="fact">Von der Leyen, in the press release: "Greenland can count on the EU. That was my message during my last visit. Today, I am back to deliver the real results of our close cooperation," and the release is dated September 7.</p>
  <h2 data-layer="fact">What we do not know yet</h2>
@@ -69,7 +70,7 @@ def fails_for(html):
         own = vl.strip_q(sen, inside)
         if own == vl.SECTION_TITLE: continue
         if vl.READER.search(own): out.append(("reader", sen))
-        if vl.PROCESS.search(own) or vl.FIRST_PERSON.search(own): out.append(("process", sen))
+        if vl.SELF_PAGE.search(own) or vl.FIRST_PERSON.search(own): out.append(("process", sen))
     os.unlink(path); return out
 
 judged = []
@@ -90,7 +91,6 @@ checks = [
     ("'not available through the federal exchange' passes", "federal exchange" not in text),
     ("'Single outlet centers' passes", "licensing rule" not in text),
     ("'This page of the public docket' passes", "filing date" not in text),
-    ("a single-outlet coverage note fails", any("Single outlet among" in s for _, s in hits)),
     ("a sealed-docket fact passes", "judge sealed" not in text),
     ("first-person retrieval through the docket fails", any("We could not obtain" in s for _, s in hits)),
     ("a document called bare 'this page' mid-sentence fails", any("clerk added" in s for _, s in hits)),
@@ -123,6 +123,8 @@ checks = [
     ("the words after a long quotation closes are still judged", any("release is dated" in s for s in judged)),
     ("the unknowns section title is chrome", "What we do not know yet" not in text),
     ("a first-person authored heading fails", any(s == "What we found in the docket" for _, s in hits)),
+    ("addressing the reader as you fails", any(k == "reader" and s.startswith("If you saw") for k, s in hits)),
+    ("you inside a quotation passes", not any("own eyes" in s for _, s in hits)),
     ("a quotation the splitter cut in two is not own voice", not any("Super PAC" in s or "money myself" in s for _, s in hits)),
     ("a quote card's words are not judged", not any("ballots ourselves" in s for s in judged)),
     ("a class that merely contains section-lede is judged", any(s.startswith("Our count of the sealed") for _, s in hits)),
