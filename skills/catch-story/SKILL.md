@@ -4,7 +4,7 @@ description: >
   Turn three of a Catch story: write the narrative on a record one session built and a
   reader model another session wrote, each sentence from an open passage, in the reader
   model's sections and order; build through the gate, run the lints, the interrogation and
-  the entailment check; commit. Also the author's side of the one patch round after review.
+  the entailment check; commit. Also the author's side of each patch round after review.
   Use when dispatched to write or patch a Catch story page.
 license: CC BY-NC 4.0
 metadata:
@@ -151,12 +151,9 @@ sentence: run the entailment check with `--since` the commit the patch started f
 fix what it finds before you return, and run the lints again. Fix each item's class across
 the whole page, not only the named line, and report the sibling count per class.
 
-There is one patch round. The entailment check runs on the patched commit; nothing else
-does. What is still wrong after it is the reviewer's decision, made on the page as it
-stands: cut the sentence, hold the item with its reason on the ledger, or kill the story.
-A third author run is never the answer; a story that needs one was not ready to be
-written, and that is a record problem to fix in the working note before the next story.
-Before the push, the reviewer re-runs the capture search on the story terms dated on or
+After each round the reviewer reads the patched page and either sends the next numbered
+list or decides on the page as it stands: cut the sentence, hold the item with its reason on
+the ledger, or kill the story. Before the push, the reviewer re-runs the capture search on the story terms dated on or
 after your run and dispositions the results in the ledger.
 
 ## Language rules (hard, enforced by the gate)

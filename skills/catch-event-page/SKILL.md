@@ -4,7 +4,7 @@ description: >
   The Catch story pipeline (the-catch-site): the map of the three author turns (catch-record,
   catch-structure, catch-story, each its own skill and session), the reviewer's process
   between and after them (accept the event, dispatch, the record audit, read the reader
-  model, red team and entailment, one patch round, decide, stage, ship), and the home of the
+  model, red team and entailment, patch rounds, decide, stage, ship), and the home of the
   scripts and reference files the three turns share. Use when reviewing, dispatching or
   shipping a Catch story, or to find a shared script or reference. An author uses the turn
   skill it was dispatched with, never this one.
@@ -53,10 +53,10 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
 6. **Two reads on the story commit, in parallel:** `scripts/red_team.sh` and
    `scripts/entailment_check.sh`. Verify every finding at the bytes; refute what the pins
    refute; send the rest as one numbered patch list.
-7. **One patch round.** The author patches, runs entailment `--since` the story commit and
-   the lints, commits. Nothing else runs.
-8. **Decide on the page as it stands:** cut a sentence, hold an item with its reason on the
-   ledger, or kill the story. A third author run is never the answer.
+7. **Patch rounds.** The author patches, runs entailment `--since` the commit the round
+   started from and the lints, commits. The reviewer reads the patched page and either
+   sends the next numbered list or decides: cut a sentence, hold an item with its reason on
+   the ledger, or kill the story. Rounds are not capped; each is timed from its run markers.
 9. **Before the push:** re-run the capture search on the story terms dated on or after the
    run and disposition the results; refresh the state views for the event and commit them;
    hosted-style build from a git archive with `CATCH_STATE_SOURCE=/nonexistent`; a STAGED
@@ -67,8 +67,8 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
 
 Dispatch to staged, per story, in wall-clock minutes, from the run markers. The Kennedy
 Center trial on the one-skill design took 4 h 27 min over four author runs; the record
-turn alone on this design took 46 min. A story that needs a second patch round is a record
-problem, written into the working note for the next story, not a third run.
+turn alone on this design took 46 min. Each patch round is timed on its own so the cost of
+review can be read apart from the cost of writing.
 
 ## References
 
