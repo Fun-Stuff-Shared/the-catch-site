@@ -18,7 +18,9 @@ export OPENAI_API_KEY=iq-local   # the searcher reads this name; the value route
 
 
 Turn three is a fresh session. It reads the reader model commit, the working note and the
-built page, and writes the story in the reader model's order. Read `story.md`, then
+built page, admits every gap line the reader model graded A or B (step 2 of the record
+procedures for each: fetch, pin, census line, passage table, manifest row), and then writes
+the story in the reader model's order. Read `story.md`, then
 `shape-rules.md`, `sections.md`, `components.md`, then `writing.md`. Bind every narrative paragraph with `Cite`, from
 the pin open on screen. Keep the needs ledger open beside you: every gap you notice while
 writing becomes a named row the moment you notice it, and step 3 or 5 runs for that row

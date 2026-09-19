@@ -35,7 +35,10 @@ interrogation prompt in `references/interrogation.md`.
 
 Turn three is a fresh session. It opens by reading the reader model commit (the structure
 turn's file), the working note and the built page; it writes to the reader model only to grade
-a passage it admits on the way.  Every factual sentence is written with its passage on screen
+a passage it admits on the way. Before the first sentence, it admits every gap line the reader
+model graded A or B (fetch, pin, census line, passage table, manifest row, the record
+procedures as written; a refused fetch is recovered the way step 2 recovers one). A gap the
+structure turn graded A or B is not an unknown on the page; it is a record the page cites. Every factual sentence is written with its passage on screen
 and cites it (`Cite s= passage=`). The sentence says what the passage says, in everyday
 words, and nothing more. Where the page needs more than the passage gives, admit the
 record that gives it (and write its census line) or write the gap as a dated absence in
@@ -184,6 +187,7 @@ after your run and dispositions the results in the ledger.
 
 ## Before you say done
 
+- [ ] Every gap line graded A or B in the reader model is an admitted record with a census line and a manifest row, or a dated absence naming the fetch that failed.
 - [ ] The page follows the reader model's sections and order; the story view carries A and B only; a passage admitted on the way is graded in that file.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
