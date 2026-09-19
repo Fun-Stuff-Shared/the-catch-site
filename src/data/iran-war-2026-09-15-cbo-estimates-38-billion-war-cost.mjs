@@ -2,20 +2,21 @@
 // Table 1 and the letter body: data/sources/iran-war/cbo-62756-iran.pdf (text sibling .txt).
 // OMB June 24 supplemental: data/sources/iran-war/omb-supplemental-2026-06-24.pdf.
 // DoD IG Q3 report: data/sources/iran-war/dod-ig-oef-q3-2026-09-09.pdf.
+// CENTCOM September 3 estimate as AP reported it: data/sources/iran-war/ap-centcom-43-6b-2026-09-18.txt.
 
 export const event = {
   slug: "iran-war/2026-09-15-cbo-estimates-38-billion-war-cost",
-  title: "CBO estimates the Iran war has cost the Pentagon $38.1 billion through August 1",
-  dek: "The September 15 letter to Rep. Brendan Boyle counts replacement munitions, extra flying hours, fuel, lost equipment, and other operations. It does not count damaged bases, veterans' care, or other agencies. Another month would add $2 billion or $3 billion, depending on how hard the fighting is.",
+  title: "CBO estimates the Iran war has added $38.1 billion to Defense Department costs through August 1",
+  dek: "The estimate counts what it will take to replace the munitions fired, the extra flying hours, fuel, lost equipment, and other operations. It leaves out damaged bases, veterans' care, and other agencies. The Defense Department did not answer CBO's requests for its own numbers, and by June 30 had paid out $4.9 billion of the $7.4 billion it had committed.",
   name: "Iran war cost",
-  span: "February 28 to September 15, 2026",
+  span: "February 28 to September 18, 2026",
   date: "2026-09-15",
   updated: "2026-09-18",
   kpis: [
-    { value: "38.1", unit: "USD billions", label: "DoD cost through August 1, CBO Table 1" },
-    { value: "2 to 3", unit: "USD billions", label: "extra month, low or July intensity" },
-    { value: "0.5", unit: "pp", label: "inflation, early 2027, above CBO's February path" },
-    { value: "21.7", unit: "USD billions", label: "replace expended munitions" },
+    { value: "$38.1", unit: "billion", label: "CBO's estimate of the added Defense Department cost through August 1" },
+    { value: "$2 to $3", unit: "billion", label: "each further month, quiet or as intense as July" },
+    { value: "0.5", unit: "points", label: "added to inflation by early 2027, against CBO's February forecast" },
+    { value: "$21.7", unit: "billion", label: "to replace the munitions fired" },
   ],
 };
 
@@ -45,13 +46,14 @@ export const flyingHours = {
   total: 10.4,
 };
 
-// Fuel: DLA surcharge $835 million plus $1,822 million expected loss.
+// Fuel: DLA surcharge $835 million plus the $1,822 million loss the Government Accountability Office expected.
 // Story rounds 1,822 million to $1.8 billion; exact millions stay here.
 export const fuel = {
   surchargeMillion: 835,
   dlaLossMillion: 1822,
   dlaLossBillion: 1.8, // 1822 / 1000, rounded in the story
   totalBillion: 2.7,
+  surchargePerBarrel: 42,
 };
 
 // Table 2 battle losses, millions of 2026 dollars.
@@ -81,6 +83,23 @@ export const inflation = {
   brentEnd2026: 84,
   brentEnd2027: 76,
   brentThisYearPctHigher: 41,
+  fuelShareOfLevelChangePct: 40,
+};
+
+// Interceptor unit prices from the letter body, millions of dollars each.
+export const interceptorPrices = {
+  patriotSm6Million: 4,
+  thaadMillion: 12,
+  sm3Million: 28,
+  orderLagYearsLow: 3,
+  orderLagYearsHigh: 5,
+  rebuildYearsAtLeast: 5,
+};
+
+// Force package in the first phase, from the letter body.
+export const force = {
+  tacticalAircraft: 250,
+  carrierStrikeGroups: 2,
 };
 
 export const admin = {
@@ -90,9 +109,15 @@ export const admin = {
   otherDod: 24.8,
   otherDepartments: 20.5,
   agriculture: 11.1,
+  agricultureCropAssistance: 10,
+  homelandSecurity: 2.0,
+  state: 3.4,
   munitionsRequest: 21.0,
   operationalRequest: 17.3,
   hegseth: 37.5,
+  hegsethMunitionsJuly: 25,
+  hegsethMunitionsAugust: 27.7,
+  pennStation: 1,
 };
 
 export const ig = {
@@ -117,6 +142,22 @@ export const ig = {
   disbursed: 4.9,
 };
 
+// U.S. Central Command estimate as of September 3, as AP reported it on September 18.
+// The Washington Post page served only a subscription stub; the AP dispatch is the record.
+export const centcom = {
+  total: 43.6,
+  asOf: "2026-09-03",
+  munitions: 28.1,
+  deadPerDcas: 18,
+  woundedPerDcas: 830,
+};
+
+// Washington Post count of service-member deaths as Reuters reported it on September 18.
+export const postDeaths = {
+  atLeast: 22,
+  aboveDatabase: 4,
+};
+
 export const votes = {
   hconres86HouseYea: 215,
   hconres86HouseNay: 208,
@@ -137,7 +178,7 @@ export const unMission = {
   civilians: 178,
 };
 
-// 21.7 / 38.1 from Table 1, percent, one decimal as in 57.0.
+// Derived in this module from the figures above.
 export const computed = {
   munitionsSharePct: 57.0, // 21.7 / 38.1 * 100
   q2EnergySharePct: 43.4, // 2.3 / 5.3 * 100
@@ -145,9 +186,12 @@ export const computed = {
   daysFeb28ToSep15: 199, // 2026-09-15 minus 2026-02-28
   daysMar5ToSep15: 194, // 2026-09-15 minus 2026-03-05
   daysJun29ToAug1: 33, // 2026-08-01 minus 2026-06-29
+  daysAug1ToSep3: 33, // 2026-09-03 minus 2026-08-01
   table1RoundedSum: 38.2, // 21.7+1.9+10.4+1.5+2.7; CBO prints 38.1
   directMinusCbo: 4.2, // 42.3 - 38.1
   cboMinusIg: 4.7, // 38.1 - 33.4
+  centcomMinusCbo: 5.5, // 43.6 - 38.1
+  centcomMunitionsMinusCbo: 6.4, // 28.1 - 21.7
   perDayInclusiveMillion: 245.8, // 38.1e9 / 155 days, Feb 28 through Aug 1 inclusive
 };
 
@@ -166,11 +210,12 @@ export const munitionsBars = [
 ];
 
 export const clocksRows = [
-  ["DoD IG, as of June 29", `$${ig.total} billion`, "Obligations, expended munitions, equipment losses; not infrastructure"],
-  ["Hegseth, July 21 Senate Appropriations", `$${admin.hegseth} billion`, "Military Times and the hearing page: to date. CBO dates the same figure July 22 before Armed Services"],
-  ["CBO Table 1, through August 1", `$${table1.total} billion`, "DoD incremental: munitions, flying hours, fuel, equipment, other operations"],
-  ["Administration request, June 24, direct DoD", `$${admin.directRelated} billion`, "CBO's reading of the categories that look tied to the conflict"],
-  ["Administration request, June 24, all agencies", `$${admin.supplementalTotal} billion`, "OMB letter total, including Agriculture, State, and other accounts"],
+  ["Defense Department estimate quoted by its inspector general, as of June 29", `$${ig.total} billion`, "Money committed, munitions fired, equipment lost; no base repairs"],
+  ["Hegseth to the Senate Appropriations Committee, July 21", `$${admin.hegseth} billion`, "The war as of that day plus what he expected through September 30"],
+  ["CBO letter, through August 1", `$${table1.total} billion`, "Added Defense Department cost: munitions, flying hours, fuel, equipment, other operations"],
+  ["Central Command to Congress, as of September 3", `$${centcom.total} billion`, "Munitions, ships, planes, bases in use, equipment losses, medical support; no base repairs"],
+  ["June 24 request, the part CBO ties to the fighting", `$${admin.directRelated} billion`, "What the White House asked Congress for, in the categories that match the war"],
+  ["June 24 request, all agencies", `$${admin.supplementalTotal} billion`, "The whole request, including farm aid, State, and other accounts"],
 ];
 
 export const table1Rows = [
@@ -184,31 +229,31 @@ export const table1Rows = [
 ];
 
 export const timeline = [
-  { date: "Feb 28", title: "Operation Epic Fury begins", sub: "CENTCOM: strikes at 1:15 am ET" },
-  { date: "Mar 5", title: "Boyle asks CBO for a cost estimate", sub: "Operational costs, extra costs, opportunity costs, prices" },
-  { date: "Mar 12", title: "White House names the campaign's aims", sub: "Missiles, navy, proxies, nuclear weapons" },
+  { date: "Feb 28", title: "U.S. strikes on Iran begin", sub: "Central Command: strikes at 1:15 am ET" },
+  { date: "Mar 5", title: "Boyle asks CBO for a cost estimate", sub: "Operating costs, other costs, what the war crowds out, prices" },
   { date: "Apr 8", title: "A ceasefire begins", sub: "CBO: the first intense phase lasted just over a month" },
-  { date: "Jun 3", title: "House passes H.Con.Res. 86", sub: `${votes.hconres86HouseYea} to ${votes.hconres86HouseNay}, directing removal from hostilities` },
-  { date: "Jun 23", title: "Senate agrees to H.Con.Res. 86", sub: `${votes.hconres86SenateYea} to ${votes.hconres86SenateNay}` },
-  { date: "Jun 24", title: "OMB asks for $87.6 billion", sub: `$67.1 billion of that is for the Department of War` },
+  { date: "Jun 3", title: "House votes to end U.S. involvement", sub: `${votes.hconres86HouseYea} to ${votes.hconres86HouseNay}` },
+  { date: "Jun 23", title: "Senate agrees", sub: `${votes.hconres86SenateYea} to ${votes.hconres86SenateNay}` },
+  { date: "Jun 24", title: "White House asks Congress for $87.6 billion", sub: `$${admin.dodRequest} billion of it for the Defense Department` },
   { date: "Jul 10", title: "The president says the ceasefire is over", sub: "After Iranian attacks on tankers in the Strait of Hormuz" },
-  { date: "Jul 21", title: "Hegseth testifies: $37.5 billion", sub: "Senate Appropriations; CBO dates this July 22 before Armed Services" },
-  { date: "Jul 22", title: "House passes H.Con.Res. 113", sub: `${votes.hconres113HouseYea} to ${votes.hconres113HouseNay}, a reconciliation path` },
-  { date: "Aug 1", title: "CBO's cost cutoff", sub: `Table 1 total $${table1.total} billion` },
-  { date: "Sep 14", title: "Inspector general quarterly listing", sub: `Defense Department estimate $${ig.total} billion as of June 29` },
-  { date: "Sep 15", title: "CBO dates the letter to Boyle", sub: "Nineteen pages, three tables", current: true },
-  { date: "Sep 15", title: "House passes H.Con.Res. 93", sub: `${votes.hconres93HouseYea} to ${votes.hconres93HouseNay}, another removal vote` },
+  { date: "Jul 21", title: "Hegseth tells senators the war has cost $37.5 billion", sub: "Senate Appropriations Committee" },
+  { date: "Jul 22", title: "House passes a budget resolution", sub: `${votes.hconres113HouseYea} to ${votes.hconres113HouseNay}` },
+  { date: "Aug 1", title: "CBO's cost cutoff", sub: `Estimate $${table1.total} billion` },
+  { date: "Sep 14", title: "Inspector general report is posted", sub: `Quotes a $${ig.total} billion department estimate as of June 29` },
+  { date: "Sep 15", title: "CBO's letter to Boyle", sub: "Nineteen pages, three tables", current: true },
+  { date: "Sep 15", title: "House votes again to end U.S. involvement", sub: `${votes.hconres93HouseYea} to ${votes.hconres93HouseNay}` },
+  { date: "Sep 18", title: "Central Command's $43.6 billion reaches Congress", sub: "As of September 3, reported by AP" },
 ];
 
 export const homeTable = [
-  [`$${table1.total} billion`, "DoD cost through August 1, CBO Table 1"],
-  [`$${monthly.low} to $${monthly.july} billion`, "Extra month at May/June or July intensity"],
-  [`${inflation.pce2027q1Pp} percentage points`, "PCE inflation in 2027 Q1 versus CBO's February forecast"],
+  [`$${table1.total} billion`, "CBO's estimate of the added Defense Department cost through August 1"],
+  [`$${monthly.low} to $${monthly.july} billion`, "Each further month, quiet or as intense as July"],
+  [`${inflation.pce2027q1Pp} points`, "Added to inflation by early 2027, against CBO's February forecast"],
 ];
 
 event.visual = {
   kind: "table",
   title: "CBO's Iran-war cost letter, September 15",
-  note: "DoD incremental cost through August 1, not bases, veterans, or other agencies",
+  note: "An estimate of added Defense Department cost through August 1; bases, veterans, and other agencies not counted",
   rows: homeTable,
 };

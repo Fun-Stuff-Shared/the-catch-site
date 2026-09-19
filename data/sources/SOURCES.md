@@ -1500,3 +1500,17 @@ Mail-voting stay denial (2026-09-14): Court order, docket, First Circuit stay de
 | data/sources/coverage/ap-2026-09-17.txt | 5468 | 53e12a4e59054c8c |
 | data/sources/mail-voting/usps-election-mail-page-2026-09-18.html | 165512 | ed64e6b52592470d |
 | data/sources/mail-voting/usps-election-mail-page-2026-09-18.txt | 22747 | 5adb6a2b5fc98629 |
+| data/sources/iran-war/ap-centcom-43-6b-2026-09-18.html | 444336 | 5f7646c0ab5b2fed |
+| data/sources/iran-war/ap-centcom-43-6b-2026-09-18.txt | 3914 | f2c37f521e23a560 |
+| data/sources/iran-war/wapo-centcom-43-6b-2026-09-18.html | 787865 | c6e8295f622b5eaa |
+| data/sources/iran-war/wapo-centcom-43-6b-2026-09-18.txt | 579 | cc557d0f2deb66eb |
+| data/sources/iran-war/reuters-troop-deaths-2026-09-18.html | 370194 | c222d0c2ebb70962 |
+| data/sources/iran-war/reuters-troop-deaths-2026-09-18.txt | 1128 | 027b92510da901d1 |
+| data/sources/iran-war/crs-r42699-war-powers-2019-03-08.pdf | 1743309 | 8a1c59172c8c40a0 |
+| data/sources/iran-war/crs-r42699-war-powers-2019-03-08.txt | 431251 | 5786336f64b75645 |
+| data/sources/iran-war/stripes-hegseth-2026-07-21.html | 130628 | a348f44eedc15606 |
+| data/sources/iran-war/stripes-hegseth-2026-07-21.txt | 6401 | 24fe0bbaf9075250 |
+| data/sources/iran-war/senate-isvp-approps-2026-07-21.html | 8175 | ca209a4a1cb02872 |
+| data/sources/iran-war/senate-isvp-approps-2026-07-21.txt | 4 | ef8964238ee912f4 |
+
+Round 3 additions for the Iran war cost story (September 18, 2026): the Associated Press and Reuters dispatches of September 18 were admitted through the registry from their U.S. News carrier copies; the Washington Post page served only a subscription stub on a direct fetch and on the Internet Archive route and is listed but not cited; CRS report R42699 was admitted from congress.gov; the Senate video player page for the July 21 hearing served no transcript.

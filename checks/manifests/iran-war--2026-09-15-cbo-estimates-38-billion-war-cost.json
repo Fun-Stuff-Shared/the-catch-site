@@ -2,10 +2,10 @@
   "subject": "iran-war",
   "event": "iran-war/2026-09-15-cbo-estimates-38-billion-war-cost",
   "date": "2026-09-15",
-  "story_title": "CBO estimates the Iran war has cost the Pentagon $38.1 billion through August 1",
+  "story_title": "CBO estimates the Iran war has added $38.1 billion to Defense Department costs through August 1",
   "state_event_id": "event-iran-war-2026-09-15-cbo-estimates-38-billion-war-cost",
   "event_record": "/events/iran-war/",
-  "completed_by": "grok, skill catch-event-page",
+  "completed_by": "grok, skill catch-event-page; round 3 patch by Claude, skill 2.1 at e59af305",
   "date_completed": "2026-09-18",
   "coverage_threshold": 2,
   "sub_events": [
@@ -48,6 +48,7 @@
       "records": [
         "sac-hearing-2026-07-21",
         "militarytimes-hegseth-2026-07-21",
+        "stripes-hegseth-2026-07-21",
         "cbo-62756-iran"
       ]
     },
@@ -124,6 +125,16 @@
       "section_anchor": "what-happened-next",
       "records": [
         "senate-dems-wrapup-2026-09-16"
+      ]
+    },
+    {
+      "id": "centcom-estimate-2026-09-18",
+      "date": "2026-09-18",
+      "label": "Central Command's $43.6 billion reaches Congress",
+      "section_anchor": "what-happened-next",
+      "records": [
+        "ap-centcom-43-6b-2026-09-18",
+        "wapo-centcom-43-6b-2026-09-18"
       ]
     }
   ],
@@ -233,7 +244,7 @@
       "pinned_path": "data/sources/iran-war/wh-epic-fury-2026-03-12.html",
       "text_path": "data/sources/iran-war/wh-epic-fury-2026-03-12.txt",
       "text_sha256": "sha256:d43201bedab0d09d3c78c63172dcb14a1be1622d467d198900f846771f05ee77",
-      "quote": "obliterate Iran\u2019s ballistic missile arsenal and production capacity",
+      "quote": "obliterate Iran’s ballistic missile arsenal and production capacity",
       "quote_span_check": "byte_exact",
       "about": "White House March 12 release stating the campaign's aims. CBO cites this release.",
       "capture_run": "capture-oneoff-20260918T082718Z",
@@ -260,14 +271,14 @@
       "id": "dod-ig-oef-q3-2026-09-09",
       "title": "Operation Epic Fury, Report to Congress, April 1, 2026-June 30, 2026",
       "publisher": "Lead Inspector General for Operation Epic Fury",
-      "date": "2026-09-09",
+      "date": "2026-09-14",
       "url": "https://media.defense.gov/2026/Sep/09/2003993626/-1/-1/1/OEF_Q3_JUN2026_FINAL_508%20SECURE.PDF",
       "pinned_path": "data/sources/iran-war/dod-ig-oef-q3-2026-09-09.pdf",
       "text_path": "data/sources/iran-war/dod-ig-oef-q3-2026-09-09.txt",
       "text_sha256": "sha256:f24d128e085b741c666448678655d5f8ea9403bfc046af740c441aa808d9945c",
       "quote": "$33.4 billion as of June 29",
       "quote_span_check": "byte_exact",
-      "about": "Inspector general quarterly: DoW $33.4 billion as of June 29, seven killed through June 30, $184 million diplomatic damage.",
+      "about": "Inspector general quarterly for April 1 to June 30, posted September 14 (the PDF file itself is dated September 9): a Defense Department estimate of $33.4 billion as of June 29, 14 deaths through June 30 in its text and 18 as of August 26 in its table, $184 million in diplomatic damage.",
       "capture_run": "capture-oneoff-20260918T083319Z",
       "capture_raw_sha256": "sha256:d87ada56ffc3843f8d7e94018582bb3edee4dafe1e381025225bf9889f0e4606",
       "captured_at": "2026-09-18T08:33:31.007353Z"
@@ -434,7 +445,7 @@
     },
     {
       "id": "warren-cbo-findings-2026-09-15",
-      "title": "NEW: Trump\u2019s War in Iran Cost DoD Nearly $40 Billion and Drove Nearly Half of Inflation, According to CBO Report",
+      "title": "NEW: Trump’s War in Iran Cost DoD Nearly $40 Billion and Drove Nearly Half of Inflation, According to CBO Report",
       "publisher": "Office of Sen. Elizabeth Warren",
       "date": "2026-09-15",
       "url": "https://www.warren.senate.gov/newsroom/press-releases/new-trumps-war-in-iran-cost-dod-nearly-40-billion-and-drove-nearly-half-of-inflation-according-to-cbo-report",
@@ -656,6 +667,104 @@
       "capture_status": "admitted with no usable body: the page served only the title Defense Casualty Analysis System",
       "text_sha256": "sha256:0983b90f5dd8727383c74598537a20f8a67b14ac27c2f1108fe8e7d0f9bc5bb7",
       "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "ap-centcom-43-6b-2026-09-18",
+      "title": "Iran War’s Cost Grows to $43.6 Billion in New US Military Estimate",
+      "publisher": "Associated Press",
+      "date": "2026-09-18",
+      "url": "https://www.usnews.com/news/politics/articles/2026-09-18/iran-wars-cost-grows-to-43-6-billion-in-new-us-military-estimate",
+      "pinned_path": "data/sources/iran-war/ap-centcom-43-6b-2026-09-18.html",
+      "text_path": "data/sources/iran-war/ap-centcom-43-6b-2026-09-18.txt",
+      "text_sha256": "sha256:f2c37f521e23a56050f05404c03af57f555ab362e458a3403c25fe4be0f8ef05",
+      "quote": "$43.6 billion as of Sept. 3",
+      "quote_span_check": "byte_exact",
+      "about": "AP dispatch of September 18, carried by U.S. News, on the Central Command estimate of $43.6 billion as of September 3 given to Congress in a one-page breakdown.",
+      "capture_run": "capture-oneoff-20260919T001613Z",
+      "capture_raw_sha256": "sha256:5f7646c0ab5b2fed270cfc15f1a1201fee6a74572c92e98e8409fd62a5fcf4b0",
+      "captured_at": "2026-09-19T00:16:21.513676Z"
+    },
+    {
+      "id": "wapo-centcom-43-6b-2026-09-18",
+      "title": "Iran war cost is now at least $43.6 billion, U.S. Central Command says",
+      "publisher": "The Washington Post",
+      "date": "2026-09-18",
+      "url": "https://www.washingtonpost.com/national-security/2026/09/18/iran-war-cost-is-now-least-436-billion-us-central-command-says/",
+      "pinned_path": "data/sources/iran-war/wapo-centcom-43-6b-2026-09-18.html",
+      "text_path": "data/sources/iran-war/wapo-centcom-43-6b-2026-09-18.txt",
+      "text_sha256": "sha256:cc557d0f2deb66ebca593d4c281f0c3bf17514dadb22906bfb51b90835c3aed3",
+      "quote": "estimates that the Iran war has cost about $43.6 billion through early September",
+      "quote_span_check": "byte_exact",
+      "about": "The Washington Post's September 18 report on the Central Command document. Two fetches, direct and through the Internet Archive route, each served only a 579-character subscription stub: the headline, one sentence, and the standfirst. Not cited; the AP dispatch is the record used.",
+      "capture_run": "capture-oneoff-20260919T001910Z",
+      "capture_raw_sha256": "sha256:c6e8295f622b5eaa99471d5f08fd5b976ad25dfda0446d4df51c7a8e146dee2b",
+      "captured_at": "2026-09-19T00:19:11.224583Z",
+      "capture_status": "served only a subscription stub of 579 characters on both a direct fetch and the Internet Archive route; the breakdown figures the Post reported ($11.2 billion operational, $4.3 billion equipment) are not in any pin and are not on the page"
+    },
+    {
+      "id": "reuters-troop-deaths-2026-09-18",
+      "title": "US Troop Deaths in Iran War Exceed Pentagon Count by at Least Four, Washington Post Reports",
+      "publisher": "Reuters",
+      "date": "2026-09-18",
+      "url": "https://www.usnews.com/news/world/articles/2026-09-18/us-troop-deaths-in-iran-war-exceed-pentagon-count-by-at-least-four-washington-post-reports",
+      "pinned_path": "data/sources/iran-war/reuters-troop-deaths-2026-09-18.html",
+      "text_path": "data/sources/iran-war/reuters-troop-deaths-2026-09-18.txt",
+      "text_sha256": "sha256:027b92510da901d12d95b77e9eebb118832d60dee6133dc9c6b7456b4dd13d04",
+      "quote": "at least 22 military fatalities",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters dispatch of September 18, carried by U.S. News, on the Washington Post's report of at least 22 service-member deaths against the 18 in the Pentagon's public database, and Hegseth's denial.",
+      "capture_run": "capture-oneoff-20260919T001621Z",
+      "capture_raw_sha256": "sha256:c222d0c2ebb7096233aca0a758ab51d8cc6bf1a278d8cbfa4d4971a3cb90993e",
+      "captured_at": "2026-09-19T00:16:30.249520Z"
+    },
+    {
+      "id": "crs-r42699-war-powers-2019-03-08",
+      "title": "The War Powers Resolution: Concepts and Practice",
+      "publisher": "Congressional Research Service",
+      "date": "2019-03-08",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R42699/R42699.16.pdf",
+      "pinned_path": "data/sources/iran-war/crs-r42699-war-powers-2019-03-08.pdf",
+      "text_path": "data/sources/iran-war/crs-r42699-war-powers-2019-03-08.txt",
+      "text_sha256": "sha256:5786336f64b75645433ed7e640624b792f5645d1e177a37bac574abed43c5488",
+      "quote": "is constitutionally suspect under the reasoning applied by the Court",
+      "quote_span_check": "byte_exact",
+      "about": "CRS report R42699, updated March 8, 2019, on the War Powers Resolution, including the concurrent-resolution withdrawal provision, the 1983 Chadha decision, and the later joint-resolution route.",
+      "capture_run": "capture-oneoff-20260919T001630Z",
+      "capture_raw_sha256": "sha256:8a1c59172c8c40a0ce997ef4d85c716163fa69a444e98c7977348c6e7a85c653",
+      "captured_at": "2026-09-19T00:16:39.131473Z"
+    },
+    {
+      "id": "stripes-hegseth-2026-07-21",
+      "title": "Hegseth says Iran war has cost $37.5 billion, makes case for supplemental funding",
+      "publisher": "Stars and Stripes",
+      "date": "2026-07-21",
+      "url": "https://www.stripes.com/theaters/us/2026-07-21/caine-hegseth-senate-hearing-iran-war-22330260.html",
+      "pinned_path": "data/sources/iran-war/stripes-hegseth-2026-07-21.html",
+      "text_path": "data/sources/iran-war/stripes-hegseth-2026-07-21.txt",
+      "text_sha256": "sha256:24fe0bbaf9075250a6c5e7458ce0791e61090ee9b2d1c259d8b9558870ad149b",
+      "quote": "projecting costs until the end of the fiscal year on Sept. 30",
+      "quote_span_check": "byte_exact",
+      "about": "Stars and Stripes report from the July 21 Senate Appropriations hearing: Hegseth's $37.5 billion was based on the conflict that day and projected costs to September 30.",
+      "capture_run": "capture-oneoff-20260919T001639Z",
+      "capture_raw_sha256": "sha256:a348f44eedc156062fbb776fdb1da98fa3c5a6c8f3b89d2b4a1c80f598a90844",
+      "captured_at": "2026-09-19T00:16:48.060799Z"
+    },
+    {
+      "id": "senate-isvp-approps-2026-07-21",
+      "title": "Senate Appropriations Committee hearing video, July 21, 2026",
+      "publisher": "U.S. Senate",
+      "date": "2026-07-21",
+      "url": "https://www.senate.gov/isvp/?comm=approps&type=arch&stt=&filename=appropsA072126&auto_play=false&wmode=transparent",
+      "pinned_path": "data/sources/iran-war/senate-isvp-approps-2026-07-21.html",
+      "text_path": "data/sources/iran-war/senate-isvp-approps-2026-07-21.txt",
+      "text_sha256": "sha256:ef8964238ee912f4b52f3876508c2089dce6d28be0b6b529f8bc01ef6d4ccf80",
+      "quote": "ISVP",
+      "quote_span_check": "byte_exact",
+      "about": "Attempted capture of the Senate video player page for the July 21 hearing; the page served only the player's name, no transcript or captions.",
+      "capture_run": "capture-oneoff-20260919T001648Z",
+      "capture_raw_sha256": "sha256:ca209a4a1cb02872ef2ab905366841a2ac5d0bb141b63cdb953204912deb14b8",
+      "captured_at": "2026-09-19T00:16:56.778651Z",
+      "capture_status": "admitted with no usable body: the video player page served only the four characters ISVP; no transcript of Hegseth's wording was obtained"
     }
   ],
   "story_sources": [
@@ -663,225 +772,267 @@
       "id": "cbo-62756-iran",
       "group": "primary",
       "label": "CBO letter 62756, September 15, 2026",
-      "meta": " \u00b7 CBO",
+      "meta": " · CBO",
       "usage": "Table 1 total, munitions split, monthly range, inflation path, Hegseth date, supplemental comparison"
     },
     {
       "id": "cbo-62756-page",
       "group": "primary",
       "label": "CBO publication 62756 landing page",
-      "meta": " \u00b7 CBO",
+      "meta": " · CBO",
       "usage": "Title and summary of the letter as posted"
     },
     {
       "id": "boyle-letter-to-cbo-2026-03-05",
       "group": "primary",
       "label": "Boyle letter to CBO, March 5, 2026",
-      "meta": " \u00b7 House Budget ranking member",
+      "meta": " · House Budget ranking member",
       "usage": "The four questions CBO was asked to answer"
     },
     {
       "id": "boyle-cbo-request-2026-03-05",
       "group": "official",
       "label": "Boyle statement on the CBO request, March 5",
-      "meta": " \u00b7 published March 5, 2026",
+      "meta": " · published March 5, 2026",
       "usage": "Boyle's words on why he asked CBO"
     },
     {
       "id": "boyle-cbo-findings-2026-09-15",
       "group": "official",
       "label": "Boyle statement on the CBO findings, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Boyle's rounding and his quote on the letter"
     },
     {
       "id": "boyle-supplemental-2026-06-24",
       "group": "official",
       "label": "Boyle statement on the supplemental request, June 24",
-      "meta": " \u00b7 published June 24, 2026",
+      "meta": " · published June 24, 2026",
       "usage": "Boyle's response the day of the OMB request"
     },
     {
       "id": "wh-epic-fury-2026-03-12",
       "group": "official",
       "label": "White House Operation Epic Fury release, March 12",
-      "meta": " \u00b7 The White House",
+      "meta": " · The White House",
       "usage": "The administration's stated aims for the campaign; launch time is CENTCOM's"
     },
     {
       "id": "omb-supplemental-2026-06-24",
       "group": "primary",
       "label": "OMB supplemental request letter, June 24, 2026",
-      "meta": " \u00b7 OMB",
+      "meta": " · OMB",
       "usage": "The $87.6 billion request and the $67.1 billion Department of War line"
     },
     {
       "id": "dod-ig-oef-q3-2026-09-09",
       "group": "official",
       "label": "Lead IG Operation Epic Fury report, April 1 to June 30",
-      "meta": " \u00b7 listed September 14, 2026",
+      "meta": " · listed September 14, 2026",
       "usage": "Department estimate as of June 29, casualties through Table 4, diplomatic damage, base-budget financing"
     },
     {
       "id": "ap-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "Associated Press, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked against Table 1 and the monthly range"
     },
     {
       "id": "abc-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "ABC News, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; end-of-July cutoff does not match August 1"
     },
     {
       "id": "cbs-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "CBS News, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; body matches CBO's monthly range"
     },
     {
       "id": "cnbc-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "CNBC, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; $38.1 billion matches Table 1"
     },
     {
       "id": "nbc-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "NBC News, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; more than 40 percent share is arithmetic from CBO's two printed inputs"
     },
     {
       "id": "hill-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "The Hill, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked against Table 1 and the inflation sentences"
     },
     {
       "id": "hill-pentagon-42b-2026-09-15",
       "group": "coverage",
       "label": "The Hill on the August 13 Pentagon briefing",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Single-outlet account of a closed briefing; not a CBO figure"
     },
     {
       "id": "politico-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "Politico, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; $38.1 billion and munitions split match the letter"
     },
     {
       "id": "reuters-cbo-iran-2026-09-15",
       "group": "coverage",
       "label": "Reuters, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Checked; $3 billion a month is mislabeled; July 21 date checks out; June 19 and $184 million do not match the inspector general"
     },
     {
       "id": "warren-cbo-request-2026-05-28",
       "group": "official",
       "label": "Warren, Merkley, and Schumer CBO request, May 28",
-      "meta": " \u00b7 published May 28, 2026",
+      "meta": " · published May 28, 2026",
       "usage": "Senate request that sits on the CBO letter cc list"
     },
     {
       "id": "warren-cbo-findings-2026-09-15",
       "group": "official",
       "label": "Warren statement on the CBO letter, September 15",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Senate rounding of Table 1 and the Q2 inflation share"
     },
     {
       "id": "militarytimes-hegseth-2026-07-21",
       "group": "coverage",
       "label": "Military Times, July 21",
-      "meta": " \u00b7 published July 21, 2026",
+      "meta": " · published July 21, 2026",
       "usage": "Hegseth $37.5 billion as to-date at a Senate Appropriations hearing"
     },
     {
       "id": "centcom-epic-fury-2026-02-28",
       "group": "primary",
       "label": "CENTCOM Operation Epic Fury release, February 28",
-      "meta": " \u00b7 CENTCOM",
+      "meta": " · CENTCOM",
       "usage": "Launch date and 1:15 am ET start"
     },
     {
       "id": "sac-hearing-2026-07-21",
       "group": "primary",
       "label": "Senate Appropriations hearing, July 21",
-      "meta": " \u00b7 Senate Appropriations",
+      "meta": " · Senate Appropriations",
       "usage": "Date of Hegseth's $37.5 billion testimony"
     },
     {
       "id": "clerk-hconres-86-2026199",
       "group": "primary",
       "label": "House roll call 199, H.Con.Res. 86",
-      "meta": " \u00b7 House Clerk",
+      "meta": " · House Clerk",
       "usage": "June 3 hostilities vote"
     },
     {
       "id": "senate-floor-2026-06-23",
       "group": "primary",
       "label": "Senate floor activity, June 23",
-      "meta": " \u00b7 U.S. Senate",
+      "meta": " · U.S. Senate",
       "usage": "Senate agreement to H.Con.Res. 86, 50 to 48"
     },
     {
       "id": "house-budget-hconres-113-2026-07-22",
       "group": "official",
       "label": "House Budget Committee on H.Con.Res. 113",
-      "meta": " \u00b7 published July 22, 2026",
+      "meta": " · published July 22, 2026",
       "usage": "House opened a reconciliation path"
     },
     {
       "id": "clerk-hconres-93-2026307",
       "group": "primary",
       "label": "House roll call 307, H.Con.Res. 93",
-      "meta": " \u00b7 House Clerk",
+      "meta": " · House Clerk",
       "usage": "September 15 hostilities vote, 220 to 204"
     },
     {
       "id": "senate-dems-wrapup-2026-09-16",
       "group": "official",
       "label": "Senate Democrats wrap-up, September 16",
-      "meta": " \u00b7 published September 16, 2026",
+      "meta": " · published September 16, 2026",
       "usage": "H.Con.Res. 89 discharge by October 2"
     },
     {
       "id": "dodig-oef-listing",
       "group": "official",
       "label": "DoD IG listing for Operation Epic Fury",
-      "meta": " \u00b7 dated September 14, 2026",
+      "meta": " · dated September 14, 2026",
       "usage": "Release date of the quarterly report"
     },
     {
       "id": "brown-iran-war-energy-cost-2026-05-18",
       "group": "official",
       "label": "Brown Costs of War energy brief, May 18",
-      "meta": " \u00b7 Brown University",
+      "meta": " · Brown University",
       "usage": "Separate consumer fuel-cost estimate, not addable to Table 1"
     },
     {
       "id": "csis-last-rounds-2026-04",
       "group": "official",
       "label": "CSIS Last Rounds munitions analysis",
-      "meta": " \u00b7 CSIS, April 2026",
+      "meta": " · CSIS, April 2026",
       "usage": "CBO's most detailed public munitions source; current war versus future war"
     },
     {
       "id": "ap-un-iran-2026-09-17",
       "group": "coverage",
       "label": "Associated Press, September 17",
-      "meta": " \u00b7 published September 17, 2026",
+      "meta": " · published September 17, 2026",
       "usage": "U.N. fact-finding mission on Iranian civilians and the U.S. response"
+    },
+    {
+      "id": "ap-centcom-43-6b-2026-09-18",
+      "group": "coverage",
+      "label": "Associated Press, September 18, on the Central Command estimate",
+      "meta": " · published September 18, 2026, carried by U.S. News",
+      "usage": "the $43.6 billion as of September 3, the $28.1 billion munitions line, base damage excluded, the senators' letter, and the 18 dead in the casualty system"
+    },
+    {
+      "id": "wapo-centcom-43-6b-2026-09-18",
+      "group": "coverage",
+      "label": "The Washington Post, September 18, on the Central Command estimate",
+      "meta": " · published September 18, 2026; served only a subscription stub",
+      "usage": "not cited; listed so the reader knows it was tried"
+    },
+    {
+      "id": "reuters-troop-deaths-2026-09-18",
+      "group": "coverage",
+      "label": "Reuters, September 18, on the Washington Post's death count",
+      "meta": " · published September 18, 2026, carried by U.S. News",
+      "usage": "the at-least-22 count, the four above the public database, and Hegseth's denial"
+    },
+    {
+      "id": "crs-r42699-war-powers-2019-03-08",
+      "group": "primary",
+      "label": "CRS report R42699, The War Powers Resolution: Concepts and Practice",
+      "meta": " · Congressional Research Service, updated March 8, 2019",
+      "usage": "what a concurrent resolution is, the Chadha decision, and the joint-resolution route"
+    },
+    {
+      "id": "stripes-hegseth-2026-07-21",
+      "group": "coverage",
+      "label": "Stars and Stripes, July 21",
+      "meta": " · published July 21, 2026",
+      "usage": "Hegseth's $37.5 billion projected to September 30"
+    },
+    {
+      "id": "senate-isvp-approps-2026-07-21",
+      "group": "primary",
+      "label": "Senate Appropriations hearing video page, July 21",
+      "meta": " · U.S. Senate; served no transcript",
+      "usage": "not cited; the attempt to get Hegseth's exact words"
     }
   ],
   "primary_sources": [
@@ -954,6 +1105,13 @@
       "bytes": 275718,
       "sha256": "sha256:45ef52d6d642df46ee0054aad7bfd5f42fa3aa0f7fb22cf4fb547910d57f1560",
       "url": "https://costsofwar.watson.brown.edu/sites/default/files/Iran_War_Energy_Cost.pdf"
+    },
+    {
+      "id": "crs-r42699-war-powers-2019-03-08",
+      "path": "data/sources/iran-war/crs-r42699-war-powers-2019-03-08.pdf",
+      "bytes": 1743309,
+      "sha256": "sha256:8a1c59172c8c40a0ce997ef4d85c716163fa69a444e98c7977348c6e7a85c653",
+      "url": "https://www.congress.gov/crs_external_products/R/PDF/R42699/R42699.16.pdf"
     }
   ],
   "coverage_records": [
@@ -1022,24 +1180,48 @@
       "source_url": "https://apnews.com/article/un-human-rights-us-iran-99e690efd1e818e835d4f5a00e0d261b",
       "publisher": "Associated Press",
       "admission_row_hash": "sha256:affdc843f3636a6e4ae23a8dae7e61b1674d86fbd4d432ca44a90ec2e8ac5bd4"
+    },
+    {
+      "id": "ap-centcom-43-6b-2026-09-18",
+      "source_url": "https://www.usnews.com/news/politics/articles/2026-09-18/iran-wars-cost-grows-to-43-6-billion-in-new-us-military-estimate",
+      "publisher": "Associated Press",
+      "admission_row_hash": "sha256:5f7646c0ab5b2fed270cfc15f1a1201fee6a74572c92e98e8409fd62a5fcf4b0"
+    },
+    {
+      "id": "reuters-troop-deaths-2026-09-18",
+      "source_url": "https://www.usnews.com/news/world/articles/2026-09-18/us-troop-deaths-in-iran-war-exceed-pentagon-count-by-at-least-four-washington-post-reports",
+      "publisher": "Reuters",
+      "admission_row_hash": "sha256:c222d0c2ebb7096233aca0a758ab51d8cc6bf1a278d8cbfa4d4971a3cb90993e"
+    },
+    {
+      "id": "stripes-hegseth-2026-07-21",
+      "source_url": "https://www.stripes.com/theaters/us/2026-07-21/caine-hegseth-senate-hearing-iran-war-22330260.html",
+      "publisher": "Stars and Stripes",
+      "admission_row_hash": "sha256:a348f44eedc156062fbb776fdb1da98fa3c5a6c8f3b89d2b4a1c80f598a90844"
+    },
+    {
+      "id": "wapo-centcom-43-6b-2026-09-18",
+      "source_url": "https://www.washingtonpost.com/national-security/2026/09/18/iran-war-cost-is-now-least-436-billion-us-central-command-says/",
+      "publisher": "The Washington Post",
+      "admission_row_hash": "sha256:c6e8295f622b5eaa99471d5f08fd5b976ad25dfda0446d4df51c7a8e146dee2b"
     }
   ],
   "figures": [
     {
       "figure": "cbo_table1_total",
       "value": "38.1",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
-        "quote_span": "Comparing CBO\u2019s estimate ($38.1 billion) with"
+        "quote_span": "Comparing CBO’s estimate ($38.1 billion) with"
       },
-      "label": "CBO Table 1, Defense Department cost through August 1"
+      "label": "CBO's estimate of the added Defense Department cost through August 1"
     },
     {
       "figure": "cbo_summary_38",
       "value": "38",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1050,7 +1232,7 @@
     {
       "figure": "cbo_munitions",
       "value": "21.7",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1061,7 +1243,7 @@
     {
       "figure": "cbo_interceptors",
       "value": "13.1",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1072,7 +1254,7 @@
     {
       "figure": "cbo_cruise",
       "value": "7.3",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1083,7 +1265,7 @@
     {
       "figure": "cbo_flying_hours",
       "value": "10.4",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1094,7 +1276,7 @@
     {
       "figure": "cbo_fuel",
       "value": "2.7",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1105,7 +1287,7 @@
     {
       "figure": "cbo_equipment",
       "value": "1.9",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
@@ -1116,13 +1298,90 @@
     {
       "figure": "cbo_monthly_low",
       "value": "2",
-      "unit": "USD billions",
+      "unit": "billion dollars",
       "kind": "sourced",
       "source": {
         "source_id": "cbo-62756-iran",
         "quote_span": "an additional month of conflict would cost $2 billion"
       },
       "label": "extra month at May and June intensity"
+    },
+    {
+      "figure": "admin_supplemental_total",
+      "value": "87.6",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "omb-supplemental-2026-06-24",
+        "quote_span": "a request for $87.6 billion in"
+      },
+      "label": "June 24 supplemental request, all agencies"
+    },
+    {
+      "figure": "admin_dod_request",
+      "value": "67.1",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "omb-supplemental-2026-06-24",
+        "quote_span": "$67.1 billion for the Department of War"
+      },
+      "label": "June 24 request, Defense Department slice"
+    },
+    {
+      "figure": "cbo_direct_related",
+      "value": "42.3",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "cbo-62756-iran",
+        "quote_span": "$42.3 billion"
+      },
+      "label": "CBO reading of the request tied to the fighting"
+    },
+    {
+      "figure": "hegseth_37_5",
+      "value": "37.5",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "cbo-62756-iran",
+        "quote_span": "$37.5 billion"
+      },
+      "label": "Hegseth's cost figure to the Senate Appropriations Committee, July 21, through September 30"
+    },
+    {
+      "figure": "ig_33_4",
+      "value": "33.4",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dod-ig-oef-q3-2026-09-09",
+        "quote_span": "$33.4 billion as of June 29"
+      },
+      "label": "Defense Department estimate quoted by its inspector general, as of June 29"
+    },
+    {
+      "figure": "centcom_43_6",
+      "value": "43.6",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "ap-centcom-43-6b-2026-09-18",
+        "quote_span": "$43.6 billion as of Sept. 3"
+      },
+      "label": "Central Command's count given to Congress, as of September 3, as AP reported it"
+    },
+    {
+      "figure": "centcom_munitions_28_1",
+      "value": "28.1",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "ap-centcom-43-6b-2026-09-18",
+        "quote_span": "$28.1 billion in U.S. Central Command’s estimate"
+      },
+      "label": "munitions in Central Command's count, as AP reported it"
     },
     {
       "figure": "cbo_pce_2027q1",
@@ -1145,61 +1404,6 @@
         "quote_span": "added 2.3 percentage points"
       },
       "label": "energy add to second-quarter inflation"
-    },
-    {
-      "figure": "admin_supplemental_total",
-      "value": "87.6",
-      "unit": "USD billions",
-      "kind": "sourced",
-      "source": {
-        "source_id": "omb-supplemental-2026-06-24",
-        "quote_span": "a request for $87.6 billion in"
-      },
-      "label": "June 24 supplemental request, all agencies"
-    },
-    {
-      "figure": "admin_dod_request",
-      "value": "67.1",
-      "unit": "USD billions",
-      "kind": "sourced",
-      "source": {
-        "source_id": "omb-supplemental-2026-06-24",
-        "quote_span": "$67.1 billion for the Department of War"
-      },
-      "label": "June 24 request, Defense Department slice"
-    },
-    {
-      "figure": "cbo_direct_related",
-      "value": "42.3",
-      "unit": "USD billions",
-      "kind": "sourced",
-      "source": {
-        "source_id": "cbo-62756-iran",
-        "quote_span": "$42.3 billion"
-      },
-      "label": "CBO reading of the request tied to the fighting"
-    },
-    {
-      "figure": "hegeseth_37_5",
-      "value": "37.5",
-      "unit": "USD billions",
-      "kind": "sourced",
-      "source": {
-        "source_id": "cbo-62756-iran",
-        "quote_span": "$37.5 billion"
-      },
-      "label": "Hegseth cost figure, July 21 Senate Appropriations"
-    },
-    {
-      "figure": "ig_33_4",
-      "value": "33.4",
-      "unit": "USD billions",
-      "kind": "sourced",
-      "source": {
-        "source_id": "dod-ig-oef-q3-2026-09-09",
-        "quote_span": "$33.4 billion as of June 29"
-      },
-      "label": "inspector general Defense Department cost as of June 29"
     },
     {
       "figure": "days_feb28_to_aug1",
@@ -1294,6 +1498,30 @@
       "plain": "The inspector general cites DCAS. Capture served only a title.",
       "record_id": "dcas-oefu-bymonth",
       "status": "missing: the page served only the title Defense Casualty Analysis System"
+    },
+    {
+      "need": "Central Command September 3 estimate",
+      "plain": "The $43.6 billion breakdown to Congress. AP's dispatch carries the total, the munitions line, and the base exclusion; the Post's page served only a stub, and the Post's operational and equipment lines are not in any record here.",
+      "record_id": "ap-centcom-43-6b-2026-09-18",
+      "status": "partly have"
+    },
+    {
+      "need": "Hegseth's exact words on July 21",
+      "plain": "Whether he said to date or through the fiscal year. The Senate video page served no transcript; Stars and Stripes reports the projection to September 30.",
+      "record_id": "senate-isvp-approps-2026-07-21",
+      "status": "missing: the Senate video page served no transcript; the wording rests on Stars and Stripes and CBO's letter"
+    },
+    {
+      "need": "Washington Post casualty report",
+      "plain": "The at-least-22 count. Reuters's dispatch is the record; the Post's internal-records story was not fetched.",
+      "record_id": "reuters-troop-deaths-2026-09-18",
+      "status": "have"
+    },
+    {
+      "need": "New York Times report on the Central Command estimate",
+      "plain": "Named in the patch list; no URL for it was found by search, and nytimes.com refuses fetches.",
+      "record_id": "ap-centcom-43-6b-2026-09-18",
+      "status": "missing: no New York Times URL located; the AP dispatch covers the same document"
     }
   ],
   "authored_sections": [
@@ -1309,7 +1537,7 @@
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "Patch captures through the registry: CENTCOM launch, Senate Appropriations July 21 hearing, House and Senate hostilities votes, House Budget H.Con.Res. 113, DoD IG listing, Brown energy brief, CSIS Last Rounds, AP U.N. mission; DCAS served only a title."
+      "evidence": "Patch captures through the registry: CENTCOM launch, Senate Appropriations July 21 hearing, House and Senate hostilities votes, House Budget H.Con.Res. 113, DoD IG listing, Brown energy brief, CSIS Last Rounds, AP U.N. mission; DCAS served only a title. Round 3: AP and Reuters September 18 dispatches via U.S. News, Stars and Stripes July 21, CRS R42699 from congress.gov; the Washington Post served a stub and the Senate video page served no transcript."
     },
     "derived_numbers_computed": {
       "done": true,
@@ -1317,7 +1545,7 @@
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "Reuters monthly path remains mislabeled; its July 21 Hegseth date checks out against the hearing page. NBC's more-than-40-percent share checks out as arithmetic from CBO's two printed inputs. Reuters June 19 and $184 million checked against the inspector general."
+      "evidence": "Reuters mislabels the inspector general's date and what its total includes; its $3 billion month is one of CBO's two paths. ABC's end-of-July wording is consistent with CBO's August 1 cutoff. Military Times's to date is unconfirmed against Stars and Stripes and CBO's through-September wording. NBC's share checks out as arithmetic from CBO's two inputs."
     },
     "section_grammar": {
       "done": true,
@@ -1325,7 +1553,7 @@
     },
     "chip_vocabulary": {
       "done": true,
-      "evidence": "Outlet chips are mislabeled, checks out, and the closed set only."
+      "evidence": "Chips are mislabeled, unconfirmed, consistent, checks out, and single outlet, from the closed set; the count line carries a one-line key."
     },
     "live_elements_guarded": {
       "done": true,
