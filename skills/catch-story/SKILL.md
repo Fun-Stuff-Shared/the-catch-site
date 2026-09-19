@@ -51,7 +51,7 @@ financial terms appear first as the pin's word in quotation marks, then in every
 The shape: the headline states the most important change, with the number when the number
 is the change; the dek adds the two facts a stranger needs to read on; What happened opens
 on the clean model (what happened and what it means) and goes one level deeper per
-paragraph, one mechanism sentence per new term at first use, three to six paragraphs; the
+paragraph, a term explained only where the sentence leaning on it would otherwise be misread and then as its consequence in this story (`references/writing.md`), three to six paragraphs; the
 catch, when a record contradicts the wrong reading, right after the section that
 establishes the concept the wrong reading depends on; then the sections the question tree
 asks for, in its order, and none it does not; quotes as cards, each introduced by the
@@ -83,9 +83,11 @@ recompute, a record with no registry run id and no `capture_status`, a `Cite` th
 not resolve, a number typed into a table cell, em dashes, internal vocabulary, custody
 talk, schedule codes and statute paragraph codes in prose, jammed inline tags, a story
 with no manifest. The voice lint fails on a sentence that names the reader or narrates the
-page's own method outside the proof layer, and lists the sentences a stranger reads as
-machine voice (a mirrored antithesis, a section wrap-up, a gloss on what to take away) for
-a reread. A lint finding is a defect on the page, never a lint to silence. The interrogation
+page's own method outside the proof layer, and lists for a reread the sentences a stranger
+reads as machine voice: the seven questions in `scripts/voice_lint.py` (a description of
+the page or its method, a mirrored antithesis, a section wrap-up, a gloss on what to take
+away, a document as the subject where the fact could stand alone, an explanation nobody
+asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. The interrogation
 is a model with web and X search listing what the page does not cover: every item is fixed
 from the pins, admitted and fixed, or written on the page as a dated absence after one
 attempt, in the same run; an item that names a public record is a fetch, not a decline.
@@ -138,11 +140,13 @@ files in the repo.
 
 ## After you commit: what happens to the page
 
-Two reads run on your story commit, in parallel: a red team reads the page against the
+Three reads run on your story commit, in parallel: a red team reads the page against the
 reader model and grades every omission by the grades (an omitted A or B is a Major; a C
 or D the reader shows changes an answer is a Major against the grade; an omitted C is
-Minor; D is not a finding), and a codex pass judges every cited sentence against its
-passage. The completeness audit does not run again: it ran on the record commit and its
+Minor; D is not a finding), a codex pass judges every cited sentence against its
+passage, and a stranger read (a Claude reader that has never seen the project, given the
+page as the story view reads it and the reader model) reports where it misread, stalled,
+or saw the page talking to itself. The completeness audit does not run again: it ran on the record commit and its
 findings are already in your reader model. The reviewer verifies the findings at the
 bytes, refutes what the pins refute, and sends you the rest as one numbered patch list;
 every numbered finding gets a ledger line (patched, held with reason, out of scope with
@@ -151,8 +155,8 @@ sentence: run the entailment check with `--since` the commit the patch started f
 fix what it finds before you return, and run the lints again. Fix each item's class across
 the whole page, not only the named line, and report the sibling count per class.
 
-After each round the reviewer reads the patched page and either sends the next numbered
-list or decides on the page as it stands: cut the sentence, hold the item with its reason on
+After each round the reviewer reads the patched page, reruns the stranger read on it, and
+either sends the next numbered list or decides on the page as it stands: cut the sentence, hold the item with its reason on
 the ledger, or kill the story. Before the push, the reviewer re-runs the capture search on the story terms dated on or
 after your run and dispositions the results in the ledger.
 

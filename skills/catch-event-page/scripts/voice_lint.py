@@ -46,9 +46,15 @@ FIRST_PERSON = re.compile(r"(?:(?:^|[,;:]\s+|\b(?:and|but|so|then|when|after|bef
 capitalized word is a proper name (Our World in Data); I before a hyphenated number is a route (I-95); a bare I
 counts only where a sentence or clause starts, so Title I and Article I are not pronouns."""
 SELF_PAGE = re.compile(r"\bthis page\b(?! of\b)", re.I)
-TIMESTAMPED_ABSENCE = re.compile(r"\bat the time of (this )?writing\b|\bas of (the )?[A-Z]?[a-z]*\.? ?\d{0,2},? ?(\d{4})?[^.;]{0,80}\b(had|has|have|was|were|did|does|do) (not|no|yet)\b", re.I)
-"""A dated news page's own date is its frame; "as of <date> X had not happened" is the record turn's note. When a
-record gives the date X is due, the sentence is the due date."""
+FRAME = r"(?:(?<!\beffective )\bas of (?:the )?[a-z]*\.? ?\d{0,2},? ?(?:\d{4})?|\bin the (?:records|documents|filings|pins|material)s? (?:saved|captured|read|checked|available)\b)"
+SAME_CLAUSE = r"(?:(?!,\s*(?:but|and|while|though|yet|whereas)\b)[^.;]){0,80}?"
+ABSENT = r"\b(?:(?:had|has|have|was|were)(?:n't| not| never)(?: yet| still)? (?:been )?\w+(?:ed|en|t)\b|no \w+(?: \w+)? (?:had|has|have|was|were)(?: yet)? (?:been )?\w+(?:ed|en|t)\b|(?:had|has|have) yet to\b|remain(?:s|ed)? (?:un\w+|absent|missing|outstanding|open)\b|(?:did|does|do)(?:n't| not)(?: yet)? (?:exist|appear|list|show|name|include|mention|contain|carry|give)\b)"
+TIMESTAMPED_ABSENCE = re.compile(r"\bat the time of (?:this )?writing\b|" + FRAME + SAME_CLAUSE + ABSENT, re.I)
+"""A dated news page's own date is its frame; "as of <date> X had not happened" and "in the records saved <date>" are
+the record turn's note. When a record gives the date X is due, the sentence is the due date. The absence must be a
+negated state verb (had not been published, remain unpublished, no minutes had issued, has yet to rule) in the same
+clause as the frame; "as of Friday the rate was not 4 percent" negates a value, and an effective date ("effective as of
+September 8") is a positive fact, so neither is a hit."""
 THRESHOLDS = {"self_description": 0.86, "mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67, "source_subject": 0.65, "unprompted": 0.52, "dictionary": 0.33}
 """Reread thresholds at specificity 0.95 from --calibrate on 2026-09-19 (design/voice-calibrate-2026-09-19b.txt): source_subject
 AUC 0.95, recall 8/10; dictionary AUC 1.00, recall 8/8, and the label file's highest-scoring "clean" rows are dictionary lines
@@ -123,7 +129,13 @@ SECTION_TITLE = "What we do not know yet"  # the toolkit's fixed heading for the
 
 
 BATCH = 20
-REREAD = 10  # the ten highest-scoring sentences on a page are worth a reread, plus the top two of any question the ten leave out; a longer list is noise
+REREAD = 10  # the ten highest-scoring sentences on a page, plus the top two of any question those ten leave out; a longer list is noise
+
+
+def reread_list(reviews):
+    """The rows the reread list prints: the top REREAD, then two per question absent from them, in question order."""
+    top = reviews[:REREAD]
+    return top + [h for q in QUESTIONS if not any(h[0] == q for h in top) for h in [h for h in reviews[REREAD:] if h[0] == q][:2]]
 
 
 def score(client, qs, sents, subject):
@@ -209,9 +221,9 @@ def main(paths):
     with TypeSafeClient(api_key=key, model="jev-latest", timeout=120) as client:
         for path in paths:
             fails, reviews = lint(path, client); total += len(fails)
-            print(f"{path}: {len(fails)} failing sentence(s), {min(len(reviews), REREAD)} to reread")
+            shown = reread_list(reviews)
+            print(f"{path}: {len(fails)} failing sentence(s), {len(shown)} to reread")
             for k, score, sen in fails: print(f"  FAIL [{k}] {WHY[k]}: {sen}")
-            shown = reviews[:REREAD] + [h for q in QUESTIONS for h in [h for h in reviews[REREAD:] if h[0] == q][:2] if not any(h[0] == q for h in reviews[:REREAD])]
             for k, score, sen in shown: print(f"  reread [{k} {score}] {WHY[k]}: {sen}")
     return 1 if total else 0
 

@@ -27,7 +27,7 @@ dispatch, the reads, the decision, staging, the push.
 | audit | reviewer | `completeness_audit.sh` on the record commit | `checks/audits/<story>-<date>-record-audit.md`; runs once per story |
 | 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), grades, sections, outline |
 | 3 | `skills/catch-story` | `finish.sh <story> story` | the page, manifest, interrogation, entailment verdict |
-| review | reviewer | red team + entailment in parallel, one patch list | the patch commit, then the decision |
+| review | reviewer | red team + entailment + stranger read on the story commit; a numbered patch list per round until the reviewer decides | patch commits, then the decision: cut, hold, or kill |
 
 Repo: `/Volumes/4/GitHub/the-catch-site`. Shared by every turn: `scripts/` (finish, the
 lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
@@ -51,17 +51,18 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    re-dispatching turn two with the correction, never later on prose.
 5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
 6. **Three reads on the story commit, in parallel:** `scripts/red_team.sh`,
-   `scripts/entailment_check.sh`, and the stranger read: one Claude subagent given the
-   served page text and the reader model, with the prompt in
-   `references/stranger-read.md`, returning what a stranger misreads, stalls on, or sees
-   as the page talking to itself. Verify every finding at the bytes; refute what the pins
-   refute; send the rest as one numbered patch list. The stranger's findings go in the
-   same list as the red team's, never in a later round.
+   `scripts/entailment_check.sh`, and the stranger read: `scripts/stranger_read.sh
+   <subject>/<slug> [port]`, one Claude reader given the page as the story view reads it
+   and the reader model, returning what a stranger misreads, stalls on, or sees as the
+   page talking to itself (`references/stranger-read.md`). Verify every finding at the bytes; refute what the pins
+   refute; send the rest as one numbered patch list. The stranger's findings from this read
+   go in the same list as the red team's, not held back for a later round.
 7. **Patch rounds.** The author patches, runs entailment `--since` the commit the round
-   started from and the lints, commits. The reviewer reads the patched page and either
-   sends the next numbered list or decides: cut a sentence, hold an item with its reason on
-   the ledger, or kill the story. Rounds are not capped; each is timed from its run markers.
-9. **Before the push:** re-run the capture search on the story terms dated on or after the
+   started from and the lints, commits. The reviewer reads the patched page, reruns the
+   stranger read on it (`scripts/stranger_read.sh`), and either sends the next numbered
+   list or decides: cut a sentence, hold an item with its reason on the ledger, or kill the
+   story. Rounds are not capped; each is timed from its run markers.
+8. **Before the push:** re-run the capture search on the story terms dated on or after the
    run and disposition the results; refresh the state views for the event and commit them;
    hosted-style build from a git archive with `CATCH_STATE_SOURCE=/nonexistent`; a STAGED
    row with a ships-by date; then push on a human's word and verify the live bytes

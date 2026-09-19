@@ -52,6 +52,15 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">At the time of writing no ruling had issued in the appeal.</p>
  <p data-layer="fact">Finance Canada said the countermeasures would be effective as of 12:01 a.m. on September 8.</p>
  <p data-layer="fact">The minutes of the September meeting are due October 7 under the committee's calendar.</p>
+ <p data-layer="narrative">As of September 19 the minutes remain unpublished.</p>
+ <p data-layer="narrative">As of September 19, no minutes had been published.</p>
+ <p data-layer="narrative">As of September 19 the minutes hadn't been published.</p>
+ <p data-layer="narrative">In the records saved September 19 the transcript had not appeared.</p>
+ <p data-layer="fact">The order was effective as of September 8, but the permit had not expired.</p>
+ <p data-layer="fact">As of Friday the rate was 4 percent.</p>
+ <p data-layer="fact">As of Friday the rate was not 4 percent.</p>
+ <p data-layer="fact">As of September 19, the committee had 12 voting members.</p>
+ <p data-layer="fact">The court's docket for this case through September 19 holds no filing of that kind.</p>
  <p data-layer="fact">Von der Leyen, in the press release: "Greenland can count on the EU. That was my message during my last visit. Today, I am back to deliver the real results of our close cooperation," and the release is dated September 7.</p>
  <h2 data-layer="fact">What we do not know yet</h2>
  <h2 data-layer="fact">What we found in the docket</h2>
@@ -81,6 +90,7 @@ def fails_for(html):
 judged = []
 hits = fails_for(PAGE)
 text = " | ".join(s for _, s in hits)
+REV = [("mirrored", 0.9 - i * 0.01, f"m{i}") for i in range(10)] + [("dictionary", 0.5, "d1"), ("dictionary", 0.4, "d2"), ("dictionary", 0.3, "d3")]
 checks = [
     ("plain fact sentence passes", "first increase since 2023" not in text),
     ("reader address fails", any(k == "reader" and "A reader who stops" in s for k, s in hits)),
@@ -138,6 +148,17 @@ checks = [
     ("'at the time of writing' fails", any(k == "timestamped_absence" and s.startswith("At the time of writing") for k, s in hits)),
     ("an effective date written as 'as of' passes", "12:01 a.m." not in text),
     ("a due date passes", "due October 7" not in text),
+    ("'remain unpublished' after a date fails", any(k == "timestamped_absence" and "remain unpublished" in s for k, s in hits)),
+    ("a negator before the verb fails", any(k == "timestamped_absence" and "no minutes had been" in s for k, s in hits)),
+    ("a contraction fails", any(k == "timestamped_absence" and "hadn't" in s for k, s in hits)),
+    ("'in the records saved' fails", any(k == "timestamped_absence" and s.startswith("In the records saved") for k, s in hits)),
+    ("an effective date with an unrelated negation passes", "permit had not expired" not in text),
+    ("a dated rate passes", "was 4 percent" not in text),
+    ("a dated negated value passes", "was not 4 percent" not in text),
+    ("a dated positive count passes", "12 voting members" not in text),
+    ("a bounded absence with no frame word passes", "holds no filing" not in text),
+    ("the reread list is the top ten plus two per question left out", (lambda r: len(r) == 12 and r[:10] == REV[:10] and [h[0] for h in r[10:]] == ["dictionary", "dictionary"])(vl.reread_list(REV))),
+    ("a question inside the top ten gets no extra rows", len(vl.reread_list(REV[:3])) == 3),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

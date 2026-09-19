@@ -19,9 +19,12 @@
    `<figure class="story-figure" data-layer="fact">` with a figcaption and a one-sentence
    `chart-source` line; the `chart-vintage` line is `proof`. A series the story states in one
    sentence needs no figure. A story with dated steps has a chronology table.
-3. **One mechanism sentence per introduced term, inline, at first use.** Independent
-   expenditure, 48-hour notice, connected TV, margin of error, seasonal adjustment, Global
-   Gateway: one sentence in everyday words, in the paragraph that first leans on the term.
+3. **A term is explained only where the sentence that leans on it would be misread without
+   the explanation, and the explanation is what the term does in this story.** Independent
+   expenditure, 48-hour notice, connected TV, margin of error, Global Gateway: the
+   consequence in everyday words, inside the sentence that first leans on the term, never a
+   glossary line; a term whose omission would mislead no one is used bare or not at all
+   (`writing.md`, which words need introducing).
 4. **A section answers the question written beside it in the reader model, and ends when the
    answer is complete.** A closing sentence that weighs, sums up, or tells the stranger what
    to take from the section is cut; `voice_lint.py` lists them. A section that ends on a
