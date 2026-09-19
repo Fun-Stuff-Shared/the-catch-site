@@ -260,3 +260,12 @@ Facts the avatar items asked for that the pins do not hold: none invented. The f
 - `lens_lint`: clean. `quote_lint`: clean after two fixes (the "wafer-thin reed" span, which the pin prints inside its own quotation marks; the ABC card, which had quoted the order's words rather than ABC's).
 - Browser at 1280 wide, story mode: 4 figures, 3 quote cards, 28 fact blocks, 0 proof blocks visible; the first screen is the headline, the dek and the mode switcher. Story column height 14,063 px including the records list and the state block (which prints every registered figure); 11,236 px from the top of the story to the records list, above the 9,000 px guide; the narrative paragraphs total 2,075 words.
 - Reader-facing delta: the dek and first screen now say what the rule required, what the Court refused, and what it did not decide; the page carries the Postal Service's September 17 and 18 statements that it has stopped work on the portal and is not enforcing the rule for 2026.
+
+### Entailment audit r3 (checks/audits/...-2026-09-18-r3-entailment.md), fixes 2026-09-18
+
+1. Major, catch 4: census recounted at every coverage pin (grep for Nichols, "Sunday", "second", "Washington", "D.C." over the 13 text pins, then each hit read): Politico and BBC name Nichols; CBS line 24 ("also blocked the mail-in ballot rules on Sunday") and Roll Call line 25 ("a second district court judge in Washington") describe the order without his name. Four of thirteen mention it; nine do not (WIRED, Examiner, ABC, CNBC x2, SCOTUSblog, AP x2, NPR). Heading and list corrected; the four positives cited.
+2. Major, who-wrote-what chart line: rewritten from the two passages; Kavanaugh "at least a fair prospect", Alito "The Postal Service has broad authority to"; they part on 2026 timing and on the pause.
+3. Moderate, claim check: "the appeals courts" replaced with the government's appeal of Talwani's order, pending in the First Circuit, cited to the application ("applicants promptly appealed the district court's order").
+4. Moderate, Trump posts: BBC pin cite attached ("Republicans just got another bad decision", BBC line 6).
+5. Count sentence: counts and error categories cut; the sentence is now a fact-layer method line (the verdict key) with no cite.
+Minors: Three things 1 and What happened para 1 now also cite Talwani's order (the record that identifies the injunction as the Postal Service rule's and names the judge); catch 2 no longer says WIRED and CNBC drew the same inference, it says what each pin does.
