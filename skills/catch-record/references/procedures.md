@@ -120,8 +120,9 @@ never paraphrased:
 What the registry's own fetcher can and cannot reach (not an invitation to fetch outside it):
 
 - `scrapling` chrome impersonation, which is what `capture` uses, served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
-- Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
-- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in the records list and in the ledger's recovery paragraph, quote the carrier's bytes.
+- reuters.com and nytimes.com are credentialed sources in the registry (`capture credentials` lists them with their cookie files): `capture news <url>` serves their article bodies, and the six-hourly wire sweep already holds most Reuters and Times pieces from the last days, so run `capture search "<slug words>"` first and pin the held text. A refusal from either host is a stale cookie file, not a blocked host; report it as such.
+- Blocked in every mode: cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal, wsj.com and ft.com (no credential file yet). archive.org had no snapshot for any CBO page tried.
+- Carrier copies carry the same text for the hosts still blocked: WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in the records list and in the ledger's recovery paragraph, quote the carrier's bytes.
 - Sequential retries succeed where parallel coverage fetches fail.
 
 ```bash
