@@ -242,7 +242,7 @@ export const timeline = [
   { date: "Sep 14", title: "Inspector general report is posted", sub: `Quotes a $${ig.total} billion department estimate as of June 29` },
   { date: "Sep 15", title: "CBO's letter to Boyle", sub: "Nineteen pages, three tables", current: true },
   { date: "Sep 15", title: "House votes again to end U.S. involvement", sub: `${votes.hconres93HouseYea} to ${votes.hconres93HouseNay}` },
-  { date: "Sep 18", title: "Central Command's $43.6 billion reaches Congress", sub: "As of September 3, reported by AP" },
+  { date: "Sep 18", title: "AP reports Central Command's $43.6 billion", sub: "As of September 3, in a one-page breakdown to lawmakers" },
 ];
 
 export const homeTable = [
