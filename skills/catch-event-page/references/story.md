@@ -29,7 +29,9 @@ the reader the first paragraph is written for.
 
 `## Exiting`: the seven answers below, one sentence each in everyday words, each with the
 record id that supports it. This is what the reader knows when they leave. An answer with
-no record is a gap line in the working note, graded, for the story turn to admit.
+no record is a gap line in the working note, graded, for the story turn to admit, and so is
+every record-audit finding that cites a document outside the manifest: the grade is what the
+document does for the answers, and the story turn admits every A and B before it writes.
 
 `## Grades`: every passage-table line and gap-list line with its grade A to D and, for A
 and B, the answer it serves.

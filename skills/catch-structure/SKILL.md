@@ -45,7 +45,13 @@ story is long enough to need one, an outline of which passages each section draw
 file is what the story communicates, decided before any sentence exists. The story view
 will carry A and B material only; C and D stay in the detail blocks, the proof and the
 records list. An answer with no record is a gap line in the working note, graded, for the
-story turn to admit. Then one command ends the turn:
+story turn to admit. The record audit is the main source of those lines: every finding that
+cites a document outside the manifest (a BLS release, a set of minutes, a speech, an outlet's
+next-day report) goes into the working note's "Not admitted this run" list as one line with
+the audit's link, and its grade is the grade of what the document does for the seven answers,
+not of the fact that nobody has pinned it yet. A gap graded A or B is a record the story turn
+admits before it writes; a gap typed as an unknown on the page while a named document fills
+it is a defect. Then one command ends the turn:
 
 ```bash
 skills/catch-structure/scripts/finish.sh <subject>/<story> structure
@@ -59,5 +65,6 @@ so there is no build. The reviewer reads that file before the story turn is disp
 - [ ] `checks/reader-models/<subject>--<story>.md` has Entering, Exiting (seven answers, each with a record id), Grades (every passage-table line, gap line and record-audit finding), Sections (each with its question, in the reader's order), and an Outline when the story needs one.
 - [ ] Every A and B names the answer it serves; the story view will carry A and B only.
 - [ ] An answer with no record is a gap line in the working note, graded; you admitted nothing.
+- [ ] Every record-audit finding that cites a document outside the manifest is a gap line with that link and a grade; none of them is graded C because it is not yet pinned.
 - [ ] `finish.sh <subject>/<story> structure` printed the commit.
 - [ ] The report is the Entering paragraph, the seven answers, the section list and the commit hash.
