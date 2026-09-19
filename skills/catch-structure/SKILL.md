@@ -37,7 +37,7 @@ passage tables, the gap dispositions, the record audit
 (`checks/audits/<subject>--<story>-<date>-record-audit.md`, when it exists: each of its
 findings is a passage to grade A to D or a census gap to write into the working note) and the
 built page, and writes one file, `checks/reader-models/<subject>--<story>.md` (`mkdir -p
-checks/reader-models` first), in the shape `skills/catch-structure/references/story.md` gives: what a stranger
+checks/reader-models` first), in the shape of `assets/reader-model.md` and `references/story.md`: what a stranger
 enters knowing, what they exit knowing (the seven answers, each with its record id), a
 grade A to D on every passage-table line and gap-list line, the section list from
 `references/sections.md` with the question each section answers, and, when the
