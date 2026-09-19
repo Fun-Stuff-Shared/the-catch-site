@@ -9,6 +9,7 @@ const evidence = new Map((view.evidence ?? []).map((row) => [row.id, row]));
 const occurrences = new Map((view.occurrences ?? []).map((row) => [row.id, row]));
 const documents = (view.edges ?? []).filter((edge) => edge.label === "cites" && edge.accepted !== false && edge.refusal == null && !edge.retire);
 const slots = Object.entries(view.current_state ?? {});
+const labelFor = (name) => figureLabel(eventPath(event.id), name) ?? (view.follows ? figureLabel(eventPath(view.follows), name) : null) ?? (name === 'nonfarm_payroll_revision_may_june' ? 'Payroll revisions for May and June' : slotLabel(name));
 const retirementReason = ({ no_accepted_occurrence: "No supported facts were recorded.", unfinished_legacy_identity: "The entry was incomplete." })[view.reason] ?? view.reason;
 const sourcePath = (source) => {
   const hash = (value) => String(value ?? '').replace(/^sha256:/, '');
@@ -23,7 +24,7 @@ const sourcePath = (source) => {
           const source = evidence.get(occurrences.get(slot.occurrence_id)?.evidence_id);
           const href = source ? sourcePath(source) : null;
           const computed = slot.figure?.kind === "computed";
-          const label = figureLabel(eventPath(event.id), slot.slot) ?? (slot.slot === 'nonfarm_payroll_revision_may_june' ? 'Payroll revisions for May and June' : slotLabel(slot.slot));
+          const label = labelFor(slot.slot);
           return <article class="ledger-row" data-state-slot={id}>
             <h3>{label}</h3>
             {slot.figure && <strong class="ledger-value" data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong>}
@@ -47,9 +48,9 @@ const sourcePath = (source) => {
       </details>}
       {view.follows && <section data-layer="fact"><h2>Since the previous story</h2>
         <p><a href={eventPath(view.follows)}>Read the previous story</a></p>
-        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{slotLabel(change.name)}: <strong data-state-figure={change.previous.occurrence_id} data-state-figure-event={view.follows} data-figure-value={String(change.previous.value)} data-figure-unit={change.unit}>{figureText(change.previous.value, change.unit)}</strong> previously; <strong data-state-figure={change.current.occurrence_id} data-figure-value={String(change.current.value)} data-figure-unit={change.unit}>{figureText(change.current.value, change.unit)}</strong> in this story. <span data-source-copy>{change.current.sentence}</span></p>)}
-        {(view.same_name_not_compared ?? []).map((change) => <p>{slotLabel(change.name)}: {change.reason}</p>)}
-        {(view.new_slots ?? []).map((slot) => <p>{slotLabel(slot.name)}: first tracked in this story. <span data-source-copy>{slot.sentence}</span></p>)}
+        {(view.changed_since_previous ?? []).map((change) => <p data-state-comparison>{labelFor(change.name)}: <strong data-state-figure={change.previous.occurrence_id} data-state-figure-event={view.follows} data-figure-value={String(change.previous.value)} data-figure-unit={change.unit}>{figureText(change.previous.value, change.unit)}</strong> previously; <strong data-state-figure={change.current.occurrence_id} data-figure-value={String(change.current.value)} data-figure-unit={change.unit}>{figureText(change.current.value, change.unit)}</strong> in this story. <span data-source-copy>{change.current.sentence}</span></p>)}
+        {(view.same_name_not_compared ?? []).map((change) => <p>{labelFor(change.name)}: {change.reason}</p>)}
+        {(view.new_slots ?? []).map((slot) => <p>{labelFor(slot.name)}: first tracked in this story. <span data-source-copy>{slot.sentence}</span></p>)}
       </section>}
       <RevisionTimeline timeline={view.revision_timeline} occurrences={view.occurrences} />
       {documents.length > 0 && <section data-layer="proof"><h2>Documents</h2><ul>{documents.map((edge) => {
