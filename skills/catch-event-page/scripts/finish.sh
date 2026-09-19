@@ -18,6 +18,7 @@ manifest="checks/manifests/$subject--$slug.json"
 if [ $commit = 1 ] && ! git diff --cached --quiet; then
   echo "the index already holds staged files; commit or unstage them first:" >&2; git diff --cached --name-only >&2; exit 2
 fi
+generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\.finish-build\.log$)'
 
 node skills/catch-event-page/scripts/sources_ledger.mjs "$manifest" || exit 1
 echo "== build"; npm run build > .finish-build.log 2>&1 || { tail -40 .finish-build.log; echo "BUILD FAILED (full log: .finish-build.log)"; exit 1; }
@@ -50,8 +51,18 @@ paths=()
 while IFS= read -r -d '' f; do paths+=("$f"); done < <(
   printf '%s\0' "${owned[@]}" | sort -zu | while IFS= read -r -d '' f; do
     [ -e "$f" ] || continue
+    printf '%s' "$f" | grep -Eq "$generated" && { echo "refusing a generated path the page or manifest names: $f" >&2; continue; }
     if [ -n "$(git status --porcelain --untracked-files=all -- "$f")" ]; then printf '%s\0' "$f"; fi
   done)
+
+# One author, one story, one clean worktree: any other change in the tree is a mistake to
+# resolve, never something to commit alongside or leave behind silently.
+stray=$(git status --porcelain --untracked-files=all | cut -c4- | grep -Ev "$generated" | grep -Ev '\.md\.err$' \
+  | grep -Fvx -f <(printf '%s\n' "${paths[@]}") || true)
+if [ -n "$stray" ]; then
+  echo "the tree holds changes outside this story; revert them or commit them yourself first:" >&2
+  printf '  %s\n' $stray >&2; exit 2
+fi
 [ ${#paths[@]} -gt 0 ] || { echo "nothing to commit"; exit 0; }
 echo "== files"; printf '  %s\n' "${paths[@]}"
 [ $commit = 1 ] || { echo "(--no-commit: stopping here)"; exit 0; }
