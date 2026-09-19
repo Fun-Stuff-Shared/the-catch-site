@@ -145,8 +145,9 @@ skills/catch-event-page/scripts/finish.sh <subject>/<story> record
 
 It adds the ledger rows for your pins, builds through the gate, runs the three lints and
 commits this story's files and nothing else. Fix what it reports on the page and run it
-again until it prints the commit; it also stops on any change in the tree outside this
-story, because a worktree holds one story. The story view of this build is headline, dek, KPI strip, figures, chronology
+again until it prints the commit. It also stops on any change in the tree outside this
+story, and on a change to the homepage, the story index, the ledger or the route list whose
+lines do not name this story, because a worktree holds one story. The story view of this build is headline, dek, KPI strip, figures, chronology
 and the records list, with no narrative paragraph yet.
 
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the

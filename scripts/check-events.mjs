@@ -7,7 +7,7 @@
 import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { join } from "node:path";
+import { join, posix } from "node:path";
 import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
 import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy } from "./check-state-pages.mjs";
@@ -125,6 +125,10 @@ function validateRecordManifest(mPath, manifest) {
     ids.add(record.id);
     if (record.quote_span_check === "quote_unverified") fail.push(`${mPath}: ${record.id} has an unverified quote`);
     if (!['byte_exact', 'normalized'].includes(record.quote_span_check)) fail.push(`${mPath}: ${record.id} has an unknown quote check`);
+    for (const key of ["pinned_path", "text_path"]) {
+      const rel = record[key];
+      if (rel && !/^data\/sources\//.test(posix.normalize(rel))) fail.push(`${mPath}: ${record.id} ${key} must be a repo-relative path under data/sources/`);
+    }
     const textPath = record.text_path && join(ROOT, record.text_path);
     if (!textPath || !existsSync(textPath)) { fail.push(`${mPath}: ${record.id} text pin is missing`); continue; }
     const actual = `sha256:${createHash("sha256").update(readFileSync(textPath)).digest("hex")}`;

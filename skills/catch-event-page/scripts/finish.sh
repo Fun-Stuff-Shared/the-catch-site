@@ -29,36 +29,72 @@ echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page
 echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
 [ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
 
-# The story's own artifacts: its pages, the data modules those pages import, the files its
-# manifest pins, and its check files. Nothing else, whatever else is dirty in the tree.
-owned=("$page" "src/pages/events/$subject/index.astro" "src/pages/index.astro" "$manifest"
-       "data/sources/SOURCES.md" "checks/routes.txt")
-for f in "$page" "src/pages/events/$subject/index.astro" "src/pages/index.astro"; do
+# The story's own artifacts: its page, the data modules the page and the subject page import,
+# the files its manifest pins, and its check files, owned whole. Four files are shared by every
+# story (the homepage, the story index, the ledger, the route list): a change there is this
+# story's only where the changed lines name it, so each hunk must carry the slug, the subject,
+# a pinned path or one of this story's data modules.
+shared=("src/pages/index.astro" "src/lib/discovery.mjs" "data/sources/SOURCES.md" "checks/routes.txt")
+owned=("$page" "src/pages/events/$subject/index.astro" "$manifest" "${shared[@]}")
+modules=()
+for f in "$page" "src/pages/events/$subject/index.astro"; do
   [ -f "$f" ] || continue
   while IFS= read -r spec; do
-    rel="$(cd "$(dirname "$f")" && cd "$(dirname "$spec")" 2>/dev/null && pwd)/$(basename "$spec")"
-    owned+=("${rel#"$root"/}")
+    modules+=("$(dirname "$f")/$spec")
   done < <(grep -oE "from ['\"][^'\"]*data/[^'\"]+['\"]" "$f" | sed -E "s/from ['\"](.*)['\"]/\1/")
 done
-while IFS= read -r pin; do owned+=("$pin"); done < <(node -e '
+pins=(); escaped=0
+while IFS= read -r pin; do pins+=("$pin"); done < <(node -e '
   const m = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
   for (const r of m.records ?? []) for (const k of ["pinned_path", "text_path"]) if (r[k]) console.log(r[k]);' "$manifest")
+while IFS= read -r bad; do echo "the manifest pins a path outside data/sources/: $bad" >&2; escaped=1; done < <(
+  printf '%s\n' ${pins[@]+"${pins[@]}"} | node -e '
+    const p = require("path").posix;
+    for (const line of require("fs").readFileSync(0, "utf8").split("\n"))
+      if (line && !/^data\/sources\/(?!news-state\/)/.test(p.normalize(line))) console.log(line);')
+owned+=(${modules[@]+"${modules[@]}"} ${pins[@]+"${pins[@]}"})
 while IFS= read -r f; do owned+=("$f"); done < <(git ls-files --others --exclude-standard --modified -- \
   "checks/working-notes/$subject--$slug*" "checks/reader-models/$subject--$slug*" \
   "checks/interrogations/$subject--$slug*" "checks/audits/$subject--$slug*" | grep -v '\.md\.err$')
 
+# Every path is judged in its canonical spelling: one that leaves the repo, or reaches a
+# generated namespace through ".." or an absolute path, is refused before anything is staged.
+canon=()
+while IFS=$'\t' read -r orig norm; do
+  case "$norm" in
+    /*|..|../*) echo "a path the page or manifest names leaves the repo: $orig" >&2; escaped=1;;
+    *) canon+=("$norm");;
+  esac
+done < <(printf '%s\n' "${owned[@]}" | node -e '
+  const p = require("path").posix;
+  for (const line of require("fs").readFileSync(0, "utf8").split("\n")) if (line) console.log(line + "\t" + p.normalize(line));')
+[ $escaped = 0 ] || exit 2
+
 paths=()
 while IFS= read -r -d '' f; do paths+=("$f"); done < <(
-  printf '%s\0' "${owned[@]}" | sort -zu | while IFS= read -r -d '' f; do
+  printf '%s\0' ${canon[@]+"${canon[@]}"} | sort -zu | while IFS= read -r -d '' f; do
     [ -e "$f" ] || continue
     printf '%s' "$f" | grep -Eq "$generated" && { echo "refusing a generated path the page or manifest names: $f" >&2; continue; }
     if [ -n "$(git status --porcelain --untracked-files=all -- "$f")" ]; then printf '%s\0' "$f"; fi
   done)
 
+tokens=("$slug" "$subject" ${pins[@]+"${pins[@]}"})
+for m in ${modules[@]+"${modules[@]}"}; do tokens+=("$(basename "$m")"); done
+foreign=0
+for f in "${shared[@]}"; do
+  printf '%s\n' ${paths[@]+"${paths[@]}"} | grep -Fqx "$f" || continue
+  while IFS= read -r hunk; do
+    body="$(git diff -U0 -- "$f" | awk -v h="$hunk" '$0 == h {p=1; next} /^@@/ {p=0} p')"
+    printf '%s\n' "$body" | grep -Fq -f <(printf '%s\n' "${tokens[@]}") && continue
+    echo "$f has a change that does not name this story ($hunk); revert it or commit it yourself first" >&2; foreign=1
+  done < <(git diff -U0 -- "$f" | grep '^@@')
+done
+[ $foreign = 0 ] || exit 2
+
 # One author, one story, one clean worktree: any other change in the tree is a mistake to
 # resolve, never something to commit alongside or leave behind silently.
 stray=$(git status --porcelain --untracked-files=all | cut -c4- | grep -Ev "$generated" | grep -Ev '\.md\.err$' \
-  | grep -Fvx -f <(printf '%s\n' "${paths[@]}") || true)
+  | grep -Fvx -f <(printf '%s\n' ${paths[@]+"${paths[@]}"}) || true)
 if [ -n "$stray" ]; then
   echo "the tree holds changes outside this story; revert them or commit them yourself first:" >&2
   printf '  %s\n' $stray >&2; exit 2
