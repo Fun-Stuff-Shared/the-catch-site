@@ -26,6 +26,10 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">This page lists the motions heard on Monday.</p>
  <p data-layer="narrative">This page rests on three filings and one transcript.</p>
  <p data-layer="fact">This page was filed as exhibit 12 in the public docket.</p>
+ <p data-layer="fact">The clerk wrote the seal number on this page of the public docket.</p>
+ <p data-layer="fact">This page does not contain the sealed appendix in the public docket.</p>
+ <p data-layer="narrative">We found the order in the public docket.</p>
+ <p data-layer="narrative">Our search found the order in the public docket.</p>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
@@ -71,6 +75,10 @@ checks = [
     ("'This page rests on' fails", any("three filings" in s for _, s in hits)),
     ("an agency that did not answer through a docket passes", "before the deadline" not in text),
     ("a docket page in the passive passes", "exhibit 12" not in text),
+    ("a seal number written on a docket page passes", "seal number" not in text),
+    ("a docket page that does not contain an appendix passes", "sealed appendix" not in text),
+    ("'We found the order' fails", any(s.startswith("We found the order") for _, s in hits)),
+    ("'Our search found' fails", any(s.startswith("Our search found") for _, s in hits)),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

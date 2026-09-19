@@ -86,6 +86,20 @@ while IFS= read -r -d '' f; do paths+=("$f"); done < <(
 
 tokens=("$slug" ${pins[@]+"${pins[@]}"})
 for m in ${page_modules[@]+"${page_modules[@]}"}; do tokens+=("$(basename "$m")"); done
+# A shared file may name the story's data module only by the name it imports it under (the
+# discovery map does), and the series registry names a new subject only by its path.
+for f in "${shared[@]}"; do
+  [ -f "$f" ] || continue
+  while IFS= read -r b; do tokens+=("$b"); done < <(node -e '
+    const fs = require("fs"); const [file, ...bases] = process.argv.slice(1);
+    for (const line of fs.readFileSync(file, "utf8").split("\n")) {
+      const m = line.match(/^import\s+(.+?)\s+from\s+[\x22\x27]([^\x22\x27]+)[\x22\x27]/); if (!m) continue;
+      if (!bases.includes(m[2].split("/").pop())) continue;
+      const d = m[1].match(/^([A-Za-z_$][\w$]*)\s*(,|$)/); if (d) console.log(d[1]);
+      for (const r of m[1].matchAll(/\bas\s+([A-Za-z_$][\w$]*)/g)) console.log(r[1]);
+    }' "$f" $(for m in ${page_modules[@]+"${page_modules[@]}"}; do basename "$m"; done))
+done
+tokens+=("path: '/events/$subject/'" "path: \"/events/$subject/\"")
 foreign=0
 for f in $(printf '%s\n' "${shared[@]}" | node -e 'const p=require("path").posix;for(const l of require("fs").readFileSync(0,"utf8").split("\n"))if(l)console.log(p.normalize(l))'); do
   printf '%s\n' ${paths[@]+"${paths[@]}"} | grep -Fqx "$f" || continue
