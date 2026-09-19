@@ -1363,6 +1363,8 @@ Space-weapons story (2026-09-14): CBO Golden Dome PDF https://www.cbo.gov/system
 | data/sources/space-weapons/eo-14369-2025-12-18.txt | 11976 | 6beca81c48b9ad0d |
 | data/sources/space-weapons/ussf-growth-space-control-2026-09-15.html | 119506 | 1786988964fbed28 |
 | data/sources/space-weapons/ussf-growth-space-control-2026-09-15.txt | 4894 | 4dd4f740bb702cee |
+| data/sources/coverage/ap-caine-cislunar-2026-09-16.html | 873487 | 65d9ae5f7f790e6f |
+| data/sources/coverage/ap-caine-cislunar-2026-09-16.txt | 4745 | 45eeb339532b51bb |
 
 CBO letter 62756 (Iran war cost, September 15, 2026) and its publication page were admitted through the registry via Internet Archive copies saved September 17 and September 16; cbo.gov refused a direct fetch. Boyle's March 5 letter and statements, the White House Epic Fury release, OMB's June 24 supplemental letter, the Lead Inspector General quarterly, and coverage from AP, ABC, CBS, CNBC, NBC, The Hill, Politico, and Reuters were admitted through the registry and pinned under data/sources/iran-war/.
 

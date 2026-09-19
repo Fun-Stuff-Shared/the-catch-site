@@ -32,6 +32,13 @@ export const russiaAsatTest2021 = {
   debrisPieces: 1500,
 };
 
+// Space Force growth panel, September 15, 2026
+// (data/sources/space-weapons/ussf-growth-space-control-2026-09-15.txt).
+export const spaceForceGrowth = {
+  doubleYears: 5, // "must double in size over the next five years"
+  combatForcesShare: "two-thirds", // "two-thirds of the growth is into Combat Forces Command"
+};
+
 export const event = {
   slug: "space-weapons/2026-09-14-on-orbit-weapons-confirmed",
   title: "The U.S. says it has on-orbit space control weapons",
@@ -39,7 +46,7 @@ export const event = {
   name: "On-orbit space control weapons",
   span: "September 14, 2026",
   date: "2026-09-14",
-  updated: "2026-09-18",
+  updated: "2026-09-19",
   kpis: [
     { value: "Sept 14", unit: "2026", label: "Air Force secretary: the U.S. has weapons in orbit" },
     { value: "Sept 15", unit: "2026", label: "Space Force chief repeats it" },
@@ -85,7 +92,7 @@ export const chronology = {
     ["2026-09-08", "Space Command announces the Apollo Maneuvers exercise"],
     ["2026-09-14", "Meink: the U.S. has on-orbit space control weapons"],
     ["2026-09-15", "Schiess: Guardians operate on-orbit weapons; China and Russia respond"],
-    ["2026-09-15", "Space Force panel: field advanced offensive and defensive space control capabilities"],
+    ["2026-09-15", `Space Force panel: must double in size over the next ${spaceForceGrowth.doubleYears} years; ${spaceForceGrowth.combatForcesShare} of the growth into Combat Forces Command`],
     ["2026-09-16", "Whiting: the joint force retains on-orbit space control weapons"],
   ],
 };
@@ -155,6 +162,16 @@ export const quotes = {
   eo14369Vleo: "from very low-Earth orbit and through cislunar space",
   growthOffensiveDefensive:
     "advanced offensive and defensive space control capabilities",
+  growthMustDouble:
+    "must double in size over the next five years",
+  growthCombatForcesShare:
+    "two-thirds of the growth is into Combat Forces Command",
+  caineCislunar:
+    "from the seabed to cislunar space",
+  ostArticleIii:
+    "in accordance with international law, including the Charter of the United Nations",
+  ostArticleIx:
+    "with due regard to the corresponding interests of all other States Parties to the Treaty",
   whAsatCommitment:
     "commits not to conduct destructive, direct-ascent anti-satellite (ASAT) missile testing",
   whDebris: "The long-lived debris created by these tests now threaten satellites",

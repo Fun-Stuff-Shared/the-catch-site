@@ -1,5 +1,23 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 12 (space-patch.md items 48 to 51; ship-audit and ship-reconstruction, 2026-09-19). Worktree the-catch-site-wt-r3-space, branch author/patch-r3-space, from 2805bedd.
+
+Verified at the pins before rewriting (2026-09-19):
+- OST `ost-1967-state-archive.txt` Article III lines 51 to 55: activities "in accordance with international law, including the Charter of the United Nations". Article IX line 107: "with due regard to the corresponding interests of all other States Parties to the Treaty". Article IV: "nuclear weapons or any other kinds of weapons of mass destruction".
+- Growth `ussf-growth-space-control-2026-09-15.txt` line 3: "must double in size over the next five years". Line 6: "two-thirds of the growth is into Combat Forces Command" (Gagnon).
+- AP Caine `ap-caine-cislunar-2026-09-16.txt`: "is prepared to fight, endure and win ... from the seabed to cislunar space." Capture: `capture news --reason ...` run capture-oneoff-20260919T045958Z, body_captured, 4,669 characters.
+- UNGA 77/41: `capture news --reason ...` on the named documents.un.org URL, the PDF, docs.un.org, undocs.org, digitallibrary.un.org, and the un.org resolutions list; then `--via-archive` on the named URL and PDF. documents.un.org robots.txt disallows the URL and the PDF on the direct and via-archive routes (runs capture-oneoff-20260919T045807Z, 045915Z, 050006Z). docs.un.org 79-character viewer stub; undocs.org 89-character language selector; digitallibrary 157 characters. Not admitted. No sentence written from it.
+
+### Items 48 to 51
+48. Three things (3): dropped "says nothing about other weapons there". Clause now: bans nuclear and other mass-destruction weapons in orbit and has no ban on other weapons there, while its other articles still govern how the parties conduct their activities in space, cited to Article IV and Article III. New Where this sits sentence after the Article IV paragraph gives Articles III and IX from those passages. Class sibling at the Article IV paragraph: "It says nothing about other weapons in orbit" kept, because "It" is Article IV. Sibling count: 1. Scoped self-check first run: Moderate on "any activity in space" (the treaty names States Parties); rewritten to "the parties".
+49. What happened, after the Schiess quote card: one cited sentence that the service must double in size over the next five years and that Gagnon said two-thirds of the growth is into Combat Forces Command, from the growth pin. Chronology panel row rewritten to those figures. Data module `spaceForceGrowth`. Sibling count: 0.
+50. What happened next: one dated cited sentence on Caine at the same conference, quoted "from the seabed to cislunar space", cited to the AP pin. Sibling count: 0.
+51. Skipped. Registry refused UN General Assembly resolution 77/41. Refusal in this note and in the manifest `not_admitted` list.
+
+Refuted, not worked: the audit's "Officials confirmed the weapons" finding; the audit's "very well thought out" finding. Ledgered for a later pass, not worked: 1985 ASM-135 and Delta 180; Starfish Prime and Fengyun-1C analogues and DoD tenets; Secure World Foundation category baseline; reported delegation of counterspace authorities.
+
+`event.updated` set to 2026-09-19 (the day of the Caine capture and the 77/41 search).
+
 ## Round 11 (space-patch.md item 47; keystone stranger read of the built page, 2026-09-19). No new records.
 
 Verified on the page before cutting (2026-09-19):
@@ -169,12 +187,12 @@ Facts the avatar items asked for that the pins do not hold: none invented. A def
 - ussf-schiess-remarks: General Wilsbach, 12 days (his time as chief), 30 years, seven years, Raymond, Spaatz, Vandenberg, Guardian Ethos, Jenna's eight years and instructor post, "Integrating Guardian Power", two years (Gray), Admiral Cooper: out of scope (service history and personnel stories). Victus Haze / 17 hours: held unused (exercise color; the paragraph was cut on the avatar read's C6). "United States Space Force" (line 52): out of scope.
 - ussf-saltzman-warfare-symposium: 56 years / Apollo 9, Space Superiority, System Deltas, hundred hours: out of scope.
 - china-mfa-guo: all 13 lines are other questions at the same press conference (CIFTIS, Japan parliamentarians, South China Sea, a September 14 space exhibition note): out of scope.
-- ost-1967: General Assembly 1963 resolution, treaty title words, UN Charter line, depositary governments, amendment clause: out of scope (the operative clause used is Article IV).
+- ost-1967: General Assembly 1963 resolution, treaty title words, depositary governments, amendment clause: out of scope. Article III UN Charter line and Article IX due regard: used (item 48).
 - eo-iron-dome: "40 years" threat preamble, "General Provisions": out of scope.
 - spo-cbo-golden-dome (and the cbo-golden-dome-pdf row, same text): seven days, $175 billion (the president's May 2025 figure), three years, $524 billion (earlier CBO), $185 billion (Guetlein), $1 trillion acquisition share, 70 and 60 percent, $398 million, $17.1 billion, $17.5 billion: held unused; the proof block carries the CBO total, the interceptor figures, and the FY2027 request lines ($398 million and $17.1 billion are on the page inside the proof block through the data module; the list flags them because the module writes them as bare numbers).
 - ussf-whiting-amos: Sun Tzu: out of scope.
 - eo-14369: $50 billion investment goal, 90 and 180 day deadlines, NASA plan, 30 percent schedule test, Other Transactions Authority, General Provisions: out of scope (commercial and acquisition provisions).
-- ussf-growth-space-control: Combat Forces Command: held unused (the panel is a table row; the command's name is not needed in reader text).
+- ussf-growth-space-control: Combat Forces Command: used (item 49, Gagnon's two-thirds sentence).
 - wh-asat-commitment: "Vice President Harris" (National Space Council tasking sentence): held unused.
 - un-sc15678: Sierra Leone and United Kingdom (vote rosters): out of scope; "two countries" (Japan on the amendment): out of scope; "65 countries" co-sponsors: held unused.
 - ussf-space-warfighting-framework: the table of contents names (Space Superiority, Integrated Cyberspace Operations, Space Segments, Space Domain Awareness, Planning and Execution Considerations), "Competitive Endurance", "one satellite", "three items": out of scope; the page uses the space control, counterspace operations, orbital strike, and standoff passages.
@@ -357,7 +375,9 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 ### ussf-growth-space-control-2026-09-15 (Sept 15, 2026)
 | Passage | Mark |
 |---|---|
-| "advanced offensive and defensive space control capabilities" | used : chronology, where-this-sits |
+| "advanced offensive and defensive space control capabilities" | held unused : chronology now carries the double-in-size and Combat Forces Command share |
+| "must double in size over the next five years" | used : What happened, chronology |
+| "two-thirds of the growth is into Combat Forces Command" | used : What happened, chronology |
 | "$71.1 billion FY27 budget" | held unused : budget pin is the source for the number |
 
 ### afas-meink-on-orbit-2026-09-14 (trade coverage of Q&A; treated as coverage with Meink words)
