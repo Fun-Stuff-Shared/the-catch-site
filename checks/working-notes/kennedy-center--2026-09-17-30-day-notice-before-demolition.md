@@ -210,5 +210,6 @@ The round-two patch self-check used `--since a980c477`. Its committed verdict is
 ## September 19 bounded-absence patch
 
 - The project-scope absence is bounded to the docket entries through September 19 in both Kennedy Center cases and the coverage saved for this story. The two Floca sentences stay unchanged.
+- Census bound: “September 18 attachment capture from direct RECAP storage in `capture-oneoff-20260919T090606Z`: ECF 88-1, 89-1, 89-2 and 89-3 succeeded.” The sentence names the admitted attachments, declarations, defense filings and coverage, not either unread docket.
 - The closure-condition absence is bounded to the two defense filings that quote the resolution differently. The September 15 preliminary minutes themselves are not among the records. The follow-up sentence remains unchanged.
 - Verification: `npm run build` passed; lens 0; quote 0; voice fail 0, reread 11.
