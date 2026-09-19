@@ -1,5 +1,14 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 11 (space-patch.md item 47; keystone stranger read of the built page, 2026-09-19). No new records.
+
+Verified on the page before cutting (2026-09-19):
+- What happened closer (was line 93) restated the same five attribution sentences as catch box row 1 (line 106): Meink defend the Joint Force; Schiess Guardians operate on-orbit weapons; spokesperson to ABC on offensive and defensive use; Reuters quoting Palmer postured and ready; Whiting ready to negate any threat.
+- Palmer quotation appeared at Three things (2) with quotation marks, in that closer with quotation marks, in the catch box without quotation marks, and in What happened next.
+
+### Item 47
+47. Cut the What happened closer recap. Catch box row 1 kept as written. Palmer quotation kept at its first appearance in Three things (2) and in the What happened next Reuters paragraph. Sibling count: 0. No other sentence rewritten.
+
 ## Round 9 (space-patch.md item 46; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r9-entailment.md). No new records.
 
 Verified at the pin before rewriting (2026-09-19):
