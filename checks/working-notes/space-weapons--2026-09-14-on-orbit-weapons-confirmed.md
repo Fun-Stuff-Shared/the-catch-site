@@ -1,5 +1,14 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 6 (space-patch.md item 43; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r6-entailment.md). No new records.
+
+Verified at the pins before rewriting (2026-09-18):
+- USA Today `usatoday-weapons-space-2026-09-15.txt` line 22: "Trump signed an executive order in December emphasizing the importance of developing \"next-generation missile defense technologies.\" Such capabilities would appear to go hand in hand with the Trump administration's planned \"Golden Dome\" missile defense system." The antecedent of "Such capabilities" is the December order's missile-defense technologies, not Meink's on-orbit weapons.
+- AFNS `afns-meink-2026-09-14.txt` line 12 (weapons acknowledgement) and line 24 (Space-Based Interceptor program) are separate paragraphs. The pin does not contain "Golden Dome".
+
+### Item 43
+43. Smaller slips: dropped the USA Today clause. Once the pin is read with the December-order antecedent, USA Today did not write that Meink's weapons go hand in hand with Golden Dome, so the slips list no longer carries that verdict. Coverage card rewritten: claim is the December-order sentence; verdict says USA Today placed those missile-defense technologies beside Golden Dome and did not itself link Meink's weapons to Golden Dome; Air Force interceptor paragraph kept as the record's silence. Class sibling: coverage count "three attached things" rewritten as "two" (The Hill / Breaking Defense, and Deutsche Welle). Sibling count: 1.
+
 ## Round 5 (space-patch.md items 38 to 42; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r5-entailment.md). No new records.
 
 Verified at the pins before rewriting (2026-09-18):
