@@ -108,3 +108,7 @@ One line per search, in run order:
 The independent interrogation returned 21 items. The page was corrected to name Bridget Kennedy-Bailey, and it now includes the public ripped-down statement, the placard with its attributed wording, the Kennedy Center spokesperson's denial, Floca's concrete safety evidence, Kennedy-Bailey's sworn forklift observation, and the defendants' September 18 motions. The CourtListener docket retry again returned `robots_disallowed` in `capture-oneoff-20260919T080409Z`. The direct Truth Social capture returned only a shell and was not admitted. Items concerning duplicate coverage, a White House repost, meeting characterizations, renovation-option comparisons, later protests and layoffs, receivership requests, and prediction markets were individually declined in the interrogation file because they did not change the September 17 order or a claim made on this page.
 
 The initial closure is displayed as `seven days`, matching the authoritative passages. It is not staged as a numeric authored figure because the state validator requires the Arabic numeral to appear in the exact source span, while the filings spell the number out.
+
+## Entailment self-check
+
+The final self-check inspected 23 blocks and returned `ENTAILED`, with zero critical, major, moderate or minor unsupported sentences. The committed verdict is under `checks/audits/`.
