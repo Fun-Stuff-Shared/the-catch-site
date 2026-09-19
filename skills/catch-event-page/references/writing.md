@@ -27,7 +27,11 @@ its sentence loses them. A page that introduces more than five or six terms is t
   N records"). Method and provenance are proof-layer sentences.
   On a story, "this page" means the story itself; a page of a public document is named
   as the document ("the docket page", "page 4 of the order"), so the sentence names its
-  record and the lint reads "this page" as the site speaking.
+  record and the lint reads "this page" as the site speaking. The same holds for the
+  first person anywhere in a sentence ("by Friday, we found", "the result of our search"):
+  outside a quotation it is the site narrating its method and the lint fails it. A proper
+  name that begins with one of those words (Our World in Data) and a route number (I-95)
+  are not first person.
 - "X, not Y" is used where the record makes the distinction and the misreading depends on
   it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
 - A fact is told once in the story register (a summary line, or prose, or a table, never

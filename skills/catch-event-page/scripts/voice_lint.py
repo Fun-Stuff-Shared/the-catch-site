@@ -4,8 +4,9 @@ Usage: voice_lint.py dist/events/<subject>/<story>/index.html [more pages]
 Exit 1 when a script check trips. Proof-layer text and the state ledger rows are not judged.
 
 Script checks (fail): reader address ("a reader", "readers"), process narration in the story
-or fact layers ("this page found", "we could preserve", "as reproduced by", "Searched:",
-"the records add up to", "this story rests on"); proof-layer text is never judged.
+or fact layers: any bare "this page" (the story speaking about itself; a document's page is named as the
+document), any first-person pronoun outside a quotation, "as reproduced by", "Searched:", "the records add
+up to", "this story rests on"; proof-layer text is never judged.
 Model checks (review, highest score first): mirrored antithesis, section wrap-up, reader gloss,
 one Jev request per sentence at about 0.2 s. Thresholds hold specificity 0.95 per question on
 the codex AI-speak scan of all 15 story pages built 2026-09-19 (design/aispeak-labels.jsonl in
@@ -22,9 +23,12 @@ BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "figcaption", "td", "th", "dt", "dd"
 has_cls = lambda a, name: name in (a.get("class") or "").split()
 ABBR = re.compile(r"\b(Rep|Sen|U\.S|U\.N|Sept|Aug|Oct|Nov|Dec|Jan|Feb|Mr|Ms|Dr|Gen|Lt|Col|No|v|H\.Con\.Res|S\.Con\.Res|Inc|Co)\.\s")
 norm = lambda x: re.sub(r"\s+", " ", x.replace("“", '"').replace("”", '"').replace("’", "'")).strip()
-def strip_q(t):
+def strip_q(t, inside=False):
     """Quoted speech is not the page's own voice. A quotation the sentence splitter cut in two leaves
-    one quote mark: an opener drops what follows it, a closer drops what came before it."""
+    one quote mark: an opener drops what follows it, a closer drops what came before it. A sentence that
+    starts inside a quotation (inside=True: the block's quote marks before it are unbalanced) is treated
+    as if it opened with one, so the middle sentences of a long quotation are not judged."""
+    if inside: t = '"' + t
     t = re.sub(r'"[^"]{3,}"', "[quotation]", t)
     i = t.find('"')
     if i >= 0 and t.count('"') == 1:
@@ -32,7 +36,11 @@ def strip_q(t):
         t = t[:i] + "[quotation]" if opener else "[quotation]" + t[i + 1:]
     return t
 READER = re.compile(r"\breaders?\b", re.I)
-PROCESS = re.compile(r"^Single outlet(?=[,.;:]| (only|so far|among)\b)|^(I|We|My|Our)\b|\bamong the records here\b|\bthis page (rests|holds|treats|uses|cites|relies|counts|reads|leaves|reports|finds|found|labels|checks|compares|confirms|computes|tracks|covers|quotes)\b|\bthis page (does|did|do) not (answer|cover|count|check|compare|find|reach|include|treat|rest|rely|cite|track|report|confirm|compute|use|quote|say|establish|show|name)\b|\bthis page (can|cannot|could)( not| only)? (answer|say|tell|show|confirm|establish|reach|find|verify|determine|count|compare|cover|report|name)\b|\bon this page\b(?! of\b)|\bthe page (found|could|did|does)\b|\bthis story rests on\b|\b(what )?the (records?|coverage|numbers) (here )?adds? up to\b|\bwe could( not)? (preserve|save|fetch|reach|obtain|get|find|locate)\b|\bas reproduced by\b|\b(this page|the page|we) (did|does|do) not answer through\b|\bnot available through the (records|registry|archive|pins|admitted|accessible)\b|^Searched:|\bthe (accessible|admitted) (filings|records|sources)\b|\bpublic sources we\b", re.I)
+FIRST_PERSON = re.compile(r"(?:(?:^|[,;:]\s+|\b(?:and|but|so|then|when|after|before|because|which|that)\s+)I|\b[Ww]e|\b[Mm]y|\b[Oo]urs?)\b(?!-\d)(?!\s+[A-Z])")
+"""A first-person pronoun in the page's own voice is the site narrating its method. A pronoun followed by a
+capitalized word is a proper name (Our World in Data); I before a hyphenated number is a route (I-95); a bare I
+counts only where a sentence or clause starts, so Title I and Article I are not pronouns."""
+PROCESS = re.compile(r"^Single outlet(?=[,.;:]| (only|so far|among)\b)|\bamong the records here\b|\bthis page\b(?! of\b)|\bthe page (found|could|did|does)\b|\bthis story rests on\b|\b(what )?the (records?|coverage|numbers) (here )?adds? up to\b|\bwe could( not)? (preserve|save|fetch|reach|obtain|get|find|locate)\b|\bas reproduced by\b|\b(the page|we) (did|does|do) not answer through\b|\bnot available through the (records|registry|archive|pins|admitted|accessible)\b|^Searched:|\bthe (accessible|admitted) (filings|records|sources)\b|\bpublic sources we\b", re.I)
 THRESHOLDS = {"mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67}
 IGN = "Words inside quotation marks are someone else's speech and are not judged; judge only the page's own words."
 QUESTIONS = {
@@ -76,19 +84,23 @@ class Page(HTMLParser):
 
 
 def sentences(path):
+    """Yield (tag, sentence, inside) for every judged block: inside is true when the sentence begins
+    inside a quotation that an earlier sentence of the same block opened."""
     p = Page(); p.feed(open(path, encoding="utf-8").read()); out = []
     for b in p.blocks:
         if b["layer"] == "proof": continue
         text = ABBR.sub(lambda m: m.group(0).replace(". ", ".⁣"), b["text"])
         heading = b["tag"] in ("h1", "h2", "h3", "h4", "kicker")
+        quotes = 0
         for sen in re.split(r"(?<=[.!?])\s+(?=[A-Z\"])", text):
-            sen = sen.replace("⁣", " ")
+            sen = sen.replace("⁣", " "); inside = quotes % 2 == 1; quotes += sen.count('"')
             if (len(re.findall(r"[A-Za-z]+", sen)) >= 6 and re.search(r"[.!?]$", sen)) or (heading and len(sen.split()) >= 4):
-                out.append((b["tag"], sen))
+                out.append((b["tag"], sen, inside))
     return out
 
 
 OWN_VOICE = {"p", "li", "figcaption", "td", "dd", "summary"}
+SECTION_TITLE = "What we do not know yet"  # the toolkit's fixed heading for the unknowns section: site chrome, not the author's voice
 
 
 def score(client, qs, sen, subject):
@@ -102,10 +114,11 @@ def lint(path, client):
     qs = {k: Noul(instructions={"question": q}) for k, q in QUESTIONS.items()}
     fails, reviews = [], []
     subject = os.path.basename(os.path.dirname(path.rstrip("/")))
-    for tag, sen in sentences(path):
-        own = strip_q(sen)
+    for tag, sen, inside in sentences(path):
+        own = strip_q(sen, inside)
+        if own == SECTION_TITLE: continue
         if READER.search(own): fails.append(("reader", 1.0, sen))
-        if PROCESS.search(own): fails.append(("process", 1.0, sen))
+        if PROCESS.search(own) or FIRST_PERSON.search(own): fails.append(("process", 1.0, sen))
         if tag not in OWN_VOICE or own.startswith("How we check"): continue
         for k, v in score(client, qs, sen, subject).items():
             if v >= THRESHOLDS[k]: reviews.append((k, v, sen))
