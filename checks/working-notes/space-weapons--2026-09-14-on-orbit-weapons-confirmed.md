@@ -1,5 +1,14 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 9 (space-patch.md item 46; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r9-entailment.md). No new records.
+
+Verified at the pin before rewriting (2026-09-19):
+- White House `wh-asat-commitment-2022-04-18.txt` line 4: "the United States commits not to conduct destructive, direct-ascent anti-satellite (ASAT) missile testing"
+- Same file line 6: debris is the stated reason ("The long-lived debris created by these tests now threaten satellites"), not the pledge's scope.
+
+### Item 46
+46. Where this sits three-layers sentence: dropped "against debris-making anti-satellite tests". Clause now says a U.S. pledge not to conduct destructive, direct-ascent anti-satellite missile tests, cited to the same White House passage. Sibling count: 0.
+
 ## Round 8 (space-patch.md item 45; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r8-entailment.md). No new records.
 
 Verified at the pin before rewriting (2026-09-18):
