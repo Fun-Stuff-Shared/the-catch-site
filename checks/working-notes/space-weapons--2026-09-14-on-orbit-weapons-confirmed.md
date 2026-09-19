@@ -404,3 +404,13 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 - DW: attributes Saltzman definition language to a Space Force "press release" alongside the confirmation sentence.
 - AP/CBS/CNBC/Guardian: "first time" checks out against AFNS wording.
 - Hill $1.2T Golden Dome : checks out against SPO/CBO carrier (not identity of the confirmed weapons).
+
+## September 19 voice patch
+
+- Removed the claim-check section, its table-of-contents entry, and the unused `CheckedBlock` import.
+- Kept the Outer Space Treaty point in Where this sits and rewrote it as the direct Article IV fact.
+- Removed reader-address language from the Golden Dome proof summary and page-method language from the wording receipt.
+- Rewrote the two searched-coverage unknowns as dated public absences and moved the outlet verdict key to proof.
+- Baseline lint: lens 0, quote 0, voice fail 1, voice reread 16.
+- Final lint: lens 0, quote 0, voice fail 0, voice reread 11. The remaining rereads are attributed outlet comparisons or direct scope distinctions.
+- Entailment since `b3b587f0`: ENTAILED. Three changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0.
