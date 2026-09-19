@@ -7,9 +7,9 @@ Script checks (fail): reader address ("a reader", "readers"), process lines in t
 register ("Single outlet ...", "We read each ...", "among the records here").
 Model checks (review, highest score first): mirrored antithesis, section wrap-up, reader gloss,
 one Jev request per sentence at about 0.2 s. Thresholds hold specificity 0.95 per question on
-keystone's labels of the three stories shipped 2026-09-19 (design/voice-labels.jsonl in
-grok-authoring); stacked over three questions that still lists about one own-voice sentence in
-six, so a model hit is a sentence to reread, never a failure on its own. Repetition is not
+the codex AI-speak scan of all 15 story pages built 2026-09-19 (design/aispeak-labels.jsonl in
+grok-authoring, 2,596 sentences, 94 tells); stacked over three questions that still lists about
+one own-voice sentence in six, so a model hit is a sentence to reread, never a failure on its own. Repetition is not
 checked: the page restates its lede by design (summary box, catch cards, claim check).
 """
 import json, os, re, subprocess, sys
@@ -21,7 +21,7 @@ norm = lambda x: re.sub(r"\s+", " ", x.replace("“", '"').replace("”", '"').r
 strip_q = lambda t: re.sub(r'"[^"]{3,}"', "[quotation]", t)
 READER = re.compile(r"\breaders?\b", re.I)
 PROCESS = re.compile(r"^Single outlet\b|^We read\b|\bamong the records here\b", re.I)
-THRESHOLDS = {"mirrored": 0.38, "outline_conclusion": 0.52, "reader_gloss": 0.57}
+THRESHOLDS = {"mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67}
 IGN = "Words inside quotation marks are someone else's speech and are not judged; judge only the page's own words."
 QUESTIONS = {
     "mirrored": f"Is this sentence a mirrored antithesis or a does-and-does-not pair whose two halves balance each other instead of adding a fact? {IGN}",
