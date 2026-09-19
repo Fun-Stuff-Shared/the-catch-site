@@ -7,8 +7,8 @@ export const event = {
   slug: "mail-voting/2026-09-14-court-denies-stay",
   title: "The Supreme Court leaves the mail-ballot rule blocked",
   dek: "",
-  name: "Stay denied in 26A305",
-  span: "March 31 to September 15, 2026",
+  name: "Supreme Court leaves the Postal Service rule blocked",
+  span: "March 31 to September 18, 2026",
   date: "2026-09-14",
   updated: "2026-09-18",
   kpis: [],
@@ -24,6 +24,7 @@ export const dates = {
   ca1: "2026-09-10",
   nichols: "2026-09-13",
   denial: "2026-09-14",
+  steiner: "2026-09-17",
   election: "2026-11-03",
 };
 
@@ -44,6 +45,7 @@ export const computed = {
   daysCa1ToDenial: daysBetween(dates.ca1, dates.denial), // 4
   daysNicholsToDenial: daysBetween(dates.nichols, dates.denial), // 1
   daysEoToDenial: daysBetween(dates.eo, dates.denial), // 167
+  daysDenialToSteiner: daysBetween(dates.denial, dates.steiner), // 3
   namedPublicDissents: 2, // Alito, joined by Thomas; order PDF
   namedConcurrences: 1, // Kavanaugh
   unsignedOrderSentences: 3, // denied; unlikely to succeed; equities
@@ -67,33 +69,34 @@ export const computed = {
   coloradoConfidentialVoters: 150000,
 };
 
-event.dek = `On September 14 the Court denied application 26A305. Judge Indira Talwani's September 4 injunction of named Postal Service ballot-mail rules stays in force for elections on or before November 3, ${computed.daysDenialToElection} days after the denial.`;
+event.dek = `The Postal Service's new rule told election offices to mail ballots in approved envelopes with a barcode for every voter and to register voters in an online portal, and said mailings that did not comply would not be accepted. On September 14 the Supreme Court refused the government's request to lift a judge's block on those requirements, so they stay blocked for elections through November 3, ${computed.daysDenialToElection} days later. The Court did not rule on the March executive order behind the rule, and the one justice who explained his vote wrote that the Postal Service may well have the power to issue such a rule for a later election.`;
 event.kpis = [
-  { value: "Denied", unit: "", label: "application 26A305, September 14" },
-  { value: String(computed.daysDenialToElection), unit: "days", label: "from that denial to November 3" },
-  { value: String(computed.namedPublicDissents), unit: "justices", label: "named in dissent, Alito joined by Thomas" },
-  { value: "Nov. 3", unit: "", label: "federal election the injunction names" },
+  { value: "Blocked", unit: "", label: "the rule's envelope, barcode and portal requirements, through November 3" },
+  { value: String(computed.daysDenialToElection), unit: "days", label: "from the Court's refusal to November 3" },
+  { value: String(computed.namedPublicDissents), unit: "justices", label: "dissented in public: Alito, joined by Thomas" },
+  { value: "Stopped", unit: "", label: "work on the portal, the Postmaster General said September 17" },
 ];
 
 event.visual = {
   kind: "timeline",
-  title: "From the injunction to the denial",
-  note: "Talwani PI, First Circuit stay denial, Nichols PI, Supreme Court denial",
+  title: "From the block to the Court's refusal",
+  note: "Talwani's block, the First Circuit, Nichols, the Supreme Court, the Postal Service",
   entries: [
-    { date: "2026-09-04", title: "Talwani enjoins named rule sections through November 3", current: false },
-    { date: "2026-09-10", title: "First Circuit denies a stay", current: false },
-    { date: "2026-09-13", title: "Nichols enjoins the same rule in Washington", current: false },
-    { date: "2026-09-14", title: "Supreme Court denies 26A305", current: true },
+    { date: "2026-09-04", title: "Talwani blocks the rule's mandatory requirements through November 3", current: false },
+    { date: "2026-09-10", title: "First Circuit refuses to pause the block", current: false },
+    { date: "2026-09-13", title: "Nichols blocks the whole rule in a second case", current: false },
+    { date: "2026-09-14", title: "Supreme Court refuses to lift the block", current: true },
+    { date: "2026-09-17", title: "Postmaster General says work on the portal has stopped", current: false },
   ],
 };
 
 export const dateLine = {
   points: [
-    { date: "Sep 4", label: "Injunction" },
-    { date: "Sep 6", label: "26A305" },
+    { date: "Sep 4", label: "Block" },
+    { date: "Sep 6", label: "Request" },
     { date: "Sep 10", label: "First Circuit" },
     { date: "Sep 13", label: "Nichols" },
-    { date: "Sep 14", label: "Denied" },
+    { date: "Sep 14", label: "Refused" },
     { date: "Nov 3", label: "Election" },
   ],
   intervals: [
@@ -106,32 +109,27 @@ export const dateLine = {
 };
 
 export const timeline = [
-  { date: "Mar 31", title: "Executive Order 14399", sub: "Directs a Postal Service rulemaking on mail-in and absentee ballots" },
-  { date: "Aug 21", title: "USPS issues the final rule", sub: "Effective the same day; published August 26" },
-  { date: "Aug 24", title: "Court grants 26A124", sub: "Stay of the injunction of the executive order, on standing and ripeness" },
-  { date: "Sep 4", title: "Talwani preliminary injunction", sub: "Named sections of the rule enjoined for elections on or before November 3" },
-  { date: "Sep 6", title: "Application 26A305 filed", sub: "Stay of that injunction, submitted to Justice Jackson" },
-  { date: "Sep 10", title: "First Circuit denies a stay", sub: "Gelpí, Rikelman, and Aframe: motions denied; administrative stay moot" },
-  { date: "Sep 13", title: "Nichols preliminary injunction", sub: "D.C. court: key parts of the rule are likely ultra vires" },
-  { date: "Sep 14", title: "Court denies 26A305", sub: "Unsigned order; Kavanaugh concurring; Alito joined by Thomas dissenting", current: true },
+  { date: "Mar 31", title: "Executive order signed", sub: "Directs the Postal Service to write a rule on mail-in and absentee ballots" },
+  { date: "Aug 21", title: "Postal Service issues the rule", sub: "Effective the same day; published August 26" },
+  { date: "Aug 24", title: "Court pauses the earlier block of the executive order", sub: "Courts review final rules, and there was no final rule yet" },
+  { date: "Sep 1", title: "Postal Service says it is finalizing the portal", sub: "To open soon for officials who want to try it voluntarily" },
+  { date: "Sep 4", title: "Talwani blocks the rule's mandatory requirements", sub: "For elections on or before November 3; voluntary compliance stays open" },
+  { date: "Sep 6", title: "Government asks the Court to lift the block", sub: "Request presented to Justice Jackson, who referred it to the full Court" },
+  { date: "Sep 10", title: "First Circuit refuses to pause the block", sub: "Judges Gelpí, Rikelman and Aframe" },
+  { date: "Sep 13", title: "Nichols blocks the whole rule", sub: "Second case, in Washington; no election-date limit" },
+  { date: "Sep 14", title: "Supreme Court refuses to lift the block", sub: "Unsigned order; Kavanaugh concurring; Alito joined by Thomas dissenting", current: true },
+  { date: "Sep 17", title: "Postmaster General: portal work has stopped", sub: "Told the Associated Press the agency is not enforcing the rule this year" },
   { date: "Nov 3", title: "Federal election day", sub: "The Tuesday after the first Monday in November" },
 ];
 
-export const courtSteps = [
-  { date: "Sep 4", title: "Talwani injunction", sub: "Named Domestic Mail Manual sections paused through November 3" },
-  { date: "Sep 10", title: "First Circuit", sub: "Stay motions denied" },
-  { date: "Sep 13", title: "Nichols injunction", sub: "Separate D.C. block of the same rule" },
-  { date: "Sep 14", title: "Supreme Court denial", sub: "26A305 denied; Talwani injunction remains", current: true },
-];
-
 export const opinionsTable = [
-  ["Unsigned order", "The Court", "Stay denied; government unlikely to succeed on the merits; equities do not favor a stay"],
-  ["Concurrence", "Kavanaugh", "Fair prospect the rule is within Postal Service statutory authority; applying it in 2026 would be arbitrary and capricious"],
-  ["Dissent", "Alito, joined by Thomas", "Would grant the stay; organizations likely lack standing; ultra vires claim is a Hail Mary pass"],
+  ["Unsigned order", "The Court", "Request refused; the government is unlikely to succeed; the factors for emergency relief do not favor a pause"],
+  ["Concurrence", "Kavanaugh", "Fair prospect the rule is within the Postal Service's legal power; forcing it on the 2026 elections would be arbitrary and capricious"],
+  ["Dissent", "Alito, joined by Thomas", "Would have granted the pause; some plaintiffs likely lack standing; the states' claim is a Hail Mary pass"],
 ];
 
 export const applicationsTable = [
-  ["26A124", "July 27", "Stay the injunction of Executive Order 14399", "Granted August 24"],
-  ["26A297", "September 3", "Stay the August 27 temporary restraining order", "Withdrawn September 6"],
-  ["26A305", "September 6", "Stay the September 4 preliminary injunction of the USPS rule", "Denied September 14"],
+  ["July 27", "Pause the block of the executive order", "Granted August 24"],
+  ["September 3", "Pause the August 27 temporary order against the rule", "Withdrawn September 6"],
+  ["September 6", "Pause the September 4 block of the rule", "Refused September 14"],
 ];

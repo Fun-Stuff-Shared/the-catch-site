@@ -12,7 +12,7 @@
     {
       "id": "denial-2026-09-14",
       "date": "2026-09-14",
-      "label": "Supreme Court denies 26A305",
+      "label": "Supreme Court refuses to lift the block on the rule",
       "section_anchor": "what-happened",
       "records": [
         "scotus-26a305-order",
@@ -47,6 +47,33 @@
         "talwani-pi-2026-09-04",
         "usps-final-rule",
         "scotus-26a305-application"
+      ]
+    },
+    {
+      "id": "steiner-2026-09-17",
+      "date": "2026-09-17",
+      "label": "Postmaster General says work on the portal has stopped",
+      "section_anchor": "what-happened-next",
+      "records": [
+        "ap-2026-09-17"
+      ]
+    },
+    {
+      "id": "usps-not-enforcing-2026-09-18",
+      "date": "2026-09-18",
+      "label": "Postal Service page says it is not enforcing the rule for 2026",
+      "section_anchor": "what-happened-next",
+      "records": [
+        "usps-election-mail-page-2026-09-18"
+      ]
+    },
+    {
+      "id": "portal-statement-2026-09-01",
+      "date": "2026-09-01",
+      "label": "Postal Service says it is finalizing the portal",
+      "section_anchor": "where-this-sits",
+      "records": [
+        "usps-portal-statement-2026-09-01"
       ]
     }
   ],
@@ -94,7 +121,7 @@
       "text_sha256": "sha256:d73870455587d5350e93edd748396a1fbbf57fc588522b78a531afae9dfd5382",
       "quote": "The motions for a stay are denied",
       "quote_span_check": "byte_exact",
-      "about": "September 10 order by Gelp\u00ed, Rikelman, and Aframe. Carrier: CourtListener RECAP.",
+      "about": "September 10 order by Gelpí, Rikelman, and Aframe. Carrier: CourtListener RECAP.",
       "capture_run": "capture-oneoff-20260918T101836Z",
       "capture_raw_sha256": "sha256:18e030ba9080b53a5d7fbadfe6ca64d968eaf721d22e043afb5f207e1cda9ee5",
       "captured_at": "2026-09-18T10:18:45.641772Z"
@@ -384,7 +411,7 @@
       "pinned_path": "data/sources/coverage/examiner-2026-09-14.html",
       "text_path": "data/sources/coverage/examiner-2026-09-14.txt",
       "text_sha256": "sha256:86828a90297250ac64cb100a183218d2ac81e7f00d53fe77c2c168ab022ebc61",
-      "quote": "decided in the Trump administration\u2019s favor",
+      "quote": "decided in the Trump administration’s favor",
       "quote_span_check": "byte_exact",
       "about": "Examiner Monday story that said the Court decided in the administration favor.",
       "capture_run": "capture-oneoff-20260918T102245Z",
@@ -630,267 +657,357 @@
       "capture_run": "capture-oneoff-20260918T112424Z",
       "capture_raw_sha256": "sha256:98fa34c28f65887af7deabd674a1e415d363115efa633e931ecf570f2731211e",
       "captured_at": "2026-09-18T11:25:06.570451Z"
+    },
+    {
+      "id": "ap-2026-09-17",
+      "title": "Postal Service chief says work stopped on computer system key to Trump effort to limit mail voting",
+      "publisher": "Associated Press",
+      "date": "2026-09-17",
+      "url": "https://apnews.com/article/995f98147fbb49fb71696be824abff95",
+      "pinned_path": "data/sources/coverage/ap-2026-09-17.html",
+      "text_path": "data/sources/coverage/ap-2026-09-17.txt",
+      "text_sha256": "sha256:53e12a4e59054c8c272eb0623a279504ca26eeb42195979103d2f717a9bd3bba",
+      "quote": "has stopped work on developing",
+      "quote_span_check": "byte_exact",
+      "about": "The Associated Press interview of September 17 in which Postmaster General David Steiner said work on the ballot-mail portal has stopped, and which quotes a memo to employees saying the agency is not enforcing the new rules in the 2026 federal election.",
+      "capture_run": "capture-oneoff-20260919T001531Z",
+      "capture_raw_sha256": "sha256:037f808e43e0314d15d0fe65bf1bcf9a976a3f959f3f5a0aac13b6eb053249fa",
+      "captured_at": "2026-09-19T00:15:50Z"
+    },
+    {
+      "id": "usps-election-mail-page-2026-09-18",
+      "title": "Election Mail, the Postal Service's election-mail page as served September 18, 2026",
+      "publisher": "United States Postal Service",
+      "date": "2026-09-18",
+      "url": "https://about.usps.com/what/government-services/election-mail/",
+      "pinned_path": "data/sources/mail-voting/usps-election-mail-page-2026-09-18.html",
+      "text_path": "data/sources/mail-voting/usps-election-mail-page-2026-09-18.txt",
+      "text_sha256": "sha256:5adb6a2b5fc98629365804604bbcfb12c71d7f91e01a75b8f8036bff37575924",
+      "quote": "Postal Service is not enforcing the federal ballot mail rule for 2026",
+      "quote_span_check": "byte_exact",
+      "about": "The Postal Service's election-mail page on September 18, carrying an alert headed Postal Service is not enforcing the federal ballot mail rule for 2026. The page's text file was made from the saved page because the registry's own text extraction dropped the alert, which is a link.",
+      "capture_run": "capture-oneoff-20260919T001657Z",
+      "capture_raw_sha256": "sha256:ed64e6b52592470db7e91e4cf7f48e84ad7fc6955d9fb8dd3ff810a77b14daab",
+      "captured_at": "2026-09-19T00:16:57Z"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "title": "USPS statement on development of the U.S. Federal Ballot Mail Portal",
+      "publisher": "United States Postal Service",
+      "date": "2026-09-01",
+      "url": "https://about.usps.com/newsroom/statements/090126-statement-on-development-of-us-federal-ballot-mail-portal.htm",
+      "pinned_path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.html",
+      "text_path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.txt",
+      "text_sha256": "sha256:9a9a885a7c8b10632c66c6a18ec43ae01827a91c566ea55ab66c4c475009ddac",
+      "quote": "now finalizing the portal",
+      "quote_span_check": "byte_exact",
+      "about": "The Postal Service's September 1 statement that it was finalizing the portal and would soon open it to election officials on a voluntary basis, pinned for the September 6 story and reused here.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "democracydocket-oig-2026-09-08",
+      "title": "USPS confirms internal probe into whistleblower's mail voting allegations",
+      "publisher": "Democracy Docket",
+      "date": "2026-09-08",
+      "url": "https://www.democracydocket.com/news-alerts/usps-confirms-internal-probe-into-whistleblowers-mail-voting-allegations/",
+      "pinned_path": "data/sources/coverage/democracydocket-oig-2026-09-08.html",
+      "text_path": "data/sources/coverage/democracydocket-oig-2026-09-08.txt",
+      "text_sha256": "sha256:90f6546d430fe33f3691019a6a7cda7d2deccb380242a286490c878128fb4624",
+      "quote": "plan to conduct an independent review of these allegations",
+      "quote_span_check": "byte_exact",
+      "about": "Carries the inspector general's office's own words on September 8: it has received the allegations and plans an independent review. Pinned for the September 6 story and reused here.",
+      "capture_run": "capture-oneoff-20260908T225400Z",
+      "capture_raw_sha256": "sha256:a128729b64e33e4bfe7061eb66021078fee0c8dc35d401b6b9e8414612442d80",
+      "captured_at": "2026-09-08T22:54:06.130162Z"
     }
   ],
   "story_sources": [
     {
       "id": "scotus-26a305-order",
       "group": "primary",
-      "label": "Order denying application 26A305, with Kavanaugh concurrence and Alito dissent",
-      "meta": " \u00b7 Supreme Court of the United States, 2026-09-14",
+      "label": "Supreme Court order refusing the government's request, with Kavanaugh concurring and Alito dissenting",
+      "meta": " · Supreme Court of the United States, 2026-09-14",
       "usage": "the unsigned denial, Kavanaugh concurrence, and Alito dissent"
     },
     {
       "id": "scotus-26a305-docket-2026-09-14",
       "group": "primary",
-      "label": "Supreme Court docket 26A305 as of the denial",
-      "meta": " \u00b7 Supreme Court of the United States, 2026-09-14",
+      "label": "Supreme Court docket for the government's request, as of the refusal",
+      "meta": " · Supreme Court of the United States, 2026-09-14",
       "usage": "the September 14 docket entry for the denial"
     },
     {
       "id": "ca1-stay-denial-2026-09-10",
       "group": "primary",
       "label": "First Circuit order denying stays of the September 4 injunction",
-      "meta": " \u00b7 U.S. Court of Appeals for the First Circuit, 2026-09-10",
+      "meta": " · U.S. Court of Appeals for the First Circuit, 2026-09-10",
       "usage": "the First Circuit stay denial"
     },
     {
       "id": "nichols-pi-2026-09-13",
       "group": "primary",
       "label": "Memorandum opinion granting a preliminary injunction in DSCC v. Trump",
-      "meta": " \u00b7 U.S. District Court for the District of Columbia, 2026-09-13",
+      "meta": " · U.S. District Court for the District of Columbia, 2026-09-13",
       "usage": "the D.C. injunction of the same rule"
     },
     {
       "id": "talwani-pi-2026-09-04",
       "group": "primary",
       "label": "Memorandum and order granting a preliminary injunction",
-      "meta": " \u00b7 U.S. District Court for the District of Massachusetts, 2026-09-04",
+      "meta": " · U.S. District Court for the District of Massachusetts, 2026-09-04",
       "usage": "the September 4 injunction the Court left in place"
     },
     {
       "id": "usps-final-rule",
       "group": "primary",
       "label": "Postal Service final rule, Ballot Mail for Federal Elections",
-      "meta": " \u00b7 United States Postal Service, 2026-08-26",
+      "meta": " · United States Postal Service, 2026-08-26",
       "usage": "the rule the injunction names"
     },
     {
       "id": "eo-14399",
       "group": "primary",
       "label": "Executive Order 14399",
-      "meta": " \u00b7 Executive Office of the President, 2026-03-31",
+      "meta": " · Executive Office of the President, 2026-03-31",
       "usage": "the March order behind the rulemaking"
     },
     {
       "id": "scotus-26a305-application",
       "group": "primary",
-      "label": "Application 26A305 for a stay of the September 4 injunction",
-      "meta": " \u00b7 U.S. Department of Justice, Office of the Solicitor General, 2026-09-06",
+      "label": "The government's September 6 request to pause the September 4 injunction",
+      "meta": " · U.S. Department of Justice, Office of the Solicitor General, 2026-09-06",
       "usage": "North Carolina mailing and the stay request"
     },
     {
       "id": "scotus-26a124-opinion",
       "group": "primary",
-      "label": "Opinion granting 26A124",
-      "meta": " \u00b7 Supreme Court of the United States, 2026-08-24",
+      "label": "Supreme Court opinion of August 24 pausing the block of the executive order",
+      "meta": " · Supreme Court of the United States, 2026-08-24",
       "usage": "the August 24 stay of the executive-order injunction"
     },
     {
       "id": "usc-2-7",
       "group": "official",
       "label": "2 U.S.C. 7, election day",
-      "meta": " \u00b7 Office of the Law Revision Counsel, 2026-09-08",
+      "meta": " · Office of the Law Revision Counsel, 2026-09-08",
       "usage": "federal election day"
     },
     {
       "id": "scotus-26a305-california-opp",
       "group": "primary",
-      "label": "California respondents opposition to 26A305",
-      "meta": " \u00b7 State of California, 2026-09-09",
+      "label": "California respondents' opposition to the government's request",
+      "meta": " · State of California, 2026-09-09",
       "usage": "the states opposition brief"
     },
     {
       "id": "scotus-26a305-lwvma-opp",
       "group": "primary",
-      "label": "League of Women Voters respondents opposition to 26A305",
-      "meta": " \u00b7 League of Women Voters of Massachusetts et al., 2026-09-09",
+      "label": "League of Women Voters respondents' opposition to the government's request",
+      "meta": " · League of Women Voters of Massachusetts et al., 2026-09-09",
       "usage": "Plaintiff States anticipate mailing over 50 million ballots"
     },
     {
       "id": "scotus-26a305-reply",
       "group": "primary",
-      "label": "Reply in support of application 26A305",
-      "meta": " \u00b7 U.S. Department of Justice, Office of the Solicitor General, 2026-09-10",
+      "label": "The government's reply in support of its request",
+      "meta": " · U.S. Department of Justice, Office of the Solicitor General, 2026-09-10",
       "usage": "the government's claim that the rule makes fraud harder to commit and easier to catch"
     },
     {
       "id": "scotus-26a305-supplemental",
       "group": "primary",
-      "label": "Supplemental brief of the United States Postal Service on 26A305",
-      "meta": " \u00b7 U.S. Department of Justice, Office of the Solicitor General, 2026-09-14",
+      "label": "The Postal Service's supplemental brief of September 14, attaching Nichols's order",
+      "meta": " · U.S. Department of Justice, Office of the Solicitor General, 2026-09-14",
       "usage": "Nichols's injunction of implementing and enforcing the Final Rule, filed with the Court on September 14"
     },
     {
       "id": "scotus-26a305-ca-letter-ca1",
       "group": "primary",
       "label": "California letter notifying the Court of the First Circuit stay denial",
-      "meta": " \u00b7 State of California, 2026-09-10",
-      "usage": "California letter on the First Circuit denial"
+      "meta": " · State of California, 2026-09-10",
+      "usage": "California's letter telling the Court of the First Circuit order; the order itself is cited instead"
     },
     {
       "id": "scotus-26a305-lwv-letter-ca1",
       "group": "primary",
       "label": "League of Women Voters letter on the First Circuit stay denial",
-      "meta": " \u00b7 League of Women Voters of Massachusetts et al., 2026-09-10",
-      "usage": "organization letter on the First Circuit denial"
+      "meta": " · League of Women Voters of Massachusetts et al., 2026-09-10",
+      "usage": "the League of Women Voters letter telling the Court of the First Circuit order; the order itself is cited instead"
     },
     {
       "id": "scotus-26a305-election-officials-amicus",
       "group": "primary",
       "label": "Amicus brief of current and former election officials",
-      "meta": " \u00b7 Current and Former Election Officials, 2026-09-09",
+      "meta": " · Current and Former Election Officials, 2026-09-09",
       "usage": "election officials on mistakes, delays, and confusion"
     },
     {
       "id": "bonta-2026-09-10",
       "group": "primary",
       "label": "Bonta statement on the First Circuit stay denial",
-      "meta": " \u00b7 California Department of Justice, 2026-09-10",
-      "usage": "California attorney general on the First Circuit denial"
+      "meta": " · California Department of Justice, 2026-09-10",
+      "usage": "California attorney general's statement on the First Circuit order, read; it speaks to the appeal, and the page cites the order"
     },
     {
       "id": "usc-39-401",
       "group": "official",
       "label": "39 U.S.C. 401, general powers of the Postal Service",
-      "meta": " \u00b7 Legal Information Institute, 2026-09-18",
-      "usage": "the Postal Service rulemaking statute Kavanaugh cites"
+      "meta": " · Legal Information Institute, 2026-09-18",
+      "usage": "the Postal Service rulemaking statute Kavanaugh cites, read; the page quotes his paragraph instead"
     },
     {
       "id": "usc-5-706",
       "group": "official",
       "label": "5 U.S.C. 706, scope of review",
-      "meta": " \u00b7 Legal Information Institute, 2026-09-18",
-      "usage": "the Administrative Procedure Act review section Kavanaugh cites"
+      "meta": " · Legal Information Institute, 2026-09-18",
+      "usage": "the Administrative Procedure Act review section Kavanaugh cites, read; the page quotes his paragraph instead"
     },
     {
       "id": "wired-2026-09-14",
       "group": "coverage",
       "label": "WIRED on the denial",
-      "meta": " \u00b7 WIRED, 2026-09-14",
+      "meta": " · WIRED, 2026-09-14",
       "usage": "7-2 count and Kavanaugh-Jackson concurrence claim"
     },
     {
       "id": "examiner-2026-09-14",
       "group": "coverage",
       "label": "Washington Examiner on the denial",
-      "meta": " \u00b7 Washington Examiner, 2026-09-14",
+      "meta": " · Washington Examiner, 2026-09-14",
       "usage": "claim the Court decided in the administration favor"
     },
     {
       "id": "bbc-2026-09-15",
       "group": "coverage",
       "label": "BBC News on the denial",
-      "meta": " \u00b7 BBC News, 2026-09-15",
+      "meta": " · BBC News, 2026-09-15",
       "usage": "Trump order and Hail Mary mislabel, local-official interviews"
     },
     {
       "id": "abc-2026-09-14",
       "group": "coverage",
       "label": "ABC News on the denial",
-      "meta": " \u00b7 ABC News, 2026-09-14",
+      "meta": " · ABC News, 2026-09-14",
       "usage": "dropped in in the Kavanaugh quote"
     },
     {
       "id": "cnbc-trump-2026-09-15",
       "group": "coverage",
       "label": "CNBC on Trump reaction",
-      "meta": " \u00b7 CNBC, 2026-09-15",
+      "meta": " · CNBC, 2026-09-15",
       "usage": "implied 7-2 vote and Trump posts"
     },
     {
       "id": "scotusblog-2026-09-14",
       "group": "coverage",
       "label": "SCOTUSblog on the denial",
-      "meta": " \u00b7 SCOTUSblog, 2026-09-14",
+      "meta": " · SCOTUSblog, 2026-09-14",
       "usage": "the unsigned order summary"
     },
     {
       "id": "cbs-2026-09-14",
       "group": "coverage",
       "label": "CBS News on the denial",
-      "meta": " \u00b7 CBS News, 2026-09-14",
+      "meta": " · CBS News, 2026-09-14",
       "usage": "the denial quote"
     },
     {
       "id": "politico-2026-09-14",
       "group": "coverage",
       "label": "Politico on the denial",
-      "meta": " \u00b7 Politico, 2026-09-14",
+      "meta": " · Politico, 2026-09-14",
       "usage": "the denial and Nichols"
     },
     {
       "id": "ap-2026-09-14",
       "group": "coverage",
       "label": "Associated Press on Trump reaction",
-      "meta": " \u00b7 Associated Press, 2026-09-15",
+      "meta": " · Associated Press, 2026-09-15",
       "usage": "Trump reaction"
     },
     {
       "id": "cnbc-2026-09-14",
       "group": "coverage",
       "label": "CNBC on the denial",
-      "meta": " \u00b7 CNBC, 2026-09-14",
+      "meta": " · CNBC, 2026-09-14",
       "usage": "Monday denial quote"
     },
     {
       "id": "npr-2026-09-15",
       "group": "coverage",
       "label": "NPR on what the decision means for voters",
-      "meta": " \u00b7 NPR, 2026-09-15",
+      "meta": " · NPR, 2026-09-15",
       "usage": "election-official reaction interview"
     },
     {
       "id": "rollcall-2026-09-14",
       "group": "coverage",
       "label": "Roll Call on the denial",
-      "meta": " \u00b7 Roll Call, 2026-09-14",
+      "meta": " · Roll Call, 2026-09-14",
       "usage": "one-paragraph order summary"
     },
     {
       "id": "usps-sorn-820-225",
       "group": "primary",
-      "label": "Privacy Act system of records notice, USPS 820.225 Federal Ballot Mail",
-      "meta": " \u00b7 United States Postal Service, 2026-07-17",
-      "usage": "five-year retention and law-enforcement purpose for portal records"
+      "label": "Privacy Act notice for the portal's records, USPS 820.225 Federal Ballot Mail",
+      "meta": " · United States Postal Service, 2026-07-17",
+      "usage": "the Privacy Act notice for the portal, read; no court step on the page turns on it"
     },
     {
       "id": "usps-sorn-response-2026-09-01",
       "group": "official",
       "label": "Privacy Act response to comments on USPS 820.225",
-      "meta": " \u00b7 United States Postal Service, 2026-09-01",
-      "usage": "the September 1 notice that the system of records is effective with that publication"
+      "meta": " · United States Postal Service, 2026-09-01",
+      "usage": "the September 1 Privacy Act notice making the portal's records system effective, read; no court step on the page turns on it"
     },
     {
       "id": "scotus-26a305-whistleblower-aid-amicus",
       "group": "primary",
-      "label": "Brief of amicus curiae Whistleblower Aid in opposition to the stay",
-      "meta": " \u00b7 Whistleblower Aid, 2026-09-08",
+      "label": "Whistleblower Aid's brief opposing the pause",
+      "meta": " · Whistleblower Aid, 2026-09-08",
       "usage": "the zero percent failure allegation"
     },
     {
       "id": "usps-steiner-statement-2026-09-04",
       "group": "official",
       "label": "Statement from Postmaster General David Steiner",
-      "meta": " \u00b7 United States Postal Service, 2026-09-04",
+      "meta": " · United States Postal Service, 2026-09-04",
       "usage": "the denial that testing and validation have been continuous"
     },
     {
       "id": "scotus-26a305-dv-amicus",
       "group": "primary",
-      "label": "Brief amici curiae of DC Coalition Against Domestic Violence, et al.",
-      "meta": " \u00b7 filed at the Supreme Court, 2026-09-10",
+      "label": "Brief of the DC Coalition Against Domestic Violence and other groups",
+      "meta": " · filed at the Supreme Court, 2026-09-10",
       "usage": "45 states with address confidentiality programs and at least 150,000 confidential Colorado voters"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "group": "official",
+      "label": "Postal Service statement on development of the Federal Ballot Mail Portal",
+      "meta": " · United States Postal Service, 2026-09-01",
+      "usage": "the September 1 line that the portal was still being finalized"
+    },
+    {
+      "id": "usps-election-mail-page-2026-09-18",
+      "group": "official",
+      "label": "Postal Service election-mail page, as it read on September 18",
+      "meta": " · United States Postal Service, 2026-09-18",
+      "usage": "the alert that the Postal Service is not enforcing the federal ballot mail rule for 2026"
+    },
+    {
+      "id": "ap-2026-09-17",
+      "group": "coverage",
+      "label": "Associated Press interview with Postmaster General David Steiner",
+      "meta": " · Associated Press, 2026-09-17",
+      "usage": "work on the portal has stopped; the employee memo on not enforcing the rules in 2026"
+    },
+    {
+      "id": "democracydocket-oig-2026-09-08",
+      "group": "coverage",
+      "label": "Democracy Docket on the inspector general's planned review",
+      "meta": " · Democracy Docket, 2026-09-08",
+      "usage": "the inspector general's September 8 statement that it plans an independent review, quoted"
     }
   ],
   "primary_sources": [
@@ -1068,6 +1185,20 @@
       "bytes": 292725,
       "sha256": "sha256:98fa34c28f65887af7deabd674a1e415d363115efa633e931ecf570f2731211e",
       "url": "https://www.supremecourt.gov/DocketPDF/26/26A305/423743/20260910114032123_26A305%20Amicus%20Brief.pdf"
+    },
+    {
+      "id": "usps-portal-statement-2026-09-01",
+      "path": "data/sources/mail-voting/usps-portal-statement-2026-09-01.html",
+      "bytes": 35974,
+      "sha256": "sha256:c221ee10f59771f302f623a29c36f7fe0e77ce5229e8922ca29e7ae9b91f9c87",
+      "url": "https://about.usps.com/newsroom/statements/090126-statement-on-development-of-us-federal-ballot-mail-portal.htm"
+    },
+    {
+      "id": "usps-election-mail-page-2026-09-18",
+      "path": "data/sources/mail-voting/usps-election-mail-page-2026-09-18.html",
+      "bytes": 165512,
+      "sha256": "sha256:ed64e6b52592470db7e91e4cf7f48e84ad7fc6955d9fb8dd3ff810a77b14daab",
+      "url": "https://about.usps.com/what/government-services/election-mail/"
     }
   ],
   "coverage_records": [
@@ -1082,7 +1213,9 @@
     "ap-2026-09-14",
     "cnbc-2026-09-14",
     "npr-2026-09-15",
-    "rollcall-2026-09-14"
+    "rollcall-2026-09-14",
+    "ap-2026-09-17",
+    "democracydocket-oig-2026-09-08"
   ],
   "authored_sections": [
     "what-happened",
@@ -1233,7 +1366,7 @@
       "value": "61",
       "unit": "million ballots",
       "kind": "sourced",
-      "label": "2022 mail ballots transmitted to non-UOCAVA voters, as Nichols cites the survey",
+      "label": "2022 mail ballots sent to voters other than military and overseas voters, as Nichols cites the survey",
       "source": {
         "source_id": "nichols-pi-2026-09-13",
         "quote_span": "approximately 61 million"
@@ -1320,12 +1453,24 @@
       "plain": "Trump Truth Social posts as served on that site",
       "record_id": "cnbc-trump-2026-09-15",
       "status": "partly have: quoted in CNBC and BBC pins, not a saved truthsocial.com page"
+    },
+    {
+      "need": "postalpro-alert-body",
+      "plain": "The full text of the Postal Service industry alert on not enforcing the rule for 2026 (postalpro.usps.com/node/15574)",
+      "record_id": null,
+      "status": "missing: the registry saved the alert page on September 18 (capture-oneoff-20260919T001705Z) but the page's text loads by script and the saved copy holds only the site's menu; the alert's heading is quoted from the election-mail page instead"
+    },
+    {
+      "need": "usps-employee-memo",
+      "plain": "The Postal Service memo to employees on not enforcing the new rules in 2026",
+      "record_id": "ap-2026-09-17",
+      "status": "partly have: quoted in the Associated Press interview of September 17, not a saved copy of the memo"
     }
   ],
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "Court order, docket, CA1 denial, Nichols opinion, reused EO/rule/Talwani/application pins, party briefs, SORN and September 1 response, Whistleblower Aid and Steiner, domestic-violence amicus, and twelve coverage pins admitted through capture news or reused with capture_run."
+      "evidence": "Court order, docket, First Circuit order, Nichols opinion, reused executive order, rule, Talwani, application, portal-statement and inspector-general pins, party briefs, Postal Service statements and election-mail page, and fourteen coverage pins admitted through capture news or reused with their receipt fields."
     },
     "derived_numbers_computed": {
       "done": true,
@@ -1333,11 +1478,11 @@
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "WIRED, Examiner, BBC, ABC, and CNBC Tuesday checked against the order PDF; SCOTUSblog, CBS, Politico, CNBC Monday, AP consistent or checks out."
+      "evidence": "WIRED, Examiner, BBC, CNBC Tuesday, ABC, Roll Call and AP September 17 checked against the order PDF, the docket and the Postal Service's own page; SCOTUSblog, CBS, Politico, CNBC Monday, AP September 15 and NPR checks out or consistent."
     },
     "section_grammar": {
       "done": true,
-      "evidence": "What happened, the catch, where this sits, who feels it, outlets, claim check, what happened next, unknowns, records."
+      "evidence": "What happened, the catch, where this sits, who feels it, outlets, claim check, what happened next, unknowns, records; one timeline figure, one day-count figure, two tables."
     },
     "chip_vocabulary": {
       "done": true,

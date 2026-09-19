@@ -113,3 +113,150 @@ Monday: SCOTUSblog, CBS, ABC, Politico, CNBC, BBC, WIRED, Roll Call, Examiner. T
 13. Coverage count line: Monday writes are one lineage on the unsigned order. OIG audit scope and settlement-enforcement track not captured; left outside.
 
 Census search updates for this patch: portal SORN and September 1 response admitted; Whistleblower Aid and Steiner admitted (held); DV amicus admitted. Talwani fraud sentence found. Nichols 2022 volume figures now used. Supplemental brief now used for the injunction language.
+
+## Round 3 patch, 2026-09-18 (mail-patch.md items 17 to 26; avatar-read-2026-09-18.md, Mail voting A to E and the eight patterns)
+
+Worktree the-catch-site-wt-r3-mail, branch author/patch-r3-mail from main 494a180d, skill 2.1 at e59af305.
+
+### Records admitted this round (all through `capture news`)
+
+- AP September 17, Steiner interview: capture-oneoff-20260919T001531Z, body_captured, 5,334 characters. Pinned as coverage/ap-2026-09-17.html and .txt (the registry's text file). Record `ap-2026-09-17`.
+- Postal Service election-mail page, run date: the registry already held a September 8 copy (capture-oneoff-20260908T225123Z), which predates the alert. Re-fetched with `--force` on the run date: capture-oneoff-20260919T001657Z. The registry's text extraction (603 characters) dropped the alert because it is a link's text, so the text sibling was made from the registry's saved page bytes with tags stripped, and the record's `about` says so. The quoted sentence, "Postal Service is not enforcing the federal ballot mail rule for 2026", is the alert's heading, byte-exact in both the saved page and the text file. Record `usps-election-mail-page-2026-09-18`.
+- PostalPro industry alert (postalpro.usps.com/node/15574), the page the alert links to: capture-oneoff-20260919T001705Z, body_captured but 354 characters, the site's menu only; the alert's body loads by script and is not in the saved bytes. Not a usable record; entered in the needs ledger as missing with the run id. The page quotes the heading from the election-mail page instead.
+- USPS September 1 statement on portal development: already pinned for the September 6 story (data/sources/mail-voting/usps-portal-statement-2026-09-01.html and .txt, hash 9a9a885a...), record carried into this manifest as `usps-portal-statement-2026-09-01` with its `capture_status` unchanged. URL confirmed by an assisted search (grok) and by the pinned page's own title. Registry search for the URL: none held; no re-fetch since the pin exists and its hash recomputes.
+- Democracy Docket September 8 (inspector general's planned review): already pinned for the September 6 story (capture-oneoff-20260908T225400Z), record carried into this manifest as `democracydocket-oig-2026-09-08` for item 19.
+
+### Items 17 to 26
+
+17. Done. What happened next, first paragraph: the application's cover lists "DONALD J. TRUMP, ET AL., APPLICANTS" (application pin line 18); the posts are statements to the public; the application is the filing. Cited to the application.
+18. Done. Catch 2 and the shared WIRED and CNBC card: the order names Jackson only as the justice the request was presented to, and names no other justice's vote. Cited to the docket entry.
+19. Done. Watching line cites the inspector general's own words as carried by Democracy Docket ("plan to conduct an independent review of these allegations"); "stayed or reversed" replaced with "unless a court lifts it".
+20. Done. What happened next, second paragraph: the election-mail page alert quoted, dated as of September 18; one sentence that the operating decision does not settle the Postal Service's authority for a later election, cited to Kavanaugh's "fair prospect that the final rule falls within the Postal Service's statutory authority".
+21. Done. What happened next, third paragraph: Steiner "has stopped work on developing", planned unveiling around September 15, the employee memo, cited to the AP pin; the September 1 statement ("now finalizing the portal") cited in the same paragraph and in the portal-chain paragraph in Where this sits. AP September 17 also gets a folded coverage card.
+22. Done. The "Story updated" line under Three things carries the update sentence with both cites (election-mail page, AP September 17). The headline is unchanged.
+23. Done. Where this sits, first narrative paragraph: the two questions, Kavanaugh's answers in order (possibly yes; no for 2026), the unsigned order's two sentences without a named ground. The claim-check block keeps its one sentence on the fair prospect and no longer carries the timing analysis.
+24. Done. Where this sits, second narrative paragraph, from the California opposition's own passages: "ballots will not be delivered" unless registered, barcoded and uploaded; "an elections regulation"; the Constitution "entrusts States with responsibility for regulating federal elections"; the Elections Clause named once there, with the First Circuit's confinement to that clause; the government's "modest envelope-design and addressee-information" description cited to the application. The paragraph does not decide the question.
+25. Done. Where this sits, third narrative paragraph: rule effective August 21 (rule pin), portal being finalized September 1 (USPS statement), "The Portal is not currently operational" and "a portal that does not yet exist" (Talwani, September 4), "the lack of a presently operative portal" (First Circuit, September 10), the refusal (docket, September 14), work stopped (AP, September 17). The timeline figure carries the same links as rows (Sep 1, Sep 4, Sep 10, Sep 14, Sep 17).
+26. Done. `updated` is 2026-09-18, the date of the election-mail page capture, the newest dated record on the page.
+
+### Avatar read, Mail voting
+
+A1. "Why it matters:" prefix removed from all four catch items; each item's last sentence says what a reader would wrongly believe, without the label. Siblings: 4 of 4.
+A2. Triad closer cut with the paragraph it closed (the "not the same holding restated" paragraph is gone; item 23's paragraph replaces it).
+A3. Counting-triad subhead replaced: "Two legal questions, and who has answered which".
+A4. Negation-opener paragraph cut (see A2).
+A5. "Those two remain a disputed allegation and a denial" cut; the dispute is now one sentence in the portal-chain paragraph, closing on what the courts counted.
+A6. The three negation-flip closers rewritten: the ballot-figures paragraph closes on what each figure is (a forecast, a baseline) and what Nichols found; the BBC paragraph closes on the date the interviews ran; the executive-order sentence now says what the Court wrote on August 24. Page-wide sweep for "X, not Y" as a headline or paragraph closer: the claim-check block's last sentence rewritten too ("The refusal keeps the rule off this fall's ballots; whether the restrictions are lawful is still before the appeals courts"). Siblings rewritten: 5.
+A7. Bonta paragraph cut (its last sentence disclaimed its relevance). Record kept in the list with a plain usage line.
+A8. Card-introducing sentences now differ: "the docket entry for that night is the order itself"; "His reason for the vote is the paragraph's second sentence"; "His opening sentence is the whole of his position".
+A9. "The First Circuit got there first" replaced with "The First Circuit had already refused to pause Talwani's block."
+A10. "off their backs" replaced with plain words: offices can keep mailing with the envelopes they have; the order stops the Postal Service from refusing their ballots.
+A11. Section subheads rewritten as content: "The request, the order, and the two signed opinions"; "The week after"; "What the Court refused, and what it did not decide".
+B1. Dek rewritten: what the rule required, what the Court refused, what stays blocked and through when, the catch (no ruling on the March order; Kavanaugh's fair prospect). No docket number anywhere in reader text; it survives only inside the order's own quoted words and in the state block's record titles, which are the Court's own document names.
+B2. KPI strip: "Blocked / the rule's envelope, barcode and portal requirements, through November 3"; days; two justices dissented in public; "Stopped / work on the portal".
+B3. What the rule requires is now in the dek, in Three things (item 2), and the fourth paragraph of What happened, before the Talwani and Nichols paragraphs.
+B4. "the equities do not favor a stay" glossed in Three things ("the factors the Court weighs before granting emergency relief do not favor a stay, a stay being a pause on a lower court's order") and in the two-questions paragraph.
+B5. "named" as a term of art removed from all reader text; "the rule's mandatory requirements" / "the parts of the rule that make ... mandatory". Remaining uses of "named" are verbs (named Alito and Thomas as dissenters).
+B6. Term budget: introduced once each: stay, arbitrary and capricious, standing, universal, Elections Clause. Dropped from reader text: ultra vires (reader words: acted with no legal power at all), ripeness, moot, administrative stay, intervenors (twelve states, in the detail block), friends of the court, UOCAVA (military and overseas voters), caption, system of records, below (as a legal term). The two grounds-of-decision paragraphs moved into a detail block (C6).
+B7. Docket numbers as nouns removed; the requests table has no docket column and describes each request in words; prose says "the August 24 ruling", "the government's request".
+B8. Sauer introduced: "Solicitor General D. John Sauer, the government's lawyer at the Court".
+B9. "The League opposition" replaced by "The states that sued told the Court".
+B10. Zero percent failure explained from the amicus's own next clause: a batch is treated as non-compliant if one envelope fails the barcode check.
+B11. "Sunday's fight" sentence cut; Nichols is introduced once, in the Talwani-and-Nichols paragraph, before any later reference.
+B12. "below" and "caption" as legal terms removed; "in the lower court", "the cover of the second of its two cases lists".
+B13. Catch 4 rewritten without internal words: "We read each of the thirteen articles on this page for his name" with the two that have it and the eleven that do not, tagged "Left out". Recounted this session: grep -c -i nichols over the 13 coverage text pins; Politico 2, BBC 1, the other eleven 0.
+B14. The qualification is now the plain sentence: for elections through November 3, Talwani's order stops the Postal Service from refusing their ballots for not meeting the new rule, and leaves any state free to comply on its own.
+B15. Dissent and concurrence counts and the sentence count moved into the day-count figure's proof line.
+B16. CBS 6-3 line shortened: "The 6-3 count CBS gives is for the August 24 ruling on the executive order, a different vote."
+B17. Alito card is now one full sentence, contiguous in the order PDF: "The Court incorrectly denies the Government's application for a stay of a universal injunction that bars implementation of a final rule concerning election ballot mail."
+B18. WIRED and CNBC 7-2 share one card with the chip "not in the record" (section-grammar.md: no pinned support and no pinned contradiction); the WIRED card is about the attribution alone (chip wrong, the order says otherwise). The coverage count line carries a one-line key to the four verdict words.
+C1. Second timeline and the prose retelling cut; one timeline figure remains, with a one-sentence comparison after it.
+C2. Day-count strip keeps one comparison sentence; the arithmetic is the figure's proof line.
+C3. The "how the day counts were made" receipt removed from the claim-check section; its content is the proof line under the day-count figure.
+C4. "Who wrote what" table kept; the record block on the silent justices and the "not the same holding restated" paragraph cut. The silent justices are stated once, in What we do not know yet.
+C5. The Nichols-blocks-voluntary-portal point is made once (What happened, Talwani-and-Nichols paragraph: the whole rule, no election-date limit) and referenced once in the watching line. The two Who feels it restatements cut.
+C6. The which-ground paragraphs (First Circuit confined to the Elections Clause; Nichols on statutory power; Alito's twelve states) are now a `SourcedBlock detail` at the end of Where this sits.
+C7. "This story rests on" was already typed proof (`data-layer="proof"` on its wrapper); confirmed and updated to name the new records.
+C8. Ballot-count paragraph reduced to Talwani's "millions", the states' own 50 million forecast and the 2022 54.4 million baseline, each with its kind; 61 million, 36.6 million and 10,000 jurisdictions stay in the manifest figures table only.
+C9. Privacy Act paragraph cut; the two Privacy Act records stay in the list with plain usage lines.
+C10. One preamble in the coverage section, with the count and the verdict key.
+D1. First screen unchanged in substance: headline, dek, three things, the order's own words as the first card.
+D2. Avatar 3's answer is now in the dek's last sentence and in Three things item 3; the claim-check block's last sentence no longer uses the "not a final holding" flip.
+D3. Avatar 5's sentence is the dek's second and third sentences.
+E1. WIRED and CNBC 7-2: same inference, same chip, "not in the record", one shared card; the catch says so.
+E2. ABC's dropped "in" moved to the Smaller slips line and a folded "checks out" card; it no longer counts among the misses.
+E3. Examiner card quotes the sentence whole: "Though the court decided in the Trump administration's favor regarding mail-in ballot restrictions, it won't enforce them for the midterm elections." The verdict stays wrong: the docket entry says the request is denied.
+E4. Unknowns: "Thomas's vote beyond the Alito join" removed; the six unnamed justices listed.
+E5. Nichols's scope stated once, at the pin: the order (as filed with the Court in the supplemental brief's appendix) enjoins "implementing and enforcing" the whole rule; the reasoning, in the same sentence, is that no statute gives the power to issue "key parts" of it. The catch and the watching line refer to "the whole rule" only.
+E6. The authored mechanism sentence cut; the First Circuit's own linkage is quoted instead (the district court's findings about harm "including ... the lack of a presently operative portal").
+E7. The record block asserting how the silent justices voted is gone; the KPI says two justices dissented in public; the unknowns list names the six the order does not name.
+E8. WIRED's sentence quoted whole in catch 1; the verdict rests on where the sentence sits in the order (above "JUSTICE KAVANAUGH, concurring") and on the docket's "presented to Justice Jackson".
+Patterns 1 to 8: 1 (catch in the dek and in Three things 3); 2 (no "X, not Y" headline or closer; catch heads name the outlet and the record); 3 (process vocabulary swept: pins, carrier, so-what, named, Why it matters, docket numbers; built page grepped after build, see below); 4 (one timeline, one day-count figure, one table of writings, one table of requests, each followed by one comparison sentence); 5 (arithmetic and counts in proof; the sources line already proof); 6 (verdict key on the count line; ABC slip demoted; 7-2 given one chip); 7 (Bonta and Privacy Act paragraphs cut); 8 (Nichols whole-rule versus key-parts stated once).
+
+Facts the avatar items asked for that the pins do not hold: none invented. The full text of the PostalPro industry alert is not in the saved bytes (needs ledger); the employee memo is quoted only through the AP (needs ledger).
+
+### Census updates this round
+
+- Registry: `capture search "election-mail"`, `"995f98147fbb49fb71696be824abff95"`, `"about.usps.com/newsroom"` since August 25, `"Steiner"` since September 15: none of the three URLs held before this run except the September 8 election-mail copy.
+- Postal Service newsroom statements listing and national-releases listing: fetched for URL discovery only; the listing pages render their links by script and returned no September 1 link. Wayback's index is blocked from this network (AT&T category block). URL found by assisted search and confirmed against the earlier story's pin.
+- Forward search through September 18: AP September 17 (admitted); the Postal Service's own page (admitted); the docket as captured September 18 lists no request about Nichols's order (unknowns item 2).
+
+### Passage tables for the new records
+
+#### ap-2026-09-17
+| Passage | Disposition |
+| "has stopped work on developing a controversial computer system" | used (rail note, portal chain, Who feels it, What happened next, coverage card) |
+| "There's an injunction so we're not doing anything" | held unused (the paraphrase carries it; one quotation per paragraph) |
+| memo: "not be enforcing any of these new rules in the 2026 federal election"; "business as usual" | used (What happened next, coverage card) |
+| "had planned to unveil it around Sept. 15" | used (What happened next) |
+| resignation talk, postmark delays in Washington and Oregon, barcode pricing | out of scope for this moment |
+| "Supreme Court rejected his executive order" (AP's framing) | held unused: the AP's own label; the page's claim check covers the point and the card is marked consistent on the Steiner facts only |
+
+#### usps-election-mail-page-2026-09-18
+| Passage | Disposition |
+| "Industry Alert – Postal Service is not enforcing the federal ballot mail rule for 2026" | used (rail note, What happened next, coverage card); quoted without the dash |
+| 640,000 employees, Kit 600, 2024 webinars, preparedness memorandum | out of scope |
+
+#### usps-portal-statement-2026-09-01
+| Passage | Disposition |
+| "The Postal Service is now finalizing the portal and will soon make it available to election officials who voluntarily wish to familiarize themselves" | used (portal chain, What happened next, timeline row) |
+| "verification procedures prior to acceptance are not being performed" | held unused (the earlier story carries it) |
+| Blumenthal letter received | out of scope |
+
+#### democracydocket-oig-2026-09-08
+| Passage | Disposition |
+| "plan to conduct an independent review of these allegations" | used (watching line) |
+| "did not characterize its planned work as a formal investigation" | held unused |
+
+### pin_gaps after the draft (568 lines, run this session)
+
+- scotus-26a305-order (4): five months, 40 pages, Postal Regulatory Commission: held unused, Alito's chronology and timing blame, not the holding.
+- scotus-26a305-docket (18): applicants' names and the amicus filers (National Security Leaders, Bipartisan American Election Project, Biazzo, LULAC, former governors, APWU, Wisconsin Democracy Campaign, Asian Law Caucus group, ACLU addresses): out of scope; the election-officials, Whistleblower Aid and domestic-violence briefs are the ones the page uses.
+- ca1-stay-denial (8): caption titles and Havens Realty: out of scope.
+- nichols-pi (36): three weeks, sixty days, two months, 47 days: held unused, Nichols's own day counts from other start dates; this page counts from its own dates. Federal Register page numbers, State Citizenship List, Absentee Participant List: out of scope (executive order section 2 and citation apparatus). 35.3 million cast by mail and counted (2022): held unused, the page keeps one baseline (54.4 million delivered). $21,349 Travis County, Jessica Mendoza, Jeffries and Schumer, fifty states: held unused, standing facts for the D.C. plaintiffs.
+- talwani-pi (76): twenty-three states: held unused (in the data module as plaintiffStates, not on this page). State statutes, the fifty-state mail-voting survey, Eight/Two/Twenty-seven/Thirteen States: out of scope (the earlier story). Per-state anticipated mailings (3,200,000; 4,000,000; 700,000; 900,000 and the rest), 1,850 Wisconsin municipalities, 1,521 Michigan envelope styles, 3 months Vermont approval, sixteen weeks lead time, 25 members, 93 years: held unused; the page keeps the states' aggregate forecast and Talwani's "millions". fourteen days, 24 hours: out of scope (procedural).
+- usps-final-rule (53): DMM section numbers, Federal Register cross-references, 90 days pre-mailing, forty-seven states with confidentiality programs, HAVA, Paperwork Reduction Act, unrelated EPA notices in the same issue: out of scope; the confidentiality count on the page is the domestic-violence brief's 45 states, which is the record the page quotes.
+- eo-14399 (5): State Citizenship List, 90 days, Absentee Participation List: out of scope (section 2 and the rule's design, covered in the earlier story).
+- scotus-26a305-application (48): officials' names, page counts (18, 15, seven), Federal Register pins, state statutes, $15 trillion / $496 billion major-questions comparisons: held unused (argument apparatus); "two weeks" since the August 24 stay: held unused.
+- scotus-26a124-opinion (10): five months, Judge Dunlap, Purcell: out of scope (the August story).
+- california-opp (31): 29 States / 8 States mail-voting survey, 99.3 / 91.5 / 74.7 / 53.7 percent, 1.3 million Colorado, 700 pages of declarations, 90 days, two States already mailing: held unused; the page uses the brief's regulatory framing and its delivery conditions.
+- lwvma-opp (67): counsel names and citations: out of scope; nine months to a year build time, less than three months, 70 days, two states this week: held unused (the Whistleblower Aid and Talwani passages carry the timing).
+- reply (13): 2030 / four years hypothetical, citations: held unused.
+- supplemental (38): duplicates of the Nichols lines (the brief appends his opinion): same dispositions as nichols-pi.
+- lwv-letter-ca1 (9), ca-letter-ca1 (0): out of scope.
+- election-officials-amicus (18): ten States, 8,000 offices, 2.6 million Maricopa, 4.9 years, 72 hours, Twenty-four States, 90 days: held unused (single-county estimates and hypothetical scan times); the page uses the brief's mistakes/delays/confusion line.
+- bonta (8): Newsom, Campbell, Ford, Brown: out of scope; the paragraph is cut (A7).
+- usc-39-401, usc-5-706, usc-2-7 (0).
+- usps-sorn-820-225 (24), usps-sorn-response (10): out of scope; the paragraph is cut (C9).
+- whistleblower-aid-amicus (37): nine months to a year, eleven weeks, five percent scan errors, thirty-five years, Blumenthal and Garcia letters, cited news titles: held unused; the page uses the zero-percent-failure passage with its meaning.
+- usps-steiner-statement (1): Executive Branch: out of scope.
+- dv-amicus (36): state statutes, cited articles, 45.1 percent, 500 million records, 18 months: out of scope; the page uses 45 states and 150,000.
+- usps-election-mail-page (16): 640,000 employees, Kit 600, webinar rows: out of scope.
+- usps-portal-statement (2): Blumenthal: out of scope.
+
+### Build, lints, measurement (2026-09-18)
+
+- `npm run build`: event gate passed, 15 prose manifests; shell gate passed. Built page: 0 em dashes; grep of the built story text for pins, carrier, so-what, "Why it matters", 26A-numbers outside quoted order text, ultra vires, ripeness, moot, UOCAVA, amicus, system of records: none in reader prose after the label fixes (record and figure labels in the manifest rewritten in plain words).
+- `lens_lint`: clean. `quote_lint`: clean after two fixes (the "wafer-thin reed" span, which the pin prints inside its own quotation marks; the ABC card, which had quoted the order's words rather than ABC's).
+- Browser at 1280 wide, story mode: 4 figures, 3 quote cards, 28 fact blocks, 0 proof blocks visible; the first screen is the headline, the dek and the mode switcher. Story column height 14,063 px including the records list and the state block (which prints every registered figure); 11,236 px from the top of the story to the records list, above the 9,000 px guide; the narrative paragraphs total 2,075 words.
+- Reader-facing delta: the dek and first screen now say what the rule required, what the Court refused, and what it did not decide; the page carries the Postal Service's September 17 and 18 statements that it has stopped work on the portal and is not enforcing the rule for 2026.
