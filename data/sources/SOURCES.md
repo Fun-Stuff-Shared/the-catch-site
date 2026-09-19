@@ -1550,3 +1550,61 @@ Space-weapons story round 3 (2026-09-18 local): the April 2022 anti-satellite te
 | data/sources/iran-war/senate-approps-vtt-00482.txt | 3313 | cb6a9ee5a558d005 |
 
 Round 5 additions for the Iran war cost story (September 19, 2026): H.Con.Res. 113 and 89 enrolled texts from govinfo; House roll call 282; Brown University September 8 energy-cost update; CSIS independent Epic Fury cost model; CNN $45.1 billion report via the local3news wire copy after cnn.com 404 and the KESQ copy serving a cookie notice; Senate Appropriations July 21 caption segments 01:35:36 to 01:36:24.
++## Kennedy Center September 17 notice order (captured 2026-09-19)
+
+Court filings and official records were captured before coverage. The September 17 minute order is text-only on the public docket; CourtListener and D.D.C. docket routes were refused by the capture registry, so the story labels the admitted carriers of its operative sentence. The Truth Social page captured only a shell and was not admitted.
+
+| File | Bytes | sha256 (first 16) |
+|---|---:|---|
+| data/sources/coverage/kennedy-center/article_0144.html | 261765 | 014177b473c520c4 |
+| data/sources/coverage/kennedy-center/article_0144.txt | 5799 | 85d5923dac44e427 |
+| data/sources/coverage/kennedy-center/article_0727.html | 314246 | 816cf4e4fe567a1b |
+| data/sources/coverage/kennedy-center/article_0727.txt | 2874 | 51ad9c6895bfd004 |
+| data/sources/coverage/kennedy-center/article_0881.html | 204008 | ba6a1fafe178935c |
+| data/sources/coverage/kennedy-center/article_0881.txt | 4073 | d865aa5b9946668a |
+| data/sources/coverage/kennedy-center/article_6921.html | 215457 | 597b362349b5fa09 |
+| data/sources/coverage/kennedy-center/article_6921.txt | 2615 | c3e349c20f97af7d |
+| data/sources/coverage/kennedy-center/article_6951.html | 215598 | c0b666a8995b22c8 |
+| data/sources/coverage/kennedy-center/article_6951.txt | 3174 | f228c68bb258728d |
+| data/sources/coverage/kennedy-center/cbs-kennedy-center-2026-09-17.html | 634787 | fc701f8b6041bdc5 |
+| data/sources/coverage/kennedy-center/cbs-kennedy-center-2026-09-17.txt | 4525 | f122d551f619d9c2 |
+| data/sources/kennedy-center/beatty-counsel-reaction-2026-09-17.html | 94235 | 6bc564f9b8fa8687 |
+| data/sources/kennedy-center/beatty-counsel-reaction-2026-09-17.txt | 3084 | f3387776e798d6d4 |
+| data/sources/kennedy-center/beatty-motion-84-2026-09-16.pdf | 150180 | 1a5ce44e37d18bbb |
+| data/sources/kennedy-center/beatty-motion-84-2026-09-16.txt | 7004 | de54a8a978e70b8c |
+| data/sources/kennedy-center/beatty-notice-85-2026-09-17.pdf | 1845832 | 56c6d70ff9b8640d |
+| data/sources/kennedy-center/beatty-notice-85-2026-09-17.txt | 3147 | 5ce7ed73d5cd8bab |
+| data/sources/kennedy-center/beatty-opinion-50-2026-05-29.pdf | 729307 | 5be19306fe458988 |
+| data/sources/kennedy-center/beatty-opinion-50-2026-05-29.txt | 227619 | 72d65acc38fb94eb |
+| data/sources/kennedy-center/beatty-opinion-77-2026-09-15.pdf | 405319 | 1ca0e9d3a9dedbe9 |
+| data/sources/kennedy-center/beatty-opinion-77-2026-09-15.txt | 47731 | 208554278a48cb8e |
+| data/sources/kennedy-center/beatty-reply-87-2026-09-17.pdf | 126544 | 983469471220200e |
+| data/sources/kennedy-center/beatty-reply-87-2026-09-17.txt | 20662 | d983a9436f09e6bf |
+| data/sources/kennedy-center/board-minutes-68-3-2026-08-13.pdf | 1364115 | 0c8062aebb1f5728 |
+| data/sources/kennedy-center/board-minutes-68-3-2026-08-13.txt | 55350 | b4f553014e506758 |
+| data/sources/kennedy-center/board-resolution-66-2-2026-08-13.pdf | 106946 | dafafcb8aa16b532 |
+| data/sources/kennedy-center/board-resolution-66-2-2026-08-13.txt | 3017 | 306a2f3e88a72943 |
+| data/sources/kennedy-center/board-vote-notice-78-2026-09-15.pdf | 225658 | 5a3be4ba0cec01cc |
+| data/sources/kennedy-center/board-vote-notice-78-2026-09-15.txt | 2488 | af6559fa020e535c |
+| data/sources/kennedy-center/defendants-motion-vacate-88-2026-09-18.pdf | 127459 | d57a334966cd28dc |
+| data/sources/kennedy-center/defendants-motion-vacate-88-2026-09-18.txt | 3209 | 51d5dacae4ff2537 |
+| data/sources/kennedy-center/defendants-response-86-2026-09-17.pdf | 148883 | 7ba02a49ef692256 |
+| data/sources/kennedy-center/defendants-response-86-2026-09-17.txt | 7922 | 1882e09a42f1eee0 |
+| data/sources/kennedy-center/defendants-summary-judgment-89-2026-09-18.pdf | 128966 | f3bb5e88c109da22 |
+| data/sources/kennedy-center/defendants-summary-judgment-89-2026-09-18.txt | 3409 | 9276364f2da7dcfc |
+| data/sources/kennedy-center/floca-declaration-86-1-2026-09-17.pdf | 798401 | 4753caf607537057 |
+| data/sources/kennedy-center/floca-declaration-86-1-2026-09-17.txt | 6077 | 6f429783dc8d1852 |
+| data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.pdf | 125928 | 144bb1928afa35ce |
+| data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.txt | 6524 | 4dab905a8c673a31 |
+| data/sources/kennedy-center/preservation-addendum-62-1-2026-08-28.pdf | 43535 | c4c9f9942aec3646 |
+| data/sources/kennedy-center/preservation-addendum-62-1-2026-08-28.txt | 6516 | 6e66dc494318ab93 |
+| data/sources/kennedy-center/preservation-joint-report-62-2026-08-28.pdf | 53633 | 04682e24b71d4c9f |
+| data/sources/kennedy-center/preservation-joint-report-62-2026-08-28.txt | 8446 | 8600e4592af6e7f0 |
+| data/sources/kennedy-center/preservation-opinion-45-2026-05-29.pdf | 426716 | 765a263241d48333 |
+| data/sources/kennedy-center/preservation-opinion-45-2026-05-29.txt | 99566 | 961b1444aae29127 |
+| data/sources/kennedy-center/scheduling-order-82-2026-09-16.pdf | 230282 | 535a8219bece6215 |
+| data/sources/kennedy-center/scheduling-order-82-2026-09-16.txt | 4811 | 1fee18eda6976415 |
+| data/sources/kennedy-center/usc-20-76j-2026-09-19.html | 164172 | a1dd4bbb1b1ac51d |
+| data/sources/kennedy-center/usc-20-76j-2026-09-19.txt | 8036 | b79b9193d34bea5d |
+| data/sources/kennedy-center/usc-20-76l-2026-09-19.html | 165117 | 1488b46160875e6d |
+| data/sources/kennedy-center/usc-20-76l-2026-09-19.txt | 11217 | 49dba114e78817c3 |

@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import CheckedBlock from "../../../components/story/CheckedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import "../../../styles/story.css";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, timeline, coverageChecks } from "../../../data/kennedy-center-2026-09-17-30-day-notice-before-demolition.mjs";
+const state = readPublishedState().events.get("event-kennedy-center-2026-09-17-30-day-notice-before-demolition");
+if (!state) throw new Error("Missing publication selection: event-kennedy-center-2026-09-17-30-day-notice-before-demolition");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/kennedy-center/">Kennedy Center</a><span>September 17, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">Kennedy Center &middot; September 17, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary><ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#where-this-sits">Where this sits</a></li>
+          <li><a href="#who-feels-it">Who feels it</a></li>
+          <li><a href="#outlets">What the coverage got right, and what it got wrong</a></li>
+          <li><a href="#claim-check">Claim checked against the record</a></li>
+          <li><a href="#what-happened-next">What happened next</a></li>
+          <li><a href="#unknowns">What we do not know yet</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol></details>
+      </nav>
+
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => <div class="kpi"><span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span><span class="kpi-label">{k.label}</span></div>)}
+      </div>
+
+      <aside class="three-things" data-layer="fact">
+        <p class="tt-label">Three things to know</p>
+        <ol>
+          <li>Judge Christopher Cooper denied Representative Joyce Beatty's request for an emergency hearing on September 17. In the same minute order, he required written notice more than 30 days before the defendants implement a change to the project plans previously presented to the court, including demolition of the main building.<Cite s="upi-kennedy-center-2026-09-17" passage="more than 30 days before the implementation of any changes to the scope of the project plans presented to the Court" /></li>
+          <li>The order did not forbid every physical change and did not decide whether a demolition would be lawful. Its notice requirement is tied to the scope of plans the defendants had put before the court.<Cite s="preservation-joint-report-62-2026-08-28" passage="building will not be demolished and that no new structure will be constructed" /></li>
+          <li>The executive director said the immediate closure was a seven-day safety measure unless extended. The board's renovation closure was a separate action.<Cite s="floca-declaration-86-1-2026-09-17" passage="which will last for seven days, unless extended" /><Cite s="defendants-response-86-2026-09-17" passage="separate from any Board decision related to closure for ongoing renovations" /></li>
+        </ol>
+      </aside>
+
+      <p class="railed rail-note" data-layer="fact">The federal docket's September 17 minute order was not available as a court-hosted document in the public sources we could preserve. The operative sentence below is reproduced by UPI and by Beatty's counsel; the surrounding motions, declarations, earlier opinions and board records are preserved separately.<Cite s="upi-kennedy-center-2026-09-17" passage="To avoid any confusion on that score given more recent events" /><Cite s="beatty-counsel-reaction-2026-09-17" passage="any changes to the scope of the project plans" /></p>
+
+      <div data-layer="proof" class="event-record-context">
+        <p class="sources-line">This story rests on filings in Beatty v. Trump and D.C. Preservation League v. Trump; the court's May 29 opinions; the board's August meeting record; the August 28 joint report; the September 16 scheduling order; federal statutes governing the Kennedy Center; the September 17 minute order as reproduced by two admitted carriers; and five coverage records checked against those documents.</p>
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker" data-layer="narrative">The request and the ruling</p>
+        <h2 data-layer="fact">The judge refused the hearing and added an advance-notice rule</h2>
+        <p data-layer="narrative">Beatty asked for an emergency hearing after the main building closed and after the board voted to close it for renovation. The defendants answered that the immediate closure was a separate, temporary safety decision. Executive Director Matt Floca declared that structural deterioration created acute risks to public safety and that the initial closure would last seven days unless extended.<Cite s="beatty-motion-84-2026-09-16" passage="MOTION FOR EMERGENCY HEARING" /><Cite s="floca-declaration-86-1-2026-09-17" passage="acute risks to public safety resulting from continued structural deterioration" /><Cite s="floca-declaration-86-1-2026-09-17" passage="reevaluate the need for continued closure on a weekly basis" /></p>
+        <p data-layer="narrative">The filing also put two public signals before Cooper. Trump had told reporters that without recognition the building would close and end up being ripped down. The filing included a photograph of him reading a placard that appeared to say “Kennedy Center DEMOLISHED.” A Kennedy Center spokesperson separately said that nothing was being demolished.<Cite s="beatty-notice-85-2026-09-17" passage="it will end up being ripped down" /><Cite s="beatty-notice-85-2026-09-17" passage="appears to read “Kennedy Center DEMOLISHED.”" /><Cite s="cbs-kennedy-center-2026-09-17" passage="nothing is being demolished" /></p>
+        <p data-layer="narrative">Cooper denied the hearing. He nevertheless ordered the defendants to give plaintiffs in both cases written notice before implementing a covered change.<Cite s="upi-kennedy-center-2026-09-17" passage="Beatty's request for a hearing was denied" /><Cite s="upi-kennedy-center-2026-09-17" passage="provide such notice in writing to Plaintiffs in both cases" /></p>
+        <QuoteCard speaker="U.S. District Judge Christopher Cooper" when="September 17, 2026" where="Minute order, as reproduced by UPI">
+          <p>To avoid any confusion on that score given more recent events, the Court hereby ORDERS Defendants [the Kennedy Center board] to provide such notice in writing to Plaintiffs in both cases more than 30 days before the implementation of any changes to the scope of the project plans presented to the Court in D.C. Preservation League [a separate case], including but not limited to any 'demolition' of the Center's main building.<Cite s="upi-kennedy-center-2026-09-17" passage="To avoid any confusion on that score given more recent events" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">The order also required a status report, supported by a sworn declaration, about the temporary closure and emergency repairs by September 23. It allowed discovery on the supplemental authority Beatty had cited.<Cite s="beatty-counsel-reaction-2026-09-17" passage="required the Board to update the Court by September 23" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li><h3>The period is more than 30 days.</h3>The operative sentence says notice must arrive more than 30 days before implementation. “30 days” is a useful shorthand, but it drops the word that sets the boundary.<Cite s="upi-kennedy-center-2026-09-17" passage="more than 30 days before the implementation" /></li>
+            <li><h3>The order follows the plans already put before the court.</h3>It does not say “any major physical changes” require notice. That phrase comes from the AP headline. The trigger in the reproduced order is a change to the scope of the project plans presented in the preservation case, with demolition named as an example.<Cite s="pbs-ap-kennedy-center-2026-09-17" passage="any major physical changes" /><Cite s="upi-kennedy-center-2026-09-17" passage="changes to the scope of the project plans presented to the Court" /></li>
+            <li><h3>Notice is not a final ruling on demolition.</h3>The order creates time for the parties and court to see a covered change before it happens. It neither approves nor permanently bars demolition.</li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="where-this-sits">
+        <p class="sec-kicker" data-layer="narrative">The earlier record</p>
+        <h2 data-layer="fact">The court had relied on a no-demolition position</h2>
+        <p data-layer="narrative">In May, Cooper denied preliminary relief in the preservation case after considering sworn statements about the project. The opinion said the planned work would preserve the building's exterior, size and open space, on the scope Floca had described under oath. The court also said those findings were tentative and could change if the facts changed.<Cite s="preservation-opinion-45-2026-05-29" passage="scope of the project that Mr. Floca has described under oath" /><Cite s="preservation-opinion-45-2026-05-29" passage="tentative" /></p>
+        <p data-layer="narrative">The parties' August 28 joint report made the relevant promise explicit: the defendants would inform the plaintiffs and the court if the board's plans reversed the position that the building would not be demolished and no new structure would be built.<Cite s="preservation-joint-report-62-2026-08-28" passage="Defendants have pledged to inform Plaintiffs and the Court" /><Cite s="preservation-joint-report-62-2026-08-28" passage="building will not be demolished and that no new structure will be constructed" /></p>
+        <figure class="story-figure" data-layer="fact"><figcaption><strong>How the notice order arose</strong><span>The dated sequence in the court and board records.</span></figcaption><DecisionTimeline entries={timeline} /></figure>
+      </section>
+
+      <section id="who-feels-it">
+        <p class="sec-kicker" data-layer="narrative">What changes in practice</p>
+        <h2 data-layer="fact">The plaintiffs get warning; the immediate safety closure remains a separate dispute</h2>
+        <p data-layer="narrative">For Beatty and the preservation plaintiffs, the order supplies a defined warning period before a covered project-scope change can be implemented. For the Kennedy Center and federal defendants, it adds a written-notice obligation to the earlier pledge to report a reversal of the no-demolition position.<Cite s="preservation-joint-report-62-2026-08-28" passage="change in the Board’s plans that would constitute a reversal" /></p>
+        <p data-layer="narrative">The order did not resolve whether the September 16 safety closure violated the injunction in Beatty's case. The defendants called that closure separate from the renovation decision. Beatty's reply disputed that account and argued that the temporary explanation was a pretext for an indefinite closure.<Cite s="defendants-response-86-2026-09-17" passage="separate from any Board decision related to closure for ongoing renovations" /><Cite s="beatty-reply-87-2026-09-17" passage="indefinitely" /></p>
+        <p data-layer="narrative">Floca identified two immediate safety grounds: an engineering assessment of the roof-terrace canopy and the September 4 failure of a five-by-four-foot piece of ceiling plaster after water damage. The same declaration reported severe corrosion in 46 of 278 panels and said one-third of the panels required immediate replacement.<Cite s="floca-declaration-86-1-2026-09-17" passage="a roof terrace canopy assessment" /><Cite s="floca-declaration-86-1-2026-09-17" passage="failure of a five-by-four-foot piece of one-inch-thick ceiling plaster on September 4" /><Cite s="floca-declaration-86-1-2026-09-17" passage="severe corrosion in 46 panels" /><Cite s="floca-declaration-86-1-2026-09-17" passage="One-third of all panels require immediate replacement" /></p>
+        <p data-layer="narrative">Bridget Kennedy-Bailey, whose declaration supported Beatty's motion, said she saw fencing block the building and saw a forklift hit exterior pillars several times. That observation was sworn testimony from one witness, not a finding by the court.<Cite s="kennedy-bailey-declaration-84-1-2026-09-16" passage="Bridget Kennedy-Bailey" /><Cite s="kennedy-bailey-declaration-84-1-2026-09-16" passage="forklift run into and hit the pillars" /></p>
+        <p data-layer="narrative">The board's August minutes record a 23-to-3 vote directing closure of the main building for restoration and renovation and authorizing legal steps to dissolve the injunction that prevented that closure.<Cite s="board-minutes-68-3-2026-08-13" passage="Motion carried by roll call, 23 in favor, 3 opposed" /><Cite s="board-minutes-68-3-2026-08-13" passage="seeking to dissolve the preliminary injunction" /></p>
+      </section>
+
+      <section id="outlets">
+        <p class="sec-kicker" data-layer="narrative">Cross-source check</p>
+        <h2 data-layer="fact">What the coverage got right, and what it got wrong</h2>
+        <div data-layer="fact">
+          {coverageChecks.map((item) => <OutletCheck outlet={item.outlet} claim={item.claim} verdict={item.verdict} chip={item.chip} status={item.status}><Cite s={item.source} passage={item.passage} /></OutletCheck>)}
+        </div>
+      </section>
+
+      <section id="claim-check">
+        <p class="sec-kicker" data-layer="narrative">The headline claim</p>
+        <h2 data-layer="fact">Claim checked against the record</h2>
+        <div data-layer="fact"><CheckedBlock label="The judge said Trump must give 30 days' notice before demolishing the Kennedy Center" variant="contested"><p>Directionally right, but incomplete. The order binds the defendants and requires written notice to the plaintiffs in both cases more than 30 days before implementing a change to the scope of the project plans previously presented to the court, including demolition. It does not identify a demolition plan, decide whether one would be lawful or impose a general notice rule for every physical change.<Cite s="upi-kennedy-center-2026-09-17" passage="more than 30 days before the implementation of any changes to the scope of the project plans presented to the Court" /></p></CheckedBlock></div>
+      </section>
+
+      <section id="what-happened-next">
+        <p class="sec-kicker" data-layer="narrative">The next dated steps</p>
+        <h2 data-layer="fact">The closure and renovation claims moved onto separate tracks</h2>
+        <p data-layer="narrative">The existing scheduling order had already opened expedited discovery on Beatty's closure claim. It set September 23 deadlines for written discovery requests and deposition notices, September 30 for written responses, October 7 for completed depositions and October 9 for the close of discovery.<Cite s="scheduling-order-82-2026-09-16" passage="Requests for Written and Document Discovery" /><Cite s="scheduling-order-82-2026-09-16" passage="All Discovery Closed" /></p>
+        <p data-layer="narrative">The September 17 order added the status report and advance-notice requirement. It did not replace the pending motion practice over the injunction or the separate appeal concerning the building's name.<Cite s="beatty-counsel-reaction-2026-09-17" passage="required the Board to update the Court by September 23" /><Cite s="scheduling-order-82-2026-09-16" passage="Motion to Vacate the Preliminary" /></p>
+        <p data-layer="narrative">On September 18, the defendants filed a motion to dissolve the May preliminary injunction and a renewed motion for partial summary judgment on Beatty's remaining closure and construction claims. Those motions asked the court for relief; they did not themselves dissolve the injunction or decide the claims.<Cite s="defendants-motion-vacate-88-2026-09-18" passage="DEFENDANTS’ MOTION TO DISSOLVE PRELIMINARY INJUNCTION" /><Cite s="defendants-summary-judgment-89-2026-09-18" passage="DEFENDANTS’ RENEWED MOTION FOR" /></p>
+      </section>
+
+      <section id="unknowns">
+        <p class="sec-kicker" data-layer="narrative">Open questions</p>
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <ul data-layer="fact">
+          <li data-absence>Whether the September 23 status report was filed, and whether the initial safety closure was extended. Searched: the admitted docket material and coverage through September 19; the report was not yet due.</li>
+          <li data-absence>Whether the defendants have developed a project-scope change that would trigger the notice order. Searched: the admitted board records, plans, filings and coverage; none contains an identified demolition plan.</li>
+          <li data-absence>The court's minute order as a standalone, court-hosted document. Searched: the District Court docket, CourtListener and Justia; the docket routes were unavailable to the capture registry and the Justia mirror stopped before September 17. The page therefore labels the carriers of the quoted sentence.</li>
+        </ul>
+      </section>
+
+      <StorySources event="kennedy-center/2026-09-17-30-day-notice-before-demolition" />
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>}
