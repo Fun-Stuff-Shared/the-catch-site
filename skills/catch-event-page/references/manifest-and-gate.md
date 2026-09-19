@@ -18,15 +18,17 @@ The gate reads this file on every build. Fields you write by hand:
 | `authored_sections[]` | the section anchors the page renders |
 
 | `completed_by`, `date` | who built it and when |
-| `steps` | attestation per gate step, each `{"done": true, "evidence": "<one real sentence>"}`. The keys the gate requires, exactly: `sources_admitted`, `derived_numbers_computed`, `outlet_claims_verified`, `section_grammar`, `chip_vocabulary`, `live_elements_guarded`, `subject_page_updated`, `homepage_updated`. A page with no live element still attests `live_elements_guarded` by saying so. |
+| `steps` | attestation per gate step, each `{"done": true, "evidence": "<one real sentence>"}`. The keys the gate requires, exactly: `sources_admitted`, `derived_numbers_computed`, `outlet_claims_verified`, `section_grammar`, `chip_vocabulary`, `live_elements_guarded`, `subject_page_updated`, `homepage_updated`. A page with no live element still attests `live_elements_guarded` by saying so. `section_grammar` is `done: false` through the record turn, since the sections are chosen by the reader model in the story turn; `finish.sh ... record` builds with that one open, and every other build, the hosted one included, requires it true. |
 
 Attest only what was done. A stubbed or false line is a false ship.
 
 ## data/sources/SOURCES.md
 
-Regenerated after every addition: a table of file, bytes, sha256 prefix, plus a plain
-paragraph naming any recovery (archive.org snapshot, ALFRED vintages, assisted search)
-and the date it was done.
+A table of file, bytes, sha256 prefix, plus a plain paragraph naming any recovery
+(archive.org snapshot, ALFRED vintages, assisted search) and the date it was done.
+`finish.sh` writes the table rows for every file the manifest pins; the author writes
+only the recovery paragraph, by hand, above the table, and the paragraph names the pinned
+file it explains (that name is how `finish.sh` knows the paragraph belongs to this story).
 
 ## Gate (`npm run build`, also run by the Workers git build)
 

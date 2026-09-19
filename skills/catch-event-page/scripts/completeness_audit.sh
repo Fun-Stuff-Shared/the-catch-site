@@ -4,7 +4,7 @@
 # outside the frame, independent reconstruction, output schema leading with what is missing.
 # Usage: skills/catch-event-page/scripts/completeness_audit.sh <subject>/<story> [out.md]
 # Writes the audit to checks/audits/<subject>--<story>-<date>.md and the full run to .log.
-# What to do with the verdict: references/completeness-audit.md.
+# What to do with the verdict: SKILL.md, "After you commit".
 set -euo pipefail
 story="${1:?usage: completeness_audit.sh <subject>/<story> [out.md]}"
 subject="${story%%/*}"; slug="${story##*/}"

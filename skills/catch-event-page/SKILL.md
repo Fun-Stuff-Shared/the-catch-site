@@ -39,8 +39,8 @@ rebuild the coverage universe from the registry once instead of opening the rest
 seed bodies. The story is one dated moment: the day it happened, then a few words for what
 happened (`2026-09-08-counter-tariffs-take-effect`), under a subject slug. A month is never
 a story. Mint it with `new-event.mjs --date --moment`, copy the previous story's page for
-shape, and accept the candidate into the state so the story has a view (procedures, step 0
-and step 10). The story span starts at the first public act (the announcement, the filing,
+shape (procedures, step 0). The reviewer accepts the candidate into the state before
+dispatch and the dispatch names the event id (procedures, step 10); you never accept one. The story span starts at the first public act (the announcement, the filing,
 the first vote), not at the summary document coverage anchored on.
 
 ## Step 1. Census the record before any sentence
@@ -97,7 +97,7 @@ registry refuses a document, the manifest row says so in `capture_status` and yo
 Check the registry before fetching: the daily sweeps usually already hold the release as
 served on release day. Every pin gets a text sibling at pin time; a video is read twice,
 audio and every frame, with the on-screen text transcribed into the sibling. Series files
-carry their fetch date in the name. SOURCES.md is regenerated after every addition.
+carry their fetch date in the name. `finish.sh` writes the ledger row for every file the manifest pins.
 
 Then read every admitted primary record whole, not the span you plan to quote. In the
 working note, under the record's id, list each passage that changes the event, the
@@ -135,11 +135,24 @@ of the page that are the record and not the story: figures from the data module,
 chronology table, the record's own lines as `SourcedBlock kind="record" detail` under
 the sections they belong to, the records list. Then the subject page and the homepage,
 which are record work: one timeline row and the KPI or chart refresh on
-`/events/<subject>/`, and the homepage feature through `event.visual` (procedures, steps
-12 and 13, and the visual kinds). Manifest with every gate attestation true in fact, state
-views (procedures, step 12), then `npm run build` until the gate passes, then commit by
-explicit path with a plain message beginning `record:`. The story view of this build is headline, dek, KPI strip, figures,
-chronology and the records list, with no narrative paragraph yet.
+`/events/<subject>/`, and the homepage feature through `event.visual` (procedures, step
+13, and the visual kinds). Manifest with every gate attestation true in fact, which in
+this turn means `section_grammar` is `done: false` (the sections are chosen by the reader
+model, in turn two; the record build accepts that one attestation open). Then one command
+ends the turn:
+
+```bash
+skills/catch-event-page/scripts/finish.sh <subject>/<story> record
+```
+
+It adds the ledger rows for your pins, builds through the gate, runs the three lints and
+commits this story's files and nothing else. Fix what it reports on the page and run it
+again until it prints the commit. It also stops on any change in the tree outside this
+story, and on a change to the homepage, the story index, the subject page, the ledger or
+the route list whose lines do not name this story (its slug, a pin, its data module or
+the name that file imports the module under), because a worktree holds one story
+(the subject's data module is yours to refresh, so it is committed whole). The story view of this build is headline, dek, KPI strip, figures, chronology
+and the records list, with no narrative paragraph yet.
 
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
@@ -185,20 +198,17 @@ Four questions of every sentence before you move on: which record, which passage
 passage say all of this, and did I read it this session or remember it. A fifth for every
 paragraph: which of the seven answers does this advance.
 
-## Step 6. Manifest, state, build, lints, interrogation, self-check
+## Step 6. Manifest, build, lints, interrogation, self-check
 
 Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
 `text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
 `about`; add it to `story_sources` with a plain `usage` line; enrich every displayed figure
-(sourced with its passage, or computed with formula and inputs, unit with scale). Fields:
-`references/manifest-and-gate.md`. Fill the story's state record from the manifest
-(procedures, step 12), then:
+(sourced with its passage, or computed with formula and inputs, unit with scale); attest
+`section_grammar` true now that the reader model has chosen the sections. Fields:
+`references/manifest-and-gate.md`. Then build and lint in one command, and interrogate:
 
 ```bash
-npm run build
-node skills/catch-event-page/scripts/lens_lint.mjs src/pages/events/<subject>/<story>.astro
-node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
-skills/catch-event-page/scripts/voice_lint.sh dist/events/<subject>/<story>/index.html
+skills/catch-event-page/scripts/finish.sh <subject>/<story> story --no-commit   # ledger rows, build with the gate, the three lints
 skills/catch-event-page/scripts/interrogate.sh <subject>/<story>
 ```
 
@@ -243,13 +253,18 @@ check after you return confirms it.
 ## Step 7. Commit and report
 
 Check the subject page row and the homepage feature turn one wrote still describe the
-story as written. Regenerate SOURCES.md and re-read the open-questions list as the last
-two steps: the list asks for nothing the records list already holds.
+story as written, and re-read the open-questions list: it asks for nothing the records list
+already holds. Then:
 
-Commit by explicit path: page, data module, manifest, SOURCES.md, pins and text siblings,
-working note, reader model, interrogation file, the story's state view and its chain view. Never commit
-`.md.err` files, `data/sources/officials/`, or generated state beyond those two views.
-Plain messages, no attribution trailers. Do not push.
+```bash
+skills/catch-event-page/scripts/finish.sh <subject>/<story> story
+```
+
+It commits the page, data module, manifest, ledger, pins, working note, reader model,
+interrogation and audit files by path, and nothing the build generated. Do not push.
+
+What you never do: accept the event, refresh or commit state views, stage or ship. The
+reviewer does those after your commit (procedures, steps 10 and 12).
 
 The report is plain words: what ran, what the page covers, what you could not do and why,
 the local URL of the built page, and the commit hash. Everything in it is checkable from
@@ -305,13 +320,11 @@ reviewer's problem to escalate, not yours to explain away.
 - [ ] The reader model file holds the seven answers with record ids, a grade on every passage and gap line, and the section list with its questions; the story view carries A and B only.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
-- [ ] `npm run build` green; `lens_lint`, `quote_lint` and the voice lint's fail tier zero; the interrogation dispositioned.
+- [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.
 - [ ] The entailment check on the tree you are committing returned ENTAILED (`--since` the commit you started from, for a patch); its verdict file is committed under `checks/audits/`.
 - [ ] Every catch pairs an outlet sentence with the record passage that contradicts it; none rests on an inference.
-- [ ] Every manifest figure appears in the built state record with its unit and passage.
-- [ ] SOURCES.md regenerated; every manifest `pinned_path` basename has a row.
 - [ ] Measured in a browser at 1280 wide, in all three modes (step 6).
-- [ ] Subject page and homepage updated; both state views committed with the page.
+- [ ] Subject page and homepage updated.
 - [ ] The report names the reader-facing delta in one sentence.
 
 ## Gotchas
@@ -322,8 +335,6 @@ reviewer's problem to escalate, not yours to explain away.
 - ALFRED multi-vintage comma syntax silently returns only the first vintage: one vintage per call.
 - Two pins never share a stem (`eo-14399-page.html` and `eo-14399.pdf`), or one text
   sibling silently replaces the other.
-- A story view committed without its chain view builds locally and fails on the host.
-  Commit both files the refresh wrote (`data/state/event-<id>.json`, `data/state/chain-<root>.json`).
 - The article search index lags the registry by a day; the registry is the coverage
   universe, the index a second net.
 - The `?mode=` links work only with JavaScript; the no-JavaScript view is The story.

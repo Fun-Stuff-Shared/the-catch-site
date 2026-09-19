@@ -100,6 +100,13 @@ its sentence loses them. A page that introduces more than five or six terms is t
 - No negative ("did not post", "no statement", "the ad names no document") without the
   capture that would show the positive, with the search named: the listing for that date,
   every frame of the video, the earlier filings.
+- An absence sentence on the page is bounded: it names the set that was looked at and the
+  date it was current, in everyday words (the court's docket for this case through
+  September 19; the fourteen articles saved for this story; the agency's own site), and says
+  that set holds nothing of the kind. A universal negative ("no statement had been
+  published", "no public filing identifies") claims more than any set of records can
+  support and does not ship. The looking itself stays out of the sentence ("searched",
+  "the accessible filings" are method words); the set is named as a stranger would name it.
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.

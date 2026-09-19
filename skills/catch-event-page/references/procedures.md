@@ -111,8 +111,7 @@ capture news --reason "jobs/2026-09-04-august-payrolls-rise-162000: PAYEMS serie
 capture news --reason "jobs/2026-08-07-july-payrolls-fall-23000: PAYEMS first print" "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-08-07"
 #   (the ALFRED comma form silently returns only the first vintage)
 
-# Ledger row (bytes and sha prefix) after every addition
-f=data/sources/PAYEMS-2026-09-04.csv; printf '| %s | %s | %s |\n' "$f" "$(wc -c < $f | tr -d ' ')" "$(shasum -a 256 $f | cut -c1-16)" >> data/sources/SOURCES.md
+# The ledger row (bytes and sha prefix) is written by finish.sh for every path the manifest names
 ```
 
 Blocked fetches (BLS release archive, CME tool pages, paywalled outlets) are recovered,
@@ -122,7 +121,7 @@ What the registry's own fetcher can and cannot reach (not an invitation to fetch
 
 - `scrapling` chrome impersonation, which is what `capture` uses, served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
 - Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
-- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in SOURCES.md and in the records list, quote the carrier's bytes.
+- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in the records list and in the ledger's recovery paragraph, quote the carrier's bytes.
 - Sequential retries succeed where parallel coverage fetches fail.
 
 ```bash
@@ -134,7 +133,7 @@ capture news "https://www.bls.gov/news.release/realer.nr0.htm" --via-archive --r
 ```
 
 Every figure in a recovered text is verified against the primary document before it is
-used, and the recovery (route, date, URL) is written in SOURCES.md and in the record's
+used, and the recovery (route, date, URL) is written in the ledger's recovery paragraph and in the record's
 `about` line in reader words ("recovered from an Internet Archive copy saved August 24").
 
 ## 4. Recount against the pins before fetching anything new
@@ -175,7 +174,7 @@ python3 -c "import json,sys; [print(r['text_path'], r['raw_path'], r['item_url']
 ```
 
 Copy `text_path` to `data/sources/coverage/<outlet>-<slug>.txt` and `raw_path` to the
-matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the manifest's
+matching `.html` (or `.pdf`), and add the record to the manifest's
 `records[]` (with a `quote` that is present in the text pin) and `story_sources[]` (group
 `coverage`). The pin is what the gate verifies.
 
@@ -184,7 +183,7 @@ matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the 
 re-extracts. HTML: the text pin from the capture. PDF: `pdftotext -layout file.pdf file.txt`
 (a scanned PDF with no text layer goes through `/Volumes/4/CF/news-fqs-pilot/scripts/capture.py`,
 which falls back to Mistral OCR). CSV: the file is its own text. Video or audio: the
-transcript `.txt` from undertone (step 3, the video rule). A record whose `text_path` is missing or whose
+transcript `.txt` from undertone (step 5, the video rule). A record whose `text_path` is missing or whose
 hash does not match the file is not a record.
 
 **A video is read twice: the audio and every frame.** An ad's citations, disclaimers, and
@@ -267,11 +266,13 @@ what the record shows. Be ready for the page's own earlier claim to be the wrong
 
 Turn one (`story.md`, "The two turns") ends here: data module (`src/data/<slug>.mjs`: event,
 kpis, series, tables, every derived number with a comment naming its file), figures, the
-chronology table, the record's own lines as `SourcedBlock kind="record" detail`, manifest,
-the subject page row and the homepage feature (step 13, first two bullets), the manifest
-with every gate attestation true in fact, state views (step 12), a green build (step 10),
-one commit. The story view of that build is headline, dek, KPI strip, figures, chronology
-and the records list, with no narrative yet.
+chronology table, the record's own lines as `SourcedBlock kind="record" detail`, the
+subject page row and the homepage feature (step 13, first two bullets), the manifest with
+every gate attestation true in fact (`section_grammar` still `done: false`; the record
+build accepts that one open), then `finish.sh <subject>/<story> record` (ledger
+rows, the build with its gate, the lints, one commit by path). The story view of that
+build is headline, dek, KPI strip, figures, chronology and the records list, with no
+narrative yet.
 
 Turn two is a fresh session. It reads the working note, the passage tables, the gap-list
 dispositions and the built page, then writes `checks/reader-models/<subject>--<story>.md`
@@ -293,11 +294,12 @@ is nearly empty every time.
 Every superlative or gloss ("lowest since", "fastest pace", "unexpected") either quotes
 a held record or does not appear.
 
-## 10. Accept the story, then manifest, ledger, build, lint, screenshot
+## 10. Accept the story (the reviewer, before dispatch), then manifest, build, lint, screenshot
 
 A story page reads its event from the published state (`state_event_id` in the manifest)
-and the build throws `Missing publication selection` when no view exists for it. So before
-the first build:
+and the build throws `Missing publication selection` when no view exists for it. The
+reviewer does this before dispatching turn one, and the dispatch names the event id; the
+author never runs these commands:
 
 ```bash
 cd /Volumes/4/CF/news-fqs-pilot
@@ -323,11 +325,10 @@ while a fire holds `maintain.lock`; the fire's own refresh folds the same record
 `npm run build` pulls the views first.
 
 The hosted build has no access to the state directory: it reads the committed copy under
-`data/state/`. Commit BOTH files the refresh wrote, the story view and the chain view of
-its root (`data/state/event-<id>.json` and `data/state/chain-<root id>.json`). A story
-view committed without its chain view builds locally and fails on the host with
+`data/state/`. Committing the views is the reviewer's step (step 12), never the author's.
+A story view committed without its chain view builds locally and fails on the host with
 `Chain omits story: <id>`; the site then keeps serving the previous build with no error
-you can see from git. Check before pushing:
+you can see from git. The reviewer checks before pushing:
 
 ```bash
 rm -rf /tmp/committed-state && mkdir -p /tmp/committed-state && git archive HEAD data/state | tar -x -C /tmp/committed-state
@@ -378,13 +379,13 @@ Every returned gap becomes a needs-ledger row: fixed on the page, typed unreacha
 declined with its reason, all in the same session. Wholesale dismissal is the violation
 this step exists to prevent.
 
-## 12. Fill the story's state record at authoring time
+## 12. Fill the story's state record (the reviewer, after the story commit)
 
 Every record must already have `pinned_path`, `text_path`, and `text_sha256`, including
 PDFs, CSVs, posts, and video transcripts. Registration reads these files without rewriting
 or deriving text. A missing text file or changed hash stops registration before any writes.
 
-Enrich every manifest figure before running the command:
+The author enriches every manifest figure; the reviewer runs the command:
 
 - Sourced: `figure` (slot name), `value`, `unit`, `kind: "sourced"`, and
   `source: {source_id, quote_span}`. The passage must be byte-exact and contain the value.
@@ -397,8 +398,9 @@ Enrich every manifest figure before running the command:
   context to establish which quantity the number measures; finding digits alone does not
   establish their meaning. For a sum over selected records, record the selection rule too.
 
-Commit the enriched manifest first so the accepted figure records name the site commit
-and exact manifest hash. From the SAI checkout:
+**The state sequence is the reviewer's.** It runs once, after the story turn's commit is
+accepted, so the accepted figure records name the site commit and the exact manifest hash;
+the author's part is the enriched manifest above. From the SAI checkout:
 
 ```bash
 cd /Volumes/4/CF/sai
@@ -427,8 +429,11 @@ npm run build
 The build pulls the refreshed views. Inspect the built story's tracked-figures block:
 every manifest figure has its value, unit, and source passage; every computed figure is
 labelled Computed and shows all inputs. Texas's acceptance example has 44 registered pins
-and 15 figures. A missing or empty block is not done. Do not commit generated `data/state/`
-files as part of authoring.
+and 15 figures. A missing or empty block is not done. Then the reviewer commits the two
+views the refresh wrote for this story, `data/state/event-<id>.json` and
+`data/state/chain-<root>.json`, with a message beginning `state:`; the hosted build has no
+state directory and reads committed views (`scripts/pull-state.mjs`). No other generated
+`data/state/` file is ever committed.
 
 ### Optional Luna read
 
@@ -461,7 +466,8 @@ view refresh are available without launching or interrupting that maintenance ru
 - Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
   Related pages link both ways. Turn one does this from the data module; turn two checks
   the row and the feature still describe the story as written.
-- Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files.
+- The author's commits come from `finish.sh` (by path, nothing generated). The reviewer
+  then runs the state sequence (step 12) and commits the two views.
 - The publication decision is a human's. Stage the build, add the staged row with a
   ships-by date where the project tracks staging, and hand over the rendered page (URL or
   screenshot), never a receipt list.
