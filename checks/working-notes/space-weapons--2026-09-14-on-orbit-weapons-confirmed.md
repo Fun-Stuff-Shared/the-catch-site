@@ -1,5 +1,34 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 4 (space-patch.md items 33 to 37; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r4-entailment.md). No new records.
+
+Verified at the pins before rewriting (2026-09-18):
+- Reuters `reuters-orbital-weapons-2026-09-15.txt` line 16: Palmer "postured and ready should deterrence fail to employ them effectively".
+- ABC `abc-weapons-space-2026-09-15.txt` line 6: spokesperson "These capabilities can be employed for offensive and defensive purposes at the direction of combatant commands".
+- Whiting `ussf-whiting-amos-2026-09-16.txt`: retains-weapons sentence, then targeting / target folders; also "negation measures to deceive, disrupt, deny, degrade, or destroy".
+- DW `dw-weapons-space-2026-09-15.txt` line 4-5: attributes the encapsulates definition to "a US Space Force spokesperson said in a press release". Saltzman March 2025 pin has the matching encapsulates sentence. `ussf-secaf-announces-2026-09-15.txt` has Meink's confirmation and does not carry the encapsulates definition. No pin shows that DW took the 2025 speech and mislabeled it as this week's release. DW pin does not say "destruction".
+- UN `un-sc15678-2024-04-24-archive.txt` line 9: "Russia and China put forth an amendment".
+- AFNS Meink pin does not name Golden Dome. AFAS pin: "Both are part of the Pentagon's Golden Dome advanced missile defense shield." EO pin: "proliferated space-based interceptors capable of boost-phase intercept."
+- Saltzman pin line 87: "shortly, we will publish Space Force Doctrine Document One". Framework pin defines "Space control", not "space control weapons".
+- SWF pin: "operational co-orbital anti-satellite force".
+- FY2027 budget pin: "all categories of Space Control systems"; it does not name the on-orbit weapons.
+- SPO CBO pin: "Lacking detailed data from the Administration, CBO based its analysis on the capabilities called for in Trump's January 2025 Executive Order". No "model design" or "notional" in the carrier.
+
+### Items 33 to 37
+33. Three things (2): dropped "the one added detail". Spokesperson sentence stays, cited to ABC. Palmer's sentence added, cited to Reuters.
+34. What happened closer: dropped "the only public word". One cited sentence each for Meink (defend the Joint Force), Schiess (defend against space-enabled attacks), the spokesperson (offensive and defensive at combatant-command direction), Palmer (employ if deterrence fails), Whiting (negate because the weapons are retained; targeting and target folders still immature).
+35. Catch row 1: headline is now what they confirmed and what those statements did not name. Body is one cited sentence per named official. No "stopped there", no "everything an official has said", no "every headline".
+36. Catch row 2 and DW card: chip stays "not in the record". Sentence says the encapsulates wording matches Saltzman's 2025 speech and the September 15 Space Force article does not carry it. Removed "attributed a 2025 speech to this week's press release" as a proven error, and removed "say nothing about destruction".
+37. Eight moderates:
+- Row 3 / Three things (3): "an amendment from Russia and China", cited to "Russia and China put forth an amendment". The weapons-of-any-kind clause stays in Where this sits, already cited there.
+- Row 10 / What happened ABC paragraph: dropped "The only detail beyond those two sentences".
+- Row 11 / Golden Dome: Meink's interceptor sentence now from the Air Force account without "under Golden Dome". AFAS cited for the Golden Dome identification. EO cited for boost-phase intercept. Dropped "soon after launch".
+- Row 21: Saltzman paragraph no longer calls the speech doctrine or says the weapons belong to that mission. Separate sentence that he said doctrine document one was forthcoming.
+- Row 22: dropped "The term Meink used in September was defined in that document before he spoke."
+- Row 23: restored "co-orbital" in "operational co-orbital anti-satellite force". "doctrine in 2025" in the framing sentence is now "planning framework in 2025".
+- Row 25: dropped "so it is the size of the portfolio the weapons sit in."
+- Row 26: CBO proof block now says what the SpacePolicyOnline carrier holds (estimate based on the executive order's capabilities; CBO lacked detailed Administration data). Dropped "model design" and "notional".
+
 ## Round 3 (space-patch.md items 25 to 32 and the avatar read of 2026-09-18; worktree the-catch-site-wt-r3-space, branch author/patch-r3-space, skill 2.1 at e59af305)
 
 ### Captures (all through `capture news --reason ...`, 2026-09-18 evening local, run ids are UTC 2026-09-19)
@@ -269,6 +298,7 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 | Passage | Mark |
 |---|---|
 | acknowledgement "intentional" and phrasing "very well thought out" | used : What happened |
+| "Both are part of the Pentagon's Golden Dome advanced missile defense shield" | used : What happened interceptor paragraph |
 | "critically important that we maintain our dominance..." | used : quote card intro |
 
 ## Coverage defects to verify on page
