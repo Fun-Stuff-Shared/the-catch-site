@@ -2,7 +2,7 @@
 
 `WRITING.md` at the repo root is the house style and binds every page. These are the rules
 that bind each sentence of a story page, in the order they come up while writing. The
-shape of the page is `story.md` and `section-toolkit.md`. Each one is a class of
+shape of the page is `story.md`, `shape-rules.md` and `sections.md`. Each one is a class of
 defect reviewers keep finding; the rule is how the sentence is written so they do not.
 
 ## Which words need introducing

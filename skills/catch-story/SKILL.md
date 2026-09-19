@@ -21,20 +21,20 @@ the same day.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Never push. Never edit a story that is already live. Do not kill, restart, or signal any
-process you did not start. Scripts and reference files are shared by the three turn skills
-and live under `skills/catch-event-page/`; the reviewer's process is that skill's SKILL.md.
-Read, in this order, before the first sentence: `skills/catch-event-page/references/story.md`
-(the reader model and concept before qualification), `skills/catch-event-page/references/section-toolkit.md`,
-`skills/catch-event-page/references/writing.md`. Commands are in
-`skills/catch-event-page/references/procedures.md` from step 8; manifest fields in
-`skills/catch-event-page/references/manifest-and-gate.md`.
+process you did not start. This skill's `scripts/` and the shared files in its `references/`
+are links to `skills/catch-event-page/`, the pipeline map and the reviewer's process.
+Read, in this order, before the first sentence: `references/story.md` (the reader model you
+are writing from, concept before qualification, the redundancy budget),
+`references/shape-rules.md`, `references/sections.md`, `references/components.md`,
+`references/writing.md` (the rules that bind each sentence). Commands are in
+`references/procedures.md`; manifest fields in `references/manifest-and-gate.md`; the
+interrogation prompt in `references/interrogation.md`.
 
 ## Step 5. Write the story, each sentence from an open passage: turn three
 
 Turn three is a fresh session. It opens by reading the reader model commit (the structure
 turn's file), the working note and the built page; it writes to the reader model only to grade
-a passage it admits on the way. Read `skills/catch-event-page/references/story.md`, `skills/catch-event-page/references/section-toolkit.md`
-and `skills/catch-event-page/references/writing.md` before the first sentence. Every factual sentence is written with its passage on screen
+a passage it admits on the way.  Every factual sentence is written with its passage on screen
 and cites it (`Cite s= passage=`). The sentence says what the passage says, in everyday
 words, and nothing more. Where the page needs more than the passage gives, admit the
 record that gives it (and write its census line) or write the gap as a dated absence in
@@ -67,11 +67,11 @@ Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_p
 `about`; add it to `story_sources` with a plain `usage` line; enrich every displayed figure
 (sourced with its passage, or computed with formula and inputs, unit with scale); attest
 `section_grammar` true now that the reader model has chosen the sections. Fields:
-`skills/catch-event-page/references/manifest-and-gate.md`. Then build and lint in one command, and interrogate:
+`references/manifest-and-gate.md`. Then build and lint in one command, and interrogate:
 
 ```bash
-skills/catch-event-page/scripts/finish.sh <subject>/<story> story --no-commit   # ledger rows, build with the gate, the three lints
-skills/catch-event-page/scripts/interrogate.sh <subject>/<story>
+skills/catch-story/scripts/finish.sh <subject>/<story> story --no-commit   # ledger rows, build with the gate, the three lints
+skills/catch-story/scripts/interrogate.sh <subject>/<story>
 ```
 
 The gate fails on a record whose quote is not in its pin or whose text hash does not
@@ -101,8 +101,8 @@ from a commit, so the baseline is always the commit you started from, never the 
 you just made (that would compare the tree with itself and judge nothing).
 
 ```bash
-skills/catch-event-page/scripts/entailment_check.sh <subject>/<story>                          # first draft: the whole page
-skills/catch-event-page/scripts/entailment_check.sh <subject>/<story> --since <start commit>   # a patch: only the blocks you changed
+skills/catch-story/scripts/entailment_check.sh <subject>/<story>                          # first draft: the whole page
+skills/catch-story/scripts/entailment_check.sh <subject>/<story> --since <start commit>   # a patch: only the blocks you changed
 ```
 
 Read the verdict file it names. Every Critical and Major is fixed at the cited passage
@@ -119,7 +119,7 @@ story as written, and re-read the open-questions list: it asks for nothing the r
 already holds. Then:
 
 ```bash
-skills/catch-event-page/scripts/finish.sh <subject>/<story> story
+skills/catch-story/scripts/finish.sh <subject>/<story> story
 ```
 
 It commits the page, data module, manifest, ledger, pins, working note, reader model,
@@ -169,7 +169,7 @@ after your run and dispositions the results in the ledger.
 - No text jammed against an inline tag (`<em>under</em>counting`); keep the space on the
   same source line.
 - Verdict words are plain: "checks out", "mislabeled", "wrong". Chips are the closed set in
-  `skills/catch-event-page/references/section-toolkit.md`; one chip per claim class across the cards, and an
+  `references/sections.md`; one chip per claim class across the cards, and an
   inference from the record is never graded wrong.
 - No process words in story prose: pins, carrier, so-what, "Why it matters:", disproof
   searches, "USD billions", "pp", docket numbers used as nouns. Proof-register content
@@ -183,8 +183,7 @@ after your run and dispositions the results in the ledger.
 
 ## Before you say done
 
-- [ ] The working note holds one line per census search and a passage table per primary record.
-- [ ] The reader model file holds the seven answers with record ids, a grade on every passage and gap line, and the section list with its questions; the story view carries A and B only.
+- [ ] The page follows the reader model's sections and order; the story view carries A and B only; a passage admitted on the way is graded in that file.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
 - [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.

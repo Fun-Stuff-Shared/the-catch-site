@@ -1,0 +1,1 @@
+../../catch-event-page/references/manifest-and-gate.md

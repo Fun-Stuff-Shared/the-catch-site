@@ -34,7 +34,7 @@ no record is a gap line in the working note, graded, for the story turn to admit
 `## Grades`: every passage-table line and gap-list line with its grade A to D and, for A
 and B, the answer it serves.
 
-`## Sections`: the section list from `section-toolkit.md`, each with the question from
+`## Sections`: the section list from `sections.md`, each with the question from
 answer 7 it answers, in the reader's order.
 
 `## Outline` (optional): for a long story, under each section the passages it draws on,
