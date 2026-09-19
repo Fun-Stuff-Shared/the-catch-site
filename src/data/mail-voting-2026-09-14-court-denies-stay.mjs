@@ -63,13 +63,18 @@ export const computed = {
   electionJurisdictions: 10000,
   // SORN pin: "Records are retained for 5 years."
   sornRetentionYears: 5,
+  // OIG Sept 4 audit: "on-time processing scores ranging from 97.75 to 98.99 percent"
+  oigOnTimeLow: 97.75,
+  oigOnTimeHigh: 98.99,
+  // OIG Sept 4 audit: "We made 11 recommendations"
+  oigRecommendations: 11,
   // DV amicus pin: "45 states and the District of Columbia have some type of ACP"
   acpStates: 45,
   // DV amicus pin: "at least 150,000 eligible but confidential Colorado voters"
   coloradoConfidentialVoters: 150000,
 };
 
-event.dek = `The Postal Service's new rule told election offices to mail ballots in approved envelopes with a barcode for every voter and to register voters in an online portal, and said mailings that did not comply would not be accepted. On September 14 the Supreme Court refused the government's request to lift a judge's block on those requirements, so they stay blocked for elections through November 3, ${computed.daysDenialToElection} days later. The Court did not rule on the March executive order behind the rule, and the one justice who explained his vote wrote that the Postal Service may well have the power to issue such a rule for a later election.`;
+event.dek = `The Postal Service's new rule told election offices to mail ballots in approved envelopes with a barcode for every voter and to enroll each ballot recipient in an online portal, and said outbound ballot mailings that did not comply would be returned to the office that sent them; the check did not apply to voters' returned ballots. On September 14 the Supreme Court refused the government's request to lift a judge's block on those requirements, so they stay blocked for elections through November 3, ${computed.daysDenialToElection} days later. The Court did not rule on the March executive order behind the rule, and the one justice who explained a vote to deny the stay wrote that the Postal Service may well have the power to issue such a rule for a later election.`;
 event.kpis = [
   { value: "Blocked", unit: "", label: "the rule's envelope, barcode and portal requirements, through November 3" },
   { value: String(computed.daysDenialToElection), unit: "days", label: "from the Court's refusal to November 3" },

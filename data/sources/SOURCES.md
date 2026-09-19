@@ -1526,3 +1526,5 @@ Space-weapons story round 3 (2026-09-18 local): the April 2022 anti-satellite te
 | data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.txt | 63663 | c1bc3c9b8aec5a62 |
 | data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.html | 128859 | b96a47e078699085 |
 | data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.txt | 2481 | 8b06aeb6cb107b2c |
+| data/sources/mail-voting/talwani-violation-2026-08-25.html | 59243 | a088b7115d069015 |
+| data/sources/mail-voting/talwani-violation-2026-08-25.txt | 8463 | e24e8365bf48d6eb |

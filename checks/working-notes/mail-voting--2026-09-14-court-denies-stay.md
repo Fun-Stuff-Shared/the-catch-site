@@ -279,3 +279,60 @@ Heading, outlet list, and reader sentence rewritten to eight of thirteen omitted
 4. Moderate, Trump posts: BBC pin cite attached ("Republicans just got another bad decision", BBC line 6).
 5. Count sentence: counts and error categories cut; the sentence is now a fact-layer method line (the verdict key) with no cite.
 Minors: Three things 1 and What happened para 1 now also cite Talwani's order (the record that identifies the injunction as the Postal Service rule's and names the judge); catch 2 no longer says WIRED and CNBC drew the same inference, it says what each pin does.
+
+## Round 5 (mail-patch.md items 28 to 35; ship-audit and ship-reconstruction, 2026-09-19)
+
+Worktree the-catch-site-wt-r3-mail, branch author/patch-r3-mail, start commit 407ede9c.
+
+### Capture
+
+- Item 34, OIG September 4 audit: `capture news --reason ...` of https://www.uspsoig.gov/reports/audit-reports/processing-election-and-political-mail-2026-primary-elections. Already held, capture-oneoff-20260908T225123Z, body_captured, 2,659 characters (the report page). Pinned as `uspsoig-primary-audit-2026.html` / `.txt` (already in the tree; hashes match the receipt). Record `uspsoig-primary-audit-2026`.
+- Item 35, Talwani August 25 order: `capture news --reason ...` of https://docs.justia.com/cases/federal/district-courts/massachusetts/madce/1:2026cv11549/298449/201. Admitted, capture-oneoff-20260919T045843Z, body_captured, 8,329 characters. Pinned as `talwani-violation-2026-08-25.html` / `.txt` (stem distinct from the earlier PDF pin). Record `talwani-violation-2026-08-25`.
+- Not admitted this run: none. Both named URLs admitted.
+
+### Items 28 to 35
+
+28. Done. Three things item 3: Alito and Thomas would have lifted Talwani's block (order pin, "JUSTICE ALITO, with whom JUSTICE THOMAS joins"); Nichols's order still bars implementing and enforcing (supplemental line 41); a pause in Boston would still have required a parallel pause in Washington (supplemental "a parallel stay"). Sibling: claim-check "Alito would have let it run now" rewritten to "Alito would have lifted Talwani's block" (1 sibling).
+29. Done. Dek first sentence: enroll each ballot recipient; outbound mailings that did not comply returned to the office that sent them; the check did not apply to voters' returned ballots. Body: "will not be accepted"; "returned to the authorized"; "does not apply to Return". Dek kept as three sentences, the rule rewrite one sentence.
+30. Done. New paragraph after the business-as-usual sentence, quoting the AP clause on postmark delays; Washington and Oregon in prose from the next sentence of that pin.
+31. Done. Dek: "the one justice who explained a vote to deny the stay".
+32. Done. After the upload description: SORN purpose ("federal law and facilitate law") and five-year retention (`sornRetentionYears`, "Records are retained for 5 years.").
+33. Done. "told the Postal Service to write it" replaced with: the order directed the Postal Service to start the rulemaking; the Postal Service says the order did not mandate a final rule and that the finished rule was its own decision. Cited to "did not mandate a final".
+34. Done. After the watching line: September 4 audit, scores 97.75 to 98.99 percent, 11 recommendations including postmarking ballots and operational changes.
+35. Done. After "issued August 21 and published August 26": August 25 finding that the defendants "violated the court's Preliminary Injunction" by completing the rule after her Aug. 11 order, no further remedy.
+
+### Passage tables for the new records
+
+#### uspsoig-primary-audit-2026
+| Passage | Disposition |
+| "97.75 to 98.99 percent" | used (What happened next) |
+| "postmarking ballots"; "operational changes"; "We made 11 recommendations" | used (What happened next) |
+| whistleblower follow-up ("plan to cover allegations received at the end of August") | held unused; the watching line already carries the September 8 promised review |
+| facility counts, congressional inquiry | out of scope |
+
+#### talwani-violation-2026-08-25
+| Passage | Disposition |
+| "violated the court's Preliminary Injunction"; "imposes no remedy other than identifying the violation" | used (What happened) |
+| "Aug. 11, 2026"; "completed rule making" August 21 | used in the same sentence |
+| feigned compliance at the Supreme Court; proposed weekly updates | held unused |
+
+#### usps-sorn-820-225 (reopened)
+| Passage | Disposition |
+| "federal law and facilitate law"; "Records are retained for 5 years." | used (What happened, after the upload description) |
+
+#### usps-final-rule (reopened)
+| Passage | Disposition |
+| "will not be accepted"; "returned to the authorized"; "does not apply to Return"; "did not mandate a final" | used (What happened) |
+| "states will retain complete autonomy" | held unused; the dek now says enroll each ballot recipient, not register voters |
+
+#### ap-2026-09-17 (reopened)
+| Passage | Disposition |
+| "there are still concerns about postmark delays that could have an impact on this year's elections" | used (What happened next) |
+| Washington and Oregon late-postmark rejections | used in prose in that sentence |
+| resignation talk, barcode pricing | still out of scope |
+
+Ledgered for a later pass, not this round: 2020 service-change litigation and 2021 settlement; bipartisan bills' scope; Postal Regulatory Commission process; Alaska mail-delay notice.
+
+### Self-check
+
+`checks/audits/mail-voting--2026-09-14-court-denies-stay-2026-09-19-since-407ede9c-entailment.md`: VERDICT: ENTAILED. One Minor (row 3): "the office that sent them" is narrower than the rule's "authorized ballot mailer", which can be an election official or an authorized vendor. Stands: item 29 prescribed that wording.
