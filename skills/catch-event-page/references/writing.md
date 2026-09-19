@@ -1,40 +1,42 @@
 # Writing a Catch story: the rules that bind each sentence
 
 `WRITING.md` at the repo root is the house style and binds every page. These are the rules
-specific to story pages, in the order they come up while writing. Each one is a class of
+that bind each sentence of a story page, in the order they come up while writing. The
+shape of the page is `story.md` and `section-toolkit.md`. Each one is a class of
 defect reviewers keep finding; the rule is how the sentence is written so they do not.
 
-## Who the reader is, and which words need introducing
+## Which words need introducing
 
-The reader is smart, curious, and reads a general newspaper. Words such a reader meets
+The stranger is smart, curious, and reads a general newspaper. Words such a person meets
 weekly are everyday and are never explained: tariff, injunction, payroll, subsidy,
 indictment, stay, appeal, warrant, surtax. Agency shorthand, series names, and terms of
 art are introduced once, at first use, in the sentence that first leans on them: U-6, SEP,
 FOMC, PCE, tariff headings, Section 338, independent expenditure, 48-hour notice,
 connected TV, seasonal adjustment. One short apposition or one sentence, then the term is
-used freely. Explaining an everyday word insults the reader; using a term of art without
+used freely. Explaining an everyday word insults the stranger; using a term of art without
 its sentence loses them. A page that introduces more than five or six terms is two pages.
 
-## The opening and the order
+## Register
 
-The first three sentences tell a cold reader what happened and why it matters to them, in
-everyday words, with the number. What happened opens on the first public act and runs in
-descending order of importance: each paragraph one level deeper, the full record (every
-filing line, every vote) at the end of its section in the open, never in a collapsed box.
-The catch comes first among the sections after What happened: one headline claim in bold
-lead words, then short prose that names the two records that disagree and says why it
-matters. A catch is a pair: the outlet's sentence, byte for byte from its pin, and the
-record passage that contradicts it, both cited in the catch's own prose. A catch with
-only one side is the author's inference and does not ship; an inference from the record
-is never graded wrong. A row with one record is a fact, not a catch. Rounding, previews,
-datelines correct in local time, publication labels, and a broader true word ("television"
-for "connected TV") are not disagreements; say what they are in one line or leave them out.
-The catch is on the first screen: the dek and the first paragraph say what the record
-shows and what coverage got wrong; the strongest plain sentence never sits in the last
-section. "X, not Y" is not a headline, kicker, or paragraph closer. A fact is told once in
-the story register (Three things, or prose, or a table, never all three) and once in
-proof. A discrepancy is stated once with both values and its status. A paragraph whose
-last sentence disclaims its own relevance is cut.
+- Concept before qualification (`story.md`): the clean model in the first sentence, the
+  boundary in the next paragraph. A qualification comes first only when the concept is false
+  without it. Each distinction is introduced by the mistake it prevents.
+- The page never says "reader" or "readers", never describes who is reading, and never
+  narrates its own method in the story or fact layers ("this page found", "we could
+  preserve", "as reproduced by", "searched", "the records add up to", "this story rests on
+  N records"). Method and provenance are proof-layer sentences.
+- "X, not Y" is used where the record makes the distinction and the misreading depends on
+  it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
+- A fact is told once in the story register (a summary line, or prose, or a table, never
+  all three) and once in proof. A discrepancy is stated once with both values and its
+  status. A paragraph whose last sentence disclaims its own relevance is cut.
+- A catch is a pair: the outlet's sentence, byte for byte from its pin, and the record
+  passage that contradicts it, both cited in the catch's own prose. A catch with only one
+  side is the author's inference and does not ship; an inference from the record is never
+  graded wrong. Rounding, previews, datelines correct in local time, publication labels,
+  and a broader true word ("television" for "connected TV") are not disagreements; say what
+  they are in one line or leave them out.
+- The strongest plain sentence never sits in the last section.
 
 ## Sentences and passages
 
@@ -46,9 +48,9 @@ last sentence disclaims its own relevance is cut.
   nothing else is inside quotation marks: no scare quotes, no paraphrase, no changed byte.
   Two sentences the record separates are two quotations or one quotation and prose.
   An indirect report ("described the EU as a loyal friend") is never lifted into speech.
-- One quotation per paragraph, then what it means in the reader's words.
+- One quotation per paragraph, then what it means in everyday words.
 - Legal and financial terms appear first as the pin's word in quotation marks ("rights to
-  a stake"), then in reader words. "Equity stake", "closed at", "signed" are the pin's
+  a stake"), then in everyday words. "Equity stake", "closed at", "signed" are the pin's
   words or they are not on the page.
 - An outlet is credited only for what its own pin prints. A fact that sits in a pinned
   primary takes the primary's cite; the outlet row says it checks out.
@@ -127,8 +129,8 @@ report the sibling count.
 
 ## What the story view shows
 
-The story is the synthesis: figures, quote cards, the catch, checked claims, and the
-narrative. A raw record (a filing line by line, a committee's books, a ballot listing) is
-`SourcedBlock detail` and shows in Just the facts and Show the work. Capture dates,
-vintages, method notes and value tables are proof. A reader who wants the depth reads
-toward it in the open; nothing a reader needs is behind a click.
+The story view carries the A and B material of the reader model (`story.md`) and nothing
+else: the narrative, the figures, the quote cards, the catch. A raw record (a filing line by
+line, a committee's books, a ballot listing) is `SourcedBlock detail` and shows in Just the
+facts and Show the work. Capture dates, vintages, method notes and value tables are proof.
+Nothing a stranger needs is behind a click; nothing a stranger does not need is in the way.

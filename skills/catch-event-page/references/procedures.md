@@ -263,11 +263,20 @@ single outlet, unconfirmed. Separate their numbers (verify) from their framing
 (attribute: "CNBC called it ..."). A wrong claim is named plainly: who, what they wrote,
 what the record shows. Be ready for the page's own earlier claim to be the wrong one.
 
-## 8. Draft to the section grammar
+## 8. The record turn ends; the story turn begins
 
-Data module first (`src/data/<slug>.mjs`: event, kpis, series, tables), then the page.
-Read `section-grammar.md`. Bind every fact block with `SourcedBlock` and every narrative
-paragraph with `Cite`. Keep the needs ledger open beside you: every gap you notice while
+Turn one (`story.md`, "The two turns") ends here: data module (`src/data/<slug>.mjs`: event,
+kpis, series, tables, every derived number with a comment naming its file), figures, the
+chronology table, the record's own lines as `SourcedBlock kind="record" detail`, manifest,
+state views (step 12), a green build (step 10), one commit. The story view of that build is
+headline, dek, KPI strip, figures, chronology and the records list, with no narrative yet.
+
+Turn two is a fresh session. It reads the working note, the passage tables, the gap-list
+dispositions and the built page, then writes `checks/reader-models/<subject>--<story>.md`
+(the seven answers with record ids, the grades, the section list with the question each
+section answers) before the first narrative sentence. Read `story.md`, then
+`section-toolkit.md`, then `writing.md`. Bind every narrative paragraph with `Cite`, from
+the pin open on screen. Keep the needs ledger open beside you: every gap you notice while
 writing becomes a named row the moment you notice it, and step 3 or 5 runs for that row
 mid-flight. Drafting is how you learn what the story is missing.
 

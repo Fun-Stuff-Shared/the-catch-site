@@ -10,6 +10,7 @@ root="$(cd "$(dirname "$0")/../../.." && pwd)"
 html="$root/dist/events/$story/index.html"
 page="$root/src/pages/events/$story.astro"
 manifest="$root/checks/manifests/$subject--$slug.json"
+rm="$root/checks/reader-models/$subject--$slug.md"
 out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-redteam.md}"
 [ -f "$html" ] || { echo "build first: $html is missing" >&2; exit 2; }
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
@@ -25,6 +26,8 @@ Find, and rank by how much a reader would be misled:
 4. What a stranger cannot follow: a term used before its sentence, a number without its comparison, an opening that does not say what happened.
 
 For every finding: a severity tag (Critical, Major, Minor), the page bytes, the record (URL or file path) with the exact bytes that support the finding, and the correct account in one or two sentences. Do not report style preferences, and do not report a finding you did not verify at a record. End with exactly one line: VERDICT: SHIP if there is no Critical or Major finding, otherwise VERDICT: NO-SHIP.
+
+The author's reader model is at $rm when that file exists: seven one-sentence answers (what happened, why it matters, the easiest wrong reading, the one concept, what changed, what is unresolved, the questions a stranger asks next) and a materiality grade A to D for every passage of the record (A changes the event, B changes the reading, C strengthens the proof, D changes no answer). Grade every omission against it: a passage the author graded A or B that the story view does not carry is Major; a passage graded C or D that in fact changes one of the seven answers is Major against the grade, and you name which answer changes; an omitted C is Moderate at most; D is never a finding. The story view is meant to carry A and B only, so do not report C or D material as missing from the story when Just the facts or Show the work carries it. When the file does not exist, say so and grade as before.
 
 Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output.
 PROMPT

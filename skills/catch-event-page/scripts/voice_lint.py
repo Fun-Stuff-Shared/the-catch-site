@@ -3,8 +3,9 @@
 Usage: voice_lint.py dist/events/<subject>/<story>/index.html [more pages]
 Exit 1 when a script check trips. Proof-layer text and the state ledger rows are not judged.
 
-Script checks (fail): reader address ("a reader", "readers"), process lines in the story
-register ("Single outlet ...", "We read each ...", "among the records here").
+Script checks (fail): reader address ("a reader", "readers"), process narration in the story
+or fact layers ("this page found", "we could preserve", "as reproduced by", "Searched:",
+"the records add up to", "this story rests on"); proof-layer text is never judged.
 Model checks (review, highest score first): mirrored antithesis, section wrap-up, reader gloss,
 one Jev request per sentence at about 0.2 s. Thresholds hold specificity 0.95 per question on
 the codex AI-speak scan of all 15 story pages built 2026-09-19 (design/aispeak-labels.jsonl in
@@ -20,7 +21,7 @@ ABBR = re.compile(r"\b(Rep|Sen|U\.S|U\.N|Sept|Aug|Oct|Nov|Dec|Jan|Feb|Mr|Ms|Dr|G
 norm = lambda x: re.sub(r"\s+", " ", x.replace("“", '"').replace("”", '"').replace("’", "'")).strip()
 strip_q = lambda t: re.sub(r'"[^"]{3,}"', "[quotation]", t)
 READER = re.compile(r"\breaders?\b", re.I)
-PROCESS = re.compile(r"^Single outlet\b|^We read\b|\bamong the records here\b", re.I)
+PROCESS = re.compile(r"^Single outlet\b|^We read\b|\bamong the records here\b|\bthis page\b|\bthe page (found|could|did|does)\b|\bthis story rests on\b|\b(what )?the (records?|coverage|numbers) (here )?adds? up to\b|\bwe could( not)? (preserve|save|fetch|reach)\b|\bas reproduced by\b|\bpublic docket route\b|^Searched:|\bthe (accessible|admitted) (filings|records|sources)\b|\bpublic sources we\b", re.I)
 THRESHOLDS = {"mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67}
 IGN = "Words inside quotation marks are someone else's speech and are not judged; judge only the page's own words."
 QUESTIONS = {
@@ -74,6 +75,7 @@ def sentences(path):
 
 
 OWN_VOICE = {"p", "li", "figcaption", "td", "dd", "summary"}
+CHROME = ("How we check", "Everything this page rests on", "Since this page was written")  # site components, not the story's words
 
 
 def score(client, qs, sen, subject):
@@ -89,6 +91,7 @@ def lint(path, client):
     subject = os.path.basename(os.path.dirname(path.rstrip("/")))
     for tag, sen in sentences(path):
         own = strip_q(sen)
+        if own.startswith(CHROME): continue
         if READER.search(own): fails.append(("reader", 1.0, sen))
         if PROCESS.search(own): fails.append(("process", 1.0, sen))
         if tag not in OWN_VOICE or own.startswith("How we check"): continue

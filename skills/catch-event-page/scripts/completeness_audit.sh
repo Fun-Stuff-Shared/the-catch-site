@@ -12,6 +12,7 @@ root="$(cd "$(dirname "$0")/../../.." && pwd)"
 html="$root/dist/events/$story/index.html"
 page="$root/src/pages/events/$story.astro"
 manifest="$root/checks/manifests/$subject--$slug.json"
+rm="$root/checks/reader-models/$subject--$slug.md"
 [ -f "$manifest" ] || manifest="$root/checks/manifests/$subject--${slug%-*}.json"
 skill="$root/skills/story-completeness-audit"
 out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d).md}"
@@ -28,6 +29,8 @@ Read and follow, in full and in this order, before doing anything else:
 They define the audit: three separate layers (verification, completeness discovery outside the article's frame, independent reconstruction), the backward, forward, and horizontal searches, the omission classes, lineage counting, materiality ranking, the completion standard, and the output schema. Apply them as written. The completion standard is binding: do not return a verdict because every sentence is cited or several outlets agree.
 
 The article: the built page $html (source $page, data module under $root/src/data/). Its records are listed in $manifest with pinned files under $root/data/sources/. Read the complete page first, then expand outward. Follow every citation the page's own sources make to its underlying record (a video's on-screen source slate, a story's linked filing, a release's dataset). Read every video pin frame by frame (ffmpeg -vf fps=1) as well as its transcript.
+
+The author's reader model is at $rm when that file exists: seven one-sentence answers (what happened, why it matters, the easiest wrong reading, the one concept, what changed, what is unresolved, the questions a stranger asks next) and a materiality grade A to D for every passage of the record (A changes the event, B changes the reading, C strengthens the proof, D changes no answer). Grade every omission against it: a passage the author graded A or B that the story view does not carry is Major; a passage graded C or D that in fact changes one of the seven answers is Major against the grade, and you name which answer changes; an omitted C is Moderate at most; D is never a finding. The story view is meant to carry A and B only, so do not report C or D material as missing from the story when Just the facts or Show the work carries it. When the file does not exist, say so and grade as before.
 
 Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. Use the network for live records and coverage; prefer primary sources. No em dashes anywhere in your output.
 
