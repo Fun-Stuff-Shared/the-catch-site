@@ -37,17 +37,19 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
 
 1. **Accept the event** in state before dispatching turn one, and name the event id in the
    dispatch (`references/procedures.md`, step 10). The author never runs a state command.
-2. **Dispatch turn one** on a pinned skill commit, in a worktree that holds one story, as a
-   detached session with a finished marker. Every dispatch says: do not push, do not edit a
+2. **Dispatch turn one** with `assets/dispatch/run-turn.sh record <subject> <slug> <worktree>
+   <branch> <skill-commit> <candidate-block-file>` (EVENT_ID in the environment): it renders
+   `assets/dispatch/prompt-record.txt`, refuses an unfilled placeholder or a worktree without
+   the skill commit, and launches the author detached with a finished marker. Every dispatch says: do not push, do not edit a
    live story, do not kill, restart or signal any process you did not start.
 3. **Run the record audit** on the record commit: `scripts/completeness_audit.sh <story>
    checks/audits/<subject>--<slug>-<date>-record-audit.md`. It hunts outside the frame and
    finds a different frame every time it runs, so it runs here, once, before any prose.
-4. **Dispatch turn two** (a fresh session) naming the audit file. **Read the reader model
+4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). **Read the reader model
    commit** before going on: the seven answers against the record, the grades against the
    passage tables, the sections against the question tree. A wrong angle is fixed here by
    re-dispatching turn two with the correction, never later on prose.
-5. **Dispatch turn three** (a fresh session) naming the reader model commit.
+5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
 6. **Two reads on the story commit, in parallel:** `scripts/red_team.sh` and
    `scripts/entailment_check.sh`. Verify every finding at the bytes; refute what the pins
    refute; send the rest as one numbered patch list.
@@ -76,3 +78,5 @@ problem, written into the working note for the next story, not a third run.
 - `references/shape-rules.md`, `references/sections.md`, `references/components.md`: how a page is built to be read, the core and optional sections, chips and components.
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md, what the gate checks.
 - `references/interrogation.md`: the interrogation prompt the script sends.
+- `references/anti-patterns.md`: sentences real reviews cut, by shape, for the story turn.
+- `assets/dispatch/`: the three turn prompts and `run-turn.sh`.
