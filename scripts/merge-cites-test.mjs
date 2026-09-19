@@ -22,6 +22,11 @@ test("citations of different records stay separate and in order", () => {
   assert.ok(out.indexOf("#src-2") < out.indexOf("#src-3"));
 });
 
+test("a passage containing a dollar figure is carried verbatim", () => {
+  const out = mergeCites(`Sentence.${cite(5, "half of the work")}${cite(5, "shortfall of $124M")}`);
+  assert.match(out, /data-passages="shortfall of \$124M"/);
+});
+
 test("a page without citations is returned unchanged", () => {
   assert.equal(mergeCites("<p>plain</p>"), "<p>plain</p>");
 });

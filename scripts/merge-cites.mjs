@@ -26,7 +26,7 @@ export function mergeCites(html) {
     if (j === i + 1) out += first[0];
     else {
       const extra = passages.length > 1 ? ` data-passages="${passages.slice(1).join("&#10;")}"` : "";
-      out += first[0].replace(/(<a href="#src-\d+"[^>]*)>/, `$1${extra}>`);
+      out += first[0].replace(/(<a href="#src-\d+"[^>]*)>/, (m, open) => `${open}${extra}>`);
     }
     cursor = parts[j - 1].index + parts[j - 1][0].length;
     i = j;
