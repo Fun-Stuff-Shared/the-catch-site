@@ -22,6 +22,8 @@ export const event = {
 };
 
 export const timeline = [
+  { date: "Feb. 1", title: "Trump announces a two-year closure proposal.", sub: "He says the main building would close for construction starting in July, subject to board approval." },
+  { date: "March 16", title: "The board votes on the closure proposal.", sub: "The May opinion later enjoins implementation of this vote." },
   { date: "May 29", title: "The court denies preliminary relief in the preservation case.", sub: "The ruling relies on sworn representations that the main building would not be demolished and no new structure would be built." },
   { date: "Aug. 13", title: "The board votes 23 to 3 to close the main building for renovation.", sub: "Programming would continue at the REACH and off site." },
   { date: "Aug. 28", title: "The parties file a joint status report.", sub: "The defendants again say the building will not be demolished and no new structure will be constructed." },
@@ -31,20 +33,53 @@ export const timeline = [
   { date: "Sept. 23", title: "Status report due.", sub: "The court requires a sworn declaration addressing the temporary closure and emergency repairs." },
 ];
 
+const dollarsInMillions = (value) => `$${value / 1_000_000} million`;
+const appropriation = 256_657_000;
+
+export const funding = {
+  appropriation,
+  appropriationLabel: dollarsInMillions(Math.round(appropriation / 1_000_000) * 1_000_000),
+  availabilityDeadline: "September 30, 2029",
+  partialOperationShortfall: 124_000_000,
+  partialOperationShortfallLabel: dollarsInMillions(124_000_000),
+  closureEstimate: 285_000_000,
+  closureEstimateLabel: dollarsInMillions(285_000_000),
+  phasedClosureClaim: 300_000_000,
+  phasedClosureClaimLabel: dollarsInMillions(300_000_000),
+  fullClosureShortfallClaim: 30_000_000,
+  fullClosureShortfallClaimLabel: dollarsInMillions(30_000_000),
+};
+
+export const affectedPeople = {
+  layoffTranches: 2,
+  remainingProgrammingStaff: 10,
+  preservationPlaintiffOrganizations: 8,
+};
+
+export const boardVote = {
+  votesCast: 26,
+  inFavor: 23,
+  opposed: 3,
+  presentNotVoting: 2,
+};
+
 export const coverageChecks = [
   {
     outlet: "Associated Press via PBS NewsHour",
-    claim: "reported that the order required 30 days' notice before any major physical change, including demolition.",
-    verdict: "Too broad. The reproduced order says more than 30 days and ties the requirement to changes in the scope of the project plans previously presented to the court.",
+    claim: "reported that the order required 30 days' notice before any major physical change and that all three recognition proposals were shot down.",
+    verdict: "The notice description is too broad: the order says more than 30 days and follows the project scope presented to the court. The recognition account is wrong: two proposals were enjoined, while the endowment inscription request was denied as unripe.",
     status: "warn",
-    chip: "too broad",
+    chip: "mislabeled",
     source: "pbs-ap-kennedy-center-2026-09-17",
     passage: "provide 30 days' notice before making any major physical changes",
+    secondPassage: "All of those proposals were shot down Tuesday by Cooper",
+    recordSource: "beatty-opinion-77-2026-09-15",
+    recordPassage: "However, the Court denies as unripe",
   },
   {
     outlet: "UPI",
     claim: "reproduced the operative sentence tying advance notice to project-scope changes, including demolition.",
-    verdict: "Checks out against the same language reproduced by the parties' counsel and the surrounding filings.",
+    verdict: "Checks out against the full sentence UPI reproduces. Beatty's counsel quotes only part of it and describes the period as 30 days.",
     status: "ok",
     chip: "checks out",
     source: "upi-kennedy-center-2026-09-17",
@@ -60,3 +95,7 @@ export const coverageChecks = [
     passage: "blocked President Donald Trump from taking immediate action to demolish the Kennedy Center",
   },
 ];
+
+export const coverageRecordCount = 6;
+export const coverageVerdictCount = coverageChecks.length;
+export const laterCoverageRecordCount = 2;

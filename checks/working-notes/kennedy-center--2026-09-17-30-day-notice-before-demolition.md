@@ -37,6 +37,37 @@ One line per search, in run order:
 - Kennedy Center institutional listing search: no September 17 release carrying the court's order; the board minutes and filed resolutions are the direct institutional records used.
 - Legislative search: the governing duties and board powers are in 20 U.S.C. 76j and 76l. The May opinions discuss the separate $257 million appropriation, but the September 17 order does not adjudicate the appropriation.
 - Forward search through September 19: no later court filing changed the September 17 notice command; the ordered status report was due September 23.
+- CourtListener docket capture for the September 17 minute order: direct route refused as `robots_disallowed` in `capture-oneoff-20260919T090517Z`; required archive fallback refused as `robots_disallowed` in `capture-oneoff-20260919T090524Z`.
+- September 18 attachment capture from direct RECAP storage in `capture-oneoff-20260919T090606Z`: ECF 88-1, 89-1, 89-2 and 89-3 succeeded. ECF 89-1 duplicates the substantive text of 88-1 except for the docket header and was not separately admitted. ECF 89-4 returned `http_status_404`.
+- ECF 89-4 archive fallback in `capture-oneoff-20260919T090626Z`: the direct request and Wayback request both returned `http_status_404`; the Delta addendum and exhibits remain unavailable on that route.
+- Public Law 119-21 PDF: direct GPO capture succeeded in `capture-oneoff-20260919T090837Z`; the Kennedy Center provision appropriates $256,657,000 through September 30, 2029.
+- Defendants' August 24 response, ECF 68: direct RECAP storage capture succeeded in `capture-oneoff-20260919T091035Z`.
+- Preservation plaintiffs' September 17 public statement: direct issuing-organization capture succeeded in `capture-oneoff-20260919T091123Z`.
+- Associated Press protest report and the Action Network event page: both direct captures succeeded in `capture-oneoff-20260919T091138Z`.
+- Associated Press report on Trump's September 18 remarks: direct capture succeeded in `capture-oneoff-20260919T091155Z`.
+
+## Round-one review patch, items 1–20
+
+1. Reordered the opening account so Matt Floca is identified before his declaration is summarized.
+2. Defined the disputed recognition as recognition for the administration's renovation and fundraising role.
+3. Retried the minute-order docket route and required archive route; both were refused as `robots_disallowed`, so the order remains typed unreachable and the two admitted carriers remain labeled.
+4. Made no prose change for the informational voice-lint observation; the reviewed sentence is attributed and evidence-bearing.
+5. Corrected the source note: UPI reproduces the full operative sentence, while Beatty's counsel quotes only part.
+6. Corrected the UPI verdict to the same source boundary and removed the false two-source reproduction claim.
+7. Captured ECF 88-1 and 89-1 through 89-4 by the required direct storage route. Admitted 88-1, 89-2 and 89-3; held 89-1 as a substantive duplicate; typed 89-4 unreachable after direct and archive `http_status_404` results. Narrowed the plan unknown to accessible public filings, the sealed JLL report and the sealed Delta presentation.
+8. Added the Public Law 119-21 appropriation and the board minutes' half-covered, $124 million and $285 million comparisons. The exact appropriation is stored in the data module and rounded there for the displayed $257 million label.
+9. Added the February 1 announcement and March 16 board vote to the timeline.
+10. Added affected contracts, two staff layoff tranches, ten remaining programming staff, REACH programming, National Symphony Orchestra off-site performances, the Kennedy Center Honors and the Mark Twain Prize.
+11. Added the vote denominator: 26 votes cast, with 23 in favor and 3 opposed; two additional trustees were present but did not vote, and several were absent.
+12. Made the notice-order coverage denominator explicit: six admitted records and three verdict cards.
+13. Captured ECF 68 and added the conditional taken-down argument and amphitheater example, bounded as a litigation position rather than an approved project.
+14. Added the September 18 supporting papers, August 31 Delta distribution, September 15 ratification, and the defendants' $300 million versus less-than-$30-million comparison. The page says these are defendants' assertions and identifies the sealed JLL report and Delta presentation.
+15. Captured the preservation plaintiffs' statement and added their receiver, limited-receiver and monitor position as measures they said the court should consider, without presenting them as relief already sought.
+16. Captured the AP protest report and Action Network page, then added the crowd, human chain and invited constituencies in `who-feels-it` and `what-happened-next`.
+17. Captured the later AP report and added that Trump did not directly answer the demolition question.
+18. Added ABC's limitation that the published image did not show the whole placard and cut the visible word at `DEMOLIS`.
+19. Added the AP recognition error to the AP verdict: two proposals were enjoined, while the endowment-inscription request was denied as unripe.
+20. Explained how ABC, CBS and the earlier USA Today record are used despite not receiving verdict cards. The two later AP records are separately identified as follow-on coverage.
 
 ## Primary-record passage tables
 
@@ -52,6 +83,7 @@ One line per search, in run order:
 | `floca-declaration-86-1-2026-09-17` | Floca says the closure is for seven days unless extended, will be reassessed weekly, and follows canopy and ceiling safety findings | Sworn basis and stated duration of temporary closure | What happened, who feels it |
 | `beatty-reply-87-2026-09-17` | Plaintiffs argue the asserted safety closure is a pretext and seek clarification that demolition is barred | Argument, not the order | Both sides, attributed |
 | `beatty-counsel-reaction-2026-09-17` | Counsel's release reproduces the order's project-scope language and says the sworn update is due September 23 | Party reaction and a carrier for the minute order's public effect | Immediate reaction; not presented as the court's own hosted document |
+| `preservation-plaintiffs-statement-2026-09-17` | Eight plaintiff organizations publicly ask the court to consider a receiver, replacement leadership, a limited receiver, independent monitor or another neutral officer | The plaintiffs' public position about measures the court should consider | Who feels it, attributed and bounded |
 
 ### The plan and the board actions
 
@@ -63,6 +95,12 @@ One line per search, in run order:
 | `board-resolution-66-2-2026-08-13` | The board approved proposed recognition inscriptions and a Trump Plaza, with action after 14 days | The separate recognition action intertwined with the later closure dispute | Context only |
 | `board-vote-notice-78-2026-09-15` | Beatty notified the court that the board approved the closure resolution again and that Trump said closing would be immediate | The September 15 action before the emergency motion | Timeline |
 | `scheduling-order-82-2026-09-16` | Expedited discovery is limited to the August 13 main-building closure decision; discovery began September 16 | The litigation track already under way | What happens next |
+| `defendants-response-recognition-68-2026-08-24` | Defendants argue that without the administration's work the building would eventually have to be taken down and mention an amphitheater proposal | Conditional litigation position, not an approved demolition plan | Where this sits, attributed |
+| `public-law-119-21-kennedy-center` | Congress appropriates $256,657,000 for Kennedy Center capital repair, restoration, maintenance backlog and security structures through September 30, 2029 | The exact appropriation mechanism and availability period | Where this sits |
+| `defendants-consolidated-memorandum-88-1-2026-09-18` | Defendants compare a claimed $300 million phased-closure shortfall with a gap below $30 million for complete closure | Defendants' funding argument, not a court finding | What happened next, attributed |
+| `defendants-statement-facts-89-2-2026-09-18` | Defendants say management sent the finalized Delta report to trustees on August 31 and the board ratified closure on September 15 | Defendants' chronology supporting the motions | What happened next, attributed |
+| `floca-declaration-89-3-2026-09-18` | Floca identifies a JLL report and Delta presentation as appearing under seal | Why those plan records cannot be read from the public pin set | What happened next and unknowns |
+| `action-network-hands-around-kennedy-center-2026-09-18` | The event page invites artists, patrons, staff, union members and volunteers | Organizer-defined constituencies | Who feels it |
 
 ### Earlier court rulings and governing law
 
@@ -83,14 +121,17 @@ One line per search, in run order:
 | UPI | Plans for changes must be submitted 30 days out | UPI reproduces the operative sentence, including the scope limitation and `more than 30 days` | `checks out` when the sentence is read in full |
 | USA Today, September 17 | The order effectively blocked immediate demolition and likely allows judicial review during the notice period | Immediate demolition is prevented by the notice command; review during the period is the outlet's inference, not an express order term | first part `checks out`; second `single outlet` inference |
 | USA Today, September 16 | Trump said the building would end up being ripped down without the overhaul and recognition | The quotation is also filed in Beatty's supplemental notice | `checks out` as an attributed statement |
+| Associated Press, September 18 protest | Thousands joined outside and some formed a human chain around the Center | Follow-on event reporting, supported by the organizer's admitted event page for invited constituencies | Used in who feels it and what happened next; no verdict card |
+| Associated Press, September 18 Trump remarks | Trump did not directly respond when asked whether he planned to demolish the theater | Follow-on attributed reporting | Used in unknowns; no verdict card |
 
 ## Needs ledger
 
 | Need | Status | Disposition |
 |---|---|---|
-| Court-hosted September 17 minute order | typed unreachable | CourtListener and D.D.C. ECF refused capture; Justia snapshot stopped September 15. The text-only order is quoted only through admitted carriers, with the limitation disclosed. |
+| Court-hosted September 17 minute order | typed unreachable | Direct CourtListener capture returned `robots_disallowed` in `capture-oneoff-20260919T090517Z`; the required archive fallback returned the same code in `capture-oneoff-20260919T090524Z`. The text-only order is quoted only through admitted carriers. |
 | September 23 sworn status report | not yet due | Forward search run September 19. The page states the deadline, not the report's contents. |
-| Full JLL 2026 project plan and Delta report | not held | The August board minutes describe them; the September order's notice command is tied to the plan presented to the court, which is represented in the joint report and sworn filings. No unheld plan detail is asserted. |
+| Full JLL 2026 project plan and Delta report | not held on a public route | ECF 89-3 identifies a JLL report and Delta presentation under seal. ECF 89-4 returned `http_status_404` through direct storage and the required archive fallback. No unheld plan detail is asserted. |
+| ECF 89-1 supporting memorandum | duplicate, not separately admitted | Direct storage succeeded, but its substantive extracted text matches admitted ECF 88-1; only the docket header differs. |
 | Whether defendants will propose demolition | unknown after disproof search | The order requires notice if scope changes; it does not say a demolition decision has been made. |
 | Whether the temporary safety closure will extend past seven days | unknown after disproof search | Floca says seven days unless extended and weekly reassessment. No later sworn update was available by September 19. |
 
@@ -105,10 +146,10 @@ One line per search, in run order:
 
 ## Interrogation dispositions
 
-The independent interrogation returned 21 items. The page was corrected to name Bridget Kennedy-Bailey, and it now includes the public ripped-down statement, the placard with its attributed wording, the Kennedy Center spokesperson's denial, Floca's concrete safety evidence, Kennedy-Bailey's sworn forklift observation, and the defendants' September 18 motions. The CourtListener docket retry again returned `robots_disallowed` in `capture-oneoff-20260919T080409Z`. The direct Truth Social capture returned only a shell and was not admitted. Items concerning duplicate coverage, a White House repost, meeting characterizations, renovation-option comparisons, later protests and layoffs, receivership requests, and prediction markets were individually declined in the interrogation file because they did not change the September 17 order or a claim made on this page.
+The independent interrogation returned 21 items. The page was corrected to name Bridget Kennedy-Bailey, and it now includes the public ripped-down statement, the placard with its attributed wording, the Kennedy Center spokesperson's denial, Floca's concrete safety evidence, Kennedy-Bailey's sworn forklift observation, and the defendants' September 18 motions. The CourtListener docket retry again returned `robots_disallowed` in `capture-oneoff-20260919T080409Z`. The direct Truth Social capture returned only a shell and was not admitted. The round-one review then required the additional renovation comparisons, later protest and layoff record, preservation plaintiffs' public position, and coverage-accounting changes documented above. The White House repost, meeting characterizations and prediction-market material remain outside this item-scoped patch.
 
 The initial closure is displayed as `seven days`, matching the authoritative passages. It is not staged as a numeric authored figure because the state validator requires the Arabic numeral to appear in the exact source span, while the filings spell the number out.
 
 ## Entailment self-check
 
-The final self-check inspected 23 blocks and returned `ENTAILED`, with zero critical, major, moderate or minor unsupported sentences. The committed verdict is under `checks/audits/`.
+The final patch self-check used `--since e548e46d`, inspected 15 changed blocks and returned `ENTAILED`, with zero critical, major, moderate or minor unsupported sentences. The committed verdict is under `checks/audits/`.

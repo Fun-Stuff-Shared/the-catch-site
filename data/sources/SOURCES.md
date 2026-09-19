@@ -1556,6 +1556,10 @@ Court filings and official records were captured before coverage. The September 
 
 | File | Bytes | sha256 (first 16) |
 |---|---:|---|
+| data/sources/coverage/kennedy-center/ap-kennedy-center-protest-2026-09-18.html | 941829 | 309ffd15d12e04c7 |
+| data/sources/coverage/kennedy-center/ap-kennedy-center-protest-2026-09-18.txt | 5347 | 2784536070c6bae8 |
+| data/sources/coverage/kennedy-center/ap-trump-kennedy-center-2026-09-18.html | 920634 | 33b4aa49a869fec8 |
+| data/sources/coverage/kennedy-center/ap-trump-kennedy-center-2026-09-18.txt | 2547 | f7aa06f6243f2008 |
 | data/sources/coverage/kennedy-center/article_0144.html | 261765 | 014177b473c520c4 |
 | data/sources/coverage/kennedy-center/article_0144.txt | 5799 | 85d5923dac44e427 |
 | data/sources/coverage/kennedy-center/article_0727.html | 314246 | 816cf4e4fe567a1b |
@@ -1568,6 +1572,8 @@ Court filings and official records were captured before coverage. The September 
 | data/sources/coverage/kennedy-center/article_6951.txt | 3174 | f228c68bb258728d |
 | data/sources/coverage/kennedy-center/cbs-kennedy-center-2026-09-17.html | 634787 | fc701f8b6041bdc5 |
 | data/sources/coverage/kennedy-center/cbs-kennedy-center-2026-09-17.txt | 4525 | f122d551f619d9c2 |
+| data/sources/kennedy-center/action-network-hands-around-kennedy-center-2026-09-18.html | 84646 | 89c98a9793df63d3 |
+| data/sources/kennedy-center/action-network-hands-around-kennedy-center-2026-09-18.txt | 2378 | 1e23821d8ae89e30 |
 | data/sources/kennedy-center/beatty-counsel-reaction-2026-09-17.html | 94235 | 6bc564f9b8fa8687 |
 | data/sources/kennedy-center/beatty-counsel-reaction-2026-09-17.txt | 3084 | f3387776e798d6d4 |
 | data/sources/kennedy-center/beatty-motion-84-2026-09-16.pdf | 150180 | 1a5ce44e37d18bbb |
@@ -1586,14 +1592,22 @@ Court filings and official records were captured before coverage. The September 
 | data/sources/kennedy-center/board-resolution-66-2-2026-08-13.txt | 3017 | 306a2f3e88a72943 |
 | data/sources/kennedy-center/board-vote-notice-78-2026-09-15.pdf | 225658 | 5a3be4ba0cec01cc |
 | data/sources/kennedy-center/board-vote-notice-78-2026-09-15.txt | 2488 | af6559fa020e535c |
+| data/sources/kennedy-center/defendants-consolidated-memorandum-88-1-2026-09-18.pdf | 396840 | da57faa8f56def2b |
+| data/sources/kennedy-center/defendants-consolidated-memorandum-88-1-2026-09-18.txt | 119307 | d4dd4e0838f14f22 |
 | data/sources/kennedy-center/defendants-motion-vacate-88-2026-09-18.pdf | 127459 | d57a334966cd28dc |
 | data/sources/kennedy-center/defendants-motion-vacate-88-2026-09-18.txt | 3209 | 51d5dacae4ff2537 |
 | data/sources/kennedy-center/defendants-response-86-2026-09-17.pdf | 148883 | 7ba02a49ef692256 |
 | data/sources/kennedy-center/defendants-response-86-2026-09-17.txt | 7922 | 1882e09a42f1eee0 |
+| data/sources/kennedy-center/defendants-response-recognition-68-2026-08-24.pdf | 319976 | e2e07aafdbf6ca74 |
+| data/sources/kennedy-center/defendants-response-recognition-68-2026-08-24.txt | 59081 | 6638db2a6fa49a3e |
+| data/sources/kennedy-center/defendants-statement-facts-89-2-2026-09-18.pdf | 168120 | c9f8c6683598d67c |
+| data/sources/kennedy-center/defendants-statement-facts-89-2-2026-09-18.txt | 24419 | b2a0e1a9659d78cd |
 | data/sources/kennedy-center/defendants-summary-judgment-89-2026-09-18.pdf | 128966 | f3bb5e88c109da22 |
 | data/sources/kennedy-center/defendants-summary-judgment-89-2026-09-18.txt | 3409 | 9276364f2da7dcfc |
 | data/sources/kennedy-center/floca-declaration-86-1-2026-09-17.pdf | 798401 | 4753caf607537057 |
 | data/sources/kennedy-center/floca-declaration-86-1-2026-09-17.txt | 6077 | 6f429783dc8d1852 |
+| data/sources/kennedy-center/floca-declaration-89-3-2026-09-18.pdf | 197598 | eda769d58b26d42d |
+| data/sources/kennedy-center/floca-declaration-89-3-2026-09-18.txt | 5606 | c071026c2f3ba56f |
 | data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.pdf | 125928 | 144bb1928afa35ce |
 | data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.txt | 6524 | 4dab905a8c673a31 |
 | data/sources/kennedy-center/preservation-addendum-62-1-2026-08-28.pdf | 43535 | c4c9f9942aec3646 |
@@ -1602,6 +1616,10 @@ Court filings and official records were captured before coverage. The September 
 | data/sources/kennedy-center/preservation-joint-report-62-2026-08-28.txt | 8446 | 8600e4592af6e7f0 |
 | data/sources/kennedy-center/preservation-opinion-45-2026-05-29.pdf | 426716 | 765a263241d48333 |
 | data/sources/kennedy-center/preservation-opinion-45-2026-05-29.txt | 99566 | 961b1444aae29127 |
+| data/sources/kennedy-center/preservation-plaintiffs-statement-2026-09-17.html | 77281 | e48b9341b1e6025c |
+| data/sources/kennedy-center/preservation-plaintiffs-statement-2026-09-17.txt | 5171 | 53bbdb6460abb819 |
+| data/sources/kennedy-center/public-law-119-21-2025.pdf | 968588 | 42f86c3d408bccb1 |
+| data/sources/kennedy-center/public-law-119-21-2025.txt | 1252302 | 0e3e82ed4bed7539 |
 | data/sources/kennedy-center/scheduling-order-82-2026-09-16.pdf | 230282 | 535a8219bece6215 |
 | data/sources/kennedy-center/scheduling-order-82-2026-09-16.txt | 4811 | 1fee18eda6976415 |
 | data/sources/kennedy-center/usc-20-76j-2026-09-19.html | 164172 | a1dd4bbb1b1ac51d |
