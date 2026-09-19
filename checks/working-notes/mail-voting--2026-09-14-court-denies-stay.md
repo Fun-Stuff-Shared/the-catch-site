@@ -373,3 +373,9 @@ Ledgered for a later pass, not this round: 2020 service-change litigation and 20
 - Baseline lint: lens 0, quote 0, voice fail 5, voice reread 21.
 - Final lint: lens 0, quote 0, voice fail 0, voice reread 7. The remaining rereads are direct court-scope distinctions or outlet-card verdicts.
 - Entailment since `b3b587f0`: ENTAILED. Thirteen changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0.
+
+## September 19 bounded-absence and card-count patch
+
+- The inspector-general absence is bounded to the Postal Service inspector general's report listings and the coverage saved through September 18.
+- The manifest has 14 coverage records. The built page has 14 card units: 4 standalone cards, 1 folded summary and 9 folded reports. Two cards check the same WIRED article; the combined WIRED and CNBC card checks two articles.
+- Verification: `npm run build` passed; lens 0; quote 0; voice fail 0, reread 9.
