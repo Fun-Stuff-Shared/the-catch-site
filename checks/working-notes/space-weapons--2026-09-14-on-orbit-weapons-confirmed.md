@@ -1,5 +1,15 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 8 (space-patch.md item 45; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r8-entailment.md). No new records.
+
+Verified at the pin before rewriting (2026-09-18):
+- Defense One `defenseone-schiess-2026-09-15.txt` line 4: "The advance of Chinese and Russian anti-satellite capabilities led the United States to admit it has weapons in space"
+- Same file line 7: "We've talked about you know them being able to grapple a satellite and move it to a different orbit"; then "we also need capabilities to not only defend the joint force from space-enabled attack, but defend our assets"
+- The pin does not say the acknowledged U.S. weapons can grapple or move a satellite.
+
+### Item 45
+45. What happened next, Schiess paragraph: dropped "He spoke of them being able to grapple". Sentence now names others as the grappling actor in Defense One's Chinese and Russian framing, and cites Schiess saying the United States also needs capabilities to defend its assets. Framing cite stays on the next sentence. Sibling count: 0.
+
 ## Round 7 (space-patch.md item 44; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r7-entailment.md). No new records.
 
 Verified at the pins before rewriting (2026-09-18):
