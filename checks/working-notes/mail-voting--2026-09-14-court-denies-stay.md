@@ -362,3 +362,14 @@ Ledgered for a later pass, not this round: 2020 service-change litigation and 20
 ### Self-check
 
 `checks/audits/mail-voting--2026-09-14-court-denies-stay-2026-09-19-since-5661ae44-entailment.md`: VERDICT: ENTAILED. Blocks checked: 3; Critical 0, Major 0, Moderate 0, Minor 0.
+
+## September 19 voice patch
+
+- Removed the claim-check section, its table-of-contents entry, and the unused `CheckedBlock` import. Moved the emergency-requests figure unchanged into Where this sits.
+- Removed reader-address language and the sentence describing the article-reading process from the catch.
+- Replaced the coverage preface with the plain thirteen-article count and moved the verdict key to proof.
+- Rewrote all three searched-source unknowns as dated public absences.
+- Reduced the rail note to its dateline; the Postal Service enforcement and portal developments remain in What happened next with their citations.
+- Baseline lint: lens 0, quote 0, voice fail 5, voice reread 21.
+- Final lint: lens 0, quote 0, voice fail 0, voice reread 7. The remaining rereads are direct court-scope distinctions or outlet-card verdicts.
+- Entailment since `b3b587f0`: ENTAILED. Thirteen changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0.
