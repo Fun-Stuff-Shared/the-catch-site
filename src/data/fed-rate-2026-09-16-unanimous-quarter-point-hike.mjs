@@ -47,15 +47,15 @@ export const computed = {
 export const event = {
   slug: "fed-rate/2026-09-16-unanimous-quarter-point-hike",
   title: "Fed raises rates a quarter point on a unanimous vote",
-  dek: "The quarter-point increase took effect September 17. The new projections put the median year-end rate at 4.1 percent in 2026 and 2027.",
+  dek: "The quarter-point increase cannot lower oil prices. It targets demand and the spread of the energy shock, with the quickest effects reaching variable-rate borrowers and savers.",
   name: "September 2026 rate increase",
   date: decisionDate,
   updated: "2026-09-19",
   kpis: [
     { value: `${range.lower}–${range.upper.toFixed(2)}`, unit: "%", label: "new target range" },
     { value: `${computed.voteFor}–${computed.voteAgainst}`, label: "committee vote" },
-    { value: computed.priorRangeDays, unit: "days", label: "at the prior range" },
-    { value: computed.currentPercentile, unit: "pctile", label: "of daily target history" },
+    { value: 3.9, unit: "%", label: "August gasoline increase" },
+    { value: 4.1, unit: "%", label: "median 2026 rate projection" },
   ],
   visual: {
     kind: "table",
@@ -67,6 +67,36 @@ export const event = {
     ],
     note: "Federal Reserve records",
   },
+};
+
+export const decision = {
+  sizeBasisPoints: 25,
+  range,
+  effectiveDate,
+  julyRange: { lower: 3.5, upper: 3.75 },
+  julyVote: { forHold: 9, forIncrease: 3 },
+};
+
+export const inflation = {
+  augustGasolineChange: 3.9,
+  augustGasolineShare: "more than one-third",
+  augustCoreCpiAnnual: 2.4,
+};
+
+export const growth = {
+  secondQuarterGdp: 1.5,
+  firstQuarterGdp: 2.1,
+  secondQuarterPrivateDomesticSales: 4.2,
+};
+
+export const projections = {
+  june2026Median: 3.8,
+  september2026Median: 4.1,
+  september2027Median: 4.1,
+  participantCount: 18,
+  oneMoreIncrease: 12,
+  twoMoreIncreases: 4,
+  noMoreIncrease: 2,
 };
 
 export const ratePath = {

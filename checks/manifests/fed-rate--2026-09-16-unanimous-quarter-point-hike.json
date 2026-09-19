@@ -5,7 +5,7 @@
   "story_title": "Fed raises rates a quarter point on a unanimous vote",
   "state_event_id": "event-fed-rate-2026-09-16-unanimous-quarter-point-hike",
   "event_record": "/events/fed-rate/",
-  "completed_by": "Codex, catch-event-page 3.0 record turn",
+  "completed_by": "Codex, catch-story 3.1 story turn",
   "date_completed": "2026-09-19",
   "coverage_threshold": 2,
   "sub_events": [
@@ -13,14 +13,14 @@
       "id": "july-hold-2026-07-29",
       "date": "2026-07-29",
       "label": "The committee holds with three dissents for a hike",
-      "section_anchor": "statement-redline",
-      "records": ["fomc-statement-2026-07-29"]
+      "section_anchor": "what-happened",
+      "records": ["fomc-statement-2026-07-29", "fomc-minutes-2026-07-29"]
     },
     {
       "id": "september-decision-2026-09-16",
       "date": "2026-09-16",
       "label": "The committee raises the range by a quarter point",
-      "section_anchor": "vote",
+      "section_anchor": "what-happened",
       "records": [
         "fomc-statement-2026-09-16",
         "fomc-sep-release-2026-09-16",
@@ -38,7 +38,7 @@
       "id": "implementation-effective-2026-09-17",
       "date": "2026-09-17",
       "label": "The new target range takes effect",
-      "section_anchor": "rate-path",
+      "section_anchor": "what-happened",
       "records": [
         "fomc-implementation-2026-09-16",
         "fred-dfedtaru-2026-09-19",
@@ -49,8 +49,8 @@
       "id": "warsh-followup-2026-09-18",
       "date": "2026-09-18",
       "label": "Coverage examines Warsh's policy framing",
-      "section_anchor": "projections",
-      "records": ["cnbc-warsh-followup-2026-09-18"]
+      "section_anchor": "what-happened-next",
+      "records": ["cnbc-warsh-followup-2026-09-18", "ap-reconstruction-2026-09-17"]
     }
   ],
   "records": [
@@ -357,6 +357,85 @@
       "capture_run": "quarry-wire-scheduled-20260919T100035Z",
       "capture_raw_sha256": "sha256:18005bd642f7eb4f6584260b60756b4bca167ad7988a6ce2b52e7ae623bdbc90",
       "captured_at": "2026-09-19T10:06:01.618786Z"
+    },
+    {
+      "id": "bls-cpi-2026-09-11",
+      "title": "Consumer Price Index — August 2026",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "date": "2026-09-11",
+      "url": "https://www.bls.gov/news.release/archives/cpi_09112026.htm",
+      "pinned_path": "data/sources/fed-rate/bls-cpi-2026-09-11.html",
+      "text_path": "data/sources/fed-rate/bls-cpi-2026-09-11.txt",
+      "text_sha256": "sha256:13b9a13b1aa21a6cc6c0a3577554af9d40924fb8608904f27c72cdf0ab56482e",
+      "quote": "The index for gasoline rose 3.9 percent in August, accounting for over one third of the monthly all items increase.",
+      "quote_span_check": "byte_exact",
+      "about": "The August gasoline contribution and core consumer-price reading before the September meeting.",
+      "capture_run": "quarry-wire-scheduled-20260911T160043Z",
+      "capture_raw_sha256": "sha256:aee0cdff604c295d784e6302b2ba74130f10f535675a5a0fb7262c936edaaabd",
+      "captured_at": "2026-09-11T16:05:34.036526Z"
+    },
+    {
+      "id": "bea-gdp-q2-second-estimate-2026-08-26",
+      "title": "GDP (Second Estimate) and Corporate Profits, 2nd Quarter 2026",
+      "publisher": "U.S. Bureau of Economic Analysis",
+      "date": "2026-08-26",
+      "url": "https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026",
+      "pinned_path": "data/sources/fed-rate/bea-gdp-q2-second-estimate-2026-08-26.html",
+      "text_path": "data/sources/fed-rate/bea-gdp-q2-second-estimate-2026-08-26.txt",
+      "text_sha256": "sha256:e20e5757a8fc0fda1f788a500c52e7c90566e3d75d4fbc6cc0d3c571c3bc544e",
+      "quote": "Real final sales to private domestic purchasers, the sum of consumer spending and gross private fixed investment, increased 4.2 percent in the second quarter",
+      "quote_span_check": "byte_exact",
+      "about": "The second-quarter growth headline and private domestic demand baseline.",
+      "capture_run": "capture-oneoff-20260919T212611Z",
+      "capture_raw_sha256": "sha256:2a0afce2c96c4ba383d382de93747e5b5da7d49f8fff923cda089285184b185e",
+      "captured_at": "2026-09-19T21:26:23.178482Z"
+    },
+    {
+      "id": "fomc-minutes-2026-07-29",
+      "title": "Minutes of the Federal Open Market Committee, July 28–29, 2026",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-08-19",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm",
+      "pinned_path": "data/sources/fed-rate/fomc-minutes-2026-07-29.html",
+      "text_path": "data/sources/fed-rate/fomc-minutes-2026-07-29.txt",
+      "text_sha256": "sha256:a95225a26b61410ed33c08f2bc3c68459212616d7022c8a0b7f3ada16c82ce37",
+      "quote": "most participants supported maintaining the current target range for the federal funds rate",
+      "quote_span_check": "byte_exact",
+      "about": "The July preference to wait and the several participants who already favored an increase.",
+      "capture_run": "capture-oneoff-20260919T212611Z",
+      "capture_raw_sha256": "sha256:36481706c48ef7cc68ef7257d6eadd4f2dc6e7f0ae12536daa3ba25ced2138b1",
+      "captured_at": "2026-09-19T21:26:33.030999Z"
+    },
+    {
+      "id": "fed-warsh-jackson-hole-2026-08-28",
+      "title": "In Our Time",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-08-28",
+      "url": "https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm",
+      "pinned_path": "data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.html",
+      "text_path": "data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.txt",
+      "text_sha256": "sha256:51f98a3210b2fce8bb8cacea643105f52a004552194235aecac76d8747b68627",
+      "quote": "We must be confident that underlying inflation is moving to our objective, clearly and at sufficient speed.",
+      "quote_span_check": "byte_exact",
+      "about": "Warsh's public inflation standard before the September decision.",
+      "capture_run": "quarry-wire-scheduled-20260830T100005Z",
+      "capture_raw_sha256": "sha256:7ce594823ab1af5085c7efec1c286bd45b48e6b9b23d62fb08a052a7b2b69bbc",
+      "captured_at": "2026-08-30T10:15:45.996905Z"
+    },
+    {
+      "id": "ap-reconstruction-2026-09-17",
+      "title": "Fed jolts markets with a unanimous rate hike as gas prices climb and inflation stays high",
+      "publisher": "Associated Press",
+      "date": "2026-09-17",
+      "url": "https://apnews.com/article/inflation-warsh-trump-federal-reserve-cbf10411b50040aed24ec5a28e4c0c5a",
+      "pinned_path": "data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.md",
+      "text_path": "data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.txt",
+      "text_sha256": "sha256:4860ec6904b72e496ec750bdbf328bf4b5e94c9ea01921e0992b2d2fc6acc0fa",
+      "quote": "By the time higher borrowing costs started to slow the economy, the gas price shock could be over",
+      "quote_span_check": "byte_exact",
+      "about": "A next-day reconstruction of the lag risk and the movement in the 10-year Treasury yield.",
+      "capture_run": "quarry-wire-scheduled-20260917T220025Z",
+      "capture_status": "Registry retained extracted text and markdown but no raw-body receipt; a one-off archive recovery on 2026-09-19 deduplicated to this held item. The feed item is dated 2026-09-17T15:12:14-04:00."
     }
   ],
   "story_sources": [
@@ -378,7 +457,12 @@
     {"id":"the-hill-fed-decision-2026-09-16","group":"coverage","label":"The Hill decision report","meta":" · The Hill, 2026-09-16","usage":"the result and projection-dot counts"},
     {"id":"pbs-ap-fed-consumer-effects-2026-09-16","group":"coverage","label":"Associated Press consumer-effects report","meta":" · PBS NewsHour, 2026-09-16","usage":"the decision's reported effects on borrowers and savers"},
     {"id":"the-hill-trump-fed-reaction-2026-09-16","group":"coverage","label":"The Hill on Trump's reaction","meta":" · The Hill, 2026-09-16","usage":"the immediate political response"},
-    {"id":"cnbc-warsh-followup-2026-09-18","group":"coverage","label":"CNBC follow-up on Warsh's framing","meta":" · CNBC, 2026-09-18","usage":"the post-decision interpretation of Warsh's words"}
+    {"id":"cnbc-warsh-followup-2026-09-18","group":"coverage","label":"CNBC follow-up on Warsh's framing","meta":" · CNBC, 2026-09-18","usage":"the post-decision interpretation of Warsh's words"},
+    {"id":"bls-cpi-2026-09-11","group":"official","label":"August Consumer Price Index","meta":" · U.S. Bureau of Labor Statistics, 2026-09-11","usage":"the gasoline contribution and core-inflation baseline"},
+    {"id":"bea-gdp-q2-second-estimate-2026-08-26","group":"official","label":"Second-quarter GDP, second estimate","meta":" · U.S. Bureau of Economic Analysis, 2026-08-26","usage":"headline growth and private domestic demand"},
+    {"id":"fomc-minutes-2026-07-29","group":"primary","label":"July 28–29 FOMC minutes","meta":" · Federal Reserve Board, released 2026-08-19","usage":"the prior preference to wait and the case for an increase"},
+    {"id":"fed-warsh-jackson-hole-2026-08-28","group":"primary","label":"Warsh's Jackson Hole remarks","meta":" · Federal Reserve Board, 2026-08-28","usage":"the inflation standard stated before the meeting"},
+    {"id":"ap-reconstruction-2026-09-17","group":"coverage","label":"Associated Press next-day reconstruction","meta":" · Associated Press, 2026-09-17","usage":"the lag risk and next-day Treasury-yield movement"}
   ],
   "primary_sources": [
     {"id":"fomc-statement-2026-09-16","path":"data/sources/fed-rate/fomc-statement-2026-09-16.html","bytes":84669,"sha256":"sha256:55da18a385e2afea34dc0e9c961d7b73b0b9ed4e7fc41e7c03b2bd933b3270af","url":"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"},
@@ -392,7 +476,11 @@
     {"id":"fred-dfedtaru-2026-09-19","path":"data/sources/fed-rate/DFEDTARU-2026-09-19.csv","bytes":103818,"sha256":"sha256:316d079d52623bfd6b3b96f7d1e910694bcdecb3b71219d2796f4412e3e8bc84","url":"https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTARU"},
     {"id":"fred-dfedtar-2026-09-19","path":"data/sources/fed-rate/DFEDTAR-2026-09-19.csv","bytes":172645,"sha256":"sha256:323b6d9fb014cdd8b39eab02025bb37111e9497c75fdd24ea1731ed3f360376c","url":"https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFEDTAR"},
     {"id":"fred-dfedtaru-metadata-2026-09-19","path":"data/sources/fed-rate/fred-DFEDTARU-2026-09-19.html","bytes":78010,"sha256":"sha256:06869ab1d94fc0bb94bb94873962f013475a526e6a635389fb5298df4c7fa56f","url":"https://fred.stlouisfed.org/series/DFEDTARU"},
-    {"id":"fred-dfedtar-metadata-2026-09-19","path":"data/sources/fed-rate/fred-DFEDTAR-2026-09-19.html","bytes":79698,"sha256":"sha256:65b72875779ba9b7efbeaa590f9fe55d3579fb558e0a95b95f9ffb5c86b4020a","url":"https://fred.stlouisfed.org/series/DFEDTAR"}
+    {"id":"fred-dfedtar-metadata-2026-09-19","path":"data/sources/fed-rate/fred-DFEDTAR-2026-09-19.html","bytes":79698,"sha256":"sha256:65b72875779ba9b7efbeaa590f9fe55d3579fb558e0a95b95f9ffb5c86b4020a","url":"https://fred.stlouisfed.org/series/DFEDTAR"},
+    {"id":"bls-cpi-2026-09-11","path":"data/sources/fed-rate/bls-cpi-2026-09-11.html","bytes":1372789,"sha256":"sha256:aee0cdff604c295d784e6302b2ba74130f10f535675a5a0fb7262c936edaaabd","url":"https://www.bls.gov/news.release/archives/cpi_09112026.htm"},
+    {"id":"bea-gdp-q2-second-estimate-2026-08-26","path":"data/sources/fed-rate/bea-gdp-q2-second-estimate-2026-08-26.html","bytes":54091,"sha256":"sha256:2a0afce2c96c4ba383d382de93747e5b5da7d49f8fff923cda089285184b185e","url":"https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026"},
+    {"id":"fomc-minutes-2026-07-29","path":"data/sources/fed-rate/fomc-minutes-2026-07-29.html","bytes":122450,"sha256":"sha256:36481706c48ef7cc68ef7257d6eadd4f2dc6e7f0ae12536daa3ba25ced2138b1","url":"https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm"},
+    {"id":"fed-warsh-jackson-hole-2026-08-28","path":"data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.html","bytes":115735,"sha256":"sha256:7ce594823ab1af5085c7efec1c286bd45b48e6b9b23d62fb08a052a7b2b69bbc","url":"https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm"}
   ],
   "coverage_records": [
     "abc-fed-preview-2026-09-16",
@@ -401,7 +489,8 @@
     "the-hill-fed-decision-2026-09-16",
     "pbs-ap-fed-consumer-effects-2026-09-16",
     "the-hill-trump-fed-reaction-2026-09-16",
-    "cnbc-warsh-followup-2026-09-18"
+    "cnbc-warsh-followup-2026-09-18",
+    "ap-reconstruction-2026-09-17"
   ],
   "figures": [
     {"figure":"target_range_upper","label":"Upper limit of the federal funds target range","value":"4","unit":"percent","kind":"sourced","source":{"source_id":"fomc-statement-2026-09-16","quote_span":"3-3/4 to 4 percent"}},
@@ -422,10 +511,10 @@
     {"need":"independent coverage","status":"have","plain":"Seven coverage records spanning the preview, result, consumer effects, reaction and follow-up are pinned and checked."}
   ],
   "steps": {
-    "sources_admitted": {"done":true,"evidence":"Nineteen records have registry run ids, repository pins, recomputable text hashes and verified quote spans."},
+    "sources_admitted": {"done":true,"evidence":"Twenty-four records have registry run ids, repository pins, recomputable text hashes and verified quote spans or an explicit typed capture limitation."},
     "derived_numbers_computed": {"done":true,"evidence":"The data module parses the two admitted CSV series and computes the rate path, vote, 279-day duration, observation count and percentile."},
     "outlet_claims_verified": {"done":true,"evidence":"The working note checks each admitted outlet against the statement, projections, transcript, prior statement or series and labels overreach."},
-    "section_grammar": {"done":false,"evidence":"Turn one intentionally stops with headline, dek, KPIs, figures, chronology, record-detail blocks and the records list; narrative sections belong to turn two."},
+    "section_grammar": {"done":true,"evidence":"The story follows the reader-model order: decision, mechanism, household effects, projections, the checked CBS overstatement, political pressure, aftermath, unknowns and records."},
     "chip_vocabulary": {"done":true,"evidence":"All source details use SourcedBlock kind record; no page-specific chip label is introduced."},
     "live_elements_guarded": {"done":true,"evidence":"The page contains no live element; all records and series carry fixed September 19 vintages."},
     "subject_page_updated": {"done":true,"evidence":"The subject module now carries the September range and vote, and the subject chart imports the September rate path."},

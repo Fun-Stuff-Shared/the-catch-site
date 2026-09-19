@@ -1672,3 +1672,13 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fed-rate/coverage/the-hill-trump-reaction-2026-09-16.txt | 2020 | f3f196ca20cd6573 |
 | data/sources/fed-rate/coverage/cnbc-warsh-followup-2026-09-18.html | 815476 | 18005bd642f7eb4f |
 | data/sources/fed-rate/coverage/cnbc-warsh-followup-2026-09-18.txt | 5179 | 6cd9e8537ca1d3ad |
+| data/sources/fed-rate/bls-cpi-2026-09-11.html | 1372789 | aee0cdff604c295d |
+| data/sources/fed-rate/bls-cpi-2026-09-11.txt | 17475 | 13b9a13b1aa21a6c |
+| data/sources/fed-rate/bea-gdp-q2-second-estimate-2026-08-26.html | 54091 | 2a0afce2c96c4ba3 |
+| data/sources/fed-rate/bea-gdp-q2-second-estimate-2026-08-26.txt | 5787 | e20e5757a8fc0fda |
+| data/sources/fed-rate/fomc-minutes-2026-07-29.html | 122450 | 36481706c48ef7cc |
+| data/sources/fed-rate/fomc-minutes-2026-07-29.txt | 39645 | a95225a26b61410e |
+| data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.html | 115735 | 7ce594823ab1af50 |
+| data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.txt | 36007 | 51f98a3210b2fce8 |
+| data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.md | 131812 | a79df057d4befe2d |
+| data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.txt | 6324 | 4860ec6904b72e49 |

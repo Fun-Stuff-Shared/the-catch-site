@@ -42,7 +42,31 @@ Every-time next-series search: DFEDTARU and DFEDTAR were captured through Septem
 
 ## Admitted records
 
-Primary and official records, in admission order: September statement; implementation note; projections release; full projections PDF; press-conference transcript; July statement; current FOMC calendar; longer-run goals statement; DFEDTARU and DFEDTAR CSVs; and both FRED metadata pages. Coverage: ABC preview; CBS result; Guardian result; The Hill result; Associated Press via PBS on consumers; The Hill on Trump's reaction; CNBC's September 18 follow-up. All 19 are in the manifest with registry routes and repository pins.
+Primary and official records, in admission order: September statement; implementation note; projections release; full projections PDF; press-conference transcript; July statement; current FOMC calendar; longer-run goals statement; DFEDTARU and DFEDTAR CSVs; both FRED metadata pages; the August CPI release; the second estimate of second-quarter GDP; the July meeting minutes; and Warsh's Jackson Hole remarks. Coverage: ABC preview; CBS result; Guardian result; The Hill result; Associated Press via PBS on consumers; The Hill on Trump's reaction; CNBC's September 18 follow-up; and the Associated Press next-day reconstruction. All 24 are in the manifest with registry routes and repository pins or an explicit capture-status limitation.
+
+## Story-turn admissions
+
+1. `bls-cpi-2026-09-11`: `capture news` resolved the audit URL to `quarry-wire-scheduled-20260911T160043Z`. The raw HTML and whole extracted text are pinned. Gasoline rose 3.9 percent in August and accounted for more than one-third of the monthly all-items increase; the all-items-less-food-and-energy index rose 2.4 percent over the year. Grade A, answer 4.
+2. `bea-gdp-q2-second-estimate-2026-08-26`: `capture news` recovered the release in `capture-oneoff-20260919T212611Z`. The raw HTML and whole extracted text are pinned. Real GDP increased at a 1.5 percent annual rate in the second quarter after 2.1 percent in the first, while real final sales to private domestic purchasers increased 4.2 percent. Grade B, answer 5. The live release is dated August 26; the reader-model gap line retained the audit's August 27 label and was not rewritten.
+3. `fomc-minutes-2026-07-29`: `capture news` recovered the minutes in `capture-oneoff-20260919T212611Z`. The raw HTML and whole extracted text are pinned. Most participants supported holding the range and generally wanted more information; several favored a 25-basis-point increase. Grade B, answer 5.
+4. `fed-warsh-jackson-hole-2026-08-28`: `capture news` resolved the speech to `quarry-wire-scheduled-20260830T100005Z`. The raw HTML and whole extracted text are pinned. Warsh said underlying inflation had to move toward the objective clearly and at sufficient speed. Grade B, answer 5.
+5. `ap-reconstruction-2026-09-17`: `capture news` resolved the URL to `quarry-wire-scheduled-20260917T220025Z`. That run retained whole extracted text and markdown, both pinned here, but its body-receipt ledger has no raw article path. A `--via-archive` recovery on September 19 deduplicated back to the held item instead of producing a new raw receipt. The manifest records this limitation. The article says the gas-price shock could end before tighter borrowing costs slow the economy and reports that the 10-year Treasury yield slipped the next day. Grade B, answer 6.
+
+Story-turn forward search: registry searches for “September 2026 FOMC minutes,” “Federal Reserve October rate hike Warsh,” and “Fed energy shock higher borrowing costs,” bounded from September 16, returned no additional records. Exact-URL registry searches reconfirmed the BLS, Warsh and AP holdings. The pinned official calendar still states the three-week minutes schedule and contains no September 2026 minutes link in its extracted text.
+
+### Story-turn passage tables
+
+| Record | Passage | Disposition |
+|---|---|---|
+| `bls-cpi-2026-09-11` | Gasoline rose 3.9 percent and accounted for over one-third of the monthly all-items increase. | Used in “What happened” and “What a rate hike can change.” |
+| `bls-cpi-2026-09-11` | The all-items-less-food-and-energy index rose 2.4 percent over the year. | Used in “What happened.” |
+| `bea-gdp-q2-second-estimate-2026-08-26` | Real GDP increased 1.5 percent annualized after 2.1 percent in the first quarter. | Used in “What happened.” |
+| `bea-gdp-q2-second-estimate-2026-08-26` | Real final sales to private domestic purchasers increased 4.2 percent. | Used in “What happened.” |
+| `fomc-minutes-2026-07-29` | Most participants supported maintaining the range and wanted more intermeeting information. | Used in “What happened.” |
+| `fomc-minutes-2026-07-29` | Several participants favored a 25-basis-point increase. | Used in “What happened.” |
+| `fed-warsh-jackson-hole-2026-08-28` | Underlying inflation must move toward the objective clearly and at sufficient speed. | Used in “What happened.” |
+| `ap-reconstruction-2026-09-17` | The gas-price shock could be over before higher borrowing costs slowed the economy. | Used in the mechanism and unknowns sections. |
+| `ap-reconstruction-2026-09-17` | The 10-year Treasury yield slipped the next day. | Used in “What happened next.” |
 
 ## Not admitted this run
 
@@ -61,11 +85,6 @@ Primary and official records, in admission order: September statement; implement
 - 2026-09-16, NBC and UPI previews: pre-decision duplicates found in the registry; held because ABC provides the admitted third-party baseline.
 - 2026-09-16 to 2026-09-19, Reuters/CNBC market and prime-rate rows: found in registry searches but held because their causal claims rely on market participants and the page's record turn makes no market-causality claim.
 - 2026-09-18, The Hill GOP-senator newsletter: registry receipt had no body path; no legislative action or primary statement was found to pair with it.
-- 2026-09-11, [BLS August CPI release](https://www.bls.gov/news.release/archives/cpi_09112026.htm): the record audit reports that gasoline rose 3.9 percent and accounted for more than one-third of the monthly all-items increase, while core CPI was 2.4 percent year over year; outside the manifest and not admitted in the record turn. **Structure grade: A (answer 4).**
-- 2026-08-27, [BEA second estimate of second-quarter GDP](https://www.bea.gov/news/2026/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026): the record audit reports 1.5 percent annualized real-GDP growth, down from 2.1 percent in the first quarter, alongside 4.2 percent growth in private domestic final sales; outside the manifest and not admitted in the record turn. **Structure grade: B (answer 5).**
-- 2026-08-19, [July FOMC minutes](https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm): the record audit reports that most participants favored waiting for more information while several already favored a quarter-point increase; outside the manifest and not admitted in the record turn. **Structure grade: B (answer 5).**
-- 2026-08-28, [Warsh's Jackson Hole speech](https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm): the record audit reports his standard that inflation must move toward target clearly and at sufficient speed; outside the manifest and not admitted in the record turn. **Structure grade: B (answer 5).**
-- 2026-09-17, [Associated Press reconstruction](https://apnews.com/article/inflation-warsh-trump-federal-reserve-cbf10411b50040aed24ec5a28e4c0c5a): the record audit reports that the energy shock could fade before tighter rates affect demand and that Treasury yields eased the next day; outside the manifest and not admitted in the record turn. **Structure grade: B (answer 6).**
 - 2026-09-19 audit search, [New York Fed standing-repo FAQ](https://www.newyorkfed.org/markets/repo-agreement-ops-faq): the record audit says it confirms the 4.00 percent standing-repo rate already established by the admitted implementation note; outside the manifest and not admitted in the record turn. **Structure grade: D.**
 
 ## Coverage checks
