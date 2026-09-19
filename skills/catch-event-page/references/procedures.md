@@ -268,7 +268,8 @@ Turn one (`story.md`, "The two turns") ends here: data module (`src/data/<slug>.
 kpis, series, tables, every derived number with a comment naming its file), figures, the
 chronology table, the record's own lines as `SourcedBlock kind="record" detail`, the
 subject page row and the homepage feature (step 13, first two bullets), the manifest with
-every gate attestation true in fact, then `finish.sh <subject>/<story> record` (ledger
+every gate attestation true in fact (`section_grammar` still `done: false`; the record
+build accepts that one open), then `finish.sh <subject>/<story> record` (ledger
 rows, the build with its gate, the lints, one commit by path). The story view of that
 build is headline, dek, KPI strip, figures, chronology and the records list, with no
 narrative yet.

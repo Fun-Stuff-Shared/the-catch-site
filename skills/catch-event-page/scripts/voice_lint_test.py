@@ -10,7 +10,8 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">A reader who stops here misses the vote.</p>
  <p data-layer="fact">Everything this page rests on was found through the public docket route, the clerk said.</p>
  <p data-layer="fact">The public docket route remains open to everyone who files a request.</p>
- <p data-layer="fact">The exhibit did not answer through the public docket route before the cutoff.</p>
+ <p data-layer="fact">This page did not answer through the public docket route before the cutoff.</p>
+ <p data-layer="fact">The agency did not answer through the public docket before the deadline.</p>
  <p data-layer="narrative">The chair said "this page of the transcript is the one that matters" during the briefing.</p>
  <p data-layer="proof">This page found the order through the storage mirror on September 18.</p>
  <p data-layer="narrative">This page does not compute a speed for the moment the airplane left the pavement.</p>
@@ -67,6 +68,7 @@ checks = [
     ("'This page found' fails", any("found the order in a mirror" in s for _, s in hits)),
     ("a document page as subject passes", "motions heard on Monday" not in text),
     ("'This page rests on' fails", any("three filings" in s for _, s in hits)),
+    ("an agency that did not answer through a docket passes", "before the deadline" not in text),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

@@ -106,7 +106,8 @@ knowledge of how hard a record was to get never decides whether a stranger reads
 **Turn one, the record** (SKILL.md steps 0 to 3): census, admission, whole-pin reads, the
 passage tables, the gap list with dispositions, the data module, figures, the chronology,
 the detail blocks, the subject page row and homepage feature, the manifest with every gate
-attestation true in fact, then `finish.sh` (ledger rows, the build with its gate, the
+attestation true in fact (`section_grammar` still `done: false`, which the record build
+accepts), then `finish.sh` (ledger rows, the build with its gate, the
 lints, one commit). The story view of the built page is headline, dek, KPI strip, figures,
 chronology and the records list, with no narrative paragraphs yet. The turn ends on that
 commit and a plain report: the working note is the deliverable.

@@ -20,29 +20,8 @@ if [ $commit = 1 ] && ! git diff --cached --quiet; then
 fi
 generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\.finish-build\.log$)'
 
-node skills/catch-event-page/scripts/sources_ledger.mjs "$manifest" || exit 1
-echo "== build"; npm run build > .finish-build.log 2>&1 || { tail -40 .finish-build.log; echo "BUILD FAILED (full log: .finish-build.log)"; exit 1; }
-echo "build green"
-fail=0
-echo "== lens_lint"; node skills/catch-event-page/scripts/lens_lint.mjs "$page" || fail=1
-echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page" || fail=1
-echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
-[ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
-
-# The story's own artifacts: its page, the data modules the page and the subject page import,
-# the files its manifest pins, and its check files, owned whole. Four files are shared by every
-# story (the homepage, the story index, the ledger, the route list): a change there is this
-# story's only where the changed lines name it, so each hunk must carry the slug, the subject,
-# a pinned path or one of this story's data modules.
-shared=("src/pages/index.astro" "src/lib/discovery.mjs" "data/sources/SOURCES.md" "checks/routes.txt")
-owned=("$page" "src/pages/events/$subject/index.astro" "$manifest" "${shared[@]}")
-modules=()
-for f in "$page" "src/pages/events/$subject/index.astro"; do
-  [ -f "$f" ] || continue
-  while IFS= read -r spec; do
-    modules+=("$(dirname "$f")/$spec")
-  done < <(grep -oE "from ['\"][^'\"]*data/[^'\"]+['\"]" "$f" | sed -E "s/from ['\"](.*)['\"]/\1/")
-done
+# The manifest's pins, judged in canonical spelling before anything is written: a pin that
+# leaves data/sources/ (through ".." or an absolute path) stops the turn here.
 pins=(); escaped=0
 while IFS= read -r pin; do pins+=("$pin"); done < <(node -e '
   const m = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
@@ -52,13 +31,38 @@ while IFS= read -r bad; do echo "the manifest pins a path outside data/sources/:
     const p = require("path").posix;
     for (const line of require("fs").readFileSync(0, "utf8").split("\n"))
       if (line && !/^data\/sources\/(?!news-state\/)/.test(p.normalize(line))) console.log(line);')
-owned+=(${modules[@]+"${modules[@]}"} ${pins[@]+"${pins[@]}"})
+[ $escaped = 0 ] || exit 2
+
+node skills/catch-event-page/scripts/sources_ledger.mjs "$manifest" || exit 1
+# The record turn has no narrative yet, so the gate lets section_grammar stay unattested
+# for this build only; the story turn and every hosted build require it true.
+turn=; [ "$kind" = record ] && turn=record
+echo "== build"; CATCH_TURN=$turn npm run build > .finish-build.log 2>&1 || { tail -40 .finish-build.log; echo "BUILD FAILED (full log: .finish-build.log)"; exit 1; }
+echo "build green"
+fail=0
+echo "== lens_lint"; node skills/catch-event-page/scripts/lens_lint.mjs "$page" || fail=1
+echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page" || fail=1
+echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
+[ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
+
+# The story's own artifacts: its page, the data modules that page imports, the files its
+# manifest pins, and its check files, owned whole. Files other stories also write (the
+# homepage, the story index, the subject page and what it imports, the ledger, the route
+# list) are shared: a change there is this story's only where the changed lines name it,
+# so each hunk must carry the slug, a pinned path or one of the page's own data modules.
+subject_page="src/pages/events/$subject/index.astro"
+shared=("src/pages/index.astro" "src/lib/discovery.mjs" "$subject_page" "data/sources/SOURCES.md" "checks/routes.txt")
+imports() { grep -oE "from ['\"][^'\"]*data/[^'\"]+['\"]" "$1" | sed -E "s/from ['\"](.*)['\"]/\1/" | while IFS= read -r spec; do echo "$(dirname "$1")/$spec"; done; }
+modules=()
+while IFS= read -r m; do modules+=("$m"); done < <(imports "$page")
+if [ -f "$subject_page" ]; then while IFS= read -r m; do shared+=("$m"); done < <(imports "$subject_page"); fi
+owned=("$page" "$manifest" "${shared[@]}" ${modules[@]+"${modules[@]}"} ${pins[@]+"${pins[@]}"})
 while IFS= read -r f; do owned+=("$f"); done < <(git ls-files --others --exclude-standard --modified -- \
   "checks/working-notes/$subject--$slug*" "checks/reader-models/$subject--$slug*" \
   "checks/interrogations/$subject--$slug*" "checks/audits/$subject--$slug*" | grep -v '\.md\.err$')
 
-# Every path is judged in its canonical spelling: one that leaves the repo, or reaches a
-# generated namespace through ".." or an absolute path, is refused before anything is staged.
+# Every other path is judged in its canonical spelling too: one that leaves the repo is
+# refused, and a generated namespace reached through ".." is caught by the filter below.
 canon=()
 while IFS=$'\t' read -r orig norm; do
   case "$norm" in
@@ -78,10 +82,10 @@ while IFS= read -r -d '' f; do paths+=("$f"); done < <(
     if [ -n "$(git status --porcelain --untracked-files=all -- "$f")" ]; then printf '%s\0' "$f"; fi
   done)
 
-tokens=("$slug" "$subject" ${pins[@]+"${pins[@]}"})
+tokens=("$slug" ${pins[@]+"${pins[@]}"})
 for m in ${modules[@]+"${modules[@]}"}; do tokens+=("$(basename "$m")"); done
 foreign=0
-for f in "${shared[@]}"; do
+for f in $(printf '%s\n' "${shared[@]}" | node -e 'const p=require("path").posix;for(const l of require("fs").readFileSync(0,"utf8").split("\n"))if(l)console.log(p.normalize(l))'); do
   printf '%s\n' ${paths[@]+"${paths[@]}"} | grep -Fqx "$f" || continue
   while IFS= read -r hunk; do
     body="$(git diff -U0 -- "$f" | awk -v h="$hunk" '$0 == h {p=1; next} /^@@/ {p=0} p')"

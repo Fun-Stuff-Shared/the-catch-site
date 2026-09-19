@@ -136,8 +136,10 @@ chronology table, the record's own lines as `SourcedBlock kind="record" detail` 
 the sections they belong to, the records list. Then the subject page and the homepage,
 which are record work: one timeline row and the KPI or chart refresh on
 `/events/<subject>/`, and the homepage feature through `event.visual` (procedures, step
-13, and the visual kinds). Manifest with every gate attestation true in fact, then
-one command ends the turn:
+13, and the visual kinds). Manifest with every gate attestation true in fact, which in
+this turn means `section_grammar` is `done: false` (the sections are chosen by the reader
+model, in turn two; the record build accepts that one attestation open). Then one command
+ends the turn:
 
 ```bash
 skills/catch-event-page/scripts/finish.sh <subject>/<story> record
@@ -146,8 +148,8 @@ skills/catch-event-page/scripts/finish.sh <subject>/<story> record
 It adds the ledger rows for your pins, builds through the gate, runs the three lints and
 commits this story's files and nothing else. Fix what it reports on the page and run it
 again until it prints the commit. It also stops on any change in the tree outside this
-story, and on a change to the homepage, the story index, the ledger or the route list whose
-lines do not name this story, because a worktree holds one story. The story view of this build is headline, dek, KPI strip, figures, chronology
+story, and on a change to the homepage, the story index, the subject page, the ledger or
+the route list whose lines do not name this story, because a worktree holds one story. The story view of this build is headline, dek, KPI strip, figures, chronology
 and the records list, with no narrative paragraph yet.
 
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
@@ -199,7 +201,8 @@ paragraph: which of the seven answers does this advance.
 Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
 `text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
 `about`; add it to `story_sources` with a plain `usage` line; enrich every displayed figure
-(sourced with its passage, or computed with formula and inputs, unit with scale). Fields:
+(sourced with its passage, or computed with formula and inputs, unit with scale); attest
+`section_grammar` true now that the reader model has chosen the sections. Fields:
 `references/manifest-and-gate.md`. Then build and lint in one command, and interrogate:
 
 ```bash
