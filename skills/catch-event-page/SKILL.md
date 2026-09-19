@@ -133,9 +133,12 @@ Data module first (`src/data/<slug>.mjs`: event, kpis, series, tables, every der
 number computed from the admitted series with a comment naming the file). Then the parts
 of the page that are the record and not the story: figures from the data module, the
 chronology table, the record's own lines as `SourcedBlock kind="record" detail` under
-the sections they belong to, the records list. Manifest and state views (step 5), then
-`npm run build` until the gate passes, then commit by explicit path with a plain message
-beginning `record:`. The story view of this build is headline, dek, KPI strip, figures,
+the sections they belong to, the records list. Then the subject page and the homepage,
+which are record work: one timeline row and the KPI or chart refresh on
+`/events/<subject>/`, and the homepage feature through `event.visual` (procedures, steps
+12 and 13, and the visual kinds). Manifest with every gate attestation true in fact, state
+views (procedures, step 12), then `npm run build` until the gate passes, then commit by
+explicit path with a plain message beginning `record:`. The story view of this build is headline, dek, KPI strip, figures,
 chronology and the records list, with no narrative paragraph yet.
 
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
@@ -145,7 +148,8 @@ be admitted and why. The story is written by a fresh session that did not build 
 ## Step 4. The reader model, before the first narrative sentence
 
 Turn two opens by reading the working note, the passage tables, the gap dispositions and
-the built page, then writing `checks/reader-models/<subject>--<story>.md`
+the built page, then writing `checks/reader-models/<subject>--<story>.md` (create the
+directory: `mkdir -p checks/reader-models`)
 (`references/story.md`): the seven answers, one sentence each with its record id; a grade
 A to D on every passage-table line and gap-list line; the section list from
 `references/section-toolkit.md`, each section with the question it answers. An answer with
@@ -236,12 +240,11 @@ ENTAILED. A Moderate or Minor is fixed or written in the working note with why i
 Commit the verdict file with the page. You return only on an ENTAILED verdict; the closing
 check after you return confirms it.
 
-## Step 7. Update the subject page and homepage, commit, report
+## Step 7. Commit and report
 
-One timeline row and the KPI or chart refresh on `/events/<subject>/`; the homepage
-features the latest story through `event.visual` (procedures, step 12 and the visual
-kinds). Regenerate SOURCES.md and re-read the open-questions list as the last two steps:
-the list asks for nothing the records list already holds.
+Check the subject page row and the homepage feature turn one wrote still describe the
+story as written. Regenerate SOURCES.md and re-read the open-questions list as the last
+two steps: the list asks for nothing the records list already holds.
 
 Commit by explicit path: page, data module, manifest, SOURCES.md, pins and text siblings,
 working note, reader model, interrogation file, the story's state view and its chain view. Never commit
@@ -257,7 +260,7 @@ files in the repo.
 A completeness audit under `skills/story-completeness-audit/` and a red team read the
 page and the reader model on your commit, in parallel, and grade every omission against the
 grades (an omitted A or B is a Major; a C or D the auditor shows changes an answer is a
-Major against the grade; an omitted C is a note; D is not a finding). A codex pass judges
+Major against the grade; an omitted C is Minor; D is not a finding). A codex pass judges
 every cited sentence against its passage. The reviewer verifies their findings at the bytes, refutes what the pins refute,
 and sends you the rest as a numbered patch list; every numbered finding in every audit
 section, including the ones about what came before, after and around the event, gets a
@@ -307,7 +310,7 @@ reviewer's problem to escalate, not yours to explain away.
 - [ ] Every catch pairs an outlet sentence with the record passage that contradicts it; none rests on an inference.
 - [ ] Every manifest figure appears in the built state record with its unit and passage.
 - [ ] SOURCES.md regenerated; every manifest `pinned_path` basename has a row.
-- [ ] Measured in a browser at 1280 wide (step 4).
+- [ ] Measured in a browser at 1280 wide, in all three modes (step 6).
 - [ ] Subject page and homepage updated; both state views committed with the page.
 - [ ] The report names the reader-facing delta in one sentence.
 

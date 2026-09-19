@@ -63,8 +63,8 @@ story uses a fraction of them in the story view. That is editing, not incomplete
 
 The grades are the author's claim and the audits test it. An omitted A or B is a Major. A
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
-against the grade, and the audit names which answer changes. An omitted C is a note at most.
-D is never a finding.
+against the grade, and the audit names which answer changes. An omitted C is Minor. D is
+never a finding.
 
 ## Concept before qualification
 
@@ -105,7 +105,8 @@ knowledge of how hard a record was to get never decides whether a stranger reads
 
 **Turn one, the record** (SKILL.md steps 0 to 3): census, admission, whole-pin reads, the
 passage tables, the gap list with dispositions, the data module, figures, the chronology,
-the detail blocks, the manifest, the state views, a green build. The story view of the built
+the detail blocks, the subject page row and homepage feature, the manifest with every gate
+attestation true in fact, the state views, a green build. The story view of the built
 page is headline, dek, KPI strip, figures, chronology and the records list, with no
 narrative paragraphs yet. The turn ends on a commit and a plain report: the working note is
 the deliverable.
@@ -122,6 +123,6 @@ resumed one.
 
 ## Before the first narrative sentence
 
-- [ ] `checks/reader-models/<subject>--<story>.md` holds the seven answers, each with a record id.
+- [ ] `checks/reader-models/<subject>--<story>.md` (`mkdir -p checks/reader-models` first) holds the seven answers, each with a record id.
 - [ ] Every passage-table line and gap-list line carries a grade.
 - [ ] The section list is written under the reader model, each section with the question from answer 7 it answers.

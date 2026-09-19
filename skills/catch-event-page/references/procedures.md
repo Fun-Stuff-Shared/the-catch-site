@@ -184,7 +184,7 @@ matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the 
 re-extracts. HTML: the text pin from the capture. PDF: `pdftotext -layout file.pdf file.txt`
 (a scanned PDF with no text layer goes through `/Volumes/4/CF/news-fqs-pilot/scripts/capture.py`,
 which falls back to Mistral OCR). CSV: the file is its own text. Video or audio: the
-transcript `.txt` from undertone (step 2b). A record whose `text_path` is missing or whose
+transcript `.txt` from undertone (step 3, the video rule). A record whose `text_path` is missing or whose
 hash does not match the file is not a record.
 
 **A video is read twice: the audio and every frame.** An ad's citations, disclaimers, and
@@ -268,11 +268,14 @@ what the record shows. Be ready for the page's own earlier claim to be the wrong
 Turn one (`story.md`, "The two turns") ends here: data module (`src/data/<slug>.mjs`: event,
 kpis, series, tables, every derived number with a comment naming its file), figures, the
 chronology table, the record's own lines as `SourcedBlock kind="record" detail`, manifest,
-state views (step 12), a green build (step 10), one commit. The story view of that build is
-headline, dek, KPI strip, figures, chronology and the records list, with no narrative yet.
+the subject page row and the homepage feature (step 13, first two bullets), the manifest
+with every gate attestation true in fact, state views (step 12), a green build (step 10),
+one commit. The story view of that build is headline, dek, KPI strip, figures, chronology
+and the records list, with no narrative yet.
 
 Turn two is a fresh session. It reads the working note, the passage tables, the gap-list
 dispositions and the built page, then writes `checks/reader-models/<subject>--<story>.md`
+(`mkdir -p checks/reader-models` first)
 (the seven answers with record ids, the grades, the section list with the question each
 section answers) before the first narrative sentence. Read `story.md`, then
 `section-toolkit.md`, then `writing.md`. Bind every narrative paragraph with `Cite`, from
@@ -456,7 +459,8 @@ view refresh are available without launching or interrupting that maintenance ru
 ## 13. Cross-link and commit (the reviewer stages and ships)
 
 - Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
-  Related pages link both ways.
+  Related pages link both ways. Turn one does this from the data module; turn two checks
+  the row and the feature still describe the story as written.
 - Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files.
 - The publication decision is a human's. Stage the build, add the staged row with a
   ships-by date where the project tracks staging, and hand over the rendered page (URL or
@@ -478,6 +482,6 @@ grep -c $'\u2014' /tmp/live.html     # count of em dashes, must be 0
 ```
 
 A 404 or the old page after five minutes means the hosted build failed, almost always in
-`pull-state.mjs` on the committed state (see step 8). The poll must exit nonzero in that
+`pull-state.mjs` on the committed state (see step 10). The poll must exit nonzero in that
 case; a check that prints zeros and exits 0 on a 404 is how a failed deploy got reported
 as shipped once.

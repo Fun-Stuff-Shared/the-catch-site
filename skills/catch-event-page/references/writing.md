@@ -103,10 +103,9 @@ its sentence loses them. A page that introduces more than five or six terms is t
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.
-- A paragraph that describes the page's own method or sums up its sections (how the day
-  counts were made, what the records add up to) carries `data-method` and cites nothing;
-  `lens_lint` accepts it and the entailment pass skips it. A cite stapled to a method
-  sentence to satisfy the lint is a defect.
+- A sentence about the page's own method (how the day counts were made, what was searched)
+  is a proof-layer sentence; it is never a narrative or fact paragraph. A cite stapled to a
+  method sentence to satisfy the lint is a defect, and so is the sentence outside proof.
 - A narrative sentence that carries a number, a date, or a named act carries its own
   Cite; the paragraph's last cite does not cover it.
 - The story's `updated` date in the data module is the newest dated record or search on

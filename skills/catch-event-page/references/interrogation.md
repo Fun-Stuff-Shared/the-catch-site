@@ -3,7 +3,7 @@
 `scripts/interrogate.sh <subject>/<story>` sends the prompt block below, then the built
 page's text and the manifest's source list, to grok with web and X search on, and writes
 the numbered gap list to `checks/interrogations/<subject>--<story>-<date>.md`. The author
-runs it after the build is green (SKILL.md, step 4) and dispositions every item in the
+runs it after the build is green (SKILL.md, step 6) and dispositions every item in the
 same run: fixed from the pins, admitted and fixed, or written on the page as a dated
 absence after one attempt. An item that names a public record is a fetch, not a decline.
 A reaction (a post, a statement) enters the page only through an admitted record.

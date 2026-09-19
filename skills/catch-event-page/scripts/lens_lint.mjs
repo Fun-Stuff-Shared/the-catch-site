@@ -20,8 +20,8 @@ for (const file of files) {
     const openTag = match[0].slice(0, match[0].indexOf(">"));
     const isLabel = /kicker|label/.test(openTag) || (text.length < 60 && !/\d/.test(text));
     // An absence paragraph (what was searched and not found) has no record to cite; it carries data-absence.
-    // A method or summary paragraph (the page's own arithmetic or what its sections add up to) carries data-method.
-    const isAbsence = /\bdata-absence\b/.test(openTag) || /\bdata-method\b/.test(openTag);
+    // A sentence about the page's own method is proof-layer text, so no narrative paragraph is exempt for it.
+    const isAbsence = /\bdata-absence\b/.test(openTag);
     if (!/<Cite\b/.test(match[1]) && !isLabel && !isAbsence) {
       violations += 1;
       console.log(`${file}:${lineOf(match.index)}: narrative paragraph without a citation: ${match[1].replace(/<[^>]+>/g, "").trim().slice(0, 90)}`);

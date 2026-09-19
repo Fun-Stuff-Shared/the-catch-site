@@ -23,7 +23,7 @@ const REQUIRED_STEPS = [
   "sources_admitted",        // every source saved under data/sources/, SOURCES.md regenerated
   "derived_numbers_computed",// each derived figure computed from admitted series, receipt in reader words
   "outlet_claims_verified",  // each outlet claim compared to the primary record before verdicts
-  "section_grammar",         // fixed section order; sections dropped only when truly empty
+  "section_grammar",         // the toolkit: the core sections present, optional sections only where the reader model asks
   "chip_vocabulary",         // closed chip set only
   "live_elements_guarded",   // every live element carries last-checked date + correction promise
   "subject_page_updated",    // timeline row + KPI/chart refresh on the standing subject page

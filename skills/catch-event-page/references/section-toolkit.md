@@ -108,7 +108,9 @@ prose: "checks out", "mislabeled", "wrong".
 
 ## Components and how they bind
 
-The story component library lives in `src/components/story/` (see its `index.ts`):
+The story component library lives in `src/components/story/`; `index.ts` is the full list
+(fifteen, including `StoryToc`, `SectionKicker`, `Chip`, `RailedParagraph`, `LiveCounter`,
+`RecordsList`). The ones a story page binds by hand:
 `BarChart` (bars: label and value; negatives red), `DataTable` (columns, rows,
 highlightColumn), `StepChart` (rate paths), `OutletCheck` (outlet, claim, verdict, chip,
 status ok/warn/note; put the `Cite` in the slot), `CheckedBlock` (label, variant
