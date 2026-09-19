@@ -1,4 +1,4 @@
-"""Deterministic checks for voice_lint's three rules: run with any python3, no SDK needed.
+"""Deterministic checks for voice_lint's four rules: run with any python3, no SDK needed.
 Usage: python3 skills/catch-event-page/scripts/voice_lint_test.py"""
 import os, sys, tempfile
 sys.path.insert(0, os.path.dirname(__file__))
@@ -48,6 +48,10 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">If you saw one of these spots, the committee paid for it, not the campaign.</p>
  <p data-layer="narrative">He told the crowd, "you saw the ballots with your own eyes," and left the stage.</p>
  <p data-layer="narrative">Wells Fargo said the loan was repaid in an hour.</p>
+ <p data-layer="narrative">As of September 19, the minutes of the September 15-16 meeting had not been published.</p>
+ <p data-layer="narrative">At the time of writing no ruling had issued in the appeal.</p>
+ <p data-layer="fact">Finance Canada said the countermeasures would be effective as of 12:01 a.m. on September 8.</p>
+ <p data-layer="fact">The minutes of the September meeting are due October 7 under the committee's calendar.</p>
  <p data-layer="fact">Von der Leyen, in the press release: "Greenland can count on the EU. That was my message during my last visit. Today, I am back to deliver the real results of our close cooperation," and the release is dated September 7.</p>
  <h2 data-layer="fact">What we do not know yet</h2>
  <h2 data-layer="fact">What we found in the docket</h2>
@@ -71,6 +75,7 @@ def fails_for(html):
         if own == vl.SECTION_TITLE: continue
         if vl.READER.search(own): out.append(("reader", sen))
         if vl.SELF_PAGE.search(own) or vl.FIRST_PERSON.search(own): out.append(("process", sen))
+        if vl.TIMESTAMPED_ABSENCE.search(own): out.append(("timestamped_absence", sen))
     os.unlink(path); return out
 
 judged = []
@@ -129,6 +134,10 @@ checks = [
     ("a quote card's words are not judged", not any("ballots ourselves" in s for s in judged)),
     ("a class that merely contains section-lede is judged", any(s.startswith("Our count of the sealed") for _, s in hits)),
     ("a class that merely contains sources-line is judged", any(s.startswith("We keep one more") for _, s in hits)),
+    ("'as of <date> ... had not' fails", any(k == "timestamped_absence" and s.startswith("As of September 19") for k, s in hits)),
+    ("'at the time of writing' fails", any(k == "timestamped_absence" and s.startswith("At the time of writing") for k, s in hits)),
+    ("an effective date written as 'as of' passes", "12:01 a.m." not in text),
+    ("a due date passes", "due October 7" not in text),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

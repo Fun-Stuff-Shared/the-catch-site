@@ -9,12 +9,28 @@ defect reviewers keep finding; the rule is how the sentence is written so they d
 
 The stranger is smart, curious, and reads a general newspaper. Words such a person meets
 weekly are everyday and are never explained: tariff, injunction, payroll, subsidy,
-indictment, stay, appeal, warrant, surtax. Agency shorthand, series names, and terms of
-art are introduced once, at first use, in the sentence that first leans on them: U-6, SEP,
-FOMC, PCE, tariff headings, Section 338, independent expenditure, 48-hour notice,
-connected TV, seasonal adjustment. One short apposition or one sentence, then the term is
-used freely. Explaining an everyday word insults the stranger; using a term of art without
-its sentence loses them. A page that introduces more than five or six terms is two pages.
+indictment, stay, appeal, warrant, surtax. A term of art is not defined because it is
+technical; it is explained only when the sentence that leans on it would be misread
+without the explanation, and the explanation is the term's consequence in this story, in
+the same sentence, never a dictionary line. "Because it was a concurrent resolution, the
+measure never went to the president" carries the meaning; "A concurrent resolution is a
+measure both chambers adopt that is not sent to the president" is a textbook aside that
+answers a question no one asked. A source's own vocabulary is translated, then cited:
+"assessments of appropriate monetary policy" becomes "where each official thinks rates
+should be", with the record's phrase in the proof layer if the exact words matter. A term
+that carries no consequence in the story is not used at all. A page that has to explain
+more than five or six terms is two pages.
+
+## Who the sentence answers
+
+Every explanatory sentence answers a question the sentence before it put in the stranger's
+head. A sentence that answers no such question (how an even-numbered median is computed,
+that a figure uses shaded circles, that one participant omitted a year, that a series
+"prints" a value) is the record turn's note to itself, and it goes to the proof layer or is
+cut. The test is asked of every sentence that explains rather than reports: what did the
+reader just ask that this answers. The intended voice is a person telling another what
+happened, what it means and the one thing people are getting wrong, in that order, and
+sounding unaware of the work it took to know it.
 
 ## Register
 
@@ -34,6 +50,20 @@ its sentence loses them. A page that introduces more than five or six terms is t
   are not first person.
 - "X, not Y" is used where the record makes the distinction and the misreading depends on
   it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
+  The positive form is the default: "each dot shows where one official thinks rates should
+  be" says what "the projections are not forecasts" only denies. A negation is kept where
+  it corrects a named wrong reading and nowhere else.
+- The fact is the subject of the sentence; the record is the citation. "Sixteen of 18
+  officials saw at least one more increase as appropriate this year" with its cite, never
+  "Figure 2 shows sixteen of 18". A document is named as the subject ("the July minutes
+  say", "the statement dropped") only where its identity is the point: the wording of a
+  statement, a quotation, an outlet's claim, a record that contradicts another. A page
+  whose sentences keep beginning "the series shows", "the table prints", "the calendar
+  captured that day says" is a research memo narrating its documents.
+- Evidence for a cause is one number per cause, in the causal order (jobs strengthened,
+  spending held up, inflation stayed high, each with its figure). A paragraph that stacks
+  every figure the record turn collected is a data table, and it goes in a table or in
+  proof.
 - A fact is told once in the story register (a summary line, or prose, or a table, never
   all three) and once in proof. A discrepancy is stated once with both values and its
   status. A paragraph whose last sentence disclaims its own relevance is cut.
@@ -118,6 +148,12 @@ its sentence loses them. A page that introduces more than five or six terms is t
   way the records list names it; a set that was refused, stale or never fetched (a docket the
   registry could not reach, an agency's report listings nobody opened) does not go in the
   sentence however natural it sounds. The admitted records are always a set that was read.
+- The positive fact beats the timestamped absence. When the record gives a date the thing
+  is due, the sentence is the due date ("The minutes are due October 7"), not "as of
+  September 19 the minutes had not been published". The page's own date already supplies
+  the frame; "as of", "at the time of writing" and "in the records saved" are cut from any
+  sentence whose date is the page's date. An absence sentence is written only when no
+  record gives the positive.
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.

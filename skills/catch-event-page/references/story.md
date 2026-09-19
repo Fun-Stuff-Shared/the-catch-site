@@ -24,8 +24,13 @@ The file has four headings, in this order, plus an optional fifth. `finish.sh st
 refuses the file without them.
 
 `## Entering`: what a stranger arrives knowing, in two to four sentences. The headline they
-saw, the number they half remember, the wrong reading the coverage handed them. This is
-the reader the first paragraph is written for.
+saw, the number they half remember, the wrong reading the coverage handed them, and what
+was expected before the event happened (the consensus, the prior decision, the pending
+ruling), from a record. This is the reader the first paragraph is written for, and the
+headline is written against it: it names what differs from what was expected, never the
+announcement alone. A quarter-point move that markets had priced is not the event; the
+first increase in three years, the unanimous vote after a split, the dropped explanation
+in the statement are.
 
 `## Exiting`: the seven answers below, one sentence each in everyday words, each with the
 record id that supports it. This is what the reader knows when they leave. An answer with
@@ -48,7 +53,8 @@ one line each, so the story turn writes from a list rather than a search.
 2. Why does it matter to someone who does not follow this subject?
 3. What is the easiest wrong reading of it, the one the headline or the coverage invites?
 4. What is the one concept a stranger must hold to follow it? (the mechanism, in one sentence)
-5. What changed: the state it was in before, and the state the record puts it in now?
+5. What changed: the state it was in before, the state the record puts it in now, and
+   how long since the last change of this kind (from the record that holds the history)?
 6. What is unresolved, as of the newest dated record?
 7. The next three to five questions a curious stranger asks, in the order they ask them.
 

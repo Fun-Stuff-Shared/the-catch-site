@@ -3,14 +3,18 @@
 Usage: voice_lint.py dist/events/<subject>/<story>/index.html [more pages]
 Exit 1 when a check trips. Proof-layer text and the state ledger rows are not judged.
 
-Three rules are read by regex and fail the page: the page names or addresses its reader ("a
+Four rules are read by regex and fail the page: the page names or addresses its reader ("a
 reader", "readers", "you"); the page speaks about itself as "this page" (a document's page is
-named as the document); the page speaks in the first person outside a quotation. There is no list of banned
-phrases: a phrase list matches last week's sentence, never next week's.
+named as the document); the page speaks in the first person outside a quotation; the page
+timestamps an absence ("as of <date> ... had not", "at the time of writing"), where the due
+date or the page's own date is the sentence. There is no list of banned phrases: a phrase
+list matches last week's sentence, never next week's.
 
-The rest is one Jev call per batch of twenty sentences, four questions each, listed for a reread
+The rest is one Jev call per batch of twenty sentences, seven questions each, listed for a reread
 with the highest score first: does the sentence describe the page, the site or the writer's own
-work instead of the event; mirrored antithesis; section wrap-up; reader gloss. Thresholds come from --calibrate on our own labels (design/aispeak-labels.jsonl in
+work instead of the event; mirrored antithesis; section wrap-up; reader gloss; a document as the
+subject where the fact could stand alone; an explanation no reader question prompted; a
+dictionary definition in place of the term's consequence. Thresholds come from --calibrate on our own labels (design/aispeak-labels.jsonl in
 grok-authoring, the codex AI-speak scan of 2,596 sentences built 2026-09-19, plus the
 self-description positives cut on 2026-09-19); a reread hit is a sentence to reread, never a
 failure on its own. The records section's own lede and "How we check" line are component
@@ -42,7 +46,13 @@ FIRST_PERSON = re.compile(r"(?:(?:^|[,;:]\s+|\b(?:and|but|so|then|when|after|bef
 capitalized word is a proper name (Our World in Data); I before a hyphenated number is a route (I-95); a bare I
 counts only where a sentence or clause starts, so Title I and Article I are not pronouns."""
 SELF_PAGE = re.compile(r"\bthis page\b(?! of\b)", re.I)
-THRESHOLDS = {"self_description": 0.86, "mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67}
+TIMESTAMPED_ABSENCE = re.compile(r"\bat the time of (this )?writing\b|\bas of (the )?[A-Z]?[a-z]*\.? ?\d{0,2},? ?(\d{4})?[^.;]{0,80}\b(had|has|have|was|were|did|does|do) (not|no|yet)\b", re.I)
+"""A dated news page's own date is its frame; "as of <date> X had not happened" is the record turn's note. When a
+record gives the date X is due, the sentence is the due date."""
+THRESHOLDS = {"self_description": 0.86, "mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67, "source_subject": 0.65, "unprompted": 0.52, "dictionary": 0.33}
+"""Reread thresholds at specificity 0.95 from --calibrate on 2026-09-19 (design/voice-calibrate-2026-09-19b.txt): source_subject
+AUC 0.95, recall 8/10; dictionary AUC 1.00, recall 8/8, and the label file's highest-scoring "clean" rows are dictionary lines
+labelled before the definition gate existed; unprompted AUC 0.84 with recall 1/8, so it is a weak question kept for the reread list only."""
 FAIL_QUESTIONS = set()  # no model question fails a page: at specificity 0.95 the self-description question caught 12 of 25 known cases (calibrated 2026-09-19)
 IGN = "Words inside quotation marks are someone else's speech and are not judged; judge only the page's own words."
 QUESTIONS = {
@@ -50,10 +60,15 @@ QUESTIONS = {
     "mirrored": f"Is this sentence a mirrored antithesis or a does-and-does-not pair whose two halves balance each other instead of adding a fact? {IGN}",
     "outline_conclusion": f"Does this sentence close a section by summarizing or weighing what came before instead of adding a fact: a balanced tidy wrap-up such as 'the record shows X; it does not show Y' or 'what remains is Z'? {IGN}",
     "reader_gloss": f"Does this sentence tell the reader what to take from the facts (what it means for a reader, what to carry away, what the whole of it amounts to, what the numbers together show) instead of reporting a fact? {IGN}",
+    "source_subject": f"Is a document, table, figure, series, calendar or data release the grammatical subject of this sentence (it shows, says, plots, prints, records, lists) where the fact it carries could be stated on its own with the source left to a citation, so the sentence narrates a record rather than reporting the event? A sentence where the document's identity is the point (the wording of a statement, a quotation attributed to minutes, an outlet's claim, one record contradicting another) is not this. {IGN}",
+    "unprompted": f"Does this sentence explain something a reader of the preceding text would not have asked about (how a statistic is computed in general, how a figure is drawn, what a document's layout is, which entries a table omits), so that it reads as the writer's note to themself rather than an answer to the reader's next question? {IGN}",
+    "dictionary": f"Does this sentence define a term the way a glossary or encyclopedia would (\"an X is a Y that Z\") instead of saying what the term does in this story, or preserve a source's own technical vocabulary where an everyday phrase would carry the same fact? {IGN}",
 }
 WHY = {"reader": "addresses the reader", "self_page": "the page speaks about itself", "first_person": "the page speaks in the first person",
        "self_description": "describes the page or its method instead of the event", "mirrored": "mirrored antithesis",
-       "outline_conclusion": "section wrap-up with no new fact", "reader_gloss": "tells the reader what to take away"}
+       "outline_conclusion": "section wrap-up with no new fact", "reader_gloss": "tells the reader what to take away",
+       "timestamped_absence": "timestamps an absence the page's date already frames", "source_subject": "a document is the subject where the fact could stand alone",
+       "unprompted": "explains what no reader asked", "dictionary": "defines a term instead of saying what it does here"}
 
 
 class Page(HTMLParser):
@@ -108,7 +123,7 @@ SECTION_TITLE = "What we do not know yet"  # the toolkit's fixed heading for the
 
 
 BATCH = 20
-REREAD = 10  # the ten highest-scoring sentences on a page are worth a reread; a longer list is noise
+REREAD = 10  # the ten highest-scoring sentences on a page are worth a reread, plus the top two of any question the ten leave out; a longer list is noise
 
 
 def score(client, qs, sents, subject):
@@ -138,6 +153,7 @@ def lint(path, client):
         if READER.search(own): fails.append(("reader", 1.0, sen))
         if SELF_PAGE.search(own): fails.append(("self_page", 1.0, sen))
         if FIRST_PERSON.search(own): fails.append(("first_person", 1.0, sen))
+        if TIMESTAMPED_ABSENCE.search(own): fails.append(("timestamped_absence", 1.0, sen))
         if tag in OWN_VOICE and not own.startswith("How we check"): judged.append((sen, own))
     for (sen, own), scores in zip(judged, score_all(client, qs, [o for _, o in judged], subject)):
         for k, v in scores.items():
@@ -157,15 +173,19 @@ def calibrate(labels_path, positives_path=None):
     rows = [json.loads(l) for l in open(labels_path)]
     rows = [r for r in rows if r.get("tag") in OWN_VOICE and not strip_q(r["text"]).startswith("How we check")]  # label rows predate the chrome skip
     if positives_path:
-        rows += [{"page": "cut", "tag": "p", "text": t.strip(), "label": 1, "shapes": ["sd"]} for t in open(positives_path) if t.strip()]
+        for t in open(positives_path):
+            if not t.strip(): continue
+            shape, _, text = t.partition("\t") if "\t" in t else ("sd", "", t)
+            rows.append({"page": "cut", "tag": "p", "text": text.strip(), "label": 1, "shapes": [shape.strip()]})
     with TypeSafeClient(api_key=key, model="jev-latest", timeout=120) as client:
         by_page = {}
         for r in rows: by_page.setdefault(r["page"], []).append(r)
         for page, prs in by_page.items():
             for r, sc in zip(prs, score_all(client, qs, [strip_q(r["text"]) for r in prs], page)): r["scores"] = sc
-    shape_for = {"self_description": "sd", "mirrored": "ma", "outline_conclusion": "wu", "reader_gloss": "ra"}
+    shape_for = {"self_description": "sd", "mirrored": "ma", "outline_conclusion": "wu", "reader_gloss": "ra", "source_subject": "ss", "unprompted": "ue", "dictionary": "dd"}
     for k in QUESTIONS:
         sh = shape_for[k]
+        if not any(sh in r.get("shapes", []) for r in rows): print(f"{k}: no positives"); continue
         sub = [r for r in rows if not r["label"] or sh in r.get("shapes", [])]
         pos = [r["scores"][k] for r in sub if r["label"]]; neg = [r["scores"][k] for r in sub if not r["label"]]
         if not pos: print(f"{k}: no positives"); continue
@@ -191,7 +211,8 @@ def main(paths):
             fails, reviews = lint(path, client); total += len(fails)
             print(f"{path}: {len(fails)} failing sentence(s), {min(len(reviews), REREAD)} to reread")
             for k, score, sen in fails: print(f"  FAIL [{k}] {WHY[k]}: {sen}")
-            for k, score, sen in reviews[:REREAD]: print(f"  reread [{k} {score}] {WHY[k]}: {sen}")
+            shown = reviews[:REREAD] + [h for q in QUESTIONS for h in [h for h in reviews[REREAD:] if h[0] == q][:2] if not any(h[0] == q for h in reviews[:REREAD])]
+            for k, score, sen in shown: print(f"  reread [{k} {score}] {WHY[k]}: {sen}")
     return 1 if total else 0
 
 

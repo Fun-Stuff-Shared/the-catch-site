@@ -8,7 +8,7 @@
 | In this story (`story-toc`) | fact | Ordered list of the section anchors the story actually has. |
 | KPI strip | fact | Three to four values from `event.kpis`, when the story has that many figures; values nowrap; units small. |
 | What happened (`what-happened`) | fact + narrative | Three to six narrative paragraphs answering reader-model answers 1, 4 and 5 in that order: the first paragraph is the clean model (what happened and what it means), each paragraph after goes one level deeper, the mechanism sentence at a term's first use. After the sixth paragraph a stranger has the model or the section is doing another section's job. The record's own lines follow as `SourcedBlock kind="record" detail`. |
-| What happened next | fact | Dated additions only, once there are any; never rewrite earlier sections. Ends with a "watching" line. |
+| What happened next | fact | Dated additions only, once there are any; never rewrite earlier sections. The consequences that answer the seven questions, usually three (the act taking effect, the response of the actors the story names, the next decision now in play), each with the one or two records that carry it; not every reaction published in the following days, which is a coverage detail block or absent. Ends with a "watching" line. |
 | What we do not know yet (`unknowns`) | narrative | Only after the disproof search, cited where a record bounds the unknown; absent when empty. A step that is scheduled but not yet due is a next step, not an unknown. |
 | The records (`records`) | fact; usage notes proof | `<StorySources event="<subject>/<story>" />`. Grouped: primary documents, official data, coverage checked. |
 

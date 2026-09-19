@@ -2,7 +2,7 @@
 
 ## Entering
 
-<Two to four sentences. The headline a stranger saw, the number they half remember, the wrong reading the coverage handed them. This is who the first paragraph is written for.>
+<Two to four sentences. The headline a stranger saw, the number they half remember, the wrong reading the coverage handed them, and what was expected before the event, from a record. This is who the first paragraph is written for; the headline names what differs from the expectation.>
 
 ## Exiting
 
@@ -10,7 +10,7 @@
 2. Why it matters to someone who does not follow this subject: <one sentence> (`<record id>`)
 3. The easiest wrong reading, the one the headline or the coverage invites: <one sentence> (`<record id>`)
 4. The one concept a stranger must hold to follow it, the mechanism: <one sentence> (`<record id>`)
-5. What changed: the state before, and the state the record puts it in now: <one sentence> (`<record id>`)
+5. What changed: the state before, the state the record puts it in now, and how long since the last change of this kind: <one sentence> (`<record id>`)
 6. What is unresolved as of the newest dated record: <one sentence> (`<record id>`)
 7. The next three to five questions a curious stranger asks, in order: <q1>; <q2>; <q3>; <q4>; <q5>
 

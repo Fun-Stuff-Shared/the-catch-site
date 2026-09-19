@@ -50,9 +50,13 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    passage tables, the sections against the question tree. A wrong angle is fixed here by
    re-dispatching turn two with the correction, never later on prose.
 5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
-6. **Two reads on the story commit, in parallel:** `scripts/red_team.sh` and
-   `scripts/entailment_check.sh`. Verify every finding at the bytes; refute what the pins
-   refute; send the rest as one numbered patch list.
+6. **Three reads on the story commit, in parallel:** `scripts/red_team.sh`,
+   `scripts/entailment_check.sh`, and the stranger read: one Claude subagent given the
+   served page text and the reader model, with the prompt in
+   `references/stranger-read.md`, returning what a stranger misreads, stalls on, or sees
+   as the page talking to itself. Verify every finding at the bytes; refute what the pins
+   refute; send the rest as one numbered patch list. The stranger's findings go in the
+   same list as the red team's, never in a later round.
 7. **Patch rounds.** The author patches, runs entailment `--since` the commit the round
    started from and the lints, commits. The reviewer reads the patched page and either
    sends the next numbered list or decides: cut a sentence, hold an item with its reason on
