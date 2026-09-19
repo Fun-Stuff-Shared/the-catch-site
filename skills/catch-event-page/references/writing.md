@@ -25,6 +25,9 @@ its sentence loses them. A page that introduces more than five or six terms is t
   narrates its own method in the story or fact layers ("this page found", "we could
   preserve", "as reproduced by", "searched", "the records add up to", "this story rests on
   N records"). Method and provenance are proof-layer sentences.
+  On a story, "this page" means the story itself; a page of a public document is named
+  as the document ("the docket page", "page 4 of the order"), so the sentence names its
+  record and the lint reads "this page" as the site speaking.
 - "X, not Y" is used where the record makes the distinction and the misreading depends on
   it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
 - A fact is told once in the story register (a summary line, or prose, or a table, never

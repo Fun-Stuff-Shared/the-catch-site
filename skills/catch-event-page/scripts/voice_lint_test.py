@@ -30,6 +30,11 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">This page does not contain the sealed appendix in the public docket.</p>
  <p data-layer="narrative">We found the order in the public docket.</p>
  <p data-layer="narrative">Our search found the order in the public docket.</p>
+ <p data-layer="fact">The docket page confirms the motion was filed on Monday.</p>
+ <p data-layer="fact">Page 4 of the order does not show the judge's signature.</p>
+ <p data-layer="narrative">We verified the order in the public docket.</p>
+ <p data-layer="narrative">We reviewed every filing in the public docket.</p>
+ <p data-layer="narrative">Our investigation found the order in the public docket.</p>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
@@ -79,6 +84,11 @@ checks = [
     ("a docket page that does not contain an appendix passes", "sealed appendix" not in text),
     ("'We found the order' fails", any(s.startswith("We found the order") for _, s in hits)),
     ("'Our search found' fails", any(s.startswith("Our search found") for _, s in hits)),
+    ("a docket page named as the document passes", "motion was filed" not in text),
+    ("a numbered page of an order passes", "judge's signature" not in text),
+    ("'We verified the order' fails", any(s.startswith("We verified") for _, s in hits)),
+    ("'We reviewed every filing' fails", any(s.startswith("We reviewed") for _, s in hits)),
+    ("'Our investigation found' fails", any(s.startswith("Our investigation") for _, s in hits)),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)
