@@ -414,3 +414,9 @@ Registry searches run: `capture search` for "space weapons", "orbital weapons", 
 - Baseline lint: lens 0, quote 0, voice fail 1, voice reread 16.
 - Final lint: lens 0, quote 0, voice fail 0, voice reread 11. The remaining rereads are attributed outlet comparisons or direct scope distinctions.
 - Entailment since `b3b587f0`: ENTAILED. Three changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0.
+
+## September 19 bounded-absence patch
+
+- The two statement absences are bounded to the wire stories and outlet coverage from September 14 through 17 saved for this story. The working note names that date-bounded coverage universe but gives no article total for the full set, so the page states no count.
+- One sentence covers the White House, the defense secretary and named members of Congress. The other covers the United Kingdom, France, Japan, Australia, NATO and the U.N. secretary-general.
+- Verification: `npm run build` passed; lens 0; quote 0; voice fail 0, reread 12.
