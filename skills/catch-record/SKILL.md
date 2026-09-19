@@ -45,7 +45,7 @@ the first vote), not at the summary document coverage anchored on.
 
 Before drafting, run every search below over the subject and its dates, against the
 registry, the index, and the issuing institutions' own listings. Write one line per search
-in `checks/working-notes/<subject>--<story>.md`: what you found and admitted, or what you
+in `checks/working-notes/<subject>--<story>.md` (shape: `assets/working-note.md`): what you found and admitted, or what you
 searched (which listings, which dates, which routes) and did not find. A search is done
 when its result is admitted or its absence is written with the search named. This is the
 list of what reviewers have found missing; each item is a search, not a question.
