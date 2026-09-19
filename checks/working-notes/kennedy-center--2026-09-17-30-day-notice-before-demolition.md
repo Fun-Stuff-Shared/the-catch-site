@@ -196,3 +196,20 @@ The initial closure is displayed as `seven days`, matching the authoritative pas
 ## Entailment self-check
 
 The round-two patch self-check used `--since a980c477`. Its committed verdict is under `checks/audits/`; the final counts are recorded there after the item 29 wording was narrowed to the declaration's admitted extent.
+
+## September 19 voice patch
+
+- Removed the page-authored claim-check section and its TOC entry. The existing catch already pairs AP's `any major physical changes` wording with the order's `changes to the scope of the project plans presented to the Court` language.
+- Removed the reader-facing rail note. The UPI lineage for the minute-order sentence is now stated in the proof layer.
+- Removed the not-yet-due September 23 status report from the unknowns. The remaining absences are dated September 19 and state only what the public record does not contain.
+- Added the May 29 opinion's pages 21 and 22: full demolition and rebuilding were outside the premise used for the preliminary-injunction ruling; the opinion says the League `might have a strong ultra vires claim` if that changed and calls appropriation-as-demolition-approval `far-fetched`.
+- Cut the two X-not-Y closers about the August 24 litigation position and Kennedy-Bailey's declaration.
+- Baseline lints: lens 0, quote 0, voice fail 5, voice reread 18. Final lints: lens 0, quote 0, voice fail 0, voice reread 8. The remaining reread lines are attributed coverage-card verdicts, direct record absences, or source language whose contrast is material.
+- Entailment check: `--since b3b587f0`, 8 blocks checked, Critical 0, Major 0, Moderate 0, Minor 0, `ENTAILED`.
+
+## September 19 bounded-absence patch
+
+- The project-scope absence is bounded to the docket entries through September 19 in both Kennedy Center cases and the coverage saved for this story. The two Floca sentences stay unchanged.
+- Census bound: “September 18 attachment capture from direct RECAP storage in `capture-oneoff-20260919T090606Z`: ECF 88-1, 89-1, 89-2 and 89-3 succeeded.” The sentence names the admitted attachments, declarations, defense filings and coverage, not either unread docket.
+- The closure-condition absence is bounded to the two defense filings that quote the resolution differently. The September 15 preliminary minutes themselves are not among the records. The follow-up sentence remains unchanged.
+- Verification: `npm run build` passed; lens 0; quote 0; voice fail 0, reread 11.

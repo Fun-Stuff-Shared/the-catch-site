@@ -315,3 +315,14 @@ Refuted items and ledgered later-pass items were not worked.
 - White House Kelly / Pentagon Parnell: coverage quotes, no primary pages.
 - DCAS monthly table: capture served only the title.
 - The Post's casualty records: not public; the page checks only the inspector general's table.
+
+## September 19 voice patch
+
+- Removed the claim-check section, its table-of-contents entry, and the unused `CheckedBlock` import. The arithmetic receipt remains in the proof layer.
+- Rewrote both reader-address sentences as direct statements of the estimate and the published totals.
+- Moved the Epic Fury and Department of War naming convention into one proof-layer source line.
+- Removed or rewrote story-layer method notes, including the page-self-reference around the Stars and Stripes quotation and the Associated Press card.
+- The Stars and Stripes quotation remains byte-for-byte as pinned.
+- Baseline lint: lens 0, quote 0, voice fail 10, voice reread 17.
+- Final lint: lens 0, quote 0, voice fail 0, voice reread 4. The remaining rereads are source facts or an explicit record absence.
+- Entailment since `b3b587f0`: ENTAILED. Thirteen changed blocks checked; Critical 0, Major 0, Moderate 3, Minor 0.
