@@ -35,9 +35,16 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">We verified the order in the public docket.</p>
  <p data-layer="narrative">We reviewed every filing in the public docket.</p>
  <p data-layer="narrative">Our investigation found the order in the public docket.</p>
+ <p data-layer="narrative">I found the order in the public docket.</p>
+ <p data-layer="narrative">We discovered the order in the public docket.</p>
+ <p data-layer="narrative">Our audit found the order in the public docket.</p>
+ <p data-layer="narrative">He told the crowd, "I think I have close to a billion dollars in the Super PAC. I found the money myself," and the paper quoted him the same day.</p>
+ <figure class="quote-card" data-layer="fact"><blockquote class="qc-words">We found the ballots ourselves and the readers of this county saw them, she said.</blockquote></figure>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
+ <p class="not-section-lede">Our count of the sealed exhibits in the public docket came to nine.</p>
+ <p class="sources-line-extra">We keep one more copy of every exhibit in the public docket.</p>
  <p>The court's minute order of September 17, saved the same day from the docket.</p>
  <p class="sources-line"><a href="/methodology">How we check</a> where this page says computed, the arithmetic was done from the saved series.</p>
 </section>
@@ -89,6 +96,13 @@ checks = [
     ("'We verified the order' fails", any(s.startswith("We verified") for _, s in hits)),
     ("'We reviewed every filing' fails", any(s.startswith("We reviewed") for _, s in hits)),
     ("'Our investigation found' fails", any(s.startswith("Our investigation") for _, s in hits)),
+    ("'I found the order' fails", any(s.startswith("I found") for _, s in hits)),
+    ("'We discovered' fails", any(s.startswith("We discovered") for _, s in hits)),
+    ("'Our audit found' fails", any(s.startswith("Our audit") for _, s in hits)),
+    ("a quotation the splitter cut in two is not own voice", not any("Super PAC" in s or "money myself" in s for _, s in hits)),
+    ("a quote card's words are not judged", not any("ballots ourselves" in s for s in judged)),
+    ("a class that merely contains section-lede is judged", any(s.startswith("Our count of the sealed") for _, s in hits)),
+    ("a class that merely contains sources-line is judged", any(s.startswith("We keep one more") for _, s in hits)),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

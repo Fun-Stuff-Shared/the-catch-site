@@ -110,6 +110,10 @@ its sentence loses them. A page that introduces more than five or six terms is t
   published", "no public filing identifies") claims more than any set of records can
   support and does not ship. The looking itself stays out of the sentence ("searched",
   "the accessible filings" are method words); the set is named as a stranger would name it.
+  The set named is one the working note's census lines show was captured and read, named the
+  way the records list names it; a set that was refused, stale or never fetched (a docket the
+  registry could not reach, an agency's report listings nobody opened) does not go in the
+  sentence however natural it sounds. The admitted records are always a set that was read.
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.

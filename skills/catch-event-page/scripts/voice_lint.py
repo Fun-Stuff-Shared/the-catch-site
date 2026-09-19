@@ -18,12 +18,21 @@ p.sources-line inside section#records), never by their words.
 import json, os, re, subprocess, sys
 from html.parser import HTMLParser
 
-BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "figcaption", "td", "th", "dt", "dd", "summary", "blockquote"}
+BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "figcaption", "td", "th", "dt", "dd", "summary"}
+has_cls = lambda a, name: name in (a.get("class") or "").split()
 ABBR = re.compile(r"\b(Rep|Sen|U\.S|U\.N|Sept|Aug|Oct|Nov|Dec|Jan|Feb|Mr|Ms|Dr|Gen|Lt|Col|No|v|H\.Con\.Res|S\.Con\.Res|Inc|Co)\.\s")
 norm = lambda x: re.sub(r"\s+", " ", x.replace("“", '"').replace("”", '"').replace("’", "'")).strip()
-strip_q = lambda t: re.sub(r'"[^"]{3,}"', "[quotation]", t)
+def strip_q(t):
+    """Quoted speech is not the page's own voice. A quotation the sentence splitter cut in two leaves
+    one quote mark: an opener drops what follows it, a closer drops what came before it."""
+    t = re.sub(r'"[^"]{3,}"', "[quotation]", t)
+    i = t.find('"')
+    if i >= 0 and t.count('"') == 1:
+        opener = i + 1 < len(t) and not t[i + 1].isspace() and t[i + 1] not in ",.;:"
+        t = t[:i] + "[quotation]" if opener else "[quotation]" + t[i + 1:]
+    return t
 READER = re.compile(r"\breaders?\b", re.I)
-PROCESS = re.compile(r"^Single outlet(?=[,.;:]| (only|so far|among)\b)|^We (read|found|located|obtained|saved|fetched|reached|searched|checked|counted|compared|confirmed|verified|reviewed|examined|inspected|traced|tallied|recounted|opened|pulled|downloaded|analyzed|looked)\b|^Our (search|review|check|count|reading|investigation|analysis|examination|inspection|tally|recount|comparison|reporting)\b|\bamong the records here\b|\bthis page (rests|holds|treats|uses|cites|relies|counts|reads|leaves|reports|finds|found|labels|checks|compares|confirms|computes|tracks|covers|quotes)\b|\bthis page (does|did|do) not (answer|cover|count|check|compare|find|reach|include|treat|rest|rely|cite|track|report|confirm|compute|use|quote|say|establish|show|name)\b|\bthis page (can|cannot|could)( not| only)? (answer|say|tell|show|confirm|establish|reach|find|verify|determine|count|compare|cover|report|name)\b|\bon this page\b(?! of\b)|\bthe page (found|could|did|does)\b|\bthis story rests on\b|\b(what )?the (records?|coverage|numbers) (here )?adds? up to\b|\bwe could( not)? (preserve|save|fetch|reach|obtain|get|find|locate)\b|\bas reproduced by\b|\b(this page|the page|we) (did|does|do) not answer through\b|\bnot available through the (records|registry|archive|pins|admitted|accessible)\b|^Searched:|\bthe (accessible|admitted) (filings|records|sources)\b|\bpublic sources we\b", re.I)
+PROCESS = re.compile(r"^Single outlet(?=[,.;:]| (only|so far|among)\b)|^(I|We|My|Our)\b|\bamong the records here\b|\bthis page (rests|holds|treats|uses|cites|relies|counts|reads|leaves|reports|finds|found|labels|checks|compares|confirms|computes|tracks|covers|quotes)\b|\bthis page (does|did|do) not (answer|cover|count|check|compare|find|reach|include|treat|rest|rely|cite|track|report|confirm|compute|use|quote|say|establish|show|name)\b|\bthis page (can|cannot|could)( not| only)? (answer|say|tell|show|confirm|establish|reach|find|verify|determine|count|compare|cover|report|name)\b|\bon this page\b(?! of\b)|\bthe page (found|could|did|does)\b|\bthis story rests on\b|\b(what )?the (records?|coverage|numbers) (here )?adds? up to\b|\bwe could( not)? (preserve|save|fetch|reach|obtain|get|find|locate)\b|\bas reproduced by\b|\b(this page|the page|we) (did|does|do) not answer through\b|\bnot available through the (records|registry|archive|pins|admitted|accessible)\b|^Searched:|\bthe (accessible|admitted) (filings|records|sources)\b|\bpublic sources we\b", re.I)
 THRESHOLDS = {"mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67}
 IGN = "Words inside quotation marks are someone else's speech and are not judged; judge only the page's own words."
 QUESTIONS = {
@@ -41,15 +50,14 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "main": self.inmain = True
-        cls = a.get("class") or ""
-        chrome = self.records_depth > 0 and tag == "p" and ("section-lede" in cls or "sources-line" in cls)
-        skipped = tag in ("script", "style", "nav", "svg") or (tag == "sup" and "src-ref" in cls) or "data-state-slot" in a or chrome
+        chrome = self.records_depth > 0 and tag == "p" and (has_cls(a, "section-lede") or has_cls(a, "sources-line"))
+        skipped = tag in ("script", "style", "nav", "svg", "blockquote") or (tag == "sup" and has_cls(a, "src-ref")) or "data-state-slot" in a or chrome
         if tag == "section" and a.get("id") == "records": self.records_depth += 1
         if skipped: self.skip += 1
         self.stack.append((tag, a.get("data-layer"), skipped))
         if self.inmain and not self.skip and tag in BLOCK and self.buf is None:
             self.buf = []; self.layer = next((l for t, l, _ in reversed(self.stack) if l), None); self.tag = tag
-            self.kicker = "sec-kicker" in (a.get("class") or "")
+            self.kicker = has_cls(a, "sec-kicker")
         elif self.buf is not None and tag in BLOCK: self.buf.append(" ")
     def handle_endtag(self, tag):
         if self.buf is not None and tag == self.tag:
