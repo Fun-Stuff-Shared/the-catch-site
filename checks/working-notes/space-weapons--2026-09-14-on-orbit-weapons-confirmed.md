@@ -1,5 +1,17 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 13 (space-patch.md items 52 to 53; stranger read of hosted build on main b1fddbb2, plus audit Finding 1). Worktree the-catch-site-wt-r3-space, branch author/patch-r3-space, from e4af8e68. No captures.
+
+Verified at the pins before rewriting (2026-09-19):
+- AFNS `afns-meink-2026-09-14.txt` line 12: "Meink also acknowledged for the first time that Space Force has weapons in space."
+- Schiess `ussf-schiess-remarks-2026-09-15.txt` line 42: "Today, Guardians operate on-orbit weapons that can defend the Joint Force against space-enabled attacks."
+- Catch box paragraph already uses "said" for Meink, Schiess, the spokesperson, Palmer, and Whiting. Claim-check label is "admitted"; AFNS holds "acknowledged".
+- SPO CBO `spo-cbo-golden-dome-2026-05.txt` line 3: "the total cost over 20 years is $1.2 trillion"; line 9: "constellation of 7,800 satellites" and "about $720 billion". OST `ost-1967-state-archive.txt` line 11: "Entered into force October 10, 1967".
+
+### Items 52 to 53
+52. Catch heading: dropped "confirmed". Heading now says officials acknowledged the weapons and named no system, count, orbit, or date. Paragraph under it left as written (already "said"). Claim-check left: the claim is an admission the records hold, not independent verification of the hardware. Class sweep: page-voice "Officials confirmed" was the one instance of presenting the statements as confirmation of the underlying fact. Other "confirmation" uses name the announcement, quote an outlet, or quote Russia's ministry. Sibling count: 0.
+53. Manifest figures `cbo_golden_dome_total_trillion`, `cbo_sbi_satellites`, `cbo_sbi_cost_billions`, `ost_year`: added reader labels from those quote spans. Values, units, and quote spans unchanged.
+
 ## Round 12 (space-patch.md items 48 to 51; ship-audit and ship-reconstruction, 2026-09-19). Worktree the-catch-site-wt-r3-space, branch author/patch-r3-space, from 2805bedd.
 
 Verified at the pins before rewriting (2026-09-19):
