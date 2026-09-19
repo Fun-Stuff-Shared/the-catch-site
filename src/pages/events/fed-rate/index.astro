@@ -1,10 +1,10 @@
 ---
 import SeriesOverview from '../../../components/SeriesOverview.astro';
 import SeriesFigures from '../../../components/SeriesFigures.astro';
-import { ratePath } from '../../../data/fomc20260617.mjs';
+import { ratePath } from '../../../data/fed-rate-2026-09-16-unanimous-quarter-point-hike.mjs';
 import { subject } from '../../../data/subjects/fed-rate.mjs';
 const W = 720, H = 200, PAD = 8;
-const t0 = Date.parse(ratePath.start.date), t1 = Date.parse("2026-08-23");
+const t0 = Date.parse(ratePath.start.date), t1 = Date.parse(ratePath.end.date); // 2026-09-16-unanimous-quarter-point-hike
 const vMin = 3.4, vMax = 5.7;
 const x = (d) => PAD + ((Date.parse(d) - t0) / (t1 - t0)) * (W - 2 * PAD);
 const y = (v) => H - PAD - ((v - vMin) / (vMax - vMin)) * (H - 2 * PAD);
@@ -15,19 +15,19 @@ for (const c of ratePath.changes) {
   pts.push(`${x(c.date)},${y(c.value)}`);
   prev = c.value;
 }
-pts.push(`${x("2026-08-23")},${y(prev)}`);
+pts.push(`${x(ratePath.end.date)},${y(prev)}`); // 2026-09-16-unanimous-quarter-point-hike
 const path = "M" + pts.join(" L");
-const endX = x("2026-08-23"), endY = y(prev);
+const endX = x(ratePath.end.date), endY = y(prev); // 2026-09-16-unanimous-quarter-point-hike
 ---
 <SeriesOverview title="The federal funds rate" description="The Federal Reserve’s decisions, the debate behind them, and what happens next." path="/events/fed-rate/">
   <SeriesFigures slot="visual" items={subject.current} />
       <figure class="rate-chart">
-        <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" aria-label="Fed target range upper bound, 2024 to August 23, 2026: six steps down from 5.50 to 3.75, then flat">
+        <svg viewBox={`0 0 ${W} ${H + 24}`} role="img" data-story="2026-09-16-unanimous-quarter-point-hike" aria-label="Fed target range upper bound, 2024 to September 19, 2026: six steps down from 5.50 to 3.75, then one step up to 4.00">
           <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
           <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
           <text x={x("2024-02-01")} y={y(5.5) - 8} class="chart-note">5.50 peak</text>
           <text x={x("2024-06-20")} y={y(4.0)} class="chart-note">six cuts, Sep 2024 &rarr; Dec 2025</text>
-          <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent">3.75 &middot; holding</text>
+          <text x={endX - 6} y={endY - 12} text-anchor="end" class="chart-note chart-note-accent" data-story="2026-09-16-unanimous-quarter-point-hike">4.00 &middot; effective September 17</text>
           <text x={x("2024-01-05")} y={H + 16} class="chart-axis">2024</text>
           <text x={x("2025-01-05")} y={H + 16} class="chart-axis">2025</text>
           <text x={x("2026-01-05")} y={H + 16} class="chart-axis">2026</text>

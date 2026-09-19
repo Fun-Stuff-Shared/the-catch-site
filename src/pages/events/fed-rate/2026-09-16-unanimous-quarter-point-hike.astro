@@ -1,0 +1,124 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import SectionKicker from "../../../components/story/SectionKicker.astro";
+import StepChart from "../../../components/story/StepChart.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import {
+  event,
+  ratePath,
+  voteRows,
+  statementRows,
+  projectionRows,
+  chronologyRows,
+  computed,
+  seriesReceipt,
+} from "../../../data/fed-rate-2026-09-16-unanimous-quarter-point-hike.mjs";
+
+const state = readPublishedState().events.get("event-fed-rate-2026-09-16-unanimous-quarter-point-hike");
+if (!state) throw new Error("Missing publication selection: event-fed-rate-2026-09-16-unanimous-quarter-point-hike");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fed-rate/">The federal funds rate</a><span>September 16, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact"><a href="/events/fed-rate/">The federal funds rate</a> &middot; September 16, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+      <KpiStrip kpis={event.kpis} />
+
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open data-layer="fact"><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+          <ol data-layer="fact">
+            <li><a href="#rate-path">The rate path</a></li>
+            <li><a href="#vote">The vote</a></li>
+            <li><a href="#statement-redline">What changed in the statement</a></li>
+            <li><a href="#projections">The September projections</a></li>
+            <li><a href="#chronology">Chronology</a></li>
+            <li><a href="#records">The records</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <section id="rate-path" data-layer="fact">
+        <SectionKicker text="Official series" />
+        <h2>The rate path</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Upper limit of the federal funds target range</strong><span>Daily Federal Reserve series through September 19, 2026</span></figcaption>
+          <StepChart
+            {...ratePath}
+            yRange={[3.5, 5.75]}
+            annotations={[
+              { date: "2024-01-01", value: 5.5, text: "5.50%", accent: false },
+              { date: "2026-09-19", value: 4, text: "4.00%", anchor: "end", accent: true },
+            ]}
+            caption="The upper bound fell in six steps from September 2024 through December 2025, then rose by a quarter point effective September 17, 2026."
+            ariaLabel="Federal funds target range upper limit from January 2024 through September 19, 2026"
+          />
+          <p class="chart-vintage" data-layer="proof">Computed from {seriesReceipt.rangeCount.toLocaleString("en-US")} daily DFEDTARU observations saved September 19. The prior 3.75 percent upper limit began {seriesReceipt.priorRangeStart}; the vote came {computed.priorRangeDays} days later.</p>
+        </figure>
+        <SourcedBlock source="fred-dfedtaru-2026-09-19" kind="record" detail>
+          <p>The September 19 observation in the daily upper-limit series is 4.00 percent. The series is daily, not seasonally adjusted, and begins on December 16, 2008.<Cite s="fred-dfedtaru-metadata-2026-09-19" passage="Frequency: Daily, 7-Day" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="vote" data-layer="fact">
+        <SectionKicker text="Decision" />
+        <h2>The vote</h2>
+        <DataTable columns={["Position", "Votes"]} rows={voteRows} caption="Federal Open Market Committee vote, September 16" highlightColumn={1} />
+        <SourcedBlock source="fomc-statement-2026-09-16" kind="record" detail>
+          <p>The Federal Open Market Committee approved the statement by a 12–0 vote and raised the target range by one-quarter percentage point to 3.75–4 percent.<Cite s="fomc-statement-2026-09-16" passage="approved the following statement for release by a 12 – 0 vote" /><Cite s="fomc-statement-2026-09-16" passage="raise the target range for the federal funds rate by 1/4 percentage point" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fomc-implementation-2026-09-16" kind="record" detail>
+          <p>The implementation note made the new range effective September 17, set the reserve-balance rate at 3.90 percent and raised the primary-credit rate to 4.0 percent.<Cite s="fomc-implementation-2026-09-16" passage="raise the interest rate paid on reserve balances to 3.90 percent, effective September 17, 2026" /><Cite s="fomc-implementation-2026-09-16" passage="increase in the primary credit rate to 4.0 percent" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="statement-redline" data-layer="fact">
+        <SectionKicker text="Compared with July" />
+        <h2>What changed in the statement</h2>
+        <DataTable columns={["Line", "July 29", "September 16"]} rows={statementRows} caption="Selected statement lines, read directly from the two saved releases" />
+        <SourcedBlock source="fomc-statement-2026-07-29" kind="record" detail>
+          <p>In July, the committee held the range at 3.50–3.75 percent by a 9–3 vote. Beth Hammack, Neel Kashkari and Lorie Logan preferred a quarter-point increase.<Cite s="fomc-statement-2026-07-29" passage="approved the following statement for release by a 9 – 3 vote" /><Cite s="fomc-statement-2026-07-29" passage="preferred to raise the target range for the federal funds rate by 1/4 percentage point" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="projections" data-layer="fact">
+        <SectionKicker text="Summary of Economic Projections" />
+        <h2>The September projections</h2>
+        <DataTable columns={["Median projection, percent", "2026", "2027", "2028", "2029", "Longer run"]} rows={projectionRows} caption="Participant medians in Table 1" />
+        <SourcedBlock source="fomc-sep-2026-09-16" kind="record" detail>
+          <p>The September medians put real GDP growth at 2.3 percent in 2026, unemployment at 4.1 percent, PCE inflation at 3.7 percent and the federal funds rate at 4.1 percent. Eighteen participants submitted projections.<Cite s="fomc-sep-2026-09-16" passage="Change in real GDP         2.3" /><Cite s="fomc-sep-2026-09-16" passage="Eighteen participants submitted information" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fomc-press-conference-2026-09-16" kind="record" detail>
+          <p>Warsh said he had not offered a projection of his own. He reported that the median participant put the appropriate federal funds rate at 4.1 percent at the end of 2026 and kept it there in 2027.<Cite s="fomc-press-conference-2026-09-16" passage="I have not offered a projection of" /><Cite s="fomc-press-conference-2026-09-16" passage="judges that the appropriate federal funds rate to be 4.1 percent at the end of this year" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="chronology" data-layer="fact">
+        <SectionKicker text="Sequence" />
+        <h2>Chronology</h2>
+        <DataTable columns={["When", "Record"]} rows={chronologyRows} />
+        <SourcedBlock source="fomc-calendar-2026-09-19" kind="record" detail>
+          <p>The Federal Reserve calendar says minutes of regular meetings are released three weeks after the policy decision. The September minutes slot was blank when the listing was captured on September 19.<Cite s="fomc-calendar-2026-09-19" passage="The minutes of regularly scheduled meetings are released three weeks after the date of the policy decision." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fomc-longer-run-goals-2025" kind="record" detail>
+          <p>The committee's strategy statement identifies maximum employment and price stability as the statutory mandate, and says changes in the target range are its primary means of adjusting monetary policy.<Cite s="fomc-longer-run-goals-2025" passage="maximum employment and price stability" /><Cite s="fomc-longer-run-goals-2025" passage="primary means of adjusting the stance of monetary policy is through changes in the target range" /></p>
+        </SourcedBlock>
+      </section>
+
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+    </main>
+  </div>
+</BaseLayout>}
