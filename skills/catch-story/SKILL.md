@@ -26,7 +26,8 @@ are links to `skills/catch-event-page/`, the pipeline map and the reviewer's pro
 Read, in this order, before the first sentence: `references/story.md` (the reader model you
 are writing from, concept before qualification, the redundancy budget),
 `references/shape-rules.md`, `references/sections.md`, `references/components.md`,
-`references/writing.md` (the rules that bind each sentence). Commands are in
+`references/writing.md` (the rules that bind each sentence), `references/anti-patterns.md`
+(sentences real reviews cut, by shape). Commands are in
 `references/procedures.md`; manifest fields in `references/manifest-and-gate.md`; the
 interrogation prompt in `references/interrogation.md`.
 

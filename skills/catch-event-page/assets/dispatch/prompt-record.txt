@@ -1,0 +1,11 @@
+Use the catch-record skill at skills/catch-record in this checkout, at skill commit {SKILL_COMMIT}. Read its SKILL.md in full, then its references/procedures.md and references/components.md in full, before acting; do not edit any file under skills/. This run is TURN ONE of the three-turn author: build the record, not the story.
+
+Working checkout for this run: {WORKTREE} (a git worktree of the-catch-site on branch {BRANCH}, started from main {SKILL_COMMIT}). Every path the skill writes as /Volumes/4/GitHub/the-catch-site means {WORKTREE} for this run: read, write, build and commit only there. Do not touch /Volumes/4/GitHub/the-catch-site itself.
+
+{CANDIDATE_BLOCK}
+
+The subject slug is {SUBJECT}; the story slug is {SLUG}, so the page is src/pages/events/{SUBJECT}/{SLUG}.astro and the manifest checks/manifests/{SUBJECT}--{SLUG}.json. The manifest's state_event_id is {EVENT_ID}: the reviewer already accepted the candidate into state under that id and built its view; you never run story_accept.py or any state command, and you never commit anything under data/state. The working note follows skills/catch-record/assets/working-note.md.
+
+Do the skill's steps 0, 1, 2 and 3 and stop at the end of step 3: the working note with one line per census search and a passage table per primary record with every passage listed; every record admitted through capture news, primaries first; the gap list run and every line dispositioned; the data module with every derived number computed from the admitted series; the figures the record supports, the chronology table, the record's own lines as SourcedBlock kind="record" detail; the manifest with every record and enriched figures; the subject page row and the homepage feature; then the one command that ends the turn, skills/catch-record/scripts/finish.sh {SUBJECT}/{SLUG} record, run again after each fix until it prints the commit. Write NO narrative paragraphs, no catch, no reader model: those belong to later turns, other sessions.
+
+Do NOT push. Do NOT edit any existing story page. Do not kill, restart, or signal any process you did not start. When done, print a final report in plain words: which records you admitted and which you could not and why, the passage-table counts, the local path of the built page, and the commit hash. Everything you claim must be checkable from files in the repo.
