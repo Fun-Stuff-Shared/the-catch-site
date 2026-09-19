@@ -45,6 +45,8 @@ One line per search, in run order:
 - Preservation plaintiffs' September 17 public statement: direct issuing-organization capture succeeded in `capture-oneoff-20260919T091123Z`.
 - Associated Press protest report and the Action Network event page: both direct captures succeeded in `capture-oneoff-20260919T091138Z`.
 - Associated Press report on Trump's September 18 remarks: direct capture succeeded in `capture-oneoff-20260919T091155Z`.
+- Washington Post September 14 recognition-proposal page: the one registry attempt in `capture-oneoff-20260919T102728Z` resolved to `quarry-wire-scheduled-20260914T220001Z`. The receipt says `body_captured`, but the text is a 639-character subscription excerpt, so it was not admitted.
+- Washington Post September 18 layoffs page: the one registry attempt in `capture-oneoff-20260919T102733Z` resolved to `quarry-wire-scheduled-20260919T100035Z`. The receipt says `body_captured`, but the text is a 675-character subscription excerpt, so it was not admitted.
 
 ## Round-one review patch, items 1–20
 
@@ -68,6 +70,21 @@ One line per search, in run order:
 18. Added ABC's limitation that the published image did not show the whole placard and cut the visible word at `DEMOLIS`.
 19. Added the AP recognition error to the AP verdict: two proposals were enjoined, while the endowment-inscription request was denied as unripe.
 20. Explained how ABC, CBS and the earlier USA Today record are used despite not receiving verdict cards. The two later AP records are separately identified as follow-on coverage.
+
+## Round-two review patch, items 21–32
+
+21. Removed the duplicated protest account from `who-feels-it`; the crowd, human chain and invited constituencies now appear once in `what-happened-next`.
+22. Made no prose change. The six-record and three-card counts are arithmetic exported by the data module.
+23. Kept counsel's discovery characterization attributed and added that UPI's reproduced order text contains the notice command but no discovery provision. The docket was not cited.
+24. Corrected the record boundary: the earlier JLL plan and Delta presentation are sealed, while Floca says the finalized Delta report and certain appendices were attached as Exhibit A. The public attachment remained unreachable at 89-4.
+25. Added Floca's estimate that 75 to 175 of roughly 300 employees would be affected, labelled as an estimate, and added the opinion's identified exposure to ticket and tourist revenue, audience retention, specialized arts staff and donors.
+26. Started the timeline with the Center's September 2025 announcement that renovation work had begun and the opinion's statement that staff apparently sought no federal planning-agency input for that work.
+27. Defined the REACH as the Center's expansion campus at its first appearance in the timeline and in the later practical-effects paragraph.
+28. Added the conflict between the two defense filings: one quotes closure to patrons `forthwith`, while the other adds `upon the dissolution of the preliminary injunction`. The inaccessible preliminary minutes are named as the unresolved record.
+29. The required Post registry attempt returned the 639-character subscription excerpt described above, so no Post record was admitted. Added only what Floca's admitted declaration establishes: a September 13 management packet was attached as Exhibit B for the September 15 meeting. The page labels the timing as contemporaneous and does not claim causation.
+30. Added Beatty's chronology beside Floca's two stated safety grounds: twelve days open after the plaster fall, no meaningfully new information before closure, the June and July Walter P Moore analysis, and closure the day after the board vote. The page says Cooper denied the hearing and that neither admitted carrier reports a resolution of the factual dispute.
+31. Added the August vote's acknowledged information gaps: two slides received two days before, Whitehouse's six baseline requirements, Larsen's missing four-year analysis, and the later August 31 distribution of the full Delta report.
+32. The required Post registry attempt returned the 675-character subscription excerpt described above. It was not admitted under the skill's short-body rule, so no new layoff sentence was added.
 
 ## Primary-record passage tables
 
@@ -98,8 +115,8 @@ One line per search, in run order:
 | `defendants-response-recognition-68-2026-08-24` | Defendants argue that without the administration's work the building would eventually have to be taken down and mention an amphitheater proposal | Conditional litigation position, not an approved demolition plan | Where this sits, attributed |
 | `public-law-119-21-kennedy-center` | Congress appropriates $256,657,000 for Kennedy Center capital repair, restoration, maintenance backlog and security structures through September 30, 2029 | The exact appropriation mechanism and availability period | Where this sits |
 | `defendants-consolidated-memorandum-88-1-2026-09-18` | Defendants compare a claimed $300 million phased-closure shortfall with a gap below $30 million for complete closure | Defendants' funding argument, not a court finding | What happened next, attributed |
-| `defendants-statement-facts-89-2-2026-09-18` | Defendants say management sent the finalized Delta report to trustees on August 31 and the board ratified closure on September 15 | Defendants' chronology supporting the motions | What happened next, attributed |
-| `floca-declaration-89-3-2026-09-18` | Floca identifies a JLL report and Delta presentation as appearing under seal | Why those plan records cannot be read from the public pin set | What happened next and unknowns |
+| `defendants-statement-facts-89-2-2026-09-18` | Defendants say management sent the finalized Delta report to trustees on August 31 and quote closure to patrons `forthwith` | Defendants' chronology and one version of the September closure condition | What happened next, attributed |
+| `floca-declaration-89-3-2026-09-18` | Floca identifies a JLL report and Delta presentation under seal, says the finalized Delta report and certain appendices are Exhibit A, and authenticates the September 13 packet as Exhibit B | The different status of the project materials and the existence of the trustee packet | What happened next and unknowns |
 | `action-network-hands-around-kennedy-center-2026-09-18` | The event page invites artists, patrons, staff, union members and volunteers | Organizer-defined constituencies | Who feels it |
 
 ### Earlier court rulings and governing law
@@ -130,7 +147,10 @@ One line per search, in run order:
 |---|---|---|
 | Court-hosted September 17 minute order | typed unreachable | Direct CourtListener capture returned `robots_disallowed` in `capture-oneoff-20260919T090517Z`; the required archive fallback returned the same code in `capture-oneoff-20260919T090524Z`. The text-only order is quoted only through admitted carriers. |
 | September 23 sworn status report | not yet due | Forward search run September 19. The page states the deadline, not the report's contents. |
-| Full JLL 2026 project plan and Delta report | not held on a public route | ECF 89-3 identifies a JLL report and Delta presentation under seal. ECF 89-4 returned `http_status_404` through direct storage and the required archive fallback. No unheld plan detail is asserted. |
+| JLL plan, Delta presentation and Delta Exhibit A | partly held | ECF 89-3 identifies the earlier JLL plan and Delta presentation under seal and says the finalized Delta report and certain appendices were attached as Exhibit A. ECF 89-4 returned `http_status_404` through direct storage and the required archive fallback. No unavailable plan detail is asserted. |
+| September 15 preliminary board minutes | not held on a public route | The two defense filings quote different closure conditions. The page states the conflict without choosing between them. |
+| Washington Post September 14 recognition-proposal page | subscription stub, not admitted | The one registry attempt resolved to a 639-character excerpt in `quarry-wire-scheduled-20260914T220001Z`; item 29 uses only the admitted Floca declaration. |
+| Washington Post September 18 layoffs page | subscription stub, not admitted | The one registry attempt resolved to a 675-character excerpt in `quarry-wire-scheduled-20260919T100035Z`; item 32 was left out. |
 | ECF 89-1 supporting memorandum | duplicate, not separately admitted | Direct storage succeeded, but its substantive extracted text matches admitted ECF 88-1; only the docket header differs. |
 | Whether defendants will propose demolition | unknown after disproof search | The order requires notice if scope changes; it does not say a demolition decision has been made. |
 | Whether the temporary safety closure will extend past seven days | unknown after disproof search | Floca says seven days unless extended and weekly reassessment. No later sworn update was available by September 19. |
@@ -152,4 +172,4 @@ The initial closure is displayed as `seven days`, matching the authoritative pas
 
 ## Entailment self-check
 
-The final patch self-check used `--since e548e46d`, inspected 15 changed blocks and returned `ENTAILED`, with zero critical, major, moderate or minor unsupported sentences. The committed verdict is under `checks/audits/`.
+The round-two patch self-check used `--since a980c477`. Its committed verdict is under `checks/audits/`; the final counts are recorded there after the item 29 wording was narrowed to the declaration's admitted extent.

@@ -22,10 +22,11 @@ export const event = {
 };
 
 export const timeline = [
+  { date: "Sept. 2025", title: "The Center says renovation work has begun.", sub: "It announces work on the building's columns; the court later says staff apparently sought no federal planning-agency input for that work." },
   { date: "Feb. 1", title: "Trump announces a two-year closure proposal.", sub: "He says the main building would close for construction starting in July, subject to board approval." },
   { date: "March 16", title: "The board votes on the closure proposal.", sub: "The May opinion later enjoins implementation of this vote." },
   { date: "May 29", title: "The court denies preliminary relief in the preservation case.", sub: "The ruling relies on sworn representations that the main building would not be demolished and no new structure would be built." },
-  { date: "Aug. 13", title: "The board votes 23 to 3 to close the main building for renovation.", sub: "Programming would continue at the REACH and off site." },
+  { date: "Aug. 13", title: "The board votes 23 to 3 to close the main building for renovation.", sub: "Programming would continue at the Center's expansion campus, known as the REACH, and off site." },
   { date: "Aug. 28", title: "The parties file a joint status report.", sub: "The defendants again say the building will not be demolished and no new structure will be constructed." },
   { date: "Sept. 15", title: "The board votes again to close the main building.", sub: "Its chairman says renovation is to wait while an appeal proceeds." },
   { date: "Sept. 16", title: "The main building closes temporarily.", sub: "The executive director says the initial safety closure will last seven days unless extended." },
@@ -51,9 +52,29 @@ export const funding = {
 };
 
 export const affectedPeople = {
+  closureEstimateLow: 75,
+  closureEstimateHigh: 175,
+  employeeEstimateTotal: 300,
   layoffTranches: 2,
   remainingProgrammingStaff: 10,
   preservationPlaintiffOrganizations: 8,
+};
+
+export const closureDispute = {
+  incidentDateLabel: "September 4",
+  closureDateLabel: "September 16",
+  daysOpenAfterIncident: 12,
+  assessmentMonthsLabel: "June and July",
+};
+
+export const boardReview = {
+  slidesReceived: 2,
+  daysBeforeMeeting: 2,
+  requestedAnalyses: 6,
+  missingComparisonYearsLabel: "four-year",
+  deltaDistributionDateLabel: "August 31",
+  managementPacketDateLabel: "September 13",
+  reconsiderationDateLabel: "September 15",
 };
 
 export const boardVote = {
