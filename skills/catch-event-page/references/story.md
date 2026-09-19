@@ -18,10 +18,29 @@ Everything else the record holds is preserved in Just the facts (detail blocks) 
 work (proof), never lost and never allowed to interrupt the story. A fact can be important
 enough to keep without being important enough to read first.
 
-## The reader model: seven answers, one sentence each
+## The reader model: what the story communicates
 
-Write these in everyday words, each with the record id that supports it. An answer with no
-record is a census gap; go back to step 1 before drafting.
+The file has four headings, in this order, plus an optional fifth. `finish.sh structure`
+refuses the file without them.
+
+`## Entering`: what a stranger arrives knowing, in two to four sentences. The headline they
+saw, the number they half remember, the wrong reading the coverage handed them. This is
+the reader the first paragraph is written for.
+
+`## Exiting`: the seven answers below, one sentence each in everyday words, each with the
+record id that supports it. This is what the reader knows when they leave. An answer with
+no record is a gap line in the working note, graded, for the story turn to admit.
+
+`## Grades`: every passage-table line and gap-list line with its grade A to D and, for A
+and B, the answer it serves.
+
+`## Sections`: the section list from `section-toolkit.md`, each with the question from
+answer 7 it answers, in the reader's order.
+
+`## Outline` (optional): for a long story, under each section the passages it draws on,
+one line each, so the story turn writes from a list rather than a search.
+
+### The seven answers
 
 1. What happened? (the act, the actor, the date, the number when there is one)
 2. Why does it matter to someone who does not follow this subject?
@@ -99,33 +118,44 @@ catch and a checked claim.
 a headline, a kicker, a paragraph closer, or a habit. When two of them sit in one paragraph,
 one is a fact stated the long way; rewrite it as the fact.
 
-## The two turns
+## The three turns
 
-The record and the story are written in separate turns, by separate contexts, so that the
-knowledge of how hard a record was to get never decides whether a stranger reads it.
+The record, the structure and the story are written in separate turns, by separate
+contexts, so that the knowledge of how hard a record was to get never decides whether a
+stranger reads it, and so that what the story communicates is decided before a sentence
+of it exists.
 
 **Turn one, the record** (SKILL.md steps 0 to 3): census, admission, whole-pin reads, the
 passage tables, the gap list with dispositions, the data module, figures, the chronology,
 the detail blocks, the subject page row and homepage feature, the manifest with every gate
 attestation true in fact (`section_grammar` still `done: false`, which the record build
-accepts), then `finish.sh` (ledger rows, the build with its gate, the
-lints, one commit). The story view of the built page is headline, dek, KPI strip, figures,
-chronology and the records list, with no narrative paragraphs yet. The turn ends on that
-commit and a plain report: the working note is the deliverable.
+accepts), then `finish.sh <subject>/<story> record` (ledger rows, the build with its gate,
+the lints, one commit). The story view of the built page is headline, dek, KPI strip,
+figures, chronology and the records list, with no narrative paragraphs yet. The turn ends
+on that commit and a plain report: the working note is the deliverable. The completeness
+audit runs once, on this commit.
 
-**Turn two, the story** (SKILL.md steps 4 to 7): a fresh context that did not build the
-record reads the working note, the passage tables, the gap dispositions and the built facts
-view, writes the reader model and the grades, chooses the sections, writes the narrative
-one passage at a time with the pin open, runs the lints, the interrogation and the
-entailment check, and ends with `finish.sh`. State views, staging and shipping are the
-reviewer's, after the commit. It may admit a record turn one missed and writes the census
-line for it. It never regenerates a figure or a detail block from memory; it reads them.
+**Turn two, the structure** (SKILL.md step 4): a fresh context reads the working note, the
+passage tables, the gap dispositions, the record audit and the built facts view, and
+writes the reader model: entering, exiting, grades, sections, an outline when the story
+needs one. Then `finish.sh <subject>/<story> structure`, which commits that file and
+nothing else. The reviewer reads it before dispatching turn three; an angle that is wrong
+is corrected here, in one file, not in a patch round on the prose.
 
-One host, one worktree, one turn at a time. The second turn is a new session, never a
-resumed one.
+**Turn three, the story** (SKILL.md steps 5 to 7): a fresh context reads the reader model
+commit, the working note and the built page, writes the narrative one passage at a time
+with the pin open, in the sections and the order the reader model chose, runs the lints,
+the interrogation and the entailment check, and ends with `finish.sh <subject>/<story>
+story`. State views, staging and shipping are the reviewer's, after the commit. It may
+admit a record the earlier turns missed and writes the census line for it. It never
+regenerates a figure or a detail block from memory; it reads them.
+
+One host, one worktree, one turn at a time. Every turn is a new session, never a resumed
+one.
 
 ## Before the first narrative sentence
 
-- [ ] `checks/reader-models/<subject>--<story>.md` (`mkdir -p checks/reader-models` first) holds the seven answers, each with a record id.
+- [ ] `checks/reader-models/<subject>--<story>.md` is committed by turn two (`finish.sh <subject>/<story> structure`) with Entering, Exiting (the seven answers, each with a record id), Grades and Sections.
 - [ ] Every passage-table line and gap-list line carries a grade.
 - [ ] The section list is written under the reader model, each section with the question from answer 7 it answers.
+- [ ] The story turn reads that commit and writes in its order; it does not rewrite the answers.
