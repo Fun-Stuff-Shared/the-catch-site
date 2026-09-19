@@ -108,13 +108,16 @@ prose: "checks out", "mislabeled", "wrong".
 
 ## Components and how they bind
 
-The story component library lives in `src/components/story/`; `index.ts` is the full list
-(fifteen, including `StoryToc`, `SectionKicker`, `Chip`, `RailedParagraph`, `LiveCounter`,
-`RecordsList`). The ones a story page binds by hand:
-`BarChart` (bars: label and value; negatives red), `DataTable` (columns, rows,
-highlightColumn), `StepChart` (rate paths), `OutletCheck` (outlet, claim, verdict, chip,
-status ok/warn/note; put the `Cite` in the slot), `CheckedBlock` (label, variant
-confirmed/contested), `Receipt`, `DecisionTimeline`, `KpiStrip`, `ThreeThings`. Import each
+The story component library lives in `src/components/story/`; `index.ts` lists every
+component a story page binds (eighteen, including `StoryToc`, `SectionKicker`, `Chip`,
+`RailedParagraph`, `LiveCounter`, `RecordsList`); `RevisionTimeline` and `QuotedText` in the
+same directory are site internals rendered by `StoryState`. The ones a story page binds by
+hand: `BarChart` (bars: label and value; negatives red), `DataTable` (columns, rows,
+highlightColumn), `StepChart` (rate paths), `DateLine` (points: label and date; intervals:
+days; highlight), `OutletCheckFold` (count, method; the `OutletCheck` cards go in its slot),
+`OutletCheck` (outlet, claim, verdict, chip, status ok/warn/note; put the `Cite` in the
+slot), `CheckedBlock` (label, variant confirmed/contested), `QuoteCard` (speaker, when,
+where, label), `Receipt`, `DecisionTimeline`, `KpiStrip`, `ThreeThings`. Import each
 from its `.astro` file. /events/texas-senate/2026-09-05-maga-inc-10-million-ad-buy/ and /events/fed-rate/2026-06-17-unanimous-hold/
 use them; copy their shapes.
 
