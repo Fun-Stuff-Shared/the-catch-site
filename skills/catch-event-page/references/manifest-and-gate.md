@@ -24,9 +24,10 @@ Attest only what was done. A stubbed or false line is a false ship.
 
 ## data/sources/SOURCES.md
 
-Regenerated after every addition: a table of file, bytes, sha256 prefix, plus a plain
-paragraph naming any recovery (archive.org snapshot, ALFRED vintages, assisted search)
-and the date it was done.
+A table of file, bytes, sha256 prefix, plus a plain paragraph naming any recovery
+(archive.org snapshot, ALFRED vintages, assisted search) and the date it was done.
+`finish.sh` writes the table rows for every file the manifest pins; the author writes
+only the recovery paragraph, by hand, above the table.
 
 ## Gate (`npm run build`, also run by the Workers git build)
 

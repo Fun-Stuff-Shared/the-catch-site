@@ -18,7 +18,8 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">Single outlet centers are exempt from the licensing rule.</p>
  <p data-layer="fact">This page of the public docket lists the motion and its filing date.</p>
  <p data-layer="fact">Single outlet among the records here: AP says the vote was 9 to 3.</p>
- <p data-layer="fact">The order was not available through the public docket route.</p>
+ <p data-layer="fact">After the judge sealed it, the order was not available through the public docket.</p>
+ <p data-layer="fact">We could not obtain the order through the public docket.</p>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
@@ -56,7 +57,8 @@ checks = [
     ("'Single outlet centers' passes", "licensing rule" not in text),
     ("'This page of the public docket' passes", "lists the motion" not in text),
     ("a single-outlet coverage note fails", any("Single outlet among" in s for _, s in hits)),
-    ("'not available through the public docket' fails", any("public docket route" in s and "order was" in s for _, s in hits)),
+    ("a sealed-docket fact passes", "judge sealed" not in text),
+    ("first-person retrieval through the docket fails", any("We could not obtain" in s for _, s in hits)),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

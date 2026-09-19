@@ -121,7 +121,7 @@ What the registry's own fetcher can and cannot reach (not an invitation to fetch
 
 - `scrapling` chrome impersonation, which is what `capture` uses, served Politico, Axios, Washington Post, Washington Examiner, C-SPAN, Kalshi, BBC, Fox, Semafor, TradingView, BOE Report, Investing.com, MarketScreener, KPBS, Senate member sites, the Guardian, OilPrice. `StealthyFetcher.fetch(url, headless=True)` served Truth Social.
 - Blocked in every mode: reuters.com (401), nytimes.com (403), cbo.gov (403), congress.gov (challenge), courts.mo.gov opinion PDFs, house.mo.gov, spglobal. archive.org had no snapshot for any Reuters or CBO page tried.
-- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in SOURCES.md and in the records list, quote the carrier's bytes.
+- Carrier copies carry the same text: Reuters via Investing.com, BOE Report, MarketScreener; WSJ via Dow Jones on TradingView; AP via KPBS, NPR, PBS. Pin the carrier, name the carrier in the records list and in the ledger's recovery paragraph, quote the carrier's bytes.
 - Sequential retries succeed where parallel coverage fetches fail.
 
 ```bash
@@ -133,7 +133,7 @@ capture news "https://www.bls.gov/news.release/realer.nr0.htm" --via-archive --r
 ```
 
 Every figure in a recovered text is verified against the primary document before it is
-used, and the recovery (route, date, URL) is written in SOURCES.md and in the record's
+used, and the recovery (route, date, URL) is written in the ledger's recovery paragraph and in the record's
 `about` line in reader words ("recovered from an Internet Archive copy saved August 24").
 
 ## 4. Recount against the pins before fetching anything new
@@ -174,7 +174,7 @@ python3 -c "import json,sys; [print(r['text_path'], r['raw_path'], r['item_url']
 ```
 
 Copy `text_path` to `data/sources/coverage/<outlet>-<slug>.txt` and `raw_path` to the
-matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the manifest's
+matching `.html` (or `.pdf`), and add the record to the manifest's
 `records[]` (with a `quote` that is present in the text pin) and `story_sources[]` (group
 `coverage`). The pin is what the gate verifies.
 
@@ -378,7 +378,7 @@ Every returned gap becomes a needs-ledger row: fixed on the page, typed unreacha
 declined with its reason, all in the same session. Wholesale dismissal is the violation
 this step exists to prevent.
 
-## 12. Fill the story's state record at authoring time
+## 12. Fill the story's state record (the reviewer, after the story commit)
 
 Every record must already have `pinned_path`, `text_path`, and `text_sha256`, including
 PDFs, CSVs, posts, and video transcripts. Registration reads these files without rewriting

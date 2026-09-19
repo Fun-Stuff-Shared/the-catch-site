@@ -39,8 +39,8 @@ rebuild the coverage universe from the registry once instead of opening the rest
 seed bodies. The story is one dated moment: the day it happened, then a few words for what
 happened (`2026-09-08-counter-tariffs-take-effect`), under a subject slug. A month is never
 a story. Mint it with `new-event.mjs --date --moment`, copy the previous story's page for
-shape, and accept the candidate into the state so the story has a view (procedures, step 0
-and step 10). The story span starts at the first public act (the announcement, the filing,
+shape (procedures, step 0). The reviewer accepts the candidate into the state before
+dispatch and the dispatch names the event id (procedures, step 10); you never accept one. The story span starts at the first public act (the announcement, the filing,
 the first vote), not at the summary document coverage anchored on.
 
 ## Step 1. Census the record before any sentence
@@ -135,12 +135,12 @@ of the page that are the record and not the story: figures from the data module,
 chronology table, the record's own lines as `SourcedBlock kind="record" detail` under
 the sections they belong to, the records list. Then the subject page and the homepage,
 which are record work: one timeline row and the KPI or chart refresh on
-`/events/<subject>/`, and the homepage feature through `event.visual` (procedures, steps
-12 and 13, and the visual kinds). Manifest with every gate attestation true in fact, then
+`/events/<subject>/`, and the homepage feature through `event.visual` (procedures, step
+13, and the visual kinds). Manifest with every gate attestation true in fact, then
 one command ends the turn:
 
 ```bash
-`skills/catch-event-page/scripts/finish.sh <subject>/<story> record
+skills/catch-event-page/scripts/finish.sh <subject>/<story> record
 ```
 
 It adds the ledger rows for your pins, builds through the gate, runs the three lints and
@@ -192,7 +192,7 @@ Four questions of every sentence before you move on: which record, which passage
 passage say all of this, and did I read it this session or remember it. A fifth for every
 paragraph: which of the seven answers does this advance.
 
-## Step 6. Manifest, state, build, lints, interrogation, self-check
+## Step 6. Manifest, build, lints, interrogation, self-check
 
 Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
 `text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
@@ -201,7 +201,7 @@ Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_p
 `references/manifest-and-gate.md`. Then build and lint in one command, and interrogate:
 
 ```bash
-`skills/catch-event-page/scripts/finish.sh <subject>/<story> story --no-commit   # ledger rows, build with the gate, the three lints
+skills/catch-event-page/scripts/finish.sh <subject>/<story> story --no-commit   # ledger rows, build with the gate, the three lints
 skills/catch-event-page/scripts/interrogate.sh <subject>/<story>
 ```
 
@@ -250,7 +250,7 @@ story as written, and re-read the open-questions list: it asks for nothing the r
 already holds. Then:
 
 ```bash
-`skills/catch-event-page/scripts/finish.sh <subject>/<story> story
+skills/catch-event-page/scripts/finish.sh <subject>/<story> story
 ```
 
 It commits the page, data module, manifest, ledger, pins, working note, reader model,
