@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "2.1"
+  version: "2.2"
 ---
 
 # Catch event page
@@ -69,6 +69,8 @@ list of what reviewers have found missing; each item is a search, not a question
 18. For every document that cannot be captured, a primary mirror, docket attachment, public archive, licensed carrier, or official listing; what remains unavailable and how it limits the story.
 19. For every developing event, a forward search through the cutoff: next filing, order, inspector general review, audit, implementation notice, regulator response, institutional statement, outcome data.
 19b. For every subject a legislature can act on, its votes and resolutions in the story's span (roll calls, floor records, committee markups, hearings), from the chamber's own record, dated from that record and not from a later summary.
+19c. For every issuing institution, its own live topic page and newsroom on the run date (the page it points the public to now, not only the release that started the story).
+19d. For every subject, the institution's standing doctrine, policy or framework document and one third-party baseline assessment of the subject, dated before the event: the record the event changed.
 20. Before saying done, the browser-visible page: built HTML, source list, citation targets, navigation text, labels, reader-facing state messages.
 
 Also every time: the capture registry and the article index for the subject and its dates;
@@ -77,6 +79,10 @@ the next release of every series the page cites.
 
 The searches can run in parallel: fan them across subagents, each returning the record ids
 it admitted and its working-note lines. You merge the note, and you write every sentence.
+
+A record you found but did not admit goes under "Not admitted this run" in the working
+note with its date and why; anything dated inside the story span that names the event is
+admitted or typed there. The review reads that list; it is not a dead end.
 
 ## Step 2. Admit every record, then read every pin whole
 
@@ -105,10 +111,15 @@ node skills/catch-event-page/scripts/pin_gaps.mjs <subject>/<story>
 
 It prints every unit-bearing number and every repeated or titled name in each primary pin
 that appears nowhere on the page or in the data module. Each line gets one of three words
-in the working note under the record: used (where), held unused (why), out of scope. Both
-trial stories lost their largest findings to lines on this list: a death count with two
-categories and a later table, a speech naming who depends on the satellites. Whole-pin
-reads by subagents are fine; the dispositions are yours.
+in the working note under the record: used (where), held unused (why), out of scope. Most
+of what reviewers find is on this list: a death count with two categories and a later
+table, a speech naming who depends on the satellites. Whole-pin reads by subagents are
+fine; the dispositions are yours.
+
+For a court order, a rule, a statute or a budget letter, the list is not enough: read the
+operative sections whole (ORDERED paragraphs, holdings, exemptions, applicability,
+definitions, data fields, footnotes that define the page's headline term) and write one
+disposition per sentence there that the page does not carry in substance.
 
 Recount every number a brief or review names against the pins before fetching anything
 new. The pins win over anyone's memory.
@@ -144,7 +155,7 @@ the reader.
 Four questions of every sentence before you move on: which record, which passage, does the
 passage say all of this, and did I read it this session or remember it.
 
-## Step 4. Manifest, state, build, lints, interrogation
+## Step 4. Manifest, state, build, lints, interrogation, self-check
 
 Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
 `text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
@@ -175,6 +186,24 @@ a collapsed element, no dollar figures to the cent in the story view, the story 
 about 9,000 px, the first three sentences telling a cold reader what happened and why it
 matters to them.
 
+Then check your own sentences before anyone else does. The entailment check reads the
+working tree: a model that did not write the page judges every cited block against its
+passages and the record around them. `--since` narrows it to the blocks whose text differs
+from a commit, so the baseline is always the commit you started from, never the commit
+you just made (that would compare the tree with itself and judge nothing).
+
+```bash
+skills/catch-event-page/scripts/entailment_check.sh <subject>/<story>                          # first draft: the whole page
+skills/catch-event-page/scripts/entailment_check.sh <subject>/<story> --since <start commit>   # a patch: only the blocks you changed
+```
+
+Read the verdict file it names. Every Critical and Major is fixed at the cited passage
+(the sentence says what the record says, or the record that says it is admitted), the
+lints run again, and the check runs again with the same `--since`, until it returns
+ENTAILED. A Moderate or Minor is fixed or written in the working note with why it stands.
+Commit the verdict file with the page. You return only on an ENTAILED verdict; the closing
+check after you return confirms it.
+
 ## Step 5. Update the subject page and homepage, commit, report
 
 One timeline row and the KPI or chart refresh on `/events/<subject>/`; the homepage
@@ -196,11 +225,16 @@ files in the repo.
 A completeness audit under `skills/story-completeness-audit/` and a red team read the
 page on your commit, in parallel, and a codex pass judges every cited sentence against its
 passage. The reviewer verifies their findings at the bytes, refutes what the pins refute,
-and sends you the rest as a numbered patch list. A patch changes only what the items name.
-Every regenerated sentence is a new sentence, checked against its passage again, and the
-lints run again. Fix each item's class across the whole page, not only the named line,
-and report the sibling count per class. A second audit runs on the patched commit. Rounds
-that survive it are the reviewer's problem to escalate, not yours to explain away.
+and sends you the rest as a numbered patch list; every numbered finding in every audit
+section, including the ones about what came before, after and around the event, gets a
+ledger line (patched, held with reason, out of scope with reason). A patch changes only
+what the items name. Every regenerated sentence is a new sentence: run the entailment
+check with `--since` the commit the patch started from and fix what it finds before you
+return, and run the lints again. Fix each item's class across the whole page, not only the named
+line, and report the sibling count per class. Before the push, the reviewer re-runs the
+capture search on the story terms dated on or after your run and dispositions the results
+in the ledger. A second audit runs on the patched commit. Rounds that survive it are the
+reviewer's problem to escalate, not yours to explain away.
 
 ## Language rules (hard, enforced by the gate)
 
@@ -216,7 +250,12 @@ that survive it are the reviewer's problem to escalate, not yours to explain awa
 - No text jammed against an inline tag (`<em>under</em>counting`); keep the space on the
   same source line.
 - Verdict words are plain: "checks out", "mislabeled", "wrong". Chips are the closed set in
-  `references/section-grammar.md`.
+  `references/section-grammar.md`; one chip per claim class across the cards, and an
+  inference from the record is never graded wrong.
+- No process words in story prose: pins, carrier, so-what, "Why it matters:", disproof
+  searches, "USD billions", "pp", docket numbers used as nouns. Proof-register content
+  (record lists, day-count arithmetic, table references, archive notes, dissent counts)
+  lives in a `proof` block, never in a story paragraph.
 
 ## Before you say done
 
@@ -224,6 +263,8 @@ that survive it are the reviewer's problem to escalate, not yours to explain awa
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
 - [ ] `npm run build` green; `lens_lint` and `quote_lint` zero; the interrogation dispositioned.
+- [ ] The entailment check on the tree you are committing returned ENTAILED (`--since` the commit you started from, for a patch); its verdict file is committed under `checks/audits/`.
+- [ ] Every catch pairs an outlet sentence with the record passage that contradicts it; none rests on an inference.
 - [ ] Every manifest figure appears in the built state record with its unit and passage.
 - [ ] SOURCES.md regenerated; every manifest `pinned_path` basename has a row.
 - [ ] Measured in a browser at 1280 wide (step 4).

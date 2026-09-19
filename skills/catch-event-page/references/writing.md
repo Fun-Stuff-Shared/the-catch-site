@@ -23,9 +23,18 @@ descending order of importance: each paragraph one level deeper, the full record
 filing line, every vote) at the end of its section in the open, never in a collapsed box.
 The catch comes first among the sections after What happened: one headline claim in bold
 lead words, then short prose that names the two records that disagree and says why it
-matters. A row with one record is a fact, not a catch. Rounding, previews, datelines
-correct in local time, publication labels, and a broader true word ("television" for
-"connected TV") are not disagreements; say what they are in one line or leave them out.
+matters. A catch is a pair: the outlet's sentence, byte for byte from its pin, and the
+record passage that contradicts it, both cited in the catch's own prose. A catch with
+only one side is the author's inference and does not ship; an inference from the record
+is never graded wrong. A row with one record is a fact, not a catch. Rounding, previews,
+datelines correct in local time, publication labels, and a broader true word ("television"
+for "connected TV") are not disagreements; say what they are in one line or leave them out.
+The catch is on the first screen: the dek and the first paragraph say what the record
+shows and what coverage got wrong; the strongest plain sentence never sits in the last
+section. "X, not Y" is not a headline, kicker, or paragraph closer. A fact is told once in
+the story register (Three things, or prose, or a table, never all three) and once in
+proof. A discrepancy is stated once with both values and its status. A paragraph whose
+last sentence disclaims its own relevance is cut.
 
 ## Sentences and passages
 
@@ -92,6 +101,12 @@ correct in local time, publication labels, and a broader true word ("television"
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.
+- A paragraph that describes the page's own method or sums up its sections (how the day
+  counts were made, what the records add up to) carries `data-method` and cites nothing;
+  `lens_lint` accepts it and the entailment pass skips it. A cite stapled to a method
+  sentence to satisfy the lint is a defect.
+- A narrative sentence that carries a number, a date, or a named act carries its own
+  Cite; the paragraph's last cite does not cover it.
 - The story's `updated` date in the data module is the newest dated record or search on
   the page, never the day of the first draft.
 - A record that names nothing about the event is not a response to it. Quote what the

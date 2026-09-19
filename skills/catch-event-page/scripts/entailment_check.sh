@@ -1,20 +1,43 @@
 #!/usr/bin/env bash
 # Entailment pass: a model that did not write the page reads every cited sentence with the
 # passage it cites and the record around it, and returns the sentences the record does not
-# support in full. Usage: skills/catch-event-page/scripts/entailment_check.sh <subject>/<story> [out.md]
+# support in full. Usage: skills/catch-event-page/scripts/entailment_check.sh <subject>/<story> [out.md] [--since <commit>]
 # Writes checks/audits/<subject>--<story>-<date>-entailment.md (verdict) and .log (full run).
+# With --since, only the blocks changed since that commit are judged: the author's own check
+# on the sentences it just wrote, minutes instead of the whole page.
 set -euo pipefail
-story="${1:?usage: entailment_check.sh <subject>/<story> [out.md]}"
+story="${1:?usage: entailment_check.sh <subject>/<story> [out.md] [--since <commit>]}"
+shift
 subject="${story%%/*}"; slug="${story##*/}"
 root="$(cd "$(dirname "$0")/../../.." && pwd)"
 manifest="$root/checks/manifests/$subject--$slug.json"
-out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-entailment.md}"
+out=""; since=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --since) since="${2:?--since needs a commit}"; shift 2 ;;
+    *) out="$1"; shift ;;
+  esac
+done
+scope="entailment"; [ -n "$since" ] && scope="since-${since:0:8}-entailment"
+[ -n "$out" ] || out="$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-$scope.md"
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
 mkdir -p "$(dirname "$out")"
 table="$(mktemp)"; prompt="$(mktemp)"
-node "$root/skills/catch-event-page/scripts/claim_table.mjs" "$story" > "$table"
+if [ -n "$since" ]; then
+  node "$root/skills/catch-event-page/scripts/claim_table.mjs" "$story" --since "$since" > "$table"
+else
+  node "$root/skills/catch-event-page/scripts/claim_table.mjs" "$story" > "$table"
+fi
+if ! grep -q '^| 1 |' "$table"; then
+  { echo "No cited block changed since ${since:-the start}; nothing to judge."; echo; echo "Blocks checked: 0; blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0."; echo; echo "VERDICT: ENTAILED"; } > "$out"
+  rm -f "$table"; echo "$out"; exit 0
+fi
+scopeline=""
+[ -n "$since" ] && scopeline="Only the blocks whose lines changed since commit $since are listed; the rest of the page was judged before and is not in scope. Counts refer to the listed blocks."
 cat > "$prompt" <<PROMPT
 You are checking whether each cited sentence on a news page says only what its cited record supports. The page is /events/$story/ in $root (source src/pages/events/$story.astro, manifest $manifest, pinned text files under $root/data/sources/).
+
+$scopeline
 
 Below is the table of every cited block on the page (a paragraph, list item, or caption) with every citation it carries: the record id, the passage the citation points at, and the record's text pin. For every row: open each text pin, find each passage, read the record around it (the whole document, not only the passage), and decide whether the cited records together support the whole block: every number, actor, date, mechanism, causal word, characterization, and scope word in it. A block usually carries several sentences and several citations; a sentence is supported when any of the block's cited records supports it in full. A passage that supports one phrase does not support the sentence around it. A sentence that says more than its records (a mechanism the record does not give, a broader actor, a settled state for something the record calls proposed, a cause the record does not state, a superlative the record does not make) is not supported. A sentence in reader words that says the same thing as the record is supported. A sentence that states what the page could not find or fetch is supported by the working note or manifest, not by a record; report it only if it contradicts them.
 
