@@ -27,7 +27,11 @@ its sentence loses them. A page that introduces more than five or six terms is t
   N records"). Method and provenance are proof-layer sentences.
   On a story, "this page" means the story itself; a page of a public document is named
   as the document ("the docket page", "page 4 of the order"), so the sentence names its
-  record and the lint reads "this page" as the site speaking.
+  record and the lint reads "this page" as the site speaking. The same holds for the
+  first person anywhere in a sentence ("by Friday, we found", "the result of our search"):
+  outside a quotation it is the site narrating its method and the lint fails it. A proper
+  name that begins with one of those words (Our World in Data) and a route number (I-95)
+  are not first person.
 - "X, not Y" is used where the record makes the distinction and the misreading depends on
   it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
 - A fact is told once in the story register (a summary line, or prose, or a table, never
@@ -110,6 +114,10 @@ its sentence loses them. A page that introduces more than five or six terms is t
   published", "no public filing identifies") claims more than any set of records can
   support and does not ship. The looking itself stays out of the sentence ("searched",
   "the accessible filings" are method words); the set is named as a stranger would name it.
+  The set named is one the working note's census lines show was captured and read, named the
+  way the records list names it; a set that was refused, stale or never fetched (a docket the
+  registry could not reach, an agency's report listings nobody opened) does not go in the
+  sentence however natural it sounds. The admitted records are always a set that was read.
 - An absence paragraph carries `data-absence` on its `<p>` and cites nothing; the search it
   names is in the working note. Never staple a record's cite onto a sentence the record
   does not contain to satisfy the lint; `lens_lint` accepts an absence paragraph.

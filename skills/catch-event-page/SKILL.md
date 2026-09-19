@@ -157,11 +157,20 @@ and the records list, with no narrative paragraph yet.
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
 be admitted and why. The story is written by a fresh session that did not build the record.
+Between the turns the completeness audit runs once, on this commit, against the record
+and the working note; its file is `checks/audits/<subject>--<story>-<date>-record-audit.md`.
+It runs here, before a narrative sentence exists, because it hunts outside the frame (what
+came before, after and around the event) and every round it runs after the story is
+written finds a different frame: on the Kennedy Center trial it returned seven to ten
+Majors three rounds running with no item repeated. Its findings are record work for the
+story turn, graded like any other passage, and it does not run again on this story.
 
 ## Step 4. The reader model, before the first narrative sentence
 
-Turn two opens by reading the working note, the passage tables, the gap dispositions and
-the built page, then writing `checks/reader-models/<subject>--<story>.md` (create the
+Turn two opens by reading the working note, the passage tables, the gap dispositions, the
+record audit (`checks/audits/<subject>--<story>-<date>-record-audit.md`, when it exists: each
+of its findings is a passage to grade A to D or a census gap to close in step 1) and the built
+page, then writing `checks/reader-models/<subject>--<story>.md` (create the
 directory: `mkdir -p checks/reader-models`)
 (`references/story.md`): the seven answers, one sentence each with its record id; a grade
 A to D on every passage-table line and gap-list line; the section list from
@@ -272,21 +281,26 @@ files in the repo.
 
 ## After you commit: what happens to the page
 
-A completeness audit under `skills/story-completeness-audit/` and a red team read the
-page and the reader model on your commit, in parallel, and grade every omission against the
-grades (an omitted A or B is a Major; a C or D the auditor shows changes an answer is a
-Major against the grade; an omitted C is Minor; D is not a finding). A codex pass judges
-every cited sentence against its passage. The reviewer verifies their findings at the bytes, refutes what the pins refute,
-and sends you the rest as a numbered patch list; every numbered finding in every audit
-section, including the ones about what came before, after and around the event, gets a
-ledger line (patched, held with reason, out of scope with reason). A patch changes only
-what the items name. Every regenerated sentence is a new sentence: run the entailment
-check with `--since` the commit the patch started from and fix what it finds before you
-return, and run the lints again. Fix each item's class across the whole page, not only the named
-line, and report the sibling count per class. Before the push, the reviewer re-runs the
-capture search on the story terms dated on or after your run and dispositions the results
-in the ledger. A second audit runs on the patched commit. Rounds that survive it are the
-reviewer's problem to escalate, not yours to explain away.
+Two reads run on your story commit, in parallel: a red team reads the page against the
+reader model and grades every omission by the grades (an omitted A or B is a Major; a C
+or D the reader shows changes an answer is a Major against the grade; an omitted C is
+Minor; D is not a finding), and a codex pass judges every cited sentence against its
+passage. The completeness audit does not run again: it ran on the record commit and its
+findings are already in your reader model. The reviewer verifies the findings at the
+bytes, refutes what the pins refute, and sends you the rest as one numbered patch list;
+every numbered finding gets a ledger line (patched, held with reason, out of scope with
+reason). A patch changes only what the items name. Every regenerated sentence is a new
+sentence: run the entailment check with `--since` the commit the patch started from and
+fix what it finds before you return, and run the lints again. Fix each item's class across
+the whole page, not only the named line, and report the sibling count per class.
+
+There is one patch round. The entailment check runs on the patched commit; nothing else
+does. What is still wrong after it is the reviewer's decision, made on the page as it
+stands: cut the sentence, hold the item with its reason on the ledger, or kill the story.
+A third author run is never the answer; a story that needs one was not ready to be
+written, and that is a record problem to fix in the working note before the next story.
+Before the push, the reviewer re-runs the capture search on the story terms dated on or
+after your run and dispositions the results in the ledger.
 
 ## Language rules (hard, enforced by the gate)
 

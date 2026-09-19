@@ -2,7 +2,8 @@
 
 This step runs after the record is built (SKILL.md, step 3) and before the first narrative
 sentence. Its artifact is `checks/reader-models/<subject>--<story>.md`, committed with the
-page. The completeness audit and the red team read it and grade their findings against it.
+page. The red team reads it and grades its findings against it; the completeness audit ran
+before this step, on the record commit, and its findings are passages you grade here.
 
 ## Why this step exists
 
