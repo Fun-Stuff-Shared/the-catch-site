@@ -2,12 +2,12 @@
 # Ends an authoring turn: ledger rows for the manifest's pins, the build with its gate, the
 # three lints, then one commit holding only this story's artifacts. The author writes; this
 # does the rest.
-# Usage: skills/catch-event-page/scripts/finish.sh <subject>/<story> record|story [--no-commit]
+# Usage: skills/catch-event-page/scripts/finish.sh <subject>/<story> record|structure|story [--no-commit]
 # Exit 1 when the build or a lint fails (nothing is committed); the output names the failure.
 set -uo pipefail
-story="${1:?usage: finish.sh <subject>/<story> record|story [--no-commit]}"
-kind="${2:?usage: finish.sh <subject>/<story> record|story [--no-commit]}"
-case "$kind" in record|story) ;; *) echo "second argument is record or story" >&2; exit 2;; esac
+story="${1:?usage: finish.sh <subject>/<story> record|structure|story [--no-commit]}"
+kind="${2:?usage: finish.sh <subject>/<story> record|structure|story [--no-commit]}"
+case "$kind" in record|structure|story) ;; *) echo "second argument is record, structure or story" >&2; exit 2;; esac
 commit=1; [ "${3:-}" = "--no-commit" ] && commit=0
 subject="${story%%/*}"; slug="${story##*/}"
 root="$(cd "$(dirname "$0")/../../.." && pwd)"; cd "$root"
@@ -19,6 +19,23 @@ if [ $commit = 1 ] && ! git diff --cached --quiet; then
   echo "the index already holds staged files; commit or unstage them first:" >&2; git diff --cached --name-only >&2; exit 2
 fi
 generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\.finish-build\.log$)'
+
+# The structure turn writes no page: it commits the reader model (and the working note, when it
+# added gap lines) and nothing else. The page is unchanged, so there is no build and no lint.
+if [ "$kind" = structure ]; then
+  rm="checks/reader-models/$subject--$slug.md"; note="checks/working-notes/$subject--$slug.md"
+  [ -f "$rm" ] || { echo "no reader model at $rm" >&2; exit 2; }
+  for h in "## Entering" "## Exiting" "## Grades" "## Sections"; do
+    grep -q "^$h" "$rm" || { echo "$rm lacks the heading \"$h\" (references/story.md, the reader model)" >&2; exit 1; }
+  done
+  paths=("$rm"); [ -f "$note" ] && ! git diff --quiet -- "$note" && paths+=("$note")
+  other=$(git status --porcelain --untracked-files=no | awk '{print $NF}' | { grep -v -E "$generated" || true; } | { grep -v -x -F -e "$rm" -e "$note" || true; })
+  [ -z "$other" ] || { echo "the structure turn changes only the reader model and the working note; revert these:" >&2; echo "$other" >&2; exit 2; }
+  [ $commit = 1 ] || { printf 'would commit: %s\n' "${paths[@]}"; exit 0; }
+  git add -- "${paths[@]}" && git -c commit.gpgsign=false commit -q -m "structure: $subject/$slug" -- "${paths[@]}" \
+    && echo "committed $(git rev-parse --short HEAD)  structure: $subject/$slug" && exit 0
+  exit 1
+fi
 
 # The manifest's pins, judged in canonical spelling before anything is written: a pin that
 # leaves data/sources/ (through ".." or an absolute path) stops the turn here.

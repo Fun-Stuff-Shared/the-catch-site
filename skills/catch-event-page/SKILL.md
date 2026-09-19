@@ -25,7 +25,7 @@ commit finds little.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Commands for every step are in `references/procedures.md`; open it before step 1 and keep
-it open. House style is `WRITING.md` at the repo root; the reader model and the two turns are
+it open. House style is `WRITING.md` at the repo root; the reader model and the three turns are
 `references/story.md`; the sentence rules are `references/writing.md`; sections, chips
 and components are `references/section-toolkit.md`.
 Never push. Never edit a story that is already live. Do not kill, restart, or signal any
@@ -138,7 +138,7 @@ which are record work: one timeline row and the KPI or chart refresh on
 `/events/<subject>/`, and the homepage feature through `event.visual` (procedures, step
 13, and the visual kinds). Manifest with every gate attestation true in fact, which in
 this turn means `section_grammar` is `done: false` (the sections are chosen by the reader
-model, in turn two; the record build accepts that one attestation open). Then one command
+model, in turn two, and attested in turn three; the record build accepts that one attestation open). Then one command
 ends the turn:
 
 ```bash
@@ -154,7 +154,7 @@ the name that file imports the module under), because a worktree holds one story
 (the subject's data module is yours to refresh, so it is committed whole). The story view of this build is headline, dek, KPI strip, figures, chronology
 and the records list, with no narrative paragraph yet.
 
-This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
+This is where turn one ends (`references/story.md`, "The three turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
 be admitted and why. The story is written by a fresh session that did not build the record.
 Between the turns the completeness audit runs once, on this commit, against the record
@@ -162,26 +162,39 @@ and the working note; its file is `checks/audits/<subject>--<story>-<date>-recor
 It runs here, before a narrative sentence exists, because it hunts outside the frame (what
 came before, after and around the event) and every round it runs after the story is
 written finds a different frame: on the Kennedy Center trial it returned seven to ten
-Majors three rounds running with no item repeated. Its findings are record work for the
-story turn, graded like any other passage, and it does not run again on this story.
+Majors three rounds running with no item repeated. Its findings are passages for the
+structure turn to grade, and it does not run again on this story.
 
-## Step 4. The reader model, before the first narrative sentence
+## Step 4. The structure: turn two, ending on its own commit
 
-Turn two opens by reading the working note, the passage tables, the gap dispositions, the
-record audit (`checks/audits/<subject>--<story>-<date>-record-audit.md`, when it exists: each
-of its findings is a passage to grade A to D or a census gap to close in step 1) and the built
-page, then writing `checks/reader-models/<subject>--<story>.md` (create the
-directory: `mkdir -p checks/reader-models`)
-(`references/story.md`): the seven answers, one sentence each with its record id; a grade
-A to D on every passage-table line and gap-list line; the section list from
-`references/section-toolkit.md`, each section with the question it answers. An answer with
-no record is a census gap: run step 1 for it now. The story view will carry A and B
-material only; C and D stay in the detail blocks, the proof and the records list.
+Turn two is a fresh session that did not build the record. It reads the working note, the
+passage tables, the gap dispositions, the record audit
+(`checks/audits/<subject>--<story>-<date>-record-audit.md`, when it exists: each of its
+findings is a passage to grade A to D or a census gap to write into the working note) and the
+built page, and writes one file, `checks/reader-models/<subject>--<story>.md` (`mkdir -p
+checks/reader-models` first), in the shape `references/story.md` gives: what a stranger
+enters knowing, what they exit knowing (the seven answers, each with its record id), a
+grade A to D on every passage-table line and gap-list line, the section list from
+`references/section-toolkit.md` with the question each section answers, and, when the
+story is long enough to need one, an outline of which passages each section draws on. This
+file is what the story communicates, decided before any sentence exists. The story view
+will carry A and B material only; C and D stay in the detail blocks, the proof and the
+records list. An answer with no record is a gap line in the working note, graded, for the
+story turn to admit. Then one command ends the turn:
 
-## Step 5. Write the story, each sentence from an open passage
+```bash
+skills/catch-event-page/scripts/finish.sh <subject>/<story> structure
+```
 
-Read `references/story.md`, `references/section-toolkit.md` and `references/writing.md`
-before the first sentence. Every factual sentence is written with its passage on screen
+It commits the reader model and the working note and nothing else; the page is unchanged,
+so there is no build. The reviewer reads that file before the story turn is dispatched.
+
+## Step 5. Write the story, each sentence from an open passage: turn three
+
+Turn three is a fresh session. It opens by reading the reader model commit (the file from
+step 4), the working note and the built page; it writes to the reader model only to grade
+a passage it admits on the way. Read `references/story.md`, `references/section-toolkit.md`
+and `references/writing.md` before the first sentence. Every factual sentence is written with its passage on screen
 and cites it (`Cite s= passage=`). The sentence says what the passage says, in everyday
 words, and nothing more. Where the page needs more than the passage gives, admit the
 record that gives it (and write its census line) or write the gap as a dated absence in
@@ -357,7 +370,7 @@ after your run and dispositions the results in the ledger.
 ## References
 
 - `references/procedures.md`: every command, in order, from scaffold to commit.
-- `references/story.md`: the reader model, materiality grades, concept before qualification, the two turns.
+- `references/story.md`: the reader model, materiality grades, concept before qualification, the three turns.
 - `references/writing.md`: the rules that bind each sentence, with the everyday-word threshold.
 - `references/section-toolkit.md`: the core and optional sections, chip vocabulary, components, layer rules.
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md, what the gate checks.
