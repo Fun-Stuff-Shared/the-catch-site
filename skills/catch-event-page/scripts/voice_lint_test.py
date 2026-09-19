@@ -14,6 +14,11 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">The chair said "this page of the transcript is the one that matters" during the briefing.</p>
  <p data-layer="proof">This page found the order through the storage mirror on September 18.</p>
  <p data-layer="narrative">This page does not compute a speed for the moment the airplane left the pavement.</p>
+ <p data-layer="fact">The benefit is not available through the federal exchange.</p>
+ <p data-layer="fact">Single outlet centers are exempt from the licensing rule.</p>
+ <p data-layer="fact">This page of the public docket lists the motion and its filing date.</p>
+ <p data-layer="fact">Single outlet among the records here: AP says the vote was 9 to 3.</p>
+ <p data-layer="fact">The order was not available through the public docket route.</p>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
@@ -47,6 +52,11 @@ checks = [
     ("the records section lede is skipped as chrome", "dated copy of each one" not in text),
     ("the How we check line is skipped as chrome", "arithmetic was done" not in text),
     ("an ordinary records-list paragraph is still judged", any(s.startswith("The court's minute order") for s in judged)),
+    ("'not available through the federal exchange' passes", "federal exchange" not in text),
+    ("'Single outlet centers' passes", "licensing rule" not in text),
+    ("'This page of the public docket' passes", "lists the motion" not in text),
+    ("a single-outlet coverage note fails", any("Single outlet among" in s for _, s in hits)),
+    ("'not available through the public docket' fails", any("public docket route" in s and "order was" in s for _, s in hits)),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

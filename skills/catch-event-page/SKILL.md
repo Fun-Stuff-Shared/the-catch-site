@@ -136,10 +136,13 @@ chronology table, the record's own lines as `SourcedBlock kind="record" detail` 
 the sections they belong to, the records list. Then the subject page and the homepage,
 which are record work: one timeline row and the KPI or chart refresh on
 `/events/<subject>/`, and the homepage feature through `event.visual` (procedures, steps
-12 and 13, and the visual kinds). Manifest with every gate attestation true in fact, state
-views (procedures, step 12), then `npm run build` until the gate passes, then commit by
-explicit path with a plain message beginning `record:`. The story view of this build is headline, dek, KPI strip, figures,
-chronology and the records list, with no narrative paragraph yet.
+12 and 13, and the visual kinds). Manifest with every gate attestation true in fact, then
+`npm run build` until the gate passes, then commit by explicit path with a plain message
+beginning `record:`. Then the state sequence (procedures, step 12): refresh the story's
+state record against that commit, rebuild, and commit the two views it wrote with a message
+beginning `state:`. Turn one ends on those two commits. The story view of this build is
+headline, dek, KPI strip, figures, chronology and the records list, with no narrative
+paragraph yet.
 
 This is where turn one ends (`references/story.md`, "The two turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
@@ -191,8 +194,7 @@ Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_p
 `text_path`, `text_sha256`, a byte-exact `quote`, the registry receipt fields, and a plain
 `about`; add it to `story_sources` with a plain `usage` line; enrich every displayed figure
 (sourced with its passage, or computed with formula and inputs, unit with scale). Fields:
-`references/manifest-and-gate.md`. Fill the story's state record from the manifest
-(procedures, step 12), then:
+`references/manifest-and-gate.md`. Then:
 
 ```bash
 npm run build
@@ -247,9 +249,12 @@ story as written. Regenerate SOURCES.md and re-read the open-questions list as t
 two steps: the list asks for nothing the records list already holds.
 
 Commit by explicit path: page, data module, manifest, SOURCES.md, pins and text siblings,
-working note, reader model, interrogation file, the story's state view and its chain view. Never commit
-`.md.err` files, `data/sources/officials/`, or generated state beyond those two views.
-Plain messages, no attribution trailers. Do not push.
+working note, reader model, interrogation file, with a message beginning `story:`. Then the
+state sequence (procedures, step 12): refresh the story's state record against that commit,
+rebuild, and commit the two views it wrote (`data/state/event-<id>.json`,
+`data/state/chain-<root>.json`) with a message beginning `state:`. Never commit `.md.err`
+files, `data/sources/officials/`, or generated state beyond those two views. Plain
+messages, no attribution trailers. Do not push.
 
 The report is plain words: what ran, what the page covers, what you could not do and why,
 the local URL of the built page, and the commit hash. Everything in it is checkable from
@@ -311,7 +316,7 @@ reviewer's problem to escalate, not yours to explain away.
 - [ ] Every manifest figure appears in the built state record with its unit and passage.
 - [ ] SOURCES.md regenerated; every manifest `pinned_path` basename has a row.
 - [ ] Measured in a browser at 1280 wide, in all three modes (step 6).
-- [ ] Subject page and homepage updated; both state views committed with the page.
+- [ ] Subject page and homepage updated; the state sequence run after the story commit and both views committed.
 - [ ] The report names the reader-facing delta in one sentence.
 
 ## Gotchas

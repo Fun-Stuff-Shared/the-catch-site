@@ -106,16 +106,16 @@ knowledge of how hard a record was to get never decides whether a stranger reads
 **Turn one, the record** (SKILL.md steps 0 to 3): census, admission, whole-pin reads, the
 passage tables, the gap list with dispositions, the data module, figures, the chronology,
 the detail blocks, the subject page row and homepage feature, the manifest with every gate
-attestation true in fact, the state views, a green build. The story view of the built
-page is headline, dek, KPI strip, figures, chronology and the records list, with no
-narrative paragraphs yet. The turn ends on a commit and a plain report: the working note is
-the deliverable.
+attestation true in fact, a green build, the record commit, then the state sequence
+(procedures, step 12) and its state commit. The story view of the built page is headline,
+dek, KPI strip, figures, chronology and the records list, with no narrative paragraphs yet.
+The turn ends on those two commits and a plain report: the working note is the deliverable.
 
 **Turn two, the story** (SKILL.md steps 4 to 7): a fresh context that did not build the
 record reads the working note, the passage tables, the gap dispositions and the built facts
 view, writes the reader model and the grades, chooses the sections, writes the narrative
 one passage at a time with the pin open, runs the lints, the interrogation and the
-entailment check, and commits. It may admit a record turn one missed and writes the census
+entailment check, commits, then runs the state sequence and commits the two views. It may admit a record turn one missed and writes the census
 line for it. It never regenerates a figure or a detail block from memory; it reads them.
 
 One host, one worktree, one turn at a time. The second turn is a new session, never a

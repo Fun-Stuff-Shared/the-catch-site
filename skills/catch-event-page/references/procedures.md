@@ -184,7 +184,7 @@ matching `.html` (or `.pdf`), add both to SOURCES.md, and add the record to the 
 re-extracts. HTML: the text pin from the capture. PDF: `pdftotext -layout file.pdf file.txt`
 (a scanned PDF with no text layer goes through `/Volumes/4/CF/news-fqs-pilot/scripts/capture.py`,
 which falls back to Mistral OCR). CSV: the file is its own text. Video or audio: the
-transcript `.txt` from undertone (step 3, the video rule). A record whose `text_path` is missing or whose
+transcript `.txt` from undertone (step 5, the video rule). A record whose `text_path` is missing or whose
 hash does not match the file is not a record.
 
 **A video is read twice: the audio and every frame.** An ad's citations, disclaimers, and
@@ -267,11 +267,11 @@ what the record shows. Be ready for the page's own earlier claim to be the wrong
 
 Turn one (`story.md`, "The two turns") ends here: data module (`src/data/<slug>.mjs`: event,
 kpis, series, tables, every derived number with a comment naming its file), figures, the
-chronology table, the record's own lines as `SourcedBlock kind="record" detail`, manifest,
-the subject page row and the homepage feature (step 13, first two bullets), the manifest
-with every gate attestation true in fact, state views (step 12), a green build (step 10),
-one commit. The story view of that build is headline, dek, KPI strip, figures, chronology
-and the records list, with no narrative yet.
+chronology table, the record's own lines as `SourcedBlock kind="record" detail`, the
+subject page row and the homepage feature (step 13, first two bullets), the manifest with
+every gate attestation true in fact, a green build (step 10), the record commit, then the
+state sequence (step 12) and its state commit. The story view of that build is headline,
+dek, KPI strip, figures, chronology and the records list, with no narrative yet.
 
 Turn two is a fresh session. It reads the working note, the passage tables, the gap-list
 dispositions and the built page, then writes `checks/reader-models/<subject>--<story>.md`
@@ -397,8 +397,10 @@ Enrich every manifest figure before running the command:
   context to establish which quantity the number measures; finding digits alone does not
   establish their meaning. For a sum over selected records, record the selection rule too.
 
-Commit the enriched manifest first so the accepted figure records name the site commit
-and exact manifest hash. From the SAI checkout:
+**The state sequence.** It runs at the end of each turn, after that turn's commit, and it
+is the same both times. Commit the page, data module and enriched manifest first, so the
+accepted figure records name the site commit and the exact manifest hash. Then, from the
+SAI checkout:
 
 ```bash
 cd /Volumes/4/CF/sai
@@ -427,8 +429,10 @@ npm run build
 The build pulls the refreshed views. Inspect the built story's tracked-figures block:
 every manifest figure has its value, unit, and source passage; every computed figure is
 labelled Computed and shows all inputs. Texas's acceptance example has 44 registered pins
-and 15 figures. A missing or empty block is not done. Do not commit generated `data/state/`
-files as part of authoring.
+and 15 figures. A missing or empty block is not done. Then commit the two views the refresh
+wrote for this story, `data/state/event-<id>.json` and `data/state/chain-<root>.json`, with
+a message beginning `state:`; the hosted build has no state directory and reads committed
+views (`scripts/pull-state.mjs`). Never commit any other generated `data/state/` file.
 
 ### Optional Luna read
 
@@ -461,7 +465,8 @@ view refresh are available without launching or interrupting that maintenance ru
 - Subject page: one timeline row and the KPI/chart refresh. Homepage: the latest story.
   Related pages link both ways. Turn one does this from the data module; turn two checks
   the row and the feature still describe the story as written.
-- Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files.
+- Commit by explicit path: page, data module, manifest, SOURCES.md, the pinned files; then
+  the state sequence (step 12) and its commit of the two views.
 - The publication decision is a human's. Stage the build, add the staged row with a
   ships-by date where the project tracks staging, and hand over the rendered page (URL or
   screenshot), never a receipt list.
