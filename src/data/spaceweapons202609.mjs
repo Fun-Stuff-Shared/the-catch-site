@@ -1,20 +1,50 @@
 // U.S. on-orbit space control weapons confirmation, September 14, 2026.
-// Figures trace to pinned AFNS, Space Force remarks, the Iron Dome EO, and the
-// SpacePolicyOnline carrier for the CBO Golden Dome estimate (CBO PDF refused).
+// Figures trace to pinned Air Force and Space Force records, the Space Force FY2027
+// budget release, the UN press release on the April 2024 Security Council vote, the
+// Defense Department's April 2022 remarks, and SpacePolicyOnline's report of the CBO
+// Golden Dome estimate (the CBO PDF refused capture).
+
+// Space Force FY2027 budget release, April 21, 2026
+// (data/sources/space-weapons/ussf-fy2027-budget-2026-04-21.txt).
+export const spaceControlFy2027 = {
+  billions: 21.6, // "The proposal requests $21.6 billion- a 158% increase from FY26-"
+  increasePct: 158,
+  ussfTotalBillions: 71.1, // "$71.1 billion for the Space Force"
+};
+
+// UN press release SC/15678, April 24, 2024, Internet Archive copy
+// (data/sources/space-weapons/un-sc15678-2024-04-24-archive.txt).
+// "By a vote of 7 in favour ... to 7 against ..., with 1 abstention (Switzerland), the Council rejected the amendment"
+// "By a vote of 13 in favour to 1 against (Russian Federation), with 1 abstention (China), the Council then rejected the draft resolution"
+export const unVote2024 = {
+  amendmentFor: 7,
+  amendmentAgainst: 7,
+  amendmentAbstain: 1,
+  resolutionFor: 13,
+  resolutionAgainst: 1,
+  resolutionAbstain: 1,
+};
+
+// Deputy Defense Secretary Hicks, April 18, 2022, as prepared
+// (data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.txt):
+// "Russia conducted a November 2021 anti-satellite missile test, which created over 1,500 pieces of trackable debris."
+export const russiaAsatTest2021 = {
+  debrisPieces: 1500,
+};
 
 export const event = {
   slug: "space-weapons/2026-09-14-on-orbit-weapons-confirmed",
   title: "The U.S. says it has on-orbit space control weapons",
-  dek: "Air Force Secretary Troy Meink said so on September 14 at a Maryland conference. The next day the Space Force chief said Guardians already operate them. Neither named the weapons.",
+  dek: "Air Force Secretary Troy Meink said it on September 14 at a conference in Maryland, and the Space Force chief repeated it the next day. Neither said what the weapons are, how many there are, or when they went up. The 1967 treaty that governs space bans only nuclear and other mass-destruction weapons in orbit.",
   name: "On-orbit space control weapons",
   span: "September 14, 2026",
   date: "2026-09-14",
-  updated: "2026-09-17",
+  updated: "2026-09-18",
   kpis: [
-    { value: "Sept 14", unit: "2026", label: "First official acknowledgement they are already on orbit" },
-    { value: "Sept 15", unit: "2026", label: "Schiess: Guardians operate them" },
-    { value: "$21.6", unit: "billion", label: "FY2027 Space Control request" },
-    { value: "1967", unit: "", label: "Outer Space Treaty WMD ban" },
+    { value: "Sept 14", unit: "2026", label: "Air Force secretary: the U.S. has weapons in orbit" },
+    { value: "Sept 15", unit: "2026", label: "Space Force chief repeats it" },
+    { value: `$${spaceControlFy2027.billions}`, unit: "billion", label: "asked for space control programs in the 2027 budget request" },
+    { value: "1967", unit: "", label: "treaty bans nuclear and mass-destruction weapons in orbit" },
   ],
 };
 
@@ -24,7 +54,7 @@ export const event = {
 // date_difference_days: 2026-09-14 minus 2025-01-27 = 595 days.
 export const eoToConfirmationDays = 595;
 
-// SpacePolicyOnline carrier for CBO May 12, 2026 report
+// SpacePolicyOnline report of the CBO May 12, 2026 estimate
 // (data/sources/space-weapons/spo-cbo-golden-dome-2026-05.txt).
 // CBO PDF https://www.cbo.gov/system/files/2026-05/62379-golden-dome.pdf refused (403).
 export const cboGoldenDome = {
@@ -39,28 +69,24 @@ export const cboGoldenDome = {
   ombMandatoryBillions: 17.1, // same pin
 };
 
-// Space Force FY2027 budget release, April 21, 2026
-// (data/sources/space-weapons/ussf-fy2027-budget-2026-04-21.txt).
-export const spaceControlFy2027 = {
-  billions: 21.6, // "The proposal requests $21.6 billion- a 158% increase from FY26-"
-  increasePct: 158,
-  ussfTotalBillions: 71.1, // "$71.1 billion for the Space Force"
-};
-
 export const chronology = {
   rows: [
-    ["1967-10-10", "Outer Space Treaty in force; Article IV bans nuclear and other WMD in orbit"],
-    ["2023-04-18", "Saltzman tells Senate appropriations: substantial on-orbit capability by 2026"],
-    ["2025-01-27", "Iron Dome for America EO orders proliferated space-based interceptors"],
-    ["2025-03", "CSO Saltzman defines Space Control as kinetic and non-kinetic means"],
-    ["2025-05-20", "Saltzman tells SASC: counter-space systems designed to defeat hostile use of space"],
-    ["2025-12-18", "EO 14369: counter threats from very low Earth orbit through cislunar space"],
-    ["2026-04-21", "FY2027 request: $21.6 billion for Space Control inside a $71.1 billion Space Force total"],
-    ["2026-05-12", "CBO notional Golden Dome cost about $1.2 trillion over 20 years"],
-    ["2026-09-08", "Space Command announces Apollo Maneuvers live-fly exercise"],
-    ["2026-09-14", "Meink: U.S. has on-orbit space control weapons"],
+    ["1967-10-10", "Outer Space Treaty in force; Article IV bans nuclear and other mass-destruction weapons in orbit"],
+    ["2022-04-18", "United States pledges not to test ground-launched missiles that destroy satellites"],
+    ["2023-04-18", "Saltzman tells Senate appropriators: a substantial on-orbit capability by 2026"],
+    ["2024-04-24", `Russia vetoes the U.S. and Japan Security Council resolution restating the treaty ban, ${unVote2024.resolutionFor} to ${unVote2024.resolutionAgainst}`],
+    ["2025-01-27", "Iron Dome for America order calls for space-based interceptors"],
+    ["2025-03", "Saltzman defines space control as kinetic and non-kinetic means"],
+    ["2025-04-10", "Space Force planning framework lists orbital strike among offensive counterspace actions"],
+    ["2025-05-20", "Saltzman tells Senate Armed Services: counter-space systems designed to defeat hostile use of space"],
+    ["2025-12-18", "Executive Order 14369: counter threats from very low Earth orbit through cislunar space"],
+    ["2026-04-21", `Budget request: $${spaceControlFy2027.billions} billion for space control inside a $${spaceControlFy2027.ussfTotalBillions} billion Space Force total`],
+    ["2026-06-12", "Secure World Foundation: the U.S. has the building-block technologies, no acknowledged program"],
+    ["2026-09-08", "Space Command announces the Apollo Maneuvers exercise"],
+    ["2026-09-14", "Meink: the U.S. has on-orbit space control weapons"],
     ["2026-09-15", "Schiess: Guardians operate on-orbit weapons; China and Russia respond"],
     ["2026-09-15", "Space Force panel: field advanced offensive and defensive space control capabilities"],
+    ["2026-09-16", "Whiting: the joint force retains on-orbit space control weapons"],
   ],
 };
 
@@ -85,12 +111,10 @@ export const quotes = {
   meinkSbi:
     "our Space-Based Interceptor program, which moved from initial contract to flight-ready hardware in less than one year",
   meinkThoughtOut: "very well thought out",
-  meinkDominance:
-    "It is critically important that we maintain our dominance, not only in the air but in space",
   schiessOperate:
-    "Today, Guardians\u00a0operate\u00a0on-orbit\u00a0weapons\u00a0that can\u00a0defend the Joint Force against\u00a0space-enabled attacks.",
+    "Today, Guardians operate on-orbit weapons that can defend the Joint Force against space-enabled attacks.",
   schiessBattlefield:
-    "Space is both a\u00a0battlefield and the backbone of\u00a0our\u00a0Joint Force",
+    "Space is both a battlefield and the backbone of our Joint Force",
   guoPeaceful:
     "China stands for peaceful use of outer space and keeping it safe, and opposes any arms race in outer space or any attempt to weaponize it and turn it into a warzone",
   guoUrge:
@@ -131,4 +155,20 @@ export const quotes = {
   eo14369Vleo: "from very low-Earth orbit and through cislunar space",
   growthOffensiveDefensive:
     "advanced offensive and defensive space control capabilities",
+  whAsatCommitment:
+    "commits not to conduct destructive, direct-ascent anti-satellite (ASAT) missile testing",
+  whDebris: "The long-lived debris created by these tests now threaten satellites",
+  hicksDebris: "created over 1,500 pieces of trackable debris",
+  unResolutionVote:
+    "By a vote of 13 in favour to 1 against (Russian Federation), with 1 abstention (China), the Council then rejected the draft resolution",
+  unAmendmentVote:
+    "with 1 abstention (Switzerland), the Council rejected the amendment",
+  unRussiaAnyKind:
+    "a ban on weapons of any kind being placed in space, not just weapons of mass destruction",
+  frameworkCounterspace:
+    "Space control consists of offensive and defensive actions, referred to collectively as counterspace operations",
+  frameworkOrbitalStrike:
+    "Actions taken to destroy, disrupt, or degrade adversary space platforms in the space domain",
+  swfNoProgram:
+    "has developed many of the underlying technologies for co-orbital counterspace capabilities without maintaining an acknowledged dedicated program",
 };

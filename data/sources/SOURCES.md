@@ -1514,3 +1514,15 @@ Mail-voting stay denial (2026-09-14): Court order, docket, First Circuit stay de
 | data/sources/iran-war/senate-isvp-approps-2026-07-21.txt | 4 | ef8964238ee912f4 |
 
 Round 3 additions for the Iran war cost story (September 18, 2026): the Associated Press and Reuters dispatches of September 18 were admitted through the registry from their U.S. News carrier copies; the Washington Post page served only a subscription stub on a direct fetch and on the Internet Archive route and is listed but not cited; CRS report R42699 was admitted from congress.gov; the Senate video player page for the July 21 hearing served no transcript.
+
+Space-weapons story round 3 (2026-09-18 local): the April 2022 anti-satellite test pledge (White House fact sheet and Defense Department Hicks remarks), the UN press release on the April 24, 2024 Security Council vote (press.un.org serves a JavaScript challenge; the pin is the Internet Archive snapshot saved January 3, 2025, captured through the registry), the Space Force Space Warfighting framework PDF (cover dated March 2025, file dated April 10, 2025), and the Secure World Foundation page for its 2026 U.S. co-orbital anti-satellite fact sheet (the PDF is on dropbox.com, which refuses the registry). janes.com refused the registry on both routes; nothing from it is on the page.
+| data/sources/space-weapons/wh-asat-commitment-2022-04-18.html | 138789 | bd1d360b2076d7da |
+| data/sources/space-weapons/wh-asat-commitment-2022-04-18.txt | 3309 | 75a3116570be18ed |
+| data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.html | 166095 | 1dd55b227c0f4a7d |
+| data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.txt | 3216 | b9cffa48dadf9c0e |
+| data/sources/space-weapons/un-sc15678-2024-04-24-archive.html | 72907 | 3d64093d1d5eabfe |
+| data/sources/space-weapons/un-sc15678-2024-04-24-archive.txt | 7697 | 2c361f29f0091e67 |
+| data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.pdf | 1732574 | 0381e8f3390de2bb |
+| data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.txt | 63663 | c1bc3c9b8aec5a62 |
+| data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.html | 128859 | b96a47e078699085 |
+| data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.txt | 2481 | 8b06aeb6cb107b2c |

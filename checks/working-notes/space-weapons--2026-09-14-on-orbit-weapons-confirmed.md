@@ -1,5 +1,98 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 3 (space-patch.md items 25 to 32 and the avatar read of 2026-09-18; worktree the-catch-site-wt-r3-space, branch author/patch-r3-space, skill 2.1 at e59af305)
+
+### Captures (all through `capture news --reason ...`, 2026-09-18 evening local, run ids are UTC 2026-09-19)
+- Defense Department article 3003442 (Hicks remarks, April 18, 2022): body_captured, capture-oneoff-20260919T001605Z, served from war.gov. Pin `dod-hicks-asat-pledge-2022-04-18`.
+- White House fact sheet April 18, 2022 (bidenwhitehouse.archives.gov): body_captured, capture-oneoff-20260919T001842Z. Pin `wh-asat-commitment-2022-04-18`. Captured because the Hicks text carries the pledge only in its title; the fact sheet carries the pledge sentence and the debris reasoning.
+- press.un.org sc15678: direct route served a JavaScript challenge stub (304 chars, capture-oneoff-20260919T001556Z); `--via-archive` did not fall back because the direct fetch returned 200 (001748Z "already held", 001840Z forced: same stub). The Internet Archive snapshot of January 3, 2025 captured through the registry at web.archive.org (capture-oneoff-20260919T001945Z, 7,603 chars, full text). Pin `un-sc15678-2024-04-24`. UN News 1148951 and the U.S. Mission explanation of vote also captured (capture-oneoff-20260919T002117Z), not cited.
+- Space Warfighting framework PDF: first URL guess returned 404 (capture-oneoff-20260919T001633Z); the served URL under /Portals/2/Documents/SAF_2025/ captured body_captured (capture-oneoff-20260919T001727Z, 1.7 MB, 63,663 chars). Pin `ussf-space-warfighting-framework-2025-04-10`. Cover page says March 2025; the PDF's own creation date is April 10, 2025 (matches the filename "final_20250410"); the table row uses April 10, 2025 and the proof line says so.
+- Secure World Foundation fact sheet page: body_captured (capture-oneoff-20260919T001624Z), page dated June 12, 2026. Pin `swf-us-coorbital-fact-sheet-2026-06-12`. The 2026 PDF link on that page is a dropbox.com URL; dropbox.com robots.txt refuses the registry (capture-oneoff-20260919T001804Z). The foundation's own page is the record.
+- Janes AFA 2026 article: janes.com robots.txt disallows the URL; refused on the direct route (capture-oneoff-20260919T001719Z) and on `--via-archive` (001756Z). Not admitted. No sentence written from it. Manifest needs_ledger row; no records[] row because the gate requires a pin on every record.
+
+### Items 25 to 32
+25. The "government control" sentence is gone from the page. The ABC spokesperson sentence (offensive and defensive use at the direction of combatant commands) moved to What happened, cited to the ABC pin; the May 2025 "government systems" testimony is not on the page (its table row stays).
+26. Where this sits, paragraph after the treaty paragraph: the April 2022 pledge from the White House fact sheet ("commits not to conduct destructive, direct-ascent anti-satellite (ASAT) missile testing"), what it covers (a destructive missile test, Russia's November 2021 test, the long-lived debris), Hicks's 1,500 pieces of debris (data module `russiaAsatTest2021.debrisPieces`), and one sentence on what the pledge text does not name. Table row 2022-04-18. No "DA-ASAT" on the page.
+27. Table row 2025-04-10 and one Where this sits paragraph quoting the framework: "Space control consists of offensive and defensive actions, referred to collectively as counterspace operations" and the orbital strike definition, pursuit versus standoff. The item's claim that the framework "names orbital warfare" is refuted by the pin: `grep -i "orbital warfare"` returns nothing in the 63,663-character text; the framework's terms are counterspace operations, orbital strike, space link interdiction, terrestrial strike, and "space-based fires" (in the terrestrial strike list). The page uses only the pin's words.
+28. Where this sits: the SWF sentence ("has developed many of the underlying technologies for co-orbital counterspace capabilities without maintaining an acknowledged dedicated program") and the building-blocks sentence, both cited to the pin; then the sentence on what September 14 added (the acknowledgement), cited to the framework, the fact sheet, and the Air Force's first-time line. Table row 2026-06-12.
+29. Not done: Janes refused on both routes (above). No deterrence sentence added. Palmer's Reuters deterrence line (already on the page) stays as the deterrence statement on the record.
+30. Table row 2024-04-24 and one Where this sits paragraph: the draft's aim, the amendment vote 7 to 7 with 1 abstention, the veto 13 to 1 with China abstaining, Russia's "weapons of any kind" question, then the three layers sentence cited to the treaty (tier 1), the White House pledge (tier 2), and the UN release (tier 3). Vote counts in the data module `unVote2024`; four new manifest figures. Also used in Three things (3) and the claim check.
+31. The framing sentence follows the SWF and Kendall sentences: development disclosed 2024, doctrine 2025, technology base on the open record by June; what September 14 added is the government's statement that weapons are already on orbit, with the Air Force's first-time gloss attributed. No claim that the technology is old.
+32. `event.updated` set to 2026-09-18 (the day of these captures and searches, local time). The September 18 cbo.gov line the avatar read flagged (E7) is gone from the story view; the cbo.gov note is in the proof block without a date.
+
+### Avatar read, Space weapons, A to E, and the closing patterns
+A1, E2: the "one institution speaking" paragraph is cut (Space Command is not the Air Force). The What happened closer is now "Two officials in two days said the weapons exist and can defend U.S. forces. Neither named..." cited to the two speeches and ABC.
+A2, A3, A4: catch headlines rewritten as plain statements: "They said the weapons exist, and stopped there." / "Deutsche Welle attributed a 2025 speech to this week's press release." / "Smaller slips." No "X, not Y" shape anywhere on the page (checked by reading every h3 and every paragraph's last sentence).
+A5: Meink's "same joint force from the other direction" sentence cut from Who feels it.
+A6, E6: "The record suggests a link to the 2026 disclosure; it does not prove it" cut; the April 2023 testimony stays only as a table row.
+A7: "aimed at publics ... not at a named satellite" cut; the diplomats' answers live only in What happened next.
+A8, A9: both "Outside the force" openers gone; Who feels it now opens on Schiess's ask, then Hicks on GPS and wildfire crews, then Schiess on the battlefield, then the closer.
+A10: kickers rewritten: "Two claims readers bring to this story", "What the records leave open", "Nine outlets, checked against the Air Force's own account", "Tuesday's answers, and a third official on Wednesday", "Treaty, pledge, veto, doctrine, budget".
+A11, C5: the treaty's other duties paragraph cut.
+A12, C7: the watching line names two observables (the First Committee drafts, a release naming a system); the White House / Hegseth / allied absences are now two data-absence paragraphs in unknowns and nowhere else.
+A13: claim check 1 closes "That claim checks out. The record names no launcher, warhead, count, or orbit, so a story that supplies one is adding to it."
+B1, D1, D2, D3, pattern 1: dek now carries the catch (no system, count, or date; the treaty bans only nuclear and mass-destruction weapons in orbit); Three things (2) is the silence and the ABC line, (3) is the treaty and the 2024 veto; catch row 1 is the one-line version.
+B2, E5, pattern 6: the launched row is no longer a catch or a mislabeled verdict; it is one "Smaller slips" line and a "not in the record" card shared by The Hill and Breaking Defense, verdict re-checked at the Hill pin (line 4 "has launched a weapon into orbit"; line 5 "did not give details as to the type of weapon that is now in space or when it was launched") and the Air Force pin (no launch, date, vehicle, or mission).
+B3: DW row rewritten: the outlet, the quoted definition (now quoted where it is first used), whose words they are, the search, and why it matters to a reader.
+B4, pattern 3: "AFNS" nowhere on the page; "the Air Force News Service" once, then "the Air Force's account" / "the Air Force's news service".
+B5, B6: "pins" and "carrier" gone from reader text (grep on the page source: 0 hits for "\bpins?\b" and "carrier").
+B7, B8, D3: KPI labels rewritten in reader words; no WMD, CSO, SASC, EO, SBI, ICBM, AFNS in KPI labels or table rows (table rows: "Executive Order 14369" spelled out; "mass-destruction weapons"; "Senate Armed Services"; "Senate appropriators").
+B9: "the same day" ambiguity gone; Three things (3) no longer carries the responses; the dek and What happened next date them September 15.
+B10, C4: the floor wording note is a proof-layer details block under What happened.
+B11: the budget discrepancy sentence is in the Golden Dome proof block only.
+B12, C6: the Victus Haze / Epic Fury paragraph cut.
+B13: "AMOS" replaced by the conference's name from the pin's title; "Combat Forces Command" is not in reader text (the September 15 panel is a table row only).
+B14: unknowns opens on the unknowns; the two paragraphs of knowns are gone (item 25).
+B15, pattern 6: one-line key to the verdict words above the cards; only checks out, consistent, not in the record are used.
+B16: the CBO row is out of the chronology; the figure sits in the proof block with its kind ("notional cost for a national missile defense architecture").
+B17: "Guardians" introduced from Schiess's own line ("when I say Guardians, I'm talking about those in and out of uniform"), cited.
+C1, pattern 5: the "This story rests on" line was already `data-layer="proof"`; typing confirmed, text shortened and updated.
+C2, D1, E4: the two CBO Golden Dome story paragraphs cut; figures moved to a proof details block; the Golden Dome catch row is gone. One What happened sentence keeps the Space-Based Interceptor line from Meink's speech because the same speech carries it.
+C3, pattern 4: the prose retelling the table rows (April 2023, May 2025, December 2025, the September 15 panel) cut; the table carries them.
+C8: prediction-market line cut.
+C9, E8: Samson is in one place (Where this sits, after the SWF fact sheet, as a sentence about what Defense One and CNBC wrote); the Defense One card is gone (it checked an outlet against an opinion).
+C10: Schiess's audience ask is one sentence.
+E1: "first" is attributed to the Air Force's news service in the KPI label, Three things, Where this sits, and the claim check; the page's own voice no longer asserts it.
+E3: the treaty claim check names Russia's representative (UN pin) and The Guardian (which got it right); no outlet is faulted for a claim none made (nine coverage pins searched for "treaty": Guardian, CBS, UPI, DW, NPR, SpacePolicyOnline, Astronomy mention it; every one says the treaty bans mass-destruction weapons only).
+E7: see item 32.
+Pattern 7: every paragraph's last sentence read for a self-disclaimer; the Apollo Maneuvers paragraph ("does not name the weapons") cut, the exercise stays as a table row; the Golden Dome proof block ends on the kind of number, in proof.
+Pattern 8: the AFNS/floor wording discrepancy appears once, in proof; the "first" question appears once, attributed.
+Facts the avatar items asked for that the pins do not hold: none invented. A definition of "combatant command" is not in any pin, so the term stands in the spokesperson's quoted sentence without a gloss.
+
+### Verdicts re-checked against the pins before changing them
+- The Hill: mislabeled -> not in the record. Hill line 4 "has launched a weapon into orbit"; no pin contradicts a launch and none describes one (Air Force account, Schiess remarks, September 15 Space Force article searched for "launch": Hill and Breaking Defense are the only holders).
+- Breaking Defense: same, shares the card.
+- Deutsche Welle: unconfirmed -> not in the record (the closed set has no "unconfirmed" outcome for this shape; the search is on the card).
+- USA Today: new card, not in the record. Pin line 22 "would appear to go hand in hand with the Trump administration's planned "Golden Dome" missile defense system"; the Air Force pin carries the interceptor program in its own paragraph (line 24) with no link to the space control sentence.
+- Defense One: card removed (E8); the pin is still cited in narrative for what Samson said.
+- AP, CNBC, CBS, Reuters, BBC: checks out, unchanged, each re-read at the pin.
+- UPI / ABC / Guardian: consistent; the Guardian's treaty sentence (line 17) added to the verdict and cited.
+
+### pin_gaps (after the draft; 1,190 lines, 1,102 of them in the two hearing transcripts)
+- afns-meink: "18 months" (Meink's time in the job): out of scope.
+- ussf-secaf-announces: same "18 months" line: out of scope.
+- ussf-schiess-remarks: General Wilsbach, 12 days (his time as chief), 30 years, seven years, Raymond, Spaatz, Vandenberg, Guardian Ethos, Jenna's eight years and instructor post, "Integrating Guardian Power", two years (Gray), Admiral Cooper: out of scope (service history and personnel stories). Victus Haze / 17 hours: held unused (exercise color; the paragraph was cut on the avatar read's C6). "United States Space Force" (line 52): out of scope.
+- ussf-saltzman-warfare-symposium: 56 years / Apollo 9, Space Superiority, System Deltas, hundred hours: out of scope.
+- china-mfa-guo: all 13 lines are other questions at the same press conference (CIFTIS, Japan parliamentarians, South China Sea, a September 14 space exhibition note): out of scope.
+- ost-1967: General Assembly 1963 resolution, treaty title words, UN Charter line, depositary governments, amendment clause: out of scope (the operative clause used is Article IV).
+- eo-iron-dome: "40 years" threat preamble, "General Provisions": out of scope.
+- spo-cbo-golden-dome (and the cbo-golden-dome-pdf row, same text): seven days, $175 billion (the president's May 2025 figure), three years, $524 billion (earlier CBO), $185 billion (Guetlein), $1 trillion acquisition share, 70 and 60 percent, $398 million, $17.1 billion, $17.5 billion: held unused; the proof block carries the CBO total, the interceptor figures, and the FY2027 request lines ($398 million and $17.1 billion are on the page inside the proof block through the data module; the list flags them because the module writes them as bare numbers).
+- ussf-whiting-amos: Sun Tzu: out of scope.
+- eo-14369: $50 billion investment goal, 90 and 180 day deadlines, NASA plan, 30 percent schedule test, Other Transactions Authority, General Provisions: out of scope (commercial and acquisition provisions).
+- ussf-growth-space-control: Combat Forces Command: held unused (the panel is a table row; the command's name is not needed in reader text).
+- wh-asat-commitment: "Vice President Harris" (National Space Council tasking sentence): held unused.
+- un-sc15678: Sierra Leone and United Kingdom (vote rosters): out of scope; "two countries" (Japan on the amendment): out of scope; "65 countries" co-sponsors: held unused.
+- ussf-space-warfighting-framework: the table of contents names (Space Superiority, Integrated Cyberspace Operations, Space Segments, Space Domain Awareness, Planning and Execution Considerations), "Competitive Endurance", "one satellite", "three items": out of scope; the page uses the space control, counterspace operations, orbital strike, and standoff passages.
+- govinfo-chrg-118shrg50509 (1,014 lines): the hearing covers the whole fiscal 2024 Air Force and Space Force request. Used: line 8361 (substantial on-orbit capability by 2026, table row). Held unused: lines 6913 to 6993 (Saltzman's written statement on counter-space threats and FY24 counter-space funding, no program named) and line 13422 (the PRC's on-orbit anti-satellite weapon prototype). Everything else (aircraft, personnel, bases, munitions): out of scope.
+- sasc-saltzman-2025-05-20 (88 lines): used line 765 (counter-space systems designed to defeat, table row). Held unused: lines 2560 to 2564 (PRC aggressive on-orbit capabilities) and the "government systems" answer (dropped from the page on item 25). The rest: out of scope.
+
+### Gate, lints, state
+- `npm run build` against the committed state (CATCH_STATE_SOURCE=/nonexistent): event gate passed, 15 prose manifests, mechanical checks clean; shell gate passed. Against the live state store the gate fails on another story's label (`Rendered story label differs: event-iran-war-2026-09-15-cbo-estimates-38-billion-war-cost`), which this patch does not touch.
+- `lens_lint`: clean. `quote_lint`: clean. Built page: 0 em dashes.
+- `pin_gaps`: 1,190 lines, every one dispositioned above by record or by class.
+- State: `state stage-story` run after the manifest commit; the story view and chain view refreshed and committed in the follow-up commit (hash in the report).
+
+
 ## Round 2 (review items 18–24, 2026-09-18)
 
 18. Catch headline "Has, not launched this week." rewritten to "Has, with no launch date given." AFNS/Schiess possession prose and Hill launch line kept. Verified: AFNS has no launch date; Hill pin has "The United States has launched a weapon into orbit".

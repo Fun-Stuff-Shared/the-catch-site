@@ -5,7 +5,7 @@
   "story_title": "The U.S. says it has on-orbit space control weapons",
   "state_event_id": "event-space-weapons-2026-09-14-on-orbit-weapons-confirmed",
   "event_record": "/events/space-weapons/",
-  "completed_by": "grok, skill catch-event-page",
+  "completed_by": "grok, skill catch-event-page; round 3 patch by Claude, skill 2.1",
   "date_completed": "2026-09-18",
   "sub_events": [
     {
@@ -43,7 +43,7 @@
     {
       "id": "lineage-ost-eo-saltzman-cbo",
       "date": "1967-10-10",
-      "label": "Treaty, Iron Dome EO, Saltzman definition, CBO estimate",
+      "label": "Treaty, 2022 pledge, 2024 veto, doctrine, budget, open-source baseline",
       "section_anchor": "where-this-sits",
       "records": [
         "ost-1967-state-archive",
@@ -54,7 +54,12 @@
         "govinfo-chrg-118shrg50509",
         "sasc-saltzman-2025-05-20",
         "eo-14369-2025-12-18",
-        "ussf-fy2027-budget-2026-04-21"
+        "ussf-fy2027-budget-2026-04-21",
+        "wh-asat-commitment-2022-04-18",
+        "dod-hicks-asat-pledge-2022-04-18",
+        "un-sc15678-2024-04-24",
+        "ussf-space-warfighting-framework-2025-04-10",
+        "swf-us-coorbital-fact-sheet-2026-06-12"
       ]
     },
     {
@@ -97,7 +102,7 @@
       "pinned_path": "data/sources/space-weapons/ussf-schiess-remarks-2026-09-15.html",
       "text_path": "data/sources/space-weapons/ussf-schiess-remarks-2026-09-15.txt",
       "text_sha256": "sha256:358778d3ae5bb9172f40b12b51d18f9282c02ae6daa39c61124194027ddf9747",
-      "quote": "Today, Guardians\u00a0operate\u00a0on-orbit\u00a0weapons\u00a0that can\u00a0defend the Joint Force against\u00a0space-enabled attacks.",
+      "quote": "Today, Guardians operate on-orbit weapons that can defend the Joint Force against space-enabled attacks.",
       "quote_span_check": "byte_exact",
       "about": "As-delivered remarks by the chief of space operations the day after Meink's confirmation.",
       "capture_run": "capture-oneoff-20260918T074907Z",
@@ -623,7 +628,7 @@
       "pinned_path": "data/sources/space-weapons/russia-mfa-zakharova-2026-09-15.html",
       "text_path": "data/sources/space-weapons/russia-mfa-zakharova-2026-09-15.txt",
       "text_sha256": "sha256:ff0ec1dc8dd7e5d825a5bc87fbdc0029d86ab80fdac2e95afdb05539d1ba89ca",
-      "quote": "\u043e\u0440\u0443\u0436\u0435\u0439\u043d\u044b\u043c \u043f\u043e\u0442\u0435\u043d\u0446\u0438\u0430\u043b\u043e\u043c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0431\u0430\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f",
+      "quote": "оружейным потенциалом космического базирования",
       "quote_span_check": "byte_exact",
       "about": "The Russian foreign ministry's own page for Zakharova's written comment on Meink's remarks.",
       "capture_run": "capture-oneoff-20260918T082304Z",
@@ -648,7 +653,7 @@
     },
     {
       "id": "ussf-fy2027-budget-2026-04-21",
-      "title": "Budget request directs record $338.8 billion to Air Force and Space Force to meet \u201cchallenges of today and tomorrow\u201d",
+      "title": "Budget request directs record $338.8 billion to Air Force and Space Force to meet “challenges of today and tomorrow”",
       "publisher": "U.S. Space Force / AFNS",
       "date": "2026-04-21",
       "url": "https://www.spaceforce.mil/News/Article-Display/Article/4465543/budget-request-directs-record-3388-billion-to-air-force-and-space-force-to-meet",
@@ -693,6 +698,86 @@
       "capture_run": "capture-oneoff-20260918T093220Z",
       "capture_raw_sha256": "sha256:1786988964fbed285e59c253fc8c77944d6dd2cf28f4a4a4c02b625fe120370b",
       "captured_at": "2026-09-18T09:32:59.117886Z"
+    },
+    {
+      "id": "wh-asat-commitment-2022-04-18",
+      "title": "FACT SHEET: Vice President Harris Advances National Security Norms in Space",
+      "publisher": "The White House",
+      "date": "2022-04-18",
+      "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/04/18/fact-sheet-vice-president-harris-advances-national-security-norms-in-space/",
+      "pinned_path": "data/sources/space-weapons/wh-asat-commitment-2022-04-18.html",
+      "text_path": "data/sources/space-weapons/wh-asat-commitment-2022-04-18.txt",
+      "quote": "commits not to conduct destructive, direct-ascent anti-satellite (ASAT) missile testing",
+      "about": "White House fact sheet on the April 18, 2022 U.S. commitment not to conduct destructive direct-ascent anti-satellite missile tests, with its debris reasoning.",
+      "capture_run": "capture-oneoff-20260919T001842Z",
+      "capture_raw_sha256": "sha256:bd1d360b2076d7da814d85d52663ef1c3f10d4b431279e5725a681c54c451e25",
+      "captured_at": "2026-09-19T00:18:50.890776Z",
+      "text_sha256": "sha256:75a3116570be18ed89f074e1496a74cc5685cd888a3c6eee67f580884bca2662",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "dod-hicks-asat-pledge-2022-04-18",
+      "title": "Remarks by Deputy Secretary of Defense Dr. Kathleen H. Hicks on the New U.S. Commitment Not to Conduct Destructive Direct-Ascent Anti-Satellite Missile Testing at Vandenberg Space Force Base (As Prepared)",
+      "publisher": "U.S. Department of Defense",
+      "date": "2022-04-18",
+      "url": "https://www.defense.gov/News/News-Stories/Article/Article/3003442/",
+      "pinned_path": "data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.html",
+      "text_path": "data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.txt",
+      "quote": "created over 1,500 pieces of trackable debris",
+      "about": "Deputy Defense Secretary Hicks's prepared remarks at the April 18, 2022 Vandenberg event: the Russian November 2021 test's debris and who depends on GPS and missile warning satellites. The page now serves from war.gov.",
+      "capture_run": "capture-oneoff-20260919T001605Z",
+      "capture_raw_sha256": "sha256:1dd55b227c0f4a7d7dc285258c2a6ed7e8e8e8c61ff4c550ebd6d7c087b92b7d",
+      "captured_at": "2026-09-19T00:16:16.071681Z",
+      "text_sha256": "sha256:b9cffa48dadf9c0ed27b982ceb9602691be0b90ae1ad55f12d13c66024526a1e",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "un-sc15678-2024-04-24",
+      "title": "Security Council Fails to Adopt First-Ever Resolution on Arms Race in Outer Space, Due to Negative Vote by Russian Federation (SC/15678)",
+      "publisher": "United Nations",
+      "date": "2024-04-24",
+      "url": "https://press.un.org/en/2024/sc15678.doc.htm",
+      "pinned_path": "data/sources/space-weapons/un-sc15678-2024-04-24-archive.html",
+      "text_path": "data/sources/space-weapons/un-sc15678-2024-04-24-archive.txt",
+      "quote": "By a vote of 13 in favour to 1 against (Russian Federation), with 1 abstention (China), the Council then rejected the draft resolution",
+      "about": "UN press release on the April 24, 2024 Security Council vote: the U.S. and Japan draft on the Outer Space Treaty ban on weapons of mass destruction in orbit, Russia's amendment to ban all weapons (rejected 7 to 7), and Russia's veto. Internet Archive snapshot saved January 3, 2025; press.un.org served a JavaScript challenge to the registry on the direct and via-archive routes.",
+      "capture_run": "capture-oneoff-20260919T001945Z",
+      "capture_raw_sha256": "sha256:3d64093d1d5eabfea4c90c0e5afc43e031ca8d1589c00cdda6ef850d21a68e9c",
+      "captured_at": "2026-09-19T00:19:55.664966Z",
+      "text_sha256": "sha256:2c361f29f0091e675549b561452e6a4be575a1b5a7b4310c706aac8ebabec8f7",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "ussf-space-warfighting-framework-2025-04-10",
+      "title": "Space Warfighting: A Framework for Planners",
+      "publisher": "U.S. Space Force",
+      "date": "2025-04-10",
+      "url": "https://www.spaceforce.mil/Portals/2/Documents/SAF_2025/Space_Warfighting_-_A_Framework_for_Planners_BLK2_%28final_20250410%29.pdf",
+      "pinned_path": "data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.pdf",
+      "text_path": "data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.txt",
+      "quote": "Space control consists of offensive and defensive actions, referred to collectively",
+      "about": "The Space Force's planning framework: space control as offensive and defensive counterspace operations, with orbital strike, space link interdiction, and terrestrial strike as the offensive actions. Cover dated March 2025; the served file's own date is April 10, 2025.",
+      "capture_run": "capture-oneoff-20260919T001727Z",
+      "capture_raw_sha256": "sha256:0381e8f3390de2bb4233696208ca7e42575ab56928a61c8d60411f3c817e4ce0",
+      "captured_at": "2026-09-19T00:17:35.624856Z",
+      "text_sha256": "sha256:c1bc3c9b8aec5a627e79db8beca4bfbf66d90bd53ad18d6e2420a4b75d7a3950",
+      "quote_span_check": "byte_exact"
+    },
+    {
+      "id": "swf-us-coorbital-fact-sheet-2026-06-12",
+      "title": "US Co-Orbital Anti-satellite Testing Fact Sheet",
+      "publisher": "Secure World Foundation",
+      "date": "2026-06-12",
+      "url": "https://www.swfound.org/publications-and-reports/u-s-co-orbital-anti-satellite-testing-fact-sheet",
+      "pinned_path": "data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.html",
+      "text_path": "data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.txt",
+      "quote": "without maintaining an acknowledged dedicated program",
+      "about": "Secure World Foundation's page for its 2026 U.S. co-orbital anti-satellite fact sheet: the open-source baseline before September. The PDF itself is hosted on dropbox.com, whose robots.txt refuses the registry, so the foundation's own page is the record.",
+      "capture_run": "capture-oneoff-20260919T001624Z",
+      "capture_raw_sha256": "sha256:b96a47e078699085009c50e77bb99442ac8498b386767243a1f4cc49f20b5b75",
+      "captured_at": "2026-09-19T00:16:33.223809Z",
+      "text_sha256": "sha256:8b06aeb6cb107b2c6bc946fcac87012fcf11b5cb9326c541c9d4358b14d66a73",
+      "quote_span_check": "byte_exact"
     }
   ],
   "story_sources": [
@@ -700,267 +785,302 @@
       "id": "afns-meink-2026-09-14",
       "group": "primary",
       "label": "Air Force News Service on Meink's keynote",
-      "meta": " \u00b7 U.S. Air Force, September 14, 2026",
-      "usage": "the confirmation sentence and AFNS's first-time gloss"
+      "meta": " · U.S. Air Force, September 14, 2026",
+      "usage": "the confirmation sentence and the news service's first-time line"
     },
     {
       "id": "ussf-schiess-remarks-2026-09-15",
       "group": "primary",
       "label": "Schiess as-delivered remarks",
-      "meta": " \u00b7 U.S. Space Force, September 15, 2026",
+      "meta": " · U.S. Space Force, September 15, 2026",
       "usage": "that Guardians already operate on-orbit weapons"
     },
     {
       "id": "ussf-saltzman-warfare-symposium-2025-03",
       "group": "primary",
       "label": "Saltzman Warfare Symposium remarks",
-      "meta": " \u00b7 U.S. Space Force, March 2025",
+      "meta": " · U.S. Space Force, March 2025",
       "usage": "the public definition of space control used to check coverage"
     },
     {
       "id": "china-mfa-guo-2026-09-15",
       "group": "primary",
       "label": "China MFA press conference",
-      "meta": " \u00b7 Ministry of Foreign Affairs of China, September 15, 2026",
+      "meta": " · Ministry of Foreign Affairs of China, September 15, 2026",
       "usage": "Beijing's official response"
     },
     {
       "id": "china-mfa-x-2026-09-15",
       "group": "primary",
       "label": "China MFA on X",
-      "meta": " \u00b7 September 15, 2026",
+      "meta": " · September 15, 2026",
       "usage": "the X-post form of Guo's response"
     },
     {
       "id": "ost-1967-state-archive",
       "group": "primary",
       "label": "Outer Space Treaty Article IV",
-      "meta": " \u00b7 entered into force October 10, 1967",
-      "usage": "Article IV WMD ban and other treaty duties"
+      "meta": " · entered into force October 10, 1967",
+      "usage": "Article IV's ban on nuclear and other mass-destruction weapons in orbit"
     },
     {
       "id": "eo-iron-dome-2025-01-27",
       "group": "primary",
       "label": "Iron Dome for America executive order",
-      "meta": " \u00b7 The White House, January 27, 2025",
+      "meta": " · The White House, January 27, 2025",
       "usage": "the order behind Golden Dome space interceptors"
     },
     {
       "id": "spo-cbo-golden-dome-2026-05",
       "group": "official",
       "label": "SpacePolicyOnline on the CBO Golden Dome estimate",
-      "meta": " \u00b7 May 12, 2026; CBO PDF not admitted",
-      "usage": "CBO notional $1.2 trillion, 10-ICBM raid, 1,600 replacements a year, and the FY2027 request split"
+      "meta": " · May 12, 2026; CBO PDF not admitted",
+      "usage": "CBO's model-design cost of $1.2 trillion, the ten-missile raid it assumes, the replacement satellites a year, and the fiscal 2027 request split, all in the proof block"
     },
     {
       "id": "rt-peskov-space-2026-09-15",
       "group": "coverage",
       "label": "Peskov via RT",
-      "meta": " \u00b7 September 15, 2026",
+      "meta": " · September 15, 2026",
       "usage": "Moscow response as carried by RT"
     },
     {
       "id": "afas-meink-on-orbit-2026-09-14",
       "group": "coverage",
       "label": "Air and Space Forces magazine",
-      "meta": " \u00b7 published September 14, 2026",
+      "meta": " · published September 14, 2026",
       "usage": "Meink's Q&A that the acknowledgement was intentional"
     },
     {
       "id": "bd-meink-on-orbit-2026-09-14",
       "group": "coverage",
       "label": "Breaking Defense",
-      "meta": " \u00b7 published September 14, 2026",
+      "meta": " · published September 14, 2026",
       "usage": "independent conference coverage of Meink's wording"
     },
     {
       "id": "ap-space-weapons-2026-09-14",
       "group": "coverage",
       "label": "Associated Press",
-      "meta": " \u00b7 published September 14, 2026",
+      "meta": " · published September 14, 2026",
       "usage": "outlet check on first-time wording"
     },
     {
       "id": "hill-space-weapon-2026-09-14",
       "group": "coverage",
       "label": "The Hill",
-      "meta": " \u00b7 published September 14, 2026",
+      "meta": " · published September 14, 2026",
       "usage": "outlet check on launched versus has"
     },
     {
       "id": "dw-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "Deutsche Welle",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check: definition attributed to a press release; not found in September Space Force releases"
     },
     {
       "id": "cnbc-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "CNBC",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check on type unknown"
     },
     {
       "id": "cbs-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "CBS News",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check on confirmation plus responses"
     },
     {
       "id": "reuters-orbital-weapons-2026-09-15",
       "group": "coverage",
       "label": "Reuters",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check on Schiess wording"
     },
     {
       "id": "upi-weapons-orbit-2026-09-15",
       "group": "coverage",
       "label": "UPI",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check"
     },
     {
       "id": "bbc-what-weapon-2026-09-15",
       "group": "coverage",
       "label": "BBC News",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check on type unknown"
     },
     {
       "id": "npr-weapons-space-2026-09-16",
       "group": "coverage",
       "label": "NPR",
-      "meta": " \u00b7 published September 16, 2026",
+      "meta": " · published September 16, 2026",
       "usage": "AP dispatch of September 16, counted with the AP card"
     },
     {
       "id": "guardian-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "The Guardian",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check"
     },
     {
       "id": "usatoday-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "USA Today",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check"
     },
     {
       "id": "abc-weapons-space-2026-09-15",
       "group": "coverage",
       "label": "ABC News",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Space Force spokesperson: offensive and defensive use at combatant-command direction"
     },
     {
       "id": "astronomy-weapons-orbit-2026-09-15",
       "group": "coverage",
       "label": "Astronomy.com",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "outlet check on Saltzman attribution"
     },
     {
       "id": "ussf-whiting-amos-2026-09-16",
       "group": "primary",
-      "label": "Whiting AMOS keynote",
-      "meta": " \u00b7 U.S. Space Command, September 16, 2026",
+      "label": "Whiting keynote at the Maui space surveillance conference",
+      "meta": " · U.S. Space Command, September 16, 2026",
       "usage": "combatant-command confirmation"
     },
     {
       "id": "tass-zakharova-2026-09-15",
       "group": "coverage",
       "label": "Zakharova via TASS",
-      "meta": " \u00b7 September 15, 2026",
-      "usage": "English carrier of Zakharova; primary is the ministry page"
+      "meta": " · September 15, 2026",
+      "usage": "English version of Zakharova's comment; the ministry page is the record"
     },
     {
       "id": "defenseone-meink-2026-09-14",
       "group": "coverage",
       "label": "Defense One on Meink",
-      "meta": " \u00b7 published September 14, 2026",
+      "meta": " · published September 14, 2026",
       "usage": "Samson critique and jammer guess"
     },
     {
       "id": "defenseone-schiess-2026-09-15",
       "group": "coverage",
       "label": "Defense One on Schiess",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "why officials said it was time"
     },
     {
       "id": "spo-meink-on-orbit-2026-09-14",
       "group": "coverage",
       "label": "SpacePolicyOnline on Meink",
-      "meta": " \u00b7 published September 14, 2026",
-      "usage": "floor wording versus AFNS"
+      "meta": " · published September 14, 2026",
+      "usage": "the floor wording of Meink's sentence"
     },
     {
       "id": "nyt-space-weapon-2026-09-15",
       "group": "coverage",
       "label": "The New York Times",
-      "meta": " \u00b7 published September 15, 2026",
+      "meta": " · published September 15, 2026",
       "usage": "Kendall 2024 low-debris weapons disclosure"
     },
     {
       "id": "govinfo-chrg-118shrg50509",
       "group": "primary",
       "label": "Saltzman Senate appropriations, April 18, 2023",
-      "meta": " \u00b7 GovInfo CHRG-118shrg50509",
+      "meta": " · GovInfo CHRG-118shrg50509",
       "usage": "Tester classified unfunded priorities question; on-orbit capability; accelerated the programs"
     },
     {
       "id": "sasc-saltzman-2025-05-20",
       "group": "primary",
-      "label": "Saltzman SASC posture, May 20, 2025",
-      "meta": " \u00b7 Senate Armed Services Committee transcript",
+      "label": "Saltzman Senate Armed Services testimony, May 20, 2025",
+      "meta": " · Senate Armed Services Committee transcript",
       "usage": "counter-space systems; government systems and governmental control in the kill chain"
     },
     {
       "id": "spacecom-apollo-maneuvers-2026-09-08",
       "group": "primary",
       "label": "Apollo Maneuvers live-fly announcement",
-      "meta": " \u00b7 U.S. Space Command, September 8, 2026",
+      "meta": " · U.S. Space Command, September 8, 2026",
       "usage": "dated exercise announcement a week before Meink"
     },
     {
       "id": "russia-mfa-zakharova-2026-09-15",
       "group": "primary",
       "label": "Zakharova, Russian foreign ministry",
-      "meta": " \u00b7 Ministry of Foreign Affairs of Russia, September 15, 2026",
-      "usage": "primary record for Zakharova's written comment"
+      "meta": " · Ministry of Foreign Affairs of Russia, September 15, 2026",
+      "usage": "Zakharova's written comment, on the ministry's own site"
     },
     {
       "id": "ussf-secaf-announces-2026-09-15",
       "group": "primary",
       "label": "Space Force: SecAF announces on-orbit space control weapons",
-      "meta": " \u00b7 U.S. Space Force, September 15, 2026",
+      "meta": " · U.S. Space Force, September 15, 2026",
       "usage": "September 15 announcement article searched for the Saltzman definition; restates Meink, does not carry the encapsulate sentence"
     },
     {
       "id": "ussf-fy2027-budget-2026-04-21",
       "group": "primary",
       "label": "Space Force FY2027 budget request",
-      "meta": " \u00b7 U.S. Space Force, April 21, 2026",
+      "meta": " · U.S. Space Force, April 21, 2026",
       "usage": "Space Control $21.6 billion request inside the $71.1 billion Space Force total"
     },
     {
       "id": "eo-14369-2025-12-18",
       "group": "primary",
       "label": "Executive Order 14369",
-      "meta": " \u00b7 The White House, December 18, 2025",
+      "meta": " · The White House, December 18, 2025",
       "usage": "very low-Earth orbit through cislunar space"
     },
     {
       "id": "ussf-growth-space-control-2026-09-15",
       "group": "primary",
       "label": "Space Force growth panel, September 15, 2026",
-      "meta": " \u00b7 U.S. Space Force, September 15, 2026",
+      "meta": " · U.S. Space Force, September 15, 2026",
       "usage": "advanced offensive and defensive space control capabilities"
+    },
+    {
+      "id": "wh-asat-commitment-2022-04-18",
+      "group": "primary",
+      "label": "White House fact sheet on the anti-satellite test pledge",
+      "meta": " · The White House, April 18, 2022",
+      "usage": "the pledge wording and its debris reasoning"
+    },
+    {
+      "id": "dod-hicks-asat-pledge-2022-04-18",
+      "group": "primary",
+      "label": "Hicks remarks at Vandenberg on the test pledge",
+      "meta": " · U.S. Department of Defense, April 18, 2022",
+      "usage": "the 2021 Russian test's debris count; who depends on GPS and missile warning satellites"
+    },
+    {
+      "id": "un-sc15678-2024-04-24",
+      "group": "primary",
+      "label": "UN press release on the April 2024 Security Council vote",
+      "meta": " · United Nations, April 24, 2024; Internet Archive snapshot of January 3, 2025",
+      "usage": "the vetoed resolution, the failed amendment, and both vote counts"
+    },
+    {
+      "id": "ussf-space-warfighting-framework-2025-04-10",
+      "group": "primary",
+      "label": "Space Warfighting: A Framework for Planners",
+      "meta": " · U.S. Space Force, April 10, 2025",
+      "usage": "the definitions of space control, counterspace operations, and orbital strike"
+    },
+    {
+      "id": "swf-us-coorbital-fact-sheet-2026-06-12",
+      "group": "coverage",
+      "label": "Secure World Foundation fact sheet on U.S. co-orbital anti-satellite testing",
+      "meta": " · Secure World Foundation, published June 12, 2026",
+      "usage": "the open-source baseline before the September acknowledgement"
     }
   ],
   "primary_sources": [
@@ -1089,6 +1209,34 @@
       "bytes": 119506,
       "sha256": "sha256:1786988964fbed285e59c253fc8c77944d6dd2cf28f4a4a4c02b625fe120370b",
       "url": "https://www.spaceforce.mil/News/Article-Display/Article/4601797/space-force-growth-prioritizes-combat-forces-space-superiority/"
+    },
+    {
+      "id": "wh-asat-commitment-2022-04-18",
+      "path": "data/sources/space-weapons/wh-asat-commitment-2022-04-18.html",
+      "bytes": 138789,
+      "sha256": "sha256:bd1d360b2076d7da814d85d52663ef1c3f10d4b431279e5725a681c54c451e25",
+      "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2022/04/18/fact-sheet-vice-president-harris-advances-national-security-norms-in-space/"
+    },
+    {
+      "id": "dod-hicks-asat-pledge-2022-04-18",
+      "path": "data/sources/space-weapons/dod-hicks-asat-pledge-2022-04-18.html",
+      "bytes": 166095,
+      "sha256": "sha256:1dd55b227c0f4a7d7dc285258c2a6ed7e8e8e8c61ff4c550ebd6d7c087b92b7d",
+      "url": "https://www.defense.gov/News/News-Stories/Article/Article/3003442/"
+    },
+    {
+      "id": "un-sc15678-2024-04-24",
+      "path": "data/sources/space-weapons/un-sc15678-2024-04-24-archive.html",
+      "bytes": 72907,
+      "sha256": "sha256:3d64093d1d5eabfea4c90c0e5afc43e031ca8d1589c00cdda6ef850d21a68e9c",
+      "url": "https://press.un.org/en/2024/sc15678.doc.htm"
+    },
+    {
+      "id": "ussf-space-warfighting-framework-2025-04-10",
+      "path": "data/sources/space-weapons/ussf-space-warfighting-framework-2025-04-10.pdf",
+      "bytes": 1732574,
+      "sha256": "sha256:0381e8f3390de2bb4233696208ca7e42575ab56928a61c8d60411f3c817e4ce0",
+      "url": "https://www.spaceforce.mil/Portals/2/Documents/SAF_2025/Space_Warfighting_-_A_Framework_for_Planners_BLK2_%28final_20250410%29.pdf"
     }
   ],
   "coverage_records": [
@@ -1110,7 +1258,8 @@
     "defenseone-meink-2026-09-14",
     "defenseone-schiess-2026-09-15",
     "spo-meink-on-orbit-2026-09-14",
-    "nyt-space-weapon-2026-09-15"
+    "nyt-space-weapon-2026-09-15",
+    "swf-us-coorbital-fact-sheet-2026-06-12"
   ],
   "coverage_threshold": 2,
   "authored_sections": [
@@ -1134,7 +1283,7 @@
         "source_id": "spo-cbo-golden-dome-2026-05",
         "quote_span": "total cost over 20 years is $1.2 trillion"
       },
-      "label": "CBO notional Golden Dome, 20 years"
+      "label": "CBO's model Golden Dome design, cost over 20 years"
     },
     {
       "figure": "cbo_sbi_satellites",
@@ -1145,7 +1294,7 @@
         "source_id": "spo-cbo-golden-dome-2026-05",
         "quote_span": "constellation of 7,800 satellites"
       },
-      "label": "CBO notional interceptor satellites"
+      "label": "interceptor satellites in CBO's model design"
     },
     {
       "figure": "cbo_sbi_cost_billions",
@@ -1156,7 +1305,7 @@
         "source_id": "spo-cbo-golden-dome-2026-05",
         "quote_span": "about $720 billion"
       },
-      "label": "CBO notional interceptor cost"
+      "label": "cost of those interceptors in CBO's model design"
     },
     {
       "figure": "ost_year",
@@ -1174,7 +1323,7 @@
       "value": "10",
       "unit": "ICBMs",
       "kind": "sourced",
-      "label": "CBO notional raid size",
+      "label": "missile raid CBO's model design is sized for",
       "source": {
         "source_id": "spo-cbo-golden-dome-2026-05",
         "quote_span": "10 Intercontinental Ballistic Missiles (ICBMs) launched almost simultaneously"
@@ -1185,7 +1334,7 @@
       "value": "1600",
       "unit": "satellites per year",
       "kind": "sourced",
-      "label": "CBO notional replacements a year",
+      "label": "replacement satellites a year in CBO's model design",
       "source": {
         "source_id": "spo-cbo-golden-dome-2026-05",
         "quote_span": "plus nearly 1,600 each year thereafter"
@@ -1221,7 +1370,7 @@
       "label": "FY2027 Golden Dome, OMB mandatory",
       "source": {
         "source_id": "spo-cbo-golden-dome-2026-05",
-        "quote_span": "$17.1 billion in \u201cmandatory\u201dspending"
+        "quote_span": "$17.1 billion in “mandatory”spending"
       }
     },
     {
@@ -1245,6 +1394,50 @@
         "source_id": "ussf-fy2027-budget-2026-04-21",
         "quote_span": "$71.1 billion for the Space Force"
       }
+    },
+    {
+      "figure": "un_2024_resolution_votes_for",
+      "value": "13",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "un-sc15678-2024-04-24",
+        "quote_span": "By a vote of 13 in favour to 1 against (Russian Federation), with 1 abstention (China), the Council then rejected the draft resolution"
+      },
+      "label": "Security Council votes for the April 2024 outer space resolution"
+    },
+    {
+      "figure": "un_2024_resolution_votes_against",
+      "value": "1",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "un-sc15678-2024-04-24",
+        "quote_span": "By a vote of 13 in favour to 1 against (Russian Federation), with 1 abstention (China), the Council then rejected the draft resolution"
+      },
+      "label": "Votes against the April 2024 resolution (Russia's veto)"
+    },
+    {
+      "figure": "un_2024_amendment_votes_for",
+      "value": "7",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "un-sc15678-2024-04-24",
+        "quote_span": "By a vote of 7 in favour (Algeria, China, Ecuador, Guyana, Mozambique, Russian Federation and Sierra Leone) to 7 against"
+      },
+      "label": "Votes for the Russia and China amendment to ban all weapons in space"
+    },
+    {
+      "figure": "russia_2021_asat_debris_pieces",
+      "value": "1500",
+      "unit": "pieces of trackable debris",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dod-hicks-asat-pledge-2022-04-18",
+        "quote_span": "Russia conducted a November 2021 anti-satellite missile test, which created over 1,500 pieces of trackable debris"
+      },
+      "label": "Debris from Russia's November 2021 anti-satellite test, per Hicks"
     }
   ],
   "needs_ledger": [
@@ -1265,12 +1458,30 @@
       "plain": "The 2024 White House confirmation of a Russian anti-satellite program named in coverage",
       "record_id": null,
       "status": "missing: cited only in coverage this session; not required for the confirmation sentence"
+    },
+    {
+      "need": "Hernandez-Baquero September 15 remarks (Janes)",
+      "plain": "What the assistant secretary said about deterrence the day after Meink spoke",
+      "record_id": "janes-hernandez-baquero-2026-09-15",
+      "status": "missing: janes.com robots.txt disallows the URL; the registry refused it on the direct route (capture-oneoff-20260919T001719Z) and on the --via-archive route (capture-oneoff-20260919T001756Z); no sentence written from it"
+    },
+    {
+      "need": "Secure World Foundation 2026 fact sheet PDF",
+      "plain": "The fact sheet document itself",
+      "record_id": "swf-us-coorbital-fact-sheet-2026-06-12",
+      "status": "partly have: the foundation's own page for the fact sheet is the record; the PDF is hosted on dropbox.com, whose robots.txt refuses the registry"
+    },
+    {
+      "need": "UN press release SC/15678 as served by press.un.org",
+      "plain": "The UN's own page on the April 2024 vote",
+      "record_id": "un-sc15678-2024-04-24",
+      "status": "partly have: press.un.org served a JavaScript challenge on the direct and via-archive routes; the Internet Archive snapshot saved January 3, 2025 is the pin, with the full text"
     }
   ],
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "Round 2 captures admitted through capture-oneoff-20260918T093220Z: Space Force SecAF announcement article, FY2027 budget release, EO 14369, and September 15 growth panel. Federal Register copy of EO 14369 also captured; White House page is the cited pin."
+      "evidence": "Round 2 captures admitted through capture-oneoff-20260918T093220Z: Space Force SecAF announcement article, FY2027 budget release, EO 14369, and September 15 growth panel. Federal Register copy of EO 14369 also captured; White House page is the cited pin. Round 3 (2026-09-18 local, runs capture-oneoff-20260919T001605Z, 001624Z, 001727Z, 001842Z, 001945Z): Defense Department Hicks remarks, Secure World Foundation fact sheet page, Space Warfighting framework PDF, White House 2022 fact sheet, and the Internet Archive copy of UN press release SC/15678 admitted body_captured. Janes refused by robots.txt on both routes; the Dropbox-hosted SWF PDF refused by robots.txt; UN News and the U.S. Mission explanation of vote were also captured (capture-oneoff-20260919T002117Z) but are not cited."
     },
     "derived_numbers_computed": {
       "done": true,
@@ -1278,7 +1489,7 @@
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "Hill launch wording remains mislabeled. DW encapsulate-definition press-release claim is unconfirmed: September 14-16 Space Force news listing and the September 15 SecAF article do not carry the definition."
+      "evidence": "Nine cards. The Hill and Breaking Defense launch wording, Deutsche Welle's press-release attribution of Saltzman's 2025 definition, and USA Today's Golden Dome link are 'not in the record' with the search named on the card; no card is mislabeled. AP, CNBC, CBS, Reuters, and BBC check out; UPI, ABC, and the Guardian are consistent."
     },
     "section_grammar": {
       "done": true,
@@ -1286,7 +1497,7 @@
     },
     "chip_vocabulary": {
       "done": true,
-      "evidence": "Outlet chips use checks out, consistent, mislabeled, and unconfirmed only."
+      "evidence": "Outlet chips use checks out, consistent, and not in the record only; a one-line key above the cards defines them."
     },
     "live_elements_guarded": {
       "done": true,
