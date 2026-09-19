@@ -22,12 +22,12 @@ ships the same day.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Never push. Never edit a story that is already live. Do not kill, restart, or signal any
-process you did not start. Scripts and reference files are shared by the three turn skills
-and live under `skills/catch-event-page/`; the reviewer's process is that skill's SKILL.md.
-Commands for every step are in `skills/catch-event-page/references/procedures.md` (steps 0
-to 8); open it before step 1 and keep it open. Components, figures and detail blocks are
-`skills/catch-event-page/references/section-toolkit.md`; manifest fields are
-`skills/catch-event-page/references/manifest-and-gate.md`.
+process you did not start. This skill's `scripts/` and the shared files in its `references/`
+are links to `skills/catch-event-page/`, the pipeline map and the reviewer's process.
+Commands for every step are in `references/procedures.md`; open it before step 1 and
+keep it open. Chips, components, figures, detail blocks and the layer rules are
+`references/components.md`; manifest fields are `references/manifest-and-gate.md`. You do
+not choose sections or write narrative: that is the structure turn and the story turn.
 
 ## Step 0. The candidate is one dated moment
 
@@ -107,7 +107,7 @@ for it, case-insensitive; the primary takes the cite and the outlet row says it 
 Then run the gap list and disposition every line before drafting:
 
 ```bash
-node skills/catch-event-page/scripts/pin_gaps.mjs <subject>/<story>
+node skills/catch-record/scripts/pin_gaps.mjs <subject>/<story>
 ```
 
 It prints every unit-bearing number and every repeated or titled name in each primary pin
@@ -140,7 +140,7 @@ model, in turn two, and attested in turn three; the record build accepts that on
 ends the turn:
 
 ```bash
-skills/catch-event-page/scripts/finish.sh <subject>/<story> record
+skills/catch-record/scripts/finish.sh <subject>/<story> record
 ```
 
 It adds the ledger rows for your pins, builds through the gate, runs the three lints and
@@ -152,7 +152,7 @@ the name that file imports the module under), because a worktree holds one story
 (the subject's data module is yours to refresh, so it is committed whole). The story view of this build is headline, dek, KPI strip, figures, chronology
 and the records list, with no narrative paragraph yet.
 
-This is where turn one ends (`skills/catch-event-page/references/story.md`, "The three turns"). Its report is the
+This is where turn one ends (`skills/catch-record/references/story.md`, "The three turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
 be admitted and why. The story is written by a fresh session that did not build the record.
 Between the turns the completeness audit runs once, on this commit, against the record
@@ -177,7 +177,7 @@ structure turn to grade, and it does not run again on this story.
 - No text jammed against an inline tag (`<em>under</em>counting`); keep the space on the
   same source line.
 - Verdict words are plain: "checks out", "mislabeled", "wrong". Chips are the closed set in
-  `skills/catch-event-page/references/section-toolkit.md`; one chip per claim class across the cards, and an
+  `references/components.md`; one chip per claim class across the cards, and an
   inference from the record is never graded wrong.
 - No process words in story prose: pins, carrier, so-what, "Why it matters:", disproof
   searches, "USD billions", "pp", docket numbers used as nouns. Proof-register content

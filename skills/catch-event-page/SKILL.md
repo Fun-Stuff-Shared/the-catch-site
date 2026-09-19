@@ -31,7 +31,7 @@ dispatch, the reads, the decision, staging, the push.
 
 Repo: `/Volumes/4/GitHub/the-catch-site`. Shared by every turn: `scripts/` (finish, the
 lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
-(procedures, story, writing, section-toolkit, manifest-and-gate, interrogation).
+(procedures, story, writing, shape-rules, sections, components, manifest-and-gate, interrogation).
 
 ## The reviewer's process
 
@@ -73,6 +73,6 @@ problem, written into the working note for the next story, not a third run.
 - `references/procedures.md`: every command, in order, from scaffold to ship.
 - `references/story.md`: the reader model, materiality grades, concept before qualification, the three turns.
 - `references/writing.md`: the rules that bind each sentence.
-- `references/section-toolkit.md`: the core and optional sections, chip vocabulary, components, layer rules.
+- `references/shape-rules.md`, `references/sections.md`, `references/components.md`: how a page is built to be read, the core and optional sections, chips and components.
 - `references/manifest-and-gate.md`: manifest fields, SOURCES.md, what the gate checks.
 - `references/interrogation.md`: the interrogation prompt the script sends.
