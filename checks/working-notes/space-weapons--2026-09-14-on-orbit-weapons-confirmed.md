@@ -1,5 +1,17 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 7 (space-patch.md item 44; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r7-entailment.md). No new records.
+
+Verified at the pins before rewriting (2026-09-18):
+- UN `un-sc15678-2024-04-24-archive.txt` line 7: "the draft amendment provides for the inclusion of all types of weapons and the early elaboration of a legally binding multilateral agreement."
+- UN same file line 8: "the Council rejected the amendment"
+- UN same file line 15: "our amendment calling for a ban on weapons of any kind being placed in space, not just weapons of mass destruction"
+- OST `ost-1967-state-archive.txt` Article IV: "nuclear weapons or any other kinds of weapons of mass destruction"
+- UN pin does not name jammers, cyber tools, or maneuvering satellites.
+
+### Item 44
+44. Where this sits, 2024 Council paragraph: dropped "exactly that gap". Opening sentence now says the Council argued over whether to call for a ban on weapons of any kind in space, cited to the Russian representative's amendment characterization. Third layer rewritten: no treaty ban on conventional weapons in orbit, and in 2024 the Council rejected an amendment that would have called for negotiating one, cited to Article IV and to China's description of the amendment. Item said no other sentence changes. Sibling count: 0.
+
 ## Round 6 (space-patch.md item 43; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r6-entailment.md). No new records.
 
 Verified at the pins before rewriting (2026-09-18):
