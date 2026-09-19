@@ -263,7 +263,17 @@ Facts the avatar items asked for that the pins do not hold: none invented. The f
 
 ### Entailment audit r3 (checks/audits/...-2026-09-18-r3-entailment.md), fixes 2026-09-18
 
-1. Major, catch 4: census recounted at every coverage pin (grep for Nichols, "Sunday", "second", "Washington", "D.C." over the 13 text pins, then each hit read): Politico and BBC name Nichols; CBS line 24 ("also blocked the mail-in ballot rules on Sunday") and Roll Call line 25 ("a second district court judge in Washington") describe the order without his name. Four of thirteen mention it; nine do not (WIRED, Examiner, ABC, CNBC x2, SCOTUSblog, AP x2, NPR). Heading and list corrected; the four positives cited.
+1. Major, catch 4: census recounted at every coverage pin (grep for Nichols, "Sunday", "second", "Washington", "D.C." over the 13 text pins, then each hit read): Politico and BBC name Nichols; CBS line 24 ("also blocked the mail-in ballot rules on Sunday") and Roll Call line 25 ("a second district court judge in Washington") describe the order without his name. Four of thirteen mention it; nine do not (WIRED, Examiner, ABC, CNBC x2, SCOTUSblog, AP x2, NPR). Heading and list corrected; the four positives cited. Superseded by Round 4 item 27.
+
+### Round 4 item 27 (2026-09-19)
+
+Recounted all thirteen coverage pins on this page for any wording of Nichols's September 13 preliminary injunction (named judge, "second judge", "also blocked", "another blow", "preliminary injunction on the ... rules"):
+
+Mention (5): Politico (`U.S. District Judge Carl Nichols said`, lines 19-21); BBC (`On Sunday, another federal judge, Judge Carl Nichols`, line 34); CBS (`also blocked the mail-in ballot rules on Sunday`, line 24); Roll Call (`a second district court judge in Washington`, line 25); Washington Examiner (`another blow` / `a Trump-appointed judge granted voting rights groups and Democratic state officials a preliminary injunction on the new Postal Service rules`, line 14). Examiner does not name Nichols.
+
+Omit (8): WIRED, ABC, CNBC Monday, CNBC Tuesday, SCOTUSblog (`Talwani's second order` is her PI replacing the TRO, not Nichols), AP September 15, NPR, AP September 17.
+
+Heading, outlet list, and reader sentence rewritten to eight of thirteen omitted / five mentioned; Examiner passage cited with the other four mention pins. No new records.
 2. Major, who-wrote-what chart line: rewritten from the two passages; Kavanaugh "at least a fair prospect", Alito "The Postal Service has broad authority to"; they part on 2026 timing and on the pause.
 3. Moderate, claim check: "the appeals courts" replaced with the government's appeal of Talwani's order, pending in the First Circuit, cited to the application ("applicants promptly appealed the district court's order").
 4. Moderate, Trump posts: BBC pin cite attached ("Republicans just got another bad decision", BBC line 6).
