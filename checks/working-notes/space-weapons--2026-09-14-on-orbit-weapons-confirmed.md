@@ -1,5 +1,22 @@
 # Working note: space-weapons / 2026-09-14-on-orbit-weapons-confirmed
 
+## Round 5 (space-patch.md items 38 to 42; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r5-entailment.md). No new records.
+
+Verified at the pins before rewriting (2026-09-18):
+- OST `ost-1967-state-archive.txt` Article IV: "nuclear weapons or any other kinds of weapons of mass destruction"; Article III: activities "in accordance with international law, including the Charter of the United Nations".
+- UN `un-sc15678-2024-04-24-archive.txt` line 8: "the Council rejected the amendment"; line 16: "a ban on weapons of any kind being placed in space, not just weapons of mass destruction".
+- AFNS `afns-meink-2026-09-14.txt` line 12: "Meink also acknowledged for the first time that Space Force has weapons in space."
+- SPO CBO `spo-cbo-golden-dome-2026-05.txt` line 3: estimate of Golden Dome; line 12: "DOD is requesting $17.9 billion for Golden Dome in FY2027". Pin does not name Meink's space control weapons.
+- WH `wh-asat-commitment-2022-04-18.txt` line 4: "Vice President Kamala Harris announced" the 2022 commitment. Hicks `dod-hicks-asat-pledge-2022-04-18.txt` line 3: thanks Harris "for your leadership on this important issue"; GPS and wildfire sentences follow.
+- Defense One `defenseone-schiess-2026-09-15.txt` line 4: "The advance of Chinese and Russian anti-satellite capabilities led the United States to admit it has weapons in space"; line 7: Schiess "them being able to grapple a satellite and move it to a different orbit".
+
+### Items 38 to 42
+38. Where this sits three-layers sentence: dropped "no ban at all". Third layer is now no treaty ban on conventional weapons in orbit, and the 2024 attempt to add one failed. Class sibling at the claim-check block: "leave conventional weapons in orbit unbanned" rewritten as "The treaty carries no ban on conventional weapons in orbit." Sibling count: 1.
+39. Three things (1): the news service's first-time line is now Meink's acknowledgement in the news service's words, not an acknowledgement by the service as an institution. Class sibling in the budget paragraph: "what the Air Force called new" rewritten as "what the Air Force's news service said Meink acknowledged for the first time." Sibling count: 1.
+40. Golden Dome proof block: dropped "None of them is a price for the space control weapons Meink named." The figures price Golden Dome, cited to the CBO carrier; whether Meink's weapons are among those systems is not in the record, cited to the Air Force interceptor sentence and the January 2025 order, matching the unknowns section. Sibling count: 0.
+41. Who feels it: "when it announced" rewritten as "at the announcement of" the 2022 test pledge. Sibling count: 0.
+42. What happened next: dropped China-only grappling. Schiess's "them" grappling sentence kept; Defense One's Chinese and Russian attribution stated separately. Sibling count: 0.
+
 ## Round 4 (space-patch.md items 33 to 37; entailment file checks/audits/space-weapons--2026-09-14-on-orbit-weapons-confirmed-2026-09-18-r4-entailment.md). No new records.
 
 Verified at the pins before rewriting (2026-09-18):
