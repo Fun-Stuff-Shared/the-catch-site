@@ -163,15 +163,39 @@ export const votes = {
   hconres86HouseNay: 208,
   hconres86SenateYea: 50,
   hconres86SenateNay: 48,
+  hconres89HouseYea: 214,
+  hconres89HouseNay: 208,
   hconres93HouseYea: 220,
   hconres93HouseNay: 204,
   hconres113HouseYea: 216,
   hconres113HouseNay: 214,
+  // H.Con.Res. 113 committee instructions, billions, from the enrolled House text.
+  hconres113ArmedServices: 60,
+  hconres113Intelligence: 13,
+  hconres113Agriculture: 12,
+  hconres113HouseAdmin: 10,
+  hconres113Total: 95, // 60+13+12+10
 };
 
 export const brownEnergy = {
   extraFuelBillion: 40,
   householdDollars: 300,
+  // brown-iran-war-energy-cost-2026-09-08.txt: surpassed $100 billion; over $750 more per household.
+  extraFuelBillionSep7: 100,
+  householdDollarsSep7: 750,
+};
+
+// CSIS independent model: data/sources/iran-war/csis-epic-fury-cost.txt.
+export const csisCost = {
+  basesLow: 4.0,
+  basesHigh: 9.4,
+  veterans30yr: 12,
+};
+
+// CNN, September 18, as carried by local3news: Pentagon communication totaling $45.1 billion.
+export const cnnPentagon = {
+  total: 45.1,
+  fuelAdd: 1.5,
 };
 
 export const unMission = {
@@ -235,9 +259,10 @@ export const timeline = [
   { date: "Jun 3", title: "House votes to end U.S. involvement", sub: `${votes.hconres86HouseYea} to ${votes.hconres86HouseNay}` },
   { date: "Jun 23", title: "Senate agrees", sub: `${votes.hconres86SenateYea} to ${votes.hconres86SenateNay}` },
   { date: "Jun 24", title: "White House asks Congress for $87.6 billion", sub: `$${admin.dodRequest} billion of it for the Defense Department` },
-  { date: "Jul 10", title: "The president says the ceasefire is over", sub: "After Iranian attacks on tankers in the Strait of Hormuz" },
+  { date: "Jul 8 / 10", title: "The president declares the ceasefire over", sub: "Inspector general: July 8. CBO: July 10." },
   { date: "Jul 21", title: "Hegseth tells senators the war has cost $37.5 billion", sub: "Senate Appropriations Committee" },
-  { date: "Jul 22", title: "House passes a budget resolution", sub: `${votes.hconres113HouseYea} to ${votes.hconres113HouseNay}` },
+  { date: "Jul 22", title: "House passes a $95 billion budget resolution", sub: `${votes.hconres113HouseYea} to ${votes.hconres113HouseNay}` },
+  { date: "Jul 23", title: "House votes again to end U.S. involvement", sub: `${votes.hconres89HouseYea} to ${votes.hconres89HouseNay}` },
   { date: "Aug 1", title: "CBO's cost cutoff", sub: `Estimate $${table1.total} billion` },
   { date: "Sep 14", title: "Inspector general report is posted", sub: `Quotes a $${ig.total} billion department estimate as of June 29` },
   { date: "Sep 15", title: "CBO's letter to Boyle", sub: "Nineteen pages, three tables", current: true },

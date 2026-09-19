@@ -287,9 +287,29 @@ The fold treats every live row for a slot as a competing head unless a supersede
 
 Section tops in pixels: What happened 1,195; the catch 2,973; Where this sits 3,923; Who feels it 5,879; coverage 7,483; claim check 9,513; What happened next 9,858; unknowns 10,751; records 11,477; page end 13,717. Three figures (the cost chart, the chronology, the six-totals table); one proof receipt in the story sequence, typed proof; no dollar figures to the cent in the story view. The prose runs about 2,500 px past the skill's 9,000 px target; the added length is the round 3 items (the Central Command paragraph, the war-powers paragraph, the U.N. paragraph and card, the casualty question) and the ten coverage cards. The NBC pump-price paragraph was cut after the measurement; nothing else was cut to hit the target, so the target is missed and said so here.
 
+## Round 5 (items 50-59, from 5b04bd92)
+
+50. H.Con.Res. 113 enrolled text admitted (capture-oneoff-20260919T050809Z). Recounted committee instructions: Armed Services $60 billion, Intelligence $13 billion, Agriculture $12 billion, House Administration $10 billion, sum $95 billion. Two sentences after the July 22 vote. AP's $95 billion package line held unused; the amounts are from the enrolled text.
+51. Brown September 8 update admitted (capture-oneoff-20260919T050828Z). May sentence kept; September 7 $100 billion and $750 per household added. Figures in the data module from brown-iran-war-energy-cost-2026-09-08.txt.
+52. Wording: "carry no official figure." CSIS analysis admitted (capture-oneoff-20260919T050844Z). One sentence: bases $4.0 to $9.4 billion, veterans about $12 billion over 30 years, named as a model with uncertainty from the pin's "three uncertainties" passage.
+53. cnn.com 404 (capture-oneoff-20260919T050904Z and 050920Z). KESQ and KTVZ served cookie notices, not the article. CNN wire copy on local3news admitted (capture-oneoff-20260919T051605Z). One sentence after the Central Command paragraph. Refusals in the manifest not_admitted list.
+54. H.Con.Res. 89 enrolled text and clerk roll call 282 both admitted. Line 246 is three House votes (June 3, July 23 214-208, September 15). Line 248 names the subject from the enrolled text.
+55. One sentence under the six-totals table: if the department sought extra appropriations for all battle losses, CBO says $3.3 billion instead of $1.9 billion (cbo-62756-iran.txt lines 252-255).
+56. One sentence after the U.S. finding: the same experts found Iran's government committed crimes against humanity against its own civilians, including murder, imprisonment, and torture (ap-un-iran-2026-09-17.txt).
+57. Epic Fury block and timeline: CBO dates the declaration July 10; the inspector general dates it July 8; the two records do not explain the gap. Sibling: the timeline row.
+58. Caption segments 00479, 00481, 00482 admitted from the HLS subtitle playlist. Military Times chip is mislabeled / wrong on "to date." The catch heading cites the caption track.
+59. `updated` remains 2026-09-18, the newest dated record on the page (AP, CNN, Reuters).
+
+Not admitted this run:
+- https://www.cnn.com/2026/09/18/politics/iran-war-has-cost-45-1-billion-pentagon-tells-congress (and two guessed slugs): http_status_404
+- https://kesq.com/news/national-politics/cnn-us-politics/2026/09/18/iran-war-has-cost-45-1-billion-pentagon-tells-congress/ : cookie notice, not the article
+- https://ktvz.com/politics/cnn-us-politics/2026/09/18/iran-war-has-cost-45-1-billion-pentagon-tells-congress/ : cookie notice, not the article
+
+Refuted items and ledgered later-pass items were not worked.
+
 ## Open questions after disproof search
 
-- Hegseth's exact words on July 21: no transcript admitted (video page served none); the page uses Stars and Stripes and CBO's letter and chips Military Times unconfirmed.
+- Hegseth's exact words on July 21: caption track admitted; Military Times is wrong on "to date."
 - August 13 Pentagon $42 billion table: Hill aide only; whether Central Command's September 3 breakdown is the same count updated: no pin says.
 - Ground-force cost case Boyle asked for: not in the letter.
 - White House Kelly / Pentagon Parnell: coverage quotes, no primary pages.

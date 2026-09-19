@@ -1530,3 +1530,23 @@ Space-weapons story round 3 (2026-09-18 local): the April 2022 anti-satellite te
 | data/sources/space-weapons/swf-us-coorbital-fact-sheet-2026-06-12.txt | 2481 | 8b06aeb6cb107b2c |
 | data/sources/mail-voting/talwani-violation-2026-08-25.html | 59243 | a088b7115d069015 |
 | data/sources/mail-voting/talwani-violation-2026-08-25.txt | 8463 | e24e8365bf48d6eb |
+| data/sources/iran-war/hconres-113-eh-2026-07-22.pdf | 168807 | 9e0fa7ed5e2a363e |
+| data/sources/iran-war/hconres-113-eh-2026-07-22.txt | 146279 | 8c512d7933a31e81 |
+| data/sources/iran-war/brown-iran-war-energy-cost-2026-09-08.html | 55378 | 81eec2432557d6cc |
+| data/sources/iran-war/brown-iran-war-energy-cost-2026-09-08.txt | 3603 | 5abe3a8bd1c1a7ae |
+| data/sources/iran-war/csis-epic-fury-cost.html | 144862 | 87640b4e6649348b |
+| data/sources/iran-war/csis-epic-fury-cost.txt | 20762 | 9032643716c41888 |
+| data/sources/iran-war/hconres-89-eh-2026-07-23.pdf | 118306 | 363eb7940027b65b |
+| data/sources/iran-war/hconres-89-eh-2026-07-23.txt | 2873 | 932d46ba113525dc |
+| data/sources/iran-war/clerk-hconres-89-2026282.html | 561800 | 8dbe8faf7e3241a2 |
+| data/sources/iran-war/clerk-hconres-89-2026282.txt | 360 | 6666f20a548c3683 |
+| data/sources/iran-war/cnn-45-1b-2026-09-18.html | 279611 | 986a26e76a8582c2 |
+| data/sources/iran-war/cnn-45-1b-2026-09-18.txt | 1613 | 50ec6d9b5046f7e0 |
+| data/sources/iran-war/senate-approps-vtt-00479.vtt | 4469 | c8e5e40c60f75f96 |
+| data/sources/iran-war/senate-approps-vtt-00479.txt | 4422 | b58c5c9492680d99 |
+| data/sources/iran-war/senate-approps-vtt-00481.vtt | 4120 | 3ce69d3fae533ad5 |
+| data/sources/iran-war/senate-approps-vtt-00481.txt | 4074 | 782ace86ed485482 |
+| data/sources/iran-war/senate-approps-vtt-00482.vtt | 3347 | 47262c8eb341dc6a |
+| data/sources/iran-war/senate-approps-vtt-00482.txt | 3313 | cb6a9ee5a558d005 |
+
+Round 5 additions for the Iran war cost story (September 19, 2026): H.Con.Res. 113 and 89 enrolled texts from govinfo; House roll call 282; Brown University September 8 energy-cost update; CSIS independent Epic Fury cost model; CNN $45.1 billion report via the local3news wire copy after cnn.com 404 and the KESQ copy serving a cookie notice; Senate Appropriations July 21 caption segments 01:35:36 to 01:36:24.
