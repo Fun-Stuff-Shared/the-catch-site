@@ -5,7 +5,7 @@
 // Usage: node skills/catch-event-page/scripts/sources_ledger.mjs checks/manifests/<subject>--<story>.json [--all]
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { join, posix } from "node:path";
 
 const root = new URL("../../../", import.meta.url).pathname;
 const manifestPath = process.argv[2];
@@ -34,9 +34,12 @@ const row = (rel, existing) => {
 const wanted = new Set(all ? rowAt.keys() : []);
 const manifest = JSON.parse(readFileSync(join(root, manifestPath), "utf8"));
 for (const record of manifest.records ?? []) for (const key of ["pinned_path", "text_path"]) {
-  const rel = record[key];
-  if (rel && rel.startsWith("data/sources/")) wanted.add(rel);
+  if (record[key]) wanted.add(record[key]);
 }
+// Every path is judged in canonical form before anything is written: one that leaves
+// data/sources/ through ".." or an absolute path is refused, whatever the manifest spells.
+const outside = [...wanted].filter((rel) => !/^data\/sources\/(?!news-state\/)/.test(posix.normalize(rel)) || rel !== posix.normalize(rel));
+if (outside.length) { for (const rel of outside) console.error(`sources_ledger: not a canonical path under data/sources/: ${rel}`); process.exit(2); }
 let added = 0, refreshed = 0, missing = 0;
 const appended = [];
 for (const rel of wanted) {

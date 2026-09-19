@@ -25,6 +25,7 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="narrative">This page found the order in a mirror.</p>
  <p data-layer="fact">This page lists the motions heard on Monday.</p>
  <p data-layer="narrative">This page rests on three filings and one transcript.</p>
+ <p data-layer="fact">This page was filed as exhibit 12 in the public docket.</p>
 </section>
 <section id="records" data-layer="fact">
  <p class="section-lede">Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one.</p>
@@ -69,6 +70,7 @@ checks = [
     ("a document page as subject passes", "motions heard on Monday" not in text),
     ("'This page rests on' fails", any("three filings" in s for _, s in hits)),
     ("an agency that did not answer through a docket passes", "before the deadline" not in text),
+    ("a docket page in the passive passes", "exhibit 12" not in text),
 ]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)

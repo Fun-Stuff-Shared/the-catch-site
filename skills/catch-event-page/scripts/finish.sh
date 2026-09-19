@@ -45,17 +45,19 @@ echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page
 echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
 [ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
 
-# The story's own artifacts: its page, the data modules that page imports, the files its
-# manifest pins, and its check files, owned whole. Files other stories also write (the
-# homepage, the story index, the subject page and what it imports, the ledger, the route
-# list) are shared: a change there is this story's only where the changed lines name it,
-# so each hunk must carry the slug, a pinned path or one of the page's own data modules.
+# The story's own artifacts: its page, the data modules that page imports, the subject's
+# data module (turn one refreshes its KPIs, and a worktree holds one story, so that
+# refresh is this story's), the files its manifest pins, and its check files, owned whole.
+# Files every story writes a line into (the homepage, the story index, the subject page,
+# the ledger, the route list) are shared: a change there is this story's only where the
+# changed lines name it, so each hunk must carry the slug, a pinned path or one of the
+# page's own data modules.
 subject_page="src/pages/events/$subject/index.astro"
 shared=("src/pages/index.astro" "src/lib/discovery.mjs" "$subject_page" "data/sources/SOURCES.md" "checks/routes.txt")
 imports() { grep -oE "from ['\"][^'\"]*data/[^'\"]+['\"]" "$1" | sed -E "s/from ['\"](.*)['\"]/\1/" | while IFS= read -r spec; do echo "$(dirname "$1")/$spec"; done; }
-modules=()
-while IFS= read -r m; do modules+=("$m"); done < <(imports "$page")
-if [ -f "$subject_page" ]; then while IFS= read -r m; do shared+=("$m"); done < <(imports "$subject_page"); fi
+modules=(); page_modules=()
+while IFS= read -r m; do modules+=("$m"); page_modules+=("$m"); done < <(imports "$page")
+if [ -f "$subject_page" ]; then while IFS= read -r m; do modules+=("$m"); done < <(imports "$subject_page"); fi
 owned=("$page" "$manifest" "${shared[@]}" ${modules[@]+"${modules[@]}"} ${pins[@]+"${pins[@]}"})
 while IFS= read -r f; do owned+=("$f"); done < <(git ls-files --others --exclude-standard --modified -- \
   "checks/working-notes/$subject--$slug*" "checks/reader-models/$subject--$slug*" \
@@ -83,7 +85,7 @@ while IFS= read -r -d '' f; do paths+=("$f"); done < <(
   done)
 
 tokens=("$slug" ${pins[@]+"${pins[@]}"})
-for m in ${modules[@]+"${modules[@]}"}; do tokens+=("$(basename "$m")"); done
+for m in ${page_modules[@]+"${page_modules[@]}"}; do tokens+=("$(basename "$m")"); done
 foreign=0
 for f in $(printf '%s\n' "${shared[@]}" | node -e 'const p=require("path").posix;for(const l of require("fs").readFileSync(0,"utf8").split("\n"))if(l)console.log(p.normalize(l))'); do
   printf '%s\n' ${paths[@]+"${paths[@]}"} | grep -Fqx "$f" || continue
