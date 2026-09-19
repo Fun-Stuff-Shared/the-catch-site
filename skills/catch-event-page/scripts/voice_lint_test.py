@@ -5,6 +5,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 import voice_lint as vl
 
 PAGE = """<html><body><main id="story-root">
+<p class="kicker" data-layer="fact">The federal funds rate · September 16, 2026 · updated 2026-09-19</p>
 <section id="what-happened">
  <p data-layer="narrative">The Fed raised its target range by a quarter point on September 16, the first increase since 2023.</p>
  <p data-layer="narrative">A reader who stops here misses the vote.</p>
@@ -61,6 +62,9 @@ PAGE = """<html><body><main id="story-root">
  <p data-layer="fact">As of Friday the rate was not 4 percent.</p>
  <p data-layer="fact">As of September 19, the committee had 12 voting members.</p>
  <p data-layer="fact">The court's docket for this case through September 19 holds no filing of that kind.</p>
+ <p data-layer="narrative">As of July 2024, the committee had not changed its target range since 2023.</p>
+ <p data-layer="narrative">As of August 1 the minutes of the June meeting had not been published.</p>
+ <p data-layer="narrative">As of September 10 the minutes of the July meeting had not been published.</p>
  <p data-layer="fact">Von der Leyen, in the press release: "Greenland can count on the EU. That was my message during my last visit. Today, I am back to deliver the real results of our close cooperation," and the release is dated September 7.</p>
  <h2 data-layer="fact">What we do not know yet</h2>
  <h2 data-layer="fact">What we found in the docket</h2>
@@ -78,13 +82,14 @@ PAGE = """<html><body><main id="story-root">
 def fails_for(html):
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f: f.write(html); path = f.name
     out = []
+    today = vl.page_date(html)
     judged.extend(s for _, s, _ in vl.sentences(path))
     for tag, sen, inside in vl.sentences(path):
         own = vl.strip_q(sen, inside)
         if own == vl.SECTION_TITLE: continue
         if vl.READER.search(own): out.append(("reader", sen))
         if vl.SELF_PAGE.search(own) or vl.FIRST_PERSON.search(own): out.append(("process", sen))
-        if vl.TIMESTAMPED_ABSENCE.search(own): out.append(("timestamped_absence", sen))
+        if vl.timestamped_absence(own, today): out.append(("timestamped_absence", sen))
     os.unlink(path); return out
 
 judged = []
@@ -157,6 +162,10 @@ checks = [
     ("a dated negated value passes", "was not 4 percent" not in text),
     ("a dated positive count passes", "12 voting members" not in text),
     ("a bounded absence with no frame word passes", "holds no filing" not in text),
+    ("a historic 'as of' status with a year passes", "since 2023" not in text),
+    ("an 'as of' date seven weeks before the page date passes", "June meeting had not" not in text),
+    ("an 'as of' date nine days before the page date fails", any(k == "timestamped_absence" and "July meeting had not" in s for k, s in hits)),
+    ("the page date is read from the kicker", vl.page_date(PAGE) == __import__("datetime").date(2026, 9, 19)),
     ("the reread list is the top ten plus two per question left out", (lambda r: len(r) == 12 and r[:10] == REV[:10] and [h[0] for h in r[10:]] == ["dictionary", "dictionary"])(vl.reread_list(REV))),
     ("a question inside the top ten gets no extra rows", len(vl.reread_list(REV[:3])) == 3),
 ]

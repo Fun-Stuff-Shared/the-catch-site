@@ -21,7 +21,7 @@ failure on its own. The records section's own lede and "How we check" line are c
 chrome, skipped by position (p.section-lede and p.sources-line inside section#records); the
 unknowns section title is chrome by its exact text.
 """
-import json, os, re, subprocess, sys
+import datetime, json, os, re, subprocess, sys
 from html.parser import HTMLParser
 
 BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "figcaption", "td", "th", "dt", "dd", "summary"}
@@ -46,7 +46,7 @@ FIRST_PERSON = re.compile(r"(?:(?:^|[,;:]\s+|\b(?:and|but|so|then|when|after|bef
 capitalized word is a proper name (Our World in Data); I before a hyphenated number is a route (I-95); a bare I
 counts only where a sentence or clause starts, so Title I and Article I are not pronouns."""
 SELF_PAGE = re.compile(r"\bthis page\b(?! of\b)", re.I)
-FRAME = r"(?:(?<!\beffective )\bas of (?:the )?[a-z]*\.? ?\d{0,2},? ?(?:\d{4})?|\bin the (?:records|documents|filings|pins|material)s? (?:saved|captured|read|checked|available)\b)"
+FRAME = r"(?:(?<!\beffective )\bas of (?:the )?(?P<mon>[a-z]*)\.? ?(?P<day>\d{1,2}(?!\d))?,? ?(?P<yr>\d{4})?|\bin the (?:records|documents|filings|pins|material)s? (?:saved|captured|read|checked|available)\b)"
 SAME_CLAUSE = r"(?:(?!,\s*(?:but|and|while|though|yet|whereas)\b)[^.;]){0,80}?"
 ABSENT = r"\b(?:(?:had|has|have|was|were)(?:n't| not| never)(?: yet| still)? (?:been )?\w+(?:ed|en|t)\b|no \w+(?: \w+)? (?:had|has|have|was|were)(?: yet)? (?:been )?\w+(?:ed|en|t)\b|(?:had|has|have) yet to\b|remain(?:s|ed)? (?:un\w+|absent|missing|outstanding|open)\b|(?:did|does|do)(?:n't| not)(?: yet)? (?:exist|appear|list|show|name|include|mention|contain|carry|give)\b)"
 TIMESTAMPED_ABSENCE = re.compile(r"\bat the time of (?:this )?writing\b|" + FRAME + SAME_CLAUSE + ABSENT, re.I)
@@ -54,7 +54,26 @@ TIMESTAMPED_ABSENCE = re.compile(r"\bat the time of (?:this )?writing\b|" + FRAM
 the record turn's note. When a record gives the date X is due, the sentence is the due date. The absence must be a
 negated state verb (had not been published, remain unpublished, no minutes had issued, has yet to rule) in the same
 clause as the frame; "as of Friday the rate was not 4 percent" negates a value, and an effective date ("effective as of
-September 8") is a positive fact, so neither is a hit."""
+September 8") is a positive fact, so neither is a hit. An "as of" date more than HISTORIC days before the page's own
+date is a historical status ("as of July 2024 the committee had not changed its range since 2023"), not the page's frame."""
+HISTORIC = 14
+PAGE_DATE = re.compile(r"updated (\d{4}-\d{2}-\d{2})|\b(\d{4}-\d{2}-\d{2})\b")
+
+
+def page_date(html):
+    m = PAGE_DATE.search(html)
+    return datetime.date.fromisoformat(m.group(1) or m.group(2)) if m else None
+
+
+def timestamped_absence(own, today):
+    """The regex hit unless its "as of" date is historic relative to the page date."""
+    m = TIMESTAMPED_ABSENCE.search(own)
+    if not m or not today or not m.group("mon"): return bool(m)
+    try: month = datetime.datetime.strptime(m.group("mon")[:3], "%b").month
+    except ValueError: return True
+    try: when = datetime.date(int(m.group("yr") or today.year), month, int(m.group("day") or 1))
+    except ValueError: return True
+    return (today - when).days <= HISTORIC
 THRESHOLDS = {"self_description": 0.86, "mirrored": 0.43, "outline_conclusion": 0.56, "reader_gloss": 0.67, "source_subject": 0.65, "unprompted": 0.52, "dictionary": 0.33}
 """Reread thresholds at specificity 0.95 from --calibrate on 2026-09-19 (design/voice-calibrate-2026-09-19b.txt): source_subject
 AUC 0.95, recall 8/10; dictionary AUC 1.00, recall 8/8, and the label file's highest-scoring "clean" rows are dictionary lines
@@ -159,13 +178,14 @@ def lint(path, client):
     qs = {k: Noul(instructions={"question": q}) for k, q in QUESTIONS.items()}
     fails, reviews, judged = [], [], []
     subject = os.path.basename(os.path.dirname(path.rstrip("/")))
+    today = page_date(open(path, encoding="utf-8").read())
     for tag, sen, inside in sentences(path):
         own = strip_q(sen, inside)
         if own == SECTION_TITLE: continue
         if READER.search(own): fails.append(("reader", 1.0, sen))
         if SELF_PAGE.search(own): fails.append(("self_page", 1.0, sen))
         if FIRST_PERSON.search(own): fails.append(("first_person", 1.0, sen))
-        if TIMESTAMPED_ABSENCE.search(own): fails.append(("timestamped_absence", 1.0, sen))
+        if timestamped_absence(own, today): fails.append(("timestamped_absence", 1.0, sen))
         if tag in OWN_VOICE and not own.startswith("How we check"): judged.append((sen, own))
     for (sen, own), scores in zip(judged, score_all(client, qs, [o for _, o in judged], subject)):
         for k, v in scores.items():

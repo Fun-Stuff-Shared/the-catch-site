@@ -98,8 +98,9 @@ sounding unaware of the work it took to know it.
   that is wrong. When no record supports the outlet's claim and none contradicts it, the
   chip is "not in the record" and the row says what was searched.
 - A definition, a list of who is affected, or a mechanism that is not in a record is not
-  written. The plain-words sentence at a term's first use says what the record says the
-  term means, or says only what the term is doing in that sentence.
+  written. Where a term does need explaining (which words need introducing, above), the
+  explanation says what the record says the term means, or only what the term is doing in
+  that sentence.
 - Coverage is cited in the coverage section, or in a narrative sentence about what the
   outlet wrote. A narrative paragraph does not carry a coverage cite for a fact.
 - Every superlative and gloss ("lowest since", "unexpected", "first") quotes a held record
