@@ -1,7 +1,7 @@
 # Author dispositions
 
 1. Fixed. The page now says the 2027 median rose from 3.6 percent in June to 4.1 percent in September.
-2. Held. The reader model selected the rate-path shift for the story view; the unemployment and inflation comparison rows remain in the pinned SEP and are not A/B story material.
+2. Fixed in the patch round. The reader model grades the PCE-inflation medians B for answer 5, so the projections section now gives the 2026 PCE median, its June comparison and the 2027 median. The C-graded unemployment and core-PCE rows remain in the detail table.
 3. Fixed. The 2.4 percent figure is now labeled core CPI, distinct from the Fed's PCE target.
 4. Held. The reader model's admitted BLS passage is the monthly gasoline contribution and core-CPI baseline; the annual gasoline, energy and fuel-oil totals were not selected for the story view.
 5. Held. The monthly core components were not selected by the reader model and do not change its answer about the oil-shock mechanism.
@@ -9,18 +9,18 @@
 7. Fixed from an admitted record. The mechanism section now names the war with Iran and the AP record's seventh-month timing.
 8. Held. The binding reader model grades The Hill's report of Trump's post for this section; the page attributes the claim to The Hill and does not promote it to a first-party record.
 9. Held. The White House statement was not in the record or reader model and is not needed to answer the selected political-pressure question.
-10. Held. The reported Trump-Warsh conversation was not admitted by the record or graded in the reader model; adding it would require a new A/B admission after the model's fixed answers.
+10. Fixed in the patch round. The DealBook body was recovered from `capture-oneoff-20260919T222037Z`, pinned, added to the census, passage table, manifest and records list, and graded B for answer 7. The pressure section now reports Trump's description of the conversation and the board, attributed to DealBook.
 11. Held. The pre-meeting Hassett warning was not selected by the reader model and falls outside this event's answer set.
 12. Held. Congressional reaction was not selected by the reader model and does not change the decision, mechanism or projection answers.
-13. Held. Treasury testimony and the prior day's yield level were not selected by the reader model; the story limits its aftermath to the admitted next-day AP and CNBC records.
+13. Admitted, not promoted to the story view. Reuters' decision report and Breakingviews commentary are pinned and listed in the manifest and records. They establish the roughly 5 percent 10-year-yield context and characterize Treasury's effort to lower long yields, but those passages are C-grade market and commentary context rather than an A/B reader-model answer. Bessent's distinct B-grade supply-shock argument is used under item 21.
 14. Held. Prediction-market contracts were not admitted, and the reader model selected the attributed CME comparison already in the record.
-15. Held. Same-day multi-asset moves were not selected by the reader model; the story does not claim that the next-day yield move summarizes all market reaction.
+15. Admitted in bounded form, not promoted to the story view. Reuters' captured decision report records the dollar, Treasury yields, stocks and CME odds, and is in the manifest and records list. The MarketScreener fetch in `capture-oneoff-20260919T230928Z` extracted only a short Bloomberg video description and did not support the interrogation's gold, Canadian-dollar or shorter-yield details. Same-day multi-asset moves remain C-grade context, and the page makes no claim that the next-day AP yield move summarizes them.
 16. Fixed. The page now gives Warsh's “dose of accommodation” formulation and its stated link to financial and credit conditions.
 17. Held. Long-run dot distributions are outside the reader model's selected answer, which focuses on the 2026 counts and the conditional nature of projections.
 18. Fixed in scope. The unnecessary Powell emphasis was removed. The July 9–3 vote and the several participants who wanted a hike remain; individual voter names are not needed for the reader-model answer.
 19. Held as detail. The story states the new range, reserve-balance rate and primary-credit rate; repo caps and balance-sheet operations are operator detail outside the reader-model question tree.
-20. Held. Same-week releases and future data dates were not selected by the reader model and would turn the event story into a calendar.
-21. Held. The requested story is written from the record and reader model; unadmitted additional outlet coverage is not A/B story material.
+20. Fixed in the part graded B. The BEA July PCE release is pinned and the unknowns section now names the September 30 August-PCE release and annual national-account updates. The remaining same-week calendar miscellany is C/D material and stays out.
+21. Fixed for the A/B material and dispositioned for the rest. DealBook supplies the B-grade direct-pressure passage; the Dow Jones Newswires/WSJ live card supplies B-grade policy-dispute context; Reuters decision and Breakingviews records are admitted as bounded coverage. The FT fetch in `capture-oneoff-20260919T223809Z` returned a 1,068-character “Subscribe to read” shell, so it is a dated refusal and is not admitted. Bloomberg and CNN were not needed after the A/B claims were supplied by captured bodies and remain outside the record.
 22. Held. The issuing agency's social posts duplicate the admitted statement and transcript and add no distinct event fact.
 23. Held. The interrogation's “forecasts that were wrong” frame adds causal and historical claims not established by the admitted record or reader model.
 24. Held. Additional household price levels were not selected by the reader model; the admitted consumer-effects record supports the channel and the series-versus-single-move distinction.

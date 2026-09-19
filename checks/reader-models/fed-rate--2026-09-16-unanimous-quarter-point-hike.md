@@ -298,6 +298,17 @@ Every passage-table line and gap-list line is graded below. A and B rows name th
 | Remaining unknown: one increase may or may not slow demand, and more increases may follow. | A | 6 |
 | Remaining unknown: political pressure may shape public interpretation, but the record does not show it determined the vote. | B | 7 |
 
+### Patch-round passage grades
+
+| Record | Passage | Grade | Serves answer |
+|---|---|---|---|
+| `nyt-dealbook-trump-fed-rates-2026-09-17` | Trump said he told Warsh to vote with the board because the result would not change and described the board as very tough and hostile. | B | 7 |
+| `reuters-breakingviews-fed-war-2026-09-16` | Breakingviews characterizes the renewed independence dispute and Treasury's effort to lower long yields. | C | — |
+| `reuters-fed-decision-2026-09-16` | Reuters gives same-day Treasury, stock, dollar and rate-expectation context. | C | — |
+| `dow-jones-bessent-rate-hike-2026-08-31` | Bessent argued that a supply shock traditionally does not call for a rate increase without second- or third-order effects. | B | 4, 7 |
+| `bea-personal-income-outlays-july-2026` | August PCE and the annual national-account updates were scheduled for September 30. | B | 6 |
+| `cbo-iran-cost-2026-09-15` | CBO traces the shock through oil, refining and shipping; estimates 2.3 points added to annualized Q2 PCE inflation; and estimates a longer core-PCE pass-through. | B | 4, 5, 6 |
+
 ## Sections
 
 | Section | Question it answers |

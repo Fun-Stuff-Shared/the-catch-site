@@ -54,7 +54,7 @@ export const event = {
   kpis: [
     { value: `${range.lower}–${range.upper.toFixed(2)}`, unit: "%", label: "new target range" },
     { value: `${computed.voteFor}–${computed.voteAgainst}`, label: "committee vote" },
-    { value: 3.9, unit: "%", label: "August gasoline increase" },
+    { value: 3.9, unit: "%", label: "August gasoline rise from July, seasonally adjusted" },
     { value: 4.1, unit: "%", label: "median 2026 rate projection" },
   ],
   visual: {

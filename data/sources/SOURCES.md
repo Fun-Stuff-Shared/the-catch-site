@@ -1682,3 +1682,15 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.txt | 36007 | 51f98a3210b2fce8 |
 | data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.md | 131812 | a79df057d4befe2d |
 | data/sources/fed-rate/coverage/ap-reconstruction-2026-09-17.txt | 6324 | 4860ec6904b72e49 |
+| data/sources/fed-rate/coverage/nyt-dealbook-trump-fed-rates-2026-09-17.html | 380150 | 7367c28813ca2966 |
+| data/sources/fed-rate/coverage/nyt-dealbook-trump-fed-rates-2026-09-17.txt | 12819 | ecc4b153399df7ba |
+| data/sources/fed-rate/coverage/reuters-breakingviews-fed-war-2026-09-16.html | 661543 | ed23e54f4a7c4a32 |
+| data/sources/fed-rate/coverage/reuters-breakingviews-fed-war-2026-09-16.txt | 3467 | e31c73c100852584 |
+| data/sources/fed-rate/coverage/reuters-fed-decision-2026-09-16.html | 557045 | 36274d783b1c746b |
+| data/sources/fed-rate/coverage/reuters-fed-decision-2026-09-16.txt | 5509 | 17b331c14d1748ae |
+| data/sources/fed-rate/coverage/dow-jones-bessent-rate-hike-2026-08-31.html | 154800 | 26112dad21b62919 |
+| data/sources/fed-rate/coverage/dow-jones-bessent-rate-hike-2026-08-31.txt | 1471 | 18a3fac24e0d2ee3 |
+| data/sources/fed-rate/bea-personal-income-outlays-july-2026.html | 53244 | 131a34937193d563 |
+| data/sources/fed-rate/bea-personal-income-outlays-july-2026.txt | 4693 | dfae6c0f417e25f9 |
+| data/sources/fed-rate/cbo-iran-cost-2026-09-15.html | 43026 | 7a72ba4376bc41b9 |
+| data/sources/fed-rate/cbo-iran-cost-2026-09-15.txt | 7289 | 236e6beb32558ce0 |

@@ -403,3 +403,58 @@ The following list is the complete output of `node skills/catch-event-page/scrip
 132 lines to disposition
 
 Gap total: 132 lines, all dispositioned.
+
+## Story patch round, 2026-09-19
+
+This is the single patch round over story commit `b75257dd`. The reader-model answers and section order are unchanged. New passages are graded in the reader model before use.
+
+### Patch census lines
+
+1. New York Times DealBook, “Trump Looks Isolated on Interest Rates,” September 17: `capture news` resolved the credentialed URL to `capture-oneoff-20260919T222037Z`; the whole body and raw HTML are pinned as `nyt-dealbook-trump-fed-rates-2026-09-17`. Used for B-grade answer 7.
+2. Reuters Breakingviews, “Warsh’s reluctant turn restarts Fed war,” September 16: `capture search` resolved the credentialed URL to `quarry-wire-scheduled-20260916T220017Z`; the whole body and raw HTML are pinned as `reuters-breakingviews-fed-war-2026-09-16`. Admitted as C-grade context, not story-view prose.
+3. Reuters, “Fed hikes rates in search of 'timelier' drop in inflation, sees more tightening ahead,” September 16: `capture search` resolved the credentialed URL to `quarry-wire-scheduled-20260916T220017Z`; the whole body and raw HTML are pinned as `reuters-fed-decision-2026-09-16`. Admitted as C-grade market context, not story-view prose.
+4. Dow Jones Newswires, “Bessent Outlines Reasons the Fed Might Want to Avoid a Rate Hike,” August 31: the registry did not return the WSJ live-card URL. `capture news` captured the complete syndicated item from Bitget in `capture-oneoff-20260919T230928Z`; the text identifies itself as part of a Wall Street Journal live-coverage event. It is pinned as `dow-jones-bessent-rate-hike-2026-08-31` and used for B-grade answers 4 and 7.
+5. Bureau of Economic Analysis, “Personal Income and Outlays, July 2026”: `capture news` resolved the official URL to `capture-oneoff-20260919T214649Z`; the whole body and raw HTML are pinned as `bea-personal-income-outlays-july-2026`. Used for B-grade answer 6.
+6. Congressional Budget Office, “Estimating the Cost of Combat Operations Against Iran”: the direct fetch in `capture-oneoff-20260918T083201Z` returned 403, then the capture registry recovered the September 16 Wayback body. The recovered raw HTML and whole text are pinned as `cbo-iran-cost-2026-09-15`. Used for B-grade answers 4, 5 and 6.
+7. Financial Times, “Federal Reserve defies Donald Trump with first rate rise since 2023”: the September 19 fetch in `capture-oneoff-20260919T223809Z` returned HTTP 200 but extracted only a 1,068-character subscription offer headed “Subscribe to read.” **Dated refusal: 2026-09-19, fetch `capture-oneoff-20260919T223809Z`, `article body unavailable behind subscription shell`; not admitted.**
+8. MarketScreener URL named by interrogation item 15: `capture news` fetched it in `capture-oneoff-20260919T230928Z`, but extraction produced only a 471-character Bloomberg-video description and none of the claimed gold, Canadian-dollar or shorter-yield moves. Not admitted; Reuters' whole decision report supplies the bounded same-day record.
+
+### Patch passage tables
+
+| Record | Passage | Disposition |
+|---|---|---|
+| `nyt-dealbook-trump-fed-rates-2026-09-17` | Trump said he told Warsh to vote with the board because it would not change the result. | Used in “The pressure around the decision.” |
+| `nyt-dealbook-trump-fed-rates-2026-09-17` | Trump described Warsh as facing a “very tough board” and called the board hostile. | Used, attributed to DealBook, in the pressure section. |
+| `reuters-breakingviews-fed-war-2026-09-16` | Breakingviews says Bessent had sought lower Treasury yields since August. | Held as C-grade commentary and record-list context. |
+| `reuters-breakingviews-fed-war-2026-09-16` | Breakingviews says the policy dispute had renewed after the increase. | Held as C-grade commentary; the story uses direct statements for answer 7. |
+| `reuters-fed-decision-2026-09-16` | The 10-year yield was 4.958 percent after exceeding 5 percent on September 14. | Held as C-grade market context. |
+| `reuters-fed-decision-2026-09-16` | The dollar rose, Treasury yields were largely steady and stocks were mostly higher after the announcement. | Held as C-grade same-day market context. |
+| `dow-jones-bessent-rate-hike-2026-08-31` | Bessent said a supply shock traditionally does not call for higher rates unless second- or third-order effects appear. | Used in the pressure section after the story first explains the Fed's mechanism. |
+| `dow-jones-bessent-rate-hike-2026-08-31` | Bessent said core inflation remained restrained. | Used as his attributed side of the policy dispute. |
+| `bea-personal-income-outlays-july-2026` | The next personal-income-and-outlays release, for August, was scheduled for September 30 at 8:30 a.m. EDT. | Used in “What we do not know yet.” |
+| `bea-personal-income-outlays-july-2026` | BEA's national, industry and regional annual updates were scheduled to begin September 30. | Used to identify the GDP-revision date in unknowns. |
+| `cbo-iran-cost-2026-09-15` | Lower oil and gas shipments, refining disruption and Red Sea shipping disruption raised energy and transport costs. | Used in the mechanism section. |
+| `cbo-iran-cost-2026-09-15` | Energy added an estimated 2.3 percentage points to the annualized Q2 PCE inflation rate. | Used in the mechanism section. |
+| `cbo-iran-cost-2026-09-15` | Core PCE inflation was estimated to remain elevated longer because energy costs pass into nonenergy prices more slowly. | Used in the mechanism section. |
+
+### Re-dispositioned interrogation items
+
+- Item 10: fixed. DealBook is admitted and its B-grade direct-pressure passage appears in the pressure section.
+- Item 13: records admitted. Reuters' yield and Treasury-campaign context is C-grade and remains in the records rather than the story view.
+- Item 15: bounded record admitted. Reuters' same-day report is retained, while the unsupported multi-asset details are held because the named MarketScreener fetch did not contain them and the reader model grades this context C.
+- Item 21: fixed for A/B material. DealBook, Reuters and the Dow Jones/WSJ live-card text are admitted; the DealBook and Bessent passages appear in the story. The FT article is the dated refusal above. Additional Bloomberg and CNN bodies were not needed after the graded claims were supplied.
+
+### Red-team finding dispositions
+
+1. Major, gasoline denominator: fixed. The KPI now says the 3.9 percent increase is seasonally adjusted from July.
+2. Major, PCE path hidden in detail: fixed. Story mode now states 3.7 percent for 2026, up from 3.6 in June, 2.3 percent for 2027 and 2 percent in 2029.
+3. Major, lower-income household burden: fixed. “Who feels it” now includes the B-grade transcript passage about households without financial assets, home equity or retirement-plan equity living from paychecks.
+4. Major, September 30 releases: fixed. The official BEA release is admitted and unknowns names August PCE and annual national-account updates, including GDP revisions.
+5. Major, CBO mechanism: fixed. The archived CBO primary is admitted and the mechanism section traces oil, refining, shipping, the 2.3-point Q2 contribution and delayed core-PCE pass-through.
+6. Minor, source authority: fixed. The projection distribution cites the SEP primary rather than The Hill, uses the SEP's end-of-year endpoint definition rather than turning dots into meeting-by-meeting promises, and the independence passage cites the press-conference transcript rather than The Hill. Both outlet records remain in the records list for their distinct coverage uses.
+
+### Entailment correction
+
+The first patch-scoped entailment run returned `NOT-ENTAILED` for the sentence that translated the 12/4/2 year-end dot distribution into “a single hike,” “two hikes” and “a pair of holds.” The SEP defines dots as individual end-of-year endpoints, not meeting sequences, and its text extraction does not preserve the visual count. The story now states only the entailed concept: Figure 2 contains several individual year-end endpoints around the median and does not establish a meeting-by-meeting path.
+
+No Critical findings were reported. All five Major findings were fixed. The one Minor was fixed and is dispositioned here as required.
