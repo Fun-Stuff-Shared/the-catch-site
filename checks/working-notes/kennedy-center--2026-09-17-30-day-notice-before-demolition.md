@@ -86,6 +86,29 @@ One line per search, in run order:
 31. Added the August vote's acknowledged information gaps: two slides received two days before, Whitehouse's six baseline requirements, Larsen's missing four-year analysis, and the later August 31 distribution of the full Delta report.
 32. The required Post registry attempt returned the 675-character subscription excerpt described above. It was not admitted under the skill's short-body rule, so no new layoff sentence was added.
 
+## Round-three review patch, items 33–41
+
+33. Removed both author-process sentences from the timeline caption; the figure now presents the dated sequence without explaining where its first entry or REACH definition came from.
+34. Narrowed only the named wording. The page now says UPI published an excerpt of the order and keeps the “ordered discovery” characterization attributed to counsel. The docket remains uncited.
+35. Kept UPI's byte-exact reproduced quotation and marked in the quote-card source line that the bracketed explanations are UPI's.
+36. Replaced both page uses of `no-demolition position` with wording limited to full demolition or rebuilding. Sibling count for the named class: two changed, zero remaining.
+37. Added that the August plan temporarily moved the Kennedy memorial to the REACH and said it would remain open to the public, from the board-minutes passage.
+38. Added the AP record's concrete account that Duke Ellington students lost Washington National Opera costume access and Millennium Stage performances.
+39. Named the three recognition proposals before the AP correction: the renovation-and-restoration inscription, the second inscription conditional on the Trump Kennedy Center Fund reaching $100 million, and President Donald J. Trump Plaza. The amount is exported from the data module.
+40. Captured ECF 86-2 once through the direct CourtListener storage route in `capture-oneoff-20260919T111931Z`; the registry returned `body_captured` with 248,279 raw bytes. The PDF's email page was read visually because the registry text extraction omitted the image text. The page now carries both parts of Floca's email: the closure would let operations staff determine whether another severe incident was imminent, and it was not a decision to carry out the board's separate renovation-closure vote.
+41. Tried each named public route once. ProPublica Nonprofit Explorer was captured in `capture-oneoff-20260919T112009Z`, but its page listed Kennedy Center filings only through September 2024. The IRS search route was captured in `capture-oneoff-20260919T112055Z`, but the saved page exposed only its JavaScript requirement and no filing result. The Atlantic article was captured in full in `capture-oneoff-20260919T112009Z`. Because neither primary route supplied the new return, the page adds one sentence attributed to The Atlantic rather than treating the filing as admitted primary evidence.
+
+### Round-three capture passage table
+
+| Record | Passage | What it establishes | Use |
+|---|---|---|---|
+| `floca-email-86-2-2026-09-16` | “determine whether any other severe safety incident is imminent” and “this is not a decision to effectuate the Board's separate vote” | Management's stated purpose for the temporary closure and its separation from the renovation vote | Who feels it, both halves together |
+| `propublica-kennedy-center-990-index-2026-09-19` | “According to its Sept. 2024 tax filing” | The captured index did not list the newly reported return | Not used in story prose; route outcome recorded in the manifest needs ledger |
+| `irs-teos-kennedy-center-2026-09-19` | “To use this app, JavaScript needs to be enabled” | The saved IRS route did not expose a filing result | Not used in story prose; route outcome recorded in the manifest needs ledger |
+| `atlantic-kennedy-center-tax-return-2026-09-18` | “more than $516 million in total revenue”; “$48 million ‘bad debt expense’”; program-service revenue from nearly $105 million to about $89 million; annual audit not completed | The outlet's account of the unavailable filing figures and audit status | Where this sits, attributed to The Atlantic |
+
+Round-three `pin_gaps.mjs` dispositions for the new primary-route records: the Floca email's Grand Foyer line is held unused because the existing declaration already supplies the page's plaster-fall account, and the Gift Shop relocation is out of scope for items 33–41. The ProPublica page's filing dates are used only to establish that its index stopped at September 2024; its generic Nonprofit Explorer, audit-threshold and extracted-data labels are held unused. The IRS route produced no undispositioned gap line. The Atlantic record is coverage and is used only in the attributed filing sentence.
+
 ## Primary-record passage tables
 
 ### September 17 ruling and immediate filings

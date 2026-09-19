@@ -1554,12 +1554,16 @@ Round 5 additions for the Iran war cost story (September 19, 2026): H.Con.Res. 1
 
 Court filings and official records were captured before coverage. The September 17 minute order is text-only on the public docket; CourtListener and D.D.C. docket routes were refused by the capture registry, so the story labels the admitted carriers of its operative sentence. The Truth Social page captured only a shell and was not admitted.
 
+Round three added Floca's September 16 staff email from ECF 86-2 and The Atlantic's September 18 filing analysis. ProPublica listed returns only through September 2024, and the IRS search route served a JavaScript shell without a Kennedy Center filing result.
+
 | File | Bytes | sha256 (first 16) |
 |---|---:|---|
 | data/sources/coverage/kennedy-center/ap-kennedy-center-protest-2026-09-18.html | 941829 | 309ffd15d12e04c7 |
 | data/sources/coverage/kennedy-center/ap-kennedy-center-protest-2026-09-18.txt | 5347 | 2784536070c6bae8 |
 | data/sources/coverage/kennedy-center/ap-trump-kennedy-center-2026-09-18.html | 920634 | 33b4aa49a869fec8 |
 | data/sources/coverage/kennedy-center/ap-trump-kennedy-center-2026-09-18.txt | 2547 | f7aa06f6243f2008 |
+| data/sources/coverage/kennedy-center/atlantic-kennedy-center-tax-return-2026-09-18.html | 140423 | 4481870d4d5c46a |
+| data/sources/coverage/kennedy-center/atlantic-kennedy-center-tax-return-2026-09-18.txt | 9591 | 16a410634ccf281c |
 | data/sources/coverage/kennedy-center/article_0144.html | 261765 | 014177b473c520c4 |
 | data/sources/coverage/kennedy-center/article_0144.txt | 5799 | 85d5923dac44e427 |
 | data/sources/coverage/kennedy-center/article_0727.html | 314246 | 816cf4e4fe567a1b |
@@ -1608,6 +1612,10 @@ Court filings and official records were captured before coverage. The September 
 | data/sources/kennedy-center/floca-declaration-86-1-2026-09-17.txt | 6077 | 6f429783dc8d1852 |
 | data/sources/kennedy-center/floca-declaration-89-3-2026-09-18.pdf | 197598 | eda769d58b26d42d |
 | data/sources/kennedy-center/floca-declaration-89-3-2026-09-18.txt | 5606 | c071026c2f3ba56f |
+| data/sources/kennedy-center/floca-email-86-2-2026-09-16.pdf | 248279 | 2eef5c69ae5fac37 |
+| data/sources/kennedy-center/floca-email-86-2-2026-09-16.txt | 4007 | c9b71dab65408268 |
+| data/sources/kennedy-center/irs-teos-2026-09-19.html | 137014 | 37c193aa56ed80c7 |
+| data/sources/kennedy-center/irs-teos-2026-09-19.txt | 681 | c14db478d9d675bc |
 | data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.pdf | 125928 | 144bb1928afa35ce |
 | data/sources/kennedy-center/kennedy-bailey-declaration-84-1-2026-09-16.txt | 6524 | 4dab905a8c673a31 |
 | data/sources/kennedy-center/preservation-addendum-62-1-2026-08-28.pdf | 43535 | c4c9f9942aec3646 |
@@ -1618,6 +1626,8 @@ Court filings and official records were captured before coverage. The September 
 | data/sources/kennedy-center/preservation-opinion-45-2026-05-29.txt | 99566 | 961b1444aae29127 |
 | data/sources/kennedy-center/preservation-plaintiffs-statement-2026-09-17.html | 77281 | e48b9341b1e6025c |
 | data/sources/kennedy-center/preservation-plaintiffs-statement-2026-09-17.txt | 5171 | 53bbdb6460abb819 |
+| data/sources/kennedy-center/propublica-nonprofit-explorer-2026-09-19.html | 361398 | 64afd2afe0b01f79 |
+| data/sources/kennedy-center/propublica-nonprofit-explorer-2026-09-19.txt | 11102 | 33855f00e380ca90 |
 | data/sources/kennedy-center/public-law-119-21-2025.pdf | 968588 | 42f86c3d408bccb1 |
 | data/sources/kennedy-center/public-law-119-21-2025.txt | 1252302 | 0e3e82ed4bed7539 |
 | data/sources/kennedy-center/scheduling-order-82-2026-09-16.pdf | 230282 | 535a8219bece6215 |

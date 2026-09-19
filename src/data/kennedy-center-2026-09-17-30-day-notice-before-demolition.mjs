@@ -51,6 +51,13 @@ export const funding = {
   fullClosureShortfallClaimLabel: dollarsInMillions(30_000_000),
 };
 
+export const financialFiling = {
+  totalRevenueLabel: "more than $516 million",
+  badDebtExpenseLabel: dollarsInMillions(48_000_000),
+  priorProgramRevenueLabel: "nearly $105 million",
+  currentProgramRevenueLabel: "about $89 million",
+};
+
 export const affectedPeople = {
   closureEstimateLow: 75,
   closureEstimateHigh: 175,
@@ -84,16 +91,22 @@ export const boardVote = {
   presentNotVoting: 2,
 };
 
+export const recognition = {
+  fundingThresholdLabel: dollarsInMillions(100_000_000),
+};
+
 export const coverageChecks = [
   {
     outlet: "Associated Press via PBS NewsHour",
-    claim: "reported that the order required 30 days' notice before any major physical change and that all three recognition proposals were shot down.",
+    claim: `reported that the order required 30 days' notice before any major physical change. It identified the recognition proposals as an inscription crediting Trump with the renovation and restoration, a second inscription conditional on the Trump Kennedy Center Fund reaching ${recognition.fundingThresholdLabel}, and President Donald J. Trump Plaza, then said all three were shot down.`,
     verdict: "The notice description is too broad: the order says more than 30 days and follows the project scope presented to the court. The recognition account is wrong: two proposals were enjoined, while the endowment inscription request was denied as unripe.",
     status: "warn",
     chip: "mislabeled",
     source: "pbs-ap-kennedy-center-2026-09-17",
     passage: "provide 30 days' notice before making any major physical changes",
     secondPassage: "All of those proposals were shot down Tuesday by Cooper",
+    proposalSource: "board-resolution-66-2-2026-08-13",
+    proposalPassage: "in any or all of the following ways",
     recordSource: "beatty-opinion-77-2026-09-15",
     recordPassage: "However, the Court denies as unripe",
   },
