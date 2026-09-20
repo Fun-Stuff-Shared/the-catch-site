@@ -1694,3 +1694,11 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/tampa-bay-times-raymond-james-response-2026-09-15.txt | 1681 | 7af7537c9733b482 |
 | data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.html | 127467 | f2ca184bdf37a86f |
 | data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.txt | 2635 | e02d7628b2390b93 |
+| data/sources/ed-sheeran-tour/coverage/boston-25-gillette-refund-complaints-2026-09-18.html | 236702 | a84d1883349eef70 |
+| data/sources/ed-sheeran-tour/coverage/boston-25-gillette-refund-complaints-2026-09-18.txt | 2144 | 8c4cc609655bfc95 |
+| data/sources/ed-sheeran-tour/massachusetts-ticket-refund-law-185d-2026-09-20.html | 76311 | a29a5365096810e1 |
+| data/sources/ed-sheeran-tour/massachusetts-ticket-refund-law-185d-2026-09-20.txt | 3263 | 72f62855e2a61333 |
+| data/sources/ed-sheeran-tour/coverage/guardian-sheeran-philadelphia-video-2026-09-20.html | 289492 | 3d17b4664e6ab4d4 |
+| data/sources/ed-sheeran-tour/coverage/guardian-sheeran-philadelphia-video-2026-09-20.txt | 617 | 6ccb8321a6534c33 |
+| data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.html | 808308 | fbdde9974ba3db85 |
+| data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.txt | 467 | f1aae2df315d24f4 |

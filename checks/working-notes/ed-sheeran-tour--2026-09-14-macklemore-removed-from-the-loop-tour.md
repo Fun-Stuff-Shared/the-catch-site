@@ -465,3 +465,83 @@ The patch is limited to R1 through R4 and S1 through S13. Sibling counts state h
 | S11 | 2 project-worded source meta strings | Patched. They now read `2011 bond document` and `saved again on 2026-09-20`. |
 | S12 | 1 missing eight-slot outcome | Patched. What happened says the tour continued without Macklemore and that the first post-removal date went ahead in Philadelphia with no support act. |
 | S13 | 5 held section kickers | Held with reason. They are shared-component labels reserved by the reviewer and were not changed. |
+
+## Patch round 3 source admissions
+
+All four admitted records came from fresh registry run `capture-oneoff-20260920T200641Z`. The reviewer-supplied fallback files were not used.
+
+### Census line: `boston-25-gillette-refund-complaints-2026-09-18`
+
+- Canonical URL: `https://www.boston25news.com/news/local/ags-office-reviewing-two-dozen-refund-requests-after-ed-sheeran-concert-controversy/AEHZEDHUIZFHNLMSPNWKTCVZ24/`
+- Registry run: `capture-oneoff-20260920T200641Z`
+- Captured: `2026-09-20T20:06:42.440792Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/boston-25-gillette-refund-complaints-2026-09-18.html`, 236702 bytes, SHA-256 `a84d1883349eef7098ac93f576fd01824cd65cc698b33b6a12c2540fc7f79dc1`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/boston-25-gillette-refund-complaints-2026-09-18.txt`, 2144 bytes, SHA-256 `8c4cc609655bfc950b59b15d2065ca8e62045f3f9b63a54e2bd09e671f11e8c0`
+
+| Passage | Disposition |
+|---|---|
+| The Massachusetts attorney general's office was reviewing at least 25 complaints requesting Ticketmaster refunds. | Grade A. Used in What happened next as a complaint count, not a purchaser count. |
+| The office said lineup changes do not necessarily entitle purchasers to refunds. | Grade B. Used to bound the refund dispute. |
+| Ticketmaster said organizers set refund policy. | Grade B. Used beside the tour FAQ's all-sales-final term. |
+
+### Census line: `massachusetts-ticket-refund-law-185d-2026-09-20`
+
+- Canonical URL: `https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXX/Chapter140/Section185D`
+- Registry run: `capture-oneoff-20260920T200641Z`
+- Captured: `2026-09-20T20:06:43.000036Z`
+- Raw pin: `data/sources/ed-sheeran-tour/massachusetts-ticket-refund-law-185d-2026-09-20.html`, 76311 bytes, SHA-256 `a29a5365096810e1a794b6795d0ac84170c56583772666d92ac8d60abde5e9c4`
+- Text sibling: `data/sources/ed-sheeran-tour/massachusetts-ticket-refund-law-185d-2026-09-20.txt`, 3263 bytes, SHA-256 `72f62855e2a61333dc19db1770f5bac2297d81f80213e3243b605d774db02605`
+
+| Passage | Disposition |
+|---|---|
+| Licensed ticket sellers must guarantee refunds in listed circumstances. | Grade B. Used to identify the legal test without saying it has been met. |
+| One circumstance is a ticket that fails to match its advertised description unless the purchaser approved a substitution. | Grade B. Used in What we do not know yet. |
+
+### Census line: `guardian-sheeran-philadelphia-video-2026-09-20`
+
+- Canonical URL: `https://www.theguardian.com/music/video/2026/sep/20/ed-sheeran-sorry-for-mistakes-as-tour-resumes-video`
+- Registry run: `capture-oneoff-20260920T200641Z`
+- Captured: `2026-09-20T20:06:44.798196Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/guardian-sheeran-philadelphia-video-2026-09-20.html`, 289492 bytes, SHA-256 `3d17b4664e6ab4d4bc4e609f961129d5cf9e019e73d109d538a9b4b66f2f578f`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/guardian-sheeran-philadelphia-video-2026-09-20.txt`, 617 bytes, SHA-256 `6ccb8321a6534c33276a6509f633c93ef3d5c03bc6ef7870c68ae6c57b7a70b7`
+
+| Passage | Disposition |
+|---|---|
+| Sheeran called the situation in Gaza catastrophic and unjustifiable. | Grade B. Used for Sheeran's own words in the Philadelphia paragraph. |
+| The Guardian identifies the video source as Ed Sheeran via Instagram. | Grade C. Used to establish the carrier relationship. |
+
+### Census line: `ed-sheeran-philadelphia-reel-2026-09-19`
+
+- Canonical URL: `https://www.instagram.com/reel/DdfY7JYirtn/`
+- Registry run: `capture-oneoff-20260920T200641Z`
+- Captured: `2026-09-20T20:06:44.324055Z`
+- Raw pin: `data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.html`, 808308 bytes, SHA-256 `fbdde9974ba3db85b842683e61804943fc98da19cf6c71d6db0d6081e9730745`
+- Text sibling: `data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.txt`, 467 bytes, SHA-256 `f1aae2df315d24f4f7ee4d082b693474cbf8200651b68545f70fff68bb7dcf9c`
+
+| Passage | Disposition |
+|---|---|
+| The caption says `Tonight in Philadelphia`. | Grade C. The reel is pinned as Sheeran's original video post. |
+| The page exposes no transcript of the spoken remarks. | The Guardian video page is used as the carrier for Sheeran's own Gaza words. |
+
+## Patch round 3 ledger
+
+The patch is limited to R1 through R4 and S1 through S12. Sibling counts state how many same-class instances were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline | Held with reason. The h1 is the accepted state label reserved for the editor. It was not changed or discussed on the page. |
+| R2 | 1 missing refund-dispute thread | Patched. What happened next now carries the complaint count, attorney general review, the office's stated position, Ticketmaster's policy statement and the FAQ term. What we do not know yet carries the statutory test and the unresolved question. |
+| R3 | 1 secondary-only remarks citation cluster | Patched. The fresh Instagram reel is pinned because it serves a caption, and the fresh Guardian video carrier is cited for Sheeran's own Gaza words because the reel page has no transcript. AP and the New York Times remain cited for observed concert facts. |
+| R4 | 2 Kraft introductions | Patched. The first mention identifies Robert Kraft as owner of the New England Patriots and Gillette Stadium. The later introduction now uses only his surname. |
+| S1 | 2 Kraft introductions | Patched with R4 at the first mention and later reference. |
+| S2 | 2 KPI labels and 2 matching visual labels | Patched. The second count now says all 10 are the same 10 remaining dates named by the first count. |
+| S3 | 1 arithmetic-method sentence | Patched. The proof block now says that 10 of the 27 dates fall after September 14. |
+| S4 | 1 stacked-hedge venue sentence | Patched. Rolling Stone is named once as reporting the five other objections, followed by their lack of confirmation. |
+| S5 | 1 disconnected lease sentence | Patched. The sentence now says CAIR tied its records effort to the stadium's public land before giving the lease chain. |
+| S6 | 1 response-window explanation | Patched. Only the plain fact that the five-business-day period had not run remains. |
+| S7 | 2 tour-control qualification paragraphs | Patched. The nonparticipant qualification is folded into the sentence that introduces AP's three sources. |
+| S8 | 3 appearances of the Philadelphia remarks | Patched. The narrative and timeline retain the remarks; the detail block now carries only the delayed start, October 7 and West Bank material. |
+| S9 | 3 out-of-order What happened next paragraphs | Patched. The two CAIR paragraphs are consecutive, followed by the September 18 refund review and September 19 remarks. |
+| S10 | 2 AJC and MetLife paragraphs | Patched. MetLife's lack of comment is folded into the paragraph that attributes the contact and refund account to AJC. |
+| S11 | 5 source-list metadata strings | Patched. Each now says `saved September 20, 2026`, including the Ed Sheeran source. |
+| S12 | 5 shared-component classes: 11 record chips, 1 check label, 1 sources introduction, 1 reading-mode menu and 5 section kickers | Held with reason. The reviewer reserved all five classes and none was changed. |

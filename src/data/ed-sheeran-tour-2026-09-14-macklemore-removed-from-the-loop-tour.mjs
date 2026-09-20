@@ -62,8 +62,8 @@ export const event = {
   date: cutoff,
   updated: "2026-09-20",
   kpis: [
-    { value: computed.macklemoreScheduledRemainingShows, label: "of 10 remaining shows had booked Macklemore" },
-    { value: computed.remainingShows, label: "remaining Loop Tour dates stayed scheduled" },
+    { value: computed.macklemoreScheduledRemainingShows, label: "of 10 remaining dates had booked Macklemore" },
+    { value: computed.remainingShows, label: "of those 10 dates remained scheduled" },
     { value: computed.withdrawingActs, label: "supporting acts that left" },
     { value: computed.metLifeShows, label: "MetLife shows with Macklemore" },
   ],
@@ -71,8 +71,8 @@ export const event = {
     kind: "table",
     title: "The lineup change",
     rows: [
-      [String(computed.macklemoreScheduledRemainingShows), "of 10 remaining shows had booked Macklemore"],
-      [String(computed.remainingShows), "remaining Loop Tour dates stayed scheduled"],
+      [String(computed.macklemoreScheduledRemainingShows), "of 10 remaining dates had booked Macklemore"],
+      [String(computed.remainingShows), "of those 10 dates remained scheduled"],
       [String(computed.withdrawingActs), "supporting artists left"],
       [String(computed.metLifeShows), "MetLife appearances already played"],
     ],
@@ -93,6 +93,7 @@ export const chronologyRows = [
   ["Sept. 14", "Macklemore posts that Ed Sheeran's team removed him from the remaining support dates; Messina Touring Group says venues would not accept him on the lineup."],
   ["Sept. 15", "Sheeran posts that the removal was the promoter's decision. Finneas, Aaron Rowe, Lukas Graham and Beoga announce their departures."],
   ["Sept. 17", "CAIR-Philadelphia announces a public-records request about the Philadelphia decision; AP publishes its account of how artists, promoters and venues divide tour control."],
+  ["Sept. 18", "The Massachusetts attorney general's office reviews at least 25 complaints requesting Gillette Stadium refunds."],
   ["Sept. 19", "The Philadelphia concert proceeds. Sheeran starts without an opener, musicians join later, and he addresses Gaza and venue preapproval."],
 ];
 
