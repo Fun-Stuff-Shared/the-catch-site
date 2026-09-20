@@ -1702,3 +1702,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/guardian-sheeran-philadelphia-video-2026-09-20.txt | 617 | 6ccb8321a6534c33 |
 | data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.html | 808308 | fbdde9974ba3db85 |
 | data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.txt | 467 | f1aae2df315d24f4 |
+| data/sources/ed-sheeran-tour/coverage/cbs-metlife-response-2026-09-07.html | 657076 | 670559704ff6e81e |
+| data/sources/ed-sheeran-tour/coverage/cbs-metlife-response-2026-09-07.txt | 4303 | 1bc5f809e8afd696 |

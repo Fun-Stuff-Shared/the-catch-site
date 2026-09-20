@@ -76,9 +76,9 @@ Coverage, in admission order:
 - 2026-09-14 to 2026-09-20, BBC and Al Jazeera video pages: bodies saved in the candidate runs; not admitted because no distinct recoverable passage required a separate video record.
 - 2026-09-18, CNBC ticket-price report: found in the forward census; not admitted because secondary resale asking prices have no complete sales denominator and do not establish a lineup fact.
 - Undated, executed artist/promoter/venue contracts: not found on official or coverage routes; no contract term is inferred from the general AP mechanism report.
-- `gap-ap-philadelphia-post-show-2026-09-19` — 2026-09-19, [current AP Philadelphia record](https://apnews.com/article/ed-sheeran-concert-macklemore-philadelphia-d452b6eadff285553b20c558191886bb): the record audit found that the live article had advanced beyond the manifest's pre-show pin and reported the completed concert, Sheeran opening without an opener, his remarks and the planned protest; not admitted in the structure turn because the revised document is not pinned in the manifest.
-- `gap-cair-philadelphia-records-request` — By 2026-09-20, [CAIR-Philadelphia public-records request](https://pa.cair.com/pressrelease/macklemore-letter/): the record audit found a request for communications, policies, contracts and decision records involving the venue, city entities, promoter, artists, Kraft and advocacy groups; not admitted in the structure turn because the document is outside the manifest and the request does not establish what responsive records will show.
-- `gap-prior-comparable-loop-lineup-change` — No admitted record establishes an earlier comparable Loop Tour removal-and-withdrawals change, so the elapsed time since the last change of this kind cannot be stated from this record.
+- `gap-ap-philadelphia-post-show-2026-09-19`: 2026-09-19, [current AP Philadelphia record](https://apnews.com/article/ed-sheeran-concert-macklemore-philadelphia-d452b6eadff285553b20c558191886bb): the record audit found that the live article had advanced beyond the manifest's pre-show pin and reported the completed concert, Sheeran opening without an opener, his remarks and the planned protest; not admitted in the structure turn because the revised document is not pinned in the manifest.
+- `gap-cair-philadelphia-records-request`: By 2026-09-20, [CAIR-Philadelphia public-records request](https://pa.cair.com/pressrelease/macklemore-letter/): the record audit found a request for communications, policies, contracts and decision records involving the venue, city entities, promoter, artists, Kraft and advocacy groups; not admitted in the structure turn because the document is outside the manifest and the request does not establish what responsive records will show.
+- `gap-prior-comparable-loop-lineup-change`: No admitted record establishes an earlier comparable Loop Tour removal-and-withdrawals change, so the elapsed time since the last change of this kind cannot be stated from this record.
 
 ## Primary passage tables
 
@@ -621,3 +621,49 @@ The patch is limited to R1 through R8 and S1 through S11. Sibling counts state h
 | S10 | 1 misplaced Philadelphia outcome paragraph | Patched. The show outcome and venue-page listing moved from the September 14 sequence to What happened next, after the September 18 development. |
 | S11 | 1 missing public-stake sentence | Patched with the pins' allocation of authority. The Raymond James paragraph now states that venue refusals can lead a promoter to remove an act from a national tour while the public record does not show the governing clause or final decision-maker. |
 | HELD | 7 reserved classes | Held with reason. Reading-mode labels, record chips, section kickers, `How we check .`, saved-date lines, the `Coverage checked` and `Official data` group names, and the `Story updated` line were not changed. |
+
+## Patch round 6 record checks
+
+### CBS New York MetLife response report
+
+- Canonical URL: `https://www.cbsnews.com/newyork/news/macklemore-pro-palestinian-comments-metlife-stadium-ed-sheeran/`
+- Fresh registry run: `capture-oneoff-20260920T225305Z`
+- Captured: `2026-09-20T22:53:17.614529Z`
+- Result: HTTP 200, 657076 raw bytes, SHA-256 `670559704ff6e81e4ddc4327e3f038110bbffdda9a63df97ff5e9a1dae1126e2`
+- Extracted text: 4303 bytes, SHA-256 `1bc5f809e8afd6967b9104c63b51a8405ba552953cb8edbdfb46b3cfe67c5300`
+- Fallback disposition: not used because the fresh fetch succeeded.
+
+| Passage | Disposition |
+|---|---|
+| `CBS News New York also reached out to MetLife stadium for comment and did not hear back.` | Grade B. Used only to state that MetLife Stadium had not responded to CBS New York's request by September 7. |
+| Audience reactions, refund requests and descriptions of the two MetLife performances | Grade C. Held because existing pins carry the performance, petition and refund passages used by the story. |
+
+### Patch round 6 bounded-absence census
+
+- MetLife statement: the 17 coverage records, AJC account, venue statements and official venue records in the manifest were checked through September 20. CBS New York records no response by September 7, and no saved record in that bounded set carries a MetLife Stadium statement.
+- Earlier Loop Tour support-lineup change: the official 27-date schedule, artist statements, tour coverage and the prior fresh registry search recorded in `gap-prior-comparable-loop-lineup-change` identify no earlier support-lineup change on this tour. The page states only that no prior case appears in this bounded set.
+
+## Patch round 6 ledger
+
+The patch is limited to R1 through R5 and S1 through S12. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved both for the editor. Neither was changed or discussed on the page. |
+| R2 | 1 first-MetLife performance paragraph | Patched. The paragraph now quotes Macklemore's words to Jewish audience members and his stated peace, dignity, respect and equality message, attributed to the AP removal report. |
+| R3 | 4 bounded-absence paragraphs in unknowns | Patched. A separate bounded-absence sentence says the schedule, artist statements and coverage identify no earlier Loop Tour support-lineup change, so this tour supplies no prior comparison. |
+| R4 | 1 unsupported MetLife-comment clause | Patched from a fresh CBS New York capture. The page now says MetLife did not respond to that outlet by September 7 and separately bounds the absence of a MetLife statement to the venue statements and coverage gathered through September 20. The reviewer fallback was not used. |
+| R5 | 1 unexplained first mention of Pink | Patched. The first paragraph now identifies Pink as a singer, says she amplified the StopAntisemitism post and records her later statement that she did not seek Macklemore's silencing or firing. |
+| S1 | 2 narrative mentions of `Hind's Hall` | Patched. The first mention identifies it as Macklemore's Columbia protest song; the later petition reference remains a title only. |
+| S2 | 1 Meadowlands reference in the AJC account | Patched. Reader-facing prose now ties the Meadowlands directly to the MetLife Stadium show. The citation retains AJC's exact wording. |
+| S3 | 2 narrative statements of Messina's venue-objection account | Patched. The later repetition was removed; the opening account remains. |
+| S4 | 2 statements that venue communications and contracts are private | Patched. The detail-layer repetition was removed; the specific unknowns paragraph remains. |
+| S5 | 2 qualifications that AP's industry participants were outside this tour | Patched. The Catch repetition was removed; the earlier mechanism paragraph keeps the qualification. |
+| S6 | 1 detached Philadelphia demonstration detail | Patched. The demonstration is now attached to the September 19 Philadelphia outcome paragraph. |
+| S7 | 1 Philadelphia lease-chain sentence | Patched. The sentence now begins with CAIR-Philadelphia's City-land basis for the request and gives the lease chain in the same sentence. |
+| S8 | 1 Raymond James comparison paragraph | Patched. The paragraph leads with why the earlier dispute at a publicly owned venue on this tour matters before giving the contract clause and First Amendment account. |
+| S9 | 1 table header, 2 replacement-role cells and 1 caption | Patched. The header says what the artists announced, the cells state the roles without source narration, and the caption carries AP's would-be-replacement attribution. |
+| S10 | 2 fragmentary KPI labels | Patched. Both labels are complete phrases stating that four acts left the next day and that Macklemore had already played two MetLife shows. |
+| S11 | 1 schedule-denominator sentence | Patched. It states 27 North American shows and 10 after September 14 without introducing the unused count of 17. |
+| S12 | 2 consecutive venue-list hedges | Patched. `Alleged` appears only in the sentence introducing Rolling Stone's list; the next sentence refers to those seven venues. |
+| HELD | 7 reserved classes | Held with reason. Reading-mode labels, `In this story`, record chips, section kickers, `How we check .`, saved-date lines and the sources-list introduction were not changed. The visual title was also left unchanged. |

@@ -69,6 +69,7 @@ A stranger arrives having seen that Macklemore was removed from Ed Sheeran's tou
 | `wsj-tour-phone-call-2026-09-16` | Anonymous-source reporting names three additional NFL owners in the venue pressure but supplies neither their communications nor the tour contracts. | C | |
 | `rolling-stone-aaron-rowe-followup-2026-09-18` | Rowe later redirected criticism from Sheeran to Kraft while maintaining that Macklemore should not have been removed. | C | |
 | `nyt-philadelphia-outcome-2026-09-19` | The Philadelphia show started two hours later without an opener, and Sheeran's fuller remarks addressed October 7, Gaza and the West Bank. | C | |
+| `cbs-metlife-response-2026-09-07` | CBS New York says MetLife Stadium did not respond to its request for comment by September 7; it does not establish whether the venue responded later. | B | 6 |
 | `macklemore-removal-statement-2026-09-14` | Gap L15: “thirteen years.” | D | |
 | `macklemore-removal-statement-2026-09-14` | Gap L27: “three years.” | B | 3 |
 | `macklemore-removal-statement-2026-09-14` | Gap L42: “90,000 people,” without an admitted attendance denominator. | D | |
