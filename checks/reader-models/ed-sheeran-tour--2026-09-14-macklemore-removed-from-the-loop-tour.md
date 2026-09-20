@@ -64,6 +64,11 @@ A stranger arrives having seen that Macklemore was removed from Ed Sheeran's tou
 | `gap-ap-philadelphia-post-show-2026-09-19` | The live AP page reports the completed Philadelphia concert, no opener, Sheeran's remarks and the protest; the revised document is not pinned. | A | 1, 5, 6 |
 | `gap-cair-philadelphia-records-request` | CAIR-Philadelphia requested communications, policies, contracts and decision records; the request is outside the manifest and proves no result yet. | B | 6 |
 | `gap-prior-comparable-loop-lineup-change` | No admitted record establishes an earlier comparable Loop Tour lineup change or elapsed time since one. | B | 5 |
+| `ap-philadelphia-outcome-2026-09-19` | The completed Philadelphia concert began without an opener; musicians joined later, Sheeran addressed Gaza and venue preapproval, and demonstrators gathered outside. | A | 1, 5, 6 |
+| `cair-philadelphia-records-request-2026-09-17` | CAIR-Philadelphia's request seeks communications and authority records and expressly says it does not presume what those records will show. | B | 6 |
+| `wsj-tour-phone-call-2026-09-16` | Anonymous-source reporting names three additional NFL owners in the venue pressure but supplies neither their communications nor the tour contracts. | C | |
+| `rolling-stone-aaron-rowe-followup-2026-09-18` | Rowe later redirected criticism from Sheeran to Kraft while maintaining that Macklemore should not have been removed. | C | |
+| `nyt-philadelphia-outcome-2026-09-19` | The Philadelphia show started two hours later without an opener, and Sheeran's fuller remarks addressed October 7, Gaza and the West Bank. | C | |
 | `macklemore-removal-statement-2026-09-14` | Gap L15: “thirteen years.” | D | |
 | `macklemore-removal-statement-2026-09-14` | Gap L27: “three years.” | B | 3 |
 | `macklemore-removal-statement-2026-09-14` | Gap L42: “90,000 people,” without an admitted attendance denominator. | D | |

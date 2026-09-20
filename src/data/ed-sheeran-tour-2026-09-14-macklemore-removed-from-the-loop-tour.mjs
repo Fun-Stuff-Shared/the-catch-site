@@ -31,6 +31,7 @@ const tourDates = [
 const cutoff = "2026-09-14";
 const remainingDates = tourDates.filter((row) => row.date > cutoff);
 const metLifeDates = tourDates.filter((row) => row.venue === "MetLife Stadium");
+const macklemoreScheduledRemainingShows = 8;
 const withdrawingActs = [
   ["Finneas", "South American support dates", "Withdrew"],
   ["Aaron Rowe", "Replacement U.S. support act", "Withdrew"],
@@ -42,6 +43,7 @@ export const computed = {
   northAmericaShows: tourDates.length,
   remainingShows: remainingDates.length,
   remainingCities: new Set(remainingDates.map((row) => row.city)).size,
+  macklemoreScheduledRemainingShows,
   metLifeShows: metLifeDates.length,
   withdrawingActs: withdrawingActs.length,
 };
@@ -55,13 +57,13 @@ const displayDate = (date) => new Intl.DateTimeFormat("en-US", {
 export const event = {
   slug: "ed-sheeran-tour/2026-09-14-macklemore-removed-from-the-loop-tour",
   title: "Macklemore removed from Ed Sheeran's tour; the remaining opening acts quit",
-  dek: "Macklemore said venue pressure led to his removal. Ed Sheeran said the promoter made the decision. Finneas, Aaron Rowe, Lukas Graham and Beoga left the tour the next day.",
+  dek: "Macklemore lost eight scheduled appearances after two MetLife shows. The four later departures covered different roles, and the published record does not establish who held final authority.",
   name: "Macklemore removed from the Loop Tour",
   date: cutoff,
   updated: "2026-09-20",
   kpis: [
-    { value: computed.remainingShows, label: "North American shows after Sept. 14" },
-    { value: computed.remainingCities, label: "cities on those dates" },
+    { value: computed.macklemoreScheduledRemainingShows, label: "scheduled Macklemore appearances removed" },
+    { value: computed.remainingShows, label: "Loop Tour shows after Sept. 14" },
     { value: computed.withdrawingActs, label: "supporting acts that left" },
     { value: computed.metLifeShows, label: "MetLife shows with Macklemore" },
   ],
@@ -69,9 +71,10 @@ export const event = {
     kind: "table",
     title: "The lineup change",
     rows: [
-      [String(computed.remainingShows), "shows remained after Sept. 14"],
-      [String(computed.withdrawingActs), "supporting acts withdrew"],
-      [String(computed.metLifeShows), "MetLife shows already played"],
+      [String(computed.macklemoreScheduledRemainingShows), "scheduled Macklemore appearances removed"],
+      [String(computed.remainingShows), "Loop Tour shows remained after Sept. 14"],
+      [String(computed.withdrawingActs), "supporting artists left"],
+      [String(computed.metLifeShows), "MetLife appearances already played"],
     ],
     note: "Artist statements and official tour records",
   },
@@ -89,8 +92,8 @@ export const chronologyRows = [
   ["Sept. 4–5", "Macklemore performs at both MetLife Stadium dates."],
   ["Sept. 14", "Macklemore posts that Ed Sheeran's team removed him from the remaining support dates; Messina Touring Group says venues would not accept him on the lineup."],
   ["Sept. 15", "Sheeran posts that the removal was the promoter's decision. Finneas, Aaron Rowe, Lukas Graham and Beoga announce their departures."],
-  ["Sept. 17", "Associated Press publishes its account of how artists, promoters and venues divide control of stadium tours."],
-  ["Sept. 19", "The Philadelphia date remains listed by the venue; AP reports the tour is set to resume after the departures."],
+  ["Sept. 17", "CAIR-Philadelphia files a public-records request about the Philadelphia decision; AP publishes its account of how artists, promoters and venues divide tour control."],
+  ["Sept. 19", "The Philadelphia concert proceeds. Sheeran starts without an opener, musicians join later, and he addresses Gaza and venue preapproval."],
 ];
 
 export const seriesReceipt = {
@@ -99,6 +102,7 @@ export const seriesReceipt = {
   cutoff,
   remainingShows: computed.remainingShows,
   remainingCities: computed.remainingCities,
+  macklemoreScheduledRemainingShows: computed.macklemoreScheduledRemainingShows,
   metLifeShows: computed.metLifeShows,
-  formula: "Official show dates later than 2026-09-14; distinct remaining city labels; MetLife Stadium rows.",
+  formula: "Official show dates later than 2026-09-14; Rolling Stone's eight-of-10 Macklemore schedule; MetLife Stadium rows.",
 };

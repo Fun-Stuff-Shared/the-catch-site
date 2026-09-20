@@ -1674,3 +1674,13 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/ap-philadelphia-2026-09-19.txt | 3090 | 6ad54ea6314dc62f |
 | data/sources/ed-sheeran-tour/coverage/ap-donations-2026-09-19.html | 778061 | 568375f279bd4d5b |
 | data/sources/ed-sheeran-tour/coverage/ap-donations-2026-09-19.txt | 6169 | aa3ce7fcdc169518 |
+| data/sources/ed-sheeran-tour/coverage/ap-philadelphia-outcome-2026-09-19.html | 967830 | e62c364d6f283258 |
+| data/sources/ed-sheeran-tour/coverage/ap-philadelphia-outcome-2026-09-19.txt | 5007 | e7d4654728cb9f51 |
+| data/sources/ed-sheeran-tour/cair-philadelphia-records-request-2026-09-17.html | 122132 | cfb80fe5d13f5fd6 |
+| data/sources/ed-sheeran-tour/cair-philadelphia-records-request-2026-09-17.txt | 6245 | 97491530a91af3b0 |
+| data/sources/ed-sheeran-tour/coverage/wsj-tour-phone-call-2026-09-16.html | 782141 | 4715050373b80463 |
+| data/sources/ed-sheeran-tour/coverage/wsj-tour-phone-call-2026-09-16.txt | 9062 | 1d4e0a1a0807be66 |
+| data/sources/ed-sheeran-tour/coverage/rolling-stone-aaron-rowe-followup-2026-09-18.html | 105135 | e7ac5b8504c00487 |
+| data/sources/ed-sheeran-tour/coverage/rolling-stone-aaron-rowe-followup-2026-09-18.txt | 2895 | f6464ccbe547ce35 |
+| data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.html | 268112 | 44ca109b05cb10ba |
+| data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.txt | 3058 | 05bc968720ed4c28 |

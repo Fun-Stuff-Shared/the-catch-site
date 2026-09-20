@@ -222,3 +222,116 @@ All 44 lines emitted by `pin_gaps.mjs` are dispositioned above.
 ## What could not be admitted and why
 
 The executed contracts among the artists, Messina Touring Group and the venues were not published on any checked first-party or coverage route. That prevents this turn from establishing contractual final authority; it records Macklemore's, Sheeran's, Messina's and Kraft's attributed accounts separately. Messina's own site did not publish its event statement, so Rolling Stone is the carrier. Kraft's first-party pages did not publish his response, so USA Today is the full-statement carrier. The Instagram pages were capturable, but their normal extracted text omitted carousel slide contents; the raw HTML and images are pinned and every slide is transcribed into a paired text record. No selected record was refused or unreachable.
+
+## Turn three A/B gap admissions and disproof searches
+
+All four A/B gap lines from the reader model were handled before story drafting.
+
+| Reader-model gap | Turn-three disposition |
+|---|---|
+| `gap-ap-philadelphia-post-show-2026-09-19` | Admitted as `ap-philadelphia-outcome-2026-09-19` from forced registry run `capture-oneoff-20260920T072513Z`; the forced capture was necessary because the canonical URL had previously deduplicated to the pre-show revision. |
+| `gap-cair-philadelphia-records-request` | Admitted as `cair-philadelphia-records-request-2026-09-17` from registry run `capture-oneoff-20260920T072451Z`. |
+| `gap-executed-contracts` | Retained as a bounded absence after official-route review and fresh registry searches for `Macklemore contract promoter Messina Loop Tour`, which returned no contract record. |
+| `gap-prior-comparable-loop-lineup-change` | Retained as a bounded absence after fresh registry searches for `Ed Sheeran Loop Tour support act removed withdrew lineup`, which returned no earlier comparable event record. |
+
+Additional registry searches for `CAIR Philadelphia Macklemore records response` and `Ed Sheeran Loop Tour replacement opener Philadelphia Gillette` returned no result record or rebuilt-lineup record. LEANN searches for contract authority and a prior comparable change returned no usable record from `news-articles-clean-v1`; that index reported a September 7 vintage, so it is supporting disproof only. No selected fetch was refused.
+
+### Census line: `ap-philadelphia-outcome-2026-09-19`
+
+- Canonical URL: `https://apnews.com/article/ed-sheeran-concert-macklemore-philadelphia-d452b6eadff285553b20c558191886bb`
+- Registry run: `capture-oneoff-20260920T072513Z`
+- Captured: `2026-09-20T07:25:14.066062Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/ap-philadelphia-outcome-2026-09-19.html`, 967830 bytes, SHA-256 `e62c364d6f283258d3e44c4f624ae9e28cb5267d02730b057f6c60614eaa55fd`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/ap-philadelphia-outcome-2026-09-19.txt`, 5007 bytes, SHA-256 `e7d4654728cb9f51b44c837f7ae4ac74570d8fe11a079d01bf8a84f3956c13bb`
+
+| Passage | Disposition |
+|---|---|
+| The concert began with no opener and other musicians joined later. | Used: observed Philadelphia outcome. |
+| Sheeran called the situation in Gaza “catastrophic and unjustifiable.” | Used: first-show remarks. |
+| Sheeran said he worried about venues preapproving performances. | Used: consequence of the lineup dispute. |
+| A small pro-Palestinian demonstration gathered outside before the show. | Used: observed outside response. |
+| AP's statement that the removal came at Kraft's urging. | Held unused: the record does not establish the alleged broader coordination as settled fact. |
+| Donation amounts and Pollstar earnings. | Held unused: graded C or outside this story's A/B reader path. |
+
+### Census line: `cair-philadelphia-records-request-2026-09-17`
+
+- Canonical URL: `https://pa.cair.com/pressrelease/macklemore-letter/`
+- Registry run: `capture-oneoff-20260920T072451Z`
+- Captured: `2026-09-20T07:25:01.501326Z`
+- Raw pin: `data/sources/ed-sheeran-tour/cair-philadelphia-records-request-2026-09-17.html`, 122132 bytes, SHA-256 `cfb80fe5d13f5fd6fc59240861769393b544d736693341e60588d4ea31506ea5`
+- Text sibling: `data/sources/ed-sheeran-tour/cair-philadelphia-records-request-2026-09-17.txt`, 6245 bytes, SHA-256 `97491530a91af3b0baa51616e63119850f42d78b6b381d54188058d2cd632131`
+
+| Passage | Disposition |
+|---|---|
+| CAIR-Philadelphia filed a Pennsylvania Right-to-Know request concerning the Philadelphia removal. | Used: dated request. |
+| The request seeks communications, decision participation and any policy, contract, safety consideration or other asserted authority. | Used: scope of the unresolved record. |
+| The request asks whether the City of Philadelphia or PAID was involved. | Held unused: the story keeps the request scope compact. |
+| The request does not presume what responsive records will show. | Used: explicit boundary against treating the request as a result. |
+| The open-letter campaign and organizational mission. | Held unused: do not answer the reader model's questions. |
+
+## Turn three independent interrogation admissions
+
+The September 20 interrogation returned 20 numbered items. Registry run `capture-oneoff-20260920T074821Z` attempted 10 named public records, captured nine and found the Guardian article already held in `quarry-wire-scheduled-20260914T160000Z`. A second run, `capture-oneoff-20260920T075234Z`, captured the named JTA background and Gillette post; the cited USA Today and JTA petition records were already held. Six focused pre-capture registry searches returned no held record for the Wall Street Journal call, Aaron Rowe follow-up, Philadelphia pickup band, Pink, Alexandria Ocasio-Cortez or Ken Casey.
+
+Three records added distinct, bounded detail and were admitted. The remaining captures were read and typed in the manifest needs ledger as already answered, contextual reaction, redundant coverage or a number without a complete denominator. The story view remains limited to the reader model's A and B material.
+
+### Census line: `wsj-tour-phone-call-2026-09-16`
+
+- Canonical URL: `https://www.wsj.com/arts-culture/music/the-40-minute-phone-call-that-left-ed-sheerans-tour-hanging-by-a-thread-99e07984`
+- Registry run: `capture-oneoff-20260920T074821Z`
+- Captured: `2026-09-20T07:48:45.809264Z`; credentialed browser recovery succeeded after the first request returned 401.
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/wsj-tour-phone-call-2026-09-16.html`, 782141 bytes, SHA-256 `4715050373b804633774848406e101f65250aa6304390c4e64f5942e14138a91`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/wsj-tour-phone-call-2026-09-16.txt`, 9062 bytes, SHA-256 `1d4e0a1a0807be66124f8182cd6e48b840d6109d17cd7b71ec82a566e50a6589`
+
+| Passage | Disposition |
+|---|---|
+| Several NFL owners were prepared to cancel dates while Macklemore remained on the bill. | Used in the detail layer as anonymous-source support for broader venue pressure. |
+| David Tepper, Arthur Blank and Jeffrey Lurie were named in the account. | Used in the detail layer with the anonymous-source qualification. |
+| The 40-minute Kraft-Sheeran call and the report of a prior assurance. | Held from the story view: neither supplies the underlying communications or contracts. |
+| Donation amounts, tour gross and other artist comparisons. | Held unused: graded C or D against the reader model. |
+
+### Census line: `rolling-stone-aaron-rowe-followup-2026-09-18`
+
+- Canonical URL: `https://au.rollingstone.com/music/music-news/aaron-rowe-ed-sheeran-robert-kraft-101272/`
+- Registry run: `capture-oneoff-20260920T074821Z`
+- Captured: `2026-09-20T07:49:36.582545Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/rolling-stone-aaron-rowe-followup-2026-09-18.html`, 105135 bytes, SHA-256 `e7ac5b8504c00487954125b3632ec58e667859ac54207eb33331358d416a9ca7`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/rolling-stone-aaron-rowe-followup-2026-09-18.txt`, 2895 bytes, SHA-256 `f6464ccbe547ce353d83b5a2d3ecce6549580df7644a612429f43d9c13e38b08`
+
+| Passage | Disposition |
+|---|---|
+| Rowe redirected criticism toward Kraft rather than Sheeran. | Used in the detail layer as a later qualification to the withdrawal. |
+| Rowe maintained that Macklemore should not have been removed. | Used in the detail layer. |
+| Rowe's broader political language and criticism of institutions. | Held unused: reaction does not change the withdrawal or tour authority record. |
+
+### Census line: `nyt-philadelphia-outcome-2026-09-19`
+
+- Canonical URL: `https://www.nytimes.com/2026/09/19/arts/music/ed-sheeran-macklemore-gaza-tour.html`
+- Registry run: `capture-oneoff-20260920T074821Z`
+- Captured: `2026-09-20T07:49:25.939931Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.html`, 268112 bytes, SHA-256 `44ca109b05cb10ba20d9d137a3cf4e0cf63ec375e8b6376551a376c90cfabecc`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.txt`, 3058 bytes, SHA-256 `05bc968720ed4c28df8f2ddf522fa6f5d6cdbe692d32c4c601d2340eea30f66c`
+
+| Passage | Disposition |
+|---|---|
+| The Philadelphia show started two hours later without an opener. | Used in the detail layer. |
+| Sheeran called the October 7 attack horrific and addressed Gaza and the West Bank. | Used in the detail layer to preserve the fuller scope of his remarks. |
+| The venue-preapproval concern. | Already used from the admitted AP outcome. |
+
+### Interrogation captures not admitted
+
+| Record or route | Registry result | Reason not admitted |
+|---|---|---|
+| JTA background on “Hind's Hall” | `capture-oneoff-20260920T074821Z`, captured | Song history does not change the lineup event or authority dispute. |
+| ADL post | `capture-oneoff-20260920T074821Z`, captured | Advocacy reaction does not establish the decision or contract. |
+| Guardian Pink account | `quarry-wire-scheduled-20260914T160000Z`, already held | Reaction does not alter the lineup decision or four departures. |
+| Rolling Stone Australia AOC account | `capture-oneoff-20260920T074821Z`, captured | Political reaction does not establish authority or a lineup change. |
+| Rolling Stone Ken Casey account | `capture-oneoff-20260920T074821Z`, captured | Industry opinion from a nonparticipant does not establish this tour's contract. |
+| IBTimes UK Beoga profile | `capture-oneoff-20260920T074821Z`, captured | Collaboration history does not change Beoga's recorded role or departure. |
+| Digital Music News ticket account | `capture-oneoff-20260920T074821Z`, captured | Resale asking prices do not provide a complete sales or attendance denominator. |
+| USA Today MetLife account | `quarry-wire-scheduled-20260917T100020Z`, already held | Additional stage remarks are below the reader model's A/B event path. |
+| JTA petition account | `capture-oneoff-20260920T074133Z`, already held | The admitted Rolling Stone pin already establishes the petition and removal request. |
+| JTA 2014-costume background | `capture-oneoff-20260920T075234Z`, captured | Historical background is outside the bounded 2026 lineup event and does not adjudicate Kraft's allegation. |
+| Gillette 2025 lineup post | `capture-oneoff-20260920T075234Z`, captured | A pre-event promotional post does not displace AP's later report that Rowe and Lukas Graham were replacements for the remaining U.S. dates. |
+
+Every numbered interrogation item has a separate needs-ledger row in the manifest and a keyed disposition in the interrogation file.

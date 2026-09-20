@@ -31,91 +31,146 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
       <ReadingModes />
-      <KpiStrip kpis={event.kpis} />
 
-      <nav class="story-toc" aria-label="In this record" data-layer="fact">
-        <details class="toc-disclosure" open data-layer="fact"><summary><span>In this record</span><span class="toc-current" aria-hidden="true"></span></summary>
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open data-layer="fact"><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
           <ol data-layer="fact">
-            <li><a href="#tour-dates">The remaining tour dates</a></li>
-            <li><a href="#lineup">The lineup changes</a></li>
-            <li><a href="#statements">The statements</a></li>
-            <li><a href="#chronology">Chronology</a></li>
+            <li><a href="#what-happened">What happened</a></li>
+            <li><a href="#why-removed">Why Macklemore was removed</a></li>
+            <li><a href="#the-catch">The catch</a></li>
+            <li><a href="#why-others-left">Why the other artists left</a></li>
+            <li><a href="#what-happened-next">What happened next</a></li>
+            <li><a href="#unknowns">What we do not know yet</a></li>
             <li><a href="#records">The records</a></li>
           </ol>
         </details>
       </nav>
 
-      <section id="tour-dates" data-layer="fact">
-        <SectionKicker text="Official schedule" />
-        <h2>The remaining North American dates</h2>
-        <DataTable columns={["Date", "City", "Venue"]} rows={remainingDateRows} caption="Loop Tour dates after September 14 in the saved North American FAQ" />
+      <KpiStrip kpis={event.kpis} />
+
+      <section id="what-happened" data-layer="fact">
+        <SectionKicker text="The lineup changed" />
+        <h2 data-layer="fact">What happened</h2>
+
+        <p data-layer="narrative">Macklemore was removed from eight scheduled appearances on Ed Sheeran's Loop Tour on September 14. Macklemore said Sheeran and his team made the decision; tour promoter Messina Touring Group said venues had told it they would not allow concerts with Macklemore on the lineup.<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed Sheeran and his team have made the decision to remove me from The Loop tour." /><Cite s="rolling-stone-removal-2026-09-14" passage="we have been notified by venues on the upcoming U.S. tour dates that they will not allow a concert to take place with Macklemore on the lineup" /></p>
+
+        <p data-layer="narrative">Ten North American shows remained after September 14, but Macklemore had been scheduled for eight of them. He had already appeared at both MetLife Stadium dates, on September 4 and 5.<Cite s="rolling-stone-removal-2026-09-14" passage="Macklemore was slated to appear at eight of the 10 shows left" /><Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="05 Sep 2026 MetLife Stadium" /><Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="04 Sep 2026 MetLife Stadium" /></p>
+
+        <p data-layer="narrative">The next day, Finneas, Aaron Rowe, Lukas Graham and Beoga announced that they were leaving. They did not all hold the same job: Rowe and Lukas Graham had been replacement U.S. support acts, Beoga had played during Sheeran's set, and Finneas was booked for the South American leg.<Cite s="ap-support-acts-2026-09-15" passage="Rowe and Lukas Graham would have been replacements for Macklemore on Sheeran’s remaining U.S. dates, while Beoga had been performing several songs" /><Cite s="ap-support-acts-2026-09-15" passage="Finneas, who is Billie Eilish’s brother and musical collaborator, was due to tour with Sheeran in South America later this year" /></p>
+
+        <p data-layer="narrative">A tour promoter finances the production, pays the acts and deals with venues. A venue can refuse to host a lineup, while a stadium-level headliner generally has substantial approval over what happens under the artist's name.<Cite s="ap-tour-power-2026-09-17" passage="The promoter puts up the money, pays all of the acts, deals with the venue." /><Cite s="ap-tour-power-2026-09-17" passage="Certainly they can lock the doors" /><Cite s="ap-tour-power-2026-09-17" passage="at the end of the day that superstar headliner is going to have approval over everything" /></p>
+
+        <p data-layer="narrative">The three people AP interviewed about tour control were not involved in Sheeran's tour, so their account does not establish this tour's contract terms. Sheeran said Macklemore's contract was with the promoter and that venue and promoter decisions were final.<Cite s="ap-tour-power-2026-09-17" passage="Neither Gary nor Waddell nor Serwin are involved in the Sheeran tour." /><Cite s="ed-sheeran-response-2026-09-15" passage="Macklemore's contract for the tour was with the promoter, not me." /><Cite s="ed-sheeran-response-2026-09-15" passage="the venue's and promoter's decision was final" /></p>
+
+        <p data-layer="narrative" data-absence>The 24 records admitted through September 20 contain no earlier comparable Loop Tour removal followed by supporting-artist departures, so they do not establish an elapsed interval since a similar lineup change.</p>
+
+        <DataTable columns={["Date", "City", "Venue"]} rows={remainingDateRows} caption="The 10 Loop Tour dates after September 14 in the saved North American FAQ" />
+
         <SourcedBlock source="loop-tour-north-america-faq" kind="record" detail>
-          <p>The official FAQ lists {seriesReceipt.sourceRows} North American shows. Filtering its dated rows for dates after September 14 leaves {seriesReceipt.remainingShows} shows in {seriesReceipt.remainingCities} cities.<Cite s="loop-tour-north-america-faq" passage="September 19, 2026    Philadelphia, PA" /></p>
+          <p>The official FAQ lists {seriesReceipt.sourceRows} North American shows. Filtering its dated rows for dates after September 14 leaves {seriesReceipt.remainingShows} shows.<Cite s="loop-tour-north-america-faq" passage="September 19, 2026    Philadelphia, PA" /></p>
         </SourcedBlock>
         <SourcedBlock source="ed-sheeran-past-tour-dates-2026-09-20" kind="record" detail>
           <p>The official past-dates page lists MetLife Stadium on September 4 and September 5.<Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="05 Sep 2026 MetLife Stadium" /><Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="04 Sep 2026 MetLife Stadium" /></p>
         </SourcedBlock>
-        <SourcedBlock source="gillette-loop-tour-2026-09-20" kind="record" detail>
-          <p>Gillette Stadium lists September 25 and 26 for the Loop Tour.<Cite s="gillette-loop-tour-2026-09-20" passage="September 25 and 26, 2026" /></p>
-        </SourcedBlock>
-        <SourcedBlock source="lincoln-field-loop-tour-2026-09-20" kind="record" detail>
-          <p>Lincoln Financial Field lists the Philadelphia concert on September 19.<Cite s="lincoln-field-loop-tour-2026-09-20" passage="September 19" /></p>
-        </SourcedBlock>
       </section>
 
-      <section id="lineup" data-layer="fact">
-        <SectionKicker text="Artist records" />
-        <h2>The lineup changes</h2>
-        <DataTable columns={["Artist", "Scheduled role", "Recorded action"]} rows={lineupRows} caption="Statements published September 15" />
-        <SourcedBlock source="rolling-stone-removal-2026-09-14" kind="record" detail>
-          <p>Messina Touring Group said venues had notified the promoter they would not allow a concert with Macklemore on the lineup, and that he would not perform on the remaining support dates.<Cite s="rolling-stone-removal-2026-09-14" passage="Macklemore will not be performing on the remaining support dates" /></p>
-        </SourcedBlock>
+      <section id="why-removed" data-layer="fact">
+        <SectionKicker text="MetLife to venue objections" />
+        <h2 data-layer="fact">Why Macklemore was removed</h2>
+
+        <p data-layer="narrative">At the first MetLife show, Macklemore said “Free Palestine,” displayed images of destruction in Gaza and performed “Hind's Hall.” He repeated the call at the second show.<Cite s="rolling-stone-removal-2026-09-14" passage="At the first show, the Seattle rapper yelled “Free Palestine” onstage and expressed solidarity with people in Gaza and the occupied West Bank. He also showed images from the devastation in Gaza and performed his protest song, “Hind’s Hall,”" /><Cite s="rolling-stone-removal-2026-09-14" passage="At the second MetLife show, Macklemore reiterated his calls for a “Free Palestine”" /></p>
+
+        <p data-layer="narrative">The first performance drew criticism from pro-Israel groups, and the Israeli American Council started a petition asking Sheeran to remove Macklemore from the rest of the tour.<Cite s="rolling-stone-removal-2026-09-14" passage="This spurred much criticism and backlash from pro-Israel groups." /><Cite s="rolling-stone-removal-2026-09-14" passage="the Israeli American Council launched a petition demanding Sheeran remove Macklemore from the rest of the tour" /></p>
+
+        <p data-layer="narrative">Robert Kraft confirmed one venue decision. He said Gillette Stadium determined that Macklemore's participation on September 25 and 26 would cross its line against providing a platform for hate speech, citing Macklemore's recent actions, material from the New Jersey stage and what Kraft described as a broader history of antisemitic rhetoric and imagery.<Cite s="usa-today-kraft-2026-09-14" passage="we determined that his participation in the September 25th and 26th concerts at Gillette Stadium would cross that line" /></p>
+
+        <p data-layer="narrative">Macklemore said Sheeran told him that Kraft had rallied other stadium owners and that the words “Free Palestine” and the Palestinian flag had been described as hurtful. Kraft's published statement confirmed the Gillette refusal but did not address the alleged coordination with other owners.<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed also told me that Kraft had rallied some of the other stadium owners" /><Cite s="macklemore-removal-statement-2026-09-14" passage={'He told me that the words "Free Palestine" and the image of the Palestinian flag were hurtful to a lot of people he spoke with.'} /><Cite s="rolling-stone-removal-2026-09-14" passage="Kraft, however, did not address the claim that Kraft also “rallied” other stadium owners" /></p>
+
+        <p data-layer="narrative">Messina's statement described venue objections in the plural and said keeping Macklemore on the lineup could cancel tour dates. Most named venues did not give Rolling Stone a direct explanation for their objection.<Cite s="rolling-stone-removal-2026-09-14" passage="which would result in the cancellation of the tour and impact hundreds of thousands of fans" /><Cite s="rolling-stone-removal-2026-09-14" passage="Most of the stadiums that allegedly would not allow a Macklemore show did not immediately return requests for comments either, including for explanations as to why they objected" /></p>
+
         <SourcedBlock source="usa-today-kraft-2026-09-14" kind="record" detail>
-          <p>Robert Kraft's statement said Gillette Stadium determined that Macklemore's participation in the September 25 and 26 concerts "would cross that line."<Cite s="usa-today-kraft-2026-09-14" passage="his participation in the September 25th and 26th concerts at Gillette Stadium would cross that line" /></p>
+          <p>Kraft's full statement names the two Gillette dates and gives his rationale for the refusal.<Cite s="usa-today-kraft-2026-09-14" passage="his participation in the September 25th and 26th concerts at Gillette Stadium would cross that line" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="wsj-tour-phone-call-2026-09-16" kind="record" detail>
+          <p>The Wall Street Journal, citing people familiar with the matter, reported that Carolina Panthers owner David Tepper, Atlanta Falcons owner Arthur Blank and Philadelphia Eagles owner Jeffrey Lurie joined the broader venue pressure. The report does not supply the owners' communications or the tour contracts.<Cite s="wsj-tour-phone-call-2026-09-16" passage="More than that, several other National Football League owners were also ready to cancel Sheeran’s dates as long as Macklemore remained on the bill." /><Cite s="wsj-tour-phone-call-2026-09-16" passage="David Tepper and Arthur Blank" /><Cite s="wsj-tour-phone-call-2026-09-16" passage="Philadelphia Eagles owner Jeffrey Lurie would soon reach the same conclusion" /></p>
         </SourcedBlock>
       </section>
 
-      <section id="statements" data-layer="fact">
-        <SectionKicker text="Published statements" />
-        <h2>The artists' own lines</h2>
-        <SourcedBlock source="macklemore-removal-statement-2026-09-14" kind="record" detail>
-          <p>"Ed Sheeran and his team have made the decision to remove me from The Loop tour."<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed Sheeran and his team have made the decision to remove me from The Loop tour." /></p>
-          <p>"Ed also told me that Kraft had rallied some of the other stadium owners and collectively they gave him an ultimatum: if Macklemore stays on the tour, you will not be allowed to play in our venues."<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed also told me that Kraft had rallied some of the other stadium owners" /></p>
-        </SourcedBlock>
-        <SourcedBlock source="ed-sheeran-response-2026-09-15" kind="record" detail>
-          <p>"Macklemore coming off tour was the promoter's decision, it was not mine."<Cite s="ed-sheeran-response-2026-09-15" passage="Macklemore coming off tour was the promoter's decision, it was not mine." /></p>
-          <p>"I spoke with the venues at length all week to try to build a bridge, including with Robert Kraft, but the venue's and promoter's decision was final."<Cite s="ed-sheeran-response-2026-09-15" passage="the venue's and promoter's decision was final" /></p>
-        </SourcedBlock>
-        <SourcedBlock source="finneas-withdrawal-2026-09-15" kind="record" detail>
-          <p>"I have decided to withdraw from my upcoming tour dates with Ed Sheeran. I stand with Palestine and its people."<Cite s="finneas-withdrawal-2026-09-15" passage="I have decided to withdraw from my upcoming tour dates with Ed Sheeran." /></p>
-        </SourcedBlock>
-        <SourcedBlock source="aaron-rowe-withdrawal-2026-09-15" kind="record" detail>
-          <p>"I have made the decision to withdraw as a support act for Ed Sheeran's The Loop North American Tour."<Cite s="aaron-rowe-withdrawal-2026-09-15" passage="I have made the decision to withdraw as a support act" /></p>
-        </SourcedBlock>
-        <SourcedBlock source="lukas-graham-withdrawal-2026-09-15" kind="record" detail>
-          <p>"But I can't put these words out into the world and carry on with this tour as things stand. We're withdrawing from the remaining dates."<Cite s="lukas-graham-withdrawal-2026-09-15" passage="We're withdrawing from the remaining dates." /></p>
-        </SourcedBlock>
-        <SourcedBlock source="beoga-withdrawal-2026-09-15" kind="record" detail>
-          <p>"We have made the decision to depart as Ed Sheeran's band on the remaining US Loop tour."<Cite s="beoga-withdrawal-2026-09-15" passage="depart as Ed Sheeran's band on the remaining US Loop tour" /></p>
+      <section id="the-catch" data-layer="fact">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <p>The public accounts identify pressure and participants, but they do not establish one published chain of contractual authority. They also collapse four different tour roles when they describe every departure as an opening act.</p>
+          <ol>
+            <li>
+              <h3>Who held final authority remains unresolved.</h3>
+              <p>Macklemore attributed the removal to Sheeran and his team. Sheeran attributed it to the promoter and said the venues and promoter made the final decision. Messina said venues would not accept the lineup. The industry participants interviewed by AP were not involved in this tour, and no executed contract is in the admitted record.<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed Sheeran and his team have made the decision to remove me from The Loop tour." /><Cite s="ed-sheeran-response-2026-09-15" passage="Macklemore coming off tour was the promoter's decision, it was not mine." /><Cite s="rolling-stone-removal-2026-09-14" passage="we have been notified by venues on the upcoming U.S. tour dates" /><Cite s="ap-tour-power-2026-09-17" passage="Neither Gary nor Waddell nor Serwin are involved in the Sheeran tour." /></p>
+            </li>
+            <li>
+              <h3>Four artists left, but they were not four remaining openers.</h3>
+              <p>Rowe and Lukas Graham were replacement U.S. support acts. Beoga described itself as Sheeran's band for the remaining U.S. tour. Finneas was scheduled for South America later in the year.<Cite s="ap-support-acts-2026-09-15" passage="Rowe and Lukas Graham would have been replacements for Macklemore on Sheeran’s remaining U.S. dates" /><Cite s="beoga-withdrawal-2026-09-15" passage="depart as Ed Sheeran's band on the remaining US Loop tour" /><Cite s="ap-support-acts-2026-09-15" passage="Finneas, who is Billie Eilish’s brother and musical collaborator, was due to tour with Sheeran in South America later this year" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="why-others-left" data-layer="fact">
+        <SectionKicker text="Four decisions, four roles" />
+        <h2 data-layer="fact">Why the other artists left</h2>
+
+        <p data-layer="narrative">Finneas said artists should not be silenced when they speak for oppressed people and withdrew from his upcoming dates with Sheeran.<Cite s="finneas-withdrawal-2026-09-15" passage="Artists must not be silenced when they speak up for the oppressed. I have decided to withdraw from my upcoming tour dates with Ed Sheeran." /></p>
+
+        <p data-layer="narrative">Aaron Rowe withdrew as a North American support act. He said he could not accept billionaires using their power to silence people who speak up.<Cite s="aaron-rowe-withdrawal-2026-09-15" passage="I have made the decision to withdraw as a support act for Ed Sheeran's The Loop North American Tour." /><Cite s="aaron-rowe-withdrawal-2026-09-15" passage="I cannot stand by and allow billionaires to use their position of power to silence the rightful voices of those who speak up" /></p>
+
+        <p data-layer="narrative">Beoga departed as Sheeran's band for the remaining U.S. dates. The band said it would not play venues that silence artists for saying “Free Palestine.”<Cite s="beoga-withdrawal-2026-09-15" passage="We have made the decision to depart as Ed Sheeran's band on the remaining US Loop tour" /><Cite s="beoga-withdrawal-2026-09-15" passage="we will not play in venues that silence artists for saying Free Palestine" /></p>
+
+        <p data-layer="narrative">Lukas Graham objected to wealth determining who gets to speak and withdrew from the remaining dates. The band's statement also cautioned that there was not one single reason for its decision.<Cite s="lukas-graham-withdrawal-2026-09-15" passage="Nobody's bank balance should decide who gets to speak or which suffering we're allowed to acknowledge." /><Cite s="lukas-graham-withdrawal-2026-09-15" passage="We're withdrawing from the remaining dates. There isn't one single reason behind this decision." /></p>
+
+        <DataTable columns={["Artist", "Scheduled role", "Recorded action"]} rows={lineupRows} caption="The roles named in the September 15 records" />
+
+        <SourcedBlock source="rolling-stone-aaron-rowe-followup-2026-09-18" kind="record" detail>
+          <p>Rowe later said the criticism should focus on Kraft rather than Sheeran, while maintaining that Macklemore should not have been removed.<Cite s="rolling-stone-aaron-rowe-followup-2026-09-18" passage="when you really should be focusing on the likes of [New England Patriots owner] Robert Kraft." /><Cite s="rolling-stone-aaron-rowe-followup-2026-09-18" passage="Rowe affirmed that he didn’t think Macklemore should’ve been pulled off the tour" /></p>
         </SourcedBlock>
       </section>
 
-      <section id="chronology" data-layer="fact">
-        <SectionKicker text="Sequence" />
-        <h2>Chronology</h2>
+      <section id="what-happened-next" data-layer="fact">
+        <SectionKicker text="Philadelphia" />
+        <h2 data-layer="fact">What happened next</h2>
+
+        <p data-layer="narrative">On September 17, CAIR-Philadelphia filed a Pennsylvania Right-to-Know request for communications, decision records, policies, contracts and other records concerning Macklemore's removal from the Philadelphia lineup.<Cite s="cair-philadelphia-records-request-2026-09-17" passage="submitted a Pennsylvania Right-to-Know Law request seeking records concerning the decision that resulted in rapper Macklemore being removed from the lineup" /><Cite s="cair-philadelphia-records-request-2026-09-17" passage="Any policy, contractual provision, safety consideration, agreement, or other standard cited as authority for excluding or restricting a performer" /></p>
+
+        <p data-layer="narrative">The Philadelphia concert went ahead on September 19. Sheeran began alone, without an opener, and other musicians joined him later in the show.<Cite s="ap-philadelphia-outcome-2026-09-19" passage="Sheeran began the concert alone on stage with no opener, but was joined by other musicians later in the show." /></p>
+
+        <p data-layer="narrative">Sheeran called the situation in Gaza “catastrophic and unjustifiable” and said he worried about venues preapproving performances. A small group of pro-Palestinian demonstrators gathered outside the stadium before the show.<Cite s="ap-philadelphia-outcome-2026-09-19" passage="what is happening in Gaza “catastrophic and unjustifiable.”" /><Cite s="ap-philadelphia-outcome-2026-09-19" passage="He also told fans he worries about venues preapproving performances." /><Cite s="ap-philadelphia-outcome-2026-09-19" passage="Before Saturday’s show, a small group of pro-Palestinian demonstrators congregated outside the stadium." /></p>
+
+        <p data-layer="narrative">The records request expressly says it does not presume what responsive records will show. As of September 20, no response or production is in the admitted record.<Cite s="cair-philadelphia-records-request-2026-09-17" passage="the request does not presume what those records will show" /></p>
+
         <DataTable columns={["When", "Record"]} rows={chronologyRows} />
-        <SourcedBlock source="ap-support-acts-2026-09-15" kind="record" detail>
-          <p>Associated Press named Aaron Rowe, Beoga, Lukas Graham and Finneas as the four supporting acts leaving after Macklemore's removal.<Cite s="ap-support-acts-2026-09-15" passage="four of his supporting acts abruptly quit" /></p>
+
+        <SourcedBlock source="ap-philadelphia-outcome-2026-09-19" kind="record" detail>
+          <p>AP's revised Philadelphia report records the completed concert, the absence of an opener, Sheeran's remarks and the demonstration.<Cite s="ap-philadelphia-outcome-2026-09-19" passage="Sheeran began the concert alone on stage with no opener" /></p>
         </SourcedBlock>
-        <SourcedBlock source="ap-tour-power-2026-09-17" kind="record" detail>
-          <p>The Associated Press described the promoter as the primary business actor on a tour and reported that venues retain the ability to refuse a show.<Cite s="ap-tour-power-2026-09-17" passage="The promoter is the primary business actor on a tour." /><Cite s="ap-tour-power-2026-09-17" passage="Certainly they can lock the doors" /></p>
+        <SourcedBlock source="cair-philadelphia-records-request-2026-09-17" kind="record" detail>
+          <p>The request seeks communications and authority records while stating that it does not presume what the records will show.<Cite s="cair-philadelphia-records-request-2026-09-17" passage="the request does not presume what those records will show" /></p>
         </SourcedBlock>
-        <SourcedBlock source="ap-philadelphia-2026-09-19" kind="record" detail>
-          <p>Associated Press reported that the tour was set to resume in Philadelphia after the supporting acts withdrew.<Cite s="ap-philadelphia-2026-09-19" passage="Ed Sheeran is set to resume his tour Saturday" /></p>
+        <SourcedBlock source="nyt-philadelphia-outcome-2026-09-19" kind="record" detail>
+          <p>The New York Times reported that the Philadelphia show started two hours later without an opening act. Its account also preserves Sheeran's fuller remarks on the October 7 attack, Gaza and the West Bank.<Cite s="nyt-philadelphia-outcome-2026-09-19" passage="Sheeran performed without an opening act, and the show’s start time was pushed back two hours." /><Cite s="nyt-philadelphia-outcome-2026-09-19" passage="He called the Oct. 7 Hamas attack “horrific.”" /><Cite s="nyt-philadelphia-outcome-2026-09-19" passage="And the systemic injustice we’re seeing unfold in the West Bank, it cannot be overlooked." /></p>
         </SourcedBlock>
         <SourcedBlock source="ap-donations-2026-09-19" kind="record" detail>
-          <p>Associated Press reported that Macklemore committed his net Loop Tour earnings to a $1 million pledge for six Palestinian relief organizations.<Cite s="ap-donations-2026-09-19" passage="The six donation recipients" /></p>
+          <p>AP recorded Macklemore's $1 million relief pledge and six recipients. Kraft separately said he would match Sheeran's $2 million aid pledge, but the statement did not name the recipients.<Cite s="ap-donations-2026-09-19" passage="$1 million pledge from rapper Macklemore" /><Cite s="ap-donations-2026-09-19" passage="The six donation recipients" /><Cite s="ap-donations-2026-09-19" passage="he would match Sheeran’s own $2 million donation for aid" /><Cite s="ap-donations-2026-09-19" passage="The post did not specify the gift’s recipients." /></p>
         </SourcedBlock>
+      </section>
+
+      <section id="unknowns" data-layer="fact">
+        <SectionKicker text="The record's limits" />
+        <h2 data-layer="fact">What we do not know yet</h2>
+
+        <p data-layer="narrative" data-absence>As of September 20, the admitted records contain no executed artist, promoter or venue contract. They do not establish which party held final contractual authority over Macklemore's removal.</p>
+
+        <p data-layer="narrative" data-absence>The admitted records contain no communications among Kraft, Messina, Sheeran's representatives and each venue. They do not establish whether Kraft coordinated broader venue pressure, and most named venues supplied no direct explanation.</p>
+
+        <p data-layer="narrative" data-absence>The CAIR-Philadelphia page records a request, not a result. No responsive documents or agency determination had been admitted by September 20.</p>
+
+        <p data-layer="narrative" data-absence>The official schedule and venue pages checked through September 20 confirm the remaining dates but do not identify a rebuilt support lineup for September 25 through November 7.</p>
       </section>
 
       <StorySources event={event.slug} />
