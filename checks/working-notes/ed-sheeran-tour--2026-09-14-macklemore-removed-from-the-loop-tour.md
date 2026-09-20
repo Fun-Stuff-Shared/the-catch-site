@@ -76,6 +76,9 @@ Coverage, in admission order:
 - 2026-09-14 to 2026-09-20, BBC and Al Jazeera video pages: bodies saved in the candidate runs; not admitted because no distinct recoverable passage required a separate video record.
 - 2026-09-18, CNBC ticket-price report: found in the forward census; not admitted because secondary resale asking prices have no complete sales denominator and do not establish a lineup fact.
 - Undated, executed artist/promoter/venue contracts: not found on official or coverage routes; no contract term is inferred from the general AP mechanism report.
+- `gap-ap-philadelphia-post-show-2026-09-19` — 2026-09-19, [current AP Philadelphia record](https://apnews.com/article/ed-sheeran-concert-macklemore-philadelphia-d452b6eadff285553b20c558191886bb): the record audit found that the live article had advanced beyond the manifest's pre-show pin and reported the completed concert, Sheeran opening without an opener, his remarks and the planned protest; not admitted in the structure turn because the revised document is not pinned in the manifest.
+- `gap-cair-philadelphia-records-request` — By 2026-09-20, [CAIR-Philadelphia public-records request](https://pa.cair.com/pressrelease/macklemore-letter/): the record audit found a request for communications, policies, contracts and decision records involving the venue, city entities, promoter, artists, Kraft and advocacy groups; not admitted in the structure turn because the document is outside the manifest and the request does not establish what responsive records will show.
+- `gap-prior-comparable-loop-lineup-change` — No admitted record establishes an earlier comparable Loop Tour removal-and-withdrawals change, so the elapsed time since the last change of this kind cannot be stated from this record.
 
 ## Primary passage tables
 
