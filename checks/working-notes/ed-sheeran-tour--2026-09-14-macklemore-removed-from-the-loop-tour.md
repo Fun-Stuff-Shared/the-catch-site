@@ -335,3 +335,75 @@ Three records added distinct, bounded detail and were admitted. The remaining ca
 | Gillette 2025 lineup post | `capture-oneoff-20260920T075234Z`, captured | A pre-event promotional post does not displace AP's later report that Rowe and Lukas Graham were replacements for the remaining U.S. dates. |
 
 Every numbered interrogation item has a separate needs-ledger row in the manifest and a keyed disposition in the interrogation file.
+
+## Patch round 1 ledger
+
+The patch is limited to the 18 reviewer items. Sibling counts state how many same-class instances were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| 1 | 1 principal-statement passage cluster | Patched. Sheeran's story-view account now includes support-act setlists, his week of venue talks including Kraft, the promoter contract, touring livelihoods, and his children-and-families rationale. It remains attributed to him and does not settle contractual authority. |
+| 2 | 1 omitted B-grade explanation | Patched. Macklemore's account of Sheeran's stated neutrality and his argument about three years of similar remarks reaching a larger artist, stadiums and audience is in the story view. |
+| 3 | 1 incomplete Philadelphia-remarks passage | Patched. Sheeran's apology for mistakes and disappointing fans appears beside the Gaza sentence without tying the apology to any particular decision. |
+| 4 | 1 premature response-absence sentence | Patched. The story says the September 17 request was still inside Pennsylvania's five-business-day response period on Sunday, September 20. The saved city record also supports a proof-layer sentence about the public lease chain and expressly does not prove public-body participation in the removal. |
+| 5 | 1 petition-scope passage | Patched. The live form is pinned and the story names Sheeran, tour leadership and all host venues as addressees, plus its advance-approval question. |
+| 6 | 1 page-owned record-count sentence | Patched. The sentence about 24 saved documents and a comparable event was cut. |
+| 7 | 1 omitted direct response to an allegation | Patched. Macklemore's distinction between antisemitism and criticism of Israel or Zionism appears where Kraft's characterization is reported. |
+| 8 | 1 omitted venue-control mechanism | Patched. Gillette's reserved content control over signs and banners appears beside the general tour-control account, with a limit against treating it as proof of the removal decision. |
+| 9 | 6 project-vocabulary occurrences | Patched. Every occurrence of `admitted` and every sentence that made the page's collection of records the acting subject was removed from the reader-facing story. |
+| 10 | 1 out-of-order qualification | Patched. The AP tour-control piece is introduced before the nonparticipant qualification. |
+| 11 | 2 number-production sentences | Patched. The story states the 10-show fact; the dated-row method sits in proof. |
+| 12 | 1 unnamed-venue sentence | Patched. The seven venues attributed to Rolling Stone are named before the response limitation. |
+| 13 | 1 underspecified pledge sentence | Patched. The proof layer says Macklemore pledged Loop Tour earnings on September 16 to six Palestinian relief nonprofits. |
+| 14 | 1 vague stage reference | Patched. The page now says MetLife Stadium. |
+| 15 | 1 causal-sounding dek sequence | Patched. The dek states that Macklemore played the two MetLife shows and then lost eight scheduled appearances. |
+| 16 | 17 document-subject sentences | Patched. Event participants, actions and public facts now lead the sentences; schedule arithmetic and source-specific support remain in proof. |
+| 17 | 3 repeated authority statements | Patched. The unresolved-authority formulation remains once in The catch; the dek and unknowns now carry the specific role and contract limits instead. |
+| 18 | 1 first narrative mention | Patched. The first narrative mention identifies the Loop Tour as Sheeran's stadium tour. The held kicker was not changed. |
+
+## Patch round 1 source admissions
+
+### Census line: `iac-loop-tour-petition-2026-09`
+
+- Canonical URL: `https://forms.monday.com/forms/f163b4356de725b93cde321cf3f1e2d5?r=use1`
+- Registry run: `capture-oneoff-20260920T083749Z`
+- Captured: `2026-09-20T08:38:01.848340Z`
+- Raw pin: `data/sources/ed-sheeran-tour/iac-loop-tour-petition-2026-09.html`, 22931 bytes, SHA-256 `1047f71019330a661300a1ebc66863115963fbe835da6ec6cac7ce775bbf59a7`
+- Text sibling: `data/sources/ed-sheeran-tour/iac-loop-tour-petition-2026-09.txt`, 668 bytes, SHA-256 `83b7643b699fd1960b5b9b6c0f090c10cc1280f71a4be56722297bc455a1b7fb`
+
+| Passage | Disposition |
+|---|---|
+| The petition addresses Sheeran, tour leadership and all venues hosting the tour. | Used: scope of the request. |
+| It calls for Macklemore's removal from remaining dates. | Used: requested action. |
+| It asks whether his speech, visuals and performance of `Hind's Hall` were approved in advance. | Used: the petition's control question. |
+
+The normal extractor returned only the form title. The readable sibling is a transcription of the petition text embedded in `window.form_data` in the paired raw HTML.
+
+### Census line: `pa-open-records-citizens-guide-2026-09-20`
+
+- Canonical URL: `https://www.openrecords.pa.gov/RTKL/CitizensGuide.cfm`
+- Registry run: `capture-oneoff-20260920T084135Z`
+- Captured: `2026-09-20T08:41:47.687006Z`
+- Raw pin: `data/sources/ed-sheeran-tour/pa-open-records-citizens-guide-2026-09-20.html`, 26415 bytes, SHA-256 `49932e50f84571a695ab877dbfcfc615a606c5be9ba86621d68c8a628be46985`
+- Text sibling: `data/sources/ed-sheeran-tour/pa-open-records-citizens-guide-2026-09-20.txt`, 9762 bytes, SHA-256 `a3aea0f75c12d2e8b095f4adc534cd206c58005426c7046d576a7f91ed0e097a`
+
+| Passage | Disposition |
+|---|---|
+| Pennsylvania agencies have five business days to grant, deny or extend a Right-to-Know request. | Used: the September 20 response period had not run. |
+| The clock starts the day after receipt during business hours. | Held from the story: the five-business-day rule is enough to bound the timing. |
+
+### Census line: `philadelphia-stadium-lease-2007`
+
+- Canonical URL: `https://www.phila.gov/media/20201222120535/PAID-Multi-Model-Lease-Revenue-Refunding-Bonds-Series-2007-B.pdf`
+- Registry run: `capture-oneoff-20260920T084135Z`
+- Captured: `2026-09-20T08:41:58.196231Z`
+- Raw pin: `data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.pdf`, 3247345 bytes, SHA-256 `154757fe47ba0c921dc5baf9e7547cf52332806f6a7976c2fe6ff11457d6a59a`
+- Text sibling: `data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.txt`, 1148 bytes, SHA-256 `a49d027fb55cf09def1a5c837f021819c71a1fd91605507a74a39819782b2aa8`
+
+| Passage | Disposition |
+|---|---|
+| The City leases the stadium parcel to the Philadelphia Authority for Industrial Development. | Used in proof: public lease chain. |
+| The Authority leases stadium premises to the Eagles. | Used in proof: why public bodies could hold responsive records. |
+| Any role by either public body in Macklemore's removal. | Not established by the lease and not claimed. |
+
+The text sibling transcribes the relevant lease definitions from pages C-3 to C-4 of the paired PDF.

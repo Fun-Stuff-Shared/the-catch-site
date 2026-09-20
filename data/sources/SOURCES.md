@@ -1684,3 +1684,9 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/rolling-stone-aaron-rowe-followup-2026-09-18.txt | 2895 | f6464ccbe547ce35 |
 | data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.html | 268112 | 44ca109b05cb10ba |
 | data/sources/ed-sheeran-tour/coverage/nyt-philadelphia-outcome-2026-09-19.txt | 3058 | 05bc968720ed4c28 |
+| data/sources/ed-sheeran-tour/iac-loop-tour-petition-2026-09.html | 22931 | 1047f71019330a66 |
+| data/sources/ed-sheeran-tour/iac-loop-tour-petition-2026-09.txt | 668 | 83b7643b699fd196 |
+| data/sources/ed-sheeran-tour/pa-open-records-citizens-guide-2026-09-20.html | 26415 | 49932e50f84571a6 |
+| data/sources/ed-sheeran-tour/pa-open-records-citizens-guide-2026-09-20.txt | 9762 | a3aea0f75c12d2e8 |
+| data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.pdf | 3247345 | 154757fe47ba0c92 |
+| data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.txt | 1148 | a49d027fb55cf09d |

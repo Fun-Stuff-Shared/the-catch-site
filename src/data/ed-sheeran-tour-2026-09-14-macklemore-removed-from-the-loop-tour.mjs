@@ -57,7 +57,7 @@ const displayDate = (date) => new Intl.DateTimeFormat("en-US", {
 export const event = {
   slug: "ed-sheeran-tour/2026-09-14-macklemore-removed-from-the-loop-tour",
   title: "Macklemore removed from Ed Sheeran's tour; the remaining opening acts quit",
-  dek: "Macklemore lost eight scheduled appearances after two MetLife shows. The four later departures covered different roles, and the published record does not establish who held final authority.",
+  dek: "Macklemore played two MetLife Stadium shows, then lost eight scheduled appearances. Four later departures covered different tour roles.",
   name: "Macklemore removed from the Loop Tour",
   date: cutoff,
   updated: "2026-09-20",
