@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.1"
+  version: "3.3"
 ---
 
 # Catch story turn
@@ -50,11 +50,21 @@ financial terms appear first as the pin's word in quotation marks, then in every
 
 The shape: the headline states the most important change, with the number when the number
 is the change; the dek adds the two facts a stranger needs to read on; What happened opens
-on the clean model (what happened and what it means) and goes one level deeper per
+on the clean model (what happened and what it means), the act itself in its first sentence
+and what was expected, with the gauge that measured it, after the act and never before it;
+what was new is stated as the fact (in July nine of 12 voted to hold, in September all 12
+voted to raise), never announced ("the news is", "the change was", "the real signal is");
+the mechanism is paragraphs of What happened, not a section; it goes one level deeper per
 paragraph, a term explained only where the sentence leaning on it would otherwise be misread and then as its consequence in this story (`references/writing.md`), three to six paragraphs; the
 catch, when a record contradicts the wrong reading, right after the section that
 establishes the concept the wrong reading depends on; then the sections the question tree
-asks for, in its order, and none it does not; quotes as cards, each introduced by the
+asks for, in its order, and none it does not; a section the tree adds beyond the fixed
+forms in `references/sections.md` is a question a stranger would jump to from the contents
+list and more than two paragraphs of answer (a shorter thread is paragraphs inside the
+section whose question it follows; the reactions of the actors the story names are dated
+paragraphs of What happened next unless the reaction is the event);
+a line-by-line comparison of two records (two statements, two versions of a bill) is a
+proof block, and the story says in one sentence what changed between them; quotes as cards, each introduced by the
 paragraph before and headed with the speaker; What happened next dated; What we do not
 know only after its disproof search, and never a step that is scheduled but not yet due;
 the records list. Concept before qualification, every distinction introduced by the

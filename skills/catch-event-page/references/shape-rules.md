@@ -10,7 +10,10 @@
    (`ReadingModes.astro`). A fact a stranger needs to follow the story is written into the
    narrative with its cite, never left in a detail block. Collapsed `<details>` are for proof
    only (arithmetic, capture dates, method), never for facts.
-1. **Write in descending order of importance.** Each section opens with the sentence a
+1. **Write in descending order of importance.** The first sentence of What happened is the
+   act; what was expected, and the gauge that measured it, come after the act, never before
+   it (the headline and dek above it name the act too, in their own words).
+   Each section opens with the sentence a
    stranger most needs and each paragraph after goes one step deeper. The full record sits
    at the end of its section as detail blocks, or in the closing records list.
 2. **A figure when comparison is easier seen than read.** Two or more comparable numbers
@@ -61,3 +64,11 @@
     gold jobs page is 7,100 px, 1,745 words, 15 fact blocks, one chart and two tables. A
     page at twice that height with no figure is the anti-pattern; so is a page that reaches
     the target by collapsing its facts.
+12. **A section the question tree creates is a question a stranger would jump to, and more
+    than two paragraphs of answer.** This binds the sections answer 7 adds (the ones named
+    for their concept), not the fixed-form sections whose rows in `sections.md` set their own
+    length (the catch, Where this sits, Who feels it, the projections, the coverage cards, the
+    markets). A question-tree thread shorter than that is paragraphs inside the section whose
+    question it follows. The mechanism is paragraphs of What happened, inline where the story
+    first leans on it; the reactions of the actors the story names are dated paragraphs of
+    What happened next.

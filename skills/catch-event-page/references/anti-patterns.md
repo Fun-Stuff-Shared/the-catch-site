@@ -73,3 +73,37 @@ captured and read. A refused, stale or never-fetched set does not go in the sent
 
 - "Nothing in the docket entries through September 19 names a demolition date." Every CourtListener docket capture for that story was refused; the docket was never read. Rewritten to the admitted filings.
 - "The inspector general's report listings through September 14 carry no such review." No census line read those listings. Rewritten to the admitted records.
+
+## Announcing the news instead of stating it
+
+The rule (writing.md, register): what was new is the fact, never a sentence that says a
+fact is coming. Both Fed authors on 2026-09-19 wrote one; the stranger read stalled on the
+second, taking "the change" for the rate change; nine headings on a quarter-point decision
+was the same page organized like its research rather than like its reader.
+
+- The news was that the committee that split 9 to 3 in July now voted as one.
+- The change was inside the committee.
+
+## The evidence before the act
+
+The rule (shape-rules 1): the first sentence of What happened is the act. A page that opens on
+the gauge that predicted the act makes the decision the second thing read, and the gauge
+arrives with a definition attached because nothing before it explained why it is there.
+
+- CME Group's FedWatch gauge, a measure of investor expectations for the Fed's decision, put 94 percent odds on a quarter-point increase the day before the decision.
+
+## A judgment reported as a forecast
+
+The rule (writing.md, register): the record's verb. Projections are what each official
+judged appropriate; the page that says "expected" is making the mistake its own catch
+corrects.
+
+- 16 of 18 policymakers expected another increase this year.
+
+## Two denominators, no bridge
+
+The rule (writing.md, numbers): the first place the second count appears says why it
+differs. The stranger read of the merged Fed page: "I could not tell why 12 people vote but
+18 have projections."
+
+- The committee voted 12 to 0, and 16 of 18 policymakers saw at least one more increase as appropriate.

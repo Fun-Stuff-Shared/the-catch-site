@@ -48,6 +48,13 @@ sounding unaware of the work it took to know it.
   outside a quotation it is the site narrating its method and the lint fails it. A proper
   name that begins with one of those words (Our World in Data) and a route number (I-95)
   are not first person.
+- What was new is stated as the fact, never announced. "The news is that", "the change was
+  inside the committee", "the real signal is", "what matters is" are cut and the fact after
+  them kept: "In July nine of 12 voted to hold; in September all 12 voted to raise."
+- A judgment a record holds is reported as the judgment the record names, never as a
+  forecast of behavior: officials "saw at least one more increase as appropriate", never
+  "expected another increase"; a court "declined to stay", never "will let". The verb is the
+  record's verb in everyday words.
 - "X, not Y" is used where the record makes the distinction and the misreading depends on
   it; never as a headline, a kicker, or a paragraph closer, and never twice in a paragraph.
   The positive form is the default: "each dot shows where one official thinks rates should
@@ -118,6 +125,10 @@ sounding unaware of the work it took to know it.
   nation's currency.
 - Every headline number carries its denominator: what was expected, what came before,
   what is normal, against what total.
+- Two counts on one page with different denominators (12 voters, 18 policymakers
+  submitting projections; 435 members, 218 for a majority, 400 voting) get one sentence that
+  says why the denominators differ, at the first place the second count appears, and
+  nowhere else.
 - Every headline figure names its kind in the sentence that carries it: an estimate, an
   obligation, a disbursement, a replacement value, a request, a notional model, a cash
   total. "Has cost" for a replacement-value estimate, or a modeled architecture's price

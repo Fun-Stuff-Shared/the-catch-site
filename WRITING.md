@@ -24,16 +24,17 @@ other term is ours to introduce.
 The story is the synthesis: tight reporting in the register of the Zika page, most
 important first, each paragraph one level deeper, mechanisms explained in the sentence
 that needs them, quotes as cards each introduced by the paragraph before it and headed
-with the speaker's name, dated steps as a chronology, numbers as figures, and a
-"so what" closing every section. It is compact. A raw record (the filing line by line, a
+with the speaker's name, dated steps as a chronology, numbers as figures, and each
+section ending when its answer is complete, never on a sentence that weighs or sums it
+up (`skills/catch-event-page/references/shape-rules.md`, rule 4). It is compact. A raw record (the filing line by line, a
 committee's books, a ballot listing) is not story; it is marked `detail` on its
 `SourcedBlock` and appears in Just the facts and Show the work, where the reader who wants
 the document finds it in the open, never collapsed. Show the work adds the proof.
 
 A page is never finished. Records arrive after publication (a transcript, a roll call, a
 later filing); each one is folded in the same day it is captured, the claim it bears on is
-re-checked, and the What happened next section carries the dated addition. "We do not
-hold it" is a to-do with an owner and a date, not a state.
+re-checked, and the What happened next section carries the dated addition. A record not
+yet held is a to-do with an owner and a date, not a state.
 
 ## One voice per layer
 
@@ -50,8 +51,9 @@ layer keeps its own register and never borrows the others':
 - **Narrative layer.** The explainer voice. It teaches mechanisms (two
   surveys, seasonal adjustment), builds the arc, and says what the numbers
   mean for the people in them. It may carry judgment only when the fact layer
-  underneath supports it, and it names what it will not do ("we will not
-  guess at one").
+  underneath supports it, and it never speaks in the first person or about its own
+  method; an absent cause is stated as the record's silence ("the release gives no
+  cause"), never as the page's refusal.
 - **Proof layer.** Auditor register, unapologetic. Verbatim quotes, series
   codes, capture dates, hashes. Never simplified: the reader who opened
   "Show the work" asked for the machinery.
@@ -86,8 +88,7 @@ knock down is banned; state the real thing directly.
 
 We never author a cause. A cause appears on the page only as a quote from a
 record (with its author named) or not at all, and the absence is said plainly
-("the release states the figure without a cause, and we will not guess at
-one"). When an outlet authors a cause the record does not contain, that gap
+("the release gives no cause for the figure"). When an outlet authors a cause the record does not contain, that gap
 is itself reportable, attributed to the outlet.
 
 ## No template skeletons
@@ -117,8 +118,11 @@ with their comparisons folded in, not teasers.
   to", "serves as", "plays a role", "in today's". If the word carries a
   measurable meaning, replace it with the measurement.
 - No hedge stacks: one qualifier per claim, chosen to match the evidence.
-  Unverified is said as "we have not verified this", not "may potentially
-  suggest".
+  A claim the records do not settle is bounded in the record's terms ("the
+  filing gives no date"; "the docket through September 19 holds no ruling"),
+  never softened with "may potentially suggest" and never narrated in the
+  first person (`skills/catch-event-page/references/writing.md`, Absence,
+  mechanism and actors).
 - No adjective triplets; no "Similarly / Likewise / In the same way"
   transitions (a transition states what the next thing adds).
 - No unnamed attribution: "analysts say", "experts argue", "observers note"

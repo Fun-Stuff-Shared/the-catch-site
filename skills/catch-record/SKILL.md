@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.1"
+  version: "3.3"
 ---
 
 # Catch record turn
@@ -128,10 +128,18 @@ new. The pins win over anyone's memory.
 ## Step 3. Build the record: the end of turn one
 
 Data module first (`src/data/<slug>.mjs`: event, kpis, series, tables, every derived
-number computed from the admitted series with a comment naming the file). Then the parts
-of the page that are the record and not the story: figures from the data module, the
-chronology table, the record's own lines as `SourcedBlock kind="record" detail` under
-the sections they belong to, the records list. Then the subject page and the homepage,
+number computed from the admitted series with a comment naming the file). The KPI strip
+is three to four facts of the event or its history (the new range, the vote, the date of
+the last increase, the count), never the evidence that the event was expected (the odds,
+the consensus, a forecast); the story turn does not rebuild it, so the strip you commit
+is the strip that ships. Then the parts of the page that are the record and not the story:
+figures from the data module, the chronology table, the record's own lines as
+`SourcedBlock kind="record" detail` under the sections they belong to, the records list.
+A line-by-line comparison of two records (two statements, two versions of a bill, two
+maps) is a `DataTable` inside `<details class="receipt" data-layer="proof">`, never a
+story-view figure or table; the story turn writes the one sentence above it that says
+what changed. Every other table and figure you build is a fact-layer figure of the
+record's own numbers. Then the subject page and the homepage,
 which are record work: one timeline row and the KPI or chart refresh on
 `/events/<subject>/`, and the homepage feature through `event.visual` (procedures, step
 13, and the visual kinds). Manifest with every gate attestation true in fact, which in
