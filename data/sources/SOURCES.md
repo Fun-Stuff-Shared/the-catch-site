@@ -1690,3 +1690,7 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/pa-open-records-citizens-guide-2026-09-20.txt | 9762 | a3aea0f75c12d2e8 |
 | data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.pdf | 3247345 | 154757fe47ba0c92 |
 | data/sources/ed-sheeran-tour/philadelphia-stadium-lease-2007.txt | 1148 | a49d027fb55cf09d |
+| data/sources/ed-sheeran-tour/coverage/tampa-bay-times-raymond-james-response-2026-09-15.html | 215079 | 09227a5dba32cb40 |
+| data/sources/ed-sheeran-tour/coverage/tampa-bay-times-raymond-james-response-2026-09-15.txt | 1681 | 7af7537c9733b482 |
+| data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.html | 127467 | f2ca184bdf37a86f |
+| data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.txt | 2635 | e02d7628b2390b93 |

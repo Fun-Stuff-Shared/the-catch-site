@@ -407,3 +407,61 @@ The normal extractor returned only the form title. The readable sibling is a tra
 | Any role by either public body in Macklemore's removal. | Not established by the lease and not claimed. |
 
 The text sibling transcribes the relevant lease definitions from pages C-3 to C-4 of the paired PDF.
+
+## Patch round 2 source admissions
+
+### Census line: `tampa-bay-times-raymond-james-response-2026-09-15`
+
+- Canonical URL: `https://www.tampabay.com/culture/entertainment/music/2026/09/15/macklemore-ed-sheeran-tampa-sports-authority-raymond-james-concert/`
+- Registry run: `capture-oneoff-20260920T191616Z`
+- Captured: `2026-09-20T19:16:28.402160Z`
+- Raw pin: `data/sources/ed-sheeran-tour/coverage/tampa-bay-times-raymond-james-response-2026-09-15.html`, 215079 bytes, SHA-256 `09227a5dba32cb40ff38aeb3fd52249d6872103e77c03d4d520bcb225f0bae1e`
+- Text sibling: `data/sources/ed-sheeran-tour/coverage/tampa-bay-times-raymond-james-response-2026-09-15.txt`, 1681 bytes, SHA-256 `7af7537c9733b4824976be6bfa513c303867929c6630d89d7fcdfe904cd05619`
+
+| Passage | Disposition |
+|---|---|
+| Tampa Sports Authority board member Alan Clendenin said the public agency managing Raymond James Stadium had nothing to do with the lineup change. | Used in the story view to separate Clendenin's account from the other venue accounts. |
+| Alan Clendenin said the authority does not get involved in freedom-of-speech issues. | Held in the record because the denial itself supplies the needed boundary. |
+| Joe Robinson contrasted publicly operated Raymond James Stadium with privately owned Gillette Stadium. | Held in the record because the ownership comparison is carried by the already pinned Rolling Stone passage. |
+
+The fresh registry fetch succeeded. Its standard text extraction returned a subscriber and comments stub, but the fresh raw file contained the article body in page data. The readable sibling transcribes the relevant passages from that fresh raw file. The reviewer-supplied fallback copy was not used.
+
+### Census line: `ajc-metlife-intervention-2026-09-08`
+
+- Canonical URL: `https://www.linkedin.com/posts/american-jewish-committee_while-opening-for-ed-sheeran-at-metlife-stadium-activity-7503112129827237888-ZtkS`
+- Registry run: `capture-oneoff-20260920T191639Z`
+- Captured: `2026-09-20T19:16:48.279760Z`
+- Raw pin: `data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.html`, 127467 bytes, SHA-256 `f2ca184bdf37a86f5b5ded2e58353795b860c9c55dd31675fe5de11403ce515e`
+- Text sibling: `data/sources/ed-sheeran-tour/ajc-metlife-intervention-2026-09-08.txt`, 2635 bytes, SHA-256 `e02d7628b2390b9360aa24d7b56c41a8539b1f2df16ff022d0661e6c903cd764`
+
+| Passage | Disposition |
+|---|---|
+| AJC New Jersey said it contacted the Meadowlands after the first show. | Used in the story view and attributed to AJC as an interested party. |
+| AJC said stadium administrators raised its concerns directly with the tour and artists. | Used in the story view with the same attribution. |
+| AJC said refunds were offered before the second show to ticket holders who chose not to attend. | Used in the story view with the same attribution. |
+
+A registry search for `MetLife AJC refund Macklemore` from September 4 through September 20 returned no first-party MetLife result. The page therefore identifies AJC as the source and says MetLife had not published its own account by September 20.
+
+## Patch round 2 ledger
+
+The patch is limited to R1 through R4 and S1 through S13. Sibling counts state how many same-class instances were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---|---:|---|
+| R1 | 1 held headline | Held with reason. The h1 is the accepted state label and the reviewer reserved it for the editor. No page sentence critiques it. |
+| R2 | 1 seven-venue attribution cluster | Patched. Gillette's refusal is confirmed by its owner, Tampa Sports Authority board member Alan Clendenin says the public agency was not involved, and the other five venues remain supported by Messina's general statement and Rolling Stone's separate naming. A second cited sentence states that only Gillette and Bank of America Stadium were identified as privately owned. |
+| R3 | 1 missing interval between the MetLife shows | Patched. AJC's interested-party account of its contact, the stadium raising concerns, and the refund offer now sits between the two performances. A bounded absence sentence says MetLife had not published its own account by September 20. |
+| R4 | 4 CAIR request references across page, data and manifest | Patched. Each reference now identifies the pin as CAIR-Philadelphia's announcement that it submitted a request. Claims of exact request wording, recipients or filing metadata were removed. The record chip label was not changed. |
+| S1 | 1 narrative signs-and-banners sentence | Patched. The sentence left the narrative and became one plain clause in a venue-authority detail block. |
+| S2 | 1 uncited sentence boundary | Patched. The Sheeran statement citation now follows the setlist sentence directly. |
+| S3 | 2 Kraft platform statements | Patched. The story-view statement remains; the duplicate detail statement was removed. |
+| S4 | 1 document-subject sourcing clause | Patched. The detail now says the Wall Street Journal reported the owner-pressure account and names its anonymous sourcing. |
+| S5 | 1 page-owned headline critique | Patched. The sentence now states only that the four departing artists held different roles. |
+| S6 | 1 document-subject table caption | Patched. The caption names the four artists, their roles and what each did. |
+| S7 | 2 response-period statements | Patched. The dated explanation remains once in What happened next and was removed from the unknowns. |
+| S8 | 3 no-opener statements and 1 vague time phrase | Patched. The no-opener outcome appears once in the What happened narrative and once in the New York Times detail. The detail says the show began two hours later than scheduled. |
+| S9 | 1 lease-chain hedge | Patched. The detail states only the city-to-authority-to-Eagles lease chain. |
+| S10 | 2 KPI labels and 2 matching feature-table labels | Patched. The labels state that eight of ten remaining shows had booked Macklemore and that all ten dates stayed scheduled. |
+| S11 | 2 project-worded source meta strings | Patched. They now read `2011 bond document` and `saved again on 2026-09-20`. |
+| S12 | 1 missing eight-slot outcome | Patched. What happened says the tour continued without Macklemore and that the first post-removal date went ahead in Philadelphia with no support act. |
+| S13 | 5 held section kickers | Held with reason. They are shared-component labels reserved by the reviewer and were not changed. |
