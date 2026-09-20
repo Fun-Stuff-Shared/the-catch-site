@@ -85,8 +85,10 @@ export const decision = {
 };
 
 export const inflation = {
+  julyPceAnnual: 3.7,
   augustGasolineChange: 3.9,
   augustGasolineShare: "more than one-third",
+  augustCpiAnnual: 3.4,
   augustCoreCpiAnnual: 2.4,
 };
 
@@ -122,7 +124,7 @@ export const chronologyRows = [
   ["July 29", "The committee holds at 3.50–3.75 percent in a 9–3 vote; three members prefer a quarter-point increase."],
   ["September 16, 2 p.m.", "The committee raises the range to 3.75–4 percent in a 12–0 vote and releases new projections."],
   ["September 16, 2:30 p.m.", "Chair Kevin Warsh holds a press conference and says the committee is not providing forward guidance."],
-  ["September 17", "The new target range, reserve-balance rate and primary-credit rate take effect."],
+  ["September 17", "The new target range takes effect."],
 ];
 
 export const seriesReceipt = {

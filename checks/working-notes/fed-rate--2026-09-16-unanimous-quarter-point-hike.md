@@ -554,3 +554,51 @@ This rewrite starts from story commit `8bf7b3a6` and works the stranger, voice a
 - Moderate, Bessent scope: **fixed.** The sentence now identifies the Fed rather than generalizing the argument to central banks.
 - Moderate, long-term borrowing costs: **fixed.** The sentence now states only AP's supported relationship between the 10-year Treasury yield and mortgage rates.
 - Final rerun: **ENTAILED.** Twenty-nine changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0. Verdict: `checks/audits/fed-rate--2026-09-16-unanimous-quarter-point-hike-2026-09-20-since-8bf7b3a6-entailment.md`.
+
+## Third story patch round, 2026-09-19
+
+This patch starts from story commit `f5cb6a76`. It keeps the reader-model section order and works the fourteen served-page findings as one rewrite pass.
+
+### Review dispositions
+
+1. Kevin Warsh's first mention: **done in “What happened.”** He is introduced as Federal Reserve chair before the page uses his surname alone.
+2. War in Iran before the energy shock: **done in “What happened.”** The first reference to the shock now says the war reduced oil and gas shipments through the Strait of Hormuz.
+3. Geopolitical outcomes: **done by cutting the opaque clause.** The paragraph keeps Warsh's two concrete reasons, stronger economic data and inflation trends that still failed his test.
+4. Growth periods and comparison: **done in “What happened.”** Real GDP is identified as a second-quarter annual rate compared with the first quarter; the 4.2 percent domestic-demand figure is identified as second-quarter growth and compared with the second-quarter headline rate.
+5. Inflation measures and CBO: **done across “What happened,” the mechanism and “The projections.”** The page names the Consumer Price Index and the personal consumption expenditures price index, identifies PCE as the Fed's preferred measure, gives July's 3.7 percent year-over-year PCE reading beside August's 3.4 percent CPI reading, and identifies the projection as a fourth-quarter-to-fourth-quarter measure. The Congressional Budget Office is expanded at first mention before “CBO” is used.
+6. Prices outside food and energy: **done in the mechanism section.** The expectation is attributed to CBO.
+7. Market odds: **done in the opening and “What happened next.”** Both the 94 percent pre-decision figure and the 58 percent October figure name CME Group's FedWatch futures-market gauge.
+8. Trump's account of the board: **done in “The pressure around the decision.”** The DealBook passage is paraphrased as Trump portraying Warsh as unable to change the result and saying he advised the chair to cast the same vote as the rest of the board.
+9. Chronology and “insurance cuts”: **done.** The chronology row now names only the target range taking effect. The jargon label is gone; Janasiewicz's attributed words state his view of whether an aggressive tightening cycle had begun.
+10. Repetition: **done across the page.** The 16-of-18 signal remains in the dek and KPI strip and appears once in prose, in “The projections.” “Effective September 17” appears once in visible prose; the chronology's date column supplies the date without repeating the phrase. “First increase since July 2023” remains in the dek and once in prose; the chart now describes the series instead of repeating the claim.
+11. Months as grammatical subjects: **done in “What happened.”** The committee is the subject of both the July attribution and the September wording change.
+12. “The new information”: **done in the opening.** The paragraph now states the measured contrast: markets expected the quarter-point move, while the committee's 9–3 hold became a 12–0 increase.
+13. Matching 4.1 percent medians: **done across “The projections” and “The catch.”** The projections section states the 2026 and 2027 medians before the catch. The catch then describes each figure positively as the midpoint of a separate year's individual year-end judgments.
+14. Voice-lint reread: **done across the page.** The negative correction is positive, Schulz owns the stacked-increases judgment, Warsh owns the take-home-pay claim, and the chart line only names the series and period.
+
+### Class sweeps and sibling counts
+
+- Avoidable negative correction: **one named sentence fixed; zero siblings found.** The catch now states what each 4.1 percent figure measures.
+- Reader gloss: **two named sentences fixed; three siblings found and fixed.** The siblings were “The new information was how completely the committee had moved,” the separate gloss on inflation's effect on paycheck-to-paycheck households, and the Janasiewicz paraphrase about 2025 cuts. The household and Janasiewicz sentences now report the speakers' words directly. Zero reader-gloss siblings remain.
+- Section wrap-up: **zero named sentences; one sibling found and fixed.** “The pressure's effect on the vote remains unresolved” is cut; the paragraph ends on the 12–0 vote and Warsh's refusal to discuss presidential conversations.
+- Chart-source explanation: **one named line fixed; zero siblings found.** The figure caption states the figure and the chart line names the series and period.
+
+### Source checks for regenerated sentences
+
+- The latest admitted BEA personal-income release gives July PCE inflation at 3.7 percent from a year earlier.
+- The admitted BLS CPI release gives August CPI inflation at 3.4 percent from a year earlier.
+- The SEP footnote defines its inflation projections as fourth-quarter-to-fourth-quarter changes.
+- The ABC and CNBC pins identify the two market-pricing figures as outputs of CME Group's FedWatch tool or gauge.
+- The press-conference pin identifies Warsh as chairman and carries the two retained reasons for acting.
+
+### Served-page checks
+
+- Story mode at 1280 pixels: **checked.** Height 5,987 pixels; the revised opening, one visible rate-path figure, all nine story sections and no proof blocks are visible.
+- Just the facts at 1280 pixels: **checked.** Height 4,147 pixels; fact blocks, the figure, catch, chronology and records are visible, with zero narrative and proof blocks.
+- Show the work at 1280 pixels: **checked.** Height 6,924 pixels; narrative, fact and proof layers are visible, including the chronology and source-use notes.
+
+### Third-round entailment dispositions
+
+- Major, CBO mechanism: **fixed.** The sentence now states CBO's estimate for the PCE inflation rate, identifies core PCE as excluding food and energy, and keeps CBO's mechanism as higher energy prices reaching nonenergy goods and services more slowly. It no longer turns the rate into a price level or substitutes transport costs for CBO's stated cause.
+- Minor, preferred-measure label: **fixed.** The sentence now cites Warsh's admitted Jackson Hole passage, which names the 12-month PCE price change as the Fed's preferred inflation measure.
+- Final rerun: **ENTAILED.** Fourteen changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0. Verdict: `checks/audits/fed-rate--2026-09-16-unanimous-quarter-point-hike-2026-09-20-since-f5cb6a76-entailment.md`.
