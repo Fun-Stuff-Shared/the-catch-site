@@ -308,6 +308,7 @@ Every passage-table line and gap-list line is graded below. A and B rows name th
 | `dow-jones-bessent-rate-hike-2026-08-31` | Bessent argued that a supply shock traditionally does not call for a rate increase without second- or third-order effects. | B | 4, 7 |
 | `bea-personal-income-outlays-july-2026` | August PCE and the annual national-account updates were scheduled for September 30. | B | 6 |
 | `cbo-iran-cost-2026-09-15` | CBO traces the shock through oil, refining and shipping; estimates 2.3 points added to annualized Q2 PCE inflation; and estimates a longer core-PCE pass-through. | B | 4, 5, 6 |
+| `fed-open-market-operations-2026-09-16` | The official rate-change history identifies September 17, 2026 as an increase and July 27, 2023 as the preceding increase. | A | 1, 5 |
 
 ## Sections
 

@@ -1694,3 +1694,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fed-rate/bea-personal-income-outlays-july-2026.txt | 4693 | dfae6c0f417e25f9 |
 | data/sources/fed-rate/cbo-iran-cost-2026-09-15.html | 43026 | 7a72ba4376bc41b9 |
 | data/sources/fed-rate/cbo-iran-cost-2026-09-15.txt | 7289 | 236e6beb32558ce0 |
+| data/sources/fed-rate/fed-open-market-operations-2026-09-16.html | 108253 | 4641801146ad4cdf |
+| data/sources/fed-rate/fed-open-market-operations-2026-09-16.txt | 26884 | cb185fd7c880d246 |

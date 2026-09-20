@@ -14,12 +14,9 @@ import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event,
   decision,
-  inflation,
   growth,
   projections,
   ratePath,
-  statementRows,
-  projectionRows,
   chronologyRows,
   seriesReceipt,
 } from "../../../data/fed-rate-2026-09-16-unanimous-quarter-point-hike.mjs";
@@ -57,18 +54,20 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <p class="railed rail-note" data-layer="fact">Story updated {event.updated}.</p>
 
       <div data-layer="proof" class="event-record-context">
-        <p class="sources-line">This story rests on the September policy statement, implementation note, projections and press-conference transcript; the July statement and minutes; the Federal Reserve's policy framework and Jackson Hole speech; August CPI, July PCE, second-quarter GDP and CBO releases; fixed rate-series files; and coverage checked against those records. The press-conference transcript is marked preliminary on every page. The CBO page was recovered from the September 16 Wayback capture after its direct fetch returned 403. The Wall Street Journal live card is preserved through its Dow Jones Newswires syndication. The Associated Press reconstruction was retained by the capture registry as extracted text and markdown, but its run did not retain a raw-body receipt. Its two attributed observations are used with that limitation recorded in the manifest and working note.</p>
+        <p class="sources-line">The proof layer holds the September statement, implementation note, projections and preliminary press-conference transcript; the July statement and minutes; the official rate history; the policy framework and Jackson Hole speech; economic releases; and the coverage checked against them. The CBO page was recovered from a September 16 Internet Archive copy after its direct fetch returned 403. The Wall Street Journal live card is preserved through its Dow Jones Newswires syndication. The Associated Press reconstruction is preserved as registry-extracted text and markdown because its run retained no raw-body receipt.</p>
       </div>
 
       <section id="what-happened">
         <p class="sec-kicker" data-layer="narrative">The decision</p>
         <h2 data-layer="fact">What happened</h2>
 
+        <p data-layer="narrative">Financial markets put {decision.preDecisionHikeOdds} percent odds on a quarter-point increase the day before the decision. The new information was how completely the committee had moved: July's {decision.julyVote.forHold}–{decision.julyVote.forIncrease} hold became a {event.kpis[1].value} increase, and {projections.expectingAnotherIncrease} of {projections.participantCount} policymakers expected another increase by year-end.<Cite s="abc-fed-preview-2026-09-16" passage="odds of a quarter-point rate hike stood at 94%" /><Cite s="fomc-statement-2026-07-29" passage="approved the following statement for release by a 9 – 3 vote" /><Cite s="fomc-statement-2026-09-16" passage="approved the following statement for release by a 12 – 0 vote" /><Cite s="reuters-fed-decision-2026-09-16" passage="16 of 18 policymakers anticipate at least one more quarter-percentage-point hike" /></p>
+
         <SourcedBlock source="fomc-statement-2026-09-16" kind="record">
-          <p>The Federal Open Market Committee voted {event.kpis[1].value} to raise its target range by one-quarter percentage point, to {decision.range.lower}–{decision.range.upper.toFixed(2)} percent.<Cite s="fomc-statement-2026-09-16" passage="approved the following statement for release by a 12 – 0 vote" /><Cite s="fomc-statement-2026-09-16" passage="raise the target range for the federal funds rate by 1/4 percentage point" /></p>
+          <p>The Federal Open Market Committee raised its target range by one-quarter percentage point to {decision.range.lower}–{decision.range.upper.toFixed(2)} percent, effective September 17.<Cite s="fomc-statement-2026-09-16" passage="raise the target range for the federal funds rate by 1/4 percentage point" /><Cite s="fomc-implementation-2026-09-16" passage="effective September 17, 2026" /></p>
         </SourcedBlock>
 
-        <p data-layer="narrative">The new range took effect September 17. The Fed also raised the rate paid on reserve balances to 3.90 percent and the primary-credit rate to 4 percent.<Cite s="fomc-implementation-2026-09-16" passage="effective September 17, 2026" /><Cite s="fomc-implementation-2026-09-16" passage="increase in the primary credit rate to 4.0 percent" /></p>
+        <p data-layer="narrative">It was the first increase since July 27, 2023.<Cite s="fed-open-market-operations-2026-09-16" passage="September 17 | 25 | 0 | 3.75-4.00" /><Cite s="fed-open-market-operations-2026-09-16" passage="July 27 | 25 | 0 | 5.25-5.50" /></p>
 
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>The first increase since 2023</strong><span>Upper limit of the target range</span></figcaption>
@@ -85,36 +84,30 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="chart-vintage" data-layer="proof">Computed from {seriesReceipt.rangeCount.toLocaleString("en-US")} daily DFEDTARU observations saved September 19.</p>
         </figure>
 
-        <p data-layer="narrative">Seven weeks earlier, the committee had held the range at 3.50–3.75 percent by a {decision.julyVote.forHold}–{decision.julyVote.forIncrease} vote. The July minutes say most participants wanted more information before acting, while several already favored a quarter-point increase.<Cite s="fomc-statement-2026-07-29" passage="approved the following statement for release by a 9 – 3 vote" /><Cite s="fomc-minutes-2026-07-29" passage="most participants supported maintaining the current target range" /><Cite s="fomc-minutes-2026-07-29" passage="Several participants favored an increase of 25 basis points" /></p>
+        <p data-layer="narrative">Seven weeks earlier, most policymakers had wanted more information before acting, though several already favored an increase.<Cite s="fomc-minutes-2026-07-29" passage="most participants supported maintaining the current target range" /><Cite s="fomc-minutes-2026-07-29" passage="Several participants favored an increase of 25 basis points" /></p>
 
-        <p data-layer="narrative">By late August, Chair Kevin Warsh had set a public test: underlying inflation had to move toward the Fed's goal “clearly and at sufficient speed.” The next official CPI release showed gasoline up {inflation.augustGasolineChange} percent in August, accounting for {inflation.augustGasolineShare} of the monthly increase, while core CPI was {inflation.augustCoreCpiAnnual} percent over the year.<Cite s="fed-warsh-jackson-hole-2026-08-28" passage="clearly and at sufficient speed" /><Cite s="bls-cpi-2026-09-11" passage="gasoline rose 3.9 percent in August, accounting for over one third" /><Cite s="bls-cpi-2026-09-11" passage="all items less food and energy index rose 2.4 percent over the year" /></p>
+        <p data-layer="narrative">Warsh had set a public test in late August: inflation had to move toward the Fed's goal “clearly and at sufficient speed.” By September, consumer prices were still 3.4 percent above a year earlier, and gasoline had supplied more than one-third of August's monthly increase.<Cite s="fed-warsh-jackson-hole-2026-08-28" passage="clearly and at sufficient speed" /><Cite s="abc-fed-preview-2026-09-16" passage="Prices rose 3.4% in August compared to a year earlier" /><Cite s="bls-cpi-2026-09-11" passage="gasoline rose 3.9 percent in August, accounting for over one third" /></p>
 
-        <p data-layer="narrative">Growth was not uniformly fast: real GDP increased at a {growth.secondQuarterGdp} percent annual rate in the second quarter, down from {growth.firstQuarterGdp} percent in the first. Private domestic final sales, consumer spending plus private fixed investment, grew {growth.secondQuarterPrivateDomesticSales} percent in the same quarter.<Cite s="bea-gdp-q2-second-estimate-2026-08-26" passage="Real gross domestic product (GDP) increased at an annual rate of 1.5 percent" /><Cite s="bea-gdp-q2-second-estimate-2026-08-26" passage="Real final sales to private domestic purchasers" /></p>
+        <p data-layer="narrative">Headline economic growth slowed to {growth.secondQuarterGdp} percent from {growth.firstQuarterGdp} percent. Beneath that slowdown, consumer spending and private fixed investment grew {growth.secondQuarterPrivateDomesticSales} percent, a measure of domestic demand.<Cite s="bea-gdp-q2-second-estimate-2026-08-26" passage="Real gross domestic product (GDP) increased at an annual rate of 1.5 percent" /><Cite s="bea-gdp-q2-second-estimate-2026-08-26" passage="the sum of consumer spending and gross private fixed investment, increased 4.2 percent" /></p>
 
-        <p data-layer="narrative">Warsh highlighted three considerations in explaining the September decision: the economy had strengthened, his judgment that summer inflation trends had not passed the test remained, and the committee's geopolitical assessment had changed. The September statement described resilient domestic spending, robust capital investment and elevated inflation. Warsh described the increase as removing “a dose of accommodation” so financial and credit conditions would be more consistent with the Fed's objectives.<Cite s="fomc-press-conference-2026-09-16" passage="I'll highlight three things that have happened in that intermeeting period" /><Cite s="fomc-statement-2026-09-16" passage="domestic spending has been resilient" /><Cite s="fomc-press-conference-2026-09-16" passage="We removed a dose of accommodation" /></p>
+        <p data-layer="narrative">Warsh gave three reasons for acting: a stronger economy, inflation trends that still failed his test and a changed view of the most and least likely geopolitical outcomes. By September, officials were no longer counting on the Iran-war energy shock being temporary, according to the Associated Press.<Cite s="fomc-press-conference-2026-09-16" passage="three things that have happened in that intermeeting period" /><Cite s="fomc-press-conference-2026-09-16" passage="our judgment about what is the most likely, or least likely of the geopolitical situation has changed" /><Cite s="ap-reconstruction-2026-09-17" passage="Fed officials are no longer counting on it being a temporary shock" /></p>
 
-        <SourcedBlock source="fomc-statement-2026-09-16" kind="record" detail>
-          <DataTable columns={["Line", "July 29", "September 16"]} rows={statementRows} caption="Selected statement lines, read directly from the two saved releases" />
-        </SourcedBlock>
+        <p data-layer="narrative">The wording also hardened. July attributed part of the inflation problem to supply shocks in sectors including energy. September dropped that explanation and said tighter policy would support a “timelier return” to 2 percent.<Cite s="fomc-statement-2026-07-29" passage="in part reflecting supply shocks that have driven price increases in certain sectors, including energy" /><Cite s="fomc-statement-2026-09-16" passage="Today's policy action will support a timelier return" /></p>
       </section>
 
       <section id="what-rates-can-change">
         <p class="sec-kicker" data-layer="narrative">The mechanism</p>
         <h2 data-layer="fact">What a rate hike can change</h2>
 
-        <p data-layer="narrative">The Fed raises the cost of borrowing to slow consumer and business spending, reducing demand.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="slow consumer and business spending by raising the cost of borrowing" /></p>
-
-        <p data-layer="narrative">The Associated Press traced the oil and gasoline shock to the war with Iran, which was in its seventh month by the day after the decision.<Cite s="ap-reconstruction-2026-09-17" passage="with the Iran war now in its seventh month" /></p>
+        <p data-layer="narrative">A higher overnight rate makes borrowing more expensive and slows consumer and business spending. That reduces demand across the economy.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="slow consumer and business spending by raising the cost of borrowing" /></p>
 
         <SourcedBlock source="fomc-press-conference-2026-09-16" kind="record">
-          <p>A rate increase cannot set the price of oil or gasoline. Warsh said the Fed cannot affect an individual price; it can try to stop a relative-price shock from broadening into second- and third-order effects across the economy.<Cite s="fomc-press-conference-2026-09-16" passage="We cannot affect any individual price" /><Cite s="fomc-press-conference-2026-09-16" passage="Don't have second and third order effects in the economy" /></p>
+          <p>That tool leaves the price of oil and gasoline untouched. Warsh's concern was the next step: the shock broadening into other prices and inflation expectations.<Cite s="fomc-press-conference-2026-09-16" passage="We cannot affect any individual price" /><Cite s="fomc-press-conference-2026-09-16" passage="relative prices don't broaden out" /><Cite s="fomc-press-conference-2026-09-16" passage="inflation expectations remain well-anchored" /></p>
         </SourcedBlock>
 
-        <p data-layer="narrative">The August CPI increase was partly an energy-price event: gasoline supplied more than a third of the monthly rise. Warsh framed the Fed's task as preventing that relative-price shock from producing second- and third-order effects across the economy.<Cite s="bls-cpi-2026-09-11" passage="gasoline rose 3.9 percent in August, accounting for over one third" /><Cite s="fomc-press-conference-2026-09-16" passage="Don't have second and third order effects in the economy" /></p>
+        <p data-layer="narrative">Lower oil and gas shipments through the Strait of Hormuz, disrupted refining and Red Sea shipping had already raised energy and transport costs. CBO estimated that energy added 2.3 percentage points to the annualized second-quarter increase in the Fed's preferred household-price measure. Prices outside food and energy were expected to stay elevated longer because the higher transport costs reached other goods and services more slowly.<Cite s="cbo-iran-cost-2026-09-15" passage="reduction in shipments of oil and natural gas through the Strait of Hormuz" /><Cite s="cbo-iran-cost-2026-09-15" passage="added 2.3 percentage points to the annualized rate of inflation" /><Cite s="cbo-iran-cost-2026-09-15" passage="higher energy prices take longer to affect prices of nonenergy goods and services" /></p>
 
-        <p data-layer="narrative">CBO described the route by which the shock could spread: lower oil and gas shipments through the Strait of Hormuz, disruption to refining and Red Sea shipping, and then higher transport costs across goods and services. It estimated that energy added 2.3 percentage points to the annualized second-quarter PCE inflation rate and that core PCE inflation would stay elevated longer as energy costs passed into nonenergy prices.<Cite s="cbo-iran-cost-2026-09-15" passage="reduction in shipments of oil and natural gas through the Strait of Hormuz" /><Cite s="cbo-iran-cost-2026-09-15" passage="added 2.3 percentage points to the annualized rate of inflation" /><Cite s="cbo-iran-cost-2026-09-15" passage="core PCE inflation will remain elevated longer" /></p>
-
-        <p data-layer="narrative">The effect is delayed. The Fed's strategy statement says monetary policy influences activity, employment and prices with a lag, which creates a risk that an energy shock fades before tighter credit has fully slowed the economy.<Cite s="fomc-longer-run-goals-2025" passage="Monetary policy actions tend to influence economic activity, employment, and prices with a lag" /><Cite s="ap-reconstruction-2026-09-17" passage="By the time higher borrowing costs started to slow the economy, the gas price shock could be over" /></p>
+        <p data-layer="narrative">Interest-rate changes reach spending, jobs and prices with a delay. The energy shock could fade before tighter credit has fully slowed the economy.<Cite s="fomc-longer-run-goals-2025" passage="Monetary policy actions tend to influence economic activity, employment, and prices with a lag" /><Cite s="ap-reconstruction-2026-09-17" passage="By the time higher borrowing costs started to slow the economy, the gas price shock could be over" /></p>
       </section>
 
       <section id="who-feels-it">
@@ -125,28 +118,22 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p>Credit-card rates can respond quickly because most cards carry variable rates tied to banks' prime rate. Auto loans and adjustable-rate mortgages can also become more expensive, while savings accounts and certificates of deposit may pay more.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="Fed's policy changes flow through to credit card rates rapidly" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="interest rates on savings accounts and certificates of deposit are headed higher" /></p>
         </SourcedBlock>
 
-        <p data-layer="narrative">Fixed mortgage rates are different: they tend to follow the 10-year Treasury yield, not the Fed's rate directly. Homeowners with fixed loans do not have their existing rate reset by this decision.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="Mortgage rates don't necessarily follow what the Fed does" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="many homeowners locked in low mortgage rates" /></p>
+        <p data-layer="narrative">Fixed mortgage rates tend to follow the 10-year Treasury yield. Existing fixed-rate loans keep the rate in their contract.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="Mortgage rates don't necessarily follow what the Fed does" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="many homeowners locked in low mortgage rates" /></p>
 
-        <p data-layer="narrative">Consumer-finance analyst Matt Schulz told the Associated Press that one quarter-point increase would not have a large effect. He said the larger burden would come if several increases stack up over time.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="single quarter-point rate increase isn't really going to have a huge impact" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="stack a few these on top of each other over time" /></p>
+        <p data-layer="narrative">Consumer-finance analyst Matt Schulz expected one quarter-point increase to have a small effect. The burden grows if several increases stack up over time.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="single quarter-point rate increase isn't really going to have a huge impact" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="stack a few these on top of each other over time" /></p>
 
-        <p data-layer="narrative">Warsh said persistent inflation falls especially hard on people without financial assets, home equity or retirement-plan equity who live from paycheck to paycheck. For them, the benefit of restoring stable prices is not an investment return but protection of real take-home pay.<Cite s="fomc-press-conference-2026-09-16" passage="people that don't own financial assets" /><Cite s="fomc-press-conference-2026-09-16" passage="they're living off their paycheck" /><Cite s="fomc-press-conference-2026-09-16" passage="deliver real take home pay increases" /></p>
+        <p data-layer="narrative">Warsh said persistent inflation falls especially hard on people who live from paycheck to paycheck without financial assets, home equity or retirement-plan equity. Stable prices protect the buying power of their take-home pay.<Cite s="fomc-press-conference-2026-09-16" passage="people that don't own financial assets" /><Cite s="fomc-press-conference-2026-09-16" passage="they're living off their paycheck" /><Cite s="fomc-press-conference-2026-09-16" passage="deliver real take home pay increases" /></p>
       </section>
 
       <section id="projections">
         <p class="sec-kicker" data-layer="narrative">The signal beyond the vote</p>
         <h2 data-layer="fact">The projections</h2>
 
-        <p data-layer="narrative">The median projected federal funds rate for the end of 2026 rose from {projections.june2026Median} percent in June to {projections.september2026Median} percent in September. For 2027, the median rose from 3.6 percent in June to {projections.september2027Median} percent in September.<Cite s="fomc-sep-2026-09-16" passage="Federal funds rate         4.1    4.1" /><Cite s="fomc-sep-2026-09-16" passage="June projection          3.8    3.6" /></p>
+        <p data-layer="narrative">Sixteen of {projections.participantCount} policymakers expected at least one more quarter-point increase by the end of 2026. Their median year-end rate rose from {projections.june2026Median} percent in June to {projections.september2026Median} percent in September.<Cite s="reuters-fed-decision-2026-09-16" passage="16 of 18 policymakers anticipate at least one more quarter-percentage-point hike" /><Cite s="fomc-sep-2026-09-16" passage="Federal funds rate         4.1    4.1" /><Cite s="fomc-sep-2026-09-16" passage="June projection          3.8    3.6" /></p>
 
-        <p data-layer="narrative">Figure 2 shows several individual end-of-year rate endpoints around the median, not a meeting-by-meeting path. Each circle is one participant's judgment of the appropriate year-end midpoint or target level. Warsh did not submit a projection of his own.<Cite s="fomc-sep-2026-09-16" passage="Figure 2. FOMC participants’ assessments of appropriate monetary policy" /><Cite s="fomc-sep-2026-09-16" passage="Each shaded circle indicates the value" /><Cite s="fomc-press-conference-2026-09-16" passage="I have not offered a projection of" /></p>
+        <p data-layer="narrative">Each individual projection gives where one policymaker thought the rate should stand at year-end. Warsh submitted no projection and declined to guide the next decision.<Cite s="fomc-sep-2026-09-16" passage="individual participant’s judgment of the midpoint of the appropriate target range" /><Cite s="fomc-press-conference-2026-09-16" passage="I have not offered a projection of" /><Cite s="fomc-press-conference-2026-09-16" passage="My business is to not give forward guidance" /></p>
 
-        <p data-layer="narrative">The same projection table put median PCE inflation at 3.7 percent for 2026, up from 3.6 percent in June, and at 2.3 percent for 2027. It does not reach 2 percent until 2029.<Cite s="fomc-sep-2026-09-16" passage="PCE inflation              3.7    2.3   2.1   2.0" /><Cite s="fomc-sep-2026-09-16" passage="June projection           3.6    2.3   2.0" /></p>
-
-        <p data-layer="narrative">The projection document defines the dots as participants' individual assessments of appropriate monetary policy. Warsh said his practice is not to give forward guidance or prejudge future actions.<Cite s="fomc-sep-2026-09-16" passage="projections of participants’ individual assessments of appropriate monetary policy" /><Cite s="fomc-press-conference-2026-09-16" passage="My business is to not give forward guidance" /></p>
-
-        <SourcedBlock source="fomc-sep-2026-09-16" kind="record" detail>
-          <DataTable columns={["Median projection, percent", "2026", "2027", "2028", "2029", "Longer run"]} rows={projectionRows} caption="September participant medians in Table 1" />
-        </SourcedBlock>
+        <p data-layer="narrative">Policymakers projected inflation in the Fed's preferred household-price measure at 3.7 percent for 2026, up from 3.6 percent in June, and 2.3 percent for 2027. Their median reaches 2 percent in 2029.<Cite s="fomc-sep-2026-09-16" passage="PCE inflation              3.7    2.3   2.1   2.0" /><Cite s="fomc-sep-2026-09-16" passage="June projection           3.6    2.3   2.0" /></p>
       </section>
 
       <section id="the-catch">
@@ -154,12 +141,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="tt-label">The catch</p>
           <ol>
             <li>
-              <h3>The 2027 median was 4.1 percent.</h3>
-              CBS wrote that policymakers expected to hold rates steady throughout 2027. The record says something narrower: the median of individual projections was 4.1 percent in both years, about half of participants projected a steady rate next year, and the chair declined to give forward guidance.<Cite s="cbs-fed-decision-2026-09-16" passage="policymakers expect to hold rates steady throughout 2027" /><Cite s="cbs-fed-decision-2026-09-16" passage="About half of FOMC members predicted that rates would hold steady next year" /><Cite s="fomc-sep-2026-09-16" passage="For each period, the median is the middle projection" /><Cite s="fomc-press-conference-2026-09-16" passage="ill-prepared to pre-judge those future actions" />
-            </li>
-            <li>
-              <h3>One vote, eighteen projections.</h3>
-              Twelve committee members voted on the rate increase. Eighteen participants submitted projections. The vote applied to the September action; the projection record contains several paths after it.<Cite s="fomc-statement-2026-09-16" passage="12 – 0 vote" /><Cite s="fomc-sep-2026-09-16" passage="Eighteen participants submitted information" />
+              <h3>The matching 4.1 percent medians conceal different paths</h3>
+              CBS wrote that “policymakers expect to hold rates steady throughout 2027.” Each year's 4.1 percent figure is the middle of a separate set of individual year-end judgments. It does not establish a committee decision to hold at every 2027 meeting.<Cite s="cbs-fed-decision-2026-09-16" passage="policymakers expect to hold rates steady throughout 2027" /><Cite s="fomc-sep-2026-09-16" passage="For each period, the median is the middle projection" /><Cite s="fomc-sep-2026-09-16" passage="appropriate target level for the federal funds rate at the end of the specified calendar year" />
             </li>
           </ol>
         </aside>
@@ -170,14 +153,16 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">The pressure around the decision</h2>
 
         <SourcedBlock source="the-hill-trump-fed-reaction-2026-09-16" kind="checked">
-          <p>About two hours after the announcement, The Hill reported that President Donald Trump demanded rates of 1 percent or less and called for the Fed to lower them fast.<Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Interest Rates in the United States should be 1%, or less" /><Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Trump’s reaction came about two hours" /></p>
+          <p>About two hours after the announcement, President Donald Trump demanded rates of 1 percent or less and called for the Fed to lower them fast.<Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Interest Rates in the United States should be 1%, or less" /><Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Trump’s reaction came about two hours" /></p>
         </SourcedBlock>
 
-        <p data-layer="narrative">The next morning, DealBook reported that Trump said he had told Warsh to vote with the board because the result would not change, and described the board as “very hostile.” The report also quoted Trump calling it “a very tough board.”<Cite s="nyt-dealbook-trump-fed-rates-2026-09-17" passage="I talked to Kevin, and I said, ‘You might as well vote with the board because it’s not going to matter.’" /><Cite s="nyt-dealbook-trump-fed-rates-2026-09-17" passage="a very tough board" /></p>
+        <p data-layer="narrative">Trump said the next morning that he had told Warsh to vote with the board because the result would not change. He called it “a very tough board” and “very hostile.”<Cite s="nyt-dealbook-trump-fed-rates-2026-09-17" passage="I talked to Kevin, and I said, ‘You might as well vote with the board because it’s not going to matter.’" /><Cite s="nyt-dealbook-trump-fed-rates-2026-09-17" passage="a very tough board" /></p>
 
         <p data-layer="narrative">Warsh described central-bank independence as “a two-way street” and said trade and fiscal policymakers should stay in their lane.<Cite s="fomc-press-conference-2026-09-16" passage="Independence is a two-way street" /><Cite s="fomc-press-conference-2026-09-16" passage="trade policy and fiscal policy stay in their lane too" /></p>
 
-        <p data-layer="narrative">The dispute was also about what a supply shock calls for. Before the meeting, Treasury Secretary Scott Bessent argued that central banks traditionally do not raise rates after a supply shock unless second- or third-order effects appear, and said core inflation remained restrained.<Cite s="dow-jones-bessent-rate-hike-2026-08-31" passage="traditionally you don't raise [rates]...unless you see second or third-order effects" /><Cite s="dow-jones-bessent-rate-hike-2026-08-31" passage="core inflation has remained very restrained" /></p>
+        <p data-layer="narrative">The pressure's effect on the vote remains unresolved. All 12 voters backed the increase, and Warsh declined to discuss conversations with Trump.<Cite s="fomc-statement-2026-09-16" passage="12 – 0 vote" /><Cite s="fomc-press-conference-2026-09-16" passage="I don't have anything for you on discussions with the president" /></p>
+
+        <p data-layer="narrative">The dispute was also about what a supply shock calls for. Before the meeting, Treasury Secretary Scott Bessent argued that the Fed should wait for a shock to spread through the economy before raising rates.<Cite s="dow-jones-bessent-rate-hike-2026-08-31" passage="traditionally you don't raise [rates]...unless you see second or third-order effects" /></p>
       </section>
 
       <section id="what-happened-next">
@@ -185,10 +170,10 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">What happened next</h2>
 
         <SourcedBlock source="ap-reconstruction-2026-09-17" kind="checked">
-          <p>The next day, the 10-year Treasury yield slipped. The Associated Press described that as a likely sign that investors' inflation worries had eased, while noting that mortgage rates and other long-term borrowing costs are not directly controlled by the Fed.<Cite s="ap-reconstruction-2026-09-17" passage="10-year Treasury yield even slipped a bit" /><Cite s="ap-reconstruction-2026-09-17" passage="The Fed’s rate can influence longer-term costs such as mortgage rates, but the Fed doesn’t directly control them" /></p>
+          <p>The 10-year Treasury yield slipped the next day, a move the Associated Press tied to easing inflation worries. That yield strongly influences mortgage rates, while the Fed controls a short-term rate.<Cite s="ap-reconstruction-2026-09-17" passage="10-year Treasury yield even slipped a bit, a likely sign of reduced inflation worries" /><Cite s="ap-reconstruction-2026-09-17" passage="The 10-year Treasury, for instance, strongly influences mortgage rates" /></p>
         </SourcedBlock>
 
-        <p data-layer="narrative">By September 18, CNBC reported that market-implied odds of another increase in October had risen to about 58 percent from 42 percent a week earlier. Goldman Sachs expected an October increase, Bank of America expected increases in October and December, and one strategist said the move was not the start of an aggressive new tightening cycle.<Cite s="cnbc-warsh-followup-2026-09-18" passage="near 58% Friday morning" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="We remain unconvinced that this is the start of an aggressive new tightening cycle" /></p>
+        <p data-layer="narrative">By September 18, market-implied odds of another increase in October had risen to about 58 percent from 42 percent a week earlier. Goldman Sachs expected an October increase, while Bank of America expected increases in October and December. Natixis strategist Jack Janasiewicz instead saw the move as a reversal of the “insurance cuts” from 2025 rather than the start of an aggressive tightening cycle.<Cite s="cnbc-warsh-followup-2026-09-18" passage="near 58% Friday morning" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="Jack Janasiewicz, portfolio manager and lead portfolio strategist" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="removal of the insurance cuts the Fed delivered in the fall of 2025" /></p>
 
         <SourcedBlock source="fomc-calendar-2026-09-19" kind="record" detail>
           <DataTable columns={["When", "Record"]} rows={chronologyRows} caption="Decision chronology" />
@@ -199,11 +184,10 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <p class="sec-kicker" data-layer="narrative">Open questions</p>
         <h2 data-layer="fact">What we do not know yet</h2>
         <ul data-layer="fact">
-          <li>Whether another increase follows this one. The projections are individual assessments of appropriate monetary policy, and Warsh declined to prejudge the next decision.<Cite s="fomc-sep-2026-09-16" passage="individual assessments of appropriate monetary policy" /><Cite s="fomc-press-conference-2026-09-16" passage="ill-prepared to pre-judge those future actions" /></li>
-          <li>How long the energy shock lasts. Monetary policy works with a lag, and the Associated Press described the risk that the gas-price shock could be over before higher borrowing costs started to slow the economy.<Cite s="ap-reconstruction-2026-09-17" passage="the gas price shock could be over" /><Cite s="fomc-longer-run-goals-2025" passage="influence economic activity, employment, and prices with a lag" /></li>
-          <li>How much households ultimately pay. The Associated Press analysis says several increases would stack up over time, while fixed mortgage rates can move differently from the policy rate.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="stack a few these on top of each other over time" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="Mortgage rates don't necessarily follow what the Fed does" /></li>
-          <li>What the next inflation and growth vintages show. BEA scheduled August PCE and the annual national-account updates, including GDP revisions, for September 30.<Cite s="bea-personal-income-outlays-july-2026" passage="Next release: September 30, 2026" /><Cite s="bea-personal-income-outlays-july-2026" passage="annual updates of national, industry, and regional data" /></li>
-          <li>What the September deliberations add. The official calendar says regular-meeting minutes are released three weeks after the decision; its September minutes slot was blank in the September 19 capture.<Cite s="fomc-calendar-2026-09-19" passage="The minutes of regularly scheduled meetings are released three weeks after the date of the policy decision." /></li>
+          <li>Whether another increase follows this one. The year-end views are individual judgments, and Warsh declined to prejudge the next decision.<Cite s="fomc-sep-2026-09-16" passage="individual assessments of appropriate monetary policy" /><Cite s="fomc-press-conference-2026-09-16" passage="ill-prepared to pre-judge those future actions" /></li>
+          <li>How long the Iran-war energy shock lasts.<Cite s="ap-reconstruction-2026-09-17" passage="the gas price shock could be over" /></li>
+          <li>What the next inflation and growth reports show. August inflation in the Fed's preferred measure and the annual national-account updates, including GDP revisions, are due September 30.<Cite s="bea-personal-income-outlays-july-2026" passage="Next release: September 30, 2026" /><Cite s="bea-personal-income-outlays-july-2026" passage="annual updates of national, industry, and regional data" /></li>
+          <li>What the September deliberations add. The minutes are due {decision.minutesDueLabel}, three weeks after the decision.<Cite s="fomc-calendar-2026-09-19" passage="The minutes of regularly scheduled meetings are released three weeks after the date of the policy decision." /></li>
         </ul>
       </section>
 
@@ -220,6 +204,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
   .mode-work .sourced-block > .chip { display: inline-block; }
   .mode-work .sourced-block { border-left: 3px solid var(--blue); padding-left: 1rem; }
   .event-record-context { margin: 0 0 1.5rem; }
+  #records .section-lede { display: none; }
   .src-ref { font-size: 0.72em; line-height: 1.15; margin-left: 0.15rem; }
   .src-ref a { color: var(--muted, #6b7280); text-decoration: none; }
   .src-ref a:hover { color: var(--ink); text-decoration: underline; }

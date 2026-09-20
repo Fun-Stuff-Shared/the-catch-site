@@ -14,6 +14,7 @@ const upperTarget = rows("DFEDTARU-2026-09-19.csv", "DFEDTARU");
 const history = [...oldTarget, ...upperTarget];
 const decisionDate = "2026-09-16";
 const effectiveDate = "2026-09-17";
+const previousIncreaseDate = "2023-07-27";
 const range = { lower: 3.75, upper: 4 };
 const midpoint = (range.lower + range.upper) / 2;
 const upperChanges = upperTarget.filter((row, index) => index > 0 && row.value !== upperTarget[index - 1].value);
@@ -26,11 +27,11 @@ const pathRows = upperTarget.filter((row) => row.date >= "2024-01-01" && row.dat
 const startRow = pathRows[0];
 const changes = upperChanges.filter((row) => row.date >= startRow.date && row.date <= "2026-09-19");
 
-const statementLines = (name) => source(name).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
-const july = statementLines("fomc-statement-2026-07-29.txt");
-const september = statementLines("fomc-statement-2026-09-16.txt");
-const line = (lines, prefix) => lines.find((entry) => entry.startsWith(prefix)) ?? "Not present";
-const vote = line(september, "The Federal Open Market Committee approved").match(/(\d+)\s*[–-]\s*(\d+)/)?.slice(1).map(Number) ?? [];
+const septemberStatement = source("fomc-statement-2026-09-16.txt");
+const vote = septemberStatement.match(/approved the following statement for release by a (\d+)\s*[–-]\s*(\d+) vote/)?.slice(1).map(Number) ?? [];
+const minutesDueDate = new Date(`${decisionDate}T12:00:00Z`);
+minutesDueDate.setUTCDate(minutesDueDate.getUTCDate() + 21);
+const minutesDueLabel = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(minutesDueDate);
 
 export const computed = {
   observationCount: history.length,
@@ -42,20 +43,22 @@ export const computed = {
   priorRangeStart: priorChange.date,
   voteFor: vote[0],
   voteAgainst: vote[1],
+  minutesDueDate: minutesDueDate.toISOString().slice(0, 10),
+  minutesDueLabel,
 };
 
 export const event = {
   slug: "fed-rate/2026-09-16-unanimous-quarter-point-hike",
   title: "Fed raises rates a quarter point on a unanimous vote",
-  dek: "The quarter-point increase cannot lower oil prices. It targets demand and the spread of the energy shock, with the quickest effects reaching variable-rate borrowers and savers.",
+  dek: "The first increase since July 2023 was widely expected. The change was a 9–3 hold becoming a 12–0 hike, a tougher inflation message and 16 of 18 policymakers expecting another increase this year.",
   name: "September 2026 rate increase",
   date: decisionDate,
   updated: "2026-09-19",
   kpis: [
     { value: `${range.lower}–${range.upper.toFixed(2)}`, unit: "%", label: "new target range" },
     { value: `${computed.voteFor}–${computed.voteAgainst}`, label: "committee vote" },
-    { value: 3.9, unit: "%", label: "August gasoline rise from July, seasonally adjusted" },
-    { value: 4.1, unit: "%", label: "median 2026 rate projection" },
+    { value: "94", unit: "%", label: "pre-decision odds of a quarter-point hike" },
+    { value: "16 of 18", label: "policymakers expecting another 2026 increase" },
   ],
   visual: {
     kind: "table",
@@ -73,6 +76,10 @@ export const decision = {
   sizeBasisPoints: 25,
   range,
   effectiveDate,
+  previousIncreaseDate,
+  minutesDueDate: computed.minutesDueDate,
+  minutesDueLabel: computed.minutesDueLabel,
+  preDecisionHikeOdds: 94,
   julyRange: { lower: 3.5, upper: 3.75 },
   julyVote: { forHold: 9, forIncrease: 3 },
 };
@@ -94,6 +101,7 @@ export const projections = {
   september2026Median: 4.1,
   september2027Median: 4.1,
   participantCount: 18,
+  expectingAnotherIncrease: 16,
   oneMoreIncrease: 12,
   twoMoreIncreases: 4,
   noMoreIncrease: 2,
@@ -108,23 +116,6 @@ export const ratePath = {
 export const voteRows = [
   ["For the quarter-point increase", computed.voteFor],
   ["Against", computed.voteAgainst],
-];
-
-export const statementRows = [
-  ["Vote", line(july, "The Federal Open Market Committee approved"), line(september, "The Federal Open Market Committee approved")],
-  ["Rate decision", line(july, "The Committee decided"), line(september, "The Committee decided")],
-  ["Economy", line(july, "Economic activity"), line(september, "Economic activity")],
-  ["Inflation", line(july, "Inflation remains"), line(september, "Inflation remains")],
-  ["Dissents", line(july, "Voting against"), line(september, "Voting against")],
-];
-
-// Table 1 medians in the September Summary of Economic Projections.
-export const projectionRows = [
-  ["Real GDP growth", 2.3, 2.4, 2.2, 2.1, 2.0],
-  ["Unemployment rate", 4.1, 4.1, 4.1, 4.1, 4.2],
-  ["PCE inflation", 3.7, 2.3, 2.1, 2.0, 2.0],
-  ["Core PCE inflation", 3.4, 2.5, 2.2, 2.0, "not collected"],
-  ["Federal funds rate", 4.1, 4.1, 3.9, 3.6, 3.2],
 ];
 
 export const chronologyRows = [

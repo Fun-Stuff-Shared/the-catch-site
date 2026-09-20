@@ -35,7 +35,8 @@
         "reuters-fed-decision-2026-09-16",
         "reuters-breakingviews-fed-war-2026-09-16",
         "dow-jones-bessent-rate-hike-2026-08-31",
-        "cbo-iran-cost-2026-09-15"
+        "cbo-iran-cost-2026-09-15",
+        "fed-open-market-operations-2026-09-16"
       ]
     },
     {
@@ -538,6 +539,23 @@
       "capture_raw_sha256": "sha256:7a72ba4376bc41b95a5bf65f5308f26d9fa99f6f0a0b16bdb48e834785c7c64e",
       "captured_at": "2026-09-18T08:32:04.031650Z",
       "capture_status": "Direct fetch returned 403; the capture registry recovered the article body from the Wayback snapshot dated 2026-09-16T19:21:00Z."
+    },
+    {
+      "id": "fed-open-market-operations-2026-09-16",
+      "title": "Open Market Operations",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-09-16",
+      "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+      "pinned_path": "data/sources/fed-rate/fed-open-market-operations-2026-09-16.html",
+      "text_path": "data/sources/fed-rate/fed-open-market-operations-2026-09-16.txt",
+      "text_sha256": "sha256:cb185fd7c880d246dad575c33528f0eea066dbd6c8d13f4f6348566ddfd31de2",
+      "quote": "| July 27 | 25 | 0 | 5.25-5.50 |",
+      "quote_span_check": "byte_exact",
+      "about": "The official history of target-rate changes, including the September 2026 increase and the previous increase in July 2023.",
+      "capture_run": "capture-oneoff-20260919T231454Z",
+      "capture_raw_sha256": "sha256:4641801146ad4cdf27ba76c75cd492e0a96557901f7ecdbfa9ca1fb52e703ffb",
+      "captured_at": "2026-09-19T23:15:09.509455Z",
+      "capture_status": "The registry plain-text extraction omitted the rate-history tables; the pinned text sibling is the registry's Markdown extraction, which preserves those rows."
     }
   ],
   "story_sources": [
@@ -549,6 +567,7 @@
     {"id":"fomc-statement-2026-07-29","group":"primary","label":"July 29 FOMC statement","meta":" · Federal Reserve Board, 2026-07-29","usage":"the previous statement in the redline"},
     {"id":"fomc-calendar-2026-09-19","group":"primary","label":"FOMC meeting calendar","meta":" · Federal Reserve Board, captured 2026-09-19","usage":"the meeting record and unavailable minutes"},
     {"id":"fomc-longer-run-goals-2025","group":"primary","label":"Longer-run goals and policy strategy","meta":" · Federal Reserve Board, 2025-08-22","usage":"the mandate and policy-tool framework"},
+    {"id":"fed-open-market-operations-2026-09-16","group":"primary","label":"Open-market operations history","meta":" · Federal Reserve Board, 2026-09-16","usage":"the September increase and the previous increase in July 2023"},
     {"id":"fred-dfedtaru-2026-09-19","group":"official","label":"DFEDTARU daily series","meta":" · Federal Reserve Bank of St. Louis, through 2026-09-19","usage":"the target-range path and derived figures"},
     {"id":"fred-dfedtar-2026-09-19","group":"official","label":"DFEDTAR discontinued daily series","meta":" · Federal Reserve Bank of St. Louis, through 2008-12-15","usage":"the earlier target history"},
     {"id":"fred-dfedtaru-metadata-2026-09-19","group":"official","label":"DFEDTARU series notes","meta":" · Federal Reserve Bank of St. Louis, captured 2026-09-19","usage":"the upper-limit definition and vintage"},
@@ -590,7 +609,8 @@
     {"id":"fomc-minutes-2026-07-29","path":"data/sources/fed-rate/fomc-minutes-2026-07-29.html","bytes":122450,"sha256":"sha256:36481706c48ef7cc68ef7257d6eadd4f2dc6e7f0ae12536daa3ba25ced2138b1","url":"https://www.federalreserve.gov/monetarypolicy/fomcminutes20260729.htm"},
     {"id":"fed-warsh-jackson-hole-2026-08-28","path":"data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.html","bytes":115735,"sha256":"sha256:7ce594823ab1af5085c7efec1c286bd45b48e6b9b23d62fb08a052a7b2b69bbc","url":"https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm"},
     {"id":"bea-personal-income-outlays-july-2026","path":"data/sources/fed-rate/bea-personal-income-outlays-july-2026.html","bytes":53244,"sha256":"sha256:131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7","url":"https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026"},
-    {"id":"cbo-iran-cost-2026-09-15","path":"data/sources/fed-rate/cbo-iran-cost-2026-09-15.html","bytes":43026,"sha256":"sha256:7a72ba4376bc41b95a5bf65f5308f26d9fa99f6f0a0b16bdb48e834785c7c64e","url":"https://www.cbo.gov/publication/62756"}
+    {"id":"cbo-iran-cost-2026-09-15","path":"data/sources/fed-rate/cbo-iran-cost-2026-09-15.html","bytes":43026,"sha256":"sha256:7a72ba4376bc41b95a5bf65f5308f26d9fa99f6f0a0b16bdb48e834785c7c64e","url":"https://www.cbo.gov/publication/62756"},
+    {"id":"fed-open-market-operations-2026-09-16","path":"data/sources/fed-rate/fed-open-market-operations-2026-09-16.html","bytes":108253,"sha256":"sha256:4641801146ad4cdf27ba76c75cd492e0a96557901f7ecdbfa9ca1fb52e703ffb","url":"https://www.federalreserve.gov/monetarypolicy/openmarket.htm"}
   ],
   "coverage_records": [
     "abc-fed-preview-2026-09-16",
@@ -609,6 +629,10 @@
   "figures": [
     {"figure":"target_range_upper","label":"Upper limit of the federal funds target range","value":"4","unit":"percent","kind":"sourced","source":{"source_id":"fomc-statement-2026-09-16","quote_span":"3-3/4 to 4 percent"}},
     {"figure":"fomc_vote","label":"FOMC vote on the September increase","value":"12–0","unit":"vote","kind":"sourced","source":{"source_id":"fomc-statement-2026-09-16","quote_span":"12 – 0 vote"}},
+    {"figure":"pre_decision_hike_odds","label":"Market-implied odds of a quarter-point increase on September 15","value":"94","unit":"percent","kind":"sourced","source":{"source_id":"abc-fed-preview-2026-09-16","quote_span":"odds of a quarter-point rate hike stood at 94%"}},
+    {"figure":"policymakers_expect_another_2026_increase","label":"Policymakers expecting at least one more quarter-point increase by year-end","value":"16","unit":"of 18 policymakers","kind":"sourced","source":{"source_id":"reuters-fed-decision-2026-09-16","quote_span":"16 of 18 policymakers anticipate at least one more quarter-percentage-point hike"}},
+    {"figure":"previous_rate_increase","label":"Date of the previous target-rate increase","value":"2023-07-27","unit":"date","kind":"sourced","source":{"source_id":"fed-open-market-operations-2026-09-16","quote_span":"July 27 | 25 | 0 | 5.25-5.50"}},
+    {"figure":"september_minutes_due","label":"Scheduled release date for the September meeting minutes","value":"2026-10-07","unit":"date","kind":"computed","formula":"decision_date_plus_21_days","inputs":[{"source_id":"fomc-statement-2026-09-16","value":"2026-09-16","unit":"date","quote_span":"September 16, 2026"},{"source_id":"fomc-calendar-2026-09-19","value":"21","unit":"days","quote_span":"released three weeks after the date of the policy decision"}]},
     {"figure":"prior_range_duration","label":"Days at the prior target range before the vote","value":"279","unit":"days","kind":"computed","formula":"date_difference_days","inputs":[{"source_id":"fred-dfedtaru-2026-09-19","value":"2025-12-11","unit":"date","quote_span":"2025-12-11,3.75"},{"source_id":"fomc-statement-2026-09-16","value":"2026-09-16","unit":"date","quote_span":"September 16, 2026"}]},
     {"figure":"target_history_percentile","label":"Current midpoint's percentile in daily target history","value":"50.0","unit":"percentile","kind":"computed","formula":"midrank_percentile","inputs":[{"source_id":"fred-dfedtar-2026-09-19","value":"9577","unit":"observations","quote_span":"observation_date,DFEDTAR"},{"source_id":"fred-dfedtaru-2026-09-19","value":"6487","unit":"observations","quote_span":"observation_date,DFEDTARU"}]},
     {"figure":"sep_median_federal_funds_rate_2026","label":"Median projected federal funds rate at the end of 2026","value":"4.1","unit":"percent","kind":"sourced","source":{"source_id":"fomc-sep-2026-09-16","quote_span":"Federal funds rate         4.1"}},
@@ -621,14 +645,15 @@
     {"need":"chair press conference","status":"have","plain":"The full 15-page press conference transcript is pinned and read."},
     {"need":"previous statement","status":"have","plain":"The July statement is pinned and compared line by line with September."},
     {"need":"rate series","status":"have","plain":"Both daily target series and their metadata pages are pinned through September 19."},
-    {"need":"meeting minutes","status":"unavailable","plain":"The official calendar says minutes arrive three weeks after a regular decision, and its September minutes slot was blank on September 19."},
+    {"need":"rate-change history","status":"have","plain":"The Federal Reserve's history table confirms that the previous increase was July 27, 2023."},
+    {"need":"meeting minutes","status":"scheduled","plain":"The official calendar puts regular-meeting minutes three weeks after the decision, making the September minutes due October 7."},
     {"need":"independent coverage","status":"have","plain":"Twelve coverage records spanning the preview, result, consumer effects, reaction, policy dispute and follow-up are pinned and checked."},
     {"need":"September 30 data schedule","status":"have","plain":"The July PCE release fixes the August PCE and annual national-account updates on September 30."},
     {"need":"energy pass-through estimate","status":"have","plain":"The CBO article body was recovered from a dated archive after the direct fetch returned 403."}
   ],
   "steps": {
-    "sources_admitted": {"done":true,"evidence":"Thirty records have registry run ids, repository pins, recomputable text hashes and verified quote spans or an explicit typed capture limitation."},
-    "derived_numbers_computed": {"done":true,"evidence":"The data module parses the two admitted CSV series and computes the rate path, vote, 279-day duration, observation count and percentile."},
+    "sources_admitted": {"done":true,"evidence":"Thirty-one records have registry run ids, repository pins, recomputable text hashes and verified quote spans or an explicit typed capture limitation."},
+    "derived_numbers_computed": {"done":true,"evidence":"The data module parses the two admitted CSV series and computes the rate path, vote, 279-day duration, observation count, percentile and October 7 minutes date."},
     "outlet_claims_verified": {"done":true,"evidence":"The working note checks each admitted outlet against the statement, projections, transcript, prior statement or series and labels overreach."},
     "section_grammar": {"done":true,"evidence":"The story follows the reader-model order: decision, mechanism, household effects, projections, the checked CBS overstatement, political pressure, aftermath, unknowns and records."},
     "chip_vocabulary": {"done":true,"evidence":"All source details use SourcedBlock kind record; no page-specific chip label is introduced."},

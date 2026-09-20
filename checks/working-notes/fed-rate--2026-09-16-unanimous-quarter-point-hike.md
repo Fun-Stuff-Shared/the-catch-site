@@ -458,3 +458,99 @@ This is the single patch round over story commit `b75257dd`. The reader-model an
 The first patch-scoped entailment run returned `NOT-ENTAILED` for the sentence that translated the 12/4/2 year-end dot distribution into “a single hike,” “two hikes” and “a pair of holds.” The SEP defines dots as individual end-of-year endpoints, not meeting sequences, and its text extraction does not preserve the visual count. The story now states only the entailed concept: Figure 2 contains several individual year-end endpoints around the median and does not establish a meeting-by-meeting path.
 
 No Critical findings were reported. All five Major findings were fixed. The one Minor was fixed and is dispositioned here as required.
+
+## Second story patch round, 2026-09-19
+
+This rewrite starts from story commit `8bf7b3a6` and works the stranger, voice and editorial reviews together. It keeps the reader-model section order and changes the spine from the size of the move to the committee's change in stance.
+
+### New census line
+
+1. Federal Reserve Board, “Open Market Operations,” current through September 17, 2026: `capture news` resolved the URL to held run `capture-oneoff-20260919T231454Z`. The raw HTML is pinned as `fed-open-market-operations-2026-09-16.html`. The registry's plain-text extraction omitted the rate-history tables, so its table-preserving Markdown extraction is pinned as the text sibling `fed-open-market-operations-2026-09-16.txt`. The 2026 row records a 25-basis-point increase on September 17; the preceding increase row is July 27, 2023. Used for A-grade answers 1 and 5.
+
+### New passage table
+
+| Record | Passage | Disposition |
+|---|---|---|
+| `fed-open-market-operations-2026-09-16` | September 17, 2026: 25-basis-point increase to 3.75–4.00 percent. | Used in “What happened” and the rate-path figure context. |
+| `fed-open-market-operations-2026-09-16` | July 27, 2023: 25-basis-point increase to 5.25–5.50 percent. | Used to establish the previous increase date. |
+| `abc-fed-preview-2026-09-16` | Pre-decision odds of a quarter-point increase were 94 percent on September 15. | Used in the opening to separate the expected move from the changed stance. |
+| `reuters-fed-decision-2026-09-16` | Sixteen of 18 policymakers anticipated at least one more quarter-point increase by year-end. | Used in the opening, KPI strip and projections section. |
+
+### Stranger-review dispositions
+
+- Seven questions, what happened: **done in headline, dek and the opening two paragraphs.** The page now leads with the expected quarter point and the 9–3 to 12–0 shift.
+- Seven questions, why it matters: **done in “Who feels it.”** Variable borrowing, fixed mortgages, savings and the difference between one move and a sequence remain compact.
+- Seven questions, easy wrong reading: **done in “The catch.”** The CBS sentence appears byte for byte before the year-end-median correction.
+- Seven questions, mechanism: **done in “What a rate hike can change.”** The oil-to-transport-to-other-prices chain replaces central-bank shorthand.
+- Seven questions, what changed since July: **done in “What happened.”** The vote, waiting posture, inflation test and statement-language change are now one sequence.
+- Seven questions, unresolved: **done in “What we do not know yet.”** The list now gives the positive October 7 minutes date and removes repeated explanations.
+- Seven questions, political pressure: **done in “The pressure around the decision.”** The page distinguishes evidence of pressure from the unresolved question of its effect on the vote.
+- Reserve-balance and primary-credit rates without a consequence: **done, cut from story prose.** Those C-grade implementation details remain in the admitted record only.
+- Private domestic final sales without a link to slower GDP: **done in “What happened.”** The page uses everyday components and states that the 4.2 percent figure measures domestic demand beneath slower headline growth.
+- “Figure 2” and unintroduced dots: **done, cut.** The story states individual year-end judgments and their consequence without narrating the document's graphic.
+- PCE, core PCE and core CPI undefined or undistinguished: **done across the page.** PCE is translated once as the Fed's preferred household-price measure; the two “core” labels are removed, with the relevant concept stated as prices outside food and energy.
+- “Not present” and “not collected” table cells: **done, removed with both dossier grids and deleted from the data module.**
+- Geopolitical assessment “had changed” without a direction: **done in “What happened.”** The page gives Warsh's most-likely/least-likely formulation and the AP's bounded report that officials had stopped counting on a temporary Iran-war energy shock.
+- Unnamed strategist: **done in “What happened next.”** Jack Janasiewicz of Natixis is named with the view.
+- Fragment “One vote, eighteen projections.”: **done, the second catch item is cut.** The useful denominator is carried in the projections section.
+- Second- and third-order sentence repeated: **done, both instances are replaced by one concrete fuel-to-transport-to-other-prices chain.**
+- Lag point repeated: **done.** The mechanism explains the lag once; unknowns now asks only how long the shock lasts.
+- “Selected statement lines, read directly from the two saved releases”: **done, the statement grid is cut.**
+- “numbered where the story cites it” when nothing is visibly numbered: **done for this page.** The shared component's lede is hidden by the story page; the records remain linked and grouped.
+- “in the September 19 capture”: **done, replaced with the positive fact that the minutes are due October 7.**
+- “The Associated Press analysis says” after Schulz already made the point: **done, the duplicate household-cost unknown is cut.**
+- Table 1 medians grid: **done, cut.** Its A/B story facts remain in prose; C-grade rows remain in the admitted record.
+- Requested geopolitical sentence: **done in “What happened.”** It gives the bounded direction available in the pins rather than inventing a country or scenario.
+- Chrome, `record` and `checked` chips: **held, page chrome outside this patch's prose scope.**
+- Chrome, reading-mode switcher: **held, page chrome outside this patch's prose scope.**
+- Chrome, “In this story”: **held, page chrome outside this patch's prose scope.**
+- Chrome, “How we check”: **held, page chrome outside this patch's prose scope.**
+- Chrome, “Story updated”: **held, page chrome outside this patch's prose scope.**
+- Chrome, “Since the previous story”: **held, page chrome outside this patch's prose scope.**
+- Chrome, unnamed previous-story link: **held, page chrome outside this patch's prose scope.**
+
+### Voice-review dispositions and sibling counts
+
+- “Figure 2 shows”: **done, cut.** The fact is now 16 of 18 policymakers expecting another increase.
+- “The official calendar says”: **done, rewritten as the positive October 7 due date.**
+- “The same projection table put”: **done, policymakers and their projections are the subject.**
+- “The projection document defines”: **done, translated to where one policymaker thought the rate should stand at year-end.**
+- “The Associated Press described”: **done, the yield is the subject and the attribution follows the fact.**
+- “The Fed's strategy statement says”: **done, the delayed effect is the subject.**
+- Document-as-subject class sweep: **nine additional sibling sentences fixed.** The July-minutes, CPI-release, AP oil-shock, CBO route, record-says, DealBook-report, CNBC-report, AP-lag and AP-household-cost constructions were rewritten or cut. Zero avoidable document-as-subject sentences remain; named outlet interpretations and agency estimates retain attribution because authorship is part of the claim.
+- “For them, the benefit ... is not ... but ...”: **done, rewritten positively as protection of take-home-pay buying power.**
+- Negative-parallelism class sweep: **three additional sibling constructions fixed.** The oil-price mechanism, mortgage-rate distinction and projection-path explanation now state the positive fact first. Zero avoidable negative flips remain; the catch keeps one bounded negation because it corrects CBS's named wrong reading.
+- “Private domestic final sales, consumer spending plus ...”: **done, the term is removed and the components carry the fact.**
+- Reflex-definition class sweep: **two additional sibling constructions fixed.** The shaded-circle and dots definitions are gone. Zero reflex definitions remain; the one price-measure introduction gives its consequence in the sentence that needs it.
+
+### Editorial-review dispositions
+
+- Main event is the change in stance: **done throughout.** The opening, July comparison, statement-language shift and projections form the spine.
+- First increase since July 2023: **done above the chart from the newly admitted official history page.**
+- July-to-September reconstruction: **done.** The page moves from most participants waiting and three favoring a hike to the unanimous September action.
+- Statement-language change: **done in a dedicated paragraph.** July's supply-shock explanation and September's “timelier return” language are compared directly.
+- Data-warehouse paragraph: **done, compressed.** Headline GDP and the domestic-demand components now make one contrast; the CPI paragraph carries one inflation level and gasoline's share.
+- Headline and dek: **partly done, with the headline held by the accepted-state contract.** The dek says the move was expected and names the divided-to-unanimous shift, tougher message and 16-of-18 path. The `<h1>` remains the accepted event label, “Fed raises rates a quarter point on a unanimous vote,” because `scripts/check-state-pages.mjs` requires an exact match to `data/state/event-fed-rate-2026-09-16-unanimous-quarter-point-hike.json`; this run forbids state commands and forbids committing `data/state`, so changing the accepted label would leave an uncommittable or unrebuildable tree.
+- Projection subtlety: **done in the catch.** Separate year-end medians do not establish a meeting-by-meeting hold.
+- Sixteen of 18 as the signal: **done, leading both the dek/KPI scan and the projections section.**
+- Oil mechanism in everyday words: **done.** The page gives the fuel, transport, goods and expectations chain once.
+- `Who feels it` stays short: **done, retained at four paragraphs with no new constituency list.**
+- `What happened next` as research log: **done, trimmed to the next-day yield and the September 18 split over another move.**
+- Hike was expected: **done in the first story paragraph with the admitted 94 percent pre-decision odds.**
+- Avoid declaring a hiking cycle: **done.** Janasiewicz's contrary view and the unknown next move remain explicit.
+- Dense machine-like prose: **done through the full-page voice rewrite.** Source-processing sentences and both raw grids are removed from the story view.
+
+### Served-page and discovery checks
+
+- Built story mode: **checked at 1280px in a real browser.** The new dek, 94 percent expectation, 9–3 to 12–0 shift, first-increase sentence, 16-of-18 signal and rewritten sections are visible; proof custody text and both removed grids are hidden.
+- Built facts mode: **checked.** Fact blocks, the catch and grouped records appear without narrative or proof prose; the removed grids and machine cells do not appear.
+- Built work mode: **checked.** Proof custody text, citations and the decision chronology appear; the removed statement and projection grids remain absent.
+- Subject page row: **checked against the built story.** It carries the accepted headline, September 16 date, 12–0 vote and 3.75–4.00 percent range.
+- Homepage feature: **checked against the built story.** It carries the accepted headline and 12–0 vote from this story's data module.
+
+### Patch-scoped entailment dispositions
+
+- Moderate, Warsh transport channel: **fixed.** Warsh's sentence now carries only broadening prices and inflation expectations from his transcript; the transport mechanism remains in the separately cited CBO paragraph.
+- Moderate, Bessent scope: **fixed.** The sentence now identifies the Fed rather than generalizing the argument to central banks.
+- Moderate, long-term borrowing costs: **fixed.** The sentence now states only AP's supported relationship between the 10-year Treasury yield and mortgage rates.
+- Final rerun: **ENTAILED.** Twenty-nine changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0. Verdict: `checks/audits/fed-rate--2026-09-16-unanimous-quarter-point-hike-2026-09-20-since-8bf7b3a6-entailment.md`.
