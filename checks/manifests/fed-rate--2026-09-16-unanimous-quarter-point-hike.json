@@ -556,6 +556,38 @@
       "capture_raw_sha256": "sha256:4641801146ad4cdf27ba76c75cd492e0a96557901f7ecdbfa9ca1fb52e703ffb",
       "captured_at": "2026-09-19T23:15:09.509455Z",
       "capture_status": "The registry plain-text extraction omitted the rate-history tables; the pinned text sibling is the registry's Markdown extraction, which preserves those rows."
+    },
+    {
+      "id": "census-retail-sales-august-2026",
+      "title": "Advance Monthly Sales for Retail and Food Services, August 2026",
+      "publisher": "U.S. Census Bureau",
+      "date": "2026-09-16",
+      "url": "https://www.census.gov/retail/sales.html",
+      "pinned_path": "data/sources/fed-rate/census-retail-sales-august-2026.html",
+      "text_path": "data/sources/fed-rate/census-retail-sales-august-2026.txt",
+      "text_sha256": "sha256:da127d57def328c8da19258ff865bd069904fcfd4946d98b26b0963ef8346b53",
+      "quote": "up 1.2 percent",
+      "quote_span_check": "byte_exact",
+      "about": "August retail sales, released the morning of the rate decision.",
+      "capture_run": "capture-oneoff-20260919T214649Z",
+      "capture_raw_sha256": "sha256:03ea123f59677baf2d24cfd28fa4f377215eb892f9c7a357614b9ec7a29cdf47",
+      "captured_at": "2026-09-19T21:47:12.197088Z"
+    },
+    {
+      "id": "reuters-august-jobs-2026-09-04",
+      "title": "Strong August jobs report sends yields higher",
+      "publisher": "Reuters",
+      "date": "2026-09-04",
+      "url": "https://www.reuters.com/business/view-strong-august-jobs-report-sends-yields-higher-2026-09-04/",
+      "pinned_path": "data/sources/fed-rate/coverage/reuters-august-jobs-2026-09-04.html",
+      "text_path": "data/sources/fed-rate/coverage/reuters-august-jobs-2026-09-04.txt",
+      "text_sha256": "sha256:f27f08763b47c0774a6227123960034562881bcac73ec6db669b291cb9387b66",
+      "quote": "Nonfarm payrolls surged by 162,000 jobs last month",
+      "quote_span_check": "byte_exact",
+      "about": "August payrolls of 162,000, the jobs report between the July and September meetings.",
+      "capture_run": "capture-oneoff-20260919T231454Z",
+      "capture_raw_sha256": "sha256:a2abb829e5d6c14f3a1ebbc98a1a47b656d5f4ce918c04d0e9926059f708df72",
+      "captured_at": "2026-09-19T23:15:33.123307Z"
     }
   ],
   "story_sources": [
@@ -589,7 +621,9 @@
     {"id":"reuters-fed-decision-2026-09-16","group":"coverage","label":"Reuters decision report","meta":" · Reuters, 2026-09-16","usage":"same-day policy, projection and market context"},
     {"id":"dow-jones-bessent-rate-hike-2026-08-31","group":"coverage","label":"Dow Jones Newswires on Bessent's supply-shock argument","meta":" · Wall Street Journal live coverage, 2026-08-31","usage":"the pre-meeting argument against raising rates for a supply shock"},
     {"id":"bea-personal-income-outlays-july-2026","group":"official","label":"July personal income and outlays","meta":" · U.S. Bureau of Economic Analysis, 2026-08-26","usage":"the September 30 PCE and annual-update schedule"},
-    {"id":"cbo-iran-cost-2026-09-15","group":"official","label":"CBO analysis of the Iran conflict","meta":" · Congressional Budget Office, 2026-09-15","usage":"the energy-shock transmission path and PCE effects"}
+    {"id":"cbo-iran-cost-2026-09-15","group":"official","label":"CBO analysis of the Iran conflict","meta":" · Congressional Budget Office, 2026-09-15","usage":"the energy-shock transmission path and PCE effects"},
+    {"id":"census-retail-sales-august-2026","group":"official","label":"August advance retail sales","meta":" \u00b7 U.S. Census Bureau, 2026-09-16","usage":"the retail-sales rise between the two meetings"},
+    {"id":"reuters-august-jobs-2026-09-04","group":"coverage","label":"Reuters on the August jobs report","meta":" \u00b7 Reuters, 2026-09-04","usage":"the 162,000 August payroll gain"}
   ],
   "primary_sources": [
     {"id":"fomc-statement-2026-09-16","path":"data/sources/fed-rate/fomc-statement-2026-09-16.html","bytes":84669,"sha256":"sha256:55da18a385e2afea34dc0e9c961d7b73b0b9ed4e7fc41e7c03b2bd933b3270af","url":"https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"},
@@ -610,7 +644,8 @@
     {"id":"fed-warsh-jackson-hole-2026-08-28","path":"data/sources/fed-rate/fed-warsh-jackson-hole-2026-08-28.html","bytes":115735,"sha256":"sha256:7ce594823ab1af5085c7efec1c286bd45b48e6b9b23d62fb08a052a7b2b69bbc","url":"https://www.federalreserve.gov/newsevents/speech/warsh20260828a.htm"},
     {"id":"bea-personal-income-outlays-july-2026","path":"data/sources/fed-rate/bea-personal-income-outlays-july-2026.html","bytes":53244,"sha256":"sha256:131a34937193d5631ac80c606ab233febeb7cbbb267ac6ccdaf9a091a9fee9f7","url":"https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026"},
     {"id":"cbo-iran-cost-2026-09-15","path":"data/sources/fed-rate/cbo-iran-cost-2026-09-15.html","bytes":43026,"sha256":"sha256:7a72ba4376bc41b95a5bf65f5308f26d9fa99f6f0a0b16bdb48e834785c7c64e","url":"https://www.cbo.gov/publication/62756"},
-    {"id":"fed-open-market-operations-2026-09-16","path":"data/sources/fed-rate/fed-open-market-operations-2026-09-16.html","bytes":108253,"sha256":"sha256:4641801146ad4cdf27ba76c75cd492e0a96557901f7ecdbfa9ca1fb52e703ffb","url":"https://www.federalreserve.gov/monetarypolicy/openmarket.htm"}
+    {"id":"fed-open-market-operations-2026-09-16","path":"data/sources/fed-rate/fed-open-market-operations-2026-09-16.html","bytes":108253,"sha256":"sha256:4641801146ad4cdf27ba76c75cd492e0a96557901f7ecdbfa9ca1fb52e703ffb","url":"https://www.federalreserve.gov/monetarypolicy/openmarket.htm"},
+    {"id":"census-retail-sales-august-2026","path":"data/sources/fed-rate/census-retail-sales-august-2026.html","bytes":121974,"sha256":"sha256:03ea123f59677baf2d24cfd28fa4f377215eb892f9c7a357614b9ec7a29cdf47","url":"https://www.census.gov/retail/sales.html"}
   ],
   "coverage_records": [
     "abc-fed-preview-2026-09-16",
@@ -624,7 +659,8 @@
     "nyt-dealbook-trump-fed-rates-2026-09-17",
     "reuters-breakingviews-fed-war-2026-09-16",
     "reuters-fed-decision-2026-09-16",
-    "dow-jones-bessent-rate-hike-2026-08-31"
+    "dow-jones-bessent-rate-hike-2026-08-31",
+    "reuters-august-jobs-2026-09-04"
   ],
   "figures": [
     {"figure":"target_range_upper","label":"Upper limit of the federal funds target range","value":"4","unit":"percent","kind":"sourced","source":{"source_id":"fomc-statement-2026-09-16","quote_span":"3-3/4 to 4 percent"}},
@@ -649,7 +685,8 @@
     {"need":"meeting minutes","status":"scheduled","plain":"The official calendar puts regular-meeting minutes three weeks after the decision, making the September minutes due October 7."},
     {"need":"independent coverage","status":"have","plain":"Twelve coverage records spanning the preview, result, consumer effects, reaction, policy dispute and follow-up are pinned and checked."},
     {"need":"September 30 data schedule","status":"have","plain":"The July PCE release fixes the August PCE and annual national-account updates on September 30."},
-    {"need":"energy pass-through estimate","status":"have","plain":"The CBO article body was recovered from a dated archive after the direct fetch returned 403."}
+    {"need":"energy pass-through estimate","status":"have","plain":"The CBO article body was recovered from a dated archive after the direct fetch returned 403."},
+    {"need":"evidence the economy strengthened between the meetings","status":"have","plain":"The August jobs and retail-sales releases are pinned so the page can show what the officials who waited in July saw next."}
   ],
   "steps": {
     "sources_admitted": {"done":true,"evidence":"Thirty-one records have registry run ids, repository pins, recomputable text hashes and verified quote spans or an explicit typed capture limitation."},

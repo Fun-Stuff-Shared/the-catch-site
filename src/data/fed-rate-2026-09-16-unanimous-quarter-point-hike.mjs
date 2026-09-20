@@ -50,15 +50,15 @@ export const computed = {
 export const event = {
   slug: "fed-rate/2026-09-16-unanimous-quarter-point-hike",
   title: "Fed raises rates a quarter point on a unanimous vote",
-  dek: "The first increase since July 2023 was widely expected. In July, nine of 12 voters left the rate alone; in September, all 12 voted to raise it, and 16 of 18 policymakers expected another increase this year.",
+  dek: "The first increase since July 2023 was widely expected. July's 9-to-3 vote to hold became a unanimous vote to raise, and 16 of 18 policymakers saw at least one more increase this year as appropriate.",
   name: "September 2026 rate increase",
   date: decisionDate,
   updated: "2026-09-19",
   kpis: [
     { value: `${range.lower}–${range.upper.toFixed(2)}`, unit: "%", label: "new target range" },
     { value: `${computed.voteFor}–${computed.voteAgainst}`, label: "committee vote" },
-    { value: "94", unit: "%", label: "pre-decision odds of a quarter-point hike" },
-    { value: "16 of 18", label: "policymakers expecting another 2026 increase" },
+    { value: "July 2023", label: "previous increase" },
+    { value: "16 of 18", label: "policymakers who saw another 2026 increase as appropriate" },
   ],
   visual: {
     kind: "table",
@@ -93,9 +93,10 @@ export const inflation = {
 };
 
 export const growth = {
+  augustPayrolls: 162000,
+  augustRetailSalesChange: 1.2,
   secondQuarterGdp: 1.5,
   firstQuarterGdp: 2.1,
-  secondQuarterPrivateDomesticSales: 4.2,
 };
 
 export const projections = {
@@ -118,6 +119,18 @@ export const ratePath = {
 export const voteRows = [
   ["For the quarter-point increase", computed.voteFor],
   ["Against", computed.voteAgainst],
+];
+
+const statementLines = (name) => source(name).split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+const julyStatement = statementLines("fomc-statement-2026-07-29.txt");
+const septemberStatement2 = statementLines("fomc-statement-2026-09-16.txt");
+const statementLine = (lines, prefix) => lines.find((entry) => entry.startsWith(prefix)) ?? "Not present";
+
+export const statementRows = [
+  ["Vote", statementLine(julyStatement, "The Federal Open Market Committee approved"), statementLine(septemberStatement2, "The Federal Open Market Committee approved")],
+  ["Rate decision", statementLine(julyStatement, "The Committee decided"), statementLine(septemberStatement2, "The Committee decided")],
+  ["Economy", statementLine(julyStatement, "Economic activity"), statementLine(septemberStatement2, "Economic activity")],
+  ["Inflation", statementLine(julyStatement, "Inflation remains"), statementLine(septemberStatement2, "Inflation remains")],
 ];
 
 export const chronologyRows = [
