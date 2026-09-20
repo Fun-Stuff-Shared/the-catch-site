@@ -1655,7 +1655,7 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/gillette-loop-tour-2026-09-20.html | 470217 | e6343eb020f1866a |
 | data/sources/ed-sheeran-tour/gillette-loop-tour-2026-09-20.txt | 9713 | babb9d51b9b1d0be |
 | data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.html | 120628 | bb88599bb915a809 |
-| data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.txt | 2083 | 2ffde4ac95d6b0a9 |
+| data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.txt | 2290 | 8da8402f96babdf4 |
 | data/sources/ed-sheeran-tour/coverage/rolling-stone-removal-2026-09-14.html | 555392 | a04bf4f92d1cdf25 |
 | data/sources/ed-sheeran-tour/coverage/rolling-stone-removal-2026-09-14.txt | 8499 | 89da5e1f0ba3e522 |
 | data/sources/ed-sheeran-tour/coverage/ap-removal-2026-09-14.html | 801423 | 5220e3838a65384f |

@@ -63,7 +63,6 @@ export const event = {
   updated: "2026-09-20",
   kpis: [
     { value: computed.macklemoreScheduledRemainingShows, label: "of 10 remaining dates had booked Macklemore" },
-    { value: computed.remainingShows, label: "of those 10 dates remained scheduled" },
     { value: computed.withdrawingActs, label: "supporting acts that left" },
     { value: computed.metLifeShows, label: "MetLife shows with Macklemore" },
   ],
@@ -72,7 +71,6 @@ export const event = {
     title: "The lineup change",
     rows: [
       [String(computed.macklemoreScheduledRemainingShows), "of 10 remaining dates had booked Macklemore"],
-      [String(computed.remainingShows), "of those 10 dates remained scheduled"],
       [String(computed.withdrawingActs), "supporting artists left"],
       [String(computed.metLifeShows), "MetLife appearances already played"],
     ],

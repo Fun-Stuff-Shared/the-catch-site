@@ -545,3 +545,52 @@ The patch is limited to R1 through R4 and S1 through S12. Sibling counts state h
 | S10 | 2 AJC and MetLife paragraphs | Patched. MetLife's lack of comment is folded into the paragraph that attributes the contact and refund account to AJC. |
 | S11 | 5 source-list metadata strings | Patched. Each now says `saved September 20, 2026`, including the Ed Sheeran source. |
 | S12 | 5 shared-component classes: 11 record chips, 1 check label, 1 sources introduction, 1 reading-mode menu and 5 section kickers | Held with reason. The reviewer reserved all five classes and none was changed. |
+
+## Patch round 4 record checks
+
+### Ticketmaster Standard Purchase Policy
+
+- Canonical URL: `https://legal.ticketmaster.com/purchase-policy/`
+- Fresh registry run: `capture-oneoff-20260920T210637Z`
+- Captured: `2026-09-20T21:06:38.534241Z`
+- Result: HTTP 200, 77089 raw bytes, SHA-256 `b4165e998415682f335814b8c914d589b51b3abd7bfdfc0bcb75036fc076ab58`
+- Extracted text SHA-256: `cc60d547a2391b8803394fa692849f1e3072d499e4ba76bc814fb83ca27c1e97`
+- Disposition: The served raw bytes and extracted text contain no `opening acts`, `subject to change` or cancellation clause. The page was not pinned or cited. The Boston 25 record carries the attorney general's direct quotation of the ticket term. The reviewer-supplied copy was not used.
+
+### Lincoln Financial Field listing addendum
+
+- Existing raw pin: `data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.html`, 120628 bytes, SHA-256 `bb88599bb915a809eb36f48134694bd694e61e7e0d2f67501a9eb72b7206d315`
+- Updated readable sibling: `data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.txt`, 2290 bytes, SHA-256 `8da8402f96babdf4f7f545162d4e84829146a60849dce7918398180b784ffc67`
+
+| Passage | Disposition |
+|---|---|
+| `Ed Sheeran will be joined on his stop at Lincoln Financial Field by Macklemore, Lukas Graham, and Aaron Rowe!` | Grade B. Used beside the no-opener outcome to show what the official venue page still advertised on September 20. |
+| `dateModified":"2026-09-17T16:45:03+00:00"` | Grade B. Used to date the venue page's last recorded change. |
+
+The readable sibling now includes these exact passages from the existing raw HTML metadata. The raw pin itself did not change.
+
+## Patch round 4 ledger
+
+The patch is limited to R1 through R6 and S1 through S13. Sibling counts state how many same-class instances were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline | Held with reason. The h1 is the accepted state label reserved for the editor. It was not changed or discussed on the page. |
+| R2 | 2 refund passages | Patched. The complaint paragraph now states the opening-act change term quoted by the attorney general's office. The unknowns section states that term and the Massachusetts advertised-description rule separately, then says the office's September 18 statement did not classify the removal under the law's test. The fresh Ticketmaster capture did not contain the clause, so it was not pinned or cited. |
+| R3 | 1 Philadelphia outcome paragraph | Patched. The no-opener account now says Lincoln Financial Field still advertised Macklemore, Lukas Graham and Aaron Rowe on September 20 and that the page metadata dated its last change to September 17. |
+| R4 | 2 misleading source-usage lines and 0 page sentences | Patched. The AP and Reuters usage lines now say each separately published Rolling Stone's Messina statement and identify the reporting each added. No story sentence relied on either as independent confirmation. |
+| R5 | 2 records-list entries for 1 AP URL | Patched. The preview entry was removed from the public records list. The remaining AP Philadelphia entry identifies the September 19 preview and September 20 revision as two captures of one article. |
+| R6 | 2 CAIR-Philadelphia story-view mentions | Patched. The first mention identifies the Philadelphia chapter of the Council on American-Islamic Relations as a civil-rights advocacy group; the later short name remains. |
+| S1 | 2 renderings of the redundant 10-of-10 KPI | Patched. The KPI and its matching feature-table row were removed. |
+| S2 | 1 section kicker | Held with reason under S13. `The lineup changed` is a section kicker, and the reviewer reserved section kickers from this patch. |
+| S3 | 1 petition introduction | Patched. The sentence now says the Israeli American Council launched a petition after the first MetLife show, what it sought and whom it addressed. |
+| S4 | 2 Gillette confirmation sentences | Patched with an entailment boundary. One sentence now says plainly that Kraft confirmed Gillette's refusal, and the later duplicate was removed. The word `only` was not retained because the cited Rolling Stone pin says most other venues did not respond, not all, and therefore does not establish a complete confirmation census. |
+| S5 | 1 seven-venue ownership sentence | Patched. The sentence says the seven are the venues on Rolling Stone's alleged-objection list before dividing them into two privately owned venues and five publicly owned or operated venues. |
+| S6 | 1 sign-control detail | Patched. The sentence names Gillette's event rules and says the clause is one kind of content control reserved at the venue. |
+| S7 | 1 contextless Philadelphia remarks sentence | Patched. The sentence now opens with the September 19 Philadelphia stage. |
+| S8 | 1 complaint-count aside | Patched. The distinction between complaints and ticket holders is folded into the complaint sentence. |
+| S9 | 4 `by September 20` story-view phrases | Patched. The repeated date was removed from the MetLife comment, other-venue confirmation, response-period and rebuilt-lineup sentences. The dated unknown about public contracts remains once. |
+| S10 | 4 repeated role summaries | Patched. The dek and one Catch heading retain the distinction. The opening paragraph now reports only the departures, the duplicate Catch introduction was removed, and the table caption now says what the table records. |
+| S11 | 1 audit-note sentence | Patched. The sentence about what Kraft did not address was removed; the coordination allegation remains attributed to Macklemore and the unresolved communications remain in unknowns. |
+| S12 | 2 contract-publication locations | Patched. A plain sentence beside Sheeran's contract claim says no executed Macklemore contract was public; the broader contract unknown remains in the unknowns section. |
+| S13 | 5 held shared-component classes: 11 record chips, 1 check label, 1 reading-mode menu, 6 saved-date metadata lines and 5 section kickers | Held with reason. The reviewer reserved all five classes, and none was changed. |
