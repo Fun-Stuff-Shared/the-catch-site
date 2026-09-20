@@ -50,7 +50,7 @@ export const computed = {
 export const event = {
   slug: "fed-rate/2026-09-16-unanimous-quarter-point-hike",
   title: "Fed raises rates a quarter point on a unanimous vote",
-  dek: "The first increase since July 2023 was widely expected. The change was a 9–3 hold becoming a 12–0 hike, a tougher inflation message and 16 of 18 policymakers expecting another increase this year.",
+  dek: "The first increase since July 2023 was widely expected. In July, nine of 12 voters left the rate alone; in September, all 12 voted to raise it, and 16 of 18 policymakers expected another increase this year.",
   name: "September 2026 rate increase",
   date: decisionDate,
   updated: "2026-09-19",

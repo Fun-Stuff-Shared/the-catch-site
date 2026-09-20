@@ -1,39 +1,39 @@
+**Reading as a stranger. Report follows.**
+
 **1. The seven questions**
 
-- **What happened: answered, no work.** "The Federal Open Market Committee raised its target range by one-quarter percentage point to 3.75–4.00 percent, effective September 17."
-- **Why it matters to me: answered, some work.** It sits in the third section, after the mechanism. "Credit-card rates can respond quickly because most cards carry variable rates tied to banks' prime rate." and "Consumer-finance analyst Matt Schulz expected one quarter-point increase to have a small effect."
-- **Easiest wrong reading: partly.** "It does not establish a committee decision to hold at every 2027 meeting." But the heading "The matching 4.1 percent medians conceal different paths" stalled me: the page never gave a 2027 median before this, only the 2026 year-end 4.1. I had to infer the match from the CBS quote.
-- **Mechanism: answered, no work.** "That tool leaves the price of oil and gasoline untouched." and "Interest-rate changes reach spending, jobs and prices with a delay."
-- **What changed: answered, spread across two sections.** "July's 9–3 hold became a 12–0 increase" plus "Warsh gave three reasons for acting: a stronger economy, inflation trends that still failed his test and a changed view of the most and least likely geopolitical outcomes." The median shift is in a later section.
-- **What is unresolved: answered, no work.** "Whether another increase follows this one." and "The minutes are due October 7, three weeks after the decision."
-- **The five questions in order: answered.** Section order matches them. Pressure: "The pressure's effect on the vote remains unresolved."
+1. What happened. Answered, easily. "The Federal Open Market Committee raised its target range by one-quarter percentage point to 3.75–4.00 percent, effective September 17." Though the paragraph before it opens with betting odds, so the actual decision is the second thing I read.
+2. Why it matters to me. Answered. "Credit-card rates can respond quickly because most cards carry variable rates tied to banks' prime rate." and "He said several increases would matter more as they stacked up over time."
+3. The easy wrong reading. Partly. "The two figures are separate midpoints of officials' individual year-end judgments, one for 2026 and one for 2027." I understood the correction only after rereading. It never says plainly that a 2027 median of 4.1 is not a decision to hold.
+4. The mechanism. Answered. "That tool leaves the price of oil and gasoline untouched." and "Interest-rate changes reach spending, jobs and prices with a delay."
+5. What changed since July. Answered, but spread over three sections. "Seven weeks earlier, most policymakers had wanted more information before acting, though several already favored an increase." plus the chronology row "The committee holds at 3.50–3.75 percent in a 9–3 vote". The July range itself only appears at the bottom.
+6. What is unresolved. Answered. "Whether another increase follows this one."
+7. Political pressure and what comes next. Partly. Trump's demand and Warsh's "two-way street" are there, but nothing connects the pressure to the October decision.
 
 **2. Where I stalled**
 
-- "Warsh had set a public test in late August" is the first mention of Warsh, with no title. I learned he is chair only in the chronology: "Chair Kevin Warsh holds a press conference."
-- "the Iran-war energy shock" arrives before any mention of a war. The Hormuz sentence explaining it comes a section later.
-- "a changed view of the most and least likely geopolitical outcomes." I could not tell what this means.
-- "Headline economic growth slowed to 1.5 percent from 2.1 percent." No period given. Then "consumer spending and private fixed investment grew 4.2 percent, a measure of domestic demand" reads ambiguously.
-- "the Fed's preferred household-price measure" is used three times and never named. I could not tell whether "3.4 percent above a year earlier" and "3.7 percent for 2026" are the same measure. CBO is never expanded.
-- "Prices outside food and energy were expected to stay elevated longer." Expected by whom?
-- "Financial markets put 94 percent odds" and "market-implied odds of another increase in October had risen to about 58 percent." No visible source for either.
-- "Trump said the next morning that he had told Warsh to vote with the board because the result would not change." Warsh chairs the committee, so "vote with the board" did not parse.
-- "The new target range, reserve-balance rate and primary-credit rate take effect." Two terms never explained, answering a question I had not asked.
-- "a reversal of the 'insurance cuts' from 2025." Term unexplained.
-- Bare lines "record" and "checked" appear six times. I could not tell what they mark.
-- "The story Just the facts Show the work" and "How we check ." name the page's methods.
-- "Everything this page rests on, numbered where the story cites it." I saw no numbers in the story.
-- "Since the previous story" and "Read the previous story" have nothing after them.
+- "9–3 hold becoming a 12–0 hike" in the subhead. I did not know what a hold was or why the count changed from 12 to 12 with different splits.
+- "CME Group's FedWatch futures-market gauge" appears before the decision and I did not know what it measures.
+- "Consumer spending plus private fixed investment grew 4.2 percent in the second quarter, faster than headline growth." I could not tell why this number was here or what it argued.
+- "record", "checked" appear as bare words between paragraphs. I could not tell what they marked.
+- "PCE price index" is named, then "core PCE inflation, which excludes food and energy" explained one section earlier. The order is backward for me.
+- "Their median reaches 2 percent in 2029." Median of what was unclear until the catch section.
+- "the shock broadening into other prices and inflation expectations" uses "broadening" without saying broaden from what.
+- "Everything this page rests on, numbered where the story cites it. We keep a dated copy of each one." This is about the page, not the event.
+- "The story Just the facts Show the work" and "Story updated 2026-09-19." are controls and bookkeeping in the middle of the reading path.
+- "according to the Associated Press" answered a sourcing question I did not have, while the CBO paragraph and the Schulz quote gave no hint where they came from.
 
-**3. What reads as written for the project**
+**3. Reads as written for itself**
 
-- The "record" and "checked" labels, "Story updated 2026-09-19," "captured 2026-09-19," and the table headers "When / Record" are machine text.
-- "We keep a dated copy of each one." Self-reference.
-- Repetition: "16 of 18 policymakers" appears four times, "effective September 17" four times, "first increase since 2023" three times.
-- "July attributed part of the inflation problem to supply shocks" and "September dropped that explanation" make months the subject of statements.
-- "The new information was how completely the committee had moved." New to whom?
+- "The catch" as a section title, and "Each 4.1 percent median describes its own year" as a headline. Both are the project's vocabulary.
+- "How we check ." with the stray space and a period after nothing.
+- "Since the previous story" and "Read the previous story" presume I know there is a series.
+- "The wording also hardened." A statement is the subject; the fact could stand alone.
+- Repetition: the 3.4 percent CPI figure appears twice, and the 94 percent odds appear in the stat bar and the first paragraph.
+- "CBS wrote that..." A news outlet as subject of the catch, so the section is about coverage rather than the event.
 
 **4. Add and cut**
 
-- **Add:** the latest reading of the Fed's preferred inflation measure, named, so the 3.4 percent consumer-price figure and the 3.7 percent projection are comparable.
-- **Cut:** the standalone "record" and "checked" labels.
+Add: one sentence saying what the July range was in the body where July is first mentioned, so "what changed" is readable without the chronology table.
+
+Cut: "Consumer spending plus private fixed investment grew 4.2 percent in the second quarter, faster than headline growth."

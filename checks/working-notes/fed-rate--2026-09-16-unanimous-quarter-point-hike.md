@@ -602,3 +602,28 @@ This patch starts from story commit `f5cb6a76`. It keeps the reader-model sectio
 - Major, CBO mechanism: **fixed.** The sentence now states CBO's estimate for the PCE inflation rate, identifies core PCE as excluding food and energy, and keeps CBO's mechanism as higher energy prices reaching nonenergy goods and services more slowly. It no longer turns the rate into a price level or substitutes transport costs for CBO's stated cause.
 - Minor, preferred-measure label: **fixed.** The sentence now cites Warsh's admitted Jackson Hole passage, which names the 12-month PCE price change as the Fed's preferred inflation measure.
 - Final rerun: **ENTAILED.** Fourteen changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0. Verdict: `checks/audits/fed-rate--2026-09-16-unanimous-quarter-point-hike-2026-09-20-since-f5cb6a76-entailment.md`.
+
+## Fourth story patch round, 2026-09-19
+
+This patch starts from story commit `8ab00c23` and works the ten served-page decisions as one rewrite pass.
+
+### Review dispositions
+
+1. Private domestic final sales: **done in “What happened.”** The 4.2 percent sentence and its story citation are cut. The value remains in the saved record and data module.
+2. July and September votes in the dek: **done.** The dek now says that nine of 12 voters left the rate alone in July and all 12 voted to raise it in September.
+3. FedWatch at first use: **done in “What happened.”** The gauge is introduced as a measure of investor expectations for the Fed's decision.
+4. July target range: **done in “What happened.”** The opening body paragraph gives the 3.50–3.75 percent range before describing September's unanimous increase.
+5. PCE introduction: **done in “What a rate hike can change.”** The page names the personal consumption expenditures price index and identifies it as the Fed's preferred inflation measure before introducing core PCE inflation.
+6. The 2029 median: **done in “The projections.”** The sentence identifies it as the median projection for PCE inflation.
+7. Broadening shock: **done in “What a rate hike can change.”** The sentence says the shock can spread from oil and gasoline into other prices and inflation expectations.
+8. Statement-language change: **done in “What happened.”** The committee is the subject of both the July attribution and the September removal of that explanation.
+9. Repeated 3.4 percent CPI figure: **done.** The CPI reading appears once in prose, in “What happened”; the projections section now begins with the July PCE reading.
+10. Matching 4.1 percent medians: **done in “The catch.”** The correction uses “median” throughout, explains that a hold throughout 2027 would require the same rate decision at every meeting, and states that the projections provide only separate end-of-year medians for 2026 and 2027.
+
+### Fourth-round verification
+
+- Built story mode at 1280 pixels: **checked.** The revised dek, explained FedWatch gauge, July target range, single CPI reading and rewritten catch appear in the reader-facing story.
+- Built facts mode at 1280 pixels: **checked.** Fact blocks, the revised catch, chronology and records render with narrative and proof layers hidden.
+- Built work mode at 1280 pixels: **checked.** Narrative, fact and proof layers render together with source-use notes and the decision chronology.
+- Browser console: **one out-of-scope asset request.** The local preview returned 404 for `/favicon.ico`; no story-page script error appeared.
+- Patch-scoped entailment: **ENTAILED.** Seven changed blocks checked; Critical 0, Major 0, Moderate 0, Minor 0. Verdict: `checks/audits/fed-rate--2026-09-16-unanimous-quarter-point-hike-2026-09-20-since-8ab00c23-entailment.md`.
