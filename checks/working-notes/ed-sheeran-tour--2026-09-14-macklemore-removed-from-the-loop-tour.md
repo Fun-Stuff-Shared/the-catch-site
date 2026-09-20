@@ -594,3 +594,30 @@ The patch is limited to R1 through R6 and S1 through S13. Sibling counts state h
 | S11 | 1 audit-note sentence | Patched. The sentence about what Kraft did not address was removed; the coordination allegation remains attributed to Macklemore and the unresolved communications remain in unknowns. |
 | S12 | 2 contract-publication locations | Patched. A plain sentence beside Sheeran's contract claim says no executed Macklemore contract was public; the broader contract unknown remains in the unknowns section. |
 | S13 | 5 held shared-component classes: 11 record chips, 1 check label, 1 reading-mode menu, 6 saved-date metadata lines and 5 section kickers | Held with reason. The reviewer reserved all five classes, and none was changed. |
+
+## Patch round 5 ledger
+
+The patch is limited to R1 through R8 and S1 through S11. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved both for the editor. Neither was changed or discussed on the page. |
+| R2 | 2 schedule-denominator locations | Patched with the pin's boundary. The narrative now renders 27 total North American dates, 17 scheduled through September 14 and 10 afterward from the data module, cited to the official FAQ. The FAQ does not establish that all 17 earlier dates were performed, so the page does not make that claim. The existing detail block remains. |
+| R3 | 1 reduced Sheeran account of how Macklemore joined | Patched. Sheeran's statement that Macklemore asked to join the previous year and that he agreed now sits beside Sheeran's setlist account. |
+| R4 | 1 Kraft rationale paragraph | Patched. Kraft's stated limits concerning Palestinian suffering, advocacy and Hamas's responsibility now follow his hate-speech rationale. |
+| R5 | 1 Beoga rationale paragraph | Patched. Beoga's phrase `zionist lobbies` is quoted as the band's claim, followed by the band's request that people research Kraft, Israel and the Boycott, Divestment and Sanctions movement. |
+| R6 | 1 unexplained public-versus-private venue distinction | Patched. The Raymond James precedent and its promoter contract clause now explain the distinction, followed by the unresolved Sheeran-tour contract question. |
+| R7 | 1 Macklemore removal-attribution paragraph | Patched. Macklemore's statement that he, Sheeran and Pink were not victims, and his career, money, safety and audience explanation, now accompany his attribution. |
+| R8 | 2 conditional support-role rows | Patched. Rowe and Lukas Graham are labeled as support acts whom AP named as Macklemore's would-be replacements. |
+| S1 | 1 incomplete seven-venue list | Patched. The sentence names all seven venues in Rolling Stone's alleged-objection list. |
+| S2 | 1 setlist sentence and 1 MetLife-performance paragraph | Patched. The first-show performance account now comes before Sheeran's account that Macklemore chose his setlist. The duplicate in the later section was removed. |
+| S3 | 1 Philadelphia venue-page sentence | Patched. The sentence says in reader words that the venue page still listed the three artists on September 20 and had last been changed on September 17. |
+| S4 | 2 Macklemore schedule labels | Patched. The KPI and feature-table row now say eight of the 10 remaining dates were to include Macklemore. |
+| S5 | 2 sign-rule locations | Patched. The sign-and-banner detail was cut from the page, and the records-list usage line no longer advertises it. |
+| S6 | 1 refund-count aside | Patched. The aside was removed; the paragraph states only that the office was reviewing at least 25 complaints. |
+| S7 | 4 table action cells | Patched. All four actions now use `Withdrew`. |
+| S8 | 3 public-contract sentences | Patched. The body occurrence now sits with the Raymond James comparison, the broader unknown remains in the unknowns section, and the other body and Catch repetitions were removed. |
+| S9 | 2 request-presumption sentences | Patched. The narrative retains CAIR-Philadelphia's qualification; the detail block no longer repeats it. |
+| S10 | 1 misplaced Philadelphia outcome paragraph | Patched. The show outcome and venue-page listing moved from the September 14 sequence to What happened next, after the September 18 development. |
+| S11 | 1 missing public-stake sentence | Patched with the pins' allocation of authority. The Raymond James paragraph now states that venue refusals can lead a promoter to remove an act from a national tour while the public record does not show the governing clause or final decision-maker. |
+| HELD | 7 reserved classes | Held with reason. Reading-mode labels, record chips, section kickers, `How we check .`, saved-date lines, the `Coverage checked` and `Official data` group names, and the `Story updated` line were not changed. |

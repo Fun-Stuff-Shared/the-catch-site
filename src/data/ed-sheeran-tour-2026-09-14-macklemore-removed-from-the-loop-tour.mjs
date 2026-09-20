@@ -34,13 +34,14 @@ const metLifeDates = tourDates.filter((row) => row.venue === "MetLife Stadium");
 const macklemoreScheduledRemainingShows = 8;
 const withdrawingActs = [
   ["Finneas", "South American support dates", "Withdrew"],
-  ["Aaron Rowe", "Replacement U.S. support act", "Withdrew"],
-  ["Lukas Graham", "Replacement U.S. support act", "Withdrew"],
-  ["Beoga", "Band during Sheeran's set", "Departed"],
+  ["Aaron Rowe", "Support act, named by AP as Macklemore's would-be replacement", "Withdrew"],
+  ["Lukas Graham", "Support act, named by AP as Macklemore's would-be replacement", "Withdrew"],
+  ["Beoga", "Band during Sheeran's set", "Withdrew"],
 ];
 
 export const computed = {
   northAmericaShows: tourDates.length,
+  throughCutoffShows: tourDates.length - remainingDates.length,
   remainingShows: remainingDates.length,
   remainingCities: new Set(remainingDates.map((row) => row.city)).size,
   macklemoreScheduledRemainingShows,
@@ -62,7 +63,7 @@ export const event = {
   date: cutoff,
   updated: "2026-09-20",
   kpis: [
-    { value: computed.macklemoreScheduledRemainingShows, label: "of 10 remaining dates had booked Macklemore" },
+    { value: computed.macklemoreScheduledRemainingShows, label: "of 10 remaining dates were to include Macklemore" },
     { value: computed.withdrawingActs, label: "supporting acts that left" },
     { value: computed.metLifeShows, label: "MetLife shows with Macklemore" },
   ],
@@ -70,7 +71,7 @@ export const event = {
     kind: "table",
     title: "The lineup change",
     rows: [
-      [String(computed.macklemoreScheduledRemainingShows), "of 10 remaining dates had booked Macklemore"],
+      [String(computed.macklemoreScheduledRemainingShows), "of 10 remaining dates were to include Macklemore"],
       [String(computed.withdrawingActs), "supporting artists left"],
       [String(computed.metLifeShows), "MetLife appearances already played"],
     ],
@@ -99,6 +100,7 @@ export const seriesReceipt = {
   recordId: "loop-tour-north-america-faq",
   sourceRows: tourDates.length,
   cutoff,
+  throughCutoffShows: computed.throughCutoffShows,
   remainingShows: computed.remainingShows,
   remainingCities: computed.remainingCities,
   macklemoreScheduledRemainingShows: computed.macklemoreScheduledRemainingShows,
