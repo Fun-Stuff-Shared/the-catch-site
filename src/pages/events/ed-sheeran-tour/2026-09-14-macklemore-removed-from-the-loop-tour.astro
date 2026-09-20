@@ -1,0 +1,125 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import SectionKicker from "../../../components/story/SectionKicker.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import {
+  event,
+  remainingDateRows,
+  lineupRows,
+  chronologyRows,
+  seriesReceipt,
+} from "../../../data/ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour.mjs";
+
+const state = readPublishedState().events.get("event-ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour");
+if (!state) throw new Error("Missing publication selection: event-ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/ed-sheeran-tour/">Ed Sheeran's Loop Tour</a><span>September 14, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact"><a href="/events/ed-sheeran-tour/">Ed Sheeran's Loop Tour</a> &middot; September 14, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+      <KpiStrip kpis={event.kpis} />
+
+      <nav class="story-toc" aria-label="In this record" data-layer="fact">
+        <details class="toc-disclosure" open data-layer="fact"><summary><span>In this record</span><span class="toc-current" aria-hidden="true"></span></summary>
+          <ol data-layer="fact">
+            <li><a href="#tour-dates">The remaining tour dates</a></li>
+            <li><a href="#lineup">The lineup changes</a></li>
+            <li><a href="#statements">The statements</a></li>
+            <li><a href="#chronology">Chronology</a></li>
+            <li><a href="#records">The records</a></li>
+          </ol>
+        </details>
+      </nav>
+
+      <section id="tour-dates" data-layer="fact">
+        <SectionKicker text="Official schedule" />
+        <h2>The remaining North American dates</h2>
+        <DataTable columns={["Date", "City", "Venue"]} rows={remainingDateRows} caption="Loop Tour dates after September 14 in the saved North American FAQ" />
+        <SourcedBlock source="loop-tour-north-america-faq" kind="record" detail>
+          <p>The official FAQ lists {seriesReceipt.sourceRows} North American shows. Filtering its dated rows for dates after September 14 leaves {seriesReceipt.remainingShows} shows in {seriesReceipt.remainingCities} cities.<Cite s="loop-tour-north-america-faq" passage="September 19, 2026    Philadelphia, PA" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ed-sheeran-past-tour-dates-2026-09-20" kind="record" detail>
+          <p>The official past-dates page lists MetLife Stadium on September 4 and September 5.<Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="05 Sep 2026 MetLife Stadium" /><Cite s="ed-sheeran-past-tour-dates-2026-09-20" passage="04 Sep 2026 MetLife Stadium" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="gillette-loop-tour-2026-09-20" kind="record" detail>
+          <p>Gillette Stadium lists September 25 and 26 for the Loop Tour.<Cite s="gillette-loop-tour-2026-09-20" passage="September 25 and 26, 2026" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="lincoln-field-loop-tour-2026-09-20" kind="record" detail>
+          <p>Lincoln Financial Field lists the Philadelphia concert on September 19.<Cite s="lincoln-field-loop-tour-2026-09-20" passage="September 19" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="lineup" data-layer="fact">
+        <SectionKicker text="Artist records" />
+        <h2>The lineup changes</h2>
+        <DataTable columns={["Artist", "Scheduled role", "Recorded action"]} rows={lineupRows} caption="Statements published September 15" />
+        <SourcedBlock source="rolling-stone-removal-2026-09-14" kind="record" detail>
+          <p>Messina Touring Group said venues had notified the promoter they would not allow a concert with Macklemore on the lineup, and that he would not perform on the remaining support dates.<Cite s="rolling-stone-removal-2026-09-14" passage="Macklemore will not be performing on the remaining support dates" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="usa-today-kraft-2026-09-14" kind="record" detail>
+          <p>Robert Kraft's statement said Gillette Stadium determined that Macklemore's participation in the September 25 and 26 concerts "would cross that line."<Cite s="usa-today-kraft-2026-09-14" passage="his participation in the September 25th and 26th concerts at Gillette Stadium would cross that line" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="statements" data-layer="fact">
+        <SectionKicker text="Published statements" />
+        <h2>The artists' own lines</h2>
+        <SourcedBlock source="macklemore-removal-statement-2026-09-14" kind="record" detail>
+          <p>"Ed Sheeran and his team have made the decision to remove me from The Loop tour."<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed Sheeran and his team have made the decision to remove me from The Loop tour." /></p>
+          <p>"Ed also told me that Kraft had rallied some of the other stadium owners and collectively they gave him an ultimatum: if Macklemore stays on the tour, you will not be allowed to play in our venues."<Cite s="macklemore-removal-statement-2026-09-14" passage="Ed also told me that Kraft had rallied some of the other stadium owners" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ed-sheeran-response-2026-09-15" kind="record" detail>
+          <p>"Macklemore coming off tour was the promoter's decision, it was not mine."<Cite s="ed-sheeran-response-2026-09-15" passage="Macklemore coming off tour was the promoter's decision, it was not mine." /></p>
+          <p>"I spoke with the venues at length all week to try to build a bridge, including with Robert Kraft, but the venue's and promoter's decision was final."<Cite s="ed-sheeran-response-2026-09-15" passage="the venue's and promoter's decision was final" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="finneas-withdrawal-2026-09-15" kind="record" detail>
+          <p>"I have decided to withdraw from my upcoming tour dates with Ed Sheeran. I stand with Palestine and its people."<Cite s="finneas-withdrawal-2026-09-15" passage="I have decided to withdraw from my upcoming tour dates with Ed Sheeran." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="aaron-rowe-withdrawal-2026-09-15" kind="record" detail>
+          <p>"I have made the decision to withdraw as a support act for Ed Sheeran's The Loop North American Tour."<Cite s="aaron-rowe-withdrawal-2026-09-15" passage="I have made the decision to withdraw as a support act" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="lukas-graham-withdrawal-2026-09-15" kind="record" detail>
+          <p>"But I can't put these words out into the world and carry on with this tour as things stand. We're withdrawing from the remaining dates."<Cite s="lukas-graham-withdrawal-2026-09-15" passage="We're withdrawing from the remaining dates." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="beoga-withdrawal-2026-09-15" kind="record" detail>
+          <p>"We have made the decision to depart as Ed Sheeran's band on the remaining US Loop tour."<Cite s="beoga-withdrawal-2026-09-15" passage="depart as Ed Sheeran's band on the remaining US Loop tour" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="chronology" data-layer="fact">
+        <SectionKicker text="Sequence" />
+        <h2>Chronology</h2>
+        <DataTable columns={["When", "Record"]} rows={chronologyRows} />
+        <SourcedBlock source="ap-support-acts-2026-09-15" kind="record" detail>
+          <p>Associated Press named Aaron Rowe, Beoga, Lukas Graham and Finneas as the four supporting acts leaving after Macklemore's removal.<Cite s="ap-support-acts-2026-09-15" passage="four of his supporting acts abruptly quit" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ap-tour-power-2026-09-17" kind="record" detail>
+          <p>The Associated Press described the promoter as the primary business actor on a tour and reported that venues retain the ability to refuse a show.<Cite s="ap-tour-power-2026-09-17" passage="The promoter is the primary business actor on a tour." /><Cite s="ap-tour-power-2026-09-17" passage="Certainly they can lock the doors" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ap-philadelphia-2026-09-19" kind="record" detail>
+          <p>Associated Press reported that the tour was set to resume in Philadelphia after the supporting acts withdrew.<Cite s="ap-philadelphia-2026-09-19" passage="Ed Sheeran is set to resume his tour Saturday" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ap-donations-2026-09-19" kind="record" detail>
+          <p>Associated Press reported that Macklemore committed his net Loop Tour earnings to a $1 million pledge for six Palestinian relief organizations.<Cite s="ap-donations-2026-09-19" passage="The six donation recipients" /></p>
+        </SourcedBlock>
+      </section>
+
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+    </main>
+  </div>
+</BaseLayout>}
