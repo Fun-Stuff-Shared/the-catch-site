@@ -937,3 +937,17 @@ The patch is limited to R1 through R4 and S1 through S5. Sibling counts state ho
 | S4 | 4 appearances of the ten-show count | Patched in the editable narrative and detail layers. The KPI and first narrative use remain; the later detail repetition was removed. The remaining table caption is reviewer-held and was not changed. |
 | S5 | 1 remaining-lineup absence | Patched. The dated sentence now appears in What happened next and tells readers that no support lineup had been announced for the remaining September 25 through November 7 dates. |
 | HELD | 12 reserved classes | Held with reason. The h1 and state label, the Ye paragraph apart from R3, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group and KPI position were not changed. |
+
+## Patch round 14 ledger
+
+The patch is limited to R1 and S1 through S5. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 unsupported claim about all public statements | Patched. CBS remains limited to its unanswered September 7 request. A fresh rendered capture of MetLife Stadium's first-party news index supports the narrower statement that the news page, as saved September 21, carried no statement about the shows. The plain Chrome-user-agent request returned HTTP 406, the capture pipeline succeeded, and no fallback copy was used. |
+| S1 | 4 artist-role descriptions | Patched. The departure paragraph now identifies Rowe and Lukas Graham as U.S. support billed alongside Macklemore, Beoga as performing inside Sheeran's set, and Finneas as booked for the South American dates. The AEG schedule and AP roles report support those descriptions. The later roles passage was reduced to its heading. |
+| S2 | 2 repeated passages | Patched. The second telling of Sheeran's reported hurtful-words account was removed, and the three-way removal-authority recap was removed from The catch. The earlier cited accounts remain. |
+| S3 | 1 isolated ticket-sales date | Patched. The standalone September 2025 ticket-sales sentence was cut. The detail block keeps the schedule fact it exists to prove. |
+| S4 | 5 official ownership claims | Patched. Each public ownership or land-ownership claim now has its official authority or lease citation directly after the sentence it supports. |
+| S5 | 1 prior-case absence sentence | Patched. The no-earlier-comparable-removal sentence was cut from the story view. Its bounded search receipt remains in the manifest as provenance, not narrative. |
+| HELD | 11 reserved classes | Held with reason. The h1 and state label, Raymond James contract comparison paragraph, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and Messina estimate were not changed. |

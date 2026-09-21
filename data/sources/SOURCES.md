@@ -1724,3 +1724,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/aeg-loop-tour-support-schedule-2026-09-21.txt | 3199 | ff312bc114955a50 |
 | data/sources/ed-sheeran-tour/coverage/arcamax-tampa-bay-times-ye-result-2026-08-07.html | 40786 | 8dbbc7479cbcf13b |
 | data/sources/ed-sheeran-tour/coverage/arcamax-tampa-bay-times-ye-result-2026-08-07.txt | 2783 | a8c69fddc8de1855 |
+| data/sources/ed-sheeran-tour/metlife-stadium-news-2026-09-21.html | 51691 | e72f9290d15a2cb9 |
+| data/sources/ed-sheeran-tour/metlife-stadium-news-2026-09-21.txt | 813 | 549a2404dccc9395 |
