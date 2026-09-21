@@ -22,7 +22,7 @@
       "date": "2026-09-14",
       "label": "Macklemore and the promoter announce his removal",
       "section_anchor": "why-removed",
-      "records": ["macklemore-removal-statement-2026-09-14", "iac-loop-tour-petition-2026-09", "rolling-stone-removal-2026-09-14", "ap-removal-2026-09-14", "usa-today-kraft-2026-09-14"]
+      "records": ["macklemore-removal-statement-2026-09-14", "iac-loop-tour-petition-2026-09", "rolling-stone-removal-2026-09-14", "bbc-macklemore-dropped-2026-09-15", "ap-removal-2026-09-14", "usa-today-kraft-2026-09-14"]
     },
     {
       "id": "sheeran-response-and-withdrawals",
@@ -236,6 +236,22 @@
       "capture_run": "capture-oneoff-20260920T063014Z",
       "capture_raw_sha256": "sha256:a04bf4f92d1cdf25ae80fde521accefb0ef254b416804f08fd039b3bf5370050",
       "captured_at": "2026-09-20T06:30:25.949284Z"
+    },
+    {
+      "id": "bbc-macklemore-dropped-2026-09-15",
+      "title": "All support acts on Ed Sheeran's US tour quit after Macklemore dropped",
+      "publisher": "BBC",
+      "date": "2026-09-15",
+      "url": "https://www.bbc.co.uk/news/articles/c3vgyn49y4l7o?at_medium=RSS&at_campaign=rss",
+      "pinned_path": "data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.html",
+      "text_path": "data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.txt",
+      "text_sha256": "sha256:55a717e3b8a3d6f6cf7501baa47d77527c7bbed1aa47f0f631e53c87c44c86b6",
+      "quote": "the pop star Pink, who reposted it on Instagram",
+      "quote_span_check": "byte_exact",
+      "about": "BBC account of the remaining support-act departures and Pink's repost of the StopAntisemitism message.",
+      "capture_run": "quarry-wire-scheduled-20260915T220005Z",
+      "capture_raw_sha256": "sha256:e2f6b9bf6c73112c3b2d93375447125a38ac0732c4d554b618c8978d3a99d112",
+      "captured_at": "2026-09-15T22:05:25.114570Z"
     },
     {
       "id": "ap-removal-2026-09-14",
@@ -742,6 +758,7 @@
     {"id":"indiana-lucas-oil-stadium-authority-2026-09-20","group":"official","label":"Lucas Oil Stadium authority page","meta":" · State of Indiana","usage":"state-authority ownership and county-board operation of Lucas Oil Stadium"},
     {"id":"tampa-raymond-james-ownership-timeline-2026-09-20","group":"official","label":"Raymond James Stadium ownership timeline","meta":" · Tampa Sports Authority","usage":"Hillsborough County ownership and public-authority management of Raymond James Stadium"},
     {"id":"rolling-stone-removal-2026-09-14","group":"coverage","label":"Rolling Stone removal report","meta":" · 2026-09-14","usage":"Messina Touring Group's statement and the eight-of-ten schedule"},
+    {"id":"bbc-macklemore-dropped-2026-09-15","group":"coverage","label":"BBC support-acts report","meta":" · September 15, 2026","usage":"StopAntisemitism's criticism and Pink's Instagram repost"},
     {"id":"ap-removal-2026-09-14","group":"coverage","label":"Associated Press removal report","meta":" · 2026-09-14","usage":"a separate publisher carrying Rolling Stone's Messina statement, plus AP's reporting on Kraft"},
     {"id":"usa-today-kraft-2026-09-14","group":"coverage","label":"USA Today Kraft report","meta":" · 2026-09-14","usage":"Kraft's full statement and NFL-stadium dates"},
     {"id":"ap-support-acts-2026-09-15","group":"coverage","label":"Associated Press supporting-acts report","meta":" · 2026-09-15","usage":"the four departures and their tour roles"},
@@ -791,6 +808,7 @@
   ],
   "coverage_records": [
     "rolling-stone-removal-2026-09-14",
+    "bbc-macklemore-dropped-2026-09-15",
     "ap-removal-2026-09-14",
     "usa-today-kraft-2026-09-14",
     "ap-support-acts-2026-09-15",
@@ -865,13 +883,14 @@
     {"need":"Patch 7 R5: Raymond James contract comparison","status":"admitted_with_limit","plain":"A fresh FOX 13 capture establishes that West's promoter requested the clause, West's team accepted lawsuit liability and the promoter paid stadium expenses. It is used only as a precedent for what a contract at that venue can do, not as evidence of Macklemore's terms. The reviewer-supplied fallback was not used."},
     {"need":"Patch 7 R6: Gillette opening-act refund term","status":"admitted","plain":"A fresh Gillette Stadium Ticketmaster capture contains the exact opening-act refund clause in the served text. The reviewer-supplied fallback was not used."},
     {"need":"Patch 8 R2: Raymond James agreement","status":"official_agreement_not_found","plain":"A fresh registry search and direct searches of Tampa Sports Authority pages found no published copy of the executed Ikon Global agreement. The story attributes the clause, liability and payments to the admitted FOX 13 report and does not present the contract as independently inspected."},
-    {"need":"Patch 8 R3: official ownership and operation records","status":"admitted","plain":"Fresh direct captures from the Georgia World Congress Center Authority, City of Arlington, Indiana Stadium and Convention Building Authority and Tampa Sports Authority establish public ownership and identify the operators of four named stadiums. No reviewer fallback copy was used. The Tampa timeline places the Raymond James Stadium ownership transfer in 2003, so the story follows that date rather than the review brief's 1998 wording."}
+    {"need":"Patch 8 R3: official ownership and operation records","status":"admitted","plain":"Fresh direct captures from the Georgia World Congress Center Authority, City of Arlington, Indiana Stadium and Convention Building Authority and Tampa Sports Authority establish public ownership and identify the operators of four named stadiums. No reviewer fallback copy was used. The Tampa timeline places the Raymond James Stadium ownership transfer in 2003, so the story follows that date rather than the review brief's 1998 wording."},
+    {"need":"Patch 9 S2: Pink repost and StopAntisemitism description","status":"admitted_from_existing_registry_capture","plain":"The BBC article was already captured by the registry on September 15, read in full, pinned and used for its description of StopAntisemitism as a campaign group and Pink's Instagram repost. No fallback copy was used."}
   ],
   "authored_sections": ["what-happened", "why-removed", "the-catch", "why-others-left", "what-happened-next", "unknowns", "records"],
   "steps": {
-    "sources_admitted": {"done":true,"evidence":"Forty-one primary, official and coverage records have registry capture runs, repository pins, text siblings, recomputed hashes and byte-exact quote spans."},
+    "sources_admitted": {"done":true,"evidence":"Forty-two primary, official and coverage records have registry capture runs, repository pins, text siblings, recomputed hashes and byte-exact quote spans."},
     "derived_numbers_computed": {"done":true,"evidence":"The data module computes 27 official North American dates, 10 dates after September 14, two MetLife dates and four departing supporting acts, and carries the sourced eight scheduled Macklemore appearances."},
-    "outlet_claims_verified": {"done":true,"evidence":"Eighteen coverage records were checked against the artist statements, official schedule, venue records, governing law and CAIR announcement; the missing Sheeran-tour contracts and first-party promoter and Kraft routes remain typed in the needs ledger."},
+    "outlet_claims_verified": {"done":true,"evidence":"Nineteen coverage records were checked against the artist statements, official schedule, venue records, governing law and CAIR announcement; the missing Sheeran-tour contracts and first-party promoter and Kraft routes remain typed in the needs ledger."},
     "section_grammar": {"done":true,"evidence":"The story follows the reader model in order: What happened, Why Macklemore was removed, The catch, Why the other artists left, What happened next, What we do not know yet, and The records. Each question-tree section has more than two passages."},
     "chip_vocabulary": {"done":true,"evidence":"All source details use SourcedBlock kind record; no page-specific chip label is introduced."},
     "live_elements_guarded": {"done":true,"evidence":"The page contains no live element. The official schedule and venue pages carry fixed capture vintages."},

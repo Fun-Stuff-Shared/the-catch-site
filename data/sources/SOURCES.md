@@ -1718,3 +1718,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/indiana-lucas-oil-stadium-authority-2026-09-20.txt | 1966 | 3983dbbdf5893423 |
 | data/sources/ed-sheeran-tour/tampa-raymond-james-ownership-timeline-2026-09-20.html | 216269 | 880194b5f4c0b604 |
 | data/sources/ed-sheeran-tour/tampa-raymond-james-ownership-timeline-2026-09-20.txt | 8534 | c5137ec2a948f2cb |
+| data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.html | 441444 | e2f6b9bf6c73112c |
+| data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.txt | 7399 | 55a717e3b8a3d6f6 |

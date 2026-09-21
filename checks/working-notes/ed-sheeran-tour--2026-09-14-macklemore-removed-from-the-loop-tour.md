@@ -777,3 +777,34 @@ The patch is limited to R1 through R3 and S1 through S8. Sibling counts state ho
 | S7 | 2 Philadelphia outcome locations | Patched. The narrative keeps the full outcome; the timeline row now says only that the show proceeded without an opener. |
 | S8 | 1 prior-lineup-comparison sentence | Patched by deletion. It answered no active reader question and did not add to the unpublished-contract unknowns. |
 | HELD | 7 reserved classes | Held with reason. Reading-mode labels, the bare record chip, section kickers, `How we check .`, saved-date lines, the sources-list introduction and the `Story updated` line were not changed. |
+
+## Patch round 9 bounded checks
+
+- MetLife statement: CBS New York recorded no response to its request by September 7. The 19 coverage records, AJC account, venue statements and official venue records in the manifest were checked through September 20, and no public MetLife Stadium statement appears in that bounded set.
+- Earlier Loop Tour support-lineup change: the official 27-date schedule, artist statements, tour coverage and the existing fresh-search census identify no earlier support-lineup change on this tour.
+- Concrete venue-control contract example: the official contract routes and admitted coverage contain no executed Sheeran-tour agreement. The West agreement at Raymond James Stadium is the only concrete contract example described in the public accounts, and its terms remain attributed to FOX 13 because the agreement itself is not pinned.
+
+## Patch round 9 ledger
+
+The patch is limited to R1 through R4 and S1 through S5. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved the h1 and state label. Neither was changed. |
+| R2 | 1 MetLife response paragraph | Patched. CBS New York is attributed only for the lack of response to its request by September 7. The separate September 20 absence is bounded to the venue statements and coverage checked. |
+| R3 | 1 Raymond James contract paragraph | Patched. The FOX 13 account now says that the Tampa Sports Authority collected the stated fees while West's team kept the remaining revenue, which the report said could exceed $20 million. |
+| R4 | 1 earlier-change boundary | Patched. A short bounded-absence sentence in the unknowns says the Loop Tour has no earlier support-lineup change on record and therefore no prior tour case to compare. |
+| S1 | 1 aid-pledge detail paragraph | Patched. The AP Philadelphia outcome pin now carries the Kraft spokesperson's statement that Kraft and Sheeran had each agreed to donate $2 million without specifying where the money would go. |
+| S2 | 1 first Pink and StopAntisemitism paragraph | Patched. StopAntisemitism is introduced as a pro-Israel campaign group, and Pink is said to have reposted its Instagram message. The BBC publication-day registry capture carries both points; Rolling Stone carries Pink's later statement. |
+| S3 | 1 Aaron Rowe follow-up block | Patched. The September 18 follow-up block now sits immediately after Rowe's first withdrawal statement. |
+| S4 | 1 September 19 timeline row | Patched. The row identifies the Philadelphia show as the first Loop Tour concert after the lineup change instead of repeating that it had no opener. |
+| S5 | 1 Raymond James contract paragraph | Patched. The paragraph opens by identifying the West agreement as the only concrete contract example in the public accounts and says it concerned a different artist at the same stadium. The agreement itself remains unavailable, and every term stays attributed to FOX 13. |
+| HELD | 11 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, per-record captured lines, captions, reading modes, section kickers, the `Coverage checked` group, the KPI position and the unpublished Ikon Global agreement were not changed. |
+
+### Patch round 9 admitted passage
+
+- `bbc-macklemore-dropped-2026-09-15`: registry run `quarry-wire-scheduled-20260915T220005Z`; raw SHA-256 `e2f6b9bf6c73112c3b2d93375447125a38ac0732c4d554b618c8978d3a99d112`; text SHA-256 `55a717e3b8a3d6f6cf7501baa47d77527c7bbed1aa47f0f631e53c87c44c86b6`; no fallback used.
+
+| Passage | Grade | Disposition |
+|---|---:|---|
+| StopAntisemitism was described as a campaign group that accused Macklemore of ambushing fans, and Pink reposted its message on Instagram. | B | Used in What happened to identify the group and the action before Macklemore's reference to Pink. |
