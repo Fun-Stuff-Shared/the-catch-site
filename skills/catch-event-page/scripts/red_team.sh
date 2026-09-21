@@ -11,7 +11,10 @@ html="$root/dist/events/$story/index.html"
 page="$root/src/pages/events/$story.astro"
 manifest="$root/checks/manifests/$subject--$slug.json"
 rm="$root/checks/reader-models/$subject--$slug.md"
+ledger="$root/checks/working-notes/$subject--$slug.md"
+held="$root/checks/working-notes/$subject--$slug-held.md"
 out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-redteam.md}"
+prior="$(ls "$root/checks/audits/$subject--$slug-"*-redteam*.md 2>/dev/null | grep -v -F "$out" | grep -v '\.log$' | tr '\n' ' ')"
 [ -f "$html" ] || { echo "build first: $html is missing" >&2; exit 2; }
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
 mkdir -p "$(dirname "$out")"
@@ -25,9 +28,15 @@ Find, and rank by how much a reader would be misled:
 3. Source authority: a fact credited to an outlet that sits in a pinned primary; a lineage counted twice (syndicated copies, a shared briefing); a document that exists and is not pinned.
 4. What a stranger cannot follow: a term used before its sentence, a number without its comparison, an opening that does not say what happened.
 
-For every finding: a severity tag (Critical, Major, Minor), the page bytes, the record (URL or file path) with the exact bytes that support the finding, and the correct account in one or two sentences. Do not report style preferences, and do not report a finding you did not verify at a record. End with exactly one line: VERDICT: SHIP if there is no Critical or Major finding, otherwise VERDICT: NO-SHIP.
+For every finding: a severity tag (Critical, Major, Minor), the page bytes, the record (URL or file path) with the exact bytes that support the finding, and the correct account in one or two sentences. Do not report style preferences, and do not report a finding you did not verify at a record.
 
-The author's reader model is at $rm when that file exists: seven one-sentence answers (what happened, why it matters, the easiest wrong reading, the one concept, what changed, what is unresolved, the questions a stranger asks next) and a materiality grade A to D for every passage of the record (A changes the event, B changes the reading, C strengthens the proof, D changes no answer). Grade every omission against it: a passage the author graded A or B that the story view does not carry is Major; a passage graded C or D that in fact changes one of the seven answers is Major against the grade, and you name which answer changes; an omitted C is Minor; D is never a finding. The story view is meant to carry A and B only, so do not report C or D material as missing from the story when Just the facts or Show the work carries it. When the file does not exist, say so and grade as before.
+Severity is about what the page says, not what it could have said. Critical: a sentence on the page that is false against its own record, or an altered quotation. Major: a sentence the page states that its record does not support (wider actor or scope, a mechanism the record does not give, a forecast written as an outcome, a superlative the record does not make), or a passage the author's reader model graded A that no reading mode carries. Minor, never higher: an omission of any other kind, a fact credited to an outlet when a pinned primary carries it, an instrument that exists and is not pinned while the page correctly attributes the outlet it relies on, a term before its sentence. A page can be complete without carrying every record that exists.
+
+The author's reader model is at $rm when that file exists: seven one-sentence answers (what happened, why it matters, the easiest wrong reading, the one concept, what changed, what is unresolved, the questions a stranger asks next) and a materiality grade A to D for every passage of the record (A changes the event, B changes the reading, C strengthens the proof, D changes no answer). Use it to grade omissions: A omitted from every mode is Major; B omitted from the story view is Minor and you name which answer changes; C and D are never findings. When the file does not exist, say so.
+
+The review log. Earlier reports on this page: ${prior:-none}. The author's ledger of what each round changed and why: $ledger when it exists. The editor's held list, items decided and not open to review: $held when it exists. Read all three before you write. Do not report an item on the held list. Do not repeat a finding from an earlier report unless the ledger says it was patched and the page still carries the defect; then tag it "residual" with the ledger line. Tag every other finding "new". A report that re-lists settled items is a failed report.
+
+End with exactly one line: VERDICT: SHIP if there is no Critical or Major finding, otherwise VERDICT: NO-SHIP.
 
 Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output.
 PROMPT
