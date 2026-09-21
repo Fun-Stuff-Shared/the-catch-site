@@ -59,9 +59,16 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    go in the same list as the red team's, not held back for a later round.
 7. **Patch rounds.** The author patches, runs entailment `--since` the commit the round
    started from and the lints, commits. The reviewer reads the patched page, reruns the
-   stranger read on it (`scripts/stranger_read.sh`), and either sends the next numbered
-   list or decides: cut a sentence, hold an item with its reason on the ledger, or kill the
-   story. Rounds are not capped; each is timed from its run markers.
+   red team and the stranger read on it, and either sends the next numbered list or
+   decides: cut a sentence, hold an item with its reason, or kill the story. A held item
+   goes on `checks/working-notes/<subject>--<slug>-held.md`, one line each with the reason;
+   both reviewer scripts read that file, the author's ledger, and every earlier report, and
+   label each finding new, repeat, or residual. The reviewer decides the two things the
+   reviewers cannot: when a source chain is deep enough (a page correctly attributing an
+   outlet is complete without the instrument behind it), and when a stranger's cut beats a
+   red team's expansion (the stranger is the reader; the red team is not). Rounds are not
+   capped, but the round after the first report with no new Critical or Major finding is
+   the last; what remains is held or cut, not patched again.
 8. **Before the push:** re-run the capture search on the story terms dated on or after the
    run and disposition the results; refresh the state views for the event and commit them;
    hosted-style build from a git archive with `CATCH_STATE_SOURCE=/nonexistent`; a STAGED
