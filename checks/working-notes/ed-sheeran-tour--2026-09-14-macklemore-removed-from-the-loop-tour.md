@@ -855,3 +855,27 @@ The patch is limited to R1, R2 and S1 through S8. Sibling counts state how many 
 - The capture timestamp is provenance metadata, not part of the event narrative.
 - Myles Smith and Ellie Banke appear on dates before the September 14 removal and do not bear on the corrected roles for the remaining dates.
 - The full Seminole Hard Rock Hotel & Casino venue name does not change the two Hollywood dates or their Aaron Rowe-only support listing.
+
+## Patch round 11 bounded checks
+
+- Replacement wording: the story caption, data module rows and manifest `story_sources` usage lines were searched for `replacement`, `replacements` and `would-be replacement`. The caption had one current-page hit and was corrected. The module rows and records-list usage lines had no hits. Historical manifest and working-note entries retain the wording only to document earlier review dispositions.
+- Refund terms: the Gillette Stadium terms govern its Account Manager ticket site. The saved standard Ticketmaster purchase policy does not carry the opening-act clause, so the story does not say the Account Manager terms governed every original Loop Tour ticket.
+- Earlier comparison: the absence is bounded to an earlier comparable removal followed by supporting-artist departures in the tour records dated through September 20.
+
+## Patch round 11 ledger
+
+The patch is limited to R1 through R4, S1 through S4 and the two provenance notes. Sibling counts state how many same-class locations were checked across the page, data module and records-list usage lines before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved the h1 and state label. Neither was changed. |
+| R2 | 1 caption hit, 0 module-row hits and 0 records-list usage hits | Patched. The caption now describes the artists' scheduled tour roles without repeating AP's superseded replacement characterization. AEG's first-party schedule remains controlling. |
+| R3 | 1 unsupported superlative | Patched. The unknowns sentence no longer calls this the first lineup change. It states the narrower absence of an earlier comparable removal followed by supporting-artist departures in records dated through September 20. |
+| R4 | 1 Account Manager clause and 1 general attorney-general statement | Patched. The clause is limited to the Gillette Account Manager ticket site, the records do not establish its coverage of every original ticket, and the attorney general's broader statement remains the account applying to ticket purchasers generally. The Massachusetts statutory question remains open. |
+| S1 | 2 mechanism paragraphs | Patched. The AP attribution and the stakes now appear in one paragraph; the duplicate mechanism paragraph was removed. |
+| S2 | 1 secondary-stage description | Patched. The sentence follows the Inquirer's description of a secondary stage used at other concert stops and does not call it smaller or place it among the crowd. |
+| S3 | 1 MetLife performance paragraph | Patched. A September 4 bridge now identifies the first MetLife show as the event followed by the objections. |
+| S4 | 1 near-top MetLife performance paragraph | Patched. It names the words, Gaza images and Macklemore's attributed account of the Palestinian-flag image, each from an existing pin. |
+| Minor: FOX 13 provenance | 1 Raymond James contract paragraph | Confirmed, no patch. The paragraph already attributes the contract terms to FOX 13, and the executed agreement is not presented as public. |
+| Minor: CAIR provenance | 1 CAIR filing paragraph | Confirmed, no patch. The story says CAIR-Philadelphia announced that it had submitted the request; it does not present the release as the request itself. |
+| HELD | 12 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, captions other than the reviewed lineup caption, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and the Ye contract paragraph were not changed. |
