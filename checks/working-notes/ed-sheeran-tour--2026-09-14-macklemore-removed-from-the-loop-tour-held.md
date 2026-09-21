@@ -9,3 +9,4 @@
 - KPI strip position above the story: shared site pattern.
 - "Coverage checked" group and table captions: shared site pattern.
 - Messina's "hundreds of thousands of fans" figure: attributed estimate, no denominator exists in any record; stays attributed.
+- The Raymond James / Kanye West contract comparison paragraph (the FOX 13 terms and the Tampa Bay Times result): stays in its current form pending the editor's own read; cut asks are not open.
