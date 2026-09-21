@@ -74,6 +74,10 @@ A stranger arrives having seen that Macklemore was removed from Ed Sheeran's tou
 | `philadelphia-inquirer-loop-tour-review-2026-09-20` | Sheeran apologized for making mistakes, introduced a five-member backup band assembled on three days' notice and said fear of what could happen in the audience led him to remove the secondary stage. | A | 1, 5, 6 |
 | `fox13-raymond-james-west-contract-2026-06-18` | West's promoter requested the Raymond James clause and paired it with lawsuit liability and stadium payments; it shows what a negotiated contract at that venue can do, not Macklemore's terms. | B | 4 |
 | `gillette-ticketmaster-terms-2026-09-20` | Gillette Stadium's Ticketmaster terms deny refunds when an opening act changes or is canceled, while the Massachusetts advertised-description statute remains a separate unresolved question. | B | 6 |
+| `gwcca-mercedes-benz-stadium-ownership-2026-09-20` | The Georgia World Congress Center Authority owns Mercedes-Benz Stadium, which the Falcons and Arthur Blank organization operates and manages. | B | 4 |
+| `arlington-att-stadium-lease-2026-04-21` | Arlington owns AT&T Stadium, which the Dallas Cowboys operate and maintain. | B | 4 |
+| `indiana-lucas-oil-stadium-authority-2026-09-20` | Indiana's stadium authority owns Lucas Oil Stadium, which the Capital Improvement Board of Managers of Marion County operates. | B | 4 |
+| `tampa-raymond-james-ownership-timeline-2026-09-20` | Hillsborough County owns Raymond James Stadium, which the Tampa Sports Authority manages. | B | 4 |
 | `macklemore-removal-statement-2026-09-14` | Gap L15: “thirteen years.” | D | |
 | `macklemore-removal-statement-2026-09-14` | Gap L27: “three years.” | B | 3 |
 | `macklemore-removal-statement-2026-09-14` | Gap L42: “90,000 people,” without an admitted attendance denominator. | D | |

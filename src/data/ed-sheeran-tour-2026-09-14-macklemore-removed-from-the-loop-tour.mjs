@@ -92,7 +92,7 @@ export const chronologyRows = [
   ["Sept. 15", "Sheeran posts that the removal was the promoter's decision. Finneas, Aaron Rowe, Lukas Graham and Beoga announce their departures."],
   ["Sept. 17", "CAIR-Philadelphia announces a public-records request about the Philadelphia decision."],
   ["Sept. 18", "The Massachusetts attorney general's office reviews at least 25 complaints requesting Gillette Stadium refunds."],
-  ["Sept. 19", "The Philadelphia concert proceeds. Sheeran starts without an opener, musicians join later, and he addresses Gaza and venue preapproval."],
+  ["Sept. 19", "The Philadelphia concert proceeds without an opener."],
 ];
 
 export const seriesReceipt = {

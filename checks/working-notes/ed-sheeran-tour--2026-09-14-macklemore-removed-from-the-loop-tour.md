@@ -738,3 +738,42 @@ The patch is limited to R1 through R6 and S1 through S6. Sibling counts state ho
 | S5 | 1 Kraft rationale block | Patched. One paragraph states Kraft's platform-for-hate-speech line. A second quotes the material and rhetoric he pointed to, then preserves his limits concerning Palestinian suffering, advocacy and Hamas. |
 | S6 | 1 coverage event in the timeline and 3 CAIR references | Patched. The AP coverage event was removed from the timeline. The CAIR body and timeline entries remain; the detail-block repetition was removed, and the unresolved Philadelphia communications sought by CAIR were folded into the unknowns sentence. |
 | HELD | 7 reserved classes | Held with reason. Reading-mode labels, the bare record chip, section kickers, `How we check .`, saved-date lines, the sources-list introduction and the `Story updated` line were not changed. |
+
+## Patch round 8 record checks
+
+### Official stadium ownership and operation records
+
+- Fresh registry run: `capture-oneoff-20260921T002240Z`
+- Fallback disposition: no fallback copy was used because all four fresh direct captures returned HTTP 200.
+
+| Record | Capture result | Passage | Grade |
+|---|---|---|---|
+| `gwcca-mercedes-benz-stadium-ownership-2026-09-20` | 83089 raw bytes, SHA-256 `5c0e5da15108afbf793fdf480d80699fd29f92c7eacc692bb4608c5b306c83dc`; 7838 text bytes, SHA-256 `63af56f9ae0c2b3fceeb6109138d1dace0fa47ab85724e30b997f1ea99dd2b9f` | The Georgia World Congress Center Authority owns Mercedes-Benz Stadium, and the Falcons and Arthur Blank organization operates and manages it. | B |
+| `arlington-att-stadium-lease-2026-04-21` | 92313 raw bytes, SHA-256 `55f0cf4d10d35d332174bb2bdfbf911b2f039d10d885baab212decbc7c53de49`; 4940 text bytes, SHA-256 `0122d98eede9db71302aa5c9592c6f8a2a6d45e9b5ed1deccfc911e3666ed0e8` | Arlington owns AT&T Stadium, and the Dallas Cowboys operate and maintain it. | B |
+| `indiana-lucas-oil-stadium-authority-2026-09-20` | 23377 raw bytes, SHA-256 `78ea8363e80c57e1c4f5176cc0f13ba12e1c8a325319ecac67020002c2001c65`; 1966 text bytes, SHA-256 `3983dbbdf5893423c7b5a444b073b7c4ea20346b9798e1866ffd0d514dc420f2` | Indiana's stadium authority owns Lucas Oil Stadium, and the Capital Improvement Board of Managers of Marion County operates it. | B |
+| `tampa-raymond-james-ownership-timeline-2026-09-20` | 216269 raw bytes, SHA-256 `880194b5f4c0b6044f05bcef9aeee375af62df942ab65bec605edce9e1e26b2e`; 8534 text bytes, SHA-256 `c5137ec2a948f2cb49f70595c3feb2c082ac317551e7b5fa671e25b023075640` | The Tampa Sports Authority transferred Raymond James Stadium ownership to Hillsborough County in 2003 and retained management responsibility. | B |
+
+### Patch round 8 bounded checks
+
+- Raymond James agreement: a fresh registry search and direct searches of Tampa Sports Authority pages found no published Ikon Global agreement. The page attributes the clause, liability and payment terms to FOX 13 and does not present the contract as independently inspected.
+- MetLife statement: CBS New York reported no response by September 7. The 18 coverage records, AJC account, venue statements and official venue records checked through September 20 carry no public MetLife Stadium statement.
+- Venue ownership: the four fresh official records above and the existing Philadelphia lease record were checked against Rolling Stone's seven-venue list. Rolling Stone remains the source for the two private venues.
+
+## Patch round 8 ledger
+
+The patch is limited to R1 through R3 and S1 through S8. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved both for the editor. Neither was changed or discussed on the page. |
+| R2 | 1 Raymond James contract-comparison paragraph | Patched. Every contract term, liability allocation and payment figure is now explicitly attributed to FOX 13. No official executed agreement was found, so none was pinned. |
+| R3 | 2 venue-list and ownership paragraphs | Patched from four fresh official captures and the existing Philadelphia lease record. The page identifies all five public ownership interests and states whether the team or a public board operates each venue where the record supplies that distinction. The Tampa source places the ownership transfer in 2003, and no fallback copy was used. |
+| S1 | 2 MetLife performance locations and 1 first Pink mention | Patched. The first MetLife actions now appear before Pink's criticism, so the criticism has a stated object. |
+| S2 | 2 narrative mentions of `Hind's Hall` | Patched. The first mention says the song refers to Columbia University, was written after the 2024 campus protests and is named for five-year-old Hind Rajab, who was killed in Gaza. The later petition mention remains title-only. |
+| S3 | 2 Raymond James and seven-venue-list paragraphs | Patched. Rolling Stone's alleged-objector list now comes first, followed in the same paragraph by the Tampa authority's denial of involvement and its role managing the county-owned stadium. |
+| S4 | 2 MetLife response sentences | Patched. They are one bounded sentence stating that CBS got no reply by September 7 and the stadium had made no public statement by September 20. |
+| S5 | 1 assurance-source sentence | Patched. The paragraph now says in reader words that the Journal did not identify who gave the assurance. |
+| S6 | 2 schedule-denominator descriptions | Patched. The detail block identifies the schedule as the one published when tickets went on sale in September 2025 and says it still listed 27 shows on September 20. |
+| S7 | 2 Philadelphia outcome locations | Patched. The narrative keeps the full outcome; the timeline row now says only that the show proceeded without an opener. |
+| S8 | 1 prior-lineup-comparison sentence | Patched by deletion. It answered no active reader question and did not add to the unpublished-contract unknowns. |
+| HELD | 7 reserved classes | Held with reason. Reading-mode labels, the bare record chip, section kickers, `How we check .`, saved-date lines, the sources-list introduction and the `Story updated` line were not changed. |

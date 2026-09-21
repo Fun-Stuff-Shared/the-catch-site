@@ -1710,3 +1710,11 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/fox13-raymond-james-west-contract-2026-06-18.txt | 3027 | 6ac662bb90f1f8ba |
 | data/sources/ed-sheeran-tour/gillette-ticketmaster-terms-2026-09-20.html | 104295 | aa6ea302ca7bbc47 |
 | data/sources/ed-sheeran-tour/gillette-ticketmaster-terms-2026-09-20.txt | 62132 | f570f45e5f63aeee |
+| data/sources/ed-sheeran-tour/gwcca-mercedes-benz-stadium-ownership-2026-09-20.html | 83089 | 5c0e5da15108afbf |
+| data/sources/ed-sheeran-tour/gwcca-mercedes-benz-stadium-ownership-2026-09-20.txt | 7838 | 63af56f9ae0c2b3f |
+| data/sources/ed-sheeran-tour/arlington-att-stadium-lease-2026-04-21.html | 92313 | 55f0cf4d10d35d33 |
+| data/sources/ed-sheeran-tour/arlington-att-stadium-lease-2026-04-21.txt | 4940 | 0122d98eede9db71 |
+| data/sources/ed-sheeran-tour/indiana-lucas-oil-stadium-authority-2026-09-20.html | 23377 | 78ea8363e80c57e1 |
+| data/sources/ed-sheeran-tour/indiana-lucas-oil-stadium-authority-2026-09-20.txt | 1966 | 3983dbbdf5893423 |
+| data/sources/ed-sheeran-tour/tampa-raymond-james-ownership-timeline-2026-09-20.html | 216269 | 880194b5f4c0b604 |
+| data/sources/ed-sheeran-tour/tampa-raymond-james-ownership-timeline-2026-09-20.txt | 8534 | c5137ec2a948f2cb |
