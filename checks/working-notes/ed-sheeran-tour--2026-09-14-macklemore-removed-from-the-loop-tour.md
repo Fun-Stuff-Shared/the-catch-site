@@ -910,3 +910,30 @@ The patch is limited to R1, R2 and S1 through S4. Sibling counts state how many 
 | S3 | 1 venue-page edit-date clause | Patched. The narrative keeps the September 20 advertised lineup and removes the last-changed metadata. The records-list usage line now describes only the date and lineup still advertised. |
 | S4 | 3 public-contract absence locations | Patched. A data-absence sentence near the dispute says the promoter contract has not been published and its content and removal terms are unknown. The later duplicate contract-party sentence was removed; the bounded unknowns statement and the Raymond James comparison remain for their separate functions. |
 | HELD | 11 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and the Ye comparison paragraph apart from R2 were not changed. |
+
+## Patch round 13 bounded checks
+
+- Tour FAQ refund scope: the official FAQ was read in full. It was searched for `lineup`, `opening act`, `support act`, `artist`, `removed`, `cancelled`, `canceled`, `refund` and `exchange`. The only refund answer at lines 238 to 240 addresses buyers who changed their minds. No passage addresses a refund request after an advertised act was removed.
+- Raymond James agreement: the patch 8 direct and registry searches remain the bounded check. No published copy of the executed Ikon Global agreement was found through September 20, so every contract term remains FOX 13's account.
+- Sheeran video chain: the Instagram reel pin identifies the post as `Tonight in Philadelphia` but contains no transcript. The Guardian raw page credits its clip to `Ed Sheeran via Instagram`, and the Guardian text pin carries `catastrophic and unjustifiable`.
+- MetLife statement: CBS New York recorded no reply to its request by September 7. The venue statements and coverage checked through September 20 carry no public statement from MetLife Stadium.
+- Earlier comparison: the official schedule, artist statements and tour coverage checked through September 20 identify no earlier comparable removal followed by supporting-artist departures.
+- Gillette terms: the saved terms govern Gillette Stadium's Account Manager ticket site. The standard Ticketmaster purchase policy does not carry the opening-act clause, and the records do not establish whether the Account Manager terms covered every original Loop Tour ticket.
+- Remaining support lineup: the official schedule and venue records checked through September 20 identify no announced support lineup for the September 25 through November 7 dates.
+
+## Patch round 13 ledger
+
+The patch is limited to R1 through R4 and S1 through S5. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved the h1 and state label. Neither was changed or discussed on the page. |
+| R2 | 1 FAQ final-sale statement | Patched. The sentence now gives the changed-mind question answered by the FAQ and states the bounded absence of any FAQ line addressing removal of an advertised act. The official Loop Tour FAQ supports both the question and answer. |
+| R3 | 1 Raymond James contract paragraph | Patched. The page tells readers that the contract itself had not been published by September 20 and that its terms remain FOX 13's account. The existing `official_agreement_not_found` receipt supplies the bounded absence. |
+| R4 | 1 Sheeran Gaza quotation | Patched. The Instagram reel is cited only for Sheeran's Philadelphia post. The Guardian is named and cited as the publisher carrying his words, consistent with its raw credit to Ed Sheeran via Instagram. |
+| S1 | 1 Wall Street Journal assurance sentence | Patched. The same sentence now identifies the unnamed person as the Journal's source before presenting the assurance. |
+| S2 | 3 search-shaped absence sentences | Patched. The narrative states the dated public facts about MetLife Stadium, the absence of an earlier comparable Loop Tour case and uncertainty over the Account Manager terms. The search denominators remain in the bounded checks above and the proof records. |
+| S3 | 1 first AEG mention | Patched. AEG Presents is introduced as the company whose published Loop Tour schedule lists the support acts. Its first-party schedule supports the role. |
+| S4 | 4 appearances of the ten-show count | Patched in the editable narrative and detail layers. The KPI and first narrative use remain; the later detail repetition was removed. The remaining table caption is reviewer-held and was not changed. |
+| S5 | 1 remaining-lineup absence | Patched. The dated sentence now appears in What happened next and tells readers that no support lineup had been announced for the remaining September 25 through November 7 dates. |
+| HELD | 12 reserved classes | Held with reason. The h1 and state label, the Ye paragraph apart from R3, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group and KPI position were not changed. |
