@@ -34,8 +34,8 @@ const metLifeDates = tourDates.filter((row) => row.venue === "MetLife Stadium");
 const macklemoreScheduledRemainingShows = 8;
 const withdrawingActs = [
   ["Finneas", "South American support dates", "Withdrew"],
-  ["Aaron Rowe", "Support act (would-be replacement for Macklemore)", "Withdrew"],
-  ["Lukas Graham", "Support act (would-be replacement for Macklemore)", "Withdrew"],
+  ["Aaron Rowe", "Support act billed alongside Macklemore", "Withdrew"],
+  ["Lukas Graham", "Support act billed alongside Macklemore", "Withdrew"],
   ["Beoga", "Band during Sheeran's set", "Withdrew"],
 ];
 

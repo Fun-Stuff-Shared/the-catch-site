@@ -808,3 +808,50 @@ The patch is limited to R1 through R4 and S1 through S5. Sibling counts state ho
 | Passage | Grade | Disposition |
 |---|---:|---|
 | StopAntisemitism was described as a campaign group that accused Macklemore of ambushing fans, and Pink reposted its message on Instagram. | B | Used in What happened to identify the group and the action before Macklemore's reference to Pink. |
+
+## Patch round 10 bounded checks
+
+- Support-role wording: the page, data module, timeline, The catch and unknowns were searched for `replacement`, `replacements` and `would-be replacement`. The first-party AEG schedule controls over AP's paraphrase. The narrative and two module roles were corrected. The one remaining page use is the reviewer-held table caption, which expressly attributes the description to AP.
+- MetLife public statement: CBS New York reported no response to its own request by September 7. The separate September 20 absence remains a bounded data-absence statement about MetLife Stadium.
+- Earlier lineup changes: the official tour schedule and the admitted artist, venue and coverage records show no earlier support-lineup change on the Loop Tour.
+
+## Patch round 10 ledger
+
+The patch is limited to R1, R2 and S1 through S8. Sibling counts state how many same-class locations were checked across the page and data module before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved the h1 and state label. Neither was changed. |
+| R2 | 4 replacement descriptions | Patched. The narrative and two module roles now follow AEG's first-party schedule: Rowe and Lukas Graham were billed alongside Macklemore, then would have been the remaining advertised support. The held table caption remains because it attributes the superseded description to AP. No timeline or unknowns sentence called them replacements. |
+| S1 | 1 Macklemore quotation transition | Patched. The unsupported connective `added` was removed; the sentence directly attributes the quotation to Macklemore. |
+| S2 | 2 first-use introductions | Patched. The Israeli American Council is introduced as an advocacy group, and AJC's claimed contact is described as contact with MetLife Stadium rather than using `the Meadowlands` without explanation. |
+| S3 | 1 later Kraft reference | Patched. The later section briefly reintroduces Robert Kraft as the Gillette Stadium owner. |
+| S4 | 1 schedule-vintage sentence | Patched. The September 2025 ticket-sale date and the schedule's September 20 status now appear in separate sentences. |
+| S5 | 1 Raymond James contract paragraph | Patched. The paragraph opens with the event: Raymond James Stadium had booked a different artist under terms that FOX 13 reported limited the authority's cancellation power. All contract details remain attributed to FOX 13. |
+| S6 | 1 seven-venue allegation sentence | Patched. The sentence identifies the venue objection as Messina's claim, as reported by Rolling Stone. |
+| S7 | 2 method-voiced absence sentences | Patched. The story bounds MetLife Stadium's silence to the venue statements and coverage dated through September 20, and says this was the Loop Tour's first support-lineup change on record. Both retain `data-absence`. |
+| S8 | 1 stakes sentence | Patched. A cited sentence near the top explains how venue, promoter and headliner power can shape what a stadium audience hears, using AP's `deals with venues` wording. |
+| HELD | 10 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group and KPI position were not changed. The Ye contract paragraph remains on the page. |
+
+### Census line: `aeg-loop-tour-support-schedule-2026-09-21`
+
+- URL: `https://amex.aegpresents.com/edsheeran/`
+- Publisher: AEG Presents
+- Registry run: `capture-oneoff-20260921T014715Z`
+- Capture method and outcome: Scrapling browser-profile fetch, HTTP 200, `body_captured`
+- Raw bytes: `120535`
+- Raw SHA-256: `b0bfe56c136b7e16a9c62f94d23b7a19db02a43587d8a400b548898127133778`
+- Repository text SHA-256: `ff312bc114955a50c54fb07dfbf616036d9879d3844679e8b8ce9dac9ed2f37c`
+- Captured at: `2026-09-21T01:47:16.893661Z`
+- HTTP Last-Modified checked fresh: `Mon, 06 Oct 2025 19:05:33 GMT`
+- Fallback: not used
+
+| Passage | Grade | Disposition |
+|---|---:|---|
+| AEG's schedule billed Macklemore, Lukas Graham and Aaron Rowe together on all eight remaining dates that included Macklemore, while the two Hollywood dates listed Aaron Rowe alone. | A | Used to correct the narrative and data table roles. AP's `would have been replacements` wording remains only in the held caption and is explicitly attributed to AP. |
+
+### Patch round 10 pin-gap disposition
+
+- The capture timestamp is provenance metadata, not part of the event narrative.
+- Myles Smith and Ellie Banke appear on dates before the September 14 removal and do not bear on the corrected roles for the remaining dates.
+- The full Seminole Hard Rock Hotel & Casino venue name does not change the two Hollywood dates or their Aaron Rowe-only support listing.

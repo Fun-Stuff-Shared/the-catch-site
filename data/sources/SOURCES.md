@@ -1720,3 +1720,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/tampa-raymond-james-ownership-timeline-2026-09-20.txt | 8534 | c5137ec2a948f2cb |
 | data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.html | 441444 | e2f6b9bf6c73112c |
 | data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.txt | 7399 | 55a717e3b8a3d6f6 |
+| data/sources/ed-sheeran-tour/aeg-loop-tour-support-schedule-2026-09-21.html | 120535 | b0bfe56c136b7e16 |
+| data/sources/ed-sheeran-tour/aeg-loop-tour-support-schedule-2026-09-21.txt | 3199 | ff312bc114955a50 |
