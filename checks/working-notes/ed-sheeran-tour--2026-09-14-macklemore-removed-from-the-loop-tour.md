@@ -879,3 +879,34 @@ The patch is limited to R1 through R4, S1 through S4 and the two provenance note
 | Minor: FOX 13 provenance | 1 Raymond James contract paragraph | Confirmed, no patch. The paragraph already attributes the contract terms to FOX 13, and the executed agreement is not presented as public. |
 | Minor: CAIR provenance | 1 CAIR filing paragraph | Confirmed, no patch. The story says CAIR-Philadelphia announced that it had submitted the request; it does not present the release as the request itself. |
 | HELD | 12 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, captions other than the reviewed lineup caption, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and the Ye contract paragraph were not changed. |
+
+## Patch round 12 source admission
+
+### Tampa Bay Times Ye concert revenue result
+
+- Original-route check: the Tampa Bay Times search route returned no matching article, and two likely direct article paths returned HTTP 404.
+- Live republication: `https://www.arcamax.com/entertainment/entertainmenttoday/s-4270652`
+- Fresh registry run: `capture-oneoff-20260921T030505Z`
+- Result: HTTP 200, 40786 raw bytes, SHA-256 `8dbbc7479cbcf13b541b58e256eac9ebbdc783002005b85ad0ee270216fa2331`
+- Repository text: 2783 bytes, SHA-256 `a8c69fddc8de1855e16051dbb5b2daaf0785b3fafe637e4d7db271c9696e907a`
+- Carrier disclosure: ArcaMax identifies the article as Nina Moske's Tampa Bay Times report and displays the Tampa Bay Times copyright and Tribune Content Agency distribution notice.
+- Fallback disposition: the reviewer-supplied copy was not used because the fresh ArcaMax fetch succeeded.
+
+| Passage | Grade | Disposition |
+|---|---:|---|
+| The Tampa Sports Authority made an estimated $3.44 million from the two June Ye concerts. | B | Used to replace the pre-concert revenue forecast with the reported August outcome. |
+| Food, drink and parking spending, plus part of merchandise and ticket sales, went to the authority. | B | Used to state the reported post-concert revenue streams. |
+
+## Patch round 12 ledger
+
+The patch is limited to R1, R2 and S1 through S4. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved the h1 and state label. Neither was changed. |
+| R2 | 1 forecast presented as an outcome | Patched. The FOX 13 figure is now explicitly a pre-concert forecast. A fresh live ArcaMax republication of the Tampa Bay Times report supplies the estimated $3.44 million post-concert result and the authority's reported revenue streams. The fallback copy was not used. |
+| S1 | 1 unclear authority reference | Patched. The AP paragraph now names the authority divided among venue, promoter and headliner. |
+| S2 | 1 three-clause summary in The catch | Patched. The paragraph is one sentence distinguishing the two claims about who made the removal decision from Messina's narrower statement that venues had rejected the lineup. |
+| S3 | 1 venue-page edit-date clause | Patched. The narrative keeps the September 20 advertised lineup and removes the last-changed metadata. The records-list usage line now describes only the date and lineup still advertised. |
+| S4 | 3 public-contract absence locations | Patched. A data-absence sentence near the dispute says the promoter contract has not been published and its content and removal terms are unknown. The later duplicate contract-party sentence was removed; the bounded unknowns statement and the Raymond James comparison remain for their separate functions. |
+| HELD | 11 reserved classes | Held with reason. The h1 and state label, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and the Ye comparison paragraph apart from R2 were not changed. |

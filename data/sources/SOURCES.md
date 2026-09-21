@@ -1722,3 +1722,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/coverage/bbc-macklemore-dropped-2026-09-15.txt | 7399 | 55a717e3b8a3d6f6 |
 | data/sources/ed-sheeran-tour/aeg-loop-tour-support-schedule-2026-09-21.html | 120535 | b0bfe56c136b7e16 |
 | data/sources/ed-sheeran-tour/aeg-loop-tour-support-schedule-2026-09-21.txt | 3199 | ff312bc114955a50 |
+| data/sources/ed-sheeran-tour/coverage/arcamax-tampa-bay-times-ye-result-2026-08-07.html | 40786 | 8dbbc7479cbcf13b |
+| data/sources/ed-sheeran-tour/coverage/arcamax-tampa-bay-times-ye-result-2026-08-07.txt | 2783 | a8c69fddc8de1855 |
