@@ -951,3 +951,26 @@ The patch is limited to R1 and S1 through S5. Sibling counts state how many same
 | S4 | 5 official ownership claims | Patched. Each public ownership or land-ownership claim now has its official authority or lease citation directly after the sentence it supports. |
 | S5 | 1 prior-case absence sentence | Patched. The no-earlier-comparable-removal sentence was cut from the story view. Its bounded search receipt remains in the manifest as provenance, not narrative. |
 | HELD | 11 reserved classes | Held with reason. The h1 and state label, Raymond James contract comparison paragraph, `How we check .`, record chips, `Story updated`, captions, reading modes, per-record captured lines, section kickers, the `Coverage checked` group, KPI position and Messina estimate were not changed. |
+
+## Patch round 15 ledger
+
+The patch is limited to R1 and R2. Sibling counts state how many same-class locations were checked across the story view before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 2 empty catch items | Patched. Each catch heading now has a two-sentence body. The authority item gives Macklemore's, Sheeran's and Messina's different accounts and says none resolves the conflict. The roles item distinguishes the two U.S. support acts, Beoga's work inside Sheeran's set and Finneas's South American booking. The Macklemore statement, Sheeran statement, Rolling Stone Messina passage, AEG schedule and AP roles report support the bodies. |
+| R2 | 10 absence or nonanswer locations | Patched. The unsupported sentence about the reach of Gillette's Account Manager terms was cut. Four sibling claims now name the saved record set and date that bound the absence. Four already named the source, request or capture date and remain unchanged. The held Raymond James comparison paragraph remains unchanged. |
+
+R2 sentence sweep:
+
+- Page line 56 before the patch: patched. The Macklemore contract absence is limited to artist, promoter and venue records saved through September 20. The Sheeran statement supplies the contract-party claim.
+- Page line 88 before the patch: checked, no change. The sentence says The Wall Street Journal did not identify who gave the assurance and cites the Journal pin.
+- Page line 92 before the patch: checked, no change. The sentence limits CBS's unanswered request to September 7 and separately names the MetLife Stadium news-page capture saved September 21.
+- Page line 108 before the patch: held with reason. The Raymond James contract comparison paragraph is reserved in the held list and was not changed.
+- Page line 162 before the patch: checked, no change. The sentence limits the nonanswer to the tour FAQ and cites the changed-mind question and answer.
+- Page line 168 before the patch: patched. The remaining support-lineup absence is limited to the official schedule and venue records saved through September 20.
+- Page line 187 before the patch: patched. The executed-contract absence is limited to artist, promoter and venue records saved through September 20.
+- Page line 189 before the patch: patched. The communications and decision-maker gaps are limited to statements and reports saved through September 20.
+- Page line 191 before the patch: patched. The unsupported claim that the scope of the Gillette terms was not publicly known was cut. The pinned Account Manager terms and Massachusetts statute remain.
+- Page line 193 before the patch: checked, no change. The sentence identifies the attorney general's September 18 statement as the record that did not answer the statutory question.
+- HELD: the h1, state label and every item in the held list were not changed.
