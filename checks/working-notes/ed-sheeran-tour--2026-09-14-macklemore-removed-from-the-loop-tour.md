@@ -667,3 +667,74 @@ The patch is limited to R1 through R5 and S1 through S12. Sibling counts state h
 | S11 | 1 schedule-denominator sentence | Patched. It states 27 North American shows and 10 after September 14 without introducing the unused count of 17. |
 | S12 | 2 consecutive venue-list hedges | Patched. `Alleged` appears only in the sentence introducing Rolling Stone's list; the next sentence refers to those seven venues. |
 | HELD | 7 reserved classes | Held with reason. Reading-mode labels, `In this story`, record chips, section kickers, `How we check .`, saved-date lines and the sources-list introduction were not changed. The visual title was also left unchanged. |
+
+## Patch round 7 record checks
+
+### Philadelphia Inquirer concert review
+
+- Canonical URL: `https://www.inquirer.com/arts/ed-sheeran-the-loop-tour-review-lincoln-financial-field-philadelphia-20260920.html`
+- Fresh registry run: `capture-oneoff-20260920T221924Z`
+- Captured: `2026-09-20T22:19:48.056110Z`
+- Result: HTTP 200, 1128461 raw bytes, SHA-256 `004645a2dddab5a4572942405b47f896bc059dcc3638026d16277639147a91da`
+- Extracted text: 6227 bytes, SHA-256 `51a3654c1e69793f1fbad147794b1506689b9f072b6941406340e6d4cbcbd498`
+- Fallback disposition: not used because the fresh fetch succeeded.
+
+| Passage | Disposition |
+|---|---|
+| Sheeran said he had to make difficult decisions, was making mistakes and was sorry. | Grade A. Used for his exact apology in Philadelphia. |
+| Sheeran introduced a five-member backup band assembled on three days' notice. | Grade A. Used to explain how musicians joined after he began alone. |
+| Sheeran said he removed the secondary stage because he feared what could happen if he stood in the audience. | Grade A. Used as his stated reason, not as an independent finding about the risk. |
+
+### FOX 13 Raymond James contract report
+
+- Canonical URL: `https://www.fox13news.com/news/kanye-west-tampa-concerts-why-bulletproof-contract-prevents-cancellation`
+- Fresh registry run: `capture-oneoff-20260920T232733Z`
+- Captured: `2026-09-20T23:27:46.815010Z`
+- Result: HTTP 200, 194798 raw bytes, SHA-256 `76bd734c691f42236de86bc7e5a04bc9d2d1f44b7dcd90c29e42ea02106dc58c`
+- Extracted text: 3027 bytes, SHA-256 `6ac662bb90f1f8bab7da8fe9adb0c02a2a1863413021739705ae25d2c6d26f0d`
+- Fallback disposition: not used because the fresh fetch succeeded.
+
+| Passage | Disposition |
+|---|---|
+| West's promoter requested the clause barring cancellation based on identity, past statements or political views. | Grade B. Used as a precedent for what a negotiated Raymond James contract can do. |
+| West's team accepted lawsuit liability and the promoter agreed to pay more than $2 million in stadium expenses plus $5 per ticket. | Grade B. Used to state the consideration and allocation that accompanied the clause. |
+| The clause establishes Macklemore's contract terms. | Refused. The record concerns a different promoter and artist and cannot establish any Sheeran-tour term. |
+
+### Gillette Stadium Ticketmaster terms
+
+- Canonical URL: `https://am.ticketmaster.com/gillettestadium/terms`
+- Fresh registry run: `capture-oneoff-20260920T232733Z`
+- Captured: `2026-09-20T23:27:57.606505Z`
+- Result: HTTP 200, 104295 raw bytes, SHA-256 `aa6ea302ca7bbc47b67b9cc1df7fe2467b9c25a5823038fdf76dead67e29be72`
+- Extracted text: 62132 bytes, SHA-256 `f570f45e5f63aeee37dd34fcfba25c1d8788155b4dc40cef4a40ecf0379bb78f`
+- Terms last updated: July 2, 2026.
+- Fallback disposition: not used because the fresh fetch succeeded and the opening-act clause appears in the served text.
+
+| Passage | Disposition |
+|---|---|
+| `No refund will be owed if an opening act or festival performer is changed or canceled.` | Grade B. Used as the primary Gillette ticket term against which the unresolved Massachusetts statutory question is stated. |
+
+### Patch round 7 bounded-absence census
+
+- MetLife statement: CBS New York recorded no response to its request by September 7. The 18 coverage records, AJC account, venue statements and official venue records in the manifest were checked through September 20, and no public MetLife Stadium statement appears in that bounded set.
+- Earlier Loop Tour support-lineup change: the official 27-date schedule, artist statements, tour coverage and the existing fresh-search census identify no earlier support-lineup change on this tour. The page states only that no prior case is on record.
+
+## Patch round 7 ledger
+
+The patch is limited to R1 through R6 and S1 through S6. Sibling counts state how many same-class locations were checked across the page before the patch.
+
+| Item | Siblings checked | Disposition |
+|---:|---:|---|
+| R1 | 1 held headline and state label | Held with reason. The reviewer reserved both for the editor. Neither was changed or discussed on the page. |
+| R2 | 2 MetLife performance paragraphs | Patched. The first-show paragraph now contains only the free-Palestine call, Gaza images and `Hind's Hall`. Macklemore's address to Jewish listeners and his peace, love, dignity, respect and equality message now appear at the second show, cited to Rolling Stone and the Wall Street Journal for that night's placement. |
+| R3 | 1 between-show chronology gap | Patched. The story attributes to the Journal's unnamed source the owner representatives' contact with promoters and the assurance that Macklemore would omit the issue. It says the source does not identify who gave the assurance, then proceeds to the second show. |
+| R4 | 3 Philadelphia outcome locations | Patched from a fresh Inquirer capture. The narrative quotes Sheeran's apology, identifies the five-member band and three days' notice, and gives his stated reason for removing the secondary stage. The timeline remains a shorter account. No fallback was used. |
+| R5 | 1 Raymond James comparison paragraph | Patched from a fresh FOX 13 capture. The paragraph says the promoter requested the clause and states the liability and payment terms. It presents the episode only as a precedent for what a negotiated venue contract can do, not as evidence of Macklemore's terms. No fallback was used. |
+| R6 | 2 refund-term locations | Patched from fresh Gillette Stadium Ticketmaster terms. The body retains the attorney general review and policy position. The unknowns section quotes the primary no-refund clause and keeps the Massachusetts advertised-description question open. No fallback was used. |
+| S1 | 2 first-paragraph Pink references | Patched. The sentence identifying Pink and explaining her role now comes before Macklemore names her in his statement. |
+| S2 | 2 MetLife response sentences | Patched. CBS New York's dated request remains cited, and the bounded data-absence sentence now says in reader words that MetLife Stadium had made no public statement by September 20. |
+| S3 | 1 prior-comparison sentence | Patched. The sentence states as a tour fact that no earlier support-lineup change is on record, so there is no prior Loop Tour case to compare. |
+| S4 | 2 seven-venue references | Patched. The first reference now says Rolling Stone named seven alleged objectors and names all seven; the next sentence refers back to those seven. The qualification follows the pin and the entailment finding. |
+| S5 | 1 Kraft rationale block | Patched. One paragraph states Kraft's platform-for-hate-speech line. A second quotes the material and rhetoric he pointed to, then preserves his limits concerning Palestinian suffering, advocacy and Hamas. |
+| S6 | 1 coverage event in the timeline and 3 CAIR references | Patched. The AP coverage event was removed from the timeline. The CAIR body and timeline entries remain; the detail-block repetition was removed, and the unresolved Philadelphia communications sought by CAIR were folded into the unknowns sentence. |
+| HELD | 7 reserved classes | Held with reason. Reading-mode labels, the bare record chip, section kickers, `How we check .`, saved-date lines, the sources-list introduction and the `Story updated` line were not changed. |

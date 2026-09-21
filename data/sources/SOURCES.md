@@ -1704,3 +1704,9 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/ed-sheeran-tour/ed-sheeran-philadelphia-reel-2026-09-19.txt | 467 | f1aae2df315d24f4 |
 | data/sources/ed-sheeran-tour/coverage/cbs-metlife-response-2026-09-07.html | 657076 | 670559704ff6e81e |
 | data/sources/ed-sheeran-tour/coverage/cbs-metlife-response-2026-09-07.txt | 4303 | 1bc5f809e8afd696 |
+| data/sources/ed-sheeran-tour/coverage/philadelphia-inquirer-loop-tour-review-2026-09-20.html | 1128461 | 004645a2dddab5a4 |
+| data/sources/ed-sheeran-tour/coverage/philadelphia-inquirer-loop-tour-review-2026-09-20.txt | 6227 | 51a3654c1e69793f |
+| data/sources/ed-sheeran-tour/coverage/fox13-raymond-james-west-contract-2026-06-18.html | 194798 | 76bd734c691f4223 |
+| data/sources/ed-sheeran-tour/coverage/fox13-raymond-james-west-contract-2026-06-18.txt | 3027 | 6ac662bb90f1f8ba |
+| data/sources/ed-sheeran-tour/gillette-ticketmaster-terms-2026-09-20.html | 104295 | aa6ea302ca7bbc47 |
+| data/sources/ed-sheeran-tour/gillette-ticketmaster-terms-2026-09-20.txt | 62132 | f570f45e5f63aeee |

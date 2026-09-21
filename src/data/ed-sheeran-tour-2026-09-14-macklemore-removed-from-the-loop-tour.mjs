@@ -90,7 +90,7 @@ export const chronologyRows = [
   ["Sept. 4–5", "Macklemore performs at both MetLife Stadium dates."],
   ["Sept. 14", "Macklemore posts that Ed Sheeran's team removed him from the remaining support dates; Messina Touring Group says venues would not accept him on the lineup."],
   ["Sept. 15", "Sheeran posts that the removal was the promoter's decision. Finneas, Aaron Rowe, Lukas Graham and Beoga announce their departures."],
-  ["Sept. 17", "CAIR-Philadelphia announces a public-records request about the Philadelphia decision; AP publishes its account of how artists, promoters and venues divide tour control."],
+  ["Sept. 17", "CAIR-Philadelphia announces a public-records request about the Philadelphia decision."],
   ["Sept. 18", "The Massachusetts attorney general's office reviews at least 25 complaints requesting Gillette Stadium refunds."],
   ["Sept. 19", "The Philadelphia concert proceeds. Sheeran starts without an opener, musicians join later, and he addresses Gaza and venue preapproval."],
 ];

@@ -70,6 +70,10 @@ A stranger arrives having seen that Macklemore was removed from Ed Sheeran's tou
 | `rolling-stone-aaron-rowe-followup-2026-09-18` | Rowe later redirected criticism from Sheeran to Kraft while maintaining that Macklemore should not have been removed. | C | |
 | `nyt-philadelphia-outcome-2026-09-19` | The Philadelphia show started two hours later without an opener, and Sheeran's fuller remarks addressed October 7, Gaza and the West Bank. | C | |
 | `cbs-metlife-response-2026-09-07` | CBS New York says MetLife Stadium did not respond to its request for comment by September 7; it does not establish whether the venue responded later. | B | 6 |
+| `wsj-tour-phone-call-2026-09-16` | An unnamed person said representatives of several NFL owners contacted promoters after the first MetLife show and heard that Macklemore would omit the issue before he raised it again the next night; the source does not identify who gave that assurance. | B | 1, 3 |
+| `philadelphia-inquirer-loop-tour-review-2026-09-20` | Sheeran apologized for making mistakes, introduced a five-member backup band assembled on three days' notice and said fear of what could happen in the audience led him to remove the secondary stage. | A | 1, 5, 6 |
+| `fox13-raymond-james-west-contract-2026-06-18` | West's promoter requested the Raymond James clause and paired it with lawsuit liability and stadium payments; it shows what a negotiated contract at that venue can do, not Macklemore's terms. | B | 4 |
+| `gillette-ticketmaster-terms-2026-09-20` | Gillette Stadium's Ticketmaster terms deny refunds when an opening act changes or is canceled, while the Massachusetts advertised-description statute remains a separate unresolved question. | B | 6 |
 | `macklemore-removal-statement-2026-09-14` | Gap L15: “thirteen years.” | D | |
 | `macklemore-removal-statement-2026-09-14` | Gap L27: “three years.” | B | 3 |
 | `macklemore-removal-statement-2026-09-14` | Gap L42: “90,000 people,” without an admitted attendance denominator. | D | |
