@@ -20,7 +20,7 @@ enough to keep without being important enough to read first.
 
 ## The reader model: what the story communicates
 
-The file has four headings, in this order, plus an optional fifth. `finish.sh structure`
+The file has five headings, in this order, plus an optional sixth. `finish.sh structure`
 refuses the file without them.
 
 `## Entering`: what a stranger arrives knowing, in two to four sentences. The headline they
@@ -38,8 +38,18 @@ no record is a gap line in the working note, graded, for the story turn to admit
 every record-audit finding that cites a document outside the manifest: the grade is what the
 document does for the answers, and the story turn admits every A and B before it writes.
 
+`## Headline`: the headline and the dek, written after the seven answers and before any
+grade. The headline states answer 1 in words that survive answer 3: read it as the
+stranger in Entering and ask whether it hands them the easiest wrong reading; when it
+does, it is wrong, whatever the label the story was opened under says. The dek adds the
+two facts a stranger needs to read on. The label the story was opened under is what the
+stranger saw; it belongs in Entering and is never the headline by inheritance. The story
+turn sets the page title and dek from this heading, a patch round may change both, and at
+ship the reviewer amends the label in the state log to the page's headline, so the site
+never carries two.
+
 `## Grades`: every passage-table line and gap-list line with its grade A to D and, for A
-and B, the answer it serves.
+and B, the answer it serves, or the earlier line that already serves it.
 
 `## Sections`: the section list from `sections.md`, each with the question from
 answer 7 it answers, in the reader's order.
@@ -91,10 +101,24 @@ The test for A and B: take the passage away and reread the seven answers. If no 
 changes, the passage is C or D. A successful census yields dozens of findings; a finished
 story uses a fraction of them in the story view. That is editing, not incompleteness.
 
+One passage carries a concept. When a second passage supplies the same concept for the
+same answer (a second stadium's ownership after the first has shown that a public body can
+own a venue; a second contract after the first has shown that such a clause can exist), it
+is C: it strengthens the proof of a concept the story already holds. The table shows it: a
+line whose answer an earlier A or B line already serves writes "4, carried by `<record
+id>`" in the Serves column and takes C, unless it changes the answer's own sentence, in
+which case it says how. Count the A and B lines per answer when the table is done. An
+answer served by more than three is over-graded, and the story view written from it is a
+dossier: the Macklemore reader model graded five stadium-ownership records and a Kanye
+West contract all B for answer 4, and the page carried every one of them.
+
 The grades are the author's claim and the audits test it. An omitted A or B is a Major. A
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
 against the grade, and the audit names which answer changes. An omitted C is Minor. D is
-never a finding.
+never a finding. The placement is tested the same way: `scripts/story_budget.mjs <page>
+<reader model>` lists every story-view paragraph whose cited records carry no A or B
+passage. Such a paragraph is a Major against the placement, and the fix is to move it to a
+detail block or the proof, or to re-grade the passage naming the answer it changes.
 
 ## Concept before qualification
 

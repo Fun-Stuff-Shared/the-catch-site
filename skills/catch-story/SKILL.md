@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.3"
+  version: "3.5"
 ---
 
 # Catch story turn
@@ -42,14 +42,21 @@ structure turn graded A or B is not an unknown on the page; it is a record the p
 and cites it (`Cite s= passage=`). The sentence says what the passage says, in everyday
 words, and nothing more. Where the page needs more than the passage gives, admit the
 record that gives it (and write its census line) or write the gap as a dated absence in
-everyday words; never the likely explanation. Where two records differ, say what each one
+everyday words; never the likely explanation. A sentence that says something is absent
+(`data-absence`) is checked against every record cited anywhere on this page, not only the
+records the sentence names, and the ledger lists the records opened for it; an absence
+sentence with no records listed is not swept. The Macklemore loop spent three patch rounds
+on absence sentences contradicted by a record the page cited a few lines away. Where two records differ, say what each one
 counts and do the set arithmetic before any sentence says they do not match. Where an
 outlet is quoted, the words are that outlet's own pin, byte for byte, one contiguous span.
 Numbers come from the data module by identifier; a number is never typed twice. Legal and
 financial terms appear first as the pin's word in quotation marks, then in everyday words.
 
-The shape: the headline states the most important change, with the number when the number
-is the change; the dek adds the two facts a stranger needs to read on; What happened opens
+The shape: the headline and the dek are the reader model's `## Headline`, set as the data
+module's title and the page's dek (the label the story was opened under is not the
+headline, and a patch round may change both); the headline states the most important
+change, with the number when the number is the change; the dek adds the two facts a
+stranger needs to read on; What happened opens
 on the clean model (what happened and what it means), the act itself in its first sentence
 and what was expected, with the gauge that measured it, after the act and never before it;
 what was new is stated as the fact (in July nine of 12 voted to hold, in September all 12
@@ -97,7 +104,9 @@ page's own method outside the proof layer, and lists for a reread the sentences 
 reads as machine voice: the seven questions in `scripts/voice_lint.py` (a description of
 the page or its method, a mirrored antithesis, a section wrap-up, a gloss on what to take
 away, a document as the subject where the fact could stand alone, an explanation nobody
-asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. The interrogation
+asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. `scripts/story_budget.mjs <page> <reader model>` lists every story-view
+paragraph whose cited records carry no passage graded A or B; each one moves to a detail
+block or the proof before the commit, or the reader model's grade is wrong and the report says which answer the passage changes. The interrogation
 is a model with web and X search listing what the page does not cover: every item is fixed
 from the pins, admitted and fixed, or written on the page as a dated absence after one
 attempt, in the same run; an item that names a public record is a fetch, not a decline.
@@ -199,7 +208,7 @@ after your run and dispositions the results in the ledger.
 ## Before you say done
 
 - [ ] Every gap line graded A or B in the reader model is an admitted record with a census line and a manifest row, or a dated absence naming the fetch that failed.
-- [ ] The page follows the reader model's sections and order; the story view carries A and B only; a passage admitted on the way is graded in that file.
+- [ ] The page follows the reader model's sections and order; the story view carries A and B only; every record you admitted in this turn has a Grades row in the reader model (the gap line's grade, or a grade naming the answer it changes) before the commit. `finish.sh story` runs `story_budget.mjs` and refuses a cited record with no grade or a story-view paragraph with no A or B passage; the Macklemore pages cited 18 and 9 ungraded records.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
 - [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.

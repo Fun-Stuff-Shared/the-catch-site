@@ -25,7 +25,7 @@ generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\
 if [ "$kind" = structure ]; then
   rm="checks/reader-models/$subject--$slug.md"; note="checks/working-notes/$subject--$slug.md"
   [ -f "$rm" ] || { echo "no reader model at $rm" >&2; exit 2; }
-  for h in "## Entering" "## Exiting" "## Grades" "## Sections"; do
+  for h in "## Entering" "## Exiting" "## Headline" "## Grades" "## Sections"; do
     grep -q "^$h" "$rm" || { echo "$rm lacks the heading \"$h\" (references/story.md, the reader model)" >&2; exit 1; }
   done
   paths=("$rm"); [ -f "$note" ] && ! git diff --quiet -- "$note" && paths+=("$note")
@@ -60,6 +60,8 @@ fail=0
 echo "== lens_lint"; node skills/catch-event-page/scripts/lens_lint.mjs "$page" || fail=1
 echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page" || fail=1
 echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
+# The story view carries A and B passages only, and every record the page cites is graded.
+if [ "$kind" = story ]; then echo "== story_budget"; node skills/catch-event-page/scripts/story_budget.mjs "$page" "checks/reader-models/$subject--$slug.md" || fail=1; fi
 [ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
 
 # The story's own artifacts: its page, the data modules that page imports, the subject's

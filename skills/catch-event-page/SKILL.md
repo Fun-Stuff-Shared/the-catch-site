@@ -11,7 +11,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.3"
+  version: "3.5"
 ---
 
 # Catch story pipeline
@@ -25,7 +25,7 @@ dispatch, the reads, the decision, staging, the push.
 |---|---|---|---|
 | 1 | `skills/catch-record` | `finish.sh <story> record` | pins, working note (census, passage tables, gaps), data module, figures, chronology, detail blocks, records list, subject row, homepage feature; no narrative |
 | audit | reviewer | `completeness_audit.sh` on the record commit | `checks/audits/<story>-<date>-record-audit.md`; runs once per story |
-| 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), grades, sections, outline |
+| 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), headline and dek, grades, sections, outline |
 | 3 | `skills/catch-story` | `finish.sh <story> story` | the page, manifest, interrogation, entailment verdict |
 | review | reviewer | red team + entailment + stranger read on the story commit; a numbered patch list per round until the reviewer decides | patch commits, then the decision: cut, hold, or kill |
 
@@ -46,8 +46,9 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    checks/audits/<subject>--<slug>-<date>-record-audit.md`. It hunts outside the frame and
    finds a different frame every time it runs, so it runs here, once, before any prose.
 4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). **Read the reader model
-   commit** before going on: the seven answers against the record, the grades against the
-   passage tables, the sections against the question tree. A wrong angle is fixed here by
+   commit** before going on: the seven answers against the record, the headline against
+   answers 1 and 3, the grades against the passage tables (no answer served by more than
+   three A or B lines), the sections against the question tree. A wrong angle is fixed here by
    re-dispatching turn two with the correction, never later on prose.
 5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
 6. **Three reads on the story commit, in parallel:** `scripts/red_team.sh`,
@@ -68,9 +69,12 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    outlet is complete without the instrument behind it), and when a stranger's cut beats a
    red team's expansion (the stranger is the reader; the red team is not). Rounds are not
    capped, but the round after the first report with no new Critical or Major finding is
-   the last; what remains is held or cut, not patched again.
+   the last; what remains is held or cut, not patched again. The headline is page text and
+   is patched like any sentence; it is never held because a label upstream says otherwise.
 8. **Before the push:** re-run the capture search on the story terms dated on or after the
-   run and disposition the results; refresh the state views for the event and commit them;
+   run and disposition the results; amend the event's label in the state log to the page's
+   headline when they differ (the label is set at acceptance, step 1, and the page's
+   headline wins); refresh the state views for the event and commit them;
    hosted-style build from a git archive with `CATCH_STATE_SOURCE=/nonexistent`; a STAGED
    row with a ships-by date; then push on a human's word and verify the live bytes
    (`references/procedures.md`, step 12).

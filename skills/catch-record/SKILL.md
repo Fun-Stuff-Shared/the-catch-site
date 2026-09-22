@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.3"
+  version: "3.5"
 ---
 
 # Catch record turn
@@ -17,8 +17,9 @@ metadata:
 You are building the record a stranger's story will be written from, by a session that
 will not be yours. Everything you admit is read whole; everything you leave out is written
 down with the search that did not find it. The story view of what you commit is headline,
-dek, KPI strip, figures, chronology and the records list, and no narrative paragraph. It
-ships the same day.
+dek, KPI strip, figures, chronology and the records list, and no narrative paragraph. The
+headline you commit is the label the story was opened under; turn two writes the real one.
+It ships the same day.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Never push. Never edit a story that is already live. Do not kill, restart, or signal any

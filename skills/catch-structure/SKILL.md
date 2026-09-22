@@ -10,7 +10,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.3"
+  version: "3.5"
 ---
 
 # Catch structure turn
@@ -38,13 +38,17 @@ passage tables, the gap dispositions, the record audit
 findings is a passage to grade A to D or a census gap to write into the working note) and the
 built page, and writes one file, `checks/reader-models/<subject>--<story>.md` (`mkdir -p
 checks/reader-models` first), in the shape of `assets/reader-model.md` and `references/story.md`: what a stranger
-enters knowing, what they exit knowing (the seven answers, each with its record id), a
+enters knowing, what they exit knowing (the seven answers, each with its record id), the
+headline and dek (answer 1 in words that survive answer 3; the label the story was opened
+under is what the stranger saw, in Entering, never the headline by inheritance), a
 grade A to D on every passage-table line and gap-list line, the section list from
 `references/sections.md` with the question each section answers, and, when the
 story is long enough to need one, an outline of which passages each section draws on. This
 file is what the story communicates, decided before any sentence exists. The story view
 will carry A and B material only; C and D stay in the detail blocks, the proof and the
-records list. An answer with no record is a gap line in the working note, graded, for the
+records list. One passage carries a concept: a second passage supplying the same concept
+for the same answer is C, marked "carried by" the first, and no answer is served by more
+than three A or B lines (`references/story.md`, materiality grades). An answer with no record is a gap line in the working note, graded, for the
 story turn to admit. The record audit is the main source of those lines: every finding that
 cites a document outside the manifest (a BLS release, a set of minutes, a speech, an outlet's
 next-day report) goes into the working note's "Not admitted this run" list as one line with
@@ -63,8 +67,10 @@ so there is no build. The reviewer reads that file before the story turn is disp
 ## Before you say done
 
 - [ ] `checks/reader-models/<subject>--<story>.md` has Entering, Exiting (seven answers, each with a record id), Grades (every passage-table line, gap line and record-audit finding), Sections (each with its question, in the reader's order), and an Outline when the story needs one.
+- [ ] `## Headline` states answer 1 and does not hand the stranger answer 3's wrong reading; the opening label sits in Entering, not as the headline.
 - [ ] Every A and B names the answer it serves; the story view will carry A and B only.
+- [ ] No answer is served by more than three A or B lines; a second passage on a concept the story already holds is C, carried by the first.
 - [ ] An answer with no record is a gap line in the working note, graded; you admitted nothing.
 - [ ] Every record-audit finding that cites a document outside the manifest is a gap line with that link and a grade; none of them is graded C because it is not yet pinned.
 - [ ] `finish.sh <subject>/<story> structure` printed the commit.
-- [ ] The report is the Entering paragraph, the seven answers, the section list and the commit hash.
+- [ ] The report is the Entering paragraph, the seven answers, the headline and dek, the section list and the commit hash.

@@ -14,11 +14,17 @@
 6. What is unresolved as of the newest dated record: <one sentence> (`<record id>`)
 7. The next three to five questions a curious stranger asks, in order: <q1>; <q2>; <q3>; <q4>; <q5>
 
+## Headline
+
+<Answer 1 in words that survive answer 3: the sentence a stranger cannot read the wrong way. Never the label the story was opened under by inheritance.>
+
+Dek: <the two facts a stranger needs to read on.>
+
 ## Grades
 
 | Record | Passage or gap or audit finding | Grade | Serves answer |
 |---|---|---|---|
-| `<record id>` | <the passage-table line, gap line or record-audit finding, short> | A / B / C / D | <1 to 7, for A and B> |
+| `<record id>` | <the passage-table line, gap line or record-audit finding, short> | A / B / C / D | <1 to 7, for A and B; or "4, carried by `<record id>`" when an earlier line already serves it, and then the grade is C> |
 
 ## Sections
 
