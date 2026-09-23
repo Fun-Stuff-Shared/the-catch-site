@@ -104,21 +104,36 @@ story uses a fraction of them in the story view. That is editing, not incomplete
 One passage carries a concept. When a second passage supplies the same concept for the
 same answer (a second stadium's ownership after the first has shown that a public body can
 own a venue; a second contract after the first has shown that such a clause can exist), it
-is C: it strengthens the proof of a concept the story already holds. The table shows it: a
-line whose answer an earlier A or B line already serves writes "4, carried by `<record
-id>`" in the Serves column and takes C, unless it changes the answer's own sentence, in
-which case it says how. Count the A and B lines per answer when the table is done. An
-answer served by more than three is over-graded, and the story view written from it is a
-dossier: the Macklemore reader model graded five stadium-ownership records and a Kanye
-West contract all B for answer 4, and the page carried every one of them.
+is C: it strengthens the proof of a concept the story already holds. The table shows it.
+Every A or B line names, in the Serves column, the answer and the words of that answer
+that change when the passage is taken away ("1, who decided"; "4, that a venue can bar an
+act"). A line whose words an earlier A or B line already changes writes "4, carried by
+`<record id>`" instead and takes C. Four artists withdrawing are four A lines on answer 1:
+each removes a name from the answer. Five stadiums' ownership records are one B line and
+four C lines: the first shows that a public body can own a venue and the rest show it
+again. An answer with more than three A or B lines is reread, line by line, for a clause
+each one changes on its own; the count is a prompt to reread, never a reason to downgrade.
+The Macklemore reader model graded five stadium-ownership records and a Kanye West
+contract all B for answer 4, and the page carried every one of them.
+
+Every A or B line also opens its passage cell with the words the story will cite, in
+double quotes: the exact words of the pin, or a contiguous run of them. The story turn's
+`Cite passage=` for that line is those words or a part of them, and may widen the quoted
+run to the words it cites from the same passage. A gap line graded A or B has no words to
+quote until the story turn admits the record; when it cannot, the line is re-graded C with
+"unmet" and the date in the Serves column, and the page carries the dated absence.
 
 The grades are the author's claim and the audits test it. An omitted A or B is a Major. A
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
 against the grade, and the audit names which answer changes. An omitted C is Minor. D is
 never a finding. The placement is tested the same way: `scripts/story_budget.mjs <page>
-<reader model>` lists every story-view paragraph whose cited records carry no A or B
-passage. Such a paragraph is a Major against the placement, and the fix is to move it to a
-detail block or the proof, or to re-grade the passage naming the answer it changes.
+<reader model> <manifest>` lists every story-view paragraph none of whose Cites matches an
+A or B line of its record by the quoted words, every record cited on the page or held in
+the manifest with no Grades line, and every A or B line without quoted words or an answer.
+It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
+rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
+move it to a detail block or the proof, or to re-grade the passage naming the answer it
+changes.
 
 ## Concept before qualification
 
@@ -171,8 +186,8 @@ audit runs once, on this commit.
 
 **Turn two, the structure** (the catch-structure skill): a fresh context reads the working note, the
 passage tables, the gap dispositions, the record audit and the built facts view, and
-writes the reader model: entering, exiting, grades, sections, an outline when the story
-needs one. Then `finish.sh <subject>/<story> structure`, which commits that file and
+writes the reader model: entering, exiting, the headline and its dek, grades, sections,
+an outline when the story needs one. Then `finish.sh <subject>/<story> structure`, which commits that file and
 nothing else. The reviewer reads it before dispatching turn three; an angle that is wrong
 is corrected here, in one file, not in a patch round on the prose.
 
@@ -189,7 +204,7 @@ one.
 
 ## Before the first narrative sentence
 
-- [ ] `checks/reader-models/<subject>--<story>.md` is committed by turn two (`finish.sh <subject>/<story> structure`) with Entering, Exiting (the seven answers, each with a record id), Grades and Sections.
-- [ ] Every passage-table line and gap-list line carries a grade.
+- [ ] `checks/reader-models/<subject>--<story>.md` is committed by turn two (`finish.sh <subject>/<story> structure`) with Entering, Exiting (the seven answers, each with a record id), Headline (with its dek), Grades and Sections.
+- [ ] Every passage-table line and gap-list line carries a grade; every A and B line quotes the words the story cites and names the answer and the clause it changes.
 - [ ] The section list is written under the reader model, each section with the question from answer 7 it answers.
 - [ ] The story turn reads that commit and writes in its order; it does not rewrite the answers.

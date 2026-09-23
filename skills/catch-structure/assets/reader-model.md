@@ -24,7 +24,7 @@ Dek: <the two facts a stranger needs to read on.>
 
 | Record | Passage or gap or audit finding | Grade | Serves answer |
 |---|---|---|---|
-| `<record id>` | <the passage-table line, gap line or record-audit finding, short> | A / B / C / D | <1 to 7, for A and B; or "4, carried by `<record id>`" when an earlier line already serves it, and then the grade is C> |
+| `<record id>` | "<for A and B: the exact words of the pin the story will cite>" <the passage-table line, gap line or record-audit finding, short> | A / B / C / D | <for A and B: the answer and the words of it that change without this passage, "1, who decided"; or "4, carried by `<record id>`" when an earlier line already changes them, and then the grade is C> |
 
 ## Sections
 

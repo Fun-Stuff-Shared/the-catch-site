@@ -17,6 +17,7 @@ out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-redteam.md}"
 prior="$(ls "$root/checks/audits/$subject--$slug-"*-redteam*.md 2>/dev/null | grep -v -F "$out" | grep -v '\.log$' | tr '\n' ' ')"
 [ -f "$html" ] || { echo "build first: $html is missing" >&2; exit 2; }
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
+if [ -f "$rm" ] && ! grep -q '^## Headline' "$rm"; then echo "$rm has no \"## Headline\"; it predates skills 3.5. Rerun turn two (finish.sh $story structure) before this read." >&2; exit 2; fi
 mkdir -p "$(dirname "$out")"
 prompt="$(mktemp)"
 cat > "$prompt" <<PROMPT

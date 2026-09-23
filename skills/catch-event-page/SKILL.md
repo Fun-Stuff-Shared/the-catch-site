@@ -47,8 +47,9 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    finds a different frame every time it runs, so it runs here, once, before any prose.
 4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). **Read the reader model
    commit** before going on: the seven answers against the record, the headline against
-   answers 1 and 3, the grades against the passage tables (no answer served by more than
-   three A or B lines), the sections against the question tree. A wrong angle is fixed here by
+   answers 1 and 3, the grades against the passage tables (each A and B line quotes the
+   words the story will cite and names the clause it changes; an answer with more than three
+   A or B lines is reread, one clause each), the sections against the question tree. A wrong angle is fixed here by
    re-dispatching turn two with the correction, never later on prose.
 5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
 6. **Three reads on the story commit, in parallel:** `scripts/red_team.sh`,

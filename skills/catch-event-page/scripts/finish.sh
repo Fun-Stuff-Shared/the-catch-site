@@ -50,6 +50,13 @@ while IFS= read -r bad; do echo "the manifest pins a path outside data/sources/:
       if (line && !/^data\/sources\/(?!news-state\/)/.test(p.normalize(line))) console.log(line);')
 [ $escaped = 0 ] || exit 2
 
+# The story turn writes from a 3.5 reader model; one without a headline predates it and turn two is rerun first.
+if [ "$kind" = story ]; then
+  rm="checks/reader-models/$subject--$slug.md"
+  [ -f "$rm" ] || { echo "no reader model at $rm; run turn two (finish.sh $story structure) first" >&2; exit 2; }
+  grep -q '^## Headline' "$rm" || { echo "$rm has no \"## Headline\"; it predates skills 3.5. Rerun turn two (finish.sh $story structure) before the story turn." >&2; exit 2; }
+fi
+
 node skills/catch-event-page/scripts/sources_ledger.mjs "$manifest" || exit 1
 # The record turn has no narrative yet, so the gate lets section_grammar stay unattested
 # for this build only; the story turn and every hosted build require it true.
@@ -60,8 +67,8 @@ fail=0
 echo "== lens_lint"; node skills/catch-event-page/scripts/lens_lint.mjs "$page" || fail=1
 echo "== quote_lint"; node skills/catch-event-page/scripts/quote_lint.mjs "$page" || fail=1
 echo "== voice_lint"; skills/catch-event-page/scripts/voice_lint.sh "dist/events/$story/index.html" || fail=1
-# The story view carries A and B passages only, and every record the page cites is graded.
-if [ "$kind" = story ]; then echo "== story_budget"; node skills/catch-event-page/scripts/story_budget.mjs "$page" "checks/reader-models/$subject--$slug.md" || fail=1; fi
+# The story view carries A and B passages only, and every record on the page or in the manifest is graded.
+if [ "$kind" = story ]; then echo "== story_budget"; node skills/catch-event-page/scripts/story_budget.mjs "$page" "checks/reader-models/$subject--$slug.md" "$manifest" || fail=1; fi
 [ $fail = 0 ] || { echo "LINT FAILED: fix the sentences above, then run finish.sh again"; exit 1; }
 
 # The story's own artifacts: its page, the data modules that page imports, the subject's
