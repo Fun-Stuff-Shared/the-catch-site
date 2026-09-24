@@ -141,6 +141,10 @@ run("spaced, spread and single-quoted Cites are refused", {
   page: narrative(["rec-a", "I resign"]) + `<p data-layer="proof"><Cite s = {item.s} passage = {item.p} /> <Cite {...item} /> <Cite s={'rec-a'} passage={'I resign'} /></p>\n`,
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") }), exit: 1, out: ["3 row(s) or Cite(s) the lint refuses"],
 });
+run("a single-quoted passage holding double quotes is read (the Texas ballot line)", {
+  page: `<p data-layer="narrative">Text. <Cite s="rec-a" passage='"S2026","Special-General"' /></p>\n`,
+  rm: model({ grades: row("rec-a", "“S2026”,“Special-General”", "", "A", "1, which ballot") }), exit: 0, out: ["story_budget: clean"],
+});
 run("brace-wrapped double-quoted literals are read", {
   page: `<p data-layer="narrative">Text. <Cite s={"rec-a"} passage={"I resign"} /></p>\n`,
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") }), exit: 0, out: ["story_budget: clean"],

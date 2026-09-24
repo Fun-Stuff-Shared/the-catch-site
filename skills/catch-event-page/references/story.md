@@ -123,7 +123,7 @@ double quotes: a contiguous run of the pin's words, as short as the pin's own st
 compares. Those words are the passage's identity: the story
 turn's `Cite passage=` for that line is the same words, and when it cites a second run of
 the same passage it adds that run, quoted, beside the first. Cites are literals
-(`s="..." passage="..."`, or `passage={\`...\`}` when the passage itself holds double quotes);
+(`s="..." passage="..."`, or `passage='...'` or `passage={\`...\`}` when the passage itself holds double quotes);
 the lint refuses one written as an expression. A gap line graded A or B has no words to
 quote until the story turn admits the record; when it cannot, the line is re-graded C with
 "unmet" and the date in the Serves column, and the page carries the dated absence.

@@ -175,10 +175,21 @@ sentence: run the entailment check with `--since` the commit the patch started f
 fix what it finds before you return, and run the lints again. Fix each item's class across
 the whole page, not only the named line, and report the sibling count per class.
 
-After each round the reviewer reads the patched page, reruns the stranger read on it, and
-either sends the next numbered list or decides on the page as it stands: cut the sentence, hold the item with its reason on
-the ledger, or kill the story. Before the push, the reviewer re-runs the capture search on the story terms dated on or
-after your run and dispositions the results in the ledger.
+The three reads run once per gate, and there is one patch round. After your patch the
+reviewer reads the patched page, reruns the stranger read on it, and decides on the page as
+it stands: cut the sentence, hold the item with its reason on the ledger, or kill the story.
+The three reads run a second time only when the patch introduced a Critical; a Major or
+Minor on the patched page is decided by the reviewer, never sent back for another round.
+Two stories took thirteen and seventeen rounds under the open loop and shipped a day late
+each; the third read finds the same class the first found. Before the push, the reviewer
+re-runs the capture search on the story terms dated on or after your run and dispositions
+the results in the ledger.
+
+The lints and scripts under `skills/` change for a defect a real page demonstrates, and
+for nothing else. A reviewer's finding built from a constructed input (a malformed table
+row nobody wrote, a Cite inside a script tag) is recorded as an open item with the
+input that would trigger it; it is fixed the day a page under review hits it. Eight
+review rounds on skills 3.5 fixed eight classes, three of which any page had ever hit.
 
 ## Language rules (hard, enforced by the gate)
 
