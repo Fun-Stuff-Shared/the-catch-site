@@ -18,7 +18,7 @@ manifest="checks/manifests/$subject--$slug.json"
 if [ $commit = 1 ] && ! git diff --cached --quiet; then
   echo "the index already holds staged files; commit or unstage them first:" >&2; git diff --cached --name-only >&2; exit 2
 fi
-generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\.finish-build\.log$)'
+generated='^(data/state/|src/data/news-records\.json$|data/sources/news-state/|\.finish-build\.log$|\.finish-stage\.json$)'
 
 # The structure turn writes no page: it commits the reader model (and the working note, when it
 # added gap lines) and nothing else. The page is unchanged, so there is no build and no lint.
@@ -156,6 +156,11 @@ git add -- "${paths[@]}" && git -c commit.gpgsign=false commit -q -m "$kind: $su
 # commit, its event view. A story whose records did not reach the state is not finished.
 [ "$kind" = story ] || exit 0
 PYTHONPATH=/Volumes/4/CF/sai/src /opt/anaconda3/bin/python3 -m sai.cli state stage-story \
-  --manifest "$manifest" --site-root "$root" --state-dir /Volumes/4/CF/catch-state \
-  || { echo "committed, but the story's records did not reach the knowledge state (sai.cli state stage-story failed); rerun it before the review" >&2; exit 1; }
-echo "staged: $manifest in /Volumes/4/CF/catch-state"
+  --manifest "$manifest" --site-root "$root" --state-dir /Volumes/4/CF/catch-state > .finish-stage.json \
+  || { echo "committed, but the story's records did not reach the knowledge state (sai.cli state stage-story failed; see .finish-stage.json); rerun it before the review" >&2; exit 1; }
+node -e '
+  const r = JSON.parse(require("fs").readFileSync(".finish-stage.json", "utf8"));
+  const f = r.figures ?? r; const refused = f.figures_refused ?? [];
+  console.log(`staged: ${r.pins?.pins ?? "?"} pins, ${f.figures ?? 0} figures in /Volumes/4/CF/catch-state`);
+  for (const x of refused) console.log(`  figure not recorded: ${x.figure} (${x.reason}); rewrite it as sourced or sum/date_difference_days with the value in the span, or drop it (references/manifest-and-gate.md)`);
+  process.exit(refused.length ? 1 : 0);' || exit 1
