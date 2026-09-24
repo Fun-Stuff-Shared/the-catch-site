@@ -135,9 +135,13 @@ never a finding. The placement is tested the same way: `scripts/story_budget.mjs
 <reader model> <manifest>` lists every story-view paragraph none of whose Cites quotes the
 words of an A or B line of its record, every record cited on the page or held in the
 manifest with no Grades line, every A or B line whose passage cell does not open with the
-quoted words or whose Serves column lacks an answer (1 to 7) and a clause, every Cite
-the lint cannot read, and every A or B passage that no Cite outside the proof carries: the
-grade says the story needs it, so the story view or a fact block cites those words.
+quoted words or whose Serves column lacks an answer (1 to 7) and a clause, every Grades
+row it cannot read (four cells, the record id in backticks, a grade A to D; a row that
+does not parse is a defect, never skipped), every Cite the lint cannot read, and every A
+or B passage that no Cite outside the proof carries: the grade says the story needs it, so
+the story view or a fact block cites those words. A Cite under any proof element (a proof
+paragraph, a receipt `details`, a proof `div`), in a comment, or in the frontmatter is not
+on the story or fact view and carries nothing.
 It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
 rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
 move it to a detail block or the proof, or to re-grade the passage naming the answer it

@@ -177,6 +177,48 @@ run("a B passage carried by a fact block counts", {
   page: narrative(["rec-a", "I resign"]) + `<div data-layer="fact"><p>Noon. <Cite s="rec-b" passage="effective at noon" /></p></div>\n`,
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") + row("rec-b", "effective at noon", "", "B", "5, when it took effect") }), exit: 0, out: ["story_budget: clean"],
 });
+const AB = row("rec-a", "I resign", "", "A", "1, who left") + row("rec-b", "effective at noon", "", "B", "5, when it took effect");
+run("a B passage carried only under a proof details is not carried", {
+  page: narrative(["rec-a", "I resign"]) + `<details class="receipt" data-layer="proof"><summary>note</summary><p>Noon. <Cite s="rec-b" passage="effective at noon" /></p></details>\n`,
+  rm: model({ grades: AB }), exit: 1, out: ["1 graded passage(s) the page does not carry"],
+});
+run("a B passage carried only under a proof div is not carried", {
+  page: narrative(["rec-a", "I resign"]) + `<div data-layer="proof"><p data-layer="fact">Noon. <Cite s="rec-b" passage="effective at noon" /></p></div>\n`,
+  rm: model({ grades: AB }), exit: 1, out: ["1 graded passage(s) the page does not carry"],
+});
+run("a B passage cited only in a comment is not carried", {
+  page: narrative(["rec-a", "I resign"]) + `<!-- <p data-layer="narrative">Noon. <Cite s="rec-b" passage="effective at noon" /></p> -->\n`,
+  rm: model({ grades: AB }), exit: 1, out: ["1 graded passage(s) the page does not carry"],
+});
+run("a B passage cited only in the frontmatter is not carried", {
+  page: `---\nconst note = '<Cite s="rec-b" passage="effective at noon" />';\n---\n` + narrative(["rec-a", "I resign"]),
+  rm: model({ grades: AB }), exit: 1, out: ["1 graded passage(s) the page does not carry"],
+});
+run("a proof block that closes before the story view does not hide it", {
+  page: `<div data-layer="proof"><p>receipt</p></div>\n<script>if (a < b) { x() }</script>\n<!-- kicker -->\n` + narrative(["rec-a", "Talarico --> N"]),
+  rm: model({ grades: row("rec-a", "Talarico --> N", "", "A", "1, how he voted") }), exit: 0, out: ["story_budget: clean"],
+});
+run("a template literal in a layout attribute does not swallow the page", {
+  page: "<Layout title={`${event.title} | The Catch`} current=\"Events\">\n<div data-layer=\"proof\"><p>receipt</p></div>\n" + narrative(["rec-a", "I resign"]) + "<details data-layer=\"proof\"><p><Cite s=\"rec-b\" passage=\"effective at noon\" /></p></details>\n</Layout>\n",
+  rm: model({ grades: AB }), exit: 1, out: ["B passage of rec-b that no story-view or fact-block Cite carries", "1 graded passage(s) the page does not carry"], notOut: ["rec-a that no"],
+});
+const C = row("rec-a", null, "Slide 2: a detail.", "C", "");
+run("an A row with an unescaped pipe is refused, not skipped", {
+  page: narrative(["rec-a", "rate | target"]),
+  rm: model({ grades: `| \`rec-a\` | "rate | target" the line | A | 1, what the rate did |\n` + C }), exit: 1, out: ["Grades row the lint cannot read"],
+});
+run("an A row whose record id lacks backticks is refused, not skipped", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: `| rec-a | "I resign" the line | A | 1, who left |\n` + C }), exit: 1, out: ["Grades row the lint cannot read"],
+});
+run("an A row with an extra leading cell is refused, not skipped", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: `| 3 | \`rec-a\` | "I resign" the line | A | 1, who left |\n` + C }), exit: 1, out: ["Grades row the lint cannot read"],
+});
+run("an A row with a grade outside A to D is refused", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: `| \`rec-a\` | "I resign" the line | A+ | 1, who left |\n` + C }), exit: 1, out: ["Grades row the lint cannot read"],
+});
 run("a backtick passage with interpolation is refused", {
   page: "<p data-layer=\"narrative\">Text. <Cite s=\"rec-a\" passage={`I resign ${x}`} /></p>\n",
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") }), exit: 1, out: ["Cite the lint cannot read"],
