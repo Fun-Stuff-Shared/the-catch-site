@@ -35,8 +35,8 @@ interrogation prompt in `references/interrogation.md`.
 
 Turn three is a fresh session. It opens by reading the reader model commit (the structure
 turn's file), the working note and the built page; it writes to the reader model only to grade
-a passage it admits on the way, to widen an A or B line's quoted words to the words it cites
-from the same passage, or to re-grade an unmet gap line C ("unmet", dated). Before the first sentence, it admits every gap line the reader
+a passage it admits on the way, to add a second quoted run to an A or B line when it cites
+another run of the same passage, or to re-grade an unmet gap line C ("unmet", dated). Before the first sentence, it admits every gap line the reader
 model graded A or B (fetch, pin, census line, passage table, manifest row, the record
 procedures as written; a refused fetch is recovered the way step 2 recovers one). A gap the
 structure turn graded A or B is not an unknown on the page; it is a record the page cites. Every factual sentence is written with its passage on screen
@@ -209,7 +209,7 @@ after your run and dispositions the results in the ledger.
 ## Before you say done
 
 - [ ] Every gap line graded A or B in the reader model is an admitted record with a census line and a manifest row, or a dated absence naming the fetch that failed.
-- [ ] The page follows the reader model's sections and order; the story view carries A and B only; every record you admitted in this turn has a Grades row in the reader model (the gap line's grade, opening with the words you cite, or a grade naming the answer and the clause it changes) before the commit. `finish.sh story` runs `story_budget.mjs` on the page, the reader model and the manifest, and refuses a record with no grade, an A or B line that does not open with the quoted words or does not name the answer and its clause, a Cite written as an expression, and a story-view paragraph none of whose Cites quotes a run of three or more words inside an A or B line; the Macklemore pages cited 18 and 9 ungraded records.
+- [ ] The page follows the reader model's sections and order; the story view carries A and B only; every record you admitted in this turn has a Grades row in the reader model (the gap line's grade, opening with the words you cite, or a grade naming the answer and the clause it changes) before the commit. `finish.sh story` runs `story_budget.mjs` on the page, the reader model and the manifest, and refuses a record with no grade, an A or B line that does not open with the quoted words or does not name the answer and its clause, a Cite it cannot read, and a story-view paragraph none of whose Cites quotes the words of an A or B line; the Macklemore pages cited 18 and 9 ungraded records.
 - [ ] Every number on the page was recounted from the pinned bytes this session.
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
 - [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.

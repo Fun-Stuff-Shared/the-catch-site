@@ -117,10 +117,12 @@ The Macklemore reader model graded five stadium-ownership records and a Kanye We
 contract all B for answer 4, and the page carried every one of them.
 
 Every A or B line also opens its passage cell with the words the story will cite, in
-double quotes: the exact words of the pin, or a contiguous run of them. The story turn's
-`Cite passage=` for that line is a run of at least three words inside the quoted words,
-never wider; the story turn widens the quoted run when it cites more of the same passage.
-Cites are literals (`s="..." passage="..."`); the lint refuses one written as an expression. A gap line graded A or B has no words to
+double quotes: a contiguous run of the pin's words, as short as the pin's own statement
+("I resign") or as long as the sentence. Those words are the passage's identity: the story
+turn's `Cite passage=` for that line is the same words, and when it cites a second run of
+the same passage it adds that run, quoted, beside the first. Cites are literals
+(`s="..." passage="..."`, or `passage={\`...\`}` when the passage itself holds double quotes);
+the lint refuses one written as an expression. A gap line graded A or B has no words to
 quote until the story turn admits the record; when it cannot, the line is re-graded C with
 "unmet" and the date in the Serves column, and the page carries the dated absence.
 
@@ -128,11 +130,11 @@ The grades are the author's claim and the audits test it. An omitted A or B is a
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
 against the grade, and the audit names which answer changes. An omitted C is Minor. D is
 never a finding. The placement is tested the same way: `scripts/story_budget.mjs <page>
-<reader model> <manifest>` lists every story-view paragraph none of whose Cites quotes a
-run inside an A or B line of its record, every record cited on the page or held in the
+<reader model> <manifest>` lists every story-view paragraph none of whose Cites quotes the
+words of an A or B line of its record, every record cited on the page or held in the
 manifest with no Grades line, every A or B line whose passage cell does not open with the
-quoted words or whose Serves column lacks an answer number and a clause, and every Cite
-written as an expression.
+quoted words or whose Serves column lacks an answer (1 to 7) and a clause, and every Cite
+the lint cannot read.
 It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
 rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
 move it to a detail block or the proof, or to re-grade the passage naming the answer it

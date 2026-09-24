@@ -4,6 +4,7 @@
 // Usage: node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
 import fs from "node:fs";
 import path from "node:path";
+import { readCites } from "./cite_attrs.mjs";
 
 const root = process.cwd();
 const pagePath = process.argv[2];
@@ -33,7 +34,7 @@ for (const r of manifest.records) {
 }
 
 const stripTags = (s) => s.replace(/<Cite[^>]*\/>/g, "").replace(/<[^>]+>/g, " ");
-const citesOf = (s) => [...s.matchAll(/<Cite\s+s="([^"]+)"(?:\s+passage="([^"]*)")?/g)].map((x) => ({ s: x[1], passage: x[2] }));
+const citesOf = (s) => readCites(s).filter((c) => c.readable);
 const spansOf = (s) => {
   const out = [];
   for (const mm of norm(stripTags(s)).matchAll(/"([^"]{8,}?)"/g)) {
@@ -52,13 +53,14 @@ const has = (rec, span) => !!rec && [rec.text, rec.textJoined].some((t) => t.inc
 const findings = [];
 const lineOf = (idx) => page.slice(0, idx).split("\n").length;
 
-// 1. Cite passages exist in their record. A Cite whose attributes are expressions cannot be checked.
-for (const mm of page.matchAll(/<Cite\b[^>]*\b(?:s|passage)=\{/g)) findings.push(`L${lineOf(mm.index)} cite: attributes are expressions; write the record id and the passage as literals`);
-for (const mm of page.matchAll(/<Cite\s+s="([^"]+)"\s+passage="([^"]*)"/g)) {
-  const rec = records.get(mm[1]);
-  if (!rec) { findings.push(`L${lineOf(mm.index)} cite: record ${mm[1]} is not in the manifest`); continue; }
-  if (!rec.rawHas) { findings.push(`L${lineOf(mm.index)} cite: record ${mm[1]} has no readable text pin`); continue; }
-  if (!has(rec, norm(mm[2]))) findings.push(`L${lineOf(mm.index)} cite passage absent from ${mm[1]}: "${mm[2]}"`);
+// 1. Cite passages exist in their record. A Cite the lint cannot read is a finding, never a skip.
+for (const c of readCites(page)) {
+  if (!c.readable) { findings.push(`L${lineOf(c.index)} cite: cannot be read; write the record id and the passage as literals (s="..." passage="..."): ${c.raw}`); continue; }
+  if (c.passage === null) continue;
+  const rec = records.get(c.s);
+  if (!rec) { findings.push(`L${lineOf(c.index)} cite: record ${c.s} is not in the manifest`); continue; }
+  if (!rec.rawHas) { findings.push(`L${lineOf(c.index)} cite: record ${c.s} has no readable text pin`); continue; }
+  if (!has(rec, norm(c.passage))) findings.push(`L${lineOf(c.index)} cite passage absent from ${c.s}: "${c.passage}"`);
 }
 
 // 2. Quote cards: the whole body is one contiguous substring of a cited record.
