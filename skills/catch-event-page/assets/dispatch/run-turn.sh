@@ -3,7 +3,8 @@
 #   run-turn.sh record|structure|story <subject> <slug> <worktree> <branch> <skill-commit> [candidate-block-file]
 # Placeholders: SUBJECT SLUG WORKTREE BRANCH SKILL_COMMIT EVENT_ID (env) AUDIT_FILE (env, structure) CANDIDATE_BLOCK (file, record).
 # Writes the rendered prompt, the log and .started/.finished markers under $DISPATCH_DIR
-# (default /Volumes/4/scratch-fable-profile/grok-authoring/dispatch). Model: $AUTHOR_MODEL (default gpt-5.6-sol).
+# (default /Volumes/4/scratch-fable-profile/grok-authoring/dispatch). Host: $AUTHOR_HOST, codex (default) or grok;
+# model: $AUTHOR_MODEL (default gpt-6-sol on codex, grok-4.7 on grok). Both are always set explicitly in a timed run.
 set -euo pipefail
 turn="${1:?turn}"; subject="${2:?subject}"; slug="${3:?slug}"; wt="${4:?worktree}"; branch="${5:?branch}"; commit="${6:?skill commit}"; cand="${7:-}"
 here="$(cd "$(dirname "$0")" && pwd)"; out="${DISPATCH_DIR:-/Volumes/4/scratch-fable-profile/grok-authoring/dispatch}"; mkdir -p "$out"
@@ -22,12 +23,18 @@ PY
 [ "$(git -C "$wt" rev-parse --short HEAD)" != "" ] || exit 2
 git -C "$wt" merge-base --is-ancestor "$commit" HEAD || { echo "the worktree does not contain skill commit $commit" >&2; exit 2; }
 runner="$out/$name.run.sh"
+host="${AUTHOR_HOST:-codex}"
+case "$host" in
+  codex) launch="codex exec -m \"${AUTHOR_MODEL:-gpt-6-sol}\" --skip-git-repo-check -C \"$wt\" -c model_reasoning_effort=high \"\$(cat \"$prompt\")\" </dev/null" ;;
+  grok) launch="$HOME/.grok/bin/grok --always-approve -m \"${AUTHOR_MODEL:-grok-4.7}\" --prompt-file \"$prompt\" </dev/null" ;;
+  *) echo "AUTHOR_HOST is codex or grok, not $host" >&2; exit 2 ;;
+esac
 cat > "$runner" <<SH
 #!/bin/zsh
 cd "$wt"
 date -u +%Y-%m-%dT%H:%M:%SZ > "$out/$name.started"
-codex exec -m "${AUTHOR_MODEL:-gpt-5.6-sol}" --skip-git-repo-check -C "$wt" -c model_reasoning_effort=high "\$(cat "$prompt")" </dev/null
-echo "codex exit \$?"
+$launch
+echo "$host exit \$?"
 date -u +%Y-%m-%dT%H:%M:%SZ > "$out/$name.finished"
 SH
 chmod +x "$runner"

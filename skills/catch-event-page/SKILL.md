@@ -38,7 +38,8 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
 1. **Accept the event** in state before dispatching turn one, and name the event id in the
    dispatch (`references/procedures.md`, step 10). The author never runs a state command.
 2. **Dispatch turn one** with `assets/dispatch/run-turn.sh record <subject> <slug> <worktree>
-   <branch> <skill-commit> <candidate-block-file>` (EVENT_ID in the environment): it renders
+   <branch> <skill-commit> <candidate-block-file>` (EVENT_ID, AUTHOR_HOST codex or grok, and
+   AUTHOR_MODEL in the environment, always set explicitly): it renders
    `assets/dispatch/prompt-record.txt`, refuses an unfilled placeholder or a worktree without
    the skill commit, and launches the author detached with a finished marker. Every dispatch says: do not push, do not edit a
    live story, do not kill, restart or signal any process you did not start.
