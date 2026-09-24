@@ -22,7 +22,7 @@ if (list.length === 0) throw new Error(`story_sources_missing:${event}`);
         <ol class="src-list" start={items[0].n}>
           {items.map((s) => (
             <li id={`src-${s.n}`} value={s.n}>
-              <a href={`/records/${s.id}/`}>{s.label}</a>{s.meta} <span class="src-usage" data-layer="proof"> &middot; {s.usage}</span>
+              <span class="src-n">{s.n}</span><a href={`/records/${s.id}/`}>{s.label}</a>{s.meta} <span class="src-usage" data-layer="proof"> &middot; {s.usage}</span>
             </li>
           ))}
         </ol>
