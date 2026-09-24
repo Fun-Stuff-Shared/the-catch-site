@@ -118,8 +118,9 @@ contract all B for answer 4, and the page carried every one of them.
 
 Every A or B line also opens its passage cell with the words the story will cite, in
 double quotes: the exact words of the pin, or a contiguous run of them. The story turn's
-`Cite passage=` for that line is those words or a part of them, and may widen the quoted
-run to the words it cites from the same passage. A gap line graded A or B has no words to
+`Cite passage=` for that line is a run of at least three words inside the quoted words,
+never wider; the story turn widens the quoted run when it cites more of the same passage.
+Cites are literals (`s="..." passage="..."`); the lint refuses one written as an expression. A gap line graded A or B has no words to
 quote until the story turn admits the record; when it cannot, the line is re-graded C with
 "unmet" and the date in the Serves column, and the page carries the dated absence.
 
@@ -127,9 +128,11 @@ The grades are the author's claim and the audits test it. An omitted A or B is a
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
 against the grade, and the audit names which answer changes. An omitted C is Minor. D is
 never a finding. The placement is tested the same way: `scripts/story_budget.mjs <page>
-<reader model> <manifest>` lists every story-view paragraph none of whose Cites matches an
-A or B line of its record by the quoted words, every record cited on the page or held in
-the manifest with no Grades line, and every A or B line without quoted words or an answer.
+<reader model> <manifest>` lists every story-view paragraph none of whose Cites quotes a
+run inside an A or B line of its record, every record cited on the page or held in the
+manifest with no Grades line, every A or B line whose passage cell does not open with the
+quoted words or whose Serves column lacks an answer number and a clause, and every Cite
+written as an expression.
 It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
 rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
 move it to a detail block or the proof, or to re-grade the passage naming the answer it

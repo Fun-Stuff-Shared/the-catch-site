@@ -33,56 +33,92 @@ function run(name, { page, rm, manifest, exit, out = [], notOut = [] }) {
   console.log(`ok   ${name}`);
 }
 
-const A = row("rec-a", "Sheeran and his team decided", "Slide 1: the decision.", "A", "1, who decided");
+const A = row("rec-a", "Ed Sheeran and his team have made the decision to remove me", "Slide 1: the decision.", "A", "1, who decided");
 const D = row("rec-a", null, "Slide 2: a child-death figure.", "D", "");
 
-run("clean: narrative cites the A words", {
-  page: narrative(["rec-a", "Ed Sheeran and his team decided to remove me."]),
+run("clean: narrative cites a run inside the A words", {
+  page: narrative(["rec-a", "his team have made the decision"]),
   rm: model({ grades: A + D }), exit: 0, out: ["story_budget: clean"],
 });
 run("mixed record: citing the D passage is outside the budget", {
   page: narrative(["rec-a", "a child-death figure of many thousands"]),
-  rm: model({ grades: A + D }), exit: 1, out: ["outside the budget", "cited words match no A or B row"],
+  rm: model({ grades: A + D }), exit: 1, out: ["outside the budget", "not a run inside any A or B row"],
 });
 run("cite outside narrative still needs a grade", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]) + proof(["rec-z", "some receipt"]),
+  page: narrative(["rec-a", "his team have made the decision"]) + proof(["rec-z", "some receipt"]),
   rm: model({ grades: A + D }), exit: 1, out: ["no Grades row: rec-z"], notOut: ["paragraph outside the budget"],
 });
 run("manifest record with no row", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]),
+  page: narrative(["rec-a", "his team have made the decision"]),
   rm: model({ grades: A }), manifest: { records: [{ id: "rec-a" }, { id: "rec-m" }] }, exit: 1, out: ["no Grades row: rec-m"],
 });
 run("rows outside ## Grades do not count", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]),
+  page: narrative(["rec-a", "his team have made the decision"]),
   rm: model({ grades: "", extra: "\n## Notes\n\n" + A }), exit: 2, out: ["no graded rows"],
 });
 run("four independent A rows on one answer all count", {
-  page: narrative(["w1", "one withdraws"]) + narrative(["w4", "four withdraws"]),
-  rm: model({ grades: row("w1", "one withdraws", "", "A", "1") + row("w2", "two withdraws", "", "A", "1") + row("w3", "three withdraws", "", "A", "1") + row("w4", "four withdraws", "", "A", "1") }),
+  page: narrative(["w1", "one withdraws today"]) + narrative(["w4", "four withdraws today"]),
+  rm: model({ grades: row("w1", "one withdraws today", "", "A", "1, the first name") + row("w2", "two withdraws today", "", "A", "1, the second name") + row("w3", "three withdraws today", "", "A", "1, the third name") + row("w4", "four withdraws today", "", "A", "1, the fourth name") }),
   exit: 0, out: ["story_budget: clean"],
 });
 run("regex characters in a record id", {
-  page: narrative(["rec.(a)+", "Sheeran and his team decided"]),
-  rm: model({ grades: row("rec.(a)+", "Sheeran and his team decided", "", "A", "1") }), exit: 0, out: ["story_budget: clean"],
+  page: narrative(["rec.(a)+", "his team have made the decision"]),
+  rm: model({ grades: row("rec.(a)+", "his team have made the decision", "", "A", "1, who decided") }), exit: 0, out: ["story_budget: clean"],
 });
 run("curly quotes and spacing normalize", {
-  page: narrative(["rec-a", "Sheeran’s team  decided"]),
-  rm: model({ grades: row("rec-a", "Sheeran's team decided", "", "B", "3") }), exit: 0, out: ["story_budget: clean"],
+  page: narrative(["rec-a", "Sheeran’s team  decided today"]),
+  rm: model({ grades: row("rec-a", "Sheeran's team decided today", "", "B", "3, the wrong reading") }), exit: 0, out: ["story_budget: clean"],
 });
 run("reader model without ## Headline is refused", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]),
+  page: narrative(["rec-a", "his team have made the decision"]),
   rm: model({ headline: false, grades: A }), exit: 2, out: ["Rerun turn two"],
 });
 run("A row without quoted words is incomplete", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]),
-  rm: model({ grades: row("rec-a", null, "Slide 1: the decision.", "A", "1") }), exit: 1, out: ["quotes no passage words", "outside the budget"],
+  page: narrative(["rec-a", "his team have made the decision"]),
+  rm: model({ grades: row("rec-a", null, "Slide 1: the decision.", "A", "1, who decided") }), exit: 1, out: ["does not open its passage cell", "outside the budget"],
 });
 run("B row without an answer is incomplete", {
-  page: narrative(["rec-a", "Sheeran and his team decided"]),
-  rm: model({ grades: row("rec-a", "Sheeran and his team decided", "", "B", "") }), exit: 1, out: ["names no answer"],
+  page: narrative(["rec-a", "his team have made the decision"]),
+  rm: model({ grades: row("rec-a", "his team have made the decision", "", "B", "") }), exit: 1, out: ["must name the answer and the clause"],
 });
 run("Cite without passage cannot carry a paragraph", {
   page: `<p data-layer="narrative">Text. <Cite s="rec-a" /></p>\n`,
   rm: model({ grades: A }), exit: 1, out: ["Cite has no passage="],
+});
+run("Serves with only an answer number is incomplete", {
+  page: narrative(["rec-a", "his team have made the decision"]),
+  rm: model({ grades: row("rec-a", "his team have made the decision", "", "A", "1") }), exit: 1, out: ["must name the answer and the clause"],
+});
+run("quoted words must open the passage cell", {
+  page: narrative(["rec-a", "his team have made the decision"]),
+  rm: model({ grades: `| \`rec-a\` | context first; "his team have made the decision" | A | 1, who decided |\n` }), exit: 1, out: ["does not open its passage cell"],
+});
+run("a short A run inside an unrelated passage does not carry it", {
+  page: narrative(["rec-a", "the accountant said the budget rose"]),
+  rm: model({ grades: row("rec-a", "said", "", "A", "1, who spoke") + row("rec-a", null, "the budget line", "D", "") }), exit: 1, out: ["outside the budget"],
+});
+run("a negated passage containing the A words does not carry it", {
+  page: narrative(["rec-a", "the report does not say the contract allows cancellation"]),
+  rm: model({ grades: row("rec-a", "the contract allows cancellation", "", "A", "1, what the contract allows") + row("rec-a", null, "the report's denial", "D", "") }), exit: 1, out: ["not a run inside any A or B row"],
+});
+run("a Cite under three words cannot identify a passage", {
+  page: narrative(["rec-a", "the decision"]),
+  rm: model({ grades: A }), exit: 1, out: ["under three words"],
+});
+run("a widened row carries the wider Cite", {
+  page: narrative(["rec-a", "Ed Sheeran and his team have made the decision to remove me from the tour"]),
+  rm: model({ grades: row("rec-a", "Ed Sheeran and his team have made the decision to remove me from the tour", "", "A", "1, who decided") }), exit: 0, out: ["story_budget: clean"],
+});
+run("expression-valued D Cite in the story view is refused", {
+  page: `<p data-layer="narrative">Text. <Cite s={"rec-a"} passage={"a child-death figure of many"} /></p>\n`,
+  rm: model({ grades: A + D }), exit: 1, out: ["outside the budget"],
+});
+run("expression-valued ungraded Cite in any layer is refused", {
+  page: narrative(["rec-a", "his team have made the decision"]) + `<p data-layer="proof">Receipt. <Cite s={"rec-z"} passage={"some receipt words"} /></p>\n`,
+  rm: model({ grades: A }), exit: 1, out: ["no Grades row: rec-z"],
+});
+run("a Cite the lint cannot read is refused", {
+  page: narrative(["rec-a", "his team have made the decision"]) + `<p data-layer="proof">{items.map((item) => <Cite s={item.source} passage={item.passage} />)}</p>\n`,
+  rm: model({ grades: A }), exit: 1, out: ["Cite the lint cannot read"],
 });
 console.log(`story_budget_test: ${n} cases pass`);

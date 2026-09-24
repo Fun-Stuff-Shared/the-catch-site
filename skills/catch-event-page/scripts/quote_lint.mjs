@@ -52,7 +52,8 @@ const has = (rec, span) => !!rec && [rec.text, rec.textJoined].some((t) => t.inc
 const findings = [];
 const lineOf = (idx) => page.slice(0, idx).split("\n").length;
 
-// 1. Cite passages exist in their record.
+// 1. Cite passages exist in their record. A Cite whose attributes are expressions cannot be checked.
+for (const mm of page.matchAll(/<Cite\b[^>]*\b(?:s|passage)=\{/g)) findings.push(`L${lineOf(mm.index)} cite: attributes are expressions; write the record id and the passage as literals`);
 for (const mm of page.matchAll(/<Cite\s+s="([^"]+)"\s+passage="([^"]*)"/g)) {
   const rec = records.get(mm[1]);
   if (!rec) { findings.push(`L${lineOf(mm.index)} cite: record ${mm[1]} is not in the manifest`); continue; }

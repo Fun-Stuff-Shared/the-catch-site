@@ -20,7 +20,7 @@ base="$root/checks/audits/$subject--$slug-$date-stranger"
 rm="$root/checks/reader-models/$subject--$slug.md"
 held="$root/checks/working-notes/$subject--$slug-held.md"
 [ -f "$rm" ] || { echo "reader model missing: $rm" >&2; exit 2; }
-prior="$(ls "$root/checks/audits/$subject--$slug-"*-stranger*.md 2>/dev/null | grep -v -F "$base.md" | tr '\n' ' ')"
+prior="$({ ls "$root/checks/audits/$subject--$slug-"*-stranger*.md 2>/dev/null || true; } | { grep -v -F "$base.md" || true; } | tr '\n' ' ')"
 mkdir -p "$(dirname "$base")"
 if [ -n "${2:-}" ]; then
   curl -fsS "http://127.0.0.1:$2/events/$story/" > "$base-page.html"
