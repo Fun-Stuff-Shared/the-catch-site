@@ -17,10 +17,14 @@ if (!page || !model || process.argv.includes("--help")) {
 }
 
 const normal = (s) => s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim().toLowerCase();
-// The answer numbers, a comma, then the clause: at least two words that each carry a letter.
+// Comma-separated cells: every leading number is an answer and must be 1 to 7; what follows the
+// last number is the clause, at least two words that each carry a letter.
 const servesOk = (s) => {
-  const m = s.match(/^[1-7](?:\s*,\s*[1-7])*\s*,\s*(.*)$/s);
-  return !!m && m[1].split(/\s+/).filter((w) => /\p{L}/u.test(w)).length >= 2;
+  const parts = s.split(",").map((p) => p.trim());
+  let i = 0;
+  while (i < parts.length && /^\d+$/.test(parts[i])) i += 1;
+  if (i === 0 || !parts.slice(0, i).every((p) => /^[1-7]$/.test(p))) return false;
+  return parts.slice(i).join(",").split(/\s+/).filter((w) => /\p{L}/u.test(w)).length >= 2;
 };
 
 const text = readFileSync(model, "utf8");

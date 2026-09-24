@@ -125,6 +125,14 @@ run("a one-word clause padded with punctuation is refused", {
   page: narrative(["rec-a", "I resign"]),
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, a .") + row("rec-b", "I stay", "", "A", "1, who .") + row("rec-c", "I go", "", "B", "1, -- x") }), exit: 1, out: ["3 row(s) or Cite(s) the lint refuses"],
 });
+run("a later answer outside 1 to 7 is refused", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: row("rec-a", "I resign", "", "A", "1, 8, who decided") + row("rec-b", "I stay", "", "A", "1, 0, who decided") + row("rec-c", "I go", "", "B", "1, 2, 8, the names") }), exit: 1, out: ["3 row(s) or Cite(s) the lint refuses"],
+});
+run("a passage containing a closing angle bracket is read in both literal forms", {
+  page: `<p data-layer="narrative">Text. <Cite s="rec-a" passage="rate > target" /> <Cite s={\`rec-b\`} passage={\`said "no" > once\`} /></p>\n`,
+  rm: model({ grades: row("rec-a", "rate > target", "", "A", "1, what the rate did") + row("rec-b", 'said "no" > once', "", "A", "2, who refused") }), exit: 0, out: ["story_budget: clean"],
+});
 run("several answers and a clause pass", {
   page: narrative(["rec-a", "I resign"]),
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, 2, the names") }), exit: 0, out: ["story_budget: clean"],

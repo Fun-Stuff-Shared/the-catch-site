@@ -4,7 +4,7 @@
 // Usage: node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
 import fs from "node:fs";
 import path from "node:path";
-import { readCites } from "./cite_attrs.mjs";
+import { readCites, citeTag } from "./cite_attrs.mjs";
 
 const root = process.cwd();
 const pagePath = process.argv[2];
@@ -33,7 +33,7 @@ for (const r of manifest.records) {
   records.set(r.id, { ...r, text: norm(text), textJoined: norm(joined), rawHas: text.length > 0 });
 }
 
-const stripTags = (s) => s.replace(/<Cite[^>]*\/>/g, "").replace(/<[^>]+>/g, " ");
+const stripTags = (s) => s.replace(citeTag, "").replace(/<[^>]+>/g, " ");
 const citesOf = (s) => readCites(s).filter((c) => c.readable);
 const spansOf = (s) => {
   const out = [];
