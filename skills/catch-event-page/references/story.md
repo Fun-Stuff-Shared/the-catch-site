@@ -128,6 +128,15 @@ the lint refuses one written as an expression. A gap line graded A or B has no w
 quote until the story turn admits the record; when it cannot, the line is re-graded C with
 "unmet" and the date in the Serves column, and the page carries the dated absence.
 
+A prior case that a record's own actor names (the president's post naming the judge as
+the one "who ruled in favor of Jim Acosta"; the motion that recounts that 2018 order) is B
+for answer 4, carried with its scope. The press-ban reader model graded it D; the story
+turn that carried it anyway wrote the page an outside read preferred on that point. A gap
+line graded C "unmet" on a question of history ("has this happened before") is not the
+page's unknown by inheritance: the story turn runs one search outside the registry (the
+fact-checkers, the court's earlier opinions, the archive) before the page carries the
+absence, and the gap line names that search.
+
 The grades are the author's claim and the audits test it. An omitted A or B is a Major. A
 passage graded C or D that the auditor shows changes one of the seven answers is a Major
 against the grade, and the audit names which answer changes. An omitted C is Minor. D is

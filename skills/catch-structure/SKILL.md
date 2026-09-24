@@ -59,7 +59,11 @@ next-day report) goes into the working note's "Not admitted this run" list as on
 the audit's link, and its grade is the grade of what the document does for the seven answers,
 not of the fact that nobody has pinned it yet. A gap graded A or B is a record the story turn
 admits before it writes; a gap typed as an unknown on the page while a named document fills
-it is a defect. Then one command ends the turn:
+it is a defect. A gap on a question of history ("has this happened before") names the
+search the story turn runs outside the registry before the page carries the absence; the
+gap line's own words never become the page's unknown. A prior case an actor in the record
+names (a judge's earlier order in the nearest case) is B for answer 4 with its scope, never
+D because the actor's sentence is a taunt. Then one command ends the turn:
 
 ```bash
 skills/catch-structure/scripts/finish.sh <subject>/<story> structure

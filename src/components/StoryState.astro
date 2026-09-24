@@ -28,7 +28,7 @@ const sourcePath = (source) => {
           return <article class="ledger-row" data-state-slot={id}>
             <h3>{label}</h3>
             {slot.figure && <strong class="ledger-value" data-state-figure={slot.occurrence_id} data-state-figure-role="current" data-figure-value={String(slot.figure.value)} data-figure-unit={slot.figure.unit ?? ""}>{figureText(slot.figure.value, slot.figure.unit)}</strong>}
-            {computed && <div class="ledger-calculation" data-computed>
+            {computed && <div class="ledger-calculation" data-computed data-layer="proof">
               <p>Computed: {slot.figure.inputs.map(input => input.unit === 'date' ? formatDate(input.value) : figureText(input.value, input.unit)).join(slot.figure.formula === 'date_difference_days' ? ' minus ' : ' + ')} = {figureText(slot.figure.value, slot.figure.unit)}.</p>
               {slot.figure.inputs.map(input => {
                 const record = evidence.get(input.evidence_id);

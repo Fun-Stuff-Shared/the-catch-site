@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.5"
+  version: "3.6"
 ---
 
 # Catch story turn
@@ -57,9 +57,13 @@ The shape: the headline and the dek are the reader model's `## Headline`, set as
 module's title and the page's dek (the label the story was opened under is not the
 headline, and a patch round may change both); the headline states the most important
 change, with the number when the number is the change; the dek adds the two facts a
-stranger needs to read on; What happened opens
+stranger needs to read on and names no person the story has not yet introduced (roles and
+counts until then); What happened opens
 on the clean model (what happened and what it means), the act itself in its first sentence
 and what was expected, with the gauge that measured it, after the act and never before it;
+when the event is a sequence, one sentence carries the whole sequence with its dates in
+order before the paragraphs that expand each step; a term the opening figure leans on is
+explained in the first paragraph after the figure, from the record's words;
 what was new is stated as the fact (in July nine of 12 voted to hold, in September all 12
 voted to raise), never announced ("the news is", "the change was", "the real signal is");
 the mechanism is paragraphs of What happened, not a section; it goes one level deeper per
@@ -73,8 +77,12 @@ section whose question it follows; the reactions of the actors the story names a
 paragraphs of What happened next unless the reaction is the event);
 a line-by-line comparison of two records (two statements, two versions of a bill) is a
 proof block, and the story says in one sentence what changed between them; quotes as cards, each introduced by the
-paragraph before and headed with the speaker; What happened next dated; What we do not
-know only after its disproof search, and never a step that is scheduled but not yet due;
+paragraph before and headed with the speaker, one card per actor per point; a prior case
+the page names carries what it decided and what it does not decide for this story; What happened next dated; What we do not
+know only after its disproof search, which for a question of history ("has this happened
+before") leaves the pinned set once (the fact-checkers, the court's earlier opinions, the
+archive) and admits what it finds, and never a step that is scheduled but not yet due, and
+never the gap line's own words ("the opinions read give no date for an earlier ban");
 the records list. Concept before qualification, every distinction introduced by the
 mistake it prevents, a fact told once in the story register and once in proof.
 
@@ -226,6 +234,7 @@ review rounds on skills 3.5 fixed eight classes, three of which any page had eve
 - [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.
 - [ ] The entailment check on the tree you are committing returned ENTAILED (`--since` the commit you started from, for a patch); its verdict file is committed under `checks/audits/`.
 - [ ] Every catch pairs an outlet sentence with the record passage that contradicts it; none rests on an inference.
+- [ ] The dek names nobody the story has not introduced; the sequence is one sentence with its dates; every prior case named carries its scope; every unknown about history names the search that left the pinned set.
 - [ ] Measured in a browser at 1280 wide, in all three modes (step 6).
 - [ ] Subject page and homepage updated.
 - [ ] The report names the reader-facing delta in one sentence.

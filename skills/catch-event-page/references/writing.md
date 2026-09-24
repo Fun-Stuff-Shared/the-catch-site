@@ -81,6 +81,24 @@ sounding unaware of the work it took to know it.
   and a broader true word ("television" for "connected TV") are not disagreements; say what
   they are in one line or leave them out.
 - The strongest plain sentence never sits in the last section.
+- The dek names no person the story has not yet introduced. People are roles and counts
+  until the paragraph that gives their names and outlets ("Three reporters say they were
+  turned away", never "Gardner, Klein and Haslett say"). A stranger reads a bare surname in
+  a dek as someone they are supposed to know.
+- When the event is a sequence (an act, its consequence, the process that followed), one
+  sentence carries the whole sequence with its dates in order, before the paragraphs that
+  expand each step: "The September 18 ban came before written reasons were sent; after
+  reporters lost entry and the television pool stopped its feed, the September 22 letters
+  supplied reasons and a September 25 response deadline." The reader model's "what changed"
+  answer is that sentence. A page that spreads the sequence over four sections has every
+  fact and no shape; the stranger has to assemble the order.
+- One quote card per actor per point. The wording that is itself the event or the claim
+  checked (the announcement, the letter's sentence) is a card; the same actor making the
+  same point again later that day is one paraphrased sentence with the words that carry the
+  point in quotation marks. Two cards for one point read as a transcript.
+- Why it matters is a fact with its reach, in the story view: when CNN's crew is the pool
+  it supplies the other four networks, and through them more than 1,000 local stations. A
+  sentence about importance ("the stakes are high for press access") is gloss and is cut.
 
 ## Sentences and passages
 
@@ -112,6 +130,18 @@ sounding unaware of the work it took to know it.
   outlet wrote. A narrative paragraph does not carry a coverage cite for a fact.
 - Every superlative and gloss ("lowest since", "unexpected", "first") quotes a held record
   or does not appear; "first" is checked against earlier filings before it is written.
+- A prior case the page names carries its scope in the same sentence: what it decided and
+  what it does not decide for this story. "On November 16, 2018, Kelly ordered the White
+  House to restore Jim Acosta's hard pass; that order concerned one reporter and did not
+  decide this ban on three outlets." The nearest prior case with the same actors or the same
+  judge, when a record on the page names it (the president's own post, the motion that
+  recounts the order), is on the page with that scope; a page that drops it leaves the
+  stranger to hear about it elsewhere without the caveat.
+- A term the opening figure leans on is explained in the first paragraph after the figure,
+  before the term recurs. "78 journalists held hard passes" then "A hard pass is a
+  credential that lets a journalist enter the White House complex on a regular basis", from
+  the record's words; a page that explains the term in the middle of What happened has
+  asked the stranger to carry an undefined word past the number that depends on it.
 - A cause is quoted from a record with its author named, or absent, and the absence is
   said plainly. When an outlet authors a cause the record does not hold, that is
   reportable, attributed to the outlet.
@@ -149,6 +179,14 @@ sounding unaware of the work it took to know it.
 - No negative ("did not post", "no statement", "the ad names no document") without the
   capture that would show the positive, with the search named: the listing for that date,
   every frame of the video, the earlier filings.
+- An unknown about history ("has this happened before", "when was the last time") is
+  searched outside the pinned set once before it is written: the fact-checkers, the court's
+  own earlier opinions, the archive. A sentence that says the records read give no date for
+  an earlier such act is the search's note to itself, not an unknown; the found record is
+  admitted and the page says what it says ("First Amendment scholars quoted by
+  FactCheck.org call the ban unprecedented; the nearest earlier cases they name are one
+  reporter barred from social events under Nixon and Fox News left out of one interview
+  pool under Obama"). What ships as unknown is what that search did not find, bounded.
 - An absence sentence on the page is bounded: it names the set that was looked at and the
   date it was current, in everyday words (the court's docket for this case through
   September 19; the fourteen articles saved for this story; the agency's own site), and says

@@ -19,17 +19,27 @@ export const records = [...manifestRecords, ...outletRecords];
 export const recordById = new Map(records.map((record) => [record.id, record]));
 export const outletRecordByUrl = new Map(outletRecords.map((record) => [record.url, record]));
 
+const GROUP_ORDER = ["primary", "official", "coverage"];
+function numberedSources(manifest) {
+  const sources = manifest?.story_sources ?? [];
+  for (const s of sources) if (!GROUP_ORDER.includes(s.group)) throw new Error(`story_source_group_unknown:${manifest.event}:${s.id}:${s.group}`);
+  return sources
+    .map((s, i) => ({ ...s, i }))
+    .sort((a, b) => GROUP_ORDER.indexOf(a.group) - GROUP_ORDER.indexOf(b.group) || a.i - b.i)
+    .map(({ i, ...s }, k) => ({ ...s, n: k + 1 }));
+}
+
 export function storySources(event) {
   const manifest = manifests.find((m) => m.event === event);
-  const list = (manifest?.story_sources ?? []).map((s, i) => ({ ...s, n: i + 1, record: recordById.get(s.id) }));
+  const list = manifest ? numberedSources(manifest).map((s) => ({ ...s, record: recordById.get(s.id) })) : [];
   return { list, num: Object.fromEntries(list.map((s) => [s.id, s.n])) };
 }
 
 export function citeNumber(sourceId, event) {
   const ordered = event ? [...manifests.filter((m) => m.event === event), ...manifests.filter((m) => m.event !== event)] : manifests;
   for (const manifest of ordered) {
-    const i = (manifest.story_sources ?? []).findIndex((s) => s.id === sourceId);
-    if (i >= 0) return { n: i + 1, event: manifest.event };
+    const hit = numberedSources(manifest).find((s) => s.id === sourceId);
+    if (hit) return { n: hit.n, event: manifest.event };
   }
   return null;
 }

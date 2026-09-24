@@ -10,7 +10,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "0.3"
+  version: "0.4"
 ---
 
 # Catch orchestration turn
@@ -28,10 +28,12 @@ human's word. Never edit a skill file while a review is reading it. Never kill, 
 signal a process you did not start; the authors you launch are yours to stop.
 
 Hosts and models (set explicitly in every dispatch; the defaults exist only so a missing
-variable is visible in the log): codex `gpt-6-sol` for the record and structure turns and
-one story turn; grok `grok-4.7` for the other story turn. Reviews (audit, red team,
-entailment) run on codex `gpt-6-sol`; the stranger read is the one Claude subagent, on
-`sonnet`, always with the model passed.
+variable is visible in the log): the production author is grok `grok-4.7` for the record,
+structure and story turns (the human's pick, 2026-09-24, after the press-ban comparison).
+Reviews (audit, red team, entailment) run on codex `gpt-6-sol`, so the reviewer of a
+sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
+always with the model passed. A timed comparison (section 6) adds a second story author
+on codex `gpt-6-sol` from the same structure commit; it is the exception, not the run.
 
 ## 1. Accept the event (state, before any dispatch)
 
@@ -76,7 +78,7 @@ from the bodies you read in step 1, not from the headline.
 ```bash
 date -u +%Y-%m-%dT%H:%M:%SZ > <dispatch dir>/CLOCK.txt
 cd /Volumes/4/GitHub/the-catch-site-wt-<short>
-AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir> EVENT_ID=event-<subject-slug>-<slug> \
+AUTHOR_HOST=grok AUTHOR_MODEL=grok-4.7 DISPATCH_DIR=<dispatch dir> EVENT_ID=event-<subject-slug>-<slug> \
   zsh skills/catch-event-page/assets/dispatch/run-turn.sh record <subject-slug> <slug> \
   /Volumes/4/GitHub/the-catch-site-wt-<short> author/<short> <skill-commit> <dispatch dir>/candidate-block.txt
 ```
@@ -136,16 +138,16 @@ PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state refresh-views --state
 
 ## 6. Dispatch the story turns
 
-One author: `run-turn.sh story ...` in the same worktree. Two authors on one record (the
-timed comparison): cut the second worktree at the structure commit and dispatch both at
-once, each on its own host.
+The production run: `run-turn.sh story ...` in the same worktree, grok `grok-4.7`. Two
+authors on one record (the timed comparison): cut the second worktree at the structure
+commit and dispatch both at once, each on its own host.
 
 ```bash
 S=$(git -C /Volumes/4/GitHub/the-catch-site-wt-<short> log --grep "^structure:" -1 --format=%h)
 git -C /Volumes/4/GitHub/the-catch-site worktree add /Volumes/4/GitHub/the-catch-site-wt-<short>-grok -b author/<short>-grok $S
 ln -s /Volumes/4/GitHub/the-catch-site/node_modules /Volumes/4/GitHub/the-catch-site-wt-<short>-grok/node_modules
-AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir>/sol  run-turn.sh story ... wt-<short> author/<short> <skill-commit>
-AUTHOR_HOST=grok  AUTHOR_MODEL=grok-4.7  DISPATCH_DIR=<dispatch dir>/grok run-turn.sh story ... wt-<short>-grok author/<short>-grok <skill-commit>
+AUTHOR_HOST=grok  AUTHOR_MODEL=grok-4.7  DISPATCH_DIR=<dispatch dir>/grok run-turn.sh story ... wt-<short> author/<short> <skill-commit>
+AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir>/sol  run-turn.sh story ... wt-<short>-sol author/<short>-sol <skill-commit>
 ```
 
 The two pages then differ only by the author; the record, the reader model, the skill
@@ -173,6 +175,22 @@ list asked for a witness sentence to "open with the referent", the letter's alle
 grok page had done exactly that and the red team called it Critical, because the witness
 spoke about other inquiries. Give the author the pin lines and the class, and let the
 sentence follow the record.
+
+Read a grok page for its measured gaps before the reads return, at the bytes, and put
+what you find on the patch list with the pin lines. On the press-ban page (2026-09-24,
+skills 3.5) the grok author, against the gpt-6-sol author on the same record: put three
+bare surnames in the dek where the reader model's dek had a count; spread the sequence
+(ban, denials, letters, deadline) over four sections with no sentence carrying it in
+order; wrote the reader model's C "unmet" gap line onto the page as the unknown ("the
+opinions read give no date for an earlier ban") where one web search found the
+fact-checkers calling the ban unprecedented; dropped the judge's 2018 Acosta order, which
+the president's own post named, because the reader model graded it D; and put two cards
+on one actor's one point. What it did better than sol: defined the term the opening figure
+leans on in the first paragraph, carried a second catch (the letter's cited articles were
+not all by pass holders), the government's reserved challenge to the 1977 precedent, and
+the reach of the pool feed. Skills 3.6 binds each gap as a rule (`catch-story`,
+`references/writing.md`); the reviewer still checks the five at the bytes on every grok
+page until a run shows the rule held.
 
 Resume the author's own session for the patch (`codex exec resume <session id>` from the
 story log's `session id:` line; `grok --resume <id>` with the id from
@@ -220,6 +238,11 @@ so the resting commit carries what was decided and why.
 
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
   unfilled placeholder, and refuses a worktree that does not contain the skill commit.
+- An outside read of a page from a text extraction (a chat model given the copied page)
+  loses the `value=` numbering of the records list and counts the entries in order, then
+  reports cites beyond the list; check such a claim at the HTML before it becomes an item.
+  Since 400c7a89 the numbers run in group order, so the list and the cites agree in any
+  extraction.
 - A grok run started with `-c` in a directory with no grok session fails with "No session
   found"; the dispatch runner starts a fresh session, never continues one.
 - Model ids: codex refuses an id the account does not have ("not supported when using

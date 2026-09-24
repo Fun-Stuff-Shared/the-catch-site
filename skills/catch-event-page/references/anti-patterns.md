@@ -107,3 +107,42 @@ differs. The stranger read of the merged Fed page: "I could not tell why 12 peop
 18 have projections."
 
 - The committee voted 12 to 0, and 16 of 18 policymakers saw at least one more increase as appropriate.
+
+## A dek that names people the stranger has not met
+
+The rule (writing.md, register): people are roles and counts until the paragraph that
+introduces them. The grok-4.7 press-ban page, 2026-09-24; the stranger read stalled on the
+three surnames and the reader model's own dek had the count.
+
+- Gardner, Klein and Haslett say they were turned away, while one colleague got through.
+
+## The sequence spread across sections
+
+The rule (writing.md, register): one sentence carries the sequence with its dates in
+order. The grok-4.7 press-ban page had the ban in What happened, the denials three
+paragraphs later, the letters in What happened next and the deadline in the legal
+section; an outside read of the two pages named the gpt-6-sol page's one sentence as the
+thing the grok page lacked. The sentence that was missing:
+
+- The September 18 ban came before written reasons were sent to the outlets; after reporters lost entry and the television pool stopped its feed, the White House's September 22 letters supplied reasons and a September 25 response deadline.
+
+## The search's note to itself, shipped as an unknown
+
+The rule (writing.md, absence): an unknown about history is searched outside the pinned
+set once before it is written. The reader model's gap line said the three opinions read
+named no earlier ban; the grok-4.7 page wrote the gap line onto the page. The gpt-6-sol
+page fetched a FactCheck.org piece the same afternoon in which two First Amendment
+scholars call the ban unprecedented.
+
+- The 1977 press-pass opinion, the 2020 hard-pass suspension opinion, and the 2025 order on spaces open to the press do not give a date for an earlier ban of named news organizations from the White House grounds.
+
+## The precedent dropped, or named without its scope
+
+The rule (writing.md, sentences and passages): a prior case carries what it decided and
+what it does not decide for this story. The president's September 21 post named the judge
+as "a man who ruled in favor of Jim Acosta"; the motion recounts the 2018 order. The
+reader model graded the passage D and the grok-4.7 page had no sentence on it; the
+gpt-6-sol page carried the order with its scope, and the outside read named that as the
+one thing the sol page had that the grok page should not have lost.
+
+- (missing) On November 16, 2018, Kelly ordered the White House to restore CNN reporter Jim Acosta's hard pass; that order concerned one reporter and did not decide this ban on three outlets.
