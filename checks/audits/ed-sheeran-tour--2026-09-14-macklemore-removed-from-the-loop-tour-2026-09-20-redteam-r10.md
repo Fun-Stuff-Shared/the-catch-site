@@ -1,0 +1,17 @@
+The reader model exists. I found two ship-blocking defects, ranked by likely reader harm.
+
+1. **Major: The headline falsely gives four departures one role.**
+
+   - **Page bytes:** 134 and 3716: `Macklemore removed from Ed Sheeran&#39;s tour; the remaining opening acts quit` in the [built page](/Volumes/4/GitHub/the-catch-site-wt-mack/dist/events/ed-sheeran-tour/2026-09-14-macklemore-removed-from-the-loop-tour/index.html:2).
+   - **Records:** Beoga said it was departing `as Ed Sheeran's band` at byte 190 of its [primary statement](/Volumes/4/GitHub/the-catch-site-wt-mack/data/sources/ed-sheeran-tour/beoga-withdrawal-2026-09-15.txt:7). The AP record says Finneas `was due to tour with Sheeran in South America` at byte 986 of the [AP pin](/Volumes/4/GitHub/the-catch-site-wt-mack/data/sources/ed-sheeran-tour/coverage/ap-support-acts-2026-09-15.txt:6).
+   - **Reader-model grade:** The author already graded this distinction B and identified the headline as inaccurate in [the reader model](/Volumes/4/GitHub/the-catch-site-wt-mack/checks/reader-models/ed-sheeran-tour--2026-09-14-macklemore-removed-from-the-loop-tour.md:129). It directly creates answer 3's easiest wrong reading.
+   - **Correct account:** Four artists withdrew from different future roles. Rowe and Lukas Graham were North American support acts, Beoga was Sheeran's backing band, and Finneas was booked for the later South American leg.
+
+2. **Major: Rowe and Lukas Graham are presented as replacement appointments, although primary schedules show they were already advertised support.**
+
+   - **Page bytes:** 34920: `Rowe and Lukas Graham would have replaced Macklemore on the remaining U.S. dates.` Bytes 39961 and 40084 repeat `Support act (would-be replacement for Macklemore)` in the [built page](/Volumes/4/GitHub/the-catch-site-wt-mack/dist/events/ed-sheeran-tour/2026-09-14-macklemore-removed-from-the-loop-tour/index.html:2).
+   - **Records:** The page followed the secondary AP phrase `would have been replacements for Macklemore` at byte 673 of the [AP pin](/Volumes/4/GitHub/the-catch-site-wt-mack/data/sources/ed-sheeran-tour/coverage/ap-support-acts-2026-09-15.txt:6). But the pinned venue record says `Ed Sheeran will be joined ... by Macklemore, Lukas Graham, and Aaron Rowe!` at byte 850 of the [Lincoln Financial Field pin](/Volumes/4/GitHub/the-catch-site-wt-mack/data/sources/ed-sheeran-tour/lincoln-field-loop-tour-2026-09-20.txt:53). AEG's first-party sales page, whose response reports `Last-Modified: Mon, 06 Oct 2025 19:05:33 GMT`, lists `Support: Macklemore, Lukas Graham, Aaron Rowe` together for all eight shared future dates and Aaron Rowe separately for both Hollywood dates. That primary record is not pinned. [AEG first-party schedule](https://amex.aegpresents.com/edsheeran/)
+   - **Reader-model grade:** This omitted primary record changes answers 1, 3, and 5: what happened, the easiest wrong reading, and what changed. It is B material and exposes an error in the reader model's own “replacement openers” account.
+   - **Correct account:** Rowe and Lukas Graham were already co-billed support on Macklemore's eight scheduled dates; Rowe also had the two Hollywood dates. After Macklemore's removal they would have been the remaining advertised support, not newly installed replacements.
+
+VERDICT: NO-SHIP
