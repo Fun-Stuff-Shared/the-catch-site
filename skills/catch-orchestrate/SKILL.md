@@ -10,7 +10,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "0.1"
+  version: "0.3"
 ---
 
 # Catch orchestration turn
@@ -84,7 +84,7 @@ AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir> EVENT_ID=ev
 Confirm the launch: the pid file's process has parent 1 and the log grows past the prompt
 echo; the log's `model:` line names the model you set. Wait on the `.finished` marker (a
 poll that also exits when the pid dies), never on a timer. The record turn has taken 46
-minutes on a subject with a recipe and longer on a new one.
+minutes on a subject with a recipe and 42 on a new subject with 32 records.
 
 ## 4. Read the record commit, then audit it
 
@@ -117,6 +117,23 @@ the headline against answers 1 and 3, every A and B grade against its passage ta
 quoted words and the clause named), the sections against the question tree. A wrong angle
 is fixed here by re-dispatching turn two with the correction, never later on prose.
 
+When the reader model's headline differs from the label you accepted in step 1, rename
+the state label now, before any story turn. The build compares each page's `<h1>` with
+the state view's label (`scripts/check-state-pages.mjs`), the authors are told not to run
+state commands, and a story turn that reaches its finish with the old label ends with the
+page written, entailed and uncommitted (the sol press turn: 49 minutes, "Turn-three
+commit: none"). The reviewer then runs `finish.sh ... story` in the worktree by hand, which
+is the author's commit step and not a sentence.
+
+```bash
+cd /Volumes/4/CF/sai
+PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
+  --op rename --event event-<subject-slug>-<slug> --author <you> \
+  --reason "structure turn <commit>: the reader model's headline answers questions 1 and 3" \
+  --label "<the reader model's headline>"
+PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject-slug>-<slug>
+```
+
 ## 6. Dispatch the story turns
 
 One author: `run-turn.sh story ...` in the same worktree. Two authors on one record (the
@@ -139,7 +156,28 @@ commit and the clock start are the same.
 On each story commit, in parallel: `scripts/red_team.sh`, `scripts/entailment_check.sh`,
 `scripts/stranger_read.sh <subject-slug>/<slug>` (the stranger on `sonnet`, model passed).
 Verify every finding at the bytes; refute what the pins refute; send the rest as one
-numbered patch list, the stranger's items in the same list. The author patches once. The
+numbered patch list, the stranger's items in the same list. The author patches once.
+
+Launch the three as detached scripts from the worktree with `CODEX_MODEL` and
+`STRANGER_MODEL` set and a finished marker per read; on the press pages the stranger
+returned in under two minutes, the entailment pass in four and the red team in eight. Each
+read writes `checks/audits/<subject>--<slug>-<date>-<read>.md` and overwrites the author's
+own entailment file of the same date; that is the second, independent run and the one the
+patch list cites. Two items on every list so far were the same across both authors on one
+record (a KPI whose meaning arrives later on the page, and a "why it matters" sentence the
+stranger had to assemble): expect the stranger and the red team to converge on the opening
+number.
+
+A patch item quotes what the pin says and where, never a suggested framing. The sol press
+list asked for a witness sentence to "open with the referent", the letter's allegation; the
+grok page had done exactly that and the red team called it Critical, because the witness
+spoke about other inquiries. Give the author the pin lines and the class, and let the
+sentence follow the record.
+
+Resume the author's own session for the patch (`codex exec resume <session id>` from the
+story log's `session id:` line; `grok --resume <id>` with the id from
+`~/.grok/sessions/<encoded worktree path>/`), so the author patches with its record read
+still in context. The
 three reads run again only when the patch introduced a Critical. Then decide on the page
 as it stands: cut a sentence, hold an item with its reason on
 `checks/working-notes/<subject-slug>--<slug>-held.md`, or kill the story. Two things the
@@ -159,6 +197,25 @@ fill (`sai.cli state stage-story`) already ran inside the story turn's finish; c
 line in the log and rerun it on the merged page if the human merges the two. Push on the
 human's word only; then verify the live bytes (procedures, step 13).
 
+The measured run on a new subject (the White House press ban, 32 records, 2026-09-24):
+
+| Turn | Length |
+|---|---|
+| Record, gpt-6-sol | 42 min |
+| Completeness audit, gpt-6-sol | 10 min |
+| Structure, gpt-6-sol | 7 min |
+| Story, gpt-6-sol and grok-4.7 in parallel | 49 and 56 min |
+| Three reads per page, in parallel | 5 and 7 min |
+| Patch, gpt-6-sol and grok-4.7 | 11 and 15 min |
+| Stranger reread of the patched page | 2 min |
+| First dispatch to the first resting page | 143 min |
+
+The reviewer's hands between turns came to about 25 minutes of that, most of it the
+label rename and the finish run by hand that step 5 now prevents. The reviewer's own
+decision after the reread is a commit in the worktree by explicit path (the cut sentence,
+the held list, the read reports as `.md`, never the `.log` files) with a `review:` message,
+so the resting commit carries what was decided and why.
+
 ## Gotchas
 
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
@@ -172,3 +229,9 @@ human's word only; then verify the live bytes (procedures, step 13).
   the finished marker and the pid, re-armed at expiry.
 - The staging summary printed by finish.sh reads `registration.pins`; a `?` there means the
   state CLI's JSON shape changed, not that no pins were staged.
+- `finish.sh` owns every `checks/audits/<subject>--<slug>*` file, the `.log` transcripts
+  included. Move the logs to scratch before running it by hand and put them back after;
+  the `.md` verdicts are the record, the logs are not committed.
+- The build copies the state views into `data/state/` (`scripts/pull-state.mjs`), so a
+  worktree shows hundreds of modified view files after any state refresh. finish.sh
+  refuses them as generated; leave them, never commit them.

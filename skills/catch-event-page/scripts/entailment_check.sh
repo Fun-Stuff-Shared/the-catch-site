@@ -47,7 +47,7 @@ Rules: do not edit any file; do not run git commit, git reset, git checkout, or 
 
 $(cat "$table")
 PROMPT
-codex exec -m "${CODEX_MODEL:-gpt-5.6-sol}" --skip-git-repo-check -C "$root" -c model_reasoning_effort=high -o "$out" "$(cat "$prompt")" </dev/null > "${out%.md}.log" 2>&1 || true
+codex exec -m "${CODEX_MODEL:-gpt-6-sol}" --skip-git-repo-check -C "$root" -c model_reasoning_effort=high -o "$out" "$(cat "$prompt")" </dev/null > "${out%.md}.log" 2>&1 || true
 rm -f "$prompt" "$table"
 grep -q '^VERDICT: ' "$out" 2>/dev/null || { echo "no VERDICT line in $out; read ${out%.md}.log and rerun" >&2; exit 1; }
 echo "$out"
