@@ -161,6 +161,6 @@ PYTHONPATH=/Volumes/4/CF/sai/src /opt/anaconda3/bin/python3 -m sai.cli state sta
 node -e '
   const r = JSON.parse(require("fs").readFileSync(".finish-stage.json", "utf8"));
   const f = r.figures ?? r; const refused = f.figures_refused ?? [];
-  console.log(`staged: ${r.pins?.pins ?? "?"} pins, ${f.figures ?? 0} figures in /Volumes/4/CF/catch-state`);
+  console.log(`staged: ${r.registration?.pins ?? "?"} pins, ${f.figures ?? 0} figures in /Volumes/4/CF/catch-state`);
   for (const x of refused) console.log(`  figure not recorded: ${x.figure} (${x.reason}); rewrite it as sourced or sum/date_difference_days with the value in the span, or drop it (references/manifest-and-gate.md)`);
   process.exit(refused.length ? 1 : 0);' || exit 1
