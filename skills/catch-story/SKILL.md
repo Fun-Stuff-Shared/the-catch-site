@@ -105,9 +105,9 @@ page's own method outside the proof layer, and lists for a reread the sentences 
 reads as machine voice: the seven questions in `scripts/voice_lint.py` (a description of
 the page or its method, a mirrored antithesis, a section wrap-up, a gloss on what to take
 away, a document as the subject where the fact could stand alone, an explanation nobody
-asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. `scripts/story_budget.mjs <page> <reader model>` lists every story-view
-paragraph whose cited records carry no passage graded A or B; each one moves to a detail
-block or the proof before the commit, or the reader model's grade is wrong and the report says which answer the passage changes. The interrogation
+asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. `scripts/story_budget.mjs <page> <reader model> <manifest>` lists every story-view
+paragraph with no Cite whose passage is, word for word, the quoted words of an A or B line for
+that record; each one moves to a detail block or the proof before the commit, or the reader model's grade is wrong and the report says which answer the passage changes. The interrogation
 is a model with web and X search listing what the page does not cover: every item is fixed
 from the pins, admitted and fixed, or written on the page as a dated absence after one
 attempt, in the same run; an item that names a public record is a fetch, not a decline.

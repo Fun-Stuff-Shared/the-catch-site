@@ -121,6 +121,10 @@ run("answers outside 1 to 7 and a bare punctuation clause are refused", {
   page: narrative(["rec-a", "I resign"]),
   rm: model({ grades: row("rec-a", "I resign", "", "A", "8, who left") + row("rec-b", "I stay", "", "B", "1, .") }), exit: 1, out: ["must name an answer (1 to 7)"],
 });
+run("a one-word clause padded with punctuation is refused", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: row("rec-a", "I resign", "", "A", "1, a .") + row("rec-b", "I stay", "", "A", "1, who .") + row("rec-c", "I go", "", "B", "1, -- x") }), exit: 1, out: ["3 row(s) or Cite(s) the lint refuses"],
+});
 run("several answers and a clause pass", {
   page: narrative(["rec-a", "I resign"]),
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, 2, the names") }), exit: 0, out: ["story_budget: clean"],

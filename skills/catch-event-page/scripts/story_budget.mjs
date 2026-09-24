@@ -17,8 +17,11 @@ if (!page || !model || process.argv.includes("--help")) {
 }
 
 const normal = (s) => s.replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim().toLowerCase();
-// The answer numbers, a comma, then the clause: at least two words with a letter in them.
-const servesShape = /^[1-7](?:\s*,\s*[1-7])*\s*,\s*(?=[^,]*\p{L})\S+\s+\S+/u;
+// The answer numbers, a comma, then the clause: at least two words that each carry a letter.
+const servesOk = (s) => {
+  const m = s.match(/^[1-7](?:\s*,\s*[1-7])*\s*,\s*(.*)$/s);
+  return !!m && m[1].split(/\s+/).filter((w) => /\p{L}/u.test(w)).length >= 2;
+};
 
 const text = readFileSync(model, "utf8");
 if (!/^## Headline\s*$/m.test(text)) {
@@ -42,7 +45,7 @@ for (const line of gradesBlock[1].split("\n")) {
   rows.push(row);
   if (grade === "A" || grade === "B") {
     if (words.length === 0) defects.push(`${model}: ${grade} row for ${id} does not open its passage cell with the words the story cites, in double quotes: ${row.line}`);
-    if (!servesShape.test(row.serves)) defects.push(`${model}: ${grade} row for ${id} must name an answer (1 to 7) and the clause it changes in the Serves column ("1, who decided"): ${row.line}`);
+    if (!servesOk(row.serves)) defects.push(`${model}: ${grade} row for ${id} must name an answer (1 to 7) and the clause it changes in the Serves column ("1, who decided"): ${row.line}`);
   }
 }
 if (rows.length === 0) { console.error(`story_budget: no graded rows under "## Grades" in ${model}`); process.exit(2); }
