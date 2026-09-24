@@ -90,13 +90,21 @@ minutes on a subject with a recipe and longer on a new one.
 
 `git log --grep "^record:" -1` in the worktree. Before the audit: the working note has one
 line per census search, the passage tables exist per primary record, the manifest's
-`state_event_id` is the event you accepted, `npm run build` in the worktree is green and
+`state_event_id` is the event you accepted, `CATCH_TURN=record npm run build` in the
+worktree is green (the gate excuses only the unattested section_grammar step under that
+variable; without it a record commit fails the gate by design) and
 `dist/events/<subject>/<slug>/index.html` shows headline, dek, KPI strip, figures,
-chronology and records list and no narrative paragraph. Then, once, on this commit:
+chronology and records list and zero `data-layer="narrative"` blocks. If main moved
+while turn one ran (a headline rename, a merged story), merge main into the author
+branch first, resolving the editorial list in `src/lib/discovery.mjs` as the union and
+keeping both blocks of `data/sources/SOURCES.md`; the state's labels must match every
+page in the worktree or the build fails on a page the author never touched. Then, once,
+on this commit, detached (the audit takes twenty minutes or more):
 
 ```bash
 cd /Volumes/4/GitHub/the-catch-site-wt-<short>
-skills/catch-event-page/scripts/completeness_audit.sh <subject-slug>/<slug> checks/audits/<subject-slug>--<slug>-<date>-record-audit.md
+CODEX_MODEL=gpt-6-sol skills/catch-event-page/scripts/completeness_audit.sh <subject-slug>/<slug> \
+  checks/audits/<subject-slug>--<slug>-<date>-record-audit.md
 ```
 
 The audit file is turn two's input (AUDIT_FILE). It runs here and never again.
