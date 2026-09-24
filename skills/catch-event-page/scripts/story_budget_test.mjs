@@ -57,7 +57,7 @@ run("rows outside ## Grades do not count", {
   rm: model({ grades: "", extra: "\n## Notes\n\n" + A }), exit: 2, out: ["no graded rows"],
 });
 run("four independent A rows on one answer all count", {
-  page: narrative(["w1", "one withdraws today"]) + narrative(["w4", "four withdraws today"]),
+  page: narrative(["w1", "one withdraws today"], ["w2", "two withdraws today"]) + narrative(["w3", "three withdraws today"], ["w4", "four withdraws today"]),
   rm: model({ grades: row("w1", "one withdraws today", "", "A", "1, the first name") + row("w2", "two withdraws today", "", "A", "1, the second name") + row("w3", "three withdraws today", "", "A", "1, the third name") + row("w4", "four withdraws today", "", "A", "1, the fourth name") }),
   exit: 0, out: ["story_budget: clean"],
 });
@@ -131,7 +131,7 @@ run("a later answer outside 1 to 7 is refused", {
 });
 run("a passage containing a closing angle bracket is read in both literal forms", {
   page: `<p data-layer="narrative">Text. <Cite s="rec-a" passage="rate > target" /> <Cite s={\`rec-b\`} passage={\`said "no" > once\`} /></p>\n`,
-  rm: model({ grades: row("rec-a", "rate > target", "", "A", "1, what the rate did") + row("rec-b", 'said "no" > once', "", "A", "2, who refused") }), exit: 0, out: ["story_budget: clean"],
+  rm: model({ grades: row("rec-a", "rate > target", "", "A", "1, what the rate did") + row("rec-b", 'said \u201cno\u201d > once', "", "A", "2, who refused") }), exit: 0, out: ["story_budget: clean"],
 });
 run("several answers and a clause pass", {
   page: narrative(["rec-a", "I resign"]),
@@ -160,6 +160,22 @@ run("a Cite the lint cannot read is refused", {
 run("a backtick passage without interpolation is read", {
   page: "<p data-layer=\"narrative\">Text. <Cite s=\"rec-a\" passage={`he said \"I resign\" at noon`} /></p>\n",
   rm: model({ grades: row("rec-a", 'he said "I resign" at noon'.replace(/"/g, "\u201c"), "", "A", "1, who left") }), exit: 0, out: ["story_budget: clean"],
+});
+run("a row with escaped pipes matches a passage holding a pipe", {
+  page: narrative(["rec-a", "rate | target"]),
+  rm: model({ grades: `| \`rec-a\` | "rate \\| target" the table line | A | 1, what the rate did |\n` }), exit: 0, out: ["story_budget: clean"],
+});
+run("a B passage the page does not carry is a defect", {
+  page: narrative(["rec-a", "I resign"]),
+  rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") + row("rec-b", "effective at noon", "", "B", "5, when it took effect") }), exit: 1, out: ["B passage of rec-b that no story-view or fact-block Cite carries", "1 graded passage(s) the page does not carry"],
+});
+run("a B passage carried only in a proof paragraph is not carried", {
+  page: narrative(["rec-a", "I resign"]) + proof(["rec-b", "effective at noon"]),
+  rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") + row("rec-b", "effective at noon", "", "B", "5, when it took effect") }), exit: 1, out: ["1 graded passage(s) the page does not carry"],
+});
+run("a B passage carried by a fact block counts", {
+  page: narrative(["rec-a", "I resign"]) + `<div data-layer="fact"><p>Noon. <Cite s="rec-b" passage="effective at noon" /></p></div>\n`,
+  rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") + row("rec-b", "effective at noon", "", "B", "5, when it took effect") }), exit: 0, out: ["story_budget: clean"],
 });
 run("a backtick passage with interpolation is refused", {
   page: "<p data-layer=\"narrative\">Text. <Cite s=\"rec-a\" passage={`I resign ${x}`} /></p>\n",

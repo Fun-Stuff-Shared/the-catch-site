@@ -49,7 +49,8 @@ will carry A and B material only; C and D stay in the detail blocks, the proof a
 records list. One passage carries a concept: a second passage supplying the same concept
 for the same answer is C, marked "carried by" the first; every A and B line names the
 answer and the clause of it that changes without the passage, and opens its passage cell
-with the pin's words the story will cite, in double quotes; an answer with more than three
+with the pin's words the story will cite, in double quotes (quotation marks inside them
+curly, a pipe as `\|`); the story turn must carry every one of those runs; an answer with more than three
 A or B lines is reread for a clause each changes on its own, never downgraded by count
 (`references/story.md`, materiality grades). An answer with no record is a gap line in the working note, graded, for the
 story turn to admit. The record audit is the main source of those lines: every finding that

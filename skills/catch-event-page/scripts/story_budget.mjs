@@ -4,7 +4,8 @@
 // the passage's identity. A story-view paragraph is inside the budget when one of its Cites
 // quotes, word for word, the words of an A or B row for its record. Every Cite is a literal;
 // the lint refuses one it cannot read. Every record cited anywhere on the page, and every
-// record in the manifest, has a Grades row.
+// record in the manifest, has a Grades row, and every A or B passage is carried by a Cite outside
+// the proof layer.
 // Usage: node story_budget.mjs <page.astro> <reader-model.md> [manifest.json]
 // Exit 1 on any defect, 2 when the reader model cannot be judged (no ## Headline, no Grades rows).
 import { readFileSync } from "node:fs";
@@ -37,15 +38,20 @@ if (!gradesBlock) { console.error(`story_budget: ${model} has no "## Grades" sec
 
 const rows = [];
 const defects = [];
+// A Markdown row: cells split on unescaped pipes, "\|" inside a cell reads as a pipe. The
+// quoted runs open the passage cell between straight double quotes; quotation marks inside
+// the run are written curly and fold to straight when compared.
+const cellsOf = (line) => line.trim().replace(/^\|/, "").replace(/\|$/, "").split(/(?<!\\)\|/).map((c) => c.replace(/\\\|/g, "|").trim());
 for (const line of gradesBlock[1].split("\n")) {
-  const m = line.match(/^\|\s*`([^`]+)`\s*\|([^|]*)\|\s*([ABCD])\s*\|([^|]*)\|/);
-  if (!m) continue;
-  const [, id, cell, grade, serves] = m;
-  // One or more quoted runs open the cell, one per Cite of that passage.
+  if (!/^\s*\|/.test(line)) continue;
+  const cells = cellsOf(line);
+  const idm = cells.length >= 4 ? cells[0].match(/^`([^`]+)`$/) : null;
+  if (!idm || !/^[ABCD]$/.test(cells[2])) continue;
+  const [id, cell, grade, serves] = [idm[1], cells[1], cells[2], cells[3]];
   const words = [];
-  let rest = cell.trim();
-  for (let q; (q = rest.match(/^["“]([^"”]+)["”]\s*/));) { words.push(normal(q[1])); rest = rest.slice(q[0].length); }
-  const row = { id, grade, words, serves: serves.trim(), line: line.trim().slice(0, 100) };
+  let rest = cell;
+  for (let q; (q = rest.match(/^"([^"]*)"\s*/));) { words.push(normal(q[1])); rest = rest.slice(q[0].length); }
+  const row = { id, grade, words, serves, line: line.trim().slice(0, 100) };
   rows.push(row);
   if (grade === "A" || grade === "B") {
     if (words.length === 0) defects.push(`${model}: ${grade} row for ${id} does not open its passage cell with the words the story cites, in double quotes: ${row.line}`);
@@ -70,6 +76,17 @@ if (manifest) {
   for (const r of m.records ?? []) if (r.id && !graded.has(r.id)) ungraded.add(r.id);
 }
 
+// The other direction: every A or B passage is carried by a Cite in the story view or a fact
+// block. A Cite inside a proof paragraph does not carry it.
+const proofRanges = [...source.matchAll(/<p\b[^>]*data-layer="proof"[^>]*>[\s\S]*?<\/p>/g)].map((m) => [m.index, m.index + m[0].length]);
+const carried = cites.filter((c) => c.readable && c.passage !== null && !proofRanges.some(([a, b]) => c.index >= a && c.index < b));
+let missing = 0;
+for (const r of storyRows) for (const w of r.words) {
+  if (carried.some((c) => c.s === r.id && normal(c.passage) === w)) continue;
+  missing += 1;
+  console.log(`${page}: ${r.grade} passage of ${r.id} that no story-view or fact-block Cite carries: "${w}"`);
+}
+
 let listed = 0;
 for (const p of source.matchAll(/<p\b[^>]*data-layer="narrative"[^>]*>([\s\S]*?)<\/p>/g)) {
   const end = p.index + p[0].length;
@@ -89,6 +106,6 @@ for (const p of source.matchAll(/<p\b[^>]*data-layer="narrative"[^>]*>([\s\S]*?)
 for (const id of ungraded) console.log(`${model}: record on the page or in the manifest with no Grades row: ${id}`);
 for (const d of defects) console.log(d);
 
-const total = listed + ungraded.size + defects.length;
-console.log(total === 0 ? "story_budget: clean" : `story_budget: ${listed} paragraph(s) outside the budget, ${ungraded.size} record(s) ungraded, ${defects.length} row(s) or Cite(s) the lint refuses`);
+const total = listed + ungraded.size + defects.length + missing;
+console.log(total === 0 ? "story_budget: clean" : `story_budget: ${listed} paragraph(s) outside the budget, ${ungraded.size} record(s) ungraded, ${defects.length} row(s) or Cite(s) the lint refuses, ${missing} graded passage(s) the page does not carry`);
 process.exit(total === 0 ? 0 : 1);

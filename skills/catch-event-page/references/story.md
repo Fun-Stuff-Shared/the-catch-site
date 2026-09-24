@@ -118,7 +118,9 @@ contract all B for answer 4, and the page carried every one of them.
 
 Every A or B line also opens its passage cell with the words the story will cite, in
 double quotes: a contiguous run of the pin's words, as short as the pin's own statement
-("I resign") or as long as the sentence. Those words are the passage's identity: the story
+("I resign") or as long as the sentence. Quotation marks inside the run are written curly
+(“ ”) and a pipe inside it is written `\|`, as the table needs; the lint folds both when it
+compares. Those words are the passage's identity: the story
 turn's `Cite passage=` for that line is the same words, and when it cites a second run of
 the same passage it adds that run, quoted, beside the first. Cites are literals
 (`s="..." passage="..."`, or `passage={\`...\`}` when the passage itself holds double quotes);
@@ -133,8 +135,9 @@ never a finding. The placement is tested the same way: `scripts/story_budget.mjs
 <reader model> <manifest>` lists every story-view paragraph none of whose Cites quotes the
 words of an A or B line of its record, every record cited on the page or held in the
 manifest with no Grades line, every A or B line whose passage cell does not open with the
-quoted words or whose Serves column lacks an answer (1 to 7) and a clause, and every Cite
-the lint cannot read.
+quoted words or whose Serves column lacks an answer (1 to 7) and a clause, every Cite
+the lint cannot read, and every A or B passage that no Cite outside the proof carries: the
+grade says the story needs it, so the story view or a fact block cites those words.
 It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
 rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
 move it to a detail block or the proof, or to re-grade the passage naming the answer it
