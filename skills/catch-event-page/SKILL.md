@@ -4,14 +4,14 @@ description: >
   The Catch story pipeline (the-catch-site): the map of the three author turns (catch-record,
   catch-structure, catch-story, each its own skill and session), the reviewer's process
   between and after them (accept the event, dispatch, the record audit, read the reader
-  model, red team and entailment, patch rounds, decide, stage, ship), and the home of the
+  model, editor's read, red team and entailment, patch rounds, decide, stage, ship), and the home of the
   scripts and reference files the three turns share. Use when reviewing, dispatching or
   shipping a Catch story, or to find a shared script or reference. An author uses the turn
   skill it was dispatched with, never this one.
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.5"
+  version: "3.6"
 ---
 
 # Catch story pipeline
@@ -27,10 +27,10 @@ dispatch, the reads, the decision, staging, the push.
 | audit | reviewer | `completeness_audit.sh` on the record commit | `checks/audits/<story>-<date>-record-audit.md`; runs once per story |
 | 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), headline and dek, grades, sections, outline |
 | 3 | `skills/catch-story` | `finish.sh <story> story` | the page, manifest, interrogation, entailment verdict |
-| review | reviewer | red team + entailment + stranger read on the story commit; a numbered patch list per round until the reviewer decides | patch commits, then the decision: cut, hold, or kill |
+| review | reviewer | editor's read + red team + entailment + stranger read on the story commit; a numbered patch list per round until the reviewer decides | patch commits, then the decision: cut, hold, or kill |
 
 Repo: `/Volumes/4/GitHub/the-catch-site`. Shared by every turn: `scripts/` (finish, the
-lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
+lints, pin_gaps, sources_ledger, interrogate, the four reads) and `references/`
 (procedures, story, writing, shape-rules, sections, components, manifest-and-gate, interrogation).
 
 ## The reviewer's process
@@ -53,23 +53,30 @@ lints, pin_gaps, sources_ledger, interrogate, the three reads) and `references/`
    A or B lines is reread, one clause each), the sections against the question tree. A wrong angle is fixed here by
    re-dispatching turn two with the correction, never later on prose.
 5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
-6. **Three reads on the story commit, in parallel:** `scripts/red_team.sh`,
+6. **Four reads on the story commit, in parallel,** after the capture search on the story
+   terms and, for a court case, the docket's new entries (the event may have moved while the
+   story turn ran; a record that moved it is pinned and is item 1 of the list): `scripts/editor_read.sh` (the edit
+   memo: is the page's story the one the record supports today, does each answer of the
+   reader model have a sentence a reader could repeat, what to cut, what a reader still
+   asks, and what each addition displaces), `scripts/red_team.sh` (sentences against
+   their records and the authority of the records, nothing else),
    `scripts/entailment_check.sh`, and the stranger read: `scripts/stranger_read.sh
    <subject>/<slug> [port]`, one Claude reader given the page as the story view reads it
    and the reader model, returning what a stranger misreads, stalls on, or sees as the
    page talking to itself (`references/stranger-read.md`). Verify every finding at the bytes; refute what the pins
    refute; send the rest as one numbered patch list. The stranger's findings from this read
-   go in the same list as the red team's, not held back for a later round.
-7. **Patch rounds.** The author patches, runs entailment `--since` the commit the round
-   started from and the lints, commits. The reviewer reads the patched page, reruns the
-   red team and the stranger read on it, and either sends the next numbered list or
+   go in the same list as the editor's and the red team's, not held back for a later round.
+7. **Patch rounds.** Each round opens with the same capture search and docket check; the list passes `scripts/patch_quotes.mjs` before it is sent and
+   carries the page's word count. The author patches, runs entailment and the referent
+   check `--since` the commit the round started from and the lints, commits. The reviewer reads the patched page, reruns the
+   four reads on it, and either sends the next numbered list or
    decides: cut a sentence, hold an item with its reason, or kill the story. A held item
    goes on `checks/working-notes/<subject>--<slug>-held.md`, one line each with the reason;
-   both reviewer scripts read that file, the author's ledger, and every earlier report, and
+   the editor's read and the red team read that file, the author's ledger, and every earlier report, and
    label each finding new, repeat, or residual. The reviewer decides the two things the
    reviewers cannot: when a source chain is deep enough (a page correctly attributing an
    outlet is complete without the instrument behind it), and when a stranger's cut beats a
-   red team's expansion (the stranger is the reader; the red team is not). Rounds are not
+   hole the editor's read wants filled (the stranger is the reader). Rounds are not
    capped, but the round after the first report with no new Critical or Major finding is
    the last; what remains is held or cut, not patched again. The headline is page text and
    is patched like any sentence; it is never held because a label upstream says otherwise.

@@ -118,11 +118,13 @@ three surnames and the reader model's own dek had the count.
 
 ## The sequence spread across sections
 
-The rule (writing.md, register): one sentence carries the sequence with its dates in
-order. The grok-4.7 press-ban page had the ban in What happened, the denials three
+The rule (writing.md, register): one short passage carries the sequence in order with
+its dates. The grok-4.7 press-ban page had the ban in What happened, the denials three
 paragraphs later, the letters in What happened next and the deadline in the legal
 section; an outside read of the two pages named the gpt-6-sol page's one sentence as the
-thing the grok page lacked. The sentence that was missing:
+thing the grok page lacked. The patch then wrote the sequence as one 70-word sentence,
+which the stranger rejected: the passage is several sentences a stranger can hold. What was missing, as
+the gpt-6-sol page had it:
 
 - The September 18 ban came before written reasons were sent to the outlets; after reporters lost entry and the television pool stopped its feed, the White House's September 22 letters supplied reasons and a September 25 response deadline.
 

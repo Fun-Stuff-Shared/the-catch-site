@@ -86,12 +86,19 @@ sounding unaware of the work it took to know it.
   turned away", never "Gardner, Klein and Haslett say"). A stranger reads a bare surname in
   a dek as someone they are supposed to know.
 - When the event is a sequence (an act, its consequence, the process that followed), one
-  sentence carries the whole sequence with its dates in order, before the paragraphs that
-  expand each step: "The September 18 ban came before written reasons were sent; after
-  reporters lost entry and the television pool stopped its feed, the September 22 letters
-  supplied reasons and a September 25 response deadline." The reader model's "what changed"
-  answer is that sentence. A page that spreads the sequence over four sections has every
-  fact and no shape; the stranger has to assemble the order.
+  short passage carries the whole sequence in order with its dates, before the paragraphs
+  that expand each step. The press-ban sequence has four steps (the September 18 ban, the
+  September 19 denials and the halted television feed, the September 22 letters with
+  their reasons, the September 25 deadline to respond); it is written from the
+  records' passages and never from this list, in sentences a stranger can hold. The reader
+  model's "what changed" answer is that passage. A page that spreads the sequence over
+  four sections has every fact and no shape. The same rule obeyed as one sentence gave a 70-word
+  sentence the stranger rejected, so the rule is the register, never the count: the passage
+  is as long as the steps need, and a sentence a stranger has to read twice to keep its dates
+  apart is the one to split.
+  A step the passage tells is not told again in full below it, and a page whose dated
+  table already shows the order gets a passage that says what the order means, not the
+  table again in prose.
 - One quote card per actor per point. The wording that is itself the event or the claim
   checked (the announcement, the letter's sentence) is a card; the same actor making the
   same point again later that day is one paraphrased sentence with the words that carry the
@@ -99,6 +106,26 @@ sounding unaware of the work it took to know it.
 - Why it matters is a fact with its reach, in the story view: when CNN's crew is the pool
   it supplies the other four networks, and through them more than 1,000 local stations. A
   sentence about importance ("the stakes are high for press access") is gloss and is cut.
+  The reach is said as what changed for people outside the story's actors (who stopped
+  getting what, from the record that says so), in one sentence a stranger could repeat;
+  the count alone is the mechanism, and a page that gives only the count leaves the
+  stranger to work out who lost what. Each of answers 1 to
+  6 has such a sentence, in a paragraph marked `data-answer` (`story.md`).
+
+## Sentence length
+
+There is no word limit and no target. A story paragraph reads like this one, from the
+September 16 rate page, 8 to 21 words a sentence: "A quarter-point increase carried 94
+percent odds the day before on CME Group's FedWatch gauge. In July, nine of 12 voters had
+left the target range at 3.50–3.75 percent while three wanted an increase. In
+September, all 12 voted to raise it." A sentence runs long when
+it carries one thought with its condition, and short when the fact is plain. What a
+stranger cannot follow is a sentence with three records' worth of clauses, and what a
+stranger hears as a primer is six sentences in a row under eight words. The voice lint
+prints the page's profile (words, the median, the share under 8 and over 30 words, the
+longest sentences); read the longest ones aloud and split the ones that lose their
+subject. A rule that capped sentences at 30 words produced the primer; the rule before it
+produced a 70-word sentence. Neither is the register.
 
 ## Sentences and passages
 
@@ -137,11 +164,30 @@ sounding unaware of the work it took to know it.
   judge, when a record on the page names it (the president's own post, the motion that
   recounts the order), is on the page with that scope; a page that drops it leaves the
   stranger to hear about it elsewhere without the caveat.
-- A term the opening figure leans on is explained in the first paragraph after the figure,
-  before the term recurs. "78 journalists held hard passes" then "A hard pass is a
+- A term the headline, the dek or the opening figure leans on is explained in the first
+  paragraph after it, before the term recurs (the press-ban dek said "shared television
+  feed" and the page defined the pool five paragraphs later). "Together the declarations report 78 hard passes" then "A hard pass is a
   credential that lets a journalist enter the White House complex on a regular basis", from
   the record's words; a page that explains the term in the middle of What happened has
   asked the stranger to carry an undefined word past the number that depends on it.
+- A connective between two records' facts ("after", "so", "because", "led to", "in
+  response") is a claim, and it needs a record that states the link. The press-ban page,
+  round 4: "The other major TV networks suspended presidential pool coverage that more
+  than 1,000 local affiliate television stations receive through CNN, after a reporter
+  could not enter the White House complex or attend the daily briefing" joined three
+  records with an "after" none of them states, and made a reporter's lost access the
+  cause of the halt. The record that states a cause gets the connective and its cite, as
+  the page then had it: "The other major TV networks suspended presidential pool coverage
+  after the White House kept CNN from its assigned pool duties." With no such record the
+  facts are separate sentences in date order, each with its date, and the order is all
+  the page says.
+- When a later record changes the state an earlier record describes, every sentence from
+  the earlier record carries its document's date and stays in that document's tense: "In
+  her September 21 declaration, Betsy Klein of CNN says that since the morning of September
+  19, 2026, she has been unable to enter the White House complex" once the September 24
+  order is on the page; without the document and its date the sentence reads as the state
+  today. One speaker per sentence: a fact from another record
+  that shares the sentence is read as the speaker's, so it gets its own sentence and cite.
 - A cause is quoted from a record with its author named, or absent, and the absence is
   said plainly. When an outlet authors a cause the record does not hold, that is
   reportable, attributed to the outlet.

@@ -3,14 +3,14 @@ name: catch-orchestrate
 description: >
   The reviewer's turn of a Catch story (the-catch-site): accept the event, cut the worktree,
   dispatch the record, structure and story turns to the author hosts, run the reads, send
-  one patch list, decide, serve the page for the human's read, stage. Use when running a
+  the patch lists, decide, serve the page for the human's read, stage. Use when running a
   story from candidate to staged page, or a timed comparison of two author models on one
   record. The author turns are catch-record, catch-structure and catch-story; this skill
   never writes a record, a reader model or a sentence.
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "0.4"
+  version: "0.6"
 ---
 
 # Catch orchestration turn
@@ -30,7 +30,7 @@ signal a process you did not start; the authors you launch are yours to stop.
 Hosts and models (set explicitly in every dispatch; the defaults exist only so a missing
 variable is visible in the log): the production author is grok `grok-4.7` for the record,
 structure and story turns (the human's pick, 2026-09-24, after the press-ban comparison).
-Reviews (audit, red team, entailment) run on codex `gpt-6-sol`, so the reviewer of a
+Reviews (audit, editor's read, red team, entailment) run on codex `gpt-6-sol`, so the reviewer of a
 sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
 always with the model passed. A timed comparison (section 6) adds a second story author
 on codex `gpt-6-sol` from the same structure commit; it is the exception, not the run.
@@ -153,19 +153,49 @@ AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir>/sol  run-tu
 The two pages then differ only by the author; the record, the reader model, the skill
 commit and the clock start are the same.
 
-## 7. The reads, one patch round, the decision
+## 7. The reads, the patch rounds, the decision
 
-On each story commit, in parallel: `scripts/red_team.sh`, `scripts/entailment_check.sh`,
-`scripts/stranger_read.sh <subject-slug>/<slug>` (the stranger on `sonnet`, model passed).
-Verify every finding at the bytes; refute what the pins refute; send the rest as one
-numbered patch list, the stranger's items in the same list. The author patches once.
+Every round starts with the event, before any read: run the capture search on the story
+terms dated on or after the record turn, and for a court case fetch the docket's new
+entries by document number from the RECAP store (it serves the PDFs the docket page
+refuses). A record that moved the event (a ruling, a filing, a statement) is pinned and
+is item 1 of the round's list. On the press-ban page the restraining order was signed the
+day the story turn ran; the page said the docket held no order until the red team found
+it on the web in round 3.
 
-Launch the three as detached scripts from the worktree with `CODEX_MODEL` and
+On each story commit, in parallel, from the worktree, the four scripts under
+`skills/catch-event-page/scripts/`: `editor_read.sh`, `red_team.sh`, `entailment_check.sh`
+and `stranger_read.sh`, each given `<subject-slug>/<slug>` (the stranger on `sonnet`,
+model passed). Read the author's own referent verdict
+(`checks/audits/...-referents.md`): a patch commit without a CLEAR one goes back before
+the reads run. Verify every finding at the bytes; refute what the pins refute; send the
+rest as one numbered patch list, the stranger's items in the same list.
+
+The four reads ask different questions, and the list is built on the editor's memo. The
+editor's read decides what the piece must do for a reader: whether the story the page
+tells is the story the record supports today, whether each of answers 1 to 6 is said in
+words a reader could repeat, what to cut, what a reader still asks, and what each
+addition displaces; its memo is in page order with a word budget, so it is the spine of
+the list. The red team checks sentences against records and nothing else (a sentence
+wider than its record, a record given a subject it does not have, source authority, a
+later record that makes a sentence false); it does not report omissions, terms or order.
+The entailment pass judges each cited sentence against its passage. The stranger is the
+reader. Run on the press-ban story commit (2026-10-02), the editor's read returned in one
+memo what the recorded rounds had taken three lists to reach: the witness sentence
+attached to the wrong subject, the sequence no passage carried in order, the missing
+sentence on what the pool halt cost viewers, the dek's bare surnames, 330 words of cuts,
+and the September 24 order the page predated. Run on the round 5 page it missed the
+red team's Major of that round (the five-network statement given a subject it does not
+have), which is why the red team stays, narrowed to that question.
+
+Launch the four as detached scripts from the worktree with `CODEX_MODEL` and
 `STRANGER_MODEL` set and a finished marker per read; on the press pages the stranger
 returned in under two minutes, the entailment pass in four and the red team in eight. Each
-read writes `checks/audits/<subject>--<slug>-<date>-<read>.md` and overwrites the author's
-own entailment file of the same date; that is the second, independent run and the one the
-patch list cites. Two items on every list so far were the same across both authors on one
+read writes `checks/audits/<subject>--<slug>-<date>-<read>.md`. The reviewer's entailment
+run overwrites the whole-page entailment file the author wrote the same day on a first
+draft; it is the second, independent run and the one the patch list cites. A patch
+author's own checks are separate files (`...-since-<commit>-entailment.md`,
+`...-since-<commit>-referents.md`) and are read beside it. Two items on every list so far were the same across both authors on one
 record (a KPI whose meaning arrives later on the page, and a "why it matters" sentence the
 stranger had to assemble): expect the stranger and the red team to converge on the opening
 number.
@@ -174,7 +204,28 @@ A patch item quotes what the pin says and where, never a suggested framing. The 
 list asked for a witness sentence to "open with the referent", the letter's allegation; the
 grok page had done exactly that and the red team called it Critical, because the witness
 spoke about other inquiries. Give the author the pin lines and the class, and let the
-sentence follow the record.
+sentence follow the record. What a record says appears in the list only inside quotation
+marks, and the list is sent only after the check passes:
+
+```bash
+node skills/catch-event-page/scripts/patch_quotes.mjs <subject-slug>/<slug> <dispatch dir>/<round>.prompt.txt [fetched text of a record the list asks to admit]
+```
+
+It finds every quoted span, of any length, in a pinned record, the page, its data
+module, the reader model or the working note, and exits 1 on a span found nowhere: that
+span is your wording, and the author will write it onto the page as the record's. Patch 2
+of the press-ban page described a fact-check in the reviewer's words, dropped its two
+hedges, and the author wrote the reviewer's sentence.
+
+Every list opens with the page's size and closes with what must leave: the word count of
+the story view's sentences and the longest of them from
+`python3 skills/catch-event-page/scripts/voice_lint.py --lengths dist/events/<subject-slug>/<slug>/index.html`,
+and for every item that adds a clause the question of what it displaces (a sentence that
+now says the same thing, a detail that moves to a detail block). The author reports the
+count after the patch. Four rounds on the press-ban page took the narrative from 706 words
+to 1,704 and the sentences of 35 words or more from 1 to 9 before any item asked for a
+cut, and the stranger's later stalls were mostly sentences earlier patches had lengthened.
+An item names the register it wants ("a passage a stranger can hold"), never a number: "under 30 words" produced primer prose in round 5.
 
 Read a grok page for its measured gaps before the reads return, at the bytes, and put
 what you find on the patch list with the pin lines. On the press-ban page (2026-09-24,
@@ -195,13 +246,14 @@ page until a run shows the rule held.
 Resume the author's own session for the patch (`codex exec resume <session id>` from the
 story log's `session id:` line; `grok --resume <id>` with the id from
 `~/.grok/sessions/<encoded worktree path>/`), so the author patches with its record read
-still in context. The
-three reads run again only when the patch introduced a Critical. Then decide on the page
-as it stands: cut a sentence, hold an item with its reason on
+still in context. The reads run again on the patched commit. Rounds are not capped; the
+round after the first report with no new Critical or Major finding is the last, and what
+remains is held or cut, not patched again. Then decide on the page as it stands: cut a
+sentence, hold an item with its reason on
 `checks/working-notes/<subject-slug>--<slug>-held.md`, or kill the story. Two things the
 reviewers cannot decide are yours: when a source chain is deep enough, and when a
-stranger's cut beats a red team's expansion. The headline is page text and is patched
-like any sentence.
+stranger's cut beats a hole the editor's read wants filled. The headline is page text and
+is patched like any sentence.
 
 ## 8. Serve, record the clock, stage
 

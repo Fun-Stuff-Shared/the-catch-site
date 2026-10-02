@@ -24,13 +24,15 @@ fail() { echo "FAIL $1"; exit 1; }
 out="$tmp/root/checks/audits/s--x-first-redteam.md"
 PATH="$tmp/bin:$PATH" bash "$tmp/root/skills/catch-event-page/scripts/red_team.sh" s/x "$out" > "$tmp/run1.log" 2>&1
 [ $? = 0 ] || fail "first run with no earlier report: exit $? (log: $(cat "$tmp/run1.log"))"
-grep -q 'Earlier reports on this page: none' "${out%.md}.prompt.txt" || fail "first run: prompt does not say earlier reports are none"
+grep -q 'record audit): none\.' "${out%.md}.prompt.txt" || fail "first run: prompt does not say earlier reports are none"
 echo "ok   first run with no earlier report reaches the review"
 
 out2="$tmp/root/checks/audits/s--x-second-redteam.md"
+echo 'stalled' > "$tmp/root/checks/audits/s--x-first-stranger.md"
 PATH="$tmp/bin:$PATH" bash "$tmp/root/skills/catch-event-page/scripts/red_team.sh" s/x "$out2" > "$tmp/run2.log" 2>&1 || fail "second run: exit $?"
-grep -q "Earlier reports on this page: $out" "${out2%.md}.prompt.txt" || fail "second run: prompt does not list the first report"
-echo "ok   second run lists the first report"
+grep -q "record audit): .*$out" "${out2%.md}.prompt.txt" || fail "second run: prompt does not list the first report"
+grep -q "record audit): .*s--x-first-stranger.md" "${out2%.md}.prompt.txt" || fail "second run: prompt does not list the stranger report"
+echo "ok   second run lists the first report and the stranger report"
 
 printf '# s: x\n\n## Entering\n\nx\n\n## Exiting\n\n1. a\n\n## Grades\n\n## Sections\n\n' > "$tmp/root/checks/reader-models/s--x.md"
 PATH="$tmp/bin:$PATH" bash "$tmp/root/skills/catch-event-page/scripts/red_team.sh" s/x "$tmp/root/checks/audits/s--x-third-redteam.md" > "$tmp/run3.log" 2>&1

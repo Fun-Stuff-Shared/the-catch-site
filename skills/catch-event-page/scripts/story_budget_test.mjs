@@ -10,20 +10,22 @@ const script = join(dirname(fileURLToPath(import.meta.url)), "story_budget.mjs")
 const dir = mkdtempSync(join(tmpdir(), "story-budget-"));
 let n = 0;
 
-const model = ({ headline = true, grades = "", extra = "" } = {}) =>
-  `# Subject: story\n\n## Entering\n\nx\n\n## Exiting\n\n1. a\n\n${headline ? "## Headline\n\nA headline\n\nDek: two facts\n\n" : ""}## Grades\n\n| Record | Passage or gap or audit finding | Grade | Serves answer |\n|---|---|---|---|\n${grades}\n## Sections\n\n| Section | Question |\n|---|---|\n${extra}`;
+const SIX = [1, 2, 3, 4, 5, 6].map((k) => `${k}. answer ${k}`).join("\n");
+const carrying = [1, 2, 3, 4, 5, 6].map((k) => `<p data-layer="narrative" data-answer="${k}">The sentence for answer ${k}.</p>\n`).join("");
+const model = ({ headline = true, grades = "", extra = "", exiting = SIX } = {}) =>
+  `# Subject: story\n\n## Entering\n\nx\n\n## Exiting\n\n${exiting}\n\n${headline ? "## Headline\n\nA headline\n\nDek: two facts\n\n" : ""}## Grades\n\n| Record | Passage or gap or audit finding | Grade | Serves answer |\n|---|---|---|---|\n${grades}\n## Sections\n\n| Section | Question |\n|---|---|\n${extra}`;
 
 const row = (id, words, rest, grade, serves) => `| \`${id}\` | ${words ? `"${words}" ` : ""}${rest} | ${grade} | ${serves} |\n`;
 const narrative = (...cites) => `<p data-layer="narrative">Text. ${cites.map(([s, p]) => `<Cite s="${s}" passage="${p}" />`).join(" ")}</p>\n`;
 const proof = (...cites) => `<p data-layer="proof">Receipt. ${cites.map(([s, p]) => `<Cite s="${s}" passage="${p}" />`).join(" ")}</p>\n`;
 
-function run(name, { page, rm, manifest, exit, out = [], notOut = [] }) {
+function run(name, { page, rm, manifest, exit, out = [], notOut = [], answers = carrying, flags = [] }) {
   n += 1;
-  const p = join(dir, `${n}.astro`); writeFileSync(p, page);
+  const p = join(dir, `${n}.astro`); writeFileSync(p, page + answers);
   const m = join(dir, `${n}.md`); writeFileSync(m, rm);
   const args = [script, p, m];
   if (manifest) { const j = join(dir, `${n}.json`); writeFileSync(j, JSON.stringify(manifest)); args.push(j); }
-  const r = spawnSync("node", args, { encoding: "utf8" });
+  const r = spawnSync("node", [...args, ...flags], { encoding: "utf8" });
   const all = r.stdout + r.stderr;
   const bad = [];
   if (r.status !== exit) bad.push(`exit ${r.status}, wanted ${exit}`);
@@ -226,5 +228,47 @@ run("an A row with a grade outside A to D is refused", {
 run("a backtick passage with interpolation is refused", {
   page: "<p data-layer=\"narrative\">Text. <Cite s=\"rec-a\" passage={`I resign ${x}`} /></p>\n",
   rm: model({ grades: row("rec-a", "I resign", "", "A", "1, who left") }), exit: 1, out: ["Cite the lint cannot read"],
+});
+const one = narrative(["rec-a", "I resign"]);
+const oneRow = row("rec-a", "I resign", "", "A", "1, who left");
+run("an answer no paragraph carries is a defect", {
+  page: one, answers: carrying.replace(/<p[^>]*data-answer="2"[^\n]*\n/, ""),
+  rm: model({ grades: oneRow }), exit: 1, out: ['answer 2 has no story-view paragraph marked data-answer="2": answer 2', "1 answer(s) no paragraph carries"],
+});
+run("one paragraph may carry two answers", {
+  page: one, answers: carrying.replace(/<p[^>]*data-answer="2"[^\n]*\n/, "").replace('data-answer="1"', 'data-answer="1 2"'),
+  rm: model({ grades: oneRow }), exit: 0, out: ["story_budget: clean"],
+});
+run("a mark on a proof paragraph carries nothing", {
+  page: one, answers: carrying.replace('<p data-layer="narrative" data-answer="3">', '<p data-layer="proof" data-answer="3">'),
+  rm: model({ grades: oneRow }), exit: 1, out: ["data-answer on a paragraph outside the story view", "answer 3 has no story-view paragraph"],
+});
+run("a mark under a proof block carries nothing", {
+  page: one, answers: carrying.replace(/(<p[^>]*data-answer="4"[^\n]*)\n/, '<div data-layer="proof">$1</div>\n'),
+  rm: model({ grades: oneRow }), exit: 1, out: ["data-answer on a paragraph outside the story view"],
+});
+run("a mark on a fact paragraph carries its answer", {
+  page: one, answers: carrying.replace('<p data-layer="narrative" data-answer="3">', '<p data-layer="fact" data-answer="3">'),
+  rm: model({ grades: oneRow }), exit: 0, out: ["story_budget: clean"],
+});
+run("a mark inside a detail block carries nothing", {
+  page: one, answers: carrying.replace(/(<p[^>]*data-answer="4"[^\n]*)\n/, '<SourcedBlock title="More" detail>$1</SourcedBlock>\n'),
+  rm: model({ grades: oneRow }), exit: 1, out: ["data-answer on a paragraph outside the story view", "answer 4 has no story-view paragraph"],
+});
+run("a reader model with an answer missing is refused", {
+  page: one,
+  rm: model({ grades: oneRow, exiting: SIX.replace("5. answer 5\n", "") }), exit: 1, out: ['"## Exiting" has no answer 5'],
+});
+run("answer 7 takes no mark", {
+  page: one, answers: carrying + '<p data-layer="narrative" data-answer="7">Order.</p>\n',
+  rm: model({ grades: oneRow }), exit: 1, out: ["names an answer outside 1 to 6"],
+});
+run("--answers prints each answer beside the paragraph marked for it and changes no verdict", {
+  page: one, flags: ["--answers"],
+  rm: model({ grades: oneRow }), exit: 0, out: ["answer 2: answer 2", ": The sentence for answer 2.", "story_budget: clean"],
+});
+run("--answers names an answer with no paragraph", {
+  page: one, flags: ["--answers"], answers: carrying.replace(/<p[^>]*data-answer="6"[^\n]*\n/, ""),
+  rm: model({ grades: oneRow }), exit: 1, out: ["answer 6: answer 6\n  (no paragraph marked)"],
 });
 console.log(`story_budget_test: ${n} cases pass`);

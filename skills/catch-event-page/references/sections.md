@@ -25,6 +25,15 @@
 | What the coverage got right, and what it got wrong (`outlets`) | An outlet's error is A or B material. Otherwise the coverage check lives in detail blocks and Show the work. | One count line, then `OutletCheck` cards, errors first: what they wrote, the chip verdict, what the record shows, the `Cite` in the card's slot. |
 | What the markets said (`markets`) | The record has dated pricing. | Dated quotes with source; single-outlet pricing gets the same treatment as any single-outlet fact. |
 
+## Headings inside a section
+
+An h3 names what the paragraphs under it show, in the words a stranger would use to ask
+for it: "Who wrote the articles the letters cite". It never states a distinction or a verdict before the paragraphs that
+earn it. "Not the pass holders" and "The witness's limit" (the press-ban page, round 3)
+each handed the stranger a conclusion about people and a limit the page had not yet
+introduced; the stranger stalled on both. A heading that only makes sense after its
+section is read is the section's last sentence, not its heading.
+
 Removed from the toolkit: "Claim checked against the record". A claim on this site is checked
 only when someone made it: an outlet's sentence in the catch or a coverage card, an official's
 words in a card. The page never writes the popular framing itself and then grades it.

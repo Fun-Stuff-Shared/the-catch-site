@@ -7,15 +7,19 @@
 // record in the manifest, has a Grades row, and every A or B passage is carried by a Cite outside
 // the proof layer: a Cite under any proof element, in a comment or in the frontmatter is not on
 // the story or fact view. Every Grades row is read or refused; a row the lint cannot read is a
-// defect, never a skip.
-// Usage: node story_budget.mjs <page.astro> <reader-model.md> [manifest.json]
+// defect, never a skip. Each of answers 1 to 6 under "## Exiting" is carried by one story-view
+// paragraph the author marks data-answer="N" (several answers: data-answer="1 5"): the sentence a
+// stranger could repeat for that answer. Answer 7 is the order of the sections and has no mark.
+// The mark is the author's claim; whether the paragraph says the answer is a reader's judgment.
+// --answers prints each answer beside the paragraph marked for it, for the reviewer who makes it.
+// Usage: node story_budget.mjs <page.astro> <reader-model.md> [manifest.json] [--answers]
 // Exit 1 on any defect, 2 when the reader model cannot be judged (no ## Headline, no Grades rows).
 import { readFileSync } from "node:fs";
 import { readCites, renderedView, lineOf } from "./cite_attrs.mjs";
 
-const [page, model, manifest] = process.argv.slice(2);
+const [page, model, manifest] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 if (!page || !model || process.argv.includes("--help")) {
-  console.error("usage: node story_budget.mjs src/pages/events/<subject>/<story>.astro checks/reader-models/<subject>--<story>.md [checks/manifests/<subject>--<story>.json]");
+  console.error("usage: node story_budget.mjs src/pages/events/<subject>/<story>.astro checks/reader-models/<subject>--<story>.md [checks/manifests/<subject>--<story>.json] [--answers]");
   process.exit(page && model ? 0 : 2);
 }
 
@@ -110,9 +114,37 @@ for (const p of source.matchAll(/<p\b[^>]*data-layer="narrative"[^>]*>([\s\S]*?)
   const preview = p[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim().slice(0, 90);
   console.log(`${page}:${lineOf(source, p.index)}: story-view paragraph outside the budget: ${why.join(", ")}: ${preview}`);
 }
+const exiting = text.match(/^## Exiting\s*$([\s\S]*?)(?=^## |(?![\s\S]))/m);
+const answers = new Map([...(exiting?.[1] ?? "").matchAll(/^([1-7])\.\s+(.*)$/gm)].map((m) => [m[1], m[2]]));
+const marked = new Map();
+const detailRanges = [...source.matchAll(/<SourcedBlock\b[^>]*\sdetail(?!=\{false\})(?=[\s>=])[^>]*>[\s\S]*?<\/SourcedBlock>/g)].map((m) => [m.index, m.index + m[0].length]);
+for (const p of source.matchAll(/<p\b([^>]*)>([\s\S]*?)<\/p>/g)) {
+  const mark = p[1].match(/\sdata-answer="([^"]*)"/);
+  if (!mark) continue;
+  const where = `${page}:${lineOf(source, p.index)}`;
+  if ([...proofRanges, ...detailRanges].some(([a, b]) => p.index >= a && p.index < b)) {
+    defects.push(`${where}: data-answer on a paragraph outside the story view; a proof paragraph or a detail block is hidden from the story reader`);
+    continue;
+  }
+  for (const n of mark[1].split(/[\s,]+/).filter(Boolean)) {
+    if (/^[1-6]$/.test(n)) marked.set(n, [...(marked.get(n) ?? []), `${where}: ${p[2].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim()}`]);
+    else defects.push(`${where}: data-answer="${mark[1]}" names an answer outside 1 to 6`);
+  }
+}
+let unanswered = 0;
+for (const n of ["1", "2", "3", "4", "5", "6"]) {
+  if (!answers.has(n)) { defects.push(`${model}: "## Exiting" has no answer ${n} (a line that starts "${n}. ")`); continue; }
+  if (marked.has(n)) continue;
+  unanswered += 1;
+  console.log(`${page}: answer ${n} has no story-view paragraph marked data-answer="${n}": ${answers.get(n).slice(0, 110)}`);
+}
+if (process.argv.includes("--answers")) for (const n of ["1", "2", "3", "4", "5", "6"]) {
+  console.log(`answer ${n}: ${answers.get(n) ?? "(none in the reader model)"}`);
+  for (const carried of marked.get(n) ?? ["(no paragraph marked)"]) console.log(`  ${carried}`);
+}
 for (const id of ungraded) console.log(`${model}: record on the page or in the manifest with no Grades row: ${id}`);
 for (const d of defects) console.log(d);
 
-const total = listed + ungraded.size + defects.length + missing;
-console.log(total === 0 ? "story_budget: clean" : `story_budget: ${listed} paragraph(s) outside the budget, ${ungraded.size} record(s) ungraded, ${defects.length} row(s) or Cite(s) the lint refuses, ${missing} graded passage(s) the page does not carry`);
+const total = listed + ungraded.size + defects.length + missing + unanswered;
+console.log(total === 0 ? "story_budget: clean" : `story_budget: ${listed} paragraph(s) outside the budget, ${ungraded.size} record(s) ungraded, ${defects.length} row(s) or Cite(s) the lint refuses, ${missing} graded passage(s) the page does not carry, ${unanswered} answer(s) no paragraph carries`);
 process.exit(total === 0 ? 0 : 1);

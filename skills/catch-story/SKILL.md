@@ -9,7 +9,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "3.6"
+  version: "3.8"
 ---
 
 # Catch story turn
@@ -61,8 +61,9 @@ stranger needs to read on and names no person the story has not yet introduced (
 counts until then); What happened opens
 on the clean model (what happened and what it means), the act itself in its first sentence
 and what was expected, with the gauge that measured it, after the act and never before it;
-when the event is a sequence, one sentence carries the whole sequence with its dates in
-order before the paragraphs that expand each step; a term the opening figure leans on is
+when the event is a sequence, one short passage carries the whole sequence in order with
+its dates, before the paragraphs that expand each step (in sentences a stranger can
+hold, `references/writing.md`; a step the passage tells is not told again in full below it); a term the opening figure leans on is
 explained in the first paragraph after the figure, from the record's words;
 what was new is stated as the fact (in July nine of 12 voted to hold, in September all 12
 voted to raise), never announced ("the news is", "the change was", "the real signal is");
@@ -90,6 +91,18 @@ Four questions of every sentence before you move on: which record, which passage
 passage say all of this, and did I read it this session or remember it. A fifth for every
 paragraph: which of the seven answers does this advance.
 
+Each of answers 1 to 6 in the reader model's Exiting is on the page as one sentence a
+stranger could repeat to someone else, and the paragraph that holds it carries
+`data-answer="N"` on its `<p>` (`data-answer="1 5"` when one paragraph holds two). Why it
+matters (answer 2) is a sentence about what changed for people outside the story's actors;
+a number that shows the mechanism (how many stations take the feed) supports that sentence
+and does not stand in for it. `story_budget.mjs` refuses a page where an answer has no
+marked paragraph in the story view. The mark is your claim, and a script cannot tell whether
+the paragraph says the answer: `story_budget.mjs ... --answers` prints each answer beside
+its marked paragraph, you read that list before you commit, and the reviewer reads the same
+list and reports a paragraph that only wears the label. Five stranger reads of the press-ban page asked for the
+same missing sentence, and each patch answered with another fact.
+
 ## Step 6. Manifest, build, lints, interrogation, self-check
 
 Append every record to `checks/manifests/<subject>--<story>.json` with `pinned_path`,
@@ -113,7 +126,9 @@ page's own method outside the proof layer, and lists for a reread the sentences 
 reads as machine voice: the seven questions in `scripts/voice_lint.py` (a description of
 the page or its method, a mirrored antithesis, a section wrap-up, a gloss on what to take
 away, a document as the subject where the fact could stand alone, an explanation nobody
-asked for, a dictionary definition). A lint finding is a defect on the page, never a lint to silence. `scripts/story_budget.mjs <page> <reader model> <manifest>` lists every story-view
+asked for, a dictionary definition). It ends with the page's sentence-length profile (the
+words, the median, the share of sentences under 8 and over 30 words, the longest): a
+report to read, never a cap to meet (`references/writing.md`, sentence length). A lint finding is a defect on the page, never a lint to silence. `scripts/story_budget.mjs <page> <reader model> <manifest>` lists every story-view
 paragraph with no Cite whose passage is, word for word, the quoted words of an A or B line for
 that record; each one moves to a detail block or the proof before the commit, or the reader model's grade is wrong and the report says which answer the passage changes. The interrogation
 is a model with web and X search listing what the page does not cover: every item is fixed
@@ -129,10 +144,15 @@ view, the story view under about 9,000 px, the first paragraph telling a cold st
 happened and what it means before any qualification.
 
 Then check your own sentences before anyone else does. The entailment check reads the
-working tree: a model that did not write the page judges every cited block against its
-passages and the record around them. `--since` narrows it to the blocks whose text differs
-from a commit, so the baseline is always the commit you started from, never the commit
-you just made (that would compare the tree with itself and judge nothing).
+built page, in the words and numbers a reader sees, so it runs after a build and refuses a
+build older than the page source: a model that did not write the page judges every cited
+block against its passages and the record around them. `--since` builds the page as it
+stood at a commit and narrows the check to the blocks that page did not show, so the
+baseline is always the commit you started from, never the commit you just made (that
+would compare the page with itself and judge nothing). A block whose words and citations
+stand and that only moved between the story view, the detail and the proof is not judged
+again: the same words against the same passage give the same verdict. The referent check
+below is the one that reads it when it enters the story view.
 
 ```bash
 skills/catch-story/scripts/entailment_check.sh <subject>/<story>                          # first draft: the whole page
@@ -141,10 +161,30 @@ skills/catch-story/scripts/entailment_check.sh <subject>/<story> --since <start 
 
 Read the verdict file it names. Every Critical and Major is fixed at the cited passage
 (the sentence says what the record says, or the record that says it is admitted), the
-lints run again, and the check runs again with the same `--since`, until it returns
+build and the lints run again, and the check runs again with the same `--since`, until it returns
 ENTAILED. A Moderate or Minor is fixed or written in the working note with why it stands.
 Commit the verdict file with the page. You return only on an ENTAILED verdict; the closing
 check after you return confirms it.
+
+Then read what you added the way a stranger meets it. The entailment check reads each
+sentence beside its passage, and so do you; neither reads it top down with nothing but the
+page above it. The referent check does: a model that did not write the page takes the
+sentences this turn added and returns the ones that lean on something the page has not yet
+said (a demonstrative with no referent, a bare surname, a role with no holder, a named
+rule or case with no consequence here).
+
+```bash
+skills/catch-story/scripts/referent_check.sh <subject>/<story> --since <start commit>   # after a build
+```
+
+With `--since` the script builds the page as it stood at that commit (about half a minute)
+and sends the sentences the story view did not show then, or showed in another order.
+
+Every item is fixed in the sentence (name the thing, give the role, say what the rule does
+in this story) or the sentence is cut; then build and run it again with the same `--since`
+until it returns CLEAR, and commit its verdict file with the page. Every round of the
+press-ban loop that added or split sentences left a bare demonstrative behind ("this
+initial decision", "That kind of release"), and the stranger found each one a round later.
 
 ## Step 7. Commit and report
 
@@ -168,10 +208,14 @@ files in the repo.
 
 ## After you commit: what happens to the page
 
-Three reads run on your story commit, in parallel: a red team reads the page against the
-reader model and grades every omission by the grades (an omitted A or B is a Major; a C
-or D the reader shows changes an answer is a Major against the grade; an omitted C is
-Minor; D is not a finding), a codex pass judges every cited sentence against its
+Four reads run on your story commit, in parallel: an editor reads the page cold, then
+against the reader model and the record as it stands that day, and writes one memo in
+page order (whether each of answers 1 to 6 has a sentence a reader could repeat, what to
+cut, what to fix, what a reader still asks, and the words each addition costs; an A or B
+passage the story view lacks is a Major, and so is a C or D passage the editor shows
+changes one of the answers; any other omitted C is Minor and any other omitted D is not a
+finding), a red team checks
+every sentence against its record and the authority of the records, a codex pass judges every cited sentence against its
 passage, and a stranger read (a Claude reader that has never seen the project, given the
 page as the story view reads it and the reader model) reports where it misread, stalled,
 or saw the page talking to itself. The completeness audit does not run again: it ran on the record commit and its
@@ -179,19 +223,23 @@ findings are already in your reader model. The reviewer verifies the findings at
 bytes, refutes what the pins refute, and sends you the rest as one numbered patch list;
 every numbered finding gets a ledger line (patched, held with reason, out of scope with
 reason). A patch changes only what the items name. Every regenerated sentence is a new
-sentence: run the entailment check with `--since` the commit the patch started from and
-fix what it finds before you return, and run the lints again. Fix each item's class across
+sentence: run the entailment check and the referent check with `--since` the commit the
+patch started from and fix what they find before you return, and run the lints again. A
+patch that adds a clause says in its ledger line what the clause displaces (the words cut
+to make room, or why none), and the report gives the page's word count before and after
+(`python3 skills/catch-event-page/scripts/voice_lint.py --lengths <built page>`); four patch rounds on the press-ban page added 1,000 words
+before one item asked for a cut. Fix each item's class across
 the whole page, not only the named line, and report the sibling count per class.
 
-The three reads run once per gate, and there is one patch round. After your patch the
-reviewer reads the patched page, reruns the stranger read on it, and decides on the page as
-it stands: cut the sentence, hold the item with its reason on the ledger, or kill the story.
-The three reads run a second time only when the patch introduced a Critical; a Major or
-Minor on the patched page is decided by the reviewer, never sent back for another round.
-Two stories took thirteen and seventeen rounds under the open loop and shipped a day late
-each; the third read finds the same class the first found. Before the push, the reviewer
-re-runs the capture search on the story terms dated on or after your run and dispositions
-the results in the ledger.
+After your patch the reviewer reads the patched page, reruns the reads on it, and either
+sends the next numbered list or decides on the page as it stands: cut the sentence, hold
+the item with its reason on the ledger, or kill the story. Rounds are not capped; the round
+after the first report with no new Critical or Major finding is the last. Two stories took
+thirteen and seventeen rounds when every round wrote new sentences that no one read as a
+stranger before the commit; the referent check and the word count above are what make a
+round the last one. At every round the reviewer re-runs the capture search on the story
+terms dated on or after the record turn, and a record that moved the event since (a ruling,
+a filing) is on the next list with its pin.
 
 The lints and scripts under `skills/` change for a defect a real page demonstrates, and
 for nothing else. A reviewer's finding built from a constructed input (a malformed table
@@ -233,8 +281,10 @@ review rounds on skills 3.5 fixed eight classes, three of which any page had eve
 - [ ] Every quoted span is one contiguous run of bytes in the record its element cites.
 - [ ] `finish.sh` printed the commit (build green, the three lints zero); the interrogation dispositioned.
 - [ ] The entailment check on the tree you are committing returned ENTAILED (`--since` the commit you started from, for a patch); its verdict file is committed under `checks/audits/`.
+- [ ] The referent check on the sentences you added returned CLEAR; its verdict file is committed under `checks/audits/`.
+- [ ] Each of answers 1 to 6 has its sentence on the page, in a paragraph marked `data-answer`.
 - [ ] Every catch pairs an outlet sentence with the record passage that contradicts it; none rests on an inference.
-- [ ] The dek names nobody the story has not introduced; the sequence is one sentence with its dates; every prior case named carries its scope; every unknown about history names the search that left the pinned set.
+- [ ] The dek names nobody the story has not introduced; the sequence is one short passage, in order, with its dates; every prior case named carries its scope; every unknown about history names the search that left the pinned set.
 - [ ] Measured in a browser at 1280 wide, in all three modes (step 6).
 - [ ] Subject page and homepage updated.
 - [ ] The report names the reader-facing delta in one sentence.

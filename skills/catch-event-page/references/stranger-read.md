@@ -60,5 +60,5 @@ author's edit is rebuilding it: wait for the commit and run it again.
 
 The reviewer checks each quoted sentence against the page source. A sentence the report
 quotes that is not in `-stranger-page.txt` was invented and is dropped. The rest go into
-the numbered patch list with the red team's findings, on the first read and on every
+the numbered patch list with the editor's and the red team's findings, on the first read and on every
 reread of a patched page.

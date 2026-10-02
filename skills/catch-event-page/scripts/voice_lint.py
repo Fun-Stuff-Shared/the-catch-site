@@ -1,6 +1,7 @@
 """Voice lint for a built story page: sentences a stranger reads as machine voice.
 
 Usage: voice_lint.py dist/events/<subject>/<story>/index.html [more pages]
+       voice_lint.py --lengths <pages>   (the sentence-length profile only; no model call)
 Exit 1 when a check trips. Proof-layer text and the state ledger rows are not judged.
 
 Four rules are read by regex and fail the page: the page names or addresses its reader ("a
@@ -20,13 +21,17 @@ self-description positives cut on 2026-09-19); a reread hit is a sentence to rer
 failure on its own. The records section's own lede and "How we check" line are component
 chrome, skipped by position (p.section-lede and p.sources-line inside section#records); the
 unknowns section title is chrome by its exact text.
+
+Every run ends with the page's sentence-length profile (words, sentences, the median, the share
+under 8 and over 30 words, the longest three over 30). It is a report and never fails a page: a
+length cap produces the opposite defect.
 """
-import datetime, json, os, re, subprocess, sys
+import datetime, json, os, re, statistics, subprocess, sys
 from html.parser import HTMLParser
 
 BLOCK = {"p", "li", "h1", "h2", "h3", "h4", "figcaption", "td", "th", "dt", "dd", "summary"}
 has_cls = lambda a, name: name in (a.get("class") or "").split()
-ABBR = re.compile(r"\b(Rep|Sen|U\.S|U\.N|Sept|Aug|Oct|Nov|Dec|Jan|Feb|Mr|Ms|Dr|Gen|Lt|Col|No|v|H\.Con\.Res|S\.Con\.Res|Inc|Co)\.\s")
+ABBR = re.compile(r"\b(Rep|Sen|U\.S|U\.N|Sept|Aug|Oct|Nov|Dec|Jan|Feb|Mr|Ms|Dr|Gen|Lt|Col|No|v|H\.Con\.Res|S\.Con\.Res|Inc|Co|St|[A-Z])\.\s")
 norm = lambda x: re.sub(r"\s+", " ", x.replace("“", '"').replace("”", '"').replace("’", "'")).strip()
 def strip_q(t, inside=False):
     """Quoted speech is not the page's own voice. A quotation the sentence splitter cut in two leaves
@@ -102,7 +107,7 @@ WHY = {"reader": "addresses the reader", "self_page": "the page speaks about its
 
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.stack = []; self.blocks = []; self.buf = None; self.skip = 0; self.inmain = False; self.records_depth = 0
+        super().__init__(); self.stack = []; self.blocks = []; self.open = []; self.skip = 0; self.inmain = False; self.records_depth = 0
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == "main": self.inmain = True
@@ -110,17 +115,18 @@ class Page(HTMLParser):
         skipped = tag in ("script", "style", "nav", "svg", "blockquote") or (tag == "sup" and has_cls(a, "src-ref")) or "data-state-slot" in a or chrome
         if tag == "section" and a.get("id") == "records": self.records_depth += 1
         if skipped: self.skip += 1
-        self.stack.append((tag, a.get("data-layer"), skipped))
-        if self.inmain and not self.skip and tag in BLOCK and self.buf is None:
-            self.buf = []; self.layer = next((l for t, l, _ in reversed(self.stack) if l), None); self.tag = tag
-            self.kicker = has_cls(a, "sec-kicker")
-        elif self.buf is not None and tag in BLOCK: self.buf.append(" ")
+        hidden = tag == "div" and has_cls(a, "sourced-block") and has_cls(a, "detail")
+        self.stack.append((tag, "detail" if hidden else a.get("data-layer"), skipped))
+        if self.inmain and not self.skip and tag in BLOCK:
+            self.flush()
+            self.open.append({"tag": tag, "layer": next((l for t, l, _ in self.stack if l in ("proof", "detail")), None) or next((l for t, l, _ in reversed(self.stack) if l), None), "kicker": has_cls(a, "sec-kicker"), "buf": []})
+    def flush(self):
+        if not self.open: return
+        b = self.open[-1]; text = norm("".join(b["buf"])); b["buf"] = []
+        if text: self.blocks.append({"layer": b["layer"], "tag": "kicker" if b["kicker"] else b["tag"], "text": text})
     def handle_endtag(self, tag):
-        if self.buf is not None and tag == self.tag:
-            text = norm("".join(self.buf))
-            if text: self.blocks.append({"layer": self.layer, "tag": "kicker" if self.kicker else tag, "text": text})
-            self.buf = None
-        elif self.buf is not None and tag in BLOCK: self.buf.append(" ")
+        if self.open and not self.skip and tag == self.open[-1]["tag"]:
+            self.flush(); self.open.pop()
         if tag == "main": self.inmain = False
         while self.stack:
             t, _, skipped = self.stack.pop()
@@ -128,21 +134,22 @@ class Page(HTMLParser):
             if t == tag: break
         if tag == "section" and self.records_depth and not any(t == "section" for t, _, _ in self.stack): self.records_depth = 0
     def handle_data(self, d):
-        if self.buf is not None and not self.skip: self.buf.append(d)
+        if self.open and not self.skip: self.open[-1]["buf"].append(d)
 
 
-def sentences(path):
+def sentences(path, shortest=6, story_view=False):
     """Yield (tag, sentence, inside) for every judged block: inside is true when the sentence begins
-    inside a quotation that an earlier sentence of the same block opened."""
+    inside a quotation that an earlier sentence of the same block opened. The story view leaves out
+    the detail blocks, which a reader sees only after switching to the facts."""
     p = Page(); p.feed(open(path, encoding="utf-8").read()); out = []
     for b in p.blocks:
-        if b["layer"] == "proof": continue
+        if b["layer"] == "proof" or (story_view and b["layer"] == "detail"): continue
         text = ABBR.sub(lambda m: m.group(0).replace(". ", ".⁣"), b["text"])
         heading = b["tag"] in ("h1", "h2", "h3", "h4", "kicker")
         quotes = 0
-        for sen in re.split(r"(?<=[.!?])\s+(?=[A-Z\"])", text):
+        for sen in re.split(r"(?:(?<=[.!?])|(?<=[.!?][\")]))\s+(?=[A-Z\"])", text):
             sen = sen.replace("⁣", " "); inside = quotes % 2 == 1; quotes += sen.count('"')
-            if (len(re.findall(r"[A-Za-z]+", sen)) >= 6 and re.search(r"[.!?]$", sen)) or (heading and len(sen.split()) >= 4):
+            if (len(re.findall(r"[A-Za-z]+", sen)) >= shortest and re.search(r"[.!?][\")]?$", sen)) or (heading and len(sen.split()) >= 4):
                 out.append((b["tag"], sen, inside))
     return out
 
@@ -198,6 +205,27 @@ def lint(path, client):
     return fails, reviews
 
 
+SHORT, LONG = 8, 30
+
+
+def lengths(path):
+    """The length profile of the story view's own sentences (paragraphs and list items outside proof and detail blocks): a report
+    for the author's reread, never a failure and never a cap. One seventy-word sentence loses the stranger and a
+    run of six-word sentences reads as a list; the press-ban page did the first in round 3 and the second in round 5."""
+    counts = sorted(((len(sen.split()), sen) for tag, sen, _ in sentences(path, shortest=1, story_view=True) if tag in ("p", "li")), reverse=True)
+    if not counts: return None
+    n = len(counts); words = [c for c, _ in counts]
+    return {"sentences": n, "words": sum(words), "median": statistics.median(words), "short": sum(1 for c in words if c < SHORT) / n,
+            "long": sum(1 for c in words if c > LONG) / n, "longest": [(c, sen) for c, sen in counts[:3] if c > LONG]}
+
+
+def print_lengths(path):
+    shape = lengths(path)
+    if not shape: return
+    print(f"  sentence lengths: {shape['words']} words in {shape['sentences']} sentences, median {shape['median']:g} words, {shape['short']:.0%} under {SHORT} words, {shape['long']:.0%} over {LONG}")
+    for c, sen in shape["longest"]: print(f"    {c} words: {sen}")
+
+
 def calibrate(labels_path, positives_path=None):
     """Score a labelled sentence file (one JSON row per sentence: page, tag, text, label, shapes) the way
     lint() does and print, per question, the AUC and the highest threshold that keeps specificity 0.95.
@@ -249,10 +277,14 @@ def main(paths):
             print(f"{path}: {len(fails)} failing sentence(s), {len(shown)} to reread")
             for k, score, sen in fails: print(f"  FAIL [{k}] {WHY[k]}: {sen}")
             for k, score, sen in shown: print(f"  reread [{k} {score}] {WHY[k]}: {sen}")
+            print_lengths(path)
     return 1 if total else 0
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2: print(__doc__); sys.exit(2)
+    if sys.argv[1] == "--lengths":
+        for path in sys.argv[2:]: print(path); print_lengths(path)
+        sys.exit(0)
     if sys.argv[1] == "--calibrate": calibrate(sys.argv[2], sys.argv[3] if len(sys.argv) > 3 else None); sys.exit(0)
     sys.exit(main(sys.argv[1:]))

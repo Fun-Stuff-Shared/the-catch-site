@@ -173,6 +173,26 @@ checks = [
     ("the reread list is the top ten plus two per question left out", (lambda r: len(r) == 12 and r[:10] == REV[:10] and [h[0] for h in r[10:]] == ["dictionary", "dictionary"])(vl.reread_list(REV))),
     ("a question inside the top ten gets no extra rows", len(vl.reread_list(REV[:3])) == 3),
 ]
+LONG_SENTENCE = "The court " + "said that the order would stand and " * 6 + "the passes were restored."
+with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as f:
+    f.write(f'<main><p data-layer="narrative">The court ruled for the three outlets on Thursday. {LONG_SENTENCE} The pool halt came next. The passes went back on Friday morning at nine.</p><p data-layer="proof">{LONG_SENTENCE}</p><div class="sourced-block detail" data-layer="fact"><p>{LONG_SENTENCE}</p></div><h2>A heading of six words is not prose.</h2><ul><li><h3>The letter and the witness</h3><p data-layer="narrative">The letter names four articles by date.</p></li></ul></main>')
+shape = vl.lengths(f.name)
+with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as g:
+    g.write('<main><p data-layer="narrative">The pool halt came next. The passes went back on Friday morning at nine.</p></main>')
+even = vl.lengths(g.name)
+with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as h:
+    h.write(f'<main><p data-layer="narrative">The pool halt came next.</p><div class="sourced-block detail" data-layer="fact"><p data-layer="fact">{LONG_SENTENCE}</p></div><div data-layer="proof"><p data-layer="fact">{LONG_SENTENCE}</p></div></main>')
+nested = vl.lengths(h.name)
+checks += [
+    ("the length profile counts the story view's sentences and leaves proof, detail blocks and headings out", shape["sentences"] == 5 and shape["median"] == 9),
+    ("it gives the share over thirty words and names the longest", shape["long"] == 0.2 and shape["longest"] == [(len(LONG_SENTENCE.split()), LONG_SENTENCE)]),
+    ("it counts a five-word sentence in the share under eight words", shape["short"] == 0.4),
+    ("an even count of sentences takes the mean of the two middle lengths", even["sentences"] == 2 and even["median"] == 7),
+    ("a paragraph with its own layer inside a detail block or a proof block stays out of the profile", nested["sentences"] == 1),
+    ("the lint still judges a detail block's sentence, which the facts view shows", sum(1 for _, s, _ in vl.sentences(f.name, shortest=1) if s == LONG_SENTENCE) == 2),
+    ("a heading inside a list item is its own block, never the start of the paragraph under it", any(s == "The letter names four articles by date." for _, s, _ in vl.sentences(f.name, shortest=1))),
+    ("the lint itself still judges only sentences of six words or more", not any(s == "The pool halt came next." for _, s, _ in vl.sentences(f.name))),
+]
 bad = [name for name, ok in checks if not ok]
 for name, ok in checks: print(("ok  " if ok else "FAIL"), name)
 sys.exit(1 if bad else 0)

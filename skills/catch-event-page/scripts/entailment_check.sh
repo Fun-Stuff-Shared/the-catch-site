@@ -3,8 +3,9 @@
 # passage it cites and the record around it, and returns the sentences the record does not
 # support in full. Usage: skills/catch-event-page/scripts/entailment_check.sh <subject>/<story> [out.md] [--since <commit>]
 # Writes checks/audits/<subject>--<story>-<date>-entailment.md (verdict) and .log (full run).
-# With --since, only the blocks changed since that commit are judged: the author's own check
-# on the sentences it just wrote, minutes instead of the whole page.
+# Reads the built page (dist/events/<story>/index.html): build first. With --since, the page at
+# that commit is built too, and only the blocks it did not show with the same words and the
+# same citations are judged: the author's own check on what it just wrote.
 set -euo pipefail
 story="${1:?usage: entailment_check.sh <subject>/<story> [out.md] [--since <commit>]}"
 shift
@@ -22,26 +23,32 @@ scope="entailment"; [ -n "$since" ] && scope="since-${since:0:8}-entailment"
 [ -n "$out" ] || out="$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d)-$scope.md"
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
 mkdir -p "$(dirname "$out")"
+scripts="$root/skills/catch-event-page/scripts"
+. "$scripts/page_builds.sh"
+built_page "$root" "$story" > /dev/null || exit 2
 table="$(mktemp)"; prompt="$(mktemp)"
 if [ -n "$since" ]; then
-  node "$root/skills/catch-event-page/scripts/claim_table.mjs" "$story" --since "$since" > "$table"
+  earlier="$(mktemp)"
+  earlier_page "$root" "$story" "$since" "$earlier" "${out%.md}-earlier-build.log" || { rm -f "$earlier" "$table" "$prompt"; exit 2; }
+  python3 "$scripts/claim_table.py" "$story" --earlier "$earlier" > "$table"
+  rm -f "$earlier"
 else
-  node "$root/skills/catch-event-page/scripts/claim_table.mjs" "$story" > "$table"
+  python3 "$scripts/claim_table.py" "$story" > "$table"
 fi
 if ! grep -q '^| 1 |' "$table"; then
-  { echo "No cited block changed since ${since:-the start}; nothing to judge."; echo; echo "Blocks checked: 0; blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0."; echo; echo "VERDICT: ENTAILED"; } > "$out"
+  { echo "No block of the page changed since ${since:-the start}; nothing to judge."; echo; echo "Blocks checked: 0; blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0."; echo; echo "VERDICT: ENTAILED"; } > "$out"
   rm -f "$table"; echo "$out"; exit 0
 fi
 scopeline=""
-[ -n "$since" ] && scopeline="Only the blocks whose lines changed since commit $since are listed; the rest of the page was judged before and is not in scope. Counts refer to the listed blocks."
+[ -n "$since" ] && scopeline="Only the blocks the page built at commit $since did not show with the same words and the same citations are listed; the rest of the page was judged before and is not in scope. Counts refer to the listed blocks. A row with no citation is text the page shows without a Cite (a headline, a dek, a figure label, a table cell) that changed: judge it against the records the manifest lists (open the pins it needs), and report it when no record supports a number, actor, date or characterization in it."
 cat > "$prompt" <<PROMPT
 You are checking whether each cited sentence on a news page says only what its cited record supports. The page is /events/$story/ in $root (source src/pages/events/$story.astro, manifest $manifest, pinned text files under $root/data/sources/).
 
 $scopeline
 
-Below is the table of every cited block on the page (a paragraph, list item, or caption) with every citation it carries: the record id, the passage the citation points at, and the record's text pin. For every row: open each text pin, find each passage, read the record around it (the whole document, not only the passage), and decide whether the cited records together support the whole block: every number, actor, date, mechanism, causal word, characterization, and scope word in it. A block usually carries several sentences and several citations; a sentence is supported when any of the block's cited records supports it in full. A passage that supports one phrase does not support the sentence around it. A sentence that says more than its records (a mechanism the record does not give, a broader actor, a settled state for something the record calls proposed, a cause the record does not state, a superlative the record does not make) is not supported. A sentence in reader words that says the same thing as the record is supported. A sentence that states what the page could not find or fetch is supported by the working note or manifest, not by a record; report it only if it contradicts them.
+Below is the table of every cited block on the page (a paragraph, a list item, a card, a table cell or a caption, in the words and numbers the built page shows) with its section and every citation it carries: the record id, the passage the citation points at, and the record's text pin. For every row: open each text pin, find each passage, read the record around it (the whole document, not only the passage), and decide whether the cited records together support the whole block: every number, actor, date, mechanism, causal word, characterization, and scope word in it. A block usually carries several sentences and several citations; a sentence is supported when any of the block's cited records supports it in full. A passage that supports one phrase does not support the sentence around it. A sentence that says more than its records (a mechanism the record does not give, a broader actor, a settled state for something the record calls proposed, a cause the record does not state, a superlative the record does not make) is not supported. A sentence in reader words that says the same thing as the record is supported. A sentence that states what the page could not find or fetch is supported by the working note or manifest, not by a record; report it only if it contradicts them.
 
-Report only the blocks with an unsupported sentence. For each: the row number and line, the sentence bytes, which cited records you checked, what the records actually support (quote it), what in the sentence goes beyond them, and a materiality (Critical, Major, Moderate, Minor). Then one line with the counts: blocks checked, blocks with an unsupported sentence by materiality. End with exactly one line: VERDICT: ENTAILED if no block is Critical or Major, otherwise VERDICT: NOT-ENTAILED.
+Report only the blocks with an unsupported sentence. For each: the row number and section, the sentence bytes, which cited records you checked, what the records actually support (quote it), what in the sentence goes beyond them, and a materiality (Critical, Major, Moderate, Minor). Then one line with the counts: blocks checked, blocks with an unsupported sentence by materiality. End with exactly one line: VERDICT: ENTAILED if no block is Critical or Major, otherwise VERDICT: NOT-ENTAILED.
 
 Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output. Read the pins from disk; do not use the network.
 
