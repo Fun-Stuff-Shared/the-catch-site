@@ -24,8 +24,6 @@ export const event = {
   date: "2026-10-01",
   updated: "2026-10-03",
   kpis: [
-    { value: "Oct. 1", unit: "2026", label: "The Court granted review" },
-    { value: "Apr. 28", unit: "2026", label: "The appeals court affirmed" },
     { value: "July 8", unit: "2025", label: "Detention guidance the opinion cites" },
     { value: String(computed.daysOpinionToGrant), unit: "days", label: "From that decision to the grant" },
   ],
