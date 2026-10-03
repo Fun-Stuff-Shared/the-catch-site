@@ -231,3 +231,5 @@ The IEA's October 2 news page returned 403 on a direct fetch and 404 on the Wayb
 ## Entailment moderates that stand, 2026-10-03
 
 The entailment file of this date marks two Moderates and returns ENTAILED. Both are the unit words on the FRED observations. "6.382 dollars a gallon" and the later "dollars a gallon" and "dollars a barrel" changes are the published units of GASDESW, DCOILBRENTEU, and DCOILWTICO. The pinned CSV files store the date and the value and do not repeat the unit. The sentences stand on that series identity. The figure captions name Weekly U.S. No. 2 diesel, Europe Brent, and Cushing WTI. No second measurement is added.
+
+The since-60c5cdb4 entailment file marks one Moderate on the March 19 contributions detail and returns ENTAILED. The sentence that calls the Middle East war "the largest supply disruption in the history of the global oil market" was not in this round's list. The pin says the war "is creating" that disruption. The sentence is left as it stood.
