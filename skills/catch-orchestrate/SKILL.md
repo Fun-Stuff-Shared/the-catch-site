@@ -295,7 +295,19 @@ sentence, hold an item with its reason on
 `checks/working-notes/<subject-slug>--<slug>-held.md`, or kill the story. Two things the
 reviewers cannot decide are yours: when a source chain is deep enough, and when a
 stranger's cut beats a hole the editor's read wants filled. The headline is page text and
-is patched like any sentence.
+is patched like any sentence, with one addition: the list carries a line
+`HEADLINE: <the exact new headline>` and the item tells the author to use those exact words
+on the page and in the reader model. `patch.sh` renames the state label to that line before
+the author starts, because the build fails when the page headline and the label differ.
+To take a headline change back, give the list a `HEADLINE:` line with the earlier headline;
+removing the line leaves the label where the last round put it.
+
+Write every direction in a patch list as the exact sentence or the exact fact you want on
+the page. Authors transcribe a reviewer's paraphrase: "more people were working in
+September" and "the Fed has decided nothing since September 16" went onto the jobs page
+word for word from a list (2026-10-03) and both overstated their records. Split a quoted
+page passage into one quotation per sentence, and do not put commit messages or error text
+in quotation marks; `patch_quotes.mjs` refuses a quotation it cannot find.
 
 ## 8. Serve, record the clock, stage
 

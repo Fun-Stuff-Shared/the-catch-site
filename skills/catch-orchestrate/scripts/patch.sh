@@ -2,6 +2,8 @@
 # One patch round: check the list's quotes, resume the story author's own session with the
 # list, wait, build, run the four reads on the patched commit. Markers and DRIVE.log as in
 # drive.sh. Usage: patch.sh <short> <subject> <slug> <round number> <patch list file> [fetched text of a record the list asks to admit ...]
+# A list that changes the headline carries one line "HEADLINE: <the exact new headline>"; the
+# state label is renamed to it before the author starts, since the build compares the two.
 # Ends by writing READY-r<round>; stops with a reason in <dispatch dir>/STOP.
 set -uo pipefail
 short="${1:?short}"; subject="${2:?subject}"; slug="${3:?slug}"; r="${4:?round}"; list="${5:?patch list}"; list="${list:A}"
@@ -10,6 +12,8 @@ site=/Volumes/4/GitHub/the-catch-site
 out="${DISPATCH_ROOT:-/Volumes/4/scratch-fable-profile/grok-authoring/dispatch}/$short"
 wt="$(cat "$out/WORKTREE" 2>/dev/null || echo "$site/.worktrees/$short")"
 name="$subject--$slug"; story="$subject/$slug"; m="$name-patch$r"
+state=/Volumes/4/CF/catch-state; sai=/Volumes/4/CF/sai-prod; py=/Volumes/4/CF/sai/.venv/bin/python
+event="event-$subject-$slug"
 here="$(cd "$(dirname "$0")" && pwd)"
 now() { date -u +%Y-%m-%dT%H:%M:%SZ; }
 say() { echo "$(now) $*" >> "$out/DRIVE.log"; }
@@ -36,6 +40,20 @@ if [ ! -e "$out/$m.finished" ]; then
   node skills/catch-event-page/scripts/patch_quotes.mjs "$story" "$list" "${extra[@]}" > "$out/$m.quotes.log" 2>&1 \
     || stop "the patch list quotes words no record holds, see $out/$m.quotes.log"
   cp "$list" "$out/$m.prompt.txt" 2>/dev/null
+  headline="$(sed -n 's/^HEADLINE: *//p' "$list" | head -1)"
+  if [ -n "$headline" ] && [ "$(cat "$out/$m.label.finished" 2>/dev/null)" != "$headline" ]; then
+    current="$("$py" -c 'import json,sys; v=json.load(open(sys.argv[1])); print((v.get("event") or v)["label"])' "$state/views/$event.json")"
+    if [ "$headline" != "$current" ] && [ "$(cat "$out/$m.label.renamed" 2>/dev/null)" != "$headline" ]; then
+      say "state label: \"$current\" becomes \"$headline\""
+      ( cd "$sai" && PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 "$py" -m sai.cli state event-op --state-dir "$state" --op rename \
+          --event "$event" --author "${BY:-keystone}" --label "$headline" --reason "patch round $r: the list's headline" ) \
+        > "$out/$m.label.log" 2>&1 || stop "the state label rename for patch $r failed, see $out/$m.label.log"
+      print -r -- "$headline" > "$out/$m.label.renamed"
+    fi
+    ( cd "$sai" && PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 "$py" -m sai.cli state refresh-views --state-dir "$state" --event "$event" ) \
+      > "$out/$m.label-refresh.log" 2>&1 || stop "the view refresh after the rename for patch $r failed, see $out/$m.label-refresh.log"
+    print -r -- "$headline" > "$out/$m.label.finished"
+  fi
   before="$(git rev-parse HEAD)"; echo "$before" > "$out/$m.before"
   if [ -e "$out/$m.started" ]; then
     tag="dead-$(date -u +%H%M%S)"
