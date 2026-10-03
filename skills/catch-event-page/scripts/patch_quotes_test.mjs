@@ -36,6 +36,8 @@ r = run(`1. Admit the order; it says the passes are to "be restored within 24 ho
 checks.push(["and passes when the fetched text is passed as an extra file", r.code === 0 && /the file order.txt/.test(r.out)]);
 r = run(`The page should say the ban was "the first of its kind".\n1. The page says "The opinions read give no date for an earlier ban." Keep it.\n`);
 checks.push(["the reviewer's wording in quotation marks above the first item fails", r.code === 1 && /outside the numbered items: 1 quoted span/.test(r.out) && /NOT FOUND {2}"the first of its kind"/.test(r.out)]);
+r = run(`1. "The opinions read give no date" opens the sentence; "UNPRECEDENTED" is the record's word.\n`);
+checks.push(["letter case is not compared", r.code === 0]);
 r = run("No numbered item here.\n");
 checks.push(["a list with no numbered item is refused", r.code === 2]);
 fs.rmSync(root, { recursive: true, force: true });
