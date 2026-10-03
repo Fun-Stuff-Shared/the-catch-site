@@ -331,11 +331,11 @@ so the resting commit carries what was decided and why.
 ## Gotchas
 
 - A maintenance run (`news-state-maintain`, every two hours at half past) holds the state
-  while it works, and `state refresh-views` is refused with `maintain_fire_mismatch` until
-  it releases. The driver renames the label at once and retries the refresh every minute
-  in the background while the story turn writes; if the turn reaches its finish first, its
-  build fails on the old label and the driver runs `finish.sh ... story` itself once the
-  views hold the new one. `open-story.sh` has no such wait: open stories between runs.
+  while it works. The label rename (`state event-op`) and the one-event view refresh
+  (`state refresh-views --event`) do not need its lock and run during it (three renames on
+  2026-10-03 each reached the views in about 14 seconds mid-run). `state export --event`
+  and a full `refresh-views` with no `--event` are refused with `maintain_fire_mismatch`
+  until the run ends.
 - `drive.sh` is read by the shell as it runs. Change it by writing a new file and moving
   it over the old one, never in place, while any driver is running.
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an

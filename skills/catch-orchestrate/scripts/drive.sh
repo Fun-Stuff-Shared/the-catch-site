@@ -179,29 +179,15 @@ rename() {
 
 refresh() {
   [ -e "$out/label.finished" ] && return 0
-  cd "$sai"
-  # refresh-views is refused while a maintenance run holds the state; the views follow when it releases.
-  until PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 "$py" -m sai.cli state refresh-views --state-dir "$state" --event "$event" > "$out/label-refresh.log" 2>&1; do
-    grep -q maintain_fire_mismatch "$out/label-refresh.log" || stop "the view refresh after the rename failed, see $out/label-refresh.log"
-    [ -e "$out/HOLD" ] && { say "HOLD during the label refresh"; exit 0; }
-    say "label refresh waits on the maintenance run"; sleep 60
-  done
+  ( cd "$sai" && PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 "$py" -m sai.cli state refresh-views --state-dir "$state" --event "$event" ) \
+    > "$out/label-refresh.log" 2>&1 || stop "the view refresh after the rename failed, see $out/label-refresh.log"
   now > "$out/label.finished"; say "done label"
 }
 
-hold label; rename
-( refresh ) &
-labeler=$!
+hold label; rename; refresh
 
 hold story; turn story
-wait $labeler; [ -e "$out/label.finished" ] || exit 1
-finish_story() { "$scripts/finish.sh" "$story" story; committed "story" story; }
-if ! committed "story" story; then
-  grep -q "Rendered story label differs" "$wt/.finish-build.log" 2>/dev/null || uncommitted story
-  say "the story turn's finish failed on the old label; running its finish step now that the views hold the new one"
-  rm -f "$out/story-finish.finished"
-  step story-finish "$out/story-finish.log" finish_story
-fi
+committed "story" story || uncommitted story
 ensure_staged
 sessions | comm -13 "$out/sessions.before-story" - | head -1 > "$out/story.session"
 [ -s "$out/story.session" ] || stop "no author session found for the story turn under ~/.grok/sessions"
