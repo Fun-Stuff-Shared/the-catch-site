@@ -14,16 +14,19 @@ export const computed = {
   daysCbpMemoToGrant: daysBetween("2025-07-10", "2026-10-01"),
   daysBoardToGrant: daysBetween("2025-09-05", "2026-10-01"),
   daysPetitionToGrant: daysBetween("2026-07-23", "2026-10-01"),
+  // The April 28 opinion spells the length of the bond practice: "thirty".
+  bondPracticeYears: 30,
 };
 
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
   title: "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
-  dek: "The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person has no opportunity for release on bond, and the government's memorandum allows release only by parole. Under the bond statute the government may release someone.",
+  dek: "The Court's October 1 order takes the case and decides nothing yet. For about thirty years, people arrested inside the country who had entered without inspection and had not been admitted or paroled could ask an immigration judge for release on bond, unless they were apprehended while entering or shortly afterward or held on a criminal or terrorism ground. Since July 2025 the government has said they must be held, and the appeals courts have split.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
   updated: "2026-10-03",
   kpis: [
+    { value: String(computed.bondPracticeYears), unit: "years", label: "Practice of letting these detainees ask for bond, by the Second Circuit" },
     { value: String(computed.daysOpinionToGrant), unit: "days", label: "From the Second Circuit's April 28 decision to the grant" },
   ],
   visual: {
@@ -48,6 +51,6 @@ export const chronology = {
     ["Apr. 28, 2026", "The Second Circuit affirms the order requiring a bond hearing or release."],
     ["Sept. 10, 2026", "The Fourth Circuit names the appeals courts that require a bond hearing and the two that do not."],
     ["Sept. 25, 2026", "The Second Circuit denies rehearing by the full court."],
-    ["Oct. 1, 2026", "The Supreme Court grants the petitions for review, including this one."],
+    ["Oct. 1, 2026", "The Supreme Court grants review in this case."],
   ],
 };

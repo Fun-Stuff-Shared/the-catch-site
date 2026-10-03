@@ -18,7 +18,7 @@ A stranger arrives from a headline that the Supreme Court will weigh the adminis
 
 The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing
 
-Dek: The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person has no opportunity for release on bond, and the government's memorandum allows release only by parole. Under the bond statute the government may release someone.
+Dek: The Court's October 1 order takes the case and decides nothing yet. For about thirty years, people arrested inside the country who had entered without inspection and had not been admitted or paroled could ask an immigration judge for release on bond, unless they were apprehended while entering or shortly afterward or held on a criminal or terrorism ground. Since July 2025 the government has said they must be held, and the appeals courts have split.
 
 ## Grades
 
@@ -43,7 +43,7 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `scotus-docket-rhoney-2026-10-02` | Response filed August 21, 2026; reply September 4; distributed for the September 28 conference. | C | none |
 | `scotus-docket-rhoney-2026-10-02` | Letters of September 14 and September 25. | D | none |
 | `scotus-docket-rhoney-2026-10-02` | Petition GRANTED. October 1, 2026. | C | 1, carried by `scotus-order-list-2026-10-01` |
-| `scotus-docket-rhoney-2026-10-02` | "Subsequent party and amicus filings in the case should now be submitted through" the electronic system. Paper-only was the rule before the grant. | B | 6, paper-only is not the rule after the grant |
+| `scotus-docket-rhoney-2026-10-02` | "Subsequent party and amicus filings in the case should now be submitted through" the electronic system. Paper-only was the rule before the grant. | C | 6, the October 3 patch replaced the unknowns paragraph and this filing rule is not in it |
 | `scotus-docket-rhoney-2026-10-02` | Rule 34.6 and Rule 49.1(c). Filing mechanics. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | "Decided: April 28, 2026" The judgment under review. Argued April 6 is the same entry and changes no answer. | A | 5, the appeals judgment under review is April 28 |
 | `ca2-cunha-opinion-2026-04-28` | "applied for asylum in 2016 and was granted a valid work permit." Biography beyond the arrest. | B | 2, he had a pending asylum application and work authorization |
@@ -56,10 +56,10 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `ca2-cunha-opinion-2026-04-28` | "Petitioner may be an “applicant for admission,” but he is not “seeking admission.”" | A | 4, applicant for admission is not the same as seeking admission |
 | `ca2-cunha-opinion-2026-04-28` | "we AFFIRM the district court’s grant of the writ of habeas corpus." | A | 5, the judgment under review is an affirmance |
 | `ca2-cunha-opinion-2026-04-28` | Judge Cabranes concurs and files a separate opinion. | C | none |
-| `ca2-cunha-opinion-2026-04-28` | "divided panels in two other circuits have agreed with the government" Fifth Circuit Buenrostro-Mendez and Eighth Circuit Avila. | B | 2, two other appeals courts had accepted the government's reading |
+| `ca2-cunha-opinion-2026-04-28` | "divided panels in two other circuits have agreed with the government" Fifth Circuit Buenrostro-Mendez and Eighth Circuit Avila. | C | 2, carried by `ca4-bond-2026-09-10`; the October 3 patch states the September 10 split instead |
 | `ca2-cunha-opinion-2026-04-28` | "Executive Branch practice over thirty years" | B | 5, the bond practice the court describes had run for thirty years |
 | `ca2-cunha-opinion-2026-04-28` | American Civil Liberties Union and American Immigration Council as counsel and amici. No separate statement admitted. | D | none |
-| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." The Due Process Clause is discussed and is not the holding. | B | 6, the appeals court did not decide the case on due process |
+| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." The Due Process Clause is discussed and is not the holding. | C | 6, the October 3 patch cut this sentence and its citation |
 | `ca2-cunha-opinion-2026-04-28` | Laken Riley Act. A 2025 statute the opinion discusses. Not this grant. He has not been charged with a crime, which is the separate B line. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | Two million, 100,000, fifteen months, five months, twenty years as a repeated duration, three years, twenty-four hours. Estimates and hypotheticals, not a detention census. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | Code of Federal Regulations cites and the case names Blake, Feliciano, Loper Bright, Bunte Bros., and Velasco Lopez. | D | none |
@@ -85,7 +85,7 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `uscode-2024-1225` | Effective-date notes, 180 days and 18 months after September 30, 1996. | D | none |
 | `uscode-2024-1226` | "may release the alien on" Bond of at least $1,500 is the minimum inside the same subsection. | A | 4, the bond statute authorizes release and does not require it |
 | `uscode-2024-1226` | One-year imprisonment clause and the 1996 appropriation of $3,400,000. | D | none |
-| `ap-detention-grant-2026-10-01` | "agreed to review a Trump administration policy denying bond hearings" The grant as the coverage frames it. The Hill's legality-of-the-policy line is the same frame. | B | 3, a reader can hear a policy review as a decision that the policy stands |
+| `ap-detention-grant-2026-10-01` | "agreed to review a Trump administration policy denying bond hearings" The grant as the coverage frames it. The Hill's legality-of-the-policy line is the same frame. | C | 3, the October 3 patch cut this from the catch; the receipt under The records still quotes it |
 | `cbs-detention-grant-2026-10-01` | "detain tens of thousands of immigrants during their removal proceedings without access to bond hearings" That count is not in the order, the docket, the opinion's holding, the Board decision, or the Customs memorandum. | B | 3, the case is not a count of people the Court will let the government detain |
 | `hill-detention-grant-2026-10-01` | "announced Thursday it will decide the legality" of the mandatory detention policy. Same frame as the Associated Press line. | C | 3, carried by `ap-detention-grant-2026-10-01` |
 
@@ -103,7 +103,7 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `ca2-cunha-opinion-2026-04-28` | L143 name Amici Curiae. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | L144 name American Immigration Council. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | "lived in the United States for more than twenty years after entering the country" L159 number twenty years. | B | 2, he had lived here for more than twenty years |
-| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." L282 name Due Process Clause. | B | 6, the appeals court did not decide the case on due process |
+| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." L282 name Due Process Clause. | C | 6, the October 3 patch cut this sentence and its citation |
 | `ca2-cunha-opinion-2026-04-28` | L285 number ten days. The district court's deadline. The release is the B line above. | C | none |
 | `ca2-cunha-opinion-2026-04-28` | L465 number 1003.19. | D | none |
 | `ca2-cunha-opinion-2026-04-28` | L465 number 1236.1. | D | none |
@@ -178,7 +178,7 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `audit-gap-doj-petition-26-104` | Admitted as doj-petition-26-104. | C | 6, carried by `doj-petition-26-104` |
 | `doj-petition-26-104` | "In addition to the statutory question presented in this case, Lopez-Campos also squarely presents the question whether applying Section 1225(b)(2)(A)'s mandatory-detention scheme to such aliens comports with due process." The question this Court granted is the statute. | B | 6, this grant does not take the due-process question a companion case presents |
 | `doj-petition-26-104` | "The Court should hold the petition in this case pending the resolution of the petition in Lopez-Campos and then dispose of this petition as appropriate." The Court granted this petition on October 1. | B | 2, the petition asked the Court to wait on this case |
-| `doj-petition-26-104` | "the Second Circuit did not reach a standalone holding on the constitutionality of detaining respondent without a bond hearing" The granted question is the statute. | B | 6, this court did not decide the constitutional claim |
+| `doj-petition-26-104` | "the Second Circuit did not reach a standalone holding on the constitutionality of detaining respondent without a bond hearing" The granted question is the statute. | C | 6, the October 3 patch cut this sentence and its citation |
 | `ca2-cunha-opinion-2026-04-28` | "Petitioner requested a bond hearing, which an immigration judge denied based on a determination that he was subject to mandatory detention" "The district court granted the petition and ordered the government to either provide a bond hearing or release Petitioner within ten days." The later release followed that order. | B | 2, an immigration judge denied a bond hearing before the release |
 | `cbp-detention-memo-2025-07-10` | "The only aliens eligible for a custody determination and release on recognizance, bond, or conditional parole under INA § 236(a) are aliens admitted to the United States" Parole is the release the memorandum names for an applicant for admission. | B | 4, bond under that reading is for people already admitted |
 | `audit-gap-26-104-response-reply` | Unmet 2026-10-03. The October 2 docket lists the August 21 response and the September 4 reply and does not link either file. A registry search for Barbosa da Cunha returned no brief. The Justice Department file admitted that day is the petition. | C | 6, the briefs filed with the Court are not in the admitted record |
