@@ -18,14 +18,13 @@ export const computed = {
 
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
-  title: "The Supreme Court agreed to decide whether the detention statute requires holding people who are already in the country and were not admitted",
-  dek: "The October 1 grant is not a ruling and not a count of people. Under the bond statute the government may release someone. An immigration judge released a person who was already in the country and had not been admitted, after finding no danger and no flight risk.",
+  title: "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
+  dek: "The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person is held through removal proceedings with no opportunity for release on bond. Under the bond statute the government may release someone.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
   updated: "2026-10-03",
   kpis: [
-    { value: "July 8", unit: "2025", label: "Detention guidance the opinion cites" },
-    { value: String(computed.daysOpinionToGrant), unit: "days", label: "From that decision to the grant" },
+    { value: String(computed.daysOpinionToGrant), unit: "days", label: "From the Second Circuit's April 28 decision to the grant" },
   ],
   visual: {
     kind: "timeline",
@@ -46,9 +45,7 @@ export const chronology = {
     ["July 10, 2025", "Customs and Border Protection says its commissioner issued detention guidance to every component."],
     ["Sept. 5, 2025", "The Board of Immigration Appeals decides judges lack authority to grant bond in this situation."],
     ["Sept. 26, 2025", "Officers arrested the man in this case while he was driving to work."],
-    ["Apr. 6, 2026", "The Second Circuit heard argument."],
     ["Apr. 28, 2026", "The Second Circuit affirms the order requiring a bond hearing or release."],
-    ["July 23, 2026", "The government asks the Supreme Court to review the case."],
     ["Sept. 10, 2026", "The Fourth Circuit names the appeals courts that require a bond hearing and the two that do not."],
     ["Sept. 25, 2026", "The Second Circuit denies rehearing by the full court."],
     ["Oct. 1, 2026", "The Supreme Court grants the petitions for review, including this one."],

@@ -16,9 +16,9 @@ A stranger arrives from a headline that the Supreme Court will weigh the adminis
 
 ## Headline
 
-The Supreme Court agreed to decide whether the detention statute requires holding people who are already in the country and were not admitted
+The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing
 
-Dek: The October 1 grant is not a ruling and not a count of people. Under the bond statute the government may release someone. An immigration judge released a person who was already in the country and had not been admitted, after finding no danger and no flight risk.
+Dek: The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person is held through removal proceedings with no opportunity for release on bond. Under the bond statute the government may release someone.
 
 ## Grades
 
