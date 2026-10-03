@@ -136,6 +136,12 @@ ensure_staged() {
     [ -n "$verdict" ] || stop "state staging ran and left no readable result in $file, see $out/$m.log"
   fi
   [ "$verdict" = ok ] || stop "the state refused one or more of the story's figures; the author rewrites or drops them (see $file)"
+  local split
+  split="$("$py" -c 'import json,sys
+v=json.load(open(sys.argv[1]))
+print(" ".join(s["slot"] for s in v["current_state"].values() if len(s["heads"]) > 1 and any(h.startswith("story-figure:") for h in s["heads"])))' "$state/views/$event.json")" \
+    || stop "could not read the story's state view $state/views/$event.json"
+  [ -z "$split" ] || stop "the state holds more than one value for these story figures, so the page prints none: $split (see $state/views/$event.json)"
 }
 
 if [ -n "${DRIVE_ONLY_READS:-}" ]; then
