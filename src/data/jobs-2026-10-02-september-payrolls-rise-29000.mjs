@@ -25,7 +25,6 @@ export const event = {
     { value: "+29,000", unit: "", figure_unit: "jobs", period: "2026-09", label: "payrolls in September" },
     { value: "4.2", unit: "%", period: "2026-09", label: "unemployment rate" },
     { value: "60,000", unit: "lower", figure_unit: "jobs", period: "2026-07..2026-08", label: "July and August, revised" },
-    { value: "3.0", unit: "%", period: "2025-09..2026-09", label: "hourly earnings, past year" },
   ],
 };
 
