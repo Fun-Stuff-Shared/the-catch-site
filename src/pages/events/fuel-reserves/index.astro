@@ -1,0 +1,10 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/fuel-reserves.mjs';
+import { event } from '../../../data/fuel-reserves-2026-10-02-g7-releases-100-million-barrels.mjs';
+---
+<SeriesOverview title={subject.title} description={subject.dek} path="/events/fuel-reserves/">
+  <SeriesFigures slot="visual" items={subject.current} />
+  <p>The October 2 record is <a href={`/events/${event.slug}/`}>{event.title}</a>.</p>
+</SeriesOverview>

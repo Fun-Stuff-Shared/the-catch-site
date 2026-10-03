@@ -1,0 +1,120 @@
+// Prices are read as integer thousandths or cents from the pinned rows, then subtracted.
+// Diesel: data/sources/fuel-reserves/GASDESW-2026-10-03.csv
+//   2026-09-28,6.382  2026-09-21,6.529  2026-03-02,3.897
+// Brent: data/sources/fuel-reserves/DCOILBRENTEU-2026-10-03.csv
+//   2026-09-29,113.96  2026-02-27,71.32
+// WTI: data/sources/fuel-reserves/DCOILWTICO-2026-10-03.csv
+//   2026-09-29,96.16  2026-02-27,66.96
+
+const dieselSep28 = 6382;
+const dieselSep21 = 6529;
+const dieselMar2 = 3897;
+const brentSep29 = 11396;
+const brentFeb27 = 7132;
+const wtiSep29 = 9616;
+const wtiFeb27 = 6696;
+
+const thousandths = (n) => (n / 1000).toFixed(3);
+const cents = (n) => (n / 100).toFixed(2);
+const signedThousandths = (n) => `${n < 0 ? "-" : ""}${thousandths(Math.abs(n))}`;
+const signedCents = (n) => `${n < 0 ? "-" : ""}${cents(Math.abs(n))}`;
+
+const dieselWeekChange = dieselSep28 - dieselSep21;
+const dieselFromMarch = dieselSep28 - dieselMar2;
+const dieselFromMarchPercent = (Math.round((dieselFromMarch / dieselMar2) * 1000) / 10).toFixed(1);
+const brentFromFebruary = brentSep29 - brentFeb27;
+const wtiFromFebruary = wtiSep29 - wtiFeb27;
+
+export const prices = {
+  dieselSep28: thousandths(dieselSep28),
+  dieselSep21: thousandths(dieselSep21),
+  dieselMar2: thousandths(dieselMar2),
+  dieselWeekChange: signedThousandths(dieselWeekChange),
+  dieselFromMarch: signedThousandths(dieselFromMarch),
+  dieselFromMarchPercent,
+  brentSep29: cents(brentSep29),
+  brentFeb27: cents(brentFeb27),
+  brentFromFebruary: signedCents(brentFromFebruary),
+  wtiSep29: cents(wtiSep29),
+  wtiFeb27: cents(wtiFeb27),
+  wtiFromFebruary: signedCents(wtiFromFebruary),
+};
+
+export const release = {
+  barrels: "100 million",
+  months: "4 months",
+  dieselDays: "20 days",
+  marchTotal: "400 million",
+  usMarch: "172 million",
+  usMarchDays: "120 days",
+  usReplacement: "200 million",
+  exchange: "40 million",
+  awarded: "133 million",
+  premium: "25 percent",
+  taxpayer: "$3 billion",
+  members: "32 member",
+  billTrigger: "$5",
+  billEnd: "$4.50",
+  germanyRequest: "2,6 Millionen Tonnen",
+  germanyReserve: "20 Millionen Tonnen",
+  germanyDays: "90 Tage",
+  germanyTonnes: "54 Millionen Tonnen",
+};
+
+export const priceRows = [
+  ["U.S. No. 2 diesel, retail", "Sep 28, 2026", prices.dieselSep28],
+  ["U.S. No. 2 diesel, retail", "Sep 21, 2026", prices.dieselSep21],
+  ["U.S. No. 2 diesel, retail", "Mar 2, 2026", prices.dieselMar2],
+  ["Brent", "Sep 29, 2026", prices.brentSep29],
+  ["Brent", "Feb 27, 2026", prices.brentFeb27],
+  ["WTI", "Sep 29, 2026", prices.wtiSep29],
+  ["WTI", "Feb 27, 2026", prices.wtiFeb27],
+];
+
+export const changeRows = [
+  ["Diesel, week", prices.dieselWeekChange, "dollars per gallon"],
+  ["Diesel, from Mar 2", prices.dieselFromMarch, "dollars per gallon"],
+  ["Diesel, from Mar 2", prices.dieselFromMarchPercent, "percent"],
+  ["Brent, from Feb 27", prices.brentFromFebruary, "dollars per barrel"],
+  ["WTI, from Feb 27", prices.wtiFromFebruary, "dollars per barrel"],
+];
+
+export const statementRows = [
+  ["United Kingdom publication of the joint statement", "100 million barrels over 4 months, diesel frontloaded in the first 20 days"],
+  ["Elysee readout of the same meeting", "jusqu'à 100 millions de barils sous 4 mois, diesel and crude"],
+];
+
+export const chronology = [
+  { date: "Mar 11", title: "Up to 400 million barrels", sub: "G7 leaders welcome an IEA release. The Energy Department says the United States will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
+  { date: "Mar 19", title: "IEA confirms the March action", sub: "The contributions page says the overall release is largely crude and Europe's share is primarily refined products.", current: false },
+  { date: "Sep 16", title: "Two diesel-export bills introduced", sub: "H.R. 10422 and H.R. 10423 are introduced and referred to Foreign Affairs. Neither text records a floor vote.", current: false },
+  { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "The department says earlier exchanges awarded more than 133 million barrels and that several European countries had released only a fraction.", current: false },
+  { date: "Oct 1", title: "Bessent asks Europe for more supply", sub: "The Treasury secretary says European partners should make additional supplies immediately available.", current: false },
+  { date: "Oct 2", title: "100 million barrels over 4 months", sub: "The joint statement starts the release immediately, with a substantial diesel release in the first 20 days.", current: true },
+];
+
+export const event = {
+  slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
+  title: "G-7 Agrees to Release 100 Million Barrels of Diesel and Crude",
+  dek: "On October 2, 2026, the Group of Seven said its members would release 100 million barrels of oil through the International Energy Agency over four months, with a substantial diesel release in the first 20 days.",
+  name: "G7 release of 100 million barrels",
+  date: "2026-10-02",
+  updated: "2026-10-03",
+  kpis: [
+    { value: "100", unit: "million barrels", label: "coordinated release beginning immediately" },
+    { value: "4", unit: "months", label: "the period named for that release" },
+    { value: "20", unit: "days", label: "window for the frontloaded diesel release" },
+    { value: "172", unit: "million barrels", label: "U.S. Strategic Petroleum Reserve share announced March 11" },
+  ],
+  visual: {
+    kind: "timeline",
+    title: "From the March release to October 2",
+    entries: [
+      { date: "Mar 11", title: "Up to 400 million barrels" },
+      { date: "Sep 29", title: "Exchange of up to 40 million barrels" },
+      { date: "Oct 1", title: "Bessent asks Europe for more supply" },
+      { date: "Oct 2", title: "100 million barrels over 4 months", current: true },
+    ],
+    note: "G7 statement, Energy Department, Treasury secretary",
+  },
+};

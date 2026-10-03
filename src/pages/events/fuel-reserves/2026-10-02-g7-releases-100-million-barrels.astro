@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import { readPublishedState } from "../../../lib/state.mjs";
+import {
+  event,
+  release,
+  prices,
+  priceRows,
+  changeRows,
+  statementRows,
+  chronology,
+} from "../../../data/fuel-reserves-2026-10-02-g7-releases-100-million-barrels.mjs";
+const state = readPublishedState().events.get("event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
+if (!state) throw new Error("Missing publication selection: event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fuel-reserves/">Fuel reserves</a><span>October 2, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Energy · October 2, 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+      <KpiStrip kpis={event.kpis} />
+
+      <section id="release" data-layer="fact">
+        <h2>The release</h2>
+        <p>On October 2, 2026, the Group of Seven said members would carry out commitments already made "with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days".<Cite s="govuk-g7-statement-2026-10-02" passage="coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+
+        <SourcedBlock source="govuk-g7-statement-2026-10-02" kind="record" detail>
+          <p>The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases." It also says members "refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days."<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="elysee-g7-statement-2026-10-02" kind="record" detail>
+          <p>The French presidency published the same English statement, including the {release.barrels} barrel release over {release.months} and the diesel release "within the first 20 days."<Cite s="elysee-g7-statement-2026-10-02" passage="frontloaded substantial diesel release within the first 20 days" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="elysee-g7-readout-2026-10-02" kind="record" detail>
+          <p>The Elysee readout of the October 2 videoconference says the leaders decided to release refined products, "notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois," coordinated by the International Energy Agency.<Cite s="elysee-g7-readout-2026-10-02" passage="jusqu'à 100 millions de barils sous 4 mois" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="trumpstruth-post-2026-10-02" kind="record" detail>
+          <p>President Donald Trump posted: "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately."<Cite s="trumpstruth-post-2026-10-02" passage="Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately." /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="bessent-post-2026-10-01" kind="record" detail>
+          <p>On October 1, Treasury Secretary Scott Bessent wrote: "Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available."<Cite s="bessent-post-2026-10-01" passage="Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="doe-spr-exchange-2026-09-29" kind="record" detail>
+          <p>On September 29 the Energy Department issued a request for an "exchange of up to 40 million barrels of crude oil" from the Strategic Petroleum Reserve. Secretary Chris Wright said several European member countries "have released only a fraction" of what they pledged. The department said five earlier solicitations "collectively awarded more than 133 million barrels," with a "25 percent premium in returned barrels," and that the exchanges save "more than $3 billion." Bids are due "October 6, 2026." The oil is to come from Big Hill and Bryan Mound.<Cite s="doe-spr-exchange-2026-09-29" passage="an exchange of up to 40 million barrels of crude oil" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="doe-spr-release-2026-03-11" kind="record" detail>
+          <p>On March 11, Chris Wright said 32 member nations agreed to a "coordinated release of 400 million barrels," and that the United States would "release 172 million barrels from the Strategic Petroleum Reserve, beginning next week," over "approximately 120 days." He said the United States had arranged to replace the draw with "approximately 200 million barrels within the next year."<Cite s="doe-spr-release-2026-03-11" passage="release 172 million barrels from the Strategic Petroleum Reserve, beginning next week" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="elysee-g7-communique-2026-03-11" kind="record" detail>
+          <p>The March 11 G7 presidency communique says leaders welcomed the International Energy Agency announcement, prepared at the G7's initiative, "de libérer jusqu’à 400 millions de barils de réserves stratégiques."<Cite s="elysee-g7-communique-2026-03-11" passage="de libérer jusqu’à 400 millions de barils de réserves stratégiques" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="iea-contributions-2026-03-19" kind="record" detail>
+          <p>The International Energy Agency's March 19 contributions page says the agreement announced on 11 March makes "400 million barrels of oil available to the market." It says the overall release "will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products." It calls the action "the sixth time" members have acted together since the agency "was created in 1974," after actions "in 1991, 2005, 2011, and twice in 2022," and calls the Middle East war "the largest supply disruption in the history of the global oil market." Executive Director Fatih Birol's remarks are named on that page.<Cite s="iea-contributions-2026-03-19" passage="400 million barrels of oil available to the market" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="bundesregierung-energy-faq-2026-10-01" kind="record" detail>
+          <p>The German government's energy FAQ says the 32 IEA members agreed in March to release "400 Millionen Barrel (gut 54 Millionen Tonnen)," and that "Deutschland hat die Freigabe am 18. März erteilt." It says Germany's emergency reserve "für etwa 90 Tage umfasst insgesamt etwa 20 Millionen Tonnen," and that the IEA had asked Germany to release "2,6 Millionen Tonnen."<Cite s="bundesregierung-energy-faq-2026-10-01" passage="Die IEA hatte Deutschland gebeten, 2,6 Millionen Tonnen aus seiner Reserve freizugeben." /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="hr10422-diesel-export-2026-09-16" kind="record" detail>
+          <p>On September 16, 2026, Mr. Burchett and Mr. Fuller introduced H.R. 10422, "To prohibit the export of diesel fuel from the United States during certain periods." The bill tells the Secretary of Commerce to bar diesel exports while the average retail price stays above $5 a gallon for fourteen consecutive days, and to lift that bar after thirty consecutive days under $4.50. The text refers the bill to the Committee on Foreign Affairs.<Cite s="hr10422-diesel-export-2026-09-16" passage="To prohibit the export of diesel fuel from the United States during" /></p>
+        </SourcedBlock>
+
+        <SourcedBlock source="hr10423-diesel-export-2026-09-16" kind="record" detail>
+          <p>The same day, the same sponsors introduced H.R. 10423. It says "the export of diesel fuel shall be prohibited" from enactment through "December 31, 2026." It too was referred to the Committee on Foreign Affairs.<Cite s="hr10423-diesel-export-2026-09-16" passage="the export of diesel fuel shall be prohibited during the period beginning on the date of the enactment of this subsection and ending on the date December 31, 2026." /></p>
+        </SourcedBlock>
+
+        <details class="receipt" data-layer="proof">
+          <summary>English statement and French readout</summary>
+          <DataTable columns={["Record", "Wording of the 100 million barrels"]} rows={statementRows} />
+        </details>
+      </section>
+
+      <section id="chronology" data-layer="fact">
+        <h2>Chronology</h2>
+        <p>The October 2 release sits on the March 11 agreement of {release.marchTotal} barrels and the September 29 exchange of up to {release.exchange} barrels.<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="doe-spr-exchange-2026-09-29" passage="exchange of up to 40 million barrels" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Decisions on the reserve</strong><span>From the G7 texts, the Energy Department, and the two House bills.</span></figcaption>
+          <DecisionTimeline entries={chronology} />
+        </figure>
+      </section>
+
+      <section id="prices" data-layer="fact">
+        <h2>Prices</h2>
+        <p>The last diesel observation in the weekly retail series is {prices.dieselSep28} dollars a gallon on September 28, against {prices.dieselSep21} the week before and {prices.dieselMar2} on March 2. Brent's last observation is {prices.brentSep29} dollars a barrel on September 29, against {prices.brentFeb27} on February 27. WTI's last observation that day is {prices.wtiSep29}, against {prices.wtiFeb27}.<Cite s="gasdesw-2026-10-03" passage="2026-09-28,6.382" /><Cite s="dcoilbrenteu-2026-10-03" passage="2026-09-29,113.96" /><Cite s="dcoilwtico-2026-10-03" passage="2026-09-29,96.16" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Diesel and crude</strong><span>Weekly U.S. No. 2 diesel, Europe Brent, and Cushing WTI.</span></figcaption>
+          <DataTable columns={["Series", "Observation", "Dollars"]} rows={priceRows} />
+        </figure>
+        <SourcedBlock source="gasdesw-2026-10-03" kind="computed" detail>
+          <p>From those rows, diesel is {prices.dieselWeekChange} dollars a gallon on the week and {prices.dieselFromMarch} dollars, or {prices.dieselFromMarchPercent} percent, above March 2. Brent is {prices.brentFromFebruary} dollars a barrel above February 27. WTI is {prices.wtiFromFebruary} dollars above February 27.<Cite s="gasdesw-2026-10-03" passage="2026-03-02,3.897" /><Cite s="dcoilbrenteu-2026-10-03" passage="2026-02-27,71.32" /><Cite s="dcoilwtico-2026-10-03" passage="2026-02-27,66.96" /></p>
+        </SourcedBlock>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Change from the earlier observation</strong><span>Subtracted from the rows above.</span></figcaption>
+          <DataTable columns={["Comparison", "Change", "Unit"]} rows={changeRows} />
+        </figure>
+      </section>
+
+      <StoryState view={state} supporting />
+      <StorySources event={event.slug} />
+    </main>
+  </div>
+</BaseLayout>
