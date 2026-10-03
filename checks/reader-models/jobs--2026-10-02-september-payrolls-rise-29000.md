@@ -16,9 +16,9 @@ A stranger arrives from a headline like "September jobs report shows slowdown in
 
 ## Headline
 
-September's payroll estimate is 29,000, short of the surveys, and the bureau says that change is not statistically significant
+Payrolls rose by an estimated 29,000 in September, a change too small for the survey to tell from none
 
-Dek: The Bureau of Labor Statistics said that gain and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.
+Dek: Economists surveyed by Reuters had nonfarm payrolls likely up by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.
 
 ## Grades
 
@@ -660,7 +660,7 @@ These records have no passage tables. One line each, plus the lines the story ci
 | Record | Passage or gap or audit finding | Grade | Serves answer |
 |---|---|---|---|
 | `usatoday-september-jobs` | "September jobs report shows slowdown in hiring, unemployment ticks up" The label the story was opened under. Audit finding 4's wrong word is hiring. | B | 3, the headline the stranger saw calls the payroll estimate a slowdown in hiring |
-| `ap-september-jobs` | "A Labor Department measure of gross hiring – before subtracting those who quit or lose their jobs – has been stuck in a rut for more than two years." Audit finding 4. PBS carries the same sentence. | B | 3, the 29,000 is not the department's measure of gross hiring |
+| `ap-september-jobs` | "A Labor Department measure of gross hiring – before subtracting those who quit or lose their jobs – has been stuck in a rut for more than two years." Audit finding 4. PBS carries the same sentence. The two-year line is the Associated Press's, and the pinned August release does not let a reader check it, so it is not in the story. | C | does not change the seven answers |
 | `ap-september-jobs` | "average 68,000 jobs a month so far this year" "9,700 average new jobs created every month in 2025" Audit finding 5's baseline. The Associated Press states both averages. | B | 5, this year's average monthly gain is about 68,000, against about 9,700 a month in 2025 |
 | `ap-september-jobs` | The same dispatch says the break-even pace could now be as low as zero. That is an outlet's could, and the audit says it is not a verified September 2026 threshold. | D | does not change the seven answers |
 | `ap-september-jobs` | "the smallest year-over-year gain since May 2021" The Associated Press's wording for the 3 percent yearly wage gain. Facts view only. | C | does not change the seven answers |
