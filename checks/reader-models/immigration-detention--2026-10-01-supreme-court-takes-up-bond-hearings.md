@@ -1,0 +1,245 @@
+# Immigration detention: 2026-10-01-supreme-court-takes-up-bond-hearings
+
+## Entering
+
+A stranger arrives from a headline that the Supreme Court will weigh the administration's mandatory immigration detention policy, and from reports that the Court will decide whether the government can hold tens of thousands of immigrants with no bond hearing. The easy reading is that the Court is about to approve or reject a mass-detention program, and that the number of people is the fact to remember. Before October 1 the record had already narrowed that: in July 2025 the government changed a long-settled practice, the Board of Immigration Appeals said immigration judges could not grant bond to people present without admission, and on April 28, 2026 the Second Circuit held that the bond statute, not the mandatory-detention statute, governed a man arrested inside the country years after he entered.
+
+## Exiting
+
+1. What happened: On October 1, 2026, the Supreme Court granted review of whether 8 U.S.C. 1225(b)(2)(A) requires detention, during removal proceedings, of people who, like Ricardo Aparecido Barbosa da Cunha, are in the United States and were not admitted. (`scotus-order-list-2026-10-01`; `scotus-question-presented-2026-10-01`)
+2. Why it matters to someone who does not follow this subject: A person who has lived here for more than twenty years, with an asylum application and a work permit, was arrested on his way to work and later released on bond only after a judge found he was not a danger or a flight risk; if the government's reading wins, people in that situation can be held for the whole removal case without that hearing, and by the grant the dispute was no longer one man's case or the two appeals courts named in April. (`ca2-cunha-opinion-2026-04-28`; `audit-gap-ca4-2026-09-10`)
+3. The easiest wrong reading, the one the headline or the coverage invites: That the Court is deciding whether the administration may detain tens of thousands of people with no hearing at all, as a yes-or-no on a detention policy, and that the grant means the detention is now the law. (`cbs-detention-grant-2026-10-01`; `scotus-question-presented-2026-10-01`)
+4. The one concept a stranger must hold to follow it, the mechanism: The detention statute says an applicant for admission shall be detained when an alien seeking admission is not clearly entitled to be admitted; the Second Circuit held that a man who entered years ago may be an applicant for admission and still not be seeking admission, so the bond statute applies, and that statute says the government may release him. (`ca2-cunha-opinion-2026-04-28`; `uscode-2024-1225`; `uscode-2024-1226`)
+5. What changed: A 1997 rule stated bond eligibility for people present without admission, and the Second Circuit describes that practice as thirty years old; in July 2025 the government said section 235, not the bond section, applies to all applicants for admission; the Board said judges lack authority to grant bond; the Second Circuit held the opposite on April 28 and on September 25 refused to rehear the case, with a dissent and a concurrence that agreed with the dissent's analysis; on October 1 the Supreme Court granted review. (`audit-gap-fr-1997-03-06`; `ca2-cunha-opinion-2026-04-28`; `cbp-detention-memo-2025-07-10`; `bia-yajure-hurtado-2025-09-05`; `ca2-cunha-rehearing-2026-09-25`; `audit-gap-ca2-enbanc-complete`; `scotus-order-list-2026-10-01`)
+6. What is unresolved as of the newest dated record: As of the October 2 docket the Court has not decided the case and the October 1 argument list sets no day for this case; the question it accepted is the statute, not due process, which the government's petition says a companion case also presents; the paper response and reply are not in the admitted record, and other petitions on the same question were also at the Court. (`scotus-docket-rhoney-2026-10-02`; `scotus-granted-noted-2026-10-01`; `scotus-question-presented-2026-10-01`; `audit-gap-doj-petition-26-104`; `audit-gap-26-104-response-reply`; `audit-gap-scotus-25-1415-26-43`)
+7. The next five questions a curious stranger asks, in order: What did the Court agree to decide?; What do the two phrases in the detention statute do, and does a bond hearing mean release?; What was the practice before July 2025, and what did the government change?; How wide is the dispute, and what do the headlines' numbers refer to?; What has the Court not agreed to decide?
+
+## Headline
+
+The Supreme Court agreed to decide whether the detention statute requires holding people who are already in the country and were not admitted
+
+Dek: The October 1 grant is not a ruling and not a count of people. Under the bond statute the government may release someone; in this case a judge did, after finding no danger and no flight risk.
+
+## Grades
+
+Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lines was reread. A second line that only repeats a concept already graded is C, marked carried by the first. An A or B gap has no pin words until the story turn admits it.
+
+### Passage-table lines
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `scotus-order-list-2026-10-01` | "THURSDAY, OCTOBER 1, 2026" Grant date. | A | 1, the date of the grant |
+| `scotus-order-list-2026-10-01` | "RHONEY, ACTING DIR. V. BARBOSA DA CUNHA, RICARDO A." The case in the granted group. | A | 1, which petition was granted |
+| `scotus-order-list-2026-10-01` | "The petitions for writs of certiorari are granted." The act. The sentence also covers the case grouped above it. | A | 1, the Court granted review |
+| `scotus-order-list-2026-10-01` | The petition for a writ of certiorari is granted limited to Question 1, Missionaries of St. John. A different case on the same list. | D | none |
+| `scotus-question-presented-2026-10-01` | "Whether 8 U.S.C. 1225(b)(2)(A) mandates the detention pending removal proceedings of aliens who, like respondent, are present in the United States without having been admitted." The question. | A | 1, the question granted is this detention statute |
+| `scotus-question-presented-2026-10-01` | CERT. GRANTED 10/1/2026. The stamp repeats the order. | C | 1, carried by `scotus-order-list-2026-10-01` |
+| `scotus-granted-noted-2026-10-01` | As of October 1, 2026. The list date. | C | 1, carried by `scotus-order-list-2026-10-01` |
+| `scotus-granted-noted-2026-10-01` | "RHONEY V. BARBOSA DA CUNHA" "Granted: 10/1/26" This case's line has a grant date and no argument date. The next case's line is what carries an argument date. | B | 6, no argument day is set |
+| `scotus-granted-noted-2026-10-01` | Other cases' argument dates on the same list. | D | none |
+| `scotus-docket-rhoney-2026-10-02` | Docketed: July 23, 2026. The petition's date. | C | none |
+| `scotus-docket-rhoney-2026-10-02` | Petition for a writ of certiorari filed. Response due August 24, 2026. | C | none |
+| `scotus-docket-rhoney-2026-10-02` | "filings in this case should be submitted in paper form only" Why the petition and response are not files on the docket. The Justice Department copy is the audit gap, not this sentence. | C | none |
+| `scotus-docket-rhoney-2026-10-02` | Response filed August 21, 2026; reply September 4; distributed for the September 28 conference. | C | none |
+| `scotus-docket-rhoney-2026-10-02` | Letters of September 14 and September 25. | D | none |
+| `scotus-docket-rhoney-2026-10-02` | Petition GRANTED. October 1, 2026. | C | 1, carried by `scotus-order-list-2026-10-01` |
+| `scotus-docket-rhoney-2026-10-02` | "Subsequent party and amicus filings in the case should now be submitted through" the electronic system. Paper-only was the rule before the grant. | B | 6, paper-only is not the rule after the grant |
+| `scotus-docket-rhoney-2026-10-02` | Rule 34.6 and Rule 49.1(c). Filing mechanics. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | "Decided: April 28, 2026" The judgment under review. Argued April 6 is the same entry and changes no answer. | A | 5, the appeals judgment under review is April 28 |
+| `ca2-cunha-opinion-2026-04-28` | "applied for asylum in 2016 and was granted a valid work permit." Biography beyond the arrest. | B | 2, he had a pending asylum application and work authorization |
+| `ca2-cunha-opinion-2026-04-28` | "lived in the United States for more than twenty years after entering the country" He entered without inspection around 2005. | B | 2, he had lived here for more than twenty years |
+| `ca2-cunha-opinion-2026-04-28` | "arrested Petitioner while he was driving to work in Norwood, Massachusetts" September 26, 2025. | B | 2, the arrest was on the way to work, not at the border |
+| `ca2-cunha-opinion-2026-04-28` | "has never been arrested for or charged with a crime." | B | 4, this is not the statute's criminal-detention mandate |
+| `ca2-cunha-opinion-2026-04-28` | "presents no danger to persons or property or risk of flight, released him on bond." The district court had ordered a bond hearing or release. | B | 2, release followed a finding, and the hearing did not itself require release |
+| `ca2-cunha-opinion-2026-04-28` | "in July 2025, the government changed that long-settled practice" The opinion cites Interim Guidance dated July 8, 2025. The guidance file is the audit gap graded D. | A | 5, the executive practice changed in July 2025 |
+| `ca2-cunha-opinion-2026-04-28` | "Section 1225(b)(2)(A) does not apply to noncitizens, such as Petitioner, who are present in the United States after entering the country without inspection and admission" Not taken at the border on entry. The bond statute does. | A | 4, interior arrest after entry is under the bond statute |
+| `ca2-cunha-opinion-2026-04-28` | "Petitioner may be an “applicant for admission,” but he is not “seeking admission.”" | A | 4, applicant for admission is not the same as seeking admission |
+| `ca2-cunha-opinion-2026-04-28` | "we AFFIRM the district court’s grant of the writ of habeas corpus." | A | 5, the judgment under review is an affirmance |
+| `ca2-cunha-opinion-2026-04-28` | Judge Cabranes concurs and files a separate opinion. | C | none |
+| `ca2-cunha-opinion-2026-04-28` | "divided panels in two other circuits have agreed with the government" Fifth Circuit Buenrostro-Mendez and Eighth Circuit Avila. | B | 2, two other appeals courts had accepted the government's reading |
+| `ca2-cunha-opinion-2026-04-28` | "Executive Branch practice over thirty years" | B | 5, the bond practice the court describes had run for thirty years |
+| `ca2-cunha-opinion-2026-04-28` | American Civil Liberties Union and American Immigration Council as counsel and amici. No separate statement admitted. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." The Due Process Clause is discussed and is not the holding. | B | 6, the appeals court did not decide the case on due process |
+| `ca2-cunha-opinion-2026-04-28` | Laken Riley Act. A 2025 statute the opinion discusses. Not this grant. He has not been charged with a crime, which is the separate B line. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | Two million, 100,000, fifteen months, five months, twenty years as a repeated duration, three years, twenty-four hours. Estimates and hypotheticals, not a detention census. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | Code of Federal Regulations cites and the case names Blake, Feliciano, Loper Bright, Bunte Bros., and Velasco Lopez. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | DktEntry 78.1. Printer mark. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | "rehearing in banc is hereby DENIED." | A | 5, the full court left the April judgment standing |
+| `ca2-cunha-rehearing-2026-09-25` | Bianco and Nathan, joined by Lee, Robinson, Pérez, and Merriam, concur. | C | none |
+| `ca2-cunha-rehearing-2026-09-25` | Schwartz, joined by Sullivan, concurs by opinion. The sentence that he agrees with the dissent is the unpinned full file, graded B below. | C | none |
+| `ca2-cunha-rehearing-2026-09-25` | "dissents by opinion from the denial of rehearing in banc." Menashi, joined in part by Park. | B | 5, the denial drew a dissent |
+| `ca2-cunha-rehearing-2026-09-25` | Cabranes filed a statement. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | Counsel block, San Francisco address, and the caption. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | "Decided September 5, 2025" Matter of Yajure Hurtado. The interim decision number is not a separate fact. | C | none |
+| `bia-yajure-hurtado-2025-09-05` | "Immigration Judges lack authority to hear bond requests or to grant bond to aliens who are present in the United States without admission." | A | 5, the Board had said judges cannot grant bond |
+| `bia-yajure-hurtado-2025-09-05` | The respondent is a native of Venezuela. The immigration judge's order was April 18, 2025. A different person's case. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | Regulation cites, the Laken Riley Act, Jennings, Loper Bright, House Judiciary, and the spans of 2 years, 3 years, and 1 year. | D | none |
+| `cbp-detention-memo-2025-07-10` | "FROM: Rodney S. Scott" "SUBJECT: Detention of Applicants for Admission" | C | none |
+| `cbp-detention-memo-2025-07-10` | "section 235 of the Immigration and Nationality Act (INA), rather than section 236, is the applicable immigration detention authority for all applicants for admission." "regardless of when or where that first encounter occurs." | B | 5, the new position is section 235 for every applicant, wherever the first encounter is |
+| `cbp-detention-memo-2025-07-10` | "may not be released from DHS custody except by INA § 212(d)(5) parole." | B | 4, under the department's reading the only release is parole |
+| `cbp-detention-memo-2025-07-10` | Addressees and the misread stamp. The date used is July 10 from the notice and the file, not the stamp. | D | none |
+| `cbp-detention-notice-2025-09-18` | "on July 10, 2025" Scott issued the guidance to all components. | C | 5, carried by `cbp-detention-memo-2025-07-10` |
+| `cbp-detention-notice-2025-09-18` | "for the first time after failing to lawfully present for inspection at a U.S. port of entry" The notice's mandatory-detention line. The page's "Effectively immediately" is the notice's own typo and is not repeated. | B | 3, the public notice describes a missed port of entry, not this arrest |
+| `uscode-2024-1225` | "in the case of an alien who is an applicant for admission, if the examining immigration officer determines that an alien seeking admission is not clearly and beyond a doubt entitled to be admitted, the alien shall be detained" | A | 4, the statute uses both phrases and then says the alien shall be detained |
+| `uscode-2024-1225` | Credible-fear detention, 24 hours, 7 days. A different procedure. | D | none |
+| `uscode-2024-1225` | Effective-date notes, 180 days and 18 months after September 30, 1996. | D | none |
+| `uscode-2024-1226` | "may release the alien on" Bond of at least $1,500 is the minimum inside the same subsection. | A | 4, the bond statute authorizes release and does not require it |
+| `uscode-2024-1226` | One-year imprisonment clause and the 1996 appropriation of $3,400,000. | D | none |
+| `ap-detention-grant-2026-10-01` | "agreed to review a Trump administration policy denying bond hearings" The grant as the coverage frames it. The Hill's legality-of-the-policy line is the same frame. | B | 3, a reader can hear a policy review as a decision that the policy stands |
+| `cbs-detention-grant-2026-10-01` | "detain tens of thousands of immigrants during their removal proceedings without access to bond hearings" That count is not in the order, the docket, the opinion's holding, the Board decision, or the Customs memorandum. | B | 3, the case is not a count of people the Court will let the government detain |
+| `hill-detention-grant-2026-10-01` | "announced Thursday it will decide the legality" of the mandatory detention policy. Same frame as the Associated Press line. | C | 3, carried by `ap-detention-grant-2026-10-01` |
+
+### Gap-list lines
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `scotus-docket-rhoney-2026-10-02` | L12 number 34.6. Rule 34.6. | D | none |
+| `scotus-docket-rhoney-2026-10-02` | L33 number 49.1. Criminal Rule 49.1(c). | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L45 number 78.1. Docket-entry printer mark. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | "Executive Branch practice over thirty years" L94 number thirty years. | B | 5, the bond practice the court describes had run for thirty years |
+| `ca2-cunha-opinion-2026-04-28` | L94 name Executive Branch. The thirty-year line carries the institution. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L120 name American Civil Liberties Union. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L121 name San Francisco. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L143 name Amici Curiae. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L144 name American Immigration Council. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | "lived in the United States for more than twenty years after entering the country" L159 number twenty years. | B | 2, he had lived here for more than twenty years |
+| `ca2-cunha-opinion-2026-04-28` | "we need not rely here upon the doctrine of constitutional avoidance." L282 name Due Process Clause. | B | 6, the appeals court did not decide the case on due process |
+| `ca2-cunha-opinion-2026-04-28` | L285 number ten days. The district court's deadline. The release is the B line above. | C | none |
+| `ca2-cunha-opinion-2026-04-28` | L465 number 1003.19. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L465 number 1236.1. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L487 name See Blake. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L656 name See Feliciano. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L801 number 5.114. A style-manual cite. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1066 number three years. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1067 number ten years. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1070 number 1240.1. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1205 name See Loper Bright Enters. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1446 number two years. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1496 number twenty-four hours. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1575 name Laken Riley Act. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1651 name Laken Riley. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1811 number 100,000 people. A 1996 legislative estimate, not a current detention count. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1813 number two million. An estimate in the opinion's argument, not a census of people now detained. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L1919 name Bunte Bros. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L2138 name Velasco Lopez. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L2139 name Process Clause. Due process covers noncitizens whether or not their presence is lawful. Same discussion as the avoidance sentence. | C | 6, carried by `ca2-cunha-opinion-2026-04-28` |
+| `ca2-cunha-opinion-2026-04-28` | L2176 number fifteen months. A different case's duration. | D | none |
+| `ca2-cunha-opinion-2026-04-28` | L2241 number five months. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | L10 name United States Court. Caption. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | L47 number 86.1. Printer mark. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | L69 name American Civil Liberties. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | L70 name San Francisco. | D | none |
+| `ca2-cunha-rehearing-2026-09-25` | L72 name American Civil Liberties Union. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L75 number 2 years. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L76 number 1003.1. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L79 number 1003.10. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L88 number 1003.19. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L96 number 235.3. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L131 name See Matter. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L176 number 1236.1. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L194 number 212.5. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L241 name See Jennings. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L258 number 3 years. A different person's residence. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L291 name Laken Riley Act. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L373 number 242.2. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L438 name House Judiciary. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L514 name Loper Bright. | D | none |
+| `bia-yajure-hurtado-2025-09-05` | L675 number 1 year. | D | none |
+| `cbp-detention-memo-2025-07-10` | L21 name Executive Assistant Commissioner. An addressee title. | D | none |
+| `uscode-2024-1225` | L16 number 24 hours. Credible-fear procedure. | D | none |
+| `uscode-2024-1225` | L61 number 180 days. A 1996 effective-date note. | D | none |
+| `uscode-2024-1225` | L68 number 18 months. A 1996 study deadline. | D | none |
+| `uscode-2024-1226` | L13 number 1 year. A criminal-sentence clause. | D | none |
+| `uscode-2024-1226` | L81 number $3,400,000. A 1996 appropriation. | D | none |
+
+### Census lines already in "Not admitted this run"
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `not-admitted-pbs-politics` | PBS NewsHour politics page. Same Associated Press report. | D | none |
+| `not-admitted-pbs-newscast` | PBS NewsHour show wrap. A newscast, not a separate document. | D | none |
+| `not-admitted-nbc-fox-upi-reuters` | NBC, Fox, UPI, and the Reuters-style report. They repeat the grant. Their counts are the same problem as the CBS line, which is the B line for that reading. | D | none |
+| `not-admitted-ap-es-wapo` | Spanish Associated Press and Washington Post rows. Not fetched beyond the candidate pointer. | D | none |
+| `not-admitted-upi-2026-08-28` | August 28 UPI appeals item. An earlier ruling, not the October 1 grant. | D | none |
+| `audit-gap-district-opinion` | District court opinion. The audit says the petition appendix includes it. The Second Circuit opinion already states the arrest, the hearing-or-release order, and the bond. | D | none |
+
+### Record-audit findings that cite a document outside the manifest
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `audit-gap-fr-1997-03-06` | 1997 Federal Register rule. The audit says it stated that people present without admission will be eligible for bond and bond redetermination. Link in the working note. No pin words until admitted. | A | 5, the old bond eligibility was written into a rule |
+| `audit-gap-ice-guidance-2025-07-08` | July 8 ICE interim guidance. The audit says it makes this group ineligible for a bond hearing before an immigration judge. The Customs memorandum and the Board decision already state that position. Not graded C for being unpinned. | D | none |
+| `audit-gap-ca8-avila` | Eighth Circuit opinion. The audit says it calls the two phrases the central inquiry. The Second Circuit pin already states both phrases and says that court agreed with the government. Not graded C for being unpinned. | D | none |
+| `audit-gap-ca4-2026-09-10` | Fourth Circuit opinion of September 10. Nine other circuits, and over twenty thousand individual cases, as that court's descriptions. Not a count of people detained. No pin words until admitted. | A | 2, 3, the split is wider than two circuits and the figure counts cases rather than people |
+| `audit-gap-doj-petition-26-104` | Justice Department copy of the petition. It says Lopez-Campos also presents the due-process question, and it is a petition the docket does not link. No pin words until admitted. | B | 6, this grant does not take the due-process question a companion case presents |
+| `audit-gap-26-104-response-reply` | Paper response and reply. The audit could not read them in full. The story turn looks outside the registry before any absence is written. No pin words until admitted. | B | 6, the briefs filed with the Court are not in the admitted record |
+| `audit-gap-ca2-enbanc-complete` | Full rehearing file. Judge Schwartz agrees with the dissent's analysis and supports denying rehearing. The pinned order only says he concurs. No pin words until admitted. | B | 5, a judge who voted against rehearing still agreed with the dissent's analysis |
+| `audit-gap-ca5-buenrostro` | Fifth Circuit opinion. The audit says it accepted the government's reading. The Second Circuit pin already says that. Not graded C for being unpinned. | D | none |
+| `audit-gap-scotus-25-1415-26-43` | Dockets 25-1415 and 26-43. Other petitions from the Sixth and Fifth Circuits were also before the Court. The audit does not say the disposition. No pin words until the story turn checks them. | B | 6, this grant is not established as the only petition on the question |
+| `audit-gap-detention-denominator` | No series separates people held under this reading from all detainees and from habeas filings. Nothing to admit. CBS and the Fourth Circuit case count stay unsubstituted. | B | 3, no admitted count of people detained stands in for the headline number |
+
+### Other record-audit findings
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `ca2-cunha-opinion-2026-04-28` | Audit, statutory hinge. The page's "present and not admitted" flattens the two phrases. The grade is the phrase line and the statute line above, not a second concept. | C | 4, carried by `ca2-cunha-opinion-2026-04-28` |
+| `ca2-cunha-opinion-2026-04-28` | Audit, hearing versus release. Winning the hearing is not automatic release. Graded on the flight-risk sentence and on "may release the alien on." | C | 2, carried by `ca2-cunha-opinion-2026-04-28` |
+| `scotus-order-list-2026-10-01` | Audit accuracy: the October 1 grant is the order. Day counts from the printed dates were recalculated and matched. | C | none |
+| `scotus-docket-rhoney-2026-10-02` | Audit accuracy: paper-only was a filing instruction, and the same docket then directs later filings to the electronic system. Graded on that later sentence. | C | 6, carried by `scotus-docket-rhoney-2026-10-02` |
+| `cbs-detention-grant-2026-10-01` | Audit accuracy: CBS's tens of thousands is absent from the five records the page named. The Fourth Circuit case count does not verify it. Graded on the CBS line and the Fourth Circuit gap. | C | 3, carried by `cbs-detention-grant-2026-10-01` |
+| `scotus-order-list-2026-10-01` | Audit: the Associated Press, CBS, and The Hill share the order as the event of the grant. They are not three proofs of the grant. | C | none |
+| `audit-no-video` | The manifest has no video pin or transcript. No frames to examine. | D | none |
+| `scotus-docket-rhoney-2026-10-02` | Audit, after the endpoint: the October 2 docket shows the grant and later electronic-filing directions, and no merits decision or argument day. | C | 6, carried by `scotus-granted-noted-2026-10-01` |
+| `audit-gap-ice-guidance-2025-07-08` | Audit caveat: the July 8 scan's text extraction is imperfect, so a quotation from it would need a visual check. The document is graded D above. | D | none |
+
+## Sections
+
+| Section | Question it answers (from answer 7, or 1, 3, 4, 5 for the core) |
+|---|---|
+| What happened | 1, 4, and the July change inside 5: what the Court agreed to decide; what the two phrases do; that a bond hearing is not an order of release |
+| The catch | 3, and the numbers question in 7: the coverage's policy-and-count reading, and the public notice's port-of-entry line |
+| Where this sits | 5, and how wide the dispute is: the 1997 rule, the thirty years, the Board, the circuits, the rehearing |
+| What we do not know yet | 6, and what the Court has not agreed to decide |
+| The records | |
+
+What happened next is omitted. Nothing after the grant is a dated consequence of the kind that section is for. The electronic-filing line is a filing instruction, and the missing argument day is an unknown, not an event that happened.
+
+Who feels it is omitted. One person is two paragraphs inside What happened, not a section. The coverage cards are omitted. The catch is the outlet error. The mechanism is not its own section.
+
+## Outline
+
+What happened
+
+- The October 1 order grants the petitions, in the group that includes Rhoney v. Barbosa da Cunha.
+- The question presented is whether 1225(b)(2)(A) mandates detention of people present without having been admitted. The grant stamp adds nothing.
+- The statute uses both "applicant for admission" and "seeking admission," and says the alien shall be detained.
+- The Second Circuit: he may be an applicant for admission and is not seeking admission, and 1225(b)(2)(A) does not apply to someone present after entry who was not taken at the border. The court affirms.
+- The bond statute says the government may release him. He has never been arrested for or charged with a crime, so this is not the criminal-detention mandate. The department's memorandum says that under its reading release is only by parole.
+- He has lived here more than twenty years, applied for asylum in 2016, had a work permit, and was arrested driving to work in Norwood. A judge released him on bond after finding no danger and no flight risk.
+- One paragraph of the change, not the whole history: in July 2025 the government changed the long-settled practice.
+
+The catch
+
+- CBS: detain tens of thousands without access to bond hearings. That count is not the question granted.
+- The Associated Press: agreed to review a policy denying bond hearings. The Hill's "legality of the mandatory detention policy" is the same frame, carried by the Associated Press line.
+- The question presented is the correction: one statutory question, granted, not decided.
+- The Customs notice's mandatory-detention line is a first encounter after failing to present at a port of entry. The memorandum says the first encounter counts regardless of when or where. The notice does not describe this arrest.
+- The Fourth Circuit gap, once admitted: over twenty thousand individual cases is that court's count of cases, not a count of people detained. No population series is admitted. Do not print either number as a census.
+
+Where this sits
+
+- Thirty years of executive practice, from the opinion.
+- The 1997 rule, once admitted: written bond eligibility for people present without admission. That is the before-state. If it cannot be admitted, re-grade the gap and do not turn the gap line into the page's unknown.
+- The July 8 guidance file stays out. The opinion dates the change, and the July 10 memorandum states the position: section 235 rather than section 236 for all applicants for admission.
+- September 5: the Board says immigration judges lack authority to hear or grant bond.
+- April 28: the Second Circuit holds the opposite and affirms. Divided panels in the Fifth and Eighth agreed with the government. The Eighth and Fifth opinions add nothing further and stay out.
+- The Fourth Circuit gap, once admitted: nine other circuits on the other side. That is the width. It does not replace the two named panels; it updates them.
+- September 25: rehearing denied, Menashi dissents. The full rehearing file, once admitted: Schwartz agrees with the dissent's analysis and still supports the denial.
+
+What we do not know yet
+
+- The granted list's line for this case has no argument date. The October 2 docket has no merits decision.
+- After the grant, later filings go through the electronic system. Paper-only was the earlier instruction.
+- The appeals court said it need not rely on constitutional avoidance. The petition, once admitted: Lopez-Campos presents due process, and this grant does not take that question.
+- The response and reply: look for a public copy before writing any absence.
+- Dockets 25-1415 and 26-43: check them before writing that this is the only petition.
