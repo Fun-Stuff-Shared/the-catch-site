@@ -139,9 +139,13 @@ ensure_staged() {
   local split
   split="$("$py" -c 'import json,sys
 v=json.load(open(sys.argv[1]))
-print(" ".join(s["slot"] for s in v["current_state"].values() if len(s["heads"]) > 1 and any(h.startswith("story-figure:") for h in s["heads"])))' "$state/views/$event.json")" \
+for s in v["current_state"].values():
+    own = sum(h.startswith("story-figure:") for h in s["heads"])
+    if own and len(s["heads"]) > 1: print("own" if own > 1 else "other", s["slot"])' "$state/views/$event.json")" \
     || stop "could not read the story's state view $state/views/$event.json"
-  [ -z "$split" ] || stop "the state holds more than one value for these story figures, so the page prints none: $split (see $state/views/$event.json)"
+  local own="$(echo "$split" | sed -n 's/^own //p' | tr '\n' ' ')" other="$(echo "$split" | sed -n 's/^other //p' | tr '\n' ' ')"
+  [ -z "$other" ] || say "another source's value stands beside the story's for: $other(the page prints no current value for these until the state's judges rule on the pair)"
+  [ -z "$own" ] || stop "the state holds more than one of the story's own values for these figures, so the page prints none: $own(see $state/views/$event.json)"
 }
 
 if [ -n "${DRIVE_ONLY_READS:-}" ]; then
