@@ -1,13 +1,15 @@
 #!/bin/zsh
-# Drive one story run from its dispatched record turn to the first set of reads, with no
-# one waiting between steps: record turn, record build, completeness audit, structure turn,
-# state label, story turn, build, the four reads. Every step leaves .started/.finished
+# Drive one story run from its dispatched record turn to the first reads, with no one
+# waiting between steps: record turn, record build, completeness audit, structure turn,
+# state label, story turn, build, the record check and the stranger read. Every step leaves .started/.finished
 # markers in the dispatch dir (ledger.py reads them) and a line in DRIVE.log. A step that
 # is already finished is skipped, so a stopped driver is restarted with the same command.
 # Usage: drive.sh <short> <subject> <slug>          (launch detached: launch.py drive.sh ...)
 # Stops with a reason in <dispatch dir>/STOP when a step fails, and before any step when
-# <dispatch dir>/HOLD exists (the four reads start together and count as one step). Ends by writing READY-r0: the reads are in, the patch list is
-# the reviewer's.
+# <dispatch dir>/HOLD exists (the reads of a round count as one step). Ends by writing READY-r0: the reads are in, the patch list is
+# the reviewer's. DRIVE_ONLY_READS=<round> DRIVE_SINCE=<commit> (set by patch.sh) builds and runs the
+# record check on the blocks changed since that commit. DRIVE_CLOSING=<round> builds and runs the
+# closing reads (the stranger, then the editor with the stranger's report in hand) and ends by writing CLOSED-r<round>.
 set -uo pipefail
 short="${1:?short}"; subject="${2:?subject}"; slug="${3:?slug}"
 site=/Volumes/4/GitHub/the-catch-site
@@ -85,7 +87,7 @@ uncommitted() { now > "$out/$name-$1.failed"; stop "the $1 turn finished with no
 stranger() {
   local r="$1" base="$2"
   "$scripts/stranger_read.sh" "$story" || return 1
-  local report="$(ls -t "$base"-*-stranger.md 2>/dev/null | grep -Ev -- '-r[0-9]+-stranger\.md$' | head -1)"
+  local report="$(ls -t "$base"-*-stranger.md 2>/dev/null | grep -Ev -- '-r[0-9]+c?-stranger\.md$' | head -1)"
   [ -s "$report" ] || return 1
   local dated="${report%-stranger.md}"
   mv "$report" "$dated-r$r-stranger.md"
@@ -95,20 +97,35 @@ stranger() {
 one_read() {
   local script="$1" report="$2"
   [ -e "$report" ] && mv "$report" "$report.superseded-$(date -u +%H%M%S)"
-  "$scripts/$script" "$story" "$report" && grep -q '^VERDICT: ' "$report"
+  shift 2
+  "$scripts/$script" "$story" "$report" "$@" && grep -q '^VERDICT: ' "$report"
 }
+
+need() { local k; for k in "${@:2}"; do [ -e "$out/read-r$1-$k.finished" ] || stop "round $1 $k read did not finish, see $out/read-r$1-$k.log"; done; }
 
 reads() {
   local r="$1" d="$(date -u +%Y-%m-%d)" a="$wt/checks/audits/$name"
   export CODEX_MODEL=gpt-6-sol STRANGER_MODEL=sonnet
-  ( step "read-r$r-editor" "$out/read-r$r-editor.log" one_read editor_read.sh "$a-$d-r$r-editor.md" ) &
-  ( step "read-r$r-redteam" "$out/read-r$r-redteam.log" one_read red_team.sh "$a-$d-r$r-redteam.md" ) &
-  ( step "read-r$r-entailment" "$out/read-r$r-entailment.log" one_read entailment_check.sh "$a-$d-r$r-entailment.md" ) &
+  ( step "read-r$r-records" "$out/read-r$r-records.log" one_read record_check.sh "$a-$d-r$r-records.md" ) &
   ( step "read-r$r-stranger" "$out/read-r$r-stranger.log" stranger "$r" "$a" ) &
   wait
-  for k in editor redteam entailment stranger; do
-    [ -e "$out/read-r$r-$k.finished" ] || stop "round $r $k read did not finish, see $out/read-r$r-$k.log"
-  done
+  need "$r" records stranger
+}
+
+patch_reads() {
+  local r="$1" since="$2" a="$wt/checks/audits/$name-$(date -u +%Y-%m-%d)"
+  export CODEX_MODEL=gpt-6-sol
+  ( step "read-r$r-records" "$out/read-r$r-records.log" one_read record_check.sh "$a-r$r-records.md" --since "$since" )
+  need "$r" records
+}
+
+closing_reads() {
+  local r="$1" d="$(date -u +%Y-%m-%d)" a="$wt/checks/audits/$name"
+  export CODEX_MODEL=gpt-6-sol STRANGER_MODEL=sonnet
+  ( step "read-r${r}c-stranger" "$out/read-r${r}c-stranger.log" stranger "${r}c" "$a" )
+  need "${r}c" stranger
+  ( step "read-r${r}c-editor" "$out/read-r${r}c-editor.log" one_read editor_read.sh "$a-$d-r${r}c-editor.md" "$(ls -t "$a"-*-r${r}c-stranger.md 2>/dev/null | head -1)" )
+  need "${r}c" editor
 }
 
 staged() {
@@ -150,7 +167,13 @@ for s in v["current_state"].values():
 
 if [ -n "${DRIVE_ONLY_READS:-}" ]; then
   hold "build"; ensure_staged; step "build-r$DRIVE_ONLY_READS" "$out/build-r$DRIVE_ONLY_READS.log" npm run build
-  hold "reads"; reads "$DRIVE_ONLY_READS"; now > "$out/READY-r$DRIVE_ONLY_READS"; say "READY round $DRIVE_ONLY_READS"; exit 0
+  hold "reads"; patch_reads "$DRIVE_ONLY_READS" "${DRIVE_SINCE:?DRIVE_SINCE: the commit before the patch}"
+  now > "$out/READY-r$DRIVE_ONLY_READS"; say "READY round $DRIVE_ONLY_READS"; exit 0
+fi
+if [ -n "${DRIVE_CLOSING:-}" ]; then
+  hold "build"; ensure_staged; step "build-r${DRIVE_CLOSING}c" "$out/build-r${DRIVE_CLOSING}c.log" npm run build
+  hold "reads"; closing_reads "$DRIVE_CLOSING"
+  now > "$out/CLOSED-r$DRIVE_CLOSING"; say "CLOSED round $DRIVE_CLOSING: the stranger's report and the editor's memo are in"; exit 0
 fi
 
 hold record; turn record

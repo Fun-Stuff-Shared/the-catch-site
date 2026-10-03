@@ -1,6 +1,6 @@
 #!/bin/zsh
 # One patch round: check the list's quotes, resume the story author's own session with the
-# list, wait, build, run the four reads on the patched commit. Markers and DRIVE.log as in
+# list under the journalist's preamble, wait, build, run the record check on the blocks the patch changed. Markers and DRIVE.log as in
 # drive.sh. Usage: patch.sh <short> <subject> <slug> <round number> <patch list file> [fetched text of a record the list asks to admit ...]
 # A list that changes the headline carries one line "HEADLINE: <the exact new headline>"; the
 # state label is renamed to it before the author starts, since the build compares the two.
@@ -39,7 +39,17 @@ fi
 if [ ! -e "$out/$m.finished" ]; then
   node skills/catch-event-page/scripts/patch_quotes.mjs "$story" "$list" "${extra[@]}" > "$out/$m.quotes.log" 2>&1 \
     || stop "the patch list quotes words no record holds, see $out/$m.quotes.log"
-  cp "$list" "$out/$m.prompt.txt" 2>/dev/null
+  { cat <<'PREAMBLE'
+You are the journalist who wrote this story, and the page is yours. Below is what the people who read it found. Two kinds of item are in the list.
+
+A correction is a sentence the records do not support. Fix each one, or show the record that supports the sentence as it stands.
+
+Everything else is advice from readers with different interests: a stranger who stalled, an editor who wants a cut or a hole filled, the reviewer's own read. Weigh them as a journalist would. Take what makes the story clearer and truer for a person who has never heard of it, decline what does not, and do not try to satisfy every reader at once. A suggested sentence is a suggestion; write your own when yours is better, on the same records.
+
+Report each item as taken, taken differently (say how) or declined (say why).
+
+PREAMBLE
+    cat "$list"; } > "$out/$m.prompt.txt"
   headline="$(sed -n 's/^HEADLINE: *//p' "$list" | head -1)"
   if [ -n "$headline" ] && [ "$(cat "$out/$m.label.finished" 2>/dev/null)" != "$headline" ]; then
     current="$("$py" -c 'import json,sys; v=json.load(open(sys.argv[1])); print((v.get("event") or v)["label"])' "$state/views/$event.json")"
@@ -69,4 +79,4 @@ if [ ! -e "$out/$m.finished" ]; then
   patched || { now > "$out/$m.failed"; stop "patch $r ended with no story commit, see $out/$m.log"; }
   now > "$out/$m.finished"; say "done patch $r at $(git rev-parse --short HEAD)"
 fi
-DRIVE_ONLY_READS="$r" exec zsh "$here/drive.sh" "$short" "$subject" "$slug"
+DRIVE_ONLY_READS="$r" DRIVE_SINCE="$(cat "$out/$m.before")" exec zsh "$here/drive.sh" "$short" "$subject" "$slug"

@@ -1,8 +1,7 @@
 # Anti-patterns: sentences real reviews cut from real pages
 
 Every example below was on a built Catch page and was cut or rewritten after a review.
-The labels come from the codex scan of 2,596 sentences across the 15 story pages built
-2026-09-19 (94 tells) and from the sentences Zain cut on 2026-09-19 (21). The voice lint
+The voice lint
 lists the first three shapes for a reread and fails the fourth outright; none of them
 should reach it.
 
@@ -77,9 +76,9 @@ captured and read. A refused, stale or never-fetched set does not go in the sent
 ## Announcing the news instead of stating it
 
 The rule (writing.md, register): what was new is the fact, never a sentence that says a
-fact is coming. Both Fed authors on 2026-09-19 wrote one; the stranger read stalled on the
-second, taking "the change" for the rate change; nine headings on a quarter-point decision
-was the same page organized like its research rather than like its reader.
+fact is coming. A stranger takes the announced thing for something else ("the change" read
+as the rate change), and nine headings on a quarter-point decision is the same fault at
+page scale: the page organized like its research rather than like its reader.
 
 - The news was that the committee that split 9 to 3 in July now voted as one.
 - The change was inside the committee.
@@ -111,8 +110,8 @@ differs. The stranger read of the merged Fed page: "I could not tell why 12 peop
 ## A dek that names people the stranger has not met
 
 The rule (writing.md, register): people are roles and counts until the paragraph that
-introduces them. The grok-4.7 press-ban page, 2026-09-24; the stranger read stalled on the
-three surnames and the reader model's own dek had the count.
+introduces them. A stranger stalls on three surnames in a dek; the count says the same
+thing.
 
 - Gardner, Klein and Haslett say they were turned away, while one colleague got through.
 

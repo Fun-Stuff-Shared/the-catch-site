@@ -1,4 +1,4 @@
-# Sourced by the checks that read a built page (entailment_check.sh, referent_check.sh).
+# Sourced by the checks that read a built page (record_check.sh, entailment_check.sh, referent_check.sh).
 # built_page <root> <subject>/<story>: prints the built page's path; exit 2 when it is missing
 # or older than the page source or a data module the page imports.
 # earlier_page <root> <subject>/<story> <commit> <out.html> <log>: builds the site as it stood
