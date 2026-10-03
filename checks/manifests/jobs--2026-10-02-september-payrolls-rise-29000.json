@@ -1,0 +1,789 @@
+{
+  "subject": "jobs",
+  "event": "jobs/2026-10-02-september-payrolls-rise-29000",
+  "story": "/events/jobs/2026-10-02-september-payrolls-rise-29000/",
+  "date": "2026-10-02",
+  "story_title": "September jobs report shows slowdown in hiring, unemployment ticks up",
+  "state_event_id": "event-jobs-2026-10-02-september-payrolls-rise-29000",
+  "event_record": "/events/jobs/",
+  "completed_by": "catch-record turn",
+  "date_completed": "2026-10-03",
+  "coverage_threshold": 2,
+  "sub_events": [
+    {
+      "id": "jobs-release-2026-10-02",
+      "date": "2026-10-02",
+      "label": "September employment release",
+      "section_anchor": "what-happened",
+      "records": [
+        "bls-empsit-2026-09",
+        "bls-empsit-t09-2026-09"
+      ]
+    },
+    {
+      "id": "august-revision",
+      "date": "2026-09-04",
+      "label": "August release, the figures this report revises",
+      "section_anchor": "what-happened",
+      "records": [
+        "bls-empsit-2026-08"
+      ]
+    },
+    {
+      "id": "payroll-series",
+      "date": "2026-10-03",
+      "label": "Payroll, unemployment, underemployment, participation, and earnings series",
+      "section_anchor": "where-this-sits",
+      "records": [
+        "fred-payems-2026-10-03",
+        "fred-unrate-2026-10-03",
+        "fred-u6-2026-10-03",
+        "fred-prime-age-2026-10-03",
+        "fred-ahe-2026-10-03",
+        "alfred-payems-2026-10-02"
+      ]
+    },
+    {
+      "id": "next-release",
+      "date": "2026-11-06",
+      "label": "Next Employment Situation, for October",
+      "section_anchor": "chronology",
+      "records": [
+        "bls-empsit-2026-09",
+        "bls-empsit-schedule-2026-10-03"
+      ]
+    },
+    {
+      "id": "coverage-2026-10-02",
+      "date": "2026-10-02",
+      "label": "Coverage of the release and the forecasts published before it",
+      "section_anchor": "where-this-sits",
+      "records": [
+        "ap-september-jobs",
+        "pbs-september-jobs",
+        "usatoday-september-jobs",
+        "cbs-september-jobs",
+        "cnbc-september-jobs",
+        "npr-september-jobs",
+        "upi-september-jobs",
+        "thehill-september-jobs",
+        "cnbc-september-jobs-preview",
+        "reuters-september-jobs-preview",
+        "abc-september-jobs-preview"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "bls-empsit-2026-09",
+      "title": "The Employment Situation, September 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-10-02",
+      "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "pinned_path": "data/sources/bls-empsit-2026-09.html",
+      "text_path": "data/sources/bls-empsit-2026-09.txt",
+      "text_sha256": "sha256:185aedd20d0293ba7fe732ed6546e262f10ce70c9379662eff5692dad129598a",
+      "quote": "Both nonfarm payroll employment (+29,000) and the unemployment rate (4.2 percent) changed little in September",
+      "quote_span_check": "normalized",
+      "about": "The September jobs report as the bureau published it on October 2, 2026: payrolls, unemployment, revisions, hours, and earnings.",
+      "capture_run": "capture-oneoff-20261003T054220Z",
+      "capture_raw_sha256": "sha256:1de7921a0f1a8fe0d512e9faf5f588383d65e2e3a90e62d8c6c8c7c730f4c4fe",
+      "captured_at": "2026-10-03T05:42:21.588027Z"
+    },
+    {
+      "id": "bls-empsit-t09-2026-09",
+      "title": "Table A-9, selected employment indicators, September 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-10-02",
+      "url": "https://www.bls.gov/news.release/empsit.t09.htm",
+      "pinned_path": "data/sources/bls-empsit-t09-2026-09.html",
+      "text_path": "data/sources/bls-empsit-t09-2026-09.txt",
+      "text_sha256": "sha256:23bb2acc030af4fdb7de95916c9d40eaff43e8bd37e0613ca5459a115ddf0f13",
+      "quote": "Total multiple jobholders | 8,794 | 8,505 | 9,000 | 8,810 | 8,428 | 8,554 | 8,693 | 8,805 | 8,986",
+      "quote_span_check": "byte_exact",
+      "about": "The household table that counts people working more than one job. The last column is September 2026, seasonally adjusted.",
+      "capture_run": "capture-oneoff-20261003T055112Z",
+      "capture_raw_sha256": "sha256:9433d88ac4d35c2079d8ea720bd16ba94accc6bdc7e7f700332ab1cecd94ee82",
+      "captured_at": "2026-10-03T05:51:13.356887Z"
+    },
+    {
+      "id": "bls-empsit-schedule-2026-10-03",
+      "title": "Schedule of releases for the Employment Situation",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-10-03",
+      "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+      "pinned_path": "data/sources/bls-empsit-schedule-2026-10-03.html",
+      "text_path": "data/sources/bls-empsit-schedule-2026-10-03.txt",
+      "text_sha256": "sha256:f2c64eb7e94615bd6aaf0f2470223d83c44e10e82f2f46a235128fa5d113f4bf",
+      "quote": "October 2026 | Nov. 06, 2026 | 08:30 AM",
+      "quote_span_check": "byte_exact",
+      "about": "The bureau's calendar for this release. It names September's publication morning and the next report, October, on November 6.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:8a61955edcbf086a560c43004ed0613fec2ae25e646e04e512472e2175cb3c47",
+      "captured_at": "2026-10-03T05:44:53.796722Z"
+    },
+    {
+      "id": "bls-empsit-2026-08",
+      "title": "The Employment Situation, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-04",
+      "url": "https://www.bls.gov/news.release/archives/empsit_09042026.htm",
+      "pinned_path": "data/sources/bls-empsit-2026-08.html",
+      "text_path": "data/sources/bls-empsit-2026-08.txt",
+      "text_sha256": "sha256:3fc04a11ffd394d5e4b7207095447b89a73e9d7bdf6e7bc38faaa81e54c5277f",
+      "quote": "Total nonfarm payroll employment increased by 162,000 in August, and the unemployment rate was unchanged at 4.1 percent",
+      "quote_span_check": "normalized",
+      "about": "The government's monthly jobs report: the Bureau of Labor Statistics counts payroll jobs through a survey of employers and measures unemployment through a survey of households, and publishes both in this release. Our copy was saved the day it came out.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "fred-payems-2026-10-03",
+      "title": "Total nonfarm payrolls, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS",
+      "pinned_path": "data/sources/PAYEMS-2026-10-03.csv",
+      "text_path": "data/sources/PAYEMS-2026-10-03.csv",
+      "text_sha256": "sha256:c8c429818ed73de6db985f4ff565d64bd2a5ba66a6b651b39373a1532924fc0e",
+      "quote": "2026-09-01,159044",
+      "quote_span_check": "byte_exact",
+      "about": "The monthly payroll total, in thousands, saved October 3. Every monthly change and average on this page is arithmetic on this file.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:c8c429818ed73de6db985f4ff565d64bd2a5ba66a6b651b39373a1532924fc0e",
+      "captured_at": "2026-10-03T05:45:51.722445Z"
+    },
+    {
+      "id": "fred-unrate-2026-10-03",
+      "title": "Unemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE",
+      "pinned_path": "data/sources/UNRATE-2026-10-03.csv",
+      "text_path": "data/sources/UNRATE-2026-10-03.csv",
+      "text_sha256": "sha256:621ff6fadf50910cb7a21ee20ba610c247cb043b29b4e05c4c1a72fadca2a06c",
+      "quote": "2026-09-01,4.2",
+      "quote_span_check": "byte_exact",
+      "about": "The unemployment rate each month. September 2026 is 4.2, the same rate the release states.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:621ff6fadf50910cb7a21ee20ba610c247cb043b29b4e05c4c1a72fadca2a06c",
+      "captured_at": "2026-10-03T05:46:45.943948Z"
+    },
+    {
+      "id": "fred-u6-2026-10-03",
+      "title": "U-6 underemployment rate, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=U6RATE",
+      "pinned_path": "data/sources/U6RATE-2026-10-03.csv",
+      "text_path": "data/sources/U6RATE-2026-10-03.csv",
+      "text_sha256": "sha256:4a5e4d273609f63e684ead6521fb1708832af5a0498460980e25db56f4b24c23",
+      "quote": "2026-09-01,7.6",
+      "quote_span_check": "byte_exact",
+      "about": "The broad underemployment rate. September 2026 is 7.6, matching table A-15 in the release.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:4a5e4d273609f63e684ead6521fb1708832af5a0498460980e25db56f4b24c23",
+      "captured_at": "2026-10-03T05:47:39.276745Z"
+    },
+    {
+      "id": "fred-prime-age-2026-10-03",
+      "title": "Prime-age labor force participation, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=LNS11300060",
+      "pinned_path": "data/sources/LNS11300060-2026-10-03.csv",
+      "text_path": "data/sources/LNS11300060-2026-10-03.csv",
+      "text_sha256": "sha256:54f4d69e289743af9fa600164907cd15225fa06d8d39b03a9169f939033f8f0b",
+      "quote": "2026-09-01,83.7",
+      "quote_span_check": "byte_exact",
+      "about": "The share of people age 25 to 54 who are working or looking for work. September 2026 is 83.7 percent.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:54f4d69e289743af9fa600164907cd15225fa06d8d39b03a9169f939033f8f0b",
+      "captured_at": "2026-10-03T05:48:34.757406Z"
+    },
+    {
+      "id": "fred-ahe-2026-10-03",
+      "title": "Average hourly earnings, all private employees, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CES0500000003",
+      "pinned_path": "data/sources/CES0500000003-2026-10-03.csv",
+      "text_path": "data/sources/CES0500000003-2026-10-03.csv",
+      "text_sha256": "sha256:15ac5d3097f5cb2e7e66b8dd8ef04b91316cd49213aaa3d407fec928857ea35d",
+      "quote": "2026-09-01,37.81",
+      "quote_span_check": "byte_exact",
+      "about": "Average hourly pay. September 2026 is $37.81. The year-over-year percent on this page is arithmetic on this file.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:15ac5d3097f5cb2e7e66b8dd8ef04b91316cd49213aaa3d407fec928857ea35d",
+      "captured_at": "2026-10-03T05:49:27.907258Z"
+    },
+    {
+      "id": "alfred-payems-2026-10-02",
+      "title": "Payroll estimates as published on October 2, 2026",
+      "publisher": "Federal Reserve Bank of St. Louis (ALFRED)",
+      "date": "2026-10-02",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-10-02",
+      "pinned_path": "data/sources/alfred-payems-2026-10-02.csv",
+      "text_path": "data/sources/alfred-payems-2026-10-02.csv",
+      "text_sha256": "sha256:ff1f8a4897b5f2eaef93943cc0613a30de5bc2959b9b9bd3b49cb63ee33e5490",
+      "quote": "2026-09-01,159044",
+      "quote_span_check": "byte_exact",
+      "about": "The payroll series as it stood on the release day. September's level matches the series saved the next morning.",
+      "capture_run": "capture-oneoff-20261003T054433Z",
+      "capture_raw_sha256": "sha256:ff1f8a4897b5f2eaef93943cc0613a30de5bc2959b9b9bd3b49cb63ee33e5490",
+      "captured_at": "2026-10-03T05:50:19.751269Z"
+    },
+    {
+      "id": "ap-september-jobs",
+      "title": "September jobs numbers weaker than expected",
+      "publisher": "Associated Press",
+      "date": "2026-10-02",
+      "url": "https://apnews.com/article/jobs-unemployment-economy-ai-hiring-44b99f9ccbff863888af99402ddf535e",
+      "pinned_path": "data/sources/coverage/ap-september-jobs.html",
+      "text_path": "data/sources/coverage/ap-september-jobs.txt",
+      "text_sha256": "sha256:e1b841528a7c6072200d6d89e869ca2e0799fe422a116a5bf5ea45db57b839a5",
+      "quote": "Economists had expected September payrolls to come in around 90,000",
+      "quote_span_check": "byte_exact",
+      "about": "The Associated Press dispatch by Paul Wiseman, saved after the release. PBS NewsHour carries the same dispatch.",
+      "capture_run": "capture-oneoff-20261003T055855Z",
+      "capture_raw_sha256": "sha256:a0c915c415bed520fa18c068ccaf3db8adb0a1008b2411705ec1f519b9579e22",
+      "captured_at": "2026-10-03T05:58:56.379307Z"
+    },
+    {
+      "id": "pbs-september-jobs",
+      "title": "Disappointing 29,000 jobs added in September",
+      "publisher": "PBS NewsHour",
+      "date": "2026-10-02",
+      "url": "https://www.pbs.org/newshour/economy/disappointing-29000-jobs-added-in-september-as-unemployment-ticks-up",
+      "pinned_path": "data/sources/coverage/pbs-september-jobs.html",
+      "text_path": "data/sources/coverage/pbs-september-jobs.txt",
+      "text_sha256": "sha256:1d0ee1e18b6a5d1b430740cd77232ba918ebb4fc4797eb572d1ca3c32bc5fb7f",
+      "quote": "Hiring dropped from a revised 133,000 in August, the Labor Department reported",
+      "quote_span_check": "byte_exact",
+      "about": "PBS NewsHour's page of the Associated Press dispatch, bylined Paul Wiseman.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:1c65fc448539615b36633ef679ecaddfc0203d4d6c2c9e1b6aca9f60caa052e4",
+      "captured_at": "2026-10-02T16:04:24.247581Z"
+    },
+    {
+      "id": "usatoday-september-jobs",
+      "title": "September jobs report shows slowdown in hiring, rise in unemployment",
+      "publisher": "USA Today",
+      "date": "2026-10-02",
+      "url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+      "pinned_path": "data/sources/coverage/usatoday-september-jobs.html",
+      "text_path": "data/sources/coverage/usatoday-september-jobs.txt",
+      "text_sha256": "sha256:ee028ce662e5b29cf6513087cbb3d8b53d82bd03d1910ce815b6e0fae2f9158b",
+      "quote": "The Labor Department estimates U.S. employers added 29,000 jobs in September",
+      "quote_span_check": "byte_exact",
+      "about": "USA Today's account of the release.",
+      "capture_run": "capture-oneoff-20261003T055855Z",
+      "capture_raw_sha256": "sha256:88917f3780b52e63d9fdd6247339f451dd90ce4b7c5c072ce1158759f5d7753b",
+      "captured_at": "2026-10-03T05:58:56.641720Z"
+    },
+    {
+      "id": "cbs-september-jobs",
+      "title": "Employers added 29,000 jobs in September, short of forecasts",
+      "publisher": "CBS News",
+      "date": "2026-10-02",
+      "url": "https://www.cbsnews.com/news/september-jobs-report-us-hiring-labor-market/",
+      "pinned_path": "data/sources/coverage/cbs-september-jobs.html",
+      "text_path": "data/sources/coverage/cbs-september-jobs.txt",
+      "text_sha256": "sha256:c160f891304e15a2c2ed33c488fcc8cb30fc24ce92a3e966387e9b218c6caf07",
+      "quote": "Economists had forecast the economy would add 90,000 new jobs last month, according to financial data firm FactSet",
+      "quote_span_check": "byte_exact",
+      "about": "CBS News, including the FactSet forecast of 90,000.",
+      "capture_run": "capture-oneoff-20261003T055855Z",
+      "capture_raw_sha256": "sha256:741cfe1ebcd02402612dfeae44bcef88596328a4e9ce1dcf1c005673a62ab549",
+      "captured_at": "2026-10-03T05:59:10.181264Z"
+    },
+    {
+      "id": "cnbc-september-jobs",
+      "title": "Labor market faltered in September",
+      "publisher": "CNBC",
+      "date": "2026-10-02",
+      "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
+      "pinned_path": "data/sources/coverage/cnbc-september-jobs.html",
+      "text_path": "data/sources/coverage/cnbc-september-jobs.txt",
+      "text_sha256": "sha256:37a7a3e2026ff794033389cb8b2d158f11cc25b05807665f8973863f153c70f1",
+      "quote": "Economists surveyed by Dow Jones had been looking for job growth of 84,000 and an unemployment rate of 4.1%",
+      "quote_span_check": "byte_exact",
+      "about": "CNBC's account, including the Dow Jones survey and a workweek figure the release does not support.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:575668c4ac8a782cdc0cb1aac27f545a62cd7f2b9346ef63a531809b17b869c9",
+      "captured_at": "2026-10-02T16:05:14.615423Z"
+    },
+    {
+      "id": "npr-september-jobs",
+      "title": "The U.S. added only 29,000 jobs in September",
+      "publisher": "NPR",
+      "date": "2026-10-02",
+      "url": "https://www.npr.org/2026/10/02/nx-s1-5989140/jobs-labor-wages-federal-reserve",
+      "pinned_path": "data/sources/coverage/npr-september-jobs.html",
+      "text_path": "data/sources/coverage/npr-september-jobs.txt",
+      "text_sha256": "sha256:a48e8e52f025f83349ab61b78b9dd68e4b3c11d2d4e47722dc520d44dc5094db",
+      "quote": "employers added just 29,000 jobs last month",
+      "quote_span_check": "byte_exact",
+      "about": "NPR's account of the same release.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:6ff043439ef25aab763dee67770a82cdae3964e46a2b9300e066628d2d1beaf5",
+      "captured_at": "2026-10-02T16:05:10.620394Z"
+    },
+    {
+      "id": "upi-september-jobs",
+      "title": "U.S. added 29,000 jobs in September; unemployment up to 4.2%",
+      "publisher": "UPI",
+      "date": "2026-10-02",
+      "url": "https://www.upi.com/Top_News/US/2026/10/02/bls-jobs-report-september-2026/1301790949073/",
+      "pinned_path": "data/sources/coverage/upi-september-jobs.html",
+      "text_path": "data/sources/coverage/upi-september-jobs.txt",
+      "text_sha256": "sha256:316048a5a40c53ced326a0d0db96d653e06ad78798de21b2cdcd9ba7f79a7e56",
+      "quote": "the unemployment rate rose to 4.2%",
+      "quote_span_check": "byte_exact",
+      "about": "UPI's account of the release.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:42ed3b379d1f5391ce6bc9bfbb6a3f4c6680abd79cb7e5c44d6d07e76a4f6fdd",
+      "captured_at": "2026-10-02T16:05:05.700398Z"
+    },
+    {
+      "id": "thehill-september-jobs",
+      "title": "US economy added 29,000 jobs in September",
+      "publisher": "The Hill",
+      "date": "2026-10-02",
+      "url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+      "pinned_path": "data/sources/coverage/thehill-september-jobs.html",
+      "text_path": "data/sources/coverage/thehill-september-jobs.txt",
+      "text_sha256": "sha256:7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+      "quote": "The unemployment rate also ticked up slightly to 4.2 percent",
+      "quote_span_check": "byte_exact",
+      "about": "The Hill's account of the release.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:a12bc0d5d152b4653ef7c695901ca48ff365c4ce15027ae246c4dab80d5200ee",
+      "captured_at": "2026-10-02T16:04:35.754472Z"
+    },
+    {
+      "id": "cnbc-september-jobs-preview",
+      "title": "What to expect from the September jobs report",
+      "publisher": "CNBC",
+      "date": "2026-10-01",
+      "url": "https://www.cnbc.com/2026/10/01/the-september-jobs-report-will-be-released-friday-heres-what-to-expect.html",
+      "pinned_path": "data/sources/coverage/cnbc-september-jobs-preview.html",
+      "text_path": "data/sources/coverage/cnbc-september-jobs-preview.txt",
+      "text_sha256": "sha256:a48884844fb3f14d3db460473e25f73df7ee22ec4478ea6a3af2b8203b0c60cf",
+      "quote": "Wall Street is looking for job growth of 84,000",
+      "quote_span_check": "byte_exact",
+      "about": "CNBC's preview the day before the release, citing a Dow Jones consensus of 84,000 jobs and a 4.1 percent rate.",
+      "capture_run": "quarry-wire-scheduled-20261002T100043Z",
+      "capture_raw_sha256": "sha256:b6288c1f7c2c36924cd6756540b4a3860b13e6708c5091c3c9eba357ec2d8721",
+      "captured_at": "2026-10-02T10:04:19.004048Z"
+    },
+    {
+      "id": "reuters-september-jobs-preview",
+      "title": "U.S. job growth expected to slow in September",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/us-job-growth-expected-slow-september-unemployment-rate-likely-steady-2026-10-02/",
+      "pinned_path": "data/sources/coverage/reuters-september-jobs-preview.html",
+      "text_path": "data/sources/coverage/reuters-september-jobs-preview.txt",
+      "text_sha256": "sha256:46cb93c5f4f285f2082ace48f9da2551b3086501680fee07a909605ce162f727",
+      "quote": "Nonfarm payrolls likely increased by 90,000 last month",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters' preview, published before 8:30 a.m. Eastern, with a survey of 90,000 jobs and a 4.1 percent rate.",
+      "capture_run": "quarry-wire-scheduled-20261002T100043Z",
+      "capture_raw_sha256": "sha256:3064e8ca3cf8fd9509cb1322446ace0062e4199fd10bcc950462996050c8528f",
+      "captured_at": "2026-10-02T10:04:29.611089Z"
+    },
+    {
+      "id": "abc-september-jobs-preview",
+      "title": "Jobs report could show hiring stayed resilient in September",
+      "publisher": "ABC News",
+      "date": "2026-10-02",
+      "url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+      "pinned_path": "data/sources/coverage/abc-september-jobs-preview.html",
+      "text_path": "data/sources/coverage/abc-september-jobs-preview.txt",
+      "text_sha256": "sha256:cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+      "quote": "Economists expect U.S. employers to have added 84,000 jobs in September",
+      "quote_span_check": "byte_exact",
+      "about": "ABC News' preview, expecting 84,000 jobs. Written before the release.",
+      "capture_run": "quarry-wire-scheduled-20261002T100043Z",
+      "capture_raw_sha256": "sha256:2e7c00786012dde06ad782dd2c31ead15fae5e929ae2cbea941e384189a07cee",
+      "captured_at": "2026-10-02T10:03:34.872622Z"
+    }
+  ],
+  "story_sources": [
+    {
+      "id": "bls-empsit-2026-09",
+      "group": "primary",
+      "label": "Employment Situation, September 2026",
+      "meta": " \u00b7 released October 2, 2026",
+      "usage": "the release's own payroll, unemployment, revision, industry, hours, and earnings figures"
+    },
+    {
+      "id": "bls-empsit-t09-2026-09",
+      "group": "primary",
+      "label": "Table A-9, multiple jobholders",
+      "meta": " \u00b7 released October 2, 2026",
+      "usage": "the count of people working more than one job"
+    },
+    {
+      "id": "bls-empsit-schedule-2026-10-03",
+      "group": "primary",
+      "label": "Employment Situation release calendar",
+      "meta": " \u00b7 read October 3, 2026",
+      "usage": "the publication time and the next report"
+    },
+    {
+      "id": "bls-empsit-2026-08",
+      "group": "primary",
+      "label": "Employment Situation, August 2026",
+      "meta": " \u00b7 released September 4, 2026",
+      "usage": "the August gain this release revises"
+    },
+    {
+      "id": "fred-payems-2026-10-03",
+      "group": "official",
+      "label": "Nonfarm payrolls, monthly series",
+      "meta": " \u00b7 saved October 3, 2026",
+      "usage": "the levels behind the chart and the computed averages"
+    },
+    {
+      "id": "fred-unrate-2026-10-03",
+      "group": "official",
+      "label": "Unemployment rate, monthly series",
+      "meta": " \u00b7 saved October 3, 2026",
+      "usage": "the rate series through September"
+    },
+    {
+      "id": "fred-u6-2026-10-03",
+      "group": "official",
+      "label": "U-6 rate, monthly series",
+      "meta": " \u00b7 saved October 3, 2026",
+      "usage": "the broad underemployment rate"
+    },
+    {
+      "id": "fred-prime-age-2026-10-03",
+      "group": "official",
+      "label": "Prime-age participation, monthly series",
+      "meta": " \u00b7 saved October 3, 2026",
+      "usage": "participation for ages 25 to 54"
+    },
+    {
+      "id": "fred-ahe-2026-10-03",
+      "group": "official",
+      "label": "Average hourly earnings, monthly series",
+      "meta": " \u00b7 saved October 3, 2026",
+      "usage": "the wage level and the computed year-over-year change"
+    },
+    {
+      "id": "alfred-payems-2026-10-02",
+      "group": "official",
+      "label": "Payrolls as of the release day",
+      "meta": " \u00b7 vintage October 2, 2026",
+      "usage": "the release-day payroll level, which matches the series saved the next morning"
+    },
+    {
+      "id": "cnbc-september-jobs",
+      "group": "coverage",
+      "label": "CNBC",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "the Dow Jones survey of 84,000, and a workweek figure the release does not support"
+    },
+    {
+      "id": "cnbc-september-jobs-preview",
+      "group": "coverage",
+      "label": "CNBC preview",
+      "meta": " \u00b7 October 1, 2026",
+      "usage": "the same Dow Jones survey, published the day before"
+    },
+    {
+      "id": "reuters-september-jobs-preview",
+      "group": "coverage",
+      "label": "Reuters",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "a survey of 90,000 jobs, published before the release"
+    },
+    {
+      "id": "abc-september-jobs-preview",
+      "group": "coverage",
+      "label": "ABC News",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "a preview expecting 84,000 jobs"
+    },
+    {
+      "id": "cbs-september-jobs",
+      "group": "coverage",
+      "label": "CBS News",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "a FactSet forecast of 90,000"
+    },
+    {
+      "id": "ap-september-jobs",
+      "group": "coverage",
+      "label": "Associated Press",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "the post-release dispatch, including an expectation of about 90,000"
+    },
+    {
+      "id": "pbs-september-jobs",
+      "group": "coverage",
+      "label": "PBS NewsHour",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "the same Associated Press dispatch, carried by PBS"
+    },
+    {
+      "id": "usatoday-september-jobs",
+      "group": "coverage",
+      "label": "USA Today",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "USA Today's account of the 29,000 gain"
+    },
+    {
+      "id": "npr-september-jobs",
+      "group": "coverage",
+      "label": "NPR",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "NPR's account of the 29,000 gain"
+    },
+    {
+      "id": "upi-september-jobs",
+      "group": "coverage",
+      "label": "UPI",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "UPI's account of the 4.2 percent rate"
+    },
+    {
+      "id": "thehill-september-jobs",
+      "group": "coverage",
+      "label": "The Hill",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "The Hill's account of the 4.2 percent rate"
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "bls-empsit-2026-09",
+      "path": "data/sources/bls-empsit-2026-09.html",
+      "bytes": 1064261,
+      "sha256": "sha256:1de7921a0f1a8fe0d512e9faf5f588383d65e2e3a90e62d8c6c8c7c730f4c4fe",
+      "url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm"
+    },
+    {
+      "id": "bls-empsit-t09-2026-09",
+      "path": "data/sources/bls-empsit-t09-2026-09.html",
+      "bytes": 111390,
+      "sha256": "sha256:9433d88ac4d35c2079d8ea720bd16ba94accc6bdc7e7f700332ab1cecd94ee82",
+      "url": "https://www.bls.gov/news.release/empsit.t09.htm"
+    },
+    {
+      "id": "bls-empsit-schedule-2026-10-03",
+      "path": "data/sources/bls-empsit-schedule-2026-10-03.html",
+      "bytes": 55578,
+      "sha256": "sha256:8a61955edcbf086a560c43004ed0613fec2ae25e646e04e512472e2175cb3c47",
+      "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+    },
+    {
+      "id": "bls-empsit-2026-08",
+      "path": "data/sources/bls-empsit-2026-08.html",
+      "bytes": 1064564,
+      "sha256": "sha256:6d83eeecf867f1e8c9a2a5449a4b064896062f4529ad36c4ff2a37e6968b7481",
+      "url": "https://www.bls.gov/news.release/archives/empsit_09042026.htm"
+    },
+    {
+      "id": "fred-payems-2026-10-03",
+      "path": "data/sources/PAYEMS-2026-10-03.csv",
+      "bytes": 18405,
+      "sha256": "sha256:c8c429818ed73de6db985f4ff565d64bd2a5ba66a6b651b39373a1532924fc0e",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS"
+    },
+    {
+      "id": "fred-unrate-2026-10-03",
+      "path": "data/sources/UNRATE-2026-10-03.csv",
+      "bytes": 14211,
+      "sha256": "sha256:621ff6fadf50910cb7a21ee20ba610c247cb043b29b4e05c4c1a72fadca2a06c",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE"
+    },
+    {
+      "id": "fred-u6-2026-10-03",
+      "path": "data/sources/U6RATE-2026-10-03.csv",
+      "bytes": 6054,
+      "sha256": "sha256:4a5e4d273609f63e684ead6521fb1708832af5a0498460980e25db56f4b24c23",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=U6RATE"
+    },
+    {
+      "id": "fred-prime-age-2026-10-03",
+      "path": "data/sources/LNS11300060-2026-10-03.csv",
+      "bytes": 15145,
+      "sha256": "sha256:54f4d69e289743af9fa600164907cd15225fa06d8d39b03a9169f939033f8f0b",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=LNS11300060"
+    },
+    {
+      "id": "fred-ahe-2026-10-03",
+      "path": "data/sources/CES0500000003-2026-10-03.csv",
+      "bytes": 4230,
+      "sha256": "sha256:15ac5d3097f5cb2e7e66b8dd8ef04b91316cd49213aaa3d407fec928857ea35d",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CES0500000003"
+    },
+    {
+      "id": "alfred-payems-2026-10-02",
+      "path": "data/sources/alfred-payems-2026-10-02.csv",
+      "bytes": 18414,
+      "sha256": "sha256:ff1f8a4897b5f2eaef93943cc0613a30de5bc2959b9b9bd3b49cb63ee33e5490",
+      "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-10-02"
+    }
+  ],
+  "figures": [
+    {
+      "figure": "september-payroll-change",
+      "label": "Payrolls added in September",
+      "kind": "sourced",
+      "source_id": "bls-empsit-2026-09",
+      "value": 29000,
+      "unit": "jobs",
+      "source": {
+        "source_id": "bls-empsit-2026-09",
+        "quote_span": "Both nonfarm payroll employment (+29,000) and the unemployment rate (4.2 percent) changed little in September"
+      }
+    },
+    {
+      "figure": "unemployment-rate",
+      "label": "Unemployment rate",
+      "kind": "sourced",
+      "source_id": "bls-empsit-2026-09",
+      "value": "4.2 percent",
+      "unit": "percent",
+      "source": {
+        "source_id": "bls-empsit-2026-09",
+        "quote_span": "Both the unemployment rate, at 4.2 percent, and the number of unemployed people, at 7.1 million, changed little in September"
+      }
+    },
+    {
+      "figure": "july-august-revision",
+      "label": "July and August combined, revised lower",
+      "kind": "sourced",
+      "source_id": "bls-empsit-2026-09",
+      "value": 60000,
+      "unit": "jobs",
+      "source": {
+        "source_id": "bls-empsit-2026-09",
+        "quote_span": "employment in July and August combined is 60,000 lower than previously reported"
+      }
+    },
+    {
+      "figure": "hourly-earnings-year",
+      "label": "Hourly earnings over the past year",
+      "kind": "sourced",
+      "source_id": "bls-empsit-2026-09",
+      "value": "3.0 percent",
+      "unit": "percent",
+      "source": {
+        "source_id": "bls-empsit-2026-09",
+        "quote_span": "Over the past 12 months, average hourly earnings have increased by 3.0 percent"
+      }
+    },
+    {
+      "figure": "prior-twelve-average",
+      "label": "Average monthly gain over the prior 12 months",
+      "kind": "sourced",
+      "source_id": "bls-empsit-2026-09",
+      "value": 45000,
+      "unit": "jobs",
+      "source": {
+        "source_id": "bls-empsit-2026-09",
+        "quote_span": "following an average monthly gain of 45,000 over the prior 12 months"
+      }
+    },
+    {
+      "figure": "dow-jones-forecast",
+      "label": "Dow Jones survey of job growth",
+      "kind": "sourced",
+      "source_id": "cnbc-september-jobs",
+      "value": 84000,
+      "unit": "jobs",
+      "source": {
+        "source_id": "cnbc-september-jobs",
+        "quote_span": "Economists surveyed by Dow Jones had been looking for job growth of 84,000"
+      }
+    },
+    {
+      "figure": "reuters-forecast",
+      "label": "Reuters survey of job growth",
+      "kind": "sourced",
+      "source_id": "reuters-september-jobs-preview",
+      "value": 90000,
+      "unit": "jobs",
+      "source": {
+        "source_id": "reuters-september-jobs-preview",
+        "quote_span": "Nonfarm payrolls likely increased by 90,000 last month"
+      }
+    }
+  ],
+  "needs_ledger": [
+    {
+      "need": "commissioner statement for September 2026",
+      "plain": "No September 2026 commissioner's statement was issued. The address the bureau still uses for that statement is the January 6, 2023 final statement, which says it is the last one.",
+      "status": "not issued; the page at the old statement address is the 2023 final statement, so it is not a record of this release"
+    },
+    {
+      "need": "Wall Street Journal account",
+      "plain": "The Journal's live-coverage card served only a subscription stub, 535 characters, so it is not a record.",
+      "status": "the Wall Street Journal does not let its pages be saved"
+    },
+    {
+      "need": "Washington Post account",
+      "plain": "The Post's story served only a subscription stub, 582 characters, so it is not a record.",
+      "status": "The Washington Post does not let its pages be saved"
+    }
+  ],
+  "coverage_records": [
+    "ap-september-jobs",
+    "pbs-september-jobs",
+    "usatoday-september-jobs",
+    "cbs-september-jobs",
+    "cnbc-september-jobs",
+    "npr-september-jobs",
+    "upi-september-jobs",
+    "thehill-september-jobs",
+    "cnbc-september-jobs-preview",
+    "reuters-september-jobs-preview",
+    "abc-september-jobs-preview"
+  ],
+  "authored_sections": [
+    "what-happened",
+    "where-this-sits",
+    "chronology",
+    "records"
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "The September release, table A-9, the release calendar, the August release, six series files, and eleven coverage articles are pinned with registry runs."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "Monthly changes, the 45,250 prior-twelve average, the 68,000 average for 2026, and the 3.02 percent wage change are arithmetic on the October 3 series files."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "CNBC's 34.6-hour workweek is not in the release, which says 34.4 hours. The 29,000 gain and the 4.2 percent rate match the release."
+    },
+    "section_grammar": {
+      "done": false,
+      "evidence": "Record turn only. Sections are not chosen until the reader model."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "The only graded outlet line uses the checked chip, and the verdict word is mislabeled."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element. The chart reads the pinned payroll file."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The jobs subject page shows the September payroll, unemployment, and participation figures and this story's chart."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "The homepage editorial map includes this story and its payroll chart."
+    }
+  }
+}

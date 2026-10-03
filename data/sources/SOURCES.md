@@ -1786,3 +1786,41 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fed-rate/cbo-iran-cost-2026-09-15.txt | 7289 | 236e6beb32558ce0 |
 | data/sources/fed-rate/fed-open-market-operations-2026-09-16.html | 108253 | 4641801146ad4cdf |
 | data/sources/fed-rate/fed-open-market-operations-2026-09-16.txt | 26884 | cb185fd7c880d246 |
+
+## September 2026 jobs report (saved 2026-10-03)
+
+bls.gov refused a plain fetch on October 3, 2026. data/sources/bls-empsit-2026-09.html is the archive page of the September Employment Situation (empsit_10022026.htm), data/sources/bls-empsit-t09-2026-09.html is table A-9 as republished that morning, and data/sources/bls-empsit-schedule-2026-10-03.html is the release calendar, each saved through the capture registry. data/sources/PAYEMS-2026-10-03.csv, data/sources/UNRATE-2026-10-03.csv, data/sources/U6RATE-2026-10-03.csv, data/sources/LNS11300060-2026-10-03.csv, data/sources/CES0500000003-2026-10-03.csv, and data/sources/alfred-payems-2026-10-02.csv were saved from FRED and ALFRED the same morning. The August release stays at data/sources/bls-empsit-2026-08.html.
+| data/sources/bls-empsit-2026-09.html | 1064261 | 1de7921a0f1a8fe0 |
+| data/sources/bls-empsit-2026-09.txt | 150867 | 185aedd20d0293ba |
+| data/sources/bls-empsit-t09-2026-09.html | 111390 | 9433d88ac4d35c20 |
+| data/sources/bls-empsit-t09-2026-09.txt | 18285 | 23bb2acc030af4fd |
+| data/sources/bls-empsit-schedule-2026-10-03.html | 55578 | 8a61955edcbf086a |
+| data/sources/bls-empsit-schedule-2026-10-03.txt | 15153 | f2c64eb7e94615bd |
+| data/sources/PAYEMS-2026-10-03.csv | 18405 | c8c429818ed73de6 |
+| data/sources/UNRATE-2026-10-03.csv | 14211 | 621ff6fadf50910c |
+| data/sources/U6RATE-2026-10-03.csv | 6054 | 4a5e4d273609f63e |
+| data/sources/LNS11300060-2026-10-03.csv | 15145 | 54f4d69e289743af |
+| data/sources/CES0500000003-2026-10-03.csv | 4230 | 15ac5d3097f5cb2e |
+| data/sources/alfred-payems-2026-10-02.csv | 18414 | ff1f8a4897b5f2ea |
+| data/sources/coverage/ap-september-jobs.html | 878117 | a0c915c415bed520 |
+| data/sources/coverage/ap-september-jobs.txt | 6828 | e1b841528a7c6072 |
+| data/sources/coverage/pbs-september-jobs.html | 260866 | 1c65fc448539615b |
+| data/sources/coverage/pbs-september-jobs.txt | 4677 | 1d0ee1e18b6a5d1b |
+| data/sources/coverage/usatoday-september-jobs.html | 216705 | 88917f3780b52e63 |
+| data/sources/coverage/usatoday-september-jobs.txt | 7608 | ee028ce662e5b29c |
+| data/sources/coverage/cbs-september-jobs.html | 624700 | 741cfe1ebcd02402 |
+| data/sources/coverage/cbs-september-jobs.txt | 4097 | c160f891304e15a2 |
+| data/sources/coverage/cnbc-september-jobs.html | 791452 | 575668c4ac8a782c |
+| data/sources/coverage/cnbc-september-jobs.txt | 4658 | 37a7a3e2026ff794 |
+| data/sources/coverage/npr-september-jobs.html | 140663 | 6ff043439ef25aab |
+| data/sources/coverage/npr-september-jobs.txt | 2088 | a48e8e52f025f833 |
+| data/sources/coverage/upi-september-jobs.html | 341173 | 42ed3b379d1f5391 |
+| data/sources/coverage/upi-september-jobs.txt | 1451 | 316048a5a40c53ce |
+| data/sources/coverage/thehill-september-jobs.html | 403671 | a12bc0d5d152b465 |
+| data/sources/coverage/thehill-september-jobs.txt | 4923 | 7438314e21c9cd3e |
+| data/sources/coverage/cnbc-september-jobs-preview.html | 798707 | b6288c1f7c2c3692 |
+| data/sources/coverage/cnbc-september-jobs-preview.txt | 3818 | a48884844fb3f14d |
+| data/sources/coverage/reuters-september-jobs-preview.html | 497994 | 3064e8ca3cf8fd95 |
+| data/sources/coverage/reuters-september-jobs-preview.txt | 5501 | 46cb93c5f4f285f2 |
+| data/sources/coverage/abc-september-jobs-preview.html | 191558 | 2e7c00786012dde0 |
+| data/sources/coverage/abc-september-jobs-preview.txt | 3050 | cecf0fa3889e5e2a |

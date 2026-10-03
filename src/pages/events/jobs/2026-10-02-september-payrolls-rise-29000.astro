@@ -1,0 +1,118 @@
+---
+import PayrollChart from "../../../components/PayrollChart.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, averages, multipleJobholders, wageGrowth, primeAgeParticipation, u6, chronology, revisionColumns, revisionRows, payrollLevels } from "../../../data/jobs-2026-10-02-september-payrolls-rise-29000.mjs";
+const state = readPublishedState().events.get("event-jobs-2026-10-02-september-payrolls-rise-29000") ?? null;
+if (state?.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+const jobs = (n) => Math.abs(n).toLocaleString("en-US");
+const prior12Jobs = (averages.prior12 * 1000).toLocaleString("en-US");
+const yearJobs = (averages.year2026 * 1000).toLocaleString("en-US");
+const septemberLevel = (payrollLevels.september * 1000).toLocaleString("en-US");
+const augustLevel = (payrollLevels.august * 1000).toLocaleString("en-US");
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/jobs/">The job market</a><span>September jobs report &middot; October 2, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="narrative">The jobs report &middot; September 2026</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite s="bls-empsit-2026-09" passage="Both nonfarm payroll employment (+29,000) and the unemployment rate (4.2 percent) changed little in September" /></p>
+      <ReadingModes />
+
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What the release reported</h2>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>On Friday, October 2, 2026, at 8:30 a.m. Eastern, the Bureau of Labor Statistics published the Employment Situation for September. Payroll employment rose by 29,000 and the unemployment rate was 4.2 percent. The bureau said both changed little. The unemployment rate has stayed between 4.1 percent and 4.3 percent since March, and 7.1 million people were unemployed.<Cite s="bls-empsit-2026-09" passage="Both the unemployment rate, at 4.2 percent, and the number of unemployed people, at 7.1 million, changed little in September" /><Cite s="bls-empsit-schedule-2026-10-03" passage="September 2026 | Oct. 02, 2026 | 08:30 AM" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>July was revised down by 31,000, from a gain of 21,000 to a loss of 10,000. August was revised down by 29,000, from a gain of 162,000 to a gain of 133,000. The August release had reported a gain of 162,000. The two months together are 60,000 lower than previously reported.<Cite s="bls-empsit-2026-09" passage="employment in July and August combined is 60,000 lower than previously reported" /><Cite s="bls-empsit-2026-08" passage="Total nonfarm payroll employment increased by 162,000 in August, and the unemployment rate was unchanged at 4.1 percent" /></p>
+        </SourcedBlock>
+        <details class="receipt" data-layer="proof">
+          <summary>July and August, as the September release states them</summary>
+          <DataTable columns={revisionColumns} rows={revisionRows} caption="Changes in thousands of jobs, from the September release." />
+        </details>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>Employment in every major industry changed little. Health care added 17,000, slower than its average monthly gain of 33,000 over the prior 12 months. Ambulatory care added 13,000 and hospitals 12,000. Nursing and residential care lost 9,000. Construction added 11,000 and manufacturing 9,000. Financial activities lost 7,000 and are down 129,000 since a peak in May 2025.<Cite s="bls-empsit-2026-09" passage="Health care employment continued its upward trend in September (+17,000)" /><Cite s="bls-empsit-2026-09" passage="Employment in all major industries changed little over the month" /><Cite s="bls-empsit-2026-09" passage="nursing and residential care facilities lost jobs (-9,000)" /><Cite s="bls-empsit-2026-09" passage="Employment in financial activities is down by 129,000 since a recent peak in May 2025" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>The one-month diffusion index, the share of 250 private industries adding jobs, was 49.0 in September after 57.6 in August. The release says 50 percent is an equal balance between industries adding and cutting jobs. Private payrolls rose by 46,000 and government payrolls fell by 17,000. Information fell by 10,000. Temporary help services fell by 10.9 thousand.<Cite s="bls-empsit-2026-09" passage="Total private (250 industries) | 50.4 | 54.4 | 57.6 | 49.0" /><Cite s="bls-empsit-2026-09" passage="50 percent indicates an equal balance between industries with increasing and decreasing employment" /><Cite s="bls-empsit-2026-09" passage="Total private | 68 | 28 | 89 | 46" /><Cite s="bls-empsit-2026-09" passage="Government | 8 | -38 | 44 | -17" /><Cite s="bls-empsit-2026-09" passage="Information | -1 | 4 | -18 | -10" /><Cite s="bls-empsit-2026-09" passage="Temporary help services | -11.7 | -10.0 | 0.2 | -10.9" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>Average hourly earnings edged up 5 cents, or 0.1 percent, to $37.81. Over the year they are up 3.0 percent. The average workweek stayed at 34.4 hours. A change of about 122,000 jobs is what the bureau calls statistically significant in the employer survey, so the 29,000 gain does not clear that bar. The household survey's bar is about 650,000.<Cite s="bls-empsit-2026-09" passage="average hourly earnings for all employees on private nonfarm payrolls edged up by 5 cents, or 0.1 percent, to $37.81" /><Cite s="bls-empsit-2026-09" passage="An over-the-month employment change of about 122,000 is statistically significant in the establishment survey" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="cnbc-september-jobs" kind="checked" detail>
+          <p>CNBC wrote that the average workweek was unchanged at 34.6 hours. That figure is mislabeled. The release says the workweek remained at 34.4 hours.<Cite s="cnbc-september-jobs" passage="The average work week was unchanged at 34.6 hours" /><Cite s="bls-empsit-2026-09" passage="remained at 34.4 hours in September" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>The unemployment rate for Black workers rose to 7.0 percent. The bureau said that rate increased, and that the rates for adult men (3.9 percent), adult women (3.6 percent), teenagers (14.5 percent), and White (3.6), Asian (2.9), and Hispanic (4.7) workers showed little change. The labor force participation rate was 61.8 percent and the employment-population ratio was 59.2 percent. The labor force rose by 485,000 and household employment by 406,000.<Cite s="bls-empsit-2026-09" passage="the unemployment rate for people who are Black (7.0 percent) increased in September" /><Cite s="bls-empsit-2026-09" passage="Both the labor force participation rate, at 61.8 percent, and the employment-population ratio, at 59.2 percent, changed little in September" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>The long-term unemployed, out of work 27 weeks or more, were essentially unchanged at 1.9 million and were 27.1 percent of unemployed people. People working part time because they could not find full-time work were little changed at 4.5 million. People marginally attached to the labor force fell by 236,000 to 1.5 million. Discouraged workers were little changed at 414,000.<Cite s="bls-empsit-2026-09" passage="The number of long-term unemployed (those jobless for 27 weeks or more) was essentially unchanged at 1.9 million in September" /><Cite s="bls-empsit-2026-09" passage="The number of people employed part time for economic reasons changed little at 4.5 million in September" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>The broader underemployment rate, U-6, was {u6.september} percent in September, after {u6.august} percent in August.<Cite s="bls-empsit-2026-09" passage="U-6 Total unemployed, plus all people marginally attached to the labor force, plus total employed part time for economic reasons, as a percent of the civilian labor force plus all people marginally attached to the labor force | 7.7 | 7.8 | 7.3 | 8.1 | 8.1 | 7.9 | 7.9 | 7.7 | 7.6" /><Cite s="fred-u6-2026-10-03" passage="2026-09-01,7.6" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bls-empsit-t09-2026-09" kind="record" detail>
+          <p>The household survey counted {jobs(multipleJobholders.september)} people working more than one job in September, {multipleJobholders.percentOfEmployed} percent of everyone employed, against {jobs(multipleJobholders.august)} in August. The table counts those people in thousands.<Cite s="bls-empsit-t09-2026-09" passage="Total multiple jobholders | 8,794 | 8,505 | 9,000 | 8,810 | 8,428 | 8,554 | 8,693 | 8,805 | 8,986" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fred-prime-age-2026-10-03" kind="official" detail>
+          <p>Prime-age participation, the share of people age 25 to 54 who are working or looking for work, was {primeAgeParticipation.september} percent in September, up from {primeAgeParticipation.august} percent in August.<Cite s="fred-prime-age-2026-10-03" passage="2026-09-01,83.7" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fred-ahe-2026-10-03" kind="official" detail>
+          <p>On the hourly-earnings series, September's $37.81 is {wageGrowth.at(-1).yoy} percent above September 2025. The release rounds that change to 3.0 percent.<Cite s="fred-ahe-2026-10-03" passage="2026-09-01,37.81" /><Cite s="bls-empsit-2026-09" passage="Over the past 12 months, average hourly earnings have increased by 3.0 percent" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="where-this-sits">
+        <h2 data-layer="fact">Where the month sits</h2>
+        <PayrollChart {...event.visual} />
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>September's 29,000 followed an average monthly gain of 45,000 over the prior 12 months, the figure the release states. Its three-month average line puts July through September at 51,000.<Cite s="bls-empsit-2026-09" passage="following an average monthly gain of 45,000 over the prior 12 months" /><Cite s="bls-empsit-2026-09" passage="Total nonfarm | 23 | 28 | 51 | 51" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="fred-payems-2026-10-03" kind="computed" detail>
+          <p>On the current payroll series, the twelve monthly changes through August average {prior12Jobs} jobs. {averages.negativeMonthsLast12} of the last twelve months were declines. The nine months of 2026 average {yearJobs} jobs. September's level is {septemberLevel} and August's revised level is {augustLevel}. The difference is 29,000, the same change the release reports.<Cite s="fred-payems-2026-10-03" passage="2026-09-01,159044" /><Cite s="fred-payems-2026-10-03" passage="2026-08-01,159015" /></p>
+        </SourcedBlock>
+        <details class="receipt" data-layer="proof">
+          <summary>How those averages were counted</summary>
+          <p>Each month is that month's payroll total minus the month before, from the series saved October 3. The twelve months before September, September 2025 through August 2026, sum to 543 thousand and divide by 12 to 45,250. The release states that average as 45,000. The last twelve months include four declines: October 2025, December 2025, February 2026, and July 2026. The 2026 average is January through September, 612 thousand divided by 9.</p>
+        </details>
+        <SourcedBlock source="cnbc-september-jobs" kind="record" detail>
+          <p>CNBC reported that economists surveyed by Dow Jones had looked for job growth of 84,000 and an unemployment rate of 4.1 percent. Reuters, writing before the release, said its survey of economists expected 90,000 jobs and a 4.1 percent rate for a third month. CBS reported a FactSet forecast of 90,000. The Associated Press said economists had expected about 90,000.<Cite s="cnbc-september-jobs" passage="Economists surveyed by Dow Jones had been looking for job growth of 84,000 and an unemployment rate of 4.1%" /><Cite s="reuters-september-jobs-preview" passage="Nonfarm payrolls likely increased by 90,000 last month" /><Cite s="cbs-september-jobs" passage="Economists had forecast the economy would add 90,000 new jobs last month, according to financial data firm FactSet" /><Cite s="ap-september-jobs" passage="Economists had expected September payrolls to come in around 90,000" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="chronology">
+        <h2 data-layer="fact">Chronology</h2>
+        <DecisionTimeline entries={chronology} />
+        <SourcedBlock source="bls-empsit-2026-09" kind="record" detail>
+          <p>The Employment Situation for October is scheduled for Friday, November 6, 2026, at 8:30 a.m. Eastern. The bureau's release calendar lists the same morning.<Cite s="bls-empsit-2026-09" passage="The Employment Situation for October 2026 is scheduled to be published on Friday, November 6, 2026, at 8:30 a.m. (ET)." /><Cite s="bls-empsit-schedule-2026-10-03" passage="October 2026 | Nov. 06, 2026 | 08:30 AM" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="records">
+        <h2 data-layer="fact">The records</h2>
+        <p data-layer="narrative" data-absence>The Wall Street Journal and The Washington Post served only a subscription stub.</p>
+        <StorySources event="jobs/2026-10-02-september-payrolls-rise-29000" />
+      </section>
+      {state && <StoryState view={state} supporting />}
+    </main>
+  </div>
+</BaseLayout>
