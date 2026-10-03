@@ -101,7 +101,7 @@ export const priceRows = [
 export const changeRows = [
   ["Diesel, week", prices.dieselWeekChange, "dollars per gallon"],
   ["Diesel, from Mar 2", prices.dieselFromMarch, "dollars per gallon"],
-  ["Diesel, from Mar 2", prices.dieselFromMarchPercent, "percent"],
+  ["Diesel, from Mar 2, in percent", prices.dieselFromMarchPercent, "percent"],
   ["Brent, from Feb 27", prices.brentFromFebruary, "dollars per barrel"],
   ["WTI, from Feb 27", prices.wtiFromFebruary, "dollars per barrel"],
 ];
@@ -123,7 +123,7 @@ export const chronology = [
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
   title: "G7 will release 100 million barrels over four months and does not say how much is beyond its March commitments",
-  dek: "G7 calls a diesel release substantial and places it in the first 20 days, with no number. A French presidency readout says up to 100 million barrels of diesel and crude.",
+  dek: "The leaders' statement promises a substantial diesel release in the first 20 days and gives no number for it. Of the 400 million barrels International Energy Agency members pledged in March, about 325 million had been released.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-03",
