@@ -10,7 +10,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "0.6"
+  version: "0.7"
 ---
 
 # Catch orchestration turn
@@ -34,6 +34,48 @@ Reviews (audit, editor's read, red team, entailment) run on codex `gpt-6-sol`, s
 sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
 always with the model passed. A timed comparison (section 6) adds a second story author
 on codex `gpt-6-sol` from the same structure commit; it is the exception, not the run.
+
+## The run in four commands
+
+The steps below are the procedure; four scripts under `skills/catch-orchestrate/scripts/`
+carry it, so nobody waits between steps. What stays yours: the pick and the candidate
+block (steps 1 and 2), the read of the structure commit while the story turn runs (step
+5), each patch list and the decision (step 7), and the close.
+
+```bash
+S=/Volumes/4/GitHub/the-catch-site/skills/catch-orchestrate/scripts
+D=/Volumes/4/scratch-fable-profile/grok-authoring/dispatch
+# 1. accept, reparent (when a previous story is named), refresh views, cut the worktree, start the clock, dispatch the record turn
+BY=<you> REASON="<the human's word, the span>" zsh $S/open-story.sh <short> <cand-id> <subject-slug> <slug> <YYYY-MM-DD> <kind> \
+  "<subject in reader words>" "<the candidate headline>" <candidate block file> [previous event id]
+# 2. the driver: record turn, record build, audit, structure turn, state label, story turn, build, four reads
+python3 $S/launch.py $D/<short>/drive.out zsh $S/drive.sh <short> <subject-slug> <slug>
+# 3. each patch round: quote check, the author's own session resumed with the list, build, four reads
+python3 $S/launch.py $D/<short>/patch<N>.out zsh $S/patch.sh <short> <subject-slug> <slug> <N> <patch list file>
+# 4. the clock, any time; the worktree, when the story is shipped or killed
+python3 $S/ledger.py $D/<short>
+zsh $S/close-story.sh <short>
+```
+
+The driver writes one line per step to `<dispatch dir>/DRIVE.log` and `.started` and
+`.finished` markers that `ledger.py` turns into the run's times. It ends by writing
+`READY-r0` (the reads are in); a patch round ends with `READY-r<N>`. A failed step writes
+its reason to `<dispatch dir>/STOP` and exits; fix the cause and launch the same command
+again, finished steps are skipped. To pause it, write a reason into `<dispatch dir>/HOLD`
+(checked before every step); to stop it with whatever step it is running, kill its process
+group (`kill -- -$(cat <dispatch dir>/drive.pid)`), never the driver alone, which would
+leave its audit or reads running and a restart would start them a second time. One driver
+or patch round runs per story; a second launch refuses while the first is alive; to stop an author turn, kill its process group (`kill -- -$(cat <turn>.pid)`;
+the pid file holds the wrapper, the author is its child), which is yours. The driver does not wait for your read of the structure commit: it
+dispatches the story turn at once, and a wrong angle is stopped by HOLD, killing the story
+turn, deleting its markers, the structure markers and the `label.*` markers, and
+re-dispatching turn two.
+
+Worktrees live under `/Volumes/4/GitHub/the-catch-site/.worktrees/<short>` (ignored by
+git) and exist only while their story is open. `close-story.sh` copies uncommitted files
+that are not build output to the dispatch dir and removes the worktree; the branch stays,
+and `git worktree add .worktrees/<short> author/<short>` at the same path brings it back
+with its author session still resumable. Never leave a worktree beside the repo.
 
 ## 1. Accept the event (state, before any dispatch)
 
@@ -61,8 +103,8 @@ no reparent; its chain view is its own.
 
 ```bash
 cd /Volumes/4/GitHub/the-catch-site
-git worktree add /Volumes/4/GitHub/the-catch-site-wt-<short> -b author/<short> main
-ln -s /Volumes/4/GitHub/the-catch-site/node_modules /Volumes/4/GitHub/the-catch-site-wt-<short>/node_modules
+git worktree add .worktrees/<short> -b author/<short> main
+ln -s /Volumes/4/GitHub/the-catch-site/node_modules .worktrees/<short>/node_modules
 git rev-parse --short main      # the skill commit named in every dispatch
 ```
 
@@ -77,10 +119,10 @@ from the bodies you read in step 1, not from the headline.
 
 ```bash
 date -u +%Y-%m-%dT%H:%M:%SZ > <dispatch dir>/CLOCK.txt
-cd /Volumes/4/GitHub/the-catch-site-wt-<short>
+cd /Volumes/4/GitHub/the-catch-site/.worktrees/<short>
 AUTHOR_HOST=grok AUTHOR_MODEL=grok-4.7 DISPATCH_DIR=<dispatch dir> EVENT_ID=event-<subject-slug>-<slug> \
   zsh skills/catch-event-page/assets/dispatch/run-turn.sh record <subject-slug> <slug> \
-  /Volumes/4/GitHub/the-catch-site-wt-<short> author/<short> <skill-commit> <dispatch dir>/candidate-block.txt
+  /Volumes/4/GitHub/the-catch-site/.worktrees/<short> author/<short> <skill-commit> <dispatch dir>/candidate-block.txt
 ```
 
 Confirm the launch: the pid file's process has parent 1 and the log grows past the prompt
@@ -104,7 +146,7 @@ page in the worktree or the build fails on a page the author never touched. Then
 on this commit, detached (the audit takes twenty minutes or more):
 
 ```bash
-cd /Volumes/4/GitHub/the-catch-site-wt-<short>
+cd /Volumes/4/GitHub/the-catch-site/.worktrees/<short>
 CODEX_MODEL=gpt-6-sol skills/catch-event-page/scripts/completeness_audit.sh <subject-slug>/<slug> \
   checks/audits/<subject-slug>--<slug>-<date>-record-audit.md
 ```
@@ -143,11 +185,11 @@ authors on one record (the timed comparison): cut the second worktree at the str
 commit and dispatch both at once, each on its own host.
 
 ```bash
-S=$(git -C /Volumes/4/GitHub/the-catch-site-wt-<short> log --grep "^structure:" -1 --format=%h)
-git -C /Volumes/4/GitHub/the-catch-site worktree add /Volumes/4/GitHub/the-catch-site-wt-<short>-grok -b author/<short>-grok $S
-ln -s /Volumes/4/GitHub/the-catch-site/node_modules /Volumes/4/GitHub/the-catch-site-wt-<short>-grok/node_modules
-AUTHOR_HOST=grok  AUTHOR_MODEL=grok-4.7  DISPATCH_DIR=<dispatch dir>/grok run-turn.sh story ... wt-<short> author/<short> <skill-commit>
-AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir>/sol  run-turn.sh story ... wt-<short>-sol author/<short>-sol <skill-commit>
+S=$(git -C /Volumes/4/GitHub/the-catch-site/.worktrees/<short> log --grep "^structure:" -1 --format=%h)
+git -C /Volumes/4/GitHub/the-catch-site worktree add /Volumes/4/GitHub/the-catch-site/.worktrees/<short>-grok -b author/<short>-grok $S
+ln -s /Volumes/4/GitHub/the-catch-site/node_modules /Volumes/4/GitHub/the-catch-site/.worktrees/<short>-grok/node_modules
+AUTHOR_HOST=grok  AUTHOR_MODEL=grok-4.7  DISPATCH_DIR=<dispatch dir>/grok run-turn.sh story ... .worktrees/<short>-grok author/<short>-grok <skill-commit>
+AUTHOR_HOST=codex AUTHOR_MODEL=gpt-6-sol DISPATCH_DIR=<dispatch dir>/sol  run-turn.sh story ... .worktrees/<short> author/<short> <skill-commit>
 ```
 
 The two pages then differ only by the author; the record, the reader model, the skill
@@ -288,6 +330,14 @@ so the resting commit carries what was decided and why.
 
 ## Gotchas
 
+- A maintenance run (`news-state-maintain`, every two hours at half past) holds the state
+  while it works, and `state refresh-views` is refused with `maintain_fire_mismatch` until
+  it releases. The driver renames the label at once and retries the refresh every minute
+  in the background while the story turn writes; if the turn reaches its finish first, its
+  build fails on the old label and the driver runs `finish.sh ... story` itself once the
+  views hold the new one. `open-story.sh` has no such wait: open stories between runs.
+- `drive.sh` is read by the shell as it runs. Change it by writing a new file and moving
+  it over the old one, never in place, while any driver is running.
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
   unfilled placeholder, and refuses a worktree that does not contain the skill commit.
 - An outside read of a page from a text extraction (a chat model given the copied page)
