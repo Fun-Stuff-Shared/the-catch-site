@@ -10,7 +10,7 @@ description: >
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
-  version: "0.7"
+  version: "0.8"
 ---
 
 # Catch orchestration turn
@@ -307,7 +307,18 @@ the page. Authors transcribe a reviewer's paraphrase: "more people were working 
 September" and "the Fed has decided nothing since September 16" went onto the jobs page
 word for word from a list (2026-10-03) and both overstated their records. Split a quoted
 page passage into one quotation per sentence, and do not put commit messages or error text
-in quotation marks; `patch_quotes.mjs` refuses a quotation it cannot find.
+in quotation marks; `patch_quotes.mjs` refuses a quotation it cannot find, and it matches
+capitals: name a page sentence by its opening words exactly as printed, or without
+quotation marks. Check each replacement sentence against the pinned text before the list
+goes out (find the record's words in the `.txt` with whitespace collapsed); on the jobs
+page every Major of rounds 2 and 3 was a sentence the reviewer's own list had worded wider
+than its record, and rounds 4 and 5, whose sentences were checked first, returned none.
+
+The page prints each figure's recorded passage, so a passage is a whole sentence of the
+record. A passage may run across a line break in the pinned text (write it with single
+spaces), and a row of a saved data series (`2026-09-29,113.96`) is read as a date and its
+values. When a round's reads are clean and the passages are still fragments, one more
+list restores them; it changes no claim.
 
 ## 8. Serve, record the clock, stage
 
@@ -348,6 +359,14 @@ so the resting commit carries what was decided and why.
   2026-10-03 each reached the views in about 14 seconds mid-run). `state export --event`
   and a full `refresh-views` with no `--event` are refused with `maintain_fire_mismatch`
   until the run ends.
+- The driver stops when the state refuses a figure. Read the refusal in
+  `<worktree>/.finish-stage.json` before sending it to the author, reason by reason. A
+  missing source field, an unsupported formula, a source that is not live, or a passage
+  that does not state the value is the author's to rewrite or drop. Only a refusal that says
+  the value is not in a passage which does state it is the state's defect; that is fixed
+  and deployed there, after which the same driver command stages again and goes on. Three such refusals on 2026-10-03 were the
+  figure reader's (a passage broken across lines, a number with Indian grouping, a data
+  row read as one number); none was the author's.
 - `drive.sh` is read by the shell as it runs. Change it by writing a new file and moving
   it over the old one, never in place, while any driver is running.
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
