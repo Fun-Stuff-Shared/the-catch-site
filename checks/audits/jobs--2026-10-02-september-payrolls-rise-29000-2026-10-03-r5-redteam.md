@@ -1,0 +1,3 @@
+**Minor · new, source authority.** Page bytes: “CNBC reported that economists surveyed by Dow Jones had looked for job growth of 84,000 and an unemployment rate of 4.1 percent.” The available [Dow Jones Newswires dispatch](https://www.marketscreener.com/news/unemployment-rate-expected-to-hold-steady-data-week-ahead-ce785ddad98af725) prints `Nonfarm Payrolls Sep +84K` and `Unemployment Rate Sep 4.1%`; it is absent from the [page’s manifest](/Volumes/4/GitHub/the-catch-site-wt-jobs-sept/checks/manifests/jobs--2026-10-02-september-payrolls-rise-29000.json). CNBC accurately reported the forecast, but the survey’s own dispatch is an available primary record.
+
+VERDICT: SHIP
