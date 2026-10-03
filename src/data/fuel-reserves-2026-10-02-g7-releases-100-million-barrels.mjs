@@ -55,7 +55,6 @@ export const release = {
   members: "32 member",
   billTrigger: "$5",
   billEnd: "$4.50",
-  germanyRequest: "2,6 Millionen Tonnen",
   germanyReserve: "20 Millionen Tonnen",
   germanyDays: "90 Tage",
   germanyTonnes: "54 Millionen Tonnen",
