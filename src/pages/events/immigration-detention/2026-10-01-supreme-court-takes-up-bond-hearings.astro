@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, computed, chronology } from "../../../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs";
+const state = readPublishedState().events.get("event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
+if (!state) throw new Error("Missing publication selection: event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/immigration-detention/">Immigration detention</a><span>October 1, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker">Immigration detention &middot; October 1, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <div class="kpi-strip" data-layer="fact">
+        {event.kpis.map((k) => (
+          <div class="kpi">
+            <span class="kpi-value">{k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small></span>
+            <span class="kpi-label">{k.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <section id="what-happened">
+        <p class="sec-kicker">The grant</p>
+        <h2>What the Court did</h2>
+        <SourcedBlock source="scotus-order-list-2026-10-01" kind="record" detail>
+          <p>The Court's order list for Thursday, October 1, 2026, grants the petitions for review in a group that includes Philip L. Rhoney against Ricardo Aparecido Barbosa da Cunha.<Cite s="scotus-order-list-2026-10-01" passage="THURSDAY, OCTOBER 1, 2026" /><Cite s="scotus-order-list-2026-10-01" passage="RHONEY, ACTING DIR. V. BARBOSA DA CUNHA, RICARDO A." /><Cite s="scotus-order-list-2026-10-01" passage="The petitions for writs of certiorari are granted." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="scotus-question-presented-2026-10-01" kind="record" detail>
+          <p>The question the Court agreed to hear asks whether the detention statute requires holding, during removal proceedings, people who are in the United States and were not admitted.<Cite s="scotus-question-presented-2026-10-01" passage="present in the United States without having been admitted" /><Cite s="scotus-question-presented-2026-10-01" passage="CERT. GRANTED 10/1/2026" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="scotus-granted-noted-2026-10-01" kind="record" detail>
+          <p>The Court's list of cases set for argument is dated October 1, 2026. This case is on it with a grant date of October 1. That line does not set a day for argument.<Cite s="scotus-granted-noted-2026-10-01" passage="As of October 1, 2026" /><Cite s="scotus-granted-noted-2026-10-01" passage="RHONEY V. BARBOSA DA CUNHA" /><Cite s="scotus-granted-noted-2026-10-01" passage="Granted: 10/1/26" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="scotus-docket-rhoney-2026-10-02" kind="record" detail>
+          <p>The docket, opened July 23, 2026, records the petition that day, a response on August 21, a reply on September 4, distribution for the September 28 conference, and a grant on October 1. The same page says the petition and the response were to be filed on paper only.<Cite s="scotus-docket-rhoney-2026-10-02" passage="Docketed: July 23, 2026" /><Cite s="scotus-docket-rhoney-2026-10-02" passage="Petition GRANTED." /><Cite s="scotus-docket-rhoney-2026-10-02" passage="should be submitted in paper form only" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="chronology">
+        <p class="sec-kicker">Dates</p>
+        <h2>What came before the grant</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the guidance to the grant</strong><span>{computed.daysOpinionToGrant} days from the appeals decision to the grant, counted from the dates on those records.</span></figcaption>
+          <DataTable columns={["Date", "Record"]} rows={chronology.rows} ariaLabel="Dates from the detention guidance to the grant of review" />
+          <p class="chart-source">Dates from the appeals opinion, the Customs notice, the Board decision, the docket, the rehearing order, and the October 1 order list.<Cite s="ca2-cunha-opinion-2026-04-28" /><Cite s="cbp-detention-notice-2025-09-18" /><Cite s="bia-yajure-hurtado-2025-09-05" /><Cite s="scotus-docket-rhoney-2026-10-02" /><Cite s="ca2-cunha-rehearing-2026-09-25" /><Cite s="scotus-order-list-2026-10-01" /></p>
+        </figure>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>On April 28, 2026, the Second Circuit affirmed the district court. It held that detention of a person in the United States after entering without inspection, who was not taken at the border on entry, follows the bond statute, not mandatory detention. Judge Cabranes agreed and filed a separate opinion. The appeal was argued April 6.<Cite s="ca2-cunha-opinion-2026-04-28" passage="Decided: April 28, 2026" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Argued: April 6, 2026" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="we AFFIRM the district court’s grant of the writ of habeas corpus." /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Judge Cabranes concurs in the judgment and opinion of the Court and files a separate opinion." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>Officers arrested him on September 26, 2025, while he was driving to work in Norwood, Massachusetts. A judge then ordered a bond hearing or release, and an immigration judge released him on bond.<Cite s="ca2-cunha-opinion-2026-04-28" passage="On September 26, 2025, officers from U.S. Immigration and Customs Enforcement" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Norwood, Massachusetts" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="provide him with a bond hearing or release him" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>In July 2025 the government changed its practice. The opinion cites immigration enforcement guidance dated July 8, 2025. Divided panels in the Fifth and Eighth Circuits agreed with the government.<Cite s="ca2-cunha-opinion-2026-04-28" passage="Interim Guidance Regarding Detention Authority for Applicants for Admission (July 8, 2025)" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Buenrostro-Mendez v. Bondi, 166 F.4th 494, 508 (5th Cir. 2026)" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Avila v. Bondi, 170 F.4th 1128, 1138 (8th Cir. 2026)" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-rehearing-2026-09-25" kind="record" detail>
+          <p>On September 25, 2026, the Second Circuit denied rehearing by the full court. Judges Bianco and Nathan, joined by four others, concurred in that denial. Judge Menashi dissented.<Cite s="ca2-cunha-rehearing-2026-09-25" passage="rehearing in banc is hereby DENIED." /><Cite s="ca2-cunha-rehearing-2026-09-25" passage="dissents by opinion from the denial of rehearing in banc." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bia-yajure-hurtado-2025-09-05" kind="record" detail>
+          <p>On September 5, 2025, the Board of Immigration Appeals held that immigration judges lack authority to hear bond requests, or to grant bond, for people present in the United States without admission.<Cite s="bia-yajure-hurtado-2025-09-05" passage="Decided September 5, 2025" /><Cite s="bia-yajure-hurtado-2025-09-05" passage="lack authority to hear bond requests or to grant bond to aliens who are present in the United States without admission." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="cbp-detention-notice-2025-09-18" kind="record" detail>
+          <p>Customs and Border Protection's public notice says Commissioner Rodney S. Scott issued guidance on July 10, 2025, and that people encountering the department for the first time after failing to present at a port of entry are subject to mandatory detention.<Cite s="cbp-detention-notice-2025-09-18" passage="on July 10, 2025" /><Cite s="cbp-detention-notice-2025-09-18" passage="subject to mandatory detention under INA Section 235" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="cbp-detention-memo-2025-07-10" kind="record" detail>
+          <p>The signed memorandum, a one-page scan, is addressed from Commissioner Rodney S. Scott. It says the department's position is that applicants for admission are subject to mandatory detention and may not be released except by parole.<Cite s="cbp-detention-memo-2025-07-10" passage="FROM: Rodney S. Scott" /><Cite s="cbp-detention-memo-2025-07-10" passage="SUBJECT: Detention of Applicants for Admission" /><Cite s="cbp-detention-memo-2025-07-10" passage="subject to mandatory detention under INA" /></p>
+        </SourcedBlock>
+      </section>
+
+      <details class="receipt" data-layer="proof">
+        <summary>The question, the statutes, and one count in the coverage</summary>
+        <p>The question presented reads: whether the cited detention provision mandates detention pending removal proceedings of aliens who, like the respondent, are present in the United States without having been admitted.<Cite s="scotus-question-presented-2026-10-01" passage="Whether 8 U.S.C. 1225(b)(2)(A) mandates the detention pending removal proceedings of aliens who, like respondent, are present in the United States without having been admitted." /></p>
+        <p>The 2024 compilation of the detention section says that if the examining officer determines an alien seeking admission is not clearly and beyond a doubt entitled to be admitted, the alien shall be detained for a removal proceeding. The bond section says the government may release an arrested alien on bond of at least $1,500.<Cite s="uscode-2024-1225" passage="not clearly and beyond a doubt entitled to be admitted, the alien shall be detained" /><Cite s="uscode-2024-1226" passage="bond of at least $1,500" /></p>
+        <p>{computed.daysPetitionToGrant} days from the July 23 petition to the October 1 grant. {computed.daysGuidanceToGrant} days from the July 8 guidance date in the opinion to the grant. {computed.daysCbpMemoToGrant} days from the July 10 Customs guidance to the grant. {computed.daysBoardToGrant} days from the September 5 Board decision to the grant. Counted from those dates.</p>
+        <p>CBS News wrote that the Court would consider whether the administration can detain tens of thousands of immigrants without bond hearings. That count is not in the order, the docket, the appeals opinion, the Board decision, or the Customs memorandum.<Cite s="cbs-detention-grant-2026-10-01" passage="detain tens of thousands of immigrants during their removal proceedings without access to bond hearings" /></p>
+        <p>The Associated Press wrote that the Court agreed on Thursday to review a policy denying bond hearings. The Hill wrote that the Court announced Thursday it will decide the legality of the mandatory detention policy. Both match the October 1 grant.<Cite s="ap-detention-grant-2026-10-01" passage="agreed to review a Trump administration policy denying bond hearings" /><Cite s="hill-detention-grant-2026-10-01" passage="announced Thursday it will decide the legality" /></p>
+      </details>
+
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+    </main>
+  </div>
+</BaseLayout>}

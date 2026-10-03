@@ -1,3 +1,5 @@
+For immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings, the Customs and Border Protection memorandum at data/sources/immigration-detention/cbp-detention-memo-2025-07-10.pdf is a one-page scan. The registry saved the file and returned an empty body. The text sibling is an optical reading of that scan. The Supreme Court docket page's registry text kept only the counsel block; data/sources/immigration-detention/scotus-docket-rhoney-2026-10-02.txt is the proceedings table read from the saved page.
+
 # Admitted sources: FOMC rate events (captured 2026-08-23)
 
 Primary records and official data captured directly from the Federal Reserve and FRED.
@@ -1786,3 +1788,31 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fed-rate/cbo-iran-cost-2026-09-15.txt | 7289 | 236e6beb32558ce0 |
 | data/sources/fed-rate/fed-open-market-operations-2026-09-16.html | 108253 | 4641801146ad4cdf |
 | data/sources/fed-rate/fed-open-market-operations-2026-09-16.txt | 26884 | cb185fd7c880d246 |
+| data/sources/immigration-detention/scotus-order-list-2026-10-01.pdf | 31542 | 731d6482733534f7 |
+| data/sources/immigration-detention/scotus-order-list-2026-10-01.txt | 724 | 6685dd84d702af55 |
+| data/sources/immigration-detention/scotus-granted-noted-2026-10-01.pdf | 118100 | 8c10c57e288a5f03 |
+| data/sources/immigration-detention/scotus-granted-noted-2026-10-01.txt | 6243 | 88586d07364d01c5 |
+| data/sources/immigration-detention/scotus-question-presented-2026-10-01.pdf | 240581 | 7811520f03a70b62 |
+| data/sources/immigration-detention/scotus-question-presented-2026-10-01.txt | 329 | 824b674febf44873 |
+| data/sources/immigration-detention/scotus-docket-rhoney-2026-10-02.html | 18344 | 9d3435e8ad59299c |
+| data/sources/immigration-detention/scotus-docket-rhoney-2026-10-02.txt | 1588 | 7968bd940f9b5119 |
+| data/sources/immigration-detention/ca2-cunha-opinion-2026-04-28.pdf | 524910 | 1725600659548389 |
+| data/sources/immigration-detention/ca2-cunha-opinion-2026-04-28.txt | 113986 | e61a9d1e01993e26 |
+| data/sources/immigration-detention/ca2-cunha-rehearing-2026-09-25.pdf | 155820 | 3c2e800afa4eaa63 |
+| data/sources/immigration-detention/ca2-cunha-rehearing-2026-09-25.txt | 4700 | 55348bd71e90236e |
+| data/sources/immigration-detention/bia-yajure-hurtado-2025-09-05.pdf | 235718 | add183aa9e7afa56 |
+| data/sources/immigration-detention/bia-yajure-hurtado-2025-09-05.txt | 41108 | 28e2a369743cfe3b |
+| data/sources/immigration-detention/cbp-detention-memo-2025-07-10.pdf | 340091 | 162057977aed7cdd |
+| data/sources/immigration-detention/cbp-detention-memo-2025-07-10.txt | 2271 | 0cc96591a4c3142d |
+| data/sources/immigration-detention/cbp-detention-notice-2025-09-18.html | 101104 | 1a1ee682bfca1515 |
+| data/sources/immigration-detention/cbp-detention-notice-2025-09-18.txt | 596 | 12c3d7756ed6992c |
+| data/sources/immigration-detention/uscode-2024-title8-1225.html | 26583 | 97d69291ed9ba272 |
+| data/sources/immigration-detention/uscode-2024-title8-1225.txt | 17954 | 3fdd3d130bd0e65e |
+| data/sources/immigration-detention/uscode-2024-title8-1226.html | 23476 | ce002f86d9be00eb |
+| data/sources/immigration-detention/uscode-2024-title8-1226.txt | 12281 | 866a5f4ce6a65685 |
+| data/sources/coverage/ap-detention-grant-2026-10-01.html | 866966 | 9b756f5ec8d6849f |
+| data/sources/coverage/ap-detention-grant-2026-10-01.txt | 3267 | e872f0bfaff25d13 |
+| data/sources/coverage/cbs-detention-grant-2026-10-01.html | 632976 | 3505fa1f4fc5244b |
+| data/sources/coverage/cbs-detention-grant-2026-10-01.txt | 5388 | 0e3680ab5a32dd6a |
+| data/sources/coverage/hill-detention-grant-2026-10-01.html | 394287 | 497a4370fecff8ab |
+| data/sources/coverage/hill-detention-grant-2026-10-01.txt | 3621 | fc4016ac39a70237 |

@@ -1,0 +1,173 @@
+# Immigration detention, October 1 record build
+
+Turn: one, record only. Candidate: `cand-f00be1e494467007`. Event: `event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings`. Cutoff: 2026-10-03.
+
+## Candidate preflight
+
+The candidate is the October 1, 2026 grant of review. The Associated Press English report, CBS News, and The Hill are that grant and are admitted. PBS NewsHour's politics page carries the same Associated Press story, byline Michael Kunzelman, and is the same lineage, not a second outlet. The PBS NewsHour show wrap is a newscast, not admitted. The Spanish Associated Press item and the Washington Post item in the candidate row were not pinned. Saved bodies that name the same Thursday grant but were not pinned: NBC (`article_1641.md`, "Supreme Court to decide lawfulness of Trump's immigrant detention policy"), Fox (`article_2243.md`, "Supreme Court to scrutinize key pillar of Trump deportation machine"), UPI (`article_1271.md`, "Supreme Court will decide on indefinite immigration detention"), and a Reuters-style report (`article_1919.md`, "US Supreme Court agrees to take up Trump's ICE detention policy"). `article_1895.md` is a September 30 NewsHour episode page, not this grant. An August 28 UPI item is an earlier appeals ruling, not the October 1 grant.
+
+## Step 1 census, one line per search
+
+1. Financing behind packages: not this event. No budget line, contract, or disbursement. Searched the admitted court and agency records; none names funding.
+2. Recipient legal exposure: the respondent is Ricardo Aparecido Barbosa da Cunha. The Second Circuit opinion states the arrest, the habeas case, and the bond release. No separate sanctions or creditor record was searched for him because the event is the grant of review, not his finances.
+3. Predecessor proceedings: admitted. District facts are inside the April 28, 2026 opinion. Rehearing denied September 25, 2026. Board decision September 5, 2025. The district court opinion itself was not pinned.
+4. Executed deal instruments: none. This is not a contract.
+5. Headline-number denominator: the day counts are differences of dates printed on the pins. CBS "tens of thousands" has no denominator in the order, docket, opinion, Board decision, or Customs memorandum, so it is not a figure.
+6. Changed package components: the opinion says that in July 2025 the government changed a long-settled practice and cites guidance dated July 8, 2025. The Customs memorandum says section 235, not section 236, is the detention authority for applicants for admission. No before-and-after valuation workbook.
+7. Announcement state: the October 1 order grants the petitions. It is a grant of review, not a decision on the merits. The October 1 argument list does not set an argument day.
+8. Policy lineage: admitted. July 8, 2025 guidance is cited by the opinion and was not itself found. July 10, 2025 Customs memorandum and the September 18 notice are admitted. The 2024 compilations of the detention section and the bond section are admitted. The Board decision of September 5, 2025 is admitted.
+9. Claimed consequences: CBS, Fox, and the Reuters-style report claim circuit counts and population counts. Those counts are not in the admitted court or agency records. Not used as facts.
+10. Official statistics: no detention-population series was admitted. `capture search "Interim Guidance Regarding Detention Authority"` on 2026-10-03 returned 0 results.
+11. Legal claims: the question presented, the order, the docket, the opinion, the rehearing order, the Board decision, and the two statute sections are admitted. The petition and the brief in opposition are not on the public docket.
+12. Regulated-system harm: no site-specific inspection record. The opinion states one arrest, in Norwood, Massachusetts, on September 26, 2025.
+13. Ground-level actors: counsel on the docket and in the opinion include the American Civil Liberties Union. No separate statement from that organization, or from any other party, was captured.
+14. Company relationships: none.
+15. Market or price reaction: none.
+16. Forecast and count denominators: no forecast. The "nine" circuits and "millions" of people in coverage are not in the admitted primaries.
+17. Repeated-record lineage: PBS politics is the Associated Press report. One lineage.
+18. Uncapturable documents: the petition and the opposition were to be filed on paper only, so they are not on the public docket. The Customs memorandum is a scan; the registry returned an empty body and the text is an optical reading of the saved file. Congress.gov is blocked, so no floor record was fetched.
+19. Forward search: `capture search "bond hearing" --since 2026-09-28` returned only the Associated Press grant story. `capture search "mandatory detention" --since 2026-09-15` returned the PBS wrap, The Hill, CBS, the PBS politics page, and the August 28 UPI appeals item. No later order through the October 3 cutoff.
+19b. Legislature search: congress.gov is blocked. No roll call was admitted. The opinion mentions the Laken Riley Act; that act is not this grant.
+19c. Issuer live pages: the Supreme Court order list, the granted-and-noted list, the question presented, and the docket were captured October 3. The docket page's own date stamp in the saved file is October 2. Customs notice captured the same run.
+19d. Standing doctrine and baseline: the opinion describes thirty years of bond practice and the July 2025 change. The 2024 statute compilations are the standing text. No third-party baseline assessment was admitted.
+20. Browser-visible page: checked by `finish.sh` after the build.
+
+Every-time registry search: `capture search` on 2026-10-03, "Interim Guidance Regarding Detention Authority" (0), "bond hearing" since 2026-09-28 (Associated Press only), "mandatory detention" since 2026-09-15 (five items, listed above), "Barbosa da Cunha" (CourtListener Second Circuit opinion, already held).
+Every-time article-index search: not run as a separate index query. The registry searches above are the coverage universe through the cutoff.
+Every-time issuer listing search: supremecourt.gov order list for October 1, 2026, granted-and-noted list "As of October 1, 2026", and the public docket saved October 2. No argument date on this case's line.
+Every-time next-series search: no detention-population series is cited. The next court date is not printed.
+
+## Admitted records
+
+scotus-order-list-2026-10-01, scotus-question-presented-2026-10-01, scotus-granted-noted-2026-10-01, scotus-docket-rhoney-2026-10-02, ca2-cunha-opinion-2026-04-28, ca2-cunha-rehearing-2026-09-25, bia-yajure-hurtado-2025-09-05, cbp-detention-memo-2025-07-10, cbp-detention-notice-2025-09-18, uscode-2024-1225, uscode-2024-1226, ap-detention-grant-2026-10-01, cbs-detention-grant-2026-10-01, hill-detention-grant-2026-10-01.
+
+## Not admitted this run
+
+- 2026-10-01, PBS NewsHour politics page: captured in the registry and copied locally, then removed. Same Associated Press report.
+- 2026-10-01, PBS NewsHour show wrap: captured, not pinned. A newscast, not a separate document.
+- 2026-10-01, NBC, Fox, UPI, and the Reuters-style report in the candidate's saved bodies: not pinned. They repeat the grant and add circuit and population counts that are not in the court records.
+- 2026-10-01, Spanish Associated Press and Washington Post rows: not fetched beyond the candidate pointer.
+- 2026-08-28, UPI appeals-court item: an earlier ruling, not the October 1 grant.
+- 2025-07-08, ICE interim guidance: registry search returned 0. The date used is the date the opinion prints.
+- Petition and brief in opposition: the docket says paper filing only. Not on the public page.
+- District court opinion: not located as its own file. Facts used are the ones the appeals opinion states.
+- Argument date: the October 1 granted list prints none for this case.
+
+## Primary passage tables
+
+### `scotus-order-list-2026-10-01`: 4 passages
+
+| Passage | Disposition |
+|---|---|
+| THURSDAY, OCTOBER 1, 2026 | Used: grant date, chronology, day counts. |
+| RHONEY, ACTING DIR. V. BARBOSA DA CUNHA, RICARDO A. | Used: the case in the granted group. |
+| The petitions for writs of certiorari are granted. | Used: what the Court did. The sentence covers this case and Marschner, grouped above it. |
+| The petition for a writ of certiorari is granted limited to Question 1 (Missionaries of St. John). | Out of scope: a different case on the same list. |
+
+### `scotus-question-presented-2026-10-01`: 2 passages
+
+| Passage | Disposition |
+|---|---|
+| Whether 8 U.S.C. 1225(b)(2)(A) mandates the detention pending removal proceedings of aliens who, like respondent, are present in the United States without having been admitted. | Used: proof block. The story sentence says the same thing without the section code. |
+| CERT. GRANTED 10/1/2026 | Used: the grant stamp on the question. |
+
+### `scotus-granted-noted-2026-10-01`: 3 passages
+
+| Passage | Disposition |
+|---|---|
+| As of October 1, 2026 | Used: the date of the list. |
+| RHONEY V. BARBOSA DA CUNHA, Court USCA-2, Granted: 10/1/26 | Used: grant date. The next case begins immediately. No argument date on this line. |
+| Other cases' argument dates on the same list | Out of scope: not this case. |
+
+### `scotus-docket-rhoney-2026-10-02`: 8 passages
+
+| Passage | Disposition |
+|---|---|
+| Docketed: July 23, 2026 | Used: petition date and the 70-day count. |
+| Petition for a writ of certiorari filed. Response due August 24, 2026 | Used: the filing. The due date is not a separate fact on the page. |
+| filings should be submitted in paper form only | Used: why the petition and the response are not separate files. |
+| Response filed August 21, 2026; reply September 4; distributed for the September 28 conference | Used: the docket sentence. |
+| Letters of September 14 and September 25 | Held unused: the page does not quote them. They are not the grant. |
+| Petition GRANTED. October 1, 2026 | Used. |
+| After the grant, later filings go through the electronic system | Held unused: a filing instruction, not a new event. |
+| Rule 34.6 and Rule 49.1(c) | Out of scope: filing mechanics. Gap lines L12 and L33. |
+
+### `ca2-cunha-opinion-2026-04-28`: 16 passages
+
+| Passage | Disposition |
+|---|---|
+| Argued: April 6, 2026. Decided: April 28, 2026 | Used: chronology and the 156-day count. |
+| Entered without inspection around 2005, asylum application 2016, work permit | Held unused: biography beyond the arrest and the detention rule. |
+| Arrested September 26, 2025, driving to work in Norwood, Massachusetts | Used. |
+| District court ordered a bond hearing or release within ten days; an immigration judge released him on bond | Used. "ten days" is the gap line and is not a separate page figure. |
+| in July 2025, the government changed that long-settled practice, citing Interim Guidance dated July 8, 2025 | Used. The guidance document itself was not found. |
+| Detention inside the United States after entry without inspection, not taken at the border on entry, follows the bond statute | Used. |
+| we AFFIRM the district court's grant of the writ of habeas corpus | Used. |
+| Judge Cabranes concurs and files a separate opinion | Used. |
+| Fifth Circuit Buenrostro-Mendez and Eighth Circuit Avila agreed with the government | Used. |
+| Executive Branch practice over thirty years | Held unused: the page states the July 2025 change, not the thirty-year count. Gap line. |
+| American Civil Liberties Union and American Immigration Council as counsel and amici | Held unused: names on the brief, no separate statement admitted. |
+| Due Process Clause | Held unused: the holding used is the statutory one. |
+| Laken Riley Act | Out of scope: a 2025 statute the opinion discusses. Not this grant. Gap lines. |
+| two million people, 100,000 people, fifteen months, five months, twenty years, three years, twenty-four hours | Out of scope: estimates and hypotheticals inside the opinion. Not figures on this page. Gap lines. |
+| Code of Federal Regulations cites and case names (Blake, Feliciano, Loper Bright, Bunte Bros., Velasco Lopez) | Out of scope: authorities, not the event. Gap lines. |
+| DktEntry 78.1 | Out of scope: printer mark. |
+
+### `ca2-cunha-rehearing-2026-09-25`: 6 passages
+
+| Passage | Disposition |
+|---|---|
+| Following disposition on April 28, 2026, a poll found no majority for rehearing; rehearing in banc is hereby DENIED | Used. |
+| Bianco and Nathan, joined by Lee, Robinson, Pérez, and Merriam, concur | Used as "joined by four others." |
+| Schwartz, joined by Sullivan, also concurs | Held unused: a second concurrence. The page names the lead concurrence and the dissent. |
+| Menashi, joined as to Parts I and II-E by Park, dissents | Used for the dissent. The partial joinder is not a separate fact. |
+| Cabranes filed a statement | Held unused: not the order. |
+| American Civil Liberties Union, San Francisco, DktEntry 86.1, "United States Court of Appeals" | Out of scope: counsel block and caption. Gap lines. |
+
+### `bia-yajure-hurtado-2025-09-05`: 4 passages
+
+| Passage | Disposition |
+|---|---|
+| Matter of Jonathan Javier Yajure Hurtado, Decided September 5, 2025, Interim Decision #4125 | Used: the date. The interim number is not on the page. |
+| Immigration judges lack authority to hear bond requests or to grant bond to aliens present without admission | Used. |
+| Respondent is a native of Venezuela; the immigration judge's order was April 18, 2025 | Held unused: a different person's case. The holding is what the page uses. |
+| Regulation cites, Laken Riley Act, Jennings, Loper Bright, House Judiciary, 2 years, 3 years, 1 year | Out of scope: the Board's reasoning and another statute. Gap lines. |
+
+### `cbp-detention-memo-2025-07-10`: 4 passages
+
+| Passage | Disposition |
+|---|---|
+| FROM: Rodney S. Scott, Commissioner. SUBJECT: Detention of Applicants for Admission | Used. |
+| DHS determined section 235, not section 236, applies to all applicants for admission | Used in substance: mandatory detention, release only by parole. |
+| may not be released except by parole | Used. |
+| Addressees Sabatino, Banks, Miller, and the misread stamp "JUL 1 0 2025" | Out of scope: the date used is July 10, 2025 from the public notice and the file name, not the misread stamp. Gap line is the title "Executive Assistant Commissioner." |
+
+### `cbp-detention-notice-2025-09-18`: 2 passages
+
+| Passage | Disposition |
+|---|---|
+| Commissioner Rodney S. Scott issued the guidance to all components on July 10, 2025 | Used. |
+| First encounters after failing to present at a port of entry are subject to mandatory detention. The page prints "Effectively immediately." | Used for the detention rule. The typo is not repeated. |
+
+### `uscode-2024-1225`: 3 passages
+
+| Passage | Disposition |
+|---|---|
+| If the examining officer determines an applicant for admission is not clearly and beyond a doubt entitled to be admitted, the alien shall be detained for a removal proceeding | Used: proof block. |
+| Credible-fear detention, 24 hours, 7 days | Out of scope: a different procedure. Gap line. |
+| Effective-date notes, 180 days and 18 months after September 30, 1996 | Out of scope: historical notes, not this policy. Gap lines. |
+
+### `uscode-2024-1226`: 2 passages
+
+| Passage | Disposition |
+|---|---|
+| Release on bond of at least $1,500 | Used: proof block. |
+| One-year imprisonment clause and the 1996 appropriation of $3,400,000 | Out of scope: other subsections. Gap lines. |
+
+## Gap list (`pin_gaps.mjs`)
+
+Run after the draft: 58 lines. Order list, granted list, question presented, and the Customs notice: 0. Every printed line is in the passage tables above as held unused or out of scope. None of those numbers is a figure on the page.
+
+## What could not be admitted and why
+
+The petition and the brief in opposition are not on the public docket because the docket itself says filings were paper only. The July 8, 2025 immigration guidance is cited by the appeals opinion and was not in the registry. The district court opinion was not pinned; the arrest and the bond order are taken from the appeals opinion. The argument date is not on the October 1 list. Congress.gov did not yield a floor record. No detention-population series was admitted, so the coverage counts stay in the proof note and not in the figures.

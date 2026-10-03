@@ -16,11 +16,12 @@ import { event as edSheeranTour } from '../data/ed-sheeran-tour-2026-09-14-mackl
 import { event as canadaTariffs } from '../data/canadatariffs202609.mjs';
 import { event as spaceWeapons } from '../data/spaceweapons202609.mjs';
 import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs';
+import { event as immigrationDetention } from '../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, immigrationDetention].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -36,6 +37,7 @@ export const series = [
   { path: '/events/iran-war/', title: 'Iran war cost', topic: 'Congress', keywords: 'Iran war CBO Congressional Budget Office Epic Fury Boyle Hegseth munitions inflation', description: 'CBO\'s September 15 letter puts the Pentagon\'s incremental cost of the Iran war at $38.1 billion through August 1. Another month would add $2 billion or $3 billion.' },
   { path: '/events/kennedy-center/', title: 'Kennedy Center', topic: 'Courts', keywords: 'Kennedy Center demolition renovation Cooper Beatty preservation court', description: 'The court record behind the September 17 advance-notice order for covered changes to the Kennedy Center project plans.' },
   { path: '/events/ed-sheeran-tour/', title: "Ed Sheeran's Loop Tour", topic: 'Music', keywords: 'Ed Sheeran Macklemore Loop Tour Finneas Aaron Rowe Lukas Graham Beoga', description: "Macklemore's removal from the 2026 Loop Tour lineup, the supporting acts who withdrew, and the remaining North American schedule." },
+  { path: '/events/immigration-detention/', title: 'Immigration detention', topic: 'Courts', keywords: 'immigration detention bond hearing Supreme Court mandatory detention', description: 'On October 1, 2026, the Supreme Court agreed to review the administration policy of holding immigrants without a bond hearing.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();
