@@ -100,24 +100,23 @@ export const priceRows = [
 
 export const changeRows = [
   ["Diesel, week", prices.dieselWeekChange, "dollars per gallon"],
-  ["Diesel, from Mar 2", prices.dieselFromMarch, "dollars per gallon"],
-  ["Diesel, from Mar 2, in percent", prices.dieselFromMarchPercent, "percent"],
+  ["Diesel, dollars from Mar 2", prices.dieselFromMarch, "dollars per gallon"],
+  ["Diesel, percent from Mar 2", prices.dieselFromMarchPercent, "percent"],
   ["Brent, from Feb 27", prices.brentFromFebruary, "dollars per barrel"],
   ["WTI, from Feb 27", prices.wtiFromFebruary, "dollars per barrel"],
 ];
 
 export const statementRows = [
-  ["United Kingdom publication of the joint statement", "100 million barrels over 4 months, diesel frontloaded in the first 20 days"],
+  ["United Kingdom publication of the joint statement", "100 million barrels over 4 months, a substantial diesel release in the first 20 days"],
   ["Elysee readout of the same meeting", "jusqu'à 100 millions de barils sous 4 mois, diesel and crude"],
 ];
 
 export const chronology = [
-  { date: "Mar 11", title: "Up to 400 million barrels", sub: "G7 leaders welcome an IEA release. The Energy Department says the United States will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
-  { date: "Mar 19", title: "IEA confirms the March action", sub: "The contributions page says the overall release is largely crude and Europe's share is primarily refined products.", current: false },
-  { date: "Sep 16", title: "Two diesel-export bills introduced", sub: "Both were referred to the Committee on Foreign Affairs.", current: false },
-  { date: "Sep 29", title: "Energy Department request for an exchange of up to 40 million barrels", sub: "The department says earlier exchanges awarded more than 133 million barrels and that several European countries had released only a fraction.", current: false },
-  { date: "Oct 1", title: "Treasury Secretary Scott Bessent asks Europe for more supply", sub: "The Treasury secretary says European partners should make additional supplies immediately available.", current: false },
-  { date: "Oct 2", title: "100 million barrels over 4 months", sub: "The joint statement takes into account commitments already fulfilled, with the release to begin immediately, and calls the diesel share substantial in the first 20 days.", current: true },
+  { date: "Mar 11", title: "400 million barrels pledged", sub: "International Energy Agency members pledge a release. The United States says it will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
+  { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "Participating companies return the borrowed barrels later with extra barrels. This continues the March release. Several European countries had released only a fraction of the crude and products they pledged.", current: false },
+  { date: "Sep 30", title: "A diesel export ban still under discussion", sub: "President Trump said he was thinking about banning diesel exports.", current: false },
+  { date: "Oct 1", title: "Bessent asks Europe to move existing commitments", sub: "He says American farmers, truckers, and businesses should not carry the diesel shortage.", current: false },
+  { date: "Oct 2", title: "100 million barrels over four months", sub: "The statement takes fulfilled commitments into account, includes a substantial diesel release in the first 20 days, and gives no number for the diesel. Trump says he will not authorize an export ban.", current: true },
 ];
 
 export const event = {
@@ -130,7 +129,7 @@ export const event = {
   kpis: [
     { value: "100", unit: "million barrels", label: "coordinated release beginning immediately" },
     { value: "4", unit: "months", label: "the period named for that release" },
-    { value: "20", unit: "days", label: "window for the frontloaded diesel release" },
+    { value: "20", unit: "days", label: "days named for the diesel release" },
     { value: "400", unit: "million barrels", label: "March coordinated release" },
   ],
   visual: {
@@ -140,7 +139,7 @@ export const event = {
       { date: "Mar 11", title: "Coordinated release of 400 million barrels" },
       { date: "Sep 29", title: "Exchange of up to 40 million barrels" },
       { date: "Oct 1", title: "Bessent asks Europe for more supply" },
-      { date: "Oct 2", title: "100 million barrels, counting commitments already fulfilled", current: true },
+      { date: "Oct 2", title: "100 million barrels, taking fulfilled commitments into account", current: true },
     ],
     note: "G7 statement, Energy Department, Treasury secretary",
   },

@@ -1,0 +1,3 @@
+**Critical · new.** In “Figures and source passages,” the [built page](/Volumes/4/GitHub/the-catch-site-wt-fuel/dist/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/index.html) labels a row “Coordinated release beginning immediately,” then says: “This record does not yet establish one current value.” The pinned [G7 statement](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt:5) specifies “a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months.” The announced figure is established; the amount delivered so far, diesel share, and amount beyond March are unresolved.
+
+VERDICT: NO-SHIP

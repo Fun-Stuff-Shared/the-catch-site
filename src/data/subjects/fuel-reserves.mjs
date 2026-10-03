@@ -1,6 +1,6 @@
 export const subject = {
   title: "Fuel reserves",
-  dek: "The diesel share is called substantial and placed in the first 20 days, with no number. France's readout says up to 100 million barrels of diesel and crude.",
+  dek: "The statement promises a substantial diesel release in the first 20 days and gives no number for it. France's readout says up to 100 million barrels of diesel and crude.",
   current: [
     {
       label: "October 2 coordinated release",
@@ -23,7 +23,7 @@ export const subject = {
       source_sentence: "100 million barrels (MB) to begin immediately over 4 months",
     },
     {
-      label: "Frontloaded diesel window",
+      label: "Diesel release in the first 20 days",
       value: "20",
       unit: "days",
       as_of: "2026-10-02",
