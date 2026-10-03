@@ -7,7 +7,8 @@
 // A record the list asks the author to admit is not pinned yet: save its text to a scratch
 // file and pass it as an extra file, so its quotes are checked against the bytes too.
 // A quotation with an elision ("...") is checked as its parts; a closing full stop or comma
-// inside the marks is not part of the span.
+// inside the marks is not part of the span. Letter case is not compared: a span that opens a sentence in
+// the list is the same words.
 // The lines outside the numbered items (an opening note, a closing one) are checked the same way.
 // Exit 1 when a quoted span, of any length, is found nowhere.
 import fs from "node:fs";
@@ -46,6 +47,8 @@ for (const p of extras) {
   corpora.push({ where: `the file ${path.basename(p)}`, record: true, text: fold(text) });
 }
 
+for (const c of corpora) c.lower = c.text.toLowerCase();
+
 const list = read(listPath);
 if (list === null) { console.error(`cannot read ${listPath}`); process.exit(2); }
 const items = [];
@@ -65,7 +68,8 @@ for (const item of [...(outside.trim() ? [{ n: null, text: outside }] : []), ...
     .flatMap((m) => m[1].split(/\.\.\.|…/)).map((part) => part.trim().replace(/[.,;:]+$/, "")).filter(Boolean);
   const lines = []; let fromRecord = 0;
   for (const span of spans) {
-    const hit = corpora.find((c) => c.record && c.text.includes(span)) ?? corpora.find((c) => c.text.includes(span));
+    const low = span.toLowerCase();
+    const hit = corpora.find((c) => c.record && c.lower.includes(low)) ?? corpora.find((c) => c.lower.includes(low));
     if (!hit) { missing++; lines.push(`  NOT FOUND  "${span}"`); continue; }
     if (hit.record) fromRecord++;
     lines.push(`  ${hit.where}: "${span.length > 90 ? span.slice(0, 87) + "..." : span}"`);
