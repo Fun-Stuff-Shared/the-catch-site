@@ -21,19 +21,16 @@ export const computed = {
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
   title: "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
-  dek: "The Court's October 1 order takes the case and decides nothing yet. For about thirty years, people arrested inside the country who had entered without inspection and had not been admitted or paroled could ask an immigration judge for release on bond, unless they were apprehended while entering or shortly afterward or held on a criminal or terrorism ground. Since July 2025 the government has said they must be held, and the appeals courts have split.",
+  dek: "The Court's October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
   updated: "2026-10-03",
-  kpis: [
-    { value: String(computed.bondPracticeYears), unit: "years", label: "Practice of letting these detainees ask for bond, by the Second Circuit" },
-    { value: String(computed.daysOpinionToGrant), unit: "days", label: "From the Second Circuit's April 28 decision to the grant" },
-  ],
+  kpis: [],
   visual: {
     kind: "timeline",
     title: "From the detention guidance to review",
     entries: [
-      { date: "July 8, 2025", title: "Detention guidance" },
+      { date: "July 10, 2025", title: "Customs memorandum" },
       { date: "Sept. 5, 2025", title: "Board decision" },
       { date: "Apr. 28, 2026", title: "Appeals court affirms" },
       { date: "Oct. 1, 2026", title: "Review granted", current: true },
@@ -44,7 +41,6 @@ export const event = {
 export const chronology = {
   rows: [
     ["March 6, 1997", "A Federal Register rule says people present without admission will be eligible for bond and bond redetermination."],
-    ["July 8, 2025", "The appeals opinion cites immigration enforcement guidance on detention of applicants for admission."],
     ["July 10, 2025", "Customs and Border Protection says its commissioner issued detention guidance to every component."],
     ["Sept. 5, 2025", "The Board of Immigration Appeals decides judges lack authority to grant bond in this situation."],
     ["Sept. 26, 2025", "Officers arrested the man in this case while he was driving to work."],

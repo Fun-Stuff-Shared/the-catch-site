@@ -233,6 +233,7 @@ Census, one line each.
 | Passage | Disposition |
 |---|---|
 | Although I agree with the analysis in the dissent, I support the decision to deny rehearing en banc. | Used: Schwartz. |
+| My mere substantive disagreement with the panel opinion does not warrant the time and effort of full court rehearing. | Used: why he voted against rehearing. |
 | the nine circuits and hundreds of district courts | Held unused. A different count from the Fourth Circuit's, and not a census of people detained. |
 
 ### `scotus-docket-lopez-campos-2026-10-03`
@@ -240,7 +241,7 @@ Census, one line each.
 | Passage | Disposition |
 |---|---|
 | United States Court of Appeals for the Sixth Circuit | Used: where the other petition comes from. |
-| DISTRIBUTED for Conference of 9/28/2026. | Used: it was before the Court. The proceedings do not list a grant. |
+| DISTRIBUTED for Conference of 9/28/2026. | Cut from the story. The saved proceedings do not list a grant, and that is the sentence. |
 | Brief of respondents in opposition filed. | Out of scope: that brief is Lopez-Campos's, not the response in this case. |
 
 ### `scotus-docket-buenrostro-2026-10-03`
@@ -248,5 +249,27 @@ Census, one line each.
 | Passage | Disposition |
 |---|---|
 | United States Court of Appeals for the Fifth Circuit | Used: where the other petition comes from. |
-| DISTRIBUTED for Conference of 9/28/2026. | Used: it was before the Court. |
-| Rescheduled. | Used: the saved page shows a reschedule and does not list a grant. |
+| DISTRIBUTED for Conference of 9/28/2026. | Cut from the story. The saved proceedings do not list a grant, and that is the sentence. |
+| Rescheduled. | Cut from the story with the conference line. |
+
+## Closing memo, October 3
+
+No correction on this list. Each line is the decision and what it displaced.
+
+1. Dek practice sentence. Taken differently: cut from the dek, not shortened. The qualified thirty-year practice stays once, in the dated sequence. The dek's remaining sentence names who the government says must be held.
+2. Thirty-year tile. Taken. The label read as if the Second Circuit had run the practice. The sequence still gives the court's account of the duration.
+3. Opening exceptions. Taken. Crewman, stowaway, earlier-provision, and contiguous-territory return are out of the opening, with the page's "called here." The opening now says the detention statute deems a person present who has not been admitted an applicant for admission.
+4. Arrest sentence. Taken. Arrest, denied hearing, court order, and release are separate sentences. No second account of the sequence.
+5. Closing grant sentence. Taken. The lead already states the October 1 grant. The sequence ends at the April 28 ruling.
+6. Split interruption. Taken differently. The Second Circuit's narrower holding stays in the mechanism paragraph and is cut here. The page does not say nine. It gives the Fourth Circuit's list of eight and says that court joined them, then the Fifth and the Eighth.
+7. Catch heading. Taken. The heading is "CBS's tens of thousands," so the number is the outlet's before the paragraph.
+8. Two quantities. Taken differently. The "among thousands" clause is out. The paragraph keeps one correction: over twenty thousand individual cases, which counts cases, not people.
+9. July 8 timeline row. Taken. A later opinion's citation is not the dated change. The 156-day tile and the caption's day count are out with it; elapsed days do not explain the grant. The proof block still counts the other printed intervals.
+10. Executive Branch aside. Taken. The thirty-year account stays in the sequence. This paragraph goes from the 1997 rule to the rehearing.
+11. Schwartz. Taken, with hole 3. He agreed with the dissent and voted against rehearing because mere substantive disagreement does not warrant full-court rehearing.
+12. September 28 conference. Taken. The unknowns paragraph keeps the grant's limit, the due-process question, and that the other two petitions had not been granted or denied as of October 3.
+
+Hole 1. Taken, with edits 7 and 8. The question presented and the Fourth Circuit do not count people now detained. The page says no court or agency record gives a precise count, and it does not supply one.
+Hole 2. Taken, with edit 3. One sentence connects the statutory label to presence inside the country. The Second Circuit's applicant-but-not-seeking-admission holding stays where he has already been named.
+Hole 3. Taken, with edits 10 and 11. His reason replaces the institutional aside.
+Hole 4. Left. The April opinion says an immigration judge released him on bond. No later record checked for this page establishes whether he is still on bond, and the page does not say that he is or that he is not.

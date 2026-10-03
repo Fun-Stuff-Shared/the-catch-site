@@ -18,7 +18,7 @@ A stranger arrives from a headline that the Supreme Court will weigh the adminis
 
 The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing
 
-Dek: The Court's October 1 order takes the case and decides nothing yet. For about thirty years, people arrested inside the country who had entered without inspection and had not been admitted or paroled could ask an immigration judge for release on bond, unless they were apprehended while entering or shortly afterward or held on a criminal or terrorism ground. Since July 2025 the government has said they must be held, and the appeals courts have split.
+Dek: The Court's October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.
 
 ## Grades
 
@@ -81,6 +81,7 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `cbp-detention-notice-2025-09-18` | "on July 10, 2025" Scott issued the guidance to all components. | C | 5, carried by `cbp-detention-memo-2025-07-10` |
 | `cbp-detention-notice-2025-09-18` | "for the first time after failing to lawfully present for inspection at a U.S. port of entry" The notice's mandatory-detention line. The page's "Effectively immediately" is the notice's own typo and is not repeated. | B | 3, the public notice describes a missed port of entry, not this arrest |
 | `uscode-2024-1225` | "in the case of an alien who is an applicant for admission, if the examining immigration officer determines that an alien seeking admission is not clearly and beyond a doubt entitled to be admitted, the alien shall be detained" | A | 4, the statute uses both phrases and then says the alien shall be detained |
+| `uscode-2024-1225` | "An alien present in the United States who has not been admitted" "shall be deemed for purposes of this chapter an applicant for admission." A person inside the country who was not admitted carries the label. | B | 4, the label attaches to presence inside the country |
 | `uscode-2024-1225` | Credible-fear detention, 24 hours, 7 days. A different procedure. | D | none |
 | `uscode-2024-1225` | Effective-date notes, 180 days and 18 months after September 30, 1996. | D | none |
 | `uscode-2024-1226` | "may release the alien on" Bond of at least $1,500 is the minimum inside the same subsection. | A | 4, the bond statute authorizes release and does not require it |
@@ -184,11 +185,14 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `audit-gap-26-104-response-reply` | Unmet 2026-10-03. The October 2 docket lists the August 21 response and the September 4 reply and does not link either file. A registry search for Barbosa da Cunha returned no brief. The Justice Department file admitted that day is the petition. | C | 6, the briefs filed with the Court are not in the admitted record |
 | `audit-gap-ca2-enbanc-complete` | Admitted as ca2-cunha-enbanc-2026-09-25. | C | 5, carried by `ca2-cunha-enbanc-2026-09-25` |
 | `ca2-cunha-enbanc-2026-09-25` | "Although I agree with the analysis in the dissent, I support the decision to deny rehearing en banc." Judge Schwartz. | B | 5, a judge who voted against rehearing still agreed with the dissent's analysis |
+| `ca2-cunha-enbanc-2026-09-25` | "My “[m]ere substantive disagreement” with the panel opinion does not warrant the time and effort of full court rehearing." His reason for voting against rehearing. | B | 5, disagreement with the panel was not a reason to rehear |
 | `ca2-cunha-enbanc-2026-09-25` | "The government and Judge Menashi in his dissent from the denial of rehearing en banc argue that Section 1225 applies and that Petitioner must be detained without a bond hearing." What that dissent argued. | B | 5, the dissent argued for detention without a bond hearing |
 | `audit-gap-ca5-buenrostro` | Fifth Circuit opinion. The audit says it accepted the government's reading. The Second Circuit pin already says that. Not graded C for being unpinned. | D | none |
 | `audit-gap-scotus-25-1415-26-43` | Admitted as scotus-docket-lopez-campos-2026-10-03 and scotus-docket-buenrostro-2026-10-03. Neither saved docket lists a grant. | C | 6, carried by `scotus-docket-lopez-campos-2026-10-03` |
-| `scotus-docket-lopez-campos-2026-10-03` | "United States Court of Appeals for the Sixth Circuit" "DISTRIBUTED for Conference of 9/28/2026." The saved proceedings list that conference and do not list a grant. | B | 6, another petition on the question comes from the Sixth Circuit |
-| `scotus-docket-buenrostro-2026-10-03` | "United States Court of Appeals for the Fifth Circuit" "Rescheduled." "DISTRIBUTED for Conference of 9/28/2026." The saved proceedings list that conference, a reschedule, and do not list a grant. | B | 6, another petition on the question comes from the Fifth Circuit |
+| `scotus-docket-lopez-campos-2026-10-03` | "United States Court of Appeals for the Sixth Circuit" The saved proceedings do not list a grant. | B | 6, another petition on the question comes from the Sixth Circuit |
+| `scotus-docket-lopez-campos-2026-10-03` | "DISTRIBUTED for Conference of 9/28/2026." "Motion to extend the time to file a response is granted and the time is extended to and including August 24, 2026." The closing cut removed the conference mechanics from the story. | C | 6, the unanswered status is the sentence |
+| `scotus-docket-buenrostro-2026-10-03` | "United States Court of Appeals for the Fifth Circuit" The saved proceedings do not list a grant. | B | 6, another petition on the question comes from the Fifth Circuit |
+| `scotus-docket-buenrostro-2026-10-03` | "Rescheduled." "DISTRIBUTED for Conference of 9/28/2026." The closing cut removed the conference mechanics from the story. | C | 6, the unanswered status is the sentence |
 | `audit-gap-detention-denominator` | Unmet 2026-10-03. A registry search for an ICE detention series returned nothing. Public totals of all detainees do not separate people held under this reading. Nothing admitted. CBS and the Fourth Circuit case count stay unsubstituted. | C | 3, no admitted count of people detained stands in for the headline number |
 
 ### Other record-audit findings
