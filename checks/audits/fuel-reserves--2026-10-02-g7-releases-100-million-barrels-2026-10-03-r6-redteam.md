@@ -1,0 +1,5 @@
+**Minor · new | The Russian export-ban instrument is unpinned.** Page bytes: “Interfax reported on September 30 that the Russian government extended the ban on exports of diesel fuel for producers until October 31.” [Built page](/Volumes/4/GitHub/the-catch-site-wt-fuel/dist/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/index.html); [pinned Interfax text](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/interfax-diesel-ban-2026-09-30.txt:3). The available [Russian government decree No. 1252](https://www.consultant.ru/document/cons_doc_LAW_545548/) says: “в пункте 5 слова "по 30 сентября 2026 г." заменить словами "по 31 октября 2026 г."” The page attributes Interfax accurately, but the decree it reports is absent from the manifest. The decree extends the producer restriction through October 31.
+
+No verified Critical or Major finding remains on this read.
+
+VERDICT: SHIP
