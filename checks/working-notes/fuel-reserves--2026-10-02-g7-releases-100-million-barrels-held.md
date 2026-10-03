@@ -8,3 +8,5 @@ Held by the reviewer on 2026-10-03; a reader should not report these again.
 - Germany's reserve is given in tonnes. That is the unit of the German record, and no record read converts it to barrels.
 - The industry letter of September 23 and Ohio's fuel tax law are not among the records (red team round 2, both Minor). The page attributes each to the report that carries it, and each attribution is accurate.
 - The "4 months" figure at the top (editor round 2, Minor cut). It is one of the story's recorded figures and stays with the others.
+- The saved diesel, Brent and WTI series files hold dates and values and do not print their units (entailment round 5, two Moderate). The units are those of the named public series (dollars a gallon for weekly U.S. retail diesel, dollars a barrel for Brent and WTI); the values and the arithmetic are supported.
+- The page gives the March-to-October change in the third paragraph and the chronology, where the editor would have one sentence carry it (residual from every round). Rounds 1 and 2 rewrote that paragraph; it rests as it stands.
