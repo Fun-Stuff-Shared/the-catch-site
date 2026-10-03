@@ -68,7 +68,7 @@ one line each, so the story turn writes from a list rather than a search.
 6. What is unresolved, as of the newest dated record?
 7. The next three to five questions a curious stranger asks, in the order they ask them.
 
-Answer 7 is the page's order. What happened answers 1, 4 and 5. The catch answers 3 when a
+Answer 7 is the page's order. What happened answers 1, 4 and 5. The Catch answers 3 when a
 record contradicts the wrong reading. The remaining sections come from the questions in 7,
 one section per question that takes more than two paragraphs to answer, named for the
 question when no standard section fits; a question answered in one or two paragraphs is

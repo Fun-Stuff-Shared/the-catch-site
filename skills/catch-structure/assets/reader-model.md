@@ -31,7 +31,7 @@ Dek: <the two facts a stranger needs to read on.>
 | Section | Question it answers (from answer 7, or 1, 3, 4, 5 for the core) |
 |---|---|
 | What happened | 1, 4, 5 |
-| <The catch, when a record contradicts the wrong reading> | 3 |
+| <The Catch, when a record contradicts the wrong reading> | 3 |
 | <optional section, named for its concept when no standard section fits> | <question> |
 | What happened next | dated additions, when there are any |
 | What we do not know yet | 6, only after the disproof search; absent when empty |
