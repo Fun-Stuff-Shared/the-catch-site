@@ -161,15 +161,14 @@ the name that file imports the module under), because a worktree holds one story
 (the subject's data module is yours to refresh, so it is committed whole). The story view of this build is headline, dek, KPI strip, figures, chronology
 and the records list, with no narrative paragraph yet.
 
-This is where turn one ends (`skills/catch-record/references/story.md`, "The three turns"). Its report is the
+This is where turn one ends (`skills/catch-event-page/references/story.md`, "The three turns"). Its report is the
 working note: the census lines, the passage tables, the gap dispositions, what could not
 be admitted and why. The story is written by a fresh session that did not build the record.
 Between the turns the completeness audit runs once, on this commit, against the record
 and the working note; its file is `checks/audits/<subject>--<story>-<date>-record-audit.md`.
 It runs here, before a narrative sentence exists, because it hunts outside the frame (what
-came before, after and around the event) and every round it runs after the story is
-written finds a different frame: on the Kennedy Center trial it returned seven to ten
-Majors three rounds running with no item repeated. Its findings are passages for the
+came before, after and around the event) and every time it runs it finds a different
+frame. Its findings are passages for the
 structure turn to grade, and it does not run again on this story.
 
 ## Language rules (hard, enforced by the gate)

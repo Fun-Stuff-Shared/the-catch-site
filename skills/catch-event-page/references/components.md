@@ -5,7 +5,7 @@
 record / their words / computed / official data / single outlet / reported pricing /
 one source / checks out / consistent / mislabeled / unconfirmed / not in the record.
 
-`not in the record` (decided 2026-09-18): the outlet's claim has no pinned support and no
+`not in the record`: the outlet's claim has no pinned support and no
 pinned contradiction; the row names the search. `mislabeled` and `wrong` need a quoted
 record that says otherwise.
 

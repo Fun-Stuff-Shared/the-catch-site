@@ -100,8 +100,8 @@ and does not stand in for it. `story_budget.mjs` refuses a page where an answer 
 marked paragraph in the story view. The mark is your claim, and a script cannot tell whether
 the paragraph says the answer: `story_budget.mjs ... --answers` prints each answer beside
 its marked paragraph, you read that list before you commit, and the reviewer reads the same
-list and reports a paragraph that only wears the label. Five stranger reads of the press-ban page asked for the
-same missing sentence, and each patch answered with another fact.
+list and reports a paragraph that only wears the label. A stranger who asks for a missing sentence
+is not answered by another fact.
 
 ## Step 6. Manifest, build, lints, interrogation, self-check
 
@@ -182,9 +182,9 @@ and sends the sentences the story view did not show then, or showed in another o
 
 Every item is fixed in the sentence (name the thing, give the role, say what the rule does
 in this story) or the sentence is cut; then build and run it again with the same `--since`
-until it returns CLEAR, and commit its verdict file with the page. Every round of the
-press-ban loop that added or split sentences left a bare demonstrative behind ("this
-initial decision", "That kind of release"), and the stranger found each one a round later.
+until it returns CLEAR, and commit its verdict file with the page. A sentence added or
+split in a patch is where a bare demonstrative appears ("this initial decision", "That
+kind of release").
 
 ## Step 7. Commit and report
 
@@ -208,44 +208,46 @@ files in the repo.
 
 ## After you commit: what happens to the page
 
-Four reads run on your story commit, in parallel: an editor reads the page cold, then
-against the reader model and the record as it stands that day, and writes one memo in
-page order (whether each of answers 1 to 6 has a sentence a reader could repeat, what to
-cut, what to fix, what a reader still asks, and the words each addition costs; an A or B
-passage the story view lacks is a Major, and so is a C or D passage the editor shows
-changes one of the answers; any other omitted C is Minor and any other omitted D is not a
-finding), a red team checks
-every sentence against its record and the authority of the records, a codex pass judges every cited sentence against its
-passage, and a stranger read (a Claude reader that has never seen the project, given the
-page as the story view reads it and the reader model) reports where it misread, stalled,
-or saw the page talking to itself. The completeness audit does not run again: it ran on the record commit and its
-findings are already in your reader model. The reviewer verifies the findings at the
-bytes, refutes what the pins refute, and sends you the rest as one numbered patch list;
-every numbered finding gets a ledger line (patched, held with reason, out of scope with
-reason). A patch changes only what the items name. Every regenerated sentence is a new
-sentence: run the entailment check and the referent check with `--since` the commit the
-patch started from and fix what they find before you return, and run the lints again. A
-patch that adds a clause says in its ledger line what the clause displaces (the words cut
-to make room, or why none), and the report gives the page's word count before and after
-(`python3 skills/catch-event-page/scripts/voice_lint.py --lengths <built page>`); four patch rounds on the press-ban page added 1,000 words
-before one item asked for a cut. Fix each item's class across
-the whole page, not only the named line, and report the sibling count per class.
+You are the journalist who wrote this story, and the page is yours. Two reads run on your
+story commit, in parallel: a record check (a model that did not write the page judges
+every block against the passages it cites, then against the page's other records and
+anything published since) and a stranger read (a Claude reader that has never seen the
+project, given the page as the story view reads it and the reader model, reporting where
+it misread, stalled, or saw the page talking to itself). The completeness audit does not
+run again: it ran on the record commit and its findings are already in your reader model.
+The reviewer verifies the findings at the bytes, refutes what the pins refute, and sends
+you the rest as one patch list in two parts.
 
-After your patch the reviewer reads the patched page, reruns the reads on it, and either
-sends the next numbered list or decides on the page as it stands: cut the sentence, hold
-the item with its reason on the ledger, or kill the story. Rounds are not capped; the round
-after the first report with no new Critical or Major finding is the last. Two stories took
-thirteen and seventeen rounds when every round wrote new sentences that no one read as a
-stranger before the commit; the referent check and the word count above are what make a
-round the last one. At every round the reviewer re-runs the capture search on the story
-terms dated on or after the record turn, and a record that moved the event since (a ruling,
-a filing) is on the next list with its pin.
+Corrections are sentences the records do not support. Fix each one, or show the record
+that supports the sentence as written. Everything else is advice, from readers who each
+see one side of the page: take it, take it differently, or decline it. You balance what
+the readers need against each other and against the story; a page that tries to satisfy
+every reader satisfies none. Report each item in one line: taken, taken differently (say
+how), or declined (say why). Each also gets a ledger line.
+
+Every regenerated sentence is a new sentence: run the entailment check and the referent
+check with `--since` the commit the patch started from and fix what they find before you
+return, and run the lints again. A patch that adds a clause says in its ledger line what
+the clause displaces (the words cut to make room, or why none), and the report gives the
+page's word count before and after
+(`python3 skills/catch-event-page/scripts/voice_lint.py --lengths <built page>`). Fix each
+correction's class across the whole page, not only the named line, and report the sibling
+count per class.
+
+After your patch the record check runs on the blocks you changed, and the reviewer either
+sends the next list or decides on the page as it stands: cut the sentence, hold the item
+with its reason on the ledger, or kill the story. At every round the reviewer re-runs the
+capture search on the story terms dated on or after the record turn, and a record that
+moved the event since (a ruling, a filing) is on the next list with its pin. When the
+record check passes, the stranger reads the page again and an editor reads it last, with
+the stranger's report in hand, and writes one memo in page order: whether each of answers
+1 to 6 has a sentence a reader could repeat, what to cut, what to fix, what a reader still
+asks, and the words each addition costs. That memo is your last list.
 
 The lints and scripts under `skills/` change for a defect a real page demonstrates, and
 for nothing else. A reviewer's finding built from a constructed input (a malformed table
 row nobody wrote, a Cite inside a script tag) is recorded as an open item with the
-input that would trigger it; it is fixed the day a page under review hits it. Eight
-review rounds on skills 3.5 fixed eight classes, three of which any page had ever hit.
+input that would trigger it; it is fixed the day a page under review hits it.
 
 ## Language rules (hard, enforced by the gate)
 
@@ -261,7 +263,7 @@ review rounds on skills 3.5 fixed eight classes, three of which any page had eve
 - No text jammed against an inline tag (`<em>under</em>counting`); keep the space on the
   same source line.
 - Verdict words are plain: "checks out", "mislabeled", "wrong". Chips are the closed set in
-  `references/sections.md`; one chip per claim class across the cards, and an
+  `references/components.md`; one chip per claim class across the cards, and an
   inference from the record is never graded wrong.
 - No process words in story prose: pins, carrier, so-what, "Why it matters:", disproof
   searches, "USD billions", "pp", docket numbers used as nouns. Proof-register content

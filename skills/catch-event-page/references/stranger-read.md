@@ -1,7 +1,8 @@
 # The stranger read
 
-One Claude reader per read, launched by the reviewer on the story commit alongside the red
-team and the entailment check, and again on every patched commit. It is the only step in
+One Claude reader per read, launched on the story commit alongside the record check, and
+again at the close on the page as it then stands, before the editor's read, which is given
+its report. It is the only step in
 the pipeline that runs on Claude; the audits stay on codex.
 
 Words used below: the page carries three layers of text, marked in its source as `fact`
@@ -60,5 +61,4 @@ author's edit is rebuilding it: wait for the commit and run it again.
 
 The reviewer checks each quoted sentence against the page source. A sentence the report
 quotes that is not in `-stranger-page.txt` was invented and is dropped. The rest go into
-the numbered patch list with the editor's and the red team's findings, on the first read and on every
-reread of a patched page.
+the patch list as advice on the first read; at the close the editor's read weighs each one.
