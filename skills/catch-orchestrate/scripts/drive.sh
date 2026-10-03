@@ -127,9 +127,10 @@ stage() {
 
 ensure_staged() {
   local file="$wt/.finish-stage.json" verdict="$(staged)"
-  if [ -z "$verdict" ]; then
-    say "the story's records are not in the state (the finish step staged nothing readable); staging them now"
-    local m="stage-$(date -u +%H%M%S)"
+  if [ "$verdict" != ok ]; then
+    say "the story's records are not staged clean (result: ${verdict:-none readable}); staging them now"
+    hold stage
+    local m="stage-$(date -u +%Y%m%dT%H%M%S)"
     ( step "$m" "$out/$m.log" stage ) || exit 1
     verdict="$(staged)"
     [ -n "$verdict" ] || stop "state staging ran and left no readable result in $file, see $out/$m.log"
