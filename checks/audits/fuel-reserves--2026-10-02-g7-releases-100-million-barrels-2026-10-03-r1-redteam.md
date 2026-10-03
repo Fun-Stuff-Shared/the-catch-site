@@ -1,0 +1,3 @@
+**Minor · new: The early diesel window is credited to an outlet instead of the pinned primary.** The [built page](/Volumes/4/GitHub/the-catch-site-wt-fuel/dist/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/index.html) says, “It noted that there would be a ‘substantial diesel release within the first 20 days,’” and labels the source “NBC News.” The pinned [G7 statement](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt:5) itself says “a frontloaded substantial diesel release within the first 20 days by G7 members and partners.” Credit the G7 statement for this commitment; NBC is not an independent record of it.
+
+VERDICT: SHIP

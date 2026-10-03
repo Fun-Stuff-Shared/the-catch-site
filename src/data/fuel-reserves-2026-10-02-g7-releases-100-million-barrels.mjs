@@ -114,8 +114,8 @@ export const statementRows = [
 export const chronology = [
   { date: "Mar 11", title: "Up to 400 million barrels", sub: "G7 leaders welcome an IEA release. The Energy Department says the United States will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
   { date: "Mar 19", title: "IEA confirms the March action", sub: "The contributions page says the overall release is largely crude and Europe's share is primarily refined products.", current: false },
-  { date: "Sep 16", title: "Two diesel-export bills introduced", sub: "H.R. 10422 would bar diesel exports after fourteen consecutive days above $5 a gallon. H.R. 10423 would prohibit diesel exports through December 31, 2026. Both were referred to the Committee on Foreign Affairs.", current: false },
-  { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "The department says earlier exchanges awarded more than 133 million barrels and that several European countries had released only a fraction.", current: false },
+  { date: "Sep 16", title: "Two diesel-export bills introduced", sub: "Both were referred to the Committee on Foreign Affairs.", current: false },
+  { date: "Sep 29", title: "Energy Department request for an exchange of up to 40 million barrels", sub: "The department says earlier exchanges awarded more than 133 million barrels and that several European countries had released only a fraction.", current: false },
   { date: "Oct 1", title: "Treasury Secretary Scott Bessent asks Europe for more supply", sub: "The Treasury secretary says European partners should make additional supplies immediately available.", current: false },
   { date: "Oct 2", title: "100 million barrels over 4 months", sub: "The joint statement counts commitments already fulfilled, starts the release immediately, and calls the diesel share substantial in the first 20 days.", current: true },
 ];
