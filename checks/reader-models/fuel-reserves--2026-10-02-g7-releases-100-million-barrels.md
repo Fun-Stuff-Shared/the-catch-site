@@ -16,7 +16,7 @@ A stranger arrives from the headline "G-7 Agrees to Release 100 Million Barrels 
 
 ## Headline
 
-G7 will release 100 million barrels over four months, counting commitments already fulfilled
+G7 will release 100 million barrels over four months and does not say how much is beyond its March commitments
 
 Dek: G7 calls a diesel release substantial and places it in the first 20 days, with no number. A French presidency readout says up to 100 million barrels of diesel and crude.
 
