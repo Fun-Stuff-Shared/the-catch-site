@@ -1,0 +1,5 @@
+**Critical, new. The dek states continuous detention as an absolute.** Page bytes: “If the detention statute applies, a person is held through removal proceedings with no opportunity for release on bond.” [Built page](/Volumes/4/GitHub/the-catch-site-wt-detention/dist/events/immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings/index.html)
+
+The pinned [Customs memorandum](/Volumes/4/GitHub/the-catch-site-wt-detention/data/sources/immigration-detention/cbp-detention-memo-2025-07-10.txt) says applicants “may not be released from DHS custody except by INA § 212(d)(5) parole.” The [statute](https://uscode.house.gov/view.xhtml?edition=prelim&req=%28title%3A8+section%3A1182%29) permits temporary parole case by case. Under the government’s reading, release **on bond** is unavailable, but parole can end custody during removal proceedings. The dek’s unqualified “is held through” contradicts that exception.
+
+VERDICT: NO-SHIP

@@ -6,3 +6,5 @@ Held by the reviewer on 2026-10-03; a reader should not report these again.
 - The labels that open the three paragraphs of The catch (The count, The grant, The notice). They are the template's lead-in labels.
 - The government's request that the Court hold this petition for Lopez-Campos, with its words "better vehicle". It is the government's own account of the case and stays in its words.
 - The repeated statement that the October 1 order grants review and does not decide the case, once in the dek and once in the first paragraph. The easy wrong reading is that the Court ruled; both places are kept.
+- The 156 days between the Second Circuit's decision and the grant, in the figure at the top and in one sentence. The count is accurate and is the story's one computed figure in the record.
+- The card that prints the detention statute's own clause. The paragraph before it explains the clause in everyday words; the card is where a reader checks that explanation against the text.

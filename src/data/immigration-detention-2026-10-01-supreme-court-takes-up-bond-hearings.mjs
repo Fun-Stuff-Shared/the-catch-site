@@ -19,7 +19,7 @@ export const computed = {
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
   title: "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
-  dek: "The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person is held through removal proceedings with no opportunity for release on bond. Under the bond statute the government may release someone.",
+  dek: "The October 1 order is not a ruling and not a count of people. If the detention statute applies, a person has no opportunity for release on bond, and the government's memorandum allows release only by parole. Under the bond statute the government may release someone.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
   updated: "2026-10-03",
