@@ -1824,3 +1824,13 @@ bls.gov refused a plain fetch on October 3, 2026. data/sources/bls-empsit-2026-0
 | data/sources/coverage/reuters-september-jobs-preview.txt | 5501 | 46cb93c5f4f285f2 |
 | data/sources/coverage/abc-september-jobs-preview.html | 191558 | 2e7c00786012dde0 |
 | data/sources/coverage/abc-september-jobs-preview.txt | 3050 | cecf0fa3889e5e2a |
+| data/sources/fomc-calendar-2026-09-16.html | 167493 | 4eaaa8b38c0a1a55 |
+| data/sources/fomc-calendar-2026-09-16.txt | 904 | a48dd682e2310ef4 |
+| data/sources/bea-pce-2026-08.html | 52287 | 6c207be356d7a4a0 |
+| data/sources/bea-pce-2026-08.txt | 4032 | 3649a6323bc429bc |
+| data/sources/bls-jolts-2026-08.html | 752504 | 24d558352a9b8e14 |
+| data/sources/bls-jolts-2026-08.txt | 16675 | 37a80c9a5fb0ca55 |
+| data/sources/adp-september-2026.html | 51861 | ee51e364a5e2ab0e |
+| data/sources/adp-september-2026.txt | 6502 | 26dd2edcde156983 |
+| data/sources/stlouisfed-unrate-2026-10.html | 242660 | 9759f551c35c3479 |
+| data/sources/stlouisfed-unrate-2026-10.txt | 3058 | 6e448dc3a11fee59 |

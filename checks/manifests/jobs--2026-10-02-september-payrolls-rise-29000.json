@@ -3,7 +3,7 @@
   "event": "jobs/2026-10-02-september-payrolls-rise-29000",
   "story": "/events/jobs/2026-10-02-september-payrolls-rise-29000/",
   "date": "2026-10-02",
-  "story_title": "September jobs report shows slowdown in hiring, unemployment ticks up",
+  "story_title": "September's payroll estimate is 29,000, short of the surveys, and the bureau says that change is not statistically significant",
   "state_event_id": "event-jobs-2026-10-02-september-payrolls-rise-29000",
   "event_record": "/events/jobs/",
   "completed_by": "catch-record turn",
@@ -70,6 +70,20 @@
         "cnbc-september-jobs-preview",
         "reuters-september-jobs-preview",
         "abc-september-jobs-preview"
+      ]
+    },
+    {
+      "id": "context-around-the-release",
+      "date": "2026-09-16",
+      "label": "The rate decision, August inflation, and the hiring count already out",
+      "section_anchor": "what-happened",
+      "records": [
+        "fomc-statement-2026-09-16",
+        "fomc-calendar-2026-09-16",
+        "bea-pce-2026-08",
+        "bls-jolts-2026-08",
+        "adp-september-2026",
+        "stlouisfed-unrate-2026-10"
       ]
     }
   ],
@@ -407,6 +421,102 @@
       "capture_run": "quarry-wire-scheduled-20261002T100043Z",
       "capture_raw_sha256": "sha256:2e7c00786012dde06ad782dd2c31ead15fae5e929ae2cbea941e384189a07cee",
       "captured_at": "2026-10-02T10:03:34.872622Z"
+    },
+    {
+      "id": "fomc-statement-2026-09-16",
+      "title": "Federal Reserve issues FOMC statement",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-09-16",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "pinned_path": "data/sources/fed-rate/fomc-statement-2026-09-16.html",
+      "text_path": "data/sources/fed-rate/fomc-statement-2026-09-16.txt",
+      "text_sha256": "sha256:fea9428836686f6eb02e0de21d5eae3f0d67dc22dcedaa1d9b1f83510febe143",
+      "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent",
+      "quote_span_check": "byte_exact",
+      "about": "The September 16 decision to raise the policy-rate range by a quarter point.",
+      "capture_run": "quarry-wire-scheduled-20260916T220017Z",
+      "capture_raw_sha256": "sha256:55da18a385e2afea34dc0e9c961d7b73b0b9ed4e7fc41e7c03b2bd933b3270af",
+      "captured_at": "2026-09-16T22:04:54.200724Z"
+    },
+    {
+      "id": "fomc-calendar-2026-09-16",
+      "title": "FOMC meeting calendars",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-09-16",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "pinned_path": "data/sources/fomc-calendar-2026-09-16.html",
+      "text_path": "data/sources/fomc-calendar-2026-09-16.txt",
+      "text_sha256": "sha256:a48dd682e2310ef43e29437555fe8825a189443ad328775ce641ddfd8ddbf339",
+      "quote": "October 27-28",
+      "quote_span_check": "byte_exact",
+      "about": "The 2026 meeting list, last updated September 16, with October 27-28 after the September meeting.",
+      "capture_run": "capture-oneoff-20260919T191321Z",
+      "capture_raw_sha256": "sha256:4eaaa8b38c0a1a55e1541ac4b6701dfc9765c144a96164fc98734068d80286db",
+      "captured_at": "2026-09-19T19:14:06.796394Z"
+    },
+    {
+      "id": "bea-pce-2026-08",
+      "title": "Personal Income and Outlays, August 2026",
+      "publisher": "Bureau of Economic Analysis",
+      "date": "2026-09-30",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026",
+      "pinned_path": "data/sources/bea-pce-2026-08.html",
+      "text_path": "data/sources/bea-pce-2026-08.txt",
+      "text_sha256": "sha256:3649a6323bc429bc004d7c1412eb4ec9188b0594d4150ba892392628a83dacab",
+      "quote": "From the same month one year ago, the PCE price index for August increased 3.4 percent.",
+      "quote_span_check": "byte_exact",
+      "about": "The August price index, up 3.4 percent from a year earlier, released September 30.",
+      "capture_run": "capture-oneoff-20261003T065139Z",
+      "capture_raw_sha256": "sha256:6c207be356d7a4a0023086bfed2c1ea3d6dc33c43be8496a39207d0fd2e2f329",
+      "captured_at": "2026-10-03T06:52:13.136216Z"
+    },
+    {
+      "id": "bls-jolts-2026-08",
+      "title": "Job Openings and Labor Turnover, August 2026",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-09-29",
+      "url": "https://www.bls.gov/news.release/archives/jolts_09292026.htm",
+      "pinned_path": "data/sources/bls-jolts-2026-08.html",
+      "text_path": "data/sources/bls-jolts-2026-08.txt",
+      "text_sha256": "sha256:37a80c9a5fb0ca55660b1193d3226430d08aab83fefc92f0f4fc6500c82dbcf9",
+      "quote": "Hires changed little at 5.2 million",
+      "quote_span_check": "byte_exact",
+      "about": "August hires, little changed at 5.2 million, and the September hiring release date.",
+      "capture_run": "quarry-wire-scheduled-20260929T160010Z",
+      "capture_raw_sha256": "sha256:24d558352a9b8e14755c7201956297a6579b4018fc968bf7de2ca557c8abcb47",
+      "captured_at": "2026-09-29T16:04:01.080888Z"
+    },
+    {
+      "id": "adp-september-2026",
+      "title": "ADP National Employment Report, September 2026",
+      "publisher": "ADP Research",
+      "date": "2026-09-30",
+      "url": "https://mediacenter.adp.com/2026-09-30-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-90,000-Jobs-in-September",
+      "pinned_path": "data/sources/adp-september-2026.html",
+      "text_path": "data/sources/adp-september-2026.txt",
+      "text_sha256": "sha256:26dd2edcde156983295920303a55363597712d3c7b16a5cfe426fe4db7684246",
+      "quote": "Private-sector employment increased by 90,000 jobs in September",
+      "quote_span_check": "byte_exact",
+      "about": "A separate private-employment count of 90,000 for September.",
+      "capture_run": "capture-oneoff-20261003T065139Z",
+      "capture_raw_sha256": "sha256:ee51e364a5e2ab0e4a773ebb1b4efa6217d8519dff1c74f0c7c222bf0a620627",
+      "captured_at": "2026-10-03T06:51:57.289672Z"
+    },
+    {
+      "id": "stlouisfed-unrate-2026-10",
+      "title": "Flash Report: Unemployment Rises Slightly, Job Growth Slows in September",
+      "publisher": "Federal Reserve Bank of St. Louis",
+      "date": "2026-10-02",
+      "url": "https://www.stlouisfed.org/on-the-economy/2026/oct/flash-report-unemployment-rises-slightly-job-growth-slows-september",
+      "pinned_path": "data/sources/stlouisfed-unrate-2026-10.html",
+      "text_path": "data/sources/stlouisfed-unrate-2026-10.txt",
+      "text_sha256": "sha256:6e448dc3a11fee59df48cfcf5a341d4d237bc9f1a0574b5e5b4c00ebedf0f82a",
+      "quote": "More precise data show the rate increased slightly from 4.141% to 4.175%.",
+      "quote_span_check": "byte_exact",
+      "about": "The unrounded unemployment rate, 4.141 percent in August and 4.175 percent in September.",
+      "capture_run": "capture-oneoff-20261003T065139Z",
+      "capture_raw_sha256": "sha256:9759f551c35c3479e3d7bf081440c6cc9eec05d5855dc4eb5df6758a98a7606b",
+      "captured_at": "2026-10-03T06:53:08.360659Z"
     }
   ],
   "story_sources": [
@@ -556,6 +666,48 @@
       "label": "The Hill",
       "meta": " \u00b7 October 2, 2026",
       "usage": "The Hill's account of the 4.2 percent rate"
+    },
+    {
+      "id": "fomc-statement-2026-09-16",
+      "group": "primary",
+      "label": "FOMC statement, September 16, 2026",
+      "meta": " \u00b7 released September 16, 2026",
+      "usage": "the quarter-point increase that preceded this jobs report"
+    },
+    {
+      "id": "bea-pce-2026-08",
+      "group": "primary",
+      "label": "Personal income and outlays, August 2026",
+      "meta": " \u00b7 released September 30, 2026",
+      "usage": "August PCE inflation, 3.4 percent over the year"
+    },
+    {
+      "id": "bls-jolts-2026-08",
+      "group": "primary",
+      "label": "Job openings and labor turnover, August 2026",
+      "meta": " \u00b7 released September 29, 2026",
+      "usage": "August hires and the date of the September hiring release"
+    },
+    {
+      "id": "fomc-calendar-2026-09-16",
+      "group": "primary",
+      "label": "FOMC calendar",
+      "meta": " \u00b7 last updated September 16, 2026",
+      "usage": "the October 27-28 meeting on the 2026 list"
+    },
+    {
+      "id": "adp-september-2026",
+      "group": "official",
+      "label": "ADP National Employment Report, September 2026",
+      "meta": " \u00b7 released September 30, 2026",
+      "usage": "a separate private-employment count of 90,000"
+    },
+    {
+      "id": "stlouisfed-unrate-2026-10",
+      "group": "official",
+      "label": "St. Louis Fed flash report, October 2, 2026",
+      "meta": " \u00b7 published October 2, 2026",
+      "usage": "the unemployment rate before rounding"
     }
   ],
   "primary_sources": [
@@ -731,6 +883,77 @@
       "need": "Washington Post account",
       "plain": "The Post's story served only a subscription stub, 582 characters, so it is not a record.",
       "status": "The Washington Post does not let its pages be saved"
+    },
+    {
+      "need": "September 16 policy decision",
+      "plain": "The committee raised the target range by a quarter point on September 16.",
+      "record_id": "fomc-statement-2026-09-16",
+      "status": "have"
+    },
+    {
+      "need": "October policy meeting",
+      "plain": "The 2026 calendar lists October 27-28 after the September meeting.",
+      "record_id": "fomc-calendar-2026-09-16",
+      "status": "have"
+    },
+    {
+      "need": "August PCE inflation",
+      "plain": "The August price index increased 3.4 percent from a year earlier.",
+      "record_id": "bea-pce-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "September gross hires",
+      "plain": "August hires changed little at 5.2 million. The September release is scheduled for November 3.",
+      "record_id": "bls-jolts-2026-08",
+      "status": "have"
+    },
+    {
+      "need": "ADP September count",
+      "plain": "A separate private-employment count was 90,000.",
+      "record_id": "adp-september-2026",
+      "status": "have"
+    },
+    {
+      "need": "Unrounded unemployment rate",
+      "plain": "The St. Louis Fed note puts the rate at 4.141 percent in August and 4.175 percent in September.",
+      "record_id": "stlouisfed-unrate-2026-10",
+      "status": "have"
+    },
+    {
+      "need": "September gain against the Reuters survey range",
+      "plain": "The preview's range runs from 35,000 to 180,000. September's 29,000 is below that low.",
+      "record_id": "reuters-september-jobs-preview",
+      "status": "have"
+    },
+    {
+      "need": "Reason for the unemployment increase",
+      "plain": "Job losers and job leavers fell. Reentrants and new entrants rose. The summary table is in the September release.",
+      "record_id": "bls-empsit-2026-09",
+      "status": "have"
+    },
+    {
+      "need": "Multiple jobholders counted as people",
+      "plain": "Table A-9 prints 8,986 in thousands. The facts view now says 8,986,000 people.",
+      "record_id": "bls-empsit-t09-2026-09",
+      "status": "have"
+    },
+    {
+      "need": "Yearly wage gain as the Associated Press stated it",
+      "plain": "The Associated Press called the 3 percent yearly gain the smallest since May 2021. That sentence is in the facts view.",
+      "record_id": "ap-september-jobs",
+      "status": "have"
+    },
+    {
+      "need": "Midterm setting in the Associated Press dispatch",
+      "plain": "The dispatch places the report a month before midterm elections. That sentence is in the facts view, not a new section.",
+      "record_id": "ap-september-jobs",
+      "status": "have"
+    },
+    {
+      "need": "Prediction markets, named reactions, the post-release market close, and a cause of the 29,000",
+      "plain": "The reader model has no section for reactions or for a market close, and the September employment release states no cause. Those items were not admitted into the story.",
+      "status": "not in the seven answers; the reader model has no section for them"
     }
   ],
   "coverage_records": [
@@ -748,14 +971,16 @@
   ],
   "authored_sections": [
     "what-happened",
+    "the-catch",
     "where-this-sits",
+    "unknowns",
     "chronology",
     "records"
   ],
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "The September release, table A-9, the release calendar, the August release, six series files, and eleven coverage articles are pinned with registry runs."
+      "evidence": "The September release and the earlier pins, plus the September 16 policy statement, the FOMC calendar, the August personal-income release, the August hiring release, the ADP count, and the St. Louis Fed rate note."
     },
     "derived_numbers_computed": {
       "done": true,
@@ -766,12 +991,12 @@
       "evidence": "CNBC's 34.6-hour workweek is not in the release, which says 34.4 hours. The 29,000 gain and the 4.2 percent rate match the release."
     },
     "section_grammar": {
-      "done": false,
-      "evidence": "Record turn only. Sections are not chosen until the reader model."
+      "done": true,
+      "evidence": "The page sections follow the reader model: What happened, The catch, Where this sits, What we do not know yet, and The records. What happened next is absent."
     },
     "chip_vocabulary": {
       "done": true,
-      "evidence": "The only graded outlet line uses the checked chip, and the verdict word is mislabeled."
+      "evidence": "The graded outlet lines use the checked chip. CNBC's 34.6-hour workweek is not the release's 34.4 hours."
     },
     "live_elements_guarded": {
       "done": true,

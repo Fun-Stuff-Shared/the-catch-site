@@ -6,8 +6,8 @@
 
 export const event = {
   slug: "jobs/2026-10-02-september-payrolls-rise-29000",
-  title: "September jobs report shows slowdown in hiring, unemployment ticks up",
-  dek: "The Bureau of Labor Statistics reported that payroll employment rose by 29,000 in September and the unemployment rate was 4.2 percent. It called both little changed. July and August together are 60,000 lower than previously reported.",
+  title: "September's payroll estimate is 29,000, short of the surveys, and the bureau says that change is not statistically significant",
+  dek: "The Bureau of Labor Statistics said that gain and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.",
   name: "The September 2026 jobs report",
   span: "Published October 2, 2026",
   date: "2026-10-02",
@@ -147,6 +147,31 @@ export const wageGrowth = [
 
 // LNS11300060-2026-10-03.csv, prime-age (25 to 54) labor force participation.
 export const primeAgeParticipation = { september: 83.7, august: 83.4, july: 83.4 };
+
+// Figures admitted with the story, each the number its pin states.
+// householdSignificance: "about 650,000" in bls-empsit-2026-09.txt, in thousands here.
+// adpSeptember: "90,000 jobs" in adp-september-2026.txt, in thousands here.
+// apYear2025: "9,700 average new jobs" in coverage/ap-september-jobs.txt, in jobs.
+// blackYearEarlier, blackJuly, blackAugust, and blackMonthChange: summary table A, Black or African American row.
+// unemployedChange: summary table A, Unemployed row, change from August, in thousands.
+export const admitted = {
+  householdSignificance: 650,
+  adpSeptember: 90,
+  pceAugust: 3.4,
+  joltsHiresMillions: 5.2,
+  unroundedAugust: "4.141",
+  unroundedSeptember: "4.175",
+  apYear2025: 9700,
+  reutersSurvey: 90000,
+  reutersLow: 35000,
+  reutersHigh: 180000,
+  augustUnemployment: 4.1,
+  blackYearEarlier: 7.6,
+  blackJuly: 6.3,
+  blackAugust: 6.0,
+  blackMonthChange: 1.0,
+  unemployedChange: 78,
+};
 
 // U6RATE-2026-10-03.csv. The release's table A-15 prints the same September rate.
 export const u6 = { september: 7.6, august: 7.7 };

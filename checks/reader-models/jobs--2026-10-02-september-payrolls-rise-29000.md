@@ -7,22 +7,22 @@ A stranger arrives from a headline like "September jobs report shows slowdown in
 ## Exiting
 
 1. What happened: On Friday, October 2, 2026, the Bureau of Labor Statistics estimated that nonfarm payroll employment rose by 29,000 in September and that the unemployment rate was 4.2 percent, and said both changed little, and revised July and August down by a combined 60,000, with private payrolls up 46,000 and government payrolls down 17,000. (`bls-empsit-2026-09`; `bls-empsit-schedule-2026-10-03`)
-2. Why it matters to someone who does not follow this subject: This is the official monthly count of jobs and unemployment, arriving after the Federal Reserve's quarter-point increase on September 16, with August PCE inflation at 3.4 percent and average hourly earnings up 3.0 percent over the year. (`bls-empsit-2026-09`; `audit-gap-fomc-statement-2026-09-16`; `audit-gap-bea-pce-2026-08`)
-3. The easiest wrong reading, the one the headline or the coverage invites: That hiring slowed and unemployment clearly rose, so the labor market deteriorated in a measured way. (`usatoday-september-jobs`; `bls-empsit-2026-09`; `ap-september-jobs`; `audit-gap-adp-2026-09`; `audit-gap-stlouisfed-unrate-2026-10`)
+2. Why it matters to someone who does not follow this subject: This is the official monthly count of jobs and unemployment, arriving after the Federal Reserve's quarter-point increase on September 16, with August PCE inflation at 3.4 percent and average hourly earnings up 3.0 percent over the year. (`bls-empsit-2026-09`; `fomc-statement-2026-09-16`; `bea-pce-2026-08`)
+3. The easiest wrong reading, the one the headline or the coverage invites: That hiring slowed and unemployment clearly rose, so the labor market deteriorated in a measured way. (`usatoday-september-jobs`; `bls-empsit-2026-09`; `ap-september-jobs`; `adp-september-2026`; `stlouisfed-unrate-2026-10`)
 4. The one concept a stranger must hold to follow it, the mechanism: The 29,000 and the 4.2 percent rate come from two different surveys, one a net change in jobs on employer payrolls and the other a count of people. (`bls-empsit-2026-09`)
 5. What changed: The August release had reported payrolls up 162,000 and unemployment unchanged at 4.1 percent, and September's estimate is 29,000, below the release's prior-12-month average of 45,000 and below surveys near 90,000, while the 4.2 percent rate is still inside the 4.1 to 4.3 percent range held since March and 2026 is averaging about 68,000 jobs a month against about 9,700 a month in 2025. (`bls-empsit-2026-08`; `bls-empsit-2026-09`; `ap-september-jobs`; `reuters-september-jobs-preview`)
-6. What is unresolved as of the newest dated record: As of October 3 the September payroll estimate is still preliminary, September gross hires have not been published, and the Federal Reserve's next meeting, on October 27-28, has not produced a decision; the records do not establish a cause of the 29,000. The October employment report is scheduled for November 6. (`bls-empsit-2026-09`; `audit-gap-jolts-2026-08`; `audit-gap-fomc-calendar-2026`)
+6. What is unresolved as of the newest dated record: As of October 3 the September payroll estimate is still preliminary, September gross hires have not been published, and the Federal Reserve's next meeting, on October 27-28, has not produced a decision; the records do not establish a cause of the 29,000. The October employment report is scheduled for November 6. (`bls-empsit-2026-09`; `bls-jolts-2026-08`; `fomc-calendar-2026-09-16`)
 7. The next five questions a curious stranger asks, in order: Is 29,000 a measured slowdown in hiring, or a net payroll estimate inside the bureau's significance bar?; Did unemployment rise because fewer people were working?; Who did the national 4.2 percent leave out?; How does September compare with this year's pace, with 2025, and with the surveys?; What is still ahead for this estimate, for hiring, and for the Fed? (`bls-empsit-2026-09`)
 
 ## Headline
 
 September's payroll estimate is 29,000, short of the surveys, and the bureau says that change is not statistically significant
 
-Dek: The bureau said that gain and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than first reported.
+Dek: The Bureau of Labor Statistics said that gain and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.
 
 ## Grades
 
-Answer 1 has four A lines, answer 3 has eight A or B lines, answer 5 has five, and answer 6 has four. Each was reread for a clause of its own. A second passage of a concept already graded is C, marked carried by the first. Grades on the two household rows are the passage rows; the matching gap-list lines are C carried by those rows. Gap lines graded B have no pin words yet.
+Answer 1 has four A lines, answer 3 has eight A or B lines, answer 5 has five, and answer 6 has four. Each was reread for a clause of its own. A second passage of a concept already graded is C, marked carried by the first. Grades on the two household rows are the passage rows; the matching gap-list lines are C carried by those rows. The six gap lines graded B were admitted in the story turn, and each passage cell now opens with the pin's words.
 
 ### Passage-table lines
 
@@ -640,15 +640,15 @@ Audit findings that cite a document outside the manifest are gap lines. None is 
 | `not-admitted-wapo` | 2026-10-02 Washington Post story, 582 characters. The body was not saved. | D | does not change the seven answers |
 | `not-admitted-commissioner-2023` | 2023-01-06 Commissioner's Statement at the old address. It says it is the final statement. It is not a September 2026 statement. | D | does not change the seven answers |
 | `not-admitted-ap-morning` | 2026-10-02 morning Associated Press body at the same URL, a preview. The post-release dispatch is the admitted record. | D | does not change the seven answers |
-| `audit-gap-adp-2026-09` | Audit finding 5. ADP National Employment Report, 2026-09-30, not in the manifest. https://mediacenter.adp.com/2026-09-30-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-90,000-Jobs-in-September. The audit's account: private employers added 90,000 jobs in September, a different survey from the establishment release. | B | 3, a separate private-payroll count was 90,000, so 29,000 is not the only September jobs figure |
+| `adp-september-2026` | "Private-sector employment increased by 90,000 jobs in September" Admitted in the story turn from the September 30 release. A separate private-payroll count, not the establishment survey. | B | 3, a separate private-payroll count was 90,000, so 29,000 is not the only September jobs figure |
 | `not-admitted-cnbc-yields` | 2026-10-02 CNBC note that Treasury yields inched higher as investors awaited the report. Before the release. No post-release price record was captured. | D | does not change the seven answers |
 | `not-admitted-wsj-dollar` | 2026-10-02 Wall Street Journal card that the dollar eased ahead of the data. Before the release, and the body was not saved. | D | does not change the seven answers |
 | `not-admitted-wsj-watch` | 2026-10-01 Wall Street Journal what-to-watch card. The body was not saved. | D | does not change the seven answers |
-| `audit-gap-jolts-2026-08` | Audit finding 4. August JOLTS, not in the manifest. https://www.bls.gov/news.release/archives/jolts_09292026.pdf. The audit's account: August hires changed little at 5.2 million, and September gross hiring is scheduled for November 3. | B | 6, September gross hires had not been published, and the latest hires figure changed little |
-| `audit-gap-stlouisfed-unrate-2026-10` | Audit finding 2. St. Louis Fed flash report, not in the manifest. https://www.stlouisfed.org/on-the-economy/2026/oct/flash-report-unemployment-rises-slightly-job-growth-slows-september. The audit's account: the unrounded rate was 4.1413 percent in August and 4.1754 percent in September. | B | 3, the rounded move from 4.1 to 4.2 is a few hundredths of a point |
-| `audit-gap-fomc-statement-2026-09-16` | Audit finding 6. Federal Reserve statement of September 16, not in the manifest. https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm. The audit's account: the committee raised the policy-rate range by a quarter point. | B | 2, the jobs estimate arrives after the committee's own quarter-point increase on September 16 |
-| `audit-gap-fomc-calendar-2026` | Audit finding 6. FOMC calendar, not in the manifest. https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm. The audit's account: the next meeting is October 27-28. | B | 6, the next policy meeting is October 27-28 and no decision is in the record |
-| `audit-gap-bea-pce-2026-08` | Audit finding 6. BEA personal income and outlays, August, not in the manifest. https://www.bea.gov/news/2026/personal-income-and-outlays-august-2026. The audit's account: 3.4 percent annual PCE inflation. | B | 2, August PCE inflation, the other number in front of the next decision, was 3.4 percent |
+| `bls-jolts-2026-08` | "Hires changed little at 5.2 million" "The Job Openings and Labor Turnover news release for September 2026 is scheduled to be published on Tuesday, November 3, 2026, at 10:00 a.m. (ET)." Admitted in the story turn. The audit named the PDF; the pin is the release-day HTML of the same release. | B | 6, September gross hires had not been published, and the latest hires figure changed little |
+| `stlouisfed-unrate-2026-10` | "More precise data show the rate increased slightly from 4.141% to 4.175%." Admitted in the story turn. The note's own figures are 4.141 percent and 4.175 percent, not a longer unrounded string. | B | 3, the rounded move from 4.1 to 4.2 is a few hundredths of a point |
+| `fomc-statement-2026-09-16` | "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent" Admitted in the story turn. The pin was already saved with the September rate story. | B | 2, the jobs estimate arrives after the committee's own quarter-point increase on September 16 |
+| `fomc-calendar-2026-09-16` | "October 27-28" Admitted in the story turn. On the 2026 list that date follows September 15-16, and the page shows a statement for September and none for October. | B | 6, the next policy meeting is October 27-28 and no decision is in the record |
+| `bea-pce-2026-08` | "From the same month one year ago, the PCE price index for August increased 3.4 percent." Admitted in the story turn. The release line is Wednesday, September 30, 2026. | B | 2, August PCE inflation, the other number in front of the next decision, was 3.4 percent |
 | `audit-gap-dallasfed-breakeven-2026-03-31` | Audit finding 5. Dallas Fed, March 31, not in the manifest. https://www.dallasfed.org/research/economics/2026/0331. The audit says the estimate approached zero in late 2025 and is not a verified September 2026 threshold. It does not change the seven answers. | D | does not change the seven answers |
 | `audit-gap-glassdoor-2026-09` | Named in the audit's source check. Glassdoor employee confidence index, September 2026, not in the manifest. https://api.glassdoor.com/blog/glassdoor-employee-confidence-index-september-2026/. A confidence index, not a payroll or unemployment count. | D | does not change the seven answers |
 | `audit-gap-bls-prebmk-2026` | Named in the audit's remaining unknowns. Preliminary benchmark notice, not in the manifest. https://www.bls.gov/news.release/prebmk.htm. The audit says the notice's -79,000 is a March estimate, not a September revision. Removing it changes none of the seven answers. | D | does not change the seven answers |
@@ -663,10 +663,13 @@ These records have no passage tables. One line each, plus the lines the story ci
 | `ap-september-jobs` | "A Labor Department measure of gross hiring – before subtracting those who quit or lose their jobs – has been stuck in a rut for more than two years." Audit finding 4. PBS carries the same sentence. | B | 3, the 29,000 is not the department's measure of gross hiring |
 | `ap-september-jobs` | "average 68,000 jobs a month so far this year" "9,700 average new jobs created every month in 2025" Audit finding 5's baseline. The Associated Press states both averages. | B | 5, this year's average monthly gain is about 68,000, against about 9,700 a month in 2025 |
 | `ap-september-jobs` | The same dispatch says the break-even pace could now be as low as zero. That is an outlet's could, and the audit says it is not a verified September 2026 threshold. | D | does not change the seven answers |
+| `ap-september-jobs` | "the smallest year-over-year gain since May 2021" The Associated Press's wording for the 3 percent yearly wage gain. Facts view only. | C | does not change the seven answers |
+| `ap-september-jobs` | "a month before voters go to the polls in pivotal midterm elections" The dispatch's setting. Facts view only. Not a section. | C | does not change the seven answers |
+| `bls-empsit-2026-09` | "Job losers and people who completed temporary jobs \| 3,524 \| 3,309 \| 3,245 \| 3,200 \| -45" "Job leavers \| 860 \| 793 \| 914 \| 741 \| -173" "Reentrants \| 2,336 \| 2,123 \| 2,137 \| 2,289 \| 152" "New entrants \| 813 \| 761 \| 702 \| 818 \| 116" Summary table A, reason for unemployment, change from August. Facts view only. | C | does not change the seven answers |
 | `pbs-september-jobs` | The same Associated Press dispatch, including the gross-hiring sentence and the 29,000 lead. | C | 3, carried by `ap-september-jobs` |
 | `reuters-september-jobs-preview` | "Nonfarm payrolls likely increased by 90,000 last month" Published before 8:30 a.m. Eastern. The range in the same preview is 35,000 to 180,000. | B | 5, the surveys published beforehand had looked for about 90,000 |
 | `cnbc-september-jobs-preview` | Dow Jones consensus of 84,000 jobs and a 4.1 percent rate, published October 1. | C | 5, carried by `reuters-september-jobs-preview` |
-| `abc-september-jobs-preview` | Expects 84,000 jobs. Also says the report arrives weeks after the first rate hike in three years, a quarter of a percentage point, with August inflation at 3.4 percent. Those two facts are the Fed statement and the BEA release. | C | 2, carried by `audit-gap-fomc-statement-2026-09-16` |
+| `abc-september-jobs-preview` | Expects 84,000 jobs. Also says the report arrives weeks after the first rate hike in three years, a quarter of a percentage point, with August inflation at 3.4 percent. Those two facts are the Fed statement and the BEA release. | C | 2, carried by `fomc-statement-2026-09-16` |
 | `cnbc-september-jobs` | Reports the 29,000 and the Dow Jones 84,000. Also writes that the workweek was unchanged at 34.6 hours. The release says 34.4. The mislabel does not change the seven answers. | C | 5, carried by `reuters-september-jobs-preview` |
 | `cbs-september-jobs` | FactSet survey of 90,000, and the reading that businesses are holding off on hiring. | C | 3, carried by `usatoday-september-jobs` |
 | `npr-september-jobs` | Hiring slowed and the unemployment rate inched higher; revisions of 60,000. | C | 3, carried by `usatoday-september-jobs` |
@@ -699,8 +702,8 @@ Who the national rate left out is one paragraph of the catch, not a section. Pay
 - `bls-empsit-2026-09`: the two surveys, what each counts.
 - `bls-empsit-2026-09`: the 4.1 to 4.3 percent range since March.
 - `bls-empsit-2026-09`: average hourly earnings up 3.0 percent over the year.
-- `audit-gap-fomc-statement-2026-09-16`: the September 16 quarter-point increase. Admit before writing.
-- `audit-gap-bea-pce-2026-08`: August PCE inflation 3.4 percent. Admit before writing.
+- `fomc-statement-2026-09-16`: the September 16 quarter-point increase.
+- `bea-pce-2026-08`: August PCE inflation 3.4 percent.
 
 ### The catch
 
@@ -708,9 +711,9 @@ Who the national rate left out is one paragraph of the catch, not a section. Pay
 - `bls-empsit-2026-09`: a change of about 122,000 is the establishment survey's significance bar; the household bar is about 650,000.
 - `ap-september-jobs`: gross hiring is a different measure and has not been this release's number.
 - `bls-empsit-2026-09`: household employment rose 406,000 and the labor force rose 485,000.
-- `audit-gap-stlouisfed-unrate-2026-10`: the unrounded rate moved by a few hundredths. Admit before writing.
+- `stlouisfed-unrate-2026-10`: the rate moved from 4.141 percent to 4.175 percent.
 - `bls-empsit-2026-09`: Black unemployment rose by a point, to 7.0 percent, from 7.6 percent a year earlier.
-- `audit-gap-adp-2026-09`: a separate private count of 90,000. Admit before writing.
+- `adp-september-2026`: a separate private count of 90,000.
 
 ### Where this sits
 
@@ -722,8 +725,8 @@ Who the national rate left out is one paragraph of the catch, not a section. Pay
 ### What we do not know yet
 
 - `bls-empsit-2026-09`: the newest two months are labeled preliminary.
-- `audit-gap-jolts-2026-08`: September hires are not out; August hires changed little at 5.2 million. Admit before writing.
-- `audit-gap-fomc-calendar-2026`: the next meeting is October 27-28. Admit before writing.
+- `bls-jolts-2026-08`: September hires are not out; August hires changed little at 5.2 million.
+- `fomc-calendar-2026-09-16`: the 2026 list has a meeting on October 27-28.
 - `bls-empsit-2026-09`: the October employment report is scheduled for November 6. A next step, stated once, not an unknown.
 
 ### The records

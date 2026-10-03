@@ -712,3 +712,45 @@ The Wall Street Journal and The Washington Post each answered a fetch with a sho
 The bureau's commissioner's-statement address is the January 6, 2023 statement, and that statement says it is the last one. There is no September 2026 commissioner's statement to pin. The release itself is the bureau's account.
 
 The article index, last built through September 7, does not contain this release. The registry sweep of October 2 does.
+
+## Story turn, admissions
+
+The six gap lines graded B were already in the registry. Each pin is a copy of that run's raw file, with the text sibling beside it.
+
+1. `fomc-statement-2026-09-16`. Registry run `quarry-wire-scheduled-20260916T220017Z`, the release-day statement. The pin was already at `data/sources/fed-rate/fomc-statement-2026-09-16.txt`. Quote: "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent".
+2. `fomc-calendar-2026-09-16`. Registry run `capture-oneoff-20260919T191321Z`. The HTML is the saved page. The text sibling lists the 2026 meetings in order, because the extracted text had split the year from the dates. Quote: "October 27-28", under "2026 FOMC Meetings", after "September 15-16*". Last update on the page: September 16, 2026.
+3. `bea-pce-2026-08`. Registry run `capture-oneoff-20261003T065139Z`. The embargo line "EMBARGOED UNTIL RELEASE AT 8:30 a.m. EDT, Wednesday, September 30, 2026" is in the HTML and was added at the top of the text sibling. Quote: "From the same month one year ago, the PCE price index for August increased 3.4 percent."
+4. `bls-jolts-2026-08`. The audit named the PDF. The release-day HTML is `quarry-wire-scheduled-20260929T160010Z`, `https://www.bls.gov/news.release/archives/jolts_09292026.htm`. Quotes: "Hires changed little at 5.2 million" and "The Job Openings and Labor Turnover news release for September 2026 is scheduled to be published on Tuesday, November 3, 2026, at 10:00 a.m. (ET)."
+5. `adp-september-2026`. Registry run `capture-oneoff-20261003T065139Z`. Quote: "Private-sector employment increased by 90,000 jobs in September".
+6. `stlouisfed-unrate-2026-10`. Registry run `capture-oneoff-20261003T065139Z`. Quote: "More precise data show the rate increased slightly from 4.141% to 4.175%." The note's date line is "St. Louis Fed On the Economy, Oct. 2, 2026."
+
+### Passage table, story turn
+
+| Passage | Disposition |
+|---|---|
+| The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent | Used: why it matters, in What happened. |
+| October 27-28 | Used: the meeting on the 2026 list, in What we do not know yet. |
+| From the same month one year ago, the PCE price index for August increased 3.4 percent. | Used: why it matters. |
+| EMBARGOED UNTIL RELEASE AT 8:30 a.m. EDT, Wednesday, September 30, 2026 | Used: the date of that release. |
+| Hires changed little at 5.2 million | Used: August hiring. |
+| published on Tuesday, November 3, 2026, at 10:00 a.m. (ET). | Used: the September hiring release is still ahead. |
+| Private-sector employment increased by 90,000 jobs in September | Used: the catch, a second private count. |
+| More precise data show the rate increased slightly from 4.141% to 4.175%. | Used: the catch, the rate before rounding. |
+
+### Searches before the unknowns
+
+`capture search "FOMC statement" --since 2026-09-17` returned no statement later than September 16. `capture search "monetary202610" --since 2026-09-16` returned nothing. The calendar pin, last updated September 16, shows a statement link for September 15-16 and none for October 27-28.
+
+Cause of the 29,000 payroll change: the September employment release states the change and says it changed little. It does not give a reason for the size. The Associated Press says unemployment rose partly because 485,000 people entered the workforce. That sentence is about the rate, and the household table shows the same labor-force increase. The St. Louis Fed note gives flows behind the rate's few hundredths. CBS writes that the payroll figure signals businesses holding off amid energy prices and inflation. That is the outlet's characterization, not a reason the release states. The absence sentence names the September employment release.
+
+## Interrogation, October 3
+
+The review is `checks/interrogations/jobs--2026-10-02-september-payrolls-rise-29000-2026-10-03.md`. Items already in a pin were written from that pin. Items that would add a section the reader model does not have were not admitted.
+
+Fixed from pins already held: the Reuters range (29,000 is below 35,000); the household employment rise of 406,000 set against the 650,000 bar; the Black rate row's July 6.3 and August 6.0; table A-9's 8,986 thousand read as 8,986,000 people; summary table A on job losers, job leavers, reentrants, and new entrants; manufacturing up 72,000 since December 2025 and insurance carriers down 90,000; the Associated Press sentences on the smallest yearly wage gain since May 2021 and on midterm elections. Those last two, and the reason-for-unemployment rows, are in the facts view. The confidence interval of about 0.3 point is stated in the technical note at an unemployment rate of around 6.0 percent, so it was not applied to 4.2 percent.
+
+The entailment check rejected the dek's "first reported." The September release says July and August together are 60,000 lower than previously reported. July's first published change, in the August release's predecessor, was a loss of 23,000, not the gain of 21,000 this release revises. The dek now says previously reported.
+
+The entailment verdict of October 3 is ENTAILED, with two Moderate items left standing. The prime-age series file has no title, only the identifier and the values 83.4 and 83.7, so the age and the working-or-looking gloss are not in that pin. The payroll series file prints 159015 and 159044 with no unit label; the page reads them as thousands because their difference is the release's 29,000, and the proof block states the arithmetic. CNBC's 34.6-hour workweek is stated as not the release's 34.4-hour figure.
+
+Not admitted: prediction-market odds, El-Erian's posts, the equity close and hike odds, the September 16 press conference and projections, Hassett, Warren, weekly claims, a Labor Day explanation of the payroll change, Timiraos's longer unrounded path, year-ago 4.4 percent as a story claim, a real-wage verdict, the August private-versus-government revision split, the birth-death forecast, the GDP revision, the October 14 price index, and outlets beyond the coverage set. The reader model has no section for reactions or for a next event other than the dates already on the page, and the September employment release still states no cause of the 29,000.
