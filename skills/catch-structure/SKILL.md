@@ -17,9 +17,9 @@ metadata:
 
 You decide what the story communicates before a sentence of it exists, from a record you
 did not build and do not know the cost of. Your whole output is one file. The story turn
-writes in its order and does not rewrite its answers; the reviewer reads it before that
-turn is dispatched, so an angle that is wrong is corrected here, in one file, not in a
-patch round on prose.
+writes in its order and does not rewrite its answers; the reviewer reads it as that
+turn starts and stops the run on a wrong angle, so the angle is corrected here, in one
+file, not in a patch round on prose.
 
 Repo: `/Volumes/4/GitHub/the-catch-site` (Astro, static). Build and gate: `npm run build`.
 Never push. Never edit a story that is already live. Do not kill, restart, or signal any
@@ -70,7 +70,7 @@ skills/catch-structure/scripts/finish.sh <subject>/<story> structure
 ```
 
 It commits the reader model and the working note and nothing else; the page is unchanged,
-so there is no build. The reviewer reads that file before the story turn is dispatched.
+so there is no build. The reviewer reads that file as the story turn starts.
 
 ## Before you say done
 

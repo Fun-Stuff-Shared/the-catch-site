@@ -63,7 +63,10 @@ or deriving text. A missing text file or changed hash stops registration before 
 The author enriches every manifest figure; the reviewer runs the command:
 
 - Sourced: `figure` (slot name), `value`, `unit`, `kind: "sourced"`, and
-  `source: {source_id, quote_span}`. The passage must be byte-exact and contain the value.
+  `source: {source_id, quote_span}`. The passage must be the record's own words and contain the value.
+  `value` is a bare number (4.2, never "4.2 percent"; the unit goes in `unit`). The passage
+  is a whole sentence or clause in the record's words; it may run across a line end of the
+  saved text (line ends and runs of spaces are matched as one space).
 - Computed: `figure`, `value`, `unit`, `kind: "computed"`, `formula`, and `inputs`.
   Each input has `source_id`, `quote_span`, `value`, and `unit`. Supported formulas are
   `sum` (same units) and `date_difference_days` (first ISO date minus second; input unit
