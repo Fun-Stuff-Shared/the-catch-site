@@ -155,7 +155,7 @@ git add -- "${paths[@]}" && git -c commit.gpgsign=false commit -q -m "$kind: $su
 # The story commit is what the knowledge state records: its pins, its figures at this site
 # commit, its event view. A story whose records did not reach the state is not finished.
 [ "$kind" = story ] || exit 0
-PYTHONPATH=/Volumes/4/CF/sai/src /opt/anaconda3/bin/python3 -m sai.cli state stage-story \
+PYTHONPATH=/Volumes/4/CF/sai-prod/src /Volumes/4/CF/sai/.venv/bin/python -m sai.cli state stage-story \
   --manifest "$manifest" --site-root "$root" --state-dir /Volumes/4/CF/catch-state > .finish-stage.json \
   || { echo "committed, but the story's records did not reach the knowledge state (sai.cli state stage-story failed; see .finish-stage.json); rerun it before the review" >&2; exit 1; }
 node -e '

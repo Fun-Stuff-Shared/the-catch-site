@@ -4,7 +4,7 @@ description: >
   The Catch story pipeline (the-catch-site): the map of the three author turns (catch-record,
   catch-structure, catch-story, each its own skill and session), the reviewer's process
   between and after them (accept the event, dispatch, the record audit, read the reader
-  model, editor's read, red team and entailment, patch rounds, decide, stage, ship), and the home of the
+  model, the record check and the stranger read, patch rounds, the closing reads, decide, stage, ship), and the home of the
   scripts and reference files the three turns share. Use when reviewing, dispatching or
   shipping a Catch story, or to find a shared script or reference. An author uses the turn
   skill it was dispatched with, never this one.
@@ -27,10 +27,10 @@ dispatch, the reads, the decision, staging, the push.
 | audit | reviewer | `completeness_audit.sh` on the record commit | `checks/audits/<story>-<date>-record-audit.md`; runs once per story |
 | 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), headline and dek, grades, sections, outline |
 | 3 | `skills/catch-story` | `finish.sh <story> story` | the page, manifest, interrogation, entailment verdict |
-| review | reviewer | editor's read + red team + entailment + stranger read on the story commit; a numbered patch list per round until the reviewer decides | patch commits, then the decision: cut, hold, or kill |
+| review | reviewer | the record check and the stranger read on the story commit; a patch list per round, each patch followed by the record check on the blocks it changed; at the close the stranger read, then the editor's read with the stranger's report in hand | patch commits, then the decision: cut, hold, or kill |
 
 Repo: `/Volumes/4/GitHub/the-catch-site`. Shared by every turn: `scripts/` (finish, the
-lints, pin_gaps, sources_ledger, interrogate, the four reads) and `references/`
+lints, pin_gaps, sources_ledger, interrogate, the reads) and `references/`
 (procedures, story, writing, shape-rules, sections, components, manifest-and-gate, interrogation).
 
 ## The reviewer's process
@@ -46,53 +46,57 @@ lints, pin_gaps, sources_ledger, interrogate, the four reads) and `references/`
 3. **Run the record audit** on the record commit: `scripts/completeness_audit.sh <story>
    checks/audits/<subject>--<slug>-<date>-record-audit.md`. It hunts outside the frame and
    finds a different frame every time it runs, so it runs here, once, before any prose.
-4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). **Read the reader model
-   commit** before going on: the seven answers against the record, the headline against
+4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). The driver
+   sets the event's label in the state to the reader model's headline and dispatches turn
+   three without waiting. **Read the reader model commit** while the story turn runs: the seven answers against the record, the headline against
    answers 1 and 3, the grades against the passage tables (each A and B line quotes the
    words the story will cite and names the clause it changes; an answer with more than three
    A or B lines is reread, one clause each), the sections against the question tree. A wrong angle is fixed here by
-   re-dispatching turn two with the correction, never later on prose.
-5. **Dispatch turn three** (`run-turn.sh story ...`; a fresh session).
-6. **Four reads on the story commit, in parallel,** after the capture search on the story
+   stopping the story turn and re-dispatching turn two with the correction
+   (`skills/catch-orchestrate`), never later on prose.
+5. **Turn three** (`run-turn.sh story ...`; a fresh session).
+6. **Two reads on the story commit, in parallel,** after the capture search on the story
    terms and, for a court case, the docket's new entries (the event may have moved while the
-   story turn ran; a record that moved it is pinned and is item 1 of the list): `scripts/editor_read.sh` (the edit
-   memo: is the page's story the one the record supports today, does each answer of the
-   reader model have a sentence a reader could repeat, what to cut, what a reader still
-   asks, and what each addition displaces), `scripts/red_team.sh` (sentences against
-   their records and the authority of the records, nothing else),
-   `scripts/entailment_check.sh`, and the stranger read: `scripts/stranger_read.sh
-   <subject>/<slug> [port]`, one Claude reader given the page as the story view reads it
-   and the reader model, returning what a stranger misreads, stalls on, or sees as the
-   page talking to itself (`references/stranger-read.md`). Verify every finding at the bytes; refute what the pins
-   refute; send the rest as one numbered patch list. The stranger's findings from this read
-   go in the same list as the editor's and the red team's, not held back for a later round.
-7. **Patch rounds.** Each round opens with the same capture search and docket check; the list passes `scripts/patch_quotes.mjs` before it is sent and
-   carries the page's word count. The author patches, runs entailment and the referent
-   check `--since` the commit the round started from and the lints, commits. The reviewer reads the patched page, reruns the
-   four reads on it, and either sends the next numbered list or
-   decides: cut a sentence, hold an item with its reason, or kill the story. A held item
-   goes on `checks/working-notes/<subject>--<slug>-held.md`, one line each with the reason;
-   the editor's read and the red team read that file, the author's ledger, and every earlier report, and
-   label each finding new, repeat, or residual. The reviewer decides the two things the
-   reviewers cannot: when a source chain is deep enough (a page correctly attributing an
-   outlet is complete without the instrument behind it), and when a stranger's cut beats a
-   hole the editor's read wants filled (the stranger is the reader). Rounds are not
-   capped, but the round after the first report with no new Critical or Major finding is
-   the last; what remains is held or cut, not patched again. The headline is page text and
-   is patched like any sentence; it is never held because a label upstream says otherwise.
+   story turn ran; a record that moved it is pinned and is item 1 of the list):
+   `scripts/record_check.sh` (every block of the built page against the passages it cites,
+   then against the page's other records and anything published since) and the stranger
+   read, `scripts/stranger_read.sh <subject>/<slug> [port]`: one Claude reader given the
+   page as the story view reads it and the reader model, returning what a stranger
+   misreads, stalls on, or sees as the page talking to itself
+   (`references/stranger-read.md`). Verify every finding at the bytes; refute what the pins
+   refute; send the rest as one patch list.
+7. **Patch rounds.** Each round opens with the same capture search and docket check. The
+   list keeps two kinds of item apart: corrections (a sentence the records do not support,
+   which the author fixes or answers with the record) and advice (everything else, which
+   the author takes, takes differently or declines, one report line each; the author is
+   the journalist and the page is theirs). The list passes `scripts/patch_quotes.mjs`
+   before it is sent and carries the page's word count. The author patches, runs
+   entailment and the referent check `--since` the commit the round started from and the
+   lints, commits. The record check then runs on the blocks the patch changed. The
+   reviewer reads the patched page and either sends the next list or decides: cut a
+   sentence, hold an item with its reason, or kill the story. A held item goes on
+   `checks/working-notes/<subject>--<slug>-held.md`, one line each with the reason; every
+   read is given that file, the author's ledger and every earlier report. The reviewer
+   decides when a source chain is deep enough: a page correctly attributing an outlet is
+   complete without the instrument behind it. The headline is page text and is patched
+   like any sentence.
+   **The closing reads** run when the record check passes and the list is empty: the
+   stranger on the page as it stands, then `scripts/editor_read.sh` with the stranger's
+   report in hand (is the page's story the one the record supports today, does each answer
+   of the reader model have a sentence a reader could repeat, what to cut, what a reader
+   still asks, and which of the stranger's items to act on). The editor's memo is the last
+   list; the record check runs on that patch. Before any review-ready word to the human,
+   the reviewer reads the last stranger report in full and the served page top to bottom.
 8. **Before the push:** re-run the capture search on the story terms dated on or after the
-   run and disposition the results; amend the event's label in the state log to the page's
-   headline when they differ (the label is set at acceptance, step 1, and the page's
-   headline wins); refresh the state views for the event and commit them;
+   run and disposition the results; when a patch changed the headline, amend the event's
+   label in the state log to match it (the page's headline wins); refresh the state views for the event and commit them;
    hosted-style build from a git archive with `CATCH_STATE_SOURCE=/nonexistent`; a STAGED
    row with a ships-by date; then push on a human's word and verify the live bytes
    (`references/procedures.md`, step 12).
 
 ## What the loop measures
 
-Dispatch to staged, per story, in wall-clock minutes, from the run markers. The Kennedy
-Center trial on the one-skill design took 4 h 27 min over four author runs; the record
-turn alone on this design took 46 min. Each patch round is timed on its own so the cost of
+Dispatch to staged, per story, in wall-clock minutes, from the run markers. Each patch round is timed on its own so the cost of
 review can be read apart from the cost of writing.
 
 ## References

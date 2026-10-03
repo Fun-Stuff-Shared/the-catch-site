@@ -68,8 +68,8 @@ one line each, so the story turn writes from a list rather than a search.
 6. What is unresolved, as of the newest dated record?
 7. The next three to five questions a curious stranger asks, in the order they ask them.
 
-Answer 7 is the page's order. What happened answers 1, 4 and 5. The catch answers 3 when a
-record contradicts the wrong reading. The remaining sections come from the questions in 7,
+Answer 7 is the page's order. What happened answers 1, 4 and 5. The Catch answers 3 when a
+record contradicts the wrong reading; when none does, the page has no Catch. The remaining sections come from the questions in 7,
 one section per question that takes more than two paragraphs to answer, named for the
 question when no standard section fits; a question answered in one or two paragraphs is
 answered inside the section whose question it follows (`shape-rules.md`, rule 12).
@@ -130,8 +130,7 @@ quote until the story turn admits the record; when it cannot, the line is re-gra
 
 A prior case that a record's own actor names (the president's post naming the judge as
 the one "who ruled in favor of Jim Acosta"; the motion that recounts that 2018 order) is B
-for answer 4, carried with its scope. The press-ban reader model graded it D; the story
-turn that carried it anyway wrote the page an outside read preferred on that point. A gap
+for answer 4, carried with its scope. A gap
 line graded C "unmet" on a question of history ("has this happened before") is not the
 page's unknown by inheritance: the story turn runs one search outside the registry (the
 fact-checkers, the court's earlier opinions, the archive) before the page carries the
@@ -151,8 +150,7 @@ or B passage that no Cite outside the proof carries: the grade says the story ne
 the story view or a fact block cites those words. A Cite under any proof element (a proof
 paragraph, a receipt `details`, a proof `div`), in a comment, or in the frontmatter is not
 on the story or fact view and carries nothing.
-It refuses a reader model with no `## Headline`: that model predates 3.5 and turn two is
-rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
+It refuses a reader model with no `## Headline`; turn two is rerun. A paragraph outside the budget is a Major against the placement, and the fix is to
 move it to a detail block or the proof, or to re-grade the passage naming the answer it
 changes.
 

@@ -2,12 +2,13 @@
 # The editor's read of a built story page by a model that did not write it: what the piece
 # says, whether the record as it stands today supports that story, what to cut, what to fix,
 # and what a reader still asks, with every addition paid for by a cut. One memo, in page
-# order, that an author can apply in one pass.
-# Usage: skills/catch-event-page/scripts/editor_read.sh <subject>/<story> [out.md]
+# order, that an author can apply in one pass. It is the last read of a story: it runs after
+# the stranger's read of the same page and takes that report as input.
+# Usage: skills/catch-event-page/scripts/editor_read.sh <subject>/<story> <out.md> <stranger report>
 # Writes checks/audits/<subject>--<story>-<date>-editor.md (memo and verdict), its -page.txt
 # (the page as the story view reads) and .log (full run).
 set -euo pipefail
-story="${1:?usage: editor_read.sh <subject>/<story> [out.md]}"
+story="${1:?usage: editor_read.sh <subject>/<story> <out.md> <stranger report>}"
 subject="${story%%/*}"; slug="${story##*/}"
 root="$(cd "$(dirname "$0")/../../.." && pwd)"
 scripts="$root/skills/catch-event-page/scripts"
@@ -22,6 +23,8 @@ prior="$({ ls "$root/checks/audits/$subject--$slug-"*.md 2>/dev/null || true; } 
 [ -f "$html" ] || { echo "build first: $html is missing" >&2; exit 2; }
 [ -f "$manifest" ] || { echo "manifest missing: $manifest" >&2; exit 2; }
 [ -f "$rm" ] || { echo "reader model missing: $rm" >&2; exit 2; }
+stranger="${3:?the stranger report for this page: run stranger_read.sh first}"
+[ -s "$stranger" ] || { echo "stranger report missing or empty: $stranger" >&2; exit 2; }
 mkdir -p "$(dirname "$out")"
 pagetxt="${out%.md}-page.txt"
 python3 "$scripts/page_text.py" "$html" > "$pagetxt"
@@ -35,7 +38,8 @@ Read in this order.
 1. The page as a reader gets it: $pagetxt (the story view, one block per line). Read it once, top to bottom, before opening anything else, and write down three things you will report under "First read": the story in one sentence as the page told it to you; the questions you still had at the end; the first place you lost the thread, if any (quote it).
 2. What the piece set out to tell: the reader model at $rm (seven answers, then a grade A to D for every passage: A changes the event, B changes the reading, C strengthens the proof, D changes no answer).
 3. The record: $manifest lists the records, with pinned files and text pins under $root/data/sources/. Read every pin the story view cites, whole. The page source is $page (data module under $root/src/data/). Use the network for two things only: what has happened since the page's date (rulings, filings, statements by the actors named), and a primary record the piece reaches only through an outlet.
-4. The review log: every earlier report on this page, from any read (editor, red team, entailment, stranger, record audit), ${prior:-none}; the author's ledger $ledger when it exists; the editor's held list $held when it exists (decided, not open). Do not report a held item. Do not repeat an earlier finding unless the ledger says it was patched and the page still carries it; tag that "residual" and everything else "new".
+4. The stranger's read of this same page: $stranger. A person who had never seen the story read it once and wrote down where they stalled, misread or lost interest. It is the best evidence you have of how the page lands; you are not bound by it.
+5. The review log: every earlier report on this page, from any read (editor, record check, stranger, record audit), ${prior:-none}; the author's ledger $ledger when it exists; the editor's held list $held when it exists (decided, not open). Do not report a held item. Do not repeat an earlier finding unless the ledger says it was patched and the page still carries it; tag that "residual" and everything else "new".
 
 The page's size now:
 $size
@@ -50,6 +54,9 @@ The three things from step 1, written before you opened the reader model.
 
 ## The story
 Is the story the page told you the story the record supports today? State it in one sentence from the record, then say where the page's version differs: the angle, the opening act, what changed, what is unresolved. If the event has moved since the page's date, say what moved first, with the record (URL or file, exact bytes). A piece that is behind its event does not run. If the event is a sequence (an act, its consequence, the process that followed), say whether one passage near the top gives the order with its dates; a sequence a reader has to assemble from several sections is a defect of the story, not a line edit. Then take answers 1 to 6 in turn: does the marked paragraph (with no mark, any sentence of the story view) say the answer in words a reader could repeat to someone else? A number or a mechanism standing where the sentence should be (how many stations take a feed, in place of what changed for the people who watch them) does not carry the answer, and neither does a paragraph that only wears the mark: name the answer, and ask for the sentence, never for another fact.
+
+## The stranger's read
+Every item in the stranger's report, in its order, each with your call in a clause: act on it (name the line edit or hole that does), or leave it and why. A stall the stranger has reported in more than one round and nobody has answered is decided here, one way or the other.
 
 ## The top
 The headline, the dek and the first paragraph, judged as a cold reader meets them: does the first sentence say what happened; does the headline survive the easiest wrong reading (answer 3); is anyone named before being introduced; does the top lean on a term the page explains later.

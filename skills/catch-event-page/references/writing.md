@@ -92,8 +92,7 @@ sounding unaware of the work it took to know it.
   their reasons, the September 25 deadline to respond); it is written from the
   records' passages and never from this list, in sentences a stranger can hold. The reader
   model's "what changed" answer is that passage. A page that spreads the sequence over
-  four sections has every fact and no shape. The same rule obeyed as one sentence gave a 70-word
-  sentence the stranger rejected, so the rule is the register, never the count: the passage
+  four sections has every fact and no shape. The rule is the register, never a count: the passage
   is as long as the steps need, and a sentence a stranger has to read twice to keep its dates
   apart is the one to split.
   A step the passage tells is not told again in full below it, and a page whose dated
@@ -124,8 +123,8 @@ stranger cannot follow is a sentence with three records' worth of clauses, and w
 stranger hears as a primer is six sentences in a row under eight words. The voice lint
 prints the page's profile (words, the median, the share under 8 and over 30 words, the
 longest sentences); read the longest ones aloud and split the ones that lose their
-subject. A rule that capped sentences at 30 words produced the primer; the rule before it
-produced a 70-word sentence. Neither is the register.
+subject. No word cap stands in for this: a cap produces the primer, and no limit produces
+the 70-word sentence.
 
 ## Sentences and passages
 
