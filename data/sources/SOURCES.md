@@ -7,6 +7,8 @@ URL in june17-market-odds-via-grok.txt). The Axios July 29 article blocked direc
 text was recovered through an assisted web reader on 2026-08-23 and is kept, with that
 disclosure, in coverage/axios-july-via-assisted.txt.
 
+On 2026-10-03 the fuel-reserves story recovered five records. data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt was saved from a browser fetch after capture-oneoff-20261003T065410Z returned HTTP 403 and the Wayback copy returned 404. data/sources/fuel-reserves/iea-omr-2026-09.html is that run's Internet Archive copy of the September 2026 Oil Market Report. data/sources/fuel-reserves/ec-taskforce-2026-10-02.txt, data/sources/fuel-reserves/eia-distillate-2026-10-03.html, and data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.xlsx were captured in the same run. The workbook text sibling is the total row; the distillate text sibling is the table as saved.
+
 | File | Bytes | sha256 (first 16) |
 |---|---|---|
 | data/sources/DFEDTAR.csv | 172645 | 323b6d9fb014cdd8 |
@@ -1829,3 +1831,49 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fuel-reserves/rte-von-der-leyen-2026-10-02.txt | 6585 | 28318e32e47f97a8 |
 | data/sources/fuel-reserves/cnbc-export-ban-2026-09-30.html | 803548 | 5f1a252627b57940 |
 | data/sources/fuel-reserves/cnbc-export-ban-2026-09-30.txt | 2514 | 40b243921b2323f6 |
+| data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.html | 229007 | 2cedf02d7ed16d9e |
+| data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt | 1753 | 3d9f4052f146d474 |
+| data/sources/fuel-reserves/iea-omr-2026-09.html | 313645 | 22d0c03535b7050d |
+| data/sources/fuel-reserves/iea-omr-2026-09.txt | 6125 | 41d2ade9932ac5cf |
+| data/sources/fuel-reserves/ec-taskforce-2026-10-02.html | 85626 | f2e1c5b34ea1b27e |
+| data/sources/fuel-reserves/ec-taskforce-2026-10-02.txt | 1078 | 85e744764342afde |
+| data/sources/fuel-reserves/eia-distillate-2026-10-03.html | 20178 | d32f49b13dd49f46 |
+| data/sources/fuel-reserves/eia-distillate-2026-10-03.txt | 5932 | 3195bc47a5dec90e |
+| data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.xlsx | 21008 | 4c13e7c82284b982 |
+| data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.txt | 139 | a95c5a00d9914cfb |
+| data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.html | 520062 | 7b6c8e208786569f |
+| data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.txt | 2709 | 56c91a0bc605bd74 |
+| data/sources/fuel-reserves/independent-miliband-2026-10-02.html | 236503 | 67b4c008cdc1abe6 |
+| data/sources/fuel-reserves/independent-miliband-2026-10-02.txt | 3487 | 8494839594afdc05 |
+| data/sources/fuel-reserves/politico-diesel-pressure-2026-10-02.html | 208138 | 87739ecd1c69fe71 |
+| data/sources/fuel-reserves/politico-diesel-pressure-2026-10-02.txt | 1461 | 607978899e6979d4 |
+| data/sources/fuel-reserves/politico-no-ban-2026-10-02.html | 204877 | 048cefc12d76ed5a |
+| data/sources/fuel-reserves/politico-no-ban-2026-10-02.txt | 1123 | 5928bd4b0bf1a9a9 |
+| data/sources/fuel-reserves/rbc-diesel-strategy-2026-10-01.html | 74365 | e225bb1b9cf374ab |
+| data/sources/fuel-reserves/rbc-diesel-strategy-2026-10-01.txt | 10314 | 12981ac4c99d6825 |
+| data/sources/fuel-reserves/national-g7-release-2026-10-02.html | 699936 | 56ad523721da5c45 |
+| data/sources/fuel-reserves/national-g7-release-2026-10-02.txt | 3776 | 5da35bd227b14f5a |
+| data/sources/fuel-reserves/reuters-settle-2026-10-02.html | 588958 | 77aea794a431e799 |
+| data/sources/fuel-reserves/reuters-settle-2026-10-02.txt | 3773 | eb644faf2dfadf23 |
+| data/sources/fuel-reserves/interfax-diesel-ban-2026-09-30.html | 28538 | 8f28cdb574a2dbd3 |
+| data/sources/fuel-reserves/interfax-diesel-ban-2026-09-30.txt | 689 | 58c304528bcb08f8 |
+| data/sources/fuel-reserves/reuters-novak-2026-10-02.html | 513299 | 08c120e642413ae6 |
+| data/sources/fuel-reserves/reuters-novak-2026-10-02.txt | 2362 | 4b4c7345fe10fba8 |
+| data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.html | 509208 | d7ec29e90a910aeb |
+| data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.txt | 2945 | b970b4ce873317c3 |
+| data/sources/fuel-reserves/blas-red-herring-2026-10-02.html | 135185 | 312392b6f7d1da9f |
+| data/sources/fuel-reserves/blas-red-herring-2026-10-02.txt | 702 | 686257f336664310 |
+| data/sources/fuel-reserves/blas-wholesale-2026-10-02.html | 147349 | f05670e5bc87331f |
+| data/sources/fuel-reserves/blas-wholesale-2026-10-02.txt | 1227 | 209a71be0adb90fa |
+| data/sources/fuel-reserves/blas-export-letter-2026-09-23.html | 150435 | 06a96605dac40463 |
+| data/sources/fuel-reserves/blas-export-letter-2026-09-23.txt | 582 | bff7f760c0735642 |
+| data/sources/fuel-reserves/brownfield-dyed-diesel-2026-10-02.html | 78852 | e06e56ef312f7f22 |
+| data/sources/fuel-reserves/brownfield-dyed-diesel-2026-10-02.txt | 2212 | 000efe78826a1ce5 |
+| data/sources/fuel-reserves/xinhua-itkonen-2026-10-02.html | 7655 | f7f51c571396c82e |
+| data/sources/fuel-reserves/xinhua-itkonen-2026-10-02.txt | 1795 | 221193c8596788b2 |
+| data/sources/fuel-reserves/daugherty-rollins-2026-10-02.html | 152092 | b350dc1335592735 |
+| data/sources/fuel-reserves/daugherty-rollins-2026-10-02.txt | 755 | f50165054b1c5d23 |
+| data/sources/fuel-reserves/scripps-rollins-2026-10-02.html | 109450 | 73e6a6c53c7dceee |
+| data/sources/fuel-reserves/scripps-rollins-2026-10-02.txt | 1557 | 7e2bc937d99b72ad |
+| data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.html | 683308 | 7f9175ab211690e2 |
+| data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.txt | 2350 | cef28609dc7813cd |

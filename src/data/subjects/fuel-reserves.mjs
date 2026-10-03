@@ -1,6 +1,6 @@
 export const subject = {
   title: "Fuel reserves",
-  dek: "On October 2, 2026, the Group of Seven said its members would release 100 million barrels of oil through the International Energy Agency over four months, with a substantial diesel release in the first 20 days.",
+  dek: "The diesel share is called substantial and placed in the first 20 days, with no number. France's readout says up to 100 million barrels of diesel and crude.",
   current: [
     {
       label: "October 2 coordinated release",
@@ -33,14 +33,14 @@ export const subject = {
       source_sentence: "frontloaded substantial diesel release within the first 20 days",
     },
     {
-      label: "U.S. reserve share announced March 11",
-      value: "172",
+      label: "March coordinated release",
+      value: "400",
       unit: "million barrels",
       as_of: "2026-03-11",
       record_id: "doe-spr-release-2026-03-11",
-      source_value: "172",
+      source_value: "400",
       source_unit: "million barrels",
-      source_sentence: "release 172 million barrels from the Strategic Petroleum Reserve",
+      source_sentence: "coordinated release of 400 million barrels",
     },
   ],
 };

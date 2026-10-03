@@ -9,6 +9,7 @@ import StoryState from "../../../components/StoryState.astro";
 import KpiStrip from "../../../components/story/KpiStrip.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { readPublishedState } from "../../../lib/state.mjs";
 import {
   event,
@@ -18,6 +19,10 @@ import {
   changeRows,
   statementRows,
   chronology,
+  distillate,
+  contributionsSheet,
+  gulfDiesel,
+  marchSoFar,
 } from "../../../data/fuel-reserves-2026-10-02-g7-releases-100-million-barrels.mjs";
 const state = readPublishedState().events.get("event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
 if (!state) throw new Error("Missing publication selection: event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
@@ -30,78 +35,106 @@ if (!state) throw new Error("Missing publication selection: event-fuel-reserves-
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
       <ReadingModes />
+      <nav class="story-toc" aria-label="In this story">
+        <details class="toc-disclosure" open data-layer="fact"><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+          <ol>
+            <li><a href="#what-happened">What happened</a></li>
+            <li><a href="#the-catch">The catch</a></li>
+            <li><a href="#where-this-sits">Where this sits</a></li>
+            <li><a href="#export-ban">The export ban</a></li>
+            <li><a href="#what-happened-next">What happened next</a></li>
+            <li><a href="#unknowns">What we do not know yet</a></li>
+            <li><a href="#records">The records</a></li>
+          </ol>
+        </details>
+      </nav>
       <KpiStrip kpis={event.kpis} />
 
-      <section id="release" data-layer="fact">
-        <h2>The release</h2>
-        <p>On October 2, 2026, the Group of Seven said members would carry out commitments already made "with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days".<Cite s="govuk-g7-statement-2026-10-02" passage="coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On October 2, 2026, G7 leaders said that, "taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days". The same statement says the group will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns. It reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries.<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /><Cite s="govuk-g7-statement-2026-10-02" passage="We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /></p>
+        <p data-layer="narrative">The French presidency's readout states a ceiling, "jusqu'à 100 millions de barils sous 4 mois". That readout names refined products, notably diesel and crude.<Cite s="elysee-g7-readout-2026-10-02" passage="jusqu'à 100 millions de barils sous 4 mois" /><Cite s="elysee-g7-readout-2026-10-02" passage="notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois" /></p>
+        <p data-layer="narrative" data-answer="4">The March contributions page says the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products. A barrel counted as crude is not the diesel a pump sells. On September 30, Energy Secretary Chris Wright said diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East. Chris Wright said American refiners are running at record highs.<Cite s="iea-contributions-2026-03-19" passage="the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products" /><Cite s="cnbc-export-ban-2026-09-30" passage={`diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East`} /><Cite s="cnbc-export-ban-2026-09-30" passage="American refiners are running at record highs" /></p>
+        <p data-layer="narrative">The October 2 statement calls for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz. The French readout says volumes moving through Hormuz and the Yanbu canal in the Red Sea have been increasing in recent days. Notably, net exports of diesel/gasoil from the Gulf countries averaged {gulfDiesel.august} in August, just over a quarter of levels before the war in the Middle East. Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were {gulfDiesel.combinedShortfall} lower than in February.<Cite s="govuk-g7-statement-2026-10-02" passage="immediate and full restoration of navigational rights and principles in the Strait of Hormuz" /><Cite s="elysee-g7-readout-2026-10-02" passage="Les volumes acheminés transitant par Ormuz et dans le canal de Yanbu en Mer Rouge augmentent ces derniers jours" /><Cite s="iea-omr-2026-09" passage="averaged 390 kb/d in August, just over a quarter of pre-war levels" /><Cite s="iea-omr-2026-09" passage="Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 mb/d lower than in February" /></p>
+        <p data-layer="narrative" data-answer="5">On March 11 the Energy Department said {release.members} nations of the International Energy Agency agreed to a coordinated release of {release.marchTotal} barrels. The United States would release {release.usMarch} barrels from the Strategic Petroleum Reserve, beginning next week. On September 29 the department requested an exchange of up to {release.exchange} barrels of crude oil. It said earlier solicitations collectively awarded more than {release.awarded} barrels. It said several European member countries have released only a fraction. On September 30 President Donald Trump was still "thinking about" banning diesel exports. On October 2 a Reuters brief said President Donald Trump will not authorize an export ban on diesel. The same day's statement reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries. The March contributions page says this is the sixth time that IEA Member countries have taken emergency collective action. Previous collective actions were taken in 1991, 2005, 2011, and twice in 2022.<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="doe-spr-release-2026-03-11" passage="release 172 million barrels from the Strategic Petroleum Reserve, beginning next week" /><Cite s="doe-spr-exchange-2026-09-29" passage="an exchange of up to 40 million barrels of crude oil" /><Cite s="doe-spr-exchange-2026-09-29" passage="collectively awarded more than 133 million barrels" /><Cite s="doe-spr-exchange-2026-09-29" passage="several European member countries have released only a fraction" /><Cite s="cnbc-export-ban-2026-09-30" passage={`still "thinking about" banning diesel exports`} /><Cite s="reuters-no-export-ban-2026-10-02" passage="he will not authorize an export ban on diesel" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /><Cite s="iea-contributions-2026-03-19" passage="This is the sixth time that IEA Member countries have taken emergency collective action" /><Cite s="iea-contributions-2026-03-19" passage="Previous collective actions were taken in 1991, 2005, 2011, and twice in 2022." /></p>
 
         <SourcedBlock source="govuk-g7-statement-2026-10-02" kind="record" detail>
-          <p>The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases." It also says members "refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days."<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled" /></p>
+          <p>The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases." It also says the members "reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days."<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled" /></p>
         </SourcedBlock>
-
         <SourcedBlock source="elysee-g7-statement-2026-10-02" kind="record" detail>
           <p>The French presidency published the same English statement, including the {release.barrels} barrel release over {release.months} and the diesel release "within the first 20 days."<Cite s="elysee-g7-statement-2026-10-02" passage="frontloaded substantial diesel release within the first 20 days" /></p>
         </SourcedBlock>
-
-        <SourcedBlock source="elysee-g7-readout-2026-10-02" kind="record" detail>
-          <p>The Elysee readout of the October 2 videoconference says the leaders decided to release refined products, "notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois," coordinated by the International Energy Agency.<Cite s="elysee-g7-readout-2026-10-02" passage="jusqu'à 100 millions de barils sous 4 mois" /></p>
-        </SourcedBlock>
-
-        <SourcedBlock source="trumpstruth-post-2026-10-02" kind="record" detail>
-          <p>President Donald Trump posted: "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately."<Cite s="trumpstruth-post-2026-10-02" passage="Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately." /></p>
-        </SourcedBlock>
-
-        <SourcedBlock source="bessent-post-2026-10-01" kind="record" detail>
-          <p>On October 1, Treasury Secretary Scott Bessent wrote: "Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available."<Cite s="bessent-post-2026-10-01" passage="Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" /></p>
-        </SourcedBlock>
-
-        <SourcedBlock source="doe-spr-exchange-2026-09-29" kind="record" detail>
-          <p>On September 29 the Energy Department issued a request for an "exchange of up to 40 million barrels of crude oil" from the Strategic Petroleum Reserve. Secretary Chris Wright said several European member countries "have released only a fraction" of what they pledged. The department said five earlier solicitations "collectively awarded more than 133 million barrels," with a "25 percent premium in returned barrels," and that the exchanges save "more than $3 billion." Bids are due "October 6, 2026." The oil is to come from Big Hill and Bryan Mound.<Cite s="doe-spr-exchange-2026-09-29" passage="an exchange of up to 40 million barrels of crude oil" /></p>
-        </SourcedBlock>
-
         <SourcedBlock source="doe-spr-release-2026-03-11" kind="record" detail>
           <p>On March 11, Chris Wright said 32 member nations agreed to a "coordinated release of 400 million barrels," and that the United States would "release 172 million barrels from the Strategic Petroleum Reserve, beginning next week," over "approximately 120 days." He said the United States had arranged to replace the draw with "approximately 200 million barrels within the next year."<Cite s="doe-spr-release-2026-03-11" passage="release 172 million barrels from the Strategic Petroleum Reserve, beginning next week" /></p>
         </SourcedBlock>
-
         <SourcedBlock source="elysee-g7-communique-2026-03-11" kind="record" detail>
           <p>The March 11 G7 presidency communique says leaders welcomed the International Energy Agency announcement, prepared at the G7's initiative, "de libérer jusqu’à 400 millions de barils de réserves stratégiques."<Cite s="elysee-g7-communique-2026-03-11" passage="de libérer jusqu’à 400 millions de barils de réserves stratégiques" /></p>
         </SourcedBlock>
-
+        <SourcedBlock source="iea-g7-meeting-2026-10-02" kind="record" detail>
+          <p>The agency's account of the same meeting lists President Donald Trump, Chancellor Friedrich Merz, Prime Minister Mark Carney, Prime Minister Giorgia Meloni, President Ursula von der Leyen, UK Foreign Secretary Ed Miliband, and Japanese Vice Minister of Foreign Affairs Kazuya Endo.<Cite s="iea-g7-meeting-2026-10-02" passage="The meeting was attended by President Donald Trump of the United States, Chancellor Friedrich Merz of Germany, Prime Minister Mark Carney of Canada, Prime Minister Giorgia Meloni of Italy, President Ursula von der Leyen of the European Commission, UK Foreign Secretary Ed Miliband and Japanese Vice Minister of Foreign Affairs Kazuya Endo." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="independent-miliband-2026-10-02" kind="record" detail>
+          <p>The Independent reported that Foreign Secretary Ed Miliband would stand in for Andy Burnham during the talks, as the Prime Minister attended his father's funeral.<Cite s="independent-miliband-2026-10-02" passage="Foreign Secretary Ed Miliband will stand in for Andy Burnham during urgent G7 talks regarding global energy markets, as the Prime Minister attends his father’s funeral." /></p>
+          <p>The same article says fuel prices hit £2 a litre for the first time.<Cite s="independent-miliband-2026-10-02" passage="fuel prices hit £2 a litre for the first time" /></p>
+          <p>It says the previous record high was 199.09p, set in June 2022.<Cite s="independent-miliband-2026-10-02" passage="The previous record high was 199.09p, set in June 2022" /></p>
+          <p>The same article says prices have rocketed because of the US-Israeli conflict with Iran and Russia's ongoing war in Ukraine.<Cite s="independent-miliband-2026-10-02" passage="Prices have rocketed in recent months because of the disruption in global markets caused by the US-Israeli conflict with Iran and Russia’s ongoing war in Ukraine." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="elysee-g7-readout-2026-10-02" kind="record" detail>
+          <p>The French presidency's readout says the G7 leaders decided unanimously. It says a letter from the president of the Republic to the president of the European Commission concerned running refineries at full capacity, and that first measures had already been decided at European level.<Cite s="elysee-g7-readout-2026-10-02" passage="Ils ont décidé, à l'unanimité :" /><Cite s="elysee-g7-readout-2026-10-02" passage="la lettre que le Président de la République avait envoyée à la Présidente de la Commission européenne" /></p>
+        </SourcedBlock>
         <SourcedBlock source="iea-contributions-2026-03-19" kind="record" detail>
           <p>The International Energy Agency's March 19 contributions page says the agreement announced on 11 March makes "400 million barrels of oil available to the market." It says the overall release "will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products." It calls the action "the sixth time" members have acted together since the agency "was created in 1974," after actions "in 1991, 2005, 2011, and twice in 2022," and calls the Middle East war "the largest supply disruption in the history of the global oil market." Executive Director Fatih Birol's remarks are named on that page.<Cite s="iea-contributions-2026-03-19" passage="400 million barrels of oil available to the market" /></p>
         </SourcedBlock>
-
-        <SourcedBlock source="bundesregierung-energy-faq-2026-10-01" kind="record" detail>
-          <p>The German government's energy FAQ says the 32 IEA members agreed in March to release "400 Millionen Barrel (gut 54 Millionen Tonnen)," and that "Deutschland hat die Freigabe am 18. März erteilt." It says Germany's emergency reserve "für etwa 90 Tage umfasst insgesamt etwa 20 Millionen Tonnen," and that the IEA had asked Germany to release "2,6 Millionen Tonnen."<Cite s="bundesregierung-energy-faq-2026-10-01" passage="Die IEA hatte Deutschland gebeten, 2,6 Millionen Tonnen aus seiner Reserve freizugeben." /></p>
-        </SourcedBlock>
-
-        <SourcedBlock source="hr10422-diesel-export-2026-09-16" kind="record" detail>
-          <p>On September 16, 2026, Mr. Burchett and Mr. Fuller introduced H.R. 10422, "To prohibit the export of diesel fuel from the United States during certain periods." The bill tells the Secretary of Commerce to bar diesel exports while the average retail price stays above $5 a gallon for fourteen consecutive days, and to lift that bar after thirty consecutive days under $4.50. The text refers the bill to the Committee on Foreign Affairs.<Cite s="hr10422-diesel-export-2026-09-16" passage="To prohibit the export of diesel fuel from the United States during" /></p>
-        </SourcedBlock>
-
-        <SourcedBlock source="hr10423-diesel-export-2026-09-16" kind="record" detail>
-          <p>The same day, the same sponsors introduced H.R. 10423. It says "the export of diesel fuel shall be prohibited" from enactment through "December 31, 2026." It too was referred to the Committee on Foreign Affairs.<Cite s="hr10423-diesel-export-2026-09-16" passage="the export of diesel fuel shall be prohibited during the period beginning on the date of the enactment of this subsection and ending on the date December 31, 2026." /></p>
-        </SourcedBlock>
-
         <details class="receipt" data-layer="proof">
           <summary>English statement and French readout</summary>
           <DataTable columns={["Record", "Wording of the 100 million barrels"]} rows={statementRows} />
         </details>
       </section>
 
-      <section id="chronology" data-layer="fact">
-        <h2>Chronology</h2>
-        <p>The October 2 release sits on the March 11 agreement of {release.marchTotal} barrels and the September 29 exchange of up to {release.exchange} barrels.<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="doe-spr-exchange-2026-09-29" passage="exchange of up to 40 million barrels" /></p>
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <h3>A massive immediate release of Europe's diesel</h3>
+              <p data-layer="narrative" data-answer="3">President Donald Trump posted that Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil and that the process will begin immediately. The joint statement counts commitments already fulfilled and calls for a frontloaded substantial diesel release within the first 20 days.<Cite s="trumpstruth-post-2026-10-02" passage="Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately." /><Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+              <QuoteCard speaker="Donald Trump" when="October 2, 2026" where="Truth Social, carried by Trump's Truth" label="Trump's Truth">
+                <p>Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately.<Cite s="trumpstruth-post-2026-10-02" passage="Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately." /></p>
+              </QuoteCard>
+            </li>
+            <li>
+              <h3>100 million barrels of diesel in 20 days, or 50 and 50</h3>
+              <p data-layer="narrative">Reuters reported a demand to "release 100 million barrels of diesel within a 20-day window". A Friday proposal, before the statement, said European countries would release 50 million barrels of diesel and International Energy Agency members would release 50 million barrels of crude oil.<Cite s="reuters-eu-proposal-2026-10-02" passage="release 100 million barrels of diesel within a 20-day window" /><Cite s="reuters-eu-proposal-2026-10-02" passage="European countries would release 50 million barrels of diesel and International Energy Agency members would release 50 million barrels of crude oil" /></p>
+              <p data-layer="narrative">The day before, Reuters reported: "A second source, based in a European capital, said that the US has asked the EU to release 120 million barrels of diesel in the next six months."<Cite s="reuters-diesel-demand-2026-10-01" passage="A second source, based in a European capital, said that the US has asked the EU to release 120 million barrels of diesel in the next six months." /></p>
+              <p data-layer="narrative">An X post said that "100 MILLION BARRELS OF DIESEL are currently en route to the United States".<Cite s="daugherty-rollins-2026-10-02" passage="100 MILLION BARRELS OF DIESEL are currently en route to the United States, per Sec. Brooke Rollins" /></p>
+              <p data-layer="narrative">The joint statement counts commitments already fulfilled and states a coordinated release of 100 million barrels over 4 months.<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+            </li>
+            <li>
+              <h3>100 million barrels of crude oil and fuel</h3>
+              <p data-layer="narrative">The Wall Street Journal's lede said the countries would "release 100 million barrels of crude oil and fuel from their emergency stocks". IEA Executive Director Fatih Birol noted that around {marchSoFar.barrels} million barrels of the IEA collective action announced on 11 March have so far been released, representing over {marchSoFar.share} of the {release.marchTotal} barrels originally pledged in the action. The March contributions sheet's total line is Total IEA,{contributionsSheet.totalIea}.<Cite s="wsj-g7-release-2026-10-02" passage="release 100 million barrels of crude oil and fuel from their emergency stocks" /><Cite s="iea-g7-meeting-2026-10-02" passage="He noted that around 325 million barrels of the IEA collective action announced on 11 March have so far been released, representing over 80% of the 400 million barrels originally pledged in the action." /><Cite s="iea-contributions-workbook-2026-03-19" passage="Total IEA,426.03075080054771" /></p>
+            </li>
+          </ol>
+        </aside>
+        <SourcedBlock source="trumpstruth-post-2026-10-02" kind="record" detail>
+          <p>President Donald Trump posted: "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately."<Cite s="trumpstruth-post-2026-10-02" passage="Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately." /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="where-this-sits">
+        <h2 data-layer="fact">Where this sits</h2>
+        <p data-layer="narrative">The Energy Department said International Energy Agency member nations agreed a coordinated release of {release.marchTotal} barrels, and the October 2 text sets a timetable of {release.months}.<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Decisions on the reserve</strong><span>From the G7 texts, the Energy Department, and the two House bills.</span></figcaption>
           <DecisionTimeline entries={chronology} />
         </figure>
-      </section>
-
-      <section id="prices" data-layer="fact">
-        <h2>Prices</h2>
-        <p>The last diesel observation in the weekly retail series is {prices.dieselSep28} dollars a gallon on September 28, against {prices.dieselSep21} the week before and {prices.dieselMar2} on March 2. Brent's last observation is {prices.brentSep29} dollars a barrel on September 29, against {prices.brentFeb27} on February 27. WTI's last observation that day is {prices.wtiSep29}, against {prices.wtiFeb27}.<Cite s="gasdesw-2026-10-03" passage="2026-09-28,6.382" /><Cite s="dcoilbrenteu-2026-10-03" passage="2026-09-29,113.96" /><Cite s="dcoilwtico-2026-10-03" passage="2026-09-29,96.16" /></p>
+        <p data-layer="narrative">The March 11 G7 presidency communique welcomed a release of "de libérer jusqu’à 400 millions de barils de réserves stratégiques".<Cite s="elysee-g7-communique-2026-03-11" passage="de libérer jusqu’à 400 millions de barils de réserves stratégiques" /></p>
+        <p data-layer="narrative" data-answer="2">Weekly U.S. retail diesel was {prices.dieselSep28} dollars a gallon on September 28. On March 2 the same series was {prices.dieselMar2}. Treasury Secretary Scott Bessent said American farmers, truckers, and businesses should not be left carrying the burden of a global diesel shortage.<Cite s="gasdesw-2026-10-03" passage="2026-09-28,6.382" /><Cite s="gasdesw-2026-10-03" passage="2026-03-02,3.897" /><Cite s="bessent-post-2026-10-01" passage="American farmers, truckers, and businesses should not be left carrying the burden of a global diesel shortage" /></p>
+        <QuoteCard speaker="Scott Bessent, Treasury secretary" when="October 1, 2026" where="X post" label="Treasury secretary">
+          <p>American farmers, truckers, and businesses should not be left carrying the burden of a global diesel shortage.<Cite s="bessent-post-2026-10-01" passage="American farmers, truckers, and businesses should not be left carrying the burden of a global diesel shortage" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Germany's emergency FAQ says "Deutschlands Notfallreserve für etwa 90 Tage umfasst insgesamt etwa 20 Millionen Tonnen", a reserve of about 20 million tonnes for about 90 days. It also says "Derzeit wird vom Markt keine weitere Freigabe für erforderlich gehalten", the market does not now consider a further release necessary.<Cite s="bundesregierung-energy-faq-2026-10-01" passage="Deutschlands Notfallreserve für etwa 90 Tage umfasst insgesamt etwa 20 Millionen Tonnen" /><Cite s="bundesregierung-energy-faq-2026-10-01" passage="Derzeit wird vom Markt keine weitere Freigabe für erforderlich gehalten." /></p>
+        <p data-layer="narrative">Stocks of Distillate Fuel Oil are measured in "(Thousand Barrels)". The week headings for Stocks of Distillate Fuel Oil run 08/21/26, 08/28/26, 09/04/26, 09/11/26, 09/18/26, 09/25/26, and the U.S. stocks in that order are 103,391, 104,187, 106,274, 107,859, {distillate.sep18}, {distillate.sep25}.<Cite s="eia-distillate-2026-10-03" passage="Stocks of Distillate Fuel Oil" /><Cite s="eia-distillate-2026-10-03" passage="(Thousand Barrels)" /><Cite s="eia-distillate-2026-10-03" passage="08/21/26 08/28/26 09/04/26 09/11/26 09/18/26 09/25/26 View History U.S. 103,391 104,187 106,274 107,859 107,431 105,180" /></p>
+        <p data-layer="narrative">The European Commission's Energy Union task force said EU diesel supply remains stable for the time being, but prices remain high.<Cite s="ec-taskforce-2026-10-02" passage="EU diesel supply remains stable for the time being, but prices remain high" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Diesel and crude</strong><span>Weekly U.S. No. 2 diesel, Europe Brent, and Cushing WTI.</span></figcaption>
           <DataTable columns={["Series", "Observation", "Dollars"]} rows={priceRows} />
@@ -113,6 +146,99 @@ if (!state) throw new Error("Missing publication selection: event-fuel-reserves-
           <figcaption><strong>Change from the earlier observation</strong><span>Subtracted from the rows above.</span></figcaption>
           <DataTable columns={["Comparison", "Change", "Unit"]} rows={changeRows} />
         </figure>
+        <SourcedBlock source="doe-spr-exchange-2026-09-29" kind="record" detail>
+          <p>On September 29 the Energy Department issued a request for an "exchange of up to 40 million barrels of crude oil" from the Strategic Petroleum Reserve. Secretary Chris Wright said several European member countries "have released only a fraction" of what they pledged. The department said five earlier solicitations "collectively awarded more than 133 million barrels," with a "25 percent premium in returned barrels," and that these exchanges will also ensure the reserve continues to be refilled, while saving taxpayers more than $3 billion. Bids are due "October 6, 2026." The oil is to come from Big Hill and Bryan Mound.<Cite s="doe-spr-exchange-2026-09-29" passage="an exchange of up to 40 million barrels of crude oil" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bessent-post-2026-10-01" kind="record" detail>
+          <p>On October 1, Treasury Secretary Scott Bessent wrote: "Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available."<Cite s="bessent-post-2026-10-01" passage="Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bundesregierung-energy-faq-2026-10-01" kind="record" detail>
+          <p>The German government's energy FAQ says the 32 IEA members agreed in March to release "400 Millionen Barrel (gut 54 Millionen Tonnen)," and that "Deutschland hat die Freigabe am 18. März erteilt." It says Germany's emergency reserve "für etwa 90 Tage umfasst insgesamt etwa 20 Millionen Tonnen," and that the IEA had asked Germany to release "2,6 Millionen Tonnen."<Cite s="bundesregierung-energy-faq-2026-10-01" passage="Die IEA hatte Deutschland gebeten, 2,6 Millionen Tonnen aus seiner Reserve freizugeben." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="welt-g7-welcome-2026-10-02" kind="record" detail>
+          <p>Welt reported on Friday evening that the federal government welcomed the release of 100 million barrels of oil and products such as diesel.<Cite s="welt-g7-welcome-2026-10-02" passage="Auch die Bundesregierung hat den G-7-Beschluss zur Freigabe von 100 Millionen Barrel Öl und Ölprodukten wie Diesel als wichtiges Zeichen für die Handlungsfähigkeit und Geschlossenheit der Gruppe begrüßt." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="interfax-diesel-ban-2026-09-30" kind="record" detail>
+          <p>Interfax reported on September 30 that the Russian government extended the ban on exports of diesel fuel for producers until October 31.<Cite s="interfax-diesel-ban-2026-09-30" passage="The Russian government has extended the ban on exports of diesel fuel, ship fuel and gasoil for producers, which was set to expire today, until October 31" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="reuters-novak-2026-10-02" kind="record" detail>
+          <p>On October 2 Reuters reported that Russia would consider a partial lifting of diesel export restrictions in case of overproduction.<Cite s="reuters-novak-2026-10-02" passage="Russia said on Friday it would consider a partial lifting of diesel export restrictions in case of overproduction" /></p>
+          <p>The same account says Deputy Prime Minister Alexander Novak said the domestic diesel market is currently balanced.<Cite s="reuters-novak-2026-10-02" passage="the domestic diesel market is currently balanced" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="reuters-spr-limits-2026-09-29" kind="record" detail>
+          <p>Reuters reported that the amount of oil in the reserve had sunk to less than 284 million barrels, the lowest level since 1982.<Cite s="reuters-spr-limits-2026-09-29" passage="The amount of oil in US SPR has sunk to less than 284 million barrels, the lowest level since 1982." /></p>
+          <p>The same article says US law prohibits the president from ordering routine, small draw downs if the SPR falls below 252.4 million barrels.<Cite s="reuters-spr-limits-2026-09-29" passage="US law prohibits the president from ordering routine, small draw downs if the SPR falls below 252.4 million barrels." /></p>
+          <p>It says an earlier offer drew agreement to borrow about 500,000 barrels.<Cite s="reuters-spr-limits-2026-09-29" passage="companies only agreed to borrow about 500,000 barrels" /></p>
+        </SourcedBlock>
+
+      </section>
+
+      <section id="export-ban">
+        <h2 data-layer="fact">The export ban</h2>
+        <p data-layer="narrative">H.R. 10422, introduced September 16, "was referred to the Committee on Foreign Affairs".<Cite s="hr10422-diesel-export-2026-09-16" passage="which was referred to the Committee on Foreign Affairs" /></p>
+        <p data-layer="narrative">On September 30 President Donald Trump was still "thinking about" banning diesel exports. On October 1 Bessent said European partners should accelerate delivery on their existing commitments and make additional supplies immediately available. On October 2 the statement reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries. The same day a Reuters brief said President Donald Trump will not authorize an export ban on diesel.<Cite s="cnbc-export-ban-2026-09-30" passage={`still "thinking about" banning diesel exports`} /><Cite s="bessent-post-2026-10-01" passage="Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /><Cite s="reuters-no-export-ban-2026-10-02" passage="he will not authorize an export ban on diesel" /></p>
+        <p data-layer="narrative">An EU spokeswoman told France 24, "We fully reject any ban on diesel."<Cite s="france24-g7-release-2026-10-02" passage="We fully reject any ban on diesel." /></p>
+        <p data-layer="narrative">Commission President Ursula von der Leyen welcomed the decision of G7 countries not to impose any export bans on allies.<Cite s="rte-von-der-leyen-2026-10-02" passage="We welcome the decision of G7 countries not to impose any export bans on allies" /></p>
+        <QuoteCard speaker="Ursula von der Leyen" when="October 2, 2026" where="X post, via RTÉ" label="RTÉ">
+          <p>We welcome the decision of G7 countries not to impose any export bans on allies and the continued solidarity between partners. We support an IEA-coordinated release of fuel stocks.<Cite s="rte-von-der-leyen-2026-10-02" passage="We welcome the decision of G7 countries not to impose any export bans on allies and the continued solidarity between partners. We support an IEA-coordinated release of fuel stocks" /></p>
+        </QuoteCard>
+        <SourcedBlock source="hr10422-diesel-export-2026-09-16" kind="record" detail>
+          <p>On September 16, 2026, Mr. Burchett and Mr. Fuller introduced H.R. 10422, "To prohibit the export of diesel fuel from the United States during certain periods." The bill tells the Secretary of Commerce to bar diesel exports while the average retail price stays above $5 a gallon for fourteen consecutive days, and to lift that bar after thirty consecutive days under $4.50. The text refers the bill to the Committee on Foreign Affairs.<Cite s="hr10422-diesel-export-2026-09-16" passage="To prohibit the export of diesel fuel from the United States during" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="hr10423-diesel-export-2026-09-16" kind="record" detail>
+          <p>The same day, the same sponsors introduced H.R. 10423. It says "the export of diesel fuel shall be prohibited" from enactment through "December 31, 2026." It too was referred to the Committee on Foreign Affairs.<Cite s="hr10423-diesel-export-2026-09-16" passage="the export of diesel fuel shall be prohibited during the period beginning on the date of the enactment of this subsection and ending on the date December 31, 2026." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="politico-diesel-pressure-2026-10-02" kind="record" detail>
+          <p>Politico reported that one European diplomat characterized the demand, set against the threat of a U.S. export ban, as blackmail.<Cite s="politico-diesel-pressure-2026-10-02" passage="One European diplomat characterized the White House’s demands for a release against the threat of a U.S. export ban explicitly as “blackmail,”" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="politico-no-ban-2026-10-02" kind="record" detail>
+          <p>Politico reported the president adding, "It was never really ever on the table, but what Europe did was a great thing".<Cite s="politico-no-ban-2026-10-02" passage="It was never really ever on the table, but what Europe did was a great thing" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="national-g7-release-2026-10-02" kind="record" detail>
+          <p>The National reported that Mr Macron said Mr Trump did not threaten to issue an embargo on US diesel.<Cite s="national-g7-release-2026-10-02" passage="Mr Macron said Mr Trump did not threaten to issue an embargo on US diesel" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="rbc-diesel-strategy-2026-10-01" kind="record" detail>
+          <p>An RBC note says several leading Senate Republicans have publicly called for a diesel export ban.<Cite s="rbc-diesel-strategy-2026-10-01" passage="several leading Senate Republicans have publicly called for a diesel export ban" /></p>
+          <p>The same note quotes the president on September 22: "I've said let's not send out the diesel."<Cite s="rbc-diesel-strategy-2026-10-01" passage="I've said let's not send out the diesel" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="blas-export-letter-2026-09-23" kind="record" detail>
+          <p>On September 23 Javier Blas wrote that industry groups had sent a joint letter to President Trump urging him against limits on diesel exports.<Cite s="blas-export-letter-2026-09-23" passage="have sent a joint letter to President Trump urging him against limits of diesels exports." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="brownfield-dyed-diesel-2026-10-02" kind="record" detail>
+          <p>Brownfield reported that Ohio is implementing a 90-day state gas and diesel tax suspension.<Cite s="brownfield-dyed-diesel-2026-10-02" passage="Ohio is implementing a 90-day state gas and diesel tax suspension." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="xinhua-itkonen-2026-10-02" kind="record" detail>
+          <p>Xinhua quoted the spokesperson: "It would undermine our trust in the United States as a reliable partner."<Cite s="xinhua-itkonen-2026-10-02" passage="It would undermine our trust in the United States as a reliable partner." /></p>
+          <p>The same account quotes the Commission president: "Our citizens need and deserve affordable energy."<Cite s="xinhua-itkonen-2026-10-02" passage="Our citizens need and deserve affordable energy" /></p>
+          <p>It says that since late February, gas prices in Europe have risen by 140 percent and diesel prices have doubled.<Cite s="xinhua-itkonen-2026-10-02" passage="since late February, gas prices in Europe have risen by 140 percent and diesel prices have doubled" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="scripps-rollins-2026-10-02" kind="record" detail>
+          <p>Scripps quoted Agriculture Secretary Brooke Rollins: "We are in the middle of harvest season."<Cite s="scripps-rollins-2026-10-02" passage="We are in the middle of harvest season" /></p>
+          <p>She also said, "For the short term, we're going to do everything we can."<Cite s="scripps-rollins-2026-10-02" passage="For the short term, we're going to do everything we can" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="what-happened-next">
+        <h2 data-layer="fact">What happened next</h2>
+        <p data-layer="narrative">The statement says the group will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary. The statement says a report should be delivered before 20 days.<Cite s="govuk-g7-statement-2026-10-02" passage="We will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary" /><Cite s="govuk-g7-statement-2026-10-02" passage="A follow-up report should be delivered before 20 days" /></p>
+        <p data-layer="narrative">Bids on the September 29 exchange are due October 6, 2026. Deliveries under awarded exchanges are scheduled for November and December 2026.<Cite s="doe-spr-exchange-2026-09-29" passage="October 6, 2026" /><Cite s="doe-spr-exchange-2026-09-29" passage="Deliveries under awarded exchanges are scheduled for November and December 2026" /></p>
+      </section>
+
+      <section id="unknowns">
+        <h2 data-layer="fact">What we do not know yet</h2>
+        <p data-layer="narrative">The IEA's October 2 account puts the {marchSoFar.barrels} million barrels on the March collective action. The October statement does not assign that tally to a portion of its own {release.barrels} barrel timetable. France 24 said 80 percent of overall IEA stocks were "still in our pocket", which is overall stocks, not the unreleased share of the March 400. The German FAQ says the IEA had asked Germany to release 2,6 million tonnes from its reserve, a March request. RTÉ reported that US oil prices dropped sharply, as much as 5% at one point. The diesel series' last row is September 28, and Brent's last row is September 29.<Cite s="iea-g7-meeting-2026-10-02" passage="He noted that around 325 million barrels of the IEA collective action announced on 11 March have so far been released, representing over 80% of the 400 million barrels originally pledged in the action." /><Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /><Cite s="france24-g7-release-2026-10-02" passage="80 percent of overall IEA stocks “still in our pocket”" /><Cite s="bundesregierung-energy-faq-2026-10-01" passage="Die IEA hatte Deutschland gebeten, 2,6 Millionen Tonnen aus seiner Reserve freizugeben." /><Cite s="rte-von-der-leyen-2026-10-02" passage="US oil prices dropped sharply - as much as 5% at one point" /><Cite s="gasdesw-2026-10-03" passage="2026-09-28,6.382" /><Cite s="dcoilbrenteu-2026-10-03" passage="2026-09-29,113.96" /></p>
+        <SourcedBlock source="reuters-settle-2026-10-02" kind="record" detail>
+          <p>Reuters reported that Brent settled down 6 cents, at $102.25 a barrel.<Cite s="reuters-settle-2026-10-02" passage="Brent settled down 6 cents, or 0.06%, at $102.25 a barrel." /></p>
+          <p>The same story says WTI finished down $1.76, at $91.11 a barrel.<Cite s="reuters-settle-2026-10-02" passage="WTI finished down $1.76, or 1.90%, at $91.11 a barrel." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="blas-wholesale-2026-10-02" kind="record" detail>
+          <p>Javier Blas wrote that the price of US wholesale ultra-low sulphur diesel was back to the level of five weeks ago.<Cite s="blas-wholesale-2026-10-02" passage="The price of US wholesale ultra-low sulphur diesel is back to the level of five weeks ago." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="blas-red-herring-2026-10-02" kind="record" detail>
+          <p>Javier Blas wrote that asking whether the release includes March barrels that were not released is a red herring, and that the question is whether more barrels reach the market now.<Cite s="blas-red-herring-2026-10-02" passage="It's a red herring: the important question is whether more barrels reach the market now" /></p>
+        </SourcedBlock>
+        <p data-layer="narrative" data-answer="6" data-absence>The joint statement, the French readout, the IEA's October 2 account, and the Energy Department's September 29 request name no diesel-versus-crude split of the October volume, no country share of it, and no October barrel delivered. The diesel series' last row is September 28, and Brent's last row is September 29.</p>
+        <p data-layer="narrative" data-absence>Reuters's October 2 market story does not mention a suspension of Chinese diesel, gasoline, or jet exports.</p>
       </section>
 
       <StoryState view={state} supporting />

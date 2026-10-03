@@ -61,6 +61,34 @@ export const release = {
   germanyTonnes: "54 Millionen Tonnen",
 };
 
+// EIA weekly distillate stocks, thousand barrels.
+// data/sources/fuel-reserves/eia-distillate-2026-10-03.txt: headings 09/18/26 and 09/25/26, U.S. row 107,431 and 105,180.
+export const distillate = {
+  sep18: "107,431",
+  sep25: "105,180",
+  unit: "thousand barrels",
+};
+
+// March contributions workbook, sheet total. Not rounded.
+// data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.txt
+export const contributionsSheet = {
+  totalIea: "426.03075080054771",
+};
+
+// September 2026 Oil Market Report, August flows, in the report's units.
+// data/sources/fuel-reserves/iea-omr-2026-09.txt
+export const gulfDiesel = {
+  august: "390 kb/d",
+  combinedShortfall: "1.6 mb/d",
+};
+
+// IEA account of the October 2 meeting: barrels of the March action released by then.
+// data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt
+export const marchSoFar = {
+  barrels: "325",
+  share: "80%",
+};
+
 export const priceRows = [
   ["U.S. No. 2 diesel, retail", "Sep 28, 2026", prices.dieselSep28],
   ["U.S. No. 2 diesel, retail", "Sep 21, 2026", prices.dieselSep21],
@@ -90,13 +118,13 @@ export const chronology = [
   { date: "Sep 16", title: "Two diesel-export bills introduced", sub: "H.R. 10422 and H.R. 10423 are introduced and referred to Foreign Affairs. Neither text records a floor vote.", current: false },
   { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "The department says earlier exchanges awarded more than 133 million barrels and that several European countries had released only a fraction.", current: false },
   { date: "Oct 1", title: "Bessent asks Europe for more supply", sub: "The Treasury secretary says European partners should make additional supplies immediately available.", current: false },
-  { date: "Oct 2", title: "100 million barrels over 4 months", sub: "The joint statement starts the release immediately, with a substantial diesel release in the first 20 days.", current: true },
+  { date: "Oct 2", title: "100 million barrels over 4 months", sub: "The joint statement counts commitments already fulfilled, starts the release immediately, and calls the diesel share substantial in the first 20 days.", current: true },
 ];
 
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
-  title: "G-7 Agrees to Release 100 Million Barrels of Diesel and Crude",
-  dek: "On October 2, 2026, the Group of Seven said its members would release 100 million barrels of oil through the International Energy Agency over four months, with a substantial diesel release in the first 20 days.",
+  title: "G7 will release 100 million barrels over four months, counting commitments already fulfilled",
+  dek: "G7 calls a diesel release substantial and places it in the first 20 days, with no number. A French presidency readout says up to 100 million barrels of diesel and crude.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-03",
@@ -104,16 +132,16 @@ export const event = {
     { value: "100", unit: "million barrels", label: "coordinated release beginning immediately" },
     { value: "4", unit: "months", label: "the period named for that release" },
     { value: "20", unit: "days", label: "window for the frontloaded diesel release" },
-    { value: "172", unit: "million barrels", label: "U.S. Strategic Petroleum Reserve share announced March 11" },
+    { value: "400", unit: "million barrels", label: "March coordinated release" },
   ],
   visual: {
     kind: "timeline",
     title: "From the March release to October 2",
     entries: [
-      { date: "Mar 11", title: "Up to 400 million barrels" },
+      { date: "Mar 11", title: "Coordinated release of 400 million barrels" },
       { date: "Sep 29", title: "Exchange of up to 40 million barrels" },
       { date: "Oct 1", title: "Bessent asks Europe for more supply" },
-      { date: "Oct 2", title: "100 million barrels over 4 months", current: true },
+      { date: "Oct 2", title: "100 million barrels, counting commitments already fulfilled", current: true },
     ],
     note: "G7 statement, Energy Department, Treasury secretary",
   },
