@@ -18,8 +18,8 @@ export const computed = {
 
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
-  title: "Supreme Court to weigh Trump's mandatory immigration detention policy",
-  dek: "On October 1, 2026, the Supreme Court agreed to review the administration's policy of holding immigrants without a bond hearing.",
+  title: "The Supreme Court agreed to decide whether the detention statute requires holding people who are already in the country and were not admitted",
+  dek: "The October 1 grant is not a ruling and not a count of people. Under the bond statute the government may release someone. An immigration judge released a person who was already in the country and had not been admitted, after finding no danger and no flight risk.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
   updated: "2026-10-03",
@@ -43,6 +43,7 @@ export const event = {
 
 export const chronology = {
   rows: [
+    ["March 6, 1997", "A Federal Register rule says people present without admission will be eligible for bond and bond redetermination."],
     ["July 8, 2025", "The appeals opinion cites immigration enforcement guidance on detention of applicants for admission."],
     ["July 10, 2025", "Customs and Border Protection says its commissioner issued detention guidance to every component."],
     ["Sept. 5, 2025", "The Board of Immigration Appeals decides judges lack authority to grant bond in this situation."],
@@ -50,6 +51,7 @@ export const chronology = {
     ["Apr. 6, 2026", "The Second Circuit heard argument."],
     ["Apr. 28, 2026", "The Second Circuit affirms the order requiring a bond hearing or release."],
     ["July 23, 2026", "The government asks the Supreme Court to review the case."],
+    ["Sept. 10, 2026", "The Fourth Circuit names the appeals courts that require a bond hearing and the two that do not."],
     ["Sept. 25, 2026", "The Second Circuit denies rehearing by the full court."],
     ["Oct. 1, 2026", "The Supreme Court grants the petitions for review, including this one."],
   ],

@@ -184,4 +184,69 @@ Run after the draft: 58 lines. Order list, granted list, question presented, and
 
 ## What could not be admitted and why
 
-The petition and the brief in opposition are not on the public docket because the docket itself says filings were paper only. The July 8, 2025 immigration guidance is cited by the appeals opinion and was not in the registry. The district court opinion was not pinned; the arrest and the bond order are taken from the appeals opinion. The argument date is not on the October 1 list. Congress.gov did not yield a floor record. No detention-population series was admitted, so the coverage counts stay in the proof note and not in the figures.
+The July 8, 2025 immigration guidance is cited by the appeals opinion and was not in the registry. The district court opinion was not pinned; the arrest and the bond order are taken from the appeals opinion. The argument date is not on the October 1 list. Congress.gov did not yield a floor record.
+
+Entailment on 2026-10-03 returned ENTAILED. One Moderate stands: the detention-statute sentence does not recite the exceptions in the following subparagraphs. Those exceptions are a different procedure, graded D on the credible-fear lines, and the quotation that follows is the clause this case turns on.
+
+## Story turn, October 3
+
+Census, one line each.
+
+1. 1997 Federal Register rule. `capture news` on 2026-10-03 held https://www.govinfo.gov/content/pkg/FR-1997-03-06/pdf/97-5250.pdf in run capture-oneoff-20261003T064616Z. Admitted as `fr-detention-rule-1997-03-06`. The rule says people present without admission will be eligible for bond and bond redetermination.
+2. Fourth Circuit opinion. Same run held https://www.ca4.uscourts.gov/opinions/257044.P.pdf. Admitted as `ca4-bond-2026-09-10`. Decided September 10, 2026. It names eight circuits that require a bond hearing for people inside the country and the Fifth and Eighth as holding the opposite, and it counts over twenty thousand individual cases. It does not use the word nine.
+3. Justice Department petition. Same run held https://www.justice.gov/d9/2026-07/barbosa_da_cunha_hold_pet_-_final.pdf. Admitted as `doj-petition-26-104`. It says Lopez-Campos also presents whether the detention comports with due process.
+4. Complete rehearing file. Same run held the Second Circuit complete en banc file. Admitted as `ca2-cunha-enbanc-2026-09-25`. Judge Schwartz agrees with the dissent's analysis and supports denying rehearing.
+5. Lopez-Campos docket. Same run held https://www.supremecourt.gov/docket/docketfiles/html/public/25-1415.html. Admitted as `scotus-docket-lopez-campos-2026-10-03`. Sixth Circuit. Distributed for the September 28 conference. The saved proceedings do not list a grant.
+6. Buenrostro-Mendez docket. Already held in capture-oneoff-20261003T054740Z, https://www.supremecourt.gov/docket/docketfiles/html/public/26-43.html. Admitted as `scotus-docket-buenrostro-2026-10-03`. Fifth Circuit. Distributed for the September 28 conference, then rescheduled. The saved proceedings do not list a grant.
+7. Response and reply. `capture search "brief in opposition Barbosa da Cunha"` on 2026-10-03 returned 0. `capture search "Barbosa"` returned the CBS grant story and the Second Circuit opinion already held. The October 2 docket lists the August 21 response and the September 4 reply and does not link either file. Unmet. Graded C.
+8. Detention denominator. `capture search "ICE detention statistics"` and `capture search "FY 2025 ICE detention"` on 2026-10-03 returned 0. No series separates people held under this reading from all detainees. Unmet. Graded C. Neither CBS's count nor the Fourth Circuit's case count is used as that census.
+
+### `fr-detention-rule-1997-03-06`
+
+| Passage | Disposition |
+|---|---|
+| Despite being applicants for admission, aliens who are present without having been admitted or paroled (formerly referred to as aliens who entered without inspection) will be eligible for bond and bond redetermination. | Used: the before-state. |
+| The $1,500 minimum bond amount in the same discussion. | Out of scope: the bond statute pin already states the minimum. |
+
+### `ca4-bond-2026-09-10`
+
+| Passage | Disposition |
+|---|---|
+| The First, Second, Third, Sixth, Seventh, Ninth, Tenth, and Eleventh Circuits concluded that Section 1226 applies to noncitizens inside our country | Used: how wide the dispute is. |
+| The Fifth and Eighth Circuits ruled, on the other hand, that Section 1225 applies to all noncitizens who have not been admitted to the United States | Used: the other side. |
+| they must be detained without bond | Used: what those two courts held. |
+| sided with the petitioners in over twenty thousand individual cases | Used: a count of cases, not of people. |
+| over five hundred district courts | Held unused. The case count is the figure the coverage invites. The court count is not a detention census. |
+
+### `doj-petition-26-104`
+
+| Passage | Disposition |
+|---|---|
+| Lopez-Campos also squarely presents the question whether applying Section 1225(b)(2)(A)'s mandatory-detention scheme to such aliens comports with due process. | Used: what this grant does not take. |
+| The Court should hold the petition in this case pending the resolution of the petition in Lopez-Campos and then dispose of this petition as appropriate. | Used: the petition asked the Court to wait. The October 1 order granted this petition. |
+| Lopez-Campos is a better vehicle than this case | Used: the government's reason for waiting. |
+| the Second Circuit did not reach a standalone holding on the constitutionality of detaining respondent without a bond hearing | Used: what this court did not decide. |
+| Philip L. Rhoney, Acting Field Office Director of the Buffalo Field Office | Used in the order-list detail: he is an official, substituted for his predecessor. |
+
+### `ca2-cunha-enbanc-2026-09-25`
+
+| Passage | Disposition |
+|---|---|
+| Although I agree with the analysis in the dissent, I support the decision to deny rehearing en banc. | Used: Schwartz. |
+| the nine circuits and hundreds of district courts | Held unused. A different count from the Fourth Circuit's, and not a census of people detained. |
+
+### `scotus-docket-lopez-campos-2026-10-03`
+
+| Passage | Disposition |
+|---|---|
+| United States Court of Appeals for the Sixth Circuit | Used: where the other petition comes from. |
+| DISTRIBUTED for Conference of 9/28/2026. | Used: it was before the Court. The proceedings do not list a grant. |
+| Brief of respondents in opposition filed. | Out of scope: that brief is Lopez-Campos's, not the response in this case. |
+
+### `scotus-docket-buenrostro-2026-10-03`
+
+| Passage | Disposition |
+|---|---|
+| United States Court of Appeals for the Fifth Circuit | Used: where the other petition comes from. |
+| DISTRIBUTED for Conference of 9/28/2026. | Used: it was before the Court. |
+| Rescheduled. | Used: the saved page shows a reschedule and does not list a grant. |

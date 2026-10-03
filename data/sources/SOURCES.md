@@ -1816,3 +1816,15 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/coverage/cbs-detention-grant-2026-10-01.txt | 5388 | 0e3680ab5a32dd6a |
 | data/sources/coverage/hill-detention-grant-2026-10-01.html | 394287 | 497a4370fecff8ab |
 | data/sources/coverage/hill-detention-grant-2026-10-01.txt | 3621 | fc4016ac39a70237 |
+| data/sources/immigration-detention/fr-detention-rule-1997-03-06.pdf | 683029 | a00ba7e01a34a4b6 |
+| data/sources/immigration-detention/fr-detention-rule-1997-03-06.txt | 598424 | b0d170c7f33f6096 |
+| data/sources/immigration-detention/ca4-bond-2026-09-10.pdf | 418694 | 455c2d97078cb479 |
+| data/sources/immigration-detention/ca4-bond-2026-09-10.txt | 156531 | ad07bdd572fbb493 |
+| data/sources/immigration-detention/doj-petition-26-104.pdf | 847847 | af7edfcfcb0b9820 |
+| data/sources/immigration-detention/doj-petition-26-104.txt | 198863 | 6d9616ce5fa5c8d3 |
+| data/sources/immigration-detention/ca2-cunha-enbanc-2026-09-25.pdf | 633006 | a55925d4570b84a3 |
+| data/sources/immigration-detention/ca2-cunha-enbanc-2026-09-25.txt | 138678 | 5c48c6cc9bac82a4 |
+| data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-03.html | 24282 | e7e6e6802e16564f |
+| data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-03.txt | 1721 | 441b9bed10e58a43 |
+| data/sources/immigration-detention/scotus-docket-buenrostro-2026-10-03.html | 19598 | e5cf49f141019822 |
+| data/sources/immigration-detention/scotus-docket-buenrostro-2026-10-03.txt | 1296 | 0793924953aa819f |

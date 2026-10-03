@@ -3,7 +3,7 @@
   "event": "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
   "story": "/events/immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings/",
   "date": "2026-10-01",
-  "story_title": "Supreme Court to weigh Trump's mandatory immigration detention policy",
+  "story_title": "The Supreme Court agreed to decide whether the detention statute requires holding people who are already in the country and were not admitted",
   "state_event_id": "event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings",
   "event_record": "/events/immigration-detention/",
   "completed_by": "grok, skill catch-record",
@@ -18,30 +18,36 @@
         "scotus-order-list-2026-10-01",
         "scotus-question-presented-2026-10-01",
         "scotus-granted-noted-2026-10-01",
-        "scotus-docket-rhoney-2026-10-02"
+        "scotus-docket-rhoney-2026-10-02",
+        "doj-petition-26-104",
+        "scotus-docket-lopez-campos-2026-10-03",
+        "scotus-docket-buenrostro-2026-10-03"
       ]
     },
     {
       "id": "appeals-2026-04-28",
       "date": "2026-04-28",
       "label": "The Second Circuit affirms a bond hearing or release",
-      "section_anchor": "chronology",
+      "section_anchor": "where-this-sits",
       "records": [
         "ca2-cunha-opinion-2026-04-28",
-        "ca2-cunha-rehearing-2026-09-25"
+        "ca2-cunha-rehearing-2026-09-25",
+        "ca2-cunha-enbanc-2026-09-25",
+        "ca4-bond-2026-09-10"
       ]
     },
     {
       "id": "policy-2025",
       "date": "2025-07-08",
       "label": "The detention position the opinion and the agencies record",
-      "section_anchor": "chronology",
+      "section_anchor": "where-this-sits",
       "records": [
         "bia-yajure-hurtado-2025-09-05",
         "cbp-detention-memo-2025-07-10",
         "cbp-detention-notice-2025-09-18",
         "uscode-2024-1225",
-        "uscode-2024-1226"
+        "uscode-2024-1226",
+        "fr-detention-rule-1997-03-06"
       ]
     }
   ],
@@ -271,23 +277,248 @@
       "capture_run": "quarry-wire-scheduled-20261002T100043Z",
       "capture_raw_sha256": "sha256:497a4370fecff8ab00a94a0a646b762c6c262ad0d311bbd9372a673c8cbff287",
       "captured_at": "2026-10-02T10:08:28.838332Z"
+    },
+    {
+      "id": "fr-detention-rule-1997-03-06",
+      "title": "Federal Register detention rule, March 6, 1997",
+      "publisher": "Federal Register",
+      "date": "1997-03-06",
+      "url": "https://www.govinfo.gov/content/pkg/FR-1997-03-06/pdf/97-5250.pdf",
+      "pinned_path": "data/sources/immigration-detention/fr-detention-rule-1997-03-06.pdf",
+      "text_path": "data/sources/immigration-detention/fr-detention-rule-1997-03-06.txt",
+      "text_sha256": "sha256:b0d170c7f33f6096c39b609c9cf098cd682363270368048e48a30039e05f46d1",
+      "quote": "Despite being applicants for admission, aliens who are present without having been admitted or paroled (formerly referred to as aliens who entered without inspection) will be eligible for bond and bond redetermination.",
+      "quote_span_check": "byte_exact",
+      "about": "the 1997 rule stating bond eligibility for people present without admission; the registry text interleaves three columns, and this text is reading order from the saved PDF",
+      "capture_run": "capture-oneoff-20261003T064616Z",
+      "capture_raw_sha256": "sha256:a00ba7e01a34a4b6eb90eb741a5dc958607b109f3730cc473cd896419903ef3a",
+      "captured_at": "2026-10-03T06:46:33.730124Z",
+      "capture_status": "registry text was column-interleaved; the text sibling is reading order from the saved PDF"
+    },
+    {
+      "id": "ca4-bond-2026-09-10",
+      "title": "Fourth Circuit opinion, September 10, 2026",
+      "publisher": "U.S. Court of Appeals for the Fourth Circuit",
+      "date": "2026-09-10",
+      "url": "https://www.ca4.uscourts.gov/opinions/257044.P.pdf",
+      "pinned_path": "data/sources/immigration-detention/ca4-bond-2026-09-10.pdf",
+      "text_path": "data/sources/immigration-detention/ca4-bond-2026-09-10.txt",
+      "text_sha256": "sha256:ad07bdd572fbb4939acd39318ea37983cd2749391d5034ba08cbe674d59f32f9",
+      "quote": "sided with the petitioners in over twenty thousand individual cases",
+      "quote_span_check": "byte_exact",
+      "about": "which courts required a bond hearing, and the count of individual cases",
+      "capture_run": "capture-oneoff-20261003T064616Z",
+      "capture_raw_sha256": "sha256:455c2d97078cb47980b32629c53cf4466a0b05d294259c9ec18de183715e3393",
+      "captured_at": "2026-10-03T06:46:48.034754Z"
+    },
+    {
+      "id": "doj-petition-26-104",
+      "title": "Justice Department copy of the petition",
+      "publisher": "Department of Justice",
+      "date": "2026-07-23",
+      "url": "https://www.justice.gov/d9/2026-07/barbosa_da_cunha_hold_pet_-_final.pdf",
+      "pinned_path": "data/sources/immigration-detention/doj-petition-26-104.pdf",
+      "text_path": "data/sources/immigration-detention/doj-petition-26-104.txt",
+      "text_sha256": "sha256:6d9616ce5fa5c8d362fa04c333551a1344728ae6e3194ac7dbb8e8ccf6ff8a0a",
+      "quote": "In addition to the statutory question presented in this case, Lopez-Campos also squarely presents the question whether applying Section 1225(b)(2)(A)’s mandatory-detention scheme to such aliens comports with due process.",
+      "quote_span_check": "byte_exact",
+      "about": "the petition, including the due-process question it says a Sixth Circuit petition also presents",
+      "capture_run": "capture-oneoff-20261003T064616Z",
+      "capture_raw_sha256": "sha256:af7edfcfcb0b982066ed69a2bddd3cba89bc82bf852ecbf568f4d6371977c4ee",
+      "captured_at": "2026-10-03T06:47:01.700579Z"
+    },
+    {
+      "id": "ca2-cunha-enbanc-2026-09-25",
+      "title": "Complete rehearing file, September 25, 2026",
+      "publisher": "U.S. Court of Appeals for the Second Circuit",
+      "date": "2026-09-25",
+      "url": "https://ww3.ca2.uscourts.gov/decisions/OPN/25-3141_complete%20en%20banc_opn.pdf",
+      "pinned_path": "data/sources/immigration-detention/ca2-cunha-enbanc-2026-09-25.pdf",
+      "text_path": "data/sources/immigration-detention/ca2-cunha-enbanc-2026-09-25.txt",
+      "text_sha256": "sha256:5c48c6cc9bac82a4358781b3f111a98fb3199fc3422fd0c6ea0315ec16fe0eed",
+      "quote": "Although I agree with the analysis in the dissent, I support the decision to deny rehearing en banc.",
+      "quote_span_check": "byte_exact",
+      "about": "Judge Schwartz's concurrence agreeing with the dissent's analysis while supporting the denial",
+      "capture_run": "capture-oneoff-20261003T064616Z",
+      "capture_raw_sha256": "sha256:a55925d4570b84a320e76a6ad54c3582a43c487358ce70820e155598d4424f85",
+      "captured_at": "2026-10-03T06:47:15.743918Z"
+    },
+    {
+      "id": "scotus-docket-lopez-campos-2026-10-03",
+      "title": "Public docket, Lopez-Campos, saved October 3, 2026",
+      "publisher": "Supreme Court of the United States",
+      "date": "2026-10-03",
+      "url": "https://www.supremecourt.gov/docket/docketfiles/html/public/25-1415.html",
+      "pinned_path": "data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-03.html",
+      "text_path": "data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-03.txt",
+      "text_sha256": "sha256:441b9bed10e58a437091eb3165ea9016f5d36871001589ad8e1f56ea4f7c6afb",
+      "quote": "DISTRIBUTED for Conference of 9/28/2026.",
+      "quote_span_check": "byte_exact",
+      "about": "proceedings on the Sixth Circuit petition; the registry text kept only the counsel block, and this text is the proceedings table read from the saved page. The proceedings list the September 28 conference and do not list a grant",
+      "capture_run": "capture-oneoff-20261003T064616Z",
+      "capture_raw_sha256": "sha256:e7e6e6802e16564f07c4df43b01a9e7bd0f1f7a94f7001f4583a8ca7a469de81",
+      "captured_at": "2026-10-03T06:47:30.269470Z",
+      "capture_status": "registry text kept the counsel block only; the text sibling is the proceedings table read from the saved page"
+    },
+    {
+      "id": "scotus-docket-buenrostro-2026-10-03",
+      "title": "Public docket, Buenrostro-Mendez, saved October 3, 2026",
+      "publisher": "Supreme Court of the United States",
+      "date": "2026-10-03",
+      "url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26-43.html",
+      "pinned_path": "data/sources/immigration-detention/scotus-docket-buenrostro-2026-10-03.html",
+      "text_path": "data/sources/immigration-detention/scotus-docket-buenrostro-2026-10-03.txt",
+      "text_sha256": "sha256:0793924953aa819f7714a2a87cb9813221979154a2c2d454888dc10e60fe1437",
+      "quote": "Rescheduled.",
+      "quote_span_check": "byte_exact",
+      "about": "proceedings on the Fifth Circuit petition; the registry text kept only the counsel block, and this text is the proceedings table read from the saved page. The proceedings list a September 28 conference, a reschedule, and do not list a grant",
+      "capture_run": "capture-oneoff-20261003T054740Z",
+      "capture_raw_sha256": "sha256:e5cf49f14101982233e44331d98758e3ea8226248c576c511c3aaae9420c2a0b",
+      "captured_at": "2026-10-03T05:48:50.201538Z",
+      "capture_status": "registry text kept the counsel block only; the text sibling is the proceedings table read from the saved page"
     }
   ],
   "story_sources": [
-    {"id": "scotus-order-list-2026-10-01", "group": "primary", "label": "Order list, October 1, 2026", "meta": " · Supreme Court, 2026-10-01", "usage": "the grant of review"},
-    {"id": "scotus-question-presented-2026-10-01", "group": "primary", "label": "Question presented", "meta": " · Supreme Court, 2026-10-01", "usage": "the question the Court agreed to hear"},
-    {"id": "scotus-granted-noted-2026-10-01", "group": "primary", "label": "Cases for argument, October 1, 2026", "meta": " · Supreme Court, 2026-10-01", "usage": "the grant date and the absence of an argument day"},
-    {"id": "scotus-docket-rhoney-2026-10-02", "group": "primary", "label": "Public docket, saved October 2, 2026", "meta": " · Supreme Court, 2026-10-02", "usage": "the filing dates through the grant"},
-    {"id": "ca2-cunha-opinion-2026-04-28", "group": "primary", "label": "Second Circuit opinion, April 28, 2026", "meta": " · Second Circuit, 2026-04-28", "usage": "the decision under review"},
-    {"id": "ca2-cunha-rehearing-2026-09-25", "group": "primary", "label": "Order denying rehearing, September 25, 2026", "meta": " · Second Circuit, 2026-09-25", "usage": "the rehearing denial"},
-    {"id": "bia-yajure-hurtado-2025-09-05", "group": "primary", "label": "Board of Immigration Appeals, September 5, 2025", "meta": " · Board of Immigration Appeals, 2025-09-05", "usage": "the bond-authority decision"},
-    {"id": "cbp-detention-memo-2025-07-10", "group": "primary", "label": "Customs memorandum", "meta": " · Customs and Border Protection, 2025-07-10", "usage": "the signed detention memorandum"},
-    {"id": "cbp-detention-notice-2025-09-18", "group": "primary", "label": "Customs notice of the July 10 guidance", "meta": " · Customs and Border Protection, 2025-09-18", "usage": "the public notice of the guidance"},
-    {"id": "uscode-2024-1225", "group": "official", "label": "Detention section, 2024 compilation", "meta": " · Government Publishing Office, 2024 edition", "usage": "the detention statute"},
-    {"id": "uscode-2024-1226", "group": "official", "label": "Bond section, 2024 compilation", "meta": " · Government Publishing Office, 2024 edition", "usage": "the bond statute"},
-    {"id": "ap-detention-grant-2026-10-01", "group": "coverage", "label": "Associated Press, October 1, 2026", "meta": " · published 2026-10-01", "usage": "the grant as reported"},
-    {"id": "cbs-detention-grant-2026-10-01", "group": "coverage", "label": "CBS News, October 1, 2026", "meta": " · published 2026-10-01", "usage": "the count that is not in the court records"},
-    {"id": "hill-detention-grant-2026-10-01", "group": "coverage", "label": "The Hill, October 1, 2026", "meta": " · published 2026-10-01", "usage": "the grant as reported"}
+    {
+      "id": "scotus-order-list-2026-10-01",
+      "group": "primary",
+      "label": "Order list, October 1, 2026",
+      "meta": " · Supreme Court, 2026-10-01",
+      "usage": "the grant of review"
+    },
+    {
+      "id": "scotus-question-presented-2026-10-01",
+      "group": "primary",
+      "label": "Question presented",
+      "meta": " · Supreme Court, 2026-10-01",
+      "usage": "the question the Court agreed to hear"
+    },
+    {
+      "id": "scotus-granted-noted-2026-10-01",
+      "group": "primary",
+      "label": "Cases for argument, October 1, 2026",
+      "meta": " · Supreme Court, 2026-10-01",
+      "usage": "the grant date and the absence of an argument day"
+    },
+    {
+      "id": "scotus-docket-rhoney-2026-10-02",
+      "group": "primary",
+      "label": "Public docket, saved October 2, 2026",
+      "meta": " · Supreme Court, 2026-10-02",
+      "usage": "the filing dates through the grant"
+    },
+    {
+      "id": "ca2-cunha-opinion-2026-04-28",
+      "group": "primary",
+      "label": "Second Circuit opinion, April 28, 2026",
+      "meta": " · Second Circuit, 2026-04-28",
+      "usage": "the decision under review"
+    },
+    {
+      "id": "ca2-cunha-rehearing-2026-09-25",
+      "group": "primary",
+      "label": "Order denying rehearing, September 25, 2026",
+      "meta": " · Second Circuit, 2026-09-25",
+      "usage": "the rehearing denial"
+    },
+    {
+      "id": "bia-yajure-hurtado-2025-09-05",
+      "group": "primary",
+      "label": "Board of Immigration Appeals, September 5, 2025",
+      "meta": " · Board of Immigration Appeals, 2025-09-05",
+      "usage": "the bond-authority decision"
+    },
+    {
+      "id": "cbp-detention-memo-2025-07-10",
+      "group": "primary",
+      "label": "Customs memorandum",
+      "meta": " · Customs and Border Protection, 2025-07-10",
+      "usage": "the signed detention memorandum"
+    },
+    {
+      "id": "cbp-detention-notice-2025-09-18",
+      "group": "primary",
+      "label": "Customs notice of the July 10 guidance",
+      "meta": " · Customs and Border Protection, 2025-09-18",
+      "usage": "the public notice of the guidance"
+    },
+    {
+      "id": "uscode-2024-1225",
+      "group": "official",
+      "label": "Detention section, 2024 compilation",
+      "meta": " · Government Publishing Office, 2024 edition",
+      "usage": "the detention statute"
+    },
+    {
+      "id": "uscode-2024-1226",
+      "group": "official",
+      "label": "Bond section, 2024 compilation",
+      "meta": " · Government Publishing Office, 2024 edition",
+      "usage": "the bond statute"
+    },
+    {
+      "id": "ap-detention-grant-2026-10-01",
+      "group": "coverage",
+      "label": "Associated Press, October 1, 2026",
+      "meta": " · published 2026-10-01",
+      "usage": "the grant as reported"
+    },
+    {
+      "id": "cbs-detention-grant-2026-10-01",
+      "group": "coverage",
+      "label": "CBS News, October 1, 2026",
+      "meta": " · published 2026-10-01",
+      "usage": "the count that is not in the court records"
+    },
+    {
+      "id": "hill-detention-grant-2026-10-01",
+      "group": "coverage",
+      "label": "The Hill, October 1, 2026",
+      "meta": " · published 2026-10-01",
+      "usage": "the grant as reported"
+    },
+    {
+      "id": "fr-detention-rule-1997-03-06",
+      "group": "primary",
+      "label": "Federal Register rule, March 6, 1997",
+      "meta": " · Federal Register, 1997-03-06",
+      "usage": "written bond eligibility before the July 2025 change"
+    },
+    {
+      "id": "ca4-bond-2026-09-10",
+      "group": "primary",
+      "label": "Fourth Circuit opinion, September 10, 2026",
+      "meta": " · Fourth Circuit, 2026-09-10",
+      "usage": "which courts required a bond hearing, and the count of cases"
+    },
+    {
+      "id": "doj-petition-26-104",
+      "group": "primary",
+      "label": "Justice Department petition",
+      "meta": " · Department of Justice, docketed 2026-07-23",
+      "usage": "the due-process question a Sixth Circuit petition also presents"
+    },
+    {
+      "id": "ca2-cunha-enbanc-2026-09-25",
+      "group": "primary",
+      "label": "Complete rehearing file, September 25, 2026",
+      "meta": " · Second Circuit, 2026-09-25",
+      "usage": "the concurrence that agreed with the dissent"
+    },
+    {
+      "id": "scotus-docket-lopez-campos-2026-10-03",
+      "group": "primary",
+      "label": "Lopez-Campos docket, saved October 3, 2026",
+      "meta": " · Supreme Court, saved 2026-10-03",
+      "usage": "another petition, from the Sixth Circuit, with no grant on the saved page"
+    },
+    {
+      "id": "scotus-docket-buenrostro-2026-10-03",
+      "group": "primary",
+      "label": "Buenrostro-Mendez docket, saved October 3, 2026",
+      "meta": " · Supreme Court, saved 2026-10-03",
+      "usage": "another petition, from the Fifth Circuit, rescheduled and with no grant on the saved page"
+    }
   ],
   "figures": [
     {
@@ -296,7 +527,10 @@
       "value": "2026-10-01",
       "unit": "date",
       "kind": "sourced",
-      "source": {"source_id": "scotus-order-list-2026-10-01", "quote_span": "THURSDAY, OCTOBER 1, 2026"}
+      "source": {
+        "source_id": "scotus-order-list-2026-10-01",
+        "quote_span": "THURSDAY, OCTOBER 1, 2026"
+      }
     },
     {
       "figure": "opinion_date",
@@ -304,7 +538,10 @@
       "value": "2026-04-28",
       "unit": "date",
       "kind": "sourced",
-      "source": {"source_id": "ca2-cunha-opinion-2026-04-28", "quote_span": "Decided: April 28, 2026"}
+      "source": {
+        "source_id": "ca2-cunha-opinion-2026-04-28",
+        "quote_span": "Decided: April 28, 2026"
+      }
     },
     {
       "figure": "days_opinion_to_grant",
@@ -314,8 +551,18 @@
       "kind": "computed",
       "formula": "date_difference_days",
       "inputs": [
-        {"source_id": "scotus-order-list-2026-10-01", "value": "2026-10-01", "unit": "date", "quote_span": "THURSDAY, OCTOBER 1, 2026"},
-        {"source_id": "ca2-cunha-opinion-2026-04-28", "value": "2026-04-28", "unit": "date", "quote_span": "Decided: April 28, 2026"}
+        {
+          "source_id": "scotus-order-list-2026-10-01",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "THURSDAY, OCTOBER 1, 2026"
+        },
+        {
+          "source_id": "ca2-cunha-opinion-2026-04-28",
+          "value": "2026-04-28",
+          "unit": "date",
+          "quote_span": "Decided: April 28, 2026"
+        }
       ]
     },
     {
@@ -326,8 +573,18 @@
       "kind": "computed",
       "formula": "date_difference_days",
       "inputs": [
-        {"source_id": "scotus-order-list-2026-10-01", "value": "2026-10-01", "unit": "date", "quote_span": "THURSDAY, OCTOBER 1, 2026"},
-        {"source_id": "ca2-cunha-opinion-2026-04-28", "value": "2025-07-08", "unit": "date", "quote_span": "July 8, 2025"}
+        {
+          "source_id": "scotus-order-list-2026-10-01",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "THURSDAY, OCTOBER 1, 2026"
+        },
+        {
+          "source_id": "ca2-cunha-opinion-2026-04-28",
+          "value": "2025-07-08",
+          "unit": "date",
+          "quote_span": "July 8, 2025"
+        }
       ]
     },
     {
@@ -338,8 +595,18 @@
       "kind": "computed",
       "formula": "date_difference_days",
       "inputs": [
-        {"source_id": "scotus-order-list-2026-10-01", "value": "2026-10-01", "unit": "date", "quote_span": "THURSDAY, OCTOBER 1, 2026"},
-        {"source_id": "cbp-detention-notice-2025-09-18", "value": "2025-07-10", "unit": "date", "quote_span": "July 10, 2025"}
+        {
+          "source_id": "scotus-order-list-2026-10-01",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "THURSDAY, OCTOBER 1, 2026"
+        },
+        {
+          "source_id": "cbp-detention-notice-2025-09-18",
+          "value": "2025-07-10",
+          "unit": "date",
+          "quote_span": "July 10, 2025"
+        }
       ]
     },
     {
@@ -350,8 +617,18 @@
       "kind": "computed",
       "formula": "date_difference_days",
       "inputs": [
-        {"source_id": "scotus-order-list-2026-10-01", "value": "2026-10-01", "unit": "date", "quote_span": "THURSDAY, OCTOBER 1, 2026"},
-        {"source_id": "bia-yajure-hurtado-2025-09-05", "value": "2025-09-05", "unit": "date", "quote_span": "Decided September 5, 2025"}
+        {
+          "source_id": "scotus-order-list-2026-10-01",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "THURSDAY, OCTOBER 1, 2026"
+        },
+        {
+          "source_id": "bia-yajure-hurtado-2025-09-05",
+          "value": "2025-09-05",
+          "unit": "date",
+          "quote_span": "Decided September 5, 2025"
+        }
       ]
     },
     {
@@ -362,26 +639,85 @@
       "kind": "computed",
       "formula": "date_difference_days",
       "inputs": [
-        {"source_id": "scotus-order-list-2026-10-01", "value": "2026-10-01", "unit": "date", "quote_span": "THURSDAY, OCTOBER 1, 2026"},
-        {"source_id": "scotus-docket-rhoney-2026-10-02", "value": "2026-07-23", "unit": "date", "quote_span": "Docketed: July 23, 2026"}
+        {
+          "source_id": "scotus-order-list-2026-10-01",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "THURSDAY, OCTOBER 1, 2026"
+        },
+        {
+          "source_id": "scotus-docket-rhoney-2026-10-02",
+          "value": "2026-07-23",
+          "unit": "date",
+          "quote_span": "Docketed: July 23, 2026"
+        }
       ]
     }
   ],
   "needs_ledger": [
-    {"need": "Petition and brief in opposition", "status": "missing: paper filing only", "plain": "The public docket says filings were to be submitted on paper only. No petition PDF and no brief in opposition are on that page.", "record_id": "scotus-docket-rhoney-2026-10-02"},
-    {"need": "July 8 immigration enforcement guidance", "status": "missing: not in the registry", "plain": "The appeals opinion cites Interim Guidance Regarding Detention Authority for Applicants for Admission dated July 8, 2025. A registry search for that title returned nothing. The date on the page is the date the opinion prints.", "record_id": "ca2-cunha-opinion-2026-04-28"},
-    {"need": "Argument date", "status": "missing: not on the October 1 list", "plain": "The October 1 list of cases for argument gives this case a grant date and does not print an argument date on its line.", "record_id": "scotus-granted-noted-2026-10-01"},
-    {"need": "District court opinion", "status": "missing: not pinned", "plain": "The facts of the arrest and the bond order used here are the ones the Second Circuit opinion states. The district court opinion itself is not in this record.", "record_id": "ca2-cunha-opinion-2026-04-28"},
-    {"need": "Detention population", "status": "missing: not in the court or agency records", "plain": "CBS News wrote tens of thousands. That count is not in the order, the docket, the appeals opinion, the Board decision, or the Customs memorandum.", "record_id": "cbs-detention-grant-2026-10-01"}
+    {
+      "need": "Response and reply",
+      "status": "missing: listed, not linked",
+      "plain": "The October 2 docket lists a response filed August 21 and a reply filed September 4 and does not link either document. The Justice Department file admitted on October 3 is the petition, not those briefs. A registry search that day for Barbosa da Cunha did not return them.",
+      "record_id": "scotus-docket-rhoney-2026-10-02"
+    },
+    {
+      "need": "July 8 immigration enforcement guidance",
+      "status": "missing: not in the registry",
+      "plain": "The appeals opinion cites Interim Guidance Regarding Detention Authority for Applicants for Admission dated July 8, 2025. A registry search for that title returned nothing. The date on the page is the date the opinion prints.",
+      "record_id": "ca2-cunha-opinion-2026-04-28"
+    },
+    {
+      "need": "Argument date",
+      "status": "missing: not on the October 1 list",
+      "plain": "The October 1 list of cases for argument gives this case a grant date and does not print an argument date on its line.",
+      "record_id": "scotus-granted-noted-2026-10-01"
+    },
+    {
+      "need": "District court opinion",
+      "status": "missing: not pinned",
+      "plain": "The facts of the arrest and the bond order used here are the ones the Second Circuit opinion states. The district court opinion itself is not in this record.",
+      "record_id": "ca2-cunha-opinion-2026-04-28"
+    },
+    {
+      "need": "Detention population",
+      "status": "missing: no separating series",
+      "plain": "A registry search on October 3 for an ICE detention series returned nothing. Public totals of everyone in detention do not separate people held under this reading from all detainees or from habeas filings. CBS's count and the Fourth Circuit's count of cases stay unsubstituted.",
+      "record_id": "cbs-detention-grant-2026-10-01"
+    }
   ],
   "steps": {
-    "sources_admitted": {"done": true, "evidence": "Fourteen records, primaries first, each with a registry run, a pin under data/sources, a text sibling, and a quote present in that text. The Customs scan is an optical reading of the saved file."},
-    "derived_numbers_computed": {"done": true, "evidence": "The data module counts 156 days from the April 28 decision to the October 1 grant, 450 from July 8, 448 from July 10, 391 from September 5, and 70 from the July 23 petition, each from dates printed on the pins."},
-    "outlet_claims_verified": {"done": true, "evidence": "The Associated Press and The Hill match the October 1 grant. The CBS tens-of-thousands count is not in the order, docket, opinion, Board decision, or Customs memorandum."},
-    "section_grammar": {"done": false, "evidence": "Record turn only. Sections are the grant, the chronology, and the records list. The reader model chooses the rest."},
-    "chip_vocabulary": {"done": true, "evidence": "Every SourcedBlock is kind record. No other chip label is introduced."},
-    "live_elements_guarded": {"done": true, "evidence": "The page has no live element. The docket, the argument list, and the Customs notice are fixed saved copies."},
-    "subject_page_updated": {"done": true, "evidence": "The immigration detention subject page lists this story and shows the October 1 grant, the April 28 decision, and the day count from the data module."},
-    "homepage_updated": {"done": true, "evidence": "Discovery imports the event, places it in the editorial map, and adds the immigration-detention series so the homepage can feature its timeline."}
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Twenty records. The story turn added the 1997 Federal Register rule, the September 10 Fourth Circuit opinion, the Justice Department petition, the complete rehearing file, and the Lopez-Campos and Buenrostro-Mendez dockets saved October 3. The response and reply remain unlinked. No series separates this detention reading from all detainees."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module counts 156 days from the April 28 decision to the October 1 grant, 450 from July 8, 448 from July 10, 391 from September 5, and 70 from the July 23 petition, each from dates printed on the pins."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The Associated Press and The Hill match the October 1 grant. The CBS tens-of-thousands count is not in the order, docket, opinion, Board decision, or Customs memorandum."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "Sections follow the reader model: What happened, The catch, Where this sits, What we do not know yet, The records. The chronology is a figure inside Where this sits. What happened next and Who feels it are omitted, as the reader model omitted them."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "Every SourcedBlock is kind record. No other chip label is introduced."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element. The docket, the argument list, and the Customs notice are fixed saved copies."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The subject dek now matches the story: the October 1 grant is not a ruling and not a count of people, and under the bond statute the government may release someone."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "Discovery's series description matches the story dek. The homepage card title remains the published state label and was not edited."
+    }
   }
 }
