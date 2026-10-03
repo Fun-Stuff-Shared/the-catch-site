@@ -54,7 +54,8 @@ python3 $S/launch.py $D/<short>/drive.out zsh $S/drive.sh <short> <subject-slug>
 python3 $S/launch.py $D/<short>/patch<N>.out zsh $S/patch.sh <short> <subject-slug> <slug> <N> <patch list file>
 # 4. the clock, any time; the worktree, when the story is shipped or killed
 python3 $S/ledger.py $D/<short>
-zsh $S/close-story.sh <short>
+zsh $S/close-story.sh <short>            # a shipped story, after it is merged to main
+zsh $S/close-story.sh --killed <short>   # a story that will not ship
 ```
 
 The driver writes one line per step to `<dispatch dir>/DRIVE.log` and `.started` and
@@ -76,6 +77,15 @@ git) and exist only while their story is open. `close-story.sh` copies uncommitt
 that are not build output to the dispatch dir and removes the worktree; the branch stays,
 and `git worktree add .worktrees/<short> author/<short>` at the same path brings it back
 with its author session still resumable. Never leave a worktree beside the repo.
+
+The state reads each story record's saved text from the path it was staged at.
+`close-story.sh` counts the state's records that read from the worktree, registers the
+story's manifest from the main checkout once the worktree is gone, and prints how many of
+those records now read from main and the id of each one left with no readable text (a
+record whose text on main differs from the worktree's is left that way). A story that is
+not on main closes only with `--killed`, which leaves all of its records unreadable to
+the search index (153 records were in that condition on 2026-10-03, from worktrees
+removed by hand).
 
 ## 1. Accept the event (state, before any dispatch)
 
