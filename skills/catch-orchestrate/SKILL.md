@@ -91,7 +91,7 @@ python3 scripts/story_accept.py accept <cand-id> --by <you> --reason "<the human
   --label "<the candidate headline>" --event-id event-<subject-slug>-<slug>
 python3 scripts/story_accept.py decline <sibling cand-id> --by <you> --reason "same cluster as <cand-id>"
 cd /Volumes/4/CF/sai
-PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject-slug>-<slug>
+PYTHONPATH=src /Volumes/4/CF/sai/.venv/bin/python -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject-slug>-<slug>
 ls /Volumes/4/CF/catch-state/views | grep <subject-slug>     # event- and chain- views exist
 ```
 
@@ -171,11 +171,11 @@ is the author's commit step and not a sentence.
 
 ```bash
 cd /Volumes/4/CF/sai
-PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
+PYTHONPATH=src /Volumes/4/CF/sai/.venv/bin/python -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
   --op rename --event event-<subject-slug>-<slug> --author <you> \
   --reason "structure turn <commit>: the reader model's headline answers questions 1 and 3" \
   --label "<the reader model's headline>"
-PYTHONPATH=src /opt/anaconda3/bin/python3 -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject-slug>-<slug>
+PYTHONPATH=src /Volumes/4/CF/sai/.venv/bin/python -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject-slug>-<slug>
 ```
 
 ## 6. Dispatch the story turns
