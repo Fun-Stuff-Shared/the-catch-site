@@ -7,7 +7,7 @@
 export const event = {
   slug: "jobs/2026-10-02-september-payrolls-rise-29000",
   title: "Payrolls rose by an estimated 29,000 in September, a change too small for the survey to tell from none",
-  dek: "Economists surveyed by Reuters had nonfarm payrolls likely up by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.",
+  dek: "Economists surveyed by Reuters expected payrolls to rise by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.",
   name: "The September 2026 jobs report",
   span: "Published October 2, 2026",
   date: "2026-10-02",
@@ -191,11 +191,11 @@ export const chronology = [
   },
   {
     date: "October 1, 2026",
-    title: "Before the release, a Dow Jones survey looked for 84,000 jobs and a 4.1 percent rate",
+    title: "Before the release, economists surveyed by Dow Jones expected 84,000 jobs and a 4.1 percent rate",
   },
   {
     date: "October 2, 2026",
-    title: "Before 8:30 a.m. Eastern, Reuters' survey looked for 90,000 jobs and a 4.1 percent rate",
+    title: "Before 8:30 a.m. Eastern, economists surveyed by Reuters expected 90,000 jobs and a 4.1 percent rate",
   },
   {
     date: "October 2, 2026, 8:30 a.m. Eastern",

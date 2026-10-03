@@ -18,7 +18,7 @@ A stranger arrives from a headline like "September jobs report shows slowdown in
 
 Payrolls rose by an estimated 29,000 in September, a change too small for the survey to tell from none
 
-Dek: Economists surveyed by Reuters had nonfarm payrolls likely up by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.
+Dek: Economists surveyed by Reuters expected payrolls to rise by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.
 
 ## Grades
 
@@ -640,7 +640,7 @@ Audit findings that cite a document outside the manifest are gap lines. None is 
 | `not-admitted-wapo` | 2026-10-02 Washington Post story, 582 characters. The body was not saved. | D | does not change the seven answers |
 | `not-admitted-commissioner-2023` | 2023-01-06 Commissioner's Statement at the old address. It says it is the final statement. It is not a September 2026 statement. | D | does not change the seven answers |
 | `not-admitted-ap-morning` | 2026-10-02 morning Associated Press body at the same URL, a preview. The post-release dispatch is the admitted record. | D | does not change the seven answers |
-| `adp-september-2026` | "Private-sector employment increased by 90,000 jobs in September" Admitted in the story turn from the September 30 release. A separate private-payroll count, not the establishment survey. | B | 3, a separate private-payroll count was 90,000, so 29,000 is not the only September jobs figure |
+| `adp-september-2026` | "Private-sector employment increased by 90,000 jobs in September" Admitted in the story turn from the September 30 release. A separate private-payroll count, not the establishment survey. The story no longer carries it: the gap was unexplained. | C | 3, a separate private-payroll count was 90,000, so 29,000 is not the only September jobs figure |
 | `not-admitted-cnbc-yields` | 2026-10-02 CNBC note that Treasury yields inched higher as investors awaited the report. Before the release. No post-release price record was captured. | D | does not change the seven answers |
 | `not-admitted-wsj-dollar` | 2026-10-02 Wall Street Journal card that the dollar eased ahead of the data. Before the release, and the body was not saved. | D | does not change the seven answers |
 | `not-admitted-wsj-watch` | 2026-10-01 Wall Street Journal what-to-watch card. The body was not saved. | D | does not change the seven answers |
