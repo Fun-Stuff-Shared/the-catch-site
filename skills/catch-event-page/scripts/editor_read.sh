@@ -79,7 +79,7 @@ Words now, words your cuts remove, words your holes add, in round numbers.
 ## Decision
 Tag every numbered item Critical, Major or Minor. Critical: a sentence false against its own record, an altered quotation, a piece behind its event. Major: a sentence its record does not support; an answer 1 to 6 that no sentence on the page carries in words a reader could repeat; a passage graded A or B that the story view lacks; a passage graded C or D that changes one of answers 1 to 7 (name the answer); a story-view paragraph built only on C or D passages; a top that fails a cold reader. Minor: everything else, including every cut and every omission of C material. An omitted D passage that changes no answer is not an item. End with exactly one line: VERDICT: SHIP if no item is Critical or Major, otherwise VERDICT: NO-SHIP.
 
-Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output.
+Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output. Quotation marks go only around words copied from the page, a pinned record or the stranger report; a source you reached on the network and a label of your own are written without quotation marks.
 PROMPT
 codex exec -m "${CODEX_MODEL:-gpt-6-sol}" --skip-git-repo-check -C "$root" -c model_reasoning_effort=high -o "$out" "$(cat "$prompt")" </dev/null > "${out%.md}.log" 2>&1 || true
 rm -f "$prompt"
