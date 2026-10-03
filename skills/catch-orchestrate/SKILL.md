@@ -351,6 +351,24 @@ decision after the reread is a commit in the worktree by explicit path (the cut 
 the held list, the read reports as `.md`, never the `.log` files) with a `review:` message,
 so the resting commit carries what was decided and why.
 
+Three stories under the driver in one night (jobs, immigration detention, fuel reserves;
+grok-4.7 author, 2026-10-03), in minutes, from `ledger.py`:
+
+| Step | Jobs | Detention | Fuel |
+|---|---|---|---|
+| Record | 42 | 35 | 40 |
+| Completeness audit | 9 | 10 | 8 |
+| Structure | 19 | 16 | 21 |
+| Story | 70 | 109 | 124 |
+| Read rounds (each 6 to 11) | 7 | 3 | 8 |
+| Author patches | 20, 12, 7, 3, 2 | 19, 18 | 66, 15, 11, 15, 15, 7, 5 |
+| First dispatch to the end of the last read | 273 | 290 | 450 |
+| Of that, with no step running | 23 | 55 | 46 |
+
+The story turn and the first patch are the long steps; the later patches ran 2 to 19
+minutes. The three ran side by side: 455 minutes from the first dispatch to the end of
+the last read, against 1,013 for the three in sequence.
+
 ## Gotchas
 
 - A maintenance run (`news-state-maintain`, every two hours at half past) holds the state
