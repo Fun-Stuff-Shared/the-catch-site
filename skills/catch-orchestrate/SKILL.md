@@ -354,6 +354,13 @@ one. `ledger.py` prints a run's own times from its markers.
   refused the pair. The refusal is in the newest folder under
   `/Volumes/4/CF/catch-state/judges/attempts/` whose `input.json` names the event; a gate
   that refuses two forms of one measurement is the state's defect, fixed and deployed there.
+  To judge one story's pairs without waiting for a maintenance run, between runs (during
+  one it is refused with `maintain_fire_mismatch`):
+  `cd /Volumes/4/CF/sai-prod && PYTHONPATH=src /Volumes/4/CF/sai/.venv/bin/python -m sai.cli state judges --state-dir /Volumes/4/CF/catch-state --kind relation --event-id event-<subject-slug>-<slug> --run-dir <a new scratch folder>`,
+  then `state refresh-views --event` and rebuild the page. A slot whose last attempt failed
+  with nothing judged is no longer taken first by the scheduled runs; after its cause is
+  fixed, `sai.cli state judge-clear --kind relation --unit <slot id> --author <you> --reason "<the fix>"`
+  puts it first again.
 - `drive.sh` is read by the shell as it runs. Change it by writing a new file and moving
   it over the old one, never in place, while any driver is running.
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
