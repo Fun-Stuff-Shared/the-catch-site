@@ -342,6 +342,18 @@ one. `ledger.py` prints a run's own times from its markers.
   that does not state the value is the author's to rewrite or drop. Only a refusal that says
   the value is not in a passage which does state it is the state's defect; that is fixed
   and deployed there, after which the same driver command stages again and goes on.
+- A patch round cut off while the author was editing is launched again with the same list:
+  the quote check passed on that list once and is not run again, since the author has
+  already rewritten the sentences it names. A changed list is checked afresh.
+- A read that dies on a login, a network or a capacity error (`STOP` names the read; its
+  log ends in a 401 or "at capacity") has not judged the page. Launch the same command
+  again once a one-line `codex exec` answers; never touch the login files.
+- A figure row under "Show the work" that reads "This record does not yet establish one
+  current value" means the state has not joined the story's figure to the wire's: either
+  the judges have not reached it (the next maintenance run does) or the relation gate
+  refused the pair. The refusal is in the newest folder under
+  `/Volumes/4/CF/catch-state/judges/attempts/` whose `input.json` names the event; a gate
+  that refuses two forms of one measurement is the state's defect, fixed and deployed there.
 - `drive.sh` is read by the shell as it runs. Change it by writing a new file and moving
   it over the old one, never in place, while any driver is running.
 - `run-turn.sh` renders the prompt from `assets/dispatch/prompt-<turn>.txt`, refuses an
