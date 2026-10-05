@@ -37,8 +37,12 @@ if [ ! -e "$out/$m.finished" ] && [ -e "$out/$m.before" ] && patched; then
   now > "$out/$m.finished"
 fi
 if [ ! -e "$out/$m.finished" ]; then
-  node skills/catch-event-page/scripts/patch_quotes.mjs "$story" "$list" "${extra[@]}" > "$out/$m.quotes.log" 2>&1 \
-    || stop "the patch list quotes words no record holds, see $out/$m.quotes.log"
+  listsum="$(shasum -a 256 < "$list")"
+  if [ "$(cat "$out/$m.quotes.passed" 2>/dev/null)" != "$listsum" ]; then
+    node skills/catch-event-page/scripts/patch_quotes.mjs "$story" "$list" "${extra[@]}" > "$out/$m.quotes.log" 2>&1 \
+      || stop "the patch list did not pass the quote check, see $out/$m.quotes.log"
+    print -r -- "$listsum" > "$out/$m.quotes.passed"
+  fi
   { cat <<'PREAMBLE'
 You are the journalist who wrote this story, and the page is yours. Below is what the people who read it found. Two kinds of item are in the list.
 

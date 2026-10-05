@@ -166,6 +166,11 @@ ENTAILED. A Moderate or Minor is fixed or written in the working note with why i
 Commit the verdict file with the page. You return only on an ENTAILED verdict; the closing
 check after you return confirms it.
 
+A check that dies on a login, a network or a capacity error has not judged the page. Leave
+the page uncommitted, return, and say which check died and its last error line. The login
+files, the browser and every other program's settings on this machine are not yours: do not
+start a login, and do not move, copy or delete a credential file.
+
 Then read what you added the way a stranger meets it. The entailment check reads each
 sentence beside its passage, and so do you; neither reads it top down with nothing but the
 page above it. The referent check does: a model that did not write the page takes the
