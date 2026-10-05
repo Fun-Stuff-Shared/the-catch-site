@@ -53,7 +53,7 @@ Rules: do not edit any file; do not run git commit, git reset, git checkout, or 
 
 Output in the audit schema's nine sections, leading with "What You're Missing"; the reconstruction is the basis of the independent reconstruction section and is not printed as a separate report. Every finding names its materiality (Critical, Major, Moderate, Minor, Cosmetic), quotes the page bytes, names the record (URL or file path) with the exact bytes that support it, and states the correct account. Then end with exactly one line: VERDICT: COMPLETE if the completeness verdict is substantially complete or mostly complete with minor omissions, otherwise VERDICT: INCOMPLETE. If access prevents the completion standard, say the audit is bounded, list the remaining high-value checks, and return VERDICT: INCOMPLETE.
 PROMPT
-codex exec -m "${CODEX_MODEL:-chatgpt-web/gpt-5.6-sol}" --skip-git-repo-check -C "$root" -c model_reasoning_effort=high -o "$out" "$(cat "$prompt")" </dev/null > "${out%.md}.log" 2>&1 || true
+codex exec -m "${CODEX_MODEL:-chatgpt-web/high}" --skip-git-repo-check -C "$root" -c model_reasoning_effort=high -o "$out" "$(cat "$prompt")" </dev/null > "${out%.md}.log" 2>&1 || true
 rm -f "$prompt"
 grep -q '^VERDICT: ' "$out" 2>/dev/null || { echo "no VERDICT line in $out; read ${out%.md}.log and rerun" >&2; exit 1; }
 echo "$out"
