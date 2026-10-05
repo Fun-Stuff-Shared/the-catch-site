@@ -26,7 +26,7 @@ out="${2:-$root/checks/audits/$subject--$slug-$(date -u +%Y-%m-%d).md}"
 [ -f "$context/SKILL.md" ] || { echo "skill missing: $context/SKILL.md" >&2; exit 2; }
 stage=""
 if [ "${AUDIT_STAGE:-}" = closing ]; then
-  prior="$({ ls "$root/checks/audits/$subject--$slug-"*.md 2>/dev/null || true; } | { grep -v -F "$out" || true; } | tr '\n' ' ')"
+  prior="$({ ls "$root/checks/audits/$subject--$slug-"*.md 2>/dev/null || true; } | { grep -v -F "$out" || true; } | { grep -Ev -- '-[0-9]{4}-[0-9]{2}-[0-9]{2}-stranger\.md$' || true; } | tr '\n' ' ')"
   stage="This is the closing audit of a finished story that has been through review. The earlier reports on this page are ${prior:-none}; the editor's held list is $held when that file exists (decided, not open). Do not report a held item. Tag a finding an earlier report already made as a repeat and name the report; everything else is new.
 
 "
