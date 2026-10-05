@@ -2,7 +2,7 @@
 # built_page <root> <subject>/<story>: prints the built page's path; exit 2 when it is missing
 # or older than the page source or a data module the page imports.
 # earlier_page <root> <subject>/<story> <commit> <out.html> <log>: builds the site as it stood
-# at <commit> in a throwaway worktree and copies the story's page to <out.html> (an empty file
+# at <commit> in a throwaway worktree beside <root> (same volume, about 600 MB) and copies the story's page to <out.html> (an empty file
 # when that commit had no such page). What a build generates from the state comes from <root>
 # (finish.sh names the same three paths), so the two builds differ only by source.
 
@@ -19,7 +19,7 @@ built_page() {
 
 earlier_page() {
   local root="$1" story="$2" since="$3" out="$4" log="$5" tree made status=0
-  tree="$(mktemp -d)"
+  tree="$(mktemp -d "$(dirname "$(cd "$root" && pwd -P)")/.catch-earlier.XXXXXX")"
   : > "$out"
   git -C "$root" worktree add -q --detach "$tree/site" "$since" 2> "$log" || { rm -rf "$tree"; echo "cannot check out $since; read $log" >&2; return 2; }
   if [ -f "$tree/site/src/pages/events/$story.astro" ]; then
