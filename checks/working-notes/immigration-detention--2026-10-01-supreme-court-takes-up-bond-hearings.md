@@ -294,7 +294,7 @@ The October 5 docket and the August 21 response are admitted. Capture run `captu
 
 | Passage | Disposition |
 |---|---|
-| Oct 05 2026, Brief of Ricardo Aparecido Barbosa da Cunha submitted, Main Document, and the brief address | Used: the docket detail. The response became public that day. |
+| Aug 21 2026, Brief of respondent Ricardo Aparecido Barbosa da Cunha filed, with the note PDF upload - October 5, 2026, Main Document, and the brief address | Used: the docket detail. The brief was filed August 21. The text was posted October 5. |
 | Reply of petitioner Philip L. Rhoney filed, with no document under it | Used: the reply is still listed without its text. |
 | Letter of September 14 resubmitted October 5 with a main document | Held unused: a letter, not the response or the grant. |
 | July 23 paper instruction, October 1 grant, and the later electronic-filing lines | Used: the same docket paragraph, now cited to this page. |
@@ -310,5 +310,11 @@ The October 5 docket and the August 21 response are admitted. Capture run `captu
 | Question presented, circuit counts, detention-bed estimates, Laken Riley, due process, counsel | Held unused: the page already states the question, the split, and the biography. A first reading does not need them again. |
 
 1. Docket text. Taken. The October 5 entry records that his brief was submitted and links a main document. That file is his response to the petition, dated August 21. The September 4 reply stays listed without its text. The July 23 paper instruction and the post-grant electronic rule stay, dated to those entries. Sibling sentences that said the response text was absent: one, the named sentence. The reader-model answer and the old gap line now say the response was posted October 5.
+
+## Record check, October 5, later docket
+
+The Court's docket wording changed after the first October 5 copy. A capture at 22:36 UTC matches the copy fetched at 22:35. The separate October 5 line, "Brief of Ricardo Aparecido Barbosa da Cunha submitted," is gone. Under August 21 the page says his brief was filed, and one of those lines notes "PDF upload - October 5, 2026" and carries the main document. The same file is still his response, dated August 21. The September 4 reply still has no document.
+
+1. Filing date and posting date. Taken. The docket detail no longer says the docket recorded a submission on October 5. It says the response was filed August 21 and that its text was posted October 5, which is the PDF-upload note. The story sentence that the response is dated August 21 is the date printed on the document, and it stays. No other sentence dated the text's availability to August 21 or called October 5 the filing date.
 2. Purpose sentence. Taken. The petition's statement that Congress acted to correct the disparity is attributed to the petition. The replacement of the defined term entry with admission stays as the change itself. The sentence that members of Congress called lawful admission the pivotal factor was already attributed to them. No other page sentence stated that purpose as Congress's own.
 3. His reading of 1996. Taken. A paragraph beside the government's gives his account from the response: Congress largely kept the earlier detention scheme, people arrested inside the country including those who had entered without admission remained eligible for bond, people apprehended at the border did not, and the law changed the removal process while keeping who can get bond. The applicant label, on his account, puts people who entered without inspection on the same footing in a removal case and does not end bond. Nothing cut. The government's paragraph stays.
