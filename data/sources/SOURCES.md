@@ -1834,3 +1834,10 @@ bls.gov refused a plain fetch on October 3, 2026. data/sources/bls-empsit-2026-0
 | data/sources/adp-september-2026.txt | 6502 | 26dd2edcde156983 |
 | data/sources/stlouisfed-unrate-2026-10.html | 242660 | 9759f551c35c3479 |
 | data/sources/stlouisfed-unrate-2026-10.txt | 3058 | 6e448dc3a11fee59 |
+| data/sources/coverage/reuters-september-jobs.html | 583982 | 6fc3551238d8f075 |
+| data/sources/coverage/reuters-september-jobs.txt | 7269 | de5c101742734211 |
+| data/sources/coverage/hassett-briefing-2026-10-02.html | 447329 | c6b321b055a61f9d |
+| data/sources/coverage/hassett-briefing-2026-10-02.txt | 21668 | d22b797eaf96520b |
+| data/sources/coverage/yahoo-phelan-2026-10-02.html | 1015908 | 2ffe4491ed24b270 |
+| data/sources/coverage/yahoo-phelan-2026-10-02.txt | 2690 | e136cc326f66e678 |
+| data/sources/CES9091000001-2026-10-05.csv | 16863 | 9576a9645432c43c |

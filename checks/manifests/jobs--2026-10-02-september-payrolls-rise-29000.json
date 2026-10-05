@@ -36,6 +36,7 @@
       "section_anchor": "where-this-sits",
       "records": [
         "fred-payems-2026-10-03",
+        "fred-federal-employment-2026-10-05",
         "fred-unrate-2026-10-03",
         "fred-u6-2026-10-03",
         "fred-prime-age-2026-10-03",
@@ -69,6 +70,10 @@
         "thehill-september-jobs",
         "cnbc-september-jobs-preview",
         "reuters-september-jobs-preview",
+        "reuters-september-jobs",
+        "hassett-briefing-2026-10-02",
+        "yahoo-hassett-august-jobs",
+        "yahoo-phelan-2026-10-02",
         "abc-september-jobs-preview"
       ]
     },
@@ -534,6 +539,84 @@
       "capture_run": "capture-oneoff-20261003T065139Z",
       "capture_raw_sha256": "sha256:9759f551c35c3479e3d7bf081440c6cc9eec05d5855dc4eb5df6758a98a7606b",
       "captured_at": "2026-10-03T06:53:08.360659Z"
+    },
+    {
+      "id": "reuters-september-jobs",
+      "title": "US job growth undershoots expectations in September, but labor market remains stable",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/us-job-growth-slows-sharply-september-unemployment-rate-rises-42-2026-10-02/",
+      "pinned_path": "data/sources/coverage/reuters-september-jobs.html",
+      "text_path": "data/sources/coverage/reuters-september-jobs.txt",
+      "text_sha256": "sha256:de5c101742734211ece088cb6696675809ba52eac2f171a98a29c5908d4a6212",
+      "quote": "Economists estimated that the economy needs to create roughly 50,000 jobs per month to keep up with growth in the working-age population.",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters's post-release story: the 50,000 working-age yardstick, a late Labor Day as one account of a weak September, the government-payroll split, and the October 27-28 rate-hike odds.",
+      "capture_run": "capture-oneoff-20261005T222115Z",
+      "capture_raw_sha256": "sha256:6fc3551238d8f0756b94a5018ed7d1afc95130875a6e47a66ebab0fcfbdf8ef5",
+      "captured_at": "2026-10-05T22:21:37.192967Z"
+    },
+    {
+      "id": "hassett-briefing-2026-10-02",
+      "title": "Press Briefing: Kevin Hassett Speaks to Reporters Outside the White House",
+      "publisher": "Roll Call",
+      "date": "2026-10-02",
+      "url": "https://rollcall.com/factbase/trump/transcript/donald-trump-press-briefing-kevin-hassett-the-white-house-october-2-2026/",
+      "pinned_path": "data/sources/coverage/hassett-briefing-2026-10-02.html",
+      "text_path": "data/sources/coverage/hassett-briefing-2026-10-02.txt",
+      "text_sha256": "sha256:d22b797eaf96520bf3ad0dd7def64970f595f5c19903c627bc7edc5eac9c856f",
+      "quote": "What's happened is because we've reduced federal employment by 300,000 workers, then the numbers, uh, are a little bit lower if you don't account for that.",
+      "quote_span_check": "byte_exact",
+      "about": "Kevin Hassett's October 2 briefing outside the White House, in the Factbase transcript. The page template is dated April 22, 2024; the transcript heading is October 2, 2026.",
+      "capture_run": "capture-oneoff-20261005T222547Z",
+      "capture_raw_sha256": "sha256:c6b321b055a61f9d3ae44a1428d2b79fc603f7ea04827145692f9fca3b6c5f84",
+      "captured_at": "2026-10-05T22:26:22.908175Z"
+    },
+    {
+      "id": "yahoo-hassett-august-jobs",
+      "title": "Kevin Hassett says jobs numbers have been blockbuster",
+      "publisher": "Yahoo Finance",
+      "date": "2026-09-04",
+      "url": "https://finance.yahoo.com/economy/articles/kevin-hassett-says-jobs-numbers-205500419.html",
+      "pinned_path": "data/sources/coverage/yahoo-hassett-august-jobs.html",
+      "text_path": "data/sources/coverage/yahoo-hassett-august-jobs.txt",
+      "text_sha256": "sha256:7a7c49d48e33b6dcaac75686822f5bb101bc4b512e6544f65cd7fb6772d90417",
+      "quote": "Kevin Hassett, the director of the National Economic Council",
+      "quote_span_check": "byte_exact",
+      "about": "A September 4 Yahoo Finance account of his remarks on the August report. This page uses it only for the office. The October 2 transcript does not state one.",
+      "capture_status": "pinned before the registry rule of 2026-09-08; fetch route not recorded"
+    },
+    {
+      "id": "yahoo-phelan-2026-10-02",
+      "title": "White House top economist doesn't expect more rate hikes this year after September jobs miss",
+      "publisher": "Yahoo Finance",
+      "date": "2026-10-02",
+      "url": "https://finance.yahoo.com/economy/article/white-house-top-economist-doesnt-expect-more-rate-hikes-this-year-after-september-jobs-miss-165916134.html",
+      "pinned_path": "data/sources/coverage/yahoo-phelan-2026-10-02.html",
+      "text_path": "data/sources/coverage/yahoo-phelan-2026-10-02.txt",
+      "text_sha256": "sha256:e136cc326f66e6787a8fb05d9088f38c481caafab2aa18e1fb07066b1e1b73d7",
+      "quote": "According to Phelan's calculations, the economy needs to add only about 40,000 jobs per month to keep the unemployment rate at its current level.",
+      "quote_span_check": "byte_exact",
+      "about": "Yahoo Finance's interview with Chris Phelan, chair of the President's Council of Economic Advisers, including his calculation of about 40,000 jobs a month.",
+      "capture_run": "capture-oneoff-20261005T222547Z",
+      "capture_raw_sha256": "sha256:2ffe4491ed24b2706d135c22c0f28f270c70d3511c282317f0ec1a09f7c05bd8",
+      "captured_at": "2026-10-05T22:27:40.151529Z"
+    },
+    {
+      "id": "fred-federal-employment-2026-10-05",
+      "title": "Federal government employment, monthly",
+      "publisher": "Federal Reserve Bank of St. Louis (FRED), from BLS",
+      "date": "2026-10-05",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CES9091000001",
+      "pinned_path": "data/sources/CES9091000001-2026-10-05.csv",
+      "text_path": "data/sources/CES9091000001-2026-10-05.csv",
+      "text_sha256": "sha256:9576a9645432c43ca2727f734ab9d32446ff9c3cd2ab01f4ab1fc55c9488315c",
+      "quote": "2026-09-01,2682",
+      "quote_span_check": "byte_exact",
+      "about": "Federal government employment, in thousands, seasonally adjusted. Saved October 5. December 2024 is 3,009 thousand and September 2026 is 2,682 thousand.",
+      "capture_run": "capture-oneoff-20261005T222547Z",
+      "capture_raw_sha256": "sha256:9576a9645432c43ca2727f734ab9d32446ff9c3cd2ab01f4ab1fc55c9488315c",
+      "captured_at": "2026-10-05T22:27:21.213955Z"
     }
   ],
   "story_sources": [
@@ -571,6 +654,13 @@
       "label": "Nonfarm payrolls, monthly series",
       "meta": " \u00b7 saved October 3, 2026",
       "usage": "the levels behind the chart and the computed averages"
+    },
+    {
+      "id": "fred-federal-employment-2026-10-05",
+      "group": "official",
+      "label": "Federal government employment, monthly series",
+      "meta": " \u00b7 saved October 5, 2026",
+      "usage": "federal employment in December 2024, August 2026, and September 2026"
     },
     {
       "id": "fred-unrate-2026-10-03",
@@ -627,6 +717,34 @@
       "label": "Reuters",
       "meta": " \u00b7 October 2, 2026",
       "usage": "a survey of 90,000 jobs, published before the release"
+    },
+    {
+      "id": "reuters-september-jobs",
+      "group": "coverage",
+      "label": "Reuters, after the release",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "the 50,000 yardstick, the Labor Day note, the local-government split, and the October rate-hike odds"
+    },
+    {
+      "id": "hassett-briefing-2026-10-02",
+      "group": "coverage",
+      "label": "Kevin Hassett, White House briefing",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "his account that the jobs numbers are lower because federal employment is down 300,000"
+    },
+    {
+      "id": "yahoo-hassett-august-jobs",
+      "group": "coverage",
+      "label": "Yahoo Finance",
+      "meta": " \u00b7 September 4, 2026",
+      "usage": "Hassett's office, director of the National Economic Council"
+    },
+    {
+      "id": "yahoo-phelan-2026-10-02",
+      "group": "coverage",
+      "label": "Yahoo Finance",
+      "meta": " \u00b7 October 2, 2026",
+      "usage": "Chris Phelan's calculation of about 40,000 jobs a month"
     },
     {
       "id": "abc-september-jobs-preview",

@@ -11,7 +11,7 @@ export const event = {
   name: "The September 2026 jobs report",
   span: "Published October 2, 2026",
   date: "2026-10-02",
-  updated: "2026-10-03",
+  updated: "2026-10-05",
   visual: {
     kind: "payrolls",
     source: "fred-payems-2026-10-03",
@@ -50,6 +50,34 @@ export const septemberPayrollChange = 29;
 
 // Levels in thousands from PAYEMS-2026-10-03.csv.
 export const payrollLevels = { august: 159015, september: 159044 };
+
+// October 2025 is the chart's first bar: 158408 minus 158548 on PAYEMS-2026-10-03.csv.
+export const october2025Levels = { september: 158548, october: 158408 };
+
+// CES9091000001-2026-10-05.csv, federal employment, thousands of jobs.
+// December 2024 is 3009, August 2026 is 2683, September 2026 is 2682.
+export const federalEmployment = {
+  december2024: 3009,
+  august2026: 2683,
+  september2026: 2682,
+};
+export const federalEmploymentChange = {
+  sinceDecember2024: 2682 - 3009,
+  september: 2682 - 2683,
+};
+
+// Yardsticks named on October 2. Job figures are thousands per month.
+// reutersWorkingAge: Reuters, roughly 50,000 to keep up with the working-age population.
+// phelanSteady: Yahoo Finance's account of Phelan's calculation, about 40,000.
+// threeMonthThroughSept2025: summary table B, three-month average, September 2025 column.
+// hikeOddsLow and hikeOddsLater: Reuters, CME FedWatch, percent.
+export const yardsticks = {
+  reutersWorkingAge: 50,
+  phelanSteady: 40,
+  threeMonthThroughSept2025: 23,
+  hikeOddsLow: 13,
+  hikeOddsLater: 23,
+};
 
 // Sum of the twelve changes from October 2025 through September 2026, divided by 12.
 // 496 / 12 = 41.333 thousand. The release's "prior 12 months" stops before September:
