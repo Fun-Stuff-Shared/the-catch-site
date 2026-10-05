@@ -1862,7 +1862,7 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.html | 509208 | d7ec29e90a910aeb |
 | data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.txt | 2945 | b970b4ce873317c3 |
 | data/sources/fuel-reserves/blas-red-herring-2026-10-02.html | 135185 | 312392b6f7d1da9f |
-| data/sources/fuel-reserves/blas-red-herring-2026-10-02.txt | 702 | 686257f336664310 |
+| data/sources/fuel-reserves/blas-red-herring-2026-10-02.txt | 750 | 9093b95839d994c2 |
 | data/sources/fuel-reserves/blas-wholesale-2026-10-02.html | 147349 | f05670e5bc87331f |
 | data/sources/fuel-reserves/blas-wholesale-2026-10-02.txt | 1227 | 209a71be0adb90fa |
 | data/sources/fuel-reserves/blas-export-letter-2026-09-23.html | 150435 | 06a96605dac40463 |
