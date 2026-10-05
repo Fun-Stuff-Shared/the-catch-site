@@ -17,7 +17,7 @@ out="${DISPATCH_ROOT:-/Volumes/4/scratch-fable-profile/grok-authoring/dispatch}/
 wt="$(cat "$out/WORKTREE" 2>/dev/null || echo "$site/.worktrees/$short")"
 state=/Volumes/4/CF/catch-state; sai=/Volumes/4/CF/sai-prod; py=/Volumes/4/CF/sai/.venv/bin/python
 event="event-$subject-$slug"; name="$subject--$slug"; story="$subject/$slug"
-host="${AUTHOR_HOST:-grok}"; model="${AUTHOR_MODEL:-grok-4.7}"; audit_model="${AUDIT_MODEL:-chatgpt-web/gpt-5.6-sol}"
+host="${AUTHOR_HOST:-grok}"; model="${AUTHOR_MODEL:-grok-4.7}"; audit_model="${AUDIT_MODEL:-chatgpt-web/high}"
 scripts="$wt/skills/catch-event-page/scripts"
 [ -d "$wt" ] || { echo "no worktree at $wt" >&2; exit 2; }
 zmodload zsh/system

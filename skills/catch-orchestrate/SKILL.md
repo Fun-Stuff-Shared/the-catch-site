@@ -30,7 +30,7 @@ signal a process you did not start; the authors you launch are yours to stop.
 Hosts and models (set explicitly in every dispatch; the defaults exist only so a missing
 variable is visible in the log): the production author is grok `grok-4.7` for the record,
 structure and story turns.
-The audit runs on codex `chatgpt-web/gpt-5.6-sol` under two skills, contextual
+The audit runs on codex `chatgpt-web/high` under two skills, contextual
 reconstruction then the story completeness audit: once on the record commit before any
 prose, and once at the close on the finished page. The record check and the editor's read
 run on codex `gpt-6-sol`. The reviewer of a sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
