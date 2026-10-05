@@ -9,7 +9,7 @@
 # <dispatch dir>/HOLD exists (the reads of a round count as one step). Ends by writing READY-r0: the reads are in, the patch list is
 # the reviewer's. DRIVE_ONLY_READS=<round> DRIVE_SINCE=<commit> (set by patch.sh) builds and runs the
 # record check on the blocks changed since that commit. DRIVE_CLOSING=<round> builds and runs the
-# closing reads (the stranger, then the editor with the stranger's report in hand) and ends by writing CLOSED-r<round>.
+# closing reads (the stranger and the audit together, then the editor with both reports in hand) and ends by writing CLOSED-r<round>.
 set -uo pipefail
 short="${1:?short}"; subject="${2:?subject}"; slug="${3:?slug}"
 site=/Volumes/4/GitHub/the-catch-site
@@ -17,7 +17,7 @@ out="${DISPATCH_ROOT:-/Volumes/4/scratch-fable-profile/grok-authoring/dispatch}/
 wt="$(cat "$out/WORKTREE" 2>/dev/null || echo "$site/.worktrees/$short")"
 state=/Volumes/4/CF/catch-state; sai=/Volumes/4/CF/sai-prod; py=/Volumes/4/CF/sai/.venv/bin/python
 event="event-$subject-$slug"; name="$subject--$slug"; story="$subject/$slug"
-host="${AUTHOR_HOST:-grok}"; model="${AUTHOR_MODEL:-grok-4.7}"
+host="${AUTHOR_HOST:-grok}"; model="${AUTHOR_MODEL:-grok-4.7}"; audit_model="${AUDIT_MODEL:-chatgpt-web/gpt-5.6-sol}"
 scripts="$wt/skills/catch-event-page/scripts"
 [ -d "$wt" ] || { echo "no worktree at $wt" >&2; exit 2; }
 zmodload zsh/system
@@ -122,8 +122,10 @@ patch_reads() {
 closing_reads() {
   local r="$1" d="$(date -u +%Y-%m-%d)" a="$wt/checks/audits/$name"
   export CODEX_MODEL=gpt-6-sol STRANGER_MODEL=sonnet
-  ( step "read-r${r}c-stranger" "$out/read-r${r}c-stranger.log" stranger "${r}c" "$a" )
-  need "${r}c" stranger
+  ( step "read-r${r}c-stranger" "$out/read-r${r}c-stranger.log" stranger "${r}c" "$a" ) &
+  ( export CODEX_MODEL="$audit_model" AUDIT_STAGE=closing; step "read-r${r}c-audit" "$out/read-r${r}c-audit.log" one_read completeness_audit.sh "$a-$d-r${r}c-audit.md" ) &
+  wait
+  need "${r}c" stranger audit
   ( step "read-r${r}c-editor" "$out/read-r${r}c-editor.log" one_read editor_read.sh "$a-$d-r${r}c-editor.md" "$(ls -t "$a"-*-r${r}c-stranger.md 2>/dev/null | head -1)" )
   need "${r}c" editor
 }
@@ -173,7 +175,7 @@ fi
 if [ -n "${DRIVE_CLOSING:-}" ]; then
   hold "build"; ensure_staged; step "build-r${DRIVE_CLOSING}c" "$out/build-r${DRIVE_CLOSING}c.log" npm run build
   hold "reads"; closing_reads "$DRIVE_CLOSING"
-  now > "$out/CLOSED-r$DRIVE_CLOSING"; say "CLOSED round $DRIVE_CLOSING: the stranger's report and the editor's memo are in"; exit 0
+  now > "$out/CLOSED-r$DRIVE_CLOSING"; say "CLOSED round $DRIVE_CLOSING: the stranger's report, the audit and the editor's memo are in"; exit 0
 fi
 
 hold record; turn record
@@ -187,7 +189,7 @@ hold record-audit
 audit="$wt/checks/audits/$name-$(cat "$out/record-audit.date" 2>/dev/null || date -u +%Y-%m-%d | tee "$out/record-audit.date")-record-audit.md"
 run_audit() {
   [ -e "$audit" ] && mv "$audit" "$audit.superseded-$(date -u +%H%M%S)"
-  CODEX_MODEL=gpt-6-sol "$scripts/completeness_audit.sh" "$story" "$audit"
+  CODEX_MODEL="$audit_model" "$scripts/completeness_audit.sh" "$story" "$audit"
 }
 step record-audit "$out/record-audit.log" run_audit
 [ -s "$audit" ] || stop "the completeness audit wrote nothing at $audit"

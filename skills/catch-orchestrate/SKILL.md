@@ -30,8 +30,10 @@ signal a process you did not start; the authors you launch are yours to stop.
 Hosts and models (set explicitly in every dispatch; the defaults exist only so a missing
 variable is visible in the log): the production author is grok `grok-4.7` for the record,
 structure and story turns.
-Reviews (audit, record check, editor's read) run on codex `gpt-6-sol`, so the reviewer of a
-sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
+The audit runs on codex `chatgpt-web/gpt-5.6-sol` under two skills, contextual
+reconstruction then the story completeness audit: once on the record commit before any
+prose, and once at the close on the finished page. The record check and the editor's read
+run on codex `gpt-6-sol`. The reviewer of a sentence is never its author; the stranger read is the one Claude subagent, on `sonnet`,
 always with the model passed. A timed comparison (section 6) adds a second story author
 on codex `gpt-6-sol` from the same structure commit; it is the exception, not the run.
 
@@ -52,7 +54,7 @@ BY=<you> REASON="<the human's word, the span>" zsh $S/open-story.sh <short> <can
 python3 $S/launch.py $D/<short>/drive.out zsh $S/drive.sh <short> <subject-slug> <slug>
 # 3. each patch round: quote check, the author's own session resumed with the list, build, the record check on what the patch changed
 python3 $S/launch.py $D/<short>/patch<N>.out zsh $S/patch.sh <short> <subject-slug> <slug> <N> <patch list file>
-# 4. the closing reads, once the record check says SHIP: the stranger, then the editor with the stranger's report
+# 4. the closing reads, once the record check says SHIP: the stranger and the audit together, then the editor with both reports
 DRIVE_CLOSING=<N> python3 $S/launch.py $D/<short>/closing<N>.out zsh $S/drive.sh <short> <subject-slug> <slug>
 # 5. the clock, any time; the worktree, when the story is shipped or killed
 python3 $S/ledger.py $D/<short>
@@ -236,8 +238,9 @@ commit. Read the author's own referent verdict (`checks/audits/...-referents.md`
 every finding at the bytes, refute what the pins refute, and send one list: the record
 check's corrections and the stranger's stalls. After each patch `patch.sh` runs the record
 check on the blocks the patch changed. When it returns SHIP, run the closing reads
-(`DRIVE_CLOSING`): the stranger on the page as it now stands, then the editor. The editor's
-memo is the last list; the record check runs once more on what that patch changed. Each
+(`DRIVE_CLOSING`): the stranger and the audit on the page as it now stands, then the editor,
+who reads both reports. The editor's memo is the last list; an audit finding the memo does
+not take up is verified at the bytes and added to it or refuted with a reason; the record check runs once more on what that patch changed. Each
 read writes `checks/audits/<subject>--<slug>-<date>-r<N>-<read>.md`.
 
 Before telling the human a page is ready, read the last stranger report in full and the
