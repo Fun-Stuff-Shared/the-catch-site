@@ -285,3 +285,30 @@ No correction on this list. The served page was accurate on the grant and thin o
 5. "Both match the October 1 grant." Taken by dropping it. The Associated Press and Hill sentences already say what those outlets reported. The line added no fact.
 
 The stakes paragraph, once rewritten, still said the Fifth and the Eighth apply the detention statute to everyone who has not been admitted. The Fourth Circuit says all noncitizens. That sentence now says all noncitizens. It was the only "everyone" on the page.
+
+## Record check, October 5
+
+The October 5 docket and the August 21 response are admitted. Capture run `capture-oneoff-20261005T215950Z`. The registry text of the docket kept the counsel block; the text sibling is the proceedings table from the saved page, with the main-document address of the October 5 brief written under that entry. The response text is the PDF extraction. The September 4 reply is still a line with no document.
+
+### `scotus-docket-rhoney-2026-10-05`
+
+| Passage | Disposition |
+|---|---|
+| Oct 05 2026, Brief of Ricardo Aparecido Barbosa da Cunha submitted, Main Document, and the brief address | Used: the docket detail. The response became public that day. |
+| Reply of petitioner Philip L. Rhoney filed, with no document under it | Used: the reply is still listed without its text. |
+| Letter of September 14 resubmitted October 5 with a main document | Held unused: a letter, not the response or the grant. |
+| July 23 paper instruction, October 1 grant, and the later electronic-filing lines | Used: the same docket paragraph, now cited to this page. |
+
+### `scotus-response-barbosa-da-cunha-2026-08-21`
+
+| Passage | Disposition |
+|---|---|
+| Title, response to the petition, dated August 21, 2026 | Used: the docket detail and the date on his reading. |
+| Congress largely preserved the preexisting detention scheme; people who entered without admission remained eligible for release on bond; people apprehended at the border stayed detained without bond | Used: his reading, beside the government's. |
+| The law changed the removal process (one removal procedure; grounds turn on admission) and still kept the earlier detention scheme, including bond for people who entered without inspection | Used: the same paragraph. |
+| Deemed applicants for admission, and the same footing in removal proceedings | Used: so the applicant label is not, on his account, the end of bond. |
+| Question presented, circuit counts, detention-bed estimates, Laken Riley, due process, counsel | Held unused: the page already states the question, the split, and the biography. A first reading does not need them again. |
+
+1. Docket text. Taken. The October 5 entry records that his brief was submitted and links a main document. That file is his response to the petition, dated August 21. The September 4 reply stays listed without its text. The July 23 paper instruction and the post-grant electronic rule stay, dated to those entries. Sibling sentences that said the response text was absent: one, the named sentence. The reader-model answer and the old gap line now say the response was posted October 5.
+2. Purpose sentence. Taken. The petition's statement that Congress acted to correct the disparity is attributed to the petition. The replacement of the defined term entry with admission stays as the change itself. The sentence that members of Congress called lawful admission the pivotal factor was already attributed to them. No other page sentence stated that purpose as Congress's own.
+3. His reading of 1996. Taken. A paragraph beside the government's gives his account from the response: Congress largely kept the earlier detention scheme, people arrested inside the country including those who had entered without admission remained eligible for bond, people apprehended at the border did not, and the law changed the removal process while keeping who can get bond. The applicant label, on his account, puts people who entered without inspection on the same footing in a removal case and does not end bond. Nothing cut. The government's paragraph stays.

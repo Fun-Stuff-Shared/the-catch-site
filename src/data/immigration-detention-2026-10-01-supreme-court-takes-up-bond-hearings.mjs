@@ -24,7 +24,7 @@ export const event = {
   dek: "The Court's October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
-  updated: "2026-10-03",
+  updated: "2026-10-05",
   kpis: [],
   visual: {
     kind: "timeline",
