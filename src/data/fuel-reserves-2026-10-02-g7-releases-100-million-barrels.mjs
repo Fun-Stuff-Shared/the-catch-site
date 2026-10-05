@@ -108,15 +108,16 @@ export const changeRows = [
 
 export const statementRows = [
   ["United Kingdom publication of the joint statement", "100 million barrels over 4 months, a substantial diesel release in the first 20 days"],
-  ["Elysee readout of the same meeting", "jusqu'à 100 millions de barils sous 4 mois, diesel and crude"],
+  ["Elysee readout of the same meeting", "jusqu'à 100 millions de barils sous 4 mois; the readout groups refined products, diesel, and crude oil"],
 ];
 
 export const chronology = [
   { date: "Mar 11", title: "400 million barrels pledged", sub: "International Energy Agency members pledge a release. The United States says it will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
   { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "Participating companies return the borrowed barrels later with extra barrels. This continues the March release. Several European countries had released only a fraction of the crude and products they pledged.", current: false },
   { date: "Sep 30", title: "A diesel export ban still under discussion", sub: "President Trump said he was thinking about banning diesel exports.", current: false },
-  { date: "Oct 1", title: "Bessent asks Europe to move existing commitments", sub: "He says American farmers, truckers, and businesses should not carry the diesel shortage.", current: false },
+  { date: "Oct 1", title: "Bessent asks Europe to move existing commitments", sub: "He says European partners should accelerate delivery on existing commitments and make additional supplies available.", current: false },
   { date: "Oct 2", title: "100 million barrels over four months", sub: "The statement takes fulfilled commitments into account, includes a substantial diesel release in the first 20 days, and gives no number for the diesel. Trump says he will not authorize an export ban.", current: true },
+  { date: "Oct 5", title: "Japan plans no further release", sub: "Chief Cabinet Secretary Minoru Kihara says Japan has been releasing oil from reserves and has no plans for a further release at this stage.", current: false },
 ];
 
 export const event = {
@@ -125,11 +126,11 @@ export const event = {
   dek: "The leaders' statement promises a substantial diesel release in the first 20 days and gives no number for it. Of the 400 million barrels International Energy Agency members pledged in March, about 325 million had been released.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
-  updated: "2026-10-03",
+  updated: "2026-10-05",
   kpis: [
     { value: "100", unit: "million barrels", label: "coordinated release beginning immediately" },
     { value: "4", unit: "months", label: "the period named for that release" },
-    { value: "20", unit: "days", label: "days named for the diesel release" },
+    { value: "20", unit: "days", label: "named for the diesel release" },
     { value: "400", unit: "million barrels", label: "March coordinated release" },
   ],
   visual: {

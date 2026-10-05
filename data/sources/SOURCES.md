@@ -1840,7 +1840,7 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fuel-reserves/eia-distillate-2026-10-03.html | 20178 | d32f49b13dd49f46 |
 | data/sources/fuel-reserves/eia-distillate-2026-10-03.txt | 5932 | 3195bc47a5dec90e |
 | data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.xlsx | 21008 | 4c13e7c82284b982 |
-| data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.txt | 139 | a95c5a00d9914cfb |
+| data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.txt | 145 | b9e4ce878fadc7a5 |
 | data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.html | 520062 | 7b6c8e208786569f |
 | data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.txt | 2709 | 56c91a0bc605bd74 |
 | data/sources/fuel-reserves/independent-miliband-2026-10-02.html | 236503 | 67b4c008cdc1abe6 |
@@ -1877,3 +1877,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fuel-reserves/scripps-rollins-2026-10-02.txt | 1557 | 7e2bc937d99b72ad |
 | data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.html | 683308 | 7f9175ab211690e2 |
 | data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.txt | 2350 | cef28609dc7813cd |
+| data/sources/fuel-reserves/reuters-japan-no-release-2026-10-05.html | 528516 | c63b04314a651bf7 |
+| data/sources/fuel-reserves/reuters-japan-no-release-2026-10-05.txt | 1923 | ed673d3ed68b9601 |
