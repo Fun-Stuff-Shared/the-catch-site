@@ -24,7 +24,7 @@ dispatch, the reads, the decision, staging, the push.
 | Turn | Skill | Ends with | Produces |
 |---|---|---|---|
 | 1 | `skills/catch-record` | `finish.sh <story> record` | pins, working note (census, passage tables, gaps), data module, figures, chronology, detail blocks, records list, subject row, homepage feature; no narrative |
-| audit | reviewer | `completeness_audit.sh` on the record commit | `checks/audits/<story>-<date>-record-audit.md`; runs once per story |
+| audit | reviewer | `completeness_audit.sh` on the record commit, and again at the close on the finished page | `checks/audits/<story>-<date>-record-audit.md`, then `...-r<N>c-audit.md` |
 | 2 | `skills/catch-structure` | `finish.sh <story> structure` | `checks/reader-models/<story>.md`: entering, exiting (seven answers), headline and dek, grades, sections, outline |
 | 3 | `skills/catch-story` | `finish.sh <story> story` | the page, manifest, interrogation, entailment verdict |
 | review | reviewer | the record check and the stranger read on the story commit; a patch list per round, each patch followed by the record check on the blocks it changed; at the close the stranger read, then the editor's read with the stranger's report in hand | patch commits, then the decision: cut, hold, or kill |
@@ -44,8 +44,10 @@ lints, pin_gaps, sources_ledger, interrogate, the reads) and `references/`
    the skill commit, and launches the author detached with a finished marker. Every dispatch says: do not push, do not edit a
    live story, do not kill, restart or signal any process you did not start.
 3. **Run the record audit** on the record commit: `scripts/completeness_audit.sh <story>
-   checks/audits/<subject>--<slug>-<date>-record-audit.md`. It hunts outside the frame and
-   finds a different frame every time it runs, so it runs here, once, before any prose.
+   checks/audits/<subject>--<slug>-<date>-record-audit.md`. It reconstructs the
+   subject from its history and each side's own account, then hunts outside the page's
+   frame, so a missing side or a missing history is found before any prose. It runs once
+   more at the close, on the finished page, beside the stranger.
 4. **Dispatch turn two** (`run-turn.sh structure ...` with AUDIT_FILE in the environment; a fresh session). The driver
    sets the event's label in the state to the reader model's headline and dispatches turn
    three without waiting. **Read the reader model commit** while the story turn runs: the seven answers against the record, the headline against
@@ -81,8 +83,8 @@ lints, pin_gaps, sources_ledger, interrogate, the reads) and `references/`
    complete without the instrument behind it. The headline is page text and is patched
    like any sentence.
    **The closing reads** run when the record check passes and the list is empty: the
-   stranger on the page as it stands, then `scripts/editor_read.sh` with the stranger's
-   report in hand (is the page's story the one the record supports today, does each answer
+   stranger and the audit on the page as it stands, then `scripts/editor_read.sh` with both
+   reports in hand (is the page's story the one the record supports today, does each answer
    of the reader model have a sentence a reader could repeat, what to cut, what a reader
    still asks, and which of the stranger's items to act on). The editor's memo is the last
    list; the record check runs on that patch. Before any review-ready word to the human,
