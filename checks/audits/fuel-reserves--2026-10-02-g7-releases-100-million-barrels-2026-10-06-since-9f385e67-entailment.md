@@ -1,3 +1,3 @@
-Blocks checked: 10. Blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
+Blocks checked: 29. Blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
 
 VERDICT: ENTAILED

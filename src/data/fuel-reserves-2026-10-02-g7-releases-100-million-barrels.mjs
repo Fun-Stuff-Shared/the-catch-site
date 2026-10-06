@@ -106,6 +106,14 @@ export const changeRows = [
   ["WTI, from Feb 27", prices.wtiFromFebruary, "dollars per barrel"],
 ];
 
+export const volumeRows = [
+  ["March pledge, agency members", `${release.marchTotal} barrels`],
+  ["Released by October 2", `around ${marchSoFar.barrels} million barrels`],
+  ["United States share announced in March", `${release.usMarch} barrels`],
+  ["September 29 exchange offered", `up to ${release.exchange} barrels of crude`],
+  ["Awarded before that exchange", `more than ${release.awarded} barrels`],
+];
+
 export const statementRows = [
   ["United Kingdom publication of the joint statement", "100 million barrels over 4 months, a substantial diesel release in the first 20 days"],
   ["Elysee readout of the same meeting", "jusqu'à 100 millions de barils sous 4 mois; the readout groups refined products, diesel, and crude oil"],
@@ -118,7 +126,7 @@ export const chronology = [
   { date: "Oct 1", title: "Bessent asks Europe to move existing commitments", sub: "He says European partners should accelerate delivery on existing commitments and make additional supplies available.", current: false },
   { date: "Oct 2", title: "100 million barrels over four months", sub: "The statement takes fulfilled commitments into account, includes a substantial diesel release in the first 20 days, and gives no number for the diesel. Trump says he will not authorize an export ban.", current: true },
   { date: "Oct 5", title: "Japan plans no further release", sub: "Chief Cabinet Secretary Minoru Kihara says Japan has been releasing oil from reserves and has no plans for a further release at this stage.", current: false },
-  { date: "Oct 5", title: "An order on dyed-diesel tax", sub: "The order tells the Treasury secretary to defer the highway excise tax on dyed diesel through December 31 if he determines the relief is authorized. Within five days he is to direct the Internal Revenue Service to announce it will not impose a penalty. It is not a reserve delivery.", current: false },
+  { date: "Oct 5", title: "An order on dyed-diesel tax", sub: "The order tells the Treasury secretary to defer payment of the highway excise tax on dyed diesel incurred from October 5 through December 31 if he determines the relief is authorized. Within five days he is to direct the Internal Revenue Service to announce it will not impose a penalty. It is not a reserve delivery.", current: false },
 ];
 
 export const event = {
