@@ -89,7 +89,12 @@
         "bea-pce-2026-08",
         "bls-jolts-2026-08",
         "adp-september-2026",
-        "stlouisfed-unrate-2026-10"
+        "stlouisfed-unrate-2026-10",
+        "fed-breakeven-2026-04-02",
+        "dallasfed-breakeven-2026-03-31",
+        "fed-waller-2026-02-23",
+        "fed-jefferson-2026-10-01",
+        "bls-jolts-hires-rates-2026-10-05"
       ]
     }
   ],
@@ -617,6 +622,86 @@
       "capture_run": "capture-oneoff-20261005T222547Z",
       "capture_raw_sha256": "sha256:9576a9645432c43ca2727f734ab9d32446ff9c3cd2ab01f4ab1fc55c9488315c",
       "captured_at": "2026-10-05T22:27:21.213955Z"
+    },
+    {
+      "id": "fed-breakeven-2026-04-02",
+      "title": "Labor force growth, breakeven employment, and potential GDP growth",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-04-02",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/labor-force-growth-breakeven-employment-and-potential-gdp-growth-20260402.html",
+      "pinned_path": "data/sources/fed-breakeven-2026-04-02.html",
+      "text_path": "data/sources/fed-breakeven-2026-04-02.txt",
+      "text_sha256": "sha256:f6d3d1fbf46bb1a6bad3c7b16069607420c68e0c7aea1c0135ae5f9e4b240c63",
+      "quote": "Breakeven employment growth is the number of jobs that must be added to the economy each month to keep the unemployment rate steady while still absorbing the growth in the potential labor force.",
+      "quote_span_check": "byte_exact",
+      "about": "The Federal Reserve note of April 2, 2026, defining break-even employment and estimating the pace at 155,000 in 2023-24, 85,000 in 2025, and less than 10,000 a month in 2026. The capture receipt's published date is not the date on the note.",
+      "capture_run": "capture-oneoff-20261006T014406Z",
+      "capture_raw_sha256": "sha256:75c491a36d1aaaedb0d29fb443f52f6fb2e0bc19cd60501762766b9c10745ca3",
+      "captured_at": "2026-10-06T01:44:26.006911Z"
+    },
+    {
+      "id": "dallasfed-breakeven-2026-03-31",
+      "title": "Break-even employment declines as unauthorized immigration outflows continue",
+      "publisher": "Federal Reserve Bank of Dallas",
+      "date": "2026-03-31",
+      "url": "https://www.dallasfed.org/research/economics/2026/0331",
+      "pinned_path": "data/sources/dallasfed-breakeven-2026-03-31.html",
+      "text_path": "data/sources/dallasfed-breakeven-2026-03-31.txt",
+      "text_sha256": "sha256:d79f5d00caedf84510122e0527b7fe411a6192ecb06dcbf5689690c037bcb860",
+      "quote": "net unauthorized immigration plummeted after early 2024",
+      "quote_span_check": "byte_exact",
+      "about": "The Dallas Fed's March 31, 2026 note dating the decline in net unauthorized immigration to after early 2024, with net outflows beginning in February 2025.",
+      "capture_run": "capture-oneoff-20261006T014406Z",
+      "capture_raw_sha256": "sha256:0e21734850b0dc4fb0dc6c4caf6cdb82c40e5e4e65a5e8d5af6240ad33ac8717",
+      "captured_at": "2026-10-06T01:44:44.648436Z"
+    },
+    {
+      "id": "fed-waller-2026-02-23",
+      "title": "Speech by Governor Waller on the economic outlook",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-02-23",
+      "url": "https://www.federalreserve.gov/newsevents/speech/waller20260223a.htm",
+      "pinned_path": "data/sources/fed-waller-2026-02-23.html",
+      "text_path": "data/sources/fed-waller-2026-02-23.txt",
+      "text_sha256": "sha256:75ff18969eace704b2e8db6590d8ccf491b1240c4a9b369dce1d318da28f5375",
+      "quote": "close to zero net job creation over 2025 indicates a weak, and fragile job market",
+      "quote_span_check": "byte_exact",
+      "about": "Governor Christopher J. Waller's February 23, 2026 speech. The page uses his sentence that close to zero net job creation over 2025 indicates a weak, and fragile job market.",
+      "capture_run": "capture-oneoff-20261006T014406Z",
+      "capture_raw_sha256": "sha256:8f6e9e1325af6918bcefd7f6425ec8cf22487803a67ee9ab5beb0390c2f353ff",
+      "captured_at": "2026-10-06T01:45:02.186277Z"
+    },
+    {
+      "id": "fed-jefferson-2026-10-01",
+      "title": "Speech by Vice Chair Jefferson on the U.S. economy and monetary policy",
+      "publisher": "Federal Reserve Board",
+      "date": "2026-10-01",
+      "url": "https://www.federalreserve.gov/newsevents/speech/jefferson20261001a.htm",
+      "pinned_path": "data/sources/fed-jefferson-2026-10-01.html",
+      "text_path": "data/sources/fed-jefferson-2026-10-01.txt",
+      "text_sha256": "sha256:ab871350fda4ab4bd9c0be90b71c474ca9ae4874f1797f7d65cae70f02ce14a0",
+      "quote": "I see economic activity and labor market conditions remaining broadly solid while inflation remains above our target.",
+      "quote_span_check": "byte_exact",
+      "about": "Vice Chair Philip N. Jefferson's October 1, 2026 speech. He said he supported last month's increase, and that activity and the labor market remain broadly solid while inflation is above target.",
+      "capture_run": "quarry-wire-scheduled-20261001T220038Z",
+      "capture_raw_sha256": "sha256:d3ed35db6b4108d96d8836c93c4c1338b8f4416cb44a7cfd66177ba0145ed5a8",
+      "captured_at": "2026-10-01T22:06:37.935266Z"
+    },
+    {
+      "id": "bls-jolts-hires-rates-2026-10-05",
+      "title": "Total nonfarm hires and separations rates, seasonally adjusted",
+      "publisher": "Bureau of Labor Statistics",
+      "date": "2026-10-06",
+      "url": "https://www.bls.gov/charts/job-openings-and-labor-turnover/hire-seps-rates.htm",
+      "pinned_path": "data/sources/bls-jolts-hires-rates-2026-10-05.html",
+      "text_path": "data/sources/bls-jolts-hires-rates-2026-10-05.txt",
+      "text_sha256": "sha256:6711b84e974956665eef550b3a2760fcf8695e1f57f9bd83c81723ad920d8b1d",
+      "quote": "Aug 2026 3.3% 3.2% 1.9% 1.0%",
+      "quote_span_check": "normalized",
+      "about": "The bureau's chart of hires and separations rates. The page states no publication date. Saved October 6, 2026. August hires rates are 4.2 percent in 2022, 3.3 percent in 2024, and 3.3 percent in 2026.",
+      "capture_run": "capture-oneoff-20261006T014406Z",
+      "capture_raw_sha256": "sha256:abf6782847ae587b09609268d06c6832f2dae1a4383dc39e344979a4c7ba62b0",
+      "captured_at": "2026-10-06T01:45:50.194443Z"
     }
   ],
   "story_sources": [
@@ -850,6 +935,41 @@
       "label": "St. Louis Fed flash report, October 2, 2026",
       "meta": " \u00b7 published October 2, 2026",
       "usage": "the unemployment rate before rounding"
+    },
+    {
+      "id": "fed-breakeven-2026-04-02",
+      "group": "primary",
+      "label": "Break-even employment note, April 2, 2026",
+      "meta": " \u00b7 published April 2, 2026",
+      "usage": "the definition of break-even and the falling estimate"
+    },
+    {
+      "id": "dallasfed-breakeven-2026-03-31",
+      "group": "official",
+      "label": "Dallas Fed, immigration and break-even",
+      "meta": " \u00b7 published March 31, 2026",
+      "usage": "when net unauthorized immigration turned to outflows"
+    },
+    {
+      "id": "fed-waller-2026-02-23",
+      "group": "primary",
+      "label": "Governor Waller, February 23, 2026",
+      "meta": " \u00b7 speech February 23, 2026",
+      "usage": "his reading of close to zero job creation in 2025"
+    },
+    {
+      "id": "fed-jefferson-2026-10-01",
+      "group": "primary",
+      "label": "Vice Chair Jefferson, October 1, 2026",
+      "meta": " \u00b7 speech October 1, 2026",
+      "usage": "why he supported the September increase"
+    },
+    {
+      "id": "bls-jolts-hires-rates-2026-10-05",
+      "group": "primary",
+      "label": "Hires and separations rates",
+      "meta": " \u00b7 chart read October 6, 2026",
+      "usage": "the hires rate and the layoffs rate in August 2022, 2024, and 2026"
     }
   ],
   "primary_sources": [

@@ -1841,3 +1841,13 @@ bls.gov refused a plain fetch on October 3, 2026. data/sources/bls-empsit-2026-0
 | data/sources/coverage/yahoo-phelan-2026-10-02.html | 1015908 | 2ffe4491ed24b270 |
 | data/sources/coverage/yahoo-phelan-2026-10-02.txt | 2690 | e136cc326f66e678 |
 | data/sources/CES9091000001-2026-10-05.csv | 16863 | 9576a9645432c43c |
+| data/sources/fed-breakeven-2026-04-02.html | 120819 | 75c491a36d1aaaed |
+| data/sources/fed-breakeven-2026-04-02.txt | 27669 | f6d3d1fbf46bb1a6 |
+| data/sources/dallasfed-breakeven-2026-03-31.html | 49172 | 0e21734850b0dc4f |
+| data/sources/dallasfed-breakeven-2026-03-31.txt | 6650 | d79f5d00caedf845 |
+| data/sources/fed-waller-2026-02-23.html | 101031 | 8f6e9e1325af6918 |
+| data/sources/fed-waller-2026-02-23.txt | 17560 | 75ff18969eace704 |
+| data/sources/fed-jefferson-2026-10-01.html | 97881 | d3ed35db6b4108d9 |
+| data/sources/fed-jefferson-2026-10-01.txt | 10116 | ab871350fda4ab4b |
+| data/sources/bls-jolts-hires-rates-2026-10-05.html | 171978 | abf6782847ae587b |
+| data/sources/bls-jolts-hires-rates-2026-10-05.txt | 7045 | 6711b84e97495666 |

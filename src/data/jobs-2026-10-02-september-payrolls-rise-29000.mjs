@@ -57,6 +57,8 @@ export const october2025Levels = { september: 158548, october: 158408 };
 // CES9091000001-2026-10-05.csv, federal employment, thousands of jobs.
 // December 2024 is 3009, August 2026 is 2683, September 2026 is 2682.
 export const federalEmployment = {
+  january2023: 2880,
+  january2025: 3010,
   december2024: 3009,
   august2026: 2683,
   september2026: 2682,
@@ -64,6 +66,30 @@ export const federalEmployment = {
 export const federalEmploymentChange = {
   sinceDecember2024: 2682 - 3009,
   september: 2682 - 2683,
+  january2023ToJanuary2025: 3010 - 2880,
+};
+
+// PAYEMS-2026-10-03.csv, thousands. January 2025 minus January 2023 is 3,492.
+// Federal share 130 / 3492 = 0.03723, rounded to 3.7 percent. Hassett did not name these months.
+export const payrollWindow = { january2023: 154776, january2025: 158268 };
+export const payrollWindowChange = 158268 - 154776;
+export const federalShareOfPayrollGain = "3.7";
+
+// Associated Press, October 2: so far this year, and every month of 2025. Not the bureau's three-month window.
+export const apPace = { soFarThisYear: 68000, year2025: 9700 };
+
+// FEDS note, April 2, 2026. Thousands of jobs a month. 2026 is "less than 10,000".
+export const breakEvenFed = { during2023: 155, during2025: 85, during2026: 10 };
+
+// BLS hires and separations rates, seasonally adjusted, August of each year.
+// Hires, then layoffs and discharges. Trailing zeros stay strings.
+export const hiresRates = {
+  aug2022: "4.2",
+  aug2024: "3.3",
+  aug2026: "3.3",
+  layoffsAug2022: "1.0",
+  layoffsAug2024: "1.1",
+  layoffsAug2026: "1.0",
 };
 
 // Yardsticks named on October 2. Job figures are thousands per month.
