@@ -1879,3 +1879,9 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.txt | 2350 | cef28609dc7813cd |
 | data/sources/fuel-reserves/reuters-japan-no-release-2026-10-05.html | 528516 | c63b04314a651bf7 |
 | data/sources/fuel-reserves/reuters-japan-no-release-2026-10-05.txt | 1923 | ed673d3ed68b9601 |
+| data/sources/fuel-reserves/whitehouse-diesel-fact-sheet-2026-10-05.html | 266368 | d9312b1a23f8b489 |
+| data/sources/fuel-reserves/whitehouse-diesel-fact-sheet-2026-10-05.txt | 4861 | 71f9d81fd89cd81b |
+| data/sources/fuel-reserves/whitehouse-diesel-tax-order-2026-10-05.html | 332121 | 3d67b61af860334b |
+| data/sources/fuel-reserves/whitehouse-diesel-tax-order-2026-10-05.txt | 5738 | 0613b659523ad491 |
+| data/sources/fuel-reserves/scripps-rollins-interview-captions-2026-10-02.html | 70829 | 536f7780d8a5210b |
+| data/sources/fuel-reserves/scripps-rollins-interview-captions-2026-10-02.txt | 10068 | b27b2e6e21632e74 |
