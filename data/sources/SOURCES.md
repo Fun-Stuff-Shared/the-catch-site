@@ -1832,3 +1832,13 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/immigration-detention/scotus-docket-rhoney-2026-10-05.txt | 2755 | eb388edce7041e70 |
 | data/sources/immigration-detention/scotus-response-barbosa-da-cunha-2026-08-21.pdf | 245475 | 099c548d88983b5f |
 | data/sources/immigration-detention/scotus-response-barbosa-da-cunha-2026-08-21.txt | 44953 | 3987e3336a96ec4e |
+| data/sources/immigration-detention/scotus-letter-tan-2026-09-14.pdf | 181510 | 0f271e57fb1ae396 |
+| data/sources/immigration-detention/scotus-letter-tan-2026-09-14.txt | 2797 | f0359ca4f2767337 |
+| data/sources/immigration-detention/scotus-letter-tan-2026-09-25.pdf | 153124 | 5ab560614ae59b72 |
+| data/sources/immigration-detention/scotus-letter-tan-2026-09-25.txt | 2306 | 0cce267141c3a9da |
+| data/sources/immigration-detention/scotus-docket-genalo-gm-2026-10-05.html | 71185 | ba17185a39a47328 |
+| data/sources/immigration-detention/scotus-docket-genalo-gm-2026-10-05.txt | 6148 | b9162873d1f3f441 |
+| data/sources/immigration-detention/scotus-docket-genalo-dc-2026-10-05.html | 10828 | f74771bb56ee1b69 |
+| data/sources/immigration-detention/scotus-docket-genalo-dc-2026-10-05.txt | 676 | dd3c91bd4d749fe0 |
+| data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-05.html | 24325 | edf98072831813e1 |
+| data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-05.txt | 1640 | bbf38640e697fb45 |

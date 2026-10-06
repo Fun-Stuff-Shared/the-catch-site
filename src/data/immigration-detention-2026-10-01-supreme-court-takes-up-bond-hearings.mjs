@@ -41,7 +41,7 @@ export const event = {
 export const chronology = {
   rows: [
     ["March 6, 1997", "A Federal Register rule says people present without admission will be eligible for bond and bond redetermination."],
-    ["July 10, 2025", "Customs and Border Protection says its commissioner issued detention guidance to every component."],
+    ["July 10, 2025", "Commissioner Rodney S. Scott issued detention guidance to every Customs and Border Protection component."],
     ["Sept. 5, 2025", "The Board of Immigration Appeals decides judges lack authority to grant bond in this situation."],
     ["Sept. 26, 2025", "Officers arrested the man in this case while he was driving to work."],
     ["Apr. 28, 2026", "The Second Circuit affirms the order requiring a bond hearing or release."],
