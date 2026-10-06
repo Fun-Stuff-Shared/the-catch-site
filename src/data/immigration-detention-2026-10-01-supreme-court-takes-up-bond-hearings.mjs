@@ -4,8 +4,15 @@
 const DAY = 86400000;
 const daysBetween = (start, end) => Math.round((Date.parse(end) - Date.parse(start)) / DAY);
 
+// Next immigration court date: ca2-cunha-opinion-2026-04-28.txt ("next hearing is scheduled for June 28, 2027").
+const monthsBetween = (start, end) => {
+  const [a, b] = [new Date(start), new Date(end)];
+  return (b.getUTCFullYear() - a.getUTCFullYear()) * 12 + (b.getUTCMonth() - a.getUTCMonth()) - (b.getUTCDate() < a.getUTCDate() ? 1 : 0);
+};
+
 export const computed = {
   daysDetained: daysBetween("2025-09-26", "2025-10-29"),
+  monthsArrestToNextHearing: monthsBetween("2025-09-26", "2027-06-28"),
 };
 
 export const event = {
@@ -58,5 +65,12 @@ export const counts = {
     ["58,000+", "ICE data reported by CBS, July 15, 2025", "Everyone ICE held that day, for any reason"],
     ["73,000+", "Reuters, Oct. 1, 2026", "Federal lawsuits of this kind filed in 2026"],
     ["20,250+", "Politico tracker, read Oct. 6, 2026", "Federal court rulings against the administration on ICE detention since July 2025"],
+  ],
+};
+
+export const readings = {
+  rows: [
+    ["The administration's", "Everyone in the country who was never legally admitted, however long they have lived here", "Held until his deportation case ends; release only if DHS grants parole"],
+    ["Most courts'", "People caught entering the country or shortly after", "A hearing where an immigration judge decides on bond, which the judge can still deny"],
   ],
 };
