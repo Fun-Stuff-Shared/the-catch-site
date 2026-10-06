@@ -3,6 +3,32 @@
 // (thousands of jobs, seasonally adjusted). The release's own sentences are quoted
 // from data/sources/bls-empsit-2026-09.txt. Wage percents are arithmetic on
 // data/sources/CES0500000003-2026-10-03.csv.
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const SHORT_MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function seriesRows(file) {
+  const text = readFileSync(join(process.cwd(), "data/sources", file), "utf8");
+  return text.trim().split(/\n/).slice(1).map((line) => {
+    const [date, raw] = line.split(",");
+    const month = Number(date.slice(5, 7));
+    return {
+      date,
+      thousands: Number(raw),
+      passage: `${date},${raw}`,
+      label: `${SHORT_MONTH[month - 1]} ${date.slice(0, 4)}`,
+    };
+  });
+}
+
+function rowAt(rows, date) {
+  const row = rows.find((r) => r.date === date);
+  if (!row || !Number.isFinite(row.thousands)) throw new Error(`missing ${date}`);
+  return row.thousands;
+}
+
+const federalRows = seriesRows("CES9091000001-2026-10-05.csv");
 
 export const event = {
   slug: "jobs/2026-10-02-september-payrolls-rise-29000",
@@ -62,25 +88,69 @@ export const payrollLevels = {
 export const october2025Levels = { september: 158548, october: 158408 };
 
 // CES9091000001-2026-10-05.csv, federal employment, thousands of jobs.
-// December 2024 is 3009, August 2026 is 2683, September 2026 is 2682.
+export const federalMonthly = federalRows.filter((r) => r.date >= "2024-12-01" && r.date <= "2026-09-01");
 export const federalEmployment = {
-  january2023: 2880,
-  january2025: 3010,
-  december2024: 3009,
-  august2026: 2683,
-  september2026: 2682,
+  january2023: rowAt(federalRows, "2023-01-01"),
+  january2025: rowAt(federalRows, "2025-01-01"),
+  december2024: rowAt(federalRows, "2024-12-01"),
+  august2026: rowAt(federalRows, "2026-08-01"),
+  september2026: rowAt(federalRows, "2026-09-01"),
 };
 export const federalEmploymentChange = {
-  sinceDecember2024: 2682 - 3009,
-  september: 2682 - 2683,
-  january2023ToJanuary2025: 3010 - 2880,
+  sinceDecember2024: federalEmployment.september2026 - federalEmployment.december2024,
+  september: federalEmployment.september2026 - federalEmployment.august2026,
+  january2023ToJanuary2025: federalEmployment.january2025 - federalEmployment.january2023,
 };
 
 // PAYEMS-2026-10-03.csv, thousands. January 2025 minus January 2023 is 3,492.
 // Federal share 130 / 3492 = 0.03723, rounded to 3.7 percent. Hassett did not name these months.
+// Math.round of that share is 4.
 export const payrollWindow = { january2023: 154776, january2025: 158268 };
 export const payrollWindowChange = 158268 - 154776;
 export const federalShareOfPayrollGain = "3.7";
+export const federalShareRounded = Math.round(
+  (federalEmploymentChange.january2023ToJanuary2025 / payrollWindowChange) * 100,
+);
+
+const federalJobs = (thousands) => (thousands * 1000).toLocaleString("en-US");
+export const federalChart = (() => {
+  const points = federalMonthly;
+  const W = 720, H = 250, left = 88, right = 24, top = 22, bottom = 36;
+  const vals = points.map((p) => p.thousands);
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  const pad = (max - min) * 0.16;
+  const y0 = min - pad;
+  const y1 = max + pad;
+  const xAt = (i) => left + (i / (points.length - 1)) * (W - left - right);
+  const yAt = (v) => top + (1 - (v - y0) / (y1 - y0)) * (H - top - bottom);
+  const plotted = points.map((p, i) => ({ ...p, x: xAt(i), y: yAt(p.thousands) }));
+  const first = plotted[0];
+  const last = plotted[plotted.length - 1];
+  const prev = plotted[plotted.length - 2];
+  const ticks = [2700, 2800, 2900, 3000].map((t) => ({
+    y: yAt(t),
+    label: `${(t / 1000).toFixed(1)} million`,
+  }));
+  return {
+    W,
+    H,
+    left,
+    right,
+    ticks,
+    path: plotted.map((p, i) => `${i ? "L" : "M"}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" "),
+    axis: plotted.filter((_, i) => i === 12),
+    first,
+    last,
+    prev,
+    septemberNote: {
+      x: last.x - 8,
+      y: Math.min(prev.y, last.y) - 14,
+      text: `down ${federalJobs(Math.abs(last.thousands - prev.thousands))} in September`,
+    },
+    aria: `Federal government payrolls from December 2024 at ${federalJobs(first.thousands)} jobs to September 2026 at ${federalJobs(last.thousands)}. September is down ${federalJobs(Math.abs(last.thousands - prev.thousands))}.`,
+  };
+})();
 
 // Associated Press, October 2: so far this year, and every month of 2025. Not the bureau's three-month window.
 export const apPace = { soFarThisYear: 68000, year2025: 9700 };
