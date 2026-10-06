@@ -74,13 +74,13 @@ def receipt(run, url):
     rows = [d for d in rows if d.get("text_path")]
     exact = [d for d in rows if d.get("item_url") == url]
     if exact:
-        return exact[-1], None
+        return exact[-1]
     hits = {d["item_url"]: d for d in rows if url in (d.get("item_url") or "")}
     if len(hits) == 1:
-        return next(iter(hits.values())), None
+        return next(iter(hits.values()))
     if not hits:
-        return None, f"no receipt in {run} matching {url}"
-    return None, f"{url} matches {len(hits)} articles in {run}; give the full url:\n  " + "\n  ".join(list(hits)[:10])
+        raise LookupError(f"no receipt in {run} matching {url}")
+    raise LookupError(f"{url} matches {len(hits)} articles in {run}; give the full url:\n  " + "\n  ".join(list(hits)[:10]))
 
 
 def prepare(s, subject):
@@ -106,9 +106,10 @@ def prepare(s, subject):
         pinned = dest / f"{i}.source{ext}" if ext == ".txt" else dest / f"{i}{ext}"
         cap, url = {}, s["source_url"]
     else:
-        rc, err = receipt(s["run"], s["url"])
-        if err:
-            return None, f"{i}: {err}"
+        try:
+            rc = receipt(s["run"], s["url"])
+        except LookupError as e:
+            return None, f"{i}: {e}"
         raw = (RUNS / s["run"] / rc["raw_path"]).read_bytes()
         text = (RUNS / s["run"] / rc["text_path"]).read_text()
         pinned = dest / f"{i}.{'pdf' if raw[:5] == b'%PDF-' else 'html'}"
