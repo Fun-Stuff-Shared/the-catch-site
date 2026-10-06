@@ -4,7 +4,8 @@
 # earlier_page <root> <subject>/<story> <commit> <out.html> <log>: builds the site as it stood
 # at <commit> in a throwaway worktree beside <root> (same volume, about 600 MB) and copies the story's page to <out.html> (an empty file
 # when that commit had no such page). What a build generates from the state comes from <root>
-# (finish.sh names the same three paths), so the two builds differ only by source.
+# (finish.sh names the same three paths) and the build config is <root>'s, so the two builds
+# differ only by page source and each keeps its own vite cache.
 
 built_page() {
   local root="$1" story="$2" html src module
@@ -24,6 +25,7 @@ earlier_page() {
   git -C "$root" worktree add -q --detach "$tree/site" "$since" 2> "$log" || { rm -rf "$tree"; echo "cannot check out $since; read $log" >&2; return 2; }
   if [ -f "$tree/site/src/pages/events/$story.astro" ]; then
     ln -s "$root/node_modules" "$tree/site/node_modules"
+    cp "$root/astro.config.mjs" "$tree/site/astro.config.mjs"
     mkdir -p "$tree/site/data/sources" "$tree/site/src/data"
     for made in data/state data/sources/news-state; do
       rm -rf "$tree/site/$made"; [ ! -e "$root/$made" ] || ln -s "$root/$made" "$tree/site/$made"
