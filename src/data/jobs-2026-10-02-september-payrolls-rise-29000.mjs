@@ -49,7 +49,14 @@ export const payrollChanges = [
 export const septemberPayrollChange = 29;
 
 // Levels in thousands from PAYEMS-2026-10-03.csv.
-export const payrollLevels = { august: 159015, september: 159044 };
+// Thousands of jobs. December 2025 minus December 2024 is 116, about 9,700 a month.
+// September 2026 minus December 2025 is 612, 68,000 a month over nine months.
+export const payrollLevels = {
+  august: 159015,
+  september: 159044,
+  december2024: 158316,
+  december2025: 158432,
+};
 
 // October 2025 is the chart's first bar: 158408 minus 158548 on PAYEMS-2026-10-03.csv.
 export const october2025Levels = { september: 158548, october: 158408 };
@@ -171,6 +178,8 @@ export const establishment = {
   financialSinceMay2025: -129,
   private: 46,
   government: -17,
+  // Table B-1 prints -10.6 in thousands: local government, excluding education.
+  localExcludingEducation: 10600,
   information: -10,
   temporaryHelp: -10.9,
   diffusionPrivate: 49.0,

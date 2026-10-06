@@ -787,3 +787,10 @@ Admitted: the Federal Reserve's April 2 break-even note (`fed-breakeven-2026-04-
 8. Taken differently on the 17,000. Hassett's title comes before Yahoo Finance. Phelan is the source of the 40,000 calculation and of the mistake argument, and Yahoo Finance is the outlet. The local-government qualifier moves to the private and government split. The 17,000 stays inside the Reuters sentence, because the dispatch attaches "mostly in local government, excluding education" to that number.
 9. Taken. The two-survey mechanism is two sentences. The bureau's sentence on what each survey measures stays cited.
 10. Declined. The stranger's repeats that the editor left standing stay as they are, including the held items.
+
+## Reader pass, October 5, round 12
+
+1. Taken. The Yahoo Finance article is dated May 11, 2026 in its byline and page metadata. The page says Kevin Hassett is the director of the National Economic Council, the title Yahoo Finance gave him in a May 11, 2026 article, and cites that title. The record date and the source line say May 11, 2026. September 4 remains the date of the August employment report.
+2. Taken. The story view gives the payroll series at 158,316,000 in December 2024, 158,432,000 in December 2025, and 159,044,000 in September 2026, then about 9,700 jobs a month in 2025 and 68,000 a month through September 2026, then the Associated Press sentence for so far this year and every month of 2025. The series rows and the AP sentence are both cited. The two periods stay named.
+3. Taken. Government payrolls fell 17,000, with 10,600 of that in local government outside education, from Table B-1. The Reuters sentence for that figure is dropped.
+4. Declined, as the instruction to leave the rest of the page unchanged.
