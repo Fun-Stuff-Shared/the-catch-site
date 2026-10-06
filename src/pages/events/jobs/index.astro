@@ -3,7 +3,7 @@ import SeriesOverview from '../../../components/SeriesOverview.astro';
 import SeriesFigures from '../../../components/SeriesFigures.astro';
 import PayrollChart from '../../../components/PayrollChart.astro';
 import { subject } from '../../../data/subjects/jobs.mjs';
-import { event as latest } from '../../../data/jobs202608.mjs';
+import { event as latest } from '../../../data/jobs-2026-10-02-september-payrolls-rise-29000.mjs';
 ---
 <SeriesOverview title={subject.title} description="Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work." path="/events/jobs/">
   <PayrollChart slot="visual" {...latest.visual} />

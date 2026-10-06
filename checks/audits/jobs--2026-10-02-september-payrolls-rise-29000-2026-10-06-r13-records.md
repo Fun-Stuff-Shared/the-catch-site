@@ -1,0 +1,4 @@
+No new or residual finding survived the two passes. The pinned [BLS release](/Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/bls-empsit-2026-09.txt), [Hassett transcript](/Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/coverage/hassett-briefing-2026-10-02.txt), and [payroll series](/Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/PAYEMS-2026-10-03.csv) support the contested wording and arithmetic. The live [employment archive](https://www.bls.gov/bls/news-release/empsit.htm), [hires archive](https://www.bls.gov/bls/news-release/jolts.htm), and [FOMC release list](https://www.federalreserve.gov/newsevents/pressreleases/2026-press-fomc.htm) show no later release or decision that overturns a listed sentence.
+
+Blocks checked: 10; findings: Critical 0, Major 0, Minor 0.
+VERDICT: SHIP

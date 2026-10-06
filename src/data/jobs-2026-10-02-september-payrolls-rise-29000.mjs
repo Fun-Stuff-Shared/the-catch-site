@@ -1,0 +1,342 @@
+// September 2026 Employment Situation, published October 2, 2026.
+// Levels and monthly changes are arithmetic on data/sources/PAYEMS-2026-10-03.csv
+// (thousands of jobs, seasonally adjusted). The release's own sentences are quoted
+// from data/sources/bls-empsit-2026-09.txt. Wage percents are arithmetic on
+// data/sources/CES0500000003-2026-10-03.csv.
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const SHORT_MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function seriesRows(file) {
+  const text = readFileSync(join(process.cwd(), "data/sources", file), "utf8");
+  return text.trim().split(/\n/).slice(1).map((line) => {
+    const [date, raw] = line.split(",");
+    const month = Number(date.slice(5, 7));
+    return {
+      date,
+      thousands: Number(raw),
+      passage: `${date},${raw}`,
+      label: `${SHORT_MONTH[month - 1]} ${date.slice(0, 4)}`,
+    };
+  });
+}
+
+function rowAt(rows, date) {
+  const row = rows.find((r) => r.date === date);
+  if (!row || !Number.isFinite(row.thousands)) throw new Error(`missing ${date}`);
+  return row.thousands;
+}
+
+const federalRows = seriesRows("CES9091000001-2026-10-05.csv");
+
+export const event = {
+  slug: "jobs/2026-10-02-september-payrolls-rise-29000",
+  title: "Payrolls rose by an estimated 29,000 in September, a change too small for the survey to tell from none",
+  dek: "Economists surveyed by Reuters expected payrolls to rise by 90,000. The Bureau of Labor Statistics said payrolls and the 4.2 percent unemployment rate both changed little. July and August together are 60,000 lower than previously reported.",
+  name: "The September 2026 jobs report",
+  span: "Published October 2, 2026",
+  date: "2026-10-02",
+  updated: "2026-10-05",
+  visual: {
+    kind: "payrolls",
+    source: "fred-payems-2026-10-03",
+    from: "2025-10-01",
+    to: "2026-09-01",
+    latest: "September",
+    range: "October 2025 to September 2026",
+    rangeCompact: "March to September 2026",
+  },
+  kpis: [
+    { value: "+29,000", unit: "", figure_unit: "jobs", period: "2026-09", label: "payrolls in September" },
+    { value: "4.2", unit: "%", period: "2026-09", label: "unemployment rate" },
+    { value: "60,000", unit: "lower", figure_unit: "jobs", period: "2026-07..2026-08", label: "July and August, revised" },
+  ],
+};
+
+// Monthly change, thousands, seasonally adjusted. Each value is that month's
+// PAYEMS level minus the previous month's level in PAYEMS-2026-10-03.csv.
+export const payrollChanges = [
+  { month: "2025-10", change: -140 },
+  { month: "2025-11", change: 41 },
+  { month: "2025-12", change: -17 },
+  { month: "2026-01", change: 160 },
+  { month: "2026-02", change: -156 },
+  { month: "2026-03", change: 214 },
+  { month: "2026-04", change: 148 },
+  { month: "2026-05", change: 63 },
+  { month: "2026-06", change: 31 },
+  { month: "2026-07", change: -10 },
+  { month: "2026-08", change: 133 },
+  { month: "2026-09", change: 29 },
+];
+
+// 159,044 minus 159,015, the September and August levels in PAYEMS-2026-10-03.csv.
+export const septemberPayrollChange = 29;
+
+// Levels in thousands from PAYEMS-2026-10-03.csv.
+// Thousands of jobs. December 2025 minus December 2024 is 116, about 9,700 a month.
+// September 2026 minus December 2025 is 612, 68,000 a month over nine months.
+export const payrollLevels = {
+  august: 159015,
+  september: 159044,
+  december2024: 158316,
+  december2025: 158432,
+};
+
+// October 2025 is the chart's first bar: 158408 minus 158548 on PAYEMS-2026-10-03.csv.
+export const october2025Levels = { september: 158548, october: 158408 };
+
+// CES9091000001-2026-10-05.csv, federal employment, thousands of jobs.
+export const federalMonthly = federalRows.filter((r) => r.date >= "2024-12-01" && r.date <= "2026-09-01");
+export const federalEmployment = {
+  january2023: rowAt(federalRows, "2023-01-01"),
+  january2025: rowAt(federalRows, "2025-01-01"),
+  december2024: rowAt(federalRows, "2024-12-01"),
+  august2026: rowAt(federalRows, "2026-08-01"),
+  september2026: rowAt(federalRows, "2026-09-01"),
+};
+export const federalEmploymentChange = {
+  sinceDecember2024: federalEmployment.september2026 - federalEmployment.december2024,
+  september: federalEmployment.september2026 - federalEmployment.august2026,
+  january2023ToJanuary2025: federalEmployment.january2025 - federalEmployment.january2023,
+};
+
+// PAYEMS-2026-10-03.csv, thousands. January 2025 minus January 2023 is 3,492.
+// Federal share 130 / 3492 = 0.03723, rounded to 3.7 percent. Hassett did not name these months.
+// Math.round of that share is 4.
+export const payrollWindow = { january2023: 154776, january2025: 158268 };
+export const payrollWindowChange = 158268 - 154776;
+export const federalShareOfPayrollGain = "3.7";
+export const federalShareRounded = Math.round(
+  (federalEmploymentChange.january2023ToJanuary2025 / payrollWindowChange) * 100,
+);
+
+const federalJobs = (thousands) => (thousands * 1000).toLocaleString("en-US");
+export const federalChart = (() => {
+  const points = federalMonthly;
+  const W = 720, H = 250, left = 88, right = 24, top = 22, bottom = 36;
+  const vals = points.map((p) => p.thousands);
+  const min = Math.min(...vals);
+  const max = Math.max(...vals);
+  const pad = (max - min) * 0.16;
+  const y0 = min - pad;
+  const y1 = max + pad;
+  const xAt = (i) => left + (i / (points.length - 1)) * (W - left - right);
+  const yAt = (v) => top + (1 - (v - y0) / (y1 - y0)) * (H - top - bottom);
+  const plotted = points.map((p, i) => ({ ...p, x: xAt(i), y: yAt(p.thousands) }));
+  const first = plotted[0];
+  const last = plotted[plotted.length - 1];
+  const prev = plotted[plotted.length - 2];
+  const ticks = [2700, 2800, 2900, 3000].map((t) => ({
+    y: yAt(t),
+    label: `${(t / 1000).toFixed(1)} million`,
+  }));
+  return {
+    W,
+    H,
+    left,
+    right,
+    ticks,
+    path: plotted.map((p, i) => `${i ? "L" : "M"}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(" "),
+    axis: plotted.filter((_, i) => i === 12),
+    first,
+    last,
+    prev,
+    septemberNote: {
+      x: last.x - 8,
+      y: Math.min(prev.y, last.y) - 14,
+      text: `down ${federalJobs(Math.abs(last.thousands - prev.thousands))} in September`,
+    },
+    aria: `Federal government payrolls from December 2024 at ${federalJobs(first.thousands)} jobs to September 2026 at ${federalJobs(last.thousands)}. September is down ${federalJobs(Math.abs(last.thousands - prev.thousands))}.`,
+  };
+})();
+
+// Associated Press, October 2: so far this year, and every month of 2025. Not the bureau's three-month window.
+export const apPace = { soFarThisYear: 68000, year2025: 9700 };
+
+// FEDS note, April 2, 2026. Thousands of jobs a month. 2026 is "less than 10,000".
+export const breakEvenFed = { during2023: 155, during2025: 85, during2026: 10 };
+
+// BLS hires and separations rates, seasonally adjusted, August of each year.
+// Hires, then layoffs and discharges. Trailing zeros stay strings.
+export const hiresRates = {
+  aug2022: "4.2",
+  aug2024: "3.3",
+  aug2026: "3.3",
+  layoffsAug2022: "1.0",
+  layoffsAug2024: "1.1",
+  layoffsAug2026: "1.0",
+};
+
+// Yardsticks named on October 2. Job figures are thousands per month.
+// reutersWorkingAge: Reuters, roughly 50,000 to keep up with the working-age population.
+// phelanSteady: Yahoo Finance's account of Phelan's calculation, about 40,000.
+// threeMonthThroughSept2025: summary table B, three-month average, September 2025 column.
+// hikeOddsLow and hikeOddsLater: Reuters, CME FedWatch, percent.
+export const yardsticks = {
+  reutersWorkingAge: 50,
+  phelanSteady: 40,
+  threeMonthThroughSept2025: 23,
+  hikeOddsLow: 13,
+  hikeOddsLater: 23,
+};
+
+// Sum of the twelve changes from October 2025 through September 2026, divided by 12.
+// 496 / 12 = 41.333 thousand. The release's "prior 12 months" stops before September:
+// September 2025 through August 2026 sums to 543, and 543 / 12 = 45.25 thousand.
+// The release states that average as 45,000.
+export const averages = {
+  last12: 41.333,
+  prior12: 45.25,
+  prior12AsReleased: 45,
+  last3: 50.667,
+  last3AsReleased: 51,
+  year2026: 68,
+  negativeMonthsLast12: 4,
+};
+
+// July was revised by 31,000 and August by 29,000. 31 + 29 = 60. The release states
+// the same combined figure. First-reported changes are the ones the September release
+// names, not a separate vintage file.
+export const revisions = {
+  julyFrom: 21,
+  julyTo: -10,
+  julyRevision: -31,
+  augustFrom: 162,
+  augustTo: 133,
+  augustRevision: -29,
+  combined: -60,
+};
+
+export const revisionColumns = ["Month", "Previously reported", "September release"];
+export const revisionRows = [
+  ["July", "+21,000", "-10,000"],
+  ["August", "+162,000", "+133,000"],
+  ["Two months combined", "", "60,000 lower"],
+];
+
+// Household survey, summary table A of the September release. Counts are thousands.
+export const household = {
+  unemploymentRate: 4.2,
+  unemployedThousands: 7109,
+  laborForceChange: 485,
+  employmentChange: 406,
+  participation: 61.8,
+  employmentPopulation: 59.2,
+  blackRate: 7.0,
+  longTermUnemployedMillions: 1.9,
+  longTermShare: 27.1,
+  partTimeEconomicMillions: 4.5,
+  marginallyAttachedChange: -236,
+  discouragedThousands: 414,
+};
+
+// Table A-9, seasonally adjusted September column. The table is in thousands.
+export const multipleJobholders = { september: 8986, august: 8805, percentOfEmployed: 5.5 };
+
+// Establishment survey sentences and summary table B.
+export const establishment = {
+  healthCare: 17,
+  healthCarePriorAverage: 33,
+  ambulatory: 13,
+  hospitals: 12,
+  nursing: -9,
+  construction: 11,
+  manufacturing: 9,
+  financialActivities: -7,
+  financialSinceMay2025: -129,
+  private: 46,
+  government: -17,
+  // Table B-1 prints -10.6 in thousands: local government, excluding education.
+  localExcludingEducation: 10600,
+  information: -10,
+  temporaryHelp: -10.9,
+  diffusionPrivate: 49.0,
+  diffusionAugust: 57.6,
+  hourlyEarnings: 37.81,
+  hourlyCents: 5,
+  hourlyYearPercent: 3.0,
+  workweek: 34.4,
+  significanceThreshold: 122,
+  prior12Average: 45,
+  threeMonthAverage: 51,
+};
+
+// Year-over-year percent, CES0500000003-2026-10-03.csv.
+// September: 100 * (37.81 / 36.70 - 1) = 3.0245, rounded to 3.02.
+// The release states the same change as 3.0 percent.
+export const wageGrowth = [
+  { month: "2026-02", yoy: 3.7 },
+  { month: "2026-03", yoy: 3.43 },
+  { month: "2026-04", yoy: 3.57 },
+  { month: "2026-05", yoy: 3.34 },
+  { month: "2026-06", yoy: 3.38 },
+  { month: "2026-07", yoy: 3.21 },
+  { month: "2026-08", yoy: 3.11 },
+  { month: "2026-09", yoy: 3.02 },
+];
+
+// LNS11300060-2026-10-03.csv, prime-age (25 to 54) labor force participation.
+export const primeAgeParticipation = { september: 83.7, august: 83.4, july: 83.4 };
+
+// Figures admitted with the story, each the number its pin states.
+// householdSignificance: "about 650,000" in bls-empsit-2026-09.txt, in thousands here.
+// adpSeptember: "90,000 jobs" in adp-september-2026.txt, in thousands here.
+// apYear2025: "9,700 average new jobs" in coverage/ap-september-jobs.txt, in jobs.
+// blackYearEarlier, blackJuly, blackAugust, and blackMonthChange: summary table A, Black or African American row.
+// unemployedChange: summary table A, Unemployed row, change from August, in thousands.
+export const admitted = {
+  householdSignificance: 650,
+  adpSeptember: 90,
+  pceAugust: 3.4,
+  joltsHiresMillions: 5.2,
+  unroundedAugust: "4.141",
+  unroundedSeptember: "4.175",
+  apYear2025: 9700,
+  reutersSurvey: 90000,
+  reutersLow: 35000,
+  reutersHigh: 180000,
+  augustUnemployment: 4.1,
+  blackYearEarlier: 7.6,
+  blackJuly: 6.3,
+  blackAugust: 6.0,
+  blackMonthChange: 1.0,
+  unemployedChange: 78,
+};
+
+// U6RATE-2026-10-03.csv. The release's table A-15 prints the same September rate.
+export const u6 = { september: 7.6, august: 7.7 };
+
+// Surveys named in coverage, not bureau figures.
+export const surveys = {
+  dowJonesJobs: 84,
+  dowJonesRate: 4.1,
+  reutersJobs: 90,
+  factsetJobs: 90,
+};
+
+export const chronology = [
+  {
+    date: "September 4, 2026",
+    title: "August report: payrolls up 162,000, unemployment rate 4.1 percent",
+    link: "/events/jobs/2026-09-04-august-payrolls-rise-162000/",
+  },
+  {
+    date: "October 1, 2026",
+    title: "Before the release, economists surveyed by Dow Jones expected 84,000 jobs and a 4.1 percent rate",
+  },
+  {
+    date: "October 2, 2026",
+    title: "Before 8:30 a.m. Eastern, economists surveyed by Reuters expected 90,000 jobs and a 4.1 percent rate",
+  },
+  {
+    date: "October 2, 2026",
+    title: "The September report was scheduled for 8:30 a.m. Eastern: payrolls up 29,000, unemployment rate 4.2 percent",
+    current: true,
+  },
+  {
+    date: "November 6, 2026, 8:30 a.m. Eastern",
+    title: "Next Employment Situation, for October",
+  },
+];
