@@ -1,52 +1,62 @@
-// Day counts are differences of dates printed on the admitted records.
-// Opinion date: data/sources/immigration-detention/ca2-cunha-opinion-2026-04-28.txt ("Decided: April 28, 2026").
-// Grant date: data/sources/immigration-detention/scotus-order-list-2026-10-01.txt ("THURSDAY, OCTOBER 1, 2026").
-// Guidance date named in that opinion: "July 8, 2025".
-// Customs memorandum date: data/sources/immigration-detention/cbp-detention-notice-2025-09-18.txt ("July 10, 2025").
-// Board decision date: data/sources/immigration-detention/bia-yajure-hurtado-2025-09-05.txt ("Decided September 5, 2025").
-// Petition date: data/sources/immigration-detention/scotus-docket-rhoney-2026-10-02.txt ("Docketed: July 23, 2026").
+// Every date and count here is printed on an admitted record.
+// Release on bond: data/sources/immigration-detention/doj-petition-26-104.txt ("released on bond the next day", after the October 28, 2025 hearing).
+// Arrest: data/sources/immigration-detention/ca2-cunha-opinion-2026-04-28.txt ("On September 26, 2025").
 const DAY = 86400000;
 const daysBetween = (start, end) => Math.round((Date.parse(end) - Date.parse(start)) / DAY);
 
 export const computed = {
-  daysOpinionToGrant: daysBetween("2026-04-28", "2026-10-01"),
-  daysGuidanceToGrant: daysBetween("2025-07-08", "2026-10-01"),
-  daysCbpMemoToGrant: daysBetween("2025-07-10", "2026-10-01"),
-  daysBoardToGrant: daysBetween("2025-09-05", "2026-10-01"),
-  daysPetitionToGrant: daysBetween("2026-07-23", "2026-10-01"),
-  // The April 28 opinion spells the length of the bond practice: "thirty".
-  bondPracticeYears: 30,
+  daysDetained: daysBetween("2025-09-26", "2025-10-29"),
 };
 
 export const event = {
   slug: "immigration-detention/2026-10-01-supreme-court-takes-up-bond-hearings",
-  title: "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
-  dek: "The Court's October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.",
+  title: "The Supreme Court will decide whether immigrants who have lived here for years must be jailed for their whole deportation case without a bond hearing",
+  dek: "For three decades they could ask for release. In July 2025 the Trump administration said the law forbids it. Nine federal appeals courts have said it does not.",
   name: "Review of detention without a bond hearing",
   date: "2026-10-01",
-  updated: "2026-10-05",
+  updated: "2026-10-06",
   kpis: [],
   visual: {
     kind: "timeline",
-    title: "From the detention guidance to review",
+    title: "From bond hearings to the Supreme Court",
     entries: [
-      { date: "July 10, 2025", title: "Customs memorandum" },
-      { date: "Sept. 5, 2025", title: "Board decision" },
-      { date: "Apr. 28, 2026", title: "Appeals court affirms" },
-      { date: "Oct. 1, 2026", title: "Review granted", current: true },
+      { date: "July 8, 2025", title: "ICE ends bond hearings" },
+      { date: "Sept. 26, 2025", title: "Barbosa da Cunha arrested" },
+      { date: "Apr. 28, 2026", title: "Appeals court rules for him" },
+      { date: "Oct. 1, 2026", title: "Supreme Court takes the case", current: true },
     ],
   },
 };
 
 export const chronology = {
   rows: [
-    ["March 6, 1997", "A Federal Register rule says people present without admission will be eligible for bond and bond redetermination."],
-    ["July 10, 2025", "Commissioner Rodney S. Scott issued detention guidance to every Customs and Border Protection component."],
-    ["Sept. 5, 2025", "The Board of Immigration Appeals decides judges lack authority to grant bond in this situation."],
-    ["Sept. 26, 2025", "Officers arrested the man in this case while he was driving to work."],
-    ["Apr. 28, 2026", "The Second Circuit affirms the order requiring a bond hearing or release."],
-    ["Sept. 10, 2026", "The Fourth Circuit names the appeals courts that require a bond hearing and the two that do not."],
-    ["Sept. 25, 2026", "The Second Circuit denies rehearing by the full court."],
-    ["Oct. 1, 2026", "The Supreme Court grants review in this case."],
+    ["1997", "A government rule says people who entered without inspection can be released on bond."],
+    ["Jan. 20, 2025", "Executive order to hold people arrested for immigration violations until their cases are decided."],
+    ["July 4, 2025", "Budget law with $45 billion for detention space."],
+    ["July 8, 2025", "ICE memo ends bond hearings for people who entered without inspection."],
+    ["Sept. 5, 2025", "Board of Immigration Appeals makes the rule binding on immigration judges."],
+    ["Sept. 26, 2025", "Barbosa da Cunha is arrested driving to work."],
+    ["Oct. 29, 2025", "He is released on bond."],
+    ["Apr. 28, 2026", "The Second Circuit rules for him."],
+    ["Sept. 10, 2026", "The Fourth Circuit becomes the ninth appeals court against the rule."],
+    ["Oct. 1, 2026", "The Supreme Court takes the case."],
+  ],
+};
+
+export const split = {
+  rows: [
+    ["Against the administration", "First, Second, Third, Fourth, Sixth, Seventh, Ninth, Tenth, Eleventh"],
+    ["For the administration", "Fifth, Eighth"],
+  ],
+};
+
+export const counts = {
+  rows: [
+    ["tens of thousands", "CBS News, Oct. 1, 2026", "No source given"],
+    ["millions", "Reuters, Oct. 1, 2026", "People the rule could cover, by the courts' estimates; not people detained"],
+    ["six million", "Fourth Circuit opinion, Sept. 10, 2026", "The court's estimate of people who could be covered"],
+    ["58,000+", "ICE data reported by CBS, July 15, 2025", "Everyone ICE held that day, for any reason"],
+    ["73,000+", "Reuters, Oct. 1, 2026", "Federal lawsuits of this kind filed in 2026"],
+    ["20,250+", "Politico tracker, read Oct. 6, 2026", "Federal court rulings against the administration on ICE detention since July 2025"],
   ],
 };
