@@ -1,0 +1,4 @@
+1. **Critical, new | Row 4, what-happened.** “On October 5 the docket recorded that a brief of Ricardo Aparecido Barbosa da Cunha was submitted, and that entry includes a main document.” The [current Supreme Court docket](https://www.supremecourt.gov/docket/docketfiles/html/public/26-104.html) places the entry under “Aug 21 2026” and says “Brief of respondent Ricardo Aparecido Barbosa da Cunha filed. (PDF upload - October 5, 2026)”. The sentence treats the October 5 upload as a brief submission recorded on that date. The response was filed August 21; its PDF was uploaded October 5.
+
+Blocks checked: 4; findings: Critical 1, Major 0, Minor 0.
+VERDICT: NO-SHIP

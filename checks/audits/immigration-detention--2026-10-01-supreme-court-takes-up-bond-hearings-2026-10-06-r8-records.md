@@ -1,0 +1,6 @@
+**Minor, new | Row 4, what-happened.** “Members of Congress described lawful admission, rather than physical entry, as the pivotal factor.” The pinned [Justice Department petition](/Volumes/4/GitHub/the-catch-site-wt-detention/data/sources/immigration-detention/doj-petition-26-104.txt) says, “Members of Congress described the significance of that change as follows,” but the [House report](https://www.govinfo.gov/content/pkg/CRPT-104hrpt469/html/CRPT-104hrpt469-pt1.htm) it quotes is absent from the manifest. The report’s exact wording is: “Hence, the pivotal factor in determining an alien's status will be whether or not the alien has been lawfully admitted.” The sentence’s attribution to lawmakers relies on the petition’s quotation rather than a pinned copy of their report. The report describes **status**; it does not by itself settle the disputed detention rule.
+
+The live [Rhoney](https://www.supremecourt.gov/docket/docketfiles/html/public/26-104.html), [Lopez-Campos](https://www.supremecourt.gov/docket/docketfiles/html/public/25-1415.html), and [Genalo v. D.C.](https://www.supremecourt.gov/docket/docketfiles/html/public/26-379.html) dockets showed no later disposition that made a listed block false.
+
+Blocks checked: 12; findings: Critical 0, Major 0, Minor 1.
+VERDICT: SHIP

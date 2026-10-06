@@ -17,11 +17,12 @@ import { event as fuelReserves } from '../data/fuel-reserves-2026-10-02-g7-relea
 import { event as canadaTariffs } from '../data/canadatariffs202609.mjs';
 import { event as spaceWeapons } from '../data/spaceweapons202609.mjs';
 import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs';
+import { event as immigrationDetention } from '../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -38,6 +39,7 @@ export const series = [
   { path: '/events/kennedy-center/', title: 'Kennedy Center', topic: 'Courts', keywords: 'Kennedy Center demolition renovation Cooper Beatty preservation court', description: 'The court record behind the September 17 advance-notice order for covered changes to the Kennedy Center project plans.' },
   { path: '/events/ed-sheeran-tour/', title: "Ed Sheeran's Loop Tour", topic: 'Music', keywords: 'Ed Sheeran Macklemore Loop Tour Finneas Aaron Rowe Lukas Graham Beoga', description: "Macklemore's removal from the 2026 Loop Tour lineup, the supporting acts who withdrew, and the remaining North American schedule." },
   { path: '/events/fuel-reserves/', title: 'Fuel reserves', topic: 'Energy', keywords: 'G7 diesel crude oil reserves IEA Strategic Petroleum Reserve export', description: 'G7 calls a diesel release substantial and places it in the first 20 days, with no number. A French presidency readout says up to 100 million barrels of diesel and crude. The October text counts commitments already fulfilled.' },
+  { path: '/events/immigration-detention/', title: 'Immigration detention', topic: 'Courts', keywords: 'immigration detention bond hearing Supreme Court mandatory detention', description: 'The Court\'s October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();
