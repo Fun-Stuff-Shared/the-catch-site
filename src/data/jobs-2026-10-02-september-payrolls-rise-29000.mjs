@@ -261,8 +261,8 @@ export const chronology = [
     title: "Before 8:30 a.m. Eastern, economists surveyed by Reuters expected 90,000 jobs and a 4.1 percent rate",
   },
   {
-    date: "October 2, 2026, 8:30 a.m. Eastern",
-    title: "The bureau publishes the September report: payrolls up 29,000, unemployment rate 4.2 percent",
+    date: "October 2, 2026",
+    title: "The September report was scheduled for 8:30 a.m. Eastern: payrolls up 29,000, unemployment rate 4.2 percent",
     current: true,
   },
   {
