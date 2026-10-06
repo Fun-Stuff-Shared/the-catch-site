@@ -32,6 +32,29 @@ reader just ask that this answers. The intended voice is a person telling anothe
 happened, what it means and the one thing people are getting wrong, in that order, and
 sounding unaware of the work it took to know it.
 
+## Whose voice states the fact
+
+A story is an account of what happened and what it means, told in the page's own voice. It
+is not a list of who said what.
+
+- A fact a primary record carries (a count, a rate, a date, a ruling, a vote) is stated
+  plainly, and the record goes in the citation. The agency, outlet or document is not the
+  subject of the sentence: "Federal payrolls fell 327,000 from December 2024", never "the
+  bureau's series shows" and never "Reuters wrote that".
+- A person or institution is named as the speaker only when the sentence is that speaker's
+  claim, forecast, argument or opinion, or one side of a dispute. Then the sentence says who
+  they are in a clause and what they argued, and the page tests the claim against the record
+  in its own voice.
+- An outlet is named in prose only when its coverage is the subject (the catch quotes a
+  headline) or it is the only source for a reported fact. An outlet is never the source of a
+  person's title, a date, or a figure a pinned primary carries. A title is stated; its
+  record is a citation.
+- No more than two speaker-led sentences stand in a row in the story view. A paragraph that
+  is a run of "X said", "Y wrote", "Z said" is rewritten as the page's account of the
+  dispute: what is agreed, what is contested, what the record shows.
+- Each paragraph of the story view opens with the page's own statement of what happened or
+  what it means. A quotation supports that statement; it does not stand in for it.
+
 ## Register
 
 - Concept before qualification (`story.md`): the clean model in the first sentence, the
@@ -193,6 +216,11 @@ the 70-word sentence.
 
 ## Numbers, counts and units
 
+- Three or more figures from one series or one comparison never run through a paragraph
+  as prose. They go in a chart or a small table built from the data module, and the prose
+  carries one sentence saying what the figures show. A reader cannot hold "3,009,000 in
+  December 2024 and 2,682,000 in September 2026, a decline of 327,000, with a drop of
+  1,000 from 2,683,000 in August" in one pass; a line with two labeled points says it.
 - Every derived number is computed in the data module from the admitted series and
   rendered by identifier. Round in the story; cents and exact figures in the proof.
 - Every count names its unit (a tariff item, a schedule row, a product are three units)
