@@ -1842,3 +1842,5 @@ Round three added Floca's September 16 staff email from ECF 86-2 and The Atlanti
 | data/sources/immigration-detention/scotus-docket-genalo-dc-2026-10-05.txt | 676 | dd3c91bd4d749fe0 |
 | data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-05.html | 24325 | edf98072831813e1 |
 | data/sources/immigration-detention/scotus-docket-lopez-campos-2026-10-05.txt | 1640 | bbf38640e697fb45 |
+| data/sources/immigration-detention/house-report-104-469-pt1-1996.html | 2028451 | 160e017d62057d9a |
+| data/sources/immigration-detention/house-report-104-469-pt1-1996.txt | 1697368 | 5e2e2a38732a3077 |
