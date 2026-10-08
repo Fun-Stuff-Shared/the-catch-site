@@ -16,7 +16,7 @@ metadata:
 # Catch story
 
 You write the page. The record is done: the brief at `checks/records/<story>.md` holds
-the story in five sentences, the outline, and every fact with its source. Your job is to
+the story in five sentences, the plan, and every fact with its source. Your job is to
 tell that story so a person who has never heard of it can follow it from the first line to
 the last, stop at any layer with a true picture, and dig in where they want to.
 
@@ -31,12 +31,20 @@ form; read them before writing.
 
 ## 1. Agree the story with the human
 
-Read the whole brief. Then show the human the five sentences and the outline as they will
+Read the whole brief. Then show the human the five sentences and the plan as they will
 shape the page, and say what the story is in plain words: who it happens to, what changed,
 why now, what is in dispute, what comes next. Do not write a page until they agree.
 A wrong angle costs a sentence here and a rewrite later.
 
 ## 2. Write it in layers
+
+Write from the plan, not the brief. Draft each layer in your own words with the brief
+closed, saying what you know the way a reporter who has read everything would say it, then
+attach the citations. The record is what lets you say "since the war with Iran began in
+February, diesel has nearly doubled" in one clause; it is not a list of things to mention.
+A record's being admitted is never a reason to use it. Hold the plan's word budget (about
+900 words above the details). A question the plan does not answer is a plan change: send it
+to the orchestrator; do not answer it on the page yourself.
 
 The page reads top to bottom as the inverted pyramid, each layer complete enough to stop
 after:
@@ -72,6 +80,11 @@ including one the human picked: change it whenever it is wrong, overstated, or a
 holds on the record, including when a reviewer's finding against it is right. Rename the
 label to match (section 4) and report it.
 
+The dek under it does one job: the one fact a reader needs that the headline leaves out.
+One sentence, two numbers at most. A contrast or a side's claim whose point only the body
+explains goes in the body: "The White House calls the G7 release 100 million barrels of
+European diesel" in a dek told the reader nothing and seeded a misreading.
+
 ## 3. Write like a reporter
 
 The unit is the paragraph. Each paragraph says one thing in the story and carries the
@@ -85,7 +98,12 @@ appealed." "That matters because...") needs no passage of its own.
 - Name the people and what they did. Readers care what each side thinks and why, not
   which court or which number. "Most judges ruled..." before "nine circuits".
 - Give opinions, motives and readings as somebody's, in their words or close to them. The
-  page states facts itself and names a speaker only for a claim.
+  page states facts itself and names a speaker only for a claim. "The IEA said", "analysts
+  said", "two diplomats said" on a fact nobody disputes is evidence on display, not
+  reporting; the citation carries the source.
+- One sentence can rest on several records. When four officials make one point, write the
+  point once and quote the one whose words matter. A quote earns its place by its words,
+  not by its speaker's rank; most points need none.
 - Quotes are the source's exact words. Do not name the outlet in prose; the citation
   carries it. "The Guardian described it that way" is the exception: when the outlet's
   wording is the subject, as in the catch.
@@ -151,11 +169,21 @@ reader quotes is fixed in the sentence or the sentence is cut. Every entailment 
 first checked against the record's own words, because the reviewer misreads records too
 (it once narrowed a treaty clause the page had right, and the author applied it in three
 places); a finding the record refutes is answered with the record and left out. A finding
-that holds is fixed at the record: the sentence says what the record says, or the record that says it is
-admitted with catch-record. Build, lint and read again until the retelling matches and the
-check returns `ENTAILED`, or until a round's verified findings are only wording that does
-not change what a reader takes away: list those in the report and go to step 6. The
-reviewer always finds something; the human's read is the last check, not a perfect round.
+that holds is fixed at the record: the sentence says what the record says, or the record
+that says it is admitted with catch-record.
+
+A finding in either read that needs a fact the plan does not hold is a plan change, not an
+edit: send it to the orchestrator with the answer and its record, and add it only on its
+word. Stage two does not grow the story.
+
+Two rounds, then the human. Round 1 reads the finished page; fix what holds. Round 2 reads
+the fixed page; from here fix only what changes what a reader takes away: a wrong number,
+actor or date, a claim the record contradicts, a retelling that misses one of the five
+sentences. Punctuation, quote-versus-paraphrase and how-broadly-worded findings go on a
+list for the human, unapplied. A third round runs only when round 2 found a wrong fact, and
+only on the paragraphs that changed. Never more. Every rewrite gives the next round new
+text to flag, so the rounds do not converge on their own; a 45-paragraph page always
+draws findings. The human's read is the last check.
 
 ## 6. Show the human, in the story viewer
 

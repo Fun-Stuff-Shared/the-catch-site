@@ -4,19 +4,24 @@ Every fact line ends with its source: the record id and the record's words in sq
 
 ## The story
 
-Exactly five sentences a stranger could repeat, one each: what happened, to whom, why it is happening now, what is in dispute, what comes next. No caveats; qualifications go in the outline. Written after the evidence below is assembled, rewritten whenever a finding changes it.
+Exactly five sentences a stranger could repeat, one each: what happened, to whom, why it is happening now, what is in dispute, what comes next. No caveats; qualifications go in the plan. Written after the evidence below is assembled, rewritten whenever a finding changes it.
 
-## Outline
+## The plan
 
-The order the story will be told in, each layer complete enough to stop after:
-1. The news: what happened and why it matters.
-2. The story in order: the people it happened to, step by step.
-3. Why now: the dated chain that led here, with each actor's stated reasons.
-4. The sides, each in its own terms, and what they agree on.
-5. The catch: where coverage or a common reading goes wrong.
-6. What this will and will not settle; what is next.
-7. Dig deeper: the documents.
-8. Background held: verified material the record keeps but the story does not need.
+For each of the five sentences: the questions a reader who knows nothing asks of it, each
+answered from the record in the fewest words that hold (a clause, a sentence, rarely a
+paragraph), with its source.
+
+1. {sentence 1}
+   - {question}: {answer} [record-id: "words"]
+2. ...
+
+Order on the page (each layer complete enough to stop after): the news; the story in
+order; why now; the sides; the catch; what is next. Word budget for the story above the
+details: about 900.
+
+Background held: verified material the record keeps but the page does not use. This list
+is long; that is expected.
 
 ## The event
 

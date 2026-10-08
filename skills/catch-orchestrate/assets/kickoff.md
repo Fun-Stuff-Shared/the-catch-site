@@ -10,7 +10,7 @@ The worktree is {WORKTREE} on branch {BRANCH}. Read from /Volumes/4/CF/catch-sta
 
 The orchestrator is the Claude session named {ORCHESTRATOR} in ListAgents; message it with SendMessage (by whatever name it has in ListAgents if that one is gone). Send it:
 - each record review's verdict;
-- the five sentences and outline when stage one is done, and wait for its word before writing the page;
+- the five sentences and plan when stage one is done, and wait for its word before writing the page;
 - the headline and why, each time you set or change it, after you rename the label to match;
 - each round of cold reads;
 - the served page URL when the reads stop.
