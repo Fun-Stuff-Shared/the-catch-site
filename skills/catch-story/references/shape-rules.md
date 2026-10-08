@@ -1,1 +1,0 @@
-../../catch-event-page/references/shape-rules.md
