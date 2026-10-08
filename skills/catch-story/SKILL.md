@@ -61,11 +61,13 @@ qualifies, or in Just the facts. Cite it there.
 
 The headline is a news headline a reader would click, not the story's claim written out:
 the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
-with no attribution tail ("…, officials say") and no hedge. Every word holds on the record.
-"G7's 100 million-barrel oil release is meant to finish March's pledge" is one ("comes from"
-would state a plan as done);
-"G7 will release 100 million barrels over four months and does not say how much is beyond
-its March commitments" is a sentence from the brief. The headline is yours and never frozen,
+with no attribution tail ("…, officials say") and no hedge. It stands alone for a reader who
+knows nothing yet: no reference that only the story explains ("March's pledge", "the ruling",
+"the deal"). Every word holds on the record.
+Three that failed on one story: "G7 will release 100 million barrels over four months and
+does not say how much is beyond its March commitments" (a sentence from the brief); "…comes
+from oil already promised in March" (states a plan as done); "…is meant to finish March's
+pledge" (what pledge?). The headline is yours and never frozen,
 including one the human picked: change it whenever it is wrong, overstated, or a better one
 holds on the record, including when a reviewer's finding against it is right. Rename the
 label to match (section 4) and report it.
