@@ -151,11 +151,17 @@ reader quotes is fixed in the sentence or the sentence is cut. Every entailment 
 first checked against the record's own words, because the reviewer misreads records too
 (it once narrowed a treaty clause the page had right, and the author applied it in three
 places); a finding the record refutes is answered with the record and left out. A finding
-that holds is fixed at the record: the sentence says what the record says, or the record that says it is
-admitted with catch-record. Build, lint and read again until the retelling matches and the
-check returns `ENTAILED`, or until a round's verified findings are only wording that does
-not change what a reader takes away: list those in the report and go to step 6. The
-reviewer always finds something; the human's read is the last check, not a perfect round.
+that holds is fixed at the record: the sentence says what the record says, or the record
+that says it is admitted with catch-record.
+
+Two rounds, then the human. Round 1 reads the finished page; fix what holds. Round 2 reads
+the fixed page; from here fix only what changes what a reader takes away: a wrong number,
+actor or date, a claim the record contradicts, a retelling that misses one of the five
+sentences. Punctuation, quote-versus-paraphrase and how-broadly-worded findings go on a
+list for the human, unapplied. A third round runs only when round 2 found a wrong fact, and
+only on the paragraphs that changed. Never more. Every rewrite gives the next round new
+text to flag, so the rounds do not converge on their own; a 45-paragraph page always
+draws findings. The human's read is the last check.
 
 ## 6. Show the human, in the story viewer
 

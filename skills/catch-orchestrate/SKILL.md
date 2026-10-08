@@ -76,9 +76,8 @@ committed state meanwhile (`git checkout -- data/state && CATCH_STATE_SOURCE=/no
 revision promptly.
 
 Each round of cold reads, verify the verdicts the author reports against the pins before
-you accept them; the entailment reviewer misreads records too. Stop the rounds when a round
-finds only wording that changes nothing for a reader. A NOT ENTAILED round with a factual
-finding is never the last: fix it and run another. Then read the served page top to
+you accept them; the entailment reviewer misreads records too. Hold the author to catch-story's two rounds (a third only for a
+wrong fact found in round 2, on the changed paragraphs). Then read the served page top to
 bottom yourself, in the story view, as the editor: where the thread breaks, what is said
 three times, what a reader will ask that the records answer. Before you or the author tell
 anyone "the records don't say", search every admitted record's text for it. Send the notes
@@ -165,8 +164,8 @@ at it. Close scratch worktrees without a story id.
 - A message to the author that reports a record quotes the record's words with the file.
 - The author's name in ListAgents can change when its session restarts; list again rather
   than resending to a dead name.
-- Tell the human what changed, in plain words, each time the author reports: verdicts,
-  decisions you made for them, what you need from them.
+- Tell the human about the article, not the process: what the story now says, what you
+  decided for them, what you need from them. Round numbers and finding counts are not news.
 
 ## Gotchas
 
