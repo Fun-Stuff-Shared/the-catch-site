@@ -181,6 +181,8 @@ the links you could not reach for them to verify. Give the commit.
 ## Gotchas
 
 - `capture` reports a failed OCR (quota, 429) as `empty_or_unextractable_body`. When a PDF comes back empty, OCR it directly with the mistral-ocr skill to see the real error. The Mistral key is read from `MISTRAL_API_KEY`, then `~/.sai/keys/mistral_api_key.env`.
+- In a press-conference or interview transcript, the reporter's question and the official's answer sit side by side. A passage cited for what an official said must come from the answer; reread the speaker label above it.
+- An attribution (who passed a resolution, who said a line, which body ruled) is checked against the record's own words, not a summary of it. The stage-two entailment read catches these, but by then the error is in the brief.
 - Court PDFs break words across lines with a hyphen. Set `"dehyphenate": true` on the spec so passages match.
 - Quotes are byte-exact; passages match across whitespace. Curly quotes and apostrophes in the source must be curly in the quote.
 - The site prints no em dashes. When a source sentence has one, quote the clause on either side, not the whole sentence.
