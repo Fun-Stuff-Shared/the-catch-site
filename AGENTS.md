@@ -1,9 +1,9 @@
 # The Catch: agent notes
 
-- All reader-facing prose follows the house style in `WRITING.md`. The
-  `catch-writing` skill (`.claude/skills/catch-writing/SKILL.md`) is the
-  workflow for writing and reviewing page copy; invoke it before touching
-  story text.
+- All reader-facing prose follows the house style in `WRITING.md`. A story is
+  built in three skills under `skills/`: `catch-record` (the evidence record),
+  `catch-story` (the page) and `catch-orchestrate` (opening, state, publishing,
+  closing). Read the one for the work before touching a story.
 - `npm run build` builds and runs the event gate (`scripts/check-events.mjs`):
   layer typing, citation resolution, internal-vocabulary and formatting
   checks. A page is not done until the gate passes.
