@@ -46,7 +46,7 @@ export const figures = {
 export const chronology = {
   rows: [
     ["1945 to 1972", "The U.S. governs Okinawa from the end of World War II."],
-    ["1960", "The status of forces agreement: Japan tries off-duty crimes, but a suspect the U.S. holds stays with the U.S. until Japan charges him."],
+    ["1960", "The status of forces agreement gives Japan the first right to try off-duty crimes against Japanese people; a suspect the U.S. holds stays with the U.S. until Japan charges him."],
     ["1995", "Three U.S. servicemen rape a 12-year-old girl. The U.S. agrees to consider early handover in murder and rape cases."],
     ["2003", "Okinawa begins a nationwide campaign to revise the agreement; Japan's governors call for a fundamental revision."],
     ["Oct. 2012", "After an alleged assault, the U.S. commander in Japan apologizes in a statement and orders a curfew for every service member in Japan."],
