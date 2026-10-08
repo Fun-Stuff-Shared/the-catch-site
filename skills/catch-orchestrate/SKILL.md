@@ -54,7 +54,7 @@ names a different story id, tell it to keep the accepted one.
 The author reports each record review's verdict and its relevance calls. Spot-check what
 it admits: open two or three cited passages per round. Push back when it admits detail that
 does not change the five sentences, or when a reviewer finding was applied without being
-checked against the record. When it sends the five sentences and outline, judge them as
+checked against the record. When it sends the five sentences and plan, judge them as
 the editor: is each sentence one plain fact, does any repeat an error the catch corrects,
 is the tension of the story in them. Then check what happened since the record's newest
 source (a web search on the event, the docket, the officials' feeds) and send the author
@@ -75,7 +75,9 @@ on it until the revised page is published; tell the other authors to build again
 committed state meanwhile (`git checkout -- data/state && CATCH_STATE_SOURCE=/nonexistent npm run build`), and publish the
 revision promptly.
 
-Each round of cold reads, verify the verdicts the author reports against the pins before
+The author sends you any fact the plan does not hold as a plan change. Take it only when a
+reader of the five sentences needs it, in the fewest words that hold; otherwise it stays in
+the record. Stage two does not grow the story. Each round of cold reads, verify the verdicts the author reports against the pins before
 you accept them; the entailment reviewer misreads records too. Hold the author to catch-story's two rounds (a third only for a
 wrong fact found in round 2, on the changed paragraphs). Then read the served page top to
 bottom yourself, in the story view, as the editor: where the thread breaks, what is said
@@ -138,8 +140,9 @@ reconcile, a claim the page leaves unresolved) goes back through both stages, no
 pass. Cut `.worktrees/<subject>-revision` from main on `author/<subject>-revision`, write a
 kickoff from `assets/kickoff.md` that names the gaps with the retell's own words, and launch
 the author as in step 1. The author tops up the record (catch-record steps 3 to 9 for what is
-missing), sends you the revised five sentences and outline, and revises the page under
-catch-story. The headline stays unless the human changes it; a new headline is renamed as in
+missing), sends you the revised five sentences and plan, and rewrites the page from the plan
+under catch-story. A revision is a rewrite: patching the old page carries its structure and
+voice forward. The headline stays unless the human changes it; a new headline is renamed as in
 step 3. Supervise it like a new story, including your own read before publishing. A voice
 pass is only for pages whose content is already complete: it may not add a fact, so it
 cannot close a content gap.

@@ -21,6 +21,12 @@ the event can read the brief and know what happened, to whom, how it came to thi
 actors say they did it, what each side argues, what the numbers count, where the coverage
 goes wrong, and what comes next, with every fact traceable to a saved source.
 
+The record is the author's background, not the page's content. Gather wide: the earlier
+fighting, the months of price swings, the leader who has gone back and forth. Knowing all of
+it is what lets the page say "since the war with Iran began in February, diesel has nearly
+doubled" in one clause, with confidence. Most of what you admit never appears on the page,
+and that is the point of having it. What reaches the page is decided by the plan (step 8).
+
 Work in the story's worktree. Paths below are relative to it. `<story>` is
 `<subject>--<slug>`, e.g. `immigration-detention--2026-10-01-supreme-court-takes-up-bond-hearings`.
 Read from the shared state (`/Volumes/4/CF/catch-state`); never write to it.
@@ -121,11 +127,21 @@ Fill every section of the brief. Every fact line ends with
 straight ones), or `[lead: URL]` with why it is not admitted.
 
 Then write the top of the brief: the story in five sentences a stranger could repeat, and
-the outline it will be told in (the template lists the layers). Five sentences means five:
+the plan it will be told from (the template shows its shape). Five sentences means five:
 one each for what happened, to whom, why now, what is in dispute, what comes next, each
 short enough to say aloud. No caveats and no "the record does not show"; a qualification
-belongs in the outline or the section it qualifies. This is the test the
-review runs against, and the test you judge every later finding by. Then:
+belongs in the plan or the section it qualifies. This is the test the
+review runs against, and the test you judge every later finding by.
+
+The plan settles, before anyone writes, what a reader needs to follow each sentence. Under
+each of the five, list the questions a reader who knows nothing would ask of it ("what
+pledge?", "why is 100 left if 325 of 400 went out?", "which war?"), and answer each from
+the record in the fewest words that hold: usually a clause, sometimes a sentence, rarely a
+paragraph. Then the order the page tells it in, and a word budget: about 900 words for the
+story above the details. Everything else stays in the record, one click from the page. The
+fuel story's page grew to 2,300 words because none of this was settled: each question a
+cold reader asked in stage two was answered by inserting a paragraph where they stalled.
+Then:
 
 ```bash
 python3 -I skills/catch-record/scripts/admit.py check <story>
@@ -141,7 +157,7 @@ Fix every failure. Commit the brief, manifest, pins and grok output by path with
 zsh skills/catch-record/scripts/review.sh <story> <N>      # N = 1, 2, ...
 ```
 
-GPT high reads the five sentences, the outline and the evidence and answers one question,
+GPT high reads the five sentences, the plan and the evidence and answers one question,
 is this the full story: what is missing, what is missing from the lineage of why this is
 happening, and what has weak provenance, ending `RECORD COMPLETE` or `RECORD INCOMPLETE`.
 It retries a run that ends without a verdict (the ChatGPT stream drops) up to three times.
@@ -151,15 +167,16 @@ Then judge every finding as the author. A reviewer asked what is missing always 
 something, so the record grows without end unless you decide what the story needs:
 1. Verify it at its source. Reviewers are right about what is missing more often than
    about the exact fact; a finding's number, date or wording is checked like any lead.
-2. Decide what it does. A finding that changes the five sentences or the outline goes in,
-   and the sentences or outline change with it. A finding that deepens a section without
-   changing what a reader takes from it goes under "Background held", admitted if it is a
-   record. A finding that is not this story, or is wrong, is declined with the reason
+2. Decide what it does. Context that explains why the event is happening belongs in the
+   record: admit it. It reaches the plan only when it changes the five sentences or answers
+   a question a reader of them would otherwise be left with, and then in the fewest words
+   that hold. A finding that deepens a section without changing what a reader takes from it
+   stays in the record, under "Background held". A finding that is not this story, or is wrong, is declined with the reason
    under "Leads not admitted".
 3. Check, commit, and run the next round.
 
 Stop when a round returns `RECORD COMPLETE`, or when no verified finding in a round
-changes the five sentences or the outline. Hand any finding you cannot decide to the human
+changes the five sentences or the plan. Hand any finding you cannot decide to the human
 with your recommendation.
 
 ### 10. Report
@@ -169,6 +186,8 @@ Tell the human, in plain words: the event in two sentences, what the record now 
 the links you could not reach for them to verify. Give the commit.
 
 ## Principles
+
+- The record is background; the plan decides the page. A fact earns a place on the page by answering a reader's question about one of the five sentences, not by being admitted.
 
 - An unknown is a claim too. Before the brief, a reader report or the human is told "the records don't say", search every admitted record's text for it (in each source language). Okinawa's page said nothing tied the suspect to the room beyond a camera match, while an admitted record quoted police saying the camera showed him leaving with her belongings.
 
