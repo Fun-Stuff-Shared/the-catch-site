@@ -133,10 +133,10 @@ export const event = {
   updated: "2026-10-08",
   updatedLabel: "October 8, 2026",
   kpis: [
-    { value: "100", unit: "million barrels", label: "the G7 release, over four months" },
+    { value: "100", unit: "million barrels", label: "the G7 release" },
     { value: "400", unit: "million barrels", label: "pledged in March" },
     { value: "325", unit: "million barrels", label: "released by October 2" },
-    { value: "172", unit: "million barrels", label: "the U.S. share of the March pledge" },
+    { value: "4", unit: "months", label: "the period of the G7 release" },
   ],
   visual: {
     kind: "timeline",
