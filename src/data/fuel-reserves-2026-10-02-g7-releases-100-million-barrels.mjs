@@ -93,7 +93,7 @@ export const ledgerRows = [
   ["Pledged and not yet released, the IEA's count of October 7", `about ${marchSoFar.remaining} barrels`],
   ["U.S. share", `${release.usMarch} barrels`],
   ["U.S. exchange awards, March 20 to June 22", `${usShare.awarded} barrels`],
-  ["U.S. share not yet awarded", `${usShare.left} barrels`],
+  ["U.S. share not covered by the March to June awards", `${usShare.left} barrels`],
   ["U.S. offer of September 29, bids due October 6", `up to ${release.exchange} barrels`],
 ];
 
@@ -126,8 +126,8 @@ export const statementRows = [
 
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
-  title: "G7's 100 million-barrel oil release comes from oil already promised in March",
-  dek: "In March, 32 countries pledged 400 million barrels of emergency oil; about 325 million had been released by October 2. The International Energy Agency counts the barrels pledged and not yet released at about 100 million. The White House calls it 100 million barrels of European diesel.",
+  title: "G7's 100 million barrels are meant to finish March's 400 million-barrel emergency oil release",
+  dek: "In March the 32 member countries of the International Energy Agency pledged to release 400 million barrels of emergency oil; about 325 million had gone out by October 2. The agency counts the barrels pledged and not yet released at about 100 million. The White House calls the G7 release 100 million barrels of European diesel.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-08",

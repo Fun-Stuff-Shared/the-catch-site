@@ -1,6 +1,6 @@
 export const subject = {
   title: "Fuel reserves",
-  dek: "In March, 32 countries pledged 400 million barrels of emergency oil. The G7's October release of 100 million barrels is, by the energy agency's count, about what was pledged and not yet released.",
+  dek: "In March the 32 member countries of the International Energy Agency pledged 400 million barrels of emergency oil. The G7's October release of 100 million barrels is meant to finish that release; the energy agency counts about 100 million barrels pledged and not yet released.",
   current: [
     {
       label: "October 2 coordinated release",
