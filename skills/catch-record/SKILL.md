@@ -170,6 +170,8 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Principles
 
+- An unknown is a claim too. Before the brief, a reader report or the human is told "the records don't say", search every admitted record's text for it (in each source language). Okinawa's page said nothing tied the suspect to the room beyond a camera match, while an admitted record quoted police saying the camera showed him leaving with her belongings.
+
 - A primary record beats any report of it. Admit the ruling, not the article about the ruling.
 - Current state is not history. That a document says something now does not tell you when it changed or why; dated records do.
 - A number without what it counts and as of when is not a fact yet.
