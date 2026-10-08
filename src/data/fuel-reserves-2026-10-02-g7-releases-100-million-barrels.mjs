@@ -70,7 +70,7 @@ export const ledgerRows = [
   ["Released by October 2", `about ${marchSoFar.released}`],
   ["Still owed by the countries that fell short, October 7", `about ${marchSoFar.unreleased}`],
   ["U.S. share of the pledge", `${release.usMarch}`],
-  ["U.S. barrels lent to oil companies, March to June", `${usShare.awarded}`],
+  ["U.S. barrels awarded under exchange contracts, March to June", `${usShare.awarded}`],
   ["U.S. barrels offered again, September 29", `up to ${usShare.offer}`],
 ];
 
