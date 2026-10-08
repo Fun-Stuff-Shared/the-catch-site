@@ -103,9 +103,23 @@ The build runs the gate. Every failure is a defect on the page, fixed on the pag
 voice lint ends with a sentence-length profile; read the longest sentences and split the
 ones a reader would stall on.
 
-The page needs a published state event before it builds. Accepting the event in
-`/Volumes/4/CF/catch-state` and refreshing its views is the human's call: ask for it, do
-not run it yourself.
+The page needs a published state event before it builds, and the build fails when the
+page's `<h1>` differs from the event's label. Accepting the event in
+`/Volumes/4/CF/catch-state`, refreshing its views and renaming its label belong to whoever
+runs the story (the human, or the orchestrating session they named), never the author:
+send them the headline as soon as you have it and build after they confirm the rename.
+For the one running the story:
+
+```bash
+cd /Volumes/4/CF/news-fqs-pilot
+python3 scripts/story_accept.py accept <cand-id> --by <who> --reason "<the pick, the span>" \
+  --kind news --subject "<subject>" --period <YYYY-MM-DD> --label "<headline>" --event-id event-<subject>-<slug>
+python3 scripts/story_accept.py decline <sibling cand-id> --by <who> --reason "same cluster as <cand-id>"
+cd /Volumes/4/CF/sai
+PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
+  --op rename --event event-<subject>-<slug> --author <who> --reason "<why>" --label "<page headline>"
+PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject>-<slug>
+```
 
 ## 5. Read it cold
 
