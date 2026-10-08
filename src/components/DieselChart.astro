@@ -1,0 +1,38 @@
+---
+import { dieselChart } from '../lib/diesel-chart.mjs';
+import { formatDate } from '../lib/presentation.mjs';
+const { source: recordId, from, to, markers: given = [] } = Astro.props;
+if (!recordId || !from || !to) throw new Error('DieselChart needs source, from and to');
+const chart = dieselChart(recordId, from, to);
+const { series, peak, source } = chart;
+const markers = given.map((m) => m.peak ? { ...m, date: peak.date, label: `Record $${peak.value.toFixed(2)}`, record: source.id, passage: peak.passage } : m);
+for (const m of markers) if (!m.date || !m.label || !m.record || !m.passage) throw new Error('DieselChart marker needs date, label, record and passage');
+const W = 720, H = 300, left = 44, right = 16, top = 64, bottom = 34;
+const t = (date) => Date.parse(`${date}T00:00:00Z`);
+const t0 = t(series[0].date), t1 = t(series.at(-1).date);
+const x = (date) => left + (t(date) - t0) / (t1 - t0) * (W - left - right);
+const yMin = 3, yMax = 7;
+const y = (v) => top + (yMax - v) / (yMax - yMin) * (H - top - bottom);
+const path = series.map((p, i) => `${i ? 'L' : 'M'}${x(p.date).toFixed(1)},${y(p.value).toFixed(1)}`).join(' ');
+const dollars = (v) => `$${v.toFixed(2)}`;
+const last = series.at(-1);
+const ticks = [3, 4, 5, 6, 7];
+const months = [...new Set(series.map((p) => p.date.slice(0, 7)))];
+---
+<figure class="payroll-chart diesel-chart" data-layer="fact" id="diesel-chart">
+  <figcaption><strong>U.S. diesel at the pump</strong><span>Average weekly retail price, dollars a gallon, {formatDate(series[0].date)} to {formatDate(last.date)}</span></figcaption>
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Weekly U.S. retail diesel price, ${formatDate(series[0].date)} to ${formatDate(last.date)}. ${dollars(series[0].value)} a gallon in the first week of January; a record ${dollars(peak.value)} on ${formatDate(peak.date)}; ${dollars(last.value)} on ${formatDate(last.date)}. Marked: ${markers.map((m) => `${m.label}, ${formatDate(m.date)}`).join('; ')}.`}>
+    {ticks.map((tick) => <g><line x1={left} x2={W - right} y1={y(tick)} y2={y(tick)} class="payroll-grid" /><text x={left - 8} y={y(tick) + 4} text-anchor="end">${tick}</text></g>)}
+    {months.map((m) => <text x={x(`${m}-01` < series[0].date ? series[0].date : `${m}-01`)} y={H - 10} text-anchor="start">{formatDate(m).slice(0, 3)}</text>)}
+    {markers.map((m, i) => <g><line x1={x(m.date)} x2={x(m.date)} y1={top - 6 - (i % 2) * 22} y2={H - bottom} class="diesel-marker" /><text x={x(m.date) + (m.anchor === 'end' ? -4 : 4)} y={top - 10 - (i % 2) * 22} text-anchor={m.anchor ?? 'start'} class="diesel-marker-label">{m.label}</text></g>)}
+    <path d={path} class="diesel-line" />
+    <circle cx={x(peak.date)} cy={y(peak.value)} r="4" class="diesel-dot" />
+    <circle cx={x(last.date)} cy={y(last.value)} r="4" class="diesel-dot" />
+  </svg>
+  <p class="chart-source">{formatDate(last.date)}: <strong>{dollars(last.value)} a gallon</strong>. <a href={`/records/${source.id}/`} data-passage={last.passage}>Inspect the source data</a></p>
+  <p class="chart-vintage">U.S. Energy Information Administration weekly survey of retail prices, as published {formatDate(source.date)}. The record of {dollars(peak.value)} is the highest weekly price in the series.</p>
+  <details class="chart-values"><summary>Read the values and marked dates</summary>
+    <table><thead><tr><th scope="col">Marked date</th><th scope="col">Event</th></tr></thead><tbody>{markers.map((m) => <tr><th scope="row">{formatDate(m.date)}</th><td><a href={`/records/${m.record}/`} data-passage={m.passage}>{m.label}</a></td></tr>)}</tbody></table>
+    <table><thead><tr><th scope="col">Week of</th><th scope="col">Dollars a gallon</th></tr></thead><tbody>{series.map((p) => <tr><th scope="row">{formatDate(p.date)}</th><td><a href={`/records/${source.id}/`} data-passage={p.passage} aria-label={`Check ${formatDate(p.date)}: ${p.raw} dollars a gallon`}>{p.raw}</a></td></tr>)}</tbody></table>
+  </details>
+</figure>

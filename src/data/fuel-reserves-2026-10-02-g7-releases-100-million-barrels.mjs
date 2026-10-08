@@ -1,36 +1,17 @@
-// Prices are read as integer thousandths or cents from the pinned rows, then subtracted.
-// Diesel: data/sources/fuel-reserves/eia-diesel-price-2026-10-06.txt
-//   10/05 6.199  09/28 6.382  09/21 6.529  03/02 3.897
-// Brent: data/sources/fuel-reserves/DCOILBRENTEU-2026-10-03.csv
-//   2026-09-29,113.96  2026-02-27,71.32
-// WTI: data/sources/fuel-reserves/DCOILWTICO-2026-10-03.csv
-//   2026-09-29,96.16  2026-02-27,66.96
+// Diesel prices are read as integer thousandths from the pinned rows and written as a reader says them.
+// data/sources/fuel-reserves/eia-diesel-price-2026-10-06.txt
+//   10/05 6.199  09/21 6.529  03/02 3.897
 
 const dieselOct5 = 6199;
-const dieselSep28 = 6382;
 const dieselSep21 = 6529;
 const dieselMar2 = 3897;
-const brentSep29 = 11396;
-const brentFeb27 = 7132;
-const wtiSep29 = 9616;
-const wtiFeb27 = 6696;
 
-const thousandths = (n) => (n / 1000).toFixed(3);
-const cents = (n) => (n / 100).toFixed(2);
-const percent = (from, to) => (Math.round(((to - from) / from) * 1000) / 10).toFixed(1);
+const dollars = (n) => `$${(Math.round(n / 10) / 100).toFixed(2)}`;
 
 export const prices = {
-  dieselOct5: thousandths(dieselOct5),
-  dieselSep28: thousandths(dieselSep28),
-  dieselSep21: thousandths(dieselSep21),
-  dieselMar2: thousandths(dieselMar2),
-  dieselFromMarchPercent: percent(dieselMar2, dieselOct5),
-  brentSep29: cents(brentSep29),
-  brentFeb27: cents(brentFeb27),
-  brentFromFebruaryPercent: percent(brentFeb27, brentSep29),
-  wtiSep29: cents(wtiSep29),
-  wtiFeb27: cents(wtiFeb27),
-  wtiFromFebruaryPercent: percent(wtiFeb27, wtiSep29),
+  dieselOct5: dollars(dieselOct5),
+  dieselSep21: dollars(dieselSep21),
+  dieselMar2: dollars(dieselMar2),
 };
 
 export const release = {
@@ -104,17 +85,6 @@ export const marchTableRows = [
   ["Stocks companies are required to hold", `${marchTable.industryStocks} million`],
   ["Extra production (Canada, Mexico)", `${marchTable.production} million`],
   ["Total", `${marchTable.total} million`],
-];
-
-export const priceRows = [
-  ["U.S. retail diesel, per gallon", "Oct 5, 2026", prices.dieselOct5],
-  ["U.S. retail diesel, per gallon", "Sep 28, 2026", prices.dieselSep28],
-  ["U.S. retail diesel, per gallon", "Sep 21, 2026", prices.dieselSep21],
-  ["U.S. retail diesel, per gallon", "Mar 2, 2026", prices.dieselMar2],
-  ["Brent crude, per barrel", "Sep 29, 2026", prices.brentSep29],
-  ["Brent crude, per barrel", "Feb 27, 2026", prices.brentFeb27],
-  ["WTI crude, per barrel", "Sep 29, 2026", prices.wtiSep29],
-  ["WTI crude, per barrel", "Feb 27, 2026", prices.wtiFeb27],
 ];
 
 export const statementRows = [
