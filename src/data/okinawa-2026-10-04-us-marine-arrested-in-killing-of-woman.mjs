@@ -7,7 +7,7 @@
 export const event = {
   slug: "okinawa/2026-10-04-us-marine-arrested-in-killing-of-woman",
   title: "Japan holds a U.S. Marine in the killing of an Okinawa woman, and Okinawa says U.S. discipline measures have failed",
-  dek: "Japanese police arrested Lance Cpl. Devin Ballard off base, so Japan holds him. The U.S. ordered a pause and a curfew, and its commander on Okinawa offered condolences but no apology. Prosecutors can hold him for at most 23 days on this charge before deciding whether to indict him.",
+  dek: "Japanese police arrested Lance Cpl. Devin Ballard off base, so Japan holds him. The U.S. ordered a pause and a curfew, and its commander on Okinawa offered condolences but no apology. He can be held for at most 23 days on this suspected crime before prosecutors must decide whether to indict him.",
   name: "Marine arrested in Naha killing",
   date: "2026-10-04",
   updated: "2026-10-08",
