@@ -4,7 +4,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 
 ## The story
 
-Five sentences a stranger could repeat: what happened, to whom, why it is happening now, what is in dispute, what comes next. Written after the evidence below is assembled, rewritten whenever a finding changes it.
+Exactly five sentences a stranger could repeat, one each: what happened, to whom, why it is happening now, what is in dispute, what comes next. No caveats; qualifications go in the outline. Written after the evidence below is assembled, rewritten whenever a finding changes it.
 
 ## Outline
 

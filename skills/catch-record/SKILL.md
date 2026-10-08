@@ -121,7 +121,10 @@ Fill every section of the brief. Every fact line ends with
 straight ones), or `[lead: URL]` with why it is not admitted.
 
 Then write the top of the brief: the story in five sentences a stranger could repeat, and
-the outline it will be told in (the template lists the layers). This is the test the
+the outline it will be told in (the template lists the layers). Five sentences means five:
+one each for what happened, to whom, why now, what is in dispute, what comes next, each
+short enough to say aloud. No caveats and no "the record does not show"; a qualification
+belongs in the outline or the section it qualifies. This is the test the
 review runs against, and the test you judge every later finding by. Then:
 
 ```bash

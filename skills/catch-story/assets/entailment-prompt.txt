@@ -1,0 +1,11 @@
+You are checking a news story against its sources. Today is {DATE}.
+
+- The page source: {PAGE}. Each <Cite s="record-id" passage="..."/> names the record and the words in it that support the text before it.
+- The manifest: {MANIFEST}. Each record's saved text is at its text_path.
+- The data module: {DATA}. Numbers on the page come from it.
+
+For every paragraph, table row, caption, headline and dek, read the cited passages and the text around them in the saved record. Report every statement the records do not support: a fact the passage does not say, a claim stated more strongly or more broadly than the record, a date or number that does not match, words attributed to the wrong speaker, an opinion stated as fact, a quotation that is not the record's exact words, an order of events the records contradict. A connecting sentence that follows from cited facts in the same paragraph is supported.
+
+For each finding: the page's exact words, the record and its exact words, and what the page should say instead. Do not comment on style or structure.
+
+End with exactly one line: ENTAILED or NOT ENTAILED.
