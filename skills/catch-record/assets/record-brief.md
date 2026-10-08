@@ -1,6 +1,22 @@
 # {Event in one line}: the record
 
-Every fact line ends with its source: `[record-id: "words from the record"]` for an admitted record (`admit.py check` verifies each one), `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record.
+Every fact line ends with its source: the record id and the record's words in square brackets (straight quotes, or curly quotes when the words hold straight ones; `admit.py check` verifies each one), or `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record.
+
+## The story
+
+Exactly five sentences a stranger could repeat, one each: what happened, to whom, why it is happening now, what is in dispute, what comes next. No caveats; qualifications go in the outline. Written after the evidence below is assembled, rewritten whenever a finding changes it.
+
+## Outline
+
+The order the story will be told in, each layer complete enough to stop after:
+1. The news: what happened and why it matters.
+2. The story in order: the people it happened to, step by step.
+3. Why now: the dated chain that led here, with each actor's stated reasons.
+4. The sides, each in its own terms, and what they agree on.
+5. The catch: where coverage or a common reading goes wrong.
+6. What this will and will not settle; what is next.
+7. Dig deeper: the documents.
+8. Background held: verified material the record keeps but the story does not need.
 
 ## The event
 

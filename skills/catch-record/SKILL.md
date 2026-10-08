@@ -99,8 +99,16 @@ A lead you cannot reach goes to the human as a link list and into "Leads not adm
 Write specs (the format is in `scripts/admit.py`'s usage) and admit:
 
 ```bash
-python3 -I skills/catch-record/scripts/admit.py admit <story> <specs.json> [--posts <dir of bird texts>]
+python3 -I skills/catch-record/scripts/admit.py admit <story> <specs.json>
 ```
+
+Every spec in the file is validated before anything is written, so a bad spec admits
+nothing; fix it and run the file again. Give each spec the article's full url: a partial
+url that matches more than one article in the run is refused. A source capture cannot
+fetch is admitted from local files: a post read with `bird` or fxtwitter (save the text),
+an image attached to a post (save the image and OCR it with the mistral-ocr skill; the
+image is pinned and the OCR is its text). The spec's date is the date printed on the
+source, checked against it, not remembered.
 
 Each record gets a byte-exact quote and the passages for every fact the brief takes from
 it. Use the primary record's id in the brief wherever one exists; coverage is admitted for
@@ -109,7 +117,15 @@ what the outlet said, not for what happened.
 ### 8. Finish the brief and check it
 
 Fill every section of the brief. Every fact line ends with
-`[record-id: "words from the record"]`, or `[lead: URL]` with why it is not admitted. Then:
+`[record-id: "words from the record"]` (curly quotes around the words when they hold
+straight ones), or `[lead: URL]` with why it is not admitted.
+
+Then write the top of the brief: the story in five sentences a stranger could repeat, and
+the outline it will be told in (the template lists the layers). Five sentences means five:
+one each for what happened, to whom, why now, what is in dispute, what comes next, each
+short enough to say aloud. No caveats and no "the record does not show"; a qualification
+belongs in the outline or the section it qualifies. This is the test the
+review runs against, and the test you judge every later finding by. Then:
 
 ```bash
 python3 -I skills/catch-record/scripts/admit.py check <story>
@@ -125,15 +141,26 @@ Fix every failure. Commit the brief, manifest, pins and grok output by path with
 zsh skills/catch-record/scripts/review.sh <story> <N>      # N = 1, 2, ...
 ```
 
-GPT high reads the brief and manifest and reports only what is missing, what is missing
-from the lineage of why this is happening, and what has weak provenance, ending `RECORD COMPLETE` or `RECORD INCOMPLETE`. Show the human each round's
-verdict. Then verify every finding at its source before acting on it. Reviewers are
-right about what is missing more often than about the exact fact: a finding's number,
-date or wording is checked against the primary record like any lead. For each finding:
-admit the record and add the fact, correct the brief, or refute it with the record that
-refutes it and note it under "Leads not admitted". Check, commit, and run the next round.
-Stop when the reviewer returns `RECORD COMPLETE`, or when every remaining finding is a
-judgment call you hand to the human with your recommendation.
+GPT high reads the five sentences, the outline and the evidence and answers one question,
+is this the full story: what is missing, what is missing from the lineage of why this is
+happening, and what has weak provenance, ending `RECORD COMPLETE` or `RECORD INCOMPLETE`.
+It retries a run that ends without a verdict (the ChatGPT stream drops) up to three times.
+Show the human each round's verdict.
+
+Then judge every finding as the author. A reviewer asked what is missing always finds
+something, so the record grows without end unless you decide what the story needs:
+1. Verify it at its source. Reviewers are right about what is missing more often than
+   about the exact fact; a finding's number, date or wording is checked like any lead.
+2. Decide what it does. A finding that changes the five sentences or the outline goes in,
+   and the sentences or outline change with it. A finding that deepens a section without
+   changing what a reader takes from it goes under "Background held", admitted if it is a
+   record. A finding that is not this story, or is wrong, is declined with the reason
+   under "Leads not admitted".
+3. Check, commit, and run the next round.
+
+Stop when a round returns `RECORD COMPLETE`, or when no verified finding in a round
+changes the five sentences or the outline. Hand any finding you cannot decide to the human
+with your recommendation.
 
 ### 10. Report
 
@@ -148,6 +175,7 @@ the links you could not reach for them to verify. Give the commit.
 - A number without what it counts and as of when is not a fact yet.
 - Every motive is somebody's claim. Attribute it.
 - The search is not done at the first plausible answer. Ask whether it is a downstream effect of something earlier, and look.
+- When the main actor publishes nothing (police that release no statement, an agency that posts no document), the record reaches it only through outlets. Cite the outlets that attribute to it, say so in the brief, and name where you looked for the actor's own record.
 - A reassuring "nothing else happened" gets a search that could disprove it: the docket, the agency's newsroom, the official's feed, dated after the newest source.
 
 ## Gotchas
@@ -159,3 +187,4 @@ the links you could not reach for them to verify. Give the commit.
 - Supreme Court records: the docket page (`supremecourt.gov/docket/docketfiles/html/public/<no>.html`), the question presented (`supremecourt.gov/qp/<no>qp.pdf`), the order list for the day.
 - In zsh, `$var:x` is a modifier (write `${var}:x`), and `echo =====` is an expansion error.
 - grok `-p` is one turn; give it the whole event in the prompt.
+- `bird` answers "Tweet not found" for some posts that exist; `https://api.fxtwitter.com/<user>/status/<id>` reads them.
