@@ -16,6 +16,7 @@ done
 (( ${#stories} )) || { print "name at least one story id" >&2; exit 2 }
 git() { command git -c core.hooksPath=/dev/null "$@" }
 generated=(data/state src/data/news-records.json data/sources/news-state)
+for b in $merges; do git -C $site rev-parse -q --verify "$b^{commit}" >/dev/null || { print "no branch $b" >&2; exit 2 }; done
 
 wt=$site/.worktrees/publish-$(date +%Y%m%d-%H%M%S)
 git -C $site worktree add -q $wt -b ${wt:t} main
@@ -23,7 +24,7 @@ ln -s $site/node_modules $wt/node_modules
 cd $wt
 for b in $merges; do
   git merge -q --no-ff -m "Merge branch '$b'" $b || {
-    git merge --abort; cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}
+    git merge --abort || true; cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}
     print "merge of $b conflicts with main or an earlier --merge branch; merge main into $b, resolve it there, and run publish.sh again" >&2; exit 1 }
 done
 
