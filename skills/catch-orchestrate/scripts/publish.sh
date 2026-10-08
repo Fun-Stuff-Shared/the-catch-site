@@ -90,17 +90,19 @@ for s in $stories; do
 import html, re, sys, time, urllib.request
 h1 = lambda t: html.unescape(re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S).group(1))).strip()
 want, url = h1(open(sys.argv[1], encoding="utf-8").read()), sys.argv[2]
+seen = "no response"
 for _ in range(60):
     try:
-        with urllib.request.urlopen(url, timeout=30) as r:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "catch-publish"}), timeout=30) as r:
             body = r.read().decode("utf-8")
-        if r.status == 200 and h1(body) == want:
+        if h1(body) == want:
             print(f"live: {url} (em dashes: {body.count(chr(0x2014))})")
             sys.exit(0)
-    except Exception:
-        pass
+        seen = f"headline still {h1(body)!r}"
+    except Exception as e:
+        seen = repr(e)
     time.sleep(10)
-sys.exit(f"NOT LIVE after 10 minutes: {url}; read the hosted build log")
+sys.exit(f"NOT LIVE after 10 minutes: {url}; last seen: {seen}")
 EOF
 done
 node scripts/live-audit.mjs $live
