@@ -140,7 +140,9 @@ first checked against the record's own words, because the reviewer misreads reco
 places); a finding the record refutes is answered with the record and left out. A finding
 that holds is fixed at the record: the sentence says what the record says, or the record that says it is
 admitted with catch-record. Build, lint and read again until the retelling matches and the
-check returns `ENTAILED`.
+check returns `ENTAILED`, or until a round's verified findings are only wording that does
+not change what a reader takes away: list those in the report and go to step 6. The
+reviewer always finds something; the human's read is the last check, not a perfect round.
 
 ## 6. Show the human, in the story viewer
 
