@@ -78,7 +78,8 @@ new page into main at once and tell the other authors to merge main.
 
 Each round of cold reads, verify the verdicts the author reports against the pins before
 you accept them; the entailment reviewer misreads records too. Stop the rounds when a round
-finds only wording that changes nothing for a reader. Then read the served page top to
+finds only wording that changes nothing for a reader. A NOT ENTAILED round with a factual
+finding is never the last: fix it and run another. Then read the served page top to
 bottom yourself, in the story view, as the editor: where the thread breaks, what is said
 three times, what a reader will ask that the records answer. Before you or the author tell
 anyone "the records don't say", search every admitted record's text for it. Send the notes
@@ -108,7 +109,11 @@ you check:
 
 ## 5. Publish
 
-The human decides what goes live. On their word:
+The human decides what goes live. Before you ask for their word, give them each story's open
+gaps, in plain words: everything the author listed as left, every stall in the last retell
+the page does not answer, and the last entailment verdict. A story with a content gap
+publishes only after the human has seen that gap and said to publish anyway. "Push once
+done" is not that. Then, on their word:
 
 ```bash
 zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <other branch>]... <story-id>...
@@ -127,6 +132,19 @@ runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry
 stories' unpushed commits: list them for the human before the first push of the day.
 
 Then open the live page in the story view and look at it, at 100 percent.
+
+## Revising a published story
+
+A published story that needs more than wording (a missing why, numbers a reader cannot
+reconcile, a claim the page leaves unresolved) goes back through both stages, not a voice
+pass. Cut `.worktrees/<subject>-revision` from main on `author/<subject>-revision`, write a
+kickoff from `assets/kickoff.md` that names the gaps with the retell's own words, and launch
+the author as in step 1. The author tops up the record (catch-record steps 3 to 9 for what is
+missing), sends you the revised five sentences and outline, and revises the page under
+catch-story. The headline stays unless the human changes it; a new headline is renamed as in
+step 3. Supervise it like a new story, including your own read before publishing. A voice
+pass is only for pages whose content is already complete: it may not add a fact, so it
+cannot close a content gap.
 
 ## 6. Close
 
