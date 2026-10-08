@@ -66,12 +66,12 @@ export const next = {
 };
 
 export const ledgerRows = [
-  ["Pledged by the agency's 32 members, March 11", `${release.marchTotal} barrels`],
-  ["Released by October 2, the agency's count", `about ${marchSoFar.released} barrels`],
-  ["Pledged and not yet released, the agency's count of October 7", `about ${marchSoFar.unreleased} barrels`],
-  ["U.S. share of the March pledge", `${release.usMarch} barrels`],
-  ["U.S. exchange awards, March 20 to June 22", `${usShare.awarded} barrels`],
-  ["U.S. offer of September 29", `up to ${usShare.offer} barrels`],
+  ["Pledged by the agency's 32 members, March 11", `${release.marchTotal}`],
+  ["Released by October 2", `about ${marchSoFar.released}`],
+  ["Still owed by the countries that fell short, October 7", `about ${marchSoFar.unreleased}`],
+  ["U.S. share of the pledge", `${release.usMarch}`],
+  ["U.S. barrels lent to oil companies, March to June", `${usShare.awarded}`],
+  ["U.S. barrels offered again, September 29", `up to ${usShare.offer}`],
 ];
 
 export const event = {
