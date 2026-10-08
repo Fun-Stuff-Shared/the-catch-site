@@ -2,8 +2,8 @@ import { computed } from "../immigration-detention-2026-10-01-supreme-court-take
 
 export const subject = {
   title: "Immigration detention",
-  dek: "The Court's October 1 order takes the case and decides nothing yet. Since July 2025 the government has said people arrested inside the country who had entered without inspection must be held, and the appeals courts have split.",
+  dek: "For three decades immigrants who entered without inspection could ask for release on bond. In July 2025 the Trump administration said the law forbids it, nine federal appeals courts have said it does not, and on October 1 the Supreme Court took the case.",
   current: [
-    { label: "Days, decision to grant", value: String(computed.daysOpinionToGrant), unit: "days", as_of: "2026-10-01", record_id: "scotus-order-list-2026-10-01", source_value: String(computed.daysOpinionToGrant), source_unit: "days", source_sentence: "THURSDAY, OCTOBER 1, 2026" },
+    { label: "Days Barbosa da Cunha spent in custody", value: String(computed.daysDetained), unit: "days", as_of: "2025-10-29", record_id: "doj-petition-26-104", source_value: String(computed.daysDetained), source_unit: "days", source_sentence: "Petitioner’s counsel has confirmed that Petitioner was released on bond as of October 29, 2025." },
   ],
 };
