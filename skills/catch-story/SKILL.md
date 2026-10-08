@@ -135,7 +135,10 @@ or `NOT ENTAILED`.
 Compare the retelling with the brief's five sentences. Where they differ, the page failed
 to carry that sentence: fix the paragraph that should have carried it. Every stall the
 reader quotes is fixed in the sentence or the sentence is cut. Every entailment finding is
-fixed at the record: the sentence says what the record says, or the record that says it is
+first checked against the record's own words, because the reviewer misreads records too
+(it once narrowed a treaty clause the page had right, and the author applied it in three
+places); a finding the record refutes is answered with the record and left out. A finding
+that holds is fixed at the record: the sentence says what the record says, or the record that says it is
 admitted with catch-record. Build, lint and read again until the retelling matches and the
 check returns `ENTAILED`.
 
