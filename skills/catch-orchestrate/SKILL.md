@@ -72,7 +72,7 @@ A rename breaks the build of every other worktree that still holds the old page 
 event (`Rendered story label differs`). For a story not yet on main that is only its own
 worktree. For a story already on main (a revision), every other worktree's local build fails
 on it until the revised page is published; tell the other authors to build against the
-committed state meanwhile (`CATCH_STATE_SOURCE=/nonexistent npm run build`), and publish the
+committed state meanwhile (`git checkout -- data/state && CATCH_STATE_SOURCE=/nonexistent npm run build`), and publish the
 revision promptly.
 
 Each round of cold reads, verify the verdicts the author reports against the pins before
