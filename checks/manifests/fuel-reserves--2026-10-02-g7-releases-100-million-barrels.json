@@ -5,7 +5,7 @@
   "story_title": "The G7's 100 million barrels of emergency oil were already promised in March",
   "state_event_id": "event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels",
   "event_record": "/events/fuel-reserves/",
-  "completed_by": "grok, skill catch-record; revised 2026-10-08 under catch-record and catch-story (fuel-revision-21)",
+  "completed_by": "fuel-rewrite (Claude), rewritten 2026-10-08 from the plan under catch-record and catch-story",
   "date_completed": "2026-10-08",
   "coverage_threshold": 2,
   "sub_events": [
@@ -13,7 +13,7 @@
       "id": "march-agreement-2026-03-11",
       "date": "2026-03-11",
       "label": "March agreement of up to 400 million barrels",
-      "section_anchor": "whose-barrels",
+      "section_anchor": "diesel",
       "records": [
         "elysee-g7-communique-2026-03-11",
         "doe-spr-release-2026-03-11",
@@ -25,7 +25,7 @@
       "id": "us-exchange-awards-2026-06-22",
       "date": "2026-06-22",
       "label": "U.S. exchange awards, March to June",
-      "section_anchor": "whose-barrels",
+      "section_anchor": "diesel",
       "records": [
         "doe-spr-award-2026-03-20",
         "doe-spr-award-2026-04-10",
@@ -37,20 +37,10 @@
       ]
     },
     {
-      "id": "export-bills-2026-09-16",
-      "date": "2026-09-16",
-      "label": "Two diesel export bills introduced",
-      "section_anchor": "the-sides",
-      "records": [
-        "hr10422-diesel-export-2026-09-16",
-        "hr10423-diesel-export-2026-09-16"
-      ]
-    },
-    {
       "id": "macron-g7-call-2026-09-18",
       "date": "2026-09-18",
-      "label": "Macron says France will convene the G7 on stocks",
-      "section_anchor": "the-sides",
+      "label": "Macron says he will convene the G7 on oil stocks",
+      "section_anchor": "washington",
       "records": [
         "elysee-macron-2026-09-18"
       ]
@@ -59,7 +49,7 @@
       "id": "exchange-2026-09-29",
       "date": "2026-09-29",
       "label": "Exchange of up to 40 million barrels",
-      "section_anchor": "whose-barrels",
+      "section_anchor": "diesel",
       "records": [
         "doe-spr-exchange-2026-09-29",
         "cnbc-export-ban-2026-09-30"
@@ -109,30 +99,17 @@
     {
       "id": "prices-2026-10-03",
       "date": "2026-10-03",
-      "label": "Diesel and crude prices",
-      "section_anchor": "why-diesel",
+      "label": "U.S. retail diesel prices",
+      "section_anchor": "diesel",
       "records": [
-        "gasdesw-2026-10-03",
-        "dcoilbrenteu-2026-10-03",
-        "dcoilwtico-2026-10-03",
         "eia-diesel-price-2026-10-06"
-      ]
-    },
-    {
-      "id": "tax-order-2026-10-05",
-      "date": "2026-10-05",
-      "label": "Order on dyed diesel and excise tax",
-      "section_anchor": "next",
-      "records": [
-        "whitehouse-diesel-tax-order-2026-10-05",
-        "whitehouse-diesel-fact-sheet-2026-10-05"
       ]
     },
     {
       "id": "iea-members-2026-10-07",
       "date": "2026-10-07",
       "label": "Agency members back finishing the March release, diesel first",
-      "section_anchor": "what-happened",
+      "section_anchor": "next",
       "records": [
         "iea-member-meeting-2026-10-07",
         "reuters-eu-march-volumes-2026-10-07",
@@ -141,17 +118,6 @@
         "euronews-eu-document-2026-10-08",
         "reuters-iea-board-2026-10-06",
         "reuters-oil-settle-2026-10-07"
-      ]
-    },
-    {
-      "id": "france-diesel-2026-10-07",
-      "date": "2026-10-07",
-      "label": "France releases 10 million barrels of diesel",
-      "section_anchor": "next",
-      "records": [
-        "france-finance-diesel-2026-10-07",
-        "reuters-france-10m-2026-10-07",
-        "reuters-italy-2026-10-08"
       ]
     },
     {
@@ -2218,39 +2184,6 @@
       }
     },
     {
-      "figure": "diesel_sep28",
-      "label": "U.S. retail diesel, week of September 28",
-      "value": "6.382",
-      "unit": "dollars per gallon",
-      "kind": "sourced",
-      "source": {
-        "source_id": "eia-diesel-price-2026-10-06",
-        "quote_span": "09/28 6.382"
-      }
-    },
-    {
-      "figure": "brent_sep29",
-      "label": "Brent, September 29",
-      "value": "113.96",
-      "unit": "dollars per barrel",
-      "kind": "sourced",
-      "source": {
-        "source_id": "dcoilbrenteu-2026-10-03",
-        "quote_span": "2026-09-29,113.96"
-      }
-    },
-    {
-      "figure": "wti_sep29",
-      "label": "WTI, September 29",
-      "value": "96.16",
-      "unit": "dollars per barrel",
-      "kind": "sourced",
-      "source": {
-        "source_id": "dcoilwtico-2026-10-03",
-        "quote_span": "2026-09-29,96.16"
-      }
-    },
-    {
       "figure": "diesel_oct5",
       "label": "U.S. retail diesel, week of October 5",
       "value": "6.199",
@@ -2273,14 +2206,14 @@
       }
     },
     {
-      "figure": "diesel_mar2",
-      "label": "U.S. retail diesel, week of March 2",
-      "value": "3.897",
+      "figure": "diesel_feb23",
+      "label": "U.S. retail diesel, week of February 23, before the war",
+      "value": "3.809",
       "unit": "dollars per gallon",
       "kind": "sourced",
       "source": {
         "source_id": "eia-diesel-price-2026-10-06",
-        "quote_span": "2026-Mar 03/02 3.897"
+        "quote_span": "02/23 3.809"
       }
     },
     {
@@ -2303,50 +2236,6 @@
       "source": {
         "source_id": "iea-member-meeting-2026-10-07",
         "quote_span": "would bring approximately 100 million barrels to the market"
-      }
-    },
-    {
-      "figure": "march_schedule",
-      "label": "March country schedule, total",
-      "value": "426.0",
-      "unit": "million barrels",
-      "kind": "sourced",
-      "source": {
-        "source_id": "iea-contributions-table-2026-03-19",
-        "quote_span": ",Total IEA,426.0307508005477"
-      }
-    },
-    {
-      "figure": "spr_mar20",
-      "label": "Crude in the U.S. reserve, March 20",
-      "value": "415.442",
-      "unit": "million barrels",
-      "kind": "sourced",
-      "source": {
-        "source_id": "eia-spr-stocks-2026-10-07",
-        "quote_span": "03/20 415,442"
-      }
-    },
-    {
-      "figure": "spr_oct2",
-      "label": "Crude in the U.S. reserve, October 2",
-      "value": "282.983",
-      "unit": "million barrels",
-      "kind": "sourced",
-      "source": {
-        "source_id": "eia-spr-stocks-2026-10-07",
-        "quote_span": "2026-Oct 10/02 282,983"
-      }
-    },
-    {
-      "figure": "france_diesel",
-      "label": "France's diesel release to French distributors",
-      "value": "10",
-      "unit": "million barrels",
-      "kind": "sourced",
-      "source": {
-        "source_id": "france-finance-diesel-2026-10-07",
-        "quote_span": "la mise sur le marché de 10 millions de barils de diesel"
       }
     }
   ],
@@ -2428,35 +2317,35 @@
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "Revision of 2026-10-08 admitted 30 more records: the five U.S. exchange awards and the June offer, the reserve's weekly stock, the agency's country table and its September 18 commentary and October 7 statement, Macron's September 18 remarks, France's October 7 release, and coverage through October 8; admit.py check passes on every pin, hash and quote."
+      "evidence": "No new records: the page draws on the 80 admitted records, and admit.py check passes on every pin, hash, quote and brief citation."
     },
     "derived_numbers_computed": {
       "done": true,
-      "evidence": "The data module sums the five U.S. awards (133.5 million) and subtracts it from 172 million, subtracts the reserve's October 2 stock from March 20 (132.5 million), and computes the diesel, Brent and WTI changes from the pinned rows."
+      "evidence": "The data module computes the U.S. awards (133.5 million of 172 million), the 75 million left on paper (400 minus 325), Germany's share released (600,000 of 2.65 million tonnes, less than a quarter), and the diesel prices from the pinned EIA rows."
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "The White House's refined-diesel claim, Wright's majority-diesel post and the en-route post are set against the G7 text, the French readout and the Rollins captions; the threat is set out as three Reuters sources against Trump's and Macron's words."
+      "evidence": "The White House's \"100 million barrels of refined diesel\" is set against the G7 text, which gives no split and ties the release to the March commitments, and against the agency's count of about 100 million barrels pledged and not released; the export-ban threat is given as three Reuters sources against Macron's and Trump's words."
     },
     "section_grammar": {
       "done": true,
-      "evidence": "The page walks What happened, Whose barrels, Why diesel is short, Washington and Europe, The catch, What happens next, and the records list."
+      "evidence": "The page walks What happened, Diesel since the war (with the diesel chart), Washington's push, The sides, The catch, What happens next, and the records list."
     },
     "chip_vocabulary": {
       "done": true,
-      "evidence": "Detail blocks use SourcedBlock kind record, computed or checked. No other chip label is introduced."
+      "evidence": "The one detail block uses SourcedBlock kind computed. No other chip label is introduced."
     },
     "live_elements_guarded": {
       "done": true,
-      "evidence": "The page has no live counter. Prices are the pinned EIA weekly diesel series released October 6 and the FRED crude series dated October 3."
+      "evidence": "The page has no live counter. Prices are the pinned EIA weekly diesel series published October 6, read and hash-checked by the chart module."
     },
     "subject_page_updated": {
       "done": true,
-      "evidence": "The fuel reserves subject page dek now gives the March pledge and the agency's count of what is left, and links to the story under its new headline."
+      "evidence": "The fuel reserves subject page dek now says the G7 release carries out the unreleased part of the March pledge, adds the agency's 100 million unreleased figure, and links the story under its new headline."
     },
     "homepage_updated": {
       "done": true,
-      "evidence": "Discovery's fuel reserves series description is rewritten for the revision, and the event's homepage timeline runs from the March pledge to the October 7 meeting."
+      "evidence": "Discovery's fuel reserves description is rewritten for the new page, and the event's homepage timeline runs from the March pledge to the October 7 meeting."
     }
   }
 }
