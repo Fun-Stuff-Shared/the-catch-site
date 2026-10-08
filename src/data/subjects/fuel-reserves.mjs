@@ -1,6 +1,6 @@
 export const subject = {
   title: "Fuel reserves",
-  dek: "The statement promises a substantial diesel release in the first 20 days and gives no number for it. France's readout says up to 100 million barrels of diesel and crude.",
+  dek: "In March, 32 countries pledged 400 million barrels of emergency oil. The G7's October release of 100 million barrels is, by the energy agency's count, about what was pledged and not yet released.",
   current: [
     {
       label: "October 2 coordinated release",
