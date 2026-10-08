@@ -62,19 +62,18 @@ anything that moved. Then give the word to write.
 
 ## 3. Stage two: the page
 
-The author sends its headline before its first build. Rename the label to match, exactly,
-and tell it to build. Do the same for every later headline change:
-
-```bash
-cd /Volumes/4/CF/sai
-PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
-  --op rename --event event-<subject>-<slug> --author <who> --reason "<why>" --label "<exact h1>"
-PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event event-<subject>-<slug>
-```
+The author owns the headline: it renames its own event's label when it sets or changes the
+headline (`catch-story` section 4) and tells you. Read each one as the editor would: a
+headline a reader would click, every word on the record. Send back one that is a sentence
+from the brief, hedged, or carries an attribution tail, with the problem, not a rewrite.
+When the human picks a headline, send it to the author to apply.
 
 A rename breaks the build of every other worktree that still holds the old page for that
-event (`Rendered story label differs`). When you rename a story already on main, merge the
-new page into main at once and tell the other authors to merge main.
+event (`Rendered story label differs`). For a story not yet on main that is only its own
+worktree. For a story already on main (a revision), every other worktree's local build fails
+on it until the revised page is published; tell the other authors to build against the
+committed state meanwhile (`CATCH_STATE_SOURCE=/nonexistent npm run build`), and publish the
+revision promptly.
 
 Each round of cold reads, verify the verdicts the author reports against the pins before
 you accept them; the entailment reviewer misreads records too. Stop the rounds when a round

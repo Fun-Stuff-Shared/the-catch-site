@@ -6,12 +6,12 @@ The event: {EVENT}
 - {FOLLOWS}
 - Held coverage to start from: `capture search "{SEARCH}" --since {SINCE} --compact`.
 
-The worktree is {WORKTREE} on branch {BRANCH}. Read from /Volumes/4/CF/catch-state; never write to it. Do not push. Commit by path; git's post-commit hook can hang on git lfs, so commit with `git -c core.hooksPath=/dev/null commit ...`.
+The worktree is {WORKTREE} on branch {BRANCH}. Read from /Volumes/4/CF/catch-state; the only write you make there is renaming your own event's label to your headline (`skills/catch-story/SKILL.md` section 4). Do not push. Commit by path; git's post-commit hook can hang on git lfs, so commit with `git -c core.hooksPath=/dev/null commit ...`.
 
 The orchestrator is the Claude session named {ORCHESTRATOR} in ListAgents; message it with SendMessage (by whatever name it has in ListAgents if that one is gone). Send it:
 - each record review's verdict;
 - the five sentences and outline when stage one is done, and wait for its word before writing the page;
-- the headline before your first build, and every time it changes (it renames the event label, and the build fails until the label matches);
+- the headline and why, each time you set or change it, after you rename the label to match;
 - each round of cold reads;
 - the served page URL when the reads stop.
 Show the human the same things in this window.

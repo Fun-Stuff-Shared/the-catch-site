@@ -59,6 +59,14 @@ between courts, a docket number, which judge said what, a table of which court r
 way) goes in a one-click detail (`<SourcedBlock ... detail>`) under the paragraph it
 qualifies, or in Just the facts. Cite it there.
 
+The headline is a news headline a reader would click, not the story's claim written out:
+the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
+with no attribution tail ("…, officials say") and no hedge. Every word holds on the record.
+"G7's 100 million-barrel oil release comes from oil already promised in March" is one;
+"G7 will release 100 million barrels over four months and does not say how much is beyond
+its March commitments" is a sentence from the brief. The headline is yours: change it when
+new records change what the story is, and rename the label to match (section 4).
+
 ## 3. Write like a reporter
 
 The unit is the paragraph. Each paragraph says one thing in the story and carries the
@@ -104,9 +112,19 @@ voice lint ends with a sentence-length profile; read the longest sentences and s
 ones a reader would stall on.
 
 The page needs a published state event before it builds, and the build fails when the
-page's `<h1>` differs from the event's label. Accepting the event, renaming its label and
-staging it belong to the orchestrator (`catch-orchestrate`), never the author: send it the
-headline as soon as you have it and build after it confirms the rename. Before you report
+page's `<h1>` differs from the event's label. The orchestrator accepts the event and stages
+it (`catch-orchestrate`); the label is yours. Each time you set or change the headline,
+rename your own event's label to it, exactly, then build:
+
+```bash
+cd /Volumes/4/CF/sai
+PYTHONPATH=src .venv/bin/python -m sai.cli state event-op --state-dir /Volumes/4/CF/catch-state \
+  --op rename --event <your event id> --author <your session name> --reason "<what changed>" --label "<exact h1>"
+PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --state-dir /Volumes/4/CF/catch-state --event <your event id>
+```
+
+This is the one write to catch-state an author makes, and only for its own event. Send the
+orchestrator the new headline and why in the same turn; it or the human may send it back. Before you report
 the page done, fill the manifest's `completed_by`, `steps`, `figures` and `sub_events` and
 update the subject page, as `catch-orchestrate` section 4 lists; the orchestrator will not
 publish without them.
