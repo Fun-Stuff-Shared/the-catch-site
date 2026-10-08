@@ -6,8 +6,8 @@
   "story_title": "The Supreme Court agreed to decide whether people already in the country who were never admitted must be held without a bond hearing",
   "state_event_id": "event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings",
   "event_record": "/events/immigration-detention/",
-  "completed_by": "grok, skill catch-record",
-  "date_completed": "2026-10-03",
+  "completed_by": "claude (detention-exp session), rewritten as one story by hand; skills catch-record and catch-story were drafted from this run",
+  "date_completed": "2026-10-08",
   "sub_events": [
     {
       "id": "grant-2026-10-01",
@@ -30,7 +30,7 @@
       "id": "appeals-2026-04-28",
       "date": "2026-04-28",
       "label": "The Second Circuit affirms a bond hearing or release",
-      "section_anchor": "where-this-sits",
+      "section_anchor": "his-case",
       "records": [
         "ca2-cunha-opinion-2026-04-28",
         "ca2-cunha-rehearing-2026-09-25",
@@ -42,7 +42,7 @@
       "id": "policy-2025",
       "date": "2025-07-08",
       "label": "The detention position the opinion and the agencies record",
-      "section_anchor": "where-this-sits",
+      "section_anchor": "what-changed",
       "records": [
         "bia-yajure-hurtado-2025-09-05",
         "cbp-detention-memo-2025-07-10",
@@ -1289,6 +1289,28 @@
         "source_id": "ca2-cunha-opinion-2026-04-28",
         "quote_span": "Executive Branch practice over thirty years"
       }
+    },
+    {
+      "figure": "days_detained",
+      "label": "Days Barbosa da Cunha spent in custody",
+      "value": "33",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "doj-petition-26-104",
+          "value": "2025-10-29",
+          "unit": "date",
+          "quote_span": "Petitioner’s counsel has confirmed that Petitioner was released on bond as of October 29, 2025."
+        },
+        {
+          "source_id": "ca2-cunha-opinion-2026-04-28",
+          "value": "2025-09-26",
+          "unit": "date",
+          "quote_span": "On September 26, 2025, officers from U.S. Immigration and Customs Enforcement (“ICE”) arrested Petitioner while he was driving to work in Norwood, Massachusetts"
+        }
+      ]
     }
   ],
   "needs_ledger": [
@@ -1326,35 +1348,35 @@
   "steps": {
     "sources_admitted": {
       "done": true,
-      "evidence": "Twenty records. The story turn added the 1997 Federal Register rule, the September 10 Fourth Circuit opinion, the Justice Department petition, the complete rehearing file, and the Lopez-Campos and Buenrostro-Mendez dockets saved October 3. The response and reply remain unlinked. No series separates this detention reading from all detainees."
+      "evidence": "Every record the page cites is pinned under data/sources/immigration-detention and data/sources/coverage, with its text sibling and hash; the Laken Riley coverage, the USCIS asylum page and the Fifth Circuit due-process passage in the petition were added in the rewrite."
     },
     "derived_numbers_computed": {
       "done": true,
-      "evidence": "The data module counts 156 days from the April 28 decision to the October 1 grant, 450 from July 8, 448 from July 10, 391 from September 5, and 70 from the July 23 petition, each from dates printed on the pins. The bond-practice figure is 30 years, the number the April 28 opinion spells as thirty."
+      "evidence": "The data module computes two numbers from pinned dates: 33 days in custody (arrest September 26, 2025, release October 29, 2025) and 21 months from the arrest to his June 28, 2027 court date."
     },
     "outlet_claims_verified": {
       "done": true,
-      "evidence": "The Associated Press and The Hill match the October 1 grant. The CBS tens-of-thousands count is not in the order, docket, opinion, Board decision, or Customs memorandum."
+      "evidence": "The catch checks four coverage claims against the records: CBS tens of thousands and Reuters millions against what each counts, Reichlin-Melnick on criminal records against the Second Circuit carve-out, and the Guardian on ports of entry against the opinion line."
     },
     "section_grammar": {
       "done": true,
-      "evidence": "Sections follow the reader model: What happened, The catch, Where this sits, What we do not know yet, The records. The chronology is a figure inside Where this sits. What happened next and Who feels it are omitted, as the reader model omitted them."
+      "evidence": "What happened, one man's case, what changed, the fight over two phrases (the two readings side by side), the catch, what happens next, and the records; detail blocks carry court names, the circuit table and judges' quotes."
     },
     "chip_vocabulary": {
       "done": true,
-      "evidence": "Every SourcedBlock is kind record. No other chip label is introduced."
+      "evidence": "SourcedBlock kinds used are record, official and checked only."
     },
     "live_elements_guarded": {
       "done": true,
-      "evidence": "The page has no live element. The docket, the argument list, and the Customs notice are fixed saved copies."
+      "evidence": "The page has no live element; dockets and statements are fixed saved copies dated in the records list."
     },
     "subject_page_updated": {
       "done": true,
-      "evidence": "The subject dek matches the story dek: the October 1 order takes the case and decides nothing yet, the thirty-year bond practice, and the split since July 2025."
+      "evidence": "The immigration-detention subject page lists this story through the discovery map; its dek matches the story's."
     },
     "homepage_updated": {
       "done": true,
-      "evidence": "Discovery's series description matches the story dek. The homepage card title remains the published state label and was not edited."
+      "evidence": "The homepage features the story through the discovery editorial map; the card title is the state label, renamed to the page headline."
     }
   }
 }
