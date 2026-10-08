@@ -103,9 +103,13 @@ The build runs the gate. Every failure is a defect on the page, fixed on the pag
 voice lint ends with a sentence-length profile; read the longest sentences and split the
 ones a reader would stall on.
 
-The page needs a published state event before it builds. Accepting the event in
-`/Volumes/4/CF/catch-state` and refreshing its views is the human's call: ask for it, do
-not run it yourself.
+The page needs a published state event before it builds, and the build fails when the
+page's `<h1>` differs from the event's label. Accepting the event, renaming its label and
+staging it belong to the orchestrator (`catch-orchestrate`), never the author: send it the
+headline as soon as you have it and build after it confirms the rename. Before you report
+the page done, fill the manifest's `completed_by`, `steps`, `figures` and `sub_events` and
+update the subject page, as `catch-orchestrate` section 4 lists; the orchestrator will not
+publish without them.
 
 ## 5. Read it cold
 
@@ -121,9 +125,14 @@ or `NOT ENTAILED`.
 Compare the retelling with the brief's five sentences. Where they differ, the page failed
 to carry that sentence: fix the paragraph that should have carried it. Every stall the
 reader quotes is fixed in the sentence or the sentence is cut. Every entailment finding is
-fixed at the record: the sentence says what the record says, or the record that says it is
+first checked against the record's own words, because the reviewer misreads records too
+(it once narrowed a treaty clause the page had right, and the author applied it in three
+places); a finding the record refutes is answered with the record and left out. A finding
+that holds is fixed at the record: the sentence says what the record says, or the record that says it is
 admitted with catch-record. Build, lint and read again until the retelling matches and the
-check returns `ENTAILED`.
+check returns `ENTAILED`, or until a round's verified findings are only wording that does
+not change what a reader takes away: list those in the report and go to step 6. The
+reviewer always finds something; the human's read is the last check, not a perfect round.
 
 ## 6. Show the human, in the story viewer
 

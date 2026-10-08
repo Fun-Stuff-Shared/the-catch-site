@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Every quoted span on a story page must be a contiguous substring of a record the same
 // element cites, and an outlet's quoted words must come from that outlet's own pin.
-// Usage: node skills/catch-event-page/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
+// Usage: node skills/catch-story/scripts/quote_lint.mjs src/pages/events/<subject>/<story>.astro
 import fs from "node:fs";
 import path from "node:path";
 import { readCites, citeTag } from "./cite_attrs.mjs";

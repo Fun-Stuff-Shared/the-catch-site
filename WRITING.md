@@ -26,7 +26,7 @@ important first, each paragraph one level deeper, mechanisms explained in the se
 that needs them, quotes as cards each introduced by the paragraph before it and headed
 with the speaker's name, dated steps as a chronology, numbers as figures, and each
 section ending when its answer is complete, never on a sentence that weighs or sums it
-up (`skills/catch-event-page/references/shape-rules.md`, rule 4). It is compact. A raw record (the filing line by line, a
+up. It is compact. A raw record (the filing line by line, a
 committee's books, a ballot listing) is not story; it is marked `detail` on its
 `SourcedBlock` and appears in Just the facts and Show the work, where the reader who wants
 the document finds it in the open, never collapsed. Show the work adds the proof.
@@ -121,8 +121,7 @@ with their comparisons folded in, not teasers.
   A claim the records do not settle is bounded in the record's terms ("the
   filing gives no date"; "the docket through September 19 holds no ruling"),
   never softened with "may potentially suggest" and never narrated in the
-  first person (`skills/catch-event-page/references/writing.md`, Absence,
-  mechanism and actors).
+  first person.
 - No adjective triplets; no "Similarly / Likewise / In the same way"
   transitions (a transition states what the next thing adds).
 - No unnamed attribution: "analysts say", "experts argue", "observers note"
