@@ -64,8 +64,10 @@ the event and, where it fits, the catch, in about twelve words or fewer, active,
 with no attribution tail ("…, officials say") and no hedge. Every word holds on the record.
 "G7's 100 million-barrel oil release comes from oil already promised in March" is one;
 "G7 will release 100 million barrels over four months and does not say how much is beyond
-its March commitments" is a sentence from the brief. The headline is yours: change it when
-new records change what the story is, and rename the label to match (section 4).
+its March commitments" is a sentence from the brief. The headline is yours and never frozen,
+including one the human picked: change it whenever it is wrong, overstated, or a better one
+holds on the record, including when a reviewer's finding against it is right. Rename the
+label to match (section 4) and report it.
 
 ## 3. Write like a reporter
 
