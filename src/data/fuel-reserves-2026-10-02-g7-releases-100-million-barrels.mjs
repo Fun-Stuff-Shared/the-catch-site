@@ -121,12 +121,12 @@ export const statementRows = [
 
 export const chronology = [
   { date: "Mar 11", title: "400 million barrels pledged", sub: "International Energy Agency members pledge a release. The United States says it will release 172 million barrels from the Strategic Petroleum Reserve.", current: false },
-  { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "Participating companies return the borrowed barrels later with extra barrels. This continues the March release. Several European countries had released only a fraction of the crude and products they pledged.", current: false },
+  { date: "Sep 29", title: "Exchange of up to 40 million barrels", sub: "Participating companies return the borrowed barrels later with extra barrels. This continues the March release. Energy Secretary Chris Wright said several European countries had released only a fraction of the crude and products they pledged.", current: false },
   { date: "Sep 30", title: "A diesel export ban still under discussion", sub: "President Trump said he was thinking about banning diesel exports.", current: false },
   { date: "Oct 1", title: "Bessent asks Europe to move existing commitments", sub: "He says European partners should accelerate delivery on existing commitments and make additional supplies available.", current: false },
   { date: "Oct 2", title: "100 million barrels over four months", sub: "The statement takes fulfilled commitments into account, includes a substantial diesel release in the first 20 days, and gives no number for the diesel. Trump says he will not authorize an export ban.", current: true },
-  { date: "Oct 5", title: "Japan plans no further release", sub: "Chief Cabinet Secretary Minoru Kihara says Japan has been releasing oil from reserves and has no plans for a further release at this stage.", current: false },
-  { date: "Oct 5", title: "An order on dyed-diesel tax", sub: "The order tells the Treasury secretary to defer payment of the highway excise tax on dyed diesel incurred from October 5 through December 31 if he determines the relief is authorized. Within five days he is to direct the Internal Revenue Service to announce it will not impose a penalty. It is not a reserve delivery.", current: false },
+  { date: "Oct 5", title: "Japan plans no further release from its reserves at this stage", sub: "Chief Cabinet Secretary Minoru Kihara says Japan has been releasing oil from reserves and has no plans for a further release at this stage.", current: false },
+  { date: "Oct 5", title: "An order on dyed-diesel tax", sub: "The order tells the Treasury secretary, if he determines which taxpayers qualify, to defer payment of specified diesel excise taxes incurred from October 5 through December 31. Separately, within five days he is to direct the Internal Revenue Service to announce it will not impose a penalty for highway use of dyed diesel. It is not a reserve delivery.", current: false },
 ];
 
 export const event = {
