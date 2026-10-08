@@ -51,12 +51,10 @@ export const shortfalls = {
 // September 29 offer. doe-spr-award-2026-03-20 (45.2 million), -04-10 (8.5 million),
 // -04-17 (26 million), -05-11 (53.3 million), -06-22 (500,000); doe-spr-exchange-2026-09-29.
 const awardedThousand = [45200, 8500, 26000, 53300, 500].reduce((sum, n) => sum + n, 0);
-const usShareThousand = 172000;
 const millions = (thousand) => `${(thousand / 1000).toFixed(1).replace(/\.0$/, "")} million`;
 
 export const usShare = {
   awarded: millions(awardedThousand),
-  left: millions(usShareThousand - awardedThousand),
   offer: "40 million",
 };
 
@@ -79,7 +77,7 @@ export const ledgerRows = [
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
   title: "The G7's 100 million barrels of emergency oil were already promised in March",
-  dek: "In March, governments pledged 400 million barrels to ease the war's oil shock, and about 100 million of them have not been released.",
+  dek: "In March, governments pledged 400 million barrels to ease the oil shock of the war with Iran, and about 100 million of them have not been released.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-08",
