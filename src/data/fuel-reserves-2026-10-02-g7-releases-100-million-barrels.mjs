@@ -88,12 +88,11 @@ export const marchTable = {
 
 export const ledgerRows = [
   ["Pledged by 32 agency members, March 11", `${release.marchTotal} barrels`],
-  ["Scheduled in the agency's country table, March 19", `${marchTable.total} million barrels`],
-  ["Released by October 2, the agency's count", `about ${marchSoFar.barrels} barrels`],
-  ["Pledged and not yet released, the agency's count of October 7", `about ${marchSoFar.remaining} barrels`],
+  ["Country pledges listed by the IEA, March 19", `${marchTable.total} million barrels`],
+  ["Released by October 2, the IEA's count", `about ${marchSoFar.barrels} barrels`],
+  ["Pledged and not yet released, the IEA's count of October 7", `about ${marchSoFar.remaining} barrels`],
   ["U.S. share", `${release.usMarch} barrels`],
   ["U.S. exchange awards, March 20 to June 22", `${usShare.awarded} barrels`],
-  ["Fall in crude held in the U.S. reserve, March 20 to October 2", `${usShare.sprDrop} barrels`],
   ["U.S. share not yet awarded", `${usShare.left} barrels`],
   ["U.S. offer of September 29, bids due October 6", `up to ${release.exchange} barrels`],
 ];
@@ -128,7 +127,7 @@ export const statementRows = [
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
   title: "G7's 100 million-barrel oil release comes from oil already promised in March",
-  dek: "In March, 32 countries pledged 400 million barrels of emergency oil; about 325 million had been released by October 2. The energy agency counts what is left at about 100 million barrels. The White House calls it 100 million barrels of European diesel.",
+  dek: "In March, 32 countries pledged 400 million barrels of emergency oil; about 325 million had been released by October 2. The International Energy Agency counts the barrels pledged and not yet released at about 100 million. The White House calls it 100 million barrels of European diesel.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-08",
@@ -137,7 +136,7 @@ export const event = {
     { value: "100", unit: "million barrels", label: "the G7 release, over four months" },
     { value: "400", unit: "million barrels", label: "pledged in March" },
     { value: "325", unit: "million barrels", label: "released by October 2" },
-    { value: "20", unit: "days", label: "named for the diesel release" },
+    { value: "172", unit: "million barrels", label: "the U.S. share of the March pledge" },
   ],
   visual: {
     kind: "timeline",
