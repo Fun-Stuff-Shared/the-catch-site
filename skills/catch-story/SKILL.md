@@ -72,6 +72,11 @@ including one the human picked: change it whenever it is wrong, overstated, or a
 holds on the record, including when a reviewer's finding against it is right. Rename the
 label to match (section 4) and report it.
 
+The dek under it does one job: the one fact a reader needs that the headline leaves out.
+One sentence, two numbers at most. A contrast or a side's claim whose point only the body
+explains goes in the body: "The White House calls the G7 release 100 million barrels of
+European diesel" in a dek told the reader nothing and seeded a misreading.
+
 ## 3. Write like a reporter
 
 The unit is the paragraph. Each paragraph says one thing in the story and carries the
