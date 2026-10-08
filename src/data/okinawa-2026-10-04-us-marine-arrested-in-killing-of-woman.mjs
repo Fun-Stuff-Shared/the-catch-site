@@ -56,7 +56,7 @@ export const chronology = {
     ["Apr. 2025", "Joint U.S.-Japanese patrols begin on Gate 2 Street in Okinawa City."],
     ["2025", "Okinawa police clear 101 cases involving U.S. forces, the most since 2003."],
     ["Sept. 13, 2026", "Genta Koja is elected governor with ruling-party backing."],
-    ["Oct. 3 to 7, 2026", "This case: the killing, the arrest, the protests, the U.S. pause and curfew, Koja's meeting with Takaichi."],
+    ["Oct. 3 to 7, 2026", "This case: the killing, the arrest, the protests, the U.S. order for a pause and an October 9 curfew, Koja's meeting with Takaichi."],
   ],
 };
 
