@@ -17,11 +17,12 @@ for attempt in 1 2 3; do
   rm -f $report
   codex exec -m chatgpt-web/high --skip-git-repo-check -C $wt -c model_reasoning_effort=high \
     -o $report "$(cat $prompt)" </dev/null > $work/attempt$attempt.log 2>&1 || true
-  if [[ -s $report ]] && tail -1 $report | grep -qE 'RECORD (COMPLETE|INCOMPLETE)'; then
-    print "review r$round -> $report: $(tail -1 $report)"
+  if [[ -s $report ]] && grep -v '^[[:space:]]*$' $report | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^RECORD (COMPLETE|INCOMPLETE)$' &&
+     grep -v '^[[:space:]]*$' $report | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^READ: [1-9][0-9]* records$'; then
+    print "review r$round -> $report: $(tail -2 $report | head -1); $(tail -1 $report)"
     exit 0
   fi
-  print "review r$round attempt $attempt ended without a verdict: $(tail -1 $work/attempt$attempt.log)" >&2
+  print "review r$round attempt $attempt ended without an audited verdict: $(tail -2 $report 2>/dev/null | tr '\n' ' ') $(tail -1 $work/attempt$attempt.log)" >&2
 done
 print "review r$round failed three times; logs in $work" >&2
 exit 1
