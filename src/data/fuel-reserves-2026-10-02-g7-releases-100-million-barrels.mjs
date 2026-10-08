@@ -97,7 +97,7 @@ export const statementRows = [
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
   title: "G7's 100 million barrels are meant to finish March's 400 million-barrel emergency oil release",
-  dek: "In March the 32 member countries of the International Energy Agency pledged to release 400 million barrels of emergency oil; about 325 million had gone out by October 2. The agency counts the barrels pledged and not yet released at about 100 million. The White House calls the G7 release 100 million barrels of European diesel.",
+  dek: "In March the member countries of the International Energy Agency pledged to release 400 million barrels of emergency oil, and the agency counts about 100 million of them still to be released.",
   name: "G7 release of 100 million barrels",
   date: "2026-10-02",
   updated: "2026-10-08",
