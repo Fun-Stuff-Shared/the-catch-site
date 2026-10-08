@@ -1286,6 +1286,52 @@
       "capture_run": "capture-oneoff-20261008T201722Z",
       "capture_raw_sha256": "sha256:6b3fb637def64abdac5cdbbf3e2213242fa495d306284f8603fa42740ce17496",
       "captured_at": "2026-10-08T20:18:45.530863Z"
+    },
+    {
+      "id": "iea-contributions-table-2026-03-19",
+      "title": "IEA Collective Action: details of contributions, 11 March 2026 (country table)",
+      "publisher": "International Energy Agency",
+      "date": "2026-03-19",
+      "url": "https://iea.blob.core.windows.net/assets/ac6af7b5-3737-42c4-a448-b123d06ba25c/IEA-Collectiveaction-detailsofcontributions-11March2026.xlsx",
+      "pinned_path": "data/sources/fuel-reserves/iea-contributions-table-2026-03-19.xlsx",
+      "text_path": "data/sources/fuel-reserves/iea-contributions-table-2026-03-19.txt",
+      "text_sha256": "sha256:2bf5ae9658b86511de23308c18514372c60e8f3b7d6a56395917ffd2cc4a9a44",
+      "quote": ",Total IEA,426.0307508005477,279.8429074061502,118.64364339439757,27.531,300.774336045498,125.24333975504979",
+      "quote_span_check": "byte_exact",
+      "about": "The agency's March country table: 426 million barrels scheduled, by public stocks, industry stocks and extra production.",
+      "capture_status": "the same workbook pinned as iea-contributions-workbook-2026-03-19, whose saved text kept only the total line; the country table was read from the pinned xlsx with openpyxl on 2026-10-08 and written out as CSV."
+    },
+    {
+      "id": "eia-eu-russian-diesel-2023-03-07",
+      "title": "EU’s ban on diesel fuel from Russia shifts trade patterns",
+      "publisher": "U.S. Energy Information Administration",
+      "date": "2023-03-07",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=55739",
+      "pinned_path": "data/sources/fuel-reserves/eia-eu-russian-diesel-2023-03-07.html",
+      "text_path": "data/sources/fuel-reserves/eia-eu-russian-diesel-2023-03-07.txt",
+      "text_sha256": "sha256:0d08197dceaf0014bf52db529216ad22333ba838cb8fa76277f5db88e604be0a",
+      "quote": "banned seaborne imports of petroleum products from Russia, including diesel fuel (effective February 5, 2023)",
+      "quote_span_check": "byte_exact",
+      "about": "Why Europe imports diesel from far away: the EU ban on Russian products from February 2023.",
+      "capture_run": "capture-oneoff-20261008T203608Z",
+      "capture_raw_sha256": "sha256:d6aa106e10046bffff3b46687ab7cf08632c3bd07d792b63d90e2b7a17c9ea8e",
+      "captured_at": "2026-10-08T20:37:27.177032Z"
+    },
+    {
+      "id": "ap-iran-proposal-2026-09-26",
+      "title": "Iran proposes deal that could reopen Strait of Hormuz in 7 days",
+      "publisher": "Associated Press",
+      "date": "2026-09-26",
+      "url": "https://apnews.com/article/iran-us-war-negotiations-strait-hormuz-d8b9749fee99a11dd77513d326b824b6",
+      "pinned_path": "data/sources/coverage/ap-iran-proposal-2026-09-26.html",
+      "text_path": "data/sources/coverage/ap-iran-proposal-2026-09-26.txt",
+      "text_sha256": "sha256:06d8baa315d10dffdd018d6e17bff9d98b560f961c1a8c568d7d23175708bb03",
+      "quote": "Iran has offered to reopen the Strait of Hormuz and resume talks on its nuclear program in seven days if the United States lifts its naval blockade of Iranian ports, waives sanctions on Iranian oil sales and observes a ceasefire that would include Lebanon.",
+      "quote_span_check": "byte_exact",
+      "about": "Iran's terms for reopening Hormuz.",
+      "capture_run": "quarry-wire-scheduled-20260926T220056Z",
+      "capture_raw_sha256": "sha256:f683f9cae322518b9ab36faf3f5174c35e9c6b2facefdc67c5d8f5736b3ffe04",
+      "captured_at": "2026-09-26T22:07:28.997171Z"
     }
   ],
   "story_sources": [
@@ -1826,6 +1872,27 @@
       "group": "primary",
       "label": "U.S. Forces to Resume Naval Blockade Against Iran",
       "meta": " · U.S. Central Command, 2026-07-13",
+      "usage": "background on the war's shipping"
+    },
+    {
+      "id": "iea-contributions-table-2026-03-19",
+      "group": "primary",
+      "label": "IEA Collective Action: details of contributions (country table)",
+      "meta": " · International Energy Agency, 2026-03-19",
+      "usage": "whose barrels"
+    },
+    {
+      "id": "eia-eu-russian-diesel-2023-03-07",
+      "group": "primary",
+      "label": "EU’s ban on diesel fuel from Russia shifts trade patterns",
+      "meta": " · U.S. Energy Information Administration, 2023-03-07",
+      "usage": "why diesel is short"
+    },
+    {
+      "id": "ap-iran-proposal-2026-09-26",
+      "group": "coverage",
+      "label": "Iran proposes deal that could reopen Strait of Hormuz in 7 days",
+      "meta": " · Associated Press, 2026-09-26",
       "usage": "background on the war's shipping"
     }
   ],
