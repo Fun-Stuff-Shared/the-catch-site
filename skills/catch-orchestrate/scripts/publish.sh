@@ -22,7 +22,9 @@ git -C $site worktree add -q $wt -b ${wt:t} main
 ln -s $site/node_modules $wt/node_modules
 cd $wt
 for b in $merges; do
-  git merge -q --no-ff -m "Merge branch '$b'" $b || { print "merge of $b conflicts; resolve in $wt and rerun from there" >&2; exit 1 }
+  git merge -q --no-ff -m "Merge branch '$b'" $b || {
+    git merge --abort; cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}
+    print "merge of $b conflicts with main or an earlier --merge branch; merge main into $b, resolve it there, and run publish.sh again" >&2; exit 1 }
 done
 
 for s in $stories; do
@@ -72,6 +74,9 @@ print "committed state holds ${(j:, :)stories}"
 
 npm run build > /tmp/${wt:t}-build2.log 2>&1 || { print "build or gate failed after staging: /tmp/${wt:t}-build2.log" >&2; exit 1 }
 git -C $site checkout -q -- $generated 2>/dev/null || true
+for f in $(git -C $site diff --name-only --diff-filter=A main ${wt:t} -- $generated); do
+  [[ -e $site/$f ]] && ! git -C $site ls-files --error-unmatch -- $f >/dev/null 2>&1 && rm -- $site/$f
+done
 git -C $site merge -q --ff-only ${wt:t}
 print "main is at $(git -C $site rev-parse --short main); $(git -C $site rev-list --count origin/main..main) commits ahead of origin"
 (( push )) || { print "not pushed (--no-push)"; exit 0 }
