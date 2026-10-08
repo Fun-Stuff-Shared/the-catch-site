@@ -27,16 +27,22 @@ export const release = {
 // IEA account of October 2 and statement of October 7: barrels of the March action released,
 // and the pledged barrels not yet released.
 // data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt, iea-member-meeting-2026-10-07.txt
+const pledgedMillion = 400;
+const releasedMillion = 325;
+
 export const marchSoFar = {
-  released: "325 million",
+  released: `${releasedMillion} million`,
+  onPaper: `${pledgedMillion - releasedMillion} million`,
   unreleased: "100 million",
 };
 
 // Politico's account of October 7: Germany's March promise and release, France's remainder.
 // data/sources/coverage/politico-eu-france-germany-2026-10-07.txt
+const germanyPromisedTonnes = 2650000;
+const germanyReleasedTonnes = 600000;
+
 export const shortfalls = {
-  germanyPromised: "2.65 million tonnes",
-  germanyReleased: "600,000 tonnes",
+  germanyShare: germanyReleasedTonnes / germanyPromisedTonnes < 0.25 ? "less than a quarter" : "more than a quarter",
   franceLeft: "8 million barrels",
   franceExtra: "2 million barrels",
 };
@@ -54,10 +60,9 @@ export const usShare = {
   offer: "40 million",
 };
 
-// France's announcement of October 7; Hormuz crossings of October 6; Gulf shut-ins of October 8.
-// reuters-france-10m-2026-10-07, reuters-hormuz-transits-2026-10-08, reuters-oil-jumps-2026-10-08
+// Hormuz crossings of October 6; Gulf shut-ins of October 8.
+// reuters-hormuz-transits-2026-10-08, reuters-oil-jumps-2026-10-08
 export const next = {
-  france: "10 million barrels",
   hormuzVessels: "Seven",
   gulfShutIn: "62.9 percent",
 };
