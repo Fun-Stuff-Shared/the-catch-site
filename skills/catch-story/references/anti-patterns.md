@@ -1,1 +1,0 @@
-../../catch-event-page/references/anti-patterns.md

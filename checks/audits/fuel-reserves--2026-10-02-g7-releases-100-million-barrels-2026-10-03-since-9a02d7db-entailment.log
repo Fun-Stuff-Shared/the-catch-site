@@ -1,0 +1,1638 @@
+Reading additional input from stdin...
+OpenAI Codex v0.156.1
+--------
+[1mworkdir:[0m /Volumes/4/GitHub/the-catch-site-wt-fuel
+[1mmodel:[0m gpt-6-sol
+[1mprovider:[0m openai
+[1mapproval:[0m never
+[1msandbox:[0m danger-full-access
+[1mreasoning effort:[0m high
+[1mreasoning summaries:[0m detailed
+[1msession id:[0m 01a101bc-ba42-7043-8da9-67bd67d015f0
+--------
+[36muser[0m
+You are checking whether each cited sentence on a news page says only what its cited record supports. The page is /events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/ in /Volumes/4/GitHub/the-catch-site-wt-fuel (source src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro, manifest /Volumes/4/GitHub/the-catch-site-wt-fuel/checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json, pinned text files under /Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/).
+
+Only the blocks the page built at commit 9a02d7db did not show with the same words and the same citations are listed; the rest of the page was judged before and is not in scope. Counts refer to the listed blocks. A row with no citation is text the page shows without a Cite (a headline, a dek, a figure label, a table cell) that changed: judge it against the records the manifest lists (open the pins it needs), and report it when no record supports a number, actor, date or characterization in it.
+
+Below is the table of every cited block on the page (a paragraph, a list item, a card, a table cell or a caption, in the words and numbers the built page shows) with its section and every citation it carries: the record id, the passage the citation points at, and the record's text pin. For every row: open each text pin, find each passage, read the record around it (the whole document, not only the passage), and decide whether the cited records together support the whole block: every number, actor, date, mechanism, causal word, characterization, and scope word in it. A block usually carries several sentences and several citations; a sentence is supported when any of the block's cited records supports it in full. A passage that supports one phrase does not support the sentence around it. A sentence that says more than its records (a mechanism the record does not give, a broader actor, a settled state for something the record calls proposed, a cause the record does not state, a superlative the record does not make) is not supported. A sentence in reader words that says the same thing as the record is supported. A sentence that states what the page could not find or fetch is supported by the working note or manifest, not by a record; report it only if it contradicts them.
+
+Report only the blocks with an unsupported sentence. For each: the row number and section, the sentence bytes, which cited records you checked, what the records actually support (quote it), what in the sentence goes beyond them, and a materiality (Critical, Major, Moderate, Minor). Then one line with the counts: blocks checked, blocks with an unsupported sentence by materiality. End with exactly one line: VERDICT: ENTAILED if no block is Critical or Major, otherwise VERDICT: NOT-ENTAILED.
+
+Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output. Read the pins from disk; do not use the network.
+
+# Blocks on /events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/ that the earlier page did not show (2 rows, 7 citations)
+
+| # | section | block text | citations (record: passage; text pin) |
+|---|---|---|---|
+| 1 | what-happened | On October 2, 2026, G7 leaders agreed in their statement to a coordinated release of 100 million barrels through the International Energy Agency "to begin immediately over 4 months", "taking into account commitments that have already been fulfilled", with what they called a "frontloaded substantial diesel release within the first 20 days by G7 members and partners". The same statement says the group will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns and "temporarily increase utilization rates where feasible", and "We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel". It reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries. | govuk-g7-statement-2026-10-02: taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>govuk-g7-statement-2026-10-02: We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>govuk-g7-statement-2026-10-02: temporarily increase utilization rates where feasible; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>govuk-g7-statement-2026-10-02: We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>govuk-g7-statement-2026-10-02: refrain from export restrictions on energy and energy products between G7 countries; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt |
+| 2 | what-happened | The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases as necessary." It also says the members "reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days." | govuk-g7-statement-2026-10-02: taking into account commitments that have already been fulfilled; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>govuk-g7-statement-2026-10-02: to discuss the possibility of additional diesel releases as necessary; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt |
+[1m[33mwarning:[0m[0m Under-development features enabled: code_mode, context_management, enable_mcp_apps. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/zain/.codex/config.toml.
+[1m[33mwarning:[0m[0m loading hooks from both /Users/zain/.codex/hooks.json and /Users/zain/.codex/config.toml; prefer a single representation for this layer
+[2m2026-10-03T12:28:29.358996Z[0m [31mERROR[0m [2mcodex_api::endpoint::responses_websocket[0m[2m:[0m failed to connect to websocket: HTTP error: 426 Upgrade Required, url: ws://127.0.0.1:17841/v1/responses
+[2m**Reading pins and manifest**[0m
+[35m[3mcodex[0m[0m
+I’ll read the pinned statement in full, then check each sentence in the two listed blocks against it. I’ll leave the repository unchanged.
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'cat checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+{
+  "subject": "fuel-reserves",
+  "event": "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
+  "date": "2026-10-02",
+  "story_title": "G-7 Agrees to Release 100 Million Barrels of Diesel and Crude",
+  "state_event_id": "event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels",
+  "event_record": "/events/fuel-reserves/",
+  "completed_by": "grok, skill catch-record",
+  "date_completed": "2026-10-03",
+  "coverage_threshold": 2,
+  "sub_events": [
+    {
+      "id": "march-agreement-2026-03-11",
+      "date": "2026-03-11",
+      "label": "March agreement of up to 400 million barrels",
+      "section_anchor": "chronology",
+      "records": [
+        "elysee-g7-communique-2026-03-11",
+        "doe-spr-release-2026-03-11",
+        "iea-contributions-2026-03-19"
+      ]
+    },
+    {
+      "id": "export-bills-2026-09-16",
+      "date": "2026-09-16",
+      "label": "Two diesel export bills introduced",
+      "section_anchor": "release",
+      "records": [
+        "hr10422-diesel-export-2026-09-16",
+        "hr10423-diesel-export-2026-09-16"
+      ]
+    },
+    {
+      "id": "exchange-2026-09-29",
+      "date": "2026-09-29",
+      "label": "Exchange of up to 40 million barrels",
+      "section_anchor": "release",
+      "records": [
+        "doe-spr-exchange-2026-09-29",
+        "cnbc-export-ban-2026-09-30"
+      ]
+    },
+    {
+      "id": "october-release-2026-10-02",
+      "date": "2026-10-02",
+      "label": "100 million barrels over four months",
+      "section_anchor": "release",
+      "records": [
+        "govuk-g7-statement-2026-10-02",
+        "elysee-g7-statement-2026-10-02",
+        "elysee-g7-readout-2026-10-02",
+        "bessent-post-2026-10-01",
+        "bundesregierung-energy-faq-2026-10-01",
+        "trumpstruth-post-2026-10-02",
+        "ap-g7-release-2026-10-02",
+        "france24-g7-release-2026-10-02",
+        "wsj-g7-release-2026-10-02",
+        "reuters-eu-proposal-2026-10-02",
+        "reuters-no-export-ban-2026-10-02",
+        "aljazeera-g7-release-2026-10-02",
+        "rte-von-der-leyen-2026-10-02",
+        "iea-g7-meeting-2026-10-02",
+        "ec-taskforce-2026-10-02",
+        "reuters-diesel-demand-2026-10-01",
+        "independent-miliband-2026-10-02",
+        "blas-export-letter-2026-09-23",
+        "blas-red-herring-2026-10-02",
+        "blas-wholesale-2026-10-02",
+        "brownfield-dyed-diesel-2026-10-02",
+        "daugherty-rollins-2026-10-02",
+        "interfax-diesel-ban-2026-09-30",
+        "national-g7-release-2026-10-02",
+        "politico-diesel-pressure-2026-10-02",
+        "politico-no-ban-2026-10-02",
+        "rbc-diesel-strategy-2026-10-01",
+        "reuters-novak-2026-10-02",
+        "reuters-settle-2026-10-02",
+        "reuters-spr-limits-2026-09-29",
+        "scripps-rollins-2026-10-02",
+        "xinhua-itkonen-2026-10-02",
+        "welt-g7-welcome-2026-10-02"
+      ]
+    },
+    {
+      "id": "prices-2026-10-03",
+      "date": "2026-10-03",
+      "label": "Diesel and crude price series",
+      "section_anchor": "prices",
+      "records": [
+        "gasdesw-2026-10-03",
+        "dcoilbrenteu-2026-10-03",
+        "dcoilwtico-2026-10-03"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "govuk-g7-statement-2026-10-02",
+      "title": "G7 Leaders' Statement on global energy security and market stability",
+      "publisher": "UK Government",
+      "date": "2026-10-02",
+      "url": "https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability",
+      "pinned_path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt",
+      "text_sha256": "sha256:002a45d47885269baf12486b928710737892426bdb3719e97a1d0e7551f1a4b9",
+      "quote": "coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months",
+      "quote_span_check": "byte_exact",
+      "about": "English text of the October 2 joint statement: 100 million barrels over four months, with a frontloaded diesel release in the first 20 days.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:52ed7f2210daaae7d90c91ad7abba5cb5308d2b58080853092e14a9ace3f0221"
+    },
+    {
+      "id": "elysee-g7-statement-2026-10-02",
+      "title": "G7 Leaders' Statement on global energy security and market stability",
+      "publisher": "Presidency of the French Republic",
+      "date": "2026-10-02",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/g7-leaders-statement-on-global-energy-security-and-market-stability",
+      "pinned_path": "data/sources/fuel-reserves/elysee-g7-statement-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/elysee-g7-statement-2026-10-02.txt",
+      "text_sha256": "sha256:17272dbeeebfc38a5c77e8dd73af71bdb5a094f43ca8aa073a6301e34028f41d",
+      "quote": "frontloaded substantial diesel release within the first 20 days",
+      "quote_span_check": "byte_exact",
+      "about": "The French presidency's publication of the same English joint statement.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:eceea65172ecd3edd119421b03c8779733c556129b35aa92e53e40fceb9c8112"
+    },
+    {
+      "id": "elysee-g7-readout-2026-10-02",
+      "title": "Visioconference des dirigeants du G7 sur la situation energetique mondiale",
+      "publisher": "Presidency of the French Republic",
+      "date": "2026-10-02",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/visioconference-des-dirigeants-du-g7-sur-la-situation-energetique-mondiale",
+      "pinned_path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt",
+      "text_sha256": "sha256:0f6162c4a054ea3c92855c348b86862ef97921efb7e93b5cec39c7e11a1e8488",
+      "quote": "jusqu'à 100 millions de barils sous 4 mois",
+      "quote_span_check": "byte_exact",
+      "about": "French readout of the October 2 meeting: up to 100 million barrels of diesel and crude over four months.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:c129263135ec9b0769ab186fa13c7cbe14c547b6ffc8acd909c2ce9a5d860c86"
+    },
+    {
+      "id": "elysee-g7-communique-2026-03-11",
+      "title": "Communique de la Presidence du G7",
+      "publisher": "Presidency of the French Republic",
+      "date": "2026-03-11",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/03/11/communique-de-la-presidence-du-g7",
+      "pinned_path": "data/sources/fuel-reserves/elysee-g7-communique-2026-03-11.html",
+      "text_path": "data/sources/fuel-reserves/elysee-g7-communique-2026-03-11.txt",
+      "text_sha256": "sha256:b1a85b27a988cb94f4535dc91d3310011156aff1d65b1e0b360f23d09ae30f47",
+      "quote": "de libérer jusqu’à 400 millions de barils de réserves stratégiques",
+      "quote_span_check": "byte_exact",
+      "about": "March 11 G7 presidency communique welcoming a release of up to 400 million barrels.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:38b0d3d208ec342715272f49f2c7648456468d0e91e20a72710c3bfc7aa2d51c"
+    },
+    {
+      "id": "doe-spr-release-2026-03-11",
+      "title": "United States to Release 172 Million Barrels of Oil From the Strategic Petroleum Reserve",
+      "publisher": "U.S. Department of Energy",
+      "date": "2026-03-11",
+      "url": "https://www.energy.gov/articles/united-states-release-172-million-barrels-oil-strategic-petroleum-reserve",
+      "pinned_path": "data/sources/fuel-reserves/doe-spr-release-2026-03-11.html",
+      "text_path": "data/sources/fuel-reserves/doe-spr-release-2026-03-11.txt",
+      "text_sha256": "sha256:448cb8491f239c64e4f183d79bd835eb0a60edef6a77969f1942b42254fc1a12",
+      "quote": "release 172 million barrels from the Strategic Petroleum Reserve, beginning next week",
+      "quote_span_check": "byte_exact",
+      "about": "March 11 Energy Department statement of the U.S. share of the 400 million barrel release.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:c4b2a01ac30aad6eee8917ff1040dc7481552dc63863ccc7e2592ba41436423c"
+    },
+    {
+      "id": "doe-spr-exchange-2026-09-29",
+      "title": "Department of Energy Issues Request for Proposal for a Strategic Petroleum Reserve crude exchange",
+      "publisher": "U.S. Department of Energy",
+      "date": "2026-09-29",
+      "url": "https://www.energy.gov/articles/united-states-energy-department-continues-execution-strategic-reserve-release-commitments",
+      "pinned_path": "data/sources/fuel-reserves/doe-spr-exchange-2026-09-29.html",
+      "text_path": "data/sources/fuel-reserves/doe-spr-exchange-2026-09-29.txt",
+      "text_sha256": "sha256:79c347d5ecf89d025b69e1cdff219e802f241a95c3e2b02e286c0927cc17d98f",
+      "quote": "an exchange of up to 40 million barrels of crude oil",
+      "quote_span_check": "byte_exact",
+      "about": "September 29 request for an exchange of up to 40 million barrels, with bids due October 6.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:8668ab26b7904eb78580e5e1b7ee2611157ae5799c6055dede3256498b3c04d5"
+    },
+    {
+      "id": "bessent-post-2026-10-01",
+      "title": "Post on European energy commitments",
+      "publisher": "U.S. Treasury Secretary Scott Bessent",
+      "date": "2026-10-01",
+      "url": "https://x.com/SecScottBessent/status/2105740586313544090",
+      "pinned_path": "data/sources/fuel-reserves/bessent-post-2026-10-01.html",
+      "text_path": "data/sources/fuel-reserves/bessent-post-2026-10-01.txt",
+      "text_sha256": "sha256:bdaabc78a63d9fbebfbed0e3599bbe2b6c4db174e4871951989dccad949c06ac",
+      "quote": "Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available",
+      "quote_span_check": "byte_exact",
+      "about": "October 1 post asking European partners to deliver existing commitments and additional supplies.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:33b0052e97349872e327ab6fdc1b62193bd7b34a1b7df4bb36e34ea250cd52ea"
+    },
+    {
+      "id": "bundesregierung-energy-faq-2026-10-01",
+      "title": "Fragen und Antworten rund um die Energieversorgung",
+      "publisher": "German Federal Government",
+      "date": "2026-10-01",
+      "url": "https://www.bundesregierung.de/breg-de/aktuelles/fragen-antworten-energie-2425230",
+      "pinned_path": "data/sources/fuel-reserves/bundesregierung-energy-faq-2026-10-01.html",
+      "text_path": "data/sources/fuel-reserves/bundesregierung-energy-faq-2026-10-01.txt",
+      "text_sha256": "sha256:119d6e63b73b05d1e84bc0bca169359cf06a483b2c5f46ee559b0bd0bccfd325",
+      "quote": "Die IEA hatte Deutschland gebeten, 2,6 Millionen Tonnen aus seiner Reserve freizugeben.",
+      "quote_span_check": "byte_exact",
+      "about": "German government FAQ giving the March release, the size of Germany's reserve, and the volume the IEA asked Germany to release.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:77d6810c4c2e10736abf703128f778853d332aba24e3f7372a541f1fda249539"
+    },
+    {
+      "id": "gasdesw-2026-10-03",
+      "title": "Weekly U.S. No. 2 Diesel Retail Prices",
+      "publisher": "FRED, U.S. Energy Information Administration series GASDESW",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASDESW",
+      "pinned_path": "data/sources/fuel-reserves/GASDESW-2026-10-03.csv",
+      "text_path": "data/sources/fuel-reserves/GASDESW-2026-10-03.csv",
+      "text_sha256": "sha256:d8b3c65711853fd01f4ca69b0e9a2a6a150e129f428c4ba99353ab3bf90fb5db",
+      "quote": "2026-09-28,6.382",
+      "quote_span_check": "byte_exact",
+      "about": "Weekly U.S. retail diesel price. The last observation is September 28, 2026.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:d8b3c65711853fd01f4ca69b0e9a2a6a150e129f428c4ba99353ab3bf90fb5db"
+    },
+    {
+      "id": "dcoilbrenteu-2026-10-03",
+      "title": "Crude Oil Prices: Brent - Europe",
+      "publisher": "FRED, U.S. Energy Information Administration series DCOILBRENTEU",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU",
+      "pinned_path": "data/sources/fuel-reserves/DCOILBRENTEU-2026-10-03.csv",
+      "text_path": "data/sources/fuel-reserves/DCOILBRENTEU-2026-10-03.csv",
+      "text_sha256": "sha256:ab45e771312c9853654f31693447779b1e23e01b3f7246d324a781cb30e26ed7",
+      "quote": "2026-09-29,113.96",
+      "quote_span_check": "byte_exact",
+      "about": "Daily Europe Brent spot price. The last observation is September 29, 2026.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:ab45e771312c9853654f31693447779b1e23e01b3f7246d324a781cb30e26ed7"
+    },
+    {
+      "id": "dcoilwtico-2026-10-03",
+      "title": "Crude Oil Prices: West Texas Intermediate",
+      "publisher": "FRED, U.S. Energy Information Administration series DCOILWTICO",
+      "date": "2026-10-03",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO",
+      "pinned_path": "data/sources/fuel-reserves/DCOILWTICO-2026-10-03.csv",
+      "text_path": "data/sources/fuel-reserves/DCOILWTICO-2026-10-03.csv",
+      "text_sha256": "sha256:43385cc05c45e985905a1077c59c73eb3fb45ad6fffd6624e4012128776e17d0",
+      "quote": "2026-09-29,96.16",
+      "quote_span_check": "byte_exact",
+      "about": "Daily Cushing WTI spot price. The last observation is September 29, 2026.",
+      "capture_run": "capture-oneoff-20261003T054757Z",
+      "capture_raw_sha256": "sha256:43385cc05c45e985905a1077c59c73eb3fb45ad6fffd6624e4012128776e17d0"
+    },
+    {
+      "id": "trumpstruth-post-2026-10-02",
+      "title": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil",
+      "publisher": "President Donald J. Trump, carried by Trump's Truth",
+      "date": "2026-10-02",
+      "url": "https://www.trumpstruth.org/statuses/42081",
+      "pinned_path": "data/sources/fuel-reserves/trumpstruth-post-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/trumpstruth-post-2026-10-02.txt",
+      "text_sha256": "sha256:cc32fa00ae05d618d4ab940b882e0ce302d9b16bf76b318cbf64f08103883270",
+      "quote": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil. The process will begin immediately.",
+      "quote_span_check": "byte_exact",
+      "about": "October 2 post saying Europe agreed to release diesel and that the process would begin immediately.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:67351142a718a3bab9c2b1848ca5a3230894388d6fa1c08529377392e7364f62"
+    },
+    {
+      "id": "hr10422-diesel-export-2026-09-16",
+      "title": "H.R. 10422, Diesel Price Reduction Act of 2026",
+      "publisher": "U.S. Government Publishing Office",
+      "date": "2026-09-16",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10422ih/html/BILLS-119hr10422ih.htm",
+      "pinned_path": "data/sources/fuel-reserves/hr10422-diesel-export-2026-09-16.html",
+      "text_path": "data/sources/fuel-reserves/hr10422-diesel-export-2026-09-16.txt",
+      "text_sha256": "sha256:573b77ace7252e841f74e023ad00fec9c548708927f9651ac4f5cd8e42c15c67",
+      "quote": "To prohibit the export of diesel fuel from the United States during",
+      "quote_span_check": "byte_exact",
+      "about": "House bill introduced September 16, 2026, to bar diesel exports while the retail price stays above $5 a gallon.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:6e31f13ec4c6d2f31f5de4e9c68eff580048774c77247458a7df49ba50407f14"
+    },
+    {
+      "id": "hr10423-diesel-export-2026-09-16",
+      "title": "H.R. 10423, temporary prohibition on the export of diesel fuel",
+      "publisher": "U.S. Government Publishing Office",
+      "date": "2026-09-16",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10423ih/html/BILLS-119hr10423ih.htm",
+      "pinned_path": "data/sources/fuel-reserves/hr10423-diesel-export-2026-09-16.html",
+      "text_path": "data/sources/fuel-reserves/hr10423-diesel-export-2026-09-16.txt",
+      "text_sha256": "sha256:440d66aac43e94ca8633cede872a968034b3113cf012c1ee65e84f69cf2f13ee",
+      "quote": "fuel shall be prohibited during the period beginning on the date of the",
+      "quote_span_check": "byte_exact",
+      "about": "House bill introduced September 16, 2026, to bar diesel exports through December 31, 2026.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:5a6591317b3ffe0f4fc7edad104a4c00c8537fe1be2e14c87074f8f3824175ce"
+    },
+    {
+      "id": "iea-contributions-2026-03-19",
+      "title": "IEA confirms Member country contributions to collective action",
+      "publisher": "International Energy Agency",
+      "date": "2026-03-19",
+      "url": "https://www.iea.org/news/iea-confirms-member-country-contributions-to-collective-action-to-release-oil-stocks-in-response-to-middle-east-disruptions",
+      "pinned_path": "data/sources/fuel-reserves/iea-contributions-2026-03-19.html",
+      "text_path": "data/sources/fuel-reserves/iea-contributions-2026-03-19.txt",
+      "text_sha256": "sha256:7a39863355eb91e26137542dabbdcc2989abcd130dd1715036491d02d9b4404e",
+      "quote": "400 million barrels of oil available to the market",
+      "quote_span_check": "byte_exact",
+      "about": "March 19 page confirming the March 11 agreement to make 400 million barrels available. The article text describes the shape of the release and does not print the country table.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:59cc0920d68e6859f202bc4b2423b789988623c4106837a9b34402dd47829809"
+    },
+    {
+      "id": "ap-g7-release-2026-10-02",
+      "title": "G7 releasing 100M barrels of oil and diesel fuel as prices soar",
+      "publisher": "Associated Press",
+      "date": "2026-10-02",
+      "url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+      "pinned_path": "data/sources/fuel-reserves/ap-g7-release-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/ap-g7-release-2026-10-02.txt",
+      "text_sha256": "sha256:ed64e46714ba1adac5f65d40f53e5cc31e8493a8caf14d25dbed3bc5328c91e1",
+      "quote": "The Group of Seven industrial nations said Friday that they plan to release 100 million barrels of oil and fuel products",
+      "quote_span_check": "byte_exact",
+      "about": "Associated Press account of the Friday announcement.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:fef7c998393817e4b70f6c5f81359d1478ea2691c6653c4dbdfc1fe265777f30"
+    },
+    {
+      "id": "france24-g7-release-2026-10-02",
+      "title": "G7 members will release 100 million barrels of diesel after US threatens export ban",
+      "publisher": "France 24",
+      "date": "2026-10-02",
+      "url": "https://www.france24.com/en/europe/20261002-eu-fully-rejects-us-threat-to-ban-diesel-exports-unless-bloc-releases-more-fuel-stocks",
+      "pinned_path": "data/sources/fuel-reserves/france24-g7-release-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/france24-g7-release-2026-10-02.txt",
+      "text_sha256": "sha256:23997ed96acf706c3a6525906aae92b22e762e62937e4826ac96777114b89071",
+      "quote": "agreed to release 100 million barrels of diesel and crude oil from their reserves over four months",
+      "quote_span_check": "byte_exact",
+      "about": "France 24 account of the release and the export-ban threat.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:c3f0e00e8ec3f90349d9540dc9f577a5a7860fe441e3b116dfa342b8195b384b"
+    },
+    {
+      "id": "wsj-g7-release-2026-10-02",
+      "title": "G-7 Agrees to Release 100 Million Barrels of Diesel and Crude",
+      "publisher": "Wall Street Journal",
+      "date": "2026-10-02",
+      "url": "https://www.wsj.com/business/energy-oil/g-7-agrees-to-release-100-million-barrels-of-crude-and-oil-products-7624f30b",
+      "pinned_path": "data/sources/fuel-reserves/wsj-g7-release-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/wsj-g7-release-2026-10-02.txt",
+      "text_sha256": "sha256:dd977eb564afb2157acee71cfd02d608acf3527bda26a9fe9586c69028a402d0",
+      "quote": "release 100 million barrels of crude oil and fuel from their emergency stocks",
+      "quote_span_check": "byte_exact",
+      "about": "Wall Street Journal lede on the agreement and the president's post.",
+      "capture_run": "quarry-wire-scheduled-20261002T160027Z",
+      "capture_raw_sha256": "sha256:5a2c549d7bb8fa9d4093828d84e34bb5cf93391bcd1327b101402f4f4dc33534"
+    },
+    {
+      "id": "reuters-eu-proposal-2026-10-02",
+      "title": "Europe weighs new diesel stocks release after US pressure",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/energy/europe-discussing-plan-diesel-stock-releases-after-us-pressure-source-says-2026-10-02/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-eu-proposal-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/reuters-eu-proposal-2026-10-02.txt",
+      "text_sha256": "sha256:4707a0e6bc9eab02873ea899039e5a4c6f12ca9a420b9d663e00116d4d8d2408",
+      "quote": "European countries would release 50 million barrels of diesel",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters account, from two sources, of a Friday proposal discussed before the joint statement.",
+      "capture_run": "quarry-wire-scheduled-20261002T100043Z",
+      "capture_raw_sha256": "sha256:6ff22e93d06dba98b8050ed00570a342d45103196526f913e1b5e8448baec930"
+    },
+    {
+      "id": "reuters-no-export-ban-2026-10-02",
+      "title": "Trump: not going to be doing diesel export ban",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/energy/trump-not-going-be-doing-diesel-export-ban-2026-10-02/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-no-export-ban-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/reuters-no-export-ban-2026-10-02.txt",
+      "text_sha256": "sha256:fba6ed0ddd31686d22f6d9e7725afdce4ee2a8cd8652590a55f500f6b5fb8e51",
+      "quote": "he will not authorize an export ban on diesel",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters brief that the president said he would not authorize a diesel export ban.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:48296ed643dcdd795d01766415f66f92c76d28e247cf573ef5de5e4b67f42fa1"
+    },
+    {
+      "id": "aljazeera-g7-release-2026-10-02",
+      "title": "G7 to release 100m oil barrels as Trump hails Europe diesel deal",
+      "publisher": "Al Jazeera",
+      "date": "2026-10-02",
+      "url": "https://www.aljazeera.com/news/2026/10/2/trump-says-europe-agrees-to-release-massive-amount-diesel-stockpile",
+      "pinned_path": "data/sources/fuel-reserves/aljazeera-g7-release-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/aljazeera-g7-release-2026-10-02.txt",
+      "text_sha256": "sha256:bd25d46c9332f7d611b9bc4ec12479c7b4467dc02adc02c11ff562d67b9a2300",
+      "quote": "release up to 100 million barrels of strategic oil reserves",
+      "quote_span_check": "byte_exact",
+      "about": "Al Jazeera account of the statement and of the president's post.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:c509b7a598f64e33b4ff6f4f07a538cd751e80694114b2478a0d7b412222db51"
+    },
+    {
+      "id": "rte-von-der-leyen-2026-10-02",
+      "title": "Von der Leyen welcomes G7 releasing diesel and oil stocks",
+      "publisher": "RTÉ",
+      "date": "2026-10-02",
+      "url": "https://www.rte.ie/news/europe/2026/1002/1593744-eu-meeting-diesel-prices/",
+      "pinned_path": "data/sources/fuel-reserves/rte-von-der-leyen-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/rte-von-der-leyen-2026-10-02.txt",
+      "text_sha256": "sha256:28318e32e47f97a85ba8c697c2990052ccbe239acedcc42e568ef3c48a8438c0",
+      "quote": "We welcome the decision of G7 countries not to impose any export bans on allies",
+      "quote_span_check": "byte_exact",
+      "about": "RTÉ account of the Commission president's post and of the release.",
+      "capture_run": "capture-oneoff-20261003T055909Z",
+      "capture_raw_sha256": "sha256:c77c9126de66b99954d1f8a00e1c638a270c6e7b2d67a6731b8b781218aacf21"
+    },
+    {
+      "id": "cnbc-export-ban-2026-09-30",
+      "title": "Trump: Diesel export ban could raise gas prices",
+      "publisher": "CNBC",
+      "date": "2026-09-30",
+      "url": "https://www.cnbc.com/2026/09/30/trump-diesel-export-ban-gas.html",
+      "pinned_path": "data/sources/fuel-reserves/cnbc-export-ban-2026-09-30.html",
+      "text_path": "data/sources/fuel-reserves/cnbc-export-ban-2026-09-30.txt",
+      "text_sha256": "sha256:40b243921b2323f611c46d033e605ee2f7d64e1e306fbf1f45071b9485d3a90c",
+      "quote": "thinking about",
+      "quote_span_check": "byte_exact",
+      "about": "CNBC account of the president's Wednesday comments that he was still considering a diesel export ban.",
+      "capture_run": "quarry-wire-scheduled-20261001T100034Z",
+      "capture_raw_sha256": "sha256:5f1a252627b5794053d0f8dbb05b4f1f0bee5bb0b6832000604fe4f15656e4b9"
+    },
+    {
+      "id": "iea-g7-meeting-2026-10-02",
+      "title": "Executive Director participates in G7 Leaders' meeting on energy security and markets",
+      "publisher": "International Energy Agency",
+      "date": "2026-10-02",
+      "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets",
+      "pinned_path": "data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt",
+      "text_sha256": "sha256:3d9f4052f146d474b405a533186c1605c7b48770db648e31bb0dd896c04566d1",
+      "quote": "He noted that around 325 million barrels of the IEA collective action announced on 11 March have so far been released, representing over 80% of the 400 million barrels originally pledged in the action.",
+      "quote_span_check": "byte_exact",
+      "about": "The agency's account of the October 2 meeting, including how much of the March action had been released.",
+      "capture_status": "not admitted: direct fetch returned http 403 and the Wayback copy returned 404 on 2026-10-03 in capture-oneoff-20261003T065410Z; the article text was saved the same day from a browser fetch of the same URL."
+    },
+    {
+      "id": "iea-omr-2026-09",
+      "title": "Oil Market Report - September 2026",
+      "publisher": "International Energy Agency",
+      "date": "2026-09-11",
+      "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+      "pinned_path": "data/sources/fuel-reserves/iea-omr-2026-09.html",
+      "text_path": "data/sources/fuel-reserves/iea-omr-2026-09.txt",
+      "text_sha256": "sha256:41d2ade9932ac5cfcb1bac508627c5515fc09c0b1eabe5689c92a3d50ac0fb52",
+      "quote": "averaged 390 kb/d in August, just over a quarter of pre-war levels",
+      "quote_span_check": "byte_exact",
+      "about": "The September oil-market report's account of August diesel exports from the Gulf and from Russia.",
+      "capture_run": "capture-oneoff-20261003T065410Z",
+      "capture_raw_sha256": "sha256:22d0c03535b7050d345af87cdb4e9a1212617362291d694c384665b919527933",
+      "captured_at": "2026-10-03T06:54:48.552500Z"
+    },
+    {
+      "id": "ec-taskforce-2026-10-02",
+      "title": "Energy Union Task Force meets to ensure coordination on diesel supplies and prices in Europe",
+      "publisher": "European Commission",
+      "date": "2026-10-02",
+      "url": "https://energy.ec.europa.eu/news/energy-union-task-force-meets-ensure-coordination-diesel-supplies-and-prices-europe-2026-10-02_en",
+      "pinned_path": "data/sources/fuel-reserves/ec-taskforce-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/ec-taskforce-2026-10-02.txt",
+      "text_sha256": "sha256:85e744764342afde0513497b9329e063790ce4a49f08efd185012d641114acc7",
+      "quote": "EU diesel supply remains stable for the time being, but prices remain high",
+      "quote_span_check": "byte_exact",
+      "about": "The Commission's account of the October 2 task-force meeting on diesel supply and prices.",
+      "capture_run": "capture-oneoff-20261003T065410Z",
+      "capture_raw_sha256": "sha256:f2e1c5b34ea1b27e073c03390fdb80c5dad2771eba4c953c2fd6cf8134d64c17",
+      "captured_at": "2026-10-03T06:55:04.637085Z"
+    },
+    {
+      "id": "eia-distillate-2026-10-03",
+      "title": "Stocks of Distillate Fuel Oil",
+      "publisher": "Energy Information Administration",
+      "date": "2026-10-03",
+      "url": "https://www.eia.gov/dnav/pet/PET_STOC_WSTK_A_EPD0_SAE_MBBL_W.htm",
+      "pinned_path": "data/sources/fuel-reserves/eia-distillate-2026-10-03.html",
+      "text_path": "data/sources/fuel-reserves/eia-distillate-2026-10-03.txt",
+      "text_sha256": "sha256:3195bc47a5dec90e57f17c1704b0721ac687343d6bafd582ad73d9a2e6dd8e89",
+      "quote": "105,180",
+      "quote_span_check": "byte_exact",
+      "about": "The weekly U.S. distillate-stock table, with week headings through September 25 and the stock row under them.",
+      "capture_run": "capture-oneoff-20261003T065410Z",
+      "capture_raw_sha256": "sha256:d32f49b13dd49f467eea9b920dade1a7d88b11390dd1b1b0bb22a2b07474eba6",
+      "captured_at": "2026-10-03T06:55:29.837582Z"
+    },
+    {
+      "id": "iea-contributions-workbook-2026-03-19",
+      "title": "IEA collective action, details of contributions, 11 March 2026",
+      "publisher": "International Energy Agency",
+      "date": "2026-03-19",
+      "url": "https://iea.blob.core.windows.net/assets/ac6af7b5-3737-42c4-a448-b123d06ba25c/IEA-Collectiveaction-detailsofcontributions-11March2026.xlsx",
+      "pinned_path": "data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.xlsx",
+      "text_path": "data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.txt",
+      "text_sha256": "sha256:a95c5a00d9914cfb0b4907ab6ff3d74a22636fd941f1b5105dd0b42f7f4b0f6a",
+      "quote": "Total IEA,426.03075080054771",
+      "quote_span_check": "byte_exact",
+      "about": "The contributions workbook's total line for the March action, a different sum from barrels released.",
+      "capture_run": "capture-oneoff-20261003T065410Z",
+      "capture_raw_sha256": "sha256:4c13e7c82284b982dcd7801f14745ba9df85012f53a10e6909c062483b324aab",
+      "captured_at": "2026-10-03T06:55:44.628160Z"
+    },
+    {
+      "id": "reuters-diesel-demand-2026-10-01",
+      "title": "US tells France, Germany to release diesel stocks or face US export ban, sources say",
+      "publisher": "Reuters",
+      "date": "2026-10-01",
+      "url": "https://www.reuters.com/business/energy/us-tells-france-germany-release-diesel-stocks-or-face-us-export-ban-sources-say-2026-10-01/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.html",
+      "text_path": "data/sources/fuel-reserves/reuters-diesel-demand-2026-10-01.txt",
+      "text_sha256": "sha256:56c91a0bc605bd748688ee8a79c469cabe1f119bee05ecaccb2e2a0bc12783ab",
+      "quote": "the US has asked the EU to release 120 million barrels of diesel in the next six months.",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters account, from a second source, of a request for 120 million barrels of diesel over six months, the day before the joint statement.",
+      "capture_run": "quarry-wire-scheduled-20261001T100034Z",
+      "capture_raw_sha256": "sha256:7b6c8e208786569f11df248296d99c3e14c2716b22b447d24179abb0ab6a2d88",
+      "captured_at": "2026-10-01T10:04:35.320294Z"
+    },
+    {
+      "id": "independent-miliband-2026-10-02",
+      "title": "Miliband to stand in for Burnham at emergency G7 talks on world energy markets",
+      "publisher": "The Independent",
+      "date": "2026-10-02",
+      "url": "https://www.independent.co.uk/news/uk/politics/g7-ed-miliband-andy-burnham-trump-b3060663.html",
+      "pinned_path": "data/sources/fuel-reserves/independent-miliband-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/independent-miliband-2026-10-02.txt",
+      "text_sha256": "sha256:8494839594afdc050bd8e7ed49c15ac49720a1847fa47baa494bac8c235eb87b",
+      "quote": "Foreign Secretary Ed Miliband will stand in for Andy Burnham during urgent G7 talks regarding global energy markets, as the Prime Minister attends his father’s funeral.",
+      "quote_span_check": "byte_exact",
+      "about": "The Independent's account that the foreign secretary stood in for the prime minister, who was at a funeral, and of a UK pump price at £2 a litre.",
+      "capture_run": "capture-oneoff-20261003T074447Z",
+      "capture_raw_sha256": "sha256:67b4c008cdc1abe68bf1b5564b593af7c3a05c873b89f702d0396023842a56b1",
+      "captured_at": "2026-10-03T07:45:05.302745Z"
+    },
+    {
+      "id": "politico-diesel-pressure-2026-10-02",
+      "title": "‘Blackmail’: Europe fumes against White House demand for more diesel",
+      "publisher": "Politico",
+      "date": "2026-10-02",
+      "url": "https://www.politico.com/news/2026/10/02/white-house-diesel-europe-01104936",
+      "pinned_path": "data/sources/fuel-reserves/politico-diesel-pressure-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/politico-diesel-pressure-2026-10-02.txt",
+      "text_sha256": "sha256:607978899e6979d46ffd2b1b03c12175739c82d637fe418674d69fd91d2520a0",
+      "quote": "One European diplomat characterized the White House’s demands for a release against the threat of a U.S. export ban explicitly as “blackmail,”",
+      "quote_span_check": "byte_exact",
+      "about": "A diplomat's characterization of the demand as blackmail, in a Politico account of the pressure before the statement.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:87739ecd1c69fe71293e1b73fb8e5f4823fb6fcefc48093f189ab558b8ebdecb",
+      "captured_at": "2026-10-03T07:50:24.812349Z"
+    },
+    {
+      "id": "politico-no-ban-2026-10-02",
+      "title": "Trump rules out diesel export ban after Europe agrees to tap stockpiles",
+      "publisher": "Politico",
+      "date": "2026-10-02",
+      "url": "https://www.politico.com/news/2026/10/02/trump-rules-out-diesel-export-ban-after-europe-agrees-to-tap-stockpiles-01105569",
+      "pinned_path": "data/sources/fuel-reserves/politico-no-ban-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/politico-no-ban-2026-10-02.txt",
+      "text_sha256": "sha256:5928bd4b0bf1a9a91552d0da5b088e5e32e6c89c2d2db12dce1744bddfe9916e",
+      "quote": "It was never really ever on the table, but what Europe did was a great thing",
+      "quote_span_check": "byte_exact",
+      "about": "Politico's account of the president saying a diesel export ban was never really on the table.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:048cefc12d76ed5ab3464bdb81421ca8b90b8294a903445242efbb08d7a3a153",
+      "captured_at": "2026-10-03T07:50:37.549900Z"
+    },
+    {
+      "id": "rbc-diesel-strategy-2026-10-01",
+      "title": "Election season politics reshape U.S. diesel strategy",
+      "publisher": "RBC Capital Markets",
+      "date": "2026-10-01",
+      "url": "https://www.rbccm.com/en/insights/2026/09/election-season-politics-reshape-us-diesel-strategy",
+      "pinned_path": "data/sources/fuel-reserves/rbc-diesel-strategy-2026-10-01.html",
+      "text_path": "data/sources/fuel-reserves/rbc-diesel-strategy-2026-10-01.txt",
+      "text_sha256": "sha256:12981ac4c99d682540d2192aaf2201b462a95f9a43997e0b1f71b9fd38aa10c8",
+      "quote": "several leading Senate Republicans have publicly called for a diesel export ban",
+      "quote_span_check": "byte_exact",
+      "about": "An RBC note that leading Senate Republicans had called for a diesel export ban, and a September 22 line from the president.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:e225bb1b9cf374abd8e05d1e1fa780d8a7b5d1c6ca52a909e00f045b641bd2e0",
+      "captured_at": "2026-10-03T07:50:50.958676Z"
+    },
+    {
+      "id": "national-g7-release-2026-10-02",
+      "title": "G7 members agree to release 100 million barrels of diesel and other reserves",
+      "publisher": "The National",
+      "date": "2026-10-02",
+      "url": "https://www.thenationalnews.com/business/energy/2026/10/02/g7-members-agree-to-release-100-million-barrels-of-diesel-and-other-reserves/",
+      "pinned_path": "data/sources/fuel-reserves/national-g7-release-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/national-g7-release-2026-10-02.txt",
+      "text_sha256": "sha256:5da35bd227b14f5a846b14ca97ecaad3e488b7cb248a4a628a2eac70f9f8d70d",
+      "quote": "Mr Macron said Mr Trump did not threaten to issue an embargo on US diesel",
+      "quote_span_check": "byte_exact",
+      "about": "The National's account that President Macron said Mr Trump had not threatened a diesel embargo.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:56ad523721da5c459cd5eb664f5b6cc0ef7469fa5ae42350e58be7bbd4713ff9",
+      "captured_at": "2026-10-03T07:51:04.586321Z"
+    },
+    {
+      "id": "reuters-settle-2026-10-02",
+      "title": "Oil settles lower after Europe agrees to tap diesel reserves",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/energy/oil-rises-slightly-market-weighs-mixed-supply-signals-2026-10-02/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-settle-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/reuters-settle-2026-10-02.txt",
+      "text_sha256": "sha256:eb644faf2dfadf23f7af7f1ee51ac3c7bbc2859e9509fa881250582cd5817db8",
+      "quote": "Brent settled down 6 cents, or 0.06%, at $102.25 a barrel.",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters's report of the October 2 Brent and WTI settlements.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:77aea794a431e7995d3de07a8530212387f7b2b41b1036a5a14edad9755cc5a7",
+      "captured_at": "2026-10-03T07:51:17.682396Z"
+    },
+    {
+      "id": "interfax-diesel-ban-2026-09-30",
+      "title": "Russia extends diesel export ban for producers to Oct 31",
+      "publisher": "Interfax",
+      "date": "2026-09-30",
+      "url": "https://www.interfax.com/newsroom/top-stories/119335/",
+      "pinned_path": "data/sources/fuel-reserves/interfax-diesel-ban-2026-09-30.html",
+      "text_path": "data/sources/fuel-reserves/interfax-diesel-ban-2026-09-30.txt",
+      "text_sha256": "sha256:58c304528bcb08f8c639410deaa574620856f2e097a222f17ab2ed346b30894d",
+      "quote": "The Russian government has extended the ban on exports of diesel fuel, ship fuel and gasoil for producers, which was set to expire today, until October 31",
+      "quote_span_check": "byte_exact",
+      "about": "Interfax's account that Russia extended the producer diesel-export ban through October 31.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:8f28cdb574a2dbd3649a83787f045fc55d716fc78b7b9c4a989061af7b0a9b88",
+      "captured_at": "2026-10-03T07:51:31.560156Z"
+    },
+    {
+      "id": "reuters-novak-2026-10-02",
+      "title": "Russia will consider partial lifting of diesel export ban in case of overproduction, Novak says",
+      "publisher": "Reuters",
+      "date": "2026-10-02",
+      "url": "https://www.reuters.com/business/energy/russia-will-consider-partial-lifting-diesel-export-ban-case-overproduction-novak-2026-10-02/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-novak-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/reuters-novak-2026-10-02.txt",
+      "text_sha256": "sha256:4b4c7345fe10fba8ba8ee17c6d44ab5a8873fb322a2ef600a9f197bf6c6c5bd6",
+      "quote": "Russia said on Friday it would consider a partial lifting of diesel export restrictions in case of overproduction",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters's account that Russia would consider a partial lifting of diesel export restrictions if output ran ahead.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:08c120e642413ae6ccc639aa2805ec35264e8b9fc10a9bb9c369507df9cc971a",
+      "captured_at": "2026-10-03T07:51:44.450423Z"
+    },
+    {
+      "id": "reuters-spr-limits-2026-09-29",
+      "title": "US to loan up to 40 million barrels of oil from SPR, last batch from global deal",
+      "publisher": "Reuters",
+      "date": "2026-09-29",
+      "url": "https://www.reuters.com/business/energy/us-release-40-million-barrels-crude-strategic-petroleum-reserve-energy-2026-09-29/",
+      "pinned_path": "data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.html",
+      "text_path": "data/sources/fuel-reserves/reuters-spr-limits-2026-09-29.txt",
+      "text_sha256": "sha256:b970b4ce873317c3ec088c60067a5beff1d14d0fd09f83d7207e6a4bac8acc62",
+      "quote": "The amount of oil in US SPR has sunk to less than 284 million barrels, the lowest level since 1982.",
+      "quote_span_check": "byte_exact",
+      "about": "Reuters's account of the reserve level, the routine-draw floor, and the thin response to an earlier offer.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:d7ec29e90a910aeb4e472940d63e8cd7248f5a7635b26f9cb241aa0b6b6df3a6",
+      "captured_at": "2026-10-03T07:51:57.807308Z"
+    },
+    {
+      "id": "blas-red-herring-2026-10-02",
+      "title": "Javier Blas on X: &quot;Lots of questions about whether the G7 oil / diesel release includes barrels from March that were not released (and/",
+      "publisher": "Javier Blas",
+      "date": "2026-10-02",
+      "url": "https://x.com/JavierBlas/status/2106039981386932459",
+      "pinned_path": "data/sources/fuel-reserves/blas-red-herring-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/blas-red-herring-2026-10-02.txt",
+      "text_sha256": "sha256:686257f336664310fe68e370fba1c6663edd092722d7335b5e5731532340922f",
+      "quote": "It's a red herring: the important question is whether more barrels reach the market now",
+      "quote_span_check": "byte_exact",
+      "about": "Javier Blas's post that treating the October volume as a March remainder is a red herring.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:312392b6f7d1da9fa7b1c8becc5656c6989bd73c6d91fbd59abe145bffff0772",
+      "captured_at": "2026-10-03T07:52:11.976737Z"
+    },
+    {
+      "id": "blas-wholesale-2026-10-02",
+      "title": "Javier Blas on X: &quot;CHART OF THE DAY: The price of US wholesale ultra-low sulphur diesel is back to the level of five weeks ago. Despite",
+      "publisher": "Javier Blas",
+      "date": "2026-10-02",
+      "url": "https://x.com/JavierBlas/status/2106091904555450504",
+      "pinned_path": "data/sources/fuel-reserves/blas-wholesale-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/blas-wholesale-2026-10-02.txt",
+      "text_sha256": "sha256:209a71be0adb90fa174aff81cf9e1160f8ede9dc28ad68aa243e4006c3fe3230",
+      "quote": "The price of US wholesale ultra-low sulphur diesel is back to the level of five weeks ago.",
+      "quote_span_check": "byte_exact",
+      "about": "Javier Blas's note that US wholesale diesel was back to its level of five weeks earlier.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:f05670e5bc87331fe06f701675f429b18269b206bd67bfffe803b911a7102ee1",
+      "captured_at": "2026-10-03T07:52:26.429816Z"
+    },
+    {
+      "id": "blas-export-letter-2026-09-23",
+      "title": "Javier Blas on X: &quot;The whole U.S. energy industry plus two key businesses associations (the U.S. Chamber of Commerce and the National A",
+      "publisher": "Javier Blas",
+      "date": "2026-09-23",
+      "url": "https://x.com/JavierBlas/status/2102868853114208343",
+      "pinned_path": "data/sources/fuel-reserves/blas-export-letter-2026-09-23.html",
+      "text_path": "data/sources/fuel-reserves/blas-export-letter-2026-09-23.txt",
+      "text_sha256": "sha256:bff7f760c073564214fd37d3bc714ab2c3eac97380c4866aa290aeaa6b548a7b",
+      "quote": "have sent a joint letter to President Trump urging him against limits of diesels exports.",
+      "quote_span_check": "byte_exact",
+      "about": "Javier Blas's post that industry groups had written the president against limits on diesel exports.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:06a96605dac4046307337cdf4f1fc73910661ce03251ac1b24f2f6d348de07d4",
+      "captured_at": "2026-10-03T07:52:40.460241Z"
+    },
+    {
+      "id": "brownfield-dyed-diesel-2026-10-02",
+      "title": "Farmers call for diesel relief to offset record-high costs",
+      "publisher": "Brownfield Ag News",
+      "date": "2026-10-02",
+      "url": "https://www.brownfieldagnews.com/news/farmers-call-for-diesel-relief-to-offset-record-high-costs/",
+      "pinned_path": "data/sources/fuel-reserves/brownfield-dyed-diesel-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/brownfield-dyed-diesel-2026-10-02.txt",
+      "text_sha256": "sha256:000efe78826a1ce5d1e605db786bc1db813e354e68f6688c220a8432fede3068",
+      "quote": "Ohio is implementing a 90-day state gas and diesel tax suspension.",
+      "quote_span_check": "byte_exact",
+      "about": "Brownfield's account of state dyed-diesel waivers and an Ohio fuel-tax suspension.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:e06e56ef312f7f22bad7a228809610a6d1fce01bdce7d883f32f73a5df98f6be",
+      "captured_at": "2026-10-03T07:52:54.085072Z"
+    },
+    {
+      "id": "xinhua-itkonen-2026-10-02",
+      "title": "EU welcomes G7 no-ban decision, says export curbs would damage trust-Xinhua",
+      "publisher": "Xinhua",
+      "date": "2026-10-02",
+      "url": "https://english.news.cn/20261002/e2b9733e0f624418a94db7aabdcb634f/c.html",
+      "pinned_path": "data/sources/fuel-reserves/xinhua-itkonen-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/xinhua-itkonen-2026-10-02.txt",
+      "text_sha256": "sha256:221193c8596788b26297173f8645a05499f60df30b96c0b8dcc37baf260ea979",
+      "quote": "It would undermine our trust in the United States as a reliable partner.",
+      "quote_span_check": "byte_exact",
+      "about": "Xinhua's account of the spokesperson's longer rejection and of the Commission president's affordable-energy line.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:f7f51c571396c82e0f3d14f114de25ec6c013299d52dc2421de7137d93dc1236",
+      "captured_at": "2026-10-03T07:53:35.441006Z"
+    },
+    {
+      "id": "daugherty-rollins-2026-10-02",
+      "title": "Eric Daugherty on X: &quot;🚨 JUST IN: 100 MILLION BARRELS OF DIESEL are currently en route to the United States, per Sec. Brooke Rollins\n\nHe",
+      "publisher": "Eric Daugherty",
+      "date": "2026-10-02",
+      "url": "https://x.com/EricLDaugh/status/2106111174807085413",
+      "pinned_path": "data/sources/fuel-reserves/daugherty-rollins-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/daugherty-rollins-2026-10-02.txt",
+      "text_sha256": "sha256:f50165054b1c5d2371becd695708eaa9b96e20e72f43ca15640083d1b2dcc16b",
+      "quote": "100 MILLION BARRELS OF DIESEL are currently en route to the United States, per Sec. Brooke Rollins",
+      "quote_span_check": "byte_exact",
+      "about": "A post attributing to the agriculture secretary a claim that 100 million barrels of diesel were en route to the United States.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:b350dc1335592735265ac3cc11b6f58a1f84fb984f7355d9950765964f477ef7",
+      "captured_at": "2026-10-03T07:54:03.010149Z"
+    },
+    {
+      "id": "scripps-rollins-2026-10-02",
+      "title": "Trump administration expects diesel prices to ease after global oil Release",
+      "publisher": "Scripps News",
+      "date": "2026-10-02",
+      "url": "https://www.scrippsnews.com/politics/the-president/trump-administration-expects-diesel-prices-to-ease-after-global-oil-release",
+      "pinned_path": "data/sources/fuel-reserves/scripps-rollins-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/scripps-rollins-2026-10-02.txt",
+      "text_sha256": "sha256:7e2bc937d99b72ad7a0dbdd020f1300c7a78f59e384acdce6374163027dedbb1",
+      "quote": "We are in the middle of harvest season",
+      "quote_span_check": "byte_exact",
+      "about": "Scripps's interview with the agriculture secretary about harvest and a short-term release.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:73e6a6c53c7dceee4d99ef837af0c72f2b868d5d4892a29287befb5a2b66a554",
+      "captured_at": "2026-10-03T07:54:19.719566Z"
+    },
+    {
+      "id": "welt-g7-welcome-2026-10-02",
+      "title": "Von der Leyen begrüßt G-7-Beschluss",
+      "publisher": "Welt",
+      "date": "2026-10-02",
+      "url": "https://www.welt.de/politik/article6abfdc7185d64113fb06d3a2/freigabe-von-oelreserven-unsere-buerger-brauchen-und-verdienen-erschwingliche-energie-von-der-leyen-begruesst-g-7beschluss.html",
+      "pinned_path": "data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.html",
+      "text_path": "data/sources/fuel-reserves/welt-g7-welcome-2026-10-02.txt",
+      "text_sha256": "sha256:cef28609dc7813cd7ace1e8d1f9430a839c9b0e3d3401af50d9630a9e0ad3bf7",
+      "quote": "Auch die Bundesregierung hat den G-7-Beschluss zur Freigabe von 100 Millionen Barrel Öl und Ölprodukten wie Diesel als wichtiges Zeichen für die Handlungsfähigkeit und Geschlossenheit der Gruppe begrüßt.",
+      "quote_span_check": "byte_exact",
+      "about": "Welt's account that German government circles welcomed the October 2 release on Friday evening.",
+      "capture_run": "capture-oneoff-20261003T074957Z",
+      "capture_raw_sha256": "sha256:7f9175ab211690e2f0e876ce31a1ff487753594695190bb67fd19ec6f42d3048",
+      "captured_at": "2026-10-03T07:53:49.706922Z"
+    }
+  ],
+  "story_sources": [
+    {
+      "id": "govuk-g7-statement-2026-10-02",
+      "group": "primary",
+      "label": "G7 Leaders' Statement on global energy security and market stability",
+      "meta": " · UK Government, 2026-10-02",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "elysee-g7-statement-2026-10-02",
+      "group": "primary",
+      "label": "G7 Leaders' Statement on global energy security and market stability",
+      "meta": " · Presidency of the French Republic, 2026-10-02",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "elysee-g7-readout-2026-10-02",
+      "group": "primary",
+      "label": "Visioconference des dirigeants du G7 sur la situation energetique mondiale",
+      "meta": " · Presidency of the French Republic, 2026-10-02",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "elysee-g7-communique-2026-03-11",
+      "group": "primary",
+      "label": "Communique de la Presidence du G7",
+      "meta": " · Presidency of the French Republic, 2026-03-11",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "doe-spr-release-2026-03-11",
+      "group": "primary",
+      "label": "United States to Release 172 Million Barrels of Oil From the Strategic Petroleum Reserve",
+      "meta": " · U.S. Department of Energy, 2026-03-11",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "doe-spr-exchange-2026-09-29",
+      "group": "primary",
+      "label": "Department of Energy Issues Request for Proposal for a Strategic Petroleum Reserve crude exchange",
+      "meta": " · U.S. Department of Energy, 2026-09-29",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "bessent-post-2026-10-01",
+      "group": "primary",
+      "label": "Post on European energy commitments",
+      "meta": " · U.S. Treasury Secretary Scott Bessent, 2026-10-01",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "bundesregierung-energy-faq-2026-10-01",
+      "group": "primary",
+      "label": "Fragen und Antworten rund um die Energieversorgung",
+      "meta": " · German Federal Government, 2026-10-01",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "gasdesw-2026-10-03",
+      "group": "official",
+      "label": "Weekly U.S. No. 2 Diesel Retail Prices",
+      "meta": " · FRED, U.S. Energy Information Administration series GASDESW, 2026-10-03",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "dcoilbrenteu-2026-10-03",
+      "group": "official",
+      "label": "Crude Oil Prices: Brent - Europe",
+      "meta": " · FRED, U.S. Energy Information Administration series DCOILBRENTEU, 2026-10-03",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "dcoilwtico-2026-10-03",
+      "group": "official",
+      "label": "Crude Oil Prices: West Texas Intermediate",
+      "meta": " · FRED, U.S. Energy Information Administration series DCOILWTICO, 2026-10-03",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "trumpstruth-post-2026-10-02",
+      "group": "primary",
+      "label": "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil",
+      "meta": " · President Donald J. Trump, carried by Trump's Truth, 2026-10-02",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "hr10422-diesel-export-2026-09-16",
+      "group": "primary",
+      "label": "H.R. 10422, Diesel Price Reduction Act of 2026",
+      "meta": " · U.S. Government Publishing Office, 2026-09-16",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "hr10423-diesel-export-2026-09-16",
+      "group": "primary",
+      "label": "H.R. 10423, temporary prohibition on the export of diesel fuel",
+      "meta": " · U.S. Government Publishing Office, 2026-09-16",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "iea-contributions-2026-03-19",
+      "group": "primary",
+      "label": "IEA confirms Member country contributions to collective action",
+      "meta": " · International Energy Agency, 2026-03-19",
+      "usage": "the record of the release, the earlier commitment, or the price series"
+    },
+    {
+      "id": "ap-g7-release-2026-10-02",
+      "group": "coverage",
+      "label": "G7 releasing 100M barrels of oil and diesel fuel as prices soar",
+      "meta": " · Associated Press, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "france24-g7-release-2026-10-02",
+      "group": "coverage",
+      "label": "G7 members will release 100 million barrels of diesel after US threatens export ban",
+      "meta": " · France 24, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "wsj-g7-release-2026-10-02",
+      "group": "coverage",
+      "label": "G-7 Agrees to Release 100 Million Barrels of Diesel and Crude",
+      "meta": " · Wall Street Journal, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "reuters-eu-proposal-2026-10-02",
+      "group": "coverage",
+      "label": "Europe weighs new diesel stocks release after US pressure",
+      "meta": " · Reuters, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "reuters-no-export-ban-2026-10-02",
+      "group": "coverage",
+      "label": "Trump: not going to be doing diesel export ban",
+      "meta": " · Reuters, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "aljazeera-g7-release-2026-10-02",
+      "group": "coverage",
+      "label": "G7 to release 100m oil barrels as Trump hails Europe diesel deal",
+      "meta": " · Al Jazeera, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "rte-von-der-leyen-2026-10-02",
+      "group": "coverage",
+      "label": "Von der Leyen welcomes G7 releasing diesel and oil stocks",
+      "meta": " · RTÉ, 2026-10-02",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "cnbc-export-ban-2026-09-30",
+      "group": "coverage",
+      "label": "Trump: Diesel export ban could raise gas prices",
+      "meta": " · CNBC, 2026-09-30",
+      "usage": "coverage checked against the joint statement and the department releases"
+    },
+    {
+      "id": "reuters-diesel-demand-2026-10-01",
+      "group": "coverage",
+      "label": "US tells France, Germany to release diesel stocks or face US export ban, sources say",
+      "meta": " · Reuters, 2026-10-01",
+      "usage": "a reported request for 120 million barrels of diesel over six months, the day before the statement"
+    },
+    {
+      "id": "independent-miliband-2026-10-02",
+      "group": "coverage",
+      "label": "Miliband to stand in for Burnham at emergency G7 talks on world energy markets",
+      "meta": " · The Independent, 2026-10-02",
+      "usage": "who sat for the United Kingdom, and a UK pump-price record the article states"
+    },
+    {
+      "id": "iea-g7-meeting-2026-10-02",
+      "group": "primary",
+      "label": "Executive Director participates in G7 Leaders' meeting on energy security and markets",
+      "meta": " · International Energy Agency, 2026-10-02",
+      "usage": "how much of the March action the agency said had been released by the meeting"
+    },
+    {
+      "id": "iea-omr-2026-09",
+      "group": "primary",
+      "label": "Oil Market Report - September 2026",
+      "meta": " · International Energy Agency, September 2026",
+      "usage": "August diesel exports from the Gulf and the combined shortfall with Russia"
+    },
+    {
+      "id": "ec-taskforce-2026-10-02",
+      "group": "official",
+      "label": "Energy Union Task Force meets to ensure coordination on diesel supplies and prices in Europe",
+      "meta": " · European Commission, 2026-10-02",
+      "usage": "the Commission's account of EU diesel supply and prices that day"
+    },
+    {
+      "id": "eia-distillate-2026-10-03",
+      "group": "official",
+      "label": "Stocks of Distillate Fuel Oil",
+      "meta": " · Energy Information Administration, saved 2026-10-03",
+      "usage": "weekly U.S. distillate stocks through September 25"
+    },
+    {
+      "id": "iea-contributions-workbook-2026-03-19",
+      "group": "primary",
+      "label": "IEA collective action, details of contributions, 11 March 2026",
+      "meta": " · International Energy Agency, 2026-03-19",
+      "usage": "the workbook total for listed March contributions"
+    },
+    {
+      "id": "politico-diesel-pressure-2026-10-02",
+      "group": "coverage",
+      "label": "‘Blackmail’: Europe fumes against White House demand for more diesel",
+      "meta": " · Politico, 2026-10-02",
+      "usage": "A diplomat's characterization of the demand as blackmail, in a Politico account of the pressure before the statement."
+    },
+    {
+      "id": "politico-no-ban-2026-10-02",
+      "group": "coverage",
+      "label": "Trump rules out diesel export ban after Europe agrees to tap stockpiles",
+      "meta": " · Politico, 2026-10-02",
+      "usage": "Politico's account of the president saying a diesel export ban was never really on the table."
+    },
+    {
+      "id": "rbc-diesel-strategy-2026-10-01",
+      "group": "coverage",
+      "label": "Election season politics reshape U.S. diesel strategy",
+      "meta": " · RBC Capital Markets, 2026-10-01",
+      "usage": "An RBC note that leading Senate Republicans had called for a diesel export ban, and a September 22 line from the president."
+    },
+    {
+      "id": "national-g7-release-2026-10-02",
+      "group": "coverage",
+      "label": "G7 members agree to release 100 million barrels of diesel and other reserves",
+      "meta": " · The National, 2026-10-02",
+      "usage": "The National's account that President Macron said Mr Trump had not threatened a diesel embargo."
+    },
+    {
+      "id": "reuters-settle-2026-10-02",
+      "group": "coverage",
+      "label": "Oil settles lower after Europe agrees to tap diesel reserves",
+      "meta": " · Reuters, 2026-10-02",
+      "usage": "Reuters's report of the October 2 Brent and WTI settlements."
+    },
+    {
+      "id": "interfax-diesel-ban-2026-09-30",
+      "group": "coverage",
+      "label": "Russia extends diesel export ban for producers to Oct 31",
+      "meta": " · Interfax, 2026-09-30",
+      "usage": "Interfax's account that Russia extended the producer diesel-export ban through October 31."
+    },
+    {
+      "id": "reuters-novak-2026-10-02",
+      "group": "coverage",
+      "label": "Russia will consider partial lifting of diesel export ban in case of overproduction, Novak says",
+      "meta": " · Reuters, 2026-10-02",
+      "usage": "Reuters's account that Russia would consider a partial lifting of diesel export restrictions if output ran ahead."
+    },
+    {
+      "id": "reuters-spr-limits-2026-09-29",
+      "group": "coverage",
+      "label": "US to loan up to 40 million barrels of oil from SPR, last batch from global deal",
+      "meta": " · Reuters, 2026-09-29",
+      "usage": "Reuters's account of the reserve level, the routine-draw floor, and the thin response to an earlier offer."
+    },
+    {
+      "id": "blas-red-herring-2026-10-02",
+      "group": "coverage",
+      "label": "Post asking whether the October release includes March barrels that were not released.",
+      "meta": " · Javier Blas, 2026-10-02",
+      "usage": "Javier Blas's post that treating the October volume as a March remainder is a red herring."
+    },
+    {
+      "id": "blas-wholesale-2026-10-02",
+      "group": "coverage",
+      "label": "The price of US wholesale ultra-low sulphur diesel is back to the level of five weeks ago.",
+      "meta": " · Javier Blas, 2026-10-02",
+      "usage": "Javier Blas's note that US wholesale diesel was back to its level of five weeks earlier."
+    },
+    {
+      "id": "blas-export-letter-2026-09-23",
+      "group": "coverage",
+      "label": "Post on an industry letter against limits on diesel exports.",
+      "meta": " · Javier Blas, 2026-09-23",
+      "usage": "Javier Blas's post that industry groups had written the president against limits on diesel exports."
+    },
+    {
+      "id": "brownfield-dyed-diesel-2026-10-02",
+      "group": "coverage",
+      "label": "Farmers call for diesel relief to offset record-high costs",
+      "meta": " · Brownfield Ag News, 2026-10-02",
+      "usage": "Brownfield's account of state dyed-diesel waivers and an Ohio fuel-tax suspension."
+    },
+    {
+      "id": "xinhua-itkonen-2026-10-02",
+      "group": "coverage",
+      "label": "EU welcomes G7 no-ban decision, says export curbs would damage trust-Xinhua",
+      "meta": " · Xinhua, 2026-10-02",
+      "usage": "Xinhua's account of the spokesperson's longer rejection and of the Commission president's affordable-energy line."
+    },
+    {
+      "id": "daugherty-rollins-2026-10-02",
+      "group": "coverage",
+      "label": "Post claiming 100 million barrels of diesel were en route to the United States.",
+      "meta": " · Eric Daugherty, 2026-10-02",
+      "usage": "A post attributing to the agriculture secretary a claim that 100 million barrels of diesel were en route to the United States."
+    },
+    {
+      "id": "scripps-rollins-2026-10-02",
+      "group": "coverage",
+      "label": "Trump administration expects diesel prices to ease after global oil Release",
+      "meta": " · Scripps News, 2026-10-02",
+      "usage": "Scripps's interview with the agriculture secretary about harvest and a short-term release."
+    },
+    {
+      "id": "welt-g7-welcome-2026-10-02",
+      "group": "coverage",
+      "label": "Von der Leyen begrüßt G-7-Beschluss",
+      "meta": " · Welt, 2026-10-02",
+      "usage": "Welt's account that German government circles welcomed the October 2 release on Friday evening."
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "govuk-g7-statement-2026-10-02",
+      "path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.html",
+      "bytes": 70422,
+      "sha256": "sha256:52ed7f2210daaae7d90c91ad7abba5cb5308d2b58080853092e14a9ace3f0221",
+      "url": "https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability"
+    },
+    {
+      "id": "elysee-g7-statement-2026-10-02",
+      "path": "data/sources/fuel-reserves/elysee-g7-statement-2026-10-02.html",
+      "bytes": 191697,
+      "sha256": "sha256:eceea65172ecd3edd119421b03c8779733c556129b35aa92e53e40fceb9c8112",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/g7-leaders-statement-on-global-energy-security-and-market-stability"
+    },
+    {
+      "id": "elysee-g7-readout-2026-10-02",
+      "path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.html",
+      "bytes": 194449,
+      "sha256": "sha256:c129263135ec9b0769ab186fa13c7cbe14c547b6ffc8acd909c2ce9a5d860c86",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/visioconference-des-dirigeants-du-g7-sur-la-situation-energetique-mondiale"
+    },
+    {
+      "id": "elysee-g7-communique-2026-03-11",
+      "path": "data/sources/fuel-reserves/elysee-g7-communique-2026-03-11.html",
+      "bytes": 194412,
+      "sha256": "sha256:38b0d3d208ec342715272f49f2c7648456468d0e91e20a72710c3bfc7aa2d51c",
+      "url": "https://www.elysee.fr/emmanuel-macron/2026/03/11/communique-de-la-presidence-du-g7"
+    },
+    {
+      "id": "doe-spr-release-2026-03-11",
+      "path": "data/sources/fuel-reserves/doe-spr-release-2026-03-11.html",
+      "bytes": 118442,
+      "sha256": "sha256:c4b2a01ac30aad6eee8917ff1040dc7481552dc63863ccc7e2592ba41436423c",
+      "url": "https://www.energy.gov/articles/united-states-release-172-million-barrels-oil-strategic-petroleum-reserve"
+    },
+    {
+      "id": "doe-spr-exchange-2026-09-29",
+      "path": "data/sources/fuel-reserves/doe-spr-exchange-2026-09-29.html",
+      "bytes": 119848,
+      "sha256": "sha256:8668ab26b7904eb78580e5e1b7ee2611157ae5799c6055dede3256498b3c04d5",
+      "url": "https://www.energy.gov/articles/united-states-energy-department-continues-execution-strategic-reserve-release-commitments"
+    },
+    {
+      "id": "bessent-post-2026-10-01",
+      "path": "data/sources/fuel-reserves/bessent-post-2026-10-01.html",
+      "bytes": 142423,
+      "sha256": "sha256:33b0052e97349872e327ab6fdc1b62193bd7b34a1b7df4bb36e34ea250cd52ea",
+      "url": "https://x.com/SecScottBessent/status/2105740586313544090"
+    },
+    {
+      "id": "bundesregierung-energy-faq-2026-10-01",
+      "path": "data/sources/fuel-reserves/bundesregierung-energy-faq-2026-10-01.html",
+      "bytes": 169260,
+      "sha256": "sha256:77d6810c4c2e10736abf703128f778853d332aba24e3f7372a541f1fda249539",
+      "url": "https://www.bundesregierung.de/breg-de/aktuelles/fragen-antworten-energie-2425230"
+    },
+    {
+      "id": "gasdesw-2026-10-03",
+      "path": "data/sources/fuel-reserves/GASDESW-2026-10-03.csv",
+      "bytes": 28890,
+      "sha256": "sha256:d8b3c65711853fd01f4ca69b0e9a2a6a150e129f428c4ba99353ab3bf90fb5db",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASDESW"
+    },
+    {
+      "id": "dcoilbrenteu-2026-10-03",
+      "path": "data/sources/fuel-reserves/DCOILBRENTEU-2026-10-03.csv",
+      "bytes": 169912,
+      "sha256": "sha256:ab45e771312c9853654f31693447779b1e23e01b3f7246d324a781cb30e26ed7",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU"
+    },
+    {
+      "id": "dcoilwtico-2026-10-03",
+      "path": "data/sources/fuel-reserves/DCOILWTICO-2026-10-03.csv",
+      "bytes": 175696,
+      "sha256": "sha256:43385cc05c45e985905a1077c59c73eb3fb45ad6fffd6624e4012128776e17d0",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO"
+    },
+    {
+      "id": "trumpstruth-post-2026-10-02",
+      "path": "data/sources/fuel-reserves/trumpstruth-post-2026-10-02.html",
+      "bytes": 14609,
+      "sha256": "sha256:67351142a718a3bab9c2b1848ca5a3230894388d6fa1c08529377392e7364f62",
+      "url": "https://www.trumpstruth.org/statuses/42081"
+    },
+    {
+      "id": "hr10422-diesel-export-2026-09-16",
+      "path": "data/sources/fuel-reserves/hr10422-diesel-export-2026-09-16.html",
+      "bytes": 1941,
+      "sha256": "sha256:6e31f13ec4c6d2f31f5de4e9c68eff580048774c77247458a7df49ba50407f14",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10422ih/html/BILLS-119hr10422ih.htm"
+    },
+    {
+      "id": "hr10423-diesel-export-2026-09-16",
+      "path": "data/sources/fuel-reserves/hr10423-diesel-export-2026-09-16.html",
+      "bytes": 1261,
+      "sha256": "sha256:5a6591317b3ffe0f4fc7edad104a4c00c8537fe1be2e14c87074f8f3824175ce",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr10423ih/html/BILLS-119hr10423ih.htm"
+    },
+    {
+      "id": "iea-contributions-2026-03-19",
+      "path": "data/sources/fuel-reserves/iea-contributions-2026-03-19.html",
+      "bytes": 238304,
+      "sha256": "sha256:59cc0920d68e6859f202bc4b2423b789988623c4106837a9b34402dd47829809",
+      "url": "https://www.iea.org/news/iea-confirms-member-country-contributions-to-collective-action-to-release-oil-stocks-in-response-to-middle-east-disruptions"
+    },
+    {
+      "id": "iea-g7-meeting-2026-10-02",
+      "path": "data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.html",
+      "bytes": 229007,
+      "sha256": "sha256:2cedf02d7ed16d9e5dd883280f545504d5e0d7db102517e82014ceee12b91da4",
+      "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets"
+    },
+    {
+      "id": "iea-omr-2026-09",
+      "path": "data/sources/fuel-reserves/iea-omr-2026-09.html",
+      "bytes": 313645,
+      "sha256": "sha256:22d0c03535b7050d345af87cdb4e9a1212617362291d694c384665b919527933",
+      "url": "https://www.iea.org/reports/oil-market-report-september-2026"
+    },
+    {
+      "id": "ec-taskforce-2026-10-02",
+      "path": "data/sources/fuel-reserves/ec-taskforce-2026-10-02.html",
+      "bytes": 85626,
+      "sha256": "sha256:f2e1c5b34ea1b27e073c03390fdb80c5dad2771eba4c953c2fd6cf8134d64c17",
+      "url": "https://energy.ec.europa.eu/news/energy-union-task-force-meets-ensure-coordination-diesel-supplies-and-prices-europe-2026-10-02_en"
+    },
+    {
+      "id": "eia-distillate-2026-10-03",
+      "path": "data/sources/fuel-reserves/eia-distillate-2026-10-03.html",
+      "bytes": 20178,
+      "sha256": "sha256:d32f49b13dd49f467eea9b920dade1a7d88b11390dd1b1b0bb22a2b07474eba6",
+      "url": "https://www.eia.gov/dnav/pet/PET_STOC_WSTK_A_EPD0_SAE_MBBL_W.htm"
+    },
+    {
+      "id": "iea-contributions-workbook-2026-03-19",
+      "path": "data/sources/fuel-reserves/iea-contributions-workbook-2026-03-19.xlsx",
+      "bytes": 21008,
+      "sha256": "sha256:4c13e7c82284b982dcd7801f14745ba9df85012f53a10e6909c062483b324aab",
+      "url": "https://iea.blob.core.windows.net/assets/ac6af7b5-3737-42c4-a448-b123d06ba25c/IEA-Collectiveaction-detailsofcontributions-11March2026.xlsx"
+    }
+  ],
+  "figures": [
+    {
+      "figure": "coordinated_release",
+      "label": "Coordinated release beginning immediately",
+      "value": "100",
+      "unit": "million barrels",
+      "kind": "sourced",
+      "source": {
+        "source_id": "govuk-g7-statement-2026-10-02",
+        "quote_span": "100 million barrels (MB) to begin immediately over 4 months"
+      }
+    },
+    {
+      "figure": "release_period",
+      "label": "Period named for the release",
+      "value": "4",
+      "unit": "months",
+      "kind": "sourced",
+      "source": {
+        "source_id": "govuk-g7-statement-2026-10-02",
+        "quote_span": "over 4 months"
+      }
+    },
+    {
+      "figure": "diesel_window",
+      "label": "Frontloaded diesel window",
+      "value": "20",
+      "unit": "days",
+      "kind": "sourced",
+      "source": {
+        "source_id": "govuk-g7-statement-2026-10-02",
+        "quote_span": "within the first 20 days"
+      }
+    },
+    {
+      "figure": "us_spr_march",
+      "label": "U.S. Strategic Petroleum Reserve share announced March 11",
+      "value": "172",
+      "unit": "million barrels",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doe-spr-release-2026-03-11",
+        "quote_span": "172 million barrels"
+      }
+    },
+    {
+      "figure": "march_total",
+      "label": "March coordinated release",
+      "value": "400",
+      "unit": "million barrels",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doe-spr-release-2026-03-11",
+        "quote_span": "400 million barrels"
+      }
+    },
+    {
+      "figure": "september_exchange",
+      "label": "Ceiling of the crude exchange requested September 29",
+      "value": "40",
+      "unit": "million barrels",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doe-spr-exchange-2026-09-29",
+        "quote_span": "40 million barrels"
+      }
+    },
+    {
+      "figure": "earlier_exchanges_awarded",
+      "label": "Barrels awarded in earlier exchanges, at least",
+      "value": "133",
+      "unit": "million barrels",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doe-spr-exchange-2026-09-29",
+        "quote_span": "133 million barrels"
+      }
+    },
+    {
+      "figure": "diesel_sep28",
+      "label": "U.S. retail diesel, September 28",
+      "value": "6.382",
+      "unit": "dollars per gallon",
+      "kind": "sourced",
+      "source": {
+        "source_id": "gasdesw-2026-10-03",
+        "quote_span": "2026-09-28,6.382"
+      }
+    },
+    {
+      "figure": "brent_sep29",
+      "label": "Brent, September 29",
+      "value": "113.96",
+      "unit": "dollars per barrel",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dcoilbrenteu-2026-10-03",
+        "quote_span": "2026-09-29,113.96"
+      }
+    },
+    {
+      "figure": "wti_sep29",
+      "label": "WTI, September 29",
+      "value": "96.16",
+      "unit": "dollars per barrel",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dcoilwtico-2026-10-03",
+        "quote_span": "2026-09-29,96.16"
+      }
+    }
+  ],
+  "needs_ledger": [
+    {
+      "need": "October 2 joint statement",
+      "status": "have",
+      "plain": "The English statement is published by the UK government and by the French presidency. The French readout of the same meeting is also pinned.",
+      "record_id": "govuk-g7-statement-2026-10-02"
+    },
+    {
+      "need": "United States share and the export-ban threat",
+      "status": "have",
+      "plain": "The March 11 department statement, the September 29 exchange request, the October 1 Treasury post, the October 2 presidential post, and the two September 16 House bills are pinned.",
+      "record_id": "doe-spr-release-2026-03-11"
+    },
+    {
+      "need": "Member-government shares",
+      "status": "partly have",
+      "plain": "Germany's FAQ gives the volume the IEA asked it to release and the size of its reserve. The March contributions page describes the release but its country table is not in the article text. No other member government published a barrel share that was admitted.",
+      "record_id": "bundesregierung-energy-faq-2026-10-01"
+    },
+    {
+      "need": "International Energy Agency statement on October 2",
+      "status": "have",
+      "plain": "The agency's October 2 account is pinned. It says around 325 million barrels of the March action had been released. The direct fetch had returned 403.",
+      "record_id": "iea-g7-meeting-2026-10-02"
+    },
+    {
+      "need": "Diesel and crude prices",
+      "status": "have",
+      "plain": "Weekly U.S. retail diesel, Brent, and WTI are pinned through their last observations before October 2. The weekly distillate-stock table is pinned through September 25.",
+      "record_id": "gasdesw-2026-10-03"
+    },
+    {
+      "need": "White House transcript of the October 2 remarks",
+      "status": "missing",
+      "plain": "The October 2 press-gaggle page that was opened carried navigation and no transcript. The presidential post is admitted from the public carrier of that post.",
+      "record_id": "trumpstruth-post-2026-10-02"
+    }
+  ],
+  "coverage_records": [
+    "ap-g7-release-2026-10-02",
+    "france24-g7-release-2026-10-02",
+    "wsj-g7-release-2026-10-02",
+    "reuters-eu-proposal-2026-10-02",
+    "reuters-no-export-ban-2026-10-02",
+    "aljazeera-g7-release-2026-10-02",
+    "rte-von-der-leyen-2026-10-02",
+    "cnbc-export-ban-2026-09-30",
+    "reuters-diesel-demand-2026-10-01",
+    "independent-miliband-2026-10-02",
+    "politico-diesel-pressure-2026-10-02",
+    "politico-no-ban-2026-10-02",
+    "rbc-diesel-strategy-2026-10-01",
+    "national-g7-release-2026-10-02",
+    "reuters-settle-2026-10-02",
+    "interfax-diesel-ban-2026-09-30",
+    "reuters-novak-2026-10-02",
+    "reuters-spr-limits-2026-09-29",
+    "blas-red-herring-2026-10-02",
+    "blas-wholesale-2026-10-02",
+    "blas-export-letter-2026-09-23",
+    "brownfield-dyed-diesel-2026-10-02",
+    "xinhua-itkonen-2026-10-02",
+    "daugherty-rollins-2026-10-02",
+    "scripps-rollins-2026-10-02",
+    "welt-g7-welcome-2026-10-02"
+  ],
+  "authored_sections": [
+    "what-happened",
+    "the-catch",
+    "where-this-sits",
+    "export-ban",
+    "what-happened-next",
+    "unknowns"
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "The October 2 agency account, the September oil-market report, the task-force note, the distillate table, and the contributions workbook are pinned with the records already admitted, and each quote is in its text."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module subtracts the pinned diesel, Brent, and WTI rows: week change, change from March 2, that change as a percent, and the Brent and WTI changes from February 27."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Outlet articles are pinned and listed. The page uses the joint statement and the department texts for the figures, and keeps the outlet articles in the records list."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "The page walks What happened, The catch, Where this sits, The export ban, What happened next, What we do not know yet, and the records list."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "Detail blocks use SourcedBlock kind record or computed. No other chip label is introduced."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live counter. The price series are the fixed files dated October 3, 2026."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The fuel reserves subject page shows the four standing figures and links to 2026-10-02-g7-releases-100-million-barrels."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "Discovery imports the event as fuelReserves, adds the series path /events/fuel-reserves/, and uses the event timeline as the homepage feature."
+    }
+  }
+}
+
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'cat data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "rg -n 'fuel-reserves|G7|entailed|citation' /Users/zain/.codex/memories/MEMORY.md | head -n 35"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+G7 Leaders’ Statement on global energy security and market stability - GOV.UK
+
+G7 Leaders’ Statement on global energy security and market stability
+Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil markets - with surging prices threatening economic stability and the well-being of our citizens - we have agreed on decisive, coordinated measures to stabilize immediate energy supplies, shield households and businesses from price shocks, and strengthen the long-term resilience of global energy systems.
+We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns and temporarily increase utilization rates where feasible. We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel, in light of ongoing market pressures in this segment. The G7 requests the IEA to monitor the immediate and full implementation of the March 2026 commitments. In this regard, taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days by G7 members and partners. We will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary.
+We reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries and call on all producers to refrain from imposing bans that could exacerbate market tensions.
+We invite the IEA to monitor the impact of these measures on energy security and market stability and to monitor implementation of commitments. A follow-up report should be delivered before 20 days, include actionable recommendations to enhance future responses, including stocks replenishment.
+We condemn Iran’s continued attacks against its regional neighbours and its disruption of international trade, energy security and the global economy. We call for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz and express our determination to redouble our collective efforts to that end. We commend the United States for its efforts to ensure the free flow of commerce through the strait of Hormuz.
+We will maintain sanctions against Russia while working with the IEA and global partners to prevent further spill overs into fuel, gas, and other commodity markets.
+Our citizens’ concerns about energy prices remain a top priority. We will monitor developments closely and stand ready to adjust measures as needed. Today’s agreements mark a step toward a more secure, transparent, and resilient energy future.
+[32m succeeded in 0ms:[0m
+1409:- js_repl, multi_agent_v2, tool_call_mcp_elicitation, model_reasoning_summary_format, invalid type: map, expected a boolean, yq -p=toml -o=json
+1419:- `model_reasoning_summary = "detailed"` is valid; remove unsupported `model_reasoning_summary_format = "experimental"`. `tool_call_mcp_elicitation` remains a boolean flag and was left disabled. `js_repl` orchestrates JavaScript tool calls; it does not bypass filesystem, network, or approval policy. [Task 2]
+2146:## Task 4: Outlet citation records, typed-blocked
+3049:- rollout_summaries/2026-06-29T17-36-45-GPG7-sai_rubio_source_trust_correction.md (cwd=/Volumes/4/CF/sai, rollout_path=/Users/zain/.codex/sessions/2026/06/29/rollout-2026-06-29T13-36-45-019f1474-792f-71d2-8a81-05d207a7852f.jsonl, updated_at=2026-06-29T18:48:25+00:00, thread_id=019f1474-792f-71d2-8a81-05d207a7852f, introduced the new C-SPAN Text-tab lane and locked legacy rows behind conservative provenance rules)
+3053:- source_trust.py, metadata_backfill_required, ready_to_reclassify, public_video_archive_cspan_published_transcript, source_document.json, normalize_cspan_scraped.py, export_raw_sources_for_leann.py, citation_gated, public_claims_promoted=0
+3062:- The correction lane retains Claim Verification, citation review, and human review before public promotion. [Task 1]
+
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "rg -n -C 3 'On October 2|The same statement says the release|temporarily increase utilization|follow-up report' src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+58-
+59-      <section id="what-happened">
+60-        <h2 data-layer="fact">What happened</h2>
+61:        <p data-layer="narrative" data-answer="1">On October 2, 2026, G7 leaders agreed in their statement to a coordinated release of 100 million barrels through the International Energy Agency "to begin immediately over 4 months", "taking into account commitments that have already been fulfilled", with what they called a "frontloaded substantial diesel release within the first 20 days by G7 members and partners". The same statement says the group will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns and "temporarily increase utilization rates where feasible", and "We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel". It reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries.<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /><Cite s="govuk-g7-statement-2026-10-02" passage="We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns" /><Cite s="govuk-g7-statement-2026-10-02" passage="temporarily increase utilization rates where feasible" /><Cite s="govuk-g7-statement-2026-10-02" passage="We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /></p>
+62-        <p data-layer="narrative">The French presidency's readout states a ceiling, "jusqu'à 100 millions de barils sous 4 mois", up to 100 million barrels within 4 months. That readout names refined products, notably diesel and crude.<Cite s="elysee-g7-readout-2026-10-02" passage="jusqu'à 100 millions de barils sous 4 mois" /><Cite s="elysee-g7-readout-2026-10-02" passage="notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois" /></p>
+63-        <p data-layer="narrative" data-answer="5">In March, International Energy Agency members pledged 400 million barrels; by October 2 around 325 million had been released, and that day the G7 set 100 million barrels over 4 months without saying how much of it is beyond the March pledge. The October 2 statement asks the agency to "monitor the immediate and full implementation of the March 2026 commitments".<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="iea-g7-meeting-2026-10-02" passage="He noted that around 325 million barrels of the IEA collective action announced on 11 March have so far been released, representing over 80% of the 400 million barrels originally pledged in the action." /><Cite s="govuk-g7-statement-2026-10-02" passage="monitor the immediate and full implementation of the March 2026 commitments" /><Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+64:        <p data-layer="narrative">On September 30 President Donald Trump said he was still "thinking about" banning diesel exports. On October 2, hours after the G7 agreement, he said he will not authorize an export ban on diesel, and the joint statement commits the seven countries to refrain from export restrictions on energy and energy products between themselves.<Cite s="cnbc-export-ban-2026-09-30" passage={`still "thinking about" banning diesel exports`} /><Cite s="reuters-no-export-ban-2026-10-02" passage="he will not authorize an export ban on diesel" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /></p>
+65-        <p data-layer="narrative" data-answer="4">The IEA's March contributions page says the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products. A barrel counted as crude is not the diesel a pump sells. On September 30, Energy Secretary Chris Wright said diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East.<Cite s="iea-contributions-2026-03-19" passage="the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products" /><Cite s="cnbc-export-ban-2026-09-30" passage={`diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East`} /></p>
+66-        <p data-layer="narrative">The October 2 statement calls for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz. Net exports of diesel/gasoil from the Gulf countries averaged 390,000 barrels a day in August, just over a quarter of levels before the war in the Middle East. Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 million barrels a day lower than in February.<Cite s="govuk-g7-statement-2026-10-02" passage="immediate and full restoration of navigational rights and principles in the Strait of Hormuz" /><Cite s="iea-omr-2026-09" passage="averaged 390 kb/d in August, just over a quarter of pre-war levels" /><Cite s="iea-omr-2026-09" passage="Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 mb/d lower than in February" /></p>
+67-
+68-        <SourcedBlock source="govuk-g7-statement-2026-10-02" kind="record" detail>
+69:          <p>The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases as necessary." It also says the members "reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days."<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled" /><Cite s="govuk-g7-statement-2026-10-02" passage="to discuss the possibility of additional diesel releases as necessary" /></p>
+70-        </SourcedBlock>
+71-        <SourcedBlock source="elysee-g7-statement-2026-10-02" kind="record" detail>
+72-          <p>The French presidency published the same English statement, including the {release.barrels} barrel release over {release.months} and the diesel release "within the first 20 days."<Cite s="elysee-g7-statement-2026-10-02" passage="frontloaded substantial diesel release within the first 20 days" /></p>
+--
+165-          <p>Interfax reported on September 30 that the Russian government extended the ban on exports of diesel fuel for producers until October 31.<Cite s="interfax-diesel-ban-2026-09-30" passage="The Russian government has extended the ban on exports of diesel fuel, ship fuel and gasoil for producers, which was set to expire today, until October 31" /></p>
+166-        </SourcedBlock>
+167-        <SourcedBlock source="reuters-novak-2026-10-02" kind="record" detail>
+168:          <p>On October 2 Reuters reported that Russia would consider a partial lifting of diesel export restrictions in case of overproduction.<Cite s="reuters-novak-2026-10-02" passage="Russia said on Friday it would consider a partial lifting of diesel export restrictions in case of overproduction" /></p>
+169-          <p>The same account says Deputy Prime Minister Alexander Novak said the domestic diesel market is currently balanced.<Cite s="reuters-novak-2026-10-02" passage="the domestic diesel market is currently balanced" /></p>
+170-        </SourcedBlock>
+171-        <SourcedBlock source="reuters-spr-limits-2026-09-29" kind="record" detail>
+--
+179-      <section id="export-ban">
+180-        <h2 data-layer="fact">The export ban</h2>
+181-        <p data-layer="narrative">H.R. 10422, introduced September 16, would bar diesel exports after fourteen consecutive days above $5 a gallon, and "was referred to the Committee on Foreign Affairs".<Cite s="hr10422-diesel-export-2026-09-16" passage="which was referred to the Committee on Foreign Affairs" /></p>
+182:        <p data-layer="narrative">On September 30 President Donald Trump was still "thinking about" banning diesel exports. On October 1 Bessent said European partners should accelerate delivery on their existing commitments and make additional supplies immediately available. On October 2 the statement reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries. The same day a Reuters brief said President Donald Trump will not authorize an export ban on diesel.<Cite s="cnbc-export-ban-2026-09-30" passage={`still "thinking about" banning diesel exports`} /><Cite s="bessent-post-2026-10-01" passage="Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /><Cite s="reuters-no-export-ban-2026-10-02" passage="he will not authorize an export ban on diesel" /></p>
+183-        <p data-layer="narrative">An EU spokeswoman told France 24, "We fully reject any ban on diesel."<Cite s="france24-g7-release-2026-10-02" passage="We fully reject any ban on diesel." /></p>
+184-        <QuoteCard speaker="Ursula von der Leyen, European Commission president" when="October 2, 2026" where="X post, via RTÉ" label="RTÉ">
+185-          <p>We welcome the decision of G7 countries not to impose any export bans on allies and the continued solidarity between partners. We support an IEA-coordinated release of fuel stocks.<Cite s="rte-von-der-leyen-2026-10-02" passage="We welcome the decision of G7 countries not to impose any export bans on allies" /><Cite s="rte-von-der-leyen-2026-10-02" passage="We welcome the decision of G7 countries not to impose any export bans on allies and the continued solidarity between partners. We support an IEA-coordinated release of fuel stocks" /></p>
+--
+222-
+223-      <section id="what-happened-next">
+224-        <h2 data-layer="fact">What happened next</h2>
+225:        <p data-layer="narrative">The statement says the group will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary. The statement says a report should be delivered before 20 days.<Cite s="govuk-g7-statement-2026-10-02" passage="We will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary" /><Cite s="govuk-g7-statement-2026-10-02" passage="A follow-up report should be delivered before 20 days" /></p>
+226-        <p data-layer="narrative">Bids on the September 29 exchange are due October 6, 2026. Deliveries under awarded exchanges are scheduled for November and December 2026.<Cite s="doe-spr-exchange-2026-09-29" passage="October 6, 2026" /><Cite s="doe-spr-exchange-2026-09-29" passage="Deliveries under awarded exchanges are scheduled for November and December 2026" /></p>
+227-      </section>
+228-
+
+[2m**Checking exact passage support**
+**Checking passage hashes**[0m
+[2m**Checking exact lines 3-6**[0m
+[35m[3mcodex[0m[0m
+The pinned statement contains the release terms, refinery measures, monitoring request, export restriction commitment, and report deadline. I’m checking the citation phrases and the statement’s recorded date before issuing the verdict.
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "python3 - <<'PY'
+import json, hashlib
+from pathlib import Path
+p=Path('data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt')
+s=p.read_text()
+m=json.loads(Path('checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json').read_text())
+r=next(x for x in m['records'] if x['id']=='govuk-g7-statement-2026-10-02')
+print('record date:',r['date'])
+print('sha256 matches:', 'sha256:'+hashlib.sha256(p.read_bytes()).hexdigest()==r['text_sha256'])
+for q in ['taking into account commitments that have already been fulfilled','we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days','We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns','temporarily increase utilization rates where feasible','We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel','refrain from export restrictions on energy and energy products between G7 countries','to discuss the possibility of additional diesel releases as necessary','monitor the immediate and full implementation of the March 2026 commitments','A follow-up report should be delivered before 20 days']:
+ print(('FOUND' if q in s else 'MISSING'),q)
+PY"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+record date: 2026-10-02
+sha256 matches: True
+FOUND taking into account commitments that have already been fulfilled
+FOUND we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days
+FOUND We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns
+FOUND temporarily increase utilization rates where feasible
+FOUND We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel
+FOUND refrain from export restrictions on energy and energy products between G7 countries
+FOUND to discuss the possibility of additional diesel releases as necessary
+FOUND monitor the immediate and full implementation of the March 2026 commitments
+FOUND A follow-up report should be delivered before 20 days
+
+[35m[3mcodex[0m[0m
+Blocks checked: 2; blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
+VERDICT: ENTAILED
+[2mtokens used[0m
+19,783
+Blocks checked: 2; blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
+VERDICT: ENTAILED

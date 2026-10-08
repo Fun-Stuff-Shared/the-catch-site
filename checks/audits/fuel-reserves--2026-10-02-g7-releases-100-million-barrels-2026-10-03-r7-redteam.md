@@ -1,0 +1,3 @@
+No reportable new or residual finding. I checked the built page against all 46 pinned records, the reader model, prior reports, the ledger, and the held list. A search of later primary publications through October 3 found no verified record that makes a page sentence false. The page’s central distinction remains supported: the [G7 statement](https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability) sets the 100 million barrel timetable without a diesel amount, while the [IEA account](https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets) assigns its 325 million released figure to the March action.
+
+VERDICT: SHIP

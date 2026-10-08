@@ -1,0 +1,7 @@
+- **Row 22, the-catch | Major.** Sentence: “29,000 is far under the establishment survey's bar of about 122,000, so a measured slowdown is more than the release supports.” Checked `usatoday-september-jobs` and `bls-empsit-2026-09`. USA Today’s headline says “slowdown in hiring”; [BLS](</Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/bls-empsit-2026-09.txt:453>) says an **over-the-month employment change** of about 122,000 is statistically significant. BLS also reports August at +133,000 and September at +29,000. The cited threshold tests a monthly change against zero. It does not test whether the pace slowed between two months, so it cannot support the sentence’s “so” conclusion.
+
+- **Row 23, the-catch | Moderate.** Sentence: “By the household survey's estimates, employment rose by 406,000 and the labor force by 485,000, both under that survey's bar of about 650,000.” Checked `bls-empsit-2026-09`. Its [summary table](</Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/bls-empsit-2026-09.txt:334>) gives the 406,000 and 485,000 estimates. Its [FAQ](</Volumes/4/GitHub/the-catch-site-wt-jobs-sept/data/sources/bls-empsit-2026-09.txt:453>) calls 650,000 the threshold for a statistically significant **employment change** in the household survey. Applying that bar to the labor force change goes beyond the cited record.
+
+Blocks checked: 33; blocks with an unsupported sentence: Critical 0, Major 1, Moderate 1, Minor 0.
+
+VERDICT: NOT-ENTAILED

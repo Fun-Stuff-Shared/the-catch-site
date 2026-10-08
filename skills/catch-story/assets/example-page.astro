@@ -1,0 +1,180 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { event, computed, chronology, split, counts, readings } from "../../../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs";
+const state = readPublishedState().events.get("event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
+if (!state) throw new Error("Missing publication selection: event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/immigration-detention/">Immigration detention</a><span>October 1, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Immigration detention &middot; October 1, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#his-case">One man's case</a></li>
+          <li><a href="#what-changed">What changed</a></li>
+          <li><a href="#the-fight">The fight over two phrases</a></li>
+          <li><a href="#the-catch">The catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">The Supreme Court agreed on October 1 to decide whether the government must keep immigrants locked up for the entire length of their deportation cases if they entered the United States without being legally admitted, including people arrested years after they arrived.<Cite s="scotus-order-list-2026-10-01" passage="The petitions for writs of certiorari are granted." /><Cite s="scotus-question-presented-2026-10-01" passage="present in the United States without having been admitted" /></p>
+        <p data-layer="narrative" data-answer="5">For nearly 30 years, people in that position could ask a judge to release them on bond while their cases were decided.<Cite s="ca2-cunha-opinion-2026-04-28" passage="For nearly thirty years, that request would have been granted" /> In July 2025, as the Trump administration carried out a sweeping immigration crackdown, it declared that the law forbids those hearings and that the only way out of detention is parole, which the Department of Homeland Security grants case by case.<Cite s="ap-detention-grant-2026-10-01" passage="as the government carries out a sweeping crackdown" /><Cite s="ice-interim-guidance-2025-07-08" passage="has revisited its legal position on detention and release authorities" /></p>
+        <p data-layer="narrative" data-answer="2">Detained immigrants sued over the change, and the courts split. Most judges, including those on nine federal appeals courts, ruled that the law's no-bond rule covers people caught crossing into the country or soon after, not people who have been living here for years. Read the administration's way, they said, it would mean jailing millions of people without a hearing.<Cite s="politico-detention-tracker-2026-10-06" passage="At least 20,250 of those were rulings against the administration" /><Cite s="ca4-bond-2026-09-10" passage="The First, Second, Third, Sixth, Seventh, Ninth, Tenth, and Eleventh Circuits concluded that Section 1226 applies" /><Cite s="ca4-bond-2026-09-10" passage="Congress mandated the detention of millions of people" /> Two appeals courts sided with the administration, holding that the law requires detaining all noncitizens who were never admitted.<Cite s="ca4-bond-2026-09-10" passage="Section 1225 applies to all noncitizens who have not been admitted to the United States" /> Which rule a detained person gets now depends on where they are held.</p>
+      </section>
+
+      <section id="his-case">
+        <h2 data-layer="fact">One man's case</h2>
+        <p data-layer="narrative">The Supreme Court took up the case of Ricardo Aparecido Barbosa da Cunha. He came from Brazil in 2004 or 2005 without being inspected at the border, and over the next two decades built a life in Massachusetts, with a wife, two children who are U.S. citizens, a home he owns and a small construction business.<Cite s="ca2-cunha-opinion-2026-04-28" passage="He lives in Massachusetts with his wife and two U.S.-citizen children, owns his home, and owns and runs a small construction business." /> He applied for asylum in 2016, and while the application was pending he was allowed to stay and work legally. He had never been arrested.<Cite s="ca2-cunha-opinion-2026-04-28" passage="In 2016, he applied for asylum and was granted work authorization while his application was under review." /><Cite s="uscis-obtaining-asylum" passage="You may live in the United States while your Form I-589 is pending before USCIS." /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Petitioner has never been arrested for or charged with a crime." /></p>
+        <p data-layer="narrative">On September 26, 2025, immigration officers arrested him as he drove to work in Norwood, Massachusetts, and took him to an Immigration and Customs Enforcement (ICE) detention center in Buffalo, New York.<Cite s="ca2-cunha-opinion-2026-04-28" passage="arrested Petitioner while he was driving to work in Norwood, Massachusetts" /><Cite s="doj-petition-26-104" passage="moved to an immigration detention facility in Buffalo, New York" /> He asked for a bond hearing and was refused. Three weeks earlier, the Justice Department's immigration appeals board had told immigration judges, who work for the department, that the new rule barred such hearings.<Cite s="ca2-cunha-opinion-2026-04-28" passage="Petitioner requested a bond hearing, which an immigration judge denied" /><Cite s="bia-yajure-hurtado-2025-09-05" passage="Immigration Judges lack authority to hear bond requests" /></p>
+        <p data-layer="narrative">He challenged his detention in federal court. Because ICE had moved him to Buffalo, the challenge went through the federal courts in New York rather than Massachusetts, and a judge there ordered the government to give him a bond hearing.<Cite s="ca2-cunha-opinion-2026-04-28" passage="he had already been transported to an ICE detention facility in Buffalo" /><Cite s="doj-petition-26-104" passage="within ten days of its initial text order" /> That matters because a detained person's case goes to the courts where ICE holds them, and those courts do not all agree. In Texas and Louisiana, where the federal appeals court sided with the administration, detained immigrants face more hurdles to release than in most of the country.<Cite s="ap-fourth-circuit-2026-09-10" passage="those in other places, including Texas and Louisiana, face additional hurdles to seek release" /> On October 28, an immigration judge found he posed no danger and was not a flight risk. He went home the next day, after {computed.daysDetained} days in custody.<Cite s="doj-petition-26-104" passage="A bond hearing was held on October 28, 2025, and respondent was released on bond the next day." /><Cite s="ca2-cunha-opinion-2026-04-28" passage="An immigration judge, recognizing that Petitioner presents no danger to persons or property or risk of flight, released him on bond." /></p>
+        <p data-layer="narrative" data-answer="4">The government appealed. It did not dispute the finding that he was neither dangerous nor likely to flee. Its argument was that under the 1996 law those facts make no difference, and that he had to stay detained for as long as his deportation case lasted.<Cite s="ca2-cunha-opinion-2026-04-28" passage="government claims that mandatory detention must continue regardless of how long removal proceedings take" /> In April 2026 the Second Circuit, the federal appeals court for New York, ruled against the government and held that his detention falls under the part of the law that lets a judge grant bond.<Cite s="ca2-cunha-opinion-2026-04-28" passage="detention is governed by Section 1226(a)" /></p>
+        <p data-layer="narrative">His deportation case is still open, and his next court date is June 28, 2027. Under the government's reading, he would have been held for the {computed.monthsArrestToNextHearing} months between his arrest and that date.<Cite s="ca2-cunha-opinion-2026-04-28" passage="next hearing is scheduled for June 28, 2027" /> The government had already asked the Supreme Court to decide the question, and on October 1 the Court agreed to hear his case.<Cite s="scotus-docket-rhoney-2026-10-02" passage="Petition for a writ of certiorari filed" /><Cite s="scotus-order-list-2026-10-01" passage="The petitions for writs of certiorari are granted." /></p>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>He first filed in federal court in Massachusetts. With both sides agreeing, the case was transferred to the federal court for western New York, where a judge in Rochester ordered the hearing.<Cite s="ca2-cunha-opinion-2026-04-28" passage="he had already been transported to an ICE detention facility in Buffalo" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-rehearing-2026-09-25" kind="record" detail>
+          <p>In September 2026 the Second Circuit declined to have its full bench rehear the case. Judge Steven Menashi dissented.<Cite s="ca2-cunha-rehearing-2026-09-25" passage="rehearing in banc is hereby DENIED." /><Cite s="ca2-cunha-enbanc-2026-09-25" passage="I dissent from the denial of rehearing en banc." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="aclu-release-2026-10-01" kind="record" detail>
+          <p>His lawyer, Paul Dwyer, said Barbosa da Cunha "has never missed an immigration appointment or hearing."<Cite s="aclu-release-2026-10-01" passage="He has never missed an immigration appointment or hearing." /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>The warrant officers used to arrest him cited section 236 of the immigration law, the section that allows bond. The government later argued he was held under section 235, which does not.<Cite s="ca2-cunha-opinion-2026-04-28" passage="pursuant to an administrative warrant that cited Section 236" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="what-changed">
+        <h2 data-layer="fact">What changed</h2>
+        <p data-layer="narrative">The hearing Barbosa da Cunha was denied had been routine since 1997, when the government's rules for the 1996 immigration law said people who entered without inspection "will be eligible for bond and bond redetermination." Five administrations kept that practice.<Cite s="fr-detention-rule-1997-03-06" passage="will be eligible for bond and bond redetermination" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="Executive Branch practice over thirty years and across five Presidential administrations" /></p>
+        <p data-layer="narrative">The administration framed its immigration crackdown around crime. The first bill President Trump signed in his second term, in January 2025, was the Laken Riley Act, named for a 22-year-old nursing student murdered in 2024 by a Venezuelan man living in the country illegally. It requires detaining immigrants charged with crimes such as theft and burglary.<Cite s="rollcall-laken-riley-act-2025-01-29" passage="the first bill signing of his whirlwind second term" /><Cite s="cbs-laken-riley-act-2025-01-29" passage="named after a 22-year-old nursing student who was murdered by an undocumented Venezuelan immigrant last year" /><Cite s="cbs-laken-riley-act-2025-01-29" passage="expands mandatory detention to include noncitizens convicted of or charged with burglary, larceny, theft or shoplifting" /></p>
+        <p data-layer="narrative">The bond rule reached far past people charged with crimes. On his first day back in office, Trump ordered the Department of Homeland Security to hold people arrested for immigration violations until their cases were decided, "to the extent permitted by law," and to "allocate all legally available resources" to detention.<Cite s="eo-14159-2025-01-20" passage="to the extent permitted by law" /><Cite s="eo-14159-2025-01-20" passage="allocate all legally available resources" /> On July 4 he signed a budget law with $45 billion for detention space.<Cite s="plaw-119-21-2025-07-04" passage="$45,000,000,000, for single adult alien detention capacity" /> Four days later, ICE told its employees that the department had "revisited its legal position": everyone who entered without inspection would now be held without a bond hearing, criminal record or not.<Cite s="ice-interim-guidance-2025-07-08" passage="has revisited its legal position on detention and release authorities" /><Cite s="cbp-detention-memo-2025-07-10" passage="is the applicable immigration detention authority for all applicants for" /></p>
+        <p data-layer="narrative">When the memo became public a week later, the department said the change would keep "these criminals and lawbreakers off American streets," and tied it to the new money.<Cite s="dhs-x-post-2025-07-15" passage="keeping these criminals and lawbreakers off American streets" /></p>
+        <QuoteCard speaker="Department of Homeland Security" when="July 15, 2025" where="Post on X" label="@DHSgov">
+          <p>"now thanks to the Big Beautiful Bill, we will have plenty of bed space to do so."<Cite s="dhs-x-post-2025-07-15" passage="now thanks to the Big Beautiful Bill, we will have plenty of bed space to do so." /></p>
+        </QuoteCard>
+        <p data-layer="narrative">ICE said the new rule "closes a loophole to our nation's security." In September the Board of Immigration Appeals adopted it, which made it binding on every immigration judge in the country.<Cite s="cbs-ice-bond-hearings-2025-07-15" passage="closes a loophole to our nation" /><Cite s="bia-yajure-hurtado-2025-09-05" passage="Decided September 5, 2025" /></p>
+        <SourcedBlock source="ice-interim-guidance-2025-07-08" kind="record" detail>
+          <figure class="story-figure">
+            <figcaption><strong>From bond hearings to the Supreme Court</strong></figcaption>
+            <DataTable columns={["Date", "What happened"]} rows={chronology.rows} ariaLabel="Dates from the 1997 bond rule to the Supreme Court's decision to take the case" />
+          </figure>
+          <p>The July 8 memo expected a legal fight. It called the new position "likely to be litigated," and it said the change "may, however, warrant re-detention of a previously released alien."<Cite s="ice-interim-guidance-2025-07-08" passage="likely to be litigated" /><Cite s="ice-interim-guidance-2025-07-08" passage="warrant re-detention of a previously released alien" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="gao-26-108663" kind="official" detail>
+          <p>Since January 2025 ICE has spent billions of dollars on six detention expansion projects, including 11 warehouses bought for about $1.07 billion. It now plans to sell seven of them.<Cite s="gao-26-108663" passage="ICE invested billions of dollars in six new initiatives" /><Cite s="gao-26-108663" passage="at a reported cost of about $1.07 billion" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-fight">
+        <h2 data-layer="fact">The fight over two phrases</h2>
+        <p data-layer="narrative">The legal fight comes down to two phrases in one sentence of the 1996 law.<Cite s="scotus-question-presented-2026-10-01" passage="mandates the detention" /></p>
+        <QuoteCard speaker="The detention sentence" when="1996, as compiled in 2024" where="Section 235 of the immigration law" label="Government Publishing Office">
+          <p>"in the case of an alien who is an applicant for admission, if the examining immigration officer determines that an alien seeking admission is not clearly and beyond a doubt entitled to be admitted, the alien shall be detained"<Cite s="uscode-2024-1225" passage="the alien shall be detained" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The administration's reading</h3>
+        <p data-layer="narrative">The administration points to the law's definition: anyone in the country who was never legally admitted counts as an "applicant for admission," however long they have been here, and the sentence says such people "shall be detained."<Cite s="uscode-2024-1225" passage="shall be deemed for purposes of this chapter an applicant for admission" /> The administration says Congress wrote it that way in 1996 so that people who crossed illegally would no longer be better off than people who presented themselves at a port of entry.<Cite s="doj-petition-26-104" passage="In IIRIRA, Congress acted to correct that disparity" /> As for the 30 years of bond hearings, the administration says earlier administrations simply chose not to detain everyone the law covered. As the Fifth Circuit put it, that "does not mean they lacked the authority to do more."<Cite s="ca5-buenrostro-2026-02-06" passage="does not mean they lacked the authority to do more" /></p>
+        <h3 data-layer="fact">The reading most courts adopted</h3>
+        <p data-layer="narrative">Barbosa da Cunha's lawyers argued, and the Second Circuit agreed, that the sentence covers only an applicant for admission who is also "seeking admission," which means asking to come in, as someone at the border does. A man who has lived in Massachusetts for twenty years is not asking to come in, so he falls under a different section, which lets the government release him on bond.<Cite s="ca2-cunha-opinion-2026-04-28" passage="but he is not “seeking admission.”" /><Cite s="uscode-2024-1226" passage="may release the alien on" /> The government itself read the law this way for nearly 30 years. And if everyone who entered illegally already had to be detained, Congress would have had no reason to pass the Laken Riley Act in 2025 to require detention of those charged with certain crimes.<Cite s="ca2-cunha-opinion-2026-04-28" passage="renders superfluous much of Section 1226(c), including amendments to that provision in the Laken Riley Act" /></p>
+        <SourcedBlock source="ca4-bond-2026-09-10" kind="record" detail>
+          <figure class="story-figure">
+            <figcaption><strong>Where the federal appeals courts stand</strong></figcaption>
+            <DataTable columns={["Side", "Circuits"]} rows={split.rows} ariaLabel="Federal appeals courts for and against the administration's reading" />
+          </figure>
+          <p>The Fourth Circuit's opinion lists the eight courts before it and the two on the other side.<Cite s="ca4-bond-2026-09-10" passage="The Fifth and Eighth Circuits ruled, on the other hand" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bia-yajure-hurtado-2025-09-05" kind="record" detail>
+          <p>The Board of Immigration Appeals said the other reading would leave people who evaded capture "rewarded with the opportunity for a bond hearing."<Cite s="bia-yajure-hurtado-2025-09-05" passage="be rewarded with the opportunity for a bond hearing" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="bia-yajure-hurtado-2025-09-05" kind="record" detail>
+          <p>The Board of Immigration Appeals answered the Laken Riley argument by quoting the Supreme Court: "redundancies are common in statutory drafting."<Cite s="bia-yajure-hurtado-2025-09-05" passage="redundancies are common in statutory drafting" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-opinion-2026-04-28" kind="record" detail>
+          <p>In 1996 Congress estimated that 100,000 to 200,000 people would fall under its new criminal-detention rule, and it let the Attorney General delay that rule for lack of jail space, which he did. The Second Circuit noted that Congress made no estimate and allowed no delay for the sentence the government relies on, which the court said would have covered about two million people at the time.<Cite s="ca2-cunha-opinion-2026-04-28" passage="the Attorney General immediately triggered the safety valve and delayed implementation" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="an estimated two million people at" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="ca2-cunha-enbanc-2026-09-25" kind="record" detail>
+          <p>Judge José Cabranes of the Second Circuit said the government was claiming that Congress required the detention of millions "but that some thirty years passed before anyone noticed." He added: "The capacity to carry out the largest detention in American history went unbuilt."<Cite s="ca2-cunha-enbanc-2026-09-25" passage="but that some thirty years passed before anyone noticed" /><Cite s="ca2-cunha-enbanc-2026-09-25" passage="The capacity to carry out the largest detention in American history went unbuilt." /> Judge Menashi, dissenting, said the law's definition settles it, because the law deems everyone present without admission an applicant for admission.<Cite s="ca2-cunha-enbanc-2026-09-25" passage="Thus, the statute deems an unadmitted and illegally present alien to be an applicant for admission." /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The catch</p>
+          <ol>
+            <li>
+              <h3>It comes down to how one sentence is read</h3>
+              <p data-layer="narrative">The facts of his case are not in dispute. The government concedes he is not dangerous and not a flight risk, and both sides agree he entered without being admitted. The whole case is about what the 1996 law means.<Cite s="ca2-cunha-opinion-2026-04-28" passage="whom the government concedes poses no danger to the community nor risk of flight" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="entering the country without inspection and admission" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <DataTable columns={["Reading", "Who must be jailed without a hearing", "What it means for someone like him"]} rows={readings.rows} ariaLabel="The two readings of the 1996 detention sentence" />
+                <p class="chart-source">From the government's petition and the Second Circuit's opinion.<Cite s="doj-petition-26-104" passage="In IIRIRA, Congress acted to correct that disparity" /><Cite s="ca2-cunha-opinion-2026-04-28" passage="apprehended while entering the country or shortly thereafter" /></p>
+              </figure>
+            </li>
+            <li>
+              <h3>How many people?</h3>
+              <p data-layer="narrative" data-answer="3">No agency publishes how many people are being held because of the July 2025 change, and the numbers in coverage of the October 1 decision measure other things. CBS News wrote that the Court would consider whether the administration can detain "tens of thousands of immigrants" without bond hearings, and gave no source for the number.<Cite s="cbs-detention-grant-2026-10-01" passage="detain tens of thousands of immigrants during their removal proceedings without access to bond hearings" /> Reuters wrote that the policy "subjects millions of immigrants who entered the United States illegally to mandatory detention." Millions is the courts' estimate of who the rule could cover. The Fourth Circuit put it at six million.<Cite s="reuters-detention-grant-2026-10-01" passage="subjects millions of immigrants who entered the United States illegally to mandatory detention" /><Cite s="ca4-bond-2026-09-10" passage="That number today is estimated to be six million." /></p>
+              <figure class="story-figure" data-layer="fact">
+                <DataTable columns={["Figure", "Where it appeared", "What it counts"]} rows={counts.rows} ariaLabel="Numbers in coverage of the case and what each one counts" />
+                <p class="chart-source">ICE's count and the lawsuit and ruling counts are from the reports and tracker named in each row.<Cite s="cbs-ice-bond-hearings-2025-07-15" passage="ICE was holding more than 58,000 detainees facing deportation" /><Cite s="reuters-detention-grant-2026-10-01" passage="Immigrants have filed more than 73,000 such cases in federal court so far this year" /><Cite s="politico-detention-tracker-2026-10-06" passage="At least 20,250 of those were rulings against the administration" /></p>
+              </figure>
+            </li>
+            <li>
+              <h3>"Unless they have a criminal record"</h3>
+              <p data-layer="narrative">On the day of the Second Circuit ruling, Aaron Reichlin-Melnick of the American Immigration Council posted that immigrants held in New York, Vermont and Connecticut "must be given bond hearings unless they have a criminal record."<Cite s="reichlin-melnick-x-post-2026-04-28" passage="must be given bond hearings unless they have a criminal record" /> The ruling leaves mandatory detention in place for people held on "certain criminal or terrorism-related grounds." A criminal record by itself does not take away the hearing.<Cite s="ca2-cunha-opinion-2026-04-28" passage="certain criminal or terrorism-related grounds" /></p>
+            </li>
+            <li>
+              <h3>"Only applies to those who have been apprehended at a port of entry"</h3>
+              <p data-layer="narrative">The Guardian described the courts' view that way.<Cite s="guardian-detention-grant-2026-10-01" passage="only applies to those who have been apprehended at a port of entry" /> The Second Circuit's line is people "apprehended while entering the country or shortly thereafter," which includes people caught crossing between official crossings.<Cite s="ca2-cunha-opinion-2026-04-28" passage="apprehended while entering the country or shortly thereafter" /></p>
+            </li>
+          </ol>
+        </aside>
+        <SourcedBlock source="guardian-detention-grant-2026-10-01" kind="checked" detail>
+          <p>The Guardian called it "indefinite detention." Judge Menashi wrote that detention under this rule has a "definite termination point," the end of the deportation case. For Barbosa da Cunha that end was at least June 28, 2027.<Cite s="guardian-detention-grant-2026-10-01" passage="indefinite detention" /><Cite s="ca2-cunha-enbanc-2026-09-25" passage="definite termination point" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="aclu-release-2026-10-01" kind="record" detail>
+          <p>DHS says it is "enforcing this law as it was actually written." The ACLU, which represents Barbosa da Cunha, calls it a "radical misinterpretation of the law."<Cite s="dhs-x-post-2025-07-15" passage="are now enforcing this law as it was actually written to keep America safe" /><Cite s="aclu-release-2026-10-01" passage="radical misinterpretation of the law" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative" data-answer="6">The ruling will answer only what the 1996 law says.<Cite s="scotus-question-presented-2026-10-01" passage="mandates the detention" /> Whether the Constitution allows holding someone that long without a hearing is a separate question that other cases are still raising, including a government petition the Court has not acted on.<Cite s="scotus-docket-genalo-dc-2026-10-05" passage="(Response due October 21, 2026)" /> Barbosa da Cunha remains free on bond, which the government can revoke at any time.<Cite s="ca2-cunha-enbanc-2026-09-25" passage="revoke [his] bond or parole" /></p>
+        <p data-layer="narrative">Congress could also settle it. Republican senators led by Ted Budd of North Carolina have proposed writing mandatory detention into the law, which Budd said "would eliminate any doubt."<Cite s="budd-release-2026-05-21" passage="would eliminate any doubt by reaffirming mandatory detention" /> Democratic Senators Alex Padilla and Dick Durbin have proposed the opposite, a bill saying the border's mandatory detention rules do not apply inside the country.<Cite s="padilla-release-2026-09-25" passage="Clarifying that mandatory detention provisions applicable at the border should not apply to immigrants in the interior of the United States." /></p>
+        <SourcedBlock source="scotus-docket-genalo-gm-2026-10-05" kind="record" detail>
+          <p>The Court had scheduled a constitutional case, Genalo v. G.M., for argument on October 13. It was dismissed at the parties' request on September 11. On September 21 the government filed a similar case, Genalo v. D.C., and the detained person's lawyers must respond by October 21.<Cite s="scotus-docket-genalo-gm-2026-10-05" passage="SET FOR ARGUMENT on Tuesday, October 13, 2026." /><Cite s="scotus-docket-genalo-gm-2026-10-05" passage="Case Dismissed - Rule 46." /><Cite s="scotus-docket-genalo-dc-2026-10-05" passage="(Response due October 21, 2026)" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="scotus-docket-lopez-campos-2026-10-05" kind="record" detail>
+          <p>The government had asked the Court to wait on this case and take a different one, Lopez-Campos, from the Sixth Circuit. The Court has not acted on that petition.<Cite s="doj-petition-26-104" passage="The Court should hold the petition in this case pending the resolution of the petition in Lopez-Campos" /><Cite s="scotus-docket-lopez-campos-2026-10-05" passage="United States Court of Appeals for the Sixth Circuit" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="jayapal-letter-2026-02-10" kind="record" detail>
+          <p>In February 2026, Rep. Pramila Jayapal and 62 other House members asked DHS and the Justice Department to rescind the July memo. Their letter said judges "have told you 1,600 times exactly what the law is." California, New York and 16 other states filed a brief against the rule in a federal appeals court.<Cite s="jayapal-letter-2026-02-10" passage="judges have told you 1,600 times exactly what the law is." /><Cite s="bonta-release-2026-01-28" passage="Its latest policy seeks to indefinitely detain immigrants" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}

@@ -254,6 +254,13 @@ Answers 1, 2, 4, and 5 each have more than three A or B lines. Each of those lin
 | `house-report-104-469-pt1-1996` | "illegal aliens who have entered the United States without inspection gain equities and privileges in immigration proceedings that are not available to aliens who present themselves for inspection at a port of entry." "Hence, the pivotal factor in determining an alien's status will be whether or not the alien has been lawfully admitted." The report's own words. Lawful admission is the pivotal factor in status. | A | 4, lawful admission is the pivotal factor in determining status |
 | `house-report-104-469-pt1-1996` | "Section 236(a) restates the current provisions in section 242(a)(1) regarding the authority of the Attorney General to arrest, detain, and release on bond an alien who is not lawfully in the United States." The same report, on the bond authority. | A | 4, the bond statute restates the authority to release on bond |
 
+### Closing read, October 6, round 11
+
+| Record | Passage or gap or audit finding | Grade | Serves answer |
+|---|---|---|---|
+| `ca2-cunha-opinion-2026-04-28` | "detain noncitizens on certain criminal or terrorism-related grounds" The holding does not reach every criminal ground. | A | 5, the old bond practice excluded certain criminal or terrorism-related grounds |
+| `uscode-2024-1226` | "Except as provided in subsection (c)" Bond release stops at the mandatory detention categories that follow. | A | 5, the bond statute excepts its mandatory detention categories from release |
+
 ## Sections
 
 | Section | Question it answers (from answer 7, or 1, 3, 4, 5 for the core) |

@@ -1,0 +1,4 @@
+**Major, new, rows 10 (the-catch) and 18 (export-ban).** The page says, “The interview does not carry the en-route claim.” It repeats the conclusion as, “The interview does not say that.” The [pinned Scripps article](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/scripps-rollins-2026-10-02.txt:10) says “WATCH THE FULL INTERVIEW WITH SECRETARY ROLLINS”; it quotes only portions of her remarks. The [pinned X post](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/daugherty-rollins-2026-10-02.txt:3) attributes the en-route claim to her. The article supports saying **its published excerpts do not contain that claim**. It does not establish what Rollins said throughout the separate [full interview](https://www.scrippsnews.com/politics/the-president/trump-administration-expects-diesel-prices-to-ease-after-global-oil-release).
+
+Blocks checked: 24; findings: Critical 0, Major 1, Minor 0.
+VERDICT: NO-SHIP

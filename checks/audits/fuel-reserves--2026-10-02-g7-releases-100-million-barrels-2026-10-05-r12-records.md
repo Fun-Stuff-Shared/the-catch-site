@@ -1,0 +1,4 @@
+No new or residual findings in the 12 listed blocks. The release and follow-up wording matches the [G7 statement](https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability); the March tally matches the [IEA account](https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets). The stated latest price dates match [FRED’s diesel](https://fred.stlouisfed.org/series/GASDESW) and [Brent](https://fred.stlouisfed.org/series/DCOILBRENTEU) series.
+
+Blocks checked: 12; findings: Critical 0, Major 0, Minor 0.
+VERDICT: SHIP

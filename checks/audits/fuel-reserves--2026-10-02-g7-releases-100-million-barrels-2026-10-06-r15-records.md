@@ -1,0 +1,4 @@
+**Major, new | Rows 5 (`the-catch`) and 7 (`export-ban`).** The page says: “In a later turn she says she is the secretary of agriculture, not energy, and that she is not in any of these conversations.” Both blocks place that sentence after the claim that barrels were en route. But the [interview captions](/Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/fuel-reserves/scripps-rollins-interview-captions-2026-10-02.txt:23) introduce “a ban and a diesel export ban” before Rollins says “I’m I’m certainly not in any of these conversations.” The page gives her disclaimer the subject of the barrel-movement claim, which the record does not support. She was disclaiming involvement in the export-ban discussions; she separately said she thought barrels were moving. That remains her qualified claim, not a delivery record.
+
+Blocks checked: 10; findings: Critical 0, Major 1, Minor 0.
+VERDICT: NO-SHIP

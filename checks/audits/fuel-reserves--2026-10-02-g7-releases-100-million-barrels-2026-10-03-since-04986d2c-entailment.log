@@ -1,0 +1,316 @@
+Reading additional input from stdin...
+OpenAI Codex v0.156.1
+--------
+[1mworkdir:[0m /Volumes/4/GitHub/the-catch-site-wt-fuel
+[1mmodel:[0m gpt-6-sol
+[1mprovider:[0m openai
+[1mapproval:[0m never
+[1msandbox:[0m danger-full-access
+[1mreasoning effort:[0m high
+[1mreasoning summaries:[0m detailed
+[1msession id:[0m 01a101cb-2bd7-71c2-bfa4-66d2ec30afe0
+--------
+[36muser[0m
+You are checking whether each cited sentence on a news page says only what its cited record supports. The page is /events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/ in /Volumes/4/GitHub/the-catch-site-wt-fuel (source src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro, manifest /Volumes/4/GitHub/the-catch-site-wt-fuel/checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json, pinned text files under /Volumes/4/GitHub/the-catch-site-wt-fuel/data/sources/).
+
+Only the blocks the page built at commit 04986d2c did not show with the same words and the same citations are listed; the rest of the page was judged before and is not in scope. Counts refer to the listed blocks. A row with no citation is text the page shows without a Cite (a headline, a dek, a figure label, a table cell) that changed: judge it against the records the manifest lists (open the pins it needs), and report it when no record supports a number, actor, date or characterization in it.
+
+Below is the table of every cited block on the page (a paragraph, a list item, a card, a table cell or a caption, in the words and numbers the built page shows) with its section and every citation it carries: the record id, the passage the citation points at, and the record's text pin. For every row: open each text pin, find each passage, read the record around it (the whole document, not only the passage), and decide whether the cited records together support the whole block: every number, actor, date, mechanism, causal word, characterization, and scope word in it. A block usually carries several sentences and several citations; a sentence is supported when any of the block's cited records supports it in full. A passage that supports one phrase does not support the sentence around it. A sentence that says more than its records (a mechanism the record does not give, a broader actor, a settled state for something the record calls proposed, a cause the record does not state, a superlative the record does not make) is not supported. A sentence in reader words that says the same thing as the record is supported. A sentence that states what the page could not find or fetch is supported by the working note or manifest, not by a record; report it only if it contradicts them.
+
+Report only the blocks with an unsupported sentence. For each: the row number and section, the sentence bytes, which cited records you checked, what the records actually support (quote it), what in the sentence goes beyond them, and a materiality (Critical, Major, Moderate, Minor). Then one line with the counts: blocks checked, blocks with an unsupported sentence by materiality. End with exactly one line: VERDICT: ENTAILED if no block is Critical or Major, otherwise VERDICT: NOT-ENTAILED.
+
+Rules: do not edit any file; do not run git commit, git reset, git checkout, or any command that mutates repository state; do not kill, restart, or signal any process you did not start. No em dashes anywhere in your output. Read the pins from disk; do not use the network.
+
+# Blocks on /events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels/ that the earlier page did not show (1 rows, 4 citations)
+
+| # | section | block text | citations (record: passage; text pin) |
+|---|---|---|---|
+| 1 | what-happened | The October 2 statement calls for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz. Net exports of diesel/gasoil from the Gulf countries averaged 390,000 barrels a day in August, just over a quarter of levels before the war in the Middle East. The French presidency's October 2 readout says volumes moving through Hormuz and the Yanbu canal in the Red Sea have been increasing in recent days. | govuk-g7-statement-2026-10-02: immediate and full restoration of navigational rights and principles in the Strait of Hormuz; data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt<br>iea-omr-2026-09: averaged 390 kb/d in August, just over a quarter of pre-war levels; data/sources/fuel-reserves/iea-omr-2026-09.txt<br>iea-omr-2026-09: Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 mb/d lower than in February; data/sources/fuel-reserves/iea-omr-2026-09.txt<br>elysee-g7-readout-2026-10-02: Les volumes acheminés transitant par Ormuz et dans le canal de Yanbu en Mer Rouge augmentent ces derniers jours; data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt |
+[1m[33mwarning:[0m[0m Under-development features enabled: code_mode, context_management, enable_mcp_apps. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/zain/.codex/config.toml.
+[1m[33mwarning:[0m[0m loading hooks from both /Users/zain/.codex/hooks.json and /Users/zain/.codex/config.toml; prefer a single representation for this layer
+[2m2026-10-03T12:44:16.129186Z[0m [31mERROR[0m [2mcodex_api::endpoint::responses_websocket[0m[2m:[0m failed to connect to websocket: HTTP error: 426 Upgrade Required, url: ws://127.0.0.1:17841/v1/responses
+[2m**Reviewing reference files**[0m
+[35m[3mcodex[0m[0m
+I’ll read the three pinned records in full and check the block’s claims against them. I’ll also inspect the manifest for any relevant working note. I won’t change files or use the network.
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "rg -n 'fuel-reserves|the-catch-site|citation' /Users/zain/.codex/memories/MEMORY.md | head -n 30"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+1183:applies_to: cwd=/Volumes/4/GitHub/the-catch-site/.worktrees/reader-experience (repo=/Volumes/4/GitHub/the-catch-site); reuse_rule=browser-inspect normal reader journeys first and build/gate before calling a visual change verified; no deployment implied
+1189:- rollout_summaries/2026-09-07T22-04-24-AjEh-the_catch_reader_sidebar_design_iteration.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/09/07/rollout-2026-09-07T18-04-24-01a07de6-ad08-7890-b042-591182dd7b2d.jsonl, updated_at=2026-09-08T07:09:48+00:00, thread_id=01a07de6-ad08-7890-b042-591182dd7b2d, final CSS commit `9d2cd368`; broader redesign remains open)
+1273:applies_to: cwd=/Volumes/4/GitHub/fable-core-handoff-2026-07-01 with SAI and `/Volumes/4/GitHub/the-catch-site` implementation surfaces; reuse_rule=follow design sections 12–13; recheck gate prompt/live deployment before activation claims
+1305:- Use `sai state stage-story --site-root /Volumes/4/GitHub/the-catch-site --manifest <manifest> --state-dir /Volumes/4/CF/catch-state`, then `state verify` and `npm run build`. The Texas case produced 44 pins and 15 figures (13 sourced, 2 computed); repeat runs write zero rows. `sum` and `date_difference_days` retain exact units, formulas, inputs, hashes, and source passages. [Task 2]
+1409:- js_repl, multi_agent_v2, tool_call_mcp_elicitation, model_reasoning_summary_format, invalid type: map, expected a boolean, yq -p=toml -o=json
+1419:- `model_reasoning_summary = "detailed"` is valid; remove unsupported `model_reasoning_summary_format = "experimental"`. `tool_call_mcp_elicitation` remains a boolean flag and was left disabled. `js_repl` orchestrates JavaScript tool calls; it does not bypass filesystem, network, or approval policy. [Task 2]
+1965:applies_to: cwd=/Volumes/4/GitHub/the-catch-site with state sources=/Volumes/4/CF/catch-state/views; reuse_rule=verify committed source, built output, and live bytes independently; preserve parked work and do not advance tick-10b while held
+1971:- rollout_summaries/2026-09-01T16-21-22-KKLI-atrium_hermetic_record_expansion_and_event_timeline_state_co.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/09/01/rollout-2026-09-01T12-21-22-01a05dc6-768a-7373-a1b1-ce2de5a7f716.jsonl, updated_at=2026-09-02T18:46:19+00:00, thread_id=01a05dc6-768a-7373-a1b1-ce2de5a7f716, committed provenance and records verified)
+1981:- rollout_summaries/2026-09-01T16-21-22-KKLI-atrium_hermetic_record_expansion_and_event_timeline_state_co.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/09/01/rollout-2026-09-01T12-21-22-01a05dc6-768a-7373-a1b1-ce2de5a7f716.jsonl, updated_at=2026-09-02T18:46:19+00:00, thread_id=01a05dc6-768a-7373-a1b1-ce2de5a7f716, accepted timeline deployed and live-verified)
+1991:- rollout_summaries/2026-09-01T16-21-22-KKLI-atrium_hermetic_record_expansion_and_event_timeline_state_co.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/09/01/rollout-2026-09-01T12-21-22-01a05dc6-768a-7373-a1b1-ce2de5a7f716.jsonl, updated_at=2026-09-02T18:46:19+00:00, thread_id=01a05dc6-768a-7373-a1b1-ce2de5a7f716, explicit hold; local edits uncommitted)
+2114:applies_to: cwd=/Volumes/4/GitHub/the-catch-site; reuse_rule=preserve protected/TRELLIS-owned files and explicit-path/no-push/no-deploy/no-model-call boundaries; re-run build and gates after changes and never infer canonical News artifacts from generated records
+2120:- rollout_summaries/2026-08-25T04-41-33-ztAh-atrium_reader_figures_vote_language_episode_rendering_outlet.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/08/25/rollout-2026-08-25T00-41-33-01a03739-3c8a-7432-bc54-d88230f1cf95.jsonl, updated_at=2026-09-01T05:18:14+00:00, thread_id=01a03739-3c8a-7432-bc54-d88230f1cf95, reader/Figures work partial and staged)
+2130:- rollout_summaries/2026-08-25T04-41-33-ztAh-atrium_reader_figures_vote_language_episode_rendering_outlet.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/08/25/rollout-2026-08-25T00-41-33-01a03739-3c8a-7432-bc54-d88230f1cf95.jsonl, updated_at=2026-09-01T05:18:14+00:00, thread_id=01a03739-3c8a-7432-bc54-d88230f1cf95, vote language committed and mutation-tested)
+2140:- rollout_summaries/2026-08-25T04-41-33-ztAh-atrium_reader_figures_vote_language_episode_rendering_outlet.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/08/25/rollout-2026-08-25T00-41-33-01a03739-3c8a-7432-bc54-d88230f1cf95.jsonl, updated_at=2026-09-01T05:18:14+00:00, thread_id=01a03739-3c8a-7432-bc54-d88230f1cf95, 2,969-page build/event gate and screenshots captured)
+2146:## Task 4: Outlet citation records, typed-blocked
+2150:- rollout_summaries/2026-08-25T04-41-33-ztAh-atrium_reader_figures_vote_language_episode_rendering_outlet.md (cwd=/Volumes/4/GitHub/the-catch-site, rollout_path=/Users/zain/.codex/sessions/2026/08/25/rollout-2026-08-25T00-41-33-01a03739-3c8a-7432-bc54-d88230f1cf95.jsonl, updated_at=2026-09-01T05:18:14+00:00, thread_id=01a03739-3c8a-7432-bc54-d88230f1cf95, outlet work partial: 1,043 existing versus 1,216 recoverable URL denominator)
+2340:applies_to: cwd=/Volumes/4/CF/news-fqs-pilot with local consumer=/Volumes/4/GitHub/the-catch-site; reuse_rule=recheck queue capacity, durable run state, current worker PIDs, and explicit relaunch authorization before resuming; no writes to /Volumes/4/CF/sai and do not relaunch the noncompliant urllib tagger
+3053:- source_trust.py, metadata_backfill_required, ready_to_reclassify, public_video_archive_cspan_published_transcript, source_document.json, normalize_cspan_scraped.py, export_raw_sources_for_leann.py, citation_gated, public_claims_promoted=0
+3062:- The correction lane retains Claim Verification, citation review, and human review before public promotion. [Task 1]
+
+[2m**Checking file sizes**[0m
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'wc -l -c checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'wc -l -c data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+    1495   80450 checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json
+
+[32m succeeded in 0ms:[0m
+      14    2220 data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt
+
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'wc -l -c data/sources/fuel-reserves/iea-omr-2026-09.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+      21    6125 data/sources/fuel-reserves/iea-omr-2026-09.txt
+
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'wc -l -c data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'wc -l -c src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+     249   42389 src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro
+
+[32m succeeded in 0ms:[0m
+       9    2918 data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt
+
+[2m**Reading three pins**[0m
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'cat data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+G7 Leaders’ Statement on global energy security and market stability - GOV.UK
+
+G7 Leaders’ Statement on global energy security and market stability
+Today, we, the Leaders of the G7, convened a virtual meeting to address the deepening challenges to our energy security. Facing unprecedented volatility in oil markets - with surging prices threatening economic stability and the well-being of our citizens - we have agreed on decisive, coordinated measures to stabilize immediate energy supplies, shield households and businesses from price shocks, and strengthen the long-term resilience of global energy systems.
+We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns and temporarily increase utilization rates where feasible. We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel, in light of ongoing market pressures in this segment. The G7 requests the IEA to monitor the immediate and full implementation of the March 2026 commitments. In this regard, taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days by G7 members and partners. We will convene in the context of the IEA in the coming days to discuss the possibility of additional diesel releases as necessary.
+We reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries and call on all producers to refrain from imposing bans that could exacerbate market tensions.
+We invite the IEA to monitor the impact of these measures on energy security and market stability and to monitor implementation of commitments. A follow-up report should be delivered before 20 days, include actionable recommendations to enhance future responses, including stocks replenishment.
+We condemn Iran’s continued attacks against its regional neighbours and its disruption of international trade, energy security and the global economy. We call for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz and express our determination to redouble our collective efforts to that end. We commend the United States for its efforts to ensure the free flow of commerce through the strait of Hormuz.
+We will maintain sanctions against Russia while working with the IEA and global partners to prevent further spill overs into fuel, gas, and other commodity markets.
+Our citizens’ concerns about energy prices remain a top priority. We will monitor developments closely and stand ready to adjust measures as needed. Today’s agreements mark a step toward a more secure, transparent, and resilient energy future.
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'cat data/sources/fuel-reserves/iea-omr-2026-09.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+Oil Market Report - September 2026 – Analysis - IEA
+
+About this report
+The IEA Oil Market Report (OMR) is one of the world's most authoritative and timely sources of data, forecasts and analysis on the global oil market – including detailed statistics and commentary on oil supply, demand, inventories, prices and refining activity, as well as oil trade for IEA and selected non-IEA countries.
+Highlights
+- World oil demand is forecast to decline by 2.5 mb/d in 2026, 940 kb/d steeper than in last month’s Report, as the continuing impasse in negotiations between the United States and Iran delays the prospect of a normalisation of flows into next year. Losses will be concentrated in middle distillates and petrochemical feedstock products, especially in Asia. Oil demand is projected to recover by 2.6 mb/d in 2027, narrowly offsetting this year’s losses.
+- Global oil production fell by 1.6 mb/d m-o-m to 100.1 mb/d in August, as more than 10 mb/d of Gulf output remained shut in amid heightened security risks. Total oil supply is set to fall by 5.7 mb/d to 100.7 mb/d this year, with the expected recovery in the Gulf now deferred until 2027. Production is set to rebound by 8 mb/d in 2027. The Americas Quintet dominates growth in non-OPEC+ output, adding 1.4 mb/d in 2026 and 1 mb/d next year.
+- Refinery throughputs reached a summer peak of 81.4 mb/d in August, up 960 kb/d m-o-m, but 4.2 mb/d lower than a year ago, with losses spread across the Middle East, Russia and crude importing economies in Asia. Global runs are forecast to decline by 2.6 mb/d to 81.5 mb/d in 2026. Refining margins reached record levels in the Atlantic Basin in August, led by sharply higher diesel cracks, while surging freight rates weighed on Singapore profitability.
+- Global observed oil inventories plunged by a further 95 mb in August, taking cumulative draws since February to 507 mb, or 2.8 mb/d on average. Oil on water volumes declined by 65 mb as tanker traffic out of the Middle East came under renewed attacks. Non-OECD inventories drew by 52 mb, led by China, while OECD stocks rose by 23 mb as builds in commercial tanks more than offset a 19 mb draw in government stocks.
+- Benchmark North Sea Dated crude prices rose by $7.61/bbl to an average of $91.00/bbl in August, before surging to $113.48/bbl on 9 September. Backwardation reached extreme levels as crude markets tightened in tandem with disruptions in the Middle East and Russia, while demand shifted towards Atlantic Basin barrels. Tanker costs also were up sharply, in line with rising security risks and strong demand for ships.
+Diesel squeeze
+Benchmark crude oil prices surged to their highest level since May as negotiations between the United States and Iran to end the war in the Middle East remained at an impasse amid renewed hostilities. ICE Brent futures traded at $105/bbl at the time of writing, up $21/bbl since the start of August and 45% above pre-war levels, while physical benchmarks were significantly higher. However, the rise in both crude futures and physical prices pales in comparison with those for refined products, where market tightness is now most acute. Diesel/gasoil, which accounts for nearly 30% of global demand, saw prices in the United States surpass the $200/bbl mark in early September, 94% above pre-war levels, with Europe and Asia not far behind.
+The widening differential between crude and refined products has pushed refinery margins to record levels in the Atlantic Basin. Total oil exports from Gulf countries in August are currently estimated around 13 mb/d, nearly half their pre-war level. Crude losses appear to have narrowed to just below 45%, supported by increased flows bypassing the Strait, as well as US military escorts protecting flows through Hormuz. However, refined product and LPG exports remain nearly 60%, or 3.7 mb/d, less than in February.
+Notably, net exports of diesel/gasoil from the Gulf countries averaged 390 kb/d in August, just over a quarter of pre-war levels, as flows through the Strait of Hormuz remained severely constrained. Disruptions to Russia’s refining system and a near-halt to product exports following intensified Ukrainian attacks have compounded these losses. Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 mb/d lower than in February, when they accounted for almost 45% of global seaborne trade. A partial offset comes from other regions, where throughputs are pushed to the limit to capture record profit margins.
+With the protracted US-Iran diplomatic standoff and renewed attacks in both the Gulf and the Red Sea’s Bab el-Mandeb choke point continuing to hamper the normalisation of oil flows, we have further cut our supply and demand projections for the remainder of the year. World oil supply is now projected to average 100.7 mb/d in 2026, down 5.7 mb/d y-o-y, and 1.3 mb/d lower than in our last Report, with a full recovery in supplies from Middle East producers deferred until 2027.
+Steep losses of petrochemical feedstocks and refined product supplies, along with higher fuel prices, notably for diesel, will continue to weigh on consumption. Global oil demand is forecast to fall by 2.5 mb/d in 2026, around 940 kb/d more than estimated in last month’s Report. Nevertheless, the pace of the decline is set to ease from 5.3 mb/d in 2Q26 to 3.4 mb/d in 3Q26 and 2 mb/d in 4Q26.
+Inventories have so far played a crucial role in balancing the market. Since the start of the war, global observed oil inventories have fallen by 507 mb, equal to an average draw of 2.8 mb/d. August alone saw stocks fall by a steep 95 mb, or 3.1 mb/d. With buffers shrinking and the global refining system stretched to the limit, the need for progress in resolving the conflict in the Middle East – and the Russia-Ukraine war, which is now in its fifth year – is greater than ever to avoid further market tightening and demand destruction.
+OPEC+ crude oil production1
+million barrels per day
+Oil Market Report Documentation
+Definitions of key terms used in the OMR.
+For more info on the methodology, download the PDF below.
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc 'cat data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt'[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+Visioconférence des dirigeants du G7 sur la situation énergé
+
+Le Président de la République a réuni en visioconférence les dirigeants du G7 sur la situation énergétique mondiale le vendredi 2 octobre 2026.
+Face à la hausse mondiale des prix du carburant au niveau mondial, liée à la situation au Moyen-Orient, notre réponse doit être coordonnée.
+Le Président de la République avait annoncé devant les Français il y a quelques jours que la France, en tant que présidence du G7, réunirait les chefs d'Etat et de gouvernement du G7 pour agir de manière coordonnée sur la question de l'énergie, afin de desserrer l’étau sur les prix à la pompe.
+Les dirigeants du G7 se sont ainsi réunis aujourd'hui en visioconférence, en associant le Directeur exécutif de l'Agence internationale de l'énergie.
+Ils ont décidé, à l'unanimité :
+- De poursuivre, de façon coordonnée, leurs actions pour restaurer la pleine liberté de navigation dans le détroit d'Ormuz. Les volumes acheminés transitant par Ormuz et dans le canal de Yanbu en Mer Rouge augmentent ces derniers jours.
+- D'optimiser notre production énergétique pour produire au maximum de nos capacités de nos raffineries. C'était l'objet de la lettre que le Président de la République avait envoyée à la Présidente de la Commission européenne : de premières mesures ont été décidées au niveau européen, d'autres suivront.
+- De libérer des stocks stratégiques de produits raffinés, notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois, sous la coordination de l'Agence internationale de l'énergie.
+- De ne mettre en place aucune interdiction ou limitation d'exportation d’énergie entre les membres du G7, car les réflexes protectionnistes seraient nuisibles pour tous.
+Cette unité du G7 envoie un signal clair aux marchés pour faire baisser les prix de l’énergie.
+Le Président de la République et le Gouvernement seront vigilants à ce que cette baisse des prix sur les marchés mondiaux se répercute sur les prix à la pompe, pour l'ensemble de nos concitoyens.
+Revoir la déclaration du Président :
+G7 Leaders’ Statement on global energy security and market stability.
+[2m**Checking record IDs**[0m
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "rg -n -C 3 'immediate and full restoration|averaged 390|Les volumes acheminés|govuk-g7-statement-2026-10-02|iea-omr-2026-09|elysee-g7-readout-2026-10-02' checks/manifests/fuel-reserves--2026-10-02-g7-releases-100-million-barrels.json | head -n 130"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+46-      "label": "100 million barrels over four months",
+47-      "section_anchor": "release",
+48-      "records": [
+49:        "govuk-g7-statement-2026-10-02",
+50-        "elysee-g7-statement-2026-10-02",
+51:        "elysee-g7-readout-2026-10-02",
+52-        "bessent-post-2026-10-01",
+53-        "bundesregierung-energy-faq-2026-10-01",
+54-        "trumpstruth-post-2026-10-02",
+--
+95-  ],
+96-  "records": [
+97-    {
+98:      "id": "govuk-g7-statement-2026-10-02",
+99-      "title": "G7 Leaders' Statement on global energy security and market stability",
+100-      "publisher": "UK Government",
+101-      "date": "2026-10-02",
+102-      "url": "https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability",
+103:      "pinned_path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.html",
+104:      "text_path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt",
+105-      "text_sha256": "sha256:002a45d47885269baf12486b928710737892426bdb3719e97a1d0e7551f1a4b9",
+106-      "quote": "coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months",
+107-      "quote_span_check": "byte_exact",
+--
+125-      "capture_raw_sha256": "sha256:eceea65172ecd3edd119421b03c8779733c556129b35aa92e53e40fceb9c8112"
+126-    },
+127-    {
+128:      "id": "elysee-g7-readout-2026-10-02",
+129-      "title": "Visioconference des dirigeants du G7 sur la situation energetique mondiale",
+130-      "publisher": "Presidency of the French Republic",
+131-      "date": "2026-10-02",
+132-      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/visioconference-des-dirigeants-du-g7-sur-la-situation-energetique-mondiale",
+133:      "pinned_path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.html",
+134:      "text_path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.txt",
+135-      "text_sha256": "sha256:0f6162c4a054ea3c92855c348b86862ef97921efb7e93b5cec39c7e11a1e8488",
+136-      "quote": "jusqu'à 100 millions de barils sous 4 mois",
+137-      "quote_span_check": "byte_exact",
+--
+454-      "capture_status": "not admitted: direct fetch returned http 403 and the Wayback copy returned 404 on 2026-10-03 in capture-oneoff-20261003T065410Z; the article text was saved the same day from a browser fetch of the same URL."
+455-    },
+456-    {
+457:      "id": "iea-omr-2026-09",
+458-      "title": "Oil Market Report - September 2026",
+459-      "publisher": "International Energy Agency",
+460-      "date": "2026-09-11",
+461-      "url": "https://www.iea.org/reports/oil-market-report-september-2026",
+462:      "pinned_path": "data/sources/fuel-reserves/iea-omr-2026-09.html",
+463:      "text_path": "data/sources/fuel-reserves/iea-omr-2026-09.txt",
+464-      "text_sha256": "sha256:41d2ade9932ac5cfcb1bac508627c5515fc09c0b1eabe5689c92a3d50ac0fb52",
+465:      "quote": "averaged 390 kb/d in August, just over a quarter of pre-war levels",
+466-      "quote_span_check": "byte_exact",
+467-      "about": "The September oil-market report's account of August diesel exports from the Gulf and from Russia.",
+468-      "capture_run": "capture-oneoff-20261003T065410Z",
+--
+808-  ],
+809-  "story_sources": [
+810-    {
+811:      "id": "govuk-g7-statement-2026-10-02",
+812-      "group": "primary",
+813-      "label": "G7 Leaders' Statement on global energy security and market stability",
+814-      "meta": " · UK Government, 2026-10-02",
+--
+822-      "usage": "the record of the release, the earlier commitment, or the price series"
+823-    },
+824-    {
+825:      "id": "elysee-g7-readout-2026-10-02",
+826-      "group": "primary",
+827-      "label": "Visioconference des dirigeants du G7 sur la situation energetique mondiale",
+828-      "meta": " · Presidency of the French Republic, 2026-10-02",
+--
+990-      "usage": "how much of the March action the agency said had been released by the meeting"
+991-    },
+992-    {
+993:      "id": "iea-omr-2026-09",
+994-      "group": "primary",
+995-      "label": "Oil Market Report - September 2026",
+996-      "meta": " · International Energy Agency, September 2026",
+--
+1132-  ],
+1133-  "primary_sources": [
+1134-    {
+1135:      "id": "govuk-g7-statement-2026-10-02",
+1136:      "path": "data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.html",
+1137-      "bytes": 70422,
+1138-      "sha256": "sha256:52ed7f2210daaae7d90c91ad7abba5cb5308d2b58080853092e14a9ace3f0221",
+1139-      "url": "https://www.gov.uk/government/news/g7-leaders-statement-on-global-energy-security-and-market-stability"
+--
+1146-      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/g7-leaders-statement-on-global-energy-security-and-market-stability"
+1147-    },
+1148-    {
+1149:      "id": "elysee-g7-readout-2026-10-02",
+1150:      "path": "data/sources/fuel-reserves/elysee-g7-readout-2026-10-02.html",
+1151-      "bytes": 194449,
+1152-      "sha256": "sha256:c129263135ec9b0769ab186fa13c7cbe14c547b6ffc8acd909c2ce9a5d860c86",
+1153-      "url": "https://www.elysee.fr/emmanuel-macron/2026/10/02/visioconference-des-dirigeants-du-g7-sur-la-situation-energetique-mondiale"
+--
+1244-      "url": "https://www.iea.org/news/executive-director-participates-in-g7-leaders-meeting-on-energy-security-and-markets"
+1245-    },
+1246-    {
+1247:      "id": "iea-omr-2026-09",
+1248:      "path": "data/sources/fuel-reserves/iea-omr-2026-09.html",
+1249-      "bytes": 313645,
+1250-      "sha256": "sha256:22d0c03535b7050d345af87cdb4e9a1212617362291d694c384665b919527933",
+1251-      "url": "https://www.iea.org/reports/oil-market-report-september-2026"
+--
+1280-      "unit": "million barrels",
+1281-      "kind": "sourced",
+1282-      "source": {
+1283:        "source_id": "govuk-g7-statement-2026-10-02",
+1284-        "quote_span": "100 million barrels (MB) to begin immediately over 4 months"
+1285-      }
+1286-    },
+--
+1291-      "unit": "months",
+1292-      "kind": "sourced",
+1293-      "source": {
+1294:        "source_id": "govuk-g7-statement-2026-10-02",
+1295-        "quote_span": "over 4 months"
+1296-      }
+1297-    },
+--
+1302-      "unit": "days",
+1303-      "kind": "sourced",
+1304-      "source": {
+1305:        "source_id": "govuk-g7-statement-2026-10-02",
+1306-        "quote_span": "within the first 20 days"
+1307-      }
+1308-    },
+--
+1389-      "need": "October 2 joint statement",
+
+[35m[3mexec[0m[0m
+[1m/bin/zsh -lc "rg -n -C 4 'The October 2 statement calls for|Net exports of diesel/gasoil from the Gulf countries averaged|The French presidency' src/pages/events/fuel-reserves/2026-10-02-g7-releases-100-million-barrels.astro"[0m in /Volumes/4/GitHub/the-catch-site-wt-fuel
+[32m succeeded in 0ms:[0m
+58-
+59-      <section id="what-happened">
+60-        <h2 data-layer="fact">What happened</h2>
+61-        <p data-layer="narrative" data-answer="1">On October 2, 2026, G7 leaders agreed in their statement to a coordinated release of 100 million barrels through the International Energy Agency "to begin immediately over 4 months", "taking into account commitments that have already been fulfilled", with what they called a "frontloaded substantial diesel release within the first 20 days by G7 members and partners". The same statement says the group will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns and "temporarily increase utilization rates where feasible", and "We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel". It reaffirms a commitment to refrain from export restrictions on energy and energy products between G7 countries.<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /><Cite s="govuk-g7-statement-2026-10-02" passage="We will coordinate maintenance schedules across G7 refineries to prevent simultaneous capacity shutdowns" /><Cite s="govuk-g7-statement-2026-10-02" passage="temporarily increase utilization rates where feasible" /><Cite s="govuk-g7-statement-2026-10-02" passage="We also encourage engagement with countries holding significant refining capacities to boost global production of refined products, particularly diesel" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /></p>
+62:        <p data-layer="narrative">The French presidency's readout states a ceiling, "jusqu'à 100 millions de barils sous 4 mois", up to 100 million barrels within 4 months. That readout names refined products, notably diesel and crude.<Cite s="elysee-g7-readout-2026-10-02" passage="jusqu'à 100 millions de barils sous 4 mois" /><Cite s="elysee-g7-readout-2026-10-02" passage="notamment de diesel et de pétrole brut, jusqu'à 100 millions de barils sous 4 mois" /></p>
+63-        <p data-layer="narrative" data-answer="5">In March, International Energy Agency members pledged 400 million barrels; by October 2 around 325 million had been released, and that day the G7 set 100 million barrels over 4 months without saying how much of it is beyond the March pledge. The October 2 statement asks the agency to "monitor the immediate and full implementation of the March 2026 commitments".<Cite s="doe-spr-release-2026-03-11" passage="coordinated release of 400 million barrels" /><Cite s="iea-g7-meeting-2026-10-02" passage="He noted that around 325 million barrels of the IEA collective action announced on 11 March have so far been released, representing over 80% of the 400 million barrels originally pledged in the action." /><Cite s="govuk-g7-statement-2026-10-02" passage="monitor the immediate and full implementation of the March 2026 commitments" /><Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months, including a frontloaded substantial diesel release within the first 20 days" /></p>
+64-        <p data-layer="narrative">On September 30 President Donald Trump said he was still "thinking about" banning diesel exports. On October 2, hours after the G7 agreement, he said he will not authorize an export ban on diesel, and the joint statement commits the seven countries to refrain from export restrictions on energy and energy products between themselves.<Cite s="cnbc-export-ban-2026-09-30" passage={`still "thinking about" banning diesel exports`} /><Cite s="reuters-no-export-ban-2026-10-02" passage="he will not authorize an export ban on diesel" /><Cite s="govuk-g7-statement-2026-10-02" passage="refrain from export restrictions on energy and energy products between G7 countries" /></p>
+65-        <p data-layer="narrative" data-answer="4">The IEA's March contributions page says the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products. A barrel counted as crude is not the diesel a pump sells. On September 30, Energy Secretary Chris Wright said diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East.<Cite s="iea-contributions-2026-03-19" passage="the overall release of emergency stocks will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products" /><Cite s="cnbc-export-ban-2026-09-30" passage={`diesel supplies are "tight" because of export loss related to conflicts in Russia and the Middle East`} /></p>
+66:        <p data-layer="narrative">The October 2 statement calls for the immediate and full restoration of navigational rights and principles in the Strait of Hormuz. Net exports of diesel/gasoil from the Gulf countries averaged 390,000 barrels a day in August, just over a quarter of levels before the war in the Middle East. The French presidency's October 2 readout says volumes moving through Hormuz and the Yanbu canal in the Red Sea have been increasing in recent days.<Cite s="govuk-g7-statement-2026-10-02" passage="immediate and full restoration of navigational rights and principles in the Strait of Hormuz" /><Cite s="iea-omr-2026-09" passage="averaged 390 kb/d in August, just over a quarter of pre-war levels" /><Cite s="iea-omr-2026-09" passage="Combined, net exports of diesel/gasoil exports from the Gulf and Russia in August were 1.6 mb/d lower than in February" /><Cite s="elysee-g7-readout-2026-10-02" passage="Les volumes acheminés transitant par Ormuz et dans le canal de Yanbu en Mer Rouge augmentent ces derniers jours" /></p>
+67-
+68-        <SourcedBlock source="govuk-g7-statement-2026-10-02" kind="record" detail>
+69-          <p>The same statement says the release takes into account "commitments that have already been fulfilled," asks the International Energy Agency to monitor the March 2026 commitments, and says the group will meet again "to discuss the possibility of additional diesel releases as necessary." It also says the members "reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries," and that a follow-up report "should be delivered before 20 days."<Cite s="govuk-g7-statement-2026-10-02" passage="taking into account commitments that have already been fulfilled" /><Cite s="govuk-g7-statement-2026-10-02" passage="to discuss the possibility of additional diesel releases as necessary" /></p>
+70-        </SourcedBlock>
+71-        <SourcedBlock source="elysee-g7-statement-2026-10-02" kind="record" detail>
+72:          <p>The French presidency published the same English statement, including the {release.barrels} barrel release over {release.months} and the diesel release "within the first 20 days."<Cite s="elysee-g7-statement-2026-10-02" passage="frontloaded substantial diesel release within the first 20 days" /></p>
+73-        </SourcedBlock>
+74-        <SourcedBlock source="doe-spr-release-2026-03-11" kind="record" detail>
+75-          <p>On March 11, Chris Wright said 32 member nations agreed to a "coordinated release of 400 million barrels," and that the United States would "release 172 million barrels from the Strategic Petroleum Reserve, beginning next week," over "approximately 120 days." He said the United States had arranged to replace the draw with "approximately 200 million barrels within the next year."<Cite s="doe-spr-release-2026-03-11" passage="release 172 million barrels from the Strategic Petroleum Reserve, beginning next week" /><Cite s="cnbc-export-ban-2026-09-30" passage="American refiners are running at record highs" /></p>
+76-        </SourcedBlock>
+--
+86-          <p>It says the previous record high was 199.09p, set in June 2022.<Cite s="independent-miliband-2026-10-02" passage="The previous record high was 199.09p, set in June 2022" /></p>
+87-          <p>The same article says prices have rocketed because of the US-Israeli conflict with Iran and Russia's ongoing war in Ukraine.<Cite s="independent-miliband-2026-10-02" passage="Prices have rocketed in recent months because of the disruption in global markets caused by the US-Israeli conflict with Iran and Russia’s ongoing war in Ukraine." /></p>
+88-        </SourcedBlock>
+89-        <SourcedBlock source="elysee-g7-readout-2026-10-02" kind="record" detail>
+90:          <p>The French presidency's readout says the G7 leaders decided unanimously. It says a letter from the president of the Republic to the president of the European Commission concerned running refineries at full capacity, and that first measures had already been decided at European level.<Cite s="elysee-g7-readout-2026-10-02" passage="Ils ont décidé, à l'unanimité :" /><Cite s="elysee-g7-readout-2026-10-02" passage="la lettre que le Président de la République avait envoyée à la Présidente de la Commission européenne" /><Cite s="elysee-g7-readout-2026-10-02" passage="Les volumes acheminés transitant par Ormuz et dans le canal de Yanbu en Mer Rouge augmentent ces derniers jours" /></p>
+91-        </SourcedBlock>
+92-        <SourcedBlock source="iea-contributions-2026-03-19" kind="record" detail>
+93-          <p>The International Energy Agency's March 19 contributions page describes the 11 March agreement as one "to make 400 million barrels of oil available to the market". It says the overall release "will largely consist of crude oil, while in Europe the contributions will primarily take the form of refined oil products." It calls the action "the sixth time" members have acted together since the agency "was created in 1974," after actions "in 1991, 2005, 2011, and twice in 2022," and calls the Middle East war "the largest supply disruption in the history of the global oil market." Executive Director Fatih Birol's remarks are named on that page.<Cite s="iea-contributions-2026-03-19" passage="to make 400 million barrels of oil available to the market" /><Cite s="iea-contributions-2026-03-19" passage="This is the sixth time that IEA Member countries have taken emergency collective action" /><Cite s="iea-contributions-2026-03-19" passage="Previous collective actions were taken in 1991, 2005, 2011, and twice in 2022." /><Cite s="iea-contributions-workbook-2026-03-19" passage="Total IEA,426.03075080054771" /></p>
+94-        </SourcedBlock>
+
+[2m**Reviewing row counts**[0m
+[35m[3mcodex[0m[0m
+Blocks checked: 1. Blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
+VERDICT: ENTAILED
+[2mtokens used[0m
+18,353
+Blocks checked: 1. Blocks with an unsupported sentence: Critical 0, Major 0, Moderate 0, Minor 0.
+VERDICT: ENTAILED

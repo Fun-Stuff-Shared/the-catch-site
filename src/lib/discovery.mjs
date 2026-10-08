@@ -1,5 +1,6 @@
 import { event as jobs } from '../data/jobs202607.mjs';
 import { event as jobsAugust } from '../data/jobs202608.mjs';
+import { event as jobsSeptember } from '../data/jobs-2026-10-02-september-payrolls-rise-29000.mjs';
 import { event as june } from '../data/fomc20260617.mjs';
 import { event as july } from '../data/fomc20260729.mjs';
 import { event as septemberFed } from '../data/fed-rate-2026-09-16-unanimous-quarter-point-hike.mjs';
@@ -13,15 +14,17 @@ import { event as mailVoting } from '../data/mailvoting202609.mjs';
 import { event as mailVotingDenial } from '../data/mail-voting-2026-09-14-court-denies-stay.mjs';
 import { event as kennedyCenterNotice } from '../data/kennedy-center-2026-09-17-30-day-notice-before-demolition.mjs';
 import { event as edSheeranTour } from '../data/ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour.mjs';
+import { event as fuelReserves } from '../data/fuel-reserves-2026-10-02-g7-releases-100-million-barrels.mjs';
 import { event as canadaTariffs } from '../data/canadatariffs202609.mjs';
 import { event as spaceWeapons } from '../data/spaceweapons202609.mjs';
 import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs';
 import { event as immigrationDetention } from '../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs';
+import { event as okinawaMarine } from '../data/okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman.mjs';
 import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, immigrationDetention].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -37,7 +40,9 @@ export const series = [
   { path: '/events/iran-war/', title: 'Iran war cost', topic: 'Congress', keywords: 'Iran war CBO Congressional Budget Office Epic Fury Boyle Hegseth munitions inflation', description: 'CBO\'s September 15 letter puts the Pentagon\'s incremental cost of the Iran war at $38.1 billion through August 1. Another month would add $2 billion or $3 billion.' },
   { path: '/events/kennedy-center/', title: 'Kennedy Center', topic: 'Courts', keywords: 'Kennedy Center demolition renovation Cooper Beatty preservation court', description: 'The court record behind the September 17 advance-notice order for covered changes to the Kennedy Center project plans.' },
   { path: '/events/ed-sheeran-tour/', title: "Ed Sheeran's Loop Tour", topic: 'Music', keywords: 'Ed Sheeran Macklemore Loop Tour Finneas Aaron Rowe Lukas Graham Beoga', description: "Macklemore's removal from the 2026 Loop Tour lineup, the supporting acts who withdrew, and the remaining North American schedule." },
+  { path: '/events/fuel-reserves/', title: 'Fuel reserves', topic: 'Energy', keywords: 'G7 diesel crude oil reserves IEA Strategic Petroleum Reserve export', description: 'G7 calls a diesel release substantial and places it in the first 20 days, with no number. A French presidency readout says up to 100 million barrels of diesel and crude. The October text counts commitments already fulfilled.' },
   { path: '/events/immigration-detention/', title: 'Immigration detention', topic: 'Courts', keywords: 'immigration detention bond hearing Supreme Court mandatory detention', description: 'For three decades immigrants who entered without inspection could ask for release on bond. In July 2025 the Trump administration said the law forbids it, nine federal appeals courts have said it does not, and on October 1 the Supreme Court took the case.' },
+  { path: '/events/okinawa/', title: 'Okinawa', topic: 'Asia', keywords: 'Okinawa Marine Naha Ballard SOFA status of forces agreement curfew Koja Takaichi', description: 'Japan holds a U.S. Marine arrested on October 4 in the killing of Anna Yagi in Naha. Okinawa says U.S. discipline measures have failed and the status of forces agreement must change; Washington says the agreement is working.' },
 ];
 export function storyCatalog() {
   const state = readPublishedState();
