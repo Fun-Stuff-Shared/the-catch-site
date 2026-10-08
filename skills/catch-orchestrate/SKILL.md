@@ -115,13 +115,14 @@ zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <
 ```
 
 It cuts a publish worktree from main, merges the branches, refuses a manifest with missing
-attestations or no figures, runs the full build and gate, fast-forwards main, stages each
-story's figures and pins in catch-state (`state stage-story`, no model calls), verifies the
-state, copies each story's event view and every chain view that names it into `data/state/`
+attestations, no figures or saved records that do not match it, runs the full build and
+gate, stages each story's figures and pins in catch-state from the publish worktree
+(`state stage-story`, no model calls), verifies the state, copies each story's event view and every chain view that names it into `data/state/`
 and commits them (`state:`), checks that the committed views alone hold every story (the
 hosted build has no catch-state and reads only committed views; a story view without its
-chain fails on the host and the site silently keeps the old build), builds again, pushes
-main, polls each live URL until its headline serves, counts em dashes on the live bytes and
+chain fails on the host and the site silently keeps the old build), builds again, and only
+then fast-forwards main and pushes it. A failure anywhere before that leaves main where it
+was. It then polls each live URL until its headline serves, counts em dashes on the live bytes and
 runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other
 stories' unpushed commits: list them for the human before the first push of the day.
 
@@ -136,8 +137,9 @@ zsh skills/catch-orchestrate/scripts/close-story.sh .worktrees/<slug> <story-id>
 Once the story is live, it refuses while anything still runs in the worktree, copies
 uncommitted files that are not build output to `.worktrees/.closed/`, removes the worktree
 (the branch stays), and re-registers the story's records in catch-state so their saved text
-reads from the main checkout. Close publish worktrees and scratch worktrees the same way,
-without a story id.
+reads from the main checkout. Close the publish worktree with every story it published
+(`close-story.sh .worktrees/publish-<stamp> <story-id>...`): staging pointed those records
+at it. Close scratch worktrees without a story id.
 
 ## Relaying
 

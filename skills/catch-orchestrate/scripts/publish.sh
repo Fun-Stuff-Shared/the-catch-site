@@ -38,15 +38,18 @@ if bad or not m.get("completed_by"):
 if not m.get("figures"):
     sys.exit(f"{sys.argv[1]}: no figures declared; the story's headline numbers must be in figures[] before it is staged")
 EOF
+  PYTHONPATH=$sai/src PYTHONDONTWRITEBYTECODE=1 $sai/.venv/bin/python -c '
+import sys
+from pathlib import Path
+from sai.state.story_manifest import read_pins
+read_pins(Path(sys.argv[1]), Path(sys.argv[1]) / sys.argv[2])' $wt $m || { print "$m: its saved records do not match the manifest" >&2; exit 1 }
 done
 
 npm run build > /tmp/${wt:t}-build1.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build1.log" >&2; exit 1 }
-git -C $site checkout -q -- $generated 2>/dev/null || true
-git -C $site merge -q --ff-only ${wt:t}
 
 for s in $stories; do
   (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story --manifest $site/checks/manifests/$s.json \
-    --site-root $site --state-dir $state) > /tmp/${wt:t}-stage-$s.json || { print "stage-story refused $s: /tmp/${wt:t}-stage-$s.json" >&2; exit 1 }
+    --site-root $wt --state-dir $state) > /tmp/${wt:t}-stage-$s.json || { print "stage-story refused $s: /tmp/${wt:t}-stage-$s.json" >&2; exit 1 }
 done
 (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state verify --state-dir $state >/dev/null)
 
@@ -77,15 +80,22 @@ git -C $site push -q origin main
 for s in $stories; do
   subject=${s%%--*} slug=${s#*--}
   url=$live/events/$subject/$slug/
-  h1=$(python3 -c 'import re,sys,html; t=open(sys.argv[1]).read(); print(html.unescape(re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S).group(1)).strip())' dist/events/$subject/$slug/index.html)
-  ok=0
-  for i in {1..60}; do
-    body=$(curl -sL -w '\n%{http_code}' $url)
-    [[ ${body##*$'\n'} == 200 && $body == *"$h1"* ]] && { ok=1; break }
-    sleep 10
-  done
-  (( ok )) || { print "NOT LIVE after 10 minutes: $url; read the hosted build log" >&2; exit 1 }
-  print "live: $url (em dashes: $(print -r -- $body | command grep -o $'—' | wc -l | tr -d ' '))"
+  python3 - dist/events/$subject/$slug/index.html $url <<'EOF' || exit 1
+import html, re, sys, time, urllib.request
+h1 = lambda t: html.unescape(re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S).group(1))).strip()
+want, url = h1(open(sys.argv[1], encoding="utf-8").read()), sys.argv[2]
+for _ in range(60):
+    try:
+        with urllib.request.urlopen(url, timeout=30) as r:
+            body = r.read().decode("utf-8")
+        if r.status == 200 and h1(body) == want:
+            print(f"live: {url} (em dashes: {body.count(chr(0x2014))})")
+            sys.exit(0)
+    except Exception:
+        pass
+    time.sleep(10)
+sys.exit(f"NOT LIVE after 10 minutes: {url}; read the hosted build log")
+EOF
 done
 node scripts/live-audit.mjs $live
 print "published from $wt"
