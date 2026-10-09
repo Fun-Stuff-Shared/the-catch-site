@@ -17,8 +17,8 @@ paragraph), with its source.
 2. ...
 
 Order on the page (each layer complete enough to stop after): the news; the story in
-order; why now; the sides; the catch; what is next. Word budget for the story above the
-details: about 900.
+order; why now; the sides; the catch; what is next. No word budget: every paragraph answers
+a reader's question about one of the five sentences.
 
 Background held: verified material the record keeps but the page does not use. This list
 is long; that is expected.

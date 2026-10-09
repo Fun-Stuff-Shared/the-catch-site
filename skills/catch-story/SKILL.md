@@ -41,9 +41,10 @@ A wrong angle costs a sentence here and a rewrite later.
 Write from the plan, not the brief. Draft each layer in your own words with the brief
 closed, saying what you know the way a reporter who has read everything would say it, then
 attach the citations. The record is what lets you say "since the war with Iran began in
-February, diesel has nearly doubled" in one clause; it is not a list of things to mention.
-A record's being admitted is never a reason to use it. Hold the plan's word budget (about
-900 words above the details). A question the plan does not answer is a plan change: send it
+February, U.S. diesel has risen by more than half" in one clause; it is not a list of things to mention.
+A record's being admitted is never a reason to use it. There is no word budget: a
+paragraph is there because it answers a question in the plan, and one that answers none is
+cut. A question the plan does not answer is a plan change: send it
 to the orchestrator; do not answer it on the page yourself.
 
 The page reads top to bottom as the inverted pyramid, each layer complete enough to stop

@@ -23,8 +23,8 @@ goes wrong, and what comes next, with every fact traceable to a saved source.
 
 The record is the author's background, not the page's content. Gather wide: the earlier
 fighting, the months of price swings, the leader who has gone back and forth. Knowing all of
-it is what lets the page say "since the war with Iran began in February, diesel has nearly
-doubled" in one clause, with confidence. Most of what you admit never appears on the page,
+it is what lets the page say "since the war with Iran began in February, U.S. diesel has risen
+by more than half" in one clause, with confidence. Most of what you admit never appears on the page,
 and that is the point of having it. What reaches the page is decided by the plan (step 8).
 
 Work in the story's worktree. Paths below are relative to it. `<story>` is
@@ -137,8 +137,9 @@ The plan settles, before anyone writes, what a reader needs to follow each sente
 each of the five, list the questions a reader who knows nothing would ask of it ("what
 pledge?", "why is 100 left if 325 of 400 went out?", "which war?"), and answer each from
 the record in the fewest words that hold: usually a clause, sometimes a sentence, rarely a
-paragraph. Then the order the page tells it in, and a word budget: about 900 words for the
-story above the details. Everything else stays in the record, one click from the page. The
+paragraph. Then the order the page tells it in. Length follows from the plan: a paragraph exists
+because it answers a reader's question about one of the five sentences, and a story that
+needs more explaining runs longer. Everything else stays in the record, one click from the page. The
 fuel story's page grew to 2,300 words because none of this was settled: each question a
 cold reader asked in stage two was answered by inserting a paragraph where they stalled.
 Then:
