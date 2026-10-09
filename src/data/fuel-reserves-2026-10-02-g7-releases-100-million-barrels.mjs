@@ -1,7 +1,8 @@
 // Diesel prices are read as integer thousandths from the pinned rows and written as a reader says them.
 // data/sources/fuel-reserves/eia-diesel-price-2026-10-06.txt
-//   02/23 3.809  09/21 6.529  10/05 6.199
+//   02/23 3.809  03/02 3.897  09/21 6.529  10/05 6.199
 const dieselFeb23 = 3809;
+const dieselMar2 = 3897;
 const dieselSep21 = 6529;
 const dieselOct5 = 6199;
 
@@ -9,6 +10,7 @@ const dollars = (n) => `$${(Math.round(n / 10) / 100).toFixed(2)}`;
 
 export const prices = {
   beforeWar: dollars(dieselFeb23),
+  march2: dollars(dieselMar2),
   record: dollars(dieselSep21),
   oct5: dollars(dieselOct5),
 };
@@ -56,13 +58,6 @@ const millions = (thousand) => `${(thousand / 1000).toFixed(1).replace(/\.0$/, "
 export const usShare = {
   awarded: millions(awardedThousand),
   offer: "40 million",
-};
-
-// Hormuz crossings of October 6; Gulf shut-ins of October 8.
-// reuters-hormuz-transits-2026-10-08, reuters-oil-jumps-2026-10-08
-export const next = {
-  hormuzVessels: "Seven",
-  gulfShutIn: "62.9 percent",
 };
 
 export const ledgerRows = [
