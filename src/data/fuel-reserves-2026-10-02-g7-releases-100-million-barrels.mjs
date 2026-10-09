@@ -15,12 +15,14 @@ export const prices = {
 
 // G7 statement of October 2 and the March pledge as the Energy Department announced it.
 // data/sources/fuel-reserves/govuk-g7-statement-2026-10-02.txt, doe-spr-release-2026-03-11.txt
+const marchTotalMillion = 400;
+
 export const release = {
   barrels: "100 million",
   months: "four months",
   dieselDays: "20 days",
   members: 32,
-  marchTotal: "400 million",
+  marchTotal: `${marchTotalMillion} million`,
   usMarch: "172 million",
 };
 
@@ -31,6 +33,7 @@ const releasedMillion = 325;
 
 export const marchSoFar = {
   released: `${releasedMillion} million`,
+  apparentGap: `${marchTotalMillion - releasedMillion} million`,
   unreleased: "100 million",
 };
 
