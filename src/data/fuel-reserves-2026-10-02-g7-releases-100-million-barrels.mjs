@@ -27,12 +27,10 @@ export const release = {
 // IEA account of October 2 and statement of October 7: barrels of the March action released,
 // and the pledged barrels not yet released.
 // data/sources/fuel-reserves/iea-g7-meeting-2026-10-02.txt, iea-member-meeting-2026-10-07.txt
-const pledgedMillion = 400;
 const releasedMillion = 325;
 
 export const marchSoFar = {
   released: `${releasedMillion} million`,
-  onPaper: `${pledgedMillion - releasedMillion} million`,
   unreleased: "100 million",
 };
 
