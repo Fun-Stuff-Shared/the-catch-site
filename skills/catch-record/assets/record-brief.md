@@ -8,16 +8,17 @@ Exactly five sentences a stranger could repeat, one each: what happened, to whom
 
 ## The plan
 
-The path a reader takes, as a chain: each step is the question the reader now has, the
-answer in the fewest words that hold, and its source. The chain's order is the page's order.
+Each layer, the sentence it tells, and its chain: the question the heading answers, then
+each question the reader has next, answered in the fewest words that hold, with its source.
+A section starts where the top left off; it does not retell it.
 
 Headline: {headline}
 
-What happened (the event, what it means, where it stands; about three short paragraphs):
+What happened (sentence 1; the event in plain words, what it means, where it stands):
 1. {the question the headline raises}: {answer} [record-id: "words"]
-2. {the question that answer raises}: ...
+2. ...
 
-{Next layer}: opens on {a question the first layer left}
+{Layer} (sentence {n}): opens on {the question its heading answers}
 1. ...
 
 Background held: verified material the record keeps but the page does not use. This list

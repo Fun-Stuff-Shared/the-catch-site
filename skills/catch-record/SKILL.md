@@ -133,26 +133,30 @@ short enough to say aloud. No caveats and no "the record does not show"; a quali
 belongs in the plan or the section it qualifies. This is the test the
 review runs against, and the test you judge every later finding by.
 
-The plan settles, before anyone writes, the path a reader takes through the story. It is a
-chain, not a list: the headline raises a question, the lead answers it and raises the next,
-and each step answers the question the step before it left. Write each step as the
-question the reader now has ("what pledge?", "why is 100 left if 325 of 400 went out?"),
-the answer from the record in the fewest words that hold, and its source. The order of the
-chain is the order of the page.
+The plan settles, before anyone writes, what each layer of the page tells. Each of the five
+sentences belongs to the layer that tells it: what happened to What happened, to whom to
+the story in order, why now to Why now, what is in dispute to The sides and The catch, what
+comes next to What happens next. Under each layer, write its chain: the question its
+heading answers, then each question the reader has next ("what pledge?", "why is 100 left
+if 325 of 400 went out?"), each answered from the record in the fewest words that hold,
+with its source.
 
-Disclose in layers, the way a good skill file does: the top carries what a reader needs to
-act on, and the detail loads only when they ask for it. The first layer is What happened:
-the event in plain words, what it means, and where it stands, in about three short
-paragraphs. It is not the whole story. The dispute, the catch, the pressure and the sides
-each get their own layer below it, and the five sentences are told across the page, not
-packed into the top. Each later layer opens on a question the first one left and goes one
-level deeper. A
-question the reader will carry is answered where it is raised, or the chain says there
-that nobody knows yet; it is never left hanging for paragraphs while other points pass. A
-fact no question asks for stays in the record, one click from the page, however true it
-is. The fuel story's page grew to 2,300 words, and then read as a dump at half that,
-because its plan listed answers under each sentence with nothing deciding which question
-came next.
+The layers disclose the story the way a good skill file does: the top tells the reader what
+they need to know, and each section below goes one level deeper into one part of it,
+starting where the top left off rather than telling it again. What happened is the event in
+plain words, what it means for the people it touches, and where it stands. It names a
+dispute at most; it never argues one. When the headline carries the catch, What happened
+states the fact once ("the barrels are not new; they are what is left of March's release");
+whose claim that corrects, and how, is The catch's to tell. A question the top raises is
+answered by the section about that thing. A question raised inside a section is answered in
+that section, or the section says nobody knows yet. A fact no layer's question asks for
+stays in the record, one click from the page, however true it is.
+
+Two plans that failed on the fuel story. One listed answers under each sentence with nothing
+deciding what came next, and the page read as a dump. The next ran one chain from the
+headline, which carried the catch, and answered every question where it came up, so the
+White House claim, the pressure, the two asks and the ban talk all landed in What happened,
+eleven paragraphs before the first section below it.
 Then:
 
 ```bash
@@ -199,7 +203,7 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Principles
 
-- The record is background; the plan decides the page. A fact earns a place on the page by answering the question a reader has at that point in the plan's chain, not by being admitted.
+- The record is background; the plan decides the page. A fact earns a place on the page by answering a question its layer's reader has, not by being admitted.
 
 - An unknown is a claim too. Before the brief, a reader report or the human is told "the records don't say", search every admitted record's text for it (in each source language). Okinawa's page said nothing tied the suspect to the room beyond a camera match, while an admitted record quoted police saying the camera showed him leaving with her belongings.
 

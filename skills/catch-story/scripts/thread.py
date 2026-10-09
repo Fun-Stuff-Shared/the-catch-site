@@ -40,9 +40,10 @@ with ThreadPoolExecutor(2) as pool:
 def hanging(rows):
     found, run = [], []
     for i, r in enumerate(rows + [{"answered": "yes"}]):
-        if r["answered"] == "no": run.append(i); continue
+        if r["answered"] == "no" and (not run or units[i]["heading"] == units[run[0]]["heading"]):
+            run.append(i); continue
         if len(run) >= 3: found.append((run[0], len(run), rows[run[0]]["asked"]))
-        run = []
+        run = [i] if r["answered"] == "no" else []
     return found
 
 
@@ -54,7 +55,7 @@ for i, u in enumerate(units):
             out.append(f"- {label}, paragraph {i + 1} (\"{u['text'][:60]}...\"): {x[key]} / {y[key]}")
 for n, rows in enumerate(reads, 1):
     for start, length, q in hanging(rows):
-        out.append(f"- Hanging question (reader {n}), unanswered for {length} paragraphs from paragraph {start + 1}: \"{q}\"")
+        out.append(f"- Hanging question (reader {n}), unanswered for {length} paragraphs of one section from paragraph {start + 1}: \"{q}\"")
 for n, rows in enumerate(reads, 1):
     out += ["", f"## Reader {n}", ""]
     for i, (u, r) in enumerate(zip(units, rows), 1):

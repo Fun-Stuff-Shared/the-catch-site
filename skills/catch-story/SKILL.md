@@ -43,15 +43,17 @@ closed, saying what you know the way a reporter who has read everything would sa
 attach the citations. The record is what lets you say "since the war with Iran began in
 February, U.S. diesel has risen by more than half" in one clause; it is not a list of things to mention.
 A record's being admitted is never a reason to use it. There is no word budget: a
-paragraph is there because it is a step in the plan's chain, answering the question the
+paragraph is there because it is a step in its layer's chain, answering the question the
 paragraph before it left, and one that answers none is cut. A question the plan does not answer is a plan change: send it
 to the orchestrator; do not answer it on the page yourself.
 
-The page reads top to bottom as the inverted pyramid, each layer complete enough to stop
-after:
+The page reads top to bottom as the inverted pyramid: the top tells what happened, and
+each layer below goes deeper into one part of it, true enough to stop after:
 
-1. **What happened.** Three short paragraphs: the event, what changed and why it matters,
-   and where it stands. A reader who stops here can tell someone else the story.
+1. **What happened.** Three short paragraphs, in plain words: the event, what it means for
+   the people it touches, and where it stands. A reader who stops here knows what happened
+   and why it matters to them. A dispute or a catch is named at most, as plain fact, and
+   told in its own section; no side's claim is quoted or argued here.
 2. **The story in order.** The people it happens to, step by step. Open on who they are
    and what happened to them, not on the institution.
 3. **Why now.** The dated chain, opening on the motive the actors themselves state, with
@@ -169,9 +171,12 @@ paragraph against its cited records and ends `ENTAILED` or `NOT ENTAILED`.
 
 The thread read shows where the reader loses the thread, and each break has one fix, which
 is never inserting text where the reader stalled:
-- A question the reader carries unanswered for several paragraphs: the chain answers it too
-  late. Move the answer up to where the question is raised, or say there that nobody knows
-  yet.
+- A question the reader carries unanswered through several paragraphs of one section: the
+  section answers it too late. Answer it where the section raises it, or say there that
+  nobody knows yet. A question What happened raises is answered by the section about that
+  thing, not by pulling the answer into What happened.
+- A section the reader calls a repeat retells the top instead of going deeper. Start it
+  where the top left off.
 - A paragraph the reader could not place: it is not the next step. Move it to the step
   whose question it answers, or cut it.
 - Words that lost the reader: say it in plain words.
