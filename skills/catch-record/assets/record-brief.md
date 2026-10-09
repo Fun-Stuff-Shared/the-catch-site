@@ -13,7 +13,7 @@ answer in the fewest words that hold, and its source. The chain's order is the p
 
 Headline: {headline}
 
-What happened (ends where the reader can retell the five sentences):
+What happened (the event, what it means, where it stands; about three short paragraphs):
 1. {the question the headline raises}: {answer} [record-id: "words"]
 2. {the question that answer raises}: ...
 

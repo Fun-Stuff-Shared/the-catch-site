@@ -141,9 +141,12 @@ the answer from the record in the fewest words that hold, and its source. The or
 chain is the order of the page.
 
 Disclose in layers, the way a good skill file does: the top carries what a reader needs to
-act on, and the detail loads only when they ask for it. The first layer is the shortest
-chain that gets a reader to all five sentences; it ends where they could retell the story.
-Each later layer opens on a question the first one left and goes one level deeper. A
+act on, and the detail loads only when they ask for it. The first layer is What happened:
+the event in plain words, what it means, and where it stands, in about three short
+paragraphs. It is not the whole story. The dispute, the catch, the pressure and the sides
+each get their own layer below it, and the five sentences are told across the page, not
+packed into the top. Each later layer opens on a question the first one left and goes one
+level deeper. A
 question the reader will carry is answered where it is raised, or the chain says there
 that nobody knows yet; it is never left hanging for paragraphs while other points pass. A
 fact no question asks for stays in the record, one click from the page, however true it
