@@ -3,26 +3,24 @@
 set -euo pipefail
 story=$1 round=$2
 here=${0:A:h}
-wt=$PWD
 report=checks/records/$story-review-r$round.md
-work=$(mktemp -d -t catch-review)
+work=$(mktemp -d /Volumes/4/tmp/catch-review.XXXXXX)
 prompt=$work/prompt.txt
-BRIEF=checks/records/$story.md MANIFEST=checks/manifests/$story.json DATE=$(date +%F) python3 -c '
+DATE=$(date +%F) python3 -c '
 import os, sys
 t = open(sys.argv[1]).read()
-for k in ("BRIEF", "MANIFEST", "DATE"):
+for k in ("DATE",):
     t = t.replace("{" + k + "}", os.environ[k])
 print(t)' $here/../assets/review-prompt.txt > $prompt
 for attempt in 1 2 3; do
-  rm -f $report
-  codex exec -m chatgpt-web/high --skip-git-repo-check -C $wt -c model_reasoning_effort=high \
-    -o $report "$(cat $prompt)" </dev/null > $work/attempt$attempt.log 2>&1 || true
-  if [[ -s $report ]] && grep -v '^[[:space:]]*$' $report | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^RECORD (COMPLETE|INCOMPLETE)$' &&
-     grep -v '^[[:space:]]*$' $report | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^READ: [1-9][0-9]* records$'; then
+  zsh $here/ask.sh $prompt $work/answer.md checks/records/$story.md || { print "review r$round: the ask failed; see above" >&2; exit 1 }
+  if grep -v '^[[:space:]]*$' $work/answer.md | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^RECORD (COMPLETE|INCOMPLETE)$' &&
+     grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^READ: [1-9][0-9]* sections$'; then
+    cp $work/answer.md $report
     print "review r$round -> $report: $(tail -2 $report | head -1); $(tail -1 $report)"
     exit 0
   fi
-  print "review r$round attempt $attempt ended without an audited verdict: $(tail -2 $report 2>/dev/null | tr '\n' ' ') $(tail -1 $work/attempt$attempt.log)" >&2
+  print "review r$round attempt $attempt ended without an audited verdict: $(tail -2 $work/answer.md | tr '\n' ' ')" >&2
 done
-print "review r$round failed three times; logs in $work" >&2
+print "review r$round failed three times; answers in $work" >&2
 exit 1

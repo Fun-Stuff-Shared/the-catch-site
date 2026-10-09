@@ -48,7 +48,10 @@ paragraph before it left, and one that answers none is cut. A question the plan 
 to the orchestrator; do not answer it on the page yourself.
 
 The page reads top to bottom as the inverted pyramid: the top tells what happened, and
-each layer below goes deeper into one part of it, true enough to stop after:
+each layer below goes deeper into one part of it, true enough to stop after. These are the
+layers a story can have, not a form to fill: use the ones this story has, under headings in
+its own words ("One man's case", "Who still owes barrels"), and leave out any with nothing
+to tell. Every story has What happened.
 
 1. **What happened.** Three short paragraphs, in plain words: the event, what it means for
    the people it touches, and where it stands. A reader who stops here knows what happened
@@ -166,11 +169,14 @@ Three reads on the built page. The thread read comes first: a fresh reader (Haik
 the story one paragraph at a time, never seeing what comes next, and after each says
 whether it answered the question they had, whether they could see why it came now, which
 words lost them, and what they want to know next. A fresh reader (Claude, no context) then
-reads the whole story once and retells it in five sentences. GPT high checks every
-paragraph against its cited records and ends `ENTAILED` or `NOT ENTAILED`.
+reads the whole story once and retells it in five sentences. GPT-6 Sol (high), in
+ChatGPT Web, checks every paragraph against its cited records, from an evidence pack of the
+page, the data module and each cited passage in its record's context
+(`scripts/evidence_pack.py`, built from the rendered page; after the first round it holds only the blocks that changed), and ends `ENTAILED` or `NOT ENTAILED`.
 
-The thread read shows where the reader loses the thread, and each break has one fix, which
-is never inserting text where the reader stalled:
+The thread read is one reader's reactions, not a list of orders: you are the reporter, and
+you judge each flag against what the story needs. Where a break is real, the fix is never
+inserting text where the reader stalled:
 - A question the reader carries unanswered through several paragraphs of one section: the
   section answers it too late. Answer it where the section raises it, or say there that
   nobody knows yet. A question What happened raises is answered by the section about that
@@ -188,7 +194,10 @@ first checked against the record's own words, because the reviewer misreads reco
 (it once narrowed a treaty clause the page had right, and the author applied it in three
 places); a finding the record refutes is answered with the record and left out. A finding
 that holds is fixed at the record: the sentence says what the record says, or the record
-that says it is admitted with catch-record.
+that says it is admitted with catch-record. A finding names a problem; you write the fix,
+in the page's voice. Reviewer wording runs to hedges and qualifiers ("defer further
+releases pending an IEA assessment"), and pasted in, it turns the page into the reviewer's
+prose.
 
 A finding in either read that needs a fact the plan does not hold is a plan change, not an
 edit: send it to the orchestrator with the answer and its record, and add it only on its

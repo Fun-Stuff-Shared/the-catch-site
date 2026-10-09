@@ -133,10 +133,11 @@ short enough to say aloud. No caveats and no "the record does not show"; a quali
 belongs in the plan or the section it qualifies. This is the test the
 review runs against, and the test you judge every later finding by.
 
-The plan settles, before anyone writes, what each layer of the page tells. Each of the five
-sentences belongs to the layer that tells it: what happened to What happened, to whom to
-the story in order, why now to Why now, what is in dispute to The sides and The catch, what
-comes next to What happens next. Under each layer, write its chain: the question its
+The plan settles, before anyone writes, which layers the page has and what each tells.
+The layers are catch-story's menu, not a form: a story has the ones it has something to tell
+in. Each of the five sentences belongs to the layer that tells it, usually what happened to
+What happened, to whom to the story in order, why now to Why now, what is in dispute to The
+sides and The catch, what comes next to What happens next. Under each layer, write its chain: the question its
 heading answers, then each question the reader has next ("what pledge?", "why is 100 left
 if 325 of 400 went out?"), each answered from the record in the fewest words that hold,
 with its source.
@@ -173,10 +174,11 @@ Fix every failure. Commit the brief, manifest, pins and grok output by path with
 zsh skills/catch-record/scripts/review.sh <story> <N>      # N = 1, 2, ...
 ```
 
-GPT high reads the five sentences, the plan and the evidence and answers one question,
-is this the full story: what is missing, what is missing from the lineage of why this is
-happening, and what has weak provenance, ending `RECORD COMPLETE` or `RECORD INCOMPLETE`.
-It retries a run that ends without a verdict (the ChatGPT stream drops) up to three times.
+GPT-6 Sol (high), in ChatGPT Web, reads the brief pasted into the message, searches the
+web, and answers one question, is this the full story: what is missing, what is missing
+from the lineage of why this is happening, and what has weak provenance, ending
+`RECORD COMPLETE` or `RECORD INCOMPLETE`. An answer without that verdict and its count of
+sections read is retried, up to three times.
 Show the human each round's verdict.
 
 Then judge every finding as the author. A reviewer asked what is missing always finds
@@ -216,6 +218,8 @@ the links you could not reach for them to verify. Give the commit.
 - A reassuring "nothing else happened" gets a search that could disprove it: the docket, the agency's newsroom, the official's feed, dated after the newest source.
 
 ## Gotchas
+
+- The review and the entailment read go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt.
 
 - `capture` reports a failed OCR (quota, 429) as `empty_or_unextractable_body`. When a PDF comes back empty, OCR it directly with the mistral-ocr skill to see the real error. The Mistral key is read from `MISTRAL_API_KEY`, then `~/.sai/keys/mistral_api_key.env`.
 - In a press-conference or interview transcript, the reporter's question and the official's answer sit side by side. A passage cited for what an official said must come from the answer; reread the speaker label above it.
