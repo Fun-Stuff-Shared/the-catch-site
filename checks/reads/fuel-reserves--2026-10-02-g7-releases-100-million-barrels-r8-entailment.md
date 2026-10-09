@@ -1,33 +1,17 @@
-Found **three unsupported or overstated claims** in the saved records.
+1. **What happened — “It got the first.”**
+   
+   **Record:** iea-member-meeting-2026-10-07: “IEA Member governments expressed support for accelerating the oil stock releases announced in the Collective Action of March 2026 with a view to completing them as soon as possible.”
+   
+   **Issue:** The record establishes support for acceleration, but does not establish that deliveries actually accelerated. “It got the first” implies Washington's request was fulfilled.
+   
+   **Replace with:** “The agency's member governments supported accelerating the remaining March releases, prioritizing diesel where possible.”
+2. **What happens next — “Governments will put the barrels up for bids over the next two weeks.”**
+   
+   **Record:** reuters-iea-board-2026-10-06: Vitol chief executive Russell Hardy said, “And so over the next two weeks, we'll see tenders coming out from different bodies, and those tenders will tell us exactly how much oil and in which location it's going to come out.”
+   
+   **Issue:** The page presents Hardy's expectation as a confirmed government plan. The record identifies neither governments as the exclusive issuers nor a firm tender schedule.
+   
+   **Replace with:** “Vitol chief executive Russell Hardy expects tenders from different bodies over the next two weeks.”
 
-1. **Page, line 117:** “refined fuels nearly 60 percent below”
-   
-   **Record:** iea-omr-2026-09
-   
-   **Exact words:** “refined product and LPG exports remain nearly 60%, or 3.7 mb/d, less than in February.”
-   
-   The figure combines refined products and liquefied petroleum gas (LPG). The record does not establish that refined fuels alone fell by nearly 60 percent.
-   
-   **Replace with:** “refined products and LPG exports nearly 60 percent below their February level.”
-2. **Page, line 118:** “Europe was short of diesel before the war.”
-   
-   **Record:** eia-eu-russian-diesel-2023-03-07
-   
-   **Exact words:** “Although petroleum product imports from Russia have declined, imports from other areas, notably the Middle East and Asia, have increased.”
-   
-   The record documents Europe's shift away from Russian diesel imports. It does not establish that Europe had a diesel shortage before the February 2026 war.
-   
-   **Replace with:** “Europe had already shifted its diesel imports away from Russia before the war.”
-3. **Page, line 201:** “Reopening Hormuz depends on a deal between Washington and Tehran: Iran has offered to reopen it within seven days if the United States lifts its blockade of Iranian ports”
-   
-   **Record:** ap-iran-proposal-2026-09-26
-   
-   **Exact words:** “Iran has offered to reopen the Strait of Hormuz and resume talks on its nuclear program in seven days if the United States lifts its naval blockade of Iranian ports, waives sanctions on Iranian oil sales and observes a ceasefire that would include Lebanon.”
-   
-   The page omits two conditions of Iran's proposal and presents a Washington-Tehran deal as the necessary route to reopening Hormuz. The record establishes the proposal and its conditions, but does not establish that a bilateral deal is the only possible route.
-   
-   **Replace with:** “Iran has offered to reopen Hormuz within seven days under a proposal requiring the United States to lift its blockade of Iranian ports, waive sanctions on Iranian oil sales and observe a ceasefire extending to Lebanon.”
-   
-   The page's earlier detailed section correctly includes all three conditions.
-
+CHECKED: 10 blocks, 39 citations  
 NOT ENTAILED
