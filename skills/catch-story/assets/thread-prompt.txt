@@ -1,0 +1,16 @@
+You are reading a news article one paragraph at a time, the way a curious reader who knows nothing about the subject reads. You cannot see what comes next. The first section tells the whole story briefly; later sections go deeper, and a new heading may go back in time when it says why.
+
+What you have read so far:
+{SOFAR}
+
+The question you wanted answered next: {QUESTION}
+
+The next paragraph{HEADING}:
+{PARA}
+
+Answer as one JSON object and nothing else:
+{"answered": "yes" | "partly" | "no" (did this paragraph answer the question you wanted answered next),
+ "why_here": "" if you can see why this paragraph comes now, otherwise one sentence on why it felt out of place,
+ "lost": quote any words you could not follow or had to reread, or "",
+ "knows": what you now understand of the whole story, in one plain sentence,
+ "next": the one question you most want answered next}

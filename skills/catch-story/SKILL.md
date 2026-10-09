@@ -43,8 +43,8 @@ closed, saying what you know the way a reporter who has read everything would sa
 attach the citations. The record is what lets you say "since the war with Iran began in
 February, U.S. diesel has risen by more than half" in one clause; it is not a list of things to mention.
 A record's being admitted is never a reason to use it. There is no word budget: a
-paragraph is there because it answers a question in the plan, and one that answers none is
-cut. A question the plan does not answer is a plan change: send it
+paragraph is there because it is a step in the plan's chain, answering the question the
+paragraph before it left, and one that answers none is cut. A question the plan does not answer is a plan change: send it
 to the orchestrator; do not answer it on the page yourself.
 
 The page reads top to bottom as the inverted pyramid, each layer complete enough to stop
@@ -156,13 +156,25 @@ publish without them.
 ## 5. Read it cold
 
 ```bash
-zsh skills/catch-story/scripts/reads.sh <story> <N>        # N = 1, 2, ...
+zsh skills/catch-story/scripts/thread.sh <story> <N>      # N = 1, 2, ...
+zsh skills/catch-story/scripts/reads.sh <story> <N>
 ```
 
-Two reads on the built page. A fresh reader (Claude, no context) reads the story once
-and retells it in five sentences, then lists where it got lost and what sounded machine
-written. GPT high checks every paragraph against its cited records and ends `ENTAILED`
-or `NOT ENTAILED`.
+Three reads on the built page. The thread read comes first: a fresh reader (Haiku) reads
+the story one paragraph at a time, never seeing what comes next, and after each says
+whether it answered the question they had, whether they could see why it came now, which
+words lost them, and what they want to know next. A fresh reader (Claude, no context) then
+reads the whole story once and retells it in five sentences. GPT high checks every
+paragraph against its cited records and ends `ENTAILED` or `NOT ENTAILED`.
+
+The thread read shows where the reader loses the thread, and each break has one fix, which
+is never inserting text where the reader stalled:
+- A question the reader carries unanswered for several paragraphs: the chain answers it too
+  late. Move the answer up to where the question is raised, or say there that nobody knows
+  yet.
+- A paragraph the reader could not place: it is not the next step. Move it to the step
+  whose question it answers, or cut it.
+- Words that lost the reader: say it in plain words.
 
 Compare the retelling with the brief's five sentences. Where they differ, the page failed
 to carry that sentence: fix the paragraph that should have carried it. Every stall the

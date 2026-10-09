@@ -133,15 +133,23 @@ short enough to say aloud. No caveats and no "the record does not show"; a quali
 belongs in the plan or the section it qualifies. This is the test the
 review runs against, and the test you judge every later finding by.
 
-The plan settles, before anyone writes, what a reader needs to follow each sentence. Under
-each of the five, list the questions a reader who knows nothing would ask of it ("what
-pledge?", "why is 100 left if 325 of 400 went out?", "which war?"), and answer each from
-the record in the fewest words that hold: usually a clause, sometimes a sentence, rarely a
-paragraph. Then the order the page tells it in. Length follows from the plan: a paragraph exists
-because it answers a reader's question about one of the five sentences, and a story that
-needs more explaining runs longer. Everything else stays in the record, one click from the page. The
-fuel story's page grew to 2,300 words because none of this was settled: each question a
-cold reader asked in stage two was answered by inserting a paragraph where they stalled.
+The plan settles, before anyone writes, the path a reader takes through the story. It is a
+chain, not a list: the headline raises a question, the lead answers it and raises the next,
+and each step answers the question the step before it left. Write each step as the
+question the reader now has ("what pledge?", "why is 100 left if 325 of 400 went out?"),
+the answer from the record in the fewest words that hold, and its source. The order of the
+chain is the order of the page.
+
+Disclose in layers, the way a good skill file does: the top carries what a reader needs to
+act on, and the detail loads only when they ask for it. The first layer is the shortest
+chain that gets a reader to all five sentences; it ends where they could retell the story.
+Each later layer opens on a question the first one left and goes one level deeper. A
+question the reader will carry is answered where it is raised, or the chain says there
+that nobody knows yet; it is never left hanging for paragraphs while other points pass. A
+fact no question asks for stays in the record, one click from the page, however true it
+is. The fuel story's page grew to 2,300 words, and then read as a dump at half that,
+because its plan listed answers under each sentence with nothing deciding which question
+came next.
 Then:
 
 ```bash
@@ -188,7 +196,7 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Principles
 
-- The record is background; the plan decides the page. A fact earns a place on the page by answering a reader's question about one of the five sentences, not by being admitted.
+- The record is background; the plan decides the page. A fact earns a place on the page by answering the question a reader has at that point in the plan's chain, not by being admitted.
 
 - An unknown is a claim too. Before the brief, a reader report or the human is told "the records don't say", search every admitted record's text for it (in each source language). Okinawa's page said nothing tied the suspect to the room beyond a camera match, while an admitted record quoted police saying the camera showed him leaving with her belongings.
 
