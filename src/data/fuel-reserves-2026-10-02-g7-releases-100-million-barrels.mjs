@@ -68,6 +68,21 @@ export const ledgerRows = [
   ["U.S. barrels offered again, September 29", `up to ${usShare.offer}`],
 ];
 
+// The dated sequence the story's sections lean on; each row carries its own record.
+export const timeline = [
+  { date: "February 28", title: "The United States and Israel attack Iran.", cites: [{ s: "euronews-eu-document-2026-10-08", passage: "United States and Israeli military attacks against Iran on 28 February" }] },
+  { date: "March 11", title: `The International Energy Agency's ${release.members} members pledge to release ${release.marchTotal} barrels.`, cites: [{ s: "doe-spr-release-2026-03-11", passage: "32 member nations of the International Energy Agency" }, { s: "doe-spr-release-2026-03-11", passage: "coordinated release of 400 million barrels" }] },
+  { date: "June", title: `The United States offers to lend its last ${usShare.offer} barrels; companies agree to borrow about 500,000.`, cites: [{ s: "reuters-spr-limits-2026-09-29", passage: "In June, the US offered to loan the last 40 million barrels from that agreement, but later that month revealed that companies only agreed to borrow about 500,000 barrels." }] },
+  { date: "September 18", title: "Macron says he will convene the G7 on oil stocks.", cites: [{ s: "elysee-macron-2026-09-18", passage: "je convoquerai un G7 pour avancer sur une meilleure coordination sur les niveaux de stock" }] },
+  { date: "September 21", title: `U.S. diesel hits a record ${prices.record} a gallon.`, cites: [{ s: "eia-diesel-price-2026-10-06", passage: "09/21 6.529" }] },
+  { date: "September 22", title: `Trump: "let's not send out the diesel."`, cites: [{ s: "rbc-diesel-strategy-2026-10-01", passage: "On September 22, he stated \"I've said let's not send out the diesel." }] },
+  { date: "October 1", title: "Bessent asks Europe to deliver its March barrels faster and to add more.", cites: [{ s: "bessent-post-2026-10-01", passage: "Our European partners should accelerate delivery on their existing commitments and make additional supplies immediately available" }] },
+  { date: "October 2", title: `The G7 agrees to release ${release.barrels} barrels. Trump posts that Europe "has just agreed," then rules out a ban on diesel exports.`, current: true, cites: [{ s: "govuk-g7-statement-2026-10-02", passage: "coordinated release through the IEA of 100 million barrels (MB) to begin immediately over 4 months" }, { s: "trumpstruth-post-2026-10-02", passage: "Europe has just agreed to release a massive amount of their heavily stocked Diesel Oil." }, { s: "reuters-no-export-ban-2026-10-02", passage: "he will not authorize an export ban on diesel, hours after G7 countries agreed to release diesel and crude oil from their emergency reserves." }] },
+  { date: "October 5", title: "The White House says Trump got Europe to release 100 million barrels of diesel.", cites: [{ s: "whitehouse-diesel-fact-sheet-2026-10-05", passage: "President Trump successfully negotiated with Europe to release 100 million barrels of refined diesel" }] },
+  { date: "October 7", title: `The agency says about ${marchSoFar.unreleased} March barrels are still to come. Germany says no barrels beyond March for now; EU officials wait on the agency's assessment.`, cites: [{ s: "iea-member-meeting-2026-10-07", passage: "would bring approximately 100 million barrels to the market" }, { s: "politico-eu-france-germany-2026-10-07", passage: "as of now, no additional quantities" }, { s: "politico-eu-iea-assessment-2026-10-07", passage: "pending a clearer IEA assessment of market conditions and security-of-supply risks" }] },
+  { date: "October 14–15", title: "The agency's board is expected to settle who supplies the barrels.", cites: [{ s: "reuters-iea-board-2026-10-06", passage: "is expected to decide the details of the stocks release at an October 14-15 board meeting" }] },
+];
+
 export const event = {
   slug: "fuel-reserves/2026-10-02-g7-releases-100-million-barrels",
   title: "The G7's 100 million barrels of emergency oil were already promised in March",
@@ -87,7 +102,7 @@ export const event = {
     title: "From the March pledge to the October 7 meeting",
     entries: [
       { date: "Mar 11", title: "400 million barrels pledged" },
-      { date: "Sep 29", title: "U.S. offers up to 40 million more barrels" },
+      { date: "Sep 29", title: "U.S. offers its last 40 million barrels again" },
       { date: "Oct 2", title: "G7: 100 million barrels over four months", current: true },
       { date: "Oct 7", title: "Agency members back finishing the March release, diesel first" },
     ],
