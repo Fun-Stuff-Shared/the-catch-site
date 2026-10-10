@@ -1,0 +1,373 @@
+{
+  "current_state": {
+    "slot-77913742-8af7-4041-9791-7ffd4fc40013": {
+      "slot": "maximum payout",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b",
+      "heads": [
+        "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Millions of customers used up to 20 Prime benefits, and are newly eligible for payouts of up to $200, according to the FTC.",
+      "span_check": "byte_exact",
+      "speaker": "Federal Trade Commission",
+      "figure": {
+        "unit": "dollars",
+        "value": "200"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "FTC revised Amazon Prime refund order",
+      "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+      "basis": [
+        "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    },
+    "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40": {
+      "slot": "payment start date",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+      "heads": [
+        "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Amazon began issuing automatic payments to additional customers on Thursday.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Amazon refund payment records",
+      "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+      "basis": [
+        "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5"
+      ],
+      "last_confirmed": "2026-10-01",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T14:44:43Z",
+      "canonical_url": "https://cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_0222.html",
+      "desk": "courts and legal",
+      "envelope_seq": 1057927,
+      "gate_verdict": "COVER",
+      "id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+      "lang": "en",
+      "published_at": "2026-10-02T14:44:43Z",
+      "publisher": "CBS News",
+      "raw_sha256": "31e2ceefc162b049aeecf42676cc79b42be61520f0208e3c310acd0c9a087c34",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:13.108675Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cbsnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "cbs_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0222.txt",
+      "text_sha256": "926eec092cb25d57842f7cfdb60e9ea989383a42846867bcc33645ddc9a99a0a",
+      "title": "Amazon Prime customers could get $200 refunds in expanded FTC deal.",
+      "updated_at": "2026-10-02T15:41:07Z",
+      "url": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+      "verbatim_level": "article",
+      "log_seq": 1057928,
+      "recorded_at": "2026-10-03T07:22:43.239799Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T14:44:43Z",
+          "checkable_against": "FTC revised Amazon Prime refund order",
+          "claim_type": "actual",
+          "envelope_seq": 1083382,
+          "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+          "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+          "figure": {
+            "unit": "dollars",
+            "value": "200"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Millions of customers used up to 20 Prime benefits, and are newly eligible for payouts of up to $200, according to the FTC.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:13.108675Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1284,
+          "span_start": 1161,
+          "speaker": "Federal Trade Commission",
+          "subject": "Amazon Prime refund settlement",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0222.txt",
+          "text_sha256": "926eec092cb25d57842f7cfdb60e9ea989383a42846867bcc33645ddc9a99a0a",
+          "log_seq": 1083383,
+          "recorded_at": "2026-10-03T15:10:21.813430Z",
+          "slot_id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+          "evidence_asserted_at": "2026-10-02T14:44:43Z",
+          "evidence_url": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T14:44:43Z",
+          "checkable_against": "Amazon refund payment records",
+          "claim_type": "actual",
+          "envelope_seq": 1083380,
+          "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+          "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+          "figure": null,
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Amazon began issuing automatic payments to additional customers on Thursday.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:13.108675Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1160,
+          "span_start": 1084,
+          "speaker": "outlet's own",
+          "subject": "Amazon Prime refund settlement",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0222.txt",
+          "text_sha256": "926eec092cb25d57842f7cfdb60e9ea989383a42846867bcc33645ddc9a99a0a",
+          "log_seq": 1083381,
+          "recorded_at": "2026-10-03T15:10:21.423385Z",
+          "slot_id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+          "evidence_asserted_at": "2026-10-02T14:44:43Z",
+          "evidence_url": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T19:42:30.125494Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1083212,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+    "kind": "action",
+    "label": "Amazon begins additional Prime refund payments",
+    "minted_at": "2026-10-03T15:09:21.452442Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Amazon Prime refund settlement",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d/e5ba44ce7a7545eabc1ef2b6f809b7b0.json",
+    "log_seq": 1083213
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b",
+      "envelope_seq": 1083472,
+      "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+      "id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "name": "maximum payout",
+      "refusal": null,
+      "log_seq": 1083473,
+      "recorded_at": "2026-10-03T15:11:06.169547Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+      "envelope_seq": 1119787,
+      "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+      "id": "slot-afd96e48-69b0-4b05-a3b1-c44989b82f8a",
+      "name": "payment start date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+        "source_id": "cbs_news_rss"
+      },
+      "log_seq": 1119788,
+      "recorded_at": "2026-10-04T18:39:30.432630Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+      "envelope_seq": 1119817,
+      "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+      "id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "name": "payment start date",
+      "refusal": null,
+      "log_seq": 1119818,
+      "recorded_at": "2026-10-04T18:40:38.433983Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T14:44:43Z",
+      "checkable_against": "FTC revised Amazon Prime refund order",
+      "claim_type": "actual",
+      "envelope_seq": 1083382,
+      "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+      "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+      "figure": {
+        "unit": "dollars",
+        "value": "200"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Millions of customers used up to 20 Prime benefits, and are newly eligible for payouts of up to $200, according to the FTC.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:13.108675Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1284,
+      "span_start": 1161,
+      "speaker": "Federal Trade Commission",
+      "subject": "Amazon Prime refund settlement",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0222.txt",
+      "text_sha256": "926eec092cb25d57842f7cfdb60e9ea989383a42846867bcc33645ddc9a99a0a",
+      "log_seq": 1083383,
+      "recorded_at": "2026-10-03T15:10:21.813430Z",
+      "slot_id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "evidence_asserted_at": "2026-10-02T14:44:43Z",
+      "evidence_url": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T14:44:43Z",
+      "checkable_against": "Amazon refund payment records",
+      "claim_type": "actual",
+      "envelope_seq": 1083380,
+      "event_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+      "evidence_id": "96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d",
+      "figure": null,
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Amazon began issuing automatic payments to additional customers on Thursday.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:13.108675Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1160,
+      "span_start": 1084,
+      "speaker": "outlet's own",
+      "subject": "Amazon Prime refund settlement",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0222.txt",
+      "text_sha256": "926eec092cb25d57842f7cfdb60e9ea989383a42846867bcc33645ddc9a99a0a",
+      "log_seq": 1083381,
+      "recorded_at": "2026-10-03T15:10:21.423385Z",
+      "slot_id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "evidence_asserted_at": "2026-10-02T14:44:43Z",
+      "evidence_url": "https://www.cbsnews.com/news/amazon-prime-ftc-settlement-refunds/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1083474,
+      "id": "attach-anchor-slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b",
+      "refusal": null,
+      "slot_id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "log_seq": 1083475,
+      "recorded_at": "2026-10-03T15:11:06.190296Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1119819,
+      "id": "attach-anchor-slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5",
+      "refusal": null,
+      "slot_id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "log_seq": 1119820,
+      "recorded_at": "2026-10-04T18:40:38.474589Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": null,
+  "root_id": "event-6b257892-90af-451e-9a43-c00973ec71f3",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-77913742-8af7-4041-9791-7ffd4fc40013",
+      "name": "maximum payout",
+      "value": "200",
+      "unit": "dollars",
+      "sentence": "Millions of customers used up to 20 Prime benefits, and are newly eligible for payouts of up to $200, according to the FTC.",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-0bd8122bf7eca10b"
+    },
+    {
+      "slot_id": "slot-e8db6768-0b10-4fba-b27f-8f54c2cf3b40",
+      "name": "payment start date",
+      "value": null,
+      "unit": null,
+      "sentence": "Amazon began issuing automatic payments to additional customers on Thursday.",
+      "occurrence_id": "occurrence-96361bd461ed0ab008a564950ea6dd1fd86b6b64639cda904b470b62d9b2f70d-502757ecaeef02d5"
+    }
+  ]
+}

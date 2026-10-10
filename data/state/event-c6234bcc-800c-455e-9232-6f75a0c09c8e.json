@@ -1,0 +1,360 @@
+{
+  "current_state": {
+    "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7": {
+      "slot": "age at death",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3",
+      "heads": [
+        "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Jolene who died at 3 months old from a congenital heart defect.",
+      "span_check": "byte_exact",
+      "speaker": "ProPublica",
+      "figure": {
+        "unit": "months",
+        "value": "3"
+      },
+      "as_of": "2026-08-25",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Jolene's death and autopsy records",
+      "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+      "basis": [
+        "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3"
+      ],
+      "last_confirmed": "2026-08-25",
+      "freshness": "stale"
+    },
+    "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4": {
+      "slot": "survival estimate",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71",
+      "heads": [
+        "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Some doctors told ProPublica that a cardiologist’s care could have saved her, although some suspected she also had a chromosomal defect that only 10% of babies survive past their first year.",
+      "span_check": "byte_exact",
+      "speaker": "doctors who reviewed Jolene's case",
+      "figure": {
+        "unit": "percent",
+        "value": "10"
+      },
+      "as_of": "2026-08-25",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Jolene's death records and expert medical reviews",
+      "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+      "basis": [
+        "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71"
+      ],
+      "last_confirmed": "2026-08-25",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "as_of": "2026-08-25",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "as_of": "2026-08-25",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-25T09:00:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8388.html",
+      "envelope_seq": 171441,
+      "id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+      "publisher": "ProPublica",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:37.732253Z",
+      "root_evidence": "body:3764:3845",
+      "root_id": "www.propublica.org",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "investigative",
+      "source_id": "propublica_main",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8388.txt",
+      "text_sha256": "c8e62bcac1173e6bf380ff6ad5baca3454208018155aa00f8e42209ad9693a2c",
+      "title": "Children in a Faith-Healing Sect Keep Dying. The State Lets It Happen.",
+      "url": "https://www.propublica.org/article/faith-healing-idaho-deaths-followers-of-christ",
+      "verbatim_level": "article",
+      "log_seq": 521560,
+      "recorded_at": "2026-09-06T01:33:24.200215Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-25",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-25T09:00:00Z",
+          "checkable_against": "Jolene's death records and expert medical reviews",
+          "claim_type": "actual",
+          "envelope_seq": 790195,
+          "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+          "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+          "figure": {
+            "unit": "percent",
+            "value": "10"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Some doctors told ProPublica that a cardiologist’s care could have saved her, although some suspected she also had a chromosomal defect that only 10% of babies survive past their first year.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:27:37.732253Z",
+          "root_id": "www.propublica.org",
+          "span_check": "byte_exact",
+          "span_end": 16820,
+          "span_start": 16628,
+          "speaker": "doctors who reviewed Jolene's case",
+          "subject": "Jolene",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8388.txt",
+          "text_sha256": "c8e62bcac1173e6bf380ff6ad5baca3454208018155aa00f8e42209ad9693a2c",
+          "log_seq": 790196,
+          "recorded_at": "2026-09-08T05:09:50.896955Z",
+          "slot_id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+          "evidence_asserted_at": "2026-08-25T09:00:00Z",
+          "evidence_url": "https://www.propublica.org/article/faith-healing-idaho-deaths-followers-of-christ",
+          "evidence_publisher": "ProPublica",
+          "evidence_source_id": "propublica_main"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-25",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-25T09:00:00Z",
+          "checkable_against": "Jolene's death and autopsy records",
+          "claim_type": "actual",
+          "envelope_seq": 790193,
+          "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+          "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+          "figure": {
+            "unit": "months",
+            "value": "3"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Jolene who died at 3 months old from a congenital heart defect.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:27:37.732253Z",
+          "root_id": "www.propublica.org",
+          "span_check": "byte_exact",
+          "span_end": 16627,
+          "span_start": 16564,
+          "speaker": "ProPublica",
+          "subject": "Jolene",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8388.txt",
+          "text_sha256": "c8e62bcac1173e6bf380ff6ad5baca3454208018155aa00f8e42209ad9693a2c",
+          "log_seq": 790194,
+          "recorded_at": "2026-09-08T05:09:49.426847Z",
+          "slot_id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+          "evidence_asserted_at": "2026-08-25T09:00:00Z",
+          "evidence_url": "https://www.propublica.org/article/faith-healing-idaho-deaths-followers-of-christ",
+          "evidence_publisher": "ProPublica",
+          "evidence_source_id": "propublica_main"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 789797,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+    "kind": "death",
+    "label": "Jolene dies from congenital heart defect in Idaho",
+    "minted_at": "2026-09-08T05:05:15.195481Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+    "period": "2026-08-25",
+    "refusal": null,
+    "status": "published",
+    "subject": "Jolene",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406/53080fb56d0f4cd4a448e92a666bb934.json",
+    "log_seq": 789798
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71",
+      "envelope_seq": 790239,
+      "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+      "id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "name": "survival estimate",
+      "refusal": null,
+      "log_seq": 790240,
+      "recorded_at": "2026-09-08T05:10:13.996664Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3",
+      "envelope_seq": 790235,
+      "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+      "id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "name": "age at death",
+      "refusal": null,
+      "log_seq": 790236,
+      "recorded_at": "2026-09-08T05:10:12.802669Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-25",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-25T09:00:00Z",
+      "checkable_against": "Jolene's death records and expert medical reviews",
+      "claim_type": "actual",
+      "envelope_seq": 790195,
+      "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+      "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+      "figure": {
+        "unit": "percent",
+        "value": "10"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Some doctors told ProPublica that a cardiologist’s care could have saved her, although some suspected she also had a chromosomal defect that only 10% of babies survive past their first year.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:37.732253Z",
+      "root_id": "www.propublica.org",
+      "span_check": "byte_exact",
+      "span_end": 16820,
+      "span_start": 16628,
+      "speaker": "doctors who reviewed Jolene's case",
+      "subject": "Jolene",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8388.txt",
+      "text_sha256": "c8e62bcac1173e6bf380ff6ad5baca3454208018155aa00f8e42209ad9693a2c",
+      "log_seq": 790196,
+      "recorded_at": "2026-09-08T05:09:50.896955Z",
+      "slot_id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "evidence_asserted_at": "2026-08-25T09:00:00Z",
+      "evidence_url": "https://www.propublica.org/article/faith-healing-idaho-deaths-followers-of-christ",
+      "evidence_publisher": "ProPublica",
+      "evidence_source_id": "propublica_main"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-25",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-25T09:00:00Z",
+      "checkable_against": "Jolene's death and autopsy records",
+      "claim_type": "actual",
+      "envelope_seq": 790193,
+      "event_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+      "evidence_id": "6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406",
+      "figure": {
+        "unit": "months",
+        "value": "3"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Jolene who died at 3 months old from a congenital heart defect.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:27:37.732253Z",
+      "root_id": "www.propublica.org",
+      "span_check": "byte_exact",
+      "span_end": 16627,
+      "span_start": 16564,
+      "speaker": "ProPublica",
+      "subject": "Jolene",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8388.txt",
+      "text_sha256": "c8e62bcac1173e6bf380ff6ad5baca3454208018155aa00f8e42209ad9693a2c",
+      "log_seq": 790194,
+      "recorded_at": "2026-09-08T05:09:49.426847Z",
+      "slot_id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "evidence_asserted_at": "2026-08-25T09:00:00Z",
+      "evidence_url": "https://www.propublica.org/article/faith-healing-idaho-deaths-followers-of-christ",
+      "evidence_publisher": "ProPublica",
+      "evidence_source_id": "propublica_main"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 790241,
+      "id": "attach-anchor-slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71",
+      "refusal": null,
+      "slot_id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "log_seq": 790242,
+      "recorded_at": "2026-09-08T05:10:14.247773Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 790237,
+      "id": "attach-anchor-slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3",
+      "refusal": null,
+      "slot_id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "log_seq": 790238,
+      "recorded_at": "2026-09-08T05:10:13.047819Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-c6234bcc-800c-455e-9232-6f75a0c09c8e",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-d26031e0-681c-4ccd-989b-64eb5e297dc7",
+      "name": "age at death",
+      "value": "3",
+      "unit": "months",
+      "sentence": "Jolene who died at 3 months old from a congenital heart defect.",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-8cea973a436c06d3"
+    },
+    {
+      "slot_id": "slot-88db0354-31b2-4f1a-b2b2-71e5205ef9e4",
+      "name": "survival estimate",
+      "value": "10",
+      "unit": "percent",
+      "sentence": "Some doctors told ProPublica that a cardiologist’s care could have saved her, although some suspected she also had a chromosomal defect that only 10% of babies survive past their first year.",
+      "occurrence_id": "occurrence-6d0536a5cf152ceb190c770155796efbd0bd61cc29c3257e963bd486199ee406-6d2b52ecec5e2f71"
+    }
+  ]
+}

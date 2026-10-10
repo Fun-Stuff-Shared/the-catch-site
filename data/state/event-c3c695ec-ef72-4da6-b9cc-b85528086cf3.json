@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca": {
+      "slot": "removal order date",
+      "occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+      "heads": [
+        "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "DHS said that a final removal order was issued by an immigration judge on July 22.",
+      "span_check": "byte_exact",
+      "speaker": "Department of Homeland Security",
+      "figure": null,
+      "as_of": "2026-07-22",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "immigration judge final removal order dated July 22, 2026",
+      "evidence_id": "61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8",
+      "basis": [
+        "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f"
+      ],
+      "last_confirmed": "2026-07-22",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "as_of": "2026-07-22",
+      "occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T17:46:14Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5008.html",
+      "envelope_seq": 169713,
+      "id": "61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8",
+      "publisher": "NBC News",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:14.246482Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nbcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5008.txt",
+      "text_sha256": "ea51ca5fd86b34c9727379cc1b541d3875b91e1a44a2bb04fb1b0c8cad0b3534",
+      "title": "Milo Yiannopoulos deported to the U.K. one day after ICE arrest",
+      "url": "https://www.nbcnews.com/news/us-news/milo-yiannopoulos-deported-uk-rcna595025",
+      "verbatim_level": "article",
+      "log_seq": 520696,
+      "recorded_at": "2026-09-06T01:33:23.954515Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07-22",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T17:46:14Z",
+          "checkable_against": "immigration judge final removal order dated July 22, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 773099,
+          "event_id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+          "evidence_id": "61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8",
+          "figure": null,
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "DHS said that a final removal order was issued by an immigration judge on July 22.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:14.246482Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2263,
+          "span_start": 2181,
+          "speaker": "Department of Homeland Security",
+          "subject": "Milo Yiannopoulos",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5008.txt",
+          "text_sha256": "ea51ca5fd86b34c9727379cc1b541d3875b91e1a44a2bb04fb1b0c8cad0b3534",
+          "log_seq": 773100,
+          "recorded_at": "2026-09-07T21:12:21.222547Z",
+          "slot_id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+          "evidence_asserted_at": "2026-08-29T17:46:14Z",
+          "evidence_url": "https://www.nbcnews.com/news/us-news/milo-yiannopoulos-deported-uk-rcna595025",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 772967,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+    "kind": "ruling",
+    "label": "Immigration judge issued final removal order for Milo Yiannopoulos",
+    "minted_at": "2026-09-07T21:11:07.636116Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8",
+    "period": "2026-07-22",
+    "refusal": null,
+    "status": "published",
+    "subject": "Milo Yiannopoulos",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8/cc7e738303d8493e9b7b60eac61dc1d6.json",
+    "log_seq": 772968
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+      "envelope_seq": 773283,
+      "event_id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+      "id": "slot-4b998fb1-779c-41b9-aea2-a9133110389f",
+      "name": "removal order date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "Immigration judge final removal order for Milo Yiannopoulos",
+        "source_id": "nbc_news_rss"
+      },
+      "log_seq": 773284,
+      "recorded_at": "2026-09-07T21:13:43.247778Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+      "envelope_seq": 773333,
+      "event_id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+      "id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "name": "removal order date",
+      "refusal": null,
+      "log_seq": 773334,
+      "recorded_at": "2026-09-07T21:14:04.677658Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07-22",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T17:46:14Z",
+      "checkable_against": "immigration judge final removal order dated July 22, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 773099,
+      "event_id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+      "evidence_id": "61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8",
+      "figure": null,
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "DHS said that a final removal order was issued by an immigration judge on July 22.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:14.246482Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2263,
+      "span_start": 2181,
+      "speaker": "Department of Homeland Security",
+      "subject": "Milo Yiannopoulos",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5008.txt",
+      "text_sha256": "ea51ca5fd86b34c9727379cc1b541d3875b91e1a44a2bb04fb1b0c8cad0b3534",
+      "log_seq": 773100,
+      "recorded_at": "2026-09-07T21:12:21.222547Z",
+      "slot_id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "evidence_asserted_at": "2026-08-29T17:46:14Z",
+      "evidence_url": "https://www.nbcnews.com/news/us-news/milo-yiannopoulos-deported-uk-rcna595025",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 773335,
+      "id": "attach-anchor-slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f",
+      "refusal": null,
+      "slot_id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "log_seq": 773336,
+      "recorded_at": "2026-09-07T21:14:04.898430Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-c3c695ec-ef72-4da6-b9cc-b85528086cf3",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c6aafac6-9c4b-4a44-9cf7-23685d4165ca",
+      "name": "removal order date",
+      "value": null,
+      "unit": null,
+      "sentence": "DHS said that a final removal order was issued by an immigration judge on July 22.",
+      "occurrence_id": "occurrence-61e7655c67f7d5ef7c133d122dbc473ee1545700bced67a9fb275ba57564baf8-daeb0d125ee4082f"
+    }
+  ]
+}

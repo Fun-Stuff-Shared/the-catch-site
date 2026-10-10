@@ -1,0 +1,367 @@
+{
+  "current_state": {
+    "slot-3f86783a-a57f-4a17-9688-9fa47761cba8": {
+      "slot": "data retention",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e",
+      "heads": [
+        "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Earlier this week, San Francisco Mayor Daniel Lurie announced tighter rules for the city's Flock system, including removing the city's license plate data from the platform after 30 days.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "days",
+        "value": "30"
+      },
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "San Francisco mayoral announcement and Flock data-retention rules",
+      "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+      "basis": [
+        "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    },
+    "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2": {
+      "slot": "retention limit",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d",
+      "heads": [
+        "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The SFPD can retain the records for up to a year, but officers need an active criminal investigation and approval from police leadership to access records older than 30 days.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "year",
+        "value": "1"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "San Francisco Flock data-retention policy",
+      "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+      "basis": [
+        "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T10:30:00Z",
+      "canonical_url": "https://npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_1261.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1058137,
+      "gate_verdict": "COVER",
+      "id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+      "lang": "en",
+      "published_at": "2026-10-02T10:30:00Z",
+      "publisher": "NPR",
+      "raw_sha256": "116b2d490f15cfe71a410348274e5224e180779ab6f3c252a786e0287aaf8f1b",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:31.241827Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.npr.org",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "npr_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1261.txt",
+      "text_sha256": "29b2ef462335de98ca70a76dc911ca6fa8c53b4c5f6f290410a2f05339c1af08",
+      "title": "San Francisco's car crime has plunged. How much credit does Flock deserve?",
+      "updated_at": "2026-10-02T10:30:00Z",
+      "url": "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+      "verbatim_level": "article",
+      "log_seq": 1058138,
+      "recorded_at": "2026-10-03T07:22:44.457204Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T10:30:00Z",
+          "checkable_against": "San Francisco Flock data-retention policy",
+          "claim_type": "actual",
+          "envelope_seq": 1081724,
+          "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+          "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+          "figure": {
+            "unit": "year",
+            "value": "1"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The SFPD can retain the records for up to a year, but officers need an active criminal investigation and approval from police leadership to access records older than 30 days.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:31.241827Z",
+          "root_id": "www.npr.org",
+          "span_check": "byte_exact",
+          "span_end": 18620,
+          "span_start": 18446,
+          "speaker": "outlet's own",
+          "subject": "San Francisco Mayor Daniel Lurie Flock system rules",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1261.txt",
+          "text_sha256": "29b2ef462335de98ca70a76dc911ca6fa8c53b4c5f6f290410a2f05339c1af08",
+          "log_seq": 1081725,
+          "recorded_at": "2026-10-03T14:48:16.087567Z",
+          "slot_id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+          "evidence_asserted_at": "2026-10-02T10:30:00Z",
+          "evidence_url": "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+          "evidence_publisher": "NPR",
+          "evidence_source_id": "npr_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T10:30:00Z",
+          "checkable_against": "San Francisco mayoral announcement and Flock data-retention rules",
+          "claim_type": "actual",
+          "envelope_seq": 1081720,
+          "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+          "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+          "figure": {
+            "unit": "days",
+            "value": "30"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Earlier this week, San Francisco Mayor Daniel Lurie announced tighter rules for the city's Flock system, including removing the city's license plate data from the platform after 30 days.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:31.241827Z",
+          "root_id": "www.npr.org",
+          "span_check": "byte_exact",
+          "span_end": 18445,
+          "span_start": 18259,
+          "speaker": "outlet's own",
+          "subject": "San Francisco Mayor Daniel Lurie Flock system rules",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1261.txt",
+          "text_sha256": "29b2ef462335de98ca70a76dc911ca6fa8c53b4c5f6f290410a2f05339c1af08",
+          "log_seq": 1081721,
+          "recorded_at": "2026-10-03T14:48:15.255377Z",
+          "slot_id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+          "evidence_asserted_at": "2026-10-02T10:30:00Z",
+          "evidence_url": "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+          "evidence_publisher": "NPR",
+          "evidence_source_id": "npr_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "9b3b6bba03",
+  "evaluated_at": "2026-10-03T15:45:07.002868Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1081334,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+    "kind": "announcement",
+    "label": "San Francisco tightens Flock system rules",
+    "minted_at": "2026-10-03T14:45:04.285530Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+    "period": "2026-10",
+    "refusal": null,
+    "status": "published",
+    "subject": "San Francisco Mayor Daniel Lurie Flock system rules",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed/666d2161917547be9e41f9480fed99f4.json",
+    "log_seq": 1081335
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e",
+      "envelope_seq": 1081776,
+      "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+      "id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "name": "data retention",
+      "refusal": null,
+      "log_seq": 1081777,
+      "recorded_at": "2026-10-03T14:49:06.631504Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d",
+      "envelope_seq": 1081810,
+      "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+      "id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "name": "retention limit",
+      "refusal": null,
+      "log_seq": 1081811,
+      "recorded_at": "2026-10-03T14:50:04.084327Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T10:30:00Z",
+      "checkable_against": "San Francisco Flock data-retention policy",
+      "claim_type": "actual",
+      "envelope_seq": 1081724,
+      "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+      "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+      "figure": {
+        "unit": "year",
+        "value": "1"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The SFPD can retain the records for up to a year, but officers need an active criminal investigation and approval from police leadership to access records older than 30 days.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:31.241827Z",
+      "root_id": "www.npr.org",
+      "span_check": "byte_exact",
+      "span_end": 18620,
+      "span_start": 18446,
+      "speaker": "outlet's own",
+      "subject": "San Francisco Mayor Daniel Lurie Flock system rules",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1261.txt",
+      "text_sha256": "29b2ef462335de98ca70a76dc911ca6fa8c53b4c5f6f290410a2f05339c1af08",
+      "log_seq": 1081725,
+      "recorded_at": "2026-10-03T14:48:16.087567Z",
+      "slot_id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "evidence_asserted_at": "2026-10-02T10:30:00Z",
+      "evidence_url": "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+      "evidence_publisher": "NPR",
+      "evidence_source_id": "npr_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T10:30:00Z",
+      "checkable_against": "San Francisco mayoral announcement and Flock data-retention rules",
+      "claim_type": "actual",
+      "envelope_seq": 1081720,
+      "event_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+      "evidence_id": "7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed",
+      "figure": {
+        "unit": "days",
+        "value": "30"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Earlier this week, San Francisco Mayor Daniel Lurie announced tighter rules for the city's Flock system, including removing the city's license plate data from the platform after 30 days.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:31.241827Z",
+      "root_id": "www.npr.org",
+      "span_check": "byte_exact",
+      "span_end": 18445,
+      "span_start": 18259,
+      "speaker": "outlet's own",
+      "subject": "San Francisco Mayor Daniel Lurie Flock system rules",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1261.txt",
+      "text_sha256": "29b2ef462335de98ca70a76dc911ca6fa8c53b4c5f6f290410a2f05339c1af08",
+      "log_seq": 1081721,
+      "recorded_at": "2026-10-03T14:48:15.255377Z",
+      "slot_id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "evidence_asserted_at": "2026-10-02T10:30:00Z",
+      "evidence_url": "https://www.npr.org/sections/planet-money/2026/10/02/g-s1-146060/san-franciscos-car-crime-has-plunged-how-much-credit-does-flock-deserve",
+      "evidence_publisher": "NPR",
+      "evidence_source_id": "npr_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1081778,
+      "id": "attach-anchor-slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e",
+      "refusal": null,
+      "slot_id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "log_seq": 1081779,
+      "recorded_at": "2026-10-03T14:49:06.655053Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1081812,
+      "id": "attach-anchor-slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d",
+      "refusal": null,
+      "slot_id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "log_seq": 1081813,
+      "recorded_at": "2026-10-03T14:50:04.105058Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "crime and public safety",
+  "follows": null,
+  "root_id": "event-d14a84d7-4083-4e5c-9385-7db08f648270",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-3f86783a-a57f-4a17-9688-9fa47761cba8",
+      "name": "data retention",
+      "value": "30",
+      "unit": "days",
+      "sentence": "Earlier this week, San Francisco Mayor Daniel Lurie announced tighter rules for the city's Flock system, including removing the city's license plate data from the platform after 30 days.",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-bd88290d21ebf50e"
+    },
+    {
+      "slot_id": "slot-9dc66c0b-5ab8-44a5-825b-9a847919bdd2",
+      "name": "retention limit",
+      "value": "1",
+      "unit": "year",
+      "sentence": "The SFPD can retain the records for up to a year, but officers need an active criminal investigation and approval from police leadership to access records older than 30 days.",
+      "occurrence_id": "occurrence-7cb544ac03f78050b1db2e1783230bd841a8045d69eb6aee4ee6b1dd559aa6ed-3ca63f5822a2553d"
+    }
+  ]
+}

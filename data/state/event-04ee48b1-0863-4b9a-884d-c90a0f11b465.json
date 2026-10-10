@@ -27,9 +27,43 @@
       ],
       "last_confirmed": "2024-11",
       "freshness": "stale"
+    },
+    "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85": {
+      "slot": "Trump vote share",
+      "occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+      "heads": [
+        "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "According to Pew Research Center, 48% backed Trump in the 2024 election",
+      "span_check": "byte_exact",
+      "speaker": "Pew Research Center",
+      "figure": {
+        "unit": "percent",
+        "value": "48"
+      },
+      "as_of": "2024-11",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Pew Research Center analysis of the 2024 presidential election vote",
+      "evidence_id": "062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9",
+      "basis": [
+        "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100"
+      ],
+      "last_confirmed": "2024-11",
+      "freshness": "stale"
     }
   },
   "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "as_of": "2024-11",
+      "occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100"
+    },
     {
       "kind": "first_value",
       "slot_id": "slot-e6ee427f-e3c9-4c26-8757-e87b85156241",
@@ -38,6 +72,147 @@
     }
   ],
   "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T22:03:54Z",
+      "canonical_url": "https://usatoday.com/story/news/politics/2026/10/06/trump-approval-rating-underwater-most-states-poll/92123205007/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/raw/article_7309.html",
+      "desk": "government and politics",
+      "envelope_seq": 1182974,
+      "gate_verdict": "COVER",
+      "id": "062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9",
+      "lang": "en",
+      "published_at": "2026-10-06T22:03:54Z",
+      "publisher": "USA Today",
+      "raw_sha256": "e9e3e790a58f037f490d6f88954d30a0f185f598cf6db07d05a53a8a9521ef73",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:13:57.777605Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_7309.txt",
+      "text_sha256": "527fceda30d5e6928a62bda734f50763bf7b0ef69c9a2617043d9372fcb01870",
+      "title": "Trump's approval ratings underwater in 39 states",
+      "updated_at": "2026-10-06T22:03:54Z",
+      "url": "https://www.usatoday.com/story/news/politics/2026/10/06/trump-approval-rating-underwater-most-states-poll/92123205007/",
+      "verbatim_level": "article",
+      "log_seq": 1182975,
+      "recorded_at": "2026-10-07T10:31:05.265300Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024-11",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-06T22:03:54Z",
+          "checkable_against": "Pew Research Center analysis of the 2024 presidential election vote",
+          "claim_type": "actual",
+          "envelope_seq": 1183921,
+          "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+          "evidence_id": "062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9",
+          "figure": {
+            "unit": "percent",
+            "value": "48"
+          },
+          "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+          "id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "According to Pew Research Center, 48% backed Trump in the 2024 election",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:13:57.777605Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 2045,
+          "span_start": 1974,
+          "speaker": "Pew Research Center",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_7309.txt",
+          "text_sha256": "527fceda30d5e6928a62bda734f50763bf7b0ef69c9a2617043d9372fcb01870",
+          "time_action": "corrects",
+          "log_seq": 1183922,
+          "recorded_at": "2026-10-07T12:39:32.566934Z",
+          "slot_id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+          "evidence_asserted_at": "2026-10-06T22:03:54Z",
+          "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/06/trump-approval-rating-underwater-most-states-poll/92123205007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-07T10:00:41Z",
+      "canonical_url": "https://nbcnews.com/politics/2026-election/florida-poll-republicans-lead-races-governor-senate-rcna601342",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/raw/article_1013.html",
+      "desk": "government and politics",
+      "envelope_seq": 1191705,
+      "gate_verdict": "COVER",
+      "id": "4a472c06073d7982e207337a04e6c308a045c753fba0dc2b06d3b59b948b6192",
+      "lang": "en",
+      "published_at": "2026-10-07T10:00:41Z",
+      "publisher": "NBC News",
+      "raw_sha256": "5abf6980a996e156b4cce4360bc9db15607d099d97ea28b4ab2cac208106b0fc",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T22:03:56.854013Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nbcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z",
+      "source_family": "major_outlet",
+      "source_id": "nbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_1013.txt",
+      "text_sha256": "ea7ffa99ebc08b28ef6b28eb9ead6a7fc0942123c2f784fd918897341a05caa7",
+      "title": "Florida poll: Republicans lead in the races for governor and Senate",
+      "updated_at": "2026-10-07T16:02:46.770000Z",
+      "url": "https://www.nbcnews.com/politics/2026-election/florida-poll-republicans-lead-races-governor-senate-rcna601342",
+      "verbatim_level": "article",
+      "log_seq": 1191706,
+      "recorded_at": "2026-10-07T22:41:58.202427Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024-11",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-07T10:00:41Z",
+          "checkable_against": "Miami-Dade County 2024 presidential election canvass",
+          "claim_type": "actual",
+          "envelope_seq": 1217246,
+          "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+          "evidence_id": "4a472c06073d7982e207337a04e6c308a045c753fba0dc2b06d3b59b948b6192",
+          "figure": {
+            "unit": "percentage points",
+            "value": "11"
+          },
+          "fire_id": "2fd36f1f620097ad9fa8fd3fb148efe9",
+          "id": "occurrence-4a472c06073d7982e207337a04e6c308a045c753fba0dc2b06d3b59b948b6192-dd58592de84c1e43",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "In 2024, Donald Trump won Hispanic-heavy Miami-Dade County by roughly 11 points, a significant reversal in a part of the state that had long been Democratic-leaning.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T22:03:56.854013Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1468,
+          "span_start": 1303,
+          "speaker": "NBC News",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_1013.txt",
+          "text_sha256": "ea7ffa99ebc08b28ef6b28eb9ead6a7fc0942123c2f784fd918897341a05caa7",
+          "time_action": "corrects",
+          "log_seq": 1217247,
+          "recorded_at": "2026-10-08T07:40:59.828339Z",
+          "evidence_asserted_at": "2026-10-07T10:00:41Z",
+          "evidence_url": "https://www.nbcnews.com/politics/2026-election/florida-poll-republicans-lead-races-governor-senate-rcna601342",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        }
+      ]
+    },
     {
       "accepted": true,
       "asserted_at": "2026-08-19T09:00:00Z",
@@ -103,8 +278,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T07:44:15.159240Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753095,
@@ -126,6 +301,32 @@
   "publishable": true,
   "slots": [
     {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+      "envelope_seq": 1189963,
+      "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+      "id": "slot-471261b1-ea44-46ac-aa22-6aa7f50401f8",
+      "name": "Trump vote share",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.usatoday.com/story/news/politics/2026/10/06/trump-approval-rating-underwater-most-states-poll/92123205007/",
+        "source_id": "usatoday_news_rss"
+      },
+      "log_seq": 1189964,
+      "recorded_at": "2026-10-07T13:45:38.224888Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+      "envelope_seq": 1189995,
+      "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+      "id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "name": "Trump vote share",
+      "refusal": null,
+      "log_seq": 1189996,
+      "recorded_at": "2026-10-07T13:46:17.284400Z"
+    },
+    {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-f6a5e0e49a4ff08f",
       "envelope_seq": 753315,
@@ -138,6 +339,81 @@
     }
   ],
   "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024-11",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-06T22:03:54Z",
+      "checkable_against": "Pew Research Center analysis of the 2024 presidential election vote",
+      "claim_type": "actual",
+      "envelope_seq": 1183921,
+      "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+      "evidence_id": "062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9",
+      "figure": {
+        "unit": "percent",
+        "value": "48"
+      },
+      "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+      "id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "According to Pew Research Center, 48% backed Trump in the 2024 election",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:13:57.777605Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 2045,
+      "span_start": 1974,
+      "speaker": "Pew Research Center",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_7309.txt",
+      "text_sha256": "527fceda30d5e6928a62bda734f50763bf7b0ef69c9a2617043d9372fcb01870",
+      "time_action": "corrects",
+      "log_seq": 1183922,
+      "recorded_at": "2026-10-07T12:39:32.566934Z",
+      "slot_id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "evidence_asserted_at": "2026-10-06T22:03:54Z",
+      "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/06/trump-approval-rating-underwater-most-states-poll/92123205007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024-11",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-07T10:00:41Z",
+      "checkable_against": "Miami-Dade County 2024 presidential election canvass",
+      "claim_type": "actual",
+      "envelope_seq": 1217246,
+      "event_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
+      "evidence_id": "4a472c06073d7982e207337a04e6c308a045c753fba0dc2b06d3b59b948b6192",
+      "figure": {
+        "unit": "percentage points",
+        "value": "11"
+      },
+      "fire_id": "2fd36f1f620097ad9fa8fd3fb148efe9",
+      "id": "occurrence-4a472c06073d7982e207337a04e6c308a045c753fba0dc2b06d3b59b948b6192-dd58592de84c1e43",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "In 2024, Donald Trump won Hispanic-heavy Miami-Dade County by roughly 11 points, a significant reversal in a part of the state that had long been Democratic-leaning.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T22:03:56.854013Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1468,
+      "span_start": 1303,
+      "speaker": "NBC News",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_1013.txt",
+      "text_sha256": "ea7ffa99ebc08b28ef6b28eb9ead6a7fc0942123c2f784fd918897341a05caa7",
+      "time_action": "corrects",
+      "log_seq": 1217247,
+      "recorded_at": "2026-10-08T07:40:59.828339Z",
+      "evidence_asserted_at": "2026-10-07T10:00:41Z",
+      "evidence_url": "https://www.nbcnews.com/politics/2026-election/florida-poll-republicans-lead-races-governor-senate-rcna601342",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    },
     {
       "accepted": true,
       "anchorable": true,
@@ -180,6 +456,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 1189997,
+      "id": "attach-anchor-slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100",
+      "refusal": null,
+      "slot_id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "log_seq": 1189998,
+      "recorded_at": "2026-10-07T13:46:17.320307Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 753317,
       "id": "attach-anchor-slot-e6ee427f-e3c9-4c26-8757-e87b85156241",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-f6a5e0e49a4ff08f",
@@ -202,7 +491,7 @@
     "edges": []
   },
   "status": "published",
-  "desk": null,
+  "desk": "government and politics",
   "follows": null,
   "root_id": "event-04ee48b1-0863-4b9a-884d-c90a0f11b465",
   "changed_since_previous": [],
@@ -215,6 +504,14 @@
       "unit": "percent",
       "sentence": "The president won 46 percent of the Latino vote in 2024, the highest share of any GOP presidential candidate in modern history",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-f6a5e0e49a4ff08f"
+    },
+    {
+      "slot_id": "slot-ce0052b6-c9c3-48d2-b608-138bae99ed85",
+      "name": "Trump vote share",
+      "value": "48",
+      "unit": "percent",
+      "sentence": "According to Pew Research Center, 48% backed Trump in the 2024 election",
+      "occurrence_id": "occurrence-062d02824b24bb145b39a1c078e01cf3c58c377744f4c8c48b172f20d7eba2c9-b8611eb02374e100"
     }
   ]
 }

@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7": {
+      "slot": "campaign year",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5",
+      "heads": [
+        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "after leaked audio surfaced of him boasting about groping women during his 2016 campaign.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2016",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "2016 leaked-audio recording and contemporaneous reporting",
+      "evidence_id": "57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd",
+      "basis": [
+        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5"
+      ],
+      "last_confirmed": "2016",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
+      "as_of": "2016",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -52,6 +85,7 @@
           "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
           "log_seq": 432600,
           "recorded_at": "2026-09-05T09:03:56.323366Z",
+          "slot_id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
           "evidence_asserted_at": "2026-08-04T23:04:14Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
           "evidence_publisher": "The New York Times",
@@ -61,8 +95,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "4becfdf9e0",
-  "evaluated_at": "2026-09-07T01:41:41.034765Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432597,
@@ -78,7 +112,34 @@
     "log_seq": 432598
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5",
+      "envelope_seq": 1011760,
+      "event_id": "event-7a006c8b-8b28-4a50-844c-9f9248b9a207",
+      "id": "slot-906fe02e-71e1-4978-a3a8-211f0f6f013e",
+      "name": "campaign year",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1011761,
+      "recorded_at": "2026-09-30T23:57:29.952189Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5",
+      "envelope_seq": 1011762,
+      "event_id": "event-7a006c8b-8b28-4a50-844c-9f9248b9a207",
+      "id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
+      "name": "campaign year",
+      "refusal": null,
+      "log_seq": 1011763,
+      "recorded_at": "2026-09-30T23:57:53.529471Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -107,13 +168,28 @@
       "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
       "log_seq": 432600,
       "recorded_at": "2026-09-05T09:03:56.323366Z",
+      "slot_id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
       "evidence_asserted_at": "2026-08-04T23:04:14Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1011764,
+      "id": "attach-anchor-slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5",
+      "refusal": null,
+      "slot_id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
+      "log_seq": 1011765,
+      "recorded_at": "2026-09-30T23:57:53.537316Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -130,5 +206,14 @@
   "root_id": "event-7a006c8b-8b28-4a50-844c-9f9248b9a207",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-b858b656-9b4b-44cd-ba86-7e45126ae1d7",
+      "name": "campaign year",
+      "value": null,
+      "unit": null,
+      "sentence": "after leaked audio surfaced of him boasting about groping women during his 2016 campaign.",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-442aed8a3692b1e5"
+    }
+  ]
 }

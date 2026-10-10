@@ -1,0 +1,227 @@
+{
+  "current_state": {
+    "slot-ee41b220-542c-4f71-af9f-54ee39230c57": {
+      "slot": "diesel price",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559",
+      "heads": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The average price of a litre of diesel in the UK hit an all-time high on Wednesday of 199.72p, according to the motoring body the RAC.",
+      "span_check": "byte_exact",
+      "speaker": "RAC",
+      "figure": {
+        "unit": "pence per litre",
+        "value": "199.72"
+      },
+      "as_of": "2026-09-30",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "RAC UK fuel price data",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "basis": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559"
+      ],
+      "last_confirmed": "2026-09-30",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "as_of": "2026-09-30",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "canonical_url": "https://theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_0998.html",
+      "desk": "government and politics",
+      "envelope_seq": 1030036,
+      "gate_verdict": "COVER",
+      "id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "lang": "en",
+      "published_at": "2026-10-02T09:09:21Z",
+      "publisher": "The Guardian",
+      "raw_sha256": "53eaca92e3464d42155ed6fce0bb6547f09d9839c148e01e3df2c1de25e72de4",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.theguardian.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "title": "UK is not facing diesel shortage despite fears of Trump export ban, minister says",
+      "updated_at": "2026-10-02T09:09:40Z",
+      "url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "verbatim_level": "article",
+      "log_seq": 1030037,
+      "recorded_at": "2026-10-02T10:29:01.888984Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-30",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T09:09:21Z",
+          "checkable_against": "RAC UK fuel price data",
+          "claim_type": "actual",
+          "envelope_seq": 1057091,
+          "event_id": "event-ae15829e-5867-44ef-89b1-9ffa97027a35",
+          "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+          "figure": {
+            "unit": "pence per litre",
+            "value": "199.72"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The average price of a litre of diesel in the UK hit an all-time high on Wednesday of 199.72p, according to the motoring body the RAC.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:54.416341Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 1710,
+          "span_start": 1576,
+          "speaker": "RAC",
+          "subject": "UK diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+          "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+          "log_seq": 1057092,
+          "recorded_at": "2026-10-03T07:13:29.819012Z",
+          "slot_id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+          "evidence_asserted_at": "2026-10-02T09:09:21Z",
+          "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T03:39:58.651708Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1056879,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": "event-7efeaf32-6ab4-490d-b803-dc995c2ee506",
+    "id": "event-ae15829e-5867-44ef-89b1-9ffa97027a35",
+    "kind": "price record",
+    "label": "UK diesel price reaches record 199.72p",
+    "minted_at": "2026-10-03T07:12:12.377706Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+    "period": "2026-09-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "UK diesel price",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa/a20b7b7336584271a27afa8806454dd0.json",
+    "log_seq": 1056880
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559",
+      "envelope_seq": 1057175,
+      "event_id": "event-ae15829e-5867-44ef-89b1-9ffa97027a35",
+      "id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "name": "diesel price",
+      "refusal": null,
+      "log_seq": 1057176,
+      "recorded_at": "2026-10-03T07:14:25.971706Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-30",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "checkable_against": "RAC UK fuel price data",
+      "claim_type": "actual",
+      "envelope_seq": 1057091,
+      "event_id": "event-ae15829e-5867-44ef-89b1-9ffa97027a35",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "figure": {
+        "unit": "pence per litre",
+        "value": "199.72"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The average price of a litre of diesel in the UK hit an all-time high on Wednesday of 199.72p, according to the motoring body the RAC.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 1710,
+      "span_start": 1576,
+      "speaker": "RAC",
+      "subject": "UK diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "log_seq": 1057092,
+      "recorded_at": "2026-10-03T07:13:29.819012Z",
+      "slot_id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "evidence_asserted_at": "2026-10-02T09:09:21Z",
+      "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1057177,
+      "id": "attach-anchor-slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559",
+      "refusal": null,
+      "slot_id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "log_seq": 1057178,
+      "recorded_at": "2026-10-03T07:14:25.994003Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": "event-7efeaf32-6ab4-490d-b803-dc995c2ee506",
+  "root_id": "event-7efeaf32-6ab4-490d-b803-dc995c2ee506",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-ee41b220-542c-4f71-af9f-54ee39230c57",
+      "name": "diesel price",
+      "value": "199.72",
+      "unit": "pence per litre",
+      "sentence": "The average price of a litre of diesel in the UK hit an all-time high on Wednesday of 199.72p, according to the motoring body the RAC.",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-1a0bc7124b876559"
+    }
+  ]
+}

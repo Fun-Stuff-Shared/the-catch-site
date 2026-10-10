@@ -2,42 +2,172 @@
   "current_state": {
     "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb": {
       "slot": "match score",
-      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
+      "occurrence_id": null,
       "heads": [
+        "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-0dd4b750ce2a0bbd",
         "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
       ],
-      "roots": 1,
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-0dd4b750ce2a0bbd",
+        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+      ],
+      "last_confirmed": "2017-10",
+      "freshness": "unknown_current"
+    },
+    "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e": {
+      "slot": "honorary chairman status",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+      "heads": [
+        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c"
+      ],
+      "roots": 2,
       "primary": false,
       "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
-      "quote_span": "the U.S. Team defeated the International Team, 19-11",
+      "quote_span": "Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.",
       "span_check": "byte_exact",
       "speaker": "outlet's own",
-      "figure": {
-        "unit": "score",
-        "value": "19-11"
-      },
+      "figure": null,
       "as_of": "2017",
-      "as_of_source": "resolved_from_context",
-      "checkable_against": "2017 Presidents Cup official final result",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "2017 Presidents Cup official records",
       "evidence_id": "58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377",
       "basis": [
-        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+        "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+        "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c"
       ],
-      "last_confirmed": "2017",
+      "last_confirmed": "2017-10",
       "freshness": "stale"
     }
   },
   "timeline": [
     {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "roots": 2
+    },
+    {
       "kind": "first_value",
       "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
       "as_of": "2017",
       "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "as_of": "2017",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c"
+    },
+    {
+      "kind": "disputed",
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "as_of": "2017-10"
     }
   ],
   "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T22:19:15.821212572Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_8960.html",
+      "envelope_seq": 149327,
+      "id": "0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6",
+      "publisher": "USA Today",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:31.933730Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8960.txt",
+      "text_sha256": "7cacf66bc6e93b5833162d94ddd8f464115a95b4959f89bd314bdda713fc8a0a",
+      "title": "President Donald Trump named honorary chairman for PGA Tour Presidents Cup",
+      "url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+      "verbatim_level": "article",
+      "log_seq": 517033,
+      "recorded_at": "2026-09-06T01:33:22.854889Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2017-10",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T22:19:15.821212Z",
+          "checkable_against": "2017 Presidents Cup final results",
+          "claim_type": "actual",
+          "envelope_seq": 773225,
+          "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+          "evidence_id": "0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6",
+          "figure": {
+            "unit": "match points",
+            "value": "19-11"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-0dd4b750ce2a0bbd",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The United States beat the international team, 19-11.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:31.933730Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1247,
+          "span_start": 1194,
+          "speaker": "outlet's own",
+          "subject": "2017 Presidents Cup",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8960.txt",
+          "text_sha256": "7cacf66bc6e93b5833162d94ddd8f464115a95b4959f89bd314bdda713fc8a0a",
+          "log_seq": 773226,
+          "recorded_at": "2026-09-07T21:13:34.646057Z",
+          "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+          "evidence_asserted_at": "2026-08-29T22:19:15.821212572Z",
+          "evidence_url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2017-10",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T22:19:15.821212Z",
+          "checkable_against": "2017 Presidents Cup official records and trophy presentation footage",
+          "claim_type": "actual",
+          "envelope_seq": 773219,
+          "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+          "evidence_id": "0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6",
+          "figure": null,
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Trump also held the role for the 2017 competition at Liberty National Golf Club in New Jersey and was part of the trophy presentation.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:31.933730Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1193,
+          "span_start": 1059,
+          "speaker": "outlet's own",
+          "subject": "2017 Presidents Cup",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8960.txt",
+          "text_sha256": "7cacf66bc6e93b5833162d94ddd8f464115a95b4959f89bd314bdda713fc8a0a",
+          "log_seq": 773220,
+          "recorded_at": "2026-09-07T21:13:32.111542Z",
+          "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+          "evidence_asserted_at": "2026-08-29T22:19:15.821212572Z",
+          "evidence_url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    },
     {
       "accepted": true,
       "asserted_at": "2026-08-30T02:55:12Z",
@@ -89,6 +219,7 @@
           "text_sha256": "c2a2269c7e738a42e3a92f0dda1b210cc8564447f692dafb0ef4ec88ddcee629",
           "log_seq": 442427,
           "recorded_at": "2026-09-05T10:47:10.754990Z",
+          "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
           "evidence_asserted_at": "2026-08-30T02:55:12Z",
           "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
           "evidence_publisher": "Fox News",
@@ -135,8 +266,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432623,
@@ -163,9 +294,106 @@
       "refusal": null,
       "log_seq": 750768,
       "recorded_at": "2026-09-07T07:44:58.031731Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+      "envelope_seq": 1015367,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "id": "slot-cddb47b4-b1f9-4b56-881c-e66e306e7c59",
+      "name": "honorary chairman status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
+        "source_id": "fox_news_latest"
+      },
+      "log_seq": 1015368,
+      "recorded_at": "2026-10-01T20:12:44.805152Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+      "envelope_seq": 1015369,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "name": "honorary chairman status",
+      "refusal": null,
+      "log_seq": 1015370,
+      "recorded_at": "2026-10-01T20:12:57.139041Z"
     }
   ],
   "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2017-10",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T22:19:15.821212Z",
+      "checkable_against": "2017 Presidents Cup final results",
+      "claim_type": "actual",
+      "envelope_seq": 773225,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "evidence_id": "0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6",
+      "figure": {
+        "unit": "match points",
+        "value": "19-11"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-0dd4b750ce2a0bbd",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The United States beat the international team, 19-11.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:31.933730Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1247,
+      "span_start": 1194,
+      "speaker": "outlet's own",
+      "subject": "2017 Presidents Cup",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8960.txt",
+      "text_sha256": "7cacf66bc6e93b5833162d94ddd8f464115a95b4959f89bd314bdda713fc8a0a",
+      "log_seq": 773226,
+      "recorded_at": "2026-09-07T21:13:34.646057Z",
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "evidence_asserted_at": "2026-08-29T22:19:15.821212572Z",
+      "evidence_url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2017-10",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T22:19:15.821212Z",
+      "checkable_against": "2017 Presidents Cup official records and trophy presentation footage",
+      "claim_type": "actual",
+      "envelope_seq": 773219,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "evidence_id": "0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6",
+      "figure": null,
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Trump also held the role for the 2017 competition at Liberty National Golf Club in New Jersey and was part of the trophy presentation.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:31.933730Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1193,
+      "span_start": 1059,
+      "speaker": "outlet's own",
+      "subject": "2017 Presidents Cup",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8960.txt",
+      "text_sha256": "7cacf66bc6e93b5833162d94ddd8f464115a95b4959f89bd314bdda713fc8a0a",
+      "log_seq": 773220,
+      "recorded_at": "2026-09-07T21:13:32.111542Z",
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "evidence_asserted_at": "2026-08-29T22:19:15.821212572Z",
+      "evidence_url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
     {
       "accepted": true,
       "anchorable": true,
@@ -193,6 +421,7 @@
       "text_sha256": "c2a2269c7e738a42e3a92f0dda1b210cc8564447f692dafb0ef4ec88ddcee629",
       "log_seq": 442427,
       "recorded_at": "2026-09-05T10:47:10.754990Z",
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
       "evidence_asserted_at": "2026-08-30T02:55:12Z",
       "evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
       "evidence_publisher": "Fox News",
@@ -240,6 +469,32 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 773635,
+      "id": "attach-335ac193-3dc2-4608-b999-13c746242df6",
+      "occurrence_id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-0dd4b750ce2a0bbd",
+      "refusal": null,
+      "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
+      "log_seq": 773636,
+      "recorded_at": "2026-09-07T21:16:46.365709Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1015374,
+      "id": "attach-65b78af1-2583-4ad0-a0a5-ed73cd0b6ae6",
+      "occurrence_id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+      "refusal": null,
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "log_seq": 1015375,
+      "recorded_at": "2026-10-01T20:13:10.651950Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 750769,
       "id": "attach-anchor-slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
       "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8",
@@ -249,17 +504,98 @@
       "recorded_at": "2026-09-07T07:44:58.265414Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1015371,
+      "id": "attach-anchor-slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+      "refusal": null,
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "log_seq": 1015372,
+      "recorded_at": "2026-10-01T20:12:57.146629Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1015379,
+      "event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "Trump also held the role for the 2017 competition at Liberty National Golf Club in New Jersey"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "from_occurrence_id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+      "id": "edge-relation-09a2be4b731d430c0574c4ef",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state that Trump held the honorary chairman role for the 2017 Presidents Cup at Liberty National Golf Club in New Jersey. They are reporting the same fact independently.",
+      "refusal": null,
+      "to_event_id": "event-85c044f4-2fbf-4582-ae03-ca7029172c51",
+      "to_occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+      "log_seq": 1015380,
+      "recorded_at": "2026-10-01T20:16:47.490073Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-30T02:55:12Z",
+    "confirmations": [
+      {
+        "label": "“Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.”",
+        "value": "Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.",
+        "reports": [
+          {
+            "publisher": "Fox News",
+            "url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
+            "dates": [
+              "2026-08-30"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "USA Today",
+            "url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e"
+        ],
+        "sentence": "“Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+        "relation": "supports",
+        "edge_id": "edge-relation-09a2be4b731d430c0574c4ef",
+        "earlier_occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c",
+        "later_occurrence_id": "occurrence-0cecc3ac7a5b9e9e52e4a577b533f2912afe919c711310a1fedfffe721c019f6-68dce4750cc15d03",
+        "earlier_evidence_url": "https://www.foxnews.com/outkick-sports/pga-tour-taps-donald-trump-reprise-honorary-chairman-role-presidents-cup-white-house-confirms",
+        "later_evidence_url": "https://www.usatoday.com/story/sports/golf/pga/2026/08/29/president-trump-named-honorary-chairman-for-pga-tour-presidents-cup/91531036007/",
+        "sentence": "On 2026-08-30, Fox News reported “Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.”; on 2026-08-29, USA Today reported “Trump also held the role for the 2017 competition at Liberty National Golf Club in New Jersey and was part of the trophy presentation.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -271,10 +607,18 @@
     {
       "slot_id": "slot-2321936f-8451-46d3-b5bf-f8d0865dcddb",
       "name": "match score",
-      "value": "19-11",
-      "unit": "score",
-      "sentence": "the U.S. Team defeated the International Team, 19-11",
-      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-761012714c3a94b8"
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    },
+    {
+      "slot_id": "slot-e499d483-70d0-4fbb-944d-d09e5dbacb2e",
+      "name": "honorary chairman status",
+      "value": null,
+      "unit": null,
+      "sentence": "Trump previously served as honorary chairman of the 2017 Presidents Cup, held at Liberty National Golf Club in New Jersey.",
+      "occurrence_id": "occurrence-58d6d23f8134d109f72693119f540dd47cfb414988d7c500a3683d5d1ef45377-5d6f46390d3f495c"
     }
   ]
 }

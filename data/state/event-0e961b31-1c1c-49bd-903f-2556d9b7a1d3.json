@@ -2,34 +2,40 @@
   "current_state": {
     "slot-edcf2838-2e00-4010-87ba-266d142fe3a6": {
       "slot": "works stolen",
-      "occurrence_id": "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06",
+      "occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
       "heads": [
-        "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06"
+        "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e"
       ],
-      "roots": 1,
+      "roots": 2,
       "primary": false,
       "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
-      "quote_span": "Italy's Culture Ministry announced on Sunday that four works of \"extraordinary value\" by Renaissance artist Antonello da Messina were stolen from a museum in Sicily .",
+      "quote_span": "This month, four of the most important works by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina.",
       "span_check": "byte_exact",
-      "speaker": "Italy's Culture Ministry",
+      "speaker": "outlet's own",
       "figure": {
         "unit": "works",
         "value": "4"
       },
-      "as_of": "2026-08-23",
+      "as_of": "2026-08",
       "as_of_source": "resolved_from_context",
-      "checkable_against": "Italy Culture Ministry announcement and Sicilian museum theft report",
-      "evidence_id": "5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f",
+      "checkable_against": "Messina museum theft and Italian police records",
+      "evidence_id": "6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f",
       "basis": [
-        "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06"
+        "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06",
+        "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e"
       ],
       "last_confirmed": "2026-08-23",
-      "freshness": "aging"
+      "freshness": "stale"
     }
   },
   "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+      "roots": 2
+    },
     {
       "kind": "first_value",
       "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
@@ -100,11 +106,74 @@
           "evidence_source_id": "dw_english"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T14:46:25Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8624.html",
+      "envelope_seq": 171617,
+      "id": "6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f",
+      "publisher": "The Guardian",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:26.225776Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.theguardian.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8624.txt",
+      "text_sha256": "bbec7e653e7c8f013b5e8a73a4e83b18108c3b16839fe63cb0cbb502d0f1c0a2",
+      "title": "Egyptian queen’s 673-diamond necklace stolen in Vienna smash-and-grab raid",
+      "url": "https://www.theguardian.com/artanddesign/2026/aug/28/egyptian-queen-diamond-necklace-stolen-vienna-raid",
+      "verbatim_level": "article",
+      "log_seq": 521648,
+      "recorded_at": "2026-09-06T01:33:24.224447Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T14:46:25Z",
+          "checkable_against": "Messina museum theft and Italian police records",
+          "claim_type": "actual",
+          "envelope_seq": 788895,
+          "event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+          "evidence_id": "6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f",
+          "figure": {
+            "unit": "works",
+            "value": "4"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "This month, four of the most important works by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:26.225776Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 5312,
+          "span_start": 5118,
+          "speaker": "outlet's own",
+          "subject": "four Antonello da Messina works",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8624.txt",
+          "text_sha256": "bbec7e653e7c8f013b5e8a73a4e83b18108c3b16839fe63cb0cbb502d0f1c0a2",
+          "log_seq": 788896,
+          "recorded_at": "2026-09-08T04:52:21.843233Z",
+          "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+          "evidence_asserted_at": "2026-08-28T14:46:25Z",
+          "evidence_url": "https://www.theguardian.com/artanddesign/2026/aug/28/egyptian-queen-diamond-necklace-stolen-vienna-raid",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753411,
@@ -125,6 +194,17 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+      "envelope_seq": 788989,
+      "event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+      "id": "slot-46e7faf7-1791-4af4-abf8-786afd475ce3",
+      "name": "works stolen",
+      "refusal": "slot_name_duplicate",
+      "log_seq": 788990,
+      "recorded_at": "2026-09-08T04:53:39.064492Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06",
@@ -174,9 +254,72 @@
       "evidence_url": "https://www.dw.com/en/spain-thieves-steal-bronze-age-gold-in-lightning-raid-on-villena-museum/a-78538027?maca=en-rss-en-all-1573-xml-mrss",
       "evidence_publisher": "Deutsche Welle",
       "evidence_source_id": "dw_english"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T14:46:25Z",
+      "checkable_against": "Messina museum theft and Italian police records",
+      "claim_type": "actual",
+      "envelope_seq": 788895,
+      "event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+      "evidence_id": "6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f",
+      "figure": {
+        "unit": "works",
+        "value": "4"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "This month, four of the most important works by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:26.225776Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 5312,
+      "span_start": 5118,
+      "speaker": "outlet's own",
+      "subject": "four Antonello da Messina works",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8624.txt",
+      "text_sha256": "bbec7e653e7c8f013b5e8a73a4e83b18108c3b16839fe63cb0cbb502d0f1c0a2",
+      "log_seq": 788896,
+      "recorded_at": "2026-09-08T04:52:21.843233Z",
+      "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+      "evidence_asserted_at": "2026-08-28T14:46:25Z",
+      "evidence_url": "https://www.theguardian.com/artanddesign/2026/aug/28/egyptian-queen-diamond-necklace-stolen-vienna-raid",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 789009,
+      "id": "attach-755ecef2-fc46-4887-bdc5-1325cb0b436e",
+      "occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+      "refusal": null,
+      "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+      "log_seq": 789010,
+      "recorded_at": "2026-09-08T04:53:45.886726Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 788967,
+      "id": "attach-8590af38-5267-4cfb-9296-ae642fa0b952",
+      "occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+      "refusal": null,
+      "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+      "log_seq": 788968,
+      "recorded_at": "2026-09-08T04:53:20.025974Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": true,
       "edge_kind": "attach",
@@ -189,17 +332,85 @@
       "recorded_at": "2026-09-07T08:34:32.581850Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 799247,
+      "event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "four works of \"extraordinary value\" by Renaissance artist Antonello da Messina"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+      "from_occurrence_id": "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06",
+      "id": "edge-relation-b687f15573752d5ce5bfd21e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Comparing the NEW quote (\"four works of \\\"extraordinary value\\\" by Renaissance artist Antonello da Messina\") with the EXISTING quote (\"four of the most important works by the 15th-century Renaissance master Antonello da Messina\"). Both refer to 4 works by the same artist from the same museum theft. Value is equivalent. Sources are independent.",
+      "refusal": null,
+      "to_event_id": "event-0e961b31-1c1c-49bd-903f-2556d9b7a1d3",
+      "to_occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+      "log_seq": 799248,
+      "recorded_at": "2026-09-08T08:17:49.880009Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-28T14:46:25Z",
+    "confirmations": [
+      {
+        "label": "“4 works”",
+        "value": "4 works",
+        "reports": [
+          {
+            "publisher": "Deutsche Welle",
+            "url": "https://www.dw.com/en/spain-thieves-steal-bronze-age-gold-in-lightning-raid-on-villena-museum/a-78538027?maca=en-rss-en-all-1573-xml-mrss",
+            "dates": [
+              "2026-08-27"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "The Guardian",
+            "url": "https://www.theguardian.com/artanddesign/2026/aug/28/egyptian-queen-diamond-necklace-stolen-vienna-raid",
+            "dates": [
+              "2026-08-28"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-edcf2838-2e00-4010-87ba-266d142fe3a6"
+        ],
+        "sentence": "“4 works”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-edcf2838-2e00-4010-87ba-266d142fe3a6"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-edcf2838-2e00-4010-87ba-266d142fe3a6",
+        "relation": "supports",
+        "edge_id": "edge-relation-b687f15573752d5ce5bfd21e",
+        "earlier_occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e",
+        "later_occurrence_id": "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06",
+        "earlier_evidence_url": "https://www.theguardian.com/artanddesign/2026/aug/28/egyptian-queen-diamond-necklace-stolen-vienna-raid",
+        "later_evidence_url": "https://www.dw.com/en/spain-thieves-steal-bronze-age-gold-in-lightning-raid-on-villena-museum/a-78538027?maca=en-rss-en-all-1573-xml-mrss",
+        "sentence": "On 2026-08-28, The Guardian reported “This month, four of the most important works by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina.”; on 2026-08-27, Deutsche Welle reported “Italy's Culture Ministry announced on Sunday that four works of \"extraordinary value\" by Renaissance artist Antonello da Messina were stolen from a museum in Sicily .”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -213,8 +424,8 @@
       "name": "works stolen",
       "value": "4",
       "unit": "works",
-      "sentence": "Italy's Culture Ministry announced on Sunday that four works of \"extraordinary value\" by Renaissance artist Antonello da Messina were stolen from a museum in Sicily .",
-      "occurrence_id": "occurrence-5cc8ec47980de05a2c4aca6b0ad344cca799fc07db1606427124838427d8326f-9ec9f566faeb8f06"
+      "sentence": "This month, four of the most important works by the 15th-century Renaissance master Antonello da Messina were stolen during a national holiday from a museum in the Sicilian port city of Messina.",
+      "occurrence_id": "occurrence-6bac3b092ca1ea92a9167e72558c0c79f20dfb543c7c5cc674f8630a64c1e53f-e5a7881d13a88e4e"
     }
   ]
 }

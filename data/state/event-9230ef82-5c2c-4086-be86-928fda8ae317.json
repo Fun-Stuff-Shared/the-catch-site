@@ -1,5 +1,33 @@
 {
   "current_state": {
+    "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d": {
+      "slot": "candidate deposit",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf",
+      "heads": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Any British, Irish or eligible Commonwealth citizen over 18 can run in a parliamentary election in Britain, provided they pay a £500 deposit and get the nominations of 10 people living in the area.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "pounds",
+        "value": "500"
+      },
+      "as_of": "2026-08-12",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "UK parliamentary election candidate eligibility rules",
+      "evidence_id": "594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae",
+      "basis": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf"
+      ],
+      "last_confirmed": "2026-08-12",
+      "freshness": "stale"
+    },
     "slot-2fe0c605-eae3-44a5-bdd4-a758c9d01751": {
       "slot": "nominations required",
       "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-1b818c9d25009051",
@@ -26,7 +54,35 @@
         "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-1b818c9d25009051"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
+    },
+    "slot-fbec891e-ac99-4616-b3d7-93200af0cc34": {
+      "slot": "minimum candidate age",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233",
+      "heads": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "over 18 can run in a parliamentary election in Britain",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "years",
+        "value": "18"
+      },
+      "as_of": "2026-08-12",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "UK parliamentary election candidate eligibility rules",
+      "evidence_id": "594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae",
+      "basis": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233"
+      ],
+      "last_confirmed": "2026-08-12",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -35,6 +91,18 @@
       "slot_id": "slot-2fe0c605-eae3-44a5-bdd4-a758c9d01751",
       "as_of": "2026-08-12",
       "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-1b818c9d25009051"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d",
+      "as_of": "2026-08-12",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
+      "as_of": "2026-08-12",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233"
     }
   ],
   "evidence": [
@@ -129,6 +197,7 @@
           "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
           "log_seq": 750766,
           "recorded_at": "2026-09-07T07:44:57.053174Z",
+          "slot_id": "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d",
           "evidence_asserted_at": "2026-08-12T20:37:58Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
           "evidence_publisher": "The New York Times",
@@ -165,6 +234,7 @@
           "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
           "log_seq": 751124,
           "recorded_at": "2026-09-07T07:49:42.373250Z",
+          "slot_id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
           "evidence_asserted_at": "2026-08-12T20:37:58Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
           "evidence_publisher": "The New York Times",
@@ -174,8 +244,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T17:18:06.541345Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750571,
@@ -208,6 +278,21 @@
       "recorded_at": "2026-09-07T07:47:26.198298Z"
     },
     {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233",
+      "envelope_seq": 1151424,
+      "event_id": "event-9230ef82-5c2c-4086-be86-928fda8ae317",
+      "id": "slot-ea24da21-308d-4eb4-aa0c-7ee9140d75fe",
+      "name": "minimum candidate age",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1151425,
+      "recorded_at": "2026-10-06T16:50:00.418743Z"
+    },
+    {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-1b818c9d25009051",
       "envelope_seq": 750881,
@@ -217,6 +302,17 @@
       "refusal": null,
       "log_seq": 750882,
       "recorded_at": "2026-09-07T07:46:22.553747Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233",
+      "envelope_seq": 1151458,
+      "event_id": "event-9230ef82-5c2c-4086-be86-928fda8ae317",
+      "id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
+      "name": "minimum candidate age",
+      "refusal": null,
+      "log_seq": 1151459,
+      "recorded_at": "2026-10-06T16:51:00.823768Z"
     }
   ],
   "occurrences": [
@@ -288,6 +384,7 @@
       "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
       "log_seq": 750766,
       "recorded_at": "2026-09-07T07:44:57.053174Z",
+      "slot_id": "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d",
       "evidence_asserted_at": "2026-08-12T20:37:58Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
       "evidence_publisher": "The New York Times",
@@ -324,6 +421,7 @@
       "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
       "log_seq": 751124,
       "recorded_at": "2026-09-07T07:49:42.373250Z",
+      "slot_id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
       "evidence_asserted_at": "2026-08-12T20:37:58Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
       "evidence_publisher": "The New York Times",
@@ -356,6 +454,32 @@
       "recorded_at": "2026-09-07T07:46:22.794293Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151460,
+      "id": "attach-anchor-slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233",
+      "refusal": null,
+      "slot_id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
+      "log_seq": 1151461,
+      "recorded_at": "2026-10-06T16:51:00.848099Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151421,
+      "id": "attach-c7fa60cb-da61-4f9c-9196-516359648eed",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf",
+      "refusal": null,
+      "slot_id": "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d",
+      "log_seq": 1151422,
+      "recorded_at": "2026-10-06T16:49:59.750949Z",
+      "family": "identity",
+      "label": "attach"
     }
   ],
   "revision_timeline": {
@@ -376,12 +500,28 @@
   "same_name_not_compared": [],
   "new_slots": [
     {
+      "slot_id": "slot-eb1f0181-1fe4-4698-8741-64fe206bfc4d",
+      "name": "candidate deposit",
+      "value": "500",
+      "unit": "pounds",
+      "sentence": "Any British, Irish or eligible Commonwealth citizen over 18 can run in a parliamentary election in Britain, provided they pay a £500 deposit and get the nominations of 10 people living in the area.",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-8aa556861fe5eebf"
+    },
+    {
       "slot_id": "slot-2fe0c605-eae3-44a5-bdd4-a758c9d01751",
       "name": "nominations required",
       "value": "10",
       "unit": "nominations",
       "sentence": "Any British, Irish or eligible Commonwealth citizen over 18 can run in a parliamentary election in Britain, provided they pay a £500 deposit and get the nominations of 10 people living in the area.",
       "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-1b818c9d25009051"
+    },
+    {
+      "slot_id": "slot-fbec891e-ac99-4616-b3d7-93200af0cc34",
+      "name": "minimum candidate age",
+      "value": "18",
+      "unit": "years",
+      "sentence": "over 18 can run in a parliamentary election in Britain",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-c0a2775305b94233"
     }
   ]
 }

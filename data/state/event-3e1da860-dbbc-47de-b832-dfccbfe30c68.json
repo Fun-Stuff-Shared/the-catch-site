@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202": {
+      "slot": "processed product flow",
+      "occurrence_id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c",
+      "heads": [
+        "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Fewer than a million barrels of processed oil products passed through the Strait of Hormuz on average in the last week, down from 3.5 million per day before the war began.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "barrels per day",
+        "value": "1000000"
+      },
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Strait of Hormuz processed-oil-product flow data for the last week",
+      "evidence_id": "43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404",
+      "basis": [
+        "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T00:00:00Z",
+      "canonical_url": "https://bbc.co.uk/news/articles/cwp8gn13lmygo?at_campaign=rss&at_medium=RSS",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_2304.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1058445,
+      "gate_verdict": "COVER",
+      "id": "43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404",
+      "lang": "en",
+      "published_at": "2026-10-02T00:00:00Z",
+      "publisher": "BBC",
+      "raw_sha256": "682fdcefeebae12d399bf36afc8c37cbc1bb022a9bbad4521a85bc551a8dbb79",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:58.041557Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.bbc.co.uk",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "bbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_2304.txt",
+      "text_sha256": "9dc6b3aa9b3197c931e64a1d61b3e8852e97fa433bb40120dd18030e1df3bf43",
+      "title": "Three reasons Middle East oil supply is nearly back to pre-Iran war levels",
+      "url": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+      "verbatim_level": "article",
+      "log_seq": 1058446,
+      "recorded_at": "2026-10-03T07:22:45.555085Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T00:00:00Z",
+          "checkable_against": "Strait of Hormuz processed-oil-product flow data for the last week",
+          "claim_type": "actual",
+          "envelope_seq": 1075322,
+          "event_id": "event-3e1da860-dbbc-47de-b832-dfccbfe30c68",
+          "evidence_id": "43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404",
+          "figure": {
+            "unit": "barrels per day",
+            "value": "1000000"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Fewer than a million barrels of processed oil products passed through the Strait of Hormuz on average in the last week, down from 3.5 million per day before the war began.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:58.041557Z",
+          "root_id": "www.bbc.co.uk",
+          "span_check": "byte_exact",
+          "span_end": 5329,
+          "span_start": 5158,
+          "speaker": "outlet's own",
+          "subject": "Processed oil products through Strait of Hormuz",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_2304.txt",
+          "text_sha256": "9dc6b3aa9b3197c931e64a1d61b3e8852e97fa433bb40120dd18030e1df3bf43",
+          "log_seq": 1075323,
+          "recorded_at": "2026-10-03T11:13:06.315923Z",
+          "slot_id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+          "evidence_asserted_at": "2026-10-02T00:00:00Z",
+          "evidence_url": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+          "evidence_publisher": "BBC",
+          "evidence_source_id": "bbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "026753ab0f",
+  "evaluated_at": "2026-10-03T11:41:35.310577Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1075026,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-3e1da860-dbbc-47de-b832-dfccbfe30c68",
+    "kind": "data report",
+    "label": "Processed oil products through Strait of Hormuz late September 2026",
+    "minted_at": "2026-10-03T11:11:14.548273Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404",
+    "period": "2026-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Processed oil products through Strait of Hormuz",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404/9931f23ddc5d48a18e30e684067a28c5.json",
+    "log_seq": 1075027
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c",
+      "envelope_seq": 1075444,
+      "event_id": "event-3e1da860-dbbc-47de-b832-dfccbfe30c68",
+      "id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "name": "processed product flow",
+      "refusal": null,
+      "log_seq": 1075445,
+      "recorded_at": "2026-10-03T11:14:17.469926Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T00:00:00Z",
+      "checkable_against": "Strait of Hormuz processed-oil-product flow data for the last week",
+      "claim_type": "actual",
+      "envelope_seq": 1075322,
+      "event_id": "event-3e1da860-dbbc-47de-b832-dfccbfe30c68",
+      "evidence_id": "43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404",
+      "figure": {
+        "unit": "barrels per day",
+        "value": "1000000"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Fewer than a million barrels of processed oil products passed through the Strait of Hormuz on average in the last week, down from 3.5 million per day before the war began.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:58.041557Z",
+      "root_id": "www.bbc.co.uk",
+      "span_check": "byte_exact",
+      "span_end": 5329,
+      "span_start": 5158,
+      "speaker": "outlet's own",
+      "subject": "Processed oil products through Strait of Hormuz",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_2304.txt",
+      "text_sha256": "9dc6b3aa9b3197c931e64a1d61b3e8852e97fa433bb40120dd18030e1df3bf43",
+      "log_seq": 1075323,
+      "recorded_at": "2026-10-03T11:13:06.315923Z",
+      "slot_id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "evidence_asserted_at": "2026-10-02T00:00:00Z",
+      "evidence_url": "https://www.bbc.co.uk/news/articles/cwp8gn13lmygo?at_medium=RSS&at_campaign=rss",
+      "evidence_publisher": "BBC",
+      "evidence_source_id": "bbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1075446,
+      "id": "attach-anchor-slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "occurrence_id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c",
+      "refusal": null,
+      "slot_id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "log_seq": 1075447,
+      "recorded_at": "2026-10-03T11:14:17.494874Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-3e1da860-dbbc-47de-b832-dfccbfe30c68",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-5b9818f4-56ca-4a7b-ac50-689701c4d202",
+      "name": "processed product flow",
+      "value": "1000000",
+      "unit": "barrels per day",
+      "sentence": "Fewer than a million barrels of processed oil products passed through the Strait of Hormuz on average in the last week, down from 3.5 million per day before the war began.",
+      "occurrence_id": "occurrence-43b7c3c14ae4e4647575b526f4b68af046fe88a4fe22aa61691852539f856404-eefad971ec7e185c"
+    }
+  ]
+}

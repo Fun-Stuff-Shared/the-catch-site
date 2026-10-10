@@ -1,0 +1,487 @@
+{
+  "current_state": {
+    "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f": {
+      "slot": "GDP loss",
+      "occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+      "heads": [
+        "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Russian President Vladimir Putin said Thursday that Russia has lost 1% of GDP due to the Ukrainian strikes.",
+      "span_check": "byte_exact",
+      "speaker": "Vladimir Putin",
+      "figure": {
+        "unit": "percent",
+        "value": "1"
+      },
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Vladimir Putin's Thursday statement and Russian GDP accounts",
+      "evidence_id": "01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351",
+      "basis": [
+        "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+        "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T09:28:37.579000Z",
+      "canonical_url": "https://dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_5628.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1034382,
+      "gate_verdict": "COVER",
+      "id": "01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351",
+      "lang": "en",
+      "published_at": "2026-10-02T09:28:37.579000Z",
+      "publisher": "Deutsche Welle",
+      "raw_sha256": "e95031df5c85e224eb726f4ddf307eeecce5384fc6f4026d0bbb7a9d3b354839",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:08:58.233390Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.dw.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "international_public",
+      "source_id": "dw_english",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_5628.txt",
+      "text_sha256": "a7406324eae6f8cca178b87ac70115ced2f90738a0707337f4f8c20b152aff69",
+      "title": "Ukraine: Kyiv bridges shut after fatal Russian drone assault",
+      "updated_at": "2026-10-02T09:28:37.579000Z",
+      "url": "https://www.dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+      "verbatim_level": "article",
+      "log_seq": 1034383,
+      "recorded_at": "2026-10-02T10:29:21.977919Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T09:28:37.579000Z",
+          "checkable_against": "Vladimir Putin's Thursday statement and Russian GDP accounts",
+          "claim_type": "actual",
+          "envelope_seq": 1036152,
+          "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+          "evidence_id": "01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351",
+          "figure": {
+            "unit": "percent",
+            "value": "1"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Russian President Vladimir Putin said Thursday that Russia has lost 1% of GDP due to the Ukrainian strikes.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:08:58.233390Z",
+          "root_id": "www.dw.com",
+          "span_check": "byte_exact",
+          "span_end": 2550,
+          "span_start": 2443,
+          "speaker": "Vladimir Putin",
+          "subject": "Russia's GDP loss from Ukrainian strikes",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_5628.txt",
+          "text_sha256": "a7406324eae6f8cca178b87ac70115ced2f90738a0707337f4f8c20b152aff69",
+          "log_seq": 1036153,
+          "recorded_at": "2026-10-02T12:33:27.448787Z",
+          "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+          "evidence_asserted_at": "2026-10-02T09:28:37.579000Z",
+          "evidence_url": "https://www.dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+          "evidence_publisher": "Deutsche Welle",
+          "evidence_source_id": "dw_english"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T04:32:49.641000Z",
+      "canonical_url": "https://reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_3309.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1032266,
+      "gate_verdict": "COVER",
+      "id": "bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738",
+      "lang": "en",
+      "published_at": "2026-10-02T04:32:49.641000Z",
+      "publisher": "Reuters",
+      "raw_sha256": "8e951a46784f5ab3ff8cad3662ecc8d90bf7d9ef6efbce258a7483c14ce36a2f",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:47.363766Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.reuters.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "wire_service",
+      "source_id": "reuters_wire_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3309.txt",
+      "text_sha256": "f379948cf2b866ca0795d9642b7e6902b157387ae21970e93d197c5b7b12cc34",
+      "title": "Russian air strikes kill one, restrict traffic across Dnipro River in Kyiv",
+      "updated_at": "2026-10-02T09:39:50.218000Z",
+      "url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+      "verbatim_level": "article",
+      "log_seq": 1032267,
+      "recorded_at": "2026-10-02T10:29:11.841936Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T04:32:49.641000Z",
+          "checkable_against": "Fuel station queues and Russian fuel-market records",
+          "claim_type": "actual",
+          "envelope_seq": 1056633,
+          "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+          "evidence_id": "bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738",
+          "figure": null,
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-7500ab8de170b95f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "as people were forming long lines to refill their car tanks amid the damage.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:05:47.363766Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 1407,
+          "span_start": 1331,
+          "speaker": "Reuters",
+          "subject": "Russia's GDP loss from Ukrainian strikes",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3309.txt",
+          "text_sha256": "f379948cf2b866ca0795d9642b7e6902b157387ae21970e93d197c5b7b12cc34",
+          "log_seq": 1056634,
+          "recorded_at": "2026-10-03T07:09:27.343773Z",
+          "evidence_asserted_at": "2026-10-02T04:32:49.641000Z",
+          "evidence_url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T04:32:49.641000Z",
+          "checkable_against": "Russian official economic statements and national accounts",
+          "claim_type": "actual",
+          "envelope_seq": 1056631,
+          "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+          "evidence_id": "bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738",
+          "figure": {
+            "unit": "percent",
+            "value": "1"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Ukraine's strikes on oil refineries in Russia, one of the world's leading oil producers, have cost Russia 1% of its gross domestic product",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:05:47.363766Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 1286,
+          "span_start": 1148,
+          "speaker": "Russian President Vladimir Putin",
+          "subject": "Russia's GDP loss from Ukrainian strikes",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3309.txt",
+          "text_sha256": "f379948cf2b866ca0795d9642b7e6902b157387ae21970e93d197c5b7b12cc34",
+          "log_seq": 1056632,
+          "recorded_at": "2026-10-03T07:09:25.903700Z",
+          "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+          "evidence_asserted_at": "2026-10-02T04:32:49.641000Z",
+          "evidence_url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "7d51e131c1",
+  "evaluated_at": "2026-10-03T09:23:03.277480Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1035848,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": null,
+    "id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+    "kind": "statement",
+    "label": "Putin statement on GDP loss from Ukrainian strikes October 1 2026",
+    "minted_at": "2026-10-02T12:31:41.298173Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Russia's GDP loss from Ukrainian strikes",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351/b490de6f258b4793b353e2901fafdf50.json",
+    "log_seq": 1035849
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+      "envelope_seq": 1036192,
+      "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "name": "GDP loss",
+      "refusal": null,
+      "log_seq": 1036193,
+      "recorded_at": "2026-10-02T12:33:41.487487Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T09:28:37.579000Z",
+      "checkable_against": "Vladimir Putin's Thursday statement and Russian GDP accounts",
+      "claim_type": "actual",
+      "envelope_seq": 1036152,
+      "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "evidence_id": "01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351",
+      "figure": {
+        "unit": "percent",
+        "value": "1"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Russian President Vladimir Putin said Thursday that Russia has lost 1% of GDP due to the Ukrainian strikes.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:08:58.233390Z",
+      "root_id": "www.dw.com",
+      "span_check": "byte_exact",
+      "span_end": 2550,
+      "span_start": 2443,
+      "speaker": "Vladimir Putin",
+      "subject": "Russia's GDP loss from Ukrainian strikes",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_5628.txt",
+      "text_sha256": "a7406324eae6f8cca178b87ac70115ced2f90738a0707337f4f8c20b152aff69",
+      "log_seq": 1036153,
+      "recorded_at": "2026-10-02T12:33:27.448787Z",
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "evidence_asserted_at": "2026-10-02T09:28:37.579000Z",
+      "evidence_url": "https://www.dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+      "evidence_publisher": "Deutsche Welle",
+      "evidence_source_id": "dw_english"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T04:32:49.641000Z",
+      "checkable_against": "Fuel station queues and Russian fuel-market records",
+      "claim_type": "actual",
+      "envelope_seq": 1056633,
+      "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "evidence_id": "bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738",
+      "figure": null,
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-7500ab8de170b95f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "as people were forming long lines to refill their car tanks amid the damage.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:47.363766Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 1407,
+      "span_start": 1331,
+      "speaker": "Reuters",
+      "subject": "Russia's GDP loss from Ukrainian strikes",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3309.txt",
+      "text_sha256": "f379948cf2b866ca0795d9642b7e6902b157387ae21970e93d197c5b7b12cc34",
+      "log_seq": 1056634,
+      "recorded_at": "2026-10-03T07:09:27.343773Z",
+      "evidence_asserted_at": "2026-10-02T04:32:49.641000Z",
+      "evidence_url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T04:32:49.641000Z",
+      "checkable_against": "Russian official economic statements and national accounts",
+      "claim_type": "actual",
+      "envelope_seq": 1056631,
+      "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "evidence_id": "bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738",
+      "figure": {
+        "unit": "percent",
+        "value": "1"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Ukraine's strikes on oil refineries in Russia, one of the world's leading oil producers, have cost Russia 1% of its gross domestic product",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:47.363766Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 1286,
+      "span_start": 1148,
+      "speaker": "Russian President Vladimir Putin",
+      "subject": "Russia's GDP loss from Ukrainian strikes",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3309.txt",
+      "text_sha256": "f379948cf2b866ca0795d9642b7e6902b157387ae21970e93d197c5b7b12cc34",
+      "log_seq": 1056632,
+      "recorded_at": "2026-10-03T07:09:25.903700Z",
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "evidence_asserted_at": "2026-10-02T04:32:49.641000Z",
+      "evidence_url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1056749,
+      "id": "attach-0983294f-58ea-4173-81a6-2e96cf500461",
+      "occurrence_id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7",
+      "refusal": null,
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "log_seq": 1056750,
+      "recorded_at": "2026-10-03T07:10:15.822994Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1036194,
+      "id": "attach-anchor-slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+      "refusal": null,
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "log_seq": 1036195,
+      "recorded_at": "2026-10-02T12:33:41.494991Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1069403,
+      "event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "1% of its gross domestic product"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "from_occurrence_id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7",
+      "id": "edge-relation-1a80adc315eee8a746cc6adf",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state that Russia lost 1% of its GDP due to Ukrainian strikes, attributing the statement to Vladimir Putin.",
+      "refusal": null,
+      "to_event_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+      "to_occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+      "log_seq": 1069404,
+      "recorded_at": "2026-10-03T08:29:45.258057Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T09:28:37.579000Z",
+    "confirmations": [
+      {
+        "label": "“1 percent”",
+        "value": "1 percent",
+        "reports": [
+          {
+            "publisher": "Deutsche Welle",
+            "url": "https://www.dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "Reuters",
+            "url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f"
+        ],
+        "sentence": "“1 percent”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+        "relation": "supports",
+        "edge_id": "edge-relation-1a80adc315eee8a746cc6adf",
+        "earlier_occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce",
+        "later_occurrence_id": "occurrence-bbc0141790028a65a282dcd2dceaa23ca83c4310effcf88b4aa17f09f6299738-ed420d4dda0903f7",
+        "earlier_evidence_url": "https://www.dw.com/en/ukraine-kyiv-bridges-shut-after-fatal-russian-drone-assault/a-79510950?maca=en-rss-en-all-1573-xml-mrss",
+        "later_evidence_url": "https://www.reuters.com/world/europe/russian-air-strikes-hit-southern-bridge-kyiv-again-mayor-says-2026-10-02/",
+        "sentence": "On 2026-10-02, Deutsche Welle reported “Russian President Vladimir Putin said Thursday that Russia has lost 1% of GDP due to the Ukrainian strikes.”; on the same day, Reuters reported “Ukraine's strikes on oil refineries in Russia, one of the world's leading oil producers, have cost Russia 1% of its gross domestic product”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": null,
+  "root_id": "event-54b9b73f-6733-4570-9cb9-b0dd71eaffd4",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-07ad1d27-102f-4bb0-a074-0e6c6266144f",
+      "name": "GDP loss",
+      "value": "1",
+      "unit": "percent",
+      "sentence": "Russian President Vladimir Putin said Thursday that Russia has lost 1% of GDP due to the Ukrainian strikes.",
+      "occurrence_id": "occurrence-01506c759f0b858a27e52ac41c6fb0c4aeab8958ec7fc389b9a9d28e0eab8351-41a49bd4977be1ce"
+    }
+  ]
+}

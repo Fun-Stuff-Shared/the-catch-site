@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953": {
+      "slot": "drones destroyed",
+      "occurrence_id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969",
+      "heads": [
+        "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Las fuerzas de Moscú destruyeron 313 drones ucranianos durante la noche, informó el sábado el Ministerio de Defensa ruso.",
+      "span_check": "byte_exact",
+      "speaker": "Russian Ministry of Defense",
+      "figure": {
+        "unit": "drones",
+        "value": "313"
+      },
+      "as_of": "2026-08-29",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Russian Ministry of Defense daily battlefield report",
+      "evidence_id": "78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e",
+      "basis": [
+        "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "as_of": "2026-08-29",
+      "occurrence_id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T02:41:48Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0553.html",
+      "desk": "world and conflict",
+      "envelope_seq": 164345,
+      "gate_reason": "Not English.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.072931Z",
+      "id": "78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e",
+      "lang": "es",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:33.294428Z",
+      "root_evidence": "body:5232:5313",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0553.txt",
+      "text_sha256": "9680805fc431cc0316fa3fc889c9e12533a75e762a03c8d08ddeb659a1c6aaeb",
+      "title": "Ataque ruso contra almacén ucraniano mata a 37 en el ataque más letal del año en la guerra",
+      "url": "https://apnews.com/article/russia-ukraine-war-bucha-kyiv-7a42bae2b70bb82e53125fe6b28aa45c",
+      "verbatim_level": "article",
+      "log_seq": 814192,
+      "recorded_at": "2026-09-08T13:57:01.073003Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-30T02:41:48Z",
+          "checkable_against": "Russian Ministry of Defense daily battlefield report",
+          "claim_type": "actual",
+          "envelope_seq": 802130,
+          "event_id": "event-f942be4d-d15a-41a3-9d03-fd167cebebd9",
+          "evidence_id": "78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e",
+          "figure": {
+            "unit": "drones",
+            "value": "313"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Las fuerzas de Moscú destruyeron 313 drones ucranianos durante la noche, informó el sábado el Ministerio de Defensa ruso.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:33.294428Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 45396,
+          "span_start": 45272,
+          "speaker": "Russian Ministry of Defense",
+          "subject": "Russian Defense Ministry",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0553.txt",
+          "text_sha256": "9680805fc431cc0316fa3fc889c9e12533a75e762a03c8d08ddeb659a1c6aaeb",
+          "log_seq": 802131,
+          "recorded_at": "2026-09-08T09:05:11.604435Z",
+          "slot_id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+          "evidence_asserted_at": "2026-08-30T02:41:48Z",
+          "evidence_url": "https://apnews.com/article/russia-ukraine-war-bucha-kyiv-7a42bae2b70bb82e53125fe6b28aa45c",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 801926,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-982296bc-7314-4105-a3fa-fb2cca76120e",
+    "id": "event-f942be4d-d15a-41a3-9d03-fd167cebebd9",
+    "kind": "claim",
+    "label": "Russian claim of destroying Ukrainian drones August 29 2026",
+    "minted_at": "2026-09-08T09:03:58.942933Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e",
+    "period": "2026-08-29",
+    "refusal": null,
+    "status": "published",
+    "subject": "Russian Defense Ministry",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e/cfa809ad3ff741ab901293bb08439125.json",
+    "log_seq": 801927
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969",
+      "envelope_seq": 802310,
+      "event_id": "event-f942be4d-d15a-41a3-9d03-fd167cebebd9",
+      "id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "name": "drones destroyed",
+      "refusal": null,
+      "log_seq": 802311,
+      "recorded_at": "2026-09-08T09:06:49.430261Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-30T02:41:48Z",
+      "checkable_against": "Russian Ministry of Defense daily battlefield report",
+      "claim_type": "actual",
+      "envelope_seq": 802130,
+      "event_id": "event-f942be4d-d15a-41a3-9d03-fd167cebebd9",
+      "evidence_id": "78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e",
+      "figure": {
+        "unit": "drones",
+        "value": "313"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Las fuerzas de Moscú destruyeron 313 drones ucranianos durante la noche, informó el sábado el Ministerio de Defensa ruso.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:33.294428Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 45396,
+      "span_start": 45272,
+      "speaker": "Russian Ministry of Defense",
+      "subject": "Russian Defense Ministry",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0553.txt",
+      "text_sha256": "9680805fc431cc0316fa3fc889c9e12533a75e762a03c8d08ddeb659a1c6aaeb",
+      "log_seq": 802131,
+      "recorded_at": "2026-09-08T09:05:11.604435Z",
+      "slot_id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "evidence_asserted_at": "2026-08-30T02:41:48Z",
+      "evidence_url": "https://apnews.com/article/russia-ukraine-war-bucha-kyiv-7a42bae2b70bb82e53125fe6b28aa45c",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 802312,
+      "id": "attach-anchor-slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "occurrence_id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969",
+      "refusal": null,
+      "slot_id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "log_seq": 802313,
+      "recorded_at": "2026-09-08T09:06:49.457231Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": "event-982296bc-7314-4105-a3fa-fb2cca76120e",
+  "root_id": "event-982296bc-7314-4105-a3fa-fb2cca76120e",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c23c0d0a-aab8-4b2e-a804-7b9c543e0953",
+      "name": "drones destroyed",
+      "value": "313",
+      "unit": "drones",
+      "sentence": "Las fuerzas de Moscú destruyeron 313 drones ucranianos durante la noche, informó el sábado el Ministerio de Defensa ruso.",
+      "occurrence_id": "occurrence-78aaf4ad3b5625e6661e68acafe1f665733e49b8331d4f0e78815ad5c595911e-ee8ae7d6866ef969"
+    }
+  ]
+}

@@ -26,7 +26,7 @@
         "occurrence-5b1c3e364b3c8e009b90ca54e7e84814c44055f24e9bb948f03515a2d514ed5f-ea78620f839426db"
       ],
       "last_confirmed": "2026-08-19",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-ca0e800f-1728-4612-87ce-8208e1a8b559": {
       "slot": "daily complaints",
@@ -54,7 +54,7 @@
         "occurrence-5b1c3e364b3c8e009b90ca54e7e84814c44055f24e9bb948f03515a2d514ed5f-d11f28b30f6090fd"
       ],
       "last_confirmed": "2026-08-19",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-8b8be14e-7978-4e9b-8e37-b131b010761c": {
       "slot": "Sharma age",
@@ -79,10 +79,44 @@
         "occurrence-5b1c3e364b3c8e009b90ca54e7e84814c44055f24e9bb948f03515a2d514ed5f-efd7b4425094d7a4"
       ],
       "last_confirmed": "2026-08-19",
-      "freshness": "aging"
+      "freshness": "stale"
+    },
+    "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3": {
+      "slot": "soup temperature",
+      "occurrence_id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb",
+      "heads": [
+        "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In many parts of the world, eating scalding soup in 100-degree weather is the best way to cool down .",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "degrees Fahrenheit",
+        "value": "100"
+      },
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Scientific research on thermoregulation and hot-soup consumption practices",
+      "evidence_id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+      "basis": [
+        "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb"
+      ],
+      "last_confirmed": "2026-08-13",
+      "freshness": "stale"
     }
   },
   "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "as_of": "2026-08-13",
+      "occurrence_id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb"
+    },
     {
       "kind": "first_value",
       "slot_id": "slot-45c14ec6-f3a2-4053-8775-e3238f60cf9e",
@@ -866,11 +900,106 @@
           "evidence_source_id": "nytimes_news_sitemap"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-13T15:15:01Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6344.html",
+      "envelope_seq": 170895,
+      "id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:57.755964Z",
+      "root_evidence": "body:3244:3305",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6344.txt",
+      "text_sha256": "ddc8935df6aaec8a5c59100e7ed5461c7516d07136af10739ff9e8ba8e669e39",
+      "url": "https://www.nytimes.com/2026/08/13/briefing/today-in-short.html",
+      "verbatim_level": "article",
+      "log_seq": 521287,
+      "recorded_at": "2026-09-06T01:33:24.122651Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-13",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-13T15:15:01Z",
+          "checkable_against": "Physiological research on thermoregulation after hot-food consumption",
+          "claim_type": "actual",
+          "envelope_seq": 803960,
+          "event_id": "event-cfdd4242-57ff-40ca-b4e6-efac5ed40c36",
+          "evidence_id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+          "figure": null,
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-4f9e9f3c6e4cc142",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Apparently, the warmth of the meal sets off our body’s natural cooling mechanisms.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:57.755964Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 789,
+          "span_start": 705,
+          "speaker": "outlet's own",
+          "subject": "hot soup summer dining practices and demand",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6344.txt",
+          "text_sha256": "ddc8935df6aaec8a5c59100e7ed5461c7516d07136af10739ff9e8ba8e669e39",
+          "log_seq": 803961,
+          "recorded_at": "2026-09-08T09:23:13.056103Z",
+          "evidence_asserted_at": "2026-08-13T15:15:01Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/briefing/today-in-short.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-13",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-13T15:15:01Z",
+          "checkable_against": "Scientific research on thermoregulation and hot-soup consumption practices",
+          "claim_type": "actual",
+          "envelope_seq": 803958,
+          "event_id": "event-cfdd4242-57ff-40ca-b4e6-efac5ed40c36",
+          "evidence_id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+          "figure": {
+            "unit": "degrees Fahrenheit",
+            "value": "100"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "In many parts of the world, eating scalding soup in 100-degree weather is the best way to cool down .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:57.755964Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 704,
+          "span_start": 603,
+          "speaker": "outlet's own",
+          "subject": "hot soup summer dining practices and demand",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6344.txt",
+          "text_sha256": "ddc8935df6aaec8a5c59100e7ed5461c7516d07136af10739ff9e8ba8e669e39",
+          "log_seq": 803959,
+          "recorded_at": "2026-09-08T09:23:13.017987Z",
+          "slot_id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+          "evidence_asserted_at": "2026-08-13T15:15:01Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/briefing/today-in-short.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 752473,
@@ -912,6 +1041,17 @@
       "refusal": null,
       "log_seq": 752790,
       "recorded_at": "2026-09-07T08:15:09.837576Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb",
+      "envelope_seq": 803976,
+      "event_id": "event-cfdd4242-57ff-40ca-b4e6-efac5ed40c36",
+      "id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "name": "soup temperature",
+      "refusal": null,
+      "log_seq": 803977,
+      "recorded_at": "2026-09-08T09:23:22.574623Z"
     },
     {
       "accepted": true,
@@ -1664,6 +1804,76 @@
       "evidence_url": "https://www.nytimes.com/2026/08/13/dining/hot-soup-summer.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-13T15:15:01Z",
+      "checkable_against": "Physiological research on thermoregulation after hot-food consumption",
+      "claim_type": "actual",
+      "envelope_seq": 803960,
+      "event_id": "event-cfdd4242-57ff-40ca-b4e6-efac5ed40c36",
+      "evidence_id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+      "figure": null,
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-4f9e9f3c6e4cc142",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Apparently, the warmth of the meal sets off our body’s natural cooling mechanisms.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:57.755964Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 789,
+      "span_start": 705,
+      "speaker": "outlet's own",
+      "subject": "hot soup summer dining practices and demand",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6344.txt",
+      "text_sha256": "ddc8935df6aaec8a5c59100e7ed5461c7516d07136af10739ff9e8ba8e669e39",
+      "log_seq": 803961,
+      "recorded_at": "2026-09-08T09:23:13.056103Z",
+      "evidence_asserted_at": "2026-08-13T15:15:01Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/briefing/today-in-short.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-13T15:15:01Z",
+      "checkable_against": "Scientific research on thermoregulation and hot-soup consumption practices",
+      "claim_type": "actual",
+      "envelope_seq": 803958,
+      "event_id": "event-cfdd4242-57ff-40ca-b4e6-efac5ed40c36",
+      "evidence_id": "7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65",
+      "figure": {
+        "unit": "degrees Fahrenheit",
+        "value": "100"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "In many parts of the world, eating scalding soup in 100-degree weather is the best way to cool down .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:57.755964Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 704,
+      "span_start": 603,
+      "speaker": "outlet's own",
+      "subject": "hot soup summer dining practices and demand",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6344.txt",
+      "text_sha256": "ddc8935df6aaec8a5c59100e7ed5461c7516d07136af10739ff9e8ba8e669e39",
+      "log_seq": 803959,
+      "recorded_at": "2026-09-08T09:23:13.017987Z",
+      "slot_id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "evidence_asserted_at": "2026-08-13T15:15:01Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/briefing/today-in-short.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
   "edges": [
@@ -1690,6 +1900,19 @@
       "slot_id": "slot-8b8be14e-7978-4e9b-8e37-b131b010761c",
       "log_seq": 752792,
       "recorded_at": "2026-09-07T08:15:10.040238Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 803978,
+      "id": "attach-anchor-slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "occurrence_id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb",
+      "refusal": null,
+      "slot_id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "log_seq": 803979,
+      "recorded_at": "2026-09-08T09:23:22.580781Z",
       "family": "identity",
       "label": "attach"
     },
@@ -1747,6 +1970,14 @@
       "unit": null,
       "sentence": "“Before every dinner, we would sit down and have a bowl of soup, no matter the season, every single day.”",
       "occurrence_id": "occurrence-5b1c3e364b3c8e009b90ca54e7e84814c44055f24e9bb948f03515a2d514ed5f-efd7b4425094d7a4"
+    },
+    {
+      "slot_id": "slot-b03a8e89-51e1-4ccc-8f1b-3479f5795dd3",
+      "name": "soup temperature",
+      "value": "100",
+      "unit": "degrees Fahrenheit",
+      "sentence": "In many parts of the world, eating scalding soup in 100-degree weather is the best way to cool down .",
+      "occurrence_id": "occurrence-7b7861dccee1df74a0519774b94c9225acf1903425fa0751ba02eeae10690e65-a858ea4e067afafb"
     }
   ]
 }

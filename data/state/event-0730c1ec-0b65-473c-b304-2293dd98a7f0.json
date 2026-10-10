@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4": {
+      "slot": "annual land loss",
+      "occurrence_id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111",
+      "heads": [
+        "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "According to the European Commission, the EU loses around 500,000 hectares of land to wildfires every year.",
+      "span_check": "byte_exact",
+      "speaker": "European Commission",
+      "figure": {
+        "unit": "hectares",
+        "value": "500000"
+      },
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "European Commission annual wildfire land-loss statistics",
+      "evidence_id": "74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717",
+      "basis": [
+        "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111"
+      ],
+      "last_confirmed": "2026-08-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "as_of": "2026-08-03",
+      "occurrence_id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-03T05:05:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_2094.html",
+      "envelope_seq": 165997,
+      "id": "74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717",
+      "publisher": "Deutsche Welle",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:24.776538Z",
+      "root_evidence": "body:1051:1095",
+      "root_id": "www.dw.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "international_public",
+      "source_id": "dw_english",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2094.txt",
+      "text_sha256": "29c659e7d4296c3077ed62dd86e3d2247bf88f4fcf31a9ea4091141bd76ce4ff",
+      "title": "The economic toll of Spain's wildfires",
+      "url": "https://www.dw.com/en/the-economic-toll-of-spain-s-wildfires/a-78186441?maca=en-rss-en-all-1573-xml-mrss",
+      "verbatim_level": "article",
+      "log_seq": 518838,
+      "recorded_at": "2026-09-06T01:33:23.426644Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-03T05:05:00Z",
+          "checkable_against": "European Commission annual wildfire land-loss statistics",
+          "claim_type": "actual",
+          "envelope_seq": 798418,
+          "event_id": "event-0730c1ec-0b65-473c-b304-2293dd98a7f0",
+          "evidence_id": "74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717",
+          "figure": {
+            "unit": "hectares",
+            "value": "500000"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "According to the European Commission, the EU loses around 500,000 hectares of land to wildfires every year.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:24.776538Z",
+          "root_id": "www.dw.com",
+          "span_check": "byte_exact",
+          "span_end": 3156,
+          "span_start": 3049,
+          "speaker": "European Commission",
+          "subject": "EU land lost to wildfires",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2094.txt",
+          "text_sha256": "29c659e7d4296c3077ed62dd86e3d2247bf88f4fcf31a9ea4091141bd76ce4ff",
+          "log_seq": 798419,
+          "recorded_at": "2026-09-08T07:43:06.948241Z",
+          "slot_id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+          "evidence_asserted_at": "2026-08-03T05:05:00Z",
+          "evidence_url": "https://www.dw.com/en/the-economic-toll-of-spain-s-wildfires/a-78186441?maca=en-rss-en-all-1573-xml-mrss",
+          "evidence_publisher": "Deutsche Welle",
+          "evidence_source_id": "dw_english"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 798286,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-0730c1ec-0b65-473c-b304-2293dd98a7f0",
+    "kind": "report",
+    "label": "EU annual wildfire land loss",
+    "minted_at": "2026-09-08T07:41:41.147716Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "EU land lost to wildfires",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717/dcc51aa6b88642b1a35668f927efe13f.json",
+    "log_seq": 798287
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111",
+      "envelope_seq": 798640,
+      "event_id": "event-0730c1ec-0b65-473c-b304-2293dd98a7f0",
+      "id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "name": "annual land loss",
+      "refusal": null,
+      "log_seq": 798641,
+      "recorded_at": "2026-09-08T07:44:25.050935Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-03T05:05:00Z",
+      "checkable_against": "European Commission annual wildfire land-loss statistics",
+      "claim_type": "actual",
+      "envelope_seq": 798418,
+      "event_id": "event-0730c1ec-0b65-473c-b304-2293dd98a7f0",
+      "evidence_id": "74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717",
+      "figure": {
+        "unit": "hectares",
+        "value": "500000"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "According to the European Commission, the EU loses around 500,000 hectares of land to wildfires every year.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:24.776538Z",
+      "root_id": "www.dw.com",
+      "span_check": "byte_exact",
+      "span_end": 3156,
+      "span_start": 3049,
+      "speaker": "European Commission",
+      "subject": "EU land lost to wildfires",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2094.txt",
+      "text_sha256": "29c659e7d4296c3077ed62dd86e3d2247bf88f4fcf31a9ea4091141bd76ce4ff",
+      "log_seq": 798419,
+      "recorded_at": "2026-09-08T07:43:06.948241Z",
+      "slot_id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "evidence_asserted_at": "2026-08-03T05:05:00Z",
+      "evidence_url": "https://www.dw.com/en/the-economic-toll-of-spain-s-wildfires/a-78186441?maca=en-rss-en-all-1573-xml-mrss",
+      "evidence_publisher": "Deutsche Welle",
+      "evidence_source_id": "dw_english"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 798642,
+      "id": "attach-anchor-slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "occurrence_id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111",
+      "refusal": null,
+      "slot_id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "log_seq": 798643,
+      "recorded_at": "2026-09-08T07:44:25.057918Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-0730c1ec-0b65-473c-b304-2293dd98a7f0",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-09bd4e21-04c4-4e9c-8b0f-3c67943a88e4",
+      "name": "annual land loss",
+      "value": "500000",
+      "unit": "hectares",
+      "sentence": "According to the European Commission, the EU loses around 500,000 hectares of land to wildfires every year.",
+      "occurrence_id": "occurrence-74ab5c8c70925245423ba26ce4c55de0779e7b5b386d00f1ed278e9fea47c717-c3b0b26acd0af111"
+    }
+  ]
+}

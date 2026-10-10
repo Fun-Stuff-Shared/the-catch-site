@@ -1,0 +1,499 @@
+{
+  "current_state": {
+    "slot-418f2a11-0650-474c-8753-083c4908677b": {
+      "slot": "15-year mortgage rate",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-b6aba886b3591ecf",
+        "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-b6aba886b3591ecf",
+        "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+        "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6"
+      ],
+      "last_confirmed": "2026-10-01",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "as_of": "2026-10-01"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T19:37:17Z",
+      "canonical_url": "https://pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/raw/article_0145.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1015527,
+      "gate_verdict": "COVER",
+      "id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+      "lang": "en",
+      "published_at": "2026-10-01T19:37:17Z",
+      "publisher": "PBS NewsHour",
+      "raw_sha256": "a80fba5738c2e33164f2afcf4e641ae468ef273315a56ef9c7ee4013a4aa003d",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:05:36.880459Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.pbs.org",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z",
+      "source_family": "major_outlet",
+      "source_id": "pbs_newshour",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0145.txt",
+      "text_sha256": "f146786a315d59e944a7a87dbb67e2c0725756b992b829fb2f3748951c528e27",
+      "title": "Average long-term U.S. mortgage hits highest level in nearly 3 years",
+      "updated_at": "2026-10-01T19:37:17Z",
+      "url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+      "verbatim_level": "article",
+      "log_seq": 1015528,
+      "recorded_at": "2026-10-01T22:32:52.219222Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-10",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T19:37:17Z",
+          "checkable_against": "Freddie Mac Primary Mortgage Market Survey for October 2025",
+          "claim_type": "actual",
+          "envelope_seq": 1022347,
+          "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+          "evidence_id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+          "figure": {
+            "unit": "percent",
+            "value": "5.55"
+          },
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-b6aba886b3591ecf",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "A year ago, it was at 5.55%.",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:05:36.880459Z",
+          "root_id": "www.pbs.org",
+          "span_check": "byte_exact",
+          "span_end": 1441,
+          "span_start": 1413,
+          "speaker": "outlet's own",
+          "subject": "U.S. 15-year fixed mortgage rates",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0145.txt",
+          "text_sha256": "f146786a315d59e944a7a87dbb67e2c0725756b992b829fb2f3748951c528e27",
+          "log_seq": 1022348,
+          "recorded_at": "2026-10-02T08:40:31.425637Z",
+          "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+          "evidence_asserted_at": "2026-10-01T19:37:17Z",
+          "evidence_url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+          "evidence_publisher": "PBS NewsHour",
+          "evidence_source_id": "pbs_newshour"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T19:37:17Z",
+          "checkable_against": "Freddie Mac Primary Mortgage Market Survey",
+          "claim_type": "actual",
+          "envelope_seq": 1022337,
+          "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+          "evidence_id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+          "figure": {
+            "unit": "percent",
+            "value": "6.6"
+          },
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Borrowing costs on 15-year fixed-rate mortgages, often sought by borrowers refinancing a home loan, also climbed this week. That average rate increased to 6.60% from 6.42% last week.",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:05:36.880459Z",
+          "root_id": "www.pbs.org",
+          "span_check": "byte_exact",
+          "span_end": 1412,
+          "span_start": 1230,
+          "speaker": "outlet's own",
+          "subject": "U.S. 15-year fixed mortgage rates",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0145.txt",
+          "text_sha256": "f146786a315d59e944a7a87dbb67e2c0725756b992b829fb2f3748951c528e27",
+          "log_seq": 1022338,
+          "recorded_at": "2026-10-02T08:40:29.964797Z",
+          "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+          "evidence_asserted_at": "2026-10-01T19:37:17Z",
+          "evidence_url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+          "evidence_publisher": "PBS NewsHour",
+          "evidence_source_id": "pbs_newshour"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T20:47:38Z",
+      "canonical_url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_3932.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1032894,
+      "gate_verdict": "COVER",
+      "id": "5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe",
+      "lang": "en",
+      "published_at": "2026-10-01T20:47:38Z",
+      "publisher": "The Hill",
+      "raw_sha256": "2d61c2d3ea375862f62b13d19e68cb6d58609964ed938c469777f9a14eeafcff",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:06:33.955196Z",
+      "root_evidence": "publisher_host",
+      "root_id": "thehill.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "thehill_feed",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3932.txt",
+      "text_sha256": "6c234ac1cc4694aad300295d6cd30ed869efdb5f79e32686d7defc2922a1d720",
+      "title": "Mortgage rates surge once again",
+      "updated_at": "2026-10-01T20:47:45Z",
+      "url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+      "verbatim_level": "article",
+      "log_seq": 1032895,
+      "recorded_at": "2026-10-02T10:29:14.824903Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-01T20:47:38Z",
+          "checkable_against": "Freddie Mac Primary Mortgage Market Survey",
+          "claim_type": "actual",
+          "envelope_seq": 1046685,
+          "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+          "evidence_id": "5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe",
+          "figure": {
+            "unit": "percent",
+            "value": "6.6"
+          },
+          "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+          "id": "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "As for the shorter-term 15-year mortgage, the average rate this week was 6.6 percent, up from 6.42 percent last week and 5.44 percent in late February, Freddie Mac reported.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:06:33.955196Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 1884,
+          "span_start": 1711,
+          "speaker": "Freddie Mac",
+          "subject": "U.S. 15-year fixed mortgage rates",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3932.txt",
+          "text_sha256": "6c234ac1cc4694aad300295d6cd30ed869efdb5f79e32686d7defc2922a1d720",
+          "log_seq": 1046686,
+          "recorded_at": "2026-10-02T20:53:29.914431Z",
+          "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+          "evidence_asserted_at": "2026-10-01T20:47:38Z",
+          "evidence_url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T09:33:15.613711Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1022239,
+    "fire_id": "quarry-wire-scheduled-20261001T220038Z",
+    "follows": "event-9991fdf5-59c6-430e-8892-2fa073199af3",
+    "id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+    "kind": "market data",
+    "label": "U.S. 15-year mortgage rates rise October 1 2026",
+    "minted_at": "2026-10-02T08:39:56.906856Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. 15-year fixed mortgage rates",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261001T220038Z/185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8/a8404b9cbe674618918a2ffbcc564529.json",
+    "log_seq": 1022240
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+      "envelope_seq": 1022587,
+      "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "name": "15-year mortgage rate",
+      "refusal": null,
+      "log_seq": 1022588,
+      "recorded_at": "2026-10-02T08:42:23.376820Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-10",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T19:37:17Z",
+      "checkable_against": "Freddie Mac Primary Mortgage Market Survey for October 2025",
+      "claim_type": "actual",
+      "envelope_seq": 1022347,
+      "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "evidence_id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+      "figure": {
+        "unit": "percent",
+        "value": "5.55"
+      },
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-b6aba886b3591ecf",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "A year ago, it was at 5.55%.",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:05:36.880459Z",
+      "root_id": "www.pbs.org",
+      "span_check": "byte_exact",
+      "span_end": 1441,
+      "span_start": 1413,
+      "speaker": "outlet's own",
+      "subject": "U.S. 15-year fixed mortgage rates",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0145.txt",
+      "text_sha256": "f146786a315d59e944a7a87dbb67e2c0725756b992b829fb2f3748951c528e27",
+      "log_seq": 1022348,
+      "recorded_at": "2026-10-02T08:40:31.425637Z",
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "evidence_asserted_at": "2026-10-01T19:37:17Z",
+      "evidence_url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+      "evidence_publisher": "PBS NewsHour",
+      "evidence_source_id": "pbs_newshour"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T19:37:17Z",
+      "checkable_against": "Freddie Mac Primary Mortgage Market Survey",
+      "claim_type": "actual",
+      "envelope_seq": 1022337,
+      "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "evidence_id": "185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8",
+      "figure": {
+        "unit": "percent",
+        "value": "6.6"
+      },
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Borrowing costs on 15-year fixed-rate mortgages, often sought by borrowers refinancing a home loan, also climbed this week. That average rate increased to 6.60% from 6.42% last week.",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:05:36.880459Z",
+      "root_id": "www.pbs.org",
+      "span_check": "byte_exact",
+      "span_end": 1412,
+      "span_start": 1230,
+      "speaker": "outlet's own",
+      "subject": "U.S. 15-year fixed mortgage rates",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0145.txt",
+      "text_sha256": "f146786a315d59e944a7a87dbb67e2c0725756b992b829fb2f3748951c528e27",
+      "log_seq": 1022338,
+      "recorded_at": "2026-10-02T08:40:29.964797Z",
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "evidence_asserted_at": "2026-10-01T19:37:17Z",
+      "evidence_url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+      "evidence_publisher": "PBS NewsHour",
+      "evidence_source_id": "pbs_newshour"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-01T20:47:38Z",
+      "checkable_against": "Freddie Mac Primary Mortgage Market Survey",
+      "claim_type": "actual",
+      "envelope_seq": 1046685,
+      "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "evidence_id": "5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe",
+      "figure": {
+        "unit": "percent",
+        "value": "6.6"
+      },
+      "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+      "id": "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "As for the shorter-term 15-year mortgage, the average rate this week was 6.6 percent, up from 6.42 percent last week and 5.44 percent in late February, Freddie Mac reported.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:06:33.955196Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 1884,
+      "span_start": 1711,
+      "speaker": "Freddie Mac",
+      "subject": "U.S. 15-year fixed mortgage rates",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3932.txt",
+      "text_sha256": "6c234ac1cc4694aad300295d6cd30ed869efdb5f79e32686d7defc2922a1d720",
+      "log_seq": 1046686,
+      "recorded_at": "2026-10-02T20:53:29.914431Z",
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "evidence_asserted_at": "2026-10-01T20:47:38Z",
+      "evidence_url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1046833,
+      "id": "attach-30a71f77-fb20-41dc-a3cc-b31ae8ce48de",
+      "occurrence_id": "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6",
+      "refusal": null,
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "log_seq": 1046834,
+      "recorded_at": "2026-10-02T20:54:32.404092Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1022603,
+      "id": "attach-6e7f0a82-e40d-4c57-9e59-6547cc5a6323",
+      "occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-b6aba886b3591ecf",
+      "refusal": null,
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "log_seq": 1022604,
+      "recorded_at": "2026-10-02T08:42:34.489041Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1022589,
+      "id": "attach-anchor-slot-418f2a11-0650-474c-8753-083c4908677b",
+      "occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+      "refusal": null,
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "log_seq": 1022590,
+      "recorded_at": "2026-10-02T08:42:23.384412Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1106975,
+      "event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "Freddie Mac reported",
+          "time": "this week",
+          "value": "6.6 percent"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "from_occurrence_id": "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6",
+      "id": "edge-relation-6d796480e7a7b0942efcf863",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both occurrences report the average 15-year mortgage rate for the same week as 6.6% (or 6.60%). Both cite the Freddie Mac Primary Mortgage Market Survey (explicitly in NEW, implicitly in EXISTING).",
+      "refusal": null,
+      "to_event_id": "event-2add0a52-ea31-40b5-8dbb-2a5a1c16811e",
+      "to_occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+      "log_seq": 1106976,
+      "recorded_at": "2026-10-03T22:23:12.983184Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-01T20:47:38Z",
+    "confirmations": [
+      {
+        "label": "“6.6 percent”",
+        "value": "6.6 percent",
+        "reports": [
+          {
+            "publisher": "PBS NewsHour",
+            "url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+            "dates": [
+              "2026-10-01"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "The Hill",
+            "url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+            "dates": [
+              "2026-10-01"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-418f2a11-0650-474c-8753-083c4908677b"
+        ],
+        "sentence": "“6.6 percent”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-418f2a11-0650-474c-8753-083c4908677b"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+        "relation": "supports",
+        "edge_id": "edge-relation-6d796480e7a7b0942efcf863",
+        "earlier_occurrence_id": "occurrence-185ac8ac9237f880efcd180aedede68d1e520a244ed45a0809a92326f9d847b8-cc5139a6c173b50b",
+        "later_occurrence_id": "occurrence-5eecb2f2448f82434439feb634ffd723247375d21326f4cb285e6f87caa682fe-06522cff0e4675c6",
+        "earlier_evidence_url": "https://www.pbs.org/newshour/economy/average-long-term-u-s-mortgage-hits-highest-level-in-nearly-3-years",
+        "later_evidence_url": "https://thehill.com/newsletters/business-economy/6124486-mortgage-rates-surge-once-again/",
+        "sentence": "On 2026-10-01, PBS NewsHour reported “Borrowing costs on 15-year fixed-rate mortgages, often sought by borrowers refinancing a home loan, also climbed this week. That average rate increased to 6.60% from 6.42% last week.”; on the same day, The Hill reported “As for the shorter-term 15-year mortgage, the average rate this week was 6.6 percent, up from 6.42 percent last week and 5.44 percent in late February, Freddie Mac reported.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": "event-9991fdf5-59c6-430e-8892-2fa073199af3",
+  "root_id": "event-70cf79e9-60a3-46bb-967b-d3aa62f21cf1",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-418f2a11-0650-474c-8753-083c4908677b",
+      "name": "15-year mortgage rate",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

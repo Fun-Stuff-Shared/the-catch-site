@@ -1,6 +1,45 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-fd022859-ea57-4c77-be47-d8ba62e61494": {
+      "slot": "retaliation date",
+      "occurrence_id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+      "heads": [
+        "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "\"In March 2025, that retaliation was directed at those engaged in pro-Palestine and anti-Israel speech,\"",
+      "span_check": "byte_exact",
+      "speaker": "Noël Wise",
+      "figure": null,
+      "as_of": "2025-03",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "U.S. immigration enforcement actions and court records from March 2025",
+      "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+      "basis": [
+        "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+        "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70"
+      ],
+      "last_confirmed": "2025-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "as_of": "2025-03",
+      "occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -54,17 +93,144 @@
           "text_sha256": "b30e82fa67f005adb8de3ca67a773ad7c0f904e52ff938c5ab205ac0f7f595a0",
           "log_seq": 753636,
           "recorded_at": "2026-09-07T08:33:17.300503Z",
+          "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
           "evidence_asserted_at": "2026-08-29T23:28:24Z",
           "evidence_url": "https://apnews.com/article/eeuu-protestas-israel-palestinos-deportaciones-7dbd641d9b9a1fb258f327e2dd9dc851",
           "evidence_publisher": "Associated Press",
           "evidence_source_id": "ap_wire_rss"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T22:03:28Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8685.html",
+      "envelope_seq": 171739,
+      "id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+      "publisher": "UPI",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:34.692271Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.upi.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "upi_top_news",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+      "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+      "title": "Judge rules against Trump over deporting students critical of Israel",
+      "url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+      "verbatim_level": "article",
+      "log_seq": 521709,
+      "recorded_at": "2026-09-06T01:33:24.241273Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-03",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T22:03:28Z",
+          "checkable_against": "U.S. immigration enforcement actions and court records from March 2025",
+          "claim_type": "actual",
+          "envelope_seq": 786278,
+          "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+          "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "\"In March 2025, that retaliation was directed at those engaged in pro-Palestine and anti-Israel speech,\"",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:34.692271Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 2235,
+          "span_start": 2131,
+          "speaker": "Noël Wise",
+          "subject": "U.S. immigration authorities",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+          "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+          "log_seq": 786279,
+          "recorded_at": "2026-09-08T03:24:58.513065Z",
+          "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+          "evidence_asserted_at": "2026-08-29T22:03:28Z",
+          "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T22:03:28Z",
+          "checkable_against": "U.S. State Department and immigration proceedings involving Mahmoud Khalil and Rümeysa Öztürk",
+          "claim_type": "actual",
+          "envelope_seq": 786346,
+          "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+          "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-760979b5ba29ae26",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "including Columbia University's Mahmoud Khalil and Tufts University's Rümeysa Öztürk.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:34.692271Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 1774,
+          "span_start": 1686,
+          "speaker": "UPI's own",
+          "subject": "U.S. immigration authorities",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+          "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+          "log_seq": 786347,
+          "recorded_at": "2026-09-08T03:25:33.516570Z",
+          "evidence_asserted_at": "2026-08-29T22:03:28Z",
+          "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T22:03:28Z",
+          "checkable_against": "U.S. State Department and immigration proceedings involving pro-Palestinian student activists",
+          "claim_type": "actual",
+          "envelope_seq": 786336,
+          "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+          "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-af6400afd78080b6",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Last year, Rubio sought the deportations of several student activists in the pro-Palestininan movement",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:34.692271Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 1684,
+          "span_start": 1582,
+          "speaker": "UPI's own",
+          "subject": "U.S. immigration authorities",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+          "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+          "log_seq": 786337,
+          "recorded_at": "2026-09-08T03:25:23.970882Z",
+          "evidence_asserted_at": "2026-08-29T22:03:28Z",
+          "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753609,
@@ -84,7 +250,34 @@
     "log_seq": 753610
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+      "envelope_seq": 892410,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "id": "slot-eb3c88c3-4a0b-4436-97e4-6dab3f5461cc",
+      "name": "retaliation date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/eeuu-protestas-israel-palestinos-deportaciones-7dbd641d9b9a1fb258f327e2dd9dc851",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 892411,
+      "recorded_at": "2026-09-13T04:06:18.923713Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+      "envelope_seq": 892412,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "name": "retaliation date",
+      "refusal": null,
+      "log_seq": 892413,
+      "recorded_at": "2026-09-13T04:06:27.728760Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -114,22 +307,218 @@
       "text_sha256": "b30e82fa67f005adb8de3ca67a773ad7c0f904e52ff938c5ab205ac0f7f595a0",
       "log_seq": 753636,
       "recorded_at": "2026-09-07T08:33:17.300503Z",
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
       "evidence_asserted_at": "2026-08-29T23:28:24Z",
       "evidence_url": "https://apnews.com/article/eeuu-protestas-israel-palestinos-deportaciones-7dbd641d9b9a1fb258f327e2dd9dc851",
       "evidence_publisher": "Associated Press",
       "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-03",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T22:03:28Z",
+      "checkable_against": "U.S. immigration enforcement actions and court records from March 2025",
+      "claim_type": "actual",
+      "envelope_seq": 786278,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "\"In March 2025, that retaliation was directed at those engaged in pro-Palestine and anti-Israel speech,\"",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:34.692271Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 2235,
+      "span_start": 2131,
+      "speaker": "Noël Wise",
+      "subject": "U.S. immigration authorities",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+      "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+      "log_seq": 786279,
+      "recorded_at": "2026-09-08T03:24:58.513065Z",
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "evidence_asserted_at": "2026-08-29T22:03:28Z",
+      "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T22:03:28Z",
+      "checkable_against": "U.S. State Department and immigration proceedings involving Mahmoud Khalil and Rümeysa Öztürk",
+      "claim_type": "actual",
+      "envelope_seq": 786346,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-760979b5ba29ae26",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "including Columbia University's Mahmoud Khalil and Tufts University's Rümeysa Öztürk.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:34.692271Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 1774,
+      "span_start": 1686,
+      "speaker": "UPI's own",
+      "subject": "U.S. immigration authorities",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+      "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+      "log_seq": 786347,
+      "recorded_at": "2026-09-08T03:25:33.516570Z",
+      "evidence_asserted_at": "2026-08-29T22:03:28Z",
+      "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T22:03:28Z",
+      "checkable_against": "U.S. State Department and immigration proceedings involving pro-Palestinian student activists",
+      "claim_type": "actual",
+      "envelope_seq": 786336,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "evidence_id": "6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-af6400afd78080b6",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Last year, Rubio sought the deportations of several student activists in the pro-Palestininan movement",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:34.692271Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 1684,
+      "span_start": 1582,
+      "speaker": "UPI's own",
+      "subject": "U.S. immigration authorities",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8685.txt",
+      "text_sha256": "daddc2fdef6d121d3e55cd0fe77c5983467edb57229bb97a57c8edb82826e9e2",
+      "log_seq": 786337,
+      "recorded_at": "2026-09-08T03:25:23.970882Z",
+      "evidence_asserted_at": "2026-08-29T22:03:28Z",
+      "evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 892417,
+      "id": "attach-8647bcfa-691a-46c0-837b-7f4ce9acf67d",
+      "occurrence_id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+      "refusal": null,
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "log_seq": 892418,
+      "recorded_at": "2026-09-13T04:06:49.592234Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 892414,
+      "id": "attach-anchor-slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+      "refusal": null,
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "log_seq": 892415,
+      "recorded_at": "2026-09-13T04:06:27.736015Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 892451,
+      "event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "marzo de 2025",
+          "value": "represalias ejercidas en marzo de 2025 por las autoridades migratorias de Estados Unidos contra personas que participaron en expresiones de apoyo a los palestinos y en contra de las acciones de Israel"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "from_occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+      "id": "edge-relation-56a509e970a866b83b7ebb0b",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report that U.S. immigration authorities carried out retaliation in March 2025 against people expressing support for Palestinians and opposition to Israel. The Spanish quote is a translation or equivalent report of the English quote.",
+      "refusal": null,
+      "to_event_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
+      "to_occurrence_id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+      "log_seq": 892452,
+      "recorded_at": "2026-09-13T04:16:22.933986Z"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-29T23:28:24Z",
+    "confirmations": [
+      {
+        "label": "“La jueza mencionó las represalias ejercidas en marzo de 2025 por las autoridades migratorias de Estados Unidos contra personas que participaron en expresiones de apoyo a los palestinos y en contra de las acciones de Israel”",
+        "value": "La jueza mencionó las represalias ejercidas en marzo de 2025 por las autoridades migratorias de Estados Unidos contra personas que participaron en expresiones de apoyo a los palestinos y en contra de las acciones de Israel",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/eeuu-protestas-israel-palestinos-deportaciones-7dbd641d9b9a1fb258f327e2dd9dc851",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "UPI",
+            "url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-fd022859-ea57-4c77-be47-d8ba62e61494"
+        ],
+        "sentence": "“La jueza mencionó las represalias ejercidas en marzo de 2025 por las autoridades migratorias de Estados Unidos contra personas que participaron en expresiones de apoyo a los palestinos y en contra de las acciones de Israel”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-fd022859-ea57-4c77-be47-d8ba62e61494"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+        "relation": "supports",
+        "edge_id": "edge-relation-56a509e970a866b83b7ebb0b",
+        "earlier_occurrence_id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70",
+        "later_occurrence_id": "occurrence-5c79bd3dac058f2c457e85bdc616b59e51b78e0cc4cc9ddf153d8d5d01001170-dd4d7722d71b5fb2",
+        "earlier_evidence_url": "https://www.upi.com/Top_News/US/2026/08/29/trump-deporations-unconstitutional/5771788040530/",
+        "later_evidence_url": "https://apnews.com/article/eeuu-protestas-israel-palestinos-deportaciones-7dbd641d9b9a1fb258f327e2dd9dc851",
+        "sentence": "On 2026-08-29, UPI reported “\"In March 2025, that retaliation was directed at those engaged in pro-Palestine and anti-Israel speech,\"”; on the same day, Associated Press reported “La jueza mencionó las represalias ejercidas en marzo de 2025 por las autoridades migratorias de Estados Unidos contra personas que participaron en expresiones de apoyo a los palestinos y en contra de las acciones de Israel”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -137,5 +526,14 @@
   "root_id": "event-e478fee1-21db-4167-b3ce-51dc41e9ba75",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-fd022859-ea57-4c77-be47-d8ba62e61494",
+      "name": "retaliation date",
+      "value": null,
+      "unit": null,
+      "sentence": "\"In March 2025, that retaliation was directed at those engaged in pro-Palestine and anti-Israel speech,\"",
+      "occurrence_id": "occurrence-6a1784c4c49d015bf78cb7fc72e66585cfd3a04ff17dce11bf793d1e220681e9-10b79563ffcfde70"
+    }
+  ]
 }

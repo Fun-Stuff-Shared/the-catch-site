@@ -1,0 +1,232 @@
+{
+  "current_state": {
+    "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7": {
+      "slot": "policy status",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+      "heads": [
+        "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Federal appeals court strikes down ICE's mandatory detention policy",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Federal appeals court ruling on ICE mandatory detention",
+      "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "basis": [
+        "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658"
+      ],
+      "last_confirmed": "2026-08-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "as_of": "2026-08-30",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T07:00:06Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8670.html",
+      "desk": "world and conflict",
+      "envelope_seq": 171709,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.201367Z",
+      "id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "lang": "en",
+      "publisher": "UPI",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:33.566776Z",
+      "root_evidence": "body:1401:1422",
+      "root_id": "www.upi.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "upi_top_news",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+      "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+      "title": "On This Day, Aug. 30: U.S. evacuates Afghanistan, ending its longest war",
+      "url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+      "verbatim_level": "article",
+      "log_seq": 814588,
+      "recorded_at": "2026-09-08T13:57:01.201446Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-30",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-30T07:00:06Z",
+          "checkable_against": "Federal appeals court ruling on ICE mandatory detention",
+          "claim_type": "actual",
+          "envelope_seq": 800140,
+          "event_id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+          "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+          "figure": null,
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Federal appeals court strikes down ICE's mandatory detention policy",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:33.566776Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 6379,
+          "span_start": 6312,
+          "speaker": "outlet's own",
+          "subject": "ICE mandatory detention policy",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+          "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+          "log_seq": 800141,
+          "recorded_at": "2026-09-08T08:41:36.819778Z",
+          "slot_id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+          "evidence_asserted_at": "2026-08-30T07:00:06Z",
+          "evidence_url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 800128,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+    "kind": "ruling",
+    "label": "Federal appeals court ICE detention ruling",
+    "minted_at": "2026-09-08T08:41:23.720704Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+    "period": "2026-08-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "ICE mandatory detention policy",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a/ca53cec9b6e34e65b15ff3966974aebd.json",
+    "log_seq": 800129
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+      "envelope_seq": 833187,
+      "event_id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+      "id": "slot-62fca552-8385-49b4-9a1c-beb09d6188d6",
+      "name": "policy status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+        "source_id": "upi_top_news"
+      },
+      "log_seq": 833188,
+      "recorded_at": "2026-09-09T15:58:28.997829Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+      "envelope_seq": 833189,
+      "event_id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+      "id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "name": "policy status",
+      "refusal": null,
+      "log_seq": 833190,
+      "recorded_at": "2026-09-09T15:58:43.839956Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-30T07:00:06Z",
+      "checkable_against": "Federal appeals court ruling on ICE mandatory detention",
+      "claim_type": "actual",
+      "envelope_seq": 800140,
+      "event_id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+      "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "figure": null,
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Federal appeals court strikes down ICE's mandatory detention policy",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:33.566776Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 6379,
+      "span_start": 6312,
+      "speaker": "outlet's own",
+      "subject": "ICE mandatory detention policy",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+      "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+      "log_seq": 800141,
+      "recorded_at": "2026-09-08T08:41:36.819778Z",
+      "slot_id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "evidence_asserted_at": "2026-08-30T07:00:06Z",
+      "evidence_url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 833191,
+      "id": "attach-anchor-slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658",
+      "refusal": null,
+      "slot_id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "log_seq": 833192,
+      "recorded_at": "2026-09-09T15:58:43.846672Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": null,
+  "root_id": "event-162cd10c-6b48-408d-a448-d7f5963255a9",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-ae9416b0-f909-4276-8029-9ad19f4af9a7",
+      "name": "policy status",
+      "value": null,
+      "unit": null,
+      "sentence": "Federal appeals court strikes down ICE's mandatory detention policy",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-344dc0fc3d246658"
+    }
+  ]
+}

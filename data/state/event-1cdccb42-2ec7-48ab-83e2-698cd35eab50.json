@@ -1,0 +1,431 @@
+{
+  "current_state": {
+    "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99": {
+      "slot": "daily fine amount",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "heads": [
+        "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Last year, the Trump administration began imposing fines of $998 per day for migrants who did not leave the country following a final order of deportation.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars per day",
+        "value": "998"
+      },
+      "as_of": "2025",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "DHS fine notices and enforcement records",
+      "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+      "basis": [
+        "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f"
+      ],
+      "last_confirmed": "2025",
+      "freshness": "stale"
+    },
+    "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1": {
+      "slot": "retroactive fine period",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+      "heads": [
+        "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The fines have been imposed retroactively for up to five years, with a maximum penalty of $1.8 million.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "years",
+        "value": "5"
+      },
+      "as_of": "2026-10-07",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "DHS fine notices and governing civil-penalty policy",
+      "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+      "basis": [
+        "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c"
+      ],
+      "last_confirmed": "2026-10-07",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "as_of": "2025",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "as_of": "2026-10-07",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-07T06:44:12Z",
+      "canonical_url": "https://foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/raw/article_1245.html",
+      "desk": "courts and legal",
+      "envelope_seq": 1181866,
+      "gate_verdict": "COVER",
+      "id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+      "lang": "en",
+      "published_at": "2026-10-07T06:44:12Z",
+      "publisher": "Fox News",
+      "raw_sha256": "8c79f1dc6a08890f87c00f0327ebe2e7111423c916bf527d20d6537e55f61675",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:04:32.935981Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.foxnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "fox_news_politics",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1245.txt",
+      "text_sha256": "17c39e23d588d360f11e212abe4d929e2ab6c1704d99325bd0583476653e4b28",
+      "title": "Federal judge blocks Trump administration fines of up to $1.8M for migrants",
+      "updated_at": "2026-10-07T06:44:11Z",
+      "url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+      "verbatim_level": "article",
+      "log_seq": 1181867,
+      "recorded_at": "2026-10-07T10:31:00.613680Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-07",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-07T06:44:12Z",
+          "checkable_against": "DHS fine notices and governing civil-penalty policy",
+          "claim_type": "actual",
+          "envelope_seq": 1186661,
+          "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+          "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+          "figure": {
+            "unit": "years",
+            "value": "5"
+          },
+          "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+          "id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "The fines have been imposed retroactively for up to five years, with a maximum penalty of $1.8 million.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:04:32.935981Z",
+          "root_id": "www.foxnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2901,
+          "span_start": 2798,
+          "speaker": "outlet's own",
+          "subject": "Trump administration civil fines on migrants",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1245.txt",
+          "text_sha256": "17c39e23d588d360f11e212abe4d929e2ab6c1704d99325bd0583476653e4b28",
+          "time_action": "corrects",
+          "log_seq": 1186662,
+          "recorded_at": "2026-10-07T13:07:23.774010Z",
+          "slot_id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+          "evidence_asserted_at": "2026-10-07T06:44:12Z",
+          "evidence_url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+          "evidence_publisher": "Fox News",
+          "evidence_source_id": "fox_news_politics"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-07T06:44:12Z",
+          "checkable_against": "DHS fine notices and enforcement records",
+          "claim_type": "actual",
+          "envelope_seq": 1186659,
+          "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+          "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+          "figure": {
+            "unit": "dollars per day",
+            "value": "998"
+          },
+          "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+          "id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Last year, the Trump administration began imposing fines of $998 per day for migrants who did not leave the country following a final order of deportation.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:04:32.935981Z",
+          "root_id": "www.foxnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2797,
+          "span_start": 2642,
+          "speaker": "outlet's own",
+          "subject": "Trump administration civil fines on migrants",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1245.txt",
+          "text_sha256": "17c39e23d588d360f11e212abe4d929e2ab6c1704d99325bd0583476653e4b28",
+          "time_action": "corrects",
+          "log_seq": 1186660,
+          "recorded_at": "2026-10-07T13:07:23.707737Z",
+          "slot_id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+          "evidence_asserted_at": "2026-10-07T06:44:12Z",
+          "evidence_url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+          "evidence_publisher": "Fox News",
+          "evidence_source_id": "fox_news_politics"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T14:39:34.030615Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1186413,
+    "fire_id": "quarry-wire-scheduled-20261007T100043Z",
+    "follows": null,
+    "id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+    "kind": "enforcement action",
+    "label": "Trump administration begins imposing migrant fines",
+    "minted_at": "2026-10-07T13:06:03.259880Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+    "period": "2025-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Trump administration civil fines on migrants",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261007T100043Z/171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213/ed61f8bfbbf34461b64839e5217c52cc.json",
+    "log_seq": 1186414
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+      "envelope_seq": 1190233,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-342eda58-07f5-4104-8f48-65a5c7da9743",
+      "name": "retroactive fine period",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+        "source_id": "fox_news_politics"
+      },
+      "log_seq": 1190234,
+      "recorded_at": "2026-10-07T13:53:11.537472Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+      "envelope_seq": 1190258,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "name": "retroactive fine period",
+      "refusal": null,
+      "log_seq": 1190259,
+      "recorded_at": "2026-10-07T13:53:49.529066Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "envelope_seq": 1190229,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-b1e17610-ecca-4ee5-ad84-d7341daa0c48",
+      "name": "daily fine amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+        "source_id": "fox_news_politics"
+      },
+      "log_seq": 1190230,
+      "recorded_at": "2026-10-07T13:53:10.117844Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "envelope_seq": 1190253,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "name": "daily fine amount",
+      "refusal": null,
+      "log_seq": 1190254,
+      "recorded_at": "2026-10-07T13:53:49.234282Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "envelope_seq": 1186991,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-e40034e4-004f-4ff5-87da-2b5a2aec4eff",
+      "name": "daily fine",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1186992,
+      "recorded_at": "2026-10-07T13:09:53.216203Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "envelope_seq": 1186935,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "id": "slot-f7c1221f-67d7-4533-99f1-efd3aa223f88",
+      "name": "daily fine",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m",
+        "source_id": "fox_news_politics"
+      },
+      "log_seq": 1186936,
+      "recorded_at": "2026-10-07T13:09:30.880719Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-07",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-07T06:44:12Z",
+      "checkable_against": "DHS fine notices and governing civil-penalty policy",
+      "claim_type": "actual",
+      "envelope_seq": 1186661,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+      "figure": {
+        "unit": "years",
+        "value": "5"
+      },
+      "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+      "id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "The fines have been imposed retroactively for up to five years, with a maximum penalty of $1.8 million.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:04:32.935981Z",
+      "root_id": "www.foxnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2901,
+      "span_start": 2798,
+      "speaker": "outlet's own",
+      "subject": "Trump administration civil fines on migrants",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1245.txt",
+      "text_sha256": "17c39e23d588d360f11e212abe4d929e2ab6c1704d99325bd0583476653e4b28",
+      "time_action": "corrects",
+      "log_seq": 1186662,
+      "recorded_at": "2026-10-07T13:07:23.774010Z",
+      "slot_id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "evidence_asserted_at": "2026-10-07T06:44:12Z",
+      "evidence_url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+      "evidence_publisher": "Fox News",
+      "evidence_source_id": "fox_news_politics"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-07T06:44:12Z",
+      "checkable_against": "DHS fine notices and enforcement records",
+      "claim_type": "actual",
+      "envelope_seq": 1186659,
+      "event_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+      "evidence_id": "171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213",
+      "figure": {
+        "unit": "dollars per day",
+        "value": "998"
+      },
+      "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+      "id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Last year, the Trump administration began imposing fines of $998 per day for migrants who did not leave the country following a final order of deportation.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:04:32.935981Z",
+      "root_id": "www.foxnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2797,
+      "span_start": 2642,
+      "speaker": "outlet's own",
+      "subject": "Trump administration civil fines on migrants",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1245.txt",
+      "text_sha256": "17c39e23d588d360f11e212abe4d929e2ab6c1704d99325bd0583476653e4b28",
+      "time_action": "corrects",
+      "log_seq": 1186660,
+      "recorded_at": "2026-10-07T13:07:23.707737Z",
+      "slot_id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "evidence_asserted_at": "2026-10-07T06:44:12Z",
+      "evidence_url": "https://www.foxnews.com/politics/federal-judge-blocks-trump-administration-fines-up-1-8m-migrants",
+      "evidence_publisher": "Fox News",
+      "evidence_source_id": "fox_news_politics"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1190260,
+      "id": "attach-anchor-slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c",
+      "refusal": null,
+      "slot_id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "log_seq": 1190261,
+      "recorded_at": "2026-10-07T13:53:49.551158Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1190255,
+      "id": "attach-anchor-slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f",
+      "refusal": null,
+      "slot_id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "log_seq": 1190256,
+      "recorded_at": "2026-10-07T13:53:49.259217Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": null,
+  "root_id": "event-1cdccb42-2ec7-48ab-83e2-698cd35eab50",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e2adda7a-ccad-4f29-9d15-8c66117cbd99",
+      "name": "daily fine amount",
+      "value": "998",
+      "unit": "dollars per day",
+      "sentence": "Last year, the Trump administration began imposing fines of $998 per day for migrants who did not leave the country following a final order of deportation.",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-4c5328360d14868f"
+    },
+    {
+      "slot_id": "slot-62588d06-eccb-4a86-9e89-13d2dcb308b1",
+      "name": "retroactive fine period",
+      "value": "5",
+      "unit": "years",
+      "sentence": "The fines have been imposed retroactively for up to five years, with a maximum penalty of $1.8 million.",
+      "occurrence_id": "occurrence-171a16b029ca9709ea97e127b834d52105f4cb3c23b1a6e570ab02dad0ad2213-2fa7f9f1d53ae94c"
+    }
+  ]
+}

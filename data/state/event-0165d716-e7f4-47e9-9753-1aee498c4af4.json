@@ -26,7 +26,35 @@
         "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
+    },
+    "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e": {
+      "slot": "customer count",
+      "occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+      "heads": [
+        "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "customers",
+        "value": "10"
+      },
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Truth Social paid early-access customer and pricing records",
+      "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+      "basis": [
+        "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b"
+      ],
+      "last_confirmed": "2026-08-13",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -35,6 +63,12 @@
       "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
       "as_of": "2026-08-12",
       "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "as_of": "2026-08-13",
+      "occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b"
     }
   ],
   "evidence": [
@@ -418,11 +452,142 @@
           "evidence_source_id": "nytimes_news_sitemap"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-13T13:52:45Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6347.html",
+      "envelope_seq": 170901,
+      "id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:58.760561Z",
+      "root_evidence": "body:2430:2472",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+      "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+      "url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+      "verbatim_level": "article",
+      "log_seq": 521290,
+      "recorded_at": "2026-09-06T01:33:24.123512Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-13",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-13T13:52:45Z",
+          "checkable_against": "Truth Social customer contracts and pricing records",
+          "claim_type": "expectation",
+          "envelope_seq": 786814,
+          "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+          "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+          "figure": {
+            "unit": "dollars",
+            "value": "100000"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3b08076fd81c4338",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:58.760561Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5875,
+          "span_start": 5782,
+          "speaker": "outlet's own",
+          "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+          "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+          "log_seq": 786815,
+          "recorded_at": "2026-09-08T03:38:37.512010Z",
+          "evidence_asserted_at": "2026-08-13T13:52:45Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-13",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-13T13:52:45Z",
+          "checkable_against": "Truth Social paid early-access customer and pricing records",
+          "claim_type": "actual",
+          "envelope_seq": 788077,
+          "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+          "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+          "figure": {
+            "unit": "customers",
+            "value": "10"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:58.760561Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5875,
+          "span_start": 5782,
+          "speaker": "outlet's own",
+          "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+          "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+          "log_seq": 788078,
+          "recorded_at": "2026-09-08T04:36:57.700671Z",
+          "slot_id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+          "evidence_asserted_at": "2026-08-13T13:52:45Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-13",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-13T13:52:45Z",
+          "checkable_against": "Federal court complaint challenging Truth Social paid early access plan",
+          "claim_type": "actual",
+          "envelope_seq": 786802,
+          "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+          "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-ea5fd4e5fb8362e1",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Plaintiffs including The Intercept sued Trump and several White House officials , arguing that a move to give customers access to the president’s posts on Truth Social violated the First Amendment.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:58.760561Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5781,
+          "span_start": 5582,
+          "speaker": "The Intercept and other plaintiffs",
+          "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+          "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+          "log_seq": 786803,
+          "recorded_at": "2026-09-08T03:38:29.420094Z",
+          "evidence_asserted_at": "2026-08-13T13:52:45Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "c403097b53",
-  "evaluated_at": "2026-09-07T19:41:33.697392Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432153,
@@ -439,6 +604,32 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+      "envelope_seq": 788231,
+      "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+      "id": "slot-15e26d9d-685a-487b-b9a6-cbbc8255a7e3",
+      "name": "customer count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "Truth Social paid early-access customer records",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 788232,
+      "recorded_at": "2026-09-08T04:40:43.121485Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+      "envelope_seq": 788241,
+      "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+      "id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "name": "customer count",
+      "refusal": null,
+      "log_seq": 788242,
+      "recorded_at": "2026-09-08T04:41:04.795512Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585",
@@ -807,6 +998,112 @@
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-13T13:52:45Z",
+      "checkable_against": "Truth Social customer contracts and pricing records",
+      "claim_type": "expectation",
+      "envelope_seq": 786814,
+      "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+      "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+      "figure": {
+        "unit": "dollars",
+        "value": "100000"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3b08076fd81c4338",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:58.760561Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5875,
+      "span_start": 5782,
+      "speaker": "outlet's own",
+      "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+      "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+      "log_seq": 786815,
+      "recorded_at": "2026-09-08T03:38:37.512010Z",
+      "evidence_asserted_at": "2026-08-13T13:52:45Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-13T13:52:45Z",
+      "checkable_against": "Truth Social paid early-access customer and pricing records",
+      "claim_type": "actual",
+      "envelope_seq": 788077,
+      "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+      "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+      "figure": {
+        "unit": "customers",
+        "value": "10"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:58.760561Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5875,
+      "span_start": 5782,
+      "speaker": "outlet's own",
+      "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+      "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+      "log_seq": 788078,
+      "recorded_at": "2026-09-08T04:36:57.700671Z",
+      "slot_id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "evidence_asserted_at": "2026-08-13T13:52:45Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-13",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-13T13:52:45Z",
+      "checkable_against": "Federal court complaint challenging Truth Social paid early access plan",
+      "claim_type": "actual",
+      "envelope_seq": 786802,
+      "event_id": "event-0165d716-e7f4-47e9-9753-1aee498c4af4",
+      "evidence_id": "6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-ea5fd4e5fb8362e1",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Plaintiffs including The Intercept sued Trump and several White House officials , arguing that a move to give customers access to the president’s posts on Truth Social violated the First Amendment.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:58.760561Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5781,
+      "span_start": 5582,
+      "speaker": "The Intercept and other plaintiffs",
+      "subject": "Freedom of the Press Foundation and The Intercept lawsuit challenging Truth Social paid early access",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6347.txt",
+      "text_sha256": "111193a4ffbccf3040d25fe55dbf40e084f61b1ec8bcf3f61dd57b2f6bd5b7a3",
+      "log_seq": 786803,
+      "recorded_at": "2026-09-08T03:38:29.420094Z",
+      "evidence_asserted_at": "2026-08-13T13:52:45Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/business/dealbook/lakers-deal-kushner-iger-walter.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
   "edges": [
@@ -820,6 +1117,19 @@
       "slot_id": "slot-ee3bc18c-5b0f-46fc-b9c2-0cee6bcd6839",
       "log_seq": 767228,
       "recorded_at": "2026-09-07T18:55:53.382545Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 788243,
+      "id": "attach-anchor-slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b",
+      "refusal": null,
+      "slot_id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "log_seq": 788244,
+      "recorded_at": "2026-09-08T04:41:05.012215Z",
       "family": "identity",
       "label": "attach"
     }
@@ -848,6 +1158,14 @@
       "unit": "dollars per month",
       "sentence": "A lawsuit filed Wednesday in federal court in New York challenges a plan to sell early access to President Trump’s posts on Truth Social for up to $100,000 a month, arguing the First Amendment “guarantees equal access to the President’s public announcements.”",
       "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-2a6edae803046585"
+    },
+    {
+      "slot_id": "slot-707f72cf-aa50-4d9b-a021-d0cf2aceb42e",
+      "name": "customer count",
+      "value": "10",
+      "unit": "customers",
+      "sentence": "Truth Social has so far signed up around 10 customers , who would pay up to $100,000 a month.",
+      "occurrence_id": "occurrence-6a46e6b7a0c33ce66eb3d72fc996d16a680fd65e71132b8526dc618613320250-3ed6848ba4646f3b"
     }
   ]
 }

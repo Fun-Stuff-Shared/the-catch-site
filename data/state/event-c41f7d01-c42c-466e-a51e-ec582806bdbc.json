@@ -1,0 +1,359 @@
+{
+  "current_state": {
+    "slot-876c8c11-b999-45a8-8169-15ce6d3d647f": {
+      "slot": "historical instances",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99",
+      "heads": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "That’s happened only three times since 1928 — most recently, in the late 1990s.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "instances",
+        "value": "3"
+      },
+      "as_of": "2026-08-17",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "S&P 500 annual historical returns since 1928",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "basis": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99"
+      ],
+      "last_confirmed": "2026-08-17",
+      "freshness": "stale"
+    },
+    "slot-4071ed0d-f137-4a52-8c35-bf600042c549": {
+      "slot": "annual gain",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109",
+      "heads": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The 1990s stretch, when the S&P 500 rose more than 20 percent each year from 1995 through 1999, had another distinction: It was the only string of five consecutive years of double-digit gains in the last 98 years.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "20"
+      },
+      "as_of": "1999-12-31",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "S&P Dow Jones Indices annual S&P 500 total-return data",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "basis": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109"
+      ],
+      "last_confirmed": "1999-12-31",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "as_of": "1999-12-31",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "as_of": "2026-08-17",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6484.html",
+      "envelope_seq": 171173,
+      "id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "verbatim_level": "article",
+      "log_seq": 521426,
+      "recorded_at": "2026-09-06T01:33:24.162114Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-17",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-17T20:23:02Z",
+          "checkable_against": "S&P 500 annual historical returns since 1928",
+          "claim_type": "actual",
+          "envelope_seq": 780482,
+          "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+          "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+          "figure": {
+            "unit": "instances",
+            "value": "3"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "That’s happened only three times since 1928 — most recently, in the late 1990s.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:15.529202Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1117,
+          "span_start": 1034,
+          "speaker": "outlet's own",
+          "subject": "S&P 500",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+          "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+          "log_seq": 780483,
+          "recorded_at": "2026-09-08T01:38:01.221684Z",
+          "slot_id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+          "evidence_asserted_at": "2026-08-17T20:23:02Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "1999-12-31",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-17T20:23:02Z",
+          "checkable_against": "S&P Dow Jones Indices annual S&P 500 total-return data",
+          "claim_type": "actual",
+          "envelope_seq": 780494,
+          "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+          "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+          "figure": {
+            "unit": "percent",
+            "value": "20"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The 1990s stretch, when the S&P 500 rose more than 20 percent each year from 1995 through 1999, had another distinction: It was the only string of five consecutive years of double-digit gains in the last 98 years.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:15.529202Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1481,
+          "span_start": 1268,
+          "speaker": "outlet's own",
+          "subject": "S&P 500",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+          "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+          "log_seq": 780495,
+          "recorded_at": "2026-09-08T01:38:09.005295Z",
+          "slot_id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+          "evidence_asserted_at": "2026-08-17T20:23:02Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 780410,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+    "kind": "market performance",
+    "label": "S&P 500 1995-1999 gains",
+    "minted_at": "2026-09-08T01:37:18.874707Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+    "period": "1999-12-31",
+    "refusal": null,
+    "status": "published",
+    "subject": "S&P 500",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e/fc2acac705ee4002ac33a3362dddf083.json",
+    "log_seq": 780411
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109",
+      "envelope_seq": 780824,
+      "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+      "id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "name": "annual gain",
+      "refusal": null,
+      "log_seq": 780825,
+      "recorded_at": "2026-09-08T01:42:00.257416Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99",
+      "envelope_seq": 780818,
+      "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+      "id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "name": "historical instances",
+      "refusal": null,
+      "log_seq": 780819,
+      "recorded_at": "2026-09-08T01:41:57.238840Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-17",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "checkable_against": "S&P 500 annual historical returns since 1928",
+      "claim_type": "actual",
+      "envelope_seq": 780482,
+      "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "figure": {
+        "unit": "instances",
+        "value": "3"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "That’s happened only three times since 1928 — most recently, in the late 1990s.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1117,
+      "span_start": 1034,
+      "speaker": "outlet's own",
+      "subject": "S&P 500",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "log_seq": 780483,
+      "recorded_at": "2026-09-08T01:38:01.221684Z",
+      "slot_id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "evidence_asserted_at": "2026-08-17T20:23:02Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "1999-12-31",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "checkable_against": "S&P Dow Jones Indices annual S&P 500 total-return data",
+      "claim_type": "actual",
+      "envelope_seq": 780494,
+      "event_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "figure": {
+        "unit": "percent",
+        "value": "20"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The 1990s stretch, when the S&P 500 rose more than 20 percent each year from 1995 through 1999, had another distinction: It was the only string of five consecutive years of double-digit gains in the last 98 years.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1481,
+      "span_start": 1268,
+      "speaker": "outlet's own",
+      "subject": "S&P 500",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "log_seq": 780495,
+      "recorded_at": "2026-09-08T01:38:09.005295Z",
+      "slot_id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "evidence_asserted_at": "2026-08-17T20:23:02Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 780826,
+      "id": "attach-anchor-slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109",
+      "refusal": null,
+      "slot_id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "log_seq": 780827,
+      "recorded_at": "2026-09-08T01:42:00.489804Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 780820,
+      "id": "attach-anchor-slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99",
+      "refusal": null,
+      "slot_id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "log_seq": 780821,
+      "recorded_at": "2026-09-08T01:41:57.492470Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-c41f7d01-c42c-466e-a51e-ec582806bdbc",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-876c8c11-b999-45a8-8169-15ce6d3d647f",
+      "name": "historical instances",
+      "value": "3",
+      "unit": "instances",
+      "sentence": "That’s happened only three times since 1928 — most recently, in the late 1990s.",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-2896b040ec263a99"
+    },
+    {
+      "slot_id": "slot-4071ed0d-f137-4a52-8c35-bf600042c549",
+      "name": "annual gain",
+      "value": "20",
+      "unit": "percent",
+      "sentence": "The 1990s stretch, when the S&P 500 rose more than 20 percent each year from 1995 through 1999, had another distinction: It was the only string of five consecutive years of double-digit gains in the last 98 years.",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-633214cb4d111109"
+    }
+  ]
+}

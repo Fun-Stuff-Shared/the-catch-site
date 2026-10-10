@@ -1,0 +1,246 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-07T19:50:10Z",
+      "canonical_url": "https://x.com/Reuters/status/2107921443392467059",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/raw/article_2499.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1192273,
+      "gate_verdict": "COVER",
+      "id": "462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097",
+      "lang": "en",
+      "published_at": "2026-10-07T19:50:10Z",
+      "publisher": "Reuters",
+      "raw_sha256": "0c04792214fa9307b0d5401c4febeb432f0cba817941cf63d684d40061d09a58",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T22:04:54.048826Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_2499.txt",
+      "text_sha256": "a4bb5e4f04c0d997552265cd4fb0ea51707315bb8e145197380d9f4b3b01defa",
+      "title": null,
+      "url": "https://x.com/Reuters/status/2107921443392467059",
+      "verbatim_level": "article",
+      "log_seq": 1192274,
+      "recorded_at": "2026-10-07T22:41:59.616360Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-07",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-07T19:50:10Z",
+          "checkable_against": "Georgia arrest records and the related federal criminal complaint or Department of Justice release",
+          "claim_type": "actual",
+          "envelope_seq": 1216202,
+          "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+          "evidence_id": "462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097",
+          "figure": {
+            "unit": "dollars",
+            "value": "700000"
+          },
+          "fire_id": "2fd36f1f620097ad9fa8fd3fb148efe9",
+          "id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Georgia arrests man over attempted $700,000 uranium sale",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T22:04:54.048826Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 71,
+          "span_start": 15,
+          "speaker": "Reuters",
+          "subject": "Georgia law enforcement arrest over attempted uranium sale",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_2499.txt",
+          "text_sha256": "a4bb5e4f04c0d997552265cd4fb0ea51707315bb8e145197380d9f4b3b01defa",
+          "time_action": "corrects",
+          "log_seq": 1216203,
+          "recorded_at": "2026-10-08T07:31:33.476247Z",
+          "evidence_asserted_at": "2026-10-07T19:50:10Z",
+          "evidence_url": "https://x.com/Reuters/status/2107921443392467059",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T07:44:15.159240Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1216200,
+    "fire_id": "quarry-wire-scheduled-20261007T220005Z",
+    "follows": null,
+    "id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+    "kind": "arrest",
+    "label": "Georgia arrest over attempted $700,000 uranium sale",
+    "minted_at": "2026-10-08T07:31:22.564167Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097",
+    "period": "2026-10-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Georgia law enforcement arrest over attempted uranium sale",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261007T220005Z/462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097/ea638f707391438aa5b5a51ea7acb729.json",
+    "log_seq": 1216201
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216248,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-1083c7ed-ec19-47cf-b32b-820d19eb6b31",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1216249,
+      "recorded_at": "2026-10-08T07:31:59.279545Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216252,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-147d5970-4f48-4f70-8cbc-72a5b59b388d",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "unknown",
+        "source_id": "unknown"
+      },
+      "log_seq": 1216253,
+      "recorded_at": "2026-10-08T07:32:05.307555Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216350,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-3a7cea22-a921-4163-bf8f-4eefed2a40a4",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1216351,
+      "recorded_at": "2026-10-08T07:32:32.659831Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216256,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-43272b18-9352-4ca5-a779-572f84abaccb",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "reut.rs/47GgxkP",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1216257,
+      "recorded_at": "2026-10-08T07:32:12.902905Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216212,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-78f7f8a6-ff3f-4adb-bda1-a654defbbd5f",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107921443392467059",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1216213,
+      "recorded_at": "2026-10-08T07:31:53.250599Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "envelope_seq": 1216298,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "id": "slot-bd85eaf7-b36d-4d49-bc4c-56d30e18e0a4",
+      "name": "attempted sale amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107921443392467059",
+        "source_id": "reuters"
+      },
+      "log_seq": 1216299,
+      "recorded_at": "2026-10-08T07:32:22.451098Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-07",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-07T19:50:10Z",
+      "checkable_against": "Georgia arrest records and the related federal criminal complaint or Department of Justice release",
+      "claim_type": "actual",
+      "envelope_seq": 1216202,
+      "event_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+      "evidence_id": "462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097",
+      "figure": {
+        "unit": "dollars",
+        "value": "700000"
+      },
+      "fire_id": "2fd36f1f620097ad9fa8fd3fb148efe9",
+      "id": "occurrence-462055ab0dcc381f0c8303a09b5fa71ad56b36e7dddfa9cdccae232fcac01097-7dfb8603c1ccd07f",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Georgia arrests man over attempted $700,000 uranium sale",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T22:04:54.048826Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 71,
+      "span_start": 15,
+      "speaker": "Reuters",
+      "subject": "Georgia law enforcement arrest over attempted uranium sale",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T220005Z/text/article_2499.txt",
+      "text_sha256": "a4bb5e4f04c0d997552265cd4fb0ea51707315bb8e145197380d9f4b3b01defa",
+      "time_action": "corrects",
+      "log_seq": 1216203,
+      "recorded_at": "2026-10-08T07:31:33.476247Z",
+      "evidence_asserted_at": "2026-10-07T19:50:10Z",
+      "evidence_url": "https://x.com/Reuters/status/2107921443392467059",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "crime and public safety",
+  "follows": null,
+  "root_id": "event-e5a15754-38f6-4bb9-8643-655d19f00788",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

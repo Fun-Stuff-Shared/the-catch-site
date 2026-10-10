@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d": {
+      "slot": "death toll",
+      "occurrence_id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466",
+      "heads": [
+        "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Three firefighters were killed last week while battling wildfires on the Greek island of Crete and in the Peloponnese region, according to the fire service .",
+      "span_check": "byte_exact",
+      "speaker": "Greek fire service",
+      "figure": {
+        "unit": "people",
+        "value": "3"
+      },
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Greek fire service records of firefighter deaths",
+      "evidence_id": "6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff",
+      "basis": [
+        "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466"
+      ],
+      "last_confirmed": "2026-08-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "as_of": "2026-08-03",
+      "occurrence_id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-03T12:39:46Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5274.html",
+      "envelope_seq": 170245,
+      "id": "6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:13.455050Z",
+      "root_evidence": "body:1996:2033",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5274.txt",
+      "text_sha256": "55aa88637bb6be95bb1b9ecd76f91e849bc95519877ffaf6143f48a9d38242f1",
+      "url": "https://www.nytimes.com/2026/08/03/world/europe/greece-fire-helicopter-crash-firefighters.html",
+      "verbatim_level": "article",
+      "log_seq": 520962,
+      "recorded_at": "2026-09-06T01:33:24.028273Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-03",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-03T12:39:46Z",
+          "checkable_against": "Greek fire service records of firefighter deaths",
+          "claim_type": "actual",
+          "envelope_seq": 786598,
+          "event_id": "event-09f6d75a-3e28-4509-ac6e-22dde0c1e0b7",
+          "evidence_id": "6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff",
+          "figure": {
+            "unit": "people",
+            "value": "3"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Three firefighters were killed last week while battling wildfires on the Greek island of Crete and in the Peloponnese region, according to the fire service .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:13.455050Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 2575,
+          "span_start": 2418,
+          "speaker": "Greek fire service",
+          "subject": "Greek firefighters killed in wildfires",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5274.txt",
+          "text_sha256": "55aa88637bb6be95bb1b9ecd76f91e849bc95519877ffaf6143f48a9d38242f1",
+          "log_seq": 786599,
+          "recorded_at": "2026-09-08T03:35:56.428541Z",
+          "slot_id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+          "evidence_asserted_at": "2026-08-03T12:39:46Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/03/world/europe/greece-fire-helicopter-crash-firefighters.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 786434,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-09f6d75a-3e28-4509-ac6e-22dde0c1e0b7",
+    "kind": "incident",
+    "label": "Three Greek firefighters killed battling wildfires",
+    "minted_at": "2026-09-08T03:34:03.587873Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Greek firefighters killed in wildfires",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff/e5b47a9a17e14d1583a86a667e1fcd46.json",
+    "log_seq": 786435
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466",
+      "envelope_seq": 786910,
+      "event_id": "event-09f6d75a-3e28-4509-ac6e-22dde0c1e0b7",
+      "id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "name": "death toll",
+      "refusal": null,
+      "log_seq": 786911,
+      "recorded_at": "2026-09-08T03:39:48.313925Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-03",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-03T12:39:46Z",
+      "checkable_against": "Greek fire service records of firefighter deaths",
+      "claim_type": "actual",
+      "envelope_seq": 786598,
+      "event_id": "event-09f6d75a-3e28-4509-ac6e-22dde0c1e0b7",
+      "evidence_id": "6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff",
+      "figure": {
+        "unit": "people",
+        "value": "3"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Three firefighters were killed last week while battling wildfires on the Greek island of Crete and in the Peloponnese region, according to the fire service .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:13.455050Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 2575,
+      "span_start": 2418,
+      "speaker": "Greek fire service",
+      "subject": "Greek firefighters killed in wildfires",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5274.txt",
+      "text_sha256": "55aa88637bb6be95bb1b9ecd76f91e849bc95519877ffaf6143f48a9d38242f1",
+      "log_seq": 786599,
+      "recorded_at": "2026-09-08T03:35:56.428541Z",
+      "slot_id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "evidence_asserted_at": "2026-08-03T12:39:46Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/03/world/europe/greece-fire-helicopter-crash-firefighters.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 786912,
+      "id": "attach-anchor-slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "occurrence_id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466",
+      "refusal": null,
+      "slot_id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "log_seq": 786913,
+      "recorded_at": "2026-09-08T03:39:48.555839Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-09f6d75a-3e28-4509-ac6e-22dde0c1e0b7",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-58b37f84-dc1d-4575-99f4-99dfc938b19d",
+      "name": "death toll",
+      "value": "3",
+      "unit": "people",
+      "sentence": "Three firefighters were killed last week while battling wildfires on the Greek island of Crete and in the Peloponnese region, according to the fire service .",
+      "occurrence_id": "occurrence-6a7c35d9b6fa230936e63800b9f1217b222ab024125b77758e5810466fb414ff-3d9244c5bdce7466"
+    }
+  ]
+}

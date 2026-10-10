@@ -1,0 +1,303 @@
+{
+  "current_state": {
+    "slot-57e2d4ea-e449-4052-85ba-f77a98313a52": {
+      "slot": "refinance application pace",
+      "occurrence_id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827",
+      "heads": [
+        "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Home loan refinance applications fell last week to their lowest level since January 2025 and were less than half last year’s pace, according to the MBA.",
+      "span_check": "byte_exact",
+      "speaker": "Mortgage Bankers Association",
+      "figure": {
+        "unit": "pace",
+        "value": "0.5"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Mortgage Bankers Association Weekly Mortgage Applications Survey for the week ending October 2, 2026",
+      "evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+      "basis": [
+        "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T16:07:51Z",
+      "canonical_url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/raw/article_7614.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1245349,
+      "gate_verdict": "COVER",
+      "id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+      "lang": "en",
+      "published_at": "2026-10-08T16:07:51Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "43488e3edbcb628360c2d1c63ade6dcccbf6f0728f93db1ef9804cf858b57336",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:11:53.981802Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_7614.txt",
+      "text_sha256": "e69885863c7813b84c012bfd343c75f603075d8fe6a6f5328f05a85733ef866e",
+      "title": "Mortgage rates hit a nearly 3-year high as the 30-year jumps to 7.40%",
+      "updated_at": "2026-10-08T17:02:30.888000Z",
+      "url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+      "verbatim_level": "article",
+      "log_seq": 1245350,
+      "recorded_at": "2026-10-08T22:26:44.535865Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T16:07:51Z",
+          "checkable_against": "Mortgage Bankers Association Weekly Mortgage Applications Survey for the week ending October 2, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 1259234,
+          "event_id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+          "evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+          "figure": {
+            "unit": "weeks",
+            "value": "5"
+          },
+          "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+          "id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-3e30a2f6f4682828",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Mortgage applications, which include loans to buy a home or refinance an existing mortgage, fell for the fifth week in a row last week as mortgage rates kept climbing, according to the Mortgage Bankers Association.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:11:53.981802Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 3086,
+          "span_start": 2872,
+          "speaker": "Mortgage Bankers Association",
+          "subject": "U.S. mortgage applications",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_7614.txt",
+          "text_sha256": "e69885863c7813b84c012bfd343c75f603075d8fe6a6f5328f05a85733ef866e",
+          "time_action": "corrects",
+          "log_seq": 1259235,
+          "recorded_at": "2026-10-09T23:31:27.830797Z",
+          "evidence_asserted_at": "2026-10-08T16:07:51Z",
+          "evidence_url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T16:07:51Z",
+          "checkable_against": "Mortgage Bankers Association Weekly Mortgage Applications Survey for the week ending October 2, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 1259242,
+          "event_id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+          "evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+          "figure": {
+            "unit": "pace",
+            "value": "0.5"
+          },
+          "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+          "id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Home loan refinance applications fell last week to their lowest level since January 2025 and were less than half last year’s pace, according to the MBA.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:11:53.981802Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 3329,
+          "span_start": 3175,
+          "speaker": "Mortgage Bankers Association",
+          "subject": "U.S. mortgage applications",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_7614.txt",
+          "text_sha256": "e69885863c7813b84c012bfd343c75f603075d8fe6a6f5328f05a85733ef866e",
+          "time_action": "corrects",
+          "log_seq": 1259243,
+          "recorded_at": "2026-10-09T23:31:44.096895Z",
+          "slot_id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+          "evidence_asserted_at": "2026-10-08T16:07:51Z",
+          "evidence_url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f982705213",
+  "evaluated_at": "2026-10-09T23:44:50.190712Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1259044,
+    "fire_id": "quarry-wire-scheduled-20261008T220014Z",
+    "follows": "event-b601be6c-15b4-41d3-949b-0006bf417634",
+    "id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+    "kind": "data release",
+    "label": "Mortgage applications week ending October 2 2026",
+    "minted_at": "2026-10-09T23:30:15.324597Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+    "period": "2026-10-02",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. mortgage applications",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261008T220014Z/725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af/75d62419241d4702b6c7e67f902c8c11.json",
+    "log_seq": 1259045
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827",
+      "envelope_seq": 1259404,
+      "event_id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+      "id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "name": "refinance application pace",
+      "refusal": null,
+      "log_seq": 1259405,
+      "recorded_at": "2026-10-09T23:33:18.667414Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T16:07:51Z",
+      "checkable_against": "Mortgage Bankers Association Weekly Mortgage Applications Survey for the week ending October 2, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 1259234,
+      "event_id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+      "evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+      "figure": {
+        "unit": "weeks",
+        "value": "5"
+      },
+      "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+      "id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-3e30a2f6f4682828",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Mortgage applications, which include loans to buy a home or refinance an existing mortgage, fell for the fifth week in a row last week as mortgage rates kept climbing, according to the Mortgage Bankers Association.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:11:53.981802Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 3086,
+      "span_start": 2872,
+      "speaker": "Mortgage Bankers Association",
+      "subject": "U.S. mortgage applications",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_7614.txt",
+      "text_sha256": "e69885863c7813b84c012bfd343c75f603075d8fe6a6f5328f05a85733ef866e",
+      "time_action": "corrects",
+      "log_seq": 1259235,
+      "recorded_at": "2026-10-09T23:31:27.830797Z",
+      "evidence_asserted_at": "2026-10-08T16:07:51Z",
+      "evidence_url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T16:07:51Z",
+      "checkable_against": "Mortgage Bankers Association Weekly Mortgage Applications Survey for the week ending October 2, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 1259242,
+      "event_id": "event-51df9b9b-c3b4-4389-b50d-8446a8383469",
+      "evidence_id": "725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af",
+      "figure": {
+        "unit": "pace",
+        "value": "0.5"
+      },
+      "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+      "id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Home loan refinance applications fell last week to their lowest level since January 2025 and were less than half last year’s pace, according to the MBA.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:11:53.981802Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 3329,
+      "span_start": 3175,
+      "speaker": "Mortgage Bankers Association",
+      "subject": "U.S. mortgage applications",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_7614.txt",
+      "text_sha256": "e69885863c7813b84c012bfd343c75f603075d8fe6a6f5328f05a85733ef866e",
+      "time_action": "corrects",
+      "log_seq": 1259243,
+      "recorded_at": "2026-10-09T23:31:44.096895Z",
+      "slot_id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "evidence_asserted_at": "2026-10-08T16:07:51Z",
+      "evidence_url": "https://apnews.com/article/mortgage-10year-interest-rates-home-sales-e9badb974fbb8e3f7ca2ae25fbe556fa",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1259406,
+      "id": "attach-anchor-slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "occurrence_id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827",
+      "refusal": null,
+      "slot_id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "log_seq": 1259407,
+      "recorded_at": "2026-10-09T23:33:18.688267Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": "event-b601be6c-15b4-41d3-949b-0006bf417634",
+  "root_id": "event-b601be6c-15b4-41d3-949b-0006bf417634",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-57e2d4ea-e449-4052-85ba-f77a98313a52",
+      "name": "refinance application pace",
+      "value": "0.5",
+      "unit": "pace",
+      "sentence": "Home loan refinance applications fell last week to their lowest level since January 2025 and were less than half last year’s pace, according to the MBA.",
+      "occurrence_id": "occurrence-725f144c5af73f41e24750490a96288fce33ffa02dc6efe33485071ec23c23af-fd8ccd19b7958827"
+    }
+  ]
+}

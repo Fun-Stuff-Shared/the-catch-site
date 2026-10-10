@@ -1,0 +1,738 @@
+{
+  "current_state": {
+    "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63": {
+      "slot": "diesel price",
+      "occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+      "heads": [
+        "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "U.S. Energy Information Administration weekly retail diesel price data",
+      "evidence_id": "b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b",
+      "basis": [
+        "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+        "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+        "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    },
+    "slot-da11ea22-17da-4e35-bfa6-18a59749a290": {
+      "slot": "diesel price increase percentage",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+      "heads": [
+        "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Since late February, the average price of U.S. diesel has surged 70%",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "U.S. Energy Information Administration diesel price data",
+      "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+      "basis": [
+        "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T15:21:45.497000Z",
+      "canonical_url": "https://nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_0285.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1057941,
+      "gate_verdict": "COVER",
+      "id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+      "lang": "en",
+      "published_at": "2026-10-02T15:21:45.497000Z",
+      "publisher": "NBC News",
+      "raw_sha256": "c33c5dc33083743295ca2b667ecf9ad114b9cc17fbba93547c853842077f585f",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:15.800014Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nbcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "nbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+      "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+      "title": "G7 countries to release up to 100 million barrels of diesel and crude oil reserves",
+      "updated_at": "2026-10-02T15:21:45.497000Z",
+      "url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+      "verbatim_level": "article",
+      "log_seq": 1057942,
+      "recorded_at": "2026-10-03T07:22:43.318307Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T15:21:45.497000Z",
+          "checkable_against": "U.S. Energy Information Administration diesel price data",
+          "claim_type": "actual",
+          "envelope_seq": 1072242,
+          "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+          "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+          "figure": {
+            "unit": "percent",
+            "value": "70"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Since late February, the average price of U.S. diesel has surged 70%",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:15.800014Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 794,
+          "span_start": 726,
+          "speaker": "outlet's own",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+          "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+          "log_seq": 1072243,
+          "recorded_at": "2026-10-03T10:40:07.913521Z",
+          "slot_id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+          "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+          "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T15:21:45.497000Z",
+          "checkable_against": "U.S. Energy Information Administration diesel price data",
+          "claim_type": "actual",
+          "envelope_seq": 1072360,
+          "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+          "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "6.37"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "the average price of U.S. diesel has surged 70% to $6.37 per gallon.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:15.800014Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 815,
+          "span_start": 747,
+          "speaker": "outlet's own",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+          "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+          "log_seq": 1072361,
+          "recorded_at": "2026-10-03T10:40:49.562851Z",
+          "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+          "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+          "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T15:21:45.497000Z",
+          "checkable_against": "U.S. Energy Information Administration diesel price data",
+          "claim_type": "actual",
+          "envelope_seq": 1072250,
+          "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+          "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "6.37"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "to $6.37 per gallon.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:15.800014Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 815,
+          "span_start": 795,
+          "speaker": "outlet's own",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+          "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+          "log_seq": 1072251,
+          "recorded_at": "2026-10-03T10:40:10.014492Z",
+          "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+          "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+          "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T07:51:56Z",
+      "canonical_url": "https://cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_1463.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1058191,
+      "gate_verdict": "COVER",
+      "id": "b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b",
+      "lang": "en",
+      "published_at": "2026-10-02T07:51:56Z",
+      "publisher": "CNBC",
+      "raw_sha256": "99ee4dc78d68247f731863292129f8b80cf4f0a098725d386f5e24b6c5dbcc77",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:36.701787Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1463.txt",
+      "text_sha256": "487aca598915f494af60e6b7d65a4601898c67bf7cf339b0154ce85384ba39c0",
+      "title": "G7 nations to release diesel stocks as wars in Europe and Middle East constrain fuel supplies",
+      "updated_at": "2026-10-02T16:02:14Z",
+      "url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+      "verbatim_level": "article",
+      "log_seq": 1058192,
+      "recorded_at": "2026-10-03T07:22:44.685548Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T07:51:56Z",
+          "checkable_against": "U.S. Energy Information Administration weekly retail diesel price data",
+          "claim_type": "actual",
+          "envelope_seq": 1085172,
+          "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+          "evidence_id": "b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "6.37"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:36.701787Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 762,
+          "span_start": 655,
+          "speaker": "outlet's own",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1463.txt",
+          "text_sha256": "487aca598915f494af60e6b7d65a4601898c67bf7cf339b0154ce85384ba39c0",
+          "log_seq": 1085173,
+          "recorded_at": "2026-10-03T15:32:46.319622Z",
+          "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+          "evidence_asserted_at": "2026-10-02T07:51:56Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T05:49:14.355279Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1072150,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+    "kind": "price report",
+    "label": "US diesel price reaches $6.37 per gallon",
+    "minted_at": "2026-10-03T10:39:21.102402Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+    "period": "2026-10-02",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. diesel price",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76/5ed09544f53847f3900847b15ab2eb15.json",
+    "log_seq": 1072151
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+      "envelope_seq": 1072578,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "name": "diesel price",
+      "refusal": null,
+      "log_seq": 1072579,
+      "recorded_at": "2026-10-03T10:42:09.622319Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+      "envelope_seq": 1124581,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "name": "diesel price increase percentage",
+      "refusal": null,
+      "log_seq": 1124582,
+      "recorded_at": "2026-10-05T00:46:18.473644Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+      "envelope_seq": 1124556,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "id": "slot-f3d0fecd-2b88-4177-8fc0-e4d60d6bc419",
+      "name": "diesel price increase percentage",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+        "source_id": "nbc_news_rss"
+      },
+      "log_seq": 1124557,
+      "recorded_at": "2026-10-05T00:45:37.765065Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T15:21:45.497000Z",
+      "checkable_against": "U.S. Energy Information Administration diesel price data",
+      "claim_type": "actual",
+      "envelope_seq": 1072242,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Since late February, the average price of U.S. diesel has surged 70%",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:15.800014Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 794,
+      "span_start": 726,
+      "speaker": "outlet's own",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+      "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+      "log_seq": 1072243,
+      "recorded_at": "2026-10-03T10:40:07.913521Z",
+      "slot_id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+      "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T15:21:45.497000Z",
+      "checkable_against": "U.S. Energy Information Administration diesel price data",
+      "claim_type": "actual",
+      "envelope_seq": 1072360,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "the average price of U.S. diesel has surged 70% to $6.37 per gallon.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:15.800014Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 815,
+      "span_start": 747,
+      "speaker": "outlet's own",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+      "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+      "log_seq": 1072361,
+      "recorded_at": "2026-10-03T10:40:49.562851Z",
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+      "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T15:21:45.497000Z",
+      "checkable_against": "U.S. Energy Information Administration diesel price data",
+      "claim_type": "actual",
+      "envelope_seq": 1072250,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "evidence_id": "12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "to $6.37 per gallon.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:15.800014Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 815,
+      "span_start": 795,
+      "speaker": "outlet's own",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0285.txt",
+      "text_sha256": "bf0eb95e275c74a9f4665871d988948cb3cddbbee79ef6108ed815f88ffc1d06",
+      "log_seq": 1072251,
+      "recorded_at": "2026-10-03T10:40:10.014492Z",
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "evidence_asserted_at": "2026-10-02T15:21:45.497000Z",
+      "evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T07:51:56Z",
+      "checkable_against": "U.S. Energy Information Administration weekly retail diesel price data",
+      "claim_type": "actual",
+      "envelope_seq": 1085172,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "evidence_id": "b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:36.701787Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 762,
+      "span_start": 655,
+      "speaker": "outlet's own",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1463.txt",
+      "text_sha256": "487aca598915f494af60e6b7d65a4601898c67bf7cf339b0154ce85384ba39c0",
+      "log_seq": 1085173,
+      "recorded_at": "2026-10-03T15:32:46.319622Z",
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "evidence_asserted_at": "2026-10-02T07:51:56Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1085434,
+      "id": "attach-3e4ba89c-625d-4e75-afa2-9d9baa266add",
+      "occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+      "refusal": null,
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "log_seq": 1085435,
+      "recorded_at": "2026-10-03T15:34:44.209051Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1072580,
+      "id": "attach-anchor-slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+      "refusal": null,
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "log_seq": 1072581,
+      "recorded_at": "2026-10-03T10:42:09.659622Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1124583,
+      "id": "attach-anchor-slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a",
+      "refusal": null,
+      "slot_id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "log_seq": 1124584,
+      "recorded_at": "2026-10-05T00:46:19.125869Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1124569,
+      "id": "attach-cb0ac8e4-8413-4ae1-8e18-f0ab53b1b0de",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+      "refusal": null,
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "log_seq": 1124570,
+      "recorded_at": "2026-10-05T00:45:50.699009Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1127559,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "$6.37 per gallon"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "from_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+      "id": "edge-relation-76bd7aca1afbabb80f56e2b5",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report the average U.S. diesel price as $6.37 per gallon. The sources (NBC and CNBC) are independent.",
+      "refusal": null,
+      "to_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "to_occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+      "log_seq": 1127560,
+      "recorded_at": "2026-10-05T05:11:45.226499Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1127562,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "$6.37 per gallon"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "from_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+      "id": "edge-relation-b3854598faf0758e625ef23b",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences are from the same source and report the same price. They are restatements of the same fact.",
+      "refusal": null,
+      "to_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "to_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+      "log_seq": 1127563,
+      "recorded_at": "2026-10-05T05:11:46.686402Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1118457,
+      "event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "$6.37 per gallon"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "from_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+      "id": "edge-relation-e2b18b1ce7663c7e53f560e4",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both sources report the U.S. diesel price as $6.37 per gallon on the same date (2026-10-02), but they are independent publishers (NBC News and CNBC).",
+      "refusal": null,
+      "to_event_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+      "to_occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+      "log_seq": 1118458,
+      "recorded_at": "2026-10-04T15:18:08.245576Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T15:21:45.497000Z",
+    "confirmations": [
+      {
+        "label": "“6.37 dollars per gallon”",
+        "value": "6.37 dollars per gallon",
+        "reports": [
+          {
+            "publisher": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "NBC News",
+            "url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63"
+        ],
+        "sentence": "“6.37 dollars per gallon”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+        "relation": "supports",
+        "edge_id": "edge-relation-76bd7aca1afbabb80f56e2b5",
+        "earlier_occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+        "later_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+        "later_evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+        "sentence": "On 2026-10-02, CNBC reported “U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.”; on the same day, NBC News reported “the average price of U.S. diesel has surged 70% to $6.37 per gallon.”."
+      },
+      {
+        "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+        "relation": "supports",
+        "edge_id": "edge-relation-e2b18b1ce7663c7e53f560e4",
+        "earlier_occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab",
+        "later_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html",
+        "later_evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+        "sentence": "On 2026-10-02, CNBC reported “U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.”; on the same day, NBC News reported “to $6.37 per gallon.”."
+      },
+      {
+        "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-b3854598faf0758e625ef23b",
+        "earlier_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-9d8738d3a7768610",
+        "later_occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-a11fa3929c0e1ed1",
+        "earlier_evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+        "later_evidence_url": "https://www.nbcnews.com/business/energy/g-7-diesel-crude-release-trump-macron-rcna601132",
+        "sentence": "On 2026-10-02, NBC News reported “the average price of U.S. diesel has surged 70% to $6.37 per gallon.”; on the same day, NBC News reported “to $6.37 per gallon.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-79307e57-7d8d-4547-a8e0-9b48e9fae679",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-d2a7f833-f61f-4b88-97bc-5ca750a22c63",
+      "name": "diesel price",
+      "value": "6.37",
+      "unit": "dollars per gallon",
+      "sentence": "U.S. diesel prices hit record highs in September and remain elevated Friday at $6.37 per gallon on average.",
+      "occurrence_id": "occurrence-b9deb01868356398fa716e1c03d73bd92f15d7370649aabfa821f01ec5927c1b-88e505d20d85aaab"
+    },
+    {
+      "slot_id": "slot-da11ea22-17da-4e35-bfa6-18a59749a290",
+      "name": "diesel price increase percentage",
+      "value": "70",
+      "unit": "percent",
+      "sentence": "Since late February, the average price of U.S. diesel has surged 70%",
+      "occurrence_id": "occurrence-12d76e2d619031d4c0a77c72c34847e08844f0d31095b80598c31cabd63b9f76-5eebcdb2b93b8d5a"
+    }
+  ]
+}

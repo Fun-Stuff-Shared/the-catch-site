@@ -1,0 +1,231 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T10:29:01Z",
+      "canonical_url": "https://x.com/AP/status/2107417839770423673",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/raw/article_3152.html",
+      "desk": "sports",
+      "envelope_seq": 1161447,
+      "gate_verdict": "COVER",
+      "id": "4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e",
+      "lang": "en",
+      "published_at": "2026-10-06T10:29:01Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "ddd365a164308db5916a982b5f4b06254b69de5964a3f3f9316ac9ade64b383f",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:38.910597Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z",
+      "source_family": "wire_service",
+      "source_id": "x_ap_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_3152.txt",
+      "text_sha256": "f6fbe045ae8b9c7ba0445deaae8e48fad675db3daff3c4a0e56a2c78d51dc7c4",
+      "title": null,
+      "url": "https://x.com/AP/status/2107417839770423673",
+      "verbatim_level": "article",
+      "log_seq": 1161448,
+      "recorded_at": "2026-10-06T22:40:17.249075Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-06",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-06T10:29:01Z",
+          "checkable_against": "International Olympic Committee records of 2036 Olympic host city bid submissions",
+          "claim_type": "actual",
+          "envelope_seq": 1175049,
+          "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+          "evidence_id": "4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e",
+          "figure": {
+            "unit": "bidders",
+            "value": "7"
+          },
+          "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+          "id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "The ambitions of India and Qatar to host the 2036 Olympics were confirmed by the IOC among seven bidders in the race.",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T22:05:38.910597Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 145,
+          "span_start": 28,
+          "speaker": "Associated Press",
+          "subject": "International Olympic Committee",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_3152.txt",
+          "text_sha256": "f6fbe045ae8b9c7ba0445deaae8e48fad675db3daff3c4a0e56a2c78d51dc7c4",
+          "time_action": "corrects",
+          "log_seq": 1175050,
+          "recorded_at": "2026-10-07T08:31:44.538720Z",
+          "evidence_asserted_at": "2026-10-06T10:29:01Z",
+          "evidence_url": "https://x.com/AP/status/2107417839770423673",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "x_ap_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T09:44:05.871796Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1175047,
+    "fire_id": "quarry-wire-scheduled-20261006T220035Z",
+    "follows": null,
+    "id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+    "kind": "announcement",
+    "label": "IOC confirms India and Qatar among seven bidders for 2036 Olympics",
+    "minted_at": "2026-10-07T08:31:31.508314Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e",
+    "period": "2026-10-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "International Olympic Committee",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T220035Z/4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e/badb79edc4c041b388bbe0ef77a68586.json",
+    "log_seq": 1175048
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "envelope_seq": 1175077,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "id": "slot-1e911798-b4aa-4390-9dbc-9a156de1b1b6",
+      "name": "bidder count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2107417839770423673",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1175078,
+      "recorded_at": "2026-10-07T08:32:18.607959Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "envelope_seq": 1175065,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "id": "slot-70062ccf-6dd0-4798-a342-569096996288",
+      "name": "bidder count",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1175066,
+      "recorded_at": "2026-10-07T08:32:02.018811Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "envelope_seq": 1175071,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "id": "slot-9b965b4b-f2fb-4e71-992d-8a51a6cfb432",
+      "name": "bidder count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2107417839770423673",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1175072,
+      "recorded_at": "2026-10-07T08:32:13.890828Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "envelope_seq": 1175069,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "id": "slot-a960a72a-1ac4-4f66-a7e2-0378de76b527",
+      "name": "bidder count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2107417839770423673",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1175070,
+      "recorded_at": "2026-10-07T08:32:06.124515Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "envelope_seq": 1175059,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "id": "slot-c1d45845-0235-43cc-8c26-fce284dd5b85",
+      "name": "bidder count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2107417839770423673",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1175060,
+      "recorded_at": "2026-10-07T08:31:55.457074Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-06",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-06T10:29:01Z",
+      "checkable_against": "International Olympic Committee records of 2036 Olympic host city bid submissions",
+      "claim_type": "actual",
+      "envelope_seq": 1175049,
+      "event_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+      "evidence_id": "4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e",
+      "figure": {
+        "unit": "bidders",
+        "value": "7"
+      },
+      "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+      "id": "occurrence-4ebe68309f568cf1bfef3ef6eab8767899fb61f91e2a6a0502cd13267433146e-7bf9165d1179d4ea",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "The ambitions of India and Qatar to host the 2036 Olympics were confirmed by the IOC among seven bidders in the race.",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:38.910597Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 145,
+      "span_start": 28,
+      "speaker": "Associated Press",
+      "subject": "International Olympic Committee",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_3152.txt",
+      "text_sha256": "f6fbe045ae8b9c7ba0445deaae8e48fad675db3daff3c4a0e56a2c78d51dc7c4",
+      "time_action": "corrects",
+      "log_seq": 1175050,
+      "recorded_at": "2026-10-07T08:31:44.538720Z",
+      "evidence_asserted_at": "2026-10-06T10:29:01Z",
+      "evidence_url": "https://x.com/AP/status/2107417839770423673",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "x_ap_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "sports",
+  "follows": null,
+  "root_id": "event-5f555630-2dca-437e-8221-f069ec3d31b1",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

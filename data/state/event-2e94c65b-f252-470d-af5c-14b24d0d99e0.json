@@ -1,6 +1,38 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da": {
+      "slot": "monthly visitors decline",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-241ad0c886e15f53",
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-241ad0c886e15f53",
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "as_of": "2026-07"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -52,6 +84,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432472,
           "recorded_at": "2026-09-05T09:02:25.994152Z",
+          "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -87,6 +120,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432468,
           "recorded_at": "2026-09-05T09:02:25.533262Z",
+          "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -96,8 +130,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432157,
@@ -114,6 +148,32 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31",
+      "envelope_seq": 919013,
+      "event_id": "event-2e94c65b-f252-470d-af5c-14b24d0d99e0",
+      "id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "name": "monthly visitors decline",
+      "refusal": null,
+      "log_seq": 919014,
+      "recorded_at": "2026-09-21T10:05:29.754452Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31",
+      "envelope_seq": 919011,
+      "event_id": "event-2e94c65b-f252-470d-af5c-14b24d0d99e0",
+      "id": "slot-812b39a1-ae17-447a-b9e9-c2bfebf78713",
+      "name": "monthly visitors decline",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 919012,
+      "recorded_at": "2026-09-21T10:05:17.373085Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31",
@@ -154,6 +214,7 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432472,
       "recorded_at": "2026-09-05T09:02:25.994152Z",
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
@@ -189,13 +250,41 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432468,
       "recorded_at": "2026-09-05T09:02:25.533262Z",
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 919015,
+      "id": "attach-anchor-slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-ad70bfa277a27d31",
+      "refusal": null,
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "log_seq": 919016,
+      "recorded_at": "2026-09-21T10:05:29.761813Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 919018,
+      "id": "attach-daaa7d22-33db-42b9-a468-8d0300e34981",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-241ad0c886e15f53",
+      "refusal": null,
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "log_seq": 919019,
+      "recorded_at": "2026-09-21T10:05:42.078020Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -212,5 +301,14 @@
   "root_id": "event-2e94c65b-f252-470d-af5c-14b24d0d99e0",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-0a288c65-c2d8-455c-b930-cb7e07fcc2da",
+      "name": "monthly visitors decline",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
 }

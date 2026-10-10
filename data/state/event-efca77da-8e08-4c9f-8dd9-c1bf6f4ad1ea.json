@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-9428e0b1-4614-4a77-9e1f-877490709e39": {
+      "slot": "date of occurrence",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8",
+      "heads": [
+        "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "That injustice was in 1722, decades before the Declaration of Independence.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "1722",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Harvard historical records and contemporary records concerning Judah Monis",
+      "evidence_id": "5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3",
+      "basis": [
+        "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8"
+      ],
+      "last_confirmed": "1722",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
+      "as_of": "1722",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "eac755362e93799bf6a7daaddf88b7e6543188e94c0e89b4c220fae75399d4ca",
           "log_seq": 752200,
           "recorded_at": "2026-09-07T08:06:26.366938Z",
+          "slot_id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
           "evidence_asserted_at": "2026-08-13T21:52:37Z",
           "evidence_url": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
           "evidence_publisher": "The New York Times",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 752161,
@@ -83,7 +117,34 @@
     "log_seq": 752162
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8",
+      "envelope_seq": 895615,
+      "event_id": "event-efca77da-8e08-4c9f-8dd9-c1bf6f4ad1ea",
+      "id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
+      "name": "date of occurrence",
+      "refusal": null,
+      "log_seq": 895616,
+      "recorded_at": "2026-09-14T12:07:34.325914Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8",
+      "envelope_seq": 895613,
+      "event_id": "event-efca77da-8e08-4c9f-8dd9-c1bf6f4ad1ea",
+      "id": "slot-9dece470-ccf7-4f49-9575-60ca617b0f72",
+      "name": "date of occurrence",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 895614,
+      "recorded_at": "2026-09-14T12:07:09.460667Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -113,13 +174,28 @@
       "text_sha256": "eac755362e93799bf6a7daaddf88b7e6543188e94c0e89b4c220fae75399d4ca",
       "log_seq": 752200,
       "recorded_at": "2026-09-07T08:06:26.366938Z",
+      "slot_id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
       "evidence_asserted_at": "2026-08-13T21:52:37Z",
       "evidence_url": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 895617,
+      "id": "attach-anchor-slot-9428e0b1-4614-4a77-9e1f-877490709e39",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8",
+      "refusal": null,
+      "slot_id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
+      "log_seq": 895618,
+      "recorded_at": "2026-09-14T12:07:34.333185Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -136,5 +212,14 @@
   "root_id": "event-efca77da-8e08-4c9f-8dd9-c1bf6f4ad1ea",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-9428e0b1-4614-4a77-9e1f-877490709e39",
+      "name": "date of occurrence",
+      "value": null,
+      "unit": null,
+      "sentence": "That injustice was in 1722, decades before the Declaration of Independence.",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-cbaaf9bd3c5bd0a8"
+    }
+  ]
 }

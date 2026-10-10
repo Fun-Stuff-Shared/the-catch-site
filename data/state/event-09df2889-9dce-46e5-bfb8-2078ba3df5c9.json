@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55": {
+      "slot": "Netflix availability",
+      "occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+      "heads": [
+        "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Watch on Netflix .",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-14",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Netflix availability record for Don't Say Good Luck",
+      "evidence_id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+      "basis": [
+        "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d"
+      ],
+      "last_confirmed": "2026-08-14",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "as_of": "2026-08-14",
+      "occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -192,11 +225,103 @@
           "evidence_source_id": "nytimes_news_sitemap"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-14T09:03:40Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6504.html",
+      "envelope_seq": 171211,
+      "id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:18.116610Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6504.txt",
+      "text_sha256": "6c40292f4141fe6e7fa06363d2e54feb742a364bef164571ee02cbbcef81d833",
+      "url": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+      "verbatim_level": "article",
+      "log_seq": 521445,
+      "recorded_at": "2026-09-06T01:33:24.167436Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-14",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-14T09:03:40Z",
+          "checkable_against": "Don't Say Good Luck film credits and official synopsis",
+          "claim_type": "actual",
+          "envelope_seq": 778830,
+          "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+          "evidence_id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+          "figure": null,
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9679551a83c92257",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Sophie (Sunny Sandler) lands the leading role in her high school’s musical right as her mother, Elizabeth (Melanie Lynskey), finds out her cancer has returned in this drama directed by Julia Hart.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:18.116610Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 4058,
+          "span_start": 3860,
+          "speaker": "outlet's own",
+          "subject": "Don't Say Good Luck",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6504.txt",
+          "text_sha256": "6c40292f4141fe6e7fa06363d2e54feb742a364bef164571ee02cbbcef81d833",
+          "log_seq": 778831,
+          "recorded_at": "2026-09-08T01:08:53.189936Z",
+          "evidence_asserted_at": "2026-08-14T09:03:40Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-14",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-14T09:03:40Z",
+          "checkable_against": "Netflix availability record for Don't Say Good Luck",
+          "claim_type": "actual",
+          "envelope_seq": 778844,
+          "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+          "evidence_id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+          "figure": null,
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Watch on Netflix .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:18.116610Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 4374,
+          "span_start": 4356,
+          "speaker": "outlet's own",
+          "subject": "Don't Say Good Luck",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6504.txt",
+          "text_sha256": "6c40292f4141fe6e7fa06363d2e54feb742a364bef164571ee02cbbcef81d833",
+          "log_seq": 778845,
+          "recorded_at": "2026-09-08T01:09:02.034328Z",
+          "slot_id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+          "evidence_asserted_at": "2026-08-14T09:03:40Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "c403097b53",
-  "evaluated_at": "2026-09-07T19:41:33.697392Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 749853,
@@ -216,7 +341,34 @@
     "log_seq": 749854
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+      "envelope_seq": 779194,
+      "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+      "id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "name": "Netflix availability",
+      "refusal": null,
+      "log_seq": 779195,
+      "recorded_at": "2026-09-08T01:12:37.456427Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+      "envelope_seq": 779126,
+      "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+      "id": "slot-5726f8e0-1e69-44c1-8221-7148fb7c3904",
+      "name": "Netflix availability",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 779127,
+      "recorded_at": "2026-09-08T01:11:33.218887Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -383,9 +535,90 @@
       "evidence_url": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-14",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-14T09:03:40Z",
+      "checkable_against": "Don't Say Good Luck film credits and official synopsis",
+      "claim_type": "actual",
+      "envelope_seq": 778830,
+      "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+      "evidence_id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+      "figure": null,
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9679551a83c92257",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Sophie (Sunny Sandler) lands the leading role in her high school’s musical right as her mother, Elizabeth (Melanie Lynskey), finds out her cancer has returned in this drama directed by Julia Hart.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:18.116610Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 4058,
+      "span_start": 3860,
+      "speaker": "outlet's own",
+      "subject": "Don't Say Good Luck",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6504.txt",
+      "text_sha256": "6c40292f4141fe6e7fa06363d2e54feb742a364bef164571ee02cbbcef81d833",
+      "log_seq": 778831,
+      "recorded_at": "2026-09-08T01:08:53.189936Z",
+      "evidence_asserted_at": "2026-08-14T09:03:40Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-14",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-14T09:03:40Z",
+      "checkable_against": "Netflix availability record for Don't Say Good Luck",
+      "claim_type": "actual",
+      "envelope_seq": 778844,
+      "event_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
+      "evidence_id": "63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb",
+      "figure": null,
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Watch on Netflix .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:18.116610Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 4374,
+      "span_start": 4356,
+      "speaker": "outlet's own",
+      "subject": "Don't Say Good Luck",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6504.txt",
+      "text_sha256": "6c40292f4141fe6e7fa06363d2e54feb742a364bef164571ee02cbbcef81d833",
+      "log_seq": 778845,
+      "recorded_at": "2026-09-08T01:09:02.034328Z",
+      "slot_id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "evidence_asserted_at": "2026-08-14T09:03:40Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/movies/new-movie-releases.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 779196,
+      "id": "attach-anchor-slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d",
+      "refusal": null,
+      "slot_id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "log_seq": 779197,
+      "recorded_at": "2026-09-08T01:12:37.878189Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -402,5 +635,14 @@
   "root_id": "event-09df2889-9dce-46e5-bfb8-2078ba3df5c9",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-06af4605-cbcf-4833-abb0-a087ae7c6a55",
+      "name": "Netflix availability",
+      "value": null,
+      "unit": null,
+      "sentence": "Watch on Netflix .",
+      "occurrence_id": "occurrence-63f256e2c2bf94eb81fd3641e66c3483c6b38da7b0d3fb22dc8e140db18c64eb-9babfa40d464e20d"
+    }
+  ]
 }

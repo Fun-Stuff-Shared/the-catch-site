@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33": {
+      "slot": "daily TikTok minutes",
+      "occurrence_id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65",
+      "heads": [
+        "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "According to market intelligence firm Sensor Tower, US teens in 2025 spent about 90 minutes a day glued to TikTok.",
+      "span_check": "byte_exact",
+      "speaker": "Sensor Tower",
+      "figure": {
+        "unit": "minutes",
+        "value": "90"
+      },
+      "as_of": "2025",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Sensor Tower 2025 US teen TikTok usage report",
+      "evidence_id": "7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad",
+      "basis": [
+        "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65"
+      ],
+      "last_confirmed": "2025",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "as_of": "2025",
+      "occurrence_id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-27T09:25:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_2120.html",
+      "desk": "courts and legal",
+      "envelope_seq": 166049,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "COVER",
+      "gated_at": "2026-09-08T13:57:01.155618Z",
+      "id": "7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad",
+      "lang": "en",
+      "publisher": "Deutsche Welle",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:26.809109Z",
+      "root_evidence": "body:2782:2819",
+      "root_id": "www.dw.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "international_public",
+      "source_id": "dw_english",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2120.txt",
+      "text_sha256": "1451ddda18b651e3d3ee7983431978945511120a43607f9fa721a7132d6ee3fc",
+      "title": "Why social media addiction is so hard to regulate",
+      "url": "https://www.dw.com/en/why-social-media-addiction-is-so-hard-to-regulate/a-78482023?maca=en-rss-en-all-1573-xml-mrss",
+      "verbatim_level": "article",
+      "log_seq": 814445,
+      "recorded_at": "2026-09-08T13:57:01.155692Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-27T09:25:00Z",
+          "checkable_against": "Sensor Tower 2025 US teen TikTok usage report",
+          "claim_type": "actual",
+          "envelope_seq": 806188,
+          "event_id": "event-9a8f71b3-6d99-4397-9c35-0b63d69627ae",
+          "evidence_id": "7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad",
+          "figure": {
+            "unit": "minutes",
+            "value": "90"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "According to market intelligence firm Sensor Tower, US teens in 2025 spent about 90 minutes a day glued to TikTok.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:26.809109Z",
+          "root_id": "www.dw.com",
+          "span_check": "byte_exact",
+          "span_end": 2887,
+          "span_start": 2773,
+          "speaker": "Sensor Tower",
+          "subject": "US teens' TikTok use",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2120.txt",
+          "text_sha256": "1451ddda18b651e3d3ee7983431978945511120a43607f9fa721a7132d6ee3fc",
+          "log_seq": 806189,
+          "recorded_at": "2026-09-08T09:45:31.901413Z",
+          "slot_id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+          "evidence_asserted_at": "2026-08-27T09:25:00Z",
+          "evidence_url": "https://www.dw.com/en/why-social-media-addiction-is-so-hard-to-regulate/a-78482023?maca=en-rss-en-all-1573-xml-mrss",
+          "evidence_publisher": "Deutsche Welle",
+          "evidence_source_id": "dw_english"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 805966,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-9a8f71b3-6d99-4397-9c35-0b63d69627ae",
+    "kind": "market report",
+    "label": "Sensor Tower US teens TikTok use 2025",
+    "minted_at": "2026-09-08T09:44:00.786273Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad",
+    "period": "2025-12",
+    "refusal": null,
+    "status": "published",
+    "subject": "US teens' TikTok use",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad/54dbb5f0e593481eb4ea0acbe3bf6fbf.json",
+    "log_seq": 805967
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65",
+      "envelope_seq": 806292,
+      "event_id": "event-9a8f71b3-6d99-4397-9c35-0b63d69627ae",
+      "id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "name": "daily TikTok minutes",
+      "refusal": null,
+      "log_seq": 806293,
+      "recorded_at": "2026-09-08T09:46:27.409476Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-27T09:25:00Z",
+      "checkable_against": "Sensor Tower 2025 US teen TikTok usage report",
+      "claim_type": "actual",
+      "envelope_seq": 806188,
+      "event_id": "event-9a8f71b3-6d99-4397-9c35-0b63d69627ae",
+      "evidence_id": "7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad",
+      "figure": {
+        "unit": "minutes",
+        "value": "90"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "According to market intelligence firm Sensor Tower, US teens in 2025 spent about 90 minutes a day glued to TikTok.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:26.809109Z",
+      "root_id": "www.dw.com",
+      "span_check": "byte_exact",
+      "span_end": 2887,
+      "span_start": 2773,
+      "speaker": "Sensor Tower",
+      "subject": "US teens' TikTok use",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2120.txt",
+      "text_sha256": "1451ddda18b651e3d3ee7983431978945511120a43607f9fa721a7132d6ee3fc",
+      "log_seq": 806189,
+      "recorded_at": "2026-09-08T09:45:31.901413Z",
+      "slot_id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "evidence_asserted_at": "2026-08-27T09:25:00Z",
+      "evidence_url": "https://www.dw.com/en/why-social-media-addiction-is-so-hard-to-regulate/a-78482023?maca=en-rss-en-all-1573-xml-mrss",
+      "evidence_publisher": "Deutsche Welle",
+      "evidence_source_id": "dw_english"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 806294,
+      "id": "attach-anchor-slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "occurrence_id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65",
+      "refusal": null,
+      "slot_id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "log_seq": 806295,
+      "recorded_at": "2026-09-08T09:46:27.421182Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": null,
+  "root_id": "event-9a8f71b3-6d99-4397-9c35-0b63d69627ae",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e3c68af3-a301-40a5-9cd9-d10131a9ad33",
+      "name": "daily TikTok minutes",
+      "value": "90",
+      "unit": "minutes",
+      "sentence": "According to market intelligence firm Sensor Tower, US teens in 2025 spent about 90 minutes a day glued to TikTok.",
+      "occurrence_id": "occurrence-7e4c2ae52c9e08b2cfbbb32c8f1b3bddd31c8d006419e76a773ac539b66b2fad-40469f02cc581a65"
+    }
+  ]
+}

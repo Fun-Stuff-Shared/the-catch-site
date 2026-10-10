@@ -2,37 +2,37 @@
   "current_state": {
     "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df": {
       "slot": "withdrawal status",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af",
       "heads": [
-        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-50a754c396a674fd",
-        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-a888bf892afeb4e6",
         "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "“No one has told me to get off the ballot,” he said, noting that Speaker Mike Johnson and other top Republicans had yet to do so.",
+      "span_check": "byte_exact",
+      "speaker": "Max Miller",
+      "figure": null,
+      "as_of": "2026-08-04",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Public statements by Mike Johnson and other Republican leaders",
+      "evidence_id": "57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd",
       "basis": [
-        "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-50a754c396a674fd",
         "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-a888bf892afeb4e6",
         "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af"
       ],
       "last_confirmed": "2026-08-04",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     }
   },
   "timeline": [
     {
-      "kind": "disputed",
-      "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
-      "as_of": "2026-08-04"
-    },
-    {
       "kind": "first_value",
       "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
       "as_of": "2026-08-04",
-      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-50a754c396a674fd"
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-a888bf892afeb4e6"
     }
   ],
   "evidence": [
@@ -247,7 +247,6 @@
           "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
           "log_seq": 432208,
           "recorded_at": "2026-09-05T09:01:10.487894Z",
-          "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
           "evidence_asserted_at": "2026-08-04T23:04:14Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
           "evidence_publisher": "The New York Times",
@@ -516,8 +515,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "bbe870541b",
+  "evaluated_at": "2026-10-04T01:37:48.685831Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432143,
@@ -735,7 +734,6 @@
       "text_sha256": "e3ca798295341221013f2d426363b2db74c8e1634767a43d20d2b8e16a370f53",
       "log_seq": 432208,
       "recorded_at": "2026-09-05T09:01:10.487894Z",
-      "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
       "evidence_asserted_at": "2026-08-04T23:04:14Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
       "evidence_publisher": "The New York Times",
@@ -1005,19 +1003,6 @@
     {
       "accepted": true,
       "edge_kind": "attach",
-      "envelope_seq": 432593,
-      "id": "attach-772c422e-2c1b-4b1f-9950-87dc8a52d15f",
-      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-50a754c396a674fd",
-      "refusal": null,
-      "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
-      "log_seq": 432594,
-      "recorded_at": "2026-09-05T09:03:43.736985Z",
-      "family": "identity",
-      "label": "attach"
-    },
-    {
-      "accepted": true,
-      "edge_kind": "attach",
       "envelope_seq": 432591,
       "id": "attach-992dff40-bbdd-4d1e-b524-7056af3d80fe",
       "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af",
@@ -1040,17 +1025,77 @@
       "recorded_at": "2026-09-05T09:03:43.448528Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1108331,
+      "event_id": "event-365c304c-d8ea-411b-80b7-6e0f72c29548",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "No one has told me to get off the ballot"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-365c304c-d8ea-411b-80b7-6e0f72c29548",
+      "from_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af",
+      "id": "edge-relation-5d6c42c3fb65675c1b959077",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both statements confirm Max Miller's intent to remain in the race. Both are from the same New York Times article, though the quotes themselves do not name the publisher.",
+      "refusal": null,
+      "to_event_id": "event-365c304c-d8ea-411b-80b7-6e0f72c29548",
+      "to_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-a888bf892afeb4e6",
+      "log_seq": 1108332,
+      "recorded_at": "2026-10-04T01:13:43.997438Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-04T23:04:14Z",
+    "confirmations": [
+      {
+        "label": "“But Mr. Trump stopped short of asking Mr. Miller to step aside, and the congressman made it clear he had no intention of doing so, according to two people familiar with the Monday call who spoke on the condition of anonymity about a confidential conversation, which was reported earlier by Axios.”",
+        "value": "But Mr. Trump stopped short of asking Mr. Miller to step aside, and the congressman made it clear he had no intention of doing so, according to two people familiar with the Monday call who spoke on the condition of anonymity about a confidential conversation, which was reported earlier by Axios.",
+        "reports": [
+          {
+            "publisher": "The New York Times",
+            "url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
+            "dates": [
+              "2026-08-04"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df"
+        ],
+        "sentence": "“But Mr. Trump stopped short of asking Mr. Miller to step aside, and the congressman made it clear he had no intention of doing so, according to two people familiar with the Monday call who spoke on the condition of anonymity about a confidential conversation, which was reported earlier by Axios.”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-4dacfd81-4a76-40ed-81c1-4e421ba173df",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-5d6c42c3fb65675c1b959077",
+        "earlier_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-a888bf892afeb4e6",
+        "later_occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/max-miller-ohio-congress-trump.html",
+        "sentence": "On 2026-08-04, The New York Times reported “And by Tuesday evening, Mr. Miller had booked himself on Jake Tapper’s CNN program, where he again denied the allegations, refused to step aside, and tried to appeal directly to the president’s ego by claiming he was inspired to stay in the race by Mr. Trump’s own defiance after leaked audio surfaced of him boasting about groping women during his 2016 campaign.”; on the same day, The New York Times reported ““No one has told me to get off the ballot,” he said, noting that Speaker Mike Johnson and other top Republicans had yet to do so.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -1064,8 +1109,8 @@
       "name": "withdrawal status",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "“No one has told me to get off the ballot,” he said, noting that Speaker Mike Johnson and other top Republicans had yet to do so.",
+      "occurrence_id": "occurrence-57dd1c2f035512f5115a68e6610b381af1d4e67c8de595bb1b44a82666c504bd-eeb234109cb4f0af"
     }
   ]
 }

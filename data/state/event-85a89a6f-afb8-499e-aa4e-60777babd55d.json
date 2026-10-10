@@ -1,6 +1,73 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-e6e50c7c-f102-4812-9432-0309c5ddc622": {
+      "slot": "arrest date",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b",
+      "heads": [
+        "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In 2009, a Mexican woman named Ale was arrested in a kidnapping case in which a baby was taken from a hospital.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2009",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Mexican kidnapping case and court records involving Ale",
+      "evidence_id": "57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c",
+      "basis": [
+        "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b"
+      ],
+      "last_confirmed": "2009",
+      "freshness": "stale"
+    },
+    "slot-a359db46-4d4c-47a2-a773-c539f004f53c": {
+      "slot": "Oscar nominations",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d",
+      "heads": [
+        "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The film’s director, Maite Alberdi, has been nominated for an Oscar twice for Best Documentary (for “The Mole Agent” and “The Eternal Memory”).",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "Oscar nominations",
+        "value": "2"
+      },
+      "as_of": "2026-08-05",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Academy Awards nomination records",
+      "evidence_id": "57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c",
+      "basis": [
+        "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d"
+      ],
+      "last_confirmed": "2026-08-05",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
+      "as_of": "2009",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
+      "as_of": "2026-08-05",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -86,6 +153,7 @@
           "text_sha256": "3fcd8676f39d619d572f60e9cc425007d628cf7452be7ba62221673672e11391",
           "log_seq": 750014,
           "recorded_at": "2026-09-07T07:31:10.923260Z",
+          "slot_id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
           "evidence_asserted_at": "2026-08-05T11:58:11Z",
           "evidence_url": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
           "evidence_publisher": "The New York Times",
@@ -189,6 +257,7 @@
           "text_sha256": "3fcd8676f39d619d572f60e9cc425007d628cf7452be7ba62221673672e11391",
           "log_seq": 750028,
           "recorded_at": "2026-09-07T07:31:19.970390Z",
+          "slot_id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
           "evidence_asserted_at": "2026-08-05T11:58:11Z",
           "evidence_url": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
           "evidence_publisher": "The New York Times",
@@ -198,8 +267,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 749827,
@@ -219,7 +288,60 @@
     "log_seq": 749828
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d",
+      "envelope_seq": 1015360,
+      "event_id": "event-85a89a6f-afb8-499e-aa4e-60777babd55d",
+      "id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
+      "name": "Oscar nominations",
+      "refusal": null,
+      "log_seq": 1015361,
+      "recorded_at": "2026-10-01T20:11:20.341627Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b",
+      "envelope_seq": 1015348,
+      "event_id": "event-85a89a6f-afb8-499e-aa4e-60777babd55d",
+      "id": "slot-b8bc55c5-559c-44c3-bf55-fc980e7df231",
+      "name": "arrest date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1015349,
+      "recorded_at": "2026-10-01T20:10:42.698236Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d",
+      "envelope_seq": 1015350,
+      "event_id": "event-85a89a6f-afb8-499e-aa4e-60777babd55d",
+      "id": "slot-c4c68bf4-2b83-47eb-bab2-b0223a006281",
+      "name": "Oscar nominations",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1015351,
+      "recorded_at": "2026-10-01T20:10:45.069066Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b",
+      "envelope_seq": 1015355,
+      "event_id": "event-85a89a6f-afb8-499e-aa4e-60777babd55d",
+      "id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
+      "name": "arrest date",
+      "refusal": null,
+      "log_seq": 1015356,
+      "recorded_at": "2026-10-01T20:11:17.889047Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -282,6 +404,7 @@
       "text_sha256": "3fcd8676f39d619d572f60e9cc425007d628cf7452be7ba62221673672e11391",
       "log_seq": 750014,
       "recorded_at": "2026-09-07T07:31:10.923260Z",
+      "slot_id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
       "evidence_asserted_at": "2026-08-05T11:58:11Z",
       "evidence_url": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
       "evidence_publisher": "The New York Times",
@@ -385,13 +508,41 @@
       "text_sha256": "3fcd8676f39d619d572f60e9cc425007d628cf7452be7ba62221673672e11391",
       "log_seq": 750028,
       "recorded_at": "2026-09-07T07:31:19.970390Z",
+      "slot_id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
       "evidence_asserted_at": "2026-08-05T11:58:11Z",
       "evidence_url": "https://www.nytimes.com/2026/08/05/arts/television/netflix-new-august.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1015362,
+      "id": "attach-anchor-slot-a359db46-4d4c-47a2-a773-c539f004f53c",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d",
+      "refusal": null,
+      "slot_id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
+      "log_seq": 1015363,
+      "recorded_at": "2026-10-01T20:11:20.351209Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1015357,
+      "id": "attach-anchor-slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b",
+      "refusal": null,
+      "slot_id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
+      "log_seq": 1015358,
+      "recorded_at": "2026-10-01T20:11:17.897016Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -408,5 +559,22 @@
   "root_id": "event-85a89a6f-afb8-499e-aa4e-60777babd55d",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-e6e50c7c-f102-4812-9432-0309c5ddc622",
+      "name": "arrest date",
+      "value": null,
+      "unit": null,
+      "sentence": "In 2009, a Mexican woman named Ale was arrested in a kidnapping case in which a baby was taken from a hospital.",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-5ef63bef7860978b"
+    },
+    {
+      "slot_id": "slot-a359db46-4d4c-47a2-a773-c539f004f53c",
+      "name": "Oscar nominations",
+      "value": "2",
+      "unit": "Oscar nominations",
+      "sentence": "The film’s director, Maite Alberdi, has been nominated for an Oscar twice for Best Documentary (for “The Mole Agent” and “The Eternal Memory”).",
+      "occurrence_id": "occurrence-57f20fa284ec0051057461c6b10ed228dfaa3be76e6ea4b49271b7b84379aa3c-dbbe18da0372e93d"
+    }
+  ]
 }

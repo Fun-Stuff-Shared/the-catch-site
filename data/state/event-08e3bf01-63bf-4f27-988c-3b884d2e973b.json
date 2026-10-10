@@ -1,0 +1,244 @@
+{
+  "current_state": {
+    "slot-35849227-3e32-4226-9dd5-3ce59052483e": {
+      "slot": "purchase price",
+      "occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+      "heads": [
+        "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Amazon paid $195 million last week for a Chicago vertical warehouse it aims to use as a hub for same-day deliveries. (Crain’s Chicago Business)",
+      "span_check": "byte_exact",
+      "speaker": "Crain’s Chicago Business",
+      "figure": {
+        "unit": "million dollars",
+        "value": "195"
+      },
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Cook County property records and Amazon transaction disclosures",
+      "evidence_id": "090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7",
+      "basis": [
+        "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T11:12:00Z",
+      "canonical_url": "https://wsj.com/logistics-report/freight-broker-c-h-robinson-to-buy-smaller-rival-rxo-33b9989d",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T160033Z/raw/article_6092.html",
+      "desk": "business and companies",
+      "envelope_seq": 1150751,
+      "gate_verdict": "COVER",
+      "id": "090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7",
+      "lang": "en",
+      "published_at": "2026-10-06T11:12:00Z",
+      "publisher": "The Wall Street Journal",
+      "raw_sha256": "d7171568137269929a28cf9b41bd4d7e12220cf4208a8a9df4df18e0a766219d",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T16:10:51.340383Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.wsj.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T160033Z",
+      "source_family": "major_outlet",
+      "source_id": "wsj_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T160033Z/text/article_6092.txt",
+      "text_sha256": "5357d189975396b77a6be5b356488d3634c1771fefde4fdf92fecf65661c6176",
+      "title": "Freight Broker C.H. Robinson to Buy Smaller Rival RXO",
+      "updated_at": "2026-10-06T11:12:00Z",
+      "url": "https://www.wsj.com/logistics-report/freight-broker-c-h-robinson-to-buy-smaller-rival-rxo-33b9989d",
+      "verbatim_level": "article",
+      "log_seq": 1150752,
+      "recorded_at": "2026-10-06T16:26:32.180906Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-06T11:12:00Z",
+          "checkable_against": "Cook County property records and Amazon transaction disclosures",
+          "claim_type": "actual",
+          "envelope_seq": 1154095,
+          "event_id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+          "evidence_id": "090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7",
+          "figure": {
+            "unit": "million dollars",
+            "value": "195"
+          },
+          "fire_id": "4f295b8726c7083276b66c0fa62e8492",
+          "id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Amazon paid $195 million last week for a Chicago vertical warehouse it aims to use as a hub for same-day deliveries. (Crain’s Chicago Business)",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T16:10:51.340383Z",
+          "root_id": "www.wsj.com",
+          "span_check": "byte_exact",
+          "span_end": 5427,
+          "span_start": 5282,
+          "speaker": "Crain’s Chicago Business",
+          "subject": "Amazon purchase of Chicago vertical warehouse",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T160033Z/text/article_6092.txt",
+          "text_sha256": "5357d189975396b77a6be5b356488d3634c1771fefde4fdf92fecf65661c6176",
+          "time_action": "corrects",
+          "log_seq": 1154096,
+          "recorded_at": "2026-10-06T20:43:18.543761Z",
+          "slot_id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+          "evidence_asserted_at": "2026-10-06T11:12:00Z",
+          "evidence_url": "https://www.wsj.com/logistics-report/freight-broker-c-h-robinson-to-buy-smaller-rival-rxo-33b9989d",
+          "evidence_publisher": "The Wall Street Journal",
+          "evidence_source_id": "wsj_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-06T22:52:24.338556Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1154039,
+    "fire_id": "quarry-wire-scheduled-20261006T160033Z",
+    "follows": null,
+    "id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+    "kind": "acquisition",
+    "label": "Amazon buys Chicago vertical warehouse",
+    "minted_at": "2026-10-06T20:42:35.198717Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7",
+    "period": "2026-10-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "Amazon purchase of Chicago vertical warehouse",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T160033Z/090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7/15c6902c3b644897b9427581a9cdbc39.json",
+    "log_seq": 1154040
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+      "envelope_seq": 1159874,
+      "event_id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+      "id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "name": "purchase price",
+      "refusal": null,
+      "log_seq": 1159875,
+      "recorded_at": "2026-10-06T21:53:59.854713Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+      "envelope_seq": 1159851,
+      "event_id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+      "id": "slot-ff30c7a0-797d-432f-82d5-9cd4baaaeccd",
+      "name": "purchase price",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.wsj.com/logistics-report/freight-broker-c-h-robinson-to-buy-smaller-rival-rxo-33b9989d",
+        "source_id": "wsj_news_sitemap"
+      },
+      "log_seq": 1159852,
+      "recorded_at": "2026-10-06T21:53:36.725094Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-06T11:12:00Z",
+      "checkable_against": "Cook County property records and Amazon transaction disclosures",
+      "claim_type": "actual",
+      "envelope_seq": 1154095,
+      "event_id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+      "evidence_id": "090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7",
+      "figure": {
+        "unit": "million dollars",
+        "value": "195"
+      },
+      "fire_id": "4f295b8726c7083276b66c0fa62e8492",
+      "id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Amazon paid $195 million last week for a Chicago vertical warehouse it aims to use as a hub for same-day deliveries. (Crain’s Chicago Business)",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T16:10:51.340383Z",
+      "root_id": "www.wsj.com",
+      "span_check": "byte_exact",
+      "span_end": 5427,
+      "span_start": 5282,
+      "speaker": "Crain’s Chicago Business",
+      "subject": "Amazon purchase of Chicago vertical warehouse",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T160033Z/text/article_6092.txt",
+      "text_sha256": "5357d189975396b77a6be5b356488d3634c1771fefde4fdf92fecf65661c6176",
+      "time_action": "corrects",
+      "log_seq": 1154096,
+      "recorded_at": "2026-10-06T20:43:18.543761Z",
+      "slot_id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "evidence_asserted_at": "2026-10-06T11:12:00Z",
+      "evidence_url": "https://www.wsj.com/logistics-report/freight-broker-c-h-robinson-to-buy-smaller-rival-rxo-33b9989d",
+      "evidence_publisher": "The Wall Street Journal",
+      "evidence_source_id": "wsj_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1159876,
+      "id": "attach-anchor-slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489",
+      "refusal": null,
+      "slot_id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "log_seq": 1159877,
+      "recorded_at": "2026-10-06T21:53:59.889367Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "business and companies",
+  "follows": null,
+  "root_id": "event-08e3bf01-63bf-4f27-988c-3b884d2e973b",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-35849227-3e32-4226-9dd5-3ce59052483e",
+      "name": "purchase price",
+      "value": "195",
+      "unit": "million dollars",
+      "sentence": "Amazon paid $195 million last week for a Chicago vertical warehouse it aims to use as a hub for same-day deliveries. (Crain’s Chicago Business)",
+      "occurrence_id": "occurrence-090bda6884bd32c92037eb6f4ec862709c4db3e017bc0b21cc5df99f8e187ff7-4b984781de94a489"
+    }
+  ]
+}

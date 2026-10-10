@@ -251,6 +251,56 @@
       ],
       "last_confirmed": "2026-08-02",
       "freshness": "stale"
+    },
+    "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f": {
+      "slot": "spike onset date",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86",
+      "heads": [
+        "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Avvah Rossi, the director of horticulture at the Brooklyn Greenway Initiative , a nonprofit working toward a scenic waterfront path for walkers and cyclists that would go around the borough, noticed the spike in fireflies about three years ago.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2023",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Brooklyn Greenway Initiative observations or records",
+      "evidence_id": "5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3",
+      "basis": [
+        "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86"
+      ],
+      "last_confirmed": "2023",
+      "freshness": "stale"
+    },
+    "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe": {
+      "slot": "climate designation",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3",
+      "heads": [
+        "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "And although New York City’s recent designation as a subtropical climate may help explain their highly visual appearances over the past few years, climate change also poses a threat to them, said Jessica Ware, who leads the division of invertebrate zoology at the American Museum of Natural History.",
+      "span_check": "byte_exact",
+      "speaker": "Jessica Ware",
+      "figure": null,
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "New York City climate classification records and climate-change/firefly research",
+      "evidence_id": "5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3",
+      "basis": [
+        "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3"
+      ],
+      "last_confirmed": "2026-08-02",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -262,9 +312,21 @@
     },
     {
       "kind": "first_value",
+      "slot_id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
+      "as_of": "2023",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86"
+    },
+    {
+      "kind": "first_value",
       "slot_id": "slot-0891965e-a50a-4320-9b05-c46ce0b37e2a",
       "as_of": "2026-08-02",
       "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-a01a5864b832fca0"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
+      "as_of": "2026-08-02",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3"
     },
     {
       "kind": "first_value",
@@ -596,6 +658,7 @@
           "text_sha256": "3a74524471ef357897db3b9aafc633cd03af96b349de1126cd128c801db26451",
           "log_seq": 751278,
           "recorded_at": "2026-09-07T07:53:36.495989Z",
+          "slot_id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
           "evidence_asserted_at": "2026-08-02T11:21:47Z",
           "evidence_url": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
           "evidence_publisher": "The New York Times",
@@ -1414,6 +1477,7 @@
           "text_sha256": "3a74524471ef357897db3b9aafc633cd03af96b349de1126cd128c801db26451",
           "log_seq": 751166,
           "recorded_at": "2026-09-07T07:52:10.686186Z",
+          "slot_id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
           "evidence_asserted_at": "2026-08-02T11:21:47Z",
           "evidence_url": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
           "evidence_publisher": "The New York Times",
@@ -1530,8 +1594,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T17:18:06.541345Z",
   "event": {
     "accepted": true,
     "envelope_seq": 751133,
@@ -1554,6 +1618,17 @@
   "slots": [
     {
       "accepted": true,
+      "anchor_occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86",
+      "envelope_seq": 1151655,
+      "event_id": "event-9354b660-92dc-4f32-abc9-edaaff1f61fa",
+      "id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
+      "name": "spike onset date",
+      "refusal": null,
+      "log_seq": 1151656,
+      "recorded_at": "2026-10-06T16:58:12.963350Z"
+    },
+    {
+      "accepted": true,
       "anchor_occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-a01a5864b832fca0",
       "envelope_seq": 751605,
       "event_id": "event-9354b660-92dc-4f32-abc9-edaaff1f61fa",
@@ -1562,6 +1637,17 @@
       "refusal": null,
       "log_seq": 751606,
       "recorded_at": "2026-09-07T07:57:34.844688Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3",
+      "envelope_seq": 1151662,
+      "event_id": "event-9354b660-92dc-4f32-abc9-edaaff1f61fa",
+      "id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
+      "name": "climate designation",
+      "refusal": null,
+      "log_seq": 1151663,
+      "recorded_at": "2026-10-06T16:58:30.784385Z"
     },
     {
       "accepted": true,
@@ -1584,6 +1670,21 @@
       "refusal": null,
       "log_seq": 751580,
       "recorded_at": "2026-09-07T07:57:27.296305Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86",
+      "envelope_seq": 1151621,
+      "event_id": "event-9354b660-92dc-4f32-abc9-edaaff1f61fa",
+      "id": "slot-399adb9a-6168-450f-9975-95369a35e85e",
+      "name": "spike onset date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1151622,
+      "recorded_at": "2026-10-06T16:56:11.883022Z"
     },
     {
       "accepted": true,
@@ -1650,6 +1751,21 @@
       "refusal": null,
       "log_seq": 751590,
       "recorded_at": "2026-09-07T07:57:30.203093Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3",
+      "envelope_seq": 1151624,
+      "event_id": "event-9354b660-92dc-4f32-abc9-edaaff1f61fa",
+      "id": "slot-ff275527-8b9b-4802-b9eb-6bbd68bc5907",
+      "name": "climate designation",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1151625,
+      "recorded_at": "2026-10-06T16:56:22.141296Z"
     }
   ],
   "occurrences": [
@@ -1916,6 +2032,7 @@
       "text_sha256": "3a74524471ef357897db3b9aafc633cd03af96b349de1126cd128c801db26451",
       "log_seq": 751278,
       "recorded_at": "2026-09-07T07:53:36.495989Z",
+      "slot_id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
       "evidence_asserted_at": "2026-08-02T11:21:47Z",
       "evidence_url": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
       "evidence_publisher": "The New York Times",
@@ -2734,6 +2851,7 @@
       "text_sha256": "3a74524471ef357897db3b9aafc633cd03af96b349de1126cd128c801db26451",
       "log_seq": 751166,
       "recorded_at": "2026-09-07T07:52:10.686186Z",
+      "slot_id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
       "evidence_asserted_at": "2026-08-02T11:21:47Z",
       "evidence_url": "https://www.nytimes.com/2026/08/02/nyregion/nyc-fireflies.html",
       "evidence_publisher": "The New York Times",
@@ -2851,6 +2969,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 1151657,
+      "id": "attach-anchor-slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86",
+      "refusal": null,
+      "slot_id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
+      "log_seq": 1151658,
+      "recorded_at": "2026-10-06T16:58:15.052683Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 751607,
       "id": "attach-anchor-slot-0891965e-a50a-4320-9b05-c46ce0b37e2a",
       "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-a01a5864b832fca0",
@@ -2858,6 +2989,19 @@
       "slot_id": "slot-0891965e-a50a-4320-9b05-c46ce0b37e2a",
       "log_seq": 751608,
       "recorded_at": "2026-09-07T07:57:35.084039Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151664,
+      "id": "attach-anchor-slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3",
+      "refusal": null,
+      "slot_id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
+      "log_seq": 1151665,
+      "recorded_at": "2026-10-06T16:58:32.273558Z",
       "family": "identity",
       "label": "attach"
     },
@@ -3054,6 +3198,22 @@
       "unit": "species",
       "sentence": "Dr. Naczi observed that two species that do not light up are gone by late spring, while those that sparkle and glow, like the Big Dipper, tend to peter out by the first two weeks of August.",
       "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-3ef2ce180ba14ef3"
+    },
+    {
+      "slot_id": "slot-07bc9d61-4343-472b-945b-8aa23bad5a0f",
+      "name": "spike onset date",
+      "value": null,
+      "unit": null,
+      "sentence": "Avvah Rossi, the director of horticulture at the Brooklyn Greenway Initiative , a nonprofit working toward a scenic waterfront path for walkers and cyclists that would go around the borough, noticed the spike in fireflies about three years ago.",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-f185d36371aced86"
+    },
+    {
+      "slot_id": "slot-146f364a-8f33-4c54-97bc-d9e14204f9fe",
+      "name": "climate designation",
+      "value": null,
+      "unit": null,
+      "sentence": "And although New York City’s recent designation as a subtropical climate may help explain their highly visual appearances over the past few years, climate change also poses a threat to them, said Jessica Ware, who leads the division of invertebrate zoology at the American Museum of Natural History.",
+      "occurrence_id": "occurrence-5a2539fcb2907124e00d7e946d0b546236d1851841050c9441fd4a7d1855e3b3-2adc35ba114113e3"
     }
   ]
 }

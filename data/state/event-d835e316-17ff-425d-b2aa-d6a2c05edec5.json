@@ -1,0 +1,241 @@
+{
+  "current_state": {
+    "slot-e32e13a7-b2b0-4d35-8767-2c596807184e": {
+      "slot": "death toll",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+      "heads": [
+        "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "At least seven people have died following a ferry capsized off northern Cyprus on Sunday, according to media reports.",
+      "span_check": "byte_exact",
+      "speaker": "media reports",
+      "figure": {
+        "unit": "people",
+        "value": "7"
+      },
+      "as_of": "2026-08-30",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Northern Cyprus ferry accident casualty records",
+      "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "basis": [
+        "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b"
+      ],
+      "last_confirmed": "2026-08-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "as_of": "2026-08-30",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T07:00:06Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8670.html",
+      "desk": "world and conflict",
+      "envelope_seq": 171709,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.201367Z",
+      "id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "lang": "en",
+      "publisher": "UPI",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:33.566776Z",
+      "root_evidence": "body:1401:1422",
+      "root_id": "www.upi.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "upi_top_news",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+      "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+      "title": "On This Day, Aug. 30: U.S. evacuates Afghanistan, ending its longest war",
+      "url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+      "verbatim_level": "article",
+      "log_seq": 814588,
+      "recorded_at": "2026-09-08T13:57:01.201446Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-30",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-30T07:00:06Z",
+          "checkable_against": "Northern Cyprus ferry accident casualty records",
+          "claim_type": "actual",
+          "envelope_seq": 800060,
+          "event_id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+          "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+          "figure": {
+            "unit": "people",
+            "value": "7"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "At least seven people have died following a ferry capsized off northern Cyprus on Sunday, according to media reports.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:33.566776Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 4690,
+          "span_start": 4573,
+          "speaker": "media reports",
+          "subject": "Ferry off northern Cyprus",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+          "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+          "log_seq": 800061,
+          "recorded_at": "2026-09-08T08:40:23.960474Z",
+          "slot_id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+          "evidence_asserted_at": "2026-08-30T07:00:06Z",
+          "evidence_url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 799968,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+    "kind": "maritime accident",
+    "label": "Ferry capsizes off northern Cyprus",
+    "minted_at": "2026-09-08T08:39:55.926996Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+    "period": "2026-08-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "Ferry off northern Cyprus",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a/ca53cec9b6e34e65b15ff3966974aebd.json",
+    "log_seq": 799969
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+      "envelope_seq": 800156,
+      "event_id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+      "id": "slot-0507233d-7087-406e-a86b-884786b71be0",
+      "name": "death toll",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "media reports",
+        "source_id": "upi_top_news"
+      },
+      "log_seq": 800157,
+      "recorded_at": "2026-09-08T08:42:16.113224Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+      "envelope_seq": 800182,
+      "event_id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+      "id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "name": "death toll",
+      "refusal": null,
+      "log_seq": 800183,
+      "recorded_at": "2026-09-08T08:42:32.475521Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-30",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-30T07:00:06Z",
+      "checkable_against": "Northern Cyprus ferry accident casualty records",
+      "claim_type": "actual",
+      "envelope_seq": 800060,
+      "event_id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+      "evidence_id": "7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a",
+      "figure": {
+        "unit": "people",
+        "value": "7"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "At least seven people have died following a ferry capsized off northern Cyprus on Sunday, according to media reports.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:33.566776Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 4690,
+      "span_start": 4573,
+      "speaker": "media reports",
+      "subject": "Ferry off northern Cyprus",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8670.txt",
+      "text_sha256": "db3079b8a21ed6cd42fde99f24bf7eb65301ed018f61b644174382004c30c59b",
+      "log_seq": 800061,
+      "recorded_at": "2026-09-08T08:40:23.960474Z",
+      "slot_id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "evidence_asserted_at": "2026-08-30T07:00:06Z",
+      "evidence_url": "https://www.upi.com/Top_News/2026/08/30/On-This-Day-US-evacuates-Afghanistan-ending-its-longest-war/1541788059260/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 800184,
+      "id": "attach-anchor-slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b",
+      "refusal": null,
+      "slot_id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "log_seq": 800185,
+      "recorded_at": "2026-09-08T08:42:32.481578Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": null,
+  "root_id": "event-d835e316-17ff-425d-b2aa-d6a2c05edec5",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e32e13a7-b2b0-4d35-8767-2c596807184e",
+      "name": "death toll",
+      "value": "7",
+      "unit": "people",
+      "sentence": "At least seven people have died following a ferry capsized off northern Cyprus on Sunday, according to media reports.",
+      "occurrence_id": "occurrence-7558227499f8158d8228fce6403aaba619502d713004e9a3df1d816d6462b95a-0a01488d3364db8b"
+    }
+  ]
+}

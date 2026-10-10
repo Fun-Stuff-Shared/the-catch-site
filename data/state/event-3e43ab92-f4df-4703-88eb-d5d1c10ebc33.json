@@ -1,0 +1,231 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-07T08:45:04Z",
+      "canonical_url": "https://x.com/Reuters/status/2107754068923875601",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/raw/article_2966.html",
+      "desk": "business and companies",
+      "envelope_seq": 1182244,
+      "gate_verdict": "COVER",
+      "id": "31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b",
+      "lang": "en",
+      "published_at": "2026-10-07T08:45:04Z",
+      "publisher": "Reuters",
+      "raw_sha256": "71a0d8ac316fd597ed0cacbdc52f0ca5d7575e43e00a1582f8fbc85981b70936",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:05:49.188742Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_2966.txt",
+      "text_sha256": "9a67a4291f3c2475ceab6afdcf90411fecad2de4768da4ac04d52f5e60f37790",
+      "title": null,
+      "url": "https://x.com/Reuters/status/2107754068923875601",
+      "verbatim_level": "article",
+      "log_seq": 1182245,
+      "recorded_at": "2026-10-07T10:31:02.010060Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-07",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-07T08:45:04Z",
+          "checkable_against": "Uganda government approval record or official announcement authorizing the sale of Dangote refinery shares to domestic investors",
+          "claim_type": "actual",
+          "envelope_seq": 1189215,
+          "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+          "evidence_id": "31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b",
+          "figure": {
+            "unit": "status",
+            "value": "0"
+          },
+          "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+          "id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Uganda approves sale of Dangote refinery shares to domestic investors",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:05:49.188742Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 84,
+          "span_start": 15,
+          "speaker": "Reuters",
+          "subject": "Uganda government",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_2966.txt",
+          "text_sha256": "9a67a4291f3c2475ceab6afdcf90411fecad2de4768da4ac04d52f5e60f37790",
+          "time_action": "corrects",
+          "log_seq": 1189216,
+          "recorded_at": "2026-10-07T13:36:30.183513Z",
+          "evidence_asserted_at": "2026-10-07T08:45:04Z",
+          "evidence_url": "https://x.com/Reuters/status/2107754068923875601",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T13:42:45.183478Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1189211,
+    "fire_id": "quarry-wire-scheduled-20261007T100043Z",
+    "follows": null,
+    "id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+    "kind": "approval",
+    "label": "Uganda approves sale of Dangote refinery shares to domestic investors",
+    "minted_at": "2026-10-07T13:36:14.961715Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b",
+    "period": "2026-10-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Uganda government",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261007T100043Z/31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b/aee463e762704e2db8477edaee8ba718.json",
+    "log_seq": 1189212
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "envelope_seq": 1189227,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "id": "slot-13fece21-526e-4bbc-a97a-4b4a7371b3ea",
+      "name": "approval status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107754068923875601",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1189228,
+      "recorded_at": "2026-10-07T13:36:51.416563Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "envelope_seq": 1189229,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "id": "slot-af2b56a7-a83c-4897-aff8-69c3ff261c33",
+      "name": "approval status",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1189230,
+      "recorded_at": "2026-10-07T13:36:55.252258Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "envelope_seq": 1189233,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "id": "slot-c4b6c713-c137-4141-88cd-04304d89ce3b",
+      "name": "approval status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "reuters",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1189234,
+      "recorded_at": "2026-10-07T13:37:03.988729Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "envelope_seq": 1189231,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "id": "slot-d73aab83-42af-4e2a-8feb-88280056e30d",
+      "name": "approval status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "unknown",
+        "source_id": "unknown"
+      },
+      "log_seq": 1189232,
+      "recorded_at": "2026-10-07T13:36:59.692427Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "envelope_seq": 1189255,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "id": "slot-dc16c2bd-be69-47b9-b0a9-c9a1bc2c284d",
+      "name": "approval status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "document",
+        "source_id": "document"
+      },
+      "log_seq": 1189256,
+      "recorded_at": "2026-10-07T13:37:08.989702Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-07",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-07T08:45:04Z",
+      "checkable_against": "Uganda government approval record or official announcement authorizing the sale of Dangote refinery shares to domestic investors",
+      "claim_type": "actual",
+      "envelope_seq": 1189215,
+      "event_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+      "evidence_id": "31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b",
+      "figure": {
+        "unit": "status",
+        "value": "0"
+      },
+      "fire_id": "ba3b15b3aaf56d7614746e86027cfac9",
+      "id": "occurrence-31934124fe2df35251ecbbfa78e7f36b9667124dcc474f1a7bbce1dd5c963d2b-7ad03860b0f11316",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Uganda approves sale of Dangote refinery shares to domestic investors",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:05:49.188742Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 84,
+      "span_start": 15,
+      "speaker": "Reuters",
+      "subject": "Uganda government",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_2966.txt",
+      "text_sha256": "9a67a4291f3c2475ceab6afdcf90411fecad2de4768da4ac04d52f5e60f37790",
+      "time_action": "corrects",
+      "log_seq": 1189216,
+      "recorded_at": "2026-10-07T13:36:30.183513Z",
+      "evidence_asserted_at": "2026-10-07T08:45:04Z",
+      "evidence_url": "https://x.com/Reuters/status/2107754068923875601",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "business and companies",
+  "follows": null,
+  "root_id": "event-3e43ab92-f4df-4703-88eb-d5d1c10ebc33",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

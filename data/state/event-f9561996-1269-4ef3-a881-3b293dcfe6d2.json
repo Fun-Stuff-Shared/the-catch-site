@@ -55,6 +55,62 @@
       ],
       "last_confirmed": "2025-12",
       "freshness": "stale"
+    },
+    "slot-f2916fc7-24f5-4f0e-9437-70486fc09670": {
+      "slot": "students killed",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff",
+      "heads": [
+        "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "who killed two students",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "students",
+        "value": "2"
+      },
+      "as_of": "2025-12",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Brown University shooting investigation and casualty records",
+      "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+      "basis": [
+        "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff"
+      ],
+      "last_confirmed": "2025-12",
+      "freshness": "stale"
+    },
+    "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae": {
+      "slot": "people wounded",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248",
+      "heads": [
+        "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "wounded nine others last December",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "people",
+        "value": "9"
+      },
+      "as_of": "2025-12",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Brown University shooting investigation and casualty records",
+      "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+      "basis": [
+        "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248"
+      ],
+      "last_confirmed": "2025-12",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -69,6 +125,18 @@
       "slot_id": "slot-457af3bc-1229-45f7-b671-7cb2fa4252c2",
       "as_of": "2025-12",
       "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-d234b06bc6b6caed"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "as_of": "2025-12",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "as_of": "2025-12",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff"
     }
   ],
   "evidence": [
@@ -170,11 +238,117 @@
           "evidence_source_id": "nytimes_news_sitemap"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T19:04:31.885000Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9314.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 172055,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "COVER",
+      "gated_at": "2026-09-08T13:57:01.228831Z",
+      "id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+      "lang": "en",
+      "publisher": "The Washington Post",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:31:24.509801Z",
+      "root_evidence": "body:977:1058",
+      "root_id": "www.washingtonpost.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "washingtonpost_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9314.txt",
+      "text_sha256": "64fa9552f406c08ac2fb73899491fe391797bfb74e323fd7154f7231c084ba84",
+      "title": "Report finds flaws in hunt for Brown University shooter who went on to kill again",
+      "url": "https://www.washingtonpost.com/education/2026/08/28/delayed-video-access-slowed-search-brown-university-shooter-report-finds/",
+      "verbatim_level": "article",
+      "log_seq": 814683,
+      "recorded_at": "2026-09-08T13:57:01.228902Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-12",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T19:04:31.885000Z",
+          "checkable_against": "Brown University shooting investigation and casualty records",
+          "claim_type": "actual",
+          "envelope_seq": 799656,
+          "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+          "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+          "figure": {
+            "unit": "students",
+            "value": "2"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "who killed two students",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:31:24.509801Z",
+          "root_id": "www.washingtonpost.com",
+          "span_check": "byte_exact",
+          "span_end": 741,
+          "span_start": 718,
+          "speaker": "outlet's own",
+          "subject": "Brown University campus shooting",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9314.txt",
+          "text_sha256": "64fa9552f406c08ac2fb73899491fe391797bfb74e323fd7154f7231c084ba84",
+          "log_seq": 799657,
+          "recorded_at": "2026-09-08T08:37:18.805800Z",
+          "slot_id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+          "evidence_asserted_at": "2026-08-28T19:04:31.885000Z",
+          "evidence_url": "https://www.washingtonpost.com/education/2026/08/28/delayed-video-access-slowed-search-brown-university-shooter-report-finds/",
+          "evidence_publisher": "The Washington Post",
+          "evidence_source_id": "washingtonpost_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-12",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-28T19:04:31.885000Z",
+          "checkable_against": "Brown University shooting investigation and casualty records",
+          "claim_type": "actual",
+          "envelope_seq": 799658,
+          "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+          "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+          "figure": {
+            "unit": "people",
+            "value": "9"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "wounded nine others last December",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:31:24.509801Z",
+          "root_id": "www.washingtonpost.com",
+          "span_check": "byte_exact",
+          "span_end": 779,
+          "span_start": 746,
+          "speaker": "outlet's own",
+          "subject": "Brown University campus shooting",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9314.txt",
+          "text_sha256": "64fa9552f406c08ac2fb73899491fe391797bfb74e323fd7154f7231c084ba84",
+          "log_seq": 799659,
+          "recorded_at": "2026-09-08T08:37:18.852135Z",
+          "slot_id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+          "evidence_asserted_at": "2026-08-28T19:04:31.885000Z",
+          "evidence_url": "https://www.washingtonpost.com/education/2026/08/28/delayed-video-access-slowed-search-brown-university-shooter-report-finds/",
+          "evidence_publisher": "The Washington Post",
+          "evidence_source_id": "washingtonpost_news_sitemap"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 749833,
@@ -216,6 +390,28 @@
       "refusal": null,
       "log_seq": 750188,
       "recorded_at": "2026-09-07T07:33:00.927429Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248",
+      "envelope_seq": 799696,
+      "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+      "id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "name": "people wounded",
+      "refusal": null,
+      "log_seq": 799697,
+      "recorded_at": "2026-09-08T08:37:50.375299Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff",
+      "envelope_seq": 799682,
+      "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+      "id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "name": "students killed",
+      "refusal": null,
+      "log_seq": 799683,
+      "recorded_at": "2026-09-08T08:37:44.702566Z"
     }
   ],
   "occurrences": [
@@ -292,6 +488,80 @@
       "evidence_url": "https://www.nytimes.com/2026/08/03/us/brown-president-christina-paxson-resign.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-12",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T19:04:31.885000Z",
+      "checkable_against": "Brown University shooting investigation and casualty records",
+      "claim_type": "actual",
+      "envelope_seq": 799656,
+      "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+      "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+      "figure": {
+        "unit": "students",
+        "value": "2"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "who killed two students",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:31:24.509801Z",
+      "root_id": "www.washingtonpost.com",
+      "span_check": "byte_exact",
+      "span_end": 741,
+      "span_start": 718,
+      "speaker": "outlet's own",
+      "subject": "Brown University campus shooting",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9314.txt",
+      "text_sha256": "64fa9552f406c08ac2fb73899491fe391797bfb74e323fd7154f7231c084ba84",
+      "log_seq": 799657,
+      "recorded_at": "2026-09-08T08:37:18.805800Z",
+      "slot_id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "evidence_asserted_at": "2026-08-28T19:04:31.885000Z",
+      "evidence_url": "https://www.washingtonpost.com/education/2026/08/28/delayed-video-access-slowed-search-brown-university-shooter-report-finds/",
+      "evidence_publisher": "The Washington Post",
+      "evidence_source_id": "washingtonpost_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-12",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-28T19:04:31.885000Z",
+      "checkable_against": "Brown University shooting investigation and casualty records",
+      "claim_type": "actual",
+      "envelope_seq": 799658,
+      "event_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
+      "evidence_id": "758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89",
+      "figure": {
+        "unit": "people",
+        "value": "9"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "wounded nine others last December",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:31:24.509801Z",
+      "root_id": "www.washingtonpost.com",
+      "span_check": "byte_exact",
+      "span_end": 779,
+      "span_start": 746,
+      "speaker": "outlet's own",
+      "subject": "Brown University campus shooting",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9314.txt",
+      "text_sha256": "64fa9552f406c08ac2fb73899491fe391797bfb74e323fd7154f7231c084ba84",
+      "log_seq": 799659,
+      "recorded_at": "2026-09-08T08:37:18.852135Z",
+      "slot_id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "evidence_asserted_at": "2026-08-28T19:04:31.885000Z",
+      "evidence_url": "https://www.washingtonpost.com/education/2026/08/28/delayed-video-access-slowed-search-brown-university-shooter-report-finds/",
+      "evidence_publisher": "The Washington Post",
+      "evidence_source_id": "washingtonpost_news_sitemap"
     }
   ],
   "edges": [
@@ -320,6 +590,32 @@
       "recorded_at": "2026-09-07T07:33:01.166631Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 799698,
+      "id": "attach-anchor-slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248",
+      "refusal": null,
+      "slot_id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "log_seq": 799699,
+      "recorded_at": "2026-09-08T08:37:50.381450Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 799684,
+      "id": "attach-anchor-slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff",
+      "refusal": null,
+      "slot_id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "log_seq": 799685,
+      "recorded_at": "2026-09-08T08:37:44.709838Z",
+      "family": "identity",
+      "label": "attach"
     }
   ],
   "revision_timeline": {
@@ -333,7 +629,7 @@
     "edges": []
   },
   "status": "published",
-  "desk": null,
+  "desk": "crime and public safety",
   "follows": null,
   "root_id": "event-f9561996-1269-4ef3-a881-3b293dcfe6d2",
   "changed_since_previous": [],
@@ -354,6 +650,22 @@
       "unit": "people injured",
       "sentence": "Brown’s year of turbulence turned to tragedy in December, after a former Brown student opened fire on campus, killing two and injuring nine others.",
       "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-d234b06bc6b6caed"
+    },
+    {
+      "slot_id": "slot-f2916fc7-24f5-4f0e-9437-70486fc09670",
+      "name": "students killed",
+      "value": "2",
+      "unit": "students",
+      "sentence": "who killed two students",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-3014148132eb79ff"
+    },
+    {
+      "slot_id": "slot-ef2a32a5-7acb-4f38-b96a-94b2239aa4ae",
+      "name": "people wounded",
+      "value": "9",
+      "unit": "people",
+      "sentence": "wounded nine others last December",
+      "occurrence_id": "occurrence-758b4921bb2a294177670bc9081582f93a3c74c521145e5e67bd446e029bbf89-a6edd500c2656248"
     }
   ]
 }

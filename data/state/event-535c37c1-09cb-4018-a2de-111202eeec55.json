@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a": {
+      "slot": "pardon status",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354",
+      "heads": [
+        "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Days before the brainstorm session, Mr. Trump announced a symbolic pardon for Ms. Peters, whose state conviction fell outside the president’s clemency powers.",
+      "span_check": "byte_exact",
+      "speaker": "New York Times",
+      "figure": null,
+      "as_of": "2025-12",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Donald Trump’s pardon announcement and constitutional clemency authority",
+      "evidence_id": "599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af",
+      "basis": [
+        "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354"
+      ],
+      "last_confirmed": "2025-12",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
+      "as_of": "2025-12",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "12f731951fcf52c0ae50a9f8f3c8b052ca8517d98f8c471e28af3bd06c247e24",
           "log_seq": 750810,
           "recorded_at": "2026-09-07T07:45:38.945886Z",
+          "slot_id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
           "evidence_asserted_at": "2026-08-18T19:59:42Z",
           "evidence_url": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
           "evidence_publisher": "The New York Times",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750587,
@@ -83,7 +117,34 @@
     "log_seq": 750588
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354",
+      "envelope_seq": 943850,
+      "event_id": "event-535c37c1-09cb-4018-a2de-111202eeec55",
+      "id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
+      "name": "pardon status",
+      "refusal": null,
+      "log_seq": 943851,
+      "recorded_at": "2026-09-25T01:57:59.097940Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354",
+      "envelope_seq": 943848,
+      "event_id": "event-535c37c1-09cb-4018-a2de-111202eeec55",
+      "id": "slot-bb512b0f-c0e9-41fb-895d-fd9d9ac38852",
+      "name": "pardon status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 943849,
+      "recorded_at": "2026-09-25T01:57:45.930206Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -113,6 +174,7 @@
       "text_sha256": "12f731951fcf52c0ae50a9f8f3c8b052ca8517d98f8c471e28af3bd06c247e24",
       "log_seq": 750810,
       "recorded_at": "2026-09-07T07:45:38.945886Z",
+      "slot_id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
       "evidence_asserted_at": "2026-08-18T19:59:42Z",
       "evidence_url": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
       "evidence_publisher": "The New York Times",
@@ -120,6 +182,19 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 943852,
+      "id": "attach-anchor-slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354",
+      "refusal": null,
+      "slot_id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
+      "log_seq": 943853,
+      "recorded_at": "2026-09-25T01:57:59.104893Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": false,
       "edge_kind": "cites",
@@ -152,5 +227,14 @@
   "root_id": "event-535c37c1-09cb-4018-a2de-111202eeec55",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-9c97b5c5-8e99-4c8f-805c-6590cc6f910a",
+      "name": "pardon status",
+      "value": null,
+      "unit": null,
+      "sentence": "Days before the brainstorm session, Mr. Trump announced a symbolic pardon for Ms. Peters, whose state conviction fell outside the president’s clemency powers.",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-2c9cbccf917cb354"
+    }
+  ]
 }

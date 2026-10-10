@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914": {
+      "slot": "average salary",
+      "occurrence_id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6",
+      "heads": [
+        "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Now, the average MLB salary is $5.34 million, with two players – Juan Soto and Shohei Ohtani – receiving free-agent contracts worth at least $700 million.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "million dollars",
+        "value": "5.34"
+      },
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "MLB salary data and Juan Soto and Shohei Ohtani free-agent contracts",
+      "evidence_id": "0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743",
+      "basis": [
+        "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6"
+      ],
+      "last_confirmed": "2026-08-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "as_of": "2026-08-30",
+      "occurrence_id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T10:30:51.672622209Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_8995.html",
+      "envelope_seq": 149379,
+      "id": "0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743",
+      "publisher": "USA Today",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:33.469204Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8995.txt",
+      "text_sha256": "f6f55fc25c94c3c1a0be989974d806aaa973e50800841f978378e7534112853b",
+      "title": "Hall of Famer survived Yankees owner George Steinbrenner: ’I'll never reclaim those years'",
+      "url": "https://www.usatoday.com/story/sports/mlb/columnist/bob-nightengale/2026/08/30/dave-winfield-george-steinbrenner-yankees/91533871007/",
+      "verbatim_level": "article",
+      "log_seq": 517059,
+      "recorded_at": "2026-09-06T01:33:22.862299Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-30",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-30T10:30:51.672622Z",
+          "checkable_against": "MLB salary data and Juan Soto and Shohei Ohtani free-agent contracts",
+          "claim_type": "actual",
+          "envelope_seq": 773787,
+          "event_id": "event-a5983901-6f00-44bf-8a8c-fc0a475b4e61",
+          "evidence_id": "0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743",
+          "figure": {
+            "unit": "million dollars",
+            "value": "5.34"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Now, the average MLB salary is $5.34 million, with two players – Juan Soto and Shohei Ohtani – receiving free-agent contracts worth at least $700 million.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:33.469204Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 7613,
+          "span_start": 7455,
+          "speaker": "outlet's own",
+          "subject": "Major League Baseball average salary",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8995.txt",
+          "text_sha256": "f6f55fc25c94c3c1a0be989974d806aaa973e50800841f978378e7534112853b",
+          "log_seq": 773788,
+          "recorded_at": "2026-09-07T21:18:19.241841Z",
+          "slot_id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+          "evidence_asserted_at": "2026-08-30T10:30:51.672622209Z",
+          "evidence_url": "https://www.usatoday.com/story/sports/mlb/columnist/bob-nightengale/2026/08/30/dave-winfield-george-steinbrenner-yankees/91533871007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 773665,
+    "fire_id": "quarry-wire-scheduled-20260830T220000Z",
+    "follows": null,
+    "id": "event-a5983901-6f00-44bf-8a8c-fc0a475b4e61",
+    "kind": "salary data",
+    "label": "MLB average salary reported as $5.34 million",
+    "minted_at": "2026-09-07T21:16:58.750480Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Major League Baseball average salary",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T220000Z/0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743/bfea06be9c8a484995da4453b01ba64e.json",
+    "log_seq": 773666
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6",
+      "envelope_seq": 773899,
+      "event_id": "event-a5983901-6f00-44bf-8a8c-fc0a475b4e61",
+      "id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "name": "average salary",
+      "refusal": null,
+      "log_seq": 773900,
+      "recorded_at": "2026-09-07T21:19:17.316979Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-30T10:30:51.672622Z",
+      "checkable_against": "MLB salary data and Juan Soto and Shohei Ohtani free-agent contracts",
+      "claim_type": "actual",
+      "envelope_seq": 773787,
+      "event_id": "event-a5983901-6f00-44bf-8a8c-fc0a475b4e61",
+      "evidence_id": "0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743",
+      "figure": {
+        "unit": "million dollars",
+        "value": "5.34"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Now, the average MLB salary is $5.34 million, with two players – Juan Soto and Shohei Ohtani – receiving free-agent contracts worth at least $700 million.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:33.469204Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 7613,
+      "span_start": 7455,
+      "speaker": "outlet's own",
+      "subject": "Major League Baseball average salary",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8995.txt",
+      "text_sha256": "f6f55fc25c94c3c1a0be989974d806aaa973e50800841f978378e7534112853b",
+      "log_seq": 773788,
+      "recorded_at": "2026-09-07T21:18:19.241841Z",
+      "slot_id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "evidence_asserted_at": "2026-08-30T10:30:51.672622209Z",
+      "evidence_url": "https://www.usatoday.com/story/sports/mlb/columnist/bob-nightengale/2026/08/30/dave-winfield-george-steinbrenner-yankees/91533871007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 773901,
+      "id": "attach-anchor-slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "occurrence_id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6",
+      "refusal": null,
+      "slot_id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "log_seq": 773902,
+      "recorded_at": "2026-09-07T21:19:17.565801Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-a5983901-6f00-44bf-8a8c-fc0a475b4e61",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-5c9a335e-f4c8-4876-9fa6-84899ea4c914",
+      "name": "average salary",
+      "value": "5.34",
+      "unit": "million dollars",
+      "sentence": "Now, the average MLB salary is $5.34 million, with two players – Juan Soto and Shohei Ohtani – receiving free-agent contracts worth at least $700 million.",
+      "occurrence_id": "occurrence-0c51f8e5232e1dba9522ccea68570f49daaca29e28dbeec7a5b91bc58ca14743-156bc05b596d7ec6"
+    }
+  ]
+}

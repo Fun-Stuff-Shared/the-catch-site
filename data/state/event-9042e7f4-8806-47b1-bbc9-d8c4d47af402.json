@@ -1,0 +1,225 @@
+{
+  "current_state": {
+    "slot-4c5eefbe-a719-460f-befa-b67d3290b152": {
+      "slot": "resignation date",
+      "occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+      "heads": [
+        "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "He resigned as vice chair February 28, 2025, but remains a Fed governor for a term that extends to January 2032.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2025-02-28",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Federal Reserve announcement and Board membership records",
+      "evidence_id": "6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e",
+      "basis": [
+        "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30"
+      ],
+      "last_confirmed": "2025-02-28",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "as_of": "2025-02-28",
+      "occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-06-29T15:36:57Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1710.html",
+      "envelope_seq": 165587,
+      "id": "6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e",
+      "publisher": "Brookings Institution",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:02.954909Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.brookings.edu",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "think_tank",
+      "source_id": "brookings_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1710.txt",
+      "text_sha256": "005be1a92db6f54adeafee8445a2e445b85c367421abfd0277ffc0ab0cf8ab27",
+      "url": "https://www.brookings.edu/articles/who-has-to-leave-the-federal-reserve-next-2/",
+      "verbatim_level": "article",
+      "log_seq": 518633,
+      "recorded_at": "2026-09-06T01:33:23.366088Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-02-28",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-06-29T15:36:57Z",
+          "checkable_against": "Federal Reserve announcement and Board membership records",
+          "claim_type": "actual",
+          "envelope_seq": 791129,
+          "event_id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+          "evidence_id": "6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e",
+          "figure": null,
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "He resigned as vice chair February 28, 2025, but remains a Fed governor for a term that extends to January 2032.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:02.954909Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 2945,
+          "span_start": 2833,
+          "speaker": "outlet's own",
+          "subject": "Michael Barr",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1710.txt",
+          "text_sha256": "005be1a92db6f54adeafee8445a2e445b85c367421abfd0277ffc0ab0cf8ab27",
+          "log_seq": 791130,
+          "recorded_at": "2026-09-08T05:24:47.773905Z",
+          "slot_id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+          "evidence_asserted_at": "2026-06-29T15:36:57Z",
+          "evidence_url": "https://www.brookings.edu/articles/who-has-to-leave-the-federal-reserve-next-2/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T17:18:06.541345Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 791043,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+    "kind": "resignation",
+    "label": "Michael Barr resigned as Federal Reserve vice chair",
+    "minted_at": "2026-09-08T05:24:02.762410Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e",
+    "period": "2025-02-28",
+    "refusal": null,
+    "status": "published",
+    "subject": "Michael Barr",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e/c47d084966484387b745d5eb13d27453.json",
+    "log_seq": 791044
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+      "envelope_seq": 1151215,
+      "event_id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+      "id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "name": "resignation date",
+      "refusal": null,
+      "log_seq": 1151216,
+      "recorded_at": "2026-10-06T16:42:54.518947Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+      "envelope_seq": 1151195,
+      "event_id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+      "id": "slot-782ef011-b68f-427b-9680-18f570631e6e",
+      "name": "resignation date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.brookings.edu/articles/who-has-to-leave-the-federal-reserve-next-2/",
+        "source_id": "brookings_sitemap"
+      },
+      "log_seq": 1151196,
+      "recorded_at": "2026-10-06T16:42:32.017267Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-02-28",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-06-29T15:36:57Z",
+      "checkable_against": "Federal Reserve announcement and Board membership records",
+      "claim_type": "actual",
+      "envelope_seq": 791129,
+      "event_id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+      "evidence_id": "6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e",
+      "figure": null,
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "He resigned as vice chair February 28, 2025, but remains a Fed governor for a term that extends to January 2032.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:02.954909Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 2945,
+      "span_start": 2833,
+      "speaker": "outlet's own",
+      "subject": "Michael Barr",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1710.txt",
+      "text_sha256": "005be1a92db6f54adeafee8445a2e445b85c367421abfd0277ffc0ab0cf8ab27",
+      "log_seq": 791130,
+      "recorded_at": "2026-09-08T05:24:47.773905Z",
+      "slot_id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "evidence_asserted_at": "2026-06-29T15:36:57Z",
+      "evidence_url": "https://www.brookings.edu/articles/who-has-to-leave-the-federal-reserve-next-2/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151217,
+      "id": "attach-anchor-slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30",
+      "refusal": null,
+      "slot_id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "log_seq": 1151218,
+      "recorded_at": "2026-10-06T16:42:54.540459Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-9042e7f4-8806-47b1-bbc9-d8c4d47af402",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-4c5eefbe-a719-460f-befa-b67d3290b152",
+      "name": "resignation date",
+      "value": null,
+      "unit": null,
+      "sentence": "He resigned as vice chair February 28, 2025, but remains a Fed governor for a term that extends to January 2032.",
+      "occurrence_id": "occurrence-6f198f0ea337151064f92825de783caf48aecd50c33666f97a543e774294244e-074f665544278e30"
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "current_state": {
+    "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f": {
+      "slot": "banks pausing sales",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+      "heads": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Mark Walter's insurer Delaware Life sees two banks pause sale of its products amid probes",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "banks",
+        "value": "2"
+      },
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Delaware Life product distribution records and the two banks' product-sale records",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "basis": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9560.html",
+      "envelope_seq": 172421,
+      "id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "x_cnbc_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "url": "https://x.com/CNBC/status/2093442068878082415",
+      "verbatim_level": "article",
+      "log_seq": 522050,
+      "recorded_at": "2026-09-06T01:33:24.336091Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-28T20:54:18Z",
+          "checkable_against": "Truist and Fifth Third distribution records for Delaware Life products",
+          "claim_type": "actual",
+          "envelope_seq": 783517,
+          "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+          "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Truist and Fifth Third pulling distribution is the tell.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:37.148138Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 1462,
+          "span_start": 1406,
+          "speaker": "fuelmeup",
+          "subject": "Delaware Life",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+          "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+          "log_seq": 783518,
+          "recorded_at": "2026-09-08T02:59:12.356877Z",
+          "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+          "evidence_asserted_at": "2026-08-28T20:54:18Z",
+          "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-28T20:54:18Z",
+          "checkable_against": "Delaware Life product distribution records and the two banks' product-sale records",
+          "claim_type": "actual",
+          "envelope_seq": 783423,
+          "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+          "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+          "figure": {
+            "unit": "banks",
+            "value": "2"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Mark Walter's insurer Delaware Life sees two banks pause sale of its products amid probes",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:37.148138Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 101,
+          "span_start": 12,
+          "speaker": "outlet's own",
+          "subject": "Delaware Life",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+          "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+          "log_seq": 783424,
+          "recorded_at": "2026-09-08T02:57:56.564947Z",
+          "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+          "evidence_asserted_at": "2026-08-28T20:54:18Z",
+          "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T17:33:42.341121Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 783409,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+    "kind": "distribution pause",
+    "label": "Two banks pause Delaware Life product sales amid probes",
+    "minted_at": "2026-09-08T02:57:44.796749Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+    "period": "2026-08-28",
+    "refusal": null,
+    "status": "published",
+    "subject": "Delaware Life",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b/b4328d82e3dd4c87a4a0a0873083343e.json",
+    "log_seq": 783410
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+      "envelope_seq": 783437,
+      "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "name": "banks pausing sales",
+      "refusal": null,
+      "log_seq": 783438,
+      "recorded_at": "2026-09-08T02:58:11.197235Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "checkable_against": "Truist and Fifth Third distribution records for Delaware Life products",
+      "claim_type": "actual",
+      "envelope_seq": 783517,
+      "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Truist and Fifth Third pulling distribution is the tell.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 1462,
+      "span_start": 1406,
+      "speaker": "fuelmeup",
+      "subject": "Delaware Life",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "log_seq": 783518,
+      "recorded_at": "2026-09-08T02:59:12.356877Z",
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "evidence_asserted_at": "2026-08-28T20:54:18Z",
+      "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "checkable_against": "Delaware Life product distribution records and the two banks' product-sale records",
+      "claim_type": "actual",
+      "envelope_seq": 783423,
+      "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "figure": {
+        "unit": "banks",
+        "value": "2"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Mark Walter's insurer Delaware Life sees two banks pause sale of its products amid probes",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 101,
+      "span_start": 12,
+      "speaker": "outlet's own",
+      "subject": "Delaware Life",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "log_seq": 783424,
+      "recorded_at": "2026-09-08T02:57:56.564947Z",
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "evidence_asserted_at": "2026-08-28T20:54:18Z",
+      "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783537,
+      "id": "attach-52f17afa-1252-49ad-bf65-cc28990378ce",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+      "refusal": null,
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "log_seq": 783538,
+      "recorded_at": "2026-09-08T02:59:24.746028Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783439,
+      "id": "attach-anchor-slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+      "refusal": null,
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "log_seq": 783440,
+      "recorded_at": "2026-09-08T02:58:11.412947Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1119416,
+      "event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "two banks"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "from_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+      "id": "edge-relation-5e6d6d084e7c1f353970945b",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "The NEW occurrence mentions 'two banks' pausing sales. The EXISTING occurrence identifies 'Truist and Fifth Third' as those pulling distribution. Both occurrences are sourced from the same CNBC X post.",
+      "refusal": null,
+      "to_event_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+      "to_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+      "log_seq": 1119417,
+      "recorded_at": "2026-10-04T17:12:12.323012Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-08-28T20:54:18Z",
+    "confirmations": [
+      {
+        "label": "“2 banks”",
+        "value": "2 banks",
+        "reports": [
+          {
+            "publisher": "CNBC",
+            "url": "https://x.com/CNBC/status/2093442068878082415",
+            "dates": [
+              "2026-08-28"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f"
+        ],
+        "sentence": "“2 banks”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-5e6d6d084e7c1f353970945b",
+        "earlier_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-5fce8d4ddc26fa36",
+        "later_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a",
+        "earlier_evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+        "later_evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+        "sentence": "On 2026-08-28, CNBC reported “Truist and Fifth Third pulling distribution is the tell.”; on the same day, CNBC reported “Mark Walter's insurer Delaware Life sees two banks pause sale of its products amid probes”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-4bbb8c14-348d-4fd2-b18f-67fc94b7ae67",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e4bdb3e8-022a-4fae-ad76-455e553e5e4f",
+      "name": "banks pausing sales",
+      "value": "2",
+      "unit": "banks",
+      "sentence": "Mark Walter's insurer Delaware Life sees two banks pause sale of its products amid probes",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-9928c6d99c85797a"
+    }
+  ]
+}

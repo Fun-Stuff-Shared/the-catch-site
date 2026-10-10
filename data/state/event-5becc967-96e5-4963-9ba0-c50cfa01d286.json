@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28": {
+      "slot": "operating costs",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f",
+      "heads": [
+        "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "El Departamento de Estado le dijo al Congreso en abril que había gastado $3,000 millones en costos operativos, incluyendo en suministros de la industria petrolera y en salarios de los trabajadores gubernamentales.",
+      "span_check": "byte_exact",
+      "speaker": "U.S. Department of State",
+      "figure": {
+        "unit": "dólares",
+        "value": "3000000000"
+      },
+      "as_of": "2026-04",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "U.S. Department of State report to Congress on Venezuela operating costs",
+      "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "basis": [
+        "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f"
+      ],
+      "last_confirmed": "2026-04",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "as_of": "2026-04",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-06T20:28:46Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0671.html",
+      "desk": "government and politics",
+      "envelope_seq": 164581,
+      "gate_reason": "Not English.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.092123Z",
+      "id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "lang": "es",
+      "publisher": "PolitiFact",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:52.362779Z",
+      "root_evidence": "publisher_host",
+      "root_id": "politifact.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "fact_checker",
+      "source_id": "politifact_factchecks",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+      "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+      "title": "Trump dice que Venezuela, EEUU ganan cientos de miles de millones en petróleo, pero infló la cifra",
+      "url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+      "verbatim_level": "article",
+      "log_seq": 814252,
+      "recorded_at": "2026-09-08T13:57:01.092198Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-04",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-06T20:28:46Z",
+          "checkable_against": "U.S. Department of State report to Congress on Venezuela operating costs",
+          "claim_type": "actual",
+          "envelope_seq": 803602,
+          "event_id": "event-5becc967-96e5-4963-9ba0-c50cfa01d286",
+          "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+          "figure": {
+            "unit": "dólares",
+            "value": "3000000000"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "El Departamento de Estado le dijo al Congreso en abril que había gastado $3,000 millones en costos operativos, incluyendo en suministros de la industria petrolera y en salarios de los trabajadores gubernamentales.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:52.362779Z",
+          "root_id": "politifact.com",
+          "span_check": "byte_exact",
+          "span_end": 7180,
+          "span_start": 6966,
+          "speaker": "U.S. Department of State",
+          "subject": "U.S. spending on Venezuela oil operations",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+          "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+          "log_seq": 803603,
+          "recorded_at": "2026-09-08T09:21:13.330225Z",
+          "slot_id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+          "evidence_asserted_at": "2026-08-06T20:28:46Z",
+          "evidence_url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+          "evidence_publisher": "PolitiFact",
+          "evidence_source_id": "politifact_factchecks"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 803456,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-5becc967-96e5-4963-9ba0-c50cfa01d286",
+    "kind": "report",
+    "label": "U.S. State Department reports Venezuela operating costs",
+    "minted_at": "2026-09-08T09:20:34.400492Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+    "period": "2026-04",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. spending on Venezuela oil operations",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6/b7331bb210cd4d069b8cb0a31e602bb4.json",
+    "log_seq": 803457
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f",
+      "envelope_seq": 803896,
+      "event_id": "event-5becc967-96e5-4963-9ba0-c50cfa01d286",
+      "id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "name": "operating costs",
+      "refusal": null,
+      "log_seq": 803897,
+      "recorded_at": "2026-09-08T09:22:32.371444Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-04",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-06T20:28:46Z",
+      "checkable_against": "U.S. Department of State report to Congress on Venezuela operating costs",
+      "claim_type": "actual",
+      "envelope_seq": 803602,
+      "event_id": "event-5becc967-96e5-4963-9ba0-c50cfa01d286",
+      "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "figure": {
+        "unit": "dólares",
+        "value": "3000000000"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "El Departamento de Estado le dijo al Congreso en abril que había gastado $3,000 millones en costos operativos, incluyendo en suministros de la industria petrolera y en salarios de los trabajadores gubernamentales.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:52.362779Z",
+      "root_id": "politifact.com",
+      "span_check": "byte_exact",
+      "span_end": 7180,
+      "span_start": 6966,
+      "speaker": "U.S. Department of State",
+      "subject": "U.S. spending on Venezuela oil operations",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+      "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+      "log_seq": 803603,
+      "recorded_at": "2026-09-08T09:21:13.330225Z",
+      "slot_id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "evidence_asserted_at": "2026-08-06T20:28:46Z",
+      "evidence_url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+      "evidence_publisher": "PolitiFact",
+      "evidence_source_id": "politifact_factchecks"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 803898,
+      "id": "attach-anchor-slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f",
+      "refusal": null,
+      "slot_id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "log_seq": 803899,
+      "recorded_at": "2026-09-08T09:22:32.377680Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-5becc967-96e5-4963-9ba0-c50cfa01d286",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c627b4ad-6bfe-4f02-9589-6fe017e2fd28",
+      "name": "operating costs",
+      "value": "3000000000",
+      "unit": "dólares",
+      "sentence": "El Departamento de Estado le dijo al Congreso en abril que había gastado $3,000 millones en costos operativos, incluyendo en suministros de la industria petrolera y en salarios de los trabajadores gubernamentales.",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-53c4508a87ef924f"
+    }
+  ]
+}

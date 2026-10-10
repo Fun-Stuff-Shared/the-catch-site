@@ -1,0 +1,359 @@
+{
+  "current_state": {
+    "slot-4698bdd1-2f74-444b-8d04-253c005e0f98": {
+      "slot": "stock cumulative return",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728",
+      "heads": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "For that entire period, the cumulative return for the S&P 500 was minus 46 percent, including dividends.",
+      "span_check": "byte_exact",
+      "speaker": "Jeff Sommer",
+      "figure": {
+        "unit": "percent",
+        "value": "-46"
+      },
+      "as_of": "2009-03-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "FactSet S&P 500 total-return data",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "basis": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728"
+      ],
+      "last_confirmed": "2009-03-09",
+      "freshness": "stale"
+    },
+    "slot-6aa3df30-80d3-465a-8fcd-d61e44251870": {
+      "slot": "bond cumulative return",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135",
+      "heads": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "By contrast, over the same stretch, the Bloomberg U.S. Aggregate Bond Index, a widely followed benchmark for investment grade bonds, rose 72.3 percent.",
+      "span_check": "byte_exact",
+      "speaker": "Jeff Sommer",
+      "figure": {
+        "unit": "percent",
+        "value": "72.3"
+      },
+      "as_of": "2009-03-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "FactSet Bloomberg U.S. Aggregate Bond Index total-return data",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "basis": [
+        "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135"
+      ],
+      "last_confirmed": "2009-03-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "as_of": "2009-03-09",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "as_of": "2009-03-09",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6484.html",
+      "envelope_seq": 171173,
+      "id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "verbatim_level": "article",
+      "log_seq": 521426,
+      "recorded_at": "2026-09-06T01:33:24.162114Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2009-03-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-17T20:23:02Z",
+          "checkable_against": "FactSet Bloomberg U.S. Aggregate Bond Index total-return data",
+          "claim_type": "actual",
+          "envelope_seq": 780704,
+          "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+          "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+          "figure": {
+            "unit": "percent",
+            "value": "72.3"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "By contrast, over the same stretch, the Bloomberg U.S. Aggregate Bond Index, a widely followed benchmark for investment grade bonds, rose 72.3 percent.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:15.529202Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 6699,
+          "span_start": 6548,
+          "speaker": "Jeff Sommer",
+          "subject": "S&P 500 and Bloomberg U.S. Aggregate Bond Index",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+          "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+          "log_seq": 780705,
+          "recorded_at": "2026-09-08T01:40:35.571900Z",
+          "slot_id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+          "evidence_asserted_at": "2026-08-17T20:23:02Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2009-03-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-17T20:23:02Z",
+          "checkable_against": "FactSet S&P 500 total-return data",
+          "claim_type": "actual",
+          "envelope_seq": 780694,
+          "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+          "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+          "figure": {
+            "unit": "percent",
+            "value": "-46"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "For that entire period, the cumulative return for the S&P 500 was minus 46 percent, including dividends.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:15.529202Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 6547,
+          "span_start": 6443,
+          "speaker": "Jeff Sommer",
+          "subject": "S&P 500 and Bloomberg U.S. Aggregate Bond Index",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+          "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+          "log_seq": 780695,
+          "recorded_at": "2026-09-08T01:40:31.429017Z",
+          "slot_id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+          "evidence_asserted_at": "2026-08-17T20:23:02Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 780428,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+    "kind": "market performance",
+    "label": "S&P 500 and bond index returns during 1999-2009",
+    "minted_at": "2026-09-08T01:37:27.626192Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+    "period": "2009-03-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "S&P 500 and Bloomberg U.S. Aggregate Bond Index",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e/fc2acac705ee4002ac33a3362dddf083.json",
+    "log_seq": 780429
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728",
+      "envelope_seq": 780834,
+      "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+      "id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "name": "stock cumulative return",
+      "refusal": null,
+      "log_seq": 780835,
+      "recorded_at": "2026-09-08T01:42:05.429188Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135",
+      "envelope_seq": 780838,
+      "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+      "id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "name": "bond cumulative return",
+      "refusal": null,
+      "log_seq": 780839,
+      "recorded_at": "2026-09-08T01:42:06.953985Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2009-03-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "checkable_against": "FactSet Bloomberg U.S. Aggregate Bond Index total-return data",
+      "claim_type": "actual",
+      "envelope_seq": 780704,
+      "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "figure": {
+        "unit": "percent",
+        "value": "72.3"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "By contrast, over the same stretch, the Bloomberg U.S. Aggregate Bond Index, a widely followed benchmark for investment grade bonds, rose 72.3 percent.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 6699,
+      "span_start": 6548,
+      "speaker": "Jeff Sommer",
+      "subject": "S&P 500 and Bloomberg U.S. Aggregate Bond Index",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "log_seq": 780705,
+      "recorded_at": "2026-09-08T01:40:35.571900Z",
+      "slot_id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "evidence_asserted_at": "2026-08-17T20:23:02Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2009-03-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-17T20:23:02Z",
+      "checkable_against": "FactSet S&P 500 total-return data",
+      "claim_type": "actual",
+      "envelope_seq": 780694,
+      "event_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+      "evidence_id": "66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e",
+      "figure": {
+        "unit": "percent",
+        "value": "-46"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "For that entire period, the cumulative return for the S&P 500 was minus 46 percent, including dividends.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:15.529202Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 6547,
+      "span_start": 6443,
+      "speaker": "Jeff Sommer",
+      "subject": "S&P 500 and Bloomberg U.S. Aggregate Bond Index",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6484.txt",
+      "text_sha256": "f75ec1c607ea8ab94bedda54cce90c3b0f1e409f9727748e277eb7b59d4ec95d",
+      "log_seq": 780695,
+      "recorded_at": "2026-09-08T01:40:31.429017Z",
+      "slot_id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "evidence_asserted_at": "2026-08-17T20:23:02Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/business/stock-market-ai-bonds-rally.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 780836,
+      "id": "attach-anchor-slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728",
+      "refusal": null,
+      "slot_id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "log_seq": 780837,
+      "recorded_at": "2026-09-08T01:42:05.683076Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 780840,
+      "id": "attach-anchor-slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135",
+      "refusal": null,
+      "slot_id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "log_seq": 780841,
+      "recorded_at": "2026-09-08T01:42:07.209372Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-db9eb70d-94c1-4b47-9609-4c695ae43ba4",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-4698bdd1-2f74-444b-8d04-253c005e0f98",
+      "name": "stock cumulative return",
+      "value": "-46",
+      "unit": "percent",
+      "sentence": "For that entire period, the cumulative return for the S&P 500 was minus 46 percent, including dividends.",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-de988e4d5d924728"
+    },
+    {
+      "slot_id": "slot-6aa3df30-80d3-465a-8fcd-d61e44251870",
+      "name": "bond cumulative return",
+      "value": "72.3",
+      "unit": "percent",
+      "sentence": "By contrast, over the same stretch, the Bloomberg U.S. Aggregate Bond Index, a widely followed benchmark for investment grade bonds, rose 72.3 percent.",
+      "occurrence_id": "occurrence-66b492a367db27435b2613352db83d9cb328b4528fab4ad11e244e3f553c943e-16f78e2bb69e0135"
+    }
+  ]
+}

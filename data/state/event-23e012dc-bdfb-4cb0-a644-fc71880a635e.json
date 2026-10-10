@@ -26,7 +26,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-1f512547ef653a3f"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-5714882d-3f1a-426a-ba33-a34fd27508f1": {
       "slot": "observed deportation shift",
@@ -54,7 +54,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-20fa9260ed983372"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-2ae59166-6295-4963-a16d-c7f04174c485": {
       "slot": "no trust difference",
@@ -82,7 +82,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-5ce4d61cffcdb0fe"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-550879cf-08d2-43fe-a884-64a2fbca9fc2": {
       "slot": "less trust likelihood",
@@ -129,7 +129,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-4d7f78c64d7932f0"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-bf5ebfc7-9e86-4d4f-8793-ddda090d2adf": {
       "slot": "MAGA support implementation",
@@ -157,7 +157,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-c4bf1619ddea2527"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-e0db9094-b496-4fff-894b-e0fcc9afa4b2": {
       "slot": "poll sample size",
@@ -185,7 +185,7 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-d8ce1fe9d74779a7"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-b59b3373-1bf3-444a-a4b7-21604eaab632": {
       "slot": "more trust likelihood",
@@ -213,13 +213,37 @@
         "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-a37ed0551b94316f"
       ],
       "last_confirmed": "2026-08-12",
-      "freshness": "aging"
+      "freshness": "stale"
+    },
+    "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b": {
+      "slot": "opposition rate",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-3dd3c4b9f98be000",
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-3dd3c4b9f98be000",
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254"
+      ],
+      "last_confirmed": "2026-08-12",
+      "freshness": "unknown_current"
     }
   },
   "timeline": [
     {
       "kind": "disputed",
       "slot_id": "slot-550879cf-08d2-43fe-a884-64a2fbca9fc2",
+      "as_of": "2026-08-12"
+    },
+    {
+      "kind": "disputed",
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
       "as_of": "2026-08-12"
     },
     {
@@ -251,6 +275,12 @@
       "slot_id": "slot-5714882d-3f1a-426a-ba33-a34fd27508f1",
       "as_of": "2026-08-12",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-20fa9260ed983372"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "as_of": "2026-08-12",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254"
     },
     {
       "kind": "first_value",
@@ -398,6 +428,7 @@
           "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
           "log_seq": 753054,
           "recorded_at": "2026-09-07T08:22:35.430706Z",
+          "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
           "evidence_asserted_at": "2026-08-19T09:00:00Z",
           "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
           "evidence_publisher": "Politico",
@@ -579,6 +610,7 @@
           "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
           "log_seq": 753050,
           "recorded_at": "2026-09-07T08:22:30.519284Z",
+          "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
           "evidence_asserted_at": "2026-08-19T09:00:00Z",
           "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
           "evidence_publisher": "Politico",
@@ -699,8 +731,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "bbe870541b",
+  "evaluated_at": "2026-10-04T01:37:48.685831Z",
   "event": {
     "accepted": true,
     "envelope_seq": 752973,
@@ -789,6 +821,17 @@
     },
     {
       "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254",
+      "envelope_seq": 914577,
+      "event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
+      "id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "name": "opposition rate",
+      "refusal": null,
+      "log_seq": 914578,
+      "recorded_at": "2026-09-20T06:00:27.057953Z"
+    },
+    {
+      "accepted": true,
       "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-a37ed0551b94316f",
       "envelope_seq": 753337,
       "event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
@@ -808,6 +851,21 @@
       "refusal": null,
       "log_seq": 753312,
       "recorded_at": "2026-09-07T08:26:21.665228Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254",
+      "envelope_seq": 914575,
+      "event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
+      "id": "slot-ddcc67b0-da18-421e-8cd6-cd1ed7806905",
+      "name": "opposition rate",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "source_id": "politico_politics_rss"
+      },
+      "log_seq": 914576,
+      "recorded_at": "2026-09-20T06:00:15.222797Z"
     },
     {
       "accepted": true,
@@ -924,6 +982,7 @@
       "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
       "log_seq": 753054,
       "recorded_at": "2026-09-07T08:22:35.430706Z",
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
       "evidence_asserted_at": "2026-08-19T09:00:00Z",
       "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
       "evidence_publisher": "Politico",
@@ -1105,6 +1164,7 @@
       "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
       "log_seq": 753050,
       "recorded_at": "2026-09-07T08:22:30.519284Z",
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
       "evidence_asserted_at": "2026-08-19T09:00:00Z",
       "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
       "evidence_publisher": "Politico",
@@ -1226,6 +1286,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 914582,
+      "id": "attach-059d95d2-7ab2-4879-9261-d98fa24ccfa0",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-3dd3c4b9f98be000",
+      "refusal": null,
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "log_seq": 914583,
+      "recorded_at": "2026-09-20T06:00:44.086802Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 753341,
       "id": "attach-78f63eb0-3224-4a61-8a4a-86e19a6b1ee5",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-fe76b271773c852f",
@@ -1304,6 +1377,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 914579,
+      "id": "attach-anchor-slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-b0a4f3227ecd8254",
+      "refusal": null,
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "log_seq": 914580,
+      "recorded_at": "2026-09-20T06:00:27.072183Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 753339,
       "id": "attach-anchor-slot-b59b3373-1bf3-444a-a4b7-21604eaab632",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-a37ed0551b94316f",
@@ -1339,17 +1425,66 @@
       "recorded_at": "2026-09-07T08:26:40.549628Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1108422,
+      "event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "Nineteen percent"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
+      "from_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-fe76b271773c852f",
+      "id": "edge-relation-e1806d57ab35de15a3f7fd96",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "The new occurrence reports 19% while the existing reports 30% for the same sentiment (less likely/willing to trust the administration), from the same source. These are contradictory figures.",
+      "refusal": null,
+      "to_event_id": "event-23e012dc-bdfb-4cb0-a644-fc71880a635e",
+      "to_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-67385aee20bc802c",
+      "log_seq": 1108423,
+      "recorded_at": "2026-10-04T01:17:03.218030Z"
     }
   ],
   "revision_timeline": {
-    "changes": [],
-    "changes_checked_at": null,
+    "changes": [
+      {
+        "slot_id": "slot-550879cf-08d2-43fe-a884-64a2fbca9fc2",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e1806d57ab35de15a3f7fd96",
+        "earlier_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-67385aee20bc802c",
+        "later_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-fe76b271773c852f",
+        "earlier_evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "later_evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "sentence": "On 2026-08-19, Politico reported “Thirty percent say the shifts make them less willing to trust the administration on immigration.”; on the same day, Politico reported “Nineteen percent said the shifts make them less likely to trust the administration,”."
+      }
+    ],
+    "changes_checked_at": "2026-08-19T09:00:00Z",
     "confirmations": [],
     "quote_rows_unlinked": {
       "count": 0,
       "slot_ids": []
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-550879cf-08d2-43fe-a884-64a2fbca9fc2",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e1806d57ab35de15a3f7fd96",
+        "earlier_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-67385aee20bc802c",
+        "later_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-fe76b271773c852f",
+        "earlier_evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "later_evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "sentence": "On 2026-08-19, Politico reported “Thirty percent say the shifts make them less willing to trust the administration on immigration.”; on the same day, Politico reported “Nineteen percent said the shifts make them less likely to trust the administration,”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -1421,6 +1556,14 @@
       "unit": "percent",
       "sentence": "while 29 percent said they’d be more likely.",
       "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-a37ed0551b94316f"
+    },
+    {
+      "slot_id": "slot-9b2f6099-f226-4b42-90d2-465d77cb2d4b",
+      "name": "opposition rate",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
     }
   ]
 }

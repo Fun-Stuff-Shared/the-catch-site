@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-f41f85d5-443c-4943-85fc-b2184f64de14": {
+      "slot": "quarterback count",
+      "occurrence_id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c",
+      "heads": [
+        "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The Vikings kept three quarterbacks to open the 2025 NFL season – McCarthy, Wentz and Brosmer.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "quarterbacks",
+        "value": "3"
+      },
+      "as_of": "2025-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Minnesota Vikings 2025 opening-day roster",
+      "evidence_id": "6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23",
+      "basis": [
+        "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c"
+      ],
+      "last_confirmed": "2025-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "as_of": "2025-09",
+      "occurrence_id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T21:44:24.432536Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9217.html",
+      "envelope_seq": 171969,
+      "id": "6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23",
+      "publisher": "USA Today",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:30:02.686314Z",
+      "root_evidence": "body:3038:3064",
+      "root_id": "www.usatoday.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9217.txt",
+      "text_sha256": "32286cbd41c0221bdd4ed96fcce7ffe0e08a53cb23a3506cbd576df7420a2b6a",
+      "title": "Did J.J. McCarthy make the Vikings? Latest updates as roster cuts loom",
+      "url": "https://www.usatoday.com/story/sports/nfl/2026/08/29/jj-mccarthy-cut-traded-vikings/91529992007/",
+      "verbatim_level": "article",
+      "log_seq": 521824,
+      "recorded_at": "2026-09-06T01:33:24.273435Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T21:44:24.432536Z",
+          "checkable_against": "Minnesota Vikings 2025 opening-day roster",
+          "claim_type": "actual",
+          "envelope_seq": 790557,
+          "event_id": "event-0c338daa-1867-440d-ab49-681425afd169",
+          "evidence_id": "6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23",
+          "figure": {
+            "unit": "quarterbacks",
+            "value": "3"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The Vikings kept three quarterbacks to open the 2025 NFL season – McCarthy, Wentz and Brosmer.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:30:02.686314Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 5328,
+          "span_start": 5232,
+          "speaker": "outlet's own",
+          "subject": "Minnesota Vikings",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9217.txt",
+          "text_sha256": "32286cbd41c0221bdd4ed96fcce7ffe0e08a53cb23a3506cbd576df7420a2b6a",
+          "log_seq": 790558,
+          "recorded_at": "2026-09-08T05:15:36.113733Z",
+          "slot_id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+          "evidence_asserted_at": "2026-08-29T21:44:24.432536Z",
+          "evidence_url": "https://www.usatoday.com/story/sports/nfl/2026/08/29/jj-mccarthy-cut-traded-vikings/91529992007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 790307,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-0c338daa-1867-440d-ab49-681425afd169",
+    "kind": "roster decision",
+    "label": "Vikings open 2025 season with three quarterbacks",
+    "minted_at": "2026-09-08T05:12:27.020544Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23",
+    "period": "2025-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Minnesota Vikings",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23/7101b33adad24f9e8046f4f4682c3f8d.json",
+    "log_seq": 790308
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c",
+      "envelope_seq": 790783,
+      "event_id": "event-0c338daa-1867-440d-ab49-681425afd169",
+      "id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "name": "quarterback count",
+      "refusal": null,
+      "log_seq": 790784,
+      "recorded_at": "2026-09-08T05:18:40.489499Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T21:44:24.432536Z",
+      "checkable_against": "Minnesota Vikings 2025 opening-day roster",
+      "claim_type": "actual",
+      "envelope_seq": 790557,
+      "event_id": "event-0c338daa-1867-440d-ab49-681425afd169",
+      "evidence_id": "6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23",
+      "figure": {
+        "unit": "quarterbacks",
+        "value": "3"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The Vikings kept three quarterbacks to open the 2025 NFL season – McCarthy, Wentz and Brosmer.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:30:02.686314Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 5328,
+      "span_start": 5232,
+      "speaker": "outlet's own",
+      "subject": "Minnesota Vikings",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9217.txt",
+      "text_sha256": "32286cbd41c0221bdd4ed96fcce7ffe0e08a53cb23a3506cbd576df7420a2b6a",
+      "log_seq": 790558,
+      "recorded_at": "2026-09-08T05:15:36.113733Z",
+      "slot_id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "evidence_asserted_at": "2026-08-29T21:44:24.432536Z",
+      "evidence_url": "https://www.usatoday.com/story/sports/nfl/2026/08/29/jj-mccarthy-cut-traded-vikings/91529992007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 790785,
+      "id": "attach-anchor-slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "occurrence_id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c",
+      "refusal": null,
+      "slot_id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "log_seq": 790786,
+      "recorded_at": "2026-09-08T05:18:40.744705Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-0c338daa-1867-440d-ab49-681425afd169",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-f41f85d5-443c-4943-85fc-b2184f64de14",
+      "name": "quarterback count",
+      "value": "3",
+      "unit": "quarterbacks",
+      "sentence": "The Vikings kept three quarterbacks to open the 2025 NFL season – McCarthy, Wentz and Brosmer.",
+      "occurrence_id": "occurrence-6db2df926191d30636a59c772cf8f33a5212906d1749fd8029dd143e6372cc23-7d17341b225cbe0c"
+    }
+  ]
+}

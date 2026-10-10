@@ -1,0 +1,229 @@
+{
+  "current_state": {
+    "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e": {
+      "slot": "gasoline price",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221",
+      "heads": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "As of Oct. 9, the national average price for a gallon of gasoline was $4.37.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "4.37"
+      },
+      "as_of": "2026-10-09",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "AAA national average gasoline price records",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "basis": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221"
+      ],
+      "last_confirmed": "2026-10-09",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "as_of": "2026-10-09",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "canonical_url": "https://cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/raw/article_2132.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1262688,
+      "gate_verdict": "COVER",
+      "id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "lang": "en",
+      "published_at": "2026-10-09T16:23:00Z",
+      "publisher": "CBS News",
+      "raw_sha256": "242f461f325e8238258899e86438ad1f48eb780af0f5207c0f1dc8e9dea114df",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cbsnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z",
+      "source_family": "major_outlet",
+      "source_id": "cbs_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+      "updated_at": "2026-10-09T19:53:41Z",
+      "url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "verbatim_level": "article",
+      "log_seq": 1262689,
+      "recorded_at": "2026-10-10T00:08:20.571870Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-09",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-09T16:23:00Z",
+          "checkable_against": "AAA national average gasoline price records",
+          "claim_type": "actual",
+          "envelope_seq": 1281358,
+          "event_id": "event-ac1fb070-abb1-4da2-a703-d4cede2b4a95",
+          "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "4.37"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "As of Oct. 9, the national average price for a gallon of gasoline was $4.37.",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:07:01.009631Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 4649,
+          "span_start": 4573,
+          "speaker": "outlet's own",
+          "subject": "U.S. gasoline prices",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+          "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+          "time_action": "corrects",
+          "log_seq": 1281359,
+          "recorded_at": "2026-10-10T02:30:01.781392Z",
+          "slot_id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+          "evidence_asserted_at": "2026-10-09T16:23:00Z",
+          "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "58ad6bca62",
+  "evaluated_at": "2026-10-10T02:45:28.859362Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1281294,
+    "fire_id": "quarry-wire-scheduled-20261009T220053Z",
+    "follows": null,
+    "id": "event-ac1fb070-abb1-4da2-a703-d4cede2b4a95",
+    "kind": "price report",
+    "label": "U.S. gasoline prices October 9 2026",
+    "minted_at": "2026-10-10T02:29:26.055552Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+    "period": "2026-10-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. gasoline prices",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261009T220053Z/1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae/143b7b57cb954acaac8c666f72752533.json",
+    "log_seq": 1281295
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221",
+      "envelope_seq": 1281490,
+      "event_id": "event-ac1fb070-abb1-4da2-a703-d4cede2b4a95",
+      "id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "name": "gasoline price",
+      "refusal": null,
+      "log_seq": 1281491,
+      "recorded_at": "2026-10-10T02:31:57.574247Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-09",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "checkable_against": "AAA national average gasoline price records",
+      "claim_type": "actual",
+      "envelope_seq": 1281358,
+      "event_id": "event-ac1fb070-abb1-4da2-a703-d4cede2b4a95",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "4.37"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "As of Oct. 9, the national average price for a gallon of gasoline was $4.37.",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 4649,
+      "span_start": 4573,
+      "speaker": "outlet's own",
+      "subject": "U.S. gasoline prices",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "time_action": "corrects",
+      "log_seq": 1281359,
+      "recorded_at": "2026-10-10T02:30:01.781392Z",
+      "slot_id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "evidence_asserted_at": "2026-10-09T16:23:00Z",
+      "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1281492,
+      "id": "attach-anchor-slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221",
+      "refusal": null,
+      "slot_id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "log_seq": 1281493,
+      "recorded_at": "2026-10-10T02:31:57.621525Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-ac1fb070-abb1-4da2-a703-d4cede2b4a95",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e61cb2a7-bb4d-42bf-9f23-bdc5858a960e",
+      "name": "gasoline price",
+      "value": "4.37",
+      "unit": "dollars per gallon",
+      "sentence": "As of Oct. 9, the national average price for a gallon of gasoline was $4.37.",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-fe4d462b1cecc221"
+    }
+  ]
+}

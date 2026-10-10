@@ -1,0 +1,301 @@
+{
+  "current_state": {
+    "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf": {
+      "slot": "monthly jobs average",
+      "occurrence_id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0",
+      "heads": [
+        "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The U.S. added an average of about 80,000 jobs per month over the first eight months of this year, financial services firm Raymond James found in an analysis of Bureau of Labor Statistics data.",
+      "span_check": "byte_exact",
+      "speaker": "Raymond James",
+      "figure": {
+        "unit": "jobs",
+        "value": "80000"
+      },
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Raymond James analysis of Bureau of Labor Statistics employment data",
+      "evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+      "basis": [
+        "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T09:10:03Z",
+      "canonical_url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_0005.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1029354,
+      "gate_verdict": "COVER",
+      "id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+      "lang": "en",
+      "published_at": "2026-10-02T09:10:03Z",
+      "publisher": "ABC News",
+      "raw_sha256": "2e7c00786012dde06ad782dd2c31ead15fae5e929ae2cbea941e384189a07cee",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.872622Z",
+      "root_evidence": "publisher_host",
+      "root_id": "abcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "abc_news_topstories",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0005.txt",
+      "text_sha256": "cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+      "title": "Jobs report to show whether hiring stayed resilient in September",
+      "updated_at": "2026-10-02T09:23:04Z",
+      "url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+      "verbatim_level": "article",
+      "log_seq": 1029355,
+      "recorded_at": "2026-10-02T10:28:50.245708Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T09:10:03Z",
+          "checkable_against": "Raymond James employment forecast and analysis",
+          "claim_type": "expectation",
+          "envelope_seq": 1039190,
+          "event_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+          "evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+          "figure": {
+            "unit": "jobs",
+            "value": "70000"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-c2df40abe8cfd7b3",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "That pace exceeded Raymond James' expectations of 70,000 jobs added each month over that period.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:34.872622Z",
+          "root_id": "abcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1464,
+          "span_start": 1368,
+          "speaker": "Raymond James",
+          "subject": "U.S. employment growth",
+          "target_date": "2026-08",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0005.txt",
+          "text_sha256": "cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+          "log_seq": 1039191,
+          "recorded_at": "2026-10-02T12:58:45.145652Z",
+          "evidence_asserted_at": "2026-10-02T09:10:03Z",
+          "evidence_url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+          "evidence_publisher": "ABC News",
+          "evidence_source_id": "abc_news_topstories"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T09:10:03Z",
+          "checkable_against": "Raymond James analysis of Bureau of Labor Statistics employment data",
+          "claim_type": "actual",
+          "envelope_seq": 1039186,
+          "event_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+          "evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+          "figure": {
+            "unit": "jobs",
+            "value": "80000"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The U.S. added an average of about 80,000 jobs per month over the first eight months of this year, financial services firm Raymond James found in an analysis of Bureau of Labor Statistics data.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:34.872622Z",
+          "root_id": "abcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1367,
+          "span_start": 1174,
+          "speaker": "Raymond James",
+          "subject": "U.S. employment growth",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0005.txt",
+          "text_sha256": "cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+          "log_seq": 1039187,
+          "recorded_at": "2026-10-02T12:58:44.054081Z",
+          "slot_id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+          "evidence_asserted_at": "2026-10-02T09:10:03Z",
+          "evidence_url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+          "evidence_publisher": "ABC News",
+          "evidence_source_id": "abc_news_topstories"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f9abbdd45f",
+  "evaluated_at": "2026-10-02T13:42:53.713294Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1039036,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": null,
+    "id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+    "kind": "analysis",
+    "label": "Average U.S. employment growth through August 2026",
+    "minted_at": "2026-10-02T12:57:51.663690Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. employment growth",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f/a9e10451992e4ff0a293f6a360803b05.json",
+    "log_seq": 1039037
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0",
+      "envelope_seq": 1039400,
+      "event_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+      "id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "name": "monthly jobs average",
+      "refusal": null,
+      "log_seq": 1039401,
+      "recorded_at": "2026-10-02T13:00:13.755747Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T09:10:03Z",
+      "checkable_against": "Raymond James employment forecast and analysis",
+      "claim_type": "expectation",
+      "envelope_seq": 1039190,
+      "event_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+      "evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+      "figure": {
+        "unit": "jobs",
+        "value": "70000"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-c2df40abe8cfd7b3",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "That pace exceeded Raymond James' expectations of 70,000 jobs added each month over that period.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.872622Z",
+      "root_id": "abcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1464,
+      "span_start": 1368,
+      "speaker": "Raymond James",
+      "subject": "U.S. employment growth",
+      "target_date": "2026-08",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0005.txt",
+      "text_sha256": "cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+      "log_seq": 1039191,
+      "recorded_at": "2026-10-02T12:58:45.145652Z",
+      "evidence_asserted_at": "2026-10-02T09:10:03Z",
+      "evidence_url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+      "evidence_publisher": "ABC News",
+      "evidence_source_id": "abc_news_topstories"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T09:10:03Z",
+      "checkable_against": "Raymond James analysis of Bureau of Labor Statistics employment data",
+      "claim_type": "actual",
+      "envelope_seq": 1039186,
+      "event_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+      "evidence_id": "20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f",
+      "figure": {
+        "unit": "jobs",
+        "value": "80000"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The U.S. added an average of about 80,000 jobs per month over the first eight months of this year, financial services firm Raymond James found in an analysis of Bureau of Labor Statistics data.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.872622Z",
+      "root_id": "abcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1367,
+      "span_start": 1174,
+      "speaker": "Raymond James",
+      "subject": "U.S. employment growth",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0005.txt",
+      "text_sha256": "cecf0fa3889e5e2ad7eb3e580dc40414df83660fc672ff391d84063f8a7877ae",
+      "log_seq": 1039187,
+      "recorded_at": "2026-10-02T12:58:44.054081Z",
+      "slot_id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "evidence_asserted_at": "2026-10-02T09:10:03Z",
+      "evidence_url": "https://abcnews.com/Business/jobs-report-show-hiring-stayed-resilient-september/story?id=136915472",
+      "evidence_publisher": "ABC News",
+      "evidence_source_id": "abc_news_topstories"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1039402,
+      "id": "attach-anchor-slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "occurrence_id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0",
+      "refusal": null,
+      "slot_id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "log_seq": 1039403,
+      "recorded_at": "2026-10-02T13:00:13.764070Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-33734ea6-6df6-473f-ab41-9aeaa1fe9675",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-1b4f5223-13f2-43a9-bc38-56f7e6dc60cf",
+      "name": "monthly jobs average",
+      "value": "80000",
+      "unit": "jobs",
+      "sentence": "The U.S. added an average of about 80,000 jobs per month over the first eight months of this year, financial services firm Raymond James found in an analysis of Bureau of Labor Statistics data.",
+      "occurrence_id": "occurrence-20dfeb6485dae66403f4b609af18ec2575d010fcc7258d50ec2910f9544c2b9f-e628e3265d0351b0"
+    }
+  ]
+}

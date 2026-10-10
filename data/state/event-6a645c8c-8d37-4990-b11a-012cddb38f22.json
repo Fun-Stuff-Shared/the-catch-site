@@ -1,0 +1,225 @@
+{
+  "current_state": {
+    "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb": {
+      "slot": "CCP join date",
+      "occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+      "heads": [
+        "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "He joined the Communist Party in 1949, the year it won China’s civil war.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "1949",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Chinese Communist Party membership records",
+      "evidence_id": "74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34",
+      "basis": [
+        "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919"
+      ],
+      "last_confirmed": "1949",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "as_of": "1949",
+      "occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-12T23:13:17Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6314.html",
+      "envelope_seq": 170835,
+      "id": "74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:54.322091Z",
+      "root_evidence": "body:4234:4306",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6314.txt",
+      "text_sha256": "94d6593b32c46ba641808835cef3e37d60d38ca8ed1b0b8dcdd48c2576813887",
+      "url": "https://www.nytimes.com/2026/08/12/world/asia/zhu-rongji-dead.html",
+      "verbatim_level": "article",
+      "log_seq": 521257,
+      "recorded_at": "2026-09-06T01:33:24.113653Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "1949",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-12T23:13:17Z",
+          "checkable_against": "Chinese Communist Party membership records",
+          "claim_type": "actual",
+          "envelope_seq": 798086,
+          "event_id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+          "evidence_id": "74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34",
+          "figure": null,
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "He joined the Communist Party in 1949, the year it won China’s civil war.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:38:54.322091Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 8865,
+          "span_start": 8790,
+          "speaker": "outlet's own",
+          "subject": "Zhu Rongji",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6314.txt",
+          "text_sha256": "94d6593b32c46ba641808835cef3e37d60d38ca8ed1b0b8dcdd48c2576813887",
+          "log_seq": 798087,
+          "recorded_at": "2026-09-08T07:37:03.696687Z",
+          "slot_id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+          "evidence_asserted_at": "2026-08-12T23:13:17Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/12/world/asia/zhu-rongji-dead.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 798042,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+    "kind": "membership",
+    "label": "Zhu Rongji joined Communist Party",
+    "minted_at": "2026-09-08T07:36:49.826601Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34",
+    "period": "1949-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Zhu Rongji",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34/7a262fc9c493448abd96e85f84d0ca4d.json",
+    "log_seq": 798043
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+      "envelope_seq": 997420,
+      "event_id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+      "id": "slot-e6f51618-3d41-466a-bfe7-03b6daf0a284",
+      "name": "CCP join date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/12/world/asia/zhu-rongji-dead.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 997421,
+      "recorded_at": "2026-09-28T22:02:26.209554Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+      "envelope_seq": 997422,
+      "event_id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+      "id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "name": "CCP join date",
+      "refusal": null,
+      "log_seq": 997423,
+      "recorded_at": "2026-09-28T22:02:40.555301Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "1949",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-12T23:13:17Z",
+      "checkable_against": "Chinese Communist Party membership records",
+      "claim_type": "actual",
+      "envelope_seq": 798086,
+      "event_id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+      "evidence_id": "74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34",
+      "figure": null,
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "He joined the Communist Party in 1949, the year it won China’s civil war.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:38:54.322091Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 8865,
+      "span_start": 8790,
+      "speaker": "outlet's own",
+      "subject": "Zhu Rongji",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6314.txt",
+      "text_sha256": "94d6593b32c46ba641808835cef3e37d60d38ca8ed1b0b8dcdd48c2576813887",
+      "log_seq": 798087,
+      "recorded_at": "2026-09-08T07:37:03.696687Z",
+      "slot_id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "evidence_asserted_at": "2026-08-12T23:13:17Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/12/world/asia/zhu-rongji-dead.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 997424,
+      "id": "attach-anchor-slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919",
+      "refusal": null,
+      "slot_id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "log_seq": 997425,
+      "recorded_at": "2026-09-28T22:02:40.563476Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-6a645c8c-8d37-4990-b11a-012cddb38f22",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e7312fb1-dc5d-4930-ba31-d12627d0b1cb",
+      "name": "CCP join date",
+      "value": null,
+      "unit": null,
+      "sentence": "He joined the Communist Party in 1949, the year it won China’s civil war.",
+      "occurrence_id": "occurrence-74744f4e9ae852fdf9a3870519e342522bfaa5d84da31845e8f52af7ad300a34-1b289c629c66b919"
+    }
+  ]
+}

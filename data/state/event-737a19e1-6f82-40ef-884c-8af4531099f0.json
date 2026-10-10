@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f": {
+      "slot": "filing date",
+      "occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164",
+      "heads": [
+        "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "On Thursday, September 3, 2026, the federal government filed in the above-captioned case an application for a stay of an order issued on August 27, 2026, by the United States District Court for the District of Massachusetts.",
+      "span_check": "normalized",
+      "speaker": "D. John Sauer, Solicitor General",
+      "figure": null,
+      "as_of": "2026-09-03",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Supreme Court docket in United States Postal Service v. California, No. 26A297",
+      "evidence_id": "story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe",
+      "basis": [
+        "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164"
+      ],
+      "last_confirmed": "2026-09-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+      "as_of": "2026-09-03",
+      "occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "f0e8b1ca60ec843567f3d97dc7eafaee7e9256823098d3283e1f393c30ee0547",
           "log_seq": 830374,
           "recorded_at": "2026-09-08T19:37:22.985687Z",
+          "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
           "evidence_asserted_at": "2026-09-06T00:00:00Z",
           "evidence_url": "https://www.supremecourt.gov/DocketPDF/26/26A297/423227/20260906111028101_26A297_USPS_Letter.pdf",
           "evidence_publisher": "U.S. Department of Justice, Office of the Solicitor General",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0a2f62b478",
-  "evaluated_at": "2026-09-18T04:54:23.952825Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T23:37:55.211343Z",
   "event": {
     "accepted": true,
     "envelope_seq": 830365,
@@ -83,7 +117,34 @@
     "log_seq": 830366
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164",
+      "envelope_seq": 1003595,
+      "event_id": "event-737a19e1-6f82-40ef-884c-8af4531099f0",
+      "id": "slot-63df6a3a-e976-44f3-bb8a-61c18383efaa",
+      "name": "filing date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.supremecourt.gov/DocketPDF/26/26A297/423227/20260906111028101_26A297_USPS_Letter.pdf",
+        "source_id": "scotus-26a297-withdrawal"
+      },
+      "log_seq": 1003596,
+      "recorded_at": "2026-09-30T04:02:38.361777Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164",
+      "envelope_seq": 1003597,
+      "event_id": "event-737a19e1-6f82-40ef-884c-8af4531099f0",
+      "id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+      "name": "filing date",
+      "refusal": null,
+      "log_seq": 1003598,
+      "recorded_at": "2026-09-30T04:02:54.889908Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -112,6 +173,7 @@
       "text_sha256": "f0e8b1ca60ec843567f3d97dc7eafaee7e9256823098d3283e1f393c30ee0547",
       "log_seq": 830374,
       "recorded_at": "2026-09-08T19:37:22.985687Z",
+      "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
       "evidence_asserted_at": "2026-09-06T00:00:00Z",
       "evidence_url": "https://www.supremecourt.gov/DocketPDF/26/26A297/423227/20260906111028101_26A297_USPS_Letter.pdf",
       "evidence_publisher": "U.S. Department of Justice, Office of the Solicitor General",
@@ -119,6 +181,19 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1003599,
+      "id": "attach-anchor-slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+      "occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164",
+      "refusal": null,
+      "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+      "log_seq": 1003600,
+      "recorded_at": "2026-09-30T04:02:54.897920Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": true,
       "edge_kind": "cites",
@@ -151,5 +226,14 @@
   "root_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+      "name": "filing date",
+      "value": null,
+      "unit": null,
+      "sentence": "On Thursday, September 3, 2026, the federal government filed in the above-captioned case an application for a stay of an order issued on August 27, 2026, by the United States District Court for the District of Massachusetts.",
+      "occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164"
+    }
+  ]
 }

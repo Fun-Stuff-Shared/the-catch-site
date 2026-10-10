@@ -613,8 +613,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0a2f62b478",
-  "evaluated_at": "2026-09-18T04:54:00.763979Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T21:37:15.174105Z",
   "event": {
     "accepted": true,
     "envelope_seq": 902668,
@@ -1059,6 +1059,33 @@
     },
     {
       "accepted": true,
+      "envelope_seq": 1121654,
+      "event_id": "event-jobs-2026-08-07-july-payrolls-fall-23000",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "158858"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-jobs-2026-08-07-july-payrolls-fall-23000",
+      "from_occurrence_id": "occurrence-td-2ed160-payems-level-2026-07",
+      "id": "edge-relation-fe5eff136cb9828e1678e40f",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "The values are identical (158858). The quotes contain no information about the source or time action, so those are marked unclear/unknown.",
+      "refusal": null,
+      "to_event_id": "event-jobs-2026-08-07-july-payrolls-fall-23000",
+      "to_occurrence_id": "occurrence-td-2ed160-jobs-negative-months",
+      "log_seq": 1121655,
+      "recorded_at": "2026-10-04T21:17:22.491613Z"
+    },
+    {
+      "accepted": true,
       "edge_kind": "attach",
       "envelope_seq": 157990,
       "id": "identity-attach-461a05a5-6098-4a10-9221-212ec6d14fc5",
@@ -1173,6 +1200,16 @@
       ]
     },
     "edges": [
+      {
+        "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-fe5eff136cb9828e1678e40f",
+        "earlier_occurrence_id": "occurrence-td-2ed160-jobs-negative-months",
+        "later_occurrence_id": "occurrence-td-2ed160-payems-level-2026-07",
+        "earlier_evidence_url": "https://fred.stlouisfed.org/series/PAYEMS",
+        "later_evidence_url": "https://fred.stlouisfed.org/series/PAYEMS",
+        "sentence": "On 2026-08-23, Federal Reserve Economic Data reported “2026-07-01,158858”; on the same day, Federal Reserve Economic Data reported “2026-07-01,158858”."
+      },
       {
         "slot_id": "slot-ffba924b-060b-4161-814f-a4794e2a0601",
         "relation": "same_fact",

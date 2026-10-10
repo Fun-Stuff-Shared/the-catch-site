@@ -1,0 +1,511 @@
+{
+  "current_state": {
+    "slot-981356fe-6368-4c20-94c1-047851b44807": {
+      "slot": "Iran involvement status",
+      "occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "heads": [
+        "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Iran has denied involvement.",
+      "span_check": "byte_exact",
+      "speaker": "Iranian government",
+      "figure": null,
+      "as_of": "2026-10-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Iranian government statement denying involvement in the RAF Fairford incident",
+      "evidence_id": "260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800",
+      "basis": [
+        "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+        "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "as_of": "2026-10-03",
+      "occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T10:13:33Z",
+      "canonical_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/raw/article_4235.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1236883,
+      "gate_verdict": "COVER",
+      "id": "0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136",
+      "lang": "en",
+      "published_at": "2026-10-08T10:13:33Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "43244447d63b13674c821a1bd8a1a6a7d518191ae9a6ef7fb5bc7c0ce2251ae1",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T16:07:21.255391Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/text/article_4235.txt",
+      "text_sha256": "49effad003100b582ad80274ebcb3af95bb8cb177e7dd63fd66c2761b4ff45c4",
+      "title": "A British man is bailed after his arrest in security incident at a US-run military base in England",
+      "updated_at": "2026-10-08T10:40:29.943000Z",
+      "url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+      "verbatim_level": "article",
+      "log_seq": 1236884,
+      "recorded_at": "2026-10-08T16:39:27.246314Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-08T10:13:33Z",
+          "checkable_against": "Iranian government statement denying involvement in the RAF Fairford incident",
+          "claim_type": "actual",
+          "envelope_seq": 1239392,
+          "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+          "evidence_id": "0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136",
+          "figure": {
+            "unit": "involvement",
+            "value": "0"
+          },
+          "fire_id": "7844770ee1b7d625502ffa94b6cacbbc",
+          "id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Iran has denied involvement,",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T16:07:21.255391Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1165,
+          "span_start": 1137,
+          "speaker": "Iran",
+          "subject": "Iranian denial of involvement in RAF Fairford incident",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/text/article_4235.txt",
+          "text_sha256": "49effad003100b582ad80274ebcb3af95bb8cb177e7dd63fd66c2761b4ff45c4",
+          "time_action": "corrects",
+          "log_seq": 1239393,
+          "recorded_at": "2026-10-08T18:55:37.393244Z",
+          "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+          "evidence_asserted_at": "2026-10-08T10:13:33Z",
+          "evidence_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-08T10:13:33Z",
+          "checkable_against": "Iranian government statements on the status of foreign bases used to attack Iran",
+          "claim_type": "actual",
+          "envelope_seq": 1239658,
+          "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+          "evidence_id": "0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136",
+          "figure": {
+            "unit": "specified number",
+            "value": "0"
+          },
+          "fire_id": "7844770ee1b7d625502ffa94b6cacbbc",
+          "id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-9fb3bf652a353665",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "although it has previously said that it considers any base used to attack its territory a legitimate target.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T16:07:21.255391Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1274,
+          "span_start": 1166,
+          "speaker": "Iran",
+          "subject": "Iranian denial of involvement in RAF Fairford incident",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/text/article_4235.txt",
+          "text_sha256": "49effad003100b582ad80274ebcb3af95bb8cb177e7dd63fd66c2761b4ff45c4",
+          "time_action": "corrects",
+          "log_seq": 1239659,
+          "recorded_at": "2026-10-08T18:58:01.735862Z",
+          "evidence_asserted_at": "2026-10-08T10:13:33Z",
+          "evidence_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-03T10:34:23Z",
+      "canonical_url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/raw/article_8025.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1089800,
+      "gate_verdict": "COVER",
+      "id": "260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800",
+      "lang": "en",
+      "published_at": "2026-10-03T10:34:23Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "9f5d7d7390d9a6524112402a181219c87950d43b0906ec558bfc2ad53cfbc962",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:07:06.039387Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_8025.txt",
+      "text_sha256": "2edf38a7f3a08879325e4b07cca524bfc021e0c8ff101269485d8d6109351729",
+      "title": "UK-Iranian national released on bail over suspected plot against US-run air base",
+      "updated_at": "2026-10-03T11:04:09.857000Z",
+      "url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+      "verbatim_level": "article",
+      "log_seq": 1089801,
+      "recorded_at": "2026-10-03T16:33:25.728290Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-03",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-03T10:34:23Z",
+          "checkable_against": "Iranian government statement denying involvement in the RAF Fairford incident",
+          "claim_type": "actual",
+          "envelope_seq": 1102939,
+          "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+          "evidence_id": "260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800",
+          "figure": null,
+          "fire_id": "89215a638ede741d5c78efba4be33a38",
+          "id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Iran has denied involvement.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T16:07:06.039387Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1421,
+          "span_start": 1393,
+          "speaker": "Iranian government",
+          "subject": "Iranian denial of involvement in RAF Fairford incident",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_8025.txt",
+          "text_sha256": "2edf38a7f3a08879325e4b07cca524bfc021e0c8ff101269485d8d6109351729",
+          "log_seq": 1102940,
+          "recorded_at": "2026-10-03T21:15:45.800092Z",
+          "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+          "evidence_asserted_at": "2026-10-03T10:34:23Z",
+          "evidence_url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T23:42:35.348384Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1102799,
+    "fire_id": "quarry-wire-scheduled-20261003T160009Z",
+    "follows": "event-13f3caa9-060d-4cec-ac44-278bfdd14c63",
+    "id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+    "kind": "denial",
+    "label": "Iran denies involvement in RAF Fairford incident",
+    "minted_at": "2026-10-03T21:14:47.820696Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800",
+    "period": "2026-10-03",
+    "refusal": null,
+    "status": "published",
+    "subject": "Iranian denial of involvement in RAF Fairford incident",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261003T160009Z/260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800/4dc6229b67cb44d599c24cd5ac89f883.json",
+    "log_seq": 1102800
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "envelope_seq": 1107850,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "id": "slot-7ece086d-9900-40ec-bb51-004f1096325f",
+      "name": "Iran involvement status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 1107851,
+      "recorded_at": "2026-10-04T00:49:27.848978Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "envelope_seq": 1107865,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "name": "Iran involvement status",
+      "refusal": null,
+      "log_seq": 1107866,
+      "recorded_at": "2026-10-04T00:50:01.409413Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-08T10:13:33Z",
+      "checkable_against": "Iranian government statement denying involvement in the RAF Fairford incident",
+      "claim_type": "actual",
+      "envelope_seq": 1239392,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "evidence_id": "0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136",
+      "figure": {
+        "unit": "involvement",
+        "value": "0"
+      },
+      "fire_id": "7844770ee1b7d625502ffa94b6cacbbc",
+      "id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Iran has denied involvement,",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T16:07:21.255391Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1165,
+      "span_start": 1137,
+      "speaker": "Iran",
+      "subject": "Iranian denial of involvement in RAF Fairford incident",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/text/article_4235.txt",
+      "text_sha256": "49effad003100b582ad80274ebcb3af95bb8cb177e7dd63fd66c2761b4ff45c4",
+      "time_action": "corrects",
+      "log_seq": 1239393,
+      "recorded_at": "2026-10-08T18:55:37.393244Z",
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "evidence_asserted_at": "2026-10-08T10:13:33Z",
+      "evidence_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-08T10:13:33Z",
+      "checkable_against": "Iranian government statements on the status of foreign bases used to attack Iran",
+      "claim_type": "actual",
+      "envelope_seq": 1239658,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "evidence_id": "0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136",
+      "figure": {
+        "unit": "specified number",
+        "value": "0"
+      },
+      "fire_id": "7844770ee1b7d625502ffa94b6cacbbc",
+      "id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-9fb3bf652a353665",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "although it has previously said that it considers any base used to attack its territory a legitimate target.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T16:07:21.255391Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1274,
+      "span_start": 1166,
+      "speaker": "Iran",
+      "subject": "Iranian denial of involvement in RAF Fairford incident",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T160009Z/text/article_4235.txt",
+      "text_sha256": "49effad003100b582ad80274ebcb3af95bb8cb177e7dd63fd66c2761b4ff45c4",
+      "time_action": "corrects",
+      "log_seq": 1239659,
+      "recorded_at": "2026-10-08T18:58:01.735862Z",
+      "evidence_asserted_at": "2026-10-08T10:13:33Z",
+      "evidence_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-03",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-03T10:34:23Z",
+      "checkable_against": "Iranian government statement denying involvement in the RAF Fairford incident",
+      "claim_type": "actual",
+      "envelope_seq": 1102939,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "evidence_id": "260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800",
+      "figure": null,
+      "fire_id": "89215a638ede741d5c78efba4be33a38",
+      "id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Iran has denied involvement.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:07:06.039387Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1421,
+      "span_start": 1393,
+      "speaker": "Iranian government",
+      "subject": "Iranian denial of involvement in RAF Fairford incident",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_8025.txt",
+      "text_sha256": "2edf38a7f3a08879325e4b07cca524bfc021e0c8ff101269485d8d6109351729",
+      "log_seq": 1102940,
+      "recorded_at": "2026-10-03T21:15:45.800092Z",
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "evidence_asserted_at": "2026-10-03T10:34:23Z",
+      "evidence_url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1239578,
+      "id": "attach-36f7331f-b995-44fa-b174-595481eed8d1",
+      "occurrence_id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+      "refusal": null,
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "log_seq": 1239579,
+      "recorded_at": "2026-10-08T18:57:32.224218Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1107867,
+      "id": "attach-anchor-slot-981356fe-6368-4c20-94c1-047851b44807",
+      "occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "refusal": null,
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "log_seq": 1107868,
+      "recorded_at": "2026-10-04T00:50:01.431732Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1107902,
+      "id": "attach-e24fa04d-da0e-4f1e-a270-07b70721a680",
+      "occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "refusal": null,
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "log_seq": 1107903,
+      "recorded_at": "2026-10-04T00:50:19.936458Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1243802,
+      "event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "Iran has denied involvement,"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "from_occurrence_id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+      "id": "edge-relation-77079af132695b3e2dd6a5c1",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both assertions state that Iran has denied involvement in the incident. They are from different Associated Press articles published on different dates, making them independent reports of the same fact.",
+      "refusal": null,
+      "to_event_id": "event-293b607f-64a1-40be-a561-3261f56a32e7",
+      "to_occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+      "log_seq": 1243803,
+      "recorded_at": "2026-10-08T20:29:19.347612Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-08T10:13:33Z",
+    "confirmations": [
+      {
+        "label": "“Iran has denied involvement.”",
+        "value": "Iran has denied involvement.",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+            "dates": [
+              "2026-10-03"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+            "dates": [
+              "2026-10-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-981356fe-6368-4c20-94c1-047851b44807"
+        ],
+        "sentence": "“Iran has denied involvement.”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-981356fe-6368-4c20-94c1-047851b44807"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+        "relation": "supports",
+        "edge_id": "edge-relation-77079af132695b3e2dd6a5c1",
+        "earlier_occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce",
+        "later_occurrence_id": "occurrence-0da4da4d48137b9eaefdc6879df97501b7ad775d010846fdc70b33b6aee2a136-47a0f3b91517a480",
+        "earlier_evidence_url": "https://apnews.com/article/uk-us-air-base-fairford-suspect-bail-e2c120b6a146bd276687446cfd565780",
+        "later_evidence_url": "https://apnews.com/article/britain-man-released-bail-fairford-348eda57abd7554ce7b9924afecc530d",
+        "sentence": "On 2026-10-03, Associated Press reported “Iran has denied involvement.”; on 2026-10-08, Associated Press reported “Iran has denied involvement,”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "crime and public safety",
+  "follows": "event-13f3caa9-060d-4cec-ac44-278bfdd14c63",
+  "root_id": "event-79662a1f-e38a-40c4-8253-02dbdbb07226",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-981356fe-6368-4c20-94c1-047851b44807",
+      "name": "Iran involvement status",
+      "value": null,
+      "unit": null,
+      "sentence": "Iran has denied involvement.",
+      "occurrence_id": "occurrence-260caf1aaa091cf762a0c1bb9fc6fc927e46ab37413f311347f0f41b413cc800-01204417a293f5ce"
+    }
+  ]
+}

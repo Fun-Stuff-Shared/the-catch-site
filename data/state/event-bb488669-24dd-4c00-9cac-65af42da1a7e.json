@@ -1,0 +1,234 @@
+{
+  "current_state": {
+    "slot-65ad2016-3a97-430d-a024-25c035fa749c": {
+      "slot": "moratorium status",
+      "occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+      "heads": [
+        "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "And in New York, Gov. Kathy Hochul, not usually thought of as a hard-core populist, just imposed a one-year moratorium on data center construction.",
+      "span_check": "byte_exact",
+      "speaker": "Kathy Hochul",
+      "figure": {
+        "unit": "year",
+        "value": "1"
+      },
+      "as_of": "2026-08-06",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "New York executive order or state announcement imposing the data center construction moratorium",
+      "evidence_id": "706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244",
+      "basis": [
+        "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876"
+      ],
+      "last_confirmed": "2026-08-06",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "as_of": "2026-08-06",
+      "occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-06T21:11:16Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5340.html",
+      "envelope_seq": 170377,
+      "id": "706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:21.096856Z",
+      "root_evidence": "body:50747:50749",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5340.txt",
+      "text_sha256": "b87b64c00143c97da3027f97fdbc92abf91a1248784504cf5f827e1d698a8be5",
+      "url": "https://www.nytimes.com/2026/08/04/opinion/ezra-klein-podcast-jasmine-sun.html",
+      "verbatim_level": "article",
+      "log_seq": 521028,
+      "recorded_at": "2026-09-06T01:33:24.047008Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-06",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-06T21:11:16Z",
+          "checkable_against": "New York executive order or state announcement imposing the data center construction moratorium",
+          "claim_type": "actual",
+          "envelope_seq": 793458,
+          "event_id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+          "evidence_id": "706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244",
+          "figure": {
+            "unit": "year",
+            "value": "1"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "And in New York, Gov. Kathy Hochul, not usually thought of as a hard-core populist, just imposed a one-year moratorium on data center construction.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:21.096856Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1628,
+          "span_start": 1481,
+          "speaker": "Kathy Hochul",
+          "subject": "New York data center construction",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5340.txt",
+          "text_sha256": "b87b64c00143c97da3027f97fdbc92abf91a1248784504cf5f827e1d698a8be5",
+          "log_seq": 793459,
+          "recorded_at": "2026-09-08T06:45:36.815719Z",
+          "slot_id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+          "evidence_asserted_at": "2026-08-06T21:11:16Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/ezra-klein-podcast-jasmine-sun.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 793238,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+    "kind": "moratorium",
+    "label": "New York imposes one-year data center construction moratorium",
+    "minted_at": "2026-09-08T06:44:13.963906Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "New York data center construction",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244/081baf47e23d44bba22b335899c236c0.json",
+    "log_seq": 793239
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+      "envelope_seq": 793642,
+      "event_id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+      "id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "name": "moratorium status",
+      "refusal": null,
+      "log_seq": 793643,
+      "recorded_at": "2026-09-08T06:48:13.423987Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+      "envelope_seq": 793626,
+      "event_id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+      "id": "slot-6a361f06-5674-48e6-b830-6f6ea054f1d8",
+      "name": "moratorium status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/opinion/ezra-klein-podcast-jasmine-sun.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 793627,
+      "recorded_at": "2026-09-08T06:47:56.994541Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-06",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-06T21:11:16Z",
+      "checkable_against": "New York executive order or state announcement imposing the data center construction moratorium",
+      "claim_type": "actual",
+      "envelope_seq": 793458,
+      "event_id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+      "evidence_id": "706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244",
+      "figure": {
+        "unit": "year",
+        "value": "1"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "And in New York, Gov. Kathy Hochul, not usually thought of as a hard-core populist, just imposed a one-year moratorium on data center construction.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:21.096856Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1628,
+      "span_start": 1481,
+      "speaker": "Kathy Hochul",
+      "subject": "New York data center construction",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5340.txt",
+      "text_sha256": "b87b64c00143c97da3027f97fdbc92abf91a1248784504cf5f827e1d698a8be5",
+      "log_seq": 793459,
+      "recorded_at": "2026-09-08T06:45:36.815719Z",
+      "slot_id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "evidence_asserted_at": "2026-08-06T21:11:16Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/ezra-klein-podcast-jasmine-sun.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 793644,
+      "id": "attach-anchor-slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876",
+      "refusal": null,
+      "slot_id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "log_seq": 793645,
+      "recorded_at": "2026-09-08T06:48:13.442096Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-bb488669-24dd-4c00-9cac-65af42da1a7e",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-65ad2016-3a97-430d-a024-25c035fa749c",
+      "name": "moratorium status",
+      "value": "1",
+      "unit": "year",
+      "sentence": "And in New York, Gov. Kathy Hochul, not usually thought of as a hard-core populist, just imposed a one-year moratorium on data center construction.",
+      "occurrence_id": "occurrence-706d2743d6a2b2cabbe106d9d6c4454e1b729806233fa51446c3f45022bf2244-1bd1671047172876"
+    }
+  ]
+}

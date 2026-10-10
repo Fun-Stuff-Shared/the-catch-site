@@ -1,0 +1,124 @@
+{
+  "id": "event-ef0dad2e-aed8-4cd5-aea1-5f6e995d9fa5",
+  "root": {
+    "id": "event-ef0dad2e-aed8-4cd5-aea1-5f6e995d9fa5",
+    "label": "Trump backs diesel export ban",
+    "status": "published",
+    "reason": null
+  },
+  "events": [
+    {
+      "id": "event-ef0dad2e-aed8-4cd5-aea1-5f6e995d9fa5",
+      "label": "Trump backs diesel export ban",
+      "status": "published",
+      "reason": null,
+      "period": "2026-09",
+      "follows": null,
+      "slots": [
+        {
+          "slot_id": "slot-07ccc234-247e-4ff4-9f26-25cb301a89a6",
+          "name": "ban status",
+          "value": null,
+          "unit": null,
+          "sentence": null,
+          "occurrence_id": null
+        }
+      ]
+    },
+    {
+      "id": "event-e5630ba6-a626-440c-b07c-518f894de01d",
+      "label": "White House plans 90-day diesel export ban",
+      "status": "published",
+      "reason": null,
+      "period": "2026-09",
+      "follows": "event-ef0dad2e-aed8-4cd5-aea1-5f6e995d9fa5",
+      "slots": []
+    },
+    {
+      "id": "event-b623027c-2ea0-44be-8a82-a4a885ed4d0b",
+      "label": "Trump floats US diesel export ban on October 1",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-01",
+      "follows": "event-ef0dad2e-aed8-4cd5-aea1-5f6e995d9fa5",
+      "slots": [
+        {
+          "slot_id": "slot-fb1f2087-198c-4b25-bbea-03181e9d8604",
+          "name": "export ban status",
+          "value": "0",
+          "unit": "diesel export ban",
+          "sentence": "Last month, Trump had threatened a diesel export ban, though he later said it is off the table.",
+          "occurrence_id": "occurrence-20d29d226bff5bd4e5a14d02d4affdee6f877114ab263f5a98ed4382289eec3b-666fdbb04c3818dc"
+        }
+      ]
+    },
+    {
+      "id": "event-d6f8e4a2-7eb0-4d84-b790-fe9223e6380b",
+      "label": "Trump floats US diesel export ban October 1 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-01",
+      "follows": "event-b623027c-2ea0-44be-8a82-a4a885ed4d0b",
+      "slots": [
+        {
+          "slot_id": "slot-dc936237-b677-4882-8a51-499bf6f5c1da",
+          "name": "remaining IEA stocks percentage",
+          "value": "80",
+          "unit": "percent",
+          "sentence": "About a third was yet to come to market, Birol said, adding that further releases were possible with 80 percent of overall IEA stocks “still in our pocket”.",
+          "occurrence_id": "occurrence-522c54dc9c72d34cd045251d0446d02f5d8b392096eb5a90f19f3a54dff3d584-f646da89c9272c6d"
+        }
+      ]
+    },
+    {
+      "id": "event-de1fc7b1-d434-484a-a3f6-86bab4e2e3d7",
+      "label": "Trump says U.S. will not ban diesel exports October 2 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-02",
+      "follows": "event-d6f8e4a2-7eb0-4d84-b790-fe9223e6380b",
+      "slots": [
+        {
+          "slot_id": "slot-4645dde4-7990-4e0e-8b8e-018ecccb14af",
+          "name": "export ban status",
+          "value": null,
+          "unit": null,
+          "sentence": "“We were never going to do it,” he added of a diesel export ban.",
+          "occurrence_id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e2cd6ff358e4ba4a"
+        }
+      ]
+    }
+  ],
+  "outlet_count": 7,
+  "last_moved_at": "2026-10-08T04:21:51.851142Z",
+  "tracked": [],
+  "same_name_not_compared": [
+    {
+      "name": "export ban status",
+      "values": [
+        {
+          "event_id": "event-b623027c-2ea0-44be-8a82-a4a885ed4d0b",
+          "period": "2026-10-01",
+          "slot_id": "slot-fb1f2087-198c-4b25-bbea-03181e9d8604",
+          "name": "export ban status",
+          "value": "0",
+          "unit": "diesel export ban",
+          "sentence": "Last month, Trump had threatened a diesel export ban, though he later said it is off the table.",
+          "occurrence_id": "occurrence-20d29d226bff5bd4e5a14d02d4affdee6f877114ab263f5a98ed4382289eec3b-666fdbb04c3818dc"
+        },
+        {
+          "event_id": "event-de1fc7b1-d434-484a-a3f6-86bab4e2e3d7",
+          "period": "2026-10-02",
+          "slot_id": "slot-4645dde4-7990-4e0e-8b8e-018ecccb14af",
+          "name": "export ban status",
+          "value": null,
+          "unit": null,
+          "sentence": "“We were never going to do it,” he added of a diesel export ban.",
+          "occurrence_id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e2cd6ff358e4ba4a"
+        }
+      ],
+      "reason": "The units differ or are missing."
+    }
+  ],
+  "evaluated_at": "2026-10-08T19:44:07.047745Z"
+}

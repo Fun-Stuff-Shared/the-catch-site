@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-f3986a16-7553-4010-8bf3-92c23791a1aa": {
+      "slot": "canceled grant amount",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726",
+      "heads": [
+        "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The next day, the Department of Transportation and the Department of Energy, whose representatives were invited to the brainstorm, announced they were canceling hundreds of millions of dollars in federal grants for Colorado projects.",
+      "span_check": "byte_exact",
+      "speaker": "New York Times",
+      "figure": null,
+      "as_of": "2025-12-16",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Department of Transportation and Department of Energy grant cancellation announcements of Dec. 16, 2025",
+      "evidence_id": "599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af",
+      "basis": [
+        "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726"
+      ],
+      "last_confirmed": "2025-12-16",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
+      "as_of": "2025-12-16",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "12f731951fcf52c0ae50a9f8f3c8b052ca8517d98f8c471e28af3bd06c247e24",
           "log_seq": 750690,
           "recorded_at": "2026-09-07T07:44:02.276115Z",
+          "slot_id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
           "evidence_asserted_at": "2026-08-18T19:59:42Z",
           "evidence_url": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
           "evidence_publisher": "The New York Times",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750569,
@@ -83,7 +117,34 @@
     "log_seq": 750570
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726",
+      "envelope_seq": 781345,
+      "event_id": "event-0ef4b768-53fc-4d9b-bcee-9e6c47e1f6ac",
+      "id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
+      "name": "canceled grant amount",
+      "refusal": null,
+      "log_seq": 781346,
+      "recorded_at": "2026-09-08T02:07:09.076734Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726",
+      "envelope_seq": 781343,
+      "event_id": "event-0ef4b768-53fc-4d9b-bcee-9e6c47e1f6ac",
+      "id": "slot-f7215679-9c61-42fc-b006-76cb49e696cc",
+      "name": "canceled grant amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 781344,
+      "recorded_at": "2026-09-08T02:06:52.016609Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -113,6 +174,7 @@
       "text_sha256": "12f731951fcf52c0ae50a9f8f3c8b052ca8517d98f8c471e28af3bd06c247e24",
       "log_seq": 750690,
       "recorded_at": "2026-09-07T07:44:02.276115Z",
+      "slot_id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
       "evidence_asserted_at": "2026-08-18T19:59:42Z",
       "evidence_url": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
       "evidence_publisher": "The New York Times",
@@ -120,6 +182,19 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 781347,
+      "id": "attach-anchor-slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726",
+      "refusal": null,
+      "slot_id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
+      "log_seq": 781348,
+      "recorded_at": "2026-09-08T02:07:09.335442Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": false,
       "edge_kind": "cites",
@@ -152,5 +227,14 @@
   "root_id": "event-0ef4b768-53fc-4d9b-bcee-9e6c47e1f6ac",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-f3986a16-7553-4010-8bf3-92c23791a1aa",
+      "name": "canceled grant amount",
+      "value": null,
+      "unit": null,
+      "sentence": "The next day, the Department of Transportation and the Department of Energy, whose representatives were invited to the brainstorm, announced they were canceling hundreds of millions of dollars in federal grants for Colorado projects.",
+      "occurrence_id": "occurrence-599bb9a0753af17609a2b46c8e99aeee31b6e5149db1168014cd07bfe8cb57af-72feccfbd0ab6726"
+    }
+  ]
 }

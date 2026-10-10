@@ -1,6 +1,76 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1": {
+      "slot": "net loss",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50",
+      "heads": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In the second quarter ended June 30, the company posted a net loss of $238.1 million, largely driven by the decline in value of a substantial investment Trump Media made in Bitcoin last year.",
+      "span_check": "byte_exact",
+      "speaker": "The New York Times",
+      "figure": {
+        "unit": "million dollars net loss",
+        "value": "238.1"
+      },
+      "as_of": "2026-06-30",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Trump Media & Technology Group second-quarter 2026 financial statements",
+      "evidence_id": "57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344",
+      "basis": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50"
+      ],
+      "last_confirmed": "2026-06-30",
+      "freshness": "stale"
+    },
+    "slot-412a0768-21a3-4d28-9b27-c09f43481207": {
+      "slot": "quarterly revenue",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a",
+      "heads": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The company took in $1.7 million in revenue in the same period, most of that tied to advertising on Truth Social.",
+      "span_check": "byte_exact",
+      "speaker": "The New York Times",
+      "figure": {
+        "unit": "million dollars revenue",
+        "value": "1.7"
+      },
+      "as_of": "2026-06-30",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Trump Media & Technology Group second-quarter 2026 financial statements",
+      "evidence_id": "57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344",
+      "basis": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a"
+      ],
+      "last_confirmed": "2026-06-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1",
+      "as_of": "2026-06-30",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-412a0768-21a3-4d28-9b27-c09f43481207",
+      "as_of": "2026-06-30",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -55,6 +125,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432476,
           "recorded_at": "2026-09-05T09:02:26.436655Z",
+          "slot_id": "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -90,6 +161,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432460,
           "recorded_at": "2026-09-05T09:02:24.502851Z",
+          "slot_id": "slot-412a0768-21a3-4d28-9b27-c09f43481207",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -99,8 +171,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432159,
@@ -171,6 +243,7 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432476,
       "recorded_at": "2026-09-05T09:02:26.436655Z",
+      "slot_id": "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
@@ -206,13 +279,41 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432460,
       "recorded_at": "2026-09-05T09:02:24.502851Z",
+      "slot_id": "slot-412a0768-21a3-4d28-9b27-c09f43481207",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 926032,
+      "id": "attach-4a0b780b-7dfc-4ff1-93a3-7e92893443a1",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a",
+      "refusal": null,
+      "slot_id": "slot-412a0768-21a3-4d28-9b27-c09f43481207",
+      "log_seq": 926033,
+      "recorded_at": "2026-09-23T08:04:05.789650Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 926035,
+      "id": "attach-fb8174c6-412f-400c-9f44-97980c1b05d6",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50",
+      "refusal": null,
+      "slot_id": "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1",
+      "log_seq": 926036,
+      "recorded_at": "2026-09-23T08:04:08.001701Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -229,5 +330,22 @@
   "root_id": "event-4360d998-db4c-4f6b-8273-68b36cb33f37",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-0688a5df-acb5-42c5-a656-2ed0af6f5cc1",
+      "name": "net loss",
+      "value": "238.1",
+      "unit": "million dollars net loss",
+      "sentence": "In the second quarter ended June 30, the company posted a net loss of $238.1 million, largely driven by the decline in value of a substantial investment Trump Media made in Bitcoin last year.",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-c7298372d1a26c50"
+    },
+    {
+      "slot_id": "slot-412a0768-21a3-4d28-9b27-c09f43481207",
+      "name": "quarterly revenue",
+      "value": "1.7",
+      "unit": "million dollars revenue",
+      "sentence": "The company took in $1.7 million in revenue in the same period, most of that tied to advertising on Truth Social.",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-d7c9220f67acba6a"
+    }
+  ]
 }

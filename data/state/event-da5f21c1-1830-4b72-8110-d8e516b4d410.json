@@ -1,0 +1,231 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T19:30:19Z",
+      "canonical_url": "https://x.com/Reuters/status/2107554064091279427",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/raw/article_2710.html",
+      "desk": "courts and legal",
+      "envelope_seq": 1161341,
+      "gate_verdict": "COVER",
+      "id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+      "lang": "en",
+      "published_at": "2026-10-06T19:30:19Z",
+      "publisher": "Reuters",
+      "raw_sha256": "fb78192547eb666328501000bc550bb3afae71b10dfe5915551a8e0df349d0f2",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:12.615661Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+      "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+      "title": null,
+      "url": "https://x.com/Reuters/status/2107554064091279427",
+      "verbatim_level": "article",
+      "log_seq": 1161342,
+      "recorded_at": "2026-10-06T22:40:16.880909Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-06-30",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-06T19:30:19Z",
+          "checkable_against": "Google's UK Google Play fee-structure policy announcement and effective-date records",
+          "claim_type": "actual",
+          "envelope_seq": 1176077,
+          "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+          "evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+          "figure": {
+            "unit": "date",
+            "value": "June 30"
+          },
+          "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+          "id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Google's new UK Play fee structure took effect June 30.",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T22:05:12.615661Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 797,
+          "span_start": 742,
+          "speaker": "Intrinsic Brief",
+          "subject": "Google UK Play fee structure",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+          "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+          "time_action": "corrects",
+          "log_seq": 1176078,
+          "recorded_at": "2026-10-07T08:47:14.018147Z",
+          "evidence_asserted_at": "2026-10-06T19:30:19Z",
+          "evidence_url": "https://x.com/Reuters/status/2107554064091279427",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T09:44:05.871796Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1176061,
+    "fire_id": "quarry-wire-scheduled-20261006T220035Z",
+    "follows": null,
+    "id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+    "kind": "policy change",
+    "label": "Google UK Play fee structure takes effect",
+    "minted_at": "2026-10-07T08:47:03.392535Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+    "period": "2026-06-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "Google UK Play fee structure",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T220035Z/59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d/3004b40fe3414c12b5523b127b3399d5.json",
+    "log_seq": 1176062
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "envelope_seq": 1176111,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "id": "slot-14135fea-940f-4e06-a2dd-f60ede2c36ca",
+      "name": "effective date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107554064091279427",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1176112,
+      "recorded_at": "2026-10-07T08:47:31.891836Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "envelope_seq": 1176157,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "id": "slot-3e4b1e7e-c09a-4ae8-b376-162592140d9f",
+      "name": "effective date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+        "source_id": "document"
+      },
+      "log_seq": 1176158,
+      "recorded_at": "2026-10-07T08:47:54.820801Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "envelope_seq": 1176135,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "id": "slot-4df4698b-5760-4f00-bb9d-c995f290e9f8",
+      "name": "effective date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "reuters",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1176136,
+      "recorded_at": "2026-10-07T08:47:45.100699Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "envelope_seq": 1176199,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "id": "slot-7790008c-c851-4fed-bbea-bbc4c8b408ce",
+      "name": "effective date",
+      "refusal": "source_feed_source_missing",
+      "source_feed": {
+        "selector": "https://example.com",
+        "source_id": ""
+      },
+      "log_seq": 1176200,
+      "recorded_at": "2026-10-07T08:48:03.116236Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "envelope_seq": 1176121,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "id": "slot-8c31f06b-a564-4e37-ae09-acc3dfa6efb8",
+      "name": "effective date",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1176122,
+      "recorded_at": "2026-10-07T08:47:37.778440Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-06-30",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-06T19:30:19Z",
+      "checkable_against": "Google's UK Google Play fee-structure policy announcement and effective-date records",
+      "claim_type": "actual",
+      "envelope_seq": 1176077,
+      "event_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+      "evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+      "figure": {
+        "unit": "date",
+        "value": "June 30"
+      },
+      "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+      "id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-ddf4a257293e2f69",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Google's new UK Play fee structure took effect June 30.",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:12.615661Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 797,
+      "span_start": 742,
+      "speaker": "Intrinsic Brief",
+      "subject": "Google UK Play fee structure",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+      "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+      "time_action": "corrects",
+      "log_seq": 1176078,
+      "recorded_at": "2026-10-07T08:47:14.018147Z",
+      "evidence_asserted_at": "2026-10-06T19:30:19Z",
+      "evidence_url": "https://x.com/Reuters/status/2107554064091279427",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": null,
+  "root_id": "event-da5f21c1-1830-4b72-8110-d8e516b4d410",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

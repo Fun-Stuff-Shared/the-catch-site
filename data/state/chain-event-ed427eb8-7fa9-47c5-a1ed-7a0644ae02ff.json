@@ -1,0 +1,78 @@
+{
+  "id": "event-ed427eb8-7fa9-47c5-a1ed-7a0644ae02ff",
+  "root": {
+    "id": "event-ed427eb8-7fa9-47c5-a1ed-7a0644ae02ff",
+    "label": "U.S. national average diesel price October 6 2026",
+    "status": "published",
+    "reason": null
+  },
+  "events": [
+    {
+      "id": "event-ed427eb8-7fa9-47c5-a1ed-7a0644ae02ff",
+      "label": "U.S. national average diesel price October 6 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-06",
+      "follows": null,
+      "slots": []
+    },
+    {
+      "id": "event-4ab1ec26-dedb-4849-b25d-fbe471c3e995",
+      "label": "U.S. national average diesel price October 8 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-08",
+      "follows": "event-ed427eb8-7fa9-47c5-a1ed-7a0644ae02ff",
+      "slots": [
+        {
+          "slot_id": "slot-b9eaa5d6-28ad-4662-bfda-eca93539dfe3",
+          "name": "diesel price",
+          "value": "6.28",
+          "unit": "dollars per gallon",
+          "sentence": "Prices have since fallen to $6.28, though traders on Kalshi place 68% odds that figure remains above $6 per gallon on Nov. 3.",
+          "occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-c374000c0634da44"
+        }
+      ]
+    },
+    {
+      "id": "event-dad113bf-315d-494b-a6b0-8aa1771fb45a",
+      "label": "U.S. diesel price October 9 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-10-09",
+      "follows": "event-4ab1ec26-dedb-4849-b25d-fbe471c3e995",
+      "slots": [
+        {
+          "slot_id": "slot-8f9a6b64-60a2-4374-8fbe-c21287715508",
+          "name": "diesel price change",
+          "value": null,
+          "unit": null,
+          "sentence": null,
+          "occurrence_id": null
+        },
+        {
+          "slot_id": "slot-05e71aa9-eaa8-4a5b-aa07-a472e4c5c612",
+          "name": "average diesel price",
+          "value": "6.27",
+          "unit": "dollars per gallon",
+          "sentence": "The average price for a gallon is $6.27 ($1.66 per litre), according to the American Automobile Association (AAA), which tracks daily petrol prices.",
+          "occurrence_id": "occurrence-11baf222fd54fb03869baace9ba1bd0e02b1f21df5cee9bb333b4d853aa8b20b-85de5f108e237665"
+        }
+      ]
+    },
+    {
+      "id": "event-d835276f-42f3-4f64-8dfd-ce64b1b9a9db",
+      "label": "Kalshi diesel price forecast for Election Day 2026",
+      "status": "published",
+      "reason": null,
+      "period": "2026-11-03",
+      "follows": "event-ed427eb8-7fa9-47c5-a1ed-7a0644ae02ff",
+      "slots": []
+    }
+  ],
+  "outlet_count": 6,
+  "last_moved_at": null,
+  "tracked": [],
+  "same_name_not_compared": [],
+  "evaluated_at": "2026-10-10T02:45:28.859362Z"
+}

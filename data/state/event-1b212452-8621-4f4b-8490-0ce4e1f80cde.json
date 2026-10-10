@@ -1,0 +1,390 @@
+{
+  "current_state": {
+    "slot-36a0810c-0c38-46d9-9684-081d16d58433": {
+      "slot": "insurance price increase",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+      "heads": [
+        "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Insurance prices generally rose 4.2% in the year to July, faster than inflation of 3.5%, the Australian Bureau of Statistics reported on Wednesday.",
+      "span_check": "byte_exact",
+      "speaker": "Australian Bureau of Statistics",
+      "figure": {
+        "unit": "percent",
+        "value": "4.2"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Australian Bureau of Statistics insurance price index",
+      "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+      "basis": [
+        "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
+    },
+    "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e": {
+      "slot": "inflation rate",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+      "heads": [
+        "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "inflation of 3.5%",
+      "span_check": "byte_exact",
+      "speaker": "Australian Bureau of Statistics",
+      "figure": {
+        "unit": "percent",
+        "value": "3.5"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Australian Bureau of Statistics inflation index",
+      "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+      "basis": [
+        "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "Sun, 30 Aug 2026 15:01:00 GMT",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_8641.html",
+      "envelope_seq": 148909,
+      "id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+      "publisher": "The Guardian",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:14.492854Z",
+      "root_evidence": "body:5336:5417",
+      "root_id": "www.theguardian.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8641.txt",
+      "text_sha256": "4c5b1e2b86189e5075fe79017534af4a5af4d13e04bed1e8f853573bc6c9262f",
+      "title": "Cash settlements on home insurance claims leaving vulnerable Australians short-changed, Asic says",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/31/cash-settlements-home-insurance-cyclone-disaster-repairs-vulnerable-australians-asic",
+      "verbatim_level": "article",
+      "log_seq": 516824,
+      "recorded_at": "2026-09-06T01:33:22.793984Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-30T15:01:00Z",
+          "checkable_against": "Australian Bureau of Statistics insurance price index",
+          "claim_type": "actual",
+          "envelope_seq": 771379,
+          "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+          "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+          "figure": {
+            "unit": "percent",
+            "value": "4.2"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Insurance prices generally rose 4.2% in the year to July, faster than inflation of 3.5%, the Australian Bureau of Statistics reported on Wednesday.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:14.492854Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 6344,
+          "span_start": 6197,
+          "speaker": "Australian Bureau of Statistics",
+          "subject": "Australian insurance prices",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8641.txt",
+          "text_sha256": "4c5b1e2b86189e5075fe79017534af4a5af4d13e04bed1e8f853573bc6c9262f",
+          "log_seq": 771380,
+          "recorded_at": "2026-09-07T20:56:54.077595Z",
+          "slot_id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+          "evidence_asserted_at": "Sun, 30 Aug 2026 15:01:00 GMT",
+          "evidence_url": "https://www.theguardian.com/australia-news/2026/aug/31/cash-settlements-home-insurance-cyclone-disaster-repairs-vulnerable-australians-asic",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-30T15:01:00Z",
+          "checkable_against": "Australian Bureau of Statistics inflation index",
+          "claim_type": "actual",
+          "envelope_seq": 771387,
+          "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+          "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+          "figure": {
+            "unit": "percent",
+            "value": "3.5"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "inflation of 3.5%",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:14.492854Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 6284,
+          "span_start": 6267,
+          "speaker": "Australian Bureau of Statistics",
+          "subject": "Australian insurance prices",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8641.txt",
+          "text_sha256": "4c5b1e2b86189e5075fe79017534af4a5af4d13e04bed1e8f853573bc6c9262f",
+          "log_seq": 771388,
+          "recorded_at": "2026-09-07T20:56:59.313315Z",
+          "slot_id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+          "evidence_asserted_at": "Sun, 30 Aug 2026 15:01:00 GMT",
+          "evidence_url": "https://www.theguardian.com/australia-news/2026/aug/31/cash-settlements-home-insurance-cyclone-disaster-repairs-vulnerable-australians-asic",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 771307,
+    "fire_id": "quarry-wire-scheduled-20260830T220000Z",
+    "follows": null,
+    "id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+    "kind": "data_release",
+    "label": "Australian insurance prices July 2026",
+    "minted_at": "2026-09-07T20:56:17.610228Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Australian insurance prices",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T220000Z/07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e/d103c145e7714efd92cc46defbb182c5.json",
+    "log_seq": 771308
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+      "envelope_seq": 771675,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "name": "insurance price increase",
+      "refusal": null,
+      "log_seq": 771676,
+      "recorded_at": "2026-09-07T20:59:15.336342Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+      "envelope_seq": 771539,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "id": "slot-49fd6e8a-991d-4250-993c-3a12dcdf7093",
+      "name": "inflation rate",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "ABS inflation index",
+        "source_id": "guardian_world_rss"
+      },
+      "log_seq": 771540,
+      "recorded_at": "2026-09-07T20:58:29.749705Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+      "envelope_seq": 771527,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "id": "slot-917920e0-1b07-4bfe-a98c-15c61694ddc7",
+      "name": "insurance price increase",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "ABS insurance price index",
+        "source_id": "guardian_world_rss"
+      },
+      "log_seq": 771528,
+      "recorded_at": "2026-09-07T20:58:24.878372Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+      "envelope_seq": 771687,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "name": "inflation rate",
+      "refusal": null,
+      "log_seq": 771688,
+      "recorded_at": "2026-09-07T20:59:18.965396Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-30T15:01:00Z",
+      "checkable_against": "Australian Bureau of Statistics insurance price index",
+      "claim_type": "actual",
+      "envelope_seq": 771379,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+      "figure": {
+        "unit": "percent",
+        "value": "4.2"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Insurance prices generally rose 4.2% in the year to July, faster than inflation of 3.5%, the Australian Bureau of Statistics reported on Wednesday.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:14.492854Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 6344,
+      "span_start": 6197,
+      "speaker": "Australian Bureau of Statistics",
+      "subject": "Australian insurance prices",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8641.txt",
+      "text_sha256": "4c5b1e2b86189e5075fe79017534af4a5af4d13e04bed1e8f853573bc6c9262f",
+      "log_seq": 771380,
+      "recorded_at": "2026-09-07T20:56:54.077595Z",
+      "slot_id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "evidence_asserted_at": "Sun, 30 Aug 2026 15:01:00 GMT",
+      "evidence_url": "https://www.theguardian.com/australia-news/2026/aug/31/cash-settlements-home-insurance-cyclone-disaster-repairs-vulnerable-australians-asic",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-30T15:01:00Z",
+      "checkable_against": "Australian Bureau of Statistics inflation index",
+      "claim_type": "actual",
+      "envelope_seq": 771387,
+      "event_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+      "evidence_id": "07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e",
+      "figure": {
+        "unit": "percent",
+        "value": "3.5"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "inflation of 3.5%",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:14.492854Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 6284,
+      "span_start": 6267,
+      "speaker": "Australian Bureau of Statistics",
+      "subject": "Australian insurance prices",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8641.txt",
+      "text_sha256": "4c5b1e2b86189e5075fe79017534af4a5af4d13e04bed1e8f853573bc6c9262f",
+      "log_seq": 771388,
+      "recorded_at": "2026-09-07T20:56:59.313315Z",
+      "slot_id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "evidence_asserted_at": "Sun, 30 Aug 2026 15:01:00 GMT",
+      "evidence_url": "https://www.theguardian.com/australia-news/2026/aug/31/cash-settlements-home-insurance-cyclone-disaster-repairs-vulnerable-australians-asic",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 771677,
+      "id": "attach-anchor-slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40",
+      "refusal": null,
+      "slot_id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "log_seq": 771678,
+      "recorded_at": "2026-09-07T20:59:15.548159Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 771689,
+      "id": "attach-anchor-slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73",
+      "refusal": null,
+      "slot_id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "log_seq": 771690,
+      "recorded_at": "2026-09-07T20:59:19.207521Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-1b212452-8621-4f4b-8490-0ce4e1f80cde",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-36a0810c-0c38-46d9-9684-081d16d58433",
+      "name": "insurance price increase",
+      "value": "4.2",
+      "unit": "percent",
+      "sentence": "Insurance prices generally rose 4.2% in the year to July, faster than inflation of 3.5%, the Australian Bureau of Statistics reported on Wednesday.",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-3a725dcf57f89d40"
+    },
+    {
+      "slot_id": "slot-c0d06a40-6727-4c1e-a50b-3c7aa35bc96e",
+      "name": "inflation rate",
+      "value": "3.5",
+      "unit": "percent",
+      "sentence": "inflation of 3.5%",
+      "occurrence_id": "occurrence-07ae97937bfbb0edce507d84635d179439ab8381d17d8cad3b628195e23dd37e-c35a50fe521cdb73"
+    }
+  ]
+}

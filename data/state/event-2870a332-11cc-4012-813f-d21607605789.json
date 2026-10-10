@@ -1,0 +1,494 @@
+{
+  "current_state": {
+    "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad": {
+      "slot": "planned water reduction",
+      "occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+      "heads": [
+        "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Nevada elevó la apuesta esta semana al demandar al Departamento del Interior y a la Oficina de Reclamación de Estados Unidos, afirmando que no se cubrirán necesidades básicas en la región de Las Vegas si el área tiene que absorber reducciones planificadas de hasta el 70% de su agua del río Colorado en la próxima década.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "as_of": "2026-08-27",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Nevada complaint and federal court docket",
+      "evidence_id": "7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8",
+      "basis": [
+        "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+        "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "as_of": "2026-08-27",
+      "occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "Sat, 29 Aug 2026 11:39:17 -0400",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_8351.html",
+      "envelope_seq": 148619,
+      "id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+      "publisher": "PBS NewsHour",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:35:11.197758Z",
+      "root_evidence": "body:6304:6385",
+      "root_id": "www.pbs.org",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "pbs_newshour",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8351.txt",
+      "text_sha256": "57fb4b9c92593d4a1b1bc7dd8f3cbc46bccd3ea4048ddfe98a18befdc4afd306",
+      "title": "Colorado River plan to cut water amid drought brings uncertainty for cities and farmers",
+      "url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+      "verbatim_level": "article",
+      "log_seq": 516679,
+      "recorded_at": "2026-09-06T01:33:22.752362Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-27",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T15:39:17Z",
+          "checkable_against": "Bureau of Reclamation statement on Nevada lawsuit",
+          "claim_type": "actual",
+          "envelope_seq": 769929,
+          "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+          "evidence_id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+          "figure": null,
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-91d008fa318222c5",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The bureau said Thursday it does not comment on litigation.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:35:11.197758Z",
+          "root_id": "www.pbs.org",
+          "span_check": "byte_exact",
+          "span_end": 2904,
+          "span_start": 2845,
+          "speaker": "U.S. Bureau of Reclamation",
+          "subject": "Nevada lawsuit over Colorado River water reductions",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8351.txt",
+          "text_sha256": "57fb4b9c92593d4a1b1bc7dd8f3cbc46bccd3ea4048ddfe98a18befdc4afd306",
+          "log_seq": 769930,
+          "recorded_at": "2026-09-07T20:43:55.486415Z",
+          "evidence_asserted_at": "Sat, 29 Aug 2026 11:39:17 -0400",
+          "evidence_url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+          "evidence_publisher": "PBS NewsHour",
+          "evidence_source_id": "pbs_newshour"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-29T15:39:17Z",
+          "checkable_against": "Nevada lawsuit filing against the Interior Department and Bureau of Reclamation",
+          "claim_type": "actual",
+          "envelope_seq": 769915,
+          "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+          "evidence_id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+          "figure": {
+            "unit": "percent",
+            "value": "70"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Nevada raised the stakes this week by suing the Interior Department and the U.S. Bureau of Reclamation, saying basic needs in the Las Vegas region will go unmet if the area has to absorb planned reductions of up to 70% of its Colorado River water in the next decade.",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:35:11.197758Z",
+          "root_id": "www.pbs.org",
+          "span_check": "byte_exact",
+          "span_end": 2844,
+          "span_start": 2578,
+          "speaker": "outlet's own",
+          "subject": "Nevada lawsuit over Colorado River water reductions",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8351.txt",
+          "text_sha256": "57fb4b9c92593d4a1b1bc7dd8f3cbc46bccd3ea4048ddfe98a18befdc4afd306",
+          "log_seq": 769916,
+          "recorded_at": "2026-09-07T20:43:46.200696Z",
+          "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+          "evidence_asserted_at": "Sat, 29 Aug 2026 11:39:17 -0400",
+          "evidence_url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+          "evidence_publisher": "PBS NewsHour",
+          "evidence_source_id": "pbs_newshour"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T23:52:05Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0200.html",
+      "desk": "weather and disaster",
+      "envelope_seq": 163639,
+      "gate_reason": "Not English.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.015131Z",
+      "id": "7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8",
+      "lang": "es",
+      "publisher": "Associated Press",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:36.101036Z",
+      "root_evidence": "body:5239:5320",
+      "root_id": "apnews.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0200.txt",
+      "text_sha256": "5e2ef6b4e2ee50fbc667804e587e2e870cd5afc4de60fabf312e951450862ddf",
+      "title": "Plan para recortar el suministro de agua del río Colorado debido a la sequía genera incertidumbre",
+      "url": "https://apnews.com/article/arizona-rio-colorado-sequia-racionamiento-agua-3d069f2d61dbef804e9a899d552f3330",
+      "verbatim_level": "article",
+      "log_seq": 814012,
+      "recorded_at": "2026-09-08T13:57:01.015210Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-27",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T23:52:05Z",
+          "checkable_against": "Nevada complaint and federal court docket",
+          "claim_type": "actual",
+          "envelope_seq": 804202,
+          "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+          "evidence_id": "7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8",
+          "figure": {
+            "unit": "percent",
+            "value": "70"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Nevada elevó la apuesta esta semana al demandar al Departamento del Interior y a la Oficina de Reclamación de Estados Unidos, afirmando que no se cubrirán necesidades básicas en la región de Las Vegas si el área tiene que absorber reducciones planificadas de hasta el 70% de su agua del río Colorado en la próxima década.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:04:36.101036Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 40047,
+          "span_start": 39717,
+          "speaker": "outlet's own",
+          "subject": "Nevada lawsuit over Colorado River water reductions",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0200.txt",
+          "text_sha256": "5e2ef6b4e2ee50fbc667804e587e2e870cd5afc4de60fabf312e951450862ddf",
+          "log_seq": 804203,
+          "recorded_at": "2026-09-08T09:27:33.906903Z",
+          "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+          "evidence_asserted_at": "2026-08-29T23:52:05Z",
+          "evidence_url": "https://apnews.com/article/arizona-rio-colorado-sequia-racionamiento-agua-3d069f2d61dbef804e9a899d552f3330",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 769779,
+    "fire_id": "quarry-wire-scheduled-20260830T220000Z",
+    "follows": null,
+    "id": "event-2870a332-11cc-4012-813f-d21607605789",
+    "kind": "lawsuit",
+    "label": "Nevada sues over planned Colorado River water reductions",
+    "minted_at": "2026-09-07T20:42:44.344035Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+    "period": "2026-08-27",
+    "refusal": null,
+    "status": "published",
+    "subject": "Nevada lawsuit over Colorado River water reductions",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T220000Z/05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02/9edfe4d0d23f4220bba4494a207ad34a.json",
+    "log_seq": 769780
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+      "envelope_seq": 804312,
+      "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "name": "planned water reduction",
+      "refusal": null,
+      "log_seq": 804313,
+      "recorded_at": "2026-09-08T09:28:19.533181Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-27",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T15:39:17Z",
+      "checkable_against": "Bureau of Reclamation statement on Nevada lawsuit",
+      "claim_type": "actual",
+      "envelope_seq": 769929,
+      "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "evidence_id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+      "figure": null,
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-91d008fa318222c5",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The bureau said Thursday it does not comment on litigation.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:35:11.197758Z",
+      "root_id": "www.pbs.org",
+      "span_check": "byte_exact",
+      "span_end": 2904,
+      "span_start": 2845,
+      "speaker": "U.S. Bureau of Reclamation",
+      "subject": "Nevada lawsuit over Colorado River water reductions",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8351.txt",
+      "text_sha256": "57fb4b9c92593d4a1b1bc7dd8f3cbc46bccd3ea4048ddfe98a18befdc4afd306",
+      "log_seq": 769930,
+      "recorded_at": "2026-09-07T20:43:55.486415Z",
+      "evidence_asserted_at": "Sat, 29 Aug 2026 11:39:17 -0400",
+      "evidence_url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+      "evidence_publisher": "PBS NewsHour",
+      "evidence_source_id": "pbs_newshour"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-29T15:39:17Z",
+      "checkable_against": "Nevada lawsuit filing against the Interior Department and Bureau of Reclamation",
+      "claim_type": "actual",
+      "envelope_seq": 769915,
+      "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "evidence_id": "05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Nevada raised the stakes this week by suing the Interior Department and the U.S. Bureau of Reclamation, saying basic needs in the Las Vegas region will go unmet if the area has to absorb planned reductions of up to 70% of its Colorado River water in the next decade.",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:35:11.197758Z",
+      "root_id": "www.pbs.org",
+      "span_check": "byte_exact",
+      "span_end": 2844,
+      "span_start": 2578,
+      "speaker": "outlet's own",
+      "subject": "Nevada lawsuit over Colorado River water reductions",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8351.txt",
+      "text_sha256": "57fb4b9c92593d4a1b1bc7dd8f3cbc46bccd3ea4048ddfe98a18befdc4afd306",
+      "log_seq": 769916,
+      "recorded_at": "2026-09-07T20:43:46.200696Z",
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "evidence_asserted_at": "Sat, 29 Aug 2026 11:39:17 -0400",
+      "evidence_url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+      "evidence_publisher": "PBS NewsHour",
+      "evidence_source_id": "pbs_newshour"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-27",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T23:52:05Z",
+      "checkable_against": "Nevada complaint and federal court docket",
+      "claim_type": "actual",
+      "envelope_seq": 804202,
+      "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "evidence_id": "7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Nevada elevó la apuesta esta semana al demandar al Departamento del Interior y a la Oficina de Reclamación de Estados Unidos, afirmando que no se cubrirán necesidades básicas en la región de Las Vegas si el área tiene que absorber reducciones planificadas de hasta el 70% de su agua del río Colorado en la próxima década.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:04:36.101036Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 40047,
+      "span_start": 39717,
+      "speaker": "outlet's own",
+      "subject": "Nevada lawsuit over Colorado River water reductions",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0200.txt",
+      "text_sha256": "5e2ef6b4e2ee50fbc667804e587e2e870cd5afc4de60fabf312e951450862ddf",
+      "log_seq": 804203,
+      "recorded_at": "2026-09-08T09:27:33.906903Z",
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "evidence_asserted_at": "2026-08-29T23:52:05Z",
+      "evidence_url": "https://apnews.com/article/arizona-rio-colorado-sequia-racionamiento-agua-3d069f2d61dbef804e9a899d552f3330",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 916509,
+      "id": "attach-6fb2c12b-f967-4885-8b1e-52c3c23be390",
+      "occurrence_id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+      "refusal": null,
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "log_seq": 916510,
+      "recorded_at": "2026-09-20T14:09:45.382339Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 804314,
+      "id": "attach-anchor-slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+      "refusal": null,
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "log_seq": 804315,
+      "recorded_at": "2026-09-08T09:28:19.539156Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": false,
+      "edge_kind": "cites",
+      "envelope_seq": 804050,
+      "from_event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "id": "cites-c795a9f1-613a-44d5-a9b4-8fb91dd960af",
+      "reason": "AP article reports Nevada's lawsuit over planned Colorado River reductions.",
+      "refusal": "citation_document_not_live",
+      "role": "reference",
+      "to_evidence_id": "7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8",
+      "log_seq": 804051,
+      "recorded_at": "2026-09-08T09:26:05.792701Z",
+      "family": "evidence_role",
+      "label": "cites"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 916542,
+      "event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "up to 70%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "from_occurrence_id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+      "id": "edge-relation-99511e91384de95a3764a5e0",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both occurrences report the same figure (up to 70%) regarding planned reductions of Colorado River water for the Las Vegas region as mentioned in Nevada's lawsuit. The sources are PBS NewsHour and Associated Press, which are independent.",
+      "refusal": null,
+      "to_event_id": "event-2870a332-11cc-4012-813f-d21607605789",
+      "to_occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+      "log_seq": 916543,
+      "recorded_at": "2026-09-20T14:20:25.511842Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-08-29T23:52:05Z",
+    "confirmations": [
+      {
+        "label": "“70 percent”",
+        "value": "70 percent",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/arizona-rio-colorado-sequia-racionamiento-agua-3d069f2d61dbef804e9a899d552f3330",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "PBS NewsHour",
+            "url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+            "dates": [
+              "2026-08-29"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad"
+        ],
+        "sentence": "“70 percent”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+        "relation": "supports",
+        "edge_id": "edge-relation-99511e91384de95a3764a5e0",
+        "earlier_occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d",
+        "later_occurrence_id": "occurrence-05bfb873f5f1cf1c27900e28e26ba16d5af89693f0c4f5813d309cc5b8785e02-aa3f9d61b38c9ac7",
+        "earlier_evidence_url": "https://apnews.com/article/arizona-rio-colorado-sequia-racionamiento-agua-3d069f2d61dbef804e9a899d552f3330",
+        "later_evidence_url": "https://www.pbs.org/newshour/nation/colorado-river-plan-to-cut-water-amid-drought-brings-uncertainty-for-cities-and-farmers",
+        "sentence": "On 2026-08-29, Associated Press reported “Nevada elevó la apuesta esta semana al demandar al Departamento del Interior y a la Oficina de Reclamación de Estados Unidos, afirmando que no se cubrirán necesidades básicas en la región de Las Vegas si el área tiene que absorber reducciones planificadas de hasta el 70% de su agua del río Colorado en la próxima década.”; on the same day, PBS NewsHour reported “Nevada raised the stakes this week by suing the Interior Department and the U.S. Bureau of Reclamation, saying basic needs in the Las Vegas region will go unmet if the area has to absorb planned reductions of up to 70% of its Colorado River water in the next decade.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "weather and disaster",
+  "follows": null,
+  "root_id": "event-2870a332-11cc-4012-813f-d21607605789",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-ea84f414-f1f4-47d3-aa92-b46b244866ad",
+      "name": "planned water reduction",
+      "value": "70",
+      "unit": "percent",
+      "sentence": "Nevada elevó la apuesta esta semana al demandar al Departamento del Interior y a la Oficina de Reclamación de Estados Unidos, afirmando que no se cubrirán necesidades básicas en la región de Las Vegas si el área tiene que absorber reducciones planificadas de hasta el 70% de su agua del río Colorado en la próxima década.",
+      "occurrence_id": "occurrence-7c018f64c61ea981743bd39df77f5223b6052ea86638bcd6dfc2ffa360e17be8-c9fbab594f77be9d"
+    }
+  ]
+}

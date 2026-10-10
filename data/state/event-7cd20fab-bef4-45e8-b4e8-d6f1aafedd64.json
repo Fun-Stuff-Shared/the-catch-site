@@ -1,0 +1,384 @@
+{
+  "current_state": {
+    "slot-7a829640-ac04-42fd-894b-c17d129de026": {
+      "slot": "approval rating",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "heads": [
+        "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "37.5"
+      },
+      "as_of": "2026-09-24",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "presidential approval polling average or poll cited by The Hill",
+      "evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+      "basis": [
+        "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7"
+      ],
+      "last_confirmed": "2026-09-24",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "as_of": "2026-09-24",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7"
+    },
+    {
+      "kind": "updated",
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "as_of": "2026-09-24",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T23:41:23Z",
+      "canonical_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_0013.html",
+      "desk": "government and politics",
+      "envelope_seq": 1029356,
+      "gate_verdict": "COVER",
+      "id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+      "lang": "en",
+      "published_at": "2026-10-01T23:41:23Z",
+      "publisher": "The Hill",
+      "raw_sha256": "e1543cd2f88b007c94ba4c9fae33b41d41377686f22cd9c84adc02e2fbabdbaa",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.985109Z",
+      "root_evidence": "publisher_host",
+      "root_id": "thehill.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "thehill_feed",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0013.txt",
+      "text_sha256": "0c712f7ff4fffbea23709db76c4a63b838f802c3cb6a2bedb75759ea98d2374a",
+      "title": "Few Americans associate their elected leaders with the term ‘courage’: Gallup",
+      "updated_at": "2026-10-02T01:08:36Z",
+      "url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+      "verbatim_level": "article",
+      "log_seq": 1029357,
+      "recorded_at": "2026-10-02T10:28:50.254020Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-24",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T23:41:23Z",
+          "checkable_against": "presidential approval polling average or poll cited by The Hill",
+          "claim_type": "actual",
+          "envelope_seq": 1038758,
+          "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+          "evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+          "figure": {
+            "unit": "percent",
+            "value": "37.5"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:34.985109Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 1470,
+          "span_start": 1387,
+          "speaker": "outlet's own",
+          "subject": "Donald Trump approval rating",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0013.txt",
+          "text_sha256": "0c712f7ff4fffbea23709db76c4a63b838f802c3cb6a2bedb75759ea98d2374a",
+          "log_seq": 1038759,
+          "recorded_at": "2026-10-02T12:54:37.826368Z",
+          "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+          "evidence_asserted_at": "2026-10-01T23:41:23Z",
+          "evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-17",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T23:41:23Z",
+          "checkable_against": "presidential approval polling average or poll cited by The Hill",
+          "claim_type": "actual",
+          "envelope_seq": 1038760,
+          "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+          "evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+          "figure": {
+            "unit": "percent",
+            "value": "32"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "This figure hit a career low for Trump last week, dipping to 32 percent.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:34.985109Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 1543,
+          "span_start": 1471,
+          "speaker": "outlet's own",
+          "subject": "Donald Trump approval rating",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0013.txt",
+          "text_sha256": "0c712f7ff4fffbea23709db76c4a63b838f802c3cb6a2bedb75759ea98d2374a",
+          "log_seq": 1038761,
+          "recorded_at": "2026-10-02T12:54:38.159006Z",
+          "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+          "evidence_asserted_at": "2026-10-01T23:41:23Z",
+          "evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "86afe1d4e1",
+  "evaluated_at": "2026-10-04T05:35:30.976829Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1038732,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+    "id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+    "kind": "poll result",
+    "label": "Trump approval rating at 37.5 percent",
+    "minted_at": "2026-10-02T12:54:28.944785Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+    "period": "2026-09-24",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump approval rating",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1/c38186df75e8487397dccb9c38dc3fa3.json",
+    "log_seq": 1038733
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "envelope_seq": 1038888,
+      "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "id": "slot-28d210e3-c254-4133-aa20-dc0e53d2b65b",
+      "name": "approval rating",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+        "source_id": "thehill_feed"
+      },
+      "log_seq": 1038889,
+      "recorded_at": "2026-10-02T12:55:35.016581Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "envelope_seq": 1038936,
+      "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "name": "approval rating",
+      "refusal": null,
+      "log_seq": 1038937,
+      "recorded_at": "2026-10-02T12:55:59.468110Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-24",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T23:41:23Z",
+      "checkable_against": "presidential approval polling average or poll cited by The Hill",
+      "claim_type": "actual",
+      "envelope_seq": 1038758,
+      "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+      "figure": {
+        "unit": "percent",
+        "value": "37.5"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.985109Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 1470,
+      "span_start": 1387,
+      "speaker": "outlet's own",
+      "subject": "Donald Trump approval rating",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0013.txt",
+      "text_sha256": "0c712f7ff4fffbea23709db76c4a63b838f802c3cb6a2bedb75759ea98d2374a",
+      "log_seq": 1038759,
+      "recorded_at": "2026-10-02T12:54:37.826368Z",
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "evidence_asserted_at": "2026-10-01T23:41:23Z",
+      "evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-17",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T23:41:23Z",
+      "checkable_against": "presidential approval polling average or poll cited by The Hill",
+      "claim_type": "actual",
+      "envelope_seq": 1038760,
+      "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "evidence_id": "195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1",
+      "figure": {
+        "unit": "percent",
+        "value": "32"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "This figure hit a career low for Trump last week, dipping to 32 percent.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:34.985109Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 1543,
+      "span_start": 1471,
+      "speaker": "outlet's own",
+      "subject": "Donald Trump approval rating",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0013.txt",
+      "text_sha256": "0c712f7ff4fffbea23709db76c4a63b838f802c3cb6a2bedb75759ea98d2374a",
+      "log_seq": 1038761,
+      "recorded_at": "2026-10-02T12:54:38.159006Z",
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "evidence_asserted_at": "2026-10-01T23:41:23Z",
+      "evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1038974,
+      "id": "attach-155879dd-1bef-407b-9f52-93379d05e6ce",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+      "refusal": null,
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "log_seq": 1038975,
+      "recorded_at": "2026-10-02T12:56:38.534420Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1038938,
+      "id": "attach-anchor-slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "refusal": null,
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "log_seq": 1038939,
+      "recorded_at": "2026-10-02T12:55:59.476346Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1111587,
+      "event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "Thursday evening",
+          "value": "37.5 percent"
+        },
+        "time_action": "later_state",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "from_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+      "id": "edge-relation-d1ca643ecdeb2083fb983ca0",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "updates",
+      "reason": "NEW (37.5 percent) is the current rating as of Thursday evening. EXISTING (32 percent) was the career low from last week. Both are from the same source (The Hill). This represents a later state (rose from 32 to 37.5). Since source_relation same_origin is chosen but the quotes themselves don't mention the source, the source span is empty.",
+      "refusal": null,
+      "to_event_id": "event-7cd20fab-bef4-45e8-b4e8-d6f1aafedd64",
+      "to_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+      "log_seq": 1111588,
+      "recorded_at": "2026-10-04T05:12:05.576917Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [
+      {
+        "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+        "relation": "update",
+        "edge_id": "edge-relation-d1ca643ecdeb2083fb983ca0",
+        "earlier_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+        "later_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+        "earlier_evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+        "later_evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+        "sentence": "On 2026-10-01, The Hill reported “This figure hit a career low for Trump last week, dipping to 32 percent.”; on the same day, The Hill reported “President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.”."
+      }
+    ],
+    "changes_checked_at": "2026-10-01T23:41:23Z",
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": [
+      {
+        "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+        "relation": "update",
+        "edge_id": "edge-relation-d1ca643ecdeb2083fb983ca0",
+        "earlier_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-6a1d992749b3d5f2",
+        "later_occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7",
+        "earlier_evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+        "later_evidence_url": "https://thehill.com/blogs/blog-briefing-room/news/6124774-gallup-courage-poll-results-american-politicians/",
+        "sentence": "On 2026-10-01, The Hill reported “This figure hit a career low for Trump last week, dipping to 32 percent.”; on the same day, The Hill reported “President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+  "root_id": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-7a829640-ac04-42fd-894b-c17d129de026",
+      "name": "approval rating",
+      "value": "37.5",
+      "unit": "percent",
+      "sentence": "President Trump’s approval rating sitting at 37.5 percent as of Thursday evening.",
+      "occurrence_id": "occurrence-195b33c12435af7115fcf190ec1d02c03a4af0a8029f70b11b659597c76c43b1-1c1cf773e6ebd1e7"
+    }
+  ]
+}

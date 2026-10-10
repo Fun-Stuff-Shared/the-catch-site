@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-02481b51-cf9a-43f1-9252-e442501a6529": {
+      "slot": "compact status",
+      "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2",
+      "heads": [
+        "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Hours before Dr. Paxson’s announcement on Monday, the administration effectively abandoned talk of a compact",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-03",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Trump administration statements and compact policy records",
+      "evidence_id": "585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0",
+      "basis": [
+        "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2"
+      ],
+      "last_confirmed": "2026-08-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
+      "as_of": "2026-08-03",
+      "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -86,6 +119,7 @@
           "text_sha256": "78ae4d9da91a60322a0d44e00269288ce8d97dbf1ae1bd9d98baede81876b3ea",
           "log_seq": 750098,
           "recorded_at": "2026-09-07T07:32:08.218761Z",
+          "slot_id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
           "evidence_asserted_at": "2026-08-03T21:14:49Z",
           "evidence_url": "https://www.nytimes.com/2026/08/03/us/brown-president-christina-paxson-resign.html",
           "evidence_publisher": "The New York Times",
@@ -95,8 +129,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T15:20:35.925258Z",
   "event": {
     "accepted": true,
     "envelope_seq": 749859,
@@ -116,7 +150,34 @@
     "log_seq": 749860
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2",
+      "envelope_seq": 1149246,
+      "event_id": "event-8b89b586-e847-468e-8caa-4ce44cdafc36",
+      "id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
+      "name": "compact status",
+      "refusal": null,
+      "log_seq": 1149247,
+      "recorded_at": "2026-10-06T14:45:52.857195Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2",
+      "envelope_seq": 1149228,
+      "event_id": "event-8b89b586-e847-468e-8caa-4ce44cdafc36",
+      "id": "slot-63fa1384-6ebf-4d43-8adc-46f8a47fdef5",
+      "name": "compact status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/03/us/brown-president-christina-paxson-resign.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1149229,
+      "recorded_at": "2026-10-06T14:45:05.415101Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -179,13 +240,28 @@
       "text_sha256": "78ae4d9da91a60322a0d44e00269288ce8d97dbf1ae1bd9d98baede81876b3ea",
       "log_seq": 750098,
       "recorded_at": "2026-09-07T07:32:08.218761Z",
+      "slot_id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
       "evidence_asserted_at": "2026-08-03T21:14:49Z",
       "evidence_url": "https://www.nytimes.com/2026/08/03/us/brown-president-christina-paxson-resign.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1149248,
+      "id": "attach-anchor-slot-02481b51-cf9a-43f1-9252-e442501a6529",
+      "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2",
+      "refusal": null,
+      "slot_id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
+      "log_seq": 1149249,
+      "recorded_at": "2026-10-06T14:45:52.877750Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -202,5 +278,14 @@
   "root_id": "event-8b89b586-e847-468e-8caa-4ce44cdafc36",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-02481b51-cf9a-43f1-9252-e442501a6529",
+      "name": "compact status",
+      "value": null,
+      "unit": null,
+      "sentence": "Hours before Dr. Paxson’s announcement on Monday, the administration effectively abandoned talk of a compact",
+      "occurrence_id": "occurrence-585135d2660c05eac1ac369a5ca8b5d2b4a33a2a02b5448b218d486632b156d0-e4d14055a743efe2"
+    }
+  ]
 }

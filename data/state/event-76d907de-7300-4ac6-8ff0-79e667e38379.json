@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8": {
+      "slot": "revenue sent Venezuela",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857",
+      "heads": [
+        "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Un sitio del gobierno venezolano que rastrea los ingresos por petróleo vendido en EE.UU. muestra $300 millones en ingresos enviados a Venezuela hasta marzo.",
+      "span_check": "byte_exact",
+      "speaker": "Venezuelan government website",
+      "figure": {
+        "unit": "dólares",
+        "value": "300000000"
+      },
+      "as_of": "2026-03",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Venezuelan government oil-revenue tracking website",
+      "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "basis": [
+        "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857"
+      ],
+      "last_confirmed": "2026-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "as_of": "2026-03",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-06T20:28:46Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_0671.html",
+      "desk": "government and politics",
+      "envelope_seq": 164581,
+      "gate_reason": "Not English.",
+      "gate_stage": "model",
+      "gate_verdict": "DROP",
+      "gated_at": "2026-09-08T13:57:01.092123Z",
+      "id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "lang": "es",
+      "publisher": "PolitiFact",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:52.362779Z",
+      "root_evidence": "publisher_host",
+      "root_id": "politifact.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "fact_checker",
+      "source_id": "politifact_factchecks",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+      "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+      "title": "Trump dice que Venezuela, EEUU ganan cientos de miles de millones en petróleo, pero infló la cifra",
+      "url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+      "verbatim_level": "article",
+      "log_seq": 814252,
+      "recorded_at": "2026-09-08T13:57:01.092198Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-03",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-06T20:28:46Z",
+          "checkable_against": "Venezuelan government oil-revenue tracking website",
+          "claim_type": "actual",
+          "envelope_seq": 803604,
+          "event_id": "event-76d907de-7300-4ac6-8ff0-79e667e38379",
+          "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+          "figure": {
+            "unit": "dólares",
+            "value": "300000000"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Un sitio del gobierno venezolano que rastrea los ingresos por petróleo vendido en EE.UU. muestra $300 millones en ingresos enviados a Venezuela hasta marzo.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:05:52.362779Z",
+          "root_id": "politifact.com",
+          "span_check": "byte_exact",
+          "span_end": 7338,
+          "span_start": 7181,
+          "speaker": "Venezuelan government website",
+          "subject": "Venezuelan oil revenue sent to Venezuela",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+          "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+          "log_seq": 803605,
+          "recorded_at": "2026-09-08T09:21:13.370818Z",
+          "slot_id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+          "evidence_asserted_at": "2026-08-06T20:28:46Z",
+          "evidence_url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+          "evidence_publisher": "PolitiFact",
+          "evidence_source_id": "politifact_factchecks"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 803458,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-76d907de-7300-4ac6-8ff0-79e667e38379",
+    "kind": "report",
+    "label": "Venezuela government reports oil revenue sent to Venezuela",
+    "minted_at": "2026-09-08T09:20:34.410239Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+    "period": "2026-03",
+    "refusal": null,
+    "status": "published",
+    "subject": "Venezuelan oil revenue sent to Venezuela",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6/b7331bb210cd4d069b8cb0a31e602bb4.json",
+    "log_seq": 803459
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857",
+      "envelope_seq": 803900,
+      "event_id": "event-76d907de-7300-4ac6-8ff0-79e667e38379",
+      "id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "name": "revenue sent Venezuela",
+      "refusal": null,
+      "log_seq": 803901,
+      "recorded_at": "2026-09-08T09:22:32.395182Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-03",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-06T20:28:46Z",
+      "checkable_against": "Venezuelan government oil-revenue tracking website",
+      "claim_type": "actual",
+      "envelope_seq": 803604,
+      "event_id": "event-76d907de-7300-4ac6-8ff0-79e667e38379",
+      "evidence_id": "7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6",
+      "figure": {
+        "unit": "dólares",
+        "value": "300000000"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Un sitio del gobierno venezolano que rastrea los ingresos por petróleo vendido en EE.UU. muestra $300 millones en ingresos enviados a Venezuela hasta marzo.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:05:52.362779Z",
+      "root_id": "politifact.com",
+      "span_check": "byte_exact",
+      "span_end": 7338,
+      "span_start": 7181,
+      "speaker": "Venezuelan government website",
+      "subject": "Venezuelan oil revenue sent to Venezuela",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_0671.txt",
+      "text_sha256": "393d78169014d1bd9c298f0451d9f438dc202ef99d417138e1e7153c2fbb0682",
+      "log_seq": 803605,
+      "recorded_at": "2026-09-08T09:21:13.370818Z",
+      "slot_id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "evidence_asserted_at": "2026-08-06T20:28:46Z",
+      "evidence_url": "https://politifact.com/factchecks/2026/aug/06/donald-trump/trump-venezuela-industria-petrolera-ganancias-eeuu/",
+      "evidence_publisher": "PolitiFact",
+      "evidence_source_id": "politifact_factchecks"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 803902,
+      "id": "attach-anchor-slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857",
+      "refusal": null,
+      "slot_id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "log_seq": 803903,
+      "recorded_at": "2026-09-08T09:22:32.401079Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-76d907de-7300-4ac6-8ff0-79e667e38379",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-4f2a7ad8-39f1-4faa-94cd-6e20c8fa79e8",
+      "name": "revenue sent Venezuela",
+      "value": "300000000",
+      "unit": "dólares",
+      "sentence": "Un sitio del gobierno venezolano que rastrea los ingresos por petróleo vendido en EE.UU. muestra $300 millones en ingresos enviados a Venezuela hasta marzo.",
+      "occurrence_id": "occurrence-7b2d38749c7d509fe8d56a800a0fda3c34b523b18f0ad766315a4efca697c1b6-ee9cea0666d63857"
+    }
+  ]
+}

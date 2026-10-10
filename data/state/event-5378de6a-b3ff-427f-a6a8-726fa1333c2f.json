@@ -1,0 +1,210 @@
+{
+  "current_state": {
+    "slot-22c1e632-c2ef-4f56-a055-52d96b9532df": {
+      "slot": "surgery status",
+      "occurrence_id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553",
+      "heads": [
+        "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "A's SS Jacob Wilson scheduled for left shoulder surgery",
+      "span_check": "byte_exact",
+      "speaker": "Reuters",
+      "figure": null,
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Oakland Athletics medical and team transaction records for Jacob Wilson",
+      "evidence_id": "696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55",
+      "basis": [
+        "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "as_of": "2026-08-29",
+      "occurrence_id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T23:40:14Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9595.html",
+      "envelope_seq": 172491,
+      "id": "696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55",
+      "publisher": "Reuters",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:40.385957Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9595.txt",
+      "text_sha256": "b69a1944c5e85b5f9a6a674fb5a61bd6d0d42ac3bc44ee203bb23e8472700c83",
+      "url": "https://x.com/Reuters/status/2093846217977471380",
+      "verbatim_level": "article",
+      "log_seq": 522085,
+      "recorded_at": "2026-09-06T01:33:24.345654Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-29T23:40:14Z",
+          "checkable_against": "Oakland Athletics medical and team transaction records for Jacob Wilson",
+          "claim_type": "actual",
+          "envelope_seq": 783757,
+          "event_id": "event-5378de6a-b3ff-427f-a6a8-726fa1333c2f",
+          "evidence_id": "696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "A's SS Jacob Wilson scheduled for left shoulder surgery",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:40.385957Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 70,
+          "span_start": 15,
+          "speaker": "Reuters",
+          "subject": "Jacob Wilson",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9595.txt",
+          "text_sha256": "b69a1944c5e85b5f9a6a674fb5a61bd6d0d42ac3bc44ee203bb23e8472700c83",
+          "log_seq": 783758,
+          "recorded_at": "2026-09-08T03:03:00.971019Z",
+          "slot_id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+          "evidence_asserted_at": "2026-08-29T23:40:14Z",
+          "evidence_url": "https://x.com/Reuters/status/2093846217977471380",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 783755,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-5378de6a-b3ff-427f-a6a8-726fa1333c2f",
+    "kind": "medical procedure scheduling",
+    "label": "Jacob Wilson scheduled for left shoulder surgery",
+    "minted_at": "2026-09-08T03:02:49.302730Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55",
+    "period": "2026-08-29",
+    "refusal": null,
+    "status": "published",
+    "subject": "Jacob Wilson",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55/ff61f6f8613245eba14a28986556ceff.json",
+    "log_seq": 783756
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553",
+      "envelope_seq": 783763,
+      "event_id": "event-5378de6a-b3ff-427f-a6a8-726fa1333c2f",
+      "id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "name": "surgery status",
+      "refusal": null,
+      "log_seq": 783764,
+      "recorded_at": "2026-09-08T03:03:15.564987Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-29T23:40:14Z",
+      "checkable_against": "Oakland Athletics medical and team transaction records for Jacob Wilson",
+      "claim_type": "actual",
+      "envelope_seq": 783757,
+      "event_id": "event-5378de6a-b3ff-427f-a6a8-726fa1333c2f",
+      "evidence_id": "696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "A's SS Jacob Wilson scheduled for left shoulder surgery",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:40.385957Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 70,
+      "span_start": 15,
+      "speaker": "Reuters",
+      "subject": "Jacob Wilson",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9595.txt",
+      "text_sha256": "b69a1944c5e85b5f9a6a674fb5a61bd6d0d42ac3bc44ee203bb23e8472700c83",
+      "log_seq": 783758,
+      "recorded_at": "2026-09-08T03:03:00.971019Z",
+      "slot_id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "evidence_asserted_at": "2026-08-29T23:40:14Z",
+      "evidence_url": "https://x.com/Reuters/status/2093846217977471380",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783765,
+      "id": "attach-anchor-slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "occurrence_id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553",
+      "refusal": null,
+      "slot_id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "log_seq": 783766,
+      "recorded_at": "2026-09-08T03:03:15.815669Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-5378de6a-b3ff-427f-a6a8-726fa1333c2f",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-22c1e632-c2ef-4f56-a055-52d96b9532df",
+      "name": "surgery status",
+      "value": null,
+      "unit": null,
+      "sentence": "A's SS Jacob Wilson scheduled for left shoulder surgery",
+      "occurrence_id": "occurrence-696a279bec7177d61940f5595faa4fc640473ea2ec1e37e429b31dd5333e9c55-50be23e7ae07b553"
+    }
+  ]
+}

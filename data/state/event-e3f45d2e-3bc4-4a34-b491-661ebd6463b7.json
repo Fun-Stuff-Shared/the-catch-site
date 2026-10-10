@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8": {
+      "slot": "resident population",
+      "occurrence_id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719",
+      "heads": [
+        "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "St. Ives has roughly 11,000 full-time residents, but in July and August, the population swells as tourists swarm Downalong, the oldest quarter and once home to the town’s many fishermen.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "residents",
+        "value": "11000"
+      },
+      "as_of": "2026-08-05",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "St Ives population statistics and tourism records",
+      "evidence_id": "6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b",
+      "basis": [
+        "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719"
+      ],
+      "last_confirmed": "2026-08-05",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "as_of": "2026-08-05",
+      "occurrence_id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-05T09:00:43Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5500.html",
+      "envelope_seq": 170697,
+      "id": "6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:38.716731Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5500.txt",
+      "text_sha256": "284c523474e0bdfb8c18d4d79cae3cb6936eb7770675f9fb9195fa7a7c7fb603",
+      "url": "https://www.nytimes.com/2026/08/05/travel/uk-st-ives-cornwall-beach.html",
+      "verbatim_level": "article",
+      "log_seq": 521188,
+      "recorded_at": "2026-09-06T01:33:24.093301Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-05",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-05T09:00:43Z",
+          "checkable_against": "St Ives population statistics and tourism records",
+          "claim_type": "actual",
+          "envelope_seq": 777576,
+          "event_id": "event-e3f45d2e-3bc4-4a34-b491-661ebd6463b7",
+          "evidence_id": "6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b",
+          "figure": {
+            "unit": "residents",
+            "value": "11000"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "St. Ives has roughly 11,000 full-time residents, but in July and August, the population swells as tourists swarm Downalong, the oldest quarter and once home to the town’s many fishermen.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:38.716731Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 2435,
+          "span_start": 2247,
+          "speaker": "outlet's own",
+          "subject": "St Ives",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5500.txt",
+          "text_sha256": "284c523474e0bdfb8c18d4d79cae3cb6936eb7770675f9fb9195fa7a7c7fb603",
+          "log_seq": 777577,
+          "recorded_at": "2026-09-08T00:49:32.522963Z",
+          "slot_id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+          "evidence_asserted_at": "2026-08-05T09:00:43Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/05/travel/uk-st-ives-cornwall-beach.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 777430,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-e3f45d2e-3bc4-4a34-b491-661ebd6463b7",
+    "kind": "demographic description",
+    "label": "St Ives population and seasonal tourism",
+    "minted_at": "2026-09-08T00:42:56.480540Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "St Ives",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b/72905aeb6214453389be56db0f16736f.json",
+    "log_seq": 777431
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719",
+      "envelope_seq": 777732,
+      "event_id": "event-e3f45d2e-3bc4-4a34-b491-661ebd6463b7",
+      "id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "name": "resident population",
+      "refusal": null,
+      "log_seq": 777733,
+      "recorded_at": "2026-09-08T00:53:05.612423Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-05",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-05T09:00:43Z",
+      "checkable_against": "St Ives population statistics and tourism records",
+      "claim_type": "actual",
+      "envelope_seq": 777576,
+      "event_id": "event-e3f45d2e-3bc4-4a34-b491-661ebd6463b7",
+      "evidence_id": "6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b",
+      "figure": {
+        "unit": "residents",
+        "value": "11000"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "St. Ives has roughly 11,000 full-time residents, but in July and August, the population swells as tourists swarm Downalong, the oldest quarter and once home to the town’s many fishermen.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:38.716731Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 2435,
+      "span_start": 2247,
+      "speaker": "outlet's own",
+      "subject": "St Ives",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5500.txt",
+      "text_sha256": "284c523474e0bdfb8c18d4d79cae3cb6936eb7770675f9fb9195fa7a7c7fb603",
+      "log_seq": 777577,
+      "recorded_at": "2026-09-08T00:49:32.522963Z",
+      "slot_id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "evidence_asserted_at": "2026-08-05T09:00:43Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/05/travel/uk-st-ives-cornwall-beach.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 777734,
+      "id": "attach-anchor-slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "occurrence_id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719",
+      "refusal": null,
+      "slot_id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "log_seq": 777735,
+      "recorded_at": "2026-09-08T00:53:05.979943Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-e3f45d2e-3bc4-4a34-b491-661ebd6463b7",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-39390bdc-ec4d-47ad-9e96-113a1f626ac8",
+      "name": "resident population",
+      "value": "11000",
+      "unit": "residents",
+      "sentence": "St. Ives has roughly 11,000 full-time residents, but in July and August, the population swells as tourists swarm Downalong, the oldest quarter and once home to the town’s many fishermen.",
+      "occurrence_id": "occurrence-6389759dfa671ab0dd62b3d9f4fff91098f6cb907f440bf3928cc9ae402f759b-fb0d1302783bf719"
+    }
+  ]
+}
