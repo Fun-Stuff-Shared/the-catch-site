@@ -72,8 +72,11 @@ two pages.
 
 Plainness never changes the claim. A term of art that IS the concept stays
 and gets grounded; decorative jargon goes. Short common words over fancy
-ones, active sentences, one claim per sentence, run-ons broken up. "Payrolls
-fell by 23,000" beats every longer way of saying it.
+ones, active sentences, run-ons broken up. "Payrolls fell by 23,000" beats every
+longer way of saying it. Plain is not flat: a sentence may join two facts when it says
+how they relate (because, after, so, but, while), and a paragraph that states one fact
+per sentence with nothing between them is a list, not a story. What a sentence never does
+is bury two unrelated claims in one.
 
 ## Contrast must be measured
 
