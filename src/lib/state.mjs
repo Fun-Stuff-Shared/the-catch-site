@@ -186,9 +186,11 @@ export function readPublishedState(directory = stateDirectory, manifests = join(
 }
 
 // The published state a build renders from. It does not change while a build runs, so the
-// pages share one read of the state directory instead of each parsing every view again.
+// pages share one read of the state directory instead of each parsing every view again. The
+// dev server reads it per request, so a state pull shows without a restart.
 let published;
 export function publishedState() {
+  if (import.meta.env?.DEV) return readPublishedState();
   return published ??= readPublishedState();
 }
 
