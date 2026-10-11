@@ -7,13 +7,13 @@ import Cite from "../../../components/Cite.astro";
 import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, revisionHistory, averages, wageGrowth, forecastMultiples, volatileShare, multipleJobholders, sept8 } from "../../../data/jobs202608.mjs";
 import { storySources } from "../../../lib/record-manifests.mjs";
 const sourceCounts = storySources(event.slug).list.reduce((acc, s) => ({ ...acc, [s.group]: (acc[s.group] || 0) + 1 }), {});
 // The state view is supporting content: the page publishes on its manifest and shows the
 // tracked-values panel once the projection has a view for this event.
-const state = readPublishedState().events.get("event-jobs-2026-09-04-august-payrolls-rise-162000") ?? null;
+const state = publishedState().events.get("event-jobs-2026-09-04-august-payrolls-rise-162000") ?? null;
 if (state?.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 const signed = (n) => (n > 0 ? `+${n}` : `${n}`);
 ---

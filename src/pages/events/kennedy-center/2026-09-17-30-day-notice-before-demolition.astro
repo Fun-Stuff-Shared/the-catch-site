@@ -9,9 +9,9 @@ import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import "../../../styles/story.css";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { affectedPeople, boardReview, boardVote, closureDispute, coverageChecks, coverageRecordCount, coverageVerdictCount, event, financialFiling, funding, laterCoverageRecordCount, timeline } from "../../../data/kennedy-center-2026-09-17-30-day-notice-before-demolition.mjs";
-const state = readPublishedState().events.get("event-kennedy-center-2026-09-17-30-day-notice-before-demolition");
+const state = publishedState().events.get("event-kennedy-center-2026-09-17-30-day-notice-before-demolition");
 if (!state) throw new Error("Missing publication selection: event-kennedy-center-2026-09-17-30-day-notice-before-demolition");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

@@ -13,14 +13,14 @@ import OutletCheck from "../../../components/story/OutletCheck.astro";
 import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event, packageEur, doagEur, mffProposedEur, fisheriesAnnualEuro, fisheriesSectoralEur,
   malmbjergAddedValueEur, satelliteEuEur, satelliteDkDkkMillion, mipUpperSecondary2019,
   mipUpperSecondary2027, mipRenewable2020, mipRenewable2027, mffProposalDate, ecb, computed, aapEur, cefCableEur, blockGrantDkk2023,
   moneyRows, weekTimeline, record2026Timeline,
 } from "../../../data/greenland202609.mjs";
-const state = readPublishedState().events.get("event-greenland-2026-09-07-eu-package-and-nuuk-declaration");
+const state = publishedState().events.get("event-greenland-2026-09-07-eu-package-and-nuuk-declaration");
 if (!state) throw new Error("Missing publication selection: event-greenland-2026-09-07-eu-package-and-nuuk-declaration");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

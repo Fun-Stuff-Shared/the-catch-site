@@ -9,9 +9,9 @@ import DataTable from "../../../components/story/DataTable.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, figures, chronology, counts } from "../../../data/okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman.mjs";
-const state = readPublishedState().events.get("event-okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman");
+const state = publishedState().events.get("event-okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman");
 if (!state) throw new Error("Missing publication selection: event-okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---
