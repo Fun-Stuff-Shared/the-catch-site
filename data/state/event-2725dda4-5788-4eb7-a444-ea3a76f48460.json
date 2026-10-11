@@ -1,0 +1,409 @@
+{
+  "current_state": {
+    "slot-d57440c3-c1fd-4064-9f77-0c2a96120870": {
+      "slot": "polling leader",
+      "occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "heads": [
+        "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "with Le Pen leading opinion polls.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Published polling for the 2027 French presidential election",
+      "evidence_id": "a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b",
+      "basis": [
+        "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+        "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T21:37:11Z",
+      "canonical_url": "https://france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/raw/article_1353.html",
+      "desk": "government and politics",
+      "envelope_seq": 1087848,
+      "gate_verdict": "COVER",
+      "id": "0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a",
+      "lang": "en",
+      "published_at": "2026-10-02T21:37:11Z",
+      "publisher": "France 24",
+      "raw_sha256": "cc9f264ba1b419ae5d2f031fb07dd142e9a89976fa2753b5f70e373099761db5",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:03:33.578128Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.france24.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z",
+      "source_family": "international_public",
+      "source_id": "france24_en",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_1353.txt",
+      "text_sha256": "72ee2c8901c53315da8dee3d1f0e24c06a5b1967f33a55a9a0e5d7fdbd9e176a",
+      "title": "French media respond to M. Le Pen’s ‘Kevlar suit’ comments against investigative outlet",
+      "updated_at": "2026-10-02T21:45:57Z",
+      "url": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+      "verbatim_level": "article",
+      "log_seq": 1087849,
+      "recorded_at": "2026-10-03T16:33:19.726875Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T21:37:11Z",
+          "checkable_against": "French presidential election polling datasets and published poll results",
+          "claim_type": "expectation",
+          "envelope_seq": 1101091,
+          "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+          "evidence_id": "0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a",
+          "figure": null,
+          "fire_id": "89215a638ede741d5c78efba4be33a38",
+          "id": "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Polls currently show Le Pen set to win the first round of voting for France’s first round of presidential elections on April 18, 2027.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T16:03:33.578128Z",
+          "root_id": "www.france24.com",
+          "span_check": "byte_exact",
+          "span_end": 965,
+          "span_start": 829,
+          "speaker": "outlet's own",
+          "subject": "French 2027 presidential election polling",
+          "target_date": "2027-04-18",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_1353.txt",
+          "text_sha256": "72ee2c8901c53315da8dee3d1f0e24c06a5b1967f33a55a9a0e5d7fdbd9e176a",
+          "log_seq": 1101092,
+          "recorded_at": "2026-10-03T20:46:15.203278Z",
+          "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+          "evidence_asserted_at": "2026-10-02T21:37:11Z",
+          "evidence_url": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+          "evidence_publisher": "France 24",
+          "evidence_source_id": "france24_en"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T09:27:41Z",
+      "canonical_url": "https://france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_2366.html",
+      "desk": "government and politics",
+      "envelope_seq": 1031166,
+      "gate_verdict": "COVER",
+      "id": "a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b",
+      "lang": "en",
+      "published_at": "2026-10-02T09:27:41Z",
+      "publisher": "France 24",
+      "raw_sha256": "e28431347ee25e2fb1da9050ebdea95130d63fa84ee0a84a7c966d33512c896a",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:04:50.651723Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.france24.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "international_public",
+      "source_id": "france24_en",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_2366.txt",
+      "text_sha256": "5395aebadbd882bf623271ff3048252ca396b17b3b077438e9fcc7c1fd67524b",
+      "title": "French website publishes evidence for antisemitism claims against Bardella",
+      "url": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+      "verbatim_level": "article",
+      "log_seq": 1031167,
+      "recorded_at": "2026-10-02T10:29:06.817694Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T09:27:41Z",
+          "checkable_against": "Published polling for the 2027 French presidential election",
+          "claim_type": "actual",
+          "envelope_seq": 1053639,
+          "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+          "evidence_id": "a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b",
+          "figure": null,
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "with Le Pen leading opinion polls.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:04:50.651723Z",
+          "root_id": "www.france24.com",
+          "span_check": "byte_exact",
+          "span_end": 477,
+          "span_start": 443,
+          "speaker": "outlet's own",
+          "subject": "French 2027 presidential election polling",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_2366.txt",
+          "text_sha256": "5395aebadbd882bf623271ff3048252ca396b17b3b077438e9fcc7c1fd67524b",
+          "log_seq": 1053640,
+          "recorded_at": "2026-10-03T06:39:19.743638Z",
+          "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+          "evidence_asserted_at": "2026-10-02T09:27:41Z",
+          "evidence_url": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+          "evidence_publisher": "France 24",
+          "evidence_source_id": "france24_en"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T17:33:42.341121Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1053627,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": "event-f80ec3e2-8942-454f-87ee-c408b07d0049",
+    "id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+    "kind": "poll",
+    "label": "French presidential election polling in October 2026",
+    "minted_at": "2026-10-03T06:39:13.138227Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b",
+    "period": "2026-10",
+    "refusal": null,
+    "status": "published",
+    "subject": "French 2027 presidential election polling",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b/138d651488af4c569266f37213165845.json",
+    "log_seq": 1053628
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "envelope_seq": 1107746,
+      "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "id": "slot-b23be060-9a6c-42a3-a39e-9005b92399ce",
+      "name": "polling leader",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+        "source_id": "france24_en"
+      },
+      "log_seq": 1107748,
+      "recorded_at": "2026-10-04T00:47:08.947933Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "envelope_seq": 1107754,
+      "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "name": "polling leader",
+      "refusal": null,
+      "log_seq": 1107755,
+      "recorded_at": "2026-10-04T00:47:21.320329Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T21:37:11Z",
+      "checkable_against": "French presidential election polling datasets and published poll results",
+      "claim_type": "expectation",
+      "envelope_seq": 1101091,
+      "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "evidence_id": "0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a",
+      "figure": null,
+      "fire_id": "89215a638ede741d5c78efba4be33a38",
+      "id": "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Polls currently show Le Pen set to win the first round of voting for France’s first round of presidential elections on April 18, 2027.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:03:33.578128Z",
+      "root_id": "www.france24.com",
+      "span_check": "byte_exact",
+      "span_end": 965,
+      "span_start": 829,
+      "speaker": "outlet's own",
+      "subject": "French 2027 presidential election polling",
+      "target_date": "2027-04-18",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_1353.txt",
+      "text_sha256": "72ee2c8901c53315da8dee3d1f0e24c06a5b1967f33a55a9a0e5d7fdbd9e176a",
+      "log_seq": 1101092,
+      "recorded_at": "2026-10-03T20:46:15.203278Z",
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "evidence_asserted_at": "2026-10-02T21:37:11Z",
+      "evidence_url": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+      "evidence_publisher": "France 24",
+      "evidence_source_id": "france24_en"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T09:27:41Z",
+      "checkable_against": "Published polling for the 2027 French presidential election",
+      "claim_type": "actual",
+      "envelope_seq": 1053639,
+      "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "evidence_id": "a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b",
+      "figure": null,
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "with Le Pen leading opinion polls.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:04:50.651723Z",
+      "root_id": "www.france24.com",
+      "span_check": "byte_exact",
+      "span_end": 477,
+      "span_start": 443,
+      "speaker": "outlet's own",
+      "subject": "French 2027 presidential election polling",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_2366.txt",
+      "text_sha256": "5395aebadbd882bf623271ff3048252ca396b17b3b077438e9fcc7c1fd67524b",
+      "log_seq": 1053640,
+      "recorded_at": "2026-10-03T06:39:19.743638Z",
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "evidence_asserted_at": "2026-10-02T09:27:41Z",
+      "evidence_url": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+      "evidence_publisher": "France 24",
+      "evidence_source_id": "france24_en"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1107768,
+      "id": "attach-041291c9-e6eb-4dcc-ba16-41ef4650e469",
+      "occurrence_id": "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+      "refusal": null,
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "log_seq": 1107769,
+      "recorded_at": "2026-10-04T00:47:41.273323Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1107756,
+      "id": "attach-anchor-slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "refusal": null,
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "log_seq": 1107757,
+      "recorded_at": "2026-10-04T00:47:21.431282Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1119168,
+      "event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "currently",
+          "value": "Le Pen set to win the first round of voting"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "from_occurrence_id": "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+      "id": "edge-relation-71946f6a11729ebc813b32f1",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both statements assert that Le Pen is leading/set to win the polls for the French presidential election. While the NEW one is more specific about the first round, they both track the same polling leadership status.",
+      "refusal": null,
+      "to_event_id": "event-2725dda4-5788-4eb7-a444-ea3a76f48460",
+      "to_occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+      "log_seq": 1119169,
+      "recorded_at": "2026-10-04T17:00:48.612720Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T21:37:11Z",
+    "confirmations": [
+      {
+        "label": "“with Le Pen leading opinion polls.”",
+        "value": "with Le Pen leading opinion polls.",
+        "reports": [
+          {
+            "publisher": "France 24",
+            "url": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-d57440c3-c1fd-4064-9f77-0c2a96120870"
+        ],
+        "sentence": "“with Le Pen leading opinion polls.”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-d57440c3-c1fd-4064-9f77-0c2a96120870"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+        "relation": "supports",
+        "edge_id": "edge-relation-71946f6a11729ebc813b32f1",
+        "earlier_occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897",
+        "later_occurrence_id": "occurrence-0b2bdfc5d446e46a900dd21ac0d1100a5ec92903ce852bfbbfadaab36be23e1a-0b4a2381bc4b89ac",
+        "earlier_evidence_url": "https://www.france24.com/en/video/20261002-french-website-publishes-evidence-for-antisemitism-claims-against-bardella",
+        "later_evidence_url": "https://www.france24.com/en/france/20261002-french-media-react-to-m-le-pen-s-kevlar-suit-comments-against-investigative-press-outlet",
+        "sentence": "On 2026-10-02, France 24 reported “with Le Pen leading opinion polls.”; on the same day, France 24 reported “Polls currently show Le Pen set to win the first round of voting for France’s first round of presidential elections on April 18, 2027.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": "event-f80ec3e2-8942-454f-87ee-c408b07d0049",
+  "root_id": "event-f80ec3e2-8942-454f-87ee-c408b07d0049",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-d57440c3-c1fd-4064-9f77-0c2a96120870",
+      "name": "polling leader",
+      "value": null,
+      "unit": null,
+      "sentence": "with Le Pen leading opinion polls.",
+      "occurrence_id": "occurrence-a32e1aa4822596eb8dfd26b3453b080a10052fc39f82340936e46272e15f741b-e70cffcdb2c03897"
+    }
+  ]
+}

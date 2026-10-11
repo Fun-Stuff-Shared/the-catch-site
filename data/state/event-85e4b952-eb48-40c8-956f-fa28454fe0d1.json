@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-e2b79101-8220-45a6-9978-aa2e39466249": {
+      "slot": "sale status",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b",
+      "heads": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In December, Imax CEO Rich Gelfond opened the door to a sale.",
+      "span_check": "byte_exact",
+      "speaker": "CNBC",
+      "figure": null,
+      "as_of": "2025-12",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Imax corporate statements or CEO Rich Gelfond's December 2025 remarks",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "basis": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b"
+      ],
+      "last_confirmed": "2025-12",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
+      "as_of": "2025-12",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -54,6 +87,7 @@
           "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
           "log_seq": 750652,
           "recorded_at": "2026-09-07T07:43:37.588238Z",
+          "slot_id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
           "evidence_asserted_at": "2026-08-28T11:54:53Z",
           "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
           "evidence_publisher": "CNBC",
@@ -63,8 +97,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750529,
@@ -84,7 +118,34 @@
     "log_seq": 750530
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b",
+      "envelope_seq": 1020660,
+      "event_id": "event-85e4b952-eb48-40c8-956f-fa28454fe0d1",
+      "id": "slot-b6040b53-494f-4b31-aaeb-282257c64872",
+      "name": "sale status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1020661,
+      "recorded_at": "2026-10-01T23:58:49.092291Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b",
+      "envelope_seq": 1020662,
+      "event_id": "event-85e4b952-eb48-40c8-956f-fa28454fe0d1",
+      "id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
+      "name": "sale status",
+      "refusal": null,
+      "log_seq": 1020663,
+      "recorded_at": "2026-10-01T23:58:58.801557Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -114,6 +175,7 @@
       "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
       "log_seq": 750652,
       "recorded_at": "2026-09-07T07:43:37.588238Z",
+      "slot_id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
       "evidence_asserted_at": "2026-08-28T11:54:53Z",
       "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
       "evidence_publisher": "CNBC",
@@ -121,6 +183,19 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1020664,
+      "id": "attach-anchor-slot-e2b79101-8220-45a6-9978-aa2e39466249",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b",
+      "refusal": null,
+      "slot_id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
+      "log_seq": 1020665,
+      "recorded_at": "2026-10-01T23:58:58.809442Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": false,
       "edge_kind": "cites",
@@ -153,5 +228,14 @@
   "root_id": "event-85e4b952-eb48-40c8-956f-fa28454fe0d1",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-e2b79101-8220-45a6-9978-aa2e39466249",
+      "name": "sale status",
+      "value": null,
+      "unit": null,
+      "sentence": "In December, Imax CEO Rich Gelfond opened the door to a sale.",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-6084c1571e513b2b"
+    }
+  ]
 }

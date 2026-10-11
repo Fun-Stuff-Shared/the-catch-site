@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1": {
+      "slot": "detention warehouse plan status",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98",
+      "heads": [
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Since Markwayne Mullin took the reins in March, he has reversed contentious policies, including a plan to turn massive warehouses into detention facilities.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-03",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "DHS detention-facility plan and reversal records",
+      "evidence_id": "5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4",
+      "basis": [
+        "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98"
+      ],
+      "last_confirmed": "2026-03",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
+      "as_of": "2026-03",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -54,6 +87,7 @@
           "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
           "log_seq": 753146,
           "recorded_at": "2026-09-07T08:23:48.149919Z",
+          "slot_id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
           "evidence_asserted_at": "2026-08-19T09:00:00Z",
           "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
           "evidence_publisher": "Politico",
@@ -63,8 +97,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753089,
@@ -84,7 +118,34 @@
     "log_seq": 753090
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98",
+      "envelope_seq": 1003414,
+      "event_id": "event-71fbd4df-9692-4f17-9918-5e046ba7681f",
+      "id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
+      "name": "detention warehouse plan status",
+      "refusal": null,
+      "log_seq": 1003415,
+      "recorded_at": "2026-09-29T20:00:20.169904Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98",
+      "envelope_seq": 1003412,
+      "event_id": "event-71fbd4df-9692-4f17-9918-5e046ba7681f",
+      "id": "slot-eecbadab-9445-4f35-bd28-404663d83d3e",
+      "name": "detention warehouse plan status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
+        "source_id": "politico_politics_rss"
+      },
+      "log_seq": 1003413,
+      "recorded_at": "2026-09-29T20:00:02.738946Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -114,13 +175,28 @@
       "text_sha256": "a8c61e5b80837bc5213bcb8ec4eae8b2ca9e0630cc24a6c711d9c4ffa8803c44",
       "log_seq": 753146,
       "recorded_at": "2026-09-07T08:23:48.149919Z",
+      "slot_id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
       "evidence_asserted_at": "2026-08-19T09:00:00Z",
       "evidence_url": "https://www.politico.com/news/2026/08/19/poll-trump-deportations-voters-midterms-01041099",
       "evidence_publisher": "Politico",
       "evidence_source_id": "politico_politics_rss"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1003416,
+      "id": "attach-anchor-slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98",
+      "refusal": null,
+      "slot_id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
+      "log_seq": 1003417,
+      "recorded_at": "2026-09-29T20:00:20.177697Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -137,5 +213,14 @@
   "root_id": "event-71fbd4df-9692-4f17-9918-5e046ba7681f",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-49c42ac8-0c2f-4637-9a69-20a32b0d63e1",
+      "name": "detention warehouse plan status",
+      "value": null,
+      "unit": null,
+      "sentence": "Since Markwayne Mullin took the reins in March, he has reversed contentious policies, including a plan to turn massive warehouses into detention facilities.",
+      "occurrence_id": "occurrence-5c0ad0e03220ced791711a646dbdc14ce22866da617b3c03cbaa5146714ceec4-6231708a63bc7f98"
+    }
+  ]
 }

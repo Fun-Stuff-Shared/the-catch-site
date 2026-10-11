@@ -1,0 +1,201 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-05T12:13:08Z",
+      "canonical_url": "https://x.com/AP/status/2107081651477938409",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/raw/article_2195.html",
+      "desk": "government and politics",
+      "envelope_seq": 1161121,
+      "gate_verdict": "COVER",
+      "id": "032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58",
+      "lang": "en",
+      "published_at": "2026-10-05T12:13:08Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "fecdbccb3aac6efab1fc0101a88693862da3d41c548d74ce2f86aa124ca1e69c",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:04:40.126452Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z",
+      "source_family": "wire_service",
+      "source_id": "x_ap_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2195.txt",
+      "text_sha256": "eb1be3ba7452bd51c767d3a621d1a5adad267176797c6c305f56a8850e7a17c9",
+      "title": null,
+      "url": "https://x.com/AP/status/2107081651477938409",
+      "verbatim_level": "article",
+      "log_seq": 1161122,
+      "recorded_at": "2026-10-06T22:40:16.393101Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2012-09-11",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-05T12:13:08Z",
+          "checkable_against": "Official U.S. government records and investigation reports on the September 2012 Benghazi attacks",
+          "claim_type": "actual",
+          "envelope_seq": 1162348,
+          "event_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+          "evidence_id": "032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58",
+          "figure": {
+            "unit": "people",
+            "value": "4"
+          },
+          "fire_id": "11c60f920beab955581b7f08bbda5f1e",
+          "id": "occurrence-032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58-461444d7f2084681",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "incidents leading to the death of 4 USG employees in Benghazi.",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T22:04:40.126452Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 354,
+          "span_start": 292,
+          "speaker": "X account author",
+          "subject": "Benghazi attacks",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2195.txt",
+          "text_sha256": "eb1be3ba7452bd51c767d3a621d1a5adad267176797c6c305f56a8850e7a17c9",
+          "time_action": "corrects",
+          "log_seq": 1162349,
+          "recorded_at": "2026-10-07T00:33:03.584877Z",
+          "evidence_asserted_at": "2026-10-05T12:13:08Z",
+          "evidence_url": "https://x.com/AP/status/2107081651477938409",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "x_ap_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T01:42:42.966672Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1162306,
+    "fire_id": "quarry-wire-scheduled-20261006T220035Z",
+    "follows": null,
+    "id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+    "kind": "attack",
+    "label": "Benghazi attack kills four U.S. government employees",
+    "minted_at": "2026-10-07T00:32:42.828761Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58",
+    "period": "2012-09-11",
+    "refusal": null,
+    "status": "published",
+    "subject": "Benghazi attacks",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T220035Z/032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58/8dd9803f49794982a88a7900dcc05849.json",
+    "log_seq": 1162307
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58-461444d7f2084681",
+      "envelope_seq": 1162464,
+      "event_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+      "id": "slot-380d9232-908b-42bb-862f-d7742395b2d1",
+      "name": "death toll",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1162465,
+      "recorded_at": "2026-10-07T00:33:48.139946Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58-461444d7f2084681",
+      "envelope_seq": 1162472,
+      "event_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+      "id": "slot-51263007-ec75-4ff7-9f74-69b2e9c42b61",
+      "name": "death toll",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "record",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1162473,
+      "recorded_at": "2026-10-07T00:33:58.810247Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58-461444d7f2084681",
+      "envelope_seq": 1162432,
+      "event_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+      "id": "slot-5f959f3e-2268-434c-8647-85422a339aaf",
+      "name": "death toll",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2107081651477938409",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1162433,
+      "recorded_at": "2026-10-07T00:33:41.385653Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2012-09-11",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-05T12:13:08Z",
+      "checkable_against": "Official U.S. government records and investigation reports on the September 2012 Benghazi attacks",
+      "claim_type": "actual",
+      "envelope_seq": 1162348,
+      "event_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+      "evidence_id": "032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58",
+      "figure": {
+        "unit": "people",
+        "value": "4"
+      },
+      "fire_id": "11c60f920beab955581b7f08bbda5f1e",
+      "id": "occurrence-032d862ed8010b5a20fbafce959a79cf1e2cc03459f140a4053d65ef3be85b58-461444d7f2084681",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "incidents leading to the death of 4 USG employees in Benghazi.",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:04:40.126452Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 354,
+      "span_start": 292,
+      "speaker": "X account author",
+      "subject": "Benghazi attacks",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2195.txt",
+      "text_sha256": "eb1be3ba7452bd51c767d3a621d1a5adad267176797c6c305f56a8850e7a17c9",
+      "time_action": "corrects",
+      "log_seq": 1162349,
+      "recorded_at": "2026-10-07T00:33:03.584877Z",
+      "evidence_asserted_at": "2026-10-05T12:13:08Z",
+      "evidence_url": "https://x.com/AP/status/2107081651477938409",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "x_ap_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-99627942-c09a-4d77-ba1c-dcb335579155",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

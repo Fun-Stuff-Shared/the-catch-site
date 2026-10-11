@@ -1,0 +1,302 @@
+{
+  "current_state": {
+    "slot-41b6b914-77fa-455a-be00-06e5ac5c191a": {
+      "slot": "bed capacity",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+        "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-e37a9ce04a411639"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+        "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-e37a9ce04a411639"
+      ],
+      "last_confirmed": "2011",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "as_of": "2000",
+      "occurrence_id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11"
+    },
+    {
+      "kind": "disputed",
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "as_of": "2011"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-05T20:45:53Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5469.html",
+      "envelope_seq": 170635,
+      "id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:35.058322Z",
+      "root_evidence": "body:4215:4296",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5469.txt",
+      "text_sha256": "c5d8fde2ee64c3b185b085cb9c2fb27ecc3efd5ecb6657a947ffa76ffc42bc99",
+      "url": "https://www.nytimes.com/2026/08/05/nyregion/delaney-hall-ice-what-we-know.html",
+      "verbatim_level": "article",
+      "log_seq": 521157,
+      "recorded_at": "2026-09-06T01:33:24.084518Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2000",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-05T20:45:53Z",
+          "checkable_against": "Delaney Hall opening and facility records",
+          "claim_type": "actual",
+          "envelope_seq": 805566,
+          "event_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+          "evidence_id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+          "figure": {
+            "unit": "beds",
+            "value": "250"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Delaney Hall opened in 2000 as a halfway house providing 250 beds for offenders serving jail terms of less than one year.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:35.058322Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1591,
+          "span_start": 1470,
+          "speaker": "outlet's own",
+          "subject": "Delaney Hall",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5469.txt",
+          "text_sha256": "c5d8fde2ee64c3b185b085cb9c2fb27ecc3efd5ecb6657a947ffa76ffc42bc99",
+          "log_seq": 805567,
+          "recorded_at": "2026-09-08T09:40:02.750051Z",
+          "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+          "evidence_asserted_at": "2026-08-05T20:45:53Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/05/nyregion/delaney-hall-ice-what-we-know.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2011",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-05T20:45:53Z",
+          "checkable_against": "ICE and Delaney Hall detention records",
+          "claim_type": "actual",
+          "envelope_seq": 805630,
+          "event_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+          "evidence_id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+          "figure": {
+            "unit": "detainees",
+            "value": "450"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-e37a9ce04a411639",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "From 2011 to 2017, the federal Immigration and Customs Enforcement agency used Delaney Hall to hold up to 450 immigrant detainees.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:35.058322Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1722,
+          "span_start": 1592,
+          "speaker": "outlet's own",
+          "subject": "Delaney Hall",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5469.txt",
+          "text_sha256": "c5d8fde2ee64c3b185b085cb9c2fb27ecc3efd5ecb6657a947ffa76ffc42bc99",
+          "log_seq": 805631,
+          "recorded_at": "2026-09-08T09:40:39.358086Z",
+          "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+          "evidence_asserted_at": "2026-08-05T20:45:53Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/05/nyregion/delaney-hall-ice-what-we-know.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 805456,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+    "kind": "opening",
+    "label": "Delaney Hall opens as halfway house",
+    "minted_at": "2026-09-08T09:39:01.871580Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+    "period": "2000-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Delaney Hall",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c/c485e746e4fa42aab692b7fd7db8b213.json",
+    "log_seq": 805457
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+      "envelope_seq": 805726,
+      "event_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+      "id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "name": "bed capacity",
+      "refusal": null,
+      "log_seq": 805727,
+      "recorded_at": "2026-09-08T09:41:08.704397Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2000",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-05T20:45:53Z",
+      "checkable_against": "Delaney Hall opening and facility records",
+      "claim_type": "actual",
+      "envelope_seq": 805566,
+      "event_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+      "evidence_id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+      "figure": {
+        "unit": "beds",
+        "value": "250"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Delaney Hall opened in 2000 as a halfway house providing 250 beds for offenders serving jail terms of less than one year.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:35.058322Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1591,
+      "span_start": 1470,
+      "speaker": "outlet's own",
+      "subject": "Delaney Hall",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5469.txt",
+      "text_sha256": "c5d8fde2ee64c3b185b085cb9c2fb27ecc3efd5ecb6657a947ffa76ffc42bc99",
+      "log_seq": 805567,
+      "recorded_at": "2026-09-08T09:40:02.750051Z",
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "evidence_asserted_at": "2026-08-05T20:45:53Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/05/nyregion/delaney-hall-ice-what-we-know.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2011",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-05T20:45:53Z",
+      "checkable_against": "ICE and Delaney Hall detention records",
+      "claim_type": "actual",
+      "envelope_seq": 805630,
+      "event_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+      "evidence_id": "7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c",
+      "figure": {
+        "unit": "detainees",
+        "value": "450"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-e37a9ce04a411639",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "From 2011 to 2017, the federal Immigration and Customs Enforcement agency used Delaney Hall to hold up to 450 immigrant detainees.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:35.058322Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1722,
+      "span_start": 1592,
+      "speaker": "outlet's own",
+      "subject": "Delaney Hall",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5469.txt",
+      "text_sha256": "c5d8fde2ee64c3b185b085cb9c2fb27ecc3efd5ecb6657a947ffa76ffc42bc99",
+      "log_seq": 805631,
+      "recorded_at": "2026-09-08T09:40:39.358086Z",
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "evidence_asserted_at": "2026-08-05T20:45:53Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/05/nyregion/delaney-hall-ice-what-we-know.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 900334,
+      "id": "attach-59e9c314-a6d8-42b6-bd17-7cabbe452405",
+      "occurrence_id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-e37a9ce04a411639",
+      "refusal": null,
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "log_seq": 900335,
+      "recorded_at": "2026-09-15T03:55:58.424609Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 805728,
+      "id": "attach-anchor-slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "occurrence_id": "occurrence-7dbc404bead79490a348eeaaf7168af8287c04f799d7c61ffb68c02603c33f8c-5c7b60109a69db11",
+      "refusal": null,
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "log_seq": 805729,
+      "recorded_at": "2026-09-08T09:41:08.716208Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-fa8181bf-b10c-4891-ba44-0e0c5d0df879",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-41b6b914-77fa-455a-be00-06e5ac5c191a",
+      "name": "bed capacity",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

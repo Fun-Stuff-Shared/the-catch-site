@@ -1,0 +1,227 @@
+{
+  "current_state": {
+    "slot-818e20b1-ab34-4c91-8859-384cf6aac278": {
+      "slot": "approval rating",
+      "occurrence_id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be",
+      "heads": [
+        "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "On Thursday, a survey by Germany’s public broadcaster ARD found that only one in 10 respondents were satisfied or very satisfied with his work. That is the lowest figure for any chancellor since the survey began in 1997.",
+      "span_check": "byte_exact",
+      "speaker": "ARD",
+      "figure": {
+        "unit": "percent",
+        "value": "10"
+      },
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "ARD survey results on satisfaction with German chancellors",
+      "evidence_id": "5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb",
+      "basis": [
+        "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be"
+      ],
+      "last_confirmed": "2026-10-01",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T11:31:15Z",
+      "canonical_url": "https://aljazeera.com/news/2026/10/2/just-one-in-10-germans-thinks-merz-is-up-to-the-job-after-election-wipeout?traffic_source=rss",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_1155.html",
+      "desk": "government and politics",
+      "envelope_seq": 1058117,
+      "gate_verdict": "COVER",
+      "id": "5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb",
+      "lang": "en",
+      "published_at": "2026-10-02T11:31:15Z",
+      "publisher": "Al Jazeera",
+      "raw_sha256": "87c6b00db92a85dfc662b876c07837842783091df96c89420c72e40cc584197d",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:30.961111Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.aljazeera.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "aljazeera_all_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1155.txt",
+      "text_sha256": "4dec8a68c33b5e83de643045db0c8b02cd055308a99786dc9ed983f5c91a1483",
+      "title": "Support for Merz plunges after CDU’s losses to Germany’s right and left",
+      "updated_at": "2026-10-02T12:16:04Z",
+      "url": "https://www.aljazeera.com/news/2026/10/2/just-one-in-10-germans-thinks-merz-is-up-to-the-job-after-election-wipeout?traffic_source=rss",
+      "verbatim_level": "article",
+      "log_seq": 1058118,
+      "recorded_at": "2026-10-03T07:22:44.331830Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T11:31:15Z",
+          "checkable_against": "ARD survey results on satisfaction with German chancellors",
+          "claim_type": "actual",
+          "envelope_seq": 1077676,
+          "event_id": "event-ab8346fb-f665-4d61-bec8-da3d326043d2",
+          "evidence_id": "5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb",
+          "figure": {
+            "unit": "percent",
+            "value": "10"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "On Thursday, a survey by Germany’s public broadcaster ARD found that only one in 10 respondents were satisfied or very satisfied with his work. That is the lowest figure for any chancellor since the survey began in 1997.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:30.961111Z",
+          "root_id": "www.aljazeera.com",
+          "span_check": "byte_exact",
+          "span_end": 1418,
+          "span_start": 1196,
+          "speaker": "ARD",
+          "subject": "Friedrich Merz approval rating",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1155.txt",
+          "text_sha256": "4dec8a68c33b5e83de643045db0c8b02cd055308a99786dc9ed983f5c91a1483",
+          "log_seq": 1077677,
+          "recorded_at": "2026-10-03T11:38:02.598903Z",
+          "slot_id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+          "evidence_asserted_at": "2026-10-02T11:31:15Z",
+          "evidence_url": "https://www.aljazeera.com/news/2026/10/2/just-one-in-10-germans-thinks-merz-is-up-to-the-job-after-election-wipeout?traffic_source=rss",
+          "evidence_publisher": "Al Jazeera",
+          "evidence_source_id": "aljazeera_all_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "026753ab0f",
+  "evaluated_at": "2026-10-03T11:41:35.310577Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1077608,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-ab8346fb-f665-4d61-bec8-da3d326043d2",
+    "kind": "poll",
+    "label": "ARD survey finds record-low satisfaction with Friedrich Merz",
+    "minted_at": "2026-10-03T11:37:19.264366Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Friedrich Merz approval rating",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb/6a4837822bdb471585166b7e07fe08bb.json",
+    "log_seq": 1077609
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be",
+      "envelope_seq": 1077730,
+      "event_id": "event-ab8346fb-f665-4d61-bec8-da3d326043d2",
+      "id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "name": "approval rating",
+      "refusal": null,
+      "log_seq": 1077731,
+      "recorded_at": "2026-10-03T11:38:46.343346Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T11:31:15Z",
+      "checkable_against": "ARD survey results on satisfaction with German chancellors",
+      "claim_type": "actual",
+      "envelope_seq": 1077676,
+      "event_id": "event-ab8346fb-f665-4d61-bec8-da3d326043d2",
+      "evidence_id": "5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb",
+      "figure": {
+        "unit": "percent",
+        "value": "10"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "On Thursday, a survey by Germany’s public broadcaster ARD found that only one in 10 respondents were satisfied or very satisfied with his work. That is the lowest figure for any chancellor since the survey began in 1997.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:30.961111Z",
+      "root_id": "www.aljazeera.com",
+      "span_check": "byte_exact",
+      "span_end": 1418,
+      "span_start": 1196,
+      "speaker": "ARD",
+      "subject": "Friedrich Merz approval rating",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1155.txt",
+      "text_sha256": "4dec8a68c33b5e83de643045db0c8b02cd055308a99786dc9ed983f5c91a1483",
+      "log_seq": 1077677,
+      "recorded_at": "2026-10-03T11:38:02.598903Z",
+      "slot_id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "evidence_asserted_at": "2026-10-02T11:31:15Z",
+      "evidence_url": "https://www.aljazeera.com/news/2026/10/2/just-one-in-10-germans-thinks-merz-is-up-to-the-job-after-election-wipeout?traffic_source=rss",
+      "evidence_publisher": "Al Jazeera",
+      "evidence_source_id": "aljazeera_all_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1077732,
+      "id": "attach-anchor-slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "occurrence_id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be",
+      "refusal": null,
+      "slot_id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "log_seq": 1077733,
+      "recorded_at": "2026-10-03T11:38:46.376302Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-ab8346fb-f665-4d61-bec8-da3d326043d2",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-818e20b1-ab34-4c91-8859-384cf6aac278",
+      "name": "approval rating",
+      "value": "10",
+      "unit": "percent",
+      "sentence": "On Thursday, a survey by Germany’s public broadcaster ARD found that only one in 10 respondents were satisfied or very satisfied with his work. That is the lowest figure for any chancellor since the survey began in 1997.",
+      "occurrence_id": "occurrence-5fb9baf1b06f82f6402c8567e250a691b35e86894e1abf9454e81c2535a76fcb-30fad6f5ea9d10be"
+    }
+  ]
+}

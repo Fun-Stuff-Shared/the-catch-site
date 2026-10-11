@@ -1,0 +1,365 @@
+{
+  "current_state": {
+    "slot-af03cc34-c0bf-4430-83e1-49f1223919b6": {
+      "slot": "people rescued",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291",
+      "heads": [
+        "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "All 13 Indian nationals on board were rescued, the Indian foreign ministry said .",
+      "span_check": "byte_exact",
+      "speaker": "Indian foreign ministry",
+      "figure": {
+        "unit": "people",
+        "value": "13"
+      },
+      "as_of": "2026-08-04",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Indian foreign ministry rescue statement",
+      "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+      "basis": [
+        "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291"
+      ],
+      "last_confirmed": "2026-08-04",
+      "freshness": "stale"
+    },
+    "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93": {
+      "slot": "incident date",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+      "heads": [
+        "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "On Tuesday, the Indian government said a projectile had sunk an Indian-flagged commercial vessel off the Yemeni coast.",
+      "span_check": "byte_exact",
+      "speaker": "Indian government",
+      "figure": null,
+      "as_of": "2026-08-04",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Indian Ministry of External Affairs statement and maritime incident records",
+      "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+      "basis": [
+        "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426"
+      ],
+      "last_confirmed": "2026-08-04",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "as_of": "2026-08-04",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "as_of": "2026-08-04",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-04T17:57:27Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5428.html",
+      "envelope_seq": 170553,
+      "id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:30.560684Z",
+      "root_evidence": "body:1767:1821",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5428.txt",
+      "text_sha256": "04a96d866ede524c1c93f1950859e90a0ffa33b627414e51ee4038170809c071",
+      "url": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+      "verbatim_level": "article",
+      "log_seq": 521116,
+      "recorded_at": "2026-09-06T01:33:24.072946Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-04",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-04T17:57:27Z",
+          "checkable_against": "Indian foreign ministry rescue statement",
+          "claim_type": "actual",
+          "envelope_seq": 802558,
+          "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+          "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+          "figure": {
+            "unit": "people",
+            "value": "13"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "All 13 Indian nationals on board were rescued, the Indian foreign ministry said .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:30.560684Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5471,
+          "span_start": 5390,
+          "speaker": "Indian foreign ministry",
+          "subject": "Indian-flagged commercial vessel off Yemen",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5428.txt",
+          "text_sha256": "04a96d866ede524c1c93f1950859e90a0ffa33b627414e51ee4038170809c071",
+          "log_seq": 802559,
+          "recorded_at": "2026-09-08T09:10:51.683165Z",
+          "slot_id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+          "evidence_asserted_at": "2026-08-04T17:57:27Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-04",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-04T17:57:27Z",
+          "checkable_against": "Indian Ministry of External Affairs statement and maritime incident records",
+          "claim_type": "actual",
+          "envelope_seq": 802556,
+          "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+          "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+          "figure": null,
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "On Tuesday, the Indian government said a projectile had sunk an Indian-flagged commercial vessel off the Yemeni coast.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:30.560684Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5389,
+          "span_start": 5271,
+          "speaker": "Indian government",
+          "subject": "Indian-flagged commercial vessel off Yemen",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5428.txt",
+          "text_sha256": "04a96d866ede524c1c93f1950859e90a0ffa33b627414e51ee4038170809c071",
+          "log_seq": 802557,
+          "recorded_at": "2026-09-08T09:10:51.643702Z",
+          "slot_id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+          "evidence_asserted_at": "2026-08-04T17:57:27Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-06T21:46:42.969113Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 802410,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-0d9c3ba4-2562-454d-b3a8-9dbb31c54aab",
+    "id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+    "kind": "maritime incident",
+    "label": "Indian-flagged vessel sunk off Yemeni coast",
+    "minted_at": "2026-09-08T09:09:53.510879Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+    "period": "2026-08-04",
+    "refusal": null,
+    "status": "published",
+    "subject": "Indian-flagged commercial vessel off Yemen",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744/d0b3b45c6036476da73823ce2247ee11.json",
+    "log_seq": 802411
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+      "envelope_seq": 902285,
+      "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+      "id": "slot-97126080-3a73-46ad-928a-a5a9c06ba3e0",
+      "name": "incident date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 902286,
+      "recorded_at": "2026-09-15T12:04:40.722362Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291",
+      "envelope_seq": 802798,
+      "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+      "id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "name": "people rescued",
+      "refusal": null,
+      "log_seq": 802799,
+      "recorded_at": "2026-09-08T09:12:33.465309Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+      "envelope_seq": 902287,
+      "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+      "id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "name": "incident date",
+      "refusal": null,
+      "log_seq": 902288,
+      "recorded_at": "2026-09-15T12:04:50.272248Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-04",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-04T17:57:27Z",
+      "checkable_against": "Indian foreign ministry rescue statement",
+      "claim_type": "actual",
+      "envelope_seq": 802558,
+      "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+      "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+      "figure": {
+        "unit": "people",
+        "value": "13"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "All 13 Indian nationals on board were rescued, the Indian foreign ministry said .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:30.560684Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5471,
+      "span_start": 5390,
+      "speaker": "Indian foreign ministry",
+      "subject": "Indian-flagged commercial vessel off Yemen",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5428.txt",
+      "text_sha256": "04a96d866ede524c1c93f1950859e90a0ffa33b627414e51ee4038170809c071",
+      "log_seq": 802559,
+      "recorded_at": "2026-09-08T09:10:51.683165Z",
+      "slot_id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "evidence_asserted_at": "2026-08-04T17:57:27Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-04",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-04T17:57:27Z",
+      "checkable_against": "Indian Ministry of External Affairs statement and maritime incident records",
+      "claim_type": "actual",
+      "envelope_seq": 802556,
+      "event_id": "event-fdec15a0-b538-4479-8ca2-be89405f4804",
+      "evidence_id": "799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744",
+      "figure": null,
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "On Tuesday, the Indian government said a projectile had sunk an Indian-flagged commercial vessel off the Yemeni coast.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:30.560684Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5389,
+      "span_start": 5271,
+      "speaker": "Indian government",
+      "subject": "Indian-flagged commercial vessel off Yemen",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5428.txt",
+      "text_sha256": "04a96d866ede524c1c93f1950859e90a0ffa33b627414e51ee4038170809c071",
+      "log_seq": 802557,
+      "recorded_at": "2026-09-08T09:10:51.643702Z",
+      "slot_id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "evidence_asserted_at": "2026-08-04T17:57:27Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/world/middleeast/strait-of-hormuz-deal-progress.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 802800,
+      "id": "attach-anchor-slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291",
+      "refusal": null,
+      "slot_id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "log_seq": 802801,
+      "recorded_at": "2026-09-08T09:12:33.471459Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 902289,
+      "id": "attach-anchor-slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426",
+      "refusal": null,
+      "slot_id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "log_seq": 902290,
+      "recorded_at": "2026-09-15T12:04:50.279879Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": "event-0d9c3ba4-2562-454d-b3a8-9dbb31c54aab",
+  "root_id": "event-eaa8e54a-7406-41bf-80a1-a886e85529d1",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-af03cc34-c0bf-4430-83e1-49f1223919b6",
+      "name": "people rescued",
+      "value": "13",
+      "unit": "people",
+      "sentence": "All 13 Indian nationals on board were rescued, the Indian foreign ministry said .",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-9417d9cd1ba70291"
+    },
+    {
+      "slot_id": "slot-dc5b4c29-d1d6-419a-9c50-0067e56b2a93",
+      "name": "incident date",
+      "value": null,
+      "unit": null,
+      "sentence": "On Tuesday, the Indian government said a projectile had sunk an Indian-flagged commercial vessel off the Yemeni coast.",
+      "occurrence_id": "occurrence-799d6fa4dadb4e8c11ed85707f25653e48e7ca07a301c4139d6d1710497f9744-f45560410426a426"
+    }
+  ]
+}

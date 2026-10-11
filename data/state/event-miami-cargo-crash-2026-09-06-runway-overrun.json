@@ -2,22 +2,32 @@
   "current_state": {
     "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e": {
       "slot": "death toll",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9",
       "heads": [
-        "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9",
-        "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-66da6c1acc2d28ca"
+        "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "The five deaths were among those in the two vehicles.",
+      "span_check": "byte_exact",
+      "speaker": "Jennifer Homendy",
+      "figure": {
+        "unit": "people",
+        "value": "5"
+      },
+      "as_of": "2026-09-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "NTSB casualty findings and vehicle occupant records",
+      "evidence_id": "882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf",
       "basis": [
         "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9",
         "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-66da6c1acc2d28ca"
       ],
       "last_confirmed": "2026-09-07",
-      "freshness": "unknown_current"
+      "freshness": "aging"
     },
     "slot-0c805f0e-a552-4195-8c00-fdb28203e7c9": {
       "slot": "injured people",
@@ -130,6 +140,34 @@
       ],
       "last_confirmed": "2026-09-07",
       "freshness": "aging"
+    },
+    "slot-649324d2-4043-49d4-90b1-0bc5d6628d81": {
+      "slot": "flight count",
+      "occurrence_id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b",
+      "heads": [
+        "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "It was the plane's third flight that day and the pilots' second.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "flights",
+        "value": "3"
+      },
+      "as_of": "2026-09-06",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Aircraft operator flight records and FAA flight tracking data",
+      "evidence_id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+      "basis": [
+        "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b"
+      ],
+      "last_confirmed": "2026-09-06",
+      "freshness": "aging"
     }
   },
   "timeline": [
@@ -147,14 +185,15 @@
     },
     {
       "kind": "first_value",
+      "slot_id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "as_of": "2026-09-06",
+      "occurrence_id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b"
+    },
+    {
+      "kind": "first_value",
       "slot_id": "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e",
       "as_of": "2026-09-06",
       "occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-66da6c1acc2d28ca"
-    },
-    {
-      "kind": "disputed",
-      "slot_id": "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e",
-      "as_of": "2026-09-07"
     },
     {
       "kind": "first_value",
@@ -170,6 +209,141 @@
     }
   ],
   "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T02:02:47Z",
+      "canonical_url": "https://usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_7158.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1034702,
+      "gate_verdict": "COVER",
+      "id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+      "lang": "en",
+      "published_at": "2026-10-02T02:02:47Z",
+      "publisher": "USA Today",
+      "raw_sha256": "7ccfedfc31965832a38c6a034985a815085a2f221332b2bf3dfedfe106f00d3f",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:13:45.492081Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+      "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+      "title": "NTSB: Amazon plane pilots weren't warned about winds before crash",
+      "updated_at": "2026-10-02T02:02:47Z",
+      "url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+      "verbatim_level": "article",
+      "log_seq": 1034703,
+      "recorded_at": "2026-10-02T10:29:23.126208Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T02:02:47Z",
+          "checkable_against": "NTSB accident report and Miami-Dade County fatality/injury records",
+          "claim_type": "actual",
+          "envelope_seq": 1039360,
+          "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+          "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+          "figure": {
+            "unit": "people",
+            "value": "5"
+          },
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-6b5becc6fc23e42b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Five people on the ground were killed, while three others suffered serious injuries and the two pilots sustained minor injuries.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:13:45.492081Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1358,
+          "span_start": 1230,
+          "speaker": "outlet's own",
+          "subject": "Miami cargo crash",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+          "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+          "log_seq": 1039361,
+          "recorded_at": "2026-10-02T12:59:43.754184Z",
+          "evidence_asserted_at": "2026-10-02T02:02:47Z",
+          "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T02:02:47Z",
+          "checkable_against": "NTSB accident record and Miami International Airport runway records",
+          "claim_type": "actual",
+          "envelope_seq": 1039358,
+          "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+          "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+          "figure": null,
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-a36d70bf74db1346",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The Boeing 767-33A, operated by Miami-based 21 Air on behalf of Amazon, was arriving from San Juan, Puerto Rico, when it landed on Runway 30, continued beyond the pavement and struck two vehicles.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:13:45.492081Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1229,
+          "span_start": 1033,
+          "speaker": "outlet's own",
+          "subject": "Miami cargo crash",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+          "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+          "log_seq": 1039359,
+          "recorded_at": "2026-10-02T12:59:43.112452Z",
+          "evidence_asserted_at": "2026-10-02T02:02:47Z",
+          "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T02:02:47Z",
+          "checkable_against": "Court filings in lawsuits arising from the Miami cargo crash",
+          "claim_type": "actual",
+          "envelope_seq": 1039362,
+          "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+          "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+          "figure": null,
+          "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+          "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-e531748611d39ad1",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Several lawsuits have been filed by family members of the victims killed or injured in the crash alleging that negligence and safety failures by the two pilots, 21 Air, Amazon and others connected to the flight contributed to the accident.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:13:45.492081Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 4309,
+          "span_start": 4070,
+          "speaker": "outlet's own",
+          "subject": "Miami cargo crash",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+          "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+          "log_seq": 1039363,
+          "recorded_at": "2026-10-02T12:59:44.097309Z",
+          "evidence_asserted_at": "2026-10-02T02:02:47Z",
+          "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    },
     {
       "accepted": true,
       "asserted_at": "2026-09-08T07:34:56Z",
@@ -555,11 +729,113 @@
           "evidence_source_id": "upi_top_news"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T01:28:09Z",
+      "canonical_url": "https://upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_0859.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1029936,
+      "gate_verdict": "COVER",
+      "id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+      "lang": "en",
+      "published_at": "2026-10-02T01:28:09Z",
+      "publisher": "UPI",
+      "raw_sha256": "039fd7419303c074dc064211b646d8e81e5dc1ec888564c90434ca8b4ceae3ce",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:50.659215Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.upi.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "wire_service",
+      "source_id": "upi_top_news",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0859.txt",
+      "text_sha256": "1b3113ea4471397bfae4d349f95687ee7e43a3edf1205e7789c077fb68885a51",
+      "title": "Amazon Air pilot in deadly crash touched down too late, NTSB says",
+      "url": "https://www.upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+      "verbatim_level": "article",
+      "log_seq": 1029937,
+      "recorded_at": "2026-10-02T10:29:01.433986Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T01:28:09Z",
+          "checkable_against": "Aircraft operator flight records and FAA flight tracking data",
+          "claim_type": "actual",
+          "envelope_seq": 1055143,
+          "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+          "evidence_id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+          "figure": {
+            "unit": "flights",
+            "value": "3"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "It was the plane's third flight that day and the pilots' second.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:50.659215Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 734,
+          "span_start": 670,
+          "speaker": "outlet's own",
+          "subject": "Miami cargo crash",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0859.txt",
+          "text_sha256": "1b3113ea4471397bfae4d349f95687ee7e43a3edf1205e7789c077fb68885a51",
+          "log_seq": 1055144,
+          "recorded_at": "2026-10-03T06:53:00.116035Z",
+          "slot_id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+          "evidence_asserted_at": "2026-10-02T01:28:09Z",
+          "evidence_url": "https://www.upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T01:28:09Z",
+          "checkable_against": "FAA flight plan and aircraft tracking records",
+          "claim_type": "actual",
+          "envelope_seq": 1055141,
+          "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+          "evidence_id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+          "figure": null,
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-d28f8d4e321bb73d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The flight originated in San Juan, Puerto Rico.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:50.659215Z",
+          "root_id": "www.upi.com",
+          "span_check": "byte_exact",
+          "span_end": 669,
+          "span_start": 622,
+          "speaker": "outlet's own",
+          "subject": "Miami cargo crash",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0859.txt",
+          "text_sha256": "1b3113ea4471397bfae4d349f95687ee7e43a3edf1205e7789c077fb68885a51",
+          "log_seq": 1055142,
+          "recorded_at": "2026-10-03T06:52:59.704508Z",
+          "evidence_asserted_at": "2026-10-02T01:28:09Z",
+          "evidence_url": "https://www.upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+          "evidence_publisher": "UPI",
+          "evidence_source_id": "upi_top_news"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0a2f62b478",
-  "evaluated_at": "2026-09-18T04:54:48.099607Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T09:45:57.343839Z",
   "event": {
     "accepted": true,
     "envelope_seq": 902688,
@@ -599,6 +875,17 @@
     },
     {
       "accepted": true,
+      "anchor_occurrence_id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b",
+      "envelope_seq": 1055393,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "name": "flight count",
+      "refusal": null,
+      "log_seq": 1055394,
+      "recorded_at": "2026-10-03T06:54:36.285585Z"
+    },
+    {
+      "accepted": true,
       "anchor_occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-7826d58c3ea42058",
       "envelope_seq": 826269,
       "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
@@ -632,6 +919,108 @@
     }
   ],
   "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T02:02:47Z",
+      "checkable_against": "NTSB accident report and Miami-Dade County fatality/injury records",
+      "claim_type": "actual",
+      "envelope_seq": 1039360,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+      "figure": {
+        "unit": "people",
+        "value": "5"
+      },
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-6b5becc6fc23e42b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Five people on the ground were killed, while three others suffered serious injuries and the two pilots sustained minor injuries.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:13:45.492081Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1358,
+      "span_start": 1230,
+      "speaker": "outlet's own",
+      "subject": "Miami cargo crash",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+      "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+      "log_seq": 1039361,
+      "recorded_at": "2026-10-02T12:59:43.754184Z",
+      "evidence_asserted_at": "2026-10-02T02:02:47Z",
+      "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T02:02:47Z",
+      "checkable_against": "NTSB accident record and Miami International Airport runway records",
+      "claim_type": "actual",
+      "envelope_seq": 1039358,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+      "figure": null,
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-a36d70bf74db1346",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The Boeing 767-33A, operated by Miami-based 21 Air on behalf of Amazon, was arriving from San Juan, Puerto Rico, when it landed on Runway 30, continued beyond the pavement and struck two vehicles.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:13:45.492081Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1229,
+      "span_start": 1033,
+      "speaker": "outlet's own",
+      "subject": "Miami cargo crash",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+      "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+      "log_seq": 1039359,
+      "recorded_at": "2026-10-02T12:59:43.112452Z",
+      "evidence_asserted_at": "2026-10-02T02:02:47Z",
+      "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T02:02:47Z",
+      "checkable_against": "Court filings in lawsuits arising from the Miami cargo crash",
+      "claim_type": "actual",
+      "envelope_seq": 1039362,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "evidence_id": "22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087",
+      "figure": null,
+      "fire_id": "679647cc182b5d8eea57c48efeb4f642",
+      "id": "occurrence-22cdcfa25bc9fd7f1a38c1fc602e95083a3b59e085d2be3603cff97c28943087-e531748611d39ad1",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Several lawsuits have been filed by family members of the victims killed or injured in the crash alleging that negligence and safety failures by the two pilots, 21 Air, Amazon and others connected to the flight contributed to the accident.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:13:45.492081Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 4309,
+      "span_start": 4070,
+      "speaker": "outlet's own",
+      "subject": "Miami cargo crash",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_7158.txt",
+      "text_sha256": "d2a0aba90107f1b4d424781df36ae28825b6cdd6df6dfc0c5043f9df4f1a150b",
+      "log_seq": 1039363,
+      "recorded_at": "2026-10-02T12:59:44.097309Z",
+      "evidence_asserted_at": "2026-10-02T02:02:47Z",
+      "evidence_url": "https://www.usatoday.com/story/news/nation/2026/10/01/ntsb-report-amazon-cargo-plane-crash-winds/92044731007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
     {
       "accepted": true,
       "anchorable": true,
@@ -985,6 +1374,76 @@
       "evidence_url": "https://www.upi.com/Top_News/US/2026/09/08/NTSB-Amazon-Prime-crash-investigation/1741788850055/",
       "evidence_publisher": "UPI",
       "evidence_source_id": "upi_top_news"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T01:28:09Z",
+      "checkable_against": "Aircraft operator flight records and FAA flight tracking data",
+      "claim_type": "actual",
+      "envelope_seq": 1055143,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "evidence_id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+      "figure": {
+        "unit": "flights",
+        "value": "3"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "It was the plane's third flight that day and the pilots' second.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:50.659215Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 734,
+      "span_start": 670,
+      "speaker": "outlet's own",
+      "subject": "Miami cargo crash",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0859.txt",
+      "text_sha256": "1b3113ea4471397bfae4d349f95687ee7e43a3edf1205e7789c077fb68885a51",
+      "log_seq": 1055144,
+      "recorded_at": "2026-10-03T06:53:00.116035Z",
+      "slot_id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "evidence_asserted_at": "2026-10-02T01:28:09Z",
+      "evidence_url": "https://www.upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T01:28:09Z",
+      "checkable_against": "FAA flight plan and aircraft tracking records",
+      "claim_type": "actual",
+      "envelope_seq": 1055141,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "evidence_id": "b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc",
+      "figure": null,
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-d28f8d4e321bb73d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The flight originated in San Juan, Puerto Rico.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:50.659215Z",
+      "root_id": "www.upi.com",
+      "span_check": "byte_exact",
+      "span_end": 669,
+      "span_start": 622,
+      "speaker": "outlet's own",
+      "subject": "Miami cargo crash",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0859.txt",
+      "text_sha256": "1b3113ea4471397bfae4d349f95687ee7e43a3edf1205e7789c077fb68885a51",
+      "log_seq": 1055142,
+      "recorded_at": "2026-10-03T06:52:59.704508Z",
+      "evidence_asserted_at": "2026-10-02T01:28:09Z",
+      "evidence_url": "https://www.upi.com/Top_News/US/2026/10/01/florida-amazon-plane-crash/1581790903659/",
+      "evidence_publisher": "UPI",
+      "evidence_source_id": "upi_top_news"
     }
   ],
   "edges": [
@@ -1030,6 +1489,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 1055395,
+      "id": "attach-anchor-slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "occurrence_id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b",
+      "refusal": null,
+      "slot_id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "log_seq": 1055396,
+      "recorded_at": "2026-10-03T06:54:36.319514Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 826271,
       "id": "attach-anchor-slot-6791dcef-abd4-4028-9e57-ecc631af7ad5",
       "occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-7826d58c3ea42058",
@@ -1065,17 +1537,77 @@
       "recorded_at": "2026-09-08T17:16:49.930070Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1113969,
+      "event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "five deaths"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "from_occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9",
+      "id": "edge-relation-9e63a73097cf60ae1df5970d",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both statements report five deaths in the same incident and originate from the same source article (same evidence_id and root_id), though the quotes themselves don't explicitly name the source.",
+      "refusal": null,
+      "to_event_id": "event-miami-cargo-crash-2026-09-06-runway-overrun",
+      "to_occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-66da6c1acc2d28ca",
+      "log_seq": 1113970,
+      "recorded_at": "2026-10-04T09:17:03.882857Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-09-08T07:34:56Z",
+    "confirmations": [
+      {
+        "label": "“5 people”",
+        "value": "5 people",
+        "reports": [
+          {
+            "publisher": "UPI",
+            "url": "https://www.upi.com/Top_News/US/2026/09/08/NTSB-Amazon-Prime-crash-investigation/1741788850055/",
+            "dates": [
+              "2026-09-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e"
+        ],
+        "sentence": "“5 people”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-9e63a73097cf60ae1df5970d",
+        "earlier_occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-66da6c1acc2d28ca",
+        "later_occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9",
+        "earlier_evidence_url": "https://www.upi.com/Top_News/US/2026/09/08/NTSB-Amazon-Prime-crash-investigation/1741788850055/",
+        "later_evidence_url": "https://www.upi.com/Top_News/US/2026/09/08/NTSB-Amazon-Prime-crash-investigation/1741788850055/",
+        "sentence": "On 2026-09-08, UPI reported “The Boeing 767-33 Alpha cargo plane crashed at Miami International Airport shortly before 2 p.m. EDT Sunday, killing five people and wounding five others.”; on the same day, UPI reported “The five deaths were among those in the two vehicles.”."
+      }
+    ]
   },
   "status": "published",
   "desk": "crime and public safety",
@@ -1087,10 +1619,10 @@
     {
       "slot_id": "slot-9c584a44-13d8-4e2a-a4c3-de839c7bb33e",
       "name": "death toll",
-      "value": null,
-      "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "value": "5",
+      "unit": "people",
+      "sentence": "The five deaths were among those in the two vehicles.",
+      "occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-5ed30896878ea1b9"
     },
     {
       "slot_id": "slot-0c805f0e-a552-4195-8c00-fdb28203e7c9",
@@ -1123,6 +1655,14 @@
       "unit": "people",
       "sentence": "NTSB Chairwoman Jennifer Homendy told reporters at a press conference Monday that the plane overran the runway, hitting navigational aids and equipment before striking a white van with seven people aboard within the airport perimeter.",
       "occurrence_id": "occurrence-882455bb9ffdffe1a9fb190b32c50bbde272542e3381477c9b8b5b5b973051cf-7826d58c3ea42058"
+    },
+    {
+      "slot_id": "slot-649324d2-4043-49d4-90b1-0bc5d6628d81",
+      "name": "flight count",
+      "value": "3",
+      "unit": "flights",
+      "sentence": "It was the plane's third flight that day and the pilots' second.",
+      "occurrence_id": "occurrence-b13d31c752af683b85a6fef5edb5209c086791e32c202862e6ccff77c3e2b4dc-08f9dac6d068966b"
     }
   ]
 }

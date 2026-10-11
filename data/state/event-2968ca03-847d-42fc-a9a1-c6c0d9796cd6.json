@@ -1,0 +1,229 @@
+{
+  "current_state": {
+    "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee": {
+      "slot": "electricity costs",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d",
+      "heads": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Data from the Energy Information Administration (EIA) shows that average monthly residential electricity costs rose 12.5% between December 2024 and July of this year.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "12.5"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Energy Information Administration residential electricity price data",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "basis": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "canonical_url": "https://cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/raw/article_2132.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1262688,
+      "gate_verdict": "COVER",
+      "id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "lang": "en",
+      "published_at": "2026-10-09T16:23:00Z",
+      "publisher": "CBS News",
+      "raw_sha256": "242f461f325e8238258899e86438ad1f48eb780af0f5207c0f1dc8e9dea114df",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cbsnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z",
+      "source_family": "major_outlet",
+      "source_id": "cbs_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+      "updated_at": "2026-10-09T19:53:41Z",
+      "url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "verbatim_level": "article",
+      "log_seq": 1262689,
+      "recorded_at": "2026-10-10T00:08:20.571870Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-09T16:23:00Z",
+          "checkable_against": "Energy Information Administration residential electricity price data",
+          "claim_type": "actual",
+          "envelope_seq": 1281108,
+          "event_id": "event-2968ca03-847d-42fc-a9a1-c6c0d9796cd6",
+          "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+          "figure": {
+            "unit": "percent",
+            "value": "12.5"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Data from the Energy Information Administration (EIA) shows that average monthly residential electricity costs rose 12.5% between December 2024 and July of this year.",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:07:01.009631Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 5800,
+          "span_start": 5634,
+          "speaker": "outlet's own",
+          "subject": "U.S. residential electricity costs",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+          "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+          "time_action": "corrects",
+          "log_seq": 1281109,
+          "recorded_at": "2026-10-10T02:28:27.795705Z",
+          "slot_id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+          "evidence_asserted_at": "2026-10-09T16:23:00Z",
+          "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "58ad6bca62",
+  "evaluated_at": "2026-10-10T02:45:28.859362Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1280936,
+    "fire_id": "quarry-wire-scheduled-20261009T220053Z",
+    "follows": null,
+    "id": "event-2968ca03-847d-42fc-a9a1-c6c0d9796cd6",
+    "kind": "data report",
+    "label": "U.S. residential electricity costs July 2026",
+    "minted_at": "2026-10-10T02:27:36.503249Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. residential electricity costs",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261009T220053Z/1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae/143b7b57cb954acaac8c666f72752533.json",
+    "log_seq": 1280937
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d",
+      "envelope_seq": 1281458,
+      "event_id": "event-2968ca03-847d-42fc-a9a1-c6c0d9796cd6",
+      "id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "name": "electricity costs",
+      "refusal": null,
+      "log_seq": 1281459,
+      "recorded_at": "2026-10-10T02:31:56.886598Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "checkable_against": "Energy Information Administration residential electricity price data",
+      "claim_type": "actual",
+      "envelope_seq": 1281108,
+      "event_id": "event-2968ca03-847d-42fc-a9a1-c6c0d9796cd6",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "figure": {
+        "unit": "percent",
+        "value": "12.5"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Data from the Energy Information Administration (EIA) shows that average monthly residential electricity costs rose 12.5% between December 2024 and July of this year.",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 5800,
+      "span_start": 5634,
+      "speaker": "outlet's own",
+      "subject": "U.S. residential electricity costs",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "time_action": "corrects",
+      "log_seq": 1281109,
+      "recorded_at": "2026-10-10T02:28:27.795705Z",
+      "slot_id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "evidence_asserted_at": "2026-10-09T16:23:00Z",
+      "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1281460,
+      "id": "attach-anchor-slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d",
+      "refusal": null,
+      "slot_id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "log_seq": 1281461,
+      "recorded_at": "2026-10-10T02:31:56.924897Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-2968ca03-847d-42fc-a9a1-c6c0d9796cd6",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-48480914-3bc6-4e2c-98f8-20dfc442d4ee",
+      "name": "electricity costs",
+      "value": "12.5",
+      "unit": "percent",
+      "sentence": "Data from the Energy Information Administration (EIA) shows that average monthly residential electricity costs rose 12.5% between December 2024 and July of this year.",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-6ca910ffd48f015d"
+    }
+  ]
+}

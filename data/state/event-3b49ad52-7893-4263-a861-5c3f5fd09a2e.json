@@ -1,0 +1,261 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T19:30:19Z",
+      "canonical_url": "https://x.com/Reuters/status/2107554064091279427",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/raw/article_2710.html",
+      "desk": "courts and legal",
+      "envelope_seq": 1161341,
+      "gate_verdict": "COVER",
+      "id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+      "lang": "en",
+      "published_at": "2026-10-06T19:30:19Z",
+      "publisher": "Reuters",
+      "raw_sha256": "fb78192547eb666328501000bc550bb3afae71b10dfe5915551a8e0df349d0f2",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:12.615661Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+      "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+      "title": null,
+      "url": "https://x.com/Reuters/status/2107554064091279427",
+      "verbatim_level": "article",
+      "log_seq": 1161342,
+      "recorded_at": "2026-10-06T22:40:16.880909Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-06",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-06T19:30:19Z",
+          "checkable_against": "UK court filing or docket for the app-store-fees lawsuit against Google",
+          "claim_type": "actual",
+          "envelope_seq": 1176075,
+          "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+          "evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+          "figure": {
+            "unit": "pounds",
+            "value": "1000000000"
+          },
+          "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+          "id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Google fights £1 billion UK lawsuit over app store fees",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T22:05:12.615661Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 71,
+          "span_start": 15,
+          "speaker": "Reuters",
+          "subject": "Google UK app store fees lawsuit",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+          "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+          "time_action": "corrects",
+          "log_seq": 1176076,
+          "recorded_at": "2026-10-07T08:47:13.949088Z",
+          "evidence_asserted_at": "2026-10-06T19:30:19Z",
+          "evidence_url": "https://x.com/Reuters/status/2107554064091279427",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T09:44:05.871796Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1176059,
+    "fire_id": "quarry-wire-scheduled-20261006T220035Z",
+    "follows": null,
+    "id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+    "kind": "lawsuit",
+    "label": "Google fights £1 billion UK app store fees lawsuit",
+    "minted_at": "2026-10-07T08:47:03.362455Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+    "period": "2026-10-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "Google UK app store fees lawsuit",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T220035Z/59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d/3004b40fe3414c12b5523b127b3399d5.json",
+    "log_seq": 1176060
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176197,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-0e3f3ba6-c974-4fcf-973f-1e355b5b178f",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_source_missing",
+      "source_feed": {
+        "selector": "https://example.com",
+        "source_id": ""
+      },
+      "log_seq": 1176198,
+      "recorded_at": "2026-10-07T08:48:02.507908Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176109,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-27533cdd-ca23-4118-bc4e-ebcc8113ae42",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107554064091279427",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1176110,
+      "recorded_at": "2026-10-07T08:47:31.857711Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176217,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-514b7eca-ecd4-4a72-b0c1-5708df7a9100",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107554064091279427",
+        "source_id": "Reuters"
+      },
+      "log_seq": 1176218,
+      "recorded_at": "2026-10-07T08:48:18.482694Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176149,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-6d62e6bb-1970-4df4-b431-d3cae422ee10",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+        "source_id": "document"
+      },
+      "log_seq": 1176150,
+      "recorded_at": "2026-10-07T08:47:54.600313Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176133,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-7e33223f-7094-4206-b461-d44ca389be54",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "reuters",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1176134,
+      "recorded_at": "2026-10-07T08:47:45.064427Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176119,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-ea9a7517-06f9-489c-89eb-4d59984b4eed",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1176120,
+      "recorded_at": "2026-10-07T08:47:37.769114Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "envelope_seq": 1176209,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "id": "slot-fd93796d-053c-494f-8b5a-74582e417d61",
+      "name": "lawsuit amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2107554064091279427",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 1176210,
+      "recorded_at": "2026-10-07T08:48:12.892241Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-06",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-06T19:30:19Z",
+      "checkable_against": "UK court filing or docket for the app-store-fees lawsuit against Google",
+      "claim_type": "actual",
+      "envelope_seq": 1176075,
+      "event_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+      "evidence_id": "59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d",
+      "figure": {
+        "unit": "pounds",
+        "value": "1000000000"
+      },
+      "fire_id": "2e52c7a702f4a723e9191b413b2c5aff",
+      "id": "occurrence-59aec9cc1dcfff90d1836018617ce405ee90628aac1871f1bdc5eeb79dc3e99d-307ec01814534ee0",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Google fights £1 billion UK lawsuit over app store fees",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:05:12.615661Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 71,
+      "span_start": 15,
+      "speaker": "Reuters",
+      "subject": "Google UK app store fees lawsuit",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_2710.txt",
+      "text_sha256": "4bf0870de39ee21aea5abd21f304810b68cddb1f40c208e2e332412b3500649c",
+      "time_action": "corrects",
+      "log_seq": 1176076,
+      "recorded_at": "2026-10-07T08:47:13.949088Z",
+      "evidence_asserted_at": "2026-10-06T19:30:19Z",
+      "evidence_url": "https://x.com/Reuters/status/2107554064091279427",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": null,
+  "root_id": "event-3b49ad52-7893-4263-a861-5c3f5fd09a2e",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

@@ -1,0 +1,374 @@
+{
+  "current_state": {
+    "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2": {
+      "slot": "app build duration",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0",
+      "heads": [
+        "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "For instance, the widely used “Air Alert” app was built in just 72 hours following the 2022 invasion by a private IT company seeking a more efficient warning system than traditional sirens.",
+      "span_check": "byte_exact",
+      "speaker": "Anna Colin Lebedev",
+      "figure": {
+        "unit": "hours",
+        "value": "72"
+      },
+      "as_of": "2022",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Air Alert app development and launch records",
+      "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+      "basis": [
+        "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0"
+      ],
+      "last_confirmed": "2022",
+      "freshness": "stale"
+    },
+    "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d": {
+      "slot": "setup time",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+      "heads": [
+        "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Within three days, the developers secured a technical partner and arranged real-time data sharing with the Ministry of Defense.",
+      "span_check": "byte_exact",
+      "speaker": "Anna Colin Lebedev",
+      "figure": {
+        "unit": "days",
+        "value": "3"
+      },
+      "as_of": "2022",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Air Alert app partnership and Ministry of Defense data-sharing records",
+      "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+      "basis": [
+        "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522"
+      ],
+      "last_confirmed": "2022",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "as_of": "2022",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "as_of": "2022",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-07-22T16:43:07Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1601.html",
+      "envelope_seq": 165369,
+      "id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+      "publisher": "Brookings Institution",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:12:52.644522Z",
+      "root_evidence": "body:14289:14314",
+      "root_id": "www.brookings.edu",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "think_tank",
+      "source_id": "brookings_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1601.txt",
+      "text_sha256": "be75e1234ee2348cfa3debd561084c3ba4d7bff26a6bf80b31fb3d673f62c419",
+      "url": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+      "verbatim_level": "article",
+      "log_seq": 518524,
+      "recorded_at": "2026-09-06T01:33:23.334973Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2022",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-07-22T16:43:07Z",
+          "checkable_against": "Air Alert app partnership and Ministry of Defense data-sharing records",
+          "claim_type": "actual",
+          "envelope_seq": 772065,
+          "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+          "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+          "figure": {
+            "unit": "days",
+            "value": "3"
+          },
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Within three days, the developers secured a technical partner and arranged real-time data sharing with the Ministry of Defense.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:12:52.644522Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 13456,
+          "span_start": 13329,
+          "speaker": "Anna Colin Lebedev",
+          "subject": "Air Alert app",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1601.txt",
+          "text_sha256": "be75e1234ee2348cfa3debd561084c3ba4d7bff26a6bf80b31fb3d673f62c419",
+          "log_seq": 772066,
+          "recorded_at": "2026-09-07T21:03:03.879354Z",
+          "slot_id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+          "evidence_asserted_at": "2026-07-22T16:43:07Z",
+          "evidence_url": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2022",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-07-22T16:43:07Z",
+          "checkable_against": "Air Alert app development and launch records",
+          "claim_type": "actual",
+          "envelope_seq": 772051,
+          "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+          "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+          "figure": {
+            "unit": "hours",
+            "value": "72"
+          },
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "For instance, the widely used “Air Alert” app was built in just 72 hours following the 2022 invasion by a private IT company seeking a more efficient warning system than traditional sirens.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:12:52.644522Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 13328,
+          "span_start": 13135,
+          "speaker": "Anna Colin Lebedev",
+          "subject": "Air Alert app",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1601.txt",
+          "text_sha256": "be75e1234ee2348cfa3debd561084c3ba4d7bff26a6bf80b31fb3d673f62c419",
+          "log_seq": 772052,
+          "recorded_at": "2026-09-07T21:02:57.671062Z",
+          "slot_id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+          "evidence_asserted_at": "2026-07-22T16:43:07Z",
+          "evidence_url": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 771921,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+    "kind": "product launch",
+    "label": "Air Alert app launched after 2022 invasion",
+    "minted_at": "2026-09-07T21:01:56.497657Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+    "period": "2022-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Air Alert app",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe/a8b82bfce44f48e09432901ff9595bb8.json",
+    "log_seq": 771922
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+      "envelope_seq": 781327,
+      "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+      "id": "slot-312a7f83-e08f-425c-b013-cd136b0c561f",
+      "name": "setup time",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+        "source_id": "brookings_sitemap"
+      },
+      "log_seq": 781328,
+      "recorded_at": "2026-09-08T02:04:46.168895Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+      "envelope_seq": 781329,
+      "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+      "id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "name": "setup time",
+      "refusal": null,
+      "log_seq": 781330,
+      "recorded_at": "2026-09-08T02:04:57.109118Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0",
+      "envelope_seq": 772603,
+      "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+      "id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "name": "app build duration",
+      "refusal": null,
+      "log_seq": 772604,
+      "recorded_at": "2026-09-07T21:07:14.011545Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2022",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-07-22T16:43:07Z",
+      "checkable_against": "Air Alert app partnership and Ministry of Defense data-sharing records",
+      "claim_type": "actual",
+      "envelope_seq": 772065,
+      "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+      "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+      "figure": {
+        "unit": "days",
+        "value": "3"
+      },
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Within three days, the developers secured a technical partner and arranged real-time data sharing with the Ministry of Defense.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:12:52.644522Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 13456,
+      "span_start": 13329,
+      "speaker": "Anna Colin Lebedev",
+      "subject": "Air Alert app",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1601.txt",
+      "text_sha256": "be75e1234ee2348cfa3debd561084c3ba4d7bff26a6bf80b31fb3d673f62c419",
+      "log_seq": 772066,
+      "recorded_at": "2026-09-07T21:03:03.879354Z",
+      "slot_id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "evidence_asserted_at": "2026-07-22T16:43:07Z",
+      "evidence_url": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2022",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-07-22T16:43:07Z",
+      "checkable_against": "Air Alert app development and launch records",
+      "claim_type": "actual",
+      "envelope_seq": 772051,
+      "event_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+      "evidence_id": "607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe",
+      "figure": {
+        "unit": "hours",
+        "value": "72"
+      },
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "For instance, the widely used “Air Alert” app was built in just 72 hours following the 2022 invasion by a private IT company seeking a more efficient warning system than traditional sirens.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:12:52.644522Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 13328,
+      "span_start": 13135,
+      "speaker": "Anna Colin Lebedev",
+      "subject": "Air Alert app",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1601.txt",
+      "text_sha256": "be75e1234ee2348cfa3debd561084c3ba4d7bff26a6bf80b31fb3d673f62c419",
+      "log_seq": 772052,
+      "recorded_at": "2026-09-07T21:02:57.671062Z",
+      "slot_id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "evidence_asserted_at": "2026-07-22T16:43:07Z",
+      "evidence_url": "https://www.brookings.edu/articles/russia-and-ukraine-societies-transformed-by-war/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 781331,
+      "id": "attach-anchor-slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522",
+      "refusal": null,
+      "slot_id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "log_seq": 781332,
+      "recorded_at": "2026-09-08T02:04:57.367713Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 772605,
+      "id": "attach-anchor-slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0",
+      "refusal": null,
+      "slot_id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "log_seq": 772606,
+      "recorded_at": "2026-09-07T21:07:14.230663Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-0d9e62d1-0cdc-412a-85da-5e524777ba8a",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-f4d80b3e-e19b-4edb-b660-3077aff021c2",
+      "name": "app build duration",
+      "value": "72",
+      "unit": "hours",
+      "sentence": "For instance, the widely used “Air Alert” app was built in just 72 hours following the 2022 invasion by a private IT company seeking a more efficient warning system than traditional sirens.",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-50c01d1e0895f0e0"
+    },
+    {
+      "slot_id": "slot-cdff7c20-fa24-4ebb-af60-29af22035c6d",
+      "name": "setup time",
+      "value": "3",
+      "unit": "days",
+      "sentence": "Within three days, the developers secured a technical partner and arranged real-time data sharing with the Ministry of Defense.",
+      "occurrence_id": "occurrence-607f46908744223971528cb632e93ad670dd71e0fa01214c04f2d00cd060eafe-35c46ca53d5a8522"
+    }
+  ]
+}

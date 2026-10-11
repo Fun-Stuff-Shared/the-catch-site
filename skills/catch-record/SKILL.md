@@ -23,8 +23,8 @@ goes wrong, and what comes next, with every fact traceable to a saved source.
 
 The record is the author's background, not the page's content. Gather wide: the earlier
 fighting, the months of price swings, the leader who has gone back and forth. Knowing all of
-it is what lets the page say "since the war with Iran began in February, diesel has nearly
-doubled" in one clause, with confidence. Most of what you admit never appears on the page,
+it is what lets the page say "since the war with Iran began in February, U.S. diesel has risen
+by more than half" in one clause, with confidence. Most of what you admit never appears on the page,
 and that is the point of having it. What reaches the page is decided by the plan (step 8).
 
 Work in the story's worktree. Paths below are relative to it. `<story>` is
@@ -133,14 +133,31 @@ short enough to say aloud. No caveats and no "the record does not show"; a quali
 belongs in the plan or the section it qualifies. This is the test the
 review runs against, and the test you judge every later finding by.
 
-The plan settles, before anyone writes, what a reader needs to follow each sentence. Under
-each of the five, list the questions a reader who knows nothing would ask of it ("what
-pledge?", "why is 100 left if 325 of 400 went out?", "which war?"), and answer each from
-the record in the fewest words that hold: usually a clause, sometimes a sentence, rarely a
-paragraph. Then the order the page tells it in, and a word budget: about 900 words for the
-story above the details. Everything else stays in the record, one click from the page. The
-fuel story's page grew to 2,300 words because none of this was settled: each question a
-cold reader asked in stage two was answered by inserting a paragraph where they stalled.
+The plan settles, before anyone writes, which layers the page has and what each tells.
+The layers are catch-story's menu, not a form: a story has the ones it has something to tell
+in. Each of the five sentences belongs to the layer that tells it, usually what happened to
+What happened, to whom to the story in order, why now to Why now, what is in dispute to The
+sides and The catch, what comes next to What happens next. Under each layer, write its chain: the question its
+heading answers, then each question the reader has next ("what pledge?", "why is 100 left
+if 325 of 400 went out?"), each answered from the record in the fewest words that hold,
+with its source.
+
+The layers disclose the story the way a good skill file does: the top tells the reader what
+they need to know, and each section below goes one level deeper into one part of it,
+starting where the top left off rather than telling it again. What happened is the event in
+plain words, what it means for the people it touches, and where it stands. It names a
+dispute at most; it never argues one. When the headline carries the catch, What happened
+states the fact once ("the barrels are not new; they are what is left of March's release");
+whose claim that corrects, and how, is The catch's to tell. A question the top raises is
+answered by the section about that thing. A question raised inside a section is answered in
+that section, or the section says nobody knows yet. A fact no layer's question asks for
+stays in the record, one click from the page, however true it is.
+
+Two plans that failed on the fuel story. One listed answers under each sentence with nothing
+deciding what came next, and the page read as a dump. The next ran one chain from the
+headline, which carried the catch, and answered every question where it came up, so the
+White House claim, the pressure, the two asks and the ban talk all landed in What happened,
+eleven paragraphs before the first section below it.
 Then:
 
 ```bash
@@ -157,10 +174,11 @@ Fix every failure. Commit the brief, manifest, pins and grok output by path with
 zsh skills/catch-record/scripts/review.sh <story> <N>      # N = 1, 2, ...
 ```
 
-GPT high reads the five sentences, the plan and the evidence and answers one question,
-is this the full story: what is missing, what is missing from the lineage of why this is
-happening, and what has weak provenance, ending `RECORD COMPLETE` or `RECORD INCOMPLETE`.
-It retries a run that ends without a verdict (the ChatGPT stream drops) up to three times.
+GPT-6 Sol (high), in ChatGPT Web, reads the brief pasted into the message, searches the
+web, and answers one question, is this the full story: what is missing, what is missing
+from the lineage of why this is happening, and what has weak provenance, ending
+`RECORD COMPLETE` or `RECORD INCOMPLETE`. An answer without that verdict and its count of
+sections read is retried, up to three times.
 Show the human each round's verdict.
 
 Then judge every finding as the author. A reviewer asked what is missing always finds
@@ -187,7 +205,7 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Principles
 
-- The record is background; the plan decides the page. A fact earns a place on the page by answering a reader's question about one of the five sentences, not by being admitted.
+- The record is background; the plan decides the page. A fact earns a place on the page by answering a question its layer's reader has, not by being admitted.
 
 - An unknown is a claim too. Before the brief, a reader report or the human is told "the records don't say", search every admitted record's text for it (in each source language). Okinawa's page said nothing tied the suspect to the room beyond a camera match, while an admitted record quoted police saying the camera showed him leaving with her belongings.
 
@@ -200,6 +218,8 @@ the links you could not reach for them to verify. Give the commit.
 - A reassuring "nothing else happened" gets a search that could disprove it: the docket, the agency's newsroom, the official's feed, dated after the newest source.
 
 ## Gotchas
+
+- The review and the entailment read go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt.
 
 - `capture` reports a failed OCR (quota, 429) as `empty_or_unextractable_body`. When a PDF comes back empty, OCR it directly with the mistral-ocr skill to see the real error. The Mistral key is read from `MISTRAL_API_KEY`, then `~/.sai/keys/mistral_api_key.env`.
 - In a press-conference or interview transcript, the reporter's question and the official's answer sit side by side. A passage cited for what an official said must come from the answer; reread the speaker label above it.

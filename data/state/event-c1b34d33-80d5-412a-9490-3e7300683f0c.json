@@ -1,0 +1,367 @@
+{
+  "current_state": {
+    "slot-cd08333a-88a7-4080-9bbe-48d230c870f9": {
+      "slot": "Acquisition price",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b",
+      "heads": [
+        "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "To accelerate the modernization of Burger King restaurants, its parent company Restaurant Brands International bought the chain's largest U.S. franchisee, Carrols Restaurant Group, in 2024 for roughly $1 billion.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars",
+        "value": "1000000000"
+      },
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Restaurant Brands International acquisition announcement and Carrols transaction filings",
+      "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+      "basis": [
+        "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    },
+    "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba": {
+      "slot": "Locations acquired",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4",
+      "heads": [
+        "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The Carrols deal added 1,023 company-owned locations to the 175 that Restaurant Brands already held at the time, largely acquired during franchisee bankruptcy sales as Burger King struggled before its turnaround.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "locations",
+        "value": "1023"
+      },
+      "as_of": "2024",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Restaurant Brands International and Carrols acquisition filings",
+      "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+      "basis": [
+        "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T11:00:01Z",
+      "canonical_url": "https://cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_1333.html",
+      "desk": "business and companies",
+      "envelope_seq": 1058161,
+      "gate_verdict": "COVER",
+      "id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+      "lang": "en",
+      "published_at": "2026-10-02T11:00:01Z",
+      "publisher": "CNBC",
+      "raw_sha256": "4dc6e944daa5c42314b0355e6ed2e1838c11e9ef34754c0c87d9381391e2e1ba",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:34.064390Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1333.txt",
+      "text_sha256": "0c7af6a03cf0146cee0fc173827beb0071be70f6a019ef2dbeccf631e051a76a",
+      "title": "Burger King is betting on local franchisees to fuel its U.S. comeback",
+      "updated_at": "2026-10-02T11:00:01Z",
+      "url": "https://www.cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+      "verbatim_level": "article",
+      "log_seq": 1058162,
+      "recorded_at": "2026-10-03T07:22:44.543465Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-02T11:00:01Z",
+          "checkable_against": "Restaurant Brands International acquisition announcement and Carrols transaction filings",
+          "claim_type": "actual",
+          "envelope_seq": 1080062,
+          "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+          "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+          "figure": {
+            "unit": "dollars",
+            "value": "1000000000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "To accelerate the modernization of Burger King restaurants, its parent company Restaurant Brands International bought the chain's largest U.S. franchisee, Carrols Restaurant Group, in 2024 for roughly $1 billion.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:34.064390Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 1238,
+          "span_start": 1026,
+          "speaker": "outlet's own",
+          "subject": "Restaurant Brands International acquisition of Carrols Restaurant Group",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1333.txt",
+          "text_sha256": "0c7af6a03cf0146cee0fc173827beb0071be70f6a019ef2dbeccf631e051a76a",
+          "log_seq": 1080063,
+          "recorded_at": "2026-10-03T14:31:52.352432Z",
+          "slot_id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+          "evidence_asserted_at": "2026-10-02T11:00:01Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T11:00:01Z",
+          "checkable_against": "Restaurant Brands International and Carrols acquisition filings",
+          "claim_type": "actual",
+          "envelope_seq": 1080066,
+          "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+          "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+          "figure": {
+            "unit": "locations",
+            "value": "1023"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The Carrols deal added 1,023 company-owned locations to the 175 that Restaurant Brands already held at the time, largely acquired during franchisee bankruptcy sales as Burger King struggled before its turnaround.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:34.064390Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 1451,
+          "span_start": 1239,
+          "speaker": "outlet's own",
+          "subject": "Restaurant Brands International acquisition of Carrols Restaurant Group",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1333.txt",
+          "text_sha256": "0c7af6a03cf0146cee0fc173827beb0071be70f6a019ef2dbeccf631e051a76a",
+          "log_seq": 1080067,
+          "recorded_at": "2026-10-03T14:31:53.454501Z",
+          "slot_id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+          "evidence_asserted_at": "2026-10-02T11:00:01Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "9b3b6bba03",
+  "evaluated_at": "2026-10-03T15:45:07.002868Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1079944,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+    "kind": "acquisition",
+    "label": "Restaurant Brands buys Carrols Restaurant Group",
+    "minted_at": "2026-10-03T14:31:15.547014Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+    "period": "2024-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Restaurant Brands International acquisition of Carrols Restaurant Group",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0/2c61cc5061a443f5b6f20c6d1ea6cae0.json",
+    "log_seq": 1079945
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4",
+      "envelope_seq": 1080324,
+      "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+      "id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "name": "Locations acquired",
+      "refusal": null,
+      "log_seq": 1080325,
+      "recorded_at": "2026-10-03T14:33:26.239622Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b",
+      "envelope_seq": 1080316,
+      "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+      "id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "name": "Acquisition price",
+      "refusal": null,
+      "log_seq": 1080317,
+      "recorded_at": "2026-10-03T14:33:25.011179Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-02T11:00:01Z",
+      "checkable_against": "Restaurant Brands International acquisition announcement and Carrols transaction filings",
+      "claim_type": "actual",
+      "envelope_seq": 1080062,
+      "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+      "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+      "figure": {
+        "unit": "dollars",
+        "value": "1000000000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "To accelerate the modernization of Burger King restaurants, its parent company Restaurant Brands International bought the chain's largest U.S. franchisee, Carrols Restaurant Group, in 2024 for roughly $1 billion.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:34.064390Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 1238,
+      "span_start": 1026,
+      "speaker": "outlet's own",
+      "subject": "Restaurant Brands International acquisition of Carrols Restaurant Group",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1333.txt",
+      "text_sha256": "0c7af6a03cf0146cee0fc173827beb0071be70f6a019ef2dbeccf631e051a76a",
+      "log_seq": 1080063,
+      "recorded_at": "2026-10-03T14:31:52.352432Z",
+      "slot_id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "evidence_asserted_at": "2026-10-02T11:00:01Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T11:00:01Z",
+      "checkable_against": "Restaurant Brands International and Carrols acquisition filings",
+      "claim_type": "actual",
+      "envelope_seq": 1080066,
+      "event_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+      "evidence_id": "65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0",
+      "figure": {
+        "unit": "locations",
+        "value": "1023"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The Carrols deal added 1,023 company-owned locations to the 175 that Restaurant Brands already held at the time, largely acquired during franchisee bankruptcy sales as Burger King struggled before its turnaround.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:34.064390Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 1451,
+      "span_start": 1239,
+      "speaker": "outlet's own",
+      "subject": "Restaurant Brands International acquisition of Carrols Restaurant Group",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1333.txt",
+      "text_sha256": "0c7af6a03cf0146cee0fc173827beb0071be70f6a019ef2dbeccf631e051a76a",
+      "log_seq": 1080067,
+      "recorded_at": "2026-10-03T14:31:53.454501Z",
+      "slot_id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "evidence_asserted_at": "2026-10-02T11:00:01Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/02/burger-king-refranchising-turnaround.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1080326,
+      "id": "attach-anchor-slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4",
+      "refusal": null,
+      "slot_id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "log_seq": 1080327,
+      "recorded_at": "2026-10-03T14:33:26.262455Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1080318,
+      "id": "attach-anchor-slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b",
+      "refusal": null,
+      "slot_id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "log_seq": 1080319,
+      "recorded_at": "2026-10-03T14:33:25.035705Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "business and companies",
+  "follows": null,
+  "root_id": "event-c1b34d33-80d5-412a-9490-3e7300683f0c",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-cd08333a-88a7-4080-9bbe-48d230c870f9",
+      "name": "Acquisition price",
+      "value": "1000000000",
+      "unit": "dollars",
+      "sentence": "To accelerate the modernization of Burger King restaurants, its parent company Restaurant Brands International bought the chain's largest U.S. franchisee, Carrols Restaurant Group, in 2024 for roughly $1 billion.",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-140a92d5d645ff7b"
+    },
+    {
+      "slot_id": "slot-8b2c2fdd-da67-46ad-ac9c-745a3721d7ba",
+      "name": "Locations acquired",
+      "value": "1023",
+      "unit": "locations",
+      "sentence": "The Carrols deal added 1,023 company-owned locations to the 175 that Restaurant Brands already held at the time, largely acquired during franchisee bankruptcy sales as Burger King struggled before its turnaround.",
+      "occurrence_id": "occurrence-65e950801bd711c7533191ca7a19acf11cbfcf7b6da0373ee367a463c81c20e0-6f53bcff9997c8d4"
+    }
+  ]
+}

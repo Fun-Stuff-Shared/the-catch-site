@@ -8,17 +8,18 @@ Exactly five sentences a stranger could repeat, one each: what happened, to whom
 
 ## The plan
 
-For each of the five sentences: the questions a reader who knows nothing asks of it, each
-answered from the record in the fewest words that hold (a clause, a sentence, rarely a
-paragraph), with its source.
+Each layer, the sentence it tells, and its chain: the question the heading answers, then
+each question the reader has next, answered in the fewest words that hold, with its source.
+A section starts where the top left off; it does not retell it.
 
-1. {sentence 1}
-   - {question}: {answer} [record-id: "words"]
+Headline: {headline}
+
+What happened (sentence 1; the event in plain words, what it means, where it stands):
+1. {the question the headline raises}: {answer} [record-id: "words"]
 2. ...
 
-Order on the page (each layer complete enough to stop after): the news; the story in
-order; why now; the sides; the catch; what is next. Word budget for the story above the
-details: about 900.
+{Layer} (sentence {n}): opens on {the question its heading answers}
+1. ...
 
 Background held: verified material the record keeps but the page does not use. This list
 is long; that is expected.

@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-bb8acdae-25eb-434e-b07e-d05f2f533407": {
+      "slot": "shortage duration",
+      "occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf",
+      "heads": [
+        "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Unlike the previous wave of shortages, which began in late May and lasted until mid-July, the current crisis is particularly affecting Moscow and the surrounding area, as is apparent from posts on social media.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-05",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Russian fuel shortage reports from late May through mid-July 2026",
+      "evidence_id": "58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9",
+      "basis": [
+        "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf"
+      ],
+      "last_confirmed": "2026-05",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
+      "as_of": "2026-05",
+      "occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -54,6 +87,7 @@
           "text_sha256": "0343e0e7881264c9028e36e9d3d0cec93c74cb45693ab0d753a1b53f5e573d7f",
           "log_seq": 750542,
           "recorded_at": "2026-09-07T07:42:29.991290Z",
+          "slot_id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
           "evidence_asserted_at": "2026-08-23T14:42:00Z",
           "evidence_url": "https://www.dw.com/en/could-russia-s-growing-fuel-crisis-help-end-the-ukraine-war/a-78472138?maca=en-rss-en-all-1573-xml-mrss",
           "evidence_publisher": "Deutsche Welle",
@@ -63,8 +97,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 442490,
@@ -80,7 +114,34 @@
     "log_seq": 442491
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf",
+      "envelope_seq": 919000,
+      "event_id": "event-2e918290-01f2-4fc5-a6a3-13586bf49fe9",
+      "id": "slot-96061e5a-8101-4153-bf7a-e266c8fb80f9",
+      "name": "shortage duration",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.dw.com/en/could-russia-s-growing-fuel-crisis-help-end-the-ukraine-war/a-78472138?maca=en-rss-en-all-1573-xml-mrss",
+        "source_id": "dw_english"
+      },
+      "log_seq": 919001,
+      "recorded_at": "2026-09-21T09:59:27.192305Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf",
+      "envelope_seq": 919002,
+      "event_id": "event-2e918290-01f2-4fc5-a6a3-13586bf49fe9",
+      "id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
+      "name": "shortage duration",
+      "refusal": null,
+      "log_seq": 919003,
+      "recorded_at": "2026-09-21T10:01:18.705323Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -110,13 +171,28 @@
       "text_sha256": "0343e0e7881264c9028e36e9d3d0cec93c74cb45693ab0d753a1b53f5e573d7f",
       "log_seq": 750542,
       "recorded_at": "2026-09-07T07:42:29.991290Z",
+      "slot_id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
       "evidence_asserted_at": "2026-08-23T14:42:00Z",
       "evidence_url": "https://www.dw.com/en/could-russia-s-growing-fuel-crisis-help-end-the-ukraine-war/a-78472138?maca=en-rss-en-all-1573-xml-mrss",
       "evidence_publisher": "Deutsche Welle",
       "evidence_source_id": "dw_english"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 919004,
+      "id": "attach-anchor-slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
+      "occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf",
+      "refusal": null,
+      "slot_id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
+      "log_seq": 919005,
+      "recorded_at": "2026-09-21T10:01:18.719259Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -133,5 +209,14 @@
   "root_id": "event-2e918290-01f2-4fc5-a6a3-13586bf49fe9",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-bb8acdae-25eb-434e-b07e-d05f2f533407",
+      "name": "shortage duration",
+      "value": null,
+      "unit": null,
+      "sentence": "Unlike the previous wave of shortages, which began in late May and lasted until mid-July, the current crisis is particularly affecting Moscow and the surrounding area, as is apparent from posts on social media.",
+      "occurrence_id": "occurrence-58e10260cc0243dc84251e2b3dd2b3cab7d33ff6b5c09991938a8d30c3f839f9-5712ea62e1c724cf"
+    }
+  ]
 }

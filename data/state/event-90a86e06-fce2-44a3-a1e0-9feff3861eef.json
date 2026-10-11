@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688": {
+      "slot": "start date",
+      "occurrence_id": "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9",
+      "heads": [
+        "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "United States reports : cases adjudged in the Supreme Court at October term, 1996, October 7, 1996, through February 26, 1997",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "1996-10-07",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Title page and bibliographic record for United States Reports, Volume 519",
+      "evidence_id": "5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d",
+      "basis": [
+        "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9"
+      ],
+      "last_confirmed": "1996-10-07",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
+      "as_of": "1996-10-07",
+      "occurrence_id": "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "395ab6eb853f49f2ddc49636c7daa45ae9d231a34d68d4b8919f755c45bda543",
           "log_seq": 442523,
           "recorded_at": "2026-09-05T21:45:42.065702Z",
+          "slot_id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
           "evidence_asserted_at": "2026-02-23T22:08:00Z",
           "evidence_url": "https://www.govinfo.gov/app/details/USREPORTS-519",
           "evidence_publisher": "GovInfo / United States Reports (Supreme Court)",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "4becfdf9e0",
-  "evaluated_at": "2026-09-07T01:41:41.034765Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T17:18:06.541345Z",
   "event": {
     "accepted": true,
     "envelope_seq": 442514,
@@ -79,7 +113,19 @@
     "log_seq": 442515
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9",
+      "envelope_seq": 1151207,
+      "event_id": "event-90a86e06-fce2-44a3-a1e0-9feff3861eef",
+      "id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
+      "name": "start date",
+      "refusal": null,
+      "log_seq": 1151208,
+      "recorded_at": "2026-10-06T16:42:47.674863Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -108,13 +154,28 @@
       "text_sha256": "395ab6eb853f49f2ddc49636c7daa45ae9d231a34d68d4b8919f755c45bda543",
       "log_seq": 442523,
       "recorded_at": "2026-09-05T21:45:42.065702Z",
+      "slot_id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
       "evidence_asserted_at": "2026-02-23T22:08:00Z",
       "evidence_url": "https://www.govinfo.gov/app/details/USREPORTS-519",
       "evidence_publisher": "GovInfo / United States Reports (Supreme Court)",
       "evidence_source_id": "govinfo_usreports"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151209,
+      "id": "attach-anchor-slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
+      "occurrence_id": "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9",
+      "refusal": null,
+      "slot_id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
+      "log_seq": 1151210,
+      "recorded_at": "2026-10-06T16:42:47.782207Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -131,5 +192,14 @@
   "root_id": "event-90a86e06-fce2-44a3-a1e0-9feff3861eef",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-a36300d9-3cc5-4e6b-9ad4-0fb18bdd4688",
+      "name": "start date",
+      "value": null,
+      "unit": null,
+      "sentence": "United States reports : cases adjudged in the Supreme Court at October term, 1996, October 7, 1996, through February 26, 1997",
+      "occurrence_id": "occurrence-5a454d8555481c8cdc84fbb7ae0510328d812406ca16d600acead2aded89ae8d-e1e6b997cffd0ce9"
+    }
+  ]
 }

@@ -1,0 +1,225 @@
+{
+  "current_state": {
+    "slot-f666c5d8-5f11-492b-9528-94c123cfc712": {
+      "slot": "US approval status",
+      "occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+      "heads": [
+        "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Last week, Mr. Netanyahu’s defense minister, Israel Katz, said that the Israelis “very much want to attack energy targets in Iran, but the United States is not approving that at the moment.”",
+      "span_check": "byte_exact",
+      "speaker": "Israel Katz",
+      "figure": null,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Transcript or recording of Israel Katz's statement",
+      "evidence_id": "62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058",
+      "basis": [
+        "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-03T07:03:22Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5181.html",
+      "envelope_seq": 170059,
+      "id": "62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:02.522761Z",
+      "root_evidence": "body:2273:2328",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5181.txt",
+      "text_sha256": "bafcf018c954b7617a958ed7fe02ff8af9711fe3a1de6c40ad6b08c3c9d2adbd",
+      "url": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
+      "verbatim_level": "article",
+      "log_seq": 520869,
+      "recorded_at": "2026-09-06T01:33:24.002356Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-03T07:03:22Z",
+          "checkable_against": "Transcript or recording of Israel Katz's statement",
+          "claim_type": "actual",
+          "envelope_seq": 777094,
+          "event_id": "event-ebf697d8-5a7e-4d6e-b6b7-894c7803b710",
+          "evidence_id": "62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058",
+          "figure": null,
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Last week, Mr. Netanyahu’s defense minister, Israel Katz, said that the Israelis “very much want to attack energy targets in Iran, but the United States is not approving that at the moment.”",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:02.522761Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 8421,
+          "span_start": 8225,
+          "speaker": "Israel Katz",
+          "subject": "U.S. approval of Israeli attacks on Iranian energy targets",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5181.txt",
+          "text_sha256": "bafcf018c954b7617a958ed7fe02ff8af9711fe3a1de6c40ad6b08c3c9d2adbd",
+          "log_seq": 777095,
+          "recorded_at": "2026-09-08T00:36:00.859606Z",
+          "slot_id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+          "evidence_asserted_at": "2026-08-03T07:03:22Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-06T21:46:42.969113Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 776886,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-eaa8e54a-7406-41bf-80a1-a886e85529d1",
+    "id": "event-ebf697d8-5a7e-4d6e-b6b7-894c7803b710",
+    "kind": "military policy statement",
+    "label": "Israel says U.S. blocks attacks on Iranian energy targets",
+    "minted_at": "2026-09-08T00:32:59.923607Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. approval of Israeli attacks on Iranian energy targets",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058/cb06c500477944cb859c0e6ce434b223.json",
+    "log_seq": 776887
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+      "envelope_seq": 895033,
+      "event_id": "event-ebf697d8-5a7e-4d6e-b6b7-894c7803b710",
+      "id": "slot-e6dd406e-581f-4be2-b7ea-c2783f133d11",
+      "name": "US approval status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 895034,
+      "recorded_at": "2026-09-14T00:11:18.179506Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+      "envelope_seq": 895035,
+      "event_id": "event-ebf697d8-5a7e-4d6e-b6b7-894c7803b710",
+      "id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "name": "US approval status",
+      "refusal": null,
+      "log_seq": 895036,
+      "recorded_at": "2026-09-14T00:11:35.482988Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-03T07:03:22Z",
+      "checkable_against": "Transcript or recording of Israel Katz's statement",
+      "claim_type": "actual",
+      "envelope_seq": 777094,
+      "event_id": "event-ebf697d8-5a7e-4d6e-b6b7-894c7803b710",
+      "evidence_id": "62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058",
+      "figure": null,
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Last week, Mr. Netanyahu’s defense minister, Israel Katz, said that the Israelis “very much want to attack energy targets in Iran, but the United States is not approving that at the moment.”",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:02.522761Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 8421,
+      "span_start": 8225,
+      "speaker": "Israel Katz",
+      "subject": "U.S. approval of Israeli attacks on Iranian energy targets",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5181.txt",
+      "text_sha256": "bafcf018c954b7617a958ed7fe02ff8af9711fe3a1de6c40ad6b08c3c9d2adbd",
+      "log_seq": 777095,
+      "recorded_at": "2026-09-08T00:36:00.859606Z",
+      "slot_id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "evidence_asserted_at": "2026-08-03T07:03:22Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/02/world/middleeast/trump-iran-cancels-attack-deal.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 895037,
+      "id": "attach-anchor-slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475",
+      "refusal": null,
+      "slot_id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "log_seq": 895038,
+      "recorded_at": "2026-09-14T00:11:35.501960Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": "event-eaa8e54a-7406-41bf-80a1-a886e85529d1",
+  "root_id": "event-eaa8e54a-7406-41bf-80a1-a886e85529d1",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-f666c5d8-5f11-492b-9528-94c123cfc712",
+      "name": "US approval status",
+      "value": null,
+      "unit": null,
+      "sentence": "Last week, Mr. Netanyahu’s defense minister, Israel Katz, said that the Israelis “very much want to attack energy targets in Iran, but the United States is not approving that at the moment.”",
+      "occurrence_id": "occurrence-62b9e00548bc8e6cf20bbadafd971a242418486ac014ce22e3182a7b571c5058-0032dc9c5c408475"
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "current_state": {
+    "slot-a20c7d42-290a-448e-b480-404d7c740062": {
+      "slot": "jobs added",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+        "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-b6648a6d7d6173b8"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+        "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+        "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-b6648a6d7d6173b8"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "as_of": "2026-08"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T22:02:31Z",
+      "canonical_url": "https://cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_0223.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1057929,
+      "gate_verdict": "COVER",
+      "id": "c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd",
+      "lang": "en",
+      "published_at": "2026-10-01T22:02:31Z",
+      "publisher": "CNBC",
+      "raw_sha256": "0ab821aeef062a22ae1fd8dd68c42f6fe753d58f02a818a61585ef8521c7b426",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:13.115482Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0223.txt",
+      "text_sha256": "c3701c14d3728f188d30954197a12a4a61023af4a66553be4c79f5722e43ba9a",
+      "title": "Stocks rise after soft jobs data; Nasdaq hits record led by Nvidia: Live updates",
+      "updated_at": "2026-10-02T15:52:21Z",
+      "url": "https://www.cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+      "verbatim_level": "article",
+      "log_seq": 1057930,
+      "recorded_at": "2026-10-03T07:22:43.241118Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T22:02:31Z",
+          "checkable_against": "BLS August 2026 employment report revision",
+          "claim_type": "actual",
+          "envelope_seq": 1085696,
+          "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+          "evidence_id": "c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd",
+          "figure": {
+            "unit": "jobs",
+            "value": "133000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "August was marked down by 29,000 for a new total of 133,000 compared to the initial robust report of 162,000.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:13.115482Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 5073,
+          "span_start": 4964,
+          "speaker": "U.S. Labor Department",
+          "subject": "U.S. August 2026 employment",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0223.txt",
+          "text_sha256": "c3701c14d3728f188d30954197a12a4a61023af4a66553be4c79f5722e43ba9a",
+          "time_action": "corrects",
+          "log_seq": 1085697,
+          "recorded_at": "2026-10-03T15:37:34.874348Z",
+          "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+          "evidence_asserted_at": "2026-10-01T22:02:31Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T12:44:28Z",
+      "canonical_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_0594.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1058001,
+      "gate_verdict": "COVER",
+      "id": "caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86",
+      "lang": "en",
+      "published_at": "2026-10-02T12:44:28Z",
+      "publisher": "The Hill",
+      "raw_sha256": "a12bc0d5d152b4653ef7c695901ca48ff365c4ce15027ae246c4dab80d5200ee",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:21.872251Z",
+      "root_evidence": "publisher_host",
+      "root_id": "thehill.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "thehill_feed",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0594.txt",
+      "text_sha256": "7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+      "title": "US economy added 29,000 jobs in September: BLS",
+      "updated_at": "2026-10-02T13:45:14Z",
+      "url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+      "verbatim_level": "article",
+      "log_seq": 1058002,
+      "recorded_at": "2026-10-03T07:22:43.701960Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T12:44:28Z",
+          "checkable_against": "Bureau of Labor Statistics August 2026 employment revision in September 2026 Employment Situation release",
+          "claim_type": "actual",
+          "envelope_seq": 1086064,
+          "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+          "evidence_id": "caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86",
+          "figure": {
+            "unit": "jobs",
+            "value": "133000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "But BLS revised the past two months downward on Friday, now showing the market losing 10,000 jobs in July and adding 133,000 in August.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:21.872251Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 576,
+          "span_start": 441,
+          "speaker": "Bureau of Labor Statistics",
+          "subject": "U.S. August 2026 employment",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0594.txt",
+          "text_sha256": "7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+          "time_action": "corrects",
+          "log_seq": 1086065,
+          "recorded_at": "2026-10-03T15:41:49.119852Z",
+          "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+          "evidence_asserted_at": "2026-10-02T12:44:28Z",
+          "evidence_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T12:44:28Z",
+          "checkable_against": "Bureau of Labor Statistics August 2026 Employment Situation release",
+          "claim_type": "actual",
+          "envelope_seq": 1086162,
+          "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+          "evidence_id": "caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86",
+          "figure": {
+            "unit": "jobs",
+            "value": "162000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-b6648a6d7d6173b8",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The economy added 162,000 jobs in August, after employers added 31,000 and 21,000 jobs in June and July, respectively.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:21.872251Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 440,
+          "span_start": 322,
+          "speaker": "Bureau of Labor Statistics",
+          "subject": "U.S. August 2026 employment",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0594.txt",
+          "text_sha256": "7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+          "log_seq": 1086163,
+          "recorded_at": "2026-10-03T15:42:26.877845Z",
+          "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+          "evidence_asserted_at": "2026-10-02T12:44:28Z",
+          "evidence_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T17:15:29.821148Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1085570,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+    "id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+    "kind": "data revision",
+    "label": "August 2026 U.S. employment report revision",
+    "minted_at": "2026-10-03T15:36:48.081578Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. August 2026 employment",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd/53cefb815d81487faf39610af56db5bd.json",
+    "log_seq": 1085571
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+      "envelope_seq": 1085868,
+      "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "name": "jobs added",
+      "refusal": null,
+      "log_seq": 1085869,
+      "recorded_at": "2026-10-03T15:39:05.707858Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T22:02:31Z",
+      "checkable_against": "BLS August 2026 employment report revision",
+      "claim_type": "actual",
+      "envelope_seq": 1085696,
+      "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "evidence_id": "c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd",
+      "figure": {
+        "unit": "jobs",
+        "value": "133000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "August was marked down by 29,000 for a new total of 133,000 compared to the initial robust report of 162,000.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:13.115482Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 5073,
+      "span_start": 4964,
+      "speaker": "U.S. Labor Department",
+      "subject": "U.S. August 2026 employment",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0223.txt",
+      "text_sha256": "c3701c14d3728f188d30954197a12a4a61023af4a66553be4c79f5722e43ba9a",
+      "time_action": "corrects",
+      "log_seq": 1085697,
+      "recorded_at": "2026-10-03T15:37:34.874348Z",
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "evidence_asserted_at": "2026-10-01T22:02:31Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T12:44:28Z",
+      "checkable_against": "Bureau of Labor Statistics August 2026 employment revision in September 2026 Employment Situation release",
+      "claim_type": "actual",
+      "envelope_seq": 1086064,
+      "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "evidence_id": "caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86",
+      "figure": {
+        "unit": "jobs",
+        "value": "133000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "But BLS revised the past two months downward on Friday, now showing the market losing 10,000 jobs in July and adding 133,000 in August.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:21.872251Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 576,
+      "span_start": 441,
+      "speaker": "Bureau of Labor Statistics",
+      "subject": "U.S. August 2026 employment",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0594.txt",
+      "text_sha256": "7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+      "time_action": "corrects",
+      "log_seq": 1086065,
+      "recorded_at": "2026-10-03T15:41:49.119852Z",
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "evidence_asserted_at": "2026-10-02T12:44:28Z",
+      "evidence_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T12:44:28Z",
+      "checkable_against": "Bureau of Labor Statistics August 2026 Employment Situation release",
+      "claim_type": "actual",
+      "envelope_seq": 1086162,
+      "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "evidence_id": "caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86",
+      "figure": {
+        "unit": "jobs",
+        "value": "162000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-b6648a6d7d6173b8",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The economy added 162,000 jobs in August, after employers added 31,000 and 21,000 jobs in June and July, respectively.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:21.872251Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 440,
+      "span_start": 322,
+      "speaker": "Bureau of Labor Statistics",
+      "subject": "U.S. August 2026 employment",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0594.txt",
+      "text_sha256": "7438314e21c9cd3ee72ae2cf36889ec1a45a394ac4227c83d1f1ae4ea8b99e91",
+      "log_seq": 1086163,
+      "recorded_at": "2026-10-03T15:42:26.877845Z",
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "evidence_asserted_at": "2026-10-02T12:44:28Z",
+      "evidence_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1085870,
+      "id": "attach-anchor-slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "occurrence_id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+      "refusal": null,
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "log_seq": 1085871,
+      "recorded_at": "2026-10-03T15:39:05.729956Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1136104,
+      "id": "attach-cf8a6dbb-2d9a-4b38-82e2-481ca9a678cd",
+      "occurrence_id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-b6648a6d7d6173b8",
+      "refusal": null,
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "log_seq": 1136105,
+      "recorded_at": "2026-10-05T16:54:01.060351Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1086326,
+      "id": "attach-d129a742-7834-4b04-b16d-3639b85c1ca9",
+      "occurrence_id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+      "refusal": null,
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "log_seq": 1086327,
+      "recorded_at": "2026-10-03T15:44:06.683183Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1115974,
+      "event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "adding 133,000 in August"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "from_occurrence_id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+      "id": "edge-relation-ce184fc2cf8c3075c2b70a7a",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report the revised August employment figure as 133,000 jobs. They are independent reports of the same BLS revision.",
+      "refusal": null,
+      "to_event_id": "event-b4947441-e796-4104-b70f-c2dcb19173ec",
+      "to_occurrence_id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+      "log_seq": 1115975,
+      "recorded_at": "2026-10-04T11:11:10.227255Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T12:44:28Z",
+    "confirmations": [
+      {
+        "label": "“133000 jobs”",
+        "value": "133000 jobs",
+        "reports": [
+          {
+            "publisher": "CNBC",
+            "url": "https://www.cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+            "dates": [
+              "2026-10-01"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "The Hill",
+            "url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-a20c7d42-290a-448e-b480-404d7c740062"
+        ],
+        "sentence": "“133000 jobs”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-a20c7d42-290a-448e-b480-404d7c740062"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+        "relation": "supports",
+        "edge_id": "edge-relation-ce184fc2cf8c3075c2b70a7a",
+        "earlier_occurrence_id": "occurrence-c4b3970c2b23b04d3470fac27fe3cf6f5ae99f4041056ec79137f3195d5fb4dd-24aa65c4d9edaf3d",
+        "later_occurrence_id": "occurrence-caa5ff2be108dd54fbb8c15b499c5e671f7ce30e2b1495557bff9269d9c67b86-6b99cea13976841c",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/10/01/stock-market-today-live-updates-.html",
+        "later_evidence_url": "https://thehill.com/business/6123510-us-economy-jobs-report-september-bls/",
+        "sentence": "On 2026-10-01, CNBC reported “August was marked down by 29,000 for a new total of 133,000 compared to the initial robust report of 162,000.”; on 2026-10-02, The Hill reported “But BLS revised the past two months downward on Friday, now showing the market losing 10,000 jobs in July and adding 133,000 in August.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+  "root_id": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-a20c7d42-290a-448e-b480-404d7c740062",
+      "name": "jobs added",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "current_state": {
+    "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3": {
+      "slot": "deployment status",
+      "occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "heads": [
+        "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"",
+      "span_check": "byte_exact",
+      "speaker": "Gen. Dan Caine",
+      "figure": null,
+      "as_of": "2026-10-01",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Gen. Dan Caine letter on 2026 election military deployment",
+      "evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+      "basis": [
+        "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+        "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a"
+      ],
+      "last_confirmed": "2026-10-01",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T16:18:20Z",
+      "canonical_url": "https://usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/raw/article_7114.html",
+      "desk": "government and politics",
+      "envelope_seq": 1020341,
+      "gate_verdict": "COVER",
+      "id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+      "lang": "en",
+      "published_at": "2026-10-01T16:18:20Z",
+      "publisher": "USA Today",
+      "raw_sha256": "596d2feb2cdda3b8bc0a54e55155f62d40d8e3cfaeb13c48e86de6f00886ef44",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:18:13.362187Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_7114.txt",
+      "text_sha256": "c1be327c60af86b4f40497fbea1b370980dee7c7c1ee9d191dfa7ba55785bc12",
+      "title": "Trump doesn't rule out invoking Insurrection Act around election",
+      "updated_at": "2026-10-01T16:49:49Z",
+      "url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+      "verbatim_level": "article",
+      "log_seq": 1020342,
+      "recorded_at": "2026-10-01T22:33:17.739132Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-01T16:18:20Z",
+          "checkable_against": "Gen. Dan Caine letter on 2026 election military deployment",
+          "claim_type": "actual",
+          "envelope_seq": 1025515,
+          "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+          "evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+          "figure": null,
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "\"Likewise, the Joint Force has no plans to use such personnel to seize ballots, voting machines, or other election related-material,\" Caine wrote.",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:18:13.362187Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1855,
+          "span_start": 1709,
+          "speaker": "Gen. Dan Caine",
+          "subject": "Joint Chiefs of Staff military deployment plans for 2026 elections",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_7114.txt",
+          "text_sha256": "c1be327c60af86b4f40497fbea1b370980dee7c7c1ee9d191dfa7ba55785bc12",
+          "log_seq": 1025516,
+          "recorded_at": "2026-10-02T09:17:10.648709Z",
+          "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+          "evidence_asserted_at": "2026-10-01T16:18:20Z",
+          "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-01T16:18:20Z",
+          "checkable_against": "Gen. Dan Caine letter on 2026 election military deployment",
+          "claim_type": "actual",
+          "envelope_seq": 1025511,
+          "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+          "evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+          "figure": null,
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:18:13.362187Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1708,
+          "span_start": 1375,
+          "speaker": "Gen. Dan Caine",
+          "subject": "Joint Chiefs of Staff military deployment plans for 2026 elections",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_7114.txt",
+          "text_sha256": "c1be327c60af86b4f40497fbea1b370980dee7c7c1ee9d191dfa7ba55785bc12",
+          "log_seq": 1025512,
+          "recorded_at": "2026-10-02T09:17:09.748260Z",
+          "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+          "evidence_asserted_at": "2026-10-01T16:18:20Z",
+          "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T08:02:22.323215Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1025439,
+    "fire_id": "quarry-wire-scheduled-20261001T220038Z",
+    "follows": null,
+    "id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+    "kind": "letter",
+    "label": "Gen. Dan Caine letter on military at 2026 polling places",
+    "minted_at": "2026-10-02T09:16:40.955476Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Joint Chiefs of Staff military deployment plans for 2026 elections",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261001T220038Z/3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf/56162df49766463ebe0b0b7a45d8f5d2.json",
+    "log_seq": 1025440
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "envelope_seq": 1125494,
+      "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "name": "deployment status",
+      "refusal": null,
+      "log_seq": 1125495,
+      "recorded_at": "2026-10-05T02:45:37.434438Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "envelope_seq": 1125488,
+      "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "id": "slot-d9496cb8-6259-4302-b942-61381b3817b0",
+      "name": "deployment status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+        "source_id": "usatoday_news_rss"
+      },
+      "log_seq": 1125489,
+      "recorded_at": "2026-10-05T02:45:07.793758Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-01T16:18:20Z",
+      "checkable_against": "Gen. Dan Caine letter on 2026 election military deployment",
+      "claim_type": "actual",
+      "envelope_seq": 1025515,
+      "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+      "figure": null,
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "\"Likewise, the Joint Force has no plans to use such personnel to seize ballots, voting machines, or other election related-material,\" Caine wrote.",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:18:13.362187Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1855,
+      "span_start": 1709,
+      "speaker": "Gen. Dan Caine",
+      "subject": "Joint Chiefs of Staff military deployment plans for 2026 elections",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_7114.txt",
+      "text_sha256": "c1be327c60af86b4f40497fbea1b370980dee7c7c1ee9d191dfa7ba55785bc12",
+      "log_seq": 1025516,
+      "recorded_at": "2026-10-02T09:17:10.648709Z",
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "evidence_asserted_at": "2026-10-01T16:18:20Z",
+      "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-01T16:18:20Z",
+      "checkable_against": "Gen. Dan Caine letter on 2026 election military deployment",
+      "claim_type": "actual",
+      "envelope_seq": 1025511,
+      "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "evidence_id": "3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf",
+      "figure": null,
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:18:13.362187Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1708,
+      "span_start": 1375,
+      "speaker": "Gen. Dan Caine",
+      "subject": "Joint Chiefs of Staff military deployment plans for 2026 elections",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_7114.txt",
+      "text_sha256": "c1be327c60af86b4f40497fbea1b370980dee7c7c1ee9d191dfa7ba55785bc12",
+      "log_seq": 1025512,
+      "recorded_at": "2026-10-02T09:17:09.748260Z",
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "evidence_asserted_at": "2026-10-01T16:18:20Z",
+      "evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1125496,
+      "id": "attach-anchor-slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "refusal": null,
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "log_seq": 1125497,
+      "recorded_at": "2026-10-05T02:45:37.464511Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1125502,
+      "id": "attach-c3cd880f-176a-4f9b-a0ff-b5f499a93fd7",
+      "occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+      "refusal": null,
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "log_seq": 1125503,
+      "recorded_at": "2026-10-05T02:46:25.157381Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1129190,
+      "event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections"
+        },
+        "time_action": "restates",
+        "value_relation": "wider"
+      },
+      "from_event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "from_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+      "id": "edge-relation-284b67f554e05df1ffe5577b",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "The NEW occurrence states there are no plans to send personnel to polling places. The EXISTING occurrence states no plans to use such personnel to seize ballots/machines. The NEW claim is wider in scope. Both are part of the same report on Gen. Dan Caine's letter. Source is identified as same_origin via the shared evidence_id and the context (Caine's letter).",
+      "refusal": null,
+      "to_event_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+      "to_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+      "log_seq": 1129191,
+      "recorded_at": "2026-10-05T07:48:41.390968Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-01T16:18:20Z",
+    "confirmations": [
+      {
+        "label": "“Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"”",
+        "value": "Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"",
+        "reports": [
+          {
+            "publisher": "USA Today",
+            "url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+            "dates": [
+              "2026-10-01"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3"
+        ],
+        "sentence": "“Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-284b67f554e05df1ffe5577b",
+        "earlier_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-4c3ebbc6345c0ab3",
+        "later_occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a",
+        "earlier_evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+        "later_evidence_url": "https://www.usatoday.com/story/news/politics/2026/10/01/trump-national-emergency-midterm-elections/92036013007/",
+        "sentence": "On 2026-10-01, USA Today reported “\"Likewise, the Joint Force has no plans to use such personnel to seize ballots, voting machines, or other election related-material,\" Caine wrote.”; on the same day, USA Today reported “Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-7d302784-1287-4ed8-82fa-2522c9811b1d",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-48a5a723-2f54-4ddc-b6ee-a07a34e3dee3",
+      "name": "deployment status",
+      "value": null,
+      "unit": null,
+      "sentence": "Democrats have pressed the administration for assurances that Trump won't send troops to the polls, prompting Joint Chiefs of Staff Chairman Gen. Dan Caine to respond with a letter saying there are \"no plans to send Federal military personnel or Federalized members of the National Guard to polling places during the 2026 elections.\"",
+      "occurrence_id": "occurrence-3f871a848f76177134637cdd5e9b11d15983b869f7a028acc240fbd1afc8faaf-cdd033a92b241f8a"
+    }
+  ]
+}

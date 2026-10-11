@@ -1,0 +1,600 @@
+{
+  "current_state": {
+    "slot-92702908-2b1e-4442-acbf-35cf3be7cab6": {
+      "slot": "payroll change",
+      "occurrence_id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100",
+      "heads": [
+        "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "July switched from a gain to a loss as payrolls fell by 10,000.",
+      "span_check": "byte_exact",
+      "speaker": "Bureau of Labor Statistics",
+      "figure": {
+        "unit": "jobs",
+        "value": "-10000"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "BLS Employment Situation September 2026 revision table",
+      "evidence_id": "64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8",
+      "basis": [
+        "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
+    },
+    "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3": {
+      "slot": "July jobs revised",
+      "occurrence_id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+      "heads": [
+        "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "lost 10,000 jobs in July.",
+      "span_check": "byte_exact",
+      "speaker": "U.S. Department of Labor",
+      "figure": {
+        "unit": "jobs",
+        "value": "-10000"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "U.S. Bureau of Labor Statistics July 2026 Employment Situation revision",
+      "evidence_id": "312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964",
+      "basis": [
+        "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+        "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T12:39:04Z",
+      "canonical_url": "https://usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_6753.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1059165,
+      "gate_verdict": "COVER",
+      "id": "312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964",
+      "lang": "en",
+      "published_at": "2026-10-02T12:39:04Z",
+      "publisher": "USA Today",
+      "raw_sha256": "8e435ab5fc017b6ca7d043bb5e8d1bb386e53e6e3eb2ddcf4dbf35e276670a11",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:27.856576Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_6753.txt",
+      "text_sha256": "ee028ce662e5b29cf6513087cbb3d8b53d82bd03d1910ce815b6e0fae2f9158b",
+      "title": "September jobs report shows slowdown in hiring, unemployment ticks up",
+      "updated_at": "2026-10-02T13:36:16Z",
+      "url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+      "verbatim_level": "article",
+      "log_seq": 1059166,
+      "recorded_at": "2026-10-03T07:22:49.809689Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T12:39:04Z",
+          "checkable_against": "U.S. Bureau of Labor Statistics July 2026 Employment Situation revision",
+          "claim_type": "actual",
+          "envelope_seq": 1074392,
+          "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+          "evidence_id": "312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964",
+          "figure": {
+            "unit": "jobs",
+            "value": "-10000"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "lost 10,000 jobs in July.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:06:27.856576Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 582,
+          "span_start": 557,
+          "speaker": "U.S. Department of Labor",
+          "subject": "U.S. July 2026 employment report",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_6753.txt",
+          "text_sha256": "ee028ce662e5b29cf6513087cbb3d8b53d82bd03d1910ce815b6e0fae2f9158b",
+          "time_action": "corrects",
+          "log_seq": 1074393,
+          "recorded_at": "2026-10-03T11:02:38.244917Z",
+          "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+          "evidence_asserted_at": "2026-10-02T12:39:04Z",
+          "evidence_url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T15:26:40.343000Z",
+      "canonical_url": "https://nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_0142.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1057915,
+      "gate_verdict": "COVER",
+      "id": "43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f",
+      "lang": "en",
+      "published_at": "2026-10-02T15:26:40.343000Z",
+      "publisher": "NBC News",
+      "raw_sha256": "491018485342d02029deb60f5492ef97b0623b621b2e2f625ee9cef0694bd49d",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:12.822394Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nbcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "nbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0142.txt",
+      "text_sha256": "2b66ed2e4032e21f7cbcd8851f23d60bba84df41c44320b1a62f8e77d216263b",
+      "title": "U.S. labor market slows with midterms on the horizon",
+      "updated_at": "2026-10-02T15:26:40.343000Z",
+      "url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+      "verbatim_level": "article",
+      "log_seq": 1057916,
+      "recorded_at": "2026-10-03T07:22:43.153385Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T15:26:40.343000Z",
+          "checkable_against": "BLS September 2026 Employment Situation release and July payroll estimates",
+          "claim_type": "actual",
+          "envelope_seq": 1080352,
+          "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+          "evidence_id": "43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f",
+          "figure": {
+            "unit": "jobs",
+            "value": "-10000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "“The change in total nonfarm payroll employment for July was revised down by 31,000, from +21,000 to -10,000, and the change for August was revised down by 29,000, from +162,000 to +133,000,” the BLS said in a statement.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:12.822394Z",
+          "root_id": "www.nbcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 828,
+          "span_start": 604,
+          "speaker": "Bureau of Labor Statistics",
+          "subject": "U.S. July 2026 employment report",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0142.txt",
+          "text_sha256": "2b66ed2e4032e21f7cbcd8851f23d60bba84df41c44320b1a62f8e77d216263b",
+          "time_action": "corrects",
+          "log_seq": 1080353,
+          "recorded_at": "2026-10-03T14:33:37.419480Z",
+          "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+          "evidence_asserted_at": "2026-10-02T15:26:40.343000Z",
+          "evidence_url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+          "evidence_publisher": "NBC News",
+          "evidence_source_id": "nbc_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T12:31:42Z",
+      "canonical_url": "https://cnbc.com/2026/10/02/jobs-report-september-2026.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_1843.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1058287,
+      "gate_verdict": "COVER",
+      "id": "64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8",
+      "lang": "en",
+      "published_at": "2026-10-02T12:31:42Z",
+      "publisher": "CNBC",
+      "raw_sha256": "575668c4ac8a782cdc0cb1aac27f545a62cd7f2b9346ef63a531809b17b869c9",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:42.940024Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1843.txt",
+      "text_sha256": "37a7a3e2026ff794033389cb8b2d158f11cc25b05807665f8973863f153c70f1",
+      "title": "Labor market faltered in September as jobs increased by just 29,000, unemployment rate rose to 4.2%",
+      "updated_at": "2026-10-02T13:45:58Z",
+      "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
+      "verbatim_level": "article",
+      "log_seq": 1058288,
+      "recorded_at": "2026-10-03T07:22:45.067118Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T12:31:42Z",
+          "checkable_against": "BLS Employment Situation September 2026 revision table",
+          "claim_type": "actual",
+          "envelope_seq": 1079950,
+          "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+          "evidence_id": "64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8",
+          "figure": {
+            "unit": "jobs",
+            "value": "-10000"
+          },
+          "fire_id": "e5759d688d99ce239ef354b2579c334c",
+          "id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "July switched from a gain to a loss as payrolls fell by 10,000.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:03:42.940024Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 622,
+          "span_start": 559,
+          "speaker": "Bureau of Labor Statistics",
+          "subject": "U.S. July 2026 employment report",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1843.txt",
+          "text_sha256": "37a7a3e2026ff794033389cb8b2d158f11cc25b05807665f8973863f153c70f1",
+          "time_action": "corrects",
+          "log_seq": 1079951,
+          "recorded_at": "2026-10-03T14:31:17.336017Z",
+          "slot_id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+          "evidence_asserted_at": "2026-10-02T12:31:42Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T03:39:58.651708Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1074390,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+    "id": "event-80694329-9927-41c5-840d-817918ad1940",
+    "kind": "data release",
+    "label": "July 2026 U.S. employment report revision",
+    "minted_at": "2026-10-03T11:02:29.410007Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. July 2026 employment report",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964/c69432993e2c47b490bbbb6f93d86524.json",
+    "log_seq": 1074391
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100",
+      "envelope_seq": 1080244,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "name": "payroll change",
+      "refusal": null,
+      "log_seq": 1080245,
+      "recorded_at": "2026-10-03T14:33:12.891026Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+      "envelope_seq": 1080530,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "name": "July jobs revised",
+      "refusal": null,
+      "log_seq": 1080531,
+      "recorded_at": "2026-10-03T14:34:59.222691Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T12:39:04Z",
+      "checkable_against": "U.S. Bureau of Labor Statistics July 2026 Employment Situation revision",
+      "claim_type": "actual",
+      "envelope_seq": 1074392,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "evidence_id": "312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964",
+      "figure": {
+        "unit": "jobs",
+        "value": "-10000"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "lost 10,000 jobs in July.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:27.856576Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 582,
+      "span_start": 557,
+      "speaker": "U.S. Department of Labor",
+      "subject": "U.S. July 2026 employment report",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_6753.txt",
+      "text_sha256": "ee028ce662e5b29cf6513087cbb3d8b53d82bd03d1910ce815b6e0fae2f9158b",
+      "time_action": "corrects",
+      "log_seq": 1074393,
+      "recorded_at": "2026-10-03T11:02:38.244917Z",
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "evidence_asserted_at": "2026-10-02T12:39:04Z",
+      "evidence_url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T15:26:40.343000Z",
+      "checkable_against": "BLS September 2026 Employment Situation release and July payroll estimates",
+      "claim_type": "actual",
+      "envelope_seq": 1080352,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "evidence_id": "43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f",
+      "figure": {
+        "unit": "jobs",
+        "value": "-10000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "“The change in total nonfarm payroll employment for July was revised down by 31,000, from +21,000 to -10,000, and the change for August was revised down by 29,000, from +162,000 to +133,000,” the BLS said in a statement.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:12.822394Z",
+      "root_id": "www.nbcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 828,
+      "span_start": 604,
+      "speaker": "Bureau of Labor Statistics",
+      "subject": "U.S. July 2026 employment report",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_0142.txt",
+      "text_sha256": "2b66ed2e4032e21f7cbcd8851f23d60bba84df41c44320b1a62f8e77d216263b",
+      "time_action": "corrects",
+      "log_seq": 1080353,
+      "recorded_at": "2026-10-03T14:33:37.419480Z",
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "evidence_asserted_at": "2026-10-02T15:26:40.343000Z",
+      "evidence_url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+      "evidence_publisher": "NBC News",
+      "evidence_source_id": "nbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T12:31:42Z",
+      "checkable_against": "BLS Employment Situation September 2026 revision table",
+      "claim_type": "actual",
+      "envelope_seq": 1079950,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "evidence_id": "64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8",
+      "figure": {
+        "unit": "jobs",
+        "value": "-10000"
+      },
+      "fire_id": "e5759d688d99ce239ef354b2579c334c",
+      "id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "July switched from a gain to a loss as payrolls fell by 10,000.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:03:42.940024Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 622,
+      "span_start": 559,
+      "speaker": "Bureau of Labor Statistics",
+      "subject": "U.S. July 2026 employment report",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_1843.txt",
+      "text_sha256": "37a7a3e2026ff794033389cb8b2d158f11cc25b05807665f8973863f153c70f1",
+      "time_action": "corrects",
+      "log_seq": 1079951,
+      "recorded_at": "2026-10-03T14:31:17.336017Z",
+      "slot_id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "evidence_asserted_at": "2026-10-02T12:31:42Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1125800,
+      "id": "attach-724a264d-954c-4f00-8620-3171c8bd2432",
+      "occurrence_id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+      "refusal": null,
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "log_seq": 1125801,
+      "recorded_at": "2026-10-05T02:53:59.805212Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1080246,
+      "id": "attach-anchor-slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "occurrence_id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100",
+      "refusal": null,
+      "slot_id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "log_seq": 1080247,
+      "recorded_at": "2026-10-03T14:33:12.913909Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1080532,
+      "id": "attach-anchor-slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "occurrence_id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+      "refusal": null,
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "log_seq": 1080533,
+      "recorded_at": "2026-10-03T14:34:59.248262Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1126079,
+      "event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "-10,000"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "from_occurrence_id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+      "id": "edge-relation-7913e8ee2b34c08732e045bc",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report a revised job loss of 10,000 for July 2026 based on BLS data, though they come from different publishers (NBC News and USA Today).",
+      "refusal": null,
+      "to_event_id": "event-80694329-9927-41c5-840d-817918ad1940",
+      "to_occurrence_id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+      "log_seq": 1126080,
+      "recorded_at": "2026-10-05T03:09:38.462194Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T15:26:40.343000Z",
+    "confirmations": [
+      {
+        "label": "“-10000 jobs”",
+        "value": "-10000 jobs",
+        "reports": [
+          {
+            "publisher": "NBC News",
+            "url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "USA Today",
+            "url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3"
+        ],
+        "sentence": "“-10000 jobs”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+        "relation": "supports",
+        "edge_id": "edge-relation-7913e8ee2b34c08732e045bc",
+        "earlier_occurrence_id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c",
+        "later_occurrence_id": "occurrence-43346299eee301dafbe4441292843734de4ceb80645055251e0037989c945b1f-5a1912061608458d",
+        "earlier_evidence_url": "https://www.usatoday.com/story/money/economy/jobs-labor/2026/10/02/september-2026-jobs-report-unemployment-rate/91991349007/",
+        "later_evidence_url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497",
+        "sentence": "On 2026-10-02, USA Today reported “lost 10,000 jobs in July.”; on the same day, NBC News reported ““The change in total nonfarm payroll employment for July was revised down by 31,000, from +21,000 to -10,000, and the change for August was revised down by 29,000, from +162,000 to +133,000,” the BLS said in a statement.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+  "root_id": "event-522c481d-4c7e-4c93-ae34-11bce84ce89d",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-92702908-2b1e-4442-acbf-35cf3be7cab6",
+      "name": "payroll change",
+      "value": "-10000",
+      "unit": "jobs",
+      "sentence": "July switched from a gain to a loss as payrolls fell by 10,000.",
+      "occurrence_id": "occurrence-64f7d4455c738e1e9e8e4a61e49fb12eb0f885ef72e3af07dd9c10dd406dbee8-ef2b9929332b5100"
+    },
+    {
+      "slot_id": "slot-d3840f72-d8f5-4f5c-9c98-ed8886b1aaa3",
+      "name": "July jobs revised",
+      "value": "-10000",
+      "unit": "jobs",
+      "sentence": "lost 10,000 jobs in July.",
+      "occurrence_id": "occurrence-312d68332d3b8e8157b60337fd68180058238a1a6980008e13b3b68571218964-8ed0e67f40e2bb0c"
+    }
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "current_state": {
+    "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3": {
+      "slot": "disaster frequency",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a",
+      "heads": [
+        "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "According to the World Meteorological Organization , while the number of disasters increased five times over the last 50 years, the number of fatalities decreased three-fold.",
+      "span_check": "byte_exact",
+      "speaker": "World Meteorological Organization",
+      "figure": {
+        "unit": "times",
+        "value": "5"
+      },
+      "as_of": "2022-11-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+      "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+      "basis": [
+        "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a"
+      ],
+      "last_confirmed": "2022-11-01",
+      "freshness": "stale"
+    },
+    "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8": {
+      "slot": "fatality decline",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6",
+      "heads": [
+        "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "the number of fatalities decreased three-fold.",
+      "span_check": "byte_exact",
+      "speaker": "World Meteorological Organization",
+      "figure": {
+        "unit": "fold",
+        "value": "3"
+      },
+      "as_of": "2022-11-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+      "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+      "basis": [
+        "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6"
+      ],
+      "last_confirmed": "2022-11-01",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "as_of": "2022-11-01",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "as_of": "2022-11-01",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-10T13:44:25Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1457.html",
+      "envelope_seq": 165083,
+      "id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+      "publisher": "Brookings Institution",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:11:19.895269Z",
+      "root_evidence": "body:4336:4374",
+      "root_id": "www.brookings.edu",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "think_tank",
+      "source_id": "brookings_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1457.txt",
+      "text_sha256": "a7dd8a2a3f3ea1b65765c929a25436b613b668bc3b238222ac4ffbcbff621464",
+      "url": "https://www.brookings.edu/articles/cop27-an-opportunity-to-get-serious-about-climate-migration/",
+      "verbatim_level": "article",
+      "log_seq": 518381,
+      "recorded_at": "2026-09-06T01:33:23.292767Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2022-11-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-10T13:44:25Z",
+          "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+          "claim_type": "actual",
+          "envelope_seq": 804930,
+          "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+          "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+          "figure": {
+            "unit": "times",
+            "value": "5"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "According to the World Meteorological Organization , while the number of disasters increased five times over the last 50 years, the number of fatalities decreased three-fold.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:11:19.895269Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 4505,
+          "span_start": 4331,
+          "speaker": "World Meteorological Organization",
+          "subject": "Global disasters",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1457.txt",
+          "text_sha256": "a7dd8a2a3f3ea1b65765c929a25436b613b668bc3b238222ac4ffbcbff621464",
+          "log_seq": 804931,
+          "recorded_at": "2026-09-08T09:33:42.834220Z",
+          "slot_id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+          "evidence_asserted_at": "2026-08-10T13:44:25Z",
+          "evidence_url": "https://www.brookings.edu/articles/cop27-an-opportunity-to-get-serious-about-climate-migration/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2022-11-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-10T13:44:25Z",
+          "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+          "claim_type": "actual",
+          "envelope_seq": 804934,
+          "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+          "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+          "figure": {
+            "unit": "fold",
+            "value": "3"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "the number of fatalities decreased three-fold.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:11:19.895269Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 4505,
+          "span_start": 4459,
+          "speaker": "World Meteorological Organization",
+          "subject": "Global disasters",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1457.txt",
+          "text_sha256": "a7dd8a2a3f3ea1b65765c929a25436b613b668bc3b238222ac4ffbcbff621464",
+          "log_seq": 804935,
+          "recorded_at": "2026-09-08T09:33:42.918703Z",
+          "slot_id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+          "evidence_asserted_at": "2026-08-10T13:44:25Z",
+          "evidence_url": "https://www.brookings.edu/articles/cop27-an-opportunity-to-get-serious-about-climate-migration/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 804766,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+    "kind": "report finding",
+    "label": "Global disaster frequency and fatalities trend",
+    "minted_at": "2026-09-08T09:32:55.788682Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+    "period": "2022-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Global disasters",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f/b07ed1b070fa41b097d87ebd0712c059.json",
+    "log_seq": 804767
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6",
+      "envelope_seq": 805078,
+      "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+      "id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "name": "fatality decline",
+      "refusal": null,
+      "log_seq": 805079,
+      "recorded_at": "2026-09-08T09:34:15.952509Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a",
+      "envelope_seq": 805074,
+      "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+      "id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "name": "disaster frequency",
+      "refusal": null,
+      "log_seq": 805075,
+      "recorded_at": "2026-09-08T09:34:15.927364Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2022-11-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-10T13:44:25Z",
+      "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+      "claim_type": "actual",
+      "envelope_seq": 804930,
+      "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+      "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+      "figure": {
+        "unit": "times",
+        "value": "5"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "According to the World Meteorological Organization , while the number of disasters increased five times over the last 50 years, the number of fatalities decreased three-fold.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:11:19.895269Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 4505,
+      "span_start": 4331,
+      "speaker": "World Meteorological Organization",
+      "subject": "Global disasters",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1457.txt",
+      "text_sha256": "a7dd8a2a3f3ea1b65765c929a25436b613b668bc3b238222ac4ffbcbff621464",
+      "log_seq": 804931,
+      "recorded_at": "2026-09-08T09:33:42.834220Z",
+      "slot_id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "evidence_asserted_at": "2026-08-10T13:44:25Z",
+      "evidence_url": "https://www.brookings.edu/articles/cop27-an-opportunity-to-get-serious-about-climate-migration/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2022-11-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-10T13:44:25Z",
+      "checkable_against": "World Meteorological Organization disaster and fatality statistics",
+      "claim_type": "actual",
+      "envelope_seq": 804934,
+      "event_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+      "evidence_id": "7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f",
+      "figure": {
+        "unit": "fold",
+        "value": "3"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "the number of fatalities decreased three-fold.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:11:19.895269Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 4505,
+      "span_start": 4459,
+      "speaker": "World Meteorological Organization",
+      "subject": "Global disasters",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1457.txt",
+      "text_sha256": "a7dd8a2a3f3ea1b65765c929a25436b613b668bc3b238222ac4ffbcbff621464",
+      "log_seq": 804935,
+      "recorded_at": "2026-09-08T09:33:42.918703Z",
+      "slot_id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "evidence_asserted_at": "2026-08-10T13:44:25Z",
+      "evidence_url": "https://www.brookings.edu/articles/cop27-an-opportunity-to-get-serious-about-climate-migration/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 805080,
+      "id": "attach-anchor-slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6",
+      "refusal": null,
+      "slot_id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "log_seq": 805081,
+      "recorded_at": "2026-09-08T09:34:15.958738Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 805076,
+      "id": "attach-anchor-slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a",
+      "refusal": null,
+      "slot_id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "log_seq": 805077,
+      "recorded_at": "2026-09-08T09:34:15.933850Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-431ca58e-30ec-4d0b-9924-c91bccef2228",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-b89f117b-a8fb-4e5a-8e73-77f4a949cae3",
+      "name": "disaster frequency",
+      "value": "5",
+      "unit": "times",
+      "sentence": "According to the World Meteorological Organization , while the number of disasters increased five times over the last 50 years, the number of fatalities decreased three-fold.",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-05f1c3278c0e501a"
+    },
+    {
+      "slot_id": "slot-6bf03cd5-1509-472c-b905-ce6f68192cc8",
+      "name": "fatality decline",
+      "value": "3",
+      "unit": "fold",
+      "sentence": "the number of fatalities decreased three-fold.",
+      "occurrence_id": "occurrence-7ccb643bdbca46dcd5527dfa9f96283177c1cf520d6fb8fa9ceef14d3504157f-eb1fc4c655df14e6"
+    }
+  ]
+}

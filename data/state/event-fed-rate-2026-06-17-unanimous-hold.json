@@ -1952,8 +1952,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0a2f62b478",
-  "evaluated_at": "2026-09-18T04:51:55.130143Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T21:37:15.174105Z",
   "event": {
     "accepted": true,
     "envelope_seq": 902646,
@@ -3457,6 +3457,33 @@
   "edges": [
     {
       "accepted": true,
+      "envelope_seq": 1120672,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+      "id": "edge-relation-00df123e40239efae298b696",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "The NEW occurrence reports a 75 bps hike, whereas the EXISTING occurrence reports a 25 bps cut. These are incompatible. Origin is same based on metadata.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+      "log_seq": 1120673,
+      "recorded_at": "2026-10-04T19:21:41.571207Z"
+    },
+    {
+      "accepted": true,
       "envelope_seq": 767467,
       "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
       "family": "event",
@@ -3481,6 +3508,33 @@
       "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start",
       "log_seq": 767468,
       "recorded_at": "2026-09-07T19:37:51.477252Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120623,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+      "id": "edge-relation-11bfad518491590b1838510c",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Both statements are from the same source reporting on the same dot plot projections. One specifies 1 official favors a 75 bp hike, the other specifies 5 favor a 50 bp hike. These are distinct, incompatible values within the same set.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+      "log_seq": 1120624,
+      "recorded_at": "2026-10-04T19:18:06.957472Z"
     },
     {
       "accepted": true,
@@ -3511,6 +3565,60 @@
     },
     {
       "accepted": true,
+      "envelope_seq": 1120529,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "three supported a cumulative hike of 25 basis points"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+      "id": "edge-relation-14b1f0f2ffe94f83f28db65a",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "A hike of 25 bps is a different projection than a hike of 50 bps.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+      "log_seq": 1120530,
+      "recorded_at": "2026-10-04T19:13:31.939344Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120617,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "eight believed rates should be kept unchanged"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+      "id": "edge-relation-164172540d20e582dfd6283a",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Both statements are from the same source reporting on the same dot plot projections. One specifies 8 officials favor unchanged rates, the other specifies 1 favors a 25 bp cut. These are distinct, incompatible values within the same set.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+      "log_seq": 1120618,
+      "recorded_at": "2026-10-04T19:18:03.528723Z"
+    },
+    {
+      "accepted": true,
       "envelope_seq": 767481,
       "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
       "family": "event",
@@ -3535,6 +3643,60 @@
       "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
       "log_seq": 767482,
       "recorded_at": "2026-09-07T19:39:20.536496Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1121734,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5% to 3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
+      "id": "edge-relation-304ed9119ed1243b00abe80d",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences come from the same source and report the same value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+      "log_seq": 1121735,
+      "recorded_at": "2026-10-04T21:20:45.244170Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120488,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "12 – 0 vote"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-cc8eacb52faadedf",
+      "id": "edge-relation-32986377adfe266a02727667",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes are from the same Federal Reserve release stating the same vote count (12-0). Metadata identifies them as from the same source, but since no source words are in the quotes, the source span is empty.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-8695cf37108f3f83",
+      "log_seq": 1120489,
+      "recorded_at": "2026-10-04T19:11:52.980522Z"
     },
     {
       "accepted": true,
@@ -3619,6 +3781,195 @@
     },
     {
       "accepted": true,
+      "envelope_seq": 1121727,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3-1/2 to 3-3/4 percent"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+      "id": "edge-relation-8a831d4005c835292959487c",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences provide the exact same quote from the same source.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-bed5a113c4b6c6b3",
+      "log_seq": 1121728,
+      "recorded_at": "2026-10-04T21:20:35.963712Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1121730,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.50%–3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-ccaebe874a2dbe56",
+      "id": "edge-relation-8c1ff7caed05ba8c131c4af2",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences provide the exact same quote from the same source.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+      "log_seq": 1121731,
+      "recorded_at": "2026-10-04T21:20:39.725684Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120620,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+      "id": "edge-relation-8f2ef02309bb210846bfb517",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Both statements are from the same source reporting on the same dot plot projections. One specifies 1 official favors a 75 bp hike, the other specifies 8 favor unchanged rates. These are distinct, incompatible values within the same set.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+      "log_seq": 1120621,
+      "recorded_at": "2026-10-04T19:18:05.059551Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120482,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "median forecast for US real GDP growth in 2026 was revised to 2.2%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-e7f436dda7f73a07",
+      "id": "edge-relation-a49e874facaadc8406f79439",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes are from the same source (TradingKey) and report the same revised median forecast for US real GDP growth in 2026 as 2.2%. The NEW quote provides additional context about the previous projection from March, but the core value is identical. Source span is empty as the quote doesn't contain the name.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-c74c39b9f74066ea",
+      "log_seq": 1120483,
+      "recorded_at": "2026-10-04T19:11:25.090344Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120611,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "eight believed rates should be kept unchanged"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+      "id": "edge-relation-ab75aae4b358a4e9010a57f0",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Both statements are from the same source reporting on the same dot plot projections. One specifies 8 officials favor unchanged rates, the other specifies 5 favor a 50 bp hike. These are different segments of the dot plot and thus incompatible as a single projection value.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+      "log_seq": 1120612,
+      "recorded_at": "2026-10-04T19:17:57.444796Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120494,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "The median rate on the dot plot was recorded at 3.8%"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-edbbcccc95c237a9",
+      "id": "edge-relation-d2bb9763714dad00dd884015",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both assertions report the same median dot plot rate of 3.8% and share the same source ID (tradingkey), meaning they are the same statement from the same source.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-a1104516b7ea25e9",
+      "log_seq": 1120495,
+      "recorded_at": "2026-10-04T19:12:26.397741Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120532,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "eight believed rates should be kept unchanged"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+      "id": "edge-relation-d5582f534efc284bcbd56c0d",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Rates kept unchanged is incompatible with a 25 bps hike.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+      "log_seq": 1120533,
+      "recorded_at": "2026-10-04T19:13:36.559317Z"
+    },
+    {
+      "accepted": true,
       "envelope_seq": 767484,
       "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
       "family": "event",
@@ -3643,6 +3994,87 @@
       "to_occurrence_id": "occurrence-td-2ed160-fed-hold-start",
       "log_seq": 767485,
       "recorded_at": "2026-09-07T19:39:22.879587Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120522,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "one projected a cumulative rate cut of 25 basis points"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+      "id": "edge-relation-d8b065eb81647ace041a49c2",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "A rate cut of 25 bps is incompatible with a rate hike of 50 bps.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+      "log_seq": 1120523,
+      "recorded_at": "2026-10-04T19:13:24.751124Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1121742,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "3.5%-3.75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-a25af7f53015b46a",
+      "id": "edge-relation-e1a83297e9dd0d33e15a9fb9",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences provide the exact same quote from the same source.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-138893d362b7b7e6",
+      "log_seq": 1121743,
+      "recorded_at": "2026-10-04T21:20:52.751823Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120675,
+      "event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "from_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+      "id": "edge-relation-e45514c506b980c98d26a293",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "The NEW occurrence reports one member believing in a 75 bps hike, while the EXISTING occurrence reports three members supporting a 25 bps hike. These are distinct and incompatible projections. Origin is same based on metadata.",
+      "refusal": null,
+      "to_event_id": "event-fed-rate-2026-06-17-unanimous-hold",
+      "to_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+      "log_seq": 1120676,
+      "recorded_at": "2026-10-04T19:21:43.669660Z"
     },
     {
       "accepted": true,
@@ -5220,7 +5652,98 @@
     }
   ],
   "revision_timeline": {
-    "changes": [],
+    "changes": [
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-8f2ef02309bb210846bfb517",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “eight believed rates should be kept unchanged”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-ab75aae4b358a4e9010a57f0",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-11bfad518491590b1838510c",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-d8b065eb81647ace041a49c2",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “one projected a cumulative rate cut of 25 basis points”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-14b1f0f2ffe94f83f28db65a",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “three supported a cumulative hike of 25 basis points”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-164172540d20e582dfd6283a",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “one projected a cumulative rate cut of 25 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-00df123e40239efae298b696",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “one projected a cumulative rate cut of 25 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-d5582f534efc284bcbd56c0d",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “three supported a cumulative hike of 25 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e45514c506b980c98d26a293",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “three supported a cumulative hike of 25 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      }
+    ],
     "changes_checked_at": "2026-08-23T00:00:00Z",
     "confirmations": [
       {
@@ -5485,6 +6008,16 @@
         "sentence": "On 2026-06-17, TradingKey reported “median forecast for US real GDP growth in 2026 was revised to 2.2%”; on the same day, TradingKey reported “the median forecast for US real GDP growth in 2026 was revised to 2.2%, representing a downward adjustment from the 2.4% projected in March”."
       },
       {
+        "slot_id": "slot-event-fed-rate-june-2026-2273cd83968dbaa2",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-a49e874facaadc8406f79439",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-c74c39b9f74066ea",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-e7f436dda7f73a07",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “the median forecast for US real GDP growth in 2026 was revised to 2.2%, representing a downward adjustment from the 2.4% projected in March”; on the same day, TradingKey reported “median forecast for US real GDP growth in 2026 was revised to 2.2%”."
+      },
+      {
         "slot_id": "slot-event-fed-rate-june-2026-367256dcba557082",
         "relation": "same_fact",
         "edge_id": "phase2-edge-6597448e-3c37-4b50-87a5-0f91f183d321",
@@ -5493,6 +6026,16 @@
         "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
         "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
         "sentence": "On 2026-06-17, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”; on the same day, Fox Business reported “Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-367256dcba557082",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-32986377adfe266a02727667",
+        "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-8695cf37108f3f83",
+        "later_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-cc8eacb52faadedf",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "later_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "sentence": "On 2026-06-17, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote”; on the same day, Federal Reserve reported “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”."
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-367256dcba557082",
@@ -5535,6 +6078,106 @@
         "sentence": "On 2026-06-17, TradingKey reported “median forecast for the US unemployment rate in 2026 is 4.3%”; on the same day, TradingKey reported “Policymakers' latest median forecast for the US unemployment rate in 2026 is 4.3%, slightly down from the 4.4% projected in March”."
       },
       {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-8f2ef02309bb210846bfb517",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “eight believed rates should be kept unchanged”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-ab75aae4b358a4e9010a57f0",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-11bfad518491590b1838510c",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-d8b065eb81647ace041a49c2",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “one projected a cumulative rate cut of 25 basis points”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-14b1f0f2ffe94f83f28db65a",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-4168ca3f44cee3bf",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “five favored a cumulative hike of 50 basis points”; on the same day, TradingKey reported “three supported a cumulative hike of 25 basis points”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-164172540d20e582dfd6283a",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “one projected a cumulative rate cut of 25 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-00df123e40239efae298b696",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-5af379fd0e7b458c",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “one projected a cumulative rate cut of 25 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-d5582f534efc284bcbd56c0d",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-73d894e8ae2d6f61",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “three supported a cumulative hike of 25 basis points”; on the same day, TradingKey reported “eight believed rates should be kept unchanged”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-731bc88f5f868077",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e45514c506b980c98d26a293",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-62ff3ce547e050e3",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-b570517ec4bf26d7",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “three supported a cumulative hike of 25 basis points”; on the same day, TradingKey reported “one believed there should be a cumulative rate hike of 75 basis points over the remainder of 2026”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-e1a83297e9dd0d33e15a9fb9",
+        "earlier_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-138893d362b7b7e6",
+        "later_occurrence_id": "occurrence-pin-v2:ecd78ac40f262ba7c27fb5debe0005f7e29a64e58771b210333b6b8b39f108f9-a25af7f53015b46a",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
+        "sentence": "On 2026-06-17, CNBC reported “The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%.”; on the same day, CNBC reported “The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%.”."
+      },
+      {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
         "relation": "same_fact",
         "edge_id": "phase2-edge-dd4e1c5d-64e8-4a62-9934-6e21819ec76a",
@@ -5553,6 +6196,16 @@
         "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
         "later_evidence_url": "https://www.cnbc.com/2026/06/17/fed-interest-rate-decision-june-2026.html",
         "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, CNBC reported “The Federal Open Market Committee voted unanimously to keep its benchmark overnight borrowing rate anchored in a range of 3.5%-3.75%.”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-8a831d4005c835292959487c",
+        "earlier_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-bed5a113c4b6c6b3",
+        "later_occurrence_id": "occurrence-pin-v2:0a774f92fb270c42dc737859e9e80324b29a12607754d598e14302cf9f25225a-c8bfc7b2d58050cc",
+        "earlier_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "later_evidence_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+        "sentence": "On 2026-06-17, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”; on the same day, Federal Reserve reported “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent”."
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
@@ -5636,6 +6289,16 @@
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-304ed9119ed1243b00abe80d",
+        "earlier_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-12cb04f480db3b6e",
+        "later_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
+        "earlier_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+        "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
+        "sentence": "On 2026-06-17, Fox Business reported “Fed policymakers voted 12-0 to leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%.”; on the same day, Fox Business reported “leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
         "relation": "supports",
         "edge_id": "edge-relation-134f4c1ece0abac1b09a5772",
         "earlier_occurrence_id": "occurrence-pin-v2:d6d93cfc17caf70fa97a0a81c0e30029da5ea5449f9d1f12514ed79c89a8a846-773e9c285f12dd37",
@@ -5683,6 +6346,26 @@
         "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
         "later_evidence_url": "https://www.foxbusiness.com/economy/federal-reserve-interest-rate-decision-june-17-2026",
         "sentence": "On 2026-06-17, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”; on the same day, Fox Business reported “leave the benchmark federal funds rate unchanged at its current range of 3.5% to 3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-93ff7929970c310a",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-8c1ff7caed05ba8c131c4af2",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-131584c62222e3d2",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-ccaebe874a2dbe56",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”; on the same day, TradingKey reported “the Federal Reserve maintained the federal funds rate at 3.50%–3.75%”."
+      },
+      {
+        "slot_id": "slot-event-fed-rate-june-2026-ee254e90b55cb7cc",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-d2bb9763714dad00dd884015",
+        "earlier_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-a1104516b7ea25e9",
+        "later_occurrence_id": "occurrence-pin-v2:8df965af6fb2dc785e7b31c6b6483dc77e2ca53fdfd7ce66d6cf676f873d1038-edbbcccc95c237a9",
+        "earlier_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "later_evidence_url": "https://www.tradingkey.com/analysis/economic/central-banks/261973912-fed-federal-fomc-2-economic-projections-decision-rates-tradingkey",
+        "sentence": "On 2026-06-17, TradingKey reported “The median rate on the dot plot was recorded at 3.8%, a sharp upward revision from the 3.4% projected in March.”; on the same day, TradingKey reported “The median rate on the dot plot was recorded at 3.8%”."
       },
       {
         "slot_id": "slot-event-fed-rate-june-2026-ee254e90b55cb7cc",

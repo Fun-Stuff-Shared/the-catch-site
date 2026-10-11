@@ -1,0 +1,364 @@
+{
+  "current_state": {
+    "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67": {
+      "slot": "approval rating",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+        "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+        "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c"
+      ],
+      "last_confirmed": "2026-06-26",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "as_of": "2026-06-26"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "as_of": "2026-06-26",
+      "occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-01T19:30:50Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5091.html",
+      "envelope_seq": 169879,
+      "id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:49.613342Z",
+      "root_evidence": "body:800:822",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5091.txt",
+      "text_sha256": "4b7c3b330a17528750c24b4d06dfcc60ad2e46d0de87a2dcce07f28ab465d7b7",
+      "url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+      "verbatim_level": "article",
+      "log_seq": 520779,
+      "recorded_at": "2026-09-06T01:33:23.977378Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-06-26",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-01T19:30:50Z",
+          "checkable_against": "Donald Trump's cited survey and social-media posts",
+          "claim_type": "actual",
+          "envelope_seq": 783035,
+          "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+          "evidence_id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+          "figure": {
+            "unit": "percent",
+            "value": "50"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Two days later, on June 26, he cited a survey conducted by his own pollsters putting his approval rating at 50 percent.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:49.613342Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 8561,
+          "span_start": 8442,
+          "speaker": "Donald Trump",
+          "subject": "Donald Trump approval rating claims",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5091.txt",
+          "text_sha256": "4b7c3b330a17528750c24b4d06dfcc60ad2e46d0de87a2dcce07f28ab465d7b7",
+          "log_seq": 783036,
+          "recorded_at": "2026-09-08T02:53:28.510735Z",
+          "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+          "evidence_asserted_at": "2026-08-01T19:30:50Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-06-26",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-01T19:30:50Z",
+          "checkable_against": "Donald Trump's social-media post and cited polling",
+          "claim_type": "actual",
+          "envelope_seq": 783047,
+          "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+          "evidence_id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+          "figure": {
+            "unit": "percent",
+            "value": "65"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "“Other Polls have my Approval Rating at 65%, and more!” he wrote.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:49.613342Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 8696,
+          "span_start": 8627,
+          "speaker": "Donald Trump",
+          "subject": "Donald Trump approval rating claims",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5091.txt",
+          "text_sha256": "4b7c3b330a17528750c24b4d06dfcc60ad2e46d0de87a2dcce07f28ab465d7b7",
+          "log_seq": 783048,
+          "recorded_at": "2026-09-08T02:53:36.222403Z",
+          "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+          "evidence_asserted_at": "2026-08-01T19:30:50Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T15:33:35.078879Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 782611,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+    "id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+    "kind": "statement",
+    "label": "Trump cites 50 percent approval survey on June 26, 2026",
+    "minted_at": "2026-09-08T02:48:38.082115Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+    "period": "2026-06-26",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump approval rating claims",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb/35a7313ebaf84bf0a0d2fecaa0b6621a.json",
+    "log_seq": 782612
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+      "envelope_seq": 783203,
+      "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "name": "approval rating",
+      "refusal": null,
+      "log_seq": 783204,
+      "recorded_at": "2026-09-08T02:55:02.248558Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-06-26",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-01T19:30:50Z",
+      "checkable_against": "Donald Trump's cited survey and social-media posts",
+      "claim_type": "actual",
+      "envelope_seq": 783035,
+      "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "evidence_id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+      "figure": {
+        "unit": "percent",
+        "value": "50"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Two days later, on June 26, he cited a survey conducted by his own pollsters putting his approval rating at 50 percent.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:49.613342Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 8561,
+      "span_start": 8442,
+      "speaker": "Donald Trump",
+      "subject": "Donald Trump approval rating claims",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5091.txt",
+      "text_sha256": "4b7c3b330a17528750c24b4d06dfcc60ad2e46d0de87a2dcce07f28ab465d7b7",
+      "log_seq": 783036,
+      "recorded_at": "2026-09-08T02:53:28.510735Z",
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "evidence_asserted_at": "2026-08-01T19:30:50Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-06-26",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-01T19:30:50Z",
+      "checkable_against": "Donald Trump's social-media post and cited polling",
+      "claim_type": "actual",
+      "envelope_seq": 783047,
+      "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "evidence_id": "67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb",
+      "figure": {
+        "unit": "percent",
+        "value": "65"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "“Other Polls have my Approval Rating at 65%, and more!” he wrote.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:49.613342Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 8696,
+      "span_start": 8627,
+      "speaker": "Donald Trump",
+      "subject": "Donald Trump approval rating claims",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5091.txt",
+      "text_sha256": "4b7c3b330a17528750c24b4d06dfcc60ad2e46d0de87a2dcce07f28ab465d7b7",
+      "log_seq": 783048,
+      "recorded_at": "2026-09-08T02:53:36.222403Z",
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "evidence_asserted_at": "2026-08-01T19:30:50Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783379,
+      "id": "attach-7e6c3058-c430-4f48-8d78-5b68d1eb42cf",
+      "occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+      "refusal": null,
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "log_seq": 783380,
+      "recorded_at": "2026-09-08T02:56:40.143876Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783205,
+      "id": "attach-anchor-slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+      "refusal": null,
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "log_seq": 783206,
+      "recorded_at": "2026-09-08T02:55:02.465005Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783281,
+      "id": "attach-cd7a3433-9ec4-4114-b301-c9a773fdbedb",
+      "occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+      "refusal": null,
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "log_seq": 783282,
+      "recorded_at": "2026-09-08T02:55:34.949209Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1118446,
+      "event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "65%"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "from_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+      "id": "edge-relation-f9b99da527ccdef49130ed2e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "Both assertions come from the same NYT article describing different approval ratings claimed by Donald Trump (65% from 'Other Polls' vs 50% from his own pollsters). Since they refer to different sets of polls for the same metric, they are incompatible values.",
+      "refusal": null,
+      "to_event_id": "event-6de3ae73-cc26-4859-8444-9e4a677f4a82",
+      "to_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+      "log_seq": 1118447,
+      "recorded_at": "2026-10-04T15:17:51.644518Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [
+      {
+        "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-f9b99da527ccdef49130ed2e",
+        "earlier_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+        "later_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+        "sentence": "On 2026-08-01, The New York Times reported “Two days later, on June 26, he cited a survey conducted by his own pollsters putting his approval rating at 50 percent.”; on the same day, The New York Times reported ““Other Polls have my Approval Rating at 65%, and more!” he wrote.”."
+      }
+    ],
+    "changes_checked_at": "2026-08-01T19:30:50Z",
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": [
+      {
+        "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-f9b99da527ccdef49130ed2e",
+        "earlier_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-2affc16c29698a14",
+        "later_occurrence_id": "occurrence-67f4fcd56582cbfd740ab75dc70f7a20696c0097b839052aa14daab8f0e4b3cb-32f5557d8550611c",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/01/us/politics/trump-polls-approval-rating.html",
+        "sentence": "On 2026-08-01, The New York Times reported “Two days later, on June 26, he cited a survey conducted by his own pollsters putting his approval rating at 50 percent.”; on the same day, The New York Times reported ““Other Polls have my Approval Rating at 65%, and more!” he wrote.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": null,
+  "follows": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+  "root_id": "event-937436e5-46ba-4550-9549-a64f05b6a109",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-d1a11133-8b72-4568-bacc-1ba8b4300a67",
+      "name": "approval rating",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

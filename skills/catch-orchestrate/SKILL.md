@@ -80,8 +80,11 @@ reader of the five sentences needs it, in the fewest words that hold; otherwise 
 the record. Stage two does not grow the story. Each round of cold reads, verify the verdicts the author reports against the pins before
 you accept them; the entailment reviewer misreads records too. Hold the author to catch-story's two rounds (a third only for a
 wrong fact found in round 2, on the changed paragraphs). Then read the served page top to
-bottom yourself, in the story view, as the editor: where the thread breaks, what is said
-three times, what a reader will ask that the records answer. Before you or the author tell
+bottom yourself, in the story view, as the editor. Read What happened alone first: it tells
+the event plainly in about three paragraphs and argues no side's claim. Then where the
+thread breaks, what is said three times, what a reader will ask that the records answer.
+Each note names the layer the point belongs to; a reader's question is never answered by
+moving its answer into What happened. Before you or the author tell
 anyone "the records don't say", search every admitted record's text for it. Send the notes
 as problems, not sentences. Then give the human the URL.
 

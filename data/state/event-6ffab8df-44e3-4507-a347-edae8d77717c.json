@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d": {
+      "slot": "visit date",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3",
+      "heads": [
+        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "what more have we learned about the unannounced visit of CIA chief John Ratcliffe to Moscow earlier this week?",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "CIA and Russian government records or official statements on John Ratcliffe's Moscow visit",
+      "evidence_id": "57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9",
+      "basis": [
+        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "a5b43075372196a22fbaf9fc29b483ff29aa39a3de7371e66cd37547f23ca780",
           "log_seq": 432260,
           "recorded_at": "2026-09-05T09:01:26.578676Z",
+          "slot_id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
           "evidence_asserted_at": "2026-08-28T15:21:00Z",
           "evidence_url": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
           "evidence_publisher": "BBC",
@@ -95,8 +129,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "4becfdf9e0",
-  "evaluated_at": "2026-09-07T01:41:41.034765Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432177,
@@ -112,7 +146,34 @@
     "log_seq": 432178
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3",
+      "envelope_seq": 1000104,
+      "event_id": "event-6ffab8df-44e3-4507-a347-edae8d77717c",
+      "id": "slot-593ad951-993d-4600-b237-66eb736dc46b",
+      "name": "visit date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
+        "source_id": "bbc_news_rss"
+      },
+      "log_seq": 1000105,
+      "recorded_at": "2026-09-29T10:10:12.399318Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3",
+      "envelope_seq": 1000106,
+      "event_id": "event-6ffab8df-44e3-4507-a347-edae8d77717c",
+      "id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
+      "name": "visit date",
+      "refusal": null,
+      "log_seq": 1000107,
+      "recorded_at": "2026-09-29T10:10:23.779243Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -141,6 +202,7 @@
       "text_sha256": "a5b43075372196a22fbaf9fc29b483ff29aa39a3de7371e66cd37547f23ca780",
       "log_seq": 432260,
       "recorded_at": "2026-09-05T09:01:26.578676Z",
+      "slot_id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
       "evidence_asserted_at": "2026-08-28T15:21:00Z",
       "evidence_url": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
       "evidence_publisher": "BBC",
@@ -180,7 +242,21 @@
       "evidence_source_id": "bbc_news_rss"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1000108,
+      "id": "attach-anchor-slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3",
+      "refusal": null,
+      "slot_id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
+      "log_seq": 1000109,
+      "recorded_at": "2026-09-29T10:10:23.786901Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -197,5 +273,14 @@
   "root_id": "event-6ffab8df-44e3-4507-a347-edae8d77717c",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-e0787d0c-5b57-48ab-9351-fd7d36f52b8d",
+      "name": "visit date",
+      "value": null,
+      "unit": null,
+      "sentence": "what more have we learned about the unannounced visit of CIA chief John Ratcliffe to Moscow earlier this week?",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-4a7a6daa5e81e3c3"
+    }
+  ]
 }

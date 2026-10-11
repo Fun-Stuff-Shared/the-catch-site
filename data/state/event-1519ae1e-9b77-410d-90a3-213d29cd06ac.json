@@ -1,0 +1,244 @@
+{
+  "current_state": {
+    "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f": {
+      "slot": "emergency fuel surcharge status",
+      "occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+      "heads": [
+        "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Maersk, the Danish shipping group, added to worries around rising energy prices on Thursday after it said it was increasing its emergency fuel surcharge on all its export collections and import deliveries.",
+      "span_check": "byte_exact",
+      "speaker": "Maersk",
+      "figure": {
+        "unit": "surcharge",
+        "value": "1"
+      },
+      "as_of": "2026-10-08",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Maersk emergency fuel surcharge announcement and shipping tariff records",
+      "evidence_id": "4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c",
+      "basis": [
+        "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "as_of": "2026-10-08",
+      "occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T08:44:49Z",
+      "canonical_url": "https://theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/raw/article_0873.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1219024,
+      "gate_verdict": "COVER",
+      "id": "4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c",
+      "lang": "en",
+      "published_at": "2026-10-08T08:44:49Z",
+      "publisher": "The Guardian",
+      "raw_sha256": "c36eea3e09106ff1863b4162c89b9efdfd3a40268acfc153b48867e960405cbd",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T10:03:42.697875Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.theguardian.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_0873.txt",
+      "text_sha256": "4e64a6c1066d4f89d3f53b06f6b1d001b22ab2736fd87cfe5d0e2f833fb6b518",
+      "title": "Oil prices rise sharply on Middle East tensions and US hurricane threat",
+      "updated_at": "2026-10-08T09:53:12Z",
+      "url": "https://www.theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat",
+      "verbatim_level": "article",
+      "log_seq": 1219025,
+      "recorded_at": "2026-10-08T10:29:52.453366Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-08T08:44:49Z",
+          "checkable_against": "Maersk emergency fuel surcharge announcement and shipping tariff records",
+          "claim_type": "actual",
+          "envelope_seq": 1232178,
+          "event_id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+          "evidence_id": "4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c",
+          "figure": {
+            "unit": "surcharge",
+            "value": "1"
+          },
+          "fire_id": "a8d4708b1c3456c7711db5ab605fc83a",
+          "id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Maersk, the Danish shipping group, added to worries around rising energy prices on Thursday after it said it was increasing its emergency fuel surcharge on all its export collections and import deliveries.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T10:03:42.697875Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 2027,
+          "span_start": 1822,
+          "speaker": "Maersk",
+          "subject": "Maersk emergency fuel surcharge",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_0873.txt",
+          "text_sha256": "4e64a6c1066d4f89d3f53b06f6b1d001b22ab2736fd87cfe5d0e2f833fb6b518",
+          "time_action": "corrects",
+          "log_seq": 1232179,
+          "recorded_at": "2026-10-08T15:10:49.901827Z",
+          "slot_id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+          "evidence_asserted_at": "2026-10-08T08:44:49Z",
+          "evidence_url": "https://www.theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T16:52:31.431773Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1231858,
+    "fire_id": "quarry-wire-scheduled-20261008T100008Z",
+    "follows": null,
+    "id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+    "kind": "pricing announcement",
+    "label": "Maersk increases emergency fuel surcharge October 8 2026",
+    "minted_at": "2026-10-08T15:08:50.085050Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c",
+    "period": "2026-10-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Maersk emergency fuel surcharge",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261008T100008Z/4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c/516ab6546fff455f8dc5ec112b6640ee.json",
+    "log_seq": 1231859
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+      "envelope_seq": 1235493,
+      "event_id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+      "id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "name": "emergency fuel surcharge status",
+      "refusal": null,
+      "log_seq": 1235494,
+      "recorded_at": "2026-10-08T15:55:29.115642Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+      "envelope_seq": 1235470,
+      "event_id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+      "id": "slot-d95565d9-09a8-440f-a200-4e1150755fb7",
+      "name": "emergency fuel surcharge status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat",
+        "source_id": "guardian_world_rss"
+      },
+      "log_seq": 1235471,
+      "recorded_at": "2026-10-08T15:54:37.147171Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-08T08:44:49Z",
+      "checkable_against": "Maersk emergency fuel surcharge announcement and shipping tariff records",
+      "claim_type": "actual",
+      "envelope_seq": 1232178,
+      "event_id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+      "evidence_id": "4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c",
+      "figure": {
+        "unit": "surcharge",
+        "value": "1"
+      },
+      "fire_id": "a8d4708b1c3456c7711db5ab605fc83a",
+      "id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Maersk, the Danish shipping group, added to worries around rising energy prices on Thursday after it said it was increasing its emergency fuel surcharge on all its export collections and import deliveries.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T10:03:42.697875Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 2027,
+      "span_start": 1822,
+      "speaker": "Maersk",
+      "subject": "Maersk emergency fuel surcharge",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_0873.txt",
+      "text_sha256": "4e64a6c1066d4f89d3f53b06f6b1d001b22ab2736fd87cfe5d0e2f833fb6b518",
+      "time_action": "corrects",
+      "log_seq": 1232179,
+      "recorded_at": "2026-10-08T15:10:49.901827Z",
+      "slot_id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "evidence_asserted_at": "2026-10-08T08:44:49Z",
+      "evidence_url": "https://www.theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1235495,
+      "id": "attach-anchor-slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada",
+      "refusal": null,
+      "slot_id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "log_seq": 1235496,
+      "recorded_at": "2026-10-08T15:55:29.145152Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-1519ae1e-9b77-410d-90a3-213d29cd06ac",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-1e77e5b5-1f09-4d2f-ac84-13bbefe2e74f",
+      "name": "emergency fuel surcharge status",
+      "value": "1",
+      "unit": "surcharge",
+      "sentence": "Maersk, the Danish shipping group, added to worries around rising energy prices on Thursday after it said it was increasing its emergency fuel surcharge on all its export collections and import deliveries.",
+      "occurrence_id": "occurrence-4fa9885c50758e8981c21437007107a55b7c1ad591d5d3463ba69ee8a4b3206c-06f49c873c395ada"
+    }
+  ]
+}

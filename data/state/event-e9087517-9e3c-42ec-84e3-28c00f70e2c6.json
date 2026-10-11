@@ -1,0 +1,371 @@
+{
+  "current_state": {
+    "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039": {
+      "slot": "median sale price",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647",
+      "heads": [
+        "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "the median sale price so far this year is about $1.23 million, up about 23% from the same period last year and double the median from the same period in 2019",
+      "span_check": "byte_exact",
+      "speaker": "Jesse Ebner",
+      "figure": {
+        "unit": "million dollars",
+        "value": "1.23"
+      },
+      "as_of": "2026-10-08",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Upper Gunnison Valley residential sales records and Jesse Ebner market data",
+      "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+      "basis": [
+        "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "fresh"
+    },
+    "slot-0a648362-56e1-45b3-a315-b91433768ce8": {
+      "slot": "luxury build budget",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391",
+      "heads": [
+        "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "affluent newcomers are building large houses with plunge pools and home oxygenation systems, with budgets of $12 million to $17 million",
+      "span_check": "byte_exact",
+      "speaker": "Channing Boucher",
+      "figure": {
+        "unit": "million dollars",
+        "value": "12-17"
+      },
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Crested Butte-area luxury home construction and permit records",
+      "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+      "basis": [
+        "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "as_of": "2026-10-08",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "as_of": "2026-10-08",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T23:00:00Z",
+      "canonical_url": "https://wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/raw/article_7337.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1267926,
+      "gate_verdict": "COVER",
+      "id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+      "lang": "en",
+      "published_at": "2026-10-08T23:00:00Z",
+      "publisher": "The Wall Street Journal",
+      "raw_sha256": "0c791372d775226912d805f7584d69fd73b7c3753d8d997cbcbfd5eed64e0473",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:25:44.756466Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.wsj.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z",
+      "source_family": "major_outlet",
+      "source_id": "wsj_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_7337.txt",
+      "text_sha256": "c5113bf50dc4e1ba94ea2e3cc8674c10f5258cf658d767242306cc0cdad25428",
+      "title": "Crested Butte’s Luxury Home Market Is Defying a Ski-Town Slowdown",
+      "updated_at": "2026-10-08T23:00:00Z",
+      "url": "https://www.wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+      "verbatim_level": "article",
+      "log_seq": 1267927,
+      "recorded_at": "2026-10-10T00:08:52.877083Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T23:00:00Z",
+          "checkable_against": "Upper Gunnison Valley residential sales records and Jesse Ebner market data",
+          "claim_type": "actual",
+          "envelope_seq": 1281730,
+          "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+          "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+          "figure": {
+            "unit": "million dollars",
+            "value": "1.23"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "the median sale price so far this year is about $1.23 million, up about 23% from the same period last year and double the median from the same period in 2019",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:25:44.756466Z",
+          "root_id": "www.wsj.com",
+          "span_check": "byte_exact",
+          "span_end": 1569,
+          "span_start": 1412,
+          "speaker": "Jesse Ebner",
+          "subject": "Upper Gunnison Valley residential real-estate market",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_7337.txt",
+          "text_sha256": "c5113bf50dc4e1ba94ea2e3cc8674c10f5258cf658d767242306cc0cdad25428",
+          "time_action": "corrects",
+          "log_seq": 1281731,
+          "recorded_at": "2026-10-10T02:35:40.824600Z",
+          "slot_id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+          "evidence_asserted_at": "2026-10-08T23:00:00Z",
+          "evidence_url": "https://www.wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+          "evidence_publisher": "The Wall Street Journal",
+          "evidence_source_id": "wsj_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-08T23:00:00Z",
+          "checkable_against": "Crested Butte-area luxury home construction and permit records",
+          "claim_type": "actual",
+          "envelope_seq": 1281744,
+          "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+          "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+          "figure": {
+            "unit": "million dollars",
+            "value": "12-17"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "affluent newcomers are building large houses with plunge pools and home oxygenation systems, with budgets of $12 million to $17 million",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:25:44.756466Z",
+          "root_id": "www.wsj.com",
+          "span_check": "byte_exact",
+          "span_end": 1818,
+          "span_start": 1683,
+          "speaker": "Channing Boucher",
+          "subject": "Upper Gunnison Valley residential real-estate market",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_7337.txt",
+          "text_sha256": "c5113bf50dc4e1ba94ea2e3cc8674c10f5258cf658d767242306cc0cdad25428",
+          "time_action": "corrects",
+          "log_seq": 1281745,
+          "recorded_at": "2026-10-10T02:35:42.679688Z",
+          "slot_id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+          "evidence_asserted_at": "2026-10-08T23:00:00Z",
+          "evidence_url": "https://www.wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+          "evidence_publisher": "The Wall Street Journal",
+          "evidence_source_id": "wsj_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "58ad6bca62",
+  "evaluated_at": "2026-10-10T02:45:28.859362Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1281590,
+    "fire_id": "quarry-wire-scheduled-20261009T220053Z",
+    "follows": null,
+    "id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+    "kind": "market report",
+    "label": "Upper Gunnison Valley median sale price in 2026",
+    "minted_at": "2026-10-10T02:33:48.045576Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+    "period": "2026-10",
+    "refusal": null,
+    "status": "published",
+    "subject": "Upper Gunnison Valley residential real-estate market",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261009T220053Z/1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08/b119dd5ab1874a6fb80a05974af44326.json",
+    "log_seq": 1281591
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391",
+      "envelope_seq": 1282282,
+      "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+      "id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "name": "luxury build budget",
+      "refusal": null,
+      "log_seq": 1282283,
+      "recorded_at": "2026-10-10T02:38:32.560985Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647",
+      "envelope_seq": 1281986,
+      "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+      "id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "name": "median sale price",
+      "refusal": null,
+      "log_seq": 1281987,
+      "recorded_at": "2026-10-10T02:36:52.394882Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T23:00:00Z",
+      "checkable_against": "Upper Gunnison Valley residential sales records and Jesse Ebner market data",
+      "claim_type": "actual",
+      "envelope_seq": 1281730,
+      "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+      "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+      "figure": {
+        "unit": "million dollars",
+        "value": "1.23"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "the median sale price so far this year is about $1.23 million, up about 23% from the same period last year and double the median from the same period in 2019",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:25:44.756466Z",
+      "root_id": "www.wsj.com",
+      "span_check": "byte_exact",
+      "span_end": 1569,
+      "span_start": 1412,
+      "speaker": "Jesse Ebner",
+      "subject": "Upper Gunnison Valley residential real-estate market",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_7337.txt",
+      "text_sha256": "c5113bf50dc4e1ba94ea2e3cc8674c10f5258cf658d767242306cc0cdad25428",
+      "time_action": "corrects",
+      "log_seq": 1281731,
+      "recorded_at": "2026-10-10T02:35:40.824600Z",
+      "slot_id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "evidence_asserted_at": "2026-10-08T23:00:00Z",
+      "evidence_url": "https://www.wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+      "evidence_publisher": "The Wall Street Journal",
+      "evidence_source_id": "wsj_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-08T23:00:00Z",
+      "checkable_against": "Crested Butte-area luxury home construction and permit records",
+      "claim_type": "actual",
+      "envelope_seq": 1281744,
+      "event_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+      "evidence_id": "1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08",
+      "figure": {
+        "unit": "million dollars",
+        "value": "12-17"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "affluent newcomers are building large houses with plunge pools and home oxygenation systems, with budgets of $12 million to $17 million",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:25:44.756466Z",
+      "root_id": "www.wsj.com",
+      "span_check": "byte_exact",
+      "span_end": 1818,
+      "span_start": 1683,
+      "speaker": "Channing Boucher",
+      "subject": "Upper Gunnison Valley residential real-estate market",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_7337.txt",
+      "text_sha256": "c5113bf50dc4e1ba94ea2e3cc8674c10f5258cf658d767242306cc0cdad25428",
+      "time_action": "corrects",
+      "log_seq": 1281745,
+      "recorded_at": "2026-10-10T02:35:42.679688Z",
+      "slot_id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "evidence_asserted_at": "2026-10-08T23:00:00Z",
+      "evidence_url": "https://www.wsj.com/real-estate/luxury-homes/crested-butte-luxury-home-market-7f0f3b0d",
+      "evidence_publisher": "The Wall Street Journal",
+      "evidence_source_id": "wsj_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1282284,
+      "id": "attach-anchor-slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391",
+      "refusal": null,
+      "slot_id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "log_seq": 1282285,
+      "recorded_at": "2026-10-10T02:38:32.594848Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1281988,
+      "id": "attach-anchor-slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647",
+      "refusal": null,
+      "slot_id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "log_seq": 1281989,
+      "recorded_at": "2026-10-10T02:36:52.434567Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-e9087517-9e3c-42ec-84e3-28c00f70e2c6",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-e15300ed-d2aa-40c3-bf85-b7d7ec1dc039",
+      "name": "median sale price",
+      "value": "1.23",
+      "unit": "million dollars",
+      "sentence": "the median sale price so far this year is about $1.23 million, up about 23% from the same period last year and double the median from the same period in 2019",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-5934ef37b2e58647"
+    },
+    {
+      "slot_id": "slot-0a648362-56e1-45b3-a315-b91433768ce8",
+      "name": "luxury build budget",
+      "value": "12-17",
+      "unit": "million dollars",
+      "sentence": "affluent newcomers are building large houses with plunge pools and home oxygenation systems, with budgets of $12 million to $17 million",
+      "occurrence_id": "occurrence-1c64c5d9f561a6310f66e3ed31b7e802a45b1bbb24c5361e42ef8698e65eff08-e34d345f235b0391"
+    }
+  ]
+}

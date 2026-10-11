@@ -1,0 +1,421 @@
+{
+  "current_state": {
+    "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6": {
+      "slot": "date",
+      "occurrence_id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+      "heads": [
+        "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Burnham’s office said that the prime minister spoke to U.S. President Donald Trump on Monday and set out “the U.K.’s commitment to working toward peace and security in the region” and achieving a two-state solution.",
+      "span_check": "byte_exact",
+      "speaker": "Andy Burnham's office",
+      "figure": null,
+      "as_of": "2026-09-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Official readouts or records of Andy Burnham's conversation with Donald Trump",
+      "evidence_id": "6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690",
+      "basis": [
+        "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+        "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977"
+      ],
+      "last_confirmed": "2026-09-07",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "as_of": "2026-09-07",
+      "occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-09-08T09:25:19Z",
+      "canonical_url": "https://usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/raw/article_6277.html",
+      "desk": "world and conflict",
+      "envelope_seq": 807741,
+      "gate_verdict": "COVER",
+      "id": "00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b",
+      "lang": "en",
+      "published_at": "2026-09-08T09:25:19Z",
+      "publisher": "USA Today",
+      "raw_sha256": "f325402d14ffedce55da293cc21ca54b8143385b21a49f73a7e1f97f4060fe3a",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:13:06.877943Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_6277.txt",
+      "text_sha256": "7754b5a346f519a5749bbb554a36f57815272542226bce9a2f65abba9079d1ee",
+      "title": "UK to sanction Israeli West Bank settlements in support for two-state solution",
+      "updated_at": "2026-09-08T09:25:19Z",
+      "url": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+      "verbatim_level": "article",
+      "log_seq": 807742,
+      "recorded_at": "2026-09-08T10:34:24.163279Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-09-08T09:25:19Z",
+          "checkable_against": "Andy Burnham's office record or readout of his call with Donald Trump",
+          "claim_type": "actual",
+          "envelope_seq": 808429,
+          "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+          "evidence_id": "00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b",
+          "figure": null,
+          "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+          "id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.",
+          "refusal": null,
+          "retrieved_at": "2026-09-08T10:13:06.877943Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1213,
+          "span_start": 989,
+          "speaker": "Andy Burnham's office",
+          "subject": "Andy Burnham and Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_6277.txt",
+          "text_sha256": "7754b5a346f519a5749bbb554a36f57815272542226bce9a2f65abba9079d1ee",
+          "log_seq": 808430,
+          "recorded_at": "2026-09-08T12:33:51.299710Z",
+          "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+          "evidence_asserted_at": "2026-09-08T09:25:19Z",
+          "evidence_url": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-09-08T09:09:24Z",
+      "canonical_url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/raw/article_7390.html",
+      "desk": "world and conflict",
+      "envelope_seq": 807851,
+      "gate_verdict": "COVER",
+      "id": "6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690",
+      "lang": "en",
+      "published_at": "2026-09-08T09:09:24Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "d7aa840990db63f272667e593307f0ded1664eba860a8bff48762eb43cc62a73",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:14:46.046676Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7390.txt",
+      "text_sha256": "246b13a290dd955e71cdd8e6f0acfecc483a845bf6c3a30e975e2e5002447b0f",
+      "title": "UK to ban goods from Israeli settlements in the West Bank",
+      "updated_at": "2026-09-08T10:08:00.202000Z",
+      "url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+      "verbatim_level": "article",
+      "log_seq": 807852,
+      "recorded_at": "2026-09-08T10:34:24.967382Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-09-08T09:09:24Z",
+          "checkable_against": "Official readouts or records of Andy Burnham's conversation with Donald Trump",
+          "claim_type": "actual",
+          "envelope_seq": 824407,
+          "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+          "evidence_id": "6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690",
+          "figure": null,
+          "fire_id": "ffbb939b6523e4dba33eea9ce149c1a8",
+          "id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Burnham’s office said that the prime minister spoke to U.S. President Donald Trump on Monday and set out “the U.K.’s commitment to working toward peace and security in the region” and achieving a two-state solution.",
+          "refusal": null,
+          "retrieved_at": "2026-09-08T10:14:46.046676Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 3872,
+          "span_start": 3649,
+          "speaker": "Andy Burnham's office",
+          "subject": "Andy Burnham and Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7390.txt",
+          "text_sha256": "246b13a290dd955e71cdd8e6f0acfecc483a845bf6c3a30e975e2e5002447b0f",
+          "log_seq": 824408,
+          "recorded_at": "2026-09-08T16:51:14.583959Z",
+          "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+          "evidence_asserted_at": "2026-09-08T09:09:24Z",
+          "evidence_url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 808359,
+    "fire_id": "quarry-wire-scheduled-20260908T100056Z",
+    "follows": null,
+    "id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+    "kind": "call",
+    "label": "Andy Burnham discussed Middle East with Donald Trump",
+    "minted_at": "2026-09-08T12:32:44.365052Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b",
+    "period": "2026-09-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Andy Burnham and Donald Trump",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260908T100056Z/00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b/fbd7e3e0cdbd46dd95df66365271b3a2.json",
+    "log_seq": 808360
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+      "envelope_seq": 988509,
+      "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "name": "date",
+      "refusal": null,
+      "log_seq": 988510,
+      "recorded_at": "2026-09-26T17:56:49.148625Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+      "envelope_seq": 988507,
+      "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "id": "slot-57d5aafa-4eb2-4096-b392-9630cb572c92",
+      "name": "date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+        "source_id": "usatoday_news_rss"
+      },
+      "log_seq": 988508,
+      "recorded_at": "2026-09-26T17:56:38.532990Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-09-08T09:25:19Z",
+      "checkable_against": "Andy Burnham's office record or readout of his call with Donald Trump",
+      "claim_type": "actual",
+      "envelope_seq": 808429,
+      "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "evidence_id": "00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b",
+      "figure": null,
+      "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+      "id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:13:06.877943Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1213,
+      "span_start": 989,
+      "speaker": "Andy Burnham's office",
+      "subject": "Andy Burnham and Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_6277.txt",
+      "text_sha256": "7754b5a346f519a5749bbb554a36f57815272542226bce9a2f65abba9079d1ee",
+      "log_seq": 808430,
+      "recorded_at": "2026-09-08T12:33:51.299710Z",
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "evidence_asserted_at": "2026-09-08T09:25:19Z",
+      "evidence_url": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-09-08T09:09:24Z",
+      "checkable_against": "Official readouts or records of Andy Burnham's conversation with Donald Trump",
+      "claim_type": "actual",
+      "envelope_seq": 824407,
+      "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "evidence_id": "6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690",
+      "figure": null,
+      "fire_id": "ffbb939b6523e4dba33eea9ce149c1a8",
+      "id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Burnham’s office said that the prime minister spoke to U.S. President Donald Trump on Monday and set out “the U.K.’s commitment to working toward peace and security in the region” and achieving a two-state solution.",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:14:46.046676Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 3872,
+      "span_start": 3649,
+      "speaker": "Andy Burnham's office",
+      "subject": "Andy Burnham and Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7390.txt",
+      "text_sha256": "246b13a290dd955e71cdd8e6f0acfecc483a845bf6c3a30e975e2e5002447b0f",
+      "log_seq": 824408,
+      "recorded_at": "2026-09-08T16:51:14.583959Z",
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "evidence_asserted_at": "2026-09-08T09:09:24Z",
+      "evidence_url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 988514,
+      "id": "attach-3403b69e-307f-43fd-a507-cf36a4b5fb78",
+      "occurrence_id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+      "refusal": null,
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "log_seq": 988515,
+      "recorded_at": "2026-09-26T17:56:58.443190Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 988511,
+      "id": "attach-anchor-slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+      "refusal": null,
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "log_seq": 988512,
+      "recorded_at": "2026-09-26T17:56:49.156022Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 988673,
+      "event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "Monday",
+          "value": "stressed \"the importance of the two-state solution\""
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "from_occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+      "id": "edge-relation-3a2711a16c404d54f6183005",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes describe a call between Andy Burnham and Donald Trump on Monday, and both report (via Burnham's office) that Burnham emphasized a two-state solution. The USA Today quote says he \"stressed 'the importance of the two-state solution'\", and the AP quote says he set out the commitment to \"achieving a two-state solution\". These are equivalent in meaning. They are independent reports.",
+      "refusal": null,
+      "to_event_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+      "to_occurrence_id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+      "log_seq": 988674,
+      "recorded_at": "2026-09-26T18:15:28.104229Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-09-08T09:25:19Z",
+    "confirmations": [
+      {
+        "label": "“British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.”",
+        "value": "British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+            "dates": [
+              "2026-09-08"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "USA Today",
+            "url": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+            "dates": [
+              "2026-09-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6"
+        ],
+        "sentence": "“British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+        "relation": "supports",
+        "edge_id": "edge-relation-3a2711a16c404d54f6183005",
+        "earlier_occurrence_id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977",
+        "later_occurrence_id": "occurrence-00a624b81c9bb3840b5c1ce80a57dcf179ccb0568b78d5fd2d6c28e168c4126b-6242fd17bba375ab",
+        "earlier_evidence_url": "https://apnews.com/article/uk-west-bank-israel-settlement-sanctions-b4d7354221bfe0c48e4bfce7a3b7624b",
+        "later_evidence_url": "https://www.usatoday.com/story/news/world/2026/09/08/uk-sanctions-israeli-west-bank-settlements/91654298007/",
+        "sentence": "On 2026-09-08, Associated Press reported “Burnham’s office said that the prime minister spoke to U.S. President Donald Trump on Monday and set out “the U.K.’s commitment to working toward peace and security in the region” and achieving a two-state solution.”; on the same day, USA Today reported “British Prime Minister Andy Burnham, in office since July, discussed the Middle East in a call with U.S. President Donald Trump on Monday, when he stressed \"the importance of the two-state solution\", according to his office.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": null,
+  "root_id": "event-5ed0688b-ac6b-45a3-b50a-d715b6c26e9f",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-03b735bd-83b8-4bb9-9ae4-a2658f2ca8a6",
+      "name": "date",
+      "value": null,
+      "unit": null,
+      "sentence": "Burnham’s office said that the prime minister spoke to U.S. President Donald Trump on Monday and set out “the U.K.’s commitment to working toward peace and security in the region” and achieving a two-state solution.",
+      "occurrence_id": "occurrence-6fe401bec6943c5170ad7694b7135ba248cafcafe9bdf7360f6427c98e207690-23082090bf994977"
+    }
+  ]
+}

@@ -99,11 +99,81 @@
           "evidence_source_id": "nytimes_news_sitemap"
         }
       ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-06T22:40:35Z",
+      "canonical_url": "https://pbs.org/newshour/show/examining-the-dojs-effort-to-prosecute-non-citizens-accused-of-voting",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/raw/article_1676.html",
+      "desk": "courts and legal",
+      "envelope_seq": 1181934,
+      "gate_verdict": "COVER",
+      "id": "73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e",
+      "lang": "en",
+      "published_at": "2026-10-06T22:40:35Z",
+      "publisher": "PBS NewsHour",
+      "raw_sha256": "22ee111149a3b14a2043c4561846b0edf5ec4eb4f1b8c2a677293b514348cd40",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:04:42.552143Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.pbs.org",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "pbs_newshour",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1676.txt",
+      "text_sha256": "6ae9aefff1c5202446424d273ecfdf2387864eea2af9b166c168d515e0fd1090",
+      "title": "Examining the DOJ's effort to prosecute non-citizens accused of voting",
+      "updated_at": "2026-10-07T00:01:56Z",
+      "url": "https://www.pbs.org/newshour/show/examining-the-dojs-effort-to-prosecute-non-citizens-accused-of-voting",
+      "verbatim_level": "article",
+      "log_seq": 1181935,
+      "recorded_at": "2026-10-07T10:31:00.964318Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-06",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-06T22:40:35Z",
+          "checkable_against": "Colorado court docket and sentence-commutation record for Tina Peters",
+          "claim_type": "actual",
+          "envelope_seq": 1200318,
+          "event_id": "event-972d4fc9-a02f-48d3-8526-a86323b6de14",
+          "evidence_id": "73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e",
+          "figure": {
+            "unit": "release",
+            "value": "1"
+          },
+          "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+          "id": "occurrence-73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e-c276f731d8b8173c",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "She was convicted and released this year after her sentence was commuted.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:04:42.552143Z",
+          "root_id": "www.pbs.org",
+          "span_check": "byte_exact",
+          "span_end": 5069,
+          "span_start": 4996,
+          "speaker": "Ali Rogin",
+          "subject": "Tina Peters",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1676.txt",
+          "text_sha256": "6ae9aefff1c5202446424d273ecfdf2387864eea2af9b166c168d515e0fd1090",
+          "time_action": "corrects",
+          "log_seq": 1200319,
+          "recorded_at": "2026-10-07T23:42:32.738797Z",
+          "evidence_asserted_at": "2026-10-06T22:40:35Z",
+          "evidence_url": "https://www.pbs.org/newshour/show/examining-the-dojs-effort-to-prosecute-non-citizens-accused-of-voting",
+          "evidence_publisher": "PBS NewsHour",
+          "evidence_source_id": "pbs_newshour"
+        }
+      ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T23:43:51.994974Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750583,
@@ -134,6 +204,21 @@
       "refusal": null,
       "log_seq": 751040,
       "recorded_at": "2026-09-07T07:48:03.756591Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e-c276f731d8b8173c",
+      "envelope_seq": 1200340,
+      "event_id": "event-972d4fc9-a02f-48d3-8526-a86323b6de14",
+      "id": "slot-fc761fcd-8b70-4a6d-8e37-0df9ce587860",
+      "name": "release status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.pbs.org/newshour/show/examining-the-dojs-effort-to-prosecute-non-citizens-accused-of-voting",
+        "source_id": "pbs_newshour"
+      },
+      "log_seq": 1200341,
+      "recorded_at": "2026-10-07T23:42:53.935276Z"
     }
   ],
   "occurrences": [
@@ -173,6 +258,43 @@
       "evidence_url": "https://www.nytimes.com/2026/08/14/us/colorado-trump-tina-peters.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-06",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-06T22:40:35Z",
+      "checkable_against": "Colorado court docket and sentence-commutation record for Tina Peters",
+      "claim_type": "actual",
+      "envelope_seq": 1200318,
+      "event_id": "event-972d4fc9-a02f-48d3-8526-a86323b6de14",
+      "evidence_id": "73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e",
+      "figure": {
+        "unit": "release",
+        "value": "1"
+      },
+      "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+      "id": "occurrence-73f1a52489c9d9a16521de096e704beb9dc47bb3c9d7bc891d8f524cdd544b8e-c276f731d8b8173c",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "She was convicted and released this year after her sentence was commuted.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:04:42.552143Z",
+      "root_id": "www.pbs.org",
+      "span_check": "byte_exact",
+      "span_end": 5069,
+      "span_start": 4996,
+      "speaker": "Ali Rogin",
+      "subject": "Tina Peters",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_1676.txt",
+      "text_sha256": "6ae9aefff1c5202446424d273ecfdf2387864eea2af9b166c168d515e0fd1090",
+      "time_action": "corrects",
+      "log_seq": 1200319,
+      "recorded_at": "2026-10-07T23:42:32.738797Z",
+      "evidence_asserted_at": "2026-10-06T22:40:35Z",
+      "evidence_url": "https://www.pbs.org/newshour/show/examining-the-dojs-effort-to-prosecute-non-citizens-accused-of-voting",
+      "evidence_publisher": "PBS NewsHour",
+      "evidence_source_id": "pbs_newshour"
     }
   ],
   "edges": [
@@ -216,7 +338,7 @@
     "edges": []
   },
   "status": "published",
-  "desk": null,
+  "desk": "courts and legal",
   "follows": null,
   "root_id": "event-972d4fc9-a02f-48d3-8526-a86323b6de14",
   "changed_since_previous": [],

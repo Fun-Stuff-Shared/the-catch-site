@@ -8,18 +8,80 @@
   },
   "events": [
     {
+      "id": "event-450cf7dd-e0b9-4a4f-a330-015f56ac64ea",
+      "label": "2019 Clacton general election result",
+      "status": "published",
+      "reason": null,
+      "period": "2019-12",
+      "follows": "event-4819a52b-7b9b-4c48-a493-b9b279564600",
+      "slots": [
+        {
+          "slot_id": "slot-b7864070-024a-4ed1-8cd1-1effc8f3f5b5",
+          "name": "vote majority",
+          "value": "25000",
+          "unit": "votes",
+          "sentence": "The Conservative had previously won the seat with a majority of more than 25,000 in 2019, when there was no Brexit party candidate in the seat.",
+          "occurrence_id": "occurrence-152f2ae824c18fe8ac36ef820b7f5f4491883b5b327194692bd9608985d8e220-8e17db149a421d88"
+        }
+      ]
+    },
+    {
       "id": "event-4819a52b-7b9b-4c48-a493-b9b279564600",
       "label": "2024 Clacton general election result",
       "status": "published",
       "reason": null,
       "period": "2024-07",
       "follows": null,
-      "slots": []
+      "slots": [
+        {
+          "slot_id": "slot-2f9358ee-c963-480a-a9ce-40153563eb6a",
+          "name": "vote share",
+          "value": "46",
+          "unit": "percent",
+          "sentence": "In 2024, Mr. Farage won the seat with 46 percent of the vote, while a Conservative came in second place.",
+          "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12cf6b31b76e82f9"
+        },
+        {
+          "slot_id": "slot-8ba904c5-2b7b-4cd9-9578-1e21dc0dbe30",
+          "name": "vote majority",
+          "value": "8000",
+          "unit": "votes",
+          "sentence": "Farage won a majority of 8,000 at the last general election, when he beat the sitting Tory MP, Giles Watling.",
+          "occurrence_id": "occurrence-152f2ae824c18fe8ac36ef820b7f5f4491883b5b327194692bd9608985d8e220-c60aae3c1b31dfdf"
+        }
+      ]
     }
   ],
-  "outlet_count": 1,
+  "outlet_count": 2,
   "last_moved_at": null,
-  "tracked": [],
+  "tracked": [
+    {
+      "name": "vote majority",
+      "unit": "votes",
+      "values": [
+        {
+          "event_id": "event-450cf7dd-e0b9-4a4f-a330-015f56ac64ea",
+          "period": "2019-12",
+          "slot_id": "slot-b7864070-024a-4ed1-8cd1-1effc8f3f5b5",
+          "name": "vote majority",
+          "value": "25000",
+          "unit": "votes",
+          "sentence": "The Conservative had previously won the seat with a majority of more than 25,000 in 2019, when there was no Brexit party candidate in the seat.",
+          "occurrence_id": "occurrence-152f2ae824c18fe8ac36ef820b7f5f4491883b5b327194692bd9608985d8e220-8e17db149a421d88"
+        },
+        {
+          "event_id": "event-4819a52b-7b9b-4c48-a493-b9b279564600",
+          "period": "2024-07",
+          "slot_id": "slot-8ba904c5-2b7b-4cd9-9578-1e21dc0dbe30",
+          "name": "vote majority",
+          "value": "8000",
+          "unit": "votes",
+          "sentence": "Farage won a majority of 8,000 at the last general election, when he beat the sitting Tory MP, Giles Watling.",
+          "occurrence_id": "occurrence-152f2ae824c18fe8ac36ef820b7f5f4491883b5b327194692bd9608985d8e220-c60aae3c1b31dfdf"
+        }
+      ]
+    }
+  ],
   "same_name_not_compared": [],
-  "evaluated_at": "2026-09-07T08:36:50.370882Z"
+  "evaluated_at": "2026-10-10T02:45:28.859362Z"
 }

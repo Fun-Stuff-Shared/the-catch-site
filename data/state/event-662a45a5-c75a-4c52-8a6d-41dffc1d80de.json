@@ -1,0 +1,226 @@
+{
+  "current_state": {
+    "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55": {
+      "slot": "transfer date",
+      "occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+      "heads": [
+        "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The puppy was then turned over to Tulare County Animal Services the next morning for care.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-24",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Tulare County Animal Services intake and transfer records",
+      "evidence_id": "6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210",
+      "basis": [
+        "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8"
+      ],
+      "last_confirmed": "2026-08-24",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "as_of": "2026-08-24",
+      "occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T15:06:03.076058Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_8956.html",
+      "envelope_seq": 171775,
+      "id": "6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210",
+      "publisher": "USA Today",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:49.875049Z",
+      "root_evidence": "body:760:791",
+      "root_id": "www.usatoday.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8956.txt",
+      "text_sha256": "e661852e20ee29d14459ae0e3dff152a28d116049155fa5531a2a253c3101656",
+      "title": "Fire crews rescue puppy and turn it over to animal shelter",
+      "url": "https://www.usatoday.com/story/news/state/california/2026/08/28/fire-crews-rescue-puppy-and-turn-it-over-to-animal-shelter/91498406007/",
+      "verbatim_level": "article",
+      "log_seq": 521727,
+      "recorded_at": "2026-09-06T01:33:24.246247Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-24",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-28T15:06:03.076058Z",
+          "checkable_against": "Tulare County Animal Services intake and transfer records",
+          "claim_type": "actual",
+          "envelope_seq": 790959,
+          "event_id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+          "evidence_id": "6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210",
+          "figure": null,
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The puppy was then turned over to Tulare County Animal Services the next morning for care.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:29:49.875049Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 1159,
+          "span_start": 1069,
+          "speaker": "outlet's own",
+          "subject": "Puppy rescue in Porterville",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8956.txt",
+          "text_sha256": "e661852e20ee29d14459ae0e3dff152a28d116049155fa5531a2a253c3101656",
+          "log_seq": 790960,
+          "recorded_at": "2026-09-08T05:22:56.748985Z",
+          "slot_id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+          "evidence_asserted_at": "2026-08-28T15:06:03.076058Z",
+          "evidence_url": "https://www.usatoday.com/story/news/state/california/2026/08/28/fire-crews-rescue-puppy-and-turn-it-over-to-animal-shelter/91498406007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 790943,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+    "kind": "handover",
+    "label": "Puppy turned over to Tulare County Animal Services",
+    "minted_at": "2026-09-08T05:22:16.727178Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210",
+    "period": "2026-08-24",
+    "refusal": null,
+    "status": "published",
+    "subject": "Puppy rescue in Porterville",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210/70171d6289d74d77b39568c7e31b7cbc.json",
+    "log_seq": 790944
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+      "envelope_seq": 993266,
+      "event_id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+      "id": "slot-4fed980b-07df-4aff-aeb8-f60ee0709ef1",
+      "name": "transfer date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.usatoday.com/story/news/state/california/2026/08/28/fire-crews-rescue-puppy-and-turn-it-over-to-animal-shelter/91498406007/",
+        "source_id": "usatoday_news_rss"
+      },
+      "log_seq": 993267,
+      "recorded_at": "2026-09-28T02:08:55.014682Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+      "envelope_seq": 993268,
+      "event_id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+      "id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "name": "transfer date",
+      "refusal": null,
+      "log_seq": 993269,
+      "recorded_at": "2026-09-28T02:09:04.695508Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-24",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-28T15:06:03.076058Z",
+      "checkable_against": "Tulare County Animal Services intake and transfer records",
+      "claim_type": "actual",
+      "envelope_seq": 790959,
+      "event_id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+      "evidence_id": "6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210",
+      "figure": null,
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The puppy was then turned over to Tulare County Animal Services the next morning for care.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:29:49.875049Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 1159,
+      "span_start": 1069,
+      "speaker": "outlet's own",
+      "subject": "Puppy rescue in Porterville",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_8956.txt",
+      "text_sha256": "e661852e20ee29d14459ae0e3dff152a28d116049155fa5531a2a253c3101656",
+      "log_seq": 790960,
+      "recorded_at": "2026-09-08T05:22:56.748985Z",
+      "slot_id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "evidence_asserted_at": "2026-08-28T15:06:03.076058Z",
+      "evidence_url": "https://www.usatoday.com/story/news/state/california/2026/08/28/fire-crews-rescue-puppy-and-turn-it-over-to-animal-shelter/91498406007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 993270,
+      "id": "attach-anchor-slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8",
+      "refusal": null,
+      "slot_id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "log_seq": 993271,
+      "recorded_at": "2026-09-28T02:09:04.702908Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-662a45a5-c75a-4c52-8a6d-41dffc1d80de",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-7613b1b3-bc7f-43bb-9d89-7a421b656f55",
+      "name": "transfer date",
+      "value": null,
+      "unit": null,
+      "sentence": "The puppy was then turned over to Tulare County Animal Services the next morning for care.",
+      "occurrence_id": "occurrence-6ed4f05ed39bf1d42323d605a5e29cce5c73111d1b1251c695db61cae2ddc210-50309f92f20eb4a8"
+    }
+  ]
+}

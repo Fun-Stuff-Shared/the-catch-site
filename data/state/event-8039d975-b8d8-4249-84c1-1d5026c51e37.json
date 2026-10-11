@@ -1,0 +1,359 @@
+{
+  "current_state": {
+    "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7": {
+      "slot": "new car sales",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77",
+      "heads": [
+        "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "million cars",
+        "value": "1.5"
+      },
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "2024 African new vehicle sales data",
+      "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+      "basis": [
+        "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    },
+    "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd": {
+      "slot": "global sales share",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d",
+      "heads": [
+        "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "1"
+      },
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Global new vehicle sales data",
+      "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+      "basis": [
+        "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-06-15T14:14:57Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1399.html",
+      "envelope_seq": 164969,
+      "id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+      "publisher": "Brookings Institution",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:10:42.622646Z",
+      "root_evidence": "body:5589:5593",
+      "root_id": "www.brookings.edu",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "think_tank",
+      "source_id": "brookings_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1399.txt",
+      "text_sha256": "68530b1e5724655a92436710a50b14b5f06cac78ae095bb1718d1c0b5cd03b40",
+      "url": "https://www.brookings.edu/articles/africas-auto-advantage-strategies-to-seize-emerging-market-potential/",
+      "verbatim_level": "article",
+      "log_seq": 518324,
+      "recorded_at": "2026-09-06T01:33:23.276255Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-06-15T14:14:57Z",
+          "checkable_against": "Global new vehicle sales data",
+          "claim_type": "actual",
+          "envelope_seq": 791821,
+          "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+          "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+          "figure": {
+            "unit": "percent",
+            "value": "1"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:10:42.622646Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 3756,
+          "span_start": 3612,
+          "speaker": "outlet's own",
+          "subject": "African new car sales",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1399.txt",
+          "text_sha256": "68530b1e5724655a92436710a50b14b5f06cac78ae095bb1718d1c0b5cd03b40",
+          "log_seq": 791822,
+          "recorded_at": "2026-09-08T05:35:43.101045Z",
+          "slot_id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+          "evidence_asserted_at": "2026-06-15T14:14:57Z",
+          "evidence_url": "https://www.brookings.edu/articles/africas-auto-advantage-strategies-to-seize-emerging-market-potential/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-06-15T14:14:57Z",
+          "checkable_against": "2024 African new vehicle sales data",
+          "claim_type": "actual",
+          "envelope_seq": 791815,
+          "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+          "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+          "figure": {
+            "unit": "million cars",
+            "value": "1.5"
+          },
+          "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+          "id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:10:42.622646Z",
+          "root_id": "www.brookings.edu",
+          "span_check": "byte_exact",
+          "span_end": 3756,
+          "span_start": 3612,
+          "speaker": "outlet's own",
+          "subject": "African new car sales",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1399.txt",
+          "text_sha256": "68530b1e5724655a92436710a50b14b5f06cac78ae095bb1718d1c0b5cd03b40",
+          "log_seq": 791816,
+          "recorded_at": "2026-09-08T05:35:39.928189Z",
+          "slot_id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+          "evidence_asserted_at": "2026-06-15T14:14:57Z",
+          "evidence_url": "https://www.brookings.edu/articles/africas-auto-advantage-strategies-to-seize-emerging-market-potential/",
+          "evidence_publisher": "Brookings Institution",
+          "evidence_source_id": "brookings_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 791671,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+    "kind": "market data",
+    "label": "Africa new car sales in 2024",
+    "minted_at": "2026-09-08T05:33:41.914702Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+    "period": "2024-12",
+    "refusal": null,
+    "status": "published",
+    "subject": "African new car sales",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08/8d6fac0931f143f2bb95f36cf7155dd2.json",
+    "log_seq": 791672
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77",
+      "envelope_seq": 792033,
+      "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+      "id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "name": "new car sales",
+      "refusal": null,
+      "log_seq": 792034,
+      "recorded_at": "2026-09-08T05:41:14.761004Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d",
+      "envelope_seq": 792079,
+      "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+      "id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "name": "global sales share",
+      "refusal": null,
+      "log_seq": 792080,
+      "recorded_at": "2026-09-08T05:41:47.945570Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-06-15T14:14:57Z",
+      "checkable_against": "Global new vehicle sales data",
+      "claim_type": "actual",
+      "envelope_seq": 791821,
+      "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+      "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+      "figure": {
+        "unit": "percent",
+        "value": "1"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:10:42.622646Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 3756,
+      "span_start": 3612,
+      "speaker": "outlet's own",
+      "subject": "African new car sales",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1399.txt",
+      "text_sha256": "68530b1e5724655a92436710a50b14b5f06cac78ae095bb1718d1c0b5cd03b40",
+      "log_seq": 791822,
+      "recorded_at": "2026-09-08T05:35:43.101045Z",
+      "slot_id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "evidence_asserted_at": "2026-06-15T14:14:57Z",
+      "evidence_url": "https://www.brookings.edu/articles/africas-auto-advantage-strategies-to-seize-emerging-market-potential/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-06-15T14:14:57Z",
+      "checkable_against": "2024 African new vehicle sales data",
+      "claim_type": "actual",
+      "envelope_seq": 791815,
+      "event_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+      "evidence_id": "6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08",
+      "figure": {
+        "unit": "million cars",
+        "value": "1.5"
+      },
+      "fire_id": "d4add0761adcb849105f3f5b1c840b22",
+      "id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:10:42.622646Z",
+      "root_id": "www.brookings.edu",
+      "span_check": "byte_exact",
+      "span_end": 3756,
+      "span_start": 3612,
+      "speaker": "outlet's own",
+      "subject": "African new car sales",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1399.txt",
+      "text_sha256": "68530b1e5724655a92436710a50b14b5f06cac78ae095bb1718d1c0b5cd03b40",
+      "log_seq": 791816,
+      "recorded_at": "2026-09-08T05:35:39.928189Z",
+      "slot_id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "evidence_asserted_at": "2026-06-15T14:14:57Z",
+      "evidence_url": "https://www.brookings.edu/articles/africas-auto-advantage-strategies-to-seize-emerging-market-potential/",
+      "evidence_publisher": "Brookings Institution",
+      "evidence_source_id": "brookings_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 792035,
+      "id": "attach-anchor-slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77",
+      "refusal": null,
+      "slot_id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "log_seq": 792036,
+      "recorded_at": "2026-09-08T05:41:15.001197Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 792081,
+      "id": "attach-anchor-slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d",
+      "refusal": null,
+      "slot_id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "log_seq": 792082,
+      "recorded_at": "2026-09-08T05:41:48.218628Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-8039d975-b8d8-4249-84c1-1d5026c51e37",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c9c1b454-a8d2-4432-beaf-38a24f32ebb7",
+      "name": "new car sales",
+      "value": "1.5",
+      "unit": "million cars",
+      "sentence": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-9f8c09bcf8423c77"
+    },
+    {
+      "slot_id": "slot-ef7f130a-ca72-4e87-99d9-8045026d26bd",
+      "name": "global sales share",
+      "value": "1",
+      "unit": "percent",
+      "sentence": "New car sales are currently low in Africa, with only 1.5 million new cars (1% of global new car sales) being sold across the continent in 2024 .",
+      "occurrence_id": "occurrence-6fba675014d17955c73a83f28f9dabb12a92d6840083ed827699d43b26872a08-55a6dd8e5d26101d"
+    }
+  ]
+}

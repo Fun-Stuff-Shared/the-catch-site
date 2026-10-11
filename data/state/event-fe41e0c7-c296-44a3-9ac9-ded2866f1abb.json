@@ -1,0 +1,246 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T06:35:45Z",
+      "canonical_url": "https://x.com/CNBC/status/2108083911150485872",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/raw/article_3438.html",
+      "desk": "technology",
+      "envelope_seq": 1219934,
+      "gate_verdict": "COVER",
+      "id": "492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b",
+      "lang": "en",
+      "published_at": "2026-10-08T06:35:45Z",
+      "publisher": "CNBC",
+      "raw_sha256": "369378371053dbd72b6dc9083e5eca895fd49cc049f19bd5c3a5611205cd9452",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T10:05:47.515384Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z",
+      "source_family": "major_outlet",
+      "source_id": "x_cnbc_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_3438.txt",
+      "text_sha256": "7d08a385544fe8e446a02a8dbe05e066bf4c442e3a773ffcd762e063073c8717",
+      "title": null,
+      "url": "https://x.com/CNBC/status/2108083911150485872",
+      "verbatim_level": "article",
+      "log_seq": 1219935,
+      "recorded_at": "2026-10-08T10:29:55.764807Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-08T06:35:45Z",
+          "checkable_against": "Manus funding announcement and financing records",
+          "claim_type": "actual",
+          "envelope_seq": 1230842,
+          "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+          "evidence_id": "492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b",
+          "figure": {
+            "unit": "million dollars",
+            "value": "500"
+          },
+          "fire_id": "a8d4708b1c3456c7711db5ab605fc83a",
+          "id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "AI startup Manus raises $500 million in first funding round since Meta breakup",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T10:05:47.515384Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 90,
+          "span_start": 12,
+          "speaker": "CNBC",
+          "subject": "Manus",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_3438.txt",
+          "text_sha256": "7d08a385544fe8e446a02a8dbe05e066bf4c442e3a773ffcd762e063073c8717",
+          "time_action": "corrects",
+          "log_seq": 1230843,
+          "recorded_at": "2026-10-08T14:55:54.534234Z",
+          "evidence_asserted_at": "2026-10-08T06:35:45Z",
+          "evidence_url": "https://x.com/CNBC/status/2108083911150485872",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T15:42:00.987557Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1230836,
+    "fire_id": "quarry-wire-scheduled-20261008T100008Z",
+    "follows": null,
+    "id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+    "kind": "funding announcement",
+    "label": "Manus raises $500 million after Meta breakup",
+    "minted_at": "2026-10-08T14:55:46.216750Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b",
+    "period": "2026-10-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Manus",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261008T100008Z/492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b/19b59d10823a4591910619987db8f826.json",
+    "log_seq": 1230837
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230914,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-4cbe7e39-8341-40f5-b65b-d77677422c8f",
+      "name": "funding amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b",
+        "source_id": "document"
+      },
+      "log_seq": 1230915,
+      "recorded_at": "2026-10-08T14:56:32.734177Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230912,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-73757033-2048-4c5b-9e22-38bbc276b34e",
+      "name": "funding amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "status:2108083911150485872",
+        "source_id": "x_cnbc_account"
+      },
+      "log_seq": 1230913,
+      "recorded_at": "2026-10-08T14:56:23.886414Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230938,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-740325da-aeec-4679-b5cf-afca000234a2",
+      "name": "funding amount",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1230939,
+      "recorded_at": "2026-10-08T14:56:44.109763Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230886,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-8c723c16-f823-4ff3-9c06-c877208c3fdd",
+      "name": "funding amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/CNBC/status/2108083911150485872",
+        "source_id": "x_cnbc_account"
+      },
+      "log_seq": 1230887,
+      "recorded_at": "2026-10-08T14:56:09.408420Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230892,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-a85ed21e-38f4-4d8d-b284-d3303a9b5d8f",
+      "name": "funding amount",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1230893,
+      "recorded_at": "2026-10-08T14:56:15.481597Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "envelope_seq": 1230922,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "id": "slot-c1be5097-9dbc-49f7-85db-037be1d6b67e",
+      "name": "funding amount",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/CNBC/status/2108083911150485872",
+        "source_id": "x_cnbc_account"
+      },
+      "log_seq": 1230923,
+      "recorded_at": "2026-10-08T14:56:38.536703Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-08T06:35:45Z",
+      "checkable_against": "Manus funding announcement and financing records",
+      "claim_type": "actual",
+      "envelope_seq": 1230842,
+      "event_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+      "evidence_id": "492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b",
+      "figure": {
+        "unit": "million dollars",
+        "value": "500"
+      },
+      "fire_id": "a8d4708b1c3456c7711db5ab605fc83a",
+      "id": "occurrence-492a8775584d67da47c87704ecd1bcfe83050f343f5556aac2868922d61f7e1b-f27e9476206d1b27",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "AI startup Manus raises $500 million in first funding round since Meta breakup",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T10:05:47.515384Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 90,
+      "span_start": 12,
+      "speaker": "CNBC",
+      "subject": "Manus",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T100008Z/text/article_3438.txt",
+      "text_sha256": "7d08a385544fe8e446a02a8dbe05e066bf4c442e3a773ffcd762e063073c8717",
+      "time_action": "corrects",
+      "log_seq": 1230843,
+      "recorded_at": "2026-10-08T14:55:54.534234Z",
+      "evidence_asserted_at": "2026-10-08T06:35:45Z",
+      "evidence_url": "https://x.com/CNBC/status/2108083911150485872",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "technology",
+  "follows": null,
+  "root_id": "event-fe41e0c7-c296-44a3-9ac9-ded2866f1abb",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

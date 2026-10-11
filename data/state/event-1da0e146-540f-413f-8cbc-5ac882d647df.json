@@ -1,0 +1,563 @@
+{
+  "current_state": {
+    "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f": {
+      "slot": "Trump margin",
+      "occurrence_id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+      "heads": [
+        "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Mr. Trump won the state by more than 16 percentage points against Vice President Kamala Harris in 2024.",
+      "span_check": "byte_exact",
+      "speaker": "The New York Times",
+      "figure": {
+        "unit": "percentage points",
+        "value": "16"
+      },
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Kansas 2024 presidential election canvass",
+      "evidence_id": "73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09",
+      "basis": [
+        "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+        "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+        "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012"
+      ],
+      "last_confirmed": "2024-11",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "as_of": "2024-11",
+      "occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T19:28:00Z",
+      "canonical_url": "https://politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/raw/article_2276.html",
+      "desk": "government and politics",
+      "envelope_seq": 1088138,
+      "gate_verdict": "COVER",
+      "id": "040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a",
+      "lang": "en",
+      "published_at": "2026-10-02T19:28:00Z",
+      "publisher": "Politico",
+      "raw_sha256": "63d6afebe9ca5608c2aa798f2a2161ff2a7f28955691165f589a4778691ea6af",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:04:05.612904Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.politico.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z",
+      "source_family": "major_outlet",
+      "source_id": "politico_politics_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_2276.txt",
+      "text_sha256": "663ab955d5fb7e9191450bff1ce0f19703d84099d3ad944b8256344106cf2e74",
+      "title": "Kansas enters the chat as Senate map tilts further into red territory",
+      "updated_at": "2026-10-02T19:52:00Z",
+      "url": "https://www.politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+      "verbatim_level": "article",
+      "log_seq": 1088139,
+      "recorded_at": "2026-10-03T16:33:20.454565Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024-11",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-02T19:28:00Z",
+          "checkable_against": "2024 Kansas presidential election results",
+          "claim_type": "actual",
+          "envelope_seq": 1099971,
+          "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+          "evidence_id": "040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a",
+          "figure": {
+            "unit": "percentage points",
+            "value": "16"
+          },
+          "fire_id": "89215a638ede741d5c78efba4be33a38",
+          "id": "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Private polling from both parties shows a deadlocked race between Marshall and Democrat Adam Hamilton in a state Trump carried by 16 points in 2024.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T16:04:05.612904Z",
+          "root_id": "www.politico.com",
+          "span_check": "byte_exact",
+          "span_end": 1035,
+          "span_start": 887,
+          "speaker": "outlet's own",
+          "subject": "Kansas 2024 presidential election",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_2276.txt",
+          "text_sha256": "663ab955d5fb7e9191450bff1ce0f19703d84099d3ad944b8256344106cf2e74",
+          "log_seq": 1099972,
+          "recorded_at": "2026-10-03T20:32:28.709587Z",
+          "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+          "evidence_asserted_at": "2026-10-02T19:28:00Z",
+          "evidence_url": "https://www.politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+          "evidence_publisher": "Politico",
+          "evidence_source_id": "politico_politics_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-05T00:20:18Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5394.html",
+      "envelope_seq": 170485,
+      "id": "73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:26.742099Z",
+      "root_evidence": "body:4059:4084",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5394.txt",
+      "text_sha256": "1d9cc4903ad38c7b92de3741f71d26771dfa7242a5b265d0adc0ca15cfdd975d",
+      "url": "https://www.nytimes.com/2026/08/04/us/politics/kansas-primaries-what-to-watch.html",
+      "verbatim_level": "article",
+      "log_seq": 521082,
+      "recorded_at": "2026-09-06T01:33:24.063108Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-05T00:20:18Z",
+          "checkable_against": "Kansas 2024 presidential election canvass",
+          "claim_type": "actual",
+          "envelope_seq": 797078,
+          "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+          "evidence_id": "73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09",
+          "figure": {
+            "unit": "percentage points",
+            "value": "16"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Mr. Trump won the state by more than 16 percentage points against Vice President Kamala Harris in 2024.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:26.742099Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 3524,
+          "span_start": 3421,
+          "speaker": "The New York Times",
+          "subject": "Kansas 2024 presidential election",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5394.txt",
+          "text_sha256": "1d9cc4903ad38c7b92de3741f71d26771dfa7242a5b265d0adc0ca15cfdd975d",
+          "log_seq": 797079,
+          "recorded_at": "2026-09-08T07:28:04.324382Z",
+          "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+          "evidence_asserted_at": "2026-08-05T00:20:18Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/kansas-primaries-what-to-watch.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-05T02:34:53Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5377.html",
+      "envelope_seq": 170451,
+      "id": "7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:24.809795Z",
+      "root_evidence": "body:1082:1143",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5377.txt",
+      "text_sha256": "b884914b21ee8702a07f70ce09d5fa35dc8c410234c617a1d68106fec9d3d8df",
+      "url": "https://www.nytimes.com/2026/08/04/us/elections/kansas-democratic-primary-governor.html",
+      "verbatim_level": "article",
+      "log_seq": 521065,
+      "recorded_at": "2026-09-06T01:33:24.058202Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024-11",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-05T02:34:53Z",
+          "checkable_against": "Kansas 2024 presidential election results",
+          "claim_type": "actual",
+          "envelope_seq": 803124,
+          "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+          "evidence_id": "7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee",
+          "figure": {
+            "unit": "percentage points",
+            "value": "16"
+          },
+          "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+          "id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "President Trump carried Kansas by 16 percentage points in 2024, and Republicans hold supermajorities in the State Legislature.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:19:24.809795Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1925,
+          "span_start": 1799,
+          "speaker": "outlet's own",
+          "subject": "Kansas 2024 presidential election",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5377.txt",
+          "text_sha256": "b884914b21ee8702a07f70ce09d5fa35dc8c410234c617a1d68106fec9d3d8df",
+          "log_seq": 803125,
+          "recorded_at": "2026-09-08T09:17:13.467438Z",
+          "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+          "evidence_asserted_at": "2026-08-05T02:34:53Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/04/us/elections/kansas-democratic-primary-governor.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T23:37:55.211343Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 796884,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+    "kind": "election result",
+    "label": "Kansas 2024 presidential election result",
+    "minted_at": "2026-09-08T07:27:03.443839Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09",
+    "period": "2024-11",
+    "refusal": null,
+    "status": "published",
+    "subject": "Kansas 2024 presidential election",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09/677648a03f8341e287b81ef1f2c6ab86.json",
+    "log_seq": 796885
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+      "envelope_seq": 803204,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "name": "Trump margin",
+      "refusal": null,
+      "log_seq": 803205,
+      "recorded_at": "2026-09-08T09:17:26.486316Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024-11",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-02T19:28:00Z",
+      "checkable_against": "2024 Kansas presidential election results",
+      "claim_type": "actual",
+      "envelope_seq": 1099971,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "evidence_id": "040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a",
+      "figure": {
+        "unit": "percentage points",
+        "value": "16"
+      },
+      "fire_id": "89215a638ede741d5c78efba4be33a38",
+      "id": "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Private polling from both parties shows a deadlocked race between Marshall and Democrat Adam Hamilton in a state Trump carried by 16 points in 2024.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:04:05.612904Z",
+      "root_id": "www.politico.com",
+      "span_check": "byte_exact",
+      "span_end": 1035,
+      "span_start": 887,
+      "speaker": "outlet's own",
+      "subject": "Kansas 2024 presidential election",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_2276.txt",
+      "text_sha256": "663ab955d5fb7e9191450bff1ce0f19703d84099d3ad944b8256344106cf2e74",
+      "log_seq": 1099972,
+      "recorded_at": "2026-10-03T20:32:28.709587Z",
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "evidence_asserted_at": "2026-10-02T19:28:00Z",
+      "evidence_url": "https://www.politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+      "evidence_publisher": "Politico",
+      "evidence_source_id": "politico_politics_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-05T00:20:18Z",
+      "checkable_against": "Kansas 2024 presidential election canvass",
+      "claim_type": "actual",
+      "envelope_seq": 797078,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "evidence_id": "73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09",
+      "figure": {
+        "unit": "percentage points",
+        "value": "16"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Mr. Trump won the state by more than 16 percentage points against Vice President Kamala Harris in 2024.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:26.742099Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 3524,
+      "span_start": 3421,
+      "speaker": "The New York Times",
+      "subject": "Kansas 2024 presidential election",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5394.txt",
+      "text_sha256": "1d9cc4903ad38c7b92de3741f71d26771dfa7242a5b265d0adc0ca15cfdd975d",
+      "log_seq": 797079,
+      "recorded_at": "2026-09-08T07:28:04.324382Z",
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "evidence_asserted_at": "2026-08-05T00:20:18Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/kansas-primaries-what-to-watch.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024-11",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-05T02:34:53Z",
+      "checkable_against": "Kansas 2024 presidential election results",
+      "claim_type": "actual",
+      "envelope_seq": 803124,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "evidence_id": "7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee",
+      "figure": {
+        "unit": "percentage points",
+        "value": "16"
+      },
+      "fire_id": "4c1a92237c6d525955f1f208eb8218ce",
+      "id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "President Trump carried Kansas by 16 percentage points in 2024, and Republicans hold supermajorities in the State Legislature.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:19:24.809795Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1925,
+      "span_start": 1799,
+      "speaker": "outlet's own",
+      "subject": "Kansas 2024 presidential election",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5377.txt",
+      "text_sha256": "b884914b21ee8702a07f70ce09d5fa35dc8c410234c617a1d68106fec9d3d8df",
+      "log_seq": 803125,
+      "recorded_at": "2026-09-08T09:17:13.467438Z",
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "evidence_asserted_at": "2026-08-05T02:34:53Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/04/us/elections/kansas-democratic-primary-governor.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1100061,
+      "id": "attach-864613da-478f-4f15-a020-fadad271cead",
+      "occurrence_id": "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+      "refusal": null,
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "log_seq": 1100062,
+      "recorded_at": "2026-10-03T20:33:14.220457Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 803206,
+      "id": "attach-anchor-slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+      "refusal": null,
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "log_seq": 803207,
+      "recorded_at": "2026-09-08T09:17:26.497690Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 910136,
+      "id": "attach-b7f9af38-a71b-4181-90d8-e73acc91562e",
+      "occurrence_id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+      "refusal": null,
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "log_seq": 910137,
+      "recorded_at": "2026-09-19T02:12:55.506491Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 910141,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "2024",
+          "value": "16 percentage points"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "from_occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+      "id": "edge-relation-362605f7e3fdf2c09ae7e27e",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report the margin of victory for Trump in Kansas in 2024 as 16 percentage points (one specifying 'more than 16'). In the context of election reporting, '16' and 'more than 16' (e.g., 16.2) are treated as the same reported figure. Since both figures are recorded as '16' in the metadata, they are equivalent.",
+      "refusal": null,
+      "to_event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "to_occurrence_id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+      "log_seq": 910142,
+      "recorded_at": "2026-09-19T02:19:27.574600Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1124076,
+      "event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "carried by 16 points in 2024"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "from_occurrence_id": "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+      "id": "edge-relation-627f7298a40d7c339399b2f0",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes state Trump won Kansas by 16 percentage points in 2024.",
+      "refusal": null,
+      "to_event_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+      "to_occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+      "log_seq": 1124077,
+      "recorded_at": "2026-10-04T23:13:33.597671Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T19:28:00Z",
+    "confirmations": [
+      {
+        "label": "“16 percentage points”",
+        "value": "16 percentage points",
+        "reports": [
+          {
+            "publisher": "Politico",
+            "url": "https://www.politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "The New York Times",
+            "url": "https://www.nytimes.com/2026/08/04/us/politics/kansas-primaries-what-to-watch.html",
+            "dates": [
+              "2026-08-05"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f"
+        ],
+        "sentence": "“16 percentage points”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+        "relation": "supports",
+        "edge_id": "edge-relation-362605f7e3fdf2c09ae7e27e",
+        "earlier_occurrence_id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92",
+        "later_occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/04/us/politics/kansas-primaries-what-to-watch.html",
+        "later_evidence_url": "https://www.nytimes.com/2026/08/04/us/elections/kansas-democratic-primary-governor.html",
+        "sentence": "On 2026-08-05, The New York Times reported “Mr. Trump won the state by more than 16 percentage points against Vice President Kamala Harris in 2024.”; on the same day, The New York Times reported “President Trump carried Kansas by 16 percentage points in 2024, and Republicans hold supermajorities in the State Legislature.”."
+      },
+      {
+        "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+        "relation": "supports",
+        "edge_id": "edge-relation-627f7298a40d7c339399b2f0",
+        "earlier_occurrence_id": "occurrence-7a9656ab4ea34455408ec9d6ddb65c3dc12fd5921493181be7b0f893127476ee-6bdf95499a68e012",
+        "later_occurrence_id": "occurrence-040ce4181434e530b8c404bf46714d5bf0a4bd32b1ca15d79fc740009aefc00a-93f79b8b6b7ad73d",
+        "earlier_evidence_url": "https://www.nytimes.com/2026/08/04/us/elections/kansas-democratic-primary-governor.html",
+        "later_evidence_url": "https://www.politico.com/news/2026/10/02/kansas-becomes-a-surprise-senate-battleground-01105125",
+        "sentence": "On 2026-08-05, The New York Times reported “President Trump carried Kansas by 16 percentage points in 2024, and Republicans hold supermajorities in the State Legislature.”; on 2026-10-02, Politico reported “Private polling from both parties shows a deadlocked race between Marshall and Democrat Adam Hamilton in a state Trump carried by 16 points in 2024.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-1da0e146-540f-413f-8cbc-5ac882d647df",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-d4f42000-eff0-4f28-a0fd-da288e22bb7f",
+      "name": "Trump margin",
+      "value": "16",
+      "unit": "percentage points",
+      "sentence": "Mr. Trump won the state by more than 16 percentage points against Vice President Kamala Harris in 2024.",
+      "occurrence_id": "occurrence-73bbf64d77954a93e90e8964512197ba2e294b8994a7605c4603211ac5ba3b09-b63a18f691c96a92"
+    }
+  ]
+}

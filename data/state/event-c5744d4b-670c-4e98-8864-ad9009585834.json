@@ -1,0 +1,227 @@
+{
+  "current_state": {
+    "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0": {
+      "slot": "approval rating",
+      "occurrence_id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4",
+      "heads": [
+        "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "According to an AP-NORC poll, Trump's job approval rating stands at a record-low over both of his terms as president at 31%, with 69% of Americans disapproving.",
+      "span_check": "byte_exact",
+      "speaker": "AP-NORC",
+      "figure": {
+        "unit": "percent",
+        "value": "31"
+      },
+      "as_of": "2026-10-03",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "AP-NORC poll toplines and methodology",
+      "evidence_id": "1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9",
+      "basis": [
+        "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4"
+      ],
+      "last_confirmed": "2026-10-03",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "as_of": "2026-10-03",
+      "occurrence_id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-03T02:32:31Z",
+      "canonical_url": "https://abcnews.com/Politics/trump-heads-deep-red-alabama-loyal-voters-gop/story?id=136950846",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/raw/article_0729.html",
+      "desk": "government and politics",
+      "envelope_seq": 1087656,
+      "gate_verdict": "COVER",
+      "id": "1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9",
+      "lang": "en",
+      "published_at": "2026-10-03T02:32:31Z",
+      "publisher": "ABC News",
+      "raw_sha256": "3d0ab679a2464475356dd3ccc949859e9fc7f38ce2b311fbef4d2c991bfe0f22",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:03:18.427384Z",
+      "root_evidence": "publisher_host",
+      "root_id": "abcnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z",
+      "source_family": "major_outlet",
+      "source_id": "abc_news_topstories",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_0729.txt",
+      "text_sha256": "699677d38090b42160d613ee11bae79cd96afc11ef34629021f87b296805737e",
+      "title": "Trump rallies in deep-red Alabama to 'thank' loyal voters as GOP eyes key House seat",
+      "updated_at": "2026-10-03T02:33:41Z",
+      "url": "https://abcnews.com/Politics/trump-heads-deep-red-alabama-loyal-voters-gop/story?id=136950846",
+      "verbatim_level": "article",
+      "log_seq": 1087657,
+      "recorded_at": "2026-10-03T16:33:19.138955Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-03",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-03T02:32:31Z",
+          "checkable_against": "AP-NORC poll toplines and methodology",
+          "claim_type": "actual",
+          "envelope_seq": 1102435,
+          "event_id": "event-c5744d4b-670c-4e98-8864-ad9009585834",
+          "evidence_id": "1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9",
+          "figure": {
+            "unit": "percent",
+            "value": "31"
+          },
+          "fire_id": "89215a638ede741d5c78efba4be33a38",
+          "id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "According to an AP-NORC poll, Trump's job approval rating stands at a record-low over both of his terms as president at 31%, with 69% of Americans disapproving.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T16:03:18.427384Z",
+          "root_id": "abcnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2276,
+          "span_start": 2116,
+          "speaker": "AP-NORC",
+          "subject": "Donald Trump overall job approval",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_0729.txt",
+          "text_sha256": "699677d38090b42160d613ee11bae79cd96afc11ef34629021f87b296805737e",
+          "log_seq": 1102436,
+          "recorded_at": "2026-10-03T21:10:21.119431Z",
+          "slot_id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+          "evidence_asserted_at": "2026-10-03T02:32:31Z",
+          "evidence_url": "https://abcnews.com/Politics/trump-heads-deep-red-alabama-loyal-voters-gop/story?id=136950846",
+          "evidence_publisher": "ABC News",
+          "evidence_source_id": "abc_news_topstories"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "1cf80f365a",
+  "evaluated_at": "2026-10-03T21:44:30.236443Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1102277,
+    "fire_id": "quarry-wire-scheduled-20261003T160009Z",
+    "follows": null,
+    "id": "event-c5744d4b-670c-4e98-8864-ad9009585834",
+    "kind": "poll",
+    "label": "AP-NORC Trump overall job approval poll",
+    "minted_at": "2026-10-03T21:09:03.362867Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9",
+    "period": "2026-10-03",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump overall job approval",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261003T160009Z/1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9/2678da235f1e45c1ac14452648e2ea81.json",
+    "log_seq": 1102278
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4",
+      "envelope_seq": 1102705,
+      "event_id": "event-c5744d4b-670c-4e98-8864-ad9009585834",
+      "id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "name": "approval rating",
+      "refusal": null,
+      "log_seq": 1102706,
+      "recorded_at": "2026-10-03T21:13:04.778385Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-03",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-03T02:32:31Z",
+      "checkable_against": "AP-NORC poll toplines and methodology",
+      "claim_type": "actual",
+      "envelope_seq": 1102435,
+      "event_id": "event-c5744d4b-670c-4e98-8864-ad9009585834",
+      "evidence_id": "1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9",
+      "figure": {
+        "unit": "percent",
+        "value": "31"
+      },
+      "fire_id": "89215a638ede741d5c78efba4be33a38",
+      "id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "According to an AP-NORC poll, Trump's job approval rating stands at a record-low over both of his terms as president at 31%, with 69% of Americans disapproving.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:03:18.427384Z",
+      "root_id": "abcnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2276,
+      "span_start": 2116,
+      "speaker": "AP-NORC",
+      "subject": "Donald Trump overall job approval",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_0729.txt",
+      "text_sha256": "699677d38090b42160d613ee11bae79cd96afc11ef34629021f87b296805737e",
+      "log_seq": 1102436,
+      "recorded_at": "2026-10-03T21:10:21.119431Z",
+      "slot_id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "evidence_asserted_at": "2026-10-03T02:32:31Z",
+      "evidence_url": "https://abcnews.com/Politics/trump-heads-deep-red-alabama-loyal-voters-gop/story?id=136950846",
+      "evidence_publisher": "ABC News",
+      "evidence_source_id": "abc_news_topstories"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1102707,
+      "id": "attach-anchor-slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "occurrence_id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4",
+      "refusal": null,
+      "slot_id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "log_seq": 1102708,
+      "recorded_at": "2026-10-03T21:13:04.800951Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-c5744d4b-670c-4e98-8864-ad9009585834",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-ef75def6-7c6d-468c-abfd-2f2f5d23a7a0",
+      "name": "approval rating",
+      "value": "31",
+      "unit": "percent",
+      "sentence": "According to an AP-NORC poll, Trump's job approval rating stands at a record-low over both of his terms as president at 31%, with 69% of Americans disapproving.",
+      "occurrence_id": "occurrence-1ab97a3b8f2712aa8f3fc6e11cc13cbabda70309de05942561bfcffac20ecae9-2986b630f23994f4"
+    }
+  ]
+}

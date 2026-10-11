@@ -1,0 +1,232 @@
+{
+  "current_state": {
+    "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635": {
+      "slot": "recusal status",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+      "heads": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In late September, Judge Tanya Chutkan rejected Trump’s request that she recuse herself from the case.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2023-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Judge Tanya Chutkan order denying recusal motion",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "basis": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af"
+      ],
+      "last_confirmed": "2023-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "as_of": "2023-09",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1829.html",
+      "desk": "courts and legal",
+      "envelope_seq": 165747,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "COVER",
+      "gated_at": "2026-09-08T13:57:01.133591Z",
+      "id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "lang": "en",
+      "publisher": "CNN",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_evidence": "body:10210:10236",
+      "root_id": "www.cnn.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "cnn_politics_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "title": "The notable legal clouds that continue to hang over Donald Trump",
+      "url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "verbatim_level": "article",
+      "log_seq": 814375,
+      "recorded_at": "2026-09-08T13:57:01.133674Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2022-12-08T03:36:24Z",
+          "checkable_against": "Judge Tanya Chutkan order denying recusal motion",
+          "claim_type": "actual",
+          "envelope_seq": 777198,
+          "event_id": "event-67643b48-03d0-4ef6-a0f0-cff5f5cb1d46",
+          "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+          "figure": null,
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "In late September, Judge Tanya Chutkan rejected Trump’s request that she recuse herself from the case.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:59.022846Z",
+          "root_id": "www.cnn.com",
+          "span_check": "byte_exact",
+          "span_end": 6267,
+          "span_start": 6163,
+          "speaker": "outlet's own",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+          "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+          "log_seq": 777199,
+          "recorded_at": "2026-09-08T00:37:41.700955Z",
+          "slot_id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+          "evidence_asserted_at": "2022-12-08T03:36:24Z",
+          "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+          "evidence_publisher": "CNN",
+          "evidence_source_id": "cnn_politics_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 776914,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-f3a197d2-facd-44d0-a703-a725757af3e8",
+    "id": "event-67643b48-03d0-4ef6-a0f0-cff5f5cb1d46",
+    "kind": "ruling",
+    "label": "Chutkan rejects Trump recusal request",
+    "minted_at": "2026-09-08T00:33:24.522224Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+    "period": "2023-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Donald Trump",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b/7d9434b77afc4163abba58526ad2ad6f.json",
+    "log_seq": 776915
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+      "envelope_seq": 993904,
+      "event_id": "event-67643b48-03d0-4ef6-a0f0-cff5f5cb1d46",
+      "id": "slot-4ef2b777-3f07-4169-b7c9-ad1c02e2b97d",
+      "name": "recusal status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "source_id": "cnn_politics_rss"
+      },
+      "log_seq": 993905,
+      "recorded_at": "2026-09-28T10:10:30.039377Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+      "envelope_seq": 993906,
+      "event_id": "event-67643b48-03d0-4ef6-a0f0-cff5f5cb1d46",
+      "id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "name": "recusal status",
+      "refusal": null,
+      "log_seq": 993907,
+      "recorded_at": "2026-09-28T10:11:04.088327Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "checkable_against": "Judge Tanya Chutkan order denying recusal motion",
+      "claim_type": "actual",
+      "envelope_seq": 777198,
+      "event_id": "event-67643b48-03d0-4ef6-a0f0-cff5f5cb1d46",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "figure": null,
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "In late September, Judge Tanya Chutkan rejected Trump’s request that she recuse herself from the case.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_id": "www.cnn.com",
+      "span_check": "byte_exact",
+      "span_end": 6267,
+      "span_start": 6163,
+      "speaker": "outlet's own",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "log_seq": 777199,
+      "recorded_at": "2026-09-08T00:37:41.700955Z",
+      "slot_id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "evidence_asserted_at": "2022-12-08T03:36:24Z",
+      "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "evidence_publisher": "CNN",
+      "evidence_source_id": "cnn_politics_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 993908,
+      "id": "attach-anchor-slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af",
+      "refusal": null,
+      "slot_id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "log_seq": 993909,
+      "recorded_at": "2026-09-28T10:11:04.095976Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "courts and legal",
+  "follows": "event-f3a197d2-facd-44d0-a703-a725757af3e8",
+  "root_id": "event-f3a197d2-facd-44d0-a703-a725757af3e8",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-8b2cc8f6-1f69-416b-bd92-25bd81021635",
+      "name": "recusal status",
+      "value": null,
+      "unit": null,
+      "sentence": "In late September, Judge Tanya Chutkan rejected Trump’s request that she recuse herself from the case.",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-628d47f2900245af"
+    }
+  ]
+}

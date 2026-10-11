@@ -1,0 +1,374 @@
+{
+  "current_state": {
+    "slot-1242c5ae-bc9a-411a-be27-c7e72161c215": {
+      "slot": "basic setup cost",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f",
+      "heads": [
+        "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Wedding planners estimate a basic Boiler Room-style setup starts at roughly $5,000.",
+      "span_check": "byte_exact",
+      "speaker": "wedding planners",
+      "figure": {
+        "unit": "dollars",
+        "value": "5000"
+      },
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+      "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+      "basis": [
+        "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f"
+      ],
+      "last_confirmed": "2026-08-02",
+      "freshness": "stale"
+    },
+    "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16": {
+      "slot": "premium setup cost",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+      "heads": [
+        "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Costs can climb to between $15,000 and $50,000 or more with premium alcohol, elaborate production and international D.J.s.",
+      "span_check": "byte_exact",
+      "speaker": "wedding planners",
+      "figure": {
+        "unit": "dollars",
+        "value": "15000-50000"
+      },
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+      "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+      "basis": [
+        "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468"
+      ],
+      "last_confirmed": "2026-08-02",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "as_of": "2026-08-02",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "as_of": "2026-08-02",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-02T09:00:26Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5156.html",
+      "envelope_seq": 170009,
+      "id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:58.867450Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5156.txt",
+      "text_sha256": "2b864cf8b5a11900e51a9a083d175b2c1fd1414677fb9eb582f6ea632c081eb3",
+      "url": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+      "verbatim_level": "article",
+      "log_seq": 520844,
+      "recorded_at": "2026-09-06T01:33:23.995276Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-02T09:00:26Z",
+          "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+          "claim_type": "actual",
+          "envelope_seq": 773057,
+          "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+          "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+          "figure": {
+            "unit": "dollars",
+            "value": "5000"
+          },
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Wedding planners estimate a basic Boiler Room-style setup starts at roughly $5,000.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:58.867450Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5128,
+          "span_start": 5045,
+          "speaker": "wedding planners",
+          "subject": "Boiler Room-style wedding after-party setup",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5156.txt",
+          "text_sha256": "2b864cf8b5a11900e51a9a083d175b2c1fd1414677fb9eb582f6ea632c081eb3",
+          "log_seq": 773058,
+          "recorded_at": "2026-09-07T21:11:52.182957Z",
+          "slot_id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+          "evidence_asserted_at": "2026-08-02T09:00:26Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-02T09:00:26Z",
+          "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+          "claim_type": "actual",
+          "envelope_seq": 773065,
+          "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+          "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+          "figure": {
+            "unit": "dollars",
+            "value": "15000-50000"
+          },
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Costs can climb to between $15,000 and $50,000 or more with premium alcohol, elaborate production and international D.J.s.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:58.867450Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5251,
+          "span_start": 5129,
+          "speaker": "wedding planners",
+          "subject": "Boiler Room-style wedding after-party setup",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5156.txt",
+          "text_sha256": "2b864cf8b5a11900e51a9a083d175b2c1fd1414677fb9eb582f6ea632c081eb3",
+          "log_seq": 773066,
+          "recorded_at": "2026-09-07T21:11:58.445208Z",
+          "slot_id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+          "evidence_asserted_at": "2026-08-02T09:00:26Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T08:02:22.323215Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 772987,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-8d282832-1681-4981-960c-b07d00728718",
+    "kind": "cost estimate",
+    "label": "Boiler Room-style wedding after-party cost estimates",
+    "minted_at": "2026-09-07T21:11:07.728583Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+    "period": "2026-08-02",
+    "refusal": null,
+    "status": "published",
+    "subject": "Boiler Room-style wedding after-party setup",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca/d5b50320dfe14b1292171ca12731a622.json",
+    "log_seq": 772988
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f",
+      "envelope_seq": 773455,
+      "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+      "id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "name": "basic setup cost",
+      "refusal": null,
+      "log_seq": 773456,
+      "recorded_at": "2026-09-07T21:15:24.645914Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+      "envelope_seq": 1128168,
+      "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+      "id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "name": "premium setup cost",
+      "refusal": null,
+      "log_seq": 1128169,
+      "recorded_at": "2026-10-05T07:07:57.780512Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+      "envelope_seq": 1128161,
+      "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+      "id": "slot-524734ec-90bf-4daf-b135-331840229762",
+      "name": "premium setup cost",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1128162,
+      "recorded_at": "2026-10-05T07:07:42.542749Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-02T09:00:26Z",
+      "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+      "claim_type": "actual",
+      "envelope_seq": 773057,
+      "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+      "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+      "figure": {
+        "unit": "dollars",
+        "value": "5000"
+      },
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Wedding planners estimate a basic Boiler Room-style setup starts at roughly $5,000.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:58.867450Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5128,
+      "span_start": 5045,
+      "speaker": "wedding planners",
+      "subject": "Boiler Room-style wedding after-party setup",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5156.txt",
+      "text_sha256": "2b864cf8b5a11900e51a9a083d175b2c1fd1414677fb9eb582f6ea632c081eb3",
+      "log_seq": 773058,
+      "recorded_at": "2026-09-07T21:11:52.182957Z",
+      "slot_id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "evidence_asserted_at": "2026-08-02T09:00:26Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-02T09:00:26Z",
+      "checkable_against": "Wedding planner estimates and invoices for Boiler Room-style setups",
+      "claim_type": "actual",
+      "envelope_seq": 773065,
+      "event_id": "event-8d282832-1681-4981-960c-b07d00728718",
+      "evidence_id": "61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca",
+      "figure": {
+        "unit": "dollars",
+        "value": "15000-50000"
+      },
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Costs can climb to between $15,000 and $50,000 or more with premium alcohol, elaborate production and international D.J.s.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:58.867450Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5251,
+      "span_start": 5129,
+      "speaker": "wedding planners",
+      "subject": "Boiler Room-style wedding after-party setup",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5156.txt",
+      "text_sha256": "2b864cf8b5a11900e51a9a083d175b2c1fd1414677fb9eb582f6ea632c081eb3",
+      "log_seq": 773066,
+      "recorded_at": "2026-09-07T21:11:58.445208Z",
+      "slot_id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "evidence_asserted_at": "2026-08-02T09:00:26Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/02/style/indian-wedding-afterparty-dance-club-boiler-room.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 773457,
+      "id": "attach-anchor-slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f",
+      "refusal": null,
+      "slot_id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "log_seq": 773458,
+      "recorded_at": "2026-09-07T21:15:24.895555Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1128171,
+      "id": "attach-anchor-slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468",
+      "refusal": null,
+      "slot_id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "log_seq": 1128172,
+      "recorded_at": "2026-10-05T07:07:58.481205Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-8d282832-1681-4981-960c-b07d00728718",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-1242c5ae-bc9a-411a-be27-c7e72161c215",
+      "name": "basic setup cost",
+      "value": "5000",
+      "unit": "dollars",
+      "sentence": "Wedding planners estimate a basic Boiler Room-style setup starts at roughly $5,000.",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-662d661b67ccfa0f"
+    },
+    {
+      "slot_id": "slot-4a16ef04-e4ff-4f63-8615-f15f6dab7d16",
+      "name": "premium setup cost",
+      "value": "15000-50000",
+      "unit": "dollars",
+      "sentence": "Costs can climb to between $15,000 and $50,000 or more with premium alcohol, elaborate production and international D.J.s.",
+      "occurrence_id": "occurrence-61f58044e97843b77c23870bef6bd557649d25417eb20e961746938be25e0aca-d95e51ec28d22468"
+    }
+  ]
+}

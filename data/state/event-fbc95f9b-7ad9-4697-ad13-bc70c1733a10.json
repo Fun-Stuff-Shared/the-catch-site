@@ -1,0 +1,393 @@
+{
+  "current_state": {
+    "slot-5588083f-3d40-4658-992b-c28a1565bfab": {
+      "slot": "gas price",
+      "occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07",
+      "heads": [
+        "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "As of Thursday, the national average is currently at $4.36 per gallon.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "4.36"
+      },
+      "as_of": "2026-10-08",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "AAA national average regular gasoline price record for Oct. 8, 2026",
+      "evidence_id": "37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e",
+      "basis": [
+        "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+      "as_of": "2026-10-08",
+      "occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T17:00:01Z",
+      "canonical_url": "https://cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/raw/article_1351.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1244263,
+      "gate_verdict": "COVER",
+      "id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+      "lang": "en",
+      "published_at": "2026-10-08T17:00:01Z",
+      "publisher": "CNBC",
+      "raw_sha256": "2b65bbcd8f6268aae1ba9f272dad3cb877f2cba9b70b3b2424ed97d1a85ba86c",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:56.921751Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+      "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+      "title": "Treasury sanctions 17 tankers linked to Iran's 'shadow fleet' in economic pressure campaign",
+      "updated_at": "2026-10-08T17:13:32Z",
+      "url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "verbatim_level": "article",
+      "log_seq": 1244264,
+      "recorded_at": "2026-10-08T22:26:32.642731Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T17:00:01Z",
+          "checkable_against": "AAA national average gasoline price record for October 8, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 1246882,
+          "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+          "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "4.36"
+          },
+          "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+          "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-c583baa3f286d369",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "The national average for gasoline on Thursday was $4.36 per gallon, according to AAA.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:03:56.921751Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 2763,
+          "span_start": 2678,
+          "speaker": "AAA",
+          "subject": "U.S. regular gasoline price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+          "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+          "time_action": "corrects",
+          "log_seq": 1246883,
+          "recorded_at": "2026-10-08T22:56:37.727175Z",
+          "evidence_asserted_at": "2026-10-08T17:00:01Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T16:28:29Z",
+      "canonical_url": "https://cnbc.com/2026/10/08/little-relief-expected-for-gas-prices-ahead-of-election-day.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/raw/article_1698.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1244347,
+      "gate_verdict": "COVER",
+      "id": "37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e",
+      "lang": "en",
+      "published_at": "2026-10-08T16:28:29Z",
+      "publisher": "CNBC",
+      "raw_sha256": "cf67bd3bea67d63450c952c4a84928aaa0dc75f47b8f01d607b2ca63b4651512",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:04:19.030865Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1698.txt",
+      "text_sha256": "9c17ea6750bda2c9e0649c3aae4863752fdbaba99ceabee92a72c110c188ab0d",
+      "title": "Little relief expected for gas prices ahead of Election Day, according to prediction markets",
+      "updated_at": "2026-10-08T17:51:51Z",
+      "url": "https://www.cnbc.com/2026/10/08/little-relief-expected-for-gas-prices-ahead-of-election-day.html",
+      "verbatim_level": "article",
+      "log_seq": 1244348,
+      "recorded_at": "2026-10-08T22:26:32.998931Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T16:28:29Z",
+          "checkable_against": "AAA national average regular gasoline price record for Oct. 8, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 1253592,
+          "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+          "evidence_id": "37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "4.36"
+          },
+          "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+          "id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "As of Thursday, the national average is currently at $4.36 per gallon.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:04:19.030865Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 733,
+          "span_start": 663,
+          "speaker": "outlet's own",
+          "subject": "U.S. regular gasoline price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1698.txt",
+          "text_sha256": "9c17ea6750bda2c9e0649c3aae4863752fdbaba99ceabee92a72c110c188ab0d",
+          "time_action": "corrects",
+          "log_seq": 1253593,
+          "recorded_at": "2026-10-09T22:33:03.659705Z",
+          "slot_id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+          "evidence_asserted_at": "2026-10-08T16:28:29Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/08/little-relief-expected-for-gas-prices-ahead-of-election-day.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f982705213",
+  "evaluated_at": "2026-10-09T23:44:50.190712Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1246776,
+    "fire_id": "quarry-wire-scheduled-20261008T220014Z",
+    "follows": "event-eea3900a-6d31-4b35-84f6-b2f202a29e58",
+    "id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+    "kind": "data point",
+    "label": "U.S. national average gasoline price October 8 2026",
+    "minted_at": "2026-10-08T22:55:37.461357Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+    "period": "2026-10-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. regular gasoline price",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261008T220014Z/12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978/e5e5952daea04b178886062ab33b4e88.json",
+    "log_seq": 1246777
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-c583baa3f286d369",
+      "envelope_seq": 1247112,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "id": "slot-3467c0aa-3071-470d-a927-494b5164eaf5",
+      "name": "gasoline price",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1247113,
+      "recorded_at": "2026-10-08T22:58:54.100871Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07",
+      "envelope_seq": 1253648,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+      "name": "gas price",
+      "refusal": null,
+      "log_seq": 1253649,
+      "recorded_at": "2026-10-09T22:33:34.680748Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-c583baa3f286d369",
+      "envelope_seq": 1247122,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "id": "slot-9dc4a45b-0081-45c5-837d-362103802a53",
+      "name": "gasoline price",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "article",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1247123,
+      "recorded_at": "2026-10-08T22:59:07.798450Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-c583baa3f286d369",
+      "envelope_seq": 1247078,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "id": "slot-ca6e3877-d6a9-4f5c-8c13-92223b235df2",
+      "name": "gasoline price",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1247079,
+      "recorded_at": "2026-10-08T22:58:36.651123Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T17:00:01Z",
+      "checkable_against": "AAA national average gasoline price record for October 8, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 1246882,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "4.36"
+      },
+      "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+      "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-c583baa3f286d369",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "The national average for gasoline on Thursday was $4.36 per gallon, according to AAA.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:56.921751Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 2763,
+      "span_start": 2678,
+      "speaker": "AAA",
+      "subject": "U.S. regular gasoline price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+      "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+      "time_action": "corrects",
+      "log_seq": 1246883,
+      "recorded_at": "2026-10-08T22:56:37.727175Z",
+      "evidence_asserted_at": "2026-10-08T17:00:01Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T16:28:29Z",
+      "checkable_against": "AAA national average regular gasoline price record for Oct. 8, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 1253592,
+      "event_id": "event-fbc95f9b-7ad9-4697-ad13-bc70c1733a10",
+      "evidence_id": "37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "4.36"
+      },
+      "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+      "id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "As of Thursday, the national average is currently at $4.36 per gallon.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:04:19.030865Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 733,
+      "span_start": 663,
+      "speaker": "outlet's own",
+      "subject": "U.S. regular gasoline price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1698.txt",
+      "text_sha256": "9c17ea6750bda2c9e0649c3aae4863752fdbaba99ceabee92a72c110c188ab0d",
+      "time_action": "corrects",
+      "log_seq": 1253593,
+      "recorded_at": "2026-10-09T22:33:03.659705Z",
+      "slot_id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+      "evidence_asserted_at": "2026-10-08T16:28:29Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/08/little-relief-expected-for-gas-prices-ahead-of-election-day.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1253650,
+      "id": "attach-anchor-slot-5588083f-3d40-4658-992b-c28a1565bfab",
+      "occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07",
+      "refusal": null,
+      "slot_id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+      "log_seq": 1253651,
+      "recorded_at": "2026-10-09T22:33:34.706842Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": "event-eea3900a-6d31-4b35-84f6-b2f202a29e58",
+  "root_id": "event-6a2afd6a-b79a-4a73-8036-dce955b40c95",
+  "changed_since_previous": [
+    {
+      "name": "gas price",
+      "unit": "dollars per gallon",
+      "previous": {
+        "slot_id": "slot-8d92b48d-7354-4365-8639-3cad25af9a68",
+        "name": "gas price",
+        "value": "4.41",
+        "unit": "dollars per gallon",
+        "sentence": "The national average price of a gallon of regular gas is roughly $4.41 as of Thursday",
+        "occurrence_id": "occurrence-b8479bbb3809ec04bfc694dde07dac4220e322b66f689829df33625cdd26b532-417ec610b3d23ffe"
+      },
+      "current": {
+        "slot_id": "slot-5588083f-3d40-4658-992b-c28a1565bfab",
+        "name": "gas price",
+        "value": "4.36",
+        "unit": "dollars per gallon",
+        "sentence": "As of Thursday, the national average is currently at $4.36 per gallon.",
+        "occurrence_id": "occurrence-37c75d975abeb11b548155a3cb1938842bb8bcea499f067bb832ab76955d553e-1882c58c8d50fa07"
+      }
+    }
+  ],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

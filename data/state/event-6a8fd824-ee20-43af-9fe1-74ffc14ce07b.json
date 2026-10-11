@@ -1,0 +1,227 @@
+{
+  "current_state": {
+    "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931": {
+      "slot": "extra loan cost",
+      "occurrence_id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba",
+      "heads": [
+        "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "A recent Bankrate study found that homeowners who don’t shop around typically pay an extra $78,000 over the life of the loan compared to buyers who request multiple quotes.",
+      "span_check": "byte_exact",
+      "speaker": "Bankrate",
+      "figure": {
+        "unit": "dollars",
+        "value": "78000"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Bankrate mortgage shopping study",
+      "evidence_id": "008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648",
+      "basis": [
+        "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T13:06:48.554000Z",
+      "canonical_url": "https://wsj.com/buyside/personal-finance/mortgage/mortgage-rates-today-10-2-2026",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_5626.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1059029,
+      "gate_verdict": "COVER",
+      "id": "008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648",
+      "lang": "en",
+      "published_at": "2026-10-02T13:06:48.554000Z",
+      "publisher": "The Wall Street Journal",
+      "raw_sha256": "6fe2302a83f4d1fe433e4857b33bc3ca9cb31f245014e39d29f1937cac7edafb",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:21.968180Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.wsj.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "major_outlet",
+      "source_id": "wsj_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_5626.txt",
+      "text_sha256": "a536b138ce4d51a511a86d18129dbfb4661786cb064acd16fab6517b1a38200c",
+      "title": "Mortgage Rates Today, October 2, 2026: 30-Year Rates Climb to Highest Level Since 2023",
+      "updated_at": "2026-10-02T13:06:48.942000Z",
+      "url": "https://www.wsj.com/buyside/personal-finance/mortgage/mortgage-rates-today-10-2-2026",
+      "verbatim_level": "article",
+      "log_seq": 1059030,
+      "recorded_at": "2026-10-03T07:22:48.946575Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T13:06:48.554000Z",
+          "checkable_against": "Bankrate mortgage shopping study",
+          "claim_type": "actual",
+          "envelope_seq": 1071424,
+          "event_id": "event-6a8fd824-ee20-43af-9fe1-74ffc14ce07b",
+          "evidence_id": "008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648",
+          "figure": {
+            "unit": "dollars",
+            "value": "78000"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "A recent Bankrate study found that homeowners who don’t shop around typically pay an extra $78,000 over the life of the loan compared to buyers who request multiple quotes.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:06:21.968180Z",
+          "root_id": "www.wsj.com",
+          "span_check": "byte_exact",
+          "span_end": 1442,
+          "span_start": 1268,
+          "speaker": "Bankrate",
+          "subject": "Bankrate mortgage shopping study",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_5626.txt",
+          "text_sha256": "a536b138ce4d51a511a86d18129dbfb4661786cb064acd16fab6517b1a38200c",
+          "log_seq": 1071425,
+          "recorded_at": "2026-10-03T10:31:59.234290Z",
+          "slot_id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+          "evidence_asserted_at": "2026-10-02T13:06:48.554000Z",
+          "evidence_url": "https://www.wsj.com/buyside/personal-finance/mortgage/mortgage-rates-today-10-2-2026",
+          "evidence_publisher": "The Wall Street Journal",
+          "evidence_source_id": "wsj_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "026753ab0f",
+  "evaluated_at": "2026-10-03T11:41:35.310577Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1071320,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": null,
+    "id": "event-6a8fd824-ee20-43af-9fe1-74ffc14ce07b",
+    "kind": "study",
+    "label": "Bankrate mortgage shopping study",
+    "minted_at": "2026-10-03T10:31:20.094495Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648",
+    "period": "2026-10-02",
+    "refusal": null,
+    "status": "published",
+    "subject": "Bankrate mortgage shopping study",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648/1ada8e7bfcd74c9990af3921f98c101e.json",
+    "log_seq": 1071321
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba",
+      "envelope_seq": 1071616,
+      "event_id": "event-6a8fd824-ee20-43af-9fe1-74ffc14ce07b",
+      "id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "name": "extra loan cost",
+      "refusal": null,
+      "log_seq": 1071617,
+      "recorded_at": "2026-10-03T10:33:15.831649Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T13:06:48.554000Z",
+      "checkable_against": "Bankrate mortgage shopping study",
+      "claim_type": "actual",
+      "envelope_seq": 1071424,
+      "event_id": "event-6a8fd824-ee20-43af-9fe1-74ffc14ce07b",
+      "evidence_id": "008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648",
+      "figure": {
+        "unit": "dollars",
+        "value": "78000"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "A recent Bankrate study found that homeowners who don’t shop around typically pay an extra $78,000 over the life of the loan compared to buyers who request multiple quotes.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:21.968180Z",
+      "root_id": "www.wsj.com",
+      "span_check": "byte_exact",
+      "span_end": 1442,
+      "span_start": 1268,
+      "speaker": "Bankrate",
+      "subject": "Bankrate mortgage shopping study",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_5626.txt",
+      "text_sha256": "a536b138ce4d51a511a86d18129dbfb4661786cb064acd16fab6517b1a38200c",
+      "log_seq": 1071425,
+      "recorded_at": "2026-10-03T10:31:59.234290Z",
+      "slot_id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "evidence_asserted_at": "2026-10-02T13:06:48.554000Z",
+      "evidence_url": "https://www.wsj.com/buyside/personal-finance/mortgage/mortgage-rates-today-10-2-2026",
+      "evidence_publisher": "The Wall Street Journal",
+      "evidence_source_id": "wsj_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1071618,
+      "id": "attach-anchor-slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "occurrence_id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba",
+      "refusal": null,
+      "slot_id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "log_seq": 1071619,
+      "recorded_at": "2026-10-03T10:33:15.855754Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-6a8fd824-ee20-43af-9fe1-74ffc14ce07b",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-9ca0da14-a9cb-46f8-b188-bf8b82080931",
+      "name": "extra loan cost",
+      "value": "78000",
+      "unit": "dollars",
+      "sentence": "A recent Bankrate study found that homeowners who don’t shop around typically pay an extra $78,000 over the life of the loan compared to buyers who request multiple quotes.",
+      "occurrence_id": "occurrence-008b1d1bcec2ae13387bb479ece4ff164b76a3deea0a83181ee14a74d2c8f648-570c99e1322e6cba"
+    }
+  ]
+}

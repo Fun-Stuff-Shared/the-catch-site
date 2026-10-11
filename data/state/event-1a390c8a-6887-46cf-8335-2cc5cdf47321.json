@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-77213a5f-999c-436e-b731-bb0ca9718f42": {
+      "slot": "jackpot amount",
+      "occurrence_id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967",
+      "heads": [
+        "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "$810 million on Sept. 10, 2024 in Texas",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "million dollars",
+        "value": "810"
+      },
+      "as_of": "2024-09-10",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Mega Millions official jackpot records",
+      "evidence_id": "12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85",
+      "basis": [
+        "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967"
+      ],
+      "last_confirmed": "2024-09-10",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "as_of": "2024-09-10",
+      "occurrence_id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T03:11:15.809875573Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_8889.html",
+      "envelope_seq": 149237,
+      "id": "12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85",
+      "publisher": "USA Today",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:28.931268Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.usatoday.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "usatoday_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8889.txt",
+      "text_sha256": "60aee7457d6e01d7d681543153959b2b0665322f4f9e7d5c7a48fd3787cb90d0",
+      "title": "Mega Millions winning numbers for $145M jackpot. Check your ticket",
+      "url": "https://www.usatoday.com/story/money/lottery/2026/08/28/mega-millions-drawing-aug-28-winning-numbers/91515517007/",
+      "verbatim_level": "article",
+      "log_seq": 516988,
+      "recorded_at": "2026-09-06T01:33:22.841888Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2024-09-10",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-29T03:11:15.809875Z",
+          "checkable_against": "Mega Millions official jackpot records",
+          "claim_type": "actual",
+          "envelope_seq": 775901,
+          "event_id": "event-1a390c8a-6887-46cf-8335-2cc5cdf47321",
+          "evidence_id": "12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85",
+          "figure": {
+            "unit": "million dollars",
+            "value": "810"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "$810 million on Sept. 10, 2024 in Texas",
+          "refusal": null,
+          "retrieved_at": "2026-08-31T00:37:28.931268Z",
+          "root_id": "www.usatoday.com",
+          "span_check": "byte_exact",
+          "span_end": 2425,
+          "span_start": 2386,
+          "speaker": "outlet's own",
+          "subject": "Mega Millions Sept. 10, 2024 jackpot",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8889.txt",
+          "text_sha256": "60aee7457d6e01d7d681543153959b2b0665322f4f9e7d5c7a48fd3787cb90d0",
+          "log_seq": 775902,
+          "recorded_at": "2026-09-07T21:41:50.463504Z",
+          "slot_id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+          "evidence_asserted_at": "2026-08-29T03:11:15.809875573Z",
+          "evidence_url": "https://www.usatoday.com/story/money/lottery/2026/08/28/mega-millions-drawing-aug-28-winning-numbers/91515517007/",
+          "evidence_publisher": "USA Today",
+          "evidence_source_id": "usatoday_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 775814,
+    "fire_id": "quarry-wire-scheduled-20260830T220000Z",
+    "follows": null,
+    "id": "event-1a390c8a-6887-46cf-8335-2cc5cdf47321",
+    "kind": "lottery jackpot win",
+    "label": "Mega Millions $810 million jackpot won Sept. 10, 2024",
+    "minted_at": "2026-09-07T21:40:44.858590Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85",
+    "period": "2024-09-10",
+    "refusal": null,
+    "status": "published",
+    "subject": "Mega Millions Sept. 10, 2024 jackpot",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T220000Z/12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85/7aa1d2ba7fb4453589dfea4e3c5374f8.json",
+    "log_seq": 775815
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967",
+      "envelope_seq": 775977,
+      "event_id": "event-1a390c8a-6887-46cf-8335-2cc5cdf47321",
+      "id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "name": "jackpot amount",
+      "refusal": null,
+      "log_seq": 775978,
+      "recorded_at": "2026-09-07T21:42:44.444987Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2024-09-10",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-29T03:11:15.809875Z",
+      "checkable_against": "Mega Millions official jackpot records",
+      "claim_type": "actual",
+      "envelope_seq": 775901,
+      "event_id": "event-1a390c8a-6887-46cf-8335-2cc5cdf47321",
+      "evidence_id": "12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85",
+      "figure": {
+        "unit": "million dollars",
+        "value": "810"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "$810 million on Sept. 10, 2024 in Texas",
+      "refusal": null,
+      "retrieved_at": "2026-08-31T00:37:28.931268Z",
+      "root_id": "www.usatoday.com",
+      "span_check": "byte_exact",
+      "span_end": 2425,
+      "span_start": 2386,
+      "speaker": "outlet's own",
+      "subject": "Mega Millions Sept. 10, 2024 jackpot",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_8889.txt",
+      "text_sha256": "60aee7457d6e01d7d681543153959b2b0665322f4f9e7d5c7a48fd3787cb90d0",
+      "log_seq": 775902,
+      "recorded_at": "2026-09-07T21:41:50.463504Z",
+      "slot_id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "evidence_asserted_at": "2026-08-29T03:11:15.809875573Z",
+      "evidence_url": "https://www.usatoday.com/story/money/lottery/2026/08/28/mega-millions-drawing-aug-28-winning-numbers/91515517007/",
+      "evidence_publisher": "USA Today",
+      "evidence_source_id": "usatoday_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 775979,
+      "id": "attach-anchor-slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "occurrence_id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967",
+      "refusal": null,
+      "slot_id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "log_seq": 775980,
+      "recorded_at": "2026-09-07T21:42:44.695114Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-1a390c8a-6887-46cf-8335-2cc5cdf47321",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-77213a5f-999c-436e-b731-bb0ca9718f42",
+      "name": "jackpot amount",
+      "value": "810",
+      "unit": "million dollars",
+      "sentence": "$810 million on Sept. 10, 2024 in Texas",
+      "occurrence_id": "occurrence-12bd51a70683cb5140ab67dc3393b4bcad24f3cc0d5d10a7f7730f5954068a85-19574df04f028967"
+    }
+  ]
+}

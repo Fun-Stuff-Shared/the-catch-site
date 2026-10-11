@@ -1,0 +1,229 @@
+{
+  "current_state": {
+    "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9": {
+      "slot": "inflation rate",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179",
+      "heads": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Inflation in September is forecast to have risen at an annual rate of 3.6%, up from 3.4% in August, according to economists polled by FactSet — well above the Federal Reserve's 2% annual target.",
+      "span_check": "byte_exact",
+      "speaker": "FactSet-polled economists",
+      "figure": {
+        "unit": "percent",
+        "value": "3.6"
+      },
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "September 2026 CPI release",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "basis": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "canonical_url": "https://cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/raw/article_2132.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1262688,
+      "gate_verdict": "COVER",
+      "id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "lang": "en",
+      "published_at": "2026-10-09T16:23:00Z",
+      "publisher": "CBS News",
+      "raw_sha256": "242f461f325e8238258899e86438ad1f48eb780af0f5207c0f1dc8e9dea114df",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cbsnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z",
+      "source_family": "major_outlet",
+      "source_id": "cbs_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+      "updated_at": "2026-10-09T19:53:41Z",
+      "url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "verbatim_level": "article",
+      "log_seq": 1262689,
+      "recorded_at": "2026-10-10T00:08:20.571870Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-09T16:23:00Z",
+          "checkable_against": "September 2026 CPI release",
+          "claim_type": "actual",
+          "envelope_seq": 1281362,
+          "event_id": "event-3d7b82d0-01de-43db-a2e1-e34054f66625",
+          "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+          "figure": {
+            "unit": "percent",
+            "value": "3.6"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Inflation in September is forecast to have risen at an annual rate of 3.6%, up from 3.4% in August, according to economists polled by FactSet — well above the Federal Reserve's 2% annual target.",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:07:01.009631Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2039,
+          "span_start": 1843,
+          "speaker": "FactSet-polled economists",
+          "subject": "U.S. consumer-price inflation",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+          "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+          "time_action": "corrects",
+          "log_seq": 1281363,
+          "recorded_at": "2026-10-10T02:30:13.234111Z",
+          "slot_id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+          "evidence_asserted_at": "2026-10-09T16:23:00Z",
+          "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "58ad6bca62",
+  "evaluated_at": "2026-10-10T02:45:28.859362Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1281290,
+    "fire_id": "quarry-wire-scheduled-20261009T220053Z",
+    "follows": null,
+    "id": "event-3d7b82d0-01de-43db-a2e1-e34054f66625",
+    "kind": "forecast",
+    "label": "September 2026 U.S. inflation forecast",
+    "minted_at": "2026-10-10T02:29:26.031341Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+    "period": "2026-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. consumer-price inflation",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261009T220053Z/1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae/143b7b57cb954acaac8c666f72752533.json",
+    "log_seq": 1281291
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179",
+      "envelope_seq": 1281486,
+      "event_id": "event-3d7b82d0-01de-43db-a2e1-e34054f66625",
+      "id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "name": "inflation rate",
+      "refusal": null,
+      "log_seq": 1281487,
+      "recorded_at": "2026-10-10T02:31:57.478058Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "checkable_against": "September 2026 CPI release",
+      "claim_type": "actual",
+      "envelope_seq": 1281362,
+      "event_id": "event-3d7b82d0-01de-43db-a2e1-e34054f66625",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "figure": {
+        "unit": "percent",
+        "value": "3.6"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Inflation in September is forecast to have risen at an annual rate of 3.6%, up from 3.4% in August, according to economists polled by FactSet — well above the Federal Reserve's 2% annual target.",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2039,
+      "span_start": 1843,
+      "speaker": "FactSet-polled economists",
+      "subject": "U.S. consumer-price inflation",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "time_action": "corrects",
+      "log_seq": 1281363,
+      "recorded_at": "2026-10-10T02:30:13.234111Z",
+      "slot_id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "evidence_asserted_at": "2026-10-09T16:23:00Z",
+      "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1281488,
+      "id": "attach-anchor-slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179",
+      "refusal": null,
+      "slot_id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "log_seq": 1281489,
+      "recorded_at": "2026-10-10T02:31:57.520715Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-3d7b82d0-01de-43db-a2e1-e34054f66625",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-31b3cd68-5304-4285-9551-efe6d71b9cb9",
+      "name": "inflation rate",
+      "value": "3.6",
+      "unit": "percent",
+      "sentence": "Inflation in September is forecast to have risen at an annual rate of 3.6%, up from 3.4% in August, according to economists polled by FactSet — well above the Federal Reserve's 2% annual target.",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-cda12a5ff668b179"
+    }
+  ]
+}

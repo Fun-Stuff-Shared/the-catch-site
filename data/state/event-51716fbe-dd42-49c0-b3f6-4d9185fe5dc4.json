@@ -1,0 +1,499 @@
+{
+  "current_state": {
+    "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe": {
+      "slot": "Dollar yen rate",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559"
+      ],
+      "last_confirmed": "2026-09-08",
+      "freshness": "unknown_current"
+    },
+    "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351": {
+      "slot": "Euro dollar rate",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907",
+      "heads": [
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In other currency dealings, the euro slipped to $1.1615 from $1.1624.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars",
+        "value": "1.1615"
+      },
+      "as_of": "2026-09-08",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "foreign-exchange market records",
+      "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+      "basis": [
+        "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907"
+      ],
+      "last_confirmed": "2026-09-08",
+      "freshness": "aging"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "as_of": "2026-09-08"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "as_of": "2026-09-08",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "as_of": "2026-09-08",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-09-08T05:49:45Z",
+      "canonical_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/raw/article_7250.html",
+      "desk": "economy and markets",
+      "envelope_seq": 807841,
+      "gate_verdict": "COVER",
+      "id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+      "lang": "en",
+      "published_at": "2026-09-08T05:49:45Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "764368859ea8c6928e47bec792f192b58511be36df55c0f90f48d1ead966bfaa",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:15:01.478243Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+      "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+      "title": "World shares slide, while oil prices push higher",
+      "updated_at": "2026-09-08T10:07:57.613000Z",
+      "url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+      "verbatim_level": "article",
+      "log_seq": 807842,
+      "recorded_at": "2026-09-08T10:34:24.817271Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-09-08T05:49:45Z",
+          "checkable_against": "foreign-exchange market records",
+          "claim_type": "actual",
+          "envelope_seq": 811659,
+          "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+          "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+          "figure": {
+            "unit": "yen",
+            "value": "153.86"
+          },
+          "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+          "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Early Tuesday, the U.S. dollar slipped to 153.86 Japanese yen from 154.34 yen.",
+          "refusal": null,
+          "retrieved_at": "2026-09-08T10:15:01.478243Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1045,
+          "span_start": 967,
+          "speaker": "outlet's own",
+          "subject": "Asian currency markets",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+          "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+          "log_seq": 811660,
+          "recorded_at": "2026-09-08T13:16:25.581602Z",
+          "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+          "evidence_asserted_at": "2026-09-08T05:49:45Z",
+          "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-09-08T05:49:45Z",
+          "checkable_against": "foreign-exchange market records",
+          "claim_type": "actual",
+          "envelope_seq": 811663,
+          "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+          "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+          "figure": {
+            "unit": "dollars",
+            "value": "1.1615"
+          },
+          "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+          "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "In other currency dealings, the euro slipped to $1.1615 from $1.1624.",
+          "refusal": null,
+          "retrieved_at": "2026-09-08T10:15:01.478243Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 3366,
+          "span_start": 3297,
+          "speaker": "outlet's own",
+          "subject": "Asian currency markets",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+          "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+          "log_seq": 811664,
+          "recorded_at": "2026-09-08T13:16:25.659229Z",
+          "slot_id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+          "evidence_asserted_at": "2026-09-08T05:49:45Z",
+          "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09-04",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-09-08T05:49:45Z",
+          "checkable_against": "foreign-exchange market records",
+          "claim_type": "actual",
+          "envelope_seq": 811661,
+          "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+          "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+          "figure": {
+            "unit": "yen",
+            "value": "160"
+          },
+          "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+          "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Last week, the dollar briefly rose to about 160 yen.",
+          "refusal": null,
+          "retrieved_at": "2026-09-08T10:15:01.478243Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1277,
+          "span_start": 1225,
+          "speaker": "outlet's own",
+          "subject": "Asian currency markets",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+          "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+          "log_seq": 811662,
+          "recorded_at": "2026-09-08T13:16:25.618942Z",
+          "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+          "evidence_asserted_at": "2026-09-08T05:49:45Z",
+          "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "bbe870541b",
+  "evaluated_at": "2026-10-04T01:37:48.685831Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 811645,
+    "fire_id": "quarry-wire-scheduled-20260908T100056Z",
+    "follows": null,
+    "id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+    "kind": "market movement",
+    "label": "Asian currency markets September 8 2026",
+    "minted_at": "2026-09-08T13:16:11.172445Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+    "period": "2026-09-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Asian currency markets",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260908T100056Z/42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a/96dcd9e2ef2e4e0797e3ca0362aed017.json",
+    "log_seq": 811646
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907",
+      "envelope_seq": 811727,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "name": "Euro dollar rate",
+      "refusal": null,
+      "log_seq": 811728,
+      "recorded_at": "2026-09-08T13:17:11.709178Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+      "envelope_seq": 811723,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "name": "Dollar yen rate",
+      "refusal": null,
+      "log_seq": 811724,
+      "recorded_at": "2026-09-08T13:17:11.685760Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-09-08T05:49:45Z",
+      "checkable_against": "foreign-exchange market records",
+      "claim_type": "actual",
+      "envelope_seq": 811659,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+      "figure": {
+        "unit": "yen",
+        "value": "153.86"
+      },
+      "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+      "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Early Tuesday, the U.S. dollar slipped to 153.86 Japanese yen from 154.34 yen.",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:15:01.478243Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1045,
+      "span_start": 967,
+      "speaker": "outlet's own",
+      "subject": "Asian currency markets",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+      "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+      "log_seq": 811660,
+      "recorded_at": "2026-09-08T13:16:25.581602Z",
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "evidence_asserted_at": "2026-09-08T05:49:45Z",
+      "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-09-08T05:49:45Z",
+      "checkable_against": "foreign-exchange market records",
+      "claim_type": "actual",
+      "envelope_seq": 811663,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+      "figure": {
+        "unit": "dollars",
+        "value": "1.1615"
+      },
+      "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+      "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "In other currency dealings, the euro slipped to $1.1615 from $1.1624.",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:15:01.478243Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 3366,
+      "span_start": 3297,
+      "speaker": "outlet's own",
+      "subject": "Asian currency markets",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+      "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+      "log_seq": 811664,
+      "recorded_at": "2026-09-08T13:16:25.659229Z",
+      "slot_id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "evidence_asserted_at": "2026-09-08T05:49:45Z",
+      "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09-04",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-09-08T05:49:45Z",
+      "checkable_against": "foreign-exchange market records",
+      "claim_type": "actual",
+      "envelope_seq": 811661,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "evidence_id": "42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a",
+      "figure": {
+        "unit": "yen",
+        "value": "160"
+      },
+      "fire_id": "56e1c7925c3fd5574f5d52e6f94f0660",
+      "id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Last week, the dollar briefly rose to about 160 yen.",
+      "refusal": null,
+      "retrieved_at": "2026-09-08T10:15:01.478243Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1277,
+      "span_start": 1225,
+      "speaker": "outlet's own",
+      "subject": "Asian currency markets",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260908T100056Z/text/article_7250.txt",
+      "text_sha256": "c830965c589f7d7bcce8be5600949bafe7df3fbe4da7ba5fddd240fcfd0950ae",
+      "log_seq": 811662,
+      "recorded_at": "2026-09-08T13:16:25.618942Z",
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "evidence_asserted_at": "2026-09-08T05:49:45Z",
+      "evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 811749,
+      "id": "attach-44d513b7-5d94-4497-8e24-9e948a9dd02a",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+      "refusal": null,
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "log_seq": 811750,
+      "recorded_at": "2026-09-08T13:17:27.211594Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 811729,
+      "id": "attach-anchor-slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907",
+      "refusal": null,
+      "slot_id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "log_seq": 811730,
+      "recorded_at": "2026-09-08T13:17:11.714938Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 811725,
+      "id": "attach-anchor-slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+      "refusal": null,
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "log_seq": 811726,
+      "recorded_at": "2026-09-08T13:17:11.692169Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1108449,
+      "event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "153.86 Japanese yen"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "from_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+      "id": "edge-relation-f3e211bc36939b405e1e429c",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "The two occurrences report different exchange rates (153.86 vs about 160) for different time periods (Tuesday vs last week) from the same source article. These values are numerically incompatible.",
+      "refusal": null,
+      "to_event_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+      "to_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+      "log_seq": 1108450,
+      "recorded_at": "2026-10-04T01:18:08.102916Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [
+      {
+        "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-f3e211bc36939b405e1e429c",
+        "earlier_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+        "later_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+        "earlier_evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+        "later_evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+        "sentence": "On 2026-09-08, Associated Press reported “Last week, the dollar briefly rose to about 160 yen.”; on the same day, Associated Press reported “Early Tuesday, the U.S. dollar slipped to 153.86 Japanese yen from 154.34 yen.”."
+      }
+    ],
+    "changes_checked_at": "2026-09-08T05:49:45Z",
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": [
+      {
+        "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-f3e211bc36939b405e1e429c",
+        "earlier_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-c26149e0a0ec0559",
+        "later_occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-35a0a4eb2766dde3",
+        "earlier_evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+        "later_evidence_url": "https://apnews.com/article/stocks-markets-trump-oil-ai-rates-d3d6157a534584985987f828a940cffa",
+        "sentence": "On 2026-09-08, Associated Press reported “Last week, the dollar briefly rose to about 160 yen.”; on the same day, Associated Press reported “Early Tuesday, the U.S. dollar slipped to 153.86 Japanese yen from 154.34 yen.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-51716fbe-dd42-49c0-b3f6-4d9185fe5dc4",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-56579c1e-4295-4869-9bab-0015f5ee4ffe",
+      "name": "Dollar yen rate",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    },
+    {
+      "slot_id": "slot-1c8fe001-aa00-4c50-b8e7-574d1b07a351",
+      "name": "Euro dollar rate",
+      "value": "1.1615",
+      "unit": "dollars",
+      "sentence": "In other currency dealings, the euro slipped to $1.1615 from $1.1624.",
+      "occurrence_id": "occurrence-42d8d7d7f0fe713b1d3125af867cde91c46d375f036845df11623f6c001dec0a-760cf46ac8c96907"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed": {
+      "slot": "historical turbo sales",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432",
+      "heads": [
+        "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Even with many brands offering turbocharged cars decades ago, these accounted for only an estimated 6 to 7 percent of sales.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "6 to 7"
+      },
+      "as_of": "1980",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "historical U.S. automobile sales and turbocharger adoption data",
+      "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "basis": [
+        "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432"
+      ],
+      "last_confirmed": "1980",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "as_of": "1980",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-01T09:00:16Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5052.html",
+      "envelope_seq": 169801,
+      "id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:43.731625Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+      "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+      "url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+      "verbatim_level": "article",
+      "log_seq": 520740,
+      "recorded_at": "2026-09-06T01:33:23.966735Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "1980",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-01T09:00:16Z",
+          "checkable_against": "historical U.S. automobile sales and turbocharger adoption data",
+          "claim_type": "actual",
+          "envelope_seq": 795430,
+          "event_id": "event-5441da27-62c9-4644-8d96-71d423395404",
+          "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+          "figure": {
+            "unit": "percent",
+            "value": "6 to 7"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Even with many brands offering turbocharged cars decades ago, these accounted for only an estimated 6 to 7 percent of sales.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:43.731625Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 6268,
+          "span_start": 6144,
+          "speaker": "outlet's own",
+          "subject": "Turbocharged cars",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+          "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+          "log_seq": 795431,
+          "recorded_at": "2026-09-08T07:03:40.759907Z",
+          "slot_id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+          "evidence_asserted_at": "2026-08-01T09:00:16Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 795326,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-5441da27-62c9-4644-8d96-71d423395404",
+    "kind": "market data",
+    "label": "1980s turbocharged vehicle sales share",
+    "minted_at": "2026-09-08T07:03:17.758721Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+    "period": "1980-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Turbocharged cars",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3/1cd1d46095424bd4b88a3a1f91b53285.json",
+    "log_seq": 795327
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432",
+      "envelope_seq": 795560,
+      "event_id": "event-5441da27-62c9-4644-8d96-71d423395404",
+      "id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "name": "historical turbo sales",
+      "refusal": null,
+      "log_seq": 795561,
+      "recorded_at": "2026-09-08T07:04:31.340493Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "1980",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-01T09:00:16Z",
+      "checkable_against": "historical U.S. automobile sales and turbocharger adoption data",
+      "claim_type": "actual",
+      "envelope_seq": 795430,
+      "event_id": "event-5441da27-62c9-4644-8d96-71d423395404",
+      "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "figure": {
+        "unit": "percent",
+        "value": "6 to 7"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Even with many brands offering turbocharged cars decades ago, these accounted for only an estimated 6 to 7 percent of sales.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:43.731625Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 6268,
+      "span_start": 6144,
+      "speaker": "outlet's own",
+      "subject": "Turbocharged cars",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+      "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+      "log_seq": 795431,
+      "recorded_at": "2026-09-08T07:03:40.759907Z",
+      "slot_id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "evidence_asserted_at": "2026-08-01T09:00:16Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 795562,
+      "id": "attach-anchor-slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432",
+      "refusal": null,
+      "slot_id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "log_seq": 795563,
+      "recorded_at": "2026-09-08T07:04:31.346922Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-5441da27-62c9-4644-8d96-71d423395404",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-6d587517-b8e1-4466-bbc7-0c95270d00ed",
+      "name": "historical turbo sales",
+      "value": "6 to 7",
+      "unit": "percent",
+      "sentence": "Even with many brands offering turbocharged cars decades ago, these accounted for only an estimated 6 to 7 percent of sales.",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-40e6a29daea0f432"
+    }
+  ]
+}

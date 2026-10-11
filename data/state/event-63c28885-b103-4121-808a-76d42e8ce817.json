@@ -30,28 +30,22 @@
     },
     "slot-c71babd6-8cc7-4140-97d5-55d167d35324": {
       "slot": "damage amount",
-      "occurrence_id": "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-a59ba8829f8fece7",
+      "occurrence_id": null,
       "heads": [
+        "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-2d39eafda6823963",
         "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-a59ba8829f8fece7"
       ],
-      "roots": 1,
+      "roots": 0,
       "primary": false,
-      "disputed": false,
+      "disputed": true,
       "withdrawn": false,
       "uncertain_pairs": 0,
-      "quote_span": "Duffy, who worked as a builder before his retirement, lives in a studio flat which backs on to the garden owned by his neighbour, the court heard.",
-      "span_check": "byte_exact",
-      "speaker": "Willesden Magistrates' Court",
-      "figure": null,
-      "as_of": "2026-08-04",
-      "as_of_source": "publication_timestamp",
-      "checkable_against": "Willesden Magistrates' Court hearing record",
-      "evidence_id": "1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60",
       "basis": [
+        "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-2d39eafda6823963",
         "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-a59ba8829f8fece7"
       ],
       "last_confirmed": "2026-08-04",
-      "freshness": "stale"
+      "freshness": "unknown_current"
     },
     "slot-10929d79-5fb5-444e-bdc7-cb7a326c26e0": {
       "slot": "plea status",
@@ -178,6 +172,11 @@
       "slot_id": "slot-df394adf-71f9-4584-b603-737549e45812",
       "as_of": "2026-03",
       "occurrence_id": "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-ec64a6e8792f3b22"
+    },
+    {
+      "kind": "disputed",
+      "slot_id": "slot-c71babd6-8cc7-4140-97d5-55d167d35324",
+      "as_of": "2026-08-04"
     },
     {
       "kind": "first_value",
@@ -369,6 +368,7 @@
           "text_sha256": "66c9bcb2043c77119a1b7e3745751bd17450035d4403ceaa93cb68afddaa80b3",
           "log_seq": 749648,
           "recorded_at": "2026-09-07T01:32:21.041478Z",
+          "slot_id": "slot-c71babd6-8cc7-4140-97d5-55d167d35324",
           "evidence_asserted_at": "2026-08-04T00:00:00Z",
           "evidence_url": "https://www.bbc.co.uk/news/articles/c8rn0366en5o",
           "evidence_publisher": "BBC",
@@ -791,8 +791,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 749619,
@@ -1037,6 +1037,7 @@
       "text_sha256": "66c9bcb2043c77119a1b7e3745751bd17450035d4403ceaa93cb68afddaa80b3",
       "log_seq": 749648,
       "recorded_at": "2026-09-07T01:32:21.041478Z",
+      "slot_id": "slot-c71babd6-8cc7-4140-97d5-55d167d35324",
       "evidence_asserted_at": "2026-08-04T00:00:00Z",
       "evidence_url": "https://www.bbc.co.uk/news/articles/c8rn0366en5o",
       "evidence_publisher": "BBC",
@@ -1460,6 +1461,19 @@
     {
       "accepted": true,
       "edge_kind": "attach",
+      "envelope_seq": 991488,
+      "id": "attach-7c892967-7702-4d20-aeb8-72a788d7d7c6",
+      "occurrence_id": "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-2d39eafda6823963",
+      "refusal": null,
+      "slot_id": "slot-c71babd6-8cc7-4140-97d5-55d167d35324",
+      "log_seq": 991489,
+      "recorded_at": "2026-09-27T22:02:08.070931Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
       "envelope_seq": 749699,
       "id": "attach-anchor-slot-10929d79-5fb5-444e-bdc7-cb7a326c26e0",
       "occurrence_id": "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-b4544588eb2da176",
@@ -1592,8 +1606,8 @@
       "name": "damage amount",
       "value": null,
       "unit": null,
-      "sentence": "Duffy, who worked as a builder before his retirement, lives in a studio flat which backs on to the garden owned by his neighbour, the court heard.",
-      "occurrence_id": "occurrence-1b235bd5d7371ed00903a629db33460bd83c40d25f8b04d54f283e668c030f60-a59ba8829f8fece7"
+      "sentence": null,
+      "occurrence_id": null
     },
     {
       "slot_id": "slot-10929d79-5fb5-444e-bdc7-cb7a326c26e0",

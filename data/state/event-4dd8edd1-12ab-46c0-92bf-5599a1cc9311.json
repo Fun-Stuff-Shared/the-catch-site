@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-97d63421-13e2-4af3-acdb-e9562f30f300": {
+      "slot": "vote tally",
+      "occurrence_id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41",
+      "heads": [
+        "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Cassidy also joined Democrats in trying to block Bill Pulte’s nomination for acting Director of National Intelligence, an effort that failed in a 49-49 tie.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "votes",
+        "value": "49-49"
+      },
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Senate roll-call vote on Bill Pulte nomination",
+      "evidence_id": "09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a",
+      "basis": [
+        "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41"
+      ],
+      "last_confirmed": "2026-08-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "as_of": "2026-08-30",
+      "occurrence_id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "Sun, 30 Aug 2026 12:00:00 +0000",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/raw/article_0739.html",
+      "envelope_seq": 143011,
+      "id": "09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a",
+      "publisher": "The Hill",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T22:08:52.974445Z",
+      "root_evidence": "body:2733:2801",
+      "root_id": "thehill.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z",
+      "source_family": "major_outlet",
+      "source_id": "thehill_feed",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_0739.txt",
+      "text_sha256": "a7a266f2fb875ac3cf9016f5b1b1f4108f9187a7409cbb497ef6fb4e596d74d0",
+      "title": "What happens when Republican senators have nothing left to lose? Not much.",
+      "url": "https://thehill.com/opinion/congress-blog/6057763-senators-abandoning-constitutional-checks/",
+      "verbatim_level": "article",
+      "log_seq": 513875,
+      "recorded_at": "2026-09-06T01:33:21.959039Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-30",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-30T12:00:00Z",
+          "checkable_against": "Senate roll-call vote on Bill Pulte nomination",
+          "claim_type": "actual",
+          "envelope_seq": 771383,
+          "event_id": "event-4dd8edd1-12ab-46c0-92bf-5599a1cc9311",
+          "evidence_id": "09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a",
+          "figure": {
+            "unit": "votes",
+            "value": "49-49"
+          },
+          "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+          "id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Cassidy also joined Democrats in trying to block Bill Pulte’s nomination for acting Director of National Intelligence, an effort that failed in a 49-49 tie.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T22:08:52.974445Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 7015,
+          "span_start": 6857,
+          "speaker": "outlet's own",
+          "subject": "Bill Pulte",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_0739.txt",
+          "text_sha256": "a7a266f2fb875ac3cf9016f5b1b1f4108f9187a7409cbb497ef6fb4e596d74d0",
+          "log_seq": 771384,
+          "recorded_at": "2026-09-07T20:56:57.119290Z",
+          "slot_id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+          "evidence_asserted_at": "Sun, 30 Aug 2026 12:00:00 +0000",
+          "evidence_url": "https://thehill.com/opinion/congress-blog/6057763-senators-abandoning-constitutional-checks/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 771157,
+    "fire_id": "quarry-wire-scheduled-20260830T220000Z",
+    "follows": null,
+    "id": "event-4dd8edd1-12ab-46c0-92bf-5599a1cc9311",
+    "kind": "Senate vote",
+    "label": "Bill Pulte acting DNI nomination vote",
+    "minted_at": "2026-09-07T20:55:11.921022Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a",
+    "period": "2026-08-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "Bill Pulte",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T220000Z/09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a/58f712668a2149eaa3e7c9800174eb24.json",
+    "log_seq": 771158
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41",
+      "envelope_seq": 771695,
+      "event_id": "event-4dd8edd1-12ab-46c0-92bf-5599a1cc9311",
+      "id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "name": "vote tally",
+      "refusal": null,
+      "log_seq": 771696,
+      "recorded_at": "2026-09-07T20:59:21.342978Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-30T12:00:00Z",
+      "checkable_against": "Senate roll-call vote on Bill Pulte nomination",
+      "claim_type": "actual",
+      "envelope_seq": 771383,
+      "event_id": "event-4dd8edd1-12ab-46c0-92bf-5599a1cc9311",
+      "evidence_id": "09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a",
+      "figure": {
+        "unit": "votes",
+        "value": "49-49"
+      },
+      "fire_id": "7240a6ad200db9b75c7a21aabcfe1939",
+      "id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Cassidy also joined Democrats in trying to block Bill Pulte’s nomination for acting Director of National Intelligence, an effort that failed in a 49-49 tie.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T22:08:52.974445Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 7015,
+      "span_start": 6857,
+      "speaker": "outlet's own",
+      "subject": "Bill Pulte",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T220000Z/text/article_0739.txt",
+      "text_sha256": "a7a266f2fb875ac3cf9016f5b1b1f4108f9187a7409cbb497ef6fb4e596d74d0",
+      "log_seq": 771384,
+      "recorded_at": "2026-09-07T20:56:57.119290Z",
+      "slot_id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "evidence_asserted_at": "Sun, 30 Aug 2026 12:00:00 +0000",
+      "evidence_url": "https://thehill.com/opinion/congress-blog/6057763-senators-abandoning-constitutional-checks/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 771697,
+      "id": "attach-anchor-slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "occurrence_id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41",
+      "refusal": null,
+      "slot_id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "log_seq": 771698,
+      "recorded_at": "2026-09-07T20:59:21.574717Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-4dd8edd1-12ab-46c0-92bf-5599a1cc9311",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-97d63421-13e2-4af3-acdb-e9562f30f300",
+      "name": "vote tally",
+      "value": "49-49",
+      "unit": "votes",
+      "sentence": "Cassidy also joined Democrats in trying to block Bill Pulte’s nomination for acting Director of National Intelligence, an effort that failed in a 49-49 tie.",
+      "occurrence_id": "occurrence-09523691f1dd47cd5f0317bd0e00e50db1f1207f147990f8c1ac0103451ea47a-9cae80f3c5180b41"
+    }
+  ]
+}

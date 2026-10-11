@@ -1,0 +1,503 @@
+{
+  "current_state": {
+    "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2": {
+      "slot": "contract value",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+        "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-f1440693c8a87317"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+        "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-f1440693c8a87317",
+        "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "as_of": "2026-07"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T21:08:42.515000Z",
+      "canonical_url": "https://reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/raw/article_0146.html",
+      "desk": "business and companies",
+      "envelope_seq": 1244005,
+      "gate_verdict": "COVER",
+      "id": "3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d",
+      "lang": "en",
+      "published_at": "2026-10-08T21:08:42.515000Z",
+      "publisher": "Reuters",
+      "raw_sha256": "c7a9fb23953b04c8b45718a1ebb6410c5675d08dc76740adf030604607c673cb",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:30.161430Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.reuters.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z",
+      "source_family": "wire_service",
+      "source_id": "reuters_wire_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_0146.txt",
+      "text_sha256": "8402c06b53609b3e2edaa65b484902688302e65c1a12be1ff03cc90273736212",
+      "title": "RTX's Raytheon wins up to $6.3 billion US missile contract",
+      "updated_at": "2026-10-08T21:08:47.569000Z",
+      "url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+      "verbatim_level": "article",
+      "log_seq": 1244006,
+      "recorded_at": "2026-10-08T22:26:31.423833Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-08T21:08:42.515000Z",
+          "checkable_against": "U.S. Department of Defense Patriot missile contract award records",
+          "claim_type": "actual",
+          "envelope_seq": 1250444,
+          "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+          "evidence_id": "3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d",
+          "figure": {
+            "unit": "billion dollars",
+            "value": "58.6"
+          },
+          "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+          "id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "while Lockheed Martin (LMT.N) won a $58.6 billion Patriot missile contract in July.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:03:30.161430Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 958,
+          "span_start": 875,
+          "speaker": "outlet's own",
+          "subject": "Lockheed Martin Patriot interceptor contract",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_0146.txt",
+          "text_sha256": "8402c06b53609b3e2edaa65b484902688302e65c1a12be1ff03cc90273736212",
+          "time_action": "corrects",
+          "log_seq": 1250445,
+          "recorded_at": "2026-10-08T23:35:33.830123Z",
+          "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+          "evidence_asserted_at": "2026-10-08T21:08:42.515000Z",
+          "evidence_url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-08T21:08:42.515000Z",
+          "checkable_against": "U.S. Department of Defense Patriot missile contract award records",
+          "claim_type": "actual",
+          "envelope_seq": 1253546,
+          "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+          "evidence_id": "3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d",
+          "figure": {
+            "unit": "billion dollars",
+            "value": "58.6"
+          },
+          "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+          "id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-f1440693c8a87317",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Lockheed Martin (LMT.N) won a $58.6 billion Patriot missile contract in July.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:03:30.161430Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 958,
+          "span_start": 881,
+          "speaker": "outlet's own",
+          "subject": "Lockheed Martin Patriot interceptor contract",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_0146.txt",
+          "text_sha256": "8402c06b53609b3e2edaa65b484902688302e65c1a12be1ff03cc90273736212",
+          "time_action": "corrects",
+          "log_seq": 1253547,
+          "recorded_at": "2026-10-09T22:32:58.882127Z",
+          "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+          "evidence_asserted_at": "2026-10-08T21:08:42.515000Z",
+          "evidence_url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T21:15:26.962000Z",
+      "canonical_url": "https://reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/raw/article_0147.html",
+      "desk": "business and companies",
+      "envelope_seq": 1015529,
+      "gate_verdict": "COVER",
+      "id": "335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201",
+      "lang": "en",
+      "published_at": "2026-10-01T21:15:26.962000Z",
+      "publisher": "Reuters",
+      "raw_sha256": "aec12a56c6b51d86fe74f0a45ab947f2f207cefdc492179d3687166fb1f61e4d",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:05:37.076094Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.reuters.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z",
+      "source_family": "wire_service",
+      "source_id": "reuters_wire_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0147.txt",
+      "text_sha256": "2c34c9e13919a7ac66ef5655fe0cbad18031d73cf9db8d7923d5d243048c15e0",
+      "title": "US Navy awards RTX's Raytheon $24.4 billion contract for Standard Missile-6 amid stockpile concerns",
+      "updated_at": "2026-10-01T21:50:47.772000Z",
+      "url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+      "verbatim_level": "article",
+      "log_seq": 1015530,
+      "recorded_at": "2026-10-01T22:32:52.227623Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-07",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-01T21:15:26.962000Z",
+          "checkable_against": "US Defense Department Patriot interceptor contract award records",
+          "claim_type": "actual",
+          "envelope_seq": 1024575,
+          "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+          "evidence_id": "335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201",
+          "figure": {
+            "unit": "billion dollars",
+            "value": "58.6"
+          },
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "and a $58.6 billion Patriot interceptor deal awarded to Lockheed Martin (LMT.N) in July.",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:05:37.076094Z",
+          "root_id": "www.reuters.com",
+          "span_check": "byte_exact",
+          "span_end": 1004,
+          "span_start": 916,
+          "speaker": "outlet's own",
+          "subject": "Lockheed Martin Patriot interceptor contract",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0147.txt",
+          "text_sha256": "2c34c9e13919a7ac66ef5655fe0cbad18031d73cf9db8d7923d5d243048c15e0",
+          "log_seq": 1024576,
+          "recorded_at": "2026-10-02T08:58:49.837965Z",
+          "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+          "evidence_asserted_at": "2026-10-01T21:15:26.962000Z",
+          "evidence_url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "reuters_wire_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f982705213",
+  "evaluated_at": "2026-10-09T23:44:50.190712Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1024541,
+    "fire_id": "quarry-wire-scheduled-20261001T220038Z",
+    "follows": null,
+    "id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+    "kind": "contract award",
+    "label": "Lockheed Martin Patriot interceptor contract award",
+    "minted_at": "2026-10-02T08:58:38.376525Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201",
+    "period": "2026-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Lockheed Martin Patriot interceptor contract",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261001T220038Z/335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201/981f9cb2664642cdbbdd5e4145060410.json",
+    "log_seq": 1024542
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+      "envelope_seq": 1024691,
+      "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "name": "contract value",
+      "refusal": null,
+      "log_seq": 1024692,
+      "recorded_at": "2026-10-02T08:59:15.791040Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-08T21:08:42.515000Z",
+      "checkable_against": "U.S. Department of Defense Patriot missile contract award records",
+      "claim_type": "actual",
+      "envelope_seq": 1250444,
+      "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "evidence_id": "3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d",
+      "figure": {
+        "unit": "billion dollars",
+        "value": "58.6"
+      },
+      "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+      "id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "while Lockheed Martin (LMT.N) won a $58.6 billion Patriot missile contract in July.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:30.161430Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 958,
+      "span_start": 875,
+      "speaker": "outlet's own",
+      "subject": "Lockheed Martin Patriot interceptor contract",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_0146.txt",
+      "text_sha256": "8402c06b53609b3e2edaa65b484902688302e65c1a12be1ff03cc90273736212",
+      "time_action": "corrects",
+      "log_seq": 1250445,
+      "recorded_at": "2026-10-08T23:35:33.830123Z",
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "evidence_asserted_at": "2026-10-08T21:08:42.515000Z",
+      "evidence_url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-08T21:08:42.515000Z",
+      "checkable_against": "U.S. Department of Defense Patriot missile contract award records",
+      "claim_type": "actual",
+      "envelope_seq": 1253546,
+      "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "evidence_id": "3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d",
+      "figure": {
+        "unit": "billion dollars",
+        "value": "58.6"
+      },
+      "fire_id": "874de3fb36afaf162d3bc226a69f91df",
+      "id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-f1440693c8a87317",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Lockheed Martin (LMT.N) won a $58.6 billion Patriot missile contract in July.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:30.161430Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 958,
+      "span_start": 881,
+      "speaker": "outlet's own",
+      "subject": "Lockheed Martin Patriot interceptor contract",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_0146.txt",
+      "text_sha256": "8402c06b53609b3e2edaa65b484902688302e65c1a12be1ff03cc90273736212",
+      "time_action": "corrects",
+      "log_seq": 1253547,
+      "recorded_at": "2026-10-09T22:32:58.882127Z",
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "evidence_asserted_at": "2026-10-08T21:08:42.515000Z",
+      "evidence_url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-07",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-01T21:15:26.962000Z",
+      "checkable_against": "US Defense Department Patriot interceptor contract award records",
+      "claim_type": "actual",
+      "envelope_seq": 1024575,
+      "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "evidence_id": "335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201",
+      "figure": {
+        "unit": "billion dollars",
+        "value": "58.6"
+      },
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "and a $58.6 billion Patriot interceptor deal awarded to Lockheed Martin (LMT.N) in July.",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:05:37.076094Z",
+      "root_id": "www.reuters.com",
+      "span_check": "byte_exact",
+      "span_end": 1004,
+      "span_start": 916,
+      "speaker": "outlet's own",
+      "subject": "Lockheed Martin Patriot interceptor contract",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0147.txt",
+      "text_sha256": "2c34c9e13919a7ac66ef5655fe0cbad18031d73cf9db8d7923d5d243048c15e0",
+      "log_seq": 1024576,
+      "recorded_at": "2026-10-02T08:58:49.837965Z",
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "evidence_asserted_at": "2026-10-01T21:15:26.962000Z",
+      "evidence_url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "reuters_wire_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1253738,
+      "id": "attach-5bb85a1c-40d5-432f-9a4f-b57f6b04e370",
+      "occurrence_id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-f1440693c8a87317",
+      "refusal": null,
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "log_seq": 1253739,
+      "recorded_at": "2026-10-09T22:34:00.898356Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1024693,
+      "id": "attach-anchor-slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "occurrence_id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+      "refusal": null,
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "log_seq": 1024694,
+      "recorded_at": "2026-10-02T08:59:15.798571Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1250478,
+      "id": "attach-b4c3e9a7-a8c7-43ab-8bcb-17ede1f147c5",
+      "occurrence_id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+      "refusal": null,
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "log_seq": 1250479,
+      "recorded_at": "2026-10-08T23:36:10.373969Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1251996,
+      "event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "family": "event",
+      "features": {
+        "source_relation": "unclear",
+        "spans": {
+          "source": "",
+          "time": "July",
+          "value": "$58.6 billion"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "from_occurrence_id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+      "id": "edge-relation-06b8ffa56f10c9fb72ed1755",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both quotes report the same contract value of $58.6 billion for Lockheed Martin's Patriot contract awarded in July. Origin is not explicitly stated within the quotes.",
+      "refusal": null,
+      "to_event_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+      "to_occurrence_id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+      "log_seq": 1251997,
+      "recorded_at": "2026-10-09T00:28:12.291197Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-08T21:08:42.515000Z",
+    "confirmations": [
+      {
+        "label": "“58.6 billion dollars”",
+        "value": "58.6 billion dollars",
+        "reports": [
+          {
+            "publisher": "Reuters",
+            "url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+            "dates": [
+              "2026-10-01"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "Reuters",
+            "url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+            "dates": [
+              "2026-10-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2"
+        ],
+        "sentence": "“58.6 billion dollars”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-06b8ffa56f10c9fb72ed1755",
+        "earlier_occurrence_id": "occurrence-335d66404f0f313ba54087161bf9bcacafe140b388367fd04a85ef0a48c91201-d38dac074f313a06",
+        "later_occurrence_id": "occurrence-3207f7e54dc69821e8bd7d13edaaeff3651f8f14de7173f01901cd204791a63d-440a9381047aeab2",
+        "earlier_evidence_url": "https://www.reuters.com/business/aerospace-defense/us-navy-awards-rtxs-raytheon-244-billion-contract-standard-missile-6-amid-2026-10-01/",
+        "later_evidence_url": "https://www.reuters.com/business/aerospace-defense/rtxs-raytheon-wins-up-63-billion-us-missile-contract-2026-10-08/",
+        "sentence": "On 2026-10-01, Reuters reported “and a $58.6 billion Patriot interceptor deal awarded to Lockheed Martin (LMT.N) in July.”; on 2026-10-08, Reuters reported “while Lockheed Martin (LMT.N) won a $58.6 billion Patriot missile contract in July.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "business and companies",
+  "follows": null,
+  "root_id": "event-8f41e1ee-e414-4c69-93b3-76107e0bb980",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-585687ec-b16c-4de9-8e47-8c86b4b4efd2",
+      "name": "contract value",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

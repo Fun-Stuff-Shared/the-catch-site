@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-dd565c10-3b8b-4857-9e35-4090979798e4": {
+      "slot": "suicide deaths trend",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49",
+      "heads": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Suicides actually increased — again — in 2024, the most recent year for which there’s data.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2024",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "CDC suicide mortality data for Wyoming in 2024",
+      "evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+      "basis": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49"
+      ],
+      "last_confirmed": "2024",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
+      "as_of": "2024",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
           "log_seq": 753554,
           "recorded_at": "2026-09-07T08:32:15.699707Z",
+          "slot_id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
           "evidence_asserted_at": "2026-08-06T18:41:20Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
           "evidence_publisher": "The New York Times",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753507,
@@ -83,7 +117,34 @@
     "log_seq": 753508
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49",
+      "envelope_seq": 917651,
+      "event_id": "event-2b2f9833-0bc5-453b-921f-943eda78e6ba",
+      "id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
+      "name": "suicide deaths trend",
+      "refusal": null,
+      "log_seq": 917652,
+      "recorded_at": "2026-09-20T22:17:52.609243Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49",
+      "envelope_seq": 917649,
+      "event_id": "event-2b2f9833-0bc5-453b-921f-943eda78e6ba",
+      "id": "slot-e9e55b57-7086-4856-9697-61540c84c19b",
+      "name": "suicide deaths trend",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 917650,
+      "recorded_at": "2026-09-20T22:17:32.303405Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -113,13 +174,28 @@
       "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
       "log_seq": 753554,
       "recorded_at": "2026-09-07T08:32:15.699707Z",
+      "slot_id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
       "evidence_asserted_at": "2026-08-06T18:41:20Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 917653,
+      "id": "attach-anchor-slot-dd565c10-3b8b-4857-9e35-4090979798e4",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49",
+      "refusal": null,
+      "slot_id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
+      "log_seq": 917654,
+      "recorded_at": "2026-09-20T22:17:52.617668Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -136,5 +212,14 @@
   "root_id": "event-2b2f9833-0bc5-453b-921f-943eda78e6ba",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-dd565c10-3b8b-4857-9e35-4090979798e4",
+      "name": "suicide deaths trend",
+      "value": null,
+      "unit": null,
+      "sentence": "Suicides actually increased — again — in 2024, the most recent year for which there’s data.",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-f01649e8df374d49"
+    }
+  ]
 }

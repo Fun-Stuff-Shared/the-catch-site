@@ -1,0 +1,201 @@
+{
+  "current_state": {},
+  "timeline": [],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-04T16:52:24Z",
+      "canonical_url": "https://x.com/AP/status/2106789544087503066",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/raw/article_1167.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1160841,
+      "gate_verdict": "COVER",
+      "id": "18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357",
+      "lang": "en",
+      "published_at": "2026-10-04T16:52:24Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "a13f53c9628212d3376975b0beb298afe27851a62f5d8aec9724f4f38899672b",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:04:09.105111Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z",
+      "source_family": "wire_service",
+      "source_id": "x_ap_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_1167.txt",
+      "text_sha256": "2917fcfc0c0e62050a5a9e0cc3186f404bf2ee7295688823da3f36e5b5b824dc",
+      "title": null,
+      "url": "https://x.com/AP/status/2106789544087503066",
+      "verbatim_level": "article",
+      "log_seq": 1160842,
+      "recorded_at": "2026-10-06T22:40:04.755599Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-04",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-04T16:52:24Z",
+          "checkable_against": "Bahrain police and coroner records",
+          "claim_type": "actual",
+          "envelope_seq": 1164886,
+          "event_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+          "evidence_id": "18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357",
+          "figure": {
+            "unit": "drowning",
+            "value": "1"
+          },
+          "fire_id": "11c60f920beab955581b7f08bbda5f1e",
+          "id": "occurrence-18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357-88267c7b575c9970",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "had Marines that drowned woman in swimming pools..",
+          "refusal": null,
+          "retrieved_at": "2026-10-06T22:04:09.105111Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 364,
+          "span_start": 314,
+          "speaker": "unnamed X commenter",
+          "subject": "Marine allegedly drowning a woman in a Bahrain swimming pool",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_1167.txt",
+          "text_sha256": "2917fcfc0c0e62050a5a9e0cc3186f404bf2ee7295688823da3f36e5b5b824dc",
+          "time_action": "corrects",
+          "log_seq": 1164887,
+          "recorded_at": "2026-10-07T01:09:33.257534Z",
+          "evidence_asserted_at": "2026-10-04T16:52:24Z",
+          "evidence_url": "https://x.com/AP/status/2106789544087503066",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "x_ap_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-07T01:42:42.966672Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1164856,
+    "fire_id": "quarry-wire-scheduled-20261006T220035Z",
+    "follows": null,
+    "id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+    "kind": "alleged drowning",
+    "label": "Marine allegedly drowned woman in Bahrain swimming pool",
+    "minted_at": "2026-10-07T01:09:08.579461Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357",
+    "period": "2026-10-04",
+    "refusal": null,
+    "status": "published",
+    "subject": "Marine allegedly drowning a woman in a Bahrain swimming pool",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261006T220035Z/18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357/98579303877e44f09916d1717564b2b4.json",
+    "log_seq": 1164857
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357-88267c7b575c9970",
+      "envelope_seq": 1164970,
+      "event_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+      "id": "slot-0cf524a4-5f3d-44eb-9eb4-cf13f2c855d3",
+      "name": "drowning count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "2106789544087503066",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1164971,
+      "recorded_at": "2026-10-07T01:10:26.988613Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357-88267c7b575c9970",
+      "envelope_seq": 1164964,
+      "event_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+      "id": "slot-e00e8832-18ca-4a0e-9d9d-93bce561bae8",
+      "name": "drowning count",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1164965,
+      "recorded_at": "2026-10-07T01:10:17.177250Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357-88267c7b575c9970",
+      "envelope_seq": 1164958,
+      "event_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+      "id": "slot-fbc21132-ef7f-409b-a12d-de144e3f8a6a",
+      "name": "drowning count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/AP/status/2106789544087503066",
+        "source_id": "x_ap_account"
+      },
+      "log_seq": 1164959,
+      "recorded_at": "2026-10-07T01:10:09.203506Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-04",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-04T16:52:24Z",
+      "checkable_against": "Bahrain police and coroner records",
+      "claim_type": "actual",
+      "envelope_seq": 1164886,
+      "event_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+      "evidence_id": "18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357",
+      "figure": {
+        "unit": "drowning",
+        "value": "1"
+      },
+      "fire_id": "11c60f920beab955581b7f08bbda5f1e",
+      "id": "occurrence-18bab8326e35470723cda72f0e58b3768430b9572c266da1a5243d148da71357-88267c7b575c9970",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "had Marines that drowned woman in swimming pools..",
+      "refusal": null,
+      "retrieved_at": "2026-10-06T22:04:09.105111Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 364,
+      "span_start": 314,
+      "speaker": "unnamed X commenter",
+      "subject": "Marine allegedly drowning a woman in a Bahrain swimming pool",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261006T220035Z/text/article_1167.txt",
+      "text_sha256": "2917fcfc0c0e62050a5a9e0cc3186f404bf2ee7295688823da3f36e5b5b824dc",
+      "time_action": "corrects",
+      "log_seq": 1164887,
+      "recorded_at": "2026-10-07T01:09:33.257534Z",
+      "evidence_asserted_at": "2026-10-04T16:52:24Z",
+      "evidence_url": "https://x.com/AP/status/2106789544087503066",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "x_ap_account"
+    }
+  ],
+  "edges": [],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": null,
+  "root_id": "event-6429b867-f8bd-4e00-ac06-aab939daf94f",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": []
+}

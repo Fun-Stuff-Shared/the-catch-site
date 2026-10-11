@@ -1,0 +1,433 @@
+{
+  "current_state": {
+    "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2": {
+      "slot": "diesel price",
+      "occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+      "heads": [
+        "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d"
+      ],
+      "roots": 2,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The national average for a gallon of diesel in the U.S. was $6.37 on Friday, according to AAA, after hitting a record $6.52 on Sept. 22.",
+      "span_check": "byte_exact",
+      "speaker": "AAA",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "AAA U.S. diesel price records",
+      "evidence_id": "0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c",
+      "basis": [
+        "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+        "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "confirmed_n_roots",
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "roots": 2
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T20:43:59Z",
+      "canonical_url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/raw/article_4807.html",
+      "desk": "government and politics",
+      "envelope_seq": 1088808,
+      "gate_verdict": "COVER",
+      "id": "09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32",
+      "lang": "en",
+      "published_at": "2026-10-02T20:43:59Z",
+      "publisher": "The Hill",
+      "raw_sha256": "4dd3b02555860918e7b46053e65fc5f12a9fd5c631dae93f9280839154822350",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:05:39.781115Z",
+      "root_evidence": "publisher_host",
+      "root_id": "thehill.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z",
+      "source_family": "major_outlet",
+      "source_id": "thehill_feed",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_4807.txt",
+      "text_sha256": "7127f1d50d40e1b65ba8f5543200c8b2311b3bd2d2826c8459ac84be59edfdd1",
+      "title": "Trump says US won’t ban diesel exports",
+      "updated_at": "2026-10-02T22:12:29Z",
+      "url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+      "verbatim_level": "article",
+      "log_seq": 1088809,
+      "recorded_at": "2026-10-03T16:33:23.021151Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T20:43:59Z",
+          "checkable_against": "AAA U.S. national average diesel price records",
+          "claim_type": "actual",
+          "envelope_seq": 1100575,
+          "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+          "evidence_id": "09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "6.37"
+          },
+          "fire_id": "89215a638ede741d5c78efba4be33a38",
+          "id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Diesel, which is particularly important for industries like farming and trucking, was averaging $6.37 per gallon in the U.S. on Friday, according to AAA.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T16:05:39.781115Z",
+          "root_id": "thehill.com",
+          "span_check": "byte_exact",
+          "span_end": 1518,
+          "span_start": 1365,
+          "speaker": "AAA",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_4807.txt",
+          "text_sha256": "7127f1d50d40e1b65ba8f5543200c8b2311b3bd2d2826c8459ac84be59edfdd1",
+          "log_seq": 1100576,
+          "recorded_at": "2026-10-03T20:38:50.706398Z",
+          "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+          "evidence_asserted_at": "2026-10-02T20:43:59Z",
+          "evidence_url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+          "evidence_publisher": "The Hill",
+          "evidence_source_id": "thehill_feed"
+        }
+      ]
+    },
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T14:10:12Z",
+      "canonical_url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/raw/article_8458.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1059311,
+      "gate_verdict": "COVER",
+      "id": "0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c",
+      "lang": "en",
+      "published_at": "2026-10-02T14:10:12Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "fef7c998393817e4b70f6c5f81359d1478ea2691c6653c4dbdfc1fe265777f30",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:32.728598Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_8458.txt",
+      "text_sha256": "ed64e46714ba1adac5f65d40f53e5cc31e8493a8caf14d25dbed3bc5328c91e1",
+      "title": "G7 releasing 100M barrels of oil and diesel fuel as prices soar",
+      "updated_at": "2026-10-02T15:55:42.138000Z",
+      "url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+      "verbatim_level": "article",
+      "log_seq": 1059312,
+      "recorded_at": "2026-10-03T07:22:51.144667Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T14:10:12Z",
+          "checkable_against": "AAA U.S. diesel price records",
+          "claim_type": "actual",
+          "envelope_seq": 1071928,
+          "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+          "evidence_id": "0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c",
+          "figure": {
+            "unit": "dollars per gallon",
+            "value": "6.37"
+          },
+          "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+          "id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The national average for a gallon of diesel in the U.S. was $6.37 on Friday, according to AAA, after hitting a record $6.52 on Sept. 22.",
+          "refusal": null,
+          "retrieved_at": "2026-10-03T05:06:32.728598Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 1289,
+          "span_start": 1153,
+          "speaker": "AAA",
+          "subject": "U.S. diesel price",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_8458.txt",
+          "text_sha256": "ed64e46714ba1adac5f65d40f53e5cc31e8493a8caf14d25dbed3bc5328c91e1",
+          "log_seq": 1071929,
+          "recorded_at": "2026-10-03T10:36:30.541672Z",
+          "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+          "evidence_asserted_at": "2026-10-02T14:10:12Z",
+          "evidence_url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T20:54:08.358837Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1071818,
+    "fire_id": "quarry-wire-scheduled-20261002T160027Z",
+    "follows": "event-204ba85a-19f1-4c00-ab5e-2c118a4019ac",
+    "id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+    "kind": "market movement",
+    "label": "U.S. diesel averages $6.37 per gallon",
+    "minted_at": "2026-10-03T10:35:56.861000Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c",
+    "period": "2026-10-02",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. diesel price",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T160027Z/0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c/723234fbe85b48f3ab6f46a51d56c865.json",
+    "log_seq": 1071819
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+      "envelope_seq": 1071962,
+      "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "name": "diesel price",
+      "refusal": null,
+      "log_seq": 1071963,
+      "recorded_at": "2026-10-03T10:36:48.226212Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T20:43:59Z",
+      "checkable_against": "AAA U.S. national average diesel price records",
+      "claim_type": "actual",
+      "envelope_seq": 1100575,
+      "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "evidence_id": "09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "fire_id": "89215a638ede741d5c78efba4be33a38",
+      "id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Diesel, which is particularly important for industries like farming and trucking, was averaging $6.37 per gallon in the U.S. on Friday, according to AAA.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T16:05:39.781115Z",
+      "root_id": "thehill.com",
+      "span_check": "byte_exact",
+      "span_end": 1518,
+      "span_start": 1365,
+      "speaker": "AAA",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261003T160009Z/text/article_4807.txt",
+      "text_sha256": "7127f1d50d40e1b65ba8f5543200c8b2311b3bd2d2826c8459ac84be59edfdd1",
+      "log_seq": 1100576,
+      "recorded_at": "2026-10-03T20:38:50.706398Z",
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "evidence_asserted_at": "2026-10-02T20:43:59Z",
+      "evidence_url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+      "evidence_publisher": "The Hill",
+      "evidence_source_id": "thehill_feed"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T14:10:12Z",
+      "checkable_against": "AAA U.S. diesel price records",
+      "claim_type": "actual",
+      "envelope_seq": 1071928,
+      "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "evidence_id": "0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c",
+      "figure": {
+        "unit": "dollars per gallon",
+        "value": "6.37"
+      },
+      "fire_id": "fd3c6939d5792cf94e63a505c5e41581",
+      "id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The national average for a gallon of diesel in the U.S. was $6.37 on Friday, according to AAA, after hitting a record $6.52 on Sept. 22.",
+      "refusal": null,
+      "retrieved_at": "2026-10-03T05:06:32.728598Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 1289,
+      "span_start": 1153,
+      "speaker": "AAA",
+      "subject": "U.S. diesel price",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T160027Z/text/article_8458.txt",
+      "text_sha256": "ed64e46714ba1adac5f65d40f53e5cc31e8493a8caf14d25dbed3bc5328c91e1",
+      "log_seq": 1071929,
+      "recorded_at": "2026-10-03T10:36:30.541672Z",
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "evidence_asserted_at": "2026-10-02T14:10:12Z",
+      "evidence_url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1100693,
+      "id": "attach-0d7f55c6-b2a8-49e5-b175-0fdd94c306fa",
+      "occurrence_id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+      "refusal": null,
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "log_seq": 1100694,
+      "recorded_at": "2026-10-03T20:39:54.680414Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1071964,
+      "id": "attach-anchor-slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+      "refusal": null,
+      "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+      "log_seq": 1071965,
+      "recorded_at": "2026-10-03T10:36:48.277376Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1120579,
+      "event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "family": "event",
+      "features": {
+        "source_relation": "independent",
+        "spans": {
+          "source": "",
+          "time": "Friday",
+          "value": "$6.37 per gallon"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "from_occurrence_id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+      "id": "edge-relation-68c4e49cadf9b0be6d22a5ca",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "supports",
+      "reason": "Both quotes report the same U.S. national average diesel price of $6.37 per gallon for the same day (Friday), citing AAA. They come from different publishers (The Hill and Associated Press), making them independent reports of the same figure.",
+      "refusal": null,
+      "to_event_id": "event-10284f2e-60c1-43bc-8a88-bd7a775ca401",
+      "to_occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+      "log_seq": 1120580,
+      "recorded_at": "2026-10-04T19:15:12.923369Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T20:43:59Z",
+    "confirmations": [
+      {
+        "label": "“6.37 dollars per gallon”",
+        "value": "6.37 dollars per gallon",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          },
+          {
+            "publisher": "The Hill",
+            "url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2"
+        ],
+        "sentence": "“6.37 dollars per gallon”",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+        "relation": "supports",
+        "edge_id": "edge-relation-68c4e49cadf9b0be6d22a5ca",
+        "earlier_occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d",
+        "later_occurrence_id": "occurrence-09c6b079c555424bb131c96754ae64a0a6ca107a7c3371b28128c3980bbbdd32-e59d88858ced488c",
+        "earlier_evidence_url": "https://apnews.com/article/trump-europe-diesel-fuel-prices-774a360d1646d9ce8aba764fdd9959d2",
+        "later_evidence_url": "https://thehill.com/policy/energy-environment/6126914-g7-releases-massive-fuel-stock/",
+        "sentence": "On 2026-10-02, Associated Press reported “The national average for a gallon of diesel in the U.S. was $6.37 on Friday, according to AAA, after hitting a record $6.52 on Sept. 22.”; on the same day, The Hill reported “Diesel, which is particularly important for industries like farming and trucking, was averaging $6.37 per gallon in the U.S. on Friday, according to AAA.”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": "event-204ba85a-19f1-4c00-ab5e-2c118a4019ac",
+  "root_id": "event-6a2afd6a-b79a-4a73-8036-dce955b40c95",
+  "changed_since_previous": [],
+  "same_name_not_compared": [
+    {
+      "name": "diesel price",
+      "previous": {
+        "slot_id": "slot-57fd3b73-7cd7-415e-9cf9-a2de86392489",
+        "name": "diesel price",
+        "value": null,
+        "unit": null,
+        "sentence": null,
+        "occurrence_id": null
+      },
+      "current": {
+        "slot_id": "slot-f538fb2b-81b4-4876-9e43-773b25ca79b2",
+        "name": "diesel price",
+        "value": "6.37",
+        "unit": "dollars per gallon",
+        "sentence": "The national average for a gallon of diesel in the U.S. was $6.37 on Friday, according to AAA, after hitting a record $6.52 on Sept. 22.",
+        "occurrence_id": "occurrence-0b82007a635d3493b955117fbc418afe78502c2dff33cffe8787d11b723cb12c-c0a0bfa302c5f65d"
+      },
+      "reason": "The units differ or are missing."
+    }
+  ],
+  "new_slots": []
+}

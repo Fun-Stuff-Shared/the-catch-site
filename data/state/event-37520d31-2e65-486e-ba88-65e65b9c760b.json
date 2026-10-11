@@ -2,30 +2,32 @@
   "current_state": {
     "slot-ff9168be-cdec-4c18-910e-aa59453f34c4": {
       "slot": "investigation status",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62",
       "heads": [
-        "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-0e1df78e07f7ac93",
         "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "Gordon spokesperson Amy Edmonds on Friday confirmed the investigation by Attorney General Keith Kautz, who was appointed by the governor.",
+      "span_check": "byte_exact",
+      "speaker": "Amy Edmonds",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Wyoming Attorney General investigation records and gubernatorial appointment records",
+      "evidence_id": "5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98",
       "basis": [
         "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-0e1df78e07f7ac93",
         "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     }
   },
   "timeline": [
-    {
-      "kind": "disputed",
-      "slot_id": "slot-ff9168be-cdec-4c18-910e-aa59453f34c4",
-      "as_of": "2026-08-28"
-    },
     {
       "kind": "first_value",
       "slot_id": "slot-ff9168be-cdec-4c18-910e-aa59453f34c4",
@@ -229,8 +231,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T21:37:15.174105Z",
   "event": {
     "accepted": true,
     "envelope_seq": 752965,
@@ -473,17 +475,77 @@
       "recorded_at": "2026-09-07T08:24:55.761406Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1121596,
+      "event_id": "event-37520d31-2e65-486e-ba88-65e65b9c760b",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "confirmed the investigation by Attorney General Keith Kautz"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-37520d31-2e65-486e-ba88-65e65b9c760b",
+      "from_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62",
+      "id": "edge-relation-84b91db07d550b85de1bad5f",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences are from the same Associated Press article (shared evidence_id) and confirm the same investigation status. The new occurrence provides the name of the Attorney General.",
+      "refusal": null,
+      "to_event_id": "event-37520d31-2e65-486e-ba88-65e65b9c760b",
+      "to_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-0e1df78e07f7ac93",
+      "log_seq": 1121597,
+      "recorded_at": "2026-10-04T21:15:06.238808Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2026-08-28T20:52:53Z",
+    "confirmations": [
+      {
+        "label": "“Wyoming’s attorney general is investigating how two U.S. Department of Justice officials monitored poll workers and observed voters in the state’s most populous county during the Aug. 18 primary, a spokesperson for Republican Gov. Mark Gordon said Friday.”",
+        "value": "Wyoming’s attorney general is investigating how two U.S. Department of Justice officials monitored poll workers and observed voters in the state’s most populous county during the Aug. 18 primary, a spokesperson for Republican Gov. Mark Gordon said Friday.",
+        "reports": [
+          {
+            "publisher": "Associated Press",
+            "url": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
+            "dates": [
+              "2026-08-28"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-ff9168be-cdec-4c18-910e-aa59453f34c4"
+        ],
+        "sentence": "“Wyoming’s attorney general is investigating how two U.S. Department of Justice officials monitored poll workers and observed voters in the state’s most populous county during the Aug. 18 primary, a spokesperson for Republican Gov. Mark Gordon said Friday.”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 1,
+      "slot_ids": [
+        "slot-ff9168be-cdec-4c18-910e-aa59453f34c4"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-ff9168be-cdec-4c18-910e-aa59453f34c4",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-84b91db07d550b85de1bad5f",
+        "earlier_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-0e1df78e07f7ac93",
+        "later_occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62",
+        "earlier_evidence_url": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
+        "later_evidence_url": "https://apnews.com/article/wyoming-primary-justice-department-monitors-gordon-3d454cdb2834025b3b82364888f226d0",
+        "sentence": "On 2026-08-28, Associated Press reported “Wyoming’s attorney general is investigating how two U.S. Department of Justice officials monitored poll workers and observed voters in the state’s most populous county during the Aug. 18 primary, a spokesperson for Republican Gov. Mark Gordon said Friday.”; on the same day, Associated Press reported “Gordon spokesperson Amy Edmonds on Friday confirmed the investigation by Attorney General Keith Kautz, who was appointed by the governor.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
@@ -497,8 +559,8 @@
       "name": "investigation status",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "Gordon spokesperson Amy Edmonds on Friday confirmed the investigation by Attorney General Keith Kautz, who was appointed by the governor.",
+      "occurrence_id": "occurrence-5bca34e2af1e537af74013ec68c1967f843814fbcb4d863704cce655000a7e98-d0b12d5caebc7c62"
     }
   ]
 }

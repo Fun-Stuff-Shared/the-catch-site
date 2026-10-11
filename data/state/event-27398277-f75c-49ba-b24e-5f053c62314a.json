@@ -1,0 +1,404 @@
+{
+  "current_state": {
+    "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c": {
+      "slot": "crude oil export loadings",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+        "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+        "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337"
+      ],
+      "last_confirmed": "2026-10-08",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "as_of": "2026-08-25",
+      "occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337"
+    },
+    {
+      "kind": "disputed",
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "as_of": "2026-10-08"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-08T17:00:01Z",
+      "canonical_url": "https://cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/raw/article_1351.html",
+      "desk": "world and conflict",
+      "envelope_seq": 1244263,
+      "gate_verdict": "COVER",
+      "id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+      "lang": "en",
+      "published_at": "2026-10-08T17:00:01Z",
+      "publisher": "CNBC",
+      "raw_sha256": "2b65bbcd8f6268aae1ba9f272dad3cb877f2cba9b70b3b2424ed97d1a85ba86c",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:56.921751Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cnbc.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+      "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+      "title": "Treasury sanctions 17 tankers linked to Iran's 'shadow fleet' in economic pressure campaign",
+      "updated_at": "2026-10-08T17:13:32Z",
+      "url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "verbatim_level": "article",
+      "log_seq": 1244264,
+      "recorded_at": "2026-10-08T22:26:32.642731Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-08",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-08T17:00:01Z",
+          "checkable_against": "Treasury official statement and port loading records",
+          "claim_type": "actual",
+          "envelope_seq": 1247034,
+          "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+          "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+          "figure": {
+            "unit": "oil loading and offloading",
+            "value": "0"
+          },
+          "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+          "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "A Treasury official said Iran has stopped loading and offloading oil due to the ongoing U.S. blockade of the country's ports.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:03:56.921751Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 2256,
+          "span_start": 2131,
+          "speaker": "Treasury official",
+          "subject": "Iran crude oil exports",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+          "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+          "time_action": "corrects",
+          "log_seq": 1247035,
+          "recorded_at": "2026-10-08T22:58:14.686027Z",
+          "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+          "evidence_asserted_at": "2026-10-08T17:00:01Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-25",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-10-08T17:00:01Z",
+          "checkable_against": "Kpler crude oil export loading data for Tehran",
+          "claim_type": "actual",
+          "envelope_seq": 1246880,
+          "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+          "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+          "figure": {
+            "unit": "crude oil export loadings",
+            "value": "0"
+          },
+          "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+          "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Kpler data says Tehran has not loaded any crude oil for export since Aug. 25.",
+          "refusal": null,
+          "retrieved_at": "2026-10-08T22:03:56.921751Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 2334,
+          "span_start": 2257,
+          "speaker": "Kpler",
+          "subject": "Iran crude oil exports",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+          "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+          "time_action": "corrects",
+          "log_seq": 1246881,
+          "recorded_at": "2026-10-08T22:56:37.644561Z",
+          "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+          "evidence_asserted_at": "2026-10-08T17:00:01Z",
+          "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "f982705213",
+  "evaluated_at": "2026-10-09T23:44:50.190712Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1246774,
+    "fire_id": "quarry-wire-scheduled-20261008T220014Z",
+    "follows": "event-42aef317-abb2-45aa-98f2-5d1dd55389ae",
+    "id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+    "kind": "data report",
+    "label": "Iran crude export loading halted since August 25",
+    "minted_at": "2026-10-08T22:55:36.881557Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+    "period": "2026-08-25",
+    "refusal": null,
+    "status": "published",
+    "subject": "Iran crude oil exports",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261008T220014Z/12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978/e5e5952daea04b178886062ab33b4e88.json",
+    "log_seq": 1246775
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "envelope_seq": 1247110,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-53ea9525-3f14-4623-8e79-d9396e7c568f",
+      "name": "crude export loading",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1247111,
+      "recorded_at": "2026-10-08T22:58:54.084458Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "envelope_seq": 1247120,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-71892844-f960-444e-a15c-537eb27b3d7f",
+      "name": "crude export loading",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "article",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1247121,
+      "recorded_at": "2026-10-08T22:59:07.692179Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "envelope_seq": 1247076,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-843e9c23-fe14-4938-8c1a-7ae7a73e71fe",
+      "name": "crude export loading",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1247077,
+      "recorded_at": "2026-10-08T22:58:36.627216Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "envelope_seq": 1251651,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-a28ffa1b-724d-4b0f-8b0d-b433ad940004",
+      "name": "crude oil export loadings",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1251652,
+      "recorded_at": "2026-10-08T23:57:13.673226Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "envelope_seq": 1251683,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "name": "crude oil export loadings",
+      "refusal": null,
+      "log_seq": 1251684,
+      "recorded_at": "2026-10-08T23:57:41.186457Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+      "envelope_seq": 1247080,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-dcb60b5e-cccc-4034-ae19-6b842a3b404c",
+      "name": "oil loading status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 1247081,
+      "recorded_at": "2026-10-08T22:58:36.675445Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+      "envelope_seq": 1247114,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "id": "slot-f21cf1fe-411e-4d4f-81d1-7b9c278e6e97",
+      "name": "oil loading status",
+      "refusal": "source_feed_selector_missing",
+      "source_feed": {
+        "selector": "",
+        "source_id": ""
+      },
+      "log_seq": 1247115,
+      "recorded_at": "2026-10-08T22:58:54.116979Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-08",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-08T17:00:01Z",
+      "checkable_against": "Treasury official statement and port loading records",
+      "claim_type": "actual",
+      "envelope_seq": 1247034,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+      "figure": {
+        "unit": "oil loading and offloading",
+        "value": "0"
+      },
+      "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+      "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "A Treasury official said Iran has stopped loading and offloading oil due to the ongoing U.S. blockade of the country's ports.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:56.921751Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 2256,
+      "span_start": 2131,
+      "speaker": "Treasury official",
+      "subject": "Iran crude oil exports",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+      "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+      "time_action": "corrects",
+      "log_seq": 1247035,
+      "recorded_at": "2026-10-08T22:58:14.686027Z",
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "evidence_asserted_at": "2026-10-08T17:00:01Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-25",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-10-08T17:00:01Z",
+      "checkable_against": "Kpler crude oil export loading data for Tehran",
+      "claim_type": "actual",
+      "envelope_seq": 1246880,
+      "event_id": "event-27398277-f75c-49ba-b24e-5f053c62314a",
+      "evidence_id": "12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978",
+      "figure": {
+        "unit": "crude oil export loadings",
+        "value": "0"
+      },
+      "fire_id": "e8a4b3b111871a95c6ec1140e75866c8",
+      "id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Kpler data says Tehran has not loaded any crude oil for export since Aug. 25.",
+      "refusal": null,
+      "retrieved_at": "2026-10-08T22:03:56.921751Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 2334,
+      "span_start": 2257,
+      "speaker": "Kpler",
+      "subject": "Iran crude oil exports",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261008T220014Z/text/article_1351.txt",
+      "text_sha256": "61e829ac7e3b44c5e8d009862f5d15aad3f895b6cbc7ddd3efe02d4dc50e8d38",
+      "time_action": "corrects",
+      "log_seq": 1246881,
+      "recorded_at": "2026-10-08T22:56:37.644561Z",
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "evidence_asserted_at": "2026-10-08T17:00:01Z",
+      "evidence_url": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1251707,
+      "id": "attach-8a3fae35-0381-492b-8790-9bb2d5697557",
+      "occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-be796d9ef17b743f",
+      "refusal": null,
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "log_seq": 1251708,
+      "recorded_at": "2026-10-08T23:58:07.547949Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1251685,
+      "id": "attach-anchor-slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "occurrence_id": "occurrence-12759acbdf948ceb3f3bccb34b8728433b9ef1876b4bf8fbcf98336cdf504978-ecb2945d9f5b5337",
+      "refusal": null,
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "log_seq": 1251686,
+      "recorded_at": "2026-10-08T23:57:41.319488Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "world and conflict",
+  "follows": "event-42aef317-abb2-45aa-98f2-5d1dd55389ae",
+  "root_id": "event-42aef317-abb2-45aa-98f2-5d1dd55389ae",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-af38a9a4-7eb9-4c6c-b185-bbd23ae72d2c",
+      "name": "crude oil export loadings",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

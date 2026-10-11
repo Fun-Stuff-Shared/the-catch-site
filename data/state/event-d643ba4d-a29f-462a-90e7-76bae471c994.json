@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-9215d779-e914-4b55-81e9-e34444e9ee3e": {
+      "slot": "turbo sales share",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd",
+      "heads": [
+        "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Forty-five percent of the 16.3 million new passenger vehicles sold in the United States in 2025 had a turbocharged engine.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "45"
+      },
+      "as_of": "2025",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "U.S. new passenger vehicle sales and engine-type data",
+      "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "basis": [
+        "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd"
+      ],
+      "last_confirmed": "2025",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "as_of": "2025",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-01T09:00:16Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_5052.html",
+      "envelope_seq": 169801,
+      "id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:43.731625Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+      "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+      "url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+      "verbatim_level": "article",
+      "log_seq": 520740,
+      "recorded_at": "2026-09-06T01:33:23.966735Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2025",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-01T09:00:16Z",
+          "checkable_against": "U.S. new passenger vehicle sales and engine-type data",
+          "claim_type": "actual",
+          "envelope_seq": 795082,
+          "event_id": "event-d643ba4d-a29f-462a-90e7-76bae471c994",
+          "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+          "figure": {
+            "unit": "percent",
+            "value": "45"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Forty-five percent of the 16.3 million new passenger vehicles sold in the United States in 2025 had a turbocharged engine.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:18:43.731625Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 1088,
+          "span_start": 966,
+          "speaker": "outlet's own",
+          "subject": "U.S. new passenger vehicles",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+          "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+          "log_seq": 795083,
+          "recorded_at": "2026-09-08T07:02:16.567600Z",
+          "slot_id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+          "evidence_asserted_at": "2026-08-01T09:00:16Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 794940,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-d643ba4d-a29f-462a-90e7-76bae471c994",
+    "kind": "market data",
+    "label": "U.S. 2025 turbocharged passenger vehicle sales",
+    "minted_at": "2026-09-08T07:01:43.444968Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+    "period": "2025-12",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. new passenger vehicles",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3/1cd1d46095424bd4b88a3a1f91b53285.json",
+    "log_seq": 794941
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd",
+      "envelope_seq": 795532,
+      "event_id": "event-d643ba4d-a29f-462a-90e7-76bae471c994",
+      "id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "name": "turbo sales share",
+      "refusal": null,
+      "log_seq": 795533,
+      "recorded_at": "2026-09-08T07:04:31.166887Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2025",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-01T09:00:16Z",
+      "checkable_against": "U.S. new passenger vehicle sales and engine-type data",
+      "claim_type": "actual",
+      "envelope_seq": 795082,
+      "event_id": "event-d643ba4d-a29f-462a-90e7-76bae471c994",
+      "evidence_id": "7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3",
+      "figure": {
+        "unit": "percent",
+        "value": "45"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Forty-five percent of the 16.3 million new passenger vehicles sold in the United States in 2025 had a turbocharged engine.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:18:43.731625Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 1088,
+      "span_start": 966,
+      "speaker": "outlet's own",
+      "subject": "U.S. new passenger vehicles",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_5052.txt",
+      "text_sha256": "217b5f699c0ba3bba6ecd9c9e780d97614d0b85f6499b8fb90e25bed7d1296a5",
+      "log_seq": 795083,
+      "recorded_at": "2026-09-08T07:02:16.567600Z",
+      "slot_id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "evidence_asserted_at": "2026-08-01T09:00:16Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/01/business/turbo-engines-cars-trucks.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 795534,
+      "id": "attach-anchor-slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd",
+      "refusal": null,
+      "slot_id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "log_seq": 795535,
+      "recorded_at": "2026-09-08T07:04:31.174561Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-d643ba4d-a29f-462a-90e7-76bae471c994",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-9215d779-e914-4b55-81e9-e34444e9ee3e",
+      "name": "turbo sales share",
+      "value": "45",
+      "unit": "percent",
+      "sentence": "Forty-five percent of the 16.3 million new passenger vehicles sold in the United States in 2025 had a turbocharged engine.",
+      "occurrence_id": "occurrence-7218b2275883e217f9ff01f61cd636a3051b6d37608c83345759751e2e85fce3-bb6e0940816af5fd"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "current_state": {
+    "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89": {
+      "slot": "referral status",
+      "occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+      "heads": [
+        "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.”",
+      "span_check": "byte_exact",
+      "speaker": "Met police spokesperson",
+      "figure": null,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Met referral records and Home Office NRM decisions",
+      "evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+      "basis": [
+        "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+        "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8"
+      ],
+      "last_confirmed": "2026-09",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "as_of": "2026-09",
+      "occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T06:00:13Z",
+      "canonical_url": "https://theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_3175.html",
+      "desk": "crime and public safety",
+      "envelope_seq": 1032132,
+      "gate_verdict": "COVER",
+      "id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+      "lang": "en",
+      "published_at": "2026-10-02T06:00:13Z",
+      "publisher": "The Guardian",
+      "raw_sha256": "d4d2b24889026a8efc28e4bf3cebd3df8fc1992d6a9e42a4562fa213c33232d9",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:37.465619Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.theguardian.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3175.txt",
+      "text_sha256": "f368e5a976c01f3de4bb4e4e598e4457272e085f1accb02651cb701cc6b6b534",
+      "title": "Almost half of Fayed abuse accusers are potential trafficking victims, MPs told",
+      "updated_at": "2026-10-02T08:50:47Z",
+      "url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+      "verbatim_level": "article",
+      "log_seq": 1032133,
+      "recorded_at": "2026-10-02T10:29:11.160503Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T06:00:13Z",
+          "checkable_against": "Home Office NRM referral decisions and Met communication to Amy",
+          "claim_type": "actual",
+          "envelope_seq": 1049795,
+          "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+          "evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+          "figure": null,
+          "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+          "id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "But last month Amy was informed by her contact officer at the Met that the Home Office had confirmed it would reject any referrals made for international residents.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:05:37.465619Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 3102,
+          "span_start": 2938,
+          "speaker": "Amy's contact officer at the Met",
+          "subject": "Met National Referral Mechanism referrals for Fayed survivors abroad",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3175.txt",
+          "text_sha256": "f368e5a976c01f3de4bb4e4e598e4457272e085f1accb02651cb701cc6b6b534",
+          "log_seq": 1049796,
+          "recorded_at": "2026-10-02T21:24:31.825754Z",
+          "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+          "evidence_asserted_at": "2026-10-02T06:00:13Z",
+          "evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-09",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T06:00:13Z",
+          "checkable_against": "Met referral records and Home Office NRM decisions",
+          "claim_type": "actual",
+          "envelope_seq": 1049801,
+          "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+          "evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+          "figure": null,
+          "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+          "id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.”",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:05:37.465619Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 5905,
+          "span_start": 5511,
+          "speaker": "Met police spokesperson",
+          "subject": "Met National Referral Mechanism referrals for Fayed survivors abroad",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3175.txt",
+          "text_sha256": "f368e5a976c01f3de4bb4e4e598e4457272e085f1accb02651cb701cc6b6b534",
+          "log_seq": 1049802,
+          "recorded_at": "2026-10-02T21:24:33.294926Z",
+          "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+          "evidence_asserted_at": "2026-10-02T06:00:13Z",
+          "evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T13:22:35.758033Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1049621,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": null,
+    "id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+    "kind": "policy action",
+    "label": "Met pauses rejected overseas Fayed trafficking referrals",
+    "minted_at": "2026-10-02T21:23:19.483949Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+    "period": "2026-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Met National Referral Mechanism referrals for Fayed survivors abroad",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a/303d7908ef7e460b81e6dfe34f7ced0d.json",
+    "log_seq": 1049622
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+      "envelope_seq": 1050177,
+      "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "name": "referral status",
+      "refusal": null,
+      "log_seq": 1050178,
+      "recorded_at": "2026-10-02T21:26:31.161906Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T06:00:13Z",
+      "checkable_against": "Home Office NRM referral decisions and Met communication to Amy",
+      "claim_type": "actual",
+      "envelope_seq": 1049795,
+      "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+      "figure": null,
+      "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+      "id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "But last month Amy was informed by her contact officer at the Met that the Home Office had confirmed it would reject any referrals made for international residents.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:37.465619Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 3102,
+      "span_start": 2938,
+      "speaker": "Amy's contact officer at the Met",
+      "subject": "Met National Referral Mechanism referrals for Fayed survivors abroad",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3175.txt",
+      "text_sha256": "f368e5a976c01f3de4bb4e4e598e4457272e085f1accb02651cb701cc6b6b534",
+      "log_seq": 1049796,
+      "recorded_at": "2026-10-02T21:24:31.825754Z",
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "evidence_asserted_at": "2026-10-02T06:00:13Z",
+      "evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-09",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T06:00:13Z",
+      "checkable_against": "Met referral records and Home Office NRM decisions",
+      "claim_type": "actual",
+      "envelope_seq": 1049801,
+      "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "evidence_id": "84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a",
+      "figure": null,
+      "fire_id": "a7c54729d90ec6d3a8784e2124bb1821",
+      "id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.”",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:05:37.465619Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 5905,
+      "span_start": 5511,
+      "speaker": "Met police spokesperson",
+      "subject": "Met National Referral Mechanism referrals for Fayed survivors abroad",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_3175.txt",
+      "text_sha256": "f368e5a976c01f3de4bb4e4e598e4457272e085f1accb02651cb701cc6b6b534",
+      "log_seq": 1049802,
+      "recorded_at": "2026-10-02T21:24:33.294926Z",
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "evidence_asserted_at": "2026-10-02T06:00:13Z",
+      "evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1133278,
+      "id": "attach-26607b52-b4a0-40fb-9afe-63fdcbf156a5",
+      "occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+      "refusal": null,
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "log_seq": 1133279,
+      "recorded_at": "2026-10-05T12:44:39.863280Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1050179,
+      "id": "attach-anchor-slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+      "refusal": null,
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "log_seq": 1050180,
+      "recorded_at": "2026-10-02T21:26:31.169572Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1133674,
+      "event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals"
+        },
+        "time_action": "unknown",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "from_occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+      "id": "edge-relation-f6d778a37ab6212cdd725629",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both statements are from the same source (though the source name isn't in the quotes) and confirm the same fact: the Home Office is rejecting referrals for victims abroad, and the Met has paused them. Since I cannot find the publisher name inside the quotes, I leave the source span empty.",
+      "refusal": null,
+      "to_event_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+      "to_occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+      "log_seq": 1133675,
+      "recorded_at": "2026-10-05T13:05:09.156285Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": "2026-10-02T06:00:13Z",
+    "confirmations": [
+      {
+        "label": "“A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.””",
+        "value": "A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.”",
+        "reports": [
+          {
+            "publisher": "The Guardian",
+            "url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+            "dates": [
+              "2026-10-02"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89"
+        ],
+        "sentence": "“A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.””",
+        "quotes": []
+      }
+    ],
+    "quote_rows_unlinked": {
+      "count": 1,
+      "slot_ids": [
+        "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89"
+      ]
+    },
+    "edges": [
+      {
+        "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-f6d778a37ab6212cdd725629",
+        "earlier_occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-7991ad76f3611fb0",
+        "later_occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8",
+        "earlier_evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+        "later_evidence_url": "https://www.theguardian.com/world/2026/oct/02/mohamed-al-fayed-abuse-claims-potential-trafficking-victims",
+        "sentence": "On 2026-10-02, The Guardian reported “But last month Amy was informed by her contact officer at the Met that the Home Office had confirmed it would reject any referrals made for international residents.”; on the same day, The Guardian reported “A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.””."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": "crime and public safety",
+  "follows": null,
+  "root_id": "event-a6921a70-bf1c-45d1-a1ca-8491d3ee3388",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-bfdc8585-ce4b-4c3f-b50e-1a3c846a7d89",
+      "name": "referral status",
+      "value": null,
+      "unit": null,
+      "sentence": "A Met police spokesperson said: “We were previously making referrals to the Home Office for victims living in the UK and abroad, but those relating to victims living abroad were being rejected. As a result, we have paused any further such referrals. Should the Home Office position change, we will restart those submissions. Our support to victims continues, regardless of where they live.”",
+      "occurrence_id": "occurrence-84885861009c88f4b7e87605916a8d51a75fd731b3084fb5a9077215508d564a-ead5e1c449a9f0f8"
+    }
+  ]
+}

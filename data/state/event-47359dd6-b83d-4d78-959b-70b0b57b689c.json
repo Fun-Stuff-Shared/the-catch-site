@@ -1,0 +1,210 @@
+{
+  "current_state": {
+    "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071": {
+      "slot": "fraud status",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7",
+      "heads": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Walter's holding company earlier in the week said \"there has been no fraud\" at Delaware Life and its affiliated company, Clear Spring Life and Annuity.",
+      "span_check": "byte_exact",
+      "speaker": "Walter's holding company",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Walter's holding company statement concerning Delaware Life and Clear Spring Life and Annuity",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "basis": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9560.html",
+      "envelope_seq": 172421,
+      "id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "x_cnbc_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "url": "https://x.com/CNBC/status/2093442068878082415",
+      "verbatim_level": "article",
+      "log_seq": 522050,
+      "recorded_at": "2026-09-06T01:33:24.336091Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-28T20:54:18Z",
+          "checkable_against": "Walter's holding company statement concerning Delaware Life and Clear Spring Life and Annuity",
+          "claim_type": "actual",
+          "envelope_seq": 783425,
+          "event_id": "event-47359dd6-b83d-4d78-959b-70b0b57b689c",
+          "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+          "figure": null,
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Walter's holding company earlier in the week said \"there has been no fraud\" at Delaware Life and its affiliated company, Clear Spring Life and Annuity.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:37.148138Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 1192,
+          "span_start": 1041,
+          "speaker": "Walter's holding company",
+          "subject": "Walter holding company",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+          "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+          "log_seq": 783426,
+          "recorded_at": "2026-09-08T02:57:58.144148Z",
+          "slot_id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+          "evidence_asserted_at": "2026-08-28T20:54:18Z",
+          "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 783411,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-47359dd6-b83d-4d78-959b-70b0b57b689c",
+    "kind": "statement",
+    "label": "Walter holding company says no fraud at Delaware Life and Clear Spring",
+    "minted_at": "2026-09-08T02:57:44.809449Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Walter holding company",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b/b4328d82e3dd4c87a4a0a0873083343e.json",
+    "log_seq": 783412
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7",
+      "envelope_seq": 783443,
+      "event_id": "event-47359dd6-b83d-4d78-959b-70b0b57b689c",
+      "id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "name": "fraud status",
+      "refusal": null,
+      "log_seq": 783444,
+      "recorded_at": "2026-09-08T02:58:13.903390Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "checkable_against": "Walter's holding company statement concerning Delaware Life and Clear Spring Life and Annuity",
+      "claim_type": "actual",
+      "envelope_seq": 783425,
+      "event_id": "event-47359dd6-b83d-4d78-959b-70b0b57b689c",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "figure": null,
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Walter's holding company earlier in the week said \"there has been no fraud\" at Delaware Life and its affiliated company, Clear Spring Life and Annuity.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 1192,
+      "span_start": 1041,
+      "speaker": "Walter's holding company",
+      "subject": "Walter holding company",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "log_seq": 783426,
+      "recorded_at": "2026-09-08T02:57:58.144148Z",
+      "slot_id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "evidence_asserted_at": "2026-08-28T20:54:18Z",
+      "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783445,
+      "id": "attach-anchor-slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7",
+      "refusal": null,
+      "slot_id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "log_seq": 783446,
+      "recorded_at": "2026-09-08T02:58:14.179096Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-47359dd6-b83d-4d78-959b-70b0b57b689c",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-f6ca6767-76c7-416a-9739-e3ad59ba7071",
+      "name": "fraud status",
+      "value": null,
+      "unit": null,
+      "sentence": "Walter's holding company earlier in the week said \"there has been no fraud\" at Delaware Life and its affiliated company, Clear Spring Life and Annuity.",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-37f3601704398dc7"
+    }
+  ]
+}

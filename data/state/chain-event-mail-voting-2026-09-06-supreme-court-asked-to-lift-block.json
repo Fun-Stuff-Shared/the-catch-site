@@ -56,8 +56,16 @@
           "name": "application status",
           "value": null,
           "unit": null,
-          "sentence": "Application (26A124) granted by the Court.",
-          "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780"
+          "sentence": "Application (26A124) referred to the Court.",
+          "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd"
+        },
+        {
+          "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+          "name": "injunction status",
+          "value": null,
+          "unit": null,
+          "sentence": "The injunction entered by the United States District Court for the District of Massachusetts in case No. 1:26–cv–11581 is stayed pending the disposition of the appeal in the United States Court of Appeals for the First Circuit and disposition of a petition for a writ of certiorari in this Court, if such a writ is timely sought.",
+          "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
         }
       ]
     },
@@ -68,7 +76,16 @@
       "reason": null,
       "period": "2026-09-03",
       "follows": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
-      "slots": []
+      "slots": [
+        {
+          "slot_id": "slot-c35efcc8-f6ee-4b7f-a95f-0f5b7091240f",
+          "name": "filing date",
+          "value": null,
+          "unit": null,
+          "sentence": "On Thursday, September 3, 2026, the federal government filed in the above-captioned case an application for a stay of an order issued on August 27, 2026, by the United States District Court for the District of Massachusetts.",
+          "occurrence_id": "occurrence-story-pin:6512726c9d375de9883f9f6aeaaff8e368d530b5e6285b7b791c3400fcef43fe-d5c769ce70e2b164"
+        }
+      ]
     },
     {
       "id": "event-c7052ba1-c2df-44ee-a01c-f4f78e1be8f5",
@@ -282,10 +299,10 @@
         {
           "slot_id": "slot-5d117c91-3f9c-4ffd-91e9-0ebdc2b2e978",
           "name": "report deadline",
-          "value": null,
-          "unit": null,
-          "sentence": null,
-          "occurrence_id": null
+          "value": "90",
+          "unit": "days",
+          "sentence": "Not later than 90 days after the date of each regularly scheduled general election for Federal office, each State and unit of local government which administered the election shall (through the State, in the case of a unit of local government) submit a report to the Election Assistance Commission (established under the Help America Vote Act of 2002 [ 52 U.S.C. 20901 et seq. ]) on the combined number of absentee ballots transmitted to absent uniformed services voters and overseas voters for the election and the combined number of such ballots which were returned by such voters and cast in the election, and shall make such report available to the general public.",
+          "occurrence_id": "occurrence-story-pin:8b82f7a21920fe4d9bec2bef6b8ac2a65962c1f5593196aac893350f3aa78ebc-f939cb1b43b1ec86"
         },
         {
           "slot_id": "slot-ff9e64af-4f84-42e0-b772-698eb61f884e",
@@ -478,6 +495,174 @@
           "unit": "pieces",
           "sentence": "400 from a batch above 10,000",
           "occurrence_id": "story-figure:bdd1c7e16ca901fe517915e0aae89139bd43f6701cfa6b1b2be852e81a9e81d2"
+        },
+        {
+          "slot_id": "slot-d75666be-635c-4c3c-8020-e449b462e024",
+          "name": "days_filing_to_election",
+          "value": "58",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:96855784eba2a076c832cc4f8a1822855dce1d953e9e0f73310f798c90322cd4"
+        },
+        {
+          "slot_id": "slot-4aa988fb-e3b4-4db9-be4b-97557ae65b73",
+          "name": "days_pi_to_election",
+          "value": "60",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:1b1cc0df4f33082e5cfd33aa0cbff6eefe37fa2a017518776b4c5c37f9aa694a"
+        },
+        {
+          "slot_id": "slot-8842d380-93e6-4728-841e-f2efacd05ee5",
+          "name": "days_297_to_election",
+          "value": "61",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:625348e2643a36fb34f180f1db08ed4fe26babd16523e03da1e517030244ce95"
+        },
+        {
+          "slot_id": "slot-79884960-9053-4caa-b2d0-04f2fbbe5d7a",
+          "name": "days_rule_to_election",
+          "value": "69",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:046ca75a0b9252448b64c2867624dd38ae9859273508a4e178c5ba284983805a"
+        },
+        {
+          "slot_id": "slot-835519e0-add7-4ba6-a501-d04fbec510eb",
+          "name": "days_eo_to_election",
+          "value": "217",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:00ab7ae4fa5170ca33b84483703eeba9290a822dc68c76190c09574f8d7a6f1f"
+        },
+        {
+          "slot_id": "slot-d87d3a9c-ef1d-42f7-ab9c-e43fce66753b",
+          "name": "days_filing_to_uocava",
+          "value": "13",
+          "unit": "days",
+          "sentence": "September 19, 2026 (45 days before the election)",
+          "occurrence_id": "story-figure:0be6756fdb6c79a7c9533d000f7d422c5e0f4db3c31309f4a89d3320c3a4e3e2"
+        },
+        {
+          "slot_id": "slot-a31ab3df-3fc7-4f21-a459-fa97f0c57de0",
+          "name": "days_filing_to_jackson",
+          "value": "3",
+          "unit": "days",
+          "sentence": "September 9, 2026",
+          "occurrence_id": "story-figure:be0a3062add9a98b536de86849dbc47a6021bde00aef6e819fd7c9ac3b235dff"
+        },
+        {
+          "slot_id": "slot-939d3eb5-67f8-4c88-8b1d-1453fd31332c",
+          "name": "days_stay_to_rule",
+          "value": "2",
+          "unit": "days",
+          "sentence": "Wednesday, August 26, 2026",
+          "occurrence_id": "story-figure:a9beaee7861f147b49b872bd15d468ae1af3d8c08169c9916f327c77f6f2a9ee"
+        },
+        {
+          "slot_id": "slot-be1d2b67-94d8-4008-959e-ad9ddddd9a90",
+          "name": "uocava_days",
+          "value": "45",
+          "unit": "days",
+          "sentence": "the request is received at least 45 days before an election for Federal office, not later than 45 days before the election",
+          "occurrence_id": "story-figure:d94cc4095ae08a67899aede88bf53856b2bf1c2bd602faa1b0df8f24c16adc57"
+        },
+        {
+          "slot_id": "slot-d0e6d08b-477a-49ab-b2c4-fd0e9f46e526",
+          "name": "plaintiff_states",
+          "value": "23",
+          "unit": "states",
+          "sentence": "group of 23 States and the District of Columbia for elections before and on November 3, 2026",
+          "occurrence_id": "story-figure:88576b0aa52bbe15731b555ea105850b82b4af57b4d3c08c82b180b676a4e4f1"
+        },
+        {
+          "slot_id": "slot-a93bf779-4c94-4542-81b8-d17d69d9064c",
+          "name": "days_effective_to_election",
+          "value": "74",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:e92d99830909636a23ec7d8e9b1ebafdc8e3b660e68711d113af752222303681"
+        },
+        {
+          "slot_id": "slot-aa3c89a1-9685-4872-bc7a-d3e627cae7c9",
+          "name": "eavs_2022_mail_ballots_transmitted",
+          "value": "61460139",
+          "unit": "ballots",
+          "sentence": "States reported transmitting 61,460,139 mail ballots",
+          "occurrence_id": "story-figure:25032876a1020f1e4f8824c0db1100dc525b3ee93de1f503e6b6813fb409d2eb"
+        },
+        {
+          "slot_id": "slot-7db92bf2-d6ab-42ea-86fe-f029f585ba14",
+          "name": "eavs_2022_mail_ballots_returned",
+          "value": "36683450",
+          "unit": "ballots",
+          "sentence": "which 36,683,450 were returned by voters",
+          "occurrence_id": "story-figure:8f9421deaf326fc7bedc396d4194b2b6d9296680e026a936219596ffb10041e8"
+        },
+        {
+          "slot_id": "slot-09efc277-a66c-4f06-b29c-01261312e480",
+          "name": "california_2026_estimate_million",
+          "value": "23",
+          "unit": "million ballots",
+          "sentence": "county election officials will mail more than 23",
+          "occurrence_id": "story-figure:7ff7a8b7d366402005a40a36909a01a17e70cb883ff60bd272ca036e34fa7147"
+        },
+        {
+          "slot_id": "slot-21a129ea-57ab-4a26-9daa-7f15e2c4c24e",
+          "name": "washington_2026_estimate_million",
+          "value": "5.1",
+          "unit": "million ballots",
+          "sentence": "Washington anticipates mailing ballots to approximately 5.1 million voters",
+          "occurrence_id": "story-figure:90297e40e5fa4a3d1a602a2fafeb32a3fe68041531d505b0497af80b04fe7c75"
+        },
+        {
+          "slot_id": "slot-3c2d19a4-67b8-484b-a10c-9e00321cbc5a",
+          "name": "colorado_2026_estimate",
+          "value": "4000000",
+          "unit": "ballots",
+          "sentence": "Colorado anticipates mailing ballots to more than 4,000,000 voters",
+          "occurrence_id": "story-figure:8db6f0ce721a7f83326cc89a0036dd1c066e3f0d4c0a7e8b41172eb0e90fb56b"
+        },
+        {
+          "slot_id": "slot-450b8495-f028-4558-b616-d785bfbc71f1",
+          "name": "oregon_2026_estimate_million",
+          "value": "3",
+          "unit": "million ballots",
+          "sentence": "approximately 3 million voters during the 2026 general election",
+          "occurrence_id": "story-figure:0a789720c96554deb13f4f7356b5da628104c1fa5451c744ece60f3775e727a1"
+        },
+        {
+          "slot_id": "slot-1c60aeac-f87b-4067-9769-7b4bcfa0b1be",
+          "name": "election_jurisdictions",
+          "value": "10000",
+          "unit": "jurisdictions",
+          "sentence": "the Final Rule would require 10,000 different election jurisdictions",
+          "occurrence_id": "story-figure:29287b39bac2b68812db8cc468225d7e76bf0baeaa69df5801c9b29e4a44dc04"
+        },
+        {
+          "slot_id": "slot-c5175905-4c97-43c5-a56c-ac93514a91c3",
+          "name": "sample_pieces_batch_under_1000",
+          "value": "15",
+          "unit": "pieces",
+          "sentence": "15 sampled pieces from a batch under 1,000",
+          "occurrence_id": "story-figure:1f1c5cc64748184a6481d1a10b201b5a3d0391a5cea2518ad71cd208ae75dc5e"
+        },
+        {
+          "slot_id": "slot-f6433841-8b1e-4a8e-8687-9e06cebd20f7",
+          "name": "sample_pieces_batch_1000_to_10000",
+          "value": "350",
+          "unit": "pieces",
+          "sentence": "350 from a batch of",
+          "occurrence_id": "story-figure:2242d476bd7aea1272d6b6d021a205acef65180e6c9405ddb0a010e1cc6cad58"
+        },
+        {
+          "slot_id": "slot-128e5f9a-bcbf-4c7c-93cb-1f663242d743",
+          "name": "sample_pieces_batch_over_10000",
+          "value": "400",
+          "unit": "pieces",
+          "sentence": "400 from a batch above 10,000",
+          "occurrence_id": "story-figure:36530bb7759eba00794de78602f1bac4b319635b0ba0943705fcad7d17969997"
         }
       ]
     },
@@ -616,11 +801,27 @@
           "unit": "recommendations",
           "sentence": "We made 11 recommendations",
           "occurrence_id": "story-figure:5ff50cb0631fbf839156a086742a8b68b2033e5baeb3312b979baff2be122781"
+        },
+        {
+          "slot_id": "slot-2edc2026-d4ba-4567-999e-49d054f45c90",
+          "name": "ruling vote",
+          "value": "7-2",
+          "unit": "votes",
+          "sentence": "on Sept. 14, when the court, in a 7-2 decision, blocked the president's plan to use the U.S. Postal Service to restrict mail-voting.",
+          "occurrence_id": "occurrence-0596a82f341b0f597736e1c67ccaa298c3c39ed06b9432d129d67e04a9cb717d-bf022a6d5542daa7"
+        },
+        {
+          "slot_id": "slot-a97bc0b0-130f-4b26-8f94-b65ffde5f673",
+          "name": "dissenting justices",
+          "value": null,
+          "unit": null,
+          "sentence": "The two dissenters were Clarence Thomas and Samuel Alito, with Gorsuch, Kavanaugh and Barrett each siding against the Trump administration.",
+          "occurrence_id": "occurrence-0596a82f341b0f597736e1c67ccaa298c3c39ed06b9432d129d67e04a9cb717d-b9e9ac60747461b4"
         }
       ]
     }
   ],
-  "outlet_count": 24,
+  "outlet_count": 25,
   "last_moved_at": "2026-09-09T10:36:35.382071Z",
   "tracked": [
     {
@@ -636,6 +837,16 @@
           "unit": "days",
           "sentence": "elections occurring before or on November 3, 2026",
           "occurrence_id": "story-figure:4c0ef2849b132eb85a118388e6b6f3392e2ec46a2ad292432a043bac52b8d351"
+        },
+        {
+          "event_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+          "period": "2026-09-06",
+          "slot_id": "slot-4aa988fb-e3b4-4db9-be4b-97557ae65b73",
+          "name": "days_pi_to_election",
+          "value": "60",
+          "unit": "days",
+          "sentence": "elections occurring before or on November 3, 2026",
+          "occurrence_id": "story-figure:1b1cc0df4f33082e5cfd33aa0cbff6eefe37fa2a017518776b4c5c37f9aa694a"
         },
         {
           "event_id": "event-mail-voting-2026-09-14-court-denies-stay",
@@ -664,6 +875,16 @@
           "occurrence_id": "story-figure:88f6dac41b86024f894c88e37e052ff9d96d5a54a1b6d1b36fb705d4d543b4f6"
         },
         {
+          "event_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+          "period": "2026-09-06",
+          "slot_id": "slot-1c60aeac-f87b-4067-9769-7b4bcfa0b1be",
+          "name": "election_jurisdictions",
+          "value": "10000",
+          "unit": "jurisdictions",
+          "sentence": "the Final Rule would require 10,000 different election jurisdictions",
+          "occurrence_id": "story-figure:29287b39bac2b68812db8cc468225d7e76bf0baeaa69df5801c9b29e4a44dc04"
+        },
+        {
           "event_id": "event-mail-voting-2026-09-14-court-denies-stay",
           "period": "2026-09-14",
           "slot_id": "slot-1e630d9d-a0b7-4003-b5f3-1d4c22b1a79d",
@@ -676,6 +897,33 @@
       ]
     }
   ],
-  "same_name_not_compared": [],
-  "evaluated_at": "2026-09-19T06:39:45.298104Z"
+  "same_name_not_compared": [
+    {
+      "name": "injunction status",
+      "values": [
+        {
+          "event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+          "period": "2026-08-24",
+          "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+          "name": "injunction status",
+          "value": null,
+          "unit": null,
+          "sentence": "The injunction entered by the United States District Court for the District of Massachusetts in case No. 1:26–cv–11581 is stayed pending the disposition of the appeal in the United States Court of Appeals for the First Circuit and disposition of a petition for a writ of certiorari in this Court, if such a writ is timely sought.",
+          "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
+        },
+        {
+          "event_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
+          "period": "2026-09-06",
+          "slot_id": "slot-aabeb048-bfe3-43cc-8510-c44829e6d944",
+          "name": "injunction status",
+          "value": null,
+          "unit": null,
+          "sentence": null,
+          "occurrence_id": null
+        }
+      ],
+      "reason": "The units differ or are missing."
+    }
+  ],
+  "evaluated_at": "2026-10-10T02:45:28.859362Z"
 }

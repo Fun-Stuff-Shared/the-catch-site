@@ -1,0 +1,229 @@
+{
+  "current_state": {
+    "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d": {
+      "slot": "credit card rate",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398",
+      "heads": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Currently, the average credit card rate across all commercial bank accounts is 20.94%, down from 21.58% when Mr. Trump resumed office, according to Federal Reserve data.",
+      "span_check": "byte_exact",
+      "speaker": "Federal Reserve",
+      "figure": {
+        "unit": "percent",
+        "value": "20.94"
+      },
+      "as_of": "2026-10-09",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Federal Reserve commercial bank credit-card interest-rate data",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "basis": [
+        "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398"
+      ],
+      "last_confirmed": "2026-10-09",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "as_of": "2026-10-09",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "canonical_url": "https://cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/raw/article_2132.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1262688,
+      "gate_verdict": "COVER",
+      "id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "lang": "en",
+      "published_at": "2026-10-09T16:23:00Z",
+      "publisher": "CBS News",
+      "raw_sha256": "242f461f325e8238258899e86438ad1f48eb780af0f5207c0f1dc8e9dea114df",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.cbsnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z",
+      "source_family": "major_outlet",
+      "source_id": "cbs_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+      "updated_at": "2026-10-09T19:53:41Z",
+      "url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "verbatim_level": "article",
+      "log_seq": 1262689,
+      "recorded_at": "2026-10-10T00:08:20.571870Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-09",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-09T16:23:00Z",
+          "checkable_against": "Federal Reserve commercial bank credit-card interest-rate data",
+          "claim_type": "actual",
+          "envelope_seq": 1281210,
+          "event_id": "event-6927e1cf-252b-4e9c-9736-5a00aba29f30",
+          "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+          "figure": {
+            "unit": "percent",
+            "value": "20.94"
+          },
+          "fire_id": "356051938a4ee322431db2a29427c1a5",
+          "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Currently, the average credit card rate across all commercial bank accounts is 20.94%, down from 21.58% when Mr. Trump resumed office, according to Federal Reserve data.",
+          "refusal": null,
+          "retrieved_at": "2026-10-09T22:07:01.009631Z",
+          "root_id": "www.cbsnews.com",
+          "span_check": "byte_exact",
+          "span_end": 9669,
+          "span_start": 9500,
+          "speaker": "Federal Reserve",
+          "subject": "U.S. credit card interest rates",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+          "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+          "time_action": "corrects",
+          "log_seq": 1281211,
+          "recorded_at": "2026-10-10T02:29:01.125550Z",
+          "slot_id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+          "evidence_asserted_at": "2026-10-09T16:23:00Z",
+          "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+          "evidence_publisher": "CBS News",
+          "evidence_source_id": "cbs_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "58ad6bca62",
+  "evaluated_at": "2026-10-10T02:45:28.859362Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1280954,
+    "fire_id": "quarry-wire-scheduled-20261009T220053Z",
+    "follows": null,
+    "id": "event-6927e1cf-252b-4e9c-9736-5a00aba29f30",
+    "kind": "data report",
+    "label": "U.S. credit card interest rates October 2026",
+    "minted_at": "2026-10-10T02:27:38.135018Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+    "period": "2026-10-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "U.S. credit card interest rates",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261009T220053Z/1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae/143b7b57cb954acaac8c666f72752533.json",
+    "log_seq": 1280955
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398",
+      "envelope_seq": 1281474,
+      "event_id": "event-6927e1cf-252b-4e9c-9736-5a00aba29f30",
+      "id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "name": "credit card rate",
+      "refusal": null,
+      "log_seq": 1281475,
+      "recorded_at": "2026-10-10T02:31:57.226157Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-09",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-09T16:23:00Z",
+      "checkable_against": "Federal Reserve commercial bank credit-card interest-rate data",
+      "claim_type": "actual",
+      "envelope_seq": 1281210,
+      "event_id": "event-6927e1cf-252b-4e9c-9736-5a00aba29f30",
+      "evidence_id": "1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae",
+      "figure": {
+        "unit": "percent",
+        "value": "20.94"
+      },
+      "fire_id": "356051938a4ee322431db2a29427c1a5",
+      "id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Currently, the average credit card rate across all commercial bank accounts is 20.94%, down from 21.58% when Mr. Trump resumed office, according to Federal Reserve data.",
+      "refusal": null,
+      "retrieved_at": "2026-10-09T22:07:01.009631Z",
+      "root_id": "www.cbsnews.com",
+      "span_check": "byte_exact",
+      "span_end": 9669,
+      "span_start": 9500,
+      "speaker": "Federal Reserve",
+      "subject": "U.S. credit card interest rates",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261009T220053Z/text/article_2132.txt",
+      "text_sha256": "e2e8ca79c51df37867fc056e3058591d8d04d9bd77030aeb0891f7a49d57ac21",
+      "time_action": "corrects",
+      "log_seq": 1281211,
+      "recorded_at": "2026-10-10T02:29:01.125550Z",
+      "slot_id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "evidence_asserted_at": "2026-10-09T16:23:00Z",
+      "evidence_url": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+      "evidence_publisher": "CBS News",
+      "evidence_source_id": "cbs_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1281476,
+      "id": "attach-anchor-slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398",
+      "refusal": null,
+      "slot_id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "log_seq": 1281477,
+      "recorded_at": "2026-10-10T02:31:57.264953Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-6927e1cf-252b-4e9c-9736-5a00aba29f30",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-db54e9c9-84ce-4cfe-b638-c31d32452a3d",
+      "name": "credit card rate",
+      "value": "20.94",
+      "unit": "percent",
+      "sentence": "Currently, the average credit card rate across all commercial bank accounts is 20.94%, down from 21.58% when Mr. Trump resumed office, according to Federal Reserve data.",
+      "occurrence_id": "occurrence-1a7cb3f7db8eac66b41cb0214ee7c776d1e87c029e070b678aaab1d979b32bae-5dcc9c7fe321c398"
+    }
+  ]
+}

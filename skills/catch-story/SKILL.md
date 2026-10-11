@@ -41,16 +41,22 @@ A wrong angle costs a sentence here and a rewrite later.
 Write from the plan, not the brief. Draft each layer in your own words with the brief
 closed, saying what you know the way a reporter who has read everything would say it, then
 attach the citations. The record is what lets you say "since the war with Iran began in
-February, diesel has nearly doubled" in one clause; it is not a list of things to mention.
-A record's being admitted is never a reason to use it. Hold the plan's word budget (about
-900 words above the details). A question the plan does not answer is a plan change: send it
+February, U.S. diesel has risen by more than half" in one clause; it is not a list of things to mention.
+A record's being admitted is never a reason to use it. There is no word budget: a
+paragraph is there because it is a step in its layer's chain, answering the question the
+paragraph before it left, and one that answers none is cut. A question the plan does not answer is a plan change: send it
 to the orchestrator; do not answer it on the page yourself.
 
-The page reads top to bottom as the inverted pyramid, each layer complete enough to stop
-after:
+The page reads top to bottom as the inverted pyramid: the top tells what happened, and
+each layer below goes deeper into one part of it, true enough to stop after. These are the
+layers a story can have, not a form to fill: use the ones this story has, under headings in
+its own words ("One man's case", "Who still owes barrels"), and leave out any with nothing
+to tell. Every story has What happened.
 
-1. **What happened.** Three short paragraphs: the event, what changed and why it matters,
-   and where it stands. A reader who stops here can tell someone else the story.
+1. **What happened.** Three short paragraphs, in plain words: the event, what it means for
+   the people it touches, and where it stands. A reader who stops here knows what happened
+   and why it matters to them. A dispute or a catch is named at most, as plain fact, and
+   told in its own section; no side's claim is quoted or argued here.
 2. **The story in order.** The people it happens to, step by step. Open on who they are
    and what happened to them, not on the institution.
 3. **Why now.** The dated chain, opening on the motive the actors themselves state, with
@@ -155,13 +161,32 @@ publish without them.
 ## 5. Read it cold
 
 ```bash
-zsh skills/catch-story/scripts/reads.sh <story> <N>        # N = 1, 2, ...
+zsh skills/catch-story/scripts/thread.sh <story> <N>      # N = 1, 2, ...
+zsh skills/catch-story/scripts/reads.sh <story> <N>
 ```
 
-Two reads on the built page. A fresh reader (Claude, no context) reads the story once
-and retells it in five sentences, then lists where it got lost and what sounded machine
-written. GPT high checks every paragraph against its cited records and ends `ENTAILED`
-or `NOT ENTAILED`.
+Three reads on the built page. The thread read comes first: a fresh reader (Haiku) reads
+the story one paragraph at a time, never seeing what comes next, and after each says
+whether it answered the question they had, whether they could see why it came now, which
+words lost them, and what they want to know next. A fresh reader (Claude, no context) then
+reads the whole story once and retells it in five sentences. GPT-6 Sol (high), in
+ChatGPT Web, checks every paragraph against its cited records: the page and each cited passage
+go in the message, and the full text of every cited record goes as an attached file
+(`scripts/evidence_pack.py`, built from the rendered page; after the first round the page part
+holds only the blocks that changed). It ends `ENTAILED` or `NOT ENTAILED`.
+
+The thread read is one reader's reactions, not a list of orders: you are the reporter, and
+you judge each flag against what the story needs. Where a break is real, the fix is never
+inserting text where the reader stalled:
+- A question the reader carries unanswered through several paragraphs of one section: the
+  section answers it too late. Answer it where the section raises it, or say there that
+  nobody knows yet. A question What happened raises is answered by the section about that
+  thing, not by pulling the answer into What happened.
+- A section the reader calls a repeat retells the top instead of going deeper. Start it
+  where the top left off.
+- A paragraph the reader could not place: it is not the next step. Move it to the step
+  whose question it answers, or cut it.
+- Words that lost the reader: say it in plain words.
 
 Compare the retelling with the brief's five sentences. Where they differ, the page failed
 to carry that sentence: fix the paragraph that should have carried it. Every stall the
@@ -170,7 +195,10 @@ first checked against the record's own words, because the reviewer misreads reco
 (it once narrowed a treaty clause the page had right, and the author applied it in three
 places); a finding the record refutes is answered with the record and left out. A finding
 that holds is fixed at the record: the sentence says what the record says, or the record
-that says it is admitted with catch-record.
+that says it is admitted with catch-record. A finding names a problem; you write the fix,
+in the page's voice. Reviewer wording runs to hedges and qualifiers ("defer further
+releases pending an IEA assessment"), and pasted in, it turns the page into the reviewer's
+prose.
 
 A finding in either read that needs a fact the plan does not hold is a plan change, not an
 edit: send it to the orchestrator with the answer and its record, and add it only on its

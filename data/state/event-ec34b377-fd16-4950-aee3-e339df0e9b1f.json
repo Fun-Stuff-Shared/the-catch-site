@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-737846a7-df9f-4dce-b308-08f3993ae9ba": {
+      "slot": "Reds win-loss record",
+      "occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c",
+      "heads": [
+        "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Cincinnati Reds (64-71, fifth in the NL Central) vs. Chicago Cubs (76-59, second in the NL Central)",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "Reds win-loss record",
+        "value": "64-71"
+      },
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "MLB standings on 2026-08-29",
+      "evidence_id": "59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db",
+      "basis": [
+        "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
+      "as_of": "2026-08-29",
+      "occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -56,6 +92,7 @@
           "text_sha256": "6af75a7b15d329609bdc2cadb68f0bc8c79f9a32bcef9b3d2a71c491ec82258f",
           "log_seq": 442499,
           "recorded_at": "2026-09-05T21:14:38.231382Z",
+          "slot_id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
           "evidence_asserted_at": "2026-08-29T08:02:33Z",
           "evidence_url": "https://apnews.com/article/chicago-cubs-cincinnati-reds-illinois-baseball-athlete-injuries-71986bfc0bc040d8bbafe18da095bcd9",
           "evidence_publisher": "Associated Press",
@@ -65,8 +102,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 442496,
@@ -82,7 +119,34 @@
     "log_seq": 442497
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c",
+      "envelope_seq": 895165,
+      "event_id": "event-ec34b377-fd16-4950-aee3-e339df0e9b1f",
+      "id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
+      "name": "Reds win-loss record",
+      "refusal": null,
+      "log_seq": 895166,
+      "recorded_at": "2026-09-14T03:58:56.669110Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c",
+      "envelope_seq": 895163,
+      "event_id": "event-ec34b377-fd16-4950-aee3-e339df0e9b1f",
+      "id": "slot-dfc1ff98-8d61-459d-a836-952dff9a0d14",
+      "name": "Reds win-loss record",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/chicago-cubs-cincinnati-reds-illinois-baseball-athlete-injuries-71986bfc0bc040d8bbafe18da095bcd9",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 895164,
+      "recorded_at": "2026-09-14T03:58:32.981894Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -114,13 +178,28 @@
       "text_sha256": "6af75a7b15d329609bdc2cadb68f0bc8c79f9a32bcef9b3d2a71c491ec82258f",
       "log_seq": 442499,
       "recorded_at": "2026-09-05T21:14:38.231382Z",
+      "slot_id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
       "evidence_asserted_at": "2026-08-29T08:02:33Z",
       "evidence_url": "https://apnews.com/article/chicago-cubs-cincinnati-reds-illinois-baseball-athlete-injuries-71986bfc0bc040d8bbafe18da095bcd9",
       "evidence_publisher": "Associated Press",
       "evidence_source_id": "ap_wire_rss"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 895167,
+      "id": "attach-anchor-slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
+      "occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c",
+      "refusal": null,
+      "slot_id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
+      "log_seq": 895168,
+      "recorded_at": "2026-09-14T03:58:56.676048Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -137,5 +216,14 @@
   "root_id": "event-ec34b377-fd16-4950-aee3-e339df0e9b1f",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-737846a7-df9f-4dce-b308-08f3993ae9ba",
+      "name": "Reds win-loss record",
+      "value": "64-71",
+      "unit": "Reds win-loss record",
+      "sentence": "Cincinnati Reds (64-71, fifth in the NL Central) vs. Chicago Cubs (76-59, second in the NL Central)",
+      "occurrence_id": "occurrence-59c3a4dd9434eb53cbda3c4bdab9c46ef8e8022cdf37b191bfaec08d5adfb2db-60099a86ec252e4c"
+    }
+  ]
 }

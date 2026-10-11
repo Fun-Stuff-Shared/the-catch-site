@@ -1,0 +1,220 @@
+{
+  "current_state": {
+    "slot-0d347b12-684f-4d8c-a71b-5091ae13747d": {
+      "slot": "semiconductor price increase",
+      "occurrence_id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96",
+      "heads": [
+        "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Nvidia recently warned some of its largest customers that semiconductor prices would increase by as much as 15%.",
+      "span_check": "byte_exact",
+      "speaker": "Nvidia",
+      "figure": {
+        "unit": "percent",
+        "value": "15"
+      },
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Nvidia customer warnings and semiconductor pricing records",
+      "evidence_id": "63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618",
+      "basis": [
+        "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-26T11:15:00Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_2024.html",
+      "envelope_seq": 165857,
+      "id": "63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618",
+      "publisher": "Deutsche Welle",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:15.574162Z",
+      "root_evidence": "body:2628:2709",
+      "root_id": "www.dw.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "international_public",
+      "source_id": "dw_english",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2024.txt",
+      "text_sha256": "275d39bae0c74b21293558f41edb9cceca5d1683087049bbbcf110f9b1e9b989",
+      "title": "Gamescom 2026: What's next for the gaming industry?",
+      "url": "https://www.dw.com/en/gamescom-2026-what-s-next-for-the-gaming-industry/a-78502849?maca=en-rss-en-all-1573-xml-mrss",
+      "verbatim_level": "article",
+      "log_seq": 518768,
+      "recorded_at": "2026-09-06T01:33:23.405727Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-26T11:15:00Z",
+          "checkable_against": "Nvidia customer warnings and semiconductor pricing records",
+          "claim_type": "actual",
+          "envelope_seq": 778110,
+          "event_id": "event-e18f03a9-355e-4a86-b636-c0722fc47f37",
+          "evidence_id": "63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618",
+          "figure": {
+            "unit": "percent",
+            "value": "15"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Nvidia recently warned some of its largest customers that semiconductor prices would increase by as much as 15%.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:15:15.574162Z",
+          "root_id": "www.dw.com",
+          "span_check": "byte_exact",
+          "span_end": 4939,
+          "span_start": 4827,
+          "speaker": "Nvidia",
+          "subject": "Nvidia semiconductor prices",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2024.txt",
+          "text_sha256": "275d39bae0c74b21293558f41edb9cceca5d1683087049bbbcf110f9b1e9b989",
+          "log_seq": 778111,
+          "recorded_at": "2026-09-08T01:00:04.749175Z",
+          "slot_id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+          "evidence_asserted_at": "2026-08-26T11:15:00Z",
+          "evidence_url": "https://www.dw.com/en/gamescom-2026-what-s-next-for-the-gaming-industry/a-78502849?maca=en-rss-en-all-1573-xml-mrss",
+          "evidence_publisher": "Deutsche Welle",
+          "evidence_source_id": "dw_english"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 777908,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-e18f03a9-355e-4a86-b636-c0722fc47f37",
+    "kind": "warning",
+    "label": "Nvidia semiconductor price warning",
+    "minted_at": "2026-09-08T00:56:51.890469Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Nvidia semiconductor prices",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618/ff1c0e2ea8764cf083e9e62568b1831a.json",
+    "log_seq": 777909
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96",
+      "envelope_seq": 778398,
+      "event_id": "event-e18f03a9-355e-4a86-b636-c0722fc47f37",
+      "id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "name": "semiconductor price increase",
+      "refusal": null,
+      "log_seq": 778399,
+      "recorded_at": "2026-09-08T01:03:08.079829Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-26T11:15:00Z",
+      "checkable_against": "Nvidia customer warnings and semiconductor pricing records",
+      "claim_type": "actual",
+      "envelope_seq": 778110,
+      "event_id": "event-e18f03a9-355e-4a86-b636-c0722fc47f37",
+      "evidence_id": "63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618",
+      "figure": {
+        "unit": "percent",
+        "value": "15"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Nvidia recently warned some of its largest customers that semiconductor prices would increase by as much as 15%.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:15:15.574162Z",
+      "root_id": "www.dw.com",
+      "span_check": "byte_exact",
+      "span_end": 4939,
+      "span_start": 4827,
+      "speaker": "Nvidia",
+      "subject": "Nvidia semiconductor prices",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_2024.txt",
+      "text_sha256": "275d39bae0c74b21293558f41edb9cceca5d1683087049bbbcf110f9b1e9b989",
+      "log_seq": 778111,
+      "recorded_at": "2026-09-08T01:00:04.749175Z",
+      "slot_id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "evidence_asserted_at": "2026-08-26T11:15:00Z",
+      "evidence_url": "https://www.dw.com/en/gamescom-2026-what-s-next-for-the-gaming-industry/a-78502849?maca=en-rss-en-all-1573-xml-mrss",
+      "evidence_publisher": "Deutsche Welle",
+      "evidence_source_id": "dw_english"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 778400,
+      "id": "attach-anchor-slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "occurrence_id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96",
+      "refusal": null,
+      "slot_id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "log_seq": 778401,
+      "recorded_at": "2026-09-08T01:03:08.436799Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-e18f03a9-355e-4a86-b636-c0722fc47f37",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-0d347b12-684f-4d8c-a71b-5091ae13747d",
+      "name": "semiconductor price increase",
+      "value": "15",
+      "unit": "percent",
+      "sentence": "Nvidia recently warned some of its largest customers that semiconductor prices would increase by as much as 15%.",
+      "occurrence_id": "occurrence-63951f33e5b7ba10c4c8a558e8f12f5fd50265dead85e3932634e0696ec12618-c58235a6d61ebb96"
+    }
+  ]
+}

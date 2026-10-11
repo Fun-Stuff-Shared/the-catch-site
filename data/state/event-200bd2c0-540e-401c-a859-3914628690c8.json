@@ -1,0 +1,416 @@
+{
+  "current_state": {
+    "slot-fdaac425-5427-454b-8edd-91c711e97ceb": {
+      "slot": "stock price change",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "heads": [
+        "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The results also beat analysts’ expectations, and its stock rallied 7.5%.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "7.5"
+      },
+      "as_of": "2026-10-06",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Lamb Weston stock price and analyst earnings estimates for October 6, 2026",
+      "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+      "basis": [
+        "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a"
+      ],
+      "last_confirmed": "2026-10-06",
+      "freshness": "fresh"
+    },
+    "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc": {
+      "slot": "earnings status",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+      "heads": [
+        "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Lamb Weston, which sells frozen fries and other potato products, said on Tuesday that its profit and revenue during its latest quarter topped its projections, for example.",
+      "span_check": "byte_exact",
+      "speaker": "Lamb Weston",
+      "figure": {
+        "unit": "profit and revenue projections exceeded",
+        "value": "0"
+      },
+      "as_of": "2026-10-06",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Lamb Weston earnings release for its latest quarter",
+      "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+      "basis": [
+        "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415"
+      ],
+      "last_confirmed": "2026-10-06",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "as_of": "2026-10-06",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "as_of": "2026-10-06",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-07T04:04:10Z",
+      "canonical_url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/raw/article_8232.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1183080,
+      "gate_verdict": "COVER",
+      "id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+      "lang": "en",
+      "published_at": "2026-10-07T04:04:10Z",
+      "publisher": "Associated Press",
+      "raw_sha256": "67b2b5b504a67812d464c6dc66d2c1ebf534e495d073fce33c97aef00ca225d5",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:16:23.767867Z",
+      "root_evidence": "publisher_host",
+      "root_id": "apnews.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z",
+      "source_family": "wire_service",
+      "source_id": "ap_wire_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_8232.txt",
+      "text_sha256": "789a0d880993700ab2aa50647e745623c6f1b03e64a84fc111b0c48ba7570eb4",
+      "title": "World shares retreat after US stocks hit records",
+      "updated_at": "2026-10-07T08:55:35.711000Z",
+      "url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+      "verbatim_level": "article",
+      "log_seq": 1183081,
+      "recorded_at": "2026-10-07T10:31:06.276865Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-07T04:04:10Z",
+          "checkable_against": "Lamb Weston stock price and analyst earnings estimates for October 6, 2026",
+          "claim_type": "actual",
+          "envelope_seq": 1198096,
+          "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+          "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+          "figure": {
+            "unit": "percent",
+            "value": "7.5"
+          },
+          "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+          "id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "The results also beat analysts’ expectations, and its stock rallied 7.5%.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:16:23.767867Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2592,
+          "span_start": 2517,
+          "speaker": "outlet's own",
+          "subject": "Lamb Weston latest-quarter earnings",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_8232.txt",
+          "text_sha256": "789a0d880993700ab2aa50647e745623c6f1b03e64a84fc111b0c48ba7570eb4",
+          "time_action": "corrects",
+          "log_seq": 1198097,
+          "recorded_at": "2026-10-07T23:21:45.201797Z",
+          "slot_id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+          "evidence_asserted_at": "2026-10-07T04:04:10Z",
+          "evidence_url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-06",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-07T04:04:10Z",
+          "checkable_against": "Lamb Weston earnings release for its latest quarter",
+          "claim_type": "actual",
+          "envelope_seq": 1198152,
+          "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+          "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+          "figure": {
+            "unit": "profit and revenue projections exceeded",
+            "value": "0"
+          },
+          "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+          "id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+          "judge": "cli-proxy/gpt-5.6-luna",
+          "quote_span": "Lamb Weston, which sells frozen fries and other potato products, said on Tuesday that its profit and revenue during its latest quarter topped its projections, for example.",
+          "refusal": null,
+          "retrieved_at": "2026-10-07T10:16:23.767867Z",
+          "root_id": "apnews.com",
+          "span_check": "byte_exact",
+          "span_end": 2516,
+          "span_start": 2345,
+          "speaker": "Lamb Weston",
+          "subject": "Lamb Weston latest-quarter earnings",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_8232.txt",
+          "text_sha256": "789a0d880993700ab2aa50647e745623c6f1b03e64a84fc111b0c48ba7570eb4",
+          "time_action": "corrects",
+          "log_seq": 1198153,
+          "recorded_at": "2026-10-07T23:22:04.784369Z",
+          "slot_id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+          "evidence_asserted_at": "2026-10-07T04:04:10Z",
+          "evidence_url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+          "evidence_publisher": "Associated Press",
+          "evidence_source_id": "ap_wire_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "916043f7f8",
+  "evaluated_at": "2026-10-08T00:44:31.544030Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1197914,
+    "fire_id": "quarry-wire-scheduled-20261007T100043Z",
+    "follows": null,
+    "id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+    "kind": "earnings report",
+    "label": "Lamb Weston latest-quarter earnings October 6 2026",
+    "minted_at": "2026-10-07T23:20:34.031306Z",
+    "minted_by": "cli-proxy/gpt-5.6-luna",
+    "minted_evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+    "period": "2026-10-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "Lamb Weston latest-quarter earnings",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261007T100043Z/5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d/0c76b6b7714d43e4b2df20b5cb545321.json",
+    "log_seq": 1197915
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "envelope_seq": 1200834,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "id": "slot-3a0b9ea7-6e39-473e-a600-d018c5a3dd29",
+      "name": "stock price change",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 1200835,
+      "recorded_at": "2026-10-07T23:52:04.713715Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "envelope_seq": 1198258,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "id": "slot-b215199e-54ba-49be-9bee-840ab7b7173c",
+      "name": "Lamb Weston stock gain",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 1198259,
+      "recorded_at": "2026-10-07T23:22:51.676420Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+      "envelope_seq": 1200836,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "id": "slot-b2b88d97-53c9-4b70-8ba0-a0d9bf51a93e",
+      "name": "earnings status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+        "source_id": "ap_wire_rss"
+      },
+      "log_seq": 1200837,
+      "recorded_at": "2026-10-07T23:52:04.731635Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+      "envelope_seq": 1200875,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "name": "earnings status",
+      "refusal": null,
+      "log_seq": 1200876,
+      "recorded_at": "2026-10-07T23:52:51.835325Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "envelope_seq": 1200870,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "name": "stock price change",
+      "refusal": null,
+      "log_seq": 1200871,
+      "recorded_at": "2026-10-07T23:52:51.545463Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-07T04:04:10Z",
+      "checkable_against": "Lamb Weston stock price and analyst earnings estimates for October 6, 2026",
+      "claim_type": "actual",
+      "envelope_seq": 1198096,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+      "figure": {
+        "unit": "percent",
+        "value": "7.5"
+      },
+      "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+      "id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "The results also beat analysts’ expectations, and its stock rallied 7.5%.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:16:23.767867Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2592,
+      "span_start": 2517,
+      "speaker": "outlet's own",
+      "subject": "Lamb Weston latest-quarter earnings",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_8232.txt",
+      "text_sha256": "789a0d880993700ab2aa50647e745623c6f1b03e64a84fc111b0c48ba7570eb4",
+      "time_action": "corrects",
+      "log_seq": 1198097,
+      "recorded_at": "2026-10-07T23:21:45.201797Z",
+      "slot_id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "evidence_asserted_at": "2026-10-07T04:04:10Z",
+      "evidence_url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-06",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-07T04:04:10Z",
+      "checkable_against": "Lamb Weston earnings release for its latest quarter",
+      "claim_type": "actual",
+      "envelope_seq": 1198152,
+      "event_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+      "evidence_id": "5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d",
+      "figure": {
+        "unit": "profit and revenue projections exceeded",
+        "value": "0"
+      },
+      "fire_id": "a62189f239fd65c4bda9fec74103fe7e",
+      "id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+      "judge": "cli-proxy/gpt-5.6-luna",
+      "quote_span": "Lamb Weston, which sells frozen fries and other potato products, said on Tuesday that its profit and revenue during its latest quarter topped its projections, for example.",
+      "refusal": null,
+      "retrieved_at": "2026-10-07T10:16:23.767867Z",
+      "root_id": "apnews.com",
+      "span_check": "byte_exact",
+      "span_end": 2516,
+      "span_start": 2345,
+      "speaker": "Lamb Weston",
+      "subject": "Lamb Weston latest-quarter earnings",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261007T100043Z/text/article_8232.txt",
+      "text_sha256": "789a0d880993700ab2aa50647e745623c6f1b03e64a84fc111b0c48ba7570eb4",
+      "time_action": "corrects",
+      "log_seq": 1198153,
+      "recorded_at": "2026-10-07T23:22:04.784369Z",
+      "slot_id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "evidence_asserted_at": "2026-10-07T04:04:10Z",
+      "evidence_url": "https://apnews.com/article/stocks-markets-rates-oil-earnings-44b75c188756038371cf3112ede9cee8",
+      "evidence_publisher": "Associated Press",
+      "evidence_source_id": "ap_wire_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1200877,
+      "id": "attach-anchor-slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415",
+      "refusal": null,
+      "slot_id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "log_seq": 1200878,
+      "recorded_at": "2026-10-07T23:52:51.857894Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1200872,
+      "id": "attach-anchor-slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a",
+      "refusal": null,
+      "slot_id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "log_seq": 1200873,
+      "recorded_at": "2026-10-07T23:52:51.578981Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-200bd2c0-540e-401c-a859-3914628690c8",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-fdaac425-5427-454b-8edd-91c711e97ceb",
+      "name": "stock price change",
+      "value": "7.5",
+      "unit": "percent",
+      "sentence": "The results also beat analysts’ expectations, and its stock rallied 7.5%.",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-2bb4a3188dc9f35a"
+    },
+    {
+      "slot_id": "slot-cec9950c-d12b-4585-89ac-a3ce2db368bc",
+      "name": "earnings status",
+      "value": "0",
+      "unit": "profit and revenue projections exceeded",
+      "sentence": "Lamb Weston, which sells frozen fries and other potato products, said on Tuesday that its profit and revenue during its latest quarter topped its projections, for example.",
+      "occurrence_id": "occurrence-5c4ea9502a0ef4dcc44ed4296f3edbdafaa1e8669f997eb97796428cb457be2d-8868359bb36a5415"
+    }
+  ]
+}

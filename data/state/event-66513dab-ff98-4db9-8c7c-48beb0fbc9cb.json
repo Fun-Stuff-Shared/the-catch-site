@@ -24,6 +24,31 @@
       ],
       "last_confirmed": "2026-07-13",
       "freshness": "stale"
+    },
+    "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c": {
+      "slot": "order date",
+      "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e",
+      "heads": [
+        "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In a court filing Friday, Trump said he is appealing the July 13 order from federal Judge Kathleen Williams, which imposed nonmonetary sanctions over the \"bad faith\" lawsuit that led to the settlement.",
+      "span_check": "byte_exact",
+      "speaker": "Donald Trump",
+      "figure": null,
+      "as_of": "2026-07-31",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Trump notice of appeal and Judge Kathleen Williams's July 13 order",
+      "evidence_id": "5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b",
+      "basis": [
+        "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e"
+      ],
+      "last_confirmed": "2026-07-31",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -32,6 +57,12 @@
       "slot_id": "slot-78502617-b3c5-4c1d-ad07-a7a81c4bb1c5",
       "as_of": "2026-07-13",
       "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-5c7456f8081ab42a"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
+      "as_of": "2026-07-31",
+      "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e"
     }
   ],
   "evidence": [
@@ -85,6 +116,7 @@
           "text_sha256": "9fd89650c849ea6b95dfd8958cd2f62f73434a36b0a14fca2a63c78137fdf7a7",
           "log_seq": 750722,
           "recorded_at": "2026-09-07T07:44:22.474465Z",
+          "slot_id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
           "evidence_asserted_at": null,
           "evidence_url": "https://www.cnbc.com/2026/08/03/todd-blanche-doj-ag-senate-cornyn.html",
           "evidence_publisher": "CNBC",
@@ -128,8 +160,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750505,
@@ -151,6 +183,21 @@
   "publishable": true,
   "slots": [
     {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e",
+      "envelope_seq": 993275,
+      "event_id": "event-66513dab-ff98-4db9-8c7c-48beb0fbc9cb",
+      "id": "slot-07f2c833-1c57-4a81-9284-cf934c961907",
+      "name": "order date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/08/03/todd-blanche-doj-ag-senate-cornyn.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 993276,
+      "recorded_at": "2026-09-28T02:09:51.205793Z"
+    },
+    {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-5c7456f8081ab42a",
       "envelope_seq": 751013,
@@ -160,6 +207,17 @@
       "refusal": null,
       "log_seq": 751014,
       "recorded_at": "2026-09-07T07:47:43.289654Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e",
+      "envelope_seq": 993277,
+      "event_id": "event-66513dab-ff98-4db9-8c7c-48beb0fbc9cb",
+      "id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
+      "name": "order date",
+      "refusal": null,
+      "log_seq": 993278,
+      "recorded_at": "2026-09-28T02:10:00.015645Z"
     }
   ],
   "occurrences": [
@@ -191,6 +249,7 @@
       "text_sha256": "9fd89650c849ea6b95dfd8958cd2f62f73434a36b0a14fca2a63c78137fdf7a7",
       "log_seq": 750722,
       "recorded_at": "2026-09-07T07:44:22.474465Z",
+      "slot_id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
       "evidence_asserted_at": null,
       "evidence_url": "https://www.cnbc.com/2026/08/03/todd-blanche-doj-ag-senate-cornyn.html",
       "evidence_publisher": "CNBC",
@@ -244,6 +303,19 @@
       "recorded_at": "2026-09-07T07:47:43.531056Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 993279,
+      "id": "attach-anchor-slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
+      "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e",
+      "refusal": null,
+      "slot_id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
+      "log_seq": 993280,
+      "recorded_at": "2026-09-28T02:10:00.022862Z",
+      "family": "identity",
+      "label": "attach"
     }
   ],
   "revision_timeline": {
@@ -270,6 +342,14 @@
       "unit": null,
       "sentence": "The sanctions include referring one of the president's lawyers to the Florida Bar for possible disciplinary action.",
       "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-5c7456f8081ab42a"
+    },
+    {
+      "slot_id": "slot-e3bb67f9-365f-494f-b99a-2ac7bf3aa96c",
+      "name": "order date",
+      "value": null,
+      "unit": null,
+      "sentence": "In a court filing Friday, Trump said he is appealing the July 13 order from federal Judge Kathleen Williams, which imposed nonmonetary sanctions over the \"bad faith\" lawsuit that led to the settlement.",
+      "occurrence_id": "occurrence-5947e6cd19d98ea0869ce7ae3e1fcc3f21e6bc115d4754dc1d1bb25dde98fd8b-2ec71bdec59be43e"
     }
   ]
 }

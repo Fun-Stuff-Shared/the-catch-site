@@ -2,16 +2,16 @@
   "current_state": {
     "slot-af028b78-afee-473f-8f7e-644b0e049850": {
       "slot": "application status",
-      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd",
       "heads": [
-        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780"
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd"
       ],
       "roots": 1,
       "primary": false,
       "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
-      "quote_span": "Application (26A124) granted by the Court.",
+      "quote_span": "Application (26A124) referred to the Court.",
       "span_check": "byte_exact",
       "speaker": "Supreme Court of the United States",
       "figure": null,
@@ -20,13 +20,45 @@
       "checkable_against": "Supreme Court docket No. 26A124",
       "evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
       "basis": [
-        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780"
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780",
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd"
+      ],
+      "last_confirmed": "2026-07-27",
+      "freshness": "stale"
+    },
+    "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8": {
+      "slot": "injunction status",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea",
+      "heads": [
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The injunction entered by the United States District Court for the District of Massachusetts in case No. 1:26–cv–11581 is stayed pending the disposition of the appeal in the United States Court of Appeals for the First Circuit and disposition of a petition for a writ of certiorari in this Court, if such a writ is timely sought.",
+      "span_check": "byte_exact",
+      "speaker": "Supreme Court of the United States",
+      "figure": null,
+      "as_of": "2026-07-27",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Supreme Court docket No. 26A124 and the Supreme Court's August 24, 2026 order",
+      "evidence_id": "story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595",
+      "basis": [
+        "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
       ],
       "last_confirmed": "2026-07-27",
       "freshness": "stale"
     }
   },
   "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+      "as_of": "2026-07-27",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
+    },
     {
       "kind": "first_value",
       "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
@@ -86,6 +118,7 @@
           "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
           "log_seq": 830540,
           "recorded_at": "2026-09-08T19:45:01.644329Z",
+          "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
           "evidence_asserted_at": "2026-07-27T00:00:00Z",
           "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
           "evidence_publisher": "Supreme Court of the United States",
@@ -151,6 +184,7 @@
           "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
           "log_seq": 830536,
           "recorded_at": "2026-09-08T19:44:52.943365Z",
+          "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
           "evidence_asserted_at": "2026-07-27T00:00:00Z",
           "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
           "evidence_publisher": "Supreme Court of the United States",
@@ -160,8 +194,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0a2f62b478",
-  "evaluated_at": "2026-09-18T04:54:23.952825Z",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-04T23:37:55.211343Z",
   "event": {
     "accepted": true,
     "envelope_seq": 830513,
@@ -182,6 +216,32 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea",
+      "envelope_seq": 914722,
+      "event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+      "id": "slot-07b6ff04-7824-45fa-8906-b236cf3c6f44",
+      "name": "injunction status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+        "source_id": "scotus-26a124-docket"
+      },
+      "log_seq": 914723,
+      "recorded_at": "2026-09-20T09:58:03.966603Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea",
+      "envelope_seq": 914724,
+      "event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+      "id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+      "name": "injunction status",
+      "refusal": null,
+      "log_seq": 914725,
+      "recorded_at": "2026-09-20T09:58:24.463614Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780",
@@ -222,6 +282,7 @@
       "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
       "log_seq": 830540,
       "recorded_at": "2026-09-08T19:45:01.644329Z",
+      "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
       "evidence_asserted_at": "2026-07-27T00:00:00Z",
       "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
       "evidence_publisher": "Supreme Court of the United States",
@@ -287,6 +348,7 @@
       "text_sha256": "9a453c55dd38597f50db524d20d6df38c438767134b132d6fe7369dadd90fc52",
       "log_seq": 830536,
       "recorded_at": "2026-09-08T19:44:52.943365Z",
+      "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
       "evidence_asserted_at": "2026-07-27T00:00:00Z",
       "evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
       "evidence_publisher": "Supreme Court of the United States",
@@ -294,6 +356,32 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 914719,
+      "id": "attach-60ae47ce-49da-4f16-a433-12bdd0e364d2",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd",
+      "refusal": null,
+      "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
+      "log_seq": 914720,
+      "recorded_at": "2026-09-20T09:58:01.175911Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 914726,
+      "id": "attach-anchor-slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea",
+      "refusal": null,
+      "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+      "log_seq": 914727,
+      "recorded_at": "2026-09-20T09:58:24.471419Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": true,
       "edge_kind": "attach",
@@ -306,32 +394,91 @@
       "recorded_at": "2026-09-08T19:45:29.086441Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1116176,
+      "event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "referred to the Court"
+        },
+        "time_action": "unknown",
+        "value_relation": "narrower"
+      },
+      "from_event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+      "from_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd",
+      "id": "edge-relation-c7a260811b8f12a5a7ba20a6",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "refines",
+      "reason": "Both statements originate from the same Supreme Court docket. 'Referred to the Court' is a preliminary stage preceding the 'granted' status.",
+      "refusal": null,
+      "to_event_id": "event-25dbeadc-8b74-4046-ac72-899711e7fc2c",
+      "to_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780",
+      "log_seq": 1116177,
+      "recorded_at": "2026-10-04T11:21:28.366948Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
+    "changes_checked_at": "2026-07-27T00:00:00Z",
     "confirmations": [],
     "quote_rows_unlinked": {
       "count": 0,
       "slot_ids": []
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
+        "relation": "refines",
+        "edge_id": "edge-relation-c7a260811b8f12a5a7ba20a6",
+        "earlier_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780",
+        "later_occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd",
+        "earlier_evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+        "later_evidence_url": "https://www.supremecourt.gov/docket/docketfiles/html/public/26A124.html",
+        "sentence": "On 2026-07-27, Supreme Court of the United States reported “Application (26A124) granted by the Court.”; on the same day, Supreme Court of the United States reported “Application (26A124) referred to the Court.”."
+      }
+    ]
   },
   "status": "published",
   "desk": null,
   "follows": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
   "root_id": "event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block",
   "changed_since_previous": [],
-  "same_name_not_compared": [],
+  "same_name_not_compared": [
+    {
+      "name": "injunction status",
+      "previous": {
+        "slot_id": "slot-aabeb048-bfe3-43cc-8510-c44829e6d944",
+        "name": "injunction status",
+        "value": null,
+        "unit": null,
+        "sentence": null,
+        "occurrence_id": null
+      },
+      "current": {
+        "slot_id": "slot-9705d51e-cf45-4bd2-85fa-8d7d3c5d10a8",
+        "name": "injunction status",
+        "value": null,
+        "unit": null,
+        "sentence": "The injunction entered by the United States District Court for the District of Massachusetts in case No. 1:26–cv–11581 is stayed pending the disposition of the appeal in the United States Court of Appeals for the First Circuit and disposition of a petition for a writ of certiorari in this Court, if such a writ is timely sought.",
+        "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-ad0ecdaf9a8a42ea"
+      },
+      "reason": "The units differ or are missing."
+    }
+  ],
   "new_slots": [
     {
       "slot_id": "slot-af028b78-afee-473f-8f7e-644b0e049850",
       "name": "application status",
       "value": null,
       "unit": null,
-      "sentence": "Application (26A124) granted by the Court.",
-      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-cfc347545eda1780"
+      "sentence": "Application (26A124) referred to the Court.",
+      "occurrence_id": "occurrence-story-pin:af1dafec4b7202ba84ab9c93e46952de47b88ea567236dd442f3fb78c2e48595-eecfc788ff62d1cd"
     }
   ]
 }

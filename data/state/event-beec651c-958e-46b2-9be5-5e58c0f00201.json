@@ -1,0 +1,522 @@
+{
+  "current_state": {
+    "slot-c591d144-0bfa-448f-a5da-e202cefae482": {
+      "slot": "shutdown duration",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a",
+      "heads": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Earlier this week it emerged that the UK’s biggest refinery, Fawley in Hampshire, is set to shut down for up to 10 weeks for planned maintenance.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "weeks",
+        "value": "10"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Fawley refinery maintenance schedule",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "basis": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    },
+    "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2": {
+      "slot": "refinery count",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69",
+      "heads": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The UK had 18 refineries in the 1980s but now has only four.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "refineries",
+        "value": "4"
+      },
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "UK refinery counts and historical industry records",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "basis": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69"
+      ],
+      "last_confirmed": "2026-10-02",
+      "freshness": "fresh"
+    },
+    "slot-b6af7f7c-0072-4789-8a84-292d1758049d": {
+      "slot": "1980s refinery count",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+      "heads": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The UK had 18 refineries in the 1980s",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "refineries",
+        "value": "18"
+      },
+      "as_of": "1980",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "UK historical refinery counts",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "basis": [
+        "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c"
+      ],
+      "last_confirmed": "1980",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "as_of": "1980",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "as_of": "2026-10-02",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "canonical_url": "https://theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/raw/article_0998.html",
+      "desk": "government and politics",
+      "envelope_seq": 1030036,
+      "gate_verdict": "COVER",
+      "id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "lang": "en",
+      "published_at": "2026-10-02T09:09:21Z",
+      "publisher": "The Guardian",
+      "raw_sha256": "53eaca92e3464d42155ed6fce0bb6547f09d9839c148e01e3df2c1de25e72de4",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.theguardian.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z",
+      "source_family": "major_outlet",
+      "source_id": "guardian_world_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "title": "UK is not facing diesel shortage despite fears of Trump export ban, minister says",
+      "updated_at": "2026-10-02T09:09:40Z",
+      "url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "verbatim_level": "article",
+      "log_seq": 1030037,
+      "recorded_at": "2026-10-02T10:29:01.888984Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T09:09:21Z",
+          "checkable_against": "Fawley refinery maintenance schedule",
+          "claim_type": "actual",
+          "envelope_seq": 1057079,
+          "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+          "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+          "figure": {
+            "unit": "weeks",
+            "value": "10"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Earlier this week it emerged that the UK’s biggest refinery, Fawley in Hampshire, is set to shut down for up to 10 weeks for planned maintenance.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:54.416341Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 1283,
+          "span_start": 1136,
+          "speaker": "outlet's own",
+          "subject": "Fawley refinery",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+          "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+          "log_seq": 1057080,
+          "recorded_at": "2026-10-03T07:13:27.607920Z",
+          "slot_id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+          "evidence_asserted_at": "2026-10-02T09:09:21Z",
+          "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-02",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-10-02T09:09:21Z",
+          "checkable_against": "UK refinery counts and historical industry records",
+          "claim_type": "actual",
+          "envelope_seq": 1057085,
+          "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+          "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+          "figure": {
+            "unit": "refineries",
+            "value": "4"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The UK had 18 refineries in the 1980s but now has only four.",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:54.416341Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 1344,
+          "span_start": 1284,
+          "speaker": "outlet's own",
+          "subject": "Fawley refinery",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+          "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+          "log_seq": 1057086,
+          "recorded_at": "2026-10-03T07:13:28.541811Z",
+          "slot_id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+          "evidence_asserted_at": "2026-10-02T09:09:21Z",
+          "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "1980",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-02T09:09:21Z",
+          "checkable_against": "UK historical refinery counts",
+          "claim_type": "actual",
+          "envelope_seq": 1057183,
+          "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+          "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+          "figure": {
+            "unit": "refineries",
+            "value": "18"
+          },
+          "fire_id": "2d6f16179a03873be6a0406cccba8871",
+          "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "The UK had 18 refineries in the 1980s",
+          "refusal": null,
+          "retrieved_at": "2026-10-02T10:03:54.416341Z",
+          "root_id": "www.theguardian.com",
+          "span_check": "byte_exact",
+          "span_end": 1321,
+          "span_start": 1284,
+          "speaker": "outlet's own",
+          "subject": "Fawley refinery",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+          "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+          "log_seq": 1057184,
+          "recorded_at": "2026-10-03T07:14:34.341229Z",
+          "slot_id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+          "evidence_asserted_at": "2026-10-02T09:09:21Z",
+          "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+          "evidence_publisher": "The Guardian",
+          "evidence_source_id": "guardian_world_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "2d23db4571",
+  "evaluated_at": "2026-10-05T21:27:39.147139Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1056851,
+    "fire_id": "quarry-wire-scheduled-20261002T100043Z",
+    "follows": null,
+    "id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+    "kind": "planned shutdown",
+    "label": "Fawley refinery planned maintenance shutdown",
+    "minted_at": "2026-10-03T07:12:01.803860Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+    "period": "2026-09",
+    "refusal": null,
+    "status": "published",
+    "subject": "Fawley refinery",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261002T100043Z/c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa/a20b7b7336584271a27afa8806454dd0.json",
+    "log_seq": 1056852
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+      "envelope_seq": 1137521,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "id": "slot-4d6d9040-b661-4f89-83a1-b560baff25c6",
+      "name": "1980s refinery count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+        "source_id": "guardian_world_rss"
+      },
+      "log_seq": 1137522,
+      "recorded_at": "2026-10-05T20:48:36.511683Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+      "envelope_seq": 1137528,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "name": "1980s refinery count",
+      "refusal": null,
+      "log_seq": 1137529,
+      "recorded_at": "2026-10-05T20:48:55.829183Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69",
+      "envelope_seq": 1057171,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "name": "refinery count",
+      "refusal": null,
+      "log_seq": 1057172,
+      "recorded_at": "2026-10-03T07:14:25.528547Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a",
+      "envelope_seq": 1057167,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "name": "shutdown duration",
+      "refusal": null,
+      "log_seq": 1057168,
+      "recorded_at": "2026-10-03T07:14:25.087259Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "checkable_against": "Fawley refinery maintenance schedule",
+      "claim_type": "actual",
+      "envelope_seq": 1057079,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "figure": {
+        "unit": "weeks",
+        "value": "10"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Earlier this week it emerged that the UK’s biggest refinery, Fawley in Hampshire, is set to shut down for up to 10 weeks for planned maintenance.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 1283,
+      "span_start": 1136,
+      "speaker": "outlet's own",
+      "subject": "Fawley refinery",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "log_seq": 1057080,
+      "recorded_at": "2026-10-03T07:13:27.607920Z",
+      "slot_id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "evidence_asserted_at": "2026-10-02T09:09:21Z",
+      "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-02",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "checkable_against": "UK refinery counts and historical industry records",
+      "claim_type": "actual",
+      "envelope_seq": 1057085,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "figure": {
+        "unit": "refineries",
+        "value": "4"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The UK had 18 refineries in the 1980s but now has only four.",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 1344,
+      "span_start": 1284,
+      "speaker": "outlet's own",
+      "subject": "Fawley refinery",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "log_seq": 1057086,
+      "recorded_at": "2026-10-03T07:13:28.541811Z",
+      "slot_id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "evidence_asserted_at": "2026-10-02T09:09:21Z",
+      "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "1980",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-02T09:09:21Z",
+      "checkable_against": "UK historical refinery counts",
+      "claim_type": "actual",
+      "envelope_seq": 1057183,
+      "event_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+      "evidence_id": "c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa",
+      "figure": {
+        "unit": "refineries",
+        "value": "18"
+      },
+      "fire_id": "2d6f16179a03873be6a0406cccba8871",
+      "id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "The UK had 18 refineries in the 1980s",
+      "refusal": null,
+      "retrieved_at": "2026-10-02T10:03:54.416341Z",
+      "root_id": "www.theguardian.com",
+      "span_check": "byte_exact",
+      "span_end": 1321,
+      "span_start": 1284,
+      "speaker": "outlet's own",
+      "subject": "Fawley refinery",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261002T100043Z/text/article_0998.txt",
+      "text_sha256": "1cedf1e9070c1bde1432f93b9e785301b597f47bcba16d085758d73ebb5ba5fb",
+      "log_seq": 1057184,
+      "recorded_at": "2026-10-03T07:14:34.341229Z",
+      "slot_id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "evidence_asserted_at": "2026-10-02T09:09:21Z",
+      "evidence_url": "https://www.theguardian.com/business/2026/oct/02/uk-is-not-facing-diesel-shortage-despite-fears-of-trump-export-ban-minister-says",
+      "evidence_publisher": "The Guardian",
+      "evidence_source_id": "guardian_world_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1137530,
+      "id": "attach-anchor-slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c",
+      "refusal": null,
+      "slot_id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "log_seq": 1137531,
+      "recorded_at": "2026-10-05T20:48:56.009987Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1057173,
+      "id": "attach-anchor-slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69",
+      "refusal": null,
+      "slot_id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "log_seq": 1057174,
+      "recorded_at": "2026-10-03T07:14:25.554366Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1057169,
+      "id": "attach-anchor-slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a",
+      "refusal": null,
+      "slot_id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "log_seq": 1057170,
+      "recorded_at": "2026-10-03T07:14:25.113369Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "government and politics",
+  "follows": null,
+  "root_id": "event-beec651c-958e-46b2-9be5-5e58c0f00201",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-c591d144-0bfa-448f-a5da-e202cefae482",
+      "name": "shutdown duration",
+      "value": "10",
+      "unit": "weeks",
+      "sentence": "Earlier this week it emerged that the UK’s biggest refinery, Fawley in Hampshire, is set to shut down for up to 10 weeks for planned maintenance.",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-79b5496c6fa65a8a"
+    },
+    {
+      "slot_id": "slot-c2e53ee1-5082-4dac-81d3-55376099b3b2",
+      "name": "refinery count",
+      "value": "4",
+      "unit": "refineries",
+      "sentence": "The UK had 18 refineries in the 1980s but now has only four.",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-b7c50021a45e8d69"
+    },
+    {
+      "slot_id": "slot-b6af7f7c-0072-4789-8a84-292d1758049d",
+      "name": "1980s refinery count",
+      "value": "18",
+      "unit": "refineries",
+      "sentence": "The UK had 18 refineries in the 1980s",
+      "occurrence_id": "occurrence-c3ba8def2f1f161161a123913a66a0b604b5d366b2687376bcf977f9d21d24fa-ec9e2af9af4b015c"
+    }
+  ]
+}

@@ -1,6 +1,70 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-cf02224e-6715-4b4f-9711-932329884e1f": {
+      "slot": "official pitches received",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55",
+      "heads": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Imax held preliminary talks with potential buyers earlier this year, but as of May hadn't fielded any official pitches, CNBC reported at the time .",
+      "span_check": "byte_exact",
+      "speaker": "CNBC",
+      "figure": null,
+      "as_of": "2026-05",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Imax deal-process records and potential-buyer communications",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "basis": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55"
+      ],
+      "last_confirmed": "2026-05",
+      "freshness": "stale"
+    },
+    "slot-0fa77fce-0726-469e-a247-aa356f163e4b": {
+      "slot": "sale process status",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff",
+      "heads": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Imax hasn't hired new bankers and doesn't have a formalized pitch book, according to a person familiar with the company, who spoke on the condition of anonymity to discuss confidential matters.",
+      "span_check": "byte_exact",
+      "speaker": "person familiar with Imax",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Imax investment-bank engagement records and sale-process materials",
+      "evidence_id": "5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee",
+      "basis": [
+        "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
+      "as_of": "2026-05",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -54,6 +118,7 @@
           "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
           "log_seq": 750674,
           "recorded_at": "2026-09-07T07:43:50.411315Z",
+          "slot_id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
           "evidence_asserted_at": "2026-08-28T11:54:53Z",
           "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
           "evidence_publisher": "CNBC",
@@ -87,6 +152,7 @@
           "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
           "log_seq": 750662,
           "recorded_at": "2026-09-07T07:43:43.713643Z",
+          "slot_id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
           "evidence_asserted_at": "2026-08-28T11:54:53Z",
           "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
           "evidence_publisher": "CNBC",
@@ -96,8 +162,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750539,
@@ -117,7 +183,60 @@
     "log_seq": 750540
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff",
+      "envelope_seq": 990042,
+      "event_id": "event-6107cba4-d069-451f-8838-ce052c22c3ce",
+      "id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
+      "name": "sale process status",
+      "refusal": null,
+      "log_seq": 990043,
+      "recorded_at": "2026-09-27T05:56:01.460014Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff",
+      "envelope_seq": 990035,
+      "event_id": "event-6107cba4-d069-451f-8838-ce052c22c3ce",
+      "id": "slot-4b0a8838-48dd-48d4-bff9-aef87c0e66a5",
+      "name": "sale process status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 990036,
+      "recorded_at": "2026-09-27T05:55:23.926860Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55",
+      "envelope_seq": 990033,
+      "event_id": "event-6107cba4-d069-451f-8838-ce052c22c3ce",
+      "id": "slot-75255884-c990-4c06-a082-d01f7088ca8d",
+      "name": "official pitches received",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
+        "source_id": "cnbc_news_rss"
+      },
+      "log_seq": 990034,
+      "recorded_at": "2026-09-27T05:55:21.908966Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55",
+      "envelope_seq": 990037,
+      "event_id": "event-6107cba4-d069-451f-8838-ce052c22c3ce",
+      "id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
+      "name": "official pitches received",
+      "refusal": null,
+      "log_seq": 990038,
+      "recorded_at": "2026-09-27T05:55:58.998857Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -147,6 +266,7 @@
       "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
       "log_seq": 750674,
       "recorded_at": "2026-09-07T07:43:50.411315Z",
+      "slot_id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
       "evidence_asserted_at": "2026-08-28T11:54:53Z",
       "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
       "evidence_publisher": "CNBC",
@@ -180,6 +300,7 @@
       "text_sha256": "3630bcef30d81b44eab00d84c12ba4f270bf4fe7a9b9759cd640a2faa9fc29da",
       "log_seq": 750662,
       "recorded_at": "2026-09-07T07:43:43.713643Z",
+      "slot_id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
       "evidence_asserted_at": "2026-08-28T11:54:53Z",
       "evidence_url": "https://www.cnbc.com/2026/08/28/imax-sale-potential-buyers.html",
       "evidence_publisher": "CNBC",
@@ -187,6 +308,32 @@
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 990044,
+      "id": "attach-anchor-slot-0fa77fce-0726-469e-a247-aa356f163e4b",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff",
+      "refusal": null,
+      "slot_id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
+      "log_seq": 990045,
+      "recorded_at": "2026-09-27T05:56:01.477939Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 990039,
+      "id": "attach-anchor-slot-cf02224e-6715-4b4f-9711-932329884e1f",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55",
+      "refusal": null,
+      "slot_id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
+      "log_seq": 990040,
+      "recorded_at": "2026-09-27T05:55:59.006226Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": false,
       "edge_kind": "cites",
@@ -219,5 +366,22 @@
   "root_id": "event-6107cba4-d069-451f-8838-ce052c22c3ce",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-cf02224e-6715-4b4f-9711-932329884e1f",
+      "name": "official pitches received",
+      "value": null,
+      "unit": null,
+      "sentence": "Imax held preliminary talks with potential buyers earlier this year, but as of May hadn't fielded any official pitches, CNBC reported at the time .",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-b1ab65348532ef55"
+    },
+    {
+      "slot_id": "slot-0fa77fce-0726-469e-a247-aa356f163e4b",
+      "name": "sale process status",
+      "value": null,
+      "unit": null,
+      "sentence": "Imax hasn't hired new bankers and doesn't have a formalized pitch book, according to a person familiar with the company, who spoke on the condition of anonymity to discuss confidential matters.",
+      "occurrence_id": "occurrence-5966f3b6fe06dde9bfc3cba126e6af664563cb2ab1e1c7f8b755f28dc524acee-8dc0f06f74fedaff"
+    }
+  ]
 }

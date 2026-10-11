@@ -2,16 +2,16 @@
   "current_state": {
     "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174": {
       "slot": "felony counts",
-      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
       "heads": [
-        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb"
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b"
       ],
       "roots": 1,
       "primary": false,
       "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
-      "quote_span": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records",
+      "quote_span": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records related to his role in a hush money payment scheme involving adult film actress Stormy Daniels late in the 2016 presidential campaign.",
       "span_check": "byte_exact",
       "speaker": "CNN",
       "figure": {
@@ -20,10 +20,65 @@
       },
       "as_of": "2023-04",
       "as_of_source": "resolved_from_context",
-      "checkable_against": "People v. Donald Trump Manhattan indictment",
+      "checkable_against": "New York criminal indictment",
       "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
       "basis": [
-        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb"
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb",
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b"
+      ],
+      "last_confirmed": "2023-04",
+      "freshness": "stale"
+    },
+    "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf": {
+      "slot": "plea status",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b",
+      "heads": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The former president pleaded not guilty at his April arraignment in Manhattan.",
+      "span_check": "byte_exact",
+      "speaker": "CNN",
+      "figure": null,
+      "as_of": "2023-04",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Manhattan Criminal Court arraignment record",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "basis": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b"
+      ],
+      "last_confirmed": "2023-04",
+      "freshness": "stale"
+    },
+    "slot-2761844c-b77e-4470-b749-6f7bab8e500c": {
+      "slot": "hush money payment",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+      "heads": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Prosecutors, led by Manhattan District Attorney Alvin Bragg , accuse Trump of falsifying business records with the intent to conceal $130,000 in payments to Daniels made by former Trump attorney and fixer Michael Cohen to guarantee her silence about an alleged affair.",
+      "span_check": "byte_exact",
+      "speaker": "Manhattan District Attorney Alvin Bragg",
+      "figure": {
+        "unit": "dollars",
+        "value": "130000"
+      },
+      "as_of": "2023-04",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Manhattan District Attorney indictment and payment records",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "basis": [
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+        "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4"
       ],
       "last_confirmed": "2023-04",
       "freshness": "stale"
@@ -32,9 +87,21 @@
   "timeline": [
     {
       "kind": "first_value",
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "as_of": "2016",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4"
+    },
+    {
+      "kind": "first_value",
       "slot_id": "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174",
       "as_of": "2023-04",
       "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
+      "as_of": "2023-04",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b"
     }
   ],
   "evidence": [
@@ -42,8 +109,14 @@
       "accepted": true,
       "asserted_at": "2022-12-08T03:36:24Z",
       "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1829.html",
+      "desk": "courts and legal",
       "envelope_seq": 165747,
+      "gate_reason": "Headline evaluated against the coverage rule.",
+      "gate_stage": "model",
+      "gate_verdict": "COVER",
+      "gated_at": "2026-09-08T13:57:01.133591Z",
       "id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "lang": "en",
       "publisher": "CNN",
       "refusal": null,
       "retrieved_at": "2026-08-30T10:14:59.022846Z",
@@ -59,9 +132,46 @@
       "title": "The notable legal clouds that continue to hang over Donald Trump",
       "url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
       "verbatim_level": "article",
-      "log_seq": 518713,
-      "recorded_at": "2026-09-06T01:33:23.389355Z",
+      "log_seq": 814375,
+      "recorded_at": "2026-09-08T13:57:01.133674Z",
       "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-04",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2022-12-08T03:36:24Z",
+          "checkable_against": "Manhattan District Attorney indictment and payment records",
+          "claim_type": "actual",
+          "envelope_seq": 777222,
+          "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+          "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+          "figure": {
+            "unit": "dollars",
+            "value": "130000"
+          },
+          "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+          "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Prosecutors, led by Manhattan District Attorney Alvin Bragg , accuse Trump of falsifying business records with the intent to conceal $130,000 in payments to Daniels made by former Trump attorney and fixer Michael Cohen to guarantee her silence about an alleged affair.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:59.022846Z",
+          "root_id": "www.cnn.com",
+          "span_check": "byte_exact",
+          "span_end": 7342,
+          "span_start": 7074,
+          "speaker": "Manhattan District Attorney Alvin Bragg",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+          "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+          "log_seq": 777223,
+          "recorded_at": "2026-09-08T00:38:00.303059Z",
+          "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+          "evidence_asserted_at": "2022-12-08T03:36:24Z",
+          "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+          "evidence_publisher": "CNN",
+          "evidence_source_id": "cnn_politics_rss"
+        },
         {
           "accepted": true,
           "anchorable": true,
@@ -93,6 +203,7 @@
           "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
           "log_seq": 750318,
           "recorded_at": "2026-09-07T07:34:19.483247Z",
+          "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
           "evidence_asserted_at": "2022-12-08T03:36:24Z",
           "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
           "evidence_publisher": "CNN",
@@ -126,6 +237,7 @@
           "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
           "log_seq": 750316,
           "recorded_at": "2026-09-07T07:34:17.976117Z",
+          "slot_id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
           "evidence_asserted_at": "2022-12-08T03:36:24Z",
           "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
           "evidence_publisher": "CNN",
@@ -167,13 +279,50 @@
           "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
           "evidence_publisher": "CNN",
           "evidence_source_id": "cnn_politics_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-04",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2022-12-08T03:36:24Z",
+          "checkable_against": "New York criminal indictment",
+          "claim_type": "actual",
+          "envelope_seq": 767875,
+          "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+          "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+          "figure": {
+            "unit": "counts",
+            "value": "34"
+          },
+          "fire_id": "3f9be704ecf3668454f834564babfb69",
+          "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records related to his role in a hush money payment scheme involving adult film actress Stormy Daniels late in the 2016 presidential campaign.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:59.022846Z",
+          "root_id": "www.cnn.com",
+          "span_check": "byte_exact",
+          "span_end": 6994,
+          "span_start": 6756,
+          "speaker": "CNN",
+          "subject": "Donald Trump",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+          "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+          "log_seq": 767876,
+          "recorded_at": "2026-09-07T20:19:51.645867Z",
+          "slot_id": "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174",
+          "evidence_asserted_at": "2022-12-08T03:36:24Z",
+          "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+          "evidence_publisher": "CNN",
+          "evidence_source_id": "cnn_politics_rss"
         }
       ]
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T17:18:06.541345Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750169,
@@ -195,6 +344,32 @@
   "publishable": true,
   "slots": [
     {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b",
+      "envelope_seq": 1151609,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "id": "slot-24789642-21fe-409d-a7d1-2600f24ced6b",
+      "name": "plea status",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "source_id": "cnn_politics_rss"
+      },
+      "log_seq": 1151610,
+      "recorded_at": "2026-10-06T16:55:49.898782Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4",
+      "envelope_seq": 1151644,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "name": "hush money payment",
+      "refusal": null,
+      "log_seq": 1151645,
+      "recorded_at": "2026-10-06T16:57:28.979844Z"
+    },
+    {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb",
       "envelope_seq": 750431,
@@ -204,6 +379,17 @@
       "refusal": null,
       "log_seq": 750432,
       "recorded_at": "2026-09-07T07:36:36.839020Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b",
+      "envelope_seq": 1151634,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
+      "name": "plea status",
+      "refusal": null,
+      "log_seq": 1151635,
+      "recorded_at": "2026-10-06T16:57:03.310182Z"
     },
     {
       "accepted": false,
@@ -219,9 +405,61 @@
       },
       "log_seq": 750408,
       "recorded_at": "2026-09-07T07:36:15.041878Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4",
+      "envelope_seq": 1151611,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "id": "slot-f6c1af20-4f89-44ad-978c-fc763f9ef0be",
+      "name": "hush money payment",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "source_id": "cnn_politics_rss"
+      },
+      "log_seq": 1151612,
+      "recorded_at": "2026-10-06T16:55:50.252398Z"
     }
   ],
   "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-04",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "checkable_against": "Manhattan District Attorney indictment and payment records",
+      "claim_type": "actual",
+      "envelope_seq": 777222,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "figure": {
+        "unit": "dollars",
+        "value": "130000"
+      },
+      "fire_id": "781109c9cd2c1646b9847252ec8022b0",
+      "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Prosecutors, led by Manhattan District Attorney Alvin Bragg , accuse Trump of falsifying business records with the intent to conceal $130,000 in payments to Daniels made by former Trump attorney and fixer Michael Cohen to guarantee her silence about an alleged affair.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_id": "www.cnn.com",
+      "span_check": "byte_exact",
+      "span_end": 7342,
+      "span_start": 7074,
+      "speaker": "Manhattan District Attorney Alvin Bragg",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "log_seq": 777223,
+      "recorded_at": "2026-09-08T00:38:00.303059Z",
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "evidence_asserted_at": "2022-12-08T03:36:24Z",
+      "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "evidence_publisher": "CNN",
+      "evidence_source_id": "cnn_politics_rss"
+    },
     {
       "accepted": true,
       "anchorable": true,
@@ -253,6 +491,7 @@
       "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
       "log_seq": 750318,
       "recorded_at": "2026-09-07T07:34:19.483247Z",
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
       "evidence_asserted_at": "2022-12-08T03:36:24Z",
       "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
       "evidence_publisher": "CNN",
@@ -286,6 +525,7 @@
       "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
       "log_seq": 750316,
       "recorded_at": "2026-09-07T07:34:17.976117Z",
+      "slot_id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
       "evidence_asserted_at": "2022-12-08T03:36:24Z",
       "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
       "evidence_publisher": "CNN",
@@ -327,9 +567,85 @@
       "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
       "evidence_publisher": "CNN",
       "evidence_source_id": "cnn_politics_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-04",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2022-12-08T03:36:24Z",
+      "checkable_against": "New York criminal indictment",
+      "claim_type": "actual",
+      "envelope_seq": 767875,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "evidence_id": "11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b",
+      "figure": {
+        "unit": "counts",
+        "value": "34"
+      },
+      "fire_id": "3f9be704ecf3668454f834564babfb69",
+      "id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records related to his role in a hush money payment scheme involving adult film actress Stormy Daniels late in the 2016 presidential campaign.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:59.022846Z",
+      "root_id": "www.cnn.com",
+      "span_check": "byte_exact",
+      "span_end": 6994,
+      "span_start": 6756,
+      "speaker": "CNN",
+      "subject": "Donald Trump",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1829.txt",
+      "text_sha256": "3a66b707a129b8cdfaed1cd87bc4ad1066d3f1807dbed66eb6847978a233e908",
+      "log_seq": 767876,
+      "recorded_at": "2026-09-07T20:19:51.645867Z",
+      "slot_id": "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174",
+      "evidence_asserted_at": "2022-12-08T03:36:24Z",
+      "evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+      "evidence_publisher": "CNN",
+      "evidence_source_id": "cnn_politics_rss"
     }
   ],
   "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151613,
+      "id": "attach-2238f67c-8b51-4691-b5eb-2bf1ce6022c9",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
+      "refusal": null,
+      "slot_id": "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174",
+      "log_seq": 1151614,
+      "recorded_at": "2026-10-06T16:55:50.582218Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151652,
+      "id": "attach-4324a25e-d782-4495-8e6c-63e8514c8c77",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+      "refusal": null,
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "log_seq": 1151653,
+      "recorded_at": "2026-10-06T16:58:05.145167Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151646,
+      "id": "attach-anchor-slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4",
+      "refusal": null,
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "log_seq": 1151647,
+      "recorded_at": "2026-10-06T16:57:30.094944Z",
+      "family": "identity",
+      "label": "attach"
+    },
     {
       "accepted": true,
       "edge_kind": "attach",
@@ -342,20 +658,150 @@
       "recorded_at": "2026-09-07T07:36:37.071354Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1151636,
+      "id": "attach-anchor-slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b",
+      "refusal": null,
+      "slot_id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
+      "log_seq": 1151637,
+      "recorded_at": "2026-10-06T16:57:04.958175Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1151713,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "34 felony counts"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "from_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
+      "id": "edge-relation-538114bbb16bcf2056284384",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences report the same number of felony counts (34) and originate from the same source (CNN). The source is established by metadata, but the quote doesn't contain the publisher name.",
+      "refusal": null,
+      "to_event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "to_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb",
+      "log_seq": 1151714,
+      "recorded_at": "2026-10-06T17:03:42.872929Z"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1151709,
+      "event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "",
+          "time": "",
+          "value": "$130,000 in payments to Daniels"
+        },
+        "time_action": "restates",
+        "value_relation": "equivalent"
+      },
+      "from_event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "from_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+      "id": "edge-relation-93b197f73b3f1e0a94c0c3a6",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "same_fact",
+      "reason": "Both occurrences are from the same source text and refer to the same $130,000 payment.",
+      "refusal": null,
+      "to_event_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
+      "to_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4",
+      "log_seq": 1151710,
+      "recorded_at": "2026-10-06T17:03:25.689698Z"
     }
   ],
   "revision_timeline": {
     "changes": [],
-    "changes_checked_at": null,
-    "confirmations": [],
+    "changes_checked_at": "2022-12-08T03:36:24Z",
+    "confirmations": [
+      {
+        "label": "“130000 dollars”",
+        "value": "130000 dollars",
+        "reports": [
+          {
+            "publisher": "CNN",
+            "url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+            "dates": [
+              "2022-12-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-2761844c-b77e-4470-b749-6f7bab8e500c"
+        ],
+        "sentence": "“130000 dollars”",
+        "quotes": []
+      },
+      {
+        "label": "“34 counts”",
+        "value": "34 counts",
+        "reports": [
+          {
+            "publisher": "CNN",
+            "url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+            "dates": [
+              "2022-12-08"
+            ],
+            "verb": "reported"
+          }
+        ],
+        "slot_ids": [
+          "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174"
+        ],
+        "sentence": "“34 counts”",
+        "quotes": []
+      }
+    ],
     "quote_rows_unlinked": {
-      "count": 0,
-      "slot_ids": []
+      "count": 2,
+      "slot_ids": [
+        "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+        "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174"
+      ]
     },
-    "edges": []
+    "edges": [
+      {
+        "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-93b197f73b3f1e0a94c0c3a6",
+        "earlier_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-7d408d7831c4e0b4",
+        "later_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489",
+        "earlier_evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "later_evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "sentence": "On 2022-12-08, CNN reported “$130,000 in payments to Daniels”; on the same day, CNN reported “Prosecutors, led by Manhattan District Attorney Alvin Bragg , accuse Trump of falsifying business records with the intent to conceal $130,000 in payments to Daniels made by former Trump attorney and fixer Michael Cohen to guarantee her silence about an alleged affair.”."
+      },
+      {
+        "slot_id": "slot-8c32dc1a-b7a9-4365-9394-f0e6011ea174",
+        "relation": "same_fact",
+        "edge_id": "edge-relation-538114bbb16bcf2056284384",
+        "earlier_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb",
+        "later_occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b",
+        "earlier_evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "later_evidence_url": "https://www.cnn.com/2022/11/15/politics/donald-trump-investigations-lawsuits/index.html",
+        "sentence": "On 2022-12-08, CNN reported “Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records”; on the same day, CNN reported “Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records related to his role in a hush money payment scheme involving adult film actress Stormy Daniels late in the 2016 presidential campaign.”."
+      }
+    ]
   },
   "status": "published",
-  "desk": null,
+  "desk": "courts and legal",
   "follows": null,
   "root_id": "event-92c4d70d-ca4d-47f4-86a1-1e7d61265d9b",
   "changed_since_previous": [],
@@ -366,8 +812,24 @@
       "name": "felony counts",
       "value": "34",
       "unit": "counts",
-      "sentence": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records",
-      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-c6fbc9be410d6eeb"
+      "sentence": "Trump has been charged in Manhattan criminal court with 34 felony counts of falsifying business records related to his role in a hush money payment scheme involving adult film actress Stormy Daniels late in the 2016 presidential campaign.",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-dd3fdd20db7e852b"
+    },
+    {
+      "slot_id": "slot-aa422850-ce1e-4cab-aae0-84c79f59e0cf",
+      "name": "plea status",
+      "value": null,
+      "unit": null,
+      "sentence": "The former president pleaded not guilty at his April arraignment in Manhattan.",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-bef7fb014e763c2b"
+    },
+    {
+      "slot_id": "slot-2761844c-b77e-4470-b749-6f7bab8e500c",
+      "name": "hush money payment",
+      "value": "130000",
+      "unit": "dollars",
+      "sentence": "Prosecutors, led by Manhattan District Attorney Alvin Bragg , accuse Trump of falsifying business records with the intent to conceal $130,000 in payments to Daniels made by former Trump attorney and fixer Michael Cohen to guarantee her silence about an alleged affair.",
+      "occurrence_id": "occurrence-11ea03b60eedf35cfa0e4a0d770d7f45af2d555dd0df621375f951574f4fb83b-3db2e1b86cfb8489"
     }
   ]
 }

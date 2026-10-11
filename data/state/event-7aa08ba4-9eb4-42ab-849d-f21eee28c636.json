@@ -1,0 +1,380 @@
+{
+  "current_state": {
+    "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df": {
+      "slot": "pain medications",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+      "heads": [
+        "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "By Day 7 of his recovery, he wrote later that summer, he was taking “literally zero pain meds.”",
+      "span_check": "byte_exact",
+      "speaker": "Luigi Mangione",
+      "figure": {
+        "unit": "pain medications",
+        "value": "0"
+      },
+      "as_of": "2023-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Luigi Mangione's summer 2023 writings and medical records",
+      "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+      "basis": [
+        "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886"
+      ],
+      "last_confirmed": "2023-07",
+      "freshness": "stale"
+    },
+    "slot-289467f6-05ed-4238-acc1-673ed9ac6e83": {
+      "slot": "surgery date",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+      "heads": [
+        "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "He had back surgery in July 2023.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2023-07",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "medical records and surgeon records",
+      "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+      "basis": [
+        "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8"
+      ],
+      "last_confirmed": "2023-07",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "as_of": "2023-07",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "as_of": "2023-07",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-14T23:13:22Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6522.html",
+      "envelope_seq": 171247,
+      "id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:20.107248Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.nytimes.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6522.txt",
+      "text_sha256": "7b076d6477d44400e5f736dd5ad072c12b3641a6c4cd8e67144334c40042fbbb",
+      "url": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+      "verbatim_level": "article",
+      "log_seq": 521463,
+      "recorded_at": "2026-09-06T01:33:24.172815Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-07",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-14T23:13:22Z",
+          "checkable_against": "Luigi Mangione's summer 2023 writings and medical records",
+          "claim_type": "actual",
+          "envelope_seq": 798364,
+          "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+          "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+          "figure": {
+            "unit": "pain medications",
+            "value": "0"
+          },
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "By Day 7 of his recovery, he wrote later that summer, he was taking “literally zero pain meds.”",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:20.107248Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 2460,
+          "span_start": 2361,
+          "speaker": "Luigi Mangione",
+          "subject": "Luigi Mangione",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6522.txt",
+          "text_sha256": "7b076d6477d44400e5f736dd5ad072c12b3641a6c4cd8e67144334c40042fbbb",
+          "log_seq": 798365,
+          "recorded_at": "2026-09-08T07:42:53.507478Z",
+          "slot_id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+          "evidence_asserted_at": "2026-08-14T23:13:22Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2023-07",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-14T23:13:22Z",
+          "checkable_against": "medical records and surgeon records",
+          "claim_type": "actual",
+          "envelope_seq": 798362,
+          "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+          "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+          "figure": null,
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "He had back surgery in July 2023.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:20.107248Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 2330,
+          "span_start": 2297,
+          "speaker": "outlet's own",
+          "subject": "Luigi Mangione",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6522.txt",
+          "text_sha256": "7b076d6477d44400e5f736dd5ad072c12b3641a6c4cd8e67144334c40042fbbb",
+          "log_seq": 798363,
+          "recorded_at": "2026-09-08T07:42:53.465844Z",
+          "slot_id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+          "evidence_asserted_at": "2026-08-14T23:13:22Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 798212,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+    "kind": "medical procedure",
+    "label": "Luigi Mangione back surgery and recovery",
+    "minted_at": "2026-09-08T07:41:27.825747Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+    "period": "2023-07",
+    "refusal": null,
+    "status": "published",
+    "subject": "Luigi Mangione",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab/7f23b9127fba4eb4a2fab3556d5a2059.json",
+    "log_seq": 798213
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+      "envelope_seq": 1011843,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "name": "surgery date",
+      "refusal": null,
+      "log_seq": 1011844,
+      "recorded_at": "2026-10-01T00:08:28.240441Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+      "envelope_seq": 798486,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "id": "slot-439219eb-6267-4f08-9608-9cb6b2eb5057",
+      "name": "pain medications",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "Luigi Mangione summer 2023 writings",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 798487,
+      "recorded_at": "2026-09-08T07:43:36.325221Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+      "envelope_seq": 1011841,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "id": "slot-5e9bd642-5b73-460c-b8b7-d47bc4b43484",
+      "name": "surgery date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1011842,
+      "recorded_at": "2026-10-01T00:08:14.069477Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+      "envelope_seq": 798522,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "name": "pain medications",
+      "refusal": null,
+      "log_seq": 798523,
+      "recorded_at": "2026-09-08T07:43:43.138656Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-07",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-14T23:13:22Z",
+      "checkable_against": "Luigi Mangione's summer 2023 writings and medical records",
+      "claim_type": "actual",
+      "envelope_seq": 798364,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+      "figure": {
+        "unit": "pain medications",
+        "value": "0"
+      },
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "By Day 7 of his recovery, he wrote later that summer, he was taking “literally zero pain meds.”",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:20.107248Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 2460,
+      "span_start": 2361,
+      "speaker": "Luigi Mangione",
+      "subject": "Luigi Mangione",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6522.txt",
+      "text_sha256": "7b076d6477d44400e5f736dd5ad072c12b3641a6c4cd8e67144334c40042fbbb",
+      "log_seq": 798365,
+      "recorded_at": "2026-09-08T07:42:53.507478Z",
+      "slot_id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "evidence_asserted_at": "2026-08-14T23:13:22Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2023-07",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-14T23:13:22Z",
+      "checkable_against": "medical records and surgeon records",
+      "claim_type": "actual",
+      "envelope_seq": 798362,
+      "event_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+      "evidence_id": "755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab",
+      "figure": null,
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "He had back surgery in July 2023.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:20.107248Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 2330,
+      "span_start": 2297,
+      "speaker": "outlet's own",
+      "subject": "Luigi Mangione",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6522.txt",
+      "text_sha256": "7b076d6477d44400e5f736dd5ad072c12b3641a6c4cd8e67144334c40042fbbb",
+      "log_seq": 798363,
+      "recorded_at": "2026-09-08T07:42:53.465844Z",
+      "slot_id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "evidence_asserted_at": "2026-08-14T23:13:22Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/14/nyregion/who-is-luigi-mangione.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1011845,
+      "id": "attach-anchor-slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8",
+      "refusal": null,
+      "slot_id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "log_seq": 1011846,
+      "recorded_at": "2026-10-01T00:08:28.248488Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 798524,
+      "id": "attach-anchor-slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886",
+      "refusal": null,
+      "slot_id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "log_seq": 798525,
+      "recorded_at": "2026-09-08T07:43:43.165375Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-7aa08ba4-9eb4-42ab-849d-f21eee28c636",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-fb21f168-c6c2-4dde-b194-d316ee8ab4df",
+      "name": "pain medications",
+      "value": "0",
+      "unit": "pain medications",
+      "sentence": "By Day 7 of his recovery, he wrote later that summer, he was taking “literally zero pain meds.”",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-082be3c324af5886"
+    },
+    {
+      "slot_id": "slot-289467f6-05ed-4238-acc1-673ed9ac6e83",
+      "name": "surgery date",
+      "value": null,
+      "unit": null,
+      "sentence": "He had back surgery in July 2023.",
+      "occurrence_id": "occurrence-755506dbbb046764e10dc598a6574d58620eed83053dce6a4dcff733a94d46ab-62e769dae062c3c8"
+    }
+  ]
+}

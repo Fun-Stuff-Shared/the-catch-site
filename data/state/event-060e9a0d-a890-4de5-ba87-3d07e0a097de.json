@@ -26,7 +26,7 @@
         "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-ff5f4b7e489c227f"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-6e20a982-51a0-48ef-aeeb-edb6987f00c1": {
       "slot": "presenter",
@@ -51,7 +51,7 @@
         "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-d9c5a58e3d376fb1"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-9da0ca66-998b-4345-95ec-7ff19329131b": {
       "slot": "producer",
@@ -76,22 +76,53 @@
     },
     "slot-a0f4ec58-107e-49cf-8e21-d9e96e9df2aa": {
       "slot": "editor",
-      "occurrence_id": null,
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b",
       "heads": [
-        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b",
-        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e"
+        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b"
       ],
-      "roots": 0,
+      "roots": 1,
       "primary": false,
-      "disputed": true,
+      "disputed": false,
       "withdrawn": false,
       "uncertain_pairs": 0,
+      "quote_span": "The assistant editor is Chris Gray.",
+      "span_check": "byte_exact",
+      "speaker": "BBC Sounds",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "BBC Newscast episode production credits",
+      "evidence_id": "57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9",
       "basis": [
-        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b",
+        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
+    },
+    "slot-2ed0b47d-ac00-4279-911f-10e86a01893a": {
+      "slot": "senior news editor",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e",
+      "heads": [
+        "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The senior news editor is Sam Bonham.",
+      "span_check": "byte_exact",
+      "speaker": "BBC Sounds",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "BBC Newscast episode production credits",
+      "evidence_id": "57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9",
+      "basis": [
         "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "unknown_current"
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -101,9 +132,10 @@
       "as_of": "2026-08-28"
     },
     {
-      "kind": "disputed",
-      "slot_id": "slot-a0f4ec58-107e-49cf-8e21-d9e96e9df2aa",
-      "as_of": "2026-08-28"
+      "kind": "first_value",
+      "slot_id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e"
     },
     {
       "kind": "first_value",
@@ -410,7 +442,7 @@
           "text_sha256": "a5b43075372196a22fbaf9fc29b483ff29aa39a3de7371e66cd37547f23ca780",
           "log_seq": 432298,
           "recorded_at": "2026-09-05T09:01:30.881355Z",
-          "slot_id": "slot-a0f4ec58-107e-49cf-8e21-d9e96e9df2aa",
+          "slot_id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
           "evidence_asserted_at": "2026-08-28T15:21:00Z",
           "evidence_url": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
           "evidence_publisher": "BBC",
@@ -521,8 +553,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "c403097b53",
-  "evaluated_at": "2026-09-07T19:41:33.697392Z",
+  "produced_by_commit": "8bd1bc9b1f",
+  "evaluated_at": "2026-10-06T13:21:50.741622Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432181,
@@ -556,6 +588,17 @@
     },
     {
       "accepted": true,
+      "anchor_occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e",
+      "envelope_seq": 1148675,
+      "event_id": "event-060e9a0d-a890-4de5-ba87-3d07e0a097de",
+      "id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
+      "name": "senior news editor",
+      "refusal": null,
+      "log_seq": 1148676,
+      "recorded_at": "2026-10-06T12:52:27.206770Z"
+    },
+    {
+      "accepted": true,
       "anchor_occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-d9c5a58e3d376fb1",
       "envelope_seq": 767249,
       "event_id": "event-060e9a0d-a890-4de5-ba87-3d07e0a097de",
@@ -575,6 +618,21 @@
       "refusal": null,
       "log_seq": 767255,
       "recorded_at": "2026-09-07T18:59:16.066267Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e",
+      "envelope_seq": 1148656,
+      "event_id": "event-060e9a0d-a890-4de5-ba87-3d07e0a097de",
+      "id": "slot-a0459864-4e0f-4dfa-803b-c2f285b25dad",
+      "name": "senior news editor",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
+        "source_id": "bbc_news_rss"
+      },
+      "log_seq": 1148657,
+      "recorded_at": "2026-10-06T12:51:55.139135Z"
     },
     {
       "accepted": true,
@@ -870,7 +928,7 @@
       "text_sha256": "a5b43075372196a22fbaf9fc29b483ff29aa39a3de7371e66cd37547f23ca780",
       "log_seq": 432298,
       "recorded_at": "2026-09-05T09:01:30.881355Z",
-      "slot_id": "slot-a0f4ec58-107e-49cf-8e21-d9e96e9df2aa",
+      "slot_id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
       "evidence_asserted_at": "2026-08-28T15:21:00Z",
       "evidence_url": "https://www.bbc.co.uk/sounds/play/p0p64vh0?at_medium=RSS&at_campaign=rss",
       "evidence_publisher": "BBC",
@@ -1008,13 +1066,13 @@
     {
       "accepted": true,
       "edge_kind": "attach",
-      "envelope_seq": 767270,
-      "id": "attach-3c4f7a2b-8c91-4453-bd1a-b1f0e3659131",
+      "envelope_seq": 1148677,
+      "id": "attach-anchor-slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
       "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e",
       "refusal": null,
-      "slot_id": "slot-a0f4ec58-107e-49cf-8e21-d9e96e9df2aa",
-      "log_seq": 767271,
-      "recorded_at": "2026-09-07T19:00:28.002217Z",
+      "slot_id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
+      "log_seq": 1148678,
+      "recorded_at": "2026-10-06T12:52:27.247817Z",
       "family": "identity",
       "label": "attach"
     },
@@ -1117,8 +1175,16 @@
       "name": "editor",
       "value": null,
       "unit": null,
-      "sentence": null,
-      "occurrence_id": null
+      "sentence": "The assistant editor is Chris Gray.",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-9ba4f4ac6178331b"
+    },
+    {
+      "slot_id": "slot-2ed0b47d-ac00-4279-911f-10e86a01893a",
+      "name": "senior news editor",
+      "value": null,
+      "unit": null,
+      "sentence": "The senior news editor is Sam Bonham.",
+      "occurrence_id": "occurrence-57d4a72c6ea84ac86293b29d77642d5f452ef5fd53e61f9a96f7b1e8dbbc35a9-c314c7395835610e"
     }
   ]
 }

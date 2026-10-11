@@ -1,0 +1,227 @@
+{
+  "current_state": {
+    "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b": {
+      "slot": "annual bill increase",
+      "occurrence_id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf",
+      "heads": [
+        "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "By one estimate, Maryland customers, for example, pay somewhere around $168 to $216 more per year on their electricity bills primarily due to the data center boom.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "dollars",
+        "value": "168-216"
+      },
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Underlying Maryland electricity-cost estimate cited by NPR",
+      "evidence_id": "34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8",
+      "basis": [
+        "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf"
+      ],
+      "last_confirmed": "2026-10-01",
+      "freshness": "fresh"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "as_of": "2026-10-01",
+      "occurrence_id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-10-01T16:47:53Z",
+      "canonical_url": "https://npr.org/2026/10/01/nx-s1-5984949/data-centers-ai-ratepayers-congress",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/raw/article_0709.html",
+      "desk": "economy and markets",
+      "envelope_seq": 1015895,
+      "gate_verdict": "COVER",
+      "id": "34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8",
+      "lang": "en",
+      "published_at": "2026-10-01T16:47:53Z",
+      "publisher": "NPR",
+      "raw_sha256": "ef8bbe67803aa14fca1eab975762f566e33718872fbb37f8027b0a39dcd75287",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:06:20.377793Z",
+      "root_evidence": "publisher_host",
+      "root_id": "www.npr.org",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z",
+      "source_family": "major_outlet",
+      "source_id": "npr_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0709.txt",
+      "text_sha256": "8b664678fba1ee03465c223ea137ae467f560cfae7de78e2baae32b74c8e8da2",
+      "title": "AI data centers: How much are ratepayers on the hook for?",
+      "updated_at": "2026-10-01T16:47:53Z",
+      "url": "https://www.npr.org/2026/10/01/nx-s1-5984949/data-centers-ai-ratepayers-congress",
+      "verbatim_level": "article",
+      "log_seq": 1015896,
+      "recorded_at": "2026-10-01T22:32:54.233785Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-10-01",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-10-01T16:47:53Z",
+          "checkable_against": "Underlying Maryland electricity-cost estimate cited by NPR",
+          "claim_type": "actual",
+          "envelope_seq": 1024557,
+          "event_id": "event-650c72fa-70df-4dd1-894b-5a4bb9a382f7",
+          "evidence_id": "34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8",
+          "figure": {
+            "unit": "dollars",
+            "value": "168-216"
+          },
+          "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+          "id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "By one estimate, Maryland customers, for example, pay somewhere around $168 to $216 more per year on their electricity bills primarily due to the data center boom.",
+          "refusal": null,
+          "retrieved_at": "2026-10-01T22:06:20.377793Z",
+          "root_id": "www.npr.org",
+          "span_check": "byte_exact",
+          "span_end": 1988,
+          "span_start": 1825,
+          "speaker": "outlet's own",
+          "subject": "Maryland residential electricity bills",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0709.txt",
+          "text_sha256": "8b664678fba1ee03465c223ea137ae467f560cfae7de78e2baae32b74c8e8da2",
+          "log_seq": 1024558,
+          "recorded_at": "2026-10-02T08:58:46.592398Z",
+          "slot_id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+          "evidence_asserted_at": "2026-10-01T16:47:53Z",
+          "evidence_url": "https://www.npr.org/2026/10/01/nx-s1-5984949/data-centers-ai-ratepayers-congress",
+          "evidence_publisher": "NPR",
+          "evidence_source_id": "npr_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "1d94b06800",
+  "evaluated_at": "2026-10-02T09:43:56.704377Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 1024401,
+    "fire_id": "quarry-wire-scheduled-20261001T220038Z",
+    "follows": null,
+    "id": "event-650c72fa-70df-4dd1-894b-5a4bb9a382f7",
+    "kind": "estimate",
+    "label": "Maryland data center electricity bill estimate",
+    "minted_at": "2026-10-02T08:57:57.517681Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8",
+    "period": "2026-10-01",
+    "refusal": null,
+    "status": "published",
+    "subject": "Maryland residential electricity bills",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20261001T220038Z/34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8/1172e55ec91144c0a1486e88202a3dbe.json",
+    "log_seq": 1024402
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf",
+      "envelope_seq": 1024881,
+      "event_id": "event-650c72fa-70df-4dd1-894b-5a4bb9a382f7",
+      "id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "name": "annual bill increase",
+      "refusal": null,
+      "log_seq": 1024882,
+      "recorded_at": "2026-10-02T09:00:37.851176Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-10-01",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-10-01T16:47:53Z",
+      "checkable_against": "Underlying Maryland electricity-cost estimate cited by NPR",
+      "claim_type": "actual",
+      "envelope_seq": 1024557,
+      "event_id": "event-650c72fa-70df-4dd1-894b-5a4bb9a382f7",
+      "evidence_id": "34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8",
+      "figure": {
+        "unit": "dollars",
+        "value": "168-216"
+      },
+      "fire_id": "d68d110defb8f9cf136f14504048eb5c",
+      "id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "By one estimate, Maryland customers, for example, pay somewhere around $168 to $216 more per year on their electricity bills primarily due to the data center boom.",
+      "refusal": null,
+      "retrieved_at": "2026-10-01T22:06:20.377793Z",
+      "root_id": "www.npr.org",
+      "span_check": "byte_exact",
+      "span_end": 1988,
+      "span_start": 1825,
+      "speaker": "outlet's own",
+      "subject": "Maryland residential electricity bills",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20261001T220038Z/text/article_0709.txt",
+      "text_sha256": "8b664678fba1ee03465c223ea137ae467f560cfae7de78e2baae32b74c8e8da2",
+      "log_seq": 1024558,
+      "recorded_at": "2026-10-02T08:58:46.592398Z",
+      "slot_id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "evidence_asserted_at": "2026-10-01T16:47:53Z",
+      "evidence_url": "https://www.npr.org/2026/10/01/nx-s1-5984949/data-centers-ai-ratepayers-congress",
+      "evidence_publisher": "NPR",
+      "evidence_source_id": "npr_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1024883,
+      "id": "attach-anchor-slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "occurrence_id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf",
+      "refusal": null,
+      "slot_id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "log_seq": 1024884,
+      "recorded_at": "2026-10-02T09:00:37.871407Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": "economy and markets",
+  "follows": null,
+  "root_id": "event-650c72fa-70df-4dd1-894b-5a4bb9a382f7",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-b5d9b3b0-2ce3-4152-87e6-4424df33d55b",
+      "name": "annual bill increase",
+      "value": "168-216",
+      "unit": "dollars",
+      "sentence": "By one estimate, Maryland customers, for example, pay somewhere around $168 to $216 more per year on their electricity bills primarily due to the data center boom.",
+      "occurrence_id": "occurrence-34342c16cdef927035270ca5d0e95c21ba250894fea3f1a93d6b7e2092e67dd8-ce16f2cad15ffcdf"
+    }
+  ]
+}

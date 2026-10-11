@@ -55,6 +55,34 @@
       ],
       "last_confirmed": "2026-07",
       "freshness": "stale"
+    },
+    "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996": {
+      "slot": "winning percentage",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6",
+      "heads": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Mr. Burnham, now Britain’s prime minister, won with 54.8 percent, while Count Binface got 0.2 percent.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "percent",
+        "value": "54.8"
+      },
+      "as_of": "2026-07",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Makerfield special-election official result",
+      "evidence_id": "594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae",
+      "basis": [
+        "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6"
+      ],
+      "last_confirmed": "2026-07",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -69,6 +97,12 @@
       "slot_id": "slot-e738860c-031c-4f71-824b-1390de2b5bb3",
       "as_of": "2026-07",
       "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-a32b1ee255033c08"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
+      "as_of": "2026-07",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6"
     }
   ],
   "evidence": [
@@ -126,6 +160,7 @@
           "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
           "log_seq": 750746,
           "recorded_at": "2026-09-07T07:44:41.527707Z",
+          "slot_id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
           "evidence_asserted_at": "2026-08-12T20:37:58Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
           "evidence_publisher": "The New York Times",
@@ -209,8 +244,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 750547,
@@ -231,6 +266,21 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6",
+      "envelope_seq": 1020754,
+      "event_id": "event-86ec4df2-d69d-4227-a74a-9ea0a601ff7e",
+      "id": "slot-36807098-c3bb-486d-8735-9167902d83d4",
+      "name": "winning percentage",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 1020755,
+      "recorded_at": "2026-10-02T00:11:38.960618Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-e87276cd5a7ed058",
@@ -263,6 +313,17 @@
       "refusal": null,
       "log_seq": 751108,
       "recorded_at": "2026-09-07T07:48:49.024874Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6",
+      "envelope_seq": 1020756,
+      "event_id": "event-86ec4df2-d69d-4227-a74a-9ea0a601ff7e",
+      "id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
+      "name": "winning percentage",
+      "refusal": null,
+      "log_seq": 1020757,
+      "recorded_at": "2026-10-02T00:11:51.283485Z"
     }
   ],
   "occurrences": [
@@ -297,6 +358,7 @@
       "text_sha256": "318f32676f203f8bd14d29b2a0bcdd0eb836d2e0093e2cdc3ba8b3da00a8f999",
       "log_seq": 750746,
       "recorded_at": "2026-09-07T07:44:41.527707Z",
+      "slot_id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
       "evidence_asserted_at": "2026-08-12T20:37:58Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/world/europe/count-binface-nigel-farage-clacton.html",
       "evidence_publisher": "The New York Times",
@@ -403,6 +465,19 @@
       "recorded_at": "2026-09-07T07:48:49.312862Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 1020758,
+      "id": "attach-anchor-slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6",
+      "refusal": null,
+      "slot_id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
+      "log_seq": 1020759,
+      "recorded_at": "2026-10-02T00:11:51.291474Z",
+      "family": "identity",
+      "label": "attach"
     }
   ],
   "revision_timeline": {
@@ -437,6 +512,14 @@
       "unit": "percent",
       "sentence": "while Count Binface got 0.2 percent.",
       "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-a32b1ee255033c08"
+    },
+    {
+      "slot_id": "slot-ec5c5ca2-bd05-4180-a71b-71e26b961996",
+      "name": "winning percentage",
+      "value": "54.8",
+      "unit": "percent",
+      "sentence": "Mr. Burnham, now Britain’s prime minister, won with 54.8 percent, while Count Binface got 0.2 percent.",
+      "occurrence_id": "occurrence-594eaf427f3a2c7c3bc8373ae36bd9f0f58aecb4a48486cbcffa151ef1f85cae-12992243eec096f6"
     }
   ]
 }

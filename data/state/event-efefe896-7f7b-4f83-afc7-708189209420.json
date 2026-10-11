@@ -1,0 +1,225 @@
+{
+  "current_state": {
+    "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e": {
+      "slot": "match result",
+      "occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+      "heads": [
+        "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Dortmund cruise to win",
+      "span_check": "byte_exact",
+      "speaker": "Reuters",
+      "figure": null,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "2026-08-30 Bundesliga match result records",
+      "evidence_id": "72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3",
+      "basis": [
+        "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e"
+      ],
+      "last_confirmed": "2026-08-30",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "as_of": "2026-08-30",
+      "occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-30T04:00:18Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9613.html",
+      "envelope_seq": 172527,
+      "id": "72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3",
+      "publisher": "Reuters",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:41.890783Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "wire_service",
+      "source_id": "x_reuters_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9613.txt",
+      "text_sha256": "5a6473caf05d106b814873454590ba8023c1617c034bc4fd9c0eac922f854ffe",
+      "url": "https://x.com/Reuters/status/2093911664022192298",
+      "verbatim_level": "article",
+      "log_seq": 522103,
+      "recorded_at": "2026-09-06T01:33:24.350788Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-30",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-30T04:00:18Z",
+          "checkable_against": "2026-08-30 Bundesliga match result records",
+          "claim_type": "actual",
+          "envelope_seq": 795652,
+          "event_id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+          "evidence_id": "72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3",
+          "figure": null,
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Dortmund cruise to win",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:41.890783Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 37,
+          "span_start": 15,
+          "speaker": "Reuters",
+          "subject": "Borussia Dortmund",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9613.txt",
+          "text_sha256": "5a6473caf05d106b814873454590ba8023c1617c034bc4fd9c0eac922f854ffe",
+          "log_seq": 795653,
+          "recorded_at": "2026-09-08T07:12:15.595845Z",
+          "slot_id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+          "evidence_asserted_at": "2026-08-30T04:00:18Z",
+          "evidence_url": "https://x.com/Reuters/status/2093911664022192298",
+          "evidence_publisher": "Reuters",
+          "evidence_source_id": "x_reuters_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 795638,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+    "kind": "game",
+    "label": "Dortmund win Bundesliga match",
+    "minted_at": "2026-09-08T07:12:01.276789Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3",
+    "period": "2026-08-30",
+    "refusal": null,
+    "status": "published",
+    "subject": "Borussia Dortmund",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3/84f8e1f90502431c8bffecf77df67bb1.json",
+    "log_seq": 795639
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+      "envelope_seq": 895630,
+      "event_id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+      "id": "slot-56186f57-eee9-4c6b-ae70-7f02c12ff1ee",
+      "name": "match result",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://x.com/Reuters/status/2093911664022192298",
+        "source_id": "x_reuters_account"
+      },
+      "log_seq": 895631,
+      "recorded_at": "2026-09-14T12:09:08.547278Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+      "envelope_seq": 895632,
+      "event_id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+      "id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "name": "match result",
+      "refusal": null,
+      "log_seq": 895633,
+      "recorded_at": "2026-09-14T12:09:20.308270Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-30",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-30T04:00:18Z",
+      "checkable_against": "2026-08-30 Bundesliga match result records",
+      "claim_type": "actual",
+      "envelope_seq": 795652,
+      "event_id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+      "evidence_id": "72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3",
+      "figure": null,
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Dortmund cruise to win",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:41.890783Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 37,
+      "span_start": 15,
+      "speaker": "Reuters",
+      "subject": "Borussia Dortmund",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9613.txt",
+      "text_sha256": "5a6473caf05d106b814873454590ba8023c1617c034bc4fd9c0eac922f854ffe",
+      "log_seq": 795653,
+      "recorded_at": "2026-09-08T07:12:15.595845Z",
+      "slot_id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "evidence_asserted_at": "2026-08-30T04:00:18Z",
+      "evidence_url": "https://x.com/Reuters/status/2093911664022192298",
+      "evidence_publisher": "Reuters",
+      "evidence_source_id": "x_reuters_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 895634,
+      "id": "attach-anchor-slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e",
+      "refusal": null,
+      "slot_id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "log_seq": 895635,
+      "recorded_at": "2026-09-14T12:09:20.314731Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-efefe896-7f7b-4f83-afc7-708189209420",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-7e1e85ad-02ff-4bfe-a9fb-768970d5ae8e",
+      "name": "match result",
+      "value": null,
+      "unit": null,
+      "sentence": "Dortmund cruise to win",
+      "occurrence_id": "occurrence-72f501f429d75d8d3d5eea2de1f2686ede9563490f7209563fd6b20fa09252b3-ad499593e0b5c89e"
+    }
+  ]
+}

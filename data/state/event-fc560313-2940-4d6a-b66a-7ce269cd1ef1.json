@@ -26,7 +26,7 @@
         "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-9e11cbb7d2e7549d"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "aging"
+      "freshness": "stale"
     },
     "slot-096befcc-fb69-4e36-b5ff-c8122495488d": {
       "slot": "sports coverage",
@@ -54,7 +54,32 @@
         "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-2f330a3bb3b7a08b"
       ],
       "last_confirmed": "2026-08-28",
-      "freshness": "aging"
+      "freshness": "stale"
+    },
+    "slot-70f03422-b845-4000-9262-0cc6627789e6": {
+      "slot": "game date",
+      "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d",
+      "heads": [
+        "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Richmond Hill takes on Liberty County on Aug. 28.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-08-28",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "official 2026 Richmond Hill and Liberty County football schedules",
+      "evidence_id": "5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2",
+      "basis": [
+        "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
     }
   },
   "timeline": [
@@ -69,6 +94,12 @@
       "slot_id": "slot-4666acfc-8baa-4765-88d2-4953023b9c7b",
       "as_of": "2026-08-28",
       "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-9e11cbb7d2e7549d"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d"
     }
   ],
   "evidence": [
@@ -264,6 +295,7 @@
           "text_sha256": "30cd467c7095a9c0c64aa05a422e02f5c183bc83fe6d637743f1c9d77bab0ec7",
           "log_seq": 753404,
           "recorded_at": "2026-09-07T08:29:33.695336Z",
+          "slot_id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
           "evidence_asserted_at": "2026-08-28T15:50:18.746180Z",
           "evidence_url": "https://www.usatoday.com/story/sports/high-school/football/2026/08/28/stream-richmond-hill-georgia-high-school-football-liberty-county/91497737007/",
           "evidence_publisher": "USA Today",
@@ -306,8 +338,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753383,
@@ -349,6 +381,32 @@
       "refusal": null,
       "log_seq": 753464,
       "recorded_at": "2026-09-07T08:31:27.434009Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d",
+      "envelope_seq": 900498,
+      "event_id": "event-fc560313-2940-4d6a-b66a-7ce269cd1ef1",
+      "id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
+      "name": "game date",
+      "refusal": null,
+      "log_seq": 900499,
+      "recorded_at": "2026-09-15T07:56:27.508035Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d",
+      "envelope_seq": 900496,
+      "event_id": "event-fc560313-2940-4d6a-b66a-7ce269cd1ef1",
+      "id": "slot-f486133f-989c-4f47-9b84-0edbfe3e3cf1",
+      "name": "game date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.usatoday.com/story/sports/high-school/football/2026/08/28/stream-richmond-hill-georgia-high-school-football-liberty-county/91497737007/",
+        "source_id": "usatoday_news_rss"
+      },
+      "log_seq": 900497,
+      "recorded_at": "2026-09-15T07:56:05.487279Z"
     }
   ],
   "occurrences": [
@@ -520,6 +578,7 @@
       "text_sha256": "30cd467c7095a9c0c64aa05a422e02f5c183bc83fe6d637743f1c9d77bab0ec7",
       "log_seq": 753404,
       "recorded_at": "2026-09-07T08:29:33.695336Z",
+      "slot_id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
       "evidence_asserted_at": "2026-08-28T15:50:18.746180Z",
       "evidence_url": "https://www.usatoday.com/story/sports/high-school/football/2026/08/28/stream-richmond-hill-georgia-high-school-football-liberty-county/91497737007/",
       "evidence_publisher": "USA Today",
@@ -585,6 +644,19 @@
       "recorded_at": "2026-09-07T08:31:27.669466Z",
       "family": "identity",
       "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 900500,
+      "id": "attach-anchor-slot-70f03422-b845-4000-9262-0cc6627789e6",
+      "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d",
+      "refusal": null,
+      "slot_id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
+      "log_seq": 900501,
+      "recorded_at": "2026-09-15T07:56:27.516323Z",
+      "family": "identity",
+      "label": "attach"
     }
   ],
   "revision_timeline": {
@@ -619,6 +691,14 @@
       "unit": "sports",
       "sentence": "The digital streaming service broadcasts the best of preps action from more than 30 sports all season, so fans can watch more of their favorite high school teams .",
       "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-2f330a3bb3b7a08b"
+    },
+    {
+      "slot_id": "slot-70f03422-b845-4000-9262-0cc6627789e6",
+      "name": "game date",
+      "value": null,
+      "unit": null,
+      "sentence": "Richmond Hill takes on Liberty County on Aug. 28.",
+      "occurrence_id": "occurrence-5c811dfc449e04ab6f1830f4c6e0b0df47cbdad2a3c2be9c0fbc53e865fd2bf2-b59d3f894133603d"
     }
   ]
 }

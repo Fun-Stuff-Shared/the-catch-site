@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 # usage: reads.sh <subject>--<slug> <round> [retell|entailment|both]
+# The entailment read checks only the blocks changed since the last round it passed on this
+# machine; FULL=1 checks the whole page.
 set -euo pipefail
 story=$1 round=$2 which=${3:-both}
 here=${0:A:h}
@@ -24,17 +26,22 @@ if [[ $which != entailment ]]; then
 fi
 if [[ $which != retell ]]; then
   report=$out/$story-r$round-entailment.md
-  prompt=$(fill $page $here/../assets/entailment-prompt.txt)
+  work=$(mktemp -d /Volumes/4/tmp/catch-entailment.XXXXXX)
+  fill $page $here/../assets/entailment-prompt.txt > $work/prompt.txt
+  checked=/Volumes/4/tmp/catch-reads/$story; mkdir -p $checked
+  base=($checked/r*.html(Nom[1]))
+  [[ -n ${FULL:-} ]] && base=
+  python3 $here/evidence_pack.py $story $html $work/evidence.md $work/records.md ${base:+$base}
   for attempt in 1 2 3; do
-    rm -f $report
-    codex exec -m chatgpt-web/high --skip-git-repo-check -C $PWD -c model_reasoning_effort=high \
-      -o $report "$prompt" </dev/null > /dev/null 2>&1 || true
-    if [[ -s $report ]] && grep -v '^[[:space:]]*$' $report | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^(ENTAILED|NOT ENTAILED)$' &&
-       grep -v '^[[:space:]]*$' $report | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^CHECKED: [1-9][0-9]* blocks, [1-9][0-9]* citations$'; then
+    zsh $here/../../catch-record/scripts/ask.sh $work/prompt.txt $work/answer.md --inline $work/evidence.md -f $work/records.md || { print "entailment: the ask failed; see above" >&2; exit 1 }
+    if grep -v '^[[:space:]]*$' $work/answer.md | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^(ENTAILED|NOT ENTAILED)$' &&
+       grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^CHECKED: [1-9][0-9]* blocks, [1-9][0-9]* citations$'; then
+      cp $work/answer.md $report
+      cp $html $checked/r$round.html
       print "entailment -> $report: $(tail -2 $report | head -1); $(tail -1 $report)"
       exit 0
     fi
-    print "entailment attempt $attempt ended without an audited verdict: $(tail -2 $report 2>/dev/null | tr '\n' ' ')" >&2
+    print "entailment attempt $attempt ended without an audited verdict: $(tail -2 $work/answer.md | tr '\n' ' ')" >&2
   done
   exit 1
 fi

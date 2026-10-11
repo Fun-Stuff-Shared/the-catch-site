@@ -1,6 +1,42 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-014310db-375f-49c9-a853-185335434c74": {
+      "slot": "customer count",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a",
+      "heads": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "The company said that more than 10 customers — mostly trading firms — have signed up for the service.",
+      "span_check": "byte_exact",
+      "speaker": "Trump Media & Technology Group",
+      "figure": {
+        "unit": "customers signed up",
+        "value": "10"
+      },
+      "as_of": "2026-08-12",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Trump Media & Technology Group customer enrollment records",
+      "evidence_id": "57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344",
+      "basis": [
+        "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a"
+      ],
+      "last_confirmed": "2026-08-12",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-014310db-375f-49c9-a853-185335434c74",
+      "as_of": "2026-08-12",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -215,6 +251,7 @@
           "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
           "log_seq": 432408,
           "recorded_at": "2026-09-05T09:02:00.493381Z",
+          "slot_id": "slot-014310db-375f-49c9-a853-185335434c74",
           "evidence_asserted_at": "2026-08-12T20:37:45Z",
           "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
           "evidence_publisher": "The New York Times",
@@ -352,8 +389,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T09:34:56.876496Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 432155,
@@ -370,6 +407,32 @@
   },
   "publishable": true,
   "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a",
+      "envelope_seq": 990258,
+      "event_id": "event-62fc661a-05a1-43d8-99d1-40963913b5e2",
+      "id": "slot-014310db-375f-49c9-a853-185335434c74",
+      "name": "customer count",
+      "refusal": null,
+      "log_seq": 990259,
+      "recorded_at": "2026-09-27T10:03:15.492198Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a",
+      "envelope_seq": 990256,
+      "event_id": "event-62fc661a-05a1-43d8-99d1-40963913b5e2",
+      "id": "slot-90e65b62-368b-4c92-9030-36b136ec29a4",
+      "name": "customer count",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 990257,
+      "recorded_at": "2026-09-27T10:02:52.133336Z"
+    },
     {
       "accepted": true,
       "anchor_occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a",
@@ -573,6 +636,7 @@
       "text_sha256": "f55209150023580547e63ec4f179ed9a84535dbe69f1e13c5608ebb1377c3c2e",
       "log_seq": 432408,
       "recorded_at": "2026-09-05T09:02:00.493381Z",
+      "slot_id": "slot-014310db-375f-49c9-a853-185335434c74",
       "evidence_asserted_at": "2026-08-12T20:37:45Z",
       "evidence_url": "https://www.nytimes.com/2026/08/12/us/politics/trump-truth-social-lawsuit.html",
       "evidence_publisher": "The New York Times",
@@ -707,7 +771,21 @@
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 990260,
+      "id": "attach-anchor-slot-014310db-375f-49c9-a853-185335434c74",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a",
+      "refusal": null,
+      "slot_id": "slot-014310db-375f-49c9-a853-185335434c74",
+      "log_seq": 990261,
+      "recorded_at": "2026-09-27T10:03:15.510444Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -724,5 +802,14 @@
   "root_id": "event-62fc661a-05a1-43d8-99d1-40963913b5e2",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-014310db-375f-49c9-a853-185335434c74",
+      "name": "customer count",
+      "value": "10",
+      "unit": "customers signed up",
+      "sentence": "The company said that more than 10 customers — mostly trading firms — have signed up for the service.",
+      "occurrence_id": "occurrence-57ad5d8df54cd9664ba2eda103ec58a98a52ea0668619202186bc0ddc98ad344-b8daa4e0a5158a4a"
+    }
+  ]
 }

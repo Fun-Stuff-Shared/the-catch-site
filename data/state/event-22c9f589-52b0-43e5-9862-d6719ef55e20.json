@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-64e05d50-a84b-46eb-9b66-744e35aa44df": {
+      "slot": "ruling date",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5",
+      "heads": [
+        "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Harvard and the government are also in a legal battle after the Trump administration tried to stop Harvard from hosting international students. A federal judge ruled in Harvard’s favor in June 2025. The government is appealing.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2025-06",
+      "as_of_source": "resolved_from_context",
+      "checkable_against": "Federal court ruling and appellate docket in Harvard's international-student case",
+      "evidence_id": "5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3",
+      "basis": [
+        "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5"
+      ],
+      "last_confirmed": "2025-06",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
+      "as_of": "2025-06",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "eac755362e93799bf6a7daaddf88b7e6543188e94c0e89b4c220fae75399d4ca",
           "log_seq": 751942,
           "recorded_at": "2026-09-07T08:04:09.837998Z",
+          "slot_id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
           "evidence_asserted_at": "2026-08-13T21:52:37Z",
           "evidence_url": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
           "evidence_publisher": "The New York Times",
@@ -62,8 +96,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 751881,
@@ -83,7 +117,34 @@
     "log_seq": 751882
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5",
+      "envelope_seq": 914431,
+      "event_id": "event-22c9f589-52b0-43e5-9862-d6719ef55e20",
+      "id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
+      "name": "ruling date",
+      "refusal": null,
+      "log_seq": 914432,
+      "recorded_at": "2026-09-20T02:00:04.290852Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5",
+      "envelope_seq": 914429,
+      "event_id": "event-22c9f589-52b0-43e5-9862-d6719ef55e20",
+      "id": "slot-d03c0852-6cb3-4549-a068-09bb51e8c04e",
+      "name": "ruling date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 914430,
+      "recorded_at": "2026-09-20T01:59:48.677326Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -113,13 +174,28 @@
       "text_sha256": "eac755362e93799bf6a7daaddf88b7e6543188e94c0e89b4c220fae75399d4ca",
       "log_seq": 751942,
       "recorded_at": "2026-09-07T08:04:09.837998Z",
+      "slot_id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
       "evidence_asserted_at": "2026-08-13T21:52:37Z",
       "evidence_url": "https://www.nytimes.com/2026/08/13/us/harvard-antisemitism-case-dismissed.html",
       "evidence_publisher": "The New York Times",
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 914433,
+      "id": "attach-anchor-slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5",
+      "refusal": null,
+      "slot_id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
+      "log_seq": 914434,
+      "recorded_at": "2026-09-20T02:00:04.309602Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -136,5 +212,14 @@
   "root_id": "event-22c9f589-52b0-43e5-9862-d6719ef55e20",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-64e05d50-a84b-46eb-9b66-744e35aa44df",
+      "name": "ruling date",
+      "value": null,
+      "unit": null,
+      "sentence": "Harvard and the government are also in a legal battle after the Trump administration tried to stop Harvard from hosting international students. A federal judge ruled in Harvard’s favor in June 2025. The government is appealing.",
+      "occurrence_id": "occurrence-5a71a40c61788e765b2e0b267f930318bf3dfa7fa198d8b77cac6a306d14aaf3-283c324c7b3cebd5"
+    }
+  ]
 }

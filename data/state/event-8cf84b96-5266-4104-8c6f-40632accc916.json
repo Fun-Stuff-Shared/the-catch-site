@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-b39af2c2-0419-4954-a83b-d39efdff83f7": {
+      "slot": "Buffett age",
+      "occurrence_id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333",
+      "heads": [
+        "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Buffett remains active at 96",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": {
+        "unit": "years",
+        "value": "96"
+      },
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Warren Buffett's official biography or Berkshire Hathaway records",
+      "evidence_id": "68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0",
+      "basis": [
+        "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333"
+      ],
+      "last_confirmed": "2026-08-29",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "as_of": "2026-08-29",
+      "occurrence_id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T12:03:14Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9569.html",
+      "envelope_seq": 172439,
+      "id": "68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:38.252395Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "x_cnbc_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9569.txt",
+      "text_sha256": "7ce57bb82386fd204a292e43fa75bb0c49504cd2aa080990d4199b60ddc1019c",
+      "url": "https://x.com/CNBC/status/2093670811689271461",
+      "verbatim_level": "article",
+      "log_seq": 522059,
+      "recorded_at": "2026-09-06T01:33:24.338586Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-29",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-29T12:03:14Z",
+          "checkable_against": "Warren Buffett's official biography or Berkshire Hathaway records",
+          "claim_type": "actual",
+          "envelope_seq": 783413,
+          "event_id": "event-8cf84b96-5266-4104-8c6f-40632accc916",
+          "evidence_id": "68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0",
+          "figure": {
+            "unit": "years",
+            "value": "96"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "Buffett remains active at 96",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:38.252395Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 40,
+          "span_start": 12,
+          "speaker": "outlet's own",
+          "subject": "Warren Buffett and Berkshire Hathaway",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9569.txt",
+          "text_sha256": "7ce57bb82386fd204a292e43fa75bb0c49504cd2aa080990d4199b60ddc1019c",
+          "log_seq": 783414,
+          "recorded_at": "2026-09-08T02:57:46.723293Z",
+          "slot_id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+          "evidence_asserted_at": "2026-08-29T12:03:14Z",
+          "evidence_url": "https://x.com/CNBC/status/2093670811689271461",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 783405,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-8cf84b96-5266-4104-8c6f-40632accc916",
+    "kind": "report",
+    "label": "CNBC report on Buffett and Berkshire shares",
+    "minted_at": "2026-09-08T02:57:37.768006Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0",
+    "period": "2026-08-29",
+    "refusal": null,
+    "status": "published",
+    "subject": "Warren Buffett and Berkshire Hathaway",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0/799671690f4c4d7da8bcd97ea08e4fcb.json",
+    "log_seq": 783406
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333",
+      "envelope_seq": 783427,
+      "event_id": "event-8cf84b96-5266-4104-8c6f-40632accc916",
+      "id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "name": "Buffett age",
+      "refusal": null,
+      "log_seq": 783428,
+      "recorded_at": "2026-09-08T02:57:59.137617Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-29",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-29T12:03:14Z",
+      "checkable_against": "Warren Buffett's official biography or Berkshire Hathaway records",
+      "claim_type": "actual",
+      "envelope_seq": 783413,
+      "event_id": "event-8cf84b96-5266-4104-8c6f-40632accc916",
+      "evidence_id": "68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0",
+      "figure": {
+        "unit": "years",
+        "value": "96"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "Buffett remains active at 96",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:38.252395Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 40,
+      "span_start": 12,
+      "speaker": "outlet's own",
+      "subject": "Warren Buffett and Berkshire Hathaway",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9569.txt",
+      "text_sha256": "7ce57bb82386fd204a292e43fa75bb0c49504cd2aa080990d4199b60ddc1019c",
+      "log_seq": 783414,
+      "recorded_at": "2026-09-08T02:57:46.723293Z",
+      "slot_id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "evidence_asserted_at": "2026-08-29T12:03:14Z",
+      "evidence_url": "https://x.com/CNBC/status/2093670811689271461",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783429,
+      "id": "attach-anchor-slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "occurrence_id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333",
+      "refusal": null,
+      "slot_id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "log_seq": 783430,
+      "recorded_at": "2026-09-08T02:57:59.351383Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-8cf84b96-5266-4104-8c6f-40632accc916",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-b39af2c2-0419-4954-a83b-d39efdff83f7",
+      "name": "Buffett age",
+      "value": "96",
+      "unit": "years",
+      "sentence": "Buffett remains active at 96",
+      "occurrence_id": "occurrence-68846f6ec515ce411439e83d8d8123fb1f901c58c8e1bac6046ec43919086bc0-59f46cd1a7d38333"
+    }
+  ]
+}

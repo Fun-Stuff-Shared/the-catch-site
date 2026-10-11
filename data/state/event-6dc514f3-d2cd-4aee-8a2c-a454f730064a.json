@@ -1,6 +1,39 @@
 {
-  "current_state": {},
-  "timeline": [],
+  "current_state": {
+    "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7": {
+      "slot": "start date",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a",
+      "heads": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "Gov. Mark Gordon has prioritized suicide prevention since his second term began in 2023.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2023",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Office of Wyoming Governor Mark Gordon policy records",
+      "evidence_id": "5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85",
+      "basis": [
+        "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a"
+      ],
+      "last_confirmed": "2023",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
+      "as_of": "2023",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a"
+    }
+  ],
   "evidence": [
     {
       "accepted": true,
@@ -53,6 +86,7 @@
           "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
           "log_seq": 753562,
           "recorded_at": "2026-09-07T08:32:21.554413Z",
+          "slot_id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
           "evidence_asserted_at": "2026-08-06T18:41:20Z",
           "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
           "evidence_publisher": "The New York Times",
@@ -95,8 +129,8 @@
     }
   ],
   "standard_version": "2.0.0-draft",
-  "produced_by_commit": "0b6669c2d2",
-  "evaluated_at": "2026-09-07T08:36:50.370882Z",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
   "event": {
     "accepted": true,
     "envelope_seq": 753519,
@@ -116,7 +150,34 @@
     "log_seq": 753520
   },
   "publishable": true,
-  "slots": [],
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a",
+      "envelope_seq": 999856,
+      "event_id": "event-6dc514f3-d2cd-4aee-8a2c-a454f730064a",
+      "id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
+      "name": "start date",
+      "refusal": null,
+      "log_seq": 999857,
+      "recorded_at": "2026-09-29T06:00:02.468776Z"
+    },
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a",
+      "envelope_seq": 999854,
+      "event_id": "event-6dc514f3-d2cd-4aee-8a2c-a454f730064a",
+      "id": "slot-a5d0b57d-6cf6-47c2-b8a9-21db5e97723a",
+      "name": "start date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 999855,
+      "recorded_at": "2026-09-29T05:59:33.028115Z"
+    }
+  ],
   "occurrences": [
     {
       "accepted": true,
@@ -146,6 +207,7 @@
       "text_sha256": "05e3e46d651ccd82dbd85d21a6d5a073a7b70cd39a0bfc355c58e38932b444db",
       "log_seq": 753562,
       "recorded_at": "2026-09-07T08:32:21.554413Z",
+      "slot_id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
       "evidence_asserted_at": "2026-08-06T18:41:20Z",
       "evidence_url": "https://www.nytimes.com/2026/08/04/opinion/suicide-wyoming-mental-health.html",
       "evidence_publisher": "The New York Times",
@@ -185,7 +247,21 @@
       "evidence_source_id": "nytimes_news_sitemap"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 999858,
+      "id": "attach-anchor-slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a",
+      "refusal": null,
+      "slot_id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
+      "log_seq": 999859,
+      "recorded_at": "2026-09-29T06:00:02.476873Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
   "revision_timeline": {
     "changes": [],
     "changes_checked_at": null,
@@ -202,5 +278,14 @@
   "root_id": "event-6dc514f3-d2cd-4aee-8a2c-a454f730064a",
   "changed_since_previous": [],
   "same_name_not_compared": [],
-  "new_slots": []
+  "new_slots": [
+    {
+      "slot_id": "slot-2c1baba7-ef9f-425b-bb5f-6a104025a7c7",
+      "name": "start date",
+      "value": null,
+      "unit": null,
+      "sentence": "Gov. Mark Gordon has prioritized suicide prevention since his second term began in 2023.",
+      "occurrence_id": "occurrence-5c5ebeb8a9d074fba8414a8e2acb2d13796041cd1cad3212d2d2cf0c2f09ea85-0eeeb9a682f6521a"
+    }
+  ]
 }

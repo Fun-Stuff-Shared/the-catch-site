@@ -1,0 +1,225 @@
+{
+  "current_state": {
+    "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11": {
+      "slot": "test date",
+      "occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+      "heads": [
+        "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "In mid-June, one of the doctors at the ward tested positive for Ebola after flying to Paris.",
+      "span_check": "byte_exact",
+      "speaker": "outlet's own",
+      "figure": null,
+      "as_of": "2026-06",
+      "as_of_source": "literal_in_quote",
+      "checkable_against": "Ebola test and travel records for Rwampara ward doctor",
+      "evidence_id": "73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438",
+      "basis": [
+        "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27"
+      ],
+      "last_confirmed": "2026-06",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "as_of": "2026-06",
+      "occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-13T13:32:15Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_6445.html",
+      "envelope_seq": 171095,
+      "id": "73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438",
+      "publisher": "The New York Times",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:10.417895Z",
+      "root_evidence": "body:4307:4388",
+      "root_id": "www.nytimes.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "nytimes_news_sitemap",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6445.txt",
+      "text_sha256": "d0af622961ef7e6689fc738303a58fbb1a0020432067d8fab0f475e8e78efdda",
+      "url": "https://www.nytimes.com/2026/08/13/world/africa/ebola-congo-patient-dies.html",
+      "verbatim_level": "article",
+      "log_seq": 521387,
+      "recorded_at": "2026-09-06T01:33:24.151107Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-06",
+          "as_of_source": "literal_in_quote",
+          "asserted_at": "2026-08-13T13:32:15Z",
+          "checkable_against": "Ebola test and travel records for Rwampara ward doctor",
+          "claim_type": "actual",
+          "envelope_seq": 796964,
+          "event_id": "event-58d1e0c0-19db-4fd0-86f0-0baa62fe9710",
+          "evidence_id": "73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438",
+          "figure": null,
+          "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+          "id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "In mid-June, one of the doctors at the ward tested positive for Ebola after flying to Paris.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T20:39:10.417895Z",
+          "root_id": "www.nytimes.com",
+          "span_check": "byte_exact",
+          "span_end": 5556,
+          "span_start": 5464,
+          "speaker": "outlet's own",
+          "subject": "Doctor at Rwampara Ebola ward",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6445.txt",
+          "text_sha256": "d0af622961ef7e6689fc738303a58fbb1a0020432067d8fab0f475e8e78efdda",
+          "log_seq": 796965,
+          "recorded_at": "2026-09-08T07:27:25.431356Z",
+          "slot_id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+          "evidence_asserted_at": "2026-08-13T13:32:15Z",
+          "evidence_url": "https://www.nytimes.com/2026/08/13/world/africa/ebola-congo-patient-dies.html",
+          "evidence_publisher": "The New York Times",
+          "evidence_source_id": "nytimes_news_sitemap"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "bbe870541b",
+  "evaluated_at": "2026-10-04T01:37:48.685831Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 796852,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": "event-ffcae5cc-f2ec-4aa7-ba36-ee53f3029e31",
+    "id": "event-58d1e0c0-19db-4fd0-86f0-0baa62fe9710",
+    "kind": "infection",
+    "label": "Ebola doctor at Rwampara ward tests positive after flying to Paris",
+    "minted_at": "2026-09-08T07:26:28.216459Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438",
+    "period": "2026-06",
+    "refusal": null,
+    "status": "published",
+    "subject": "Doctor at Rwampara Ebola ward",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438/6a0baf0af49b446da54c6b8d6405bc5b.json",
+    "log_seq": 796853
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": false,
+      "anchor_occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+      "envelope_seq": 983018,
+      "event_id": "event-58d1e0c0-19db-4fd0-86f0-0baa62fe9710",
+      "id": "slot-31d4acf3-65b1-4eb8-923f-5fd969507db2",
+      "name": "test date",
+      "refusal": "source_feed_document_source_required",
+      "source_feed": {
+        "selector": "https://www.nytimes.com/2026/08/13/world/africa/ebola-congo-patient-dies.html",
+        "source_id": "nytimes_news_sitemap"
+      },
+      "log_seq": 983019,
+      "recorded_at": "2026-09-25T18:07:31.590026Z"
+    },
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+      "envelope_seq": 983020,
+      "event_id": "event-58d1e0c0-19db-4fd0-86f0-0baa62fe9710",
+      "id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "name": "test date",
+      "refusal": null,
+      "log_seq": 983021,
+      "recorded_at": "2026-09-25T18:07:42.162137Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-06",
+      "as_of_source": "literal_in_quote",
+      "asserted_at": "2026-08-13T13:32:15Z",
+      "checkable_against": "Ebola test and travel records for Rwampara ward doctor",
+      "claim_type": "actual",
+      "envelope_seq": 796964,
+      "event_id": "event-58d1e0c0-19db-4fd0-86f0-0baa62fe9710",
+      "evidence_id": "73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438",
+      "figure": null,
+      "fire_id": "119867d0ab04b74cfae152196f46fd8f",
+      "id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "In mid-June, one of the doctors at the ward tested positive for Ebola after flying to Paris.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T20:39:10.417895Z",
+      "root_id": "www.nytimes.com",
+      "span_check": "byte_exact",
+      "span_end": 5556,
+      "span_start": 5464,
+      "speaker": "outlet's own",
+      "subject": "Doctor at Rwampara Ebola ward",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_6445.txt",
+      "text_sha256": "d0af622961ef7e6689fc738303a58fbb1a0020432067d8fab0f475e8e78efdda",
+      "log_seq": 796965,
+      "recorded_at": "2026-09-08T07:27:25.431356Z",
+      "slot_id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "evidence_asserted_at": "2026-08-13T13:32:15Z",
+      "evidence_url": "https://www.nytimes.com/2026/08/13/world/africa/ebola-congo-patient-dies.html",
+      "evidence_publisher": "The New York Times",
+      "evidence_source_id": "nytimes_news_sitemap"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 983022,
+      "id": "attach-anchor-slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27",
+      "refusal": null,
+      "slot_id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "log_seq": 983023,
+      "recorded_at": "2026-09-25T18:07:42.169886Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": "event-ffcae5cc-f2ec-4aa7-ba36-ee53f3029e31",
+  "root_id": "event-ffcae5cc-f2ec-4aa7-ba36-ee53f3029e31",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-f528dc3d-2ffd-493b-af25-0ff61ff37d11",
+      "name": "test date",
+      "value": null,
+      "unit": null,
+      "sentence": "In mid-June, one of the doctors at the ward tested positive for Ebola after flying to Paris.",
+      "occurrence_id": "occurrence-73cf0d639d42859922dc88fe883dca1baa8bdd0f96174f1568e1ef6c8e524438-1d9d335c6b721a27"
+    }
+  ]
+}

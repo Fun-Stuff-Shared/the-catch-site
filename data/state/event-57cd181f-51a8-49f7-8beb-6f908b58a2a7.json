@@ -1,0 +1,352 @@
+{
+  "current_state": {
+    "slot-7acb9a6b-1002-412b-88ea-4845d107f51f": {
+      "slot": "Amodei distrust share",
+      "occurrence_id": null,
+      "heads": [
+        "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+        "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635"
+      ],
+      "roots": 0,
+      "primary": false,
+      "disputed": true,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "basis": [
+        "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+        "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635"
+      ],
+      "last_confirmed": "2026-08",
+      "freshness": "unknown_current"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "disputed",
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "as_of": "2026-08"
+    },
+    {
+      "kind": "first_value",
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "as_of": "2026-08",
+      "occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-29T19:55:30Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_1818.html",
+      "envelope_seq": 165727,
+      "id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:57.069407Z",
+      "root_evidence": "body:1641:1722",
+      "root_id": "www.cnbc.com",
+      "root_state": "root_unresolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "cnbc_news_rss",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1818.txt",
+      "text_sha256": "9d81c41a6a0856d695f6743c10e6115181059aec98f617a8ac8a50addd1b860e",
+      "title": "Tech backlash reaches fever pitch as AI angst collides with social media fears",
+      "url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+      "verbatim_level": "article",
+      "log_seq": 518703,
+      "recorded_at": "2026-09-06T01:33:23.386344Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T19:55:30Z",
+          "checkable_against": "CNBC Generation Lab survey microdata",
+          "claim_type": "actual",
+          "envelope_seq": 787062,
+          "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+          "evidence_id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+          "figure": {
+            "unit": "percent",
+            "value": "70"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:57.069407Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 4280,
+          "span_start": 4091,
+          "speaker": "CNBC Generation Lab",
+          "subject": "Young adults' trust in AI executives",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1818.txt",
+          "text_sha256": "9d81c41a6a0856d695f6743c10e6115181059aec98f617a8ac8a50addd1b860e",
+          "log_seq": 787063,
+          "recorded_at": "2026-09-08T03:41:20.701148Z",
+          "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+          "evidence_asserted_at": "2026-08-29T19:55:30Z",
+          "evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        },
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08",
+          "as_of_source": "resolved_from_context",
+          "asserted_at": "2026-08-29T19:55:30Z",
+          "checkable_against": "CNBC Generation Lab survey microdata",
+          "claim_type": "actual",
+          "envelope_seq": 787052,
+          "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+          "evidence_id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+          "figure": {
+            "unit": "percent",
+            "value": "75"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T10:14:57.069407Z",
+          "root_id": "www.cnbc.com",
+          "span_check": "byte_exact",
+          "span_end": 4280,
+          "span_start": 4091,
+          "speaker": "CNBC Generation Lab",
+          "subject": "Young adults' trust in AI executives",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1818.txt",
+          "text_sha256": "9d81c41a6a0856d695f6743c10e6115181059aec98f617a8ac8a50addd1b860e",
+          "log_seq": 787053,
+          "recorded_at": "2026-09-08T03:41:16.955148Z",
+          "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+          "evidence_asserted_at": "2026-08-29T19:55:30Z",
+          "evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "cnbc_news_rss"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "86afe1d4e1",
+  "evaluated_at": "2026-10-04T05:35:30.976829Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 787012,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+    "kind": "survey",
+    "label": "CNBC Generation Lab survey on trust in AI executives",
+    "minted_at": "2026-09-08T03:40:55.825095Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Young adults' trust in AI executives",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee/6a96344389704126a16b1d1d5f9fc489.json",
+    "log_seq": 787013
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+      "envelope_seq": 788185,
+      "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "name": "Amodei distrust share",
+      "refusal": null,
+      "log_seq": 788186,
+      "recorded_at": "2026-09-08T04:39:19.341987Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T19:55:30Z",
+      "checkable_against": "CNBC Generation Lab survey microdata",
+      "claim_type": "actual",
+      "envelope_seq": 787062,
+      "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "evidence_id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+      "figure": {
+        "unit": "percent",
+        "value": "70"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:57.069407Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 4280,
+      "span_start": 4091,
+      "speaker": "CNBC Generation Lab",
+      "subject": "Young adults' trust in AI executives",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1818.txt",
+      "text_sha256": "9d81c41a6a0856d695f6743c10e6115181059aec98f617a8ac8a50addd1b860e",
+      "log_seq": 787063,
+      "recorded_at": "2026-09-08T03:41:20.701148Z",
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "evidence_asserted_at": "2026-08-29T19:55:30Z",
+      "evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    },
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08",
+      "as_of_source": "resolved_from_context",
+      "asserted_at": "2026-08-29T19:55:30Z",
+      "checkable_against": "CNBC Generation Lab survey microdata",
+      "claim_type": "actual",
+      "envelope_seq": 787052,
+      "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "evidence_id": "6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee",
+      "figure": {
+        "unit": "percent",
+        "value": "75"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T10:14:57.069407Z",
+      "root_id": "www.cnbc.com",
+      "span_check": "byte_exact",
+      "span_end": 4280,
+      "span_start": 4091,
+      "speaker": "CNBC Generation Lab",
+      "subject": "Young adults' trust in AI executives",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_1818.txt",
+      "text_sha256": "9d81c41a6a0856d695f6743c10e6115181059aec98f617a8ac8a50addd1b860e",
+      "log_seq": 787053,
+      "recorded_at": "2026-09-08T03:41:16.955148Z",
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "evidence_asserted_at": "2026-08-29T19:55:30Z",
+      "evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "cnbc_news_rss"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 965547,
+      "id": "attach-1b942914-3a90-4dec-97c8-3635f7a68d8e",
+      "occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+      "refusal": null,
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "log_seq": 965548,
+      "recorded_at": "2026-09-25T14:08:34.900837Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 788187,
+      "id": "attach-anchor-slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+      "refusal": null,
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "log_seq": 788188,
+      "recorded_at": "2026-09-08T04:39:19.555747Z",
+      "family": "identity",
+      "label": "attach"
+    },
+    {
+      "accepted": true,
+      "envelope_seq": 1111601,
+      "event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "family": "event",
+      "features": {
+        "source_relation": "same_origin",
+        "spans": {
+          "source": "More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .",
+          "time": "",
+          "value": "More than 75%"
+        },
+        "time_action": "unknown",
+        "value_relation": "incompatible"
+      },
+      "from_event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "from_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+      "id": "edge-relation-e29bcae35212cd0f05e953d9",
+      "judge": "inference-queue-featherless/google/gemma-4-31B-it",
+      "label": "contradicts",
+      "reason": "The NEW occurrence (75%) refers to the distrust share for Dario Amodei. The EXISTING occurrence (70%) refers to views about Sam Altman and Mark Zuckerberg. These are different subjects and therefore incompatible values for the 'Amodei distrust share' slot.",
+      "refusal": null,
+      "to_event_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+      "to_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+      "log_seq": 1111602,
+      "recorded_at": "2026-10-04T05:12:43.184991Z"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [
+      {
+        "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e29bcae35212cd0f05e953d9",
+        "earlier_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+        "later_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+        "sentence": "On 2026-08-29, CNBC reported “More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .”; on the same day, CNBC reported “More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .”."
+      }
+    ],
+    "changes_checked_at": "2026-08-29T19:55:30Z",
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": [
+      {
+        "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+        "relation": "contradicts",
+        "edge_id": "edge-relation-e29bcae35212cd0f05e953d9",
+        "earlier_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-5ece2936a704ba54",
+        "later_occurrence_id": "occurrence-6a880c9a6a359b11a2e50acc71d1cf2340b79923d6ce7e9bed6c839ffc179dee-b98b4040e38e5635",
+        "earlier_evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+        "later_evidence_url": "https://www.cnbc.com/2026/08/29/tech-backlash-ai-data-centers-elections.html",
+        "sentence": "On 2026-08-29, CNBC reported “More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .”; on the same day, CNBC reported “More than 75% of respondents said they don't trust Anthropic CEO Dario Amodei to act responsibly, while around 70% expressed views about OpenAI CEO Sam Altman and Meta CEO Mark Zuckerberg .”."
+      }
+    ]
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-57cd181f-51a8-49f7-8beb-6f908b58a2a7",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-7acb9a6b-1002-412b-88ea-4845d107f51f",
+      "name": "Amodei distrust share",
+      "value": null,
+      "unit": null,
+      "sentence": null,
+      "occurrence_id": null
+    }
+  ]
+}

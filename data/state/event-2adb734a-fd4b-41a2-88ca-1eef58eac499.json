@@ -1,0 +1,219 @@
+{
+  "current_state": {
+    "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7": {
+      "slot": "misclassified investments",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f",
+      "heads": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f"
+      ],
+      "roots": 1,
+      "primary": false,
+      "disputed": false,
+      "withdrawn": false,
+      "uncertain_pairs": 0,
+      "quote_span": "This started when Delaware Life and Clear Spring admitted $21B in investments were wrongly classified as unaffiliated, when they were tied to Walter's own empire.",
+      "span_check": "byte_exact",
+      "speaker": "fuelmeup",
+      "figure": {
+        "unit": "billion dollars",
+        "value": "21"
+      },
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "checkable_against": "Delaware Life and Clear Spring Life and Annuity investment classification disclosures and related-party records",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "basis": [
+        "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f"
+      ],
+      "last_confirmed": "2026-08-28",
+      "freshness": "stale"
+    }
+  },
+  "timeline": [
+    {
+      "kind": "first_value",
+      "slot_id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "as_of": "2026-08-28",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f"
+    }
+  ],
+  "evidence": [
+    {
+      "accepted": true,
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "content_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/raw/article_9560.html",
+      "envelope_seq": 172421,
+      "id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "publisher": "CNBC",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_evidence": "publisher_host",
+      "root_id": "x.com",
+      "root_state": "resolved",
+      "run_dir": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z",
+      "source_family": "major_outlet",
+      "source_id": "x_cnbc_account",
+      "source_kind": "news",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "url": "https://x.com/CNBC/status/2093442068878082415",
+      "verbatim_level": "article",
+      "log_seq": 522050,
+      "recorded_at": "2026-09-06T01:33:24.336091Z",
+      "occurrences": [
+        {
+          "accepted": true,
+          "anchorable": true,
+          "as_of": "2026-08-28",
+          "as_of_source": "publication_timestamp",
+          "asserted_at": "2026-08-28T20:54:18Z",
+          "checkable_against": "Delaware Life and Clear Spring Life and Annuity investment classification disclosures and related-party records",
+          "claim_type": "actual",
+          "envelope_seq": 783525,
+          "event_id": "event-2adb734a-fd4b-41a2-88ca-1eef58eac499",
+          "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+          "figure": {
+            "unit": "billion dollars",
+            "value": "21"
+          },
+          "fire_id": "1877dff42955988ce7c69252304c5a50",
+          "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f",
+          "judge": "openai-codex/gpt-5.6-luna",
+          "quote_span": "This started when Delaware Life and Clear Spring admitted $21B in investments were wrongly classified as unaffiliated, when they were tied to Walter's own empire.",
+          "refusal": null,
+          "retrieved_at": "2026-08-30T21:38:37.148138Z",
+          "root_id": "x.com",
+          "span_check": "byte_exact",
+          "span_end": 1625,
+          "span_start": 1463,
+          "speaker": "fuelmeup",
+          "subject": "Delaware Life and Clear Spring Life and Annuity",
+          "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+          "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+          "log_seq": 783526,
+          "recorded_at": "2026-09-08T02:59:17.510741Z",
+          "slot_id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+          "evidence_asserted_at": "2026-08-28T20:54:18Z",
+          "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+          "evidence_publisher": "CNBC",
+          "evidence_source_id": "x_cnbc_account"
+        }
+      ]
+    }
+  ],
+  "standard_version": "2.0.0-draft",
+  "produced_by_commit": "ba2171dca3",
+  "evaluated_at": "2026-10-02T00:25:39.409398Z",
+  "event": {
+    "accepted": true,
+    "envelope_seq": 783497,
+    "fire_id": "quarry-wire-scheduled-20260830T100005Z",
+    "follows": null,
+    "id": "event-2adb734a-fd4b-41a2-88ca-1eef58eac499",
+    "kind": "admission",
+    "label": "Delaware Life and Clear Spring investment classification admission",
+    "minted_at": "2026-09-08T02:58:56.338153Z",
+    "minted_by": "openai-codex/gpt-5.6-luna",
+    "minted_evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+    "period": "2026-08",
+    "refusal": null,
+    "status": "published",
+    "subject": "Delaware Life and Clear Spring Life and Annuity",
+    "trace_path": "/Volumes/4/CF/catch-state/traces/quarry-wire-scheduled-20260830T100005Z/68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b/b4328d82e3dd4c87a4a0a0873083343e.json",
+    "log_seq": 783498
+  },
+  "publishable": true,
+  "slots": [
+    {
+      "accepted": true,
+      "anchor_occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f",
+      "envelope_seq": 783547,
+      "event_id": "event-2adb734a-fd4b-41a2-88ca-1eef58eac499",
+      "id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "name": "misclassified investments",
+      "refusal": null,
+      "log_seq": 783548,
+      "recorded_at": "2026-09-08T02:59:30.950278Z"
+    }
+  ],
+  "occurrences": [
+    {
+      "accepted": true,
+      "anchorable": true,
+      "as_of": "2026-08-28",
+      "as_of_source": "publication_timestamp",
+      "asserted_at": "2026-08-28T20:54:18Z",
+      "checkable_against": "Delaware Life and Clear Spring Life and Annuity investment classification disclosures and related-party records",
+      "claim_type": "actual",
+      "envelope_seq": 783525,
+      "event_id": "event-2adb734a-fd4b-41a2-88ca-1eef58eac499",
+      "evidence_id": "68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b",
+      "figure": {
+        "unit": "billion dollars",
+        "value": "21"
+      },
+      "fire_id": "1877dff42955988ce7c69252304c5a50",
+      "id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f",
+      "judge": "openai-codex/gpt-5.6-luna",
+      "quote_span": "This started when Delaware Life and Clear Spring admitted $21B in investments were wrongly classified as unaffiliated, when they were tied to Walter's own empire.",
+      "refusal": null,
+      "retrieved_at": "2026-08-30T21:38:37.148138Z",
+      "root_id": "x.com",
+      "span_check": "byte_exact",
+      "span_end": 1625,
+      "span_start": 1463,
+      "speaker": "fuelmeup",
+      "subject": "Delaware Life and Clear Spring Life and Annuity",
+      "text_path": "/Volumes/4/CF/news-fqs-pilot/runs/quarry-wire-scheduled-20260830T100005Z/text/article_9560.txt",
+      "text_sha256": "d306609efaf5d6f11d63423b5d9da2a88b1958ed2f0aa2cdefcd6c9106f43c9c",
+      "log_seq": 783526,
+      "recorded_at": "2026-09-08T02:59:17.510741Z",
+      "slot_id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "evidence_asserted_at": "2026-08-28T20:54:18Z",
+      "evidence_url": "https://x.com/CNBC/status/2093442068878082415",
+      "evidence_publisher": "CNBC",
+      "evidence_source_id": "x_cnbc_account"
+    }
+  ],
+  "edges": [
+    {
+      "accepted": true,
+      "edge_kind": "attach",
+      "envelope_seq": 783549,
+      "id": "attach-anchor-slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f",
+      "refusal": null,
+      "slot_id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "log_seq": 783550,
+      "recorded_at": "2026-09-08T02:59:31.163192Z",
+      "family": "identity",
+      "label": "attach"
+    }
+  ],
+  "revision_timeline": {
+    "changes": [],
+    "changes_checked_at": null,
+    "confirmations": [],
+    "quote_rows_unlinked": {
+      "count": 0,
+      "slot_ids": []
+    },
+    "edges": []
+  },
+  "status": "published",
+  "desk": null,
+  "follows": null,
+  "root_id": "event-2adb734a-fd4b-41a2-88ca-1eef58eac499",
+  "changed_since_previous": [],
+  "same_name_not_compared": [],
+  "new_slots": [
+    {
+      "slot_id": "slot-4b056e99-f7d9-4062-8c35-c813e26de0c7",
+      "name": "misclassified investments",
+      "value": "21",
+      "unit": "billion dollars",
+      "sentence": "This started when Delaware Life and Clear Spring admitted $21B in investments were wrongly classified as unaffiliated, when they were tied to Walter's own empire.",
+      "occurrence_id": "occurrence-68af546b900272df63b563ebb67ddb53bd30d4cde20fc997e073686d5ce6987b-1c4b8d3249cb536f"
+    }
+  ]
+}
