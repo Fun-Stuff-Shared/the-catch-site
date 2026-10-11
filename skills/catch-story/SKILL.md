@@ -63,7 +63,7 @@ to tell. Every story has What happened.
    each actor's own reason attributed.
 4. **The sides.** Each side's reading under its own label, stated as that side would state
    it, with its reasons. What they agree on.
-5. **The catch.** What coverage or a common reading gets wrong, and what the dispute
+5. **The Catch.** What coverage or a common reading gets wrong, and what the dispute
    actually turns on. Lead with the one thing a reader most needs to not misread.
 6. **What the coverage got right and wrong.** Only when the coverage is worth grading:
    outlets told the event's central facts differently, or a widely carried report would
