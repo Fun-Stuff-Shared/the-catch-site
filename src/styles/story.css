@@ -269,10 +269,6 @@
   vertical-align: 0.1em;
   white-space: nowrap;
 }
-.chip-record { background: var(--blue-tint); color: var(--blue); }
-.chip-computed { background: #f0f1f3; color: var(--ink); }
-.chip-official { background: #f0f1f3; color: var(--ink); }
-.chip-outlet { background: #fdf5e6; color: var(--amber, #9a6200); }
 .chip-ok { background: var(--blue-tint); color: var(--blue); }
 .chip-warn { background: #fce8ec; color: var(--red); }
 .chip-unconfirmed { background: #fce8ec; color: var(--red); }
@@ -647,8 +643,8 @@ ol.src-list li {
 }
 
 /* Consecutive citations read as separate numbers, never as one. */
-.src-ref + .src-ref { margin-left: 0; }
-.src-ref + .src-ref::before { content: ", "; white-space: pre; color: var(--muted, #6b7280); font-size: 0.72em; }
+.src-ref-more { margin-left: 0; }
+.src-ref-more::before { content: ", "; white-space: pre; color: var(--muted, #6b7280); font-size: 0.72em; }
 
 .story-figure figcaption { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .6rem; }
 .story-figure figcaption strong { font: 600 .95rem/1.3 var(--sans); }

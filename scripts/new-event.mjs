@@ -193,7 +193,6 @@ import StoryToc from "${rel}components/story/StoryToc.astro";
 import SectionKicker from "${rel}components/story/SectionKicker.astro";
 ${recipe.type === "fomc" ? `import StepChart from "${rel}components/story/StepChart.astro";\n` : ""}${recipe.type === "jobs-report" ? `import BarChart from "${rel}components/story/BarChart.astro";\nimport DataTable from "${rel}components/story/DataTable.astro";\n` : ""}import OutletCheck from "${rel}components/story/OutletCheck.astro";
 import CheckedBlock from "${rel}components/story/CheckedBlock.astro";
-import Chip from "${rel}components/story/Chip.astro";
 import RailedParagraph from "${rel}components/story/RailedParagraph.astro";
 import Receipt from "${rel}components/story/Receipt.astro";
 import RecordsList from "${rel}components/story/RecordsList.astro";

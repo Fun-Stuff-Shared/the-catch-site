@@ -9,7 +9,6 @@ import StepChart from "../../../components/story/StepChart.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
-import Chip from "../../../components/story/Chip.astro";
 import RailedParagraph from "../../../components/story/RailedParagraph.astro";
 import Receipt from "../../../components/story/Receipt.astro";
 import RecordsList from "../../../components/story/RecordsList.astro";
@@ -58,7 +57,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         <h2>What happened</h2>
         <RailedParagraph rail="record">
           The Federal Open Market Committee held the federal funds target range at&nbsp;<strong>3&#8209;1/2 to 3&#8209;3/4 percent</strong> on June 17, by a&nbsp;<strong>12&ndash;0</strong> vote. It was
-          Kevin Warsh's first meeting as chair. <Chip kind="record" />
+          Kevin Warsh's first meeting as chair.
         </RailedParagraph>
         <Receipt label="the record">
           <p>Statement: &ldquo;The Federal Open Market Committee approved the following statement for release by a 12&ndash;0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.&rdquo;
@@ -68,13 +67,12 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           The statement itself was the news as much as the decision: dramatically shorter than its predecessors,
           stripped of the language markets had read as a bias toward further cuts, and ending on a single
           declarative line: <em>&ldquo;The Committee will deliver price stability.&rdquo;</em>
-          <Chip kind="record" label="their words" />
         </RailedParagraph>
         <RailedParagraph rail="record">
           The Committee's stated read of the economy: activity expanding at a solid pace despite uncertainty
           from the conflict in the Middle East; productivity and capital investment strong; job gains keeping
           pace with the workforce; inflation still elevated relative to the 2&nbsp;percent goal, partly from
-          supply shocks including energy. <Chip kind="record" label="their words" />
+          supply shocks including energy.
         </RailedParagraph>
       </section>
 
@@ -83,7 +81,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         <h2>Where this sits</h2>
         <RailedParagraph rail="computed">
           The range has been parked at 3.50&ndash;3.75 since <strong>December 11, 2025:</strong> <strong>188 days</strong> as of this meeting, the end of a run of six cuts from the 5.25&ndash;5.50
-          cycle peak, with no upward move in the span. <Chip kind="computed" />
+          cycle peak, with no upward move in the span.
         </RailedParagraph>
         <StepChart
           start={ratePath.start}
@@ -103,7 +101,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           Against the full 1982&ndash;2026 daily history of the Fed's target, all 15,970 observations,
           the 3.75 upper bound sits at the&nbsp;<strong>48th percentile</strong>: almost exactly the middle of four
           decades of policy, just under the 3.82 mean and the 4.00 median. Not a high-rate regime by historical
-          standards, and not the near-zero world of 2009&ndash;2015 either. <Chip kind="computed" />
+          standards, and not the near-zero world of 2009&ndash;2015 either.
         </RailedParagraph>
         <Receipt label="how we got this number">
           <p>We combined two Fed series (DFEDTAR for 1982&ndash;2008, DFEDTARU for 2008 onward) through June 17, 2026:
@@ -113,7 +111,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         </Receipt>
         <RailedParagraph rail="computed">
           The last comparable easing pause, October 2019, bottomed at 1.50&ndash;1.75, roughly&nbsp;<strong>200bp below</strong> where this one is pausing. The Committee is holding at a level prior
-          cycles treated as ordinary. <Chip kind="computed" />
+          cycles treated as ordinary.
         </RailedParagraph>
       </section>
 
@@ -124,7 +122,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           The unanimous vote was not the day's real signal. In the Summary of Economic Projections released
           with the decision, the median projection for the federal funds rate at the end of 2026 rose to&nbsp;<strong>{sep.fedFunds.june.median["2026"]}&nbsp;percent, up from {sep.fedFunds.march.median["2026"]} in March</strong>: from a level that implied a rate cut
           this year to one implying a hike. The central tendency moved to {sep.fedFunds.june.centralTendency["2026"]}, the full range to
-          {sep.fedFunds.june.range["2026"]}. <Chip kind="record" />
+          {sep.fedFunds.june.range["2026"]}.
         </RailedParagraph>
         <Receipt label="the projections, March vs. June">
           <table class="data-table">
@@ -148,11 +146,11 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           participants commented that&hellip; there was a case for raising the target range,&rdquo;</em> though
           they supported the hold at this meeting, and <em>&ldquo;several participants remarked that they did
           not see the current policy stance as restrictive.&rdquo;</em> All participants supported maintaining
-          the range in June. <Chip kind="record" label="their words" />
+          the range in June.
         </RailedParagraph>
         <RailedParagraph rail="outlet">
           One projection was missing: CNBC reported that Warsh, a longtime critic of the dot plot and of
-          the Fed's forward-guidance apparatus, did not submit projections to his own first SEP. No other outlet in this story's records reported this. <Chip kind="outlet" />
+          the Fed's forward-guidance apparatus, did not submit projections to his own first SEP. No other outlet in this story's records reported this.
         </RailedParagraph>
       </section>
 
@@ -210,7 +208,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         <h2>Claim checked against the record</h2>
         <CheckedBlock label="The recurring premise: inflation above target &ldquo;for more than five years&rdquo;">
           <p>The Fed's own staff briefing and most coverage lean on one factual claim: inflation has run above the 2&nbsp;percent goal for over five years. We ran it against the PCE price index: <strong>Confirmed.</strong> PCE inflation has printed above 2&nbsp;percent year-over-year for&nbsp;<strong>63 consecutive months</strong> since March 2021, which is 5.3 years, with the latest
-          pre-meeting reading at 4.1&nbsp;percent (May 2026). <Chip kind="computed" /></p>
+          pre-meeting reading at 4.1&nbsp;percent (May 2026).</p>
         </CheckedBlock>
         <Receipt label="how we checked this">
           <p>We took the PCE price index published by the St. Louis Fed and calculated the year-over-year
@@ -227,7 +225,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           While the policy rate holds at its 40-year midpoint, the rates households face are elsewhere:
           the 30-year fixed mortgage averaged&nbsp;<strong>6.47&nbsp;percent</strong> the week of the decision,
           against a 2021 low of 2.65. Unemployment stood at&nbsp;<strong>4.3&nbsp;percent</strong> in May 2026
-          (it printed 4.2 for June after the meeting). <Chip kind="official" />
+          (it printed 4.2 for June after the meeting).
         </RailedParagraph>
       </section>
 
@@ -238,7 +236,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
           The hawkish undercurrent visible in June's dots and minutes became formal six weeks later: on&nbsp;<strong>July 29</strong> the Committee held again, but the vote was&nbsp;<strong>9&ndash;3</strong>,
           with Beth Hammack (Cleveland), Neel Kashkari (Minneapolis), and Lorie Logan (Dallas) each dissenting
           in favor of a quarter-point <em>increase</em>. June's unanimity was the calm before that split;
-          the July decision has <a href="/events/fed-rate/2026-07-29-three-dissents-for-a-hike/">its own story</a>. <Chip kind="record" />
+          the July decision has <a href="/events/fed-rate/2026-07-29-three-dissents-for-a-hike/">its own story</a>.
         </RailedParagraph>
         <RailedParagraph rail="note">
           Watching: the September decision and its refreshed projections; monthly PCE prints against the
@@ -251,7 +249,7 @@ import { event, ratePath, sep, sepTable } from "../../../data/fomc20260617.mjs";
         <SectionKicker text="Pricing" />
         <h2>What the markets said</h2>
         <RailedParagraph rail="outlet">
-          Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8. <Chip kind="outlet" label="reported pricing" />
+          Markets left no doubt about the hold. Quotes of CME's FedWatch tool ran from <strong>97.1 percent</strong> odds of no change on June 13 to <strong>99.6 percent</strong> on decision morning, the figure the Wall Street Journal carried at 8:45 a.m. Polymarket and Kalshi traded the same call near <strong>99 percent</strong> through June 16 and 17; Kalshi closed the night before at 97.8.
         </RailedParagraph>
         <Receipt label="the quotes">
           <p>WSJ live coverage, June 17 8:45 a.m.: traders &ldquo;pricing in a 99.6% chance&rdquo; of a hold (CME).

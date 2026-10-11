@@ -65,13 +65,30 @@ to tell. Every story has What happened.
    it, with its reasons. What they agree on.
 5. **The catch.** What coverage or a common reading gets wrong, and what the dispute
    actually turns on. Lead with the one thing a reader most needs to not misread.
-6. **What happens next.** What is scheduled, what the outcome will and will not settle.
-7. **The records.** The site builds this from the manifest.
+6. **What the coverage got right and wrong.** Only when the coverage is worth grading:
+   outlets told the event's central facts differently, or a widely carried report would
+   leave its readers with the wrong picture. One `OutletCheck` card per outlet whose report
+   changes what a reader should trust: its words, the verdict (`chip`: "checks out",
+   "mislabeled", "consistent"...), what the record shows, and the `Cite` in the card's slot;
+   errors first. Reports that check out the same way fold into one `OutletCheckFold` with
+   the count and how they were checked. The one error a reader most needs is the catch,
+   not a card. With nothing worth grading, the section is absent. Example:
+   `src/pages/events/mail-voting/2026-09-14-court-denies-stay.astro`.
+7. **What happens next.** What is scheduled, what the outcome will and will not settle.
+8. **The records.** The site builds this from the manifest.
 
-Each section holds the thread. Everything a section needs only to be exact (a transfer
-between courts, a docket number, which judge said what, a table of which court ruled which
-way) goes in a one-click detail (`<SourcedBlock ... detail>`) under the paragraph it
-qualifies. Cite it there.
+Each section holds the thread. What a section needs only to be exact (a transfer between
+courts, a docket number, a filing line by line) goes in a one-click detail
+(`<SourcedBlock ... detail>`) under the paragraph it qualifies. Cite it there. A timeline,
+comparison or figure the reader needs to follow the section is not detail: it is shown in
+the story, next to the paragraph it serves.
+
+Show it. Where a section's answer has a shape (dates in order, two things side by side,
+parts of a whole, a number against what came before, someone's own words), draw it, and let
+the prose say why and what it means. A screen of prose with nothing to look at loses the
+reader; a visual that only repeats the paragraph beside it is noise. When you draft each
+section, decide what the reader sees there as well as what they read. The components, which
+question each answers, and how to draw what none covers: `references/visuals.md`.
 
 The headline is a news headline a reader would click, not the story's claim written out:
 the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
@@ -132,10 +149,6 @@ reader needs joined, and let the rhythm vary the way a good news story's does.
   https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing before the first draft and
   again before you show the human.
 
-Diagrams and tables earn their place when a reader would otherwise hold too much in their
-head: a timeline of dated steps, two readings side by side, numbers that count different
-things. A table the reader does not care about goes one click down.
-
 ## 4. Build and lint
 
 ```bash
@@ -148,6 +161,13 @@ node skills/catch-story/scripts/quote_lint.mjs src/pages/events/<subject>/<slug>
 The build runs the gate. Every failure is a defect on the page, fixed on the page. The
 voice lint ends with a sentence-length profile; read the longest sentences and split the
 ones a reader would stall on.
+
+Then look at the page the way a reader will: open the built page in a browser and scroll
+it in each mode (`?mode=story`, `?mode=facts`, `?mode=work`), at desktop width and at a
+phone's. A screenshot per screen is the record of it. Look for a stretch of prose with
+nothing to look at where the answer has a shape, a visual that is hidden or cramped, and
+anything that renders wrong (stray marks, broken numbers, an empty section). Each is a
+defect, fixed before the reads.
 
 The page needs a published state event before it builds, and the build fails when the
 page's `<h1>` differs from the event's label. The orchestrator accepts the event and stages

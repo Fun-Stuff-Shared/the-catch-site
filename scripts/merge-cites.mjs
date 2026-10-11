@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 // Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1".
 // The merged anchor keeps its first passage and carries the others in data-passages for the
-// evidence reader. Runs on the built pages after astro build.
+// evidence reader. A citation that directly follows another, with only space between, is
+// marked src-ref-more so the comma separating them is drawn there and nowhere else (a CSS
+// sibling selector cannot see the sentence text between two citations). Runs on the built
+// pages after astro build.
 import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
@@ -31,6 +34,18 @@ export function mergeCites(html) {
     cursor = parts[j - 1].index + parts[j - 1][0].length;
     i = j;
   }
+  return markRuns(out + html.slice(cursor));
+}
+
+function markRuns(html) {
+  const parts = [...html.matchAll(sup)];
+  let out = "", cursor = 0;
+  parts.forEach((part, k) => {
+    const prev = parts[k - 1];
+    const joined = prev && /^\s*$/.test(html.slice(prev.index + prev[0].length, part.index));
+    out += html.slice(cursor, part.index) + (joined ? part[0].replace('<sup class="src-ref">', '<sup class="src-ref src-ref-more">') : part[0]);
+    cursor = part.index + part[0].length;
+  });
   return out + html.slice(cursor);
 }
 

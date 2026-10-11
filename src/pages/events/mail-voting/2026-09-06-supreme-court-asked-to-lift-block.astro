@@ -156,10 +156,10 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p>THE ORDER AND FINAL RULE USURP CONGRESS’S CONSTITUTIONAL ROLE AS THE ULTIMATE AUTHORITY ON FEDERAL-ELECTION ADMINISTRATION.<Cite s="scotus-26a305-congress-amicus" passage="THE ORDER AND FINAL RULE USURP CONGRESS" /></p>
         </QuoteCard>
 
-        <SourcedBlock source="scotus-26a305-application" kind="record" detail>
+        <SourcedBlock source="scotus-26a305-application" detail>
           <p>The Sunday application asks the Court to stay the September 4 injunction pending appeal to the First Circuit and any later petition, and it asks for an immediate administrative stay, a short pause while the justices decide the full request. Sauer writes that the rule imposes "modest envelope-design and addressee-information requirements", and that states remain responsible for who may vote by mail.<Cite s="scotus-26a305-application" passage="addressee-information requirements" /></p></SourcedBlock>
 
-        <SourcedBlock source="talwani-pi-2026-09-04" kind="record" detail>
+        <SourcedBlock source="talwani-pi-2026-09-04" detail>
           <p>The injunction names Domestic Mail Manual sections 705.24.3.1, 705.24.3.2, 705.24.4.1, 705.24.4.2, 705.24.5.1, the first two sentences of 705.24.5.2, and 705.24.5.3(a), (b), and (c). Those are the envelope standards, portal registration and enrollment, and the noncompliance rules. It does not bar states from complying voluntarily. It does not enjoin the rule for elections after November 3.<Cite s="talwani-pi-2026-09-04" passage="DMM Section 705.24.5.3(a), (b), (c)" /></p></SourcedBlock>
       </section>
 
@@ -221,7 +221,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <p data-layer="narrative">The dates leave little room. The executive-order chapter of this fight starts with the March 31 order and runs through a June proposed rule, a July judgment, and two August injunctions before the rule issued; the settlement chapter starts in 2020. Sunday's stay request was filed {computed.daysFilingToElection} days before the election the injunction names, and {computed.daysFilingToJackson} days before Jackson's response deadline. September 19 is the UOCAVA statutory mailing date, {computed.daysFilingToUocava} days after the filing; the rule's "express exclusion of UOCAVA ballots" means that date is not a deadline this rule imposes.<Cite s="scotus-26a305-docket" passage="4 p.m. (EDT) on September 9, 2026." /><Cite s="usps-final-rule" passage="express exclusion of UOCAVA ballots" /></p>
 
-        <SourcedBlock source="scotus-26a305-application" kind="record" detail>
+        <SourcedBlock source="scotus-26a305-application" detail>
           <p>Plaintiff states named in the Sunday application: {plaintiffs.join(", ")}. Also {plaintiffOther.join("; ")}. Intervenors: {intervenors.join(", ")}. Organization plaintiffs: {orgPlaintiffs.join("; ")}.<Cite s="scotus-26a305-application" passage="League of Women Voters of Massachusetts" /></p></SourcedBlock>
       </section>
 

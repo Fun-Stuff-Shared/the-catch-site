@@ -20,7 +20,6 @@
 //   OutletCheckFold : fold that wraps the OutletCheck cards (count, method; cards in the slot)
 //   CheckedBlock    : claim-checked-against-record block
 //   QuoteCard       : one contiguous span of a record as a person's or an ad's words
-//   Chip            : inline sourcing attribution label
 //   RailedParagraph : left-bordered paragraph by source type
 //   Receipt         : expandable computation/source details toggle
 //   LiveCounter     : client-side guarded counter (updates KPI)
