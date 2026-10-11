@@ -170,9 +170,10 @@ the story one paragraph at a time, never seeing what comes next, and after each 
 whether it answered the question they had, whether they could see why it came now, which
 words lost them, and what they want to know next. A fresh reader (Claude, no context) then
 reads the whole story once and retells it in five sentences. GPT-6 Sol (high), in
-ChatGPT Web, checks every paragraph against its cited records, from an evidence pack of the
-page, the data module and each cited passage in its record's context
-(`scripts/evidence_pack.py`, built from the rendered page; after the first round it holds only the blocks that changed), and ends `ENTAILED` or `NOT ENTAILED`.
+ChatGPT Web, checks every paragraph against its cited records: the page and each cited passage
+go in the message, and the full text of every cited record goes as an attached file
+(`scripts/evidence_pack.py`, built from the rendered page; after the first round the page part
+holds only the blocks that changed). It ends `ENTAILED` or `NOT ENTAILED`.
 
 The thread read is one reader's reactions, not a list of orders: you are the reporter, and
 you judge each flag against what the story needs. Where a break is real, the fix is never

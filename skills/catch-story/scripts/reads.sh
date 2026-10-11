@@ -31,9 +31,9 @@ if [[ $which != retell ]]; then
   checked=/Volumes/4/tmp/catch-reads/$story; mkdir -p $checked
   base=($checked/r*.html(Nom[1]))
   [[ -n ${FULL:-} ]] && base=
-  python3 $here/evidence_pack.py $story $html $work/evidence.md ${base:+$base}
+  python3 $here/evidence_pack.py $story $html $work/evidence.md $work/records.md ${base:+$base}
   for attempt in 1 2 3; do
-    zsh $here/../../catch-record/scripts/ask.sh $work/prompt.txt $work/answer.md $work/evidence.md || { print "entailment: the ask failed; see above" >&2; exit 1 }
+    zsh $here/../../catch-record/scripts/ask.sh $work/prompt.txt $work/answer.md --inline $work/evidence.md -f $work/records.md || { print "entailment: the ask failed; see above" >&2; exit 1 }
     if grep -v '^[[:space:]]*$' $work/answer.md | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^(ENTAILED|NOT ENTAILED)$' &&
        grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^CHECKED: [1-9][0-9]* blocks, [1-9][0-9]* citations$'; then
       cp $work/answer.md $report

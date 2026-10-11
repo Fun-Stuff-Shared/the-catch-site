@@ -13,7 +13,7 @@ for k in ("DATE",):
     t = t.replace("{" + k + "}", os.environ[k])
 print(t)' $here/../assets/review-prompt.txt > $prompt
 for attempt in 1 2 3; do
-  zsh $here/ask.sh $prompt $work/answer.md checks/records/$story.md || { print "review r$round: the ask failed; see above" >&2; exit 1 }
+  zsh $here/ask.sh $prompt $work/answer.md --inline checks/records/$story.md || { print "review r$round: the ask failed; see above" >&2; exit 1 }
   if grep -v '^[[:space:]]*$' $work/answer.md | tail -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^RECORD (COMPLETE|INCOMPLETE)$' &&
      grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^READ: [1-9][0-9]* sections$'; then
     cp $work/answer.md $report
