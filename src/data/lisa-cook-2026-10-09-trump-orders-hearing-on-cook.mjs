@@ -49,3 +49,26 @@ export const chronology = {
     ["Nov. 5, 2026", "The hearing."],
   ],
 };
+
+export const homes = {
+  rows: [
+    ["Mortgage form, as the White House describes it", "Her main residence (signed June 2021)", "Her main residence (signed two weeks later)"],
+    ["Lender's rate quote, May 28, 2021", "", "Vacation home"],
+    ["Security-clearance form", "", "Second home"],
+    ["Georgia homestead exemption", "", "Never claimed"],
+    ["Rental listing", "", "Listed for rent in September 2022; her lawyers say she did not rent it"],
+  ],
+};
+
+const memo = (passage) => ({ s: "wh-memo-2026-10-07", passage });
+
+export const next = {
+  entries: [
+    { date: computed.statementDue, title: "Cook's written statement is due", sub: "Three days before the hearing", cites: [memo("provided the statement is received at least 3 days before the hearing")] },
+    { date: "Nov. 5", title: "Hearing at the White House", sub: "Closed, transcribed, up to four hours", current: true, cites: [memo("The hearing shall occur at the White House and shall last no longer than 4 hours."), memo("The hearing shall be closed to the public but shall be transcribed.")] },
+    { date: "Nov. 6", title: "Joint report to Judge Cobb in Cook's lawsuit", cites: [{ s: "cobb-minute-order-2026-09-22", passage: "The Parties are ORDERED to confer and submit a joint status report by November 6, 2026." }] },
+    { date: "Nov. 10", title: "Cook's statement after the hearing is due", cites: [memo("Governor Cook may submit a post-hearing written statement to the Committee by November 10, 2026.")] },
+    { date: "No date", title: "Committee's findings and recommendation to Trump", sub: "\"As soon as practicable\" after her last statement", cites: [memo("As soon as practicable after receipt of that statement")] },
+    { date: "No deadline", title: "Trump decides", sub: "If he fires her, she can go back to court", cites: [{ s: "cnbc-explainer-2026-10-09", passage: "There is no set deadline for that final decision." }, { s: "scotus-trump-v-cook-2026-06-29", passage: "At that point, Cook may seek judicial review under the framework described in this opinion" }] },
+  ],
+};
