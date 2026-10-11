@@ -10,7 +10,7 @@ import StateEvent from "../../../components/StateEvent.astro";
 import KpiStrip from "../../../components/story/KpiStrip.astro";
 import SectionKicker from "../../../components/story/SectionKicker.astro";
 import DataTable from "../../../components/story/DataTable.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event,
   remainingDateRows,
@@ -19,7 +19,7 @@ import {
   seriesReceipt,
 } from "../../../data/ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour.mjs";
 
-const state = readPublishedState().events.get("event-ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour");
+const state = publishedState().events.get("event-ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour");
 if (!state) throw new Error("Missing publication selection: event-ed-sheeran-tour-2026-09-14-macklemore-removed-from-the-loop-tour");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

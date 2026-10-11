@@ -185,6 +185,13 @@ export function readPublishedState(directory = stateDirectory, manifests = join(
   return selectPublishedState(readState(directory), ids);
 }
 
+// The published state a build renders from. It does not change while a build runs, so the
+// pages share one read of the state directory instead of each parsing every view again.
+let published;
+export function publishedState() {
+  return published ??= readPublishedState();
+}
+
 export function eventRecordPath(id, manifests = join(process.cwd(), 'checks/manifests')) {
   for (const name of readdirSync(manifests).filter((name) => name.endsWith('.json'))) {
     const manifest = JSON.parse(readFileSync(join(manifests, name), 'utf8'));

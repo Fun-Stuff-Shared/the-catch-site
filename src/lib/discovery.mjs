@@ -20,7 +20,7 @@ import { event as spaceWeapons } from '../data/spaceweapons202609.mjs';
 import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs';
 import { event as immigrationDetention } from '../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs';
 import { event as okinawaMarine } from '../data/okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman.mjs';
-import { readPublishedState, eventPath, eventRecordPath } from './state.mjs';
+import { publishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
@@ -45,7 +45,7 @@ export const series = [
   { path: '/events/okinawa/', title: 'Okinawa', topic: 'Asia', keywords: 'Okinawa Marine Naha Ballard SOFA status of forces agreement curfew Koja Takaichi', description: 'Japan holds a U.S. Marine arrested on October 4 in the killing of Anna Yagi in Naha. Okinawa says U.S. discipline measures have failed and the status of forces agreement must change; Washington says the agreement is working.' },
 ];
 export function storyCatalog() {
-  const state = readPublishedState();
+  const state = publishedState();
   // Hand-authored stories whose projection view has not arrived yet still publish on their manifest.
   const pending = [...editorial.values()].filter(e => ![...state.events.values()].some(v => eventPath(v.event.id) === `/events/${e.slug}/`)).map(e => {
     const href = `/events/${e.slug}/`, group = series.find(s => href.startsWith(s.path));

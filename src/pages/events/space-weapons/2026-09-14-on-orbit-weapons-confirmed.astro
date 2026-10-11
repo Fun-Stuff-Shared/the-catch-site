@@ -10,9 +10,9 @@ import StateEvent from "../../../components/StateEvent.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, cboGoldenDome, chronology, spaceControlFy2027, unVote2024, russiaAsatTest2021, spaceForceGrowth } from "../../../data/spaceweapons202609.mjs";
-const state = readPublishedState().events.get("event-space-weapons-2026-09-14-on-orbit-weapons-confirmed");
+const state = publishedState().events.get("event-space-weapons-2026-09-14-on-orbit-weapons-confirmed");
 if (!state) throw new Error("Missing publication selection: event-space-weapons-2026-09-14-on-orbit-weapons-confirmed");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

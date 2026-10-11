@@ -15,12 +15,12 @@ import OutletCheck from "../../../components/story/OutletCheck.astro";
 import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import CheckedBlock from "../../../components/story/CheckedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event, computed, plaintiffs, plaintiffOther, intervenors, orgPlaintiffs, stateEstimateRows, sampleRows,
   dateLine, applicationsTable, timeline, courtSteps, dmmRows, mailingRows,
 } from "../../../data/mailvoting202609.mjs";
-const state = readPublishedState().events.get("event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block");
+const state = publishedState().events.get("event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block");
 if (!state) throw new Error("Missing publication selection: event-mail-voting-2026-09-06-supreme-court-asked-to-lift-block");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

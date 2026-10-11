@@ -9,9 +9,9 @@ import DieselChart from "../../../components/DieselChart.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, prices, release, marchSoFar, shortfalls, usShare, ledgerRows, timeline } from "../../../data/fuel-reserves-2026-10-02-g7-releases-100-million-barrels.mjs";
-const state = readPublishedState().events.get("event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
+const state = publishedState().events.get("event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
 if (!state) throw new Error("Missing publication selection: event-fuel-reserves-2026-10-02-g7-releases-100-million-barrels");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 const markers = [

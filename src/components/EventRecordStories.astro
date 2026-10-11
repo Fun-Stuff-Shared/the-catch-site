@@ -1,8 +1,8 @@
 ---
-import { readPublishedState, eventRecordPath, eventPath, slotLabel, figureText } from "../lib/state.mjs";
+import { publishedState, eventRecordPath, eventPath, slotLabel, figureText } from "../lib/state.mjs";
 import { formatDate } from "../lib/presentation.mjs";
 const { recordPath } = Astro.props;
-const state = readPublishedState();
+const state = publishedState();
 const stories = [...state.events.values()].filter((view) => view.status === 'published' && eventRecordPath(view.event.id) === recordPath).sort((a, b) => String(b.event.period).localeCompare(String(a.event.period)) || a.event.id.localeCompare(b.event.id));
 const roots = new Set(stories.map((view) => view.root_id));
 // A story accepted moments ago has its own root until the projection applies its follows link; the page still lists it under its record.
