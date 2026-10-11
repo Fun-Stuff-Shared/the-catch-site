@@ -33,3 +33,8 @@ test("claims go in a list after their paragraph", () => {
   assert.match(out, /<\/p><ul class="claim-list" data-layer="claims"><li>The vote was 12 to 0\.<sup/);
   assert.doesNotMatch(out.split("claim-list")[1], /That matters/);
 });
+
+test("a run of citations marked by merge-cites stays with its claim", () => {
+  const more = (n) => cite(n).replace('<sup class="src-ref">', '<sup class="src-ref src-ref-more">');
+  assert.deepEqual(claims(`One.${cite(1)}${more(2)} Two.${cite(3)}`), [`One.${cite(1)}${more(2)}`, `Two.${cite(3)}`]);
+});

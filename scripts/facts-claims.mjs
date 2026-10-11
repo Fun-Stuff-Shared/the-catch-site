@@ -23,7 +23,7 @@ function* walk(node) {
 export function claims(html) {
   const parts = [];
   let start = 0;
-  const re = /([.!?][”"’)]?)((?:\s*<sup class="src-ref">[\s\S]*?<\/sup>)+)/g;
+  const re = /([.!?][”"’)]?)((?:\s*<sup class="src-ref[^"]*">[\s\S]*?<\/sup>)+)/g;
   let m;
   while ((m = re.exec(html))) {
     const head = html.slice(0, m.index);
@@ -37,7 +37,7 @@ export function claims(html) {
 function openTags(html) {
   let depth = 0;
   for (const [t] of html.matchAll(/<\/?[a-zA-Z][^>]*>/g)) {
-    if (/^<sup class="src-ref"/.test(t) || t === "</sup>" || /^<\/?a[\s>]/.test(t) || /\/>$/.test(t) || /^<(br|img|wbr)\b/i.test(t)) continue;
+    if (/^<sup class="src-ref[ "]/.test(t) || t === "</sup>" || /^<\/?a[\s>]/.test(t) || /\/>$/.test(t) || /^<(br|img|wbr)\b/i.test(t)) continue;
     depth += t.startsWith("</") ? -1 : 1;
   }
   return depth;

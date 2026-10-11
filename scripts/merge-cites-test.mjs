@@ -30,3 +30,10 @@ test("a passage containing a dollar figure is carried verbatim", () => {
 test("a page without citations is returned unchanged", () => {
   assert.equal(mergeCites("<p>plain</p>"), "<p>plain</p>");
 });
+
+test("only a citation directly after another is marked for the separating comma", () => {
+  const out = mergeCites(`One.${cite(1, "a")}${cite(2, "b")} Two.${cite(3, "c")}`);
+  assert.equal((out.match(/src-ref-more/g) || []).length, 1);
+  assert.match(out, /<sup class="src-ref src-ref-more"><a href="#src-2"/);
+  assert.match(out, /Two\.<sup class="src-ref"><a href="#src-3"/);
+});
