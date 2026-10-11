@@ -126,6 +126,36 @@ export function checkStatePages(state, dist) {
   return { failures, checked };
 }
 
+// Headings that Just the facts shows with nothing under them, though the story has words
+// there. Visibility follows ReadingModes: The story hides proof and claims, Just the facts
+// hides narrative and proof. A section runs to the next heading of its level or higher.
+export function emptyFactsSections(html) {
+  const main = [...nodes(parse(html))].find((node) => node.tagName === 'main');
+  if (!main) return [];
+  const flat = [];
+  (function visit(node, layers) {
+    if (attr(node, 'id') === 'records' || ['script', 'style'].includes(node.tagName)) return;
+    const layer = attr(node, 'data-layer');
+    const inherited = layer ? [...layers, layer] : layers;
+    const story = !inherited.some((l) => l === 'proof' || l === 'claims');
+    const facts = !inherited.some((l) => l === 'narrative' || l === 'proof');
+    if (/^h[23]$/.test(node.tagName ?? '')) { flat.push({ heading: normalize(text(node)), level: Number(node.tagName[1]), facts }); return; }
+    if (node.nodeName === '#text' && normalize(node.value)) flat.push({ words: true, story, facts });
+    for (const child of node.childNodes ?? []) visit(child, inherited);
+  })(main, []);
+  const empty = [];
+  flat.forEach((item, i) => {
+    if (!item.heading || !item.facts) return;
+    let story = false, facts = false;
+    for (const next of flat.slice(i + 1)) {
+      if (next.heading && next.level <= item.level) break;
+      if (next.words) { story ||= next.story; facts ||= next.facts; }
+    }
+    if (story && !facts) empty.push(item.heading);
+  });
+  return empty;
+}
+
 export function readerCopy(html) {
   function copy(node) {
     if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined) return '';
@@ -153,7 +183,7 @@ export function quoteCards(html) {
   const cards = [];
   for (const node of nodes(main)) {
     if (node.tagName !== 'figure' || !(attr(node, 'class') ?? '').split(/\s+/).includes('quote-card')) continue;
-    const siblings = (node.parentNode?.childNodes ?? []).filter((child) => child.nodeName !== '#text' && child.nodeName !== '#comment');
+    const siblings = (node.parentNode?.childNodes ?? []).filter((child) => child.nodeName !== '#text' && child.nodeName !== '#comment' && !['proof', 'claims'].includes(attr(child, 'data-layer')));
     const before = siblings[siblings.indexOf(node) - 1];
     const speaker = normalize(text([...nodes(node)].find((child) => (attr(child, 'class') ?? '').split(/\s+/).includes('qc-speaker')) ?? { childNodes: [] }));
     cards.push({

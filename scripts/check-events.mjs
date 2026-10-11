@@ -10,7 +10,7 @@ import { execFileSync } from "node:child_process";
 import { join, posix } from "node:path";
 import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
-import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy } from "./check-state-pages.mjs";
+import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy, emptyFactsSections } from "./check-state-pages.mjs";
 import { storyFindings, citedPassages } from "./story-copy-rules.mjs";
 import { sourceContext } from "../src/lib/evidence-context.mjs";
 
@@ -382,6 +382,17 @@ for (const { subject, story } of storyPages) {
   if (untyped.length > 0) {
     fail.push(`/events/${subject}/${story}/: ${untyped.length} untyped content element(s) in mode-switched page (layer-typing required): ${untyped.slice(0, 5).join(", ")}`);
   }
+}
+
+// ---- 3a. Just the facts never shows a heading with nothing under it -----------
+// Just the facts lists each section's cited sentences; a section whose story has words but
+// whose facts view has none was written with citations that do not sit on its sentences.
+for (const { subject, story } of storyPages) {
+  const storyFile = join(dist, "events", subject, story, "index.html");
+  if (!existsSync(storyFile)) continue;
+  const html = readFileSync(storyFile, "utf8");
+  if (!html.includes("mode-switcher")) continue;
+  for (const heading of emptyFactsSections(html)) fail.push(`/events/${subject}/${story}/: "${heading}" is empty in Just the facts; cite its fact sentences one by one`);
 }
 
 // ---- 3b. What the reader sees in The story and Just the facts ------------------

@@ -3,7 +3,7 @@ name: catch-story
 description: >
   Stage two of a Catch story: write the story page from a finished catch-record brief, as
   one thread a stranger can follow, laid out in layers they can stop after or dig into,
-  with every paragraph cited, then check it with a cold retell and an entailment read and
+  with every claim cited on its own sentence, then check it with a cold retell and an entailment read and
   revise with the human until it reads. Use when writing, rewriting or revising the prose of
   a Catch story page, when a page reads as a dump of facts, or when the human gives notes
   on a story's wording. Requires the record brief from catch-record.
@@ -53,7 +53,7 @@ layers a story can have, not a form to fill: use the ones this story has, under 
 its own words ("One man's case", "Who still owes barrels"), and leave out any with nothing
 to tell. Every story has What happened.
 
-1. **What happened.** Three short paragraphs, in plain words: the event, what it means for
+1. **What happened.** Three paragraphs, in plain words: the event, what it means for
    the people it touches, and where it stands. A reader who stops here knows what happened
    and why it matters to them. A dispute or a catch is named at most, as plain fact, and
    told in its own section; no side's claim is quoted or argued here.
@@ -71,7 +71,7 @@ to tell. Every story has What happened.
 Each section holds the thread. Everything a section needs only to be exact (a transfer
 between courts, a docket number, which judge said what, a table of which court ruled which
 way) goes in a one-click detail (`<SourcedBlock ... detail>`) under the paragraph it
-qualifies, or in Just the facts. Cite it there.
+qualifies. Cite it there.
 
 The headline is a news headline a reader would click, not the story's claim written out:
 the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
@@ -93,9 +93,18 @@ European diesel" in a dek told the reader nothing and seeded a misreading.
 
 ## 3. Write like a reporter
 
-The unit is the paragraph. Each paragraph says one thing in the story and carries the
-`<Cite>`s for the facts in it. A sentence that connects cited facts ("The government
-appealed." "That matters because...") needs no passage of its own.
+The unit is the paragraph: each one says one thing in the story. The unit of citation is
+the sentence: every sentence that states a fact ends with the `<Cite>`s for that fact, not
+a paragraph-end cluster covering the sentences before it. Just the facts is built from the
+cited sentences alone, so a fact sentence without its own citation drops out of it, and one
+that leans on an uncited sentence before it ("They are what is left...") reads as a dangling
+claim there. Only a sentence that states no fact of its own ("That matters because...")
+stands uncited.
+
+A paragraph is told, not listed. Sentences carry how the facts relate: what caused what,
+what came after, what it costs whom, where the sides collide. A run of short sentences
+that each state one fact and stop reads flat however accurate it is; join the facts a
+reader needs joined, and let the rhythm vary the way a good news story's does.
 
 - Say it straight, in active voice, with the actor first. "The government appealed," not
   "An appeal was filed."
