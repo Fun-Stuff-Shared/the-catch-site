@@ -3,8 +3,75 @@
   "event": "lisa-cook/2026-10-09-trump-orders-hearing-on-cook",
   "story": "/events/lisa-cook/2026-10-09-trump-orders-hearing-on-cook/",
   "date": "2026-10-09",
+  "story_title": "Trump orders Fed Governor Lisa Cook to a closed hearing on firing her",
   "state_event_id": "event-lisa-cook-2026-10-09-trump-orders-hearing-on-cook",
-  "sub_events": [],
+  "event_record": "/events/lisa-cook/",
+  "completed_by": "claude (lisa-cook author session, worktree 2026-10-09-trump-orders-hearing-on-cook)",
+  "date_completed": "2026-10-11",
+  "sub_events": [
+    {
+      "id": "memo-2026-10-07",
+      "date": "2026-10-07",
+      "label": "Trump orders a committee of inquiry and a hearing",
+      "section_anchor": "what-happened",
+      "records": [
+        "wh-memo-2026-10-07",
+        "fox-cook-2026-10-09",
+        "reuters-cook-inquiry-2026-10-09",
+        "ap-cook-committee-2026-10-09",
+        "lowell-eisen-statement-2026-10-09"
+      ]
+    },
+    {
+      "id": "first-firing-2025-08-25",
+      "date": "2025-08-25",
+      "label": "Trump's first attempt to fire Cook",
+      "section_anchor": "why-now",
+      "records": [
+        "dcd-cook-opinion-2025-09-09",
+        "scotus-trump-v-cook-2026-06-29"
+      ]
+    },
+    {
+      "id": "ruling-2026-06-29",
+      "date": "2026-06-29",
+      "label": "The Supreme Court keeps Cook in office",
+      "section_anchor": "why-now",
+      "records": [
+        "scotus-trump-v-cook-2026-06-29",
+        "usc-12-242"
+      ]
+    },
+    {
+      "id": "notice-2026-08-05",
+      "date": "2026-08-05",
+      "label": "Written notice of removal and Cook's answer",
+      "section_anchor": "why-now",
+      "records": [
+        "wh-scavino-letter-2026-08-05",
+        "lowell-response-2026-08-26"
+      ]
+    },
+    {
+      "id": "rate-rise-2026-09-16",
+      "date": "2026-09-16",
+      "label": "The Fed raises rates 12 to 0",
+      "section_anchor": "the-sides",
+      "records": [
+        "fomc-minutes-2026-09-16",
+        "the-hill-trump-fed-reaction-2026-09-16"
+      ]
+    },
+    {
+      "id": "remarks-2026-10-10",
+      "date": "2026-10-10",
+      "label": "Trump gives his reasons",
+      "section_anchor": "the-sides",
+      "records": [
+        "doyle-trump-remarks-2026-10-10"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "wh-memo-2026-10-07",
@@ -940,5 +1007,85 @@
       "meta": " · released 2026-10-07",
       "usage": "Who voted for the September 16 rate rise"
     }
-  ]
+  ],
+  "figures": [
+    {
+      "figure": "days_memo_to_hearing",
+      "label": "Days from Trump's memo to the hearing",
+      "value": "29",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "wh-memo-2026-10-07",
+          "value": "2026-11-05",
+          "unit": "date",
+          "quote_span": "The Committee shall, on November 5, 2026, conduct an in-person hearing to consider the evidence and allegations against Governor Cook."
+        },
+        {
+          "source_id": "fox-cook-2026-10-09",
+          "value": "2026-10-07",
+          "unit": "date",
+          "quote_span": "according to a notice dated Wednesday, Oct. 7, 2026, but released on Friday by the Trump administration"
+        }
+      ]
+    },
+    {
+      "figure": "hearing_max_hours",
+      "label": "Longest the hearing may last",
+      "value": "4",
+      "unit": "hours",
+      "kind": "sourced",
+      "source": {
+        "source_id": "wh-memo-2026-10-07",
+        "quote_span": "The hearing shall occur at the White House and shall last no longer than 4 hours."
+      }
+    },
+    {
+      "figure": "term_end_year",
+      "label": "Year Cook's term ends",
+      "value": "2038",
+      "unit": "year",
+      "kind": "sourced",
+      "source": {
+        "source_id": "fed-cook-bio",
+        "quote_span": "She was reappointed to the Board on September 8, 2023, and sworn in on September 13, 2023, for a term ending January 31, 2038."
+      }
+    }
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/lisa-cook and data/sources/coverage with its text sibling and hash; the November 2025 Lowell letter carries Mistral OCR text of its scanned Exhibit F appended to the captured text."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module computes the written-statement deadline (November 2, three days before November 5) and the 29 days from the October 7 memo to the hearing from pinned dates."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The catch checks the Guardian's 'unconstitutional' and Mediaite's 'did not have the power' against the Supreme Court's opinion, and AP's and the Guardian's 'published' transcript against the memo's 'shall be transcribed'."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "What happened; the governor and the two mortgages; why a hearing now, with the dated chronology one click down; the two sides, the courts, the rates question and the hearing itself; the catch; what happens next; the records."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "SourcedBlock kinds used are record and checked only."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the memo, ruling, statements and posts are saved copies dated in the records list."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "New subject page /events/lisa-cook/ with its data module src/data/subjects/lisa-cook.mjs and one figure, the days from the memo to the hearing."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "src/lib/discovery.mjs lists the story's data module and the Lisa Cook and the Fed series, so the homepage and series listings pick it up."
+    }
+  }
 }

@@ -14,7 +14,7 @@ After the hearing Cook can answer in writing by November 10, the committee then 
 
 ## The plan
 
-Headline: Trump orders Fed Governor Lisa Cook to a closed White House hearing on firing her
+Headline: Trump orders Fed Governor Lisa Cook to a closed hearing on firing her
 
 What happened (sentence 1; the event, what it means, where it stands):
 1. What did Trump do? On October 9 the White House posted a memo, dated October 7, setting up a "committee of inquiry" into whether Cook made false statements on mortgages. [wh-memo-2026-10-07: "I hereby establish a committee of inquiry (Committee) to investigate allegations that Federal Reserve Governor Lisa D. Cook made false statements in connection with one or more mortgage instruments."] [fox-cook-2026-10-09: "according to a notice dated Wednesday, Oct. 7, 2026, but released on Friday by the Trump administration"]
