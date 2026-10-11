@@ -10,7 +10,7 @@ import StateEvent from "../../../components/StateEvent.astro";
 import KpiStrip from "../../../components/story/KpiStrip.astro";
 import StepChart from "../../../components/story/StepChart.astro";
 import DataTable from "../../../components/story/DataTable.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event,
   decision,
@@ -23,7 +23,7 @@ import {
   seriesReceipt,
 } from "../../../data/fed-rate-2026-09-16-unanimous-quarter-point-hike.mjs";
 
-const state = readPublishedState().events.get("event-fed-rate-2026-09-16-unanimous-quarter-point-hike");
+const state = publishedState().events.get("event-fed-rate-2026-09-16-unanimous-quarter-point-hike");
 if (!state) throw new Error("Missing publication selection: event-fed-rate-2026-09-16-unanimous-quarter-point-hike");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

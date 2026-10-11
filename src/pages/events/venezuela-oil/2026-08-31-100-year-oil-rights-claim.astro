@@ -7,9 +7,9 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, wti, gasoline, steoCrude, nabepShareOfJulCrudePct, nabepGoalBpd, rodriguezGoalBpd, fieldsShareOfVenezuelaPct, eiaVenezuelaProvedBillion, yearsAt15Mbpd, csisNabepBpd } from "../../../data/venezuelaoil202609.mjs";
-const state = readPublishedState().events.get("event-venezuela-oil-2026-08-31-100-year-oil-rights-claim");
+const state = publishedState().events.get("event-venezuela-oil-2026-08-31-100-year-oil-rights-claim");
 if (!state) throw new Error("Missing publication selection: event-venezuela-oil-2026-08-31-100-year-oil-rights-claim");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

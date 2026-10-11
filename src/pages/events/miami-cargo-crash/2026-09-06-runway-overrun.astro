@@ -7,9 +7,9 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, overrunDistance, runway30, emasCount, emasDesign, aircraft, injured, adsb, halfwayGapFeet, recorder } from "../../../data/miamicargocrash202609.mjs";
-const state = readPublishedState().events.get("event-miami-cargo-crash-2026-09-06-runway-overrun");
+const state = publishedState().events.get("event-miami-cargo-crash-2026-09-06-runway-overrun");
 if (!state) throw new Error("Missing publication selection: event-miami-cargo-crash-2026-09-06-runway-overrun");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

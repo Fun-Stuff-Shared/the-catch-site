@@ -13,14 +13,14 @@ import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import {
   event, table1, munitions, monthly, inflation, admin, ig, computed,
   costBars, clocksRows, timeline, fuel, battleLosses, flyingHours,
   votes, brownEnergy, unMission, centcom, postDeaths, interceptorPrices, force,
   csisCost, cnnPentagon,
 } from "../../../data/iran-war-2026-09-15-cbo-estimates-38-billion-war-cost.mjs";
-const state = readPublishedState().events.get("event-iran-war-2026-09-15-cbo-estimates-38-billion-war-cost");
+const state = publishedState().events.get("event-iran-war-2026-09-15-cbo-estimates-38-billion-war-cost");
 if (!state) throw new Error("Missing publication selection: event-iran-war-2026-09-15-cbo-estimates-38-billion-war-cost");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

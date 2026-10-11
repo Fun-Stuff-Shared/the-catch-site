@@ -7,9 +7,9 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, calendar, hb1Votes, houseParty, district5, referendum1922 } from "../../../data/missourihousemap202609.mjs";
-const state = readPublishedState().events.get("event-missouri-house-map-2026-09-03-map-never-became-law");
+const state = publishedState().events.get("event-missouri-house-map-2026-09-03-map-never-became-law");
 if (!state) throw new Error("Missing publication selection: event-missouri-house-map-2026-09-03-map-never-became-law");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---

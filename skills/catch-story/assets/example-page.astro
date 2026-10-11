@@ -9,9 +9,9 @@ import DataTable from "../../../components/story/DataTable.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
-import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
 import { event, computed, chronology, split, counts, readings } from "../../../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs";
-const state = readPublishedState().events.get("event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
+const state = publishedState().events.get("event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
 if (!state) throw new Error("Missing publication selection: event-immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---
