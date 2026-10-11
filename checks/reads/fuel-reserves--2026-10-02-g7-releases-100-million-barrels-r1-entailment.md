@@ -1,47 +1,54 @@
-Found **four unsupported or overstated claims** in the page and data module review.
+I found nine statements that need correction. The headline, dek, six table rows, and figure caption are supported by the supplied records.
 
-1. **Fulfilled commitments counted toward the 100 million barrels** — Page line 63
+1. **Block 3 — Meeting presented as certain**
    
-   **Page:** “The statement counts ‘commitments that have already been fulfilled’ toward the release”
+   - **Page:** “The agency's board meets next week to decide who releases what, and how much of it is diesel.”
+   - **Record:** reuters-iea-board-2026-10-06: “is expected to decide the details of the stocks release at an October 14-15 board meeting”
+   - **Correction:** “The agency's board is expected to decide the release details at its October 14–15 meeting, including participating countries and the diesel allocation.”
+2. **Block 5 — Refined-fuel recovery overstated**
    
-   **Record:** govuk-g7-statement-2026-10-02 says, “taking into account commitments that have already been fulfilled, we will implement our commitments with a coordinated release through the IEA of 100 million barrels.”
+   - **Page:** “Crude found its way back to market. Fuel did not.”
+   - **Record:** iea-g7-meeting-2026-10-02: “While crude oil exports from the Middle East have recovered significantly” and “refined-product flows remain severely constrained”
+   - **Correction:** “Crude exports recovered significantly, but refined-fuel supplies remained severely constrained.”
+3. **Block 5 — Net exports described as shipments**
    
-   **Problem:** Taking commitments into account does not establish that previously delivered barrels count toward the 100-million-barrel total.
+   - **Page:** “In August the Gulf exported about a quarter of the diesel it shipped before the war”
+   - **Record:** iea-omr-2026-09: “net exports of diesel/gasoil from the Gulf countries averaged 390 kb/d in August, just over a quarter of pre-war levels”
+   - **Correction:** “In August, Gulf countries' net diesel and gasoil exports were just over a quarter of prewar levels.”
+4. **Block 8 — Record price assigned to the wrong period**
    
-   **Correction:** “The statement says it takes already fulfilled commitments into account but does not explain how they affect the 100-million-barrel figure.”
-2. **The October release described as additional to March** — Page line 66
+   - **Page:** “With diesel at a record, Washington turned on Europe.”
+   - **Record:** eia-diesel-price-2026-10-06: September 21, $6.529; September 28, $6.382.
+   - **Correction:** “After U.S. diesel prices reached a record on September 21, Washington increased pressure on Europe.”
+5. **Block 11 — Macron's denial loses its context**
    
-   **Page:** “The new release comes on top of one that is not finished.”
+   - **Page:** “Macron said Trump made no threat.”
+   - **Record:** national-g7-release-2026-10-02: “Mr Macron said Mr Trump did not threaten to issue an embargo on US diesel, classifying the discussion as a ‘constructive one’.”
+   - **Additional record:** reuters-diesel-demand-2026-10-01: “The Trump administration has told Germany and France to draw down emergency diesel inventories \[...\] or face a potential US diesel export ban”
+   - **Correction:** “Macron said Trump did not threaten a U.S. diesel embargo during the G7 discussion.”
+6. **Blocks 12 and 15 — Diesel priority presented as unconditional**
    
-   **Records:** govuk-g7-statement-2026-10-02 says “taking into account commitments that have already been fulfilled.” iea-g7-meeting-2026-10-02 reports “around 325 million barrels” released from March's 400-million-barrel commitment.
+   - **Page:** “diesel goes first” and “diesel first”
+   - **Record:** iea-member-meeting-2026-10-07: “IEA Members also supported the prioritisation of the release of diesel stocks, to the extent possible”
+   - **Additional record:** govuk-g7-statement-2026-10-02: “including a frontloaded substantial diesel release within the first 20 days”
+   - **Correction:** “Members supported prioritizing diesel releases where possible, with a substantial diesel release planned for the first 20 days.”
+7. **Block 12 — Commitment presented as guaranteed conduct**
    
-   **Problem:** “Comes on top of” implies an additional release beyond March's commitments. The records do not establish that relationship.
+   - **Page:** “no G7 country will restrict energy exports to another.”
+   - **Record:** govuk-g7-statement-2026-10-02: “We reaffirm our commitment to refrain from export restrictions on energy and energy products between G7 countries”
+   - **Correction:** “G7 members reaffirmed their commitment to refrain from restricting energy exports to one another.”
+8. **Block 14 — A possible French contribution described as an offer**
    
-   **Correction:** “The October agreement follows an unfinished March release. The statement does not establish how much of the 100 million barrels is additional to March's commitments.”
-3. **Rollins interview events presented in the wrong order** — Page line 115
+   - **Page:** “The only barrels anyone has offered beyond March are France's: it signalled it could add 2 million barrels of diesel.”
+   - **Record:** politico-eu-france-germany-2026-10-07: “France on Wednesday signaled it could release 2 million barrels of diesel on top of the quantities agreed in March” but “stopped short of offering a clear commitment”
+   - **Correction:** “France has signalled that it could release another 2 million barrels of diesel beyond its March commitment, but has not made a firm commitment.”
+9. **Block 15 — Availability described as delivery**
    
-   **Page:** “Asked later in the interview about a diesel export ban, Rollins said, ‘I’m the secretary of agriculture, not energy,’ and that she is not in those conversations. She went on to speak of ‘100 million barrels that will be headed this way very, very soon’”
-   
-   **Record:** scripps-rollins-interview-captions-2026-10-02:
-   
-   - **00:00:48:** “100 million barrels that will be headed this way very, very soon. fact, I think they’re moving out right now.”
-   - **00:02:40:** “I’m the secretary of agriculture, not energy, and I’m I’m certainly not in any of these conversations.”
-   
-   **Problem:** Rollins discussed the 100 million barrels before explaining that she was not involved in export-ban discussions. The page reverses that sequence.
-   
-   **Correction:** “Rollins said the 100 million barrels would be headed toward the United States soon, adding that she thought they were already moving. Later, asked about a diesel export ban, she said she was the agriculture secretary, not the energy secretary, and was not involved in those discussions.”
-4. **The October 5 order described as changing taxes** — Page line 199
-   
-   **Page:** “The order changes taxes and penalties on U.S. fuel and moves no reserve barrels.”
-   
-   **Record:** whitehouse-diesel-tax-order-2026-10-05 says, “If the Secretary makes those determinations, the Secretary shall, to the extent authorized by law, defer payment by those taxpayers of the taxes imposed.”
-   
-   It separately directs Treasury “to announce that it will not impose a penalty” for specified highway uses of dyed diesel.
-   
-   **Problem:** The order directs conditional tax-payment deferrals and specified penalty relief. It does not itself change the underlying excise-tax liability or authorize a blanket change to fuel taxes.
-   
-   **Correction:** “The order directs Treasury to defer specified diesel excise-tax payments where legally authorized and announce penalty relief for highway use of dyed diesel. It moves no reserve barrels.”
+   - **Page:** “France says it will put 10 million barrels of diesel into its own distributors' hands.”
+   - **Record:** reuters-france-10m-2026-10-07: “we will make 10 million barrels of diesel from our reserves available to distributors in France”
+   - **Correction:** “France says it will make 10 million barrels of diesel from its reserves available to distributors in France.”
 
-The remaining reviewed claims, quotations, table values, calculated price changes, captions, headline, and dek are supported by the saved records.
+A supplemental source-extraction command was blocked by OpenAI's safety check. The earlier source check successfully opened all 31 referenced record files; the findings above also use the surrounding source text supplied in the evidence pack.
 
+CHECKED: 25 blocks, 60 citations  
 NOT ENTAILED

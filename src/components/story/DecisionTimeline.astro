@@ -1,9 +1,11 @@
 ---
 /**
- * Decision timeline: a compact table of dated decisions on a subject page.
+ * Decision timeline: a compact table of dated decisions or events.
  * Props:
- *   entries: Array<{ date: string, title: string, sub?: string, link?: string, current?: boolean }>
+ *   entries: Array<{ date: string, title: string, sub?: string, link?: string, current?: boolean, cites?: Array<{ s: string, passage: string }> }>
+ *   heading: the label over the entries column; defaults to "Decision".
  */
+import Cite from "../Cite.astro";
 interface Props {
   entries: Array<{
     date: string;
@@ -11,20 +13,23 @@ interface Props {
     sub?: string;
     link?: string;
     current?: boolean;
+    cites?: Array<{ s: string; passage: string }>;
   }>;
+  heading?: string;
 }
-const { entries } = Astro.props;
+const { entries, heading = "Decision" } = Astro.props;
 ---
 <div class="decision-timeline">
   <div class="dt-head">
     <span class="dt-date">Date</span>
-    <span class="dt-body">Decision</span>
+    <span class="dt-body">{heading}</span>
   </div>
   {entries.map((e) => (
     <div class={`dt-row${e.current ? " dt-current" : ""}`}>
       <span class="dt-date">{e.date}</span>
       <span class="dt-body">
         {e.link ? <a href={e.link}>{e.title}</a> : e.title}
+        {e.cites?.map((c) => <Cite s={c.s} passage={c.passage} />)}
         {e.sub && <Fragment>{" "}<span class="dt-sub">{e.sub}</span></Fragment>}
       </span>
     </div>

@@ -1,20 +1,25 @@
-**One chronology issue found.**
+**Finding 1 — “Who still owes barrels” table and source line**
 
-**Page:** Line 112 (line 112)
+**Page's exact words:**
 
-> “After the meeting, each account described the 100 million barrels its own way.”
+- “U.S. barrels lent to oil companies, March to June”
+- “the U.S. lending is summed from the Energy Department's five award notices”
 
-The paragraph then includes Trump's Truth Social post among those accounts.
+**Record:** doe-spr-exchange-2026-09-29
 
-**Records:**
+**Exact words:**
 
-- independent-miliband-2026-10-02.txt:9–11 says Trump's post preceded the anticipated G7 talks: “The move follows a post by US President Donald Trump,” while Miliband “is expected to confer” with other leaders that afternoon.
-- national-g7-release-2026-10-02.txt:9 says Trump posted “Moments before the statement was released.”
+- “collectively awarded more than 133 million barrels across four completed exchanges.”
+- “Deliveries under awarded exchanges are scheduled for November and December 2026.”
 
-**Correction:**
+**Problem:** The records establish contract awards totaling 133.5 million barrels, but do not establish that all those barrels were delivered or lent between March and June. The table conflates awarded volumes with completed lending.
 
-> Accounts described the proposed release differently. Trump had already posted about Europe's agreement before the G7 talks. The French presidency's readout and subsequent reports described the agreement in different terms.
+**Replace with:**
 
-No other substantive factual, numerical, or attribution discrepancies were identified.
+- Table: “U.S. barrels awarded under exchange contracts, March to June”
+- Source line: “The U.S. contract awards are summed from the Energy Department's five award notices, March 20 to June 22.”
 
+No other unsupported statements were identified in the scoped blocks.
+
+CHECKED: 18 blocks, 43 citations  
 NOT ENTAILED

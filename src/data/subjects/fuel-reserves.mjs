@@ -1,6 +1,6 @@
 export const subject = {
   title: "Fuel reserves",
-  dek: "The statement promises a substantial diesel release in the first 20 days and gives no number for it. France's readout says up to 100 million barrels of diesel and crude.",
+  dek: "In March, 32 governments pledged 400 million barrels of emergency oil after the war with Iran began. The G7's October release of 100 million barrels carries out the part of that pledge not yet released, about 100 million barrels on the energy agency's count.",
   current: [
     {
       label: "October 2 coordinated release",
@@ -41,6 +41,16 @@ export const subject = {
       source_value: "400",
       source_unit: "million barrels",
       source_sentence: "coordinated release of 400 million barrels",
+    },
+    {
+      label: "Pledged in March and not yet released",
+      value: "100",
+      unit: "million barrels",
+      as_of: "2026-10-07",
+      record_id: "iea-member-meeting-2026-10-07",
+      source_value: "100",
+      source_unit: "million barrels",
+      source_sentence: "The full release of all the stocks that had been pledged but have not yet been released from the March 2026 Collective Action would bring approximately 100 million barrels to the market.",
     },
   ],
 };

@@ -1,23 +1,49 @@
-Found **3 unsupported or overbroad statements** in the page and data module.
-
-1. **Japan's plans are stated too broadly.**
+1. **What happened, paragraph 1**
    
-   - **Page (.astro:70):** “Japan has no plans at this stage for another release.”
-   - **Timeline (.mjs:128):** “Japan plans no further release at this stage.”
-   - **Record (reuters-japan-no-release-2026-10-05):** “there were no plans for a fresh release of crude oil from national reserves”
-   - **Correction:** “Japan has no plans at this stage for another release of crude oil from its national reserves.” Apply the same limitation to the timeline.
-2. **The diesel export bill's termination date is misstated.**
+   **Page:** “from government emergency stocks”
    
-   - **Page (.astro:173):** “ends on the first day after thirty consecutive days on which that price is less than $4.50 a gallon.”
-   - **Record (hr10422-diesel-export-2026-09-16):** “ends on the first day after the date described in paragraph (1) that is the thirtieth consecutive day on which such price is less than $4.50 per gallon.”
-   - **Correction:** “ends on the thirtieth consecutive day after the trigger on which the average retail diesel price is below $4.50 a gallon.” The bill specifies the thirtieth qualifying day, rather than the following day.
-3. **The timeline incorrectly narrows the excise-tax deferral to dyed diesel.**
+   **Record:** iea-contributions-2026-03-19: “volumes coming from public stocks or the lowering of obligations set on industry, remain subject to change.”
    
-   - **Timeline (.mjs:129):** “The order tells the Treasury secretary to defer payment of the highway excise tax on dyed diesel incurred from October 5 through December 31 if he determines the relief is authorized.”
-   - **Record (whitehouse-diesel-tax-order-2026-10-05, §2(a)):** “defer payment by those taxpayers of the taxes imposed by 26 U.S.C. 4041(a)(1)(A) or by 26 U.S.C. 4041(b)(1)(B)”
-   - **Record (§2(c)):** “it will not impose a penalty under 26 U.S.C. 6715 (a)(1) or 26 U.S.C. 6715 (a)(2), when dyed diesel fuel is sold for use or used on the highway”
-   - **Correction:** “The order conditionally directs the Treasury secretary to defer payment of specified diesel excise taxes incurred from October 5 through December 31\. Separately, it directs the IRS to announce penalty relief for highway use of dyed diesel.”
+   **Correction:** “from emergency oil stocks made available under IEA member-country commitments.” The records do not establish that all barrels come from government-owned stocks.
+2. **What happened, paragraph 3**
+   
+   **Page:** “The shortage is of fuel, not crude.”
+   
+   **Record:** iea-g7-meeting-2026-10-02: “crude oil exports from the Middle East have recovered significantly” while “refined-product flows remain severely constrained.” iea-omr-2026-09 also reports: “Crude losses appear to have narrowed to just below 45%.”
+   
+   **Correction:** “Diesel supplies remain severely constrained even as crude exports from the Middle East have recovered significantly.” The records do not establish that crude shortages have ended.
+3. **What happened, paragraph 5**
+   
+   **Page:** “which supply about half of the European Union's diesel imports.”
+   
+   **Record:** national-g7-release-2026-10-02: “The IEA said the US supplied roughly half of the EU's diesel imports in August.”
+   
+   **Correction:** “which supplied roughly half of the European Union's diesel imports in August.” The source establishes the share for August, without establishing that it remained unchanged.
+4. **Diesel since the war, paragraph 2**
+   
+   **Page:** “In Europe diesel prices have doubled since late February.”
+   
+   **Record:** xinhua-itkonen-2026-10-02: “It said that since late February, gas prices in Europe have risen by 140 percent and diesel prices have doubled.”
+   
+   Another saved record, national-g7-release-2026-10-02, reports European diesel prices of “€2.24 per litre, compared to €1.59 before the Iran war began.”
+   
+   **Correction:** “The European Commission said diesel prices in Europe had doubled since late February.” Attribution preserves the reported claim without presenting an unspecified price measure as an independently established Europe-wide fact.
+5. **Who still owes barrels, paragraph 2**
+   
+   **Page:** “A release is an offer: governments put stock on the market, and companies take it up or not.”
+   
+   **Record:** bundesregierung-energy-faq-2026-10-01: “Eine erste Tranche dieser für die Freigabe vorgesehenen Mengen wurde mittlerweile von den Marktteilnehmern abgerufen.”
+   
+   The German government says market participants called up an initial tranche. The record establishes that distinction for Germany, while the IEA records separately describe barrels already released.
+   
+   **Correction:** “Governments can offer emergency stocks to the market, but the amount companies take up can differ from the amount offered.” The categorical definition of every release as an offer exceeds the records.
+6. **Who still owes barrels, paragraph 2**
+   
+   **Page:** “France has 8 million barrels left.”
+   
+   **Record:** politico-eu-france-germany-2026-10-07: “It remains unclear how much France has contributed of its own commitment to release 14.6 million barrels of oil products.” The report adds: “Paris has indicated privately that it still has 8 million barrels left under the March commitment.”
+   
+   **Correction:** “Paris has privately indicated that it has 8 million barrels left under its March commitment.” The exact remainder is reported through private indications rather than independently established.
 
-The remaining reviewed claims, quotations, dates, quantities, tables, and captions were consistent with their saved records.
-
+CHECKED: 16 blocks, 68 citations  
 NOT ENTAILED
