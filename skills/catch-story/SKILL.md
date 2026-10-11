@@ -230,7 +230,9 @@ page, not only the one named. Rebuild, rerun the reads on what changed, and show
 
 Commit the page, the data module, the manifest and the reads by path with a
 `story: <story>` message. Never commit `data/state/`, `src/data/news-records.json` or
-`data/sources/news-state/`: the build regenerates them.
+`data/sources/news-state/`: the build regenerates them. Commit nothing under `skills/`: a
+tool the skill lacks goes to the editor as a note, and the skill changes on its own branch,
+so the story branch never carries a second copy of it.
 
 ## Gotchas
 

@@ -219,7 +219,7 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Gotchas
 
-- The review and the entailment read go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt.
+- The review and the entailment read go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt. A failed ask says whether ChatGPT got the message: `submitted False` means it never did, so run the script once more; a second failure goes to the human with the run id it prints.
 
 - `capture` reports a failed OCR (quota, 429) as `empty_or_unextractable_body`. When a PDF comes back empty, OCR it directly with the mistral-ocr skill to see the real error. The Mistral key is read from `MISTRAL_API_KEY`, then `~/.sai/keys/mistral_api_key.env`.
 - In a press-conference or interview transcript, the reporter's question and the official's answer sit side by side. A passage cited for what an official said must come from the answer; reread the speaker label above it.

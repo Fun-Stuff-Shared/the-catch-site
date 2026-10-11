@@ -25,7 +25,7 @@ cd $wt
 for b in $merges; do
   git merge -q --no-ff -m "Merge branch '$b'" $b || {
     git merge --abort || true; cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}
-    print "merge of $b conflicts with main or an earlier --merge branch; merge main into $b, resolve it there, and run publish.sh again" >&2; exit 1 }
+    print "merge of $b conflicts with main or an earlier --merge branch. In $b's worktree, drop the build output (git checkout -- data/state src/data/news-records.json; git clean -fdq -- data/state data/sources/news-state), merge main, resolve the conflict there, and run publish.sh again" >&2; exit 1 }
 done
 
 for s in $stories; do
