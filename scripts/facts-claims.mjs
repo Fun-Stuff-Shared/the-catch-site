@@ -9,7 +9,10 @@ import { parse } from "parse5";
 
 const root = process.argv[2] || join(process.cwd(), "dist", "events");
 const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
-const ABBREV = /(?:\b[A-Z]|\b(?:Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept?|Oct|Nov|Dec|Mr|Mrs|Ms|Dr|Gen|Lt|Sgt|Cpl|Col|Capt|Gov|Sen|Rep|St|No|Inc|Corp|Co|Jr|Sr|vs|U\.S|D\.C))\.$/;
+// Never split after an abbreviation: a dotted one (U.S., p.m., e.g.), a single letter
+// (Jackson J.), or a common short form. Joining two sentences into one claim loses nothing;
+// splitting inside one can drop its cited half from Just the facts.
+const ABBREV = /(?:\b(?:[A-Za-z]\.){2,}|\b[A-Za-z]\.|\b(?:Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sept?|Oct|Nov|Dec|Mr|Mrs|Ms|Dr|Gen|Lt|Sgt|Cpl|Col|Capt|Gov|Sen|Rep|St|No|Inc|Corp|Co|Jr|Sr|vs|etc|approx)\.)$/;
 
 function* walk(node) {
   yield node;
