@@ -61,7 +61,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <p class="sec-kicker" data-layer="narrative">The decision</p>
         <h2 data-layer="fact">What happened</h2>
 
-        <SourcedBlock source="fomc-statement-2026-09-16" kind="record">
+        <SourcedBlock source="fomc-statement-2026-09-16">
           <p>The Federal Open Market Committee raised its target range by one-quarter percentage point to {decision.range.lower}–{decision.range.upper.toFixed(2)} percent on September 16, effective September 17. It was the first increase since July 27, 2023.<Cite s="fomc-statement-2026-09-16" passage="raise the target range for the federal funds rate by 1/4 percentage point" /><Cite s="fomc-implementation-2026-09-16" passage="effective September 17, 2026" /><Cite s="fed-open-market-operations-2026-09-16" passage="September 17 | 25 | 0 | 3.75-4.00" /><Cite s="fed-open-market-operations-2026-09-16" passage="July 27 | 25 | 0 | 5.25-5.50" /></p>
         </SourcedBlock>
 
@@ -95,7 +95,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <p data-layer="narrative">A higher overnight rate makes borrowing more expensive and slows consumer and business spending. That reduces demand across the economy.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="slow consumer and business spending by raising the cost of borrowing" /></p>
 
-        <SourcedBlock source="fomc-press-conference-2026-09-16" kind="record">
+        <SourcedBlock source="fomc-press-conference-2026-09-16">
           <p>That tool leaves the price of oil and gasoline untouched. Warsh's concern was the next step: the shock spreading from oil and gasoline into other prices and inflation expectations.<Cite s="fomc-press-conference-2026-09-16" passage="We cannot affect any individual price" /><Cite s="fomc-press-conference-2026-09-16" passage="relative prices don't broaden out" /><Cite s="fomc-press-conference-2026-09-16" passage="inflation expectations remain well-anchored" /></p>
         </SourcedBlock>
 
@@ -108,7 +108,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <p class="sec-kicker" data-layer="narrative">Borrowers and savers</p>
         <h2 data-layer="fact">Who feels it</h2>
 
-        <SourcedBlock source="pbs-ap-fed-consumer-effects-2026-09-16" kind="checked">
+        <SourcedBlock source="pbs-ap-fed-consumer-effects-2026-09-16">
           <p>Credit-card rates can respond quickly because most cards carry variable rates tied to banks' prime rate. Auto loans and adjustable-rate mortgages can also become more expensive, while savings accounts and certificates of deposit may pay more.<Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="Fed's policy changes flow through to credit card rates rapidly" /><Cite s="pbs-ap-fed-consumer-effects-2026-09-16" passage="interest rates on savings accounts and certificates of deposit are headed higher" /></p>
         </SourcedBlock>
 
@@ -146,7 +146,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <p class="sec-kicker" data-layer="narrative">September 16 to 18</p>
         <h2 data-layer="fact">What happened next</h2>
 
-        <SourcedBlock source="the-hill-trump-fed-reaction-2026-09-16" kind="checked">
+        <SourcedBlock source="the-hill-trump-fed-reaction-2026-09-16">
           <p>About two hours after the announcement, President Donald Trump demanded rates of 1 percent or less and called for the Fed to lower them fast.<Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Interest Rates in the United States should be 1%, or less" /><Cite s="the-hill-trump-fed-reaction-2026-09-16" passage="Trump’s reaction came about two hours" /></p>
         </SourcedBlock>
 
@@ -156,13 +156,13 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
         <p data-layer="narrative">Before the meeting, Treasury Secretary Scott Bessent had argued that a supply shock is not usually met with higher rates unless it starts spreading through the rest of the economy.<Cite s="dow-jones-bessent-rate-hike-2026-08-31" passage="traditionally you don't raise [rates]...unless you see second or third-order effects" /></p>
 
-        <SourcedBlock source="ap-reconstruction-2026-09-17" kind="checked">
+        <SourcedBlock source="ap-reconstruction-2026-09-17">
           <p>The 10-year Treasury yield slipped the next day, a move the Associated Press tied to easing inflation worries. That yield strongly influences mortgage rates, while the Fed controls a short-term rate.<Cite s="ap-reconstruction-2026-09-17" passage="10-year Treasury yield even slipped a bit, a likely sign of reduced inflation worries" /><Cite s="ap-reconstruction-2026-09-17" passage="The 10-year Treasury, for instance, strongly influences mortgage rates" /></p>
         </SourcedBlock>
 
         <p data-layer="narrative">By September 18, futures markets put the odds of another increase in October at about 58 percent, up from 42 percent a week earlier. Goldman Sachs expected an October increase, while Bank of America expected increases in October and December. Natixis strategist Jack Janasiewicz said, “We remain unconvinced that this is the start of an aggressive new tightening cycle.”<Cite s="cnbc-warsh-followup-2026-09-18" passage="near 58% Friday morning, according to the CME Group's FedWatch gauge" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="A week ago, the probability was 42%" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="Jack Janasiewicz, portfolio manager and lead portfolio strategist" /><Cite s="cnbc-warsh-followup-2026-09-18" passage="We remain unconvinced that this is the start of an aggressive new tightening cycle" /></p>
 
-        <SourcedBlock source="fomc-calendar-2026-09-19" kind="record" detail>
+        <SourcedBlock source="fomc-calendar-2026-09-19" detail>
           <DataTable columns={["When", "Record"]} rows={chronologyRows} caption="Decision chronology" />
         </SourcedBlock>
       </section>
