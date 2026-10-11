@@ -65,8 +65,17 @@ to tell. Every story has What happened.
    it, with its reasons. What they agree on.
 5. **The catch.** What coverage or a common reading gets wrong, and what the dispute
    actually turns on. Lead with the one thing a reader most needs to not misread.
-6. **What happens next.** What is scheduled, what the outcome will and will not settle.
-7. **The records.** The site builds this from the manifest.
+6. **What the coverage got right and wrong.** Only when the coverage is worth grading:
+   outlets told the event's central facts differently, or a widely carried report would
+   leave its readers with the wrong picture. One `OutletCheck` card per outlet whose report
+   changes what a reader should trust: its words, the verdict (`chip`: "checks out",
+   "mislabeled", "consistent"...), what the record shows, and the `Cite` in the card's slot;
+   errors first. Reports that check out the same way fold into one `OutletCheckFold` with
+   the count and how they were checked. The one error a reader most needs is the catch,
+   not a card. With nothing worth grading, the section is absent. Example:
+   `src/pages/events/mail-voting/2026-09-14-court-denies-stay.astro`.
+7. **What happens next.** What is scheduled, what the outcome will and will not settle.
+8. **The records.** The site builds this from the manifest.
 
 Each section holds the thread. Everything a section needs only to be exact (a transfer
 between courts, a docket number, which judge said what, a table of which court ruled which
