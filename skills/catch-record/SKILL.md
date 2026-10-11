@@ -137,7 +137,7 @@ The plan settles, before anyone writes, which layers the page has and what each 
 The layers are catch-story's menu, not a form: a story has the ones it has something to tell
 in. Each of the five sentences belongs to the layer that tells it, usually what happened to
 What happened, to whom to the story in order, why now to Why now, what is in dispute to The
-sides and The catch, what comes next to What happens next. Under each layer, write its chain: the question its
+sides and The Catch, what comes next to What happens next. Under each layer, write its chain: the question its
 heading answers, then each question the reader has next ("what pledge?", "why is 100 left
 if 325 of 400 went out?"), each answered from the record in the fewest words that hold,
 with its source.
@@ -148,7 +148,7 @@ starting where the top left off rather than telling it again. What happened is t
 plain words, what it means for the people it touches, and where it stands. It names a
 dispute at most; it never argues one. When the headline carries the catch, What happened
 states the fact once ("the barrels are not new; they are what is left of March's release");
-whose claim that corrects, and how, is The catch's to tell. A question the top raises is
+whose claim that corrects, and how, is The Catch's to tell. A question the top raises is
 answered by the section about that thing. A question raised inside a section is answered in
 that section, or the section says nobody knows yet. A fact no layer's question asks for
 stays in the record, one click from the page, however true it is.
