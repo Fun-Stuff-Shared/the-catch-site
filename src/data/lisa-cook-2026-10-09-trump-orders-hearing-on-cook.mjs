@@ -13,7 +13,7 @@ export const computed = {
 export const event = {
   slug: "lisa-cook/2026-10-09-trump-orders-hearing-on-cook",
   title: "Trump orders Fed Governor Lisa Cook to a closed hearing on firing her",
-  dek: "Three of his officials will question her at the White House on November 5 about mortgage allegations she denies, then recommend whether he has cause.",
+  dek: "The Supreme Court blocked his first attempt in June because she had not been given a chance to answer. Cook denies the mortgage allegations.",
   name: "Committee of inquiry into Governor Cook",
   date: "2026-10-09",
   updated: "2026-10-11",
