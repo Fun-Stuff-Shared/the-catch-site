@@ -51,7 +51,7 @@ done
 npm run build > /tmp/${wt:t}-build1.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build1.log" >&2; exit 1 }
 
 for s in $stories; do
-  (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story --manifest $site/checks/manifests/$s.json \
+  (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story --manifest $wt/checks/manifests/$s.json \
     --site-root $wt --state-dir $state) > /tmp/${wt:t}-stage-$s.json || { print "stage-story refused $s: /tmp/${wt:t}-stage-$s.json" >&2; exit 1 }
 done
 (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state verify --state-dir $state >/dev/null)
