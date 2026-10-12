@@ -24,7 +24,8 @@ class Blocks(HTMLParser):
         if tag in {"br", "img", "hr", "input", "meta", "link", "wbr"}: return
         a = dict(attrs)
         if tag == "section" and a.get("id") == "records": self.done = 1
-        drop = tag in DROP or "mode-switcher" in (a.get("class") or "")
+        cls = (a.get("class") or "").split()
+        drop = tag in DROP or "mode-switcher" in cls or "work-evidence" in cls or a.get("data-layer") == "claims"
         self.stack.append((tag, drop))
         if drop: self.skip += 1
         if tag == "main": self.main += 1
