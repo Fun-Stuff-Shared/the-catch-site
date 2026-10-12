@@ -44,15 +44,16 @@ export const CUSTODY_TALK = [
 const ENTITIES = { "&quot;": '"', "&#39;": "'", "&lt;": "<", "&gt;": ">", "&amp;": "&" };
 function decode(text) { return text.replace(/&quot;|&#39;|&lt;|&gt;|&amp;/g, (e) => ENTITIES[e]); }
 
-// Every record link on the page that carries a passage, as { id, passage }, read from the
-// tag's attributes in whatever order the renderer wrote them. Links to outlet URLs are not
+// Every passage a record link on the page carries, as { id, passage }, including the ones
+// merge-cites folds into data-passages, read from the tag's attributes in whatever order the renderer wrote them. Links to outlet URLs are not
 // record links: the evidence reader opens only /records/ links (src/scripts/evidence-reader.ts).
 export function citedPassages(html) {
   const out = [];
   for (const [tag] of html.matchAll(/<a\b(?:[^>"]|"[^"]*")*>/g)) {
     const attrs = Object.fromEntries([...tag.matchAll(/\s([a-zA-Z-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
     const id = (attrs["data-record-href"] ?? attrs.href)?.match(/^\/records\/([^/]+)\/$/)?.[1];
-    if (id && "data-passage" in attrs) out.push({ id, passage: decode(attrs["data-passage"]) });
+    if (!id || !("data-passage" in attrs)) continue;
+    for (const passage of [attrs["data-passage"], ...(attrs["data-passages"] ?? "").split("&#10;")]) if (passage) out.push({ id, passage: decode(passage) });
   }
   return out;
 }

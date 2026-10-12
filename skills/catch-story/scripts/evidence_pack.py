@@ -30,7 +30,9 @@ class Blocks(HTMLParser):
         if tag == "main": self.main += 1
         live = self.main and not self.skip and not self.done
         if tag == "a" and a.get("data-passage") is not None and live and self.open:
-            self.open[-1]["cites"].append(((a.get("data-record-href") or a.get("href", "")).strip("/").split("/")[-1], a["data-passage"]))
+            rid = (a.get("data-record-href") or a.get("href", "")).strip("/").split("/")[-1]
+            for passage in [a["data-passage"], *(a.get("data-passages") or "").split("\n")]:
+                if passage: self.open[-1]["cites"].append((rid, passage))
             if len(self.stack) > 1 and self.stack[-2][0] == "sup":
                 self.skip += 1; self.stack[-1] = (tag, True)
         elif tag in BLOCK and live:
