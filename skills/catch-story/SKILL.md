@@ -162,9 +162,14 @@ The build runs the gate. Every failure is a defect on the page, fixed on the pag
 voice lint ends with a sentence-length profile; read the longest sentences and split the
 ones a reader would stall on.
 
-Then look at the page the way a reader will: open the built page in a browser and scroll
-it in each mode (`?mode=story`, `?mode=facts`, `?mode=work`), at desktop width and at a
-phone's. A screenshot per screen is the record of it. Look for a stretch of prose with
+Then look at the page the way a reader will, in each mode at desktop and phone width:
+
+```bash
+python3 skills/catch-story/scripts/page_shots.py <served page url> /Volumes/4/tmp/<story>/shots
+```
+
+It writes a full-page screenshot per mode and width, emulating a real phone, and exits
+non-zero when anything runs wider than the screen. Read the shots. Look for a stretch of prose with
 nothing to look at where the answer has a shape, a visual that is hidden or cramped, and
 anything that renders wrong (stray marks, broken numbers, an empty section). Each is a
 defect, fixed before the reads.
