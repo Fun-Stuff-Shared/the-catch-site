@@ -139,6 +139,11 @@ reader needs joined, and let the rhythm vary the way a good news story's does.
 - Quotes are the source's exact words. Do not name the outlet in prose; the citation
   carries it. "The Guardian described it that way" is the exception: when the outlet's
   wording is the subject, as in the catch.
+- When the story names an event the site has already covered, link the words that name
+  it to that story: "raised rates 12 to 0 on September 16" opens the September rate story.
+  Link the event itself, never "our story" or "as we reported". The covered events are the
+  pages under `src/pages/events/<subject>/`; check the subjects this story touches before
+  you finish a draft.
 - Explain a term once, where the sentence leaning on it would otherwise be misread, as what
   it means in this story ("seeking admission, which means asking to come in").
 - Cut every sentence that only says the obvious, restates, hedges or announces: "The Court
