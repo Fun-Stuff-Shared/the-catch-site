@@ -54,7 +54,7 @@ export const chronology = {
 export const homes = {
   rows: [
     ["Mortgage form, as the White House describes it", "Her main residence, as on the Ann Arbor form two weeks earlier"],
-    ["Lender's rate quote, May 28, 2021", "Vacation home"],
+    ["Rate-search printout from the lender's website, May 28, 2021", "Vacation home"],
     ["Security-clearance form", "Second home"],
     ["Georgia homestead exemption", "Never claimed"],
     ["Rental listing", "Listed for rent in September 2022; her lawyers say she did not rent it"],
