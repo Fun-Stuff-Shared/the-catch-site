@@ -149,6 +149,21 @@ reader needs joined, and let the rhythm vary the way a good news story's does.
 - Cut every sentence that only says the obvious, restates, hedges or announces: "The Court
   has not ruled." "It is worth noting." "The government does not dispute that finding."
   If the fact matters, state it as a fact in the sentence it belongs to.
+- Say each thing once. When you add a visual, cut the prose it now carries: a table of
+  what each record says replaces the paragraph listing them, a timeline replaces the
+  paragraph of dates, a steps table replaces the paragraph of deadlines. The dek and the
+  opening do not repeat each other, and a point made in What happened is not made again
+  as a section's opener.
+- After moving or cutting a sentence, reread the one after it: a pronoun ("its letter",
+  "it will ever see") must still have its noun in reach.
+- When a side's claim and the record seem to collide, say how they fit in one sentence
+  ("The letter does claim the promises lowered her rates, but gives only the typical gap,
+  not her own"), not as a claim and a contradiction the reader has to reconcile.
+- Attribute once per paragraph and let the rest stand: "her lawyers say" opens it, and
+  "they note", "by their account", "they say" do not follow on every sentence after.
+- Legal and procedural phrasing ("while covering doubts about her integrity", "her signing
+  of the mortgage as her primary residence") is rewritten into what happened and who
+  decided it.
 - No em dashes. Numbers from the data module, never typed twice.
 - Read WRITING.md and the AI-writing tells at
   https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing before the first draft and

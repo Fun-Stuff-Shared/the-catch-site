@@ -29,7 +29,7 @@ class Text(HTMLParser):
             return
         classes = set((a.get("class") or "").split())
         frame = any((tag, c) in FRAME for c in classes) or (self.records and tag == "p" and classes & RECORDS_FRAME)
-        drop = tag in DROP or frame or a.get("data-layer") == "proof" or (tag == "sup" and "src-ref" in classes) or (tag == "div" and {"sourced-block", "detail"} <= classes)
+        drop = tag in DROP or frame or a.get("data-layer") in ("proof", "claims") or "work-evidence" in classes or (tag == "sup" and "src-ref" in classes) or (tag == "div" and {"sourced-block", "detail"} <= classes)
         if tag == "section" and (self.records or a.get("id") == "records"): self.records += 1
         self.stack.append(drop)
         if drop: self.skip += 1
