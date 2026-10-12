@@ -147,3 +147,12 @@ test("cited passages: read from attributes in any order, entities decoded", () =
     { id: "rec-e", passage: "then --> after" },
   ]);
 });
+
+test("citedPassages returns every passage a merged citation folds into data-passages", () => {
+  const html = '<a href="#src-1" data-record-href="/records/rec-a/" data-passage="one" data-passages="two&#10;three &quot;q&quot;">1</a>';
+  assert.deepEqual(citedPassages(html), [
+    { id: "rec-a", passage: "one" },
+    { id: "rec-a", passage: "two" },
+    { id: "rec-a", passage: 'three "q"' },
+  ]);
+});
