@@ -88,7 +88,7 @@ Neither is ruled out by the record: whether a purpose clause can be enforced is 
 
 The Justice Department has asked a federal judge to stop Alaska certifying its Senate result if Sen. Dan S. Sullivan loses but would have won had every vote for a second Dan Sullivan been his, until an investigation finds whom those voters meant.
 The suit is against Alaska's own election officials, who tried to remove the second Sullivan in June before the state's courts put him back on the ballot.
-President Trump says he ordered it, a day after promising "powerful legal options" against the other Sullivan and seven weeks after telling his attorney general he thought there was a legal case.
+President Trump says he ordered it, a day after saying he was looking at "powerful legal options" to remove the other Sullivan from the ballot, and seven weeks after telling Attorney General Todd Blanche he thought there was a legal case.
 The department says a voter-registration law's aim of protecting "the integrity of the electoral process" requires the hold; Murkowski, Peltola and election lawyers say that clause gives no such power and the ballot already tells the two men apart.
 The suit matters only if the ranked-choice count, due Nov. 18 with certification targeted for Nov. 25, leaves Sullivan short in a way the other Sullivan's votes would reverse.
 
@@ -120,9 +120,9 @@ Why now (sentence 3; timeline): opens on "why this, and why eleven days out?"
 1. June 15: the director de-certified Daniel J. Sullivan on the state GOP's complaint [beecher-letter-2026-06-15: "these complaints which were filed by Stacey C. Stone on behalf of Carmela Warfield, the Chairman of the Alaska Republican Party"].
 2. June 26 and 29: courts restored him [reuters-judge-restores-2026-06-27: "Dan Sullivan is declared to be an eligible candidate"] [beacon-supreme-court-2026-06-29: "A full opinion on the case will be issued at a later date, the court said."].
 3. Aug. 18 primary: 49.5, 41.4, 2.5 [doj-complaint-2026-10-22: "Peltola received 49.5% of the vote, Senator Sullivan received 41.4% of the vote, Daniel J. Sullivan received 2.5% of the vote"]; the same day, Reuters reported grand-jury subpoenas in a federal probe of the candidacy [reuters-subpoenas-2026-08-18: "The grand jury subpoenas are part of a federal probe into the candidacy of Dan J. Sullivan"]; no charge since.
-3a. Sept. 2: Trump to Blanche [trump-remarks-2026-09-02: "I think, Todd, you have a legal case on that."].
+3a. Sept. 2: Trump to Blanche, attorney general since Aug. 8 [ap-blanche-confirmed-2026-08-08: "The Senate confirmed Todd Blanche as attorney general in a vote early Saturday"] [trump-remarks-2026-09-02: "I think, Todd, you have a legal case on that."].
 4. Oct. 13: Trump at the rally to the U.S. attorney [beacon-sues-2026-10-23: "I said I hope you’re going to make sure there’s no cheating"].
-5. Oct. 21: "powerful legal options" [ap-sues-block-dem-win-2026-10-23: "We are looking at powerful legal options to remove the fraudulent Daniel J. Sullivan Jr. from the Ballot"].
+5. Oct. 21: Trump says he is looking at "powerful legal options" to remove the other Sullivan from the ballot; the suit filed the next day does not seek removal, it targets certification [ap-sues-block-dem-win-2026-10-23: "We are looking at powerful legal options to remove the fraudulent Daniel J. Sullivan Jr. from the Ballot"].
 6. Oct. 22: Blanche says it is not DOJ's intention to interfere with certification [nbc-doj-sues-alaska-2026-10-23: "I’m not trying to not have an election certified. Of course not,"]; the suit is filed the same day.
 7. Oct. 23: Trump: "I'm the one that said do it."
 8. The department's stated reason [usatoday-sues-2026-10-23: "Alaska’s Division of Elections determined that Mr. Daniel J. Sullivan’s candidacy was intended to mislead voters and compromise the fairness of the ballot"]; that finding was the one the courts reversed.
