@@ -18,7 +18,7 @@ export const computed = {
 export const event = {
   slug: "election-administration/2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids",
   title: "Supreme Court lets New Hampshire tell poll workers to ignore student IDs on Nov. 3",
-  dek: "A state law took student IDs off the list of accepted voter IDs in June. The Court's pause, which does not rule on that law, lets the state forbid them even as backup proof.",
+  dek: "A state law took student IDs off the list of accepted voter IDs in June. The pause brings back the Secretary of State's instruction that officials may not consider one even as backup evidence of who a voter is.",
   name: "Stay of the New Hampshire student-ID injunction",
   date: "2026-10-22",
   updated: "2026-10-24",
@@ -38,7 +38,7 @@ export const event = {
 export const chronology = [
   { date: "2012", title: "New Hampshire's voter ID law accepts student IDs.", cites: [{ c: "student-ids-since-2012" }] },
   { date: "Apr. 3, 2026", title: "Gov. Kelly Ayotte signs HB 323; it takes effect June 2.", cites: [{ c: "hb323-what-it-did" }] },
-  { date: "Apr. 23", title: "The Secretary of State says student IDs cannot be used to register, vote absentee or check in.", cites: [{ c: "april-directive" }] },
+  { date: "Apr. 23", title: "The Secretary of State says that from June 2 student IDs cannot be used to register, vote absentee or check in.", cites: [{ c: "april-directive" }] },
   { date: "Aug. 11", title: "The Coalition for Open Democracy sues.", cites: [{ c: "suit-filed" }] },
   { date: "Sept. 1", title: "The judge refuses to change anything for the September 8 primary.", cites: [{ c: "primary-no-relief" }] },
   { date: "Oct. 2 and 5", title: "The judge leaves the law in place and orders new guidance.", cites: [{ c: "hb323-not-enjoined" }, { c: "injunction-terms" }] },
