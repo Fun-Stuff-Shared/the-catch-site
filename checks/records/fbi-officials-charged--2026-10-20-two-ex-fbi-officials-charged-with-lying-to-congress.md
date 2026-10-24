@@ -56,7 +56,7 @@ Every row for this question is one side's allegation, sworn by an FBI agent and 
 
 Federal prosecutors charged two former leaders of the FBI's Foreign Influence Task Force with lying to Congress in 2023, and they surrendered on Oct. 23.
 Nikki Floris ran the task force and Bradley Benavides was its section chief, and prosecutors say both falsely told House Judiciary Committee staff they had no part in the FBI's Hunter Biden investigations.
-Prosecutors say the case stems from an ongoing investigation of the task force, which the FBI director first described in August, and it rests on witnesses interviewed this month; no deadline forced it, and it came by complaint 11 days before the midterms.
+Prosecutors say the case stems from an ongoing investigation of the task force, the FBI director said in August that the bureau was investigating the task force's Round River project, and the case rests on witnesses interviewed this month; no deadline forced it, and it came by complaint 11 days before the midterms.
 The government says they lied to hide the task force's role, and their lawyers call the case political; many headlines called it a laptop case, but the charge covers the Hunter Biden investigations broadly, and most of Floris's charged answers are not about the laptop.
 Prosecutors must show a judge probable cause at a hearing on Oct. 27, and the law gives them 30 days from the arrest to file an indictment.
 
