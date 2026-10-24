@@ -97,7 +97,7 @@ The sides (sentence 4):
 
 The Catch (sentence 4, catch half):
 1. What do the headlines get wrong? "Lying about Hunter Biden laptop probe" (CBS), "arrested in Hunter Biden laptop probe" (Fox), "roles in investigating the origins of Hunter Biden's laptop" (AP's first version): the charge is about the Hunter Biden investigations, tax and money-laundering cases, and four of Floris's five charged subjects are not the laptop. [cbs-2026-10-23] [fox-2026-10-23] [pbs-ap-2026-10-23] [floris-statement-of-facts-2026-10-20]
-2. Two more readings the record corrects, one line each: the "shadow government" line Patel attached to the announcement comes from a 2020 message about a recalled China report, not from this case [patel-x-2026-10-23] [washexaminer-floris-2026-07-19]; and the claim that they wrote the laptop off as Russian disinformation, when the talking points they drafted say the FBI had not made that determination [nypost-editorial-2026-10-23] [floris-statement-of-facts-2026-10-20].
+2. Smaller errors, one line each: the AP's "origins" lede, the release's Wikipedia line, and the claim that they wrote the laptop off as Russian disinformation, when the additions they made to the talking points say the FBI had not made that determination [pbs-ap-2026-10-23] [usao-dc-release-2026-10-23] [nypost-editorial-2026-10-23] [floris-statement-of-facts-2026-10-20]. Patel's "shadow government" line is accurate (Floris wrote it in a Sept. 2020 message about a recalled China report) and goes in Why now as context, not here [patel-x-2026-10-23] [washexaminer-floris-2026-07-19].
 
 What happens next (sentence 5):
 1. Oct. 27, 11 a.m.: preliminary hearing on probable cause. [cbs-2026-10-23] [frcrmp-5-1]
