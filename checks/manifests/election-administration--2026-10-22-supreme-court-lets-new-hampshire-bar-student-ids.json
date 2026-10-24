@@ -4,7 +4,32 @@
   "story": "/events/election-administration/2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids/",
   "date": "2026-10-22",
   "state_event_id": "event-election-administration-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids",
-  "sub_events": [],
+  "story_title": "Supreme Court lets New Hampshire tell poll workers to ignore student IDs on Nov. 3",
+  "event_record": "/events/election-administration/",
+  "completed_by": "claude (election-administration author session 2026-10-22-supreme-court-lets-new-hampsh-a8, worktree 2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids)",
+  "date_completed": "2026-10-24",
+  "sub_events": [
+    {"id": "hb323-2026-04-03", "date": "2026-04-03", "label": "HB 323 signed; student IDs leave the accepted list on June 2", "section_anchor": "why-now", "records": ["dnh-orders-appendix-2026"]},
+    {"id": "directive-2026-04-23", "date": "2026-04-23", "label": "The Secretary of State bars student IDs for any part of voting", "section_anchor": "why-now", "records": ["sos-release-2026-04-23"]},
+    {"id": "suit-2026-08-11", "date": "2026-08-11", "label": "The Coalition for Open Democracy sues", "section_anchor": "why-now", "records": ["dnh-orders-appendix-2026"]},
+    {"id": "injunction-2026-10-02", "date": "2026-10-02", "label": "The judge leaves the law in place and orders new guidance", "section_anchor": "why-now", "records": ["dnh-orders-appendix-2026"]},
+    {"id": "stay-2026-10-22", "date": "2026-10-22", "label": "The Supreme Court pauses the judge's orders", "section_anchor": "what-happened", "records": ["scotus-26a512-order-2026-10-22", "scotus-docket-26a512"]},
+    {"id": "reversion-2026-10-23", "date": "2026-10-23", "label": "The state returns to the primary's rules", "section_anchor": "what-happened", "records": ["sos-ag-release-2026-10-23"]}
+  ],
+  "figures": [
+    {"figure": "days_injunction_to_election", "label": "Days from the judge's order to the election", "value": "32", "unit": "days", "kind": "computed", "formula": "date_difference_days", "inputs": [
+      {"source_id": "scotus-26a512-order-2026-10-22", "value": "2026-10-02", "unit": "date", "quote_span": "The October 2, 2026, and October 5, 2026, orders"},
+      {"source_id": "cod-opposition-2026-10-19", "value": "2026-11-03", "unit": "date", "quote_span": "The general election is November 3."}]},
+    {"figure": "young_lacking_id", "label": "Residents aged 18 to 24 without a qualifying ID, by the challengers' expert", "value": "7747", "unit": "people", "kind": "sourced", "source": {"source_id": "dnh-orders-appendix-2026", "quote_span": "Dr. Herron estimated that approximately 6.56% lack qualifying identification, representing approximately 7,747 individuals."}},
+    {"figure": "primary_turned_away", "label": "Reports of students turned away in the September primary", "value": "2", "unit": "reports", "kind": "sourced", "source": {"source_id": "dnh-orders-appendix-2026", "quote_span": "The Deputy Secretary of State testified that he received two reports of students being turned away from the polls as a result of HB 323."}}
+  ],
+  "steps": {
+    "sources_admitted": {"done": true, "evidence": "Every record the page cites is pinned under data/sources/election-administration and data/sources/coverage with its text and hash; the statute pages and the Supreme Court docket were admitted from locally extracted text because capture dropped their bodies."},
+    "derived_numbers_computed": {"done": true, "evidence": "The data module computes the 32 days from the October 2 order to the November 3 election, and the 20 and 12 days either side of the October 22 pause, from pinned dates."},
+    "outlet_claims_verified": {"done": true, "evidence": "The catch checks CBS's 'rules' and UPI's 'ruled', the attorney general's 'reinstating' and the Union Leader's 'set aside state laws' against the district court's denial of relief against HB 323 and the order's text; USA Today's 'unsuccessful' and the 8-1 post against the order and docket; UPI's account of the guidance against the April 23 release."},
+    "live_elements_guarded": {"done": true, "evidence": "The page has no live element; the order, filings, statutes, state pages and coverage are saved copies dated in the records list."},
+    "subject_page_updated": {"done": true, "evidence": "New subject page /events/election-administration/ with its data module src/data/subjects/election-administration.mjs and one figure, the 32 days from the judge's order to the election; the series is listed in src/lib/discovery.mjs."}
+  },
   "records": [
     {
       "id": "scotus-26a512-order-2026-10-22",
