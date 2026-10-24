@@ -1,0 +1,179 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
+import { event, lean, primaries, caught, corrections, trackers } from "../../../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs";
+const state = publishedState().events.get("event-midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls");
+if (!state) throw new Error("Missing publication selection: event-midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterm-polls/">Midterm polls</a><span>October 20, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Midterm polls &middot; October 20, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="usatoday-all-removed-claim" /><Cite c="usatoday-live-blog-still-cites" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#who">Who is behind it</a></li>
+          <li><a href="#caught">How it was caught</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#corrections">Who corrected</a></li>
+          <li><a href="#why">Why would anyone do this?</a></li>
+          <li><a href="#effect">Did it change anything?</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">On the evening of Oct. 20, a firm calling itself Wedgewood Polls posted a statement on X saying that most of the polling data it had published since June was made up, "generated" in its word, with no real data behind the vast majority of its releases.<Cite c="wedgewood-admitted-most-fabricated" /><Cite c="wedgewood-started-june" /> It called the whole operation an experiment to show how easily a fake polling firm could be taken seriously, and said one poll, in Nebraska, was real.<Cite c="wedgewood-called-it-experiment" /><Cite c="wedgewood-claims-nebraska-real" /> It posted the statement hours after FiftyPlusOne, a site that averages polls, asked it to answer an investigation into whether its data was fake.<Cite c="statement-time" /></p>
+        <p data-layer="narrative">The New York Times listed 15 of its polls on its poll-tracking pages, and says it did so only after Wedgewood answered the paper's questions about who ran it, how it worked and who paid for it.<Cite c="nyt-removed-15" /><Cite c="nyt-vetted" /> The polls fed the averages of two election forecasters: Nate Silver's Silver Bulletin, which draws its polls from the Times, and Decision Desk HQ, which counted 17 Wedgewood polls.<Cite c="silver-uses-nyt-feed" /><Cite c="ddhq-removed-17" /> News outlets including USA Today, The Hill and Newsweek reported them.<Cite c="usatoday-all-removed-claim" /><Cite c="thehill-corrected" /><Cite c="newsweek-retracted" /></p>
+        <p data-layer="narrative">The only evidence that the Nebraska poll was real comes from Wedgewood itself: a screenshot of a survey service's completion notice, a crowdfunding page that raised $500 of a $5,000 goal, and its own release.<Cite c="nebraska-evidence" /> As of Oct. 24, USA Today, which says it removed every reference, still cites a Wedgewood poll in an Oct. 13 live blog, and one poll site still counts its poll of Mississippi's Senate race, whose raw data FiftyPlusOne says was fraudulent, in its average.<Cite c="usatoday-all-removed-claim" /><Cite c="usatoday-live-blog-still-cites" /><Cite c="pollingsource-ms-in-average" /><Cite c="how-caught" /><Cite c="raw-data-fake" /></p>
+        <p data-layer="narrative">Fox News headlined Wedgewood a pollster "boosting far-left candidates." Its Michigan and Wisconsin Democratic primary polls did show progressives ahead, Abdul El-Sayed and Francesca Hong, though in Michigan most real polls at the time also had El-Sayed leading.<Cite c="fox-far-left" /><Cite c="progressive-outliers" /><Cite c="mi-primary-poll-vs-real" /><Cite c="wi-july21-vs-marquette" /> The Washington Examiner said its reports "consistently" leaned left, but of the {lean.compared} general-election polls Silver Bulletin could check against its averages, {lean.moreDemocratic} leaned Democratic and {lean.moreRepublican} leaned Republican.<Cite c="examiner-consistent" /><Cite c="lean-row-count" /></p>
+      </section>
+
+      <section id="who">
+        <h2 data-layer="fact">Who is behind it</h2>
+        <p data-layer="narrative">Wedgewood's statement said it was run by "a small group of industry veterans."<Cite c="wedgewood-industry-veterans" /> In August it told Straight Arrow News it was a two-person shop, one progressive and one conservative; its website listed no names, no phone number and no location.<Cite c="told-san-two-person" /> The firm's head pollster told Zachary Donnini of VoteHub, another poll tracker, that he was a Boston University student who had worked with a polling firm called SoCal Strategies, and that his partner was in local Democratic politics in Ohio.<Cite c="told-votehub-student" /> FiftyPlusOne says Wedgewood gave it two names, one of them Jack Sims, and that it confirmed Sims had worked in polling.<Cite c="names-given-fiftyplusone" /></p>
+        <p data-layer="narrative">SoCal Strategies says one of the people FiftyPlusOne named, once associated with the firm, has not worked there for a year, and that his actions are his own.<Cite c="socal-response" /> Wedgewood's website said it was based in Boston, but WGVU, a public radio station in Michigan, found no such business in Massachusetts records.<Cite c="no-mass-registration" /></p>
+      </section>
+
+      <section id="caught">
+        <h2 data-layer="fact">How it was caught</h2>
+        <p data-layer="narrative">FiftyPlusOne says a tip from a trusted source led it to look at the raw data behind a Wedgewood poll of Mississippi. The data was surprisingly clean, and with nothing yet proving it fake, FiftyPlusOne set out to repeat the survey itself on Pollfish, the online survey service Wedgewood said it used, "to the last detail."<Cite c="how-caught" /></p>
+        <p data-layer="narrative">The repeat gave it real data to compare. In FiftyPlusOne's own results, each respondent's ID was one of two kinds, a plain string of numbers or one starting with a hyphen, in a rough even mix, and each transaction number rose almost in step with the time the person answered; Pollfish confirmed that is how its data behaves. Wedgewood's IDs behaved neither way, and FiftyPlusOne wrote that the red flags were "definitely still waving."<Cite c="replication-result" /> It gave Wedgewood until midnight to answer.<Cite c="fiftyplusone-deadline" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The last week, 2026</strong></figcaption>
+          <DecisionTimeline entries={caught} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>"Removed any reference"</h3>
+              <p data-layer="narrative">USA Today's notes on the stories it corrected say the paper "has removed any reference to Wedgewood Polls data in all stories where it was mentioned."<Cite c="usatoday-all-removed-claim" /> Its live blog of the Oct. 13 Georgia Senate debate between Jon Ossoff and Mike Collins, as fetched on Oct. 24, still counts a Wedgewood poll among three that put Ossoff ahead, and carries no note.<Cite c="usatoday-live-blog-still-cites" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>What USA Today says, and what its live blog still says</strong></figcaption>
+                <div class="data-table-wrap"><table class="data-table">
+                  <thead><tr><th>Where</th><th>The words</th></tr></thead>
+                  <tbody>
+                    <tr><td>Editor's notes, Sept. 18 and Oct. 5 stories</td><td>"USA TODAY has removed any reference to Wedgewood Polls data in all stories where it was mentioned."<Cite c="usatoday-all-removed-claim" /></td></tr>
+                    <tr><td>Oct. 13 debate live blog, as fetched Oct. 24</td><td>"Ossoff leads Collins by 8 to 11 points in polls of likely Georgia voters by the Public Polling Project (Sept. 21-31), Insider Advantage (Sept. 22-23) and Wedgewood Polls (Oct. 2-3)."<Cite c="usatoday-live-blog-still-cites" /></td></tr>
+                  </tbody>
+                </table></div>
+              </figure>
+            </li>
+            <li>
+              <h3>"Consistently" left-leaning</h3>
+              <p data-layer="narrative">Fox News headlined its story "Democrats furious after pollster boosting far-left candidates admits fabricating surveys," and wrote that the firm had shown far-left candidates as strong contenders in several primaries.<Cite c="fox-far-left" /> In its polls of the Democratic primaries in Michigan and Wisconsin, Wedgewood did show progressive candidates leading, mostly by margins like those in real polls. Urban Milwaukee, a Milwaukee news site, says one early Wisconsin poll put Francesca Hong, the progressive in the governor's primary, higher than real polls had her.<Cite c="mi-primary-poll-vs-real" /><Cite c="wi-early-poll-high" /><Cite c="wi-july21-vs-marquette" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>Wedgewood's Democratic primary polls against real ones</strong></figcaption>
+                <div class="data-table-wrap"><table class="data-table">
+                  <thead><tr><th>Primary</th><th>Wedgewood</th><th>Real polls at the time</th></tr></thead>
+                  <tbody>
+                    {primaries.map((r) => <tr><td>{r.race}, {r.dates}</td><td>{r.wedgewood}</td><td>{r.real}<Cite c={r.c} /></td></tr>)}
+                  </tbody>
+                </table></div>
+              </figure>
+              <p data-layer="narrative">The Washington Examiner went further than Fox, writing that Wedgewood's reports "consistently reflected a bias toward left-leaning candidates."<Cite c="examiner-consistent" /> Nate Silver, whose Silver Bulletin averaged Wedgewood's polls, compared each of its general-election polls that named the eventual nominees with his average for the race just before it. Of the {lean.compared} he could compare, {lean.moreDemocratic} were more Democratic than his average and {lean.moreRepublican} more Republican.<Cite c="silver-uses-nyt-feed" /><Cite c="silver-table-scope" /><Cite c="lean-row-count" /> On average they were about 0.6 points more favorable to Democrats, a lean Silver calls mild and not particularly consistent.<Cite c="silver-lean" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>Each Wedgewood general-election poll against Silver Bulletin's average</strong></figcaption>
+                <div class="data-table-wrap"><table class="data-table lean-table">
+                  <thead><tr><th>Race</th><th>Wedgewood / average</th><th>Leaned</th></tr></thead>
+                  <tbody>
+                    {lean.rows.map((r) => <tr>{r.map((cell) => <td>{cell}</td>)}</tr>)}
+                  </tbody>
+                </table></div>
+                <p class="chart-source">D+10 means the Democrat led by 10 points. The last column shows which party each poll favored against the average, and by how many points. The Nebraska Senate poll, the farthest toward Republicans, is the one Wedgewood says was real. From Silver Bulletin's table.<Cite c="lean-row-count" /><Cite c="nebraska-most-republican" /></p>
+              </figure>
+              <p data-layer="narrative">Silver did find a pattern in three races: Wedgewood's general-election numbers were better than the consensus for progressive Democrats Troy Jackson in Maine, Abdul El-Sayed in Michigan and Hong in Wisconsin, though he says it is "hard to know how much to make of three races."<Cite c="progressive-outliers" /> In Texas, which Fox named as a state where the polls showed Democrats with significant edges, both Wedgewood polls were more Republican than Silver's average; the 64-to-30 lead Fox cited was among Hispanic voters only, not all voters.<Cite c="fox-texas" /><Cite c="texas-toplines" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="corrections">
+        <h2 data-layer="fact">Who corrected</h2>
+        <p data-layer="narrative">Two news outlets still had a Wedgewood poll in front of readers as of Oct. 24: USA Today in its live blog, and The Hill through AOL's syndicated copy of its July Maine story.<Cite c="usatoday-live-blog-still-cites" /><Cite c="thehill-maine-aol" /> MS NOW also aired a Wedgewood poll of Michigan's governor race, according to Mediaite, and Politico says its Morning Score newsletter mentioned Wedgewood twice.<Cite c="msnow-aired" /><Cite c="politico-morning-score" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>News outlets</strong></figcaption>
+          <div class="data-table-wrap"><table class="data-table">
+            <thead><tr><th>Outlet, and what it ran</th><th>What it did after</th></tr></thead>
+            <tbody>
+              {corrections.map((r) => <tr><td><strong>{r.outlet}</strong><br />{r.ran}</td><td>{r.after}{r.cs.map((c) => <Cite c={c} />)}</td></tr>)}
+            </tbody>
+          </table></div>
+        </figure>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Poll trackers and forecasters</strong></figcaption>
+          <div class="data-table-wrap"><table class="data-table">
+            <thead><tr><th>Site</th><th>What it did</th></tr></thead>
+            <tbody>
+              {trackers.map((r) => <tr><td>{r.outlet}</td><td>{r.after}{r.cs.map((c) => <Cite c={c} />)}</td></tr>)}
+            </tbody>
+          </table></div>
+        </figure>
+      </section>
+
+      <section id="why">
+        <h2 data-layer="fact">Why would anyone do this?</h2>
+        <p data-layer="narrative">Wedgewood says it set out to show how little checking polls get. It says the poll trackers of the Times, FiftyPlusOne and VoteHub all added its polls, and that MS NOW cited its numbers on air.<Cite c="wedgewood-claims-no-vetting" /> It says it never meant to affect a race.<Cite c="wedgewood-never-meant-to-sway" /></p>
+        <QuoteCard speaker="Wedgewood Polls" when="Oct. 20, 2026" where="Statement posted on X" label="Archived copy">
+          <p>"Wedgewood Polling was never intended to sway an election or permanently mislead the public; it was designed as a wake-up call."<Cite c="wedgewood-never-meant-to-sway" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">What the checkers say</h3>
+        <p data-layer="narrative">Wedgewood's statement says the trackers did not properly vet it; FiftyPlusOne calls that false.<Cite c="fiftyplusone-says-vetting-claim-false" /> The Times says it listed the polls only after its questions were answered, and its listing carried a note that Wedgewood "does not meet our criteria for selected pollsters." VoteHub gave it a D grade.<Cite c="nyt-vetted" /><Cite c="nyt-flagged-below-criteria" /><Cite c="votehub-d-grade" /> FiftyPlusOne says the raw data Wedgewood later sent it was fraudulent.<Cite c="raw-data-fake" /> RealClearPolitics, another poll tracker, says it never listed Wedgewood, citing its lack of a track record, a staff list or any social media history.<Cite c="rcp-rejected" /></p>
+        <p data-layer="narrative">G. Elliott Morris of FiftyPlusOne says Wedgewood is "trying to cover up their fraud."<Cite c="morris-cover-up" /> Silver calls the explanation "a pathetic attempt to get ahead of the story," and Andrew Gelman, a Columbia statistician, finds it "kind of suspicious" that it came "on the very day that they got caught."<Cite c="silver-explanation-false" /><Cite c="gelman-timing" /> In August another polling firm, Median Strategies, admitted after questions from the Los Angeles Times that its Los Angeles mayoral poll was fake, and called itself a "short term social experiment."<Cite c="median-precedent" /></p>
+        <h3 data-layer="fact">Motives others suggest</h3>
+        <p data-layer="narrative">Silver says he does not know Wedgewood's motives. He names two possibilities: moving betting markets, where people trade on who will win, with polls in races few others poll, and discrediting polling itself. He discloses that he advises Polymarket, a betting market.<Cite c="silver-explanation-false" /><Cite c="silver-motives" /> Morris now thinks the polls were more likely meant to move betting markets than to boost progressives.<Cite c="morris-markets" /> Kalshi, a betting exchange, says a trading account people linked to Wedgewood made $194.44 on markets tied to its polls.<Cite c="trading-profit-small" /> In August, Urban Milwaukee read the firm the other way, as "a Republican front group that passes itself off as liberal," pointing to its "Progressive but unbiased" profile and to a conservative institute's promotion of its Wisconsin poll.<Cite c="urbanmilwaukee-front" /></p>
+      </section>
+
+      <section id="effect">
+        <h2 data-layer="fact">Did it change anything?</h2>
+        <p data-layer="narrative">The forecasts barely moved, though one forecaster says a race with little other polling shifted more. Removing the polls changed neither Decision Desk HQ's projected seat totals nor its odds of control in the Senate or House, Silver says his forecasts were basically unchanged, though many other new polls came in at the same time, and the governor forecasts of State Navigate, another forecaster, moved by 1.1 points at most.<Cite c="forecasts-unchanged" /><Cite c="scrutinel-mississippi" /></p>
+        <p data-layer="narrative">Scrutinel says removing the 11 Wedgewood polls in its averages moved 10 of those races by less than a quarter of a point each, and its forecast for the whole Senate by nine-tenths of a point. Mississippi's Senate race was the exception: it had only two polls, one of them Wedgewood's. Without it, the lead in Scrutinel's average for that race grew from about 7 points to about 12, and Scrutinel's odds for the trailing candidate in that race fell from about 13% to about 4%.<Cite c="scrutinel-mississippi" /></p>
+        <p data-layer="narrative">Scopes, which publishes poll-based figures to compare against prediction-market prices, stopped publishing its Kansas Senate figure, which no longer had enough pollsters behind it.<Cite c="scopes-withheld" /></p>
+        <p data-layer="narrative">On Kalshi the one clear move came in Wisconsin. Kalshi says its markets mostly did not move on Wedgewood's polls, except after the July 21 poll of the Democratic primary for governor.<Cite c="markets-mostly-unmoved" /> That poll came three days after David Crowley, the Milwaukee County executive, rejoined the race, and before any other poll had measured it; it put him at 9%.<Cite c="crowley-context" /><Cite c="wi-july21-vs-marquette" /> BETINT, a newsletter on betting markets, says his Kalshi price fell from 23% to 13% within 15 minutes and stayed below its earlier level until primary day; Kalshi's own analysis puts the move at 6% and calls it temporary. Real polls the next week also had Crowley behind, and he won the primary.<Cite c="crowley-price-fell" /><Cite c="wisconsin-volume" /><Cite c="crowley-context" /><Cite c="wisconsin-primary-result" /></p>
+        <p data-layer="narrative">Mallory McMorrow, a Democratic state senator in Michigan, was running for the party's Senate nomination when Wedgewood's late-June poll put her at 9%. She says the poll dried up her donations, devastated her volunteers and brought calls from reporters to drop out.<Cite c="mcmorrow-june-poll" /><Cite c="mcmorrow-account" /> She left the race on July 5.<Cite c="mcmorrow-left-july5" /> She also names a Mitchell Research poll that showed her in single digits just before, and says outside spending drowned her out.<Cite c="mcmorrow-other-causes" /></p>
+        <QuoteCard speaker="Mallory McMorrow" when="Oct. 20, 2026" where="Post on X" label="@MalloryMcMorrow">
+          <p>"It was a one-two punch. Then all of the sudden it was a pattern - and people believed it had to be true."<Cite c="mcmorrow-other-causes" /></p>
+          <p>"It killed us."<Cite c="mcmorrow-other-causes" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Real polls had her low too, Susquehanna at 9% and Quantus Insights at 8%.<Cite c="real-polls-mcmorrow" /> But Susquehanna found 49% of voters still undecided, while Wedgewood's poll left only 6% undecided, and its poll made her the only Democrat losing to the Republican, Mike Rogers.<Cite c="mcmorrow-undecided" /><Cite c="mcmorrow-weakest" /></p>
+        <p data-layer="narrative">In Mississippi, Democrat Scott Colom's campaign promoted Wedgewood's poll as showing a tied Senate race.<Cite c="campaigns-cited" /> Senate Majority PAC, a Democratic group, then put another $1.2 million behind Colom, and says it "absolutely" did not rely on the poll.<Cite c="smp-denial" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Brendan Carr, the chairman of the Federal Communications Commission, warned broadcasters on Oct. 21 against airing fake polls, without naming Wedgewood.<Cite c="carr-warning" /> Rep. Stephanie Bice has asked the FCC and the Justice Department to investigate whether any broadcaster knowingly used fabricated polls to boost candidates, the Washington Examiner reports.<Cite c="bice-letter" /> Commissioner Anna Gomez says the rules do not apply to a station that reports poll data in good faith, and that the FCC can act only with proof that a station intentionally distorted the news.<Cite c="gomez-reply" /><Cite c="gomez-threshold" /></p>
+        <p data-layer="narrative">Kalshi says its review of trading around Wedgewood's polls continues.<Cite c="trading-profit-small" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}
+<style is:global>
+  .lean-table th, .lean-table td { padding: 0.5rem 0.45rem; }
+  .lean-table td:last-child { white-space: nowrap; }
+</style>
