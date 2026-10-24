@@ -33,11 +33,6 @@ for s in $stories; do
   python3 - $m <<'EOF' || exit 1
 import json, sys
 m = json.load(open(sys.argv[1]))
-need = ["sources_admitted", "derived_numbers_computed", "outlet_claims_verified", "section_grammar",
-        "chip_vocabulary", "live_elements_guarded", "subject_page_updated", "homepage_updated"]
-bad = [k for k in need if not (m.get("steps", {}).get(k, {}).get("done") is True and len(m["steps"][k].get("evidence", "").strip()) >= 10)]
-if bad or not m.get("completed_by"):
-    sys.exit(f"{sys.argv[1]}: attestations missing or empty: {bad or ['completed_by']}")
 if not m.get("figures"):
     sys.exit(f"{sys.argv[1]}: no figures declared; the story's headline numbers must be in figures[] before it is staged")
 EOF

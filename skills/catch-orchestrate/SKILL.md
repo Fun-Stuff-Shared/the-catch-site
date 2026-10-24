@@ -98,11 +98,9 @@ The gate and catch-state read more than the page. Before publishing, the author 
 you check:
 
 - `completed_by` and `date`.
-- `steps`: eight attestations, each `{"done": true, "evidence": "<a true sentence about this
-  page>"}`: `sources_admitted`, `derived_numbers_computed`, `outlet_claims_verified`,
-  `section_grammar`, `chip_vocabulary`, `live_elements_guarded`, `subject_page_updated`,
-  `homepage_updated`. Evidence describes the page as it is now; a rewritten page needs
-  rewritten evidence.
+- `steps`: the attestations the gate lists in `scripts/check-events.mjs` (`REQUIRED_STEPS`),
+  each `{"done": true, "evidence": "<a true sentence about this page>"}`. Evidence describes
+  the page as it is now; a rewritten page needs rewritten evidence.
 - `figures[]`: every headline number, with `figure` (a slot name), `label` (reader words),
   `value` (a bare number), `unit` (scale included: `USD millions`), and either
   `kind: "sourced"` with `source: {source_id, quote_span}` (a whole sentence of the record that
@@ -126,9 +124,9 @@ done" is not that. Then, on their word:
 zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <other branch>]... <story-id>...
 ```
 
-It cuts a publish worktree from main, merges the branches, refuses a manifest with missing
-attestations, no figures or saved records that do not match it, runs the full build and
-gate, stages each story's figures and pins in catch-state from the publish worktree
+It cuts a publish worktree from main, merges the branches, refuses a manifest with no
+figures or saved records that do not match it, runs the full build and gate (which refuses
+missing attestations), stages each story's figures and pins in catch-state from the publish worktree
 (`state stage-story`, no model calls), verifies the state, copies each story's event view and every chain view that names it into `data/state/`
 and commits them (`state:`), checks that the committed views alone hold every story (the
 hosted build has no catch-state and reads only committed views; a story view without its

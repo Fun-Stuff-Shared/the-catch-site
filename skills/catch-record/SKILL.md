@@ -64,9 +64,11 @@ alone, and the evidence that fits it usually fits the others too.
 Under each answer write what you should find if it is true and what you should not. That
 is the search list for the steps below: the dated record that shows whether the meeting was
 called before the pressure, the table that shows whether the barrels were already pledged.
-Look for what would rule an answer out, not for what fits it. Send the questions and answers
-to the orchestrator and keep working while it reads them; a camp it adds goes on the list.
-The method, and a worked example, are in `references/ach.md`.
+Look for what would rule an answer out, not for what fits it. Run the grok sweep (step 6)
+now, not after the search: it is a second model, and it returns the explanations in
+circulation and who holds each, so the list is not one model's. Send the questions and
+answers to the orchestrator and keep working while it reads them; a camp either of them
+adds goes on the list. The method, and a worked example, are in `references/ach.md`.
 
 ### 2. Get the primary records and read them in full
 
@@ -91,12 +93,16 @@ spokesperson's quote, the official's post. Look for the context the actors thems
 invoke: the law named in their statement, the event they cite, the money that arrived.
 Record each reason attributed to whoever gave it. Order of events is a fact; that one
 caused the other is a claim, and goes in the brief only in the words of someone who made it.
+A causal claim is also one of the explanations: the record can rule it out (the meeting was
+called before the pressure began, the outcome added nothing the pressure asked for), but
+one that survives is still somebody's claim, never the brief's finding.
 
 ### 4. Get each side in its own words
 
-For every dispute, admit each side's own filing or statement and write its case in its
-strongest terms. A side represented only by its opponent's summary of it is a gap; fill it
-from that side's own document. Note what both sides agree on, because that tells the
+The sides are the camps you named in step 1. For each, admit its own filing or statement
+and replace your statement of its answer with its case in its strongest terms, in its own
+words. A side represented only by its opponent's summary of it is a gap; fill it from that
+side's own document. Note what both sides agree on, because that tells the
 reader what the fight is actually about.
 
 ### 5. Check the coverage against the records
@@ -104,7 +110,10 @@ reader what the fight is actually about.
 Capture the coverage of the event across outlets. For each number, record what it counts
 and as of when; two figures that look like they conflict usually count different things.
 For each claim that a primary record contradicts or qualifies, admit both the outlet's
-sentence and the record's passage. These are the story's catch.
+sentence and the record's passage. These are the catch's candidates. When an outlet
+carries an answer the matrix rules out (step 8), that is the catch, and the sentence-level
+errors are the coverage check's; otherwise the catch is the one error a reader most needs
+corrected.
 
 ### 6. Run the grok sweep
 
