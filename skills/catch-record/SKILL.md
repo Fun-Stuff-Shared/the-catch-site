@@ -39,7 +39,7 @@ Outputs, all committed together at the end:
 
 ## The work
 
-### 1. Read the event before searching
+### 1. Read the event and name the explanations before searching
 
 Start from what you were handed (a candidate row, an article, the human's word) and read
 the saved bodies of the coverage, not the headlines. Write the brief's first section: the
@@ -48,6 +48,25 @@ For a court event that is the order, the question or ruling, both sides' filings
 opinions below, the statute or rule in dispute. For a policy it is the order, memo or rule
 itself, the law it cites, the agency's own statement. For a vote, the bill text and the
 roll call. Coverage tells you these exist; it is never a substitute for them.
+
+Then write the brief's "The explanations" section. Name the question the story turns on:
+what the act is (new barrels, or ones already pledged?), why it happened (did the pressure
+produce it?), what a number means. Most stories have one or two. A story with none (an
+arrest, a scheduled report) says so in the section.
+
+Under each question list every serious answer, usually three to six, each in its strongest
+form, as the camp that holds it would put it: the actors' own account, their opponents',
+the one the coverage carries, and the plain alternatives nobody is pushing (it was already
+scheduled, it counts something else, the timing is a coincidence). An answer you think is
+wrong goes on the list. The first plausible answer is the one you would otherwise test
+alone, and the evidence that fits it usually fits the others too.
+
+Under each answer write what you should find if it is true and what you should not. That
+is the search list for the steps below: the dated record that shows whether the meeting was
+called before the pressure, the table that shows whether the barrels were already pledged.
+Look for what would rule an answer out, not for what fits it. Send the questions and answers
+to the orchestrator and keep working while it reads them; a camp it adds goes on the list.
+The method, and a worked example, are in `references/ach.md`.
 
 ### 2. Get the primary records and read them in full
 
@@ -126,6 +145,23 @@ Fill every section of the brief. Every fact line ends with
 `[record-id: "words from the record"]` (curly quotes around the words when they hold
 straight ones), or `[lead: URL]` with why it is not admitted.
 
+Then score the explanations. Each question gets a matrix: its answers across the top, and
+down the side each piece of evidence that bears on them, with its citation. Mark each cell
+C (consistent), I (inconsistent) or leave it blank (no bearing). Every I names the passage
+that rules that answer out. A row that fits every answer cannot tell them apart: move it to
+"Background held", however strong it looks. Then read each answer down its column. What
+survives is the answers with no I standing, however few C's they have; a long list of fits
+proves nothing, and one solid contradiction does. An answer with no evidence for it is
+unproven, not ruled out. It stays alive until a record rules it out, or until a search
+where its evidence would have to be comes back empty, and the section says which. Recheck
+the one or two rows that decide the result against the primary record itself, not an
+outlet's report of it, and write what would change the result if one of them were wrong.
+
+The spine is what survives. An answer the record rules out is what The Catch corrects, when
+someone put it forward. When two survive, the dispute sentence says so, and what would
+settle it goes to What happens next. When the result rests on a row that could be wrong,
+the plan says which, and that is where the story's one qualifier goes.
+
 Then write the top of the brief: the story in five sentences a stranger could repeat, and
 the plan it will be told from (the template shows its shape). Five sentences means five:
 one each for what happened, to whom, why now, what is in dispute, what comes next, each
@@ -185,7 +221,9 @@ Then judge every finding as the author. A reviewer asked what is missing always 
 something, so the record grows without end unless you decide what the story needs:
 1. Verify it at its source. Reviewers are right about what is missing more often than
    about the exact fact; a finding's number, date or wording is checked like any lead.
-2. Decide what it does. Context that explains why the event is happening belongs in the
+2. Decide what it does. A finding that names an answer the matrix lacks, or a camp's case
+   stated weaker than its own filings state it, reopens the matrix: score it, and rewrite
+   the five sentences if what survives changed. Context that explains why the event is happening belongs in the
    record: admit it. It reaches the plan only when it changes the five sentences or answers
    a question a reader of them would otherwise be left with, and then in the fewest words
    that hold. A finding that deepens a section without changing what a reader takes from it

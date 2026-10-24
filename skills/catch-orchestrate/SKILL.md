@@ -54,7 +54,11 @@ names a different story id, tell it to keep the accepted one.
 The author reports each record review's verdict and its relevance calls. Spot-check what
 it admits: open two or three cited passages per round. Push back when it admits detail that
 does not change the five sentences, or when a reviewer finding was applied without being
-checked against the record. When it sends the five sentences and plan, judge them as
+checked against the record. When it sends its questions and answers (catch-record step
+1), add any camp it left out and any answer stated weaker than the camp states it, while
+it searches, not after. When it sends the scored matrix with the five sentences and plan,
+open the one or two rows the result turns on at their pins, and check that the spine is
+what survived, not what the author started with. Then judge the sentences as
 the editor: is each sentence one plain fact, does any repeat an error the catch corrects,
 is the tension of the story in them. Then check what happened since the record's newest
 source (a web search on the event, the docket, the officials' feeds) and send the author
@@ -143,7 +147,7 @@ reconcile, a claim the page leaves unresolved) goes back through both stages, no
 pass. Cut `.worktrees/<subject>-revision` from main on `author/<subject>-revision`, write a
 kickoff from `assets/kickoff.md` that names the gaps with the retell's own words, and launch
 the author as in step 1. The author tops up the record (catch-record steps 3 to 9 for what is
-missing), sends you the revised five sentences and plan, and rewrites the page from the plan
+missing, after naming the explanations as in step 1 and rescoring them in step 8), sends you the revised five sentences and plan, and rewrites the page from the plan
 under catch-story. A revision is a rewrite: patching the old page carries its structure and
 voice forward. The headline stays unless the human changes it; a new headline is renamed as in
 step 3. Supervise it like a new story, including your own read before publishing. A voice

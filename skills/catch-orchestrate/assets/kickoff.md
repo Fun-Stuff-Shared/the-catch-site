@@ -9,8 +9,9 @@ The event: {EVENT}
 The worktree is {WORKTREE} on branch {BRANCH}. Read from /Volumes/4/CF/catch-state; the only write you make there is renaming your own event's label to your headline (`skills/catch-story/SKILL.md` section 4). Do not push. Commit by path; git's post-commit hook can hang on git lfs, so commit with `git -c core.hooksPath=/dev/null commit ...`.
 
 The orchestrator is the Claude session named {ORCHESTRATOR} in ListAgents; message it with SendMessage (by whatever name it has in ListAgents if that one is gone). Send it:
+- the questions and answers once you have named them (catch-record step 1), then keep working while it reads them;
 - each record review's verdict;
-- the five sentences and plan when stage one is done, and wait for its word before writing the page;
+- the scored explanations, the five sentences and the plan when stage one is done, and wait for its word before writing the page;
 - the headline and why, each time you set or change it, after you rename the label to match;
 - each round of cold reads;
 - the served page URL when the reads stop.

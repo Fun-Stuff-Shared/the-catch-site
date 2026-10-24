@@ -2,6 +2,20 @@
 
 Every fact line ends with its source: the record id and the record's words in square brackets (straight quotes, or curly quotes when the words hold straight ones; `admit.py check` verifies each one), or `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record.
 
+## The explanations
+
+The question the story turns on, and every serious answer to it in its strongest form, as its camp would put it, with what we should find if it is true and what we should not. Written in step 1, before the search; scored in step 8. A story with no contested question says so here.
+
+Question 1: {what the story turns on}
+- A. {the answer, as its camp states it} ({whose answer}). If true: {what we should find}. If true, we should not find: {what}.
+- B. ...
+
+| Evidence | A | B | C |
+|---|---|---|---|
+| {fact} [record-id: "words"] | C | I: {what it rules out} | |
+
+Survives: {the answers with no I standing}. Ruled out: {each answer, and the row that rules it out}. Unproven: {each answer with no evidence either way, and where its evidence would have to be}. The result turns on {the one or two rows}, and would change if {what}.
+
 ## The story
 
 Exactly five sentences a stranger could repeat, one each: what happened, to whom, why it is happening now, what is in dispute, what comes next. No caveats; qualifications go in the plan. Written after the evidence below is assembled, rewritten whenever a finding changes it.
