@@ -21,9 +21,13 @@ KINDS = {"beyond", "status", "scope", "actor"}
 
 
 def well_formed(f, by_n):
-    if not isinstance(f, dict) or type(f.get("b")) is not int or f["b"] not in by_n or f.get("kind") not in KINDS:
+    if not isinstance(f, dict) or not {"b", "claim", "kind", "problem"} <= f.keys():
         return False
-    if f.get("claim") is None:
+    if type(f["b"]) is not int or f["b"] not in by_n or f["kind"] not in KINDS:
+        return False
+    if not isinstance(f["problem"], str) or not f["problem"].strip():
+        return False
+    if f["claim"] is None:
         return f["kind"] == "beyond"
     return f["claim"] in {c["id"] for c in by_n[f["b"]]["claims"]}
 
