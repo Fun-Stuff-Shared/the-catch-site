@@ -12,15 +12,15 @@ import StoryState from "../../../components/StoryState.astro";
 import StateEvent from "../../../components/StateEvent.astro";
 import { readPublishedState, eventPath } from "../../../lib/state.mjs";
 import { claim } from "../../../lib/claims.mjs";
-import { event, computed, chronology, timing, figures } from "../../../data/election-administration-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids.mjs";
-const story = "election-administration--2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids";
+import { event, computed, chronology, timing, figures } from "../../../data/new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids.mjs";
+const story = "new-hampshire-student-ids--2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids";
 const short = (id) => claim(story, id).short;
-const state = readPublishedState().events.get("event-election-administration-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
-if (!state) throw new Error("Missing publication selection: event-election-administration-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
+const state = readPublishedState().events.get("event-new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
+if (!state) throw new Error("Missing publication selection: event-new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/election-administration/">Election administration</a><span>October 22, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/new-hampshire-student-ids/">New Hampshire student IDs</a><span>October 22, 2026</span></div>
   <div class="content">
     <main class="story" id="story-root">
       <p class="story-kicker" data-layer="fact">Election administration &middot; October 22, 2026 &middot; updated {event.updated}</p>
