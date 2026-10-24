@@ -232,6 +232,10 @@ def blocks(story):
     return out
 
 
+def bindable(block):
+    return bool(block["claims"]) or len(block["text"].split()) >= 8
+
+
 def verify(story):
     ok = check(story)
     held = read_json(held_path(story), {})
@@ -239,12 +243,12 @@ def verify(story):
     page = blocks(story)
     cited = {c["id"]: c for b in page for c in b["claims"]}
     unheld = [cid for cid, c in cited.items() if held.get(cid) != claim_hash(c)]
-    unbound = [b["text"][:80] for b in page if b["claims"] and b["hash"] not in bound]
+    unbound = [b["text"][:80] for b in page if bindable(b) and b["hash"] not in bound]
     for cid in unheld:
         print(f"FAIL claim {cid} is cited on the page but has not held in the claim check")
     for t in unbound:
         print(f'FAIL block "{t}..." has not passed the bind check as it reads now')
-    print(f"{len(cited)} claims cited, {len(unheld)} not held; {sum(1 for b in page if b['claims'])} citing blocks, {len(unbound)} not bound")
+    print(f"{len(cited)} claims cited, {len(unheld)} not held; {sum(1 for b in page if bindable(b))} blocks to bind, {len(unbound)} not bound")
     return ok and not unheld and not unbound
 
 

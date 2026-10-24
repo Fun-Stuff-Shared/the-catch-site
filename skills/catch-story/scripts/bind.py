@@ -2,8 +2,9 @@
 USAGE = """The bind check: every block of the built page against the claims it cites, after every edit.
 Only blocks that changed since they last passed are read. Sonnet reads every such block, and
 Opus reads again each block that cites a strict claim; a finding from either counts. A finding
-on a strict claim, or a fact no claim holds, blocks; one on a background claim is listed for the
-author. Passing blocks are recorded in checks/reads/<story>-bound.json.
+on a strict claim, or a fact no claim holds (cited or not), blocks; one on a background claim is
+listed for the author. Passing blocks are recorded in checks/reads/<story>-bound.json; an answer
+that is not well-formed records nothing.
 Usage: bind.py <subject>--<slug> <round>   (from the worktree root, after npm run build)"""
 
 import json
@@ -16,17 +17,25 @@ here = Path(__file__).resolve().parent
 sys.path.insert(0, str(here.parents[1] / "catch-record/scripts"))
 import claims as ledger
 
+KINDS = {"beyond", "status", "scope", "actor"}
 
-def ask(model, prompt):
+
+def well_formed(f, by_n):
+    if not isinstance(f, dict) or type(f.get("b")) is not int or f["b"] not in by_n or f.get("kind") not in KINDS:
+        return False
+    return f.get("claim") is None or f["claim"] in {c["id"] for c in by_n[f["b"]]["claims"]}
+
+
+def ask(model, prompt, by_n):
     for _ in range(3):
         out = subprocess.run(["claude", "-p", "--model", model], input=prompt, capture_output=True, text=True, check=False).stdout
         try:
             found = json.loads(out[out.index("["): out.rindex("]") + 1])
-            if isinstance(found, list):
-                return found
         except ValueError:
-            pass
-    sys.exit(f"bind: {model} gave no JSON answer")
+            continue
+        if isinstance(found, list) and all(well_formed(f, by_n) for f in found):
+            return found
+    sys.exit(f"bind: {model} gave no well-formed answer; nothing was recorded as bound")
 
 
 def describe(n, block):
@@ -41,7 +50,7 @@ def describe(n, block):
 def main(story, round_):
     page = ledger.blocks(story)
     bound = set(ledger.read_json(ledger.bound_path(story), []))
-    todo = [b for b in page if b["hash"] not in bound and (b["claims"] or len(b["text"].split()) >= 8)]
+    todo = [b for b in page if b["hash"] not in bound and ledger.bindable(b)]
     report = Path("checks/reads") / f"{story}-r{round_}-bind.md"
     if not todo:
         report.write_text("# Bind check\n\nEvery block has passed as it reads now.\n\nBOUND\n")
@@ -52,23 +61,21 @@ def main(story, round_):
     everything = template.replace("{BLOCKS}", "\n\n".join(describe(n, b) for n, b in numbered))
     strict_blocks = [(n, b) for n, b in numbered if any(ledger.strict(c) for c in b["claims"])]
     strict_only = template.replace("{BLOCKS}", "\n\n".join(describe(n, b) for n, b in strict_blocks))
-    with ThreadPoolExecutor(2) as pool:
-        runs = [pool.submit(ask, "sonnet", everything)]
-        if strict_blocks:
-            runs.append(pool.submit(ask, "opus", strict_only))
-        findings = [f for r in runs for f in r.result()]
     by_n = dict(numbered)
+    with ThreadPoolExecutor(2) as pool:
+        runs = [pool.submit(ask, "sonnet", everything, by_n)]
+        if strict_blocks:
+            runs.append(pool.submit(ask, "opus", strict_only, dict(strict_blocks)))
+        findings = [f for r in runs for f in r.result()]
     blocking, listed, seen = [], [], set()
     for f in findings:
-        block = by_n.get(f.get("b"))
-        if not block:
-            continue
-        key = (f.get("b"), f.get("claim"), f.get("kind"))
+        block = by_n[f["b"]]
+        key = (f["b"], f.get("claim"), f["kind"])
         if key in seen:
             continue
         seen.add(key)
         claim = next((c for c in block["claims"] if c["id"] == f.get("claim")), None)
-        hard = (f.get("kind") == "beyond" and bool(block["claims"])) or (claim is not None and ledger.strict(claim))
+        hard = f["kind"] == "beyond" or (claim is not None and ledger.strict(claim))
         (blocking if hard else listed).append((block, f))
     failed = {b["hash"] for b, _ in blocking}
     bound |= {b["hash"] for b in todo if b["hash"] not in failed}

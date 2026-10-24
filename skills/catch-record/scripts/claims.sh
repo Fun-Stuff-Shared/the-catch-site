@@ -16,7 +16,7 @@ for attempt in 1 2 3; do
   zsh $here/ask.sh $work/prompt.txt $work/answer.md --inline $work/claims.md -f $work/records.md || { print "claims r$round: the ask failed; see above" >&2; exit 1 }
   verdict=$(grep -v '^[[:space:]]*$' $work/answer.md | tail -1 | tr -d '`*' | sed 's/ *$//')
   if [[ $verdict == "CLAIMS HOLD" || $verdict == "CLAIMS DO NOT HOLD" ]] &&
-     grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qE '^CHECKED: [1-9][0-9]* claims$'; then
+     grep -v '^[[:space:]]*$' $work/answer.md | tail -2 | head -1 | tr -d '`*' | sed 's/ *$//' | grep -qxF "CHECKED: $n claims"; then
     cp $work/answer.md $report
     [[ $verdict == "CLAIMS HOLD" ]] && python3 -I $here/claims.py hold $story $work/claims.md
     print "claims r$round -> $report: $n claims sent; $(tail -2 $report | head -1); $verdict"
