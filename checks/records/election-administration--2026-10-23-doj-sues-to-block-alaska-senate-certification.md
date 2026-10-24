@@ -139,7 +139,7 @@ The sides (sentence 4): opens on "can the department do this?"
 What happens next (sentence 5):
 1. Nov. 3 election; first-choice results, then tabulation Nov. 18; review from Nov. 19, target certification Nov. 25 [alaska-election-calendar-2026: "11/25/2026 Target date to certify the General Election"].
 2. The suit is mooted by a Sullivan win or a Peltola win wider than the test [ap-sues-block-dem-win-2026-10-23: "The lawsuit could well be mooted by a wide Democratic victory or a narrow Republican one"].
-3. Alaska's answer, Peltola's possible intervention [beacon-sues-2026-10-23: "implied that the campaign may intervene in the lawsuit"].
+3. Alaska's answer, and rulings on the two Oct. 23 motions to intervene as defendants [peltola-dscc-intervene-2026-10-23: "Document 5 Filed 10/23/26"] [voters-lwv-intervene-2026-10-23: "Document 7 Filed 10/23/26"].
 4. If the margin is inside the test, the Senate judges its own elections [votebeat-sues-2026-10-23: "which is the sole judge of its members’ elections and returns"].
 
 What the coverage got right and wrong (cards): headline condition (Q1); CBS's Friday filing date [cbs-trump-admin-sues-2026-10-23: "In their court filing Friday"]; CNBC carrying the complaint's Aug. 28 primary date and a 41.1% figure [cnbc-sues-2026-10-23: "Daniel J. Sullivan received just 2.5% of the vote in Alaska's open primary on Aug. 28"] [cnbc-sues-2026-10-23: "Peltola got 49.5% in the primary, and Sen. Sullivan received 41.1%."]; UPI's "Republican primary" [upi-doj-alaska-2026-10-23: "Alaska's Republican primary was held in August."]; the Post and the Times's body text got the condition right. One card per outlet that changes what a reader trusts; the rest counted.
@@ -229,7 +229,7 @@ On Oct. 22, 2026, the United States sued the State of Alaska, its elections dire
 
 - Nov. 3 election; tabulation from Nov. 18 [adn-weigh-in-2026-10-23: "The Division of Elections plans to release initial tabulated results on Nov. 18."].
 - Judge Gleason; no emergency motion [cnn-sues-2026-10-23: "The administration has not yet made any emergency requests for the court to take an immediate action."].
-- Possible Peltola intervention [beacon-sues-2026-10-23: "implied that the campaign may intervene in the lawsuit"]; Alaska's answer unknown.
+- Motions to intervene as defendants, filed Oct. 23: Alaskans for Mary and DSCC [peltola-dscc-intervene-2026-10-23: "Attorneys for Proposed Intervenors Alaskans for Mary and DSCC"], who will move to dismiss if admitted [peltola-dscc-intervene-2026-10-23: "Proposed Intervenors intend to file a motion to dismiss for failure to state a claim under Fed. R. Civ. P. 12(b)(6) if intervention is granted."]; two voters, the League of Women Voters of Alaska and Common Cause, by the ACLU [voters-lwv-intervene-2026-10-23: "American Civil Liberties Union Foundation"]. CourtListener's docket search on Oct. 24 shows no order after Doc. 7. Alaska's answer unknown.
 - California hearing next week [nyt-block-vote-2026-10-23: "a hearing is scheduled for next week"].
 - Senate contest as the route a narrow loss would take, per Morley [votebeat-sues-2026-10-23: "which is the sole judge of its members’ elections and returns"].
 

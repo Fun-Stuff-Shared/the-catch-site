@@ -50,7 +50,7 @@ export const timeline = [
   { date: "Oct. 13", title: "At a rally in Wasilla, Trump recounts having told Alaska's U.S. attorney, \"I hope you're going to make sure there's no cheating,\" adding, \"any place you have rank(ed) choice, you have damn bad cheating.\"", cites: [{ c: "trump-rally-heyman" }] },
   { date: "Oct. 21", title: "Trump says he is looking at \"powerful legal options\" to remove Daniel J. Sullivan from the ballot.", cites: [{ c: "trump-legal-options" }] },
   { date: "Oct. 22", title: "The department sues. Blanche: \"I'm not trying to not have an election certified.\"", cites: [{ c: "suit-filed" }, { c: "blanche-same-day" }] },
-  { date: "Oct. 23", title: "Trump: \"I'm the one that said 'do it.'\"", cites: [{ c: "trump-ordered" }], current: true },
+  { date: "Oct. 23", title: "Trump says he ordered the suit: \"I'm the one that said 'do it.'\" Peltola's campaign and the DSCC, and two voters with the League of Women Voters and Common Cause, ask to join the case as defendants.", cites: [{ c: "trump-ordered" }, { c: "intervene-motions" }], current: true },
 ];
 
 export const next = [
