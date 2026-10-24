@@ -3,7 +3,6 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
-import QuoteCard from "../../../components/story/QuoteCard.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import StorySources from "../../../components/StorySources.astro";
 import StoryState from "../../../components/StoryState.astro";
@@ -77,7 +76,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </table>
           </div>
         </figure>
-        <p data-layer="narrative">Two answers carried qualifiers. Floris said there was no discussion of Hunter Biden at the task force "At least not with me," and Benavides, while saying he knew the Post story only from his interview preparation, said he had been aware in 2020 of "a Hunter Biden laptop narrative" in public.<Cite c="floris-said-no-discussion" /><Cite c="benavides-said-prep" /> The law reaches a false answer only if it is material and made knowingly and willfully.<Cite c="1001-materially-false" /> To show the answers mattered, the sworn statement says a committee staffer who sat in on both interviews told the FBI the answers were materially untrue and kept the committee from follow-up interviews and subpoenas, and it says the two answered as they did to hide the task force's role.<Cite c="staffer-materiality" /><Cite c="purpose-conceal" /></p>
+        <p data-layer="narrative">Two answers carried qualifiers. Floris said there was no discussion of Hunter Biden at the task force "At least not with me," and Benavides, while saying he knew the New York Post's laptop story only from his interview preparation, said he had been aware in 2020 of "a Hunter Biden laptop narrative" in public.<Cite c="floris-said-no-discussion" /><Cite c="benavides-said-prep" /> The law reaches a false answer only if it is material and made knowingly and willfully.<Cite c="1001-materially-false" /> To show the answers mattered, the sworn statement says a committee staffer who sat in on both interviews told the FBI the answers were materially untrue and kept the committee from follow-up interviews and subpoenas, and it says the two answered as they did to hide the task force's role.<Cite c="staffer-materiality" /><Cite c="purpose-conceal" /></p>
       </section>
 
       <section id="why-now">
@@ -88,10 +87,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <figcaption><strong>From the laptop to the charges</strong></figcaption>
           <DecisionTimeline entries={timelineEntries} heading="What happened" />
         </figure>
-        <p data-layer="narrative">Prosecutors brought the case by complaint, which lets them charge before a grand jury votes. The Associated Press noted that prosecutors more often use complaints when they need to take someone into custody urgently.<Cite c="complaint-not-indictment" /> In court on October 23, Magistrate Judge Zia Faruqui said the way the case was charged seemed strange and that it is "rare that we have charges this old coming in this nature." When the prosecutor asked for two weeks or more before the probable-cause hearing because he and the case agent were from out of town, the judge refused: "You have charged this case," he said. "So you will be spending a lot of time in town."<Cite c="judge-strange" /><Cite c="prosecutor-out-of-town" /> Benavides's lawyer had asked for the hearing "as soon as humanly possible." The judge ordered both sides back at 11 a.m. Tuesday, then spoke about the two defendants:<Cite c="judge-damocles" /></p>
-        <QuoteCard speaker="Magistrate Judge Zia Faruqui" when="October 23, 2026" where="U.S. District Court, Washington">
-          <p>"This is the Sword of Damocles hanging over their heads," he said. "This will follow them for the rest of their lives."<Cite c="judge-damocles" /></p>
-        </QuoteCard>
+        <p data-layer="narrative">Prosecutors brought the case by complaint, which lets them charge before a grand jury votes. The Associated Press noted that prosecutors more often use complaints when they need to take someone into custody urgently.<Cite c="complaint-not-indictment" /> In court on October 23, Magistrate Judge Zia Faruqui said the way the case was charged seemed strange and that it is "rare that we have charges this old coming in this nature." When the prosecutor asked for two weeks or more before the probable-cause hearing because he and the case agent were from out of town, the judge refused: "You have charged this case," he said. "So you will be spending a lot of time in town."<Cite c="judge-strange" /><Cite c="prosecutor-out-of-town" /> Benavides's lawyer had asked for the hearing "as soon as humanly possible." The judge ordered both sides back at 11 a.m. Tuesday. "This is the Sword of Damocles hanging over their heads," he said. "This will follow them for the rest of their lives."<Cite c="judge-damocles" /></p>
         <p data-layer="narrative">The case was made public {computed.daysUnsealedToElection} days before the November 3 midterm elections.<Cite c="unsealed-11-days" /> Justice Department rules forbid prosecutors to time charges in order to affect an election and require them to consult the department's Public Integrity Section when a step could look that way. The rules set no quiet period before an election.<Cite c="election-rule" /></p>
       </section>
 
