@@ -51,7 +51,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="why-now">
         <h2 data-layer="fact">From the law to the lawsuit</h2>
-        <p data-layer="narrative">State Rep. Donald McFarlane, who sponsored HB 323, has said he did so because colleges do not have the same controls as government agencies when they issue ID cards.<Cite c="sponsor-reason" /> Scanlan's office then announced that from June 2 student IDs could not be used as proof of ID at all: not to register, not to request an absentee ballot, not to check in to vote.<Cite c="april-directive" /></p>
+        <p data-layer="narrative">State Rep. Donald McFarlane, who sponsored HB 323, has said he did so because colleges do not have the same controls as government agencies when they issue ID cards.<Cite c="sponsor-reason" /> Scanlan's office then announced that from June 2 student IDs could not be used as proof of ID to register, to request an absentee ballot or to check in to vote.<Cite c="april-directive" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>From the law to the Supreme Court</strong></figcaption>
           <DecisionTimeline entries={chronology} heading="What happened" />
@@ -69,7 +69,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <p class="route-title">Already registered</p>
               <dl>
                 <dt>Student ID</dt><dd>Not accepted<Cite c="state-reverts-oct23" /></dd>
-                <dt>An official who knows them</dt><dd>Can vouch, with a signed attestation<Cite c="registered-route-personal-knowledge" /></dd>
+                <dt>An official who knows them</dt><dd>Can vouch, by signing a statement<Cite c="registered-route-personal-knowledge" /></dd>
                 <dt>State records</dt><dd>The law requires training supervisors to use registration data<Cite c="state-records-route" /></dd>
                 <dt>Other documents</dt><dd>{short("other-evidence-unsettled")}<Cite c="other-evidence-unsettled" /></dd>
                 <dt>An affidavit</dt><dd>Cannot prove identity<Cite c="affidavit-history" /></dd>
@@ -79,7 +79,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             <div class="route">
               <p class="route-title">Registering that day</p>
               <dl>
-                <dt>Student ID</dt><dd>Does not count for identity<Cite c="registering-proof" /></dd>
+                <dt>Student ID</dt><dd>{short("registering-proof")}<Cite c="registering-proof" /></dd>
                 <dt>An official who knows them</dt><dd>No longer counts, since Sept. 8<Cite c="no-vouching-at-registration" /></dd>
                 <dt>State records</dt><dd>Motor-vehicle or vital records can confirm identity, with permission<Cite c="state-records-route" /></dd>
                 <dt>Other documents</dt><dd>{short("registering-open-question")}<Cite c="registering-open-question" /></dd>
@@ -100,12 +100,13 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="why-the-court">
         <h2 data-layer="fact">Why the Court stepped in</h2>
-        <p data-layer="narrative">Jackson's dissent recalls Purcell v. Gonzalez, a 2006 case in which, as she summarizes it, the Court said courts weighing a late election order must consider that the order itself could cause voter confusion or give people a reason to stay away from the polls.<Cite c="jackson-only-noted-dissent" /><Cite c="purcell-explained" /></p>
+        <p data-layer="narrative">New Hampshire argued that re-educating local election officials and the public in the weeks before the election was practically impossible, and that even if the judge read state law reasonably, he should have waited.<Cite c="state-purcell-case" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>How close to the election each order came</strong><Cite c="order-32-days" /><Cite c="stay-granted" /></figcaption>
           <DateLine points={timing.points} intervals={timing.intervals} highlight={timing.highlight} ariaLabel={`Laplante's order came ${computed.daysInjunctionToElection} days before the November 3 election, and the Supreme Court's pause ${computed.daysStayToElection} days before it`} />
         </figure>
-        <p data-layer="narrative">New Hampshire argued that re-educating local election officials and the public in that time was practically impossible, and that even if the judge read state law reasonably, he should have waited.<Cite c="state-purcell-case" /> The order cites one recent case: in September the Court stopped lower courts from changing <a href="/events/missouri-house-map/2026-09-03-map-never-became-law/">Missouri's congressional map</a> after ballots had already been printed and mailed and voting had begun.<Cite c="onder-precedent" /> Laplante had found that general-election voting in New Hampshire had not meaningfully begun when he ruled.<Cite c="voting-not-begun-oct2" /></p>
+        <p data-layer="narrative">The order cites a September ruling in which the Court stopped lower courts from changing <a href="/events/missouri-house-map/2026-09-03-map-never-became-law/">Missouri's congressional map</a> after ballots had already been printed and mailed and voting had begun.<Cite c="onder-precedent" /> Laplante had found that general-election voting in New Hampshire had not meaningfully begun when he ruled.<Cite c="voting-not-begun-oct2" /></p>
+        <p data-layer="narrative">Jackson's dissent recalls Purcell v. Gonzalez, a 2006 case in which, as she summarizes it, the Court said courts weighing a late election order must consider that the order itself could cause voter confusion or give people a reason to stay away from the polls.<Cite c="jackson-only-noted-dissent" /><Cite c="purcell-explained" /></p>
       </section>
 
       <section id="the-sides">
@@ -138,7 +139,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </li>
             <li>
               <h3>The guidance said the opposite</h3>
-              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots." The announcement Scanlan's office made on April 23, for the rules starting June 2, said student IDs cannot be used.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
+              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots." Scanlan's office announced on April 23 that from June 2 student IDs could not be used.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
             </li>
           </ol>
         </aside>

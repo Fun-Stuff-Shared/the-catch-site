@@ -58,7 +58,7 @@ export const timing = {
 };
 
 export const figures = [
-  { value: computed.youngLackingId, label: `New Hampshire residents aged 18 to 24 without a qualifying ID, by the challengers' expert (${computed.youngLackingIdShare}%)` },
+  { value: computed.youngLackingId, label: `Eligible voters aged 18 to 24 without a qualifying ID, as estimated by the challengers' expert (${computed.youngLackingIdShare}%)` },
   { value: String(computed.primaryTurnedAway), label: "Reports of students turned away in the September primary" },
   { value: "None", label: "Counts of young voters who relied on student IDs before the law" },
 ];
