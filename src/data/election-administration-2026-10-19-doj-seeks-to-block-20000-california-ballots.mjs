@@ -49,7 +49,7 @@ export const computed = {
 export const event = {
   slug: "election-administration/2026-10-19-doj-seeks-to-block-20000-california-ballots",
   title: "DOJ asks appeals court to hold ballots of 20,000 California voters it calls likely noncitizens",
-  dek: `The trial judge, who hears the case Oct. 27, has not ruled. The same day, DOJ asked registrars in at least ${figures.countiesAtLeast} counties to set aside the ballots of anyone on its lists whose citizenship cannot be verified.`,
+  dek: `The trial judge has not ruled and hears the case Oct. 27. DOJ has also asked registrars in at least ${figures.countiesAtLeast} counties, by the Los Angeles County registrar's count, to set aside the ballots of anyone on its lists whose citizenship cannot be verified.`,
   name: "DOJ's bid to hold California ballots of voters it calls likely noncitizens",
   date: "2026-10-19",
   updated: "2026-10-24",
