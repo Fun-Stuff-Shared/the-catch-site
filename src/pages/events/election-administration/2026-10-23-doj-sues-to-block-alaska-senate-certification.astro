@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import OutletCheckFold from "../../../components/story/OutletCheckFold.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
+import { event, primary, poll, ballotRows, timeline, next } from "../../../data/election-administration-2026-10-23-doj-sues-to-block-alaska-senate-certification.mjs";
+const state = publishedState().events.get("event-election-administration-2026-10-23-doj-sues-to-block-alaska-senate-certification");
+if (!state) throw new Error("Missing publication selection: event-election-administration-2026-10-23-doj-sues-to-block-alaska-senate-certification");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+const ballot = ballotRows.map((r) => [r.name, r.label || "nothing"]);
+const steps = [
+  ["1", "Alaska counts the ballots as cast. If Sen. Dan S. Sullivan wins, the suit asks for nothing."],
+  ["2", "If he loses, every vote for Daniel J. Sullivan is counted for the senator instead, and the ranked-choice rounds are run again."],
+  ["3", "If the senator wins that rerun, the court stops Alaska from certifying until an investigation finds whether those votes were meant for him."],
+];
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/election-administration/">Election administration</a><span>October 23, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Alaska Senate race &middot; October 23, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}</p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#two-sullivans">Two Sullivans on one ballot</a></li>
+          <li><a href="#how-it-got-here">How it got here</a></li>
+          <li><a href="#the-sides">The fight over one clause</a></li>
+          <li><a href="#outlets">What the coverage got wrong</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">The Justice Department sued Alaska and its election officials in federal court on Oct. 22.<Cite c="suit-filed" /> It asks a judge to stop the state from certifying its U.S. Senate result in one case: if Republican Sen. Dan S. Sullivan loses, but would have won had every vote for a second candidate, Daniel J. Sullivan, been cast for him.<Cite c="suit-condition" /> In that case the department wants the result held until an investigation finds whether votes for Daniel J. Sullivan were meant for the senator.<Cite c="suit-relief" /> The next day President Trump said he had ordered the suit. "I'm the one that said 'do it,'" he told reporters.<Cite c="trump-ordered" /></p>
+        <p data-layer="narrative">The senator's main opponent is Democrat Mary Peltola.<Cite c="ballot-listing" /> The complaint says many polls put the race within one or two points.<Cite c="polls-close" /> In the August primary Daniel J. Sullivan won {primary.danielJ}% of the vote, so the suit matters only if the race is close enough that giving the senator those votes would change who wins.<Cite c="primary-shares" /><Cite c="suit-condition" /></p>
+        <p data-layer="narrative">The case is before Judge Sharon Gleason, and the department has made no emergency request.<Cite c="judge-no-motion" /> Alaska's Department of Law, which represents the state's election officials, says it is reviewing the complaint.<Cite c="alaska-no-comment" /> Early voting is already under way for the Nov. 3 election.<Cite c="early-voting-underway" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>"If Republican Loses"</h3>
+              <p data-layer="narrative">Much of the first coverage described the suit as blocking certification if Sullivan loses, if a Democrat wins, or if Daniel J. Sullivan stays on the ballot, and one headline said it would block the vote.<Cite c="coverage-if-loses" /> The complaint sets two conditions, and both must hold: the senator loses, and he would have won had all of Daniel J. Sullivan's votes gone to him, with the ranked-choice rounds run again.<Cite c="suit-condition" /> A Peltola win that survives that rerun does not meet the test, and what the suit asks to stop is certification, after the votes are counted.<Cite c="suit-condition" /><Cite c="suit-relief" /> The bodies of some reports gave both parts; headlines that said the incumbent "narrowly loses" came closer, but describe a margin the complaint does not use.<Cite c="coverage-got-it" /></p>
+            </li>
+            <li>
+              <h3>Meeting the test starts a hold</h3>
+              <p data-layer="narrative">The test counts every vote for Daniel J. Sullivan as the senator's, whatever the voter meant. What the suit asks for, when it is met, is a hold: it would keep Alaska from certifying while an investigation looks for what those voters meant, and the department also asks for any further steps the court finds necessary.<Cite c="suit-relief" /><Cite c="suit-further-relief" /> The complaint does not say how that investigation would work, when votes are supposed to be confidential.<Cite c="suit-no-method" /></p>
+              <p data-layer="narrative">One poll has run a narrower version of the test. Data for Progress, surveying 694 likely voters from Oct. 8 to 16, found Peltola ahead {poll.finalPeltola}% to {poll.finalSenator}% after a simulated ranked-choice count, and a tie when the exhausted ballots of Daniel J. Sullivan's voters were given to the senator. The poll's margin of error is 4 points.<Cite c="dfp-simulation" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="two-sullivans">
+        <h2 data-layer="fact">Two Sullivans on one ballot</h2>
+        <p data-layer="narrative">Alaska's ballot lets voters rank as many candidates as they like, so a voter can rank both Sullivans.<Cite c="rank-both" /> The state elections division decided how the two would appear. Daniel J. Sullivan filed as a Republican, but the division printed him with no party, on the August primary ballot and again on November's.<Cite c="division-chose-listing" /> Elections director Carol Beecher said the aim was to "maximize differentiation" so voters would not confuse the two.<Cite c="listing-reason" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The Senate race as the November ballot prints it</strong></figcaption>
+          <DataTable columns={["Name", "Printed beside it"]} rows={ballot} ariaLabel="The four Senate candidates on Alaska's November ballot and the label printed beside each name" />
+          <p class="chart-source">From the sample ballot filed with the complaint.<Cite c="ballot-listing" /></p>
+        </figure>
+        <p data-layer="narrative">The department says the listing is not enough. Its complaint alleges that some of the senator's supporters will likely vote for Daniel J. Sullivan by mistake, and that others will be confused about how to rank "the three Republican candidates" and may not rank the senator at all.<Cite c="doj-confusion-claim" /> In the primary, under the same listing, the senator won {primary.senatorVotes} votes and Daniel J. Sullivan {primary.danielJVotes}.<Cite c="primary-votes" /> An Anchorage Press analysis of those returns found his support rose where Peltola ran strongest, which suggests many of his votes came from her side, though it could not rule out that some conservatives picked him by mistake.<Cite c="primary-pattern" /> After the primary, the senator's own campaign said "Mary Peltola's voters put Daniel J. Sullivan Jr. on the November ballot."<Cite c="sullivan-camp-peltola-voters" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What the suit asks, step by step</strong></figcaption>
+          <DataTable columns={["Step", "What happens"]} rows={steps} ariaLabel="The three steps of the test the complaint asks the court to apply" />
+          <p class="chart-source">From the complaint's definition of a result that may be affected by confusion and the relief it seeks.<Cite c="suit-condition" /><Cite c="suit-relief" /></p>
+        </figure>
+      </section>
+
+      <section id="how-it-got-here">
+        <h2 data-layer="fact">How it got here</h2>
+        <p data-layer="narrative">The department says it acted because Alaska's own elections division had found that Daniel J. Sullivan's candidacy was meant to mislead voters, and a spokesperson called it a "frivolous candidacy."<Cite c="doj-reason" /> The division made that finding on June 15, on complaints filed for the state Republican Party's chair, and removed him from the ballot.<Cite c="beecher-decertified" /> Alaska's courts reversed it within two weeks. A state judge ruled that the division had judged him by a good-faith test found nowhere in Alaska's constitution or election laws, and that the evidence did not show he sought to confuse voters. The Alaska Supreme Court affirmed.<Cite c="courts-restored" /></p>
+        <p data-layer="narrative">The complaint repeats the charge. It says Daniel J. Sullivan ran to mislead the senator's supporters and that his candidacy's sole purpose is to help Peltola.<Cite c="doj-claims-purpose" /> Trump calls him "the fake."<Cite c="trump-fake" /> Daniel J. Sullivan says he has every right to run, and the suit does not name him as a defendant.<Cite c="daniel-j-says" /><Cite c="not-defendant" /></p>
+        <p data-layer="narrative">The federal effort began well before the filing. On primary day a source told Reuters a federal grand jury had issued subpoenas in a Justice Department probe of the candidacy, and two weeks later Trump told Attorney General Todd Blanche he thought there was "a legal case."<Cite c="subpoenas-august" /><Cite c="trump-sept2-blanche" /> The day before the suit, Trump said he was looking at "powerful legal options" to take Daniel J. Sullivan off the ballot. The suit filed the next day does not ask for that; it aims at certification.<Cite c="trump-legal-options" /><Cite c="suit-condition" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the ballot fight to the suit, 2026</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+        <p data-layer="narrative">On the day of the filing Blanche told reporters "I'm not trying to not have an election certified," while declining to rule out acting in some extreme case.<Cite c="blanche-same-day" /> A week earlier the department had sued California, asking a court to bar the state from counting ballots from about 20,000 voters it says are likely noncitizens.<Cite c="california-suit" /> A month before that, the Supreme Court said the administration's <a href="/events/mail-voting/2026-09-14-court-denies-stay/">restrictions on mail ballots</a> would most likely lose in court, at least for this year's election.<Cite c="mail-ballot-rule" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">The fight over one clause</h2>
+        <p data-layer="narrative">The suit rests on one clause of the National Voter Registration Act of 1993, which lists protecting "the integrity of the electoral process" among the law's purposes, and on the law's grant of power to the Attorney General to sue for relief "necessary to carry out" it.<Cite c="doj-legal-basis" /><Cite c="nvra-20510-text" /> The complaint is signed by Associate Attorney General Stanley Woodward.<Cite c="suit-signed-woodward" /></p>
+        <p data-layer="narrative">The clause is the third of four purposes the law lists. The other three are to increase the number of eligible citizens who register, to let governments carry out the law in ways that enhance eligible citizens' participation as voters, and to keep voter rolls accurate.<Cite c="nvra-purposes-text" /></p>
+        <QuoteCard speaker="National Voter Registration Act" when="1993" where="52 U.S.C. § 20501(b)(3)" label="The clause the suit rests on">
+          <p>"to protect the integrity of the electoral process"<Cite c="nvra-purposes-text" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The department's reading</h3>
+        <p data-layer="narrative">The department reads that purpose as a duty the state owes, one that certifying a result shaped by confusion would break.<Cite c="suit-relief" /> Its main Supreme Court precedent, it concedes, was about who gets on the ballot, not how votes are counted.<Cite c="bullock-concession" /></p>
+        <h3 data-layer="fact">The critics' reading</h3>
+        <p data-layer="narrative">Election lawyers say the clause gives no such power. Derek Muller of Notre Dame says it places no duties on a state beyond those the law spells out, and calls the argument "one of the worst ones I've ever seen."<Cite c="muller-no-duty" /> Vanita Gupta, a former associate attorney general, says no federal statute authorizes the relief the department seeks.<Cite c="gupta-no-statute" /> In April, in a case about voter records, the federal appeals court whose rulings bind courts in Alaska called that section the law's "Preamble."<Cite c="ca9-preamble" /> Michael Morley of Florida State says the worry about a sham candidate is real, but that this suit is frivolous and will be quickly dismissed.<Cite c="morley-real-concern" /></p>
+        <h3 data-layer="fact">The candidates and Alaska's other senator</h3>
+        <p data-layer="narrative">Sen. Lisa Murkowski, Alaska's other Republican senator, says the state already handled the problem by clearly distinguishing the candidates on the ballot, and that the department should never have filed the suit.<Cite c="murkowski" /> Peltola says Sullivan is "using his DC allies to try to keep himself in power," and her campaign calls the suit "a despicable political threat to overturn an election."<Cite c="peltola-allies" /><Cite c="peltola-camp-overturn" /> The senator's campaign says it had "no prior knowledge of this lawsuit and no role in it."<Cite c="sullivan-camp-no-role" /></p>
+      </section>
+
+      <section id="outlets">
+        <h2 data-layer="fact">What the coverage got wrong</h2>
+        <div data-layer="fact">
+        <OutletCheck outlet="UPI" claim={`wrote that the department said certification "should be delayed if the combination of votes for the two men named Dan Sullivan would surpass Peltola's number of votes."`} verdict="That is not the test. The complaint does not add the two men's votes against Peltola's; it reruns the ranked-choice count with Daniel J. Sullivan's votes given to the senator, and asks whether the senator would then win." chip="wrong" status="warn"><Cite c="upi-combination" /></OutletCheck>
+        <OutletCheckFold count={3} method="the complaint's filing stamp and the primary's results.">
+          <OutletCheck folded outlet="CBS News" claim={`gave the filing as Friday's.`} verdict="Wrong day. The complaint was filed Thursday, Oct. 22; the Times made the same error and corrected it." chip="wrong date" status="note"><Cite c="cbs-friday" /></OutletCheck>
+          <OutletCheck folded outlet="CNBC" claim={`put the primary on Aug. 28 and the senator's share at 41.1%.`} verdict="The primary was Aug. 18 and his share 41.4%. Aug. 28 is the date the complaint itself gives." chip="wrong date" status="note"><Cite c="cnbc-aug28" /></OutletCheck>
+          <OutletCheck folded outlet="UPI" claim={`called the August vote "Alaska's Republican primary."`} verdict="It was the all-candidate top-four primary." chip="mislabeled" status="note"><Cite c="upi-republican-primary" /></OutletCheck>
+        </OutletCheckFold>
+        </div>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The suit comes into play only if the senator loses the ranked-choice count and would win a rerun with Daniel J. Sullivan's votes given to him.<Cite c="suit-condition" /> Muller says a wide Democratic win or a narrow Republican one could make it moot, and that otherwise the court will likely dismiss it.<Cite c="moot-scenarios" /> Peltola's campaign has suggested it may join the case.<Cite c="peltola-may-intervene" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>After the Nov. 3 election</strong></figcaption>
+          <DecisionTimeline entries={next} heading="Scheduled" />
+        </figure>
+        <p data-layer="narrative">The court is not the only place the result can be challenged. Morley says that if the senator loses by less than Daniel J. Sullivan's vote, his recourse is an election contest in the U.S. Senate, which judges its own members' elections.<Cite c="senate-judge" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}
