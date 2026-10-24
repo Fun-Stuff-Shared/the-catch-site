@@ -17,6 +17,8 @@ Do not report wording, style, punctuation, or a faithful paraphrase. Do not sugg
 Answer with only a JSON array, one object per finding, [] when there are none:
 [{"b": <block number>, "claim": "<claim id, or null>", "kind": "beyond" | "status" | "scope" | "actor", "problem": "<what a reader would wrongly believe, in one sentence>"}]
 
+"b" is the block's number as an integer. A status, scope or actor finding names the claim it changes, one the block cites; only a beyond finding may have a null claim.
+
 The blocks:
 
 {BLOCKS}

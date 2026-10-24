@@ -181,7 +181,8 @@ class Blocks(HTMLParser):
         if tag == "section" and a.get("id") == "records":
             self.done = 1
         cls = (a.get("class") or "").split()
-        drop = tag in DROP or "mode-switcher" in cls or "work-evidence" in cls or a.get("data-layer") == "claims"
+        drop = (tag in DROP or "mode-switcher" in cls or "work-evidence" in cls or "story-kicker" in cls
+                or a.get("data-layer") == "claims")
         self.stack.append((tag, drop))
         if drop:
             self.skip += 1
@@ -233,7 +234,7 @@ def blocks(story):
 
 
 def bindable(block):
-    return bool(block["claims"]) or len(block["text"].split()) >= 8
+    return bool(block["claims"]) or any(ch.isalnum() for ch in block["text"])
 
 
 def verify(story):

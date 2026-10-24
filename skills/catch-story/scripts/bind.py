@@ -23,7 +23,9 @@ KINDS = {"beyond", "status", "scope", "actor"}
 def well_formed(f, by_n):
     if not isinstance(f, dict) or type(f.get("b")) is not int or f["b"] not in by_n or f.get("kind") not in KINDS:
         return False
-    return f.get("claim") is None or f["claim"] in {c["id"] for c in by_n[f["b"]]["claims"]}
+    if f.get("claim") is None:
+        return f["kind"] == "beyond"
+    return f["claim"] in {c["id"] for c in by_n[f["b"]]["claims"]}
 
 
 def ask(model, prompt, by_n):
