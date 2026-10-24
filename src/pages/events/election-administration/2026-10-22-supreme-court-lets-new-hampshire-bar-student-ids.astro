@@ -70,7 +70,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <dl>
                 <dt>Student ID</dt><dd>Not accepted<Cite c="state-reverts-oct23" /></dd>
                 <dt>An official who knows them</dt><dd>Can vouch, by signing a statement<Cite c="registered-route-personal-knowledge" /></dd>
-                <dt>State records</dt><dd>The law requires training supervisors to use registration data<Cite c="state-records-route" /></dd>
+                <dt>State records</dt><dd>Supervisors may use the state's registration data to confirm identity<Cite c="state-records-route" /></dd>
                 <dt>Other documents</dt><dd>{short("other-evidence-unsettled")}<Cite c="other-evidence-unsettled" /></dd>
                 <dt>An affidavit</dt><dd>Cannot prove identity<Cite c="affidavit-history" /></dd>
                 <dt>Free state voter ID</dt><dd>{short("voter-id-mailed")}<Cite c="voter-id-mailed" /></dd>
@@ -90,7 +90,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           </div>
         </figure>
         <p data-layer="narrative">The state itself has given two answers on whether a registered voter can use other documents. In the record it gave the district court, it said supervisors at the polls apply the same catch-all standard as at registration; in its motion for a pause, it argued that only the listed IDs count. The Secretary's election-day page now names only personal knowledge.<Cite c="other-evidence-unsettled" /><Cite c="registering-open-question" /> A registered voter a supervisor turns away can appeal to the superior court that day.<Cite c="appeal-same-day" /></p>
-        <p data-layer="narrative">A sworn affidavit cannot fill the gap. A 2024 law, HB 1569, ended the affidavits voters had used, including to prove identity, and a federal judge's ruling in May, in an earlier case the same group helped bring, restored only the affidavit for citizenship and the one for answering a challenge.<Cite c="affidavit-history" /> A student voting absentee instead must send a copy of a listed ID or have the application notarized.<Cite c="absentee-same-list" /></p>
+        <p data-layer="narrative">A sworn affidavit cannot fill the gap. A 2024 law, HB 1569, ended the affidavits voters had used, including to prove identity, and a federal judge's ruling in May 2026, in an earlier case the same group helped bring, restored only the affidavit for citizenship and the one for answering a challenge.<Cite c="affidavit-history" /> A student voting absentee instead must send a copy of a listed ID or have the application notarized.<Cite c="absentee-same-list" /></p>
         <p data-layer="narrative">The challengers' expert estimated that about {computed.youngLackingId} eligible New Hampshire residents aged 18 to 24, {computed.youngLackingIdShare} percent of that age group, lack one of the listed IDs, but he did not estimate how many of them hold a student ID.<Cite c="young-lacking-id" /> The court received no evidence of how many young voters relied on student IDs before the law.<Cite c="no-reliance-count" /> In the September primary, run under the same rules, the deputy secretary of state received {computed.primaryTurnedAwayWord} reports of students turned away.<Cite c="primary-turned-away" /><Cite c="state-reverts-oct23" /></p>
         <figure class="story-figure" data-layer="fact">
           <KpiStrip kpis={figures} />
@@ -112,9 +112,12 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
       <section id="the-sides">
         <h2 data-layer="fact">What each side says</h2>
         <h3 data-layer="fact">The state</h3>
-        <p data-layer="narrative">Scanlan says the legislature, in HB 323 and a second bill that followed it, meant that student IDs should not count even as reasonable evidence of identity.<Cite c="state-case" /></p>
+        <p data-layer="narrative">Scanlan says the legislature meant to end student IDs for voting: HB 323 took them off the list, and a later bill, SB 223, made the law say that only the listed IDs satisfy the requirement, so a student ID cannot count even as reasonable evidence of identity.<Cite c="hb323-what-it-did" /><Cite c="state-case" /> In its October 15 application to the Supreme Court for a stay, filed by the attorney general's office, the state argued that state courts, not federal ones, have the final word on state law, and that a federal judge's late reading should not override the one the Secretary had published for more than five months. It also warned that voters could misread the ruling and arrive with nothing but a student ID.<Cite c="state-federal-reading" /></p>
+        <QuoteCard speaker="New Hampshire attorney general's office" when="October 15, 2026" where="Application for a stay, Supreme Court">
+          <p>"there is substantial risk that voters could show up at the polls with only their student IDs in-hand."<Cite c="state-federal-reading" /></p>
+        </QuoteCard>
         <h3 data-layer="fact">The challengers</h3>
-        <p data-layer="narrative">The Coalition for Open Democracy says no statute was ever blocked: Laplante's order only held the Secretary to what the legislature's statutes say. Before the Court ruled, it argued that a pause would reverse the rules a second time in a month.<Cite c="coalition-case" /></p>
+        <p data-layer="narrative">The Coalition for Open Democracy says no statute was ever blocked: Laplante's order only held the Secretary to what the legislature's statutes say. Before the Court ruled, it warned what a pause would do to rules the state had already changed once that month.<Cite c="coalition-case" /><Cite c="guidance-updated-oct" /></p>
         <QuoteCard speaker="Coalition for Open Democracy" when="October 19, 2026" where="Opposition to the stay, Supreme Court">
           <p>"It would reverse the rules for a second time in a month."<Cite c="coalition-case" /></p>
         </QuoteCard>
@@ -131,15 +134,15 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <ol>
             <li>
               <h3>The Court did not approve a new ban</h3>
-              <p data-layer="narrative">Several of the first reports told the order as the Court approving a ban on student IDs. CBS News headlined that the Supreme Court "rules New Hampshire can ban use of student IDs," and UPI wrote that the Court "ruled."<Cite c="catch-cbs-rules" /> New Hampshire's attorney general said the order reinstated the state's law, and the Union Leader wrote that the Court found it inappropriate for lower courts to "set aside state laws."<Cite c="catch-reinstating-law" /> No court set the law aside. HB 323 has kept student IDs off the accepted list since June 2 through every ruling in the case, and what the Court reinstated is Scanlan's instruction that a student ID cannot count even as backup evidence.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /></p>
+              <p data-layer="narrative">Several of the first reports told the order as the Court approving a ban on student IDs. CBS News headlined that the Supreme Court "rules New Hampshire can ban use of student IDs," and UPI wrote that the Court "ruled."<Cite c="catch-cbs-rules" /> New Hampshire's attorney general said the order reinstated the state's law, and the Union Leader wrote that the Court found it inappropriate for lower courts to "set aside state laws."<Cite c="catch-reinstating-law" /> No court set the law aside. HB 323 has kept student IDs off the accepted list since June 2 through every ruling in the case, and what the Court's order brings back is Scanlan's instruction that a student ID cannot count even as backup evidence.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /></p>
             </li>
             <li>
-              <h3>Not "unsuccessful," and not 8-1</h3>
+              <h3>The state's appeal succeeded, and the order records no vote count<Cite c="catch-usatoday-unsuccessful" /><Cite c="catch-8-1" /></h3>
               <p data-layer="narrative">USA Today called the state's emergency appeal "unsuccessful"; the Court granted it.<Cite c="catch-usatoday-unsuccessful" /> A post on X called the order 8-1, but the order records only Jackson's dissent and no other justice's vote.<Cite c="catch-8-1" /></p>
             </li>
             <li>
-              <h3>The guidance said the opposite</h3>
-              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots." Scanlan's office announced on April 23 that from June 2 student IDs could not be used.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
+              <h3>UPI turned the judge's finding around<Cite c="catch-upi-reversed" /></h3>
+              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots, which Laplante ruled went further than the law." It was the other way around. Scanlan's office announced on April 23 that from June 2 student IDs could not be used, and what Laplante found went further than the law was that bar on considering them even as backup evidence.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
             </li>
           </ol>
         </aside>
