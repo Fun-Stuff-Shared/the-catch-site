@@ -65,8 +65,9 @@ export const timeline = [
   { date: "Oct. 19", title: short("charged-28"), cites: [{ c: "charged-28" }] },
   { date: "Oct. 21", title: short("doj-asked-noon"), cites: [{ c: "doj-asked-noon" }] },
   { date: "Oct. 22", title: short("constructive-denial"), cites: [{ c: "constructive-denial" }] },
-  { date: "Oct. 23", title: short("ca9-motion-filed"), cites: [{ c: "ca9-motion-filed" }], current: true },
-  { date: "Oct. 23", title: short("county-letters"), cites: [{ c: "county-letters" }], current: true },
+  { date: "Oct. 23", title: short("ca9-motion-filed"), cites: [{ c: "ca9-motion-filed" }] },
+  { date: "Oct. 23", title: short("county-letters"), cites: [{ c: "county-letters" }] },
+  { date: "Oct. 24", title: short("ca-ca9-opp"), cites: [{ c: "ca-ca9-opp" }], current: true },
 ];
 
 export const listFigures = {
@@ -86,10 +87,11 @@ export const listFigures = {
 };
 
 export const orderTable = [
-  ["Which ballots", "Every mail ballot from a person on DOJ's list", "No notice to the voter that the ballot is held"],
-  ["How a voter clears", "Citizenship confirmed by more than the voter's own sworn registration", "No way for the voter to respond, and no standard for the decision"],
-  ["If not a citizen", "The ballot is not counted", "A mistaken exclusion may be impossible to undo once the count closes"],
-  ["If a citizen", "The ballot goes through California's provisional-ballot steps", "No deadline for deciding"],
+  ["Which ballots", "Every mail ballot received from a person on DOJ's list"],
+  ["How a voter clears", "Citizenship confirmed by more than the voter's own sworn registration"],
+  ["If not a citizen", "The ballot is not counted"],
+  ["If a citizen", "The ballot goes through California's provisional-ballot steps"],
+  ["If never resolved", "The order names no step, and no deadline"],
 ];
 
-export const timelineSpan = { from: "May 8", to: "Oct. 23" };
+export const timelineSpan = { from: "May 8", to: "Oct. 24" };

@@ -7,30 +7,174 @@
   "event_record": "/events/election-administration/",
   "completed_by": "Claude (catch-record and catch-story)",
   "steps": {
-   "sources_admitted": {"done": true, "evidence": "Fifty-eight records admitted: the C.D. Cal. and Ninth Circuit filings from CourtListener (complaint and exhibits, both declarations, the proposed order, the emergency application, the appeal, the injunction motion, Carter's orders, the state's and county's oppositions and motions to dismiss), the N.D. Cal. order, the executive order, DOJ and state releases, Essayli's and DHS's posts, and coverage captured through capture news."},
-   "derived_numbers_computed": {"done": true, "evidence": "One derived figure: the days from USCIS receiving the roll on or around May 8 to the list going out on Oct. 13, computed from the two dates in the Bartell declaration and McCotter's letter. Every other number is printed on its record."},
-   "outlet_claims_verified": {"done": true, "evidence": "Fox's Oct. 22 headline checked against Essayli's posts and the sworn declarations; ABC's Oct. 21 subhead checked against the Flores declaration and the county's brief, which give 38.9 percent of records reporting a birthplace and 25.8 percent of all 200."},
-   "live_elements_guarded": {"done": true, "evidence": "No live counter on the page; the Ninth Circuit and district dockets are rechecked before each update and a ruling lands as a new top paragraph and timeline row."},
-   "subject_page_updated": {"done": true, "evidence": "New election-administration subject page with three figures (the list's size, LA's 112 of 200, Carter's Oct. 27 hearing) and a series entry in discovery."}
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Fifty-eight records admitted: the C.D. Cal. and Ninth Circuit filings from CourtListener (complaint and exhibits, both declarations, the proposed order, the emergency application, the appeal, the injunction motion, Carter's orders, the state's and county's oppositions and motions to dismiss), the N.D. Cal. order, the executive order, DOJ and state releases, Essayli's and DHS's posts, and coverage captured through capture news."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "One derived figure: the days from USCIS receiving the roll on or around May 8 to the list going out on Oct. 13, computed from the two dates in the Bartell declaration and McCotter's letter. Every other number is printed on its record."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Fox's Oct. 22 headline checked against Essayli's posts and the sworn declarations; ABC's Oct. 21 subhead checked against the Flores declaration and the county's brief, which give 38.9 percent of records reporting a birthplace and 25.8 percent of all 200."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "No live counter on the page; the Ninth Circuit and district dockets are rechecked before each update and a ruling lands as a new top paragraph and timeline row."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "New election-administration subject page with three figures (the list's size, LA's 112 of 200, Carter's Oct. 27 hearing) and a series entry in discovery."
+    }
   },
   "figures": [
-   {"figure": "listed", "label": "Voters on DOJ's list", "value": "20000", "unit": "people", "kind": "sourced", "source": {"source_id": "mcloughlin-decl-2026-10-21", "quote_span": "over 20,000 individuals remaining on the list."}},
-   {"figure": "la_not_mailed", "label": "Sampled LA names mailed no ballot", "value": "112", "unit": "people", "kind": "sourced", "source": {"source_id": "flores-decl-2026-10-20", "quote_span": "112 of the 200 records correspond to registrations that are canceled or inactive, so that no General Election ballot was mailed to the person"}},
-   {"figure": "la_mailed", "label": "Sampled LA names mailed a ballot", "value": "86", "unit": "people", "kind": "sourced", "source": {"source_id": "bhullar-decl-2026-10-20", "quote_span": "86 of the sample listed individuals who had ballots mailed to them"}},
-   {"figure": "la_listed", "label": "Listed records with LA County addresses", "value": "7035", "unit": "records", "kind": "sourced", "source": {"source_id": "bhullar-decl-2026-10-20", "quote_span": "7,035 have addresses located in Los Angeles County"}},
-   {"figure": "charged", "label": "People on the list charged Oct. 19", "value": "28", "unit": "people", "kind": "sourced", "source": {"source_id": "doj-release-2026-10-19", "quote_span": "arrested 11 foreign nationals living in the United States who are among 28 total charged"}},
-   {"figure": "days_roll_to_list", "label": "Days from USCIS receiving the roll to the list going out", "value": "158", "unit": "days", "kind": "computed", "formula": "date_difference_days", "inputs": [
-     {"source_id": "mccotter-letter-2026-10-13", "value": "2026-10-13", "unit": "date", "quote_span": "October 13, 2026"},
-     {"source_id": "bartell-decl-2026-10-21", "value": "2026-05-08", "unit": "date", "quote_span": "On or around May 8, 2026, FDNS received a copy of the California Voter rolls from HSI to review"}]}
+    {
+      "figure": "listed",
+      "label": "Voters on DOJ's list",
+      "value": "20000",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "mcloughlin-decl-2026-10-21",
+        "quote_span": "over 20,000 individuals remaining on the list."
+      }
+    },
+    {
+      "figure": "la_not_mailed",
+      "label": "Sampled LA names mailed no ballot",
+      "value": "112",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "flores-decl-2026-10-20",
+        "quote_span": "112 of the 200 records correspond to registrations that are canceled or inactive, so that no General Election ballot was mailed to the person"
+      }
+    },
+    {
+      "figure": "la_mailed",
+      "label": "Sampled LA names mailed a ballot",
+      "value": "86",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "bhullar-decl-2026-10-20",
+        "quote_span": "86 of the sample listed individuals who had ballots mailed to them"
+      }
+    },
+    {
+      "figure": "la_listed",
+      "label": "Listed records with LA County addresses",
+      "value": "7035",
+      "unit": "records",
+      "kind": "sourced",
+      "source": {
+        "source_id": "bhullar-decl-2026-10-20",
+        "quote_span": "7,035 have addresses located in Los Angeles County"
+      }
+    },
+    {
+      "figure": "charged",
+      "label": "People on the list charged Oct. 19",
+      "value": "28",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doj-release-2026-10-19",
+        "quote_span": "arrested 11 foreign nationals living in the United States who are among 28 total charged"
+      }
+    },
+    {
+      "figure": "days_roll_to_list",
+      "label": "Days from USCIS receiving the roll to the list going out",
+      "value": "158",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "mccotter-letter-2026-10-13",
+          "value": "2026-10-13",
+          "unit": "date",
+          "quote_span": "October 13, 2026"
+        },
+        {
+          "source_id": "bartell-decl-2026-10-21",
+          "value": "2026-05-08",
+          "unit": "date",
+          "quote_span": "On or around May 8, 2026, FDNS received a copy of the California Voter rolls from HSI to review"
+        }
+      ]
+    }
   ],
   "sub_events": [
-   {"id": "list-2026-10-13", "date": "2026-10-13", "label": "DOJ gives LA County the list, with 48 hours to act", "section_anchor": "why-now", "records": ["mccotter-letter-2026-10-13"]},
-   {"id": "suit-2026-10-15", "date": "2026-10-15", "label": "DOJ sues California, Weber and Logan", "section_anchor": "what-happened", "records": ["doj-complaint-2026-10-15", "doj-release-2026-10-15"]},
-   {"id": "charges-2026-10-19", "date": "2026-10-19", "label": "28 green-card holders on the list charged", "section_anchor": "the-28", "records": ["doj-release-2026-10-19"]},
-   {"id": "hearing-set-2026-10-21", "date": "2026-10-21", "label": "Carter sets a hearing for Oct. 27; DOJ asks for a ruling by noon next day", "section_anchor": "what-happened", "records": ["carter-order-2026-10-23", "doj-expedite-request-2026-10-21"]},
-   {"id": "appeal-2026-10-22", "date": "2026-10-22", "label": "DOJ appeals, calling the judge's silence a denial", "section_anchor": "what-happened", "records": ["doj-notice-of-appeal-2026-10-22"]},
-   {"id": "ca9-2026-10-23", "date": "2026-10-23", "label": "DOJ asks the Ninth Circuit to order the ballots held", "section_anchor": "what-happened", "records": ["ca9-motion-2026-10-23", "ca9-order-2026-10-23"]},
-   {"id": "letters-2026-10-23", "date": "2026-10-23", "label": "48-hour letters to county registrars", "section_anchor": "what-happened", "records": ["ap-counties-2026-10-23", "nbc-counties-2026-10-23"]}
+    {
+      "id": "list-2026-10-13",
+      "date": "2026-10-13",
+      "label": "DOJ gives LA County the list, with 48 hours to act",
+      "section_anchor": "why-now",
+      "records": [
+        "mccotter-letter-2026-10-13"
+      ]
+    },
+    {
+      "id": "suit-2026-10-15",
+      "date": "2026-10-15",
+      "label": "DOJ sues California, Weber and Logan",
+      "section_anchor": "what-happened",
+      "records": [
+        "doj-complaint-2026-10-15",
+        "doj-release-2026-10-15"
+      ]
+    },
+    {
+      "id": "charges-2026-10-19",
+      "date": "2026-10-19",
+      "label": "28 green-card holders on the list charged",
+      "section_anchor": "the-28",
+      "records": [
+        "doj-release-2026-10-19"
+      ]
+    },
+    {
+      "id": "hearing-set-2026-10-21",
+      "date": "2026-10-21",
+      "label": "Carter sets a hearing for Oct. 27; DOJ asks for a ruling by noon next day",
+      "section_anchor": "what-happened",
+      "records": [
+        "carter-order-2026-10-23",
+        "doj-expedite-request-2026-10-21"
+      ]
+    },
+    {
+      "id": "appeal-2026-10-22",
+      "date": "2026-10-22",
+      "label": "DOJ appeals, calling the judge's silence a denial",
+      "section_anchor": "what-happened",
+      "records": [
+        "doj-notice-of-appeal-2026-10-22"
+      ]
+    },
+    {
+      "id": "ca9-2026-10-23",
+      "date": "2026-10-23",
+      "label": "DOJ asks the Ninth Circuit to order the ballots held",
+      "section_anchor": "what-happened",
+      "records": [
+        "ca9-motion-2026-10-23",
+        "ca9-order-2026-10-23"
+      ]
+    },
+    {
+      "id": "letters-2026-10-23",
+      "date": "2026-10-23",
+      "label": "48-hour letters to county registrars",
+      "section_anchor": "what-happened",
+      "records": [
+        "ap-counties-2026-10-23",
+        "nbc-counties-2026-10-23"
+      ]
+    }
   ],
   "records": [
     {
@@ -900,6 +1044,20 @@
       "capture_run": "capture-oneoff-20261024T090307Z",
       "capture_raw_sha256": "sha256:e84bde1ee765572bbb4e3c93cc9d5a9708c230e5553c571c7ca5009fa20041ae",
       "captured_at": "2026-10-24T09:03:35.660316Z"
+    },
+    {
+      "id": "ca-ca9-opp-2026-10-24",
+      "title": "State defendants' opposition to plaintiff's emergency motion for injunction pending appeal, United States v. California",
+      "publisher": "California Department of Justice (filed in the U.S. Court of Appeals for the Ninth Circuit)",
+      "date": "2026-10-24",
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.ca9.791f8ba7-6879-48a9-8485-c590765cece6/gov.uscourts.ca9.791f8ba7-6879-48a9-8485-c590765cece6.30.0.pdf",
+      "pinned_path": "data/sources/election-administration/ca-ca9-opp-2026-10-24.pdf",
+      "text_path": "data/sources/election-administration/ca-ca9-opp-2026-10-24.txt",
+      "text_sha256": "sha256:e9c61f31853207d6e9e93884fe6751025cfbe4d13bf76cfa14db895713e45f57",
+      "quote": "STATE DEFENDANTS’ OPPOSITION TO PLAINTIFF’S",
+      "quote_span_check": "byte_exact",
+      "about": "California's Oct. 24 answer to DOJ's emergency motion at the Ninth Circuit.",
+      "capture_status": "Ninth Circuit No. 26-7070, DktEntry 30, entered Oct. 24, 2026 at 11:32 a.m. PDT, downloaded from CourtListener's RECAP archive; text by pdftotext"
     }
   ],
   "story_sources": [
@@ -1308,6 +1466,13 @@
       "label": "Executive order of March 31, 2026",
       "meta": " · signed March 31",
       "usage": "the standing order behind DOJ's warnings to election officials"
+    },
+    {
+      "id": "ca-ca9-opp-2026-10-24",
+      "group": "primary",
+      "label": "California's opposition at the Ninth Circuit",
+      "meta": " · filed 2026-10-24",
+      "usage": "California's answer to the Ninth Circuit motion, filed before the noon deadline."
     }
   ]
 }
