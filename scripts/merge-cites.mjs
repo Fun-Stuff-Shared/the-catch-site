@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1".
-// The merged anchor keeps its first passage and carries the others in data-passages for the
+// A record cited more than once in one run of citations renders once, where it first appears:
+// "5, 4, 1" instead of "5, 4, 5, 1". The merged anchor keeps its first passage and carries the others in data-passages for the
 // evidence reader; when the citations name different claims, data-claim lists every one,
 // space-separated, for Just the facts and the claim checks. A citation that directly follows another, with only space between, is
 // marked src-ref-more so the comma separating them is drawn there and nowhere else (a CSS
@@ -18,28 +18,31 @@ export function mergeCites(html) {
   if (!parts.length) return html;
   let out = "", cursor = 0, i = 0;
   while (i < parts.length) {
-    const first = parts[i];
-    const passages = [attr(first[2], "data-passage")].filter(Boolean);
-    const claims = [attr(first[2], "data-claim")].filter(Boolean);
     let j = i + 1;
-    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index)) && parts[j][1] === first[1]) {
-      const p = attr(parts[j][2], "data-passage");
-      if (p && !passages.includes(p)) passages.push(p);
-      const c = attr(parts[j][2], "data-claim");
-      if (c && !claims.includes(c)) claims.push(c);
-      j++;
+    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index))) j++;
+    const records = new Map();
+    for (const part of parts.slice(i, j)) {
+      const rec = records.get(part[1]) || records.set(part[1], { first: part, passages: [], claims: [], count: 0 }).get(part[1]);
+      const p = attr(part[2], "data-passage");
+      if (p && !rec.passages.includes(p)) rec.passages.push(p);
+      const c = attr(part[2], "data-claim");
+      if (c && !rec.claims.includes(c)) rec.claims.push(c);
+      rec.count++;
     }
-    out += html.slice(cursor, first.index);
-    if (j === i + 1) out += first[0];
-    else {
-      const extra = passages.length > 1 ? ` data-passages="${passages.slice(1).join("&#10;")}"` : "";
-      const anchor = claims.length > 1 ? first[0].replace(/ data-claim="[^"]*"/, ` data-claim="${claims.join(" ")}"`) : first[0];
-      out += anchor.replace(/(<a href="#src-\d+"[^>]*)>/, (m, open) => `${open}${extra}>`);
-    }
+    out += html.slice(cursor, parts[i].index);
+    if (records.size === j - i) out += html.slice(parts[i].index, parts[j - 1].index + parts[j - 1][0].length);
+    else out += [...records.values()].map(anchorFor).join("");
     cursor = parts[j - 1].index + parts[j - 1][0].length;
     i = j;
   }
   return markRuns(out + html.slice(cursor));
+}
+
+function anchorFor({ first, passages, claims, count }) {
+  if (count === 1) return first[0];
+  const extra = passages.length > 1 ? ` data-passages="${passages.slice(1).join("&#10;")}"` : "";
+  const anchor = claims.length > 1 ? first[0].replace(/ data-claim="[^"]*"/, ` data-claim="${claims.join(" ")}"`) : first[0];
+  return anchor.replace(/(<a href="#src-\d+"[^>]*)>/, (m, open) => `${open}${extra}>`);
 }
 
 function markRuns(html) {

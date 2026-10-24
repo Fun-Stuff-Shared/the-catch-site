@@ -19,6 +19,15 @@ test("citations of one record for different claims render once and name every cl
   assert.match(out, /data-passages="two&#10;three"/);
 });
 
+test("a record repeated later in the same run renders once, where it first appears", () => {
+  const claimed = (n, passage, c) => cite(n, passage).replace(' aria-label', ` data-claim="${c}" aria-label`);
+  const out = mergeCites(`Sentence.${claimed(5, "p", "a")}${claimed(4, "q", "b")}${claimed(5, "r", "c")}${claimed(1, "s", "d")}`);
+  assert.deepEqual([...out.matchAll(/#src-(\d+)/g)].map((m) => m[1]), ["5", "4", "1"]);
+  assert.match(out, /data-claim="a c"/);
+  assert.match(out, /data-passages="r"/);
+  assert.equal(mergeCites(out), out);
+});
+
 test("whitespace between the citations does not stop the merge", () => {
   const out = mergeCites(`Sentence.${cite(4, "a")}\n  ${cite(4, "b")}`);
   assert.equal((out.match(/<sup/g) || []).length, 1);
