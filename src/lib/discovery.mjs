@@ -21,11 +21,12 @@ import { event as iranWar } from '../data/iran-war-2026-09-15-cbo-estimates-38-b
 import { event as immigrationDetention } from '../data/immigration-detention-2026-10-01-supreme-court-takes-up-bond-hearings.mjs';
 import { event as lisaCookHearing } from '../data/lisa-cook-2026-10-09-trump-orders-hearing-on-cook.mjs';
 import { event as okinawaMarine } from '../data/okinawa-2026-10-04-us-marine-arrested-in-killing-of-woman.mjs';
+import { event as fbiOfficialsCharged } from '../data/fbi-officials-charged-2026-10-20-two-ex-fbi-officials-charged-with-lying-to-congress.mjs';
 import { publishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, fbiOfficialsCharged].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -45,6 +46,7 @@ export const series = [
   { path: '/events/immigration-detention/', title: 'Immigration detention', topic: 'Courts', keywords: 'immigration detention bond hearing Supreme Court mandatory detention', description: 'For three decades immigrants who entered without inspection could ask for release on bond. In July 2025 the Trump administration said the law forbids it, nine federal appeals courts have said it does not, and on October 1 the Supreme Court took the case.' },
   { path: '/events/lisa-cook/', title: 'Lisa Cook and the Fed', topic: 'Courts', keywords: 'Lisa Cook Federal Reserve governor Trump removal for cause mortgage Supreme Court committee of inquiry Hassett Pulte', description: 'Trump has tried twice to remove Fed Governor Lisa Cook over 2021 mortgage allegations she denies. The Supreme Court kept her in office in June; a White House committee hears her case on November 5.' },
   { path: '/events/okinawa/', title: 'Okinawa', topic: 'Asia', keywords: 'Okinawa Marine Naha Ballard SOFA status of forces agreement curfew Koja Takaichi', description: 'Japan holds a U.S. Marine arrested on October 4 in the killing of Anna Yagi in Naha. Okinawa says U.S. discipline measures have failed and the status of forces agreement must change; Washington says the agreement is working.' },
+  { path: '/events/fbi-officials-charged/', title: 'FBI officials charged', topic: 'Courts', keywords: 'FBI Floris Benavides Foreign Influence Task Force Hunter Biden laptop false statements Congress House Judiciary Pirro Faruqui Round River', description: 'Two former leaders of the FBI\'s Foreign Influence Task Force are charged with lying to House Judiciary Committee staff in 2023 about their part in the FBI\'s Hunter Biden investigations. A probable-cause hearing is set for October 27.' },
 ];
 export function storyCatalog() {
   const state = publishedState();
