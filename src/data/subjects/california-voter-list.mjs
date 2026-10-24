@@ -1,7 +1,7 @@
-import { figures } from "../election-administration-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
+import { figures } from "../california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
 
 export const subject = {
-  title: "Election administration",
+  title: "California's voter list",
   dek: "The Justice Department has asked a federal appeals court to make California set aside the mail ballots of about 20,000 voters it calls likely noncitizens, before the trial judge rules.",
   current: [
     { label: "Voters on DOJ's California list", value: `Over ${figures.listed}`, unit: "", as_of: "2026-10-21", record_id: "mcloughlin-decl-2026-10-21", source_value: figures.listed, source_unit: "", source_sentence: "over 20,000 individuals remaining on the list." },

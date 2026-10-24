@@ -2,7 +2,7 @@
 // Every count here is printed on an admitted record; day counts are calendar days between dates in the filings.
 import { claim } from "../lib/claims.mjs";
 
-const story = "election-administration--2026-10-19-doj-seeks-to-block-20000-california-ballots";
+const story = "california-voter-list--2026-10-19-doj-seeks-to-block-20000-california-ballots";
 const short = (id) => claim(story, id).short;
 const DAY = 86400000;
 const daysBetween = (start, end) => Math.round((Date.parse(end) - Date.parse(start)) / DAY);
@@ -35,8 +35,6 @@ export const figures = {
   arrested: 11,
   // nbc-counties-2026-10-23
   sanBernardino: "1,133",
-  // ap-counties-2026-10-23
-  countiesAtLeast: 18,
 };
 
 export const computed = {
@@ -47,9 +45,9 @@ export const computed = {
 };
 
 export const event = {
-  slug: "election-administration/2026-10-19-doj-seeks-to-block-20000-california-ballots",
+  slug: "california-voter-list/2026-10-19-doj-seeks-to-block-20000-california-ballots",
   title: "DOJ asks appeals court to hold ballots of 20,000 California voters it calls likely noncitizens",
-  dek: `The Justice Department went to the Ninth Circuit before the federal trial judge in Los Angeles, who hears the case Oct. 27, had ruled. It has also asked registrars in at least ${figures.countiesAtLeast} counties, by the Los Angeles County registrar's count, to set aside the ballots of anyone on its lists whose citizenship cannot be verified.`,
+  dek: `The Justice Department went to the Ninth Circuit before the federal trial judge in Los Angeles, who hears the case Oct. 27, had ruled. It has also asked county registrars to set aside the ballots of anyone on its lists whose citizenship cannot be verified.`,
   name: "DOJ's bid to hold California ballots of voters it calls likely noncitizens",
   date: "2026-10-19",
   updated: "2026-10-24",
@@ -67,7 +65,9 @@ export const timeline = [
   { date: "Oct. 22", title: short("constructive-denial"), cites: [{ c: "constructive-denial" }] },
   { date: "Oct. 23", title: short("ca9-motion-filed"), cites: [{ c: "ca9-motion-filed" }] },
   { date: "Oct. 23", title: short("county-letters"), cites: [{ c: "county-letters" }] },
-  { date: "Oct. 24", title: short("ca-ca9-opp"), cites: [{ c: "ca-ca9-opp" }], current: true },
+  { date: "Oct. 24", title: short("ca-ca9-opp"), cites: [{ c: "ca-ca9-opp" }] },
+  { date: "Oct. 24", title: short("logan-ca9-mtd"), cites: [{ c: "logan-ca9-mtd" }] },
+  { date: "Oct. 24", title: short("ca9-argument"), cites: [{ c: "ca9-argument" }], current: true },
 ];
 
 export const listFigures = {
