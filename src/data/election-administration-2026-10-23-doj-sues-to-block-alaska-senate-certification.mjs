@@ -18,7 +18,7 @@ export const poll = {
 export const event = {
   slug: "election-administration/2026-10-23-doj-sues-to-block-alaska-senate-certification",
   title: "Trump says he ordered suit to halt Alaska's Senate certification if a namesake's votes could flip it",
-  dek: "If Sen. Dan Sullivan loses a race that votes for a former teacher with the same name could have flipped, the Justice Department wants the result held until an investigation finds whether those votes were meant for him.",
+  dek: "A former teacher named Daniel J. Sullivan is also on the ballot. If his votes could have flipped a loss by Sen. Dan Sullivan, the Justice Department wants the result held until an investigation finds whether they were meant for the senator.",
   name: "Justice Department suit over Alaska's Senate certification",
   date: "2026-10-23",
   updated: "2026-10-24",
@@ -47,7 +47,7 @@ export const timeline = [
   { date: "June 26 and 29", title: "A state judge, then the Alaska Supreme Court, put him back.", cites: [{ c: "courts-restored" }] },
   { date: "Aug. 18", title: "The top-four primary. A source tells Reuters a federal grand jury has issued subpoenas about his candidacy.", cites: [{ c: "primary-shares" }, { c: "subpoenas-august" }] },
   { date: "Sept. 2", title: "Trump to Attorney General Todd Blanche: \"I think, Todd, you have a legal case on that.\"", cites: [{ c: "trump-sept2-blanche" }] },
-  { date: "Oct. 13", title: "At a rally in Wasilla, Trump says he told Alaska's U.S. attorney to make sure there is \"no cheating.\"", cites: [{ c: "trump-rally-heyman" }] },
+  { date: "Oct. 13", title: "At a rally in Wasilla, Trump recounts having told Alaska's U.S. attorney, \"I hope you're going to make sure there's no cheating,\" adding, \"any place you have rank(ed) choice, you have damn bad cheating.\"", cites: [{ c: "trump-rally-heyman" }] },
   { date: "Oct. 21", title: "Trump says he is looking at \"powerful legal options\" to remove Daniel J. Sullivan from the ballot.", cites: [{ c: "trump-legal-options" }] },
   { date: "Oct. 22", title: "The department sues. Blanche: \"I'm not trying to not have an election certified.\"", cites: [{ c: "suit-filed" }, { c: "blanche-same-day" }] },
   { date: "Oct. 23", title: "Trump: \"I'm the one that said 'do it.'\"", cites: [{ c: "trump-ordered" }], current: true },
