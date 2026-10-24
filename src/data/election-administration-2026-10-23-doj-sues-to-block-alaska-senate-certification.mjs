@@ -18,7 +18,7 @@ export const poll = {
 export const event = {
   slug: "election-administration/2026-10-23-doj-sues-to-block-alaska-senate-certification",
   title: "Trump says he ordered suit to halt Alaska's Senate certification if a namesake's votes could flip it",
-  dek: "If Sen. Dan Sullivan loses, the Justice Department wants the result held until an investigation finds whether votes for a second Dan Sullivan were meant for him.",
+  dek: "If Sen. Dan Sullivan loses a race that votes for a former teacher with the same name could have flipped, the Justice Department wants the result held until an investigation finds whether those votes were meant for him.",
   name: "Justice Department suit over Alaska's Senate certification",
   date: "2026-10-23",
   updated: "2026-10-24",
