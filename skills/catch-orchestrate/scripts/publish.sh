@@ -59,7 +59,7 @@ for s in $stories; do
   event=event-${s/--/-}
   (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --state-dir $state --event $event >/dev/null)
   views+=(data/state/$event.json)
-  for c in $(command grep -l "\"$event\"" $state/views/chain-*.json); do views+=(data/state/${c:t}); done
+  for c in $(command grep -rlF --include='chain-*.json' "\"$event\"" $state/views); do views+=(data/state/${c:t}); done
 done
 views=(${(u)views})
 for v in $views; do cp $state/views/${v:t} $v; done
