@@ -34,13 +34,13 @@ export const event = {
 };
 
 export const timeline = [
-  { date: "Dec. 9, 2019", c: "laptop-obtained" },
-  { date: "July 19 and Sept. 28, 2023", c: "forum" },
-  { date: "Aug. 12 to Sept. 15, 2026", c: "fbi-review-round-river" },
-  { date: "Oct. 2026", c: "witnesses-oct-2026" },
-  { date: "Oct. 20, 2026", c: "sealed-oct-20" },
-  { date: "Oct. 23, 2026", c: "surrendered-oct-23", current: true },
-  { date: "Oct. 27, 2026", c: "prelim-oct-27" },
+  { date: "Dec. 9, 2019", title: "The FBI obtains the laptop's contents", c: "laptop-obtained" },
+  { date: "July 19 and Sept. 28, 2023", title: "House Judiciary staff interview Floris, then Benavides", c: "forum" },
+  { date: "Aug. 12 to Sept. 15, 2026", title: "Patel says the FBI is investigating Round River", c: "fbi-review-round-river" },
+  { date: "Oct. 2026", title: "The FBI interviews two colleagues of the pair", c: "witnesses-oct-2026" },
+  { date: "Oct. 20, 2026", title: "Complaint filed under seal", c: "sealed-oct-20" },
+  { date: "Oct. 23, 2026", title: "Both surrender; the case is unsealed", c: "surrendered-oct-23", current: true },
+  { date: "Oct. 27, 2026", title: "Probable-cause hearing, 11 a.m.", c: "prelim-oct-27" },
 ];
 
 export const sideBySide = {
