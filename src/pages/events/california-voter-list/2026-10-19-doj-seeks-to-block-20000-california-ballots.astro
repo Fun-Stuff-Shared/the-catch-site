@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
+import { event, figures, computed, timeline, listFigures, orderTable } from "../../../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
+const state = publishedState().events.get("event-california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots");
+if (!state) throw new Error("Missing publication selection: event-california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/california-voter-list/">California's voter list</a><span>October 19, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">California's voter list &middot; October 19, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="ca9-motion-filed" /><Cite c="constructive-denial" /><Cite c="carter-hearing" /><Cite c="county-letters" /><Cite c="county-letters-58" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#the-order">What would happen to a voter on the list</a></li>
+          <li><a href="#the-list">How the list was made</a></li>
+          <li><a href="#why-now">Why the list came in October</a></li>
+          <li><a href="#the-28">The 28 charged</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">The Justice Department asked a federal appeals court on Oct. 23 to order California to set aside the mail ballots of people on a list of about {figures.listed} voters it calls likely noncitizens, while it appeals.<Cite c="ca9-motion-filed" /> DOJ had asked the trial judge, David O. Carter of the federal court in Los Angeles, to act by Election Day, Nov. 3.<Cite c="doj-asked-nov-3" /> Carter set a hearing for Oct. 27, a week before that.<Cite c="carter-hearing" /> DOJ then asked him to rule by noon the following day, and when he did not, it appealed, saying his silence amounted to a denial.<Cite c="doj-asked-noon" /><Cite c="constructive-denial" /></p>
+        <p data-layer="narrative">The Ninth Circuit gave California and the county until noon on Oct. 24 to answer.<Cite c="ca9-deadline" /> California filed its answer that day, arguing that the appeals court has no jurisdiction because Carter has issued no order.<Cite c="ca-ca9-opp" /> Los Angeles County asked the court the same day to dismiss the appeal for lack of jurisdiction.<Cite c="logan-ca9-mtd" /> A three-judge panel will hear arguments on Sunday, Oct. 25.<Cite c="ca9-argument" /> DOJ's suit, filed Oct. 15 against California, its secretary of state, Shirley Weber, and the Los Angeles County registrar, Dean Logan, argues that because federal law bars noncitizens from voting, counting their ballots violates the Constitution's Supremacy Clause.<Cite c="suit-filed" /></p>
+        <p data-layer="narrative">Also on Oct. 23, the U.S. attorney's office in Los Angeles sent county election officials lists of voters in their counties that it calls likely noncitizens. The letters ask officials to commit within 48 hours to working with DOJ and the Department of Homeland Security to sort the citizens from the noncitizens, to send identifying records including Social Security numbers, and to set aside the ballot of anyone whose citizenship cannot be verified.<Cite c="county-letters" /> Versions of the letters went to all 58 California counties, Reuters reported, citing the New York Times.<Cite c="county-letters-58" /> Bill Essayli, the first assistant U.S. attorney in Los Angeles, warned that any official who knowingly processes a noncitizen's ballot "is opening themselves to legal jeopardy."<Cite c="essayli-jeopardy" /><Cite c="essayli-verified" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Essayli calls the {figures.listed} verified. The officials who built the list swore to "highly likely" and "reasonably believe."<Cite c="essayli-verified" /><Cite c="list-highly-likely" /></h3>
+              <p data-layer="narrative">Essayli wrote on X on Oct. 16 that the {figures.listed} were noncitizens "confirmed by a review of federal databases," and on Oct. 20 that "we verified that at least 20,000 noncitizens are receiving ballots."<Cite c="essayli-verified" /> Fox News put "verified" in its Oct. 22 headline on its interview with him: "DOJ has verified 20,000 noncitizens on California voter rolls, federal prosecutor says."<Cite c="fox-headline" /></p>
+              <QuoteCard speaker="Bill Essayli, first assistant U.S. attorney in Los Angeles" when="October 20, 2026" where="Post on X">
+                <p>"we verified that at least 20,000 noncitizens are receiving ballots."<Cite c="essayli-verified" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">The two officials who built the list, Nicolas Bartell of USCIS and Eric McLoughlin of Homeland Security Investigations, put it differently in the sworn declarations DOJ filed in court on Oct. 21. McLoughlin wrote that he "reasonably believe[s]" the people on it are noncitizens. Bartell called them "highly likely to be noncitizen aliens."<Cite c="list-highly-likely" /></p>
+              <QuoteCard speaker="Nicolas Bartell, USCIS" when="October 21, 2026" where="Sworn declaration filed in court">
+                <p>The people on the list are "highly likely to be noncitizen aliens."<Cite c="list-highly-likely" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">Essayli has used those softer words too. About three hours after his "confirmed" post on Oct. 16, he wrote of "suspected noncitizens," and on Oct. 23 of "who we believe are noncitizens."<Cite c="essayli-suspected" /><Cite c="essayli-believe" /> Trent McCotter, the acting deputy attorney general, said on Oct. 19 that some names on the list may turn out to be citizens: "we're not perfect."<Cite c="mccotter-not-perfect" /> USCIS itself found about {figures.discrepancies} records on the list with what it called minor data discrepancies.<Cite c="discrepancies-189" /></p>
+            </li>
+            <li>
+              <h3>More than half the names Los Angeles checked were never mailed a ballot</h3>
+              <p data-layer="narrative">DOJ describes everyone on the list as having been sent a mail ballot. The HSI official who built the list swore that he believes they got ballots because, as he understands California law, the state mails one to every registered voter.<Cite c="roster-aug-2025" /> When Los Angeles County checked {figures.sample} of the names against its own records, most had canceled or inactive registrations and had been mailed nothing.<Cite c="la-sample-112" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>The {figures.sample} names Los Angeles County checked</strong><span>Whether the county had mailed each person a ballot for the Nov. 3 election.</span></figcaption>
+                <KpiStrip kpis={[{ value: String(figures.notMailed), label: "mailed no ballot: registration canceled or inactive" }, { value: String(figures.mailed), label: "mailed a ballot" }]} />
+                <p class="chart-source">From the declarations of the county's Monica Flores and Aman Bhullar, filed Oct. 20.<Cite c="la-sample-112" /></p>
+              </figure>
+              <p data-layer="narrative">The county also counted how many in its sample have a U.S. birthplace on their records, which it calls "strong evidence of citizenship." It gives two figures: {figures.usBornReporting} percent of the records that meaningfully reported a birthplace, and {figures.usBornAll} percent of all the sampled voters.<Cite c="la-sample-birthplace" /></p>
+              <div data-layer="fact">
+              <OutletCheck outlet="ABC News" folded date="October 21, 2026" claim={`wrote in a subhead: "Of the 200 individuals in the sample, 40% say they were born in the U.S."`} verdict={`Neither of the county's figures is 40 percent of all 200.`} chip="misread" status="warn"><Cite c="abc-subhead" /><Cite c="la-sample-birthplace" /></OutletCheck>
+              </div>
+              <p data-layer="narrative">The county took its {figures.sample} from the {figures.inLa} listed names with Los Angeles addresses, and its declarations do not say how it chose them; by its count, about {figures.outsideLa} people on the list are registered in other counties.<Cite c="la-7035" /><Cite c="la-sample-112" /><Cite c="logan-county-line" /> DOJ says it asked the county for the specific people it calls wrongly listed and has had no answer.<Cite c="doj-asked-sample" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="the-order">
+        <h2 data-layer="fact">What would happen to a voter on the list</h2>
+        <p data-layer="narrative">DOJ's proposed order, filed Oct. 21, would have California and Los Angeles County set aside every mail ballot from a person on the list until that person's citizenship was confirmed by something more than their own sworn registration.<Cite c="proposed-order" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What DOJ's proposed order would do</strong></figcaption>
+          <DataTable columns={["", "DOJ's proposed order"]} rows={orderTable} />
+          <p class="chart-source">From DOJ's proposed order, filed Oct. 21.<Cite c="proposed-order" /></p>
+        </figure>
+        <p data-layer="narrative">Los Angeles County objects that a voter whose ballot is held would get no notice, no way to respond, no standard for the decision and no deadline, and that once the count closes, a mistake may be impossible to undo.<Cite c="logan-due-process" /></p>
+        <h3 data-layer="fact">DOJ's case</h3>
+        <p data-layer="narrative">DOJ's case for acting now is that an illegal vote, once counted and mixed with lawful ones, cannot be pulled out later, because a ballot taken out of its envelope can no longer be tied to the voter. Los Angeles County had processed {figures.processed} mail ballots by Oct. 20.<Cite c="doj-harm" /><Cite c="ballots-untraceable" /> DOJ says it cannot investigate thousands of people itself before the election ends, and it calls the {figures.listed} the floor: the smallest possible count of potential noncitizen voters in California.<Cite c="doj-cannot-investigate" /><Cite c="doj-floor" /></p>
+        <h3 data-layer="fact">California's case</h3>
+        <p data-layer="narrative">California answers that the order would break the National Voter Registration Act's ban on systematically removing voters in the 90 days before a federal election, and that the harm would fall on naturalized citizens.<Cite c="ca-nvra" /> State law already lets a mail ballot be challenged on citizenship, it says, and the California regulation DOJ cites for setting ballots aside covers recounts.<Cite c="ca-state-challenge" /> It adds that nothing in the order promises a held ballot will be counted in time.<Cite c="ca-no-guarantee" /> Aman Bhullar, who runs the county's election systems, told the court that changing those systems now to hold the listed ballots could also flag voters who are not on the list.<Cite c="bhullar-flag-others" /></p>
+      </section>
+
+      <section id="the-list">
+        <h2 data-layer="fact">How the list was made</h2>
+        <p data-layer="narrative">According to the two declarations, the list began with a copy of California's voter roll, current as of August 2025, that the fraud office at USCIS received from Homeland Security Investigations on or around May 8, 2026.<Cite c="may-8-roll" /><Cite c="roster-aug-2025" /> USCIS added data from a commercial data platform, matched the voters to immigration records, screened out people whom State Department or Social Security records showed to be citizens or dead, and had analysts review the matches by hand; HSI then narrowed it further.<Cite c="method" /> USCIS told the court that a match of that kind can produce data that is "incomplete, outdated, or mismatched."<Cite c="data-incomplete" /></p>
+        <p data-layer="narrative">By DOJ's account, the review cut a preliminary list of over {figures.preliminary} names to just over {figures.listed}.<Cite c="funnel-175000" /> The list is far smaller than what DHS first told California. In July, Homeland Security Secretary Markwayne Mullin wrote that there "may be as many as 190,832" noncitizens on the state's rolls, and that the name, birth date, address and Social Security number of {figures.julyFourPoint} registrants matched a noncitizen's records.<Cite c="mullin-190832" /><Cite c="funnel-81336" /> DHS says the larger figure was a pool still awaiting review and the {figures.listed} is the part reviewed so far. No filing says how many of the {figures.listed} were among the {figures.julyFourPoint} close matches.<Cite c="dhs-subset" /><Cite c="funnel-81336" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The list's numbers, by who reported them</strong><span>DOJ's account of the cut, Los Angeles County's check of its share, and DHS's July letter, which no filing connects to the list.</span></figcaption>
+          <DataTable columns={["DOJ's account", "What it counts"]} rows={listFigures.doj} />
+          <DataTable columns={["Los Angeles County's check", "What it counts"]} rows={listFigures.la} />
+          <DataTable columns={["DHS's July letter", "What it counts"]} rows={listFigures.july} />
+          <p class="chart-source">From DOJ's emergency application, the county's declarations and Mullin's July 16 letter.<Cite c="funnel-175000" /><Cite c="la-7035" /><Cite c="la-sample-112" /><Cite c="mullin-190832" /><Cite c="funnel-81336" /></p>
+        </figure>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why the list came in October</h2>
+        <p data-layer="narrative">Weber asked DHS on July 23 to explain its method and say where its copy of the voter roll came from.<Cite c="weber-july" /> DOJ delivered its list on Oct. 13, after the Oct. 5 date by which California counties mail a ballot to every active voter. In his letter, McCotter gave California 48 hours to set aside the ballots of anyone whose citizenship it could not confirm.<Cite c="oct13-demand" /><Cite c="ballots-mailed" /></p>
+        <p data-layer="narrative">Asked why DOJ did not act sooner, Essayli told Fox News that investigators did not know exactly which voters would receive ballots until the ballots were sent.<Cite c="essayli-timing" /> By DOJ's own declarations, USCIS had the roll behind the list on or around May 8, {computed.daysRollToList} days before DOJ delivered the list on Oct. 13 and months before counties mailed ballots on Oct. 5.<Cite c="may-8-roll" /><Cite c="oct13-demand" /><Cite c="ballots-mailed" /></p>
+        <p data-layer="narrative">Reuters reported in September, from a Sept. 1 DHS email, that the White House had pushed agencies to speed their review of state voter rolls. In the email, a DHS official offered to take slow progress to the White House chief of staff, and hundreds of USCIS fraud officers had been moved onto the work from August.<Cite c="reuters-pressure" /> President Trump's March 31 executive order on elections, the one that also launched the Postal Service's <a href="/events/mail-voting/2026-09-14-court-denies-stay/">mail-ballot rule</a>, tells the attorney general to prioritize investigating and, as appropriate, prosecuting officials who issue ballots to people not eligible to vote.<Cite c="eo-prosecute-officials" /> Sean Morales Doyle of the Brennan Center for Justice says the suit looks like groundwork for challenging results after Election Day.<Cite c="critics-groundwork" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the voter roll to the appeal</strong><span>Dated steps in the filings, letters and DOJ's releases, 2026.</span></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="the-28">
+        <h2 data-layer="fact">The 28 charged</h2>
+        <p data-layer="narrative">On Oct. 19 DOJ charged {figures.charged} green-card holders, all of them on the list.<Cite c="charged-28" /> Prosecutors accuse 22 of them of voting in at least one election, five of registering without voting and one of casting a provisional ballot in 2020. Six are charged with voting as a noncitizen, a misdemeanor, and most of the rest with felonies that include lying on naturalization papers.<Cite c="charges-mix" /> Essayli says the arrests "prove our list is accurate."<Cite c="essayli-arrests-prove" /> One of the accused, Omar Muñoz, is charged with registering in 2019 and voting in four elections. He says he never registered or voted, and that someone once used his name and Social Security number.<Cite c="munoz-denies" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The Ninth Circuit panel hears arguments by video at 1 p.m. on Oct. 25, and DOJ must answer the county's motion to dismiss by 9 a.m. that day.<Cite c="ca9-argument" /><Cite c="logan-ca9-mtd" /> If the court grants DOJ's request, California asks it to pause its order first, so the state can ask a larger panel of the court's judges to review it.<Cite c="ca-ca9-opp" /> Carter's own hearing on DOJ's request is Oct. 27, and he has said he will rule promptly after.<Cite c="carter-hearing" /> He also has DOJ's fallback request for a temporary order lasting up to 30 days or until the Ninth Circuit rules.<Cite c="doj-30-day" /> California argues that a hearing set before DOJ's own date cannot be a denial, and it has asked Carter to throw out the suit, saying the federal government has no right to bring it.<Cite c="ca-no-denial" /><Cite c="ca-mtd" /> Two pairs of groups, SIREN and Mi Familia en Acción, and LULAC and the NAACP, have asked to join Carter's case as defendants, and DOJ has objected to both requests.<Cite c="intervention-pending" /></p>
+        <p data-layer="narrative">A separate suit by an immigrant-rights group and a California voter, aimed at the federal demands to withhold or set aside ballots, has a hearing Oct. 30 in Washington.<Cite c="trujillo-hearing" /> Los Angeles County must submit its final results by Dec. 3, and the state certifies the election by Dec. 11.<Cite c="certification" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}
