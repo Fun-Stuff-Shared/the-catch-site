@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1",
-// unless they cite different claims, which Just the facts lists separately.
+// Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1".
 // The merged anchor keeps its first passage and carries the others in data-passages for the
-// evidence reader. A citation that directly follows another, with only space between, is
+// evidence reader; when the citations name different claims, data-claim lists every one,
+// space-separated, for Just the facts and the claim checks. A citation that directly follows another, with only space between, is
 // marked src-ref-more so the comma separating them is drawn there and nowhere else (a CSS
 // sibling selector cannot see the sentence text between two citations). Runs on the built
 // pages after astro build.
@@ -10,7 +10,7 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const root = process.argv[2] || join(process.cwd(), "dist", "events");
-const sup = /<sup class="src-ref"><a href="#src-(\d+)"([^>]*)>\d+<\/a><\/sup>/g;
+const sup = /<sup class="src-ref(?: src-ref-more)?"><a href="#src-(\d+)"([^>]*)>\d+<\/a><\/sup>/g;
 const attr = (s, name) => (s.match(new RegExp(`\\s${name}="([^"]*)"`)) || [])[1];
 
 export function mergeCites(html) {
@@ -20,18 +20,21 @@ export function mergeCites(html) {
   while (i < parts.length) {
     const first = parts[i];
     const passages = [attr(first[2], "data-passage")].filter(Boolean);
+    const claims = [attr(first[2], "data-claim")].filter(Boolean);
     let j = i + 1;
-    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index)) && parts[j][1] === first[1]
-      && attr(parts[j][2], "data-claim") === attr(first[2], "data-claim")) {
+    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index)) && parts[j][1] === first[1]) {
       const p = attr(parts[j][2], "data-passage");
       if (p && !passages.includes(p)) passages.push(p);
+      const c = attr(parts[j][2], "data-claim");
+      if (c && !claims.includes(c)) claims.push(c);
       j++;
     }
     out += html.slice(cursor, first.index);
     if (j === i + 1) out += first[0];
     else {
       const extra = passages.length > 1 ? ` data-passages="${passages.slice(1).join("&#10;")}"` : "";
-      out += first[0].replace(/(<a href="#src-\d+"[^>]*)>/, (m, open) => `${open}${extra}>`);
+      const anchor = claims.length > 1 ? first[0].replace(/ data-claim="[^"]*"/, ` data-claim="${claims.join(" ")}"`) : first[0];
+      out += anchor.replace(/(<a href="#src-\d+"[^>]*)>/, (m, open) => `${open}${extra}>`);
     }
     cursor = parts[j - 1].index + parts[j - 1][0].length;
     i = j;
@@ -45,7 +48,8 @@ function markRuns(html) {
   parts.forEach((part, k) => {
     const prev = parts[k - 1];
     const joined = prev && /^\s*$/.test(html.slice(prev.index + prev[0].length, part.index));
-    out += html.slice(cursor, part.index) + (joined ? part[0].replace('<sup class="src-ref">', '<sup class="src-ref src-ref-more">') : part[0]);
+    const plain = part[0].replace('<sup class="src-ref src-ref-more">', '<sup class="src-ref">');
+    out += html.slice(cursor, part.index) + (joined ? plain.replace('<sup class="src-ref">', '<sup class="src-ref src-ref-more">') : plain);
     cursor = part.index + part[0].length;
   });
   return out + html.slice(cursor);
