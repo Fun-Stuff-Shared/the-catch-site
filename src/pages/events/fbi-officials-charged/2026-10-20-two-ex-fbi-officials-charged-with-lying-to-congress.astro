@@ -58,7 +58,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <thead><tr><th>What she told the committee</th><th>What prosecutors say was true</th></tr></thead>
               <tbody>
                 {sideBySide.floris.map(([said, truth]) => (
-                  <tr><td>{short(said)}<Cite c={said} /></td><td>{short(truth)}<Cite c={truth} /></td></tr>
+                  <tr><td>{short(said)}<Cite c={said} /></td><td><em>Alleged:</em> {short(truth)}<Cite c={truth} /></td></tr>
                 ))}
               </tbody>
             </table>
@@ -71,13 +71,13 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <thead><tr><th>What he told the committee</th><th>What prosecutors say was true</th></tr></thead>
               <tbody>
                 {sideBySide.benavides.map(([said, truth]) => (
-                  <tr><td>{short(said)}<Cite c={said} /></td><td>{short(truth)}<Cite c={truth} /></td></tr>
+                  <tr><td>{short(said)}<Cite c={said} /></td><td><em>Alleged:</em> {short(truth)}<Cite c={truth} /></td></tr>
                 ))}
               </tbody>
             </table>
           </div>
         </figure>
-        <p data-layer="narrative">Some answers were hedged. Floris said there was no discussion of Hunter Biden at the task force "At least not with me," and Benavides, while saying he knew the Post story only from his interview preparation, said he had been aware in 2020 of "a Hunter Biden laptop narrative" in public.<Cite c="floris-said-no-discussion" /><Cite c="benavides-said-prep" /> The law covers only false answers that are materially false and given knowingly and willfully.<Cite c="1001-materially-false" /> To show the answers mattered, the sworn statement says a committee staffer who sat in on both interviews told the FBI the answers were materially untrue and kept the committee from follow-up interviews and subpoenas, and it says the two answered as they did to hide the task force's role.<Cite c="staffer-materiality" /><Cite c="purpose-conceal" /></p>
+        <p data-layer="narrative">Two answers carried qualifiers. Floris said there was no discussion of Hunter Biden at the task force "At least not with me," and Benavides, while saying he knew the Post story only from his interview preparation, said he had been aware in 2020 of "a Hunter Biden laptop narrative" in public.<Cite c="floris-said-no-discussion" /><Cite c="benavides-said-prep" /> The law reaches a false answer only if it is material and made knowingly and willfully.<Cite c="1001-materially-false" /> To show the answers mattered, the sworn statement says a committee staffer who sat in on both interviews told the FBI the answers were materially untrue and kept the committee from follow-up interviews and subpoenas, and it says the two answered as they did to hide the task force's role.<Cite c="staffer-materiality" /><Cite c="purpose-conceal" /></p>
       </section>
 
       <section id="why-now">
@@ -102,7 +102,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h3 data-layer="fact">The defendants</h3>
         <p data-layer="narrative">Floris's lawyers say she was accused "on the say-so of politicians, not on the facts," and that "It's no coincidence the government is filing these nonsense charges now, years later, on the eve of an election." Benavides's lawyers call the case "baseless criminal charges against him in a transparently political complaint," and his lawyer Ron Safer told the court the government "has had the information about this for years."<Cite c="floris-lawyers" /><Cite c="benavides-lawyers" /></p>
         <h3 data-layer="fact">What the filing says about the task force's role</h3>
-        <p data-layer="narrative">The government's own filing describes what the taskforce did in the Hunter Biden cases: oversight, keeping information straight between FBI offices and briefing bureau leaders.<Cite c="hb-investigations" /> When officials including Floris and Benavides briefed the case team in August 2020, the filing says, the investigators raised no objection to the task force's proposed briefings and asked the task force to run intelligence checks on Hunter Biden and his companies.<Cite c="case-team-asked" /></p>
+        <p data-layer="narrative">The government's own filing describes what the task force did in the Hunter Biden cases: oversight, keeping information straight between FBI offices and briefing bureau leaders.<Cite c="hb-investigations" /> When officials including Floris and Benavides briefed the case team in August 2020, the filing says, the investigators raised no objection to the task force's proposed briefings and asked the task force to run intelligence checks on Hunter Biden and his companies.<Cite c="case-team-asked" /></p>
         <h3 data-layer="fact">In Congress</h3>
         <p data-layer="narrative">Sen. Chuck Grassley, whom the two briefed in 2020, said the charges show "accountability efforts in action"; Rep. Jim Himes, the top Democrat on the House Intelligence Committee, called them an attack on career intelligence officials.<Cite c="grassley-reaction" /><Cite c="himes-reaction" /></p>
       </section>
