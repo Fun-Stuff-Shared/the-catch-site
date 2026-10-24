@@ -7,7 +7,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 1. On Oct. 20, a polling firm called Wedgewood Polls admitted that most of the midterm polls it had published since June were made up, hours after FiftyPlusOne asked it to answer evidence that its data was fake.
 2. Its numbers reached readers through The New York Times's poll pages, the Silver Bulletin and Decision Desk HQ averages, and stories in USA Today, The Hill and Newsweek; nearly all have been pulled or flagged, but USA Today, which says it removed every reference, still cites one in a live blog, and one poll site still counts the fake Mississippi poll in its average.
 3. Wedgewood says it was an experiment to show that nobody checks; the people who caught it say they did check, that it lied to them, and that the "experiment" came out only when it was caught, as the same excuse did in a Los Angeles case in August.
-4. Fox News headlined it a "pollster boosting far-left candidates," and the Washington Examiner that its reports "consistently" favored left-leaning candidates, but Nate Silver's comparison of 16 of its general-election polls with his averages found 10 more Democratic and 6 more Republican, about 0.6 points toward Democrats on average, with better-than-consensus numbers for progressives in three races.
+4. Fox News headlined it a "pollster boosting far-left candidates," which holds in part: its primary polls showed far-left candidates leading, mostly as real polls did, and Nate Silver found its general-election numbers better than the consensus for progressives in three races; but the Washington Examiner's "consistently" left-leaning does not hold, since Silver's comparison of 16 general-election polls with his averages found 10 more Democratic and 6 more Republican.
 5. Removing the polls barely moved any forecast; Kalshi and the betting newsletter BETINT both trace one sharp market move to Wedgewood's July 21 Wisconsin poll, which put David Crowley at 9% before he won the primary, and Mallory McMorrow says its June Michigan poll, together with another poll and outside spending, sank her Senate campaign.
 
 ## The plan
@@ -103,6 +103,23 @@ Question 2: Which way did the numbers lean?
 | The Hong primary lead was in line with real polls [nyt-wisconsin-polls-2026-10-24: "The only nonpartisan survey since the field settled showed Ms. Hong in the lead by more than 20 percentage points"] | | C | C |
 
 Survives: B, and C in the sense of no meaningful systematic lean across general-election toplines. Ruled out: A (Silver's own table and words; the Texas rows); C as "no outliers" (Michigan and Maine). The table cannot rule out selective manipulation of particular primaries or candidates; it holds only general-election polls with the eventual nominees, some compared with averages computed after the fact, so the primary polls (Michigan June, Wisconsin July, Maine July's Platner question) are tested separately in questions 1 and 3. The result turns on Silver's table, his own comparison against his own averages; it would change if the averages were mismeasured, which no one has claimed.
+
+Question 2b: Did its primary polls boost far-left candidates (Fox's headline and body, which are about primaries)?
+- A. Yes: its primary polls showed far-left candidates stronger than real polls did (Fox).
+- B. They showed far-left candidates leading, as real polls did; no boost beyond the consensus.
+- C. They hurt a progressive or helped a moderate.
+
+| Evidence | A | B | C |
+|---|---|---|---|
+| Michigan, June 25-28: El-Sayed 46, Stevens 39; real polls with McMorrow in the race had El-Sayed ahead "mostly in the single digits"; several real polls later had him up by double digits; he won by one point [poliagg-wedgewood: "June 28, 2026Michigan · Senate · 2026Abdul El-Sayed 46 · Haley Stevens 39 · Mallory McMorrow 9· n=353"] [nyt-el-sayed-polls-2026-10-24: "Even when Ms. McMorrow was still in the race, Dr. El-Sayed led in most polls, though his leads at that point were mostly in the single digits."] [pbs-2026-10-21: "Several polls showed El-Sayed with a comfortable double-digit lead over moderate Haley Stevens."] | I | C | |
+| Wisconsin, July 4-6: Hong 30 when real polls had her lower [poliagg-wedgewood: "July 6, 2026Wisconsin · Governor · 2026Francesca Hong 30 · Mandela Barnes 28 · Sara Rodriguez 19· n=413"] [urbanmilwaukee-2026-08-19: "Wedgewood did a poll showing Hong at 30% at a time when legitimate polls had her with far less of the vote."] | C | I | |
+| Wisconsin, July 21: Hong 38, Crowley 9; Marquette's last poll, late July: Hong 38, Crowley 7 [poliagg-wedgewood: "July 21, 2026Wisconsin · Governor · 2026Francesca Hong 38 · Mandela Barnes 30 · David Crowley 9· n=505"] [urbanmilwaukee-2026-08-19: "had Hong at 38% and Milwaukee County Executive David Crowley at just 7%"] | I | C | |
+| McMorrow at 9 with 6% undecided (question 3) | | | C, against a Democrat Fox's sources do not call far-left |
+| Silver's progressive outliers are general-election matchups (Jackson v. Collins, El-Sayed v. Rogers, Hong v. Tiffany), not primaries [silver-fake-polls-2026-10-22: "So there is something of a pattern here of Wedgewood showing better numbers for notably progressive candidates than the consensus, although it’s hard to know how much to make of three races."] | C, for general elections | | |
+
+Survives: B for the primaries, with one early Wisconsin poll for A; A for three general-election matchups (Silver). Fox's headline holds partly: Wedgewood did show far-left candidates as strong contenders in primaries, but so did the real polls, and the boost beyond the consensus that Silver found is in general-election matchups. Fox is not a catch; the page states what each test shows. Maine's July poll is not a primary poll (Platner had won the June primary) and is left out of this test; the record does not label Platner's ideology. Nebraska is not used as balance anywhere.
+
+The Examiner's "consistently reflected a bias toward left-leaning candidates" fails both tests: in the primaries Wedgewood's numbers mostly tracked real polls, and in the general elections Silver's count is 10 more Democratic, 6 more Republican, with both Texas races more Republican than the average. That is the framing catch, beside USA Today.
 
 Question 3: Did the fake polls change anything?
 - A. They moved forecasts and averages (Wedgewood's "integrated into major polling averages").
