@@ -190,8 +190,7 @@ class Blocks(HTMLParser):
             self.main += 1
         live = self.main and not self.skip and not self.done
         if tag == "a" and a.get("data-passage") is not None and live and self.open:
-            if a.get("data-claim"):
-                self.open[-1]["claims"].append(a["data-claim"])
+            self.open[-1]["claims"].extend((a.get("data-claim") or "").split())
             if len(self.stack) > 1 and self.stack[-2][0] == "sup":
                 self.skip += 1
                 self.stack[-1] = (tag, True)

@@ -11,11 +11,12 @@ test("consecutive citations of one record render once and keep every passage", (
   assert.match(out, /data-passages="two"/);
 });
 
-test("citations of one record for two different claims stay separate", () => {
+test("citations of one record for different claims render once and name every claim", () => {
   const claimed = (n, passage, c) => cite(n, passage).replace(' aria-label', ` data-claim="${c}" aria-label`);
   const out = mergeCites(`Sentence.${claimed(1, "one", "a")}${claimed(1, "two", "b")}${claimed(1, "three", "b")}`);
-  assert.equal((out.match(/<sup/g) || []).length, 2);
-  assert.match(out, /data-claim="b"[^>]*data-passages="three"/);
+  assert.equal((out.match(/<sup/g) || []).length, 1);
+  assert.match(out, /data-claim="a b"/);
+  assert.match(out, /data-passages="two&#10;three"/);
 });
 
 test("whitespace between the citations does not stop the merge", () => {
@@ -32,6 +33,12 @@ test("citations of different records stay separate and in order", () => {
 test("a passage containing a dollar figure is carried verbatim", () => {
   const out = mergeCites(`Sentence.${cite(5, "half of the work")}${cite(5, "shortfall of $124M")}`);
   assert.match(out, /data-passages="shortfall of \$124M"/);
+});
+
+test("running again on a merged page folds what is left and changes nothing else", () => {
+  const claimed = (n, passage, c) => cite(n, passage).replace(' aria-label', ` data-claim="${c}" aria-label`);
+  const once = mergeCites(`One.${claimed(1, "x", "a")}${claimed(2, "y", "b")} Two.${claimed(3, "z", "c")}`);
+  assert.equal(mergeCites(once), once);
 });
 
 test("a page without citations is returned unchanged", () => {

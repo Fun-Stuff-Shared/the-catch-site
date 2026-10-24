@@ -49,10 +49,9 @@ function openTags(html) {
 export function ledgerClaims(inner, says) {
   const byClaim = new Map();
   for (const [sup] of inner.matchAll(/<sup class="src-ref[^"]*">[\s\S]*?<\/sup>/g)) {
-    const id = (sup.match(/data-claim="([^"]*)"/) || [])[1];
-    if (!id) continue;
+    const ids = ((sup.match(/data-claim="([^"]*)"/) || [])[1] ?? "").split(" ").filter(Boolean);
     const plain = sup.replace('class="src-ref src-ref-more"', 'class="src-ref"');
-    byClaim.set(id, [...(byClaim.get(id) ?? []), plain]);
+    for (const id of ids) byClaim.set(id, [...(byClaim.get(id) ?? []), plain]);
   }
   const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return [...byClaim].map(([id, sups]) =>

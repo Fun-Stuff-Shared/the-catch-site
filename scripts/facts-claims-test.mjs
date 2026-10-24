@@ -49,3 +49,12 @@ test("on a ledger page Just the facts lists each cited claim in the ledger's wor
   assert.equal((list.match(/<li>/g) || []).length, 2);
   assert.doesNotMatch(list, /maybe/);
 });
+
+test("a citation merged across claims lists each of its claims", () => {
+  const sup = cite(1).replace(' data-passage', ' data-claim="a b" data-passage');
+  const says = { a: "The suit was filed.", b: "It names the state." };
+  const page = `<main id="story-root"><p data-layer="narrative">The suit names the state.${sup}</p></main>`;
+  const list = factsClaims(page, (id) => says[id]).split('data-layer="claims">')[1];
+  assert.equal((list.match(/<li>/g) || []).length, 2);
+  assert.match(list, /^<li>The suit was filed\.<sup[^]*<li>It names the state\.<sup/);
+});
