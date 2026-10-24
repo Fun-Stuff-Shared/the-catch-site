@@ -31,20 +31,22 @@ The missing-verb row fits every answer and moves to Background held; it qualifie
 - B. The department acted on its own legal duty under the NVRA (the complaint; DOJ spokesperson Audrey Cook). If true: a duty named in the complaint; no instruction from the president. Should not find: the president claiming the order.
 - C. Sullivan's campaign or allies sought it (Peltola: "using his DC allies"; Peltola spokesperson: "designed by Senator Dan Sullivan’s allies"). If true: a request from the campaign. Should not find: the campaign disclaiming it.
 - D. One step in a wider federal effort to be positioned to contest midterm results (Schumer, Democrats; AP: "first step to block the results of a midterm election"). If true: parallel suits asking courts to stop counting or certifying; officials leaving certification intervention open. Should not find: the suit confined to facts unique to Alaska with no parallel.
-- E. The calendar: the courts put Daniel J. Sullivan on the ballot, the race tightened, and this was the last moment before votes (the plain answer). If true: filing tracks the court rulings and the start of voting. Should not find: a filing months after the rulings and after voting began.
+- E1. The calendar: the courts put Daniel J. Sullivan on the ballot and this was the last moment before votes (the plain answer). If true: filing tracks the court rulings and the start of voting. Should not find: a filing months after the rulings and after voting began.
+- E2. The race moved toward Peltola, so a narrow loss became a live prospect (the plain answer; the complaint's own ¶34 cites close polls). If true: a dated shift in the race before Oct. 22. Not exclusive of A: Trump's order says who, not why then.
 - Defendant: Alaska, through the Department of Law, which represents the division and the lieutenant governor, says the complaint "is being reviewed" and gives no comment on the litigation [beacon-sues-2026-10-23: "The Department of Law represents the division and lieutenant governor in court."] [beacon-sues-2026-10-23: "The complaint is being reviewed, and we do not have any comment on the litigation"]. Its director made the finding the suit relies on [beecher-letter-2026-06-15: "I am de-certifying your candidacy for United States Senator."], and the suit leaves the state to decide whether to defend the hold [adn-weigh-in-2026-10-23: "The lawsuit sets up the state of Alaska, which previously argued that the Petersburg Sullivan’s candidacy was not in good faith, to choose whether to defend the federal government’s calls not to certify election results"].
 
-| Evidence | A | B | C | D | E |
-|---|---|---|---|---|---|
-| Trump, Oct. 23 [cnn-sues-2026-10-23: "Well, I’m the one that said ‘do it,’"] | C | I: the president says he ordered it | C, Trump being Sullivan's ally | C | |
-| Trump, Oct. 21 post [ap-sues-block-dem-win-2026-10-23: "We are looking at powerful legal options to remove the fraudulent Daniel J. Sullivan Jr. from the Ballot"]; filing the next day [doj-complaint-2026-10-22: "RESPECTFULLY SUBMITTED this October 22, 2026, in Anchorage, Alaska."] | C | | | C | |
-| Trump at the Oct. 13 rally, of the U.S. attorney [beacon-sues-2026-10-23: "I said I hope you’re going to make sure there’s no cheating, because any place you have rank(ed) choice, you have damn bad cheating."] | C | | | | |
-| Sullivan campaign: "no prior knowledge of this lawsuit and no role in it" [adn-weigh-in-2026-10-23: "no prior knowledge of this lawsuit and no role in it"] | | | I, for the campaign; denial is testimony | | |
-| State courts ruled June 26 and June 29 [doj-complaint-2026-10-22: "The Alaska Supreme Court summarily affirmed"]; early voting already under way at filing [adn-weigh-in-2026-10-23: "With early voting already underway in the Nov. 3 general election"] | | | | | I: filed four months after the rulings, after voting began |
-| California suit Oct. 15 asks a court to bar counting about 20,000 ballots [latimes-california-2026-10-15: "asking a federal court to immediately bar the state from counting ballots from about 20,000 voters statewide"] | | | | C | |
-| Blanche, Oct. 22, declines to rule out acting on certification [fox-blanche-2026-10-22: "Of course, I’m not going to say that,"] | | | | C | |
+| Evidence | A | B | C | D | E1 | E2 |
+|---|---|---|---|---|---|---|
+| Trump, Oct. 23 [cnn-sues-2026-10-23: "Well, I’m the one that said ‘do it,’"] | C | I: the president says he ordered it | C, Trump being Sullivan's ally | C | | |
+| Trump, Oct. 21 post [ap-sues-block-dem-win-2026-10-23: "We are looking at powerful legal options to remove the fraudulent Daniel J. Sullivan Jr. from the Ballot"]; filing the next day [doj-complaint-2026-10-22: "RESPECTFULLY SUBMITTED this October 22, 2026, in Anchorage, Alaska."] | C | | | C | | |
+| Trump at the Oct. 13 rally, of the U.S. attorney [beacon-sues-2026-10-23: "I said I hope you’re going to make sure there’s no cheating, because any place you have rank(ed) choice, you have damn bad cheating."] | C | | | | | |
+| Sullivan campaign: "no prior knowledge of this lawsuit and no role in it" [adn-weigh-in-2026-10-23: "no prior knowledge of this lawsuit and no role in it"] | | | I, for the campaign; denial is testimony | | | |
+| State courts ruled June 26 and June 29 [doj-complaint-2026-10-22: "The Alaska Supreme Court summarily affirmed"]; early voting already under way at filing [adn-weigh-in-2026-10-23: "With early voting already underway in the Nov. 3 general election"] | | | | | I: filed four months after the rulings, after voting began | |
+| Oct. 6: Sabato's Crystal Ball moved the race from toss-up to leans Democrat [hill-sabato-leans-dem-2026-10-06: "The outlet moved the race to “Leans Democrat” from “Toss-up,”"]; the complaint cites polls within one or two points [doj-complaint-2026-10-22: "Many polls indicate that the race between Senator Sullivan and Peltola will be within one or two percentage points"] | C | | | C | | C |
+| California suit Oct. 15 asks a court to bar counting about 20,000 ballots [latimes-california-2026-10-15: "asking a federal court to immediately bar the state from counting ballots from about 20,000 voters statewide"] | | | | C | | |
+| Blanche, Oct. 22, declines to rule out acting on certification [fox-blanche-2026-10-22: "Of course, I’m not going to say that,"] | | | | C | | |
 
-Survives: A (on Trump's own word), D (as its holders' reading; the two suits and Blanche's remarks fit it but fit A too). Ruled out: B as "on its own", by the president's statement; E by the dates. C is unproven for the campaign itself: Peltola offers no record of a request and the campaign denies one, so it stays her claim; in the sense "his allies in Washington", it is A. The department's legal reason survives as its stated reason, not as the cause. The result turns on Trump's Oct. 23 remark, quoted the same way by CNN, NBC, ABC, the Beacon and ADN; it would change if the department or the White House said otherwise.
+Survives: A (who: on Trump's own word), E2 (why then: the race had moved toward Peltola, dated Oct. 6, though no actor gives it as the reason), D (as its holders' reading; the two suits and Blanche's remarks fit it but fit A too). A and E2 are not exclusive. Ruled out: B as "on its own", by the president's statement; E1 by the dates. C is unproven for the campaign itself: Peltola offers no record of a request and the campaign denies one, so it stays her claim; in the sense "his allies in Washington", it is A. No actor states why the suit came on Oct. 22: the page gives the department's stated reason, attributed, the dated chain, and no cause of its own. The result turns on Trump's Oct. 23 remark, quoted the same way by CNN, NBC, ABC, the Beacon and ADN; it would change if the department or the White House said otherwise.
 
 ### Question 3: is the confusion the suit alleges what the ballot and the primary show?
 
@@ -54,14 +56,16 @@ Survives: A (on Trump's own word), D (as its holders' reading; the two suits and
 
 | Evidence | A | B | C |
 |---|---|---|---|
-| Complaint's own ballot image lists "Sullivan, Daniel J. Jr." with no party, the senator as "(Registered Republican) Incumbent" [doj-complaint-sample-ballot-2026-10-22: "Sullivan, Dan S. (Registered Republican) Incumbent"] | I: only two of the four are listed as Republicans, not three | C | C |
+| The ballot lists "Sullivan, Daniel J. Jr." with no party and the senator as "(Registered Republican) Incumbent" [doj-complaint-sample-ballot-2026-10-22: "Sullivan, Dan S. (Registered Republican) Incumbent"] | weighs against: the ballot marks which Sullivan is the Republican incumbent | C | C |
+| Why the ballot shows no party for him: the Supreme Court left the listing to the division [juneau-independent-sample-ballot-2026-06-30: "This matter is remanded for the Division of Elections to determine…how appellee Sullivan shall be listed as a candidate within the confines of existing Alaska ballot design law."], which printed "nothing at all" though he had filed as a Republican and was registered as one [ktuu-missing-label-2026-06-30: "But when ballots began printing at noon Tuesday, “nothing at all” is what appears next to his name."] [ktuu-missing-label-2026-06-30: "Sullivan is publicly listed as a Republican on state elections division records."] | C on "three Republican candidates" by filing and registration | C | C |
+| The August primary used the same listing [ktuu-missing-label-2026-06-30: "the only candidate on the U.S. Senate primary ballot without one"] | | C | C |
 | Ballot instruction [doj-complaint-sample-ballot-2026-10-22: "Rank as many or few candidates as you like."] | | C | C |
-| Primary: his support rose where Peltola ran strongest [anchorage-press-primary-2026-08-28: "his candidacy had the opposite effect"] | I, for the claim that his votes come mainly from the senator's supporters | C | C |
-| The senator's campaign, after the primary [anchorage-press-primary-2026-08-28: "Mary Peltola's voters put Daniel J. Sullivan Jr. on the November ballot."] | I, from the senator's own camp | C | C |
-| Analysis caveat [anchorage-press-primary-2026-08-28: "Those results, however, don’t entirely rule out that some conservative voters still could have supported Petersburg Sullivan unintentionally."] | | | C |
-| Superior court: the director's finding of intent to confuse not supported [beacon-sues-2026-10-23: "The director’s assertion that Mr. Sullivan seeks to confuse or misguide voters is not supported by a preponderance of evidence,"] | I, for the bad-faith premise as found in court | C | C |
+| Primary: his support rose where Peltola ran strongest [anchorage-press-primary-2026-08-28: "his candidacy had the opposite effect"] | weighs against: points the other way | C | C |
+| The senator's campaign, after the primary [anchorage-press-primary-2026-08-28: "Mary Peltola's voters put Daniel J. Sullivan Jr. on the November ballot."] | weighs against, from the senator's own camp | C | C |
+| Analysis caveat [anchorage-press-primary-2026-08-28: "Those results, however, don’t entirely rule out that some conservative voters still could have supported Petersburg Sullivan unintentionally."] | C | | C |
+| Superior court: the director's finding of intent to confuse not supported [beacon-sues-2026-10-23: "The director’s assertion that Mr. Sullivan seeks to confuse or misguide voters is not supported by a preponderance of evidence,"] | weighs against the bad-faith premise | C | C |
 
-Survives: B and C. Ruled out: A as the complaint states it (three Republicans; a candidacy whose votes come from the senator's supporters). The result rests on the ballot image, read from the complaint itself, and on the Anchorage Press precinct analysis, which is an outlet's analysis with its own caveat; it would change if November's precinct returns showed the opposite pattern.
+Nothing rules A out: confusion in November cannot be disproved before November, and the analysis keeps its own caveat. The complaint's confusion claim is unsupported by the evidence it gives (a ballot that marks the incumbent), and the primary pattern, under the same listing, points the other way; it stays the department's claim, attributed, and a dispute the court decides. "Three Republican candidates" is not a complaint error: he filed as a Republican and was registered as one at least through July; outlets differ on his registration now [beacon-sues-2026-10-23: "He’s now listed as “undeclared,” an independent, in state voter files."] [cnn-sues-2026-10-23: "Daniel J. Sullivan is a registered Republican"]. The ballot shows two of the four as Republicans because the division chose to print him with none. That stays off the catch.
 
 ### Question 4: does the law the suit cites give a court this power?
 
@@ -79,15 +83,17 @@ Neither is ruled out by the record: whether a purpose clause can be enforced is 
 
 ## The story
 
-The Justice Department has asked a federal judge to stop Alaska certifying its Senate result if Sen. Dan S. Sullivan loses by less than the votes cast for a second Dan Sullivan, until an investigation finds whom those voters meant.
+The Justice Department has asked a federal judge to stop Alaska certifying its Senate result if Sen. Dan S. Sullivan loses but would have won had every vote for a second Dan Sullivan been his, until an investigation finds whom those voters meant.
 The suit is against Alaska's own election officials, who tried to remove the second Sullivan in June before the state's courts put him back on the ballot.
-President Trump says he ordered it, a day after promising "powerful legal options" against the other Sullivan in a race polling within a couple of points.
-The department says a voter-registration law's aim of protecting "the integrity of the electoral process" requires the hold; Murkowski, Peltola and election lawyers say that clause gives no such power and the ballot already tells the men apart.
-The suit only matters if the count, finished by ranked-choice tabulation from Nov. 18, leaves Sullivan behind by less than the other Sullivan's vote.
+President Trump says he ordered it, a day after promising "powerful legal options" against the other Sullivan, in a race that had moved toward Peltola.
+The department says a voter-registration law's aim of protecting "the integrity of the electoral process" requires the hold; Murkowski, Peltola and election lawyers say that clause gives no such power and the ballot already tells the two men apart.
+The suit matters only if the ranked-choice count, due Nov. 18 with certification targeted for Nov. 25, leaves Sullivan short in a way the other Sullivan's votes would reverse.
 
 ## The plan
 
-Headline: Trump says he ordered DOJ's suit to stop Alaska certifying a narrow Sullivan loss
+Headline: Trump says he ordered suit to halt Alaska's Senate certification if a namesake's votes could flip it
+
+Why this headline: it carries what the suit asks (halt certification, not the vote), on what condition (the counterfactual in ¶42: the other Sullivan's votes, given to the senator, would have changed the winner), and on whose instruction (Trump's own claim, so "says he ordered"). "Narrow loss" was dropped: under ranked choice the test is not a margin comparison (review r1).
 
 What happened (sentence 1, with sentence 3's instruction because the headline carries it):
 1. What does the suit ask? A declaration, and an order barring certification of a defined result pending an investigation [doj-complaint-2026-10-22: "Declare that certification of any result that may be impacted by voter confusion"] [doj-complaint-2026-10-22: "pending an investigation to determine whether votes cast for Daniel J. Sullivan were meant to be cast for Senator Sullivan"].
@@ -98,8 +104,8 @@ What happened (sentence 1, with sentence 3's instruction because the headline ca
 
 The Catch (Q1: A and C ruled out; widely carried): opens on "if Sullivan loses"
 1. What the coverage said: block certification if the Republican loses (Reuters, WSJ), unless Sullivan wins (NBC), if the Democrat wins (UPI), if Daniel J. remains on the ballot (AP, PBS), block the vote (Times headline).
-2. What the complaint says: two conditions, ¶42; the Post and the Times's body got it ("narrowly loses").
-3. Why it matters: a clear Peltola win is outside it; the close finish the polls point to is inside it [doj-complaint-2026-10-22: "Many polls indicate that the race between Senator Sullivan and Peltola will be within one or two percentage points"]; the primary share was 2.5% [doj-complaint-2026-10-22: "Daniel J. Sullivan received 2.5% of the vote"].
+2. What the complaint says: two conditions, ¶42; the Post and the Times's body come closest ("narrowly loses"), CBS's body states it.
+3. Why it matters: a Peltola win the other Sullivan's votes could not reverse is outside it; a close finish of the kind the complaint says polls show is likely inside it [doj-complaint-2026-10-22: "Many polls indicate that the race between Senator Sullivan and Peltola will be within one or two percentage points"]; he had 2.5% in the primary [doj-complaint-2026-10-22: "Daniel J. Sullivan received 2.5% of the vote"]. The test is not a margin comparison: it reruns the ranked-choice rounds with his ballots given to the senator.
 4. The test counts every vote he gets as the senator's, whatever the voter meant; the investigation is what would sort intent [doj-complaint-2026-10-22: "pending an investigation to determine whether votes cast for Daniel J. Sullivan were meant to be cast for Senator Sullivan"], and ballots are secret [ap-explainer-2026-10-23: "given that votes are supposed to be confidential"].
 
 How the test works (visual: the ballot and a worked condition): opens on "what would trigger it?"
@@ -122,11 +128,11 @@ The sides (sentence 4): opens on "can the department do this?"
 1. The department's case in its words [doj-complaint-2026-10-22: "Congress has tasked state officials with “protect[ing] the integrity of the electoral process,” 52 U.S.C. § 20501(b)(3)"].
 2. The statute's words [nvra-52-usc-20501: "The purposes of this chapter are"].
 3. The other side: Murkowski [murkowski-x-2026-10-23: "the State of Alaska has already handled this by clearly distinguishing the candidates on this year’s ballot"]; Muller [elb-muller-2026-10-23: "This language places no “duties” on a state outside of those enumerated in the chapter."]; Morley: real concern, wrong suit [votebeat-sues-2026-10-23: "It arises from real, valid, recognized concerns about a bad-faith sham candidate, potential confusion, and effective disenfranchisement,"].
-4. Is the confusion real? The complaint's "three Republican candidates" against its own ballot; the primary's pattern [anchorage-press-primary-2026-08-28: "his candidacy had the opposite effect"], which the senator's campaign read the same way.
+4. Is the confusion real? The department alleges it; the ballot the division designed marks the senator as the Republican incumbent and prints the other with no party, on both ballots [ktuu-missing-label-2026-06-30: "the only candidate on the U.S. Senate primary ballot without one"]; under that design the primary vote for him rose where Peltola was strongest [anchorage-press-primary-2026-08-28: "his candidacy had the opposite effect"], which the senator's campaign read the same way, though the analysis cannot rule out some mistaken votes. A dispute for the court, not a finding.
 5. Peltola: Sullivan's allies [peltola-x-2026-10-23: "Now he’s using his DC allies"]; the campaign denies a role [adn-weigh-in-2026-10-23: "no prior knowledge of this lawsuit and no role in it"].
 
 What happens next (sentence 5):
-1. Nov. 3 election; first-choice results, then tabulation Nov. 18.
+1. Nov. 3 election; first-choice results, then tabulation Nov. 18; review from Nov. 19, target certification Nov. 25 [alaska-election-calendar-2026: "11/25/2026 Target date to certify the General Election"].
 2. The suit is mooted by a Sullivan win or a Peltola win wider than the test [ap-sues-block-dem-win-2026-10-23: "The lawsuit could well be mooted by a wide Democratic victory or a narrow Republican one"].
 3. Alaska's answer, Peltola's possible intervention [beacon-sues-2026-10-23: "implied that the campaign may intervene in the lawsuit"].
 4. If the margin is inside the test, the Senate judges its own elections [votebeat-sues-2026-10-23: "which is the sole judge of its members’ elections and returns"].
@@ -142,6 +148,11 @@ Background held:
 - Ranked choice repeal on the same ballot [anchorage-pbs-rcv-2026-09-20: "Alaska voters will once again be asked to decide whether to keep or scrap their election method this fall."]; it governs this election either way.
 - Ranked votes do not all follow party [alaska-current-2026-10-23: "about a quarter of voters for one Republican candidate ranked a Democrat second"].
 - Troops and immigration agents at polling places: a later story in the series.
+- Primary fourth place: David Leslie, a Democrat, withdrew, which put Heikes on the ballot [beacon-sues-2026-10-23: "The fourth-place finisher, Democratic candidate David Leslie, withdrew from the election, an act that promoted Heikes into the final four with 1.1% of the vote."]. The complaint gives Heikes 1.1%; review r1 says Leslie had 1.1% and Heikes about 1.0%, citing Ballotpedia; the official results site is unreachable. The page gives no share for Heikes or Leslie.
+- The division's choice to print Daniel J. Sullivan with no party, and justices' doubts about it at argument [ktuu-missing-label-2026-06-30: "would appear to be a little outside its discretion"]; on the page as one clause, the rest held.
+- The Republican case against the candidacy (name, party switch, website, consultant) is in Beecher's letter [beecher-letter-2026-06-15: "A political consultant you have admitted is working with your campaign is a known longtime supporter of Democratic candidates"]; FEC complaints by the NRSC (June) and Americans for Public Trust (Sept. 8) [lead: https://alaskapublic.org/news/politics/2026-09-09/new-campaign-complaint-alleges-petersburg-dan-sullivan-is-getting-undue-help, review r1; not admitted, allegations unresolved and not this story].
+- The 2024 repeal of ranked choice failed narrowly [anchorage-pbs-rcv-2026-09-20: "two years ago narrowly rejected an effort to repeal it"]; the 743-vote recount figure is a lead from review r1.
+- California escalation after Oct. 15 (TRO request, Ninth Circuit, county demands on Oct. 23) [lead: https://apnews.com/article/0a70161dba31a833fa75507a7484853b, review r1; for the series' California story].
 
 ## The event
 
@@ -189,7 +200,7 @@ On Oct. 22, 2026, the United States sued the State of Alaska, its elections dire
 
 | Figure | What it counts | As of | Source |
 |---|---|---|---|
-| 49.5% / 41.4% / 2.5% / 1.1% | Primary shares: Peltola, Sullivan, Daniel J. Sullivan, Heikes | Aug. 18 primary | [doj-complaint-2026-10-22: "Peltola received 49.5% of the vote, Senator Sullivan received 41.4% of the vote, Daniel J. Sullivan received 2.5% of the vote, and Republican Gerald Heikes received 1.1% of the vote."] |
+| 49.5% / 41.4% / 2.5% | Primary shares: Peltola, Sullivan, Daniel J. Sullivan | Aug. 18 primary | [doj-complaint-2026-10-22: "Peltola received 49.5% of the vote, Senator Sullivan received 41.4% of the vote, Daniel J. Sullivan received 2.5% of the vote"] [beacon-sues-2026-10-23: "Peltola finished first, with 49.5% of the vote, followed by Dan S. Sullivan with 41.4% and Dan J. Sullivan with 2.5%."] |
 | 68,726 / 4,107 | Primary votes, the senator and Daniel J. Sullivan | final primary count | [cnn-sues-2026-10-23: "In the primary, the incumbent Dan Sullivan won 68,726 votes. Daniel J. Sullivan won 4,107."] |
 | "one or two percentage points" | the complaint's account of polls | Oct. 22 | [doj-complaint-2026-10-22: "Many polls indicate that the race between Senator Sullivan and Peltola will be within one or two percentage points"] |
 | about 20,000 | California ballots DOJ asked a court to bar from counting | Oct. 15 | [latimes-california-2026-10-15: "asking a federal court to immediately bar the state from counting ballots from about 20,000 voters statewide"] |
@@ -201,7 +212,7 @@ On Oct. 22, 2026, the United States sued the State of Alaska, its elections dire
 - CBS: filed Friday [cbs-trump-admin-sues-2026-10-23: "In their court filing Friday"]; the docket says Oct. 22, Thursday. The Times corrected the same error [nyt-block-vote-2026-10-23: "It was on Thursday, not Friday."].
 - CNBC: primary "on Aug. 28", Sullivan "41.1%" [cnbc-sues-2026-10-23: "Peltola got 49.5% in the primary, and Sen. Sullivan received 41.1%."]; the date is the complaint's error, the share is CNBC's.
 - UPI: "Alaska's Republican primary" [upi-doj-alaska-2026-10-23: "Alaska's Republican primary was held in August."]; it was the all-candidate top-four primary [nyt-primary-results-2026-08-18: "A crowd of candidates piled into the nonpartisan primary, including Dan J. Sullivan, a former teacher."].
-- The complaint itself: "three Republican candidates" [doj-complaint-2026-10-22: "how to rank the three Republican candidates"] against its own ballot image, and "August 28" against Aug. 18.
+- The complaint itself: "August 28" against Aug. 18. Its "three Republican candidates" [doj-complaint-2026-10-22: "how to rank the three Republican candidates"] is not an error: Daniel J. Sullivan filed as a Republican and was registered as one through at least July [ktuu-missing-label-2026-06-30: "Sullivan is publicly listed as a Republican on state elections division records."]; the ballot shows two because the division printed him with none.
 
 ## What is next
 
