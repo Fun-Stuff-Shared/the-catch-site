@@ -12,7 +12,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 
 ## The plan
 
-Headline: Fake pollster's numbers barely leaned left, and USA Today still cites one
+Headline: Pollster admits faking midterm polls, and USA Today still cites one
 
 What happened (sentence 1; the event, what it means, where it stands):
 1. What is Wedgewood? A firm whose X account opened in June 2026 and that published polls of Senate and governor races from June to October [pbs-2026-10-21: "The organization's X account was opened in June 2026."] [nyt-fake-polls-2026-10-21: "The pollster had been releasing surveys since June"].
