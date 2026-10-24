@@ -242,7 +242,8 @@ Agreed: the interviews took place on the dates given, with the warning given; th
 - The full transcripts: the affidavit cites them as Exhibits 1 and 2; no public copy found (House Judiciary site, CourtListener docket, web search).
 - The government's reason for the timing: none in the release, the affidavit, the seal motion, or the hearing coverage. Searched all admitted records for "timing", "election", "why".
 - Who FBI Employees 1 and 2 are: unnamed in the affidavit. A name visible in the paragraph 18 message image is not used.
-- Whether the defendants were released on conditions: no order on the docket as of Oct. 23.
+- Release conditions: no order on the docket as of Oct. 23; the Post reports both were released after the first appearance [wapo-2026-10-23: "They were released Friday morning after self-surrendering and making a brief initial appearance before a federal magistrate judge."].
+- The judge's materiality question: Faruqui asked whether the answers had a material effect [wapo-2026-10-23: "whether the alleged false statements had a material effect on the congressional investigation"].
 - Docket checked through the CourtListener API on Oct. 24; last entry Oct. 23.
 
 ## Leads not admitted
@@ -250,9 +251,7 @@ Agreed: the interviews took place on the dates given, with the warning given; th
 - https://x.com/EricLDaugh/status/2113755709284266016: video of Trump's remarks; the Just the News report is admitted instead.
 - https://x.com/CourthouseNews/status/2113706603111481652: "up to eight years"; contradicted by 1001's five-year maximum (the eight-year terms apply to terrorism and sex offenses, not alleged here).
 - National Review's "indictment" wording (from the grok sweep, not opened): contradicted by the docket, which holds a complaint.
-- https://www.washingtonpost.com/national-security/2026/10/23/former-fbi-officials-charged-with-lying-congress-about-hunter-biden-laptop-inquiry/: captured body is truncated by the paywall; CBS and NBC carry the same titles.
 - https://www.wsj.com/politics/policy/former-fbi-officials-charged-with-lying-to-congress-about-hunter-biden-probe-3974fdd1: paywalled, body not held.
-- Review r2, the Washington Post's report that Judge Faruqui also questioned materiality on Oct. 23 and that both defendants were released (https://www.washingtonpost.com/national-security/2026/10/23/former-fbi-officials-charged-with-lying-congress-about-hunter-biden-laptop-inquiry/): the captured body, direct and through the archive, is a 628-byte paywall stub, and no admitted courtroom report (CBS, AP, NYT, NPR) mentions materiality or release. Unverified; for the human to check. Release status stays an unknown.
 - Review r2, the declassified Round River spreadsheet and ODNI slides (https://justthenews.com/sites/default/files/2026-08/Defensive%20Briefing%20Spreadsheet.pdf, https://justthenews.com/sites/default/files/2026-08/DELTA%20Project%20Slide%20Deck.pdf): they deepen Round River, which is not charged; not admitted.
 - Review r2, the 2024 inspector general report, raised again: declined as in r1; the task force's 2017 founding is in the USA Today record.
 - Review r1, the Sept. 23, 2020 Senate minority report (https://www.hsgac.senate.gov/wp-content/uploads/imo/media/doc/200923_FullReport_PetersHSGACWydenFinance.pdf): real, and it shows the Grassley-Johnson report was contested the day it came out; declined because the charge concerns whether Floris knew of the report, not its merits.
