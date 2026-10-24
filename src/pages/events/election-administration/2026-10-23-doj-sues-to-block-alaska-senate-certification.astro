@@ -19,7 +19,7 @@ const ballot = ballotRows.map((r) => [r.name, r.label || "nothing"]);
 const steps = [
   { text: "Sen. Dan S. Sullivan loses the election.", c: "suit-condition" },
   { text: "Had every vote for Daniel J. Sullivan been cast for the senator, with the ranked-choice rounds played out on that basis, the senator would have won.", c: "suit-condition" },
-  { text: "For a result where both hold, the suit asks the court to declare that certifying such a result would violate the state's duties under the voter-registration law, and to keep the state from certifying it pending an investigation of whether votes for Daniel J. Sullivan were meant for the senator.", c: "suit-relief" },
+  { text: "If both hold, the suit asks the court to declare that certifying such a result would violate the state's duties under the voter-registration law, and to keep the state from certifying it pending an investigation of whether votes for Daniel J. Sullivan were meant for the senator.", c: ["suit-condition", "suit-relief"] },
 ];
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
@@ -63,6 +63,13 @@ const steps = [
             <li>
               <h3>What happens if the test is met</h3>
               <p data-layer="narrative">The test counts every vote for Daniel J. Sullivan as the senator's, whatever the voter meant.<Cite c="suit-condition" /> Meeting it would not make the senator the winner. It would keep Alaska from certifying while an investigation looks into whether those votes were meant for him, and the department also asks for any further procedures the court finds necessary to determine what the result would have been without Daniel J. Sullivan on the ballot.<Cite c="suit-relief" /><Cite c="suit-further-relief" /> The complaint does not say how that investigation would work, when votes are supposed to be confidential.<Cite c="suit-no-method" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>The test, and what meeting it would bring</strong></figcaption>
+                <ol class="decision-timeline" style="padding-left:0;list-style:none" aria-label="The two conditions of the complaint's test and the relief it seeks when both hold">
+                  {steps.map((s, i) => <li class="dt-row" data-layer="fact"><span class="dt-date">{["Condition 1", "Condition 2", "Then"][i]}</span><span class="dt-body">{s.text}{[s.c].flat().map((c) => <Cite c={c} />)}</span></li>)}
+                </ol>
+                <p class="chart-source">From the complaint's definition of a result that may be affected by confusion and the relief it seeks.<Cite c="suit-condition" /><Cite c="suit-relief" /></p>
+              </figure>
             </li>
             <li>
               <h3>How close it would have to be</h3>
@@ -81,13 +88,6 @@ const steps = [
           <p class="chart-source">From the sample ballot filed with the complaint.<Cite c="ballot-listing" /></p>
         </figure>
         <p data-layer="narrative">The department says the listing is not enough. Its complaint alleges that some of the senator's supporters will likely vote for Daniel J. Sullivan by mistake, and that others will be confused about how to rank "the three Republican candidates" and may not rank the senator at all.<Cite c="doj-confusion-claim" /> The primary used the same listing, and there the senator won {primary.senatorVotes} votes to Daniel J. Sullivan's {primary.danielJVotes}.<Cite c="division-chose-listing" /><Cite c="primary-votes" /> An Anchorage Press analysis of those returns found his support rose where Peltola ran strongest, a sign that many of his votes came from her side; it could not rule out that some conservatives picked him by mistake.<Cite c="primary-pattern" /> The senator's own campaign read the primary the same way: "Mary Peltola's voters put Daniel J. Sullivan Jr. on the November ballot."<Cite c="sullivan-camp-peltola-voters" /></p>
-        <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>The test, and what meeting it would bring</strong></figcaption>
-          <ol class="decision-timeline" style="padding-left:0;list-style:none" aria-label="The three steps of the test the complaint asks the court to apply">
-            {steps.map((s, i) => <li class="dt-row" data-layer="fact"><span class="dt-date">{["Condition 1", "Condition 2", "Then"][i]}</span><span class="dt-body">{s.text}<Cite c={s.c} /></span></li>)}
-          </ol>
-          <p class="chart-source">From the complaint's definition of a result that may be affected by confusion and the relief it seeks.<Cite c="suit-condition" /><Cite c="suit-relief" /></p>
-        </figure>
       </section>
 
       <section id="how-it-got-here">
