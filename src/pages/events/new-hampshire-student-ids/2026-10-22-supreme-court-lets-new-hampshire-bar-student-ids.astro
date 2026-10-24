@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import DateLine from "../../../components/story/DateLine.astro";
+import KpiStrip from "../../../components/story/KpiStrip.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { readPublishedState, eventPath } from "../../../lib/state.mjs";
+import { claim } from "../../../lib/claims.mjs";
+import { event, computed, chronology, timing, figures } from "../../../data/new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids.mjs";
+const story = "new-hampshire-student-ids--2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids";
+const short = (id) => claim(story, id).short;
+const state = readPublishedState().events.get("event-new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
+if (!state) throw new Error("Missing publication selection: event-new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/new-hampshire-student-ids/">New Hampshire student IDs</a><span>October 22, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Election administration &middot; October 22, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="injunction-terms" /><Cite c="stay-granted" /><Cite c="state-reverts-oct23" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#why-now">From the law to the lawsuit</a></li>
+          <li><a href="#student">A student at the polls on November 3</a></li>
+          <li><a href="#why-the-court">Why the Court stepped in</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On October 22 the Supreme Court paused a federal judge's order that had let New Hampshire election officials consider a student ID, along with other evidence, when deciding who a voter is.<Cite c="stay-granted" /><Cite c="injunction-terms" /> Justice Ketanji Brown Jackson dissented.<Cite c="jackson-only-noted-dissent" /></p>
+        <p data-layer="narrative" data-answer="2">On election day, then, a student ID will not prove who a voter is.<Cite c="state-reverts-oct23" /> A registered student without a driver's license, passport or other listed ID can still get a ballot if an election official who personally knows them vouches for them.<Cite c="registered-route-personal-knowledge" /> A student registering that day can let officials confirm their identity from New Hampshire motor-vehicle or vital records.<Cite c="state-records-route" /></p>
+        <p data-layer="narrative" data-answer="3">The order gives one reason: lower federal courts should ordinarily not change election rules on the eve of an election, and the judge, Joseph Laplante, issued his order {computed.daysInjunctionToElection} days before the November 3 election.<Cite c="order-ground-purcell" /><Cite c="order-32-days" /><Cite c="hb323-not-enjoined" /> It does not decide whether the state's rules are lawful.<Cite c="order-no-merits" /></p>
+        <p data-layer="narrative">A state law, HB 323, took student IDs off the list of accepted IDs on June 2, and no court has blocked it. What Laplante blocked was a further instruction from Secretary of State David Scanlan: that officials could not consider a student ID even alongside other evidence.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /></p>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">From the law to the lawsuit</h2>
+        <p data-layer="narrative">State Rep. Donald McFarlane, who sponsored HB 323, has said he did so because colleges do not have the same controls as government agencies when they issue ID cards.<Cite c="sponsor-reason" /> Scanlan's office then announced that from June 2 student IDs could not be used as proof of ID to register, to request an absentee ballot or to check in to vote.<Cite c="april-directive" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the law to the Supreme Court</strong></figcaption>
+          <DecisionTimeline entries={chronology} heading="What happened" />
+        </figure>
+        <p data-layer="narrative">The Coalition for Open Democracy sued in August, arguing that the law unconstitutionally burdens the right to vote and intentionally discriminates against young voters.<Cite c="suit-filed" /><Cite c="suit-grounds" /> Laplante refused to change anything for the September primary, saying it was too close to the election.<Cite c="primary-no-relief" /> For the general election he split the case in two. On the law, he has sided with the state so far: at this early stage, he found that the state's interests in counting only eligible votes and running orderly elections were weighty enough to justify taking student IDs off the list.<Cite c="hb323-justified-preliminary" /> On Scanlan's instruction, he found the state had offered no reason specific to barring student IDs even as backup evidence, and Scanlan's own deputy testified he saw no factual reason a student ID could not be reasonable evidence of who a voter is.<Cite c="no-interest-for-directive" /> Laplante refused to pause his order, and so did the federal appeals court above him, the First Circuit, by 2 to 1.<Cite c="lower-courts-refused" /></p>
+      </section>
+
+      <section id="student">
+        <h2 data-layer="fact">A student at the polls on November 3</h2>
+        <p data-layer="narrative">A college student may register to vote in the New Hampshire town where they live while at school.<Cite c="student-domicile" /> Any voter who shows a driver's license from any state, a non-driver ID or voter ID card, a U.S. military ID, or a U.S. passport gets a ballot without further checks.<Cite c="accepted-ids" /> A student without one of those has different routes depending on whether they registered before election day.</p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>A student without a listed ID, on November 3</strong></figcaption>
+          <div class="routes">
+            <div class="route">
+              <p class="route-title">Already registered</p>
+              <dl>
+                <dt>Student ID</dt><dd>Not accepted<Cite c="state-reverts-oct23" /></dd>
+                <dt>An official who knows them</dt><dd>Can vouch, by signing a statement<Cite c="registered-route-personal-knowledge" /></dd>
+                <dt>State records</dt><dd>Supervisors may use the state's registration data to confirm identity<Cite c="state-records-route" /></dd>
+                <dt>Other documents</dt><dd>{short("other-evidence-unsettled")}<Cite c="other-evidence-unsettled" /></dd>
+                <dt>An affidavit</dt><dd>Cannot prove identity<Cite c="affidavit-history" /></dd>
+                <dt>Free state voter ID</dt><dd>{short("voter-id-mailed")}<Cite c="voter-id-mailed" /></dd>
+              </dl>
+            </div>
+            <div class="route">
+              <p class="route-title">Registering that day</p>
+              <dl>
+                <dt>Student ID</dt><dd>{short("registering-proof")}<Cite c="registering-proof" /></dd>
+                <dt>An official who knows them</dt><dd>No longer counts, since Sept. 8<Cite c="no-vouching-at-registration" /></dd>
+                <dt>State records</dt><dd>Motor-vehicle or vital records can confirm identity, with permission<Cite c="state-records-route" /></dd>
+                <dt>Other documents</dt><dd>{short("registering-open-question")}<Cite c="registering-open-question" /></dd>
+                <dt>An affidavit</dt><dd>{short("citizenship-affidavit")}<Cite c="citizenship-affidavit" /></dd>
+                <dt>Free state voter ID</dt><dd>{short("voter-id-mailed")}<Cite c="voter-id-mailed" /></dd>
+              </dl>
+            </div>
+          </div>
+        </figure>
+        <p data-layer="narrative">The state itself has given two answers on whether a registered voter can use other documents. In the record it gave the district court, it said supervisors at the polls apply the same catch-all standard as at registration; in its motion for a pause, it argued that only the listed IDs count. The Secretary's election-day page now names only personal knowledge.<Cite c="other-evidence-unsettled" /><Cite c="registering-open-question" /> A registered voter a supervisor turns away can appeal to the superior court that day.<Cite c="appeal-same-day" /></p>
+        <p data-layer="narrative">A sworn affidavit cannot fill the gap. A 2024 law, HB 1569, ended the affidavits voters had used, including to prove identity, and a federal judge's ruling in May 2026, in an earlier case the same group helped bring, restored only the affidavit for citizenship and the one for answering a challenge.<Cite c="affidavit-history" /> A student voting absentee instead must send a copy of a listed ID or have the application notarized.<Cite c="absentee-same-list" /></p>
+        <p data-layer="narrative">The challengers' expert estimated that about {computed.youngLackingId} eligible New Hampshire residents aged 18 to 24, {computed.youngLackingIdShare} percent of that age group, lack one of the listed IDs, but he did not estimate how many of them hold a student ID.<Cite c="young-lacking-id" /> The court received no evidence of how many young voters relied on student IDs before the law.<Cite c="no-reliance-count" /> In the September primary, run under the same rules, the deputy secretary of state received {computed.primaryTurnedAwayWord} reports of students turned away.<Cite c="primary-turned-away" /><Cite c="state-reverts-oct23" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <KpiStrip kpis={figures} />
+          <p class="chart-source">From the district court record.<Cite c="young-lacking-id" /><Cite c="primary-turned-away" /><Cite c="no-reliance-count" /></p>
+        </figure>
+      </section>
+
+      <section id="why-the-court">
+        <h2 data-layer="fact">Why the Court stepped in</h2>
+        <p data-layer="narrative">New Hampshire argued that re-educating local election officials and the public in the weeks before the election was practically impossible, and that even if the judge read state law reasonably, he should have waited.<Cite c="state-purcell-case" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How close to the election each order came</strong></figcaption>
+          <DateLine points={timing.points} intervals={timing.intervals} highlight={timing.highlight} ariaLabel={`Laplante's order came ${computed.daysInjunctionToElection} days before the November 3 election, and the Supreme Court's pause ${computed.daysStayToElection} days before it`} />
+          <p class="chart-source">Dates from the orders and the election calendar.<Cite c="order-32-days" /><Cite c="stay-granted" /></p>
+        </figure>
+        <p data-layer="narrative">The order cites a September ruling in which the Court stopped lower courts from changing <a href="/events/missouri-house-map/2026-09-03-map-never-became-law/">Missouri's congressional map</a> after ballots had already been printed and mailed and voting had begun.<Cite c="onder-precedent" /> Laplante had found that general-election voting in New Hampshire had not meaningfully begun when he ruled.<Cite c="voting-not-begun-oct2" /></p>
+        <p data-layer="narrative">Jackson's dissent recalls Purcell v. Gonzalez, a 2006 case in which, as she summarizes it, the Court said courts weighing a late election order must consider that the order itself could cause voter confusion or give people a reason to stay away from the polls.<Cite c="jackson-only-noted-dissent" /><Cite c="purcell-explained" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <h3 data-layer="fact">The state</h3>
+        <p data-layer="narrative">Scanlan says the legislature meant to end student IDs for voting: HB 323 took them off the list, and a later bill, SB 223, made the law say that only the listed IDs satisfy the requirement, so a student ID cannot count even as reasonable evidence of identity.<Cite c="hb323-what-it-did" /><Cite c="state-case" /> In its October 15 application to the Supreme Court for a stay, filed by the attorney general's office, the state argued that state courts, not federal ones, have the final word on state law, and that a federal judge's late reading should not override the one the Secretary had published for more than five months. It also warned that voters could misread the judge's ruling.<Cite c="state-federal-reading" /></p>
+        <QuoteCard speaker="New Hampshire attorney general's office" when="October 15, 2026" where="Application for a stay, Supreme Court">
+          <p>"there is substantial risk that voters could show up at the polls with only their student IDs in-hand."<Cite c="state-federal-reading" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The challengers</h3>
+        <p data-layer="narrative">The Coalition for Open Democracy says no statute was ever blocked: Laplante's order only held the Secretary to what the legislature's statutes say. Before the Court ruled, it warned what a pause would do to rules the state had already changed once that month.<Cite c="coalition-case" /><Cite c="guidance-updated-oct" /></p>
+        <QuoteCard speaker="Coalition for Open Democracy" when="October 19, 2026" where="Opposition to the stay, Supreme Court">
+          <p>"It would reverse the rules for a second time in a month."<Cite c="coalition-case" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The dissent</h3>
+        <p data-layer="narrative">Jackson wrote that Laplante's order left the state election rule untouched. It required only that the Secretary make his public statements match the letter of state law, rather than summarize it in a way that could mislead voters and local election workers, and she would not have disturbed it.<Cite c="jackson-reasoning" /></p>
+        <QuoteCard speaker="Justice Ketanji Brown Jackson" when="October 22, 2026" where="Dissent from the order">
+          <p>"the District Court’s injunction was reasonably designed to address alleged misinformation, not to change the law."<Cite c="jackson-reasoning" /></p>
+        </QuoteCard>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The Court did not approve a new ban</h3>
+              <p data-layer="narrative">Several of the first reports told the order as the Court approving a ban on student IDs. CBS News headlined that the Supreme Court "rules New Hampshire can ban use of student IDs," and UPI wrote that the Court "ruled."<Cite c="catch-cbs-rules" /> New Hampshire's attorney general said the order reinstated the state's law, and the Union Leader wrote that the Court found it inappropriate for lower courts to "set aside state laws."<Cite c="catch-reinstating-law" /> No court set the law aside. HB 323 has kept student IDs off the accepted list since June 2 through every ruling in the case, and what the Court's order brings back is Scanlan's instruction that a student ID cannot count even as backup evidence.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /></p>
+            </li>
+            <li>
+              <h3>USA Today's "unsuccessful" and the 8-1 post</h3>
+              <p data-layer="narrative">USA Today called the state's emergency appeal "unsuccessful"; the Court granted it.<Cite c="catch-usatoday-unsuccessful" /> A post on X called the order 8-1, but the order records only Jackson's dissent and no other justice's vote.<Cite c="catch-8-1" /></p>
+            </li>
+            <li>
+              <h3>UPI on Scanlan's guidance</h3>
+              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots, which Laplante ruled went further than the law." It was the other way around. Scanlan's guidance said student IDs could not be used, and what Laplante found went further than the law was that bar on considering them even as backup evidence.<Cite c="catch-upi-reversed" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The Supreme Court's pause holds while the First Circuit hears the state's appeal. If either side then asks the Supreme Court to take the case, the pause ends the day the Court says no, or lasts until it rules.<Cite c="stay-duration" /> In the district court, the case is expected to go to a full trial on whether the law and the instruction are lawful, with no date yet in the court record.<Cite c="trial-ahead" /></p>
+        <p data-layer="narrative">Before any trial, the case could turn on whether the Coalition has the right to sue at all. Laplante assumed it does without deciding the point. He relied on the same court's ruling on that question in the earlier affidavit case, which is itself on appeal.<Cite c="standing-open" /> The state says it will run radio and television announcements telling voters that student IDs cannot be used to prove identity.<Cite c="state-ads" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}
+
+<style>
+  .routes { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .route { border: 1px solid var(--rule); border-top: 2px solid var(--rule-strong); padding: 0.9rem 1rem; font-family: var(--sans); }
+  .route-title { font-weight: 700; color: var(--ink); margin: 0 0 0.5rem; }
+  .route dl { margin: 0; }
+  .route dt { font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); margin-top: 0.7rem; }
+  .route dd { margin: 0.15rem 0 0; color: var(--ink); }
+  @media (max-width: 640px) { .routes { grid-template-columns: 1fr; } }
+</style>

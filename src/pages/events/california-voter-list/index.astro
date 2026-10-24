@@ -1,0 +1,8 @@
+---
+import SeriesOverview from '../../../components/SeriesOverview.astro';
+import SeriesFigures from '../../../components/SeriesFigures.astro';
+import { subject } from '../../../data/subjects/california-voter-list.mjs';
+---
+<SeriesOverview title={subject.title} description={subject.dek} path="/events/california-voter-list/">
+  <SeriesFigures slot="visual" items={subject.current} />
+</SeriesOverview>

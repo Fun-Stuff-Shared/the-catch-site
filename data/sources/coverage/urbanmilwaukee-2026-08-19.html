@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8SX88D8NQX"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-8SX88D8NQX');
+	</script>
+	
+		<script>
+		(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-KB7B8MV7');
+	</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/um_favicon.ico" />
+			<script src="https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/prebid11.3.0.js"></script>
+		<script type='text/javascript'>
+			//prebid
+			var pbjs = pbjs || {};
+			pbjs.que = pbjs.que || [];
+
+			pbjs.setConfig({
+			  priceGranularity: {
+			    buckets: [
+			      { min: 0, max: 2, increment: 0.1 },
+			      { min: 2, max: 5, increment: 0.5 },
+			      { min: 5, max: 10, increment: 1 }
+			    ]
+			  },
+			  enableTIDs: true
+			});
+
+			var adUnits = [{
+			  code: 'div-gpt-ad-1597238472710-0',
+			  mediaTypes: {
+			    banner: {
+			      sizes: [[300, 250]]
+			    }
+			  },
+			  bids: [{
+			    bidder: 'sovrn',
+			    params: {
+			      tagid: '759648'
+			    }
+			  }]
+			}];
+
+			pbjs.que.push(function() {
+			  pbjs.addAdUnits(adUnits);
+			  pbjs.requestBids({
+			    timeout: 1500,
+			    bidsBackHandler: function() {
+			      console.log('Prebid bids back');
+			      console.log(pbjs.getBidResponses());
+			    }
+			  });
+			});
+
+			//adsense
+			var target = 'politics';
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function()
+			{
+				var gads = document.createElement('script');
+				gads.async = true;
+				gads.type = 'text/javascript';
+				var useSSL = 'https:' == document.location.protocol;
+				gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+				var node = document.getElementsByTagName('script')[0];
+				node.parentNode.insertBefore(gads, node);
+			})();
+			googletag.cmd.push(function() {
+				var takeover = googletag.sizeMapping().
+					addSize([1024, 200], [900, 750]).
+					addSize([768, 100], [600, 500]).
+					addSize([467, 100], [336,280]).
+					addSize([0, 0], [300, 250]).
+				build();
+				var leaderboard = googletag.sizeMapping().
+					addSize([980, 200], [728, 90]).
+					addSize([641, 200], [468, 60]).
+					addSize([100, 100], [320,50]).
+					addSize([0, 0], [320, 50]).
+				build();
+				var banner = googletag.sizeMapping().
+					addSize([530, 200], [468, 60]).
+					addSize([0, 0], [320, 50]).
+				build();
+				var superleaderboard = googletag.sizeMapping()
+				  .addSize([1175, 200], [[970, 250], [970, 90], [728, 90], [1175, 120]])
+				  .addSize([980, 200], [[970, 90], [728, 90]])
+				  .addSize([740, 200], [[728, 90], [468, 60]])
+				  .addSize([0, 0], [[320, 100], [320, 50]])
+				  .build();
+
+
+				var stream = googletag.sizeMapping().
+					addSize([980,200],[728, 90]).
+					addSize([641,200], [468,60]).
+					addSize([0, 0], [320, 50]).
+				build();
+
+				var larger_banner = googletag.sizeMapping().
+					addSize([980,200],[728, 90]).
+					addSize([641,200], [468,60]).
+					addSize([0, 0], [320, 100]).
+				build();
+
+				var large_banner = googletag.sizeMapping().
+					addSize([980,400],[970, 250]).
+					addSize([980,200],[970, 90]).
+					addSize([980,200],[728, 90]).
+					addSize([641,200], [468,60]).
+					addSize([0, 0], [320, 100]).
+				build();
+
+				var in_article = googletag.sizeMapping()
+				  .addSize([1024, 200], [[300, 600], [336, 280], [300, 250]])
+				  .addSize([768, 100], [[336, 280], [300, 250]])
+				  .addSize([467, 100], [[336, 280], [300, 250]])
+				  .addSize([0, 0], [[300, 250]])
+				  .build();
+									
+					googletag.defineSlot('/1039691/UM-Takeover', [900, 750], 'div-gpt-ad-1527650473590-0').defineSizeMapping(takeover).addService(googletag.pubads());
+					
+					googletag.defineSlot('/1039691/UM-Leaderboard-All', [728, 90], 'div-gpt-ad-1420573742567-0').defineSizeMapping(leaderboard).addService(googletag.pubads().setTargeting("site-section", "politics"));
+
+					googletag.defineSlot('/1039691/UM-Section-Stream-1', [728, 90], 'div-gpt-ad-1576427873594-0').defineSizeMapping(stream).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Section-Stream-2', [728, 90], 'div-gpt-ad-1576431522264-0').defineSizeMapping(stream).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+
+					googletag.defineSlot('/1039691/UM-Section-Stream-3', [728, 90], 'div-gpt-ad-1583032938894-0').defineSizeMapping(stream).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+
+					googletag.defineSlot('/1039691/UM-Super-Leaderboard', [[970, 250], [970, 90], [728, 90], [468, 60], [1175, 120], [320, 100], [320, 50]], 'div-gpt-ad-1441831947393-0').defineSizeMapping(superleaderboard).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Bottom-Home', [468, 60], 'div-gpt-ad-1420576007798-0').defineSizeMapping(banner).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Bottom-Single', [468, 60], 'div-gpt-ad-1420576007798-1').defineSizeMapping(larger_banner).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article', [300, 250], 'div-gpt-ad-1420576007798-2').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/Um-In-Article-2', [300, 250], 'div-gpt-ad-1420576007798-3').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article-3',[[300, 600], [336, 280], [300, 250]],'div-gpt-ad-1775688914854-0').defineSizeMapping(in_article).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/Um-In-Article-4', [300, 250], 'div-gpt-ad-1597238472710-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/Um-In-Article-5', [300, 250], 'div-gpt-ad-1780316260722-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/Um-In-Article-6', [300, 250], 'div-gpt-ad-1780316612974-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article-7', [300, 250], 'div-gpt-ad-1780576041894-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article-8', [300, 250], 'div-gpt-ad-1780576088554-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article-9', [300, 250], 'div-gpt-ad-1780576103427-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Article-10', [300, 250], 'div-gpt-ad-1780576134917-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Bike-Czar', [300, 250], 'div-gpt-ad-1420576007798-4').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Eyes-On-Milwaukee', [300, 250], 'div-gpt-ad-1420576007798-5').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Home', [300, 250], 'div-gpt-ad-1420576007798-6').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-House-Confidential', [300, 250], 'div-gpt-ad-1420576007798-7').addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Murphys-Law', [300, 250], 'div-gpt-ad-1420576007798-8').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Streetsblog', [300, 250], 'div-gpt-ad-1420576007798-9').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Pushdown-Hom', [970, 60], 'div-gpt-ad-1420576007798-11').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Home-1', [300, 250], 'div-gpt-ad-1420576007798-12').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Home-2', [300, 250], 'div-gpt-ad-1420576007798-13').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Home-3', [300, 250], 'div-gpt-ad-1420576007798-14').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Home-4', [300, 250], 'div-gpt-ad-1420576007798-15').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Home-5', [300, 250], 'div-gpt-ad-1420576007798-16').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Sidebar-1', [300, 250], 'div-gpt-ad-1420576007798-17').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Sidebar-2', [300, 250], 'div-gpt-ad-1420576007798-18').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Sidebar-3', [300, 250], 'div-gpt-ad-1420576007798-19').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Sidebar-4', [300, 250], 'div-gpt-ad-1420576007798-20').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Right-Sidebar-5', [300, 250], 'div-gpt-ad-1420576007798-21').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-Top-Single', [728, 90], 'div-gpt-ad-1420576007798-22').defineSizeMapping(larger_banner).setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Now-Serving', [300, 250], 'div-gpt-ad-1435800096215-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+					googletag.defineSlot('/1039691/UM-In-Plats-And-Parcels', [300, 250], 'div-gpt-ad-1435806732281-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));				
+					googletag.defineSlot('/1039691/UM-In-Newaukeean-of-the-Week', [300, 250], 'div-gpt-ad-1436126213759-0').setCollapseEmptyDiv(true).addService(googletag.pubads().setTargeting("site-section", "politics"));
+									googletag.enableServices();
+			});
+		</script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({
+		   google_ad_client: "ca-pub-7058557957533957",
+		   enable_page_level_ads: true
+		 });
+		</script>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Murphy&#8217;s Law: Fake Polls, Real Polls Muddled Wisconsin Governor&#8217;s Race  &raquo; Urban Milwaukee</title>	<meta name='description' content="None of them were very accurate. Yet more pollsters keep popping up. ">
+<meta name='author' content="Bruce Murphy">	<meta property="fb:app_id" content="142344658820" />		
+	<meta property="og:site_name" content="Urban Milwaukee"/>
+	<meta property="og:description" content="None of them were very accurate. Yet more pollsters keep popping up. "/>
+			<meta property="og:title" content="Murphy&#8217;s Law: Fake Polls, Real Polls Muddled Wisconsin Governor&#8217;s Race"/>
+			<meta property="og:url" content="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/" />
+					<meta property="og:image" content="https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-1024x768.jpeg" />
+		<meta property="og:image:width" content="1024" />
+		<meta property="og:image:height" content="768" />	
+					<meta property="og:type" content="article"/>
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@urbanmilwaukee" />
+			<meta name="twitter:creator" content="@BruceMurphyMKE" />
+				<link rel='dns-prefetch' href='//unpkg.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Urban Milwaukee &raquo; Murphy&#8217;s Law: Fake Polls, Real Polls Muddled Wisconsin Governor&#8217;s Race Comments Feed" href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/urbanmilwaukee.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5379be870253087450608b96ccd9696c"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='dashicons-css'  href='https://urbanmilwaukee.com/wp-includes/css/dashicons.min.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='https://urbanmilwaukee.com/wp-includes/js/thickbox/thickbox.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-fancybox-css'  href='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/css/jquery.fancybox.min.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://urbanmilwaukee.com/wp-includes/css/dist/block-library/style.min.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='pmpro_frontend-css'  href='https://urbanmilwaukee.com/wp-content/plugins/paid-memberships-pro/css/frontend.css?ver=2.12.10' type='text/css' media='screen' />
+<link rel='stylesheet' id='pmpro_print-css'  href='https://urbanmilwaukee.com/wp-content/plugins/paid-memberships-pro/css/print.css?ver=2.12.10' type='text/css' media='print' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='//urbanmilwaukee.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='//urbanmilwaukee.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.0.0' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='//urbanmilwaukee.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='leaflet-css'  href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?ver=1.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='leaflet-cluster-css'  href='https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css?ver=1.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='leaflet-cluster-default-css'  href='https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css?ver=1.5.3' type='text/css' media='all' />
+<link rel='stylesheet' id='retr-css'  href='https://urbanmilwaukee.com/wp-content/plugins/um-retr/assets/css/retr.css?ver=1.6.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-paginate-css'  href='https://urbanmilwaukee.com/wp-content/plugins/wp-paginate/wp-paginate.css?ver=1.3.1' type='text/css' media='screen' />
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/plugins/pmpro-group-accounts/js/pmprogroupacct-checkout.js?ver=1.5.1'></script>
+<link rel='https://api.w.org/' href='https://urbanmilwaukee.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://urbanmilwaukee.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://urbanmilwaukee.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel="canonical" href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/" />
+<link rel='shortlink' href='https://urbanmilwaukee.com/?p=992835' />
+<link rel="alternate" type="application/json+oembed" href="https://urbanmilwaukee.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://urbanmilwaukee.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F&#038;format=xml" />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://urbanmilwaukee.com"><link rel="https://theeventscalendar.com/" href="https://urbanmilwaukee.com/wp-json/tribe/events/v1/" />	
+	<link rel="stylesheet" href="https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/style.css?1792599111" type="text/css"/>
+	
+		<link rel="alternate" type="application/rss+xml" title="Urban Milwaukee RSS Feed" href="http://feeds.feedburner.com/UrbanMilwaukee" />
+	<link rel="pingback" href="https://urbanmilwaukee.com/xmlrpc.php" />
+			<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-257540-11']);
+		  
+		    
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+		</head>
+<body class="custom " >
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KB7B8MV7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class='container clearfloat' id="page">
+			<div class='columns sixteen' id='super-leaderboard'>
+			<div id='div-gpt-ad-1441831947393-0'>
+				<script type="text/javascript">
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1441831947393-0'); });
+				</script>
+			</div>
+		</div>
+			<div class='columns sixteen' id='header-bar'>
+		<div id='header-top-links' class='twelve columns'>
+			<a class='member-giveaways' href='https://urbanmilwaukee.com/member-giveaways'>Get Free Tickets to Present Music's Forty Something!</a> - <a href='https://urbanmilwaukee.com/membership-account/membership-levels/' data-google-vignette='false'>Become a Member - </a><a rel='nofollow' href='https://urbanmilwaukee.com/login/?redirect_to=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'>Member Log In</a>		</div>
+		<div id='header-bar-search' class='four columns'>
+						
+		</div>
+	</div>		<div id='logo' class="columns four clearfloat">
+			<a onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Home']);"  href='https://urbanmilwaukee.com'><img src="https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/urbanmilwaukee-logo.png" alt='Urban Milwaukee Logo'></a>
+	  	</div>	
+		<div id='div-gpt-ad-1420573742567-0' class='header-ad columns twelve'>
+			<script type="text/javascript">
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1420573742567-0'); });
+			</script>
+		</div>
+			<div class='sixteen columns' id='nav-responsive'>
+		<span>Show Menu</span>
+	</div>
+	<div class='sixteen columns' id="nav"> 
+		<ul>
+						<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Real Estate']);" class='nav-item'><a href='https://urbanmilwaukee.com/real-estate/'>Real Estate</a>
+				<ul>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Listings']);"><a href='https://urbanmilwaukee.com/category/series/listing-of-the-week/'>Listings</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Add a Listing']);"><a href='https://docs.google.com/forms/d/e/1FAIpQLSdJKwc5sBFyA5hVSkpyJvXN9ULU9nXJmKaHCH7lYBoSRjif4A/viewform'>Add a Listing</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Real Estate Press Releases']);"><a href='https://urbanmilwaukee.com/pressrelease/?cat=3952'>Press Releases</a></li>
+				</ul>
+			</li>
+			<li class='nav-item'>
+				<a onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Politics']);" href='https://urbanmilwaukee.com/politics/'>Politics</a>
+				<ul>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'PCT']);"><a href='https://urbanmilwaukee.com/pct'>Political Contributions Tracker</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Bruce Murphy Author Page']);"><a href='https://urbanmilwaukee.com/author/bruce'>Bruce Murphy</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Political Press Releases']);"><a href='https://urbanmilwaukee.com/pressrelease/?cat=3953'>Press Releases</a></li>
+				</ul>
+			</li>
+			<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Food & Drink']);" class='nav-item'><a href='https://urbanmilwaukee.com/food-drink/'>Food & Drink</a>
+				<ul><li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Food & Drink Press Releases']);"><a href='https://urbanmilwaukee.com/pressrelease/?cat=9080'>Press Releases</a></li></ul>
+			</li>
+			<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'A&E']);" class='nav-item nav-big'>
+				<a href='https://urbanmilwaukee.com/arts-entertainment/'>A&E</a>
+				<ul>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Theater']);"><a href='https://urbanmilwaukee.com/category/series/theater/'>Theater</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Events']);"><a href='https://urbanmilwaukee.com/events/'>Events</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'A&E Press Releases']);"><a href='https://urbanmilwaukee.com/pressrelease/?cat=8471'>Press Releases</a></li>
+				</ul>
+			</li>
+			<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'A&E']);" class='nav-item nav-small'>
+				<a href='https://urbanmilwaukee.com/arts-entertainment/'>A&E</a>
+				<ul>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Visual Art']);"><a href='https://urbanmilwaukee.com/category/series/art/'>Visual Art</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Theater']);"><a href='https://urbanmilwaukee.com/category/series/theater/'>Theater</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Events']);"><a href='https://urbanmilwaukee.com/events/'>Events</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'A&E Press Releases']);"><a href='https://urbanmilwaukee.com/pressrelease/?cat=8471'>Press Releases</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Food & Drink']);"><a href='https://urbanmilwaukee.com/food-drink/'>Food & Drink</a></li>
+				</ul>
+			</li>
+						<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Membership']);" class='nav-item last'><a href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Membership</a>
+				<ul>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Become a Member']);"><a href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Become a Member</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Become a Member']);"><a href='https://urbanmilwaukee.com/product/gift-membership/'>Buy a Gift Membership</a></li>
+					<li onClick="_gaq.push(['_trackEvent', 'Header Navigation', 'Giveaways']);"><a href='https://urbanmilwaukee.com/member-giveaways/'>Giveaways + Events</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div id="content" class='ten columns'>			<div class="post" id="post-992835">
+									  	<div id='div-gpt-ad-1420576007798-22' class='lazy-ad content-ad' data-ad-slot="div-gpt-ad-1420576007798-22">
+						</div>
+											<div class='headline-wrapper'>
+						
+<div class='overflow-auto title-wrapper'>
+<div id='author-photo' class='columns three'><img src="https://urbanmilwaukee.com/wp-content/uploads/userphoto/bruce.jpg" alt="Bruce Murphy" width="112" height="150" class="photo" />
+</div>
+<div class='columns thirteen'>
+<div class='column-title'>Murphy&#8217;s Law</div>
+<h1> Fake Polls, Real Polls Muddled Wisconsin Governor&#8217;s Race</h1>
+<p class='subtitle'>None of them were very accurate. Yet more pollsters keep popping up. </p>
+</div></div>    
+					    <div class='author-block'>
+						    By
+						    <a href="https://urbanmilwaukee.com/author/bruce/" title="Posts by Bruce Murphy" rel="author">Bruce Murphy</a>						    - Aug 19th, 2026 05:00 pm						</div>
+						
+<script type='text/javascript'>
+	_gaq.push(['_trackEvent', 'Author Tracking', 'Bruce Murphy']);
+</script>				</div><? //end headline wrapper ?>
+
+			    <div class="entry">
+					<div id="attachment_987961" style="width: 1034px" class="wp-caption aligncenter"><a href="https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-scaled.jpeg"><img aria-describedby="caption-attachment-987961" class="size-1024image wp-image-987961" src="https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-1024x768.jpeg" alt="Voting booth. Photo taken July 28, 2026 by Sophie Bolich." width="1024" height="768" srcset="https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-1024x768.jpeg 1024w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-250x188.jpeg 250w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-590x443.jpeg 590w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-768x576.jpeg 768w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-1536x1152.jpeg 1536w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-2048x1536.jpeg 2048w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-280x210.jpeg 280w, https://urbanmilwaukee.com/wp-content/uploads/2026/07/Voting-booth.-Photo-taken-July-28-2026-by-Sophie-Bolich.-400x300.jpeg 400w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><p id="caption-attachment-987961" class="wp-caption-text">Voting booth. Photo taken July 28, 2026 by Sophie Bolich.</p></div>
+<p>As unpredictable and chaotic as Wisconsin&#8217;s Democratic primary for governor was, it was further muddled by fake polls and real polls that seemed misleading. And we may see more of them in the general election.</p>
+<p>An outfit called Median Strategies released a poll showing the socialist Democrat Rep. <strong><a href="https://urbanmilwaukee.com/people/francesca-hong">Francesca Hong</a></strong> was leading the Wisconsin Democratic primary for governor by more than 20 percentage points and another showing Mayor <strong><a href="https://urbanmilwaukee.com/people/karen-bass">Karen Bass</a></strong> was leading by nearly 12 percentage points in the Los Angeles mayoral runoff. In the case of Hong, the 20% lead was close to what more reputable polls had found.</p>
+<div class='in-article-ad-wrap'><div id='div-gpt-ad-1420576007798-2' class='in-article-ad lazy-ad' data-ad-slot='div-gpt-ad-1420576007798-2'>
+	</div></div>
+<p>Except that Median Strategies was a fake. On Monday, the group disavowed its polls, with a message on its <a class="css-povzk" title="" href="https://medianstrategies.com/" target="_blank" rel="noopener noreferrer">website</a> saying they “should not be treated as genuine polling data” and were part of an experiment to examine “how purported polling information could enter and spread through the political information ecosystem without independent verification.”</p>
+<p>The hoax has gotten national coverage from the media and Median Strategies has refused to disclose the real identities of the people who ran or funded the organization.</p>
+<p>Meanwhile, there has been little coverage of Wedgewood Polls, a shady outfit that Urban Milwaukee <a href="https://urbanmilwaukee.com/2026/07/07/isthmus-denies-doing-political-polls/">wrote about</a> back in early July. Wedgewood did a poll showing Hong at 30% at a time when legitimate polls had her with far less of the vote.</p>
+<p>As the story noted, Wedgewood appeared to be a Republican front group that passes itself off as liberal. Wedgewood&#8217;s <a href="https://sites.google.com/view/wedgewood-polls/about">website</a> called itself “an independent public-opinion research firm,” while its Twitter account described itself as “Progressive but unbiased,” and it claimed its poll was sponsored by the “Isthmus Political Report.”</p>
+<div class='email-signup' >		<div class='email-text'>		<em>Get a daily rundown of the Milwaukee stories</em>	</div>	<div class='email-form' ><form class='email-signup-form' method='post' onSubmit="_gaq.push(['_trackEvent', 'Email Signup - In Article', '<?php the_title(); ?>']);" action='https://urbanmilwaukee.us5.list-manage.com/subscribe/post?u=47fecf5ef8bf9b1436043c330&amp;id=fa7240869f'><input type='text' name='EMAIL' id='email-input' placeholder='Email Address...'><input type='submit' name='signup' id='email-signup' value='Subscribe'>		</form>	</div></div>
+<p>That sounds like it was connected to the longtime Madison alternative weekly Isthmus (now a monthly), but its editor <strong><a href="https://urbanmilwaukee.com/people/judith-davidoff">Judith Davidoff</a></strong> told Urban Milwaukee it had nothing to do with the poll and that Isthmus had never sponsored a poll or ever endorsed a candidate.</p>
+<p>Both the Twitter account for Wedgewood and for Isthmus Political Report (Isthmus pol) have cheerleaded for Hong and other far-left candidates while attacking more mainstream Democrats. Its poll on Hong was promoted by the conservative <a href="https://urbanmilwaukee.com/business/john-k-maciver-institute-of-public-policy">MacIver Institute</a>, which declined to respond to questions asking who sent the poll to them and what they knew about the Isthmus Political Report.</p>
+<div class='in-article-ad-wrap'><div id='div-gpt-ad-1420576007798-3' class='in-article-ad lazy-ad' data-ad-slot='div-gpt-ad-1420576007798-3'>
+	</div></div>
+<p>Meanwhile, the vaunted Marquette Law School&#8217;s last poll on the race, released about two weeks before the Aug. 12 election, had Hong at 38% and Milwaukee County Executive <strong><a href="https://urbanmilwaukee.com/people/david-crowley">David Crowley</a></strong> at just 7%. Crowley eventually won with nearly 40% of the vote, with Hong just a few thousand votes behind. How could the poll have been so far off, many political observers asked.</p>
+<p>One veteran Democratic consultant told Urban Milwaukee the polls in general were biased toward younger voters who backed Hong and &#8220;were truly excited by her and wanted to tell people. It was the reverse phenomenon of 2016 when Trump voters refused to be polled. This created a frothiness in the poll results.&#8221;</p>
+<p>But Marquette pollster <strong><a href="https://urbanmilwaukee.com/people/charles-franklin">Charles Franklin</a>,</strong> as you might expect, denies any frothiness. He notes his poll didn&#8217;t overestimate Hong: she was at 38% and ended up with just over 39% in the election. &#8220;The big miss wasn’t on Hong, it was that Crowley had not consolidated support,&#8221; he noted. &#8220;We saw the older voters were much more undecided, but we don’t think we underestimated their share of the electorate.&#8221;</p>
+<p>The final poll by State Navigate, released about a week after the last MU poll, had Crowley at 22% but had Hong at 44%. A post-election <a href="https://statenavigate.org/wi/new-analysis-shows-what-went-wrong-in-wisconsin-polling/">analysis</a> by State Navigate pollster <strong>G. Elliott Morris</strong> fell on his sword, saying &#8220;A 22-point error&#8230; is not a normal polling miss, even by the standards of primaries.&#8221; Though it was closer to the final result than the older MU poll, which was off by 31 points.</p>
+<p>Morris cited three reasons for the polling errors:</p>
+<div class='in-article-ad-wrap'><div id='div-gpt-ad-1775688914854-0' class='in-article-ad lazy-ad' data-ad-slot='div-gpt-ad-1775688914854-0'>
+	</div></div>
+<p>&#8211; &#8220;The actual primary electorate was older and more moderate than pollsters assumed.</p>
+<p>&#8211; There was a lot of late movement toward Crowley.</p>
+<p>&#8211; The older and more moderate voters who did take the poll were still more Hong-friendly than the older and more moderate voters who actually showed up [to vote].&#8221;</p>
+<p>The end result was to essentially return voters to a time before the age of polls. Indeed, the real polls by Marquette and State Navigate were actually more inaccurate than the biased if not fake poll by Wedgewood.</p>
+<div class='in-article-ad-wrap'><div id='div-gpt-ad-1597238472710-0' class='in-article-ad lazy-ad' data-ad-slot='div-gpt-ad-1597238472710-0'>
+	</div></div>
+<p>Yet even as polls become more difficult, as many people refuse to respond to surveys, we seem to get more of them and more reporting of them than ever before. Just two days after the election, a poll was released showing Crowley leading Republican <strong><a href="https://urbanmilwaukee.com/people/tom-tiffany">Tom Tiffany</a></strong> by 4 points, 44% to 40%.</p>
+<p>“We’re seeing David Crowley coming out with a modest lead here at the beginning,” said <strong><a href="https://urbanmilwaukee.com/people/brian-reisinger">Brian Reisinger</a></strong>, CEO of <a href="https://urbanmilwaukee.com/business/platform-communications">Platform Communications</a>, which did the poll, &#8220;which makes sense because he’s coming out of the primary victory where he’s getting a little bit of a bounce.&#8221; He declared it &#8220;a very, very tight race with Crowley because this is an evenly divided state, and Tom Tiffany’s been running full steam.&#8221;</p>
+<p>How legitimate is this poll? Platform Communications is a PR agency, not a pollster. It was founded by Republican strategist <strong><a href="https://urbanmilwaukee.com/people/keith-gilkes">Keith Gilkes</a></strong>, and Reisinger ran communications for Republican U.S. Sen. <strong><a href="https://urbanmilwaukee.com/people/ron-johnson">Ron Johnson</a></strong>’s 2016 campaign and Walker’s 2018 campaign. The poll was conducted by Gilkes and Democratic strategist <a href="https://urbanmilwaukee.com/people/tanya-bjork/"><strong>Tanya Bjork</strong></a>, Platform says, but would the results have been released if Crowley was ahead by, say, 8 points?</p>
+<div class='in-article-ad-wrap'><div id='div-gpt-ad-1780316260722-0' class='in-article-ad lazy-ad' data-ad-slot='div-gpt-ad-1780316260722-0'>
+	</div></div>
+<p>The biggest fear for Republicans, given the huge Democratic turnout in the August 12 election and the recent blowout elections for liberal candidates in <a href="https://urbanmilwaukee.com/government/wisconsin-supreme-court">Wisconsin Supreme Court</a> races, is a big lead for Crowley. It will discourage donations from fat-cat conservatives, who will instead look to races they have a better chance of winning.</p>
+<p>This was a strategic poll meant to calm the distress of Republicans who were thrilled to run against a socialist Democrat who opposes the Thanksgiving holiday and now must face Crowley. And if the Democratic primary for governor taught us anything, it&#8217;s that you should take all polls with a grain of salt and look carefully at who did them. It might just be a trick by a fake liberal or faux conservative or some kind of bizarre science experiment. That&#8217;s the state of American politics today.</p>
+<div id='membership_footnote'><p><em>If you think stories like this are important, become a member of Urban Milwaukee and help support real, independent journalism. Plus you get <a href='https://urbanmilwaukee.com/membership-account/membership-levels/' data-google-vignette='false'>some cool added benefits</a>.</em></p></div></div>					<div id='bottom-links'>
+						
+<div id='pct-in-article'>
+	<h3><a href='https://urbanmilwaukee.com/pct'>Political Contributions Tracker</a></h3>
+	<p>Displaying political contributions between people mentioned in this story. <a href='https://urbanmilwaukee.com/pct/'>Learn more</a>.</p>
+	<ul>
+	</ul>
+</div>							<div class='social-share-bar'>
+								<ul>
+									<li><a href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'><img src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/icons/facebook.svg' alt='Share on Facebook'></a></li>
+									<li><a href='http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F&amp;title=Murphy%E2%80%99s+Law%3A+Fake+Polls%2C+Real+Polls+Muddled+Wisconsin+Governor%E2%80%99s+Race&amp;summary=None+of+them+were+very+accurate.+Yet+more+pollsters+keep+popping+up.+'><img alt='Share on LinkedIn' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/icons/linkedin.svg'></a></li>
+									<li><a href='http://www.reddit.com/submit?url=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'><img src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/icons/reddit.svg' alt='Share on Reddit'></a></li>
+									<li><a href='https://x.com/intent/tweet?text=Murphy%E2%80%99s+Law%3A+Fake+Polls%2C+Real+Polls+Muddled+Wisconsin+Governor%E2%80%99s+Race&url=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'><img src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/icons/x.svg' alt='Share on X'></a></li>
+									<li><a href='https://bsky.app/intent/compose?text=Murphy%E2%80%99s+Law%3A+Fake+Polls%2C+Real+Polls+Muddled+Wisconsin+Governor%E2%80%99s+Race+https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'><img src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/icons/bluesky.svg' alt='Share on Bluesky'></a></li>
+								</ul>
+							</div>	
+							<div id="revcontent_ad"><style> .rc-text-bottom.rc-text-right.rc-branding.rc-bl-ads-by-revcontent {width:10%;}</style><div id="rcjsload_58c68d"></div><script type="text/javascript">(function() {var referer="";try{if(referer=document.referrer,"undefined"==typeof referer||""==referer)throw"undefined"}catch(exception){referer=document.location.href,(""==referer||"undefined"==typeof referer)&&(referer=document.URL)}referer=referer.substr(0,700);var rcds = document.getElementById("rcjsload_58c68d");var rcel = document.createElement("script");rcel.id = 'rc_' + Math.floor(Math.random() * 1000);rcel.type = 'text/javascript';rcel.src = "https://trends.revcontent.com/serve.js.php?w=96355&t="+rcel.id+"&c="+(new Date()).getTime()+"&width="+(window.outerWidth || document.documentElement.clientWidth)+"&referer="+referer;rcel.async = true;rcds.appendChild(rcel);})();</script></div><h3>Murphy's Law</h3>	<ul id='recent-posts' class='post-list'>
+		
+<li>
+<h3><a href='https://urbanmilwaukee.com/2026/10/20/murphys-law-tom-tiffany-is-running-against-milwaukee/'> Tom Tiffany Is Running Against Milwaukee</a></h3><a class="post-link" href="https://urbanmilwaukee.com/2026/10/20/murphys-law-tom-tiffany-is-running-against-milwaukee/" rel="bookmark" title="Permanent Link to Murphy’s Law: Tom Tiffany Is Running Against Milwaukee"><img width="185" height="122" src="https://urbanmilwaukee.com/wp-content/uploads/2020/10/Tom_Tiffany-185x122.jpg" class="float-left margin-right-10 wp-post-image" alt="Tom Tiffany. (Public Domain)." /></a>				<span class='post-info'>Oct 20th, 2026 by <a href="https://urbanmilwaukee.com/author/bruce/">Bruce Murphy</a></span>	
+								
+</li>
+<li>
+<h3><a href='https://urbanmilwaukee.com/2026/10/15/murphys-law-tom-tiffany-loves-trump/'> Tom Tiffany Loves Trump</a></h3><a class="post-link" href="https://urbanmilwaukee.com/2026/10/15/murphys-law-tom-tiffany-loves-trump/" rel="bookmark" title="Permanent Link to Murphy’s Law: Tom Tiffany Loves Trump"><img width="185" height="122" src="https://urbanmilwaukee.com/wp-content/uploads/2026/10/2-2-185x122.jpg" class="float-left margin-right-10 wp-post-image" alt="Tom Tiffany and Donald Trump." /></a>				<span class='post-info'>Oct 15th, 2026 by <a href="https://urbanmilwaukee.com/author/bruce/">Bruce Murphy</a></span>	
+								
+</li>
+<li>
+<h3><a href='https://urbanmilwaukee.com/2026/10/12/murphys-law-top-republican-has-turned-on-donald-trump/'> Top Republican Has Turned on Donald Trump</a></h3><a class="post-link" href="https://urbanmilwaukee.com/2026/10/12/murphys-law-top-republican-has-turned-on-donald-trump/" rel="bookmark" title="Permanent Link to Murphy’s Law: Top Republican Has Turned on Donald Trump"><img width="185" height="122" src="https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-185x122.jpg" class="float-left margin-right-10 wp-post-image" alt="Donald Trump speaks at Discovery World. Photo Taken Oct. 1, 2024 by Graham Kilmer." srcset="https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-185x122.jpg 185w, https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-590x393.jpg 590w, https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-768x512.jpg 768w, https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-1536x1024.jpg 1536w, https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-2048x1365.jpg 2048w, https://urbanmilwaukee.com/wp-content/uploads/2024/10/TrumpDiscovery_5a-1024x683.jpg 1024w" sizes="(max-width: 185px) 100vw, 185px" /></a>				<span class='post-info'>Oct 12th, 2026 by <a href="https://urbanmilwaukee.com/author/bruce/">Bruce Murphy</a></span>	
+								
+</li>	</ul>					</div>	  	<div id='div-gpt-ad-1420576007798-1' class='content-ad lazy-ad padding-top-10' data-ad-slot="div-gpt-ad-1420576007798-1">
+		</div> 
+	    <div class='category-item-list'><span class='category-label'>Categories</span>: <a href="https://urbanmilwaukee.com/category/series/murphys-law/" title="Murphy's Law">Murphy's Law</a>, <a href="https://urbanmilwaukee.com/category/politics/" title="Politics">Politics</a>, <a href="https://urbanmilwaukee.com/category/pin/what-you-need-to-know/" title="What You Need To Know">What You Need To Know</a></div>  	</div>  	
+<div id="comments" class="comments-area">
+
+	
+	<h2 class="comments-title">
+		Comments
+	</h2>
+
+	
+	<ol class="comment-list">
+				<li class="comment byuser comment-author-attydanadams even thread-even depth-1" id="comment-1669722">
+				<div id="div-comment-1669722" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">AttyDanAdams</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669722">
+			August 19, 2026 at 5:31 pm				</a>
+						</div>
+
+		<p>The problem is the media which loves polls, loves the horse race (as opposed to discussing policy distinctions), and loves that the articles basically write themselves. Charles Franklin is a nice and knowledgeable guy &#8211; but his polls tend to undermine insurgent candidates in favor of those with name ID (ie career politicians or those that can purchase big early ad spends).</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-jake-formerly-of-the-lp odd alt thread-odd thread-alt depth-1" id="comment-1669733">
+				<div id="div-comment-1669733" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Jake formerly of the LP</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669733">
+			August 20, 2026 at 8:34 am				</a>
+						</div>
+
+		<p>What Dan Adams says is my takeaway from this as well. Media can&#8217;t get enough of poll stories and horse races, and polls are weapons that partisans can use to drive coverage. And drive donation decisions and voting decisions. I openly admit that the LACK of polling in the Dem primary caused a lot of problems for those of us who were trying to vote strategically, but bad, misleading polling is even more hazardous. </p>
+<p>   What this Median Strategies outlet is saying that they are telling bad-faith outlets that they can send out misinfo and hope someone amplifies it. And our lazy corporate media is more than happy to go along with it.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-lizwah even thread-even depth-1" id="comment-1669736">
+				<div id="div-comment-1669736" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Lizwah</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669736">
+			August 20, 2026 at 8:42 am				</a>
+						</div>
+
+		<p>Who responds to polls? I delete all unsolicited texts, emails and never answer callers who aren’t in my contacts list, like everyone else I know. I’m having a hard time imagining younger voters eagerly responding to unrecognized calls and text messages and clicking on links from unknown sources. What am I not understanding here?</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-anotherreader odd alt thread-odd thread-alt depth-1" id="comment-1669750">
+				<div id="div-comment-1669750" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">AnotherReader</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669750">
+			August 20, 2026 at 10:07 am				</a>
+						</div>
+
+		<p>I don&#8217;t think that, for example, 1,864 people responding to a poll is indicative of the general voting population of hundreds of thousands of people. And as noted by Lizwah, who is responding to these polls? Are those who do respond providing honest answers? One has to assume they are, but that is a huge assumption without any way of verifying the results.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-toyotathon even thread-even depth-1" id="comment-1669751">
+				<div id="div-comment-1669751" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">Toyotathon</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669751">
+			August 20, 2026 at 10:07 am				</a>
+						</div>
+
+		<p>Regardless of polling it will be a tight race. Potentially in recount territory. Even though Tiffany is a proud MAGA republican whose voting record betrays the interests of his constituency, many people are too easily swayed by his folksy mannerisms and vague platitudes. &#8220;I believe kids should read&#8221; was something he actually said in a recent ad. Never mind the trump induced inflation and the war that could have paid for Medicare for all. Its about the kids, right? Crowley will have to contend with the bad faith undecided moron voters who feint indecision but will predictably cast their vote for tiffany because of &#8220;the economy&#8221; or whatever they tell themselves. I think it would be prudent for him to instead engage the progressive voters affiliated with Hong. Corporate democrats lack the enthusiasm found in the progressive base.  That enthusiasm could carry him over the finish line.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-mkeumkenews09 odd alt thread-odd thread-alt depth-1" id="comment-1669758">
+				<div id="div-comment-1669758" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">mkeumkenews09</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669758">
+			August 20, 2026 at 12:30 pm				</a>
+						</div>
+
+		<p>Maybe some tie in to the prediction markets.  Some folks are now questioning this possibility.  </p>
+<p>Would be wonderful if any of the large media orgs would analyze and investigate.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-dave53718 even thread-even depth-1" id="comment-1669799">
+				<div id="div-comment-1669799" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn">dave53718</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/#comment-1669799">
+			August 22, 2026 at 11:49 am				</a>
+						</div>
+
+		<p>Polls are an unfortunate byproduct of democracy. Who doesn’t like seeing their candidate atop a poll? Exposing fake polls in Wisconsin and LA is not the end. It&#8217;s the beginning. The Trump mindset, to lie about everything, is seeping into every corner of society. Fake polls will become standard in campaigns. While some would say it’s the job of journalists to root them out and the job of voters to stay informed, fake polls are yet another sign of democracy under attack.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+	</ol><!-- .comment-list -->
+
+	
+	
+	<div id='respond' class='comment-respond'><h3 id='reply-title' class='comment-reply-title'>Leave a Reply</h3><p>You must be an Urban Milwaukee member to leave a comment. Membership, which includes a host of perks, including an ad-free website, tickets to marquee events like Summerfest, the Wisconsin State Fair and the Florentine Opera, a better photo browser and access to members-only, behind-the-scenes tours, <a href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>starts at $9/month</a>. <a href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Learn more</a>.</p><p><a href='https://urbanmilwaukee.com/membership-account' data-google-vignette='false'>Join now and cancel anytime</a>.</p><p>If you are an existing member, <a href='https://urbanmilwaukee.com/wp-login.php'>sign-in</a> to leave a comment.</p>
+					<p>Have questions? Need to report an error? <a href='https://urbanmilwaukee.com/about/contact/'>Contact Us</a></p></div>		</div></div><div id='sidebar' class="six columns">
+	<div id='div-gpt-ad-1420576007798-17' class="ad lazy-ad" data-ad-slot="div-gpt-ad-1420576007798-17"></div>
+	<div id='latest-articles'>
+		<h3 class='title'>Latest Articles & Columns</h3>
+		<div class='latest-articles-wrapper sidebar-block-wrapper'>
+			<div class='item 1007963'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Photo Position: 1']);" href='https://urbanmilwaukee.com/2026/10/23/weekend-preview-non-brewers-weekend-activities/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/gallery/forest-home-hills/thumbs/thumbs_20231030foresthome.jpg" alt='Weekend Preview: Non-Brewers Weekend Activities'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Position: 1']);" href="https://urbanmilwaukee.com/2026/10/23/weekend-preview-non-brewers-weekend-activities/" rel="bookmark" class="item-title display-block">Weekend Preview: Non-Brewers Weekend Activities</a>
+					<span> by Michael Holloway</span>
+				</div>
+			</div>
+			<div class='item 1084858'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Photo Position: 2']);" href='https://urbanmilwaukee.com/2026/10/23/can-a-bigger-superior-refinery-lower-gas-prices-economists-say-no/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/IMG_4190-scaled-1-150x150.jpg" alt='Can A Bigger Superior Refinery Lower Gas Prices? Economists Say No'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Position: 2']);" href="https://urbanmilwaukee.com/2026/10/23/can-a-bigger-superior-refinery-lower-gas-prices-economists-say-no/" rel="bookmark" class="item-title display-block">Can A Bigger Superior Refinery Lower Gas Prices? Economists Say No</a>
+					<span> by Danielle Kaeding</span>
+				</div>
+			</div>
+			<div class='item 1084468'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Photo Position: 3']);" href='https://urbanmilwaukee.com/2026/10/23/milwaukee-earns-leed-gold-for-citywide-sustainability-efforts/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/gallery/temp/thumbs/thumbs_citysolarpanel_2.jpg" alt='Milwaukee Earns LEED Gold For Citywide Sustainability Efforts'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Position: 3']);" href="https://urbanmilwaukee.com/2026/10/23/milwaukee-earns-leed-gold-for-citywide-sustainability-efforts/" rel="bookmark" class="item-title display-block">Milwaukee Earns LEED Gold For Citywide Sustainability Efforts</a>
+					<span> by Jeramey Jannene</span>
+				</div>
+			</div>
+			<div class='item 1084867'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Photo Position: 4']);" href='https://urbanmilwaukee.com/2026/10/23/report-says-no-state-tax-on-tips-overtime-would-cost-wisconsin-2-7-billion/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2023/05/pexels-karolina-grabowska-4386418-150x150.jpg" alt='Report Says No State Tax On Tips, Overtime Would Cost Wisconsin $2.7 Billion'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Position: 4']);" href="https://urbanmilwaukee.com/2026/10/23/report-says-no-state-tax-on-tips-overtime-would-cost-wisconsin-2-7-billion/" rel="bookmark" class="item-title display-block">Report Says No State Tax On Tips, Overtime Would Cost Wisconsin $2.7 Billion</a>
+					<span> by Joe Schulz</span>
+				</div>
+			</div>
+			<div class='item last 1084894'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Photo Position: 5']);" href='https://urbanmilwaukee.com/2026/10/23/where-to-find-brewers-inspired-murals-and-monuments-in-milwaukee/' rel="bookmark" class="display-block">
+						
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Latest Articles', 'Position: 5']);" href="https://urbanmilwaukee.com/2026/10/23/where-to-find-brewers-inspired-murals-and-monuments-in-milwaukee/" rel="bookmark" class="item-title display-block">Where To Find Brewers-Inspired Murals And Monuments In Milwaukee</a>
+					<span> by Jonathan Aguilar</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='div-gpt-ad-1420576007798-18' class="ad lazy-ad" data-ad-slot="div-gpt-ad-1420576007798-18"></div>
+	<div class='widget'>
+		<h3 class='title'><a onClick="_gaq.push(['_trackEvent', 'Member Click', 'Become a Member Click']);" href="/membership-account/membership-levels/" rel="bookmark" class="display-block" data-google-vignette="false">Become a Member</a></h3>
+	<ul><li>Get behind the paywall, support independent media in the city you love.</li></ul><p style='text-align:center;''><a class='button' nClick="_gaq.push(['_trackEvent', 'Member Click', 'Join Today']);" href="/membership-account/membership-levels/" rel="bookmark" class="display-block" data-google-vignette="false">Join Today</a></p><p><a href=https://urbanmilwaukee.com'/product/gift-membership/'>Buy a Gift Membership</a></p></div>
+	<div class='press-releases sixteen columns'>
+		<h3 class='title'><a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - Top']);" href='https://urbanmilwaukee.com/pressrelease/'>Press Releases</a></h3>
+		<div class='press-releases-wrapper sidebar-block-wrapper'>
+			<div class='item 1084942'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 1']);" href="https://urbanmilwaukee.com/pressrelease/reading-of-new-play-by-bruce-murphy-at-pink-umbrella-theater/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/IMG_3111-150x150.jpeg" alt="Reading of New Play by Bruce Murphy at Pink Umbrella Theater"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 1']);" href="https://urbanmilwaukee.com/pressrelease/reading-of-new-play-by-bruce-murphy-at-pink-umbrella-theater/" rel="bookmark" class="item-title">Reading of New Play by Bruce Murphy at Pink Umbrella Theater</a>
+						<span> by Press Release</span>
+					</div>
+				</div>
+			<div class='item 1084846'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 2']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-grants-206-pardons-bringing-total-pardons-granted-to-2443/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2019/01/Tony-150x150.jpg" alt="Gov. Evers Grants 206 Pardons, Bringing Total Pardons Granted to 2,443"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 2']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-grants-206-pardons-bringing-total-pardons-granted-to-2443/" rel="bookmark" class="item-title">Gov. Evers Grants 206 Pardons, Bringing Total Pardons Granted to 2,443</a>
+						<span> by Gov. Tony Evers</span>
+					</div>
+				</div>
+			<div class='item last 1084830'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 3']);" href="https://urbanmilwaukee.com/pressrelease/milwaukee-art-museum-bets-a-monet-on-a-brewers-world-series-victory/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/03/image1-150x150.jpg" alt="Milwaukee Art Museum Bets a Monet on a Brewers World Series Victory"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - 3']);" href="https://urbanmilwaukee.com/pressrelease/milwaukee-art-museum-bets-a-monet-on-a-brewers-world-series-victory/" rel="bookmark" class="item-title">Milwaukee Art Museum Bets a Monet on a Brewers World Series Victory</a>
+						<span> by Milwaukee Art Museum</span>
+					</div>
+				</div>
+			<p class='item-title'><a onClick="_gaq.push(['_trackEvent', 'Press Releases Click', 'Press Releases Click - More']);" href='https://urbanmilwaukee.com/pressrelease/'>Read more Press Releases</a></p>
+		</div>
+	</div>
+	<div id='div-gpt-ad-1420576007798-19' class="ad lazy-ad" data-ad-slot="div-gpt-ad-1420576007798-19"></div>
+	<div id='latest-articles'>
+		<h3 class='title'>3 Most Popular</h3>
+		<div class='latest-articles-wrapper sidebar-block-wrapper'>
+			<div class='item 1008234'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Photo Position: 1']);" href='https://urbanmilwaukee.com/2026/10/19/154-year-old-milwaukee-company-returns-to-city/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/014-150x150.jpg" alt='154-Year-Old Milwaukee Company Returns To City'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Position: 1']);" href="https://urbanmilwaukee.com/2026/10/19/154-year-old-milwaukee-company-returns-to-city/" rel="bookmark" class="item-title display-block">154-Year-Old Milwaukee Company Returns To City</a>
+					<span> by Jeramey Jannene</span>
+				</div>
+			</div>
+			<div class='item 1007998'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Photo Position: 2']);" href='https://urbanmilwaukee.com/pressrelease/kegels-inn-hosts-free-brewers-world-series-big-screen-watch-parties-in-its-historic-beer-garden-one-mile-from-american-family-field/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/World-Series-Beer-Garden-Watch-Party-150x150.png" alt='Kegel&#8217;s Inn Hosts Free Brewers World Series Big Screen Watch Parties in Its Historic Beer Garden, One Mile from American Family Field'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Position: 2']);" href="https://urbanmilwaukee.com/pressrelease/kegels-inn-hosts-free-brewers-world-series-big-screen-watch-parties-in-its-historic-beer-garden-one-mile-from-american-family-field/" rel="bookmark" class="item-title display-block">Kegel&#8217;s Inn Hosts Free Brewers World Series Big Screen Watch Parties in Its Historic Beer Garden, One Mile from American Family Field</a>
+					<span> by Kegel's Inn</span>
+				</div>
+			</div>
+			<div class='item last 1008714'>
+				<div class='four columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Photo Position: 3']);" href='https://urbanmilwaukee.com/2026/10/20/miller-offering-free-beer-to-celebrate-brewers-world-series/' rel="bookmark" class="display-block">
+						<img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2021/12/Miller-Lite-sm-150x150.jpg" alt='Miller Offering Free Beer To Celebrate Brewers World Series'>
+					</a>
+				</div>
+				<div class='twelve columns'>
+					<a onClick="_gaq.push(['_trackEvent', 'Most Popular', 'Position: 3']);" href="https://urbanmilwaukee.com/2026/10/20/miller-offering-free-beer-to-celebrate-brewers-world-series/" rel="bookmark" class="item-title display-block">Miller Offering Free Beer To Celebrate Brewers World Series</a>
+					<span> by Jeramey Jannene</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='div-gpt-ad-1420576007798-20' class="ad lazy-ad" data-ad-slot="div-gpt-ad-1420576007798-20"></div>
+	<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Furbanmilwaukee&amp;width=300&amp;height=258&amp;colorscheme=dark&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=142344658820" style="border:none; overflow:hidden; width:300px; height:258px;"></iframe>
+	<div id='div-gpt-ad-1420576007798-21' class="ad lazy-ad" data-ad-slot="div-gpt-ad-1420576007798-21"></div>
+	<div class='press-releases sixteen columns'>
+		<h3 class='title'><a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - Top']);" href='https://urbanmilwaukee.com/category/people/?post_type=pressrelease'>New Faces</a></h3>
+		<div class='press-releases-wrapper sidebar-block-wrapper'>
+			<div class='item 1007540'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 1']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-appoints-former-rep-sondy-pope-to-wisconsin-technical-college-system-board/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/Sandy-Pope-1-150x150.jpg" alt="Gov. Evers Appoints Former Rep. Sondy Pope to Wisconsin Technical College System Board"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 1']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-appoints-former-rep-sondy-pope-to-wisconsin-technical-college-system-board/" rel="bookmark" class="item-title">Gov. Evers Appoints Former Rep. Sondy Pope to Wisconsin Technical College System Board</a>
+					</div>
+				</div>
+			<div class='item 1006539'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 2']);" href="https://urbanmilwaukee.com/pressrelease/lowe-group-adds-veteran-business-journalist-as-client-services-director/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/Stacy-Vogel-Davis-1-150x150.jpeg" alt="Lowe Group Adds Veteran Business Journalist as Media &#038; Client Services Director"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 2']);" href="https://urbanmilwaukee.com/pressrelease/lowe-group-adds-veteran-business-journalist-as-client-services-director/" rel="bookmark" class="item-title">Lowe Group Adds Veteran Business Journalist as Media &#038; Client Services Director</a>
+					</div>
+				</div>
+			<div class='item last 1005198'>
+					<div class='four columns'>
+							<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 3']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-appoints-delani-dow-to-uw-board-of-regents/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/Delani-Dow-Headshot-1-150x150.jpg" alt="Gov. Evers Appoints Delani Dow to UW Board of Regents"></a>
+					</div>
+					<div class='twelve columns'>
+						<a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - 3']);" href="https://urbanmilwaukee.com/pressrelease/gov-evers-appoints-delani-dow-to-uw-board-of-regents/" rel="bookmark" class="item-title">Gov. Evers Appoints Delani Dow to UW Board of Regents</a>
+					</div>
+				</div>
+			<p class='item-title'><a onClick="_gaq.push(['_trackEvent', 'New Faces Click', 'New Faces Click - More']);" href='https://urbanmilwaukee.com/category/people/?post_type=pressrelease'>More New Faces</a></p>
+		</div>
+	</div><div class='press-releases'><h3 class='title'>Upcoming Events</h3>
+		<div class='press-releases-wrapper sidebar-block-wrapper'><div class='item'>
+					<div class='three columns'>
+							<a href="https://urbanmilwaukee.com/event/boo-at-the-zoo-10/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/Boo_900x750-150x150.jpg" alt="Boo at the Zoo"></a>
+					</div>
+					<div class='thirteen columns'>
+						<a href="https://urbanmilwaukee.com/event/boo-at-the-zoo-10/" rel="bookmark" class="item-title">Boo at the Zoo</a><div class='event-time'>Sat, Oct 24 - 9:30 am</div>
+					</div>
+				</div><div class='item'>
+					<div class='three columns'>
+							<a href="https://urbanmilwaukee.com/event/fall-fest-open-house-at-tamarack-waldorf-school/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/09/Fall-Fest-Event-Posting-Image-150x150.png" alt="Fall Fest &amp; Open House at Tamarack Waldorf School"></a>
+					</div>
+					<div class='thirteen columns'>
+						<a href="https://urbanmilwaukee.com/event/fall-fest-open-house-at-tamarack-waldorf-school/" rel="bookmark" class="item-title">Fall Fest &amp; Open House at Tamarack Waldorf School</a><div class='event-time'>Sat, Oct 24 - 10:00 am</div>
+					</div>
+				</div><div class='item'>
+					<div class='three columns'>
+							<a href="https://urbanmilwaukee.com/event/go-dog-go-ve-perro-ve-14/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/04/GoDogGo-LandingThumbnail-150x150.jpg" alt="Go Dog Go! / Ve Perro ¡Ve!"></a>
+					</div>
+					<div class='thirteen columns'>
+						<a href="https://urbanmilwaukee.com/event/go-dog-go-ve-perro-ve-14/" rel="bookmark" class="item-title">Go Dog Go! / Ve Perro ¡Ve!</a><div class='event-time'>Sat, Oct 24 - 11:00 am</div>
+					</div>
+				</div><div class='item'>
+					<div class='three columns'>
+							<a href="https://urbanmilwaukee.com/event/foxtown-fall-family-fun-day/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/10/FT1058_fall-family-fun-day-2026-1080x1080-social-feed-tile-2-1-1-150x150.jpg" alt="Foxtown Fall Family Fun Day"></a>
+					</div>
+					<div class='thirteen columns'>
+						<a href="https://urbanmilwaukee.com/event/foxtown-fall-family-fun-day/" rel="bookmark" class="item-title">Foxtown Fall Family Fun Day</a><div class='event-time'>Sat, Oct 24 - 11:00 am</div>
+					</div>
+				</div><div class='item last'>
+					<div class='three columns'>
+							<a href="https://urbanmilwaukee.com/event/go-dog-go-ve-perro-ve-15/" rel="bookmark" class="display-block"><img class="lazy" data-original="https://urbanmilwaukee.com/wp-content/uploads/2026/04/GoDogGo-LandingThumbnail-150x150.jpg" alt="Go Dog Go! / Ve Perro ¡Ve!"></a>
+					</div>
+					<div class='thirteen columns'>
+						<a href="https://urbanmilwaukee.com/event/go-dog-go-ve-perro-ve-15/" rel="bookmark" class="item-title">Go Dog Go! / Ve Perro ¡Ve!</a><div class='event-time'>Sat, Oct 24 - 1:00 pm</div>
+					</div>
+				</div>
+		</div><a class='see-more-link' href='https://urbanmilwaukee.com/events/'>See the full calendar</a></div>
+</div>	<div class='columns sixteen' id="footer"> 
+		<div class='five columns'> 
+			<h3>Information</h3>
+			<ul>
+				<li><a href='/membership-account/' data-google-vignette='false'>Become a Member</a></li>
+				<li><a href='/about/'>About</a></li>
+				<li><a href='/about/advertise/'>Advertise</a></li>
+    			<li><a href='/about/contact/'>Contact</a></li>
+    			<li><a href='/about/privacy-policy/'>Privacy Policy</a></li>
+				<li><a href='/about/submit-a-press-release'>Submit a Press Release</a></li>
+			</ul>
+			<hr>
+			<h3>Follow Us</h3>
+			<div>
+				<ul id="social-link-system_social_link-1" class="social-link-wrapper skins-default">
+					<li class="social-facebook social-link">
+						<a href="http://www.facebook.com/pages/Urban-Milwaukee/10150094598100361" class="social-link social-link-facebook"><span class="social-icon social-icon-facebook"></span>Facebook</a>
+					</li>
+					<li class="social-x social-link">
+						<a href="http://twitter.com/urbanmilwaukee" class="social-link social-link-x"><span class="social-icon social-icon-x"></span>X</a>
+					</li>
+					<li class="social-linkedIn social-link">
+						<a href="http://www.linkedin.com/company/urban-milwaukee-inc-/" class="social-link social-link-linkedIn"><span class="social-icon social-icon-linkedIn"></span>LinkedIn</a>
+					</li>
+					<li class="social-bluesky social-link">
+						<a href="https://bsky.app/profile/urbanmilwaukee.com" class="social-link social-link-bluesky"><span class="social-icon social-icon-bluesky"></span>Bluesky</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class='columns five' id='email-subscribe'>
+			<h3>Subscribe</h3>
+						<h4>Daily Email Update</h4>
+			<div id="mc_embed_signup"  class='mail-chimp-signup'>
+				<form action="https://urbanmilwaukee.us5.list-manage.com/subscribe/post?u=47fecf5ef8bf9b1436043c330&amp;id=fa7240869f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				    <div id="mc_embed_signup_scroll">
+						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+					    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_47fecf5ef8bf9b1436043c330_fa7240869f" tabindex="-1" value=""></div>
+					    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+				    </div>
+				</form>
+			</div>
+			<p><a href='https://urbanmilwaukee.com/membership-account/membership-levels/' data-google-vignette='false'>Take the next step, become a member.</a><br>
+			<a href='https://urbanmilwaukee.com/membership-account/membership-levels/' data-google-vignette='false'>Ditch the ads, get free stuff</a></p>
+					</div>
+		<div class='columns six'>
+			<h3><a href='https://UrbanMilwaukeeTheStore.com'>Urban Milwaukee: The Store</a></h3>
+			The place for Milwaukee and Wisconsin gifts<br />
+			<a href='https://UrbanMilwaukeeTheStore.com'>
+			<img class='map' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/images/store.jpg' alt='Gifts at Urban Milwaukee: The Store' /></a><br />
+			Visit the shop downtown at 755 N. Milwaukee St.<br/>
+			<a href='https://UrbanMilwaukeeTheStore.com'>Or shop online (Hours, Directions, Products)</a><br />
+			
+		</div>
+	</div>
+	<div id='copyright' class='sixteen columns'> 
+		&#169; 2026, Urban Milwaukee, Inc.  All rights reserved.
+	</div>
+</div>
+<div id='membership-notice' style='display:none;'>
+	<span>We're pretty sure you're a member and you're definitely not signed in. Sign-in to take full advantage of your membership, including an ad-free website and improved browsing experience. <a onClick='_gaq.push(["_trackEvent", "Click", "Membership Sign In Prompt"]);' href='https://urbanmilwaukee.com/login/?redirect_to=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'>Sign in</a></span>
+</div>
+		<!-- Memberships powered by Paid Memberships Pro v2.12.10. -->
+			<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script type='text/javascript'> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script><link rel='stylesheet' id='dashicons-css'  href='https://urbanmilwaukee.com/wp-includes/css/dashicons.min.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox-css'  href='https://urbanmilwaukee.com/wp-includes/js/thickbox/thickbox.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-fancybox-css'  href='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/css/jquery.fancybox.min.css?ver=5379be870253087450608b96ccd9696c' type='text/css' media='all' />
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/urbanmilwaukee.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/jquery.fancybox.min.js?ver=1.1.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/plugins.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/jquery.cookie.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/jquery.bpopup.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/jquery.carouFredSel-6.2.1-packed.js?ver=1.0.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/jquery.lazyload.min.js?ver=1.1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var um_ajax_comment_params = {"ajaxurl":"https:\/\/urbanmilwaukee.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/functions.js?ver=1.3.0'></script>
+<script type='text/javascript' src='https://urbanmilwaukee.com/wp-content/themes/urbanmilwaukee_responsive/js/prebid-ads.js?ver=2.0'></script>
+<noscript>
+	<div style="display:none;">
+		<img src="//pixel.quantserve.com/pixel/p-d8Fh9eDru8-7x.gif" height="1" width="1" alt="Quantcast"/>
+	</div>
+</noscript>
+	<script type='text/javascript'>
+		var article = "992835";
+		var author = "110";
+		var url = "https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race/";
+
+		jQuery(document).ready(function($) {
+			$.post("https://urbanmilwaukee.com" + "/wp-admin/admin-ajax.php",  
+		    {
+		    	action : "um_record_view",
+				article: article,
+				author: author,
+				url: url,
+							        user_id : "0"
+			    		  	},
+			function(data)
+			{
+				//console.log(data);
+			});
+
+					});
+	</script>
+	<script type='text/javascript'>
+	var filter_categories = new Array();//global variable for endless scroll
+	jQuery(document).ready(function($)
+	{
+					// Blitz Mode: Replace email-signup forms with promotional content
+			function um_blitz_replace_email_signups()
+			{
+				// Check if there are any email-signup elements on the page
+				if($('.email-signup').length > 0)
+				{
+					$.ajax({
+						url: "https://urbanmilwaukee.com/wp-admin/admin-ajax.php",
+						type: "GET",
+						dataType: "json",
+						cache: true, // Allow browser caching
+						data: {
+							action: "um_get_blitz_in_article"
+						},
+						success: function(response) {
+							if(response && response.enabled && response.content) {
+								// Replace all email-signup elements with promotional content
+								$('.email-signup').each(function() {
+									$(this).replaceWith(response.content);
+								});
+							}
+						},
+						error: function(xhr, status, error) {
+							// Silently fail - don't break the page if AJAX fails
+							console.log('Blitz mode AJAX error:', error);
+						}
+					});
+				}
+			}
+			um_blitz_replace_email_signups();
+						function findGetParameter(parameterName)
+			{
+			    var result = null,
+			        tmp = [];
+			    var items = location.search.substr(1).split("&");
+			    for (var index = 0; index < items.length; index++) {
+			        tmp = items[index].split("=");
+			        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+			    }
+			    return result;
+			}
+			var email_campaign = findGetParameter('fme');
+			if(email_campaign == '5fb59e1e03')
+			{
+				jQuery('#membership-notice').show();
+			}
+			
+		//navigation
+		$('#nav li:has(ul)').doubleTapToGo();
+
+		//lazyload
+		$("img.lazy").lazyload({
+		    effect : "fadeIn"
+		});
+		$("#sidebar img.lazy").lazyload({
+		    effect : "fadeIn"
+		});
+
+		//lazy-load sidebar ads
+		if ('IntersectionObserver' in window) {
+			var adObserver = new IntersectionObserver(function(entries) {
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						var slot = entry.target.getAttribute('data-ad-slot');
+						googletag.cmd.push(function() { googletag.display(slot); });
+						adObserver.unobserve(entry.target);
+					}
+				});
+			}, { rootMargin: '200px 0px' });
+			document.querySelectorAll('.lazy-ad[data-ad-slot]').forEach(function(el) {
+				adObserver.observe(el);
+			});
+		} else {
+			document.querySelectorAll('.lazy-ad[data-ad-slot]').forEach(function(el) {
+				var slot = el.getAttribute('data-ad-slot');
+				googletag.cmd.push(function() { googletag.display(slot); });
+			});
+		}
+
+		//record ad blocker display
+		function recordAdBlockerTrigger()
+		{
+			if(document.getElementById('adblocker-alert'))
+			{
+				var url = encodeURIComponent("https://urbanmilwaukee.com/2026/08/19/murphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race");
+				$.post("https://urbanmilwaukee.com" + "/wp-admin/admin-ajax.php",
+			    {
+			    	action : "um_adblocker_display",
+					url : url
+			  	},
+				function(data)
+				{
+					//console.log(data);
+				});
+			}
+		}
+		recordAdBlockerTrigger();
+	});
+</script>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>		<script>
+			function removeElement(elementId) {
+			    // Removes an element from the document
+			    var element = document.getElementById(elementId);
+			    element.parentNode.removeChild(element);
+			}
+			function insertAfter(newNode, referenceNode) {
+			    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+			}
+			//adblocker blocker
+			//if(window.canRunAds === undefined || !window.hasOwnProperty('google_render_ad') || window.google_render_ad === undefined)
+			if(window.abb_setup === undefined)
+			{
+									removeElement('content');
+										removeElement('sidebar');
+					var newItem = document.createElement("div");  
+					newItem.className += " columns";
+					newItem.className += " sixteen";
+					newItem.id = 'adblocker-alert';
+					newItem.innerHTML = "<h3>We Are Blocking Your Ad Blocker</h3>";
+					newItem.innerHTML += "<p>We respect that you don't want to see ads, so we have a solution - <a href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Become a Member</a>.</p>";
+					newItem.innerHTML += "<p>You'll get access to an ad-free website with a faster photo browser, the chance to claim free tickets to a host of events (including everything from Summerfest to the Milwaukee Film Festival), access to members-only tours, and a host of other benefits.</p>";
+					newItem.innerHTML += "<p>But most importantly, you will be helping to sustain an independent, local news publication in an era of corporate mega mergers, declining ad revenue and political attacks on the freedom of the press.</p>";
+					newItem.innerHTML += "<p>You are seeing this message because you have an ad blocker enabled.</p>";
+					newItem.innerHTML += "<p><a class='bigger' href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Join Today</a> or <a class='bigger' href='https://urbanmilwaukee.com/login/?redirect_to=https%3A%2F%2Furbanmilwaukee.com%2F2026%2F08%2F19%2Fmurphys-law-fake-polls-real-polls-muddle-wisconsin-governors-race%2F'>sign in</a></p>"
+
+					var list = document.getElementById("nav");
+					insertAfter(newItem,list);
+									
+			}
+			//pop-up
+			jQuery(document).ready(function($)
+			{
+				function findGetParameter(parameterName)
+				{
+				    var result = null,
+				        tmp = [];
+				    var items = location.search.substr(1).split("&");
+				    for (var index = 0; index < items.length; index++) {
+				        tmp = items[index].split("=");
+				        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+				    }
+				    return result;
+				}
+
+
+				var takeoverShown = $.cookie('takeover-ad') || 'false';
+				var email_campaign = findGetParameter('fme');
+
+				if(takeoverShown == 'false' && email_campaign != '5fb59e1e03')
+				{
+					$.fancybox.open({
+						src  : '#takeover-ad',
+						type : 'inline',
+						opts : {
+							afterShow : function( instance, current ) {
+								console.info( 'done!' );
+								setTimeout( function() {$.fancybox.close(); },15000);
+							},
+							clickSlide: false,
+							clickOutside: false,
+							smallBtn: false,
+							dblclickContent: false,
+	    					dblclickSlide: false,
+	    					dblclickOutside: false,
+						}
+					});
+					$.cookie('takeover-ad', 1, {expires: 1, path: '/' });
+				}
+			});
+			//funnel system
+			jQuery(document).ready(function($)
+			{
+				var funnelActive = $.cookie('funnel-active') || 'false';
+				if(funnelActive == 'false')
+				{
+					$.cookie('funnel-active', 1, {expires: 30, path: '/' });
+					$.cookie('funnel-steps', 1,{expires: 30,path:'/'});
+				}
+				else
+				{
+					var funnelSteps = $.cookie('funnel-steps');
+					funnelSteps++;
+					$.cookie('funnel-steps', funnelSteps,{path:'/'});
+					if(funnelSteps > 3)
+					{
+						$('.email-text').html("Get a daily rundown of the top Milwaukee stories.");
+						$('.email-signup-form').attr('action', 'https://us5.list-manage.com/subscribe?u=47fecf5ef8bf9b1436043c330&id=fa7240869f');
+						$('#membership_footnote').append("<em>Not ready to make the jump? Start by <a onClick='_gaq.push([\"_trackEvent\", \"Funnel Click\", \"Membership Footnote\"]);' href='https://urbanmilwaukee.com/about/subscribe/'>subscribing to our daily email</a>.</em>");
+					}
+				}
+			});
+		</script>
+		<div style='display:none;' id='takeover-ad'>
+			<p>This ad will close automatically in 15 seconds.</p>
+			<div id='div-gpt-ad-1527650473590-0'>
+				<script>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1527650473590-0'); });
+				</script>
+			</div>
+			<p>Tired of seeing banner ads on Urban Milwaukee? <a onClick='_gaq.push(["_trackEvent", "Membership Click", "Takeover Ad Link"]);' href='https://urbanmilwaukee.com/membership-account/' data-google-vignette='false'>Become a member for $9/month</a>.</p>
+		</div>
+		</body>
+</html>
