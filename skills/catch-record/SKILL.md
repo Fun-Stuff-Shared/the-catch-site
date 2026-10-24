@@ -4,8 +4,9 @@ description: >
   Stage one of a Catch story: take an accepted event or article, work out what happened
   and why, assemble every related primary record, coverage report, statement and
   development, admit each one as a pinned source with verified quotes, write the record
-  brief, run the grok sweep for statements and posts, and get the record reviewed for
-  completeness and provenance by GPT high until it holds. Use when starting a Catch story,
+  brief, run the grok sweep for statements and posts, get the record reviewed for
+  completeness and provenance by GPT high until it holds, and write the claim ledger the page
+  will cite and check each claim against its records. Use when starting a Catch story,
   when asked to build, assemble, research or audit a story's evidence or record, or when a
   record review comes back with findings. No story prose is written in this stage.
 license: CC BY-NC 4.0
@@ -33,9 +34,12 @@ Read from the shared state (`/Volumes/4/CF/catch-state`); never write to it.
 
 Outputs, all committed together at the end:
 - `checks/records/<story>.md`: the brief, from `assets/record-brief.md`
+- `checks/claims/<story>.json`: the claim ledger the page cites, and
+  `checks/reads/<story>-claims-held.json`, the claims that held
 - `checks/manifests/<story>.json`: one record per admitted source
 - `data/sources/<subject>/` and `data/sources/coverage/`: the pinned bytes and their text
-- `checks/records/<story>-grok.md` and `checks/records/<story>-review-r<N>.md`
+- `checks/records/<story>-grok.md`, `checks/records/<story>-review-r<N>.md` and
+  `checks/records/<story>-claims-r<N>.md`
 
 ## The work
 
@@ -203,15 +207,31 @@ deciding what came next, and the page read as a dump. The next ran one chain fro
 headline, which carried the catch, and answered every question where it came up, so the
 White House claim, the pressure, the two asks and the ban talk all landed in What happened,
 eleven paragraphs before the first section below it.
+
+Then write the claim ledger, `checks/claims/<story>.json` (`scripts/claims.py` prints its
+shape). The page cites claims, not records, so the ledger holds every fact the page may
+state: each answer in the plan, each row the result turns on, the catch, every figure. A
+claim says its fact in plain words, with the record's own status and scope in those words:
+"France signalled it could release 2 million more barrels", not "France offered 2 million
+barrels"; "Watson did not apologize at their October 5 meeting", not "the U.S. has not
+apologized". Its `status` is one of fact, said, plans, may, expected, alleged, with `by` for
+said and alleged. Its `load` names what rests on it: `spine` for a row the matrix's result
+turns on, `catch`, `figure`, and `person` for what a named person or party did or did not
+do. A claim with a load is checked strictly; one without is background, checked for what a
+reader takes away. Give a claim a `short` form when a table cell or timeline label will
+state it.
+
 Then:
 
 ```bash
 python3 -I skills/catch-record/scripts/admit.py check <story>
+python3 -I skills/catch-record/scripts/claims.py check <story>
 ```
 
-It verifies every pin, hash and quote, and finds every brief citation in its record's text.
-Fix every failure. Commit the brief, manifest, pins and grok output by path with a
-`record: <story>` message.
+The first verifies every pin, hash and quote, and finds every brief citation in its
+record's text; the second checks the ledger's shape and finds every claim's passages in
+their records. Fix every failure. Commit the brief, manifest, ledger, pins and grok output
+by path with a `record: <story>` message.
 
 ### 9. Review until the record holds
 
@@ -244,11 +264,30 @@ Stop when a round returns `RECORD COMPLETE`, or when no verified finding in a ro
 changes the five sentences or the plan. Hand any finding you cannot decide to the human
 with your recommendation.
 
-### 10. Report
+### 10. Check the claims
+
+When the record holds, check the ledger against the records:
+
+```bash
+zsh skills/catch-record/scripts/claims.sh <story> <N>      # N = 1, 2, ...
+```
+
+GPT-6 Sol (high) reads each claim that has not held as it reads now, with its passages and
+the full text of its records attached, and checks its words, status and scope: strictly for
+a claim with a load, for what a reader takes away for the rest. It ends `CLAIMS HOLD` or
+`CLAIMS DO NOT HOLD`; on HOLD the claims it read are recorded as held
+(`checks/reads/<story>-claims-held.json`). Judge each finding against the record's words,
+as with the review. A claim with a finding that holds is fixed in the ledger to say what
+the record says, or dropped; the next round reads only the claims that changed. Run until `CLAIMS HOLD`. This
+is the only check of the page's facts against the records: stage two checks the page
+against the claims. A claim added or changed later, in either stage, is checked the same
+way before the page that cites it publishes.
+
+### 11. Report
 
 Tell the human, in plain words: the event in two sentences, what the record now holds
-(primary records, coverage, statements), each review round's verdict, the unknowns, and
-the links you could not reach for them to verify. Give the commit.
+(primary records, coverage, statements), each review round's verdict, the claim check's
+verdict, the unknowns, and the links you could not reach for them to verify. Give the commit.
 
 ## Principles
 
@@ -266,11 +305,11 @@ the links you could not reach for them to verify. Give the commit.
 
 ## Gotchas
 
-- The review and the entailment read go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt. A failed ask says whether ChatGPT got the message: `submitted False` means it never did, so run the script once more; a second failure goes to the human with the run id it prints.
+- The review and the claim check go through `scripts/ask.sh`, which drives the running Codex Web GPT launcher (the `chatgpt-web-ask` skill). Exit 3 means the launcher is not running and exit 4 that it is signed out: tell the human, never start or restart it. Asks run one at a time across all sessions, because the launcher holds five ChatGPT tabs shared with Codex bridge tasks; a waiting ask is not stuck. Every ask is a saved chat in the human's ChatGPT history, so never send a test prompt. A failed ask says whether ChatGPT got the message: `submitted False` means it never did, so run the script once more; a second failure goes to the human with the run id it prints.
 
 - `capture` reports a failed OCR (quota, 429) as `empty_or_unextractable_body`. When a PDF comes back empty, OCR it directly with the mistral-ocr skill to see the real error. The Mistral key is read from `MISTRAL_API_KEY`, then `~/.sai/keys/mistral_api_key.env`.
 - In a press-conference or interview transcript, the reporter's question and the official's answer sit side by side. A passage cited for what an official said must come from the answer; reread the speaker label above it.
-- An attribution (who passed a resolution, who said a line, which body ruled) is checked against the record's own words, not a summary of it. The stage-two entailment read catches these, but by then the error is in the brief.
+- An attribution (who passed a resolution, who said a line, which body ruled) is checked against the record's own words, not a summary of it, before it goes in the ledger; the claim check catches the rest.
 - Court PDFs break words across lines with a hyphen. Set `"dehyphenate": true` on the spec so passages match.
 - Quotes are byte-exact; passages match across whitespace. Curly quotes and apostrophes in the source must be curly in the quote.
 - The site prints no em dashes. When a source sentence has one, quote the clause on either side, not the whole sentence.

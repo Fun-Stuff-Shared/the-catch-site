@@ -13,7 +13,10 @@ reader needs is part of the story, never a one-click detail: `detail` is for raw
 (a docket listing, a filing line by line), not for the timeline that explains why now.
 
 Every visual is cited like prose, its numbers come from the data module, and its caption
-says what it shows in a sentence a reader can check.
+says what it shows in a sentence a reader can check. A cell or label that states a fact is
+its claim's `short` form and cites the claim (`cites: [{ c: "<id>" }]` on a timeline entry),
+so the cell keeps the claim's "may" or "signalled": `assets/example-claims.md`. The seen-on
+pages below cite records directly, from before the ledger.
 
 ## Which one, for which question
 

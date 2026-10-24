@@ -38,3 +38,14 @@ test("a run of citations marked by merge-cites stays with its claim", () => {
   const more = (n) => cite(n).replace('<sup class="src-ref">', '<sup class="src-ref src-ref-more">');
   assert.deepEqual(claims(`One.${cite(1)}${more(2)} Two.${cite(3)}`), [`One.${cite(1)}${more(2)}`, `Two.${cite(3)}`]);
 });
+
+test("on a ledger page Just the facts lists each cited claim in the ledger's words, once", () => {
+  const claimed = (n, c, more = false) => cite(n).replace(' data-passage', ` data-claim="${c}" data-passage`)
+    .replace('<sup class="src-ref">', more ? '<sup class="src-ref src-ref-more">' : '<sup class="src-ref">');
+  const says = { fr: "France signalled it could add 2 million barrels & no more.", de: "Germany added none." };
+  const page = `<main id="story-root"><p data-layer="narrative">Only France offered more, maybe.${claimed(1, "fr")}${claimed(2, "fr", true)} Germany did not.${claimed(3, "de")} Again France.${claimed(1, "fr")}</p></main>`;
+  const list = factsClaims(page, (id) => says[id]).split('data-layer="claims">')[1];
+  assert.match(list, /^<li>France signalled it could add 2 million barrels &amp; no more\.<sup class="src-ref"><a href="#src-1"[^]*?<sup class="src-ref src-ref-more"><a href="#src-2"/);
+  assert.equal((list.match(/<li>/g) || []).length, 2);
+  assert.doesNotMatch(list, /maybe/);
+});

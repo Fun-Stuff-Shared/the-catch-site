@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1".
+// Consecutive citations of the same record on one sentence render once: "1" instead of "1, 1",
+// unless they cite different claims, which Just the facts lists separately.
 // The merged anchor keeps its first passage and carries the others in data-passages for the
 // evidence reader. A citation that directly follows another, with only space between, is
 // marked src-ref-more so the comma separating them is drawn there and nowhere else (a CSS
@@ -20,7 +21,8 @@ export function mergeCites(html) {
     const first = parts[i];
     const passages = [attr(first[2], "data-passage")].filter(Boolean);
     let j = i + 1;
-    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index)) && parts[j][1] === first[1]) {
+    while (j < parts.length && /^\s*$/.test(html.slice(parts[j - 1].index + parts[j - 1][0].length, parts[j].index)) && parts[j][1] === first[1]
+      && attr(parts[j][2], "data-claim") === attr(first[2], "data-claim")) {
       const p = attr(parts[j][2], "data-passage");
       if (p && !passages.includes(p)) passages.push(p);
       j++;

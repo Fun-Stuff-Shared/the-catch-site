@@ -62,7 +62,11 @@ what survived, not what the author started with. Then judge the sentences as
 the editor: is each sentence one plain fact, does any repeat an error the catch corrects,
 is the tension of the story in them. Then check what happened since the record's newest
 source (a web search on the event, the docket, the officials' feeds) and send the author
-anything that moved. Then give the word to write.
+anything that moved. Then read the claim ledger: open the pins of the claims with a load
+(the spine, the catch, the figures, what named people did), and check that each says the
+record's status and scope, not a stronger one. The claim check's findings are verified
+against the pins like the review's. Then give the word to write; you decide for the human
+unless they answer first.
 
 ## 3. Stage two: the page
 
@@ -81,9 +85,12 @@ revision promptly.
 
 The author sends you any fact the plan does not hold as a plan change. Take it only when a
 reader of the five sentences needs it, in the fewest words that hold; otherwise it stays in
-the record. Stage two does not grow the story. Each round of cold reads, verify the verdicts the author reports against the pins before
-you accept them; the entailment reviewer misreads records too. Hold the author to catch-story's two rounds (a third only for a
-wrong fact found in round 2, on the changed paragraphs). Then read the served page top to
+the record. A plan change you accept becomes a claim the author adds to the ledger and runs
+through the claim check before the page cites it. Stage two does not grow the story. When
+the author reports a bind finding it declined, read the claim against the sentence
+yourself. Hold the author to catch-story's two rounds of reader reads, and read the page
+yourself after the first, so your notes and the human's land before the second; the bind
+check runs on every edit and needs no limit. Then read the served page top to
 bottom yourself, in the story view, as the editor. Read What happened alone first: it tells
 the event plainly in about three paragraphs and argues no side's claim. Then where the
 thread breaks, what is said three times, what a reader will ask that the records answer.
@@ -116,7 +123,7 @@ you check:
 
 The human decides what goes live. Before you ask for their word, give them each story's open
 gaps, in plain words: everything the author listed as left, every stall in the last retell
-the page does not answer, and the last entailment verdict. A story with a content gap
+the page does not answer, and every bind finding the author declined, with why. A story with a content gap
 publishes only after the human has seen that gap and said to publish anyway. "Push once
 done" is not that. Then, on their word:
 
@@ -126,7 +133,9 @@ zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <
 
 It cuts a publish worktree from main, merges the branches, refuses a manifest with no
 figures or saved records that do not match it, runs the full build and gate (which refuses
-missing attestations), stages each story's figures and pins in catch-state from the publish worktree
+missing attestations), refuses a story whose cited claims have not held in the claim check
+or whose citing blocks have not passed the bind check as they read now
+(`claims.py verify`), stages each story's figures and pins in catch-state from the publish worktree
 (`state stage-story`, no model calls), verifies the state, copies each story's event view and every chain view that names it into `data/state/`
 and commits them (`state:`), checks that the committed views alone hold every story (the
 hosted build has no catch-state and reads only committed views; a story view without its
@@ -144,8 +153,9 @@ A published story that needs more than wording (a missing why, numbers a reader 
 reconcile, a claim the page leaves unresolved) goes back through both stages, not a voice
 pass. Cut `.worktrees/<subject>-revision` from main on `author/<subject>-revision`, write a
 kickoff from `assets/kickoff.md` that names the gaps with the retell's own words, and launch
-the author as in step 1. The author tops up the record (catch-record steps 3 to 9 for what is
-missing, after naming the explanations as in step 1 and rescoring them in step 8), sends you the revised five sentences and plan, and rewrites the page from the plan
+the author as in step 1. The author tops up the record (catch-record steps 3 to 10 for what is
+missing, after naming the explanations as in step 1 and rescoring them in step 8, with a
+new ledger: the old page's citations name records, and the rewrite cites claims), sends you the revised five sentences and plan, and rewrites the page from the plan
 under catch-story. A revision is a rewrite: patching the old page carries its structure and
 voice forward. The headline stays unless the human changes it; a new headline is renamed as in
 step 3. Supervise it like a new story, including your own read before publishing. A voice

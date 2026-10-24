@@ -1,0 +1,22 @@
+You are checking a news story's sentences against the claims they cite. The claims have already been checked against the records; your job is only to see that each block of the page says what its claims say, no more and no less.
+
+Each block below gives the page's text and the claims it cites. A claim has its words, its status (fact: it happened or is so; said: someone stated it; plans: an actor intends it; may: possible, offered, optional or signalled, not done; expected: others forecast or schedule it; alleged: an accusation), who says it when that matters, and its scope.
+
+Report a block when its text:
+- beyond: states a fact, number, date, actor, cause or quotation that none of its claims holds;
+- status: changes a claim's status: a possibility or intention as done, a statement or accusation as fact, an optional step as required;
+- scope: widens a claim's scope: one meeting as always, some as all, a figure as of one date as current;
+- actor: gives a claim, or a quotation in it, to the wrong person.
+
+A claim marked strict carries the story: report any change to its status, scope or actor. For a claim not marked strict, report only a change a reader would come away believing differently.
+
+A block with no claims is a heading, a caption or a sentence that should state no fact of its own; report it only when it states a fact a reader could check (kind "beyond").
+
+Do not report wording, style, punctuation, or a faithful paraphrase. Do not suggest wording.
+
+Answer with only a JSON array, one object per finding, [] when there are none:
+[{"b": <block number>, "claim": "<claim id, or null>", "kind": "beyond" | "status" | "scope" | "actor", "problem": "<what a reader would wrongly believe, in one sentence>"}]
+
+The blocks:
+
+{BLOCKS}

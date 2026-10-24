@@ -11,6 +11,13 @@ test("consecutive citations of one record render once and keep every passage", (
   assert.match(out, /data-passages="two"/);
 });
 
+test("citations of one record for two different claims stay separate", () => {
+  const claimed = (n, passage, c) => cite(n, passage).replace(' aria-label', ` data-claim="${c}" aria-label`);
+  const out = mergeCites(`Sentence.${claimed(1, "one", "a")}${claimed(1, "two", "b")}${claimed(1, "three", "b")}`);
+  assert.equal((out.match(/<sup/g) || []).length, 2);
+  assert.match(out, /data-claim="b"[^>]*data-passages="three"/);
+});
+
 test("whitespace between the citations does not stop the merge", () => {
   const out = mergeCites(`Sentence.${cite(4, "a")}\n  ${cite(4, "b")}`);
   assert.equal((out.match(/<sup/g) || []).length, 1);

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// Just the facts lists the page's own claims: each cited sentence of the story prose, under
-// the heading it sits in, without the text after the last citation.
+// Just the facts lists the page's own claims: on a page with a claim ledger, each claim its
+// paragraphs cite; otherwise each cited sentence of the story prose, under the heading it sits
+// in, without the text after the last citation.
 // Built from the narrative paragraphs and list items after astro build; the lists are typed
 // "claims" and show only in Just the facts.
-import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
+import { join, relative, sep } from "node:path";
 import { parse } from "parse5";
 
 const root = process.argv[2] || join(process.cwd(), "dist", "events");
@@ -43,7 +44,22 @@ function openTags(html) {
   return depth;
 }
 
-export function factsClaims(html) {
+// On a page that cites a claim ledger, Just the facts lists the claims themselves, in the
+// ledger's words with their status and scope, each with the citations the paragraph gave it.
+export function ledgerClaims(inner, says) {
+  const byClaim = new Map();
+  for (const [sup] of inner.matchAll(/<sup class="src-ref[^"]*">[\s\S]*?<\/sup>/g)) {
+    const id = (sup.match(/data-claim="([^"]*)"/) || [])[1];
+    if (!id) continue;
+    const plain = sup.replace('class="src-ref src-ref-more"', 'class="src-ref"');
+    byClaim.set(id, [...(byClaim.get(id) ?? []), plain]);
+  }
+  const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return [...byClaim].map(([id, sups]) =>
+    escape(says(id)) + sups.map((s, i) => (i ? s.replace('class="src-ref"', 'class="src-ref src-ref-more"') : s)).join(""));
+}
+
+export function factsClaims(html, says = null) {
   if (html.includes('data-layer="claims"')) return html;
   const doc = parse(html, { sourceCodeLocationInfo: true });
   const main = [...walk(doc)].find((n) => n.tagName === "main" && attr(n, "id") === "story-root");
@@ -53,7 +69,7 @@ export function factsClaims(html) {
     if (!["p", "li"].includes(node.tagName) || attr(node, "data-layer") !== "narrative") continue;
     const loc = node.sourceCodeLocation;
     const inner = html.slice(loc.startTag.endOffset, loc.endTag.startOffset).replace(/<div class="work-evidence"[\s\S]*$/, "");
-    const found = claims(inner);
+    const found = says ? ledgerClaims(inner, says) : claims(inner);
     if (!found.length) continue;
     const items = found.map((s) => `<li>${s}</li>`).join("");
     inserts.push({
@@ -80,7 +96,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let n = 0;
   for (const file of pages(root)) {
     const html = readFileSync(file, "utf8");
-    const next = factsClaims(html);
+    const [subject, slug] = relative(root, file).split(sep);
+    const ledgerPath = join(process.cwd(), "checks/claims", `${subject}--${slug}.json`);
+    const ledger = slug && existsSync(ledgerPath) ? JSON.parse(readFileSync(ledgerPath, "utf8")) : null;
+    const says = ledger && ((id) => {
+      const found = ledger.claims.find((c) => c.id === id);
+      if (!found) throw new Error(`claim_unknown:${subject}--${slug}:${id}`);
+      return found.says;
+    });
+    const next = factsClaims(html, says);
     if (next !== html) { writeFileSync(file, next); n++; }
   }
   console.log(`facts-claims: ${n} page(s) list their claims in Just the facts`);

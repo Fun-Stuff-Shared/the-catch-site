@@ -3,8 +3,8 @@ name: catch-story
 description: >
   Stage two of a Catch story: write the story page from a finished catch-record brief, as
   one thread a stranger can follow, laid out in layers they can stop after or dig into,
-  with every claim cited on its own sentence, then check it with a cold retell and an entailment read and
-  revise with the human until it reads. Use when writing, rewriting or revising the prose of
+  every sentence citing the claims it states from the record's claim ledger, then check it
+  with a thread read, a cold retell and the bind check and revise with the human until it reads. Use when writing, rewriting or revising the prose of
   a Catch story page, when a page reads as a dump of facts, or when the human gives notes
   on a story's wording. Requires the record brief from catch-record.
 license: CC BY-NC 4.0
@@ -16,7 +16,9 @@ metadata:
 # Catch story
 
 You write the page. The record is done: the brief at `checks/records/<story>.md` holds
-the story in five sentences, the plan, and every fact with its source. Your job is to
+the story in five sentences, the plan, and every fact with its source, and the claim ledger
+at `checks/claims/<story>.json` holds every fact the page may state, already checked against
+its records. Your job is to
 tell that story so a person who has never heard of it can follow it from the first line to
 the last, stop at any layer with a true picture, and dig in where they want to.
 
@@ -27,25 +29,29 @@ Paths: `<story>` is `<subject>--<slug>`. The page is
 `src/pages/events/<subject>/<slug>.astro`, its numbers live in
 `src/data/<subject>-<slug>.mjs`, its sources in `checks/manifests/<story>.json`.
 `assets/example-page.astro` and `assets/example-data.mjs` are a finished page in this
-form; read them before writing.
+form; read them before writing. Their citations name records directly, from before the
+ledger; yours cite claims, as `assets/example-claims.md` shows.
 
 ## 1. Agree the story with the human
 
-Read the whole brief. Then show the human the five sentences and the plan as they will
-shape the page, and say what the story is in plain words: who it happens to, what changed,
-why now, what is in dispute, what comes next. Do not write a page until they agree.
-A wrong angle costs a sentence here and a rewrite later.
+Read the whole brief and the ledger. Then send the orchestrator the five sentences and the
+plan as they will shape the page, show the human the same, and say what the story is in
+plain words: who it happens to, what changed, why now, what is in dispute, what comes next.
+Write when the orchestrator gives the word; it decides for the human unless the human
+answers first. A wrong angle costs a sentence here and a rewrite later.
 
 ## 2. Write it in layers
 
-Write from the plan, not the brief. Draft each layer in your own words with the brief
-closed, saying what you know the way a reporter who has read everything would say it, then
-attach the citations. The record is what lets you say "since the war with Iran began in
-February, U.S. diesel has risen by more than half" in one clause; it is not a list of things to mention.
-A record's being admitted is never a reason to use it. There is no word budget: a
-paragraph is there because it is a step in its layer's chain, answering the question the
-paragraph before it left, and one that answers none is cut. A question the plan does not answer is a plan change: send it
-to the orchestrator; do not answer it on the page yourself.
+Write from the plan, not the brief. Draft each layer in your own words, saying what you know
+the way a reporter who has read everything would say it, then cite each sentence's claims:
+`<Cite c="<claim id>" />` carries the claim's records. The record is what lets you say
+"since the war with Iran began in February, U.S. diesel has risen by more than half" in one
+clause; it is not a list of things to mention. A claim's being in the ledger is never a
+reason to use it. There is no word budget: a paragraph is there because it is a step in its
+layer's chain, answering the question the paragraph before it left, and one that answers
+none is cut. A question the plan does not answer, or a fact the ledger lacks, is a plan
+change: send it to the orchestrator; on its word, add the claim to the ledger and check it
+(`catch-record` step 10) before the page cites it. Do not answer it on the page yourself.
 
 The page reads top to bottom as the inverted pyramid: the top tells what happened, and
 each layer below goes deeper into one part of it, true enough to stop after. These are the
@@ -88,7 +94,11 @@ parts of a whole, a number against what came before, someone's own words), draw 
 the prose say why and what it means. A screen of prose with nothing to look at loses the
 reader; a visual that only repeats the paragraph beside it is noise. When you draft each
 section, decide what the reader sees there as well as what they read. The components, which
-question each answers, and how to draw what none covers: `references/visuals.md`.
+question each answers, and how to draw what none covers: `references/visuals.md`. A table
+cell or timeline label that states a fact is its claim's `short` form
+(`claim("<story>", "<id>").short`, from `src/lib/claims.mjs`) and cites the claim; a
+timeline entry cites it as `cites: [{ c: "<id>" }]`. A cell is the most compressed text on
+the page, and the place a "may" most often becomes a "will".
 
 The headline is a news headline a reader would click, not the story's claim written out:
 the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
@@ -111,12 +121,21 @@ European diesel" in a dek told the reader nothing and seeded a misreading.
 ## 3. Write like a reporter
 
 The unit is the paragraph: each one says one thing in the story. The unit of citation is
-the sentence: every sentence that states a fact ends with the `<Cite>`s for that fact, not
-a paragraph-end cluster covering the sentences before it. Just the facts is built from the
-cited sentences alone, so a fact sentence without its own citation drops out of it, and one
-that leans on an uncited sentence before it ("They are what is left...") reads as a dangling
-claim there. Only a sentence that states no fact of its own ("That matters because...")
-stands uncited.
+the sentence: every sentence that states a fact ends with the `<Cite c>`s for the claims it
+states, not a paragraph-end cluster covering the sentences before it. A sentence states its
+claims and nothing more; a sentence may join several. Just the facts lists, under each
+paragraph, the claims it cites in the ledger's words, so a fact sentence without its own
+citation drops out of it. Only a sentence that states no fact of its own ("That matters
+because...") stands uncited.
+
+A claim's status and scope are part of the fact, not a hedge on it. "France signalled it
+could add 2 million barrels" is the fact; "France offered 2 million barrels" is a different,
+false one. Say a claim with the record's verb (signalled it could, plans to, may submit, is
+expected to, says, accuses) and its scope (at their October 5 meeting, of the referrals made
+public, as of October 7), once, plainly, in the sentence that states it. A hedge is the
+writer's own doubt laid over a fact ("appears to", "it seems", "reportedly" on a fact the
+record states outright); cut those. Most dropped qualifiers reach a page through a rewrite,
+a voice pass or a table cell, so reread each claim's status after every one.
 
 A paragraph is told, not listed. Sentences carry how the facts relate: what caused what,
 what came after, what it costs whom, where the sides collide. A run of short sentences
@@ -212,22 +231,30 @@ the page done, fill the manifest's `completed_by`, `steps`, `figures` and `sub_e
 update the subject page, as `catch-orchestrate` section 4 lists; the orchestrator will not
 publish without them.
 
-## 5. Read it cold
+## 5. Read it cold, then bind it
 
 ```bash
 zsh skills/catch-story/scripts/thread.sh <story> <N>      # N = 1, 2, ...
 zsh skills/catch-story/scripts/reads.sh <story> <N>
+python3 skills/catch-story/scripts/bind.py <story> <N>
 ```
 
-Three reads on the built page. The thread read comes first: a fresh reader (Haiku) reads
-the story one paragraph at a time, never seeing what comes next, and after each says
-whether it answered the question they had, whether they could see why it came now, which
-words lost them, and what they want to know next. A fresh reader (Claude, no context) then
-reads the whole story once and retells it in five sentences. GPT-6 Sol (high), in
-ChatGPT Web, checks every paragraph against its cited records: the page and each cited passage
-go in the message, and the full text of every cited record goes as an attached file
-(`scripts/evidence_pack.py`, built from the rendered page; after the first round the page part
-holds only the blocks that changed). It ends `ENTAILED` or `NOT ENTAILED`.
+The reads are for the reader; the bind check is for the facts. The thread read comes
+first: a fresh reader (Haiku) reads the story one paragraph at a time, never seeing what
+comes next, and after each says whether it answered the question they had, whether they
+could see why it came now, which words lost them, and what they want to know next. A fresh
+reader (Claude, no context) then reads the whole story once and retells it in five
+sentences.
+
+The bind check reads every block of the built page against the claims it cites, and only
+the blocks that changed since they last passed: does the block say what its claims say, no
+more, with each claim's status, scope and speaker? Sonnet reads each changed block, and Opus
+reads again each one that cites a claim with a load. A finding on a claim with a load, or a
+fact no claim holds, must be fixed; one on a background claim is listed for you to judge. It
+ends `BOUND` or `NOT BOUND` and takes about a minute, so run it after every build that
+changes the page's text, including the fixes the human's notes bring. The page publishes
+only when every block that cites a claim has passed as it reads now (`publish.sh` checks),
+so there is no round limit to count: an edit is checked when it is made.
 
 The thread read is one reader's reactions, not a list of orders: you are the reporter, and
 you judge each flag against what the story needs. Where a break is real, the fix is never
@@ -244,28 +271,22 @@ inserting text where the reader stalled:
 
 Compare the retelling with the brief's five sentences. Where they differ, the page failed
 to carry that sentence: fix the paragraph that should have carried it. Every stall the
-reader quotes is fixed in the sentence or the sentence is cut. Every entailment finding is
-first checked against the record's own words, because the reviewer misreads records too
-(it once narrowed a treaty clause the page had right, and the author applied it in three
-places); a finding the record refutes is answered with the record and left out. A finding
-that holds is fixed at the record: the sentence says what the record says, or the record
-that says it is admitted with catch-record. A finding names a problem; you write the fix,
-in the page's voice. Reviewer wording runs to hedges and qualifiers ("defer further
-releases pending an IEA assessment"), and pasted in, it turns the page into the reviewer's
-prose.
+reader quotes is fixed in the sentence or the sentence is cut.
 
-A finding in either read that needs a fact the plan does not hold is a plan change, not an
-edit: send it to the orchestrator with the answer and its record, and add it only on its
-word. Stage two does not grow the story.
+A bind finding is checked against the claim's own words before you act on it; the checker
+misreads too. One that holds is fixed in the sentence: it says what its claims say. When the
+sentence is right and the ledger lacks the fact, that is a plan change, not an edit. A
+finding names a problem; you write the fix, in the page's voice.
 
-Two rounds, then the human. Round 1 reads the finished page; fix what holds. Round 2 reads
-the fixed page; from here fix only what changes what a reader takes away: a wrong number,
-actor or date, a claim the record contradicts, a retelling that misses one of the five
-sentences. Punctuation, quote-versus-paraphrase and how-broadly-worded findings go on a
-list for the human, unapplied. A third round runs only when round 2 found a wrong fact, and
-only on the paragraphs that changed. Never more. Every rewrite gives the next round new
-text to flag, so the rounds do not converge on their own; a 45-paragraph page always
-draws findings. The human's read is the last check.
+A finding in any read that needs a fact the plan does not hold is a plan change: send it to
+the orchestrator with the answer and its record, and add it only on its word, as a claim
+checked in `catch-record` step 10. Stage two does not grow the story.
+
+The order matters for the reader reads, which cost a run each and draw new findings on every
+rewrite: look at the page (section 4), run the thread read and the retell, fix, and then
+send it to the orchestrator for its read and to the human for theirs, before a second
+thread read and retell. Two rounds of the reader reads, then the human. After round 2, fix
+only what changes what a reader takes away; wording notes go on a list for the human.
 
 ## 6. Show the human, in the story viewer
 
@@ -278,12 +299,13 @@ npx astro preview --host 127.0.0.1 --port <port>
 Their notes are the last read. Take each one as the problem it names, not as a sentence to
 paste: a note that says a paragraph is unclear asks for the paragraph to be clear, and a
 suggested rewrite is a pointer to the problem. Fix every instance of the problem across the
-page, not only the one named. Rebuild, rerun the reads on what changed, and show it again.
+page, not only the one named. Rebuild, run the bind check, and show it again.
 
 ## 7. Commit
 
-Commit the page, the data module, the manifest and the reads by path with a
-`story: <story>` message. Never commit `data/state/`, `src/data/news-records.json` or
+Commit the page, the data module, the manifest, the ledger and the reads (with
+`checks/reads/<story>-bound.json` and `-claims-held.json`, which publish checks) by path
+with a `story: <story>` message. Never commit `data/state/`, `src/data/news-records.json` or
 `data/sources/news-state/`: the build regenerates them. Commit nothing under `skills/`: a
 tool the skill lacks goes to the editor as a note, and the skill changes on its own branch,
 so the story branch never carries a second copy of it.
@@ -293,5 +315,5 @@ so the story branch never carries a second copy of it.
 - `astro build` alone skips `build-news-records.mjs` and the gate then fails on another story's record page. Use `npm run build`.
 - A passage holding an em dash cannot be printed. Cite and quote the clause on either side.
 - The gate fails a timestamped absence ("As of October 5, no one has..."). State what is true instead ("The Court has not acted on that petition") or cut it.
-- `<Cite passage=...>` matches the record across whitespace; check the words exist in the record's text before you cite them.
+- A page whose story has a ledger fails to build on any `<Cite s=... passage=...>`: cite the claim (`cite_needs_claim`). An unknown claim id fails as `claim_unknown`.
 - A detail block cannot hold the only statement of a fact a story paragraph depends on; the story paragraph must stand without it.

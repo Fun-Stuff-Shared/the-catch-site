@@ -44,6 +44,9 @@ read_pins(Path(sys.argv[1]), Path(sys.argv[1]) / sys.argv[2])' $wt $m || { print
 done
 
 npm run build > /tmp/${wt:t}-build1.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build1.log" >&2; exit 1 }
+for s in $stories; do
+  python3 -I skills/catch-record/scripts/claims.py verify $s || { print "$s: its claims or its page have not passed their checks as they read now" >&2; exit 1 }
+done
 
 for s in $stories; do
   (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story --manifest $wt/checks/manifests/$s.json \
