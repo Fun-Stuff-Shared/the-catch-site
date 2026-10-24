@@ -31,8 +31,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
         <ol>
           <li><a href="#what-happened">What happened</a></li>
-          <li><a href="#student">A student at the polls on November 3</a></li>
           <li><a href="#why-now">From the law to the lawsuit</a></li>
+          <li><a href="#student">A student at the polls on November 3</a></li>
           <li><a href="#why-the-court">Why the Court stepped in</a></li>
           <li><a href="#the-sides">What each side says</a></li>
           <li><a href="#the-catch">The Catch</a></li>
@@ -47,6 +47,16 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <p data-layer="narrative" data-answer="1">A New Hampshire law, HB 323, has kept student IDs off the list of IDs a poll worker must accept since June 2, and no court has blocked it.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /> What Judge Joseph Laplante of the federal court in New Hampshire blocked, in a lawsuit brought by the Coalition for Open Democracy, was narrower: Secretary of State David Scanlan's instruction that election officials could not consider a student ID even as backup evidence of who a voter is.<Cite c="hb323-not-enjoined" /><Cite c="suit-filed" /> Laplante ordered the state to tell officials that, in deciding who a voter without a listed ID is, they could look at a student ID along with other evidence.<Cite c="injunction-terms" /> On October 22 the Supreme Court paused his order at the state's request. Justice Ketanji Brown Jackson dissented; the unsigned order does not record how the other justices voted.<Cite c="stay-granted" /><Cite c="jackson-only-noted-dissent" /></p>
         <p data-layer="narrative" data-answer="2">For most of October, after Laplante's order, the Secretary's instructions and website told supervisors at the polls that they may consider a student ID along with other evidence when a voter has no listed ID.<Cite c="guidance-updated-oct" /> On October 23, the day after the Supreme Court's pause, the state went back to the rules it used in the September primary: a student ID cannot be used to prove identity when registering, voting absentee or checking in on election day.<Cite c="state-reverts-oct23" /> A registered student without a government photo ID can still get a ballot on November 3 if a local election official personally knows them and signs a statement saying so.<Cite c="registered-route-personal-knowledge" /> A student registering that day cannot get in on an official's word, but officials can confirm their identity, with their permission, from New Hampshire motor-vehicle or vital records.<Cite c="no-vouching-at-registration" /><Cite c="state-records-route" /></p>
         <p data-layer="narrative" data-answer="3">The Supreme Court's order gives one reason: lower federal courts should ordinarily not change election rules on the eve of an election, and Laplante ruled {computed.daysInjunctionToElection} days before this one.<Cite c="order-ground-purcell" /><Cite c="order-32-days" /> It does not decide whether the law or Scanlan's instruction is lawful.<Cite c="order-no-merits" /> The pause lasts through the state's appeal and any petition to the Supreme Court, and the case is expected to go to trial.<Cite c="stay-duration" /><Cite c="trial-ahead" /></p>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">From the law to the lawsuit</h2>
+        <p data-layer="narrative">State Rep. Donald McFarlane, who sponsored HB 323, has said he did so because colleges do not have the same controls as government agencies when they issue ID cards.<Cite c="sponsor-reason" /> Scanlan's office then announced that from June 2 student IDs could not be used as proof of ID at all: not to register, not to request an absentee ballot, not to check in to vote.<Cite c="april-directive" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the law to the Supreme Court</strong></figcaption>
+          <DecisionTimeline entries={chronology} heading="What happened" />
+        </figure>
+        <p data-layer="narrative">The Coalition for Open Democracy sued in August, arguing that the law unconstitutionally burdens the right to vote and intentionally discriminates against young voters.<Cite c="suit-filed" /><Cite c="suit-grounds" /> Laplante refused to change anything for the September primary, saying it was too close to the election.<Cite c="primary-no-relief" /> For the general election he split the case in two. On the law, he has sided with the state so far: at this early stage, he found that the state's interests in counting only eligible votes and running orderly elections were weighty enough to justify taking student IDs off the list.<Cite c="hb323-justified-preliminary" /> On Scanlan's instruction, he found the state had offered no reason specific to barring student IDs even as backup evidence, and Scanlan's own deputy testified he saw no factual reason a student ID could not be reasonable evidence of who a voter is.<Cite c="no-interest-for-directive" /> Laplante refused to pause his order, and so did the federal appeals court above him, the First Circuit, by 2 to 1.<Cite c="lower-courts-refused" /></p>
       </section>
 
       <section id="student">
@@ -86,16 +96,6 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <KpiStrip kpis={figures} />
           <p class="chart-source">From the district court record.<Cite c="young-lacking-id" /><Cite c="primary-turned-away" /><Cite c="no-reliance-count" /></p>
         </figure>
-      </section>
-
-      <section id="why-now">
-        <h2 data-layer="fact">From the law to the lawsuit</h2>
-        <p data-layer="narrative">State Rep. Donald McFarlane, who sponsored HB 323, has said he did so because colleges do not have the same controls as government agencies when they issue ID cards.<Cite c="sponsor-reason" /> Scanlan's office then announced that from June 2 student IDs could not be used as proof of ID at all: not to register, not to request an absentee ballot, not to check in to vote.<Cite c="april-directive" /></p>
-        <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>From the law to the Supreme Court</strong></figcaption>
-          <DecisionTimeline entries={chronology} heading="What happened" />
-        </figure>
-        <p data-layer="narrative">The Coalition for Open Democracy sued in August, arguing that the law unconstitutionally burdens the right to vote and intentionally discriminates against young voters.<Cite c="suit-filed" /><Cite c="suit-grounds" /> Laplante refused to change anything for the September primary, saying it was too close to the election.<Cite c="primary-no-relief" /> For the general election he split the case in two. On the law, he has sided with the state so far: at this early stage, he found that the state's interests in counting only eligible votes and running orderly elections were weighty enough to justify taking student IDs off the list.<Cite c="hb323-justified-preliminary" /> On Scanlan's instruction, he found the state had offered no reason specific to barring student IDs even as backup evidence, and Scanlan's own deputy testified he saw no factual reason a student ID could not be reasonable evidence of who a voter is.<Cite c="no-interest-for-directive" /> Laplante and then the federal appeals court above him, the First Circuit, by 2 to 1, refused to pause his order.<Cite c="lower-courts-refused" /></p>
       </section>
 
       <section id="why-the-court">
@@ -138,7 +138,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </li>
             <li>
               <h3>The guidance said the opposite</h3>
-              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots." Scanlan's April 23 announcement said student IDs cannot be used.<Cite c="catch-upi-reversed" /></p>
+              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots." The announcement Scanlan's office made on April 23, for the rules starting June 2, said student IDs cannot be used.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
             </li>
           </ol>
         </aside>
@@ -146,8 +146,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="next">
         <h2 data-layer="fact">What happens next</h2>
-        <p data-layer="narrative">The pause holds while the First Circuit hears the state's appeal. If either side then asks the Supreme Court to take the case, the pause ends the day the Court says no, or lasts until it rules.<Cite c="stay-duration" /> In the district court, the case is expected to go to a full trial on whether the law and the instruction are lawful, with no date yet in the court record.<Cite c="trial-ahead" /></p>
-        <p data-layer="narrative">Before any trial, the case could turn on whether the Coalition has the right to sue at all. Laplante assumed it does without deciding the point. He relied on Chief Judge Elliott's ruling in the earlier affidavit case, and that ruling is itself on appeal.<Cite c="standing-open" /> The state says it will run radio and television announcements telling voters that student IDs cannot be used to prove identity.<Cite c="state-ads" /></p>
+        <p data-layer="narrative">The Supreme Court's pause holds while the First Circuit hears the state's appeal. If either side then asks the Supreme Court to take the case, the pause ends the day the Court says no, or lasts until it rules.<Cite c="stay-duration" /> In the district court, the case is expected to go to a full trial on whether the law and the instruction are lawful, with no date yet in the court record.<Cite c="trial-ahead" /></p>
+        <p data-layer="narrative">Before any trial, the case could turn on whether the Coalition has the right to sue at all. Laplante assumed it does without deciding the point. He relied on the same court's ruling on that question in the earlier affidavit case, which is itself on appeal.<Cite c="standing-open" /> The state says it will run radio and television announcements telling voters that student IDs cannot be used to prove identity.<Cite c="state-ads" /></p>
       </section>
 
       <section id="records">

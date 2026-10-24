@@ -18,7 +18,7 @@ export const computed = {
 export const event = {
   slug: "election-administration/2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids",
   title: "Supreme Court lets New Hampshire tell poll workers to ignore student IDs on Nov. 3",
-  dek: "A state law took student IDs off the list of accepted voter IDs in June. The pause brings back the Secretary of State's instruction that officials may not consider one even as backup evidence of who a voter is.",
+  dek: "A state law took student IDs off the list of accepted voter IDs in June. A Supreme Court order now brings back the Secretary of State's instruction that officials may not consider one even as backup evidence of who a voter is.",
   name: "Stay of the New Hampshire student-ID injunction",
   date: "2026-10-22",
   updated: "2026-10-24",
