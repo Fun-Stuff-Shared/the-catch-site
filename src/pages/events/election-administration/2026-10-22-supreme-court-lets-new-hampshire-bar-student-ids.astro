@@ -102,8 +102,9 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <h2 data-layer="fact">Why the Court stepped in</h2>
         <p data-layer="narrative">New Hampshire argued that re-educating local election officials and the public in the weeks before the election was practically impossible, and that even if the judge read state law reasonably, he should have waited.<Cite c="state-purcell-case" /></p>
         <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>How close to the election each order came</strong><Cite c="order-32-days" /><Cite c="stay-granted" /></figcaption>
+          <figcaption><strong>How close to the election each order came</strong></figcaption>
           <DateLine points={timing.points} intervals={timing.intervals} highlight={timing.highlight} ariaLabel={`Laplante's order came ${computed.daysInjunctionToElection} days before the November 3 election, and the Supreme Court's pause ${computed.daysStayToElection} days before it`} />
+          <p class="chart-source">Dates from the orders and the election calendar.<Cite c="order-32-days" /><Cite c="stay-granted" /></p>
         </figure>
         <p data-layer="narrative">The order cites a September ruling in which the Court stopped lower courts from changing <a href="/events/missouri-house-map/2026-09-03-map-never-became-law/">Missouri's congressional map</a> after ballots had already been printed and mailed and voting had begun.<Cite c="onder-precedent" /> Laplante had found that general-election voting in New Hampshire had not meaningfully begun when he ruled.<Cite c="voting-not-begun-oct2" /></p>
         <p data-layer="narrative">Jackson's dissent recalls Purcell v. Gonzalez, a 2006 case in which, as she summarizes it, the Court said courts weighing a late election order must consider that the order itself could cause voter confusion or give people a reason to stay away from the polls.<Cite c="jackson-only-noted-dissent" /><Cite c="purcell-explained" /></p>
@@ -137,12 +138,12 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <p data-layer="narrative">Several of the first reports told the order as the Court approving a ban on student IDs. CBS News headlined that the Supreme Court "rules New Hampshire can ban use of student IDs," and UPI wrote that the Court "ruled."<Cite c="catch-cbs-rules" /> New Hampshire's attorney general said the order reinstated the state's law, and the Union Leader wrote that the Court found it inappropriate for lower courts to "set aside state laws."<Cite c="catch-reinstating-law" /> No court set the law aside. HB 323 has kept student IDs off the accepted list since June 2 through every ruling in the case, and what the Court's order brings back is Scanlan's instruction that a student ID cannot count even as backup evidence.<Cite c="hb323-what-it-did" /><Cite c="hb323-not-enjoined" /></p>
             </li>
             <li>
-              <h3>The state's appeal succeeded, and the order records no vote count<Cite c="catch-usatoday-unsuccessful" /><Cite c="catch-8-1" /></h3>
+              <h3>USA Today's "unsuccessful" and the 8-1 post</h3>
               <p data-layer="narrative">USA Today called the state's emergency appeal "unsuccessful"; the Court granted it.<Cite c="catch-usatoday-unsuccessful" /> A post on X called the order 8-1, but the order records only Jackson's dissent and no other justice's vote.<Cite c="catch-8-1" /></p>
             </li>
             <li>
-              <h3>UPI turned the judge's finding around<Cite c="catch-upi-reversed" /></h3>
-              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots, which Laplante ruled went further than the law." It was the other way around. Scanlan's office announced on April 23 that from June 2 student IDs could not be used, and what Laplante found went further than the law was that bar on considering them even as backup evidence.<Cite c="april-directive" /><Cite c="catch-upi-reversed" /></p>
+              <h3>UPI on Scanlan's guidance</h3>
+              <p data-layer="narrative">UPI wrote that Scanlan's guidance "said student IDs could be used when people seek ballots, which Laplante ruled went further than the law." It was the other way around. Scanlan's guidance said student IDs could not be used, and what Laplante found went further than the law was that bar on considering them even as backup evidence.<Cite c="catch-upi-reversed" /></p>
             </li>
           </ol>
         </aside>
