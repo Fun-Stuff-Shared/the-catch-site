@@ -38,6 +38,15 @@ export const versions = [
   { point: "Who decides", trump: "trump-arbitrator", terms: "terms-sole-discretion" },
 ];
 
+export const triggers = [
+  { who: "A White House official, before the event", c: "wh-official-preview" },
+  { who: "Vance, at the Oval Office event, October 20", c: "vance-not-only-prosecutions" },
+  { who: "Vance's office, October 21", c: "vance-post-conviction" },
+  { who: "america.gov/fraud, the reporting site", c: "portal-charges-or-recovery" },
+  { who: "Treasury's post, the evening of October 20", c: "treasury-repeats-range" },
+  { who: "The Justice Department's written terms", c: "terms-charges-defined" },
+];
+
 export const timeline = [
   { date: "2022", c: "fof-charges-since-2022" },
   { date: "Feb. 2024", c: "abdi-2024-names-center" },
