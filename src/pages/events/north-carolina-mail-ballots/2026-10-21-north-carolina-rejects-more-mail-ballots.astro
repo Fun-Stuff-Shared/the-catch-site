@@ -65,7 +65,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </tbody>
           </table>
         </figure>
-        <p data-layer="narrative">The Board's {n.rate2026}% covers ballots rejected for any reason, so it does not say how many the new rule caught.<Cite c="board-rate-all-reasons" /> Wake, Mecklenburg and Guilford have counted their sealing rejections, shown below. In Guilford, the elections director says the total is about where it was in past elections.<Cite c="guilford-counts" /> Not every one of those sealing rejections would have counted before, because the old rule also spoiled a ballot that came with both envelopes unsealed.<Cite c="rule-2024" /> But Gerry Cohen, a member of the Wake County elections board, wrote that the 42 ballots it spoiled for an unsealed inner envelope at its first review meeting, on Sept. 29, would have been approved in past elections.<Cite c="cohen-would-have-counted" /></p>
+        <p data-layer="narrative">The Board's {n.rate2026}% covers ballots rejected for any reason, so it does not say how many the new rule caught.<Cite c="board-rate-all-reasons" /> Wake, Mecklenburg and Guilford have counted their sealing rejections, shown below.<Cite c="wake-counts" /><Cite c="meck-counts" /><Cite c="guilford-counts" /> In Guilford, the elections director says the county's total rejections, for every reason, are similar to past elections, with missing witness signatures still the most common error.<Cite c="guilford-counts" /> Not every one of those sealing rejections would have counted before, because the old rule also spoiled a ballot that came with both envelopes unsealed.<Cite c="rule-2024" /> But Gerry Cohen, a member of the Wake County elections board, wrote that the 42 ballots it spoiled for an unsealed inner envelope at its first review meeting, on Sept. 29, would have been approved in past elections.<Cite c="cohen-would-have-counted" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Three counties' counts, as of Oct. 21</strong></figcaption>
           <table class="data-table">
@@ -114,7 +114,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>His source compared the volunteers' 3% with the state's 2022 rate, as Stein did<Cite c="stein-source" /><Cite c="dd-first-wording" /><Cite c="stein-claim" /></h3>
+              <h3>Stein's figure came from a volunteer count in 27 counties, set against the state's 2022 rate<Cite c="stein-source" /><Cite c="cc-sample" /><Cite c="dd-first-wording" /></h3>
               <p data-layer="narrative">On Oct. 20, Stein wrote that the Board's "last-minute changes" were leading to "thousands more" mail ballots being rejected.<Cite c="stein-claim" /></p>
               <QuoteCard speaker="Gov. Josh Stein" when="Oct. 20, 2026" where="Post on X">
                 <p>"at a rejection rate twice as high as in 2022"<Cite c="stein-claim" /></p>
@@ -123,7 +123,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </li>
             <li>
               <h3>The Board's figures do not show a doubling<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /></h3>
-              <p data-layer="narrative">The Board's numbers for the same point in each election are {n.rate2026}% this year and {n.rate2022}% in 2022.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> The volunteers' {n.rateVolunteer}% would be double a 2022 rate of {n.rateNational2022}%, and that was the rate for the whole country. North Carolina's own rate for all of 2022, once every ballot was in, was {n.rate2022Final}%.<Cite c="cc-sample" /><Cite c="national-2022" /><Cite c="nc-final-2022" /></p>
+              <p data-layer="narrative">The Board's numbers for the same point in each election are {n.rate2026}% this year and {n.rate2022}% in 2022.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> The volunteers' {n.rateVolunteer}% would be double a rate of {n.rateNational2022}%, which was the national rate for all of 2022. North Carolina's own rate for all of 2022, once every ballot was in, was {n.rate2022Final}%.<Cite c="cc-sample" /><Cite c="national-2022" /><Cite c="nc-final-2022" /></p>
               <figure class="story-figure rate-figure" data-layer="fact">
                 <figcaption><strong>Mail ballots rejected, by each measure</strong></figcaption>
                 <ul class="rate-bars" aria-label="Rejection rates: the volunteers' tally, the State Board's 2026 and 2022 figures, and the 2022 final rates">
