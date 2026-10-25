@@ -170,7 +170,7 @@ On October 20, 2026, the Justice Department's National Fraud Enforcement Divisio
 | 2026-02 (week before Feb 19) | Mahamud charged in the Feeding Our Future case | [cbsmn-2026-02-19: "Fahima Mahamud was charged last week with one count of wire fraud."] |
 | 2026-03-16 | Executive Order 14395 creates the Task Force to Eliminate Fraud, Vance chairing | [eo-14395-2026-03-16: "The Vice President of the United States shall serve as the Chairman of the Task Force."] |
 | 2026-04-07 | Justice Department creates the Fraud Division | [doj-release-2026-10-20: "On April 7, the Department of Justice announced the creation of the Fraud Division."] |
-| 2026-05-20 | Indictment against Mahamud unsealed | [cbsmn-2026-05-21: "according to a federal indictment unsealed Wednesday"] |
+| 2026-05-20 | New charges against Mahamud made public (CBS calls the document an indictment; DOJ's summary says Information) | [cbsmn-2026-05-21: "according to a federal indictment unsealed Wednesday"] |
 | 2026-07-09 | Mahamud pleads guilty | [cbsmn-2026-07-09: "Fahima Mahamud pleaded guilty to one count of wire fraud and one count of conspiracy to defraud the United States, according to court records."] |
 | 2026-10-01 | Directive 26-12 orders whistleblower incentives | [directive-26-12-2026-10-01: "to design and implement policies and programs that appropriately incentivize whistleblowers to bring forward credible information pertaining to fraud"] |
 | 2026-10-20 (morning) | White House official previews the program to Fox: up to $30,000 on conviction or enforcement action | [fox-2026-10-20: "WHIP will offer eligible tipsters up to $30,000 if their information leads to a successful fraud conviction or a significant federal enforcement action, the official said."] |
