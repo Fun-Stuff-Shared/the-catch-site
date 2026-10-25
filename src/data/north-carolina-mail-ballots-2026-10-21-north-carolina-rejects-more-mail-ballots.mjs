@@ -59,7 +59,7 @@ export const rates = [
 export const chronology = [
   { date: "Apr. 2023", title: "Photo ID takes effect; mail ballots go in an inner envelope inside an outer one.", cites: [{ c: "two-envelopes" }] },
   { date: "Aug. 2, 2024", title: "The Board refuses a Republican request and keeps counting ballots in a sealed outer envelope.", cites: [{ c: "board-2024-reaffirmed" }] },
-  { date: "Dec. 4, 2025", title: "A consent judgment in the Republicans' suit makes the Board reconsider.", cites: [{ c: "consent-judgment" }] },
+  { date: "Dec. 4, 2025", title: "A court order both sides agreed to in the Republicans' suit makes the Board reconsider.", cites: [{ c: "consent-judgment" }] },
   { date: "Feb. 2, 2026", title: "The Board rules its earlier instruction was not correct.", cites: [{ c: "feb-ruling" }] },
   { date: "Sept. 4", title: "The Board, 3-2, tells counties to spoil ballots in an unsealed inner envelope; mail ballots go out.", cites: [{ c: "memo-vote" }, { c: "rule-2026" }] },
   { date: "Sept. 22", title: "Three advocacy groups and two voters sue.", cites: [{ c: "suit" }] },
