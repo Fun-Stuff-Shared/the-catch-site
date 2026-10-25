@@ -51,6 +51,8 @@ export const timeline = [
   { date: "2022", c: "fof-charges-since-2022" },
   { date: "Feb. 2024", c: "abdi-2024-names-center" },
   { date: "Dec. 26, 2025", c: "shirley-video-date" },
+  { date: "Dec. 30, 2025", c: "hhs-freeze" },
+  { date: "Jan. 2, 2026", c: "state-operating-expected" },
   { date: "Feb. 2026", c: "mahamud-charged-feb" },
   { date: "May 20, 2026", c: "mahamud-indicted-may" },
   { date: "July 9, 2026", c: "mahamud-plea-july" },
