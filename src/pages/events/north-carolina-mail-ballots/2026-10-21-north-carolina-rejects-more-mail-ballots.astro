@@ -32,9 +32,9 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         <ol>
           <li><a href="#what-happened">What happened</a></li>
           <li><a href="#two-envelopes">Two envelopes, one new rule</a></li>
+          <li><a href="#ruling">The lawsuit, and why the judge kept the rule</a></li>
           <li><a href="#spoiled">If a ballot is spoiled</a></li>
           <li><a href="#why-now">How the rule came back</a></li>
-          <li><a href="#ruling">Why the judge kept it</a></li>
           <li><a href="#the-catch">The Catch</a></li>
           <li><a href="#the-sides">What each side says</a></li>
           <li><a href="#next">What happens next</a></li>
@@ -45,9 +45,9 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
-        <p data-layer="narrative" data-answer="1">North Carolina's State Board of Elections told county officials on Sept. 4, the day mail ballots started going out, to spoil any ballot that arrives with its inner envelope unsealed, even when the outer envelope is sealed. The Board's Republicans voted for the rule and its Democrats against, 3 to 2.<Cite c="rule-2026" /><Cite c="memo-vote" /> Through Oct. 20, counties had rejected {n.rate2026}% of the mail ballots cast, for that reason and every other, against {n.rate2022}% at the same point in 2022, the Board says.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /><Cite c="board-rate-all-reasons" /></p>
-        <p data-layer="narrative" data-answer="2">A spoiled ballot is not a lost vote if the voter acts in time: the county mails a new ballot, or the voter can vote in person.<Cite c="reissue-by-friday" /><Cite c="reissue-after-saturday" /> In Wake and Mecklenburg counties, {computed.sealTwoCounties} ballots had been rejected for an unsealed inner envelope by Oct. 21.<Cite c="wake-counts" /><Cite c="meck-counts" /> Of the {n.meckSeal} in Mecklenburg, {n.meckRevoted} voters had voted again.<Cite c="meck-counts" /></p>
-        <p data-layer="narrative" data-answer="3">Gov. Josh Stein says the rejection rate is twice what it was in 2022; the Board's own figures show a smaller rise.<Cite c="stein-claim" /><Cite c="board-slight-increase" /> A federal judge, Thomas Schroeder, refused on Oct. 19 to block the rule because voting had already begun, and the lawsuit against it goes on.<Cite c="ruling-denied" /><Cite c="ruling-purcell" /><Cite c="case-continues" /> Mail ballots must arrive by 7:30 p.m. on Nov. 3.<Cite c="deadlines" /></p>
+        <p data-layer="narrative" data-answer="1">North Carolina's State Board of Elections told county officials on Sept. 4, the day mail ballots started going out, to spoil any ballot that arrives with its inner envelope unsealed, even when the outer envelope is sealed. The Board's Republicans voted for the rule and its Democrats against, 3 to 2.<Cite c="rule-2026" /><Cite c="memo-vote" /> Through Oct. 20, counties had rejected {n.rate2026}% of the mail ballots cast, for that reason and every other, against {n.rate2022}% at the same point in 2022, the Board says.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /><Cite c="board-rate-all-reasons" /> Gov. Josh Stein says the rate is twice what it was in 2022; the Board's figures show a smaller rise.<Cite c="stein-claim" /><Cite c="board-slight-increase" /></p>
+        <p data-layer="narrative" data-answer="2">A voter whose ballot is spoiled, which means set aside uncounted, can still vote if there is time: the county mails a new ballot, or the voter can vote in person.<Cite c="rule-2026" /><Cite c="reissue-by-friday" /><Cite c="reissue-after-saturday" /> In Wake and Mecklenburg counties, {computed.sealTwoCounties} ballots had been rejected for an unsealed inner envelope by Oct. 21.<Cite c="wake-counts" /><Cite c="meck-counts" /> In Mecklenburg, {computed.meckNotRevoted} of those {n.meckSeal} voters had not yet voted again.<Cite c="meck-counts" /></p>
+        <p data-layer="narrative" data-answer="3">Three advocacy groups and two voters have sued over the rule. A federal judge, Thomas Schroeder, refused on Oct. 19 to block it because voting had already begun, and the lawsuit goes on.<Cite c="suit" /><Cite c="ruling-denied" /><Cite c="ruling-purcell" /><Cite c="case-continues" /> Mail ballots must arrive by 7:30 p.m. on Nov. 3.<Cite c="deadlines" /></p>
       </section>
 
       <section id="two-envelopes">
@@ -64,9 +64,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
               <tr><td>Both unsealed</td><td>Spoiled<Cite c="rule-2024" /></td><td>Spoiled<Cite c="rule-2026" /></td></tr>
             </tbody>
           </table>
-          <p class="chart-source">A spoiled ballot does not count, and the voter is sent a new one or votes in person.<Cite c="rule-2026" /></p>
         </figure>
-        <p data-layer="narrative">The Board's {n.rate2026}% covers ballots rejected for any reason, so it does not say how many the new rule caught.<Cite c="board-rate-all-reasons" /> Three counties have published counts, and they differ. Unsealed inner envelopes account for more than half of Wake's rejections and 259 in Mecklenburg, while Guilford's elections director says its 38 sealing rejections leave its total about where it was in past elections.<Cite c="wake-counts" /><Cite c="meck-counts" /><Cite c="guilford-counts" /> Not every one of those ballots would have counted before, because the old rule also spoiled a ballot that came with both envelopes unsealed.<Cite c="rule-2024" /> But at Wake's first meeting to review mail ballots, board member Gerry Cohen wrote that the 42 ballots spoiled for an unsealed inner envelope would have been approved in past elections.<Cite c="cohen-would-have-counted" /></p>
+        <p data-layer="narrative">The Board's {n.rate2026}% covers ballots rejected for any reason, so it does not say how many the new rule caught.<Cite c="board-rate-all-reasons" /> The three counties that have published counts by reason tell different stories. Unsealed inner envelopes account for more than half of Wake's rejections and 259 in Mecklenburg, while Guilford's elections director says its 38 sealing rejections leave its total about where it was in past elections.<Cite c="wake-counts" /><Cite c="meck-counts" /><Cite c="guilford-counts" /> Not every one of those ballots would have counted before, because the old rule also spoiled a ballot that came with both envelopes unsealed.<Cite c="rule-2024" /> But Gerry Cohen, a member of the Wake County elections board, wrote that the 42 ballots it spoiled for an unsealed inner envelope at its first review meeting, on Sept. 29, would have been approved in past elections.<Cite c="cohen-would-have-counted" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Three counties' counts, as of Oct. 21</strong></figcaption>
           <table class="data-table">
@@ -81,9 +80,15 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
         </figure>
       </section>
 
+      <section id="ruling">
+        <h2 data-layer="fact">The lawsuit, and why the judge kept the rule</h2>
+        <p data-layer="narrative">On Sept. 22 the North Carolina Alliance for Retired Americans, North Carolina Asian Americans Together, Down Home North Carolina and two voters sued the State Board and the Guilford and Durham county boards.<Cite c="suit" /> Their main claim is that the Civil Rights Act bars denying anyone a vote over an error that has nothing to do with whether they are qualified to vote. Schroeder, following the federal appeals courts for the Third and Fifth Circuits, found they were unlikely to win on it, because that law covers who may vote, not how a qualified voter casts a ballot.<Cite c="ruling-materiality" /> He did agree with them that state law requires the ballot to be sealed but does not require an unsealed one to be spoiled.<Cite c="statute-sealed" /><Cite c="statute-no-spoil" /> Spoiling it is the Board's rule, not the statute's.<Cite c="rule-2026" /></p>
+        <p data-layer="narrative">He also held that the timing alone was enough to deny the request. The Supreme Court has told lower courts not to change election rules close to an election, and by the Oct. 14 hearing {n.castAtHearing} mail ballots had already been cast, the Board told the court.<Cite c="ruling-purcell" /><Cite c="ballots-cast-at-hearing" /> Blocking the rule would have made every county board revisit ballots it had already rejected, he wrote, and he faulted the challengers for waiting 18 days after the memo to sue.<Cite c="ruling-revisit" /><Cite c="ruling-delay" /> He found the burden on voters likely modest, because a voter who fails to seal the ballot can correct the mistake and can still vote early or on Election Day.<Cite c="ruling-burden" /> He called his finding preliminary, not a decision on the merits.<Cite c="ruling-preliminary" /></p>
+      </section>
+
       <section id="spoiled">
         <h2 data-layer="fact">If a ballot is spoiled</h2>
-        <p data-layer="narrative">An inner envelope that looks opened and resealed is treated differently from an unsealed one: the voter can fix it by signing a statement about how they sealed it. An unsealed inner envelope cannot be fixed, and the ballot is spoiled.<Cite c="resealed-curable" /> What happens next depends on when the county finds the problem.</p>
+        <p data-layer="narrative">An inner envelope that looks opened and resealed is treated differently from an unsealed one: the voter can fix it by signing a statement about how they sealed it. An unsealed inner envelope cannot be fixed, and the ballot is spoiled.<Cite c="resealed-curable" /></p>
         <ol class="decision-timeline voter-steps" data-layer="fact" aria-label="What happens to a voter whose mail ballot is spoiled">
           <li class="dt-row" data-layer="fact"><span class="dt-date">Found by Fri., Oct. 30</span><span class="dt-body">The county spoils the ballot and mails a new one within one business day, with a notice of how to vote in person instead.<Cite c="reissue-by-friday" /></span></li>
           <li class="dt-row" data-layer="fact"><span class="dt-date">Found on or after Sat., Oct. 31</span><span class="dt-body">Staff must contact the voter that day: there is no time to mail a new ballot, and the voter may vote in person if there is still time.<Cite c="reissue-after-saturday" /></span></li>
@@ -91,23 +96,17 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <li class="dt-row" data-layer="fact"><span class="dt-date">By mail</span><span class="dt-body">It must arrive by 7:30 p.m. on Nov. 3. Ballots arriving later no longer count, even if postmarked in time.<Cite c="deadlines" /><Cite c="no-grace-period" /></span></li>
           <li class="dt-row" data-layer="fact"><span class="dt-date">In person</span><span class="dt-body">Early voting runs through 3 p.m. on Oct. 31. A voter can also bring an unsealed ballot to the county office or an early voting site and seal it in front of staff, and it counts.<Cite c="deadlines" /><Cite c="seal-in-person" /></span></li>
         </ol>
-        <p data-layer="narrative">Most of the voters caught so far had not voted again by Oct. 21: in Mecklenburg, {n.meckRevoted} of {n.meckSeal}.<Cite c="meck-counts" /> Some get caught more than once. Wake's deputy elections director, Spencer Berg, said some voters had been mailed four or five ballots because they kept sending them back with a problem.<Cite c="wake-berg" /></p>
+        <p data-layer="narrative">Some voters get caught more than once. Wake's deputy elections director, Spencer Berg, said some voters had been mailed four or five ballots because they kept sending them back with a problem.<Cite c="wake-berg" /></p>
       </section>
 
       <section id="why-now">
         <h2 data-layer="fact">How the rule came back</h2>
-        <p data-layer="narrative">The Board had settled this question once, the other way. In 2024 the Republican National Committee, the state Republican Party and others asked it to stop counting ballots that arrived in a sealed outer envelope alone, and on Aug. 2, 2024, it refused.<Cite c="board-2024-reaffirmed" /> The Republicans sued. A consent judgment in December 2025 required the Board to consider their request again as if it were new, without dictating the answer.<Cite c="consent-judgment" /> By then the Board had a Republican majority: after Stein won the governorship in 2024, Republican legislators moved control of the board from the governor to the Republican state auditor, Dave Boliek.<Cite c="board-control" /> On Feb. 2, 2026, the Board ruled that its earlier instruction was "not correct."<Cite c="feb-ruling" /></p>
+        <p data-layer="narrative">The Board had settled this question once, the other way. In 2024 the Republican National Committee, the state Republican Party and others asked it to stop counting ballots that arrived in a sealed outer envelope alone, and on Aug. 2, 2024, it refused.<Cite c="board-2024-reaffirmed" /> The Republicans sued. A court order both sides agreed to, in December 2025, required the Board to consider their request again as if it were new, without dictating the answer.<Cite c="consent-judgment" /> Meanwhile, after Stein won the governorship in 2024, Republican legislators had moved control of the board from the governor to the Republican state auditor, Dave Boliek.<Cite c="board-control" /> On Feb. 2, 2026, the Board ruled that its earlier instruction was "not correct."<Cite c="feb-ruling" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>From one envelope to the Sept. 4 rule</strong></figcaption>
           <DecisionTimeline entries={chronology} heading="What happened" />
         </figure>
-        <p data-layer="narrative">The Board gives chain of custody as its reason: an unsealed inner envelope raises the same concern as an unsealed outer one.<Cite c="board-reason-custody" /> It issued the rule as a memo, and Siobhan O'Duffy Millen, one of the Board's two Democrats, called that an end run around the rulemaking process.<Cite c="millen-end-run" /></p>
-      </section>
-
-      <section id="ruling">
-        <h2 data-layer="fact">Why the judge kept it</h2>
-        <p data-layer="narrative">On Sept. 22 the North Carolina Alliance for Retired Americans, North Carolina Asian Americans Together, Down Home North Carolina and two voters sued the State Board and the Guilford and Durham county boards.<Cite c="suit" /> Their main claim is that the Civil Rights Act bars denying anyone a vote over an error that has nothing to do with whether they are qualified to vote. Schroeder, following two federal appeals courts, found they were unlikely to win on it, because that law covers who may vote, not how a qualified voter casts a ballot.<Cite c="ruling-materiality" /></p>
-        <p data-layer="narrative">He held that the timing alone was reason to deny it. The Supreme Court has told lower courts not to change election rules close to an election, and by the Oct. 14 hearing {n.castAtHearing} mail ballots had already been cast.<Cite c="ruling-purcell" /><Cite c="ballots-cast-at-hearing" /> Blocking the rule would have made every county board revisit ballots it had already rejected, he wrote, and he faulted the challengers for waiting 18 days after the memo to sue.<Cite c="ruling-revisit" /><Cite c="ruling-delay" /> He found the burden on voters likely modest, because a voter who fails to seal the ballot can correct the mistake and can still vote early or on Election Day.<Cite c="ruling-burden" /> He called all of this a preliminary determination, not a final ruling on the merits.<Cite c="ruling-preliminary" /></p>
+        <p data-layer="narrative">The Board's reason is that an unsealed inner envelope raises the same chain-of-custody concern as an unsealed outer one: that someone other than the voter could have handled the ballot.<Cite c="board-reason-custody" /><Cite c="tyson-tampering" /> Its formal rules on sealing drew enough objections to need the legislature's approval, which will not come until after the election, the Board told the court.<Cite c="rules-await-legislature" /> It issued the rule as a memo instead, and Siobhan O'Duffy Millen, one of the Board's two Democrats, called that an end run around the rulemaking process.<Cite c="millen-end-run" /></p>
       </section>
 
       <section id="the-catch">
@@ -115,8 +114,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Stein repeated his source as it read that day<Cite c="stein-source" /><Cite c="dd-state-after-post" /></h3>
-              <p data-layer="narrative">On Oct. 20, Stein wrote that the Board's last-minute changes were leading to thousands more mail ballots being rejected.<Cite c="stein-claim" /></p>
+              <h3>Stein's "twice as high" is what his source said at the time<Cite c="stein-claim" /><Cite c="stein-source" /><Cite c="dd-state-after-post" /></h3>
+              <p data-layer="narrative">On Oct. 20, Stein wrote that the Board's "last-minute changes" were leading to "thousands more" mail ballots being rejected.<Cite c="stein-claim" /></p>
               <QuoteCard speaker="Gov. Josh Stein" when="Oct. 20, 2026" where="Post on X">
                 <p>"at a rejection rate twice as high as in 2022"<Cite c="stein-claim" /></p>
               </QuoteCard>
@@ -124,7 +123,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
             </li>
             <li>
               <h3>The Board's figures do not show a doubling<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /></h3>
-              <p data-layer="narrative">The Board's numbers for the same point in each election are {n.rate2026}% this year and {n.rate2022}% in 2022.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> For the volunteers' {n.rateVolunteer}% to be double, the 2022 rate would have to be {n.rateNational2022}%. North Carolina's final 2022 rate was {n.rate2022Final}%; {n.rateNational2022}% was the rate for the whole country.<Cite c="cc-sample" /><Cite c="nc-final-2022" /><Cite c="national-2022" /></p>
+              <p data-layer="narrative">The Board's numbers for the same point in each election are {n.rate2026}% this year and {n.rate2022}% in 2022.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> The volunteers' {n.rateVolunteer}% would be double a 2022 rate of {n.rateNational2022}%, and that was the rate for the whole country. North Carolina's own rate for all of 2022, once every ballot was in, was {n.rate2022Final}%.<Cite c="cc-sample" /><Cite c="national-2022" /><Cite c="nc-final-2022" /></p>
               <figure class="story-figure rate-figure" data-layer="fact">
                 <figcaption><strong>Mail ballots rejected, by each measure</strong></figcaption>
                 <ul class="rate-bars" aria-label="Rejection rates: the volunteers' tally, the State Board's 2026 and 2022 figures, and the 2022 final rates">
@@ -138,7 +137,7 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
                 </ul>
                 <p class="chart-source">The State Board's figures are for the same point in each election; the 2022 final rates are from the U.S. Election Assistance Commission.<Cite c="board-rate-2026" /><Cite c="nc-final-2022" /><Cite c="national-2022" /></p>
               </figure>
-              <p data-layer="narrative">Stein's "thousands more absentee ballots being rejected" does not hold as a count against 2022 either.<Cite c="stein-claim" /> With mail voting down {n.mailDown}%, counties had rejected {n.rejected2026} ballots through Oct. 20, fewer than the {n.rejected2022} at the same point in 2022.<Cite c="mail-volume-down" /><Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> Whether the new rule threw out thousands of ballots the old one would have counted, no statewide figure shows, because the Board's counts do not separate rejections by reason.<Cite c="board-rate-all-reasons" /></p>
+              <p data-layer="narrative">Stein's "thousands more" does not hold as a count against 2022 either.<Cite c="stein-claim" /> Mail voting is down {n.mailDown}% from 2022, so even at a higher rate counties had rejected fewer ballots through Oct. 20, {n.rejected2026}, than the {n.rejected2022} at the same point in 2022.<Cite c="mail-volume-down" /><Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> He may mean ballots the new rule threw out that the old one would have counted. No statewide figure shows how many those are, because the Board's counts do not separate rejections by reason.<Cite c="board-rate-all-reasons" /></p>
             </li>
             <li>
               <h3>The source changed its comparison and did not say so<Cite c="dd-updated-wording" /><Cite c="dd-no-note" /></h3>
@@ -153,18 +152,16 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="the-sides">
         <h2 data-layer="fact">What each side says</h2>
-        <p data-layer="narrative">Both sides agree the rate is up.<Cite c="board-slight-increase" /><Cite c="fuller-significant" /> They differ on how much it matters and on whether a voter who has to vote again has been harmed. The stakes run along party lines, since Democrats in North Carolina vote by mail at higher rates than Republicans.<Cite c="dems-mail" /></p>
+        <p data-layer="narrative">Both sides agree the rate is up.<Cite c="board-slight-increase" /><Cite c="fuller-significant" /> Democrats in North Carolina vote by mail at higher rates than Republicans.<Cite c="dems-mail" /></p>
         <h3 data-layer="fact">The Board</h3>
-        <p data-layer="narrative">The Board says the rule follows the plain text of state law and adds a layer of security against tampering.<Cite c="board-statement-law" /> Asked how a ballot in a sealed outer envelope could be tampered with, its spokesman, Jason Tyson, wrote that someone other than the voter could in theory open the outer envelope, change a ballot in an unsealed inner one and reseal the outer.<Cite c="tyson-tampering" /> Sam Hayes, the Board's executive director, said the ruling does not change how voters cast their ballots and that voters must follow the rules set to protect the integrity of elections.<Cite c="hayes-statement" /></p>
+        <p data-layer="narrative">The Board says the rule follows the plain text of state law and adds a layer of security against tampering.<Cite c="board-statement-law" /> Asked how a ballot in a sealed outer envelope could be tampered with, its spokesman, Jason Tyson, wrote that someone other than the voter could in theory open the outer envelope, change a ballot in an unsealed inner one and reseal the outer.<Cite c="tyson-tampering" /> Sam Hayes, the Board's executive director, said Schroeder's ruling does not change how voters cast their ballots and that voters must follow the rules set to protect the integrity of elections.<Cite c="hayes-statement" /></p>
         <h3 data-layer="fact">Stein and the challengers</h3>
         <p data-layer="narrative">Brooks Fuller of Common Cause North Carolina calls even the Board's rise from {n.rate2022}% to {n.rate2026}% "statistically significant," and says no one can point to credible evidence that an unsealed inner envelope is anything but a "harmless oversight."<Cite c="fuller-significant" /><Cite c="fuller-harmless" /> Stein urged voters to vote in person if they can and, if voting by mail, to seal both envelopes.<Cite c="stein-advice" /></p>
-        <h3 data-layer="fact">What the judge said about the law</h3>
-        <p data-layer="narrative">Schroeder agreed with the challengers on one point: state law requires the ballot to be sealed, but it does not require an unsealed ballot to be spoiled.<Cite c="statute-sealed" /><Cite c="statute-no-spoil" /> Spoiling it is the Board's rule, not the statute's.<Cite c="rule-2026" /></p>
       </section>
 
       <section id="next">
         <h2 data-layer="fact">What happens next</h2>
-        <p data-layer="narrative">The Board expects the final rate for this election to come in slightly above 2022's {n.rate2022Final}%.<Cite c="board-forecast" /> The lawsuit goes on, with the defendants' answers due Dec. 1.<Cite c="case-continues" /> The Board's formal rules on sealing drew enough objections to need the legislature's approval, and the General Assembly will not take them up until after the election.<Cite c="rules-await-legislature" /></p>
+        <p data-layer="narrative">The Board expects the final rate for this election to come in slightly above North Carolina's final 2022 rate of {n.rate2022Final}%.<Cite c="board-forecast" /> The lawsuit goes on past the election: the State Board and the two county boards it names must answer it by Dec. 1.<Cite c="suit" /><Cite c="case-continues" /></p>
       </section>
 
       <section id="records">

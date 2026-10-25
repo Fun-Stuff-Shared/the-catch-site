@@ -24,6 +24,7 @@ export const n = {
 export const computed = {
   sealTwoCounties: n.wakeSeal + n.meckSeal,
   guilfordRevoted: n.guilfordNewBallots + n.guilfordEarly,
+  meckNotRevoted: n.meckSeal - n.meckRevoted,
 };
 
 export const event = {
@@ -64,8 +65,8 @@ export const chronology = [
   { date: "Sept. 22", title: "Three advocacy groups and two voters sue.", cites: [{ c: "suit" }] },
   { date: "Oct. 19", title: "Judge Thomas Schroeder refuses to block the rule.", cites: [{ c: "ruling-denied" }] },
   { date: "Oct. 20", title: "Gov. Josh Stein says the rejection rate is twice 2022's.", cites: [{ c: "stein-claim" }] },
-  { date: "Oct. 21", title: "The Board puts the rate at 3.1%, against 2.6% at the same point in 2022.", current: true, cites: [{ c: "board-slight-increase" }] },
-  { date: "Oct. 23", title: "PolitiFact rates Stein's claim Mostly False.", cites: [{ c: "politifact-rating" }] },
+  { date: "Oct. 21", title: "The Board's figures are reported: 3.1%, against 2.6% at the same point in 2022.", current: true, cites: [{ c: "board-slight-increase" }] },
+  { date: "Oct. 23", title: "PolitiFact publishes its rating of Stein's claim: Mostly False.", cites: [{ c: "politifact-rating" }] },
 ];
 
 export const subjectFigure = { label: "Mail ballots rejected through Oct. 20, State Board", value: n.rate2026, unit: "%" };
