@@ -63,7 +63,7 @@ export const chronology = [
   { date: "Feb. 2, 2026", title: "The Board rules its earlier instruction was not correct.", cites: [{ c: "feb-ruling" }] },
   { date: "Sept. 4", title: "The Board, 3-2, tells counties to spoil ballots in an unsealed inner envelope; mail ballots go out.", cites: [{ c: "memo-vote" }, { c: "rule-2026" }] },
   { date: "Sept. 22", title: "Three advocacy groups and two voters sue.", cites: [{ c: "suit" }] },
-  { date: "Oct. 19", title: "Judge Thomas Schroeder refuses to block the rule.", cites: [{ c: "ruling-denied" }] },
+  { date: "Oct. 19", title: "Judge Thomas Schroeder refuses to block the rule or the memo's signature instructions.", cites: [{ c: "ruling-denied" }, { c: "sig-ruling" }] },
   { date: "Oct. 20", title: "Gov. Josh Stein says the rejection rate is twice 2022's.", cites: [{ c: "stein-claim" }] },
   { date: "Oct. 21", title: "The Board's figures are reported: 3.1%, against 2.6% at the same point in 2022.", current: true, cites: [{ c: "board-slight-increase" }] },
   { date: "Oct. 23", title: "PolitiFact publishes its rating of Stein's claim: Mostly False.", cites: [{ c: "politifact-rating" }] },
