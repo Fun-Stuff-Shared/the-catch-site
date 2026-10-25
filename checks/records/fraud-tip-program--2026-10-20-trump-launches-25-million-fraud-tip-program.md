@@ -104,22 +104,22 @@ Survives: both, because they answer different things. The terms answer false tip
 
 ## The story
 
-The Justice Department launched a program on October 20 that pays people $10,000 to $30,000 when their tip about health care or benefits fraud leads to criminal charges, with $25 million from the Treasury.
+The Justice Department launched a program on October 20 that offers $10,000 to $30,000, at its discretion, to people whose tip about health care or benefits fraud leads to criminal charges, with $25 million from the Treasury.
 In the Oval Office the same day, President Trump described something else: a 1% commission on recovered money with no limit and no charges needed, decided by him as "the arbitrator."
 The program follows an October 1 directive from the department's new fraud division and is pitched as a faster alternative to whistleblower programs that pay only after a case ends.
 The written terms leave every award to the department's sole discretion, and the reward law they rest on caps any one reward at $3 million; critics say a cash bounty with the president as arbiter invites politically targeted tips.
-The terms are unchanged as of October 24, and the Justice Department has not said under what terms YouTuber Nick Shirley got his $10,000, though his video and the charges the White House credits to it came before the program.
+Trump's 1% appears in no written term, and the Justice Department has not said under what terms YouTuber Nick Shirley got his $10,000, though his video and the charges the White House credits to it came before the program.
 
 ## The plan
 
-Headline: Trump says fraud tipsters get 1% with no limit. His program's rules pay up to $30,000.
+Headline: Trump says fraud tipsters get 1% with no limit. The written rules offer up to $30,000.
 
 What happened (sentence 1, and 2 stated once):
 1. What did the government launch? A Justice Department program paying $10,000 to $30,000 per tip that leads to criminal charges [doj-release-2026-10-20: "The Fraud Whistleblower Incentive Program (WHIP) will pay whistleblowers an award of $10,000 to $30,000 for information leading to criminal charges relating to certain subject areas."]; Treasury commits $25 million [doj-release-2026-10-20: "The Department of the Treasury is committing $25 million to ensure the program’s successful implementation."].
 2. For what fraud? Health care and benefits programs, with day care and hospice first [doj-release-2026-10-20: "will prioritize submissions involving hospice, home health care, day care, and special services fraud"].
 3. Who announced it? Trump and Vance, who chairs the task force [doj-release-2026-10-20: "President Trump’s Task Force to Eliminate Fraud, a whole-of-government effort chaired by Vice President J.D. Vance"], with Shirley, who was promised $10,000 [fox-2026-10-20: "Trump also plans to present independent journalist Nick Shirley with a $10,000 check for his work exposing suspected fraud in Minnesota, according to the official."].
 4. What did Trump say it pays? 1%, no limit, no charges needed [factbase-transcript-2026-10-20: "It's 1 percent. There's no limit."]; and that he decides [factbase-transcript-2026-10-20: "I will be the arbitrator of all of these decisions. In other words, I'll determine whether or not the person is deserving"]. Stated once; the comparison is the next section's.
-5. Where it stands: the terms are unchanged as of October 24.
+5. Where it stands: Trump's 1% is in no written term; the page's "updated" date carries when the terms were last read.
 
 What the rules say (sentences 2 and 4; the catch's ground): opens on "so which is it?"
 1. The amount and trigger, from the terms [doj-whip-terms-2026-10-20: "he or she may be eligible for a reward of between $10,000 and $30,000, to be paid at or around the time charges are filed"].
@@ -146,7 +146,7 @@ The Catch: The Hill reported Trump's version as the program's terms [hill-2026-1
 
 What happens next: whether DOJ revises the terms to match Trump; the first award paid under the terms; Shirley's payment explained. The pilot runs three years [doj-whip-terms-2026-10-20: "which is subject to an initial three-year term"].
 
-The one qualifier: the terms could change; the page says "as of October 24".
+The one qualifier: the terms could change; the page's "updated" date says when they were last read.
 
 Background held: the Fraud Ledger's $260.7 billion "uncovered" and $58.9 billion "recovered" [america-gov-fraud-2026-10-24: "From the White House Fraud Ledger, updated September 24, 2026."]; Trump's Minnesota and Omar remarks at the event; California's AB 2624 and Shirley v. Bonta; Oz's California deferral; the SEC's $60 million and FCA $330 million totals [nyt-2026-10-21: "in fiscal year 2025, the Securities and Exchange Commission awarded $60 million to 48 individual whistle-blowers"]; Sanders's reply [sanders-post-2026-10-20: "I’d like to report a theft."]; Shirley's post spreading the 1% version [shirley-post-2026-10-21: "Now you can claim 1% of the fraud that you expose."]; Trump's answer on the $25 million [rev-transcript-2026-10-20: "I think it's tremendous. If you look at it, I was thinking about, do we do 5%, 4%?"]; the FAQ's first-come rule for identical tips [doj-whip-faqs-2026-10-20: "If two whistleblowers submitted identical information, only the first submission would be eligible for a reward because the information received from the second would not be original."].
 
