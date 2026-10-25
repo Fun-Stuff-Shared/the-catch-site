@@ -26,11 +26,12 @@ import { event as fbiOfficialsCharged } from '../data/fbi-officials-charged-2026
 import { event as wedgewoodPolls } from '../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs';
 import { event as nhStudentIds } from '../data/new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids.mjs';
 import { event as californiaVoterList } from '../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs';
+import { event as fraudTipProgram } from '../data/fraud-tip-program-2026-10-20-trump-launches-25-million-fraud-tip-program.mjs';
 import { publishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList, fraudTipProgram].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },
@@ -55,6 +56,7 @@ export const series = [
   { path: '/events/election-administration/', title: 'Election administration', topic: 'Elections', keywords: 'Alaska Senate Sullivan Peltola certification Justice Department ranked choice NVRA lawsuit', description: 'Federal actions on how the 2026 midterms are run and certified, starting with the Justice Department\'s suit to stop Alaska certifying its Senate result if Sen. Dan Sullivan loses and would have won with every vote for a second Dan Sullivan.' },
   { path: '/events/okinawa/', title: 'Okinawa', topic: 'Asia', keywords: 'Okinawa Marine Naha Ballard SOFA status of forces agreement curfew Koja Takaichi', description: 'Japan holds a U.S. Marine arrested on October 4 in the killing of Anna Yagi in Naha. Okinawa says U.S. discipline measures have failed and the status of forces agreement must change; Washington says the agreement is working.' },
   { path: '/events/fbi-officials-charged/', title: 'FBI officials charged', topic: 'Courts', keywords: 'FBI Floris Benavides Foreign Influence Task Force Hunter Biden laptop false statements Congress House Judiciary Pirro Faruqui Round River', description: 'Two former leaders of the FBI\'s Foreign Influence Task Force are charged with lying to House Judiciary Committee staff in 2023 about their part in the FBI\'s Hunter Biden investigations. A probable-cause hearing is set for October 27.' },
+  { path: '/events/fraud-tip-program/', title: 'Fraud tip program', topic: 'Justice', keywords: 'fraud whistleblower WHIP tip reward Justice Department Treasury Vance Nick Shirley Minnesota Feeding Our Future 1 percent commission False Claims Act', description: 'The Justice Department\'s $25 million program offers $10,000 to $30,000 when a tip about health care or benefits fraud leads to criminal charges. President Trump described it as 1% of recovered money with no limit, decided by him.' },
 ];
 export function storyCatalog() {
   const state = publishedState();

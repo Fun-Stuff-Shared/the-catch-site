@@ -2,9 +2,60 @@
   "subject": "fraud-tip-program",
   "event": "fraud-tip-program/2026-10-20-trump-launches-25-million-fraud-tip-program",
   "story": "/events/fraud-tip-program/2026-10-20-trump-launches-25-million-fraud-tip-program/",
+  "event_record": "/events/fraud-tip-program/",
   "date": "2026-10-20",
   "state_event_id": "event-fraud-tip-program-2026-10-20-trump-launches-25-million-fraud-tip-program",
-  "sub_events": [],
+  "sub_events": [
+    {
+      "id": "fraud-tip-program-2025-12-26-video",
+      "date": "2025-12-26",
+      "label": "Nick Shirley posts his video on Minneapolis day care centers",
+      "section_anchor": "shirley",
+      "records": [
+        "npr-2025-12-31"
+      ]
+    },
+    {
+      "id": "fraud-tip-program-2026-07-09-plea",
+      "date": "2026-07-09",
+      "label": "Fahima Mahamud, owner of a center in the video, pleads guilty",
+      "section_anchor": "shirley",
+      "records": [
+        "cbsmn-2026-07-09",
+        "doj-mn-case-summaries-2026"
+      ]
+    },
+    {
+      "id": "fraud-tip-program-2026-10-01-directive",
+      "date": "2026-10-01",
+      "label": "Fraud division head orders programs to reward whistleblowers (Directive 26-12)",
+      "section_anchor": "why-now",
+      "records": [
+        "directive-26-12-2026-10-01",
+        "doj-release-2026-10-20"
+      ]
+    },
+    {
+      "id": "fraud-tip-program-2026-10-20-launch",
+      "date": "2026-10-20",
+      "label": "Justice Department announces the program; Trump describes 1% with no limit",
+      "section_anchor": "what-happened",
+      "records": [
+        "doj-release-2026-10-20",
+        "doj-whip-terms-2026-10-20",
+        "factbase-transcript-2026-10-20"
+      ]
+    },
+    {
+      "id": "fraud-tip-program-2026-11-05-privacy",
+      "date": "2026-11-05",
+      "label": "Treasury's tip records become exempt in part from the Privacy Act",
+      "section_anchor": "the-sides",
+      "records": [
+        "treasury-privacy-rule-2026-10-06"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "doj-release-2026-10-20",
@@ -936,6 +987,116 @@
       "label": "Anti Fraud Club (Nick Shirley)",
       "meta": " · published 2026-10-22",
       "usage": "Shirley's side says he received the award"
+    }
+  ],
+  "completed_by": "claude, skills catch-record and catch-story",
+  "date_completed": "2026-10-24",
+  "story_title": "Trump says fraud tipsters get 1% with no limit. The written rules offer up to $30,000.",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "41 records pinned under data/sources/fraud-tip-program and data/sources/coverage; admit.py check passes with 165 brief citations and 0 failures. The two statutes are admitted from rebuilt text of the saved House and Cornell copies, because capture dropped their bodies, and the 2024 Abdi charge from a direct OCR of the court PDF."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module computes the 19 days from Directive 26-12 (Oct. 1) to the announcement (Oct. 20), and 1 percent of Trump's $1 billion example ($10 million); the $3 million cap, the $25 million commitment and the $30,000 maximum are printed on the statute and the department's release and terms."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Each outlet's line was read in the pinned text for whose voice it is in. The Hill, Spectrum News and Deseret News state the 1 percent as the program's terms in their own voice; The Hill and the Guardian state a conviction trigger in their own voice. AP, Fox and the New York Times attribute the conviction trigger to the White House, so they are not in the Catch. CBS and Reuters set Trump's account against the written terms."
+    },
+    "section_grammar": {
+      "done": true,
+      "evidence": "What happened, What the written rules say, Why a new program, Shirley's $10,000, The two sides, The Catch and What happens next, each block typed fact or narrative, every fact cited to a claim."
+    },
+    "chip_vocabulary": {
+      "done": true,
+      "evidence": "No chips on the page; the Catch items carry plain headings."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; every record is a fixed saved copy."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "New series page /events/fraud-tip-program/ with its subject module (dek matching the story, one figure: the $3 million cap in 28 U.S.C. 530C) and a series entry in src/lib/discovery.mjs."
+    },
+    "homepage_updated": {
+      "done": true,
+      "evidence": "The story reaches the homepage and the events index through its editorial entry in src/lib/discovery.mjs."
+    }
+  },
+  "figures": [
+    {
+      "figure": "treasury_commitment_millions",
+      "label": "Treasury's commitment to the program",
+      "value": "25",
+      "unit": "million dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doj-release-2026-10-20",
+        "quote_span": "The Department of the Treasury is committing $25 million to ensure the program’s successful implementation."
+      }
+    },
+    {
+      "figure": "award_range",
+      "label": "Award per distinct tip under the written terms",
+      "value": "$10,000 to $30,000",
+      "unit": "dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "doj-whip-terms-2026-10-20",
+        "quote_span": "An individual is eligible for one award between $10,000 and $30,000 for each distinct tip."
+      }
+    },
+    {
+      "figure": "reward_cap_530c",
+      "label": "Cap on any one reward under 28 U.S.C. 530C, absent the law's exceptions",
+      "value": "3,000,000",
+      "unit": "dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "usc-28-530c",
+        "quote_span": "no such reward shall exceed $3,000,000, unless"
+      }
+    },
+    {
+      "figure": "one_pct_of_billion_millions",
+      "label": "1 percent of Trump's $1 billion example",
+      "value": "10",
+      "unit": "million dollars",
+      "kind": "computed",
+      "formula": "percent_of",
+      "inputs": [
+        {
+          "source_id": "factbase-transcript-2026-10-20",
+          "value": "1000000000",
+          "unit": "dollars",
+          "quote_span": "billion, we are giving a commission to that person of 1 percent"
+        }
+      ]
+    },
+    {
+      "figure": "days_directive_to_launch",
+      "label": "Days from Directive 26-12 to the announcement",
+      "value": "19",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "doj-release-2026-10-20",
+          "value": "2026-10-01",
+          "unit": "date",
+          "quote_span": "On October 1, Assistant Attorney General McDonald issued Directive 26-12"
+        },
+        {
+          "source_id": "doj-release-2026-10-20",
+          "value": "2026-10-20",
+          "unit": "date",
+          "quote_span": "Only nineteen days later, the Fraud Whistleblower Incentive Program (WHIP) is being announced"
+        }
+      ]
     }
   ]
 }

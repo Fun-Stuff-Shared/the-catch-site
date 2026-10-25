@@ -106,7 +106,7 @@ Survives: both, because they answer different things. The terms answer false tip
 
 The Justice Department launched a program on October 20 that offers $10,000 to $30,000, at its discretion, to people whose tip about health care or benefits fraud leads to criminal charges, with $25 million from the Treasury.
 In the Oval Office the same day, President Trump described something else: a 1% commission on recovered money with no limit and no charges needed, decided by him as "the arbitrator."
-The program follows an October 1 directive from the department's new fraud division and is pitched as a faster alternative to whistleblower programs that pay only after a case ends.
+The program follows an October 1 directive from the department's new fraud division, and the department pitches it as faster than whistleblower programs that pay only after a case ends.
 The written terms leave every award to the department's sole discretion, and the reward law they rest on caps any one reward at $3 million; critics say a cash bounty with the president as arbiter invites politically targeted tips.
 Trump's 1% appears in no written term, and the Justice Department has not said under what terms YouTuber Nick Shirley got his $10,000, though his video and the charges the White House credits to it came before the program.
 
