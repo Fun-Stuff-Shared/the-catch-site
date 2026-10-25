@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import StorySources from "../../../components/StorySources.astro";
+import StoryState from "../../../components/StoryState.astro";
+import StateEvent from "../../../components/StateEvent.astro";
+import { publishedState, eventPath } from "../../../lib/state.mjs";
+import { claim } from "../../../lib/claims.mjs";
+import { event, computed, versions, triggers, timeline } from "../../../data/fraud-tip-program-2026-10-20-trump-launches-25-million-fraud-tip-program.mjs";
+const story = "fraud-tip-program--2026-10-20-trump-launches-25-million-fraud-tip-program";
+const short = (id) => claim(story, id).short;
+const timelineEntries = timeline.map((t) => ({ date: t.date, title: short(t.c), current: t.current, cites: [{ c: t.c }] }));
+const state = publishedState().events.get("event-fraud-tip-program-2026-10-20-trump-launches-25-million-fraud-tip-program");
+if (!state) throw new Error("Missing publication selection: event-fraud-tip-program-2026-10-20-trump-launches-25-million-fraud-tip-program");
+if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+---
+{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fraud-tip-program/">Fraud tip program</a><span>October 20, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Fraud tip program &middot; October 20, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="treasury-25m" /><Cite c="covered-fraud" /><Cite c="terms-charges-defined" /><Cite c="terms-sole-discretion" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-rules">What the written rules say</a></li>
+          <li><a href="#why-now">Why a new program</a></li>
+          <li><a href="#shirley">Shirley's $10,000</a></li>
+          <li><a href="#the-sides">The two sides</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">On October 20 the Justice Department announced the Fraud Whistleblower Incentive Program, which offers a person whose tip leads to criminal charges an award of $10,000 to $30,000, if the department chooses to pay.<Cite c="doj-launched-whip" /><Cite c="terms-amount-at-charging" /> It covers health care fraud and fraud on federal benefit programs, with hospice, home health care, day care and special services first, and the Treasury Department committed $25 million to it.<Cite c="covered-fraud" /><Cite c="treasury-25m" /></p>
+        <p data-layer="narrative">President Trump described the payments differently from the department. Asked whether it was 1 percent up to a $30,000 limit, he said: "It's 1 percent. There's no limit." A tipster who finds $1 billion in fraud, he said, gets a 1 percent commission.<Cite c="trump-1pct-no-limit" /><Cite c="trump-billion-example" /> He said "it's not a criminal thing," that a tipster is paid "if we recover the money," and that he would be "the arbitrator of all of these decisions."<Cite c="trump-no-charges" /><Cite c="trump-arbitrator" /></p>
+        <p data-layer="narrative">Nick Shirley, who calls himself an "independent YouTube journalist," posted a video about Minneapolis day care centers on December 26, 2025, and a White House official said he would get $10,000.<Cite c="shirley-video-date" /><Cite c="shirley-10k-announced" /> Vice President JD Vance, who chairs the administration's Task Force to Eliminate Fraud, said Shirley "is going to get a financial reward" for uncovering fraud.<Cite c="vance-shirley-reward" /><Cite c="task-force-vance" /></p>
+        <p data-layer="narrative">Tips go through america.gov/fraud, which says reports go straight to the Treasury Department, and the Justice Department decides awards in its sole discretion, with no appeal to a court.<Cite c="tips-via-america-gov" /><Cite c="terms-sole-discretion" /></p>
+      </section>
+
+      <section id="the-rules">
+        <h2 data-layer="fact">What the written rules say</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How much, when and who decides: Trump's account and the Justice Department's terms</strong></figcaption>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead><tr><th></th><th>What Trump said on October 20</th><th>What the written terms say</th></tr></thead>
+              <tbody>
+                {versions.map((v) => (
+                  <tr><th scope="row">{v.point}</th><td>{short(v.trump)}<Cite c={v.trump} /></td><td>{short(v.terms)}<Cite c={v.terms} /></td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </figure>
+        <p data-layer="narrative">Trump's own example goes beyond what the federal reward law the terms cite, 28 U.S.C. 530C, allows. One percent of $1 billion is ${computed.onePctOfBillionMillions} million, and that law caps any one reward at ${computed.capMillions} million unless the reward is for terrorism or another statute authorizes more, so such an award would need a different statute.<Cite c="law-cap-3m" /><Cite c="one-pct-billion-over-cap" /> It would also be two-fifths of the ${computed.poolMillions} million Treasury committed to the whole program.<Cite c="one-pct-of-billion-vs-pool" /></p>
+        <p data-layer="narrative">On who decides, the same law gives a president a written role: a reward of $250,000 or more needs the personal approval of the attorney general or the president.<Cite c="law-250k-approval" /></p>
+        <p data-layer="narrative">Where Trump tied payment to money recovered, the department's FAQ says a tip can earn an award even when the fraud failed or caused little or no loss, as long as it leads to charges.<Cite c="trump-no-charges" /><Cite c="faq-no-recovery-needed" /></p>
+        <p data-layer="narrative">The terms also rule some tipsters out. No award goes to officials, employees or contractors of the Justice Department or any law enforcement organization, or to close relatives of department employees or contractors. Information that officers or directors, compliance or internal-audit staff, outside investigators or independent public accountants learn through that role generally does not count. It can count if the tipster reasonably believes reporting is needed to stop criminal conduct likely to harm national security, cause violent crime, or cause imminent harm to patients or others, or that the company is acting to impede an investigation. Officers, directors, trustees, partners and compliance or internal-audit staff, including at firms hired for that work, can also qualify 120 days after giving the information to the company's audit committee, chief legal or compliance officer or their supervisor.<Cite c="terms-who-excluded" /></p>
+        <p data-layer="narrative">The administration's own statements gave different answers on what triggers a payment: a conviction, an enforcement action, charges or recovered money.<Cite c="wh-official-preview" /><Cite c="vance-not-only-prosecutions" /><Cite c="vance-post-conviction" /><Cite c="portal-charges-or-recovery" /><Cite c="treasury-repeats-range" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What triggers a payment, by who said it</strong></figcaption>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Who, and when</th><th>What triggers a payment</th></tr></thead>
+              <tbody>
+                {triggers.map((t) => (
+                  <tr><td>{t.who}<Cite c={t.c} /></td><td>{short(t.c)}<Cite c={t.c} /></td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why a new program</h2>
+        <p data-layer="narrative">The program came {computed.daysDirectiveToLaunch} days after an order from inside the department. The Justice Department created its National Fraud Enforcement Division on April 7 to investigate and prosecute people who steal or misuse taxpayer money.<Cite c="nfed-created" /> On October 1, the division's head, Colin McDonald, told his staff to design programs that give whistleblowers a reason to bring forward information on fraud.<Cite c="directive-oct1" /> The department's case for this one is speed: it says most government whistleblower programs pay only after a criminal case is fully resolved, and this one pays earlier.<Cite c="doj-reason-early-pay" /></p>
+        <p data-layer="narrative">An older route already pays a share of the money. The False Claims Act reaches anyone who knowingly submits false claims to the government. A whistleblower who brings a successful lawsuit under it generally receives 15 to 30 percent of the recovery, with smaller or no awards in some cases the law sets out.<Cite c="fca-covers-false-claims" /><Cite c="fca-share" /> In March, an executive order told the attorney general to promote those suits over fraud in federal benefit programs.<Cite c="eo-promote-fca" /> Vance said over 99 percent of the fraud the administration is finding is not covered by the False Claims Act.<Cite c="vance-99pct" /></p>
+        <p data-layer="narrative">The new terms say a tipster can also collect from other government whistleblower programs later in a case.<Cite c="stackable" /> The program they name, the department's Corporate Whistleblower Awards Pilot Program, says in rules revised in July that it will not pay twice for the same tip and may deny or reduce an award where the whistleblower has received one from another program. It also pays only when the money or property forfeited in a case tops $1 million.<Cite c="cwa-excludes-double" /></p>
+      </section>
+
+      <section id="shirley">
+        <h2 data-layer="fact">Shirley's $10,000</h2>
+        <p data-layer="narrative">The White House credited his reporting with helping bring a surge of federal resources into Minnesota, followed by investigations, arrests and new charges.<Cite c="wh-credits-shirley" /> Shirley's own site says he walked out of the Oval Office with a $10,000 award, which it says the White House linked to charges after his video. The Star Tribune reported that no check was given to him in front of journalists.<Cite c="shirley-site-received" /><Cite c="check-not-shown" /></p>
+        <p data-layer="narrative">After the video, Homeland Security agents went to sites in Minneapolis on December 29 in what Secretary Kristi Noem called a "massive investigation on childcare and other rampant fraud."<Cite c="dhs-visits-dec29" /> The next day the Department of Health and Human Services froze federal child care payments to Minnesota. Its deputy secretary, Jim O'Neill, cited Shirley's work and demanded that the state audit the centers.<Cite c="hhs-freeze" /></p>
+        <p data-layer="narrative">Shirley's video alleged that nearly a dozen centers receiving public money were not providing any service.<Cite c="video-alleged-no-service" /> CBS News found that all but two of the centers it looked up had active licenses and that state regulators had visited every active one within six months. Their records showed dozens of violations, for safety, cleanliness and other problems, but no recorded evidence of fraud.<Cite c="cbs-records-no-fraud" /> On January 2, the state's child care agency said nine centers it had checked on site that week were "operating as expected," though it was investigating four of the nine without saying which.<Cite c="state-operating-expected" /> At Minnesota Child Care Center, where children could not be seen from the door where Shirley stood, Star Tribune reporters found about 50 children.<Cite c="strib-50-children" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The Minnesota charges, the video and the program</strong></figcaption>
+          <DecisionTimeline entries={timelineEntries} heading="In order" />
+        </figure>
+        <p data-layer="narrative">Federal prosecutors had been bringing charges since 2022 in the Feeding Our Future case, over a Minnesota nonprofit they say misappropriated some $250 million in federal COVID-19 relief funds meant to feed children, and a February 2024 charge against another defendant already named the Future Leaders Early Learning Center, one of the centers in the video.<Cite c="fof-charges-since-2022" /><Cite c="abdi-2024-names-center" /><Cite c="mahamud-charged-feb" /> Fahima Mahamud, its owner, was first charged in February 2026 and pleaded guilty to wire fraud and conspiracy on July 9, three months before the program was announced.<Cite c="mahamud-charged-feb" /><Cite c="mahamud-plea-july" /><Cite c="doj-launched-whip" /> Future Leaders was also among the nine centers the state found operating as expected.<Cite c="future-leaders-among-nine" /> On October 20, the White House did not explain how Shirley was chosen or how his $10,000 was set.<Cite c="shirley-unexplained" /></p>
+        <p data-layer="narrative">Trump said reporters could take part if their outlets approved.<Cite c="trump-reporters" /> Under the terms, information found only in the news does not count as original unless the tipster was its source.<Cite c="terms-news-not-original" /> A tip must carry original information: the tipster's own knowledge, or own analysis revealing something not generally known, that adds materially to whatever the department already has on the matter.<Cite c="terms-original-defined" /> The department's published release, terms and FAQ do not mention Shirley or his payment, so they do not say what information of his the department lacked.<Cite c="doj-silent-on-shirley" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">The two sides</h2>
+        <h3 data-layer="fact">The administration</h3>
+        <p data-layer="narrative">White House spokeswoman Lauren Bis said the administration has zero tolerance for people who steal from Americans.<Cite c="wh-zero-tolerance" /> Against false tips, the department can permanently bar people who send frivolous or fraudulent tips, and false statements can be prosecuted.<Cite c="terms-false-tips" /></p>
+        <h3 data-layer="fact">The critics</h3>
+        <p data-layer="narrative">Joe Spielberger of the Project on Government Oversight said the program "only incentivizes political provocateurs to target anyone the administration deems an enemy."<Cite c="pogo-critique" /> Mark Greenblatt, a former Interior Department inspector general, said putting discretion over federal dollars in one person's hands invites problems, and David Rosenfeld, a former SEC enforcement official, said he had never heard of a program where awards are up to the president.<Cite c="greenblatt-critique" /><Cite c="rosenfeld-critique" /></p>
+        <h3 data-layer="fact">The people a tip names, and the tipster</h3>
+        <p data-layer="narrative">The terms protect the tipster's identity and say nothing about the people a tip names.<Cite c="terms-tipster-confidential" /> Treasury says it will review, sort, de-duplicate and refer tips to the agency, inspector general or law enforcement office it picks. From November 5, its investigatory tip records are exempt from Privacy Act rules that would let the people named in them see or correct them.<Cite c="treasury-routes-tips" /><Cite c="privacy-rule-nov5" /> The tipster's protection has limits: the terms let a tipster's identity come out in court or go to other agencies, require cooperation that can include testifying, and pay no one whose identity is not verified.<Cite c="tipster-exposure" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The 1 percent is Trump's, not the program's<Cite c="trump-1pct-no-limit" /><Cite c="terms-amount-at-charging" /></h3>
+              <p data-layer="narrative">The Hill reported that the program "will offer a 1 percent commission to those who provide a tip that leads to a successful conviction," and Spectrum News that it "would reward whistleblowers with a 1% bounty for helping the federal government recover the money."<Cite c="hill-1pct" /><Cite c="spectrum-1pct" /> Deseret News wrote that it "will allow whistleblowers in some cases to receive 1% of the funds recouped when fraud is proved in court."<Cite c="deseret-1pct" /> The written terms offer one award of $10,000 to $30,000 for each distinct tip that leads to criminal charges, if the department chooses to pay.<Cite c="trump-1pct-no-limit" /><Cite c="terms-amount-at-charging" /></p>
+            </li>
+            <li>
+              <h3>The trigger is criminal charges, not a conviction<Cite c="terms-charges-defined" /></h3>
+              <p data-layer="narrative">The Hill's line above sets the bar at a conviction too, and the Guardian described a program that "awards compensation to those who submit tips resulting in conviction or significant federal enforcement."<Cite c="hill-1pct" /><Cite c="guardian-conviction" /> The written terms count a tip once it leads the department to obtain and unseal criminal charges.<Cite c="terms-charges-defined" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The program is a pilot with an initial three-year term and could be expanded to other kinds of fraud.<Cite c="pilot-three-years" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <StoryState view={state} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>}
