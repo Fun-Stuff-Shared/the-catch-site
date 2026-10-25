@@ -108,7 +108,7 @@ The Justice Department launched a program on October 20 that pays people $10,000
 In the Oval Office the same day, President Trump described something else: a 1% commission on recovered money with no limit and no charges needed, decided by him as "the arbitrator."
 The program follows an October 1 directive from the department's new fraud division and is pitched as a faster alternative to whistleblower programs that pay only after a case ends.
 The written terms leave every award to the department's sole discretion, and the reward law they rest on caps any one reward at $3 million; critics say a cash bounty with the president as arbiter invites politically targeted tips.
-The terms are unchanged as of October 24, and the Justice Department has not said under what terms YouTuber Nick Shirley got his $10,000, though his video and the charges credited to it came before the program.
+The terms are unchanged as of October 24, and the Justice Department has not said under what terms YouTuber Nick Shirley got his $10,000, though his video and the charges the White House credits to it came before the program.
 
 ## The plan
 
