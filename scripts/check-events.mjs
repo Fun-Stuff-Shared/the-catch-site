@@ -12,6 +12,7 @@ import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
 import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy, emptyFactsSections } from "./check-state-pages.mjs";
 import { storyFindings, citedPassages } from "./story-copy-rules.mjs";
+import { checkV2Pages } from "./check-v2-pages.mjs";
 import { sourceContext } from "../src/lib/evidence-context.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -430,6 +431,8 @@ for (const id of allStateViews.events.keys()) {
 }
 const generated = checkStatePages(stateViews, dist);
 fail.push(...generated.failures);
+const v2Pages = checkV2Pages(dist, join(ROOT, "data/v2"), join(ROOT, "checks/manifests"));
+fail.push(...v2Pages.failures);
 try { checkPageFigures(readFileSync(join(dist, 'index.html'), 'utf8'), stateViews); }
 catch (error) { fail.push(error.message); }
 
@@ -438,4 +441,4 @@ if (fail.length) {
   for (const f of fail) console.error("  - " + f);
   process.exit(1);
 }
-console.log(`event gate passed: ${storyPages.length} prose manifests; ${generated.checked.length} generated stories verified; mechanical checks clean`);
+console.log(`event gate passed: ${storyPages.length} prose manifests; ${generated.checked.length} generated stories verified; ${v2Pages.checked.length} v2 stories verified; mechanical checks clean`);

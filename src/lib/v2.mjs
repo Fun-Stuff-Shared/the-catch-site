@@ -1,0 +1,110 @@
+import { createHash } from "node:crypto";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+
+export const v2Directory = join(process.cwd(), "data/v2");
+export const FORMAT = "sai-news-view/1";
+const SNAPSHOT = /^[0-9a-f]{24}$/;
+const sha256 = (data) => createHash("sha256").update(data).digest("hex");
+
+export function snapshotId(directory) {
+  const id = readFileSync(join(directory, "CURRENT"), "utf8").trim();
+  if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot pointer in ${directory}: ${id}`);
+  return id;
+}
+
+// A snapshot is read whole and checked whole: every file against the hash its manifest names, and every
+// statement's quote against the code points its span names in the shipped text.
+export function readSnapshot(folder, expectedId = null) {
+  const manifestBytes = readFileSync(join(folder, "manifest.json"));
+  const manifest = JSON.parse(manifestBytes);
+  if (manifest.format !== FORMAT) throw new Error(`Unknown v2 snapshot format: ${manifest.format}`);
+  if (expectedId && manifest.id !== expectedId) throw new Error(`v2 snapshot id differs from its pointer: ${manifest.id} != ${expectedId}`);
+  const { id, ...body } = manifest;
+  if (sha256(canonical(body)).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
+  const texts = new Map();
+  for (const [hash, path] of Object.entries(manifest.texts)) {
+    if (path !== `texts/${hash}.txt`) throw new Error(`v2 text path differs from its hash: ${path}`);
+    const bytes = readFileSync(join(folder, path));
+    if (sha256(bytes) !== hash) throw new Error(`v2 text hash mismatch: ${hash}`);
+    texts.set(hash, Array.from(bytes.toString("utf8")));
+  }
+  const views = new Map();
+  for (const [subject, entry] of Object.entries(manifest.views)) {
+    if (!/^views\/[0-9a-f]{24}\.json$/.test(entry.path)) throw new Error(`v2 view path is not a view file: ${entry.path}`);
+    const bytes = readFileSync(join(folder, entry.path));
+    if (sha256(bytes) !== entry.sha256) throw new Error(`v2 view hash mismatch: ${subject}`);
+    const view = JSON.parse(bytes);
+    if (view.format !== FORMAT || view.id !== subject) throw new Error(`v2 view differs from its manifest entry: ${subject}`);
+    const statements = new Set(view.statements.map((statement) => statement.id));
+    for (const statement of view.statements) {
+      if (!statement.span) continue;
+      const text = texts.get(statement.span.text);
+      if (!text) throw new Error(`v2 statement names a text the snapshot lacks: ${statement.id}`);
+      if (text.slice(statement.span.start, statement.span.end).join("") !== statement.quote) throw new Error(`v2 statement quote is not at its span: ${statement.id}`);
+    }
+    for (const claim of view.claims) if (claim.statements.some((id) => !statements.has(id))) throw new Error(`v2 claim cites a statement the view lacks: ${claim.id}`);
+    views.set(subject, view);
+  }
+  return { id, manifest, views };
+}
+
+export function readV2(directory = v2Directory) {
+  const id = snapshotId(directory);
+  return readSnapshot(join(directory, "snapshots", id), id);
+}
+
+// The renderer's deterministic msgspec encoding: object keys sorted, no whitespace, non-ASCII kept.
+export function canonical(value) {
+  if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
+  if (value && typeof value === "object") return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonical(value[key])}`).join(",")}}`;
+  return JSON.stringify(value);
+}
+
+export function v2Manifests(manifests = join(process.cwd(), "checks/manifests")) {
+  const rows = [];
+  for (const name of readdirSync(manifests).filter((name) => name.endsWith(".json")).sort()) {
+    const manifest = JSON.parse(readFileSync(join(manifests, name), "utf8"));
+    if (!manifest.v2_subjects) continue;
+    if (manifest.state_event_id) throw new Error(`${name}: a story reads either v1 state or v2 subjects, not both`);
+    if (!Array.isArray(manifest.v2_subjects) || !manifest.v2_subjects.length) throw new Error(`${name}: v2_subjects must list at least one subject`);
+    rows.push({ name, route: manifest.story || `/events/${manifest.event}/`, subjects: manifest.v2_subjects });
+  }
+  return rows;
+}
+
+// The v1 projection names a dated story event-<series>-<yyyy-mm-dd>-<moment>; a v2 story replaces that view.
+export function v1EventId(route) {
+  const match = /^\/events\/([a-z0-9-]+)\/(\d{4}-\d{2}-\d{2}-[a-z0-9-]+)\/$/.exec(route);
+  if (!match) throw new Error(`v2 story route is not a dated story: ${route}`);
+  return `event-${match[1]}-${match[2]}`;
+}
+
+export function v2Story(route, directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
+  const row = v2Manifests(manifests).find((entry) => entry.route === route);
+  if (!row) throw new Error(`No v2 manifest for ${route}`);
+  const snapshot = readV2(directory);
+  const views = row.subjects.map((subject) => {
+    const view = snapshot.views.get(subject);
+    if (!view) throw new Error(`v2 snapshot ${snapshot.id} has no view for ${subject} (${route})`);
+    return view;
+  });
+  return { snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
+}
+
+export function hasV2(directory = v2Directory) {
+  return existsSync(join(directory, "CURRENT"));
+}
+
+export function valueText(value) {
+  if (!value) return null;
+  switch (value.type) {
+    case "quantity": return `${value.amount} ${value.unit}`;
+    case "date": return value.at.at;
+    case "enum": return value.value;
+    case "entity": return value.subject;
+    case "proposition": return value.text;
+    case "forecast": return `${valueText(value.outcome)} by ${value.horizon.at}`;
+    default: throw new Error(`Unknown v2 value type: ${value.type}`);
+  }
+}
