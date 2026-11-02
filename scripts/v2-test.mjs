@@ -159,9 +159,10 @@ test('a subject id with a space reads, maps to its story and passes the page che
   const dist = temp(t, 'v2-dist-');
   const write = (path, html) => { mkdirSync(join(dist, path), { recursive: true }); writeFileSync(join(dist, path, 'index.html'), html); };
   const statementHtml = `<li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li>`;
-  const story = (shown, extra = '') => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><article data-v2-claim="claim-a">${statementHtml}</article>${extra}<li data-v2-source="artifact-a">artifact-a</li></section></details>`;
+  const story = (shown, extra = '', statements = statementHtml) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><section data-v2-attribute="rejection rate"><article data-v2-claim="claim-a">${statements}</article></section>${extra}<li data-v2-source="artifact-a">artifact-a</li></section></details>`;
+  const claimsPage = (claims = '<article data-v2-claim="claim-a"></article>') => `<main data-v2-claims-page="${id}"><section data-v2-attribute="rejection rate">${claims}</section></main>`;
   write(route, story(subject));
-  write(`${route}claims/`, `<main data-v2-claims-page="${id}"><article data-v2-claim="claim-a"></article></main>`);
+  write(`${route}claims/`, claimsPage());
   write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a">${statementHtml}</main>`);
   const passed = checkV2Pages(dist, destination, manifests);
   assert.deepEqual(passed.failures, []);
@@ -171,21 +172,26 @@ test('a subject id with a space reads, maps to its story and passes the page che
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
   write(route, story(subject, `<p>${'x'.repeat(41 * 1024)}</p>`));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /v2 section is \d+ bytes, budget 40960/);
+  write(route, story(subject, '', statementHtml + statementHtml.replace('mention-a', 'mention-x')));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders statements mention-a,mention-x, expected mention-a/);
   write(route, story(subject));
+  write(`${route}claims/`, claimsPage('<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lists claims 2, expected 1/);
+  write(`${route}claims/`, claimsPage());
   write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a"></main>`);
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
 });
 
-test('the brief ranks disputed claims first, then by independent sources, then by recency, and picks one statement per root first', async () => {
+test('the brief ranks disputed claims first, then unjudged ones, then by independent sources, then by recency, and picks one statement per root first', async () => {
   const { bestStatements, claimSlug, competingValues, rankClaims, sourceLabel } = await import('../src/lib/v2-brief.mjs');
   const claim = (id, state, independent, as_of, statements = [], heads = []) => ({ id, state, independent, as_of, statements, heads, basis: heads, transitions: [] });
   const statement = (id, artifact, as_of, value = null) => ({ id, artifact, as_of, value, claims: [], quote: id, speaker: 's', status: 'live' });
   const view = {
-    claims: [claim('old-two', 'established', 2, '2026-10-01'), claim('new-one', 'established', 1, '2026-10-20'), claim('disputed', 'disputed', 1, '2026-09-01', ['m1', 'm2', 'm3'], ['m1', 'm3']), claim('new-two', 'established', 2, '2026-10-10')],
+    claims: [claim('old-two', 'established', 2, '2026-10-01'), claim('new-one', 'established', 1, '2026-10-20'), claim('disputed', 'disputed', 1, '2026-09-01', ['m1', 'm2', 'm3'], ['m1', 'm3']), claim('new-two', 'established', 2, '2026-10-10'), claim('unjudged', 'unjudged', 3, '2026-10-30')],
     statements: [statement('m1', 'a1', '2026-09-01', { type: 'enum', value: 'open' }), statement('m2', 'a2', '2026-09-03'), statement('m3', 'a3', '2026-09-02', { type: 'enum', value: 'closed' })],
     sources: [{ artifact: 'a1', root: 'r1' }, { artifact: 'a2', root: 'r1' }, { artifact: 'a3', root: 'r2' }],
   };
-  assert.deepEqual(rankClaims(view).map((c) => c.id), ['disputed', 'new-two', 'old-two', 'new-one']);
+  assert.deepEqual(rankClaims(view).map((c) => c.id), ['disputed', 'unjudged', 'new-two', 'old-two', 'new-one']);
   assert.deepEqual(bestStatements(view, view.claims[2]).map((s) => s.id), ['m3', 'm1']);
   assert.deepEqual(bestStatements(view, view.claims[2], 3).map((s) => s.id), ['m3', 'm1', 'm2']);
   assert.deepEqual(competingValues(view, view.claims[2]).map((s) => s.value.value), ['open', 'closed']);
@@ -194,4 +200,13 @@ test('the brief ranks disputed claims first, then by independent sources, then b
   assert.deepEqual(sourceLabel({ artifact: 'artifact-a', attributes: {} }), { publisher: null, title: null, fallback: true, text: 'artifact-a' });
   assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { publisher: 'AP', title: 'Counties reject ballots' } }).text, 'AP, Counties reject ballots');
   assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { title: 'Counties reject ballots' } }).fallback, false);
+});
+
+test('claims are grouped by attribute in the order each attribute first ranks', async () => {
+  const { attributeGroups, briefGroups } = await import('../src/lib/v2-brief.mjs');
+  const claim = (id, attribute, state, independent) => ({ id, attribute, state, independent, as_of: '2026-10-01', statements: [], heads: [], basis: [], transitions: [] });
+  const view = { claims: [claim('a1', 'rate', 'established', 3), claim('b1', 'count', 'disputed', 1), claim('a2', 'rate', 'established', 1), claim('c1', 'date', 'established', 2)], statements: [], sources: [] };
+  const shape = (groups) => groups.map(([attribute, claims]) => [attribute, claims.map((c) => c.id)]);
+  assert.deepEqual(shape(attributeGroups(view)), [['count', ['b1']], ['rate', ['a1', 'a2']], ['date', ['c1']]]);
+  assert.deepEqual(shape(briefGroups(view)), shape(attributeGroups(view)));
 });

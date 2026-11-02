@@ -31,12 +31,30 @@ function index(view) {
   return { statements, sources, latest };
 }
 
-// Disputed claims first, then by the core's count of independent units, then by how recent the claim is.
+const PRIORITY = { disputed: 2, unjudged: 1 };
+
+// Disputed claims first, then claims whose sources are not yet compared, then by the core's count of independent units,
+// then by how recent the claim is.
 export function rankClaims(view) {
   const { latest } = index(view);
   const when = (claim) => claim.as_of ?? latest(claim);
+  const priority = (claim) => PRIORITY[claim.state] ?? 0;
   return [...view.claims].sort((a, b) =>
-    Number(b.state === "disputed") - Number(a.state === "disputed") || b.independent - a.independent || when(b).localeCompare(when(a)) || a.id.localeCompare(b.id));
+    priority(b) - priority(a) || b.independent - a.independent || when(b).localeCompare(when(a)) || a.id.localeCompare(b.id));
+}
+
+function grouped(claims) {
+  const groups = new Map();
+  for (const claim of claims) {
+    if (!groups.has(claim.attribute)) groups.set(claim.attribute, []);
+    groups.get(claim.attribute).push(claim);
+  }
+  return [...groups];
+}
+
+// The brief's ranked top claims, grouped by attribute in the order each attribute first ranks.
+export function briefGroups(view) {
+  return grouped(rankClaims(view).slice(0, BRIEF_CLAIMS));
 }
 
 // The statements that carry a claim's current value come first, one per independent root before any second from the same root.
@@ -58,7 +76,7 @@ export function claimStatements(view, claim) {
 }
 
 export function competingValues(view, claim) {
-  if (claim.state !== "disputed") return [];
+  if (claim.state !== "disputed" && claim.state !== "unjudged") return [];
   const { statements } = index(view);
   return claim.heads.map((id) => statements.get(id)).filter((statement) => statement?.value);
 }
@@ -66,13 +84,7 @@ export function competingValues(view, claim) {
 export const changes = (claim) => claim.transitions.filter((transition) => transition.kind !== "first_value");
 
 export function attributeGroups(view) {
-  const ranked = rankClaims(view);
-  const groups = new Map();
-  for (const claim of ranked) {
-    if (!groups.has(claim.attribute)) groups.set(claim.attribute, []);
-    groups.get(claim.attribute).push(claim);
-  }
-  return [...groups];
+  return grouped(rankClaims(view));
 }
 
 export function sourceFor(view, statement) {

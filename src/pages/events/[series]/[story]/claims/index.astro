@@ -20,9 +20,10 @@ const paths = storyPaths(route);
       <h1>Claims by attribute</h1>
       {story.views.map((view) => <section data-v2-subject={view.id}>
         <h2 data-extracted>{view.label}</h2>
-        {attributeGroups(view).map(([attribute, claims]) => <section>
-          {claims.map((claim) => <article class="ledger-row" data-v2-claim={claim.id} data-v2-attribute={attribute}>
-            <ClaimStanding view={view} claim={claim} heading="h3" />
+        {attributeGroups(view).map(([attribute, claims]) => <section data-v2-attribute={attribute}>
+          <h3 data-extracted>{attribute}</h3>
+          {claims.map((claim) => <article class="ledger-row" data-v2-claim={claim.id}>
+            <ClaimStanding view={view} claim={claim} showAttribute={false} />
             <p class="ledger-source"><a href={paths.claim(claim)}>Statements</a></p>
           </article>)}
         </section>)}
