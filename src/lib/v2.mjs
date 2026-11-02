@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const v2Directory = join(process.cwd(), "data/v2");
-export const FORMAT = "sai-news-view/1";
+export const FORMAT = "sai-news-view/2";
 const SNAPSHOT = /^[0-9a-f]{24}$/;
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
 
@@ -13,15 +13,14 @@ export function snapshotId(directory) {
   return id;
 }
 
-// A snapshot is read whole and checked whole: every file against the hash its manifest names, and every
-// statement's quote against the code points its span names in the shipped text.
-export function readSnapshot(folder, expectedId = null) {
+// A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
+// manifest names, and every statement's quote against the code points its span names in the shipped text.
+export function readSnapshot(folder, id) {
+  if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
   const manifestBytes = readFileSync(join(folder, "manifest.json"));
+  if (sha256(manifestBytes).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
   const manifest = JSON.parse(manifestBytes);
   if (manifest.format !== FORMAT) throw new Error(`Unknown v2 snapshot format: ${manifest.format}`);
-  if (expectedId && manifest.id !== expectedId) throw new Error(`v2 snapshot id differs from its pointer: ${manifest.id} != ${expectedId}`);
-  const { id, ...body } = manifest;
-  if (sha256(canonical(body)).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
   const texts = new Map();
   for (const [hash, path] of Object.entries(manifest.texts)) {
     if (path !== `texts/${hash}.txt`) throw new Error(`v2 text path differs from its hash: ${path}`);
@@ -38,7 +37,7 @@ export function readSnapshot(folder, expectedId = null) {
     if (view.format !== FORMAT || view.id !== subject) throw new Error(`v2 view differs from its manifest entry: ${subject}`);
     const statements = new Set(view.statements.map((statement) => statement.id));
     for (const statement of view.statements) {
-      if (!statement.span) continue;
+      if (!statement.span) throw new Error(`v2 statement has no text span: ${statement.id}`);
       const text = texts.get(statement.span.text);
       if (!text) throw new Error(`v2 statement names a text the snapshot lacks: ${statement.id}`);
       if (text.slice(statement.span.start, statement.span.end).join("") !== statement.quote) throw new Error(`v2 statement quote is not at its span: ${statement.id}`);
@@ -52,13 +51,6 @@ export function readSnapshot(folder, expectedId = null) {
 export function readV2(directory = v2Directory) {
   const id = snapshotId(directory);
   return readSnapshot(join(directory, "snapshots", id), id);
-}
-
-// The renderer's deterministic msgspec encoding: object keys sorted, no whitespace, non-ASCII kept.
-export function canonical(value) {
-  if (Array.isArray(value)) return `[${value.map(canonical).join(",")}]`;
-  if (value && typeof value === "object") return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${canonical(value[key])}`).join(",")}}`;
-  return JSON.stringify(value);
 }
 
 export function v2Manifests(manifests = join(process.cwd(), "checks/manifests")) {

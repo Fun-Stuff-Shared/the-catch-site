@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { canonical, readV2, v1EventId, v2Story } from '../src/lib/v2.mjs';
+import { readV2, v1EventId, v2Story } from '../src/lib/v2.mjs';
 import { pullV2 } from './pull-v2.mjs';
 import { pullState } from './pull-state.mjs';
 
@@ -18,24 +18,24 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
-    format: 'sai-news-view/1', id: 'subject-a', kind: 'development', label, evaluated_at: '2026-11-02T00:00:00Z',
+    format: 'sai-news-view/2', id: subject, kind: 'development', label,
     claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'] }],
-    statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: { text: textHash, start, end: start + Array.from(QUOTE).length }, claims: ['claim-a'], as_of: '2026-10-20' }],
+    statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: ['claim-a'], as_of: '2026-10-20' }],
     sources: [{ artifact: 'artifact-a', source: null, published_at: '2026-10-21', statements: 1 }], related: [],
   };
-  const viewBytes = canonical(view);
-  const body = { format: 'sai-news-view/1', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: view.evaluated_at, policies: 'p', views: { 'subject-a': { path: `views/${sha256('subject-a').slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } };
-  const id = sha256(canonical(body)).slice(0, 24);
+  const viewBytes = JSON.stringify(view);
+  const manifest = JSON.stringify({ format: 'sai-news-view/2', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
   mkdirSync(join(folder, 'texts'), { recursive: true });
-  writeFileSync(join(folder, body.views['subject-a'].path), viewBytes);
+  writeFileSync(join(folder, 'views', `${sha256(subject).slice(0, 24)}.json`), viewBytes);
   writeFileSync(join(folder, `texts/${textHash}.txt`), text);
-  writeFileSync(join(folder, 'manifest.json'), canonical({ id, ...body }));
+  writeFileSync(join(folder, 'manifest.json'), manifest);
   writeFileSync(join(source, 'CURRENT'), `${id}\n`);
   return id;
 }
@@ -59,6 +59,16 @@ test('spans count code points, so a quote after an emoji still lands on its text
   assert.equal(readV2(source).views.get('subject-a').statements[0].quote, QUOTE);
 });
 
+test('subject ids outside the basic plane do not disturb the snapshot id, which hashes manifest bytes', (t) => {
+  for (const subject of ['\uE000-subject', '\u{10000}-subject']) {
+    const source = temp(t, 'v2-source-');
+    const destination = temp(t, 'v2-site-');
+    const id = snapshot(source, { subject });
+    assert.equal(pullV2({ source, destination }).snapshot, id);
+    assert.ok(readV2(destination).views.has(subject));
+  }
+});
+
 test('a bad snapshot is refused and the site keeps the snapshot it had', (t) => {
   const destination = temp(t, 'v2-site-');
   const good = temp(t, 'v2-source-');
@@ -76,6 +86,11 @@ test('a bad snapshot is refused and the site keeps the snapshot it had', (t) => 
   const manifestPath = join(forged, 'snapshots', id, 'manifest.json');
   writeFileSync(manifestPath, readFileSync(manifestPath, 'utf8').replace('"seq":1', '"seq":2'));
   assert.throws(() => pullV2({ source: forged, destination }), /does not hash to its id/);
+  const unanchored = temp(t, 'v2-unanchored-');
+  snapshot(unanchored, { label: 'b4', span: null });
+  assert.throws(() => pullV2({ source: unanchored, destination }), /has no text span: mention-a/);
+  assert.equal(readFileSync(join(destination, 'CURRENT'), 'utf8').trim(), kept);
+  assert.deepEqual(readdirSync(join(destination, 'snapshots')), [kept]);
 });
 
 test('a v2 story names subjects the snapshot holds, and its route maps to the v1 view it replaces', (t) => {
