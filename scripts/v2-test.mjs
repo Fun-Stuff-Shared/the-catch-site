@@ -11,6 +11,7 @@ import { pullState } from './pull-state.mjs';
 const sha256 = (data) => createHash('sha256').update(data).digest('hex');
 const TEXT = 'Intro 🗳️ then: Counties rejected 2.6% of ballots.';
 const QUOTE = 'Counties rejected 2.6% of ballots.';
+const STORY = 'ballots--2026-10-21-counties-reject-ballots';
 
 function temp(t, prefix) {
   const root = mkdtempSync(join(tmpdir(), prefix));
@@ -18,17 +19,17 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
-    format: 'sai-news-view/2', id: subject, kind: 'development', label,
+    format: 'sai-news-view/3', id: subject, kind: 'development', label,
     claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'] }],
     statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: ['claim-a'], as_of: '2026-10-20' }],
     sources: [{ artifact: 'artifact-a', source: null, published_at: '2026-10-21', statements: 1 }], related: [],
   };
   const viewBytes = JSON.stringify(view);
-  const manifest = JSON.stringify({ format: 'sai-news-view/2', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const manifest = JSON.stringify({ format: 'sai-news-view/3', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
   const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
@@ -93,20 +94,31 @@ test('a bad snapshot is refused and the site keeps the snapshot it had', (t) => 
   assert.deepEqual(readdirSync(join(destination, 'snapshots')), [kept]);
 });
 
-test('a v2 story names subjects the snapshot holds, and its route maps to the v1 view it replaces', (t) => {
+test('a v2 story takes its subjects from the snapshot story index under its manifest name, and its route maps to the v1 view it replaces', (t) => {
   const destination = temp(t, 'v2-site-');
   const source = temp(t, 'v2-source-');
   snapshot(source);
   pullV2({ source, destination });
   const manifests = temp(t, 'v2-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, 'a.json'), JSON.stringify({ story: route, v2_subjects: ['subject-a'] }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
   assert.equal(v2Story(route, destination, manifests).views[0].claims[0].id, 'claim-a');
   assert.equal(v1EventId(route), 'event-ballots-2026-10-21-counties-reject-ballots');
-  writeFileSync(join(manifests, 'a.json'), JSON.stringify({ story: route, v2_subjects: ['subject-b'] }));
-  assert.throws(() => v2Story(route, destination, manifests), /no view for subject-b/);
-  writeFileSync(join(manifests, 'a.json'), JSON.stringify({ story: route, v2_subjects: ['subject-a'], state_event_id: 'event-x' }));
-  assert.throws(() => v2Story(route, destination, manifests), /either v1 state or v2 subjects/);
+  rmSync(join(manifests, `${STORY}.json`));
+  writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true }));
+  assert.throws(() => v2Story(route, destination, manifests), /has no subjects for story other--2026-10-21-elsewhere/);
+  writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true, state_event_id: 'event-x' }));
+  assert.throws(() => v2Story(route, destination, manifests), /either v1 state or v2/);
+  writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: ['subject-a'] }));
+  assert.throws(() => v2Story(route, destination, manifests), /v2 must be true/);
+});
+
+test('a snapshot whose story index misses, repeats or invents a subject is refused', (t) => {
+  for (const [stories, message] of [[{}, /not each under exactly one story/], [{ a: ['subject-a'], b: ['subject-a'] }, /not each under exactly one story/], [{ a: ['subject-a', 'subject-b'] }, /lacks: a subject-b/], [{ a: [] }, /lists no subjects: a/], [null, /no story index/]]) {
+    const source = temp(t, 'v2-stories-');
+    snapshot(source, { stories });
+    assert.throws(() => readV2(source), message);
+  }
 });
 
 test('the v1 pull leaves out the story and chain views of v2 stories', (t) => {
@@ -114,7 +126,7 @@ test('the v1 pull leaves out the story and chain views of v2 stories', (t) => {
   const destination = temp(t, 'v1-site-');
   const manifests = temp(t, 'v1-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, 'a.json'), JSON.stringify({ story: route, v2_subjects: ['subject-a'] }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
   for (const id of ['event-kept', v1EventId(route)]) {
     const event = { id, label: id, period: '2026-10', status: 'published' };
     writeFileSync(join(source, `${id}.json`), JSON.stringify({ event, status: 'published', root_id: id, edges: [], evidence: [] }));

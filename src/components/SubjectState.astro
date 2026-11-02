@@ -17,12 +17,12 @@ const speakers = (view) => {
   {story.views.map((view) => <section data-v2-subject={view.id}>
     <h3>{view.label}</h3>
     {view.claims.map((claim) => <article class="ledger-row" data-v2-claim={claim.id} data-v2-state={claim.state}>
-      <h4>{claim.attribute}</h4>
-      {claim.value && <p class="ledger-excerpt">{valueText(claim.value)}</p>}
+      <h4 data-extracted>{claim.attribute}</h4>
+      {claim.value && <p class="ledger-excerpt" data-extracted>{valueText(claim.value)}</p>}
       <p class="ledger-source">{standing(claim)} · {claim.kind}{claim.as_of && <> · as of {formatDate(claim.as_of)}</>}</p>
     </article>)}
     {speakers(view).map(([speaker, statements]) => <div data-v2-speaker={speaker}>
-      <h4>{speaker}</h4>
+      <h4 data-extracted>{speaker}</h4>
       <ul>{statements.map((statement) => <li data-v2-statement={statement.id} data-v2-status={statement.status}>
         <blockquote data-source-copy>{statement.quote}</blockquote>
         {statement.status !== "live" && <p>This statement was withdrawn.</p>}
@@ -30,6 +30,6 @@ const speakers = (view) => {
       </li>)}</ul>
     </div>)}
     <h4>Sources</h4>
-    <ul>{view.sources.map((source) => <li data-v2-source={source.artifact}>{source.source ?? source.artifact}{source.published_at && <> · {formatDate(source.published_at)}</>} · {source.statements} {source.statements === 1 ? "statement" : "statements"}</li>)}</ul>
+    <ul>{view.sources.map((source) => <li data-v2-source={source.artifact}><span data-extracted>{source.source ?? source.artifact}</span>{source.published_at && <> · {formatDate(source.published_at)}</>} · {source.statements} {source.statements === 1 ? "statement" : "statements"}</li>)}</ul>
   </section>)}
 </details>

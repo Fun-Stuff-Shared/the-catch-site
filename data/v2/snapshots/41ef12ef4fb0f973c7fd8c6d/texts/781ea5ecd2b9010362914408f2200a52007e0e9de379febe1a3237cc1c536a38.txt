@@ -1,0 +1,444 @@
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 1 of 15 Page ID #:603
+DAWYN R. HARRISON, COUNTY COUNSEL
+PETER BOLLINGER, ASST. COUNTY COUNSEL (SBN 241752)
+EVA CHU, SNR. DEP. COUNTY COUNSEL (SBN 235356)
+ADAM BAUMGARTEN, SNR. DEP. COUNTY COUNSEL (SBN 292095)
+648 KENNETH HAHN HALL OF ADMINISTRATION
+500 West Temple Street
+Los Angeles, California 90012-2713
+Telephone: (213) 974-0809
+echu@counsel.lacounty.gov
+abaumgarten@counsel.lacounty.gov
+NORTON ROSE FULBRIGHT US LLP
+CHRISTOPHER PELHAM (SBN 241068)
+ABIGAIL URQUHART (SBN 310547)
+ALEX SCANDROLI (SBN 345278)
+555 South Flower Street
+Forty-First Floor
+Los Angeles, California 90071
+Telephone: (213) 892-9200
+Facsimile: (213) 892-9494
+christopher.pelham@nortonrosefulbright.com
+abigail.urquhart@nortonrosefulbright.com
+alex.scandroli@nortonrosefulbright.com
+Attorneys for Defendant
+DEAN C. LOGAN, in his official capacity as the County of Los Angeles
+Registrar-Recorder/County Clerk
+Additional Counsel Listed on Following Page
+UNITED STATES DISTRICT COURT
+CENTRAL DISTRICT OF CALIFORNIA
+UNITED STATES OF AMERICA, Case No. 2:26-cv-12025
+Plaintiff,
+v. DECLARATION OF AMAN
+BHULLAR IN SUPPORT OF
+STATE OF CALIFORNIA, SHIRLEY DEFENDANT DEAN C. LOGAN'S
+N. WEBER, in her official capacity as OPPOSITION TO PLAINTIFF'S
+the California Secretary of State, and REQUEST FOR TEMPORARY
+DEAN C. LOGAN, in his official RESTRAINING ORDER
+capacity as the County of Los Angeles
+Registrar-Recorder/County Clerk,
+Date Action Filed: 10/15/2026
+Defendants.
+-1-
+DOCUMENT PREPARED DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+ON RECYCLED PAPER
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 2 of 15 Page ID #:604
+PUBLIC RIGHTS PROJECT
+Joshua Karsh (pro hac vice forthcoming)
+Toby R. Merrill (pro hac vice forthcoming)
+Kyra Sikora (pro hac vice forthcoming)
+490 43rd Street, Unit #115
+Oakland, CA 94609
+Tel: (510) 738-6788
+joshua.karsh@publicrightsproject.org
+toby.merrill@publicrightsproject.org
+kyra.sikora@publicrightsproject.org
+DOCUMENT PREPARED
+-2-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 3 of 15 Page ID #:605
+DECLARATION OF AMAN BHULLAR
+I, Aman Bhullar, declare as follows:
+Background of Declarant
+1. I am the Assistant Registrar-Recorder/County Clerk of the Information
+Technology Bureau of the County of Los Angeles Registrar-Recorder/County Clerk
+(hereinafter “Registrar”). In such capacity, I am responsible for the configuration,
+maintenance, and operation of election management and tally systems and the
+preparation of ballot materials for all federal, state, county, school district, and
+special district elections conducted by the Registrar. I have worked at the Registrar
+for 9 years. I have personal knowledge of the facts set forth in this declaration
+based on my role at the Registrar. If called as a witness, I could and would testify
+competently to all facts stated herein.
+2. I submit this declaration in support of the Registrar’s Opposition to the
+U.S. Department of Justice’s (“DOJ”) Request for Temporary Restraining Order in
+the above-captioned case to provide additional context regarding how the
+technology behind the Registrar’s election systems works when administering an
+election.
+3. As explained further below, based on my technical expertise, I have
+grave concerns about the potential catastrophic impact of implementing the DOJ’s
+request to “set aside vote-by-mail ballots from persons identified by the Federal
+Government likely to be noncitizens” based on a list of approximately 20,000
+individuals (the “October List”), the majority of which are records for individuals
+located outside of Los Angeles County. The Registrar does not make programmatic
+changes in the middle of an election cycle and, in fact, has policies against making
+programmatic changes during election cycles, consistent with federal and state law.
+The potential consequences of implementing DOJ’s demand are severe and range
+from halting all counting; halting in-person voters’ ability to cast votes; or
+otherwise interfering with the ability to accurately count votes. From a technical
+DOCUMENT PREPARED
+-3-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 4 of 15 Page ID #:606
+standpoint, I do not believe it would be possible to implement the changes
+requested by the DOJ without violating state and federal law regarding election
+deadlines.
+Change Management Process
+4. “Setting aside” vote-by-mail ballots pursuant to the DOJ’s request
+would require changes to the Registrar’s election systems that are governed by
+what is collectively referred to as the change management process. Under that
+process, a requested change is first initiated and documented. Programmers then
+develop the code necessary to implement the change in the system. The change is
+tested multiple times in a non-production environment to identify any unintended
+impacts. A non-production environment is a separate computing or software
+environment used for development, testing, and staging before software is deployed
+to live users. Other programmers then conduct a peer review to validate that the
+change is safe. The change is typically implemented during off-peak hours; under
+ordinary circumstances, changes are made over a weekend when there are no users
+on the system and no processing is occurring. A large change is also accompanied
+by a “fail period,” which is a defined window during which a system, service, or
+application is expected to be unavailable, degraded, or producing errors, and during
+which that behavior is considered acceptable or anticipated. Rollback procedures
+are also prepared in the event the change must be reversed.
+5. These steps reflect industry best practices. They are well understood
+by IT professionals. They all help protect the system and its users from unintended
+consequences of software changes.
+Freeze Period
+6. To protect the stability and security of the County’s election systems,
+the Registrar requested that the Los Angeles County Internal Services Department
+(“ISD”) implement a tiered election freeze for the November 3, 2026, General
+Election, which limits changes to the systems and infrastructure that support the
+DOCUMENT PREPARED
+-4-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 5 of 15 Page ID #:607
+election (“Freeze Policy”). A true and correct copy of the Registrar’s August 21,
+2026 memorandum to ISD titled “Election Freeze for the November 3, 2026,
+General Election” is attached hereto as Exhibit A.1 The freeze proceeds in three
+levels.
+7. Level One, in effect from September 18, 2026, at 5:00 p.m. through
+December 3, 2026, at 5:00 p.m., limits changes to Voice over Internet Protocol
+(“VoIP”) at Registrar headquarters, the Ballot Processing Center, the Election
+Operations Center, the Voting Solutions for All People (“VSAP”) Operations
+Center, the Tally Disaster Recovery environment, and six Registrar branch offices,
+as well as to Registrar servers hosted by ISD, wide area and local area network
+infrastructure, all Registrar Wi-Fi access points, and facilities infrastructure at all
+Registrar facilities.
+8. Level Two, in effect from October 2, 2026, at 5:00 p.m. through
+November 19, 2026, at 5:00 p.m., further restricts changes to both the physical
+infrastructure and the virtual environment of all systems used to support the
+election, and requires Information Technology Systems (“ITS”) General Manager
+approval for any such change.
+9. Level Three, in effect from October 14, 2026, at 5:00 p.m. through
+November 6, 2026, at 5:00 p.m., suspends standard requests for change entirely;
+any change must be submitted as a normal or emergency request with ITS General
+Manager approval, and all other requests are approved only to restore service or
+prevent imminent outages. The purpose of the freeze is to reduce risk to the
+system’s integrity by ensuring that system maintenance is performed only during
+the times that pose the lowest risk to the elections environment.
+Executing the DOJ’s Demand
+10. Attempting to execute the DOJ’s demand would require violating the
+The Registrar generally creates a freeze policy during elections and this is not unique to the
+current election cycle, but standard practice for all elections.
+DOCUMENT PREPARED
+-5-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 6 of 15 Page ID #:608
+Registrar’s Freeze Policy. Changes of this magnitude are considered major changes
+and have been restricted as Level Two changes since October 2, 2026. In the
+normal course of business, any change that is not meant to restore service or
+prevent imminent outages should not be approved.
+11. The DOJ’s request would require system updates to multiple, separate
+software programs and hardware devices. Different changes would be required for
+in-person voting and vote-by-mail voting, although some would overlap. The
+affected software and hardware include, but are not limited to, the Registrar’s
+Election Management System (“DIMS”), BlueCrest Vantage sorters, and Electronic
+Pollbooks (“ePollbooks”). I address each change in turn.
+Adjustments to DIMS
+12. Before any ballot could be set aside, DIMS, the centralized voter
+registration database and election management application, would first have to be
+adjusted. DIMS is a software system that manages voting operations and tracks
+voter registration information for close to 5.9 million voters in the County. DIMS
+supports essential functions such as maintaining voter records and voter
+preferences, conducting elections, managing petitions, facilitating vote-by-mail
+processes, content management, administrative functionality, and real-time
+information exchange between ePollbooks and the statewide voter registration
+database (“VoteCal”).
+13. Because DIMS houses all voter registration information, it is the first
+step regardless of whether the individual votes by mail or in person . The Registrar
+would first be required to place a database flag on these individuals, if they appear
+in DIMS. No such flag currently exists, so a new flag would need to be developed
+and tested by the DIMS manufacturer, Runbeck Election Services, LLC. The
+Registrar would then need to validate and test it in a non-production environment.
+The Registrar would also need to work with its third-party vendors for automatic
+signature verification, BlueCrest, Inc., and for ePollbooks, KnowInk, to ensure that
+DOCUMENT PREPARED
+-6-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 7 of 15 Page ID #:609
+the proposed adjustment would interact properly with their respective software. In a
+normal change-management process, designing this sort of change could take some
+time and would need to include a rollback and fail period. Changes on this scale,
+even in ideal circumstances, may take far longer than expected because the
+downstream consequences are unclear. It is not clear how long it would take during
+an active election cycle.
+14. Importantly, it is impossible to do this type of programmatic change
+without shutting down the DIMS system due to the need to update all of the
+Registrar’s desktop computers with the new DIMS software, among other items.
+During the election cycle, full staff resources are operational through the weekend.
+15. The ePollbooks have already been configured and prepared for
+deployment. Preparing them took ten (10) days. Incorporating the proposed
+programmatic change would require every ePollbook to be updated and tested. That
+work cannot be completed safely and uniformly before Election Day, and certainly
+not by the start of the early in-person voting period beginning on October 24, 2026.
+Further, any change to the ePollbooks must pass the Secretary of State’s testing and
+certification requirements before the ePollbooks may be used. Initiating that process
+during the election period would trigger new operational procedures with
+downstream effects on other election functions. Those effects would include a
+temporary halt to the movement of ballots, including the movement of ballots to
+tabulation. As a result, the change would impede the administration of the election
+for all voters. The ePollbooks have already been deployed to, and are in use at, the
+hybrid vote center that is currently operating.
+16. Even if the programmatic change could be made safely, the effect of
+making a change to DIMS in the current environment cannot be determined in
+advance. The possible consequences are significant and consequential. For
+example, the change could function as intended for voters on the October List but
+also flag voters who are not on that list. The system would then segregate the
+DOCUMENT PREPARED
+-7-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 8 of 15 Page ID #:610
+ballots of voters beyond those on the October List. DIMS contains all voter
+information and is the central software and data source on which the Registrar’s
+other systems rely. A failure in DIMS could therefore jeopardize the Registrar’s
+ability to meet federal and state deadlines. In addition, DIMS cannot be placed in a
+quiet period (or “turned off”) during an election cycle. As a result, the Registrar
+would be unable to confirm, within the election period, whether the change had
+been programmed correctly.
+Vote by Mail
+17. The Registrar would next need to make separate adjustments for vote-
+by-mail (“VBM”) voters and in-person voters. For VBM voters, the Registrar uses
+the BlueCrest Vantage to physically sort VBM ballots. As ballots pass through the
+BlueCrest Vantage, two processes occur. First, the BlueCrest Vantage performs
+automatic signature verification. The signature reference files are stored in DIMS,
+and the BlueCrest Vantage compares the signature on each ballot envelope with the
+signature reference file in DIMS. Second, the BlueCrest Vantage sorts ballots into
+twenty (20) separate sort categories, each of which must be programmed. To route
+ballots from voters on the October List so that they are not sent to extraction,
+BlueCrest would need to develop a new sort scheme for the BlueCrest Vantage.
+That new sort scheme would then need to be tested before it could be used. Because
+BlueCrest, a third-party vendor, would design the new sort scheme, the Registrar
+cannot determine whether the change is feasible in the middle of the election cycle
+and would need to further consult with BlueCrest. The Registrar also cannot
+determine the downstream consequences of making such a change at this time.
+In-Person Voting
+18. Separate adjustments would also be required for setting aside ballots
+for individuals who vote in person and appear on the October List. When a voter
+appears at a vote center, vote center staff use an ePollbook, which has replaced a
+DOCUMENT PREPARED
+-8-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 9 of 15 Page ID #:611
+printed voter registration list. Staff use the ePollbook to verify the voter’s
+registration eligibility in real time and to record whether the voter has already
+voted. The ePollbook software is developed by a third-party vendor and certified by
+the California Secretary of State. The Registrar plans to dispatch more than 5,000
+ePollbooks throughout the County on October 21, 2026, and some have already
+been deployed at the hybrid vote center in the Registrar’s headquarters. Loading the
+data onto all these devices takes ten (10) days. The ePollbooks are already fully
+prepared for deployment for the November 3, 2026, General Election.
+19.Ordinarily, when a registered voter checks in on the ePollbook, the
+Ballot Marking Device (“BMD”) receives no information about the voter other than
+the voter’s ballot style.2 The BMD is the device on which the voter marks their
+ballot. Apart from ballot style, no information about the voter is transmitted to the
+BMD or associated with the voted ballot. The ballot therefore cannot be connected
+to the voter who cast it.
+20. In practical terms, a new process would need to be established for in-
+person voters on the October List. That process does not currently exist. It would
+have to be created, and vote center workers would have to be trained on it. Special
+handling procedures would also have to be established. Under the current process,
+even if October List voters could be identified in the ePollbook in some way, they
+would be able to cast only provisional ballots. Vote center workers have no process
+for treating this new category of voters differently. Vote center workers are given
+specific scripts and are required to follow them. More than 10,000 vote center
+workers are engaged in this election. Many of them have already completed their
+training, which takes place over several weeks. Developing, training, and
+rehearsing a new process is not possible at this stage.
+21. The provisional ballots cast by October List voters would be mixed
+2
+Each voter has a ballot style based on his or her address, because different contests apply
+depending on where the voter lives—for example, different areas have water districts,
+congressional districts, and school districts.
+DOCUMENT PREPARED
+-9-
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 10 of 15 Page ID #:612
+with other valid provisional ballots cast by other voters. There is currently no
+means of segregating the October List voters’ ballots from those other provisional
+ballots. Separating them would require individuals to review all in-person
+provisional ballots and manually compare the names on each ballot envelope to the
+October List. The Registrar cannot be confident that such a manual comparison
+would be accurate, because of the potential for errors.
+Tally
+22.Once ballots enter tally operations, including tally pre-processing,
+there is no way to separate or identify the ballot of any voter, including voters on
+the October List. No association exists between a ballot and the voter who cast it
+consistent with California voter anonymity requirements and . The Registrar
+therefore cannot locate or remove the ballot of any particular voter. As a result, to
+the extent any individuals on the October List have already voted, their ballots
+cannot be segregated at this stage.
+Conflicts with Law
+23. I do not believe it would be possible from a technical perspective to
+comply with the DOJ’s demand based on my current understanding without
+violating state and federal election legal requirements and required deadlines.
+October List Analysis
+24. At counsel’s request, my Team conducted a preliminary analysis of a
+sample of two hundred (200) records from the October List. Our analysis included
+the following:
+a. 42.9% of the list sampled had canceled voter registration records
+in our system; 42.4% of the list samples had active records, i.e.,
+i.e., that the record has cleared verification through the statewide
+database and has met all legal requirements for voter
+registration.; and 4.6% are considered inactive records, meaning
+there is an issue in the record that has been flagged such as the
+DOCUMENT PREPARED
+- 10 -
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 11 of 15 Page ID #:613
+mail being undeliverable, not responding to a confirmation
+notice, or not voting.
+b. 86 of the sample listed individuals who had ballots mailed to
+them in the November 2026 General Election; all 112
+individuals where ballots were not mailed to them had either
+canceled or inactive records.
+c. 71.2% of the list sampled had never voted in the past elections.
+d. Among the records for which birthplace information was
+meaningfully reported, 38.9% indicated that they were born in
+the United States.
+25. Of the more than 20,000 records on the October List, 7,035 have
+addresses located in Los Angeles County.
+I declare under penalty of perjury under the laws of the United States of
+America that the foregoing is true and correct. Executed this 20 th day of October,
+2026, at City of Industry, California.
+______________________________
+Aman Bhullar
+DOCUMENT PREPARED
+- 11 -
+ON RECYCLED PAPER
+DECLARATION OF AMAN BHULLAR IN SUPPORT OF DEFENDANT DEAN C. LOGAN’S
+OPPOSITION TO REQUEST FOR TEMPORARY RESTRAINING ORDER
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 12 of 15 Page ID #:614
+EXHIBIT A
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 13 of 15 Page ID #:615
+August 21, 2026
+To: Mirian Avalos, General Manager (ITS)
+Internal Services Department
+From: Jeremy Keller, Department Information Security Officer (DISO)
+Registrar-Recorder/County Clerk
+ELECTION FREEZE FOR THE NOVEMBER 3, 2026, GENERAL ELECTION
+The County of Los Angeles will be conducting the November 3, 2026, General Election.
+The results of the election are scheduled to be certified on November 27, 2026. In
+support of the election, the Registrar-Recorder/County Clerk (RR/CC) is requesting that
+the Internal Services Department (ISD) implement a freeze on many services provided
+by ISD.
+During the specified date range listed below, the following types of changes will be
+limited:
+Election Freeze Level One - Friday, September 18, 2026, at 5:00 p.m. through
+Thursday, December 3, 2026, at 5:00 p.m.
+• VoIP for:
+o RR/CC Headquarters at 12400 Imperial Hwy in Norwalk
+o RR/CC Ballot Processing Center (BPC) at 13401 Crossroads Pkwy N, City
+of Industry
+o RR/CC Election Operations Center (EOC) at 12680 Corral Place in Santa
+Fe Springs
+o RR/CC VSAP Operations Center (VOC) at 12100 Rivera Road in Whittier
+o RR/CC Tally Disaster Recovery (DR) environment at 9150 Imperial
+Highway in Downey and six (6) RR/CC branch offices
+• RR/CC servers hosted by ISD and their eCloud/eBlock environment
+• Wide Area Network (WAN) and Local Area Network (LAN) infrastructure
+• All RR/CC Wi-Fi access points
+• Facilities infrastructure at all RR/CC facilities (e.g., electrical generators)
+Los Angeles County Internal Use
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 14 of 15 Page ID #:616
+Mirian Avalos, General Manager
+August 21, 2026
+Page 2
+Election Freeze Level Two – Friday, October 2, 2026, at 5:00 p.m. through
+Thursday, November 19, 2026, at 5:00 p.m.
+In addition to changes covered by Level One, changes to both the physical
+infrastructure and the virtual environment of all systems used to support the election are
+restricted and require ITS General Manager approval. Changes to the following areas
+which are countywide or affect RR/CC, ISD, or BOS, are covered by Level Two:
+• eCLOUD
+• Office365
+• eGIS
+• VoIP
+• LAN/WAN
+• Desktop computer infrastructure
+• Windows servers
+• Email gateway
+• Laptop computer infrastructure
+• Hosted domain components
+• Security Infrastructure
+• Election-related AWS Infrastructure
+Election Freeze Level Three – Wednesday, October 14, 2026, at 5:00 p.m., through
+Friday, November 6, 2026, at 5:00 p.m.
+In addition to changes covered by Levels One and Two, during the twenty-four-day Level
+Three window, the following restrictions will be in place:
+• Standard RFCs will be suspended, and changes normally made using the
+standard model must be submitted as a normal change with ITS General
+Manager approval or an emergency RFC with ITS General Manager approval.
+• All other RFCs will only be approved to restore service or prevent imminent
+outages and will also require ITS General Manager approval.
+Moreover, all RR/CC election platform and system owners will be permitted to schedule
+resources to get important system work done during non-freeze periods. It is important to
+note that this procedure has been created based on input from the RR/CC executive
+leadership – for further guidance, please contact the RR/CC DISO. Ultimately, the goal
+of all parties (e.g., executive leadership, DISO, DCIO, and system owners) is to reduce
+risk to ballot integrity by performing system maintenance during times that have the lowest
+risk to the elections environment in the unlikely event that something goes wrong with the
+update.
+Los Angeles County Internal Use
+Case 2:26-cv-12025 Document 32-3 Filed 10/20/26 Page 15 of 15 Page ID #:617
+Mirian Avalos, General Manager
+August 21, 2026
+Page 3
+The election freeze ensures a stable and secure environment for election activities. We
+appreciate your cooperation and adherence to this freeze. Please share this memo with
+all ITS employees and contractors.
+Should you have any questions, you may contact me at (562) 462-2445 or email
+jkeller@rrcc.lacounty.gov.
+AB:JK
+C: ITS Deputy General Managers
+RR/CC ITB Management
+Leslie Luke
+Office of the CIO
+Los Angeles County Internal Use

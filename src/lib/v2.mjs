@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const v2Directory = join(process.cwd(), "data/v2");
-export const FORMAT = "sai-news-view/2";
+export const FORMAT = "sai-news-view/3";
 const SNAPSHOT = /^[0-9a-f]{24}$/;
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
 
@@ -14,7 +14,8 @@ export function snapshotId(directory) {
 }
 
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
-// manifest names, and every statement's quote against the code points its span names in the shipped text.
+// manifest names, every statement's quote against the code points its span names in the shipped text, and
+// its story index against its views, each view under exactly one story.
 export function readSnapshot(folder, id) {
   if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
   const manifestBytes = readFileSync(join(folder, "manifest.json"));
@@ -45,6 +46,13 @@ export function readSnapshot(folder, id) {
     for (const claim of view.claims) if (claim.statements.some((id) => !statements.has(id))) throw new Error(`v2 claim cites a statement the view lacks: ${claim.id}`);
     views.set(subject, view);
   }
+  if (!manifest.stories || typeof manifest.stories !== "object" || Array.isArray(manifest.stories)) throw new Error(`v2 snapshot has no story index: ${id}`);
+  for (const [story, subjects] of Object.entries(manifest.stories)) {
+    if (!Array.isArray(subjects) || !subjects.length) throw new Error(`v2 story lists no subjects: ${story}`);
+    for (const subject of subjects) if (!views.has(subject)) throw new Error(`v2 story names a subject the snapshot lacks: ${story} ${subject}`);
+  }
+  const indexed = Object.values(manifest.stories).flat();
+  if (indexed.length !== views.size || new Set(indexed).size !== views.size) throw new Error("v2 snapshot views are not each under exactly one story");
   return { id, manifest, views };
 }
 
@@ -53,16 +61,23 @@ export function readV2(directory = v2Directory) {
   return readSnapshot(join(directory, "snapshots", id), id);
 }
 
+// A story renders from v2 when its manifest says so; the snapshot's story index, keyed by the manifest's name, names its subjects.
 export function v2Manifests(manifests = join(process.cwd(), "checks/manifests")) {
   const rows = [];
   for (const name of readdirSync(manifests).filter((name) => name.endsWith(".json")).sort()) {
     const manifest = JSON.parse(readFileSync(join(manifests, name), "utf8"));
-    if (!manifest.v2_subjects) continue;
-    if (manifest.state_event_id) throw new Error(`${name}: a story reads either v1 state or v2 subjects, not both`);
-    if (!Array.isArray(manifest.v2_subjects) || !manifest.v2_subjects.length) throw new Error(`${name}: v2_subjects must list at least one subject`);
-    rows.push({ name, route: manifest.story || `/events/${manifest.event}/`, subjects: manifest.v2_subjects });
+    if (manifest.v2 === undefined) continue;
+    if (manifest.v2 !== true) throw new Error(`${name}: v2 must be true when present`);
+    if (manifest.state_event_id) throw new Error(`${name}: a story reads either v1 state or v2, not both`);
+    rows.push({ name, story: name.slice(0, -".json".length), route: manifest.story || `/events/${manifest.event}/` });
   }
   return rows;
+}
+
+export function storySubjects(snapshot, story) {
+  const subjects = Object.hasOwn(snapshot.manifest.stories, story) ? snapshot.manifest.stories[story] : undefined;
+  if (!subjects) throw new Error(`v2 snapshot ${snapshot.id} has no subjects for story ${story}`);
+  return subjects;
 }
 
 // The v1 projection names a dated story event-<series>-<yyyy-mm-dd>-<moment>; a v2 story replaces that view.
@@ -76,11 +91,7 @@ export function v2Story(route, directory = v2Directory, manifests = join(process
   const row = v2Manifests(manifests).find((entry) => entry.route === route);
   if (!row) throw new Error(`No v2 manifest for ${route}`);
   const snapshot = readV2(directory);
-  const views = row.subjects.map((subject) => {
-    const view = snapshot.views.get(subject);
-    if (!view) throw new Error(`v2 snapshot ${snapshot.id} has no view for ${subject} (${route})`);
-    return view;
-  });
+  const views = storySubjects(snapshot, row.story).map((subject) => snapshot.views.get(subject));
   return { snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
 }
 

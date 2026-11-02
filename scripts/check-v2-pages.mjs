@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "parse5";
-import { readV2, v2Manifests } from "../src/lib/v2.mjs";
+import { readV2, storySubjects, v2Manifests } from "../src/lib/v2.mjs";
 
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const text = (node) => node.nodeName === "#text" ? node.value : (node.childNodes ?? []).map(text).join("");
@@ -14,7 +14,9 @@ export function checkV2Pages(dist, directory, manifests) {
   const rows = v2Manifests(manifests);
   if (!rows.length) return { failures, checked };
   const snapshot = readV2(directory);
-  for (const { route, subjects } of rows) {
+  for (const { route, story } of rows) {
+    let subjects;
+    try { subjects = storySubjects(snapshot, story); } catch (error) { failures.push(`${route}: ${error.message}`); continue; }
     const path = join(dist, route, "index.html");
     if (!existsSync(path)) { failures.push(`v2 story page missing: ${route}`); continue; }
     const all = [...nodes(parse(readFileSync(path, "utf8")))];
@@ -22,7 +24,7 @@ export function checkV2Pages(dist, directory, manifests) {
     const shown = marked("data-v2-snapshot").map((node) => attr(node, "data-v2-snapshot"));
     if (shown.length !== 1 || shown[0] !== snapshot.id) failures.push(`${route}: renders v2 snapshot ${shown.join(",") || "none"}, current is ${snapshot.id}`);
     const pageSubjects = marked("data-v2-subject").map((node) => attr(node, "data-v2-subject"));
-    if (JSON.stringify(pageSubjects) !== JSON.stringify(subjects)) failures.push(`${route}: renders subjects ${pageSubjects.join(",")}, manifest names ${subjects.join(",")}`);
+    if (JSON.stringify(pageSubjects) !== JSON.stringify(subjects)) failures.push(`${route}: renders subjects ${pageSubjects.join(",")}, snapshot names ${subjects.join(",")}`);
     const claims = new Set(marked("data-v2-claim").map((node) => attr(node, "data-v2-claim")));
     const statements = new Map(marked("data-v2-statement").map((node) => [attr(node, "data-v2-statement"), node]));
     for (const subject of subjects) {

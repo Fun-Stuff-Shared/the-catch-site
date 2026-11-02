@@ -204,6 +204,7 @@ test('copy checks separate quoted state wording from authored and interface copy
   assert.equal(readerCopy(html), 'A pipeline — news Authored — copy Internal pipeline');
   assert.equal(readerCopy('<p>Visible &mdash; punctuation</p>'), 'Visible — punctuation');
   assert.equal(readerCopy('<p data-source-copy="false">Source wording</p><p>Keep this</p>'), 'Keep this');
+  assert.equal(readerCopy('<article><h4 data-extracted>publication check</h4><p data-extracted>The automated check fails.</p><p>Reported · attributed</p></article>'), 'Reported · attributed');
 });
 
 
