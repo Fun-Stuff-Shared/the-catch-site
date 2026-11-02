@@ -43,16 +43,19 @@ export function rankClaims(view) {
     priority(b) - priority(a) || b.independent - a.independent || when(b).localeCompare(when(a)) || a.id.localeCompare(b.id));
 }
 
+// Ranked claims grouped by attribute within their priority band, so disputed claims stay ahead of claims whose sources
+// are not yet compared, and those ahead of the rest; within a band, groups follow their best-ranked claim.
 function grouped(claims) {
   const groups = new Map();
   for (const claim of claims) {
-    if (!groups.has(claim.attribute)) groups.set(claim.attribute, []);
-    groups.get(claim.attribute).push(claim);
+    const key = JSON.stringify([PRIORITY[claim.state] ?? 0, claim.attribute]);
+    if (!groups.has(key)) groups.set(key, [claim.attribute, []]);
+    groups.get(key)[1].push(claim);
   }
-  return [...groups];
+  return [...groups.values()];
 }
 
-// The brief's ranked top claims, grouped by attribute in the order each attribute first ranks.
+// The brief's ranked top claims, grouped as `grouped` describes.
 export function briefGroups(view) {
   return grouped(rankClaims(view).slice(0, BRIEF_CLAIMS));
 }

@@ -202,11 +202,14 @@ test('the brief ranks disputed claims first, then unjudged ones, then by indepen
   assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { title: 'Counties reject ballots' } }).fallback, false);
 });
 
-test('claims are grouped by attribute in the order each attribute first ranks', async () => {
-  const { attributeGroups, briefGroups } = await import('../src/lib/v2-brief.mjs');
+test('claims are grouped by attribute within their priority band, in the order each group first ranks', async () => {
+  const { attributeGroups, briefGroups, rankClaims } = await import('../src/lib/v2-brief.mjs');
   const claim = (id, attribute, state, independent) => ({ id, attribute, state, independent, as_of: '2026-10-01', statements: [], heads: [], basis: [], transitions: [] });
-  const view = { claims: [claim('a1', 'rate', 'established', 3), claim('b1', 'count', 'disputed', 1), claim('a2', 'rate', 'established', 1), claim('c1', 'date', 'established', 2)], statements: [], sources: [] };
+  const view = { claims: [claim('rate-settled', 'rate', 'established', 3), claim('rate-disputed', 'rate', 'disputed', 1), claim('count-unjudged', 'count', 'unjudged', 1), claim('date-two', 'date', 'established', 2), claim('rate-one', 'rate', 'established', 1)], statements: [], sources: [] };
   const shape = (groups) => groups.map(([attribute, claims]) => [attribute, claims.map((c) => c.id)]);
-  assert.deepEqual(shape(attributeGroups(view)), [['count', ['b1']], ['rate', ['a1', 'a2']], ['date', ['c1']]]);
+  assert.deepEqual(shape(attributeGroups(view)), [['rate', ['rate-disputed']], ['count', ['count-unjudged']], ['rate', ['rate-settled', 'rate-one']], ['date', ['date-two']]]);
+  const band = (id) => ({ d: 2, u: 1 })[view.claims.find((c) => c.id === id).state[0]] ?? 0;
+  const flat = attributeGroups(view).flatMap(([, claims]) => claims.map((c) => c.id));
+  assert.deepEqual(flat.map(band), rankClaims(view).map((c) => band(c.id)));
   assert.deepEqual(shape(briefGroups(view)), shape(attributeGroups(view)));
 });
