@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import ClaimStanding from "../../../../../components/v2/ClaimStanding.astro";
+import { v2Manifests, v2Story } from "../../../../../lib/v2.mjs";
+import { attributeGroups, storyPaths } from "../../../../../lib/v2-brief.mjs";
+export function getStaticPaths() {
+  return v2Manifests().map(({ route }) => {
+    const [, , series, story] = route.split("/");
+    return { params: { series, story }, props: { route } };
+  });
+}
+const { route } = Astro.props;
+const story = v2Story(route);
+const paths = storyPaths(route);
+---
+<BaseLayout title="Claims by attribute | The Catch" current="Events" noindex>
+  <div class="content">
+    <main class="story" data-v2-claims-page={story.snapshot}>
+      <p><a href={route}>Back to the story</a></p>
+      <h1>Claims by attribute</h1>
+      {story.views.map((view) => <section data-v2-subject={view.id}>
+        <h2 data-extracted>{view.label}</h2>
+        {attributeGroups(view).map(([attribute, claims]) => <section>
+          {claims.map((claim) => <article class="ledger-row" data-v2-claim={claim.id} data-v2-attribute={attribute}>
+            <ClaimStanding view={view} claim={claim} heading="h3" />
+            <p class="ledger-source"><a href={paths.claim(claim)}>Statements</a></p>
+          </article>)}
+        </section>)}
+      </section>)}
+    </main>
+  </div>
+</BaseLayout>

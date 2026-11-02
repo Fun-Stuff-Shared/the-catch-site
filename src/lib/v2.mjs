@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
 export const v2Directory = join(process.cwd(), "data/v2");
-export const FORMAT = "sai-news-view/3";
+export const FORMAT = "sai-news-view/4";
 const SNAPSHOT = /^[0-9a-f]{24}$/;
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
 
@@ -56,9 +56,13 @@ export function readSnapshot(folder, id) {
   return { id, manifest, views };
 }
 
+// Snapshots are immutable and named by their content, so one verified read serves every page of a build.
+const verified = new Map();
 export function readV2(directory = v2Directory) {
   const id = snapshotId(directory);
-  return readSnapshot(join(directory, "snapshots", id), id);
+  const folder = join(directory, "snapshots", id);
+  if (!verified.has(folder)) verified.set(folder, readSnapshot(folder, id));
+  return verified.get(folder);
 }
 
 // A story renders from v2 when its manifest says so; the snapshot's story index, keyed by the manifest's name, names its subjects.
@@ -92,7 +96,7 @@ export function v2Story(route, directory = v2Directory, manifests = join(process
   if (!row) throw new Error(`No v2 manifest for ${route}`);
   const snapshot = readV2(directory);
   const views = storySubjects(snapshot, row.story).map((subject) => snapshot.views.get(subject));
-  return { snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
+  return { route, snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
 }
 
 export function hasV2(directory = v2Directory) {

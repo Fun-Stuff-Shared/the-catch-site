@@ -4,7 +4,7 @@ import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectState from "../../../components/SubjectState.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { v2Story } from "../../../lib/v2.mjs";
@@ -165,7 +165,7 @@ const v2 = v2Story("/events/midterm-polls/2026-10-20-wedgewood-polls-admits-fabr
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectState story={v2} supporting />
+      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>

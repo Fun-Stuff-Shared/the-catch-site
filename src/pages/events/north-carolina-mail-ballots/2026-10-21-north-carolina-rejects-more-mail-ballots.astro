@@ -7,7 +7,7 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectState from "../../../components/SubjectState.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
 import { v2Story } from "../../../lib/v2.mjs";
 import { claim } from "../../../lib/claims.mjs";
 import { event, n, computed, rates, chronology } from "../../../data/north-carolina-mail-ballots-2026-10-21-north-carolina-rejects-more-mail-ballots.mjs";
@@ -163,7 +163,7 @@ const v2 = v2Story("/events/north-carolina-mail-ballots/2026-10-21-north-carolin
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectState story={v2} supporting />
+      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>

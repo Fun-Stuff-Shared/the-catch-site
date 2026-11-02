@@ -9,7 +9,7 @@ import KpiStrip from "../../../components/story/KpiStrip.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectState from "../../../components/SubjectState.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
 import { v2Story } from "../../../lib/v2.mjs";
 import { event, figures, computed, timeline, listFigures, orderTable } from "../../../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
 const v2 = v2Story("/events/california-voter-list/2026-10-19-doj-seeks-to-block-20000-california-ballots/");
@@ -130,7 +130,7 @@ const v2 = v2Story("/events/california-voter-list/2026-10-19-doj-seeks-to-block-
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectState story={v2} supporting />
+      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>

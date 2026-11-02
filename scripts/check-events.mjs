@@ -12,7 +12,7 @@ import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
 import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy, emptyFactsSections } from "./check-state-pages.mjs";
 import { storyFindings, citedPassages } from "./story-copy-rules.mjs";
-import { checkV2Pages } from "./check-v2-pages.mjs";
+import { checkV2Pages, formatV2Report } from "./check-v2-pages.mjs";
 import { sourceContext } from "../src/lib/evidence-context.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
@@ -433,6 +433,7 @@ const generated = checkStatePages(stateViews, dist);
 fail.push(...generated.failures);
 const v2Pages = checkV2Pages(dist, join(ROOT, "data/v2"), join(ROOT, "checks/manifests"));
 fail.push(...v2Pages.failures);
+if (v2Pages.report.length) console.log(formatV2Report(v2Pages.report));
 try { checkPageFigures(readFileSync(join(dist, 'index.html'), 'utf8'), stateViews); }
 catch (error) { fail.push(error.message); }
 

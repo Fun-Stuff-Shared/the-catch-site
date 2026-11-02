@@ -19,17 +19,17 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {} } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
-    format: 'sai-news-view/3', id: subject, kind: 'development', label,
-    claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'] }],
+    format: 'sai-news-view/4', id: subject, kind: 'development', label,
+    claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'], independent: 1, heads: ['mention-a'], basis: ['mention-a'], transitions: [{ kind: 'first_value', mention: 'mention-a', as_of: '2026-10-20' }] }],
     statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: ['claim-a'], as_of: '2026-10-20' }],
-    sources: [{ artifact: 'artifact-a', source: null, published_at: '2026-10-21', statements: 1 }], related: [],
+    sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related: [],
   };
   const viewBytes = JSON.stringify(view);
-  const manifest = JSON.stringify({ format: 'sai-news-view/3', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const manifest = JSON.stringify({ format: 'sai-news-view/4', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
   const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
@@ -157,10 +157,41 @@ test('a subject id with a space reads, maps to its story and passes the page che
   writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
   assert.equal(v2Story(route, destination, manifests).views[0].id, subject);
   const dist = temp(t, 'v2-dist-');
-  mkdirSync(join(dist, route), { recursive: true });
-  const page = (shown) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><article data-v2-claim="claim-a"></article><li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li></section></details>`;
-  writeFileSync(join(dist, route, 'index.html'), page(subject));
-  assert.deepEqual(checkV2Pages(dist, destination, manifests), { failures: [], checked: [route] });
-  writeFileSync(join(dist, route, 'index.html'), page('development-ncse'));
+  const write = (path, html) => { mkdirSync(join(dist, path), { recursive: true }); writeFileSync(join(dist, path, 'index.html'), html); };
+  const statementHtml = `<li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li>`;
+  const story = (shown, extra = '') => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><article data-v2-claim="claim-a">${statementHtml}</article>${extra}<li data-v2-source="artifact-a">artifact-a</li></section></details>`;
+  write(route, story(subject));
+  write(`${route}claims/`, `<main data-v2-claims-page="${id}"><article data-v2-claim="claim-a"></article></main>`);
+  write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a">${statementHtml}</main>`);
+  const passed = checkV2Pages(dist, destination, manifests);
+  assert.deepEqual(passed.failures, []);
+  assert.deepEqual(passed.checked, [route]);
+  assert.equal(passed.report[0].sourceFallbacks, 1);
+  write(route, story('development-ncse'));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
+  write(route, story(subject, `<p>${'x'.repeat(41 * 1024)}</p>`));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /v2 section is \d+ bytes, budget 40960/);
+  write(route, story(subject));
+  write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a"></main>`);
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
+});
+
+test('the brief ranks disputed claims first, then by independent sources, then by recency, and picks one statement per root first', async () => {
+  const { bestStatements, claimSlug, competingValues, rankClaims, sourceLabel } = await import('../src/lib/v2-brief.mjs');
+  const claim = (id, state, independent, as_of, statements = [], heads = []) => ({ id, state, independent, as_of, statements, heads, basis: heads, transitions: [] });
+  const statement = (id, artifact, as_of, value = null) => ({ id, artifact, as_of, value, claims: [], quote: id, speaker: 's', status: 'live' });
+  const view = {
+    claims: [claim('old-two', 'established', 2, '2026-10-01'), claim('new-one', 'established', 1, '2026-10-20'), claim('disputed', 'disputed', 1, '2026-09-01', ['m1', 'm2', 'm3'], ['m1', 'm3']), claim('new-two', 'established', 2, '2026-10-10')],
+    statements: [statement('m1', 'a1', '2026-09-01', { type: 'enum', value: 'open' }), statement('m2', 'a2', '2026-09-03'), statement('m3', 'a3', '2026-09-02', { type: 'enum', value: 'closed' })],
+    sources: [{ artifact: 'a1', root: 'r1' }, { artifact: 'a2', root: 'r1' }, { artifact: 'a3', root: 'r2' }],
+  };
+  assert.deepEqual(rankClaims(view).map((c) => c.id), ['disputed', 'new-two', 'old-two', 'new-one']);
+  assert.deepEqual(bestStatements(view, view.claims[2]).map((s) => s.id), ['m3', 'm1']);
+  assert.deepEqual(bestStatements(view, view.claims[2], 3).map((s) => s.id), ['m3', 'm1', 'm2']);
+  assert.deepEqual(competingValues(view, view.claims[2]).map((s) => s.value.value), ['open', 'closed']);
+  assert.equal(claimSlug('claim-6d59f6f7'), 'claim-6d59f6f7');
+  assert.match(claimSlug('claim with space'), /^h-[0-9a-f]{24}$/);
+  assert.deepEqual(sourceLabel({ artifact: 'artifact-a', attributes: {} }), { publisher: null, title: null, fallback: true, text: 'artifact-a' });
+  assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { publisher: 'AP', title: 'Counties reject ballots' } }).text, 'AP, Counties reject ballots');
+  assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { title: 'Counties reject ballots' } }).fallback, false);
 });

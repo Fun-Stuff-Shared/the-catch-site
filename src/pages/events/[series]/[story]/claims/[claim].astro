@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import ClaimStanding from "../../../../../components/v2/ClaimStanding.astro";
+import Statement from "../../../../../components/v2/Statement.astro";
+import { v2Manifests, v2Story } from "../../../../../lib/v2.mjs";
+import { claimSlug, claimStatements, storyPaths } from "../../../../../lib/v2-brief.mjs";
+export function getStaticPaths() {
+  return v2Manifests().flatMap(({ route }) => {
+    const [, , series, story] = route.split("/");
+    const v2 = v2Story(route);
+    return v2.views.flatMap((view) => view.claims.map((claim) => ({ params: { series, story, claim: claimSlug(claim.id) }, props: { route, subject: view.id, claimId: claim.id } })));
+  });
+}
+const { route, subject, claimId } = Astro.props;
+const story = v2Story(route);
+const view = story.views.find((candidate) => candidate.id === subject);
+const claim = view.claims.find((candidate) => candidate.id === claimId);
+const statements = claimStatements(view, claim);
+---
+<BaseLayout title="Claim | The Catch" current="Events" noindex>
+  <div class="content">
+    <main class="story" data-v2-claim-page={story.snapshot} data-v2-subject={view.id} data-v2-claim={claim.id}>
+      <p><a href={route}>Back to the story</a> · <a href={storyPaths(route).claims}>All claims</a></p>
+      <ClaimStanding view={view} claim={claim} heading="h1" />
+      <h2>Statements <span class="series-count">{statements.length}</span></h2>
+      <ul>{statements.map((statement) => <Statement view={view} statement={statement} />)}</ul>
+    </main>
+  </div>
+</BaseLayout>
