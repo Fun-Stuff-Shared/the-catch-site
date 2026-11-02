@@ -144,3 +144,23 @@ test('the committed snapshot written by the sai-core renderer reads and checks i
   const { views } = readV2(committed);
   assert.ok(views.size >= 1);
 });
+
+test('a subject id with a space reads, maps to its story and passes the page check by its data attribute', async (t) => {
+  const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const subject = 'development-ncse absentee-ballot guidance';
+  const destination = temp(t, 'v2-site-');
+  const source = temp(t, 'v2-source-');
+  const id = snapshot(source, { subject });
+  pullV2({ source, destination });
+  const manifests = temp(t, 'v2-manifests-');
+  const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
+  assert.equal(v2Story(route, destination, manifests).views[0].id, subject);
+  const dist = temp(t, 'v2-dist-');
+  mkdirSync(join(dist, route), { recursive: true });
+  const page = (shown) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><article data-v2-claim="claim-a"></article><li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li></section></details>`;
+  writeFileSync(join(dist, route, 'index.html'), page(subject));
+  assert.deepEqual(checkV2Pages(dist, destination, manifests), { failures: [], checked: [route] });
+  writeFileSync(join(dist, route, 'index.html'), page('development-ncse'));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
+});
