@@ -163,7 +163,7 @@ test('only format 5 reads, and its related ops are (op, target, other) triples',
   }
 });
 
-test('the v1 pull leaves out the story and chain views of v2 stories', (t) => {
+test('the v1 pull leaves out the story and chain views of v2 stories and the v1 events published under them', (t) => {
   const source = temp(t, 'v1-source-');
   const destination = temp(t, 'v1-site-');
   const manifests = temp(t, 'v1-manifests-');
@@ -174,6 +174,10 @@ test('the v1 pull leaves out the story and chain views of v2 stories', (t) => {
     writeFileSync(join(source, `${id}.json`), JSON.stringify({ event, status: 'published', root_id: id, edges: [], evidence: [] }));
     writeFileSync(join(source, `chain-${id}.json`), JSON.stringify({ id, root: event, events: [{ ...event, slots: [] }], outlet_count: 1, tracked: [] }));
   }
+  const later = (id, extra) => writeFileSync(join(source, `${id}.json`), JSON.stringify({ event: { id, label: id, period: '2026-10', status: 'published' }, status: 'published', root_id: v1EventId(route), edges: [], evidence: [], ...extra }));
+  later('event-under-v2');
+  later('event-after-it', { root_id: 'event-elsewhere', follows: 'event-under-v2' });
+  writeFileSync(join(source, 'event-folded.json'), JSON.stringify({ event: { id: 'event-folded', label: 'event-folded', period: '2026-10', status: 'merged' }, status: 'merged', survivor: 'event-under-v2', edges: [], evidence: [] }));
   assert.equal(pullState({ source, destination, manifests }).events, 1);
   assert.deepEqual(readdirSync(destination).sort(), ['chain-event-kept.json', 'event-kept.json']);
   writeFileSync(join(destination, `${v1EventId(route)}.json`), '{}');
