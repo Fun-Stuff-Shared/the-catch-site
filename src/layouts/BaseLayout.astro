@@ -1,5 +1,6 @@
 ---
 import EvidenceReader from "../components/EvidenceReader.astro";
+import { buildId } from "../lib/build-id.mjs";
 const { title, current = "Records", canonicalPath = null, redirectPath = null, noindex = false } = Astro.props;
 const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["People", "/officials/", "Officials"], ["How we check", "/methodology/", "Methodology"]];
 ---
@@ -8,6 +9,7 @@ const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["P
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="catch-build" content={buildId()} />
     <title>{title}</title>
     {noindex && <meta name="robots" content="noindex" />}
     {canonicalPath && <link rel="canonical" href={canonicalPath} />}
