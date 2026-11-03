@@ -141,7 +141,7 @@ and commits them (`state:`), checks that the committed views alone hold every st
 hosted build has no catch-state and reads only committed views; a story view without its
 chain fails on the host and the site silently keeps the old build), builds again, and only
 then fast-forwards main and pushes it. A failure anywhere before that leaves main where it
-was. It then polls each live URL until its headline serves, counts em dashes on the live bytes and
+was. It then polls each live URL until it serves the pushed commit's build (every page carries it as `<meta name="catch-build">`; a v2 story must also show the committed `data/v2` snapshot, since a story can keep its headline across builds), counts em dashes on the live bytes and
 runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other
 stories' unpushed commits: list them for the human before the first push of the day.
 

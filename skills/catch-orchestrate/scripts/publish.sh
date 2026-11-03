@@ -95,27 +95,14 @@ print "main is at $(git -C $site rev-parse --short main); $(git -C $site rev-lis
 (( push )) || { print "not pushed (--no-push)"; exit 0 }
 
 git -C $site push -q origin main
+pushed=$(git rev-parse HEAD)
 for s in $stories; do
   subject=${s%%--*} slug=${s#*--}
-  url=$live/events/$subject/$slug/
-  python3 - dist/events/$subject/$slug/index.html $url <<'EOF' || exit 1
-import html, re, sys, time, urllib.request
-h1 = lambda t: html.unescape(re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S).group(1))).strip()
-want, url = h1(open(sys.argv[1], encoding="utf-8").read()), sys.argv[2]
-seen = "no response"
-for _ in range(60):
-    try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "catch-publish"}), timeout=30) as r:
-            body = r.read().decode("utf-8")
-        if h1(body) == want:
-            print(f"live: {url} (em dashes: {body.count(chr(0x2014))})")
-            sys.exit(0)
-        seen = f"headline still {h1(body)!r}"
-    except Exception as e:
-        seen = repr(e)
-    time.sleep(10)
-sys.exit(f"NOT LIVE after 10 minutes: {url}; last seen: {seen}")
-EOF
+  if (( ${v2[(Ie)$s]} )); then
+    node scripts/live-ready.mjs $live/events/$subject/$slug/ $pushed $(<data/v2/CURRENT) || exit 1
+  else
+    node scripts/live-ready.mjs $live/events/$subject/$slug/ $pushed || exit 1
+  fi
 done
 node scripts/live-audit.mjs $live
 print "published from $wt"
