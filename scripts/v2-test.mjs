@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { readV2, v1EventId, v2Story, valueText } from '../src/lib/v2.mjs';
@@ -180,6 +180,10 @@ test('the v1 pull leaves out the story and chain views of v2 stories and the v1 
   writeFileSync(join(source, 'event-folded.json'), JSON.stringify({ event: { id: 'event-folded', label: 'event-folded', period: '2026-10', status: 'merged' }, status: 'merged', survivor: 'event-under-v2', edges: [], evidence: [] }));
   assert.equal(pullState({ source, destination, manifests }).events, 1);
   assert.deepEqual(readdirSync(destination).sort(), ['chain-event-kept.json', 'event-kept.json']);
+  const under = ['event-after-it.json', 'event-folded.json', 'event-under-v2.json'];
+  for (const name of under) copyFileSync(join(source, name), join(destination, name));
+  assert.throws(() => pullState({ source: join(source, 'absent'), destination, manifests }), (error) => under.every((name) => error.message.includes(name)));
+  for (const name of under) rmSync(join(destination, name));
   writeFileSync(join(destination, `${v1EventId(route)}.json`), '{}');
   assert.throws(() => pullState({ source: join(source, 'absent'), destination, manifests }), /Committed v1 views remain for v2 stories/);
 });

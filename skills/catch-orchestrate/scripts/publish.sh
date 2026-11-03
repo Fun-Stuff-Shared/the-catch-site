@@ -76,7 +76,8 @@ fi
 
 tmp=$(mktemp -d)
 git archive HEAD data/state data/v2 | tar -x -C $tmp
-for s in $v2; do node -e "Promise.all([import('./src/lib/state.mjs'),import('./src/lib/v2.mjs')]).then(([st,v])=>{if(st.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1);v.storySubjects(v.readV2('$tmp/data/v2'),'$s')})" || { print "committed v2 snapshot lacks $s, or committed v1 state still holds it" >&2; exit 1 }; done
+node -e "import('./scripts/pull-state.mjs').then(m=>m.pullState({source:'$tmp/no-catch-state',destination:'$tmp/data/state',manifests:'checks/manifests'}))" || { print "committed v1 state still holds a v2 story's views or the v1 events under them" >&2; exit 1 }
+for s in $v2; do node -e "import('./src/lib/v2.mjs').then(v=>v.storySubjects(v.readV2('$tmp/data/v2'),'$s'))" || { print "committed v2 snapshot lacks $s" >&2; exit 1 }; done
 for s in $v1; do node -e "import('./src/lib/state.mjs').then(m=>{if(!m.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1)})" || { print "committed state lacks event-${s/--/-}" >&2; exit 1 }; done
 print "committed state holds ${(j:, :)stories}"
 

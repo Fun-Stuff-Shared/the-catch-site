@@ -40,7 +40,7 @@ with (source / '.write.lock').open('a') as lock:
 export function pullState({ source = process.env.CATCH_STATE_SOURCE || "/Volumes/4/CF/catch-state/views", destination = join(root, "data/state"), python = process.env.CATCH_STATE_PYTHON || "python3", manifests = join(root, "checks/manifests") } = {}) {
   const replaced = replacedByV2(manifests);
   if (!existsSync(source)) {
-    const stale = readdirSync(destination).filter((name) => replaced.has(name));
+    const stale = [...new Set([...readdirSync(destination).filter((name) => replaced.has(name)), ...underReplacedChains(destination, replaced)])];
     if (stale.length) throw new Error(`Committed v1 views remain for v2 stories: ${stale.join(", ")}`);
     const state = readState(destination);
     if (!state.events.size) throw new Error("No committed event views are available");
