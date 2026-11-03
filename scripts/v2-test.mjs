@@ -19,17 +19,17 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {} } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {}, format = 'sai-news-view/5', related = [], claim = {}, statementClaims = ['claim-a'] } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
-    format: 'sai-news-view/4', id: subject, kind: 'development', label,
-    claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'], independent: 1, heads: ['mention-a'], basis: ['mention-a'], transitions: [{ kind: 'first_value', mention: 'mention-a', as_of: '2026-10-20' }] }],
-    statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: ['claim-a'], as_of: '2026-10-20' }],
-    sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related: [],
+    format, id: subject, kind: 'development', label,
+    claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'], independent: 1, heads: ['mention-a'], basis: ['mention-a'], transitions: [{ kind: 'first_value', mention: 'mention-a', as_of: '2026-10-20' }], merged: [], ...claim }],
+    statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: statementClaims, as_of: '2026-10-20' }],
+    sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related,
   };
   const viewBytes = JSON.stringify(view);
-  const manifest = JSON.stringify({ format: 'sai-news-view/4', head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const manifest = JSON.stringify({ format, head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
   const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
@@ -113,10 +113,44 @@ test('a v2 story takes its subjects from the snapshot story index under its mani
   assert.throws(() => v2Story(route, destination, manifests), /v2 must be true/);
 });
 
-test('a snapshot whose story index misses, repeats or invents a subject is refused', (t) => {
-  for (const [stories, message] of [[{}, /not each under exactly one story/], [{ a: ['subject-a'], b: ['subject-a'] }, /not each under exactly one story/], [{ a: ['subject-a', 'subject-b'] }, /lacks: a subject-b/], [{ a: [] }, /lists no subjects: a/], [null, /no story index/]]) {
+test('a snapshot whose story index leaves a view out, repeats a subject within a story or invents one is refused', (t) => {
+  for (const [stories, message] of [[{}, /view is under no story: subject-a/], [{ a: ['subject-a', 'subject-a'] }, /lists a subject twice: a/], [{ a: ['subject-a', 'subject-b'] }, /lacks: a subject-b/], [{ a: [] }, /lists no subjects: a/], [null, /no story index/]]) {
     const source = temp(t, 'v2-stories-');
     snapshot(source, { stories });
+    assert.throws(() => readV2(source), message);
+  }
+});
+
+test('a view holds its claims whole: statements name only held claims, heads and basis are among the claim\'s statements, and merged names only folded ids', (t) => {
+  const ok = temp(t, 'v2-claims-');
+  snapshot(ok, { claim: { merged: ['claim-folded'] } });
+  assert.deepEqual(readV2(ok).views.get('subject-a').claims[0].merged, ['claim-folded']);
+  for (const [options, message] of [
+    [{ statementClaims: ['claim-a', 'claim-folded'] }, /statement names a claim the view does not hold: mention-a/],
+    [{ claim: { heads: ['mention-b'] } }, /heads or basis are not among its statements: claim-a/],
+    [{ claim: { statements: [], heads: [], basis: ['mention-a'] } }, /heads or basis are not among its statements: claim-a/],
+    [{ claim: { merged: ['claim-a'] } }, /merged claims are not folded ids: claim-a/],
+    [{ claim: { merged: undefined } }, /merged claims are not folded ids: claim-a/],
+  ]) {
+    const source = temp(t, 'v2-claims-bad-');
+    snapshot(source, options);
+    assert.throws(() => readV2(source), message);
+  }
+});
+
+test('a development may be indexed under several stories', (t) => {
+  const source = temp(t, 'v2-stories-');
+  snapshot(source, { stories: { a: ['subject-a'], b: ['subject-a'] } });
+  assert.deepEqual(readV2(source).manifest.stories, { a: ['subject-a'], b: ['subject-a'] });
+});
+
+test('only format 5 reads, and its related ops are (op, target, other) triples', (t) => {
+  const ok = temp(t, 'v2-related-');
+  snapshot(ok, { related: [['merge', 'subject-a', 'subject-b'], ['restore', 'subject-a', 'subject-b']] });
+  assert.equal(readV2(ok).views.get('subject-a').related.length, 2);
+  for (const [options, message] of [[{ format: 'sai-news-view/4' }, /Unknown v2 snapshot format: sai-news-view\/4/], [{ related: [['merge', 'subject-a']] }, /related is not a list of \(op, target, other\)/], [{ related: [{ op: 'merge' }] }, /related is not/], [{ related: null }, /related is not/], [{ related: [['merge', '', 'subject-b']] }, /related is not/]]) {
+    const source = temp(t, 'v2-related-bad-');
+    snapshot(source, options);
     assert.throws(() => readV2(source), message);
   }
 });
@@ -145,8 +179,20 @@ test('the committed snapshot written by the sai-core renderer reads and checks i
   assert.ok(views.size >= 1);
 });
 
-test('a subject id with a space reads, maps to its story and passes the page check by its data attribute', async (t) => {
+function pageSite(t, id, dist) {
+  const write = (path, html) => { mkdirSync(join(dist, path), { recursive: true }); writeFileSync(join(dist, path, 'index.html'), html); };
+  const statementHtml = `<li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li>`;
+  return {
+    write, statementHtml,
+    story: (subject, home, { shown = subject, extra = '', statements = statementHtml, link = home.claim({ id: 'claim-a' }) } = {}) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><section data-v2-attribute="rejection rate"><article data-v2-claim="claim-a">${statements}<a data-v2-claim-link="claim-a" href="${link}">1 statement</a></article></section>${extra}<a data-v2-claims-link href="${home.claims}">All</a><li data-v2-source="artifact-a">artifact-a</li></section></details>`,
+    claimsPage: (subject, claims = '<article data-v2-claim="claim-a"></article>') => `<main data-v2-claims-page="${id}" data-v2-subject="${subject}"><section data-v2-attribute="rejection rate">${claims}</section></main>`,
+    claimPage: (subject, statements = statementHtml) => `<main data-v2-claim-page="${id}" data-v2-subject="${subject}" data-v2-claim="claim-a">${statements}</main>`,
+  };
+}
+
+test('a subject id with a space reads, maps to its story and passes the page check at its home', async (t) => {
   const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
   const subject = 'development-ncse absentee-ballot guidance';
   const destination = temp(t, 'v2-site-');
   const source = temp(t, 'v2-source-');
@@ -156,30 +202,75 @@ test('a subject id with a space reads, maps to its story and passes the page che
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
   writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
   assert.equal(v2Story(route, destination, manifests).views[0].id, subject);
+  const home = subjectPaths(subject);
+  assert.match(home.claims, /^\/developments\/development-ncse-absentee-ballot-guidance-[0-9a-f]{8}\/claims\/$/);
   const dist = temp(t, 'v2-dist-');
-  const write = (path, html) => { mkdirSync(join(dist, path), { recursive: true }); writeFileSync(join(dist, path, 'index.html'), html); };
-  const statementHtml = `<li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li>`;
-  const story = (shown, extra = '', statements = statementHtml) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><section data-v2-attribute="rejection rate"><article data-v2-claim="claim-a">${statements}</article></section>${extra}<li data-v2-source="artifact-a">artifact-a</li></section></details>`;
-  const claimsPage = (claims = '<article data-v2-claim="claim-a"></article>') => `<main data-v2-claims-page="${id}"><section data-v2-attribute="rejection rate">${claims}</section></main>`;
-  write(route, story(subject));
-  write(`${route}claims/`, claimsPage());
-  write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a">${statementHtml}</main>`);
+  const site = pageSite(t, id, dist);
+  site.write(route, site.story(subject, home));
+  site.write(home.claims, site.claimsPage(subject));
+  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
   const passed = checkV2Pages(dist, destination, manifests);
   assert.deepEqual(passed.failures, []);
   assert.deepEqual(passed.checked, [route]);
   assert.equal(passed.report[0].sourceFallbacks, 1);
-  write(route, story('development-ncse'));
+  site.write(route, site.story(subject, home, { shown: 'development-ncse' }));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
-  write(route, story(subject, `<p>${'x'.repeat(41 * 1024)}</p>`));
+  site.write(route, site.story(subject, home, { extra: `<p>${'x'.repeat(41 * 1024)}</p>` }));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /v2 section is \d+ bytes, budget 40960/);
-  write(route, story(subject, '', statementHtml + statementHtml.replace('mention-a', 'mention-x')));
+  site.write(route, site.story(subject, home, { statements: site.statementHtml + site.statementHtml.replace('mention-a', 'mention-x') }));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders statements mention-a,mention-x, expected mention-a/);
-  write(route, story(subject));
-  write(`${route}claims/`, claimsPage('<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
+  site.write(route, site.story(subject, home, { link: `${route}claims/claim-a/` }));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /brief links claims to \/events\/.*claims\/claim-a\/, their homes are \/developments\//);
+  site.write(route, site.story(subject, home));
+  site.write(home.claims, site.claimsPage(subject, '<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lists claims 2, expected 1/);
-  write(`${route}claims/`, claimsPage());
-  write(`${route}claims/claim-a/`, `<main data-v2-claim-page="${id}" data-v2-claim="claim-a"></main>`);
+  site.write(home.claims, site.claimsPage(subject));
+  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject, ''));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
+});
+
+test('a subject listed under two stories has one set of claim pages, at its home, and both briefs link there', async (t) => {
+  const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
+  const { subjectHomes } = await import('../src/lib/v2.mjs');
+  const subject = 'subject-a';
+  const other = 'ballots--2026-10-22-counties-count-again';
+  const destination = temp(t, 'v2-site-');
+  const source = temp(t, 'v2-source-');
+  const id = snapshot(source, { subject, stories: { [STORY]: [subject], [other]: [subject] } });
+  pullV2({ source, destination });
+  const manifests = temp(t, 'v2-manifests-');
+  const routes = ['/events/ballots/2026-10-21-counties-reject-ballots/', '/events/ballots/2026-10-22-counties-count-again/'];
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: routes[0], v2: true }));
+  writeFileSync(join(manifests, `${other}.json`), JSON.stringify({ story: routes[1], v2: true }));
+  const homes = subjectHomes(destination, manifests).homes;
+  assert.deepEqual(homes.map((home) => [home.subject, home.slug, home.stories]), [[subject, subject, routes]]);
+  const home = subjectPaths(subject);
+  const dist = temp(t, 'v2-dist-');
+  const site = pageSite(t, id, dist);
+  for (const route of routes) site.write(route, site.story(subject, home));
+  site.write(home.claims, site.claimsPage(subject));
+  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
+  const passed = checkV2Pages(dist, destination, manifests);
+  assert.deepEqual(passed.failures, []);
+  assert.deepEqual(passed.checked, routes);
+  assert.deepEqual(passed.report.filter((row) => row.subject).map((row) => [row.subject, row.stories, row.claimPages]), [[subject, 2, 1]]);
+  site.write(`${routes[1]}claims/claim-a/`, site.claimPage(subject));
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, [`${routes[1]}claims/claim-a/: renders claim claim-a of ${subject}, whose one home is ${home.claim({ id: 'claim-a' })}`]);
+  rmSync(join(dist, routes[1], 'claims'), { recursive: true });
+  site.write(`${routes[0]}claims/`, site.claimsPage(subject));
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, [`${routes[0]}claims/: renders the claims of ${subject}, whose one home is ${home.claims}`]);
+});
+
+test('subject homes are plain ids where they can be and otherwise readable and distinct', async () => {
+  const { subjectSlug } = await import('../src/lib/v2-brief.mjs');
+  assert.equal(subjectSlug('development-doj-california-voter-list-analysis'), 'development-doj-california-voter-list-analysis');
+  const spaced = subjectSlug('development-ncse absentee-ballot-guidance-2026-09-04');
+  assert.match(spaced, /^development-ncse-absentee-ballot-guidance-2026-09-04-[0-9a-f]{8}$/);
+  assert.notEqual(subjectSlug('A b'), subjectSlug('a-b'));
+  assert.notEqual(subjectSlug('a b'), subjectSlug('a_b'));
+  assert.equal(subjectSlug('a b'), subjectSlug('a b'));
+  assert.match(subjectSlug('\u{10000}'), /^subject-[0-9a-f]{8}$/);
 });
 
 test('the brief ranks disputed claims first, then unjudged ones, then by independent sources, then by recency, and picks one statement per root first', async () => {

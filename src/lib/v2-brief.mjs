@@ -20,8 +20,18 @@ export function claimSlug(id) {
   return /^[a-z0-9][a-z0-9_-]*$/i.test(id) ? id : `h-${createHash("sha256").update(id).digest("hex").slice(0, 24)}`;
 }
 
-export function storyPaths(route) {
-  return { claims: `${route}claims/`, claim: (claim) => `${route}claims/${claimSlug(claim.id)}/` };
+// A subject's id becomes its home's path segment: a plain lowercase slug stays as it is; any other id is lowercased,
+// its other characters folded to hyphens, and a short hash of the whole id appended, so distinct ids keep distinct homes.
+export function subjectSlug(id) {
+  if (/^[a-z0-9][a-z0-9_-]*$/.test(id)) return id;
+  const base = id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "subject";
+  return `${base}-${createHash("sha256").update(id).digest("hex").slice(0, 8)}`;
+}
+
+// A subject's claim pages live once, under its home, whatever stories it appears on.
+export function subjectPaths(subject) {
+  const home = `/developments/${subjectSlug(subject)}/`;
+  return { claims: `${home}claims/`, claim: (claim) => `${home}claims/${claimSlug(claim.id)}/` };
 }
 
 function index(view) {

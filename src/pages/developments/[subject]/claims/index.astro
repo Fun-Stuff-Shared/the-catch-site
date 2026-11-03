@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import ClaimStanding from "../../../../components/v2/ClaimStanding.astro";
+import { subjectHomes } from "../../../../lib/v2.mjs";
+import { attributeGroups, subjectPaths } from "../../../../lib/v2-brief.mjs";
+import { storyCatalog } from "../../../../lib/discovery.mjs";
+export function getStaticPaths() {
+  const { snapshot, homes } = subjectHomes();
+  const titles = new Map(storyCatalog().map((story) => [story.href, story.title]));
+  return homes.map((home) => ({ params: { subject: home.slug }, props: { snapshot, home, stories: home.stories.map((route) => ({ route, title: titles.get(route) ?? route })) } }));
+}
+const { snapshot, home, stories } = Astro.props;
+const { view } = home;
+const paths = subjectPaths(view.id);
+---
+<BaseLayout title="Claims by attribute | The Catch" current="Events" noindex>
+  <div class="content">
+    <main class="story" data-v2-claims-page={snapshot} data-v2-subject={view.id}>
+      <p>On {stories.map(({ route, title }, i) => <>{i > 0 && " · "}<a href={route} data-v2-story-link>{title}</a></>)}</p>
+      <h1 data-extracted>{view.label}</h1>
+      <h2>Claims by attribute</h2>
+      {attributeGroups(view).map(([attribute, claims]) => <section data-v2-attribute={attribute}>
+        <h3 data-extracted>{attribute}</h3>
+        {claims.map((claim) => <article class="ledger-row" data-v2-claim={claim.id}>
+          <ClaimStanding view={view} claim={claim} showAttribute={false} />
+          <p class="ledger-source"><a href={paths.claim(claim)}>Statements</a></p>
+        </article>)}
+      </section>)}
+    </main>
+  </div>
+</BaseLayout>

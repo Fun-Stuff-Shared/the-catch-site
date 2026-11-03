@@ -1,9 +1,10 @@
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { subjectSlug } from "./v2-brief.mjs";
 
 export const v2Directory = join(process.cwd(), "data/v2");
-export const FORMAT = "sai-news-view/4";
+export const FORMAT = "sai-news-view/5";
 const SNAPSHOT = /^[0-9a-f]{24}$/;
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
 
@@ -15,7 +16,8 @@ export function snapshotId(directory) {
 
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
 // manifest names, every statement's quote against the code points its span names in the shipped text, and
-// its story index against its views, each view under exactly one story.
+// its story index against its views. A development may be indexed under several stories; every view is
+// under at least one, and every subject a story lists exists.
 export function readSnapshot(folder, id) {
   if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
   const manifestBytes = readFileSync(join(folder, "manifest.json"));
@@ -43,16 +45,25 @@ export function readSnapshot(folder, id) {
       if (!text) throw new Error(`v2 statement names a text the snapshot lacks: ${statement.id}`);
       if (text.slice(statement.span.start, statement.span.end).join("") !== statement.quote) throw new Error(`v2 statement quote is not at its span: ${statement.id}`);
     }
-    for (const claim of view.claims) if (claim.statements.some((id) => !statements.has(id))) throw new Error(`v2 claim cites a statement the view lacks: ${claim.id}`);
+    const claims = new Set(view.claims.map((claim) => claim.id));
+    for (const claim of view.claims) {
+      if (claim.statements.some((id) => !statements.has(id))) throw new Error(`v2 claim cites a statement the view lacks: ${claim.id}`);
+      const own = new Set(claim.statements);
+      if ([...claim.heads, ...claim.basis].some((id) => !own.has(id))) throw new Error(`v2 claim's heads or basis are not among its statements: ${claim.id}`);
+      if (!Array.isArray(claim.merged) || claim.merged.some((id) => typeof id !== "string" || claims.has(id))) throw new Error(`v2 claim's merged claims are not folded ids: ${claim.id}`);
+    }
+    for (const statement of view.statements) if (statement.claims.some((id) => !claims.has(id))) throw new Error(`v2 statement names a claim the view does not hold: ${statement.id}`);
+    if (!Array.isArray(view.related) || view.related.some((op) => !Array.isArray(op) || op.length !== 3 || op.some((part) => typeof part !== "string" || !part))) throw new Error(`v2 view related is not a list of (op, target, other): ${subject}`);
     views.set(subject, view);
   }
   if (!manifest.stories || typeof manifest.stories !== "object" || Array.isArray(manifest.stories)) throw new Error(`v2 snapshot has no story index: ${id}`);
   for (const [story, subjects] of Object.entries(manifest.stories)) {
     if (!Array.isArray(subjects) || !subjects.length) throw new Error(`v2 story lists no subjects: ${story}`);
     for (const subject of subjects) if (!views.has(subject)) throw new Error(`v2 story names a subject the snapshot lacks: ${story} ${subject}`);
+    if (new Set(subjects).size !== subjects.length) throw new Error(`v2 story lists a subject twice: ${story}`);
   }
-  const indexed = Object.values(manifest.stories).flat();
-  if (indexed.length !== views.size || new Set(indexed).size !== views.size) throw new Error("v2 snapshot views are not each under exactly one story");
+  const indexed = new Set(Object.values(manifest.stories).flat());
+  for (const subject of views.keys()) if (!indexed.has(subject)) throw new Error(`v2 view is under no story: ${subject}`);
   return { id, manifest, views };
 }
 
@@ -82,6 +93,24 @@ export function storySubjects(snapshot, story) {
   const subjects = Object.hasOwn(snapshot.manifest.stories, story) ? snapshot.manifest.stories[story] : undefined;
   if (!subjects) throw new Error(`v2 snapshot ${snapshot.id} has no subjects for story ${story}`);
   return subjects;
+}
+
+// Every subject a v2 story page shows, with its home's slug and the story pages it appears on, in story order.
+export function subjectHomes(directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
+  const snapshot = readV2(directory);
+  const homes = new Map(), slugs = new Map();
+  for (const { story, route } of v2Manifests(manifests)) {
+    for (const subject of storySubjects(snapshot, story)) {
+      if (!homes.has(subject)) {
+        const name = subjectSlug(subject);
+        if (slugs.has(name)) throw new Error(`v2 subjects ${slugs.get(name)} and ${subject} share the home ${name}`);
+        slugs.set(name, subject);
+        homes.set(subject, { subject, slug: name, view: snapshot.views.get(subject), stories: [] });
+      }
+      homes.get(subject).stories.push(route);
+    }
+  }
+  return { snapshot: snapshot.id, homes: [...homes.values()] };
 }
 
 // The v1 projection names a dated story event-<series>-<yyyy-mm-dd>-<moment>; a v2 story replaces that view.
