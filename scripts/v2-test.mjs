@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { readV2, v1EventId, v2Story } from '../src/lib/v2.mjs';
+import { readV2, v1EventId, v2Story, valueText } from '../src/lib/v2.mjs';
 import { pullV2 } from './pull-v2.mjs';
 import { pullState } from './pull-state.mjs';
 
@@ -311,4 +311,10 @@ test('claims are grouped by attribute within their priority band, in the order e
   const flat = attributeGroups(view).flatMap(([, claims]) => claims.map((c) => c.id));
   assert.deepEqual(flat.map(band), rankClaims(view).map((c) => band(c.id)));
   assert.deepEqual(shape(briefGroups(view)), shape(attributeGroups(view)));
+});
+
+test('a quantity renders as a point or as a range between its bounds', () => {
+  assert.equal(valueText({ type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }), '2.6 percent');
+  assert.equal(valueText({ type: 'quantity', amount: '3.50', upper: '3.75', unit: 'percent', dimension: 'rate' }), '3.50–3.75 percent');
+  assert.equal(valueText({ type: 'forecast', outcome: { type: 'quantity', amount: '1', upper: '2', unit: 'cuts', dimension: 'n' }, horizon: { at: '2026-12-31' } }), '1–2 cuts by 2026-12-31');
 });

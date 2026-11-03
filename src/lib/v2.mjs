@@ -138,7 +138,7 @@ export function hasV2(directory = v2Directory) {
 export function valueText(value) {
   if (!value) return null;
   switch (value.type) {
-    case "quantity": return `${value.amount} ${value.unit}`;
+    case "quantity": return value.upper == null ? `${value.amount} ${value.unit}` : `${value.amount}–${value.upper} ${value.unit}`;
     case "date": return value.at.at;
     case "enum": return value.value;
     case "entity": return value.subject;
