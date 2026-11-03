@@ -156,9 +156,11 @@ export function emptyFactsSections(html) {
   return empty;
 }
 
+// Reader copy is what the site says in its own words: source wording (data-source-copy) and text the extractor
+// derived from sources (data-extracted) are left out.
 export function readerCopy(html) {
   function copy(node) {
-    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined) return '';
+    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined || attr(node, 'data-extracted') !== undefined) return '';
     if (node.nodeName === '#text') return node.value;
     return (node.childNodes ?? []).map(copy).join(' ');
   }
@@ -170,7 +172,7 @@ export function storyCopy(html) {
   const main = all.find((node) => node.tagName === 'main');
   if (!main) throw new Error('Story page has no <main>; reader copy cannot be scoped');
   function copy(node) {
-    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined || attr(node, 'data-layer') === 'proof') return '';
+    if (['head', 'script', 'style'].includes(node.tagName) || attr(node, 'data-source-copy') !== undefined || attr(node, 'data-extracted') !== undefined || attr(node, 'data-layer') === 'proof') return '';
     if (node.nodeName === '#text') return node.value;
     return (node.childNodes ?? []).map(copy).join(' ');
   }

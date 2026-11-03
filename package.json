@@ -3,11 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/pull-state.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/work-evidence.mjs && node scripts/facts-claims.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
+    "build": "node scripts/pull-state.mjs && node scripts/pull-v2.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/work-evidence.mjs && node scripts/facts-claims.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
     "build:news-records": "node scripts/build-news-records.mjs",
     "check": "node scripts/check-events.mjs",
     "dev": "astro dev",
-    "test:state": "node --test scripts/state-fixture-test.mjs",
+    "test:state": "node --test scripts/state-fixture-test.mjs scripts/v2-test.mjs",
     "test:copy": "node --test scripts/story-copy-rules-test.mjs",
     "test:reader": "node --test scripts/evidence-context-test.mjs scripts/catalog-page-test.mjs scripts/front-page-test.mjs",
     "test:fec": "node --test scripts/fec-test.mjs",

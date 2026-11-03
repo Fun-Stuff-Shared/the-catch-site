@@ -4,17 +4,14 @@ import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
 import StorySources from "../../../components/StorySources.astro";
-import StoryState from "../../../components/StoryState.astro";
-import StateEvent from "../../../components/StateEvent.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { publishedState, eventPath } from "../../../lib/state.mjs";
+import { v2Story } from "../../../lib/v2.mjs";
 import { event, lean, primaries, caught, corrections, trackers } from "../../../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs";
-const state = publishedState().events.get("event-midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls");
-if (!state) throw new Error("Missing publication selection: event-midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls");
-if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+const v2 = v2Story("/events/midterm-polls/2026-10-20-wedgewood-polls-admits-fabricating-polls/");
 ---
-{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterm-polls/">Midterm polls</a><span>October 20, 2026</span></div>
   <div class="content">
     <main class="story" id="story-root">
@@ -168,11 +165,11 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="records">
       <StorySources event={event.slug} />
-      <StoryState view={state} supporting />
+      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>
-</BaseLayout>}
+</BaseLayout>
 <style is:global>
   .lean-table th, .lean-table td { padding: 0.5rem 0.45rem; }
   .lean-table td:last-child { white-space: nowrap; }

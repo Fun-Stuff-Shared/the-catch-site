@@ -9,15 +9,12 @@ import KpiStrip from "../../../components/story/KpiStrip.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import OutletCheck from "../../../components/story/OutletCheck.astro";
 import StorySources from "../../../components/StorySources.astro";
-import StoryState from "../../../components/StoryState.astro";
-import StateEvent from "../../../components/StateEvent.astro";
-import { publishedState, eventPath } from "../../../lib/state.mjs";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
+import { v2Story } from "../../../lib/v2.mjs";
 import { event, figures, computed, timeline, listFigures, orderTable } from "../../../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
-const state = publishedState().events.get("event-california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots");
-if (!state) throw new Error("Missing publication selection: event-california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots");
-if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
+const v2 = v2Story("/events/california-voter-list/2026-10-19-doj-seeks-to-block-20000-california-ballots/");
 ---
-{state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/california-voter-list/">California's voter list</a><span>October 19, 2026</span></div>
   <div class="content">
     <main class="story" id="story-root">
@@ -133,8 +130,8 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
       <section id="records">
       <StorySources event={event.slug} />
-      <StoryState view={state} supporting />
+      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>
-</BaseLayout>}
+</BaseLayout>
