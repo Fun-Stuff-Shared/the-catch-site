@@ -19,13 +19,13 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {}, format = 'sai-news-view/5', related = [], claim = {}, statementClaims = ['claim-a'] } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {}, format = 'sai-news-view/5', related = [], claim = {}, statementClaims = ['claim-a'], status = 'live' } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
     format, id: subject, kind: 'development', label,
     claims: [{ id: 'claim-a', attribute: 'rejection rate', kind: 'fact', state: 'established', level: 'reported', value: { type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }, as_of: '2026-10-20', statements: ['mention-a'], independent: 1, heads: ['mention-a'], basis: ['mention-a'], transitions: [{ kind: 'first_value', mention: 'mention-a', as_of: '2026-10-20' }], merged: [], ...claim }],
-    statements: [{ id: 'mention-a', speaker: 'State Board', status: 'live', quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: statementClaims, as_of: '2026-10-20' }],
+    statements: [{ id: 'mention-a', speaker: 'State Board', status, quote, span: span === undefined ? { text: textHash, start, end: start + Array.from(QUOTE).length } : span, claims: statementClaims, as_of: '2026-10-20' }],
     sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related,
   };
   const viewBytes = JSON.stringify(view);
@@ -128,14 +128,22 @@ test('a view holds its claims whole: statements name only held claims, heads and
   for (const [options, message] of [
     [{ statementClaims: ['claim-a', 'claim-folded'] }, /statement names a claim the view does not hold: mention-a/],
     [{ claim: { heads: ['mention-b'] } }, /heads or basis are not among its statements: claim-a/],
-    [{ claim: { statements: [], heads: [], basis: ['mention-a'] } }, /heads or basis are not among its statements: claim-a/],
+    [{ claim: { basis: ['mention-x'] } }, /heads or basis are not among its statements: claim-a/],
     [{ claim: { merged: ['claim-a'] } }, /merged claims are not folded ids: claim-a/],
     [{ claim: { merged: undefined } }, /merged claims are not folded ids: claim-a/],
+    [{ claim: { statements: [], heads: [], basis: [] } }, /statements are not the live statements that name it: claim-a/],
+    [{ statementClaims: [], claim: { heads: [], basis: [] } }, /statements are not the live statements that name it: claim-a/],
+    [{ status: 'withdrawn', claim: { heads: [], basis: [] } }, /statements are not the live statements that name it: claim-a/],
+    [{ claim: { statements: ['mention-a', 'mention-a'] } }, /statements are not the live statements that name it: claim-a/],
   ]) {
     const source = temp(t, 'v2-claims-bad-');
     snapshot(source, options);
     assert.throws(() => readV2(source), message);
+    assert.throws(() => pullV2({ source, destination: temp(t, 'v2-claims-site-') }), message);
   }
+  const withdrawn = temp(t, 'v2-claims-withdrawn-');
+  snapshot(withdrawn, { status: 'withdrawn', claim: { statements: [], heads: [], basis: [] } });
+  assert.deepEqual(readV2(withdrawn).views.get('subject-a').claims[0].statements, []);
 });
 
 test('a development may be indexed under several stories', (t) => {

@@ -17,7 +17,8 @@ export function snapshotId(directory) {
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
 // manifest names, every statement's quote against the code points its span names in the shipped text, and
 // its story index against its views. A development may be indexed under several stories; every view is
-// under at least one, and every subject a story lists exists.
+// under at least one, and every subject a story lists exists. Within a view, a claim's statements are exactly
+// the live statements that name it, so the brief and the claim's page draw on the same evidence.
 export function readSnapshot(folder, id) {
   if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
   const manifestBytes = readFileSync(join(folder, "manifest.json"));
@@ -49,6 +50,8 @@ export function readSnapshot(folder, id) {
     for (const claim of view.claims) {
       if (claim.statements.some((id) => !statements.has(id))) throw new Error(`v2 claim cites a statement the view lacks: ${claim.id}`);
       const own = new Set(claim.statements);
+      const naming = view.statements.filter((statement) => statement.status === "live" && statement.claims.includes(claim.id)).map((statement) => statement.id);
+      if (own.size !== claim.statements.length || naming.length !== own.size || naming.some((id) => !own.has(id))) throw new Error(`v2 claim's statements are not the live statements that name it: ${claim.id}`);
       if ([...claim.heads, ...claim.basis].some((id) => !own.has(id))) throw new Error(`v2 claim's heads or basis are not among its statements: ${claim.id}`);
       if (!Array.isArray(claim.merged) || claim.merged.some((id) => typeof id !== "string" || claims.has(id))) throw new Error(`v2 claim's merged claims are not folded ids: ${claim.id}`);
     }
