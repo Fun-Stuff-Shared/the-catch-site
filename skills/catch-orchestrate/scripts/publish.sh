@@ -43,32 +43,41 @@ from sai.state.story_manifest import read_pins
 read_pins(Path(sys.argv[1]), Path(sys.argv[1]) / sys.argv[2])' $wt $m || { print "$m: its saved records do not match the manifest" >&2; exit 1 }
 done
 
+# A v2 story renders from the committed sai-core snapshot in data/v2; only v1 stories are staged in catch-state.
+v1=() v2=()
+for s in $stories; do
+  if jq -e '.v2 == true' checks/manifests/$s.json >/dev/null; then v2+=$s; else v1+=$s; fi
+done
+
 npm run build > /tmp/${wt:t}-build1.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build1.log" >&2; exit 1 }
 for s in $stories; do
   python3 -I skills/catch-record/scripts/claims.py verify $s || { print "$s: its claims or its page have not passed their checks as they read now" >&2; exit 1 }
 done
 
-for s in $stories; do
+for s in $v1; do
   (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state stage-story --manifest $wt/checks/manifests/$s.json \
     --site-root $wt --state-dir $state) > /tmp/${wt:t}-stage-$s.json || { print "stage-story refused $s: /tmp/${wt:t}-stage-$s.json" >&2; exit 1 }
 done
 (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state verify --state-dir $state >/dev/null)
 
 views=()
-for s in $stories; do
+for s in $v1; do
   event=event-${s/--/-}
   (cd $sai && PYTHONPATH=src .venv/bin/python -m sai.cli state refresh-views --state-dir $state --event $event >/dev/null)
   views+=(data/state/$event.json)
   for c in $(command grep -rlF --include='chain-*.json' "\"$event\"" $state/views); do views+=(data/state/${c:t}); done
 done
 views=(${(u)views})
-for v in $views; do cp $state/views/${v:t} $v; done
-git add -- $views
-git commit -q -m "state: views for ${(j:, :)stories}" -- $views
+if (( ${#views} )); then
+  for v in $views; do cp $state/views/${v:t} $v; done
+  git add -- $views
+  git commit -q -m "state: views for ${(j:, :)v1}" -- $views
+fi
 
 tmp=$(mktemp -d)
-git archive HEAD data/state | tar -x -C $tmp
-for s in $stories; do node -e "import('./src/lib/state.mjs').then(m=>{if(!m.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1)})" || { print "committed state lacks event-${s/--/-}" >&2; exit 1 }; done
+git archive HEAD data/state data/v2 | tar -x -C $tmp
+for s in $v2; do node -e "Promise.all([import('./src/lib/state.mjs'),import('./src/lib/v2.mjs')]).then(([st,v])=>{if(st.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1);v.storySubjects(v.readV2('$tmp/data/v2'),'$s')})" || { print "committed v2 snapshot lacks $s, or committed v1 state still holds it" >&2; exit 1 }; done
+for s in $v1; do node -e "import('./src/lib/state.mjs').then(m=>{if(!m.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1)})" || { print "committed state lacks event-${s/--/-}" >&2; exit 1 }; done
 print "committed state holds ${(j:, :)stories}"
 
 npm run build > /tmp/${wt:t}-build2.log 2>&1 || { print "build or gate failed after staging: /tmp/${wt:t}-build2.log" >&2; exit 1 }

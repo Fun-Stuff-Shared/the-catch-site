@@ -137,7 +137,7 @@ missing attestations), refuses a story whose cited claims have not held in the c
 or whose citing blocks have not passed the bind check as they read now
 (`claims.py verify`), stages each story's figures and pins in catch-state from the publish worktree
 (`state stage-story`, no model calls), verifies the state, copies each story's event view and every chain view that names it into `data/state/`
-and commits them (`state:`), checks that the committed views alone hold every story (the
+and commits them (`state:`), checks that the committed views alone hold every story (a story whose manifest says `v2` is not staged: it must be held by the committed `data/v2` snapshot and absent from the committed views) (the
 hosted build has no catch-state and reads only committed views; a story view without its
 chain fails on the host and the site silently keeps the old build), builds again, and only
 then fast-forwards main and pushes it. A failure anywhere before that leaves main where it
