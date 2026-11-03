@@ -28,6 +28,13 @@ for b in $merges; do
     print "merge of $b conflicts with main or an earlier --merge branch. In $b's worktree, drop the build output (git checkout -- data/state src/data/news-records.json; git clean -fdq -- data/state data/sources/news-state), merge main, resolve the conflict there, and run publish.sh again" >&2; exit 1 }
 done
 
+# A v2 story renders from the committed sai-core snapshot in data/v2; only v1 stories are staged in catch-state,
+# so only their pins are read for staging. The gate checks every manifest's records against their saved text.
+v1=() v2=()
+for s in $stories; do
+  if jq -e '.v2 == true' checks/manifests/$s.json >/dev/null; then v2+=$s; else v1+=$s; fi
+done
+
 for s in $stories; do
   m=checks/manifests/$s.json
   python3 - $m <<'EOF' || exit 1
@@ -36,17 +43,14 @@ m = json.load(open(sys.argv[1]))
 if not m.get("figures"):
     sys.exit(f"{sys.argv[1]}: no figures declared; the story's headline numbers must be in figures[] before it is staged")
 EOF
+done
+for s in $v1; do
+  m=checks/manifests/$s.json
   PYTHONPATH=$sai/src PYTHONDONTWRITEBYTECODE=1 $sai/.venv/bin/python -c '
 import sys
 from pathlib import Path
 from sai.state.story_manifest import read_pins
 read_pins(Path(sys.argv[1]), Path(sys.argv[1]) / sys.argv[2])' $wt $m || { print "$m: its saved records do not match the manifest" >&2; exit 1 }
-done
-
-# A v2 story renders from the committed sai-core snapshot in data/v2; only v1 stories are staged in catch-state.
-v1=() v2=()
-for s in $stories; do
-  if jq -e '.v2 == true' checks/manifests/$s.json >/dev/null; then v2+=$s; else v1+=$s; fi
 done
 
 npm run build > /tmp/${wt:t}-build1.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build1.log" >&2; exit 1 }
