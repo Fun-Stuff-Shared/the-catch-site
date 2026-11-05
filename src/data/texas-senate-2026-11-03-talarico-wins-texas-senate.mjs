@@ -42,7 +42,7 @@ export const computed = {
 export const ticket = {
   rows: [...races]
     .sort((a, b) => margin(b) - margin(a))
-    .map((r) => [`${r.race}: ${r.rep}`, n(r.repVotes), `+${margin(r).toFixed(1)}`]),
+    .map((r) => [`${r.race}: ${r.rep}, ${n(r.repVotes)}`, `+${margin(r).toFixed(1)}`]),
 };
 export const swing = {
   bars: [
@@ -83,17 +83,17 @@ export const figuresInCoverage = {
 };
 export const chronology = [
   { date: "Sept. 2025", title: "Talarico launches his campaign", cites: [{ c: "talarico-launch" }] },
-  { date: "March 3", title: "Talarico beats Crockett; Cornyn leads the Republican primary, short of a majority", cites: [{ c: "march-primary" }] },
-  { date: "May", title: "Trump endorses Paxton as early voting opens; Paxton wins the runoff 888,196 to 503,438", cites: [{ c: "trump-endorsement-timing" }, { c: "runoff" }] },
+  { date: "March 3", title: "Talarico beats Rep. Jasmine Crockett; Cornyn leads the Republican primary, short of a majority", cites: [{ c: "march-primary" }] },
+  { date: "May", title: "Trump endorses Paxton; a week later Paxton wins the runoff 888,196 to 503,438", cites: [{ c: "trump-endorsed-paxton" }, { c: "runoff" }] },
   { date: "Aug.-Sept.", title: "Musk's money arrives, $168 million by Sept. 24", cites: [{ c: "trust-lone-star" }, { c: "musk-slf" }] },
   { date: "October", title: "Trump asks Cornyn's voters to unite, and says Cornyn and Rove will be to blame if Paxton loses", cites: [{ c: "trump-unite" }, { c: "trump-blame-before" }] },
-  { date: "Late Oct.", title: "Late polls run from Paxton +1 to Talarico +7", cites: [{ c: "late-polls" }] },
+  { date: "Final weeks", title: "Late polls listed by Newsweek run from Paxton +1 to Talarico +7", cites: [{ c: "late-polls" }] },
   { date: "Nov. 3", title: "Talarico wins by 12.1 points", current: true, cites: [{ c: "margin-12" }] },
 ];
 export const event = {
   slug: "texas-senate/2026-11-03-talarico-wins-texas-senate",
   title: "Talarico beats Paxton by 12 points as Republicans lose every statewide race in Texas",
-  dek: `He took ${computed.talaricoPct} percent to Paxton's ${computed.paxtonPct}, in a seat Republicans had held since 1961.`,
+  dek: `Talarico took ${computed.talaricoPct} percent to Paxton's ${computed.paxtonPct}, in a seat Republicans had held since 1961.`,
   name: "Talarico wins the Texas Senate seat",
   date: "2026-11-03",
   updated: "2026-11-05",

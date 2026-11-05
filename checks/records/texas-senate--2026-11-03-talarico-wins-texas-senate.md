@@ -52,7 +52,7 @@ Question 2: what does Musk's money count?
 | Texas PAC reported $181.9M in spending notices against $158M received and $9.2M left at Oct. 14 [fec-ie-race-2026-11-05: "TEXAS PAC | C00960211 | 181850224.75 | 0.00"] [fec-texas-pac-12g: "26248613.28 | 0.00 | 26248613.28 | 17030073.41 | 9218539.87"] | I, as the ad bill | | C | |
 | OpenSecrets counts at least $225M of his spending in Texas, including for Abbott [npr-musk-2026-11-04: "Musk directed at least $225 million of his midterm spending to Texas, according to OpenSecrets"] | | C | | |
 
-Survives: B and C together: at least about $215 million of Musk's money went into this race, $168 million in gifts to two committees and $47.3 million his own PAC reported spending. Ruled out: D, by the filings; A as a total. The donor share rests on a third-party tally of FEC lines (Where They Stand) checked against the FEC's bulk total; Schedule A itself was not read line by line because the FEC API refused further calls. Musk did not pay for all of Texas PAC's last money as far as the record shows: its funder beyond $158 million is unknown until December 3.
+Survives: B and C together: at least $215 million of Musk's money went into this race, $168 million in gifts to two committees and $47.3 million his own PAC reported spending. Ruled out: D, by the filings; A as a total. The donor share rests on a third-party tally of FEC lines (Where They Stand) checked against the FEC's bulk total; Schedule A itself was not read line by line because the FEC API refused further calls. Musk did not pay for all of Texas PAC's last money as far as the record shows: its funder beyond $158 million is unknown until December 3.
 
 ## The story
 
