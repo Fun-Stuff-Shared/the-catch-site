@@ -28,10 +28,10 @@ export async function waitLive(url, expected, { tries = 60, pause = 10_000, fetc
 }
 
 if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) {
-  const [url, build, snapshot = null] = process.argv.slice(2);
+  const [url, build] = process.argv.slice(2);
   try {
-    const body = await waitLive(url, { build, snapshot });
-    console.log(`live: ${url} at ${build.slice(0, 9)}${snapshot ? ` with v2 snapshot ${snapshot}` : ""} (em dashes: ${body.split("—").length - 1})`);
+    const body = await waitLive(url, { build });
+    console.log(`live: ${url} at ${build.slice(0, 9)} (em dashes: ${body.split("—").length - 1})`);
   } catch (error) {
     console.error(error.message);
     process.exit(1);
