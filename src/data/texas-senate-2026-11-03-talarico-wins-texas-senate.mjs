@@ -89,5 +89,6 @@ export const event = {
   name: "Talarico wins the Texas Senate seat",
   date: "2026-11-03",
   updated: "2026-11-05",
+  updatedLabel: "November 5, 2026",
   kpis: [],
 };
