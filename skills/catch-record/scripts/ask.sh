@@ -6,6 +6,7 @@
 # Codex bridge tasks. A failure reports whether ChatGPT got the message (submitted). Exit 3
 # (launcher not running) and 4 (signed out) are the human's to fix.
 set -euo pipefail
+path=($HOME/.bun/bin $path)
 prompt=${1:A} answer=${2:A}; shift 2
 files=(); while (( $# )); do files+=($1 ${2:A}); shift 2; done
 checkout=/Volumes/4/GitHub/codex-chatgpt-web
@@ -18,6 +19,7 @@ cd $checkout
 code=0
 bun run src/cli.ts ask --model gpt-6-sol --effort high --detach --json \
   --prompt-file $prompt $files > $answer.sent 2> $answer.log || code=$?
+[[ -s $answer.sent ]] || { print "ask: the launcher wrote nothing, so nothing reached ChatGPT (exit $code): $(<$answer.log)" >&2; exit 1 }
 run=$(python3 - $answer.sent <<'PY'
 import json, sys
 r = json.load(open(sys.argv[1]))
