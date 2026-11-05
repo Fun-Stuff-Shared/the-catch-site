@@ -4,14 +4,11 @@ import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectBrief from "../../../components/SubjectBrief.astro";
 import BarChart from "../../../components/story/BarChart.astro";
 import DataTable from "../../../components/story/DataTable.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { v2Story } from "../../../lib/v2.mjs";
 import { event, computed, ticket, swing, polls, money, chronology } from "../../../data/texas-senate-2026-11-03-talarico-wins-texas-senate.mjs";
-const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/");
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/texas-senate/">The Texas Senate race</a><span>November 3, 2026</span></div>
@@ -38,14 +35,14 @@ const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/"
 
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
-        <p data-layer="narrative">James Talarico, a 37-year-old Democratic state representative, former middle school teacher and Presbyterian seminarian, won the Texas Senate seat on Nov. 3.<Cite c="who-talarico" /> He beat Ken Paxton, the Republican state attorney general, {computed.talaricoVotes} votes to {computed.paxtonVotes} in unofficial returns, a margin of {computed.margin} points.<Cite c="talarico-won" /><Cite c="who-paxton" /><Cite c="margin-12" /> The Associated Press called the race at 11:03 p.m. Eastern, and Paxton conceded and said he would pray for the winner.<Cite c="ap-call" /><Cite c="paxton-conceded" /> He is to be sworn in on Jan. 3, taking a seat Republicans have held since John Tower won it in 1961.<Cite c="sworn-in" /><Cite c="seat-since-1961" /></p>
+        <p data-layer="narrative">James Talarico, a 37-year-old Democratic state representative, former middle school teacher and Presbyterian seminarian, won the Texas Senate seat on Nov. 3.<Cite c="who-talarico" /> He beat Ken Paxton, the Republican state attorney general, {computed.talaricoVotes} votes to {computed.paxtonVotes} in unofficial returns, a margin of {computed.margin} points.<Cite c="talarico-won" /><Cite c="who-paxton" /><Cite c="margin-12" /> The Associated Press called the race at 11:03 p.m. Eastern, and Paxton conceded and said he would pray for the winner.<Cite c="ap-call" /><Cite c="paxton-conceded" /> Talarico is to be sworn in on Jan. 3, taking a seat Republicans have held since John Tower won it in 1961.<Cite c="sworn-in" /><Cite c="seat-since-1961" /></p>
         <p data-layer="narrative">In unofficial returns Democrats led all {computed.raceCount} statewide races on the Texas ballot, from governor to the state courts. No Democrat had won statewide in Texas since 1994. Democrats also took the state House, for the first time since Republicans won it in 2002.<Cite c="every-statewide" /><Cite c="first-since" /><Cite c="texas-house" /> Nationally, CBS News projects that Democrats will control the U.S. Senate with 54 seats.<Cite c="senate-control" /></p>
         <p data-layer="narrative">The count is not final: counties finish theirs by Nov. 17.<Cite c="canvass" /> Paxton was on the ballot because he beat Sen. John Cornyn in the Republican runoff in May, a week after President Trump endorsed him.<Cite c="runoff" /><Cite c="trump-endorsed-paxton" /> Republicans are now arguing over whether Cornyn could have held the seat, and published figures for what the billionaire Elon Musk spent in the race run from more than $150 million to more than $200 million.<Cite c="keller" /><Cite c="cbs-150" /><Cite c="nbc-sentence" /><Cite c="huppke-200" /></p>
       </section>
 
       <section id="ticket">
         <h2 data-layer="fact">Every Republican lost, and Paxton lost the most</h2>
-        <p data-layer="narrative">Outside the Senate race, Democrats won by {computed.otherLow} to {computed.otherHigh} points. Paxton drew fewer votes than any other Republican on the statewide ballot, {computed.behindAbbott} fewer than Gov. Greg Abbott, who lost too, and Talarico drew more than any other Democrat.<Cite c="statewide-table" /><Cite c="paxton-lowest" /><Cite c="talarico-highest" /></p>
+        <p data-layer="narrative">The unofficial count shows Democrats leading the other 17 races by {computed.otherLow} to {computed.otherHigh} points, Paxton with fewer votes than any other Republican on the statewide ballot, {computed.behindAbbott} fewer than Gov. Greg Abbott, who also trailed, and Talarico with more than any other Democrat.<Cite c="statewide-table" /><Cite c="paxton-lowest" /><Cite c="talarico-highest" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>All {computed.raceCount} races voted statewide, by margin</strong></figcaption>
           <DataTable columns={["Race, Republican and votes", "Democrat's margin"]} rows={ticket.rows} />
@@ -104,7 +101,7 @@ const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/"
             </li>
             <li>
               <h3>How much Musk's money came to</h3>
-              <p data-layer="narrative">NBC News wrote that Talarico "overcame a $168 million ad assault."<Cite c="nbc-sentence" /> That sentence gives no source for the figure, which equals his gifts to committees, $158 million from Musk and $10 million from his trust.<Cite c="ap-gifts-sum" /> Those gifts do not include America PAC, the super PAC Musk almost wholly funds, $215.96 million of its $215.98 million through Oct. 14, which reported spending $47.3 million on this race.<Cite c="america-pac" /><Cite c="america-pac-musk" /> Counting gifts and that spending together, about $215 million in the race is tied to Musk.<Cite c="musk-floor" /> Talarico put what he faced at more than $300 million; outside groups' notices add up to about $319 million helping Paxton and about $114 million helping him.<Cite c="talarico-300" /><Cite c="outside-totals" /></p>
+              <p data-layer="narrative">NBC News wrote that Talarico "overcame a $168 million ad assault."<Cite c="nbc-sentence" /> That sentence gives no source for the figure, which equals his gifts to committees, $158 million from Musk and $10 million from his trust.<Cite c="ap-gifts-sum" /> Those gifts do not include America PAC, the super PAC Musk almost wholly funds, which reported spending $47.3 million on this race.<Cite c="america-pac" /><Cite c="america-pac-musk" /> Counting gifts and that spending together, about $215 million in the race is tied to Musk.<Cite c="musk-floor" /> Talarico put what he faced at more than $300 million; outside groups' notices add up to about $319 million helping Paxton and about $114 million helping him.<Cite c="talarico-300" /><Cite c="outside-totals" /></p>
               <p data-layer="narrative">CBS News wrote that Musk spent more than $150 million to boost Paxton, and USA Today columnist Rex Huppke wrote more than $200 million.<Cite c="cbs-150" /><Cite c="huppke-200" /> OpenSecrets, through NPR, counts at least $225 million of his spending in Texas, including for Abbott.<Cite c="opensecrets" /></p>
               <p data-layer="narrative">In the notices committees file as they spend, Texas PAC reported $181.9 million, against the $158 million it had received through Oct. 14, when it had $9.2 million left. Reports covering the campaign's last weeks are due Dec. 3.<Cite c="texas-pac-notices" /><Cite c="post-general" /></p>
             </li>
@@ -116,8 +113,7 @@ const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/"
         <h2 data-layer="fact">What else the coverage got wrong</h2>
         <p data-layer="narrative">USA Today wrote that Cornyn "likely would have been a shoo-in" had he not lost the runoff.<Cite c="usatoday-shoo-in" /> Every Republican on the statewide ballot trailed in unofficial returns, and the polls testing Cornyn split.<Cite c="every-statewide" /><Cite c="polls-cornyn" /></p>
         <p data-layer="narrative">Fox News headlined that Talarico flipped a Texas Senate seat "for first time in nearly 40 years."<Cite c="fox-40-years" /> Lloyd Bentsen's 1988 win, the last by a Texas Democrat for the Senate, was for the state's other seat, and this one has been Republican since 1961.<Cite c="first-since" /><Cite c="seat-since-1961" /></p>
-        <p data-layer="narrative">USA Today also called Paxton the former attorney general, though he says he leaves the job in a couple of months, and gave Talarico a "four-year tenure" in the legislature, though he is a four-term lawmaker first elected in 2018.<Cite c="usatoday-former" /><Cite c="paxton-leaves-january" /><Cite c="usatoday-tenure" /></p>
-        <p data-layer="narrative">The Hill wrote on Nov. 4 that Musk directed $158 million to Texas PAC "last month"; Musk's gifts are dated Sept. 9 and 23, and the transfers to Texas PAC Sept. 10 and 24.<Cite c="hill-last-month" /><Cite c="musk-slf" /><Cite c="slf-texas-pac" /> A USA Today column said the fraud case ended with "a 2024 plea deal"; Paxton entered no plea.<Cite c="huppke-plea" /><Cite c="plea-none" /></p>
+        <p data-layer="narrative">A USA Today column said the fraud case ended with "a 2024 plea deal"; Paxton entered no plea.<Cite c="huppke-plea" /><Cite c="plea-none" /></p>
       </section>
 
       <section id="next">
@@ -128,7 +124,6 @@ const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/"
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>
