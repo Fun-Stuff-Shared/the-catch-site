@@ -19,8 +19,8 @@ done
 story=$subject--$slug wt=$site/.worktrees/$slug branch=author/$slug
 [[ -e $wt ]] && { print "worktree exists: $wt" >&2; exit 1 }
 command git -C $site rev-parse -q --verify refs/heads/$branch >/dev/null && { print "branch exists: $branch" >&2; exit 1 }
-command git -C $site cat-file -e $base:checks/manifests/$story.json 2>/dev/null && { print "story exists: $story" >&2; exit 1 }
-[[ -z $follows ]] || command git -C $site cat-file -e $base:checks/manifests/$follows.json || { print "--follows: no story $follows on $base" >&2; exit 1 }
+command git -C $site cat-file -e ${base}:checks/manifests/$story.json 2>/dev/null && { print "story exists: $story" >&2; exit 1 }
+[[ -z $follows ]] || command git -C $site cat-file -e ${base}:checks/manifests/$follows.json || { print "--follows: no story $follows on $base" >&2; exit 1 }
 
 git -C $site worktree add -q $wt -b $branch $base
 remaining="the worktree $wt exists on $branch; candidate $candidate is not yet checked"

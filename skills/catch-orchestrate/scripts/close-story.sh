@@ -11,7 +11,7 @@ users=$(lsof -a -d cwd -Fpn 2>/dev/null | awk -v w="$wt" '/^p/{p=substr($0,2)} /
 [[ -z $users ]] || { print "processes still working in $wt:" >&2; ps -o pid,command -p ${(j:,:)${(f)users}} >&2; exit 1 }
 for s in $stories; do
   m=checks/manifests/$s.json
-  command git -C $site cat-file -e $base:$m 2>/dev/null || { print "$m is not on $base; publish it first" >&2; exit 1 }
+  command git -C $site cat-file -e ${base}:$m 2>/dev/null || { print "$m is not on $base; publish it first" >&2; exit 1 }
 done
 for s in $stories; do (cd $wt && python3 -I scripts/send-story-to-v2.py $s); done
 left=$site/.worktrees/.closed/${wt:t}-$(date +%Y%m%d-%H%M%S)
