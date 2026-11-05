@@ -8,7 +8,36 @@
     "subject-event-cb34bc12-4a5d-4ab9-bcbe-6e1d9e102fc7"
   ],
   "story_title": "Talarico beats Paxton by 12 points as Republicans lose every statewide race in Texas",
-  "sub_events": [],
+  "sub_events": [
+    {
+      "id": "runoff-2026-05-26",
+      "date": "2026-05-26",
+      "label": "Paxton beats Cornyn in the runoff",
+      "section_anchor": "why",
+      "records": [
+        "ap-runoff-2026-05-26",
+        "nyt-county-results-2026"
+      ]
+    },
+    {
+      "id": "musk-slf-2026-09-09",
+      "date": "2026-09-09",
+      "label": "Musk's first gift to Senate Leadership Fund",
+      "section_anchor": "the-catch",
+      "records": [
+        "fec-slf-q3"
+      ]
+    },
+    {
+      "id": "election-2026-11-03",
+      "date": "2026-11-03",
+      "label": "Talarico wins",
+      "section_anchor": "what-happened",
+      "records": [
+        "sos-results-2026-11-04"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "sos-results-2026-11-04",
@@ -141,13 +170,13 @@
       "capture_status": "Bulk file fetched by curl 2026-11-05; pinned file is the rows for the two candidates; text sums them by committee. 24- and 48-hour notices, not final reports."
     },
     {
-      "id": "fec-candidate-talarico",
+      "id": "fec-totals-talarico-2026-10-14",
       "title": "Candidate totals, James Talarico",
       "publisher": "Federal Election Commission",
       "date": "2026-11-05",
       "url": "https://api.open.fec.gov/v1/candidate/S6TX00479/totals/?cycle=2026&election_full=true",
-      "pinned_path": "data/sources/texas-senate/fec-candidate-talarico.json",
-      "text_path": "data/sources/texas-senate/fec-candidate-talarico.txt",
+      "pinned_path": "data/sources/texas-senate/fec-totals-talarico-2026-10-14.json",
+      "text_path": "data/sources/texas-senate/fec-totals-talarico-2026-10-14.txt",
       "text_sha256": "sha256:4b00476621177674565b29e008cec10874ab96c6fab89bb7f391b92d23e9b4c0",
       "quote": "receipts 146349912.38",
       "quote_span_check": "byte_exact",
@@ -155,13 +184,13 @@
       "capture_status": "FEC API fetched 2026-11-05 with DEMO_KEY."
     },
     {
-      "id": "fec-candidate-paxton",
+      "id": "fec-totals-paxton-2026-10-14",
       "title": "Candidate totals, Ken Paxton",
       "publisher": "Federal Election Commission",
       "date": "2026-11-05",
       "url": "https://api.open.fec.gov/v1/candidate/S6TX00388/totals/?cycle=2026&election_full=true",
-      "pinned_path": "data/sources/texas-senate/fec-candidate-paxton.json",
-      "text_path": "data/sources/texas-senate/fec-candidate-paxton.txt",
+      "pinned_path": "data/sources/texas-senate/fec-totals-paxton-2026-10-14.json",
+      "text_path": "data/sources/texas-senate/fec-totals-paxton-2026-10-14.txt",
       "text_sha256": "sha256:4137ef335216e6afef7ce1442cad640a67a7644b364a61ff0184ff8a30a165af",
       "quote": "receipts 22327473.92",
       "quote_span_check": "byte_exact",
@@ -1007,6 +1036,22 @@
       "capture_run": "capture-oneoff-20261105T091839Z",
       "capture_raw_sha256": "sha256:2a4606d6e48d9b9550c502f03f0fe56a3cacd2ad53ab84b8f3d165583658cd3d",
       "captured_at": "2026-11-05T09:19:34.149742Z"
+    },
+    {
+      "id": "fedsoc-15th-court",
+      "title": "Texas Supreme Court upholds the first new appellate court in nearly sixty years",
+      "publisher": "The Federalist Society",
+      "date": "2024-09-01",
+      "url": "https://fedsoc.org/commentary/publications/texas-supreme-court-upholds-the-first-new-appellate-court-in-nearly-sixty-years",
+      "pinned_path": "data/sources/coverage/fedsoc-15th-court.html",
+      "text_path": "data/sources/coverage/fedsoc-15th-court.txt",
+      "text_sha256": "sha256:8868d5def5d739fbf790748ff8dac13b05df4b75ea913f413e15aa916b08b3ff",
+      "quote": "they will stand for statewide election in November 2026",
+      "quote_span_check": "byte_exact",
+      "about": "the 15th Court of Appeals",
+      "capture_run": "capture-oneoff-20261105T092520Z",
+      "capture_raw_sha256": "sha256:e5d5669e8b0d6765956813e0bfd32d9b4ddb46b02f5e6209513752e635c2d9d9",
+      "captured_at": "2026-11-05T09:26:44.632997Z"
     }
   ],
   "story_sources": [
@@ -1074,14 +1119,14 @@
       "usage": "outside money on each side"
     },
     {
-      "id": "fec-candidate-talarico",
+      "id": "fec-totals-talarico-2026-10-14",
       "group": "primary",
       "label": "Federal Election Commission: Candidate totals, James Talarico",
       "meta": " · published 2026-11-05",
       "usage": "what his own committee raised"
     },
     {
-      "id": "fec-candidate-paxton",
+      "id": "fec-totals-paxton-2026-10-14",
       "group": "primary",
       "label": "Federal Election Commission: Candidate totals, Ken Paxton",
       "meta": " · published 2026-11-05",
@@ -1464,6 +1509,94 @@
       "label": "The Texas Tribune: Senate GOP group and Texas spending",
       "meta": " · published 2026-09-11",
       "usage": "dollars are not airtime"
+    },
+    {
+      "id": "fedsoc-15th-court",
+      "group": "coverage",
+      "label": "The Federalist Society: Texas Supreme Court upholds the first new appellate court",
+      "meta": " · read 2026-11-05",
+      "usage": "its justices are elected statewide"
+    }
+  ],
+  "event_record": "/events/texas-senate/",
+  "completed_by": "claude, skills catch-record and catch-story",
+  "date_completed": "2026-11-05",
+  "authored_sections": [
+    "what-happened",
+    "ticket",
+    "why",
+    "cornyn",
+    "the-catch",
+    "coverage",
+    "next",
+    "records"
+  ],
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "The Secretary of State's table and 2018 canvass, the FEC filings and bulk rows, county results, the polls, the Vance post and the coverage the page cites are admitted with saved copies; pages capture refused are marked as excerpts."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "Margins, Paxton's gap behind Abbott and the 2018 gaps are computed in the data module from the state's totals; county lags and swings are computed from county files and stated in the record's summary lines."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "AP's largest contributor line, NBC's ad assault, USA Today's shoo-in, former and tenure lines, Fox's headline, The Hill's last month and Huppke's plea deal were each compared with the filings, the state's table or the agreement."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; vote totals say they are unofficial as of Nov. 4 at 4:59 p.m., and filing notices are dated."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The Texas Senate subject page now leads with the result, the margin and Musk's money in the race, and describes the race as decided."
+    }
+  },
+  "figures": [
+    {
+      "figure": "talarico_votes",
+      "label": "Talarico's votes, unofficial",
+      "value": "5444982",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "sos-results-2026-11-04",
+        "quote_span": "DEMOCRATIC | JAMES TALARICO | 5,444,982 |"
+      }
+    },
+    {
+      "figure": "paxton_votes",
+      "label": "Paxton's votes, unofficial",
+      "value": "4249373",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "sos-results-2026-11-04",
+        "quote_span": "REPUBLICAN | KEN PAXTON | 4,249,373 |"
+      }
+    },
+    {
+      "figure": "texas_pac_receipts",
+      "label": "Texas PAC's receipts through September 30",
+      "value": "158",
+      "unit": "USD millions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "fec-texas-pac-q3",
+        "quote_span": "158000000.00 | 158000000.00 | 131751386.72"
+      }
+    },
+    {
+      "figure": "america_pac_race",
+      "label": "America PAC's reported spending in the race",
+      "value": "47.3",
+      "unit": "USD millions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "fec-ie-race-2026-11-05",
+        "quote_span": "America PAC | C00879510 | 47264556.37 | 0.00"
+      }
     }
   ]
 }

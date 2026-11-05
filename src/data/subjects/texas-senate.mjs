@@ -1,9 +1,9 @@
 export const subject = {
   title: "The Texas Senate race",
-  dek: "MAGA Inc. filed $10 million in independent expenditures for connected TV and digital ads in the Texas U.S. Senate race. The November 3 general election is between Ken Paxton and James Talarico.",
+  dek: "James Talarico, a Democrat, beat Republican Ken Paxton on November 3 in unofficial returns, and Republicans lost all 18 races voted statewide in Texas. Elon Musk's money in the race came to at least about $215 million.",
   current: [
-    { label: "MAGA Inc. independent expenditures", value: "$10 million", unit: "", as_of: "2026-09-05", record_id: "fec-form24-2010907", source_value: "10000000", source_unit: "dollars", source_sentence: "Total Expenditures This Period = $10000000" },
-    { label: "Split", value: "$5m / $5m", unit: "oppose / support", as_of: "2026-09-05", record_id: "fec-form24-2010907", source_value: "5000000", source_unit: "dollars", source_sentence: "Amount Expended = $5000000.00" },
-    { label: "General election", value: "November 3", unit: "2026", as_of: "2026-09-08", record_id: "sos-dates-2026", source_value: "November 3, 2026", source_unit: "2026", source_sentence: "November 3, 2026 General election day." },
+    { label: "Talarico's votes, unofficial", value: "5,444,982", unit: "votes", as_of: "2026-11-04", record_id: "sos-results-2026-11-04", source_value: "5,444,982", source_unit: "votes", source_sentence: "DEMOCRATIC | JAMES TALARICO | 5,444,982 |" },
+    { label: "Paxton's votes, unofficial", value: "4,249,373", unit: "votes", as_of: "2026-11-04", record_id: "sos-results-2026-11-04", source_value: "4,249,373", source_unit: "votes", source_sentence: "REPUBLICAN | KEN PAXTON | 4,249,373 |" },
+    { label: "America PAC's reported spending in the race", value: "$47.3 million", unit: "", as_of: "2026-11-03", record_id: "fec-ie-race-2026-11-05", source_value: "47264556.37", source_unit: "dollars", source_sentence: "America PAC | C00879510 | 47264556.37 | 0.00" },
   ],
 };

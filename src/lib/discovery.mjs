@@ -24,6 +24,7 @@ import { event as okinawaMarine } from '../data/okinawa-2026-10-04-us-marine-arr
 import { event as alaskaCertification } from '../data/election-administration-2026-10-23-doj-sues-to-block-alaska-senate-certification.mjs';
 import { event as fbiOfficialsCharged } from '../data/fbi-officials-charged-2026-10-20-two-ex-fbi-officials-charged-with-lying-to-congress.mjs';
 import { event as wedgewoodPolls } from '../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs';
+import { event as talaricoWins } from '../data/texas-senate-2026-11-03-talarico-wins-texas-senate.mjs';
 import { event as nhStudentIds } from '../data/new-hampshire-student-ids-2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids.mjs';
 import { event as californiaVoterList } from '../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs';
 import { event as ncMailBallots } from '../data/north-carolina-mail-ballots-2026-10-21-north-carolina-rejects-more-mail-ballots.mjs';
@@ -32,7 +33,7 @@ import { publishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList, ncMailBallots, fraudTipProgram].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([talaricoWins, jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList, ncMailBallots, fraudTipProgram].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },
   { path: '/events/fed-rate/', title: 'The federal funds rate', topic: 'Economy', keywords: 'Fed FOMC interest rates monetary policy', description: 'The Federal Reserve’s decisions, the debate behind them, and what happens next.' },

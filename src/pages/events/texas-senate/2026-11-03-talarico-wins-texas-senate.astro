@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import StorySources from "../../../components/StorySources.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
+import BarChart from "../../../components/story/BarChart.astro";
+import DataTable from "../../../components/story/DataTable.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import OutletCheck from "../../../components/story/OutletCheck.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import { v2Story } from "../../../lib/v2.mjs";
+import { event, computed, ticket, swing, polls, money, figuresInCoverage, chronology } from "../../../data/texas-senate-2026-11-03-talarico-wins-texas-senate.mjs";
+const v2 = v2Story("/events/texas-senate/2026-11-03-talarico-wins-texas-senate/");
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/texas-senate/">The Texas Senate race</a><span>November 3, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">The Texas Senate race &middot; November 3, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="margin-12" /><Cite c="seat-since-1961" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#ticket">Every Republican lost, and Paxton lost the most</a></li>
+          <li><a href="#why">What Republicans and Talarico say happened</a></li>
+          <li><a href="#cornyn">Could Cornyn have held the seat?</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#coverage">What else the coverage got wrong</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">James Talarico, a 37-year-old Democratic state representative, former middle school teacher and Presbyterian seminarian, won the Texas Senate seat on Nov. 3.<Cite c="who-talarico" /> He beat Ken Paxton, the Republican state attorney general, {computed.talaricoVotes} votes to {computed.paxtonVotes} in unofficial returns, a margin of {computed.margin} points.<Cite c="talarico-won" /><Cite c="margin-12" /> The Associated Press called the race at 11:03 p.m. Eastern, and Paxton conceded and said he would pray for the winner.<Cite c="ap-call" /><Cite c="paxton-conceded" /> Republicans had held this seat since 1961.<Cite c="seat-since-1961" /></p>
+        <p data-layer="narrative">It was not only this seat. Democrats won all {computed.raceCount} races voted statewide in Texas, the party's first statewide wins since 1994, and took the state House for the first time since Republicans won it in 2002.<Cite c="every-statewide" /><Cite c="first-since" /><Cite c="texas-house" /> Nationally, CBS News projects that Democrats will control the U.S. Senate with 54 seats.<Cite c="senate-control" /></p>
+        <p data-layer="narrative">The count is not final: counties finish theirs by Nov. 17, and Talarico is to be sworn in on Jan. 3.<Cite c="canvass" /><Cite c="sworn-in" /> Republicans are now arguing over whether Sen. John Cornyn, whom Paxton beat in a May runoff, could have held the seat, and outlets have given different figures for what Elon Musk spent.</p>
+      </section>
+
+      <section id="ticket">
+        <h2 data-layer="fact">Every Republican lost, and Paxton lost the most</h2>
+        <p data-layer="narrative">Outside the Senate race, Democrats won by {computed.otherLow} to {computed.otherHigh} points. Paxton drew fewer votes than any other Republican on the statewide ballot, {computed.behindAbbott} fewer than Gov. Greg Abbott, who lost too, and Talarico drew more than any other Democrat.<Cite c="statewide-table" /><Cite c="paxton-lowest" /><Cite c="talarico-highest" /> Late polls had him ahead by as much as 7 points, and none came near 12.<Cite c="late-polls" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>All {computed.raceCount} races voted statewide, by margin</strong></figcaption>
+          <DataTable columns={["Race and Republican", "Republican votes", "Democrat's margin"]} rows={ticket.rows} />
+          <p class="chart-source">Unofficial returns from the Texas Secretary of State, updated Nov. 4 at 4:59 p.m. Margins are in points, as shares of all votes in each race. The 15th Court of Appeals is elected statewide.<Cite c="statewide-table" /><Cite c="fifteenth-statewide" /></p>
+        </figure>
+        <p data-layer="narrative">Paxton's shortfall was close to everywhere. His share of the vote was below Abbott's in 250 of Texas's 254 counties, by a median of 2.2 points. That gap barely changed with Cornyn's strength in the May runoff: 2.0 points in the quarter of counties where Cornyn was weakest, 2.4 where he was strongest.<Cite c="paxton-behind-abbott-counties" /><Cite c="lag-by-cornyn" /> County figures describe places, not people. The AP Voter Poll gets closer to who moved: about 1 in 10 Republicans voted for Talarico, along with about two-thirds of moderates and most independents.<Cite c="ap-crossover" /> About two-thirds of voters said Paxton lacked the personal character to serve, while voters split on whether Talarico's views are too extreme.<Cite c="character-poll" /></p>
+        <p data-layer="narrative">Every county moved toward Talarico compared with the 2024 presidential margin, by at least 6.6 points, and he carried 28 counties that Trump won.<Cite c="swing-every-county" /><Cite c="trump-counties" /> The move was largest where the most Hispanic voters live.<Cite c="swing-bands" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Points moved toward Talarico from the 2024 presidential margin, by counties' Hispanic share</strong></figcaption>
+          <BarChart bars={swing.bars} unit=" pts" ariaLabel="Move toward Talarico by county Hispanic share: 14.4, 22.8, 25.5, 26.8 and 42.9 points" />
+          <p class="chart-source">Computed from county results and weighted by votes; it compares a Senate race with a presidential race.<Cite c="swing-bands" /></p>
+        </figure>
+        <p data-layer="narrative">Paxton's raw total almost matches Ted Cruz's in the 2018 midterm: Cruz won 4,260,553 votes and Beto O'Rourke 4,045,632.<Cite c="cruz-2018" /> Talarico drew {computed.demGain} more votes than O'Rourke, in a state with more registered voters than it had then, and the early vote had run higher in blue and swing counties, at 89 percent of its 2024 level, than in red counties, at 77 percent.<Cite c="early-vote" /></p>
+      </section>
+
+      <section id="why">
+        <h2 data-layer="fact">What Republicans and Talarico say happened</h2>
+        <p data-layer="narrative">Vice President JD Vance wrote the morning after that voters who backed Trump in 2024 had switched to Democrats, and he named the reason.<Cite c="vance-war" /></p>
+        <QuoteCard speaker="JD Vance" when="Nov. 4" where="Post on X" label="Vice president">
+          <p>"The reason we lost is the war."<Cite c="vance-war" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Trump called that "largely true," because the war drove up gasoline prices, and told The Wall Street Journal he did the right thing on Iran and would do it again.<Cite c="trump-largely-true" /><Cite c="trump-right-thing" /> Sen. Ted Cruz of Texas wrote that tariffs made everything too expensive and the war dragged on too long.<Cite c="cruz-reason" /> Paxton, conceding, named only a hard night across the country.<Cite c="paxton-across-country" /></p>
+        <p data-layer="narrative">Trump's other answer was that the losers had lost on their own. He wrote that he was not on the ballot and would have won in a landslide if he had been, and that Abbott would have won had he not become a "RINO," a Republican in name only.<Cite c="trump-landslide" /><Cite c="trump-rino" /> Trump had endorsed both men, and Paxton ran behind Abbott.<Cite c="trump-endorsed-abbott" /><Cite c="trump-endorsement-timing" /><Cite c="paxton-lowest" /> Before the vote he had a different target: if Paxton lost, he wrote, it would be because of Cornyn and the strategist Karl Rove.<Cite c="trump-blame-before" /></p>
+        <p data-layer="narrative">Cornyn, for his part, wrote that the results show character and integrity still matter to voters.<Cite c="cornyn-character" /> Paxton's record is long. The Texas House impeached Paxton in 2023 on articles charging that he misused his office to benefit Nate Paul, a donor, and the state Senate acquitted him.<Cite c="who-paxton" /><Cite c="impeachment-charges" /> In a 2015 securities fraud case, prosecutors agreed in 2024 to drop the charges if he met conditions, with no plea, and Texas will pay $6.6 million to four former deputies of his after he dropped his appeal of a whistleblower judgment.<Cite c="plea-none" /><Cite c="whistleblowers" /></p>
+        <p data-layer="narrative">Talarico said the result proved that all the money in the world is no match for the people of Texas.<Cite c="talarico-money" /> The Associated Press, in its own words, wrote that voters frustrated over high prices and worried about corruption rejected Trump's party.<Cite c="ap-reason" /> None of these accounts can be proved from the returns: Paxton's lag and Talarico's lead are the same gap seen from two sides.</p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How it came to this</strong></figcaption>
+          <DecisionTimeline entries={chronology} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="cornyn">
+        <h2 data-layer="fact">Could Cornyn have held the seat?</h2>
+        <p data-layer="narrative">No poll settles it. Seven polls before the runoff tested Cornyn against Talarico, and they split: Cornyn ahead in four, Talarico in three.<Cite c="polls-cornyn" /> RealClearPolling's average of its list had Talarico at 42.8 and Cornyn at 42.3.<Cite c="rcp-average" /> In the three polls that tested both Republicans, Cornyn ran 1 to 3 points better than Paxton.<Cite c="polls-cornyn" /><Cite c="polls-both" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Seven Cornyn head-to-heads with Talarico</strong></figcaption>
+          <DataTable columns={["When", "Pollster", "Cornyn race", "Paxton race"]} rows={polls.rows} />
+          <p class="chart-source">All before the May runoff and the fall campaign. A blank means the list held here gives only the Cornyn matchup.<Cite c="polls-cornyn" /><Cite c="polls-both" /></p>
+        </figure>
+        <p data-layer="narrative">Each camp has its case. The Senate Republican super PAC that backed Cornyn estimated that nominating Paxton would cost $150 million to $200 million to keep the seat.<Cite c="slf-estimate" /> In April, 24 percent of Cornyn's runoff voters said they were likely to vote for Talarico if Paxton were the nominee, against 10 percent of Paxton's voters if Cornyn were.<Cite c="tpor-intentions" /> Gregg Keller, speaking for Paxton's side, says that argument collapsed on election night because it was "a blue tsunami year" and even Abbott lost.<Cite c="keller" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Musk's money did not go to Paxton's campaign</h3>
+              <p data-layer="narrative">The Associated Press called Texas PAC, the group Musk's money paid for, "the largest contributor to Paxton's campaign."<Cite c="ap-sentence" /> Its report to the Federal Election Commission shows $158 million in and independent spending out, the same line between a campaign and a super PAC that outlets blurred when <a href="/events/texas-senate/2026-09-05-maga-inc-10-million-ad-buy/">MAGA Inc. filed its $10 million ad buy</a> in September.<Cite c="slf-texas-pac" /> FEC totals for Paxton show $22.3 million in campaign receipts through Oct. 14, $392,150 of it from other committees; Talarico's show $146.3 million.<Cite c="paxton-committee" /><Cite c="talarico-committee" /> Outside groups' notices to the commission add up to about $319 million helping Paxton and about $114 million helping Talarico, and campaign dollars go further on air because campaigns get a discounted rate.<Cite c="outside-totals" /><Cite c="candidate-rate" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>How $168 million reached the race</strong></figcaption>
+                <DataTable columns={["Date", "From and to", "Amount"]} rows={money.rows} />
+                <p class="chart-source">From each committee's reports to the Federal Election Commission.<Cite c="trust-lone-star" /><Cite c="musk-slf" /><Cite c="slf-texas-pac" /></p>
+              </figure>
+            </li>
+            <li>
+              <h3>$168 million is not an ad bill, and it is not the total</h3>
+              <p data-layer="narrative">NBC News wrote that Talarico "overcame a $168 million ad assault."<Cite c="nbc-sentence" /> That figure is gifts to two committees. It leaves out America PAC, which ABC News calls Musk's super PAC and whose $47.3 million in reported spending on this race comes from a committee he almost wholly funds, $215.96 million of its $215.98 million through Oct. 14.<Cite c="america-pac" /><Cite c="america-pac-musk" /> Together that is at least about $215 million of Musk's money in the race.<Cite c="musk-floor" /> Talarico put what he faced at more than $300 million, a figure close to all the outside money on Paxton's side.<Cite c="talarico-300" /><Cite c="outside-totals" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>The Musk figures in coverage, and what each one counts</strong></figcaption>
+                <DataTable columns={["Figure and who said it", "What it counts"]} rows={figuresInCoverage.rows} />
+                <p class="chart-source">Figures as each outlet printed them.<Cite c="cbs-150" /><Cite c="nbc-sentence" /><Cite c="huppke-200" /><Cite c="opensecrets" /></p>
+              </figure>
+              <p data-layer="narrative">One more piece is still out of view. Texas PAC reported $181.9 million in spending notices against the $158 million it had received through Oct. 14, when it had $9.2 million left. Reports due Dec. 3 will show what paid for the rest.<Cite c="texas-pac-notices" /><Cite c="post-general" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="coverage">
+        <h2 data-layer="fact">What else the coverage got wrong</h2>
+        <div data-layer="fact">
+        <OutletCheck outlet="USA Today" claim={`wrote that Cornyn "likely would have been a shoo-in" had he not lost the runoff.`} chip="Not supported" status="warn" verdict="Not supported. Every Republican on the statewide ballot lost, and the polls testing Cornyn were close and split."><Cite c="usatoday-shoo-in" /><Cite c="every-statewide" /><Cite c="polls-cornyn" /></OutletCheck>
+        <OutletCheck outlet="Fox News" claim={`headlined that Talarico flipped a Texas Senate seat "for first time in nearly 40 years."`} chip="Wrong seat" status="warn" verdict="Wrong seat. The 1988 date belongs to Lloyd Bentsen, who held Texas's other seat. This one has been Republican since 1961."><Cite c="fox-40-years" /><Cite c="first-since" /><Cite c="seat-since-1961" /></OutletCheck>
+        <OutletCheck outlet="USA Today" claim={`called Paxton "former" attorney general and gave Talarico a "four-year tenure" in the legislature.`} chip="Wrong" status="warn" verdict="Wrong on both. Paxton said he leaves the job in a couple of months, and Talarico is a four-term lawmaker."><Cite c="usatoday-former" /><Cite c="paxton-leaves-january" /><Cite c="usatoday-tenure" /></OutletCheck>
+        <OutletCheck outlet="The Hill" claim={`wrote on Nov. 4 that Musk directed $158 million to Texas PAC "last month."`} chip="Wrong month" status="warn" verdict="Wrong month. The gifts are dated Sept. 9 and 23."><Cite c="hill-last-month" /><Cite c="musk-slf" /></OutletCheck>
+        <OutletCheck outlet="USA Today column" claim={`wrote that the fraud case ended with "a 2024 plea deal."`} chip="Mislabeled" status="warn" verdict="Mislabeled. Paxton entered no plea under the agreement."><Cite c="huppke-plea" /><Cite c="plea-none" /></OutletCheck>
+        </div>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Counties complete their canvass by Nov. 17, before the results are certified.<Cite c="canvass" /> Reports covering Oct. 15 to Nov. 23 are due at the Federal Election Commission on Dec. 3, and they are the first look at who paid for the last weeks of the campaign.<Cite c="post-general" /></p>
+        <p data-layer="narrative">Cornyn has congratulated Talarico and said he looks forward to offering help with his transition.<Cite c="cornyn-transition" /> Talarico says he will hold the Trump administration accountable and also work with the president.<Cite c="talarico-trump" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      <SubjectBrief story={v2} supporting />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
