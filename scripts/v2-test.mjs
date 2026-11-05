@@ -309,7 +309,7 @@ test('the brief ranks disputed claims first, then unjudged ones, then by indepen
   assert.match(claimSlug('claim with space'), /^h-[0-9a-f]{24}$/);
   assert.deepEqual(sourceLabel({ artifact: 'artifact-a', attributes: {} }), { publisher: null, title: null, fallback: true, text: 'artifact-a' });
   assert.equal(sourceLabel({ artifact: 'artifact-a', publisher: 'AP', title: 'Counties reject ballots', attributes: {} }).text, 'AP, Counties reject ballots');
-  assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { title: 'Counties reject ballots' } }).fallback, false);
+  assert.equal(sourceLabel({ artifact: 'artifact-a', title: 'Counties reject ballots', attributes: {} }).fallback, false);
 });
 
 test('claims are grouped by attribute within their priority band, in the order each group first ranks', async () => {
