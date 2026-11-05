@@ -42,7 +42,7 @@ import { event, computed, ticket, swing, polls, money, chronology } from "../../
 
       <section id="ticket">
         <h2 data-layer="fact">Every Republican lost, and Paxton lost the most</h2>
-        <p data-layer="narrative">The unofficial count shows Democrats leading the other 17 races by {computed.otherLow} to {computed.otherHigh} points, Paxton with fewer votes than any other Republican on the statewide ballot, {computed.behindAbbott} fewer than Gov. Greg Abbott, who also trailed, and Talarico with more than any other Democrat.<Cite c="statewide-table" /><Cite c="paxton-lowest" /><Cite c="talarico-highest" /></p>
+        <p data-layer="narrative">In the unofficial count, Democrats lead the other 17 races by {computed.otherLow} to {computed.otherHigh} points. Paxton has fewer votes than any other Republican on the statewide ballot, {computed.behindAbbott} fewer than Gov. Greg Abbott, who also trails, and Talarico has more than any other Democrat.<Cite c="statewide-table" /><Cite c="paxton-lowest" /><Cite c="talarico-highest" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>All {computed.raceCount} races voted statewide, by margin</strong></figcaption>
           <DataTable columns={["Race, Republican and votes", "Democrat's margin"]} rows={ticket.rows} />
