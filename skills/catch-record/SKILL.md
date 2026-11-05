@@ -79,6 +79,7 @@ adds goes on the list. The method, and a worked example, are in `references/ach.
 `capture search "<terms>" --since <date>` checks what is already held (it matches URL,
 title and publisher, not body text). `capture news --reason "<why>" <url>` fetches the rest;
 `--via-archive` when the site refuses. PDFs go through Mistral OCR automatically.
+`capture news` takes about a minute a URL, and a batch killed by a shell timeout writes no `article_receipts.jsonl`, so nothing from it can be admitted: run long batches in the background, not under a timeout. For FEC filings use the bulk files and raw filings; `DEMO_KEY` on the API hits its rate limit mid-run.
 
 Read each primary record end to end. Opinions and petitions name the records they rest on:
 the earlier ruling, the memo, the regulation, the prior case, the person's history. Follow
