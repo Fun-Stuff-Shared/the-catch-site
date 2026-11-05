@@ -10,10 +10,10 @@ const byRecency = (a, b) => recency(b).localeCompare(recency(a)) || a.id.localeC
 
 const named = (value) => typeof value === "string" && value.trim() ? value.trim() : null;
 
-// A source is named by the publisher and title its artifact carries, then by the site it came from; the artifact id stands in only when it has none of them.
+// A source is named by the publisher and title the core gives it, then by the site it came from; the artifact id stands in only when it has none of them.
 export function sourceLabel(source) {
-  const publisher = named(source.attributes?.publisher) ?? named(source.root)?.replace(/^www\./, "") ?? null;
-  const title = named(source.attributes?.title) ?? named(source.attributes?.source_title);
+  const publisher = named(source.publisher) ?? named(source.root)?.replace(/^www\./, "") ?? null;
+  const title = named(source.title) ?? named(source.attributes?.source_title);
   return { publisher, title, fallback: !publisher && !title, text: [publisher, title].filter(Boolean).join(", ") || source.artifact };
 }
 

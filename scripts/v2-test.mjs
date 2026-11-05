@@ -308,7 +308,7 @@ test('the brief ranks disputed claims first, then unjudged ones, then by indepen
   assert.equal(claimSlug('claim-6d59f6f7'), 'claim-6d59f6f7');
   assert.match(claimSlug('claim with space'), /^h-[0-9a-f]{24}$/);
   assert.deepEqual(sourceLabel({ artifact: 'artifact-a', attributes: {} }), { publisher: null, title: null, fallback: true, text: 'artifact-a' });
-  assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { publisher: 'AP', title: 'Counties reject ballots' } }).text, 'AP, Counties reject ballots');
+  assert.equal(sourceLabel({ artifact: 'artifact-a', publisher: 'AP', title: 'Counties reject ballots', attributes: {} }).text, 'AP, Counties reject ballots');
   assert.equal(sourceLabel({ artifact: 'artifact-a', attributes: { title: 'Counties reject ballots' } }).fallback, false);
 });
 
@@ -382,7 +382,7 @@ test('a source is named by its site when it carries no publisher or title, and b
   const { sourceLabel } = await import('../src/lib/v2-brief.mjs');
   assert.deepEqual(sourceLabel({ artifact: 'a1', root: 'www.foxnews.com', attributes: { custody: 'missing' } }), { publisher: 'foxnews.com', title: null, fallback: false, text: 'foxnews.com' });
   assert.equal(sourceLabel({ artifact: 'a1', root: 'www.bls.gov', attributes: { source_title: 'Employment Situation' } }).text, 'bls.gov, Employment Situation');
-  assert.equal(sourceLabel({ artifact: 'a1', root: 'x.com', attributes: { publisher: 'BLS', title: 'Jobs' } }).text, 'BLS, Jobs');
+  assert.equal(sourceLabel({ artifact: 'a1', root: 'x.com', publisher: 'BLS', title: 'Jobs', attributes: {} }).text, 'BLS, Jobs');
   assert.deepEqual(sourceLabel({ artifact: 'a1', root: null, attributes: {} }), { publisher: null, title: null, fallback: true, text: 'a1' });
 });
 
