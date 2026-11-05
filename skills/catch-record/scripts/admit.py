@@ -101,7 +101,10 @@ def prepare(s, subject):
         if not status or not s.get("source_url"):
             return None, f"{i}: a local file needs source_url and capture_status"
         raw = Path(s["file"]).read_bytes()
-        text = Path(s.get("text_file") or s["file"]).read_text()
+        try:
+            text = Path(s.get("text_file") or s["file"]).read_text()
+        except UnicodeDecodeError as e:
+            return None, f"{i}: text_file is not UTF-8 ({e.reason} at byte {e.start}); recode it before admitting"
         ext = Path(s["file"]).suffix or ".txt"
         pinned = dest / f"{i}.source{ext}" if ext == ".txt" else dest / f"{i}{ext}"
         cap, url = {}, s["source_url"]
