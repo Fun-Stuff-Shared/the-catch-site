@@ -337,7 +337,7 @@ const packedFixture = (t) => {
   const source = temp(t, 'v2-source-');
   const id = snapshot(source);
   const archive = join(temp(t, 'v2-store-'), `${id}.tgz`);
-  execFileSync('tar', ['-czf', archive, '-C', source, `snapshots/${id}`]);
+  execFileSync('tar', ['-czf', archive, '-C', join(source, 'snapshots', id), 'manifest.json', 'views', 'texts']);
   return { id, archive, store: dirname(archive) };
 };
 
@@ -373,7 +373,7 @@ test('a pin with no snapshot, an unset store or an archive of other bytes fails 
   const otherId = snapshot(other, { label: 'Other bytes' });
   const swapped = temp(t, 'v2-swapped-');
   cpSync(join(other, 'snapshots', otherId), join(swapped, 'snapshots', id), { recursive: true });
-  execFileSync('tar', ['-czf', archive, '-C', swapped, `snapshots/${id}`]);
+  execFileSync('tar', ['-czf', archive, '-C', join(swapped, 'snapshots', id), 'manifest.json', 'views', 'texts']);
   await assert.rejects(fetchPinned({ destination, store: url, accessKeyId: undefined }));
   assert.deepEqual(readdirSync(join(destination, 'snapshots')), []);
   rmSync(archive);

@@ -451,6 +451,13 @@ nav.story-toc { background: var(--paper); padding: 0; }
 .developments-list { list-style: none; margin: 0; padding: 0; }
 .developments-list li { padding: .9rem 0; border-bottom: 1px solid var(--rule); }
 .developments-list p { margin: .25rem 0 0; }
-.latest-developments { margin-bottom: 2rem; }
+.front-with-developments { display: grid; grid-template-columns: minmax(0, 2.65fr) minmax(0, 1fr); gap: 2rem; }
+.front-with-developments [data-featured-stories] { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); }
+.latest-developments { border-left: 1px solid var(--rule); padding-left: 2rem; }
+.latest-developments h2 { font: 600 1.35rem/1.2 var(--serif); margin: 0 0 .5rem; }
 .latest-developments ul { list-style: none; margin: 0 0 .75rem; padding: 0; }
-.latest-developments li { padding: .5rem 0; border-bottom: 1px solid var(--rule); }
+.latest-developments li { padding: .55rem 0; border-bottom: 1px solid var(--rule); font-size: .92rem; line-height: 1.35; }
+@media (max-width: 1000px) {
+  .front-with-developments { display: block; }
+  .latest-developments { border-left: 0; border-top: 2px solid var(--ink); padding: 1.25rem 0 0; margin-top: 1rem; }
+}

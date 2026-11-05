@@ -52,8 +52,8 @@ export function pullV2({ source = process.env.SAI_VIEWS_SOURCE, destination = jo
   return { source, snapshot: id, views: snapshot.views.size };
 }
 
-// Git pins a snapshot by id in CURRENT; its bytes live in object storage as <id>.tgz, written by pack-v2-snapshot.py.
-// The id is the hash of the manifest, so what arrives is checked against the pin however it travelled.
+// Git pins a snapshot by id in CURRENT; its bytes live in object storage as <id>.tgz, with its manifest, views and
+// texts at the archive's root. The id is the hash of the manifest, so what arrives is checked against the pin.
 export async function fetchPinned({
   destination = join(root, "data/v2"), store = process.env.SAI_SNAPSHOTS_URL,
   accessKeyId = process.env.SAI_SNAPSHOTS_ACCESS_KEY, secretAccessKey = process.env.SAI_SNAPSHOTS_SECRET_KEY,
@@ -71,8 +71,9 @@ export async function fetchPinned({
   try {
     const archive = join(temporary, "snapshot.tgz");
     await pipeline(Readable.fromWeb(response.body), createWriteStream(archive));
-    execFileSync("tar", ["-xzf", archive, "-C", temporary, `snapshots/${id}`]);
-    const unpacked = join(temporary, "snapshots", id);
+    const unpacked = join(temporary, id);
+    mkdirSync(unpacked);
+    execFileSync("tar", ["-xzf", archive, "-C", unpacked]);
     readSnapshot(unpacked, id);
     renameSync(unpacked, final);
   } finally {

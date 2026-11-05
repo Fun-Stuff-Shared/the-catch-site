@@ -1,0 +1,12 @@
+[Unit]
+Description=The Catch: pin the site to the newest packed v2 snapshot, which deploys it
+OnFailure=sai-alert@%n.service
+
+[Service]
+User=sai
+Group=sai
+Type=oneshot
+EnvironmentFile=/etc/sai/catch-site-refresh.env
+ExecStart=/srv/sai/catch-site/refresh-v2-pin.py --archive /srv/sai/views/published.tgz --branch main --remote git@github.com:Fun-Stuff-Shared/the-catch-site.git
+Nice=10
+TimeoutStartSec=30min

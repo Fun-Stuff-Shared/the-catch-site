@@ -1,0 +1,9 @@
+[Unit]
+Description=The Catch refreshes from v2 three times a day
+
+[Timer]
+OnCalendar=*-*-* 06,14,22:00:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

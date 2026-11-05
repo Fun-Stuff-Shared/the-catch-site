@@ -29,7 +29,7 @@ if (input && (isHome || isSeries)) {
       const front = document.querySelector<HTMLElement>('.front-stories')!;
       const isFrontPage = !topic && !terms.length && page === 1;
       front.hidden = !isFrontPage || !count;
-      const selected = isFrontPage ? frontPage(result.items).featured : [];
+      const selected = isFrontPage ? frontPage(result.items, Number(featured.dataset.count)).featured : [];
       result.items.forEach(item => {
         const inFront = selected.includes(item);
         item.element.classList.toggle('story-link-lead', selected[0] === item);
