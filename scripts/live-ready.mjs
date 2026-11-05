@@ -2,16 +2,12 @@ import { pathToFileURL } from "node:url";
 
 const attribute = (html, pattern) => [...html.matchAll(pattern)].map((match) => match[1]);
 
-// A live page is the published one when it carries the pushed commit's build id and, for a v2 story, shows
-// only the committed snapshot. A matching headline proves nothing: a story can keep its headline across builds.
-export function readiness(html, { build, snapshot = null }) {
+// A live page is the published one when it carries the pushed commit's build id. A matching headline proves
+// nothing: a story can keep its headline across builds.
+export function readiness(html, { build }) {
   const builds = attribute(html, /<meta name="catch-build" content="([^"]*)"/g);
   if (builds.length !== 1) return `page carries ${builds.length} build ids`;
   if (builds[0] !== build) return `build still ${builds[0]}`;
-  if (snapshot !== null) {
-    const shown = [...new Set(attribute(html, /data-v2-snapshot="([^"]*)"/g))];
-    if (shown.length !== 1 || shown[0] !== snapshot) return `v2 snapshot ${shown.join(", ") || "absent"}, want ${snapshot}`;
-  }
   return null;
 }
 

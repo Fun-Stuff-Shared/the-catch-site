@@ -58,7 +58,7 @@ print "$base is at $(git -C $site rev-parse --short $base)"
 git -C $site push -q origin $base
 pushed=$(git rev-parse HEAD)
 for s in $stories; do
-  node scripts/live-ready.mjs $live/events/${s%%--*}/${s#*--}/ $pushed $(<data/v2/CURRENT) || exit 1
+  node scripts/live-ready.mjs $live/events/${s%%--*}/${s#*--}/ $pushed || exit 1
 done
 node scripts/live-audit.mjs $live
 print "published from $wt"

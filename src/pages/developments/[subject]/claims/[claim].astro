@@ -4,16 +4,13 @@ import ClaimStanding from "../../../../components/v2/ClaimStanding.astro";
 import Statement from "../../../../components/v2/Statement.astro";
 import { subjectHomes } from "../../../../lib/v2.mjs";
 import { claimSlug, claimStatements, rankClaims, subjectPaths } from "../../../../lib/v2-brief.mjs";
-import { storyCatalog } from "../../../../lib/discovery.mjs";
 export function getStaticPaths() {
   const { snapshot, homes } = subjectHomes();
-  const titles = new Map(storyCatalog().map((story) => [story.href, story.title]));
   return homes.flatMap((home) => {
-    const stories = home.stories.map((route) => ({ route, title: titles.get(route) ?? route }));
-    return rankClaims(home.view).map((claim) => ({ params: { subject: home.slug, claim: claimSlug(claim.id) }, props: { snapshot, home, stories, claim } }));
+    return rankClaims(home.view).map((claim) => ({ params: { subject: home.slug, claim: claimSlug(claim.id) }, props: { snapshot, home, claim } }));
   });
 }
-const { snapshot, home, stories, claim } = Astro.props;
+const { snapshot, home, claim } = Astro.props;
 const { view } = home;
 const statements = claimStatements(view, claim);
 ---
@@ -21,7 +18,7 @@ const statements = claimStatements(view, claim);
   <div class="content">
     <main class="story" data-v2-claim-page={snapshot} data-v2-subject={view.id} data-v2-claim={claim.id}>
       <p data-extracted>{view.label}</p>
-      <p>{home.selected && <><a href={subjectPaths(view.id).home}>This development</a> · </>}<a href={subjectPaths(view.id).claims}>All claims</a>{stories.map(({ route, title }) => <> · <a href={route} data-v2-story-link>{title}</a></>)}</p>
+      <p><a href={subjectPaths(view.id).home}>This development</a> · <a href={subjectPaths(view.id).claims}>All claims</a></p>
       <ClaimStanding view={view} claim={claim} heading="h1" />
       <h2>Statements <span class="series-count">{statements.length}</span></h2>
       <ul>{statements.map((statement) => <Statement view={view} statement={statement} />)}</ul>

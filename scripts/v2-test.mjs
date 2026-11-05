@@ -6,7 +6,7 @@ import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, 
 import { tmpdir } from 'node:os';
 import { createServer } from 'node:http';
 import { dirname, join } from 'node:path';
-import { readV2, v1EventId, v2Story, valueText } from '../src/lib/v2.mjs';
+import { readV2, storySubjects, v1EventId, v2Manifests, valueText } from '../src/lib/v2.mjs';
 import { fetchPinned, pullV2 } from './pull-v2.mjs';
 import { pullState } from './pull-state.mjs';
 
@@ -31,7 +31,7 @@ function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = T
     sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related,
   };
   const viewBytes = JSON.stringify(view);
-  const manifest = JSON.stringify({ format, head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const manifest = JSON.stringify({ format, moved: {}, head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
   const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
@@ -104,17 +104,18 @@ test('a v2 story takes its subjects from its manifest, and its route maps to the
   const manifests = temp(t, 'v2-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
   writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-a'] }));
-  assert.equal(v2Story(route, destination, manifests).views[0].claims[0].id, 'claim-a');
+  const subjects = (where) => storySubjects(readV2(destination), v2Manifests(where).find((row) => row.route === route));
+  assert.deepEqual(subjects(manifests), ['subject-a']);
   assert.equal(v1EventId(route), 'event-ballots-2026-10-21-counties-reject-ballots');
   rmSync(join(manifests, `${STORY}.json`));
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true }));
-  assert.throws(() => v2Story(route, destination, manifests), /v2_subjects must list its subjects/);
+  assert.throws(() => subjects(manifests), /v2_subjects must list its subjects/);
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-gone'] }));
-  assert.throws(() => v2Story(route, destination, manifests), /lacks subjects of story other--2026-10-21-elsewhere: subject-gone/);
+  assert.throws(() => subjects(manifests), /lacks subjects of story other--2026-10-21-elsewhere: subject-gone/);
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true, state_event_id: 'event-x' }));
-  assert.throws(() => v2Story(route, destination, manifests), /either v1 state or v2/);
+  assert.throws(() => subjects(manifests), /either v1 state or v2/);
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: ['subject-a'] }));
-  assert.throws(() => v2Story(route, destination, manifests), /v2 must be true/);
+  assert.throws(() => subjects(manifests), /v2 must be true/);
 });
 
 test('a snapshot whose story index leaves a view out, repeats a subject within a story or invents one is refused', (t) => {
@@ -208,78 +209,6 @@ function pageSite(t, id, dist) {
     claimPage: (subject, statements = statementHtml) => `<main data-v2-claim-page="${id}" data-v2-subject="${subject}" data-v2-claim="claim-a">${statements}</main>`,
   };
 }
-
-test('a subject id with a space reads, maps to its story and passes the page check at its home', async (t) => {
-  const { checkV2Pages } = await import('./check-v2-pages.mjs');
-  const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
-  const subject = 'development-ncse absentee-ballot guidance';
-  const destination = temp(t, 'v2-site-');
-  const source = temp(t, 'v2-source-');
-  const id = snapshot(source, { subject });
-  pullV2({ source, destination });
-  const manifests = temp(t, 'v2-manifests-');
-  const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: [subject] }));
-  assert.equal(v2Story(route, destination, manifests).views[0].id, subject);
-  const home = subjectPaths(subject);
-  assert.match(home.claims, /^\/developments\/development-ncse-absentee-ballot-guidance-[0-9a-f]{8}\/claims\/$/);
-  const dist = temp(t, 'v2-dist-');
-  const site = pageSite(t, id, dist);
-  site.write(route, site.story(subject, home));
-  site.write(home.claims, site.claimsPage(subject));
-  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
-  const passed = checkV2Pages(dist, destination, manifests);
-  assert.deepEqual(passed.failures, []);
-  assert.deepEqual(passed.checked, [route]);
-  assert.equal(passed.report[0].sourceFallbacks, 0);
-  site.write(route, site.story(subject, home, { shown: 'development-ncse' }));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
-  site.write(route, site.story(subject, home, { extra: `<p>${'x'.repeat(41 * 1024)}</p>` }));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /v2 section is \d+ bytes, budget 40960/);
-  site.write(route, site.story(subject, home, { statements: site.statementHtml + site.statementHtml.replace('mention-a', 'mention-x') }));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders statements mention-a,mention-x, expected mention-a/);
-  site.write(route, site.story(subject, home, { link: `${route}claims/claim-a/` }));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /brief links claims to \/events\/.*claims\/claim-a\/, their homes are \/developments\//);
-  site.write(route, site.story(subject, home));
-  site.write(home.claims, site.claimsPage(subject, '<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lists claims 2, expected 1/);
-  site.write(home.claims, site.claimsPage(subject));
-  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject, ''));
-  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
-});
-
-test('a subject listed under two stories has one set of claim pages, at its home, and both briefs link there', async (t) => {
-  const { checkV2Pages } = await import('./check-v2-pages.mjs');
-  const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
-  const { subjectHomes } = await import('../src/lib/v2.mjs');
-  const subject = 'subject-a';
-  const other = 'ballots--2026-10-22-counties-count-again';
-  const destination = temp(t, 'v2-site-');
-  const source = temp(t, 'v2-source-');
-  const id = snapshot(source, { subject, stories: { [STORY]: [subject], [other]: [subject] } });
-  pullV2({ source, destination });
-  const manifests = temp(t, 'v2-manifests-');
-  const routes = ['/events/ballots/2026-10-21-counties-reject-ballots/', '/events/ballots/2026-10-22-counties-count-again/'];
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: routes[0], v2: true, v2_subjects: [subject] }));
-  writeFileSync(join(manifests, `${other}.json`), JSON.stringify({ story: routes[1], v2: true, v2_subjects: [subject] }));
-  const homes = subjectHomes(destination, manifests).homes;
-  assert.deepEqual(homes.map((home) => [home.subject, home.slug, home.stories]), [[subject, subject, routes]]);
-  const home = subjectPaths(subject);
-  const dist = temp(t, 'v2-dist-');
-  const site = pageSite(t, id, dist);
-  for (const route of routes) site.write(route, site.story(subject, home));
-  site.write(home.claims, site.claimsPage(subject));
-  site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
-  const passed = checkV2Pages(dist, destination, manifests);
-  assert.deepEqual(passed.failures, []);
-  assert.deepEqual(passed.checked, routes);
-  assert.deepEqual(passed.report.filter((row) => row.subject).map((row) => [row.subject, row.stories, row.claimPages]), [[subject, 2, 1]]);
-  site.write(`${routes[1]}claims/claim-a/`, site.claimPage(subject));
-  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, [`${routes[1]}claims/claim-a/: renders claim claim-a of ${subject}, whose one home is ${home.claim({ id: 'claim-a' })}`]);
-  rmSync(join(dist, routes[1], 'claims'), { recursive: true });
-  site.write(`${routes[0]}claims/`, site.claimsPage(subject));
-  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, [`${routes[0]}claims/: renders the claims of ${subject}, whose one home is ${home.claims}`]);
-});
 
 test('subject homes are plain ids where they can be and otherwise readable and distinct', async () => {
   const { subjectSlug } = await import('../src/lib/v2-brief.mjs');
@@ -428,12 +357,11 @@ test('with development pages on, the page gate requires a selected development t
   assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, []);
 });
 
-test('a story naming a subject that folded into another shows the survivor once, through a chain of merges', async () => {
+test('a story naming a subject that folded into another shows the survivor once', async () => {
   const { storySubjects } = await import('../src/lib/v2.mjs');
-  const view = (id, related = []) => [id, { id, related }];
-  const snapshot = { id: 's', views: new Map([view('kept', [['merge', 'kept', 'middle'], ['merge', 'middle', 'first']])]) };
+  const snapshot = { id: 's', views: new Map([['kept', {}]]), manifest: { moved: { middle: 'kept', first: 'kept', orphan: 'gone' } } };
   assert.deepEqual(storySubjects(snapshot, { story: 'a', subjects: ['kept', 'middle', 'first'] }), ['kept']);
-  assert.throws(() => storySubjects(snapshot, { story: 'a', subjects: ['gone'] }), /lacks subjects of story a: gone/);
+  assert.throws(() => storySubjects(snapshot, { story: 'a', subjects: ['gone', 'orphan'] }), /lacks subjects of story a: gone, orphan/);
 });
 
 test('amounts group their thousands, including a range and a decimal', () => {
@@ -463,7 +391,16 @@ test('development pages are off unless the build asks, and the gate refuses one 
   const manifests = temp(t, 'v2-manifests-');
   const dist = temp(t, 'v2-dist-');
   const site = pageSite(t, id, dist);
+  const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-a'] }));
+  site.write(route, '<main>The story</main>');
   assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, []);
+  site.write(route, `<details data-v2-snapshot="${id}"></details>`);
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, [`${route}: an authored page shows a machine brief`]);
+  site.write(route, '<main>The story</main>');
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-gone'] }));
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lacks subjects of story .*subject-gone/);
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-a'] }));
   site.write(subjectPaths('subject-a').home, site.homePage('subject-a'));
   site.write('/developments/', '');
   const failures = checkV2Pages(dist, destination, manifests).failures;
