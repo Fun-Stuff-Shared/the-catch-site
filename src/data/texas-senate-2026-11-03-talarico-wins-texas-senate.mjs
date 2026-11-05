@@ -76,8 +76,8 @@ export const money = {
 export const figuresInCoverage = {
   rows: [
     ["More than $150 million, CBS News", "About the $158 million that went through Senate Leadership Fund"],
-    ["$168 million, NBC News, as an \"ad assault\"", "The $158 million plus the $10 million to Lone Star Liberty: gifts to committees, not ads"],
-    ["More than $200 million, Rex Huppke, USA Today", "Fits the gifts plus America PAC's $47.3 million"],
+    ["$168 million, NBC News, as an \"ad assault\"", "The same amount as his gifts to committees, $158 million plus $10 million; NBC gives no source"],
+    ["More than $200 million, Rex Huppke, USA Today", "Fits the gifts plus America PAC's $47.3 million in spending"],
     ["At least $225 million, OpenSecrets, through NPR", "All Texas spending, the governor's race included"],
   ],
 };

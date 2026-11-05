@@ -1,6 +1,6 @@
 export const subject = {
   title: "The Texas Senate race",
-  dek: "James Talarico, a Democrat, beat Republican Ken Paxton on November 3 in unofficial returns, and Republicans lost all 18 races voted statewide in Texas. Elon Musk's money in the race came to at least about $215 million.",
+  dek: "James Talarico, a Democrat, beat Republican Ken Paxton on November 3 in unofficial returns, and Republicans lost all 18 races voted statewide in Texas. About $215 million in the race was tied to Elon Musk.",
   current: [
     { label: "Talarico's votes, unofficial", value: "5,444,982", unit: "votes", as_of: "2026-11-04", record_id: "sos-results-2026-11-04", source_value: "5,444,982", source_unit: "votes", source_sentence: "DEMOCRATIC | JAMES TALARICO | 5,444,982 |" },
     { label: "Paxton's votes, unofficial", value: "4,249,373", unit: "votes", as_of: "2026-11-04", record_id: "sos-results-2026-11-04", source_value: "4,249,373", source_unit: "votes", source_sentence: "REPUBLICAN | KEN PAXTON | 4,249,373 |" },
