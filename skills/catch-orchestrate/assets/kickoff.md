@@ -8,7 +8,7 @@ The event: {LABEL}
 
 The worktree is {WORKTREE} on branch {BRANCH}. Do not push. Commit by path; git's post-commit hook can hang on git lfs, so commit with `git -c core.hooksPath=/dev/null commit ...`.
 
-The orchestrator is the Claude session named {ORCHESTRATOR} in ListAgents; message it with SendMessage (by whatever name it has in ListAgents if that one is gone). Send it:
+The orchestrator is the session {ORCHESTRATOR}; message it with `agenthail send @<name> "<message>"` (`agenthail list --json` finds it if that name is gone). Send it:
 - the questions and answers once you have named them (catch-record step 1), then keep working while it reads them;
 - each record review's verdict;
 - the scored explanations, the five sentences and the plan when stage one is done, and wait for its word before writing the page;
