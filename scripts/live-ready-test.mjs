@@ -17,14 +17,6 @@ test('a page without exactly one build id is not live', () => {
   assert.match(readiness(page(NEW) + page(NEW), { build: NEW }), /2 build ids/);
 });
 
-test('a v2 story is live only when it shows the committed snapshot alone', () => {
-  const v2 = (...ids) => page(NEW, ids.map((id) => `<details data-v2-snapshot="${id}"></details>`).join(''));
-  assert.equal(readiness(v2('s1'), { build: NEW, snapshot: 's1' }), null);
-  assert.match(readiness(v2('s0'), { build: NEW, snapshot: 's1' }), /v2 snapshot s0, want s1/);
-  assert.match(readiness(v2('s1', 's0'), { build: NEW, snapshot: 's1' }), /v2 snapshot s1, s0/);
-  assert.match(readiness(page(NEW), { build: NEW, snapshot: 's1' }), /absent/);
-});
-
 test('the poll waits through the old build and refuses when the new one never serves', async () => {
   const served = [page(OLD), page(OLD), page(NEW)];
   const fetchPage = async () => ({ ok: true, status: 200, text: async () => served.shift() ?? page(NEW) });

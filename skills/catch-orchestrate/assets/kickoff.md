@@ -2,7 +2,7 @@ Write the Catch story for this event, stage one then stage two. Read `skills/cat
 
 The event: {LABEL}
 - Story id: {STORY}, working headline "{LABEL}".
-- It starts from the v2 development {CANDIDATE}: `data/v2` in this worktree holds what the core has on it, so read that view's claims, statements and sources first. Treat them as leads to check at the source, not as the record. Its pages are already in the manifest's `v2_subjects`.
+- It starts from the v2 development {CANDIDATE}: `data/v2` in this worktree holds what the core has on it, so read that view's claims, statements and sources first. Treat them as leads to check at the source, not as the record. The manifest's `v2_subjects` ties the story to it; the page shows none of it.
 - {FOLLOWS}
 - Held coverage to start from: `capture search "<one term>" --since {SINCE} --compact`, one name or phrase at a time, because it matches the whole string against URL, title and publisher. Terms to try: {SEARCH}.
 

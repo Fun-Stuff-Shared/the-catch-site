@@ -33,6 +33,7 @@ export function readSnapshot(folder, id) {
   if (sha256(manifestBytes).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
   const manifest = JSON.parse(manifestBytes);
   if (manifest.format !== FORMAT) throw new Error(`Unknown v2 snapshot format: ${manifest.format}`);
+  if (manifest.moved === null || typeof manifest.moved !== "object" || Array.isArray(manifest.moved)) throw new Error("v2 manifest has no moved map");
   const texts = new Map();
   for (const [hash, path] of Object.entries(manifest.texts)) {
     if (path !== `texts/${hash}.txt`) throw new Error(`v2 text path differs from its hash: ${path}`);
@@ -87,8 +88,9 @@ export function readV2(directory = v2Directory) {
   return verified.get(folder);
 }
 
-// A story renders from v2 when its manifest says so, and its manifest names the subjects it shows: which
-// developments an authored story covers is the site's editorial record, not something the producer knows.
+// A story is tied to v2 when its manifest says so, and its manifest names the subjects it covers: which developments
+// an authored story covers is the site's editorial record, not something the producer knows. Authors read them; the
+// page shows none of it, because a machine list beside the story only repeats the page.
 export function v2Manifests(manifests = join(process.cwd(), "checks/manifests")) {
   const rows = [];
   for (const name of readdirSync(manifests).filter((name) => name.endsWith(".json")).sort()) {
@@ -103,42 +105,24 @@ export function v2Manifests(manifests = join(process.cwd(), "checks/manifests"))
   return rows;
 }
 
-// A subject folded into another has no view of its own; the survivor's view records the merge as (merge, survivor, folded).
-function survivor(snapshot, subject) {
-  snapshot.folds ??= new Map([...snapshot.views.values()].flatMap((view) => view.related.filter(([op]) => op === "merge").map(([, kept, folded]) => [folded, kept])));
-  const seen = new Set();
-  let current = subject;
-  while (!snapshot.views.has(current)) {
-    if (seen.has(current) || !snapshot.folds.has(current)) return null;
-    seen.add(current);
-    current = snapshot.folds.get(current);
-  }
-  return current;
-}
-
+// A subject folded into another has no view of its own; the manifest's moved map names the survivor.
 export function storySubjects(snapshot, { story, subjects }) {
-  const resolved = subjects.map((subject) => [subject, survivor(snapshot, subject)]);
-  const missing = resolved.filter(([, kept]) => !kept).map(([subject]) => subject);
+  const resolved = subjects.map((subject) => [subject, snapshot.views.has(subject) ? subject : snapshot.manifest.moved[subject]]);
+  const missing = resolved.filter(([, kept]) => !snapshot.views.has(kept)).map(([subject]) => subject);
   if (missing.length) throw new Error(`v2 snapshot ${snapshot.id} lacks subjects of story ${story}: ${missing.join(", ")}`);
   return [...new Set(resolved.map(([, kept]) => kept))];
 }
 
-// Every subject with claim pages: those a v2 story shows, in story order with the story pages they appear on, then
-// any developments the build publishes, latest first. Only a published development has a page of its own.
-export function subjectHomes(directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
+// Every development the build publishes, latest first, with its home's slug.
+export function subjectHomes(directory = v2Directory) {
   const snapshot = readV2(directory);
   const homes = new Map(), slugs = new Map();
-  const home = (subject) => {
-    if (!homes.has(subject)) {
-      const name = subjectSlug(subject);
-      if (slugs.has(name)) throw new Error(`v2 subjects ${slugs.get(name)} and ${subject} share the home ${name}`);
-      slugs.set(name, subject);
-      homes.set(subject, { subject, slug: name, view: snapshot.views.get(subject), stories: [], selected: false });
-    }
-    return homes.get(subject);
-  };
-  for (const row of v2Manifests(manifests)) for (const subject of storySubjects(snapshot, row)) home(subject).stories.push(row.route);
-  for (const view of publishedDevelopments(snapshot)) home(view.id).selected = true;
+  for (const view of publishedDevelopments(snapshot)) {
+    const name = subjectSlug(view.id);
+    if (slugs.has(name)) throw new Error(`v2 subjects ${slugs.get(name)} and ${view.id} share the home ${name}`);
+    slugs.set(name, view.id);
+    homes.set(view.id, { subject: view.id, slug: name, view });
+  }
   return { snapshot: snapshot.id, homes: [...homes.values()] };
 }
 
@@ -147,14 +131,6 @@ export function v1EventId(route) {
   const match = /^\/events\/([a-z0-9-]+)\/(\d{4}-\d{2}-\d{2}-[a-z0-9-]+)\/$/.exec(route);
   if (!match) throw new Error(`v2 story route is not a dated story: ${route}`);
   return `event-${match[1]}-${match[2]}`;
-}
-
-export function v2Story(route, directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
-  const row = v2Manifests(manifests).find((entry) => entry.route === route);
-  if (!row) throw new Error(`No v2 manifest for ${route}`);
-  const snapshot = readV2(directory);
-  const views = storySubjects(snapshot, row).map((subject) => snapshot.views.get(subject));
-  return { route, snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
 }
 
 export function hasV2(directory = v2Directory) {

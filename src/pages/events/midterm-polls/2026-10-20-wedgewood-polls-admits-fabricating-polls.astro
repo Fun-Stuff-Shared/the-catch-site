@@ -4,12 +4,9 @@ import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectBrief from "../../../components/SubjectBrief.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
-import { v2Story } from "../../../lib/v2.mjs";
 import { event, lean, primaries, caught, corrections, trackers } from "../../../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs";
-const v2 = v2Story("/events/midterm-polls/2026-10-20-wedgewood-polls-admits-fabricating-polls/");
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterm-polls/">Midterm polls</a><span>October 20, 2026</span></div>
@@ -165,7 +162,6 @@ const v2 = v2Story("/events/midterm-polls/2026-10-20-wedgewood-polls-admits-fabr
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>

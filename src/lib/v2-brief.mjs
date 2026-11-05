@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 
 export const BRIEF_CLAIMS = 12;
 export const BEST_STATEMENTS = 2;
-export const V2_SECTION_BUDGET = 40 * 1024;
 export const BRIEF_COMPETING = 3;
 
 const recency = (item) => item?.as_of ?? item?.asserted_at ?? "";

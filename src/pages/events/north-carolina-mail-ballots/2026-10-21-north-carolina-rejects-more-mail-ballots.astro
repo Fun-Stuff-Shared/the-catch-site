@@ -7,14 +7,11 @@ import SourcedBlock from "../../../components/SourcedBlock.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import StorySources from "../../../components/StorySources.astro";
-import SubjectBrief from "../../../components/SubjectBrief.astro";
-import { v2Story } from "../../../lib/v2.mjs";
 import { claim } from "../../../lib/claims.mjs";
 import { event, n, computed, rates, chronology } from "../../../data/north-carolina-mail-ballots-2026-10-21-north-carolina-rejects-more-mail-ballots.mjs";
 const story = "north-carolina-mail-ballots--2026-10-21-north-carolina-rejects-more-mail-ballots";
 const short = (id) => claim(story, id).short;
 const maxRate = Math.max(...rates.map((r) => r.value));
-const v2 = v2Story("/events/north-carolina-mail-ballots/2026-10-21-north-carolina-rejects-more-mail-ballots/");
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/north-carolina-mail-ballots/">North Carolina mail ballots</a><span>October 21, 2026</span></div>
@@ -163,7 +160,6 @@ const v2 = v2Story("/events/north-carolina-mail-ballots/2026-10-21-north-carolin
 
       <section id="records">
       <StorySources event={event.slug} />
-      <SubjectBrief story={v2} supporting />
       </section>
     </main>
   </div>
