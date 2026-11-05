@@ -1,6 +1,10 @@
-import { closeSync, copyFileSync, existsSync, fsyncSync, mkdirSync, mkdtempSync, openSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { closeSync, copyFileSync, createWriteStream, existsSync, fsyncSync, mkdirSync, mkdtempSync, openSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { Readable } from "node:stream";
+import { pipeline } from "node:stream/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { AwsClient } from "aws4fetch";
 import { readSnapshot, readV2, snapshotId } from "../src/lib/v2.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
@@ -12,8 +16,8 @@ const fsyncPath = (path) => { const fd = openSync(path, "r"); try { fsyncSync(fd
 // verified and renamed into place, so a reader sees the old snapshot or the new one, never a mix.
 export function pullV2({ source = process.env.SAI_VIEWS_SOURCE, destination = join(root, "data/v2") } = {}) {
   if (!source) {
-    const committed = readV2(destination);
-    return { source: "committed", snapshot: committed.id, views: committed.views.size };
+    const pinned = readV2(destination);
+    return { source: "pinned", snapshot: pinned.id, views: pinned.views.size };
   }
   const id = snapshotId(source);
   const snapshots = join(destination, "snapshots");
@@ -48,4 +52,36 @@ export function pullV2({ source = process.env.SAI_VIEWS_SOURCE, destination = jo
   return { source, snapshot: id, views: snapshot.views.size };
 }
 
-if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) console.log(JSON.stringify(pullV2()));
+// Git pins a snapshot by id in CURRENT; its bytes live in object storage as <id>.tgz, written by pack-v2-snapshot.py.
+// The id is the hash of the manifest, so what arrives is checked against the pin however it travelled.
+export async function fetchPinned({
+  destination = join(root, "data/v2"), store = process.env.SAI_SNAPSHOTS_URL,
+  accessKeyId = process.env.SAI_SNAPSHOTS_ACCESS_KEY, secretAccessKey = process.env.SAI_SNAPSHOTS_SECRET_KEY,
+} = {}) {
+  const id = snapshotId(destination);
+  const snapshots = join(destination, "snapshots");
+  const final = join(snapshots, id);
+  if (existsSync(final)) return;
+  if (!store) throw new Error(`v2 snapshot ${id} is not here and SAI_SNAPSHOTS_URL is not set`);
+  const url = `${store.replace(/\/$/, "")}/${id}.tgz`;
+  const response = accessKeyId ? await new AwsClient({ accessKeyId, secretAccessKey, service: "s3", region: "auto" }).fetch(url) : await fetch(url);
+  if (!response.ok) throw new Error(`v2 snapshot ${id}: ${url} answered ${response.status}`);
+  mkdirSync(snapshots, { recursive: true });
+  const temporary = mkdtempSync(join(snapshots, ".pull-"));
+  try {
+    const archive = join(temporary, "snapshot.tgz");
+    await pipeline(Readable.fromWeb(response.body), createWriteStream(archive));
+    execFileSync("tar", ["-xzf", archive, "-C", temporary, `snapshots/${id}`]);
+    const unpacked = join(temporary, "snapshots", id);
+    readSnapshot(unpacked, id);
+    renameSync(unpacked, final);
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
+  }
+  for (const name of readdirSync(snapshots)) if (name !== id && !name.startsWith(".")) rmSync(join(snapshots, name), { recursive: true, force: true });
+}
+
+if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) {
+  if (!process.env.SAI_VIEWS_SOURCE) await fetchPinned();
+  console.log(JSON.stringify(pullV2()));
+}

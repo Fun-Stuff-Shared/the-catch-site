@@ -8,10 +8,12 @@ export const BRIEF_COMPETING = 3;
 const recency = (item) => item?.as_of ?? item?.asserted_at ?? "";
 const byRecency = (a, b) => recency(b).localeCompare(recency(a)) || a.id.localeCompare(b.id);
 
-// A source is named by the publisher and title its artifact carries; the artifact id stands in only when both are missing.
+const named = (value) => typeof value === "string" && value.trim() ? value.trim() : null;
+
+// A source is named by the publisher and title its artifact carries, then by the site it came from; the artifact id stands in only when it has none of them.
 export function sourceLabel(source) {
-  const publisher = typeof source.attributes?.publisher === "string" && source.attributes.publisher.trim() ? source.attributes.publisher.trim() : null;
-  const title = typeof source.attributes?.title === "string" && source.attributes.title.trim() ? source.attributes.title.trim() : null;
+  const publisher = named(source.attributes?.publisher) ?? named(source.root)?.replace(/^www\./, "") ?? null;
+  const title = named(source.attributes?.title) ?? named(source.attributes?.source_title);
   return { publisher, title, fallback: !publisher && !title, text: [publisher, title].filter(Boolean).join(", ") || source.artifact };
 }
 
@@ -31,7 +33,7 @@ export function subjectSlug(id) {
 // A subject's claim pages live once, under its home, whatever stories it appears on.
 export function subjectPaths(subject) {
   const home = `/developments/${subjectSlug(subject)}/`;
-  return { claims: `${home}claims/`, claim: (claim) => `${home}claims/${claimSlug(claim.id)}/` };
+  return { home, claims: `${home}claims/`, claim: (claim) => `${home}claims/${claimSlug(claim.id)}/` };
 }
 
 function index(view) {
@@ -43,13 +45,16 @@ function index(view) {
 
 const PRIORITY = { disputed: 2, unjudged: 1 };
 
+// A claim the core holds no value for says nothing to a reader, so it has no place on a page.
+export const shownClaims = (view) => view.claims.filter((claim) => claim.state !== "empty");
+
 // Disputed claims first, then claims whose sources are not yet compared, then by the core's count of independent units,
 // then by how recent the claim is.
 export function rankClaims(view) {
   const { latest } = index(view);
   const when = (claim) => claim.as_of ?? latest(claim);
   const priority = (claim) => PRIORITY[claim.state] ?? 0;
-  return [...view.claims].sort((a, b) =>
+  return shownClaims(view).sort((a, b) =>
     priority(b) - priority(a) || b.independent - a.independent || when(b).localeCompare(when(a)) || a.id.localeCompare(b.id));
 }
 
@@ -103,3 +108,35 @@ export function attributeGroups(view) {
 export function sourceFor(view, statement) {
   return view.sources.find((source) => source.artifact === statement.artifact);
 }
+
+// A development publishes on its own when the core counts at least this many independent sources behind one of
+// its claims. The core's count discounts syndicated copies, so it holds up where a count of sites does not.
+export const INDEPENDENT_SOURCES = 3;
+export const DEVELOPMENTS_PER_PAGE = 50;
+
+export const latestSource = (view) => view.sources.map((source) => source.published_at ?? "").sort().at(-1) ?? "";
+
+export function selectedDevelopments(snapshot) {
+  return [...snapshot.views.values()]
+    .filter((view) => shownClaims(view).some((claim) => claim.independent >= INDEPENDENT_SOURCES))
+    .sort((a, b) => latestSource(b).localeCompare(latestSource(a)) || a.id.localeCompare(b.id));
+}
+
+export const developmentPath = (subject) => `/developments/${subjectSlug(subject)}/`;
+
+// One line for a list of developments: its label, its newest source, and what stands behind it.
+export function developmentEntry(view) {
+  const claims = shownClaims(view);
+  const disputed = claims.filter((claim) => claim.state === "disputed").length;
+  return {
+    href: developmentPath(view.id), title: view.label, date: latestSource(view).slice(0, 10),
+    summary: `${claims.length} ${claims.length === 1 ? "claim" : "claims"} from ${view.sources.length} ${view.sources.length === 1 ? "source" : "sources"}${disputed ? `; sources differ on ${disputed}` : ""}`,
+  };
+}
+
+// The extractor's names for a source speaking in its own voice; the page names the source beside the quote already.
+const OWN_VOICE = new Set(["outlet's own", "unattributed", "Article", "Report narrator"]);
+export const statedBy = (statement) => OWN_VOICE.has(statement.speaker) ? null : statement.speaker;
+
+const ATTRIBUTES = { count: "Counts and amounts", date: "Dates", statement: "Statements", rate: "Rates", status: "Status", relationship: "Relationships", rule: "Rules", poll_result: "Poll results", forecast: "Forecasts", legal_action: "Legal actions", fact_check_rating: "Fact-check ratings" };
+export const attributeHeading = (attribute) => ATTRIBUTES[attribute] ?? `${attribute[0].toUpperCase()}${attribute.slice(1).replace(/_/g, " ")}`;

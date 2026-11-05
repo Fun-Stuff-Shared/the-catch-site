@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { subjectSlug } from "./v2-brief.mjs";
+import { selectedDevelopments, subjectSlug } from "./v2-brief.mjs";
 
 export const v2Directory = join(process.cwd(), "data/v2");
 export const FORMAT = "sai-news-view/5";
@@ -12,6 +12,14 @@ export function snapshotId(directory) {
   const id = readFileSync(join(directory, "CURRENT"), "utf8").trim();
   if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot pointer in ${directory}: ${id}`);
   return id;
+}
+
+// Spans count code points. A text with no surrogate pairs has one code unit per code point, so only a text with
+// them pays for an array, which keeps a snapshot's hundreds of megabytes of text from holding gigabytes of heap.
+function spanReader(text) {
+  if (!/[\uD800-\uDFFF]/.test(text)) return (start, end) => text.slice(start, end);
+  const points = Array.from(text);
+  return (start, end) => points.slice(start, end).join("");
 }
 
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
@@ -30,7 +38,7 @@ export function readSnapshot(folder, id) {
     if (path !== `texts/${hash}.txt`) throw new Error(`v2 text path differs from its hash: ${path}`);
     const bytes = readFileSync(join(folder, path));
     if (sha256(bytes) !== hash) throw new Error(`v2 text hash mismatch: ${hash}`);
-    texts.set(hash, Array.from(bytes.toString("utf8")));
+    texts.set(hash, spanReader(bytes.toString("utf8")));
   }
   const views = new Map();
   for (const [subject, entry] of Object.entries(manifest.views)) {
@@ -44,7 +52,7 @@ export function readSnapshot(folder, id) {
       if (!statement.span) throw new Error(`v2 statement has no text span: ${statement.id}`);
       const text = texts.get(statement.span.text);
       if (!text) throw new Error(`v2 statement names a text the snapshot lacks: ${statement.id}`);
-      if (text.slice(statement.span.start, statement.span.end).join("") !== statement.quote) throw new Error(`v2 statement quote is not at its span: ${statement.id}`);
+      if (text(statement.span.start, statement.span.end) !== statement.quote) throw new Error(`v2 statement quote is not at its span: ${statement.id}`);
     }
     const claims = new Set(view.claims.map((claim) => claim.id));
     for (const claim of view.claims) {
@@ -79,7 +87,8 @@ export function readV2(directory = v2Directory) {
   return verified.get(folder);
 }
 
-// A story renders from v2 when its manifest says so; the snapshot's story index, keyed by the manifest's name, names its subjects.
+// A story renders from v2 when its manifest says so, and its manifest names the subjects it shows: which
+// developments an authored story covers is the site's editorial record, not something the producer knows.
 export function v2Manifests(manifests = join(process.cwd(), "checks/manifests")) {
   const rows = [];
   for (const name of readdirSync(manifests).filter((name) => name.endsWith(".json")).sort()) {
@@ -87,32 +96,49 @@ export function v2Manifests(manifests = join(process.cwd(), "checks/manifests"))
     if (manifest.v2 === undefined) continue;
     if (manifest.v2 !== true) throw new Error(`${name}: v2 must be true when present`);
     if (manifest.state_event_id) throw new Error(`${name}: a story reads either v1 state or v2, not both`);
-    rows.push({ name, story: name.slice(0, -".json".length), route: manifest.story || `/events/${manifest.event}/` });
+    const subjects = manifest.v2_subjects;
+    if (!Array.isArray(subjects) || !subjects.length || subjects.some((subject) => typeof subject !== "string" || !subject) || new Set(subjects).size !== subjects.length) throw new Error(`${name}: v2_subjects must list its subjects once each`);
+    rows.push({ name, story: name.slice(0, -".json".length), route: manifest.story || `/events/${manifest.event}/`, subjects });
   }
   return rows;
 }
 
-export function storySubjects(snapshot, story) {
-  const subjects = Object.hasOwn(snapshot.manifest.stories, story) ? snapshot.manifest.stories[story] : undefined;
-  if (!subjects) throw new Error(`v2 snapshot ${snapshot.id} has no subjects for story ${story}`);
-  return subjects;
+// A subject folded into another has no view of its own; the survivor's view records the merge as (merge, survivor, folded).
+function survivor(snapshot, subject) {
+  snapshot.folds ??= new Map([...snapshot.views.values()].flatMap((view) => view.related.filter(([op]) => op === "merge").map(([, kept, folded]) => [folded, kept])));
+  const seen = new Set();
+  let current = subject;
+  while (!snapshot.views.has(current)) {
+    if (seen.has(current) || !snapshot.folds.has(current)) return null;
+    seen.add(current);
+    current = snapshot.folds.get(current);
+  }
+  return current;
 }
 
-// Every subject a v2 story page shows, with its home's slug and the story pages it appears on, in story order.
+export function storySubjects(snapshot, { story, subjects }) {
+  const resolved = subjects.map((subject) => [subject, survivor(snapshot, subject)]);
+  const missing = resolved.filter(([, kept]) => !kept).map(([subject]) => subject);
+  if (missing.length) throw new Error(`v2 snapshot ${snapshot.id} lacks subjects of story ${story}: ${missing.join(", ")}`);
+  return [...new Set(resolved.map(([, kept]) => kept))];
+}
+
+// Every subject with pages: those a v2 story shows, in story order with the story pages they appear on, then
+// the developments published by selection, latest first.
 export function subjectHomes(directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
   const snapshot = readV2(directory);
   const homes = new Map(), slugs = new Map();
-  for (const { story, route } of v2Manifests(manifests)) {
-    for (const subject of storySubjects(snapshot, story)) {
-      if (!homes.has(subject)) {
-        const name = subjectSlug(subject);
-        if (slugs.has(name)) throw new Error(`v2 subjects ${slugs.get(name)} and ${subject} share the home ${name}`);
-        slugs.set(name, subject);
-        homes.set(subject, { subject, slug: name, view: snapshot.views.get(subject), stories: [] });
-      }
-      homes.get(subject).stories.push(route);
+  const home = (subject) => {
+    if (!homes.has(subject)) {
+      const name = subjectSlug(subject);
+      if (slugs.has(name)) throw new Error(`v2 subjects ${slugs.get(name)} and ${subject} share the home ${name}`);
+      slugs.set(name, subject);
+      homes.set(subject, { subject, slug: name, view: snapshot.views.get(subject), stories: [], selected: false });
     }
-  }
+    return homes.get(subject);
+  };
+  for (const row of v2Manifests(manifests)) for (const subject of storySubjects(snapshot, row)) home(subject).stories.push(row.route);
+  for (const view of selectedDevelopments(snapshot)) home(view.id).selected = true;
   return { snapshot: snapshot.id, homes: [...homes.values()] };
 }
 
@@ -127,7 +153,7 @@ export function v2Story(route, directory = v2Directory, manifests = join(process
   const row = v2Manifests(manifests).find((entry) => entry.route === route);
   if (!row) throw new Error(`No v2 manifest for ${route}`);
   const snapshot = readV2(directory);
-  const views = storySubjects(snapshot, row.story).map((subject) => snapshot.views.get(subject));
+  const views = storySubjects(snapshot, row).map((subject) => snapshot.views.get(subject));
   return { route, snapshot: snapshot.id, head: snapshot.manifest.head, evaluated_at: snapshot.manifest.evaluated_at, views };
 }
 
@@ -135,15 +161,27 @@ export function hasV2(directory = v2Directory) {
   return existsSync(join(directory, "CURRENT"));
 }
 
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+// An instant reads at the precision the source gave it, so a year stated as 2027 does not read as January 1.
+export function instantText({ at, precision }) {
+  const [year, month, day] = at.split("-");
+  if (precision === "year" || !month) return year;
+  if (precision === "month" || !day) return `${MONTHS[Number(month) - 1]} ${year}`;
+  return `${MONTHS[Number(month) - 1]} ${Number(day)}, ${year}`;
+}
+
+const grouped = (amount) => String(amount).replace(/^(-?\d+)/, (whole) => whole.replace(/\B(?=(\d{3})+$)/g, ","));
+
 export function valueText(value) {
   if (!value) return null;
   switch (value.type) {
-    case "quantity": return value.upper == null ? `${value.amount} ${value.unit}` : `${value.amount}–${value.upper} ${value.unit}`;
-    case "date": return value.at.at;
+    case "quantity": return value.upper == null ? `${grouped(value.amount)} ${value.unit}` : `${grouped(value.amount)}–${grouped(value.upper)} ${value.unit}`;
+    case "date": return instantText(value.at);
     case "enum": return value.value;
     case "entity": return value.subject;
     case "proposition": return value.text;
-    case "forecast": return `${valueText(value.outcome)} by ${value.horizon.at}`;
+    case "forecast": return `${valueText(value.outcome)} by ${instantText(value.horizon)}`;
     default: throw new Error(`Unknown v2 value type: ${value.type}`);
   }
 }

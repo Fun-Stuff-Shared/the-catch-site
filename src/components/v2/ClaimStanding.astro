@@ -1,17 +1,17 @@
 ---
 import { formatDate } from "../../lib/presentation.mjs";
 import { valueText } from "../../lib/v2.mjs";
-import { changes, competingValues } from "../../lib/v2-brief.mjs";
+import { attributeHeading, changes, competingValues, statedBy } from "../../lib/v2-brief.mjs";
 const { view, claim, heading = "h4", showAttribute = true, competingLimit = Infinity, more = null } = Astro.props;
 const Heading = heading;
-const STATES = { unjudged: "Sources not yet compared" };
+const STATES = { unjudged: "Sources not yet compared", disputed: "Sources give different values" };
 const standing = STATES[claim.state] ?? (claim.state === "established" ? (claim.level ? `${claim.level[0].toUpperCase()}${claim.level.slice(1).replace(/_/g, " ")}` : "Established") : `${claim.state[0].toUpperCase()}${claim.state.slice(1)}`);
 const independent = `${claim.independent} independent ${claim.independent === 1 ? "source" : "sources"}`;
 const competing = competingValues(view, claim);
 const hidden = Math.max(0, competing.length - competingLimit);
 ---
-{showAttribute && <Heading data-extracted>{claim.attribute}</Heading>}
+{showAttribute && <Heading>{attributeHeading(claim.attribute)}</Heading>}
 {claim.value && <p class="ledger-excerpt" data-extracted>{valueText(claim.value)}</p>}
 <p class="ledger-source">{standing} · {claim.kind}{claim.as_of && <> · as of {formatDate(claim.as_of)}</>} · {independent}</p>
-{competing.length > 0 && <div class="v2-competing"><p class="ledger-source">{claim.state === "disputed" ? "Competing values:" : "Values the sources give, not yet compared:"}</p><ul>{competing.slice(0, competingLimit).map((statement) => <li><span data-extracted>{valueText(statement.value)}</span> · <span data-extracted>{statement.speaker}</span></li>)}</ul>{hidden > 0 && <p class="ledger-source">{more ? <a href={more}>{hidden} more</a> : <>{hidden} more</>} on the claim page.</p>}</div>}
-{changes(claim).length > 0 && <ul class="v2-changes">{changes(claim).map((change) => <li>{change.kind[0].toUpperCase()}{change.kind.slice(1).replace(/_/g, " ")}{change.as_of && <> on {formatDate(change.as_of)}</>}</li>)}</ul>}
+{competing.length > 0 && <div class="v2-competing"><p class="ledger-source">{claim.state === "disputed" ? "Values the sources give:" : "Values the sources give, not yet compared:"}</p><ul>{competing.slice(0, competingLimit).map((statement) => <li><span data-extracted>{valueText(statement.value)}</span>{statedBy(statement) && <> · <span data-extracted>{statedBy(statement)}</span></>}</li>)}</ul>{hidden > 0 && <p class="ledger-source">{more ? <a href={more}>{hidden} more</a> : <>{hidden} more</>} on the claim page.</p>}</div>}
+{changes(claim).length > 0 && <ul class="v2-changes">{changes(claim).map((change) => <li>{change.kind === "disputed" ? "Sources began to differ" : `${change.kind[0].toUpperCase()}${change.kind.slice(1).replace(/_/g, " ")}`}{change.as_of && <> on {formatDate(change.as_of)}</>}</li>)}</ul>}

@@ -1,11 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { createServer } from 'node:http';
+import { dirname, join } from 'node:path';
 import { readV2, v1EventId, v2Story, valueText } from '../src/lib/v2.mjs';
-import { pullV2 } from './pull-v2.mjs';
+import { fetchPinned, pullV2 } from './pull-v2.mjs';
 import { pullState } from './pull-state.mjs';
 
 const sha256 = (data) => createHash('sha256').update(data).digest('hex');
@@ -51,7 +53,7 @@ test('a pull copies the current snapshot, checks it whole, flips CURRENT and dro
   assert.equal(readFileSync(join(destination, 'CURRENT'), 'utf8').trim(), second);
   assert.deepEqual(readdirSync(join(destination, 'snapshots')), [second]);
   assert.equal(readV2(destination).views.get('subject-a').label, 'Ballot rejections, updated');
-  assert.deepEqual(pullV2({ destination }), { source: 'committed', snapshot: second, views: 1 });
+  assert.deepEqual(pullV2({ destination }), { source: 'pinned', snapshot: second, views: 1 });
 });
 
 test('spans count code points, so a quote after an emoji still lands on its text', (t) => {
@@ -94,19 +96,21 @@ test('a bad snapshot is refused and the site keeps the snapshot it had', (t) => 
   assert.deepEqual(readdirSync(join(destination, 'snapshots')), [kept]);
 });
 
-test('a v2 story takes its subjects from the snapshot story index under its manifest name, and its route maps to the v1 view it replaces', (t) => {
+test('a v2 story takes its subjects from its manifest, and its route maps to the v1 view it replaces', (t) => {
   const destination = temp(t, 'v2-site-');
   const source = temp(t, 'v2-source-');
   snapshot(source);
   pullV2({ source, destination });
   const manifests = temp(t, 'v2-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-a'] }));
   assert.equal(v2Story(route, destination, manifests).views[0].claims[0].id, 'claim-a');
   assert.equal(v1EventId(route), 'event-ballots-2026-10-21-counties-reject-ballots');
   rmSync(join(manifests, `${STORY}.json`));
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true }));
-  assert.throws(() => v2Story(route, destination, manifests), /has no subjects for story other--2026-10-21-elsewhere/);
+  assert.throws(() => v2Story(route, destination, manifests), /v2_subjects must list its subjects/);
+  writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-gone'] }));
+  assert.throws(() => v2Story(route, destination, manifests), /lacks subjects of story other--2026-10-21-elsewhere: subject-gone/);
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: true, state_event_id: 'event-x' }));
   assert.throws(() => v2Story(route, destination, manifests), /either v1 state or v2/);
   writeFileSync(join(manifests, 'other--2026-10-21-elsewhere.json'), JSON.stringify({ story: route, v2: ['subject-a'] }));
@@ -168,7 +172,7 @@ test('the v1 pull leaves out the story and chain views of v2 stories and the v1 
   const destination = temp(t, 'v1-site-');
   const manifests = temp(t, 'v1-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: ['subject-a'] }));
   for (const id of ['event-kept', v1EventId(route)]) {
     const event = { id, label: id, period: '2026-10', status: 'published' };
     writeFileSync(join(source, `${id}.json`), JSON.stringify({ event, status: 'published', root_id: id, edges: [], evidence: [] }));
@@ -188,10 +192,8 @@ test('the v1 pull leaves out the story and chain views of v2 stories and the v1 
   assert.throws(() => pullState({ source: join(source, 'absent'), destination, manifests }), /Committed v1 views remain for v2 stories/);
 });
 
-test('the committed snapshot written by the sai-core renderer reads and checks in the site', () => {
-  const committed = join(process.cwd(), 'data/v2');
-  if (!existsSync(join(committed, 'CURRENT'))) assert.fail('data/v2 has no committed snapshot');
-  const { views } = readV2(committed);
+test('a snapshot written by the sai-core renderer reads and checks in the site', () => {
+  const { views } = readV2(join(process.cwd(), 'scripts/fixtures/v2-rendered'));
   assert.ok(views.size >= 1);
 });
 
@@ -200,8 +202,9 @@ function pageSite(t, id, dist) {
   const statementHtml = `<li data-v2-statement="mention-a"><blockquote>${QUOTE}</blockquote></li>`;
   return {
     write, statementHtml,
-    story: (subject, home, { shown = subject, extra = '', statements = statementHtml, link = home.claim({ id: 'claim-a' }) } = {}) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><section data-v2-attribute="rejection rate"><article data-v2-claim="claim-a">${statements}<a data-v2-claim-link="claim-a" href="${link}">1 statement</a></article></section>${extra}<a data-v2-claims-link href="${home.claims}">All</a><li data-v2-source="artifact-a">artifact-a</li></section></details>`,
+    story: (subject, home, { shown = subject, extra = '', statements = statementHtml, link = home.claim({ id: 'claim-a' }) } = {}) => `<details data-v2-snapshot="${id}"><section data-v2-subject="${shown}"><section data-v2-attribute="rejection rate"><article data-v2-claim="claim-a">${statements}<a data-v2-claim-link="claim-a" href="${link}">1 statement</a></article></section>${extra}<a data-v2-claims-link href="${home.claims}">All</a><li data-v2-source="artifact-a">root-a</li></section></details>`,
     claimsPage: (subject, claims = '<article data-v2-claim="claim-a"></article>') => `<main data-v2-claims-page="${id}" data-v2-subject="${subject}"><section data-v2-attribute="rejection rate">${claims}</section></main>`,
+    homePage: (subject) => `<main data-v2-development="${subject}"></main>`,
     claimPage: (subject, statements = statementHtml) => `<main data-v2-claim-page="${id}" data-v2-subject="${subject}" data-v2-claim="claim-a">${statements}</main>`,
   };
 }
@@ -216,19 +219,20 @@ test('a subject id with a space reads, maps to its story and passes the page che
   pullV2({ source, destination });
   const manifests = temp(t, 'v2-manifests-');
   const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: route, v2: true, v2_subjects: [subject] }));
   assert.equal(v2Story(route, destination, manifests).views[0].id, subject);
   const home = subjectPaths(subject);
   assert.match(home.claims, /^\/developments\/development-ncse-absentee-ballot-guidance-[0-9a-f]{8}\/claims\/$/);
   const dist = temp(t, 'v2-dist-');
   const site = pageSite(t, id, dist);
   site.write(route, site.story(subject, home));
+  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
   const passed = checkV2Pages(dist, destination, manifests);
   assert.deepEqual(passed.failures, []);
   assert.deepEqual(passed.checked, [route]);
-  assert.equal(passed.report[0].sourceFallbacks, 1);
+  assert.equal(passed.report[0].sourceFallbacks, 0);
   site.write(route, site.story(subject, home, { shown: 'development-ncse' }));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /renders subjects development-ncse, snapshot names development-ncse absentee-ballot guidance/);
   site.write(route, site.story(subject, home, { extra: `<p>${'x'.repeat(41 * 1024)}</p>` }));
@@ -240,6 +244,7 @@ test('a subject id with a space reads, maps to its story and passes the page che
   site.write(route, site.story(subject, home));
   site.write(home.claims, site.claimsPage(subject, '<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lists claims 2, expected 1/);
+  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject, ''));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
@@ -257,14 +262,15 @@ test('a subject listed under two stories has one set of claim pages, at its home
   pullV2({ source, destination });
   const manifests = temp(t, 'v2-manifests-');
   const routes = ['/events/ballots/2026-10-21-counties-reject-ballots/', '/events/ballots/2026-10-22-counties-count-again/'];
-  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: routes[0], v2: true }));
-  writeFileSync(join(manifests, `${other}.json`), JSON.stringify({ story: routes[1], v2: true }));
+  writeFileSync(join(manifests, `${STORY}.json`), JSON.stringify({ story: routes[0], v2: true, v2_subjects: [subject] }));
+  writeFileSync(join(manifests, `${other}.json`), JSON.stringify({ story: routes[1], v2: true, v2_subjects: [subject] }));
   const homes = subjectHomes(destination, manifests).homes;
   assert.deepEqual(homes.map((home) => [home.subject, home.slug, home.stories]), [[subject, subject, routes]]);
   const home = subjectPaths(subject);
   const dist = temp(t, 'v2-dist-');
   const site = pageSite(t, id, dist);
   for (const route of routes) site.write(route, site.story(subject, home));
+  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
   const passed = checkV2Pages(dist, destination, manifests);
@@ -324,5 +330,121 @@ test('claims are grouped by attribute within their priority band, in the order e
 test('a quantity renders as a point or as a range between its bounds', () => {
   assert.equal(valueText({ type: 'quantity', amount: '2.6', unit: 'percent', dimension: 'share' }), '2.6 percent');
   assert.equal(valueText({ type: 'quantity', amount: '3.50', upper: '3.75', unit: 'percent', dimension: 'rate' }), '3.50–3.75 percent');
-  assert.equal(valueText({ type: 'forecast', outcome: { type: 'quantity', amount: '1', upper: '2', unit: 'cuts', dimension: 'n' }, horizon: { at: '2026-12-31' } }), '1–2 cuts by 2026-12-31');
+  assert.equal(valueText({ type: 'forecast', outcome: { type: 'quantity', amount: '1', upper: '2', unit: 'cuts', dimension: 'n' }, horizon: { at: '2026-12-31' } }), '1–2 cuts by December 31, 2026');
+});
+
+const packedFixture = (t) => {
+  const source = temp(t, 'v2-source-');
+  const id = snapshot(source);
+  const archive = join(temp(t, 'v2-store-'), `${id}.tgz`);
+  execFileSync('tar', ['-czf', archive, '-C', source, `snapshots/${id}`]);
+  return { id, archive, store: dirname(archive) };
+};
+
+async function serve(t, store) {
+  const server = createServer((request, response) => {
+    const path = join(store, request.url);
+    if (!existsSync(path)) { response.writeHead(404); response.end(); return; }
+    response.writeHead(200); response.end(readFileSync(path));
+  });
+  await new Promise((done) => server.listen(0, '127.0.0.1', done));
+  t.after(() => server.close());
+  return `http://127.0.0.1:${server.address().port}`;
+}
+
+test('a build fetches the snapshot git pins, checks it against the pin and keeps only it', async (t) => {
+  const { id, store } = packedFixture(t);
+  const destination = temp(t, 'v2-site-');
+  writeFileSync(join(destination, 'CURRENT'), `${id}\n`);
+  mkdirSync(join(destination, 'snapshots', 'older'), { recursive: true });
+  await fetchPinned({ destination, store: await serve(t, store), accessKeyId: undefined });
+  assert.deepEqual(readdirSync(join(destination, 'snapshots')), [id]);
+  assert.equal(readV2(destination).views.get('subject-a').label, 'Ballot rejections');
+  await fetchPinned({ destination, store: 'http://127.0.0.1:1', accessKeyId: undefined });
+});
+
+test('a pin with no snapshot, an unset store or an archive of other bytes fails and leaves nothing behind', async (t) => {
+  const { id, archive, store } = packedFixture(t);
+  const destination = temp(t, 'v2-site-');
+  writeFileSync(join(destination, 'CURRENT'), `${id}\n`);
+  await assert.rejects(fetchPinned({ destination, store: undefined, accessKeyId: undefined }), /SAI_SNAPSHOTS_URL is not set/);
+  const url = await serve(t, store);
+  const other = temp(t, 'v2-other-');
+  const otherId = snapshot(other, { label: 'Other bytes' });
+  const swapped = temp(t, 'v2-swapped-');
+  cpSync(join(other, 'snapshots', otherId), join(swapped, 'snapshots', id), { recursive: true });
+  execFileSync('tar', ['-czf', archive, '-C', swapped, `snapshots/${id}`]);
+  await assert.rejects(fetchPinned({ destination, store: url, accessKeyId: undefined }));
+  assert.deepEqual(readdirSync(join(destination, 'snapshots')), []);
+  rmSync(archive);
+  await assert.rejects(fetchPinned({ destination, store: url, accessKeyId: undefined }), /answered 404/);
+  assert.deepEqual(readdirSync(join(destination, 'snapshots')), []);
+});
+
+test('a source is named by its site when it carries no publisher or title, and by its artifact only when it has nothing else', async () => {
+  const { sourceLabel } = await import('../src/lib/v2-brief.mjs');
+  assert.deepEqual(sourceLabel({ artifact: 'a1', root: 'www.foxnews.com', attributes: { custody: 'missing' } }), { publisher: 'foxnews.com', title: null, fallback: false, text: 'foxnews.com' });
+  assert.equal(sourceLabel({ artifact: 'a1', root: 'www.bls.gov', attributes: { source_title: 'Employment Situation' } }).text, 'bls.gov, Employment Situation');
+  assert.equal(sourceLabel({ artifact: 'a1', root: 'x.com', attributes: { publisher: 'BLS', title: 'Jobs' } }).text, 'BLS, Jobs');
+  assert.deepEqual(sourceLabel({ artifact: 'a1', root: null, attributes: {} }), { publisher: null, title: null, fallback: true, text: 'a1' });
+});
+
+test('a date reads at the precision its source gave it', () => {
+  assert.equal(valueText({ type: 'date', at: { at: '2027-01-01', precision: 'year' } }), '2027');
+  assert.equal(valueText({ type: 'date', at: { at: '2026-10-01', precision: 'month' } }), 'October 2026');
+  assert.equal(valueText({ type: 'date', at: { at: '2026-10-09', precision: 'day' } }), 'October 9, 2026');
+});
+
+test('a development publishes on three independent sources behind a claim with a value, newest first', async () => {
+  const { developmentEntry, rankClaims, selectedDevelopments } = await import('../src/lib/v2-brief.mjs');
+  const claim = (id, independent, state = 'established') => ({ id, attribute: 'count', state, independent, statements: [], heads: [], basis: [] });
+  const view = (id, published_at, claims) => ({ id, label: id, claims, statements: [], sources: [{ artifact: id, published_at }] });
+  const views = [view('older', '2026-10-01T00:00:00Z', [claim('a', 3)]), view('newer', '2026-11-01T00:00:00Z', [claim('b', 4), claim('c', 1, 'disputed')]), view('thin', '2026-11-02T00:00:00Z', [claim('d', 2)]), view('emptied', '2026-11-02T00:00:00Z', [claim('e', 9, 'empty')])];
+  const selected = selectedDevelopments({ views: new Map(views.map((item) => [item.id, item])) });
+  assert.deepEqual(selected.map((item) => item.id), ['newer', 'older']);
+  assert.deepEqual(rankClaims(views[3]), []);
+  assert.deepEqual(developmentEntry(views[1]), { href: '/developments/newer/', title: 'newer', date: '2026-11-01', summary: '2 claims from 1 source; sources differ on 1' });
+});
+
+test('the page gate requires a selected development to have its home and its place on the list', async (t) => {
+  const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
+  const source = temp(t, 'v2-source-');
+  const destination = temp(t, 'v2-site-');
+  const id = snapshot(source, { claim: { independent: 3 } });
+  pullV2({ source, destination });
+  const manifests = temp(t, 'v2-manifests-');
+  const dist = temp(t, 'v2-dist-');
+  const site = pageSite(t, id, dist);
+  const home = subjectPaths('subject-a');
+  site.write(home.claims, site.claimsPage('subject-a'));
+  site.write(home.claim({ id: 'claim-a' }), site.claimPage('subject-a'));
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, ['subject-a: development page missing at /developments/subject-a/', 'developments list page missing: /developments/']);
+  site.write(home.home, site.homePage('subject-a'));
+  site.write('/developments/', '<a data-v2-development-link href="/developments/other/"></a>');
+  assert.match(checkV2Pages(dist, destination, manifests).failures[0], /\/developments\/: lists 1 developments, not the selection's page in order/);
+  site.write('/developments/', `<a data-v2-development-link href="${home.home}"></a>`);
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, []);
+});
+
+test('a story naming a subject that folded into another shows the survivor once, through a chain of merges', async () => {
+  const { storySubjects } = await import('../src/lib/v2.mjs');
+  const view = (id, related = []) => [id, { id, related }];
+  const snapshot = { id: 's', views: new Map([view('kept', [['merge', 'kept', 'middle'], ['merge', 'middle', 'first']])]) };
+  assert.deepEqual(storySubjects(snapshot, { story: 'a', subjects: ['kept', 'middle', 'first'] }), ['kept']);
+  assert.throws(() => storySubjects(snapshot, { story: 'a', subjects: ['gone'] }), /lacks subjects of story a: gone/);
+});
+
+test('amounts group their thousands, including a range and a decimal', () => {
+  assert.equal(valueText({ type: 'quantity', amount: '20000', unit: 'ballots' }), '20,000 ballots');
+  assert.equal(valueText({ type: 'quantity', amount: '1250000.5', upper: '2000000', unit: 'dollars' }), '1,250,000.5–2,000,000 dollars');
+  assert.equal(valueText({ type: 'quantity', amount: '950', unit: 'people' }), '950 people');
+});
+
+test('a source speaking in its own voice has no speaker on the page, and attributes read as headings', async () => {
+  const { attributeHeading, statedBy } = await import('../src/lib/v2-brief.mjs');
+  assert.equal(statedBy({ speaker: "outlet's own" }), null);
+  assert.equal(statedBy({ speaker: 'Liz Landers' }), 'Liz Landers');
+  assert.equal(attributeHeading('poll_result'), 'Poll results');
+  assert.equal(attributeHeading('new_thing'), 'New thing');
 });

@@ -1,17 +1,17 @@
 ---
 import ClaimStanding from "./v2/ClaimStanding.astro";
 import Statement from "./v2/Statement.astro";
-import { BRIEF_COMPETING, bestStatements, briefGroups, claimStatements, sourceLabel, subjectPaths } from "../lib/v2-brief.mjs";
-const { story, supporting = false } = Astro.props;
-const count = (view, state) => view.claims.filter((claim) => claim.state === state).length;
+import { BRIEF_COMPETING, attributeHeading, bestStatements, briefGroups, claimStatements, shownClaims, sourceLabel, subjectPaths } from "../lib/v2-brief.mjs";
+const { story, supporting = false, labelled = true } = Astro.props;
+const count = (view, state) => shownClaims(view).filter((claim) => claim.state === state).length;
 ---
 <details class="record-ledger" data-record-ledger data-layer="fact" data-v2-snapshot={story.snapshot} open={!supporting}>
-  <summary>What the sources say <span class="series-count">{story.views.reduce((sum, view) => sum + view.claims.length, 0)}</span></summary>
+  <summary>What the sources say <span class="series-count">{story.views.reduce((sum, view) => sum + shownClaims(view).length, 0)}</span></summary>
   {story.views.map((view) => { const paths = subjectPaths(view.id); return <section data-v2-subject={view.id}>
-    <h3 data-extracted>{view.label}</h3>
-    <p class="ledger-source">{view.claims.length} claims from {view.sources.length} sources; {count(view, "disputed")} disputed, {count(view, "unjudged")} with sources not yet compared. Disputed claims come first, then those whose sources are not yet compared, then those with the most independent sources.</p>
+    {labelled && <h3 data-extracted>{view.label}</h3>}
+    <p class="ledger-source">{shownClaims(view).length} claims from {view.sources.length} sources; on {count(view, "disputed")} the sources give different values, and {count(view, "unjudged")} are not yet compared. Those come first, then the claims with the most independent sources.</p>
     {briefGroups(view).map(([attribute, claims]) => <section data-v2-attribute={attribute}>
-      <h4 data-extracted>{attribute}</h4>
+      <h4>{attributeHeading(attribute)}</h4>
       {claims.map((claim) => {
         const total = claimStatements(view, claim).length;
         return <article class="ledger-row" data-v2-claim={claim.id} data-v2-state={claim.state}>
@@ -21,9 +21,9 @@ const count = (view, state) => view.claims.filter((claim) => claim.state === sta
         </article>;
       })}
     </section>)}
-    <p><a href={paths.claims} data-v2-claims-link>All {view.claims.length} claims by attribute</a></p>
+    <p><a href={paths.claims} data-v2-claims-link>All {shownClaims(view).length} claims by attribute</a></p>
     <details class="v2-sources"><summary>Sources <span class="series-count">{view.sources.length}</span></summary>
-      <ul>{[...view.sources].sort((a, b) => b.statements - a.statements || a.artifact.localeCompare(b.artifact)).map((source) => <li data-v2-source={source.artifact}><span data-extracted>{sourceLabel(source).text}</span> · {source.statements} {source.statements === 1 ? "statement" : "statements"}</li>)}</ul>
+      <ul>{[...view.sources].sort((a, b) => b.statements - a.statements || a.artifact.localeCompare(b.artifact)).map((source) => <li data-v2-source={source.artifact}>{source.uri ? <a href={source.uri} data-extracted>{sourceLabel(source).text}</a> : <span data-extracted>{sourceLabel(source).text}</span>} · {source.statements} {source.statements === 1 ? "statement" : "statements"}</li>)}</ul>
     </details>
   </section>; })}
 </details>

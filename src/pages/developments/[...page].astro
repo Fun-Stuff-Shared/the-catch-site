@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { readV2 } from "../../lib/v2.mjs";
+import { DEVELOPMENTS_PER_PAGE, developmentEntry, selectedDevelopments } from "../../lib/v2-brief.mjs";
+import { formatDate } from "../../lib/presentation.mjs";
+export function getStaticPaths({ paginate }) {
+  return paginate(selectedDevelopments(readV2()).map(developmentEntry), { pageSize: DEVELOPMENTS_PER_PAGE });
+}
+const { page } = Astro.props;
+---
+<BaseLayout title="Developments | The Catch" current="Home" noindex>
+  <main class="discovery" id="main-content">
+    <header class="page-intro"><h1>Developments</h1><p>What the sources report, gathered by software and listed newest first. A development appears here when at least three independent sources back one of its claims. No editor has read these pages.</p></header>
+    <div class="browse-toolbar"><h2>{page.total} developments · Page {page.currentPage} of {page.lastPage}</h2></div>
+    <ul class="developments-list">{page.data.map((entry) => <li><a href={entry.href} data-v2-development-link data-extracted>{entry.title}</a><p class="ledger-source">{entry.date && <>{formatDate(entry.date)} · </>}{entry.summary}</p></li>)}</ul>
+    <nav class="feed-pagination" aria-label="Developments pages">{page.url.prev && <a href={page.url.prev}>Previous</a>}<span>Page {page.currentPage} of {page.lastPage}</span>{page.url.next && <a href={page.url.next}>Next</a>}</nav>
+  </main>
+</BaseLayout>

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/pull-state.mjs && node scripts/pull-v2.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/work-evidence.mjs && node scripts/facts-claims.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
+    "build": "NODE_OPTIONS=--max-old-space-size=6144 node scripts/pull-state.mjs && node scripts/pull-v2.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/work-evidence.mjs && node scripts/facts-claims.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
     "build:news-records": "node scripts/build-news-records.mjs",
     "check": "node scripts/check-events.mjs",
     "dev": "astro dev",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "astro": "^7.0.9",
+    "aws4fetch": "^1.0.20",
     "parse5": "^7.3.0"
   }
 }

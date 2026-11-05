@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SubjectBrief from "../../../components/SubjectBrief.astro";
+import { subjectHomes } from "../../../lib/v2.mjs";
+import { developmentEntry } from "../../../lib/v2-brief.mjs";
+import { formatDate } from "../../../lib/presentation.mjs";
+import { storyCatalog } from "../../../lib/discovery.mjs";
+export function getStaticPaths() {
+  const { snapshot, homes } = subjectHomes();
+  const titles = new Map(storyCatalog().map((story) => [story.href, story.title]));
+  return homes.map((home) => ({ params: { subject: home.slug }, props: { snapshot, home, stories: home.stories.map((route) => ({ route, title: titles.get(route) ?? route })) } }));
+}
+const { snapshot, home, stories } = Astro.props;
+const { view } = home;
+const entry = developmentEntry(view);
+---
+<BaseLayout title={`${view.label} | The Catch`} current="Home" noindex>
+  <div slot="locator" class="locator"><a href="/developments/">Developments</a>{entry.date && <span>{formatDate(entry.date)}</span>}</div>
+  <div class="content">
+    <main class="story" data-v2-development={view.id}>
+      <h1 data-extracted>{view.label}</h1>
+      <p class="story-dek">{entry.summary}. Software gathered this page from the sources it lists; no editor has read it.</p>
+      {stories.length > 0 && <p>Our reporting: {stories.map(({ route, title }, i) => <>{i > 0 && " · "}<a href={route}>{title}</a></>)}</p>}
+      <SubjectBrief story={{ snapshot, views: [view] }} labelled={false} />
+    </main>
+  </div>
+</BaseLayout>

@@ -1,11 +1,11 @@
 ---
 import { formatDate } from "../../lib/presentation.mjs";
-import { sourceFor, sourceLabel } from "../../lib/v2-brief.mjs";
+import { sourceFor, sourceLabel, statedBy } from "../../lib/v2-brief.mjs";
 const { view, statement } = Astro.props;
 const source = sourceFor(view, statement);
 ---
 <li data-v2-statement={statement.id} data-v2-status={statement.status}>
   <blockquote data-source-copy>{statement.quote}</blockquote>
-  <p class="ledger-source"><span data-extracted>{statement.speaker}</span>{source && <> · <span data-extracted>{sourceLabel(source).text}</span></>}{statement.as_of && <> · as of {formatDate(statement.as_of)}</>}</p>
+  <p class="ledger-source">{statedBy(statement) && <><span data-extracted>{statedBy(statement)}</span> · </>}{source && <>{source.uri ? <a href={source.uri} data-extracted>{sourceLabel(source).text}</a> : <span data-extracted>{sourceLabel(source).text}</span>}</>}{statement.as_of && <> · as of {formatDate(statement.as_of)}</>}</p>
   {statement.status !== "live" && <p>This statement was withdrawn.</p>}
 </li>

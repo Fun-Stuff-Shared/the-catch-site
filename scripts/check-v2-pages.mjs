@@ -2,7 +2,10 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "parse5";
 import { readV2, storySubjects, subjectHomes, v2Manifests } from "../src/lib/v2.mjs";
-import { V2_SECTION_BUDGET, attributeGroups, bestStatements, briefGroups, claimStatements, sourceLabel, subjectPaths } from "../src/lib/v2-brief.mjs";
+import { DEVELOPMENTS_PER_PAGE, V2_SECTION_BUDGET, attributeGroups, bestStatements, briefGroups, claimStatements, rankClaims, selectedDevelopments, sourceLabel, subjectPaths } from "../src/lib/v2-brief.mjs";
+
+// Workers Paid carries 100,000 static asset files per version; the gate stops short of it so a growing selection fails here and not in the deploy.
+const ASSET_FILES = 90_000;
 
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 const text = (node) => node.nodeName === "#text" ? node.value : (node.childNodes ?? []).map(text).join("");
@@ -57,11 +60,11 @@ function claimPagesIn(dist) {
 export function checkV2Pages(dist, directory, manifests) {
   const failures = [], checked = [], report = [];
   const rows = v2Manifests(manifests);
-  if (!rows.length) return { failures, checked, report };
   const snapshot = readV2(directory);
-  for (const { route, story } of rows) {
+  for (const row of rows) {
+    const { route } = row;
     let subjects;
-    try { subjects = storySubjects(snapshot, story); } catch (error) { failures.push(`${route}: ${error.message}`); continue; }
+    try { subjects = storySubjects(snapshot, row); } catch (error) { failures.push(`${route}: ${error.message}`); continue; }
     const brief = page(dist, route);
     if (!brief) { failures.push(`v2 story page missing: ${route}`); continue; }
     const sections = brief.marked("data-v2-snapshot");
@@ -113,6 +116,9 @@ export function checkV2Pages(dist, directory, manifests) {
   for (const { subject, view, stories } of homes) {
     const paths = subjectPaths(subject);
     expected.set(JSON.stringify([subject, null]), paths.claims);
+    const homePage = page(dist, paths.home);
+    if (!homePage) failures.push(`${subject}: development page missing at ${paths.home}`);
+    else if (homePage.marked("data-v2-development").length !== 1 || attr(homePage.marked("data-v2-development")[0], "data-v2-development") !== subject) failures.push(`${paths.home}: does not render ${subject}`);
     const claimsPage = page(dist, paths.claims);
     if (!claimsPage) failures.push(`${subject}: claims page missing at ${paths.claims}`);
     else {
@@ -127,7 +133,7 @@ export function checkV2Pages(dist, directory, manifests) {
       }
     }
     let claimPages = 0, claimPageBytes = 0;
-    for (const claim of view.claims) {
+    for (const claim of rankClaims(view)) {
       expected.set(JSON.stringify([subject, claim.id]), paths.claim(claim));
       const claimPage = page(dist, paths.claim(claim));
       if (!claimPage) { failures.push(`${subject}: claim page missing for ${claim.id} at ${paths.claim(claim)}`); continue; }
@@ -143,11 +149,22 @@ export function checkV2Pages(dist, directory, manifests) {
     const home = expected.get(JSON.stringify([subject, claim]));
     if (home !== route) failures.push(`${route}: renders ${claim === null ? "the claims" : `claim ${claim}`} of ${subject}${home ? `, whose one home is ${home}` : ", which no v2 story shows"}`);
   }
+  const listed = selectedDevelopments(snapshot).map((view) => subjectPaths(view.id).home);
+  for (let start = 0; start < listed.length; start += DEVELOPMENTS_PER_PAGE) {
+    const route = start ? `/developments/${start / DEVELOPMENTS_PER_PAGE + 1}/` : "/developments/";
+    const list = page(dist, route);
+    if (!list) { failures.push(`developments list page missing: ${route}`); continue; }
+    const links = list.marked("data-v2-development-link").map((node) => attr(node, "href"));
+    if (!same(links, listed.slice(start, start + DEVELOPMENTS_PER_PAGE))) failures.push(`${route}: lists ${links.length} developments, not the selection's page in order`);
+  }
+  const files = readdirSync(dist, { recursive: true, withFileTypes: true }).filter((entry) => entry.isFile()).length;
+  if (files > ASSET_FILES) failures.push(`dist holds ${files} files, over the ${ASSET_FILES} a Worker version can carry with room to grow`);
+  report.push({ developments: listed.length, files });
   return { failures, checked, report };
 }
 
 export function formatV2Report(report) {
-  return report.map((row) => row.route
+  return report.map((row) => row.developments !== undefined ? `v2 selection: ${row.developments} developments, ${row.files} files in dist` : row.route
     ? `v2 ${row.route}: page ${row.pageBytes} B, brief ${row.sectionBytes} B (budget ${V2_SECTION_BUDGET}), sources named by artifact id ${row.sourceFallbacks}/${row.sources}`
     : `v2 ${row.subject}: on ${row.stories} ${row.stories === 1 ? "story" : "stories"}, claims page ${row.claimsPageBytes} B, ${row.claimPages} claim pages ${row.claimPageBytes} B`).join("\n");
 }

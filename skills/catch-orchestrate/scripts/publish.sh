@@ -28,7 +28,7 @@ for b in $merges; do
     print "merge of $b conflicts with main or an earlier --merge branch. In $b's worktree, drop the build output (git checkout -- data/state src/data/news-records.json; git clean -fdq -- data/state data/sources/news-state), merge main, resolve the conflict there, and run publish.sh again" >&2; exit 1 }
 done
 
-# A v2 story renders from the committed sai-core snapshot in data/v2; only v1 stories are staged in catch-state,
+# A v2 story renders from the sai-core snapshot data/v2/CURRENT pins; only v1 stories are staged in catch-state,
 # so only their pins are read for staging. The gate checks every manifest's records against their saved text.
 v1=() v2=()
 for s in $stories; do
@@ -79,9 +79,9 @@ if (( ${#views} )); then
 fi
 
 tmp=$(mktemp -d)
-git archive HEAD data/state data/v2 | tar -x -C $tmp
+git archive HEAD data/state | tar -x -C $tmp
 node -e "import('./scripts/pull-state.mjs').then(m=>m.pullState({source:'$tmp/no-catch-state',destination:'$tmp/data/state',manifests:'checks/manifests'}))" || { print "committed v1 state still holds a v2 story's views or the v1 events under them" >&2; exit 1 }
-for s in $v2; do node -e "import('./src/lib/v2.mjs').then(v=>v.storySubjects(v.readV2('$tmp/data/v2'),'$s'))" || { print "committed v2 snapshot lacks $s" >&2; exit 1 }; done
+for s in $v2; do node -e "import('./src/lib/v2.mjs').then(v=>{const row=v.v2Manifests('checks/manifests').find(r=>r.story==='$s');v.storySubjects(v.readV2('data/v2'),row)})" || { print "the pinned v2 snapshot lacks a subject of $s" >&2; exit 1 }; done
 for s in $v1; do node -e "import('./src/lib/state.mjs').then(m=>{if(!m.readState('$tmp/data/state').events.get('event-${s/--/-}'))process.exit(1)})" || { print "committed state lacks event-${s/--/-}" >&2; exit 1 }; done
 print "committed state holds ${(j:, :)stories}"
 
