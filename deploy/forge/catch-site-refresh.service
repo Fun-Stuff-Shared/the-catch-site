@@ -7,6 +7,7 @@ User=sai
 Group=sai
 Type=oneshot
 EnvironmentFile=/etc/sai/catch-site-refresh.env
+Environment=GIT_SSH_COMMAND="ssh -i /srv/sai/catch-site/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
 ExecStart=/srv/sai/catch-site/refresh-v2-pin.py --archive /srv/sai/views/published.tgz --branch main --remote git@github.com:Fun-Stuff-Shared/the-catch-site.git
 Nice=10
 TimeoutStartSec=30min

@@ -466,4 +466,9 @@ test('development pages are off unless the build asks, and the gate refuses one 
   site.write('/developments/', '');
   const failures = checkV2Pages(dist, destination, manifests).failures;
   assert.ok(failures.some((failure) => failure.includes('list page exists with development pages off')));
+  site.write('/', '<div data-latest-developments></div>');
+  writeFileSync(join(dist, 'search-index.json'), JSON.stringify([{ href: '/developments/subject-a/' }]));
+  const shown = checkV2Pages(dist, destination, manifests).failures;
+  assert.ok(shown.some((failure) => failure.includes('home page lists developments')));
+  assert.ok(shown.some((failure) => failure.includes('search-index.json: lists developments')));
 });

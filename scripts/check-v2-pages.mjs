@@ -159,7 +159,12 @@ export function checkV2Pages(dist, directory, manifests) {
     const links = list.marked("data-v2-development-link").map((node) => attr(node, "href"));
     if (!same(links, listed.slice(start, start + DEVELOPMENTS_PER_PAGE))) failures.push(`${route}: lists ${links.length} developments, not the selection's page in order`);
   }
-  if (!listed.length && existsSync(join(dist, "developments/index.html"))) failures.push("/developments/: a list page exists with development pages off");
+  if (!listed.length) {
+    if (existsSync(join(dist, "developments/index.html"))) failures.push("/developments/: a list page exists with development pages off");
+    if (page(dist, "/")?.html.includes("data-latest-developments")) failures.push("/: the home page lists developments with development pages off");
+    const search = join(dist, "search-index.json");
+    if (existsSync(search) && readFileSync(search, "utf8").includes('"/developments/')) failures.push("search-index.json: lists developments with development pages off");
+  }
   const files = readdirSync(dist, { recursive: true, withFileTypes: true }).filter((entry) => entry.isFile()).length;
   if (files > ASSET_FILES) failures.push(`dist holds ${files} files, over the ${ASSET_FILES} a Worker version can carry with room to grow`);
   report.push({ developments: listed.length, files });
