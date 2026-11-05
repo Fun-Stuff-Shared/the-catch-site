@@ -2,14 +2,12 @@
 name: catch-orchestrate
 description: >
   Run a Catch story from candidate to live page as the orchestrator: open the story (accept
-  the candidate in catch-state, link it into its series, cut the worktree, launch the author
+  the candidate from v2, name its subject in the manifest, cut the worktree, launch the author
   in a headed cmux thread), supervise the author through catch-record and catch-story by
-  message, make the editorial calls the human delegates, rename the event label to the
-  headline, finish the manifest's figures and attestations, stage the figures in
-  catch-state, publish to main with the state views, verify the live page, and close the
+  message, make the editorial calls the human delegates, finish the manifest's figures and attestations,
+  publish to main, verify the live page, send the story to the core, and close the
   worktree. Use when asked to run, orchestrate, open, publish, ship or close a Catch story,
-  to relay instructions to a story's author, or to fix a story that will not build because
-  of its state label or views.
+  or to relay instructions to a story's author.
 license: CC BY-NC 4.0
 metadata:
   author: the-catch
@@ -21,33 +19,22 @@ metadata:
 You run the story; the author writes it. The author is a Claude session in its own
 worktree following `catch-record` (stage one) and `catch-story` (stage two). You open the
 story, answer its questions, read what it sends at the bytes, decide what the human has
-delegated, and do everything that touches shared state: catch-state, main, the live site.
+delegated, and do everything that touches shared state: main, the live site, the core.
 The author never touches those.
 
-Repo: `/Volumes/4/GitHub/the-catch-site`. State: `/Volumes/4/CF/catch-state` (written only
-through the `sai.cli state` commands below, from `/Volumes/4/CF/sai`). Candidates:
-`/Volumes/4/CF/news-fqs-pilot`. Scripts: `skills/catch-orchestrate/scripts/`.
+Repo: `/Volumes/4/GitHub/the-catch-site`. Candidates and evidence: the pinned sai-core v2 snapshot in `data/v2`. Scripts: `skills/catch-orchestrate/scripts/`.
 
 ## 1. Open the story
 
-Find the candidate (`cd /Volumes/4/CF/news-fqs-pilot && python3 scripts/story_accept.py list`),
-read enough of its saved articles to fix the moment and its date, and decide whether it
-continues an earlier story: the next jobs report, a later ruling in a case already on the
-site. Then:
+Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]`, read enough of its view and sources to fix the moment and its date, and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
 
 ```bash
 CATCH_ORCHESTRATOR=<your name in ListAgents> zsh skills/catch-orchestrate/scripts/open-story.sh \
-  <candidate-id> <subject-slug> <YYYY-MM-DD-what-happened> "<subject in reader words>" "<working headline>" \
-  [--decline <sibling candidate-id>]... [--follows <previous event id>]
+  <v2-subject-id> <series-slug> <YYYY-MM-DD-what-happened> "<subject in reader words>" "<working headline>" \
+  [--follows <previous story id>]
 ```
 
-It accepts the candidate as `event-<subject>-<slug>`, declines the siblings that cover the
-same event, reparents the event onto the previous story's when it continues a series (the
-subject page and the gate require every story of a subject on one connected series),
-refreshes the view, cuts `.worktrees/<slug>` from main on `author/<slug>`, writes the
-kickoff from `assets/kickoff.md`, and launches the author in a headed cmux workspace. Then
-subscribe to the author (`SendMessage` with `notify_when_idle`). If its first report
-names a different story id, tell it to keep the accepted one.
+It cuts `.worktrees/<slug>` on `author/<slug>`, fetches the pinned snapshot there, writes the manifest with `v2: true` and the candidate in `v2_subjects`, writes the kickoff from `assets/kickoff.md`, and launches the author in a headed cmux workspace. Then subscribe to the author (`SendMessage` with `notify_when_idle`). If its first report names a different story id, tell it to keep this one.
 
 ## 2. Stage one: the record
 
@@ -101,7 +88,7 @@ as problems, not sentences. Then give the human the URL.
 
 ## 4. Finish the manifest
 
-The gate and catch-state read more than the page. Before publishing, the author fills, and
+The gate reads more than the page. Before publishing, the author fills, and
 you check:
 
 - `completed_by` and `date`.
@@ -131,19 +118,7 @@ done" is not that. Then, on their word:
 zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <other branch>]... <story-id>...
 ```
 
-It cuts a publish worktree from main, merges the branches, refuses a manifest with no
-figures or saved records that do not match it, runs the full build and gate (which refuses
-missing attestations), refuses a story whose cited claims have not held in the claim check
-or whose citing blocks have not passed the bind check as they read now
-(`claims.py verify`), stages each story's figures and pins in catch-state from the publish worktree
-(`state stage-story`, no model calls), verifies the state, copies each story's event view and every chain view that names it into `data/state/`
-and commits them (`state:`), checks that the committed views alone hold every story (a story whose manifest says `v2` is not staged and its pins are not read for staging, the gate checking its records instead: it must be held by the committed `data/v2` snapshot and absent from the committed views) (the
-hosted build has no catch-state and reads only committed views; a story view without its
-chain fails on the host and the site silently keeps the old build), builds again, and only
-then fast-forwards main and pushes it. A failure anywhere before that leaves main where it
-was. It then polls each live URL until it serves the pushed commit's build (every page carries it as `<meta name="catch-build">`; a v2 story must also show the committed `data/v2` snapshot, since a story can keep its headline across builds), counts em dashes on the live bytes and
-runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other
-stories' unpushed commits: list them for the human before the first push of the day.
+It cuts a publish worktree from main, merges the branches, fetches the pinned snapshot, refuses a manifest that is not v2 or has no figures, runs the full build and gate (which refuses missing attestations and a `v2_subjects` entry the snapshot cannot resolve), refuses a story whose cited claims have not held in the claim check or whose citing blocks have not passed the bind check as they read now (`claims.py verify`), and only then fast-forwards main and pushes it. A failure anywhere before that leaves main where it was. It then polls each live URL until it serves the pushed commit's build and the pinned snapshot (every page carries the build as `<meta name="catch-build">`, since a story can keep its headline across builds), counts em dashes on the page, and runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other stories' unpushed commits: list them for the human before the first push of the day. `CATCH_BASE=<branch> CATCH_LIVE=<that branch's preview URL>` publishes to a branch instead; a non-main branch builds a preview and takes no production traffic.
 
 Then open the live page in the story view and look at it, at 100 percent.
 
@@ -168,12 +143,7 @@ cannot close a content gap.
 zsh skills/catch-orchestrate/scripts/close-story.sh .worktrees/<slug> <story-id>
 ```
 
-Once the story is live, it refuses while anything still runs in the worktree, copies
-uncommitted files that are not build output to `.worktrees/.closed/`, removes the worktree
-(the branch stays), and re-registers the story's records in catch-state so their saved text
-reads from the main checkout. Close the publish worktree with every story it published
-(`close-story.sh .worktrees/publish-<stamp> <story-id>...`): staging pointed those records
-at it. Close scratch worktrees without a story id.
+Once the story is live, it refuses while anything still runs in the worktree, sends the story's records, figures and claims to the core (`scripts/send-story-to-v2.py`, which holds them on `subject-event-<series>-<moment>`), copies uncommitted files that are not build output to `.worktrees/.closed/`, and removes the worktree (the branch stays). Close scratch worktrees without a story id.
 
 ## Relaying
 
@@ -189,6 +159,5 @@ at it. Close scratch worktrees without a story id.
 
 - `npm run build` is the only build. `astro build` alone skips the record pages and pull-state.
 - The global git post-commit hook can hang on `git lfs`; scripts and authors commit with `git -c core.hooksPath=/dev/null`.
-- A build in any worktree overwrites `data/state/`, `src/data/news-records.json` and `data/sources/news-state/`; never commit them except through `publish.sh`, and discard them in the main checkout before fast-forwarding it.
-- A story merged without its views builds locally (the local build pulls catch-state) and fails on the host.
-- `story_accept.py` appends to the candidate files; an accepted candidate is not undone by deleting a line.
+- A build in any worktree overwrites `src/data/news-records.json`; never commit it it.
+- A story whose `v2_subjects` entry leaves the snapshot without a merge record fails the build; the last deploy keeps serving until the manifest names a subject that exists.

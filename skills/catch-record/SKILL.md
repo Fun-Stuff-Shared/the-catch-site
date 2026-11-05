@@ -30,7 +30,7 @@ and that is the point of having it. What reaches the page is decided by the plan
 
 Work in the story's worktree. Paths below are relative to it. `<story>` is
 `<subject>--<slug>`, e.g. `immigration-detention--2026-10-01-supreme-court-takes-up-bond-hearings`.
-Read from the shared state (`/Volumes/4/CF/catch-state`); never write to it.
+What the core holds on the event is in `data/v2` in this worktree; `node scripts/v2-candidates.mjs <words>` finds a development, and the manifest's `v2_subjects` names the one this story starts from. Those are leads, not the record: everything on the page is admitted and read at its source below.
 
 Outputs, all committed together at the end:
 - `checks/records/<story>.md`: the brief, from `assets/record-brief.md`

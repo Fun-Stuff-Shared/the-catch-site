@@ -65,7 +65,7 @@ def load_manifest(story, path):
         return json.loads(path.read_text())
     subject, slug, _, _ = paths(story)
     return {"subject": subject, "event": f"{subject}/{slug}", "story": f"/events/{subject}/{slug}/",
-            "date": slug[:10], "state_event_id": f"event-{subject}-{slug}",
+            "date": slug[:10], "v2": True, "v2_subjects": [],
             "sub_events": [], "records": [], "story_sources": []}
 
 

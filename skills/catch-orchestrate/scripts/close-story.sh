@@ -2,6 +2,7 @@
 # usage: close-story.sh <worktree path> [<story-id>]...   (no story id: a worktree with no story of its own)
 set -euo pipefail
 site=/Volumes/4/GitHub/the-catch-site
+base=${CATCH_BASE:-main}
 wt=${1:A}
 shift
 stories=($@)
@@ -10,9 +11,9 @@ users=$(lsof -a -d cwd -Fpn 2>/dev/null | awk -v w="$wt" '/^p/{p=substr($0,2)} /
 [[ -z $users ]] || { print "processes still working in $wt:" >&2; ps -o pid,command -p ${(j:,:)${(f)users}} >&2; exit 1 }
 for s in $stories; do
   m=checks/manifests/$s.json
-  command git -C $site cat-file -e main:$m 2>/dev/null || { print "$m is not on main; publish it first" >&2; exit 1 }
-  command git -C $site diff --quiet main -- $m || { print "$m in the main checkout differs from main" >&2; exit 1 }
+  command git -C $site cat-file -e $base:$m 2>/dev/null || { print "$m is not on $base; publish it first" >&2; exit 1 }
 done
+for s in $stories; do (cd $wt && python3 -I scripts/send-story-to-v2.py $s); done
 left=$site/.worktrees/.closed/${wt:t}-$(date +%Y%m%d-%H%M%S)
 mkdir -p $left
 python3 - $wt $left <<'EOF'
@@ -41,13 +42,4 @@ print(f"copied {copied} uncommitted paths and the diff to {left}")
 EOF
 branch=$(command git -C $wt branch --show-current) head=$(command git -C $wt rev-parse --short HEAD)
 command git -C $site worktree remove --force $wt
-for s in $stories; do
-  PYTHONPATH=/Volumes/4/CF/sai-prod/src PYTHONDONTWRITEBYTECODE=1 /Volumes/4/CF/sai/.venv/bin/python -c '
-import sys
-from pathlib import Path
-from sai.state.story_manifest import register_pins
-site = Path(sys.argv[1])
-register_pins(Path("/Volumes/4/CF/catch-state/log"), site, site / sys.argv[2])
-print(sys.argv[2], "records now read their text from", site)' $site checks/manifests/$s.json
-done
 print "closed $wt (branch ${branch:-detached} at $head kept)"
