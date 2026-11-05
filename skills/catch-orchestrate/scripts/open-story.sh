@@ -46,7 +46,7 @@ trap - ERR
 orchestrator=${CATCH_ORCHESTRATOR:-the session that ran open-story.sh}
 kick=$wt/../.kickoff-$slug.md
 LABEL=$label STORY=$story CANDIDATE=$candidate WORKTREE=$wt BRANCH=$branch \
-FOLLOWS=${follows:+"It follows $follows in the $subject series: read that story's page and brief first."} \
+FOLLOWS=${follows:+"It follows $follows in the $subject series: read that story's page first, and its brief in checks/records if it has one."} \
 SEARCH=$words SINCE=${slug[1,10]} ORCHESTRATOR=$orchestrator python3 -I -c '
 import os, sys
 t = open(sys.argv[1]).read()
