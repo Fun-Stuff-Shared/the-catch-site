@@ -156,6 +156,10 @@ def admit(story, specs_path):
     if errors:
         sys.exit("nothing admitted:\n" + "\n".join(errors))
     m = load_manifest(story, man_path)
+    own = {path for r in m["records"] for path in (r.get("pinned_path"), r.get("text_path"))}
+    taken = [path for rec, *_ in ready for path in (rec["pinned_path"], rec["text_path"]) if (WT / path).exists() and path not in own]
+    if taken:
+        sys.exit("nothing admitted: these paths hold another story's records, so choose other ids:\n" + "\n".join(sorted(set(taken))))
     for rec, source, raw, text in ready:
         (WT / rec["pinned_path"]).parent.mkdir(parents=True, exist_ok=True)
         (WT / rec["pinned_path"]).write_bytes(raw)
