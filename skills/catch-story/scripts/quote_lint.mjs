@@ -34,7 +34,11 @@ for (const r of manifest.records) {
 }
 
 const stripTags = (s) => s.replace(citeTag, "").replace(/<[^>]+>/g, " ");
-const citesOf = (s) => readCites(s).filter((c) => c.readable);
+// A <Cite c="claim"> stands for the records its ledger claim cites.
+const ledgerPath = manifestPath.replace("checks/manifests", "checks/claims");
+const ledger = fs.existsSync(ledgerPath) ? new Map(JSON.parse(fs.readFileSync(ledgerPath, "utf8")).claims.map((claim) => [claim.id, claim])) : new Map();
+const claimCites = (s) => [...s.matchAll(/<Cite\b[^>]*\bc="([^"]+)"[^>]*>/g)].flatMap((match) => (ledger.get(match[1])?.evidence ?? []).map((evidence) => ({ s: evidence.record, passage: evidence.passage, readable: true })));
+const citesOf = (s) => [...readCites(s).filter((c) => c.readable), ...claimCites(s)];
 const spansOf = (s) => {
   const out = [];
   for (const mm of norm(stripTags(s)).matchAll(/"([^"]{8,}?)"/g)) {
@@ -55,6 +59,11 @@ const lineOf = (idx) => page.slice(0, idx).split("\n").length;
 
 // 1. Cite passages exist in their record. A Cite the lint cannot read is a finding, never a skip.
 for (const c of readCites(page)) {
+  const claim = /^<Cite\s+c="([^"]+)"\s*\/?>$/.exec(c.raw)?.[1];
+  if (claim) {
+    if (!ledger.has(claim)) findings.push(`L${lineOf(c.index)} cite: claim ${claim} is not in the ledger`);
+    continue;
+  }
   if (!c.readable) { findings.push(`L${lineOf(c.index)} cite: cannot be read; write the record id and the passage as literals (s="..." passage="..."): ${c.raw}`); continue; }
   if (c.passage === null) continue;
   const rec = records.get(c.s);

@@ -194,7 +194,7 @@ reader needs joined, and let the rhythm vary the way a good news story's does.
 npm run build      # the full build; never astro build alone, it skips the record pages
 zsh skills/catch-story/scripts/voice_lint.sh dist/events/<subject>/<slug>/index.html
 node skills/catch-story/scripts/lens_lint.mjs src/pages/events/<subject>/<slug>.astro
-node skills/catch-story/scripts/quote_lint.mjs src/pages/events/<subject>/<slug>.astro
+node skills/catch-story/scripts/quote_lint.mjs src/pages/events/<subject>/<slug>.astro  # reads <Cite c="claim"> through the ledger; a computed c={...} it reports as unreadable, so check those by hand
 ```
 
 The build runs the gate. Every failure is a defect on the page, fixed on the page. The
