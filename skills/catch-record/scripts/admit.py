@@ -101,7 +101,10 @@ def prepare(s, subject):
         if not status or not s.get("source_url"):
             return None, f"{i}: a local file needs source_url and capture_status"
         raw = Path(s["file"]).read_bytes()
-        text = Path(s.get("text_file") or s["file"]).read_text()
+        try:
+            text = Path(s.get("text_file") or s["file"]).read_text()
+        except UnicodeDecodeError as e:
+            return None, f"{i}: text_file is not UTF-8 ({e.reason} at byte {e.start}); recode it before admitting"
         ext = Path(s["file"]).suffix or ".txt"
         pinned = dest / f"{i}.source{ext}" if ext == ".txt" else dest / f"{i}{ext}"
         cap, url = {}, s["source_url"]
@@ -153,6 +156,10 @@ def admit(story, specs_path):
     if errors:
         sys.exit("nothing admitted:\n" + "\n".join(errors))
     m = load_manifest(story, man_path)
+    own = {path for r in m["records"] for path in (r.get("pinned_path"), r.get("text_path"))}
+    taken = [path for rec, *_ in ready for path in (rec["pinned_path"], rec["text_path"]) if (WT / path).exists() and path not in own]
+    if taken:
+        sys.exit("nothing admitted: these paths hold another story's records, so choose other ids:\n" + "\n".join(sorted(set(taken))))
     for rec, source, raw, text in ready:
         (WT / rec["pinned_path"]).parent.mkdir(parents=True, exist_ok=True)
         (WT / rec["pinned_path"]).write_bytes(raw)

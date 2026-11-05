@@ -4,7 +4,7 @@ The event: {LABEL}
 - Story id: {STORY}, working headline "{LABEL}".
 - It starts from the v2 development {CANDIDATE}: `data/v2` in this worktree holds what the core has on it, so read that view's claims, statements and sources first. Treat them as leads to check at the source, not as the record. Its pages are already in the manifest's `v2_subjects`.
 - {FOLLOWS}
-- Held coverage to start from: `capture search "{SEARCH}" --since {SINCE} --compact`.
+- Held coverage to start from: `capture search "<one term>" --since {SINCE} --compact`, one name or phrase at a time, because it matches the whole string against URL, title and publisher. Terms to try: {SEARCH}.
 
 The worktree is {WORKTREE} on branch {BRANCH}. Do not push. Commit by path; git's post-commit hook can hang on git lfs, so commit with `git -c core.hooksPath=/dev/null commit ...`.
 

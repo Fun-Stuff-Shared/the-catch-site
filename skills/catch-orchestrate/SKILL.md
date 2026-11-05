@@ -103,8 +103,11 @@ you check:
 - `sub_events[]`: `id`, `date`, `label`, `section_anchor`, `records` for each dated step the
   page tells.
 - The subject page (`src/pages/events/<subject>/index.astro` and its data module): a new
-  subject gets its page; an existing one gets a timeline row and refreshed figures. The
-  homepage and series listings pick the story up through `src/lib/discovery.mjs`.
+  subject gets its page; an existing one gets a timeline row and refreshed figures, and its
+  description reads from the subject data so it does not go stale.
+- `src/lib/discovery.mjs`: import the story's `event` into the `editorial` list, and add a new
+  subject to `series`. The homepage and series listings read these, and the gate fails with
+  "/events/ index missing manifested route" until they are there. The manifest also names `event_record`.
 
 ## 5. Publish
 
