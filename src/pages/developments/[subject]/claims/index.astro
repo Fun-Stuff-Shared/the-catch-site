@@ -16,7 +16,7 @@ const paths = subjectPaths(view.id);
 <BaseLayout title="Claims by attribute | The Catch" current="Home" noindex>
   <div class="content">
     <main class="story" data-v2-claims-page={snapshot} data-v2-subject={view.id}>
-      <p><a href={paths.home}>This development</a>{stories.map(({ route, title }) => <> · <a href={route} data-v2-story-link>{title}</a></>)}</p>
+      <p>{home.selected && <><a href={paths.home}>This development</a> · </>}{stories.map(({ route, title }, i) => <>{i > 0 && " · "}<a href={route} data-v2-story-link>{title}</a></>)}</p>
       <h1 data-extracted>{view.label}</h1>
       <h2>Claims by attribute</h2>
       {attributeGroups(view).map(([attribute, claims]) => <section data-v2-attribute={attribute}>

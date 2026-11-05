@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "parse5";
 import { readV2, storySubjects, subjectHomes, v2Manifests } from "../src/lib/v2.mjs";
-import { DEVELOPMENTS_PER_PAGE, V2_SECTION_BUDGET, attributeGroups, bestStatements, briefGroups, claimStatements, rankClaims, selectedDevelopments, sourceLabel, subjectPaths } from "../src/lib/v2-brief.mjs";
+import { DEVELOPMENTS_PER_PAGE, V2_SECTION_BUDGET, attributeGroups, bestStatements, briefGroups, claimStatements, publishedDevelopments, rankClaims, sourceLabel, subjectPaths } from "../src/lib/v2-brief.mjs";
 
 // Workers Paid carries 100,000 static asset files per version; the gate stops short of it so a growing selection fails here and not in the deploy.
 const ASSET_FILES = 90_000;
@@ -113,11 +113,13 @@ export function checkV2Pages(dist, directory, manifests) {
   }
   const { homes } = subjectHomes(directory, manifests);
   const expected = new Map();
-  for (const { subject, view, stories } of homes) {
+  for (const { subject, view, stories, selected } of homes) {
     const paths = subjectPaths(subject);
     expected.set(JSON.stringify([subject, null]), paths.claims);
-    const homePage = page(dist, paths.home);
-    if (!homePage) failures.push(`${subject}: development page missing at ${paths.home}`);
+    const homePage = selected ? page(dist, paths.home) : null;
+    if (!selected) {
+      if (existsSync(join(dist, paths.home, "index.html"))) failures.push(`${paths.home}: a development page exists with development pages off`);
+    } else if (!homePage) failures.push(`${subject}: development page missing at ${paths.home}`);
     else if (homePage.marked("data-v2-development").length !== 1 || attr(homePage.marked("data-v2-development")[0], "data-v2-development") !== subject) failures.push(`${paths.home}: does not render ${subject}`);
     const claimsPage = page(dist, paths.claims);
     if (!claimsPage) failures.push(`${subject}: claims page missing at ${paths.claims}`);
@@ -149,7 +151,7 @@ export function checkV2Pages(dist, directory, manifests) {
     const home = expected.get(JSON.stringify([subject, claim]));
     if (home !== route) failures.push(`${route}: renders ${claim === null ? "the claims" : `claim ${claim}`} of ${subject}${home ? `, whose one home is ${home}` : ", which no v2 story shows"}`);
   }
-  const listed = selectedDevelopments(snapshot).map((view) => subjectPaths(view.id).home);
+  const listed = publishedDevelopments(snapshot).map((view) => subjectPaths(view.id).home);
   for (let start = 0; start < listed.length; start += DEVELOPMENTS_PER_PAGE) {
     const route = start ? `/developments/${start / DEVELOPMENTS_PER_PAGE + 1}/` : "/developments/";
     const list = page(dist, route);
@@ -157,6 +159,7 @@ export function checkV2Pages(dist, directory, manifests) {
     const links = list.marked("data-v2-development-link").map((node) => attr(node, "href"));
     if (!same(links, listed.slice(start, start + DEVELOPMENTS_PER_PAGE))) failures.push(`${route}: lists ${links.length} developments, not the selection's page in order`);
   }
+  if (!listed.length && existsSync(join(dist, "developments/index.html"))) failures.push("/developments/: a list page exists with development pages off");
   const files = readdirSync(dist, { recursive: true, withFileTypes: true }).filter((entry) => entry.isFile()).length;
   if (files > ASSET_FILES) failures.push(`dist holds ${files} files, over the ${ASSET_FILES} a Worker version can carry with room to grow`);
   report.push({ developments: listed.length, files });

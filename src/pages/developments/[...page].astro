@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { readV2 } from "../../lib/v2.mjs";
-import { DEVELOPMENTS_PER_PAGE, developmentEntry, selectedDevelopments } from "../../lib/v2-brief.mjs";
+import { DEVELOPMENTS_PER_PAGE, developmentEntry, publishedDevelopments } from "../../lib/v2-brief.mjs";
 import { formatDate } from "../../lib/presentation.mjs";
 export function getStaticPaths({ paginate }) {
-  return paginate(selectedDevelopments(readV2()).map(developmentEntry), { pageSize: DEVELOPMENTS_PER_PAGE });
+  const published = publishedDevelopments(readV2());
+  if (!published.length) return [];
+  return paginate(published.map(developmentEntry), { pageSize: DEVELOPMENTS_PER_PAGE });
 }
 const { page } = Astro.props;
 ---

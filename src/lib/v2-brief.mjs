@@ -122,6 +122,11 @@ export function selectedDevelopments(snapshot) {
     .sort((a, b) => latestSource(b).localeCompare(latestSource(a)) || a.id.localeCompare(b.id));
 }
 
+// Machine-made development pages stay out of the site unless a build asks for them.
+export function publishedDevelopments(snapshot, env = process.env) {
+  return env.CATCH_DEVELOPMENTS === "1" ? selectedDevelopments(snapshot) : [];
+}
+
 export const developmentPath = (subject) => `/developments/${subjectSlug(subject)}/`;
 
 // One line for a list of developments: its label, its newest source, and what stands behind it.

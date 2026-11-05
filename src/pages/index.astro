@@ -2,7 +2,7 @@
 import HomePage from '../components/HomePage.astro';
 import { storyCatalog, series } from '../lib/discovery.mjs';
 import { readV2 } from '../lib/v2.mjs';
-import { developmentEntry, selectedDevelopments } from '../lib/v2-brief.mjs';
-const developments = selectedDevelopments(readV2()).slice(0, 8).map(developmentEntry);
+import { developmentEntry, publishedDevelopments } from '../lib/v2-brief.mjs';
+const developments = publishedDevelopments(readV2()).slice(0, 8).map(developmentEntry);
 ---
 <HomePage stories={storyCatalog()} series={series} developments={developments} />

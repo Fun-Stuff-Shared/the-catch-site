@@ -21,7 +21,7 @@ const statements = claimStatements(view, claim);
   <div class="content">
     <main class="story" data-v2-claim-page={snapshot} data-v2-subject={view.id} data-v2-claim={claim.id}>
       <p data-extracted>{view.label}</p>
-      <p><a href={subjectPaths(view.id).home}>This development</a> · <a href={subjectPaths(view.id).claims}>All claims</a>{stories.map(({ route, title }) => <> · <a href={route} data-v2-story-link>{title}</a></>)}</p>
+      <p>{home.selected && <><a href={subjectPaths(view.id).home}>This development</a> · </>}<a href={subjectPaths(view.id).claims}>All claims</a>{stories.map(({ route, title }) => <> · <a href={route} data-v2-story-link>{title}</a></>)}</p>
       <ClaimStanding view={view} claim={claim} heading="h1" />
       <h2>Statements <span class="series-count">{statements.length}</span></h2>
       <ul>{statements.map((statement) => <Statement view={view} statement={statement} />)}</ul>

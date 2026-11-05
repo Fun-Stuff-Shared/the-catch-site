@@ -8,7 +8,7 @@ import { storyCatalog } from "../../../lib/discovery.mjs";
 export function getStaticPaths() {
   const { snapshot, homes } = subjectHomes();
   const titles = new Map(storyCatalog().map((story) => [story.href, story.title]));
-  return homes.map((home) => ({ params: { subject: home.slug }, props: { snapshot, home, stories: home.stories.map((route) => ({ route, title: titles.get(route) ?? route })) } }));
+  return homes.filter((home) => home.selected).map((home) => ({ params: { subject: home.slug }, props: { snapshot, home, stories: home.stories.map((route) => ({ route, title: titles.get(route) ?? route })) } }));
 }
 const { snapshot, home, stories } = Astro.props;
 const { view } = home;

@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { selectedDevelopments, subjectSlug } from "./v2-brief.mjs";
+import { publishedDevelopments, subjectSlug } from "./v2-brief.mjs";
 
 export const v2Directory = join(process.cwd(), "data/v2");
 export const FORMAT = "sai-news-view/5";
@@ -123,8 +123,8 @@ export function storySubjects(snapshot, { story, subjects }) {
   return [...new Set(resolved.map(([, kept]) => kept))];
 }
 
-// Every subject with pages: those a v2 story shows, in story order with the story pages they appear on, then
-// the developments published by selection, latest first.
+// Every subject with claim pages: those a v2 story shows, in story order with the story pages they appear on, then
+// any developments the build publishes, latest first. Only a published development has a page of its own.
 export function subjectHomes(directory = v2Directory, manifests = join(process.cwd(), "checks/manifests")) {
   const snapshot = readV2(directory);
   const homes = new Map(), slugs = new Map();
@@ -138,7 +138,7 @@ export function subjectHomes(directory = v2Directory, manifests = join(process.c
     return homes.get(subject);
   };
   for (const row of v2Manifests(manifests)) for (const subject of storySubjects(snapshot, row)) home(subject).stories.push(row.route);
-  for (const view of selectedDevelopments(snapshot)) home(view.id).selected = true;
+  for (const view of publishedDevelopments(snapshot)) home(view.id).selected = true;
   return { snapshot: snapshot.id, homes: [...homes.values()] };
 }
 

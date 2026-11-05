@@ -226,7 +226,6 @@ test('a subject id with a space reads, maps to its story and passes the page che
   const dist = temp(t, 'v2-dist-');
   const site = pageSite(t, id, dist);
   site.write(route, site.story(subject, home));
-  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
   const passed = checkV2Pages(dist, destination, manifests);
@@ -244,7 +243,6 @@ test('a subject id with a space reads, maps to its story and passes the page che
   site.write(route, site.story(subject, home));
   site.write(home.claims, site.claimsPage(subject, '<article data-v2-claim="claim-a"></article><article data-v2-claim="claim-z"></article>'));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /lists claims 2, expected 1/);
-  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject, ''));
   assert.match(checkV2Pages(dist, destination, manifests).failures[0], /claims\/claim-a\/: statement mention-a not rendered/);
@@ -270,7 +268,6 @@ test('a subject listed under two stories has one set of claim pages, at its home
   const dist = temp(t, 'v2-dist-');
   const site = pageSite(t, id, dist);
   for (const route of routes) site.write(route, site.story(subject, home));
-  site.write(home.home, site.homePage(subject));
   site.write(home.claims, site.claimsPage(subject));
   site.write(home.claim({ id: 'claim-a' }), site.claimPage(subject));
   const passed = checkV2Pages(dist, destination, manifests);
@@ -406,7 +403,9 @@ test('a development publishes on three independent sources behind a claim with a
   assert.deepEqual(developmentEntry(views[1]), { href: '/developments/newer/', title: 'newer', date: '2026-11-01', summary: '2 claims from 1 source; sources differ on 1' });
 });
 
-test('the page gate requires a selected development to have its home and its place on the list', async (t) => {
+test('with development pages on, the page gate requires a selected development to have its home and its place on the list', async (t) => {
+  process.env.CATCH_DEVELOPMENTS = '1';
+  t.after(() => { delete process.env.CATCH_DEVELOPMENTS; });
   const { checkV2Pages } = await import('./check-v2-pages.mjs');
   const { subjectPaths } = await import('../src/lib/v2-brief.mjs');
   const source = temp(t, 'v2-source-');
@@ -447,4 +446,24 @@ test('a source speaking in its own voice has no speaker on the page, and attribu
   assert.equal(statedBy({ speaker: 'Liz Landers' }), 'Liz Landers');
   assert.equal(attributeHeading('poll_result'), 'Poll results');
   assert.equal(attributeHeading('new_thing'), 'New thing');
+});
+
+test('development pages are off unless the build asks, and the gate refuses one that appears anyway', async (t) => {
+  const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const { publishedDevelopments, subjectPaths } = await import('../src/lib/v2-brief.mjs');
+  const source = temp(t, 'v2-source-');
+  const destination = temp(t, 'v2-site-');
+  const id = snapshot(source, { claim: { independent: 3 } });
+  pullV2({ source, destination });
+  const read = readV2(destination);
+  assert.deepEqual(publishedDevelopments(read, {}), []);
+  assert.equal(publishedDevelopments(read, { CATCH_DEVELOPMENTS: '1' }).length, 1);
+  const manifests = temp(t, 'v2-manifests-');
+  const dist = temp(t, 'v2-dist-');
+  const site = pageSite(t, id, dist);
+  assert.deepEqual(checkV2Pages(dist, destination, manifests).failures, []);
+  site.write(subjectPaths('subject-a').home, site.homePage('subject-a'));
+  site.write('/developments/', '');
+  const failures = checkV2Pages(dist, destination, manifests).failures;
+  assert.ok(failures.some((failure) => failure.includes('list page exists with development pages off')));
 });
