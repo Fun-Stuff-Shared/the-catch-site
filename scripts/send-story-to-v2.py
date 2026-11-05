@@ -65,15 +65,28 @@ def mentions_by_record(manifest: dict, claims: list[dict]) -> tuple[dict[str, li
     return held, left
 
 
-def blob(path: Path) -> dict:
-    data = path.read_bytes()
-    return {"sha256": hashlib.sha256(data).hexdigest(), "size": len(data), "media_type": mimetypes.guess_type(path.name)[0] or "application/octet-stream"}
+def blob(data: bytes, media_type: str) -> dict:
+    return {"sha256": hashlib.sha256(data).hexdigest(), "size": len(data), "media_type": media_type}
 
 
-def document(record: dict, story: str, label: str, lede: str, published: str, mentions: list[dict]) -> dict:
+def utf8(data: bytes) -> bytes:
+    """The core reads text as UTF-8. A saved text in another encoding, as some extracted PDFs are, is sent recoded;
+    its pinned bytes stay the record."""
+    try:
+        data.decode("utf-8")
+        return data
+    except UnicodeDecodeError:
+        return data.decode("cp1252", "replace").encode("utf-8")
+
+
+def document(record: dict, story: str, label: str, lede: str, published: str, mentions: list[dict], files: dict[str, bytes]) -> dict:
     payload = {"label": label, "lede": lede, "published": published, "mentions": mentions}
     attributes = {"url": record.get("url"), "publisher": record.get("publisher"), "title": record.get("title"), "published_at": record.get("date"), "story": story, "authored": json.dumps(payload, ensure_ascii=False)}
-    return {"raw": blob(Path(record.get("pinned_path") or record["text_path"])), "text": blob(Path(record["text_path"])), "attributes": {key: value for key, value in attributes.items() if value is not None}}
+    path = Path(record.get("pinned_path") or record["text_path"])
+    raw, text = path.read_bytes(), utf8(Path(record["text_path"]).read_bytes())
+    files[hashlib.sha256(raw).hexdigest()] = raw
+    files[hashlib.sha256(text).hexdigest()] = text
+    return {"raw": blob(raw, mimetypes.guess_type(path.name)[0] or "application/octet-stream"), "text": blob(text, "text/plain"), "attributes": {key: value for key, value in attributes.items() if value is not None}}
 
 
 def call(method: str, path: str, credential: str, body: bytes | None = None) -> dict:
@@ -91,14 +104,17 @@ def send(story: str) -> dict:
     known = {record["id"] for record in manifest["records"]}
     if unknown := sorted(set(held) - known):
         raise SystemExit(f"{story}: figures or claims cite records the manifest lacks: {', '.join(unknown)}")
-    documents = [document(record, story, label, lede, manifest["date"], held.get(record["id"], [])) for record in manifest["records"] if record.get("text_path")]
+    sendable = [record for record in manifest["records"] if record.get("text_path")]
+    if unread := sorted(set(held) - {record["id"] for record in sendable}):
+        raise SystemExit(f"{story}: figures or claims cite records with no saved text: {', '.join(unread)}")
+    files: dict[str, bytes] = {}
+    documents = [document(record, story, label, lede, manifest["date"], held.get(record["id"], []), files) for record in sendable]
     credential = token()
     body = json.dumps({"run": {"story": story}, "documents": documents}, ensure_ascii=False, sort_keys=True).encode()
     run = f"authored-{hashlib.sha256(body).hexdigest()[:24]}"
     answer = call("POST", f"/runs/{run}/manifest", credential, body)
-    paths = {blob_row["sha256"]: Path(record.get(field) or record["text_path"]) for record, row in zip([r for r in manifest["records"] if r.get("text_path")], documents, strict=True) for field, blob_row in (("pinned_path", row["raw"]), ("text_path", row["text"]))}
     for sha in answer["missing"]:
-        call("PUT", f"/blobs/{sha}", credential, paths[sha].read_bytes())
+        call("PUT", f"/blobs/{sha}", credential, files[sha])
     done = call("POST", f"/runs/{run}/commit", credential, json.dumps({"manifest": answer["manifest"]}).encode())
     return {"story": story, "subject": "subject-event-" + story.replace("--", "-", 1), "run": run, "documents": len(documents), "added": done["added"], "mentions": sum(len(rows) for rows in held.values()), "figures_left_on_the_page": left}
 
