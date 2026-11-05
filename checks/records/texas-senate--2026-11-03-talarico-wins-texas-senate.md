@@ -1,0 +1,165 @@
+# Talarico wins the Texas Senate seat: the record
+
+Every fact line ends with its source: the record id and the record's words in square brackets (straight quotes, or curly quotes when the words hold straight ones; `admit.py check` verifies each one), or `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record. Vote totals are unofficial: the Secretary of State's table updated November 4 at 4:59 p.m.; percentages and margins are arithmetic on that table, as shares of all votes in each race.
+
+## The explanations
+
+Question 1: what produced the result? Was it Paxton, or would any Republican have lost?
+- A1. Paxton's record: a scandal-marked nominee lost a seat a normal Republican holds (Cornyn; Senate Republican leaders; USA Today's news story). If true: Paxton far behind the rest of the ticket, everywhere. Should not find: other Republicans winning comfortably is what it needs, so finding them losing cuts against "shoo-in".
+- A2. The party split: the runoff broke the party, and Cornyn voters stayed home or crossed (Trump, in advance: "Political Hacks like John Cornyn and Karl Rove"; orchestrator's split). If true: Paxton's shortfall concentrated in Cornyn-strong counties. Should not find: the same shortfall where Cornyn was weak.
+- B. A national wave against Trump over prices, tariffs and the Iran war (AP; Cruz; Heye). If true: whole ticket down by similar amounts. Should not find: the Senate race far apart from the other races.
+- C. Talarico's own campaign: top versus bottom, faith, crossover (Talarico; Huppke). If true: he outruns the Democratic ticket. Should not find: he runs level with it.
+- D. The money backfired: Musk's spending became the issue (Talarico: "all the money in the world"). If true: he was outspent, and voters name it. Should not find: his side matching the other.
+- E. A Hispanic swing and turnout (Texas Democrats; AP Voter Poll). If true: swing concentrated in Hispanic counties. Should not find: a large swing everywhere.
+- F. Trump's account: "I wasn't on the Ballot"; losers lost on their own; Abbott lost because he became a "RINO". If true: Trump's candidates run ahead of those who broke with him. Should not find: Trump's pick behind the "RINO".
+- G. Plain alternative: the president's party loses midterms, and the polls had already said so. If true: a result near the final polls. Should not find: a result far beyond them.
+
+| Evidence | A1 | A2 | B | C | D | E | F | G |
+|---|---|---|---|---|---|---|---|---|
+| All 15 statewide races on the table went Democratic; the smallest margin is 237,352 votes, Anyiam over Smith, a court race [sos-results-2026-11-04: "DEMOCRATIC | OKEY ANYIAM | 4,839,230 |"] [sos-results-2026-11-04: "REPUBLICAN | THOMAS SMITH | 4,601,878 |"] | I, for "shoo-in": no Republican on the ballot won | | C | | | | C | C |
+| Paxton has the lowest Republican total of the 15, 275,154 behind Abbott; Talarico the highest Democratic total [sos-results-2026-11-04: "REPUBLICAN | KEN PAXTON | 4,249,373 |"] [sos-results-2026-11-04: "REPUBLICAN | GREG ABBOTT (I) | 4,524,527 |"] [sos-results-2026-11-04: "DEMOCRATIC | JAMES TALARICO | 5,444,982 |"] | C | C | I, as the whole account: 12.1 points against 2.5 to 7.1 elsewhere | C | C | | I: Trump's pick behind the "RINO" | |
+| Paxton ran behind Abbott in 250 of 254 counties, median 2.2 points, 2.0 where Cornyn was weakest and 2.4 where he was strongest [nyt-county-results-2026: "Paxton share below Abbott share: 250 of 254 counties; median 2.2 points"] [nyt-county-results-2026: "median Paxton lag 2.0, vote-weighted lag 2.2"] [nyt-county-results-2026: "median Paxton lag 2.4, vote-weighted lag 3.0"] | C | I, as concentrated: nearly flat by quartile | | C | | | | |
+| Every county swung toward Talarico from the 2024 presidential margin, at least 6.6 points; 14.4 in counties under 15 percent Hispanic and 42.9 in counties 75 percent or more [nyt-county-results-2026: "smallest swing 6.6, median 17.7, largest 71.8"] [nyt-county-results-2026: "margin 14.4 points"] [nyt-county-results-2026: "margin 42.9 points"] | | | C | | | I, as the whole account; C, as the largest swing | | |
+| Final late polls ran from Paxton +1 to Talarico +7; the result was +12.1 [newsweek-polls-2026-11-03: "Quantus Insights was the only late poll to show Paxton ahead"] [newsweek-polls-2026-11-03: "a New York Times/Siena College poll gives Talarico a 7-point advantage"] | | | | | | | | I: result beyond every listed late poll |
+| Paxton's total matches Cruz's 2018 within 11,180 votes; the Democrat's total is 1,399,350 above O'Rourke's [sos-2018-canvass: "Ted Cruz(I) REP 4,260,553"] [sos-2018-canvass: "Beto O'Rourke DEM 4,045,632"] | | I, for a Republican vote that collapsed | | C | | C | | |
+| Talarico's committee raised $146.3M through Oct. 14, Paxton's $22.3M; outside groups reported about $319M helping Paxton and $114M helping Talarico [fec-candidate-talarico: "receipts 146349912.38"] [fec-candidate-paxton: "receipts 22327473.92"] [fec-ie-race-2026-11-05: "TOTAL | all 86 committees | 318781444.98 | 113933006.07"] | | | | C | C: outspent, about $340M to $260M by this count, not ten to one | | | |
+| About two-thirds of Senate voters said Paxton lacked the character for the Senate; voters split on whether Talarico is "too extreme" [pbs-paxton-concession: "about two-thirds of voters in the Senate race say he lacked the personal character"] [pbs-paxton-concession: "roughly split on whether Talarico's views"] | C | | | | | | | |
+| Other Trump-backed candidates lost elsewhere, in South Carolina, North Carolina and Ohio [wapo-live-2026-11-04: "President Donald Trump handpicked several of the GOP candidates who lost Tuesday"] | | | C | | | | I | |
+
+Survives: A1 as a drag on Paxton (about 5 points of margin over the other statewide races), B as the base every Republican shared, C as the mirror of A1, E as the largest regional swing inside a statewide one. A1 and C cannot be told apart from returns: Talarico's lead over Hinojosa and Paxton's lag behind Abbott are one gap seen from two sides. Ruled out: "shoo-in" as stated (row 1), though Cornyn doing better than Paxton is unproven rather than ruled out, because no ballot tested him; A2 as a concentrated effect (row 3), not as a contribution; F (rows 2 and 9); G as the polls having foreseen it (row 5), while the midterm penalty stays in B. Unproven: D. Voter evidence on the money would have to sit in the AP Voter Poll or exit polls, and neither admitted report gives it. The result turns on rows 1 and 2, which are the state's own table, checked at the state's page; it would change only if canvass moved a 237,352-vote gap, which no record suggests. County rows describe places, not people: they cannot show who defected.
+
+Question 2: what does Musk's money count?
+- A. $168 million: $158 million through Senate Leadership Fund to Texas PAC plus $10 million to Lone Star Liberty (AP; NBC).
+- B. More than that: his own America PAC's spending in the race is left out (Huppke, "more than $200 million"; OpenSecrets via NPR).
+- C. These are gifts to committees, not an ad bill; what reached the air is a different number.
+- D. It reached Paxton's campaign (AP: Texas PAC is "the largest contributor to Paxton's campaign").
+
+| Evidence | A | B | C | D |
+|---|---|---|---|---|
+| Paxton's committee raised $22.3M in all through Oct. 14, $392,150 of it from other committees [fec-candidate-paxton: "other_political_committee_contributions 392150.0"] | | | | I |
+| Texas PAC's report shows $158M in, independent expenditures out, and no line to Paxton's committee [fec-texas-pac-q3: "158000000.00 | 158000000.00 | 131751386.72"] | C | C | C | I |
+| America PAC, "his super PAC", reported $47.3M in this race [abc-musk-2026-10-16: "he has also pumped more than $76 million into AMERICA PAC, his super PAC"] [fec-ie-race-2026-11-05: "America PAC | C00879510 | 47264556.37 | 0.00"] | I, as a total | C | | |
+| Texas PAC reported $181.9M in spending notices against $158M received and $9.2M left at Oct. 14 [fec-ie-race-2026-11-05: "TEXAS PAC | C00960211 | 181850224.75 | 0.00"] [fec-texas-pac-12g: "26248613.28 | 0.00 | 26248613.28 | 17030073.41 | 9218539.87"] | I, as the ad bill | | C | |
+| OpenSecrets counts at least $225M of his spending in Texas, including for Abbott [npr-musk-2026-11-04: "Musk directed at least $225 million of his midterm spending to Texas, according to OpenSecrets"] | | C | | |
+
+Survives: B and C together. Ruled out: D, by the filings; A as a total. The result turns on America PAC being Musk's money: ABC calls it his and reports his $76 million in it, but I did not open its October reports, because the FEC API refused further calls (rate limit), so how much of the $47.3 million is his stays open. Texas PAC's funder for the money beyond $158 million is unknown until the post-general report.
+
+## The story
+
+James Talarico, a Democrat, won the Texas Senate seat on November 3, beating Republican Ken Paxton by about 12 points in unofficial returns. Republicans lost that seat, which they had held since 1961, along with all 14 other statewide races on the ballot. Cruz and AP blame prices and the Iran war for the ticket's loss, and Paxton, picked by Trump over Sen. John Cornyn, ran behind every other Republican. Republicans now argue whether another nominee could have held the seat, and outlets disagree about how much Elon Musk spent trying to stop Talarico. Counties finish counting by November 17, final money reports come December 3, and Talarico takes office in January.
+
+## The plan
+
+Headline: Talarico beats Paxton by 12 points as Republicans lose every statewide race in Texas
+
+What happened (sentence 1; the event in plain words, what it means, where it stands):
+1. Who won, by how much? Talarico 5,444,982, Paxton 4,249,373, 55.1 to 43.0, unofficial [sos-results-2026-11-04: "DEMOCRATIC | JAMES TALARICO | 5,444,982 |"]. AP called it at 11:03 p.m. Eastern; Paxton conceded about 17 minutes later [pbs-call-time: "The Associated Press declared Talarico the winner at 11:03 p.m. EST."] [hpm-2026-11-03: "conceded the election at approximately 10:20 p.m."]
+2. Who are they? Talarico, 37, state representative, former middle-school teacher, seminarian; Paxton, three-term attorney general, impeached and acquitted [ap-talarico-via-pbs: "The 37-year-old state legislator, former middle school teacher and Presbyterian seminarian"].
+3. What did it change? Republicans lost every statewide race; Democrats hold 54 Senate seats by CBS's projection, up from 47 [cbs-musk-2026-11-04: "CBS News projects Democrats will control the upper chamber in the next Congress and hold 54 seats"] [newsweek-polls-2026-11-03: "Republicans currently hold a 53-47 Senate majority"].
+4. Where does it stand? Unofficial; local canvass by November 17; he takes office in January [taceo-2026-11-04: "Counties will then complete the local canvass by November 17 before results are certified"].
+
+The whole ticket (sentence 2 and 3; a table): opens on how Paxton compares
+1. Every race, margin and Republican total, from the state's table. Paxton's is the lowest.
+2. Did Paxton's shortfall follow Cornyn's voters? 250 of 254 counties, nearly flat by Cornyn strength [nyt-county-results-2026: "Paxton share below Abbott share: 250 of 254 counties; median 2.2 points"].
+3. Where did the Democratic gain come from? 2018 comparison, then swing by Hispanic share; his margin in Paxton's home county of Collin, 12.1 [nyt-county-results-2026: "Collin: Talarico margin 12.1, Hinojosa margin 4.5, 2024 presidential margin -11.1"].
+
+Why now (sentence 3): opens on what the actors say
+1. Cruz: "Tariffs have made everything too expensive" [cbs-cruz-2026-11-05: "Tariffs have made everything too expensive, and the Iran war has dragged on too long."]
+2. Cornyn: "character and integrity still matter" [hill-next-2026-11-04: "said the results show “character and integrity still matter” to voters"]
+3. Trump: "IN A LANDSLIDE" and "RINO" [wapo-live-2026-11-04: "“I wasn’t on the Ballot and if I was, we would have won IN A LANDSLIDE!"] [hill-rino-2026-11-04: "hadn’t become a RINO in the last six months of his Political Life"]
+4. Talarico: all the money [hpm-2026-11-03: "“The people of Texas, you were my slingshot and tonight we defeated Goliath,”"]
+5. How it came to this, as a timeline: September 2025 launch, March 3 primary, runoff with Trump's endorsement, Musk's two gifts in September, late polls.
+
+The Catch (sentence 4): Musk's money
+1. What the outlets said: NBC's "$168 million ad assault", AP's "largest contributor to Paxton's campaign" [nbc-talarico-2026-11-04: "overcame a $168 million ad assault by the world’s wealthiest man"] [ap-talarico-via-pbs: "the largest contributor to Paxton's campaign."]
+2. What the filings show: the path by date, nothing to Paxton's committee, America PAC on top, Texas PAC's notices beyond $158M. Link the prior story, where MAGA Inc. was called a donor.
+3. Why it matters: Paxton's campaign raised $22.3M; the money was spent by others, and who paid for the last of it is not yet public.
+
+What the coverage got right, and what it got wrong: "shoo-in"; the seat's history (Fox's "first time in nearly 40 years"); "former" attorney general; "four-year tenure"; "last month".
+
+What happens next (sentence 5): county canvass by November 17, state canvass opens November 21, post-general FEC reports December 3, sworn in January 2027; Cornyn's offer on the transition; Talarico on working with Trump.
+
+Unknowns: how Republicans and independents voted, how much of America PAC is Musk's, who funded Texas PAC after October 14.
+
+Background held: AP Voter Poll on the young; the anti-trans ad total ($78M, Puck via The Intercept); Fox's October tie; Talarico's bill record; the fabricated Paxton statement; Bush family crossovers; his platform; the Texas House flip; Musk's scrutiny in Congress; Trump's stock.
+
+## The event
+
+On November 3, 2026, Texas voters elected Talarico over Paxton for the seat John Cornyn holds; Libertarian Ted Brown took 190,237 votes [sos-results-2026-11-04: "LIBERTARIAN | TED BROWN | 190,237 |"]. AP called it at 11:03 p.m. Eastern [pbs-call-time: "The Associated Press declared Talarico the winner at 11:03 p.m. EST."]. USA Today's figure for polling locations reporting at the call is about 27 percent; the Times's file has about 66 percent of expected votes counted then, so the two count different things [usatoday-news-2026-11-04: "with only about 27% of Texas polling locations reporting on election night"]. Paxton conceded about 17 minutes after the call [hpm-2026-11-03: "conceded the election at approximately 10:20 p.m."].
+
+## The people it happens to
+
+Talarico: [ap-talarico-via-pbs: "The 37-year-old state legislator, former middle school teacher and Presbyterian seminarian"], [hpm-2026-11-03: "a four-term state lawmaker"]. Paxton: state attorney general, leaves in January by his own words [hpm-2026-11-03: "“I walk away from this job in a couple months"]. Cornyn: [ap-runoff-2026-05-26: "the first Republican senator from Texas to lose the party’s nomination for reelection"]; said he would back the ticket [ap-runoff-2026-05-26: "“I’ve always supported the Republican ticket, and I intend to do so again.”"].
+
+## How it came to this
+
+| Date | What happened | Source |
+|---|---|---|
+| 1961 | John Tower wins this seat in a special election to finish Johnson's term; Republicans have held it since, through Gramm and Cornyn | [wiki-texas-senators: "Elected in 1961 to finish Johnson's term"] |
+| 1988 / 1993 | Bentsen, in the other Texas seat, last Democrat elected; Krueger, appointed to it, last Democrat serving | [ap-talarico-via-pbs: "Texas last sent a Democrat to the Senate when Lloyd Bentsen was reelected in 1988"] [wiki-texas-senators: "Appointed to continue Bentsen's term."] |
+| Sep 2025 | Talarico enters | [usatoday-news-2026-11-04: "in September 2025"] |
+| Mar 3, 2026 | Talarico beats Crockett; Cornyn leads the Republican primary short of a majority | [usatoday-news-2026-11-04: "on March 3 he bested Crockett"] [statesman-2026-10: "After Cornyn finished with the most votes, but short of a majority"] |
+| May 2026 | Trump endorses Paxton as early voting opens, with polls already showing Paxton ahead; Paxton wins 888,196 to 503,438 | [statesman-2026-10: "on the day that early voting started, with polls showing Paxton comfortably ahead, Trump endorsed the attorney general"] [nyt-county-results-2026: "Runoff statewide: Paxton 888196, Cornyn 503438, of 1391634"] |
+| Aug 21 | Musk's trust gives Lone Star Liberty $10M | [fec-lone-star-liberty-q3: "ELON MUSK REVOCABLE TRUST | 2110 RANCH ROAD 620 S | #341886 | Austin | TX | 78734 | 20260821 | 10000000.00"] |
+| Sep 9, 10 | Musk gives SLF $75M; SLF gives Texas PAC $75M | [fec-slf-q3: "20260909 | 75000000.00"] [fec-slf-q3: "20260910 | 75000000.00"] |
+| Sep 23, 24 | Musk gives SLF $83M; SLF gives Texas PAC $83M | [fec-slf-q3: "20260923 | 83000000.00"] [fec-slf-q3: "20260924 | 83000000.00"] |
+| Oct | Trump: if Paxton loses it is Cornyn and Rove; he asks Cornyn voters to unite; three October visits | [statesman-2026-10: "asking all of those who supported Senator John Cornyn to UNITE"] [nbc-talarico-2026-11-04: "He visited Texas three times in October"] |
+| Nov 3 | The vote | [sos-results-2026-11-04: "(Updated 11/04/2026 04:59 PM)"] |
+
+## Why: the stated reasons
+
+- Talarico: money and division lost [usatoday-news-2026-11-04: "We just took back Texas,"]; [dallasnews-2026-11-04: "first-time voters, three-time Trump voters"]; Musk [cbs-musk-2026-11-04: "wanted his very own personal senator"].
+- Cruz: [cbs-cruz-2026-11-05: "Tariffs have made everything too expensive, and the Iran war has dragged on too long."], [cbs-cruz-2026-11-05: "a Watergate-level repudiation"].
+- Cornyn, on his op-ed, through The Hill; I did not open the Journal piece: [hill-next-2026-11-04: "Here in Texas, traditional conservatives and independents were asked to swallow an almost comical list of personal scandals and improprieties"].
+- Trump: [wapo-live-2026-11-04: "I wasn’t on the Ballot and if I was, we would have won IN A LANDSLIDE!"]; [statesman-2026-10: "If Ken Paxton loses, it will be because of WEAK and INEFFECTIVE Political Hacks like John Cornyn and Karl Rove,"].
+- Heye: [hill-next-2026-11-04: "totally self-created Trump Quake"]. Patrick: [ap-sweep-2026-11-04: "Going into 2028, the Republican Party of Texas has serious work to do"]. DeSantis: [ap-sweep-2026-11-04: "A huge loss."].
+- AP's own sentence: [ap-sweep-2026-11-04: "soundly rejected President Donald Trump’s party"].
+- MS NOW names two together: [msnow-2026-11-04: "But concerns about Paxton in both parties helped Democrats end their long losing streak. So did a midterm electorate looking to rebuke Trump."]
+
+## The sides
+
+Paxton's own case: [fox-gamble-2026-11-03: "the most radical Democrat ever to run statewide, bar none"]. After the vote he named no reason beyond a national one [pbs-paxton-concession: "We've had a difficult night tonight across the country, but it's not over"]. Talarico's: [fox-gamble-2026-11-03: "Ken Paxton should be nowhere near Lyndon Johnson's Senate seat"]. Conservative critic of both: [russell-column-2026-11-04: "it's clear Cornyn − or any other Republican candidate − would have been facing an uphill battle to win in this environment"], [russell-column-2026-11-04: "Talarico won at least in part because his opponent was so bad."]. Both sides agree: Talarico won and Paxton conceded; AFP found the statement that he did not to be fake [afp-fake-2026-11-04: "the apparent statement is fabricated"].
+
+## The numbers
+
+| Figure | What it counts | As of | Source |
+|---|---|---|---|
+| 5,444,982 / 4,249,373 | votes, Talarico and Paxton, unofficial | Nov 4, 4:59 p.m. | [sos-results-2026-11-04: "REPUBLICAN | KEN PAXTON | 4,249,373 |"] |
+| 1988, 1993, 1994 | last Democrat elected senator; last Democrat serving; last statewide win | | [ap-talarico-via-pbs: "will become Texas' first Democratic senator since 1993"] [ap-sweep-2026-11-04: "Texas Democrats hadn’t won a statewide campaign since 1994"] |
+| $146.3M / $22.3M | raised by each candidate's committee | Oct 14 | [fec-candidate-talarico: "receipts 146349912.38"] |
+| $181.9M | Texas PAC's spending notices in this race | Nov 3 | [fec-ie-race-2026-11-05: "TEXAS PAC | C00960211 | 181850224.75 | 0.00"] |
+| $319M / $114M | all outside notices helping each side, summed; amended notices may double count a few million | Nov 3 | [fec-ie-race-2026-11-05: "TOTAL | all 86 committees | 318781444.98 | 113933006.07"] |
+| "more than a half-billion" / "$570 million" | ads, both sides, AdImpact, including primaries by other counts | | [ap-talarico-via-pbs: "more than a half-billion dollars in combined campaign ads, according to AdImpact"] [russell-column-2026-11-04: "More than $570 million was spent on ads in the race"] |
+| "more than $300 million" | Talarico's figure for what he went up against | Nov 3 | [nbcdfw-speech: "We went up against more than $300 million"] |
+| 7.7M | early votes | Nov 3 | [russell-column-2026-11-04: "More than 7.7 million Texans cast ballots before Nov. 3"] |
+
+## What coverage says that the records do not
+
+- NBC, "$168 million ad assault" [nbc-talarico-2026-11-04: "overcame a $168 million ad assault by the world’s wealthiest man"]: $168M is two gifts through SLF and one to Lone Star Liberty, not ads; Texas PAC's notices run past it and America PAC is on top.
+- AP, Texas PAC "the largest contributor to Paxton's campaign" [ap-talarico-via-pbs: "the largest contributor to Paxton's campaign."]: Paxton's committee took $392,150 from all other committees.
+- USA Today, Cornyn "likely would have been a shoo-in" [usatoday-news-2026-11-04: "who likely would have been a shoo-in for Republicans had he not lost in the May runoff"]: all 15 statewide Republicans lost.
+- USA Today, "former Texas Attorney General" [usatoday-news-2026-11-04: "toppling former Texas Attorney General Ken Paxton by a significant margin"]: he holds the office until January by his own words.
+- USA Today, "four-year tenure" [usatoday-news-2026-11-04: "during his four-year tenure in the Republican-controlled legislature"]: Houston Public Media says four terms [hpm-2026-11-03: "a four-term state lawmaker"].
+- Fox headline, "flipping Texas Senate seat for first time in nearly 40 years" [fox-gamble-2026-11-03: "first Senate seat from the Lone Star State"]: true of Texas's seats generally; this seat has been Republican since 1961 [wiki-texas-senators: "Elected in 1961 to finish Johnson's term"].
+- The Hill, $158M "last month" [hill-next-2026-11-04: "Musk, the richest man in the world, directed $158 million to the Paxton-aligned Texas PAC last month."]: the gifts are dated in September.
+- NBC, Trump's endorsement "helping oust Cornyn" [nbc-talarico-2026-11-04: "His endorsement of Paxton in May, helping oust Cornyn"]: a Statesman column reads the same runoff otherwise; attributed, not settled [statesman-2026-10: "the near 2-1 final result suggest he'd have won with or without the president's help"].
+
+## What is next
+
+Local canvass by November 17 [taceo-2026-11-04: "Counties will then complete the local canvass by November 17 before results are certified"]. Sworn in January 3, per USA Today [usatoday-news-2026-11-04: "he prepares to be sworn into the U.S. Senate on Jan. 3, 2027"]. Post-general FEC reports, covering October 15 to November 23, are due December 3 [lead: https://www.fec.gov/help-candidates-and-committees/dates-and-deadlines/2026-reporting-dates/pre-and-post-general-reports-2026/, read but not yet admitted]. Talarico on Trump [dallasnews-2026-11-04: "We have to hold this administration accountable, but we should also work with President Trump"].
+
+## Reactions
+
+Cornyn [fox-gamble-2026-11-03: "The voters have spoken, and I want to extend my congratulations to James Talarico"]. Paxton [pbs-paxton-concession: "I will commit that I will be praying for him, that he will do good for Texas and this nation,"].
+
+## Unknowns
+
+How Republicans and independents voted: searched web and AP, NBC and CNN exit pages (404); only two AP Voter Poll figures on character and extremism, and youth and Hispanic shares, are admitted. How much of America PAC's money is Musk's: FEC API rate limit; the filing list is the search to rerun. Who paid Texas PAC after October 14: not public until December 3.
+
+## Leads not admitted
+
+- Texas Tribune county and turnout analysis, https://www.texastribune.org/2026/11/04/texas-border-counties-voter-turnout/: capture refused (403).
+- Reuters, https://www.reuters.com/world/us/james-talarico-becomes-first-democrat-win-statewide-texas-since-1994-2026-11-04/: capture refused (401).
+- Cornyn's Wall Street Journal op-ed: not found by search; reached through The Hill.
+- Wikipedia's poll averages (270toWin +3.2, DDHQ +3.4, FiftyPlusOne +3.7): 270toWin's page text came back empty of numbers; aggregators not reached. The averages stay out; Wedgewood, which the site reported as fabricated, does not appear on Newsweek's late-poll list or in Wikipedia's Texas tables.
+- Grok's Musk posts, https://www.independent.co.uk/news/world/americas/us-politics/elon-musk-james-talarico-texas-senate-b3078798.html: not needed.
