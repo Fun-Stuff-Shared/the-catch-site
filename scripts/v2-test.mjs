@@ -383,6 +383,8 @@ test('a source is named by its site when it carries no publisher or title, and b
   assert.deepEqual(sourceLabel({ artifact: 'a1', root: 'www.foxnews.com', attributes: { custody: 'missing' } }), { publisher: 'foxnews.com', title: null, fallback: false, text: 'foxnews.com' });
   assert.equal(sourceLabel({ artifact: 'a1', root: 'www.bls.gov', attributes: { source_title: 'Employment Situation' } }).text, 'bls.gov, Employment Situation');
   assert.equal(sourceLabel({ artifact: 'a1', root: 'x.com', publisher: 'BLS', title: 'Jobs', attributes: {} }).text, 'BLS, Jobs');
+  assert.equal(sourceLabel({ artifact: 'a1', root: 'a'.repeat(64), uri: 'https://www.propublica.org/x', attributes: { source_title: 'From teacher to senator' } }).text, 'propublica.org, From teacher to senator');
+  assert.equal(sourceLabel({ artifact: 'a1', root: 'a'.repeat(64), uri: 'custody:abc', attributes: { source_name: 'ProPublica' } }).text, 'ProPublica');
   assert.deepEqual(sourceLabel({ artifact: 'a1', root: null, attributes: {} }), { publisher: null, title: null, fallback: true, text: 'a1' });
 });
 

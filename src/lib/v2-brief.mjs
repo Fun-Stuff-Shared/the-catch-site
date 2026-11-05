@@ -10,9 +10,20 @@ const byRecency = (a, b) => recency(b).localeCompare(recency(a)) || a.id.localeC
 
 const named = (value) => typeof value === "string" && value.trim() ? value.trim() : null;
 
+// A capture's root is the hash of its raw bytes, which names no one, so its address names the site instead.
+function siteOf(source) {
+  const root = named(source.root);
+  if (root && !/^[0-9a-f]{64}$/.test(root)) return root.replace(/^www\./, "");
+  try {
+    return new URL(source.uri).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
+}
+
 // A source is named by the publisher and title the core gives it, then by the site it came from; the artifact id stands in only when it has none of them.
 export function sourceLabel(source) {
-  const publisher = named(source.publisher) ?? named(source.root)?.replace(/^www\./, "") ?? null;
+  const publisher = named(source.publisher) ?? named(source.attributes?.source_name) ?? siteOf(source);
   const title = named(source.title) ?? named(source.attributes?.source_title);
   return { publisher, title, fallback: !publisher && !title, text: [publisher, title].filter(Boolean).join(", ") || source.artifact };
 }
