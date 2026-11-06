@@ -8,7 +8,7 @@ Latest uses a newspaper composition: a compact publication line, topic navigatio
 
 Search is one shared header control on every route. It opens a field, filters the current homepage catalog in place, and shows matching published stories in a dropdown on other pages. The series directory also has its distinctly labeled local series filter. Topics describe subjects; series follow ongoing coverage; stories are dated developments. Only topics with published stories appear on the real homepage.
 
-The opt-in `/design/coverage/` preview exercises the same homepage with fifteen explicitly fictional stories across five topics. Build it with `CATCH_DESIGN_PREVIEW=1 CATCH_STATE_SOURCE=/nonexistent/catch-ui-frozen npm run build`. Samples have separate noindex detail pages and are excluded from the real homepage and search index. Without the preview flag the design routes are not generated.
+The opt-in `/design/coverage/` preview exercises the same homepage with fifteen explicitly fictional stories across five topics. Build it with `CATCH_DESIGN_PREVIEW=1 npm run build`. Samples have separate noindex detail pages and are excluded from the real homepage and search index. Without the preview flag the design routes are not generated.
 
 Archived static HTML routes are rendered through BaseLayout so their navigation and gutters match the rest of the site. The build shell gate checks every nonredirect page for the shared navigation, search form, and stylesheet.
 

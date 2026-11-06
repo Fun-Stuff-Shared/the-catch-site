@@ -25,6 +25,5 @@ A reference without a quoted passage is explicitly shown as the opening of the s
 document. The document's citation role remains attached to each citing story.
 
 Run `npm run test:state` for consumer and tamper tests. Run `npm run build` for the
-full publication gate. To test a disposable projection without reading live state,
-set `CATCH_STATE_SOURCE` to its views directory; the pull still validates it before
-replacing local copies. Keep fixture inputs out of commits intended for publication.
+full publication gate. v1 is frozen: the views in `data/state` are committed, and
+`scripts/pull-state.mjs` only checks them.

@@ -26,7 +26,7 @@ A separate static scan covered **2,550 built HTML pages and 29,678 local anchor 
 Reproduce:
 
 ```sh
-CATCH_DESIGN_PREVIEW=1 CATCH_STATE_SOURCE=/nonexistent/catch-ui-frozen npm run build
+CATCH_DESIGN_PREVIEW=1 npm run build
 node scripts/audit-reader.mjs > /tmp/catch-reader-audit.json
 npm run test:reader
 ```

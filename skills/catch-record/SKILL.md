@@ -30,7 +30,9 @@ and that is the point of having it. What reaches the page is decided by the plan
 
 Work in the story's worktree. Paths below are relative to it. `<story>` is
 `<subject>--<slug>`, e.g. `immigration-detention--2026-10-01-supreme-court-takes-up-bond-hearings`.
-What the core holds on the event is in `data/v2` in this worktree; `node scripts/v2-candidates.mjs <words>` finds a development, and the manifest's `v2_subjects` names the one this story starts from. Those are leads, not the record: everything on the page is admitted and read at its source below.
+The core (sai-core v2) holds two views of the event, and both are leads, not the record: everything on the page is admitted and read at its source below.
+- The pinned snapshot, `data/v2` in this worktree, is what the page builds from: `node scripts/v2-candidates.mjs <words>` finds a development in it, and the manifest's `v2_subjects` must name a subject the snapshot holds.
+- `sai` reads the core as it is now, past the pin (`sai --help`): `sai brief <subject>` for sources that arrived since, `sai search-all "<words>"` for statements on other subjects that cover the same event, `sai statements <subject> --speaker <name>` for who said what, with publisher and URL, and `sai claim <subject> <claim id>` for where a claim came from and how many independent roots stand behind it. Open each source it names and admit what you use.
 
 Outputs, all committed together at the end:
 - `checks/records/<story>.md`: the brief, from `assets/record-brief.md`
@@ -79,7 +81,7 @@ adds goes on the list. The method, and a worked example, are in `references/ach.
 `capture search "<terms>" --since <date>` checks what is already held (it matches URL,
 title and publisher, not body text). `capture news --reason "<why>" <url>` fetches the rest;
 `--via-archive` when the site refuses. PDFs go through Mistral OCR automatically.
-Capture's text extraction drops HTML tables and still reports a clean capture, so a results or data page's text can hold no numbers at all: check the text, and admit such a page from a local file with the table's text. `capture news` takes about a minute a URL, and a batch killed by a shell timeout writes no `article_receipts.jsonl`, so nothing from it can be admitted: run long batches in the background, not under a timeout. For FEC filings use the bulk files and raw filings; `DEMO_KEY` on the API hits its rate limit mid-run.
+Capture's text extraction drops HTML tables and still reports a clean capture, so a results or data page's text can hold no numbers at all: check the text, and admit such a page from a local file with the table's text. A finished `capture news` run also goes to the core on its own, through the Mac outbox; `capture status` shows whether it arrived. `capture news` takes about a minute a URL, and a batch killed by a shell timeout writes no `article_receipts.jsonl`, so nothing from it can be admitted: run long batches in the background, not under a timeout. For FEC filings use the bulk files and raw filings; `DEMO_KEY` on the API hits its rate limit mid-run.
 
 Read each primary record end to end. Opinions and petitions name the records they rest on:
 the earlier ruling, the memo, the regulation, the prior case, the person's history. Follow

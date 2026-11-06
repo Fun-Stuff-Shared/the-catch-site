@@ -22,11 +22,11 @@ story, answer its questions, read what it sends at the bytes, decide what the hu
 delegated, and do everything that touches shared state: main, the live site, the core.
 The author never touches those.
 
-Repo: `/Volumes/4/GitHub/the-catch-site`. Candidates and evidence: the pinned sai-core v2 snapshot in `data/v2`. Scripts: `skills/catch-orchestrate/scripts/`.
+Repo: `/Volumes/4/GitHub/the-catch-site`. Candidates and evidence: the pinned sai-core v2 snapshot in `data/v2`, which the page builds from; `sai` (`sai --help`) reads the live core past the pin. Scripts: `skills/catch-orchestrate/scripts/`.
 
 ## 1. Open the story
 
-Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]`, read enough of its view and sources to fix the moment and its date, and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
+Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]`, read enough of its view and sources to fix the moment and its date, check the live core for what the pin lacks (`sai brief <subject>` for newer sources, `sai search-all "<words>"` for the same event under another subject; the manifest can name only a subject the pinned snapshot holds), and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
 
 ```bash
 CATCH_ORCHESTRATOR=<your name in ListAgents> zsh skills/catch-orchestrate/scripts/open-story.sh \
@@ -67,7 +67,7 @@ A rename breaks the build of every other worktree that still holds the old page 
 event (`Rendered story label differs`). For a story not yet on main that is only its own
 worktree. For a story already on main (a revision), every other worktree's local build fails
 on it until the revised page is published; tell the other authors to build against the
-committed state meanwhile (`git checkout -- data/state && CATCH_STATE_SOURCE=/nonexistent npm run build`), and publish the
+committed state meanwhile (`git checkout -- data/state && npm run build`), and publish the
 revision promptly.
 
 The author sends you any fact the plan does not hold as a plan change. Take it only when a
@@ -160,7 +160,7 @@ Once the story is live, it refuses while anything still runs in the worktree, se
 
 ## Gotchas
 
-- `npm run build` is the only build. `astro build` alone skips the record pages and pull-state.
+- `npm run build` is the only build. `astro build` alone skips the record pages and the checks of the committed v1 views in `data/state` (`scripts/pull-state.mjs`).
 - The global git post-commit hook can hang on `git lfs`; scripts and authors commit with `git -c core.hooksPath=/dev/null`.
 - A build in any worktree overwrites `src/data/news-records.json`; never commit it it.
 - A story whose `v2_subjects` entry leaves the snapshot without a merge record fails the build; the last deploy keeps serving until the manifest names a subject that exists.

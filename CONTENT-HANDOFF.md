@@ -65,7 +65,7 @@ Acceptance: inspect deployed HTML and HTTP status/redirects; canonicalize mode/q
 Work only in `/Volumes/4/GitHub/the-catch-site/.worktrees/reader-experience`. Build against its frozen data:
 
 ```sh
-CATCH_DESIGN_PREVIEW=1 CATCH_STATE_SOURCE=/nonexistent/catch-ui-frozen npm run build
+CATCH_DESIGN_PREVIEW=1 npm run build
 npm run test:reader
 npm run test:state
 node scripts/audit-reader.mjs > /tmp/catch-reader-audit.json

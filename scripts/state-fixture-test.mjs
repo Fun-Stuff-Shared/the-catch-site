@@ -45,22 +45,6 @@ test('incomplete projections refuse a build instead of silently dropping a story
   assert.throws(() => readState(root), /Missing chain/);
 });
 
-import { pullState } from './pull-state.mjs';
-
-test('pull replaces same-time copies and rejects an incomplete source before replacing destination', (t) => {
-  const source = fixture(t);
-  const destination = fixture(t);
-  source.view.event.label = 'Changed report title';
-  source.sync();
-  pullState({ source: source.root, destination: destination.root });
-  assert.equal(readState(destination.root).events.get('event-a').event.label, 'Changed report title');
-  source.view.root_id = 'event-missing';
-  source.write('event-a', source.view);
-  assert.throws(() => pullState({ source: source.root, destination: destination.root }), /Missing chain/);
-  assert.equal(readState(destination.root).events.get('event-a').event.root_id, undefined);
-  assert.equal(readState(destination.root).events.get('event-a').root_id, 'event-a');
-});
-
 import { buildStateRecords } from './build-state-records.mjs';
 import { createHash } from 'node:crypto';
 test('a cited document is pinned from verified text and a changed body refuses publication', (t) => {
