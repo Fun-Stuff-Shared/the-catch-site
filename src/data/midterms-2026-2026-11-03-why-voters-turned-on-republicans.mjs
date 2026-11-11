@@ -50,6 +50,8 @@ export const n = {
   ygTrumpD: 6,
   ygHarrisD: 80,
   ygHarrisR: 2,
+  ygTrumpHome: 24,
+  ygHarrisHome: 13,
   ygDemLoyal: 78,
   ygRepLoyal: 64,
   ygNonMagaHome: 34,
@@ -67,6 +69,7 @@ export const n = {
   endWar: 71,
   repealTariffs: 62,
   acaPremiums: 58,
+  badEconomy: 75,
 };
 
 export const computed = {
@@ -77,7 +80,7 @@ export const computed = {
 export const event = {
   slug: "midterms-2026/2026-11-03-why-voters-turned-on-republicans",
   title: "More midterm voters called corruption and prices crucial than the Iran war",
-  dek: `In the largest survey of 2026 voters, ${n.corruption}% called government corruption crucial to their vote and ${n.iran}% said the same of the war.`,
+  dek: `In the Voter Poll, the survey seven news organizations share, ${n.corruption}% called government corruption crucial to their vote and ${n.iran}% said the same of the war.`,
   name: "Why voters turned on Republicans in the 2026 midterms",
   date: "2026-11-03",
   updated: "2026-11-11",
