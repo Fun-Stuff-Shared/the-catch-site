@@ -1,0 +1,74 @@
+---
+/**
+ * One explanation for an event, laid out for the reader to test: who holds it, the
+ * evidence that fits it, the evidence against it, and a plain verdict.
+ * Props:
+ *   name: string     - the explanation in a few words ("The Iran war")
+ *   holder: string   - who puts it forward, in reader words
+ *   verdict: "supported" | "partly" | "not" | "untestable"
+ * Slots: "claim" (the holder's case in their words), "for", "against", "verdict"
+ * (the deciding evidence in a sentence or two). Each slot holds typed, cited paragraphs.
+ */
+interface Props {
+  name: string;
+  holder: string;
+  verdict: "supported" | "partly" | "not" | "untestable";
+}
+const { name, holder, verdict } = Astro.props;
+const label = {
+  supported: "Supported",
+  partly: "Partly supported",
+  not: "Not supported",
+  untestable: "Can't be tested with what's public",
+}[verdict];
+if (!label) throw new Error(`ExplanationEntry: unknown verdict ${verdict}`);
+---
+<article class={`explanation ${verdict}`} data-layer="fact">
+  <header class="ex-head">
+    <h3 class="ex-name">{name}</h3>
+    <p class="ex-chip"><span>{label}</span></p>
+  </header>
+  <p class="ex-holder">Held by {holder}</p>
+  {Astro.slots.has("claim") && <div class="ex-claim"><slot name="claim" /></div>}
+  <div class="ex-evidence">
+    {Astro.slots.has("for") && (
+      <div class="ex-col ex-for">
+        <p class="ex-col-label">What fits it</p>
+        <slot name="for" />
+      </div>
+    )}
+    {Astro.slots.has("against") && (
+      <div class="ex-col ex-against">
+        <p class="ex-col-label">What cuts against it</p>
+        <slot name="against" />
+      </div>
+    )}
+  </div>
+  <div class="ex-verdict"><slot name="verdict" /></div>
+</article>
+<style is:global>
+  .explanation { margin: 0 0 1.25rem; padding: 1rem 1.1rem 0.9rem; border: 1px solid var(--rule); border-left-width: 4px; background: var(--paper, transparent); }
+  .explanation.supported { border-left-color: var(--blue); }
+  .explanation.partly { border-left-color: var(--gold, #9a6200); }
+  .explanation.not { border-left-color: var(--red, #b3261e); }
+  .explanation.untestable { border-left-color: var(--slate); }
+  .explanation .ex-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.25rem 0.75rem; }
+  .explanation .ex-name { margin: 0; font-family: var(--serif); font-size: 1.15rem; line-height: 1.3; }
+  .explanation .ex-chip { margin: 0; }
+  .explanation .ex-chip span { display: inline-block; padding: 0.15rem 0.5rem; font: 600 0.72rem/1.4 var(--sans); letter-spacing: 0.03em; text-transform: uppercase; border: 1px solid currentColor; color: var(--slate); }
+  .explanation.supported .ex-chip span { color: var(--blue); }
+  .explanation.partly .ex-chip span { color: var(--gold, #9a6200); }
+  .explanation.not .ex-chip span { color: var(--red, #b3261e); }
+  .explanation .ex-holder { margin: 0.3rem 0 0.6rem; font: 500 0.8rem/1.4 var(--sans); color: var(--slate); }
+  .explanation .ex-claim p { margin: 0 0 0.6rem; }
+  .explanation .ex-evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.25rem; }
+  .explanation .ex-evidence:empty { display: none; }
+  .explanation .ex-col-label { margin: 0 0 0.25rem; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .explanation .ex-col p:not(.ex-col-label) { margin: 0 0 0.5rem; font-size: 0.95rem; line-height: 1.5; }
+  .explanation .ex-verdict { margin-top: 0.4rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
+  .explanation .ex-verdict p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+  @media (max-width: 640px) {
+    .explanation { padding: 0.85rem 0.85rem 0.75rem; }
+    .explanation .ex-evidence { grid-template-columns: 1fr; }
+  }
+</style>

@@ -7,8 +7,47 @@
   "v2_subjects": [
     "subject-event-012eb33d-e637-489a-9407-495a3f9cbfb9"
   ],
-  "story_title": "Why voters turned on Republicans in the 2026 midterms",
-  "sub_events": [],
+  "story_title": "More midterm voters called corruption and prices crucial than the Iran war",
+  "sub_events": [
+    {
+      "id": "election-2026-11-03",
+      "date": "2026-11-03",
+      "label": "Democrats win the House and Senate",
+      "section_anchor": "what-happened",
+      "records": [
+        "ap-uncalled-races-2026-11-10",
+        "pew-polling-performance"
+      ]
+    },
+    {
+      "id": "vance-2026-11-04",
+      "date": "2026-11-04",
+      "label": "Vance says the war lost it",
+      "section_anchor": "the-sides",
+      "records": [
+        "vance-x-post-2026-11-04"
+      ]
+    },
+    {
+      "id": "cruz-2026-11-04",
+      "date": "2026-11-04",
+      "label": "Cruz posts a Kansas issue list as exit polling",
+      "section_anchor": "the-catch",
+      "records": [
+        "cruz-x-post-2026-11-04"
+      ]
+    },
+    {
+      "id": "usatoday-2026-11-05",
+      "date": "2026-11-05",
+      "label": "USA Today prints the Kansas list",
+      "section_anchor": "the-catch",
+      "records": [
+        "usatoday-live-2026-11-05",
+        "voter-poll-kansas-senate"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "voter-poll-national-house",
@@ -1055,6 +1094,99 @@
       "label": "Associated Press: 2026 U.S. House results",
       "meta": " · read 2026-11-11",
       "usage": "Seats going in"
+    }
+  ],
+  "event_record": "/events/midterms-2026/",
+  "completed_by": "claude (why-voters-author session, worktree 2026-11-03-why-voters-turned-on-republicans)",
+  "date_completed": "2026-11-11",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/midterms-2026 and data/sources/coverage with its text and hash; the Voter Poll crosstabs, the EIA and UCSB tables and the Vance and Cruz posts were admitted from locally saved files because capture drops tables and cannot read X."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module computes the Republican House loss of at least 39 seats from AP's 255 Democratic seats and the 219 Republicans held going in, and the $1.21 gasoline rise from EIA's $2.94 and $4.15 weekly averages."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The catch checks USA Today's Kansas issue list against the Kansas Voter Poll's own top-issue table, and NBC's, AP's and Fox's 2024 baselines against each outlet's text and AP's explainer of the new poll."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the seat count is dated Nov. 10 and the poll tables are saved copies dated in the records list."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "New subject page /events/midterms-2026/ with its data module src/data/subjects/midterms-2026.mjs and two figures, corruption 55% and the Iran war 34% crucial; the series and story are listed in src/lib/discovery.mjs."
+    }
+  },
+  "figures": [
+    {
+      "figure": "crucial_corruption",
+      "label": "Voters who called government corruption crucial to their vote for Congress",
+      "value": "55",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "voter-poll-national-house",
+        "quote_span": "Yes: 55%  [Democrats 63 / Republicans 35]"
+      }
+    },
+    {
+      "figure": "crucial_cost",
+      "label": "Voters who called the cost of living crucial",
+      "value": "49",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "voter-poll-national-house",
+        "quote_span": "Yes: 49%  [Democrats 66 / Republicans 32]"
+      }
+    },
+    {
+      "figure": "crucial_iran",
+      "label": "Voters who called the war in Iran crucial",
+      "value": "34",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "voter-poll-national-house",
+        "quote_span": "Yes: 34%  [Democrats 72 / Republicans 26]"
+      }
+    },
+    {
+      "figure": "vote_oppose_trump",
+      "label": "Voters who said one reason for their House vote was to oppose Trump",
+      "value": "44",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "voter-poll-national-house",
+        "quote_span": "To oppose Trump: 44%  [Democrats 97 / Republicans 2]"
+      }
+    },
+    {
+      "figure": "trump_voters_to_dem",
+      "label": "Trump 2024 voters who voted for a Democrat for the House",
+      "value": "7",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "voter-poll-national-house",
+        "quote_span": "Trump: 44%  [Democrats 7 / Republicans 91]"
+      }
+    },
+    {
+      "figure": "dem_house_seats",
+      "label": "House seats won by Democrats as of Nov. 10",
+      "value": "255",
+      "unit": "seats",
+      "kind": "sourced",
+      "source": {
+        "source_id": "ap-uncalled-races-2026-11-10",
+        "quote_span": "With 255 seats in the House, Democrats will have their largest majority elected to the chamber since the 2008, with the potential to pick up several more seats as the remaining races are called."
+      }
     }
   ]
 }
