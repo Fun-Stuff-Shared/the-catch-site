@@ -21,7 +21,10 @@ Question 1: why did voters turn against Republicans? Each answer as its camp put
 - K. Immigration enforcement "gone too far". If true: majority says too far and votes Democratic; enforcement-focused voters do too. Should not find: Republicans still preferred on immigration.
 - L. Jobs and a weakening economy, apart from prices. If true: job worries measured separately and voting Democratic. Should not find: voters calling the economy good.
 - M. Health costs (Democrats ran on the expired ACA credits and Medicaid cuts). If true: voters say Trump's policies raised their health costs and favor Democrats on health care.
-- N. A rigged or irregular count. If true: credible claims from the losing side, court challenges. Should not find: Trump accepting the result.
+- N. A rigged or irregular count (Trump, Nov. 9: "Does anybody really believe that this 'Election' was honest" [usatoday-trump-doubts-2026-11-09: "Does anybody really believe that this 'Election' was honest"]). If true: credible irregularities named by officials, court challenges. Should not find: officials reporting no problems and no court wave.
+- O. Party loyalty (the largest open-ended answer in YouGov's post-election poll). If true: most votes did not move, and the side whose voters stayed more loyal gained. Should not find: equal loyalty on both sides.
+- P. Bad messaging (Trump, Nov. 8: "I think it was bad messaging." [cbs-60-minutes-2026-11-08: "I think it was bad messaging."]). If true: voters unaware of the administration's record, or a poll showing the message, not conditions, moved them. Should not find: nothing a public poll could show, unless one asked about awareness of the record.
+- Q. Israel and "Put America First" (two of the four answers Vance says his pollster heard [vance-x-post-2026-11-04: "3) Put America First"] [vance-x-post-2026-11-04: "4) Change our relationship to Israel"]). If true: many voters call U.S. support for Israel too strong and those voters include defecting Trump voters. Should not find: the view held mostly by Democrats already.
 
 | Evidence | Bears on | Reading |
 |---|---|---|
@@ -52,23 +55,41 @@ Question 1: why did voters turn against Republicans? Each answer as its camp put
 | Immigration actions "gone too far" 58% (D 90-8) [voter-poll-national-house: "Gone too far: 58% [Democrats 90 / Republicans 8]"]; Republicans still preferred on immigration 43-41 [voter-poll-national-house: "Who can better handle immigration? Democratic Party: 41% [Democrats 97 / Republicans 2] Republican Party: 43%"] | K | Mixed |
 | Trump's policies made your health costs worse: 55% (D 83-15) [voter-poll-national-house: "Worse: 55% [Democrats 83 / Republicans 15]"]; Democrats better on health care 50-30 [voter-poll-national-house: "Who can better handle healthcare? Democratic Party: 50% [Democrats 93 / Republicans 6] Republican Party: 30%"] | M | Consistent with M; top issue for 8% |
 | NORC: "the economy and jobs" among top three issues for 58% of likely voters [norc-release-2026-11-04: "58 percent of likely voters identified “the economy and jobs” as one of the three most important issues facing the country"] | L | Jobs and economy asked together; no separate jobs question in either survey |
+| YouGov open-ended most important factor: party loyalty 25, opposition to Trump 13, economy 12, candidate qualities 7, foreign policy and war 2 [economist-yougov-2026-11-06: "Asked of voters, and categorized open-ended responses into a single-choice question"] [economist-yougov-2026-11-06: "Party loyalty"] [economist-yougov-2026-11-06: "Foreign policy and war"] | A, E, F, O | Voters' own words put the war near the bottom; Trump second |
+| Narrative Strategies, non-probability panel weighted to the Voter Poll: most responsible for rising costs, Iran war 44, tariffs 38, fuel and gas 30 [narrative-strategies-poll: "The Iran war 44%"] [narrative-strategies-poll: "Tariffs 38%"]; IGA/YouGov probability sample: 56% prioritize avoiding higher prices over the war's goals [iga-yougov-iran: "say the United States should prioritize avoiding higher prices at home, even if its military goals in Iran are not fully met."] | A, B, C | The war reached many voters through prices; the 44% is from a non-probability poll |
+| YouGov, registered voters with nonvoters: Trump 2024 voters 65% R, 6% D; Harris voters 80/2 [yougov-2026-11-independents: "Kamala Harris voters voted for Democrats by a 78-point margin (80% Democratic vs. 2% Republican), while Trump's 2024 voters backed Republicans by a 59-point margin (6% vs. 65%)."]; Republicans 64% loyal, Democrats 78% [yougov-2026-11-independents: "78% of Democrats say they voted for Democratic candidates, compared to the 64% of Republicans who say they voted for Republican candidates."] | G, O | Self-reports; more Trump voters stayed home than switched |
+| 2024 nonvoters: 4% of voters in the Voter Poll [voter-poll-national-house: "Did not vote: 4%"], about 15% in NORC [wapo-norc-ten-factors: "about 15 percent of this year’s voters"] | G | The two surveys disagree; not reconcilable from what is public |
+| 50% say Trump's rallies hurt the candidates he campaigned for [yougov-2026-11-understanding: "50% think Donald Trump’s campaign rallies hurt the Republican candidates he campaigned for a little or a lot"] | E, F | Fits both |
+| Trump: deportation policy "might be too tough" [cbs-60-minutes-2026-11-08: "I think it might be too tough, yeah."] | K | Consistent with K |
+| Roll Call: "Republicans’ redistricting edge largely failed to materialize" [rollcall-redrawn-districts: "Republicans’ redistricting edge largely failed to materialize"]; Republicans won TX-32 and Memphis-based TN-9 [rollcall-redrawn-districts: "Republican Air Force veteran Jace Yarbrough narrowly defeated Democrat Dan Barrios"] [rollcall-redrawn-districts: "And yet Republican state Sen. Brent Taylor eked out a victory over Democratic state Rep. Justin Pearson."] | H | Against H as a Democratic driver |
+| KFF: Marketplace premium payments up 58% after the enhanced credits expired [kff-aca-marketplaces: "On net, premium payments increased 58% on average"] | M | A measured cost shock behind M |
+| 62% say Trump prioritizes his personal interests [voter-poll-national-house: "His personal interests: 62%"] | D, E | Ties the corruption answer to Trump |
+| U.S. support for Israel too strong 51% (D 79-19), not strong enough 12, about right 37 [voter-poll-national-house: "Too strong: 51% [Democrats 79 / Republicans 19]"] | Q | Large, but held mostly by Democratic voters; no table ties it to switching |
+| Florida Voter Poll party ID among voters: R 41, D 30 [voter-poll-florida-governor: "Republican: 41%"] [voter-poll-florida-governor: "Democrat: 30%"] | Vance's Florida claim | Roughly matches his "9 points more Republican"; "a couple points worse than 2024" cannot be tested like-for-like |
+| Pew: House vote about D+12 as of Nov. 5, NYT expects about 13 [pew-polling-performance: "The New York Times expects that advantage to tick up to 13 points"] | Vance's generic-ballot claim | His pollster's 13 matches |
+| Trump, Nov. 9: "It’s all about the machines" [usatoday-trump-doubts-2026-11-09: "It’s all about the machines, which are far more important than the voter!"]; officials raised no major concerns [usatoday-trump-doubts-2026-11-09: "Election officials across the country have also not raised major concerns about early-voting discrepancies or voting machines in the 2026 races."] | N | Against N |
 | Trump said he would accept the results; no court wave; fraud claims from activists, one denied by the FBI [ap-rigged-fact-check: "After President Donald Trump said he would accept the results of his party’s midterm rout, many of his loyalists followed suit"] [ap-rigged-fact-check: "Most notably, there was no day-after wave of court actions challenging the outcome"] | N | Against N |
 
 Verdicts, one per answer:
-- A. Iran war: partly supported. The war mattered to most voters (74% crucial or major) and its opponents voted Democratic, but it ranked fourth of five as "crucial", and the published tables cannot separate it from the gas price it raised. Vance's own evidence answered a question about what would bring voters back.
-- B. Gas and prices: supported. It cannot be separated from E: the same voters who name prices blame Trump's policies for them.
+- A. Iran war: partly supported. Fourth of five as "crucial" and 2% in voters' own words, but in a non-probability poll 44% named it a top cause of rising costs, and a probability sample put prices ahead of the war's goals. It mostly reached voters through prices.
+- B. Gas and prices: supported. Cannot be separated from E: the voters who name prices blame Trump's policies for them.
 - C. Tariffs: supported as voters' judgment (66% hurt the national economy). Navarro's "no role" is contradicted by how voters judged them, not by an economic test.
-- D. Affordability and corruption: partly supported. Corruption and cost of living were the two most-cited crucial factors, but voters' Democratic edge on them was narrow and 52% viewed the party unfavorably.
-- E. Referendum on Trump: supported. 44% voted to oppose him, 16% to support him; approval 37%. Inseparable from B. Trump's claim that he would have won on the ballot is a counterfactual no record can test.
-- F. Weak candidates: partly supported. Voters doubted Paxton and Marshall, but 91% of Trump's 2024 voters stayed Republican and the national House vote swung everywhere.
-- G. Turnout versus switching: both supported, neither alone. Rests on recalled 2024 vote, which SSRS also weights on.
-- H. Redistricting: not supported as the cause of the swing; statewide races swung. The mobilization version cannot be tested with public data.
-- I. Midterm swing: supported for direction; the size matches the losses under the least popular presidents in the table.
-- J. Democracy: partly supported; second-ranked issue, but its voters were Democrats already.
-- K. Immigration: mixed; most said "too far", but enforcement-focused voters went Republican.
+- D. Affordability and corruption: partly supported. The two most-cited crucial factors, but the Democratic edge on them was narrow and 52% viewed the party unfavorably; 62% said Trump puts his own interests first.
+- E. Referendum on Trump: supported. 44% voted to oppose him, a plurality; 16% to support him; approval 37%; second in voters' own words. Inseparable from B.
+- F. Weak candidates: partly supported. Voters doubted Paxton and Marshall, 7% named candidate qualities, half said Trump's rallies hurt his candidates; the national House vote swung everywhere.
+- G. Turnout versus switching: both, leaning toward staying home. In the one post-election survey that counts nonvoters, 6% of Trump's 2024 voters switched; among non-MAGA Republicans 34% did not vote and 8% switched. Self-reports. The Voter Poll and NORC disagree on 2024 nonvoters (4% against about 15%).
+- H. Redistricting: not supported as a cause of Democratic gains; most redraws failed and Republicans won two redrawn seats. The mobilization version cannot be tested.
+- I. Midterm swing: supported for direction; the size matches losses under the least popular presidents in the table.
+- J. Democracy: cannot be tested with what is public. Second-ranked issue, voters D 79-20, but no public table shows how those voters voted in 2024.
+- K. Immigration: partly supported. 58% said "too far" and Trump said his policy "might be too tough", but enforcement-focused voters went Republican.
 - L. Jobs: cannot be tested with what is public.
-- M. Health costs: partly supported.
-- N. Rigged count: not supported; Trump himself accepted the result.
+- M. Health costs: partly supported, with a measured 58% premium rise behind it.
+- N. Rigged count: not supported. Trump raised it Nov. 9; officials raised no major concerns and there was no court wave.
+- O. Party loyalty: supported as the reason most votes did not move; Republicans were less loyal (64%) than Democrats (78%).
+- P. Bad messaging: cannot be tested. No public poll asked whether voters knew the administration's economic record.
+- Q. Israel: partly supported (51% too strong, but mostly Democratic voters; nothing ties it to switching). "Put America First": cannot be tested.
+
+Vance's Nov. 4 checks: Florida's Voter Poll party ID among voters (R 41, D 30) roughly matches his "9 points more Republican"; "a couple points worse than 2024" cannot be tested like-for-like with public data, so it is not a catch. His pollster's generic ballot of 13 matches the House vote (about 12, expected 13). Trump's Nov. 3 words, which Vance cites, named the gasoline price, not the war, and added "a part of it was Iran" [fox-trump-election-night: "I think a part of it was Iran."].
 
 The result turns on two rows: the five "crucial" shares (A against B and D), and the 2024-vote rows (G). It would change if the final weighted file moved the corruption, cost-of-living and Iran shares by several points, or if voter-file studies show recalled 2024 vote misstates the electorate.
 
@@ -80,15 +101,15 @@ Question 2 (the catch): do the reports say what the polls measured?
 
 ## The story
 
-1. Democrats took the House and Senate on Nov. 3, and in the Voter Poll, the survey of about 100,000 voters that seven news organizations share, government corruption and the cost of living were the issues most voters called crucial.
-2. Some of Trump's 2024 voters switched (7% voted for a Democrat for the House), and Harris's 2024 voters made up more of this year's electorate (49%) than Trump's (44%), though Trump won the 2024 popular vote.
-3. Gasoline had risen from $2.94 to $4.15 a gallon between the week before the Iran war and the eve of the election, 79% of voters said inflation had caused their family hardship, and 37% approved of Trump.
-4. Vance says the war lost it and Trump says gas prices and bad candidates did, but voters called the war crucial less often than corruption, prices or immigration, and the poll cannot separate anger at prices from anger at Trump.
-5. Democrats take control in January with at least 54 Senate seats and 255 House seats, with races in Alaska, Mississippi and more than a dozen House districts still uncalled.
+1. Democrats took the House and Senate on Nov. 3, and in the Voter Poll, the survey of about 100,000 voters that seven news organizations share, government corruption and the cost of living were the issues voters most often called crucial.
+2. Republicans lost voters both ways, but in the one post-election survey that counts nonvoters, by voters' own account staying home cost them more than switching: 65% of Trump's 2024 voters voted Republican and 6% Democratic, and among Republicans outside the MAGA wing 34% did not vote while 8% voted Democratic.
+3. Gasoline had risen from $2.94 a gallon on Feb. 23 to $4.15 on Nov. 2, 79% of voters said inflation had caused their family hardship, and 37% approved of Trump.
+4. Vance says the war lost it and Trump has said gas prices, bad candidates and bad messaging; voters called the war crucial less often than corruption or prices, but many named it as a cause of the prices, and the polls cannot separate anger at prices from anger at Trump.
+5. Democrats take Congress on Jan. 3 with majorities short of the Senate's 60 votes and of a veto override, facing a public that, in a Reuters/Ipsos poll, wants the war ended (71%) and the tariffs repealed (62%).
 
 ## The plan
 
-Headline: Voters ranked corruption and prices above the Iran war
+Headline: More midterm voters called corruption and prices crucial than the Iran war
 
 What happened (sentence 1):
 1. What happened? Democrats won both chambers [ap-uncalled-races-2026-11-10: "With 255 seats in the House, Democrats will have their largest majority elected to the chamber since the 2008"].
@@ -97,19 +118,20 @@ What happened (sentence 1):
 4. Trump on voters' minds: 44% opposed, 16% supported, 40% not a factor.
 
 Who moved (sentence 2): opens on "who changed sides, and who stayed home?"
-1. Trump 2024 voters D 7, Harris R 2; composition 49/44 against Trump's 49.8-48.3 win. Chart: the 2024 vote of 2026 voters.
-2. NORC's separate count agrees: about 1 in 10 Trump voters in four flip states; 2024 nonvoters 15%.
-3. Groups: by 2026 vote only (under 30 D 73-25; Latino D 64-34; independents D 58-38), with no 2024 comparison in the body. The comparisons go to The Catch.
+1. YouGov, the survey that counts nonvoters: Trump 2024 voters 65% R, 6% D, the rest mostly did not vote; Republicans 64% loyal, Democrats 78%. Self-reports.
+2. The Voter Poll, voters only: Trump 2024 voters D 7; composition 49/44 against Trump's 49.8-48.3 win. NORC: 2024 nonvoters about 15% of voters, against the Voter Poll's 4%.
+3. Groups chart: 2026 House vote by gender, age, race, education, income and area, from the Voter Poll; no 2024 comparison (like-for-like not confirmed).
+4. Places chart: the Post's county returns (AP, 8:30 a.m. Nov. 4), 2026 Senate margin against 2024 presidential margin in the same counties, by county type and by state. Captioned as places, not voters.
 
 Why now (sentence 3): gasoline from EIA [eia-gasoline-weekly: "2026-02/23: 2.937"] [eia-gasoline-weekly: "2026-11/02: 4.153"]; war began in February [ap-trump-blame: "war in Iran that he started with Israel in February"]; hardship 79%; approval 37%.
 
-The sides (sentence 4): Vance, Trump, Cruz, Navarro, Jeffries and Schumer in their words; quote cards.
+The sides (sentence 4): Vance, Trump, Cruz, Navarro, Jeffries and Schumer in their words; quote cards. Vance's "The president himself said so last night" beside Trump's Nov. 3 words, dated. Trump's Nov. 8 "bad messaging".
 
 The Catch: USA Today printed, in its own voice, a Kansas issue list that came from Cruz's post; the Kansas Voter Poll ranked democracy first and offered none of those choices. Second: the 2024 baselines.
 
-What else could explain it: the A to N entries, each with who holds it, the evidence for and against, and the verdict.
+What else could explain it: the A to Q entries, each with who holds it, the evidence for and against, and the verdict.
 
-What happens next (sentence 5): uncalled races; Democrats take control in January; Pew says turnout data will show switching versus turnout, no date given [pew-polling-performance: "Panel surveys and turnout data will give us a better understanding of how much of the outcome was due to changes in vote choice versus changes in who turned out"].
+What happens next (sentence 5): Congress sworn in Jan. 3; 60 votes and veto math [reuters-gop-leaders-2026-11-10: "Their majorities in both chambers also fall well short of the two-thirds of votes needed to override presidential vetoes."]; Reuters/Ipsos 71% end the war, 62% repeal tariffs; the Scharf letter on Oversight probes [ap-oversight-warning-2026-11-11: "may cross the line into blatant criminality"]; Pew says turnout data will show switching versus turnout, no date given [pew-polling-performance: "Panel surveys and turnout data will give us a better understanding of how much of the outcome was due to changes in vote choice versus changes in who turned out"].
 
 Background held:
 - Same-poll figures differ slightly between early and final reports (NBC early 43% voting to oppose Trump [nbc-exit-poll-early: "Forty-three percent said one reason for their votes was to express opposition to Trump"]; final file 44%). Reweighting, not an error.
