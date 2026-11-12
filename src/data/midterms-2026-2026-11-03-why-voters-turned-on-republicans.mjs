@@ -173,12 +173,11 @@ export const stateSwings = stateCounts
   .map((s) => ({ ...s, name: stateName[s.state], swing: margin(s.dem26, s.gop26, s.tot26) - margin(s.dem24, s.gop24, s.tot24) }))
   .sort((a, b) => a.swing - b.swing);
 
-// How far groups moved from 2024, as each outlet reported it; each outlet used its own 2024 figure.
+// How far groups moved from 2024: each outlet's own 2024 figure against the Voter Poll's final national file for 2026.
 export const groupShifts = [
-  { group: "Young men", y24: "Trump +15", y26: "Democrats +33", source: "Fox News", c: ["shift-young-men-fox"] },
-  { group: "Voters under 30", y24: "Roughly even", y26: "About 7 in 10 Democratic", source: "AP", c: ["shift-young-ap"] },
-  { group: "Latino voters", y24: "46% Trump", y26: "62% Democratic", source: "NBC News", c: ["shift-latino-nbc"] },
-  { group: "Independents", y24: "Harris +6", y26: "Democrats +22", source: "Fox News", c: ["shift-independents-fox"] },
-  { group: "Black men", y24: "1 in 5 Trump", y26: "12% Republican", source: "NBC News for 2024; the Voter Poll for 2026", c: ["baseline-black-men-nbc", "black-men-2026"] },
-  { group: "Rural voters", y24: "Trump +28", y26: "Republicans +18", source: "Fox News", c: ["shift-rural-fox"] },
+  { group: "Voters under 30", y24: "Roughly even", y26: "73% Democratic", source: "AP", c: ["shift-young-ap", "groups-2026"] },
+  { group: "Latino voters", y24: "46% Trump", y26: "64% Democratic", source: "NBC News", c: ["baseline-latino-nbc", "groups-2026"] },
+  { group: "Independents", y24: "Harris +6", y26: "Democrats +20", source: "Fox News", c: ["shift-independents-fox", "groups-2026"] },
+  { group: "Black men", y24: "1 in 5 Trump", y26: "12% Republican", source: "NBC News", c: ["baseline-black-men-nbc", "black-men-2026"] },
+  { group: "Rural voters", y24: "Trump +28", y26: "Republicans +24", source: "Fox News", c: ["shift-rural-fox", "groups-2026"] },
 ];

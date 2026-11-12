@@ -77,14 +77,14 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="groups">
         <h2 data-layer="fact">Which groups moved</h2>
-        <p data-layer="narrative">The groups that helped Trump win in 2024 moved furthest back. Latino voters gave him 46% in 2024, by NBC's count, and gave Democrats 62% for the House this year.<Cite c="shift-latino-nbc" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats about 7 in 10.<Cite c="shift-young-ap" /> Independents went from a 6-point Harris edge to a 22-point Democratic one, by Fox News' count.<Cite c="shift-independents-fox" /></p>
+        <p data-layer="narrative">The groups that helped Trump win in 2024 moved furthest back. Latino voters gave him 46% in 2024, by NBC's count, and gave Democrats 64% for the House this year.<Cite c="baseline-latino-nbc" /><Cite c="groups-2026" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats 73% to 25%.<Cite c="shift-young-ap" /><Cite c="groups-2026" /> Independents, who favored Harris by 6 points in 2024 by Fox News' count, voted Democratic 58% to 38%.<Cite c="shift-independents-fox" /><Cite c="groups-2026" /></p>
         <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>How far some groups moved from 2024, as each outlet reported it</strong></figcaption>
+          <figcaption><strong>How far some groups moved from 2024</strong></figcaption>
           <table class="data-table">
-            <thead><tr><th>Group, and whose numbers</th><th>2024</th><th>2026 House vote</th></tr></thead>
+            <thead><tr><th>Group, and whose 2024 figure</th><th>2024</th><th>2026 House vote</th></tr></thead>
             <tbody>{groupShifts.map((r) => <tr><td>{r.group} <span class="row-source">{r.source}{r.c.map((c) => <Cite c={c} />)}</span></td><td>{r.y24}</td><td>{r.y26}</td></tr>)}</tbody>
           </table>
-          <p class="chart-source">The 2026 figures come from the Voter Poll, which began in 2025; each outlet set them against its own 2024 figure, so the starting points differ by outlet.<Cite c="poll-is-new" /><Cite c="baseline-latino-nbc" /><Cite c="baseline-latino-ap" /></p>
+          <p class="chart-source">2026: the Voter Poll's final national file, {n.respondents} voters. 2024: each outlet's own figure; the Voter Poll began in 2025, so outlets' starting points differ.<Cite c="groups-2026" /><Cite c="poll-is-new" /><Cite c="baseline-latino-ap" /></p>
         </figure>
         <p data-layer="narrative">Democrats won men narrowly and women by 19 points. They won every age group except voters 65 and older, who split evenly, and every income group. White voters split evenly; Republicans won voters without a college degree and those in small towns and rural areas.<Cite c="groups-detail" /></p>
         <figure class="story-figure" data-layer="fact">
@@ -161,7 +161,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           <ol>
             <li>
               <h3>USA Today printed a Kansas issue list that the Kansas exit poll does not contain</h3>
-              <p data-layer="narrative">On Nov. 5, USA Today wrote that in Kansas, which had elected its first Democratic senator since 1932, "nearly one-third of voters listed the cost of living as their No. 1 concern," followed by corruption, the Iran war, terrible candidates and the trade war with Canada.<Cite c="usatoday-kansas" /> USA Today printed the list in its own voice.<Cite c="usatoday-kansas" /> The day before, Cruz had posted the same five items, in the same order, as what exit polling showed, to one decimal place: 30.6% for the cost of living, 7.9% for "The candidates are terrible," 7.6% for "The Canada trade war." He did not name a poll.<Cite c="cruz-kansas-list" /></p>
+              <p data-layer="narrative">On Nov. 5, USA Today wrote that in Kansas, which had elected its first Democratic senator since 1932, "nearly one-third of voters listed the cost of living as their No. 1 concern," followed by corruption, the Iran war, terrible candidates and the trade war with Canada.<Cite c="usatoday-kansas" /> It ran in an item on Cruz's reaction, stated as fact, without saying where the figures came from.<Cite c="usatoday-kansas" /> The day before, Cruz had posted the same five items, in the same order, as what exit polling showed, to one decimal place: 30.6% for the cost of living, 7.9% for "The candidates are terrible," 7.6% for "The Canada trade war." He did not name a poll.<Cite c="cruz-kansas-list" /></p>
               <p data-layer="narrative">The exit poll in Kansas is the Voter Poll. It asked {n.ksRespondents} Kansas voters a different question from the national "crucial" list: to pick the most important issue facing the country from six choices. The state of democracy came first and the economy second. None of Cruz's choices was on its list.<Cite c="kansas-poll-top-issue" /></p>
               <figure class="story-figure" data-layer="fact">
                 <figcaption><strong>Two lists of Kansas voters' top issue</strong></figcaption>
