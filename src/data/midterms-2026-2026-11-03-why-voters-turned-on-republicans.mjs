@@ -79,8 +79,8 @@ export const computed = {
 
 export const event = {
   slug: "midterms-2026/2026-11-03-why-voters-turned-on-republicans",
-  title: "More midterm voters called corruption and prices crucial than the Iran war",
-  dek: `In the Voter Poll, the survey seven news organizations share, ${n.corruption}% called government corruption crucial to their vote and ${n.iran}% said the same of the war.`,
+  title: "Voters blamed Trump for high prices, and many of his 2024 voters stayed home",
+  dek: "Democrats won the House and Senate on Nov. 3, and voters called the Iran war crucial less often than corruption or the cost of living.",
   name: "Why voters turned on Republicans in the 2026 midterms",
   date: "2026-11-03",
   updated: "2026-11-11",
@@ -118,15 +118,6 @@ export const kansasPoll = [
   ["Health care", "9%"],
   ["Foreign policy", "5%"],
   ["Crime", "2%"],
-];
-
-// The 2024 figure each outlet set against the same 2026 poll.
-export const baselines = [
-  { group: "Latino voters", outlet: "NBC News", c: "baseline-latino-nbc" },
-  { group: "Hispanic voters", outlet: "Associated Press", c: "baseline-latino-ap" },
-  { group: "Hispanic voters", outlet: "Fox News", c: "baseline-latino-fox" },
-  { group: "Black men", outlet: "NBC News", c: "baseline-black-men-nbc" },
-  { group: "Black men", outlet: "Associated Press", c: "baseline-black-men-ap" },
 ];
 
 export const subjectFigure = { label: "Voters who called government corruption crucial to their vote", value: n.corruption, unit: "%" };

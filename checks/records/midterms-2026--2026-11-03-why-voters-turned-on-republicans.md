@@ -97,7 +97,7 @@ The result turns on two rows: the five "crucial" shares (A against B and D), and
 Question 2 (the catch): do the reports say what the polls measured?
 - The Voter Poll is one survey sold under seven names [ssrs-voter-poll-methods: "ABC, the Associated Press (AP), CBS, CNN, Fox News Media, MSNOW, and NBC."]; NBC's version is the same data [nbc-exit-poll-how-it-works: "The companies receive the same data, and NBC News then independently analyzes and reports on the exit poll results."]. Branding alone is not an error.
 - USA Today's Kansas list (below) does not match the Kansas poll. The Catch.
-- Group shifts from 2024 compare the new 2026 poll with different 2024 surveys. Second.
+- Group shifts from 2024 compare the new 2026 poll with different 2024 surveys. Each outlet's starting point comes from a real 2024 survey, so it is not an error by either; told in Who moved as why swing figures differ, not as a catch.
 - The Post's county analysis is not a voter survey [wapo-voting-groups: "These figures represent aggregated population demographics, not individual voter preferences."]. Background.
 
 ## The story
@@ -110,7 +110,7 @@ Question 2 (the catch): do the reports say what the polls measured?
 
 ## The plan
 
-Headline: More midterm voters called corruption and prices crucial than the Iran war
+Headline: Voters blamed Trump for high prices, and many of his 2024 voters stayed home (the earlier headline described how the question was worded, not what happened)
 
 What happened (sentence 1):
 1. What happened? Democrats won both chambers [ap-uncalled-races-2026-11-10: "With 255 seats in the House, Democrats will have their largest majority elected to the chamber since the 2008"].
@@ -128,7 +128,7 @@ Why now (sentence 3): gasoline from EIA [eia-gasoline-weekly: "2026-02/23: 2.937
 
 The sides (sentence 4): Vance, Trump, Cruz, Navarro, Jeffries and Schumer in their words; quote cards. Vance's "The president himself said so last night" beside Trump's Nov. 3 words, dated. Trump's Nov. 8 "bad messaging".
 
-The Catch: USA Today printed, in its own voice, a Kansas issue list that came from Cruz's post; the Kansas Voter Poll ranked democracy first and offered none of those choices. Second: the 2024 baselines.
+The Catch: USA Today printed, in its own voice, a Kansas issue list that came from Cruz's post; the Kansas Voter Poll ranked democracy first and offered none of those choices. The 2024 baselines moved to Who moved.
 
 What else could explain it: the A to Q entries, each with who holds it, the evidence for and against, and the verdict.
 
