@@ -189,7 +189,7 @@ export const explanations = [
   {
     id: "iran-war",
     name: "The Iran war",
-    holders: "JD Vance",
+    holders: "Vance",
     verdict: "partly",
     summary: "Few called it crucial on its own, many blamed it for higher prices, and the polls cannot separate the two.",
     claim: [[`Vance says the war cost Republicans the election. The case runs two ways: the war drove up the price of gas, and the war itself was unpopular.`, c("vance-war")]],
@@ -200,7 +200,7 @@ export const explanations = [
   {
     id: "gas",
     name: "Gas and prices",
-    holders: "Donald Trump; Sen. Ted Cruz",
+    holders: "Trump, Cruz",
     verdict: "supported",
     summary: "Prices weighed on nearly nine in ten voters, and those hurt by inflation voted Democratic.",
     claim: [[`Trump says voters were reacting to the price of gasoline; Cruz says food, gas and everything else cost too much.`, c("trump-gas-price"), c("cruz-prices-tariffs")]],
@@ -211,7 +211,7 @@ export const explanations = [
   {
     id: "tariffs",
     name: "Tariffs",
-    holders: "Sen. Ted Cruz; Phillip Magness",
+    holders: "Cruz, Magness",
     verdict: "supported",
     summary: "Two-thirds judged the tariffs harmful and voted against the party that imposed them.",
     claim: [[`Cruz says tariffs made everything too expensive, and Phillip Magness, writing in The Dispatch, argued that tariffs, not the war, sank Republicans.`, c("cruz-prices-tariffs"), c("magness-not-war")]],
@@ -222,7 +222,7 @@ export const explanations = [
   {
     id: "affordability",
     name: "Affordability and corruption",
-    holders: "Hakeem Jeffries; Chuck Schumer",
+    holders: "Jeffries, Schumer",
     verdict: "partly",
     summary: "The two issues led, but voters preferred Democrats on them only narrowly.",
     claim: [[`Jeffries and Schumer say voters chose Democrats on the cost of living and corruption.`, c("jeffries-affordability"), c("schumer-costs-corruption")]],
@@ -244,7 +244,7 @@ export const explanations = [
   {
     id: "candidates",
     name: "Bad candidates",
-    holders: "Donald Trump",
+    holders: "Trump",
     verdict: "partly",
     summary: "Fits the Texas and Kansas Senate losses, not the national House vote.",
     claim: [[`Trump says some voters did not like the Republican candidates, and that some he endorsed had fought him.`, c("trump-gas-price")]],
@@ -255,7 +255,7 @@ export const explanations = [
   {
     id: "switching",
     name: "Switching, or staying home",
-    holders: "JD Vance; Brookings",
+    holders: "Vance, Brookings",
     verdict: "partly",
     summary: "Both happened; staying home was the larger part.",
     claim: [[`Vance says Republicans lost because 2024 Trump voters switched sides. A Brookings Institution analysis says discontented Republicans "didn't abandon their party in 2026; they stayed home."`, c("vance-war"), c("brookings-stayed-home")]],
@@ -266,7 +266,7 @@ export const explanations = [
   {
     id: "loyalty",
     name: "Party loyalty",
-    holders: "Voters, in their own words",
+    holders: "Voters",
     verdict: "supported",
     summary: "Most votes did not move, and Republicans were less loyal than Democrats.",
     claim: [[`Most voters vote with their party, and this time Republican voters were less loyal than Democratic ones. Asked in their own words what mattered most to their vote, more of YouGov's voters named party loyalty (${n.ygLoyalty}%) than anything else.`, c("yougov-most-important")]],
@@ -277,7 +277,7 @@ export const explanations = [
   {
     id: "maps",
     name: "New district maps",
-    holders: "Republicans who redrew them",
+    holders: "Republicans",
     verdict: "not",
     summary: "The new maps mostly failed to win Republicans the seats they were drawn for.",
     claim: [[`Republicans redrew House maps in nine states, after the Supreme Court's April 29 ruling in Louisiana v. Callais narrowed challenges to maps under the Voting Rights Act, aiming to win more seats.`, c("redistricting-results"), c("callais-date")]],
@@ -299,7 +299,7 @@ export const explanations = [
   {
     id: "midterm",
     name: "The usual midterm swing",
-    holders: "The Washington Post",
+    holders: "Washington Post",
     verdict: "partly",
     summary: "The usual direction, but among the larger losses.",
     claim: [[`The Washington Post noted that midterms almost always swing against the party of the sitting president.`, c("wapo-midterm-swing")]],
@@ -310,7 +310,7 @@ export const explanations = [
   {
     id: "democracy",
     name: "Democracy and presidential power",
-    holders: "Voters who ranked it first",
+    holders: "Voters",
     verdict: "untestable",
     summary: "No public table shows whether the issue moved anyone.",
     claim: [[`A third of voters named the state of democracy as the country's most important issue, second to the economy.`, c("top-issue")]],
@@ -332,7 +332,7 @@ export const explanations = [
   {
     id: "health",
     name: "Health care costs",
-    holders: "Chuck Schumer",
+    holders: "Schumer",
     verdict: "partly",
     summary: "Voters preferred Democrats on health care, but few named it first.",
     claim: [[`Schumer says Americans were clear about wanting to lower health care costs.`, c("schumer-health")]],
@@ -354,7 +354,7 @@ export const explanations = [
   {
     id: "jobs",
     name: "A weakening job market",
-    holders: "Voters in NORC's survey",
+    holders: "Voters",
     verdict: "untestable",
     summary: "No survey asked about jobs apart from the economy.",
     claim: [[`In NORC's survey, 58% of likely voters named "the economy and jobs" among the three most important issues facing the country.`, c("norc-economy-jobs")]],
@@ -365,7 +365,7 @@ export const explanations = [
   {
     id: "messaging",
     name: "Bad messaging",
-    holders: "Donald Trump",
+    holders: "Trump",
     verdict: "untestable",
     summary: "No poll asked whether voters knew the administration's record.",
     claim: [[`Trump said on Nov. 8 "it's not really the Iran war" and "I think it was bad messaging."`, c("trump-60min-messaging")]],
@@ -376,7 +376,7 @@ export const explanations = [
   {
     id: "israel",
     name: "Support for Israel",
-    holders: "A pollster Vance cites",
+    holders: "Vance",
     verdict: "untestable",
     summary: "Half of voters called U.S. support too strong, mostly Democrats; nothing ties it to switching.",
     claim: [[`Vance wrote that defecting Trump voters told a pollster he cites that changing the relationship with Israel would help bring them back.`, c("vance-pollster-answers")]],
@@ -387,7 +387,7 @@ export const explanations = [
   {
     id: "america-first",
     name: "\"Put America First\"",
-    holders: "A pollster Vance cites",
+    holders: "Vance",
     verdict: "untestable",
     summary: "Vance gave no share of voters, and no survey asked.",
     claim: [[`Vance wrote that "Put America First" was another answer a pollster he cites heard from defecting Trump voters.`, c("vance-pollster-answers")]],
@@ -398,7 +398,7 @@ export const explanations = [
   {
     id: "rigged",
     name: "A rigged count",
-    holders: "Donald Trump; some allies",
+    holders: "Trump, allies",
     verdict: "not",
     summary: "Officials raised no major concerns about the count, and no wave of court challenges followed.",
     claim: [[`Some Trump allies, among them Katie Miller and Laura Loomer, posted that the election was being stolen.`, c("rigged-claims"), ` On Nov. 9 Trump posted, "Does anybody really believe that this 'Election' was honest," and blamed voting machines.`, c("trump-nov9-doubts")]],

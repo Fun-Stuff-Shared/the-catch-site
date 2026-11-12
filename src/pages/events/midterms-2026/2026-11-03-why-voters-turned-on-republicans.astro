@@ -192,12 +192,6 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
       <section id="explanations">
         <h2 data-layer="fact">Every explanation, tested</h2>
         <p class="section-intro" data-layer="fact">Each explanation the parties, candidates, pollsters and analysts gave for the result, and what the evidence says about it. Open one to see the evidence for and against.</p>
-        <ul class="ex-legend" data-layer="fact" aria-label="What the verdicts mean">
-          <li><span class="ex-key supported">Supported</span> the voter surveys back it</li>
-          <li><span class="ex-key partly">Partly supported</span> some of the evidence backs it and some cuts against it</li>
-          <li><span class="ex-key not">Not supported</span> the evidence cuts against it</li>
-          <li><span class="ex-key untestable">Can't be tested</span> nothing public measures it</li>
-        </ul>
 
         <ExplanationList entries={explanations} />
       </section>
@@ -222,10 +216,6 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .share-label { color: var(--ink); font-size: 0.9rem; }
   .share-track { display: block; height: 0.9rem; background: var(--rule); }
   .share-bar { display: block; height: 100%; background: var(--blue); }
-  .ex-legend { list-style: none; padding: 0; margin: 0 0 1.25rem; font: 0.85rem/1.5 var(--sans); color: var(--slate); }
-  .ex-legend li { margin: 0.2rem 0; display: grid; grid-template-columns: 10.5rem 1fr; column-gap: 0.5rem; }
-  .ex-key { display: inline-block; min-width: 9.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.72rem; }
-  .ex-key.supported { color: var(--blue); } .ex-key.partly { color: var(--gold, #9a6200); } .ex-key.not { color: var(--red, #b3261e); }
   .side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .side-by-side .num, .story-figure td.num { text-align: right; white-space: nowrap; }
   .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
@@ -250,8 +240,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .said p { margin: 0 0 0.4rem; }
   .said .said-who { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
   @media (max-width: 640px) {
-    .ex-legend li { grid-template-columns: 1fr; margin: 0 0 0.45rem; }
-    .split-bars li, .swing-bars li { grid-template-columns: 7.5rem 1fr; column-gap: 0.5rem; }
+      .split-bars li, .swing-bars li { grid-template-columns: 7.5rem 1fr; column-gap: 0.5rem; }
     .split-label, .swing-label { font-size: 0.8rem; }
     .swing-region { display: block; font-size: 0.68rem; }
     .share-bars li { grid-template-columns: 1fr; row-gap: 0.25rem; }

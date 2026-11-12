@@ -13,7 +13,8 @@
  *   entries: {
  *     id: string               anchor, rendered as ex-<id>
  *     name: string             the explanation in a few words
- *     holders: string          who puts it forward
+ *     holders: string          who puts it forward, in short forms ("Trump, Cruz"); full names
+ *                              and titles belong in the claim
  *     verdict: "supported" | "partly" | "not" | "untestable"
  *     summary: string          the verdict in one line, shown collapsed
  *     claim, evidenceFor, evidenceAgainst, conclusion: Paragraph[]
@@ -38,6 +39,8 @@ interface Entry {
 interface Props { entries: Entry[]; }
 const { entries } = Astro.props;
 const label = { supported: "Supported", partly: "Partly supported", not: "Not supported", untestable: "Can't be tested" };
+const meaning = { supported: "the evidence backs it", partly: "the evidence is mixed", not: "the evidence cuts against it", untestable: "nothing public measures it" };
+const short = { supported: "backed", partly: "mixed", not: "contradicted", untestable: "unmeasured" };
 for (const e of entries) {
   if (!label[e.verdict]) throw new Error(`ExplanationList ${e.id}: unknown verdict ${e.verdict}`);
   if (!e.claim?.length) throw new Error(`ExplanationList ${e.id}: the claim states the explanation and who holds it`);
@@ -49,13 +52,19 @@ const sides = (e: Entry) => [
 ].filter(([, ps]) => (ps as Paragraph[]).length) as [string, Paragraph[]][];
 ---
 <div class="xl" data-xl>
-  <p class="xl-tools" data-layer="fact" hidden><button type="button" class="xl-all" data-xl-all>Expand all</button></p>
+  <div class="xl-legend" data-layer="fact">
+    <ul aria-label="What the verdicts mean">
+      {Object.keys(label).map((v) => <li class={v} title={meaning[v]}><span class="xl-badge">{label[v]}</span> {short[v]}</li>)}
+    </ul>
+    <button type="button" class="xl-all" data-xl-all hidden>Expand all</button>
+  </div>
+  <div class="xl-head" data-layer="fact" aria-hidden="true"><span></span><span>Explanation</span><span>Said by</span><span>Verdict</span></div>
   {entries.map((e) => (
     <details class={`xl-item ${e.verdict}`} id={`ex-${e.id}`} data-layer="fact">
       <summary class="xl-row">
         <span class="xl-name">{e.name}</span>
-        <span class="xl-holders">{e.holders}</span>
-        <span class="xl-verdict"><span class="xl-badge">{label[e.verdict]}</span> {e.summary}</span>
+        <span class="xl-holders"><span class="xl-said">Said by </span>{e.holders}</span>
+        <span class="xl-verdict"><span class="xl-badge">{label[e.verdict]}</span><span class="xl-line">{e.summary}</span></span>
       </summary>
       <div class="xl-body">
         {e.claim.map((p) => <p class="xl-claim" data-layer="narrative">{p.map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</p>)}
@@ -79,15 +88,24 @@ const sides = (e: Entry) => [
 </div>
 
 <style is:global>
-  .xl { margin: 0 0 1.5rem; border-top: 2px solid var(--ink, #1a1a1a); font-family: var(--sans); }
-  .xl-tools { margin: 0.4rem 0 0; text-align: right; }
-  .xl-all { font: 600 0.75rem/1.4 var(--sans); color: var(--slate); background: none; border: 0; padding: 0.2rem 0; cursor: pointer; text-decoration: underline; }
+  .xl { margin: 0 0 1.5rem; font-family: var(--sans); }
+  .xl-legend { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.9rem; padding: 0 0 0.6rem; border-bottom: 1px solid var(--rule); font-size: 0.75rem; line-height: 1.4; color: var(--slate); }
+  .xl-legend ul { display: flex; flex-wrap: wrap; gap: 0.3rem 0.9rem; list-style: none; margin: 0; padding: 0; flex: 0 1 auto; }
+  .story .xl-legend li { margin: 0; font: 0.75rem/1.4 var(--sans); color: var(--slate); }
+  .xl-legend .xl-badge { width: auto; margin-right: 0.25rem; padding: 0 0.3rem; }
+  .xl-all { margin-left: auto; font: 600 0.75rem/1.4 var(--sans); color: var(--slate); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+  .xl-badge { display: inline-block; box-sizing: border-box; width: 8.6rem; padding: 0.05rem 0.4rem; text-align: center; font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; border: 1px solid currentColor; color: var(--slate); }
+  .supported > .xl-badge, .xl-item.supported .xl-badge { color: var(--blue); }
+  .partly > .xl-badge, .xl-item.partly .xl-badge { color: var(--gold, #9a6200); }
+  .not > .xl-badge, .xl-item.not .xl-badge { color: var(--red, #b3261e); }
+  .xl-head, .xl-row { display: grid; grid-template-columns: 1.1rem 11rem 7.5rem 1fr; column-gap: 0.75rem; align-items: baseline; padding-left: 0.4rem; padding-right: 0.6rem; }
+  .xl-head { padding-top: 0.6rem; padding-bottom: 0.3rem; border-left: 4px solid transparent; font: 600 0.68rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
   .xl-item { border-bottom: 1px solid var(--rule); border-left: 4px solid transparent; scroll-margin-top: 7.5rem; }
   .xl-item.supported { border-left-color: var(--blue); }
   .xl-item.partly { border-left-color: var(--gold, #9a6200); }
   .xl-item.not { border-left-color: var(--red, #b3261e); }
   .xl-item.untestable { border-left-color: var(--slate); }
-  .xl-row { display: grid; grid-template-columns: 1.2rem 11rem 9.5rem 1fr; gap: 0.75rem; align-items: start; padding: 0.65rem 0.6rem 0.65rem 0.4rem; cursor: pointer; list-style: none; font-size: 0.88rem; line-height: 1.45; }
+  .xl-row { padding-top: 0.65rem; padding-bottom: 0.65rem; cursor: pointer; list-style: none; font-size: 0.88rem; line-height: 1.45; }
   .xl-row::-webkit-details-marker { display: none; }
   .xl-row::before { content: "+"; font-weight: 600; color: var(--slate); }
   .xl-item[open] > .xl-row::before { content: "\2013"; }
@@ -95,11 +113,9 @@ const sides = (e: Entry) => [
   .xl-row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
   .xl-name { font-weight: 600; color: var(--ink, #1a1a1a); }
   .xl-holders { color: var(--slate); }
-  .xl-badge { display: inline-block; margin-right: 0.35rem; padding: 0.05rem 0.4rem; font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.03em; text-transform: uppercase; border: 1px solid currentColor; color: var(--slate); }
-  .xl-item.supported .xl-badge { color: var(--blue); }
-  .xl-item.partly .xl-badge { color: var(--gold, #9a6200); }
-  .xl-item.not .xl-badge { color: var(--red, #b3261e); }
-  .xl-body { padding: 0.2rem 1rem 1rem 2.4rem; }
+  .xl-said { display: none; }
+  .xl-verdict { display: grid; grid-template-columns: 8.6rem 1fr; column-gap: 0.6rem; align-items: baseline; }
+  .xl-body { padding: 0.2rem 1rem 1rem 2.25rem; }
   .story .xl-body p { font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; margin: 0 0 0.5rem; }
   .story .xl-body .xl-claim { font-size: 1.02rem; margin: 0.4rem 0 0.8rem; }
   .story .xl-body .xl-label { margin: 0 0 0.25rem; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
@@ -107,13 +123,16 @@ const sides = (e: Entry) => [
   .xl-evidence.one { grid-template-columns: 1fr; }
   .xl-conclusion { margin-top: 0.4rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
   @media (max-width: 640px) {
-    .xl-row { grid-template-columns: 1.1rem 1fr; gap: 0.15rem 0.5rem; }
+    .xl-head { display: none; }
+    .xl-row { grid-template-columns: 1.1rem 1fr; row-gap: 0.2rem; column-gap: 0.5rem; }
     .xl-holders, .xl-verdict { grid-column: 2; }
+    .xl-said { display: inline; }
+    .xl-verdict { grid-template-columns: 1fr; row-gap: 0.25rem; }
     .xl-body { padding: 0.2rem 0.7rem 0.9rem 1.9rem; }
     .xl-evidence { grid-template-columns: 1fr; }
   }
   @media print {
-    .xl-tools { display: none; }
+    .xl-all { display: none; }
   }
 </style>
 
@@ -141,11 +160,10 @@ const sides = (e: Entry) => [
   }
 
   for (const list of lists) {
-    const tools = list.querySelector<HTMLElement>(".xl-tools");
     const button = list.querySelector<HTMLButtonElement>("[data-xl-all]");
     const cards = [...list.querySelectorAll<HTMLDetailsElement>("details.xl-item")];
-    if (!tools || !button) continue;
-    tools.hidden = false;
+    if (!button) continue;
+    button.hidden = false;
     const label = () => { button.textContent = cards.every((d) => d.open) ? "Collapse all" : "Expand all"; };
     button.addEventListener("click", () => {
       const open = !cards.every((d) => d.open);
