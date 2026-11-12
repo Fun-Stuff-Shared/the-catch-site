@@ -3,12 +3,11 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
 import Cite from "../../../components/Cite.astro";
-import ExplanationEntry from "../../../components/story/ExplanationEntry.astro";
-import ExplanationSummary from "../../../components/story/ExplanationSummary.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
 import DataNote from "../../../components/story/DataNote.astro";
 import StorySources from "../../../components/StorySources.astro";
 import { claim } from "../../../lib/claims.mjs";
-import { event, n, computed, crucial, kansasCruz, kansasPoll, groupShifts, explanationRows, groups, countyTypes, stateSwings } from "../../../data/midterms-2026-2026-11-03-why-voters-turned-on-republicans.mjs";
+import { event, n, computed, crucial, kansasCruz, kansasPoll, groupShifts, explanations, groups, countyTypes, stateSwings } from "../../../data/midterms-2026-2026-11-03-why-voters-turned-on-republicans.mjs";
 const story = "midterms-2026--2026-11-03-why-voters-turned-on-republicans";
 const short = (id) => claim(story, id).short;
 const pts = (m) => (m > 0 ? `R+${m.toFixed(1)}` : m < 0 ? `D+${(-m).toFixed(1)}` : "Even");
@@ -192,8 +191,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="explanations">
         <h2 data-layer="fact">Every explanation, tested</h2>
-        <p class="section-intro" data-layer="fact">Each explanation the parties, candidates, pollsters and analysts gave for the result, and what the evidence says about it. Select one to see the evidence for and against.</p>
-        <ExplanationSummary rows={explanationRows} />
+        <p class="section-intro" data-layer="fact">Each explanation the parties, candidates, pollsters and analysts gave for the result, and what the evidence says about it. Open one to see the evidence for and against.</p>
         <ul class="ex-legend" data-layer="fact" aria-label="What the verdicts mean">
           <li><span class="ex-key supported">Supported</span> the voter surveys back it</li>
           <li><span class="ex-key partly">Partly supported</span> some of the evidence backs it and some cuts against it</li>
@@ -201,136 +199,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           <li><span class="ex-key untestable">Can't be tested</span> nothing public measures it</li>
         </ul>
 
-        <ExplanationEntry id="iran-war" name="The Iran war" verdict="partly">
-          <p slot="claim" data-layer="narrative">Vance says the war cost Republicans the election. The case runs two ways: the war drove up the price of gas, and the war itself was unpopular.<Cite c="vance-war" /></p>
-          <p slot="for" data-layer="narrative">{n.iranWrong}% of voters said attacking Iran was the wrong decision, and they voted Democratic 83% to 15%.<Cite c="iran-wrong-decision" /> In NORC's survey, more than a third named the war among the top three national issues, and over 6 in 10 of them backed Democrats for the House.<Cite c="norc-iran-third" /> In an online poll of 1,006 midterm voters by Narrative Strategies, which did not use a random sample, {n.nsIran}% named the war among the two things most responsible for rising costs, more than named tariffs or fuel prices.<Cite c="ns-rising-costs" /> In a YouGov survey of 1,000 adults for the Institute for Global Affairs, {n.igaPrices}% said avoiding higher prices at home should come before the war's goals.<Cite c="iga-prices-over-war" /></p>
-          <p slot="against" data-layer="narrative">{n.iran}% called the war crucial to their vote, fewer than said so of corruption, the cost of living or immigration enforcement.<Cite c="crucial-iran" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /> Asked in their own words by the Economist/YouGov poll what mattered most, {n.ygWar}% named foreign policy and war.<Cite c="yougov-most-important" /> By Vance's account, the unnamed pollster he cites asked defecting Trump voters what would bring them back, not why they left.<Cite c="vance-pollster-question" /></p>
-          <p slot="verdict" data-layer="narrative">A third of voters called the war crucial, but in their own words only {n.ygWar}% named it as what mattered most; many blamed it for rising prices, and Trump agreed it "drove the gasoline up." The polls cannot separate the war from the prices it helped raise.<Cite c="crucial-iran" /><Cite c="yougov-most-important" /><Cite c="ns-rising-costs" /><Cite c="trump-largely-true" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="gas" name="Gas and prices" verdict="supported">
-          <p slot="claim" data-layer="narrative">Trump says voters were reacting to the price of gasoline; Cruz says food, gas and everything else cost too much.<Cite c="trump-gas-price" /><Cite c="cruz-prices-tariffs" /></p>
-          <p slot="for" data-layer="narrative">{n.costMajor}% called the cost of living crucial or a major factor.<Cite c="crucial-cost" /> 87% were concerned about the cost of gas, and the 59% who were very concerned voted Democratic 66% to 32%.<Cite c="gas-concern" /> The {n.hardship}% who said inflation hurt their family voted Democratic 62% to 36%, and the {n.worse}% who said their finances were worse than two years ago, 75% to 23%.<Cite c="inflation-hardship" /><Cite c="finances-worse" /></p>
-          <p slot="verdict" data-layer="narrative">Prices weighed on nearly nine in ten voters, and those hurt by inflation went Democratic. {n.pricesTrump}% said prices were high more because of Trump's policies than things outside his control, so this explanation overlaps with a vote on Trump himself.<Cite c="crucial-cost" /><Cite c="inflation-hardship" /><Cite c="prices-trump-policies" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="tariffs" name="Tariffs" verdict="supported">
-          <p slot="claim" data-layer="narrative">Cruz says tariffs made everything too expensive, and Phillip Magness, writing in The Dispatch, argued that tariffs, not the war, sank Republicans.<Cite c="cruz-prices-tariffs" /><Cite c="magness-not-war" /></p>
-          <p slot="for" data-layer="narrative">The Supreme Court struck down Trump's emergency tariffs on Feb. 20; on July 23 he imposed new ones of 10% or 12.5% on 60 economies under Section 301 of the Trade Act of 1974.<Cite c="tariff-sequence" /> {n.tariffsNational}% of voters said his tariffs hurt the national economy, and they voted Democratic 81% to 18%.<Cite c="tariffs-hurt" /> In Narrative Strategies' online poll, {n.nsTariffs}% named tariffs among the top causes of rising costs.<Cite c="ns-rising-costs" /></p>
-          <p slot="against" data-layer="narrative">Navarro, the White House adviser, says tariffs "have played no role in the inflation and affordability issue."<Cite c="navarro-no-role" /></p>
-          <p slot="verdict" data-layer="narrative">Two-thirds of voters judged the tariffs harmful and voted against the party that imposed them. The poll measures that judgment, not what the tariffs did to prices.<Cite c="tariffs-hurt" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="affordability" name="Affordability and corruption" verdict="partly">
-          <p slot="claim" data-layer="narrative">Jeffries and Schumer say voters chose Democrats on the cost of living and corruption.<Cite c="jeffries-affordability" /><Cite c="schumer-costs-corruption" /></p>
-          <p slot="for" data-layer="narrative">Corruption ({n.corruption}%) and the cost of living ({n.costOfLiving}%) were the two issues the most voters called crucial.<Cite c="crucial-corruption" /><Cite c="crucial-cost" /> {n.ownInterests}% said Trump puts his own interests ahead of the country's.<Cite c="trump-own-interests" /></p>
-          <p slot="against" data-layer="narrative">Voters preferred Democrats only narrowly to handle them: 44% to 37% on the economy and 37% to 30% on corruption, with 32% choosing neither party on corruption.<Cite c="dem-edge-narrow" /> 52% viewed the Democratic Party unfavorably.<Cite c="dem-party-unfavorable" /></p>
-          <p slot="verdict" data-layer="narrative">Corruption and the cost of living led the crucial list, but the Democrats' edge on them was single digits, and 19% of those who viewed the party unfavorably voted for its candidates anyway.<Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="dem-edge-narrow" /><Cite c="dem-party-unfavorable" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="trump" name="A vote on Trump himself" verdict="supported">
-          <p slot="claim" data-layer="narrative">CBS called the election "clearly a referendum on Mr. Trump." Trump says he was not on the ballot, and that if he had been, his voters "would have gotten out."<Cite c="cbs-referendum" /><Cite c="trump-ballot" /></p>
-          <p slot="for" data-layer="narrative">{n.oppose}% voted in part to oppose Trump and {n.support}% to support him. The {n.disapprove}% who disapproved of his job voted Democratic 86% to 12%.<Cite c="trump-factor" /><Cite c="trump-approval" /> Asked in their own words, {n.ygOpposeTrump}% of YouGov's voters named opposition to Trump, the second most common answer.<Cite c="yougov-most-important" /></p>
-          <p slot="against" data-layer="narrative">{n.notFactor}% said Trump was not a factor in their vote.<Cite c="trump-factor" /></p>
-          <p slot="verdict" data-layer="narrative">For {n.oppose + n.support}% of voters, Trump was a factor.<Cite c="trump-factor" /> Disapproving of Trump (63%) and blaming his policies for high prices (also 63%) were two separate questions, and the published tables do not show how many voters gave both answers, so a vote on Trump and a vote on prices cannot be told apart.<Cite c="trump-approval" /><Cite c="prices-trump-policies" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="candidates" name="Bad candidates" verdict="partly">
-          <p slot="claim" data-layer="narrative">Trump says some voters did not like the Republican candidates, and that some he endorsed had fought him.<Cite c="trump-gas-price" /></p>
-          <p slot="for" data-layer="narrative">67% of Texas Senate voters said Ken Paxton lacked the right personal character, and 55% of Kansas voters said the same of Sen. Roger Marshall. Both lost.<Cite c="paxton-character" /><Cite c="marshall-character" /><Cite c="paxton-marshall-lost" /> {n.ygCandidates}% of YouGov's voters named the candidates' qualities as what mattered most, and {n.rallies}% of registered voters said Trump's rallies hurt the Republicans he campaigned for.<Cite c="yougov-most-important" /><Cite c="yougov-rallies" /></p>
-          <p slot="against" data-layer="narrative">Democrats led the national House vote, across all 435 races, by about 12 points as of Nov. 5.<Cite c="house-vote-d12" /><Cite c="gop-219-going-in" /></p>
-          <p slot="verdict" data-layer="narrative">Doubts about candidates fit the Senate losses in Texas and Kansas, but not a national House vote that Democrats led by about 12 points across all 435 races.<Cite c="paxton-character" /><Cite c="house-vote-d12" /><Cite c="gop-219-going-in" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="switching" name="Switching, or staying home" verdict="partly">
-          <p slot="claim" data-layer="narrative">Vance says Republicans lost because 2024 Trump voters switched sides. A Brookings Institution analysis says discontented Republicans "didn't abandon their party in 2026; they stayed home."<Cite c="vance-war" /><Cite c="brookings-stayed-home" /></p>
-          <p slot="for" data-layer="narrative">Switching: {n.trumpToDem}% of Trump's 2024 voters voted Democratic in the Voter Poll, {n.ygTrumpD}% in YouGov's.<Cite c="trump-voters-switched" /><Cite c="yougov-trump-voters" /> Staying home: among non-MAGA Republicans, {n.ygNonMagaHome}% did not vote and {n.ygNonMagaD}% voted Democratic.<Cite c="yougov-party-loyalty" /></p>
-          <p slot="against" data-layer="narrative">Vance's evidence that turnout was not the problem: he wrote that Florida's electorate was 9 points more Republican than Democratic, "just a couple points worse than 2024." Florida's Voter Poll fits the first part, with 41% of voters calling themselves Republicans and 30% Democrats; the poll has no 2024 edition to check the second.<Cite c="vance-florida" /><Cite c="florida-poll" /><Cite c="poll-is-new" /></p>
-          <p slot="for" data-layer="narrative">From actual returns in 13 states, Lenny Bronner, a data scientist formerly with The Washington Post, estimated that about 75% of Democratic gains came from a turnout gap and about 20% from Republicans switching, though in Texas 45% came from switching.<Cite c="bronner-turnout" /></p>
-          <p slot="against" data-layer="narrative">The surveys are what people said about their own votes, and Bronner's estimate rests on partial results. The Voter Poll and NORC disagree on how many of this year's voters skipped 2024, {n.nonvoters2024}% against about {n.norcNew}%.<Cite c="nonvoter-share-differs" /></p>
-          <p slot="verdict" data-layer="narrative">Both happened, but staying home was the larger part: {n.ygTrumpHome}% of Trump's 2024 voters said they did not vote and {n.ygTrumpD}% switched, and an early estimate from returns in 13 states puts the turnout gap ahead of switching.<Cite c="yougov-turnout-2024" /><Cite c="yougov-trump-voters" /><Cite c="bronner-turnout" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="loyalty" name="Party loyalty" verdict="supported">
-          <p slot="claim" data-layer="narrative">Most voters vote with their party, and this time Republican voters were less loyal than Democratic ones. Asked in their own words what mattered most to their vote, more of YouGov's voters named party loyalty ({n.ygLoyalty}%) than anything else.<Cite c="yougov-most-important" /></p>
-          <p slot="for" data-layer="narrative">{n.ygDemLoyal}% of Democrats said they voted for Democratic candidates, against {n.ygRepLoyal}% of Republicans for Republican ones.<Cite c="yougov-party-loyalty" /></p>
-          <p slot="verdict" data-layer="narrative">Most votes did not move, and Democrats stayed with their party more often than Republicans did.<Cite c="yougov-party-loyalty" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="maps" name="New district maps" verdict="not">
-          <p slot="claim" data-layer="narrative">Republicans redrew House maps in nine states, after the Supreme Court's April 29 ruling in Louisiana v. Callais narrowed challenges to maps under the Voting Rights Act, aiming to win more seats.<Cite c="redistricting-results" /><Cite c="callais-date" /></p>
-          <p slot="for" data-layer="narrative">Republicans won two redrawn seats, Texas's 32nd and Tennessee's 9th.<Cite c="redistricting-results" /></p>
-          <p slot="against" data-layer="narrative">Roll Call found Republicans' redistricting edge "largely failed to materialize": Democrats held four of the five Texas seats Republicans targeted and all of Florida's. Democrats also flipped seven Senate seats, in statewide races with no districts.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
-          <p slot="verdict" data-layer="narrative">The new maps mostly failed to deliver the seats Republicans drew them for, and cannot explain the Senate flips.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="ruling" name="The voting-rights ruling and Black turnout" verdict="untestable">
-          <p slot="claim" data-layer="narrative">USA Today reported that "exit polling" showed the Callais ruling and the redistricting that followed were major factors for Black voters.<Cite c="usatoday-black-exit" /></p>
-          <p slot="verdict" data-layer="narrative">The surveys USA Today describes were the National Coalition on Black Civic Participation's own, at Southern polling places, so they cannot show whether the ruling moved Black turnout nationally.<Cite c="usatoday-black-exit" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="midterm" name="The usual midterm swing" verdict="partly">
-          <p slot="claim" data-layer="narrative">The Washington Post noted that midterms almost always swing against the party of the sitting president.<Cite c="wapo-midterm-swing" /></p>
-          <p slot="for" data-layer="narrative">The president's party lost House seats in 20 of the 23 midterms from 1934 to 2022.<Cite c="midterm-history" /> Republicans held {n.repGoingIn} House seats going in; with Democrats at {n.demHouse} by Nov. 10, they hold at most {435 - n.demHouse}, a loss of at least {computed.repLossAtLeast}, against 41 in Trump's first midterm, in 2018.<Cite c="gop-219-going-in" /><Cite c="dems-win-both-chambers" /><Cite c="gop-loss-at-least-39" /><Cite c="trump-2018-loss" /></p>
-          <p slot="against" data-layer="narrative">It is a large loss by that measure: nine of those 23 midterms cost the president's party more than {computed.repLossAtLeast} seats, among them Truman's 56 in 1946 and Obama's 63 in 2010, when his approval was about 45%.<Cite c="midterm-history" /></p>
-          <p slot="verdict" data-layer="narrative">The Council on Foreign Relations puts the Democrats' estimated 13-point popular-vote margin second among midterms since 1942, behind only 1974.<Cite c="cfr-second-largest" /> The loss went the usual direction and is among the larger ones, under a president whose approval before the vote was the lowest since Truman's.<Cite c="midterm-history" /><Cite c="trump-approval-gallup-aug" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="democracy" name="Democracy and presidential power" verdict="untestable">
-          <p slot="claim" data-layer="narrative">A third of voters named the state of democracy as the country's most important issue, second to the economy.<Cite c="top-issue" /></p>
-          <p slot="for" data-layer="narrative">Those voters chose Democrats 79% to 20%.<Cite c="democracy-voters-dem" /> 71% of all voters said Congress was not doing enough to check the president, and 24% of them still voted Republican.<Cite c="checks-not-enough" /></p>
-          <p slot="against" data-layer="narrative">CBS found it was voters backing Democrats who put democracy first.<Cite c="democracy-voters-dem" /></p>
-          <p slot="verdict" data-layer="narrative">The published tables do not show how the voters who put democracy first voted in 2024, so they cannot show whether the issue moved anyone.<Cite c="democracy-voters-dem" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="immigration" name="Immigration raids gone too far" verdict="partly">
-          <p slot="claim" data-layer="narrative">NPR wrote that Latino voters turned left after Trump's promises of lower prices never came true and his administration's harsh deportation tactics backfired.<Cite c="npr-latino-reason" /></p>
-          <p slot="for" data-layer="narrative">58% said the administration's immigration actions had gone too far, and they voted Democratic 90% to 8%.<Cite c="immigration-too-far" /> Trump said on Nov. 8 that his deportation policy "might be too tough."<Cite c="trump-60min-immigration" /></p>
-          <p slot="against" data-layer="narrative">The {n.immigration}% who called immigration enforcement crucial voted Republican 57% to 42%, and voters still slightly preferred Republicans on immigration, 43% to 41%.<Cite c="crucial-immigration" /><Cite c="immigration-too-far" /></p>
-          <p slot="verdict" data-layer="narrative">Immigration helped Democrats with voters who thought the raids went too far and helped Republicans with voters who put enforcement first.<Cite c="immigration-too-far" /><Cite c="crucial-immigration" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="health" name="Health care costs" verdict="partly">
-          <p slot="claim" data-layer="narrative">Schumer says Americans were clear about wanting to lower health care costs.<Cite c="schumer-health" /></p>
-          <p slot="for" data-layer="narrative">After the enhanced Affordable Care Act tax credits expired at the end of 2025, what Marketplace enrollees paid in premiums rose {n.acaPremiums}% on average, KFF found.<Cite c="aca-shock" /> 55% of voters said Trump's policies had made their health care costs worse, and they voted Democratic 83% to 15%. Voters preferred Democrats on health care 50% to 30%.<Cite c="health-costs" /></p>
-          <p slot="against" data-layer="narrative">8% named health care as the country's most important issue.<Cite c="top-issue" /></p>
-          <p slot="verdict" data-layer="narrative">Voters preferred Democrats on health care by 20 points, and few named it first.<Cite c="health-costs" /><Cite c="top-issue" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="abortion" name="Abortion rights" verdict="untestable">
-          <p slot="claim" data-layer="narrative">Four states voted on abortion measures. KFF, which polled them, wrote that Missouri's result fit recent elections in which abortion motivated Democrats to turn out more than Republicans.<Cite c="kff-abortion-turnout" /></p>
-          <p slot="for" data-layer="narrative">Voters protected abortion access in Nevada, Virginia and Missouri, and in all four states at least three in ten said the measure had a major impact on their decision to vote.<Cite c="abortion-measures" /> Nationally, the 64% who said abortion should be legal voted Democratic 78% to 21%.<Cite c="abortion-legal" /></p>
-          <p slot="against" data-layer="narrative">Idaho rejected its measure. In Virginia, opponents of abortion access were more likely than supporters to say the measure drove them to vote, and in Nevada 44% of voters who backed the Republican for governor also backed abortion rights.<Cite c="abortion-measures" /><Cite c="abortion-limits" /></p>
-          <p slot="verdict" data-layer="narrative">Abortion drew voters in the four states with measures, on both sides, but no public table shows it changing anyone's vote for Congress, so it cannot be tested as a cause of the national swing.<Cite c="abortion-measures" /><Cite c="abortion-limits" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="jobs" name="A weakening job market" verdict="untestable">
-          <p slot="claim" data-layer="narrative">In NORC's survey, 58% of likely voters named "the economy and jobs" among the three most important issues facing the country.<Cite c="norc-economy-jobs" /></p>
-          <p slot="verdict" data-layer="narrative">NORC asked about the economy and jobs as one issue, and the Voter Poll's list of top issues had the economy but no choice for jobs.<Cite c="norc-economy-jobs" /><Cite c="top-issue" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="messaging" name="Bad messaging" verdict="untestable">
-          <p slot="claim" data-layer="narrative">Trump said on Nov. 8 "it's not really the Iran war" and "I think it was bad messaging."<Cite c="trump-60min-messaging" /></p>
-          <p slot="verdict" data-layer="narrative">The voter surveys measured how voters judged conditions, such as the {n.badEconomy}% who rated the economy not so good or poor, not whether they knew the administration's record, so a message that failed cannot be told apart from conditions voters disliked.<Cite c="economy-not-good" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="israel" name="Support for Israel" verdict="untestable">
-          <p slot="claim" data-layer="narrative">Vance wrote that defecting Trump voters told a pollster he cites that changing the relationship with Israel would help bring them back.<Cite c="vance-pollster-answers" /></p>
-          <p slot="for" data-layer="narrative">{n.israelTooStrong}% of voters called U.S. support for Israel too strong.<Cite c="israel-support" /></p>
-          <p slot="against" data-layer="narrative">Those voters chose Democrats 79% to 19%, and the published tables do not show how many of them voted for Trump in 2024.<Cite c="israel-support" /></p>
-          <p slot="verdict" data-layer="narrative">Half of voters wanted less support for Israel, mostly voters who chose Democrats; nothing public ties the view to switching.<Cite c="israel-support" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="america-first" name={'"Put America First"'} verdict="untestable">
-          <p slot="claim" data-layer="narrative">Vance wrote that "Put America First" was another answer a pollster he cites heard from defecting Trump voters.<Cite c="vance-pollster-answers" /></p>
-          <p slot="verdict" data-layer="narrative">Vance's post lists it without a share of voters.<Cite c="vance-pollster-answers" /></p>
-        </ExplanationEntry>
-
-        <ExplanationEntry id="rigged" name="A rigged count" verdict="not">
-          <p slot="claim" data-layer="narrative">Some Trump allies, among them Katie Miller and Laura Loomer, posted that the election was being stolen.<Cite c="rigged-claims" /> On Nov. 9 Trump posted, "Does anybody really believe that this 'Election' was honest," and blamed voting machines.<Cite c="trump-nov9-doubts" /></p>
-          <p slot="against" data-layer="narrative">Trump said after the election that he would accept the results, there was no day-after wave of court challenges, and the FBI called one viral fraud claim false.<Cite c="rigged-claims" /> Election officials have raised no major concerns about early votes or voting machines.<Cite c="trump-nov9-doubts" /></p>
-          <p slot="verdict" data-layer="narrative">Election officials have raised no major concerns about early votes or voting machines, there was no day-after wave of court challenges, and the FBI called one viral fraud claim false.<Cite c="trump-nov9-doubts" /><Cite c="rigged-claims" /></p>
-        </ExplanationEntry>
+        <ExplanationList entries={explanations} />
       </section>
 
       <section id="next">

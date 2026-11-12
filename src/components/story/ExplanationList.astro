@@ -1,0 +1,165 @@
+---
+/**
+ * The explanations a story tests, as a list of expandable cards. A collapsed card shows the
+ * explanation, who holds it, the verdict badge and the verdict in one line; opened, it shows
+ * the claim, the evidence for and against, and the full verdict.
+ *
+ * Built on <details>, so it works without JavaScript, prints and is keyboard accessible.
+ * The script only enhances it: a link to #ex-<id> opens that card, "Just the facts" and
+ * "Show the work" open every card so their claim lists and evidence show, and printing
+ * opens them all.
+ *
+ * Props:
+ *   entries: {
+ *     id: string               anchor, rendered as ex-<id>
+ *     name: string             the explanation in a few words
+ *     holders: string          who puts it forward
+ *     verdict: "supported" | "partly" | "not" | "untestable"
+ *     summary: string          the verdict in one line, shown collapsed
+ *     claim, evidenceFor, evidenceAgainst, conclusion: Paragraph[]
+ *   }[]
+ *   A Paragraph is a run of text and citations: strings, and { c: "claim-id" } objects.
+ */
+import Cite from "../Cite.astro";
+
+type Segment = string | { c: string };
+type Paragraph = Segment[];
+interface Entry {
+  id: string;
+  name: string;
+  holders: string;
+  verdict: "supported" | "partly" | "not" | "untestable";
+  summary: string;
+  claim: Paragraph[];
+  evidenceFor: Paragraph[];
+  evidenceAgainst: Paragraph[];
+  conclusion: Paragraph[];
+}
+interface Props { entries: Entry[]; }
+const { entries } = Astro.props;
+const label = { supported: "Supported", partly: "Partly supported", not: "Not supported", untestable: "Can't be tested" };
+for (const e of entries) {
+  if (!label[e.verdict]) throw new Error(`ExplanationList ${e.id}: unknown verdict ${e.verdict}`);
+  if (!e.claim?.length) throw new Error(`ExplanationList ${e.id}: the claim states the explanation and who holds it`);
+  if (!e.conclusion?.length) throw new Error(`ExplanationList ${e.id}: the conclusion gives the deciding evidence`);
+}
+const sides = (e: Entry) => [
+  ["Evidence for", e.evidenceFor],
+  ["Evidence against", e.evidenceAgainst],
+].filter(([, ps]) => (ps as Paragraph[]).length) as [string, Paragraph[]][];
+---
+<div class="xl" data-xl>
+  <p class="xl-tools" data-layer="fact" hidden><button type="button" class="xl-all" data-xl-all>Expand all</button></p>
+  {entries.map((e) => (
+    <details class={`xl-item ${e.verdict}`} id={`ex-${e.id}`} data-layer="fact">
+      <summary class="xl-row">
+        <span class="xl-name">{e.name}</span>
+        <span class="xl-holders">{e.holders}</span>
+        <span class="xl-verdict"><span class="xl-badge">{label[e.verdict]}</span> {e.summary}</span>
+      </summary>
+      <div class="xl-body">
+        {e.claim.map((p) => <p class="xl-claim" data-layer="narrative">{p.map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</p>)}
+        {sides(e).length > 0 && (
+          <div class={`xl-evidence${sides(e).length === 1 ? " one" : ""}`}>
+            {sides(e).map(([heading, ps]) => (
+              <div class="xl-col">
+                <p class="xl-label">{heading}</p>
+                {ps.map((p) => <p data-layer="narrative">{p.map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</p>)}
+              </div>
+            ))}
+          </div>
+        )}
+        <div class="xl-conclusion">
+          <p class="xl-label">Verdict</p>
+          {e.conclusion.map((p) => <p data-layer="narrative">{p.map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</p>)}
+        </div>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style is:global>
+  .xl { margin: 0 0 1.5rem; border-top: 2px solid var(--ink, #1a1a1a); font-family: var(--sans); }
+  .xl-tools { margin: 0.4rem 0 0; text-align: right; }
+  .xl-all { font: 600 0.75rem/1.4 var(--sans); color: var(--slate); background: none; border: 0; padding: 0.2rem 0; cursor: pointer; text-decoration: underline; }
+  .xl-item { border-bottom: 1px solid var(--rule); border-left: 4px solid transparent; scroll-margin-top: 7.5rem; }
+  .xl-item.supported { border-left-color: var(--blue); }
+  .xl-item.partly { border-left-color: var(--gold, #9a6200); }
+  .xl-item.not { border-left-color: var(--red, #b3261e); }
+  .xl-item.untestable { border-left-color: var(--slate); }
+  .xl-row { display: grid; grid-template-columns: 1.2rem 11rem 9.5rem 1fr; gap: 0.75rem; align-items: start; padding: 0.65rem 0.6rem 0.65rem 0.4rem; cursor: pointer; list-style: none; font-size: 0.88rem; line-height: 1.45; }
+  .xl-row::-webkit-details-marker { display: none; }
+  .xl-row::before { content: "+"; font-weight: 600; color: var(--slate); }
+  .xl-item[open] > .xl-row::before { content: "\2013"; }
+  .xl-row:hover { background: var(--blue-tint, #f2f5fa); }
+  .xl-row:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .xl-name { font-weight: 600; color: var(--ink, #1a1a1a); }
+  .xl-holders { color: var(--slate); }
+  .xl-badge { display: inline-block; margin-right: 0.35rem; padding: 0.05rem 0.4rem; font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.03em; text-transform: uppercase; border: 1px solid currentColor; color: var(--slate); }
+  .xl-item.supported .xl-badge { color: var(--blue); }
+  .xl-item.partly .xl-badge { color: var(--gold, #9a6200); }
+  .xl-item.not .xl-badge { color: var(--red, #b3261e); }
+  .xl-body { padding: 0.2rem 1rem 1rem 2.4rem; }
+  .story .xl-body p { font-family: var(--serif); font-size: 0.95rem; line-height: 1.55; margin: 0 0 0.5rem; }
+  .story .xl-body .xl-claim { font-size: 1.02rem; margin: 0.4rem 0 0.8rem; }
+  .story .xl-body .xl-label { margin: 0 0 0.25rem; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .xl-evidence { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.25rem; }
+  .xl-evidence.one { grid-template-columns: 1fr; }
+  .xl-conclusion { margin-top: 0.4rem; padding-top: 0.5rem; border-top: 1px solid var(--rule); }
+  @media (max-width: 640px) {
+    .xl-row { grid-template-columns: 1.1rem 1fr; gap: 0.15rem 0.5rem; }
+    .xl-holders, .xl-verdict { grid-column: 2; }
+    .xl-body { padding: 0.2rem 0.7rem 0.9rem 1.9rem; }
+    .xl-evidence { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .xl-tools { display: none; }
+  }
+</style>
+
+<script>
+  const lists = document.querySelectorAll<HTMLElement>("[data-xl]");
+  const items = () => [...document.querySelectorAll<HTMLDetailsElement>("[data-xl] details.xl-item")];
+  const root = document.getElementById("story-root");
+
+  function openFromHash() {
+    if (!location.hash) return;
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    const item = target?.closest<HTMLDetailsElement>("[data-xl] details.xl-item");
+    if (!item) return;
+    item.open = true;
+    requestAnimationFrame(() => (target === item ? item : target)!.scrollIntoView({ block: "start" }));
+  }
+
+  function syncMode() {
+    const mode = root?.className.match(/mode-(\w+)/)?.[1] ?? new URLSearchParams(location.search).get("mode");
+    const all = mode === "facts" || mode === "work";
+    for (const d of items()) {
+      if (all && !d.open) { d.open = true; d.dataset.openedByMode = "1"; }
+      if (!all && d.dataset.openedByMode) { d.open = false; delete d.dataset.openedByMode; }
+    }
+  }
+
+  for (const list of lists) {
+    const tools = list.querySelector<HTMLElement>(".xl-tools");
+    const button = list.querySelector<HTMLButtonElement>("[data-xl-all]");
+    const cards = [...list.querySelectorAll<HTMLDetailsElement>("details.xl-item")];
+    if (!tools || !button) continue;
+    tools.hidden = false;
+    const label = () => { button.textContent = cards.every((d) => d.open) ? "Collapse all" : "Expand all"; };
+    button.addEventListener("click", () => {
+      const open = !cards.every((d) => d.open);
+      for (const d of cards) { d.open = open; delete d.dataset.openedByMode; }
+      label();
+    });
+    for (const d of cards) d.addEventListener("toggle", label);
+  }
+
+  let printed: HTMLDetailsElement[] = [];
+  addEventListener("beforeprint", () => { printed = items().filter((d) => !d.open); for (const d of printed) d.open = true; });
+  addEventListener("afterprint", () => { for (const d of printed) d.open = false; printed = []; });
+  addEventListener("hashchange", openFromHash);
+  document.addEventListener("reading-mode-change", syncMode);
+  syncMode();
+  openFromHash();
+</script>
