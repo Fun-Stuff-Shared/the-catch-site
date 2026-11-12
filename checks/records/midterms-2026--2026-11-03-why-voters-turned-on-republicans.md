@@ -96,7 +96,7 @@ The result turns on two rows: the five "crucial" shares (A against B and D), and
 
 Question 2 (the catch): do the reports say what the polls measured?
 - The Voter Poll is one survey sold under seven names [ssrs-voter-poll-methods: "ABC, the Associated Press (AP), CBS, CNN, Fox News Media, MSNOW, and NBC."]; NBC's version is the same data [nbc-exit-poll-how-it-works: "The companies receive the same data, and NBC News then independently analyzes and reports on the exit poll results."]. Branding alone is not an error.
-- USA Today's Kansas list (below) does not match the Kansas poll. The Catch.
+- Cruz's Kansas "exit polling" list does not match the Kansas Voter Poll; USA Today printed it as fact, without attribution, in an item on his reaction. The Catch is Cruz's claim; USA Today's part is passing it on.
 - Group shifts from 2024 compare the new 2026 poll with different 2024 surveys. Each outlet's starting point comes from a real 2024 survey, so it is not an error by either; told in Who moved as why swing figures differ, not as a catch.
 - The Post's county analysis is not a voter survey [wapo-voting-groups: "These figures represent aggregated population demographics, not individual voter preferences."]. Background.
 
@@ -128,7 +128,7 @@ Why now (sentence 3): gasoline from EIA [eia-gasoline-weekly: "2026-02/23: 2.937
 
 The sides (sentence 4): Vance, Trump, Cruz, Navarro, Jeffries and Schumer in their words; quote cards. Vance's "The president himself said so last night" beside Trump's Nov. 3 words, dated. Trump's Nov. 8 "bad messaging".
 
-The Catch: USA Today printed, in its own voice, a Kansas issue list that came from Cruz's post; the Kansas Voter Poll ranked democracy first and offered none of those choices. The 2024 baselines moved to Who moved.
+The Catch: Cruz posted Kansas "exit polling" figures the Kansas Voter Poll does not contain (it ranked democracy first and offered none of his choices); USA Today printed the list as fact a day later without saying where it came from. The 2024 baselines moved to Who moved.
 
 What else could explain it: the A to Q entries, each with who holds it, the evidence for and against, and the verdict.
 
