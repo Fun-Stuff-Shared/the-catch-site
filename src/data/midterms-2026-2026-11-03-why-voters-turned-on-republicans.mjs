@@ -80,7 +80,7 @@ export const computed = {
 export const event = {
   slug: "midterms-2026/2026-11-03-why-voters-turned-on-republicans",
   title: "Voters blamed Trump for high prices, and many of his 2024 voters stayed home",
-  dek: "Democrats won the House and Senate on Nov. 3, and voters called the Iran war crucial less often than corruption or the cost of living.",
+  dek: `Democrats won control of both chambers of Congress on Nov. 3, taking at least ${n.demHouse} of the 435 House seats.`,
   name: "Why voters turned on Republicans in the 2026 midterms",
   date: "2026-11-03",
   updated: "2026-11-11",

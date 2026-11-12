@@ -18,7 +18,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
     <main class="story" id="story-root">
       <p class="story-kicker" data-layer="fact">2026 midterms &middot; November 3, 2026 &middot; updated {event.updated}</p>
       <h1 data-layer="fact">{event.title}</h1>
-      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dems-win-both-chambers" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-iran" /></p>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dems-win-both-chambers" /></p>
       <ReadingModes />
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
@@ -38,7 +38,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
         <p data-layer="narrative" data-answer="1">Democrats won control of the House and the Senate on Nov. 3. By Nov. 10 they had won {n.demHouse} of the 435 House seats, with some races still uncalled.<Cite c="dems-win-both-chambers" /> In the Senate, Democrats flipped seven Republican seats, from Texas and Kansas to Maine, and were on track for {n.demSenate}.<Cite c="senate-flips" /><Cite c="dems-win-both-chambers" /></p>
-        <p data-layer="narrative" data-answer="2">The Voter Poll, run by the research firm SSRS for seven news organizations, asked voters what drove their choice; its national file has {n.respondents} respondents.<Cite c="one-poll-seven-sponsors" /><Cite c="poll-size" /> Each publishes it under its own name, so the NBC News Exit Poll, the CBS News exit poll, the Fox News Voter Poll and the AP Voter Poll are the same survey.<Cite c="one-poll-seven-sponsors" /> It asked voters whether each of five issues was crucial to their vote for Congress. More said so of government corruption than of anything else, and the war in Iran came fourth.<Cite c="issues-asked-separately" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /><Cite c="crucial-iran" /><Cite c="crucial-ai" /></p>
+        <p data-layer="narrative" data-answer="2">The Voter Poll, the exit poll that NBC News, CBS News, Fox News, the Associated Press and three other news organizations share, asked voters whether each of five issues was crucial to their vote for Congress.<Cite c="one-poll-seven-sponsors" /><Cite c="issues-asked-separately" /> Government corruption topped the list at {n.corruption}%, followed by the cost of living at {n.costOfLiving}%.<Cite c="crucial-corruption" /><Cite c="crucial-cost" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Share of voters who called each issue crucial to their vote for Congress</strong></figcaption>
           <ul class="share-bars" aria-label="Share of voters calling each issue crucial: corruption, cost of living, immigration enforcement, the Iran war, AI and data centers">
@@ -137,7 +137,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="the-sides">
         <h2 data-layer="fact">What each side says lost it</h2>
-        <p data-layer="narrative">Vice President JD Vance blamed the war, in a post on Nov. 4, and said the problem was 2024 Trump voters who switched, not voters who stayed home.<Cite c="vance-war" /> He said Trump agreed. On Fox News the night before, Trump had told the anchor Bret Baier it was the gasoline price, not the war.<Cite c="trump-gas-price" /><Cite c="trump-part-iran" /></p>
+        <p data-layer="narrative">Vice President JD Vance blamed the war, in a post on Nov. 4, and said the problem was 2024 Trump voters who switched, not voters who stayed home.<Cite c="vance-war" /> In the Voter Poll, {n.iran}% of voters called the war crucial to their vote, fewer than said so of corruption, the cost of living or immigration enforcement.<Cite c="crucial-iran" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /> He said Trump agreed. On Fox News the night before, Trump had told the anchor Bret Baier it was the gasoline price, not the war.<Cite c="trump-gas-price" /><Cite c="trump-part-iran" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>What Vance said Trump said, and what Trump said</strong></figcaption>
           <div class="side-by-side quotes">
