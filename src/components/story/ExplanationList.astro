@@ -16,7 +16,7 @@
  *     holders: string          who puts it forward, in short forms ("Trump, Cruz"); full names
  *                              and titles belong in the claim
  *     verdict: "supported" | "partly" | "not" | "untestable"
- *     summary: string          the verdict in one line, shown collapsed
+ *     summary: string | Paragraph   the verdict in one line, shown collapsed
  *     claim, evidenceFor, evidenceAgainst, conclusion: Paragraph[]
  *   }[]
  *   A Paragraph is a run of text and citations: strings, and { c: "claim-id" } objects.
@@ -30,7 +30,7 @@ interface Entry {
   name: string;
   holders: string;
   verdict: "supported" | "partly" | "not" | "untestable";
-  summary: string;
+  summary: string | Paragraph;
   claim: Paragraph[];
   evidenceFor: Paragraph[];
   evidenceAgainst: Paragraph[];
@@ -64,7 +64,7 @@ const sides = (e: Entry) => [
       <summary class="xl-row">
         <span class="xl-name">{e.name}</span>
         <span class="xl-holders"><span class="xl-said">Said by </span>{e.holders}</span>
-        <span class="xl-verdict"><span class="xl-badge">{label[e.verdict]}</span><span class="xl-line">{e.summary}</span></span>
+        <span class="xl-verdict"><span class="xl-badge">{label[e.verdict]}</span><span class="xl-line">{(typeof e.summary === "string" ? [e.summary] : e.summary).map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</span></span>
       </summary>
       <div class="xl-body">
         {e.claim.map((p) => <p class="xl-claim" data-layer="narrative">{p.map((s) => (typeof s === "string" ? s : <Cite c={s.c} />))}</p>)}

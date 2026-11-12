@@ -41,7 +41,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
         <p data-layer="narrative" data-answer="1">In the Senate, Democrats flipped seven Republican seats, from Texas and Kansas to Maine. They went in holding 47 of the 100 seats and were on track for {n.demSenate}.<Cite c="senate-flips" /><Cite c="senate-going-in" /><Cite c="dems-win-both-chambers" /></p>
-        <p data-layer="narrative" data-answer="2">Voters said they were moved most by corruption and prices. In the Voter Poll, the exit poll that NBC News, CBS News, Fox News, the Associated Press and three other news organizations share, {n.corruption}% called government corruption crucial to their vote for Congress and {n.costOfLiving}% the cost of living, more than any other issue it asked about.<Cite c="one-poll-seven-sponsors" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="issues-asked-separately" /></p>
+        <p data-layer="narrative" data-answer="2">Voters said they were moved most by corruption and prices. In the Voter Poll, the exit poll that NBC News, CBS News, Fox News, the Associated Press and three other news organizations share, {n.corruption}% called government corruption crucial to their vote for Congress and {n.costOfLiving}% the cost of living, more than any other issue it asked about.<Cite c="one-poll-seven-sponsors" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /><Cite c="crucial-iran" /><Cite c="crucial-ai" /><Cite c="issues-asked-separately" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Share of voters who called each issue crucial to their vote for Congress</strong></figcaption>
           <ul class="share-bars" aria-label="Share of voters calling each issue crucial: corruption, cost of living, immigration enforcement, the Iran war, AI and data centers">
@@ -70,7 +70,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
               <tr><td>Harris</td><td class="num">{n.ygHarrisR}%</td><td class="num">{n.ygHarrisD}%</td><td class="num">{n.ygHarrisHome}%</td></tr>
             </tbody>
           </table>
-          <DataNote><p>Economist/YouGov poll of 3,166 registered voters, Nov. 4 to 6; House vote. Rows do not add to 100 because some voted for other candidates.<Cite c="yougov-trump-voters" /><Cite c="yougov-turnout-2024" /></p></DataNote>
+          <DataNote><p>Economist/YouGov poll of 3,166 registered voters, taken after the election.<Cite c="yougov-trump-voters" /><Cite c="yougov-turnout-2024" /></p></DataNote>
         </figure>
         <p data-layer="narrative">The Voter Poll surveys people who voted.<Cite c="poll-size" /> In it, {n.trumpToDem}% of voters who said they backed Trump in 2024 voted for a Democrat for the House, and {n.harrisToRep}% of Harris voters went the other way.<Cite c="trump-voters-switched" /> Voters who said they backed Harris made up {n.harris2024}% of this year's voters and Trump's voters {n.trump2024}%, though Trump won the 2024 popular vote, {n.trump2024Pop}% to {n.harris2024Pop}%.<Cite c="vote-2024-composition" /><Cite c="trump-won-2024-popular" /></p>
         <p data-layer="narrative">A second survey of more than 90,000 voters, by the research firm NORC with The Washington Post and other sponsors, found about 1 in 10 Trump voters backing the Democrat for Senate in Iowa, Kansas, North Carolina and Texas.<Cite c="norc-switch-and-new" /></p>
@@ -78,14 +78,14 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="groups">
         <h2 data-layer="fact">Which groups moved</h2>
-        <p data-layer="narrative">The groups that helped Trump win in 2024 moved furthest back. Latino voters gave him 46% in 2024, by NBC's count, and gave Democrats 64% for the House this year.<Cite c="baseline-latino-nbc" /><Cite c="groups-2026" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats 73% to 25%.<Cite c="shift-young-ap" /><Cite c="groups-2026" /> Independents, who favored Harris by 6 points in 2024 by Fox News' count, voted Democratic 58% to 38%.<Cite c="shift-independents-fox" /><Cite c="groups-2026" /></p>
+        <p data-layer="narrative">Latino voters gave Trump 46% in 2024, by NBC's count, and gave Democrats 64% for the House this year.<Cite c="baseline-latino-nbc" /><Cite c="groups-2026" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats 73% to 25%.<Cite c="shift-young-ap" /><Cite c="groups-2026" /> Independents, who favored Harris by 6 points in 2024 by Fox News' count, voted Democratic 58% to 38%.<Cite c="shift-independents-fox" /><Cite c="groups-2026" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>How far some groups moved from 2024</strong></figcaption>
           <table class="data-table">
             <thead><tr><th>Group, and whose 2024 figure</th><th>2024</th><th>2026 House vote</th></tr></thead>
             <tbody>{groupShifts.map((r) => <tr><td>{r.group} <span class="row-source">{r.source}{r.c.map((c) => <Cite c={c} />)}</span></td><td>{r.y24}</td><td>{r.y26}</td></tr>)}</tbody>
           </table>
-          <DataNote><p>2026: the Voter Poll's final national file, {n.respondents} voters. 2024: each outlet's own figure; the Voter Poll began in 2025, so outlets' starting points differ.<Cite c="groups-2026" /><Cite c="poll-is-new" /><Cite c="baseline-latino-ap" /></p></DataNote>
+          <DataNote><p>2026: the Voter Poll's final national file, {n.respondents} voters. 2024: each outlet's own figure; the Voter Poll began in 2025, so outlets' starting points differ.<Cite c="poll-size" /><Cite c="groups-2026" /><Cite c="poll-is-new" /><Cite c="baseline-latino-ap" /></p></DataNote>
         </figure>
         <p data-layer="narrative">Democrats won men narrowly and women by 19 points. They won every age group except voters 65 and older, who split evenly, and every income group. White voters split evenly; Republicans won voters without a college degree and those in small towns and rural areas.<Cite c="groups-detail" /></p>
         <figure class="story-figure" data-layer="fact">
@@ -110,7 +110,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="places">
         <h2 data-layer="fact">Where the vote moved</h2>
-        <p data-layer="narrative">Texas moved furthest. Democrats had not won a statewide race there since 1994, and Republicans had held this Senate seat since John Tower won it in 1961.<Cite c="texas-history" /> James Talarico, the Democrat, won it by about 12 points, 5,444,982 votes to Ken Paxton's 4,249,373. In the state's last midterm Senate race, in 2018, Ted Cruz won by about 3 points.<Cite c="texas-2018-compare" /> Against the 2024 presidential vote in the same counties, Texas's Senate vote moved about 26 points toward Democrats, more than any other state's.<Cite c="wapo-state-swings" /></p>
+        <p data-layer="narrative">Texas moved furthest. Democrats had not won a statewide race there since 1994, and Republicans had held this Senate seat since John Tower won it in 1961.<Cite c="texas-history" /> James Talarico, the Democrat, won it by about 12 points, 5,444,982 votes to Ken Paxton's 4,249,373. In the state's last midterm Senate race, in 2018, Ted Cruz won by about 3 points.<Cite c="texas-2018-compare" /> Against the 2024 presidential vote in the same counties, Texas's Senate vote moved about 26 points toward Democrats, more than any other state in the Post's early count.<Cite c="wapo-state-swings" /></p>
         <p data-layer="narrative">Rhode Island, North Carolina, Mississippi and South Carolina came next, at 22 to 23 points; Minnesota, South Dakota and Michigan moved least, about 6 to 8.<Cite c="wapo-state-swings" /> By kind of place, majority-Hispanic counties moved furthest, 28 points, and small cities and rural areas least, about 16.<Cite c="wapo-county-types" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Republican margin in the same counties: 2024 presidential vote against the 2026 Senate vote</strong></figcaption>
