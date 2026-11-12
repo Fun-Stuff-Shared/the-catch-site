@@ -1,0 +1,250 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DataNote from "../../../components/story/DataNote.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, computed, crucial, kansasCruz, kansasPoll, groupShifts, explanations, groups, countyTypes, stateSwings } from "../../../data/midterms-2026-2026-11-03-why-voters-turned-on-republicans.mjs";
+const story = "midterms-2026--2026-11-03-why-voters-turned-on-republicans";
+const short = (id) => claim(story, id).short;
+const pts = (m) => (m > 0 ? `R+${m.toFixed(1)}` : m < 0 ? `D+${(-m).toFixed(1)}` : "Even");
+const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/";
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterms-2026/">2026 midterms</a><span>November 3, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">2026 midterms &middot; November 3, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dems-win-both-chambers" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#who-moved">Who changed sides, and who stayed home</a></li>
+          <li><a href="#groups">Which groups moved</a></li>
+          <li><a href="#places">Where the vote moved</a></li>
+          <li><a href="#why-now">Gas, prices and an unpopular president</a></li>
+          <li><a href="#the-sides">What each side says lost it</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">In the Senate, Democrats flipped seven Republican seats, from Texas and Kansas to Maine. They went in holding 47 of the 100 seats and were on track for {n.demSenate}.<Cite c="senate-flips" /><Cite c="senate-going-in" /><Cite c="dems-win-both-chambers" /></p>
+        <p data-layer="narrative" data-answer="2">Voters said they were moved most by corruption and prices. In the Voter Poll, the exit poll that NBC News, CBS News, Fox News, the Associated Press and three other news organizations share, {n.corruption}% called government corruption crucial to their vote for Congress and {n.costOfLiving}% the cost of living, more than any other issue it asked about.<Cite c="one-poll-seven-sponsors" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /><Cite c="crucial-iran" /><Cite c="crucial-ai" /><Cite c="issues-asked-separately" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Share of voters who called each issue crucial to their vote for Congress</strong></figcaption>
+          <ul class="share-bars" aria-label="Share of voters calling each issue crucial: corruption, cost of living, immigration enforcement, the Iran war, AI and data centers">
+            {crucial.map((r) => (
+              <li>
+                <span class="share-label">{short(r.c)}<Cite c={r.c} /></span>
+                <span class="share-track"><span class="share-bar" style={`width:${r.value}%`}></span></span>
+              </li>
+            ))}
+          </ul>
+          <DataNote><p>The Voter Poll by SSRS, national House sample, {n.respondents} voters. Each issue was asked about on its own, so a voter could call several crucial.<Cite c="poll-size" /><Cite c="issues-asked-separately" /></p></DataNote>
+        </figure>
+        <p data-layer="narrative" data-answer="3">They also treated it as a vote on Trump: {n.oppose}% said one reason for their House vote was to oppose him, against {n.support}% who voted to support him; {n.notFactor}% said he was not a factor.<Cite c="trump-factor" /> {n.approve}% approved of the job he is doing.<Cite c="trump-approval" /></p>
+        <p data-layer="narrative">Most voters blamed him for prices: asked why prices were high, {n.pricesTrump}% said it was more Trump's policies than things outside his control.<Cite c="prices-trump-policies" /></p>
+      </section>
+
+      <section id="who-moved">
+        <h2 data-layer="fact">Who changed sides, and who stayed home</h2>
+        <p data-layer="narrative">By their own account, more of Trump's 2024 voters stayed home than switched sides. An Economist/YouGov poll of 3,166 registered voters, taken after the election, also asked people who did not vote.<Cite c="yougov-trump-voters" /> In it, {n.ygTrumpHome}% of Trump's 2024 voters said they did not vote, and {n.ygTrumpD}% said they voted for a Democrat for the House.<Cite c="yougov-turnout-2024" /><Cite c="yougov-trump-voters" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What 2024 voters did in 2026, by their own account</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>2024 vote</th><th class="num">Voted Republican</th><th class="num">Voted Democratic</th><th class="num">Did not vote</th></tr></thead>
+            <tbody>
+              <tr><td>Trump</td><td class="num">{n.ygTrumpR}%</td><td class="num">{n.ygTrumpD}%</td><td class="num">{n.ygTrumpHome}%</td></tr>
+              <tr><td>Harris</td><td class="num">{n.ygHarrisR}%</td><td class="num">{n.ygHarrisD}%</td><td class="num">{n.ygHarrisHome}%</td></tr>
+            </tbody>
+          </table>
+          <DataNote><p>Economist/YouGov poll of 3,166 registered voters, taken after the election.<Cite c="yougov-trump-voters" /><Cite c="yougov-turnout-2024" /></p></DataNote>
+        </figure>
+        <p data-layer="narrative">The Voter Poll surveys people who voted.<Cite c="poll-size" /> In it, {n.trumpToDem}% of voters who said they backed Trump in 2024 voted for a Democrat for the House, and {n.harrisToRep}% of Harris voters went the other way.<Cite c="trump-voters-switched" /> Voters who said they backed Harris made up {n.harris2024}% of this year's voters and Trump's voters {n.trump2024}%, though Trump won the 2024 popular vote, {n.trump2024Pop}% to {n.harris2024Pop}%.<Cite c="vote-2024-composition" /><Cite c="trump-won-2024-popular" /></p>
+        <p data-layer="narrative">A second survey of more than 90,000 voters, by the research firm NORC with The Washington Post and other sponsors, found about 1 in 10 Trump voters backing the Democrat for Senate in Iowa, Kansas, North Carolina and Texas.<Cite c="norc-switch-and-new" /></p>
+      </section>
+
+      <section id="groups">
+        <h2 data-layer="fact">Which groups moved</h2>
+        <p data-layer="narrative">Latino voters gave Trump 46% in 2024, by NBC's count, and gave Democrats 64% for the House this year.<Cite c="baseline-latino-nbc" /><Cite c="groups-2026" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats 73% to 25%.<Cite c="shift-young-ap" /><Cite c="groups-2026" /> Independents, who favored Harris by 6 points in 2024 by Fox News' count, voted Democratic 58% to 38%.<Cite c="shift-independents-fox" /><Cite c="groups-2026" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How far some groups moved from 2024</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Group, and whose 2024 figure</th><th>2024</th><th>2026 House vote</th></tr></thead>
+            <tbody>{groupShifts.map((r) => <tr><td>{r.group} <span class="row-source">{r.source}{r.c.map((c) => <Cite c={c} />)}</span></td><td>{r.y24}</td><td>{r.y26}</td></tr>)}</tbody>
+          </table>
+          <DataNote><p>2026: the Voter Poll's final national file, {n.respondents} voters. 2024: each outlet's own figure; the Voter Poll began in 2025, so outlets' starting points differ.<Cite c="poll-size" /><Cite c="groups-2026" /><Cite c="poll-is-new" /><Cite c="baseline-latino-ap" /></p></DataNote>
+        </figure>
+        <p data-layer="narrative">Democrats won men narrowly and women by 19 points. They won every age group except voters 65 and older, who split evenly, and every income group. White voters split evenly; Republicans won voters without a college degree and those in small towns and rural areas.<Cite c="groups-detail" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>2026 House vote by group</strong></figcaption>
+          <p class="party-key" aria-hidden="true"><span class="pk d">Democratic</span><span class="pk r">Republican</span></p>
+          {groups.map((g) => (
+            <div class="group-set">
+              <p class="group-name">{g.set}</p>
+              <ul class="split-bars">
+                {g.rows.map(([label, d, r]) => (
+                  <li aria-label={`${label}: Democratic ${d}%, Republican ${r}%`}>
+                    <span class="split-label">{label}</span>
+                    <span class="split-track"><span class="split-d" style={`width:${d}%`}>{d}</span><span class="split-r" style={`width:${r}%`}>{r}</span></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <DataNote><p>The Voter Poll by SSRS, national House sample, {n.respondents} voters. Shares of each group's vote; the poll has no 2024 edition to compare with.<Cite c="groups-detail" /><Cite c="poll-is-new" /></p></DataNote>
+        </figure>
+      </section>
+
+      <section id="places">
+        <h2 data-layer="fact">Where the vote moved</h2>
+        <p data-layer="narrative">Texas moved furthest. Democrats had not won a statewide race there since 1994, and Republicans had held this Senate seat since John Tower won it in 1961.<Cite c="texas-history" /> James Talarico, the Democrat, won it by about 12 points, 5,444,982 votes to Ken Paxton's 4,249,373. In the state's last midterm Senate race, in 2018, Ted Cruz won by about 3 points.<Cite c="texas-2018-compare" /> Against the 2024 presidential vote in the same counties, Texas's Senate vote moved about 26 points toward Democrats, more than any other state in the Post's early count.<Cite c="wapo-state-swings" /></p>
+        <p data-layer="narrative">Rhode Island, North Carolina, Mississippi and South Carolina came next, at 22 to 23 points; Minnesota, South Dakota and Michigan moved least, about 6 to 8.<Cite c="wapo-state-swings" /> By kind of place, majority-Hispanic counties moved furthest, 28 points, and small cities and rural areas least, about 16.<Cite c="wapo-county-types" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Republican margin in the same counties: 2024 presidential vote against the 2026 Senate vote</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Kind of county</th><th class="num">Trump 2024</th><th class="num">GOP Senate 2026</th><th class="num">Change</th></tr></thead>
+            <tbody>{countyTypes.map((r) => <tr><td>{r.label}</td><td class="num">{pts(r.m24)}</td><td class="num">{pts(r.m26)}</td><td class="num">{(r.m26 - r.m24).toFixed(1)}</td></tr>)}</tbody>
+          </table>
+          <DataNote><p>Counties in states with a Senate race; margins in points, Republican minus Democratic. The Washington Post, from Associated Press counts as of 8:30 a.m. Nov. 4, before every vote was in. These are places, not voters, and a Senate race is not the same contest as the presidential race.<Cite c="wapo-county-types" /></p></DataNote>
+        </figure>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How far each state's Senate vote moved toward Democrats from the 2024 presidential vote, in points</strong></figcaption>
+          <ul class="swing-bars" aria-label="Shift toward Democrats by state, largest first">
+            {stateSwings.map((s) => (
+              <li>
+                <span class="swing-label">{s.name} <span class="swing-region">{s.region}</span></span>
+                <span class="swing-track"><span class="swing-bar" style={`width:${(-s.swing / 30) * 100}%`}></span><span class="swing-num">{Math.round(-s.swing)}</span></span>
+              </li>
+            ))}
+          </ul>
+          <DataNote><p>Places, not voters. The Post's county returns summed by state, from Associated Press counts as of 8:30 a.m. Nov. 4, before every vote was in. Colorado, Maine, Massachusetts, New Hampshire and Oregon are left out because few of their counties had reported.<Cite c="wapo-state-swings" /> Later official counts in Texas, South Carolina and North Carolina give the same shifts to within a tenth of a point.<Cite c="later-counts-match" /></p></DataNote>
+        </figure>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Gas, prices and an unpopular president</h2>
+        <p data-layer="narrative">The U.S. and Israel <a href={warStory}>went to war with Iran</a> on Feb. 28. Iran's attacks on commercial shipping effectively halted traffic through the Strait of Hormuz in the war's first days, disrupting the world's oil markets.<Cite c="war-start-hormuz" /><Cite c="war-chain" /> The national average price of regular gasoline was ${n.gasFeb} a gallon in the week of Feb. 23 and ${n.gasNov} in the week of Nov. 2.<Cite c="gas-prices" /></p>
+        <p data-layer="narrative">The fighting stopped and started. A ceasefire began April 7, and Trump announced an agreement with Iran on June 14.<Cite c="war-start-hormuz" /> After Iran began attacking commercial ships again, the U.S. struck Iran on June 26 and July 7, Trump declared the agreement "over" on July 8, and in early September the two sides were again exchanging attacks.<Cite c="war-chain" /> On Nov. 9, Trump said the war "militarily is effectively over." The U.S. was still enforcing its naval blockade of Iran and had fired on a commercial ship two days earlier.<Cite c="trump-effectively-over" /></p>
+        <p data-layer="narrative">In the Voter Poll, {n.hardship}% said inflation had caused their family hardship in the past year, and they voted Democratic 62% to 36%.<Cite c="inflation-hardship" /> {n.tariffsNational}% said Trump's tariffs had hurt the national economy.<Cite c="tariffs-hurt" /></p>
+        <p data-layer="narrative">In late August, the polling firm Gallup measured Trump's approval at 33%, the lowest reading before a midterm since Harry Truman's in 1946.<Cite c="trump-approval-gallup-aug" /> Among the people who voted, the Voter Poll put it at {n.approve}% and NORC at {n.norcApprove}%.<Cite c="trump-approval" /><Cite c="norc-approval" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says lost it</h2>
+        <p data-layer="narrative">Vice President JD Vance blamed the war, in a post on Nov. 4, and said the problem was 2024 Trump voters who switched, not voters who stayed home.<Cite c="vance-war" /> Trump blamed the price of gasoline. In an interview on CBS's 60 Minutes aired Nov. 8, he said of the loss, "it's not really the Iran war," and "I think it was bad messaging." He said his deportation policy "might be too tough."<Cite c="trump-gas-price" /><Cite c="trump-60min-messaging" /><Cite c="trump-60min-immigration" /></p>
+        <p data-layer="narrative">Voters ranked the war below other issues. In the Voter Poll, {n.iran}% called it crucial to their vote, fewer than said so of corruption, the cost of living or immigration enforcement.<Cite c="crucial-iran" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /></p>
+        <p data-layer="narrative">Sen. Ted Cruz of Texas blamed both prices and policy: "Tariffs have made everything too expensive, and the Iran war has dragged on too long."<Cite c="cruz-prices-tariffs" /> Peter Navarro, a White House adviser, said the tariffs "have played no role in the inflation and affordability issue."<Cite c="navarro-no-role" /></p>
+        <p data-layer="narrative">Democratic leaders said voters chose them on prices and corruption. Rep. Hakeem Jeffries, the House Democratic leader, said, "We ran on affordability. We won on affordability."<Cite c="jeffries-affordability" /> Sen. Chuck Schumer said Republicans had ignored voters' concerns about "costs, chaos, and corruption."<Cite c="schumer-costs-corruption" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Vance said Trump blamed the war. On election night, Trump blamed gas prices</h3>
+              <p data-layer="narrative">In his Nov. 4 post, Vance wrote that the war lost the election and that "the president himself said so last night."<Cite c="vance-war" /> What Trump had told Fox News the night before was that it was the gasoline price, not the war, though "a part of it was Iran."<Cite c="trump-gas-price" /><Cite c="trump-part-iran" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What Vance said Trump said, and what Trump said</strong></figcaption>
+          <div class="side-by-side quotes">
+            <blockquote class="said"><p class="said-who">JD Vance &middot; Nov. 4, 2026 &middot; post on X</p><p>"The reason we lost is the war. The president himself said so last night."<Cite c="vance-war" /></p></blockquote>
+            <blockquote class="said"><p class="said-who">Donald Trump &middot; Nov. 3, 2026 &middot; Fox News, election night</p><p>"I don't think it's the war, Bret, I think it's the gasoline price."<Cite c="trump-gas-price" /></p><p>"I think a part of it was Iran."<Cite c="trump-part-iran" /></p></blockquote>
+          </div>
+        </figure>
+              <p data-layer="narrative">The next day, Trump called Vance's post "largely true because it drove the gasoline up a little bit short term," meaning the war had raised gas prices.<Cite c="trump-largely-true" /></p>
+            </li>
+            <li>
+              <h3>Cruz's Kansas "exit polling" is not in the Kansas exit poll</h3>
+              <p data-layer="narrative">On Nov. 4, Cruz posted what he said exit polling showed about Kansas voters' top issues, to one decimal place: 30.6% for the cost of living, energy and groceries, then corruption, the cost of the Iran war, 7.9% for "The candidates are terrible" and 7.6% for "The Canada trade war." He did not name a poll.<Cite c="cruz-kansas-list" /></p>
+              <p data-layer="narrative">The exit poll in Kansas is the Voter Poll. It asked {n.ksRespondents} Kansas voters to pick the most important issue facing the country from six choices, a different question from the national "crucial" list. The state of democracy came first and the economy second. None of Cruz's choices was on its list.<Cite c="kansas-poll-top-issue" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>Two lists of Kansas voters' top issue</strong></figcaption>
+                <div class="side-by-side">
+                  <table class="data-table">
+                    <thead><tr><th colspan="2">Cruz's "exit polling," Nov. 4<Cite c="cruz-kansas-list" /></th></tr></thead>
+                    <tbody>{kansasCruz.map(([k, v]) => <tr><td>{k}</td><td class="num">{v}</td></tr>)}</tbody>
+                  </table>
+                  <table class="data-table">
+                    <thead><tr><th colspan="2">The Kansas Voter Poll<Cite c="kansas-poll-top-issue" /></th></tr></thead>
+                    <tbody>{kansasPoll.map(([k, v]) => <tr><td>{k}</td><td class="num">{v}</td></tr>)}</tbody>
+                  </table>
+                </div>
+              </figure>
+              <p data-layer="narrative">On Nov. 5, USA Today printed the same list as fact, in an item on Cruz's reaction to the election, without saying where the figures came from.<Cite c="usatoday-kansas" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <p class="section-intro" data-layer="fact">Each explanation the parties, candidates, pollsters and analysts gave for the result, and what the evidence says about it. Open one to see the evidence for and against.</p>
+
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Voters want the war ended and the tariffs gone. In a Reuters/Ipsos poll completed Nov. 9, {n.endWar}% of Americans wanted Congress to pass a law ending the war with Iran and {n.repealTariffs}% supported repealing Trump's tariffs.<Cite c="reuters-ipsos" /> A Democratic Congress, sworn in on Jan. 3, cannot do either alone: Democrats will need Republican votes to reach 60 in the Senate for most bills, and their majorities fall short of the two-thirds needed to override a veto.<Cite c="congress-limits" /> The Senate races in Alaska and Mississippi, still uncalled on Nov. 10, could add one or two Democratic seats.<Cite c="dems-win-both-chambers" /></p>
+        <p data-layer="narrative">Investigations are the other tool, and the White House has already pushed back. In a letter dated Nov. 9, its counsel, Will Scharf, told Rep. Robert Garcia, the top Democrat on the House Oversight Committee, that planned probes could amount to criminality; Garcia said Democrats would not be intimidated.<Cite c="oversight-letter" /></p>
+        <p data-layer="narrative">Which voters each party has to win back depends on whether Republicans lost theirs to the couch or to the other side. Bronner, the analyst, said voters who stayed home are easier for Republicans to win back than those who voted for a Democrat.<Cite c="bronner-win-back" /> Pew says panel surveys and turnout data will settle how much was each, and gives no date.<Cite c="pew-turnout-data" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .share-bars { list-style: none; padding: 0; margin: 0; font-family: var(--sans); }
+  .share-bars li { display: grid; grid-template-columns: minmax(11rem, 1fr) 2fr; align-items: center; column-gap: 1rem; padding: 0.45rem 0; border-bottom: 1px solid var(--rule); }
+  .share-label { color: var(--ink); font-size: 0.9rem; }
+  .share-track { display: block; height: 0.9rem; background: var(--rule); }
+  .share-bar { display: block; height: 100%; background: var(--blue); }
+  .side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .side-by-side .num, .story-figure td.num { text-align: right; white-space: nowrap; }
+  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
+  .party-key { margin: 0 0 0.5rem; font: 600 0.75rem/1.4 var(--sans); display: flex; gap: 1rem; }
+  .pk::before { content: ""; display: inline-block; width: 0.7rem; height: 0.7rem; margin-right: 0.35rem; vertical-align: -0.05rem; }
+  .pk.d::before { background: var(--blue); } .pk.r::before { background: var(--red, #b3261e); }
+  .group-set { margin: 0 0 0.75rem; }
+  .group-name { margin: 0.5rem 0 0.2rem; font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .split-bars, .swing-bars { list-style: none; padding: 0; margin: 0; font-family: var(--sans); }
+  .split-bars li, .swing-bars li { display: grid; grid-template-columns: minmax(9rem, 1fr) 2fr; align-items: center; column-gap: 1rem; padding: 0.3rem 0; border-bottom: 1px solid var(--rule); }
+  .split-label, .swing-label { font-size: 0.88rem; color: var(--ink); }
+  .split-track { display: flex; justify-content: space-between; height: 1.15rem; background: var(--rule); font: 600 0.72rem/1.15rem var(--sans); color: #fff; }
+  .split-d { background: var(--blue); padding-left: 0.3rem; }
+  .split-r { background: var(--red, #b3261e); text-align: right; padding-right: 0.3rem; }
+  .swing-region { color: var(--slate); font-size: 0.75rem; }
+  .swing-track { display: flex; align-items: center; gap: 0.4rem; }
+  .swing-bar { display: block; height: 0.8rem; background: var(--blue); }
+  .swing-num { font-size: 0.8rem; color: var(--ink); }
+  .quotes { align-items: start; }
+  .row-source { display: block; font-size: 0.75rem; color: var(--slate); }
+  .said { margin: 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--gold, #9a6200); font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; }
+  .said p { margin: 0 0 0.4rem; }
+  .said .said-who { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  @media (max-width: 640px) {
+      .split-bars li, .swing-bars li { grid-template-columns: 7.5rem 1fr; column-gap: 0.5rem; }
+    .split-label, .swing-label { font-size: 0.8rem; }
+    .swing-region { display: block; font-size: 0.68rem; }
+    .share-bars li { grid-template-columns: 1fr; row-gap: 0.25rem; }
+    .side-by-side { grid-template-columns: 1fr; }
+    .story-figure .data-table td, .story-figure .data-table th { padding: 0.5rem 0.45rem; }
+  }
+</style>

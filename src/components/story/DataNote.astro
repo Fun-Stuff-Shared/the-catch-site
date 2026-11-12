@@ -1,0 +1,18 @@
+---
+/**
+ * The source and caveats under a chart, collapsed behind "About this data" so the chart's
+ * title carries what it compares and the notes stay out of the reading line.
+ */
+---
+<details class="data-note">
+  <summary>About this data</summary>
+  <div class="data-note-body"><slot /></div>
+</details>
+<style is:global>
+  .data-note { margin: 0.4rem 0 0; font: 0.8rem/1.45 var(--sans); color: var(--slate); }
+  .data-note summary { cursor: pointer; width: fit-content; font-weight: 600; letter-spacing: 0.02em; list-style: none; }
+  .data-note summary::-webkit-details-marker { display: none; }
+  .data-note summary::before { content: "+"; display: inline-block; width: 0.9em; }
+  .data-note[open] summary::before { content: "\2013"; }
+  .story .data-note .data-note-body p { margin: 0.35rem 0 0; font: 0.8rem/1.5 var(--sans); color: var(--slate); }
+</style>
