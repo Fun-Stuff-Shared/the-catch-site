@@ -181,3 +181,27 @@ export const groupShifts = [
   { group: "Black men", y24: "1 in 5 Trump", y26: "12% Republican", source: "NBC News", c: ["baseline-black-men-nbc", "black-men-2026"] },
   { group: "Rural voters", y24: "Trump +28", y26: "Republicans +24", source: "Fox News", c: ["shift-rural-fox", "groups-2026"] },
 ];
+
+// One row per explanation for the summary grid; id matches the card on the page.
+export const explanationRows = [
+  { id: "iran-war", name: "The Iran war", holder: "JD Vance", verdict: "partly", line: "Few called it crucial on its own, many blamed it for higher prices, and the polls cannot separate the two." },
+  { id: "gas", name: "Gas and prices", holder: "Donald Trump; Sen. Ted Cruz", verdict: "supported", line: "Prices weighed on nearly nine in ten voters, and those hurt by inflation voted Democratic." },
+  { id: "tariffs", name: "Tariffs", holder: "Sen. Ted Cruz; Phillip Magness", verdict: "supported", line: "Two-thirds judged the tariffs harmful and voted against the party that imposed them." },
+  { id: "affordability", name: "Affordability and corruption", holder: "Hakeem Jeffries; Chuck Schumer", verdict: "partly", line: "The two issues led, but voters preferred Democrats on them only narrowly." },
+  { id: "trump", name: "A vote on Trump himself", holder: "CBS News", verdict: "supported", line: "Trump was a factor for most voters, and that cannot be separated from prices." },
+  { id: "candidates", name: "Bad candidates", holder: "Donald Trump", verdict: "partly", line: "Fits the Texas and Kansas Senate losses, not the national House vote." },
+  { id: "switching", name: "Switching, or staying home", holder: "JD Vance; Brookings", verdict: "partly", line: "Both happened; staying home was the larger part." },
+  { id: "loyalty", name: "Party loyalty", holder: "Voters, in their own words", verdict: "supported", line: "Most votes did not move, and Republicans were less loyal than Democrats." },
+  { id: "maps", name: "New district maps", holder: "Republicans who redrew them", verdict: "not", line: "The new maps mostly failed to win Republicans the seats they were drawn for." },
+  { id: "ruling", name: "The voting-rights ruling and Black turnout", holder: "USA Today", verdict: "untestable", line: "The only survey cited covered Southern polling places, not the national vote." },
+  { id: "midterm", name: "The usual midterm swing", holder: "The Washington Post", verdict: "partly", line: "The usual direction, but among the larger losses." },
+  { id: "democracy", name: "Democracy and presidential power", holder: "Voters who ranked it first", verdict: "untestable", line: "No public table shows whether the issue moved anyone." },
+  { id: "immigration", name: "Immigration raids gone too far", holder: "NPR", verdict: "partly", line: "Helped Democrats with voters who thought the raids went too far, Republicans with enforcement voters." },
+  { id: "health", name: "Health care costs", holder: "Chuck Schumer", verdict: "partly", line: "Voters preferred Democrats on health care, but few named it first." },
+  { id: "abortion", name: "Abortion rights", holder: "KFF", verdict: "untestable", line: "Drew voters on both sides in four states; nothing ties it to the national swing." },
+  { id: "jobs", name: "A weakening job market", holder: "Voters in NORC's survey", verdict: "untestable", line: "No survey asked about jobs apart from the economy." },
+  { id: "messaging", name: "Bad messaging", holder: "Donald Trump", verdict: "untestable", line: "No poll asked whether voters knew the administration's record." },
+  { id: "israel", name: "Support for Israel", holder: "A pollster Vance cites", verdict: "untestable", line: "Half of voters called U.S. support too strong, mostly Democrats; nothing ties it to switching." },
+  { id: "america-first", name: "\"Put America First\"", holder: "A pollster Vance cites", verdict: "untestable", line: "Vance gave no share of voters, and no survey asked." },
+  { id: "rigged", name: "A rigged count", holder: "Donald Trump; some allies", verdict: "not", line: "Officials raised no major concerns about the count, and no wave of court challenges followed." },
+];

@@ -3,6 +3,7 @@
  * One explanation for an event, laid out for the reader to test: who holds it, the
  * evidence that fits it, the evidence against it, and a plain verdict.
  * Props:
+ *   id: string       - anchor, rendered as ex-<id>, that the summary links to
  *   name: string     - the explanation in a few words ("The Iran war")
  *   verdict: "supported" | "partly" | "not" | "untestable"
  * Slots: "claim" (required: who puts the explanation forward and what it says, as a
@@ -10,10 +11,12 @@
  * Each slot holds typed, cited paragraphs.
  */
 interface Props {
+  id: string;
   name: string;
   verdict: "supported" | "partly" | "not" | "untestable";
 }
-const { name, verdict } = Astro.props;
+const { id, name, verdict } = Astro.props;
+if (!id) throw new Error(`ExplanationEntry ${name}: an id is required for the summary to link to`);
 if (!Astro.slots.has("claim")) throw new Error(`ExplanationEntry ${name}: the claim slot states the explanation and who holds it`);
 const label = {
   supported: "Supported",
@@ -23,7 +26,7 @@ const label = {
 }[verdict];
 if (!label) throw new Error(`ExplanationEntry: unknown verdict ${verdict}`);
 ---
-<article class={`explanation ${verdict}`} data-layer="fact">
+<article id={`ex-${id}`} class={`explanation ${verdict}`} data-layer="fact">
   <header class="ex-head">
     <h3 class="ex-name">{name}</h3>
     <p class="ex-chip"><span>{label}</span></p>

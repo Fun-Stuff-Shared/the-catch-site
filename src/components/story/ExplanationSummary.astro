@@ -1,0 +1,40 @@
+---
+/**
+ * The way into a set of ExplanationEntry cards: one row per explanation with its name
+ * (linking to the card), who holds it, the verdict badge and the verdict in one line.
+ * Props:
+ *   rows: { id, name, holder, verdict, line }[]  - id matches the card's id
+ */
+interface Row { id: string; name: string; holder: string; verdict: "supported" | "partly" | "not" | "untestable"; line: string; }
+interface Props { rows: Row[]; }
+const { rows } = Astro.props;
+const label = { supported: "Supported", partly: "Partly supported", not: "Not supported", untestable: "Can't be tested" };
+for (const r of rows) if (!label[r.verdict]) throw new Error(`ExplanationSummary: unknown verdict ${r.verdict} for ${r.id}`);
+---
+<div class="ex-summary" data-layer="fact" role="table" aria-label="Every explanation and its verdict">
+  <div class="exs-row exs-head" role="row">
+    <span role="columnheader">Explanation</span><span role="columnheader">Who holds it</span><span role="columnheader">Verdict</span>
+  </div>
+  {rows.map((r) => (
+    <div class={`exs-row ${r.verdict}`} role="row">
+      <span class="exs-name" role="cell"><a href={`#ex-${r.id}`}>{r.name}</a></span>
+      <span class="exs-holder" role="cell">{r.holder}</span>
+      <span class="exs-verdict" role="cell"><span class="exs-badge">{label[r.verdict]}</span> {r.line}</span>
+    </div>
+  ))}
+</div>
+<style is:global>
+  .ex-summary { margin: 0 0 1.5rem; border-top: 2px solid var(--ink, #1a1a1a); font-family: var(--sans); }
+  .exs-row { display: grid; grid-template-columns: 12rem 10rem 1fr; gap: 0.75rem; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); font-size: 0.88rem; line-height: 1.45; }
+  .exs-head { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .exs-name a { font-weight: 600; color: var(--ink, #1a1a1a); }
+  .exs-holder { color: var(--slate); }
+  .exs-badge { display: inline-block; margin-right: 0.35rem; padding: 0.05rem 0.4rem; font: 600 0.68rem/1.4 var(--sans); letter-spacing: 0.03em; text-transform: uppercase; border: 1px solid currentColor; color: var(--slate); }
+  .exs-row.supported .exs-badge { color: var(--blue); }
+  .exs-row.partly .exs-badge { color: var(--gold, #9a6200); }
+  .exs-row.not .exs-badge { color: var(--red, #b3261e); }
+  @media (max-width: 640px) {
+    .exs-head { display: none; }
+    .exs-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+</style>
