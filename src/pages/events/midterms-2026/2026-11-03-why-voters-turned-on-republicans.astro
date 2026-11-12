@@ -6,7 +6,7 @@ import Cite from "../../../components/Cite.astro";
 import ExplanationEntry from "../../../components/story/ExplanationEntry.astro";
 import StorySources from "../../../components/StorySources.astro";
 import { claim } from "../../../lib/claims.mjs";
-import { event, n, computed, crucial, composition, kansasCruz, kansasPoll, groups, countyTypes, stateSwings } from "../../../data/midterms-2026-2026-11-03-why-voters-turned-on-republicans.mjs";
+import { event, n, computed, crucial, kansasCruz, kansasPoll, groupShifts, groups, countyTypes, stateSwings } from "../../../data/midterms-2026-2026-11-03-why-voters-turned-on-republicans.mjs";
 const story = "midterms-2026--2026-11-03-why-voters-turned-on-republicans";
 const short = (id) => claim(story, id).short;
 const pts = (m) => (m > 0 ? `R+${m.toFixed(1)}` : m < 0 ? `D+${(-m).toFixed(1)}` : "Even");
@@ -25,6 +25,8 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
         <ol>
           <li><a href="#what-happened">What happened</a></li>
           <li><a href="#who-moved">Who changed sides, and who stayed home</a></li>
+          <li><a href="#groups">Which groups moved</a></li>
+          <li><a href="#places">Where the vote moved</a></li>
           <li><a href="#why-now">Gas, prices and an unpopular president</a></li>
           <li><a href="#the-sides">What each side says lost it</a></li>
           <li><a href="#the-catch">The Catch</a></li>
@@ -37,7 +39,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
-        <p data-layer="narrative" data-answer="1">Democrats won control of the House and the Senate on Nov. 3. By Nov. 10 they had won {n.demHouse} of the 435 House seats, with some races still uncalled.<Cite c="dems-win-both-chambers" /> In the Senate, Democrats flipped seven Republican seats, from Texas and Kansas to Maine, and were on track for {n.demSenate}.<Cite c="senate-flips" /><Cite c="dems-win-both-chambers" /></p>
+        <p data-layer="narrative" data-answer="1">In the Senate, Democrats flipped seven Republican seats, from Texas and Kansas to Maine, and were on track for {n.demSenate}.<Cite c="senate-flips" /><Cite c="dems-win-both-chambers" /> On Nov. 10 the Senate races in Alaska and Mississippi and more than a dozen House races were still too early to call.<Cite c="dems-win-both-chambers" /></p>
         <p data-layer="narrative" data-answer="2">The Voter Poll, the exit poll that NBC News, CBS News, Fox News, the Associated Press and three other news organizations share, asked voters whether each of five issues was crucial to their vote for Congress.<Cite c="one-poll-seven-sponsors" /><Cite c="issues-asked-separately" /> Government corruption topped the list at {n.corruption}%, followed by the cost of living at {n.costOfLiving}%.<Cite c="crucial-corruption" /><Cite c="crucial-cost" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Share of voters who called each issue crucial to their vote for Congress</strong></figcaption>
@@ -70,21 +72,20 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           <p class="chart-source">Economist/YouGov poll of 3,166 registered voters, Nov. 4 to 6; House vote. Rows do not add to 100 because some voted for other candidates.<Cite c="yougov-trump-voters" /><Cite c="yougov-turnout-2024" /></p>
         </figure>
         <p data-layer="narrative">The Voter Poll surveys people who voted.<Cite c="poll-size" /> In it, {n.trumpToDem}% of voters who said they backed Trump in 2024 voted for a Democrat for the House, and {n.harrisToRep}% of Harris voters went the other way.<Cite c="trump-voters-switched" /> Voters who said they backed Harris made up {n.harris2024}% of this year's voters and Trump's voters {n.trump2024}%, though Trump won the 2024 popular vote, {n.trump2024Pop}% to {n.harris2024Pop}%.<Cite c="vote-2024-composition" /><Cite c="trump-won-2024-popular" /></p>
-        <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>How this year's voters said they voted in 2024</strong></figcaption>
-          <ul class="share-bars" aria-label="2026 voters by their 2024 vote: Harris, Trump, did not vote">
-            {composition.map((r) => (
-              <li>
-                <span class="share-label">{r.label}: {r.value}%<Cite c="vote-2024-composition" /></span>
-                <span class="share-track"><span class="share-bar" style={`width:${r.value}%`}></span></span>
-              </li>
-            ))}
-          </ul>
-          <p class="chart-source">The Voter Poll by SSRS. The 2024 vote is what voters recalled, and the poll's weights use it.<Cite c="poll-weighted-to-vote" /></p>
-        </figure>
         <p data-layer="narrative">A second survey of more than 90,000 voters, by the research firm NORC with The Washington Post and other sponsors, found about 1 in 10 Trump voters backing the Democrat for Senate in Iowa, Kansas, North Carolina and Texas.<Cite c="norc-switch-and-new" /> The two surveys disagree on how many of this year's voters had not voted in 2024: {n.nonvoters2024}% in the Voter Poll, about {n.norcNew}% in NORC's.<Cite c="nonvoter-share-differs" /></p>
-        <p data-layer="narrative">Reports of how far a group moved since 2024 differ partly because the Voter Poll began in 2025 and has no 2024 edition, so each outlet set it against a different 2024 survey. For Latino voters' 2024 support for Trump, NBC used 46% and AP roughly 4 in 10.<Cite c="poll-is-new" /><Cite c="baseline-latino-nbc" /><Cite c="baseline-latino-ap" /></p>
-        <h3 data-layer="fact">How each group voted</h3>
+      </section>
+
+      <section id="groups">
+        <h2 data-layer="fact">Which groups moved</h2>
+        <p data-layer="narrative">The groups that helped Trump win in 2024 moved furthest back. Latino voters gave him 46% in 2024, by NBC's count, and gave Democrats 62% for the House this year.<Cite c="shift-latino-nbc" /> Voters under 30, roughly split between Trump and Harris in 2024 by AP's count, backed Democrats about 7 in 10.<Cite c="shift-young-ap" /> Independents went from a 6-point Harris edge to a 22-point Democratic one, by Fox News' count.<Cite c="shift-independents-fox" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How far some groups moved from 2024, as each outlet reported it</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Group, and whose numbers</th><th>2024</th><th>2026 House vote</th></tr></thead>
+            <tbody>{groupShifts.map((r) => <tr><td>{r.group} <span class="row-source">{r.source}{r.c.map((c) => <Cite c={c} />)}</span></td><td>{r.y24}</td><td>{r.y26}</td></tr>)}</tbody>
+          </table>
+          <p class="chart-source">The 2026 figures come from the Voter Poll, which began in 2025; each outlet set them against its own 2024 figure, so the starting points differ by outlet.<Cite c="poll-is-new" /><Cite c="baseline-latino-nbc" /><Cite c="baseline-latino-ap" /></p>
+        </figure>
         <p data-layer="narrative">Democrats won men narrowly and women by 19 points. They won every age group except voters 65 and older, who split evenly, and every income group. White voters split evenly; Republicans won voters without a college degree and those in small towns and rural areas.<Cite c="groups-detail" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>2026 House vote by group</strong></figcaption>
@@ -104,8 +105,11 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           ))}
           <p class="chart-source">The Voter Poll by SSRS, national House sample, {n.respondents} voters. Shares of each group's vote; the poll has no 2024 edition to compare with.<Cite c="groups-detail" /><Cite c="poll-is-new" /></p>
         </figure>
-        <h3 data-layer="fact">Where the vote moved</h3>
-        <p data-layer="narrative">In the counties The Washington Post tracked, in returns as of 8:30 a.m. Nov. 4, the Senate vote moved furthest toward Democrats, against the 2024 presidential vote, in majority-Hispanic counties, by 28 points, and least in small cities and rural areas, by about 16.<Cite c="wapo-county-types" /> By state, Texas moved most, about 26 points, then Rhode Island, North Carolina, Mississippi and South Carolina, 22 to 23. Minnesota, South Dakota and Michigan moved least, about 6 to 8 points.<Cite c="wapo-state-swings" /></p>
+      </section>
+
+      <section id="places">
+        <h2 data-layer="fact">Where the vote moved</h2>
+        <p data-layer="narrative">Majority-Hispanic counties moved furthest toward Democrats, 28 points from the 2024 presidential vote to this year's Senate vote, and small cities and rural areas least, about 16, in The Washington Post's early returns.<Cite c="wapo-county-types" /> By state, Texas moved most, about 26 points, then Rhode Island, North Carolina, Mississippi and South Carolina, 22 to 23. Minnesota, South Dakota and Michigan moved least, about 6 to 8 points.<Cite c="wapo-state-swings" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>Republican margin in the same counties: 2024 presidential vote against the 2026 Senate vote</strong></figcaption>
           <table class="data-table">
@@ -137,7 +141,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="the-sides">
         <h2 data-layer="fact">What each side says lost it</h2>
-        <p data-layer="narrative">Vice President JD Vance blamed the war, in a post on Nov. 4, and said the problem was 2024 Trump voters who switched, not voters who stayed home.<Cite c="vance-war" /> In the Voter Poll, {n.iran}% of voters called the war crucial to their vote, fewer than said so of corruption, the cost of living or immigration enforcement.<Cite c="crucial-iran" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /> He said Trump agreed. On Fox News the night before, Trump had told the anchor Bret Baier it was the gasoline price, not the war.<Cite c="trump-gas-price" /><Cite c="trump-part-iran" /></p>
+        <p data-layer="narrative">Vice President JD Vance blamed the war, in a post on Nov. 4, and said the problem was 2024 Trump voters who switched, not voters who stayed home.<Cite c="vance-war" /> He said Trump agreed. On Fox News the night before, Trump had told the anchor Bret Baier it was the gasoline price, not the war.<Cite c="trump-gas-price" /><Cite c="trump-part-iran" /></p>
         <figure class="story-figure" data-layer="fact">
           <figcaption><strong>What Vance said Trump said, and what Trump said</strong></figcaption>
           <div class="side-by-side quotes">
@@ -146,7 +150,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           </div>
         </figure>
         <p data-layer="narrative">On Nov. 4 Trump called Vance's post "largely true because it drove the gasoline up a little bit short term," meaning the war had raised gas prices.<Cite c="trump-largely-true" /> In an interview on CBS's 60 Minutes aired Nov. 8, he said of the loss, "it's not really the Iran war," and "I think it was bad messaging." He said his deportation policy "might be too tough."<Cite c="trump-60min-messaging" /><Cite c="trump-60min-immigration" /></p>
-        <p data-layer="narrative">Vance's post also gave two numbers. He wrote that Florida's electorate was 9 points more Republican than Democratic. In Florida's Voter Poll, 41% of voters called themselves Republicans and 30% Democrats, which roughly fits.<Cite c="vance-florida" /><Cite c="florida-poll" /> The Voter Poll has no 2024 edition, so his comparison, "just a couple points worse than 2024," cannot be checked against it.<Cite c="poll-is-new" /> He wrote that a pollster he did not name expected Republicans to lose the generic ballot, the national vote for each party's House candidates, by 13 points; the national House vote was about 12 points Democratic on Nov. 5 and expected to reach 13.<Cite c="vance-generic-13" /><Cite c="pew-house-13" /></p>
+        <p data-layer="narrative">Voters ranked the war below other issues. In the Voter Poll, {n.iran}% called it crucial to their vote, fewer than said so of corruption, the cost of living or immigration enforcement.<Cite c="crucial-iran" /><Cite c="crucial-corruption" /><Cite c="crucial-cost" /><Cite c="crucial-immigration" /></p>
         <p data-layer="narrative">Sen. Ted Cruz of Texas blamed both prices and policy: "Tariffs have made everything too expensive, and the Iran war has dragged on too long."<Cite c="cruz-prices-tariffs" /> Peter Navarro, a White House adviser, said the tariffs "have played no role in the inflation and affordability issue."<Cite c="navarro-no-role" /></p>
         <p data-layer="narrative">Democratic leaders said voters chose them on prices and corruption. Rep. Hakeem Jeffries, the House Democratic leader, said, "We ran on affordability. We won on affordability."<Cite c="jeffries-affordability" /> Sen. Chuck Schumer said Republicans had ignored voters' concerns about "costs, chaos, and corruption."<Cite c="schumer-costs-corruption" /></p>
       </section>
@@ -156,14 +160,14 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>USA Today printed a Kansas issue list that the Kansas exit poll does not contain<Cite c="usatoday-kansas" /><Cite c="kansas-poll-top-issue" /></h3>
-              <p data-layer="narrative">On Nov. 5, USA Today wrote that in Kansas, which had elected its first Democratic senator since 1932, "nearly one-third of voters listed the cost of living as their No. 1 concern," followed by corruption, the Iran war, terrible candidates and the trade war with Canada.<Cite c="usatoday-kansas" /> The list is Cruz's. He posted it on Nov. 4 as what exit polling showed, to one decimal place: 30.6% for the cost of living, 7.9% for "The candidates are terrible," 7.6% for "The Canada trade war." He did not name a poll.<Cite c="cruz-kansas-list" /></p>
+              <h3>USA Today printed a Kansas issue list that the Kansas exit poll does not contain</h3>
+              <p data-layer="narrative">On Nov. 5, USA Today wrote that in Kansas, which had elected its first Democratic senator since 1932, "nearly one-third of voters listed the cost of living as their No. 1 concern," followed by corruption, the Iran war, terrible candidates and the trade war with Canada.<Cite c="usatoday-kansas" /> USA Today printed the list in its own voice.<Cite c="usatoday-kansas" /> The day before, Cruz had posted the same five items, in the same order, as what exit polling showed, to one decimal place: 30.6% for the cost of living, 7.9% for "The candidates are terrible," 7.6% for "The Canada trade war." He did not name a poll.<Cite c="cruz-kansas-list" /></p>
               <p data-layer="narrative">The exit poll in Kansas is the Voter Poll. It asked {n.ksRespondents} Kansas voters a different question from the national "crucial" list: to pick the most important issue facing the country from six choices. The state of democracy came first and the economy second. None of Cruz's choices was on its list.<Cite c="kansas-poll-top-issue" /></p>
               <figure class="story-figure" data-layer="fact">
                 <figcaption><strong>Two lists of Kansas voters' top issue</strong></figcaption>
                 <div class="side-by-side">
                   <table class="data-table">
-                    <thead><tr><th colspan="2">Cruz's "exit polling," repeated by USA Today<Cite c="cruz-kansas-list" /></th></tr></thead>
+                    <thead><tr><th colspan="2">Cruz's "exit polling," Nov. 4<Cite c="cruz-kansas-list" /></th></tr></thead>
                     <tbody>{kansasCruz.map(([k, v]) => <tr><td>{k}</td><td class="num">{v}</td></tr>)}</tbody>
                   </table>
                   <table class="data-table">
@@ -179,6 +183,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
 
       <section id="explanations">
         <h2 data-layer="fact">Every explanation, tested</h2>
+        <p class="section-intro" data-layer="fact">Each explanation the parties, candidates, pollsters and analysts gave for the result, and what the evidence says about it.</p>
         <ul class="ex-legend" data-layer="fact" aria-label="What the verdicts mean">
           <li><span class="ex-key supported">Supported</span> the voter surveys back it</li>
           <li><span class="ex-key partly">Partly supported</span> some of the evidence backs it and some cuts against it</li>
@@ -230,6 +235,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
         <ExplanationEntry name="Switching, or staying home" verdict="partly">
           <p slot="claim" data-layer="narrative">Vance says Republicans lost because 2024 Trump voters switched sides. A Brookings Institution analysis says discontented Republicans "didn't abandon their party in 2026; they stayed home."<Cite c="vance-war" /><Cite c="brookings-stayed-home" /></p>
           <p slot="for" data-layer="narrative">Switching: {n.trumpToDem}% of Trump's 2024 voters voted Democratic in the Voter Poll, {n.ygTrumpD}% in YouGov's.<Cite c="trump-voters-switched" /><Cite c="yougov-trump-voters" /> Staying home: among non-MAGA Republicans, {n.ygNonMagaHome}% did not vote and {n.ygNonMagaD}% voted Democratic.<Cite c="yougov-party-loyalty" /></p>
+          <p slot="against" data-layer="narrative">Vance's evidence that turnout was not the problem: he wrote that Florida's electorate was 9 points more Republican than Democratic, "just a couple points worse than 2024." Florida's Voter Poll fits the first part, with 41% of voters calling themselves Republicans and 30% Democrats; the poll has no 2024 edition to check the second.<Cite c="vance-florida" /><Cite c="florida-poll" /><Cite c="poll-is-new" /></p>
           <p slot="for" data-layer="narrative">From actual returns in 13 states, Lenny Bronner, a data scientist formerly with The Washington Post, estimated that about 75% of Democratic gains came from a turnout gap and about 20% from Republicans switching, though in Texas 45% came from switching.<Cite c="bronner-turnout" /></p>
           <p slot="against" data-layer="narrative">The surveys are what people said about their own votes, and Bronner's estimate rests on partial results. The Voter Poll and NORC disagree on how many of this year's voters skipped 2024, {n.nonvoters2024}% against about {n.norcNew}%.<Cite c="nonvoter-share-differs" /></p>
           <p slot="verdict" data-layer="narrative">Both happened, but staying home was the larger part: {n.ygTrumpHome}% of Trump's 2024 voters said they did not vote and {n.ygTrumpD}% switched, and an early estimate from returns in 13 states puts the turnout gap ahead of switching.<Cite c="yougov-turnout-2024" /><Cite c="yougov-trump-voters" /><Cite c="bronner-turnout" /></p>
@@ -241,10 +247,16 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
           <p slot="verdict" data-layer="narrative">Most votes did not move, and Democrats stayed with their party more often than Republicans did.<Cite c="yougov-party-loyalty" /></p>
         </ExplanationEntry>
 
-        <ExplanationEntry name="Redistricting and the voting-rights ruling" verdict="not">
-          <p slot="claim" data-layer="narrative">USA Today reported that "exit polling" showed the Supreme Court's ruling in Louisiana v. Callais on April 29, which narrowed challenges to maps under the Voting Rights Act, and the Republican redistricting that followed, were major factors for Black voters. The exit surveys it describes were the National Coalition on Black Civic Participation's own, at Southern polling places.<Cite c="callais-date" /><Cite c="usatoday-black-exit" /></p>
-          <p slot="against" data-layer="narrative">Roll Call found Republicans' redistricting edge "largely failed to materialize": Democrats held four of the five Texas seats Republicans targeted and all of Florida's, while Republicans won two redrawn seats, Texas's 32nd and Tennessee's 9th. Democrats also flipped seven Senate seats, in statewide races with no districts.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
-          <p slot="verdict" data-layer="narrative">The new lines mostly failed to deliver the gains Republicans drew them for, and cannot explain the Senate flips.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
+        <ExplanationEntry name="New district maps" verdict="not">
+          <p slot="claim" data-layer="narrative">Republicans redrew House maps in nine states, after the Supreme Court's April 29 ruling in Louisiana v. Callais narrowed challenges to maps under the Voting Rights Act, aiming to win more seats.<Cite c="redistricting-results" /><Cite c="callais-date" /></p>
+          <p slot="for" data-layer="narrative">Republicans won two redrawn seats, Texas's 32nd and Tennessee's 9th.<Cite c="redistricting-results" /></p>
+          <p slot="against" data-layer="narrative">Roll Call found Republicans' redistricting edge "largely failed to materialize": Democrats held four of the five Texas seats Republicans targeted and all of Florida's. Democrats also flipped seven Senate seats, in statewide races with no districts.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
+          <p slot="verdict" data-layer="narrative">The new maps mostly failed to deliver the seats Republicans drew them for, and cannot explain the Senate flips.<Cite c="redistricting-results" /><Cite c="senate-flips" /></p>
+        </ExplanationEntry>
+
+        <ExplanationEntry name="The voting-rights ruling and Black turnout" verdict="untestable">
+          <p slot="claim" data-layer="narrative">USA Today reported that "exit polling" showed the Callais ruling and the redistricting that followed were major factors for Black voters.<Cite c="usatoday-black-exit" /></p>
+          <p slot="verdict" data-layer="narrative">The surveys USA Today describes were the National Coalition on Black Civic Participation's own, at Southern polling places, so they cannot show whether the ruling moved Black turnout nationally.<Cite c="usatoday-black-exit" /></p>
         </ExplanationEntry>
 
         <ExplanationEntry name="The usual midterm swing" verdict="partly">
@@ -307,7 +319,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
         <ExplanationEntry name="A rigged count" verdict="not">
           <p slot="claim" data-layer="narrative">Some Trump allies, among them Katie Miller and Laura Loomer, posted that the election was being stolen.<Cite c="rigged-claims" /> On Nov. 9 Trump posted, "Does anybody really believe that this 'Election' was honest," and blamed voting machines.<Cite c="trump-nov9-doubts" /></p>
           <p slot="against" data-layer="narrative">Trump said after the election that he would accept the results, there was no day-after wave of court challenges, and the FBI called one viral fraud claim false.<Cite c="rigged-claims" /> Election officials have raised no major concerns about early votes or voting machines.<Cite c="trump-nov9-doubts" /></p>
-          <p slot="verdict" data-layer="narrative">Trump accepted the result before he questioned it, and election officials have raised no major concerns about early votes or voting machines.<Cite c="trump-nov9-doubts" /><Cite c="rigged-claims" /></p>
+          <p slot="verdict" data-layer="narrative">Election officials have raised no major concerns about early votes or voting machines, there was no day-after wave of court challenges, and the FBI called one viral fraud claim false.<Cite c="trump-nov9-doubts" /><Cite c="rigged-claims" /></p>
         </ExplanationEntry>
       </section>
 
@@ -315,7 +327,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
         <h2 data-layer="fact">What happens next</h2>
         <p data-layer="narrative">The new Congress is sworn in on Jan. 3. Democrats will need Republican votes to reach 60 in the Senate for most bills, and their majorities fall short of the two-thirds needed to override a veto.<Cite c="congress-limits" /> In a Reuters/Ipsos poll completed Nov. 9, {n.endWar}% of Americans wanted Congress to pass a law ending the war with Iran and {n.repealTariffs}% supported repealing Trump's tariffs.<Cite c="reuters-ipsos" /></p>
         <p data-layer="narrative">The White House has already warned against investigations. In a letter dated Nov. 9, its counsel, Will Scharf, told Rep. Robert Garcia, the top Democrat on the House Oversight Committee, that planned probes could amount to criminality; Garcia said Democrats would not be intimidated.<Cite c="oversight-letter" /></p>
-        <p data-layer="narrative">The Senate races in Alaska and Mississippi and more than a dozen House races were still too early to call on Nov. 10.<Cite c="dems-win-both-chambers" /> How much of the swing was switching and how much was who turned out waits on voting records: Pew says panel surveys and turnout data will answer it, and gives no date.<Cite c="pew-turnout-data" /></p>
+        <p data-layer="narrative">How much of the swing was switching and how much was who turned out waits on voting records: Pew says panel surveys and turnout data will answer it, and gives no date.<Cite c="pew-turnout-data" /></p>
       </section>
 
       <section id="records">
@@ -354,6 +366,7 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .swing-bar { display: block; height: 0.8rem; background: var(--blue); }
   .swing-num { font-size: 0.8rem; color: var(--ink); }
   .quotes { align-items: start; }
+  .row-source { display: block; font-size: 0.75rem; color: var(--slate); }
   .said { margin: 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--gold, #9a6200); font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; }
   .said p { margin: 0 0 0.4rem; }
   .said .said-who { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
