@@ -33,7 +33,7 @@ export const n = {
 
 export const event = {
   slug: "venezuela-oil/2026-11-11-vitol-trader-vance-venezuela-oil-contract",
-  title: "A Vance backer got the call to sell Venezuela's oil, with no tender",
+  title: "A Vance backer got the call to market Venezuela's oil, with no tender",
   dek: "Two days after U.S. forces captured Nicolás Maduro, Energy Secretary Chris Wright called John Addison of the trading house Vitol. Addison had given $300,000 to the super PAC behind JD Vance's 2022 Senate run.",
   name: "How Vitol got the job of selling Venezuela's oil",
   date: "2026-11-11",
@@ -150,7 +150,7 @@ export const explanations = [
     claim: [["Critics say two firms were handed Venezuela's oil without a tender.", c("viral-post"), c("levin-testimony")]],
     evidenceFor: [["The administration skipped competitive bidding and defends doing so, Reuters reports. On February 13, four would-be buyers told Reuters that since General License 46 let established U.S. firms trade, on conditions, PDVSA had refused to sell to companies without individual U.S. licenses. In January, people familiar told Bloomberg that Vitol's and Trafigura's own licenses run to June 2027.", c("no-tender"), c("gl46-opened"), c("pdvsa-licensed-only"), c("licenses-run-2027")]],
     evidenceAgainst: [["From January 29, established U.S. firms could legally market the oil, and by September 30 the account had 20 registered depositors.", c("gl46-opened"), c("kpmg-public-report")]],
-    conclusion: [["Reuters reports the administration skipped bidding. General License 46 let established U.S. firms market the oil from January 29, on conditions, but four would-be buyers told Reuters on February 13 that PDVSA had since refused companies without individual U.S. licenses. Vitol and Trafigura made 61 percent of the account's deposits through September, by KPMG's count as the Times describes it.", c("no-tender"), c("licenses-by-jan9"), c("licenses-run-2027"), c("gl46-opened"), c("pdvsa-licensed-only"), c("two-firms-61pct")]],
+    conclusion: [["Reuters reports the administration skipped bidding. General License 46 let established U.S. firms market the oil from January 29, on conditions, but four would-be buyers told Reuters on February 13 that PDVSA had since refused companies without individual U.S. licenses. Vitol and Trafigura paid in 61 percent of the account's deposits through September, by KPMG's count as the Times describes it.", c("no-tender"), c("licenses-by-jan9"), c("licenses-run-2027"), c("gl46-opened"), c("pdvsa-licensed-only"), c("two-firms-61pct")]],
   },
   {
     id: "routine",
