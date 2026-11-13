@@ -45,10 +45,13 @@ export const subjectFigure = { label: "Vitol and Trafigura's share of deposits i
 
 const money = (v) => (v >= 1_000_000 ? `$${(v / 1_000_000).toLocaleString("en-US", { maximumFractionDigits: 2 })} million` : `$${v.toLocaleString("en-US")}`);
 
-// Protect Ohio Values PAC, the super PAC behind Vance's 2022 primary: its biggest donor and Addison.
+// Protect Ohio Values PAC, the super PAC behind Vance's 2022 primary: its five largest donors, from the FEC receipts.
 export const povBars = [
   { label: "Peter Thiel", value: n.thiel, shown: money(n.thiel), c: "pov-thiel-share" },
-  { label: "John Addison", value: n.addisonPov, shown: money(n.addisonPov), c: "pov-300k" },
+  { label: "Walter W. Buckley Jr.", value: 1_200_000, shown: money(1_200_000), c: "pov-top-donors" },
+  { label: "David O. Sacks", value: 1_000_000, shown: money(1_000_000), c: "pov-top-donors" },
+  { label: "Per Aspera Policy Inc.", value: 400_000, shown: money(400_000), c: "pov-top-donors" },
+  { label: "John Addison", value: n.addisonPov, shown: money(n.addisonPov), c: "pov-300k", highlight: true },
 ];
 
 // The Addison household's 2024 gifts to political committees, from the FEC rows at their Houston address.
@@ -75,10 +78,10 @@ export const chronology = [
 
 // How Washington has handled other countries' oil sales; each cell is its claim's short form.
 export const precedents = [
-  { place: "Libya, 2011", c: "libya-gl5" },
-  { place: "Venezuela, 2022", c: "gl41-chevron" },
-  { place: "Iraq, 2003", c: "iraq-2003-tender" },
-  { place: "Venezuela, 2026", c: "no-tender" },
+  { place: "Libya, 2011", seller: "Libya's rebel council", buyers: "Treasury license named Vitol and Qatar Petroleum; any U.S. person could apply to trade the oil", c: ["libya-gl5"] },
+  { place: "Venezuela, 2022", seller: "Chevron's Venezuelan joint ventures", buyers: "Treasury license named Chevron alone, for its own oil", c: ["gl41-chevron"] },
+  { place: "Iraq, 2003", seller: "Iraq's state marketer, SOMO, with the money in an audited fund", buyers: "First post-war sale by tender: six refiners out of 52 bidders", c: ["iraq-2003-tender"] },
+  { place: "Venezuela, 2026", seller: "PDVSA, with the money in a U.S.-controlled account", buyers: "Wright called Vitol's Addison; Vitol and Trafigura licensed by January 9; Reuters reports bidding was skipped", c: ["wright-called-addison-jan5", "licenses-by-jan9", "no-tender", "two-firms-61pct"] },
 ];
 
 const c = (id) => ({ c: id });
@@ -88,7 +91,7 @@ export const explanations = [
     name: "Vance's word opened the door",
     holders: "Addison",
     verdict: "partly",
-    summary: ["Addison says so; the Energy Department says it chose Vitol for its size.", c("addison-vance-vouched"), c("doe-picked-largest")],
+    summary: ["A U.S. official confirms Vance vouched for Addison to Wright, at least a year before; the Energy Department says it chose Vitol for its size.", c("addison-vance-vouched"), c("official-vouching-a-year-before"), c("doe-picked-largest")],
     claim: [["Addison told Reuters that Vance had told Wright he was trustworthy, which paved the way for the January 5 call.", c("addison-vance-vouched")]],
     evidenceFor: [["A U.S. official confirmed to Reuters that Vance had vouched for Addison to Wright.", c("official-vouching-a-year-before"), " The call went to a gasoline trader, not to Vitol's crude desk or its regional chief, and Vitol says he lacked the expertise for a crude deal.", c("addison-who"), c("vitol-addison-lacked-expertise")]],
     evidenceAgainst: [["The same official dates the vouching at least a year before the call. The Energy Department says Vance and Wright never discussed the oil sales and that it picked Vitol because it is the largest trader.", c("official-vouching-a-year-before"), c("doe-picked-largest")]],
@@ -107,25 +110,25 @@ export const explanations = [
   },
   {
     id: "donors",
-    name: "A reward for megadonors",
+    name: "The oil was handed to megadonors",
     holders: "Viral posts on X",
     verdict: "not",
-    summary: ["Trafigura was offered a license too, a source says, and no large 2024-26 donor lists it as employer.", c("trafigura-days-later"), c("trafigura-no-donor")],
+    summary: ["Not for both firms: Trafigura was offered a license too, a source says, with no large donor in the filings searched. Whether Addison's ties helped Vitol is the first explanation.", c("trafigura-days-later"), c("trafigura-no-donor")],
     claim: [["A Spanish-language post with more than 18,000 likes says the marketing was handed to campaign megadonors without public bidding.", c("viral-post")]],
     evidenceFor: [["Addison gave $300,000 to the super PAC behind Vance's 2022 primary, and his household gave about $7.1 million to political committees in 2024.", c("pov-300k"), c("household-7m")]],
     evidenceAgainst: [["Trafigura was offered its license days after Vitol, a source told Reuters. FEC filings from 2024 through 2026 show about $6,400 from people who list Trafigura as their employer.", c("trafigura-days-later"), c("trafigura-no-donor")]],
-    conclusion: [["Wright's call went to a man who, with his wife, gave about $7.1 million to political committees in 2024; people listing Trafigura as employer gave about $6,400 in 2024 to 2026 filings, and Trafigura was offered a license too, a source told Reuters.", c("wright-called-addison-jan5"), c("pov-300k"), c("household-7m"), c("trafigura-days-later"), c("trafigura-no-donor")]],
+    conclusion: [["Wright's call went to a man who, with his wife, gave about $7.1 million to political committees in 2024; people listing Trafigura as employer gave about $6,400 in 2024 to 2026 filings, and Trafigura was offered a license too, a source told Reuters. The post says the oil went to megadonors; of the two firms, only Vitol's caller is one in the filings searched.", c("wright-called-addison-jan5"), c("pov-300k"), c("household-7m"), c("trafigura-days-later"), c("trafigura-no-donor")]],
   },
   {
     id: "before-raid",
     name: "The sale was arranged before the raid",
     holders: "Reuters' source, viral posts",
     verdict: "untestable",
-    summary: ["One secondhand source; both men deny it.", c("meeting-reported"), c("meeting-denied")],
+    summary: ["One secondhand source; Addison and Vance's office deny it.", c("meeting-reported"), c("meeting-denied")],
     claim: [["A person given Addison's account told Reuters the two men met at the Yellowstone Club on December 27 and Vance asked how fast Venezuelan crude could be sold.", c("meeting-reported")]],
     evidenceFor: [["Flight records show Addison's jet and Vance's plane at Bozeman's airport that day.", c("planes-bozeman")]],
     evidenceAgainst: [["Addison and Vance's office deny the meeting, and Addison says he expected a market update when Wright called on January 5.", c("meeting-denied"), c("addison-expected-market-update")]],
-    conclusion: [["The flight records place the planes, not the men. Levin has asked for the testimony and records that would settle it.", c("planes-bozeman"), c("levin-testimony")]],
+    conclusion: [["The flight records place the planes, not the men. Rep. Mike Levin, a Democrat, has asked for the testimony and records that would settle it.", c("planes-bozeman"), c("levin-testimony")]],
   },
   {
     id: "warned",
@@ -141,7 +144,7 @@ export const explanations = [
   {
     id: "monopoly",
     name: "A no-bid monopoly",
-    holders: "Viral posts, Levin",
+    holders: "Viral posts, Rep. Mike Levin",
     verdict: "partly",
     summary: ["No bidding, and a head start after the trade opened on January 29, buyers say.", c("no-tender"), c("pdvsa-licensed-only"), c("gl46-opened")],
     claim: [["Critics say two firms were handed Venezuela's oil without a tender.", c("viral-post"), c("levin-testimony")]],
