@@ -34,7 +34,7 @@ export const n = {
 export const event = {
   slug: "venezuela-oil/2026-11-11-vitol-trader-vance-venezuela-oil-contract",
   title: "A Vance backer got the call to market Venezuela's oil, with no tender",
-  dek: "Two days after U.S. forces captured Nicolás Maduro, Energy Secretary Chris Wright called John Addison of the trading house Vitol. Addison had given $300,000 to the super PAC behind JD Vance's 2022 Senate run.",
+  dek: "The Vitol trader Energy Secretary Chris Wright called about marketing Venezuela's crude had given $300,000 to the super PAC behind JD Vance's 2022 Senate run. No tender was held, Reuters reports.",
   name: "How Vitol got the job of selling Venezuela's oil",
   date: "2026-11-11",
   updated: "2026-11-12",
