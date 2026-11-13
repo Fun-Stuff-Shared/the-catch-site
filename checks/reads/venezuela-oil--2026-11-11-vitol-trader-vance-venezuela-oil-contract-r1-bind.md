@@ -1,0 +1,44 @@
+# Bind check
+
+131 changed blocks read.
+
+## Must be fixed
+
+- "The job was worth having. Venezuela's oil money now goes into an account the United States controls, and through Septemb" (scope, claim pdvsa-licensed-only): Readers would believe Vitol and Trafigura alone held the whole market for the first weeks, but the claim covers only the two weeks after General License 46, and Chevron and NABEP sold outside the account.
+- "The job was worth having. Venezuela's oil money now goes into an account the United States controls, and through Septemb" (status, claim two-firms-61pct): The 61% share is stated as established fact, when it is what a KPMG report as described by The New York Times says.
+- "Vitol itself says Addison did not have the knowledge to negotiate an international crude contract, and that he handed th" (beyond): Ben Marshall is given the title 'Americas chief', which no cited claim states.
+- "The administration. It picked the biggest trader to get the oil moving, called it temporary, and opened the trade to any" (beyond, claim wright-no-favoritism): The quotation 'I can assure you that is absolutely not the case' and the question about Trump donors getting preferential treatment are not in the claim, which holds only 'I'm in the center of this.'
+- "Iraq 2003: open tender, 52 bidders" (scope, claim iraq-2003-tender): The label 'open tender, 52 bidders' reads as all Iraqi oil sales going by open tender, but only the first post-war sale of 10 million barrels did.
+- "The record shows Vance vouched for Addison and Wright then called him. Whether the vouching decided the call rests on Ad" (status, claim addison-vance-vouched): The vouching is stated as established by the record, when the claim is only that Addison said Vance vouched for him.
+- "From January 29, any established U.S. firm could legally market the oil, and by September 20 depositors had paid into th" (beyond, claim kpmg-public-report): 'By September 20 depositors had paid into the account' gives a date, September 20, that the claim does not hold; it says 20 registered depositors through September.
+- "The money is the other open question. In September Senate Democrats wrote that the administration had promised quarterly" (beyond): NABEP is described as the company behind August's 100-year oil deal, which no cited claim holds.
+- "Mislabeled. The $300,000 went to a super PAC, not to Vance." (beyond): States as fact, with no claim behind it, that the $300,000 went to a super PAC and not to Vance.
+- "The official who confirmed the recommendation told Reuters it came at least a year before the call." (beyond): States a fact about when the official said the recommendation came, with no claim behind it.
+- "Checks out against the records, with one detail: the board's minutes list Addison as one of two co-chairs." (beyond): States that the board's minutes list Addison as one of two co-chairs, with no claim behind it.
+- "said in January that Addison had given $6 million toward Trump's campaign, and that Vitol had more than $6 million in do" (beyond): Attributes figures and statements to House Oversight Democrats, Sen. Ed Markey and Reuters, with no claim behind it.
+- "Consistent. Both fit the filings, counting different things: $5.95 million went to the two committees named for Trump, a" (beyond): States that $5.95 million and about $7.1 million both fit the filings, with no claim behind it.
+- "Addison was an unusual person to call. He traded U.S. gasoline from Houston, not Latin American crude, and he was not Vi" (beyond): The block says Addison traded from Houston, but none of the cited claims gives where he traded.
+- "Addison was an unusual person to call. He traded U.S. gasoline from Houston, not Latin American crude, and he was not Vi" (beyond, claim vance-campaign-direct): The block dates the $10,800 gift to 2022, but the claim gives no year for it.
+- "The job was worth having. Venezuela's oil money now goes into an account the United States controls, and through Septemb" (scope, claim two-firms-61pct): Readers would think all of Venezuela's oil money goes into the U.S.-controlled account, but the claim says Chevron and NABEP sell at least some oil outside it.
+- "The job was worth having. Venezuela's oil money now goes into an account the United States controls, and through Septemb" (status, claim pdvsa-licensed-only): What four would-be buyers told Reuters, that PDVSA sold only to licensed firms, appears as established fact that the two firms had the market to themselves.
+- "On November 11, Reuters reported that Vance had vouched for Addison to Wright, and, from one unnamed source, that the tw" (beyond): The November 11 date of the Reuters report is not in any cited claim.
+- "Vitol itself says Addison did not have the knowledge to negotiate an international crude contract, and that he handed th" (beyond, claim vitol-addison-lacked-expertise): The block calls Ben Marshall Vitol's Americas chief, a title the claim does not give him.
+- "Four days later, at a White House meeting with oil executives, he told Trump what the traders were there for." (beyond, claim addison-jan9-quote): The block says the January 9 White House meeting was with oil executives, which the claim does not say.
+- "Addison's money went mostly to super PACs. The $300,000 in 2022 went to Protect Ohio Values, which spent about $16 milli" (beyond): The block says Addison's money went mostly to super PACs, but the cited claims cover only his 2022 giving and cannot support a claim about his giving overall.
+- "The administration says it had to move fast because Venezuela's oil had nowhere to go. In December Trump ordered a block" (actor, claim rubio-short-term): Rubio's reason, that Venezuela's oil had nowhere to go, is given as the administration's reason, without saying it was Rubio's testimony.
+- "The first cargoes show what the job paid. Sources told Reuters the traders bought at $15 a barrel below the Brent benchm" (beyond, claim first-sale-prices): The words 'before shipping costs' are not in the claim.
+- "The meeting comes from one person who told Reuters what Addison had told him; Addison and Vance's office both deny it, a" (status, claim trafigura-days-later): That Trafigura was offered its license days after Vitol comes from one source to Reuters, but the block states it as fact.
+- "Sanctions licenses often name firms. In 2011 the Treasury named Vitol itself to trade oil exported by Libya's rebel coun" (beyond): No cited claim supports that sanctions licenses often name firms, or that Iraq in 2003 was the last time Washington ran an occupied country's oil sales.
+- "Addison told Reuters that Vance had told Wright he was trustworthy, which paved the way for the January 5 call. Rep. Rob" (beyond, claim garcia-advance-notice): Garcia and other Democrats are said to read the call as access rather than expertise, but the claim only says Garcia wrote asking about dealings and advance notice.
+- "Vance's word opened the door Said by Addison, Garcia Partly supported Addison says so; the Energy Department says it cho" (actor, claim addison-vance-vouched): The claim that Vance's word opened the door is credited to Garcia as well, but only Addison said it.
+- "The Energy Department says it picked Vitol as the world's largest trader, and Rubio says Venezuela, its storage full, ne" (status, claim storage-under-quarantine): Rubio said Venezuela was running out of storage, but the block says its storage was full.
+- "Size fits the choice of Vitol, but Vitol itself says the man Wright called was not its crude negotiator. The Energy Depa" (beyond): The block says Vitol stated Addison was not its crude negotiator, but neither cited claim contains Vitol's statement.
+- "Trafigura was offered the same kind of license days after Vitol. FEC filings show about $6,400 from people who list Traf" (status, claim trafigura-days-later): One source's account to Reuters that Trafigura was offered its license days after Vitol is stated as fact.
+- "The two firms got a head start without bidding, and it lasted: open in law from January 29, theirs in practice into Febr" (status, claim pdvsa-licensed-only): Would-be buyers' account to Reuters is turned into established fact that the trade was 'theirs in practice into February'.
+- "The money is the other open question. In September Senate Democrats wrote that the administration had promised quarterly" (beyond, claim kpmg-public-report): The claim says 98.7% had been paid out, not that it all went back to Venezuela.
+
+## For the author to judge
+
+- "The money is the other open question. In September Senate Democrats wrote that the administration had promised quarterly" (status, claim senate-finance-letter): It says the administration 'paid KPMG $84 million', but the claim says only that KPMG was given an $84 million contract.
+
+NOT BOUND

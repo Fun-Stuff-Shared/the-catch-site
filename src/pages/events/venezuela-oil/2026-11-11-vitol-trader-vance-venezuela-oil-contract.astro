@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataNote from "../../../components/story/DataNote.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, povBars, householdBars, chronology, precedents, explanations } from "../../../data/venezuela-oil-2026-11-11-vitol-trader-vance-venezuela-oil-contract.mjs";
+const story = "venezuela-oil--2026-11-11-vitol-trader-vance-venezuela-oil-contract";
+const short = (id) => claim(story, id).short;
+const augustDeal = "/events/venezuela-oil/2026-08-31-100-year-oil-rights-claim/";
+const povMax = Math.max(...povBars.map((b) => b.value));
+const hhMax = Math.max(...householdBars.map((b) => b.value));
+const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), cites: [{ c: e.c }] }));
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/venezuela-oil/">Venezuela oil</a><span>November 11, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Venezuela oil &middot; November 11, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="wright-called-addison-jan5" /><Cite c="pov-300k" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-call">A gasoline trader gets the call</a></li>
+          <li><a href="#why-fast">Why a trading house, and why so fast</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#coverage">What the coverage got right and wrong</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On January 5, two days after U.S. forces captured Nicolás Maduro, Energy Secretary Chris Wright called John Addison, a senior trader at Vitol, which the Energy Department calls the world's largest energy trader, and asked whether Vitol wanted the job of selling Venezuela's crude.<Cite c="wright-called-addison-jan5" /><Cite c="doe-picked-largest" /> By January 9, Vitol and its rival Trafigura held U.S. Treasury licenses to sell the oil.<Cite c="licenses-by-jan9" /><Cite c="licenses-run-2027" /> There was no tender: the administration skipped competitive bidding, and says it needed the speed to stabilize Venezuela's economy.<Cite c="no-tender" /></p>
+        <p data-layer="narrative" data-answer="2">Addison was an unusual person to call. He traded U.S. gasoline, not Latin American crude, and he was not Vitol's regional chief.<Cite c="addison-who" /> He was an early backer of JD Vance: in 2022 he gave $300,000 to the super PAC behind Vance's Senate primary, and ${n.jfc} to Vance's joint fundraising committee.<Cite c="pov-300k" /><Cite c="vance-campaign-direct" /> He has since retired from Vitol and co-chairs Wright's advisory board.<Cite c="addison-retired-board" /></p>
+        <p data-layer="narrative" data-answer="3">The job was worth having. Buyers of Venezuela's oil pay into an account the United States controls, though Chevron and <a href={augustDeal}>NABEP</a>, one of Venezuela's largest private producers, sell at least some of their oil outside it.<Cite c="nabep-who" /> Through September, Vitol and Trafigura made {n.share}% of the ${n.deposits} billion paid in by the account's {n.depositors} registered depositors, according to a report by the accounting firm KPMG, as described by The New York Times.<Cite c="two-firms-61pct" /><Cite c="kpmg-public-report" /> The Treasury opened the trade to other U.S. firms on January 29, but on February 13 four would-be buyers told Reuters that Venezuela's state oil company had sold since then only to companies holding individual U.S. licenses.<Cite c="gl46-opened" /><Cite c="pdvsa-licensed-only" /></p>
+        <p data-layer="narrative">Reuters reported on November 11 that Vance had vouched for Addison to Wright, and, from one unnamed source, that the two men met in Montana a week before the raid. Addison and Vance's office deny the meeting.<Cite c="official-vouching-a-year-before" /><Cite c="meeting-reported" /><Cite c="meeting-denied" /></p>
+      </section>
+
+      <section id="the-call">
+        <h2 data-layer="fact">A gasoline trader gets the call</h2>
+        <p data-layer="narrative">Addison says he knows why the call came to him: Vance had told Wright he was trustworthy, and that paved the way.<Cite c="addison-vance-vouched" /> A U.S. official confirmed to Reuters that Vance had said so, and told Reuters the conversation happened at least a year before the call.<Cite c="official-vouching-a-year-before" /> The Energy Department says Vance and Wright never discussed the oil sales, and that it picked Vitol because it is the largest trader.<Cite c="doe-picked-largest" /></p>
+        <p data-layer="narrative">Vitol itself says Addison did not have the knowledge to negotiate an international crude contract, and that he brought in Ben Marshall, its Americas chief, and the crude team after the call.<Cite c="vitol-addison-lacked-expertise" /><Cite c="marshall-jan9-quote" /> Addison says he expected a market update when Wright rang.<Cite c="addison-expected-market-update" /></p>
+        <p data-layer="narrative">On January 9, at a White House meeting with oil and gas executives, Addison told Trump what Vitol and Trafigura were there to do.<Cite c="addison-jan9-quote" /></p>
+        <QuoteCard speaker="John Addison, Vitol" when="January 9, 2026" where="White House meeting with oil and gas executives">
+          <p>"We're here to ensure that you are going to be able to move all of this oil all around the world at the best price possible so that the influence that you have over the Venezuelans will ensure that you get what you want."<Cite c="addison-jan9-quote" /></p>
+        </QuoteCard>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the blockade to the account</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+
+        <h3 data-layer="fact">His political money</h3>
+        <p data-layer="narrative">The $300,000 Addison gave in 2022 went to Protect Ohio Values, a super PAC that spent about ${n.povSpent} million on ads, mail, calls and texts, mostly for Vance in his Senate primary. The tech investor Peter Thiel gave $15 million of the ${n.povTotal} million it raised; Addison's share was about {n.addisonPovPct}%.<Cite c="pov-300k" /><Cite c="pov-thiel-share" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Who paid for Protect Ohio Values, the super PAC behind Vance's 2022 primary</strong></figcaption>
+          <ul class="money-bars" aria-label="The tech investor Peter Thiel gave $15 million; John Addison gave $300,000">
+            {povBars.map((b) => (
+              <li>
+                <span class="mb-label">{b.label}<Cite c={b.c} /></span>
+                <span class="mb-track"><span class="mb-bar" style={`width:${Math.max(0.6, (100 * b.value) / povMax)}%`}></span></span>
+                <span class="mb-num">{b.shown}</span>
+              </li>
+            ))}
+          </ul>
+          <DataNote><p>Federal Election Commission itemized receipts, 2021 to 2022. The super PAC raised ${n.povTotal} million in all.<Cite c="pov-thiel-share" /></p></DataNote>
+        </figure>
+        <p data-layer="narrative">In 2024 Addison and his wife, Shannon, gave about ${n.household} million to political committees, ${n.trumpNamed} million of it to the two named for Trump, MAGA Inc. and the Trump 47 Committee.<Cite c="household-7m" /><Cite c="trump-named-5-95m" /> A further $1 million went to Turnout for America, a super PAC turning out swing-state voters for Trump, led by a close friend of Vance's.<Cite c="turnout-for-america" /> In these filings, the money that reached Vance's own campaign was ${n.toCampaign}, in 2022.<Cite c="vance-campaign-direct" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The Addisons' 2024 gifts to political committees</strong></figcaption>
+          <ul class="money-bars" aria-label="2024 gifts by committee">
+            {householdBars.map((b) => (
+              <li>
+                <span class="mb-label">{b.label}<Cite c={b.c} /></span>
+                <span class="mb-track"><span class="mb-bar" style={`width:${Math.max(0.6, (100 * b.value) / hhMax)}%`}></span></span>
+                <span class="mb-num">{b.shown}</span>
+              </li>
+            ))}
+          </ul>
+          <DataNote><p>Federal Election Commission rows at the household's Houston address. The rows carrying the MAGA Inc. and Trump 47 gifts list the employer and title of a different man, Primerica's John A. Addison Jr., who files from Georgia; but they carry the Vitol household's address, the Trump 47 rows his middle initial, and Shannon Addison's gifts beside them, so the gifts are the household's.<Cite c="primerica-field" /><Cite c="household-7m" /></p></DataNote>
+        </figure>
+      </section>
+
+      <section id="why-fast">
+        <h2 data-layer="fact">Why a trading house, and why so fast</h2>
+        <p data-layer="narrative">In December Trump ordered a blockade of sanctioned tankers to squeeze Maduro's government.<Cite c="blockade-dec16" /> On January 28, Secretary of State Marco Rubio told senators that sanctioned oil could not leave "because of our quarantine," his word for the blockade; that Venezuela was running out of storage; and that it needed money at once. He called the two traders "a short-term fix."<Cite c="storage-under-quarantine" /><Cite c="rubio-short-term" /></p>
+        <p data-layer="narrative">Trading houses could move that oil quickly. Vitol and Trafigura had been among the most active traders of Venezuelan crude before U.S. sanctions in 2019.<Cite c="traders-past-venezuela" /> The Energy Department said it had engaged "the world’s leading commodity marketers" to carry out the sales, and that U.S.-run sales of Venezuelan oil would continue indefinitely. What Rubio called temporary was the use of the two traders.<Cite c="doe-commodity-marketers" /><Cite c="sales-indefinitely" /><Cite c="rubio-short-term" /></p>
+        <p data-layer="narrative">The first cargoes show what the job paid. Sources told Reuters the traders bought at ${n.boughtUnder} a barrel below Brent, the international benchmark price, and Vitol resold to U.S. Gulf Coast refiners at about ${n.soldUnder} below it. Shipping the oil there costs $2.50 to $3.50 a barrel, which would leave the traders $2 to $4 a barrel, by Reuters' sources.<Cite c="first-sale-prices" /> One professor puts their profit at ${n.margin} a barrel; the firms do not disclose profits from individual deals.<Cite c="margin-estimate" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <p data-layer="narrative"><strong>The critics.</strong> Rep. Robert Garcia, the top Democrat on the House Oversight Committee, wrote to both firms in January asking about their dealings with the administration and whether they knew of the military action in advance.<Cite c="garcia-advance-notice" /> Critics point to both firms' records: Vitol paid $135 million under a 2020 settlement over bribes to officials at Brazil's state oil company, Petrobras, and Trafigura pleaded guilty in 2024 to bribing Brazilian officials for Petrobras business.<Cite c="vitol-dpa-2020" /><Cite c="trafigura-plea-2024" /></p>
+        <p data-layer="narrative"><strong>The administration.</strong> The Energy Department says it picked the largest trader; Rubio called the traders temporary; and the Treasury opened the trade to established U.S. firms on January 29.<Cite c="doe-picked-largest" /><Cite c="rubio-short-term" /><Cite c="gl46-opened" /> Wright said in January there was no corruption and no "preferential placement of people," and added, "I'm in the center of this."<Cite c="wright-no-favoritism" /></p>
+        <p data-layer="narrative">Both firms say they were given no advance knowledge of the operation.<Cite c="no-advance-knowledge" /> The call itself is not in dispute; why it went to Addison is.<Cite c="wright-called-addison-jan5" /><Cite c="addison-vance-vouched" /><Cite c="doe-picked-largest" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The pre-raid deal rests on one secondhand account</h3>
+              <p data-layer="narrative">A Spanish-language post on X with more than {n.likes} likes says that a week before the attack the government was already arranging, at a private ski club, to hand Venezuela's oil sales to campaign megadonors without bidding. It says Addison "había donado 300.000 dólares a Vance" (had given $300,000 to Vance) and got the January 5 call on Vance's recommendation.<Cite c="viral-post" /></p>
+              <p data-layer="narrative">The post is right about the bidding. The administration skipped it and defends doing so, and the head start lasted: after January 29, buyers told Reuters, PDVSA, Venezuela's state oil company, still sold only to companies holding individual U.S. licenses for two weeks, and the two firms' own licenses run to June 2027, people familiar told Bloomberg.<Cite c="no-tender" /><Cite c="pdvsa-licensed-only" /><Cite c="licenses-run-2027" /></p>
+              <p data-layer="narrative">The meeting comes from one person who told Reuters what Addison had told him, and Addison and Vance's office both deny it; flight records put Addison's jet and Vance's plane at the same airport that day, not the two men together.<Cite c="meeting-reported" /><Cite c="meeting-denied" /><Cite c="planes-bozeman" /> The $300,000 went to a super PAC, where it was 1.5% of the money; the ${n.jfc} he gave Vance's joint fundraising committee passed ${n.toCampaign} to Vance's campaign.<Cite c="pov-300k" /><Cite c="pov-thiel-share" /><Cite c="vance-campaign-direct" /> The U.S. official told Reuters that Vance's word for Addison came at least a year before the call.<Cite c="official-vouching-a-year-before" /> And Trafigura, a source told Reuters, was offered its license days after Vitol, with no large donor in 2024 to 2026 FEC filings listing Trafigura as employer.<Cite c="trafigura-days-later" /><Cite c="trafigura-no-donor" /></p>
+              <p data-layer="narrative">So the two things the post adds to Reuters' report, a deal arranged before the raid and $300,000 given to Vance, are the two the records do not support.<Cite c="viral-post" /><Cite c="meeting-reported" /><Cite c="meeting-denied" /><Cite c="pov-300k" /></p>
+            </li>
+            <li>
+              <h3>How other oil sales under U.S. license or control were run</h3>
+              <p data-layer="narrative">In 2011 the Treasury named Vitol itself in a license to trade oil exported by Libya's rebel council, and invited others to apply; in 2022 it named Chevron alone in Venezuela.<Cite c="libya-gl5" /><Cite c="gl41-chevron" /> In occupied Iraq in 2003, only the country's own state oil marketer sold its oil, with the money in an audited fund; its first post-war sale, of 10 million stored barrels, went by tender to six refiners out of 52 bidders.<Cite c="iraq-2003-tender" /><Cite c="iraq-three-ways" /> Those cases ran through a license or the state marketer's own sales; the Venezuela job began with a phone call from Wright.<Cite c="libya-gl5" /><Cite c="iraq-2003-tender" /><Cite c="wright-called-addison-jan5" /><Cite c="no-tender" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>How other countries' oil was sold under U.S. control or license</strong></figcaption>
+                <table class="data-table">
+                  <tbody>{precedents.map((p) => <tr><td>{short(p.c)}<Cite c={p.c} /></td></tr>)}</tbody>
+                </table>
+              </figure>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <p class="section-intro" data-layer="fact">How Vitol got the job, as each side explains it, with the evidence for and against.</p>
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="coverage">
+        <h2 data-layer="fact">What the coverage got right and wrong</h2>
+        <p data-layer="narrative"><strong>Reuters</strong> reported that Addison was "named chairman" of Wright's advisory board; the board's minutes list him as one of two co-chairs.<Cite c="reuters-says-chairman" /> The rest of its report matches the records it rests on: the call the Energy Department confirmed, the vouching an official confirmed, and the meeting, which it attributes to one source and reports Addison and Vance's office denying.<Cite c="wright-called-addison-jan5" /><Cite c="official-vouching-a-year-before" /><Cite c="meeting-reported" /><Cite c="meeting-denied" /></p>
+        <p data-layer="narrative"><strong>10 Things News</strong> summed up the report as a U.S. official confirming that "Vance had recommended Addison to Wright as trustworthy," and wrote that the $300,000 went to Vance's "Senate campaign effort."<Cite c="tenthings-recommended" /> It left out that the official dated the recommendation at least a year before the call, and that the $300,000 went to a super PAC.<Cite c="official-vouching-a-year-before" /><Cite c="pov-300k" /></p>
+        <p data-layer="narrative"><strong>The $6 million and the $7 million.</strong> House Oversight Democrats said in January that Addison had donated $6 million toward Trump's campaign; Reuters says the Addisons gave $7 million to political action committees. Both are right, counting different things: ${n.trumpNamed} million in 2024 to the two committees named for Trump, and about ${n.household} million that year to political committees in all.<Cite c="trump-named-5-95m" /><Cite c="household-7m" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Garcia is in line to chair the House Oversight Committee; he says the report "raises even more questions about who knew what and when."<Cite c="garcia-reaction" /> Rep. Mike Levin, a Democrat, wants Wright, Vitol and Addison to testify under oath and the phone records, emails and flight logs produced.<Cite c="levin-testimony" /></p>
+        <p data-layer="narrative">The money is the other open question. In September Senate Democrats wrote that the administration had promised quarterly audits of the account and given KPMG an $84 million contract, yet published none.<Cite c="senate-finance-letter" /> KPMG's report on the account, made public on November 12, counts {n.depositors} depositors and says {n.paidOutPct}% of the money had been paid out by September 30.<Cite c="kpmg-public-report" /> Most of it, ${n.auctions} billion, went to dollar auctions through Venezuela's commercial banks to prop up the bolívar, and the report does not say who ended up with those dollars.<Cite c="beneficiaries-unknown" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .money-bars { list-style: none; padding: 0; margin: 0; font-family: var(--sans); }
+  .money-bars li { display: grid; grid-template-columns: minmax(10rem, 1fr) 2fr auto; align-items: center; column-gap: 0.8rem; padding: 0.45rem 0; border-bottom: 1px solid var(--rule); }
+  .mb-label { color: var(--ink); font-size: 0.9rem; }
+  .mb-track { display: block; height: 0.9rem; background: var(--rule); }
+  .mb-bar { display: block; height: 100%; background: var(--blue); }
+  .mb-num { font-size: 0.85rem; color: var(--ink); white-space: nowrap; text-align: right; min-width: 6rem; }
+  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
+  @media (max-width: 640px) {
+    .money-bars li { grid-template-columns: 1fr auto; row-gap: 0.25rem; }
+    .money-bars .mb-track { grid-column: 1 / -1; grid-row: 2; }
+  }
+</style>

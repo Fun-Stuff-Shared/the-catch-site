@@ -7,8 +7,56 @@
   "v2_subjects": [
     "subject-event-0afe43a0-8ed6-42f7-8fbf-38e7fc0ae71e"
   ],
-  "story_title": "How a Vitol trader's ties to Vance helped land Venezuela's oil",
-  "sub_events": [],
+  "story_title": "A Vance backer got the call to sell Venezuela's oil, with no tender",
+  "sub_events": [
+    {
+      "id": "wright-call-2026-01-05",
+      "date": "2026-01-05",
+      "label": "Wright calls Addison",
+      "section_anchor": "what-happened",
+      "records": [
+        "reuters-vitol-vance-2026-11-11"
+      ]
+    },
+    {
+      "id": "licenses-2026-01-09",
+      "date": "2026-01-09",
+      "label": "Vitol and Trafigura hold licenses",
+      "section_anchor": "what-happened",
+      "records": [
+        "reuters-vitol-vance-2026-11-11",
+        "dcpd-2026-01-09-oil-executives"
+      ]
+    },
+    {
+      "id": "gl46-2026-01-29",
+      "date": "2026-01-29",
+      "label": "General License 46 opens the trade to U.S. firms",
+      "section_anchor": "the-sides",
+      "records": [
+        "fr-gl46-2026-05-07",
+        "ofac-gl46-2026-01-29"
+      ]
+    },
+    {
+      "id": "reuters-2026-11-11",
+      "date": "2026-11-11",
+      "label": "Reuters reports the vouching and a disputed meeting",
+      "section_anchor": "the-catch",
+      "records": [
+        "reuters-vitol-vance-2026-11-11"
+      ]
+    },
+    {
+      "id": "kpmg-2026-11-12",
+      "date": "2026-11-12",
+      "label": "KPMG's account report made public",
+      "section_anchor": "next",
+      "records": [
+        "kpmg-custody-report-2026-11"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "reuters-vitol-vance-2026-11-11",
@@ -1165,6 +1213,65 @@
       "label": "Reuters via Investing.com, December 16, 2025",
       "meta": " · 2025-12-16",
       "usage": "How the storage emergency began"
+    }
+  ],
+  "completed_by": "claude (vitol-vance author session, worktree 2026-11-11-vitol-trader-vance-venezuela-oil-contract)",
+  "date_completed": "2026-11-12",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "51 records pinned under data/sources/venezuela-oil and data/sources/coverage with text and hash; FEC rows, the Trafigura employer search and the Protect Ohio Values totals were admitted from openFEC API pulls saved as files, and the X posts from bird reads, because capture cannot reach them."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The household's 2024 total (about $7.1 million) sums the non-memo FEC rows at the Houston address; the $5.95 million is MAGA Inc. plus the Trump 47 rows; Addison's 1.5% share is $300,000 of Protect Ohio Values' $19.8 million receipts."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The viral X post's $300,000 and 'recommended by Vance' lines were checked against the FEC rows and Reuters' own sourcing; 10 Things against Reuters; Reuters' 'chairman' against the advisory board's minutes; the $6 million and $7 million figures against the FEC rows."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the account figures are dated to KPMG's September 30 cutoff and the license term to Bloomberg's January 25 report."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "src/data/subjects/venezuela-oil.mjs carries a new figure, Vitol and Trafigura's 61% of deposits into the U.S.-held account, and a dek covering both stories; the story is listed in src/lib/discovery.mjs."
+    }
+  },
+  "figures": [
+    {
+      "figure": "traders_share_deposits",
+      "label": "Vitol and Trafigura's share of deposits into the U.S.-held Venezuela account, January to September",
+      "value": "61",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "nyt-kpmg-2026-11-10",
+        "quote_span": "Trafigura and Vitol together accounted for 61 percent of the money deposited in the account by the end of September"
+      }
+    },
+    {
+      "figure": "pov_addison",
+      "label": "Addison's 2022 gifts to Protect Ohio Values PAC",
+      "value": "300,000",
+      "unit": "dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "fec-addison-2022",
+        "quote_span": "PROTECT OHIO VALUES PAC (POV PAC)"
+      }
+    },
+    {
+      "figure": "account_deposits",
+      "label": "Deposits into the U.S.-held Venezuela account, January 3 to September 30",
+      "value": "12.26",
+      "unit": "billion dollars",
+      "kind": "sourced",
+      "source": {
+        "source_id": "kpmg-custody-report-2026-11",
+        "quote_span": "cumulative natural resource funds deposited into the account totaled $12.26 billion across 20 registered depositors"
+      }
     }
   ]
 }
