@@ -253,7 +253,7 @@
   },
   {
    "id": "recipients-split",
-   "says": "Businesses received $9.37 billion of the dollars and individuals $2.87 billion, by the banks' own data; the totals include $346 million Venezuela drew from the IMF.",
+   "says": "By the banks' data, businesses received $9.37 billion of the dollars and individuals $2.87 billion; those totals also count $346 million Venezuela drew from the IMF, so they do not trace the account's money alone.",
    "status": "fact",
    "load": [
     "figure"
@@ -298,7 +298,7 @@
   },
   {
    "id": "no-names",
-   "says": "The report names the banks and vendors but not the businesses or people who bought the dollars.",
+   "says": "The public report gives the dollars' buyers by sector and type, not by name; the banks report each buyer by tax ID to the central bank, which passes the data to the State Department and KPMG.",
    "status": "fact",
    "load": [
     "spine"
@@ -307,6 +307,10 @@
     {
      "record": "state-custody-report-2026-11-12",
      "passage": "classified using the Venezuelan tax identification system"
+    },
+    {
+     "record": "state-custody-report-2026-11-12",
+     "passage": "based on downstream transaction data reported by participating commercial banks to the BCV and subsequently provided to the DoS and KPMG"
     },
     {
      "record": "x-molotov-2026-11-13",
@@ -673,7 +677,7 @@
   },
   {
    "id": "rodriguez-99",
-   "says": "Rodríguez said 99 of every 100 dollars of oil and mining income from January to November went to public-sector wages and pensions: $14.710 billion of $15.603 billion, by her government's figures.",
+   "says": "Rodríguez said 99 of every 100 dollars of oil and mining income from January to November went to public-sector wages and pensions: by her government's figures, $14.710 billion of $15.603 billion taken in, on a portal that covers two government funds.",
    "status": "said",
    "load": [
     "person"
@@ -690,6 +694,10 @@
     {
      "record": "contrapunto-rodriguez-2026-11-12",
      "passage": "$ 14.710 millones para pagos de trabajadaores y pensiones"
+    },
+    {
+     "record": "eldiario-rodriguez-2026-11-12",
+     "passage": "Este portal cubre únicamente el Fondo de Protección Social y el Fondo de Infraestructura Nacional de Venezuela."
     }
    ],
    "by": "Delcy Rodríguez"
@@ -841,8 +849,8 @@
    ],
    "evidence": [
     {
-     "record": "bne-custody-tally-2026-11-13",
-     "passage": "“The report shows the process is working,” a State Department official said, according to Reuters."
+     "record": "reuters-custody-report-2026-11-12",
+     "passage": "\"The report shows the process is working,\" the official said, in comments issued anonymously."
     }
    ],
    "by": "an unnamed State Department official, via Reuters"
@@ -861,6 +869,140 @@
     }
    ],
    "by": "Scott Bessent, as House Democrats described it"
+  },
+  {
+   "id": "held-sept30",
+   "says": "Of the $12.11 billion that left the account, $12.09 billion had been paid through the four channels by September 30 and $15.0 million sat in a central-bank account that cannot be used without U.S. approval; $192.9 million in banknotes awaited authorization.",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "state-custody-report-2026-11-12",
+     "passage": "Disbursement Total | $12,092,621,673.35"
+    },
+    {
+     "record": "state-custody-report-2026-11-12",
+     "passage": "Remaining in BCV Operational Account | $15,000,526.20*"
+    },
+    {
+     "record": "state-custody-report-2026-11-12",
+     "passage": "The balance of $192,855,200.00 remains pending authorization"
+    }
+   ]
+  },
+  {
+   "id": "no-record-billions-to-us",
+   "says": "None of the records this story holds shows billions of dollars from Venezuela's oil reaching the United States, in the account or outside it.",
+   "status": "fact",
+   "scope": "the records this story holds, as of November 13",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "state-custody-report-2026-11-12",
+     "passage": "As of September 30, 2026, a total of $12.11 billion had been disbursed through Legacy Auctions, Electronic FX Interventions, Banknote FX Interventions, and Vendor Payments."
+    },
+    {
+     "record": "wapo-trump-gift-oil-2026-10-27",
+     "passage": "is not free"
+    },
+    {
+     "record": "wapo-trump-gift-oil-2026-10-27",
+     "passage": "the U.S. has the right to purchase 20 percent of NABEP’s crude at $30 a barrel"
+    }
+   ]
+  },
+  {
+   "id": "rubio-june3-audited",
+   "says": "On June 3 Rubio told the House Foreign Affairs Committee that KPMG, \"paid by the Venezuelan government out of those funds,\" audits every expenditure, and that \"Every single disbursement is audited by KPMG.\"",
+   "status": "said",
+   "by": "Marco Rubio",
+   "scope": "as a third-party transcript of the hearing records it",
+   "load": [
+    "catch",
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "hfac-rubio-hearing-2026-06-03",
+     "passage": "KPMG has been hired and paid for, paid by the Venezuelan government out of those funds to audit every single expenditure."
+    },
+    {
+     "record": "hfac-rubio-hearing-2026-06-03",
+     "passage": "Every single disbursement is audited by KPMG."
+    }
+   ]
+  },
+  {
+   "id": "kpmg-order",
+   "says": "State's order with KPMG for a \"Venezuela natural resources revenue transparency mechanism,\" signed April 10, is worth $84.4 million with all options; $14.9 million had been obligated.",
+   "status": "fact",
+   "scope": "federal spending data, last modified September 18",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "usaspending-kpmg-19aqmm26f0357",
+     "passage": "description: VENEZUELA NATURAL RESOURCES REVENUE TRANSPARENCY MECHANISM"
+    },
+    {
+     "record": "usaspending-kpmg-19aqmm26f0357",
+     "passage": "base_and_all_options: 84384634.38"
+    },
+    {
+     "record": "usaspending-kpmg-19aqmm26f0357",
+     "passage": "total_obligation: 14943857.0"
+    },
+    {
+     "record": "usaspending-kpmg-19aqmm26f0357",
+     "passage": "date_signed: 2026-04-10"
+    }
+   ]
+  },
+  {
+   "id": "report-dated",
+   "says": "The report is dated October 29 and was sent to Congress in early November, a State Department official said.",
+   "status": "said",
+   "by": "a State Department official, to Reuters",
+   "load": [],
+   "evidence": [
+    {
+     "record": "reuters-custody-report-2026-11-12",
+     "passage": "The report, dated October 29, was transmitted to Congress in early November, a State Department official said in a statement to media."
+    }
+   ]
+  },
+  {
+   "id": "doe-both-peoples",
+   "says": "On January 7 the Energy Department said the oil money would be \"disbursed for the benefit of the American people and the Venezuelan people at the discretion of the U.S. government.\"",
+   "status": "said",
+   "by": "the Energy Department",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "doe-fact-sheet-venezuela-2026-01-07",
+     "passage": "These funds will be disbursed for the benefit of the American people and the Venezuelan people at the discretion of the U.S. government."
+    }
+   ]
+  },
+  {
+   "id": "eldiario-repeats",
+   "says": "El Diario repeated the Times line that about $130 million paid Venezuela's foreign debts, mainly to other governments and international organizations.",
+   "status": "said",
+   "by": "El Diario",
+   "load": [],
+   "evidence": [
+    {
+     "record": "eldiario-rodriguez-2026-11-12",
+     "passage": "principalmente con otros gobiernos y organizaciones internacionales"
+    }
+   ]
   }
  ]
 }
