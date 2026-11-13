@@ -80,7 +80,7 @@ export const chronology = [
 export const precedents = [
   { place: "Libya, 2011", seller: "Libya's rebel council", buyers: "Treasury license named Vitol and Qatar Petroleum; any U.S. person could apply to trade the oil", c: ["libya-gl5"] },
   { place: "Venezuela, 2022", seller: "Chevron's Venezuelan joint ventures", buyers: "Treasury license named Chevron alone, for its own oil", c: ["gl41-chevron"] },
-  { place: "Iraq, 2003", seller: "Iraq's state marketer, SOMO, with the money in an audited fund", buyers: "First post-war sale by tender: six refiners out of 52 bidders", c: ["iraq-2003-tender"] },
+  { place: "Iraq, 2003", seller: "Iraq's state marketer, SOMO, with the money in an audited fund", buyers: "Its first post-war tender, for 10 million barrels, drew 52 bidders", c: ["iraq-2003-tender"] },
   { place: "U.S. reserve, 2026", seller: "The Energy Department, lending oil from the Strategic Petroleum Reserve", buyers: "Public requests for proposals; winners posted by name, Vitol and Trafigura among nine in April", c: ["spr-exchange-vitol"] },
   { place: "Venezuela, 2026", seller: "PDVSA, with the money in a U.S.-controlled account", buyers: "Wright called Vitol's Addison; Vitol and Trafigura licensed by January 9; Reuters reports bidding was skipped", c: ["wright-called-addison-jan5", "licenses-by-jan9", "no-tender", "two-firms-61pct"] },
 ];
@@ -126,7 +126,7 @@ export const explanations = [
     holders: "Reuters' source, viral posts",
     verdict: "untestable",
     summary: ["One secondhand source; Addison and Vance's office deny it.", c("meeting-reported"), c("meeting-denied")],
-    claim: [["A person given Addison's account told Reuters the two men met at the Yellowstone Club on December 27 and Vance asked how fast Venezuelan crude could be sold.", c("meeting-reported")]],
+    claim: [["A person given Addison's account told Reuters the two men met at the Yellowstone Club on December 27 and that Vance was particularly interested in how fast Venezuelan crude could be sold if the U.S. hypothetically gained control of it.", c("meeting-reported")]],
     evidenceFor: [["Flight records show Addison's jet and Vance's plane at Bozeman's airport that day.", c("planes-bozeman")]],
     evidenceAgainst: [["Addison and Vance's office deny the meeting, and Addison says he expected a market update when Wright called on January 5.", c("meeting-denied"), c("addison-expected-market-update")]],
     conclusion: [["The flight records place the planes, not the men. Rep. Mike Levin, a Democrat, has asked for the testimony and records that would settle it.", c("planes-bozeman"), c("levin-testimony")]],
@@ -161,7 +161,7 @@ export const explanations = [
     summary: ["Naming firms in a license has precedent; choosing them by phone is not how Iraq's oil was sold.", c("libya-gl5"), c("iraq-2003-tender")],
     claim: [["Rubio told senators the arrangement was a short-term mechanism, not the permanent one, and called the traders a short-term fix.", c("rubio-short-term")]],
     evidenceFor: [["In 2011 the Treasury named Vitol itself in a license for rebel-held Libya's oil, and in 2022 it named Chevron alone.", c("libya-gl5"), c("gl41-chevron")]],
-    evidenceAgainst: [["In occupied Iraq in 2003, only the state marketer sold the oil, with proceeds in an audited fund; the British government told Parliament in 2004 that it sold by spot sale, tender and long-term agreement.", c("iraq-2003-tender"), c("iraq-three-ways")]],
-    conclusion: [["The Treasury's licenses follow precedent, but how the firms were chosen matches neither case: the Libya license named the firms trading the rebel council's oil and invited others to apply, and Iraq's oil was sold by its own marketer.", c("libya-gl5"), c("iraq-2003-tender")]],
+    evidenceAgainst: [["In occupied Iraq in 2003, the state marketer arranged all authorized export sales, with proceeds in an audited fund; the British government told Parliament in 2004 that it sold by spot sale, tender and long-term agreement.", c("iraq-2003-tender"), c("iraq-three-ways")]],
+    conclusion: [["The Treasury has named firms in licenses before, for Libya's rebel council and for Chevron. In Libya any U.S. person could also apply, and Iraq's authorized sales went through its state marketer, by tender for its first post-war sale of stored crude. In Venezuela, Wright called Addison, and Reuters reports bidding was skipped.", c("libya-gl5"), c("gl41-chevron"), c("iraq-2003-tender"), c("wright-called-addison-jan5"), c("no-tender")]],
   },
 ];
