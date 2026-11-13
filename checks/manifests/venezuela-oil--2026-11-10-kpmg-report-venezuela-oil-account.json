@@ -8,8 +8,55 @@
     "development-u-s-control-of-venezuelan-oil-revenues",
     "development-venezuelan-resource-revenues-in-u-s-controlled-accounts"
   ],
-  "story_title": "The U.S. took in  billion for Venezuela's oil. Here is where it went",
-  "sub_events": [],
+  "story_title": "The U.S. took in $12 billion for Venezuela's oil. Nearly all of it went back to Venezuela.",
+  "sub_events": [
+    {
+      "id": "eo-2026-01-09",
+      "date": "2026-01-09",
+      "label": "Order makes the account's money Venezuela's",
+      "section_anchor": "why-now",
+      "records": [
+        "eo-14373-order-2026-01-09"
+      ]
+    },
+    {
+      "id": "kpmg-order-2026-04-10",
+      "date": "2026-04-10",
+      "label": "State signs KPMG's order",
+      "section_anchor": "why-now",
+      "records": [
+        "usaspending-kpmg-19aqmm26f0357"
+      ]
+    },
+    {
+      "id": "rubio-2026-06-03",
+      "date": "2026-06-03",
+      "label": "Rubio says KPMG audits every disbursement",
+      "section_anchor": "the-catch",
+      "records": [
+        "hfac-rubio-hearing-2026-06-03"
+      ]
+    },
+    {
+      "id": "trump-2026-07-27",
+      "date": "2026-07-27",
+      "label": "Trump says the war is paid for many times over",
+      "section_anchor": "the-catch",
+      "records": [
+        "dcpd-trump-air-force-one-2026-07-27"
+      ]
+    },
+    {
+      "id": "report-2026-11-12",
+      "date": "2026-11-12",
+      "label": "State makes the report public",
+      "section_anchor": "what-happened",
+      "records": [
+        "state-custody-report-2026-11-12",
+        "state-custody-report-page-2026-11-12"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "state-custody-report-2026-11-12",
@@ -482,6 +529,22 @@
       "quote_span_check": "byte_exact",
       "about": "The NABEP deal's terms for the U.S.",
       "capture_status": "the pinned White House page admitted for the August 31 story in this series, re-admitted here under this story's id"
+    },
+    {
+      "id": "casten-vanhollen-letter-2026-03-11",
+      "title": "Letter from Rep. Casten and Sen. Van Hollen to Treasury Secretary Bessent on the Venezuelan oil account",
+      "publisher": "Rep. Sean Casten and Sen. Chris Van Hollen",
+      "date": "2026-03-11",
+      "url": "https://casten.house.gov/imo/media/doc/casten-van_hollen_letter_on_venezuelan_oil_account.pdf",
+      "pinned_path": "data/sources/venezuela-oil/casten-vanhollen-letter-2026-03-11.pdf",
+      "text_path": "data/sources/venezuela-oil/casten-vanhollen-letter-2026-03-11.txt",
+      "text_sha256": "sha256:af2388a70fcecf2147736268b075cba2e41493e8788ca91cb1026cd903571135",
+      "quote": "$300 million had been transferred to the Venezuelan government to meet payroll obligations for",
+      "quote_span_check": "byte_exact",
+      "about": "Democrats' March questions on the account",
+      "capture_run": "capture-oneoff-20261113T201742Z",
+      "capture_raw_sha256": "sha256:5d852222f0431282b94d6b61399903601c420417827e2df0345bcea3e3c67a0e",
+      "captured_at": "2026-11-13T20:18:55.255688Z"
     }
   ],
   "story_sources": [
@@ -509,7 +572,7 @@
     {
       "id": "x-bergengruen-trump-2026-11-02",
       "group": "coverage",
-      "label": "Vera Bergengruen (WSJ) on X, quoting Trump",
+      "label": "Vera Bergengruen on X, quoting Trump",
       "meta": " · posted 2026-11-02",
       "usage": "Trump's November 2 line"
     },
@@ -701,6 +764,83 @@
       "label": "White House fact sheet on the NABEP deal",
       "meta": " · August 31, 2026",
       "usage": "What the U.S. holds outside the account"
+    },
+    {
+      "id": "casten-vanhollen-letter-2026-03-11",
+      "group": "official",
+      "label": "Casten and Van Hollen, letter to Bessent",
+      "meta": " · March 11, 2026",
+      "usage": "The earliest Democratic demands; Rubio's payroll account"
+    }
+  ],
+  "completed_by": "claude (kpmg-report author session, worktree 2026-11-10-kpmg-report-venezuela-oil-account)",
+  "date_completed": "2026-11-13",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "32 records pinned under data/sources/venezuela-oil and data/sources/coverage with text and hash; the State Department report is pinned from state.gov with a full Mistral OCR of its 53 pages because capture's OCR dropped the image pages holding the ledgers, and X posts and the USAspending award were admitted from saved files."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The vendor groups (health $57.4 million, oil, power, coal and fertilizer $35.6 million, service providers $28.8 million, international bodies $10.4 million) are sums of the report's 38-line vendor ledger, which itself sums to the stated $133,114,048.23; the five banks' 83% and Banco de Venezuela's $2.88 billion are sums of the report's three bank ledgers."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The Times' line that the $130 million in vendor payments went mostly to debts to other governments and international organizations was checked against the public ledger, which shows $10.4 million to such bodies; the page keeps the caveat that the Times read the confidential copy."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live elements; every figure is as of September 30, 2026, the report's cutoff, and the page says the report may be updated."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The Venezuela oil subject page dek now carries the account's $12.26 billion and 98.7 percent paid out, with a new current figure for the share paid out, sourced to the report."
+    }
+  },
+  "figures": [
+    {
+      "figure": "deposits_total",
+      "label": "Deposits into the U.S.-held Venezuela account, January 3 to September 30",
+      "value": "12.26",
+      "unit": "USD billions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "state-custody-report-2026-11-12",
+        "quote_span": "cumulative natural resource funds deposited into the account totaled $12.26 billion across 20 registered depositors between January 1 and September 30, 2026"
+      }
+    },
+    {
+      "figure": "paid_out",
+      "label": "Paid out of the account by September 30",
+      "value": "12.11",
+      "unit": "USD billions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "state-custody-report-2026-11-12",
+        "quote_span": "Of the total amount, $12.11 billion (98.7%) was disbursed"
+      }
+    },
+    {
+      "figure": "kpmg_paid",
+      "label": "Paid to KPMG from the account, April 10",
+      "value": "18175707.00",
+      "unit": "USD",
+      "kind": "sourced",
+      "source": {
+        "source_id": "state-custody-report-2026-11-12",
+        "quote_span": "Financial oversight and institutional financial support activities. | $18,175,707.00"
+      }
+    },
+    {
+      "figure": "vendor_total",
+      "label": "Direct payments to vendors",
+      "value": "133114048.23",
+      "unit": "USD",
+      "kind": "sourced",
+      "source": {
+        "source_id": "state-custody-report-2026-11-12",
+        "quote_span": "Vendor Payments | $133,114,048.23"
+      }
     }
   ]
 }

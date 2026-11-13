@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataNote from "../../../components/story/DataNote.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, payouts, vendorGroups, chronology, explanations } from "../../../data/venezuela-oil-2026-11-10-kpmg-report-venezuela-oil-account.mjs";
+const story = "venezuela-oil--2026-11-10-kpmg-report-venezuela-oil-account";
+const short = (id) => claim(story, id).short;
+const vitolStory = "/events/venezuela-oil/2026-11-11-vitol-trader-vance-venezuela-oil-contract/";
+const augustDeal = "/events/venezuela-oil/2026-08-31-100-year-oil-rights-claim/";
+const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), cites: [{ c: e.c }] }));
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/venezuela-oil/">Venezuela oil</a><span>November 10, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Venezuela oil &middot; November 10, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="deposits-total" /><Cite c="paid-out-total" /><Cite c="approval" /><Cite c="channels" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#where-it-went">Where the $12 billion went</a></li>
+          <li><a href="#why-now">The promised audits</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">Since U.S. forces seized Venezuela's president, Nicolás Maduro, on January 3, anyone buying Venezuela's oil, gold, minerals or fertilizer under U.S. sanctions licenses has had to pay into an account at the U.S. Treasury.<Cite c="jan3-capture" /><Cite c="who-pays-in" /> President Trump's order of January 9 makes the money Venezuela's property, which the United States holds for Venezuela but does not own, and lets the Secretary of State decide how it is spent.<Cite c="eo-venezuelan-property" /> On November 12 the State Department made public what bne IntelliNews called the first official tally of that account, a report prepared with the consulting firm KPMG; The New York Times had reported on a confidential copy two days earlier.<Cite c="report-posted" /><Cite c="nyt-confidential-copy" /></p>
+        <p data-layer="narrative" data-answer="2">From January 3 to September 30 the account took in ${n.deposits} billion from {n.depositors} buyers, nearly all of it for oil.<Cite c="report-period" /><Cite c="deposits-total" /> It paid out ${n.paidOut} billion, or {n.paidOutPct}%, and the ${n.left} million left in it on September 30 is held for future payouts.<Cite c="paid-out-total" /> Each payout started with a request from Venezuela's central bank and needed approval from the State Department and the Treasury.<Cite c="approval" /> Almost all of it went back into Venezuela as dollars sold through its banks to businesses and people, whom the report does not name.<Cite c="channels" /><Cite c="no-names" /></p>
+        <p data-layer="narrative" data-answer="3">Democrats in Congress have pressed the administration about the account since March, and in September three senators asked how much was in it and where the money had gone; the report answers part of that.<Cite c="casten-march" /><Cite c="senators-letter" /> It does not say who bought the dollars, and it says KPMG's work is not an audit.<Cite c="no-names" /><Cite c="kpmg-not-audit" /> Democrats take control of both chambers on January 3.<Cite c="democrats-jan3" /></p>
+      </section>
+
+      <section id="where-it-went">
+        <h2 data-layer="fact">Where the $12 billion went</h2>
+        <p data-layer="narrative">Nearly all of the money left the account as dollars sold inside Venezuela. From January to March, the central bank auctioned them to bidders through the banks. Since March 31 it has sold them to the banks directly, at an exchange rate it sets, and from July it also shipped in U.S. banknotes by air.<Cite c="channels" /><Cite c="rate-unpublished" /> A small part went straight to vendors, and a small part was still held on September 30.<Cite c="channels" /><Cite c="held-sept30" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Where the ${n.paidOut} billion that left the account went, January to September</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Channel</th><th>Amount</th><th>How it works</th></tr></thead>
+            <tbody>{payouts.map((p) => <tr><td>{p.channel}</td><td>{p.amount}</td><td>{p.how}{p.c.map((id) => <Cite c={id} />)}</td></tr>)}</tbody>
+          </table>
+          <DataNote><p>The State Department's report, Section 8.2. The four channels add to $12.09 billion; with the $15.0 million still held they make the ${n.paidOut} billion.<Cite c="held-sept30" /></p></DataNote>
+        </figure>
+        <p data-layer="narrative">A sale works like this: the central bank hands a bank its dollars and takes the matching amount of bolívars, Venezuela's currency, from the bank's account; the bank then sells the dollars to its customers.<Cite c="how-intervention-works" /> The report says the central bank uses the bolívars it takes in for government spending, such as public-sector payrolls.<Cite c="bolivars-to-state" /> The report says none of the dollars sold through the banks went to government bodies.<Cite c="no-govt-recipients" /></p>
+        <p data-layer="narrative">By the banks' own reports, businesses bought ${n.business} billion of the dollars and individuals ${n.individuals} billion. Food and consumer-goods companies bought the most, ${n.food} billion, followed by business services at ${n.services} billion and agriculture at ${n.agriculture} billion.<Cite c="recipients-split" /><Cite c="sectors" /> Those totals include other money the central bank held, among it ${n.imf} million Venezuela drew from the International Monetary Fund, so they do not trace the account's dollars alone.<Cite c="recipients-split" /> The banks report each buyer by tax number, and the central bank passes that data to the State Department and KPMG; the public report gives none of the names.<Cite c="no-names" /></p>
+        <p data-layer="narrative">Twenty banks sold the dollars, and five of them handled about {n.fiveBanksPct}%.<Cite c="twenty-banks" /><Cite c="five-banks" /> The largest was the state-owned Banco de Venezuela, with about ${n.bdv} billion.<Cite c="bdv-largest" /> The report does not give the rate of each sale, so it cannot show whether some buyers got dollars cheaper than others.<Cite c="rate-unpublished" /></p>
+        <p data-layer="narrative">The ${n.vendors} million paid directly to vendors went mostly to medicine and to oil and power equipment.<Cite c="vendor-health" /><Cite c="vendor-energy" /> The account also paid KPMG ${n.kpmgPaid} million on April 10, for its own work.<Cite c="vendor-kpmg" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What the ${n.vendors} million in direct payments bought</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Paid for</th><th>Amount</th></tr></thead>
+            <tbody>{vendorGroups.map((v) => <tr><td>{v.group}</td><td>{v.amount}<Cite c={v.c} /></td></tr>)}</tbody>
+          </table>
+          <DataNote><p>Grouped from the report's vendor ledger, which totals $133,114,048.23.<Cite c="channels" /></p></DataNote>
+        </figure>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">The promised audits</h2>
+        <p data-layer="narrative">The account began with two different descriptions. On January 7 the Energy Department said the money would be spent "for the benefit of the American people and the Venezuelan people at the discretion of the U.S. government."<Cite c="doe-both-peoples" /> Two days later Trump's order declared it Venezuela's property.<Cite c="eo-venezuelan-property" /> Secretary of State Marco Rubio told senators on January 28 that the account belongs to Venezuela and that the United States controls only how the money is paid out.<Cite c="rubio-dispersal" /></p>
+        <p data-layer="narrative">Officials promised Congress audits. Rubio told senators in January the U.S. would conduct them, AP reported, and in April the State Department's Michael Kozak told House members that KPMG had been commissioned as an independent auditor, with audits at least every quarter, according to House Democrats who quoted him in a September letter.<Cite c="rubio-audits-jan" /><Cite c="kozak-independent-auditor" /> State signed KPMG's order on April 10.<Cite c="kpmg-order" /> Democrats kept pressing. In March Rep. Sean Casten and Sen. Chris Van Hollen asked the Treasury for the account's legal basis, and in September Senators Ron Wyden, Elizabeth Warren and Sheldon Whitehouse wrote that the administration had failed to explain where the money had gone.<Cite c="casten-march" /><Cite c="senators-letter" /></p>
+        <p data-layer="narrative">The report is dated October 29 and went to Congress in early November, a State Department official said.<Cite c="report-dated" /> It became public on November 12.<Cite c="report-posted" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the order to the report</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <p data-layer="narrative"><strong>The State Department.</strong> "The report shows the process is working," an official said, in a statement issued anonymously.<Cite c="state-official-working" /></p>
+        <p data-layer="narrative"><strong>Venezuela's government.</strong> The acting president, Delcy Rodríguez, said on November 12 that 99 of every 100 dollars of oil and mining income this year went to public wages and pensions.<Cite c="rodriguez-99" /> Her government's figures show ${n.rodriguezWages} billion for wages and pensions: 99% of the ${n.rodriguezSpent} billion it spent, and 94% of the ${n.rodriguezIn} billion it took in, on a portal that covers two government funds.<Cite c="rodriguez-99" /> That fits the report's account of the bolívars funding payrolls, but no record ties her figures to the account's.<Cite c="bolivars-to-state" /></p>
+        <p data-layer="narrative"><strong>Venezuela's opposition.</strong> The opposition party Primero Justicia says the banking spending the U.S. report describes does not appear in the government's reports, and demands proof of each operation.<Cite c="pj-opposition" /> Ricardo Ríos, writing on X, asks who benefited most from the dollars sold at preferential rates.<Cite c="rios-question" /></p>
+        <p data-layer="narrative"><strong>Senate Democrats.</strong> Wyden, Warren and Whitehouse warned that the money could be directed to "politically favored insiders," and asked for every recipient, including the owners behind companies.<Cite c="senators-letter" /></p>
+              </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>"We've paid for that war many times over"</h3>
+              <p data-layer="narrative">On November 11, at Arlington National Cemetery, Trump contrasted the wars in Korea, Vietnam, Iraq and Afghanistan, which he said got the United States very little, with Venezuela.<Cite c="trump-context-wars" /><Cite c="trump-nov11" /></p>
+              <QuoteCard speaker="Donald Trump" when="November 11, 2026" where="Veterans Day remarks, Arlington National Cemetery">
+                <p>"In our case, we had Venezuela, where we're taking out billions and billions of dollars of oil and all sorts of other things, be hundreds of billions very soon. Nobody's ever seen anything like it. And we've paid for the cost of the war many, many times over already."<Cite c="trump-nov11" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">In July a reporter asked him where the ${n.julyFigure} billion the United States had reportedly taken in from Venezuela was going; the report later counted ${n.deposits} billion through September. He answered in three steps: "we've paid for that war many times over"; the money "Goes toward running the country"; and, when the reporter asked about the United States, "It can go to the military. You know, Congress has to approve it."<Cite c="trump-july27" /></p>
+              <p data-layer="narrative">His second answer is the one the report bears out. The money in the account is Venezuela's by his own order, and it went out at Venezuela's request to its banks and vendors, with no payment to any U.S. agency.<Cite c="eo-venezuelan-property" /><Cite c="account-nothing-to-us" /></p>
+              <p data-layer="narrative">The other two answers have no record behind them: neither the report nor the terms of the NABEP deal record any payment of Venezuela's oil money to the U.S. government.<Cite c="no-record-billions-to-us" /> Outside the account, the United States holds a 35% stake in the parent of NABEP, one of Venezuela's oil producers, which the White House values at "up to hundreds of billions," and a right to buy its oil cheaply; the <a href={augustDeal}>August deal</a> set those terms.<Cite c="nabep-stake" /><Cite c="no-record-billions-to-us" /> The million-barrel cargo Trump called a gift in October was bought at a discount, two people told The Washington Post.<Cite c="trump-gift-quote" /><Cite c="gift-cargo-bought" /> For scale, researchers for Brown University's Costs of War project put the cost of U.S. operations around Venezuela from August 2025 to March 2026 at ${n.costOfOps} billion or more, a figure they call partial.<Cite c="costs-of-war" /></p>
+            </li>
+            <li>
+              <h3>"Every single disbursement is audited by KPMG"</h3>
+              <p data-layer="narrative">Rubio told the House Foreign Affairs Committee on June 3 that KPMG, "paid by the Venezuelan government out of those funds," audits every expenditure.<Cite c="rubio-june3-audited" /></p>
+              <QuoteCard speaker="Marco Rubio, Secretary of State" when="June 3, 2026" where="House Foreign Affairs Committee hearing">
+                <p>"Every single disbursement is audited by KPMG."<Cite c="rubio-june3-audited" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">The State Department's own report says KPMG's services "do not constitute audit or attestation services under applicable professional standards," the formal checks an accounting firm signs its name to.<Cite c="kpmg-not-audit" /> The report says State hired KPMG with Venezuela's money, and the account paid it ${n.kpmgPaid} million.<Cite c="kpmg-venezuelan-funds" /><Cite c="vendor-kpmg" /> The ledger also shows {n.bdo} paid to BDO, a firm working for Venezuela's central bank, for a limited review of May and June, whose results the report does not give.<Cite c="bdo-limited" /></p>
+            </li>
+            <li>
+              <h3>"Mostly debts to other governments"</h3>
+              <p data-layer="narrative">The Times, reporting from the confidential copy, wrote that about $130 million went to pay the Venezuelan government's foreign bills, "mostly debts to other governments and internationals organizations"; El Diario in Caracas repeated it.<Cite c="nyt-130m-debts" /><Cite c="eldiario-repeats" /> The public report's vendor ledger does not bear that out: about ${n.intlBodies} million of the ${n.vendors} million went to foreign central banks and international bodies, ${n.paho} million of it to the Pan American Health Organization.<Cite c="vendor-intl" /> The Times worked from the confidential copy; these figures are from the public one.<Cite c="nyt-confidential-copy" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <p class="section-intro" data-layer="fact">Where the money went, as each side explains it, with the evidence for and against.</p>
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Democrats take both chambers on January 3.<Cite c="democrats-jan3" /> The senators' questions about who received the money, down to the owners behind companies, are still open, and so is the rate at which the central bank sold each dollar.<Cite c="senators-letter" /><Cite c="rate-unpublished" /> KPMG's order is worth ${n.kpmgOrderAll} million if every option is used, against ${n.kpmgObligated} million the State Department had committed as of September 18.<Cite c="kpmg-order" /> The report says it may be updated with future data.<Cite c="later-editions" /></p>
+        <p data-layer="narrative">Most of the account's deposits came from two trading houses, Trafigura and Vitol, Bloomberg reported; <a href={vitolStory}>Vitol's role</a> is a separate story.<Cite c="two-depositors" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
+</style>
