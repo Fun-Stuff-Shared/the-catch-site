@@ -81,6 +81,7 @@ export const precedents = [
   { place: "Libya, 2011", seller: "Libya's rebel council", buyers: "Treasury license named Vitol and Qatar Petroleum; any U.S. person could apply to trade the oil", c: ["libya-gl5"] },
   { place: "Venezuela, 2022", seller: "Chevron's Venezuelan joint ventures", buyers: "Treasury license named Chevron alone, for its own oil", c: ["gl41-chevron"] },
   { place: "Iraq, 2003", seller: "Iraq's state marketer, SOMO, with the money in an audited fund", buyers: "First post-war sale by tender: six refiners out of 52 bidders", c: ["iraq-2003-tender"] },
+  { place: "U.S. reserve, June 2026", seller: "The Energy Department, lending oil from the Strategic Petroleum Reserve", buyers: "Public request for proposals, open to competitive bidding; the award, to Vitol Inc., posted by name", c: ["spr-exchange-vitol"] },
   { place: "Venezuela, 2026", seller: "PDVSA, with the money in a U.S.-controlled account", buyers: "Wright called Vitol's Addison; Vitol and Trafigura licensed by January 9; Reuters reports bidding was skipped", c: ["wright-called-addison-jan5", "licenses-by-jan9", "no-tender", "two-firms-61pct"] },
 ];
 
