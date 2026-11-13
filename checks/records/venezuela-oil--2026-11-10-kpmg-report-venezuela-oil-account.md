@@ -73,11 +73,11 @@ What happened (sentence 1): the event, what it means, where it stands
 4. Where it stands: State made it public November 12; dated October 29; the Times had a confidential copy November 10.
 
 Where the money went (sentence 2): opens on "where did the $12.11 billion go?"
-1. Three dollar channels to 20 banks, $11.96 billion; vendors $133.1 million; $15.0 million and $192.9 million in banknotes still held on September 30 (figure: the payout ledger as a table).
+1. Three dollar channels to 20 banks, $11.96 billion allocated ($192.9 million of it in banknotes not yet released); vendors $133.1 million; $15.0 million and $192.9 million in banknotes still held on September 30 (figure: the payout ledger as a table).
 2. What is a currency intervention? The central bank sells dollars to banks at a rate it sets and takes their bolívars; banks sell the dollars to customers [state-custody-report-2026-11-12: "the BCV debits each bank's account for the corresponding VES value"]
 3. Who got the dollars? Businesses $9.37 billion, people $2.87 billion, by the banks' data, which also carries $346 million of IMF money; food and consumer goods $3.35 billion first; State and KPMG hold the names, the public version gives none.
 4. Where did the bolívars go? The report: to government spending "such as to fund public sector payrolls"; Rodríguez says 99 of every 100 dollars paid wages and pensions, on figures for two funds through November 12; nothing ties the two.
-5. What did the $133 million buy? Medicines and PAHO $57.4 million; energy and industry $37.2 million; KPMG, lawyers and banknote logistics $28.8 million; memberships in regional central-bank bodies $1.7 million; passports, market data and embassy repairs $7.9 million (table of the largest lines).
+5. What did the $133 million buy? Medicines and PAHO $57.4 million; oil, power, coal and fertilizer operations $35.6 million; KPMG, lawyers and banknote logistics $28.8 million; memberships in regional central-bank bodies $1.7 million; passports, market data, embassy repairs, industrial chemicals and air-traffic links $9.5 million (table of the largest lines).
 6. Which banks? Five of 20 took 83%; state-owned Banco de Venezuela the most, $2.88 billion. The rate of each sale is not published, so who gained from cheap dollars cannot be measured.
 
 The Catch (sentence 4): opens on Trump's November 11 sentence
