@@ -35,7 +35,7 @@ export const event = {
   slug: "venezuela-oil/2026-11-11-vitol-trader-vance-venezuela-oil-contract",
   title: "A Vance backer got the call to market Venezuela's oil, with no tender",
   dek: "Energy Secretary Chris Wright called John Addison, a Vitol trader who had given $300,000 to the super PAC behind JD Vance's 2022 Senate run, to ask whether Vitol wanted the job. The administration skipped bidding, citing the need for speed, Reuters reports.",
-  name: "How Vitol got the job of selling Venezuela's oil",
+  name: "How Vitol got the job of marketing Venezuela's oil",
   date: "2026-11-11",
   updated: "2026-11-12",
   kpis: [],
@@ -118,7 +118,7 @@ export const explanations = [
     claim: [["A Spanish-language post with more than 18,000 likes says the marketing was handed to campaign megadonors without public bidding.", c("viral-post")]],
     evidenceFor: [["Addison gave $300,000 to the super PAC behind Vance's 2022 primary, and his household gave about $7.1 million to political committees in 2024.", c("pov-300k"), c("household-7m")]],
     evidenceAgainst: [["Trafigura was offered its license days after Vitol, a source told Reuters. FEC filings from 2024 through 2026 show about $6,400 from people who list Trafigura as their employer.", c("trafigura-days-later"), c("trafigura-no-donor")]],
-    conclusion: [["Wright's call went to a man who, with his wife, gave about $7.1 million to political committees in 2024; people listing Trafigura as employer gave about $6,400 in 2024 to 2026 filings, and Trafigura was offered a license too, a source told Reuters. The post says the oil went to megadonors; of the two firms, only Vitol's caller is one in the filings searched.", c("wright-called-addison-jan5"), c("pov-300k"), c("household-7m"), c("trafigura-days-later"), c("trafigura-no-donor")]],
+    conclusion: [["Wright's call went to a man whose household gave about $7.1 million to political committees in 2024; people listing Trafigura as employer gave about $6,400 in 2024 to 2026 filings, and Trafigura was offered a license too, a source told Reuters. The post says the plan was to hand the oil's marketing to megadonors; of the two firms, only Vitol's Addison is one in the filings searched.", c("viral-post"), c("wright-called-addison-jan5"), c("pov-300k"), c("household-7m"), c("trafigura-days-later"), c("trafigura-no-donor")]],
   },
   {
     id: "before-raid",

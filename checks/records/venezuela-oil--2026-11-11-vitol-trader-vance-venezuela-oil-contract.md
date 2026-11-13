@@ -4,7 +4,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 
 ## The explanations
 
-The story turns on three questions. Why did Vitol, through a U.S. gasoline trader, get the job of selling Venezuela's oil? Was that sale arranged with Vitol before the January 3 operation? And was handing the job to two named firms without a tender out of line?
+The story turns on three questions. Why did Vitol, through a U.S. gasoline trader, get the job of marketing Venezuela's oil? Was that sale arranged with Vitol before the January 3 operation? And was handing the job to two named firms without a tender out of line?
 
 Question 1: why did Vitol get the call to market Venezuela's crude?
 - A. Addison's ties to Vance opened the door: Vance had told Wright that Addison was trustworthy, and that is why Wright called a U.S. gasoline trader rather than Vitol's crude desk or its regional chief (Reuters' framing; House Oversight Democrats). If true: the call goes to Addison, not to the firm's crude leadership, and someone ties the call to Vance. We should not find: a selection record that picks Vitol before anyone called Addison.
@@ -66,7 +66,7 @@ Survives: A in part, B and C. Ruled out: A as a handout to donors, by Trafigura'
 
 ## The story
 
-On January 5, two days after U.S. forces captured Maduro, Energy Secretary Chris Wright called John Addison, a Vitol gasoline trader, and offered Vitol the job of selling Venezuela's oil, with no tender.
+On January 5, two days after U.S. forces captured Maduro, Energy Secretary Chris Wright called John Addison, a Vitol gasoline trader, and offered Vitol the job of marketing Venezuela's oil, with no tender.
 Addison had backed Vance's 2022 Senate run and, with his wife, gave about $7 million to pro-Trump groups in 2024; Vitol and Trafigura had the market to themselves into February and made 61 percent of the deposits into the U.S.-controlled account through September.
 Reuters reported on November 11 that Vance had vouched for Addison to Wright, and, from one unnamed source, that the two men met in Montana a week before the raid to talk about selling the crude.
 A viral reading says the sale was arranged for donors before the raid, but the meeting is one secondhand account that both men deny, the vouching came at least a year before the call, and Trafigura got the same license with no donor tie.
@@ -80,7 +80,7 @@ Headline: A Vance donor got the call to sell Venezuela's oil. No tender followed
 Dek: Reuters also reports a pre-raid meeting; it rests on one secondhand source, and both men deny it.
 
 What happened (sentences 1 and 2):
-1. What happened? Two days after the capture of Maduro, Wright called Addison and offered Vitol the job of selling Venezuela's crude; by January 9 Vitol and Trafigura held licenses, with no tender. (wright-called-addison-jan5, licenses-by-jan9, no-tender)
+1. What happened? Two days after the capture of Maduro, Wright called Addison and offered Vitol the job of marketing Venezuela's crude; by January 9 Vitol and Trafigura held licenses, with no tender. (wright-called-addison-jan5, licenses-by-jan9, no-tender)
 2. Who is he? A Houston gasoline trader, an early backer of Vance, now co-chair of Wright's advisory board. (addison-who, pov-300k, addison-retired-board)
 3. What did it mean? The two traders had the market to themselves into February and made 61 percent of the $12.26 billion deposited in the U.S.-held account through September. (pdvsa-licensed-only, two-firms-61pct)
 4. Where does it stand? Reuters adds that Vance vouched for Addison and a disputed December meeting; the dispute is named, argued below. (official-vouching-a-year-before, meeting-reported, meeting-denied)
@@ -120,7 +120,7 @@ Background held: the California settlement and complaint; the Primerica employer
 
 ## The event
 
-On November 11, 2026, Reuters reported that a week before the January 3 operation that captured Nicolás Maduro, Vice President Vance flew to Montana's Yellowstone Club and, by one person's account, met John Addison, a Vitol gasoline trader and early backer of his career [reuters-vitol-vance-2026-11-11: "There, he met an old friend and early financier of his political career, John Addison, a gasoline trader with commodities giant Vitol, according to a person familiar with the matter."]. Addison and Vance's office deny the meeting [reuters-vitol-vance-2026-11-11: "For this article, both Addison and Vance's office denied having the Dec. 27 meeting in Montana."]. Addison confirmed that Energy Secretary Chris Wright called him on January 5 and asked whether Vitol wanted the job of selling Venezuela's crude [reuters-vitol-vance-2026-11-11: "and Wright wanted to know from Addison if Vitol wanted the job"], and the Energy Department confirmed the call [reuters-vitol-vance-2026-11-11: "The Department of Energy confirmed Wright called Addison Jan. 5 to discuss Venezuela."]. By January 9 Vitol and Trafigura held licenses to sell the oil [reuters-vitol-vance-2026-11-11: "By Jan. 9, both Vitol and Trafigura had landed their licenses"].
+On November 11, 2026, Reuters reported that a week before the January 3 operation that captured Nicolás Maduro, Vice President Vance flew to Montana's Yellowstone Club and, by one person's account, met John Addison, a Vitol gasoline trader and early backer of his career [reuters-vitol-vance-2026-11-11: "There, he met an old friend and early financier of his political career, John Addison, a gasoline trader with commodities giant Vitol, according to a person familiar with the matter."]. Addison and Vance's office deny the meeting [reuters-vitol-vance-2026-11-11: "For this article, both Addison and Vance's office denied having the Dec. 27 meeting in Montana."]. Addison confirmed that Energy Secretary Chris Wright called him on January 5 and asked whether Vitol wanted the job of marketing Venezuela's crude [reuters-vitol-vance-2026-11-11: "and Wright wanted to know from Addison if Vitol wanted the job"], and the Energy Department confirmed the call [reuters-vitol-vance-2026-11-11: "The Department of Energy confirmed Wright called Addison Jan. 5 to discuss Venezuela."]. By January 9 Vitol and Trafigura held licenses to market the oil [reuters-vitol-vance-2026-11-11: "By Jan. 9, both Vitol and Trafigura had landed their licenses"].
 
 ## The people it happens to
 
