@@ -74,34 +74,49 @@ Democrats take the House in January, with the Oversight Committee's top Democrat
 
 ## The plan
 
-Headline: A Vance donor got the call to sell Venezuela's oil
+Each layer, the sentence it tells, and its chain. Claim ids are in checks/claims.
 
-Dek: Energy Secretary Chris Wright called Vitol trader John Addison two days after Maduro's capture; a report of a pre-raid meeting rests on one source.
+Headline: A Vance donor got the call to sell Venezuela's oil. No tender followed.
+Dek: Reuters also reports a pre-raid meeting; it rests on one secondhand source, and both men deny it.
 
-What happened (sentence 1, 2; the event, what it means, where it stands):
-1. What happened? Wright called Addison on January 5 and asked if Vitol wanted to sell Venezuela's crude; by January 9 Vitol and Trafigura had licenses, with no tender. [reuters-vitol-vance-2026-11-11: "The Department of Energy confirmed Wright called Addison Jan. 5 to discuss Venezuela."] [reuters-vitol-vance-2026-11-11: "By Jan. 9, both Vitol and Trafigura had landed their licenses"]
-2. Who is Addison? A senior Vitol gasoline trader in Houston, an early financier of Vance, now co-chair of Wright's advisory board. [reuters-vitol-vance-2026-11-11: "He was a senior trader at Vitol, not the firm's regional CEO."] [doe-seab-minutes-2026-07-20: "Chairs: John Addison and Scott Strazik, Co-Chairs"]
-3. What does it mean, and for whom? The money from Venezuela's oil goes to an account the U.S. controls; through September the two traders' sales made 61 percent of $12.26 billion deposited. [nyt-kpmg-2026-11-10: "Trafigura and Vitol together accounted for 61 percent of the money deposited in the account by the end of September, the report shows."]
-4. Where does it stand? Reuters adds Vance's vouching and a disputed December 27 meeting; Democrats who take the House in January want testimony. Names the dispute, does not argue it.
+What happened (sentences 1 and 2):
+1. What happened? Two days after the capture of Maduro, Wright called Addison and offered Vitol the job of selling Venezuela's crude; by January 9 Vitol and Trafigura held licenses, with no tender. (wright-called-addison-jan5, licenses-by-jan9, no-tender)
+2. Who is he? A Houston gasoline trader, an early backer of Vance, now co-chair of Wright's advisory board. (addison-who, pov-300k, addison-retired-board)
+3. What did it mean? The two traders had the market to themselves into February and made 61 percent of the $12.26 billion deposited in the U.S.-held account through September. (pdvsa-licensed-only, two-firms-61pct)
+4. Where does it stand? Reuters adds that Vance vouched for Addison and a disputed December meeting; the dispute is named, argued below. (official-vouching-a-year-before, meeting-reported, meeting-denied)
 
-How Addison got the call (sentence 2; the story in order): opens on who Addison is
-1. Who vouched? Vance told Wright Addison was trustworthy; Addison says that paved the way; an official dates it at least a year before the call. [reuters-vitol-vance-2026-11-11: "But Vance had told Wright that Addison was trustworthy, paving the way for the call, Addison told Reuters."] [reuters-vitol-vance-2026-11-11: "The official said that conversation happened at least a year before the Jan. 5 phone call."]
-2. Why was a gasoline trader the one called? Vitol says he lacked the expertise and brought in its crude team. [reuters-vitol-vance-2026-11-11: "Vitol told Reuters Addison did not have the technical knowledge to negotiate an international crude contract given his expertise as a gasoline trader"]
-3. What did he give? $300,000 to Protect Ohio Values, the super PAC behind Vance's 2022 primary, where Thiel gave $15 million; the household's 2024 gifts to pro-Trump PACs, about $7 million, $5 million to MAGA Inc. (chart: the gifts). [fec-addison-2022] [fec-pov-pac-2022-receipts] [fec-addison-2024] [nyt-turnout-for-america-2024-07-30]
-4. What did he say at the White House? Quote card, January 9. [dcpd-2026-01-09-oil-executives]
-5. Timeline: Dec 27, Jan 3, Jan 5, Jan 8, Jan 9, Jan 29, Mar 31, Jul 20, Nov 11.
+How Addison got the call (sentence 2; the story in order). Opens on Addison.
+1. Why him? Addison says Vance's word paved the way; an official dates that word at least a year before the call; the department says it picked the largest trader. (addison-vance-vouched, official-vouching-a-year-before, doe-picked-largest)
+2. Why a gasoline trader? Vitol says he lacked the crude expertise and handed it to its crude team. (vitol-addison-lacked-expertise)
+3. His money: chart of the gifts: $300,000 to the pro-Vance super PAC (Thiel gave $15 million of its $19.8 million); about $7 million from the household in 2024, $5 million to MAGA Inc. (pov-300k, pov-thiel-share, household-7m, maga-5m, turnout-for-america)
+4. At the White House: quote card, January 9. (addison-jan9-quote)
+5. Timeline: Dec 16 blockade, Dec 27 planes at Bozeman, Jan 3, Jan 5, Jan 8, Jan 9, Jan 29 GL 46, Feb 13, Mar 31, Jul 20, Nov 10, Nov 11.
 
-Why now (sentence 3): opens on the administration's stated reason: storage full under the U.S. blockade, money needed, a short-term mechanism (Rubio); DOE picked the largest trader; Wright, January 11, no favoritism. One clause each for the critics' records: Vitol's 2020 bribery settlement over Petrobras, Trafigura's 2024 guilty plea over Petrobras bribes (Public Citizen).
+Why a trading house, and why fast (sentence 3). Opens on the stated reason.
+1. The administration: storage full under the U.S. blockade, money needed, a short-term mechanism; the department engaged "leading commodity marketers"; Wright: no favoritism. (storage-under-quarantine, blockade-dec16, rubio-short-term, doe-commodity-marketers, wright-no-favoritism)
+2. The two firms had sold Venezuelan oil before 2019. (traders-past-venezuela)
+3. What it paid: bought at $15 under Brent, sold at about $9 under, before shipping; one professor's estimate of $3 to $3.50 a barrel. (first-sale-prices, margin-estimate)
 
-The sides (sentence 4): Critics (Garcia, Levin): access chose the seller, and did the traders know in advance? The administration (DOE, Wright, Rubio): size and speed, temporary, opened January 29. What both agree on: the call, no tender.
+The sides (sentence 4).
+- Critics: access chose the seller; did the firms know in advance? Their records: Vitol's 2020 settlement and Trafigura's 2024 plea, both over Petrobras bribes. (garcia-advance-notice, vitol-dpa-2020, trafigura-plea-2024, levin-testimony)
+- The administration: size and speed, a temporary fix, opened to U.S. firms January 29. (doe-picked-largest, rubio-short-term, gl46-opened)
+- Both agree: Wright called Addison; there was no tender.
 
-The Catch (sentence 4): the viral post (18,000 likes) says the sale was arranged at a ski club a week before the raid for megadonors without bidding. What the record holds: the call, the vouching, the donations, no tender, and a head start that lasted: PDVSA sold only to individually licensed firms into February although any U.S. firm was legally allowed from January 29, the first two licenses run to June 2027, and the two firms made 61 percent of the account's deposits through September (the account, not all Venezuelan exports: Chevron and NABEP sell outside it). What it does not: the meeting is one secondhand account, denied by both; the vouching came at least a year earlier and, the Energy Department says, never touched the oil sales; the $300,000 went to a super PAC, 1.5 percent of its money; Trafigura got the same license with no donor tie in the filings. Then: was the no-tender pick unusual? Table: Libya 2011, Venezuela 2022, Iraq 2003, Venezuela 2026: who picked the sellers, named in license, tender, how long.
+The Catch (sentence 4). Lead: the viral post says the sale was arranged at a ski club a week before the raid, for donors, without bidding.
+1. The meeting: one person's account of what Addison told him; both deny it; the planes at Bozeman are not a meeting. (meeting-reported, meeting-denied, planes-bozeman)
+2. "Recommended by Vance": the vouching came at least a year before the call; the department says Vance and Wright never discussed the oil sales. (official-vouching-a-year-before, doe-picked-largest)
+3. "$300,000 to Vance": it went to the super PAC, 1.5 percent of its money; his gift to Vance's own committee was $10,800. (pov-300k, vance-campaign-direct, pov-thiel-share)
+4. "For donors": Trafigura got the same license with no large donor in the filings. (trafigura-no-donor)
+5. What the post gets right: no tender, and a head start that lasted. (pdvsa-licensed-only, licenses-run-2027, two-firms-61pct)
+6. Was it unusual? Table: Libya 2011, Venezuela 2022, Iraq 2003, Venezuela 2026: who chose the sellers, named in a license, tender. (libya-gl5, gl41-chevron, iraq-2003-tender, iraq-three-ways)
 
-What the coverage got right and wrong: Reuters (checks out on the record; "chairman" is co-chair), the viral post ($300,000 "to Vance" is a super PAC; "recommended by Vance" drops the timing), 10 Things (drops the timing), Garcia's "$6 million" vs Reuters' "$7 million" (they count different committees).
+Every explanation, tested: the three questions as ExplanationList entries (why Vitol, the meeting, was it unusual), with holders, evidence for and against, verdict.
 
-What happens next (sentence 5): Garcia to chair Oversight; Levin's call; Senate Democrats' September letter on the account and KPMG's $84 million audit contract; the KPMG report made public November 12 (98.7 percent disbursed, depositors' names withheld); what would settle the meeting (Vance's schedule, flight and club records, testimony).
+What the coverage got right and wrong: Reuters (checks out; "chairman" is co-chair), the viral post ($300,000 "to Vance"; "recommended by Vance"), 10 Things (drops the timing), the $6 million and $7 million figures (different committees). (reuters-says-chairman, viral-post, tenthings-recommended, trump-named-5-95m, household-7m)
 
-Background held: the California settlement and complaint (Addison named as supervisor, not a defendant); the Primerica employer field on the 2024 filings; Turnout for America's tie to Vance's ally Buskirk; Addison's jet and Yellowstone Club land; Public Citizen on the firms' penalties; NABEP; the margin estimate; the flight co-location; Executive Order 14373.
+What happens next (sentence 5): Garcia to chair Oversight; Levin wants sworn testimony; Senate Democrats' September letter and KPMG's $84 million contract; the report made public November 12 (98.7 percent paid out, depositors withheld, final recipients unnamed). (garcia-reaction, levin-testimony, senate-finance-letter, kpmg-public-report, beneficiaries-unknown)
+
+Background held: the California settlement and complaint; the Primerica employer field; Addison's jet and Yellowstone Club land; NABEP; Executive Order 14373; the Iraq audit fund; Marshall's January 9 words; Vitol's $1 billion of sales by March.
 
 ## The event
 
