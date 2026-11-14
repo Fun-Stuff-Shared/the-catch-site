@@ -683,7 +683,7 @@
   },
   {
    "id": "accounts-name-network",
-   "says": "Every account of the trigger so far names the network that links the centers, not a center building: an update to the FAA's private network (CBS), network routers (CNN's airline source), a software update (MS NOW), and the FAA's own nationwide communications failure.",
+   "says": "No account of the trigger so far says a center's own equipment failed: CBS's sources describe an update to the FAA's private network followed by a reboot and crash, MS NOW's official a software update, CNN's airline source network routers, and the FAA's own advisory a nationwide communications failure.",
    "status": "fact",
    "load": [
     "catch"
@@ -761,6 +761,190 @@
     }
    ],
    "by": "Tammy Duckworth; Maria Cantwell"
+  },
+  {
+   "id": "fti-multi-carrier",
+   "says": "L3Harris says FTI leases from several local carriers for redundancy and is upgraded in maintenance windows with parallel systems.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "l3harris-fti-page-2026-11-13",
+     "passage": "The FTI network leverages multiple local exchange carriers for robust and dependable connections."
+    },
+    {
+     "record": "l3harris-fti-page-2026-11-13",
+     "passage": "This multi-carrier approach ensures redundancy and reliability across the system."
+    },
+    {
+     "record": "l3harris-fti-page-2026-11-13",
+     "passage": "by working during maintenance windows, deploying parallel systems"
+    }
+   ],
+   "by": "L3Harris"
+  },
+  {
+   "id": "fti-half-rebuilt",
+   "says": "L3Harris said in May it had finished half of rebuilding the network that connects every tower, radar site and en-route center, deploying 150 to 200 new paths a month while the old network ran.",
+   "status": "said",
+   "load": [],
+   "evidence": [
+    {
+     "record": "l3harris-modernization-2026-05",
+     "passage": "completing 50% of a nationwide effort to rebuild the invisible backbone connecting every tower, radar facility and air traffic control center across the United States"
+    },
+    {
+     "record": "l3harris-modernization-2026-05",
+     "passage": "L3Harris is deploying 150-200 new network paths each month"
+    }
+   ],
+   "by": "L3Harris",
+   "scope": "as of May 11, 2026"
+  },
+  {
+   "id": "gao-schedules",
+   "says": "GAO reported in September that the rebuild's 11,389 projects were not on an integrated schedule, so installations at the same sites were scheduled without addressing conflicts.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "gao-26-107992",
+     "passage": "FAA had not integrated the 11,389 schedules of its 11,389 projects"
+    },
+    {
+     "record": "gao-26-107992",
+     "passage": "individual projects are scheduled to conduct different installations at the same installation sites repeatedly, generally without addressing potential conflicts"
+    }
+   ],
+   "scope": "as of May 2026"
+  },
+  {
+   "id": "dallas-2025",
+   "says": "In September 2025 the FAA blamed a Dallas outage on a local carrier's failures and said L3Harris's oversight had failed to make the backups work.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "faa-general-statements-dallas-2025-09-20",
+     "passage": "multiple failures of the TDM data telecommunications service provided by Frontier - a local telecommunications company"
+    },
+    {
+     "record": "faa-general-statements-dallas-2025-09-20",
+     "passage": "Oversight by L3Harris, an FAA contractor, failed to ensure that redundancies in the system functioned properly."
+    }
+   ],
+   "by": "the FAA"
+  },
+  {
+   "id": "cruz-telecom-money",
+   "says": "Sen. Ted Cruz said in December 2025 that the $12.5 billion would let the FAA invest in the latest telecommunications and prevent outages.",
+   "status": "said",
+   "load": [
+    "catch",
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "senate-commerce-hearing-2025-12",
+     "passage": "This funding will ensure the FAA is equipped to invest in the latest telecommunications infrastructure, prevent outages"
+    }
+   ],
+   "by": "Ted Cruz"
+  },
+  {
+   "id": "lahood-antiquated",
+   "says": "Former Transportation Secretary Ray LaHood told CNN's affiliate WEEK that very old technology may have contributed and that he assumed something happened at Potomac TRACON, the approach facility outside Washington.",
+   "status": "said",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "may have contributed to the nationwide meltdown today, former Secretary of Transportation Ray LaHood told CNN affiliate WEEK"
+    },
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "Specifically, LaHood said there was likely an issue at the Potomac Consolidated TRACON"
+    },
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "I assume something happened there."
+    }
+   ],
+   "by": "Ray LaHood"
+  },
+  {
+   "id": "flightaware-715",
+   "says": "By 7:15 p.m. Eastern, FlightAware counted more than 4,000 cancellations and 10,000 domestic delays for the day.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "axios-ground-stop-2026-11-13",
+     "passage": "As of 7:15 p.m. ET, FlightAware reported more than 10,000 domestic delays and 4,000 cancellations over the course of the day Friday."
+    }
+   ],
+   "by": "FlightAware, as reported by Axios",
+   "short": "4,000+ cancelled by 7:15 p.m."
+  },
+  {
+   "id": "diversions-600",
+   "says": "By 5:50 p.m. Eastern at least 600 flights had been diverted, 496 of them back to where they took off, by Cirium's count.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "ap-grounded-2026-11-13",
+     "passage": "At least 600 flights have been diverted so far"
+    },
+    {
+     "record": "ap-grounded-2026-11-13",
+     "passage": "496 flights were diverted to the airport from where they originally took off, while 104 were sent to a different airport, according to Cirium"
+    }
+   ],
+   "by": "Cirium, as reported by AP",
+   "short": "600 diverted by 5:50 p.m."
+  },
+  {
+   "id": "scheduled-after-4",
+   "says": "About 11,000 flights carrying more than 1.5 million passengers had been scheduled to leave U.S. airports after 4 p.m. Eastern.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "ap-grounded-2026-11-13",
+     "passage": "Some 11,000 flights carrying more than 1.5 million passengers were scheduled to take off from airports in the U.S. after 4 p.m. Eastern"
+    }
+   ],
+   "by": "AP"
+  },
+  {
+   "id": "abroad-held",
+   "says": "Europe's air traffic agency suspended U.S.-bound departures at the FAA's request, and Mexico grounded its flights to the U.S.",
+   "status": "said",
+   "load": [],
+   "evidence": [
+    {
+     "record": "usatoday-live-2026-11-13",
+     "passage": "U.S.-bound departures from 42 countries"
+    },
+    {
+     "record": "ap-grounded-2026-11-13",
+     "passage": "all scheduled flights from Mexican airports headed to the U.S. are grounded for the time being"
+    }
+   ],
+   "by": "Eurocontrol, as reported by USA Today; Mexico's aviation agency, as reported by AP"
   }
  ]
 }
