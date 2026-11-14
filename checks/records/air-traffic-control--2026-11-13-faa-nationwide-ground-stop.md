@@ -2,7 +2,7 @@
 
 Every fact line ends with its source: the record id and the record's words in square brackets (straight quotes, or curly quotes when the words hold straight ones; `admit.py check` verifies each one), or `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record.
 
-Written the evening of November 13, 2026, while the stop was still in force. Times are Eastern unless marked Z (UTC; Eastern is Z minus five hours).
+Written the evening of November 13, 2026; the stop was lifted at 8:16 p.m. Eastern. Times are Eastern unless marked Z (UTC; Eastern is Z minus five hours).
 
 ## The explanations
 
@@ -66,7 +66,7 @@ On Friday afternoon, November 13, the FAA stopped every departing flight in the 
 Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations passed 4,000.
 Every center talks over one network that contractor L3Harris runs, and unnamed sources say an update to it crashed it; the FAA has not said what failed.
 Officials see no sign of an attack, and Senate Commerce Republicans say the outage points to the aging centers themselves, but every account of the failure so far points at the network that links them.
-The FAA says it will release flights in tiers as centers recover, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
+The FAA lifted the stop at 8:16 p.m., four hours and 23 minutes after it began, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
 
 ## The plan
 
@@ -77,7 +77,7 @@ What happened (sentences 1 and 2; the event, who it hit, where it stands):
 2. Why? The FAA: "a temporary telecommunications outage"; Duffy: a communication issue at all the en-route centers, the 22 facilities that handle planes above 18,000 feet. [faa-x-telecom-outage-2026-11-13: "There has been a temporary telecommunications outage"] [abc-nefarious-2026-11-13: "Air Route Traffic Control Centers are responsible for all flights above 18,000 feet."]
 3. All of them? Duffy said all; the FAA's statement said multiple; Mullin said two areas could still communicate. [nbcchicago-faa-statement-2026-11-13: "communication issues impacting multiple Air Route Traffic Control Centers"] [npr-ground-stop-2026-11-13: "there's two areas inside the United States that are still able to communicate just fine."]
 4. Who was hit? 4,042 flights in the air at the order; at least 600 diverted by 5:50 p.m., most back to where they took off; more than 4,000 cancellations and 10,000 delays by 7:15 p.m.; 11,000 flights with 1.5 million passengers had been scheduled after 4 p.m.; Europe and Mexico held U.S.-bound departures. [flightradar24-x-2026-11-13: "At the time, 4,042 flights destined for US airports were already airborne."] [ap-grounded-2026-11-13: "496 flights were diverted to the airport from where they originally took off, while 104 were sent to a different airport, according to Cirium"] [axios-ground-stop-2026-11-13: "FlightAware reported more than 10,000 domestic delays and 4,000 cancellations"] [ap-grounded-2026-11-13: "Some 11,000 flights carrying more than 1.5 million passengers were scheduled to take off from airports in the U.S. after 4 p.m. Eastern"] [usatoday-live-2026-11-13: "U.S.-bound departures from 42 countries"] [ap-grounded-2026-11-13: "all scheduled flights from Mexican airports headed to the U.S. are grounded for the time being"]
-5. Where does it stand? Still in force at 7:37 p.m. "for a large portion of the country", with some coastal facilities releasing international departures and flights let out as centers recover. [atcscc-advzy-001-2026-11-14: "THE NATIONAL GROUND STOP REMAINS IN EFFECT FOR A LARGE PORTION OF"] [atcscc-advzy-001-2026-11-14: "SOME OF THE COASTAL FACILITIES HAVE BEEN ABLE TO RELEASE SOME INTERNATIONAL DEPARTURES."] [atcscc-advzy-120-2026-11-13: "AS ENROUTE FACILITIES RECOVER, FLIGHTS WILL BE ALLOWED TO DEPART"]
+5. Where does it stand? Lifted at 8:16 p.m.; at 7:37 p.m. it had still held "a large portion of the country", with some coastal facilities releasing international departures. [atcscc-advzy-005-2026-11-14: "THE FAA COMMAND CENTER NATIONWIDE GROUND STOP HAS BEEN"] [atcscc-advzy-005-2026-11-14: "EVENT TIME: 14/0116 - 14/0130"] [atcscc-advzy-001-2026-11-14: "THE NATIONAL GROUND STOP REMAINS IN EFFECT FOR A LARGE PORTION OF"] [atcscc-advzy-001-2026-11-14: "SOME OF THE COASTAL FACILITIES HAVE BEEN ABLE TO RELEASE SOME INTERNATIONAL DEPARTURES."] [atcscc-advzy-120-2026-11-13: "AS ENROUTE FACILITIES RECOVER, FLIGHTS WILL BE ALLOWED TO DEPART"]
 6. How rare? The second nationwide stop since 9/11; the last, in January 2023, came when contractors deleted files in the pilot-notice system. [msnow-software-update-2026-11-13: "only the second nationwide ground stop since the Sept. 11, 2001, terrorist attacks"] [faa-notam-statement-2023-01-19: "contract personnel unintentionally deleted files"]
 
 How one outage reached every center (sentence 3): opens on what failed
@@ -141,6 +141,7 @@ Travelers and crews: 4,042 flights bound for U.S. airports were airborne at the 
 | 2026-11-13 2053Z | National ground stop | [atcscc-advzy-111-2026-11-13: "EVENT TIME: 13/2053 - 14/0400"] |
 | 2026-11-13 2121Z | "Nationwide comms failure" | [atcscc-advzy-117-2026-11-13: "NATIONWIDE COMMS FAILURE."] |
 | 2026-11-13 2246Z | Stop kept to 0400Z; tiered release | [atcscc-advzy-119-2026-11-13: "THE CURRENT STRATEGY WILL BE A TIERED APPROACH"] |
+| 2026-11-14 0116Z | Stop cancelled (8:16 p.m. Eastern, Nov 13) | [atcscc-advzy-005-2026-11-14: "THE FAA COMMAND CENTER NATIONWIDE GROUND STOP HAS BEEN"] |
 
 ## Why: the stated reasons
 
@@ -186,7 +187,7 @@ See The sides. Air Space Intelligence denied SMART had any role [asi-x-smart-202
 ## Unknowns
 
 - The confirmed cause: no FAA, DOT or L3Harris statement on the record as of the latest capture (searched: FAA's X account, Duffy's, the command-center advisories, CBS's note on L3Harris).
-- When the stop lifted: at 0037Z on November 14 the command center's plan still had it in force to 0400Z with selective releases [atcscc-advzy-001-2026-11-14: "UNTIL 0400 -NATIONWIDE GROUND STOP W/SELECTIVE RELEASES"]. Watched on the advisory list; to be added when it lifts.
+- When normal flying resumes: the stop was cancelled at 0116Z [atcscc-advzy-005-2026-11-14: "EVENT TIME: 14/0116 - 14/0130"]; at 0037Z it had still been in force with selective releases [atcscc-advzy-001-2026-11-14: "UNTIL 0400 -NATIONWIDE GROUND STOP W/SELECTIVE RELEASES"]. How long recovery takes is not yet in the record.
 - Which areas kept communicating: Mullin did not name them; the advisories say only that "some of the coastal facilities" released international departures. A CBS source said East Coast international departures could fly over the Atlantic [cbs-ground-stop-2026-11-13: "International flights departing from the East Coast are able to fly over the Atlantic Ocean"].
 
 ## Leads not admitted
