@@ -63,7 +63,7 @@ Survives: A, with C as a qualifier on scope (not every area lost everything). Ru
 ## The story
 
 On Friday afternoon, November 13, the FAA stopped every departing flight in the country after what it called a temporary telecommunications outage hit the centers that guide planes between airports.
-More than 4,000 flights were in the air when it began, and by 7:15 p.m. more than 4,000 had been cancelled.
+Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations passed 4,000.
 Every center talks over one network that contractor L3Harris runs, and unnamed sources say an update to it crashed it; the FAA has not said what failed.
 Officials see no sign of an attack, and Senate Commerce Republicans say the outage points to the aging centers themselves, but every account of the failure so far points at the network that links them.
 The FAA says it will release flights in tiers as centers recover, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
