@@ -1,0 +1,766 @@
+{
+ "story": "air-traffic-control--2026-11-13-faa-nationwide-ground-stop",
+ "claims": [
+  {
+   "id": "national-stop-order",
+   "says": "At 3:53 p.m. Eastern on November 13 the FAA's command center ordered every U.S. airport to hold all departures until further notice, citing extraordinary circumstances and safety.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "EVENT TIME: 13/2053 - 14/0400"
+    },
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "ALL AIRPORTS ARE GROUND STOPPED"
+    },
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "DUE TO EXTRAORDINARY CIRCUMSTANCES AND FOR REASONS OF SAFETY."
+    }
+   ],
+   "short": "3:53 p.m.: every U.S. airport stopped"
+  },
+  {
+   "id": "faa-telecom-outage",
+   "says": "The FAA said a temporary telecommunications outage was the reason and that it halted flights out of an abundance of caution.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "faa-x-telecom-outage-2026-11-13",
+     "passage": "There has been a temporary telecommunications outage"
+    },
+    {
+     "record": "faa-x-telecom-outage-2026-11-13",
+     "passage": "out of an abundance of caution all flights have been halted"
+    }
+   ],
+   "by": "the FAA"
+  },
+  {
+   "id": "duffy-all-centers",
+   "says": "Transportation Secretary Sean Duffy said the stop followed a communication issue affecting all of the FAA's en-route centers.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "duffy-x-ground-stop-2026-11-13",
+     "passage": "following a communication issue impacting all Air Route Traffic Control Centers"
+    }
+   ],
+   "by": "Sean Duffy"
+  },
+  {
+   "id": "faa-multiple-centers",
+   "says": "An FAA statement said the issues affected multiple en-route centers.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "nbcchicago-faa-statement-2026-11-13",
+     "passage": "communication issues impacting multiple Air Route Traffic Control Centers"
+    }
+   ],
+   "by": "the FAA, as quoted by NBC Chicago"
+  },
+  {
+   "id": "mullin-two-areas",
+   "says": "Homeland Security Secretary Markwayne Mullin said two areas of the country could still communicate normally, without naming them.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "npr-ground-stop-2026-11-13",
+     "passage": "there's two areas inside the United States that are still able to communicate just fine."
+    }
+   ],
+   "by": "Markwayne Mullin, as quoted by NPR"
+  },
+  {
+   "id": "centers-defined",
+   "says": "The FAA's 22 en-route centers handle flights above 18,000 feet.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "abc-nefarious-2026-11-13",
+     "passage": "Air Route Traffic Control Centers are responsible for all flights above 18,000 feet."
+    },
+    {
+     "record": "abc-nefarious-2026-11-13",
+     "passage": "There are 22 of those centers in the U.S."
+    }
+   ]
+  },
+  {
+   "id": "airborne-4042",
+   "says": "4,042 flights bound for U.S. airports were in the air when the stop was ordered, by Flightradar24's count.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "flightradar24-x-2026-11-13",
+     "passage": "At the time, 4,042 flights destined for US airports were already airborne."
+    }
+   ],
+   "by": "Flightradar24",
+   "short": "4,042 flights in the air"
+  },
+  {
+   "id": "flightaware-604",
+   "says": "By 6:04 p.m. Eastern, FlightAware counted 1,913 cancelled and 10,494 delayed flights nationwide.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "abc-live-2026-11-13",
+     "passage": "As of 6:04 p.m., 1,913 flights have been cancelled and 10,494 flights have been delayed nationwide amid the ground stop, according to FlightAware."
+    }
+   ],
+   "by": "FlightAware, as reported by ABC News",
+   "short": "1,913 cancelled, 10,494 delayed by 6:04 p.m."
+  },
+  {
+   "id": "sequence-chicago",
+   "says": "The first stops of the afternoon were at Chicago: O'Hare at 3:10 p.m. Eastern for communications issues and Midway at 3:17, before the national stop at 3:53.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-107-2026-11-13",
+     "passage": "GROUND STOP PERIOD: 13/2010Z - 13/2130Z"
+    },
+    {
+     "record": "atcscc-advzy-107-2026-11-13",
+     "passage": "COMMENTS: COMMS ISSUES"
+    },
+    {
+     "record": "atcscc-advzy-109-2026-11-13",
+     "passage": "GROUND STOP PERIOD: 13/2017Z - 13/2130Z"
+    },
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "EVENT TIME: 13/2053 - 14/0400"
+    }
+   ],
+   "short": "O'Hare 3:10, Midway 3:17, nation 3:53"
+  },
+  {
+   "id": "nationwide-comms-failure",
+   "says": "At 4:21 p.m. the FAA's command center put every en-route center on longer flight-plan times because of what it called a nationwide communications failure.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-117-2026-11-13",
+     "passage": "FOR ALL ENROUTE CENTERS DUE TO"
+    },
+    {
+     "record": "atcscc-advzy-117-2026-11-13",
+     "passage": "NATIONWIDE COMMS FAILURE."
+    }
+   ],
+   "short": "4:21 p.m.: \"nationwide comms failure\""
+  },
+  {
+   "id": "airborne-holding",
+   "says": "Flights already in the air were told to expect holding at any airport because of equipment outages.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-116-2026-11-13",
+     "passage": "AIRBORNE HOLDING TO ANY AND ALL AIRPORTS WITHIN THE"
+    }
+   ]
+  },
+  {
+   "id": "radio-radar",
+   "says": "An Alaska Airlines internal message seen by CNBC said the problems involved communications and radar.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "cnbc-ground-stop-2026-11-13",
+     "passage": "The issues were related to communications and radar problems, according to an internal message from Alaska Airlines, which was seen by CNBC."
+    }
+   ],
+   "by": "Alaska Airlines, in a message seen by CNBC"
+  },
+  {
+   "id": "stop-kept-0400",
+   "says": "At 5:46 p.m. the command center kept the stop in force to 11 p.m., giving communications failure as the reason, and said flights would leave as en-route centers recovered.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-120-2026-11-13",
+     "passage": "EVENT TIME: 13/2245 - 14/0400"
+    },
+    {
+     "record": "atcscc-advzy-120-2026-11-13",
+     "passage": "REASON: COMMUNICATIONS FAILURE"
+    },
+    {
+     "record": "atcscc-advzy-120-2026-11-13",
+     "passage": "AS ENROUTE FACILITIES RECOVER, FLIGHTS WILL BE ALLOWED TO DEPART"
+    }
+   ]
+  },
+  {
+   "id": "tiered-release",
+   "says": "The command center said traffic would be released in tiers as limits eased.",
+   "status": "plans",
+   "load": [],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-119-2026-11-13",
+     "passage": "THE CURRENT STRATEGY WILL BE A TIERED APPROACH"
+    }
+   ]
+  },
+  {
+   "id": "still-in-force-0037z",
+   "says": "At 7:37 p.m. Eastern the command center said the stop remained in effect for a large portion of the country, with some coastal facilities releasing international departures.",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-001-2026-11-14",
+     "passage": "THE NATIONAL GROUND STOP REMAINS IN EFFECT FOR A LARGE PORTION OF"
+    },
+    {
+     "record": "atcscc-advzy-001-2026-11-14",
+     "passage": "SOME OF THE COASTAL FACILITIES HAVE BEEN ABLE TO RELEASE SOME INTERNATIONAL DEPARTURES."
+    }
+   ],
+   "scope": "as of 7:37 p.m. Eastern, November 13"
+  },
+  {
+   "id": "cbs-update-crash",
+   "says": "CBS News, citing multiple sources, reported that an update to the FAA's private communications network made it reboot and crash, and that L3Harris operates that network.",
+   "status": "alleged",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "cbs-ground-stop-2026-11-13",
+     "passage": "An update to the private communications network that connects America's air traffic control system caused the system to reboot, leading to a crash and a communications outage, multiple sources told CBS News."
+    },
+    {
+     "record": "cbs-ground-stop-2026-11-13",
+     "passage": "The system is operated by L3Harris"
+    }
+   ],
+   "by": "unnamed sources, to CBS News"
+  },
+  {
+   "id": "l3harris-no-comment",
+   "says": "L3Harris did not respond to CBS News' request for comment.",
+   "status": "fact",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "cbs-ground-stop-2026-11-13",
+     "passage": "which did not immediately respond to CBS News' request for comment"
+    }
+   ]
+  },
+  {
+   "id": "msnow-software-update",
+   "says": "A federal official with direct knowledge of the investigation told MS NOW that a software update caused the stop.",
+   "status": "alleged",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "msnow-software-update-2026-11-13",
+     "passage": "A software update caused the rare nationwide ground stop"
+    },
+    {
+     "record": "msnow-software-update-2026-11-13",
+     "passage": "a federal official with direct knowledge of the investigation told MS NOW"
+    }
+   ],
+   "by": "an unnamed federal official, to MS NOW"
+  },
+  {
+   "id": "fbi-software-inquiry",
+   "says": "A person familiar with the matter told Bloomberg the FBI does not believe a cyberattack or crime caused the outage and is looking at whether a software update did.",
+   "status": "alleged",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "bloomberg-fbi-software-2026-11-13",
+     "passage": "doesn’t believe the communication issue affecting air traffic control was due to a cyberattack or criminality"
+    },
+    {
+     "record": "bloomberg-fbi-software-2026-11-13",
+     "passage": "One area of inquiry is whether the outage was caused by a software update, the person said."
+    }
+   ],
+   "by": "a person familiar with the matter, to Bloomberg"
+  },
+  {
+   "id": "cnn-routers-midway",
+   "says": "An airline source told CNN the FAA had told airlines the outages came from a problem with network routers that is believed to have started at Chicago Midway and cascaded nationwide.",
+   "status": "alleged",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "The Federal Aviation Administration told airlines the nationwide outages that prompted the ground stop were the result of a problem with network routers, according to an airline source."
+    },
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "The problem is believed to have started at Chicago Midway International Airport and cascaded nationwide."
+    }
+   ],
+   "by": "an airline source, to CNN"
+  },
+  {
+   "id": "cnn-software-not-attack",
+   "says": "A senior U.S. security source told CNN authorities believe the cause was a communication software issue rather than an intentional act, with still no indication of an attack.",
+   "status": "alleged",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "Authorities continue to believe the issue was caused by a communication software issue rather than an intentional act, the source said"
+    },
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "“Still no indication this was an attack,” the senior security source said late Friday."
+    }
+   ],
+   "by": "a senior U.S. security source, to CNN"
+  },
+  {
+   "id": "mullin-no-attack-yet",
+   "says": "Mullin said there was no indication yet of a nefarious attack and called it a telecommunications outage throughout the FAA.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mullin-rr47-x-2026-11-13",
+     "passage": "There is no indication as of yet that this was a nefarious attack."
+    },
+    {
+     "record": "mullin-rr47-x-2026-11-13",
+     "passage": "This was a telecommunications outage throughout FAA."
+    }
+   ],
+   "by": "Markwayne Mullin"
+  },
+  {
+   "id": "mullin-rules-nothing-out",
+   "says": "Mullin declined to rule out a cyberattack.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "geekwire-mullin-2026-11-13",
+     "passage": "Mullin also declined to rule out a cyberattack, saying, “We’re not ruling out anything at this point.”"
+    }
+   ],
+   "by": "Markwayne Mullin, as quoted by GeekWire"
+  },
+  {
+   "id": "verizon-fine",
+   "says": "Verizon said its network was fully functioning and it knew of no issue with air traffic control systems.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "verizon-via-deitaone-x-2026-11-13",
+     "passage": "VERIZON’S NETWORK IS FULLY FUNCTIONING"
+    },
+    {
+     "record": "verizon-via-deitaone-x-2026-11-13",
+     "passage": "WE ARE NOT AWARE OF ANY ISSUE RELATED TO AIR TRAFFIC CONTROL SYSTEMS"
+    }
+   ],
+   "by": "Verizon, as posted by Walter Bloomberg"
+  },
+  {
+   "id": "smart-recommends-only",
+   "says": "The FAA says SMART cannot take over control of an aircraft and that FAA staff review all its recommendations.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "faa-smart-launch-2026-09-21",
+     "passage": "SMART cannot be used to replace the critical role air traffic controllers play or take over control of an aircraft."
+    },
+    {
+     "record": "faa-smart-launch-2026-09-21",
+     "passage": "All of SMART’s recommendations are reviewed by FAA staff"
+    }
+   ],
+   "by": "the FAA"
+  },
+  {
+   "id": "smart-22-centers",
+   "says": "The FAA said on November 10 that SMART would cover the airspace of all 22 en-route centers.",
+   "status": "said",
+   "load": [],
+   "evidence": [
+    {
+     "record": "usatoday-live-2026-11-13",
+     "passage": "The FAA said its expansion would cover airspace managed by all 22 regional air traffic control centers."
+    }
+   ],
+   "by": "the FAA, as reported by USA Today"
+  },
+  {
+   "id": "asi-denial",
+   "says": "Air Space Intelligence, which makes SMART, said the stop was not caused by SMART, any of its products or its integration with the FAA.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "asi-x-smart-2026-11-13",
+     "passage": "The current ground stop is not based on or a result of the SMART system, any product of ASI or our integration with FAA and ATC."
+    }
+   ],
+   "by": "Air Space Intelligence"
+  },
+  {
+   "id": "dhs-examining-smart",
+   "says": "Mullin said DHS was looking at whether SMART was linked.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "geekwire-mullin-2026-11-13",
+     "passage": "Asked about a possible link between the outage and the new system, Mullin said, “We’re looking at that,”"
+    }
+   ],
+   "by": "Markwayne Mullin, as quoted by GeekWire"
+  },
+  {
+   "id": "microsoft-separate",
+   "says": "Microsoft said it had no indication the stop was related to its outage, and Mullin called them separate issues.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "nbc-live-2026-11-13",
+     "passage": "Microsoft has no indication that the FAA nationwide ground stop is related to the recent service disruption"
+    },
+    {
+     "record": "geekwire-mullin-2026-11-13",
+     "passage": "Those are separate issues."
+    }
+   ],
+   "by": "Microsoft; Markwayne Mullin"
+  },
+  {
+   "id": "ramirez-cuts-question",
+   "says": "Rep. Delia Ramirez asked whether the administration's cuts and changes to the FAA were responsible.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ramirez-x-2026-11-13",
+     "passage": "We must be clear whether the Trump administration's cuts and changes to the FAA are responsible for today's disruptions."
+    }
+   ],
+   "by": "Rep. Delia Ramirez"
+  },
+  {
+   "id": "staffing-triggers-few",
+   "says": "The command center's plan listed staffing limits at four facilities, separate from the nationwide stop.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "atcscc-advzy-119-2026-11-13",
+     "passage": "STAFFING TRIGGER(S):"
+    },
+    {
+     "record": "atcscc-advzy-119-2026-11-13",
+     "passage": "UNTIL 0200\t-ZNY AREA A"
+    }
+   ],
+   "scope": "the 5:46 p.m. operations plan"
+  },
+  {
+   "id": "fti-single-network",
+   "says": "FTI replaced the FAA's separate telecommunications networks with a single network carrying voice and radar for air traffic control to over 4,400 FAA sites.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "oig-fti-2006-04-27",
+     "passage": "telecommunications networks with a single network"
+    },
+    {
+     "record": "oig-fti-2006-04-27",
+     "passage": "telecommunication services (e.g., voice and radar) for air traffic control"
+    },
+    {
+     "record": "oig-fti-2006-04-27",
+     "passage": "4,400 FAA sites."
+    }
+   ],
+   "short": "one network, voice and radar, 4,400 sites",
+   "scope": "as the inspector general described it in 2006"
+  },
+  {
+   "id": "bedford-1980s-network",
+   "says": "FAA Administrator Bryan Bedford told Congress in September that the network the FAA is replacing is a 1980s design that connects airports, weather systems, radar, voice communications and aircraft.",
+   "status": "said",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "bedford-testimony-2026-09-15",
+     "passage": "It replaces an aging and extremely limited 1980’s network architecture that presently connects airports, weather systems, radar, voice communications, and aircraft."
+    }
+   ],
+   "by": "Bryan Bedford"
+  },
+  {
+   "id": "chicago-fire-2014",
+   "says": "In 2014 a fire set by a contract employee at the Chicago en-route center destroyed FTI equipment and left the center unable to control traffic for more than two weeks.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "oig-disruptions-2017-01-11",
+     "passage": "an FAA contract employee deliberately started a"
+    },
+    {
+     "record": "oig-disruptions-2017-01-11",
+     "passage": "As a result of the damage, Chicago Center was unable to control air traffic for more"
+    }
+   ]
+  },
+  {
+   "id": "sept-2026-backup-cut",
+   "says": "In September the FAA switched a Philadelphia facility to backup lines on L3Harris's advice, a contractor then cut the backup line, and Bedford said the old system lacks redundancy.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "thehill-sept-outage-2026-09-24",
+     "passage": "The FAA said it was advised on Sunday by L3Harris, a technology contractor, to switch to the backup lines in order to begin troubleshooting at a Philadelphia air traffic control facility"
+    },
+    {
+     "record": "thehill-sept-outage-2026-09-24",
+     "passage": "a New Jersey Transit contractor on Monday accidentally cut the backup fiber line"
+    },
+    {
+     "record": "thehill-sept-outage-2026-09-24",
+     "passage": "When it fails, we just don’t have the redundancy that we would get if we had a modern architecture,"
+    }
+   ]
+  },
+  {
+   "id": "fens-replacement",
+   "says": "The FAA awarded FENS to Verizon in 2023 to replace FTI; in August 2026 AT&T took over the lead, with Verizon in support.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "oig-contracts-2024-02-26",
+     "passage": "FAA Enterprise Network Services contract in March 2023"
+    },
+    {
+     "record": "nextgov-att-fens-2026-08-14",
+     "passage": "AT&T is taking over as the lead project manager and prime contractor with Verizon moving to a supporting role"
+    }
+   ]
+  },
+  {
+   "id": "senate-commerce-claim",
+   "says": "Senate Commerce Republicans said the outage appeared related to the en-route centers and showed the need to prioritize modernizing those centers over other projects.",
+   "status": "said",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "senate-commerce-x-2026-11-13",
+     "passage": "It appears to be related to FAA's ARTCCs."
+    },
+    {
+     "record": "senate-commerce-x-2026-11-13",
+     "passage": "the incident highlights the need to prioritize modernizing ARTCCs over other projects"
+    }
+   ],
+   "by": "Senate Commerce Republicans"
+  },
+  {
+   "id": "senate-commerce-19b",
+   "says": "The committee's Republicans cited $1.9 billion Sen. Ted Cruz secured to replace and consolidate the centers.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "senate-commerce-x-2026-11-13",
+     "passage": "successfully got $1.9 billion in Working Families Tax Cut Act to replace and consolidate outdated ARTCCs"
+    }
+   ],
+   "by": "Senate Commerce Republicans"
+  },
+  {
+   "id": "faa-telecom-top-priority",
+   "says": "The FAA's own plan for the rebuild calls telecommunications one of its top priorities because it connects the airspace system together.",
+   "status": "said",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "faa-bnatcs-fact-sheet-2025-12-04",
+     "passage": "Telecommunications, however, is one of the top priorities since it connects the NAS together"
+    }
+   ],
+   "by": "the FAA"
+  },
+  {
+   "id": "accounts-name-network",
+   "says": "Every account of the trigger so far names the network that links the centers, not a center building: an update to the FAA's private network (CBS), network routers (CNN's airline source), a software update (MS NOW), and the FAA's own nationwide communications failure.",
+   "status": "fact",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "cbs-ground-stop-2026-11-13",
+     "passage": "An update to the private communications network that connects America's air traffic control system"
+    },
+    {
+     "record": "cnn-live-2026-11-13",
+     "passage": "the result of a problem with network routers"
+    },
+    {
+     "record": "msnow-software-update-2026-11-13",
+     "passage": "A software update caused the rare nationwide ground stop"
+    },
+    {
+     "record": "atcscc-advzy-117-2026-11-13",
+     "passage": "NATIONWIDE COMMS FAILURE."
+    }
+   ],
+   "scope": "as of the evening of November 13"
+  },
+  {
+   "id": "second-since-911",
+   "says": "Two people at the FAA confirmed this was only the second nationwide ground stop since the September 11 attacks; the first was in 2023.",
+   "status": "said",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "msnow-software-update-2026-11-13",
+     "passage": "Two people at the FAA confirmed that Friday’s ground stop was only the second nationwide ground stop since the Sept. 11, 2001, terrorist attacks."
+    }
+   ],
+   "by": "two people at the FAA, to MS NOW"
+  },
+  {
+   "id": "notam-2023",
+   "says": "The January 2023 nationwide stop came after contract personnel unintentionally deleted files in the pilot-notice database, and lasted from about 7:15 to 9:07 a.m.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "faa-notam-statement-2023-01-19",
+     "passage": "contract personnel unintentionally deleted files while working to correct synchronization between the live primary database and a backup database"
+    },
+    {
+     "record": "nolen-testimony-2023-02-15",
+     "passage": "I ordered a ground stop at approximately 7:15 a.m. EST"
+    },
+    {
+     "record": "nolen-testimony-2023-02-15",
+     "passage": "I lifted the ground stop at 9:07 a.m. EST"
+    }
+   ]
+  },
+  {
+   "id": "investigations",
+   "says": "Sen. Tammy Duckworth called for a full investigation, and Sen. Maria Cantwell said the Commerce Committee will review primary and backup frequencies.",
+   "status": "said",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "duckworth-x-2026-11-13",
+     "passage": "Whatever led to the nationwide ground stop will warrant a thorough and complete investigation."
+    },
+    {
+     "record": "usatoday-live-2026-11-13",
+     "passage": "Technology issues related to how planes communicate through primary frequencies, backup frequencies, and other issues will be something the Commerce Committee will be reviewing"
+    }
+   ],
+   "by": "Tammy Duckworth; Maria Cantwell"
+  }
+ ]
+}
