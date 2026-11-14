@@ -856,6 +856,52 @@
       "quote_span_check": "byte_exact",
       "about": "the order lifting the stop",
       "capture_status": "fly.faa.gov advisory database; fetched with curl, saved as published HTML, text from its <pre> block with number and send time from the day's list"
+    },
+    {
+      "id": "wh-briefing-2026-11-13",
+      "title": "Secretary Mullin and Secretary Duffy Brief Members of the Press on the FAA Ground Stop",
+      "publisher": "The White House",
+      "date": "2026-11-13",
+      "url": "https://www.youtube.com/watch?v=Mh2q-y0wIu8",
+      "pinned_path": "data/sources/air-traffic-control/wh-briefing-2026-11-13.opus",
+      "text_path": "data/sources/air-traffic-control/wh-briefing-2026-11-13.txt",
+      "text_sha256": "sha256:c33ddfbf5c4cb32730c0a2c08efcabe19946b8fe3fc52ba7b414a5d3d432fa97",
+      "quote": "Our switches uh our routers actually got overloaded with data",
+      "quote_span_check": "byte_exact",
+      "about": "the transportation and homeland security secretaries' evening briefing",
+      "capture_status": "The White House's YouTube upload of the evening briefing; audio pulled with yt-dlp and pinned as Opus, transcribed locally with undertone (fluidaudio-pyannote); the onset time rechecked with whisper medium; speakers labeled only where the audio names them. Capture cannot fetch video; the core had not pinned it."
+    },
+    {
+      "id": "guardian-live-2026-11-13",
+      "title": "US flight outage live updates: FAA lifts nationwide ground stop; Trump officials suggest new tech overwhelmed old equipment",
+      "publisher": "The Guardian",
+      "date": "2026-11-13",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/13/us-politics-latest-news-updates-democrats-republicans-donald-trump-van-hollen-chuck-schumer",
+      "pinned_path": "data/sources/coverage/guardian-live-2026-11-13.html",
+      "text_path": "data/sources/coverage/guardian-live-2026-11-13.txt",
+      "text_sha256": "sha256:af6f6cc7b2d51ce9a7836d88ab00de9765a643ac42480ade7308e9190b452974",
+      "quote": "Trump officials suggest new tech overwhelmed old equipment",
+      "quote_span_check": "byte_exact",
+      "about": "coverage of the briefing",
+      "capture_run": "capture-oneoff-20261114T021751Z",
+      "capture_raw_sha256": "sha256:6b0dcaf1471016e9a74de3826516a21b964df1541e974997b28e5da7a847fb0d",
+      "captured_at": "2026-11-14T02:17:56.507811Z"
+    },
+    {
+      "id": "ap-grounded-late-2026-11-13",
+      "title": "FAA grounds US flights (later version)",
+      "publisher": "Associated Press",
+      "date": "2026-11-13",
+      "url": "https://apnews.com/article/faa-us-flights-grounded-extraordinary-circumstances-6aaa6bd4991ef22eb0c3baa6961a91d1",
+      "pinned_path": "data/sources/coverage/ap-grounded-late-2026-11-13.html",
+      "text_path": "data/sources/coverage/ap-grounded-late-2026-11-13.txt",
+      "text_sha256": "sha256:4863e7d707ac464fac4a1ce024107f4abd873921fb35fbf768fa51e132b4ced4",
+      "quote": "The airline said its flights within the state of Alaska and its “neighbor island” flights in Hawaii are not impacted by the nationwide grounding of flights.",
+      "quote_span_check": "byte_exact",
+      "about": "exceptions to the stop; disruption into Saturday",
+      "capture_run": "capture-oneoff-20261114T021751Z",
+      "capture_raw_sha256": "sha256:b3a0c108a4810cd7bc892cbe2e48d8af3d1a0c52950b0b915833973996e940ea",
+      "captured_at": "2026-11-14T02:17:53.254374Z"
     }
   ],
   "story_sources": [
@@ -1243,6 +1289,27 @@
       "label": "FAA Air Traffic Control System Command Center, ATCSCC Advisory 005 (Nov 14)",
       "meta": " · published 2026-11-14",
       "usage": "when the stop lifted"
+    },
+    {
+      "id": "wh-briefing-2026-11-13",
+      "group": "official",
+      "label": "The White House, Secretary Mullin and Secretary Duffy brief the press on the FAA ground stop",
+      "meta": " · November 13, 2026",
+      "usage": "the on-record cause; the catch"
+    },
+    {
+      "id": "guardian-live-2026-11-13",
+      "group": "coverage",
+      "label": "The Guardian, US flight outage live updates",
+      "meta": " · published 2026-11-13",
+      "usage": "how the briefing was read"
+    },
+    {
+      "id": "ap-grounded-late-2026-11-13",
+      "group": "coverage",
+      "label": "Associated Press, FAA grounds US flights (later version)",
+      "meta": " · published 2026-11-13",
+      "usage": "scope; what comes next"
     }
   ]
 }
