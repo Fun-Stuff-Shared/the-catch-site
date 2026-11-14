@@ -42,7 +42,7 @@ export const n = {
 export const event = {
   slug: "venezuela-oil/2026-11-10-kpmg-report-venezuela-oil-account",
   title: "The U.S. took in $12 billion for Venezuela's oil. Nearly all of it went back to Venezuela.",
-  dek: "Of the $12.26 billion buyers paid into the U.S.-held account through September, $12.11 billion went back out at the request of Venezuela's central bank, almost all of it as dollars sold through Venezuelan banks, a State Department report shows.",
+  dek: "Through September, buyers paid $12.26 billion, nearly all of it for Venezuela's oil, into accounts the United States controls. A State Department report shows $12.11 billion went back out at the request of Venezuela's central bank, almost all of it as dollars sold through Venezuelan banks to businesses and people.",
   name: "Where the U.S.-held Venezuela oil money went",
   date: "2026-11-10",
   updated: "2026-11-13",
