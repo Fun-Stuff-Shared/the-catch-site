@@ -3,7 +3,7 @@
  "claims": [
   {
    "id": "national-stop-order",
-   "says": "At 3:53 p.m. Eastern on November 13 the FAA's command center ordered every U.S. airport to hold all departures until further notice, citing extraordinary circumstances and safety.",
+   "says": "In an advisory sent at 3:54 p.m. Eastern on November 13 and effective from 3:53, the FAA's command center ordered every U.S. airport to hold all departing flights until further notice, citing extraordinary circumstances and safety; inbound international flights were to be handled case by case.",
    "status": "fact",
    "load": [
     "spine"
@@ -20,9 +20,17 @@
     {
      "record": "atcscc-advzy-111-2026-11-13",
      "passage": "DUE TO EXTRAORDINARY CIRCUMSTANCES AND FOR REASONS OF SAFETY."
+    },
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "SEND TIME: 11/13/26 20:54Z"
+    },
+    {
+     "record": "atcscc-advzy-111-2026-11-13",
+     "passage": "INBOUND INTERNATIONAL FLIGHTS WILL BE MANAGED ON A CASE BY CASE BASIS."
     }
    ],
-   "short": "3:53 p.m.: every U.S. airport stopped"
+   "short": "Departures held at every U.S. airport"
   },
   {
    "id": "faa-telecom-outage",
@@ -118,7 +126,7 @@
     }
    ],
    "by": "Flightradar24",
-   "short": "4,042 flights in the air"
+   "short": "4,042 U.S.-bound flights in the air"
   },
   {
    "id": "flightaware-604",
@@ -138,7 +146,7 @@
   },
   {
    "id": "sequence-chicago",
-   "says": "The first stops of the afternoon were at Chicago: O'Hare at 3:10 p.m. Eastern for communications issues and Midway at 3:17, before the national stop at 3:53.",
+   "says": "Before the national stop at 3:53 p.m., O'Hare was ground-stopped at 3:10 p.m. Eastern for communications issues and Midway at 3:17.",
    "status": "fact",
    "load": [
     "spine"
@@ -161,11 +169,11 @@
      "passage": "EVENT TIME: 13/2053 - 14/0400"
     }
    ],
-   "short": "O'Hare 3:10, Midway 3:17, nation 3:53"
+   "short": "O'Hare ground-stopped for communications issues; Midway follows at 3:17"
   },
   {
    "id": "nationwide-comms-failure",
-   "says": "At 4:21 p.m. the FAA's command center put every en-route center on longer flight-plan times because of what it called a nationwide communications failure.",
+   "says": "At 4:21 p.m. the FAA's command center had every en-route center keep filed flight plans in the system longer, 240 minutes, because of what it called a nationwide communications failure.",
    "status": "fact",
    "load": [
     "spine"
@@ -178,9 +186,13 @@
     {
      "record": "atcscc-advzy-117-2026-11-13",
      "passage": "NATIONWIDE COMMS FAILURE."
+    },
+    {
+     "record": "atcscc-advzy-117-2026-11-13",
+     "passage": "EXTENDED FLIGHT PLAN DROP TIMES TO 240 MINUTES"
     }
    ],
-   "short": "4:21 p.m.: \"nationwide comms failure\""
+   "short": "Command center cites a \"nationwide comms failure\""
   },
   {
    "id": "airborne-holding",
@@ -211,7 +223,7 @@
   },
   {
    "id": "stop-kept-0400",
-   "says": "At 5:46 p.m. the command center kept the stop in force to 11 p.m., giving communications failure as the reason, and said flights would leave as en-route centers recovered.",
+   "says": "At 5:46 p.m. the command center kept the stop in force, listing a window to 11 p.m., gave communications failure as the reason, and said flights would leave as en-route centers recovered.",
    "status": "fact",
    "load": [
     "spine"
@@ -283,7 +295,7 @@
   },
   {
    "id": "l3harris-no-comment",
-   "says": "L3Harris did not respond to CBS News' request for comment.",
+   "says": "L3Harris did not immediately respond to CBS News' request for comment.",
    "status": "fact",
    "load": [
     "person"
@@ -541,7 +553,7 @@
   },
   {
    "id": "fti-single-network",
-   "says": "FTI replaced the FAA's separate telecommunications networks with a single network carrying voice and radar for air traffic control to over 4,400 FAA sites.",
+   "says": "FTI was planned to replace the FAA's separate telecommunications networks with a single network carrying voice and radar for air traffic control, at over 4,400 FAA sites.",
    "status": "fact",
    "load": [
     "spine"
@@ -561,7 +573,7 @@
     }
    ],
    "short": "one network, voice and radar, 4,400 sites",
-   "scope": "as the inspector general described it in 2006"
+   "scope": "as the inspector general described the plan in 2006"
   },
   {
    "id": "bedford-1980s-network",
@@ -596,7 +608,7 @@
   },
   {
    "id": "sept-2026-backup-cut",
-   "says": "In September the FAA switched a Philadelphia facility to backup lines on L3Harris's advice, a contractor then cut the backup line, and Bedford said the old system lacks redundancy.",
+   "says": "In September the FAA switched a Philadelphia facility to backup lines on L3Harris's advice, a contractor then accidentally cut the backup line, and FAA Administrator Bryan Bedford said: \"When it fails, we just don’t have the redundancy that we would get if we had a modern architecture.\"",
    "status": "fact",
    "load": [
     "spine"
@@ -680,31 +692,6 @@
    "by": "the FAA"
   },
   {
-   "id": "accounts-name-network",
-   "says": "No account of the trigger so far says a center's own equipment failed: CBS's sources describe an update to the FAA's private network followed by a reboot and crash, MS NOW's official a software update, CNN's airline source network routers, and the FAA's own advisory a nationwide communications failure.",
-   "status": "fact",
-   "load": [],
-   "evidence": [
-    {
-     "record": "cbs-ground-stop-2026-11-13",
-     "passage": "An update to the private communications network that connects America's air traffic control system"
-    },
-    {
-     "record": "cnn-live-2026-11-13",
-     "passage": "the result of a problem with network routers"
-    },
-    {
-     "record": "msnow-software-update-2026-11-13",
-     "passage": "A software update caused the rare nationwide ground stop"
-    },
-    {
-     "record": "atcscc-advzy-117-2026-11-13",
-     "passage": "NATIONWIDE COMMS FAILURE."
-    }
-   ],
-   "scope": "as of the evening of November 13"
-  },
-  {
    "id": "second-since-911",
    "says": "Two people at the FAA confirmed this was only the second nationwide ground stop since the September 11 attacks; the first was in 2023.",
    "status": "said",
@@ -760,7 +747,7 @@
   },
   {
    "id": "fti-multi-carrier",
-   "says": "L3Harris says FTI leases from several local carriers for redundancy and is upgraded in maintenance windows with parallel systems.",
+   "says": "L3Harris says FTI uses several local phone carriers for redundancy and is upgraded in maintenance windows with parallel systems.",
    "status": "said",
    "load": [
     "spine"
@@ -873,7 +860,7 @@
   },
   {
    "id": "flightaware-715",
-   "says": "By 7:15 p.m. Eastern, FlightAware counted more than 4,000 cancellations and 10,000 domestic delays for the day.",
+   "says": "By 7:15 p.m. Eastern, FlightAware counted 4,000 cancellations and more than 10,000 domestic delays for the day.",
    "status": "said",
    "load": [
     "figure"
@@ -885,7 +872,7 @@
     }
    ],
    "by": "FlightAware, as reported by Axios",
-   "short": "4,000+ cancelled by 7:15 p.m."
+   "short": "4,000 cancelled by 7:15 p.m."
   },
   {
    "id": "diversions-600",
@@ -946,7 +933,7 @@
    "load": [
     "figure"
    ],
-   "short": "8:16 p.m.: stop lifted",
+   "short": "Stop lifted",
    "evidence": [
     {
      "record": "atcscc-advzy-005-2026-11-14",
@@ -1031,7 +1018,7 @@
     }
    ],
    "by": "Sean Duffy",
-   "short": "3:36 p.m.: instability, per Duffy"
+   "short": "Radar and radio unstable across the country, per Duffy"
   },
   {
    "id": "duffy-not-all-lost",
@@ -1142,7 +1129,7 @@
   },
   {
    "id": "duffy-smart-disconnected",
-   "says": "Duffy said SMART is not connected to the FAA's radar and automation systems and could not have caused the outage.",
+   "says": "Duffy said SMART is not plugged into STARS and ERAM, is completely disconnected, and could not have caused the outage.",
    "status": "said",
    "load": [
     "spine"
@@ -1155,6 +1142,10 @@
     {
      "record": "wh-briefing-2026-11-13",
      "passage": "So there's no possible way smart would have impacted what"
+    },
+    {
+     "record": "wh-briefing-2026-11-13",
+     "passage": "Uh it's not this is this is completely disconnected."
     }
    ],
    "by": "Sean Duffy"
@@ -1273,6 +1264,56 @@
     {
      "record": "geekwire-mullin-2026-11-13",
      "passage": "The Microsoft outage started Thursday morning in Exchange Online, the service that runs Outlook email for businesses"
+    }
+   ]
+  },
+  {
+   "id": "fti-carries-all",
+   "says": "L3Harris says the network it operates carries all of the air traffic system's mission-critical and safety-sensitive services, including voice and radar, and connects every tower, radar facility and en-route center.",
+   "status": "said",
+   "by": "L3Harris",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "l3harris-modernization-2026-05",
+     "passage": "the transmission of all mission-critical and safety-sensitive services across the National Airspace System"
+    },
+    {
+     "record": "l3harris-modernization-2026-05",
+     "passage": "connecting every tower, radar facility and air traffic control center across the United States"
+    },
+    {
+     "record": "l3harris-modernization-2026-05",
+     "passage": "voice, video, radar, weather, flight data and more"
+    }
+   ]
+  },
+  {
+   "id": "duffy-not-rule-out-nefarious",
+   "says": "Duffy said he did not want to rule out nefarious activity, which he left to Mullin and the cybersecurity team.",
+   "status": "said",
+   "by": "Sean Duffy",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "wh-briefing-2026-11-13",
+     "passage": "I don't want to rule out that we didn't have nefarious activity here. That's Mark Wayne and the uh cybersecurity team that works with us."
+    }
+   ]
+  },
+  {
+   "id": "briefing-that-night",
+   "says": "Duffy and Mullin briefed reporters on the night of November 13, after the airspace had reopened at 8:15 p.m. Eastern, by Duffy's account.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "wh-briefing-2026-11-13",
+     "passage": "at eight fifteen tonight uh eastern time we've opened up the airspace"
     }
    ]
   }

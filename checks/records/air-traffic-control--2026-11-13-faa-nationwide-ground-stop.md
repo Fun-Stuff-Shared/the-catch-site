@@ -35,9 +35,13 @@ Two camps the orchestrator asked about were searched for and not found published
 
 Survives: D. D1, what broke, is on the record from Duffy: the FAA's old analog switches and routers were overloaded and gave bad data, and the upgraded digital ones held. D2, why it broke on Friday, is not settled: Mullin's on-record account is that new equipment and patches going in "appears" to have overwhelmed the older system, and CBS's and MS NOW's unnamed sources describe the same kind of change (an update); Duffy, asked about the patching, restated the overload without confirming it, and said the FAA is "still working on the details of what went wrong today". No official has named the change, who made it, or what it touched.
 
-Ruled out on the record: B (an overload, eased by reducing load), C (Verizon's statement; the switches and routers are the FAA's), E (Duffy: SMART is not connected to the radar and automation systems; its maker denies; no record links it), F (Mullin and Microsoft), G as the trigger.
+Ruled out, on more than one party's word: E (Duffy: SMART is not plugged into STARS and ERAM and is "completely disconnected"; its maker denies; no record links it), F (Mullin and Microsoft), C1 (Verizon's own statement).
 
-Unproven, leaning out: A. Mullin: "zero evidence", "mechanically driven", "still looking".
+No record supports it, resting only on the officials' unfinished account: B (they describe an overload eased by reducing load, not a cut), G as the trigger.
+
+Not tested: C2, another carrier; Verizon's denial covers only Verizon.
+
+No evidence so far; officials are not ruling it out: A. Mullin: "zero evidence", "mechanically driven", "still looking"; Duffy: "I don't want to rule out that we didn't have nefarious activity here" [wh-briefing-2026-11-13: "I don't want to rule out that we didn't have nefarious activity here."].
 
 The result turns on the briefing's own words. It would change if the FAA's investigation names a different trigger. The deciding rows were checked in the audio (two transcription engines on the onset time; the cause passages read in context, with the reporter's question and the official's answer told apart).
 
@@ -61,14 +65,14 @@ Survives: A, with C as a qualifier on scope: the nationwide stop was a traffic d
 ## The story
 
 On Friday afternoon, November 13, the FAA stopped every departing flight in the country for more than four hours after radar and radio links to its air traffic control centers became unreliable.
-Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations passed 4,000.
+Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations reached 4,000.
 Transportation Secretary Sean Duffy said the FAA's old analog switches and routers were overloaded with data while the newer digital equipment held, and he wants $50 billion from Congress for a new system.
 Asked what was different on Friday, Duffy said the FAA is still working on the details of what went wrong, and the only trigger named on the record, by Homeland Security Secretary Markwayne Mullin, is new equipment and patches going in that "appears" to have overwhelmed the old system.
 The FAA lifted the stop at 8:16 p.m., airlines expect disruptions into Saturday, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
 
 ## The plan
 
-Headline: Old switches failed and grounded U.S. flights nationwide. Why on Friday is still unknown.
+Headline: Officials blame old switches for grounding U.S. flights. Why on Friday is still unknown.
 
 What happened (sentences 1 and 2; the event, who it hit, where it stands):
 1. What happened? At 3:53 p.m. the FAA's command center ground-stopped every airport "until further notice". [atcscc-advzy-111-2026-11-13: "ALL AIRPORTS ARE GROUND STOPPED"]
