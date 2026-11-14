@@ -8,8 +8,45 @@
     "development-faa-nationwide-ground-stop-b860af42b24a",
     "development-faa-smart-air-traffic-tool-and-nationwide-ground-stop"
   ],
-  "story_title": "Why one outage stopped every flight in the country",
-  "sub_events": [],
+  "story_title": "Old switches failed and grounded U.S. flights nationwide. Why on Friday is still unknown.",
+  "sub_events": [
+    {
+      "id": "ohare-stop-2026-11-13",
+      "date": "2026-11-13",
+      "label": "O'Hare ground-stopped for communications issues",
+      "section_anchor": "what-broke",
+      "records": [
+        "atcscc-advzy-107-2026-11-13"
+      ]
+    },
+    {
+      "id": "national-stop-2026-11-13",
+      "date": "2026-11-13",
+      "label": "Nationwide ground stop ordered",
+      "section_anchor": "what-happened",
+      "records": [
+        "atcscc-advzy-111-2026-11-13"
+      ]
+    },
+    {
+      "id": "wh-briefing-2026-11-13",
+      "date": "2026-11-13",
+      "label": "Duffy and Mullin brief the press on the cause",
+      "section_anchor": "what-broke",
+      "records": [
+        "wh-briefing-2026-11-13"
+      ]
+    },
+    {
+      "id": "stop-lifted-2026-11-14",
+      "date": "2026-11-14",
+      "label": "Nationwide ground stop cancelled (8:16 p.m. Eastern, Nov. 13)",
+      "section_anchor": "what-happened",
+      "records": [
+        "atcscc-advzy-005-2026-11-14"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "atcscc-advzy-107-2026-11-13",
@@ -1310,6 +1347,87 @@
       "label": "Associated Press, FAA grounds US flights (later version)",
       "meta": " · published 2026-11-13",
       "usage": "scope; what comes next"
+    }
+  ],
+  "completed_by": "claude (faa ground stop author session, worktree 2026-11-13-faa-nationwide-ground-stop)",
+  "date_completed": "2026-11-13",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "58 records pinned under data/sources/air-traffic-control and data/sources/coverage with text and hash; the FAA command-center advisories were fetched from fly.faa.gov and the X posts read with bird, and the White House briefing audio was pinned and transcribed locally, because capture cannot reach them."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The stop's length, 4 hours 23 minutes, runs from advisory 111's 2053Z start to advisory 005's 0116Z cancellation; O'Hare's stop at 2010Z is 43 minutes before the national order."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "CBS's update account, MS NOW's software-update account, CNN's router account and Bloomberg's FBI account are each stated at their own sourcing; the Houston Chronicle's 2:26 p.m. onset was checked against the briefing audio, which has 3:36, and is not used."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; counts carry their times (6:04 and 7:15 p.m. FlightAware, 5:50 p.m. Cirium) and the cause is stated as of the November 13 evening briefing."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "New subject page src/pages/events/air-traffic-control/index.astro with src/data/subjects/air-traffic-control.mjs (the stop's length, flights in the air, sites on the network); the story and the subject are listed in src/lib/discovery.mjs."
+    }
+  },
+  "figures": [
+    {
+      "figure": "airborne_at_order",
+      "label": "Flights bound for U.S. airports in the air when the stop was ordered",
+      "value": "4042",
+      "unit": "flights",
+      "kind": "sourced",
+      "source": {
+        "source_id": "flightradar24-x-2026-11-13",
+        "quote_span": "At the time, 4,042 flights destined for US airports were already airborne."
+      }
+    },
+    {
+      "figure": "diverted_by_550",
+      "label": "Flights diverted by 5:50 p.m. Eastern",
+      "value": "600",
+      "unit": "flights",
+      "kind": "sourced",
+      "source": {
+        "source_id": "ap-grounded-2026-11-13",
+        "quote_span": "At least 600 flights have been diverted so far as a result of the FAA’s order to ground all air traffic nationwide."
+      }
+    },
+    {
+      "figure": "cancellations_by_715",
+      "label": "Cancellations by 7:15 p.m. Eastern",
+      "value": "4000",
+      "unit": "flights",
+      "kind": "sourced",
+      "source": {
+        "source_id": "axios-ground-stop-2026-11-13",
+        "quote_span": "As of 7:15 p.m. ET, FlightAware reported more than 10,000 domestic delays and 4,000 cancellations over the course of the day Friday."
+      }
+    },
+    {
+      "figure": "duffy_ask",
+      "label": "Funding Duffy asked Congress for",
+      "value": "50",
+      "unit": "USD billions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "wh-briefing-2026-11-13",
+        "quote_span": "I want fifty billion dollars."
+      }
+    },
+    {
+      "figure": "white_house_request",
+      "label": "Aviation funding the White House requested hours before the stop",
+      "value": "30.1",
+      "unit": "USD billions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "aerotime-ground-stop-2026-11-13",
+        "quote_span": "Hours before the November 13 ground stop, the White House and the US Department of Transportation asked Congress for an additional $30.1 billion for aviation infrastructure modernization."
+      }
     }
   ]
 }

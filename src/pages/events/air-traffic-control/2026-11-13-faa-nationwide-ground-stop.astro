@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, chronology, explanations } from "../../../data/air-traffic-control-2026-11-13-faa-nationwide-ground-stop.mjs";
+const story = "air-traffic-control--2026-11-13-faa-nationwide-ground-stop";
+const short = (id) => claim(story, id).short;
+const timeline = chronology.map((e) => ({ date: e.date, title: e.title ?? short(e.c), current: e.current, cites: [{ c: e.c }] }));
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/air-traffic-control/">Air traffic control</a><span>November 13, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Air traffic control &middot; November 13, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="duffy-switches-overloaded" /><Cite c="duffy-wants-50b" /><Cite c="mullin-patches-appears" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#what-broke">What broke</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">At 3:53 p.m. Eastern on Friday, November 13, the Federal Aviation Administration ordered every airport in the country to hold all departing flights until further notice.<Cite c="national-stop-order" /> Radar and radio links at the centers that guide planes between airports, and at the facilities that handle them near big airports, had become unreliable, and the FAA called it a temporary telecommunications outage.<Cite c="duffy-onset-336" /><Cite c="faa-telecom-outage" /> It was the second nationwide ground stop since the September 11 attacks; the first, in January 2023, came after contractors deleted files in the system that sends pilots safety notices.<Cite c="second-since-911" /><Cite c="notam-2023" /></p>
+        <p data-layer="narrative" data-answer="2">{n.airborne} flights bound for U.S. airports were in the air when the order came, by Flightradar24's count, and they were told to expect holding wherever they landed.<Cite c="airborne-4042" /><Cite c="airborne-holding" /> At least {n.diverted} had been diverted by early evening, most of them back to where they took off, and by 7:15 p.m. FlightAware counted more than {n.cancelled} cancellations for the day.<Cite c="diversions-600" /><Cite c="flightaware-715" /> Europe's air traffic agency held U.S.-bound departures at the FAA's request, and Mexico grounded its flights to the United States.<Cite c="abroad-held" /> Not everything stopped: Alaska Airlines kept flying within Alaska and between the Hawaiian islands.<Cite c="alaska-hawaii-flew" /></p>
+        <p data-layer="narrative" data-answer="5">The FAA lifted the stop at 8:16 p.m., {n.hours} hours and {n.minutes} minutes after ordering it.<Cite c="stop-lifted" /> Airlines expect cancellations to continue into Saturday.<Cite c="jetblue-into-saturday" /> Officials say they have seen no evidence of a cyberattack; the FAA has not said what made its equipment fail on Friday.<Cite c="mullin-zero-evidence" /><Cite c="duffy-still-working" /></p>
+      </section>
+
+      <section id="what-broke">
+        <h2 data-layer="fact">What broke</h2>
+        <p data-layer="narrative" data-answer="3">At a White House briefing that night, Transportation Secretary Sean Duffy put the failure in the FAA's own telecommunications equipment. Its old analog switches and routers were overloaded with data and began sending inconsistent data, he said, so the FAA shut the system down.<Cite c="duffy-switches-overloaded" /></p>
+        <QuoteCard speaker="Sean Duffy, Transportation Secretary" when="November 13, 2026" where="White House briefing" label="The White House">
+          <p>"Our switches uh our routers actually got overloaded with data and they went down and uh I shouldn't say they went down they started to give us inconsistency in the data uh from those uh from those routers, and because of that, we shut the system down."<Cite c="duffy-switches-overloaded" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">The newer digital switches held, Duffy said, and so did the centers and approach facilities already moved onto them.<Cite c="duffy-new-held" /> The FAA brought the networks back by deploying fixes that reduced the load on the old switches.<Cite c="duffy-fix-load" /></p>
+        <p data-layer="narrative">The equipment sits on one network. The FAA replaced its separate networks with this single one, which carries voice and radar to more than 4,400 sites, and the contractor L3Harris runs it over lines leased from several phone companies.<Cite c="fti-single-network" /><Cite c="fti-multi-carrier" /> Every center talks over it, which is how one failure could reach all of them: the old system, Duffy said, "went down everywhere."<Cite c="duffy-everywhere" /> FAA Administrator Bryan Bedford told Congress in September that the network is a 1980s design, and L3Harris said in May it was halfway through rebuilding it while it ran.<Cite c="bedford-1980s-network" /><Cite c="fti-half-rebuilt" /></p>
+        <p data-layer="narrative">The trouble showed first in Chicago. O'Hare was ground-stopped for communications issues 43 minutes before the national order, and Duffy dates the instability across the country to 3:36 p.m.<Cite c="sequence-chicago" /><Cite c="duffy-onset-336" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Friday afternoon, from the FAA's command center</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+        <p data-layer="narrative">It has happened on a smaller scale before. In September a Philadelphia facility lost its lines after L3Harris had the FAA switch to backup lines and a contractor cut the backup. Bedford said then that "we just don’t have the redundancy that we would get if we had a modern architecture."<Cite c="sept-2026-backup-cut" /></p>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <p class="section-intro" data-layer="fact">What could have caused it, what the symptoms fit and what they do not. Several rest only on the officials' account, and their investigation is not finished.</p>
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <p data-layer="narrative"><strong>The administration.</strong> Duffy and Homeland Security Secretary Markwayne Mullin say the old system is the problem and Congress should pay to replace it. Duffy wants ${n.duffyAsk} billion and says more outages will come without it.<Cite c="duffy-wants-50b" /> Hours before the stop, the White House had asked Congress for ${n.requested} billion more for aviation.<Cite c="funding-30b" /></p>
+        <p data-layer="narrative"><strong>Senate Commerce Republicans.</strong> The committee's majority said the outage appears related to the en-route centers and shows the need to put modernizing the centers ahead of other projects, citing the $1.9 billion Chairman Ted Cruz secured to replace and consolidate them.<Cite c="senate-commerce-claim" /><Cite c="senate-commerce-19b" /> Cruz has also backed the money for new telecommunications.<Cite c="cruz-telecom-money" /></p>
+        <p data-layer="narrative"><strong>Democrats.</strong> Sen. Tammy Duckworth wants a full investigation, and Sen. Maria Cantwell says the Commerce Committee will review the primary and backup frequencies.<Cite c="investigations" /> Rep. Delia Ramirez asked whether the administration's cuts and changes to the FAA were responsible.<Cite c="ramirez-cuts-question" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>"Old hardware" says what broke, not why it broke on Friday</h3>
+              <p data-layer="narrative">The administration's explanation is that old equipment failed and Congress should fund a new system: Duffy wants ${n.duffyAsk} billion and warns of more outages without it.<Cite c="duffy-wants-50b" /><Cite c="duffy-switches-overloaded" /> The old switches were old the day before, too. Asked what was different on Friday, Duffy said the FAA is still working on the details of what went wrong.<Cite c="duffy-still-working" /> The one trigger anyone has named on the record came from Mullin at the same briefing: what it appears to be, he said, is that new equipment and patches the FAA was putting in were overwhelming the older system. Asked whether the patching caused it, Duffy described the old system being overloaded and did not say what overloaded it.<Cite c="mullin-patches-appears" /><Cite c="duffy-did-not-confirm-patching" /></p>
+              <p data-layer="narrative">The unnamed accounts point the same way. Multiple sources told CBS News an update to the network made it reboot and crash, and a federal official told MS NOW a software update caused the stop.<Cite c="cbs-update-crash" /><Cite c="msnow-software-update" /> None of this shows the upgrade caused the failure. What it shows is that the administration's own account of the trigger is a change made to the network while it was being upgraded, and that the case for more money rests on the part of the story that is settled.<Cite c="mullin-patches-appears" /><Cite c="fti-rebuild-context" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">Airlines are rebuilding their schedules into Saturday.<Cite c="jetblue-into-saturday" /> The open question is what changed on Friday: the FAA has not named the update or patch, who made it, or what it touched, and the FBI is looking at whether a software update was the cause, a person familiar told Bloomberg.<Cite c="duffy-still-working" /><Cite c="fbi-software-inquiry" /> Cantwell's committee plans its review, and the outage now sits in the middle of the fight over how much Congress gives the FAA and for what.<Cite c="investigations" /><Cite c="funding-30b" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>

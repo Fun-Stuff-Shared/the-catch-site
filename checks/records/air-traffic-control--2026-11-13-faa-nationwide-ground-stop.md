@@ -62,13 +62,13 @@ Survives: A, with C as a qualifier on scope: the nationwide stop was a traffic d
 
 On Friday afternoon, November 13, the FAA stopped every departing flight in the country for more than four hours after radar and radio links to its air traffic control centers became unreliable.
 Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations passed 4,000.
-Transportation Secretary Sean Duffy said the FAA's old analog switches and routers were overloaded with data, while the newer digital equipment held.
-Duffy says old hardware is the problem and wants Congress to give $50 billion for a new system, but asked what was different on Friday he said the FAA is still working that out, and the only trigger named on the record, by Homeland Security Secretary Markwayne Mullin, is new equipment and patches going in that "appears" to have overwhelmed the old system.
+Transportation Secretary Sean Duffy said the FAA's old analog switches and routers were overloaded with data while the newer digital equipment held, and he wants $50 billion from Congress for a new system.
+Asked what was different on Friday, Duffy said the FAA is still working on the details of what went wrong, and the only trigger named on the record, by Homeland Security Secretary Markwayne Mullin, is new equipment and patches going in that "appears" to have overwhelmed the old system.
 The FAA lifted the stop at 8:16 p.m., airlines expect disruptions into Saturday, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
 
 ## The plan
 
-Headline: Why one outage stopped every flight in the country (under review; candidates go to the orchestrator with the plan)
+Headline: Old switches failed and grounded U.S. flights nationwide. Why on Friday is still unknown.
 
 What happened (sentences 1 and 2; the event, who it hit, where it stands):
 1. What happened? At 3:53 p.m. the FAA's command center ground-stopped every airport "until further notice". [atcscc-advzy-111-2026-11-13: "ALL AIRPORTS ARE GROUND STOPPED"]
