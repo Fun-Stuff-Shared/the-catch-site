@@ -4,7 +4,7 @@
 export const event = {
   slug: "iran-war/2026-11-09-trump-iran-war-effectively-over",
   title: "Trump says the Iran war is “effectively over.” He has not ended it",
-  dek: "U.S. aircraft still enforce the blockade of Iran with fire, and Trump says he could strike “right now.”",
+  dek: "On November 7, Central Command said, a U.S. aircraft fired on a ship trying to run the blockade of Iran. On November 12, asked whether he would hesitate to use force to stop Iran from terrorizing U.S. allies and ships, Trump said “No. No hesitation.”",
   name: "Trump's “effectively over” remark on the Iran war",
   date: "2026-11-09",
   updated: "2026-11-15",
@@ -13,8 +13,8 @@ export const event = {
 
 export const n = {
   redirected: 147,
-  disabled: 5,
-  bahrainDronesNov13: 2,
+  disabled: "five",
+  bahrainDronesNov13: "two",
 };
 
 // The week around the remark: what the administration said, beside what forces did.
