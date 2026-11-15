@@ -7,8 +7,47 @@
   "v2_subjects": [
     "development-nov-5-u-s-stock-market-selloff"
   ],
-  "story_title": "Trump blames the election for a $3 trillion stock loss. What moved markets that day?",
-  "sub_events": [],
+  "story_title": "Stocks did lose $3 trillion after the election, led by AI data-center stocks",
+  "sub_events": [
+    {
+      "id": "rally-2026-11-04",
+      "date": "2026-11-04",
+      "label": "Stocks rally the day after the election",
+      "section_anchor": "what-moved",
+      "records": [
+        "ap-indexes-2026-11-04",
+        "wsj-markets-pm-2026-11-04"
+      ]
+    },
+    {
+      "id": "fall-2026-11-05",
+      "date": "2026-11-05",
+      "label": "S&P 500 falls 4.4%; Trump blames the election",
+      "section_anchor": "what-happened",
+      "records": [
+        "ap-indexes-2026-11-05",
+        "trump-truth-2026-11-05-crashed"
+      ]
+    },
+    {
+      "id": "post-2026-11-08",
+      "date": "2026-11-08",
+      "label": "Trump posts \"one day, 3 Trillion Dollar loss\"",
+      "section_anchor": "what-happened",
+      "records": [
+        "trump-truth-2026-11-08-3-trillion"
+      ]
+    },
+    {
+      "id": "close-2026-11-13",
+      "date": "2026-11-13",
+      "label": "S&P 500 back within 0.1% of its Election Day close",
+      "section_anchor": "what-happened",
+      "records": [
+        "ap-indexes-2026-11-13"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "ap-indexes-2026-11-02",
@@ -998,6 +1037,55 @@
       "label": "Investors eye risk of debt-ceiling standoff after Democratic sweep",
       "meta": " · published 2026-11-05",
       "usage": "a non-AI policy fear named the same day"
+    }
+  ],
+  "event_record": "/events/midterms-2026/",
+  "completed_by": "claude (trump-3-trillion author session, worktree 2026-11-07-trump-election-3-trillion-market-loss)",
+  "date_completed": "2026-11-15",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/midterms-2026 and data/sources/coverage with its text and hash; Trump's posts come from the Trump's Truth archive, and the Clay Total Market Index table was admitted from a saved page because capture drops tables."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module computes the Wilshire 5000's 4.4% fall from its Nov. 4 and Nov. 5 closes, the 0.1% gap between the Nov. 13 and Election Day S&P 500 closes, and the Nov. 11 close from Nov. 12's close and change."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Trump's $3 trillion claim is checked against Dow Jones Market Data's S&P 500 estimate, the FT's S&P 1500 figure and the Wilshire 5000 closes; his account of why is checked against the Nov. 4 and Nov. 5 market records."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the chart ends at the dated Nov. 13 close and every close is a saved AP table."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The midterms-2026 subject page gains a figure for the S&P 500's Nov. 5 fall, and the story is listed in src/lib/discovery.mjs."
+    }
+  },
+  "figures": [
+    {
+      "figure": "sp500_companies_loss",
+      "label": "Market value lost by S&P 500 companies on Nov. 5, Dow Jones Market Data estimate",
+      "value": "2.9",
+      "unit": "USD trillions",
+      "kind": "sourced",
+      "source": {
+        "source_id": "wsj-market-cap-records-2026-11-05",
+        "quote_span": "Companies in the S&P 500 lost that amount in market capitalization during today's selloff, according to an estimate from Dow Jones Market Data."
+      }
+    },
+    {
+      "figure": "sp500_thursday_pct",
+      "label": "S&P 500 fall on Nov. 5",
+      "value": "4.4",
+      "unit": "%",
+      "kind": "sourced",
+      "source": {
+        "source_id": "ap-indexes-2026-11-05",
+        "quote_span": "The S&P 500 fell 334.89 points, or 4.4%, to 7,353.73."
+      }
     }
   ]
 }

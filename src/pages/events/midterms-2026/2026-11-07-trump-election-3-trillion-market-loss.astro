@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { event, n, closes, marks } from "../../../data/midterms-2026-2026-11-07-trump-election-3-trillion-market-loss.mjs";
+const votersStory = "/events/midterms-2026/2026-11-03-why-voters-turned-on-republicans/";
+
+const W = 460, H = 270, L = 58, R = 12, T = 24, B = 38;
+const lo = 7300, hi = 7720;
+const x = (i) => L + (i * (W - L - R)) / (closes.length - 1);
+const y = (v) => T + ((hi - v) * (H - T - B)) / (hi - lo);
+const line = closes.map((p, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(p.value).toFixed(1)}`).join(" ");
+const ticks = [7300, 7400, 7500, 7600, 7700];
+const fmt = (v) => v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterms-2026/">2026 midterms</a><span>November 7, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">2026 midterms &middot; November 7, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="trump-dumocrats" /><Cite c="chips-led-thursday" /><Cite c="hinojosa-moratorium-campaign" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#how-big">How big the loss was</a></li>
+          <li><a href="#what-moved">What moved stocks</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On Thursday, Nov. 5, two days after <a href={votersStory}>Democrats won control of Congress</a>, U.S. stocks had their worst day since April 2025. The S&amp;P 500 fell {n.thursdayPct}% and the Dow Jones Industrial Average {n.dowPoints} points.<Cite c="sp-thursday-fall" /><Cite c="dow-nasdaq-thursday" /><Cite c="worst-since-april-2025" /> The companies in the S&amp;P 500 lost an estimated ${n.sp500Loss} trillion in value in one day.<Cite c="sp500-companies-2-9t" /></p>
+        <p data-layer="narrative" data-answer="2">President Trump blamed the election. "The Stock Market crashed today because the Dumocrats had a big Tuesday," he posted that evening, and on Nov. 8 he wrote that the market "took a one day, 3 Trillion Dollar loss."<Cite c="trump-dumocrats" /><Cite c="trump-nov8-post" /></p>
+        <p data-layer="narrative" data-answer="3">The loss did not last. By the next Friday, Nov. 13, the S&amp;P 500 closed at {n.nov13Close}, within {n.nov13Gap}% of where it stood on Election Day.<Cite c="sp-nov13" /><Cite c="sp-election-day-close" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The S&amp;P 500 at each close, from Election Day to Nov. 13</strong></figcaption>
+          <svg class="close-chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`S&P 500 closing levels: ${closes.map((p) => `${p.label} ${fmt(p.value)}`).join(", ")}`}>
+            {ticks.map((t) => (
+              <g>
+                <line x1={L} x2={W - R} y1={y(t)} y2={y(t)} class="grid" />
+                <text x={L - 6} y={y(t) + 3} text-anchor="end" class="axis">{t.toLocaleString("en-US")}</text>
+              </g>
+            ))}
+            {marks.map((m, i) => (
+              <g>
+                <line x1={x(m.at)} x2={x(m.at)} y1={T - 6} y2={H - B} class="mark" />
+                <circle cx={x(m.at)} cy={T - 10} r="10" class="mark-dot" />
+                <text x={x(m.at)} y={T - 5} text-anchor="middle" class="mark-num">{i + 1}</text>
+              </g>
+            ))}
+            <path d={line} class="series" />
+            {closes.map((p, i) => (
+              <g>
+                <circle cx={x(i)} cy={y(p.value)} r="4.5" class={p.date === "2026-11-05" ? "pt pt-low" : "pt"} />
+                <text x={x(i)} y={H - B + 22} text-anchor="middle" class="axis">{i === 0 ? "Nov. 3" : p.date.slice(8).replace(/^0/, "")}</text>
+              </g>
+            ))}
+          </svg>
+          <ol class="mark-key">
+            {marks.map((m) => <li>{m.text}<Cite c={m.c} /></li>)}
+          </ol>
+          <p class="chart-source">Closing levels from the Associated Press's daily index tables; the Nov. 11 close is Nov. 12's close plus that day's 26.98-point fall. On Nov. 14 Trump posted that "the Market has since gone up."{closes.map((p) => <Cite c={p.c} />)}<Cite c="trump-since-gone-up" /></p>
+        </figure>
+      </section>
+
+      <section id="how-big">
+        <h2 data-layer="fact">How big the loss was</h2>
+        <p data-layer="narrative">Trump's figure holds. Companies in the S&amp;P 500 lost ${n.sp500Loss} trillion by Dow Jones Market Data's estimate, and those in the broader S&amp;P 1500 lost ${n.sp1500Loss} trillion, the Financial Times reported.<Cite c="sp500-companies-2-9t" /><Cite c="sp1500-3-2t" /> The Wilshire 5000, an index of the whole U.S. stock market, fell {n.wilshirePct}% that day.<Cite c="wilshire-fall" /></p>
+        <p data-layer="narrative">In dollars the fall was a one-day record. As a share of the market's value it was the worst day since April 2025, but outside the S&amp;P 500's 20 worst days since 1923, by The Cross Check's count.<Cite c="sp500-companies-2-9t" /><Cite c="worst-since-april-2025" /><Cite c="outside-20-worst" /></p>
+      </section>
+
+      <section id="what-moved">
+        <h2 data-layer="fact">What moved stocks</h2>
+        <p data-layer="narrative">The first reaction to the vote was a rally. On Wednesday, Nov. 4, the S&amp;P 500 rose {n.wedPct}%, its best day in three months, and the Dow 1,569 points; investors traditionally like a government split between the parties.<Cite c="wednesday-best-day" /><Cite c="investors-like-divided" /></p>
+        <p data-layer="narrative">Under that rally, one group of stocks was already falling: the chipmakers and other suppliers of data centers, the buildings full of computers that run artificial intelligence. Nvidia fell {n.nvidiaWed}% and Micron {n.micronWed}%, while Amazon and Microsoft, which pay for data centers, rose about {n.cloudWed}%.<Cite c="wednesday-split" /> Several winners had promised to slow that building. Gina Hinojosa, the Democrat who beat Gov. Greg Abbott in Texas, campaigned on an immediate moratorium on data centers, and Wells Fargo estimates that Texas holds {n.texasShare}% of the data-center capacity planned in the U.S.<Cite c="hinojosa-moratorium-campaign" /><Cite c="texas-27-percent" /> In local ballot measures the same day, voters favored limiting data centers in {n.ballotFor} of {n.ballotAll}, as Ballotpedia counted them on Nov. 6.<Cite c="ballot-40-of-41" /></p>
+        <p data-layer="narrative">On Thursday the selling spread. Qualcomm, a chipmaker, had issued an earnings forecast after Wednesday's close that CNBC called light, with its sales of chips for phones down 26%, and its stock fell about {n.qualcommThu}%, leading chip stocks lower.<Cite c="qualcomm-forecast" /> That day Hinojosa told CNN, "we need to stop what we are doing with data centers until we have those protections."<Cite c="hinojosa-thursday" /> Chip stocks led the fall, with the Philadelphia chip index down more than {n.chipIndexThu}%, while Alphabet and Microsoft fell less than the market. Every one of the S&amp;P 500's 11 sectors ended lower.<Cite c="chips-led-thursday" /><Cite c="thursday-broad" /> Leveraged exchange-traded funds, which multiply investors' bets on a group of stocks, added to the selling: JPMorgan estimates they sold more than ${n.etfSold} billion of stock exposure that week, about {n.etfTech}% of it in tech.<Cite c="leveraged-etfs" /></p>
+        <p data-layer="narrative">Capital Economics, a research firm, put the trigger in terms of the election's winners.<Cite c="maher-trigger" /></p>
+        <QuoteCard speaker="Joe Maher, Capital Economics" when="Nov. 5, 2026" where="Research note, quoted by CBS News">
+          <p>"The trigger for these moves appears to be the concern that the Democrats, both in Congress and at the state level, will seek to regulate the AI industry and restrict data center development."<Cite c="maher-trigger" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">The fall also landed on a slide already under way. The chip index had dropped more than {n.chipSinceOct}% since the start of October, and Thursday's fall rekindled a selloff that had paused just before the vote.<Cite c="chip-index-october" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The election moved stocks, through one industry</h3>
+              <p data-layer="narrative" data-answer="4">Trump has the size of the loss and its link to the election largely right.<Cite c="sp500-companies-2-9t" /><Cite c="maher-trigger" /> He says investors "throughout the World hated seeing what took place on Election Day" and did not want "to invest with these people."<Cite c="trump-nov14-post" /><Cite c="trump-douthat" /> The reasons named that day, and the stocks that fell most, point to something narrower: concern that the winners would pause or slow new AI data centers.<Cite c="chips-led-thursday" /><Cite c="maher-trigger" /><Cite c="hinojosa-thursday" /> That fear was not only about Democrats. Abbott, a Republican, had already frozen data-center permits in Texas, and Ohio's Republican nominee for governor, Vivek Ramaswamy, promised a pause on new data centers on his first day.<Cite c="abbott-paused" /><Cite c="ramaswamy-pause" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative" data-answer="5">Trump acknowledged the recovery on Nov. 14, posting that "the Market has since gone up."<Cite c="trump-since-gone-up" /> The limits investors feared are not yet in force. Hinojosa takes office Jan. 19 and has promised a moratorium on data-center approvals until the Texas Legislature passes laws to protect Texans.<Cite c="hinojosa-takes-office" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .close-chart { width: 100%; max-width: 600px; height: auto; display: block; margin: 0.4rem 0 0.2rem; overflow: visible; }
+  .close-chart .grid { stroke: var(--rule); stroke-width: 1; }
+  .close-chart .axis { font: 500 15px var(--sans); fill: var(--slate); }
+  .close-chart .series { fill: none; stroke: var(--blue); stroke-width: 2.6; }
+  .close-chart .pt { fill: var(--blue); }
+  .close-chart .pt-low { fill: var(--red, #b3261e); }
+  .close-chart .mark { stroke: var(--gold, #9a6200); stroke-width: 1; stroke-dasharray: 3 3; }
+  .close-chart .mark-dot { fill: var(--gold, #9a6200); }
+  .close-chart .mark-num { font: 700 13px var(--sans); fill: #fff; }
+  .mark-key { margin: 0.4rem 0 0; padding-left: 1.4rem; font: 500 0.85rem/1.45 var(--sans); color: var(--ink); }
+</style>
