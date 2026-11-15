@@ -36,7 +36,7 @@ Background held (fits every surviving answer, decides nothing): Iron Gate [centc
 
 Survives: A and E, which do not conflict: A is what the administration says it is doing (no new campaign; the blockade and defense of the Gulf continue), E is what it says it may still do. B survives for the week before November 9 (the strikes Trump acknowledged on November 6 he described, the November 7 ship) and for defensive fire after it (the November 13 drones); a U.S. strike on Iran after November 9 is unproven (Sirik unattributed, no U.S. record). Ruled out: C (the September 3 letter; his November 9 refusal to declare an end and his November 11 "when we want to end it"). D, after review round 1, survives as part of what he meant, not as the whole: the remark sits in his count of "two wars" and is followed at once by "their military is essentially gone". The two readings join: in his account the war is over militarily because Iran's military is gone. Neither makes it a declaration of an end. The result turns on two rows, both rechecked at the Factba.se transcript (C-SPAN's captions read the same): the "two wars" context and the declined declaration. It would change if the U.S. government confirmed a strike on Iran after November 9 (B survives in full) or if the White House declared an end.
 
-The catch: "effectively over" is not an end to the war, and Trump did not declare one. Asked that afternoon why he would not, he gave a reason not to. The "status quo" he named is a blockade U.S. aircraft enforce with fire, and he described a strike three days earlier; two days later he said it was "just a question of when we want to end it"; three days later, "it's possible I would do it right now." The headline that he "declares" the war effectively over [usatoday-declares-2026-11-09: "Trump declares Iran war 'effectively over,' opts for status quo"] carries the reading the record rules out. Rubio's "No, not status quo" the next day [rubio-paris-2026-11-10: "No, not status quo."] is the administration describing the same policy two ways: he meant the pressure keeps growing, not that combat resumes.
+The catch (revised after review round 2, finding 10): "effectively over" is Trump's description of the war, not an end to it, and the record shows the difference. Asked that afternoon why he would not declare an end, he gave a reason not to. The "status quo" he named is a blockade U.S. aircraft enforce with fire, the day after he acknowledged "minor strikes"; two days later he said it was "just a question of when we want to end it"; three days later, "it's possible I would do it right now." His secretary of state put the pause as "for the time being" [rubio-paris-2026-11-10: "the President’s concluded that, for the time being, there’s no need for major combat operations"] and said "No, not status quo" [rubio-paris-2026-11-10: "No, not status quo."], meaning the pressure keeps growing. No outlet is graded wrong: USA Today's "declares Iran war 'effectively over'" reports what he said [usatoday-declares-2026-11-09: "Trump declares Iran war 'effectively over,' opts for status quo"], and its report calls his choice the status quo. The catch is for the reader who hears "over" as "ended".
 
 ## The story
 
@@ -63,12 +63,12 @@ The week, on the record (visual: dated timeline, Nov 6 to Nov 13, government rec
 The Catch (sentence 4): opens on "Did Trump declare the war over?" No.
 1. The question and his answer [factbase-trump-briefing-2026-11-09: "Why not just declare an end to the conflict and be done with it?"] [factbase-trump-briefing-2026-11-09: "Because we have some great allies there, and we have to make sure they're not hurt."].
 2. What he said after: Arlington "when we want to end it"; Hewitt "No. No hesitation."
-3. Who read it as a declaration: USA Today's headline "Trump declares Iran war 'effectively over'".
+3. Where the reader could go wrong: "effectively over" heard as "ended". No outlet is graded; the section says plainly what has and has not ended.
 4. Rubio's "not status quo": the same policy described as rising pressure, not static (one sentence).
 
 Why now (sentence 3): the midterms ("Iran was a piece of it") [wsj-iran-piece-of-it-2026-11-04: "“Iran was a piece of it,” he said"]; the Gulf states' preference, in his words; Rubio's economic campaign. Link the November 12 troop-deaths story where the Hewitt interview is named.
 
-What happens next (sentence 5): Rubio's red lines and "stands ready" [rubio-paris-2026-11-10: "obviously the U.S. military, the most capable military in the world, stands ready to address it."]; the War Powers line (as of the November 13 Congressional Record) beside the September 3 precedent; Massie's H. Con. Res. 126 [hconres-126-2026-11-10: "to remove United States Armed Forces from hostilities with Iran."].
+What happens next (sentence 5): Rubio's red lines and "stands ready" [rubio-paris-2026-11-10: "obviously the U.S. military, the most capable military in the world, stands ready to address it."]; the War Powers line (as of the November 13 Congressional Record) beside the September 3 precedent; Massie's H. Con. Res. 126 [hconres-126-2026-11-10: "to remove United States Armed Forces from hostilities with Iran."], and what such a resolution can do by the White House's account [white-house-sap-hconres86-2026-06-23: "Although concurrent resolutions such as H. Con. Res. 86 lack the force of law and should be deemed unconstitutional legislative vetoes"].
 
 Background held: Iron Gate's 20-person staff in Tampa; CENTCOM's counts since July (147 redirected, five disabled, 10 tankers destroyed) [centcom-huda-2026-11-07: "Enforcement actions since July have resulted in U.S. forces redirecting 147 commercial vessels that complied and disabled five merchant ships that refused to comply."]; the $25 billion in blocked exports [centcom-iron-gate-2026-11-07: "In recent months, America’s naval blockade has prevented Iran from exporting more than $25 billion in crude oil."]; Hegseth's victory list; "it's not a war"; the May 1 letter [war-powers-letter-2026-05-01: "The hostilities that began on February 28, 2026, have terminated."]; the CNN "highly unlikely" remark [ap-effectively-over-2026-11-09: "it’s “highly unlikely it’s going to be necessary” to resume strikes"]; the 38 bridges [ap-effectively-over-2026-11-09: "including 38 bridges"]; The Hill on the unacknowledged pre-election strikes [hill-secret-strikes-2026-11-05: "the Pentagon has not disclosed any bombing of Iranian targets since two days of strikes in early September"]; "we haven't lost a soldier in six months" on November 9, already covered by the troop-deaths story [factbase-trump-briefing-2026-11-09: "we haven't lost a soldier in six months if you look."].
 
@@ -117,7 +117,7 @@ The administration: no new campaign is needed; force stays ready (Trump, Rubio, 
 
 ## What coverage says that the records do not
 
-- USA Today's headline says he "declares" the war effectively over [usatoday-declares-2026-11-09: "Trump declares Iran war 'effectively over,' opts for status quo"]; the transcript shows him asked why he would not declare an end, and giving a reason not to.
+- USA Today's headline, "declares Iran war 'effectively over'", reports his words; its report calls his choice the status quo. Not an error (review round 2, finding 10) [usatoday-declares-2026-11-09: "Trump declares Iran war 'effectively over,' opts for status quo"].
 - BBC got it right [bbc-highly-unlikely-2026-11-10: "Responding to a question over why he would not officially declare an end to the war, Trump said that some of the Gulf allies could still face Iranian aggression."].
 
 ## What is next
@@ -146,6 +146,21 @@ The White House declined to comment to AP on the shifts [pbs-shifting-rhetoric-2
 - (9) H. Con. Res. 126's defensive exception: accepted; the claim states it.
 - (10) Vance, "The reason we lost is the war": admitted via USA Today; Why now only.
 - (11) CBO cost: background; the CBO story covers it.
+
+## Review round 2 (RECORD INCOMPLETE), as judged
+
+- (10) USA Today's headline is a fair report of his words: accepted. The catch no longer grades an outlet; it answers the reader who hears "over" as "ended". This is the only finding that changes the plan.
+- (1) H. Con. Res. 86 (June) and the White House's statement that concurrent resolutions "lack the force of law": verified and admitted; one clause in What happens next. The administration's legal account (hostilities "terminated" April 7) is answer C as its camp states it; the September 3 letter still rules C out as a description of what U.S. forces are doing.
+- (2) November 10 House vote, 211 to 204, to refer Massie's Hegseth impeachment resolution to the Judiciary Committee: verified in the admitted Congressional Record (crec-2026-11-10, roll call on H. Res. 1655); background held.
+- (3) The March 2 letter and the memorandum's terms: background; the memorandum and its collapse are admitted from CRS.
+- (4) Reuters, November 14 (unnamed sources), via Al-Monitor: background held as a lead; unnamed accounts of private calls do not change the five sentences.
+- (5) Iran says no negotiations are under way; Iran's demands to the Security Council: the Sides carry Iran's core demands from AP; Rezaei's denial held as a lead (IRNA and Al-Monitor not admitted).
+- (6) Sirik: declined in part. RFE/RL, admitted, reports the IRGC "stopped short of directly blaming the United States". The IRGC's claims that it struck U.S. radars are Iranian claims; the page uses Bahrain's and CENTCOM's accounts of the drones.
+- (7) Shipping attacks (IMO, UKMTO): background; responsibility for individual attacks cannot be assigned from those notices.
+- (8) Houthi missiles at Riyadh, November 15: background; ties to Trump's decision only through the unnamed Reuters account.
+- (9) Whether Iran's military is "essentially gone": the page states it only as Trump's words and does not assess it.
+
+Stop: round 2 is the last round (orchestrator). No verified finding changes the five sentences; finding 10 changes the plan's Catch, done above.
 
 ## Leads not admitted
 
