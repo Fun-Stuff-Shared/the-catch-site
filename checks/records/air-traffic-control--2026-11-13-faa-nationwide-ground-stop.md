@@ -67,12 +67,12 @@ Survives: A, with C as a qualifier on scope: the nationwide stop was a traffic d
 On Friday afternoon, November 13, the FAA stopped every departing flight in the country for more than four hours after radar and radio links to its air traffic control centers became unreliable.
 Flights already in the air were held over their destinations or turned back, at least 600 of them by early evening, and by 7:15 p.m. the day's cancellations reached 4,000.
 Transportation Secretary Sean Duffy said the FAA's old analog switches and routers were overloaded with data while the newer digital equipment held, and he wants $50 billion from Congress for a new system.
-Asked what was different on Friday, Duffy said the FAA is still working on the details of what went wrong, and the only trigger named on the record, by Homeland Security Secretary Markwayne Mullin, is new equipment and patches going in that "appears" to have overwhelmed the old system.
-The FAA lifted the stop at 8:16 p.m., airlines expect disruptions into Saturday, and the FAA, the FBI and the Senate Commerce Committee are looking into the cause.
+On Saturday Duffy said a router at one remote site, where the contractor L3Harris was moving an old copper line to fiber, flooded the network; the FAA has not determined whether the router or the work was at fault, and FAA Administrator Bryan Bedford said the job was upkeep of the old network, not modernization.
+The FAA lifted the stop at 8:16 p.m., airlines expect a full schedule by Sunday's close of business, and the FAA says it will share its root cause analysis when complete.
 
 ## The plan
 
-Headline: Officials blame old switches for grounding U.S. flights. Why on Friday is still unknown.
+Headline: Duffy blamed old switches for grounding U.S. flights. Now he traces it to a contractor's job at one site.
 
 What happened (sentences 1 and 2; the event, who it hit, where it stands):
 1. What happened? At 3:53 p.m. the FAA's command center ground-stopped every airport "until further notice". [atcscc-advzy-111-2026-11-13: "ALL AIRPORTS ARE GROUND STOPPED"]
@@ -81,6 +81,8 @@ What happened (sentences 1 and 2; the event, who it hit, where it stands):
 4. Who was hit? 4,042 flights in the air at the order; at least 600 diverted by 5:50 p.m.; more than 4,000 cancellations by 7:15 p.m.; Europe and Mexico held U.S.-bound departures. [flightradar24-x-2026-11-13: "At the time, 4,042 flights destined for US airports were already airborne."] [ap-grounded-2026-11-13: "At least 600 flights have been diverted so far"] [axios-ground-stop-2026-11-13: "FlightAware reported more than 10,000 domestic delays and 4,000 cancellations"] [usatoday-live-2026-11-13: "U.S.-bound departures from 42 countries"] [ap-grounded-2026-11-13: "all scheduled flights from Mexican airports headed to the U.S. are grounded for the time being"]
 5. Where does it stand? Lifted at 8:16 p.m.; disruptions expected into Saturday. [atcscc-advzy-005-2026-11-14: "THE FAA COMMAND CENTER NATIONWIDE GROUND STOP HAS BEEN"] [ap-grounded-late-2026-11-13: "“We expect disruptions to continue into tomorrow, including additional cancellations,” JetBlue said in a news release."]
 6. How rare? The second nationwide stop since 9/11; the last, in January 2023, came when contractors deleted files in the pilot-notice system. [msnow-software-update-2026-11-13: "only the second nationwide ground stop since the Sept. 11, 2001, terrorist attacks"] [faa-notam-statement-2023-01-19: "contract personnel unintentionally deleted files"]
+
+Saturday update (2026-11-14): What broke now opens on Duffy's Saturday account: L3Harris moving a remote site's copper line to fiber; the router being replaced flooded other routers. [dot-presser-2026-11-14: "In at least one of our remote FAA locations, a contractor was doing routine maintenance to switch telecommunication lines from old copper wire, and they were bringing it over to Fiber."] [dot-presser-2026-11-14: "We haven't determined what the fault was."] Bedford: 17 of 22 centers unstable; paper maintenance logs; one network, the flood spread to other centers' backups. [dot-presser-2026-11-14: "we have one federal telephony infrastructure. One. We don't have two."] The Catch now sets Friday's account (old switches, $50 billion) against Saturday's (one router at one site, a routine job Duffy says should not have had this impact; Bedford: sustainment, not modernization). [dot-presser-2026-11-14: "this isn't modernization, this is sustainment."] The Friday plan below is kept as written.
 
 What broke (sentence 3): opens on Duffy's account
 1. What broke? The FAA's old analog switches and routers, overloaded with data, began giving bad data; the FAA shut the system down. [wh-briefing-2026-11-13: "Our switches uh our routers actually got overloaded with data"]

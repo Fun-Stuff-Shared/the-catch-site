@@ -8,7 +8,7 @@
     "development-faa-nationwide-ground-stop-b860af42b24a",
     "development-faa-smart-air-traffic-tool-and-nationwide-ground-stop"
   ],
-  "story_title": "Officials blame old switches for grounding U.S. flights. Why on Friday is still unknown.",
+  "story_title": "Duffy blamed old switches for grounding U.S. flights. Now he traces it to a contractor's job at one site.",
   "sub_events": [
     {
       "id": "ohare-stop-2026-11-13",
@@ -939,6 +939,68 @@
       "capture_run": "capture-oneoff-20261114T021751Z",
       "capture_raw_sha256": "sha256:b3a0c108a4810cd7bc892cbe2e48d8af3d1a0c52950b0b915833973996e940ea",
       "captured_at": "2026-11-14T02:17:53.254374Z"
+    },
+    {
+      "id": "dot-presser-2026-11-14",
+      "title": "S1 Press Conference",
+      "publisher": "U.S. Department of Transportation",
+      "date": "2026-11-14",
+      "url": "https://www.youtube.com/watch?v=9g66Z0ZwHLc",
+      "pinned_path": "data/sources/air-traffic-control/dot-presser-2026-11-14.opus",
+      "text_path": "data/sources/air-traffic-control/dot-presser-2026-11-14.txt",
+      "text_sha256": "sha256:2f656f5b1c2d30f052d39fc560631d88e552ce8d8ed68464e831a3fd69973189",
+      "quote": "We haven't determined what the fault was.",
+      "quote_span_check": "byte_exact",
+      "about": "the transportation secretary's and FAA administrator's Saturday press conference",
+      "capture_status": "The Transportation Department's YouTube stream of the Saturday press conference; audio pulled with yt-dlp and pinned as Opus, transcribed locally with undertone (fluidaudio-pyannote); speakers labeled only where the audio names them. Capture cannot fetch video."
+    },
+    {
+      "id": "l3harris-statement-2026-11-14",
+      "title": "L3Harris Statement on the Nov. 13 Ground Stop",
+      "publisher": "L3Harris",
+      "date": "2026-11-14",
+      "url": "https://www.l3harris.com/newsroom/press-release/2026/11/l3harris-statement-nov-13-ground-stop",
+      "pinned_path": "data/sources/air-traffic-control/l3harris-statement-2026-11-14.html",
+      "text_path": "data/sources/air-traffic-control/l3harris-statement-2026-11-14.txt",
+      "text_sha256": "sha256:89abd114b3b2c09c50c3192eba6182d041b094a6bb447516e881a53322aeb237",
+      "quote": "We are supporting the FAA in its investigation to understand the conditions that led to the Nov. 13 ground stop",
+      "quote_span_check": "byte_exact",
+      "about": "the contractor's statement",
+      "capture_run": "capture-oneoff-20261114T223254Z",
+      "capture_raw_sha256": "sha256:aa816fbc7bb6e3fe47b5af2f5055c8e0b338e7c36d6537766d3cb3442f474929",
+      "captured_at": "2026-11-14T22:32:57.773738Z"
+    },
+    {
+      "id": "cbs-ground-stop-2026-11-14",
+      "title": "FAA lifts nationwide ground stop that disrupted thousands of flights; White House says no indication of \"nefarious act\"",
+      "publisher": "CBS News",
+      "date": "2026-11-14",
+      "url": "https://www.cbsnews.com/news/faa-issues-nationwide-ground-stop/",
+      "pinned_path": "data/sources/coverage/cbs-ground-stop-2026-11-14.html",
+      "text_path": "data/sources/coverage/cbs-ground-stop-2026-11-14.txt",
+      "text_sha256": "sha256:825b3cf1f72dd5a91b351a796a492596fd51f930d91dbdbc7062bc0ec65fd1a3",
+      "quote": "Sources told CBS News they are receiving conflicting information about the cause of the issue.",
+      "quote_span_check": "byte_exact",
+      "about": "CBS's updated story, Saturday",
+      "capture_run": "capture-oneoff-20261114T223254Z",
+      "capture_raw_sha256": "sha256:9d3aa7a4b8ef59dcf66d3dcce51ea826cca6738bd6460b9ca04ed64a12b32551",
+      "captured_at": "2026-11-14T22:32:56.810931Z"
+    },
+    {
+      "id": "cnbc-ground-stop-2026-11-14",
+      "title": "Ground stop followed contractor upgrade to L3Harris telecom system: Duffy",
+      "publisher": "CNBC",
+      "date": "2026-11-14",
+      "url": "https://www.cnbc.com/2026/11/14/faa-ground-stop-flights-resume-delays.html",
+      "pinned_path": "data/sources/coverage/cnbc-ground-stop-2026-11-14.html",
+      "text_path": "data/sources/coverage/cnbc-ground-stop-2026-11-14.txt",
+      "text_sha256": "sha256:66cdf6b0017701c3b80c71bbfab5c7fd28147c2fe25f5790001815d5022ce7a2",
+      "quote": "More than 3,700 U.S. flights were canceled Saturday and close to 2,000 were delayed as of 9:40 a.m. ET, according to flight-tracking site FlightAware.",
+      "quote_span_check": "byte_exact",
+      "about": "Saturday's disruption counts",
+      "capture_run": "capture-oneoff-20261114T223254Z",
+      "capture_raw_sha256": "sha256:5bde8b0baa240769acc70e489b5b1c882a0c566e6dacca2219bd59b546c6b97f",
+      "captured_at": "2026-11-14T22:32:56.234709Z"
     }
   ],
   "story_sources": [
@@ -1347,6 +1409,34 @@
       "label": "Associated Press, FAA grounds US flights (later version)",
       "meta": " · published 2026-11-13",
       "usage": "scope; what comes next"
+    },
+    {
+      "id": "dot-presser-2026-11-14",
+      "group": "official",
+      "label": "U.S. Department of Transportation, press conference on the ground stop",
+      "meta": " · November 14, 2026",
+      "usage": "Saturday's account of the trigger; the catch"
+    },
+    {
+      "id": "l3harris-statement-2026-11-14",
+      "group": "primary",
+      "label": "L3Harris, statement on the Nov. 13 ground stop",
+      "meta": " · published 2026-11-14",
+      "usage": "L3Harris's side"
+    },
+    {
+      "id": "cbs-ground-stop-2026-11-14",
+      "group": "coverage",
+      "label": "CBS News, FAA lifts nationwide ground stop (updated Saturday)",
+      "meta": " · updated 2026-11-14",
+      "usage": "conflicting accounts; the routers"
+    },
+    {
+      "id": "cnbc-ground-stop-2026-11-14",
+      "group": "coverage",
+      "label": "CNBC, Ground stop followed contractor upgrade to L3Harris telecom system",
+      "meta": " · published 2026-11-14",
+      "usage": "Saturday's cancellations"
     }
   ],
   "completed_by": "claude (faa ground stop author session, worktree 2026-11-13-faa-nationwide-ground-stop)",
