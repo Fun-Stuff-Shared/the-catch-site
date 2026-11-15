@@ -41,8 +41,8 @@ The catch (revised after review round 2, finding 10): "effectively over" is Trum
 ## The story
 
 1. On November 9, after meeting Qatar's prime minister, Trump told reporters "Iran militarily is effectively over. We're just keeping it the status quo," and said new military action did not seem necessary.
-2. The status quo he named is a naval blockade U.S. aircraft enforce with fire, as they did against a cargo ship on November 7, the day after Trump acknowledged "minor strikes" on Iran, and Iranian drones aimed at Bahrain were shot down on November 13 and again on November 15.
-3. He spoke six days after a midterm election his party lost in part over the war, with Gulf allies, he said, asking him to keep the blockade rather than bomb.
+2. The status quo he named is a naval blockade U.S. aircraft enforce with fire, as they did against a cargo ship on November 7, the day after Trump acknowledged "minor strikes" on Iran, U.S. forces shot down Iranian drones aimed at Bahrain on November 13, and Bahrain says its air defenses intercepted more on November 15.
+3. He spoke six days after the midterm elections, which he said the war was "a piece of" and Vice President Vance blamed on it outright, with Gulf allies, he said, asking him to keep the blockade rather than bomb.
 4. Asked that afternoon why he would not declare the war over, he said U.S. allies could still be hurt, and two days later he said "just a question of when we want to end it."
 5. The administration says force stays ready if Iran crosses its red lines, and no War Powers report on the strikes Trump acknowledged appears in the Congressional Record through November 13, while a House resolution filed November 10 would direct U.S. forces out of "hostilities with Iran."
 
