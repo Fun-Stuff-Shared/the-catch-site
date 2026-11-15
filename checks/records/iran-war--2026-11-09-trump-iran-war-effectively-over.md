@@ -13,36 +13,38 @@ Question 1: What did "Iran militarily is effectively over" describe, and does th
 - C. It ended months ago on the government's own books: the May 1 letter says the hostilities "have terminated" (the administration's legal accounting). Should not find: a later report to Congress of new action against Iran, or the President saying it has not ended.
 - D. He meant Iran's military is finished, not the war (the bare words "Iran militarily is effectively over"). Should not find: the remark made about the war itself.
 - E. A pause, not an end: force stays on the table and can resume at any time, by the administration's own words (the AP "shifting rhetoric" reading). If true: conditional language in the same remarks and the days after. Should not find: a statement that force is ruled out.
-- F (orchestrator): legally still hostilities. Kept only where a primary record speaks. The record speaks to one fact, not to the legal question: the President reported the September 1 defensive strikes to Congress [war-powers-letter-2026-09-03: "I am providing this report as part of my efforts to keep the Congress fully informed, consistent with the War Powers Resolution (Public Law 93-148)."], and the Congressional Record from November 9 through November 13 lists no such report for the November 6 strike [crec-2026-11-09: "Executive Communications:"] [crec-2026-11-13: "EXECUTIVE COMMUNICATIONS,"]. No legal conclusion is drawn.
+- F (orchestrator): legally still hostilities. Kept only where a primary record speaks. The record speaks to one fact, not to the legal question: the President reported the September 1 defensive strikes to Congress [war-powers-letter-2026-09-03: "I am providing this report as part of my efforts to keep the Congress fully informed, consistent with the War Powers Resolution (Public Law 93-148)."], and the Congressional Record from November 9 through November 13 lists no such report for the strikes Trump acknowledged on November 6 [crec-2026-11-09: "Executive Communications:"] [crec-2026-11-13: "EXECUTIVE COMMUNICATIONS,"]. No legal conclusion is drawn.
 
 | Evidence | A | B | C | D | E |
 |---|---|---|---|---|---|
-| Nov 9: he was counting wars [factbase-trump-briefing-2026-11-09: "So, we had two wars."] [factbase-trump-briefing-2026-11-09: "And the other is Iran. And Iran militarily is effectively over."] | C | | | I: the remark is about the second of "two wars" | C |
+| Nov 9: he was counting wars [factbase-trump-briefing-2026-11-09: "So, we had two wars."] [factbase-trump-briefing-2026-11-09: "And the other is Iran. And Iran militarily is effectively over."] | C | | | C, in part: the war is the subject, but see the next row | C |
+| Nov 9, right after: [factbase-trump-briefing-2026-11-09: "Their navy is gone. Their air force is gone."] [factbase-trump-briefing-2026-11-09: "So, their military is essentially gone."] | C | | | C | |
 | Nov 9, asked "Why not just declare an end to the conflict and be done with it?" [factbase-trump-briefing-2026-11-09: "Why not just declare an end to the conflict and be done with it?"], he answered [factbase-trump-briefing-2026-11-09: "Because we have some great allies there, and we have to make sure they're not hurt."] | C | | I: he gave a reason not to declare it over | | C |
 | Nov 11: [factbase-trump-arlington-2026-11-11: "And we won, just a question of when we want to end it."] | | | I: not ended, in his words | | C |
 | Sept 3 letter: [war-powers-letter-2026-09-03: "I write today to apprise you of military action commenced on September 1, 2026, against the Islamic Republic of Iran."] | | C | I: new action reported four months after "terminated" | | |
-| Nov 6: [factbase-trump-gaggle-2026-11-06: "We do minor strikes, but they knocked out, they, uh, built a little bit of an anti-aircraft device and we knocked it out in about 15 minutes, maybe five."] | C (minor) | C | I | | C |
+| Nov 6, asked about that day's reported strikes near Qeshm: [factbase-trump-gaggle-2026-11-06: "Strikes near Qeshm Island in Iran. Was the U.S. involved in that?"] [factbase-trump-gaggle-2026-11-06: "We do minor strikes, but they knocked out, they, uh, built a little bit of an anti-aircraft device and we knocked it out in about 15 minutes, maybe five."] (he gave no date or place) | C (minor) | C | I | | C |
 | Nov 7: [centcom-huda-2026-11-07: "A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda"] [centcom-huda-2026-11-07: "CENTCOM continues to strictly enforce America’s naval blockade against Iran."] | C (the blockade he named) | C | I | | C |
 | Nov 9: [factbase-trump-briefing-2026-11-09: "the military action doesn't seem to be a very necessary thing. But we're locked and loaded, ready to go for any reason that changes."] | C | | | | C |
 | Nov 10, Rubio: [rubio-paris-2026-11-10: "the President’s concluded that, for the time being, there’s no need for major combat operations because we’re achieving the same objective through economic means while we defend shipping"] | C | | | | C |
 | Nov 10, Hegseth: [hegseth-briefing-2026-11-10: "And if we saw the kind of nefarious activity that required action, we would take it."] | C | | | | C |
 | Nov 12, Hewitt: [hewitt-interview-2026-11-12: "No. No hesitation."] [hewitt-interview-2026-11-12: "But the answer is if I saw things going the other way, I would do that. And it’s possible I would do it right now."] | | | | | C |
 | Nov 13, CENTCOM: [centcom-drones-bahrain-2026-11-13: "The IRGC launched two one-way attack drones toward Bahrain and both were shot down by U.S. forces. There were no injuries or damage."] | C (defense) | C | I | | C |
+| Nov 15, Bahrain: [bahrain-mfa-2026-11-15: "including the attack launched today, Sunday, November 15, 2026, by drones that were intercepted and destroyed by air defense systems in the Kingdom’s airspace"] | C (defense) | C, for Iran's side | | | C |
 | Nov 12, Sirik: Iran's news agency reported an "enemy" strike, naming no attacker; CENTCOM's statement did not mention it [rferl-sirik-2026-11-13: "Earlier, the official Iranian news agency IRNA reported that Sirik, in Hormozgan Province, had been hit by an \"enemy\" strike."] [rferl-sirik-2026-11-13: "The CENTCOM statement made no reference to the claimed attack on Sirik"] | C | unproven: no U.S. record either way | | | |
 
 Background held (fits every surviving answer, decides nothing): Iron Gate [centcom-iron-gate-2026-11-07: "Strict enforcement at sea continues against all ships entering or departing Iranian ports."]; Hegseth's "historic military victory" list; "it's not a war" (Nov 6) [factbase-trump-gaggle-2026-11-06: "it's not a war. It can't be a war when for five months nobody is hurt, killed, or anything else. It's not a war."]; Rubio's "The U.S. acts defensively" (Nov 8) [rubio-homestead-2026-11-08: "Well, the U.S. acts defensively."]; Hegseth: ending it is the President's "prerogative" [hegseth-gaggle-2026-11-09: "Whatever he wants to do is his prerogative, and the War Department is prepared to give him the tools to execute on that."].
 
-Survives: A and E, which do not conflict: A is what the administration says it is doing (no new campaign; the blockade and defense of the Gulf continue), E is what it says it may still do. B survives for the week before November 9 (the November 6 strike he described, the November 7 ship) and for defensive fire after it (the November 13 drones); a U.S. strike on Iran after November 9 is unproven (Sirik unattributed, no U.S. record). Ruled out: C (the September 3 letter; his November 9 refusal to declare an end and his November 11 "when we want to end it"); D (the November 9 transcript puts the remark about the war, the second of "two wars"). The result turns on two rows, both rechecked at the Factba.se transcript (C-SPAN's captions read the same): the "two wars" context and the declined declaration. It would change if the U.S. government confirmed a strike on Iran after November 9 (B survives in full) or if the White House declared an end.
+Survives: A and E, which do not conflict: A is what the administration says it is doing (no new campaign; the blockade and defense of the Gulf continue), E is what it says it may still do. B survives for the week before November 9 (the strikes Trump acknowledged on November 6 he described, the November 7 ship) and for defensive fire after it (the November 13 drones); a U.S. strike on Iran after November 9 is unproven (Sirik unattributed, no U.S. record). Ruled out: C (the September 3 letter; his November 9 refusal to declare an end and his November 11 "when we want to end it"). D, after review round 1, survives as part of what he meant, not as the whole: the remark sits in his count of "two wars" and is followed at once by "their military is essentially gone". The two readings join: in his account the war is over militarily because Iran's military is gone. Neither makes it a declaration of an end. The result turns on two rows, both rechecked at the Factba.se transcript (C-SPAN's captions read the same): the "two wars" context and the declined declaration. It would change if the U.S. government confirmed a strike on Iran after November 9 (B survives in full) or if the White House declared an end.
 
 The catch: "effectively over" is not an end to the war, and Trump did not declare one. Asked that afternoon why he would not, he gave a reason not to. The "status quo" he named is a blockade U.S. aircraft enforce with fire, and he described a strike three days earlier; two days later he said it was "just a question of when we want to end it"; three days later, "it's possible I would do it right now." The headline that he "declares" the war effectively over [usatoday-declares-2026-11-09: "Trump declares Iran war 'effectively over,' opts for status quo"] carries the reading the record rules out. Rubio's "No, not status quo" the next day [rubio-paris-2026-11-10: "No, not status quo."] is the administration describing the same policy two ways: he meant the pressure keeps growing, not that combat resumes.
 
 ## The story
 
 1. On November 9, after meeting Qatar's prime minister, Trump told reporters "Iran militarily is effectively over. We're just keeping it the status quo," and said new military action did not seem necessary.
-2. The status quo he named is a naval blockade that U.S. aircraft enforce with fire, as they did against a cargo ship on November 7, two days after a strike on an Iranian anti-aircraft site that Trump himself described, and four days later U.S. forces shot down Iranian drones aimed at Bahrain.
+2. The status quo he named is a naval blockade U.S. aircraft enforce with fire, as they did against a cargo ship on November 7, the day after Trump acknowledged "minor strikes" on Iran, and Iranian drones aimed at Bahrain were shot down on November 13 and again on November 15.
 3. He spoke six days after a midterm election his party lost in part over the war, with Gulf allies, he said, asking him to keep the blockade rather than bomb.
 4. Asked that afternoon why he would not declare the war over, he said U.S. allies could still be hurt, and two days later he said "just a question of when we want to end it."
-5. The administration says force stays ready if Iran crosses its red lines, and no War Powers report on the November 6 strike appears in the Congressional Record through November 13, while a House resolution filed November 10 would direct U.S. forces out of "hostilities with Iran."
+5. The administration says force stays ready if Iran crosses its red lines, and no War Powers report on the strikes Trump acknowledged appears in the Congressional Record through November 13, while a House resolution filed November 10 would direct U.S. forces out of "hostilities with Iran."
 
 ## The plan
 
@@ -51,11 +53,11 @@ Dek: U.S. aircraft are still enforcing a blockade with fire, and Trump says he c
 
 What happened (sentences 1 and 2; the event, what it means, where it stands):
 1. What did he say? "Iran militarily is effectively over. We're just keeping it the status quo," in the briefing room on November 9 after meeting Qatar's prime minister; new military action "doesn't seem to be a very necessary thing" [factbase-trump-briefing-2026-11-09: "And Iran militarily is effectively over. We're just keeping it the status quo, and we're doing that really at the behest of countries that are their neighbors."].
-2. What is the status quo? In his words the blockade, "land and sea" [factbase-trump-briefing-2026-11-09: "So, you have land and sea, total lockdown."]; on the record, a blockade aircraft enforce with fire (Nov 7), a strike he described (Nov 6), drones shot down (Nov 13) [centcom-huda-2026-11-07: "A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda"] [factbase-trump-gaggle-2026-11-06: "we knocked it out in about 15 minutes, maybe five"] [centcom-drones-bahrain-2026-11-13: "both were shot down by U.S. forces"].
-3. Where it stands: no U.S. strike on Iran on the government's record since November 9; the blockade continues; he has not declared an end (named here, told in The Catch).
+2. What is the status quo? In his words the blockade, "land and sea" [factbase-trump-briefing-2026-11-09: "So, you have land and sea, total lockdown."]; on the record, a blockade aircraft enforce with fire (Nov 7, the blockade back since July 14 after the June deal fell apart), the "minor strikes" he acknowledged (Nov 6), Iranian drones shot down over Bahrain (Nov 13, Nov 15) [centcom-huda-2026-11-07: "A U.S. military aircraft fired precision munitions at the stern of St. Kitts-flagged M/V Huda"] [factbase-trump-gaggle-2026-11-06: "we knocked it out in about 15 minutes, maybe five"] [centcom-drones-bahrain-2026-11-13: "both were shot down by U.S. forces"].
+3. Where it stands: no U.S. strike on Iran on the government's record since November 9; Iranian drones at Bahrain on November 15, intercepted [bahrain-mfa-2026-11-15: "by drones that were intercepted and destroyed by air defense systems in the Kingdom’s airspace"]; the blockade continues; he has not declared an end (named here, told in The Catch).
 
 The week, on the record (visual: dated timeline, Nov 6 to Nov 13, government records only; his words on one side, U.S. forces' actions on the other). Opens on: what did the government do and say in the days around "effectively over"?
-- Nov 6 strike, "minor strikes"; Nov 7 Huda; Nov 9 "effectively over", "locked and loaded"; Nov 10 Rubio "no need for major combat operations ... for the time being", Hegseth "we would take it"; Nov 11 "just a question of when we want to end it"; Nov 12 Hewitt "possible I would do it right now"; Nov 13 drones.
+- Nov 6 "minor strikes" acknowledged; Nov 7 Huda; Nov 9 "effectively over", "locked and loaded"; Nov 10 Rubio "no need for major combat operations ... for the time being", Hegseth "we would take it"; Nov 11 "just a question of when we want to end it"; Nov 12 Hewitt "possible I would do it right now"; Nov 13 drones; Nov 15 drones (Bahrain).
 - Nov 2 strike only as attributed to unnamed officials, in Show the work [nyt-qeshm-2026-11-02: "The action was limited, the officials said, with no immediate plans to escalate."].
 
 The Catch (sentence 4): opens on "Did Trump declare the war over?" No.
@@ -83,10 +85,11 @@ The crews and ships the blockade stops; the Gulf states Iran targets. The M/V Hu
 | Date | What happened | Source |
 |---|---|---|
 | May 1 | Trump tells Congress the hostilities "have terminated" | war-powers-letter-2026-05-01 |
+| Jun 17 to Jul 14 | Memorandum signed; blockade lifted June 18; U.S. strikes resume June 26; Trump declares the memorandum "over" in July; blockade resumes July 14 | crs-iran-conflict-2026-09-18; centcom-blockade-resumes-2026-07-13 |
 | Sep 1 to 3 | Defensive strikes on Iran; reported to Congress Sept 3 | war-powers-letter-2026-09-03 |
 | Nov 2 | Limited strike on Qeshm, per unnamed U.S. officials; never acknowledged by the Pentagon | nyt-qeshm-2026-11-02; hill-secret-strikes-2026-11-05 |
 | Nov 3 | Midterms; Trump: "Iran was a piece of it" | wsj-iran-piece-of-it-2026-11-04 |
-| Nov 6 | Trump: "We do minor strikes"; "it's not a war" | factbase-trump-gaggle-2026-11-06 |
+| Nov 6 | Asked about reported strikes near Qeshm that day, Trump: "We do minor strikes"; earlier, "it's not a war" | factbase-trump-gaggle-2026-11-06 |
 | Nov 7 | CENTCOM fires on and disables M/V Huda; creates Task Force Iron Gate | centcom-huda-2026-11-07; centcom-iron-gate-2026-11-07 |
 | Nov 8 | Rubio: "the U.S. acts defensively" | rubio-homestead-2026-11-08 |
 | Nov 9 | "Iran militarily is effectively over"; declines to declare an end | factbase-trump-briefing-2026-11-09 |
@@ -94,6 +97,7 @@ The crews and ships the blockade stops; the Gulf states Iran targets. The M/V Hu
 | Nov 11 | "just a question of when we want to end it" | factbase-trump-arlington-2026-11-11 |
 | Nov 12 | To Hewitt: "No. No hesitation." | hewitt-interview-2026-11-12 |
 | Nov 13 | CENTCOM: two IRGC drones aimed at Bahrain shot down | centcom-drones-bahrain-2026-11-13 |
+| Nov 15 | Bahrain: Iranian drones intercepted and destroyed; the IRGC claimed them | bahrain-mfa-2026-11-15 |
 
 ## Why: the stated reasons
 
@@ -101,7 +105,7 @@ Trump: the Gulf neighbors prefer it [factbase-trump-briefing-2026-11-09: "We're 
 
 ## The sides
 
-The administration: no new campaign is needed; force stays ready (Trump, Rubio, Hegseth, cited above). Massie's resolution treats U.S. forces as in "hostilities with Iran" [hconres-126-2026-11-10: "to remove United States Armed Forces from hostilities with Iran."]. Both sides agree the blockade continues.
+The administration: no new campaign is needed; force stays ready (Trump, Rubio, Hegseth, cited above). Qatar, whose prime minister Trump had just met, describes the same days as mediation to end "a state of neither war nor peace" [qatar-mofa-2026-11-10: "He said that the mediator is working tirelessly to put an end to the prevailing uncertainty, a state of neither war nor peace, and to restore stability and prosperity to the region."]. Iran's core demands include ending the blockade [ap-effectively-over-2026-11-09: "Among the core demands Iran says must be met before engaging in nuclear talks: ending the U.S. blockade on Iran’s ports"]. Massie's resolution would leave forces defending against imminent attack [hconres-126-2026-11-10: "other than those elements of the Armed Forces that may be necessary to defend the United States or an ally or partner of the United States from imminent attack"]. Massie's resolution treats U.S. forces as in "hostilities with Iran" [hconres-126-2026-11-10: "to remove United States Armed Forces from hostilities with Iran."]. Both sides agree the blockade continues.
 
 ## The numbers
 
@@ -127,7 +131,21 @@ The White House declined to comment to AP on the shifts [pbs-shifting-rhetoric-2
 ## Unknowns
 
 - Who struck Sirik on November 12. Iran named no attacker; no U.S. record addresses it.
-- Whether a War Powers report on the November 6 strike was sent and not yet listed. Searched: House Documents through H.Doc. 210 (govinfo API, November 15); the Congressional Record of November 5, 9, 10, 11, 12 and 13 (every presidential communication listed; none is a War Powers report).
+- Whether a War Powers report on the strikes Trump acknowledged on November 6 was sent and not yet listed. Searched: House Documents through H.Doc. 210 (govinfo API, November 15); the Congressional Record of November 5, 9, 10, 11, 12 and 13 (every presidential communication listed; none is a War Powers report).
+
+## Review round 1 (RECORD INCOMPLETE), as judged
+
+- (1) November 15 Bahrain attack: admitted from Bahrain's foreign ministry; in What happened as the latest dated fact. The Bahrain Defence Force statement via WAM captured as an Arabic shell; CENTCOM had posted nothing on November 15 by 11:55 ET.
+- (2) November 12 "we don't need a deal" post: background held (carried in pbs-shifting-rhetoric-2026-11-14); does not change the five sentences.
+- (3) Reuters November 14 (unnamed sources): declined; Reuters refuses capture.
+- (4) April ceasefire, June memorandum, July collapse, blockade back July 14: admitted (CRS, CENTCOM); one clause on the page, where the blockade is named.
+- (5) Iran's position: admitted through AP's statement of its core demands; Tasnim fetch failed. The Sides only.
+- (6) Gulf preferences: Qatar's own November 10 statement admitted; Trump's account stays attributed to him.
+- (7) D: accepted in part; rescored above.
+- (8) The November 6 transcript does not date a strike: accepted. The page says "the strikes Trump acknowledged November 6" and dates no strike itself.
+- (9) H. Con. Res. 126's defensive exception: accepted; the claim states it.
+- (10) Vance, "The reason we lost is the war": admitted via USA Today; Why now only.
+- (11) CBO cost: background; the CBO story covers it.
 
 ## Leads not admitted
 
