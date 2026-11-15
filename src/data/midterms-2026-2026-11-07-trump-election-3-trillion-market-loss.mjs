@@ -47,7 +47,7 @@ export const n = {
 export const event = {
   slug: "midterms-2026/2026-11-07-trump-election-3-trillion-market-loss",
   title: "Stocks did lose $3 trillion after the election, led by AI data-center stocks",
-  dek: "Trump blamed Democrats. The stocks that fell most were tied to AI data centers, which winners had promised to pause.",
+  dek: "Trump blamed Democrats. The stocks that fell most were tied to AI data centers, which some winners, including Texas's governor-elect, had promised to pause or restrict.",
   name: "Trump's $3 trillion election stock loss",
   date: "2026-11-07",
   updated: "2026-11-15",
