@@ -24,6 +24,7 @@ Question 2: what moved the market on Thursday, Nov. 5?
 - D. Company news that day: Qualcomm's weak outlook late Wednesday, Arm's results. If true: those names lead and analysts name earnings. Should not find: a fall led by names with no earnings news.
 - E. Oil and the Iran war. If true: the fall tracks oil and energy-sensitive industries lead. Should not find: chips leading while oil moves modestly.
 - F. Inflation or interest-rate news. If true: a hot release and rising yields Thursday. Should not find: good data and falling yields.
+- A2. A delayed, broad reaction to Democrats' wider agenda, not tied to AI (raised by the record review, citing the IMF's Nov. 6 market monitor). If true: Thursday's selling hits sectors exposed to Democratic policy generally, and analysts name non-AI policy fears. Should not find: a fall concentrated in AI suppliers with every named reason about data centers.
 - G. Market mechanics (leveraged funds, momentum selling) as the cause. If true: no news trigger. Should not find: named news triggers that day.
 
 | Evidence | A | B | C | D | E | F | G |
@@ -43,24 +44,27 @@ Question 2: what moved the market on Thursday, Nov. 5?
 | China's delay approving imports of Nvidia's H200 chips "added pressure" [benzinga-2026-11-05-h200: "while China’s delay in approving imports of Nvidia’s H200 chips and a soft profit outlook from Qualcomm added pressure"] | | | | C | | | |
 | Named analysts tie the trigger to data-center curbs: Capital Economics, "the concern that the Democrats ... will seek to regulate the AI industry and restrict data center development" [cbs-2026-11-05-capital-economics: "The trigger for these moves appears to be the concern that the Democrats"] | | C | | | | | I |
 
+| JPMorgan: leveraged funds sold more than $60 billion of stock exposure that week, about 90 percent in tech [wsj-leveraged-etfs-2026-11-06: "JPMorgan estimates that leveraged ETFs sold more than $60 billion of equity exposure this week, with about 90% tied to technology stocks."] | | C | C | C | | | C as amplifier |
+
 Background held (fits every answer): the size of the fall; Musk companies and Trump Media falling (fits A and B). Abbott, a Republican, had already paused new data-center grid connections in Texas before the vote, so the curbs investors feared were not purely a Democratic program [fortune-2026-11-05-3-trillion: "The opposition is not purely partisan."]; this qualifies B's label, not its mechanism.
 
-Survives: B, C and D, as parts of one day rather than rivals: the selling ran through chip and data-center stocks after results that put data-center opponents in power (B), on top of an AI selloff running since October (C), with Qualcomm's outlook as the morning trigger (D). Ruled out: A as Trump states it (the first trading day after the results was the best in three months, and the split that day followed data-center exposure, not party ideology); F (good data, falling yields); G as a cause (named triggers). E is unproven as a Thursday cause: oil rose 3.9 percent but chips led; oil's fall did help Monday's recovery. The result turns on the Wednesday rows (the rally and the split); it would change if the Wednesday closes were wrong, and AP, WSJ, NYT and CNBC carry the same closes.
+Survives: B, C and D, as parts of one day rather than rivals: the selling ran through chip and data-center stocks after results that put data-center opponents in power (B), on top of an AI selloff running since October (C), with Qualcomm's outlook as the morning trigger (D). Ruled out: A as Trump states it, an immediate worldwide flight from Democrats (the first trading day after the results was the best in three months, and the split that day followed data-center exposure, not party); F (good data, falling yields); G as the cause (named triggers), though it survives as an amplifier: leveraged funds' forced selling deepened the fall. Unproven: A2, a delayed broad reaction to Democrats' agenda beyond AI. All 11 sectors fell Thursday, which fits it, but every reason named that day by analysts and reporters is about AI and data centers, chips led, and the companies that pay for data centers fell less; no admitted record names a non-AI policy fear. It stays alive, and the page says the election moved stocks through the data-center bet without claiming that was the only route. E is unproven as a Thursday cause: oil rose 3.9 percent but chips led; oil's fall did help Monday's recovery. The result turns on the Wednesday rows (the rally and the split); it would change if the Wednesday closes were wrong, and AP, WSJ, NYT and CNBC carry the same closes.
 
-Question 3, raised by Trump's Nov. 14 post: did the market lose $3 trillion "immediately after the Election", and did it stay lost?
-- A. Yes, immediately (Trump, Nov. 14). Should not find: a gain the first trading day after the results.
-- B. No: it rose Wednesday, fell Thursday, and was back near its Election Day level by Monday Nov. 9.
+Question 3, raised by Trump's Nov. 14 post: did the market lose $3 trillion "immediately after the Election"?
+- A. Yes (Trump, Nov. 14, who adds that "the Market has since gone up"). Should not find: a gain the first trading day after the results.
+- B. Not the next day: it rose Wednesday and fell Thursday; measured from the Election Day close, the loss by Thursday was smaller on most measures.
 
 | Evidence | A | B |
 |---|---|---|
-| Wednesday, all U.S.-listed companies +$1.22 trillion [clay-total-market-2026: "November 4, 2026 | 5,537 | $98.18T | +1.22T (+1.26%)"] | I | C |
-| Monday Nov. 9 all-listed total $97.06 trillion against $96.96 trillion at the Election Day close [clay-total-market-2026: "November 9, 2026 | 5,533 | $97.06T | +2.37T (+2.50%)"] [clay-total-market-2026: "November 3, 2026 | 5,540 | $96.96T | +241.49B (+0.25%)"] | | C |
+| Wednesday, all U.S.-listed companies +$1.22 trillion; S&P 500 +1.6 percent [clay-total-market-2026: "November 4, 2026 | 5,537 | $98.18T | +1.22T (+1.26%)"] | I, for the next day | C |
+| Election Day close to Thursday close: all-listed total $96.96 trillion to $93.89 trillion, about $3.07 trillion; S&P 500 7,568.92 to 7,353.73, 2.8 percent [clay-total-market-2026: "November 3, 2026 | 5,540 | $96.96T | +241.49B (+0.25%)"] [ap-indexes-2026-11-03: "The S&P 500 rose 27.52 points, or 0.4%, to 7,568.92."] | C, on the broadest total | C |
+| Trump's own post acknowledges the rebound [trump-truth-2026-11-14-immediately: "But have no fear, the Market has since gone up"] | | |
 
-Survives: B. Ruled out: A (Wednesday's gain).
+Survives: both, on different measures. "Immediately" fails for the next day, but over the two days after the vote the broadest total did fall about $3 trillion (that total counts foreign companies listed in the U.S.; on the S&P 500 the two-day loss was 2.8 percent, about two-thirds of Thursday's). Not a catch: the timing point is a detail; the page's point is the cause.
 
 ## The story
 
-On Thursday, Nov. 5, two days after Democrats won Congress, U.S. stocks had their worst day since April 2025, losing about $3 trillion in value. President Trump blamed the election for the whole loss, saying investors around the world hated what happened on Election Day. The election did move the market, but the day after the vote stocks had their best day in three months; the fall came a day later and ran through chip and data-center stocks, as investors bet that newly elected Democrats would slow the building of AI data centers. The dispute is over what the election did: Trump says investors fled Democrats, while the trading shows a bet against one industry, landing on an AI selloff that had run since October and a weak chip forecast that morning. By Monday, Nov. 9, the market was back near where it closed on Election Day, and the data-center limits investors feared have not been written yet.
+On Thursday, Nov. 5, two days after Democrats won Congress, U.S. stocks had their worst day since April 2025, losing about $3 trillion in value. President Trump blamed the election for the whole loss, saying investors around the world hated what happened on Election Day. The election did move the market, but the day after the vote stocks had their best day in three months; the fall came a day later and ran through chip and data-center stocks, as investors bet that newly elected Democrats would slow the building of AI data centers. The dispute is over what the election did: Trump says investors fled Democrats, while the trading shows a bet against one industry, landing on an AI selloff that had run since October and a weak chip forecast that morning. By Monday, Nov. 9, the market was back near where it closed on Election Day, and a week later it still was; the moratoriums the Democratic winners campaigned on are not yet in force, though Texas's Republican governor had already paused data-center permits.
 
 ## The plan
 
@@ -82,8 +86,9 @@ How big the loss was (opens on "is $3 trillion right?"):
 What moved stocks (sentence 3; opens on "if not Election Day, why Thursday?"):
 1. What did the market do when the results came in? Wednesday was the best day in three months; investors usually like divided government [ap-2026-11-04-stocks-soar; wsj-markets-pm-2026-11-04].
 2. Then why the fall? Under Wednesday's rally, chip and data-center stocks already fell (Nvidia -3.1, Micron -7, Vistra -14 percent) while Amazon and Microsoft rose about 6 percent: the winners in Texas, Ohio and Georgia had campaigned to pause data-center building; Texas holds 27 percent of planned capacity; voters backed limits in 40 of 41 local measures [wsj-markets-pm-2026-11-04; fortune-2026-11-05-3-trillion; cnbc-2026-11-04-texas-data-centers; ballotpedia-2026-11-06-data-center-measures].
-3. What tipped Thursday? Qualcomm's weak forecast late Wednesday, and Hinojosa saying Thursday "we need to stop what we are doing with data centers"; chips led, the chip index -12 percent, while the big cloud companies fell less [cnbc-2026-11-05-qualcomm; usatoday-2026-11-05-hinojosa; nyt-2026-11-05-stocks-plunge].
-4. Was it only the election? It landed on an AI selloff: the chip index had already fallen more than 30 percent since the start of October [nyt-2026-11-05-stocks-plunge].
+3. Why did it fall so far? Leveraged funds sold more than $60 billion of stock exposure that week, mostly tech, deepening the drop [wsj-leveraged-etfs-2026-11-06]. One clause.
+4. What tipped Thursday? Qualcomm's weak forecast late Wednesday, and Hinojosa saying Thursday "we need to stop what we are doing with data centers"; chips led, the chip index -12 percent, while the big cloud companies fell less [cnbc-2026-11-05-qualcomm; usatoday-2026-11-05-hinojosa; nyt-2026-11-05-stocks-plunge].
+5. Was it only the election? It landed on an AI selloff: the chip index had already fallen more than 30 percent since the start of October [nyt-2026-11-05-stocks-plunge].
 Quote card: Capital Economics' Joe Maher on the trigger [cbs-2026-11-05-capital-economics].
 
 The Catch (sentence 4; opens on "so was Trump right?"):
@@ -92,8 +97,8 @@ The Catch (sentence 4; opens on "so was Trump right?"):
 3. Is the data-center fight a Democratic one? Not only: Abbott, a Republican, had already paused new data-center grid connections in Texas [texastribune-2026-11-04-hinojosa-pause]. This is the one qualifier.
 
 What happens next (sentence 5):
-1. Did the money come back? Mostly by Monday Nov. 9 (S&P 500 +2.3 percent, AMD recovered its loss), helped by falling oil [ap-2026-11-09-rally].
-2. When could the feared limits arrive? None is written; Hinojosa takes office Jan. 19 and the Texas Legislature meets in January [texastribune-2026-11-04-hinojosa-pause].
+1. Did the money come back? Mostly by Monday Nov. 9 (S&P 500 +2.3 percent), helped by falling oil; on Nov. 13 the S&P 500 was within 0.1 percent of its Election Day close [ap-2026-11-09-rally; ap-indexes-2026-11-13].
+2. When could the promised limits arrive? Hinojosa takes office Jan. 19 and wants a moratorium until the Legislature meets in January; Abbott's pause is already in place [texastribune-2026-11-04-hinojosa-pause].
 
 Background held: Trump's Iran clause on Nov. 6; the Nov. 4 "Record High" post; China's H200 import delay; the all-listed $4.29 trillion figure (counts foreign companies); leveraged-fund selling; Musk companies and Trump Media; global $3.5 trillion.
 
@@ -156,7 +161,8 @@ The coverage broadly matches the records. The one claim the records contradict i
 
 ## What is next
 
-The data-center limits investors priced have not been written. Hinojosa takes office Jan. 19 [texastribune-2026-11-04-hinojosa-pause: "She takes office Jan. 19."]; she called for a moratorium until the Legislature meets in January [texastribune-2026-11-04-hinojosa-pause: "She called for a data center moratorium to last until the Texas Legislature meets in January"]. Nvidia reports results Nov. 17 [lead: https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html, held, not admitted; background].
+The moratoriums the winners campaigned on are not in force; Abbott's pause on Texas permits already is. Hinojosa takes office Jan. 19 [texastribune-2026-11-04-hinojosa-pause: "She takes office Jan. 19."]; she called for a moratorium until the Legislature meets in January [texastribune-2026-11-04-hinojosa-pause: "She called for a data center moratorium to last until the Texas Legislature meets in January"]. Nvidia reports results Nov. 17 [lead: https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html, held, not admitted; background].
+On Friday, Nov. 13, the S&P 500 closed at 7,561.67, within 0.1 percent of its Election Day close, as Nvidia's shares fell after its CEO resigned [ap-indexes-2026-11-13: "The S&P 500 fell 30.73 points, or 0.4%, to 7,561.67."] [ap-indexes-2026-11-13: "Nvidia shares fell again, a day after the AI industry was rocked by the resignation of CEO Jensen Huang."].
 By Monday Nov. 9 the market had recovered most of the loss [ap-2026-11-09-rally: "The U.S. stock market rallied Monday and recovered most of its big loss from last week as oil prices swung lower."].
 
 ## Reactions
@@ -174,3 +180,9 @@ How much of Thursday's fall each cause accounts for: no record separates them, a
 - Yahoo Finance live blog ("worst second session after a midterm since 1896"): captured page held only a portal shell.
 - Nikkei global $3.5 trillion (via koreastocksexplained.com): a world figure, not U.S.; not needed.
 - Sanders, Acton, Huffman SB 293 (grok): background on data-center politics; not needed for this story.
+
+Round 1 review findings declined or held as background:
+- Executive Order 14318 (July 2025, faster federal permitting for data centers), S. 4214 (Sanders' moratorium bill), the House Ratepayer Protection Act, the Senate's Nov. 9-10 votes on an energy-permitting bill, Georgia's Public Service Commission flip: verified as leads, not admitted. They deepen the data-center politics without changing what moved stocks on Nov. 5 or what a reader of the five sentences is left asking. Background held.
+- IMF Global Markets Monitor, Nov. 6: its points (regulation fears as the catalyst, selling spreading, deleveraging as amplifier) are carried by admitted records (CBS/Capital Economics, CNBC sector count, WSJ/JPMorgan leveraged funds); not admitted separately.
+- Qualcomm's SEC-filed release: guidance midpoint $2.25 against a $2.27 consensus, which is what "light forecast" says; the claim keeps Kinahan's "touched it off" as his.
+- Nvidia CEO resignation, Nov. 11-12: admitted only through AP's Nov. 13 table, for where the market stood.
