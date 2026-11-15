@@ -4,7 +4,7 @@ import { extname, join } from "node:path";
 const KINDS = {
   ".pdf": "PDF document", ".xlsx": "spreadsheet", ".xls": "spreadsheet",
   ".mp4": "video file", ".webm": "video file", ".mov": "video file",
-  ".wav": "audio file", ".mp3": "audio file", ".m4a": "audio file",
+  ".wav": "audio file", ".mp3": "audio file", ".m4a": "audio file", ".opus": "audio file", ".ogg": "audio file",
   ".png": "image", ".jpg": "image", ".jpeg": "image", ".gif": "image", ".webp": "image",
 };
 
