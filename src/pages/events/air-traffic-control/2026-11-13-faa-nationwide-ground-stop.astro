@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, chronology, explanations } from "../../../data/air-traffic-control-2026-11-13-faa-nationwide-ground-stop.mjs";
+const story = "air-traffic-control--2026-11-13-faa-nationwide-ground-stop";
+const short = (id) => claim(story, id).short;
+const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), current: e.current, cites: [{ c: e.c }] }));
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/air-traffic-control/">Air traffic control</a><span>November 13, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Air traffic control &middot; November 13, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="national-stop-order" /><Cite c="stop-lifted" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /><Cite c="sat-fault-undetermined" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#what-broke">What broke</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">At 3:53 p.m. Eastern on Friday, November 13, the Federal Aviation Administration ordered every airport in the country to hold all departing flights until further notice.<Cite c="national-stop-order" /> Radar and radio links at the centers that guide planes between airports, and at the facilities that handle them near big airports, had become unstable, Transportation Secretary Sean Duffy later said, and the FAA called it a temporary telecommunications outage.<Cite c="duffy-onset-336" /><Cite c="faa-telecom-outage" /> It was the second nationwide ground stop since the September 11 attacks, two people at the FAA told MS NOW; the first, in January 2023, came after contractors unintentionally deleted files in the system that sends pilots safety notices.<Cite c="second-since-911" /><Cite c="notam-2023" /></p>
+        <p data-layer="narrative" data-answer="2">{n.airborne} flights bound for U.S. airports were in the air when the order came, by Flightradar24's count, and they were told to expect holding wherever they landed.<Cite c="airborne-4042" /><Cite c="airborne-holding" /> At least {n.diverted} had been diverted by early evening, most of them back to where they took off, by Cirium's count, and FlightAware counted about {n.cancelled} U.S. cancellations for the day, CNBC reported, though some of the day's disruptions were due to bad weather.<Cite c="diversions-600" /><Cite c="friday-cancel-9000" /> Europe's air traffic agency held U.S.-bound departures at the FAA's request, and Mexico grounded its flights to the United States.<Cite c="abroad-held" /> Alaska Airlines kept flying within Alaska and between the Hawaiian islands.<Cite c="alaska-hawaii-flew" /></p>
+        <p data-layer="narrative" data-answer="5">The FAA lifted the stop at 8:16 p.m., {n.hours} hours and {n.minutes} minutes after ordering it.<Cite c="stop-lifted" /> On Saturday Duffy said the FAA believes it began with a contractor's work at a remote site, and that what went wrong there has not been determined.<Cite c="sat-duffy-believe-site" /><Cite c="sat-fault-undetermined" /> FAA Administrator Bryan Bedford said officials see zero evidence of anything nefarious.<Cite c="sat-bedford-zero" /></p>
+      </section>
+
+      <section id="what-broke">
+        <h2 data-layer="fact">What broke</h2>
+        <p data-layer="narrative" data-answer="3">Duffy's account starts with a routine job. L3Harris, which owns the network the FAA uses to control the airspace, was moving a line at a remote FAA site from copper to fiber because the copper line was being discontinued.<Cite c="sat-l3harris-owns" /><Cite c="sat-copper-discontinued" /> The router being replaced flooded other routers, disrupting communication with airplanes and radar feeds, he said.<Cite c="sat-router-flood" /></p>
+        <QuoteCard speaker="Sean Duffy, Transportation Secretary" when="November 14, 2026" where="Transportation Department press conference" label="U.S. Department of Transportation">
+          <p>"That router that was being replaced as we switched from from from uh copper to fiber, it started flooding other routers in our air traffic control system. So specifically we had over one thousand connection attempts every four to five seconds."<Cite c="sat-router-flood" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Bedford said 17 of the FAA's 22 en-route centers saw instability the FAA could not explain, and that the instability spread to approach facilities.<Cite c="sat-bedford-17-of-22" /> Maintenance on the network is logged by hand, he said, so finding out who was working on what meant going through sheets of paper.<Cite c="sat-bedford-paper-logs" /> Once the work at the site was isolated, all of the FAA's systems came back online, Duffy said.<Cite c="sat-isolate-restored" /></p>
+        <p data-layer="narrative">The trouble began 43 minutes before the national order. At 3:10 p.m. the FAA ground-stopped O'Hare for communications issues, and by Duffy's account radar and communications at its centers and approach facilities across the country became unstable at 3:36.<Cite c="sequence-chicago" /><Cite c="duffy-onset-336" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Friday afternoon, from the FAA's command center</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+        <p data-layer="narrative">The contractor L3Harris runs the FAA's telecommunications network and says it uses several local phone carriers. It says the network carries all of the system's critical traffic, voice and radar included, and connects every tower, radar site and center.<Cite c="fti-multi-carrier" /><Cite c="fti-carries-all" /> There is one such network, Bedford said, and the flood overwhelmed one en-route center's routers, then spread to other centers' backups.<Cite c="sat-bedford-one-network" /> He told Congress in September that the network is a 1980s design.<Cite c="bedford-1980s-network" /></p>
+        <p data-layer="narrative">In September a Philadelphia facility lost its lines after L3Harris had the FAA switch to backup lines and a contractor then accidentally cut the backup. Bedford said then that "we just don’t have the redundancy that we would get if we had a modern architecture."<Cite c="sept-2026-backup-cut" /></p>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <p data-layer="narrative"><strong>The administration.</strong> Duffy wants Congress to pay for a new system.<Cite c="duffy-wants-50b" /> The money he is requesting would build a new network with AT&amp;T, Verizon and Lumen, he said, and until it is built he is stuck with L3Harris, which owns the current one.<Cite c="sat-duffy-new-network" /> He also asks what L3Harris did, and says the FAA will hold people accountable.<Cite c="sat-routine-thousands" /><Cite c="sat-accountable" /> Hours before the stop, the White House had asked Congress for ${n.requested} billion more for aviation.<Cite c="funding-30b" /> On Saturday Duffy said he asked for $30 billion because it is a number he thinks Congress will give him, and that a full build, runways and towers included, needs more.<Cite c="sat-duffy-30b-ask" /></p>
+        <p data-layer="narrative"><strong>L3Harris.</strong> The company says it is supporting the FAA's investigation, and that more than 70% of the planned conversion from copper wire to fiber is done.<Cite c="l3harris-70-supporting" /></p>
+        <p data-layer="narrative"><strong>Senate Commerce Republicans.</strong> The committee's majority said the outage appears related to the en-route centers, which guide planes between airports, and shows the need to put modernizing the centers ahead of other projects, citing the $1.9 billion Chairman Ted Cruz secured to replace and consolidate them.<Cite c="senate-commerce-claim" /><Cite c="senate-commerce-19b" /> Cruz has also backed the money for new telecommunications.<Cite c="cruz-telecom-money" /></p>
+        <p data-layer="narrative"><strong>Democrats.</strong> Sen. Tammy Duckworth wants a full investigation, and Sen. Maria Cantwell says the Commerce Committee will review the main and backup radio frequencies controllers use.<Cite c="investigations" /> Rep. Delia Ramirez asked whether the administration's cuts and changes to the FAA were responsible.<Cite c="ramirez-cuts-question" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Duffy blamed old switches, then a router at a remote site<Cite c="briefing-that-night" /><Cite c="duffy-switches-overloaded" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /></h3>
+              <p data-layer="narrative">On Friday night Duffy put the failure on old equipment: the FAA's analog switches and routers were overloaded and went down everywhere, he said, and he wanted ${n.duffyAsk} billion from Congress, warning of more outages without it.<Cite c="duffy-switches-overloaded" /><Cite c="duffy-everywhere" /><Cite c="duffy-wants-50b" /> Asked what was different on Friday, he said the FAA was still working on the details of what went wrong.<Cite c="duffy-still-working" /></p>
+              <p data-layer="narrative">On Saturday Duffy gave a source for the overload: what the FAA believes was a router at a remote site, which he thinks was the only site involved, where L3Harris was moving a line from copper to fiber.<Cite c="sat-router-flood" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-l3harris-owns" /> Rebecca Guy, the FAA's chief technology officer, said at the same press conference that the FAA had found two places pinging the network at that rate and disabled both.<Cite c="sat-guy-two-places" /></p>
+              <p data-layer="narrative">Duffy said such switchovers have been done thousands of times without this, and that small sites are worked on during the day because they shouldn't have this kind of impact.<Cite c="sat-routine-thousands" /><Cite c="sat-shouldnt-impact" /> In November 2009, while Harris Corporation, now part of L3Harris, was moving the network's traffic onto a new fiber optic network, one of its technicians incorrectly configured a router, and 129 of the nation's air traffic facilities had an outage of FAA telecommunications, the Transportation Department's inspector general found.<Cite c="oig-2009-fti-outage" /><Cite c="harris-became-l3harris" /> Bedford said the job was upkeep of the existing network, not part of the modernization effort.<Cite c="sat-bedford-sustainment" /></p>
+              <p data-layer="narrative">Duffy said the FAA believes the failure started with the work at that site, and the old network spread it: there is only one network, Bedford said, and the flood moved from one center's routers to other centers' backups.<Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /><Cite c="sat-bedford-one-network" /> He said the network will keep breaking until it is replaced.<Cite c="sat-bedford-break" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">By 9 p.m. Saturday FlightAware counted nearly {n.cancelledSat} U.S. cancellations for the day, CNBC reported.<Cite c="sat-cancel-6500" /> Bedford said airlines expect a full schedule by the close of business Sunday.<Cite c="sat-recovery" /> The FAA says it will share its analysis of what failed at the site when it is complete, and Duffy says he will send a detailed funding request to Congress on Monday.<Cite c="sat-will-share" /><Cite c="sat-monday-request" /> Cantwell's committee plans its review.<Cite c="investigations" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
