@@ -4,7 +4,7 @@ export const n = {
   airborne: "4,042", // airborne-4042
   diverted: 600, // diversions-600
   cancelled: "9,000", // friday-cancel-9000
-  cancelledSat: "3,700", // sat-cancel-3700
+  cancelledSat: "6,500", // sat-cancel-6500
   duffyAsk: 50, // duffy-wants-50b, billions
   requested: "30.1", // funding-30b, billions
   hours: 4, // stop-lifted: 3:53 p.m. to 8:16 p.m.
@@ -17,7 +17,7 @@ export const event = {
   dek: "The FAA held every departing flight in the country for more than four hours on Friday. On Saturday Transportation Secretary Sean Duffy said the FAA believes a router at a remote site flooded the network while the contractor L3Harris was moving an old copper line there to fiber; he said the FAA has not determined whether the router or the work was at fault.",
   name: "The FAA's nationwide ground stop",
   date: "2026-11-13",
-  updated: "2026-11-14",
+  updated: "2026-11-15",
   kpis: [],
 };
 
