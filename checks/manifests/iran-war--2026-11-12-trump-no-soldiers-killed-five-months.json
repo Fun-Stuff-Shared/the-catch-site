@@ -8,7 +8,67 @@
     "subject-event-4928c848-cd94-4ab4-a8d6-eb8c28fdc5ad"
   ],
   "story_title": "Trump says no U.S. troops have been killed in five months. Four were killed in July.",
-  "sub_events": [],
+  "sub_events": [
+    {
+      "id": "jordan-attack-2026-07-17",
+      "date": "2026-07-17",
+      "label": "Three soldiers killed in an attack on a base in Jordan",
+      "section_anchor": "what-happened",
+      "records": [
+        "dow-feehan-gonzales-2026-07-20",
+        "dow-rampersad-2026-07-25",
+        "centcom-fallen-2026-07-18"
+      ]
+    },
+    {
+      "id": "erbil-2026-07-19",
+      "date": "2026-07-19",
+      "label": "Soldier killed at Erbil Air Base, Iraq",
+      "section_anchor": "what-happened",
+      "records": [
+        "dow-swinton-2026-07-21",
+        "centcom-update-2026-07-19"
+      ]
+    },
+    {
+      "id": "dover-2026-07-22",
+      "date": "2026-07-22",
+      "label": "Trump attends the dignified transfer at Dover",
+      "section_anchor": "what-happened",
+      "records": [
+        "dow-dignified-transfer-2026-07-22",
+        "dcpd-trump-andrews-2026-07-22"
+      ]
+    },
+    {
+      "id": "overseas-operations-2026-07-26",
+      "date": "2026-07-26",
+      "label": "The July deaths move to a separate Overseas Operations page",
+      "section_anchor": "the-catch",
+      "records": [
+        "ap-new-category-2026-07-28",
+        "nyt-casualty-reporting-2026-07-26"
+      ]
+    },
+    {
+      "id": "truth-18-2026-09-03",
+      "date": "2026-09-03",
+      "label": "Trump: \"18 people were killed in Iran!\"",
+      "section_anchor": "the-catch",
+      "records": [
+        "trump-truth-18-killed-2026-09-03"
+      ]
+    },
+    {
+      "id": "hewitt-2026-11-12",
+      "date": "2026-11-12",
+      "label": "Trump: \"Nobody's been killed in the last five months\"",
+      "section_anchor": "what-happened",
+      "records": [
+        "hewitt-trump-interview-2026-11-12"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "dow-feehan-gonzales-2026-07-20",
@@ -926,6 +986,86 @@
       "label": "Sen. Hirono and colleagues, July 23, 2026",
       "meta": " · hirono.senate.gov",
       "usage": "Congressional oversight of the count"
+    }
+  ],
+  "completed_by": "claude (author session, worktree 2026-11-12-trump-no-soldiers-killed-five-months)",
+  "date_completed": "2026-11-15",
+  "event_record": "iran-war--2026-11-12-trump-no-soldiers-killed-five-months",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "40 records pinned under data/sources/iran-war and data/sources/coverage with text and hash; the Pentagon casualty database (DCAS) was saved from its own report API because its pages render in the browser, and one CBS article was admitted from a capture run that wrote no receipts."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The nine deaths in Trump's window are the eight DCAS lists under Overseas Operations since July 7 plus the July 1 death on its Epic Fury page; the 23 total is 15 Epic Fury plus 8 Overseas Operations deaths, 7 plus 4 of them hostile, all as of November 13."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The Washington Post's July deaths and its 11 hostile and 12 non-hostile total were checked against DCAS; Mediaite's '23 killed' is noted as counting non-hostile deaths and deaths outside the window; the page uses neither total as the count for Trump's window."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page states the casualty database's as-of date (November 13, 2026) wherever it gives a count, and the updated date in the kicker; the claim check rereads any count changed later."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The Iran war subject page adds the four killed in action and the 23 deaths since February 28 as figures, and its description now names the death toll."
+    }
+  },
+  "figures": [
+    {
+      "figure": "killed_in_action_july",
+      "label": "U.S. troops killed in action, July 17 to 19",
+      "value": 4,
+      "unit": "deaths",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dcas-overseas-operations-2026-11-13",
+        "quote_span": "TOTAL HOSTILE DEATHS: Army 4, Navy 0, Marines 0, Air Force 0, Space Force 0, Total 4"
+      }
+    },
+    {
+      "figure": "deaths_since_july_7",
+      "label": "U.S. military deaths filed as Overseas Operations since July 7",
+      "value": 8,
+      "unit": "deaths",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dcas-overseas-operations-2026-11-13",
+        "quote_span": "TOTAL DEATHS: Army 5, Navy 1, Marines 0, Air Force 2, Space Force 0, Total 8"
+      }
+    },
+    {
+      "figure": "deaths_in_window",
+      "label": "U.S. military deaths from June 12 to November 12",
+      "value": 9,
+      "unit": "deaths",
+      "kind": "computed",
+      "formula": "sum",
+      "inputs": [
+        {
+          "source_id": "dcas-overseas-operations-2026-11-13",
+          "quote_span": "TOTAL DEATHS: Army 5, Navy 1, Marines 0, Air Force 2, Space Force 0, Total 8",
+          "value": 8
+        },
+        {
+          "source_id": "dcas-epic-fury-2026-11-13",
+          "quote_span": "JULY 2026: hostile deaths 0; non-hostile/pending deaths 1; total deaths 1; wounded in action 0",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "figure": "wounded_since_july_7",
+      "label": "U.S. troops wounded in action since July 7",
+      "value": 450,
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "dcas-overseas-operations-2026-11-13",
+        "quote_span": "GRAND TOTAL: hostile deaths 4; non-hostile/pending deaths 4; total deaths 8; wounded in action 450"
+      }
     }
   ]
 }
