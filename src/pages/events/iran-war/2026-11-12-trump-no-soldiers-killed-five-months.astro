@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataNote from "../../../components/story/DataNote.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, deaths } from "../../../data/iran-war-2026-11-12-trump-no-soldiers-killed-five-months.mjs";
+const story = "iran-war--2026-11-12-trump-no-soldiers-killed-five-months";
+const short = (id) => claim(story, id).short;
+const costStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/";
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iran-war/">Iran war</a><span>November 12, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Iran war &middot; November 12, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="nine-deaths-in-window" /><Cite c="four-killed-in-action-july" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-dead">Who died in those five months</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On November 12, President Trump told Hugh Hewitt on The Hugh Hewitt Show that nobody had been killed in the war with Iran in the last five months.<Cite c="trump-nobody-killed-five-months" /> Hewitt had asked whether he would hesitate to use military force against Iran again, and Trump said he would not.<Cite c="hewitt-question-force" /></p>
+        <QuoteCard speaker="Donald Trump" when="November 12, 2026" where="The Hugh Hewitt Show">
+          <p>"Nobody’s been killed in the last five months. You know, in Russia, they’re losing 25,000 people a month between Russia and Ukraine, mostly soldiers. We haven’t lost a soldier in five months, and we control the Gulf."<Cite c="trump-nobody-killed-five-months" /><Cite c="trump-russia-comparison" /><Cite c="trump-no-soldier-five-months" /></p>
+        </QuoteCard>
+        <p data-layer="narrative" data-answer="2">In those five months, the Pentagon announced four soldiers killed in action between July 17 and July 19: three from an attack on Muwaffaq Salti Air Base in Jordan, and one at Erbil Air Base in Iraq.<Cite c="four-killed-in-action-july" /> Central Command said the Jordan attack was made with Iranian ballistic missiles and drones, and that the soldier in Iraq died handling a downed Iranian attack drone.<Cite c="centcom-iranian-attacks" /> On July 22, Trump was at Dover Air Force Base when their remains came home, for the ceremony the military calls a dignified transfer.<Cite c="trump-dover" /></p>
+        <p data-layer="narrative" data-answer="3">Five more service members died in those five months: a Navy commander whose helicopter ditched in the Arabian Sea in July, two in September (a Navy sailor, and Capt. Bianca Wilkerson), and two airmen in October.<Cite c="edwards-july-1" /><Cite c="wilkerson" /><Cite c="navy-september" /><Cite c="airmen-october" /> The Pentagon lists none of those five as hostile deaths, though some are still pending a final ruling.<Cite c="oo-deaths-since-july-7" /><Cite c="non-hostile-sept-oct" /><Cite c="edwards-july-1" /> That makes {n.deathsInWindow} deaths from June 12 to November 12, by the Pentagon's own count.<Cite c="nine-deaths-in-window" /></p>
+      </section>
+
+      <section id="the-dead">
+        <h2 data-layer="fact">Who died in those five months</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The {n.deathsInWindow} U.S. service members who died from June 12 to November 12</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>Date</th><th>Who, and how the Pentagon lists the death</th></tr></thead>
+            <tbody>{deaths.map((d) => <tr><td>{d.date}</td><td>{short(d.c)}<Cite c={d.c} /></td></tr>)}</tbody>
+          </table>
+          <DataNote><p>The Pentagon's casualty database, as of November 13. Deaths since July 7 are filed as overseas operations; the July 1 death is filed under Operation Epic Fury.<Cite c="oo-deaths-since-july-7" /><Cite c="edwards-july-1" /></p></DataNote>
+        </figure>
+        <SourcedBlock source="dcas-overseas-operations-2026-11-13" detail>
+          <p>The database lists {n.woundedSinceJuly7} service members wounded in action since July 7.<Cite c="wounded-since-july-7" /> Across both categories it lists {n.total} deaths since the war began on February 28, 11 of them from hostile action.<Cite c="total-23" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="army-gonzales-2026-07-20" detail>
+          <p>The Army said Gonzales was supporting Operation Inherent Resolve, the U.S. mission against the Islamic State; the Pentagon's release said she was supporting overseas operations in Jordan. The Pentagon's releases on the Jordan deaths say "an enemy attack" and do not name the attacker.<Cite c="gonzales-inherent-resolve" /><Cite c="releases-enemy-attack" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>A separate page for the July dead</h3>
+              <p data-layer="narrative">Since late July the Pentagon has listed every death after July 7 on a separate page called "Overseas Operations," not under Operation Epic Fury, the name for the war with Iran, which it says ended in May. The fighting went on after that: the United States struck Iran in June and again from July 7.<Cite c="separate-category" /><Cite c="pentagon-reason-concluded" /><Cite c="epic-fury-ended-may-5" /><Cite c="july-10-new-action" /> On the Epic Fury page alone, the last death from hostile action was on March 8. That page is the only count by which no one has been killed by the enemy in the five months Trump named, because the four soldiers killed in action in July are on the other one.<Cite c="epic-fury-last-hostile-march-8" /><Cite c="four-killed-in-action-july" /><Cite c="separate-category" /><Cite c="trump-nobody-killed-five-months" /></p>
+              <p data-layer="narrative">Trump has counted the July dead himself. On September 2, Commerce Secretary Howard Lutnick told CNBC, speaking of Iran, "There haven’t been American deaths." He then apologized, saying he had confused Iran with the U.S. operation in Venezuela, where no service members died. On September 3 Trump wrote on Truth Social that 18 people had been killed in Iran, a toll that was 14 until the four soldiers killed in July were added.<Cite c="lutnick-no-deaths" /><Cite c="trump-18-killed-in-iran" /></p>
+              <QuoteCard speaker="Donald Trump" when="September 3, 2026" where="Truth Social">
+                <p>"Sec. Lutnick had Venezuela on his mind when he said nobody was killed. 18 people were killed in Iran!"<Cite c="trump-18-killed-in-iran" /></p>
+              </QuoteCard>
+            </li>
+          </ol>
+        </aside>
+        <SourcedBlock source="trump-war-powers-letter-2026-05-01" detail>
+          <p>On May 1, Trump told Congress that "the hostilities that began on February 28, 2026, have terminated."<Cite c="trump-hostilities-terminated" /> On July 10 he reported a new military action against Iran, begun July 7, after earlier actions on June 9, 26 and 28.<Cite c="july-10-new-action" /> An Air Force email dated August 7 passed on guidance from the Pentagon's central public affairs office to stop calling the fighting Operation Epic Fury.<Cite c="aug-7-guidance" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="dow-dignified-transfer-2026-07-22" detail>
+          <p>The Pentagon's own news service said the four July deaths "are related to Iranian aggression," and its inspector general's report to Congress on Operation Epic Fury lists them in its table of U.S. deaths during the operation.<Cite c="pentagon-iranian-aggression" /><Cite c="ig-counts-july-deaths" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="cbs-douthat-trump-transcript-2026-11-08" detail>
+          <p>Trump made the claim before. In an interview with Ross Douthat published November 8 he said "in the last six months, five months, six months we haven't lost one soldier."<Cite c="trump-douthat-six-months" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">How the Pentagon keeps its casualty records is now in court and in Congress. The Intercept sued the Defense Department on November 13 to force it to answer requests, filed in August, for its records on the war's casualties.<Cite c="intercept-suit" /> Democrats in both chambers have bills that would bar moving casualties out of an ongoing operation's records by renaming it.<Cite c="bills-redesignation" /> Separately, government funding runs out on December 11, and four senators said a short-term deal should not keep paying for the war.<Cite c="senate-dems-funding" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
