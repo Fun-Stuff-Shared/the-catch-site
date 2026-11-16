@@ -7,3 +7,12 @@ export const subject = {
     { label: "Ballot deadline", value: "September 8", unit: "2026", as_of: "2026-09-03", record_id: "sc101805-opinion", source_value: "September 8, 2026", source_unit: "2026", source_sentence: "before September 8, 2026" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "The Missouri House map",
+  topic: "Elections",
+  keywords: "Missouri redistricting House map referendum Supreme Court",
+  description: "Missouri's Supreme Court ruled that the 2025 U.S. House map never became law. The November 3 House election uses the 2022 districts whether or not voters approve it.",
+  rank: 6,
+};

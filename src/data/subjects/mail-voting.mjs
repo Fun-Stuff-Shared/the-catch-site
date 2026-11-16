@@ -9,3 +9,12 @@ export const subject = {
     { label: "Injunction through", value: "November 3", unit: "2026", as_of: "2026-09-04", record_id: "talwani-pi-2026-09-04", source_value: "November 3", source_unit: "2026", source_sentence: "elections occurring before or on November 3" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Mail voting",
+  topic: "Elections",
+  keywords: "mail voting Postal Service Supreme Court Talwani executive order 14399 ballot",
+  description: "On September 14, 2026, the Supreme Court denied a stay of a federal judge's injunction of Postal Service mail-ballot rules. The injunction covers elections on or before November 3.",
+  rank: 15,
+};

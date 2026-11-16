@@ -7,3 +7,12 @@ export const subject = {
     { label: "FAA sites on the network", value: "4,400+", unit: "sites", as_of: "2006-04-27", record_id: "oig-fti-2006-04-27", source_value: "4,400", source_unit: "FAA sites", source_sentence: "4,400 FAA sites." },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Air traffic control",
+  topic: "Aviation",
+  keywords: "FAA ground stop air traffic control outage telecommunications FTI L3Harris switches routers Duffy Mullin SMART FENS",
+  description: "The FAA network that connects air traffic control, starting with the November 13, 2026, nationwide ground stop, which officials first blamed on old switches and now trace to a contractor's job at one site; departures were held for more than four hours.",
+  rank: 4,
+};

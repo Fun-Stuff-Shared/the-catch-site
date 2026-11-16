@@ -13,3 +13,12 @@ export const subject = {
     { label: "Replace expended munitions", value: String(table1.munitions), unit: "USD billions", as_of: "2026-08-01", record_id: "cbo-62756-iran", source_value: "21.7", source_unit: "USD billions", source_sentence: "$21.7 billion: $7.3 billion for the land-attack cruise" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Iran war cost",
+  topic: "Congress",
+  keywords: "Iran war CBO Congressional Budget Office Epic Fury Boyle Hegseth munitions inflation troops killed casualties Overseas Operations",
+  description: "CBO's September 15 letter puts the Pentagon's incremental cost of the Iran war at $38.1 billion through August 1. Another month would add $2 billion or $3 billion. The Pentagon lists 23 U.S. service members dead since the war began, four killed in action in July.",
+  rank: 18,
+};

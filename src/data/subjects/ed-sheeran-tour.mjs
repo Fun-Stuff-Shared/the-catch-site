@@ -36,3 +36,12 @@ export const subject = {
     },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Ed Sheeran's Loop Tour",
+  topic: "Music",
+  keywords: "Ed Sheeran Macklemore Loop Tour Finneas Aaron Rowe Lukas Graham Beoga",
+  description: "Macklemore's removal from the 2026 Loop Tour lineup, the supporting acts who withdrew, and the remaining North American schedule.",
+  rank: 20,
+};

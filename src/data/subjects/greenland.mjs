@@ -8,3 +8,12 @@ export const subject = {
     { label: "€200 million in dollars", value: "232.28", unit: "million dollars", as_of: "2026-09-08", record_id: "ecb-eurofxref-2026-09-08", source_value: "1.1614", source_unit: "USD per EUR", source_sentence: "currency='USD' rate='1.1614'" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Greenland",
+  topic: "Europe",
+  keywords: "Greenland EU von der Leyen Nuuk Global Gateway Denmark Nielsen Frederiksen",
+  description: "On September 7, 2026, the European Commission named a €200 million Global Gateway package for Greenland and signed a joint declaration with Greenland and Denmark. The declaration says it creates no legal or financial obligations.",
+  rank: 10,
+};

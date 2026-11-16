@@ -7,3 +7,12 @@ export const subject = {
     { label: "Participation", value: "61.8", unit: "%", as_of: "2026-10-02", record_id: "bls-empsit-2026-09", source_sentence: "Both the labor force participation rate, at 61.8 percent, and the employment-population ratio, at 59.2 percent, changed little in September" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "The job market",
+  topic: "Economy",
+  keywords: "jobs employment payrolls unemployment labor",
+  description: "Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.",
+  rank: 2,
+};

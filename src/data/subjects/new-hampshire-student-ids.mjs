@@ -7,3 +7,12 @@ export const subject = {
     { label: "Days from the judge's order to the election", value: String(computed.daysInjunctionToElection), unit: "days", as_of: "2026-10-22", record_id: "nh-stay-application-2026-10-15", source_value: "32", source_unit: "days", source_sentence: "issued its order just 32 days before the general election." },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "New Hampshire student IDs",
+  topic: "Elections",
+  keywords: "New Hampshire student ID voter ID Supreme Court Purcell Scanlan HB 323 registration polls",
+  description: "On October 22 the Supreme Court let New Hampshire forbid student IDs at the polls, even as backup proof, without ruling on the state's law.",
+  rank: 12,
+};

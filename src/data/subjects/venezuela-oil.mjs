@@ -10,3 +10,12 @@ export const subject = {
     { label: "U.S. gasoline, week of Aug. 31", value: "4.207", unit: "dollars per gallon", as_of: "2026-08-31", record_id: "gasallw-2026-09-08", source_value: "4.207", source_unit: "dollars per gallon", source_sentence: "2026-08-31,4.207" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Venezuela oil",
+  topic: "Energy",
+  keywords: "Venezuela oil NABEP sanctions Chevron White House Vitol Trafigura Addison Vance Wright tender license custody account KPMG",
+  description: "The August 31, 2026, White House fact sheet named North American Blue Energy Partners, a 35 percent U.S. equity stake, and 100-year rights to 17 Venezuelan fields.",
+  rank: 8,
+};

@@ -54,3 +54,12 @@ export const subject = {
     },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Fuel reserves",
+  topic: "Energy",
+  keywords: "G7 diesel crude oil reserves IEA Strategic Petroleum Reserve export",
+  description: "The G7's 100 million barrels of emergency oil and the March pledge they come from: why diesel is short, who has not delivered, and Washington's push on Europe.",
+  rank: 21,
+};

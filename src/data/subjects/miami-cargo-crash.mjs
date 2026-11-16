@@ -7,3 +7,12 @@ export const subject = {
     { label: "Runways open Sunday evening", value: "2 of 4", unit: "runways", as_of: "2026-09-06", record_id: "iflymia-x-two-runways-2026-09-06", source_value: "Two of our four runways", source_unit: "runways", source_sentence: "Two of our four runways are currently open, but we are still experiencing impacts from this incident." },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "The Miami cargo crash",
+  topic: "Aviation",
+  keywords: "Miami airport cargo plane 21 Air Amazon runway overrun",
+  description: "The September 6, 2026, runway overrun at Miami International Airport, the official record, and what coverage got right.",
+  rank: 5,
+};

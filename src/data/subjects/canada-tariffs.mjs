@@ -9,3 +9,12 @@ export const subject = {
     { label: "Days from U.S. duties in force to Canada's", value: String(computed.daysUsInForceToCanada), unit: "days", as_of: "2026-09-08", record_id: "oic-pc-2026-0785", source_value: "17", source_unit: "days", source_sentence: "This Order comes into force on September 8, 2026" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Canada tariffs",
+  topic: "Trade",
+  keywords: "Canada tariffs Carney Champagne Section 338 countermeasure surtax CBSA",
+  description: "Canada's counter-tariffs on C$27.6 billion (about US$20 billion) of U.S. goods took effect September 8, 17 days after the U.S. 50 percent Section 338 duties took effect.",
+  rank: 16,
+};

@@ -7,3 +7,12 @@ export const subject = {
     { label: "General election", value: "November 3", unit: "2026", as_of: "2026-09-08", record_id: "sos-dates-2026", source_value: "November 3, 2026", source_unit: "2026", source_sentence: "November 3, 2026 General election day." },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "The Texas Senate race",
+  topic: "Elections",
+  keywords: "Texas Senate Paxton Talarico MAGA Inc independent expenditure FEC",
+  description: "MAGA Inc. filed $10 million in independent expenditures for connected TV and digital ads in the Texas U.S. Senate race. The November 3 general election is between Ken Paxton and James Talarico.",
+  rank: 9,
+};
