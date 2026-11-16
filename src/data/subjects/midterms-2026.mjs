@@ -9,3 +9,12 @@ export const subject = {
     { label: "Voters who called the Iran war crucial, Voter Poll", value: n.iran, unit: "%", as_of: "2026-11-04", record_id: "voter-poll-national-house", source_value: n.iran, source_unit: "%", source_sentence: "Yes: 34%  [Democrats 72 / Republicans 26]" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "The 2026 midterms",
+  topic: "Elections",
+  keywords: "midterms 2026 results voters exit poll Voter Poll SSRS NORC AP NBC CBS Fox why Republicans lost Iran war prices corruption tariffs Vance Trump Cruz Jeffries",
+  description: "What the 2026 midterm results show and what voters said about why, starting with the survey of about 100,000 voters that seven news organizations share.",
+  rank: 1,
+};

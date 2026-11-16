@@ -2,13 +2,15 @@
 """Moves the site to the producer's newest packed snapshot: checks it with the branch's own readSnapshot, the
 check every build runs, then uploads it to the store as <id>.tgz, commits the id to data/v2/CURRENT on one
 branch and pushes. A snapshot the check refuses is neither uploaded nor pinned, so the site's build never
-meets it. A push to main deploys, so the branch is the caller's to name.
+meets it. The producer replaces the archive in place, so the id, the check and the upload all read one private copy
+of it: reading the live file three times once uploaded a newer archive under an older one's id. A push to main deploys, so the branch is the caller's to name.
 
 The store key comes from the environment; git uses whatever push credentials the machine has.
 """
 import argparse
 import hashlib
 import os
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -80,12 +82,15 @@ def main() -> None:
     parser.add_argument("--branch", required=True)
     parser.add_argument("--remote", default="https://github.com/Fun-Stuff-Shared/the-catch-site.git")
     args = parser.parse_args()
-    snapshot = snapshot_id(args.archive)
     with tempfile.TemporaryDirectory(prefix="catch-pin-") as folder:
-        clone(args.remote, args.branch, folder)
-        check(Path(folder), args.archive, snapshot)
-        upload(args.archive, os.environ["SAI_SNAPSHOTS_URL"], snapshot)
-        moved = commit_pin(folder, args.branch, snapshot)
+        archive = Path(folder) / "snapshot.tgz"
+        shutil.copyfile(args.archive, archive)
+        snapshot = snapshot_id(archive)
+        checkout = Path(folder) / "checkout"
+        clone(args.remote, args.branch, str(checkout))
+        check(checkout, archive, snapshot)
+        upload(archive, os.environ["SAI_SNAPSHOTS_URL"], snapshot)
+        moved = commit_pin(str(checkout), args.branch, snapshot)
     print(f"{snapshot} {'pinned' if moved else 'already pinned'} on {args.branch}", file=sys.stderr)
 
 

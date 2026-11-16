@@ -8,3 +8,12 @@ export const subject = {
     { label: "Public law", value: "119-103", unit: "", as_of: "2026-09-02", record_id: "archives-laws-current", source_value: "119-103", source_sentence: "119-103" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Government funding",
+  topic: "Congress",
+  keywords: "continuing resolution shutdown appropriations Congress House Senate",
+  description: "The September 2026 stopgap keeps most federal agencies at fiscal year 2026 rates through December 11. The House vote was 370 to 48. The president signed the act the next day as Public Law 119-103.",
+  rank: 7,
+};

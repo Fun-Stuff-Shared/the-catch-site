@@ -7,3 +7,12 @@ export const subject = {
     { label: "Wedgewood's lean toward Democrats, by Silver Bulletin's count", value: "0.6", unit: "points", as_of: "2026-10-22", record_id: "silver-fake-polls-2026-10-22", source_value: "0.6", source_unit: "points", source_sentence: "their “polls” were about 0.6 points more favorable to the Democratic candidate on average" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Midterm polls",
+  topic: "Elections",
+  keywords: "polls polling Wedgewood fake fabricated FiftyPlusOne Silver Bulletin Decision Desk forecast Kalshi McMorrow",
+  description: "The polls of the 2026 midterms and the people who check them, starting with Wedgewood Polls, which admitted on October 20 that most of the polls it published since June were made up.",
+  rank: 11,
+};

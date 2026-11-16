@@ -7,3 +7,12 @@ export const subject = {
     { label: "Target date to certify", value: "November 25", unit: "2026", as_of: "2026-10-23", record_id: "alaska-election-calendar-2026", source_value: "11/25/2026", source_unit: "", source_sentence: "11/25/2026 Target date to certify the General Election" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Election administration",
+  topic: "Elections",
+  keywords: "Alaska Senate Sullivan Peltola certification Justice Department ranked choice NVRA lawsuit",
+  description: "Federal actions on how the 2026 midterms are run and certified, starting with the Justice Department's suit to stop Alaska certifying its Senate result if Sen. Dan Sullivan loses and would have won with every vote for a second Dan Sullivan.",
+  rank: 24,
+};

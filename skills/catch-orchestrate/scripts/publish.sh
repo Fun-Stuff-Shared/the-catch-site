@@ -43,6 +43,9 @@ done
 
 npm run build > /tmp/${wt:t}-build.log 2>&1 || { print "build or gate failed: /tmp/${wt:t}-build.log" >&2; exit 1 }
 git checkout -q -- src/data/news-records.json
+# Cloudflare refuses the whole deploy over one asset above 25 MiB, after the push, so check it here.
+big=$(fd -t f -S +25mi . dist --no-ignore)
+[[ -z $big ]] || { print "files over Cloudflare's 25 MiB asset limit; the deploy would fail:\n$big" >&2; exit 1 }
 for s in $stories; do
   python3 -I skills/catch-record/scripts/claims.py verify $s || { print "$s: its claims or its page have not passed their checks as they read now" >&2; exit 1 }
 done
@@ -55,8 +58,13 @@ fi
 print "$base is at $(git -C $site rev-parse --short $base)"
 (( push )) || { print "not pushed (--no-push)"; exit 0 }
 
-git -C $site push -q origin $base
 pushed=$(git rev-parse HEAD)
+known=$(node scripts/deploy-wait.mjs known $pushed 2>/dev/null) || known=unknown
+git -C $site push -q origin $base
+deployed=0
+node scripts/deploy-wait.mjs $pushed --ignore "$known" || deployed=$?
+(( deployed == 0 || deployed == 3 )) || exit 1
+(( deployed != 3 )) || print "cannot follow the cloudflare build; waiting on the live page instead" >&2
 for s in $stories; do
   node scripts/live-ready.mjs $live/events/${s%%--*}/${s#*--}/ $pushed || exit 1
 done

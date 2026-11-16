@@ -26,7 +26,7 @@ Repo: `/Volumes/4/GitHub/the-catch-site`. Candidates and evidence: the pinned sa
 
 ## 1. Open the story
 
-Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]`, read enough of its view and sources to fix the moment and its date, check the live core for what the pin lacks (`sai brief <subject>` for newer sources, `sai search-all "<words>"` for the same event under another subject; the manifest can name only a subject the pinned snapshot holds), and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
+Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]` (a development a published story already tells is marked with that story and the sources since it, the leads for a follow-up), read enough of its view and sources to fix the moment and its date, check the live core for what the pin lacks (`sai brief <subject>` for newer sources, `sai search-all "<words>"` for the same event under another subject; the manifest can name only a subject the pinned snapshot holds), and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
 
 ```bash
 CATCH_ORCHESTRATOR=<your name in ListAgents> zsh skills/catch-orchestrate/scripts/open-story.sh \
@@ -105,9 +105,11 @@ you check:
 - The subject page (`src/pages/events/<subject>/index.astro` and its data module): a new
   subject gets its page; an existing one gets a timeline row and refreshed figures, and its
   description reads from the subject data so it does not go stale.
-- `src/lib/discovery.mjs`: import the story's `event` into the `editorial` list, and add a new
-  subject to `series`. The homepage and series listings read these, and the gate fails with
-  "/events/ index missing manifested route" until they are there. The manifest also names `event_record`.
+- Listings: `src/lib/discovery.mjs` lists every `src/data/*.mjs` that exports an `event`, so the
+  story's data module is all it needs. A new subject's data module also exports `listing`
+  (`title`, `topic`, `keywords`, `description`, `rank`; lower ranks lead the homepage), which puts
+  it in `series`. The gate checks that /events/ links every manifested story's route and fails
+  with "/events/ index missing manifested route" when the story is not listed. The manifest also names `event_record`.
 
 ## 5. Publish
 
@@ -121,7 +123,7 @@ done" is not that. Then, on their word:
 zsh skills/catch-orchestrate/scripts/publish.sh --merge author/<slug> [--merge <other branch>]... <story-id>...
 ```
 
-It cuts a publish worktree from main, merges the branches, fetches the pinned snapshot, refuses a manifest that is not v2 or has no figures, runs the full build and gate (which refuses missing attestations and a `v2_subjects` entry the snapshot cannot resolve), refuses a story whose cited claims have not held in the claim check or whose citing blocks have not passed the bind check as they read now (`claims.py verify`), and only then fast-forwards main and pushes it. A failure anywhere before that leaves main where it was. It then polls each live URL until it serves the pushed commit's build (every page carries the build as `<meta name="catch-build">`, since a story can keep its headline across builds), counts em dashes on the page, and runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other stories' unpushed commits: list them for the human before the first push of the day. `CATCH_BASE=<branch> CATCH_LIVE=<that branch's preview URL>` publishes to a branch instead; a non-main branch builds a preview and takes no production traffic.
+It cuts a publish worktree from main, merges the branches, fetches the pinned snapshot, refuses a manifest that is not v2 or has no figures, runs the full build and gate (which refuses missing attestations and a `v2_subjects` entry the snapshot cannot resolve), refuses a story whose cited claims have not held in the claim check or whose citing blocks have not passed the bind check as they read now (`claims.py verify`), refuses a build with any file over Cloudflare's 25 MiB asset limit (Cloudflare would refuse the whole deploy after the push), and only then fast-forwards main and pushes it. A failure anywhere before that leaves main where it was. It then follows the Cloudflare build of the pushed commit (`scripts/deploy-wait.mjs`) until it deploys, up to an hour however long it queues, ignoring any build of that commit from an earlier attempt; a failed build stops the publish with the end of its log, and one still going after the hour stops it with the build's last state, and when the build cannot be followed (no token, the API down, its earlier builds unreadable before the push, or no new build of the commit, as after a push that changed nothing) it says so and goes on to the live check. It then polls each live URL until it serves the pushed commit's build (every page carries the build as `<meta name="catch-build">`, since a story can keep its headline across builds), counts em dashes on the page, and runs `scripts/live-audit.mjs`. `--no-push` stops before the push. Main may carry other stories' unpushed commits: list them for the human before the first push of the day. `CATCH_BASE=<branch> CATCH_LIVE=<that branch's preview URL>` publishes to a branch instead; a non-main branch builds a preview and takes no production traffic.
 
 Then open the live page in the story view and look at it, at 100 percent.
 

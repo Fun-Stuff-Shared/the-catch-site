@@ -35,3 +35,12 @@ export const subject = {
     },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Space weapons",
+  topic: "Defense",
+  keywords: "space weapons on-orbit Space Force Meink Schiess Outer Space Treaty Golden Dome",
+  description: "On September 14, 2026, Air Force Secretary Troy Meink said the United States has on-orbit space control weapons. The Space Force chief said the next day that Guardians already operate them.",
+  rank: 17,
+};

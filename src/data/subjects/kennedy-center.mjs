@@ -7,3 +7,12 @@ export const subject = {
     { label: "Initial safety closure", value: "7", unit: "days", as_of: "2026-09-16", record_id: "floca-declaration-86-1-2026-09-17", source_value: "7", source_unit: "days", source_sentence: "which will last for seven days, unless extended" },
   ],
 };
+
+// How the series is listed on the homepage and /events/; lower rank lists first.
+export const listing = {
+  title: "Kennedy Center",
+  topic: "Courts",
+  keywords: "Kennedy Center demolition renovation Cooper Beatty preservation court",
+  description: "The court record behind the September 17 advance-notice order for covered changes to the Kennedy Center project plans.",
+  rank: 19,
+};
