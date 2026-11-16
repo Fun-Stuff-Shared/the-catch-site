@@ -34,11 +34,12 @@ import { event as vitolVance } from '../data/venezuela-oil-2026-11-11-vitol-trad
 import { event as kpmgAccount } from '../data/venezuela-oil-2026-11-10-kpmg-report-venezuela-oil-account.mjs';
 import { event as faaGroundStop } from '../data/air-traffic-control-2026-11-13-faa-nationwide-ground-stop.mjs';
 import { event as noTroopsKilled } from '../data/iran-war-2026-11-12-trump-no-soldiers-killed-five-months.mjs';
+import { event as effectivelyOver } from '../data/iran-war-2026-11-09-trump-iran-war-effectively-over.mjs';
 import { publishedState, eventPath, eventRecordPath } from './state.mjs';
 import immigration from '../data/officials/marco-rubio/episodes/immigration-2013.json';
 import zika from '../data/officials/marco-rubio/episodes/zika-2016.json';
 
-const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList, ncMailBallots, fraudTipProgram, whyVotersTurned, trumpThreeTrillion, vitolVance, kpmgAccount, faaGroundStop, noTroopsKilled].map(e => [`/events/${e.slug}/`, e]));
+const editorial = new Map([jobs, jobsAugust, jobsSeptember, june, july, septemberFed, miamiCargo, missouriHouseMap, governmentFunding, venezuelaOil, texasSenate, greenland, mailVoting, canadaTariffs, spaceWeapons, iranWar, mailVotingDenial, kennedyCenterNotice, edSheeranTour, fuelReserves, immigrationDetention, okinawaMarine, lisaCookHearing, alaskaCertification, fbiOfficialsCharged, wedgewoodPolls, nhStudentIds, californiaVoterList, ncMailBallots, fraudTipProgram, whyVotersTurned, trumpThreeTrillion, vitolVance, kpmgAccount, faaGroundStop, noTroopsKilled, effectivelyOver].map(e => [`/events/${e.slug}/`, e]));
 export const series = [
   { path: '/events/midterms-2026/', title: 'The 2026 midterms', topic: 'Elections', keywords: 'midterms 2026 results voters exit poll Voter Poll SSRS NORC AP NBC CBS Fox why Republicans lost Iran war prices corruption tariffs Vance Trump Cruz Jeffries', description: 'What the 2026 midterm results show and what voters said about why, starting with the survey of about 100,000 voters that seven news organizations share.' },
   { path: '/events/jobs/', title: 'The job market', topic: 'Economy', keywords: 'jobs employment payrolls unemployment labor', description: 'Monthly jobs reports, the revisions that follow, and what they mean for people working or looking for work.' },

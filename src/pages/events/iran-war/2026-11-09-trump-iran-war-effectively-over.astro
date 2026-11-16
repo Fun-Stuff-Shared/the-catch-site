@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DataNote from "../../../components/story/DataNote.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, week } from "../../../data/iran-war-2026-11-09-trump-iran-war-effectively-over.mjs";
+const story = "iran-war--2026-11-09-trump-iran-war-effectively-over";
+const short = (id) => claim(story, id).short;
+const troopsStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-months/";
+const votersStory = "/events/midterms-2026/2026-11-03-why-voters-turned-on-republicans/";
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iran-war/">Iran war</a><span>November 9, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Iran war &middot; November 9, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="centcom-huda" /><Cite c="hewitt-no-hesitation" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-week">What was said, and what was done</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#why-now">Why he said it, and why now</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">On November 9, after meeting Qatar's prime minister at the White House, President Trump walked into the briefing room and told reporters, "Iran militarily is effectively over."<Cite c="trump-effectively-over" /> New military action, he said, "doesn't seem to be a very necessary thing," though the United States stays "locked and loaded."<Cite c="trump-not-necessary-locked-loaded" /></p>
+        <QuoteCard speaker="Donald Trump" when="November 9, 2026" where="White House briefing room">
+          <p>"And Iran militarily is effectively over. We're just keeping it the status quo, and we're doing that really at the behest of countries that are their neighbors."<Cite c="trump-effectively-over" /></p>
+        </QuoteCard>
+        <p data-layer="narrative" data-answer="2">The status quo, in his words, is "a continuation of the greatest naval blockade" against Iran's ports, plus an effort on land: "land and sea, total lockdown."<Cite c="trump-status-quo-blockade" /> That blockade has run since July 14, after a June peace deal with Iran fell apart.<Cite c="blockade-resumed-july14" /><Cite c="mou-collapse" /> Central Command, the U.S. military command for the Middle East, said on November 7 that its forces had disabled {n.disabled} merchant ships that refused the blockade since July.<Cite c="centcom-blockade-counts" /> That day, it said, a U.S. military aircraft fired on the cargo ship M/V Huda in the Gulf of Oman after the ship, which had visited an Iranian port, tried to run the blockade.<Cite c="centcom-huda" /> The day before, asked about reported strikes near Iran's Qeshm Island, Trump had said, "We do minor strikes."<Cite c="trump-minor-strikes-nov6" /></p>
+        <p data-layer="narrative" data-answer="3">Trump has not declared the war over. Asked in the same November 9 briefing why not, he said U.S. allies in the region could still be hurt.<Cite c="trump-declined-to-declare" /> Iran has kept attacking them. On November 13, Central Command said U.S. forces shot down {n.bahrainDronesNov13} Iranian drones aimed at Bahrain.<Cite c="centcom-bahrain-drones" /> On November 15, Bahrain's foreign ministry said more Iranian drones were intercepted and destroyed over Bahrain, and that Iran's Revolutionary Guard had claimed both attacks.<Cite c="bahrain-nov15" /></p>
+      </section>
+
+      <section id="the-week">
+        <h2 data-layer="fact">What was said, and what was done</h2>
+        <figure class="story-figure week-figure" data-layer="fact">
+          <figcaption><strong>November 6 to 15: what the administration said, and what forces did</strong></figcaption>
+          <div class="week-grid" role="table" aria-label="What the administration said and what forces did, by day">
+            <div class="week-head" role="row">
+              <span role="columnheader">Day</span>
+              <span role="columnheader">What the administration said</span>
+              <span role="columnheader">What forces did</span>
+            </div>
+            {week.map((d) => (
+              <div class="week-row" role="row">
+                <span class="week-date" role="rowheader">{d.date}</span>
+                <span class="week-said" role="cell" data-label="Said">
+                  {d.said.length ? <ul>{d.said.map((c) => <li>{short(c)}<Cite c={c} /></li>)}</ul> : <span class="week-none" aria-label="nothing">&nbsp;</span>}
+                </span>
+                <span class="week-did" role="cell" data-label="Done">
+                  {d.did.length ? <ul>{d.did.map((c) => <li>{short(c)}<Cite c={c} /></li>)}</ul> : <span class="week-none" aria-label="nothing">&nbsp;</span>}
+                </span>
+              </div>
+            ))}
+          </div>
+          <DataNote><p>Trump did not say when or where the "minor strikes" took place.<Cite c="trump-minor-strikes-nov6" /> Bahrain's statement does not say whose air defenses fired.<Cite c="bahrain-nov15" /></p></DataNote>
+        </figure>
+        <SourcedBlock source="nyt-qeshm-2026-11-02" detail>
+          <p>Before the election, unnamed U.S. officials told The New York Times of a limited, defensive U.S. strike on Qeshm Island on November 2, with no immediate plans to escalate.<Cite c="nov2-strike-officials" /> The Hill reported on November 5 that the Pentagon had disclosed no bombing of Iranian targets since early September.<Cite c="pentagon-not-disclosed" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="centcom-huda-2026-11-07" detail>
+          <p>Central Command said its forces told the Huda's crew to leave the targeted spaces before the aircraft fired.<Cite c="centcom-huda-crew-warned" /> Since July, it said, the blockade had turned back {n.redirected} commercial vessels and U.S. forces had disabled {n.disabled} merchant ships that refused to comply.<Cite c="centcom-blockade-counts" /> The same day, Central Command's commander ordered a new task force, Iron Gate: a staff of about 20 in Tampa that will work with other agencies to stop weapons, sanctioned materials and illicit revenue from crossing Iran's land borders and the Caspian Sea.<Cite c="centcom-iron-gate" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="rferl-sirik-2026-11-13" detail>
+          <p>Iran's official news agency reported an "enemy" strike on Sirik, on the Hormuz coast, without naming the attacker; Central Command's November 13 statement on the Bahrain drones did not mention it.<Cite c="sirik-unattributed" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Asked to declare the war over, he gave a reason not to</h3>
+              <p data-layer="narrative">Trump was counting wars when he said it. "We had two wars," he said: Venezuela, "which was over in 48 minutes," and "the other is Iran." Right after, he said Iran's "military is essentially gone."<Cite c="trump-two-wars" /><Cite c="trump-military-gone" /> A reporter then asked, "Why not just declare an end to the conflict and be done with it?"<Cite c="trump-declined-to-declare" /></p>
+              <QuoteCard speaker="Donald Trump" when="November 9, 2026" where="White House briefing room">
+                <p>"Because we have some great allies there, and we have to make sure they're not hurt."<Cite c="trump-declined-to-declare" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">Two days later, at Arlington National Cemetery, he said "we won, just a question of when we want to end it."<Cite c="trump-arlington-when-end" /> On November 12, <a href={troopsStory}>Hugh Hewitt asked him</a> whether he would hesitate to use force to stop Iran from terrorizing U.S. allies and ships. "No. No hesitation," Trump said, and "it’s possible I would do it right now."<Cite c="hewitt-no-hesitation" /><Cite c="hewitt-possible-right-now" /></p>
+              <p data-layer="narrative">Marco Rubio, his secretary of state, said on November 10 that the President had concluded there was no need for major combat operations "for the time being," because economic pressure was doing the work.<Cite c="rubio-no-major-combat" /> Asked whether that meant the status quo, Rubio said "No, not status quo," because the pressure would keep growing.<Cite c="rubio-not-status-quo" /></p>
+            </li>
+          </ol>
+        </aside>
+        <SourcedBlock source="war-powers-letter-2026-05-01" detail>
+          <p>The administration has called the war over before. On May 1, Trump told Congress the hostilities that began February 28 "have terminated."<Cite c="may1-terminated" /> On September 3, he reported new military action against Iran, begun September 1: defensive strikes, including on air-defense systems.<Cite c="sept3-letter" /></p>
+        </SourcedBlock>
+        <SourcedBlock source="hegseth-gaggle-2026-11-09" detail>
+          <p>Asked on November 9 what needs to happen for the war to officially be over, Defense Secretary Pete Hegseth said the President could say "hey, we're done, and we're going to watch your nuclear material," and that the choice is "his prerogative."<Cite c="hegseth-end-is-president" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why he said it, and why now</h2>
+        <p data-layer="narrative">He spoke six days after the <a href={votersStory}>midterm elections</a>. Trump told The Wall Street Journal the war was "a piece of" his party's losses, and Vice President JD Vance wrote, "The reason we lost is the war."<Cite c="midterms-piece-of-it" /><Cite c="vance-reason-we-lost" /></p>
+        <p data-layer="narrative">Trump said he keeps the status quo "at the behest of" Iran's neighbors, and named Qatar, Saudi Arabia, the United Arab Emirates, Bahrain and Kuwait as preferring the blockade.<Cite c="trump-effectively-over" /><Cite c="trump-status-quo-blockade" /> Qatar, whose prime minister he had just met, described the meeting as "positive" and its own aim as ending "a state of neither war nor peace."<Cite c="qatar-neither-war-nor-peace" /> Iran, for its part, lists ending the blockade among its core demands before any nuclear talks.<Cite c="iran-demands-blockade" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">If Iran crosses "certain red lines," Rubio said, the U.S. military "stands ready to address it."<Cite c="rubio-red-lines" /> Hegseth said that if the United States saw "the kind of nefarious activity that required action, we would take it."<Cite c="hegseth-would-take-it" /></p>
+        <p data-layer="narrative">When the United States struck Iran on September 1, Trump reported the strikes to Congress under the War Powers Resolution, the 1973 law on using force without Congress's approval.<Cite c="sept3-letter" /> The Congressional Record, Congress's daily record, lists no such report on Iran from November 9 to November 13, including on the strikes Trump acknowledged on November 6.<Cite c="no-war-powers-report-nov6" /></p>
+        <p data-layer="narrative">On November 10, Rep. Thomas Massie filed a resolution directing the President to remove U.S. forces from "hostilities against the Islamic Republic of Iran," except forces needed to defend against imminent attack.<Cite c="massie-hconres-126" /> When Congress took up a similar resolution in June, the White House said such resolutions "lack the force of law."<Cite c="white-house-concurrent-no-force" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .week-grid { border: 1px solid var(--rule); font-family: var(--sans); font-size: 0.86rem; }
+  .week-head, .week-row { display: grid; grid-template-columns: 4.5rem 1fr 1fr; gap: 0.75rem; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); }
+  .week-row:last-child { border-bottom: none; }
+  .week-head { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+  .week-date { color: var(--slate); font-variant-numeric: tabular-nums; }
+  .week-grid ul { margin: 0; padding-left: 1rem; }
+  .week-grid li + li { margin-top: 0.3rem; }
+  .week-did li { color: var(--ink); font-weight: 600; }
+  @media (max-width: 600px) {
+    .week-head { display: none; }
+    .week-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .week-date { font-weight: 700; color: var(--ink); }
+    .week-said:has(.week-none), .week-did:has(.week-none) { display: none; }
+    .week-said::before, .week-did::before { content: attr(data-label); display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+  }
+</style>
