@@ -64,7 +64,7 @@ The catch: the move is real and Bessent confirmed it, but coverage made it a wav
 
 1. Treasury Secretary Scott Bessent has moved out of his Washington home and onto a military base; on November 13 he said he did it on Secret Service instructions after Iranian death threats.
 2. Bessent runs Operation Economic Outcast, the sanctions campaign against Iran, and says the threats show it "is working"; he also blames a 2025 Wall Street Journal photo that located his house.
-3. It came days after Trump said "Iran militarily is effectively over" while keeping the blockade and sanctions in place, and when Hugh Hewitt asked what would happen if the Iranians killed a senior official, Trump said "They will not exist very long any longer."
+3. The Times reported the move on November 10 and Bessent confirmed it on November 13, days after Trump said on November 9 that "Iran militarily is effectively over" while keeping the blockade and sanctions in place, and when Hugh Hewitt asked what would happen if the Iranians killed a senior official, Trump said "They will not exist very long any longer."
 4. Coverage cast Bessent as the latest in a wave of officials driven onto bases by Iran, but Rubio, Hegseth and Stephen Miller were already living on bases by October 2025, four months before the war began, and Miller moved after protests at his home.
 5. Iran's foreign ministry calls the allegations what appears to be an Israeli disinformation campaign, the White House says there is no credible threat to the homeland, and CNN reports, citing seven unnamed officials, that Iran is drawing up plans to strike officials in Washington.
 
