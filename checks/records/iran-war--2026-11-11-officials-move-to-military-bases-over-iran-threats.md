@@ -68,7 +68,7 @@ The catch: the move is real and Bessent confirmed it, but coverage made it a wav
 
 ## The plan
 
-Headline: Trump says Iran is "militarily effectively over." His Treasury secretary moved onto a military base over Iranian death threats
+Headline: Trump says “Iran militarily is effectively over.” His Treasury secretary moved onto a military base over Iranian death threats
 Dek: Bessent says the Secret Service told him to move. Rubio, Hegseth and Stephen Miller have lived on bases since before the war began.
 
 What happened (sentences 1 to 3; the event, what it means, where it stands):
@@ -174,7 +174,7 @@ Iran's foreign ministry spokesman [baqaei-x-2026-11-16: "American officials retr
 - (2) Israel Hayom, November 14, and Mullin, November 15: both admitted. Israel Hayom's Rubio line is another instance of the catch; its unnamed relocations become answer E, unproven. Mullin's on-record "aspirational threats" goes to the threat section.
 - (3) D overstated: accepted. D split into the general claim (ruled out) and the specific threats (unproven); the Reuters August 13 report is a lead (401).
 - (4) Merchant conviction, March 6, 2026: admitted; one clause in The Catch. Poursafi (2022) is background.
-- (5) Headline premise: accepted. The headline quotes his words, "militarily effectively over."
+- (5) Headline premise: accepted. The headline quotes his exact words, "Iran militarily is effectively over."
 - (6) Bahrain drone attacks, November 13 and 15: background; told in the November 9 story, linked from this page.
 - (7) Trump, November 16 gaggle: admitted; background (it confirms no plot).
 - (8) H. Rept. 119-698: accepted; admitted; the brief and plan now call it committee report language with a May 1, 2027 due date.
