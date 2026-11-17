@@ -18,8 +18,8 @@ const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-m
   <div class="content">
     <main class="story" id="story-root">
       <p class="story-kicker" data-layer="fact">Iran war &middot; November 11, 2026 &middot; updated {event.updated}</p>
-      <h1 data-layer="fact">{event.title}</h1>
-      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="bessent-confirms-move" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /></p>
+      <h1 data-layer="fact">{event.title}<Cite c="bessent-confirms-move" /><Cite c="bessent-death-threats" /><Cite c="bessent-high-threat" /><Cite c="treasury-confirmed" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /><Cite c="war-began-feb28" /></h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="bessent-confirms-move" /><Cite c="fox-recent-weeks" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /><Cite c="war-began-feb28" /></p>
       <ReadingModes />
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
@@ -71,7 +71,7 @@ const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-m
             <li>
               <h3>On the record, one official has moved because of Iran: Bessent</h3>
               <p data-layer="narrative">Rubio and Hegseth were living on Fort McNair by October 2025, four months before the war began, State and Defense Department officials told The Atlantic.<Cite c="rubio-hegseth-mcnair-2025" /> Miller and his family had moved to military housing that year.<Cite c="miller-moved-2025" /> Rubio described his own "military house," two doors from Hegseth's, in August.<Cite c="rubio-own-words" /> Yet Fox News reported on November 11 that Tehran had ramped up efforts to target senior officials, with Miller and Rubio "also relocating to military or protected housing in recent weeks."<Cite c="fox-recent-weeks" /></p>
-              <p data-layer="narrative">Other reports carried the same picture. USA Today's November 14 story put Bessent "on a growing list of senior Trump administration figures under U.S. protection against alleged retaliatory threats from Tehran."<Cite c="usatoday-frame" /> Israel Hayom's November 14 report, describing officials relocated in response to Iranian threats, added that "the report said" Rubio "had also been moved."<Cite c="israelhayom-rubio" /> The Times' own first report said at least half a dozen officials had moved the year before, and that not all the threats against top officials involve Iran.<Cite c="nyt-last-year" /> Fox's later reports said the moves "have not all stemmed from the same threats."<Cite c="fox-different-causes" /></p>
+              <p data-layer="narrative">Other outlets also tied the earlier moves to Iran. USA Today's November 14 story put Bessent "on a growing list of senior Trump administration figures under U.S. protection against alleged retaliatory threats from Tehran."<Cite c="usatoday-frame" /> Israel Hayom's November 14 report, describing officials relocated in response to Iranian threats, said, citing Fox News, that Rubio "had also been moved to secure housing on a military base."<Cite c="israelhayom-rubio" /> By contrast, the Times' own first report said at least half a dozen officials had moved the year before, and that not all the threats against top officials involve Iran.<Cite c="nyt-last-year" /> Fox's later reports said the moves "have not all stemmed from the same threats."<Cite c="fox-different-causes" /></p>
               <p data-layer="narrative">Iran's plotting against U.S. officials is older than the war. Iran has targeted Trump since he ordered the 2020 strike that killed the Iranian general Qassim Suleimani.<Cite c="iran-targeted-since-2020" /> In March, a federal jury convicted an operative of Iran's Revolutionary Guard who admitted he had been sent to the United States to arrange political assassinations.<Cite c="merchant-conviction" /></p>
             </li>
           </ol>
@@ -102,6 +102,7 @@ const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-m
 </BaseLayout>
 
 <style>
+  h1 :global(.src-ref) { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; }
   .bases-grid { border: 1px solid var(--rule); font-family: var(--sans); font-size: 0.86rem; }
   .bases-head, .bases-row { display: grid; grid-template-columns: 12rem 1fr; gap: 0.75rem; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); }
   .bases-row:last-child { border-bottom: none; background: var(--paper-2, transparent); }
