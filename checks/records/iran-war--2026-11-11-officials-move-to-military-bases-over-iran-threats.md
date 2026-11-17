@@ -82,7 +82,7 @@ What happened (sentences 1 to 3; the event, what it means, where it stands):
 Who lives on a base, and since when (sentence 4; visual: a dated table, one row per official: when on a base, as of which record, stated reason). Opens on: "Is Bessent one of many officials pushed onto bases by Iran?"
 - Rubio, Hegseth: on Fort McNair by October 30, 2025 (the Atlantic); Rubio in his own words August 11, 2026.
 - Miller: after protests and the day after Kirk's killing, September 2025 (the Atlantic).
-- Noem: 2025, after a tabloid published her apartment (DHS, on record).
+- Noem: 2025, after a tabloid described where she lived (the Atlantic; DHS on record: "the publication of her apartment by a tabloid").
 - Blanche: "since early 2026" (NewsNation), "for months" (three sources to Fox), "around March" (one); reason not given; DOJ's response is not reported. Hewitt's November 12 "is moving" is the host's assertion.
 - Bessent: "recently," Iranian threats, Secret Service (his own words).
 - Trump, April 26, 2026: "they choose to. I'm not sure that-- they need to."
