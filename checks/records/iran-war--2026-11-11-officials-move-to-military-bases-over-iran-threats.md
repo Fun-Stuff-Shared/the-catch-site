@@ -66,7 +66,7 @@ The catch: the move is real and Bessent confirmed it, but coverage made it a wav
 2. Bessent runs Operation Economic Outcast, the sanctions campaign against Iran, and says the threats show it "is working"; he also blames a 2025 Wall Street Journal photo that located his house.
 3. It came days after Trump said "Iran militarily is effectively over" while keeping the blockade and sanctions in place, and when Hugh Hewitt asked what would happen if the Iranians killed a senior official, Trump said "They will not exist very long any longer."
 4. Coverage cast Bessent as the latest in a wave of officials driven onto bases by Iran, but Rubio, Hegseth and Stephen Miller were already living on bases by October 2025, four months before the war began, and Miller moved after protests at his home.
-5. Iran calls the threats an Israeli fabrication, the White House says there is no credible threat to the homeland, and CNN reports, citing seven unnamed officials, that Iran is drawing up plans to strike officials in Washington.
+5. Iran's foreign ministry calls the allegations what appears to be an Israeli disinformation campaign, the White House says there is no credible threat to the homeland, and CNN reports, citing seven unnamed officials, that Iran is drawing up plans to strike officials in Washington.
 
 ## The plan
 
@@ -97,7 +97,7 @@ What the government says about the threat (sentence 5): opens on "How big is the
 1. On record: the DNI's October 23 memo (abroad: "the Middle East and certain other countries"); the Nov 12 letter's "heightened threat environment"; DOJ's target list.
 2. The White House: "no credible threats to the homeland."
 3. CNN's seven unnamed officials: plans for a dirty bomb or chemical weapon in Washington, "options rather than an indicator of an imminent attack."
-4. Iran: Baqaei calls it a fabrication; Iran's UN mission rejects the chemical-weapon allegation; Iran's embassy in South Africa told two named U.S. Navy officers "We will find you" on November 13.
+4. Iran: Baqaei calls it "what appears to be" an Israeli narrative campaign; Iran's UN mission rejects the chemical-weapon allegation; Iran's embassy in South Africa told two named U.S. Navy officers "We will find you" on November 13.
 5. Public records checked, nothing found: NTAS, FAA TFRs over D.C., NRC event reports, NNSA aerial surveys (one clause, in Show the work).
 
 What happens next: the House Armed Services Committee's report (H. Rept. 119-698) directs the Pentagon to report by May 1, 2027 on political appointees in military housing, including each one's justification; it is committee report language, not law [hrept-119-698-housing: "not later than May 1, 2027, on any political appointees residing in military housing"]; the base and date of Bessent's move are not public.
