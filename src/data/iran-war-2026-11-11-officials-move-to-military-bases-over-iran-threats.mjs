@@ -3,7 +3,7 @@
 export const event = {
   slug: "iran-war/2026-11-11-officials-move-to-military-bases-over-iran-threats",
   title: "Treasury ties Bessent's move onto a military base to Iranian threats. Rubio and Miller, reported moving too, were living on bases before the war",
-  dek: "Fox News reported Rubio and Miller relocating to military or protected housing “in recent weeks” as Tehran ramped up efforts to target officials. Rubio said in August that Defense Secretary Pete Hegseth lived two doors down; unnamed sources put Attorney General Todd Blanche on a base since early 2026. No reason from Hegseth or Blanche is quoted.",
+  dek: "Fox News reported Rubio and Miller relocating to military or protected housing “in recent weeks” as Tehran ramped up efforts to target officials. Rubio said in August that he rents a military house two doors from Defense Secretary Pete Hegseth; unnamed sources put Attorney General Todd Blanche on a base since early 2026. No reason from Hegseth or Blanche is quoted.",
   name: "Bessent's move onto a military base over Iranian threats",
   date: "2026-11-11",
   updated: "2026-11-17",
