@@ -1029,7 +1029,8 @@
   },
   {
    "id": "abroad-only",
-   "says": "The rule's data-center control covers chips sent to data centers outside the United States; it does not reach data centers inside the United States, so a data center there can rent computing power to Chinese companies without a license under this rule.",
+   "says": "The rule's data-center control works through exports, reexports and in-country transfers of chips: it bars, without a license, sending covered chips for use in a data center \"to or within any destination worldwide\" that serves such companies above the threshold, and the rule's summary describes its targets as overseas data centers.",
+   "short": "Controls chips exported to data centers; the rule's summary calls them overseas",
    "status": "fact",
    "load": [
     "catch"
@@ -1037,19 +1038,15 @@
    "evidence": [
     {
      "record": "fr-pi-2026-23529",
-     "passage": "overseas data centers that remotely supply significant volumes of compute to companies"
+     "passage": "You may not knowingly export, reexport, or transfer (in-county) items specified in"
     },
     {
      "record": "fr-pi-2026-23529",
-     "passage": "reexports, or transfers to data centers outside of the United States where there is knowledge that"
+     "passage": "for use in a data center to or within any destination worldwide"
     },
     {
-     "record": "kharon-remote-access-2026-11-16",
-     "passage": "The new rule does not make providing computing capacity a controlled activity; it regulates the chips behind that capacity."
-    },
-    {
-     "record": "mcguire-x-2026-11-16",
-     "passage": "The biggest gap is the remote access controls do not apply to data centers in the United States."
+     "record": "fr-pi-2026-23529",
+     "passage": "overseas data centers that remotely supply significant volumes of compute to companies"
     }
    ]
   },

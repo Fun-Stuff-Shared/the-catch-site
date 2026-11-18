@@ -14,7 +14,7 @@ export const n = {
 export const event = {
   slug: "ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers",
   title: "Commerce will require licenses to send AI chips to data centers serving Chinese firms",
-  dek: "The rule takes effect on publication, set for November 19, and does not cover data centers inside the United States.",
+  dek: "The rule takes effect on publication, set for November 19, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
   name: "Commerce's rule on AI chips at data centers serving Chinese firms",
   date: "2026-11-16",
   updated: "2026-11-17",
@@ -38,7 +38,7 @@ export const chronology = [
 
 // What the headlines said against what the rule says; each cell cites its claim.
 export const headlinesVsRule = [
-  { said: "\"U.S. closes loophole\"", saidC: "nbc-headline", rule: "Licenses for data centers abroad above 12 million TPP; data centers inside the United States are outside it", ruleC: ["data-center-license", "abroad-only"] },
+  { said: "\"U.S. closes loophole\"", saidC: "nbc-headline", rule: "Licenses for chips sent to data centers abroad above 12 million TPP; McGuire says U.S. data centers are left out", ruleC: ["data-center-license", "abroad-only", "us-data-centers-gap"] },
   { said: "Remote access \"will be banned\"", saidC: "nbc-banned", rule: "A license requirement: data-center licenses are reviewed case by case", ruleC: ["case-by-case"] },
   { said: "\"Took effect immediately\"", saidC: "ap-immediately", rule: "Effective on Federal Register publication, scheduled for November 19", ruleC: ["effective-on-publication"] },
   { said: "\"Goes into effect in 90 days\"", saidC: "nyt-90-days", rule: "The 90 days is the deadline for data centers already serving Chinese firms at that scale", ruleC: ["existing-90-days"] },
@@ -65,7 +65,7 @@ export const explanations = [
     claim: [["NBC reported that remote access \"will be banned when Monday’s rule change goes into effect.\"", c("nbc-banned")]],
     evidenceFor: [["Chips meant for a China-headquartered company itself face a presumption of denial.", c("presumption-of-denial")]],
     evidenceAgainst: [["The new data-center control is reviewed case by case, applies only above 12 million TPP, and covers data centers outside the United States.", c("case-by-case"), c("below-threshold"), c("data-center-license")]],
-    conclusion: [["A license requirement, not a ban, and only for data centers abroad.", c("case-by-case"), c("abroad-only")]],
+    conclusion: [["A license requirement, not a ban, on chips exported to data centers abroad.", c("case-by-case"), c("abroad-only")]],
   },
   {
     id: "scandal",

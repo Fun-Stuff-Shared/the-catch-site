@@ -58,7 +58,7 @@ Survives: C, and A in a narrower form: the rule's substance predates the scandal
 On November 16 the Commerce Department issued a rule that requires a U.S. license to ship advanced AI chips to data centers abroad that rent large amounts of computing power to Chinese companies, and to ship them at all to Indonesia, Malaysia, Singapore, Thailand and Brazil.
 It falls on Nvidia and other chipmakers, on the Southeast Asian data centers that rent chips to Chinese firms, which have needed a U.S. license to buy the most advanced chips since 2022, and on those firms.
 Commerce had promised a replacement for Biden's chip rule since May 2025, and this one came days after Nvidia's chief executive resigned over an affair with a Megaspeed executive U.S. officials suspect is a Chinese agent and Treasury Secretary Bessent blamed Commerce for not blacklisting Megaspeed; Commerce says Treasury and the White House national security staff wrote it.
-Headlines say the U.S. closed the loophole, but the rule requires licenses rather than banning the rentals, and does not reach data centers inside the United States.
+Headlines say the U.S. closed the loophole, but the rule requires licenses rather than banning the rentals, and controls only chips exported to data centers abroad.
 It takes effect when published, scheduled for November 19, data centers already serving Chinese firms have 90 days to get a license, and Commerce Secretary Lutnick, who wanted a leaner rule, faces Senate questions in December.
 
 ## The plan
