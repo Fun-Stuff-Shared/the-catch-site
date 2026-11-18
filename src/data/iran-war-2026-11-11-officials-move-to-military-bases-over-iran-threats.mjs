@@ -2,7 +2,7 @@
 // each row in its claims' short forms. Ordered by when each move is dated.
 export const event = {
   slug: "iran-war/2026-11-11-officials-move-to-military-bases-over-iran-threats",
-  title: "Treasury ties Bessent's move onto a military base to Iranian threats. Rubio and Miller, reported moving too, were living on bases before the war",
+  title: "Treasury ties Bessent's move onto a military base to Iranian threats. Fox says Rubio and Miller moved too; both were reported living on bases before the war",
   dek: "Fox News reported on November 11 that Rubio and Miller were relocating to military or protected housing “in recent weeks” as Tehran ramped up efforts to target officials. The Atlantic reported both living in military housing in 2025.",
   name: "Bessent's move onto a military base over Iranian threats",
   date: "2026-11-11",
