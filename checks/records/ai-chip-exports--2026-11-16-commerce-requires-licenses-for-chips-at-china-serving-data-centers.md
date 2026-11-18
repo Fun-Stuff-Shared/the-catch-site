@@ -107,7 +107,7 @@ What happens next (sentence 5): steps table.
 5. China's commerce ministry threatens countermeasures if the U.S. persists [mofcom-2026-11-17: "若美方一意孤行，中方将采取反制措施，坚定维护国家主权、安全、发展利益。"].
 6. The Senate has not acted on the Remote Access Security Act, which the House passed [kharon-remote-access-2026-11-16: "which passed the House in January and awaits Senate action"].
 7. Singapore is seeking "trusted access" for its companies [cna-singapore-2026-11-17: "We have also been engaging the relevant US authorities on the scope and implementation of the measure, as well as exploring how to facilitate trusted access for Singapore companies."].
-What it will not settle: Chinese access at U.S. data centers; how many licenses Commerce grants (BIS's paperwork estimate is about 100 more applications a year) [fr-pi-2026-23529: "BIS expects an annual increase of approximately 100 licenses"].
+What it will not settle: Chinese access at U.S. data centers; how many licenses Commerce grants (BIS's paperwork estimate is about 100 more licenses a year) [fr-pi-2026-23529: "BIS expects an annual increase of approximately 100 licenses"].
 
 ## Review r1: how each finding was judged
 
@@ -195,7 +195,7 @@ On November 16, 2026, the Commerce Department's Bureau of Industry and Security 
 | ~200 Blackwell / ~800 H100 chips | McGuire's conversion of the threshold, not a BIS figure | Nov 16, 2026 | [mcguire-x-2026-11-16: "equivalent to ~200 of the most advanced Blackwell chips, or ~800 H100 chips"] |
 | 90 days | deadline for data centers already serving such firms to get a license | from the effective date | [fr-pi-2026-23529: "must obtain a license with 90 days of the effective date"] |
 | 60 days | comment period | after publication | [fr-pi-2026-23529: "INSERT DATE 60 DAYS AFTER DATE OF PUBLICATION"] |
-| about 100 | BIS's paperwork estimate of added license applications a year; not a count of approvals or of data centers covered | rule's Paperwork Reduction Act section | [fr-pi-2026-23529: "BIS expects an annual increase of approximately 100 licenses"] |
+| about 100 | BIS's paperwork estimate of added licenses a year; not a count of data centers covered | rule's Paperwork Reduction Act section | [fr-pi-2026-23529: "BIS expects an annual increase of approximately 100 licenses"] |
 | 5 | countries newly needing a license | rule | [fr-pi-2026-23529: "Indonesia, Malaysia, Singapore, Brazil, and Thailand"] |
 
 ## What coverage says that the records do not
