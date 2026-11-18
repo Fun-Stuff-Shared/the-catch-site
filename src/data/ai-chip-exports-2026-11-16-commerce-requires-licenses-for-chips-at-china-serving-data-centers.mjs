@@ -70,10 +70,10 @@ export const explanations = [
   {
     id: "scandal",
     name: "The Megaspeed scandal produced the rule",
-    holders: "Coverage of the rule",
+    holders: "CNBC",
     verdict: "not",
-    summary: ["A replacement rule was promised in May 2025, and approved in October, before the scandal broke.", c("replacement-promised"), c("october-signoff")],
-    claim: [["The rule came days after Jensen Huang stepped down over his ties to a Megaspeed executive.", c("megaspeed-scandal")]],
+    summary: ["A replacement was promised in May 2025 and approved in October, the Times' sources say, both before Jensen Huang stepped down.", c("replacement-promised"), c("october-signoff"), c("megaspeed-scandal")],
+    claim: [["CNBC called the rule \"the first U.S. policy response to the scandal\" that led Jensen Huang to resign.", c("cnbc-first-response")]],
     evidenceFor: [["The rule came four days after Jensen Huang stepped down and three after Bessent blamed Commerce.", c("megaspeed-scandal"), c("bessent-has-the-pen"), c("rule-issued")]],
     evidenceAgainst: [["BIS promised a replacement for Biden's rule in May 2025, and people who described the talks to the Times say the president signed off on remote-access rules in October.", c("replacement-promised"), c("october-signoff")]],
     conclusion: [["BIS promised a replacement in May 2025, and the president approved one in October, the Times' sources say, both before Jensen Huang stepped down.", c("replacement-promised"), c("october-signoff"), c("megaspeed-scandal")]],
