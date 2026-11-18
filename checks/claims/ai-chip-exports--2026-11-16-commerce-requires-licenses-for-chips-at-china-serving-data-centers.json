@@ -22,7 +22,7 @@
   },
   {
    "id": "data-center-license",
-   "says": "The rule requires a license to export, reexport or transfer advanced AI chips when the seller knows they are headed to a data center anywhere that provides more than 12,000,000 \"aggregate TPP\" of computing power to companies headquartered, or whose ultimate parent is headquartered, in Macau or a Country Group D:5 country such as China.",
+   "says": "The rule requires a license to export, reexport or transfer advanced AI chips when the seller knows they are headed to a data center outside the United States that provides more than 12,000,000 \"aggregate TPP\" of computing power, at one site or across linked sites, to or for companies headquartered, or whose ultimate parent is headquartered, in Macau or a Country Group D:5 country such as China; computing used only for commercial recommendation systems is exempt if reported to BIS.",
    "status": "fact",
    "load": [
     "spine",
@@ -36,9 +36,17 @@
     {
      "record": "fr-pi-2026-23529",
      "passage": "to or for companies headquartered in, or whose ultimate parent company is headquartered in, Macau or a destination specified in Country Group D:5"
+    },
+    {
+     "record": "fr-pi-2026-23529",
+     "passage": "overseas data centers that remotely supply significant volumes of compute to companies"
+    },
+    {
+     "record": "fr-pi-2026-23529",
+     "passage": "The prohibitions under this section do not apply when the computing power access is only"
     }
    ],
-   "short": "License above 12 million TPP for China-serving data centers"
+   "short": "License above 12 million TPP for data centers abroad serving Chinese firms"
   },
   {
    "id": "d5-includes-china",
@@ -70,7 +78,7 @@
   },
   {
    "id": "five-countries",
-   "says": "The rule requires a license for any export of advanced AI chips to or within Indonesia, Malaysia, Singapore, Brazil and Thailand, except to buyers headquartered in the United States that file reports to BIS.",
+   "says": "The rule requires a license to export advanced AI chips to or within Indonesia, Malaysia, Singapore, Brazil and Thailand, except when the ultimate consignee or end user is headquartered in the United States, or has a U.S.-headquartered ultimate parent, and the exporter files reports to BIS.",
    "status": "fact",
    "load": [
     "spine"
@@ -82,10 +90,10 @@
     },
     {
      "record": "fr-pi-2026-23529",
-     "passage": "The license requirement for these five countries will not apply to semiconductors"
+     "passage": "to an ultimate consignee or end user headquartered in, or whose ultimate parent company is headquartered in, the United States"
     }
    ],
-   "short": "License for all shipments to five countries"
+   "short": "License for shipments to five countries, U.S. firms excepted"
   },
   {
    "id": "five-countries-reason",
@@ -642,7 +650,7 @@
   },
   {
    "id": "wsj-proposed",
-   "says": "The Wall Street Journal's first version of its story called it a \"new proposed rule\"; a version captured later that day no longer did.",
+   "says": "A version of The Wall Street Journal's story captured at 17:48 UTC on November 16 called it a \"new proposed rule\"; a version captured at 23:58 UTC that day did not.",
    "status": "fact",
    "load": [
     "catch"
@@ -651,9 +659,13 @@
     {
      "record": "wsj-crackdown-2026-11-16",
      "passage": "The new proposed rule would add Malaysia, Thailand, Indonesia, Singapore and Brazil"
+    },
+    {
+     "record": "wsj-crackdown-later-2026-11-16",
+     "passage": "Malaysia, Thailand, Indonesia, Singapore and Brazil will be added to a list of countries subject to export restrictions"
     }
    ],
-   "scope": "the version captured at 17:00 UTC on November 16"
+   "scope": "two captures of the same URL on November 16"
   },
   {
    "id": "nyt-legally",
@@ -731,7 +743,7 @@
   },
   {
    "id": "presumption-of-denial",
-   "says": "Applications to export advanced chips for a company headquartered in China, Macau or another D:5 country face a presumption of denial under the rule's licensing policy, which governs where more than one policy applies.",
+   "says": "Under the rule's licensing policy, applications to export the most powerful chips for a company headquartered in China, Macau or another D:5 country face a presumption of denial, which governs where more than one policy applies; chips below 21,000 TPP bound for end users in China or Macau get case-by-case review.",
    "status": "fact",
    "load": [
     "catch"
@@ -744,13 +756,17 @@
     {
      "record": "fr-pi-2026-23529",
      "passage": "If the license application meets the criteria of more than one licensing policy, then this licensing policy and its requirements will be applied."
+    },
+    {
+     "record": "fr-pi-2026-23529",
+     "passage": "license review policy for license applications for exports of commodities with a TPP (as"
     }
    ],
-   "short": "Chips for Chinese firms themselves: presumption of denial"
+   "short": "Top chips for Chinese firms: presumption of denial"
   },
   {
    "id": "may-31-tolerance",
-   "says": "In May 2026, BIS said a license had been required since November 2023 for advanced chips sold to China-headquartered companies wherever they were, and that its guidance did not require data center operators otherwise following the rules to stop using the chips they had, until further notice.",
+   "says": "In May 2026, BIS said a license had been required since November 2023 for advanced chips sent anywhere outside the United States for China-headquartered companies, and that its guidance did not require data center operators otherwise following the rules to stop using the chips they had, until further notice.",
    "status": "fact",
    "load": [
     "spine"
@@ -771,6 +787,10 @@
     {
      "record": "bis-guidance-2026-05-31",
      "passage": "computing items because of this guidance, until further notice from BIS."
+    },
+    {
+     "record": "bis-guidance-2026-05-31",
+     "passage": "destinations outside the United States for these advanced computing items when such items are"
     }
    ],
    "short": "May 31, 2026: law-abiding data centers need not stop, until further notice"
@@ -809,7 +829,7 @@
      "passage": "similar chips on a case-by-case basis provided certain security requirements are met."
     }
    ],
-   "short": "Jan 13, 2026: H200 sales to China under license"
+   "short": "Jan. 2026: H200 sales to China under license"
   },
   {
    "id": "blunt-rochester-curtis",
@@ -889,7 +909,7 @@
   },
   {
    "id": "singapore-huang",
-   "says": "Singapore says it found insufficient evidence that Alice Huang committed the offences it investigated, and did not investigate her for espionage.",
+   "says": "Singapore says it found insufficient evidence that Alice Huang committed the false-declaration offences it investigated around Megaspeed, but that she knowingly gave its police inaccurate information, for which she was warned and barred from re-entering; it did not investigate her for espionage.",
    "status": "said",
    "load": [
     "person"
@@ -898,6 +918,10 @@
     {
      "record": "mha-singapore-megaspeed-2026-11-12",
      "passage": "concluded that there was insufficient evidence to establish that Huang had committed any offences"
+    },
+    {
+     "record": "mha-singapore-megaspeed-2026-11-12",
+     "passage": "She was issued a stern warning and barred from re-entering the country."
     },
     {
      "record": "mha-singapore-megaspeed-2026-11-12",
