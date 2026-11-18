@@ -57,7 +57,7 @@ Survives: C, and A in a narrower form: the rule's substance predates the scandal
 
 On November 16 the Commerce Department issued a rule that requires a U.S. license to ship advanced AI chips to data centers abroad that rent large amounts of computing power to Chinese companies, and to ship them at all to Indonesia, Malaysia, Singapore, Thailand and Brazil.
 It falls on Nvidia and other chipmakers, on the Southeast Asian data centers that rent chips to Chinese firms, which have needed a U.S. license to buy the most advanced chips since 2022, and on those firms.
-Commerce had promised a rule like it since May 2025, and it came days after Nvidia's chief executive resigned over an affair with a Megaspeed executive U.S. officials suspect is a Chinese agent and Treasury Secretary Bessent blamed Commerce for not blacklisting Megaspeed; Commerce says Treasury and the White House national security staff wrote it.
+Commerce had promised a replacement for Biden's chip rule since May 2025, and this one came days after Nvidia's chief executive resigned over an affair with a Megaspeed executive U.S. officials suspect is a Chinese agent and Treasury Secretary Bessent blamed Commerce for not blacklisting Megaspeed; Commerce says Treasury and the White House national security staff wrote it.
 Headlines say the U.S. closed the loophole, but the rule requires licenses rather than banning the rentals, and does not reach data centers inside the United States.
 It takes effect when published, scheduled for November 19, data centers already serving Chinese firms have 90 days to get a license, and Commerce Secretary Lutnick, who wanted a leaner rule, faces Senate questions in December.
 
@@ -70,7 +70,7 @@ Dek: The rule takes effect on publication, set for November 19, and does not cov
 
 What happened (sentences 1 and 2; the event, what it means, where it stands):
 1. What did Commerce do? A license to ship advanced chips to any data center abroad that gives more than a set amount of computing power (12 million "TPP", about 800 H100 chips by McGuire's count) to companies headquartered in China, Macau and the other countries of concern; and a license for any shipment of those chips to Indonesia, Malaysia, Singapore, Thailand and Brazil unless the buyer is a U.S. company that reports [fr-pi-2026-23529: "provide access to more than 12,000,000"] [mcguire-x-2026-11-16: "equivalent to ~200 of the most advanced Blackwell chips, or ~800 H100 chips"] [fr-pi-2026-23529: "to or within Indonesia, Malaysia, Singapore, Brazil, and Thailand"].
-2. Why does that matter? Chinese firms, which have needed a license to buy the most advanced chips since 2022, have rented them from data centers in Southeast Asia, and in May BIS told those data centers they could carry on "until further notice"; now one doing so at that scale must get a license within 90 days or face restrictions, and chip sellers must check who their data-center customers serve [bis-guidance-2026-05-31: "computing items because of this guidance, until further notice from BIS."] [nyt-loophole-2026-11-16: "That means Chinese companies that are blocked from buying advanced Nvidia chips directly can simply rent them through Southeast Asian firms."] [fr-pi-2026-23529: "must obtain a license with 90 days of the effective date of this IFR or face future export restrictions"].
+2. Why does that matter? Chinese firms, which have needed a license to buy the most advanced chips since 2022, have rented them from data centers in Southeast Asia, and in May BIS said its guidance did not require data center operators otherwise following the rules to stop using the chips they had, "until further notice"; now one doing so at that scale must get a license within 90 days or face restrictions, and chip sellers must check who their data-center customers serve [bis-guidance-2026-05-31: "computing items because of this guidance, until further notice from BIS."] [nyt-loophole-2026-11-16: "That means Chinese companies that are blocked from buying advanced Nvidia chips directly can simply rent them through Southeast Asian firms."] [fr-pi-2026-23529: "must obtain a license with 90 days of the effective date of this IFR or face future export restrictions"].
 3. Where does it stand? Filed November 16, takes effect on Federal Register publication, scheduled for November 19; comments for 60 days after. Named, not argued: BIS says Treasury and the NSC wrote it; it is a license requirement, not a ban [fr-pi-2026-23529: "Publication Date: 11/19/2026"] [bis-release-2026-11-16: "written by and at the direction of the Department of Treasury and the National Security Council"].
 
 How it got here (sentence 3): opens on BIS's stated reason, then the dated chain, as a timeline.
@@ -82,7 +82,7 @@ Visual: timeline, May 2025 to November 19.
 
 Who wrote it (sentence 3, the dispute inside the administration):
 1. Whose rule is it? BIS's release credits Treasury and the NSC; Politico's three sources say Bessent pushed it through with Rubio's support [politico-bessent-rule-2026-11-16: "Treasury Secretary Scott Bessent pushed through a new Commerce Department rule"].
-2. What did Commerce want? A leaner rule, less onerous for Nvidia [nyt-loophole-2026-11-16: "Mr. Lutnick had pushed for a leaner version of the rules on foreign data centers, one that would be less onerous for Nvidia and its customers."]; Commerce says it worked with other agencies and was considering remote-access rules [nyt-lutnick-softer-2026-11-12: "The Commerce Department spokeswoman said that the department was actively considering new rules to address remote access, along with other agencies."].
+2. What does Commerce say? Commerce and Justice say Commerce investigated Megaspeed from 2024 and handed the criminal case to Justice [doj-commerce-megaspeed-2026-11-17: "the Department of Commerce initiated an investigation into Megaspeed in 2024 for potential export control violations"]. What did Commerce want? A leaner rule, less onerous for Nvidia [nyt-loophole-2026-11-16: "Mr. Lutnick had pushed for a leaner version of the rules on foreign data centers, one that would be less onerous for Nvidia and its customers."]; Commerce says it worked with other agencies and was considering remote-access rules [nyt-lutnick-softer-2026-11-12: "The Commerce Department spokeswoman said that the department was actively considering new rules to address remote access, along with other agencies."].
 3. What does Trump say? "Two different views"; Lutnick may have delayed to avoid "a blowup with China" [nypost-trump-lutnick-2026-11-16: "He might have delayed it, but he was doing that because if you didn’t delay it, if you didn’t do something, you could have had a blowup with China,"].
 Quote card: McGuire, "I have never seen a BIS rule that was not written by BIS."
 
@@ -123,7 +123,22 @@ What it will not settle: Chinese access at U.S. data centers; how many licenses 
 10. Nvidia's committee: verified and admitted; a reaction.
 11. 100 licenses is a workload estimate: agreed; the figure now says so.
 
+## Review r2: how each finding was judged
+
+1. Ricketts' MEGA Act on Megaspeed: not fetched; it concerns blacklisting one company, not this rule [lead: https://www.ricketts.senate.gov/news/press-releases/ricketts-leads-effort-to-force-a-decision-on-megaspeed-entity-listing/, not admitted: another story's thread].
+2. House interviews of Jensen Huang (December 1) and Nvidia's general counsel (December 2): not fetched; the Megaspeed inquiry, not the rule [lead: https://foreignaffairs.house.gov/news/press-releases/jensen-huang-and-nvidia-agree-to-appear-before-congress].
+3. Axios's three presidential decisions, and the May 2025 promise being for a replacement rule generally: agreed on the second point; sentence 3 now says "a replacement for Biden's chip rule". Axios stays a lead.
+4. Commerce's defense of its Megaspeed enforcement: already admitted; the plan's "who wrote it" layer now gives Commerce's account.
+5. Legal authority over computing services: Kharon's admitted account covers it (the 2009 advisory opinion); background.
+6. Ultimate parents and intermediaries: the claim already says "or whose ultimate parent is headquartered"; intermediaries are background.
+7. Recommender exemption and 90-day ambiguities (WilmerHale): background; the page states the 90 days as the rule words it.
+8. The May 31 guidance is not blanket permission: verified in its words ("otherwise engaged in activities consistent with the EAR", "because of this guidance"); the claim, the plan and the chronology now say so.
+9. The foundry control: already in Background held.
+10. The 30-day savings clause for shipments en route: verified in the rule; background.
+No finding changes what survives in either matrix; the five sentences changed in wording only (finding 3). Reviews stop at round 2.
+
 Background held:
+- The rule lets shipments already en route on publication day finish under the old terms within 30 days [fr-pi-2026-23529: "is completed no later than on [INSERT DATE 30 DAYS"].
 - Singapore found insufficient evidence that Alice Huang committed the offences it investigated, and did not investigate her for espionage [mha-singapore-megaspeed-2026-11-12: "Huang was not based in Singapore, and was not investigated for espionage."].
 - The rule's removals: the AI Diffusion Rule's worldwide license requirement and model-weights controls, never enforced [fr-pi-2026-23529: "The AI Diffusion Rule has never been enforced."]. the recommender-system exemption; the foundry presumptions; the AI Diffusion rescission details; stock moves; the Commerce-Justice Megaspeed timeline; Trump's trip to Xi and the officials' "no bearing" line; Cantwell's family-business charge; Megaspeed dollar figures.
 
@@ -148,7 +163,7 @@ On November 16, 2026, the Commerce Department's Bureau of Industry and Security 
 | Jan 15, 2025 | Biden's AI Diffusion Rule, including remote-access limits | [nyt-loophole-2026-11-16: "Just before leaving office, the Biden administration issued global rules on chip sales, including restrictions on Chinese firms remotely accessing data centers."] |
 | May 13, 2025 | BIS promises a replacement rule and licensing for Malaysia and Thailand | [bis-diffusion-rescission-2025-05-13: "BIS plans to publish a regulation formalizing the rescission and will issue a replacement rule in the future."] |
 | Jan 13, 2026 | BIS opens case-by-case licensing of Nvidia H200-class chips to approved Chinese buyers | [bis-h200-policy-2026-01-13: "BIS will now review export license applications for the Nvidia H200, AMD MI325X, and"] |
-| May 31, 2026 | BIS: the 2023 license requirement still applies; data centers may carry on "until further notice" | [bis-guidance-2026-05-31: "computing items because of this guidance, until further notice from BIS."] |
+| May 31, 2026 | BIS: the 2023 license requirement still applies; its guidance does not require law-abiding data centers to stop using chips they hold, "until further notice" | [bis-guidance-2026-05-31: "computing items because of this guidance, until further notice from BIS."] |
 | May 2025 | Trump's Commerce Department says it will not enforce the diffusion rule and will rescind it | [npr-loophole-2026-11-16: "In May 2025, Trump's Commerce Department announced it would not enforce the rule and intended to rescind it"] |
 | Oct 2026 | Officials press remote-access rules; the president signs off; Lutnick says he does not understand the rush | [nyt-lutnick-softer-2026-11-12: "And Mr. Lutnick told his colleagues that he didn’t understand the rush."] |
 | Nov 9, 2026 | NYT reports the Megaspeed investigation | [cnbc-loophole-2026-11-16: "The New York Times reported on Nov. 9"] |
@@ -241,7 +256,22 @@ On November 16, 2026, the Commerce Department's Bureau of Industry and Security 
 10. Nvidia's committee: verified and admitted; a reaction.
 11. 100 licenses is a workload estimate: agreed; the figure now says so.
 
+## Review r2: how each finding was judged
+
+1. Ricketts' MEGA Act on Megaspeed: not fetched; it concerns blacklisting one company, not this rule [lead: https://www.ricketts.senate.gov/news/press-releases/ricketts-leads-effort-to-force-a-decision-on-megaspeed-entity-listing/, not admitted: another story's thread].
+2. House interviews of Jensen Huang (December 1) and Nvidia's general counsel (December 2): not fetched; the Megaspeed inquiry, not the rule [lead: https://foreignaffairs.house.gov/news/press-releases/jensen-huang-and-nvidia-agree-to-appear-before-congress].
+3. Axios's three presidential decisions, and the May 2025 promise being for a replacement rule generally: agreed on the second point; sentence 3 now says "a replacement for Biden's chip rule". Axios stays a lead.
+4. Commerce's defense of its Megaspeed enforcement: already admitted; the plan's "who wrote it" layer now gives Commerce's account.
+5. Legal authority over computing services: Kharon's admitted account covers it (the 2009 advisory opinion); background.
+6. Ultimate parents and intermediaries: the claim already says "or whose ultimate parent is headquartered"; intermediaries are background.
+7. Recommender exemption and 90-day ambiguities (WilmerHale): background; the page states the 90 days as the rule words it.
+8. The May 31 guidance is not blanket permission: verified in its words ("otherwise engaged in activities consistent with the EAR", "because of this guidance"); the claim, the plan and the chronology now say so.
+9. The foundry control: already in Background held.
+10. The 30-day savings clause for shipments en route: verified in the rule; background.
+No finding changes what survives in either matrix; the five sentences changed in wording only (finding 3). Reviews stop at round 2.
+
 Background held:
+- The rule lets shipments already en route on publication day finish under the old terms within 30 days [fr-pi-2026-23529: "is completed no later than on [INSERT DATE 30 DAYS"].
 - Singapore found insufficient evidence that Alice Huang committed the offences it investigated, and did not investigate her for espionage [mha-singapore-megaspeed-2026-11-12: "Huang was not based in Singapore, and was not investigated for espionage."].
 - The rule's removals: the AI Diffusion Rule's worldwide license requirement and model-weights controls, never enforced [fr-pi-2026-23529: "The AI Diffusion Rule has never been enforced."].
 - Chip stocks fell on Monday [nyt-loophole-2026-11-16: "Share prices of chip stocks tumbled Monday."].
