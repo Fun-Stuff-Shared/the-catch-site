@@ -195,7 +195,7 @@ class Blocks(HTMLParser):
                 self.skip += 1
                 self.stack[-1] = (tag, True)
         elif tag in BLOCK and live:
-            self.open.append({"text": [], "claims": []})
+            self.open.append({"text": [], "claims": (a.get("data-claims") or "").split()})
         elif tag in {"span", "td", "th"} and live and self.open:
             self.open[-1]["text"].append(" ")
 
