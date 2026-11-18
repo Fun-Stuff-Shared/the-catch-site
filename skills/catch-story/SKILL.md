@@ -111,7 +111,9 @@ from oil already promised in March" (states a plan as done); "…is meant to fin
 pledge" (what pledge?). The headline is yours and never frozen,
 including one the human picked: change it whenever it is wrong, overstated, or a better one
 holds on the record, including when a reviewer's finding against it is right. Rename the
-label to match (section 4) and report it.
+label to match (section 4) and report it. The headline shows no source numbers: name the
+claims it rests on in the `<h1>`'s `data-claims` attribute (space-separated ids), which the
+bind check reads as its citations.
 
 The dek under it does one job: the one fact a reader needs that the headline leaves out.
 One sentence, two numbers at most. A contrast or a side's claim whose point only the body
