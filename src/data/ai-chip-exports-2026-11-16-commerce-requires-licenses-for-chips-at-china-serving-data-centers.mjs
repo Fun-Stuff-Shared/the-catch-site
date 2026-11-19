@@ -1,12 +1,11 @@
 // Every number here is printed on an admitted record; the claim each comes from is named.
-// Rule: fr-pi-2026-23529 (claims data-center-license, existing-90-days, comments-60-days, effective-on-publication, about-100-licenses).
+// Rule: fr-pi-2026-23529 (claims data-center-license, existing-90-days, about-100-licenses); fr-2026-23529 (effective-on-publication, comments-60-days).
 // Chip equivalent: mcguire-x-2026-11-16 (threshold-in-chips), his conversion, not BIS's.
 export const n = {
   threshold: "12 million",
   h100: "800",
   blackwell: "200",
   graceDays: 90,
-  commentDays: 60,
   licenses: 100,
   countries: 5,
 };
@@ -14,7 +13,7 @@ export const n = {
 export const event = {
   slug: "ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers",
   title: "Commerce will require licenses to ship AI chips to data centers serving Chinese firms at scale",
-  dek: "The rule takes effect on publication, set for November 19, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
+  dek: "The rule took effect on November 19, when it was published, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
   name: "Commerce's rule on AI chips at data centers serving Chinese firms",
   date: "2026-11-16",
   updated: "2026-11-17",
@@ -40,15 +39,15 @@ export const chronology = [
 export const headlinesVsRule = [
   { said: "\"U.S. closes loophole\"", saidC: "nbc-headline", rule: "Licenses for chips sent to data centers abroad above 12 million TPP; McGuire says U.S. data centers are left out", ruleC: ["data-center-license", "abroad-only", "us-data-centers-gap"] },
   { said: "Remote access \"will be banned\"", saidC: "nbc-banned", rule: "A license requirement: data-center licenses are reviewed case by case", ruleC: ["case-by-case"] },
-  { said: "\"Took effect immediately\"", saidC: "ap-immediately", rule: "Effective on Federal Register publication, scheduled for November 19", ruleC: ["effective-on-publication"] },
+  { said: "\"Took effect immediately\"", saidC: "ap-immediately", rule: "Took effect on Federal Register publication, November 19", ruleC: ["effective-on-publication"] },
   { said: "\"Goes into effect in 90 days\"", saidC: "nyt-90-days", rule: "The 90 days is the deadline for data centers already serving Chinese firms at that scale", ruleC: ["existing-90-days"] },
   { said: "\"New proposed rule\"", saidC: "wsj-proposed", rule: "An interim final rule: in effect on publication, with comments taken after", ruleC: ["not-a-proposal", "effective-on-publication", "comments-60-days"] },
 ];
 
 // What comes next, in order; each step cites its claim.
 export const steps = [
-  { when: "Nov. 19", what: "Federal Register publication; the rule takes effect", c: ["effective-on-publication"] },
-  { when: "60 days after", what: "Public comments close", c: ["comments-60-days"] },
+  { when: "Nov. 19 (done)", what: "Published in the Federal Register; the rule took effect", c: ["effective-on-publication"] },
+  { when: "Jan. 19, 2027", what: "Public comments close", c: ["comments-60-days"] },
   { when: "90 days after", what: "Data centers already serving Chinese firms at that scale must hold a license", c: ["existing-90-days"] },
   { when: "December", what: "Lutnick and Jensen Huang summoned before the Senate Banking Committee", c: ["lutnick-december"] },
   { when: "Pending", what: "The Remote Access Security Act, passed by the House, awaits the Senate", c: ["rasa"] },

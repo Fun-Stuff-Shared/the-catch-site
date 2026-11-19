@@ -59,7 +59,7 @@ On November 16 the Commerce Department issued a rule that requires a U.S. licens
 Chinese firms have needed a U.S. license to buy the most advanced chips since 2022, so many rent them from data centers in Southeast Asia, and the rule falls on those data centers, on the firms, and on chipmakers like Nvidia.
 Commerce had promised a replacement for Biden's chip rule since May 2025, and this one came days after Nvidia's chief executive resigned over an affair with a Megaspeed executive and Treasury Secretary Bessent blamed Commerce for not blacklisting Megaspeed; Commerce says Treasury and the White House national security staff wrote it.
 Headlines say the U.S. closed the loophole, but the rule requires licenses rather than banning the rentals, and controls only chips exported to data centers abroad.
-It takes effect when published, scheduled for November 19, data centers already serving Chinese firms have 90 days to get a license, and Commerce Secretary Lutnick, who wanted a leaner rule, faces Senate questions in December.
+It took effect when it was published in the Federal Register on November 19; data centers already serving Chinese firms have 90 days to get a license, and Commerce Secretary Lutnick, who wanted a leaner rule, faces Senate questions in December.
 
 ## The plan
 
