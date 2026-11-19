@@ -58,3 +58,15 @@ test("a citation merged across claims lists each of its claims", () => {
   assert.equal((list.match(/<li>/g) || []).length, 2);
   assert.match(list, /^<li>The suit was filed\.<sup[^]*<li>It names the state\.<sup/);
 });
+
+test("a claim cited again later in the same section is listed once; a new section or explanation list starts afresh", () => {
+  const sup = (c) => cite(1).replace(' data-passage', ` data-claim="${c}" data-passage`);
+  const says = { a: "The rule took effect.", b: "Comments close in January." };
+  const p = (body) => `<p data-layer="narrative">${body}</p>`;
+  const page = `<main id="story-root"><h2>One</h2>${p(`It began.${sup("a")}`)}${p(`It began, again.${sup("a")} Comments.${sup("b")}`)}`
+    + `<h2>Two</h2>${p(`It began.${sup("a")}`)}<details class="xl-item supported"><p class="xl-label">For</p>${p(`Began.${sup("a")}`)}<p class="xl-label">Verdict</p>${p(`Began.${sup("a")}`)}</details></main>`;
+  const out = factsClaims(page, (id) => says[id]);
+  assert.equal((out.match(/<li>The rule took effect\./g) || []).length, 4);
+  assert.equal((out.split("<h2>Two</h2>")[0].match(/<li>The rule took effect\./g) || []).length, 1);
+  assert.equal((out.match(/<li>Comments close in January\./g) || []).length, 1);
+});

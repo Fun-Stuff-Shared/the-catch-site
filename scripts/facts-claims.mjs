@@ -46,13 +46,14 @@ function openTags(html) {
 
 // On a page that cites a claim ledger, Just the facts lists the claims themselves, in the
 // ledger's words with their status and scope, each with the citations the paragraph gave it.
-export function ledgerClaims(inner, says) {
+export function ledgerClaims(inner, says, seen = new Set()) {
   const byClaim = new Map();
   for (const [sup] of inner.matchAll(/<sup class="src-ref[^"]*">[\s\S]*?<\/sup>/g)) {
     const ids = ((sup.match(/data-claim="([^"]*)"/) || [])[1] ?? "").split(" ").filter(Boolean);
     const plain = sup.replace('class="src-ref src-ref-more"', 'class="src-ref"');
-    for (const id of ids) byClaim.set(id, [...(byClaim.get(id) ?? []), plain]);
+    for (const id of ids) if (!seen.has(id)) byClaim.set(id, [...(byClaim.get(id) ?? []), plain]);
   }
+  for (const id of byClaim.keys()) seen.add(id);
   const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   return [...byClaim].map(([id, sups]) =>
     escape(says(id)) + sups.map((s, i) => (i ? s.replace('class="src-ref"', 'class="src-ref src-ref-more"') : s)).join(""));
@@ -64,11 +65,16 @@ export function factsClaims(html, says = null) {
   const main = [...walk(doc)].find((n) => n.tagName === "main" && attr(n, "id") === "story-root");
   if (!main) return html;
   const inserts = [];
+  // A claim is listed once per section, where it is first cited. Each explanation's evidence
+  // and verdict lists stand on their own, so they start afresh.
+  let seen = new Set();
   for (const node of walk(main)) {
+    const cls = (attr(node, "class") ?? "").split(" ");
+    if (node.tagName === "h2" || cls.includes("xl-item") || cls.includes("xl-label")) seen = new Set();
     if (!["p", "li"].includes(node.tagName) || attr(node, "data-layer") !== "narrative") continue;
     const loc = node.sourceCodeLocation;
     const inner = html.slice(loc.startTag.endOffset, loc.endTag.startOffset).replace(/<div class="work-evidence"[\s\S]*$/, "");
-    const found = says ? ledgerClaims(inner, says) : claims(inner);
+    const found = says ? ledgerClaims(inner, says, seen) : claims(inner);
     if (!found.length) continue;
     const items = found.map((s) => `<li>${s}</li>`).join("");
     inserts.push({
