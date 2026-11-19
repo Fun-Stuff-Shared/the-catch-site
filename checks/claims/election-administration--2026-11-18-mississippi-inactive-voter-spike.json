@@ -1,309 +1,1163 @@
 {
-  "story": "election-administration--2026-11-18-mississippi-inactive-voter-spike",
-  "claims": [
-    {"id": "caucus-request",
-     "says": "Mississippi's Legislative Black Caucus asked the Legislature on Nov. 19 to investigate how credit-reporting data was used to examine voter rolls before the Nov. 3 election.",
-     "short": "Black Caucus asks for an investigation",
-     "status": "fact", "scope": "Nov. 19, 2026", "load": ["person"],
-     "evidence": [
-       {"record": "ap-2026-11-19", "passage": "The Mississippi Legislative Black Caucus has scheduled a news conference Thursday to discuss its demand for legislative oversight committees to investigate how credit reporting data was used to examine voter rolls ahead of the November midterms."},
-       {"record": "msindy-caucus-2026-11-18", "passage": "The Mississippi Legislative Black Caucus asked Thursday for an independent investigation of the Secretary of State’s office over the more than 230,000 voter registrations listed as inactive before the Nov. 3 election"}]},
-    {"id": "caucus-wants",
-     "says": "The caucus wants public hearings, preserved records, and answers from Secretary of State Michael Watson and county officials before the 2027 elections.",
-     "status": "said", "by": "the Legislative Black Caucus", "load": ["person"],
-     "evidence": [{"record": "msindy-caucus-2026-11-18", "passage": "The caucus wants public hearings, preserved records and answers from Secretary of State Michael Watson and county officials before voters go back to the polls."}]},
-    {"id": "karriem-disenfranchisement",
-     "says": "Rep. Kabir Karriem, the caucus chair, called it \"disenfranchisement called by another name.\"",
-     "status": "said", "by": "Rep. Kabir Karriem", "load": ["person"],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "“It was disenfranchisement called by another name.”"}, {"record": "ap-2026-11-19", "passage": "said Democratic state Rep. Kabir Karriem, the chair of the caucus"}]},
-    {"id": "karriem-did-my-vote-count",
-     "says": "Karriem said voters are still asking whether their votes counted.",
-     "status": "said", "by": "Rep. Kabir Karriem", "load": ["person"],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "the question is still out there: Did my vote count?"}]},
-    {"id": "inactive-meaning",
-     "says": "A voter on inactive status in Mississippi is still registered but cannot cast a regular ballot on Election Day and must vote by affidavit ballot.",
-     "short": "Inactive: still registered, votes by affidavit",
-     "status": "fact", "load": ["spine"],
-     "evidence": [{"record": "hb1310-2023", "passage": "Any registered voter who is placed on inactive status shall be unable to cast a regular ballot on election day but shall be able to cast an affidavit ballot as provided in Section 23-15-573."}]},
-    {"id": "inactive-at-mailing",
-     "says": "Mississippi law puts a voter on inactive status as soon as the county sends the voter a confirmation notice, before the voter can answer it.",
-     "short": "Inactive the day the card is mailed",
-     "status": "fact", "load": ["spine", "catch"],
-     "evidence": [
-       {"record": "hb1310-2023", "passage": "The county election commissioners shall place any registered voter who has been sent a confirmation notice on inactive status in the Statewide Elections Management System."},
-       {"record": "sos-experian-release-2025-07-21", "passage": "registered voters who have been identified as having a new address will be sent a confirmation card and then placed on “Inactive” status"}]},
-    {"id": "notice-to-flagged-address",
-     "says": "Mississippi Today confirmed cases in which the notice went to the unverified address from the Experian data, so voters who had not moved never received it.",
-     "status": "said", "by": "Mississippi Today", "load": [],
-     "evidence": [{"record": "mt-2026-11-12", "passage": "Mississippi Today confirmed cases in which the notice was mailed to the unverified address sourced from Experian’s data. When the address was incorrect, properly registered voters who were moved to inactive status never got a notice to correct their status."}]},
-    {"id": "reliable-information",
-     "says": "A 2023 state law, in force from 2024, lets county commissioners act on any \"reliable information\" that a voter has moved.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "hb1310-2023", "passage": "A registered voter if the registrar or election commissioners have received reliable information that he or she has moved within or outside of the state."}]},
-    {"id": "purge-timing",
-     "says": "A voter who neither answers the notice nor votes through the second federal general election after it is moved to purged status.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "hb1310-2023", "passage": "ending on the day after the date of the second general election for federal office that occurs after the date of the notice"}]},
-    {"id": "blackout-90-days",
-     "says": "State law bars systematic moves to inactive or purged status in the 90 days before a federal primary or general election.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "hb1310-2023", "passage": "No systematic list maintenance shall occur during the ninety (90) days immediately preceding a federal primary or general election"}]},
-    {"id": "inactive-230107",
-     "says": "Before the Nov. 3 election, 230,107 Mississippi voters were listed as inactive, about 1 in 9.",
-     "short": "230,107 inactive before the election",
-     "status": "fact", "scope": "late October 2026", "load": ["figure", "spine"],
-     "evidence": [
-       {"record": "mt-2026-11-10-column", "passage": "Before the election, Mississippi marked 230,107 registered voters inactive."},
-       {"record": "mpb-2026-10-29", "passage": "230,107 voters in Mississippi have been marked as inactive"},
-       {"record": "mt-2026-11-02", "passage": "or about 1 in 9"}]},
-    {"id": "inactive-is-total",
-     "says": "The 230,107 is everyone on inactive status, added over years, not the number made inactive this year.",
-     "short": "A running total, not this year's flags",
-     "status": "fact", "load": ["catch"],
-     "evidence": [
-       {"record": "abc-2026-11-11", "passage": "is a cumulative list that is added to as commissioners place people on in active status."},
-       {"record": "sos-column-2026-11-16", "passage": "That was the total number of people"}]},
-    {"id": "eavs-series",
-     "says": "Federal election survey counts of Mississippi's inactive registrants were 183,962 in 2016, 199,535 in 2018, 160,517 in 2020, 159,292 in 2022 and 165,778 in 2024.",
-     "short": "Inactive voters, 2016-2024",
-     "status": "fact", "scope": "as reported by the state to the U.S. Election Assistance Commission after each November election", "load": ["figure", "spine"],
-     "evidence": [
-       {"record": "eavs-2018-report", "passage": "Mississippi 2016 2,210,424 2,072,395 93.76 2,072,395 1,888,433 91.12 183,962 8.88"},
-       {"record": "eavs-2018-report", "passage": "2018 2,234,722 2,079,732 93.06 2,079,732 1,880,197 90.41 199,535 9.59"},
-       {"record": "eavs-2024-report", "passage": "2024 2,222,109 2,131,726 1,965,948 88.5% 92.2% 165,778 7.8%"},
-       {"record": "eavs-2024-report", "passage": "Mississippi 2022 2,226,474 2,081,999 1,922,707 86.4% 92.3% 159,292 7.7%"},
-       {"record": "eavs-2024-report", "passage": "2020 2,246,323 2,143,149 1,982,632 88.3% 92.5% 160,517 7.5%"}]},
-    {"id": "rise-64000",
-     "says": "The inactive list grew by about 64,000 between the 2024 election count of 165,778 and the 230,107 before this election, the largest two-year change in the federal counts back to 2016; the earlier changes ranged from a drop of about 39,000 to a rise of about 15,600.",
-     "short": "Up about 64,000 since 2024",
-     "status": "fact", "scope": "2016 to 2026", "load": ["figure", "spine", "catch"],
-     "evidence": [
-       {"record": "eavs-2024-report", "passage": "2024 2,222,109 2,131,726 1,965,948 88.5% 92.2% 165,778 7.8%"},
-       {"record": "eavs-2018-report", "passage": "Mississippi 2016 2,210,424 2,072,395 93.76 2,072,395 1,888,433 91.12 183,962 8.88"},
-       {"record": "eavs-2018-report", "passage": "2018 2,234,722 2,079,732 93.06 2,079,732 1,880,197 90.41 199,535 9.59"},
-       {"record": "mt-2026-11-10-column", "passage": "Before the election, Mississippi marked 230,107 registered voters inactive."}]},
-    {"id": "ap-nearly-60000",
-     "says": "AP put the rise at nearly 60,000, comparing the 2026 figure with its own count of 171,000 in 2024.",
-     "status": "said", "by": "the Associated Press", "load": [],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "an increase of nearly 60,000 since the presidential election two years ago"}, {"record": "ap-2026-11-19", "passage": "171,000 during the presidential election two years ago, according to Associated Press data"}]},
-    {"id": "watson-rise-experian",
-     "says": "Watson told AP that the rise in inactive voters this year was caused by folding the Experian data into the verification process.",
-     "status": "said", "by": "Michael Watson, as reported by AP", "load": ["person", "catch"],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "The rise in the number of inactive voters this year was caused by integrating Experian data into the overall verification process, Watson said."}]},
-    {"id": "fifty-thousand-address",
-     "says": "A Mississippi Today analysis of state records found at least 50,000 voters made inactive for address conflicts from July 2025, when the Experian addresses went to counties, to the March 2026 primaries.",
-     "status": "said", "by": "Mississippi Today", "load": ["figure"],
-     "evidence": [{"record": "mt-2026-04-21", "passage": "A Mississippi Today analysis of records from the secretary of state’s office found at least 50,000 voters on Mississippi’s rolls were made inactive due to address conflicts from last July, when the office began providing election commissioners statewide with addresses from Experian’s data, until last month’s congressional primaries."}]},
-    {"id": "flagged-113000",
-     "says": "The secretary of state's office says the data it sent counties in 2025, Postal Service change-of-address records and Experian's commercial data together, flagged about 113,000 people for review.",
-     "short": "2025 lists flagged about 113,000",
-     "status": "said", "by": "the secretary of state's office", "load": ["figure"],
-     "evidence": [{"record": "sos-column-2026-11-16", "passage": "The data distributed to them in 2025, which included U.S. Postal Service change of address information and commercial data, flagged approximately 113,000 individuals for their review."}]},
-    {"id": "desoto-15000",
-     "says": "DeSoto County's commissioners said they moved nearly every voter flagged on the Experian-sourced lists, more than 15,000, to inactive between the primaries and the midterms, more than any other county.",
-     "short": "DeSoto: more than 15,000",
-     "status": "said", "by": "DeSoto County election commissioners", "load": ["figure", "person"],
-     "evidence": [{"record": "mt-2026-11-12", "passage": "DeSoto moved more voters to inactive status than any of Mississippi’s 82 counties in the eight months between the primaries and the midterms. During that time, the county’s part-time election commissioners said, they moved to inactive nearly every voter flagged on the address lists that the secretary of state sourced from Experian’s data: more than 15,000 voters."}]},
-    {"id": "desoto-pressed",
-     "says": "A DeSoto commissioner said state officials told the county it still had 15,000 flags it had not worked.",
-     "status": "said", "by": "Sissie Ferguson, DeSoto County election commissioner", "load": ["person"],
-     "evidence": [{"record": "mt-2026-11-12", "passage": "Y’all still have 15,000 that you haven’t worked"}]},
-    {"id": "desoto-false-positives",
-     "says": "A Republican DeSoto commissioner said of the flags: \"You get false positives, but it's just part of life.\"",
-     "status": "said", "by": "Tim Snyder, DeSoto County election commissioner", "load": ["person"],
-     "evidence": [{"record": "mt-2026-11-12", "passage": "“You get false positives, but it’s just part of life,” Snyder said."}]},
-    {"id": "experian-partnership",
-     "says": "In July 2025 the secretary of state's office announced that county commissioners would get Experian's commercial data, on top of Postal Service change-of-address data, to maintain voter rolls.",
-     "short": "July 2025: Experian data to all counties",
-     "status": "fact", "scope": "July 21, 2025", "load": ["spine"],
-     "evidence": [
-       {"record": "sos-experian-release-2025-07-21", "passage": "Through this new partnership, county election commissioners will not only receive access to the NCOA information, but they will receive reliable commercial data from Experian’s long history as a credit reporting agency."},
-       {"record": "sos-experian-release-2025-07-21", "passage": "For many years, Mississippi has relied mainly on the National Change of Address (NCOA) information from the United States Postal Service to identify voters who have moved."}]},
-    {"id": "first-of-its-kind",
-     "says": "In February 2025 Watson wrote that using commercial data like Experian's was \"the first of its kind in Mississippi\" and that his office had signed a contract to use it in all 82 counties.",
-     "status": "said", "by": "Michael Watson", "load": ["catch", "person"],
-     "evidence": [{"record": "sos-column-2025-02-19", "passage": "Accessing commercial data, like Experian’s, is the first of its kind in Mississippi. With the success of the pilot program, we are excited to announce we have just signed a contract to institute this new resource in all 82 counties."}]},
-    {"id": "lafayette-pilot",
-     "says": "The state first tried Experian's data in a Lafayette County pilot run with the U.S. Election Assistance Commission.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "sos-column-2025-02-19", "passage": "Working with the U.S. Election Assistance Commission, we launched a pilot program in Lafayette County using information from Experian®"}]},
-    {"id": "contract-50000",
-     "says": "Watson's office signed a $50,000 contract for a year of Experian data in the last days of 2024, and ran 1.9 million checks through it.",
-     "short": "$50,000 contract, December 2024",
-     "status": "said", "by": "Mississippi Today, from the contract", "load": ["figure"],
-     "evidence": [
-       {"record": "mt-2026-04-21", "passage": "In the last days of 2024, Watson signed off on spending $50,000 for one year of access"},
-       {"record": "mt-2026-04-21", "passage": "the SOS ran 1.9 million checks on voters’ data through the company"}]},
-    {"id": "contract-disclaimer",
-     "says": "In the contract, Experian said it could not guarantee the accuracy or reliability of its data, and Watson's office signed off on that.",
-     "status": "fact", "load": ["person"],
-     "evidence": [
-       {"record": "mt-2026-04-21", "passage": "Experian cannot and will not, for the fee charged for the services, be an insurer or guarantor of the accuracy or reliability of the services, Experian data or the data contained in its various databases"},
-       {"record": "mt-2026-04-21", "passage": "The secretary of state’s office signed off on all the disclaimers."}]},
-    {"id": "experian-not-designed",
-     "says": "Experian says the address information it supplied was not designed or intended to validate voter records, and that registration decisions belong to election officials.",
-     "status": "said", "by": "Experian spokesperson Scott Anderson", "load": ["person"],
-     "evidence": [
-       {"record": "abc-2026-11-11", "passage": "The solution provided at that time consisted of supplemental address information and was not designed or intended to validate voter records"},
-       {"record": "abc-2026-11-11", "passage": "Decisions regarding voter registration policies, procedures and record updates are made solely by election officials in accordance with applicable local, state and federal laws."}]},
-    {"id": "experian-early-2025",
-     "says": "Experian says it has not provided services to Mississippi since early 2025.",
-     "status": "said", "by": "Experian", "load": [],
-     "evidence": [{"record": "axios-2026-11-06", "passage": "has not provided services to the State of Mississippi since early 2025."}]},
-    {"id": "watson-upload-2026",
-     "says": "Watson says the state downloaded the Experian data in July 2025 and uploaded the rest of it in 2026.",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [
-       {"record": "wlox-2026-11-15", "passage": "Watson said the state downloaded Experian information in July 2025."},
-       {"record": "wlox-2026-11-15", "passage": "We uploaded the rest of it to finish it up in 2026,"}]},
-    {"id": "jonson-never-told",
-     "says": "Watson's office says Mississippi was never told the data was only supplemental or not meant for this use.",
-     "status": "said", "by": "Elizabeth Jonson, Watson's communications director", "load": ["person"],
-     "evidence": [{"record": "mfp-2026-11-13", "passage": "Mississippi was never told the data was only supplemental or that it was not intended for this use,"}]},
-    {"id": "state-now-idi",
-     "says": "The state has stopped using Experian's data and now uses another broker, IDI.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "clarion-2026-11-18", "passage": "His office has since contracted with IDI Data instead because it has \"a better product.\""}]},
-    {"id": "watson-five-years",
-     "says": "Watson calls reports that 230,000 voters were taken off the rolls at once \"an egregious lie\" and says the figure is everyone marked inactive over more than five years, many of whom died or moved.",
-     "status": "said", "by": "Michael Watson", "load": ["person", "catch"],
-     "evidence": [
-       {"record": "sos-column-2026-11-16", "passage": "There have been some false reports alleging that 230,000 voters were taken off the voter rolls at one time. This claim, repeated by Mississippi Today and others, is an egregious lie."},
-       {"record": "sos-column-2026-11-16", "passage": "many of whom have died or moved"},
-       {"record": "sos-column-2026-11-16", "passage": "marked inactive by local elections officials during more than five years of voter roll maintenance"}]},
-    {"id": "watson-process-same",
-     "says": "Watson told WLOX that \"the process didn't change\" and that the state \"did it exactly how we normally do it.\"",
-     "status": "said", "by": "Michael Watson", "load": ["person", "catch"],
-     "evidence": [{"record": "wlox-2026-11-15", "passage": "The process didn’t change. We did it exactly how we normally do it,"}]},
-    {"id": "watson-review",
-     "says": "Watson says no voter was made inactive without review by a local election official.",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [{"record": "sos-column-2026-11-16", "passage": "not a single voter was made inactive or removed from the voter rolls without review by a local election official"}]},
-    {"id": "watson-counties-verify",
-     "says": "Watson told a county commissioner on Election Day that verifying the data before acting on it was the commissioners' job.",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [{"record": "mt-2026-11-06", "passage": "Ultimately, no matter what data is sent to the election commissioners, you should understand your job is to verify the information before acting upon it,"}]},
-    {"id": "watson-perhaps",
-     "says": "Asked whether some of the data was off, Watson said: \"Perhaps.\"",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [{"record": "mt-2026-11-06", "passage": "“Was some of the data off? Perhaps.”"}]},
-    {"id": "watson-no-apology",
-     "says": "Watson told AP: \"I don't apologize for cleaning voter rolls. That is my job.\"",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "“I don’t apologize for cleaning voter rolls,” Watson said in an interview. “That is my job.”"}]},
-    {"id": "watson-welcomes",
-     "says": "Watson says his office welcomes an investigation because it has followed the law.",
-     "status": "said", "by": "Michael Watson", "load": ["person"],
-     "evidence": [{"record": "wapt-caucus-2026-11-19", "passage": "Our team welcomes an investigation because we have continuously followed the law."}]},
-    {"id": "watson-only-if-no-reply",
-     "says": "The Clarion Ledger reported Watson as saying voters would only be marked inactive if they did not reply to the notecard.",
-     "status": "said", "by": "Michael Watson, as reported by the Clarion Ledger", "load": ["person", "catch"],
-     "evidence": [{"record": "clarion-2026-11-18", "passage": "His office tries to verify whether someone still lives at their last-known address by sending notecards to residents, he said, and voters would only be marked as inactive if they"}]},
-    {"id": "wrongful-inactivations",
-     "says": "Mississippi Today identified voters wrongly made inactive on Experian addresses and confirmed the errors with county officials, among them an Itawamba County man placed in a town 160 miles away.",
-     "status": "said", "by": "Mississippi Today", "load": [],
-     "evidence": [
-       {"record": "mt-2026-03-25", "passage": "Mississippi Today identified numerous voters who were affected from across the political spectrum and confirmed the mistakes with their county election officials."},
-       {"record": "mt-2026-03-25", "passage": "Minor had an address about 160 miles away in Tchula"}]},
-    {"id": "smith-texas",
-     "says": "A Holmes County canvasser told the caucus that commissioners said her affidavit would not count because a San Antonio address came up on her record; she says she never lived in Texas.",
-     "status": "said", "by": "Kayesha Smith", "load": ["person"],
-     "evidence": [
-       {"record": "msindy-caucus-2026-11-18", "passage": "Election commissioners told her the ballot would not count, Smith said, because an address in San Antonio had come up on her record."},
-       {"record": "msindy-caucus-2026-11-18", "passage": "“I’ve never lived in any part of Texas a day in my life,” Smith said."}]},
-    {"id": "affidavits-21484",
-     "says": "Voters cast 21,484 affidavit ballots this year against 21,321 in 2024, a presidential year.",
-     "short": "Affidavits: 21,484 vs 21,321",
-     "status": "said", "by": "the secretary of state's office", "load": ["figure"],
-     "evidence": [{"record": "sos-column-2026-11-16", "passage": "In 2026, Mississippi voters cast 21,484 affidavit ballots, nearly identical to the 21,321 cast in 2024."}]},
-    {"id": "affidavit-rate-up",
-     "says": "The 2026 affidavit count matched 2024's with about a fifth fewer voters: about 973,000 votes were cast in this year's Senate race against 1,225,176 voters in 2024, so affidavits rose from about 1.7 to about 2.2 per 100 voters.",
-     "short": "Same count, a fifth fewer voters",
-     "status": "fact", "load": ["figure", "catch"],
-     "evidence": [
-       {"record": "eavs-2024-report", "passage": "Mississippi [11] 82 1,965,948 2,222,109 1,225,176 62.3% 55.1%"},
-       {"record": "clarion-2026-11-17", "passage": "He received 480,153 votes in total, and Hyde-Smith received 472,122 votes."},
-       {"record": "sos-column-2026-11-16", "passage": "In 2026, Mississippi voters cast 21,484 affidavit ballots, nearly identical to the 21,321 cast in 2024."}]},
-    {"id": "watson-normal-election",
-     "says": "Watson says the affidavit volume \"reflects a normal, high-engagement election, not a breakdown in the system.\"",
-     "status": "said", "by": "Michael Watson", "load": ["person", "catch"],
-     "evidence": [{"record": "sos-column-2026-11-16", "passage": "The process worked exactly as it has in prior elections, and the volume reflects a normal, high-engagement election, not a breakdown in the system."}]},
-    {"id": "desoto-affidavits",
-     "says": "DeSoto County reported about 2,100 affidavit ballots this year, against about 275 in the 2022 midterm.",
-     "status": "fact", "load": ["figure"],
-     "evidence": [
-       {"record": "mt-2026-11-12", "passage": "DeSoto County reported roughly 275 affidavit ballots in 2022, during the last midterm election, according to data tracked by the U.S. Election Assistance Commission."},
-       {"record": "mt-2026-11-12", "passage": "This year, commissioners have reported more than seven times the number of affidavit ballots: about 2,100."}]},
-    {"id": "affidavits-73",
-     "says": "Of 21,344 affidavit ballots processed, about 73% were accepted, so roughly 5,800 were rejected.",
-     "short": "About 73% accepted",
-     "status": "said", "by": "Michael Watson", "scope": "as of Nov. 13", "load": ["figure"],
-     "evidence": [{"record": "watson-x-2026-11-13", "passage": "21,344 affidavit ballots were processed with roughly 73% of them being accepted."}]},
-    {"id": "hinds-817",
-     "says": "Hinds County, home to Jackson, accepted 817 of 2,426 affidavit ballots, about 34%, against 60% in 2024.",
-     "short": "Hinds: 817 of 2,426 accepted",
-     "status": "fact", "load": ["figure"],
-     "evidence": [
-       {"record": "mfp-hinds-2026-11-11", "passage": "The county accepted just 817 affidavit ballots, while rejecting 1,609"},
-       {"record": "ap-2026-11-19", "passage": "In the 2024 election, 60% of provisional ballots there were accepted."}]},
-    {"id": "hinds-reasons",
-     "says": "Hinds commissioners said many rejected affidavits were cast in the wrong precinct or came from people whose registration-drive forms were never filed.",
-     "status": "said", "by": "Hinds County election commissioners", "load": ["person"],
-     "evidence": [
-       {"record": "dd-hinds-2026-11-11", "passage": "I’m surprised because we had a lot of people that voted in the wrong precinct."},
-       {"record": "mfp-hinds-2026-11-11", "passage": "after the drive, you have to submit your paperwork in to the circuit clerk. I believe strongly that they failed to meet the deadline"}]},
-    {"id": "ap-unclear-hinds",
-     "says": "AP says it is not clear whether the Experian data played a role in Hinds' drop.",
-     "status": "said", "by": "the Associated Press", "load": [],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "It’s not clear whether the use of Experian data played a role in the drop in the acceptance rate."}]},
-    {"id": "senate-result",
-     "says": "Democrat Scott Colom beat Republican Sen. Cindy Hyde-Smith 480,153 to 472,122, a margin of 8,031 votes.",
-     "short": "Colom by 8,031",
-     "status": "fact", "scope": "official results, Nov. 17", "load": ["figure"],
-     "evidence": [{"record": "clarion-2026-11-17", "passage": "Colom won by 8,031 votes"}, {"record": "clarion-2026-11-17", "passage": "He received 480,153 votes in total, and Hyde-Smith received 472,122 votes."}]},
-    {"id": "rejected-below-margin",
-     "says": "Even if every rejected affidavit had gone to Hyde-Smith, the roughly 5,800 rejected statewide were fewer than Colom's 8,031-vote margin.",
-     "status": "fact", "load": ["figure"],
-     "evidence": [
-       {"record": "watson-x-2026-11-13", "passage": "21,344 affidavit ballots were processed with roughly 73% of them being accepted."},
-       {"record": "clarion-2026-11-17", "passage": "Colom won by 8,031 votes"}]},
-    {"id": "taylor-bill",
-     "says": "Rep. Cheikh Taylor, the state Democratic Party chair, plans a bill in the new year to make credit-data checks more transparent and let flagged voters confirm their identity before they are deactivated.",
-     "status": "plans", "by": "Rep. Cheikh Taylor", "load": ["person"],
-     "evidence": [
-       {"record": "ap-2026-11-19", "passage": "State Rep. Cheikh Taylor, the chair of Mississippi’s Democratic Party, said he intends to introduce legislation in the new year that would increase transparency in how the credit data is used to verify voter eligibility."},
-       {"record": "ap-2026-11-19", "passage": "It also would give voters whose records are flagged an opportunity to confirm their identities before they are deactivated."}]},
-    {"id": "england-support",
-     "says": "Republican state Sen. Jeremy England said he saw nothing nefarious but that the process needs a closer look, and suggested such a bill could draw Republican support.",
-     "status": "said", "by": "Sen. Jeremy England", "load": ["person"],
-     "evidence": [
-       {"record": "ap-2026-11-19", "passage": "Republican state senator Jeremy England suggested that legislation to increase transparency in the use of credit data on voter lists could draw Republican support."},
-       {"record": "ap-2026-11-19", "passage": "I don’t think there was anything nefarious involved with it"}]},
-    {"id": "hearing-unlikely-before-session",
-     "says": "The request goes to the Legislature's Investigate State Offices committees, and Rep. Zakiya Summers said a hearing before the January session is unlikely.",
-     "status": "said", "by": "Rep. Zakiya Summers", "load": [],
-     "evidence": [
-       {"record": "msindy-caucus-2026-11-18", "passage": "The request goes to the legislature’s Investigate State Offices committees"},
-       {"record": "msindy-caucus-2026-11-18", "passage": "Probably not, because we are going into the holiday season,"}]},
-    {"id": "purges-can-begin",
-     "says": "Voters made inactive before the 2024 presidential election who have not voted since can now be purged.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "mt-2026-11-06", "passage": "Any Lafayette County voters in this experiment who were inactivated before the 2024 presidential election and who have not voted since then are now on the board to be purged."}, {"record": "hb1310-2023", "passage": "ending on the day after the date of the second general election for federal office that occurs after the date of the notice"}]},
-    {"id": "elections-2027",
-     "says": "Mississippi elects a governor, other statewide officers, the Legislature and state supreme court justices next year.",
-     "status": "fact", "load": [],
-     "evidence": [{"record": "ap-2026-11-19", "passage": "In addition to the race for governor, Mississippi will hold elections next year for other statewide offices, the legislature and state supreme court."}]},
-    {"id": "upi-flagged-230000",
-     "says": "UPI reported that Watson \"flagged 230,000 voter registrations as inactive.\"",
-     "status": "said", "by": "UPI", "load": ["catch"],
-     "evidence": [{"record": "upi-2026-11-04", "passage": "the Republican secretary of state, Michael Watson, flagged 230,000 voter registrations as inactive."}]},
-    {"id": "wapt-experian-listed",
-     "says": "WAPT reported that Experian's data \"listed 230,000 registered Mississippi voters as inactive.\"",
-     "status": "said", "by": "WAPT", "load": ["catch"],
-     "evidence": [{"record": "wapt-caucus-2026-11-19", "passage": "which listed 230,000 registered Mississippi voters as inactive"}]},
-    {"id": "seven-counties",
-     "says": "Watson says that in January 2021 seven counties had more registered voters than eligible residents.",
-     "status": "said", "by": "Michael Watson", "load": [],
-     "evidence": [{"record": "sos-column-2026-11-16", "passage": "At the time, seven counties had more than 100 percent of the voting-eligible population on their voter rolls."}]}
-  ]
+ "story": "election-administration--2026-11-18-mississippi-inactive-voter-spike",
+ "claims": [
+  {
+   "id": "caucus-request",
+   "says": "Mississippi's Legislative Black Caucus asked legislative oversight committees on Nov. 19 to investigate how credit-reporting data was used on the voter rolls, and called for a public hearing.",
+   "short": "Black Caucus asks for an investigation",
+   "status": "fact",
+   "scope": "Nov. 19, 2026",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "The Mississippi Legislative Black Caucus has scheduled a news conference Thursday to discuss its demand for legislative oversight committees to investigate how credit reporting data was used to examine voter rolls ahead of the November midterms."
+    },
+    {
+     "record": "msindy-caucus-2026-11-18",
+     "passage": "The Mississippi Legislative Black Caucus asked Thursday for an independent investigation of the Secretary of State’s office over the more than 230,000 voter registrations listed as inactive before the Nov. 3 election"
+    },
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "During a news conference Thursday, the caucus requested that legislative oversight committees investigate how credit reporting data was used on the voter rolls and called for a public hearing."
+    }
+   ]
+  },
+  {
+   "id": "caucus-wants",
+   "says": "The caucus wants public hearings, preserved records, and answers from Secretary of State Michael Watson and county officials before the 2027 elections.",
+   "status": "said",
+   "by": "the Legislative Black Caucus",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "msindy-caucus-2026-11-18",
+     "passage": "The caucus wants public hearings, preserved records and answers from Secretary of State Michael Watson and county officials before voters go back to the polls."
+    }
+   ]
+  },
+  {
+   "id": "karriem-disenfranchisement",
+   "says": "Rep. Kabir Karriem, the caucus chair, called it \"disenfranchisement called by another name.\"",
+   "status": "said",
+   "by": "Rep. Kabir Karriem",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "“It was disenfranchisement called by another name.”"
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "said Democratic state Rep. Kabir Karriem, the chair of the caucus"
+    }
+   ]
+  },
+  {
+   "id": "karriem-did-my-vote-count",
+   "says": "Karriem said voters are still asking whether their votes counted.",
+   "status": "said",
+   "by": "Rep. Kabir Karriem",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "the question is still out there: Did my vote count?"
+    }
+   ]
+  },
+  {
+   "id": "inactive-meaning",
+   "says": "A voter on inactive status in Mississippi is still registered but cannot cast a regular ballot on Election Day and must vote by affidavit ballot.",
+   "short": "Inactive: still registered, votes by affidavit",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "Any registered voter who is placed on inactive status shall be unable to cast a regular ballot on election day but shall be able to cast an affidavit ballot as provided in Section 23-15-573."
+    }
+   ]
+  },
+  {
+   "id": "inactive-at-mailing",
+   "says": "Mississippi law puts a voter on inactive status as soon as the county sends the voter a confirmation notice, before the voter can answer it.",
+   "short": "Inactive the day the card is mailed",
+   "status": "fact",
+   "load": [
+    "spine",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "The county election commissioners shall place any registered voter who has been sent a confirmation notice on inactive status in the Statewide Elections Management System."
+    },
+    {
+     "record": "sos-experian-release-2025-07-21",
+     "passage": "registered voters who have been identified as having a new address will be sent a confirmation card and then placed on “Inactive” status"
+    }
+   ]
+  },
+  {
+   "id": "notice-to-flagged-address",
+   "says": "Mississippi Today confirmed cases in which the notice went to the unverified address from the Experian data, so voters who had not moved never received it.",
+   "status": "said",
+   "by": "Mississippi Today",
+   "load": [],
+   "evidence": [
+    {
+     "record": "mt-2026-11-12",
+     "passage": "Mississippi Today confirmed cases in which the notice was mailed to the unverified address sourced from Experian’s data. When the address was incorrect, properly registered voters who were moved to inactive status never got a notice to correct their status."
+    }
+   ]
+  },
+  {
+   "id": "reliable-information",
+   "says": "A 2023 state law, in force from 2024, lets county commissioners act on any \"reliable information\" that a voter has moved.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "A registered voter if the registrar or election commissioners have received reliable information that he or she has moved within or outside of the state."
+    }
+   ]
+  },
+  {
+   "id": "purge-timing",
+   "says": "A voter who neither answers the notice nor votes through the second federal general election after it is moved to purged status.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "ending on the day after the date of the second general election for federal office that occurs after the date of the notice"
+    }
+   ]
+  },
+  {
+   "id": "blackout-90-days",
+   "says": "State law bars systematic moves to inactive or purged status in the 90 days before a federal primary or general election.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "No systematic list maintenance shall occur during the ninety (90) days immediately preceding a federal primary or general election"
+    }
+   ]
+  },
+  {
+   "id": "inactive-230107",
+   "says": "Before the Nov. 3 election, 230,107 Mississippi voters were listed as inactive, about 1 in 9.",
+   "short": "230,107 inactive before the election",
+   "status": "fact",
+   "scope": "late October 2026",
+   "load": [
+    "figure",
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-10-column",
+     "passage": "Before the election, Mississippi marked 230,107 registered voters inactive."
+    },
+    {
+     "record": "mpb-2026-10-29",
+     "passage": "230,107 voters in Mississippi have been marked as inactive"
+    },
+    {
+     "record": "mt-2026-11-02",
+     "passage": "or about 1 in 9"
+    }
+   ]
+  },
+  {
+   "id": "inactive-is-total",
+   "says": "The 230,107 is everyone on inactive status, added over years, not the number made inactive this year.",
+   "short": "A running total, not this year's flags",
+   "status": "fact",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "abc-2026-11-11",
+     "passage": "is a cumulative list that is added to as commissioners place people on in active status."
+    },
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "That was the total number of people"
+    }
+   ]
+  },
+  {
+   "id": "eavs-series",
+   "says": "Federal election survey counts of Mississippi's inactive registrants were 183,962 in 2016, 199,535 in 2018, 160,517 in 2020, 159,292 in 2022 and 165,778 in 2024.",
+   "short": "Inactive voters, 2016-2024",
+   "status": "fact",
+   "scope": "as reported by the state to the U.S. Election Assistance Commission after each November election",
+   "load": [
+    "figure",
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "eavs-2018-report",
+     "passage": "Mississippi 2016 2,210,424 2,072,395 93.76 2,072,395 1,888,433 91.12 183,962 8.88"
+    },
+    {
+     "record": "eavs-2018-report",
+     "passage": "2018 2,234,722 2,079,732 93.06 2,079,732 1,880,197 90.41 199,535 9.59"
+    },
+    {
+     "record": "eavs-2024-report",
+     "passage": "2024 2,222,109 2,131,726 1,965,948 88.5% 92.2% 165,778 7.8%"
+    },
+    {
+     "record": "eavs-2024-report",
+     "passage": "Mississippi 2022 2,226,474 2,081,999 1,922,707 86.4% 92.3% 159,292 7.7%"
+    },
+    {
+     "record": "eavs-2024-report",
+     "passage": "2020 2,246,323 2,143,149 1,982,632 88.3% 92.5% 160,517 7.5%"
+    }
+   ]
+  },
+  {
+   "id": "rise-64000",
+   "says": "Measured against 2024, the inactive list grew by about 60,000: 64,329 more than the federal count of 165,778, or about 59,000 more than AP's 171,000. Between a presidential election and the next midterm, the federal counts rose 15,573 from 2016 to 2018 and fell 1,225 from 2020 to 2022.",
+   "short": "Up about 60,000 since 2024",
+   "status": "fact",
+   "scope": "2016 to 2026; the 2026 figure is a count from the state's database, not a federal survey figure",
+   "load": [
+    "figure",
+    "spine",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "eavs-2024-report",
+     "passage": "2024 2,222,109 2,131,726 1,965,948 88.5% 92.2% 165,778 7.8%"
+    },
+    {
+     "record": "eavs-2018-report",
+     "passage": "Mississippi 2016 2,210,424 2,072,395 93.76 2,072,395 1,888,433 91.12 183,962 8.88"
+    },
+    {
+     "record": "eavs-2018-report",
+     "passage": "2018 2,234,722 2,079,732 93.06 2,079,732 1,880,197 90.41 199,535 9.59"
+    },
+    {
+     "record": "mt-2026-11-10-column",
+     "passage": "Before the election, Mississippi marked 230,107 registered voters inactive."
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "171,000 during the presidential election two years ago"
+    },
+    {
+     "record": "eavs-2024-report",
+     "passage": "Mississippi 2022 2,226,474 2,081,999 1,922,707 86.4% 92.3% 159,292 7.7%"
+    },
+    {
+     "record": "eavs-2024-report",
+     "passage": "2020 2,246,323 2,143,149 1,982,632 88.3% 92.5% 160,517 7.5%"
+    }
+   ]
+  },
+  {
+   "id": "ap-nearly-60000",
+   "says": "AP put the rise at nearly 60,000, comparing the 2026 figure with its own count of 171,000 in 2024.",
+   "status": "said",
+   "by": "the Associated Press",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "an increase of nearly 60,000 since the presidential election two years ago"
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "171,000 during the presidential election two years ago, according to Associated Press data"
+    }
+   ]
+  },
+  {
+   "id": "watson-rise-experian",
+   "says": "Watson told AP that the rise in inactive voters this year was caused by folding the Experian data into the verification process.",
+   "status": "said",
+   "by": "Michael Watson, as reported by AP",
+   "load": [
+    "person",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "The rise in the number of inactive voters this year was caused by integrating Experian data into the overall verification process, Watson said."
+    }
+   ]
+  },
+  {
+   "id": "fifty-thousand-address",
+   "says": "A Mississippi Today analysis of state records found at least 50,000 voters made inactive for address conflicts from July 2025, when the Experian addresses went to counties, to the March 2026 primaries.",
+   "status": "said",
+   "by": "Mississippi Today",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-04-21",
+     "passage": "A Mississippi Today analysis of records from the secretary of state’s office found at least 50,000 voters on Mississippi’s rolls were made inactive due to address conflicts from last July, when the office began providing election commissioners statewide with addresses from Experian’s data, until last month’s congressional primaries."
+    }
+   ]
+  },
+  {
+   "id": "flagged-113000",
+   "says": "The secretary of state's office says the data it sent counties in 2025, Postal Service change-of-address records and Experian's commercial data together, flagged about 113,000 people for review.",
+   "short": "2025 lists flagged about 113,000",
+   "status": "said",
+   "by": "the secretary of state's office",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "The data distributed to them in 2025, which included U.S. Postal Service change of address information and commercial data, flagged approximately 113,000 individuals for their review."
+    }
+   ]
+  },
+  {
+   "id": "desoto-15000",
+   "says": "DeSoto County's commissioners said they moved nearly every voter flagged on the Experian-sourced lists, more than 15,000, to inactive between the primaries and the midterms, more than any other county.",
+   "short": "DeSoto: more than 15,000",
+   "status": "said",
+   "by": "DeSoto County election commissioners",
+   "load": [
+    "figure",
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-12",
+     "passage": "DeSoto moved more voters to inactive status than any of Mississippi’s 82 counties in the eight months between the primaries and the midterms. During that time, the county’s part-time election commissioners said, they moved to inactive nearly every voter flagged on the address lists that the secretary of state sourced from Experian’s data: more than 15,000 voters."
+    }
+   ]
+  },
+  {
+   "id": "desoto-pressed",
+   "says": "A DeSoto commissioner said state officials told the county it still had 15,000 flags it had not worked.",
+   "status": "said",
+   "by": "Sissie Ferguson, DeSoto County election commissioner",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-12",
+     "passage": "Y’all still have 15,000 that you haven’t worked"
+    }
+   ]
+  },
+  {
+   "id": "desoto-false-positives",
+   "says": "A Republican DeSoto commissioner said of the flags: \"You get false positives, but it's just part of life.\"",
+   "status": "said",
+   "by": "Tim Snyder, DeSoto County election commissioner",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-12",
+     "passage": "“You get false positives, but it’s just part of life,” Snyder said."
+    }
+   ]
+  },
+  {
+   "id": "experian-partnership",
+   "says": "In July 2025 the secretary of state's office announced that county commissioners would get Experian's commercial data, on top of Postal Service change-of-address data, to maintain voter rolls.",
+   "short": "July 2025: Experian data to all counties",
+   "status": "fact",
+   "scope": "July 21, 2025",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "sos-experian-release-2025-07-21",
+     "passage": "Through this new partnership, county election commissioners will not only receive access to the NCOA information, but they will receive reliable commercial data from Experian’s long history as a credit reporting agency."
+    },
+    {
+     "record": "sos-experian-release-2025-07-21",
+     "passage": "For many years, Mississippi has relied mainly on the National Change of Address (NCOA) information from the United States Postal Service to identify voters who have moved."
+    }
+   ]
+  },
+  {
+   "id": "first-of-its-kind",
+   "says": "In February 2025 Watson wrote that using commercial data like Experian's was \"the first of its kind in Mississippi\" and that his office had signed a contract to use it in all 82 counties.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "catch",
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2025-02-19",
+     "passage": "Accessing commercial data, like Experian’s, is the first of its kind in Mississippi. With the success of the pilot program, we are excited to announce we have just signed a contract to institute this new resource in all 82 counties."
+    }
+   ]
+  },
+  {
+   "id": "lafayette-pilot",
+   "says": "The state first tried Experian's data in a Lafayette County pilot run with the U.S. Election Assistance Commission.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "sos-column-2025-02-19",
+     "passage": "Working with the U.S. Election Assistance Commission, we launched a pilot program in Lafayette County using information from Experian®"
+    }
+   ]
+  },
+  {
+   "id": "contract-50000",
+   "says": "Watson's office signed a $50,000 contract for a year of Experian data in the last days of 2024, and ran 1.9 million checks through it.",
+   "short": "$50,000 contract, December 2024",
+   "status": "said",
+   "by": "Mississippi Today, from the contract",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-04-21",
+     "passage": "In the last days of 2024, Watson signed off on spending $50,000 for one year of access"
+    },
+    {
+     "record": "mt-2026-04-21",
+     "passage": "the SOS ran 1.9 million checks on voters’ data through the company"
+    }
+   ]
+  },
+  {
+   "id": "contract-disclaimer",
+   "says": "In the contract, Experian said it could not guarantee the accuracy or reliability of its data, and Watson's office signed off on that.",
+   "status": "fact",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-04-21",
+     "passage": "Experian cannot and will not, for the fee charged for the services, be an insurer or guarantor of the accuracy or reliability of the services, Experian data or the data contained in its various databases"
+    },
+    {
+     "record": "mt-2026-04-21",
+     "passage": "The secretary of state’s office signed off on all the disclaimers."
+    }
+   ]
+  },
+  {
+   "id": "experian-not-designed",
+   "says": "Experian says the address information it supplied was not designed or intended to validate voter records, and that registration decisions belong to election officials.",
+   "status": "said",
+   "by": "Experian spokesperson Scott Anderson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "abc-2026-11-11",
+     "passage": "The solution provided at that time consisted of supplemental address information and was not designed or intended to validate voter records"
+    },
+    {
+     "record": "abc-2026-11-11",
+     "passage": "Decisions regarding voter registration policies, procedures and record updates are made solely by election officials in accordance with applicable local, state and federal laws."
+    }
+   ]
+  },
+  {
+   "id": "experian-early-2025",
+   "says": "Experian says it has not provided services to Mississippi since early 2025.",
+   "status": "said",
+   "by": "Experian",
+   "load": [],
+   "evidence": [
+    {
+     "record": "axios-2026-11-06",
+     "passage": "has not provided services to the State of Mississippi since early 2025."
+    }
+   ]
+  },
+  {
+   "id": "watson-upload-2026",
+   "says": "Watson says the state downloaded the Experian data in July 2025 and uploaded the rest of it in 2026.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "wlox-2026-11-15",
+     "passage": "Watson said the state downloaded Experian information in July 2025."
+    },
+    {
+     "record": "wlox-2026-11-15",
+     "passage": "We uploaded the rest of it to finish it up in 2026,"
+    }
+   ]
+  },
+  {
+   "id": "jonson-never-told",
+   "says": "Watson's office says Mississippi was never told the data was only supplemental or not meant for this use.",
+   "status": "said",
+   "by": "Elizabeth Jonson, Watson's communications director",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mfp-2026-11-13",
+     "passage": "Mississippi was never told the data was only supplemental or that it was not intended for this use,"
+    }
+   ]
+  },
+  {
+   "id": "state-now-idi",
+   "says": "The state has stopped using Experian's data and now uses another broker, IDI.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "clarion-2026-11-18",
+     "passage": "His office has since contracted with IDI Data instead because it has \"a better product.\""
+    }
+   ]
+  },
+  {
+   "id": "watson-five-years",
+   "says": "Watson calls reports that 230,000 voters were taken off the rolls at once \"an egregious lie\" and says the figure is everyone marked inactive over more than five years, many of whom died or moved.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "There have been some false reports alleging that 230,000 voters were taken off the voter rolls at one time. This claim, repeated by Mississippi Today and others, is an egregious lie."
+    },
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "many of whom have died or moved"
+    },
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "marked inactive by local elections officials during more than five years of voter roll maintenance"
+    }
+   ]
+  },
+  {
+   "id": "watson-process-same",
+   "says": "Watson told WLOX that \"the process didn't change\" and that the state \"did it exactly how we normally do it.\"",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "wlox-2026-11-15",
+     "passage": "The process didn’t change. We did it exactly how we normally do it,"
+    }
+   ]
+  },
+  {
+   "id": "watson-review",
+   "says": "Watson says no voter was made inactive without review by a local election official.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "not a single voter was made inactive or removed from the voter rolls without review by a local election official"
+    }
+   ]
+  },
+  {
+   "id": "watson-counties-verify",
+   "says": "Watson told a county commissioner on Election Day that verifying the data before acting on it was the commissioners' job.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-06",
+     "passage": "Ultimately, no matter what data is sent to the election commissioners, you should understand your job is to verify the information before acting upon it,"
+    }
+   ]
+  },
+  {
+   "id": "watson-perhaps",
+   "says": "Asked whether some of the data was off, Watson said: \"Perhaps.\"",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-06",
+     "passage": "“Was some of the data off? Perhaps.”"
+    }
+   ]
+  },
+  {
+   "id": "watson-no-apology",
+   "says": "Watson told AP: \"I don't apologize for cleaning voter rolls. That is my job.\"",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "“I don’t apologize for cleaning voter rolls,” Watson said in an interview. “That is my job.”"
+    }
+   ]
+  },
+  {
+   "id": "watson-welcomes",
+   "says": "Watson says his office welcomes an investigation because it has followed the law.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "wapt-caucus-2026-11-19",
+     "passage": "Our team welcomes an investigation because we have continuously followed the law."
+    }
+   ]
+  },
+  {
+   "id": "watson-only-if-no-reply",
+   "says": "The Clarion Ledger reported Watson as saying voters would only be marked inactive if they did not reply to the notecard.",
+   "status": "said",
+   "by": "Michael Watson, as reported by the Clarion Ledger",
+   "load": [
+    "person",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "clarion-2026-11-18",
+     "passage": "His office tries to verify whether someone still lives at their last-known address by sending notecards to residents, he said, and voters would only be marked as inactive if they"
+    }
+   ]
+  },
+  {
+   "id": "wrongful-inactivations",
+   "says": "Mississippi Today identified voters wrongly made inactive on Experian addresses and confirmed the errors with county officials, among them an Itawamba County man placed in a town 160 miles away.",
+   "status": "said",
+   "by": "Mississippi Today",
+   "load": [],
+   "evidence": [
+    {
+     "record": "mt-2026-03-25",
+     "passage": "Mississippi Today identified numerous voters who were affected from across the political spectrum and confirmed the mistakes with their county election officials."
+    },
+    {
+     "record": "mt-2026-03-25",
+     "passage": "Minor had an address about 160 miles away in Tchula"
+    }
+   ]
+  },
+  {
+   "id": "smith-texas",
+   "says": "Kayesha Smith, a Holmes County voting advocate, says she was made inactive over a San Antonio address she never had, that Experian removed the address after the election, and that her affidavit ballot was rejected.",
+   "status": "said",
+   "by": "Kayesha Smith",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "An elections commissioner at her Holmes County polling place told Smith her name had been found to be associated with an address in San Antonio, even though she had never lived in Texas."
+    },
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "Smith said she called Experian, which acknowledged the address was inaccurate and removed it from her report after the election. She later learned that her provisional ballot had been rejected."
+    }
+   ]
+  },
+  {
+   "id": "affidavits-21484",
+   "says": "Voters cast 21,484 affidavit ballots this year against 21,321 in 2024, a presidential year.",
+   "short": "Affidavits: 21,484 vs 21,321",
+   "status": "said",
+   "by": "the secretary of state's office",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "In 2026, Mississippi voters cast 21,484 affidavit ballots, nearly identical to the 21,321 cast in 2024."
+    }
+   ]
+  },
+  {
+   "id": "watson-normal-election",
+   "says": "Watson says the affidavit volume \"reflects a normal, high-engagement election, not a breakdown in the system.\"",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [
+    "person",
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "The process worked exactly as it has in prior elections, and the volume reflects a normal, high-engagement election, not a breakdown in the system."
+    }
+   ]
+  },
+  {
+   "id": "desoto-affidavits",
+   "says": "DeSoto County reported about 2,100 affidavit ballots this year, against about 275 in the 2022 midterm.",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "mt-2026-11-12",
+     "passage": "DeSoto County reported roughly 275 affidavit ballots in 2022, during the last midterm election, according to data tracked by the U.S. Election Assistance Commission."
+    },
+    {
+     "record": "mt-2026-11-12",
+     "passage": "This year, commissioners have reported more than seven times the number of affidavit ballots: about 2,100."
+    }
+   ]
+  },
+  {
+   "id": "affidavits-73",
+   "says": "About 75% of the 21,484 affidavit ballots were approved, so roughly 5,400 were rejected.",
+   "short": "About 75% accepted",
+   "status": "said",
+   "by": "the secretary of state's office",
+   "scope": "after county review, as of Nov. 16",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "approximately 75% of those votes were approved and counted"
+    },
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "In 2026, Mississippi voters cast 21,484 affidavit ballots"
+    }
+   ]
+  },
+  {
+   "id": "hinds-817",
+   "says": "Hinds County, home to Jackson, accepted 817 of 2,426 affidavit ballots, about 34%, against 60% in 2024.",
+   "short": "Hinds: 817 of 2,426 accepted",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "mfp-hinds-2026-11-11",
+     "passage": "The county accepted just 817 affidavit ballots, while rejecting 1,609"
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "In the 2024 election, 60% of provisional ballots there were accepted."
+    }
+   ]
+  },
+  {
+   "id": "hinds-reasons",
+   "says": "Hinds commissioners said many rejected affidavits were cast in the wrong precinct or came from people whose registration-drive forms were never filed.",
+   "status": "said",
+   "by": "Hinds County election commissioners",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "dd-hinds-2026-11-11",
+     "passage": "I’m surprised because we had a lot of people that voted in the wrong precinct."
+    },
+    {
+     "record": "mfp-hinds-2026-11-11",
+     "passage": "after the drive, you have to submit your paperwork in to the circuit clerk. I believe strongly that they failed to meet the deadline"
+    }
+   ]
+  },
+  {
+   "id": "ap-unclear-hinds",
+   "says": "AP says it is not clear whether the Experian data played a role in Hinds' drop.",
+   "status": "said",
+   "by": "the Associated Press",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "It’s not clear whether the use of Experian data played a role in the drop in the acceptance rate."
+    }
+   ]
+  },
+  {
+   "id": "senate-result",
+   "says": "Democrat Scott Colom beat Republican Sen. Cindy Hyde-Smith 480,153 to 472,122, a margin of 8,031 votes.",
+   "short": "Colom by 8,031",
+   "status": "fact",
+   "scope": "official results, Nov. 17",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "clarion-2026-11-17",
+     "passage": "Colom won by 8,031 votes"
+    },
+    {
+     "record": "clarion-2026-11-17",
+     "passage": "He received 480,153 votes in total, and Hyde-Smith received 472,122 votes."
+    }
+   ]
+  },
+  {
+   "id": "rejected-below-margin",
+   "says": "The roughly 5,400 rejected affidavit ballots were fewer than Colom's 8,031-vote margin, so they alone could not have reversed the result.",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "approximately 75% of those votes were approved and counted"
+    },
+    {
+     "record": "clarion-2026-11-17",
+     "passage": "Colom won by 8,031 votes"
+    }
+   ],
+   "scope": "the rejected ballots only; voters who left without voting are not counted"
+  },
+  {
+   "id": "taylor-bill",
+   "says": "Rep. Cheikh Taylor, the state Democratic Party chair, plans a bill in the new year to make credit-data checks more transparent and let flagged voters confirm their identity before they are deactivated.",
+   "status": "plans",
+   "by": "Rep. Cheikh Taylor",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "State Rep. Cheikh Taylor, the chair of Mississippi’s Democratic Party, said he intends to introduce legislation in the new year that would increase transparency in how the credit data is used to verify voter eligibility."
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "It also would give voters whose records are flagged an opportunity to confirm their identities before they are deactivated."
+    }
+   ]
+  },
+  {
+   "id": "england-support",
+   "says": "Republican state Sen. Jeremy England said he saw nothing nefarious but that the process needs a closer look, and suggested such a bill could draw Republican support.",
+   "status": "said",
+   "by": "Sen. Jeremy England",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "Republican state senator Jeremy England suggested that legislation to increase transparency in the use of credit data on voter lists could draw Republican support."
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "I don’t think there was anything nefarious involved with it"
+    }
+   ]
+  },
+  {
+   "id": "hearing-unlikely-before-session",
+   "says": "The request goes to the Legislature's Investigate State Offices committees, and Rep. Zakiya Summers said a hearing before the January session is unlikely.",
+   "status": "said",
+   "by": "Rep. Zakiya Summers",
+   "load": [],
+   "evidence": [
+    {
+     "record": "msindy-caucus-2026-11-18",
+     "passage": "The request goes to the legislature’s Investigate State Offices committees"
+    },
+    {
+     "record": "msindy-caucus-2026-11-18",
+     "passage": "Probably not, because we are going into the holiday season,"
+    }
+   ]
+  },
+  {
+   "id": "purges-can-begin",
+   "says": "Voters made inactive before the 2024 presidential election who have not voted since can now be purged.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "mt-2026-11-06",
+     "passage": "Any Lafayette County voters in this experiment who were inactivated before the 2024 presidential election and who have not voted since then are now on the board to be purged."
+    },
+    {
+     "record": "hb1310-2023",
+     "passage": "ending on the day after the date of the second general election for federal office that occurs after the date of the notice"
+    }
+   ]
+  },
+  {
+   "id": "elections-2027",
+   "says": "Mississippi elects a governor, other statewide officers, the Legislature and state supreme court justices next year.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-2026-11-19",
+     "passage": "In addition to the race for governor, Mississippi will hold elections next year for other statewide offices, the legislature and state supreme court."
+    }
+   ]
+  },
+  {
+   "id": "upi-flagged-230000",
+   "says": "UPI reported that Watson \"flagged 230,000 voter registrations as inactive.\"",
+   "status": "said",
+   "by": "UPI",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "upi-2026-11-04",
+     "passage": "the Republican secretary of state, Michael Watson, flagged 230,000 voter registrations as inactive."
+    }
+   ]
+  },
+  {
+   "id": "wapt-experian-listed",
+   "says": "WAPT reported that Experian's data \"listed 230,000 registered Mississippi voters as inactive.\"",
+   "status": "said",
+   "by": "WAPT",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "wapt-caucus-2026-11-19",
+     "passage": "which listed 230,000 registered Mississippi voters as inactive"
+    }
+   ]
+  },
+  {
+   "id": "seven-counties",
+   "says": "Watson says that in January 2021 seven counties had more registered voters than eligible residents.",
+   "status": "said",
+   "by": "Michael Watson",
+   "load": [],
+   "evidence": [
+    {
+     "record": "sos-column-2026-11-16",
+     "passage": "At the time, seven counties had more than 100 percent of the voting-eligible population on their voter rolls."
+    }
+   ]
+  },
+  {
+   "id": "turnout-higher-2024",
+   "says": "The 2024 affidavit count came in a presidential election year, when turnout was higher than in this year's midterm.",
+   "status": "fact",
+   "load": [
+    "catch"
+   ],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "which she said was “nearly identical” to the 21,321 such ballots cast in 2024, a presidential election year in which turnout was higher."
+    }
+   ]
+  },
+  {
+   "id": "caucus-questions",
+   "says": "The caucus wants to know how many voters were made inactive, what counties were told to do with the Experian data, and why some inactive voters' affidavit ballots counted and others did not.",
+   "status": "said",
+   "by": "Rep. Kabir Karriem",
+   "load": [
+    "person"
+   ],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "Karriem said his caucus wants to know how many voters were marked inactive, what guidance county officials were given on how to use the Experian data and why some provisional ballots cast by those who were marked as inactive were counted while others were not."
+    }
+   ]
+  },
+  {
+   "id": "caucus-package",
+   "says": "The caucus also wants early voting, online registration, a way to fix absentee-ballot problems, and repeal or change of the laws that let third-party data be used to judge eligibility.",
+   "status": "said",
+   "by": "the Legislative Black Caucus",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "They are pressing for early voting, for people to have the ability to register to vote online and for a process that allows voters to fix any problems with absentee ballots. They also are seeking to repeal or amend laws that allow the use of third party data in determining a voter’s eligibility."
+    }
+   ]
+  },
+  {
+   "id": "other-states-wait",
+   "says": "Many other states give voters time to answer the notice before changing their status to inactive.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "Many other states do it differently, generally allowing voters time to respond to the notice before their status is changed to inactive."
+    }
+   ]
+  },
+  {
+   "id": "eac-accuracy-unproven",
+   "says": "The federal Election Assistance Commission's pilot study of Experian's data, which included Lafayette County, said its accuracy needed further research and that it should supplement, not replace, the sources officials already use.",
+   "status": "fact",
+   "scope": "August 2025 study",
+   "load": [],
+   "evidence": [
+    {
+     "record": "eac-study-2025-08",
+     "passage": "Further research questions should be answered related to the accuracy of the data"
+    },
+    {
+     "record": "eac-study-2025-08",
+     "passage": "should supplement and not replace other data sources that election officials currently use"
+    },
+    {
+     "record": "sos-column-2025-02-19",
+     "passage": "Working with the U.S. Election Assistance Commission, we launched a pilot program in Lafayette County"
+    }
+   ]
+  },
+  {
+   "id": "idi-three-bureaus",
+   "says": "The state's new vendor, Interactive Data, draws on all three major credit bureaus, and Taylor says he has seen no evidence its data will be much different from Experian's.",
+   "status": "said",
+   "by": "Watson; Rep. Cheikh Taylor",
+   "load": [],
+   "evidence": [
+    {
+     "record": "ap-updated-2026-11-19",
+     "passage": "Watson said the state has started using data from a new vendor, Interactive Data, which draws on information from all three major credit bureaus, to maintain its voter rolls."
+    },
+    {
+     "record": "ap-2026-11-19",
+     "passage": "Taylor said he had not seen evidence that data from Interactive Data would be much different from Experian’s."
+    }
+   ]
+  },
+  {
+   "id": "audits-authorized",
+   "says": "The 2023 law authorizes the secretary of state to audit how counties ran the 2026 general election, including how they processed and counted affidavit ballots.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "hb1310-2023",
+     "passage": "The Secretary of State shall be authorized to audit election procedures of the 2023, 2024, 2026 and 2027 general elections in the counties of this state."
+    },
+    {
+     "record": "hb1310-2023",
+     "passage": "Affidavit ballots and affidavit ballot envelopes, including affidavit ballot receipt book to ensure compliance with appropriate processing and counting of affidavit ballots"
+    }
+   ]
+  },
+  {
+   "id": "hb788-died",
+   "says": "HB 788, which would have restored an inactive voter to active status after casting an affidavit ballot, passed the House on Feb. 4 and died in a Senate committee on March 3.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "hb788-history-2026",
+     "passage": "02/04 (H) Passed As Amended"
+    },
+    {
+     "record": "hb788-history-2026",
+     "passage": "03/03 (S) Died In Committee"
+    },
+    {
+     "record": "msindy-caucus-2026-11-18",
+     "passage": "The bill amends Section 23-15-152 to return a voter on inactive status to active status when that voter casts an affidavit ballot"
+    }
+   ]
+  },
+  {
+   "id": "jsu-rejections",
+   "says": "Of 212 rejected affidavit ballots from Jackson State students, the Hinds commission says 188 were cast by people not registered, 18 in the wrong precinct and six by people registered in another county.",
+   "status": "said",
+   "by": "the Hinds County Election Commission",
+   "load": [],
+   "evidence": [
+    {
+     "record": "wlbt-2026-11-11",
+     "passage": "The rejected ballots include 212 cast by Jackson State University students."
+    },
+    {
+     "record": "wlbt-2026-11-11",
+     "passage": "188 were not registered to vote."
+    },
+    {
+     "record": "wlbt-2026-11-11",
+     "passage": "18 were cast at the wrong precinct."
+    },
+    {
+     "record": "wlbt-2026-11-11",
+     "passage": "Six were registered in another county."
+    }
+   ]
+  }
+ ]
 }
