@@ -65,7 +65,7 @@ It takes effect when published, scheduled for November 19, data centers already 
 
 Each layer, the sentence it tells, and its chain. Claim ids are in checks/claims.
 
-Headline: Commerce will require licenses to send AI chips to data centers serving Chinese firms
+Headline: Commerce will require licenses to ship AI chips to data centers serving Chinese firms at scale
 Dek: The rule takes effect on publication, set for November 19, and does not cover data centers inside the United States.
 
 What happened (sentences 1 and 2; the event, what it means, where it stands):

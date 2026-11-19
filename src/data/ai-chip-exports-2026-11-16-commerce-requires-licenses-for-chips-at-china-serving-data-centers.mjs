@@ -13,7 +13,7 @@ export const n = {
 
 export const event = {
   slug: "ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers",
-  title: "Commerce will require licenses to send AI chips to data centers serving Chinese firms",
+  title: "Commerce will require licenses to ship AI chips to data centers serving Chinese firms at scale",
   dek: "The rule takes effect on publication, set for November 19, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
   name: "Commerce's rule on AI chips at data centers serving Chinese firms",
   date: "2026-11-16",
