@@ -7,7 +7,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 The story turns on two questions. What does the November 16 rule actually do, and from when? And why did it come now, and whose rule is it?
 
 Question 1: what does the rule change, and from when?
-- A. It bans Chinese firms' remote use of American AI chips: the U.S. "closes loophole" (NBC and NPR headlines; NBC: remote access "will be banned"). If true: prohibition language with no license path. We should not find: case-by-case license review.
+- A. It bans Chinese firms' remote use of American AI chips: NBC: remote access "will be banned". If true: prohibition language with no license path. We should not find: case-by-case license review.
 - B. It requires a license, reviewed case by case: an exporter needs one to ship advanced chips to a data center anywhere abroad that gives large amounts of computing power to companies headquartered in China, Macau or the other countries in the same group, and a separate license is needed to ship to Indonesia, Malaysia, Singapore, Thailand and Brazil (the rule's own text). If true: a license review policy, a threshold, exceptions. We should not find: a flat prohibition.
 - C. It is a proposal, not yet binding (WSJ: "The new proposed rule"). If true: a comment period before any effect. We should not find: "interim final rule" or an effective date.
 - D. Timing variants: in force immediately on November 16 (AP: "took effect immediately") or in 90 days (NYT: "goes into effect in 90 days"). If true: an effective date of November 16, or 90 days out, in the rule.
@@ -58,7 +58,7 @@ Survives: C, and A in a narrower form: the rule's substance predates the scandal
 On November 16 the Commerce Department issued a rule that requires a U.S. license to ship advanced AI chips to data centers abroad that rent large amounts of computing power to Chinese companies, and to ship them at all to Indonesia, Malaysia, Singapore, Thailand and Brazil.
 Chinese firms have needed a U.S. license to buy the most advanced chips since 2022, so many rent them from data centers in Southeast Asia, and the rule falls on those data centers, on the firms, and on chipmakers like Nvidia.
 Commerce had promised a replacement for Biden's chip rule since May 2025, and this one came days after Nvidia's chief executive resigned over an affair with a Megaspeed executive and Treasury Secretary Bessent blamed Commerce for not blacklisting Megaspeed; Commerce says Treasury and the White House national security staff wrote it.
-Headlines say the U.S. closed the loophole, but the rule requires licenses rather than banning the rentals, and controls only chips exported to data centers abroad.
+NBC's story said remote access will be banned, but the rule requires licenses, reviewed case by case, above a threshold; it bans nothing outright.
 It took effect when it was published in the Federal Register on November 19; data centers already serving Chinese firms have 90 days to get a license, and Commerce Secretary Lutnick, who wanted a leaner rule, faces Senate questions in December.
 
 ## The plan
@@ -201,7 +201,7 @@ On November 16, 2026, the Commerce Department's Bureau of Industry and Security 
 
 ## What coverage says that the records do not
 
-- NBC: remote access "will be banned when Monday’s rule change goes into effect" [nbc-loophole-2026-11-16: "That remote access has been tolerated so far, but will be banned when Monday’s rule change goes into effect."]. The rule requires a license, reviewed case by case [fr-pi-2026-23529: "Applications for licenses required by this section will be reviewed on a case-by-case basis."], and reaches only data centers abroad.
+- NBC: remote access "will be banned when Monday’s rule change goes into effect" [nbc-loophole-2026-11-16: "That remote access has been tolerated so far, but will be banned when Monday’s rule change goes into effect."]. The rule requires a license, reviewed case by case [fr-pi-2026-23529: "Applications for licenses required by this section will be reviewed on a case-by-case basis."], and applies only above the threshold [fr-pi-2026-23529].
 - NBC's headline: "U.S. closes loophole that let Chinese companies use top AI chips" [nbc-loophole-2026-11-16: "U.S. closes loophole that let Chinese companies use top AI chips"]. McGuire, who praises the rule: Chinese firms can still "legally train on large numbers of Blackwells at data centers in Northern Virginia" [mcguire-x-2026-11-16: "So Chinese companies can legally train on large numbers of Blackwells at data centers in Northern Virginia."].
 - AP: the rule "took effect immediately" [ap-remote-access-2026-11-16: "said in issuing the rule that took effect immediately"]. The rule is effective on Federal Register publication, scheduled November 19 [fr-pi-2026-23529: "Publication Date: 11/19/2026"].
 - Politico's headline: "Commerce closes China’s backdoor to Nvidia chips" [politico-backdoor-2026-11-16: "Commerce closes China’s backdoor to Nvidia chips after White House steps in"]. Kharon: "The new rule does not make providing computing capacity a controlled activity; it regulates the chips behind that capacity" [kharon-remote-access-2026-11-16: "The new rule does not make providing computing capacity a controlled activity; it regulates the chips behind that capacity."].

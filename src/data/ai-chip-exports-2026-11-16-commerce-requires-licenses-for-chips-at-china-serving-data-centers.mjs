@@ -37,7 +37,6 @@ export const chronology = [
 
 // What the headlines said against what the rule says; each cell cites its claim.
 export const headlinesVsRule = [
-  { said: "\"U.S. closes loophole\"", saidC: "nbc-headline", rule: "Licenses for chips sent to data centers abroad above 12 million TPP; McGuire says U.S. data centers are left out", ruleC: ["data-center-license", "abroad-only", "us-data-centers-gap"] },
   { said: "Remote access \"will be banned\"", saidC: "nbc-banned", rule: "A license requirement: data-center licenses are reviewed case by case", ruleC: ["case-by-case"] },
   { said: "\"Took effect immediately\"", saidC: "ap-immediately", rule: "Took effect on Federal Register publication, November 19", ruleC: ["effective-on-publication"] },
   { said: "\"Goes into effect in 90 days\"", saidC: "nyt-90-days", rule: "The 90 days is the deadline for data centers already serving Chinese firms at that scale", ruleC: ["existing-90-days"] },
@@ -60,7 +59,7 @@ export const explanations = [
     name: "The rule bans Chinese firms from renting U.S. chips",
     holders: "NBC",
     verdict: "not",
-    summary: ["NBC said remote access would be banned; the rule requires licenses, and only for data centers abroad above a threshold.", c("nbc-banned"), c("case-by-case"), c("data-center-license")],
+    summary: ["The rule requires licenses, reviewed case by case, above a threshold; it bans nothing outright.", c("nbc-banned"), c("case-by-case"), c("below-threshold")],
     claim: [["NBC reported that remote access \"will be banned when Monday’s rule change goes into effect.\"", c("nbc-banned")]],
     evidenceFor: [["Chips meant for a China-headquartered company itself face a presumption of denial.", c("presumption-of-denial")]],
     evidenceAgainst: [["The new data-center control is reviewed case by case, applies only above 12 million TPP, and covers data centers outside the United States.", c("case-by-case"), c("below-threshold"), c("data-center-license")]],
