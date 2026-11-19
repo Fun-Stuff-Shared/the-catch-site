@@ -102,7 +102,7 @@ export const explanations = [
   {
     id: "congress",
     name: "Congress forced it",
-    holders: "No camp; a plain alternative",
+    holders: "No one claims it; tested as an alternative",
     verdict: "untestable",
     summary: ["The pressure is dated, but no record ties the rule to it.", c("blunt-rochester-curtis"), c("cantwell-letter")],
     claim: [["Senators wrote to Lutnick on November 13 and 15, and the House passed a remote-access bill in January.", c("blunt-rochester-curtis"), c("cantwell-letter"), c("rasa")]],
@@ -113,7 +113,7 @@ export const explanations = [
   {
     id: "xi-trip",
     name: "Timed as leverage for Trump's meeting with Xi",
-    holders: "No camp; a plain alternative",
+    holders: "No one claims it; tested as an alternative",
     verdict: "untestable",
     summary: ["The rule came the day Trump left for Asia; nothing on record shows the timing was chosen for it.", c("trump-trip")],
     claim: [["The rule came the day Trump left for Asia, where he is to meet Xi Jinping.", c("trump-trip")]],
