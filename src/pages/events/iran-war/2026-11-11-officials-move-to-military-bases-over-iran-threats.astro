@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import SourcedBlock from "../../../components/SourcedBlock.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, onBases } from "../../../data/iran-war-2026-11-11-officials-move-to-military-bases-over-iran-threats.mjs";
+const story = "iran-war--2026-11-11-officials-move-to-military-bases-over-iran-threats";
+const short = (id) => claim(story, id).short;
+const effectivelyOverStory = "/events/iran-war/2026-11-09-trump-iran-war-effectively-over/";
+const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-months/";
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iran-war/">Iran war</a><span>November 11, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Iran war &middot; November 11, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact" data-claims="treasury-confirmed bessent-confirms-move fox-recent-weeks rubio-hegseth-mcnair-2025 rubio-own-words miller-moved-2025 war-began-feb28">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="fox-recent-weeks" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#on-bases">Who lives on a base, and since when</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#the-threat">How serious the threat is</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">Treasury Secretary Scott Bessent has moved out of his home and onto a military base. The New York Times first reported the move on November 10, citing three unnamed people.<Cite c="nyt-first-report" /> On November 13, on CNBC, Bessent confirmed it and said Iran had made death threats against him. He also said one reason he had to move was a Wall Street Journal photo of his house, published the day he bought it, that showed where it was.<Cite c="bessent-confirms-move" /><Cite c="bessent-death-threats" /><Cite c="bessent-wsj-photo" /> The base and the date he moved have not been disclosed.<Cite c="move-date-undisclosed" /></p>
+        <QuoteCard speaker="Scott Bessent" when="November 13, 2026" where="CNBC's Squawk Box">
+          <p>"F the Iranian leadership. I'm not going to be cowered that they have initiated death threats against me."<Cite c="bessent-death-threats" /> "I follow the Secret Service instructions and have moved from my home to a military base."<Cite c="bessent-confirms-move" /> "One of the reasons I've had to move is because The Wall Street Journal printed a photo of my house the day I bought it that has geolocate on it."<Cite c="bessent-wsj-photo" /></p>
+        </QuoteCard>
+        <p data-layer="narrative" data-answer="2">The Treasury launched Operation Economic Outcast, its economic campaign against Iran, on August 24 "at President Trump’s direction."<Cite c="outcast-trump-direction" /> The three people the Times cited said that Bessent's role leading the pressure campaign since August made him one of the officials Iran most wants to harm.<Cite c="bessent-leads-outcast" /> Bessent said the threats mean "what we are doing with Operation Economic Outcast is working."<Cite c="bessent-outcast-working" /></p>
+        <p data-layer="narrative" data-answer="3">Trump started <a href="/events/iran-war/">the war with Iran</a> on February 28.<Cite c="war-began-feb28" /> The report of Bessent's move came the day after Trump said, on November 9, that <a href={effectivelyOverStory}>"Iran militarily is effectively over."</a><Cite c="nyt-first-report" /><Cite c="trump-effectively-over" /> On November 12 the radio host <a href={hewittStory}>Hugh Hewitt asked him</a> what would happen to the Iranians if they killed a senior American official. "They will not exist very long any longer," Trump said.<Cite c="trump-hewitt-official" /></p>
+      </section>
+
+      <section id="on-bases">
+        <h2 data-layer="fact">Who lives on a base, and since when</h2>
+        <p data-layer="narrative">Several senior officials were moved into military housing around Washington in late 2025, by the House Armed Services Committee's account in its report on next year's defense bill.<Cite c="congress-late-2025" /> Asked in April why his Cabinet secretaries lived on bases, Trump said, "Well, they choose to. I'm not sure that-- they need to."<Cite c="trump-they-choose" /></p>
+        <figure class="story-figure bases-figure" data-layer="fact">
+          <figcaption><strong>Officials named in the coverage, by when each is on record as living on a base</strong></figcaption>
+          <div class="bases-grid" role="table" aria-label="Officials living on military bases, and when">
+            <div class="bases-head" role="row">
+              <span role="columnheader">Official</span>
+              <span role="columnheader">On the record</span>
+            </div>
+            {onBases.map((r) => (
+              <div class="bases-row" role="row">
+                <span class="bases-who" role="rowheader"><strong>{r.who}</strong><span class="bases-role">{r.role}</span></span>
+                <span class="bases-what" role="cell"><ul>{r.cites.map((c) => <li>{short(c)}<Cite c={c} /></li>)}</ul></span>
+              </div>
+            ))}
+          </div>
+        </figure>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>Fox put Rubio's and Miller's moves in "recent weeks." They were reported on bases in 2025<Cite c="fox-recent-weeks" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /></h3>
+              <p data-layer="narrative">Fox News reported on November 11 that Tehran had ramped up efforts to target senior officials, with White House chief of staff Stephen Miller and Secretary of State Marco Rubio "also relocating to military or protected housing in recent weeks."<Cite c="fox-recent-weeks" /> But Rubio and Defense Secretary Pete Hegseth were living on Fort McNair by October 2025, four months before the war began, State and Defense Department officials told The Atlantic.<Cite c="rubio-hegseth-mcnair-2025" /> Miller and his family had moved to military housing that year.<Cite c="miller-moved-2025" /> Rubio described his own "military house," two doors from Hegseth's, in August.<Cite c="rubio-own-words" /></p>
+              <p data-layer="narrative">Treasury tied Bessent's move to Iran, saying he would not be deterred by "the Iranian regime’s threats."<Cite c="treasury-confirmed" /></p>
+              <p data-layer="narrative">Other outlets also tied Rubio's and other officials' moves to Iran. Israel Hayom's November 14 report, describing officials relocated in response to Iranian threats, said, citing Fox News, that Rubio "had also been moved to secure housing on a military base."<Cite c="israelhayom-rubio" /> USA Today's story the same day put Bessent "on a growing list of senior Trump administration figures under U.S. protection against alleged retaliatory threats from Tehran."<Cite c="usatoday-frame" /> By contrast, the Times' own report said at least half a dozen officials had moved the year before, and that not all the threats against top officials involve Iran.<Cite c="nyt-last-year" /> Fox's later reports said the moves "have not all stemmed from the same threats."<Cite c="fox-different-causes" /> None of these reports quotes an official saying that Rubio, Miller or Hegseth moved because of Iran.<Cite c="only-bessent-says-iran" /></p>
+              <p data-layer="narrative">Iran's plotting against U.S. officials is older than the war. Iran has targeted Trump since he ordered the 2020 strike that killed the Iranian general Qassim Suleimani.<Cite c="iran-targeted-since-2020" /> In March, a federal jury convicted an operative of Iran's Revolutionary Guard who admitted he had been sent to the United States to arrange political assassinations.<Cite c="merchant-conviction" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="the-threat">
+        <h2 data-layer="fact">How serious the threat is</h2>
+        <p data-layer="narrative">The Times reported that the severity of the threats against Bessent was unclear.<Cite c="nyt-first-report" /> A senior administration official told Fox News they had reached "more than an advanced stage," without saying more.<Cite c="advanced-stage-official" /> On November 15, on Fox, Bessent called it "a high threat level for us to move" and declined to say whether anyone had tried to kill him.<Cite c="bessent-high-threat" /></p>
+        <p data-layer="narrative">On October 23, the director of national intelligence wrote to Rubio that Iran had "substantially increased efforts to target U.S. personnel," with lethal plotting at advanced stages in the Middle East and certain other countries.<Cite c="dni-memo" /> On November 12, the attorney general, the intelligence director and the CIA director wrote to congressional leaders of a "heightened threat environment," naming no target.<Cite c="gang-of-8-letter" /> Homeland Security Secretary Markwayne Mullin said on November 15 that officials receive "aspirational threats from Iran" every day.<Cite c="mullin-aspirational" /></p>
+        <p data-layer="narrative">On November 16, CNN reported, citing seven unnamed officials, that new intelligence shows Iran drawing up plans to target senior officials in Washington with a dirty bomb or a chemical weapon. Its sources called the plans options rather than a sign of an imminent attack.<Cite c="cnn-dirty-bomb" /> The White House told CNN that "at this time there are no credible threats to the homeland."<Cite c="white-house-no-credible" /> The next day in Manila, asked whether an attack was imminent, Trump said, "Well, if there is, they will pay a price the likes of which no country has ever paid before," and added, "we take it very seriously."<Cite c="trump-manila-price" /> The same day, Mullin said the threat CNN reported was not new and that Iran is "very aspirational," CNN reported; "The homeland is secure," he said.<Cite c="mullin-not-new" /></p>
+        <p data-layer="narrative">Iran rejects the accusations. Its foreign ministry spokesman called them "what appears to be a coordinated malign narrative campaign orchestrated by Israel’s disinformation machine," and said officials "retreating into military bunkers" were seeking sympathy.<Cite c="iran-baqaei" /> Its mission to the United Nations called the chemical-weapon allegation false.<Cite c="iran-un-chemical" /> On November 13, Iran's own embassy in South Africa had posted "We will find you" to two named officers of the U.S. destroyer Spruance.<Cite c="embassy-find-you" /></p>
+        <SourcedBlock source="doj-iran-operatives-2026-11-10" detail>
+          <p>A Justice Department release on November 10 describes a photo of an Iranian-backed operative in a room with a list of "legitimate targets" that the department says identifies former and current U.S. officials; the list is redacted, the photo is undated, and the release does not name Bessent.<Cite c="doj-target-list" /></p>
+        </SourcedBlock>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The House Armed Services Committee has directed the Pentagon to report by May 1, 2027 on the political appointees living in military housing; the request is committee report language, not law.<Cite c="hasc-report-due" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 :global(.src-ref) { font-family: var(--sans); font-size: 0.8rem; font-weight: 400; }
+  .bases-grid { border: 1px solid var(--rule); font-family: var(--sans); font-size: 0.86rem; }
+  .bases-head, .bases-row { display: grid; grid-template-columns: 12rem 1fr; gap: 0.75rem; padding: 0.55rem 0.8rem; border-bottom: 1px solid var(--rule); }
+  .bases-row:last-child { border-bottom: none; background: var(--paper-2, transparent); }
+  .bases-head { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+  .bases-role { display: block; color: var(--slate); font-size: 0.78rem; }
+  .bases-grid ul { margin: 0; padding-left: 1rem; }
+  .bases-grid li + li { margin-top: 0.3rem; }
+  @media (max-width: 600px) {
+    .bases-head { display: none; }
+    .bases-row { grid-template-columns: 1fr; gap: 0.3rem; }
+  }
+</style>
