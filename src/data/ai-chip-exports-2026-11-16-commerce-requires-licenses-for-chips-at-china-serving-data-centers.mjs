@@ -13,7 +13,7 @@ export const n = {
 export const event = {
   slug: "ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers",
   title: "Commerce will require licenses to ship AI chips to data centers serving Chinese firms at scale",
-  dek: "The rule took effect on November 19, when it was published, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
+  dek: "Data centers abroad already serving Chinese companies above the rule's threshold have 90 days to get a license to keep doing so, and the rule reaches chips already installed, not only new shipments.",
   name: "Commerce's rule on AI chips at data centers serving Chinese firms",
   date: "2026-11-16",
   updated: "2026-11-19",
