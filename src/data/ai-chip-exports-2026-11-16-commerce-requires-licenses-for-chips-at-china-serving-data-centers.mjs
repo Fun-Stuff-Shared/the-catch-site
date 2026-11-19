@@ -16,7 +16,7 @@ export const event = {
   dek: "The rule took effect on November 19, when it was published, and applies to chips exported to such data centers abroad, above a set amount of computing power.",
   name: "Commerce's rule on AI chips at data centers serving Chinese firms",
   date: "2026-11-16",
-  updated: "2026-11-17",
+  updated: "2026-11-19",
   kpis: [],
 };
 
