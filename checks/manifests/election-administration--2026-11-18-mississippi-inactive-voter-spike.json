@@ -7,8 +7,56 @@
   "v2_subjects": [
     "development-mississippi-inactive-voter-spike-f14789672949"
   ],
-  "story_title": "Mississippi Democrats want an investigation into a spike in inactive voters",
-  "sub_events": [],
+  "story_title": "Mississippi's inactive voter list grew by about 60,000 after the state turned to credit data",
+  "sub_events": [
+    {
+      "id": "contract-2024-12",
+      "date": "2024-12-31",
+      "label": "The secretary of state signs a one-year Experian contract",
+      "section_anchor": "how-it-grew",
+      "records": [
+        "mt-2026-04-21"
+      ]
+    },
+    {
+      "id": "lists-2025-07",
+      "date": "2025-07-21",
+      "label": "Counties get address lists drawn from Experian's data",
+      "section_anchor": "how-it-grew",
+      "records": [
+        "sos-experian-release-2025-07-21",
+        "wlox-2026-11-15"
+      ]
+    },
+    {
+      "id": "election-2026-11-03",
+      "date": "2026-11-03",
+      "label": "21,484 affidavit ballots are cast",
+      "section_anchor": "what-happened",
+      "records": [
+        "sos-column-2026-11-16"
+      ]
+    },
+    {
+      "id": "experian-2026-11-11",
+      "date": "2026-11-11",
+      "label": "Experian says its data was not meant to validate voter records",
+      "section_anchor": "the-sides",
+      "records": [
+        "abc-2026-11-11"
+      ]
+    },
+    {
+      "id": "caucus-2026-11-19",
+      "date": "2026-11-19",
+      "label": "The Legislative Black Caucus asks for an investigation",
+      "section_anchor": "what-happened",
+      "records": [
+        "ap-updated-2026-11-19",
+        "msindy-caucus-2026-11-18"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "ap-2026-11-19",
@@ -737,6 +785,77 @@
       "label": "EAC: credit bureau data pilot study",
       "meta": " · published August 2025",
       "usage": "what the federal study found and advised"
+    }
+  ],
+  "event_record": "/events/election-administration/",
+  "completed_by": "claude (election-administration author session, worktree 2026-11-18-mississippi-inactive-voter-spike)",
+  "date_completed": "2026-11-19",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/election-administration and data/sources/coverage with its text and hash; the EAVS reports and Watson's X posts were admitted from local files because capture could not fetch them whole."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The data module subtracts the 2024 federal count of 165,778 from the state's 230,107 to get 64,329, the 2016-to-2018 and 2020-to-2022 changes from the EAVS rows, the 8,031 margin from 480,153 and 472,122, and about 5,400 rejected affidavits as 25% of 21,484."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The catch checks UPI's 'flagged 230,000' and WAPT's 'listed 230,000' against the state office's own description of the figure as cumulative and its 113,000 flagged in 2025, and Watson's 'over years' and 'process didn't change' against the EAVS counts, his AP statement and his February 2025 column."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the counts, statements, posts and coverage are saved copies dated in the records list."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The election-administration subject data now leads with Mississippi's inactive voter count against 2024 and the Nov. 19 investigation request, and its listing description covers both the Alaska suit and Mississippi."
+    }
+  },
+  "figures": [
+    {
+      "figure": "inactive_2026",
+      "label": "Mississippi voters listed as inactive before the Nov. 3, 2026 election",
+      "value": "230107",
+      "unit": "voters",
+      "kind": "sourced",
+      "source": {
+        "source_id": "mt-2026-11-10-column",
+        "quote_span": "Before the election, Mississippi marked 230,107 registered voters inactive."
+      }
+    },
+    {
+      "figure": "inactive_2024",
+      "label": "Mississippi inactive registrants after the 2024 election, federal survey",
+      "value": "165778",
+      "unit": "voters",
+      "kind": "sourced",
+      "source": {
+        "source_id": "eavs-2024-report",
+        "quote_span": "2024   2,222,109    2,131,726    1,965,948     88.5%    92.2%    165,778      7.8%"
+      }
+    },
+    {
+      "figure": "affidavits_2026",
+      "label": "Affidavit ballots cast in Mississippi in 2026",
+      "value": "21484",
+      "unit": "ballots",
+      "kind": "sourced",
+      "source": {
+        "source_id": "sos-column-2026-11-16",
+        "quote_span": "In 2026, Mississippi voters cast 21,484 affidavit ballots, nearly identical to the 21,321 cast in 2024."
+      }
+    },
+    {
+      "figure": "senate_margin",
+      "label": "Colom's margin over Hyde-Smith",
+      "value": "8031",
+      "unit": "votes",
+      "kind": "sourced",
+      "source": {
+        "source_id": "clarion-2026-11-17",
+        "quote_span": "Colom won by 8,031 votes"
+      }
     }
   ]
 }

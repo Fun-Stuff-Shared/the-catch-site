@@ -1,0 +1,36 @@
+# Bind check
+
+54 changed blocks read.
+
+## Must be fixed
+
+- "For many years, Mississippi's counties relied mainly on the Postal Service's change-of-address records to find voters wh" (beyond, claim experian-partnership): A reader would believe counties relied mainly on Postal Service records for many years before July 2025, which no cited claim states.
+- "For many years, Mississippi's counties relied mainly on the Postal Service's change-of-address records to find voters wh" (status, claim contract-50000): The $50,000 contract signed in late 2024 is stated as fact, but the claim is Mississippi Today's account of the contract.
+- "Late Dec. 2024 The secretary of state signs a $50,000, one-year Experian contract." (status, claim contract-50000): The contract signing is stated as fact, but the claim is Mississippi Today's account.
+- "Jan. 1, 2024 A 2023 state law takes effect: a voter sent a confirmation notice is placed on inactive status." (beyond, claim reliable-information): The exact date Jan. 1, 2024 is given, but the claim says only that the law has been in force from 2024.
+- "Experian did not vouch for the addresses. Its contract said it could not guarantee the data's accuracy or reliability, a" (scope, claim caucus-questions): A reader would believe the caucus's first question is how many flags were wrong, but its question is how many voters were made inactive.
+- "Watson says no voter was made inactive without a local official's review. How many of the roughly 60,000 had in fact mov" (scope, claim caucus-questions): A reader would believe the caucus wants the investigation to find how many of the roughly 60,000 had moved, which the claim does not say.
+- "The figure counts everyone on inactive status, including people made inactive in earlier years. Against the 2024 count, " (status, claim flagged-113000): The 113,000 flagged is stated as fact, but it is the secretary of state's office's own figure.
+- "Watson puts the checking on the counties. He told one county election commissioner that "your job is to verify the infor" (beyond, claim watson-counties-verify): The block gives a direct quotation, "your job is to verify the information before acting upon it," but the claim only paraphrases what Watson said.
+- "Democratic lawmakers want the Legislature to investigate. 230,107 voters were listed as inactive before the Nov. 3 elect" (beyond, claim caucus-request): Readers are told the people asking for the investigation are Democratic lawmakers, but the claim names only the Legislative Black Caucus and gives no party.
+- "Mississippi's Legislative Black Caucus, the Democratic lawmakers led by Rep. Kabir Karriem, asked the Legislature's over" (beyond, claim caucus-request): The text calls the Legislative Black Caucus 'the Democratic lawmakers', but no cited claim gives the caucus's party.
+- "Before the Nov. 3 election, 230,107 Mississippi voters, about 1 in 9, were listed as inactive. An inactive voter is stil" (status, claim affidavits-21484): The 21,484 affidavit ballots appear as established fact, but the claim is a figure the secretary of state's office gave.
+- "Before the Nov. 3 election, 230,107 Mississippi voters, about 1 in 9, were listed as inactive. An inactive voter is stil" (status, claim affidavits-73): The 75% approval rate appears as established fact, but it is the secretary of state's office's figure, after county review, as of Nov. 16.
+- "The list held 165,778 voters after the 2024 election, so it grew by about 60,000 in two years, after the secretary of st" (status, claim experian-partnership): Readers are told the office began sending Experian-based lists to every county in July 2025, but the claim is only a July 2025 announcement that commissioners would get the data, and it does not say every county.
+- "For many years, Mississippi's counties relied mainly on the Postal Service's change-of-address records to find voters wh" (status, claim experian-partnership): Readers are told the office began giving every county Experian data in July 2025, but the claim is an announcement that counties would get it, and Watson says part of the data was uploaded only in 2026.
+- "For many years, Mississippi's counties relied mainly on the Postal Service's change-of-address records to find voters wh" (beyond): The text says counties relied mainly on Postal Service records for many years, but no claim gives that history.
+- "Jan. 1, 2024 A 2023 state law takes effect: a voter sent a confirmation notice is placed on inactive status." (beyond, claim inactive-at-mailing): The text dates the rule to Jan. 1, 2024 and credits the 2023 law with putting a voter on inactive status when the notice goes out, but no claim gives that date or ties that rule to the 2023 law.
+- "July 2025 Every county gets address lists drawn from Experian's data." (status, claim experian-partnership): The timeline says every county got Experian-based lists in July 2025, but the claim is only an announcement that commissioners would get the data, and Watson says part of it was uploaded in 2026.
+- "Nov. 3, 2026 Election Day: 21,484 affidavit ballots are cast." (status, claim affidavits-21484): The 21,484 count appears as established fact, but it is the secretary of state's office's figure.
+- "The counties did the flagging. DeSoto County moved more voters to inactive than any other county between the March prima" (beyond): The text says the counties did the flagging, but no claim says so, and elsewhere the state's data did the flagging and the counties made voters inactive.
+- "The counties did the flagging. DeSoto County moved more voters to inactive than any other county between the March prima" (status, claim desoto-15000): DeSoto's ranking as the county that moved the most voters to inactive appears as fact, but the claim credits that ranking to Mississippi Today.
+- "Experian did not vouch for the addresses. Its contract said it could not guarantee the data's accuracy or reliability, a" (beyond, claim caucus-questions): Readers are told the caucus's first question is how many flags were wrong, but the caucus asks how many voters were made inactive, not how many were made inactive in error, and the claim does not rank the questions.
+- "Watson calls reports that 230,000 voters were taken off the rolls at once "an egregious lie," and says the figure is eve" (scope, claim rise-64000): 'The same counts' suggests the 2024 and 2026 figures come from one series, but the 2026 figure is the state's database count and the 2024 figure is the federal survey count.
+- "He also says this year's affidavit count reflects "a normal, high-engagement election." The 21,484 matched 2024's 21,321" (status, claim affidavits-21484): The 21,484 and 21,321 counts appear as established fact, but they are the secretary of state's office's figures.
+- "Watson says no voter was made inactive without a local official's review. How many of the roughly 60,000 had in fact mov" (beyond, claim caucus-questions): Readers are told the caucus wants to find out how many of the roughly 60,000 had actually moved, but the caucus asked how many voters were made inactive, not whether they had moved.
+
+## For the author to judge
+
+- none
+
+NOT BOUND

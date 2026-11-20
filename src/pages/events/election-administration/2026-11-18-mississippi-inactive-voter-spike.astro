@@ -1,0 +1,134 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { event, n, computed, counts, chronology } from "../../../data/election-administration-2026-11-18-mississippi-inactive-voter-spike.mjs";
+const fmt = computed.fmt;
+const maxCount = Math.max(...counts.map((c) => c.value));
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/election-administration/">Election administration</a><span>November 18, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Election administration &middot; November 18, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact" data-claims="rise-64000 experian-partnership">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="caucus-request" /><Cite c="inactive-230107" /><Cite c="eavs-series" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#how-it-grew">How the list grew</a></li>
+          <li><a href="#flagged">Why a flag can take a voter off the poll book</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">Mississippi's Legislative Black Caucus, Democratic lawmakers led by Rep. Kabir Karriem, asked the Legislature's oversight committees on Nov. 19 to investigate how credit-reporting data was used on the state's voter rolls, and called for a public hearing.<Cite c="caucus-request" /><Cite c="karriem-disenfranchisement" /> They want to know how many voters were made inactive, what county officials were told to do with the data, and why some inactive voters' ballots counted while others did not.<Cite c="caucus-questions" /></p>
+        <p data-layer="narrative" data-answer="2">Before the Nov. 3 election, {fmt(n.inactive2026)} Mississippi voters, about 1 in 9, were listed as inactive.<Cite c="inactive-230107" /> An inactive voter is still registered but cannot cast a regular ballot on Election Day, only an affidavit ballot, which county officials review before deciding whether it counts.<Cite c="inactive-meaning" /> The secretary of state's office says voters cast {fmt(n.affidavits2026)} affidavit ballots this year, and about {n.acceptedPct}% of those ballots were approved and counted.<Cite c="affidavits-21484" /><Cite c="affidavits-73" /></p>
+        <p data-layer="narrative" data-answer="3">The list held {fmt(n.inactive2024)} voters after the 2024 election, by the state's report to the federal government, so it grew by about 60,000 in two years.<Cite c="rise-64000" /> The rise came after the secretary of state's office announced in July 2025 that county election officials would get address data from Experian, the credit bureau, on top of Postal Service records.<Cite c="experian-partnership" /> The roughly {fmt(computed.rejected)} rejected affidavit ballots were fewer than the {fmt(computed.margin)} votes by which Democrat Scott Colom beat Republican Sen. Cindy Hyde-Smith in <a href="/events/midterms-2026/2026-11-03-why-voters-turned-on-republicans/">this month's Senate race</a>, so counting every one of them could not have reversed it.<Cite c="senate-result" /><Cite c="rejected-below-margin" /></p>
+      </section>
+
+      <section id="how-it-grew">
+        <h2 data-layer="fact">How the list grew</h2>
+        <p data-layer="narrative">For many years, Mississippi relied mainly on the Postal Service's change-of-address records to find voters who had moved. In July 2025 the secretary of state's office, run by Michael Watson, announced that county election commissioners would also get Experian's commercial data.<Cite c="experian-partnership" /> The office had signed a {`$${fmt(n.contractUsd)}`} contract for a year of the data in the last days of 2024, according to Mississippi Today, which obtained the contract.<Cite c="contract-50000" /></p>
+        <figure class="story-figure count-figure" data-layer="fact">
+          <figcaption><strong>Mississippi voters listed as inactive</strong></figcaption>
+          <ul class="count-bars" aria-label="Inactive voters in Mississippi: 2016 to 2024 from the state's reports to the federal government, 2026 from the state's own pre-election count">
+            {counts.map((c) => (
+              <li class={c.label === "2026" ? "is-state" : ""}>
+                <span class="count-label">{c.label}</span>
+                <span class="count-track"><span class="count-bar" style={`width:${(c.value / maxCount) * 100}%`}></span></span>
+                <span class="count-value">{fmt(c.value)}</span>
+                <span class="count-note">{c.note}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="chart-source">2016 to 2024: what the state reported to the U.S. Election Assistance Commission after each November election. 2026: the state's own count before the Nov. 3 election, which comes from a different source.<Cite c="eavs-series" /><Cite c="inactive-230107" /></p>
+        </figure>
+        <p data-layer="narrative">In the two earlier stretches from a presidential election to the next midterm, the list rose by {fmt(computed.rise1618)} (2016 to 2018) and fell by {fmt(Math.abs(computed.rise2022))} (2020 to 2022).<Cite c="eavs-series" /> This time it grew by about 60,000: {fmt(computed.riseFederal)} more than the {fmt(n.inactive2024)} the state reported to the federal government for 2024, or about {fmt(Math.round(computed.riseAp / 1000) * 1000)} more than the {fmt(n.inactive2024Ap)} in the Associated Press's own 2024 data.<Cite c="rise-64000" /><Cite c="ap-nearly-60000" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The law, the contract and the count</strong></figcaption>
+          <DecisionTimeline entries={chronology} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="flagged">
+        <h2 data-layer="fact">Why a flag can take a voter off the poll book</h2>
+        <p data-layer="narrative">A 2023 state law, in force since Jan. 1, 2024, lets county election commissioners act on any "reliable information" that a voter has moved. The examples it gives are mail returned as undeliverable, a homestead exemption filed at another address, and word from another state or county office.<Cite c="reliable-information" /> When commissioners mail that voter a confirmation notice, the voter goes on inactive status that day, before they can answer it; many other states wait for the voter's answer first.<Cite c="inactive-at-mailing" /><Cite c="other-states-wait" /> Mississippi Today confirmed cases in which the notice went to a wrong address taken from the Experian data, so voters who had not moved never received it.<Cite c="notice-to-flagged-address" /></p>
+        <p data-layer="narrative">DeSoto County moved more voters to inactive than any other county between the primaries and the midterms, by Mississippi Today's count, and its commissioners say they inactivated nearly every voter on the Experian-based lists, more than {fmt(n.desoto)}.<Cite c="desoto-15000" /> One of them, Tim Snyder, a Republican, said, "You get false positives, but it's just part of life."<Cite c="desoto-false-positives" /> DeSoto's voters cast about {fmt(n.desotoAffidavits2026)} affidavit ballots this year, against about {n.desotoAffidavits2022} in the 2022 midterm.<Cite c="desoto-affidavits" /></p>
+        <p data-layer="narrative">Experian did not vouch for the addresses. Its contract said it could not guarantee the data's accuracy or reliability, and Watson's office signed off on that.<Cite c="contract-disclaimer" /> Experian told the federal Election Assistance Commission that the address it gives for a person often matches where they live, but that it does not verify residency.<Cite c="experian-no-verify" /> The commission's own pilot study of the data, which included Lafayette County, said its accuracy needed more research and that it should supplement, not replace, the sources officials already use.<Cite c="eac-accuracy-unproven" /> Mississippi Today asked the secretary of state's office how it concluded the data was reliable enough to send to counties, and reported in April that the office did not answer.<Cite c="sos-no-answer-reliability" /> Mississippi Today also found voters who were wrongly made inactive and confirmed each error with county officials, among them an Itawamba County man whom the data placed in a town 160 miles away.<Cite c="wrongful-inactivations" /> The caucus says no one has accounted for how many voters were made inactive in error.<Cite c="caucus-wrongly-inactive" /></p>
+        <p data-layer="narrative">In Hinds County, home to Jackson, commissioners accepted {n.hindsAccepted} of {fmt(n.hindsCast)} affidavit ballots, about {computed.hindsPct}%, against {n.hindsPct2024}% in 2024.<Cite c="hinds-817" /> Commissioners there said many were cast in the wrong precinct, and one said she believes registration-drive applications were turned in after the deadline.<Cite c="hinds-reasons" /> The AP says it is not clear whether the Experian data played a part in the drop.<Cite c="ap-unclear-hinds" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The {fmt(n.inactive2026)} is everyone on the inactive list; the list is about 60,000 larger than in 2024<Cite c="inactive-is-total" /><Cite c="rise-64000" /></h3>
+              <p data-layer="narrative">The figure counts every voter on inactive status, including people made inactive in earlier years, and the list is about 60,000 larger than after the 2024 election.<Cite c="inactive-is-total" /><Cite c="rise-64000" /> Some coverage read the whole figure as this year's flags. UPI reported that Watson "flagged 230,000 voter registrations as inactive," and WAPT that Experian's data "listed 230,000 registered Mississippi voters as inactive."<Cite c="upi-flagged-230000" /><Cite c="wapt-experian-listed" /> The secretary of state's office says the lists it sent counties in 2025, from Postal Service and Experian records together, flagged about {fmt(n.flagged2025)} people for county officials to review.<Cite c="flagged-113000" /></p>
+            </li>
+            <li>
+              <h3>Watson says the total built up over years; the rise since 2024 is the part he tied to Experian<Cite c="watson-five-years" /><Cite c="watson-rise-experian" /></h3>
+              <p data-layer="narrative">Watson calls reports that 230,000 voters were taken off the rolls at once "an egregious lie," and says the figure is everyone marked inactive over more than five years, many of whom died or moved.<Cite c="watson-five-years" /> He told WLOX that "the process didn't change."<Cite c="watson-process-same" /> But the list is about 60,000 larger than after the 2024 election, and Watson himself told the AP that this year's rise was caused by folding the Experian data into the state's checks.<Cite c="rise-64000" /><Cite c="watson-rise-experian" /> In February 2025, announcing the contract for all 82 counties, he had called that data "the first of its kind in Mississippi."<Cite c="first-of-its-kind" /></p>
+              <p data-layer="narrative">He also says this year's affidavit count reflects "a normal, high-engagement election."<Cite c="watson-normal-election" /> His office counts {fmt(n.affidavits2026)} affidavit ballots this year against {fmt(n.affidavits2024)} in 2024, and 2024 was a presidential year with higher turnout.<Cite c="affidavits-21484" /><Cite c="turnout-higher-2024" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <h3 data-layer="fact">Watson</h3>
+        <p data-layer="narrative">Watson says no voter was made inactive without a local official's review.<Cite c="watson-review" /> On Election Day he told a county commissioner that checking the data before acting on it was the commissioners' job.<Cite c="watson-counties-verify" /> Of the commercial data he said, "Was some of the data off? Perhaps."<Cite c="watson-perhaps" /> He says the affidavit ballots rejected this year were several thousand improper votes caught by the system.<Cite c="watson-improper-caught" /> His office says Mississippi was never told the data was only supplemental.<Cite c="jonson-never-told" /></p>
+        <QuoteCard speaker="Michael Watson, secretary of state" when="Nov. 2026" where="Interview with the Associated Press">
+          <p>"I don’t apologize for cleaning voter rolls."<Cite c="watson-no-apology" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The Democrats</h3>
+        <p data-layer="narrative">Karriem says the caucus needs to find out how many voters were wrongly marked inactive, because voters are still asking whether their votes counted.<Cite c="caucus-wrongly-inactive" /><Cite c="karriem-did-my-vote-count" /></p>
+        <QuoteCard speaker="Rep. Kabir Karriem, chair of the Legislative Black Caucus" when="Nov. 2026" where="Associated Press">
+          <p>"It was disenfranchisement called by another name."<Cite c="karriem-disenfranchisement" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">Experian</h3>
+        <p data-layer="narrative">Experian says the address information it supplied was not designed or intended to validate voter records, and that decisions on registration belong to election officials.<Cite c="experian-not-designed" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The request goes to the Legislature's Investigate State Offices committees, and Rep. Zakiya Summers said a hearing before the session opens in January is unlikely.<Cite c="hearing-unlikely-before-session" /> Watson says his office welcomes an investigation because it has followed the law.<Cite c="watson-welcomes" /> The same 2023 law that lets counties act on "reliable information" also lets the secretary of state audit how counties ran the 2026 election, including how they handled affidavit ballots.<Cite c="reliable-information" /><Cite c="audits-authorized" /></p>
+        <p data-layer="narrative">Rep. Cheikh Taylor, who chairs the state Democratic Party, plans a bill in the new year to make the credit-data checks more open.<Cite c="taylor-bill" /> It would also give flagged voters a chance to confirm who they are before they are made inactive.<Cite c="taylor-bill" /> Republican state Sen. Jeremy England, who said he saw nothing nefarious, suggested such a bill could draw Republican votes.<Cite c="england-support" /> An earlier bill to restore an inactive voter to active status after an affidavit ballot passed the House in February and died in a Senate committee in March.<Cite c="hb788-died" /></p>
+        <p data-layer="narrative">The caucus also wants the laws that let outside data be used to judge a voter's eligibility repealed or changed.<Cite c="caucus-package" /> That would reach the company the state now uses in Experian's place, Interactive Data, which draws on all three major credit bureaus; Taylor says he has seen no evidence its data will be much different from Experian's.<Cite c="idi-three-bureaus" /></p>
+        <p data-layer="narrative">Under the 2023 law, voters made inactive before the 2024 election who have not since voted, answered the notice or updated their registration can now be purged from the rolls, unless the law's military or jury-service exceptions apply.<Cite c="purges-can-begin" /> The caucus wants its answers before voters go back to the polls next year, when Mississippi elects a governor, other statewide officers, the Legislature and state supreme court justices.<Cite c="caucus-wants" /><Cite c="elections-2027" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .count-bars { list-style: none; padding: 0; margin: 0; font-family: var(--sans); }
+  .count-bars li { display: grid; grid-template-columns: 4.5rem 1fr 6rem; grid-template-areas: "label track value" ". note note"; column-gap: 0.75rem; padding: 0.4rem 0; border-bottom: 1px solid var(--rule); align-items: center; }
+  .count-label { grid-area: label; color: var(--ink); font-size: 0.9rem; }
+  .count-track { grid-area: track; display: block; height: 0.9rem; background: var(--rule); }
+  .count-bar { display: block; height: 100%; background: var(--blue); }
+  .count-bars li.is-state .count-bar { background: var(--slate); }
+  .count-value { grid-area: value; color: var(--ink); font-size: 0.9rem; text-align: right; font-variant-numeric: tabular-nums; }
+  .count-note { grid-area: note; color: var(--slate); font-size: 0.75rem; }
+  @media (max-width: 640px) {
+    .count-bars li { grid-template-columns: 3.5rem 1fr 5rem; column-gap: 0.5rem; }
+  }
+</style>
