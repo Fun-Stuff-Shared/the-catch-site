@@ -7,8 +7,65 @@
   "v2_subjects": [
     "development-icj-rohingya-genocide-ruling"
   ],
-  "story_title": "UN court rules Myanmar committed genocide against the Rohingya",
-  "sub_events": [],
+  "story_title": "UN court rules 9 to 6 that Myanmar committed genocide against the Rohingya",
+  "sub_events": [
+    {
+      "id": "operations-2017-08",
+      "date": "2017-08-25",
+      "label": "Clearance operations begin in northern Rakhine after attacks on security posts",
+      "section_anchor": "rohingya",
+      "records": [
+        "icj-myanmar-summary-2026-11-19"
+      ]
+    },
+    {
+      "id": "filing-2019-11",
+      "date": "2019-11-11",
+      "label": "The Gambia sues Myanmar at the International Court of Justice",
+      "section_anchor": "how-it-got-here",
+      "records": [
+        "icj-myanmar-press-release-2026-11-19"
+      ]
+    },
+    {
+      "id": "order-2020-01",
+      "date": "2020-01-23",
+      "label": "The court orders Myanmar to prevent genocidal acts and preserve evidence",
+      "section_anchor": "how-it-got-here",
+      "records": [
+        "icj-myanmar-order-2020-01-23"
+      ]
+    },
+    {
+      "id": "coup-2021-02",
+      "date": "2021-02-01",
+      "label": "Myanmar's military seizes power",
+      "section_anchor": "how-it-got-here",
+      "records": [
+        "icj-myanmar-judgment-2026-11-19"
+      ]
+    },
+    {
+      "id": "judgment-2026-11-19",
+      "date": "2026-11-19",
+      "label": "The court finds, 9 to 6, that Myanmar committed genocide",
+      "section_anchor": "what-happened",
+      "records": [
+        "icj-myanmar-judgment-2026-11-19",
+        "icj-myanmar-press-release-2026-11-19"
+      ]
+    },
+    {
+      "id": "myanmar-response-2026-11-20",
+      "date": "2026-11-20",
+      "label": "Myanmar's government calls the ruling unfair",
+      "section_anchor": "the-sides",
+      "records": [
+        "straitstimes-myanmar-unfair-2026-11-20",
+        "hindu-myanmar-unfair-2026-11-20"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "icj-myanmar-judgment-2026-11-19",
@@ -869,6 +926,77 @@
       "label": "Foley Hoag (The Gambia's counsel)",
       "meta": " · 19 November 2026",
       "usage": "The Gambia's side"
+    }
+  ],
+  "event_record": "/events/myanmar-genocide-case/",
+  "completed_by": "claude (myanmar-genocide-case author session, worktree 2026-11-19-icj-rules-myanmar-committed-genocide)",
+  "date_completed": "2026-11-20",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/myanmar-genocide-case and data/sources/coverage with its text and hash; the court's judgment, summary, press releases, joint dissent and earlier orders were fetched through a browser session and admitted from local files because icj-cij.org refuses capture."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The page computes no figures of its own: every vote and count on it is printed in the court's press release, judgment or summary, or in AP's report for the 1.2 million refugees now in Bangladesh."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The catch checks the 'guilty' and 'convicts' reports against the judgment's statement that the responsibility is not of a criminal nature, and the 'first state to violate the Convention' reports against the court's 2007 Bosnia operative clause; the coverage table checks the 2016-2017 framing, the 'must cease' line and the 'pending arrest warrant' line against the judgment and the ICC's own page."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the judgment, statements and coverage are saved copies dated in the records list."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The new myanmar-genocide-case subject page leads with the 9-6 genocide finding, the court's accepted death estimate and Myanmar's two-year report deadline, and its listing describes the case."
+    }
+  },
+  "figures": [
+    {
+      "figure": "genocide_vote_majority",
+      "label": "Judges finding Myanmar committed genocide",
+      "value": "9",
+      "unit": "judges",
+      "kind": "sourced",
+      "source": {
+        "source_id": "icj-myanmar-press-release-2026-11-19",
+        "quote_span": "By nine votes to six"
+      }
+    },
+    {
+      "figure": "deaths_at_least",
+      "label": "Rohingya killed in the 2017 operations, UN fact-finding estimate the court found supported",
+      "value": "10000",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "icj-myanmar-judgment-2026-11-19",
+        "quote_span": "The Court considers that the FFM’s estimate of at least 10,000 deaths is supported by the record."
+      }
+    },
+    {
+      "figure": "targeted_part",
+      "label": "Rohingya in northern Rakhine the court found targeted",
+      "value": "815000",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "icj-myanmar-judgment-2026-11-19",
+        "quote_span": "approximately 815,000"
+      }
+    },
+    {
+      "figure": "fled_2017",
+      "label": "Rohingya who fled to Bangladesh in 2017",
+      "value": "700000",
+      "unit": "people",
+      "kind": "sourced",
+      "source": {
+        "source_id": "icj-myanmar-judgment-2026-11-19",
+        "quote_span": "over 700,000 fled in 2017"
+      }
     }
   ]
 }
