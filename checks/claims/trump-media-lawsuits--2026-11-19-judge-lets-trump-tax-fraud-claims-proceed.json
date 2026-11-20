@@ -814,23 +814,8 @@
    ]
   },
   {
-   "id": "variety-error",
-   "says": "Variety reported that the judge let Trump proceed against the New York Times, \"finding a plausible claim that its reporters acted recklessly in accusing Trump of tax fraud.\"",
-   "status": "said",
-   "load": [
-    "catch"
-   ],
-   "evidence": [
-    {
-     "record": "variety-2026-11-19",
-     "passage": "finding a plausible claim that its reporters acted recklessly in accusing Trump of tax fraud"
-    }
-   ],
-   "by": "Variety"
-  },
-  {
    "id": "bloomberg-error",
-   "says": "Bloomberg reported that \"the disputed Times statements accuse the president of tax crimes\" and that the dismissed statements were \"mostly from Times articles.\"",
+   "says": "Insurance Journal's reprint of a Bloomberg story said that \"the disputed Times statements accuse the president of tax crimes\" and that the dismissed statements were \"mostly from Times articles.\"",
    "status": "said",
    "load": [
     "catch"
@@ -845,7 +830,7 @@
      "passage": "mostly from Times articles"
     }
    ],
-   "by": "Bloomberg"
+   "by": "Insurance Journal's reprint of a Bloomberg story"
   },
   {
    "id": "deadline-error",
@@ -898,7 +883,7 @@
   },
   {
    "id": "guardian-error",
-   "says": "The Guardian and Al Jazeera, both drawing on Reuters, described Baker's article as a book and the book's statements as Baker's.",
+   "says": "The Guardian and Al Jazeera described Baker's article as a book and the book's statements as Baker's.",
    "status": "said",
    "load": [
     "catch"
@@ -917,7 +902,7 @@
   },
   {
    "id": "courthouse-error",
-   "says": "Courthouse News put the lawsuit at $15 million and listed Michael S. Schmidt, who was dropped from the case, among the reporters Trump is suing.",
+   "says": "Courthouse News put the lawsuit at $15 million, listed Michael S. Schmidt, who was dropped from the case, among the reporters Trump is suing, and said the judge \"determined\" the statements were based on incomplete information.",
    "status": "said",
    "load": [
     "catch"
@@ -967,7 +952,7 @@
   },
   {
    "id": "got-it-right",
-   "says": "TheWrap and MLQ.ai reported the split correctly, and Bloomberg noted that the ruling does not find the Times defamed Trump.",
+   "says": "TheWrap and MLQ.ai reported the split correctly, Variety correctly said Trump could proceed over the book's tax-fraud accusations by the Times's reporters, and the Bloomberg reprint noted that the ruling does not find the Times defamed Trump.",
    "status": "fact",
    "load": [
     "catch"
@@ -980,6 +965,14 @@
     {
      "record": "mlq-2026-11-19",
      "passage": "Six come from Lucky Loser"
+    },
+    {
+     "record": "variety-2026-11-19",
+     "passage": "finding a plausible claim that its reporters acted recklessly in accusing Trump of tax fraud"
+    },
+    {
+     "record": "variety-2026-11-19",
+     "passage": "The defendants in the case are the Times, three of its reporters, and Penguin Random House."
     },
     {
      "record": "bloomberg-ij-2026-11-20",
@@ -1017,6 +1010,78 @@
     }
    ],
    "by": "the defendants"
+  },
+  {
+   "id": "ftc-1988",
+   "says": "In 1988 the federal government charged that Trump failed to file required premerger notifications when he bought stock in Holiday Corp. and Bally Manufacturing; he paid a $750,000 civil penalty without admitting a violation.",
+   "status": "fact",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "ftc-1988-04-05",
+     "passage": "charges by paying a $750,000 civil penalty"
+    },
+    {
+     "record": "ftc-1988-04-05",
+     "passage": "Holiday Corp. and Bally Manufacturing Corp."
+    },
+    {
+     "record": "ftc-1988-04-05",
+     "passage": "does not constitute an admission"
+    }
+   ],
+   "short": "1988: $750,000 stock-filing penalty"
+  },
+  {
+   "id": "defense-baker-links",
+   "says": "The defendants say each clause of Baker's sentence linked to a source: a Politico article on mob investigations, the FinCEN release, and the 1988 stock-disclosure fine.",
+   "status": "said",
+   "load": [],
+   "evidence": [
+    {
+     "record": "mtd-2025-12-15",
+     "passage": "pay a $750,000 fine to settle a lawsuit"
+    },
+    {
+     "record": "mtd-2025-12-15",
+     "passage": "civil money penalty of"
+    }
+   ],
+   "by": "the defendants"
+  },
+  {
+   "id": "discovery-open",
+   "says": "A magistrate judge refused in March 2026 to pause evidence-gathering while the motions to dismiss were pending.",
+   "status": "fact",
+   "load": [
+    "spine"
+   ],
+   "evidence": [
+    {
+     "record": "docket-2026-11-19",
+     "passage": "ENDORSED ORDER denying 52 Defendants' motion to stay discovery pending resolution of the motions to dismiss"
+    }
+   ],
+   "short": "March: discovery not paused"
+  },
+  {
+   "id": "mediation-failed",
+   "says": "The parties held a mediation on May 6, 2026, could not reach an agreement and adjourned it.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "mediation-report-2026-05-06",
+     "passage": "The parties held a mediation conference on May 6, 2026."
+    },
+    {
+     "record": "mediation-report-2026-05-06",
+     "passage": "The parties were unable to"
+    }
+   ],
+   "short": "May 6: mediation, no agreement"
   }
  ]
 }
