@@ -27,10 +27,10 @@ const fmt = (v) => v.toLocaleString("en-US");
         <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
         <ol>
           <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#after-may">What shipped after May</a></li>
           <li><a href="#who">Who was approved, and who was sent back</a></li>
           <li><a href="#why-now">Why the committee released it</a></li>
-          <li><a href="#after-may">What shipped after May</a></li>
-          <li><a href="#the-catch">The Catch</a></li>
           <li><a href="#explanations">Every explanation, tested</a></li>
           <li><a href="#next">What happens next</a></li>
           <li><a href="#records">The records</a></li>
@@ -41,7 +41,7 @@ const fmt = (v) => v.toLocaleString("en-US");
       <section id="what-happened">
         <h2 data-layer="fact">What happened</h2>
         <p data-layer="narrative">Companies asked the Commerce Department for licenses to sell {n.requested} of Nvidia's H200 and AMD's MI325X AI chips to Chinese buyers, and by May 11, 2026, the department had approved {n.approved} of them, in {n.approvedLicenses} licenses.<Cite c="requested" /><Cite c="approved" /><Cite c="covered-chips" /> None of the approved chips had shipped by then: the department's own table marks every approval "Approved, not shipped."<Cite c="not-shipped" /> The House Foreign Affairs Committee made the table public on November 19. Its chairman, Rep. Brian Mast, a Florida Republican, used the Export Control Reform Act, which lets the committee release licensing data when it finds that keeping it secret is against the national interest, and the committee agreed without objection.<Cite c="released-nov-19" /><Cite c="national-interest" /><Cite c="unanimous" /></p>
-        <p data-layer="narrative">The table comes from the Bureau of Industry and Security (BIS), the part of Commerce that licenses exports. Until January, BIS started from refusing these chips for China; since January 15 it weighs each application on its merits, if the exporter certifies conditions that include enough supply for U.S. buyers and testing in the United States.<Cite c="presumption-before" /><Cite c="january-rule" /> A license is permission to ship. Most of what companies asked for did not get one: requests for {n.returned} chips were sent back without a decision, {n.pending} were still pending, and one request, for {n.rejected}, was rejected.<Cite c="returned" /><Cite c="pending" /><Cite c="rejected-one" /></p>
+        <p data-layer="narrative">The table comes from the Bureau of Industry and Security (BIS), the part of Commerce that licenses exports. Until January, BIS started from refusing these chips for China; since January 15 it weighs each application on its merits, as long as the chipmaker certifies, among other things, that U.S. buyers have enough supply and that the chips are tested in the United States.<Cite c="presumption-before" /><Cite c="january-rule" /> A license is permission to ship. Most of what companies asked for did not get one: requests for {n.returned} chips were sent back to the companies without a decision, {n.pending} were still pending, and one request, for {n.rejected}, was rejected.<Cite c="returned" /><Cite c="pending" /><Cite c="rejected-one" /></p>
         <figure class="story-figure status-figure" data-layer="fact">
           <figcaption><strong>The {n.requested} chips companies asked to sell to Chinese buyers, by what BIS had done with them as of May 11, 2026</strong></figcaption>
           <div class="status-bar" role="img" aria-label={statusBar.map((s) => `${s.label}: ${s.display}`).join("; ")}>
@@ -51,44 +51,7 @@ const fmt = (v) => v.toLocaleString("en-US");
             {statusBar.map((s) => <li><span class={`swatch seg-${s.key}`} aria-hidden="true"></span><span class="lg-label">{s.label}</span> <span class="lg-value">{s.display}</span><Cite c={s.c} /></li>)}
           </ul>
         </figure>
-        <p data-layer="narrative">Shipments came later. Nvidia shipped licensed H200s to China starting by July, and on November 17 it said it is no longer shipping them; no record says how many chips went.<Cite c="kessler-july" /><Cite c="kress-h200-went" /><Cite c="nvidia-stopped" /> Some reports on the release described the approvals as chips already sent, which the table does not show; <a href="#the-catch">The Catch</a> sets that out.<Cite c="hill-fulfilled" /><Cite c="mcguire-sent" /></p>
-      </section>
-
-      <section id="who">
-        <h2 data-layer="fact">Who was approved, and who was sent back</h2>
-        <p data-layer="narrative">ByteDance, TikTok's owner, and Tencent each won approval for 150,000 chips, half from Nvidia and half from AMD for a subsidiary.<Cite c="bytedance-tencent-150k" /> Alibaba asked for {n.alibabaAsked} chips for itself and its subsidiaries and was approved for {n.alibabaApproved}.<Cite c="alibaba-asked" /> The rest went to Chinese internet, carmaking and cloud companies, from 75,000 chips each for VNET, Linkwise, Kuaishou and DiDi down to 4,000 each for Tesla's Shanghai unit and BYD.<Cite c="approvals-list" /></p>
-        <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>The {n.approvedLicenses} approvals, by buyer, as of May 11, 2026, none shipped</strong></figcaption>
-          <table class="data-table approvals-table">
-            <thead><tr><th>Buyer</th><th>Chips from</th><th class="num">Chips approved</th></tr></thead>
-            <tbody>{approvals.map((a) => <tr><td>{a.buyer}</td><td>{a.maker}</td><td class="num">{fmt(a.chips)}</td></tr>)}</tbody>
-            <tfoot><tr><td colspan="2">Total</td><td class="num">{n.approved}<Cite c="approvals-list" /><Cite c="approved" /></td></tr></tfoot>
-          </table>
-        </figure>
-        <p data-layer="narrative">The biggest requests got no decision. Applications for {n.offshore} chips for ByteDance and Alibaba units in Malaysia, Indonesia and Thailand were returned without action, and so was the largest single request in the table, {n.alibaba610} chips for Alibaba Group in China.<Cite c="offshore-returned" /><Cite c="alibaba-610k" /> A return is not a denial: BIS sends an application back when, among other reasons, the applicant asks, a license exception applies or documents are missing, and in 2021 it returned {n.rwa2021} percent of goods, software and technology applications that way.<Cite c="rwa-meaning" /><Cite c="rwa-common" /> The table gives no reason for any return.<Cite c="no-reasons" /> Separately, the January rule's case-by-case path covers chips exported to China or Macau; for Chinese-headquartered companies elsewhere, it kept the starting point of refusal.<Cite c="offshore-presumption" /></p>
-        <p data-layer="narrative">Four of the approved buyers, Alibaba, Tencent, Baidu and BYD, are on the Pentagon's list of Chinese military companies, and together they were approved for {n.four} chips.<Cite c="four-approved" /><Cite c="summary-june-list" /> Tencent has been on the list since January 2025. The Pentagon told Congress in October 2025 that Alibaba, Baidu and BYD should be added, according to reports that lawmakers cited and a federal court recounted, two months before the first of these applications; the update listing them was made public on June 8, 2026.<Cite c="tencent-listed-2025" /><Cite c="pentagon-oct-2025" /><Cite c="three-listed-june" /> The list bars the Pentagon from contracting with the companies on it; it does not bar exports.<Cite c="list-effect" /> Alibaba says it is not a military company and has sued over its designation.<Cite c="alibaba-denies" /><Cite c="alibaba-sued" /></p>
-        <p data-layer="narrative">The committee also looked at who would set the chips up. All but two of the Nvidia applications for Chinese buyers that BIS gave the committee name Maginfra, Beijing New Matrix, ZTE Kangxun and Lenovo as companies that "may install the systems in the datacenter."<Cite c="installers" /> The New York Times found no sign of New Matrix at its listed address, and Mast calls Maginfra and New Matrix "fake companies."<Cite c="new-matrix-empty" /><Cite c="mast-fake" /> Every Nvidia and AMD application told BIS that the risk of the chips being diverted to someone else was "low."<Cite c="low-risk" /></p>
-      </section>
-
-      <section id="why-now">
-        <h2 data-layer="fact">Why the committee released it</h2>
-        <p data-layer="narrative">The committee's Democrats asked for these records first. On December 8, 2025, President Trump announced that the H200 could be sold to approved customers in China, and two weeks later Rep. Gregory Meeks of New York, the committee's top Democrat, and Sen. Elizabeth Warren used the same 2018 law to demand the applications and approvals from Commerce.<Cite c="trump-dec-8" /><Cite c="meeks-warren-request" /></p>
-        <p data-layer="narrative">The release came at the end of a week of pressure on Commerce over Nvidia and China. Nvidia announced on November 12 that Jensen Huang had resigned as chief executive; Reuters reports that he resigned amid news of his affair with a former executive of Megaspeed, a Singapore-based company, whom U.S. authorities suspect of being a Chinese spy, which China denies.<Cite c="huang-resigned" /><Cite c="huang-affair-news" /> On November 16, the day Commerce issued <a href="/events/ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers/">a rule meant to stop companies from getting around U.S. limits by renting chips at data centers abroad</a>, Mast said Americans "deserve to know how this happened," and the next day he asked BIS for information on chip smuggling and export licenses involving Megaspeed.<Cite c="nov-16-rule" /><Cite c="mast-why" /><Cite c="mast-megaspeed" /></p>
-        <p data-layer="narrative">Meeks says BIS "seemed to approve licenses for advanced chips to China with little scrutiny."<Cite c="meeks-little-scrutiny" /> Commerce says its approvals rest on the January rule's added national-security requirements and on deliberation among several agencies.<Cite c="commerce-statement" /></p>
-      </section>
-
-      <section id="after-may">
-        <h2 data-layer="fact">What shipped after May</h2>
-        <p data-layer="narrative">The table stops at May 11. On July 14, Jeffrey Kessler, the Commerce under secretary who runs BIS, told the committee there had been "minimal exports" of H200s to China, and later in the hearing called the amount "trivial."<Cite c="kessler-july" /> In August, Nvidia said it had made a fraction of the shipments its licenses allowed, under 1 percent of its data-center revenue for the quarter, and that China had restricted the sales.<Cite c="nvidia-fraction" /><Cite c="nvidia-feb-licenses" /> Each licensed H200 also had to go through an inspection process in the United States, which brought a 25 percent U.S. tariff.<Cite c="inspection-tariff" /></p>
-        <p data-layer="narrative">Then shipments grew. In the quarter that ended October 25, Nvidia shipped {n.hopper} of Hopper data center products, the family that includes the H200, to China, a dollar figure rather than a chip count.<Cite c="hopper-2-4b" /> Its interim chief executive, Colette Kress, said the next day that those were the licensed H200s.</p>
-        <QuoteCard speaker="Colette Kress, Nvidia's interim chief executive" when="November 18, 2026" where="Interview with CNBC">
-          <p>"As you also saw us announce, we would only have the licensed H200s [Nvidia's data center GPUs], and those went to China within this last quarter."<Cite c="kress-h200-went" /></p>
-        </QuoteCard>
-        <p data-layer="narrative">On November 17, Nvidia said it is no longer shipping licensed Hopper chips to China, and its forecast for the current quarter assumes no data-center revenue from China.<Cite c="nvidia-stopped" /><Cite c="no-china-forecast" /> Beijing has been the other brake: Reuters reported on November 5, citing two people, that about {n.hk} H200s were stored in Hong Kong waiting for Beijing's approval to enter mainland China.<Cite c="hk-stockpile" /> AMD says it received licenses in February to ship MI325 chips to Chinese customers and said in August that it did not know whether China would let them in; its November filing gives no MI325 shipment figures.<Cite c="amd-licenses" /></p>
-        <figure class="story-figure" data-layer="fact">
-          <figcaption><strong>From Trump's announcement to the release</strong></figcaption>
-          <DecisionTimeline entries={timeline} heading="What happened" />
-        </figure>
+        <p data-layer="narrative">Shipments came later. BIS's head told the committee in July that H200 exports to China had been "minimal," Nvidia's interim chief executive says the licensed H200s went to China in the quarter that ended October 25, and on November 17 Nvidia said it is no longer shipping them. Nvidia has reported those shipments in dollars, not chips.<Cite c="kessler-july" /><Cite c="kress-h200-went" /><Cite c="nvidia-stopped" /><Cite c="hopper-2-4b" /> Coverage of the release, including The Hill's, and a former official quoted by Reuters described the approvals as chips already sent to China.<Cite c="hill-fulfilled" /><Cite c="st-shipments" /><Cite c="mcguire-sent" /></p>
       </section>
 
       <section id="the-catch">
@@ -96,9 +59,9 @@ const fmt = (v) => v.toLocaleString("en-US");
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Approved is not shipped</h3>
-              <p data-layer="narrative">Several reports on the release turned the approvals into deliveries. The Hill wrote that "the order was fulfilled" and described "sending 75,000 to Alibaba."<Cite c="hill-fulfilled" /> Chris McGuire, a former U.S. official quoted by Reuters, said "over 30% of the AI chips sent to China were shipped to" companies the Pentagon lists as Chinese military companies.<Cite c="mcguire-sent" /> The Straits Times' summary of the Reuters story spoke of "879,000 advanced AI chip shipments to China."<Cite c="st-shipments" /></p>
-              <p data-layer="narrative">The table those reports describe marks every one of the {n.approvedLicenses} approvals "Approved, not shipped" as of May 11.<Cite c="not-shipped" /> McGuire's 30 percent is a share of approvals: {n.four} of the {n.approved} approved chips, {n.fourShare} percent, were for the four listed companies.<Cite c="four-approved" /><Cite c="approved" /> Reuters' own story said it was not clear how many approvals had turned into shipments.<Cite c="reuters-unclear" /> Licensed chips did reach China later, from about July, but no record ties those shipments to particular licenses or gives a count.<Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /></p>
+              <h3>The approvals were not shipments</h3>
+              <p data-layer="narrative">The Hill wrote that "the order was fulfilled" and described "sending 75,000 to Alibaba."<Cite c="hill-fulfilled" /> Chris McGuire, a former U.S. official quoted by Reuters, said "over 30% of the AI chips sent to China were shipped to" companies the Pentagon lists as Chinese military companies.<Cite c="mcguire-sent" /> The Straits Times' summary of the release spoke of "879,000 advanced AI chip shipments to China."<Cite c="st-shipments" /></p>
+              <p data-layer="narrative">The table those reports describe marks every one of the {n.approvedLicenses} approvals "Approved, not shipped" as of May 11.<Cite c="not-shipped" /> McGuire's 30 percent is a share of approvals: {n.four} of the {n.approved} approved chips, {n.fourShare} percent, were for Alibaba, Tencent, Baidu and BYD, the four approved buyers on the Pentagon's list.<Cite c="mcguire-sent" /><Cite c="four-approved" /><Cite c="approved" /><Cite c="summary-june-list" /> Reuters' own story said it was not clear how many approvals had turned into shipments.<Cite c="reuters-unclear" /> By the accounts of BIS's head and Nvidia, licensed chips went to China later: Kessler told the committee in July that exports had been "minimal," and Kress says the licensed H200s went to China in the quarter that ended October 25. Nvidia reported that quarter's Hopper shipments to China in dollars, not chips.<Cite c="kessler-july" /><Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /></p>
               <p data-layer="narrative">The New York Times' report, as carried by The Business Times, ran under a subheadline saying Commerce "approved applications to sell more than 3.4 million chips."<Cite c="bt-3-4m" /> That is how many companies asked for; Commerce approved {n.approved}.<Cite c="requested" /><Cite c="approved" /></p>
               <figure class="story-figure" data-layer="fact">
                 <figcaption><strong>What the reports said, and what the BIS table says</strong></figcaption>
@@ -110,6 +73,43 @@ const fmt = (v) => v.toLocaleString("en-US");
             </li>
           </ol>
         </aside>
+      </section>
+
+      <section id="after-may">
+        <h2 data-layer="fact">What shipped after May</h2>
+        <p data-layer="narrative">The table stops at May 11. On July 14, Jeffrey Kessler, the Commerce under secretary who runs BIS, told the committee there had been "minimal exports" of H200s to China, and later in the hearing called the amount "trivial."<Cite c="kessler-july" /> In August, Nvidia said it had made a fraction of the shipments its licenses allowed, under 1 percent of its data-center revenue for the quarter, and that China had restricted the sales.<Cite c="nvidia-fraction" /><Cite c="nvidia-feb-licenses" /> Because licensed H200s had to go through an inspection process in the United States before reaching the customer, those shipped paid a 25 percent U.S. import tariff.<Cite c="inspection-tariff" /></p>
+        <p data-layer="narrative">In the quarter that ended October 25, Nvidia shipped {n.hopper} of Hopper data center products, the family that includes the H200, to China, a dollar figure rather than a chip count.<Cite c="nvidia-fraction" /><Cite c="hopper-2-4b" /> Its interim chief executive, Colette Kress, says the licensed H200s went to China in that quarter.<Cite c="kress-h200-went" /></p>
+        <QuoteCard speaker="Colette Kress, Nvidia's interim chief executive" when="November 18, 2026" where="Interview with CNBC">
+          <p>"As you also saw us announce, we would only have the licensed H200s [Nvidia's data center GPUs], and those went to China within this last quarter."<Cite c="kress-h200-went" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">On November 17, Nvidia said it is no longer shipping licensed Hopper chips to China, and its forecast for the current quarter assumes no data-center revenue from China.<Cite c="nvidia-stopped" /><Cite c="no-china-forecast" /> Beijing has been the other brake: Reuters reported on November 5, citing two people, that about {n.hk} H200s were stored in Hong Kong waiting for Beijing's approval to enter mainland China.<Cite c="hk-stockpile" /> AMD says it received licenses in February to ship MI325 chips to Chinese customers and said in August that it did not know whether China would let them in; its November filing gives no MI325 shipment figures.<Cite c="amd-licenses" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From Trump's announcement to the release</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="who">
+        <h2 data-layer="fact">Who was approved, and who was sent back</h2>
+        <p data-layer="narrative">ByteDance, TikTok's owner, and Tencent each won approval for 150,000 chips, half from Nvidia and half from AMD for a subsidiary.<Cite c="bytedance-tencent-150k" /> Alibaba asked for {n.alibabaAsked} chips for itself and its subsidiaries and was approved for {n.alibabaApproved}; every other Alibaba request, including requests for its cloud unit in Malaysia, was sent back.<Cite c="alibaba-asked" /><Cite c="alibaba-rest-returned" /> The other approvals ranged from 75,000 chips each for VNET, Linkwise, Kuaishou and DiDi down to 4,000 each for BYD, Tesla's Shanghai unit and Shanghai Jiatang, plus 8 for Nvidia itself.<Cite c="approvals-list" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The {n.approvedLicenses} approvals, by buyer, as of May 11, 2026, none shipped</strong></figcaption>
+          <table class="data-table approvals-table">
+            <thead><tr><th>Buyer</th><th>Chips from</th><th class="num">Chips approved</th></tr></thead>
+            <tbody>{approvals.map((a) => <tr><td>{a.buyer}</td><td>{a.maker}</td><td class="num">{fmt(a.chips)}</td></tr>)}</tbody>
+            <tfoot><tr><td colspan="2">Total</td><td class="num">{n.approved}<Cite c="approvals-list" /><Cite c="approved" /></td></tr></tfoot>
+          </table>
+        </figure>
+        <p data-layer="narrative">The biggest requests got no decision. Applications for {n.offshore} chips for ByteDance and Alibaba units in Malaysia, Indonesia and Thailand were returned without action, and so was the largest single request in the table, {n.alibaba610} chips for Alibaba Group in China.<Cite c="offshore-returned" /><Cite c="alibaba-610k" /> Returning an application is not denying it: BIS sends an application back when, among other reasons, the applicant asks, a license exception applies or documents are missing, and in 2021 it returned {n.rwa2021} percent of goods, software and technology applications that way.<Cite c="rwa-meaning" /><Cite c="rwa-common" /> The table gives no reason for any return.<Cite c="no-reasons" /> Separately, the January rule opened case-by-case review only for chips going to China or Macau; for chips going to a Chinese-owned company in another country, BIS still starts from refusal.<Cite c="offshore-presumption" /></p>
+        <p data-layer="narrative">Four of the approved buyers, Alibaba, Tencent, Baidu and BYD, are on the Pentagon's list of Chinese military companies, and together they were approved for {n.four} chips.<Cite c="four-approved" /><Cite c="summary-june-list" /> Tencent has been on the list since January 2025. The Pentagon told Congress in October 2025 that Alibaba, Baidu and BYD should be added, according to reports that lawmakers cited and a federal court recounted, before the first of these applications was filed on December 9, 2025; the update listing them was made public on June 8, 2026.<Cite c="tencent-listed-2025" /><Cite c="pentagon-oct-2025" /><Cite c="three-listed-june" /> The list bars the Pentagon from contracting with the companies on it; it does not bar exports.<Cite c="list-effect" /> Alibaba says it is not a military company and has sued over its designation.<Cite c="alibaba-denies" /><Cite c="alibaba-sued" /></p>
+        <p data-layer="narrative">The committee's other concern is who would install the chips in Chinese data centers. All but two of the Nvidia applications for Chinese buyers that BIS gave the committee name Maginfra, Beijing New Matrix, ZTE Kangxun and Lenovo as companies that "may install the systems in the datacenter."<Cite c="installers" /> The New York Times found no sign of New Matrix at its listed address, and Mast calls Maginfra and New Matrix "fake companies."<Cite c="new-matrix-empty" /><Cite c="mast-fake" /> Every Nvidia and AMD application told BIS that the risk of the chips being diverted to someone else was "low."<Cite c="low-risk" /></p>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why the committee released it</h2>
+        <p data-layer="narrative">Democrats had demanded these records months earlier. On December 8, 2025, President Trump announced that the H200 could be sold to approved customers in China, and later that month Rep. Gregory Meeks of New York, the committee's top Democrat, and Sen. Elizabeth Warren used the same 2018 law to demand the applications and approvals from Commerce.<Cite c="trump-dec-8" /><Cite c="meeks-warren-request" /></p>
+        <p data-layer="narrative">The release came at the end of a week of pressure on Commerce over Nvidia and China. Nvidia announced on November 12 that Jensen Huang had resigned as chief executive; Reuters reports that he resigned amid news of his affair with a former executive of Megaspeed, a Singapore-based company, whom U.S. authorities suspect of being a Chinese spy, which China denies.<Cite c="huang-resigned" /><Cite c="huang-affair-news" /> On November 16, the day Commerce issued <a href="/events/ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers/">a rule meant to stop companies from getting around U.S. limits by renting chips at data centers abroad</a>, Mast said Americans "deserve to know how this happened," and the next day he asked BIS for information on chip smuggling and export licenses involving Megaspeed.<Cite c="nov-16-rule" /><Cite c="mast-why" /><Cite c="mast-megaspeed" /></p>
+        <p data-layer="narrative">Meeks says BIS "seemed to approve licenses for advanced chips to China with little scrutiny."<Cite c="meeks-little-scrutiny" /> Commerce says its approvals rest on the January rule's added national-security requirements and on deliberation among several agencies.<Cite c="commerce-statement" /></p>
       </section>
 
       <section id="explanations">
@@ -126,7 +126,7 @@ const fmt = (v) => v.toLocaleString("en-US");
             <tbody>{steps.map((s) => <tr><td>{s.when}</td><td>{s.what}{s.c.map((id) => <Cite c={id} />)}</td></tr>)}</tbody>
           </table>
         </figure>
-        <p data-layer="narrative">The May table is not the whole file. The committee says it holds applications the table does not fully reflect, among them Nvidia's December 2025 request to export {n.tencent445} H200s to Tencent, and {n.pendingApps} applications for {n.pending} chips were still undecided on May 11.<Cite c="tencent-445k" /><Cite c="pending" /> Neither the committee, BIS nor the chipmakers have published how many of the approved chips were ever shipped.</p>
+        <p data-layer="narrative">The committee says it holds applications the table does not fully reflect, among them Nvidia's December 2025 request to export {n.tencent445} H200s to Tencent, and {n.pendingApps} applications for {n.pending} chips were still undecided on May 11.<Cite c="tencent-445k" /><Cite c="pending" /></p>
       </section>
 
       <section id="records">
