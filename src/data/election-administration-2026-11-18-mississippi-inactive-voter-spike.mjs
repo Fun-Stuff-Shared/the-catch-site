@@ -43,7 +43,7 @@ export const computed = {
 export const event = {
   slug: "election-administration/2026-11-18-mississippi-inactive-voter-spike",
   title: "Mississippi's inactive voter list grew by about 60,000 after the state turned to credit data",
-  dek: `Democratic lawmakers want the Legislature to investigate. ${fmt(n.inactive2026)} voters were listed as inactive before the Nov. 3 election; the state reported ${fmt(n.inactive2024)} inactive voters to the federal government for 2024.`,
+  dek: `Democratic lawmakers want an investigation. ${fmt(n.inactive2026)} voters were listed as inactive before the Nov. 3 election; the state reported ${fmt(n.inactive2024)} inactive voters to the federal government for 2024.`,
   name: "Mississippi's inactive voter list and the Experian data",
   date: "2026-11-18",
   updated: "2026-11-19",
@@ -77,6 +77,5 @@ export const chronology = [
   { date: "July 2025", title: "The state announces county commissioners will get Experian's address data.", cites: [{ c: "experian-partnership" }, { c: "watson-upload-2026" }] },
   { date: "July 2025 to March 2026", title: "At least 50,000 voters are made inactive over address conflicts, by Mississippi Today's count.", cites: [{ c: "fifty-thousand-address" }] },
   { date: "Oct. 2026", title: "230,107 voters are inactive before the election.", cites: [{ c: "inactive-230107" }] },
-  { date: "Nov. 3, 2026", title: "Election Day: 21,484 affidavit ballots, the secretary of state's office says.", cites: [{ c: "affidavits-21484" }] },
   { date: "Nov. 19, 2026", title: "The Legislative Black Caucus asks for an investigation.", cites: [{ c: "caucus-request" }], current: true },
 ];
