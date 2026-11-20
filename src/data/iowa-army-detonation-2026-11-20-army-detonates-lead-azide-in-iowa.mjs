@@ -34,7 +34,7 @@ export const computed = { fmt };
 export const event = {
   slug: "iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa",
   title: "Army delays Iowa lead azide blast to Monday as groups ask court to stop it",
-  dek: `The ${n.drums} drums of degraded explosive at a Middletown ammunition plant will send up a plume of lead dust, and the Army must publish new maps of where it goes before the blast.`,
+  dek: `The ${n.drums} drums of degraded explosive at a Middletown ammunition plant would send up a plume of lead dust, and the Army must publish new maps of where it goes before the blast.`,
   name: "The Army's lead azide detonation in Iowa",
   date: "2026-11-20",
   updated: "2026-11-20",
