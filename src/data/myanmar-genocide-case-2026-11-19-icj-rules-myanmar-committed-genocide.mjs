@@ -30,7 +30,7 @@ export const computed = { fmt };
 export const event = {
   slug: "myanmar-genocide-case/2026-11-19-icj-rules-myanmar-committed-genocide",
   title: "UN court rules 9 to 6 that Myanmar committed genocide against the Rohingya",
-  dek: "The court ordered Myanmar to investigate and, where warranted, prosecute those responsible, let the Rohingya return and compensate them, but it has no power of its own to enforce that.",
+  dek: "Nine judges found that Myanmar's security forces acted in 2017 with intent to destroy the Rohingya of northern Rakhine State; six said the evidence did not prove it.",
   name: "The Gambia v. Myanmar at the International Court of Justice",
   date: "2026-11-19",
   updated: "2026-11-20",
