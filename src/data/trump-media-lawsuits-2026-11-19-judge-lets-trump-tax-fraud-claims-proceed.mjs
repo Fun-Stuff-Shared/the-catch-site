@@ -77,7 +77,7 @@ export const statements = [
   { source: "Book, p. 300", c: "statement-sham-layer", text: "They would accomplish that goal by adding a sham layer to Fred’s business, one designed to evade the gift and estate taxes" },
   { source: "Book, p. 301", c: "statement-padded-bills", text: "So the Trumps began submitting the padded bills to request rent increases from state officials" },
   { source: "Book, p. 314", c: "statement-2m-tax-free", text: "Donald was already collecting almost $2 million a year from his father’s companies. His own business failures meant he kept that money tax-free" },
-  { source: "Book, p. 444", c: "statement-aggressive", text: "periods when it seemed his failures could not be saved only by aggressive tax maneuvers or not paying his debts" },
+  { source: "Book, p. 444", c: "statement-aggressive", text: "Donald Trump had faced these moments before, periods when it seemed his failures could not be saved only by aggressive tax maneuvers or not paying his debts" },
   { source: "Baker, the Times", c: "statement-baker", text: "Federal, state and local authorities looked into his ties with the Mafia, found violations of money laundering rules and penalized him for skirting stock trade rules" },
 ];
 
@@ -85,12 +85,11 @@ export const chronology = [
   { date: "Oct. 2, 2018", title: "The Times publishes its investigation of Fred Trump's transfers to his children; New York's tax department says it is reviewing the allegations.", cites: [{ c: "nysc-no-dispute" }, { c: "ny-tax-review-2018" }] },
   { date: "Sept. 2024", title: "The Times runs the Apprentice article, and Penguin publishes Lucky Loser.", cites: [{ c: "apprentice-counts" }, { c: "craig-buettner-who" }] },
   { date: "Oct. 20, 2024", title: "The Times runs Baker's article.", cites: [{ c: "baker-who" }] },
-  { date: "Sept. 15, 2025", title: "Trump sues in Tampa, already alleging the authors needed forensic auditing and expert tax advice.", cites: [{ c: "forensic-in-original" }] },
-  { date: "Sept. 19, 2025", title: "The judge strikes the complaint and lets Trump refile.", cites: [{ c: "strike-order" }] },
+  { date: "Sept. 15, 2025", title: "Trump sues in Tampa, alleging the authors knew a responsible tax judgment needed forensic auditing and expert advice.", cites: [{ c: "forensic-in-original" }] },
+  { date: "Sept. 19, 2025", title: "Four days later, the judge throws out the complaint as written and gives Trump 28 days to refile in no more than 40 pages.", cites: [{ c: "strike-order" }] },
+  { date: "Oct. 16, 2025", title: "Trump files a revised, 40-page complaint.", cites: [{ c: "fac-filed" }] },
   { date: "Dec. 15, 2025", title: "The defendants move to dismiss.", cites: [{ c: "deadline-motion-date" }] },
-  { date: "March 2026", title: "A magistrate judge refuses to pause discovery.", cites: [{ c: "discovery-open" }] },
-  { date: "May 6, 2026", title: "Mediation ends without agreement.", cites: [{ c: "mediation-failed" }] },
   { date: "July 22, 2026", title: "At a hearing, the judge asks whether a non-expert can judge tax fraud alone.", cites: [{ c: "hearing-question" }] },
-  { date: "Aug. 27, 2026", title: "Trump files his second amended complaint.", cites: [{ c: "sac-filed" }] },
+  { date: "Aug. 27, 2026", title: "Trump files a second amended complaint, the version the judge ruled on.", cites: [{ c: "sac-filed" }] },
   { date: "Nov. 19, 2026", title: "Seven of 34 statements go forward.", cites: [{ c: "ruling-seven-survive" }], current: true },
 ];
