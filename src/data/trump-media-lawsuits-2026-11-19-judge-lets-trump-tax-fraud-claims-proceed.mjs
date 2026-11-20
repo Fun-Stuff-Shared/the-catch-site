@@ -90,6 +90,8 @@ export const chronology = [
   { date: "Oct. 16, 2025", title: "Trump files a revised, 40-page complaint.", cites: [{ c: "fac-filed" }] },
   { date: "Dec. 15, 2025", title: "The defendants move to dismiss.", cites: [{ c: "deadline-motion-date" }] },
   { date: "July 22, 2026", title: "At a hearing, the judge asks whether a non-expert can judge tax fraud alone.", cites: [{ c: "hearing-question" }] },
+  { date: "July 27, 2026", title: "The judge holds off on the motion to dismiss and lets Trump rewrite his complaint once more; the defendants may keep their motion or add to it.", cites: [{ c: "deferral-order" }] },
   { date: "Aug. 27, 2026", title: "Trump files a second amended complaint, the version the judge ruled on.", cites: [{ c: "sac-filed" }] },
+  { date: "Sept. 17, 2026", title: "The defendants add to their motion to dismiss, applying it to the new complaint.", cites: [{ c: "supplement-filed" }] },
   { date: "Nov. 19, 2026", title: "Seven of 34 statements go forward.", cites: [{ c: "ruling-seven-survive" }], current: true },
 ];
