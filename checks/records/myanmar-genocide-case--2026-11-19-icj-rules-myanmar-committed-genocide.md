@@ -65,8 +65,11 @@ Question 3: what explains the 2017 operations, as the court weighed it?
 | The dissent: [icj-myanmar-joint-dissent-2026-11-19: "Since either of these inferences may reasonably be drawn from the evidence, it cannot be said that the only reasonable inference available is that Myanmar acted with genocidal intent"] | I (for six judges) | | C | C | C |
 | The dissent accepts the crimes: [icj-myanmar-joint-dissent-2026-11-19: "We have no doubt that Myanmar’s security forces committed serious human rights"] | C | I | C | C | C |
 | At least 10,000 killed [icj-myanmar-judgment-2026-11-19: "The Court considers that the FFM’s estimate of at least 10,000 deaths is supported by the record"] | C | C | C | C | C |
+| The dissent on the three villages: genocidal acts there "went far beyond" fighting ARSA [icj-myanmar-joint-dissent-2026-11-19: "many of those acts went far beyond what was necessary to effectively confront the ARSA insurgency"] | C | I (all fifteen) | C | C | C |
+| The dissent on breadth: three of 509 villages, pattern not shown [icj-myanmar-joint-dissent-2026-11-19: "Min Gyi, Maung Nu and Chut Pyin are three out of a total of 509 Rohingya villages in that region"] | I (for six judges) | | | | C |
+| The dissent on flight: attacks on fleeing Rohingya "did sometimes occur", not systematic [icj-myanmar-joint-dissent-2026-11-19: "the evidence establishes that attacks against fleeing Rohingya did sometimes occur"] | I (for six judges) | | | | C |
 
-The first and last rows fit every answer and move to Background held. B is ruled out on the record by all fifteen judges' findings of fact: even the dissent says the forces committed serious violations and names displacement or collective punishment, not genuine counter-insurgency, as its alternatives. Between A and C/D/E the record holds a ruling, not a fact we can settle: the court, by nine to six, held A and ruled out C and D; six judges held E. The page reports the holding as the court's and the dissent as the dissent's; that is the dispute sentence. What would change this: nothing further in this case (the judgment is final); the dissent's charge that the court altered the Croatia test will be tested when the court applies the test again, first in South Africa v. Israel [lead: https://www.icj-cij.org/case/192 , not admitted; background only].
+The first and last rows fit every answer and move to Background held. B, as Myanmar states it, is ruled out by all fifteen judges: the dissent itself is "fully convinced" that genocidal acts were committed at Min Gyi, Chut Pyin and Maung Nu and that many "went far beyond" what fighting ARSA required, and it names displacement or collective punishment, not genuine counter-insurgency, as its alternatives. The dissent is not only about intent, though: it also says the evidence does not show the three villages' pattern repeated across northern Rakhine's 509 Rohingya villages, nor systematic attacks on people fleeing (review r1 finding 1). Between A and C/D/E the record holds a ruling, not a fact we can settle: the court, by nine to six, held A and ruled out C and D; six judges held E. The page reports the holding as the court's and the dissent as the dissent's; that is the dispute sentence. What would change this: nothing further in this case (the judgment is final); the dissent's charge that the court altered the Croatia test will be tested when the court applies the test again, first in South Africa v. Israel [lead: https://www.icj-cij.org/case/192 , not admitted; background only].
 
 Question 4: what does it order, and can it be enforced?
 
@@ -78,7 +81,10 @@ Question 4: what does it order, and can it be enforced?
 | The 2020 order was breached [icj-myanmar-judgment-2026-11-19: "of at least five Rohingya villages in Buthidaung Township were burned and destroyed in May 2020"] | | C | C |
 | No enforcement of its own [ap-icj-myanmar-genocide-2026-11-19: "The court’s rulings are final and legally binding, but it has no way to enforce it beyond reporting noncompliance to the U.N. Security Council."] | | C | C |
 
-Survives: B, with C alive as a forecast nobody can test until Myanmar's two-year report falls due. Ruled out: A, on citizenship.
+| No breach of the first two 2020 measures [icj-myanmar-summary-2026-11-19: "Myanmar has not breached its obligations in respect of the first provisional measure"] | | C | I, against "Myanmar ignored the 2020 order" as a general claim |
+| The Arakan Army now holds the territory [npr-icj-myanmar-2026-11-19: "The territory is now controlled by ethnic Rakhine armed group the Arakan Army."] | | C | C |
+
+Survives: B, with C alive as a forecast nobody can test until Myanmar's two-year report falls due. Ruled out: A, on citizenship. The 2020 order: the court found a breach of the evidence measure only, and none of the first two (review r1 finding 2); the page says "broke its 2020 order to preserve evidence", never "ignored the order". Return runs into a second obstacle besides compliance: the military does not hold most of the land (review r1 finding 3).
 
 Question 5: why now. The court fixed the date [icj-myanmar-scheduling-2026-11-03: "The Court to deliver its Judgment on Thursday 19 November 2026 at 10 a.m."]. No answer competes.
 
@@ -87,8 +93,8 @@ Question 5: why now. The court fixed the date [icj-myanmar-scheduling-2026-11-03
 1. On Nov. 19 the International Court of Justice, the UN's court for disputes between countries, ruled 9 votes to 6 that Myanmar committed genocide against the Rohingya in 2017.
 2. It found Myanmar's security forces killed at least 10,000 Rohingya and drove more than 700,000 into Bangladesh, intending to destroy the roughly 815,000 who lived in northern Rakhine State.
 3. The ruling ends a case The Gambia brought in 2019 under the 1948 Genocide Convention, on a date the court set after hearings in January.
-4. The six dissenting judges agreed grave crimes were committed but said intent to destroy was not proven, and Myanmar's government called the ruling unfair.
-5. Myanmar must prosecute those responsible, let the Rohingya return and report back within two years so the court can set compensation, but the court has no way to enforce that beyond the UN Security Council.
+4. The six dissenting judges agreed soldiers committed genocidal acts in three villages but said the evidence did not show the same pattern across northern Rakhine or prove intent to destroy, and Myanmar's government called the ruling unfair.
+5. Myanmar must investigate and, where warranted, prosecute those responsible, let the Rohingya return and report back within two years so the court can set compensation, but the court has no way to enforce that beyond the UN Security Council.
 
 ## The plan
 
@@ -96,7 +102,7 @@ Headline: UN court rules 9 to 6 that Myanmar committed genocide against the Rohi
 
 What happened (sentence 1, with 2 folded in; the event, what it means, where it stands):
 1. What did the court decide? Myanmar, the state, committed genocide against the Rohingya in northern Rakhine during the 2017 "clearance operations", 9-6 [icj-myanmar-press-release-2026-11-19: "By nine votes to six"].
-2. Who are the parties? The Gambia, a small, mostly Muslim West African country, sued under the Genocide Convention, which lets any party sue [nyt-icj-myanmar-genocide-2026-11-19: "international law gives countries the ability to act against genocide anywhere in the world"]; Myanmar's military ran the operations, and its commander then, Min Aung Hlaing, is now president [icj-myanmar-judgment-2026-11-19: "declared President in April 2026"].
+2. Who are the parties? The Gambia, a small, mostly Muslim West African country backed by the 57-member Organisation of Islamic Cooperation [aljazeera-what-ruling-means-2026-11-19: "was backed by the 57-member Organisation of Islamic Cooperation (OIC)"], sued under the Genocide Convention, which lets any party sue [nyt-icj-myanmar-genocide-2026-11-19: "international law gives countries the ability to act against genocide anywhere in the world"]; Myanmar's military ran the operations, and its commander then, Min Aung Hlaing, is now president [icj-myanmar-judgment-2026-11-19: "declared President in April 2026"].
 3. What did the court find happened? At least 10,000 killed, more than 700,000 fled, mass rape, children attacked, villages razed and built over (sentence 2) [icj-myanmar-judgment-2026-11-19: "at least 10,000 deaths is supported by the"].
 4. Is that the end? Final, no appeal; remedies ordered, compensation later, no enforcement of its own (one line; detail below) [icj-myanmar-press-release-2026-11-19: "which is final, without appeal and binding on the Parties"].
 5. How did Myanmar respond? "not fair", "unjustly accused" [hindu-myanmar-unfair-2026-11-20: "Our country was unjustly accused"].
@@ -111,8 +117,8 @@ How it came to this (sentence 3; a timeline): opens on "why is a court ruling on
 
 The sides (sentence 4): opens on "what do the six dissenters say?"
 1. They accept the crimes and the group: [icj-myanmar-joint-dissent-2026-11-19: "We have no doubt that Myanmar’s security forces committed serious human rights"].
-2. Their objection: intent not proven; displacement or collective punishment could explain it; the court changed the 2015 Croatia test [icj-myanmar-joint-dissent-2026-11-19: "Since either of these inferences may reasonably be drawn from the evidence"].
-3. Myanmar's case: fighting ARSA after 30 outpost attacks [france24-preview-2026-11-19: "Myanmar was not obliged to remain idle and allow terrorists to have free rein"].
+2. Their objection: the three villages' pattern was not shown across the 509 villages, nor systematic attacks on people fleeing; intent not proven; displacement or collective punishment could explain it; the court changed the 2015 Croatia test [icj-myanmar-joint-dissent-2026-11-19: "Since either of these inferences may reasonably be drawn from the evidence"].
+3. Myanmar's case, first argued in 2019 by Aung San Suu Kyi before the coup: fighting ARSA after 30 outpost attacks [france24-preview-2026-11-19: "Myanmar was not obliged to remain idle and allow terrorists to have free rein"].
 4. Why it matters past Myanmar: the same test will apply to South Africa's case against Israel; one line, attributed [guardian-analysis-2026-11-19: "The fact that there were six dissenting voices on the bench suggested that substantial parts of the majority’s reasoning were not beyond dispute"].
 
 The Catch: opens on "was Myanmar found guilty, and is this the first time a country broke the Genocide Convention?"
@@ -122,14 +128,15 @@ The Catch: opens on "was Myanmar found guilty, and is this the first time a coun
 4. Who answers for it as a person? Not this court: the ICC prosecutor applied in 2024 for a warrant against Min Aung Hlaing for deportation and persecution; no decision public [amnesty-icj-myanmar-2026-11-19: "No decision on that request has been made public to date."]. (Corrects the Guardian's "has a pending arrest warrant" in passing, one clause.)
 
 What happens next (sentence 5): opens on "what must Myanmar do now, and who makes it?"
-1. Ordered: investigate and prosecute; legislate; guarantees; restitution including return; compensation [icj-myanmar-press-release-2026-11-19: "to compensate the Rohingya group and its members for the damage caused"].
+1. Ordered: investigate and, if warranted, prosecute; legislate; guarantees; restitution including return; compensation [icj-myanmar-press-release-2026-11-19: "to compensate the Rohingya group and its members for the damage caused"].
 2. Not ordered: citizenship [icj-myanmar-judgment-2026-11-19: "ordering the provision of citizenship for all members of the Rohingya group is beyond the scope"]; nor a halt to violence, since the court found the genocide not ongoing [icj-myanmar-judgment-2026-11-19: "Since neither the genocide nor the related incitement has been found to be ongoing, the Court cannot order cessation in this regard"].
-3. Deadline: report within two years; amount set after [icj-myanmar-judgment-2026-11-19: "Myanmar shall, within a period of two years of the delivery of the present Judgment, transmit to the Court a report"].
-4. Enforcement: if Myanmar does not comply, The Gambia can go to the Security Council [un-charter-chapter-14: "the other party may have recourse to the Security Council"], where permanent members can block action [un-charter-chapter-5: "including the concurring votes of the permanent members"]; China, one of them, objected to the ruling's "expanded interpretation" [straitstimes-myanmar-unfair-2026-11-20: "China is concerned about issues such as jurisdiction overreach and expanded interpretation"]; Britain asked for a Council session [uk-fcdo-miliband-2026-11-19: "calling urgently for a UN Security Council session to discuss the judgment"].
+3. Can they go home? The land is now held by the Arakan Army, a Rakhine armed group also accused of abusing Rohingya, not by the government the court ordered [npr-icj-myanmar-2026-11-19: "The territory is now controlled by ethnic Rakhine armed group the Arakan Army."].
+4. Deadline: report within two years; amount set after [icj-myanmar-judgment-2026-11-19: "Myanmar shall, within a period of two years of the delivery of the present Judgment, transmit to the Court a report"].
+5. Enforcement: if Myanmar does not comply, The Gambia can go to the Security Council [un-charter-chapter-14: "the other party may have recourse to the Security Council"], where permanent members can block action [un-charter-chapter-5: "including the concurring votes of the permanent members"]; China, one of them, objected to the ruling's "expanded interpretation" [straitstimes-myanmar-unfair-2026-11-20: "China is concerned about issues such as jurisdiction overreach and expanded interpretation"]; Britain asked for a Council session [uk-fcdo-miliband-2026-11-19: "calling urgently for a UN Security Council session to discuss the judgment"].
 
 The one qualifier: the genocide finding is a 9-6 holding, so the page states it as the court's ruling and never as the site's finding; the dissent's view is reported beside it.
 
-Background held: the 2016 operation's 87,000 refugees; Min Aung Hlaing's speeches the court found "capable of fuelling hatred"; the Facebook network; the 1.2 per cent death share and the court's reasoning on scale; Croatia 2015's facts; the "fourth time since the Holocaust" count; the eleven interveners; Gaza and Ukraine cases beyond one line; Argentina's universal-jurisdiction warrants; the NYT "2016 and 2017" and Al Jazeera "must cease" errors (held in the coverage section; the "must cease" correction reaches the page only as What happens next's "nor a halt to violence" clause); the Guardian's "the Myanmar military had committed genocide" (loose, not wrong about who acted).
+Background held: the 1978 and 1991-92 expulsions beyond one timeline row; President Iwasawa's objection that The Gambia should not negotiate the compensation amount (he voted against operative point 11) [icj-myanmar-summary-2026-11-19: "President Iwasawa further points out that The Gambia has not been authorized to represent the beneficiaries"]; the court's finding of no breach of the first two 2020 measures and that Myanmar filed its reports; the 2016 operation's 87,000 refugees; Min Aung Hlaing's speeches the court found "capable of fuelling hatred"; the Facebook network; the 1.2 per cent death share and the court's reasoning on scale; Croatia 2015's facts; the "fourth time since the Holocaust" count; the eleven interveners; Gaza and Ukraine cases beyond one line; Argentina's universal-jurisdiction warrants; the NYT "2016 and 2017" and Al Jazeera "must cease" errors (held in the coverage section; the "must cease" correction reaches the page only as What happens next's "nor a halt to violence" clause); the Guardian's "the Myanmar military had committed genocide" (loose, not wrong about who acted).
 
 ## The event
 
@@ -146,12 +153,15 @@ destroying Rohingya villages"]. About 1.2 million Rohingya refugees now live in 
 
 | Date | What happened | Source |
 |---|---|---|
+| 1978 | A registration operation with violence drives about 200,000 Rohingya to Bangladesh; nearly all later repatriated | [icj-myanmar-judgment-2026-11-19: "In 1978, a registration operation, accompanied by acts of violence, resulted in the flight to Bangladesh of an estimated 200,000 Rohingya"] |
+| 1991-92 | A similar operation displaces about 200,000; most later repatriated | [icj-myanmar-judgment-2026-11-19: "In late 1991 and early 1992, the Tatmadaw launched a further operation, similar to that of 1978"] |
 | 1982 | Citizenship law under which most Rohingya were left without citizenship; the court found access to citizenship discriminatory | [icj-myanmar-summary-2026-11-19: "the manner of granting access to citizenship for
 the Rohingya through legal and administrative measures was discriminatory"] |
 | 9 Oct 2016 | ARSA attacks three border police posts; the first clearance operation follows; about 87,000 flee | [icj-myanmar-judgment-2026-11-19: "approximately 87,000 Rohingya were displaced and fled to
 Bangladesh in 2016"] |
 | 25 Aug 2017 | ARSA attacks about 30 outposts; clearance operations begin the same day | [icj-myanmar-summary-2026-11-19: "The clearance operations began on 25 August 2017, the day the ARSA attacks commenced."] |
 | 11 Nov 2019 | The Gambia files the case under the Genocide Convention | [icj-myanmar-press-release-2026-11-19: "On 11 November 2019, The Gambia filed an Application"] |
+| Dec 2019 | Aung San Suu Kyi, then Myanmar's civilian leader, defends the military at the court | [nyt-icj-myanmar-genocide-2026-11-19: "Ms. Aung San Suu Kyi defended the military at the I.C.J., denying it committed genocide"] |
 | 23 Jan 2020 | Court orders Myanmar to prevent genocidal acts and preserve evidence | [icj-myanmar-order-2020-01-23: "to prevent the destruction and ensure the preservation of evidence related to allegations of acts within the scope of Article II"] |
 | May 2020 | Remnants of at least five Rohingya villages burned, in breach of the order | [icj-myanmar-judgment-2026-11-19: "of at least five Rohingya villages in Buthidaung Township were burned and destroyed in May 2020"] |
 | 1 Feb 2021 | Military seizes power; Min Aung Hlaing heads it | [icj-myanmar-judgment-2026-11-19: "On 1 February 2021, the Tatmadaw again seized power in Myanmar"] |
@@ -169,6 +179,7 @@ Earlier rulings in the same kind of case: in 2007 the court found Serbia had not
 
 - Myanmar's stated reason for the operations: counter-insurgency against ARSA [icj-myanmar-summary-2026-11-19: "According to Myanmar, these operations were necessary in order to counter an insurgency by a group
 known as the Arakan Rohingya Salvation Army or ARSA"]; its agent at the January hearings [france24-preview-2026-11-19: "Myanmar was not obliged to remain idle and allow terrorists to have free rein"].
+- The Gambia brought the case with the backing of the 57-member Organisation of Islamic Cooperation [aljazeera-what-ruling-means-2026-11-19: "was backed by the 57-member Organisation of Islamic Cooperation (OIC)"]; Myanmar argued it was suing as the OIC's "proxy", and the court held that seeking others' support did not bar the case [icj-myanmar-order-2020-01-23: "the fact that The Gambia may have sought and obtained the support of other States or international organizations in its endeavour to seise the Court does not preclude the existence between the Parties of a dispute"].
 - The Gambia's stated reason for suing: the Convention lets any party bring a case [nyt-icj-myanmar-genocide-2026-11-19: "international law gives countries the ability to act against genocide anywhere in the world"]. The court held that The Gambia may claim reparation in the Rohingya's interest, not its own [icj-myanmar-judgment-2026-11-19: "while The Gambia cannot seek reparation for itself"].
 - Why the date: set by the court on 3 November (above).
 
@@ -177,7 +188,7 @@ known as the Arakan Rohingya Salvation Army or ARSA"]; its agent at the January 
 - The Gambia and the majority: intent to destroy is the only reasonable inference [icj-myanmar-judgment-2026-11-19: "the only
 reasonable inference that can explain Myanmar’s actions is an intention to destroy a substantial part
 of the protected group"]. The majority tested and rejected Myanmar's three alternatives [icj-myanmar-judgment-2026-11-19: "the Court cannot conclude, from all the evidence taken together, that an intent to carry out counter-insurgency operations, an intent to forcibly displace or an intent to punish the Rohingya population are reasonable inferences to be drawn"].
-- Myanmar: it fought insurgents; it denied the facts [icj-myanmar-judgment-2026-11-19: "Myanmar largely denies The Gambia’s account"].
+- Myanmar: its civilian government under Aung San Suu Kyi first defended the military at the court in 2019 (above); after the 2021 coup the opposition National Unity Government said it "respects the authority" of the court [dw-icj-myanmar-2026-11-19: "respects the authority"]. Its case: it fought insurgents; it denied the facts [icj-myanmar-judgment-2026-11-19: "Myanmar largely denies The Gambia’s account"].
 - The six dissenting judges (Vice-President Sebutinde; Judges Tomka, Abraham, Xue, Nolte; Judge ad hoc Kress): intent not proven [icj-myanmar-joint-dissent-2026-11-19: "Our conclusion is that the commission of genocide by Myanmar has not been established"]; the majority departed from the 2015 test [icj-myanmar-joint-dissent-2026-11-19: "We do not see a compelling reason to depart from this jurisprudence"].
 - Agreed by both sides of the bench: the Rohingya are a protected group, the 815,000 are a substantial part, and serious crimes were committed [icj-myanmar-joint-dissent-2026-11-19: "We have no doubt that Myanmar’s security forces committed serious human rights"]. The fight is over intent and the test for inferring it.
 
@@ -242,3 +253,6 @@ of the protected group"]. The majority tested and rejected Myanmar's three alter
 - Camp posts naming Khalilur Rahman as General Assembly president: unverified and not this story.
 - Argentine universal-jurisdiction warrants (Amnesty mentions): background only.
 - X reply under Guterres rejecting the judgment "We, the people of Myanmar": one account, not an official statement.
+- Bangladesh's state minister Humaiun Kobir, 20 Nov, a 12-18 month target for safe passage (review r1 finding 4; BSS https://www.bssnews.net/news-flash/448089 and Reuters): not verified at source; a diplomatic target, not an agreement; not admitted.
+- UN Secretary-General's report A/81/302 on conditions for return (review r1 finding 3): the admitted NPR, Amnesty and NYT lines carry the Arakan Army point; not admitted.
+- NUG's 2022 withdrawal of preliminary objections (review r1 finding 7; HRW 2022): background; the page uses the NUG's 2026 line only.
