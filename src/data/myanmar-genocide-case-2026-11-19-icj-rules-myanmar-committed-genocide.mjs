@@ -28,7 +28,7 @@ export const computed = { fmt };
 export const event = {
   slug: "myanmar-genocide-case/2026-11-19-icj-rules-myanmar-committed-genocide",
   title: "UN court rules 9 to 6 that Myanmar committed genocide against the Rohingya",
-  dek: "It ordered Myanmar to investigate and, where warranted, prosecute those responsible, let the Rohingya return and compensate them, but it has no power of its own to enforce that.",
+  dek: "The court ordered Myanmar to investigate and, where warranted, prosecute those responsible, let the Rohingya return and compensate them, but it has no power of its own to enforce that.",
   name: "The Gambia v. Myanmar at the International Court of Justice",
   date: "2026-11-19",
   updated: "2026-11-20",
@@ -64,7 +64,7 @@ export const chronology = [
   { date: "Jan. 23, 2020", title: "The court orders Myanmar to prevent genocidal acts and preserve evidence.", cites: [{ c: "order-2020" }] },
   { date: "May 2020", title: "The remains of at least five Rohingya villages are burned, the court later finds.", cites: [{ c: "breach-may-2020" }] },
   { date: "Feb. 1, 2021", title: "The military seizes power, led by Min Aung Hlaing.", cites: [{ c: "coup-2021" }] },
-  { date: "July 22, 2022", title: "The court rules it can hear the case.", cites: [{ c: "jurisdiction-2022" }] },
+  { date: "July 2022", title: "The court rules it can hear the case.", cites: [{ c: "jurisdiction-2022" }] },
   { date: "Jan. 12-29, 2026", title: "Hearings on the merits.", cites: [{ c: "hearings-2026" }] },
   { date: "Apr. 2026", title: "Min Aung Hlaing is declared president.", cites: [{ c: "mah-president" }] },
   { date: "Nov. 19, 2026", title: "The court finds Myanmar committed genocide, 9 to 6.", cites: [{ c: "ruling-genocide" }], current: true },
