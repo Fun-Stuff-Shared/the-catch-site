@@ -17,6 +17,8 @@ export const n = {
   sentenceYears: 10,
   oicMembers: 57,
   judges: 15,
+  findingYear: 2017,
+  serbiaYear: 2007,
   majority: 9,
   minority: 6,
 };
@@ -67,5 +69,6 @@ export const chronology = [
   { date: "July 2022", title: "The court rules it can hear the case.", cites: [{ c: "jurisdiction-2022" }] },
   { date: "Jan. 12-29, 2026", title: "Hearings on the merits.", cites: [{ c: "hearings-2026" }] },
   { date: "Apr. 2026", title: "Min Aung Hlaing is declared president.", cites: [{ c: "mah-president" }] },
+  { date: "Nov. 3, 2026", title: "The court announces it will rule on Nov. 19.", cites: [{ c: "date-set" }] },
   { date: "Nov. 19, 2026", title: "The court finds Myanmar committed genocide, 9 to 6.", cites: [{ c: "ruling-genocide" }], current: true },
 ];
