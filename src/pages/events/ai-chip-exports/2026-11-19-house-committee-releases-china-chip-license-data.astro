@@ -6,6 +6,7 @@ import Cite from "../../../components/Cite.astro";
 import ExplanationList from "../../../components/story/ExplanationList.astro";
 import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
 import QuoteCard from "../../../components/story/QuoteCard.astro";
+import ShareBar from "../../../components/story/ShareBar.astro";
 import StorySources from "../../../components/StorySources.astro";
 import { claim } from "../../../lib/claims.mjs";
 import { event, n, approvals, statusBar, chronology, coverageVsTable, steps, explanations } from "../../../data/ai-chip-exports-2026-11-19-house-committee-releases-china-chip-license-data.mjs";
@@ -14,6 +15,7 @@ const short = (id) => claim(story, id).short.replace(/^(?:[A-Z][a-z]{2,3}\.?|Aug
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const timeline = chronology.map((e) => ({ date: e.date, title: cap(short(e.c)), current: e.current, cites: [{ c: e.c }] }));
 const fmt = (v) => v.toLocaleString("en-US");
+const tones = { approved: "primary", returned: "dark", pending: "light", rejected: "alert" };
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
   <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/ai-chip-exports/">AI chip exports</a><span>November 19, 2026</span></div>
@@ -42,15 +44,11 @@ const fmt = (v) => v.toLocaleString("en-US");
         <h2 data-layer="fact">What happened</h2>
         <p data-layer="narrative">Companies asked the Commerce Department for licenses to sell {n.requested} of Nvidia's H200 and AMD's MI325X AI chips to Chinese buyers, and by May 11, 2026, the department had approved {n.approved} of them, in {n.approvedLicenses} licenses.<Cite c="requested" /><Cite c="approved" /><Cite c="covered-chips" /> None of the approved chips had shipped by then: the department's own table marks every approval "Approved, not shipped."<Cite c="not-shipped" /> The House Foreign Affairs Committee made the table public on November 19. Its chairman, Rep. Brian Mast, a Florida Republican, used the Export Control Reform Act, which lets the committee release licensing data when it finds that keeping it secret is against the national interest, and the committee agreed without objection.<Cite c="released-nov-19" /><Cite c="national-interest" /><Cite c="unanimous" /></p>
         <p data-layer="narrative">The table comes from the Bureau of Industry and Security (BIS), the part of Commerce that licenses exports. Before January, BIS's rules presumed it would deny licenses for these chips to China; since a rule took effect on January 15, it weighs each application on its merits, as long as the exporter certifies, among other things, that U.S. buyers have enough supply and that the chips are tested in the United States.<Cite c="presumption-before" /><Cite c="january-rule" /> Most of what companies asked for had no license as of May 11: requests for {n.returned} chips had been sent back to the companies without a decision, {n.pending} were still pending, and one request, for {n.rejected}, had been rejected.<Cite c="requested" /><Cite c="approved" /><Cite c="returned" /><Cite c="pending" /><Cite c="rejected-one" /></p>
-        <figure class="story-figure status-figure" data-layer="fact">
-          <figcaption><strong>The {n.requested} chips companies asked to sell to Chinese buyers, by what BIS had done with them as of May 11, 2026</strong></figcaption>
-          <div class="status-bar" role="img" aria-label={statusBar.map((s) => `${s.label}: ${s.display}`).join("; ")}>
-            {statusBar.map((s) => <span class={`seg seg-${s.key}`} style={`width:${s.pct}%`}></span>)}
-          </div>
-          <ul class="status-legend">
-            {statusBar.map((s) => <li><span class={`swatch seg-${s.key}`} aria-hidden="true"></span><span class="lg-label">{s.label}</span> <span class="lg-value">{s.display}</span><Cite c={s.c} /></li>)}
-          </ul>
-        </figure>
+        <ShareBar
+          caption={`The ${n.requested} chips companies asked to sell to Chinese buyers, by what BIS had done with them as of May 11, 2026`}
+          parts={statusBar.map((s) => ({ label: s.label, value: s.value, display: s.display, tone: tones[s.key], cites: [{ c: s.c }] }))}
+          showShare={false}
+        />
         <p data-layer="narrative">Nvidia says licensed H200s did reach China later, in its quarter that ended October 25, and that it has since stopped shipping them.<Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /><Cite c="nvidia-stopped" /> Some coverage described the approvals as chips already sent to China.<Cite c="hill-fulfilled" /><Cite c="st-shipments" /><Cite c="mcguire-sent" /></p>
       </section>
 
@@ -138,14 +136,4 @@ const fmt = (v) => v.toLocaleString("en-US");
   .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
   .approvals-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .catch-compare th:first-child, .catch-compare td:first-child { width: 26%; }
-  .status-bar { display: flex; height: 2.25rem; border-radius: 4px; overflow: hidden; border: 1px solid var(--rule, #ccc); margin: 0.5rem 0 0.75rem; }
-  .status-bar .seg { display: block; height: 100%; }
-  .seg-approved { background: var(--accent, #1f6feb); }
-  .seg-returned { background: color-mix(in srgb, var(--ink, #222) 35%, transparent); }
-  .seg-pending { background: color-mix(in srgb, var(--ink, #222) 15%, transparent); }
-  .seg-rejected { background: #c2410c; }
-  .status-legend { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.35rem 1rem; }
-  .status-legend li { display: flex; align-items: baseline; gap: 0.4rem; flex-wrap: wrap; }
-  .swatch { display: inline-block; width: 0.8rem; height: 0.8rem; border-radius: 2px; flex: none; transform: translateY(0.1rem); }
-  .lg-value { font-variant-numeric: tabular-nums; font-weight: 600; }
 </style>

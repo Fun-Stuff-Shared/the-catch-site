@@ -1,0 +1,62 @@
+---
+/**
+ * Share bar: one whole split into parts (a total by status, a vote by side).
+ * Props:
+ *   caption: string
+ *   parts: Array<{ label: string, value: number, display?: string, tone?: "primary" | "dark" | "light" | "alert", cites?: Array<{ c?: string, s?: string, passage?: string }> }>
+ *   showShare?: boolean  — print each part's percent of the whole in the legend (default true)
+ */
+import Cite from "../Cite.astro";
+
+type Tone = "primary" | "dark" | "light" | "alert";
+interface Props {
+  caption: string;
+  parts: Array<{ label: string; value: number; display?: string; tone?: Tone; cites?: Array<{ c?: string; s?: string; passage?: string }> }>;
+  showShare?: boolean;
+}
+const { caption, parts, showShare = true } = Astro.props;
+const total = parts.reduce((sum, p) => sum + p.value, 0) || 1;
+const rows = parts.map((p, i) => {
+  const pct = (p.value / total) * 100;
+  return {
+    ...p,
+    tone: p.tone ?? (["primary", "dark", "light", "alert"] as Tone[])[i % 4],
+    display: p.display ?? p.value.toLocaleString("en-US"),
+    pct,
+    share: pct >= 1 ? `${Math.round(pct)}%` : "<1%",
+  };
+});
+---
+<figure class="share-bar" data-layer="fact">
+  <figcaption>{caption}</figcaption>
+  <div class="sb-track" role="img" aria-label={rows.map((r) => `${r.label}: ${r.display} (${r.share})`).join("; ")}>
+    {rows.map((r) => <span class={`sb-seg sb-${r.tone}`} style={`flex-basis:${r.pct}%`}></span>)}
+  </div>
+  <ul class="sb-legend">
+    {rows.map((r) => (
+      <li>
+        <span class={`sb-swatch sb-${r.tone}`} aria-hidden="true"></span>
+        <span class="sb-label">{r.label}</span>
+        <span class="sb-value">{r.display}{showShare && <span class="sb-share"> ({r.share})</span>}{r.cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</span>
+      </li>
+    ))}
+  </ul>
+</figure>
+
+<style>
+  .share-bar { margin: 1.5rem 0; font-family: var(--sans); }
+  .share-bar figcaption { font-size: 0.85rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.5rem; }
+  .sb-track { display: flex; height: 0.9rem; border-radius: 2px; overflow: hidden; background: var(--rule, #d9dde2); }
+  .sb-seg { display: block; flex-grow: 0; flex-shrink: 0; min-width: 2px; }
+  .sb-seg + .sb-seg { border-left: 1px solid var(--paper, #fff); }
+  .sb-primary { background: var(--blue, #1e4f7a); }
+  .sb-dark { background: var(--slate, #5b6470); }
+  .sb-light { background: #b9c0c8; }
+  .sb-alert { background: var(--red, #c8102e); }
+  .sb-legend { list-style: none; padding: 0; margin: 0.55rem 0 0; display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; }
+  .share-bar .sb-legend li { display: flex; align-items: baseline; gap: 0.4rem; margin: 0; font-family: var(--sans); font-size: 0.82rem; line-height: 1.4; }
+  .sb-swatch { width: 0.7rem; height: 0.7rem; border-radius: 1px; transform: translateY(0.08rem); }
+  .sb-label { color: var(--ink, #14181b); }
+  .sb-value { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .sb-share { font-weight: 400; color: var(--slate, #5b6470); }
+</style>

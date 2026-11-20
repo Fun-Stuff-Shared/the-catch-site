@@ -14,6 +14,7 @@
 //   SectionKicker   : mono-caps label above a section heading
 //   StepChart       : SVG step-function chart (rate history)
 //   BarChart        : SVG vertical bar chart (payroll changes, etc.)
+//   ShareBar        : one whole split into parts, with a legend (totals by status, votes by side)
 //   DataTable       : compact responsive data table
 //   DateLine        : dated points on a line with the day counts between them
 //   OutletCheck     : cross-source verification card
