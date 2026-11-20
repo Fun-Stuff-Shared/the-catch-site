@@ -42,7 +42,7 @@ export const computed = {
 
 export const event = {
   slug: "election-administration/2026-11-18-mississippi-inactive-voter-spike",
-  title: "Mississippi's inactive voter list grew by about 60,000 after the state turned to credit data",
+  title: "Mississippi's inactive voter list grew by about 60,000 in two years as the state turned to credit data",
   dek: `Democratic lawmakers want an investigation. ${fmt(n.inactive2026)} voters were listed as inactive before the Nov. 3 election; the state reported ${fmt(n.inactive2024)} inactive voters to the federal government for 2024.`,
   name: "Mississippi's inactive voter list and the Experian data",
   date: "2026-11-18",
