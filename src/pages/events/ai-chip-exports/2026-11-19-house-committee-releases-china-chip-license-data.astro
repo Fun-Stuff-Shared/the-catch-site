@@ -21,7 +21,7 @@ const fmt = (v) => v.toLocaleString("en-US");
     <main class="story" id="story-root">
       <p class="story-kicker" data-layer="fact">AI chip exports &middot; November 19, 2026 &middot; updated {event.updated}</p>
       <h1 data-layer="fact" data-claims="approved not-shipped released-nov-19">{event.title}</h1>
-      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="kress-h200-went" /><Cite c="nvidia-stopped" /><Cite c="hopper-2-4b" /></p>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="released-nov-19" /><Cite c="table-title" /><Cite c="requested" /><Cite c="returned" /><Cite c="pending" /></p>
       <ReadingModes />
       <nav class="story-toc" aria-label="In this story" data-layer="fact">
         <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
@@ -51,7 +51,7 @@ const fmt = (v) => v.toLocaleString("en-US");
             {statusBar.map((s) => <li><span class={`swatch seg-${s.key}`} aria-hidden="true"></span><span class="lg-label">{s.label}</span> <span class="lg-value">{s.display}</span><Cite c={s.c} /></li>)}
           </ul>
         </figure>
-        <p data-layer="narrative">Nvidia says licensed H200s did reach China later, in its quarter that ended October 25, and that it has since stopped shipping them.<Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /><Cite c="nvidia-stopped" /> Coverage of the release, including The Hill's, and a former official quoted by Reuters described the approvals as chips already sent to China.<Cite c="hill-fulfilled" /><Cite c="st-shipments" /><Cite c="mcguire-sent" /></p>
+        <p data-layer="narrative">Nvidia says licensed H200s did reach China later, in its quarter that ended October 25, and that it has since stopped shipping them.<Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /><Cite c="nvidia-stopped" /> Some coverage described the approvals as chips already sent to China.<Cite c="hill-fulfilled" /><Cite c="st-shipments" /><Cite c="mcguire-sent" /></p>
       </section>
 
       <section id="the-catch">
@@ -106,7 +106,7 @@ const fmt = (v) => v.toLocaleString("en-US");
       <section id="why-now">
         <h2 data-layer="fact">Why the committee released it</h2>
         <p data-layer="narrative">Democrats had demanded these records months earlier. On December 8, 2025, President Trump announced that the H200 could be sold to approved customers in China, and later that month Rep. Gregory Meeks of New York, the committee's top Democrat, and Sen. Elizabeth Warren used the same 2018 law to demand the applications and approvals from Commerce.<Cite c="trump-dec-8" /><Cite c="meeks-warren-request" /></p>
-        <p data-layer="narrative">The release came at the end of a week of scrutiny of Nvidia and its sales to China. Nvidia announced on November 12 that Jensen Huang had resigned as chief executive; Reuters reports that he resigned amid news of his affair with a former executive of Megaspeed, a Singapore-based company, whom U.S. authorities suspect of being a Chinese spy, which China denies.<Cite c="huang-resigned" /><Cite c="huang-affair-news" /> On November 16, the day Commerce issued <a href="/events/ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers/">a rule meant to stop companies from getting around U.S. limits by renting chips at data centers abroad</a>, Mast said advanced chips "should never end up in the hands of China" and that Americans "deserve to know how this happened," and the next day he asked BIS for information on chip smuggling and export licenses involving Megaspeed.<Cite c="nov-16-rule" /><Cite c="mast-why" /><Cite c="mast-megaspeed" /></p>
+        <p data-layer="narrative">The release came at the end of a week of scrutiny of Nvidia and its sales to China. Nvidia announced on November 12 that Jensen Huang had resigned as chief executive; Reuters reports that he resigned amid news of his affair with a former Megaspeed executive whom U.S. authorities suspect of being a Chinese spy, which China denies. Megaspeed is a Singapore-based company.<Cite c="huang-resigned" /><Cite c="huang-affair-news" /> On November 16, the day Commerce issued <a href="/events/ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers/">a rule meant to stop companies from getting around U.S. limits by renting chips at data centers abroad</a>, Mast said advanced chips "should never end up in the hands of China" and that Americans "deserve to know how this happened," and the next day he asked BIS for information on chip smuggling and export licenses involving Megaspeed.<Cite c="nov-16-rule" /><Cite c="mast-why" /><Cite c="mast-megaspeed" /></p>
         <p data-layer="narrative">Meeks says BIS "seemed to approve licenses for advanced chips to China with little scrutiny."<Cite c="meeks-little-scrutiny" /> Commerce says its approvals rest on the January rule's added national-security requirements and on deliberation among several agencies.<Cite c="commerce-statement" /></p>
       </section>
 
@@ -124,7 +124,7 @@ const fmt = (v) => v.toLocaleString("en-US");
             <tbody>{steps.map((s) => <tr><td>{s.when}</td><td>{s.what}{s.c.map((id) => <Cite c={id} />)}</td></tr>)}</tbody>
           </table>
         </figure>
-        <p data-layer="narrative">The committee says it holds applications the table does not fully reflect, among them Nvidia's December 2025 request to export {n.tencent445} H200s to Tencent, and {n.pendingApps} applications for {n.pending} chips were still undecided on May 11.<Cite c="tencent-445k" /><Cite c="pending" /></p>
+        <p data-layer="narrative">The committee also holds an application the table does not fully reflect: Nvidia's December 19, 2025, request to export {n.tencent445} H200s to Tencent.<Cite c="tencent-445k" /></p>
       </section>
 
       <section id="records">
