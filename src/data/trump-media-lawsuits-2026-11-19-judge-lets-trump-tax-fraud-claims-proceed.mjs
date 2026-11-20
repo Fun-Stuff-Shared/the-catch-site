@@ -27,7 +27,7 @@ export const computed = { fmt };
 export const event = {
   slug: "trump-media-lawsuits/2026-11-19-judge-lets-trump-tax-fraud-claims-proceed",
   title: "Judge lets Trump's defamation suit go forward over six statements in the book and one in The Times",
-  dek: `Seven of the ${n.challenged} statements Trump challenged go forward; the one left against the Times itself says authorities looked into his ties with the Mafia and found violations of money laundering rules.`,
+  dek: "The judge wrote that anyone who publishes a claim that someone committed a complex crime, without an explicit opinion from a qualified source who examined the facts, \"necessarily proceeds\" knowing it is probably false; a press-freedom group says the ruling misconstrues the law.",
   name: "Trump's defamation suit against The New York Times and Penguin Random House",
   date: "2026-11-19",
   updated: "2026-11-20",
