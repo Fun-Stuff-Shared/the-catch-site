@@ -68,7 +68,7 @@ export const statusBar = [
 export const event = {
   slug: "ai-chip-exports/2026-11-19-house-committee-releases-china-chip-license-data",
   title: "Commerce approved 879,868 AI chips for Chinese companies; none had shipped by May",
-  dek: "The House Foreign Affairs Committee made public Commerce's license data: as of May 11, requests for 3.4 million chips had been filed, and 2.5 million of them had been sent back without a decision or were still pending.",
+  dek: "The approved buyers included ByteDance, Tencent and Alibaba; four of them, Alibaba, Tencent, Baidu and BYD, are on the Pentagon's list of Chinese military companies.",
   name: "The House committee's release of Commerce's China chip-license table",
   date: "2026-11-19",
   updated: "2026-11-20",
