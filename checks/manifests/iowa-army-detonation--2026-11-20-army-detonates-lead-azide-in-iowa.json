@@ -7,8 +7,57 @@
   "v2_subjects": [
     "development-iowa-army-lead-azide-detonation-ca4020af1750"
   ],
-  "story_title": "Army plans to blow up five tons of lead azide in Iowa",
-  "sub_events": [],
+  "story_title": "Army delays Iowa lead azide blast to Monday as groups ask court to stop it",
+  "sub_events": [
+    {
+      "id": "plan-announced-2026-10-08",
+      "date": "2026-10-08",
+      "label": "The Army announces the November detonation",
+      "section_anchor": "the-catch",
+      "records": [
+        "army-openhouse-release-2026-10-08"
+      ]
+    },
+    {
+      "id": "permit-2026-11-13",
+      "date": "2026-11-13",
+      "label": "EPA issues the emergency permit",
+      "section_anchor": "what-happened",
+      "records": [
+        "epa-emergency-permit-2026-11-13",
+        "epa-public-notice-2026-11-16"
+      ]
+    },
+    {
+      "id": "maps-2026-11-15",
+      "date": "2026-11-15",
+      "label": "The Army sets Nov. 20 and publishes the first plume maps",
+      "section_anchor": "the-plume",
+      "records": [
+        "army-advisory-2026-11-15",
+        "army-advisory-pdf-2026-11-15"
+      ]
+    },
+    {
+      "id": "suit-2026-11-19",
+      "date": "2026-11-19",
+      "label": "Two groups ask the Eighth Circuit to stay the permit",
+      "section_anchor": "the-sides",
+      "records": [
+        "ej-emergency-motion-2026-11-19"
+      ]
+    },
+    {
+      "id": "postponed-2026-11-19",
+      "date": "2026-11-19",
+      "label": "The Army moves the blast to Monday, Nov. 23",
+      "section_anchor": "what-happened",
+      "records": [
+        "army-postponement-2026-11-19",
+        "telle-x-2026-11-19"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "epa-emergency-permit-2026-11-13",
@@ -1010,6 +1059,55 @@
       "label": "Iowa Starting Line",
       "meta": " · published 2026-11-17",
       "usage": "Barati on who had been told, the permit's five days, storage history, cleanup advice"
+    }
+  ],
+  "event_record": "/events/iowa-army-detonation/",
+  "completed_by": "claude (iowa-army-detonation author session, worktree 2026-11-20-army-detonates-lead-azide-in-iowa)",
+  "date_completed": "2026-11-20",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "Every record the page cites is pinned under data/sources/iowa-army-detonation and data/sources/coverage with its text and hash; the X posts were admitted from saved post text and the Army's map page from a rendered image with its OCR, because capture drops map labels."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The page computes nothing; every number in the data module (68 drums, 9,700 pounds, the 100 and 60 mile air reach, the 40 and 25 mile dust areas, the 0.18 edge, the permit's 5-day, 48-hour, 6-hour and 24-hour deadlines) is printed on an admitted record named beside it."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "The Intercept's 'blanketing communities ... up to 100 miles away' is checked against the Army's map legend, EPA's all-lead modeling rule and the groups' own reading of the dust maps; CBS News Chicago's northwest Illinois line against Illinois EPA's release and Linn County's note that Friday's maps do not apply to Monday."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live element; the maps, statements, posts and coverage are saved copies dated in the records list, and the page says Monday's maps are not yet published."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "A new iowa-army-detonation subject page and data module list the 68 drums and the permit's five-day minimum for the first plume map, with a listing description covering the delay to Monday and the court petition."
+    }
+  },
+  "figures": [
+    {
+      "figure": "drums",
+      "label": "Drums of degraded lead azide to be detonated",
+      "value": "68",
+      "unit": "drums",
+      "kind": "sourced",
+      "source": {
+        "source_id": "epa-emergency-permit-2026-11-13",
+        "quote_span": "Quantity: There are 68 drums of Lead Azide,"
+      }
+    },
+    {
+      "figure": "pounds",
+      "label": "Pounds of lead azide, per the lawmakers' letter",
+      "value": "9700",
+      "unit": "pounds",
+      "kind": "sourced",
+      "source": {
+        "source_id": "lawmakers-letter-2026-11-19",
+        "quote_span": "We write to express our grave concerns with this Friday’s planned detonation of 9,700 pounds of lead azide at the Iowa Army Ammunition Plant (IAAAP) in Middletown, Iowa."
+      }
     }
   ]
 }
