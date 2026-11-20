@@ -17,7 +17,7 @@ export const approvals = [
   { buyer: "Shanghai Mihoyo", maker: "Nvidia", chips: 57810 },
   { buyer: "Baidu", maker: "Nvidia", chips: 43000 },
   { buyer: "JD", maker: "Nvidia", chips: 41300 },
-  { buyer: "Beijing Didi Infinity", maker: "Nvidia", chips: 24780 },
+  { buyer: "Beijing Didi Infinity Technology and Development", maker: "Nvidia", chips: 24780 },
   { buyer: "Ubiquant Investment", maker: "Nvidia", chips: 8660 },
   { buyer: "Li Auto", maker: "Nvidia", chips: 8260 },
   { buyer: "Great Wall Motor", maker: "Nvidia", chips: 4800 },
@@ -95,7 +95,7 @@ export const chronology = [
 // What reports said against what the table says.
 export const coverageVsTable = [
   { who: "The Hill", said: "\"The order was fulfilled\"; \"sending 75,000 to Alibaba\"", saidC: "hill-fulfilled", table: `All ${21} approvals marked "Approved, not shipped" as of May 11`, tableC: ["not-shipped"] },
-  { who: "Chris McGuire, former U.S. official, quoted by Reuters", said: "\"over 30% of the AI chips sent to China were shipped to\" Pentagon-listed companies", saidC: "mcguire-sent", table: `${n.four} of ${n.approved} approved chips (${n.fourShare}%) were for Alibaba, Tencent, Baidu and BYD, the four on the list; none had shipped as of May 11`, tableC: ["four-approved", "summary-june-list", "approved", "not-shipped"] },
+  { who: "Chris McGuire, former U.S. official, quoted by Reuters", said: "\"over 30% of the AI chips sent to China were shipped to\" Pentagon-listed companies", saidC: "mcguire-sent", table: `${n.four} of ${n.approved} approved chips (${n.fourShare}%) were for Alibaba, Tencent, Baidu and BYD, which are on the list; none had shipped as of May 11`, tableC: ["four-approved", "summary-june-list", "approved", "not-shipped"] },
   { who: "The Straits Times (summary)", said: "\"879,000 advanced AI chip shipments to China\"", saidC: "st-shipments", table: `${n.approved} chips approved, none shipped as of May 11`, tableC: ["approved", "not-shipped"] },
   { who: "The New York Times, as carried by The Business Times (subheadline)", said: "Commerce \"approved applications to sell more than 3.4 million chips\"", saidC: "bt-3-4m", table: `${n.requested} requested; ${n.approved} approved`, tableC: ["requested", "approved"] },
 ];
