@@ -30,7 +30,7 @@ const rows = parts.map((p, i) => {
 <figure class="share-bar" data-layer="fact">
   <figcaption>{caption}</figcaption>
   <div class="sb-track" role="img" aria-label={rows.map((r) => `${r.label}: ${r.display} (${r.share})`).join("; ")}>
-    {rows.map((r) => <span class={`sb-seg sb-${r.tone}`} style={`flex-basis:${r.pct}%`}></span>)}
+    {rows.filter((r) => r.value > 0).map((r) => <span class={`sb-seg sb-${r.tone}`} style={`flex-basis:${r.pct}%`}></span>)}
   </div>
   <ul class="sb-legend">
     {rows.map((r) => (
@@ -47,8 +47,8 @@ const rows = parts.map((p, i) => {
   .share-bar { margin: 1.5rem 0; font-family: var(--sans); }
   .share-bar figcaption { font-size: 0.85rem; font-weight: 600; line-height: 1.35; margin: 0 0 0.5rem; }
   .sb-track { display: flex; height: 0.9rem; border-radius: 2px; overflow: hidden; background: var(--rule, #d9dde2); }
-  .sb-seg { display: block; flex-grow: 0; flex-shrink: 0; min-width: 2px; }
-  .sb-seg + .sb-seg { border-left: 1px solid var(--paper, #fff); }
+  .sb-seg { display: block; flex-grow: 0; flex-shrink: 0; }
+  .sb-seg + .sb-seg { box-shadow: inset 1px 0 0 var(--paper, #fff); }
   .sb-primary { background: var(--blue, #1e4f7a); }
   .sb-dark { background: var(--slate, #5b6470); }
   .sb-light { background: #b9c0c8; }
