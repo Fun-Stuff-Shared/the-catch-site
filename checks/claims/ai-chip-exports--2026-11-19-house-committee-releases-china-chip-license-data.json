@@ -46,7 +46,7 @@
   },
   {
    "id": "table-title",
-   "says": "The table, from the Commerce Department's Bureau of Industry and Security (BIS), shows the status of every license application for the chips as of May 11, 2026.",
+   "says": "The table, from the Commerce Department's Bureau of Industry and Security (BIS), shows the status of H200 and MI325X license applications in BIS's May 11, 2026, summary; the committee says it holds other applications the summary did not fully reflect.",
    "status": "fact",
    "load": [
     "figure"
@@ -55,6 +55,10 @@
     {
      "record": "bis-license-table-2026-05-11",
      "passage": "H200 License and Equivalent Application Status as of May 11, 2026"
+    },
+    {
+     "record": "hfac-summary-2026-11-19",
+     "passage": "The House Foreign Affairs Committee also has in its possession other license"
     }
    ],
    "short": "BIS table: status as of May 11, 2026"
@@ -156,10 +160,22 @@
   },
   {
    "id": "rwa-meaning",
-   "says": "Under BIS rules, an application BIS cannot correct for deficiencies crucial to processing is returned without action; it is not a denial, and BIS abbreviates it RWA.",
+   "says": "Returned without action is not a denial: BIS rules list reasons including the applicant's own request, a license exception applying, missing documents, or BIS being unable to correct deficiencies; BIS abbreviates it RWA.",
    "status": "fact",
    "load": [],
    "evidence": [
+    {
+     "record": "ear-772-rwa",
+     "passage": "The applicant has requested the application be returned;"
+    },
+    {
+     "record": "ear-772-rwa",
+     "passage": "A License Exception applies;"
+    },
+    {
+     "record": "ear-772-rwa",
+     "passage": "Required documentation has not been submitted with the application; or"
+    },
     {
      "record": "ecfr-750-4",
      "passage": "If a license application is registered, but BIS is unable to correct deficiencies crucial to processing the license application, it will be returned without action."
@@ -849,11 +865,9 @@
   },
   {
    "id": "reuters-shipments",
-   "says": "Reuters reported that the administration \"approved shipments\" of nearly 900,000 chips and called them \"879,000 chip shipments.\"",
+   "says": "Reuters wrote that the administration \"approved shipments\" of nearly 900,000 chips, and said it was not immediately clear how many approvals resulted in shipments.",
    "status": "said",
-   "load": [
-    "catch"
-   ],
+   "load": [],
    "evidence": [
     {
      "record": "reuters-licenses-2026-11-19",
@@ -862,6 +876,10 @@
     {
      "record": "reuters-licenses-2026-11-19",
      "passage": "The approvals for 879,000 chip shipments by the Commerce Department included 75,000 for Alibaba, 150,000 for Tencent, 43,000 for Baidu, and 4,000 for BYD, all on the Pentagon's list of alleged Chinese military-backed companies, the committee noted."
+    },
+    {
+     "record": "reuters-licenses-2026-11-19",
+     "passage": "It was not immediately clear how many of the approvals resulted in actual China-bound shipments of chips"
     }
    ],
    "short": "Reuters: \"approved shipments\"",
@@ -1014,6 +1032,80 @@
     }
    ],
    "by": "The New York Times; Nvidia"
+  },
+  {
+   "id": "hk-stockpile",
+   "says": "Reuters reported on November 5, citing two people, that about 600,000 H200s were stored in Hong Kong awaiting Beijing's approval to enter mainland China.",
+   "short": "Nov. 5: 600,000 H200s waiting in Hong Kong, Reuters reports",
+   "status": "said",
+   "by": "Reuters, citing two people familiar with the matter",
+   "load": [
+    "figure"
+   ],
+   "evidence": [
+    {
+     "record": "reuters-hk-stockpile-2026-11-05",
+     "passage": "About 600,000 of Nvidia’s advanced artificial intelligence chips are stored in Hong Kong awaiting shipment to mainland China, two people familiar with the matter said"
+    }
+   ]
+  },
+  {
+   "id": "meeks-dec-1",
+   "says": "Meeks and Rep. Sydney Kamlager-Dove asked Commerce by December 1 whether it let Nvidia interfere with its investigation of Megaspeed.",
+   "short": "Dec. 1: Commerce answers due on Megaspeed probe",
+   "status": "expected",
+   "load": [],
+   "evidence": [
+    {
+     "record": "reuters-meeks-probe-2026-11-20",
+     "passage": "whether the department allowed a major American corporation that is financially and personally linked to the Trump administration to interfere with enforcement activity"
+    },
+    {
+     "record": "reuters-meeks-probe-2026-11-20",
+     "passage": "which requested answers and relevant documents by December 1"
+    }
+   ]
+  },
+  {
+   "id": "alibaba-sued",
+   "says": "Alibaba sued the Pentagon in June over its designation.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "cbs-alibaba-suit-2026-06-24",
+     "passage": "Chinese tech giant Alibaba has filed a federal lawsuit against the Defense Department for designating it a military-linked firm."
+    }
+   ]
+  },
+  {
+   "id": "huang-affair-news",
+   "says": "Huang resigned amid news of his affair with a former Megaspeed executive whom U.S. authorities suspect of being a Chinese spy; China denies she is a spy.",
+   "status": "said",
+   "by": "Reuters",
+   "load": [],
+   "evidence": [
+    {
+     "record": "reuters-meeks-probe-2026-11-20",
+     "passage": "Singapore-based Megaspeed has attracted public attention since news broke that former Nvidia CEO Jensen Huang had an affair with former Megaspeed executive Alice Huang, whom US authorities suspect of being a Chinese spy."
+    },
+    {
+     "record": "reuters-meeks-probe-2026-11-20",
+     "passage": "China has denied Alice Huang is a spy."
+    }
+   ]
+  },
+  {
+   "id": "presumption-before",
+   "says": "Before January 2026 these chips faced a presumption of denial for China: BIS's starting point was to refuse.",
+   "status": "fact",
+   "load": [],
+   "evidence": [
+    {
+     "record": "fr-h200-rule-2026-01-15",
+     "passage": "changing it from a presumption of denial to a case-by-case"
+    }
+   ]
   }
  ]
 }
