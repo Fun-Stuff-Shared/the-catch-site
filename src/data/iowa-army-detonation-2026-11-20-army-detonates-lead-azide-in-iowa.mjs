@@ -70,6 +70,5 @@ export const warnings = [
   entry("Oct. 15", ["faq-waited", "october-map-windows"]),
   entry("Oct. 23", ["plume-model-oct23"]),
   entry("Nov. 15", ["first-maps-nov15"]),
-  entry("Nov. 16", ["governor-learned-monday"]),
-  entry("Nov. 17", ["barati-shocking"], true),
+  entry("Nov. 16", ["governor-learned-monday"], true),
 ];
