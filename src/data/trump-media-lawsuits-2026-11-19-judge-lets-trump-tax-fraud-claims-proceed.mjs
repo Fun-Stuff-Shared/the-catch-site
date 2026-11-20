@@ -26,8 +26,8 @@ export const computed = { fmt };
 
 export const event = {
   slug: "trump-media-lawsuits/2026-11-19-judge-lets-trump-tax-fraud-claims-proceed",
-  title: "Judge lets Trump's tax-fraud claims go forward against the book, not The Times",
-  dek: `${n.surviving} of the ${n.challenged} statements Trump challenged go forward; the only one against the Times itself is about Mafia ties and money-laundering rules.`,
+  title: "Judge lets Trump's defamation suit go forward over six statements in the book and one in The Times",
+  dek: `Seven of the ${n.challenged} statements Trump challenged go forward; the one left against the Times itself says authorities looked into his ties with the Mafia and found violations of money laundering rules.`,
   name: "Trump's defamation suit against The New York Times and Penguin Random House",
   date: "2026-11-19",
   updated: "2026-11-20",
