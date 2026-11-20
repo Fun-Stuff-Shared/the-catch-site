@@ -5,7 +5,7 @@ Every fact line ends with its source: the record id and the record's words in sq
 ## The story
 
 The Army has put off until Monday, November 23, its plan to blow up 68 drums of degraded lead azide, about 9,700 pounds, inside two bunkers at the Iowa Army Ammunition Plant in Middletown, Iowa, a blast that will send up a plume of lead dust whose path depends on Monday's weather.
-People in the plume's path are told to stay indoors, for an hour by the Army's estimate and a day or two by the state health department's, and then wet-clean what children touch, and people near two Middletown parks were asked to leave because windows could break.
+People in the plume's path are told to stay indoors with windows shut, which the Army says the dust makes necessary for under an hour and Iowa's health department says for one to two days, and then to wet-clean what children touch; people near two Middletown parks were asked to leave because windows could break.
 The explosive has crystallized and become too sensitive to move, and Acting Army Secretary Adam Telle says Monday is the latest it can wait before colder weather makes it less stable.
 Two environmental groups have asked a federal appeals court to stop it, saying EPA's permit skipped treatments that avoid a plume and protections the law requires, and Telle says the Army warned the area from March, while the Army's own records show the plume maps came five days before the blast.
 Before Monday the Army must publish new plume maps two days ahead and then every hour, the court has not ruled, and within a day after the blast it must start sampling parks and consenting homes where the final map shows the heaviest dust.
