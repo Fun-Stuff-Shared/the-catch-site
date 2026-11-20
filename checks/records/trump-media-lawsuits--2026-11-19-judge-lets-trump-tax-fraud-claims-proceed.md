@@ -57,7 +57,7 @@ On Nov. 19, federal Judge Steven Merryday in Tampa let President Trump's $15 bil
 Six of the seven are tax-fraud accusations from Lucky Loser, the 2024 book by New York Times reporters Susanne Craig and Russ Buettner, and those claims run only against the two authors and Penguin Random House, the book's publisher; against the Times itself, one sentence by its White House correspondent Peter Baker survives.
 Merryday held that Trump's complaint plausibly alleges the authors knew a tax-fraud accusation needed a qualified expert's explicit opinion and published without one, a question he first put to the defense at a July hearing.
 Trump's lawyers call the ruling a victory over the Times, the Times says almost every claim against it is gone, and a press-freedom group says the judge misread the actual-malice standard; the ruling decides nothing about whether any statement is true.
-The defendants must answer the complaint within 28 days, in a case where evidence-gathering has been open since March and mediation failed in May.
+The defendants must answer the complaint within 28 days; the court refused in March to pause discovery, and a mediation in May ended without agreement.
 
 ## The plan
 
@@ -143,7 +143,7 @@ He denied another amendment and ordered an answer within 28 days [order-2026-11-
 
 ## The sides
 
-Trump (ECF 99, 104): the tax statements are factual accusations of crimes never charged; the authors knew they lacked the expertise to make them [sac-2026-08-27: "neither President Trump nor his father has"]. On Baker's sentence: the linked FinCEN release concerned Trump Taj Mahal, not Trump [sac-2026-08-27: "those claims were levied against Trump Taj Mahal"]. The release itself names Trump Taj Mahal Associates [fincen-1998-01-28: "Trump Taj Mahal Associates"]. The stock-rules clause rests on a 1988 federal case against Trump personally: the government charged that he failed to file premerger notifications for stock in Holiday Corp. and Bally Manufacturing, and he paid a $750,000 civil penalty without admitting a violation [ftc-1988-04-05: "Trump agreed to settle the"] [ftc-1988-04-05: "charges by paying a $750,000 civil penalty"] [ftc-1988-04-05: "does not constitute an admission"]. The defense cited both [mtd-2025-12-15: "pay a $750,000 fine to settle a lawsuit"].
+Trump (ECF 99, 104): the tax statements are factual accusations of crimes never charged; the authors knew they lacked the expertise to make them [sac-2026-08-27: "neither President Trump nor his father has"]. His complaint also alleges neither he nor Fred Trump was "investigated for" tax fraud [order-2026-11-19: "neither President Trump nor Fred Trump was investigated for, charged with, or convicted of tax fraud"]. On the day the 2018 investigation ran, New York's Department of Taxation and Finance said it was "reviewing the allegations" and "vigorously pursuing all appropriate avenues of investigation" [nbc-2018-10-02: "The tax department is reviewing the allegations in the NYT article and is vigorously pursuing all appropriate avenues of investigation"] [politico-2018-10-03: "The Department of Taxation and Finance, which is responsible for investigating tax fraud, has opened an investigation"]. The department's own release was not found; its statement reaches the record through outlets quoting its spokesman, James Gazzale. Politico reported the conduct was likely past the criminal statute of limitations [politico-2018-10-03: "likely putting any criminal liability past the statute of limitations"]. On Baker's sentence: the linked FinCEN release concerned Trump Taj Mahal, not Trump [sac-2026-08-27: "those claims were levied against Trump Taj Mahal"]. The release itself names Trump Taj Mahal Associates [fincen-1998-01-28: "Trump Taj Mahal Associates"]. The stock-rules clause rests on a 1988 federal case against Trump personally: the government charged that he failed to file premerger notifications for stock in Holiday Corp. and Bally Manufacturing, and he paid a $750,000 civil penalty without admitting a violation [ftc-1988-04-05: "Trump agreed to settle the"] [ftc-1988-04-05: "charges by paying a $750,000 civil penalty"] [ftc-1988-04-05: "does not constitute an admission"]. The defense cited both [mtd-2025-12-15: "pay a $750,000 fine to settle a lawsuit"].
 
 The defendants (ECF 44, 103, 107): the authors analyzed about 100,000 pages and relied on experts quoted in 2018 [def-supplement-2026-09-17: "analyz[ed] about one hundred thousand pages of audited financial"]; Trump never refuted the 2018 findings [def-supplement-2026-09-17: "President Trump never"]; Penguin cannot be charged with the authors' state of mind because they were independent contractors [def-supplement-2026-09-17: "independent contractor"]; Baker's sentence "does not assert that the violations were Plaintiff's personally" [def-reply-2026-10-14: "does not assert that the violations were Plaintiff’s personally"].
 
@@ -194,6 +194,8 @@ Both sides agree Sullivan and the plausibility standard control [order-2026-11-1
 
 ## Unknowns
 
+- What came of New York's 2018 tax review: no admitted record shows an outcome, a charge or a closing; the state's site was not searched past the spokesman's statement.
+
 - The publications as filed: ECF 44 lists Lucky Loser, both articles and the 2018 investigation as exhibits (review r1, finding 4), but they are not on RECAP and the Times pages refused capture (403). Statements are quoted from the complaint and the order.
 
 - Whether the "masquerading as loans" statement is in or out: the order quotes it among the seven (citing ¶59) and lists ¶59 among the 27; in the complaint the statement is ¶55 and ¶59 is a different one [order-2026-11-19: "a likely tax fraud that went unnoticed” (Doc. 99 at ¶59)"]. No clarification on the docket as of Nov. 19.
@@ -202,7 +204,7 @@ Both sides agree Sullivan and the plausibility standard control [order-2026-11-1
 
 ## Leads not admitted
 
-- Review r1, finding 1: New York's tax department said in October 2018 it was reviewing the allegations in the Times investigation. Bloomberg Tax refused by robots.txt; the CNBC URL tried returned 404. Not admitted. Bears on Trump's "never investigated" allegation, which the page carries only as Trump's claim; it does not change the five sentences. https://news.bloombergtax.com/daily-tax-report/new-york-tax-department-probes-trump-taxes-from-decades-ago
+- Review r1, finding 1, as cited: Bloomberg Tax refused by robots.txt. The same statement was admitted from NBC News and Politico (see The sides).
 - Review r1, finding 3: Trump Media stock had fallen about 70% before the book and article ran (Washington Post, Sept. 7, 2024), against Trump's damages theory. Declined: damages and causation are not in this ruling; per quod damages were argued (ECF 44) but the order does not address them.
 
 - Grok: Josh Gerstein (Politico) post, https://x.com/joshgerstein/status/2123501024791150657, a lead; not needed.
