@@ -24,3 +24,5 @@
 - "The 68 drums of degraded explosive at a Middletown ammunition plant will send up a plume of lead dust, and the Army must" (status, claim plume-contains-lead): Readers would take the lead-dust plume as a certain fact, when it is the Army's own account of what the blast will do.
 
 NOT BOUND
+
+<!-- em-dash-disable-file: checker output kept verbatim -->

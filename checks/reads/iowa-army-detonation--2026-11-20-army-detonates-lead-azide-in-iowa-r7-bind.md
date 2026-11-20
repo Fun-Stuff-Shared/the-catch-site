@@ -12,3 +12,5 @@
 - "The council's director allowed that the Army may be right." (status, claim groups-concede): "allowed that the Army may be right" recasts the director's statement that the Army may have no other safe disposal way as conceding the Army may be right in general.
 
 NOT BOUND
+
+<!-- em-dash-disable-file: checker output kept verbatim -->

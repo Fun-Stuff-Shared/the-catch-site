@@ -11,3 +11,5 @@
 - none
 
 BOUND
+
+<!-- em-dash-disable-file: checker output kept verbatim -->
