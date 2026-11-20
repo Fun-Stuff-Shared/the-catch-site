@@ -130,7 +130,7 @@ export const explanations = [
     claim: [["Nvidia says China restricted the sales and it could not sell all it was licensed for.", c("nvidia-feb-licenses")]],
     evidenceFor: [["Reuters reported about 600,000 H200s stored in Hong Kong awaiting Beijing's approval.", c("hk-stockpile")]],
     evidenceAgainst: [["Kress says the licensed H200s went to China in the quarter that ended October 25, when Nvidia shipped $2.4 billion of Hopper data center products there.", c("kress-h200-went"), c("hopper-2-4b")]],
-    conclusion: [["Both hold: Nvidia says China kept it from selling all it was licensed for, and Kress says the licensed H200s it did sell went to China in the quarter that ended October 25.", c("nvidia-feb-licenses"), c("hk-stockpile"), c("kress-h200-went"), c("hopper-2-4b")]],
+    conclusion: [["Nvidia says China kept it from selling all it was licensed for, and Kress says the licensed H200s it did sell went to China in the quarter that ended October 25.", c("nvidia-feb-licenses"), c("hk-stockpile"), c("kress-h200-went"), c("hopper-2-4b")]],
   },
   {
     id: "conditions",
