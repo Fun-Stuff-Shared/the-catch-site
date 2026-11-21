@@ -222,6 +222,8 @@ publish without them.
 
 ## 5. Read it cold, then bind it
 
+Run `python3 skills/catch-story/scripts/prebind.py <story>` before bind for a fast advisory pre-check. Bind runs it too; `--strict` on either command stops on lint findings.
+
 ```bash
 zsh skills/catch-story/scripts/thread.sh <story> <N>      # N = 1, 2, ...
 zsh skills/catch-story/scripts/reads.sh <story> <N>
