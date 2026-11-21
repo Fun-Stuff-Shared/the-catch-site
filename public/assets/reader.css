@@ -172,7 +172,8 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
  body.evidence-open .sheet .content:has(> .rail) { display: block; }
  body.evidence-open .mode-hint { display: none; }
 }
-@media (min-width: 761px) and (max-width: 1899px) { body.evidence-open nav.story-toc { display: none; } }
+/* An open source reserves the rail's space; keep the fixed TOC out of the canvas. */
+@media (min-width: 761px) { body.evidence-open nav.story-toc { display: none; } }
 .nav-toggle { display: none; }
 @media (min-width: 1200px) {
  .discovery-layout { grid-template-columns: minmax(0, 1fr) minmax(16rem, 22%); }
@@ -192,7 +193,6 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
 .series-earlier summary { min-height: 44px; display: flex; align-items: center; color: var(--blue); font-size: .75rem; }
 .series-earlier summary::after { content: '+'; margin-left: auto; }
 .series-earlier[open] summary::after { content: '−'; }
-@media (min-width: 1900px) { body.evidence-open nav.story-toc { width: min(12rem, calc((100vw - var(--evidence-space) - var(--reading)) / 2 - var(--gutter) - 2rem)); } }
 @media (max-width: 760px) {
  .band-inner { position: relative; flex-wrap: nowrap; gap: .5rem; }
  .nav-toggle { display: flex; align-items: center; gap: .6rem; margin-left: auto; min-height: 44px; color: var(--band-ink); background: transparent; border: 0; font-size: .8rem; }
