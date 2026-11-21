@@ -1,4 +1,5 @@
 ---
+import Cite from "../Cite.astro";
 import { recordById } from "../../lib/record-manifests.mjs";
 
 interface Props {
@@ -9,8 +10,10 @@ interface Props {
   status?: "ok" | "warn" | "note";
   date?: string;
   folded?: boolean;
+  cites?: Array<{ c?: string; s?: string; passage?: string }>;
 }
-const { outlet, claim, verdict, chip, status = "ok", date, folded = false } = Astro.props;
+const { outlet, claim, verdict, chip, status = "ok", date, folded = false, cites } = Astro.props;
+const claimIds = cites?.map((c) => c.c).filter(Boolean).join(" ") || undefined;
 const sourceMarkup = Astro.slots.has("default") ? await Astro.slots.render("default") : "";
 const sourceId = sourceMarkup.match(/data-record-href="\/records\/([^/]+)\//)?.[1];
 const recordDate = sourceId ? recordById.get(sourceId)?.date : undefined;
@@ -25,18 +28,18 @@ const firstSentence = restatesChip ? sentence.slice(chip.length) : sentence;
 ---
 {folded ? (
   <p class="oc-folded">
-    {outlet && <strong>{outlet}</strong>}{displayDate && `, ${displayDate}`}, <span set:html={claim} /> {verdict && <span set:html={verdict} />}<slot />
+    {outlet && <strong>{outlet}</strong>}{displayDate && `, ${displayDate}`}, <span set:html={claim} /> {verdict && <span set:html={verdict} />}{cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}<slot />
   </p>
 ) : (
   <article class={`outlet-check ${status}`}>
     {outlet && <h3>{outlet}{displayDate && `, ${displayDate}`}</h3>}
-    <p class="oc-claim"><span set:html={claim} /></p>
+    <p class="oc-claim" data-claims={claimIds}><span set:html={claim} /></p>
     {verdict && (
-      <p class="oc-verdict">
+      <p class="oc-verdict" data-claims={claimIds}>
         {verdictWord && <strong>{verdictWord}</strong>}{firstSentence && <span set:html={restatesChip ? firstSentence : ` ${firstSentence}`} />}
       </p>
     )}
-    {record && <p class="oc-record"><span set:html={record} /></p>}
-    {sourceMarkup && <p class="oc-sources"><slot /></p>}
+    {record && <p class="oc-record" data-claims={claimIds}><span set:html={record} /></p>}
+    {(sourceMarkup || cites?.length) && <p class="oc-sources">{cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}<slot /></p>}
   </article>
 )}
