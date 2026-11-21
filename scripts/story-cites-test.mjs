@@ -8,6 +8,12 @@ import { createServer } from "node:net";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { execFileSync } from "node:child_process";
+import { parseFragment } from "parse5";
+import { mergeCites } from "./merge-cites.mjs";
+
+function elements(node, tag) {
+  return [...(node.tagName === tag ? [node] : []), ...(node.childNodes ?? []).flatMap((child) => elements(child, tag))];
+}
 
 test("story components render and validate citations without restructuring blocks", async (t) => {
   const root = fileURLToPath(new URL("..", import.meta.url));
@@ -17,7 +23,7 @@ test("story components render and validate citations without restructuring block
     await assert.rejects(access(project), {code: "ENOENT"});
   });
   const fixture = join(project, "src/pages/cites-test.ts");
-  const claim = {id: "reported-count", says: "Reported count.", evidence: [{record: "test-record", passage: "Exact passage"}]};
+  const claim = {id: "reported-count", says: "Reported count.", evidence: [{record: "test-record", passage: "Exact passage"}, {record: "second-record", passage: "More evidence"}]};
   const ledger = {story: "test--story", claims: [claim]};
   const record = {id: "test-record", date: "2026-01-07"};
   const expectedDate = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${record.date}T12:00:00Z`));
@@ -28,7 +34,7 @@ test("story components render and validate citations without restructuring block
   await writeFile(join(project, "package.json"), JSON.stringify({type: "module"}));
   await writeFile(join(project, "src/data/news-records.json"), JSON.stringify({records: []}));
   await writeFile(join(project, "checks/claims/test--story.json"), JSON.stringify(ledger));
-  await writeFile(join(project, "checks/manifests/test--story.json"), JSON.stringify({event, records: [record, {id: "undated-record", date: "undated"}], story_sources: [{id: record.id, group: "primary"}, {id: "undated-record", group: "primary"}]}));
+  await writeFile(join(project, "checks/manifests/test--story.json"), JSON.stringify({event, records: [record, {id: "undated-record", date: "undated"}, {id: "second-record"}], story_sources: [{id: record.id, group: "primary"}, {id: "undated-record", group: "primary"}, {id: "second-record", group: "primary"}]}));
   const socket = createServer();
   socket.listen(0, "127.0.0.1");
   await once(socket, "listening");
@@ -44,9 +50,9 @@ export async function GET({ request }) {
   const q = new URL(request.url).searchParams;
   const cites = q.has('empty') ? [] : q.has('omit') ? undefined : q.has('source') ? [{s: q.has('undated') ? 'undated-record' : ${JSON.stringify(claim.evidence[0].record)}, passage: 'Exact passage'}] : [{c: q.has('invalid') ? 'missing-test-claim' : ${JSON.stringify(claim.id)}}];
   const container = await AstroContainer.create();
-  const props = q.has('kpi') ? { kpis: [{value: '0', label: 'Count', cites}] } : {outlet: 'Test outlet', claim: 'Reported claim.', verdict: 'The record.', folded: q.has('folded'), cites};
+  const props = q.has('kpi') ? { kpis: [{value: '0', label: 'Count', cites}] } : {outlet: 'Test outlet', claim: 'Reported claim.', verdict: q.has('claim-only') ? undefined : q.has('record') ? 'The verdict. The record.' : 'The record.', folded: q.has('folded'), cites};
   try {
-    const html = await container.renderToString(q.has('kpi') ? KpiStrip : OutletCheck, {props, request: new Request('http://localhost/' + (q.has('source') ? 'fixture' : ${JSON.stringify(`events/${event}/`)}))});
+    const html = await container.renderToString(q.has('kpi') ? KpiStrip : OutletCheck, {props, slots: q.has('slot') ? {default: '<sup class="src-ref"><a href="#src-2" data-record-href="/records/undated-record/">2</a></sup>'} : {}, request: new Request('http://localhost/' + (q.has('source') ? 'fixture' : ${JSON.stringify(`events/${event}/`)}))});
     return new Response(html);
   } catch (error) {
     return new Response(error.message, {status: 500});
@@ -68,6 +74,24 @@ export async function GET({ request }) {
         assert.ok(html.includes(`data-claim="${claim.id}"`), html);
         assert.ok(html.includes(`data-record-href="/records/${claim.evidence[0].record}/"`), html);
         if (variant !== "kpi&") assert.ok(html.includes(expectedDate), html);
+        assert.equal(elements(parseFragment(html), "sup").length, 2);
+        assert.equal((mergeCites(html).match(/src-ref-more/g) ?? []).length, 1);
+        if (variant === "folded&") {
+          const slotted = await fetch(`${endpoint}?folded&slot`).then((r) => r.text());
+          assert.equal((mergeCites(slotted).match(/src-ref-more/g) ?? []).length, 2);
+        }
+        if (variant !== "kpi&" && variant !== "folded&") {
+          for (const [query, className] of [["", "oc-verdict"], ["record", "oc-record"], ["claim-only", "oc-claim"]]) {
+            for (const slotted of ["", "&slot"]) {
+              const layout = parseFragment(await fetch(`${endpoint}?${query}${slotted}`).then((r) => r.text()));
+              const paragraphs = elements(layout, "p");
+              const target = paragraphs.find((p) => p.attrs.some((attr) => attr.name === "class" && attr.value === className));
+              assert.equal(elements(target, "sup").length, 2, `${query}: citations belong in the last text paragraph`);
+              const sources = paragraphs.find((p) => p.attrs.some((attr) => attr.name === "class" && attr.value === "oc-sources"));
+              assert.equal(sources ? elements(sources, "sup").length : 0, slotted ? 1 : 0);
+            }
+          }
+        }
         const blocks = JSON.parse(execFileSync("python3", ["-c", `import runpy,json,sys; m=runpy.run_path('skills/catch-record/scripts/claims.py'); p=m['Blocks'](); p.feed('<main>'+sys.stdin.read()+'</main>'); print(json.dumps(p.blocks))`], {input: html, encoding: "utf8"}));
         for (const [text, ids] of blocks.filter(([text]) => /Reported claim|The record|Count/.test(text))) {
           assert.ok(ids.includes(claim.id), text);
@@ -75,6 +99,7 @@ export async function GET({ request }) {
         for (const empty of ['empty', 'omit']) {
           const plain = await fetch(`${endpoint}?${variant}${empty}`).then((r) => r.text());
           assert.doesNotMatch(plain, /src-ref/);
+          assert.doesNotMatch(plain, /<\/span>\s*0/);
         }
         const source = await fetch(`${endpoint}?${variant}source`).then((r) => r.text());
         assert.match(source, /data-passage="Exact passage"/);
