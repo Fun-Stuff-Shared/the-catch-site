@@ -1,6 +1,8 @@
 ---
-import { storyDate } from '../../lib/story-date.mjs';
+import { storyDate, storyISO } from '../../lib/story-date.mjs';
 interface Props { series: string; href: string; published: string; updated?: string; }
 const { series, href, published, updated } = Astro.props;
+const date = storyISO(published);
+const update = updated ? storyISO(updated) : null;
 ---
-<p class="story-kicker" data-layer="fact"><a href={href}>{series}</a> &middot; <time datetime={published}>{storyDate(published)}</time>{updated && updated !== published && <Fragment> &middot; Updated <time datetime={updated}>{storyDate(updated)}</time></Fragment>}</p>
+<p class="story-kicker" data-layer="fact"><a href={href}>{series}</a> &middot; <time datetime={date}>{storyDate(date)}</time>{update && update !== date && <Fragment> &middot; Updated <time datetime={update}>{storyDate(update)}</time></Fragment>}</p>
