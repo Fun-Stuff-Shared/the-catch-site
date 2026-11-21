@@ -73,6 +73,10 @@ test('unregistered routes and malformed route metadata fail closed', t => {
   const f = fixture(t);
   rmSync(join(f.root, f.descriptorPath));
   assert.match(findings(f).join('\n'), /no registration/);
+  put(f.root, f.file, f.html.replace('id="story-root"', ''));
+  assert.match(findings(f).join('\n'), /\/trackers\/council\/: reading-mode article has no registration/);
+  put(f.root, f.file, f.html.replace('class="mode-switcher"', ''));
+  assert.match(findings(f).join('\n'), /\/trackers\/council\/: reading-mode article has no registration/);
   put(f.root, 'dist/officials/new-person/new-episode/index.html', f.html);
   assert.match(findings(f).join('\n'), /\/officials\/new-person\/new-episode\/: reading-mode article has no registration/);
   for (const route of ['/events/not-a-standing-route/', '/trackers/../escape/', 'https://example.invalid/']) {

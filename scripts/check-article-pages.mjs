@@ -124,7 +124,10 @@ export function checkArticlePages({ root = process.cwd(), dist = join(root, 'dis
     const html = readFileSync(file, 'utf8');
     const route = routeOf(dist, file);
     if (/^\/records\/(?:pins\/)?fixture-[a-z0-9-]+\//.test(route)) fail.push(`${route}: fictional record in production record library`);
-    if (!route.startsWith('/events/') && !legacyEpisodes.has(route) && /<main\b[^>]*\bid=["']story-root["']/.test(html) && html.includes('mode-switcher') && !registered.has(route)) fail.push(`${route}: reading-mode article has no registration`);
+    if (!route.startsWith('/events/') && !legacyEpisodes.has(route) && !registered.has(route) && /story-root|mode-switcher|data-mode/.test(html)) {
+      const declaresArticle = [...walk(parse(html))].some(n => attr(n, 'id') === 'story-root' || (attr(n, 'class') ?? '').split(/\s+/).includes('mode-switcher') || ['story', 'facts', 'work'].includes(attr(n, 'data-mode')));
+      if (declaresArticle) fail.push(`${route}: reading-mode article has no registration`);
+    }
   }
   for (const page of pages) {
     const { route, manifest, fixture } = page;
