@@ -286,6 +286,9 @@ SUFFIXES = ("ians", "ian", "ese", "ings", "ing", "ly", "ed", "es", "ic", "s", "e
 SMALL = {"of", "the", "and", "for", "on", "in", "to", "a", "an", "&"}
 NUMBER = re.compile(r"(?<![\w.])(\d{1,3}(?:,\d{3})+|\d+)(\.\d+)?(?:\s*(thousand|million|billion|trillion)\b|(k|m|mn|b|bn|tn)\b)?",
                     re.I)
+TENS = "twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety"
+WORD_NUMBER = re.compile(rf"\b(?:({TENS})[- ](one|two|three|four|five|six|seven|eight|nine)|({'|'.join(NUMBER_WORDS)}))"
+                         r"(?:\s+(thousand|million|billion|trillion)\b)?\b", re.I)
 WORD = re.compile(r"[A-Za-z](?:[A-Za-z]|\.(?=[A-Za-z])|['’](?=[a-z]))*")
 
 
@@ -298,12 +301,21 @@ def numbers(text):
         scale = (m.group(3) or m.group(4) or "").lower()
         if scale:
             values.add(n * SCALES[scale])
-    for w in WORD.findall(text):
-        if w.lower() in NUMBER_WORDS:
-            values.add(float(NUMBER_WORDS[w.lower()]))
-        elif w.lower() == "single":
-            values.add(1.0)
+    for words_, value in word_numbers(text):
+        values.add(value)
+    if re.search(r"\bsingle\b", text, re.I):
+        values.add(1.0)
     return values
+
+
+def word_numbers(text):
+    """(words, value) for each number written in words: "two million" is 2,000,000, "twenty-one" is 21."""
+    out = []
+    for m in WORD_NUMBER.finditer(text):
+        tens, unit, word, scale = (g.lower() if g else g for g in m.groups())
+        value = NUMBER_WORDS[tens] + NUMBER_WORDS[unit] if tens else NUMBER_WORDS[word]
+        out.append((m.group(), float(value * (SCALES[scale] if scale else 1))))
+    return out
 
 
 def norm(word):
@@ -377,10 +389,11 @@ def short_drift(short, says, common=frozenset()):
         # "$12.26 billion" holds where says has the exact $12,263,715,308.36
         if not (n * scale in values or (scale > 1 and any(round(v / scale, places) == n for v in values))):
             missing.append(m.group().strip())
+    missing += [w for w, value in word_numbers(short) if value not in values]
     for w, initial in words(short):
         n = norm(w)
-        if n in NUMBER_WORDS and float(NUMBER_WORDS[n]) not in values:
-            missing.append(w)
+        if n in NUMBER_WORDS:
+            continue
         elif n in MONTHS and w[:1].isupper():
             if f"month:{MONTHS[n]}" not in vocab:
                 missing.append(w)
