@@ -6,11 +6,43 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
+import { stripTypeScriptTypes } from 'node:module';
+import { runInNewContext } from 'node:vm';
+import { readingReturn } from '../src/lib/reading-return.mjs';
 import { articleRegistrations, readingPages } from './article-pages.mjs';
 import { checkArticlePages } from './check-article-pages.mjs';
 import { REQUIRED_STEPS, layerFindings, citationFindings, recordManifestFindings } from './article-checks.mjs';
 
 const scripts = dirname(fileURLToPath(import.meta.url));
+
+test('registered article source details and saved copies retain the section return link', t => {
+  const f = fixture(t);
+  const routes = articleRegistrations(f.root).filter(p => !p.fixture).map(p => p.route);
+  const origin = 'https://thecatch.example';
+  const from = `${f.route}?mode=work#motion`;
+  const source = readFileSync(join(scripts, '../src/scripts/source-return.ts'), 'utf8').replace(/^import .*\n/gm, '');
+  const script = stripTypeScriptTypes(source);
+  const open = (url, target) => {
+    const back = {hidden: true};
+    const link = {href: new URL(target, origin).href};
+    runInNewContext(script, {
+      readingReturn, articleReturnRoutes: routes, URL, URLSearchParams, location: url,
+      document: {querySelector: () => back, querySelectorAll: () => [link]},
+    });
+    return {back, link};
+  };
+  const details = open(new URL(`/records/council-minutes/?from=${encodeURIComponent(from)}`, origin), '/records/pins/council-minutes/');
+  const saved = open(new URL(details.link.href, origin), '/records/council-minutes/');
+  for (const page of [details, saved]) {
+    assert.equal(page.back.hidden, false);
+    assert.equal(page.back.href, from);
+    assert.equal(new URL(page.link.href, origin).searchParams.get('from'), from);
+  }
+  for (const bad of ['/trackers/unregistered/#motion', '/trackers/council/child/', '//evil.example/', '/\\evil.example/', 'https://evil.example/']) {
+    assert.equal(readingReturn(bad, origin, routes), null, bad);
+    assert.equal(open(new URL(`/records/council-minutes/?from=${encodeURIComponent(bad)}`, origin), '/records/pins/council-minutes/').back.hidden, true);
+  }
+});
 function put(root, name, content) {
   mkdirSync(dirname(join(root, name)), { recursive: true });
   writeFileSync(join(root, name), typeof content === 'string' ? content : JSON.stringify(content));

@@ -88,3 +88,11 @@ log requires a real Catch editorial journal; `updated` timestamps or other
 outlets' corrections are not journal entries. These are authoring requirements
 for later templates, not unsupported assertions that this mechanical gate can
 establish an editorial history.
+
+## Returning from a source
+
+The source reader, source details and saved copy admit exact registered published
+article routes for their return links, including mode queries and section anchors.
+The browser imports only the named `route` fields from published descriptors;
+manifest/source/ledger paths and preview fixture descriptors are not bundled.
+Existing event, official, design-preview and source-library returns stay supported.
