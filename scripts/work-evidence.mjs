@@ -4,11 +4,10 @@
 // rests on. Built from the citations already on the page, so authors write nothing for it.
 // Runs on the built pages after merge-cites; the evidence is typed proof, so it shows only
 // in Show the work.
-import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
 import { parse } from "parse5";
+import { readingPages } from './article-pages.mjs';
 
-const root = process.argv[2] || join(process.cwd(), "dist", "events");
 const AFTER = new Set(["p", "blockquote", "figure", "table", "h2", "h3"]);
 
 const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
@@ -73,17 +72,10 @@ export function workEvidence(html) {
   return out;
 }
 
-function pages(dir, files = []) {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) pages(p, files); else if (name === "index.html") files.push(p);
-  }
-  return files;
-}
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   let n = 0;
-  for (const file of pages(root)) {
+  for (const { file } of readingPages({ input: process.argv[2] })) {
     const html = readFileSync(file, "utf8");
     const next = workEvidence(html);
     if (next !== html) { writeFileSync(file, next); n++; }
