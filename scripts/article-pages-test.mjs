@@ -7,6 +7,8 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { stripTypeScriptTypes } from 'node:module';
+import fs from 'node:fs';
+import { syncBuiltinESMExports } from 'node:module';
 import { runInNewContext } from 'node:vm';
 import { readingReturn } from '../src/lib/reading-return.mjs';
 import { articleRegistrations, readingPages } from './article-pages.mjs';
@@ -109,6 +111,10 @@ test('unregistered routes and malformed route metadata fail closed', t => {
   assert.match(findings(f).join('\n'), /\/trackers\/council\/: reading-mode article has no registration/);
   put(f.root, f.file, f.html.replace('class="mode-switcher"', ''));
   assert.match(findings(f).join('\n'), /\/trackers\/council\/: reading-mode article has no registration/);
+  put(f.root, f.file, f.html.replace('class="mode-switcher"', '').replaceAll(/data-mode="[^"]*"/g, '').replace('id="story-root"', 'id="story&#45;root"'));
+  assert.match(findings(f).join('\n'), /no registration/);
+  put(f.root, f.file, f.html.replace('id="story-root"', '').replace('class="mode-switcher"', 'aria-label="Reading > modes" class="mode-switcher"'));
+  assert.match(findings(f).join('\n'), /no registration/);
   put(f.root, 'dist/officials/new-person/new-episode/index.html', f.html);
   assert.match(findings(f).join('\n'), /\/officials\/new-person\/new-episode\/: reading-mode article has no registration/);
   for (const route of ['/events/not-a-standing-route/', '/trackers/../escape/', 'https://example.invalid/']) {
@@ -219,4 +225,25 @@ test('shared legacy checks still reject broken events without article registrati
   const broken = structuredClone(f.manifest);
   broken.records[0].quote_span_check = 'quote_unverified';
   assert.match(recordManifestFindings(f.root, 'manifest', broken).join('\n'), /unverified quote/);
+});
+
+test('article output checks read each built file at most once', t => {
+  const f = fixture(t, true);
+  processPages(f.root, true);
+  const original = fs.readFileSync;
+  const reads = new Map();
+  fs.readFileSync = (file, ...args) => {
+    const path = String(file);
+    if (path.startsWith(join(f.root, 'dist') + '/')) reads.set(path, (reads.get(path) ?? 0) + 1);
+    return original(file, ...args);
+  };
+  syncBuiltinESMExports();
+  try {
+    assert.deepEqual(findings(f, true), []);
+    assert.ok(reads.size > 1);
+    for (const [file, count] of reads) assert.equal(count, 1, file);
+  } finally {
+    fs.readFileSync = original;
+    syncBuiltinESMExports();
+  }
 });

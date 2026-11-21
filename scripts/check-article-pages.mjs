@@ -12,6 +12,17 @@ const attr = (node, name) => node.attrs?.find(a => a.name === name)?.value;
 function* walk(node) { yield node; for (const child of node.childNodes ?? []) yield* walk(child); }
 const routeOf = (dist, file) => `/${relative(dist, file).replace(/index\.html$/, '')}`;
 
+function declaresArticle(html) {
+  // Saved source pages can quote reading-mode CSS/HTML. Avoid building their
+  // large DOMs unless a real opening tag might declare article controls.
+  for (const [tag] of html.matchAll(/<[a-z](?:"[^"]*"|'[^']*'|[^'">])*?>/gi)) {
+    if (/story-root|mode-switcher|data-mode/i.test(tag) || tag.includes('&') && /\b(?:id|class)\s*=/i.test(tag)) {
+      return [...walk(parse(html))].some(n => attr(n, 'id') === 'story-root' || (attr(n, 'class') ?? '').split(/\s+/).includes('mode-switcher') || ['story', 'facts', 'work'].includes(attr(n, 'data-mode')));
+    }
+  }
+  return false;
+}
+
 function fixturePresentation(html, route) {
   const nodes = [...walk(parse(html))];
   const fail = [];
@@ -114,20 +125,11 @@ export function checkArticlePages({ root = process.cwd(), dist = join(root, 'dis
   let pages;
   try { pages = articleRegistrations(root); }
   catch (error) { return [error.message]; }
-  const registered = new Set(pages.map(page => page.route));
+  const registered = new Map(pages.map(page => [page.route, page]));
+  const ready = new Set();
   for (const file of filesUnder(join(root, 'checks/manifests')).filter(f => f.endsWith('.json'))) {
     const manifest = JSON.parse(readFileSync(file, 'utf8'));
-    if ((manifest.records ?? []).some(r => r.id?.startsWith('fixture-'))) fail.push(`${relative(root, file)}: production manifest contains a fictional record`);
-  }
-  const outputs = filesUnder(dist);
-  for (const file of outputs.filter(file => file.endsWith('.html'))) {
-    const html = readFileSync(file, 'utf8');
-    const route = routeOf(dist, file);
-    if (/^\/records\/(?:pins\/)?fixture-[a-z0-9-]+\//.test(route)) fail.push(`${route}: fictional record in production record library`);
-    if (!route.startsWith('/events/') && !legacyEpisodes.has(route) && !registered.has(route) && /story-root|mode-switcher|data-mode/.test(html)) {
-      const declaresArticle = [...walk(parse(html))].some(n => attr(n, 'id') === 'story-root' || (attr(n, 'class') ?? '').split(/\s+/).includes('mode-switcher') || ['story', 'facts', 'work'].includes(attr(n, 'data-mode')));
-      if (declaresArticle) fail.push(`${route}: reading-mode article has no registration`);
-    }
+    if ((manifest.records ?? []).some(r => r.id?.startsWith('fixture-'))) fail.push(relative(root, file) + ': production manifest contains a fictional record');
   }
   for (const page of pages) {
     const { route, manifest, fixture } = page;
@@ -135,49 +137,67 @@ export function checkArticlePages({ root = process.cwd(), dist = join(root, 'dis
     const sourcePrefix = fixture ? page.fixtureRoot : 'data/sources/';
     try {
       fail.push(...recordManifestFindings(root, page.manifestFile, manifest, sourcePrefix));
-      if (!manifest.records?.length || !manifest.sub_events?.length) fail.push(`${route}: records and sub_events must be nonempty`);
+      if (!manifest.records?.length || !manifest.sub_events?.length) fail.push(route + ': records and sub_events must be nonempty');
       for (const record of manifest.records ?? []) {
         for (const key of ['pinned_path', 'text_path']) projectFile(root, record[key], sourcePrefix);
-        if (fixture && (!record.id.startsWith('fixture-') || !record.reader_path?.startsWith(route) || !/^\/(?:[a-z0-9-]+\/)+$/.test(record.reader_path) || record.reader_path.includes('/../'))) fail.push(`${route}: fixture record needs a fixture- ID and a preview-local reader path`);
+        if (fixture && (!record.id.startsWith('fixture-') || !record.reader_path?.startsWith(route) || !/^\/(?:[a-z0-9-]+\/)+$/.test(record.reader_path) || record.reader_path.includes('/../'))) fail.push(route + ': fixture record needs a fixture- ID and a preview-local reader path');
       }
       if (!fixture) {
-        if (!manifest.completed_by || !manifest.date) fail.push(`${route}: completed_by and date are required`);
+        if (!manifest.completed_by || !manifest.date) fail.push(route + ': completed_by and date are required');
         for (const step of REQUIRED_STEPS) {
           const value = manifest.steps?.[step];
-          if (value?.done !== true || typeof value.evidence !== 'string' || value.evidence.trim().length < 10) fail.push(`${route}: step "${step}" needs completion and real evidence`);
+          if (value?.done !== true || typeof value.evidence !== 'string' || value.evidence.trim().length < 10) fail.push(route + ': step "' + step + '" needs completion and real evidence');
         }
       }
       const source = readFileSync(page.sourceFile, 'utf8');
-      source.split('\n').forEach((line, i) => { if (/<td[^>]*>\s*(?:[-−+]|\$|&minus;|&plus;)?\d/.test(line)) fail.push(`${page.source}:${i + 1}: number typed into a table cell; render it from the data module`); });
+      source.split('\n').forEach((line, i) => { if (/<td[^>]*>\s*(?:[-−+]|\$|&minus;|&plus;)?\d/.test(line)) fail.push(page.source + ':' + (i + 1) + ': number typed into a table cell; render it from the data module'); });
       if (fixture && !preview) {
-        if (existsSync(file)) fail.push(`${route}: preview fixture was emitted in a normal build`);
-      } else if (!existsSync(file)) fail.push(`${route}: article output is missing`);
-      else fail.push(...articleHtmlFindings(page, readFileSync(file, 'utf8'), root, dist));
-      if (fixture && preview) for (const output of outputs.filter(f => f !== file && f.endsWith('.html') && routeOf(dist, f).startsWith(route))) fail.push(...fixturePresentation(readFileSync(output, 'utf8'), routeOf(dist, output)));
-    } catch (error) { fail.push(`${route}: ${error.message}`); }
+        if (existsSync(file)) fail.push(route + ': preview fixture was emitted in a normal build');
+      } else if (!existsSync(file)) fail.push(route + ': article output is missing');
+      ready.add(route);
+    } catch (error) { fail.push(route + ': ' + error.message); }
   }
-  // A fixture's identifiers, quotes, and titles must not escape into discovery,
-  // sitemap, record-library pages, downloads, or runtime bundles, even in preview.
+
   const fixtures = pages.filter(page => page.fixture);
-  const hash = file => createHash('sha256').update(readFileSync(file)).digest('hex');
-  const fixtureHashes = new Set(fixtures.flatMap(page => filesUnder(join(root, page.fixtureRoot)).map(hash)));
-  for (const file of outputs) {
-    if (preview && routeOf(dist, file).startsWith('/design/')) continue;
-    if (fixtureHashes.size && fixtureHashes.has(hash(file))) fail.push(`${routeOf(dist, file)}: fixture bytes leaked outside preview`);
-  }
-  const textOutputs = outputs.filter(file => /\.(?:html|json|xml|js|mjs|css|txt|csv|svg|webmanifest|map)$/.test(file));
-  const dataModules = filesUnder(join(root, 'src/data')).filter(file => file.endsWith('.mjs'));
-  for (const file of [...textOutputs, ...dataModules]) {
-    const isOutput = file.startsWith(`${dist}/`);
-    const route = isOutput ? routeOf(dist, file) : relative(root, file);
-    const text = readFileSync(file, 'utf8');
-    if (!isOutput && /(?:from\s*|import\s*\()["'][^"']*fixtures\//.test(text)) fail.push(`${route}: discovery data must not import fixtures`);
-    if (!preview && isOutput && route.startsWith('/design/')) fail.push(`${route}: design preview output in normal build`);
-    if (preview && isOutput && route.startsWith('/design/')) continue;
-    for (const page of fixtures) {
-      const tokens = [page.route, ...(page.sentinels ?? []), ...page.manifest.records.flatMap(r => [r.id, r.title, r.quote].filter(t => t && t.length >= 12))];
-      if (tokens.some(token => text.includes(token))) fail.push(`${route}: fictional fixture ${page.route} leaked outside preview`);
+  const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+  const fixtureFiles = new Set(fixtures.flatMap(page => filesUnder(join(root, page.fixtureRoot))));
+  const fixtureHashes = new Set([...fixtureFiles].map(file => hash(readFileSync(file))));
+  const tokens = new Set(fixtures.flatMap(page => [page.route, ...(page.sentinels ?? []), ...page.manifest.records.flatMap(r => [r.id, r.title, r.quote].filter(t => t && t.length >= 12))]));
+  const tokenPattern = tokens.size ? new RegExp([...tokens].map(token => token.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')).join('|')) : null;
+  const textFile = /\.(?:html|json|xml|js|mjs|css|txt|csv|svg|webmanifest|map)$/i;
+
+  // All output checks share one traversal and one read per file. Byte hashes
+  // still cover non-text downloads; a combined pattern covers every fixture.
+  for (const file of filesUnder(dist)) {
+    const route = routeOf(dist, file);
+    const inPreview = preview && route.startsWith('/design/');
+    const htmlFile = file.endsWith('.html');
+    if (!preview && route.startsWith('/design/')) fail.push(route + ': design preview output in normal build');
+    if (/^\/records\/(?:pins\/)?fixture-[a-z0-9-]+\//.test(route)) fail.push(route + ': fictional record in production record library');
+    const needsLeakCheck = !inPreview && (fixtureHashes.size || tokenPattern && textFile.test(file));
+    if (!htmlFile && !needsLeakCheck) continue;
+    const bytes = readFileSync(file);
+    const text = htmlFile || tokenPattern && textFile.test(file) ? bytes.toString('utf8') : null;
+    if (htmlFile) {
+      const page = registered.get(route);
+      if (page && ready.has(route) && (!page.fixture || preview)) {
+        try { fail.push(...articleHtmlFindings(page, text, root, dist)); }
+        catch (error) { fail.push(route + ': ' + error.message); }
+      } else if (inPreview && fixtures.some(fixture => route.startsWith(fixture.route))) {
+        fail.push(...fixturePresentation(text, route));
+      }
+      if (!route.startsWith('/events/') && !legacyEpisodes.has(route) && !page && declaresArticle(text)) fail.push(route + ': reading-mode article has no registration');
     }
+    if (!inPreview) {
+      if (fixtureHashes.size && fixtureHashes.has(hash(bytes))) fail.push(route + ': fixture bytes leaked outside preview');
+      if (tokenPattern && text !== null && tokenPattern.test(text)) fail.push(route + ': fictional fixture content leaked outside preview');
+    }
+  }
+  for (const file of filesUnder(join(root, 'src/data')).filter(file => file.endsWith('.mjs'))) {
+    const text = readFileSync(file, 'utf8');
+    const route = relative(root, file);
+    if (/(?:from\s*|import\s*\()["'][^"']*fixtures\//.test(text)) fail.push(route + ': discovery data must not import fixtures');
+    if (tokenPattern && tokenPattern.test(text)) fail.push(route + ': fictional fixture content leaked outside preview');
   }
   return fail;
 }
