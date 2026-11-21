@@ -81,6 +81,7 @@ def require_fresh_page(story):
 
 def main(story, round_):
     require_fresh_page(story)
+    ledger.migrate_bound(story)
     page = ledger.blocks(story)
     bound = set(ledger.read_json(ledger.bound_path(story), []))
     todo = [b for b in page if b["hash"] not in bound and ledger.bindable(b)]
