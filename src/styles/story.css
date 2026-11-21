@@ -4,6 +4,7 @@
 
 /* ── Story layout ── */
 .story {
+  --reading: 44rem;
   max-width: 52rem;
   margin: 0 auto;
   padding: 2rem 2.4rem 4rem 2rem;
@@ -63,6 +64,10 @@
   font-size: var(--text-prose);
   line-height: var(--leading-prose);
 }
+.story section > p,
+.story section > :is(ul, ol):not([class]),
+.story .sourced-block > :is(p, ul, ol),
+.story .claim-list { max-inline-size: 70ch; }
 .section-lede {
   color: var(--slate);
   margin-top: -0.2rem;
