@@ -659,7 +659,8 @@ ol.src-list li {
   .dt-head, .dt-row { grid-template-columns: minmax(0, 1fr); gap: .35rem; padding: .75rem; }
   .dt-row .dt-date { font-weight: 600; }
   .story table { width: 100%; table-layout: fixed; }
-  .story :is(th, td) { padding-inline: .4rem; }
+  .story table :is(th, td) { padding-inline: .4rem; }
+  .story table :is(th, td).num { white-space: normal; }
   /* Genuine multi-column comparisons remain locally scrollable. */
   .story :is(.data-table, .rev-table):has(tr > :nth-child(4)) { min-width: 32rem; }
 }
