@@ -9,6 +9,7 @@ Refuses stale builds; rebuild with npm run build before retrying.
 Usage: bind.py <subject>--<slug> <round>   (from the worktree root, after npm run build)"""
 
 import json
+import os
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -68,7 +69,10 @@ def require_fresh_page(story):
     # Conservative: shared modules can read data dynamically, beyond static imports.
     for directory in ("src/data", "src/components", "src/layouts", "src/lib",
                       "src/styles", "src/scripts", "data"):
-        sources.update(p for p in Path(directory).rglob("*") if p.is_file())
+        for root, dirs, files in os.walk(directory):
+            if Path(root) == Path("data/v2") and "snapshots" in dirs:
+                dirs.remove("snapshots")
+            sources.update(Path(root) / name for name in files if (Path(root) / name).is_file())
     newer = sorted(str(p) for p in sources if p.stat().st_mtime_ns > built.stat().st_mtime_ns)
     if newer:
         sys.exit(f"bind: refusing stale built page {built}; newer source/data files:\n"
