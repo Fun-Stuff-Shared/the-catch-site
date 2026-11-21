@@ -43,11 +43,10 @@ test("resource reporting preserves stage stderr", () => {
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-test("build stages preserve the original order and NODE_OPTIONS scope", () => {
+test("build stages preserve the original order without overriding NODE_OPTIONS", () => {
   assert.equal(stages.length, 9);
   assert.deepEqual(stages.map(([name]) => name), ["pull-state", "pull-v2", "build-news-records", "astro build", "merge-cites", "work-evidence", "facts-claims", "check-events", "check-shell"]);
-  assert.deepEqual(stages[0][3], { NODE_OPTIONS: "--max-old-space-size=6144" });
-  assert.ok(stages.slice(1).every((stage) => stage[3] === undefined));
+  assert.ok(stages.every((stage) => stage[3] === undefined));
 });
 
 for (const [name, steps, expected] of [

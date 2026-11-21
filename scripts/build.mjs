@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 
 export const stages = [
-  ["pull-state", "node", ["scripts/pull-state.mjs"], { NODE_OPTIONS: "--max-old-space-size=6144" }],
+  ["pull-state", "node", ["scripts/pull-state.mjs"]],
   ["pull-v2", "node", ["scripts/pull-v2.mjs"]],
   ["build-news-records", "node", ["scripts/build-news-records.mjs"]],
   ["astro build", "astro", ["build"]],
