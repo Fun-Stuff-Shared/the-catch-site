@@ -52,6 +52,19 @@ export function articleHtmlFindings(page, html, root, dist = join(root, 'dist'))
   for (const heading of emptyFactsSections(html)) fail.push(`${route}: "${heading}" is empty in Just the facts; cite its fact sentences one by one`);
   // Ordinary record links receive the very same saved-passage check as event pages.
   fail.push(...citationFindings(html, route, records, root));
+  // Preview-local readers are not /records/ URLs. Check their work-mode links too,
+  // not only the footnotes from which the postprocessor generated them.
+  if (page.fixture) {
+    const readers = new Map([...records.values()].map(record => [readerPath(record.id), record]));
+    for (const link of nodes.filter(n => n.tagName === 'a' && attr(n, 'data-record-href') !== undefined)) {
+      const record = readers.get(attr(link, 'data-record-href'));
+      if (!record) { fail.push(`${route}: link names a record outside this fixture`); continue; }
+      const text = readFileSync(join(root, record.text_path), 'utf8');
+      for (const passage of [attr(link, 'data-passage'), ...(attr(link, 'data-passages') ?? '').split('\n')].filter(Boolean)) {
+        if (!sourceContext(text, passage)) fail.push(`${route}: preview reader passage is absent from ${record.id}`);
+      }
+    }
+  }
   if (manifest.authored_sections) {
     try { checkAuthoredSections(html, manifest.authored_sections); }
     catch (error) { fail.push(`${route}: ${error.message}`); }

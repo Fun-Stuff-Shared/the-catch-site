@@ -138,6 +138,8 @@ test('fixtures are excluded normally, processed in preview, labeled, and noindex
   processPages(f.root, true);
   assert.deepEqual(findings(f, true), []);
   const valid = readFileSync(join(f.root, f.file), 'utf8');
+  put(f.root, f.file, valid.replace(/(<span class="we-body"><a[^>]*data-passage=")[^"]*/, '$1A passage not in the source.'));
+  assert.match(findings(f, true).join('\n'), /preview reader passage is absent/);
   put(f.root, f.file, valid.replace('noindex, nofollow', 'index, follow'));
   assert.match(findings(f, true).join('\n'), /must be noindex/);
   put(f.root, f.file, valid.replace('class="sample-notice"', 'class="sample-notice" hidden'));
