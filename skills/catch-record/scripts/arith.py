@@ -170,7 +170,9 @@ def computations(claim, records=None, texts=None):
             start = match.start("operands") + token.start()
             if any(a <= start < b for a, b in date_spans):
                 continue
-            if re.fullmatch(r"\d{4},?", token[0]) and re.search(r"\b(?:in|during|since|for|year)\s*$", source[:start], re.I):
+            year_marker = (r"(?:^|[.!?;:,])\s*(?:in|since|by|until|of|from|through|during|for)\s*$|"
+                           r"\b(?:year(?:\s+of)?|" + "|".join(MONTHS) + r")\.?\s*$")
+            if re.fullmatch(r"\d{4},?", token[0]) and re.search(year_marker, source[:start], re.I):
                 continue
             if token[0].startswith("$") != total.startswith("$"):
                 return None
