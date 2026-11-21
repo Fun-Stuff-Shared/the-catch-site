@@ -1,0 +1,142 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { event, n, computed, maps, warnings } from "../../../data/iowa-army-detonation-2026-11-20-army-detonates-lead-azide-in-iowa.mjs";
+const fmt = computed.fmt;
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iowa-army-detonation/">Iowa Army detonation</a><span>November 20, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Iowa Army detonation &middot; November 20, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact" data-claims="stay-granted postponed-to-monday lead-azide-what">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="stay-granted" /><Cite c="suit-stay-ask" /><Cite c="sixty-eight-drums" /><Cite c="plume-contains-lead" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-plume">Where the lead goes</a></li>
+          <li><a href="#why-now">Why a blast, and why Monday</a></li>
+          <li><a href="#the-sides">The fight in court</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#coverage">What the coverage got right and wrong</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">The Army plans to blow up {n.drums} drums of lead azide, an explosive used to set off ammunition, in place at the Iowa Army Ammunition Plant in Middletown, Iowa.<Cite c="sixty-eight-drums" /><Cite c="lead-azide-what" /><Cite c="permit-authorizes-detonation" /> On Nov. 19, a federal appeals court paused the Environmental Protection Agency's emergency permit for the blast until it rules on an emergency motion from two environmental groups, the Iowa Environmental Council and the Sierra Club.<Cite c="stay-granted" /><Cite c="suit-stay-ask" /><Cite c="stay-entered" /> The same day, the Army moved the blast to Monday, Nov. 23.<Cite c="postponed-to-monday" /><Cite c="telle-post-time" /></p>
+        <p data-layer="narrative">The drums hold about {fmt(n.pounds)} pounds of lead azide, by the count in a letter from Illinois and Iowa officials.<Cite c="weight-9700" /> In storage it crystallized and grew more sensitive to friction and shock, and the Army says moving it could set it off.<Cite c="crystallized-sensitive" /><Cite c="moving-risks-detonation" /> The drums sit in two earth-covered bunkers, and the Army plans to detonate both at once.<Cite c="one-per-bunker" /> The blasts had been set for about noon on Friday, Nov. 20, until Acting Army Secretary Adam Telle moved them on Thursday evening, saying Monday was the latest the Army could wait before a forecast drop in temperature that would risk making the material less stable.<Cite c="original-schedule" /><Cite c="postponed-to-monday" /><Cite c="telle-post-time" /><Cite c="telle-weather-reason" /></p>
+        <p data-layer="narrative" data-answer="2">The Army says the blast will send up a plume carrying lead that spreads through the air and settles on the ground.<Cite c="plume-contains-lead" /> It tells people in the plume's path to stay inside.<Cite c="advisory-wet-clean" /> For Friday it had asked residents near two parks in Middletown to leave from 8 a.m. to 2 p.m., because the blast could break windows.<Cite c="city-park-vacate" /> Linn County's emergency office says the maps the Army drew for Friday's weather should not be used to judge Monday's, and the Army must publish new ones before the blast.<Cite c="old-maps-not-monday" /><Cite c="permit-map-schedule" /></p>
+        <p data-layer="narrative" data-answer="3">EPA's regional office issued the emergency permit that allows the detonation on Nov. 13.<Cite c="permit-dates" /><Cite c="permit-authorizes-detonation" /> The groups argue EPA approved the blast without fully considering less dangerous alternatives and took no public comment.<Cite c="suit-alternatives" /><Cite c="suit-no-comment" /></p>
+      </section>
+
+      <section id="the-plume">
+        <h2 data-layer="fact">Where the lead goes</h2>
+        <p data-layer="narrative">The plume maps the Army publishes are meant to show the worst case. EPA's permit requires them to assume that all of the lead is released, and EPA and the Army both say the maps are not necessarily what will happen; the Army expects less than all of it to get out because of the measures it will take to limit the blast's effects.<Cite c="maps-all-lead" /><Cite c="maps-not-representative" /></p>
+        <p data-layer="narrative">There are two maps: one of lead in the air, and one of lead dust settling on the ground, which draws two levels, a lighter and a heavier one.<Cite c="dust-two-levels" /> The air map's colored area ends where the modeled concentration falls to {n.edge} micrograms per cubic meter, which the map labels the smallest amount the Army's air samplers can detect.<Cite c="air-map-edge" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>How far the Army's maps drew the lead, for Friday's weather</strong></figcaption>
+          <table class="map-table">
+            <thead><tr><th scope="col">Map</th><th scope="col">Lead in the air reached</th><th scope="col">Settling dust covered an area</th></tr></thead>
+            <tbody>
+              {maps.map((m) => <tr><th scope="row">{m.map}</th><td>{m.air}<Cite c="air-reach-100-to-60" /></td><td>{m.dust}<Cite c="deposition-25-40" /></td></tr>)}
+            </tbody>
+          </table>
+          <p class="chart-source">Air reach as The New York Times reported the Army's maps; dust areas by the environmental groups' reading of them.<Cite c="air-reach-100-to-60" /><Cite c="deposition-25-40" /></p>
+        </figure>
+        <p data-layer="narrative">Illinois EPA said on Nov. 18 that the Army's air modeling could reach Mercer County, Illinois, and that EPA's regional office for Iowa never told it about the blast.<Cite c="illinois-mercer" /><Cite c="illinois-not-notified" /></p>
+        <p data-layer="narrative">The Army says levels of lead in the air may be elevated but well below the level at which EPA would require protective action.<Cite c="well-below-claim" /> Its own environmental assessment says that in the worst case, airborne levels could pass the lowest of three tiers of protective-action criteria, the one at which people may feel temporary and reversible discomfort, but not the two higher tiers.<Cite c="ea-pac1" /> Asked by The Intercept what levels it expected in nearby communities, the Army gave no numbers.<Cite c="no-offsite-number" /></p>
+        <h3 data-layer="fact">What people are told to do</h3>
+        <p data-layer="narrative">The Army says the dust should linger no more than an hour, depending on the wind; Iowa's health department advises people in the affected areas to keep windows and doors shut for {n.windowsLowHours} to {n.windowsHighHours} hours after the blast, unless updated guidance says otherwise.<Cite c="linger-one-hour" /><Cite c="hhs-24-48" /> After that, the Army's written advice is to wash or wipe down with water what children touch and to consider taking the car through a car wash. It says the cleaning instructions should include specific procedures, but does not give them.<Cite c="advisory-wet-clean" /><Cite c="advisory-procedures-missing" /></p>
+        <p data-layer="narrative">Justine Barati, a spokesperson for Army Sustainment Command, told Radio Iowa on Nov. 17:<Cite c="barati-hose" /></p>
+        <QuoteCard speaker="Justine Barati, Army Sustainment Command spokesperson" when="Nov. 17, 2026" where="Radio Iowa">
+          <p>"The good thing is, if people have concerns about it being on their property, all they have to do is hose that off, and it’s gone."<Cite c="barati-hose" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Peter Thorne, a University of Iowa professor emeritus of environmental health, says hosing lead dust off cars and other surfaces moves it into the soil or into streams and ponds.<Cite c="thorne-hosing" /></p>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why a blast, and why Monday</h2>
+        <p data-layer="narrative">The lead azide sat for about 20 years in the two bunkers, in a bath of ethanol and water meant to keep it stable, and an inspection in March found the bath had evaporated, Barati says.<Cite c="storage-20-years" /> The Army says it was military explosives-disposal staff who directed that the drums not be moved.<Cite c="do-not-move-directive" /> The Army's assessment says the crystals form most in cold months, below freezing.<Cite c="cold-worse" /></p>
+        <p data-layer="narrative">The Army considered destroying the explosive with chemicals where it sits, but rejected that because it would mean {n.neutralizeLowDays} to {n.neutralizeHighDays} days of handling the drums, which it called an unacceptable risk to people.<Cite c="ea-neutralization-rejected" /> Its five criteria for choosing a method include how quickly the plant can get back to its work.<Cite c="ea-timeline-criterion" /></p>
+        <p data-layer="narrative">Iowa Gov. Kim Reynolds says she spoke with Telle on Thursday, Nov. 19, and asked him for a delay, and eight Illinois and Iowa officials, among them Illinois Sens. Tammy Duckworth and Dick Durbin and Gov. JB Pritzker, had asked him in a letter to consider one so safer alternatives could be explored.<Cite c="telle-weather-reason" /><Cite c="reynolds-asked" /><Cite c="letter-delay" /><Cite c="letter-signers" /> Sen. Chuck Grassley said the Army was delaying "to further educate the public."<Cite c="grassley-educate" /> The environmental groups had filed suit hours before Telle's announcement.<Cite c="suit-hours-before" /></p>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">The fight in court</h2>
+        <p data-layer="narrative">EPA's rules treat an open blast as a way to get rid of explosive waste that cannot safely be disposed of another way, and say enclosed methods are preferred.<Cite c="epa-rule-cannot-safely" /></p>
+        <h3 data-layer="fact">The environmental groups</h3>
+        <p data-layer="narrative">The groups, represented by Earthjustice lawyers, argue the permit is unlawful.<Cite c="earthjustice-counsel" /> They say it leaves out the environmental performance standards the rules for open detonation require.<Cite c="suit-performance-standards" /> They say EPA accepted the Army's choice of an open blast without fully considering less dangerous alternatives, among them mobile treatment units and a chemical treatment called MuniRem, which they say EPA lists as having been used on lead azide.<Cite c="suit-alternatives" /> And they say EPA took no public comment.<Cite c="suit-no-comment" /></p>
+        <p data-layer="narrative">The council's executive director, Sarah Green, said in the groups' announcement:<Cite c="groups-concede" /></p>
+        <QuoteCard speaker="Sarah Green, executive director, Iowa Environmental Council" when="Nov. 19, 2026" where="Earthjustice news release">
+          <p>"It very well could be the case that the U.S. Army has no other safe alternative to disposing of the toxic lead azide."<Cite c="groups-concede" /></p>
+          <p>"But our federal government needs to do better at communicating the potential health risks of lead contamination in our communities and providing more time to keep our communities and vulnerable groups safe, like children and pregnant women."<Cite c="groups-concede" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The Army and EPA</h3>
+        <p data-layer="narrative">EPA told The Intercept that the Army concluded the material cannot be safely handled or moved, and so cannot be treated any way but by blowing it up in place.<Cite c="epa-in-place-only" /> Rep. Mariannette Miller-Meeks of Iowa calls the controlled detonation the safest and best option.<Cite c="millermeeks-backs" /> The record that would show how the Army weighed the other methods is its analysis, sent to EPA in letters in August and September, which the groups say EPA has not made public.<Cite c="alternatives-analysis-not-public" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>When did the Army publish its plume maps?<Cite c="first-maps-nov15" /></h3>
+              <p data-layer="narrative">Postponing the blast, Telle wrote:</p>
+              <QuoteCard speaker="Adam Telle, acting secretary of the Army" when="Nov. 19, 2026" where="Post on X, republished by the Army">
+                <p>"In March of this year, the Army uncovered degrading Lead Azide housed in bunkers at the installation and immediately began communicating with stakeholders and the public in Middletown and the modeled impact area about the danger it posed."<Cite c="telle-immediately" /></p>
+              </QuoteCard>
+              <figure class="story-figure" data-layer="fact">
+                <DecisionTimeline entries={warnings} heading="What the Army said and did" />
+              </figure>
+              <p data-layer="narrative">EPA's permit required the first plume map at least five days before the blast, and Barati says the Army met that.<Cite c="permit-five-days" /><Cite c="barati-permit-five-days" /> On Nov. 17, she told Iowa Starting Line:<Cite c="barati-shocking" /></p>
+              <QuoteCard speaker="Justine Barati, Army Sustainment Command spokesperson" when="Nov. 17, 2026" where="Interview with Iowa Starting Line">
+                <p>"I understand that it’s shocking to the people that we haven’t told before."<Cite c="barati-shocking" /></p>
+              </QuoteCard>
+              <p data-layer="narrative">The Army published its first plume maps on Nov. 15, and the Iowa governor's office says it learned of the plan on Nov. 16.<Cite c="first-maps-nov15" /><Cite c="governor-learned-monday" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="coverage">
+        <h2 data-layer="fact">What the coverage got right and wrong</h2>
+        <h3 data-layer="fact">KCRG: an injunction, or a stay until the court rules?</h3>
+        <p data-layer="narrative">KCRG reported that the appeals court "granted an emergency injunction to pause the lead azide detonation."<Cite c="kcrg-injunction" /></p>
+        <p data-layer="narrative">The court's Nov. 19 order is an administrative stay that holds EPA's permit until the court rules on the groups' emergency motion.<Cite c="stay-granted" /></p>
+        <h3 data-layer="fact">The Intercept, Nov. 19: overstated</h3>
+        <p data-layer="narrative">The Intercept wrote that the blast would end up "blanketing communities in lead-containing particles up to 100 miles away."<Cite c="intercept-blanketing" /></p>
+        <p data-layer="narrative">The roughly 100 miles reported for the Army's first maps was lead in the air.<Cite c="air-reach-100-to-60" /> The air map's edge is the smallest amount the Army's samplers can detect, and the maps assume all the lead is released.<Cite c="air-map-edge" /><Cite c="maps-all-lead" /> By the environmental groups' reading, the settling dust covered a far smaller area, as the <a href="#the-plume">map table above</a> shows.<Cite c="deposition-25-40" /></p>
+        <h3 data-layer="fact">CBS News Chicago, Nov. 18: checks out, for the first maps</h3>
+        <p data-layer="narrative">CBS News Chicago wrote that the plume was expected to spread across parts of eastern Iowa and northwest Illinois on Friday.<Cite c="cbs-nw-illinois" /> That matches what Illinois EPA said the same day of the Army's modeling, which it said could reach Mercer County.<Cite c="illinois-mercer" /></p>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The court's pause on EPA's permit lasts until it rules on the groups' emergency motion.<Cite c="stay-granted" /> EPA has told the court it intends to file its opposition on or before Nov. 22.<Cite c="epa-opposition-notice" /> On the full challenge, the record of EPA's decision is due Dec. 29, and the groups' brief is due Jan. 12, 2027.<Cite c="briefing-schedule" /></p>
+        <p data-layer="narrative">Before any blast the Army must publish an updated plume map {n.mapHoursBefore} hours ahead, then a new one every hour from {n.hourlyFromHours} hours ahead, and a final map within {n.finalMapHours} hours after.<Cite c="permit-map-schedule" /> The permit bars the blast in surface winds under {n.windLowMph} or over {n.windHighMph} miles per hour, in rain, or during a temperature inversion, when warmer air above traps air near the ground.<Cite c="permit-weather" /></p>
+        <p data-layer="narrative">Within {n.samplingHours} hours after the blast, the Army must start testing soil and wiping surfaces for lead at parks, public places and private properties whose owners agreed, but only inside the heavier of the final dust map's two levels.<Cite c="permit-sampling" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .map-table { width: 100%; border-collapse: collapse; font-family: var(--sans); font-size: 0.9rem; }
+  .map-table th, .map-table td { text-align: left; padding: 0.5rem 0.6rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink); }
+  .map-table thead th { font-size: 0.78rem; color: var(--slate); font-weight: 600; }
+</style>
