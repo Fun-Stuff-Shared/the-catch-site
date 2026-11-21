@@ -98,9 +98,12 @@ def computations(claim, records=None, texts=None):
         inferred = dates(context, next(iter(years))) if len(years) == 1 else explicit
         if len(explicit) == 1 and len(inferred) == 2:
             anchor = explicit[0]
+            interval = intervals[0]
+            expected_days = float(interval[1]) * (7 if interval[2].lower().startswith("week") else
+                                                365.2425 / 12 if interval[2].lower().startswith("month") else 1)
             inferred = [min((d.replace(year=y) for y in (anchor.year - 1, anchor.year, anchor.year + 1)
                              if not (d.month == 2 and d.day == 29 and not calendar.isleap(y))),
-                            key=lambda candidate: abs((candidate - anchor).days))
+                            key=lambda candidate: abs(abs((candidate - anchor).days) - expected_days))
                         if d != anchor else d for d in inferred]
         ds = sorted(set(inferred))
         if len(ds) == 2:

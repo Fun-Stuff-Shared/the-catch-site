@@ -22,6 +22,8 @@ for (const [name, says, passage, count, mismatches, body, date] of [
   ["real comments-60-days r14", "BIS takes public comments until January 19, 2027, 60 days after publication.", "Comments must be received no later than January 19, 2027.", 1, 1],
   ["correct day count", "61 days between Nov. 19, 2026 and Jan 19, 2027.", "", 1, 0],
   ["infer year", "There were 3 days from Nov 19 to Nov 23, 2026.", "", 1, 1],
+  ["infer long interval year", "10 months from January 1 to November 1, 2026.", "", 1, 0],
+  ["infer long interval mismatch", "9 months from January 1 to November 1, 2026.", "", 1, 1],
   ["ISO weeks", "It ended 2 weeks after 2026-11-01 on 2026-11-15.", "", 1, 0],
   ["calendar months", "It ended 2 months after Nov 19, 2026 on Jan 19, 2027.", "", 1, 0],
   ["dates from passage", "The deadline is 60 days after Nov 19, 2026.", "The deadline is Jan 19, 2027.", 1, 1],
