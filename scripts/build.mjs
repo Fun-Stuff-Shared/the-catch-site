@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { closeSync, mkdtempSync, openSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { pathToFileURL } from "node:url";
@@ -16,7 +16,22 @@ export const stages = [
   ["check-shell", "node", ["scripts/check-shell.mjs"]],
 ];
 
-export function runBuild({ steps = stages, reportPath = ".build-report.json", env = process.env } = {}) {
+export function parseTimeOutput(output, kind) {
+  const match = kind === "gnu"
+    ? output.match(/Maximum resident set size \(kbytes\):\s*(\d+)/)
+    : kind === "bsd" ? output.match(/(\d+)\s+maximum resident set size/) : null;
+  return match ? Number(match[1]) / (kind === "bsd" ? 1024 : 1) : null;
+}
+
+export function detectTime(run = spawnSync) {
+  for (const [kind, flag] of [["gnu", "-v"], ["bsd", "-l"]]) {
+    const result = run("/usr/bin/time", [flag, "/usr/bin/true"], { encoding: "utf8" });
+    if (result.status === 0 && parseTimeOutput(result.stderr ?? "", kind) !== null) return { kind, flag };
+  }
+  return null;
+}
+
+export function runBuild({ steps = stages, reportPath = ".build-report.json", env = process.env, timer = detectTime() } = {}) {
   const temporary = mkdtempSync(join(tmpdir(), "catch-build-"));
   const started = performance.now();
   const rows = [];
@@ -25,17 +40,21 @@ export function runBuild({ steps = stages, reportPath = ".build-report.json", en
     for (const [stage, command, args, overrides] of steps) {
       const usagePath = join(temporary, "usage");
       const start = performance.now();
-      // GNU time uses wait4 rusage: the stage and its waited-for descendants,
-      // not the runner's cumulative child high-water mark. RSS is not additive.
-      const result = spawnSync("/usr/bin/time", ["-f", "%M", "-o", usagePath, command, ...args], {
-        env: { ...env, ...overrides }, stdio: "inherit",
-      });
+      const fd = timer ? openSync(usagePath, "w") : null;
+      let result;
+      try {
+        result = timer
+          ? spawnSync("/usr/bin/time", [timer.flag, "/bin/sh", "-c", 'exec "$@" 2>&3', "build-stage", command, ...args], {
+            env: { ...env, ...overrides }, stdio: ["inherit", "inherit", fd, "inherit"],
+          })
+          : spawnSync(command, args, { env: { ...env, ...overrides }, stdio: "inherit" });
+      } finally {
+        if (fd !== null) closeSync(fd);
+      }
       const wallMs = performance.now() - start;
       let peakRssKiB = null;
       try {
-        const lines = readFileSync(usagePath, "utf8").trim().split("\n");
-        const value = Number(lines.at(-1));
-        if (Number.isFinite(value)) peakRssKiB = value;
+        peakRssKiB = parseTimeOutput(readFileSync(usagePath, "utf8"), timer?.kind);
       } catch {}
       exitCode = result.status ?? 1;
       rows.push({ stage, wallMs, peakRssKiB, exitCode, signal: result.signal });
@@ -45,8 +64,8 @@ export function runBuild({ steps = stages, reportPath = ".build-report.json", en
   } finally {
     const report = {
       stages: rows,
-      total: { wallMs: performance.now() - started, peakRssKiB: Math.max(0, ...rows.map((row) => row.peakRssKiB ?? 0)), exitCode },
-      rssMethod: "GNU time wait4 maxRSS (KiB), including waited-for children; maximum high-water mark, not concurrent RSS sum",
+      total: { wallMs: performance.now() - started, peakRssKiB: rows.some((row) => row.peakRssKiB !== null) ? Math.max(...rows.map((row) => row.peakRssKiB ?? 0)) : null, exitCode },
+      rssMethod: timer ? `${timer.kind} time maxRSS normalized to KiB, including waited-for children; maximum high-water mark, not concurrent RSS sum` : "unavailable (timing only)",
     };
     writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n");
     console.table([...rows, { stage: "TOTAL", ...report.total }].map((row) => ({
