@@ -114,6 +114,8 @@ def computations(claim, records=None, texts=None):
             interval = intervals[0]
             expected_days = float(interval[1]) * (7 if interval[2].lower().startswith("week") else
                                                 365.2425 / 12 if interval[2].lower().startswith("month") else 1)
+            if re.search(r"\bwithin\s*$", says[:interval.start()], re.I):
+                expected_days = 0
             variants = []
             for year in (anchor.year - 1, anchor.year, anchor.year + 1):
                 try:

@@ -94,6 +94,10 @@ for (const [name, says, passage, count, mismatches, body, date] of [
   ["real IFR within missing endpoint", "A data center must get a license within 90 days of the rule's effective date.", "Effective November 19, 2026.", 0, 0],
   ["within of endpoints", "The deadline is February 18, 2027, within 90 days of the effective date November 19, 2026.", "", 1, 1],
   ["within shorter than maximum", "The deadline is February 16, 2027, within 90 days of the effective date November 19, 2026.", "", 1, 0],
+  ["within limit does not select the year", "January 20, 2027 is within 365 days after January 19.", "", 1, 0],
+  ["within of limit does not select the year", "January 20, 2027 is within 365 days of January 19.", "", 1, 0],
+  ["within inferred cross year", "January 1, 2027 is within 365 days after December 31.", "", 1, 0],
+  ["within inferred year exceeding bound", "January 20, 2027 is within 1 day after January 18.", "", 1, 1],
 ]) test(name, (t) => {
   const { root, run } = fixture(t, says, passage, date, body);
   const result = run();
