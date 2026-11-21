@@ -1,0 +1,162 @@
+/* Brand primitives sampled from brand-reference/brand: black ground, cream
+   documents, yellow marker, red source labels. Blue is the accessible link role.
+   Keep primitives fixed; use the semantic aliases in reader-facing components. */
+:root {
+  --brand-ink: #0d0d0d;
+  --brand-paper: #f4efe6;
+  --brand-highlight: #f2d83b;
+  --brand-alert: #b13224;
+  --brand-link: #225a85;
+
+  --font-editorial: "Newsreader", Georgia, serif;
+  --font-interface: "Public Sans", system-ui, -apple-system, sans-serif;
+  --font-record: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --serif: var(--font-editorial);
+  --sans: var(--font-interface);
+  --mono: var(--font-record);
+  --display: var(--font-interface);
+  --canvas: var(--brand-ink);
+  --text-small: .875rem;
+  --text-base: 1rem;
+  --text-prose: clamp(1.05rem, 1rem + .2vw, 1.1875rem);
+  --text-title: clamp(1.875rem, 4.5vw, 3.5rem);
+  --text-section: 1.45rem;
+  --leading-prose: 1.65;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --reading: 54rem;
+  --measure: 42rem;
+  --gutter: clamp(1.25rem, 3.5vw, 3rem);
+  --sheet-margin: clamp(1rem, 3.333vw, 3rem);
+  --sheet-max: 75rem;
+  --sheet-edge: transparent;
+
+  color-scheme: light;
+  --ink: var(--brand-ink);
+  --paper: var(--brand-paper);
+  --surface: #ebe5d9;
+  --surface-hover: #e2dacb;
+  --slate: #5e5a52;
+  --rule: #b7b0a4;
+  --rule-strong: #81796d;
+  --control-border: #81796d;
+  --blue: var(--brand-link);
+  --blue-tint: #dfe8ed;
+  --on-blue: #ffffff;
+  --red: var(--brand-alert);
+  --on-red: #ffffff;
+  --alert-tint: #f2ddd6;
+  --amber: #805712;
+  --on-amber: #ffffff;
+  --success: #286146;
+  --success-tint: #dce9df;
+  --chart-main: #43729b;
+  --chart-accent: #a36a20;
+  --chart-secondary: #866b79;
+  --chart-neutral: #8c7d64;
+  --shadow: #0d0d0d26;
+  --on-ink: var(--paper);
+  --highlight: var(--brand-highlight);
+  --on-highlight: var(--brand-ink);
+  --gold: var(--amber);
+  --muted: var(--slate);
+  --alert-fill: var(--brand-alert);
+  --on-alert: #ffffff;
+  --ink-band: var(--brand-ink);
+  --band-ink: var(--brand-paper);
+  --band-muted: #c5c0b4;
+  --band-rule: #756f65;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: var(--brand-paper);
+  --paper: #20201d;
+  --surface: #292925;
+  --surface-hover: #36362f;
+  --sheet-edge: #49473f;
+  --slate: #bfb9ac;
+  --rule: #49473f;
+  --rule-strong: #858176;
+  --control-border: #8a8579;
+  --blue: #9bc7ec;
+  --blue-tint: #203442;
+  --on-blue: var(--brand-ink);
+  --red: #ff9887;
+  --on-red: var(--brand-ink);
+  --alert-tint: #40251f;
+  --amber: #e6be69;
+  --on-amber: var(--brand-ink);
+  --success: #a6d6b7;
+  --success-tint: #1e3528;
+  --chart-main: #9bc7ec;
+  --chart-accent: #e6be69;
+  --chart-secondary: #c4a0b4;
+  --chart-neutral: #a99d86;
+  --shadow: #00000066;
+}
+
+/* A usable system theme even when JavaScript or storage is unavailable. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --ink: var(--brand-paper);
+    --paper: #20201d;
+    --surface: #292925;
+    --surface-hover: #36362f;
+    --sheet-edge: #49473f;
+    --slate: #bfb9ac;
+    --rule: #49473f;
+    --rule-strong: #858176;
+    --control-border: #8a8579;
+    --blue: #9bc7ec;
+    --blue-tint: #203442;
+    --on-blue: var(--brand-ink);
+    --red: #ff9887;
+    --on-red: var(--brand-ink);
+    --alert-tint: #40251f;
+    --amber: #e6be69;
+    --on-amber: var(--brand-ink);
+    --success: #a6d6b7;
+    --success-tint: #1e3528;
+    --chart-main: #9bc7ec;
+    --chart-accent: #e6be69;
+    --chart-secondary: #c4a0b4;
+    --chart-neutral: #a99d86;
+    --shadow: #00000066;
+  }
+}
+
+@media (max-width: 760px) { :root { --gutter: 1.25rem; } }
+
+/* Opt-in treatments: do not mark or strike authored reporting automatically. */
+.catch-highlight { background: var(--highlight); color: var(--on-highlight); padding: .02em .08em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.catch-strike { text-decoration-thickness: .07em; text-decoration-color: currentColor; }
+.source-label { font: 500 .75rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
+
+/* A black figure panel is a local surface, not a second site theme. */
+.ink-panel {
+  color: var(--brand-paper);
+  background: var(--ink-band);
+  --ink: var(--brand-paper);
+  --paper: var(--brand-ink);
+  --surface: #20201d;
+  --slate: #c5c0b4;
+  --rule: #756f65;
+  --blue: #9bc7ec;
+  --on-blue: var(--brand-ink);
+  --red: #ff9887;
+  --on-red: var(--brand-ink);
+  --amber: #e6be69;
+  --on-amber: var(--brand-ink);
+  --chart-main: #9bc7ec;
+  --chart-accent: #e6be69;
+  --chart-secondary: #c4a0b4;
+  --chart-neutral: #a99d86;
+}

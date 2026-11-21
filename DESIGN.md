@@ -1,6 +1,10 @@
 # Reader experience
 
-The experimental direction extends the jobs story's editorial identity: Newsreader headings and prose, Public Sans navigation, quiet rules, white paper, near-black ink, restrained blue links. Reading is the primary mode.
+The selected Open Dossier direction uses a black canvas, cream document sheets, heavy Public Sans headlines, Newsreader body copy and IBM Plex Mono record metadata. A yellow block behind Catch is provisional pending the final identity assets. Yellow marks the story edge and exact passages; red labels sources and corrections. Reading is the primary mode, with the record one step away. Brand primitives follow `brand/` on `brand-reference`; semantic roles live in `public/assets/tokens.css`.
+
+The canvas remains black in both themes. Light keeps cream sheets; Dark uses dim sheets with cream text. Auto follows the device, with a CSS fallback if JavaScript is unavailable; explicit choices persist when storage is available. The native theme selector remains hidden without JavaScript. The proposed default is Auto, so dark-device readers do not face a bright sheet; Light remains available for the original paper appearance. Both sheet treatments are subject to visual review before merge. Outer sheet margins never fall below 16px, independently of internal reading gutters. `.wordmark` and `.wordmark-highlight` are the integration hooks for the separate final lockup.
+
+Headlines use `--display`, body copy `--serif`, controls `--sans`, and record metadata `--mono`. Small-screen headlines loosen tracking to -.015em. `.ink-panel` scopes chart colors to a black surface without changing the site theme; the gallery renders BarChart, StepChart and ShareBar on sheet and black surfaces with the same fictional values. `Correction.astro` provides a labeled date, struck previous value, corrected value and explanatory slot; corrections are never applied to authored text automatically.
 
 The shell fills the desktop viewport with shared responsive gutters. Browsing uses the available width for multiple story or series columns. Text pages share an 864px reading column with larger desktop prose; wide tables and source copies may use the browsing width. A story contents rail occupies the left grid column on large screens. Below it, contents appear in the reading flow. No route changes the outer sheet width.
 
@@ -8,7 +12,7 @@ Latest uses a newspaper composition: a compact publication line, topic navigatio
 
 Search is one shared header control on every route. It opens a field, filters the current homepage catalog in place, and shows matching published stories in a dropdown on other pages. The series directory also has its distinctly labeled local series filter. Topics describe subjects; series follow ongoing coverage; stories are dated developments. Only topics with published stories appear on the real homepage.
 
-The opt-in `/design/coverage/` preview exercises the same homepage with fifteen explicitly fictional stories across five topics. Build it with `CATCH_DESIGN_PREVIEW=1 npm run build`. Samples have separate noindex detail pages and are excluded from the real homepage and search index. Without the preview flag the design routes are not generated.
+The opt-in `/design/` gallery checks shared foundation roles, controls, chart surfaces and the correction treatment. Add a self-contained fixture under `src/components/design/` to extend it. `/design/coverage/` exercises the same homepage with fifteen explicitly fictional stories across five topics. Build it with `CATCH_DESIGN_PREVIEW=1 npm run build`. Samples have separate noindex detail pages and are excluded from the real homepage and search index. Without the preview flag the design routes are not generated. The design gate runs in both build modes and checks isolation and noindex.
 
 Archived static HTML routes are rendered through BaseLayout so their navigation and gutters match the rest of the site. The build shell gate checks every nonredirect page for the shared navigation, search form, and stylesheet.
 

@@ -5,4 +5,4 @@ const { subEvents } = Astro.props;
   <span>In this event</span>
   {subEvents.map((item) => <a href={`#${item.section_anchor}`}>{item.date} · {item.label}</a>)}
 </nav>
-<style>.sub-events{font:.76rem/1.4 "Public Sans",sans-serif;color:#5b6470;display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.sub-events span{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:.68rem}.sub-events a{color:#22604a}</style>
+<style>.sub-events{font:.76rem/1.4 "Public Sans",sans-serif;color:var(--slate);display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}.sub-events span{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:.68rem}.sub-events a{color:var(--success)}</style>

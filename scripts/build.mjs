@@ -14,6 +14,7 @@ export const stages = [
   ["facts-claims", "node", ["scripts/facts-claims.mjs"]],
   ["check-events", "node", ["scripts/check-events.mjs"]],
   ["check-shell", "node", ["scripts/check-shell.mjs"]],
+  ["check-design", "node", ["scripts/check-design.mjs"]],
 ];
 
 export function parseTimeOutput(output, kind) {
