@@ -9,7 +9,8 @@ function page({ saved = null, dark = false, blocked = false } = {}) {
   const storage = new Map(saved === null ? [] : [['catch-theme', saved]]);
   const system = { matches: dark, addEventListener: (type, fn) => { deviceEvents[type] = fn; } };
   const wrapper = { hidden: true };
-  const control = { value: '', closest: () => wrapper, addEventListener: (type, fn) => { controlEvents[type] = fn; } };
+  const label = { textContent: '' }, attributes = {};
+  const control = { value: '', closest: () => wrapper, querySelector: () => label, setAttribute: (name, value) => { attributes[name] = value; }, addEventListener: (type, fn) => { controlEvents[type] = fn; } };
   const document = { documentElement: { dataset: {} }, getElementById: () => control, addEventListener: (type, fn) => { events[type] = fn; } };
   const localStorage = {
     getItem: key => { if (blocked) throw new Error('Storage blocked'); return storage.get(key) ?? null; },
@@ -20,8 +21,12 @@ function page({ saved = null, dark = false, blocked = false } = {}) {
   const theme = () => document.documentElement.dataset.theme;
   const bootTheme = theme();
   events.DOMContentLoaded();
-  return { theme, bootTheme, control, wrapper, storage,
-    choose(value) { control.value = value; controlEvents.change(); },
+  return { theme, bootTheme, control, wrapper, storage, label, attributes,
+    click() { controlEvents.click(); },
+    choose(value) {
+      for (let i = 0; i < 3 && control.value !== value; i++) controlEvents.click();
+      assert.equal(control.value, value);
+    },
     device(value) { system.matches = value; deviceEvents.change(); },
     remote(key, newValue) { events.storage({ key, newValue }); },
   };
@@ -34,6 +39,17 @@ test('first paint follows the device; Auto keeps following later device changes'
   assert.equal(p.wrapper.hidden, false);
   p.device(false);
   assert.equal(p.theme(), 'light');
+});
+test('the theme button cycles Auto, Light and Dark with a current-state label and next-choice name', () => {
+  const p = page({ dark: true });
+  for (const [label, next] of [['Auto', 'Light'], ['Light', 'Dark'], ['Dark', 'Auto']]) {
+    assert.equal(p.label.textContent, label);
+    assert.match(p.attributes['aria-label'], new RegExp(`Color theme: ${label}.*Switch to ${next}`));
+    p.click();
+  }
+  assert.equal(p.control.value, 'system');
+  assert.equal(p.theme(), 'dark');
+  assert.equal(p.storage.has('catch-theme'), false);
 });
 test('a saved choice wins before paint, persists, and ignores device changes', () => {
   const p = page({ saved: 'light', dark: true });

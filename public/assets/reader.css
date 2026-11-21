@@ -470,14 +470,15 @@ nav.story-toc { background: var(--paper); padding: 0; }
 [data-v2-statement] blockquote { margin: 0 0 .35rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
 .record-ledger .ledger-row[data-v2-claim] { display: block; }
 
-/* Theme selection stays native, keyboard accessible, and clear of search/menu. */
+/* A native button cycles themes; its name announces the current and next choice. */
 .theme-control { display: flex; flex: none; }
-.theme-control select { min-height: 44px; width: 5.25rem; padding: .5rem .3rem; border: 1px solid var(--band-rule); border-radius: 0; background: var(--ink-band); color: var(--band-ink); font: .8rem var(--sans); color-scheme: dark; cursor: pointer; }
+.theme-control button { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; min-width: 44px; padding: .25rem .2rem; border: 0; background: transparent; color: var(--band-ink); font: .75rem var(--mono); }
+.theme-control button:hover { color: var(--brand-highlight); }
+.theme-control [data-theme-label] { min-width: 3.2em; text-align: left; }
 .band :focus-visible, .colophon :focus-visible { outline-color: var(--brand-highlight); }
 ::selection { background: var(--highlight); color: var(--on-highlight); }
 input::placeholder { color: var(--slate); opacity: 1; }
 @media (max-width: 760px) {
-  .theme-control select { width: 4.5rem; }
   .search-toggle { padding-left: .5rem; }
 }
 @media (prefers-reduced-motion: reduce) {
