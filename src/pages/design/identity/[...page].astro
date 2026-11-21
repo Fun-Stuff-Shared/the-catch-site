@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import catalog from '../../../../public/assets/brand/catalog.json';
+
+export function getStaticPaths() {
+  return process.env.CATCH_DESIGN_PREVIEW === '1' ? [{ params: { page: undefined } }] : [];
+}
+const { palette } = catalog;
+const lockups = [
+  { name: 'On paper', variant: 'on-paper', background: palette.paper },
+  { name: 'On ink', variant: 'on-ink', background: palette.ink },
+];
+const downloads = [
+  ['SVG favicon', 'favicon.svg'], ['ICO favicon', 'favicon.ico'],
+  ['Apple icon · 180 px', 'apple-touch-icon.png'], ['App icon · 192 px', 'icon-192.png'],
+  ['App icon · 512 px', 'icon-512.png'], ['Maskable icon · 512 px', 'icon-maskable-512.png'],
+  ['Social avatar · 1000 px', 'avatar-1000.png'], ['Web manifest', 'site.webmanifest'],
+];
+---
+<BaseLayout title="Identity kit | The Catch design preview" noindex>
+  <div class="content">
+    <main id="identity-preview" class="identity-page">
+      <p class="preview-notice">Design preview only. This page is not reporting. The live masthead is unchanged.</p>
+      <p class="eyebrow">The Catch / Identity</p>
+      <h1>Identity kit</h1>
+      <p class="intro">A yellow block marks the name. The serif letterforms and red period carry through from the publication’s wordmark.</p>
+      <p class="context">Open Dossier direction. These paper and ink boards stay fixed in both OS color preferences. This preview does not implement A’s pending dark-sheet theme.</p>
+
+      <section aria-labelledby="horizontal-heading">
+        <div class="section-heading"><h2 id="horizontal-heading">The wordmark</h2><p>Horizontal / outlined SVG</p></div>
+        <div class="lockup-grid">
+          {lockups.map(({ name, variant, background }) => <figure>
+            <div class="artboard horizontal" style={`background: ${background};`}><img src={`/assets/brand/wordmark-${variant}.svg`} alt="The Catch." width="371" height="96" /></div>
+            <figcaption><span>{name}</span><a href={`/assets/brand/wordmark-${variant}.svg`} aria-label={`Download horizontal wordmark ${name.toLowerCase()} as SVG`} download>SVG</a><a href={`/assets/brand/wordmark-${variant}.png`} aria-label={`Download horizontal wordmark ${name.toLowerCase()} as PNG`} download>PNG</a></figcaption>
+          </figure>)}
+        </div>
+        <p class="guidance">Use the complete wordmark at 168 px wide or larger. Keep at least the height of the red period clear on every side. Do not stretch it or recolor the yellow block.</p>
+      </section>
+
+      <section aria-labelledby="stacked-heading">
+        <div class="section-heading"><h2 id="stacked-heading">A narrower lockup</h2><p>Stacked / same letterforms</p></div>
+        <div class="lockup-grid">
+          {lockups.map(({ name, variant, background }) => <figure>
+            <div class="artboard stacked" style={`background: ${background};`}><img src={`/assets/brand/wordmark-stacked-${variant}.svg`} alt="The Catch. Stacked wordmark." width="232" height="174" /></div>
+            <figcaption><span>{name}</span><a href={`/assets/brand/wordmark-stacked-${variant}.svg`} aria-label={`Download stacked wordmark ${name.toLowerCase()} as SVG`} download>SVG</a><a href={`/assets/brand/wordmark-stacked-${variant}.png`} aria-label={`Download stacked wordmark ${name.toLowerCase()} as PNG`} download>PNG</a></figcaption>
+          </figure>)}
+        </div>
+        <p class="guidance">Use the stacked lockup at 112 px wide or larger when the horizontal wordmark does not fit.</p>
+      </section>
+
+      <section aria-labelledby="mark-heading">
+        <div class="section-heading"><h2 id="mark-heading">The compact mark</h2><p>Tabs / apps / social</p></div>
+        <div class="mark-grid">
+          <figure class="compact-art"><img src="/assets/brand/mark.svg" alt="The Catch compact mark: a serif C and red period on yellow" width="224" height="224" /><figcaption>Standard mark</figcaption></figure>
+          <figure class="compact-art"><div class="circle-crop"><img src="/assets/brand/icon-maskable-512.png" alt="The padded mark inside a circular app crop" width="224" height="224" /></div><figcaption>Maskable / circular crop</figcaption></figure>
+          <div class="small-sizes"><h3>Actual favicon sizes</h3><div class="favicons"><figure><img src="/assets/brand/favicon-16.png" alt="The Catch favicon at 16 pixels" width="16" height="16" /><figcaption>16 px</figcaption></figure><figure><img src="/assets/brand/favicon-32.png" alt="The Catch favicon at 32 pixels" width="32" height="32" /><figcaption>32 px</figcaption></figure></div><p>The mark replaces the full wordmark where space is limited.</p><a href="/assets/brand/mark.svg" download>Download compact SVG</a></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="files-heading">
+        <div class="section-heading"><h2 id="files-heading">Ready to use</h2><p>Local files / no external fonts</p></div>
+        <ul class="download-list">{downloads.map(([label, filename]) => <li><a href={`/assets/brand/${filename}`} download>{label}<span aria-hidden="true">↓</span></a></li>)}</ul>
+        <p class="guidance">All wordmarks contain outlined letterforms. The manifest is prepared but is not linked from the live site until foundation A and the identity integration are ready.</p>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .identity-page { width: 100%; min-width: 0; padding: clamp(1.25rem, 4vw, 3rem); color: var(--ink); }
+  .preview-notice { margin: 0 0 2.5rem; padding: .8rem 1rem; border: 1px solid var(--rule); font: .8rem/1.5 var(--sans); }
+  .eyebrow, .section-heading > p { font: .7rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+  .eyebrow { margin: 0 0 .65rem; }
+  h1 { margin: 0; font: 700 clamp(2.6rem, 6vw, 4.8rem)/1 var(--sans); letter-spacing: -.035em; }
+  .intro { max-width: 35rem; margin: 1.3rem 0 .65rem; font: 400 clamp(1.2rem, 2.4vw, 1.6rem)/1.4 var(--serif); }
+  .context, .guidance { max-width: 45rem; font: .85rem/1.6 var(--sans); }
+  .context { margin-bottom: 3rem; }
+  section { margin-top: 2.75rem; }
+  .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  h2 { margin: 0; font: 700 1.4rem/1.2 var(--sans); letter-spacing: -.02em; }
+  .section-heading > p { margin: 0; }
+  .lockup-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  figure { margin: 0; min-width: 0; }
+  .artboard { display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+  .horizontal { min-height: 12rem; }
+  .stacked { min-height: 17rem; }
+  .artboard img { display: block; max-width: 100%; height: auto; }
+  .stacked img { width: 200px; }
+  figcaption { display: flex; align-items: baseline; gap: 1rem; padding-top: .65rem; font: .75rem/1.5 var(--sans); }
+  figcaption > span { margin-right: auto; }
+  .guidance { margin-top: 1rem; }
+  .mark-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 1.5rem; align-items: start; }
+  .compact-art > img, .circle-crop { display: block; width: 100%; max-width: 224px; height: auto; }
+  .circle-crop { aspect-ratio: 1; border-radius: 50%; overflow: hidden; }
+  .circle-crop img { display: block; width: 100%; height: auto; }
+  h3 { margin: 0; font: 700 .9rem/1.4 var(--sans); }
+  .favicons { display: flex; gap: 2rem; align-items: end; min-height: 90px; }
+  .favicons img { display: block; }
+  .small-sizes > p, .small-sizes > a { font: .8rem/1.6 var(--sans); }
+  .download-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2rem; list-style: none; margin: 0; padding: 0; }
+  .download-list a { display: flex; justify-content: space-between; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--rule); font: .85rem/1.5 var(--sans); }
+  .identity-page a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+  @media (max-width: 600px) {
+    .lockup-grid, .download-list { grid-template-columns: 1fr; }
+    .horizontal { min-height: 9rem; padding: 1.25rem; }
+    .stacked { min-height: 14rem; }
+    .mark-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .small-sizes { grid-column: 1 / -1; margin-top: .5rem; }
+  }
+</style>
