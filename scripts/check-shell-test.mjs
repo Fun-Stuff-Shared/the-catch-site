@@ -40,6 +40,8 @@ test('shell assertions match the DOM gate across chunk boundaries', () => {
   page('<template><meta http-equiv="refresh"><nav id="site-navigation"></nav><form id="global-search"></form></template>'),
   page('<script>"<meta http-equiv=refresh>"</script><!-- <form id="global-search"> -->'),
   page('<p><b><i>Malformed</b> formatting</i><table><a href="/">Fostered</a><tr><td>Cell</td></tr></table>'),
+  page().replace(NAV, NAV.replace('<nav id="site-navigation">','').replace('</nav>','')).replace('</body>', '<body id="site-navigation"></body>'),
+  page().replace(NAV, NAV.replace('<nav id="site-navigation">','').replace('</nav>','')).replace('</html>', '<html id="site-navigation"></html>'),
   '<meta http-equiv="REFRESH">', page('<meta http-equiv="refresh">'),
  ]) for(const size of [1, 17, 65536]) assert.deepEqual(inspect(html, size), original(html), `chunk ${size}: ${html.slice(0,80)}`);
 });
@@ -53,6 +55,17 @@ test('completed body subtrees and long text are not retained', () => {
  }
  inspector.write('</main></body></html>');
  assert.deepEqual(inspector.finish('page', BUILD), {errors:[],skipped:false});
+});
+
+test('an oversized navigation retains only enough links to reject it', () => {
+ const inspector = shellInspector();
+ inspector.write(`<html><head>${FRAME}${MARKER}</head><body>${SEARCH}<nav id="site-navigation">`);
+ for(let i=0; i<1024; i++) {
+  inspector.write('<a href="/">Link</a>'.repeat(64));
+  assert.ok(inspector.retainedNodes() < 30);
+ }
+ inspector.write('</nav></body></html>');
+ assert.deepEqual(inspector.finish('page', BUILD).errors, ['page: inconsistent navigation']);
 });
 
 test('directory checks handle empty output, missing files, and CLI failures', async t => {

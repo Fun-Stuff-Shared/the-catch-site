@@ -36,11 +36,11 @@ export function shellInspector() {
   for(const node of parser.openElements.items.slice(0, parser.openElements.stackTop + 1)) retain(node);
   for(const entry of parser.activeFormattingElements.entries) retain(entry.element);
   retain(parser.activeFormattingElements.bookmark?.element);
-  const all = [], pending = [parser.document];
+  const all = [], pending = [parser.document], linkCounts = new Map();
   while(pending.length) {
    const node = pending.pop();
    all.push(node);
-   pending.push(...(node.childNodes ?? []));
+   pending.push(...[...(node.childNodes ?? [])].reverse());
    if(node.content) pending.push(node.content);
    const id = attr(node, 'id');
    if(id === 'site-navigation' || id === 'global-search' ||
@@ -48,7 +48,12 @@ export function shellInspector() {
     (node.tagName === 'meta' && (attr(node, 'name') === 'catch-build' || attr(node, 'http-equiv')?.toLowerCase() === 'refresh'))) retain(node);
    if(node.tagName === 'a') {
     for(let parent=node; parent; parent=parent.parentNode) {
-     if(attr(parent, 'id') === 'site-navigation') { retain(node); break; }
+     // HTML/body may acquire their id from a later duplicate start tag.
+     if(attr(parent, 'id') === 'site-navigation' || parent.tagName === 'html' || parent.tagName === 'body') {
+      const count = linkCounts.get(parent) ?? 0;
+      if(count < expected.length + 1) retain(node);
+      linkCounts.set(parent, count + 1);
+     }
     }
    }
   }
