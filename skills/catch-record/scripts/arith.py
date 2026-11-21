@@ -172,7 +172,8 @@ def computations(claim, records=None, texts=None):
                 continue
             year_marker = (r"(?:^|[.!?;:,])\s*(?:in|since|by|until|of|from|through|during|for)\s*$|"
                            r"\b(?:year(?:\s+of)?|" + "|".join(MONTHS) + r")\.?\s*$")
-            if re.fullmatch(r"\d{4},?", token[0]) and re.search(year_marker, source[:start], re.I):
+            if (re.fullmatch(r"\d{4},?", token[0]) and 1800 <= number(token[0]) <= 2100
+                    and re.search(year_marker, source[:start], re.I)):
                 continue
             if token[0].startswith("$") != total.startswith("$"):
                 return None
