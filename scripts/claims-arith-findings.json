@@ -1,0 +1,66 @@
+{
+  "method": "Hand review of the 63 keyword-positive failing reports in the 246-report corpus. Positive means the report recomputes or disputes a numerical relationship, including denominator, subtotal completeness and category-dependent aggregation. Calendar weekday derivation is included; unsupported chronology without recomputation is excluded. These broader semantic cases remain labelled misses rather than being silently removed from recall.",
+  "recomputation_reviews": [
+    {"claim": "rwa-common", "stated": "\"11.8%\"", "result": "4,706 / 40843 reviewed applications = 11.5222%", "correct": true},
+    {"claim": "cc-later-counts", "stated": "\"3.2%\"", "result": "628 / 15035 × 100 = 4.17692052%", "correct": true},
+    {"claim": "reuters-ipsos", "stated": "\"completed 2026-11-10\"", "result": "cited Monday before 2026-11-10 is 2026-11-09", "correct": true},
+    {"claim": "rodriguez-99", "stated": "\"99 of every 100\"", "result": "14710000000.000 / 15603000000.000 × 100 = 94.2767%", "correct": true}
+  ],
+  "reviewed_candidates": {
+    "ai-chip-exports--2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers": [1, 2, 3, 4, 6, 7, 14, 16],
+    "ai-chip-exports--2026-11-19-house-committee-releases-china-chip-license-data": [1, 2],
+    "air-traffic-control--2026-11-13-faa-nationwide-ground-stop": [1, 2],
+    "california-voter-list--2026-10-19-doj-seeks-to-block-20000-california-ballots": [4, 9],
+    "election-administration--2026-10-23-doj-sues-to-block-alaska-senate-certification": [3, 13],
+    "election-administration--2026-11-18-mississippi-inactive-voter-spike": [2, 9],
+    "fbi-officials-charged--2026-10-20-two-ex-fbi-officials-charged-with-lying-to-congress": [1, 2, 4],
+    "fraud-tip-program--2026-10-20-trump-launches-25-million-fraud-tip-program": [1, 3, 7, 8, 9, 11, 12, 14, 15],
+    "iowa-army-detonation--2026-11-20-army-detonates-lead-azide-in-iowa": [1],
+    "iran-war--2026-11-09-trump-iran-war-effectively-over": [2, 3],
+    "iran-war--2026-11-11-officials-move-to-military-bases-over-iran-threats": [1, 2, 6, 7, 12, 14, 22],
+    "iran-war--2026-11-12-trump-no-soldiers-killed-five-months": [1, 4],
+    "midterm-polls--2026-10-20-wedgewood-polls-admits-fabricating-polls": [1, 3, 6],
+    "midterms-2026--2026-11-03-why-voters-turned-on-republicans": [1, 2, 8],
+    "midterms-2026--2026-11-07-trump-election-3-trillion-market-loss": [1],
+    "new-hampshire-student-ids--2026-10-22-supreme-court-lets-new-hampshire-bar-student-ids": [2, 3],
+    "north-carolina-mail-ballots--2026-10-21-north-carolina-rejects-more-mail-ballots": [1],
+    "trump-media-lawsuits--2026-11-19-judge-lets-trump-tax-fraud-claims-proceed": [1],
+    "venezuela-oil--2026-11-10-kpmg-report-venezuela-oil-account": [1, 2, 4, 7, 8, 11],
+    "venezuela-oil--2026-11-11-vitol-trader-vance-venezuela-oil-contract": [1, 4, 5, 7]
+  },
+  "negative_review_notes": [
+    "Other candidate reports concern attribution, missing legal exceptions, changing statuses, publication versus effective dates, or scope; numbers appearing in those findings are not themselves miscomputed.",
+    "Fraud r3 explicitly holds the one-percent-of-one-billion arithmetic; r11/r12 concern who qualifies for the 120-day exception, not elapsed-day arithmetic.",
+    "Iran bases r6 lacks the war-start date in cited evidence; r7 holds the underlying dates and disputes direct quotation. Neither establishes a wrong four-month calculation.",
+    "California r9 holds both percentages and disputes who supplied the birthplace entries.",
+    "KPMG r1 channels disputes whether banknotes were distributed, not the sum itself; vendor-energy instead explicitly recomputes the category subtotal and is retained below.",
+    "KPMG r4 holds the 57.4-million subtotal but disputes the description of one payment; Vitol r4/r5 hold donation sums and dispute recipient/donor classification."
+  ],
+  "findings": {
+    "ai-chip-exports--2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers-claims-r14.md": [
+      {"claim": "comments-60-days", "kind": "duration", "says": "BIS takes public comments until January 19, 2027, 60 days after publication.", "reason": "Needs the actual publication date, not the advance-notice date"}
+    ],
+    "ai-chip-exports--2026-11-19-house-committee-releases-china-chip-license-data-claims-r1.md": [
+      {"claim": "rwa-common", "kind": "percentage", "says": "Returns without action are routine: BIS returned 4,706 applications, 11.8 percent of those it reviewed, in 2021.", "reason": "Denominator is the all-applications reviewed count in the cited record"}
+    ],
+    "california-voter-list--2026-10-19-doj-seeks-to-block-20000-california-ballots-claims-r4.md": [
+      {"claim": "la-sample-birthplace", "kind": "denominator-provenance", "says": "In the same sample, 38.9 percent of the records that meaningfully reported a birthplace listed the United States, which the county calls strong evidence of citizenship; across all 200, 25.8 percent did.", "reason": "No established integer numerator or denominator for 25.8%; inferring 51 from a different ballot sample would be speculative"}
+    ],
+    "north-carolina-mail-ballots--2026-10-21-north-carolina-rejects-more-mail-ballots-claims-r1.md": [
+      {"claim": "cc-later-counts", "kind": "percentage", "says": "Common Cause's 27-county count later showed 628 spoiled of 15,035 ballots (3.2%) on Oct. 21 and 4.22% on Oct. 23.", "reason": "Intervening units and parenthesized percentage"}
+    ],
+    "midterms-2026--2026-11-03-why-voters-turned-on-republicans-claims-r1.md": [
+      {"claim": "reuters-ipsos", "kind": "weekday", "says": "In a Reuters/Ipsos poll completed Nov. 10, 71% of Americans wanted Congress to pass legislation ending the war with Iran and 62% supported repealing Trump's tariffs.", "reason": "Resolving Monday in publication-relative prose requires event-date alignment, not an explicitly stated interval"},
+      {"claim": "wapo-state-swings", "kind": "table-ranking", "says": "Summing the Post's county returns by state, Senate races moved furthest toward Democrats from the 2024 presidential vote in Texas (about 26 points), North Carolina, Mississippi and South Carolina (about 22 to 23), and least in Minnesota, South Dakota and Michigan (about 6 to 8); Colorado, Maine, Massachusetts, New Hampshire and Oregon had too few counties reported to include.", "reason": "Requires schema-aware county aggregation, vote-share differences and cross-state ranking, not scalar arithmetic"}
+    ],
+    "venezuela-oil--2026-11-10-kpmg-report-venezuela-oil-account-claims-r1.md": [
+      {"claim": "vendor-energy", "kind": "category-subtotal", "says": "About $37.2 million of the vendor payments bought equipment and services for oil, power, coal and fertilizer operations.", "reason": "Selecting ledger rows requires semantic classification of aluminum and aviation services"}
+    ],
+    "venezuela-oil--2026-11-10-kpmg-report-venezuela-oil-account-claims-r2.md": [
+      {"claim": "rodriguez-99", "kind": "percentage", "says": "Rodríguez said 99 of every 100 dollars of oil and mining income from January to November went to public-sector wages and pensions: by her government's figures, $14.710 billion of $15.603 billion taken in, on a portal that covers two government funds.", "reason": "Ratio stated as N of every 100, followed by explicit monetary operands"}
+    ],
+    "venezuela-oil--2026-11-10-kpmg-report-venezuela-oil-account-claims-r11.md": [
+      {"claim": "channels", "kind": "subtotal-completeness", "says": "Of the payouts, $2,087,747,625.12 went through currency auctions from January to March, $9,322,000,000 through electronic currency interventions from March 31, $549,760,000 as U.S. banknotes shipped in by air from July, and $133,114,048.23 to vendors.", "reason": "The claim states no grand total; the fault is implied completeness against a differently defined outflow total"}
+    ]
+  }
+}

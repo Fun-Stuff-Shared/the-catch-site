@@ -2,6 +2,7 @@
 USAGE = """A story's claim ledger: checks/claims/<subject>--<slug>.json. Run from the worktree root.
 
 check:   claims.py check <story>                         the ledger's shape, and every passage in its record
+arith:   claims.py arith <story> [--strict]              report deterministic arithmetic mismatches
 pack:    claims.py pack <story> <pack.md> <records.md>   the claims not yet held, for the claim check
 hold:    claims.py hold <story> <pack.md>                record the packed claims as held (CLAIMS HOLD)
 blocks:  claims.py blocks <story>                        the built page's blocks and the claims each cites (JSON lines)
@@ -29,6 +30,7 @@ A ledger is {"story": "<story>", "claims": [claim, ...]}. A claim:
 
 import hashlib
 import html
+import importlib.util
 import json
 import re
 import sys
@@ -274,7 +276,13 @@ def verify(story):
 
 if __name__ == "__main__":
     a = sys.argv[1:]
-    if len(a) == 2 and a[0] == "check":
+    if len(a) in (2, 3) and a[0] == "arith" and (len(a) == 2 or a[2] == "--strict"):
+        spec = importlib.util.spec_from_file_location("claim_arith", Path(__file__).with_name("arith.py"))
+        arith = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(arith)
+        mismatches = arith.report(read_json(ledger_path(a[1])), *record_texts(a[1]))
+        sys.exit(1 if "--strict" in a and mismatches else 0)
+    elif len(a) == 2 and a[0] == "check":
         sys.exit(0 if check(a[1]) else 1)
     elif len(a) == 4 and a[0] == "pack":
         pack(*a[1:])
