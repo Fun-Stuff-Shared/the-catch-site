@@ -31,31 +31,41 @@ export function detectTime(run = spawnSync) {
   return null;
 }
 
-export function runBuild({ steps = stages, reportPath = ".build-report.json", env = process.env, timer = detectTime() } = {}) {
-  const temporary = mkdtempSync(join(tmpdir(), "catch-build-"));
+export function runBuild({ steps = stages, reportPath = ".build-report.json", env = process.env, timer, temporaryRoot } = {}) {
+  let warned = false;
+  const reporting = (action, fallback = null) => {
+    try { return action(); }
+    catch (error) {
+      if (!warned) {
+        warned = true;
+        try { console.warn(`Build reporting unavailable: ${error.message}`); } catch {}
+      }
+      return fallback;
+    }
+  };
+  if (timer === undefined) timer = reporting(() => detectTime());
+  const temporary = timer ? reporting(() => mkdtempSync(join(temporaryRoot ?? tmpdir(), "catch-build-"))) : null;
+  if (!temporary) timer = null;
   const started = performance.now();
   const rows = [];
   let exitCode = 0;
   try {
     for (const [stage, command, args, overrides] of steps) {
-      const usagePath = join(temporary, "usage");
+      const usagePath = temporary ? join(temporary, "usage") : null;
       const start = performance.now();
-      const fd = timer ? openSync(usagePath, "w") : null;
+      const fd = timer ? reporting(() => openSync(usagePath, "w")) : null;
       let result;
       try {
-        result = timer
+        result = fd !== null
           ? spawnSync("/usr/bin/time", [timer.flag, "/bin/sh", "-c", 'exec "$@" 2>&3', "build-stage", command, ...args], {
             env: { ...env, ...overrides }, stdio: ["inherit", "inherit", fd, 2],
           })
           : spawnSync(command, args, { env: { ...env, ...overrides }, stdio: "inherit" });
       } finally {
-        if (fd !== null) closeSync(fd);
+        if (fd !== null) reporting(() => closeSync(fd));
       }
       const wallMs = performance.now() - start;
-      let peakRssKiB = null;
-      try {
-        peakRssKiB = parseTimeOutput(readFileSync(usagePath, "utf8"), timer?.kind);
-      } catch {}
+      const peakRssKiB = fd !== null ? reporting(() => parseTimeOutput(readFileSync(usagePath, "utf8"), timer.kind)) : null;
       exitCode = result.status ?? 1;
       rows.push({ stage, wallMs, peakRssKiB, exitCode, signal: result.signal });
       if (result.error) console.error(result.error.message);
@@ -67,12 +77,12 @@ export function runBuild({ steps = stages, reportPath = ".build-report.json", en
       total: { wallMs: performance.now() - started, peakRssKiB: rows.some((row) => row.peakRssKiB !== null) ? Math.max(...rows.map((row) => row.peakRssKiB ?? 0)) : null, exitCode },
       rssMethod: timer ? `${timer.kind} time maxRSS normalized to KiB, including waited-for children; maximum high-water mark, not concurrent RSS sum` : "unavailable (timing only)",
     };
-    writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n");
-    console.table([...rows, { stage: "TOTAL", ...report.total }].map((row) => ({
+    reporting(() => writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n"));
+    reporting(() => console.table([...rows, { stage: "TOTAL", ...report.total }].map((row) => ({
       stage: row.stage, "wall (s)": (row.wallMs / 1000).toFixed(3),
       "peak RSS (MiB)": row.peakRssKiB === null ? "unavailable" : (row.peakRssKiB / 1024).toFixed(1), exit: row.exitCode,
-    })));
-    rmSync(temporary, { recursive: true, force: true });
+    }))));
+    if (temporary) reporting(() => rmSync(temporary, { recursive: true, force: true }));
   }
   return exitCode;
 }

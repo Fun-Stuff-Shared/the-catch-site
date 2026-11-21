@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -42,6 +42,32 @@ test("resource reporting preserves stage stderr", () => {
     assert.match(result.stderr, /stage stderr stays visible/);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
+
+for (const unavailable of ["temporary", "report", "both"]) for (const status of [0, 7]) {
+  test(`unavailable ${unavailable} paths preserve stage status ${status}`, () => {
+    const dir = mkdtempSync(join(tmpdir(), "build-reporting-"));
+    try {
+      const blocked = join(dir, "file");
+      const marker = join(dir, "stages.txt");
+      writeFileSync(blocked, "not a directory");
+      const code = `import {runBuild, detectTime} from ${JSON.stringify(new URL('./build.mjs', import.meta.url).href)};
+        const stage = status => ['stage', process.execPath, ['-e', 'require("node:fs").appendFileSync(${JSON.stringify(marker)}, "ran"); process.exit(' + status + ')']];
+        process.exitCode = runBuild({ steps: [stage(0), stage(${status}), stage(0)],
+          temporaryRoot: ${JSON.stringify(unavailable === "report" ? dir : blocked)},
+          reportPath: ${JSON.stringify(join(unavailable === "temporary" ? dir : blocked, "report.json"))},
+          timer: detectTime() });`;
+      const result = spawnSync(process.execPath, ["--input-type=module", "-e", code], { encoding: "utf8" });
+      assert.equal(result.status, status, result.stderr);
+      assert.equal(readFileSync(marker, "utf8"), "ran".repeat(status ? 2 : 3));
+      assert.equal(result.stderr.match(/Build reporting unavailable:/g)?.length, 1);
+      if (unavailable === "temporary") {
+        const report = JSON.parse(readFileSync(join(dir, "report.json"), "utf8"));
+        assert.equal(report.total.exitCode, status);
+        assert.equal(report.total.peakRssKiB, null);
+      }
+    } finally { rmSync(dir, { recursive: true, force: true }); }
+  });
+}
 
 test("build stages preserve the original order without overriding NODE_OPTIONS", () => {
   assert.equal(stages.length, 9);
