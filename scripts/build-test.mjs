@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
@@ -79,7 +79,6 @@ for (const [name, steps, expected] of [
   ["success", [["node", process.execPath, ["-e", "require('node:child_process').execFileSync(process.execPath, ['-e', 'Buffer.alloc(16e6).fill(1)'])"]]], 0],
   ["empty", [], 0],
   ["failure stops later stages", [["fail", process.execPath, ["-e", "process.exit(7)"]], ["unreachable", process.execPath, ["-e", "process.exit(0)"]]], 7],
-  ["missing command", [["missing", "/nonexistent/catch-command", []]], 127],
 ]) test(name, () => {
   const dir = mkdtempSync(join(tmpdir(), "build-test-"));
   try {
@@ -93,4 +92,21 @@ for (const [name, steps, expected] of [
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("a missing command fails without running later stages", () => {
+  const dir = mkdtempSync(join(tmpdir(), "build-missing-"));
+  try {
+    const reportPath = join(dir, "report.json");
+    const marker = join(dir, "unreachable");
+    const exitCode = runBuild({ steps: [
+      ["missing", "/nonexistent/catch-command", []],
+      ["unreachable", process.execPath, ["-e", `require('node:fs').writeFileSync(${JSON.stringify(marker)}, 'ran')`]],
+    ], reportPath });
+    assert.notEqual(exitCode, 0);
+    const report = JSON.parse(readFileSync(reportPath, "utf8"));
+    assert.equal(report.total.exitCode, exitCode);
+    assert.equal(report.stages.length, 1);
+    assert.equal(existsSync(marker), false);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
 });
