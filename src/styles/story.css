@@ -29,12 +29,12 @@
 .story-kicker a:hover { text-decoration: underline; }
 
 .story h1 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-optical-sizing: auto;
   font-weight: 700;
-  font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+  font-size: var(--text-title);
   line-height: 1.12;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.025em;
   margin: 0 0 0.75rem;
   text-wrap: balance;
 }
@@ -49,9 +49,9 @@
 
 /* ── Section rhythm ── */
 .story h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 700;
-  font-size: 1.45rem;
+  font-size: var(--text-section);
   letter-spacing: -0.01em;
   margin: 2.8rem 0 0.9rem;
   padding-bottom: 0.4rem;
@@ -60,16 +60,13 @@
 .story section { scroll-margin-top: 4.5rem; }
 .story p, .story li {
   font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1.62;
+  font-size: var(--text-prose);
+  line-height: var(--leading-prose);
 }
 .section-lede {
   color: var(--slate);
   margin-top: -0.2rem;
   max-width: 40rem;
-}
-@media (min-width: 1360px) {
-  .story p, .story li { font-size: 1.15rem; }
 }
 
 /* ── Section kicker ── */
@@ -169,7 +166,7 @@
   font-weight: 700;
   line-height: 1.25;
 }
-.the-catch li:first-child h3 { font-size: 1.45rem; }
+.the-catch li:first-child h3 { font-size: var(--text-section); }
 .the-catch .catch-jump {
   display: block;
   width: fit-content;
@@ -270,8 +267,8 @@
   white-space: nowrap;
 }
 .chip-ok { background: var(--blue-tint); color: var(--blue); }
-.chip-warn { background: #fce8ec; color: var(--red); }
-.chip-unconfirmed { background: #fce8ec; color: var(--red); }
+.chip-warn { background: var(--alert-tint); color: var(--red); }
+.chip-unconfirmed { background: var(--alert-tint); color: var(--red); }
 
 /* ── Receipt toggles ── */
 .receipt {
@@ -295,7 +292,7 @@
   transition: background 0.15s;
 }
 .receipt summary:hover {
-  background: #dfe8f0;
+  background: var(--blue-tint);
   border-color: var(--blue);
 }
 .receipt summary::marker { content: ""; }
@@ -314,7 +311,7 @@
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--ink);
-  background: #fbfcfd;
+  background: var(--surface);
   border: 1px solid var(--rule);
   border-top: none;
   padding: 1rem 1.2rem;
@@ -325,7 +322,7 @@
   font-size: 0.88rem;
   line-height: 1.6;
   color: var(--ink);
-  background: #fbfcfd;
+  background: var(--surface);
   border: 1px solid var(--rule);
   border-top: none;
   padding: 1rem 1.2rem;
@@ -504,7 +501,7 @@ ol.src-list li {
   color: var(--slate);
   padding: 0.5rem 0.9rem;
   border-bottom: 2px solid var(--rule-strong);
-  background: #fbfcfd;
+  background: var(--surface);
 }
 .dt-row {
   display: grid;
@@ -560,7 +557,7 @@ ol.src-list li {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--slate);
-  background: #fbfcfd;
+  background: var(--surface);
   border-bottom: 2px solid var(--rule-strong);
 }
 .data-table td { font-variant-numeric: tabular-nums; }
@@ -630,7 +627,7 @@ ol.src-list li {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--slate);
-  background: #fbfcfd;
+  background: var(--surface);
   border-bottom: 2px solid var(--rule-strong);
 }
 .rev-table th[scope="row"],

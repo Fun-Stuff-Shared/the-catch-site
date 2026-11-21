@@ -17,7 +17,7 @@ const passage = sourceContext(text, quote);
 .saved-text-tools button { min-height: 44px; padding: .6rem; background: var(--paper); border: 1px solid var(--rule); color: var(--blue); font: inherit; }
 .saved-text-tools [data-find-status] { margin: .4rem 0; }
 .saved-copy pre[data-saved-text] { white-space: pre-wrap; overflow-wrap: anywhere; border: 1px solid var(--rule); background: var(--paper); padding: 1rem; font: .9rem/1.6 var(--mono); }
-#cited-passage { background: #fff0bb; color: var(--ink); scroll-margin-top: 2rem; }
+#cited-passage { background: var(--highlight); color: var(--on-highlight); scroll-margin-top: 2rem; }
 </style>
 <script>
   const form = document.querySelector<HTMLFormElement>('.saved-text-tools form')!;

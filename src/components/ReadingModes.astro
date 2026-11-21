@@ -30,7 +30,9 @@
   }
   .mode-btn:last-of-type { border-right: none; }
   .mode-btn:hover { background: var(--blue-tint); color: var(--ink); }
-  .mode-btn.active { background: var(--ink); color: #fff; }
+  .mode-btn.active { background: var(--ink); color: var(--on-ink); }
+  .mode-btn:focus-visible { outline-offset: -4px; }
+  .mode-btn.active:focus-visible { outline-color: var(--on-ink); }
   .mode-hint {
     font-family: var(--sans);
     font-size: 0.78rem;
