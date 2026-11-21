@@ -43,6 +43,8 @@ for (const [name, text, says, passage, status, expected] of [
   ['second time unit not ordinal', 'It took 1 second.', 'It took one second.', undefined, 'fact', null],
   ['ISO date support', 'It ended November 14, 2026.', 'It ended 2026-11-14.', undefined, 'fact', null],
   ['zero padded ISO date', 'It ended January 5, 2026.', 'It ended 2026-01-05.', undefined, 'fact', null],
+  ['spelled source day', 'It ended November 14.', 'It ended November fourteen.', undefined, 'fact', null],
+  ['spelled day on both sides', 'It ended November fourteen.', 'It ended November fourteen.', undefined, 'fact', null],
   ['day month support', 'It ended 14 November 2026.', 'It ended Nov. 14.', undefined, 'fact', null],
   ['name in passage', 'It was Jane Smith.', 'It happened.', 'Jane Smith witnessed it.', 'fact', null],
   ['demonym noun support', 'It was a Chinese company.', 'It was a company in China.', undefined, 'fact', null],

@@ -137,6 +137,8 @@ def numeric_values(text):
 @lru_cache(maxsize=8192)
 def date_values(text):
     values = set()
+    text = WORD_NUMBERS.sub(number_words, normalize(text))
+    text = ORDINAL.sub(ordinal_words, text)
     for match in DATE.finditer(text):
         value = canonical(match[0])
         iso = re.fullmatch(r'\d{4}-(\d{1,2})-(\d{1,2})', value)
