@@ -4,7 +4,7 @@ button, input { font: inherit; }
 button, summary { cursor: pointer; }
 a, button, input, summary { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
-.sheet { width: calc(100% - 2 * var(--sheet-margin)); max-width: 90rem; min-height: 100vh; margin-inline: auto; border: 0; display: flex; flex-direction: column; }
+.sheet { width: calc(100% - 2 * var(--sheet-margin)); max-width: var(--sheet-max); min-height: 100vh; margin-inline: auto; border: 1px solid var(--sheet-edge); display: flex; flex-direction: column; }
 .sheet > * { flex: 0 0 auto; }
 .sheet > .content, .sheet > main { border-left: 3px solid var(--brand-highlight); }
 .band-inner { padding: 1.3rem var(--gutter); align-items: center; gap: 2rem; }
@@ -120,7 +120,6 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
 @media (max-width: 760px) {
   :root { --gutter: 1.25rem; }
   html { scrollbar-gutter: auto; }
-  .sheet { border-left: 0; border-right: 0; }
   .band-inner { gap: .75rem; flex-wrap: nowrap; padding-top: .55rem; padding-bottom: .55rem; }
   .wordmark { font-size: 1.5rem; white-space: nowrap; }
   .band nav { gap: .75rem; width: auto; margin-left: auto; font-size: .72rem; }
@@ -425,9 +424,9 @@ nav.story-toc { background: var(--paper); padding: 0; }
 }
 @media (min-width: 1440px) {
   .story nav.story-toc {
-    left: max(calc(var(--sheet-margin) + 1rem), calc((100% - var(--evidence-space, 0px) - var(--reading)) / 2 - 17.5rem));
+    left: max(calc(var(--sheet-margin) + 1rem), calc((100vw - var(--sheet-max)) / 2 + 1rem));
     width: 13.5rem;
-    max-width: calc((100vw - var(--evidence-space, 0px) - var(--reading)) / 2 - 5.5rem);
+    max-width: calc((min(calc(100vw - 2 * var(--sheet-margin)), var(--sheet-max)) - var(--reading)) / 2 - 2rem);
     max-height: calc(100vh - 15rem);
     overflow-y: auto;
     background: transparent;

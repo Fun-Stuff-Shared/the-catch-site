@@ -34,6 +34,8 @@
   --measure: 42rem;
   --gutter: clamp(1.25rem, 3.5vw, 3rem);
   --sheet-margin: clamp(1rem, 3.333vw, 3rem);
+  --sheet-max: 75rem;
+  --sheet-edge: transparent;
 
   color-scheme: light;
   --ink: var(--brand-ink);
@@ -75,9 +77,10 @@
 :root[data-theme="dark"] {
   color-scheme: dark;
   --ink: var(--brand-paper);
-  --paper: #151513;
-  --surface: #20201d;
-  --surface-hover: #303029;
+  --paper: #20201d;
+  --surface: #292925;
+  --surface-hover: #36362f;
+  --sheet-edge: #49473f;
   --slate: #bfb9ac;
   --rule: #49473f;
   --rule-strong: #858176;
@@ -104,9 +107,10 @@
   :root:not([data-theme]) {
     color-scheme: dark;
     --ink: var(--brand-paper);
-    --paper: #151513;
-    --surface: #20201d;
-    --surface-hover: #303029;
+    --paper: #20201d;
+    --surface: #292925;
+    --surface-hover: #36362f;
+    --sheet-edge: #49473f;
     --slate: #bfb9ac;
     --rule: #49473f;
     --rule-strong: #858176;
