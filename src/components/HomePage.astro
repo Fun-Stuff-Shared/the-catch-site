@@ -26,6 +26,18 @@ const topics = [...new Set(stories.map(s => s.topic))];
   const topicRail = document.querySelector<HTMLElement>('.edition-topics');
   if (topicRail) {
     const updateCue = () => topicRail.parentElement?.toggleAttribute('data-more-topics', topicRail.scrollWidth - topicRail.clientWidth - topicRail.scrollLeft > 1);
+    topicRail.addEventListener('focusin', event => {
+      if (!(event.target instanceof HTMLElement)) return;
+      const button = event.target.getBoundingClientRect();
+      const viewport = topicRail.getBoundingClientRect();
+      const cueWidth = parseFloat(getComputedStyle(topicRail).paddingInlineEnd);
+      if (button.right > viewport.right - cueWidth) {
+        topicRail.scrollLeft += button.right - viewport.right + cueWidth;
+      } else if (button.left < viewport.left) {
+        topicRail.scrollLeft += button.left - viewport.left;
+      }
+      updateCue();
+    });
     topicRail.addEventListener('scroll', updateCue, { passive: true });
     new ResizeObserver(updateCue).observe(topicRail);
     document.fonts.ready.then(updateCue);

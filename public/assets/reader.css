@@ -290,7 +290,7 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
  .edition-intro p { font-size: 1rem; }
  .topic-rail { position: relative; }
  .topic-rail[data-more-topics]::after { content: '→'; position: absolute; right: 0; top: 0; bottom: 1px; display: grid; place-items: center end; width: 2.5rem; background: linear-gradient(to right, transparent, var(--paper) 60%); color: var(--ink); font: 1rem var(--mono); pointer-events: none; }
- .edition-topics { gap: 1rem; flex-wrap: nowrap; overflow-x: auto; padding-inline-end: 2.5rem; scrollbar-width: none; }
+ .edition-topics { gap: 1rem; flex-wrap: nowrap; overflow-x: auto; padding-inline-end: 2.5rem; scroll-padding-inline-end: 2.5rem; scrollbar-width: none; }
  .edition-topics::-webkit-scrollbar { display: none; }
  .edition-topics button { flex: 0 0 auto; white-space: nowrap; }
  .edition-topics button:focus-visible { outline-offset: -3px; }
