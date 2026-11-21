@@ -30,7 +30,7 @@ function fixture(t, extension = 'astro') {
 }
 
 for (const source of [page, 'src/data/example-a-story.mjs', 'data/sources/example/input.csv',
-  'data/state/events.json', 'src/components/ReadingModes.astro', 'src/lib/state.mjs']) {
+  'data/state/events.json', 'data/v2/CURRENT', 'src/components/ReadingModes.astro', 'src/lib/state.mjs']) {
   test(`bind refuses a built page older than ${source}`, (t) => {
     const { root, put, run } = fixture(t);
     put(source, 'newer input', 3000);
@@ -43,6 +43,16 @@ for (const source of [page, 'src/data/example-a-story.mjs', 'data/sources/exampl
     assert.equal(existsSync(join(root, `checks/reads/${story}-bound.json`)), false);
   });
 }
+
+test('bind ignores newer files in the pinned v2 snapshot', (t) => {
+  const { root, put, run } = fixture(t);
+  put('data/v2/CURRENT', 'snapshot-hash');
+  put('data/v2/snapshots/snapshot-hash/records/example.json', '{}', 3000);
+  const result = run();
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /nothing changed; BOUND/);
+  assert.match(readFileSync(join(root, report), 'utf8'), /BOUND/);
+});
 
 for (const extension of ['astro', 'mdx']) {
   test(`bind accepts a fresh ${extension} story with no changed blocks`, (t) => {
