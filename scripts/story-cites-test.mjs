@@ -9,6 +9,7 @@ import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { execFileSync } from "node:child_process";
 import { parseFragment } from "parse5";
+import { mergeCites } from "./merge-cites.mjs";
 
 function elements(node, tag) {
   return [...(node.tagName === tag ? [node] : []), ...(node.childNodes ?? []).flatMap((child) => elements(child, tag))];
@@ -74,7 +75,11 @@ export async function GET({ request }) {
         assert.ok(html.includes(`data-record-href="/records/${claim.evidence[0].record}/"`), html);
         if (variant !== "kpi&") assert.ok(html.includes(expectedDate), html);
         assert.equal(elements(parseFragment(html), "sup").length, 2);
-        assert.ok(html.includes(variant === "kpi&" ? "kpi-has-cites" : variant === "folded&" ? "oc-has-cites" : "oc-cites"));
+        assert.equal((mergeCites(html).match(/src-ref-more/g) ?? []).length, 1);
+        if (variant === "folded&") {
+          const slotted = await fetch(`${endpoint}?folded&slot`).then((r) => r.text());
+          assert.equal((mergeCites(slotted).match(/src-ref-more/g) ?? []).length, 2);
+        }
         if (variant !== "kpi&" && variant !== "folded&") {
           for (const [query, className] of [["", "oc-verdict"], ["record", "oc-record"], ["claim-only", "oc-claim"]]) {
             for (const slotted of ["", "&slot"]) {

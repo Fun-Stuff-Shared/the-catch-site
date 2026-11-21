@@ -33,30 +33,20 @@ const verdictWord = chip ? (restatesChip ? sentence.slice(0, chip.length) : `${c
 const firstSentence = restatesChip ? sentence.slice(chip.length) : sentence;
 ---
 {folded ? (
-  <p class:list={["oc-folded", { "oc-has-cites": cites?.length }]}>
+  <p class="oc-folded">
     {outlet && <strong>{outlet}</strong>}{displayDate && `, ${displayDate}`}, <span set:html={claim} /> {verdict && <span set:html={verdict} />}{cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}<slot />
   </p>
 ) : (
   <article class={`outlet-check ${status}`}>
     {outlet && <h3>{outlet}{displayDate && `, ${displayDate}`}</h3>}
-    <p class="oc-claim" data-claims={claimIds}><span set:html={claim} />{!verdict && !!cites?.length && <span class="oc-cites">{cites.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</span>}</p>
+    <p class="oc-claim" data-claims={claimIds}><span set:html={claim} />{!verdict && cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</p>
     {verdict && (
       <p class="oc-verdict" data-claims={claimIds}>
         {verdictWord && <strong>{verdictWord}</strong>}{firstSentence && <span set:html={restatesChip ? firstSentence : ` ${firstSentence}`} />}
-        {!record && !!cites?.length && <span class="oc-cites">{cites.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</span>}
+        {!record && cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}
       </p>
     )}
-    {record && <p class="oc-record" data-claims={claimIds}><span set:html={record} />{!!cites?.length && <span class="oc-cites">{cites.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</span>}</p>}
+    {record && <p class="oc-record" data-claims={claimIds}><span set:html={record} />{cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}</p>}
     {sourceMarkup && <p class="oc-sources"><slot /></p>}
   </article>
 )}
-
-<style>
-  .oc-cites :global(.src-ref + .src-ref)::before,
-  .oc-has-cites :global(.src-ref + .src-ref)::before {
-    content: ", ";
-    white-space: pre;
-    color: var(--muted, #6b7280);
-    font-size: 0.72em;
-  }
-</style>
