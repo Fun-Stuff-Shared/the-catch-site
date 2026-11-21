@@ -67,7 +67,6 @@ SMALL = dict(zip('zero one two three four five six seven eight nine ten eleven t
 SMALL.update(dict(zip('thirty forty fifty sixty seventy eighty ninety'.split(), range(30, 100, 10))))
 NUMBER_WORD = r'(?:' + '|'.join([*SMALL, 'hundred', 'thousand']) + r')'
 WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|(?:(?<=hundred)|(?<=thousand))\s+and\s+)' + NUMBER_WORD + r')*\b', re.I)
-LOWER_WORD_NUMBERS = re.compile(WORD_NUMBERS.pattern)
 VERB = re.compile(r'\b(?:said|says?|told|according to|alleged|alleges|accused|claims?|claimed|stated|states|wrote|writes|argued|argues|announced|testified|warned|warns)\b', re.I)
 ATTRIBUTION = re.compile(r"\b(?:blamed|acknowledged|tied|posted|posting|called|insisted|denied|contended|asserted|noted|added|described|cited|reported|estimated|counted|in a statement|in a post)\b|\bby\s+[^.!?:]+?['’]s\s+(?:count|estimate)\b", re.I)
 REPORTING = re.compile(r'\b(?:blames?|acknowledges?|calls?|reports?|estimates?|counts?|asks?|asked|urged|urges|credits?|credited|promised|promises|testifies|warns|warned|praised|praises|quoted|quoting|argues|describes|described|announces|announced|concludes|concluded|found|finds|by [^.!?]+ account)\b', re.I)
@@ -113,10 +112,10 @@ def ordinal_words(match):
 @lru_cache(maxsize=16384)
 def canonical(text):
     text = re.sub(r'(?<!\w)(?:United States|U\.S\.|US)(?!\w)', 'unitedstates', normalize(text))
+    text = WORD_NUMBERS.sub(number_words, text)
     text = ORDINAL.sub(ordinal_words, text).casefold()
     text = re.sub(r'\b(usd|eur)\s*(?=\d)', lambda m: '$' if m[1] == 'usd' else '€', text)
     text = re.sub(r'([$€£¥])\s+(?=\d)', r'\1', text)
-    text = LOWER_WORD_NUMBERS.sub(number_words, text)
     text = re.sub(r'(?<=\d)(?:st|nd|rd|th)\b', '', text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)
