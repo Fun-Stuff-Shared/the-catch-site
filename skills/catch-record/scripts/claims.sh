@@ -6,6 +6,7 @@ set -euo pipefail
 story=$1 round=$2
 here=${0:A:h}
 report=checks/records/$story-claims-r$round.md
+python3 -I $here/claims.py arith $story
 work=$(mktemp -d /Volumes/4/tmp/catch-claims.XXXXXX)
 n=$(python3 -I $here/claims.py pack $story $work/claims.md $work/records.md | sed -E 's/^[^:]*: ([0-9]+) claims.*/\1/')
 (( n > 0 )) || { print "claims r$round: every claim already holds as it reads now"; exit 0 }

@@ -231,6 +231,8 @@ python3 -I skills/catch-record/scripts/admit.py check <story>
 python3 -I skills/catch-record/scripts/claims.py check <story>
 ```
 
+Run `python3 -I skills/catch-record/scripts/claims.py arith <story>` to report arithmetic mismatches before the claim check; `claims.sh` runs it automatically. It does not hold claims or replace the claim check.
+
 The first verifies every pin, hash and quote, and finds every brief citation in its
 record's text; the second checks the ledger's shape and finds every claim's passages in
 their records. Fix every failure. Commit the brief, manifest, ledger, pins and grok output
