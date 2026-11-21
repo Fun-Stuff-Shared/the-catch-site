@@ -35,6 +35,9 @@ for (const [name, text, says, passage, status, expected] of [
   ['percent decimal is indivisible', 'It fell 5%.', 'It fell 0.5%.', undefined, 'fact', 'tokens'],
   ['money scale is indivisible', 'It cost $12.', 'It cost $12 million.', undefined, 'fact', 'tokens'],
   ['matching complete number', 'It cost $12 million.', 'It cost $12 million.', undefined, 'fact', null],
+  ['masked number breaks name run', 'It was Boeing 737 MAX.', 'It was Airbus 737 MAX.', undefined, 'fact', 'tokens'],
+  ['separate names around number supported', 'It was Boeing 737 MAX.', 'It was Boeing 737 MAX.', undefined, 'fact', null],
+  ['masked date breaks name run', 'It was Boeing November 14, 2026 MAX.', 'It was Airbus November 14, 2026 MAX.', undefined, 'fact', 'tokens'],
   ['currency must match', 'It cost €12.', 'It cost £12.', undefined, 'fact', 'tokens'],
   ['yen not dollars', 'It cost ¥12.', 'It cost $12.', undefined, 'fact', 'tokens'],
   ['dollars not bare number', 'It cost $12.', 'It cost 12.', undefined, 'fact', 'tokens'],
@@ -89,6 +92,7 @@ for (const [name, text, says, passage, status, expected] of [
       assert.match(result.stdout, /- tokens: November 15, 2026\n/);
     }
     if (name === 'title alone not support') assert.match(result.stdout, /- tokens: Transportation Secretary Sean Duffy\n/);
+    if (name === 'masked number breaks name run' || name === 'masked date breaks name run') assert.match(result.stdout, /- tokens: Boeing\n/);
   });
 }
 test('uncited and empty blocks; default advisory exit', t => {

@@ -19,6 +19,7 @@ capitalized runs, skipping sentence-initial runs and title-only runs. A name is
 supported by its full run, acronym (in either direction), or last distinctive
 word, including cited claims' by fields. US, U.S. and United States are equivalent
 (case-sensitive before casefolding); the lowercase pronoun "us" is not.
+Masked dates and numbers break name runs rather than joining adjacent names.
 No metadata blocks are skipped without structural information.
 Uncited blocks use says, passages and by from every claim cited on the page for
 token support, but not quote support. Bare years can also use page-wide support
@@ -101,10 +102,10 @@ def tokens(text):
     dates = list(DATE.finditer(text))
     masked = list(text)
     for date in dates:
-        masked[date.start():date.end()] = ' ' * len(date[0])
+        masked[date.start():date.end()] = '\0' * len(date[0])
     masked = ''.join(masked)
     out = [m[0] for m in NUMBER.finditer(masked)] + [m[0] for m in dates]
-    masked = NUMBER.sub(lambda m: ' ' * len(m[0]), masked)
+    masked = NUMBER.sub(lambda m: '\0' * len(m[0]), masked)
     for m in NAME.finditer(masked):
         prefix = text[:m.start()].rstrip(' \t\n“"(')
         if not prefix or prefix[-1] in '.!?':
