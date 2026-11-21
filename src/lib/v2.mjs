@@ -68,7 +68,9 @@ export function openSnapshot(folder, id) {
     const entry = entries.get(subject);
     if (!entry) return undefined;
     if (!/^views\/[0-9a-f]{24}\.json$/.test(entry.path)) throw new Error(`v2 view path is not a view file: ${entry.path}`);
-    const view = JSON.parse(readFileSync(join(folder, entry.path), "utf8"));
+    const bytes = readFileSync(join(folder, entry.path));
+    if (sha256(bytes) !== entry.sha256) throw new Error(`v2 view hash mismatch: ${subject}`);
+    const view = JSON.parse(bytes);
     if (view.format !== FORMAT || view.id !== subject) throw new Error(`v2 view differs from its manifest entry: ${subject}`);
     return view;
   };

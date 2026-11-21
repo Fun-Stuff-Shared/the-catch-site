@@ -21,7 +21,7 @@ function temp(t, prefix) {
   return root;
 }
 
-function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, sourceAttributes = {}, format = 'sai-news-view/5', related = [], claim = {}, statementClaims = ['claim-a'], status = 'live' } = {}) {
+function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = TEXT, subject = 'subject-a', span = undefined, stories = undefined, moved = {}, sourceAttributes = {}, format = 'sai-news-view/5', related = [], claim = {}, statementClaims = ['claim-a'], status = 'live' } = {}) {
   const textHash = sha256(TEXT);
   const start = Array.from(TEXT).indexOf('C');
   const view = {
@@ -31,7 +31,7 @@ function snapshot(source, { label = 'Ballot rejections', quote = QUOTE, text = T
     sources: [{ artifact: 'artifact-a', source: null, root: 'root-a', published_at: '2026-10-21', statements: 1, attributes: sourceAttributes }], related,
   };
   const viewBytes = JSON.stringify(view);
-  const manifest = JSON.stringify({ format, moved: {}, head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
+  const manifest = JSON.stringify({ format, moved, head: { seq: 1, sha: 'sha256:x' }, evaluated_at: '2026-11-02T00:00:00Z', policies: 'p', stories: stories === undefined ? { [STORY]: [subject] } : stories, views: { [subject]: { path: `views/${sha256(subject).slice(0, 24)}.json`, sha256: sha256(viewBytes) } }, texts: { [textHash]: `texts/${textHash}.txt` } });
   const id = sha256(manifest).slice(0, 24);
   const folder = join(source, 'snapshots', id);
   mkdirSync(join(folder, 'views'), { recursive: true });
@@ -74,7 +74,7 @@ test('a pinned open reads only its manifest, while a full read and copy reject c
   assert.deepEqual([...opened.views.keys()], ['subject-a']);
   assert.deepEqual(storySubjects(opened, { story: STORY, subjects: ['subject-a'] }), ['subject-a']);
   assert.deepEqual(pullV2({ destination: source }), { source: 'pinned', snapshot: id, views: 1 });
-  assert.throws(() => opened.views.get('subject-a'), SyntaxError);
+  assert.throws(() => opened.views.get('subject-a'), /view hash mismatch: subject-a/);
   mkdirSync(join(folder, 'texts'));
   writeFileSync(join(folder, Object.values(manifest.texts)[0]), TEXT);
   assert.throws(() => readSnapshot(folder, id), /view hash mismatch/);
@@ -97,6 +97,18 @@ test('lazy gets cache used views but scanning values does not retain unused view
   assert.equal(opened.views.get('subject-a'), view);
   assert.equal([...opened.views.values()][0], view);
   assert.equal(readV2(source), opened);
+});
+
+test('lazy gets and iteration reject changed view bytes even when format and id still match', (t) => {
+  const source = temp(t, 'v2-lazy-hash-');
+  const id = snapshot(source);
+  const folder = join(source, 'snapshots', id);
+  const opened = openSnapshot(folder, id);
+  const path = join(folder, opened.manifest.views['subject-a'].path);
+  const view = JSON.parse(readFileSync(path));
+  writeFileSync(path, JSON.stringify({ ...view, label: 'Changed label' }));
+  assert.throws(() => opened.views.get('subject-a'), /v2 view hash mismatch: subject-a/);
+  assert.throws(() => [...opened.views.values()], /v2 view hash mismatch: subject-a/);
 });
 
 test('span slices match code-point slices around astral characters and empty bounds', () => {
@@ -329,6 +341,45 @@ function siteFixture(destination, id, overrides = {}) {
   writeFileSync(join(destination, 'SITE_CURRENT'), `${id} ${sha256(bytes)}\n`);
   return bytes;
 }
+
+test('the producer site artifact and full snapshot give the same gate result for a moved story subject', async (t) => {
+  const { checkV2Pages } = await import('./check-v2-pages.mjs');
+  const source = temp(t, 'v2-moved-source-');
+  const id = snapshot(source, { moved: { folded: 'subject-a' } });
+  const archive = join(temp(t, 'v2-moved-archive-'), `${id}.tgz`);
+  execFileSync('tar', ['-czf', archive, '-C', join(source, 'snapshots', id), 'manifest.json', 'views', 'texts']);
+  const destination = temp(t, 'v2-moved-site-');
+  execFileSync('python3', ['-c', `
+import importlib.util
+import sys
+from pathlib import Path
+spec = importlib.util.spec_from_file_location('refresh', 'scripts/refresh-v2-pin.py')
+refresh = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(refresh)
+data, pin = refresh.site_artifact(Path(sys.argv[1]))
+destination = Path(sys.argv[2])
+snapshot = pin.split()[0]
+(destination / 'site').mkdir()
+(destination / 'site' / f'{snapshot}.json').write_bytes(data)
+(destination / 'SITE_CURRENT').write_text(pin)
+(destination / 'CURRENT').write_text(snapshot + '\\n')
+`, archive, destination]);
+  const manifests = temp(t, 'v2-moved-manifests-');
+  const dist = temp(t, 'v2-moved-dist-');
+  const route = '/events/ballots/2026-10-21-counties-reject-ballots/';
+  const story = { story: route, v2: true, v2_subjects: ['folded'] };
+  const manifestPath = join(manifests, `${STORY}.json`);
+  writeFileSync(manifestPath, JSON.stringify(story));
+  pageSite(t, id, dist).write(route, '<main>The story</main>');
+  assert.deepEqual(storySubjects(readV2(destination), { story: STORY, subjects: ['folded'] }), ['subject-a']);
+  const full = checkV2Pages(dist, source, manifests);
+  assert.deepEqual(full.failures, []);
+  assert.deepEqual(checkV2Pages(dist, destination, manifests), full);
+  writeFileSync(manifestPath, JSON.stringify({ ...story, v2_subjects: ['unknown'] }));
+  const missing = checkV2Pages(dist, source, manifests);
+  assert.match(missing.failures[0], /lacks subjects/);
+  assert.deepEqual(checkV2Pages(dist, destination, manifests), missing);
+});
 
 test('a site-only snapshot resolves subjects, refuses bodies, and rechecks both pins and bytes on every open', (t) => {
   const destination = temp(t, 'v2-site-only-');
