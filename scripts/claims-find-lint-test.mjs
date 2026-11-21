@@ -119,3 +119,25 @@ test("lint passes short forms that restate, round or abbreviate what says holds"
   assert.equal(r.status, 0, r.out);
   assert.match(r.out, /4 short forms, 0 state more than their claim/);
 });
+
+test("lint compares numbers by value, whatever their scale or spelling", () => {
+  const dir = fixture([
+    claim("scale", "France could release 2 million barrels.", "2 billion barrels"),
+    claim("words", "France could release two million barrels.", "2,000,000 barrels"),
+    claim("compound", "Twenty-one states sued.", "21 states"),
+  ]);
+  const r = claims(dir, "lint", story);
+  assert.equal(r.status, 1);
+  assert.match(r.out, /SHORT scale: the short form states '2 billion'/);
+  assert.doesNotMatch(r.out, /SHORT (words|compound)/);
+});
+
+test("add finds passages after characters that lowercase to two, and reads a ledger with leading whitespace", () => {
+  const dir = fixture();
+  writeFileSync(join(dir, "records/army.txt"), "İstanbul: the Army said “the Plan” ends.");
+  writeFileSync(join(dir, `checks/claims/${story}.json`), "\n" + ledger([]));
+  const r = claims(dir, "add", story, "--find", 'said "the plan" ends', "--id", "plan-ends",
+    "--says", "The Army said the plan ends.", "--status", "said", "--by", "the Army");
+  assert.equal(r.status, 0, r.out);
+  assert.equal(readLedger(dir).claims[0].evidence[0].passage, "said “the Plan” ends");
+});
