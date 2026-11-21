@@ -9,7 +9,8 @@ double/single quotes and apostrophes to straight, collapse whitespace and trim.
 Match case-sensitive exact substrings of cited passages or quoted text in says.
 Ellipses (… or ...) split a quote into segments which must match in order within
 one source. Numbers ignore thousands commas and insignificant decimal zeroes;
-percent and money units remain significant. Spelled cardinal numbers through
+percent, money scale and currency ($, €, £, ¥; USD/EUR equal $/€) remain
+significant, and a numeric match must cover the whole number. Spelled cardinal numbers through
 ninety, hundred and thousand (including compounds) equal digits. Join "and"
 only after hundred or thousand, not between independent numbers. Dates accept
 full/abbreviated months and require month plus day, with year optional; their
@@ -45,7 +46,7 @@ MONTH = '(?:' + '|'.join(m + '|' + m[:3] + r'\.?' for m in MONTHS) + r'|Sept\.?)
 MONTH_ABBREVIATIONS = {m[:3].lower(): m.lower() for m in MONTHS}
 MONTH_ABBREVIATIONS['sept'] = 'september'
 MONTH_ABBREVIATION = re.compile(r'\b(?:' + '|'.join(MONTH_ABBREVIATIONS) + r')(?:\.|\b)')
-NUMBER = re.compile(r'(?<![\w.])\$?\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:%|percent\b|million\b|billion\b|trillion\b))?', re.I)
+NUMBER = re.compile(r'(?<![\w.])(?:[$€£¥]\s*|(?:USD|EUR)\s*)?\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:%|percent\b|million\b|billion\b|trillion\b))?', re.I)
 DATE = re.compile(r'\b' + MONTH + r'\s+\d{1,2}(?:,?\s+\d{4})?\b', re.I)
 NAME_WORD = r"(?:U\.S\.|[A-Z][a-zA-Z0-9]*(?:[-'][A-Za-z0-9]+)*)"
 NAME = re.compile(r'\b' + NAME_WORD + r'(?:\s+' + NAME_WORD + r')*')
@@ -80,6 +81,8 @@ def number_words(match):
 @lru_cache(maxsize=16384)
 def canonical(text):
     text = normalize(text).casefold()
+    text = re.sub(r'\b(usd|eur)\s*(?=\d)', lambda m: '$' if m[1] == 'usd' else '€', text)
+    text = re.sub(r'([$€£¥])\s+(?=\d)', r'\1', text)
     text = re.sub(r'(?<!\w)(?:united states|u\.s\.|us)(?!\w)', 'us', text)
     text = LOWER_WORD_NUMBERS.sub(number_words, text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
@@ -101,6 +104,7 @@ def tokens(text):
         masked[date.start():date.end()] = ' ' * len(date[0])
     masked = ''.join(masked)
     out = [m[0] for m in NUMBER.finditer(masked)] + [m[0] for m in dates]
+    masked = NUMBER.sub(lambda m: ' ' * len(m[0]), masked)
     for m in NAME.finditer(masked):
         prefix = text[:m.start()].rstrip(' \t\n“"(')
         if not prefix or prefix[-1] in '.!?':
