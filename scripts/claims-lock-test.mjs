@@ -65,6 +65,33 @@ async function until(ready) {
   }
 }
 
+test("claims reports an arithmetic exception and still calls the model", async (t) => {
+  const root = fixture(t);
+  const path = join(root, `checks/claims/${story}.json`);
+  const ledger = JSON.parse(readFileSync(path, "utf8"));
+  ledger.claims[0].says = `1 of 3, or 33.${"0".repeat(40)}%.`;
+  writeFileSync(path, JSON.stringify(ledger));
+  writeFileSync(join(root, "release"), "");
+  const result = await claims(root, "1", "5").done;
+  assert.equal(result.code, 0, JSON.stringify(result));
+  assert.match(result.stderr, /^arith pre-check failed: InvalidOperation: .+$/m);
+  assert.equal(result.stderr.includes("Traceback"), false);
+  assert.match(result.stdout, /CLAIMS DO NOT HOLD/);
+  assert.ok(existsSync(join(root, "started")));
+  assert.ok(existsSync(join(root, `checks/records/${story}-claims-r1.md`)));
+});
+
+test("claims guards an uncaught nonzero arithmetic exit and still calls the model", async (t) => {
+  const root = fixture(t);
+  writeFileSync(join(root, "scripts/arith.py"), "raise SystemExit(7)\n");
+  writeFileSync(join(root, "release"), "");
+  const result = await claims(root, "1", "5").done;
+  assert.equal(result.code, 0, JSON.stringify(result));
+  assert.match(result.stderr, /^arith pre-check failed: command exited with status 7$/m);
+  assert.match(result.stdout, /CLAIMS DO NOT HOLD/);
+  assert.ok(existsSync(join(root, "started")));
+});
+
 test("claims waits for the shared ask lock, names its holder on timeout, and retries when released", async (t) => {
   const root = fixture(t);
   const holder = claims(root, "1", "5");

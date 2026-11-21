@@ -127,10 +127,15 @@ for (const [name, says, passage, count, mismatches, body, date] of [
   assert.equal(existsSync(join(root, "checks/reads")), false);
 });
 
-test("malformed ledger is an error, not a clean arithmetic report", (t) => {
+test("malformed ledger warns in report-only mode and fails in strict mode", (t) => {
   const { root, run } = fixture(t, "");
   writeFileSync(join(root, "checks/claims/test.json"), "{");
-  assert.notEqual(run().status, 0);
+  for (const args of [[], ["--strict"]]) {
+    const result = run(...args);
+    assert.equal(result.status, args.length ? 1 : 0);
+    assert.match(result.stderr, /^arith pre-check failed: JSONDecodeError: .+\n$/);
+    assert.equal(result.stdout, "");
+  }
 });
 
 test("replay follows renames and uses the parent's held hashes and historical HASHED fields", (t) => {

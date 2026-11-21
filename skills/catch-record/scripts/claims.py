@@ -277,10 +277,15 @@ def verify(story):
 if __name__ == "__main__":
     a = sys.argv[1:]
     if len(a) in (2, 3) and a[0] == "arith" and (len(a) == 2 or a[2] == "--strict"):
-        spec = importlib.util.spec_from_file_location("claim_arith", Path(__file__).with_name("arith.py"))
-        arith = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(arith)
-        mismatches = arith.report(read_json(ledger_path(a[1])), *record_texts(a[1]))
+        try:
+            spec = importlib.util.spec_from_file_location("claim_arith", Path(__file__).with_name("arith.py"))
+            arith = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(arith)
+            mismatches = arith.report(read_json(ledger_path(a[1])), *record_texts(a[1]))
+        except Exception as exc:
+            error = " ".join(str(exc).splitlines())
+            print(f"arith pre-check failed: {type(exc).__name__}: {error}", file=sys.stderr)
+            sys.exit(1 if "--strict" in a else 0)
         sys.exit(1 if "--strict" in a and mismatches else 0)
     elif len(a) == 2 and a[0] == "check":
         sys.exit(0 if check(a[1]) else 1)
