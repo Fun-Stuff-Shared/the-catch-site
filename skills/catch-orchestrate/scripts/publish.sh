@@ -50,6 +50,7 @@ for s in $stories; do
   python3 -I skills/catch-record/scripts/claims.py verify $s || { print "$s: its claims or its page have not passed their checks as they read now" >&2; exit 1 }
 done
 
+before=$(git -C $site rev-parse $base)
 if [[ $base == main ]]; then
   git -C $site merge -q --ff-only ${wt:t}
 else
@@ -60,7 +61,22 @@ print "$base is at $(git -C $site rev-parse --short $base)"
 
 pushed=$(git rev-parse HEAD)
 known=$(node scripts/deploy-wait.mjs known $pushed 2>/dev/null) || known=unknown
-git -C $site push -q origin $base
+if ! git -C $site push -q origin $base; then
+  if [[ $(git -C $site rev-parse $base) != $pushed ]]; then
+    print "push failed; $base changed concurrently, so it was not restored (previous commit: $before)." >&2
+  elif [[ $base == main ]]; then
+    git -C $site reset --keep $before || {
+      print "push failed; could not restore $base to $before. Preserve local changes before retrying." >&2; exit 1 }
+    print "push failed; restored $base to $before." >&2
+  else
+    git -C $site update-ref refs/heads/$base $before $pushed
+    print "push failed; restored $base to $before." >&2
+  fi
+  print "Publish commit $pushed is preserved in $wt (branch ${wt:t})." >&2
+  print "Retry after resolving the push rejection (this reruns checks and deployment monitoring):" >&2
+  print "CATCH_BASE=${(q)base} CATCH_LIVE=${(q)live} zsh ${(q)here}/publish.sh --merge ${(q)wt:t} ${(q)stories}" >&2
+  exit 1
+fi
 deployed=0
 node scripts/deploy-wait.mjs $pushed --ignore "$known" || deployed=$?
 (( deployed == 0 || deployed == 3 )) || exit 1

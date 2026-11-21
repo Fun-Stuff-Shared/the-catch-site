@@ -23,6 +23,7 @@ function fixture(t, { reject = false, files = {} } = {}) {
   git('init', '-b', 'main');
   git('config', 'user.name', 'Publish test');
   git('config', 'user.email', 'publish@example.invalid');
+  put(join(site, '.gitignore'), '.worktrees/\n');
   put(join(site, 'checks/manifests/test--story.json'), '{"v2":true,"figures":[{}]}');
   put(join(site, 'src/data/news-records.json'), '{}');
   put(join(site, 'skills/catch-record/scripts/claims.py'), '');
@@ -61,7 +62,7 @@ test('a rejected push restores main and preserves the publish commit for retry',
   assert.equal(f.git('rev-parse', 'origin/main'), f.before);
   assert.equal(f.git('status', '--porcelain'), '');
   assert.match(r.stderr, /Retry after resolving the push rejection/);
-  assert.match(r.stderr, /git -C .* merge --ff-only publish-/);
+  assert.match(r.stderr, /zsh .*publish.sh --merge publish-/);
 });
 
 test('a successful publish pushes main', (t) => {
