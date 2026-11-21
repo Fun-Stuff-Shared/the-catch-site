@@ -278,12 +278,8 @@ with your recommendation.
 When the record holds, check the ledger against the records:
 
 ```bash
-python3 -I skills/catch-record/scripts/claims.py lint <story>
 zsh skills/catch-record/scripts/claims.sh <story> <N>      # N = 1, 2, ...
 ```
-
-The lint runs in under a second and lists each `short` form that states a number, date,
-name or qualifier its `says` does not. It only reports; the claim check still decides.
 
 GPT-6 Sol (high) reads each claim that has not held as it reads now, with its passages and
 the full text of its records attached, and checks its words, status and scope: strictly for

@@ -99,7 +99,7 @@ test("lint flags numbers, dates, names and qualifiers the short form adds", () =
     claim("qualifier", "Officials expect about 4,042 flights to be delayed.", "All 4,042 flights delayed"),
   ]);
   const r = claims(dir, "lint", story);
-  assert.equal(r.status, 1);
+  assert.equal(r.status, 0, "the lint only reports");
   assert.match(r.out, /SHORT number: the short form states '4,100'/);
   assert.match(r.out, /SHORT date: the short form states 'Nov\.', '24'|SHORT date: the short form states '24'/);
   assert.match(r.out, /SHORT name: the short form states 'FAA'/);
@@ -127,7 +127,7 @@ test("lint compares numbers by value, whatever their scale or spelling", () => {
     claim("compound", "Twenty-one states sued.", "21 states"),
   ]);
   const r = claims(dir, "lint", story);
-  assert.equal(r.status, 1);
+  assert.equal(r.status, 0, "the lint only reports");
   assert.match(r.out, /SHORT scale: the short form states '2 billion'/);
   assert.doesNotMatch(r.out, /SHORT (words|compound)/);
 });

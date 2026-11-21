@@ -98,9 +98,7 @@ question each answers, and how to draw what none covers: `references/visuals.md`
 cell or timeline label that states a fact is its claim's `short` form
 (`claim("<story>", "<id>").short`, from `src/lib/claims.mjs`) and cites the claim; a
 timeline entry cites it as `cites: [{ c: "<id>" }]`. A cell is the most compressed text on
-the page, and the place a "may" most often becomes a "will". After writing or editing a short form, run
-`python3 -I skills/catch-record/scripts/claims.py lint <story>`: it lists each one that
-states a number, date, name or qualifier its claim's `says` does not.
+the page, and the place a "may" most often becomes a "will".
 
 The headline is a news headline a reader would click, not the story's claim written out:
 the event and, where it fits, the catch, in about twelve words or fewer, active, concrete,
@@ -246,6 +244,8 @@ ends `BOUND` or `NOT BOUND` and takes about a minute, so run it after every buil
 changes the page's text, including the fixes the human's notes bring. The page publishes
 only when every block that cites a claim has passed as it reads now (`publish.sh` checks),
 so there is no round limit to count: an edit is checked when it is made.
+
+Bind carries earlier findings into re-checks and reports, keeping them in `checks/reads/<story>-findings.json`.
 
 The thread read is one reader's reactions, not a list of orders: you are the reporter, and
 you judge each flag against what the story needs. Where a break is real, the fix is never
