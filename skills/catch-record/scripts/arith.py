@@ -126,8 +126,9 @@ def computations(claim, records=None, texts=None):
                 out[-1] = (f'"{m[1]} {m[2]}"', out[-1][1], out[-1][2])
 
     # Explicit operands keep unrelated numbers in a passage out of calculations.
+    sum_operands = rf"{NUM}(?:,\s*{NUM})*,?\s+and\s+{NUM}"
     patterns = [
-        (rf"(?P<a>{NUM})\s+and\s+(?P<b>{NUM}),?\s+(?:a\s+)?total\s+of\s+(?P<c>{NUM})", "sum"),
+        (rf"(?P<operands>{sum_operands}),?\s+(?:a\s+)?total\s+of\s+(?P<c>{NUM})", "sum"),
         (rf"from\s+(?P<a>{NUM})\s+to\s+(?P<b>{NUM}),?\s+(?:(?:an?\s+)?(?:increase|decrease)\s+of|up|down)\s+(?P<c>{NUM})(?![\d%]|\.\d)", "difference"),
         (rf"(?P<a>{NUM})\s+of\s+(?P<b>{NUM}),?\s+or\s+(?P<c>\d+(?:\.\d+)?)%", "share"),
         (rf"(?P<a>{NUM})\s+[a-z]+\s+of\s+(?P<b>{NUM})\s+[a-z]+\s+\((?P<c>\d+(?:\.\d+)?)%\)", "share"),
@@ -136,12 +137,15 @@ def computations(claim, records=None, texts=None):
     ]
     for pattern, kind in patterns:
         for m in re.finditer(pattern, says, re.I):
+            if kind == "sum":
+                operands = [number(p[0]) for p in re.finditer(NUM, m["operands"], re.I)]
+                add(m["c"], sum(operands), f"{' + '.join(map(str, operands))} = {sum(operands)}")
+                out[-1] = (f'"{m["c"]}"', out[-1][1], out[-1][2])
+                continue
             a, b = number(m["a"]), number(m["b"])
             if kind in {"share", "change"} and not (b if kind == "share" else a):
                 continue
-            if kind == "sum":
-                actual, formula = a + b, f"{a} + {b}"
-            elif kind == "difference":
+            if kind == "difference":
                 actual, formula = abs(b - a), f"|{b} - {a}|"
             elif kind == "share":
                 actual, formula = a / b * 100, f"{a} / {b} × 100"
@@ -184,8 +188,13 @@ def computations(claim, records=None, texts=None):
                     expected = date.fromordinal(publication.toordinal() - (publication.weekday() - weekday) % 7)
                     out.append((f'"completed {day.isoformat()}"', f"cited {weekdays[0]} before {publication} is {expected}", day == expected))
     if not out:
+        operand_lists = {tuple(number(p[0]) for p in re.finditer(NUM, m[0], re.I))
+                         for m in re.finditer(sum_operands, passages, re.I)}
+        totals = list(re.finditer(rf"(?:a\s+)?total\s+of\s+({NUM})", says, re.I))
+        if len(operand_lists) == len(totals) == 1:
+            operands = operand_lists.pop()
+            add(totals[0][1], sum(operands), f"{' + '.join(map(str, operands))} = {sum(operands)}")
         for operand_pattern, result_pattern, operation, symbol in [
-            (rf"({NUM})\s+and\s+({NUM})", rf"(?:a\s+)?total\s+of\s+({NUM})", lambda a, b: a + b, "+"),
             (rf"from\s+({NUM})\s+to\s+({NUM})", rf"(?:increase|decrease)\s+of\s+({NUM})(?![\d%]|\.\d)", lambda a, b: abs(b - a), "difference"),
         ]:
             pairs = {(number(p[1]), number(p[2])) for p in re.finditer(operand_pattern, passages, re.I)}
