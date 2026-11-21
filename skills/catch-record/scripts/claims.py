@@ -578,7 +578,7 @@ def add(story, argv):
     path = ledger_path(story)
     before = path.read_text()
     ledger = json.loads(before)
-    claims = next(s for k, s, _ in json_members(before, 0) if k == "claims")
+    claims = next(s for k, s, _ in json_members(before, len(before) - len(before.lstrip())) if k == "claims")
     existing = {c.get("id"): i for i, c in enumerate(ledger["claims"])}
     if o.id in existing:
         if any(v is not None for v in (o.says, o.status, o.by, o.scope, o.short)) or o.load:
