@@ -122,8 +122,6 @@ def computations(claim, records=None, texts=None):
                     continue
                 direction = interval[3].lower()
                 reference = reference_date(choices, interval)
-                if direction in {"from", "between"} and choices[0] > choices[1]:
-                    continue
                 if direction in {"before", "after"} and reference is not None:
                     event = next((d for d in choices if d != reference), reference)
                     if (event > reference) != (direction == "after"):
