@@ -109,6 +109,22 @@ test("finance links are bidirectional and amendments replace the same report tra
   assert.equal(data.finance[0].receipts[2].amount_cents, -1000);
 });
 
+test("finance deduplication spans overlapping sets but preserves different committees", () => {
+  const overlap = (d) => {
+    const copy = structuredClone(d.finance[0]);
+    copy.id = "overlapping-finance-set";
+    copy.receipts[0].filing_id = "SAMPLE-F99";
+    copy.receipts[0].amendment = 2;
+    d.finance.push(copy);
+    d.officials[0].money.push(copy.id);
+    return copy;
+  };
+  rejects(overlap, /amendments must replace originals/);
+  const distinct = fixture();
+  overlap(distinct).committee_id = "SAMPLE-DIFFERENT-COMMITTEE";
+  assert.deepEqual(validateOfficialRecords(distinct, context()), []);
+});
+
 test("industry classification requires evidence and unknown classifications stay unavailable", () => {
   rejects((d) => delete d.finance[0].industry_classifications[0].evidence, /required/);
   rejects((d) => d.finance[0].industry_classifications[0].receipt_id = "missing-receipt", /unknown classified receipt/);

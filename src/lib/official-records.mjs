@@ -82,11 +82,11 @@ export function validateOfficialRecords(dataset, { records, readText, root, publ
     }
     for (const cast of Object.keys(counts)) check(vote.membership === "complete" ? counts[cast] === vote.totals[cast] : counts[cast] <= vote.totals[cast], `${vote.id}: ${cast} total disagrees with member rows`);
   }
+  const transactions = new Set();
   for (const finance of dataset.finance) {
     check(maps.officials.get(finance.official_id)?.money.includes(finance.id), `${finance.id}: finance must be linked by its official`);
     period(finance.period, finance.id);
     const receipts = index(finance.receipts, `${finance.id}.receipts`);
-    const transactions = new Set();
     for (const receipt of finance.receipts) {
       const key = JSON.stringify([finance.committee_id, receipt.report_id, receipt.schedule, receipt.transaction_id]);
       check(!transactions.has(key), `${finance.id}: transaction ${receipt.transaction_id} is repeated; amendments must replace originals`);
