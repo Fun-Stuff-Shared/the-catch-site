@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import ExplanationList from "../../../components/story/ExplanationList.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import ShareBar from "../../../components/story/ShareBar.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { claim } from "../../../lib/claims.mjs";
+import { event, n, approvals, statusBar, chronology, coverageVsTable, steps, explanations } from "../../../data/ai-chip-exports-2026-11-19-house-committee-releases-china-chip-license-data.mjs";
+const story = "ai-chip-exports--2026-11-19-house-committee-releases-china-chip-license-data";
+const short = (id) => claim(story, id).short.replace(/^(?:[A-Z][a-z]{2,3}\.?|Aug\.-Oct\.)[ 0-9,]*[0-9]{0,4}: /, "");
+const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
+const timeline = chronology.map((e) => ({ date: e.date, title: cap(short(e.c)), current: e.current, cites: [{ c: e.c }] }));
+const fmt = (v) => v.toLocaleString("en-US");
+const tones = { approved: "primary", returned: "dark", pending: "light", rejected: "alert" };
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/ai-chip-exports/">AI chip exports</a><span>November 19, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">AI chip exports &middot; November 19, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact" data-claims="approved not-shipped released-nov-19">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="four-approved" /><Cite c="summary-june-list" /><Cite c="bytedance-tencent-150k" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#after-may">What shipped after May</a></li>
+          <li><a href="#who">Who was approved, and who was sent back</a></li>
+          <li><a href="#why-now">Why the committee released it</a></li>
+          <li><a href="#explanations">Every explanation, tested</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative">Companies asked the Commerce Department for licenses to sell {n.requested} of Nvidia's H200 and AMD's MI325X AI chips to Chinese buyers, and by May 11, 2026, the department had approved {n.approved} of them, in {n.approvedLicenses} licenses.<Cite c="requested" /><Cite c="approved" /><Cite c="covered-chips" /> None of the approved chips had shipped by then: the department's own table marks every approval "Approved, not shipped."<Cite c="not-shipped" /> The House Foreign Affairs Committee made the table public on November 19. Its chairman, Rep. Brian Mast, a Florida Republican, released it under the Export Control Reform Act, which lets the committee publish licensing data when it finds that keeping it secret is against the national interest.<Cite c="released-nov-19" /><Cite c="national-interest" /></p>
+        <p data-layer="narrative">The table comes from the Bureau of Industry and Security (BIS), the part of Commerce that licenses exports. Before January, BIS's rules presumed it would deny licenses for these chips to China; since a rule took effect on January 15, it weighs each application on its merits, as long as the exporter certifies, among other things, that U.S. buyers have enough supply and that the chips are tested in the United States.<Cite c="presumption-before" /><Cite c="january-rule" /> Most of what companies asked for had no license as of May 11, and most of those requests had been sent back to the companies without a decision; BIS had rejected only one.<Cite c="requested" /><Cite c="approved" /><Cite c="returned" /><Cite c="pending" /><Cite c="rejected-one" /></p>
+        <ShareBar
+          caption={`The ${n.requested} chips companies asked to sell to Chinese buyers, by what BIS had done with them as of May 11, 2026`}
+          parts={statusBar.map((s) => ({ label: s.label, value: s.value, display: s.display, tone: tones[s.key], cites: [{ c: s.c }] }))}
+          showShare={false}
+        />
+        <p data-layer="narrative">Nvidia says licensed H200s did reach China later, in its quarter that ended October 25, and that it has since stopped shipping them.<Cite c="kress-h200-went" /><Cite c="hopper-2-4b" /><Cite c="nvidia-stopped" /> Some coverage described the approvals as chips already sent to China.<Cite c="hill-fulfilled" /><Cite c="st-shipments" /><Cite c="mcguire-sent" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The approvals were not shipments</h3>
+              <p data-layer="narrative">The Hill wrote that "the order was fulfilled"; the table it describes shows the approvals unused as of May 11, and other reports also misread the numbers, as the table below shows.<Cite c="hill-fulfilled" /><Cite c="not-shipped" /><Cite c="st-shipments" /><Cite c="bt-3-4m" /> Chris McGuire, a former U.S. official quoted by Reuters, put "over 30%" of the chips "sent to China" with companies the Pentagon lists as Chinese military companies. The committee's numbers give that share for approvals, not shipments: {n.four} of the {n.approved} approved chips, {n.fourShare} percent, were for Alibaba, Tencent, Baidu and BYD, approved buyers that are on the Pentagon's list.<Cite c="mcguire-sent" /><Cite c="four-approved" /><Cite c="approved" /><Cite c="summary-june-list" /> Reuters' own story said it was not clear how many approvals had turned into shipments.<Cite c="reuters-unclear" /></p>
+              <figure class="story-figure" data-layer="fact">
+                <figcaption><strong>What the reports said, and what the BIS table says</strong></figcaption>
+                <table class="data-table catch-compare">
+                  <thead><tr><th>Who</th><th>Said</th><th>The table says</th></tr></thead>
+                  <tbody>{coverageVsTable.map((r) => <tr><td>{r.who}</td><td>{r.said}<Cite c={r.saidC} /></td><td>{r.table}{r.tableC.map((id) => <Cite c={id} />)}</td></tr>)}</tbody>
+                </table>
+              </figure>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="after-may">
+        <h2 data-layer="fact">What shipped after May</h2>
+        <p data-layer="narrative">The table stops at May 11. On July 14, Jeffrey Kessler, the Commerce under secretary who runs BIS, told the committee there had been "minimal exports" of H200s to China, and later in the hearing called the amount "trivial."<Cite c="kessler-july" /> In August, Nvidia said it had made a fraction of the shipments its licenses allowed, under 1 percent of its data-center revenue for the quarter, and that China had restricted the sales.<Cite c="nvidia-fraction" /><Cite c="nvidia-feb-licenses" /> Because licensed H200s had to go through an inspection process in the United States before reaching the customer, those shipped paid a 25 percent U.S. import tariff.<Cite c="inspection-tariff" /></p>
+        <p data-layer="narrative">In the quarter that ended October 25, Nvidia shipped {n.hopper} of Hopper data center products, the family that includes the H200, to China, a dollar figure rather than a chip count.<Cite c="nvidia-fraction" /><Cite c="hopper-2-4b" /> Nvidia's interim chief executive, Colette Kress, said what that quarter's shipments held:<Cite c="kress-h200-went" /></p>
+        <QuoteCard speaker="Colette Kress, Nvidia's interim chief executive" when="November 17, 2026" where="Interview with CNBC">
+          <p>"As you also saw us announce, we would only have the licensed H200s [Nvidia's data center GPUs], and those went to China within this last quarter."<Cite c="kress-h200-went" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">On November 17, Nvidia said it is no longer shipping licensed Hopper chips to China, and its forecast for the current quarter assumes no data-center revenue from China.<Cite c="nvidia-stopped" /><Cite c="no-china-forecast" /> Beijing has been the other brake: Reuters reported on November 5, citing two people, that about {n.hk} H200s were stored in Hong Kong waiting for Beijing's approval to enter mainland China.<Cite c="hk-stockpile" /> AMD says it received licenses in February to ship MI325 chips to Chinese customers and said in August that it did not know whether China would let them in; its November filing gives no MI325 shipment figures.<Cite c="amd-licenses" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From Trump's announcement to the release</strong></figcaption>
+          <DecisionTimeline entries={timeline} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="who">
+        <h2 data-layer="fact">Who was approved, and who was sent back</h2>
+        <p data-layer="narrative">ByteDance, TikTok's owner, and Tencent each won approval for 150,000 chips, 75,000 from Nvidia and 75,000 from AMD for a subsidiary.<Cite c="bytedance-tencent-150k" /> Alibaba asked for {n.alibabaAsked} chips for itself and its subsidiaries and was approved for {n.alibabaApproved}; every other Alibaba request, including requests for its cloud unit in Malaysia, was sent back.<Cite c="alibaba-asked" /><Cite c="alibaba-rest-returned" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The {n.approvedLicenses} approvals, by buyer, as of May 11, 2026, none shipped</strong></figcaption>
+          <table class="data-table approvals-table">
+            <thead><tr><th>Buyer</th><th>Chips from</th><th class="num">Chips approved</th></tr></thead>
+            <tbody>{approvals.map((a) => <tr><td>{a.buyer}</td><td>{a.maker}</td><td class="num">{fmt(a.chips)}<Cite c="approvals-list" /></td></tr>)}</tbody>
+            <tfoot><tr><td colspan="2">Total</td><td class="num">{n.approved}<Cite c="approvals-list" /><Cite c="approved" /></td></tr></tfoot>
+          </table>
+        </figure>
+        <p data-layer="narrative">The biggest requests got no decision. Applications for {n.offshore} chips for ByteDance and Alibaba units in Malaysia, Indonesia and Thailand were returned without action, and so was the largest single request in the table, {n.alibaba610} chips for Alibaba Group in China.<Cite c="offshore-returned" /><Cite c="alibaba-610k" /> Returning an application is not denying it: BIS sends an application back when, among other reasons, the applicant asks, a license exception applies or documents are missing, and in 2021 it returned {n.rwa2021} percent of goods, software and technology applications that way.<Cite c="rwa-meaning" /><Cite c="rwa-common" /> The table gives no reason for any return.<Cite c="no-reasons" /> Separately, the January rule opened case-by-case review only for chips going to China or Macau; for chips going to a Chinese-owned company in another country, BIS still starts from refusal.<Cite c="offshore-presumption" /></p>
+        <p data-layer="narrative">Four of the approved buyers, Alibaba, Tencent, Baidu and BYD, are on the Pentagon's list of Chinese military companies, and together they were approved for {n.four} chips.<Cite c="four-approved" /><Cite c="summary-june-list" /> Tencent has been on the list since January 2025. The Pentagon told Congress in October 2025 that Alibaba, Baidu and BYD should be added, according to reports that lawmakers cited and a federal court recounted, before the first of these applications was filed on December 9, 2025; the update listing them was made public on June 8, 2026.<Cite c="tencent-listed-2025" /><Cite c="pentagon-oct-2025" /><Cite c="three-listed-june" /> The list bars the Pentagon from contracting with the companies on it; it does not bar exports.<Cite c="list-effect" /> Alibaba says it is not a military company and has sued over its designation.<Cite c="alibaba-denies" /><Cite c="alibaba-sued" /></p>
+        <p data-layer="narrative">The committee's other concern is who would install the chips in Chinese data centers. All but two of the Nvidia applications for Chinese buyers that BIS gave the committee name Maginfra, Beijing New Matrix, ZTE Kangxun and Lenovo as companies that "may install the systems in the datacenter."<Cite c="installers" /> The New York Times found no sign of New Matrix at its listed address, and Mast calls Maginfra and New Matrix "fake companies."<Cite c="new-matrix-empty" /><Cite c="mast-fake" /> Every Nvidia and AMD application told BIS that the risk of the chips being diverted to someone else was "low."<Cite c="low-risk" /></p>
+      </section>
+
+      <section id="why-now">
+        <h2 data-layer="fact">Why the committee released it</h2>
+        <p data-layer="narrative">Democrats had demanded these records months earlier. On December 8, 2025, President Trump announced that the H200 could be sold to approved customers in China, and later that month Rep. Gregory Meeks of New York, the committee's top Democrat, and Sen. Elizabeth Warren used the same 2018 law to demand the applications and approvals from Commerce.<Cite c="trump-dec-8" /><Cite c="meeks-warren-request" /></p>
+        <p data-layer="narrative">The release came at the end of a week of scrutiny of Nvidia and its sales to China. Nvidia announced on November 12 that Jensen Huang had resigned as chief executive; Reuters reports that he resigned amid news of his affair with a former Megaspeed executive whom U.S. authorities suspect of being a Chinese spy, which China denies. Megaspeed is a Singapore-based company.<Cite c="huang-resigned" /><Cite c="huang-affair-news" /> On November 16, the day Commerce issued <a href="/events/ai-chip-exports/2026-11-16-commerce-requires-licenses-for-chips-at-china-serving-data-centers/">a rule meant to stop companies from getting around U.S. limits by renting chips at data centers abroad</a>, Mast said advanced chips "should never end up in the hands of China" and that Americans "deserve to know how this happened," and the next day he asked BIS for information on chip smuggling and export licenses involving Megaspeed.<Cite c="nov-16-rule" /><Cite c="mast-why" /><Cite c="mast-megaspeed" /></p>
+        <p data-layer="narrative">Meeks says BIS "seemed to approve licenses for advanced chips to China with little scrutiny."<Cite c="meeks-little-scrutiny" /> Commerce says its approvals rest on the January rule's added national-security requirements and on deliberation among several agencies.<Cite c="commerce-statement" /></p>
+      </section>
+
+      <section id="explanations">
+        <h2 data-layer="fact">Every explanation, tested</h2>
+        <ExplanationList entries={explanations} />
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The dates ahead</strong></figcaption>
+          <table class="data-table">
+            <thead><tr><th>When</th><th>What</th></tr></thead>
+            <tbody>{steps.map((s) => <tr><td>{s.when}</td><td>{s.what}{s.c.map((id) => <Cite c={id} />)}</td></tr>)}</tbody>
+          </table>
+        </figure>
+        <p data-layer="narrative">The committee also holds an application the table does not fully reflect: Nvidia's December 19, 2025, request to export {n.tencent445} H200s to Tencent.<Cite c="tencent-445k" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
+  .approvals-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .catch-compare th:first-child, .catch-compare td:first-child { width: 26%; }
+</style>

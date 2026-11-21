@@ -1,0 +1,2428 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+<style data-afp-critical-css="true">/**
+ * AFP9 critical CSS - shared above-the-fold styles.
+ *
+ * Inlined in the HTML head by afp9_preprocess_html() so the page renders
+ * with a stable layout while the full theme CSS is loaded asynchronously.
+ * Keep this file small and conservative: it only needs to prevent layout
+ * shifts on the header, body grid and skip-link before the deferred
+ * stylesheets apply.
+ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: rgba(0,0,0,0); line-height: 1.15; }
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Conservative resets only.
+ * The previous version included aggressive globals (button border:0,
+ * h1-h6/p/ul/ol margin:0, ul/ol list-style:none) that bled into the
+ * OneTrust banner and Marketo widgets and made them look broken before
+ * their own stylesheets finished loading. Keep resets minimal here and
+ * scope further tweaks to AFP-specific containers. */
+main { display: block; }
+
+/* Bootstrap layout primitives used by the AFP html.html.twig body. */
+.d-flex { display: flex !important; }
+.flex-column { flex-direction: column !important; }
+.h-100 { height: 100% !important; }
+.justify-content-md-start { justify-content: flex-start !important; }
+
+/* Drupal off-canvas wrapper used as the outer body container. Keep it
+ * transparent so the inner #page flex column drives the layout. */
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+}
+
+/* Page wrapper: reproduces scss/AFP/_navigation.scss #page rule.
+ * Without it, the Drupal main and footer collapse and shift when the
+ * deferred theme stylesheet applies later. The overflow-x clamp comes
+ * from scss/AFP/_main.scss #page { overflow-x: hidden } and stops the
+ * homepage hero from triggering a horizontal scrollbar when the
+ * deferred CSS lands. */
+#page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Container widths matching Bootstrap 5 defaults so wrappers do not jump. */
+.container,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+
+@media (min-width: 576px)  { .container { max-width: 540px; } }
+@media (min-width: 768px)  { .container { max-width: 720px; } }
+@media (min-width: 1024px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
+
+/* Drupal regions and content blocks: reset margins/padding before the
+ * full stylesheet loads, otherwise the default user-agent margins on
+ * children cause vertical layout drift on the homepage and the product
+ * pages (CLS hot spots reported by Lighthouse YOG-997). */
+.region,
+.block,
+.field,
+.field__item {
+  display: block;
+}
+
+/* Skip link visibility helpers used in html.html.twig. */
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  border-bottom: 1px solid #e6e9ea;
+  padding: 5px 1px;
+}
+@media (min-width: 576px)  { .skip-link { padding: 9px 24px 8px; } }
+.skip-link a {
+  color: #001a70;
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 8px 5px;
+}
+@media (min-width: 576px)  { .skip-link a { padding: 8px 16px; } }
+
+/* AFP header / navbar above-the-fold frame.
+ * The selectors mirror templates/layout/_header.html.twig and the rules
+ * from scss/AFP/_navigation.scss so the navbar reserves its final size
+ * before the main stylesheet is parsed (prevents layout shift). */
+header[role="banner"] { display: block; }
+
+/* Fixed header positioning. Source: scss/AFP/_navigation.scss header {}.
+ * Without this rule the deferred main stylesheet would suddenly fix the
+ * header and push the hero down by ~56px on first paint (CLS hot spot
+ * on the homepage LCP element).
+ * YOG-1098: scoped to [role="banner"] — a bare `header` selector also
+ * matched every <header class="section__head"> inside evolution
+ * paragraphs, pinning section titles on top of the hero banner. */
+header[role="banner"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+}
+
+/* Site header shell (templates/layout/_header.html.twig, assets/css/header-v2.css). */
+.afp-header-v2 {
+  background: #fff;
+  color: #202020;
+}
+
+.afp-header-v2__bar {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  min-height: 56px;
+  padding: 8px 16px;
+}
+
+@media (min-width: 1024px) {
+  .afp-header-v2__bar {
+    min-height: 72px;
+    padding: 12px 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .afp-header-v2__bar {
+    padding: 12px 48px;
+  }
+}
+
+.afp-header-v2__start,
+.afp-header-v2__end {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.afp-header-v2__logo {
+  display: block;
+  height: 20px;
+  width: auto;
+}
+
+@media (min-width: 1024px) {
+  .afp-header-v2__logo {
+    height: 28px;
+  }
+}
+
+.afp-header-v2__drawer.collapse:not(.show):not(.collapsing) {
+  display: none !important;
+}
+
+@media (max-width: 1023.98px) {
+  .afp-header-v2__drawer.collapse:not(.show):not(.collapsing) {
+    display: none !important;
+  }
+
+  /* Legacy icon sheet targets .collapse:before — conflicts with Bootstrap collapse. */
+  .afp-header-v2__drawer.collapse::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .afp-header-v2__drawer.show .afp-header-v2__nav--mobile ul.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+.afp-header-v2__nav .dropdown-menu {
+  display: none;
+}
+
+.afp-header-v2__lang-btn,
+.afp-header-v2 #dropdownLanguageButton,
+.afp-header-v2__contact,
+.afp-header-v2__signin-btn,
+.afp-header-v2__signin-mobile {
+  align-items: center;
+  display: inline-flex;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.afp-header-v2__contact {
+  background: #325aff;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+/* source: assets/css/header-v2.css line 659 */
+:root a.afp-header-v2__signin-btn,
+:root a.afp-header-v2__signin-btn:link,
+:root a.afp-header-v2__signin-btn:visited,
+:root a.afp-header-v2__signin-btn:hover,
+:root a.afp-header-v2__signin-btn:focus,
+:root a.afp-header-v2__signin-btn:active {
+  color: #325aff;
+}
+
+/* source: assets/css/header-v2.css line 668 */
+:root a.afp-header-v2__contact,
+:root a.afp-header-v2__contact:link,
+:root a.afp-header-v2__contact:visited,
+:root a.afp-header-v2__contact:hover,
+:root a.afp-header-v2__contact:focus,
+:root a.afp-header-v2__contact:active {
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .afp-header-v2__contact {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .d-lg-none { display: none !important; }
+  .d-lg-flex { display: flex !important; }
+  .d-lg-block { display: block !important; }
+}
+
+@media (max-width: 1023.98px) {
+  .afp-header-v2 {
+    border-bottom: 1px solid #e9edfd;
+  }
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  min-height: 40px;
+}
+@media (min-width: 576px) { .navbar { min-height: 56px; } }
+
+.navbar-expand-lg { flex-wrap: nowrap; }
+.navbar-white { background-color: #fff; }
+
+.burger-logo {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  position: relative;
+}
+.burger-logo::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid #e6e9ea;
+  width: 100vw;
+  right: 0;
+  left: 0;
+  bottom: -1px;
+  z-index: 1;
+}
+
+.logo-afp-link {
+  display: flex;
+  margin: 0;
+  padding: 12px 0;
+}
+@media (min-width: 576px) { .logo-afp-link { padding: 14px 4px; } }
+@media (min-width: 1024px) { .logo-afp-link { margin: 0 32px; padding: 14px 16px; } }
+
+.logo-afp { display: block; width: 48px; height: 16px; }
+@media (min-width: 576px) { .logo-afp { width: 87px; height: 28px; } }
+
+.navbar-toggler {
+  border: 0;
+  padding: 8px;
+  margin-left: 0;
+  background-color: transparent;
+  font-family: inherit;
+}
+@media (min-width: 576px) { .navbar-toggler { padding: 12px; margin-left: 12px; } }
+.navbar-toggler-icon {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background: transparent none no-repeat center center;
+}
+@media (min-width: 576px) { .navbar-toggler-icon { width: 32px; height: 32px; } }
+
+/* Mobile-first: collapse the navigation block until JS or the full
+ * Bootstrap stylesheet enables it. Avoids a tall navbar collapsing
+ * below the navbar after first paint, which was the main CLS culprit
+ * on offre-photo / afp-news (YOG-997 layout-shifts insight). */
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+  display: none !important;
+}
+@media (min-width: 1024px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  /* Hide the burger toggler once the horizontal menu becomes visible. */
+  .navbar-expand-lg .navbar-toggler { display: none; }
+}
+
+/* Desktop horizontal main navigation.
+ * Source: scss/AFP/_navigation.scss div.navbar ul.navbar-nav.
+ * Without this, the deferred aggregated CSS lands and the menu
+ * suddenly switches from a vertical UA-styled list to a horizontal
+ * uppercase row (visible FOUC reported on the homepage). */
+div.navbar ul.navbar-nav {
+  display: block;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+}
+@media (min-width: 1024px) {
+  div.navbar ul.navbar-nav {
+    display: flex;
+    max-height: initial;
+    overflow: initial;
+  }
+}
+
+/* Style of the top-level nav items. Compact set that matches the
+ * desktop critical surface; deferred CSS handles dropdown chrome
+ * and hover/focus states. */
+div.navbar ul.navbar-nav li.nav-item {
+  background-color: #fff;
+}
+div.navbar ul.navbar-nav li.nav-item > a,
+div.navbar ul.navbar-nav li.nav-item .title-nav {
+  display: flex;
+  width: 100%;
+  padding: 15px 16px;
+  margin: 0;
+  border: 0;
+  background-color: #fff;
+  color: #001a70;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.0364em;
+  text-decoration: none;
+  text-align: initial;
+}
+@media (max-width: 1479.98px) {
+  div.navbar ul.navbar-nav li.nav-item > a,
+  div.navbar ul.navbar-nav li.nav-item .title-nav {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 1199.98px) {
+  div.navbar ul.navbar-nav li.nav-item > a,
+  div.navbar ul.navbar-nav li.nav-item .title-nav {
+    font-size: 13px;
+  }
+}
+
+/* Keep dropdown panels collapsed until the user activates them.
+ * Bootstrap's full stylesheet drives the `.show` state; before it
+ * arrives the dropdown markup would be visible inline and push the
+ * hero down by several hundred pixels. */
+div.navbar ul.navbar-nav li.nav-item ul.dropdown-menu { display: none; }
+
+/* Overlay layers are off-screen helpers driven by Bootstrap collapse
+ * JS. They must stay invisible at first paint, otherwise the page
+ * appears behind a fullscreen black tint. */
+.overlay-afp-desktop,
+.overlay-afp-mobile-tablet { display: none; }
+
+/* Mobile footer of the collapsed menu — should disappear past tablet,
+ * matching scss/AFP/_navigation.scss .navbar-collapse-footer. */
+@media (min-width: 768px) {
+  .navbar-collapse-footer { display: none; }
+}
+
+/* Header right-aside primary CTA. Mobile hides it; tablet+ shows it
+ * inline next to the language selector. */
+.header-connect-button { display: none; }
+@media (min-width: 768px) {
+  .header-aside .header-connect-button {
+    display: inline-flex;
+    margin: 0 16px;
+    padding: 6px 16px 7px;
+    border: 0;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #585c6a;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.header-aside {
+  display: flex;
+  align-items: center;
+  background-color: #f4f5f6;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Hide visible-only labels and inactive controls inside header-aside
+ * before the full stylesheet ships their button/link styling. Prevents
+ * the header height from doubling momentarily. */
+.header-aside .header-contact-link,
+.header-aside .header-connect-button,
+.header-aside #dropdownLanguageButton {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 16px 24px;
+  text-decoration: none;
+  color: #001a70;
+  white-space: nowrap;
+}
+@media (max-width: 575.98px) {
+  .header-aside .header-contact-link,
+  .header-aside .header-connect-button,
+  .header-aside #dropdownLanguageButton {
+    padding: 12px 16px;
+  }
+  .hidden-mobile { display: none; }
+}
+
+/* Language switcher: hide the bullet list and style the toggle before
+ * Bootstrap/dropdown rules from the main stylesheet arrive. */
+.header-aside #dropdownLanguageButton {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  font-size: 13px;
+  line-height: 20px;
+  padding: 10px 32px 10px 10px;
+  color: #001a70;
+  cursor: pointer;
+}
+@media (min-width: 576px) {
+  .header-aside #dropdownLanguageButton {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 56px 16px 24px;
+  }
+}
+.header-aside #dropdownLanguageButton + ul,
+.header-aside ul.dropdown-menu {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  background-color: #f4f5f6;
+  border: 0;
+  border-radius: 0;
+  min-width: 120px;
+}
+.header-aside #dropdownLanguageButton + ul li,
+.header-aside ul.dropdown-menu li {
+  list-style: none;
+}
+.header-aside #dropdownLanguageButton + ul a,
+.header-aside ul.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #001a70;
+  text-decoration: none;
+}
+
+/* Main padding mirrors scss/AFP/_navigation.scss main rule and prevents
+ * the first content section from jumping under the fixed header height.
+ * YOG-1098: product pages no longer carry data-afp-evol, so they fall in
+ * the :not() branch; pages still carrying the attribute (page-de-base v2,
+ * storytelling, agenda...) get the same offset from the rules below. */
+html:not([data-afp-evol="true"]) main {
+  padding-top: 56px;
+}
+@media (min-width: 1024px) {
+  html:not([data-afp-evol="true"]) main { padding-top: 72px; }
+}
+
+html[data-afp-evol="true"] header[role="banner"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+}
+
+html[data-afp-evol="true"] main[role="main"] {
+  padding-top: 40px;
+}
+
+@media (min-width: 576px) {
+  html[data-afp-evol="true"] main[role="main"] {
+    padding-top: 56px;
+  }
+}
+
+/* Align the fixed site header with Drupal's measured toolbar offset.
+ * Hardcoded 39px/79px values drift from admin_toolbar's rendered height and
+ * leave a white band between the admin tray and the AFP header. */
+body.toolbar-fixed header[role="banner"].afp-header-v2 {
+  position: fixed;
+  top: var(--drupal-displace-offset-top, var(--drupal-toolbar-height, 39px));
+}
+
+body.toolbar-fixed main[role="main"] {
+  padding-top: calc(56px + var(--drupal-displace-offset-top, var(--drupal-toolbar-height, 39px)));
+}
+
+@media (min-width: 1024px) {
+  body.toolbar-fixed main[role="main"] {
+    padding-top: calc(72px + var(--drupal-displace-offset-top, var(--drupal-toolbar-height, 39px)));
+  }
+}
+
+html[data-afp-evol="true"] header[role="banner"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+}
+
+html[data-afp-evol="true"] main[role="main"] {
+  padding-top: 40px;
+}
+
+@media (min-width: 576px) {
+  html[data-afp-evol="true"] main[role="main"] {
+    padding-top: 56px;
+  }
+}
+
+/* Align the fixed site header with Drupal's measured toolbar offset.
+ * Hardcoded 39px/79px values drift from admin_toolbar's rendered height and
+ * leave a white band between the admin tray and the AFP header. */
+body.toolbar-fixed header[role="banner"] {
+  position: fixed;
+  top: var(--drupal-displace-offset-top, var(--drupal-toolbar-height, 39px));
+}
+
+body.toolbar-fixed main[role="main"] {
+  padding-top: calc(56px + var(--drupal-displace-offset-top, var(--drupal-toolbar-height, 39px)));
+}
+
+/* Note: do NOT hide #onetrust-banner-sdk / #onetrust-pc-sdk from
+ * critical CSS. OneTrust controls its own visibility via the
+ * `body.has-banner-shown` class and its own stylesheet, and adding
+ * `visibility: hidden` here previously left the banner permanently
+ * invisible because the original `:not(.ot-vsd-active)` guard never
+ * matched the live banner state. */
+/**
+ * AFP9 critical CSS - AFP Stories full page above the fold.
+ *
+ * Reserves the title block and gallery stage so the LCP image does not
+ * collapse the layout while story-page.css is deferred.
+ */
+
+/* source: web/modules/custom/afp_stories/css/story-page.css line 1 */
+.afp-story-page {
+  --afp-story-max: 1096px;
+  --afp-story-article: 648px;
+  --afp-story-sidebar: 312px;
+  --afp-story-gap: 24px;
+  color: #202020;
+}
+
+/* source: web/modules/custom/afp_stories/css/story-page.css line 50 */
+html body.page-node-type-afp-stories main.afp-story-page-main[role="main"] {
+  padding-top: 56px;
+}
+@media (min-width: 1024px) {
+  html body.page-node-type-afp-stories main.afp-story-page-main[role="main"] {
+    padding-top: 72px;
+  }
+}
+
+/* source: web/modules/custom/afp_stories/css/story-page.css line 27 */
+.afp-story-page__shell {
+  width: min(var(--afp-story-max), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.afp-story-page__header {
+  padding: 32px 0 16px;
+}
+
+.afp-story-page__title {
+  margin: 16px 0 0;
+  max-width: 996px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.afp-story-page__details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+/* source: web/modules/custom/afp_stories/css/story-page.css line 213 */
+.afp-story-page__media {
+  position: relative;
+  margin-top: 16px;
+}
+
+.afp-story-page__media-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  align-items: center;
+  gap: 16px;
+  min-height: 240px;
+  padding: 24px 16px;
+  border-radius: 8px 8px 0 0;
+  background: #0e0e0e;
+}
+
+.afp-story-page__media.is-single .afp-story-page__media-stage {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 0;
+}
+
+.afp-story-page__slide {
+  display: none;
+  margin: 0;
+  grid-column: 2;
+}
+
+.afp-story-page__slide.is-active {
+  display: block;
+}
+
+.afp-story-page__slide img,
+.afp-story-page__slide video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 559px;
+  object-fit: contain;
+}
+
+.afp-homepage-tag {
+  min-height: 30px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: #87ebfa;
+  color: #202020;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+</style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4C5DKK');
+</script>
+<meta name="description" content="Scandal-hit Californian chip giant Nvidia said Tuesday it has stopped shipping artificial intelligence chips from its &quot;Hopper&quot; series to China, as scrutiny grows over Beijing&#039;s..." />
+<link rel="canonical" href="https://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="shortlink" href="http://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china" />
+<meta name="generator" content="Drupal 10 (https://drupal.org)" />
+<meta property="og:site_name" content="AFP.com" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china" />
+<meta property="og:title" content="Nvidia says no longer shipping &#039;Hopper&#039; AI chips to China" />
+<meta property="og:description" content="Scandal-hit Californian chip giant Nvidia said Tuesday it has stopped shipping artificial intelligence chips from its &quot;Hopper&quot; series to China, as scrutiny grows over Beijing&#039;s..." />
+<meta property="og:image" content="https://www.afp.com/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg" />
+<meta property="og:image:url" content="https://www.afp.com/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg" />
+<meta property="og:image:secure_url" content="https://www.afp.com/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg" />
+<meta property="og:image:alt" content="Nvidia has been plunged into scandal after revelations of former CEO Jensen Huang&#039;s extramarital affairs, including with a suspected Chinese spy — I-HWA CHENG / AFP" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Scandal-hit Californian chip giant Nvidia said Tuesday it has stopped shipping artificial intelligence chips from its &quot;Hopper&quot; series to China, as scrutiny grows over Beijing&#039;s..." />
+<meta name="twitter:site" content="@AFPFR" />
+<meta name="twitter:title" content="Nvidia says no longer shipping &#039;Hopper&#039; AI chips to China" />
+<meta name="twitter:site:id" content="@AFPFR" />
+<meta name="twitter:creator" content="@AFPFR" />
+<meta name="twitter:image" content="https://www.afp.com/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg" />
+<meta name="twitter:image:alt" content="Nvidia has been plunged into scandal after revelations of former CEO Jensen Huang&#039;s extramarital affairs, including with a suspected Chinese spy — I-HWA CHENG / AFP" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="alternate" hreflang="x-default" href="https://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "headline": "Nvidia says no longer shipping \u0027Hopper\u0027 AI chips to China",
+            "description": "Scandal-hit Californian chip giant Nvidia said Tuesday it has stopped shipping artificial intelligence chips from its \u0022Hopper\u0022 series to China, as scrutiny grows over Beijing\u0027s...",
+            "datePublished": "2026-11-18T10:53:49+01:00",
+            "dateModified": "2026-11-18T10:00:01+01:00",
+            "publisher": "{\u0022@type\u0022:\u0022Organization\u0022,\u0022name\u0022:\u0022Agence France-Presse\u0022,\u0022url\u0022:\u0022http://www.afp.com/en\u0022}",
+            "mainEntityOfPage": "http://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china"
+        },
+        {
+            "name": "Agence France-Presse",
+            "sameAs": "https://www.afp.com",
+            "url": "http://www.afp.com/en"
+        },
+        {
+            "name": "AFP.com",
+            "url": "http://www.afp.com/en"
+        }
+    ]
+}</script>
+<link rel="alternate" hreflang="en" href="https://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china" />
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+<link rel="preconnect" href="https://cdn.cookielaw.org" crossorigin="anonymous" />
+<link rel="preconnect" href="https://app.varify.io" crossorigin="anonymous" />
+<link rel="dns-prefetch" href="https://munchkin.marketo.net" />
+<link rel="preload" href="/themes/custom/afp9/assets/fonts/source-sans-pro/source-sans-pro-v13-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/themes/custom/afp9/assets/fonts/source-sans-pro/source-sans-pro-v13-latin-600.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" as="image" href="/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg" fetchpriority="high" />
+
+        <script data-afp-css-loader="true">(function(){
+  var patterns = ["swiper-bundle.min.css","\/themes\/custom\/afp9\/assets\/css\/marketo.css","\/themes\/custom\/afp9\/assets\/css\/drupal.css","\/themes\/custom\/afp9\/css\/video-player.css","\/modules\/custom\/afp_homepage\/css\/","\/modules\/custom\/afp_stories\/css\/"];
+  function shouldDefer(href) {
+    if (!href) { return false; }
+    // Defer every Drupal aggregate except delta=1 (main theme bundle).
+    // delta=0 is ~5 KiB core CSS; delta>=2 are module chunks (~270 KiB).
+    if (href.indexOf('/sites/default/files/css/') !== -1) {
+      return href.indexOf('delta=1') === -1 && href.indexOf('delta%3D1') === -1;
+    }
+    for (var i = 0; i < patterns.length; i++) {
+      if (href.indexOf(patterns[i]) !== -1) { return true; }
+    }
+    return false;
+  }
+  // Re-promote a deferred sheet to media="all" once it has finished
+  // loading. Polling complements the load event so we still recover if
+  // the resource was served from the HTTP cache and the load event
+  // fired before the listener was attached.
+  function promote(node) {
+    if (!node) { return; }
+    if (node.media !== 'print') { return; }
+    node.media = 'all';
+  }
+  function watchLoad(node) {
+    var done = false;
+    function finish() {
+      if (done) { return; }
+      done = true;
+      promote(node);
+    }
+    node.addEventListener('load', finish);
+    node.addEventListener('error', finish);
+    // CSSOM exposes a .sheet object once the stylesheet is parsed.
+    var attempts = 0;
+    var interval = setInterval(function(){
+      attempts += 1;
+      if (done || attempts > 200) {
+        clearInterval(interval);
+        if (!done) { finish(); }
+        return;
+      }
+      try {
+        if (node.sheet) {
+          clearInterval(interval);
+          finish();
+        }
+      } catch (e) {
+        clearInterval(interval);
+        finish();
+      }
+    }, 50);
+  }
+  function deferLink(node) {
+    if (!node || node.tagName !== 'LINK') { return; }
+    if (node.rel !== 'stylesheet') { return; }
+    if (node.getAttribute('data-afp-deferred') === '1') { return; }
+    if (!shouldDefer(node.href || node.getAttribute('href'))) { return; }
+    node.setAttribute('data-afp-deferred', '1');
+    if (node.sheet) {
+      // Already parsed (cache hit): keep media="all" untouched.
+      return;
+    }
+    node.media = 'print';
+    watchLoad(node);
+  }
+  var existing = document.querySelectorAll('link[rel="stylesheet"]');
+  for (var i = 0; i < existing.length; i++) { deferLink(existing[i]); }
+  if (typeof MutationObserver !== 'function') { return; }
+  var observer = new MutationObserver(function(records){
+    for (var i = 0; i < records.length; i++) {
+      var added = records[i].addedNodes;
+      for (var j = 0; j < added.length; j++) { deferLink(added[j]); }
+    }
+  });
+  try {
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) { /* observer disabled, fall back to blocking CSS. */ }
+})();</script>
+
+    <title>Nvidia says no longer shipping &#039;Hopper&#039; AI chips to China | AFP.com</title>
+    <link rel="icon" href="/themes/custom/afp9/assets/images/favicon_afp.com_201120.ico">
+        <link rel="stylesheet" media="print" href="/sites/default/files/css/css_uHHNFJci1K5NyFh3drgUGS1v4npFSykZUUTfTpbByGE.css?delta=0&amp;language=en&amp;theme=afp9&amp;include=eJxdjbEOAjEMQ38okImBrzmlR1pVapsqzlK-Ho7puMm2LPtJnk8uzZK0G2K1OgpJnhvCvCr40LVNKUrJLBAu88FJ8JcvB6emK_Adg3Zz5WHepdW3kmuW_WCMwid_l1evg7AQ2n-YD7_ePo4" onload="this.media=&#039;all&#039;" data-afp-async-css="1" />
+<link rel="stylesheet" media="print" href="/modules/custom/afp_homepage/css/base.css?tordvr" onload="this.media=&#039;all&#039;" data-afp-async-css="1" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_reodulgSP0uzntZU7QUvi6XIkr_VVRjHEYvYQvrsYTw.css?delta=2&amp;language=en&amp;theme=afp9&amp;include=eJxdjbEOAjEMQ38okImBrzmlR1pVapsqzlK-Ho7puMm2LPtJnk8uzZK0G2K1OgpJnhvCvCr40LVNKUrJLBAu88FJ8JcvB6emK_Adg3Zz5WHepdW3kmuW_WCMwid_l1evg7AQ2n-YD7_ePo4" onload="this.media=&#039;all&#039;" data-afp-async-css="1" />
+
+    
+    <!-- OneTrust Cookies Consent Notice start for Plateforme de l'info | AFP.com | AFP.com  -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/00be26b7-7ae8-4143-b25f-6a95ee93593c/OtAutoBlock.js"></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="00be26b7-7ae8-4143-b25f-6a95ee93593c"></script>
+<script type="text/javascript">
+  function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for Plateforme de l'info | AFP.com | AFP.com  -->
+
+<!-- Varify.io® code for AFP-->
+<script>
+  window.varify = window.varify || {};
+  window.varify.iid = 3739;
+</script>
+<script src="https://app.varify.io/varify.js" defer></script>
+
+<!--  Script Marketo -->
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('715-ASN-767');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
+<!-- RTP tag -->
+<script type='text/javascript'>
+(function(c,h,a,f,i,l,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+c[a].a=i;c[a].l=l;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
+g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
+})(window,document,"rtp","//lonrtp1-cdn.marketo.com/rtp-api/v1/rtp.js","afpblue");
+
+rtp('send','view');
+rtp('get', 'campaign',true);
+</script>
+<!-- End of RTP tag -->
+  
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"true","rua.upre":"false","rua.cpre":"true","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"SJ-10fe09b7-1544-4f78-b7c4-1e17a757e90d","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"true","rua.isuxp":"false","rua.texp":"norulematch","rua.ceh":"false","rua.ueh":"false","rua.ieh.st":"0"}]);</script>
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="VNBEN-QRJJ7-SA3YL-CLMEY-V8RD5",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"VNBEN-QRJJ7-SA3YL-CLMEY-V8RD5";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n="true"=="true"?1:0,t="",a="nrg2e7axgbu4u2yadezq-f-8254cf051-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1652624","ak.ai":parseInt("378060",10),"ak.ol":"0","ak.cr":16,"ak.ipv":4,"ak.proto":"h2","ak.rid":"4e2b0043","ak.r":40042,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.cport":57357,"ak.gh":"184.26.147.10","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1795168563","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==/tgg4Tf2uyn3JGtDPFaKCHp530hkMzfI/sL32f9as2qQnruAICiPe4xB1e1B3Mx8sAFMzNWMrXUGCQ2jCwb7oXL/+jxuKNli3DwuBZMEBi53ntBC60O54jRPeTXyboeMRCzezLy2EtE3otqLzuVo3xC+dfHWxPiwc83Xq936PuVLkXsSCLhhX9fRD8ohaXCRE0SGW2ixea3vfTDBjtoVR2HKQz+k5dvgKX1lPE8YQr9Ab9isUTA2xUeWIJTsTMdgeTarZEJe4xZo5LGJLM/i16xYVMvxv03zo0cE5O6A7lz/G/u6SwwNesBbfRhqNjcfZ89llBaVFg8GuaepVUp4WW5CH1Yw2dcZSiSnXoMclCbUO1Bkn7IwZ3aqORpKyYf2h9HIBDnuWvik19+durT3HkY6f8XZ8FpXFjRJPoOL3ag=","ak.pv":"9","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+  <body class="node-3853536 path-node page-node-type-afp-stories d-flex flex-column h-100">
+    <div class="visually-hidden-focusable skip-link">
+      <a href="#main-content">
+        Skip to main content
+      </a>
+    </div>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4C5DKK" height="0" width="0" style="display:none;visibility:hidden;"></iframe>
+</noscript>
+      <div class="dialog-off-canvas-main-canvas d-flex flex-column h-100" data-off-canvas-main-canvas>
+    <div id="page">
+  <header class="afp-header-v2" role="banner">
+      <div class="afp-header-v2__shell">
+    <div class="afp-header-v2__bar">
+      <div class="afp-header-v2__start">
+        <button
+          class="afp-header-v2__toggle d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#afpHeaderNav"
+          aria-controls="afpHeaderNav"
+          aria-expanded="false"
+          aria-label="Switch navigation"
+        >
+          <span class="afp-header-v2__toggle-icon" aria-hidden="true"></span>
+        </button>
+
+        <a href="/en" title="AFP - Homepage" class="afp-header-v2__logo-link">
+          <img
+            src="/themes/custom/afp9/assets/svg/logo-afp.svg"
+            class="afp-header-v2__logo"
+            alt="AFP"
+            width="87"
+            height="28"
+            decoding="async"
+          >
+        </a>
+
+        <div class="afp-header-v2__nav-desktop navbar navbar-expand-lg d-none d-lg-flex">
+          <nav role="navigation" aria-label="menu principal" class="afp-header-v2__nav">
+  
+    
+
+      
+            <ul data-block="nav_main" class="navbar-nav justify-content-end flex-wrap nav-level-0"  >
+                                  <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-0" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>The Agency</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-0"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>About AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>About AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/about-us" class=" dropdown-item " >
+          <span>About us</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="menu-firstchild nav-item">
+                  <a href="/en/afp-management" class=" dropdown-item " >
+          <span>Our organisation</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/afp-world-0" class=" dropdown-item " >
+          <span>AFP in the world</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://www.afp.com/sites/default/files/2026-07/RA_AFP_2025_Full_EN-BD_0.pdf" class=" dropdown-item ext-link" target='_blank'>
+          <span>2025 Annual Report</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/access-our-content/partners/partners" class=" dropdown-item " >
+          <span>Our partners</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/subsidiaries-0" class=" dropdown-item " >
+          <span>Our subsidiaries</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Inside AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Inside AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/agency/inside-afp/inside-afp" class=" dropdown-item " >
+          <span>Inside AFP</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/agency/inside-afp/awards" class=" dropdown-item " >
+          <span>Awards</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/agency/inside-afp/press-releases" class=" dropdown-item " >
+          <span>Press releases</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://podcasts.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>Les podcasts de l’AFP</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-2" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our projects</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our projects<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-2"   >
+                                  <li class="nav-item">
+                  <a href="/en/european-projects" class=" dropdown-item " >
+          <span>European Projects</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-3" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our commitments</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our commitments<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-3"   >
+                                  <li class="nav-item">
+                  <a href="/en/afp-charters" class=" dropdown-item " >
+          <span>AFP Charters</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/philanthropic-partnerships" class=" dropdown-item " >
+          <span>Philanthropic Partnerships</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/responsible-journalism" class=" dropdown-item " >
+          <span>Responsible Journalism</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/environmental-policy" class=" dropdown-item " >
+          <span>Environmental Policy</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-4" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Join us</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Join us<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-4"   >
+                                  <li class="nav-item">
+                  <a href="/en/job-openings" class=" dropdown-item " >
+          <span>Our job openings</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/working-at-afp" class=" dropdown-item " >
+          <span>Working at AFP</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://www.welcometothejungle.com/en/companies/agence-france-presse/jobs/candidatures-spontanees#apply" class=" dropdown-item ext-link" target='_blank'>
+          <span>Submit your application</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-1" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Our offer</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-1"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Products</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Products<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/picture" class=" dropdown-item " >
+          <span>Picture</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/video" class=" dropdown-item " >
+          <span>Video</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/text" class=" dropdown-item " >
+          <span>Text</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-archive" class=" dropdown-item " >
+          <span>AFP Archive</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/graphics" class=" dropdown-item " >
+          <span>Graphics</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Ready to publish</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Ready to publish<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/afp-fact-check" class=" dropdown-item " >
+          <span>AFP Fact Check</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-stories" class=" dropdown-item " >
+          <span>AFP Stories</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-social-stories" class=" dropdown-item " >
+          <span>AFP Social Stories</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-2" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Platforms</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Platforms<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-2"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/afp-news" class=" dropdown-item " >
+          <span>AFP News</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afptv-live" class=" dropdown-item " >
+          <span>AFPTV Live</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-agenda-browse-news-it-breaks" class=" dropdown-item " >
+          <span>AFP Agenda</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-api" class=" dropdown-item " >
+          <span>AFP API</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-3" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Themes</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Themes<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-3"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/artificial-intelligence-solution" class=" dropdown-item " >
+          <span>AI Insight</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-sports" class=" dropdown-item " >
+          <span>AFP Sports</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/corporate-content-services" class=" dropdown-item " >
+          <span>Corporate Content Services</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/future-planet" class=" dropdown-item " >
+          <span>Future of the planet</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/election" class=" dropdown-item " >
+          <span>French presidential election 2027</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-2" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Our content</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-2"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-2-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Resources</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Resources<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-2-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/ressources" class=" dropdown-item " >
+          <span>Our resources</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/behind-the-news" class=" dropdown-item " >
+          <span>Behind the news</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-2-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our events</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our events<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-2-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/agenda" class=" dropdown-item " >
+          <span>Events calendar</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-3" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Fact-checking</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-3"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-3-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Fact-checking with AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Fact-checking with AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-3-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/what-fact-checking" class=" dropdown-item " >
+          <span>What is fact-checking?</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://factcheck.afp.com/afps-editorial-and-ethical-standards" class=" dropdown-item ext-link" target='_blank'>
+          <span>AFP’s editorial and ethical standards</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://digitalcourses.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>Training in digital investigation</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/medialab" class=" dropdown-item " >
+          <span>Medialab</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://factcheck.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>AFP Fact Check</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/external-communications" class="nav-link  " >
+          <span>External Communications</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+
+
+
+  
+
+
+</nav>
+        </div>
+      </div>
+
+      <div class="afp-header-v2__end">
+        <div class="afp-header-v2__language">
+            <div class="region region-nav-additional">
+    <div class="language-switcher-language-url block block-language block-language-blocklanguage-content" id="block-afp9-selecteurdelanguecontent" role="navigation">
+  
+    
+      <style>
+  .dropdown-menu li a.language-link--disabled,
+  .dropdown-menu li span.language-link--disabled {
+    color: #adb5bd;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: line-through !important;
+  }
+</style>
+
+<div class="dropdown afp-header-v2__lang-dropdown">
+  <button class="btn dropdown-toggle" type="button" id="dropdownLanguageButton" data-bs-toggle="dropdown" aria-expanded="false">
+          en
+      </button>
+  <ul  data-block="nav_additional" class="dropdown-menu" aria-labelledby="dropdownLanguageButton">              <li hreflang="fr" data-drupal-link-system-path="node/3853536">                                                              <a href="/fr/node/3853536" class="language-link disabled" hreflang="fr">Français</a>
+            </li>
+                          <li hreflang="es" data-drupal-link-system-path="node/3853536">                                                              <a href="/es/node/3853536" class="language-link disabled" hreflang="es">Español</a>
+            </li>
+                    <li hreflang="pt-pt" data-drupal-link-system-path="node/3853536">                                                              <a href="/pt/node/3853536" class="language-link disabled" hreflang="pt-pt">Português</a>
+            </li>
+                    <li hreflang="de" data-drupal-link-system-path="node/3853536">                                                              <a href="/de/node/3853536" class="language-link disabled" hreflang="de">Deutsch</a>
+            </li>
+                    <li hreflang="ar" data-drupal-link-system-path="node/3853536">                                                              <a href="/ar/node/3853536" class="language-link disabled" hreflang="ar">العربية</a>
+            </li>
+      </ul>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+
+        <div class="afp-header-v2__actions">
+          <a
+            href="https://news.afp.com/#/u/login"
+            class="afp-header-v2__signin-btn d-none d-lg-inline-flex"
+          >
+            Login
+          </a>
+
+          <a
+            href="https://news.afp.com/#/u/login"
+            class="afp-header-v2__signin-mobile d-lg-none"
+            aria-label="Login"
+          >
+            <span class="afp-header-v2__signin-mobile-icon" aria-hidden="true"></span>
+          </a>
+
+          <a href="/en/contact-us" class="afp-header-v2__contact">
+            Contact us
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="collapse afp-header-v2__drawer navbar d-lg-none" id="afpHeaderNav">
+      <div class="afp-header-v2__drawer-inner">
+        <nav role="navigation" aria-label="menu principal" class="afp-header-v2__nav afp-header-v2__nav--mobile">
+  
+    
+
+      
+            <ul data-block="nav_main" class="navbar-nav justify-content-end flex-wrap nav-level-0"  >
+                                  <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-0" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>The Agency</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-0"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>About AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>About AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/about-us" class=" dropdown-item " >
+          <span>About us</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="menu-firstchild nav-item">
+                  <a href="/en/afp-management" class=" dropdown-item " >
+          <span>Our organisation</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/afp-world-0" class=" dropdown-item " >
+          <span>AFP in the world</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://www.afp.com/sites/default/files/2026-07/RA_AFP_2025_Full_EN-BD_0.pdf" class=" dropdown-item ext-link" target='_blank'>
+          <span>2025 Annual Report</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/access-our-content/partners/partners" class=" dropdown-item " >
+          <span>Our partners</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/subsidiaries-0" class=" dropdown-item " >
+          <span>Our subsidiaries</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Inside AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Inside AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/agency/inside-afp/inside-afp" class=" dropdown-item " >
+          <span>Inside AFP</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/agency/inside-afp/awards" class=" dropdown-item " >
+          <span>Awards</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/agency/inside-afp/press-releases" class=" dropdown-item " >
+          <span>Press releases</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://podcasts.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>Les podcasts de l’AFP</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-2" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our projects</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our projects<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-2"   >
+                                  <li class="nav-item">
+                  <a href="/en/european-projects" class=" dropdown-item " >
+          <span>European Projects</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-3" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our commitments</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our commitments<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-3"   >
+                                  <li class="nav-item">
+                  <a href="/en/afp-charters" class=" dropdown-item " >
+          <span>AFP Charters</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/philanthropic-partnerships" class=" dropdown-item " >
+          <span>Philanthropic Partnerships</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/responsible-journalism" class=" dropdown-item " >
+          <span>Responsible Journalism</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/environmental-policy" class=" dropdown-item " >
+          <span>Environmental Policy</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-0-4" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Join us</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Join us<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-0-4"   >
+                                  <li class="nav-item">
+                  <a href="/en/job-openings" class=" dropdown-item " >
+          <span>Our job openings</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/working-at-afp" class=" dropdown-item " >
+          <span>Working at AFP</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://www.welcometothejungle.com/en/companies/agence-france-presse/jobs/candidatures-spontanees#apply" class=" dropdown-item ext-link" target='_blank'>
+          <span>Submit your application</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-1" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Our offer</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-1"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Products</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Products<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/picture" class=" dropdown-item " >
+          <span>Picture</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/video" class=" dropdown-item " >
+          <span>Video</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/text" class=" dropdown-item " >
+          <span>Text</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-archive" class=" dropdown-item " >
+          <span>AFP Archive</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/graphics" class=" dropdown-item " >
+          <span>Graphics</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Ready to publish</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Ready to publish<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/afp-fact-check" class=" dropdown-item " >
+          <span>AFP Fact Check</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-stories" class=" dropdown-item " >
+          <span>AFP Stories</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-social-stories" class=" dropdown-item " >
+          <span>AFP Social Stories</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-2" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Platforms</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Platforms<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-2"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/afp-news" class=" dropdown-item " >
+          <span>AFP News</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afptv-live" class=" dropdown-item " >
+          <span>AFPTV Live</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-agenda-browse-news-it-breaks" class=" dropdown-item " >
+          <span>AFP Agenda</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-api" class=" dropdown-item " >
+          <span>AFP API</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-1-3" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Themes</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Themes<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-1-3"   >
+                                  <li class="nav-item">
+                  <a href="/en/our-offer/artificial-intelligence-solution" class=" dropdown-item " >
+          <span>AI Insight</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/afp-sports" class=" dropdown-item " >
+          <span>AFP Sports</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/corporate-content-services" class=" dropdown-item " >
+          <span>Corporate Content Services</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/future-planet" class=" dropdown-item " >
+          <span>Future of the planet</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/our-offer/election" class=" dropdown-item " >
+          <span>French presidential election 2027</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-2" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Our content</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-2"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-2-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Resources</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Resources<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-2-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/ressources" class=" dropdown-item " >
+          <span>Our resources</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/behind-the-news" class=" dropdown-item " >
+          <span>Behind the news</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-2-1" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Our events</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Our events<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-2-1"   >
+                                  <li class="nav-item">
+                  <a href="/en/agenda" class=" dropdown-item " >
+          <span>Events calendar</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item dropdown position-static">
+                  <button aria-expanded="false" aria-controls="dropdown-3" class="nav-link   title-nav" data-bs-toggle="dropdown" data-bs-display="static" data-bs-auto-close="outside" aria-expanded="false" ><span>Fact-checking</span></button>
+                        <ul data-block="nav_main" class="dropdown-menu nav-level-1"  id="dropdown-3"   >
+                                  <li class="nav-item dropdown">
+                  <button aria-expanded="false" aria-controls="dropdown-3-0" class=" dropdown-item  subtitle-nav subtitle-nav-mobile-button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><span>Fact-checking with AFP</span></button>
+        <p class=" dropdown-item subtitle-nav subtitle-nav-tablet-desktop-text"><span>Fact-checking with AFP<span></p>
+                        <ul data-block="nav_main" class="nav-level-2"  id="dropdown-3-0"   >
+                                  <li class="nav-item">
+                  <a href="/en/what-fact-checking" class=" dropdown-item " >
+          <span>What is fact-checking?</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://factcheck.afp.com/afps-editorial-and-ethical-standards" class=" dropdown-item ext-link" target='_blank'>
+          <span>AFP’s editorial and ethical standards</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://digitalcourses.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>Training in digital investigation</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/medialab" class=" dropdown-item " >
+          <span>Medialab</span>
+                  </a>
+      
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="https://factcheck.afp.com/" class=" dropdown-item ext-link" target='_blank'>
+          <span>AFP Fact Check</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                  </ul>
+  
+      </li>
+
+                                          <li class="nav-item">
+                  <a href="/en/external-communications" class="nav-link  " >
+          <span>External Communications</span>
+                  </a>
+      
+      </li>
+
+                  </ul>
+  
+
+
+
+  
+
+
+</nav>
+      </div>
+    </div>
+    
+</header>
+
+  <main class="afp-story-page-main" role="main">
+    <div id="main-content" tabindex="-1"></div>
+      <div class="region region-content">
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-afp9-content" class="block block-system block-system-main-block">
+  
+    
+      
+<article data-history-node-id="3853536" class="afp-story-page">
+  
+  
+
+  <div class="afp-story-page__shell">
+    <header class="afp-story-page__header">
+              <span class="afp-homepage-tag">Business and Economy</span>
+      
+      <h1 class="afp-story-page__title">Nvidia says no longer shipping &#039;Hopper&#039; AI chips to China</h1>
+
+      <div class="afp-story-page__details">
+        <div class="afp-story-page__meta">
+          <div class="afp-story-page__byline">
+            <span>By AFP</span>
+                      </div>
+                      <p class="afp-story-page__published">Published on November 18, 2026 at 09:53</p>
+                  </div>
+
+        <div class="afp-story-page__share-wrap" data-afp-story-share>
+          <button
+            type="button"
+            class="afp-story-page__share"
+            data-afp-story-share-toggle
+            aria-expanded="false"
+            aria-controls="afp-story-share-menu-3853536"
+            aria-haspopup="true"
+            aria-label="Share this story">
+            <span class="afp-story-page__share-icon" aria-hidden="true"></span>
+            <span>Share</span>
+          </button>
+
+          <div
+            id="afp-story-share-menu-3853536"
+            class="afp-story-page__share-menu"
+            role="menu"
+            hidden>
+            <ul class="afp-story-page__share-list">
+                              <li class="afp-story-page__share-item" role="none">
+                                      <a
+                      class="afp-story-page__share-network"
+                      role="menuitem"
+                      href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.afp.com%2Fen%2Fnvidia-says-no-longer-shipping-hopper-ai-chips-china&amp;text=Nvidia%20says%20no%20longer%20shipping%20%27Hopper%27%20AI%20chips%20to%20China"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-share-network="x">
+                      <img src="/modules/custom/afp_homepage/images/social-x.svg" alt="" width="32" height="32">
+                      <span class="afp-story-page__share-network-label">X</span>
+                    </a>
+                                  </li>
+                              <li class="afp-story-page__share-item" role="none">
+                                      <a
+                      class="afp-story-page__share-network"
+                      role="menuitem"
+                      href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.afp.com%2Fen%2Fnvidia-says-no-longer-shipping-hopper-ai-chips-china"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-share-network="linkedin">
+                      <img src="/modules/custom/afp_stories/images/social-linkedin.svg" alt="" width="32" height="32">
+                      <span class="afp-story-page__share-network-label">LinkedIn</span>
+                    </a>
+                                  </li>
+                              <li class="afp-story-page__share-item" role="none">
+                                      <a
+                      class="afp-story-page__share-network"
+                      role="menuitem"
+                      href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.afp.com%2Fen%2Fnvidia-says-no-longer-shipping-hopper-ai-chips-china"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-share-network="facebook">
+                      <img src="/modules/custom/afp_homepage/images/social-facebook.svg" alt="" width="32" height="32">
+                      <span class="afp-story-page__share-network-label">Facebook</span>
+                    </a>
+                                  </li>
+                              <li class="afp-story-page__share-item" role="none">
+                                      <button
+                      type="button"
+                      class="afp-story-page__share-network"
+                      role="menuitem"
+                      data-share-network="instagram"
+                      data-share-url="https://www.afp.com/en/nvidia-says-no-longer-shipping-hopper-ai-chips-china">
+                      <img src="/modules/custom/afp_homepage/images/social-instagram.svg" alt="" width="32" height="32">
+                      <span class="afp-story-page__share-network-text">
+                        <span class="afp-story-page__share-network-label">Instagram</span>
+                                              </span>
+                    </button>
+                                  </li>
+                          </ul>
+            <p class="afp-story-page__share-feedback" data-afp-story-share-feedback hidden aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+      <div class="afp-story-page__shell">
+      <div class="afp-story-page__media is-single" data-afp-story-carousel>
+        <div class="afp-story-page__media-stage">
+          
+                      <figure
+              class="afp-story-page__slide is-active"
+              data-afp-story-slide
+              data-caption="Nvidia has been plunged into scandal after revelations of former CEO Jensen Huang&#039;s extramarital affairs, including with a suspected Chinese spy — I-HWA CHENG / AFP">
+                              <img
+                  src="/sites/default/files/afp-stories/436dea1652850d33e455037c4dc53969-0-hi.jpg"
+                  alt="Nvidia has been plunged into scandal after revelations of former CEO Jensen Huang&#039;s extramarital affairs, including with a suspected Chinese spy — I-HWA CHENG / AFP"
+                  fetchpriority="high"                  loading="eager"
+                  decoding="async">
+                          </figure>
+          
+                  </div>
+
+        <figcaption
+          class="afp-story-page__legend"
+          data-afp-story-legend
+          >
+          Nvidia has been plunged into scandal after revelations of former CEO Jensen Huang&#039;s extramarital affairs, including with a suspected Chinese spy — I-HWA CHENG / AFP
+        </figcaption>
+
+              </div>
+    </div>
+  
+  <div class="afp-story-page__shell">
+    <div class="afp-story-page__layout">
+      <div class="afp-story-page__article">
+                  <div class="afp-story-page__body">
+            <p><a href="urn:newsml:afp.com:20261118:bde969eb-70d3-452b-a912-ddf9a753826b" rel="http://cv.iptc.org/newscodes/ninature/picture" shape="rect"> 
+                     
+                  </a> 
+                 Scandal-hit Californian chip giant Nvidia said Tuesday it has stopped shipping artificial intelligence chips from its "Hopper" series to China, as scrutiny grows over Beijing's access to powerful US semiconductors.</p>
+<p>Advanced Nvidia chips are the world's top hardware for training and running AI tools -- making them highly sensitive equipment in the tech race between Washington and Beijing.</p>
+<p>Lucrative sales of Nvidia chips -- and allegations they are smuggled to China through third countries -- are in the spotlight after former CEO Jensen Huang had an affair with a woman whom some US officials reportedly suspect of spying for Beijing.</p>
+<p>In the third quarter, "sales of licensed Hopper data centre products to China was $2.4 billion," interim CEO Colette Kress told an earnings call Tuesday.</p>
+<p>But "our guidance does not have any licensed Hopper data center products included, and we are no longer shipping licensed Hopper data center products to China."</p>
+<p>Kress did not give a reason for the decision.</p>
+<p>Dilin Wu, a research strategist at Pepperstone, told AFP "the timing says quite a lot."</p>
+<p>"We don't know exactly what prompted the decision to stop shipments, but it certainly looks like Nvidia is trying to draw a clearer line around its China business and reassure regulators that compliance comes first."</p>
+<p>This year, the Trump administration began allowing limited sales of the flagship "H200" chip from Nvidia's "Hopper" series to China.</p>
+<p>But US conditions have made it difficult for shipments to be approved, with Beijing also seen as reluctant to buy H200s as its homegrown chip industry gains momentum.</p>
+<p>Washington still bans the export of Nvidia's even more advanced "Blackwell" and "Rubin" GPUs to China, citing security concerns as advanced AI has military applications.</p>
+<p>Huang's affair with Alice Huang, a former director of a Singapore-based cloud computing company, has tanked Nvidia's market value.</p>
+<p>Alice Huang, no relation to Jensen, previously led Megaspeed International -- a company under investigation for allegedly helping Chinese tech firms obtain Nvidia chips in violation of US export controls.</p>
+<p>As the scandal deepens, the United States moved Monday to close loopholes in those restrictions.</p>
+<p>Its new rules aim to crack down on both chip smuggling to China and the large gray market of Chinese companies renting computing power from data centres full of high-end Nvidia chips in Southeast Asian countries.</p>
+<p>Chandy Ye, a dual-qualified Hong Kong solicitor and mainland China lawyer, told AFP that the practical impact of Nvidia's decision to stop Hopper shipments to China would be limited.</p>
+<p>"Chinese authorities have already been actively steering the domestic tech sector away from procuring H200s since January 2026, meaning the local ecosystem has long been adjusting to this decoupling," she said.</p>
+<p>"The far more consequential development is the sweeping new interim rule from the US Commerce Department restricting remote access to advanced computing capabilities," which closes a "massive loophole."</p>
+          </div>
+        
+      </div>
+
+      <aside class="afp-story-page__sidebar" aria-label="Story sidebar">
+        
+        <div class="afp-story-page__sidebar-sticky">
+        <section class="afp-story-page__card afp-story-page__card--cta">
+          <h2 class="afp-story-page__card-title">Bring trusted information to your audiences</h2>
+          <p class="afp-story-page__card-text">
+            Get in touch to discover how AFP's content, services and global network can support your newsroom or organization.
+          </p>
+          <a class="afp-story-page__cta-button" href="/en/contact">Contact us</a>
+        </section>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+      <section class="afp-story-page__latest" aria-labelledby="afp-story-latest-title">
+      <h2 id="afp-story-latest-title" class="afp-story-page__latest-title">Latest stories</h2>
+      <div class="afp-story-page__latest-grid">
+                  <article class="afp-story-latest-card">
+  <a class="afp-story-latest-card__link" href="/en/tech-takes-beating-anthropic-surge-fails-ease-ai-worries" target="_blank" rel="noopener noreferrer">
+    <div class="afp-story-latest-card__media" role="img" aria-label="Tech takes a beating as Anthropic surge fails to ease AI worries">
+              <img class="afp-story-latest-card__image" src="/sites/default/files/afp-stories/78b5b8c32c38062f7fe7c622ef0ad0d9-0-hi.jpg" alt="Tech takes a beating as Anthropic surge fails to ease AI worries" loading="eager" decoding="async">
+          </div>
+    <div class="afp-story-latest-card__content">
+      <h3 class="afp-story-latest-card__headline">
+        <span class="afp-story-latest-card__headline-row">
+          <span class="afp-homepage-tag">Business and Economy</span>
+          <span class="afp-story-latest-card__title-first">Tech takes a beating as Anthropic surge fails to ease AI worries</span>
+        </span>
+              </h3>
+              <p class="afp-story-latest-card__description">Tech-rich Seoul, Tokyo and Taipei led losses across Asia on Friday as Anthropic&#039;s sparkling debut failed to muster a recovery in sentiment towards the AI trade, with nerves frayed by...</p>
+                    <p class="afp-story-latest-card__meta">20 Nov 2026 — 31 minutes ago</p>
+          </div>
+  </a>
+</article>
+
+                  <article class="afp-story-latest-card">
+  <a class="afp-story-latest-card__link" href="/en/why-kim-didnt-meet-trump-despite-hype" target="_blank" rel="noopener noreferrer">
+    <div class="afp-story-latest-card__media" role="img" aria-label="Why Kim didn&#039;t meet Trump, despite the hype">
+              <img class="afp-story-latest-card__image" src="/sites/default/files/afp-stories/dbbaa2b7c2fad462884097cee133083e-0-hi.jpg" alt="Why Kim didn&#039;t meet Trump, despite the hype" loading="lazy" decoding="async">
+          </div>
+    <div class="afp-story-latest-card__content">
+      <h3 class="afp-story-latest-card__headline">
+        <span class="afp-story-latest-card__headline-row">
+          <span class="afp-homepage-tag afp-homepage-tag--mint">US News</span>
+          <span class="afp-story-latest-card__title-first">Why Kim didn&#039;t meet Trump, despite the hype</span>
+        </span>
+              </h3>
+              <p class="afp-story-latest-card__description">US President Donald Trump knocked repeatedly at Pyongyang&#039;s door this week for a meeting with Kim Jong Un, but the North Korean leader was out at a ski resort, a sacred...</p>
+                    <p class="afp-story-latest-card__meta">20 Nov 2026 — 1 hour ago</p>
+          </div>
+  </a>
+</article>
+
+                  <article class="afp-story-latest-card">
+  <a class="afp-story-latest-card__link" href="/en/pakistan-crush-sri-lanka-second-test-win-series" target="_blank" rel="noopener noreferrer">
+    <div class="afp-story-latest-card__media" role="img" aria-label="Pakistan crush Sri Lanka in second Test to win series">
+              <img class="afp-story-latest-card__image" src="/sites/default/files/afp-stories/3ea0431048786d979be22475152a956a-0-hi.jpg" alt="Pakistan crush Sri Lanka in second Test to win series" loading="lazy" decoding="async">
+          </div>
+    <div class="afp-story-latest-card__content">
+      <h3 class="afp-story-latest-card__headline">
+        <span class="afp-story-latest-card__headline-row">
+          <span class="afp-homepage-tag afp-homepage-tag--yellow">Sports</span>
+          <span class="afp-story-latest-card__title-first">Pakistan crush Sri Lanka in second Test to win series</span>
+        </span>
+              </h3>
+              <p class="afp-story-latest-card__description">Pakistan sealed a crushing eight-wicket victory over Sri Lanka Friday in the second and final Test in Rawalpindi...</p>
+                    <p class="afp-story-latest-card__meta">20 Nov 2026 — 2 hours ago</p>
+          </div>
+  </a>
+</article>
+
+              </div>
+    </section>
+  </article>
+
+  </div>
+
+  </div>
+
+  </main>
+
+      <footer role="contentinfo" class="">
+  <div class="container" style="max-width: 1900px;">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-xl-4 about-afp">
+       <img src="/themes/custom/afp9/assets/svg/logo-afp-white.svg" class="logo-afp-white" alt="">
+        <div class ="about-content">
+            <div class="region region-footer-col1">
+    <div id="block-footer-2" class="block-content--footer block-type-block-content block block-block-content block-block-content08365dcf-4593-4781-8ea8-e0a7ebd59d46">
+  
+    
+      <style>
+  .text-formatted table tr td {
+    vertical-align: middle;
+  }
+</style>
+
+
+            <div class="clearfix text-formatted toto field field--name-body field--type-text-with-summary field--label-hidden field__item"><h2>About AFP</h2><p class="text-align-justify">Agence France-Presse (AFP) is a global news agency that provides reliable, comprehensive, real-time coverage of the stories shaping our daily lives, drawing on a unique network of journalists based in 210 locations around the world.&nbsp;</p></div>
+      
+
+  </div>
+
+  </div>
+
+          </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-8 afp-links">
+          <div class="region region-footer-col2">
+    <div id="block-footer" class="contextual-region block block-menu menu--footer">
+  
+    
+      <style>
+  .footer-link-img {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-link-img:hover {
+    background-color: #4d4d4d;
+    border-radius: 50%;
+  }
+  .footer-link img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+</style>
+<ul data-region="footer_col2" data-block="footer_col2" class="footer-links">
+            <li class="footer-item">
+                  <p class="footer-link title-nav"><span>Useful links</span></p>
+        
+                  <ul style="padding-left: 0;">
+                          <li class="footer-item">
+                                                                      <a href="/en/useful-links/terms-use"  class="footer-item footer-link">
+                      <span>Terms of use</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/useful-links/privacy-policy"  class="footer-item footer-link">
+                      <span>Privacy policy</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/useful-links/copyright-protection"  class="footer-item footer-link">
+                      <span>AFP’s Copyright Protection Measures</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/useful-links/use-cookies"  class="footer-item footer-link">
+                      <span>Use of cookies and trackers</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/useful-links/legal-information"  class="footer-item footer-link">
+                      <span>Legal information</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/sitemap"  class="footer-item footer-link">
+                      <span>Site Map</span>
+                    </a>
+                                  
+                              </li>
+                      </ul>
+              </li>
+                <li class="footer-item">
+                  <p class="footer-link title-nav"><span>Press office</span></p>
+        
+                  <ul style="padding-left: 0;">
+                          <li class="footer-item">
+                                                                      <a href="/en/agency/inside-afp/press-releases"  class="footer-item footer-link">
+                      <span>Press releases</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/agency/inside-afp/awards"  class="footer-item footer-link">
+                      <span>Awards</span>
+                    </a>
+                                  
+                              </li>
+                      </ul>
+              </li>
+                <li class="footer-item">
+                  <p class="footer-link title-nav"><span>Our subsidiaries</span></p>
+        
+                  <ul style="padding-left: 0;">
+                          <li class="footer-item">
+                                                                      <a href="https://www.afp.com/de"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>AFP GmbH</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="https://www.sid.de/"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>Sport-Informations-Dienst (SID)</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="https://www.factstory.agency"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>FACTSTORY</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="https://mediaconnect.com/en/?lang=en"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>MediaConnect</span>
+                    </a>
+                                  
+                              </li>
+                      </ul>
+              </li>
+                <li class="footer-item">
+                  <p class="footer-link title-nav"><span>Join us</span></p>
+        
+                  <ul style="padding-left: 0;">
+                          <li class="footer-item">
+                                                                      <a href="/en/job-openings"  class="footer-item footer-link">
+                      <span>Our job openings</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="https://www.welcometothejungle.com/en/companies/agence-france-presse/jobs/candidatures-spontanees#apply"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>Submit your application</span>
+                    </a>
+                                  
+                              </li>
+                      </ul>
+              </li>
+                <li class="footer-item">
+                  <p class="footer-link title-nav"><span>Follow us</span></p>
+        
+                  <ul style="padding-left: 0;">
+                          <li class="footer-item">
+                                                                      <a href="/en/contact-us"  class="footer-item footer-link">
+                      <span>Contact us</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="https://www.afp.com/fr/centre-de-preference"  target="_blank"  class="footer-item footer-link ext-link">
+                      <span>Preference Center</span>
+                    </a>
+                                  
+                              </li>
+                          <li class="footer-item">
+                                                                      <a href="/en/afp-social-media"  class="footer-item footer-link">
+                      <span>Social Media</span>
+                    </a>
+                                  
+                                  <ul style="padding-left: 0;">
+                                          <li class="footer-item">
+                                                  <a href="https://www.facebook.com/AFPnewsenglish"  target="_blank"  class="footer-item footer-link ext-link footer-link-img">
+                              			  <img loading="lazy" class="no-image-style img-fluid image-style-thumbnail" src="/sites/default/files/2025-04/Facebook_30x30.svg" alt="" />
+
+
+
+	
+
+                          </a>
+                                              </li>
+                                          <li class="footer-item">
+                                                  <a href="https://x.com/afpcom"  target="_blank"  class="footer-item footer-link ext-link footer-link-img">
+                              			  <img loading="lazy" class="no-image-style img-fluid image-style-thumbnail" src="/sites/default/files/2025-04/X_30x30.svg" alt="" />
+
+
+
+	
+
+                          </a>
+                                              </li>
+                                          <li class="footer-item">
+                                                  <a href="https://www.linkedin.com/company/afp"  target="_blank"  class="footer-item footer-link ext-link footer-link-img">
+                              			  <img loading="lazy" class="no-image-style img-fluid image-style-thumbnail" src="/sites/default/files/2025-04/LinkedIn_30x30.svg" alt="" />
+
+
+
+	
+
+                          </a>
+                                              </li>
+                                          <li class="footer-item">
+                                                  <a href="https://www.instagram.com/afpnewsagency/"  target="_blank"  class="footer-item footer-link ext-link footer-link-img">
+                              			  <img loading="lazy" class="no-image-style img-fluid image-style-thumbnail" src="/sites/default/files/2025-04/Instagram_30x30.svg" alt="" />
+
+
+
+	
+
+                          </a>
+                                              </li>
+                                          <li class="footer-item">
+                                                  <a href="https://www.youtube.com/@AFP"  target="_blank"  class="footer-item footer-link ext-link footer-link-img">
+                              			  <img loading="lazy" class="no-image-style img-fluid image-style-thumbnail" src="/sites/default/files/2025-04/Youtube_30x30.svg" alt="" />
+
+
+
+	
+
+                          </a>
+                                              </li>
+                                      </ul>
+                              </li>
+                      </ul>
+              </li>
+      </ul>
+
+  </div>
+
+  </div>
+
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"en\/","currentPath":"node\/3853536","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxdTrsOwyAQ-yEoU4Z-TXQkByICDuHrQL--pUNFO_kl2abQ7o5Cs4Xrw9BUMYunbKEjpxqnt0OlJ4abOPZGkY0XUWintjlP-NVfai_YTMrQNf8bWJLCwLsc5pDOrkovlNOTTedAx_xQo1v4jc6SqsGAcvnceAEfjk-3","theme":"afp9","theme_token":null},"ajaxTrustedUrl":[],"afpStories":{"shareCopied":"Link copied. Paste it in Instagram.","shareCopyError":"Unable to copy the link."},"user":{"uid":0,"permissionsHash":"47dc340dad16eba8572bd94ecbbc1e3d986277897f02f8b6adab5852626b7d17"}}</script>
+<script src="/sites/default/files/js/js_Oa6yGUxrawYZJ7wjJfvSxsn_UmS8gCwU9bbfMwC4xzE.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=afp9&amp;include=eJxFxjEOgCAMBdALgUwOnoZ8tRgJ2qYtid5enZzeQ5EpoUg86OzhTTZn3cnS550FG4WZ2c0VMqa_sVpscDIPCyulVbugDai4HnWAIJM"></script>
+<script src="/modules/custom/afp_stories/js/story-page.js?v=3.5" defer></script>
+<script src="/sites/default/files/js/js_FGuKVHMEGE_nO73sBtnLDTiwm7prZwJLdEQ5-ukvUaY.js?scope=footer&amp;delta=2&amp;language=en&amp;theme=afp9&amp;include=eJxFxjEOgCAMBdALgUwOnoZ8tRgJ2qYtid5enZzeQ5EpoUg86OzhTTZn3cnS550FG4WZ2c0VMqa_sVpscDIPCyulVbugDai4HnWAIJM"></script>
+
+  </body>
+</html>
