@@ -19,9 +19,18 @@ const { kpis, liveId = "kpi" } = Astro.props;
       <span class="kpi-value" id={k.live ? `${liveId}-days` : undefined}>
         {k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small>
       </span>
-      <span class="kpi-label" id={k.live ? `${liveId}-days-label` : undefined}>
+      <span class:list={["kpi-label", { "kpi-has-cites": k.cites?.length }]} id={k.live ? `${liveId}-days-label` : undefined}>
         {k.label}{k.cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}
       </span>
     </div>
   ))}
 </div>
+
+<style>
+  .kpi-has-cites :global(.src-ref + .src-ref)::before {
+    content: ", ";
+    white-space: pre;
+    color: var(--muted, #6b7280);
+    font-size: 0.72em;
+  }
+</style>
