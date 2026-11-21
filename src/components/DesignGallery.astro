@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Each later component PR can add a self-contained fixture here, without
+// touching discovery data or adding a production route.
+const fixtures = Object.entries(import.meta.glob('./design/*.astro', { eager: true, import: 'default' }));
+const name = (path: string) => path.split('/').pop()!.replace('.astro', '');
+const label = (path: string) => name(path).replaceAll('-', ' ').replace(/^./, letter => letter.toUpperCase());
+---
+<BaseLayout title="Design reference | The Catch" current="" noindex>
+  <div slot="locator" class="locator"><span>Design reference</span><a href="/design/coverage/">Fictional coverage</a></div>
+  <div class="content"><main class="design-gallery">
+    <header class="gallery-intro">
+      <p class="source-label">Not published reporting</p>
+      <h1>Design reference</h1>
+      <p>Fictional examples for checking type, color, spacing, and controls. None of these examples appears in published coverage or search.</p>
+      <p>Use the color theme control in the header to compare light and dark. Auto follows your device.</p>
+    </header>
+    <nav class="gallery-nav" aria-label="Design examples">
+      {fixtures.map(([path]) => <a href={`#${name(path)}`}>{label(path)}</a>)}
+      <a href="/design/coverage/">15-story coverage sample</a>
+    </nav>
+    {fixtures.map(([path, Example]) => <section class="gallery-section" id={name(path)} aria-labelledby={`${name(path)}-title`}>
+      <h2 id={`${name(path)}-title`}>{label(path)}</h2>
+      <Example />
+    </section>)}
+  </main></div>
+</BaseLayout>
+
+<style>
+  .gallery-intro { max-width: var(--measure); }
+  h1 { font: 700 var(--text-title)/1.12 var(--display); letter-spacing: -.02em; margin: .6rem 0 var(--space-6); }
+  .gallery-intro > p:not(.source-label) { font: var(--text-prose)/var(--leading-prose) var(--serif); }
+  .gallery-nav { display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); padding: var(--space-6) 0; border-block: 1px solid var(--rule); margin: var(--space-8) 0; }
+  .gallery-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-small); }
+  .gallery-section { scroll-margin-top: var(--space-8); margin-block: var(--space-12); }
+  .gallery-section > h2 { font: 700 1.8rem/1.2 var(--serif); margin-bottom: var(--space-8); }
+</style>
