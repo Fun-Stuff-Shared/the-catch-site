@@ -245,6 +245,8 @@ changes the page's text, including the fixes the human's notes bring. The page p
 only when every block that cites a claim has passed as it reads now (`publish.sh` checks),
 so there is no round limit to count: an edit is checked when it is made.
 
+Bind carries earlier findings into re-checks and reports, keeping them in `checks/reads/<story>-findings.json`.
+
 The thread read is one reader's reactions, not a list of orders: you are the reporter, and
 you judge each flag against what the story needs. Where a break is real, the fix is never
 inserting text where the reader stalled:
