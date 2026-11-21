@@ -1,0 +1,170 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import "../../../styles/story.css";
+import ReadingModes from "../../../components/ReadingModes.astro";
+import Cite from "../../../components/Cite.astro";
+import QuoteCard from "../../../components/story/QuoteCard.astro";
+import DecisionTimeline from "../../../components/story/DecisionTimeline.astro";
+import StorySources from "../../../components/StorySources.astro";
+import { event, n, computed, publications, statements, chronology } from "../../../data/trump-media-lawsuits-2026-11-19-judge-lets-trump-tax-fraud-claims-proceed.mjs";
+const fmt = computed.fmt;
+---
+<BaseLayout title={`${event.title} | The Catch`} current="Events">
+  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/trump-media-lawsuits/">Trump's media lawsuits</a><span>November 19, 2026</span></div>
+  <div class="content">
+    <main class="story" id="story-root">
+      <p class="story-kicker" data-layer="fact">Trump's media lawsuits &middot; November 19, 2026 &middot; updated {event.updated}</p>
+      <h1 data-layer="fact" data-claims="six-book-one-baker book-counts-penguin-authors times-counts-baker ruling-seven-survive">{event.title}</h1>
+      <p class="story-dek" data-layer="fact">{event.dek}<Cite c="anyone-rule" /><Cite c="fpf-statement" /></p>
+      <ReadingModes />
+      <nav class="story-toc" aria-label="In this story" data-layer="fact">
+        <details class="toc-disclosure" open><summary><span>In this story</span><span class="toc-current" aria-hidden="true"></span></summary>
+        <ol>
+          <li><a href="#what-happened">What happened</a></li>
+          <li><a href="#who-is-sued">Who is sued over what</a></li>
+          <li><a href="#why-seven">Why these seven survived</a></li>
+          <li><a href="#the-catch">The Catch</a></li>
+          <li><a href="#coverage">What the coverage got right and wrong</a></li>
+          <li><a href="#the-sides">What each side says</a></li>
+          <li><a href="#how-it-got-here">How the case got here</a></li>
+          <li><a href="#next">What happens next</a></li>
+          <li><a href="#records">The records</a></li>
+        </ol>
+        </details>
+      </nav>
+
+      <section id="what-happened">
+        <h2 data-layer="fact">What happened</h2>
+        <p data-layer="narrative" data-answer="1">Steven Merryday, a senior federal judge in Tampa appointed by President George H.W. Bush, ruled on Nov. 19 that President Trump's defamation suit can go forward on {n.surviving} of the {n.challenged} statements Trump challenged.<Cite c="merryday-who" /><Cite c="ruling-seven-survive" /><Cite c="thirty-four-statements" /> Merryday threw out the other {n.dismissed}, and with them the claims over a 2024 Times article about Trump's years on The Apprentice.<Cite c="counts-kept-dismissed" /><Cite c="apprentice-counts" /> Trump, who is seeking at least ${n.damagesBillions} billion, is suing The New York Times, three of its reporters and the publisher Penguin Random House.<Cite c="fifteen-billion" /><Cite c="schmidt-dropped" /></p>
+        <p data-layer="narrative" data-answer="2">Six of the seven come from Lucky Loser, a 2024 book by Susanne Craig and Russ Buettner, investigative reporters at the Times.<Cite c="craig-buettner-who" /> The book says Trump received the equivalent of more than $400 million from his father, "much of it through fraudulent tax evasion schemes."<Cite c="six-book-one-baker" /><Cite c="statement-400m" /> Trump says the book's tax statements are false because neither he nor his father was ever charged with a tax crime.<Cite c="trump-never-charged" /> Those claims are against the book's publisher, Penguin Random House, and its two authors, the Times reporters; the Times company itself is not a defendant on them.<Cite c="book-counts-penguin-authors" /> The seventh is the only claim left against the Times itself. It is one sentence by Peter Baker, the Times's chief White House correspondent, in an October 2024 article, saying authorities "looked into his ties with the Mafia, found violations of money laundering rules and penalized him for skirting stock trade rules."<Cite c="times-counts-baker" /><Cite c="baker-who" /><Cite c="statement-baker" /></p>
+        <p data-layer="narrative" data-answer="3">The ruling answers only whether Trump's complaint says enough to go forward, not whether any statement is true.<Cite c="no-truth-ruling" /> The defendants must answer within {n.answerDays} days, and Trump may not amend his complaint again.<Cite c="answer-28-days" /></p>
+      </section>
+
+      <section id="who-is-sued">
+        <h2 data-layer="fact">Who is sued over what</h2>
+        <p data-layer="narrative">Trump's complaint sues over three publications, and names different defendants for each.<Cite c="sac-filed" /><Cite c="thirty-four-statements" /> Craig and Buettner wrote both the book and the Apprentice article, so they are sued twice; the Times published the two articles but not the book.<Cite c="book-counts-penguin-authors" /><Cite c="apprentice-counts" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>What Trump sued over, and what is left</strong></figcaption>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Publication</th><th>Written by</th><th>Sued</th><th>Statements challenged</th><th>Going forward</th></tr></thead>
+              <tbody>
+                {publications.map((p) => (
+                  <tr>
+                    <td>{p.work}</td>
+                    <td>{p.by}</td>
+                    <td>{p.sued}{p.cites.map((c) => <Cite c={c} />)}</td>
+                    <td>{p.challenged}<Cite c="thirty-four-statements" /></td>
+                    <td>{p.surviving}<Cite c="dismissed-mostly-book" /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+
+      <section id="why-seven">
+        <h2 data-layer="fact">Why these seven survived</h2>
+        <p data-layer="narrative">Because Trump is a public official, he has to show that whoever published a statement knew it was false or recklessly disregarded whether it was. That rule, called actual malice, comes from the Supreme Court's 1964 decision in New York Times Co. v. Sullivan.<Cite c="actual-malice-standard" /> Both sides agree that standard controls.<Cite c="both-agree-sullivan" /> At this stage the judge asks only whether the complaint lays out enough facts to make that plausible.<Cite c="plausible-inference" /></p>
+        <p data-layer="narrative">For the {n.dismissed} statements he threw out, Merryday ruled that they could not support the suit "even if untrue," for reasons the defendants had given, without saying which reason defeated which statement.<Cite c="even-if-untrue" /> For the seven, he said each accuses Trump of planning and carrying out complex crimes, and that the complaint plausibly alleges the authors and publishers knew a reliable conclusion about tax-law violations needed a qualified expert's opinion, which they knowingly failed to get.<Cite c="complex-crimes" /><Cite c="plausible-inference" /></p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>The seven statements going forward</strong></figcaption>
+          <ol class="statement-list">
+            {statements.map((s) => (
+              <li><span class="statement-source">{s.source}</span> <span class="statement-text">"{s.text}"</span><Cite c={s.c} /></li>
+            ))}
+          </ol>
+        </figure>
+        <p data-layer="narrative">The defense says Craig and Buettner went through about {fmt(n.pages)} pages of financial records and relied on experts quoted in the Times's 2018 investigation of the Trump family's taxes, one of whom called the scheme "highly suspicious" and another of whom said it "smells like a crime."<Cite c="defense-experts" /> Asked in court for the basis of the tax accusations, the defense also pointed to the book's thanks to an estate lawyer, Jim Ledley, for help with "the highly technical areas of tax law."<Cite c="ledley-ack" /> Merryday wrote that an expert's calling a transaction suspicious, or saying it could violate the law or smells of crime, is "far from a formal legal opinion."<Cite c="experts-not-enough" /></p>
+        <p data-layer="narrative">Merryday had put the question to the defense's lawyer at a July 22 hearing, asking whether someone without tax expertise, looking at thousands of pages of tax returns, wouldn't know that only a qualified person could make that call.<Cite c="hearing-question" /> In the order, he stated the rule the ruling turns on: anyone who publishes a claim that someone committed a complex crime, without an explicit opinion from a qualified source who examined the facts, "necessarily proceeds" knowing it is probably false.<Cite c="anyone-rule" /></p>
+        <QuoteCard speaker="Judge Steven D. Merryday" when="Nov. 19, 2026" where="Order on the motion to dismiss">
+          <p>"they know that they don’t know, but they are undeterred."<Cite c="anyone-rule" /></p>
+        </QuoteCard>
+        <p data-layer="narrative">Merryday kept Baker's sentence on the same reasoning, though it accuses Trump of no tax crime: his order lists it with the six book statements and names money laundering and "ties to the Mafia" among the complex crimes that need an expert's opinion.<Cite c="same-reason-baker" /><Cite c="order-names-mafia-laundering" /></p>
+        <p data-layer="narrative">The order itself agrees that reckless disregard is about what the writer actually believed, and that failing to investigate is not enough on its own to show it.<Cite c="subjective-test" /> Seth Stern, chief of advocacy at the Freedom of the Press Foundation, says the ruling "completely misconstrues" the actual-malice standard, and that courts are supposed to avoid second-guessing whether reporters should have had their experts write a more formal opinion.<Cite c="fpf-statement" /></p>
+      </section>
+
+      <section id="the-catch">
+        <aside class="the-catch" data-layer="fact">
+          <p class="tt-label">The Catch</p>
+          <ol>
+            <li>
+              <h3>The tax-fraud claims are against the book's authors and publisher, not the Times<Cite c="book-counts-penguin-authors" /></h3>
+              <p data-layer="narrative">The Freedom of the Press Foundation's own release said Merryday "declined to dismiss claims that the Times defamed Trump by, according to Merryday, suggesting he and his relatives committed tax crimes."<Cite c="fpf-error" /> Deadline and Insurance Journal's reprint of a Bloomberg story also tied the tax statements to the Times; their words are in the table below.<Cite c="deadline-error" /><Cite c="bloomberg-error" /></p>
+              <p data-layer="narrative">The six tax statements are from the book, and the claims over the book name only Penguin, Craig and Buettner.<Cite c="six-book-one-baker" /><Cite c="book-counts-penguin-authors" /> What the Times faces is Baker's sentence about the Mafia, money-laundering rules and stock-trade rules.<Cite c="times-counts-baker" /><Cite c="statement-baker" /></p>
+            </li>
+            <li>
+              <h3>Other reports dropped claims that go forward<Cite c="craig-buettner-on-both" /></h3>
+              <p data-layer="narrative">The Washington Examiner reported that the judge dismissed the claims over Baker's article.<Cite c="examiner-error" /> All three reporters remain in the case, and the claim over Baker's article goes forward against Baker and the Times.<Cite c="craig-buettner-on-both" /><Cite c="times-counts-baker" /></p>
+            </li>
+          </ol>
+        </aside>
+      </section>
+
+      <section id="coverage">
+        <h2 data-layer="fact">What the coverage got right and wrong</h2>
+        <p data-layer="narrative">Variety and TheWrap reported the ruling accurately. Variety said the tax-fraud claims are over the book by the Times's reporters and listed every defendant as still in the case.<Cite c="variety-right" /> Its one slip was crediting the 2018 article's experts to the book.<Cite c="variety-experts" /> TheWrap said the ruling does not establish that the reporting was false.<Cite c="thewrap-right" /> The reports below said something the records do not support.</p>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>Where reports of the ruling went wrong</strong></figcaption>
+          <div class="data-table-wrap">
+            <table class="data-table coverage-table">
+              <thead><tr><th>Outlet</th><th>What it said</th><th>What the record shows</th></tr></thead>
+              <tbody>
+                <tr><td>Deadline</td><td>The judge was "stripping" Craig, Buettner and Baker from the case and held "PRH and the paper’s feet to the qualified fire" over the tax statements.<Cite c="deadline-error" /></td><td>All three reporters remain; the Times is not sued over the book.<Cite c="craig-buettner-on-both" /><Cite c="book-counts-penguin-authors" /></td></tr>
+                <tr><td>Insurance Journal, reprinting Bloomberg</td><td>"The disputed Times statements accuse the president of tax crimes," and the dismissed statements were "mostly from Times articles."<Cite c="bloomberg-error" /></td><td>The tax statements are the book's, and {n.bookDismissed} of the {n.dismissed} dismissed statements are from the book.<Cite c="six-book-one-baker" /><Cite c="dismissed-mostly-book" /></td></tr>
+                <tr><td>The Guardian and Al Jazeera</td><td>The Guardian: Trump cited 22 statements "from a book by Baker." Al Jazeera: Trump cited 22 statements "from the book by Times journalist Peter Baker."<Cite c="guardian-error" /></td><td>The book is Craig and Buettner's; Baker wrote an article.<Cite c="craig-buettner-who" /><Cite c="thirty-four-statements" /><Cite c="baker-who" /></td></tr>
+                <tr><td>Courthouse News</td><td>A "$15 million" lawsuit; Michael S. Schmidt among the reporters sued; the judge "determined" the statements rested on incomplete information.<Cite c="courthouse-error" /></td><td>Trump seeks ${n.damagesBillions} billion; Michael S. Schmidt, a Times reporter named in Trump's original complaint, is no longer a defendant; the judge found only a plausible allegation.<Cite c="fifteen-billion" /><Cite c="schmidt-original" /><Cite c="schmidt-dropped" /><Cite c="plausible-inference" /></td></tr>
+                <tr><td>People</td><td>Quoted the judge as writing "the [defendants] know that they don't know."<Cite c="people-bracket" /></td><td>The judge wrote that sentence about "anyone who publishes" such a claim.<Cite c="anyone-rule" /></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+
+      <section id="the-sides">
+        <h2 data-layer="fact">What each side says</h2>
+        <h3 data-layer="fact">Trump</h3>
+        <p data-layer="narrative">Trump's complaint also alleges that neither he nor his father was ever investigated for tax fraud.<Cite c="trump-never-investigated" /> When the Times's 2018 investigation ran, his lawyer, Charles Harder, said "There was no fraud or tax evasion by anyone."<Cite c="harder-denial-2018" /> Trump's lawyers now argue that the 2018 article itself reported a statement from Trump's side that tax authorities had examined and approved the filings, which gave the authors reason to doubt the book's line that a likely fraud "went unnoticed."<Cite c="trump-unnoticed-argument" /><Cite c="statement-masquerading" /></p>
+        <p data-layer="narrative">A spokesman for Trump's legal team told Fox News Digital on Nov. 19:<Cite c="trump-team-statement" /></p>
+        <QuoteCard speaker="Spokesman for Trump's legal team" when="Nov. 19, 2026" where="Statement to Fox News Digital">
+          <p>"These defendants will now have to answer for intentionally and maliciously defaming President Trump."<Cite c="trump-team-statement" /></p>
+        </QuoteCard>
+        <h3 data-layer="fact">The Times and Penguin</h3>
+        <p data-layer="narrative">Beyond the records and experts described above, the defendants say the book drew on hundreds of interviews, and that in the six years between the 2018 article and the book, Trump never came forward to refute its specific findings.<Cite c="book-research" /><Cite c="defense-unrefuted" /> When Trump sued the Times over the 2018 article, a New York judge noted in 2023 that he did not specifically dispute the truth of any statement in it.<Cite c="nysc-no-dispute" /> Penguin also argues it cannot be held responsible for what the authors knew, because they were independent contractors, not its employees.<Cite c="penguin-contractor" /></p>
+        <p data-layer="narrative">Charlie Stadtlander, a Times spokesman, said the Times was encouraged by the dismissal of almost all claims against it and that the remaining claim has no legal merit.<Cite c="times-statement" /> Penguin said it is confident the evidence will lead to a full dismissal and that it stands by the book and its authors.<Cite c="penguin-statement" /></p>
+        <h3 data-layer="fact">Baker's sentence</h3>
+        <p data-layer="narrative">Baker's sentence is its own fight. Trump says the money-laundering penalty the article linked to was against his casino company, not him.<Cite c="trump-baker-falsity" /> That company, Trump Taj Mahal Associates, operated his Trump Taj Mahal casino in Atlantic City; the defense calls it his company.<Cite c="ttma-who" /> A 1998 release from the Treasury's Financial Crimes Enforcement Network says it paid ${fmt(n.fincenPenalty)} for failing to file reports the Bank Secrecy Act requires.<Cite c="fincen-taj-mahal" /> The defense says the sentence does not claim the violations were Trump's personally, and that each clause links to its own source, the stock-trade clause to an article on Trump's ${fmt(n.ftcPenalty)} fine over stock disclosure.<Cite c="defense-baker" /><Cite c="defense-baker-links" /> That fine came from a 1988 federal case against Trump himself, charging that he failed to file required premerger notifications when he bought stock in Holiday Corp. and Bally Manufacturing; he paid the penalty without admitting a violation.<Cite c="ftc-1988" /></p>
+      </section>
+
+      <section id="how-it-got-here">
+        <h2 data-layer="fact">How the case got here</h2>
+        <figure class="story-figure" data-layer="fact">
+          <figcaption><strong>From the 2018 investigation to the ruling</strong></figcaption>
+          <DecisionTimeline entries={chronology} heading="What happened" />
+        </figure>
+      </section>
+
+      <section id="next">
+        <h2 data-layer="fact">What happens next</h2>
+        <p data-layer="narrative">The defendants must answer the complaint by Dec. 17.<Cite c="answer-date" /> Discovery did not wait for the ruling: a magistrate judge refused in March to pause it while the motions to dismiss were pending, and a mediation in May ended without agreement.<Cite c="discovery-open" /><Cite c="mediation-failed" /> The defendants have also reserved two arguments the judge has not ruled on: that New York's one-year time limit for defamation applies, and that New York law governs.<Cite c="reserved-ny-defenses" /> The order leaves open whether evidence about the {n.dismissed} dismissed statements can be used at trial.<Cite c="admissibility-reserved" /></p>
+      </section>
+
+      <section id="records">
+      <StorySources event={event.slug} />
+      </section>
+    </main>
+  </div>
+</BaseLayout>
+
+<style>
+  .statement-list { margin: 0; padding-left: 1.5rem; font-family: var(--serif); }
+  .statement-list li { padding: 0.45rem 0; border-bottom: 1px solid var(--rule); }
+  .statement-source { display: block; font-family: var(--sans); font-size: 0.75rem; color: var(--slate); text-transform: uppercase; letter-spacing: 0.04em; }
+  .statement-text { color: var(--ink); }
+  .coverage-table td:first-child { white-space: nowrap; font-weight: 600; }
+  .caption-note { display: block; font-weight: 400; font-size: 0.8rem; color: var(--slate); }
+  @media (max-width: 640px) {
+    .coverage-table td:first-child { white-space: normal; }
+  }
+</style>
