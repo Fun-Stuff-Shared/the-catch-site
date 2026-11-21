@@ -17,7 +17,8 @@ full/abbreviated months and require month plus day, with year optional; their
 components are not checked separately. Weekdays are not names. Names are whole
 capitalized runs, skipping sentence-initial runs and title-only runs. A name is
 supported by its full run, acronym (in either direction), or last distinctive
-word, including cited claims' by fields. US, U.S. and United States are equivalent.
+word, including cited claims' by fields. US, U.S. and United States are equivalent
+(case-sensitive before casefolding); the lowercase pronoun "us" is not.
 No metadata blocks are skipped without structural information.
 Uncited blocks use says, passages and by from every claim cited on the page for
 token support, but not quote support. Bare years can also use page-wide support
@@ -80,10 +81,9 @@ def number_words(match):
 
 @lru_cache(maxsize=16384)
 def canonical(text):
-    text = normalize(text).casefold()
+    text = re.sub(r'(?<!\w)(?:United States|U\.S\.|US)(?!\w)', 'unitedstates', normalize(text)).casefold()
     text = re.sub(r'\b(usd|eur)\s*(?=\d)', lambda m: '$' if m[1] == 'usd' else '€', text)
     text = re.sub(r'([$€£¥])\s+(?=\d)', r'\1', text)
-    text = re.sub(r'(?<!\w)(?:united states|u\.s\.|us)(?!\w)', 'us', text)
     text = LOWER_WORD_NUMBERS.sub(number_words, text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)

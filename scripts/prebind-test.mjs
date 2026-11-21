@@ -153,6 +153,12 @@ test('canonical speaker still requires attribution', t => {
   const { run } = fixture(t, 'The United States witnessed it.' + cite, 'It happened.', 'It happened.', 'said', 'United States');
   assert.equal(run('prebind.py', ['--strict']).status, 1);
 });
+test('pronoun us is not the United States speaker', t => {
+  const { run } = fixture(t, 'They told us it happened.' + cite, 'It happened.', 'It happened.', 'said', 'United States');
+  const result = run('prebind.py', ['--strict']);
+  assert.equal(result.status, 1, result.stdout + result.stderr);
+  assert.match(result.stdout, /- attribution:/);
+});
 test('cited bare year uses page support, but other cited numbers do not', t => {
   const { run, put } = fixture(t, '', 'It happened.');
   put(`checks/claims/${story}.json`, JSON.stringify({ claims: [
