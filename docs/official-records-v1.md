@@ -93,13 +93,16 @@ routes when a view is wired live.
   IDs, names, states and party **at the vote**. `official_id` is optional for
   members without a dossier; when present it must resolve and match an office
   term. Complete member counts reconcile with totals. Partial rows need a reason
-  and cannot exceed totals. They are not eligible for full party statistics.
+  and cannot exceed totals. They also require a dataset-level `roll_calls`
+  missing reason and partial coverage. They are not eligible for full party statistics.
 - **Finance:** explicit official↔committee association, reporting period,
   grouping method and sourced receipt rows. `amount_cents` is a signed safe
   integer so refunds are preserved. `report_id` identifies a report's amendment
   lineage; `filing_id` identifies the concrete filing. Deduplicate the same
   committee/report/schedule/transaction, replacing originals with amendments,
-  before handing off. Keep excluded memo, interest, exchange and duplicate rows
+  before handing off; identity checks span all finance sets, including overlaps.
+  Receipt dates must fall within dataset coverage and their report's period.
+  Keep excluded memo, interest, exchange and duplicate rows
   labeled; consumers must exclude them from contribution totals. Industry
   classifications need receipt IDs, a methodology and their own evidence.
   Unclassified included contributions require an `industries` missing reason
