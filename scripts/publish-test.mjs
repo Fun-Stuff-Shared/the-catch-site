@@ -141,3 +141,18 @@ test('source scan catches a key removed from the branch tip and deduplicates fin
   assert.ok(findings[0].includes(`commit ${introduced}`), r.stderr);
   assert.ok(!r.stderr.includes(token), r.stderr);
 });
+
+test('merging main into a story does not rescan captures already on main', (t) => {
+  const f = fixture(t, { files: { 'data/sources/clean.txt': 'ordinary source\n' } });
+  writeFileSync(join(f.site, 'data/sources/existing.txt'), `${patterns[0][1]}\n`);
+  f.git('commit', '-qam', 'capture already on main');
+  const before = f.git('rev-parse', 'main');
+  f.git('switch', '-q', 'story');
+  f.git('merge', '-q', '--no-ff', '-m', 'merge main into story', 'main');
+  f.git('switch', '-q', 'main');
+  const r = f.run();
+  assert.equal(r.status, 0, r.stderr);
+  assert.ok(!r.stderr.includes('Mapbox'), r.stderr);
+  assert.notEqual(f.git('rev-parse', 'main'), before);
+  assert.equal(f.git('rev-parse', 'main'), f.git('rev-parse', 'origin/main'));
+});

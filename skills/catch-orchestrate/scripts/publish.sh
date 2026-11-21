@@ -46,7 +46,9 @@ for branch in branches:
         if commit in seen_commits:
             continue
         seen_commits.add(commit)
-        paths = git('diff-tree', '--root', '-m', '-r', '--no-commit-id', '--name-only', '-z', '--no-renames', '--diff-filter=ACMT', commit, '--', 'data/sources/')
+        parents = git('rev-list', '--parents', '-n', '1', commit).split()[1:]
+        merge_diff = '-c' if len(parents) > 1 else '-m'
+        paths = git('diff-tree', '--root', merge_diff, '-r', '--no-commit-id', '--name-only', '-z', '--no-renames', '--diff-filter=ACMT', commit, '--', 'data/sources/')
         short = git('rev-parse', '--short', commit).decode().strip()
         for path in sorted(set(paths.split(b'\0')) - {b''}):
             name = os.fsdecode(path)
