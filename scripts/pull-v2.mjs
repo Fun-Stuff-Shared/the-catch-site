@@ -62,7 +62,7 @@ export async function fetchPinned({
   const snapshots = join(destination, "snapshots");
   const final = join(snapshots, id);
   if (existsSync(final)) return;
-  if (process.env.CATCH_DEVELOPMENTS !== "1" && existsSync(join(destination, "SITE_CURRENT"))) {
+  if (process.env.CATCH_DEVELOPMENTS !== "1" && process.env.CATCH_FULL_SNAPSHOT !== "1" && existsSync(join(destination, "SITE_CURRENT"))) {
     sitePointer(destination);
     const site = join(destination, "site");
     const path = join(site, `${id}.json`);

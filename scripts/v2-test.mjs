@@ -385,6 +385,22 @@ test('developments still fetch the full archive when a site pointer exists, and 
   } finally { delete process.env.CATCH_DEVELOPMENTS; }
 });
 
+test('author tooling can request the full archive with a site pointer and developments off', async (t) => {
+  const { id, store } = packedFixture(t);
+  const destination = temp(t, 'v2-author-');
+  siteFixture(destination, id);
+  const previous = process.env.CATCH_FULL_SNAPSHOT;
+  process.env.CATCH_FULL_SNAPSHOT = '1';
+  try {
+    await fetchPinned({ destination, store: await serve(t, store), accessKeyId: undefined });
+    assert.ok(existsSync(join(destination, 'snapshots', id, 'manifest.json')));
+    assert.equal(readV2(destination).views.get('subject-a').label, 'Ballot rejections');
+  } finally {
+    if (previous === undefined) delete process.env.CATCH_FULL_SNAPSHOT;
+    else process.env.CATCH_FULL_SNAPSHOT = previous;
+  }
+});
+
 test('a build fetches the snapshot git pins, checks it against the pin and keeps only it', async (t) => {
   const { id, store } = packedFixture(t);
   const destination = temp(t, 'v2-site-');
