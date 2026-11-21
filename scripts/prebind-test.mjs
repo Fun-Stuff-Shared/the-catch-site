@@ -41,6 +41,21 @@ for (const [name, text, says, passage, status, expected] of [
   ['reversed ellipsis', 'They said “won ... we”.', 'They spoke.', 'we really won', 'fact', 'quotes'],
   ['quote case sensitive', 'They said “We won”.', 'They spoke.', 'we won', 'fact', 'quotes'],
   ['unquoted says not quote evidence', 'They said “we won”.', 'we won', 'Other words.', 'fact', 'quotes'],
+  ['spelled numbers to digits', 'It took four hours and twenty-one minutes.', 'It took 4 hours and 21 minutes.', undefined, 'fact', null],
+  ['digits to spelled numbers', 'It took 4 hours and 1200 minutes.', 'It took four hours and one thousand two hundred minutes.', undefined, 'fact', null],
+  ['different spelled number fails', 'It took five hours.', 'It took four hours.', undefined, 'fact', 'tokens'],
+  ['date optional year abbreviation', 'It ended November 14, 2026.', 'It ended Nov. 14.', undefined, 'fact', null],
+  ['date abbreviated block', 'It ended Nov 14.', 'It ended November 14, 2026.', undefined, 'fact', null],
+  ['date wrong day fails', 'It ended November 15, 2026.', 'It ended Nov. 14.', undefined, 'fact', 'tokens'],
+  ['weekday not name', 'It ended Monday.', 'It ended.', undefined, 'fact', null],
+  ['full agency to acronym', 'It was the Federal Aviation Administration.', 'It was the FAA.', undefined, 'fact', null],
+  ['acronym to full agency', 'It was the FAA.', 'It was the Federal Aviation Administration.', undefined, 'fact', null],
+  ['surname supports title run', 'It was Transportation Secretary Sean Duffy.', 'It was Duffy.', undefined, 'fact', null],
+  ['title alone not support', 'It was Transportation Secretary Sean Duffy.', 'It was the Secretary.', undefined, 'fact', 'tokens'],
+  ['title only skipped', 'It was the Secretary.', 'It happened.', undefined, 'fact', null],
+  ['by supports name', 'It was Jane Smith.', 'It happened.', undefined, 'fact', null],
+  ['United States to US', 'It was in the United States.', 'It was in the US.', undefined, 'fact', null],
+  ['US to United States', 'It was in the U.S.', 'It was in the United States.', undefined, 'fact', null],
 ]) {
   test(name, t => {
     const { run } = fixture(t, text + cite, says, passage, status);
@@ -48,6 +63,10 @@ for (const [name, text, says, passage, status, expected] of [
     assert.equal(result.status, expected ? 1 : 0, result.stdout + result.stderr);
     if (expected) assert.ok(result.stdout.includes(`- ${expected}:`), result.stdout);
     if (name === 'missing tokens and candidates') assert.match(result.stdout, /record:.*London/);
+    if (name === 'date wrong day fails') {
+      assert.match(result.stdout, /- tokens: November 15, 2026\n/);
+    }
+    if (name === 'title alone not support') assert.match(result.stdout, /- tokens: Transportation Secretary Sean Duffy\n/);
   });
 }
 test('uncited and empty blocks; default advisory exit', t => {

@@ -9,11 +9,19 @@ double/single quotes and apostrophes to straight, collapse whitespace and trim.
 Match case-sensitive exact substrings of cited passages or quoted text in says.
 Ellipses (… or ...) split a quote into segments which must match in order within
 one source. Numbers ignore thousands commas and insignificant decimal zeroes;
-percent and money units remain significant. Names skip sentence-initial words.
+percent and money units remain significant. Spelled cardinal numbers through
+ninety, hundred and thousand (including compounds) equal digits. Dates accept
+full/abbreviated months and require month plus day, with year optional; their
+components are not checked separately. Weekdays are not names. Names are whole
+capitalized runs, skipping sentence-initial runs and title-only runs. A name is
+supported by its full run, acronym (in either direction), or last distinctive
+word, including cited claims' by fields. US, U.S. and United States are equivalent.
+No metadata blocks are skipped without structural information.
 """
 
 import argparse
 from decimal import Decimal
+from functools import lru_cache
 import re
 import sys
 import time
@@ -24,10 +32,21 @@ import claims as ledger
 
 QUOTES = str.maketrans({'“': '"', '”': '"', '‘': "'", '’': "'"})
 STOP = set('the a an this that these those it its he she they we i in on at by for from to of and or but as what why how when where who which after before just according'.split())
-MONTH = r'(?:January|February|March|April|May|June|July|August|September|October|November|December)'
+MONTHS = 'January February March April May June July August September October November December'.split()
+MONTH = '(?:' + '|'.join(m + '|' + m[:3] + r'\.?' for m in MONTHS) + r'|Sept\.?)'
+MONTH_ABBREVIATIONS = {m[:3].lower(): m.lower() for m in MONTHS}
+MONTH_ABBREVIATIONS['sept'] = 'september'
+MONTH_ABBREVIATION = re.compile(r'\b(?:' + '|'.join(MONTH_ABBREVIATIONS) + r')(?:\.|\b)')
 NUMBER = re.compile(r'(?<![\w.])\$?\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:%|percent\b|million\b|billion\b|trillion\b))?', re.I)
-DATE = re.compile(r'\b' + MONTH + r'\s+\d{1,2}(?:,?\s+\d{4})?\b')
-NAME = re.compile(r"\b[A-Z][a-zA-Z]*(?:[-'][A-Za-z]+)*(?:\s+[A-Z][a-zA-Z]*(?:[-'][A-Za-z]+)*)*\b")
+DATE = re.compile(r'\b' + MONTH + r'\s+\d{1,2}(?:,?\s+\d{4})?\b', re.I)
+NAME_WORD = r"(?:U\.S\.|[A-Z][a-zA-Z0-9]*(?:[-'][A-Za-z0-9]+)*)"
+NAME = re.compile(r'\b' + NAME_WORD + r'(?:\s+' + NAME_WORD + r')*')
+TITLES = set('secretary administrator senator senators rep representative representatives president vice department agency minister ministry director acting deputy chief former governor general transportation federal administration national the'.split())
+WEEKDAYS = set('monday tuesday wednesday thursday friday saturday sunday'.split())
+SMALL = dict(zip('zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split(), range(21)))
+SMALL.update(dict(zip('thirty forty fifty sixty seventy eighty ninety'.split(), range(30, 100, 10))))
+NUMBER_WORD = r'(?:' + '|'.join([*SMALL, 'hundred', 'thousand']) + r')'
+WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|\s+and\s+)' + NUMBER_WORD + r')*\b', re.I)
 VERB = re.compile(r'\b(?:said|says?|told|according to|alleged|alleges|accused|claims?|claimed|stated|states|wrote|writes|argued|argues|announced|testified|warned|warns)\b', re.I)
 
 
@@ -35,8 +54,25 @@ def normalize(text):
     return ' '.join(text.translate(QUOTES).split())
 
 
+def number_words(match):
+    total = current = 0
+    for word in re.findall(r'[a-z]+', match[0].lower()):
+        if word == 'hundred':
+            current = (current or 1) * 100
+        elif word == 'thousand':
+            total += (current or 1) * 1000
+            current = 0
+        elif word != 'and':
+            current += SMALL[word]
+    return str(total + current)
+
+
+@lru_cache(maxsize=16384)
 def canonical(text):
     text = normalize(text).casefold()
+    text = re.sub(r'(?<!\w)(?:united states|u\.s\.|us)(?!\w)', 'us', text)
+    text = WORD_NUMBERS.sub(number_words, text)
+    text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)
     text = re.sub(r'(?<=\d),(?=\d)', '', text)
     text = re.sub(r'\d+(?:\.\d+)?', lambda m: format(Decimal(m[0]).normalize(), 'f'), text)
@@ -48,15 +84,57 @@ def contains(text, token):
 
 
 def tokens(text):
-    out = [m[0] for m in NUMBER.finditer(text)] + [m[0] for m in DATE.finditer(text)]
-    for m in NAME.finditer(text):
+    text = WORD_NUMBERS.sub(number_words, normalize(text))
+    dates = list(DATE.finditer(text))
+    masked = list(text)
+    for date in dates:
+        masked[date.start():date.end()] = ' ' * len(date[0])
+    masked = ''.join(masked)
+    out = [m[0] for m in NUMBER.finditer(masked)] + [m[0] for m in dates]
+    for m in NAME.finditer(masked):
         prefix = text[:m.start()].rstrip(' \t\n“"(')
         if not prefix or prefix[-1] in '.!?':
             continue
-        for name in re.sub(r"'s\b", '', m[0]).split():
-            if len(name) > 1 and name.casefold() not in STOP:
-                out.append(name)
+        name = re.sub(r"'s\b", '', m[0])
+        if distinctive(name):
+            out.append(name)
     return list(dict.fromkeys(out))
+
+
+def distinctive(name):
+    return [w for w in re.findall(r'\w+', canonical(name))
+            if len(w) > 1 and w not in STOP | TITLES | WEEKDAYS]
+
+
+@lru_cache(maxsize=8192)
+def source_acronyms(source):
+    return {''.join(w[0] for w in re.findall(r'\w+', canonical(run[0])) if w not in STOP)
+            for run in NAME.finditer(source)}
+
+
+def name_supported(name, sources):
+    words = distinctive(name)
+    if not words:
+        return True
+    acronym = ''.join(w[0] for w in re.findall(r'\w+', canonical(name)) if w not in STOP)
+    for source in sources:
+        normalized = canonical(source)
+        if contains(normalized, canonical(name)) or contains(normalized, words[-1]):
+            return True
+        if len(acronym) > 1 and contains(normalized, acronym):
+            return True
+        if len(canonical(name)) > 1 and canonical(name) in source_acronyms(source):
+            return True
+    return False
+
+
+def token_supported(token, support, name_support):
+    if DATE.fullmatch(token):
+        month_day = re.sub(r',?\s+\d{4}$', '', canonical(token))
+        return any(contains(canonical(s), month_day) for s in support)
+    if NUMBER.fullmatch(token):
+        return any(contains(canonical(s), canonical(token)) for s in support)
+    return name_supported(token, name_support)
 
 
 def quoted(text):
@@ -82,8 +160,9 @@ def quote_matches(quote, sources):
 def check_block(block):
     text, claims = block['text'], block['claims']
     passages = [e['passage'] for c in claims for e in c.get('evidence', [])]
-    support = [canonical(s) for s in passages + [c['says'] for c in claims]]
-    missing = [t for t in tokens(text) if not any(contains(s, canonical(t)) for s in support)]
+    support = passages + [c['says'] for c in claims]
+    name_support = support + [c.get('by', '') for c in claims]
+    missing = [t for t in tokens(text) if not token_supported(t, support, name_support)]
     issues = []
     if missing:
         issues.append({'lint': 'tokens', 'missing': missing})
@@ -108,6 +187,8 @@ def candidates(token, texts):
     pattern = re.compile(r'(?<!\w)' + re.escape(needle) + r'(?!\w)')
     for rid, lines in texts.items():
         for line, normalized in lines:
+            if needle not in normalized:
+                continue
             hit = pattern.search(normalized)
             if hit:
                 at = hit.start()

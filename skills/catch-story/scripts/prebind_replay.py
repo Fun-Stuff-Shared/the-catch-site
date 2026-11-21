@@ -25,6 +25,9 @@ def main():
     totals = collections.Counter()
     caught = collections.Counter()
     by_lint = collections.defaultdict(collections.Counter)
+    named_totals = collections.Counter()
+    named_caught = collections.Counter()
+    named_lints = collections.defaultdict(collections.Counter)
     skipped = []
     cache = {}
     pattern = re.compile(r'^- "(.*)" \((beyond|status|scope|actor)(?:, claim ([^)]+))?\):', re.M)
@@ -53,6 +56,12 @@ def main():
                 caught[kind] += 1
             for lint in {i['lint'] for i in issues}:
                 by_lint[lint][kind] += 1
+            if cid:
+                named_totals[kind] += 1
+                if issues:
+                    named_caught[kind] += 1
+                for lint in {i['lint'] for i in issues}:
+                    named_lints[lint][kind] += 1
     bound_count = 0
     fps = collections.Counter()
     runtimes = {}
@@ -72,6 +81,7 @@ def main():
     print(json.dumps({
         'approximations': __doc__, 'historical_totals_by_kind': totals,
         'caught_by_kind': caught, 'caught_by_lint_and_kind': by_lint,
+        'named_claim_findings': {'totals_by_kind': named_totals, 'caught_by_kind': named_caught, 'caught_by_lint_and_kind': named_lints},
         'skipped_reports_missing_historical_ledger': skipped,
         'bound_blocks': bound_count,
         'false_positives': {k: {'blocks': fps[k], 'rate': fps[k] / bound_count if bound_count else None} for k in ('tokens', 'attribution', 'quotes')},
