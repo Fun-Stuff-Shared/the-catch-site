@@ -28,7 +28,7 @@ test("story components render and validate citations without restructuring block
   await writeFile(join(project, "package.json"), JSON.stringify({type: "module"}));
   await writeFile(join(project, "src/data/news-records.json"), JSON.stringify({records: []}));
   await writeFile(join(project, "checks/claims/test--story.json"), JSON.stringify(ledger));
-  await writeFile(join(project, "checks/manifests/test--story.json"), JSON.stringify({event, records: [record], story_sources: [{id: record.id, group: "primary"}]}));
+  await writeFile(join(project, "checks/manifests/test--story.json"), JSON.stringify({event, records: [record, {id: "undated-record", date: "undated"}], story_sources: [{id: record.id, group: "primary"}, {id: "undated-record", group: "primary"}]}));
   const socket = createServer();
   socket.listen(0, "127.0.0.1");
   await once(socket, "listening");
@@ -42,7 +42,7 @@ import KpiStrip from '../components/story/KpiStrip.astro';
 export const prerender = false;
 export async function GET({ request }) {
   const q = new URL(request.url).searchParams;
-  const cites = q.has('empty') ? [] : q.has('omit') ? undefined : q.has('source') ? [{s: ${JSON.stringify(claim.evidence[0].record)}, passage: 'Exact passage'}] : [{c: q.has('invalid') ? 'missing-test-claim' : ${JSON.stringify(claim.id)}}];
+  const cites = q.has('empty') ? [] : q.has('omit') ? undefined : q.has('source') ? [{s: q.has('undated') ? 'undated-record' : ${JSON.stringify(claim.evidence[0].record)}, passage: 'Exact passage'}] : [{c: q.has('invalid') ? 'missing-test-claim' : ${JSON.stringify(claim.id)}}];
   const container = await AstroContainer.create();
   const props = q.has('kpi') ? { kpis: [{value: '0', label: 'Count', cites}] } : {outlet: 'Test outlet', claim: 'Reported claim.', verdict: 'The record.', folded: q.has('folded'), cites};
   try {
@@ -79,6 +79,12 @@ export async function GET({ request }) {
         const source = await fetch(`${endpoint}?${variant}source`).then((r) => r.text());
         assert.match(source, /data-passage="Exact passage"/);
         if (variant !== "kpi&") assert.ok(source.includes(expectedDate), source);
+        if (variant !== "kpi&") {
+          const undated = await fetch(`${endpoint}?${variant}source&undated`);
+          const undatedHtml = await undated.text();
+          assert.equal(undated.status, 200, undatedHtml);
+          assert.doesNotMatch(undatedHtml, /Invalid Date|January/);
+        }
         const invalid = await fetch(`${endpoint}?${variant}invalid`);
         assert.equal(invalid.status, 500);
         assert.match(await invalid.text(), /claim_unknown/);
