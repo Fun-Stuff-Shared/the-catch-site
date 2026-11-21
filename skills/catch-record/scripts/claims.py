@@ -375,7 +375,7 @@ def short_drift(short, says, common=frozenset()):
         scale = SCALES.get((m.group(3) or m.group(4) or "").lower(), 1)
         places = len(m.group(2) or ".") - 1
         # "$12.26 billion" holds where says has the exact $12,263,715,308.36
-        if not ({n, n * scale} & values or (scale > 1 and any(round(v / scale, places) == n for v in values))):
+        if not (n * scale in values or (scale > 1 and any(round(v / scale, places) == n for v in values))):
             missing.append(m.group().strip())
     for w, initial in words(short):
         n = norm(w)
