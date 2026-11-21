@@ -7,27 +7,22 @@
 import { readdirSync, readFileSync, existsSync, statSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { join, posix } from "node:path";
+import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { readState, readPublishedState, eventPath } from "../src/lib/state.mjs";
-import { checkStatePages, checkPageFigures, checkAuthoredSections, readerCopy, emptyFactsSections } from "./check-state-pages.mjs";
-import { storyFindings, citedPassages } from "./story-copy-rules.mjs";
+import { checkStatePages, checkPageFigures, checkAuthoredSections, emptyFactsSections } from "./check-state-pages.mjs";
+import { storyFindings } from "./story-copy-rules.mjs";
 import { checkV2Pages, formatV2Report } from "./check-v2-pages.mjs";
-import { sourceContext } from "../src/lib/evidence-context.mjs";
+import { REQUIRED_STEPS, recordManifestFindings, layerFindings, citationFindings, publicCopyFindings } from './article-checks.mjs';
+import { articleRegistrations } from './article-pages.mjs';
+import { checkArticlePages } from './check-article-pages.mjs';
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const fail = [];
 const stateViews = readPublishedState();
+const articleRoutes = new Set(articleRegistrations(ROOT).map(page => page.route));
 
 // ---- 1. Manifests for story pages -------------------------------------------------
-const REQUIRED_STEPS = [
-  "sources_admitted",        // every source saved under data/sources/, SOURCES.md regenerated
-  "derived_numbers_computed",// each derived figure computed from admitted series, receipt in reader words
-  "outlet_claims_verified",  // each outlet claim compared to the primary record before verdicts
-  "live_elements_guarded",   // every live element carries last-checked date + correction promise
-  "subject_page_updated",    // timeline row + KPI/chart refresh on the standing subject page
-];
-
 const eventsDir = join(ROOT, "src/pages/events");
 const storyPages = [];
 for (const subject of readdirSync(eventsDir)) {
@@ -107,43 +102,7 @@ for (const { subject, story, manifestPath } of storyPages) {
 }
 
 function validateRecordManifest(mPath, manifest) {
-  for (const field of ["subject", "event", "date", "sub_events", "records"]) {
-    if (!(field in manifest)) fail.push(`${mPath}: records manifest requires ${field}`);
-  }
-  if (!Array.isArray(manifest.sub_events) || !Array.isArray(manifest.records)) return;
-  const ids = new Set();
-  for (const record of manifest.records) {
-    for (const field of ["id", "title", "publisher", "date", "url", "pinned_path", "text_path", "text_sha256", "quote", "quote_span_check"]) {
-      if (!record[field]) fail.push(`${mPath}: record needs ${field}`);
-    }
-    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(record.id ?? "")) fail.push(`${mPath}: record id ${record.id} is not a stable slug`);
-    if (!record.capture_run && !record.capture_status) fail.push(`${mPath}: ${record.id} has no registry route: run it through \`capture news\` and record capture_run, or type capture_status with the reason it could not be admitted`);
-    if (record.capture_run && !/^capture-|^quarry-/.test(record.capture_run)) fail.push(`${mPath}: ${record.id} capture_run ${record.capture_run} is not a registry run id`);
-    if (ids.has(record.id)) fail.push(`${mPath}: duplicate record id ${record.id}`);
-    ids.add(record.id);
-    if (record.quote_span_check === "quote_unverified") fail.push(`${mPath}: ${record.id} has an unverified quote`);
-    if (!['byte_exact', 'normalized'].includes(record.quote_span_check)) fail.push(`${mPath}: ${record.id} has an unknown quote check`);
-    for (const key of ["pinned_path", "text_path"]) {
-      const rel = record[key];
-      if (rel && !/^data\/sources\//.test(posix.normalize(rel))) fail.push(`${mPath}: ${record.id} ${key} must be a repo-relative path under data/sources/`);
-    }
-    const textPath = record.text_path && join(ROOT, record.text_path);
-    if (!textPath || !existsSync(textPath)) { fail.push(`${mPath}: ${record.id} text pin is missing`); continue; }
-    const actual = `sha256:${createHash("sha256").update(readFileSync(textPath)).digest("hex")}`;
-    if (actual !== record.text_sha256) fail.push(`${mPath}: ${record.id} text hash does not recompute`);
-    const text = readFileSync(textPath, "utf8");
-    const contains = record.quote_span_check === "byte_exact"
-      ? text.includes(record.quote)
-      : text.replace(/\s+/g, " ").includes(record.quote.replace(/\s+/g, " "));
-    if (!contains) fail.push(`${mPath}: ${record.id} quote is absent from its text pin`);
-  }
-  for (const subEvent of manifest.sub_events) {
-    for (const field of ["id", "date", "label", "section_anchor", "records"]) {
-      if (!(field in subEvent)) fail.push(`${mPath}: sub-event needs ${field}`);
-    }
-    if (!Array.isArray(subEvent.records)) continue;
-    for (const id of subEvent.records) if (!ids.has(id)) fail.push(`${mPath}: sub-event ${subEvent.id} names unknown record ${id}`);
-  }
+  fail.push(...recordManifestFindings(ROOT, mPath, manifest));
 }
 
 const figuresDir = join(ROOT, "src/pages/officials");
@@ -225,6 +184,7 @@ for (const filename of readdirSync(join(ROOT, "checks/manifests")).filter((name)
     if (manifest.state_event_id && stateViews.events.get(manifest.state_event_id)?.status === 'retired') continue;
     if (manifest.subject?.startsWith("officials/")) continue;
     const route = manifest.story || (manifest.event ? `/events/${manifest.event}/` : null);
+    if (articleRoutes.has(route)) continue; // Standing articles are not dated event-index entries.
     if (!route) fail.push(`checks/manifests/${filename}: event index requires story or event route`);
     else indexManifestRoutes.push(route);
   } catch (error) {
@@ -274,12 +234,6 @@ for (const filename of ["fed-rate.mjs", "jobs.mjs", "miami-cargo-crash.mjs", "mi
     if (sourceUnit && !sentence.toLowerCase().includes(sourceUnit.toLowerCase())) fail.push(`standing value ${value.label}: source sentence does not contain unit ${sourceUnit}`);
   }
 }
-const INTERNAL = ["byte-captured", "capture debt", "operator review", "signed export",
-  "retrieval", "automated", "staging", "sha256", "checked into", "admission row hash",
-  "eligible claim", "manifested", "dossier", "extraction pipeline", "staged", "zain review", "w7", "internal review",
-  "cloture", "perfecting nature", "voted not voting", "cloture motion", "quote card", "fact block", "sourced block"];
-const wholeTerm = (term) => new RegExp(`\\b${term.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}\\b`, "i");
-
 const eventsIndex = join(dist, "events", "index.html");
 if (!existsSync(eventsIndex)) fail.push("/events/ index missing from dist");
 else {
@@ -314,19 +268,7 @@ for (const base of SCOPE) {
     const route = `/${rel.replace(/^\//, "").replace(/index\.html$/, "")}`;
     const exclusion = READER_EXCLUSIONS.find((entry) => entry.prefix ? route.startsWith(entry.route) : route === entry.route);
     if (exclusion) continue;
-    const text = readerCopy(html);
-    for (const match of html.matchAll(/data-record="([^"]+)"/g)) {
-      const id = match[1];
-      if (!manifestRecordIds.has(id)) fail.push(`${rel}: record chip names unknown record ${id}`);
-      else if (!html.includes(`href="/records/${id}/"`)) fail.push(`${rel}: record chip ${id} does not link to its record page`);
-    }
-    if (text.includes("—")) fail.push(`${rel}: em dash in public copy`);
-    for (const w of INTERNAL) {
-      if (wholeTerm(w).test(text)) fail.push(`${rel}: internal vocabulary "${w}" in visible text`);
-    }
-    // jammed text-to-inline-tag boundaries (rendered artifact of template line joins)
-    const deEntitied = html.replace(/&[a-zA-Z#0-9]+;/g, " ");
-    if (/[a-zA-Z0-9,.;:%)”]<(?:strong|em|a[ >]|span)/.test(deEntitied)) fail.push(`${rel}: text jammed against an inline tag (missing space)`);
+    fail.push(...publicCopyFindings(html, rel, manifestRecordIds));
   }
 }
 
@@ -346,41 +288,10 @@ if (existsSync(routesFile)) {
 // content element typed, either on itself or via an ancestor. Untyped blocks
 // render in every mode, which is the rot vector. No class exemptions: a block
 // that should always be visible is typed "fact", not skipped.
-const CONTENT_TAGS = new Set(["p", "ul", "ol", "aside", "figure", "table", "details", "blockquote", "h2", "h3"]);
-const VOID_TAGS = new Set(["br", "hr", "img", "input", "meta", "link", "source", "wbr", "col", "embed", "track", "area", "base"]);
 for (const { subject, story } of storyPages) {
   const storyFile = join(dist, "events", subject, story, "index.html");
-  if (!existsSync(storyFile)) continue;
-  const html = readFileSync(storyFile, "utf8");
-  if (!html.includes("mode-switcher")) continue;
-  const mainMatch = html.match(/<main[^>]*>([\s\S]*?)<\/main>/);
-  if (!mainMatch) continue;
-  const main = mainMatch[1];
-  const untyped = [];
-  const stack = []; // { tag, hasLayer }
-  for (const m of main.matchAll(/<(\/?)([a-zA-Z][a-zA-Z0-9-]*)((?:"[^"]*"|'[^']*'|[^"'>])*)>/g)) {
-    const closing = m[1] === "/";
-    const tag = m[2].toLowerCase();
-    const attrs = m[3];
-    if (closing) {
-      for (let i = stack.length - 1; i >= 0; i--) {
-        if (stack[i].tag === tag) { stack.length = i; break; }
-      }
-      continue;
-    }
-    const selfClosing = VOID_TAGS.has(tag) || attrs.endsWith("/");
-    const hasLayer = attrs.includes("data-layer");
-    const covered = hasLayer || stack.some((s) => s.hasLayer);
-    if (CONTENT_TAGS.has(tag) && !covered) {
-      untyped.push(`<${tag}> at offset ${m.index}${attrs.includes("class") ? " " + (attrs.match(/class="([^"]*)"/) || [])[1] : ""}`);
-    }
-    if (!selfClosing) stack.push({ tag, hasLayer });
-  }
-  if (untyped.length > 0) {
-    fail.push(`/events/${subject}/${story}/: ${untyped.length} untyped content element(s) in mode-switched page (layer-typing required): ${untyped.slice(0, 5).join(", ")}`);
-  }
+  if (existsSync(storyFile)) fail.push(...layerFindings(readFileSync(storyFile, "utf8"), `/events/${subject}/${story}/`));
 }
-
 // ---- 3a. Just the facts never shows a heading with nothing under it -----------
 // Just the facts lists each section's cited sentences; a section whose story has words but
 // whose facts view has none was written with citations that do not sit on its sentences.
@@ -402,29 +313,15 @@ for (const { subject, story } of storyPages) {
   fail.push(...storyFindings(readFileSync(storyFile, "utf8"), `/events/${subject}/${story}/`));
 }
 
-// ---- 4. Citation resolution: every #src-N reference must resolve on its page ----
+// Every source reference and saved passage is checked on event and article routes.
+const citationRecords = new Map([...outletById, ...manifestRecords]);
 for (const { subject, story } of storyPages) {
   const storyFile = join(dist, "events", subject, story, "index.html");
-  if (!existsSync(storyFile)) continue;
-  const html = readFileSync(storyFile, "utf8");
-  const refs = [...html.matchAll(/href="#(src-\d+)"/g)].map((m) => m[1]);
-  const ids = new Set([...html.matchAll(/id="(src-\d+)"/g)].map((m) => m[1]));
-  const dangling = [...new Set(refs.filter((r) => !ids.has(r)))];
-  if (dangling.length > 0) {
-    fail.push(`/events/${subject}/${story}/: citation(s) link to nothing: ${dangling.join(", ")}`);
-  }
-  // The evidence reader highlights data-passage inside the record's saved text; a passage
-  // that is not in the text opens a reader with nothing marked.
-  for (const { id, passage } of citedPassages(html)) {
-    const record = manifestRecords.get(id) ?? outletById.get(id);
-    if (!record) { fail.push(`/events/${subject}/${story}/: citation names unknown record ${id}`); continue; }
-    const textPath = record.text_path || record.pinned_path;
-    if (!textPath || !existsSync(join(ROOT, textPath))) { fail.push(`/events/${subject}/${story}/: record ${id} has no saved text to cite`); continue; }
-    if (!sourceContext(readFileSync(join(ROOT, textPath), "utf8"), passage)) fail.push(`/events/${subject}/${story}/: passage "${passage.slice(0, 80)}" is not in the saved text of ${id}`);
-  }
+  if (existsSync(storyFile)) fail.push(...citationFindings(readFileSync(storyFile, "utf8"), `/events/${subject}/${story}/`, citationRecords, ROOT));
 }
 
 const allStateViews = readState();
+fail.push(...checkArticlePages({ root: ROOT, dist }));
 
 for (const id of allStateViews.events.keys()) {
   if (!stateViews.events.has(id) && existsSync(join(dist, eventPath(id), 'index.html'))) fail.push(`Unselected event has a public route: ${id}`);

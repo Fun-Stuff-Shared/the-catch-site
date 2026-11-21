@@ -1,0 +1,52 @@
+## Findings
+
+**1. The origin of the explosive hazard is incomplete.** The Army’s November 18 finding of no significant impact says the lead azide degraded while stored in an ethanol-and-water solution, with temperature fluctuations producing highly sensitive crystals. Army spokesperson Justine Barati told Iowa Starting Line that the material had been stored for roughly 20 years and that a routine inspection in March found the stabilizing liquid had evaporated.
+
+That changes the lineage. The immediate problem was not simply that an explosive became too dangerous to move; it was the deterioration of material held in long-term storage. The inspection and storage history are essential to understanding why an emergency arose in March and remained unresolved eight months later.
+
+Sources: [Army finding of no significant impact](https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78363.pdf); [Iowa Starting Line interview with Army spokesperson](https://iowastartingline.com/news/politics/lead-azide-detonation-iowa/). [DVIDS Media CDN](https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78363.pdf)
+
+**2. The shutdown explanation in Question 1 contradicts the plant’s operating history.** The record's alternative C proposes that detonation was chosen partly to end the plant's shutdown and resume production. But the Army announced that full operations would resume on **March 30**, while disposal of the lead azide remained unresolved. On March 19, plant commander Lt. Col. Daniel Nosse had also described the Army's intention as a multistep plan to *neutralize and dispose* of the material.
+
+This does not eliminate production continuity as a factor: the Army's later assessment expressly considers mission compatibility, timing and operational disruption. It does mean the original March shutdown cannot be treated as an uninterrupted stoppage that November's detonation was needed to end. The earlier reference to neutralization also matters to the history of how the Army's publicly described disposal approach evolved, although it does not establish that chemical neutralization had been selected.
+
+Sources: [March 27 report of the Army's reopening announcement](https://www.kwqc.com/2026/03/27/iowa-army-ammunition-plant-resume-operations/); [March 19 commander statement](https://www.kcrg.com/2026/03/19/iowa-army-ammunition-plant-still-pause-safety-reasons/); [Army environmental assessment](https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78364.pdf). [https://www.kwqc.com](https://www.kwqc.com/2026/03/27/iowa-army-ammunition-plant-resume-operations/)
+
+**3. The notice dispute has stronger direct evidence than the matrix uses, but its conclusion is too broad.** On November 17, Army spokesperson Justine Barati acknowledged that the plume information was new to people outside Middletown, saying she understood why it was shocking to people the Army had not previously told. That is direct, attributable evidence against Telle's claim that the Army had been communicating with the broader modeled impact area since March.
+
+However, the matrix also treats the March commander's statement that there was no immediate danger as evidence ruling out **all** March communication. It cannot do that: describing a hazard as posing no immediate danger does not establish that no contacts with officials or residents occurred. The evidence supports a serious contradiction over when regional exposure information became public, but does not establish the complete history of every stakeholder contact.
+
+Source: [November 17 interview with Army spokesperson](https://iowastartingline.com/news/politics/lead-azide-detonation-iowa/). [Iowa Starting Line](https://iowastartingline.com/news/politics/lead-azide-detonation-iowa/?utm_source=chatgpt.com)
+
+**4. Question 4 conflates publication of plume maps with the permit's broader notification obligation.** The matrix marks the groups' complaint about the absence of a clear public-notice deadline as disproved by the permit's five-day preliminary-map requirement. But the permit separately requires the Army to make reasonable best efforts to notify **all potentially affected members of the public**, with specified health-risk and protective-action information, and to coordinate distribution with local emergency authorities where practicable.
+
+The five-day requirement establishes when a preliminary forecast had to be publicly distributed. It does not, by itself, establish that the wider notification obligations were fulfilled or that people throughout the affected area actually received the information. This distinction changes the assessment of the groups' notice challenge: timely map publication is relevant evidence, not a complete answer to their allegation.
+
+Sources: [EPA emergency permit, Section IV.G and Appendix C](https://www.epa.gov/system/files/documents/2026-11/iaaap-emergency-permit-for-treatment-and-storage-final_redacted.pdf); [Earthjustice emergency motion](https://earthjustice.org/wp-content/uploads/2026/11/2026-11-19-emergency-motion.pdf). [US EPA](https://www.epa.gov/system/files/documents/2026-11/iaaap-emergency-permit-for-treatment-and-storage-final_redacted.pdf)
+
+**5. The legal dispute omits the emergency-permit exception on which EPA's position could rest.** The groups argue that EPA violated a 45-day public-comment requirement. But **40 C.F.R. § 270.61(a)** authorizes temporary emergency permits when the regulator finds imminent and substantial endangerment, notwithstanding other provisions of the permitting rules. Section 270.61(b)(5) nevertheless requires public notice under **§ 124.10(b)**, whose 45-day provision expressly addresses draft RCRA permits.
+
+Those provisions create the central legal interpretation question: how the emergency exception interacts with the cross-referenced notice requirement. The record presents the absence of comments and the groups' objection but omits the strongest apparent regulatory basis for EPA's response. That materially affects the reader's ability to assess the lawsuit's merits; the cited provisions alone do not resolve the dispute.
+
+Sources: [40 C.F.R. § 270.61](https://www.law.cornell.edu/cfr/text/40/270.61); [40 C.F.R. § 124.10](https://www.law.cornell.edu/cfr/text/40/124.10); [Earthjustice motion, pages 22–23](https://earthjustice.org/wp-content/uploads/2026/11/2026-11-19-emergency-motion.pdf). [Legal Information Institute](https://www.law.cornell.edu/cfr/text/40/270.61)
+
+**6. The alternative-treatment evidence lacks a material qualification from its primary source.** Question 1 relies on the groups' characterization of EPA's technology compendium to support MuniRem as an alternative for lead azide. EPA's own introduction cautions that the compendium is only a starting point, not a site-specific feasibility assessment, and that a technology implemented for one waste stream or facility may be unsafe or unavailable at another.
+
+That distinction matters because evidence that MuniRem has treated lead azide elsewhere does **not** establish that it could safely treat these crystallized drums without dangerous handling. It also does not excuse the Army from evaluating potentially applicable alternatives. The unresolved question is whether that site-specific evaluation occurred and what evidence supported its conclusions, not merely whether EPA has listed the technology.
+
+Source: [EPA compendium of alternative treatment technologies](https://www.epa.gov/hwpermitting/compendium-potential-alternative-technologies-open-burning-and-open-detonation). [US EPA](https://www.epa.gov/hwpermitting/compendium-potential-alternative-technologies-open-burning-and-open-detonation)
+
+**7. The post-detonation protections have two material gaps.** First, EPA's permit draws two different deposition thresholds. Areas forecast to receive more than **5 micrograms per square foot** trigger protective advice, but the specific requirement to begin soil and surface-wipe sampling within 24 hours applies to locations forecast to receive at least **100 micrograms per square foot**, subject to the listed property-access conditions. People in the broader advisory area therefore are not automatically covered by that particular rapid-sampling requirement. The record identifies a smaller sampling zone without establishing this 20-fold distinction.
+
+Second, the permit requires **specific cleaning and dust-mitigation procedures** for the higher-deposition area. The Army's November 18 advisory reproduces that requirement as part of its advice to residents but does not actually supply those procedures. This is not proof that no other instructions exist, but it is a concrete, independently verifiable gap in the advisory. Together, these details materially affect what monitoring and practical protection residents can expect after the blast.
+
+Sources: [EPA permit, Section IV.U and Appendices B–C](https://www.epa.gov/system/files/documents/2026-11/iaaap-emergency-permit-for-treatment-and-storage-final_redacted.pdf); [Army November 18 public advisory](https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78366.pdf). [US EPA](https://www.epa.gov/system/files/documents/2026-11/iaaap-emergency-permit-for-treatment-and-storage-final_redacted.pdf)
+
+**8. The postponement leaves the operative evacuation schedule unresolved.** Telle's November 19 announcement specifies **Monday, November 23**, but gives no detonation time. The Army's November 18 advisory specifies an **8 a.m.–2 p.m.** departure window for the original Friday operation and names residents near both **Middletown City Park and Butterfly Park**.
+
+That Friday-specific window cannot be assumed to govern Monday. Consequently, the record establishes that nearby residents had been asked to leave for the original operation, but not the precise hours applicable to the rescheduled one. The additional Butterfly Park reference also means the affected residences should not be understood as confined to the City Park neighborhood alone.
+
+Sources: [Army postponement announcement](https://www.army.mil/article/296926/postponed_lead_azide_detonation); [Army November 18 advisory](https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78366.pdf); [Iowa Public Radio report confirming Monday's time was unspecified](https://www.iowapublicradio.org/ipr-news/2026-11-19/army-postpones-iowa-lead-azide-detonation). [www.army.mil](https://www.army.mil/article/296926/postponed_lead_azide_detonation)
+
+READ: 14 sections  
+RECORD INCOMPLETE

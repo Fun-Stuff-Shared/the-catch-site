@@ -1,4 +1,5 @@
 import { readingReturn } from '../lib/reading-return.mjs';
+import { articleReturnRoutes } from './article-return-routes';
 import { sourceContext } from '../lib/evidence-context.mjs';
 type Source = { title: string; byline: string; quote: string; saved: string | null; href: string; text?: string; excerpt?: boolean };
 const panel = document.querySelector<HTMLDialogElement>('#evidence-reader')!;
@@ -82,7 +83,7 @@ async function openSource(a: HTMLAnchorElement) {
   const details = panel.querySelector<HTMLAnchorElement>('[data-source-page]')!;
   const saved = panel.querySelector<HTMLAnchorElement>('[data-saved-page]')!;
   const sectionId = a.closest('section[id], figure[id]')?.id;
-  const returnTo = readingReturn(new URLSearchParams(location.search).get('from'), location.origin) ?? location.pathname + location.search + (sectionId ? `#${sectionId}` : location.hash);
+  const returnTo = readingReturn(new URLSearchParams(location.search).get('from'), location.origin, articleReturnRoutes) ?? location.pathname + location.search + (sectionId ? `#${sectionId}` : location.hash);
   details.href = `${href}?from=${encodeURIComponent(returnTo)}`; saved.hidden = true;
   if (!panel.open) {
     const top = a.getBoundingClientRect().top;

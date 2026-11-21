@@ -1,0 +1,207 @@
+# Army delays Iowa lead azide detonation to Monday as groups sue: the record
+
+Every fact line ends with its source: the record id and the record's words in square brackets, or `[lead: URL]` for something found but not admitted, with the reason. A fact with neither is not in the record.
+
+## The story
+
+The Army has put off until Monday, November 23, its plan to blow up 68 drums of degraded lead azide, about 9,700 pounds, inside two bunkers at the Iowa Army Ammunition Plant in Middletown, Iowa, a blast that will send up a plume of lead dust whose path depends on Monday's weather.
+People in the plume's path are told to stay indoors with windows shut, which the Army says the dust makes necessary for under an hour and Iowa's health department says for one to two days, and then to wet-clean what children touch; people near two Middletown parks were asked to leave because windows could break.
+The explosive has crystallized and become too sensitive to move, and Acting Army Secretary Adam Telle says Monday is the latest it can wait before colder weather makes it less stable.
+Two environmental groups have asked a federal appeals court to stop it, saying EPA's permit skipped treatments that avoid a plume and protections the law requires, and Telle says the Army warned the area from March, while the Army's own records show the plume maps came five days before the blast.
+Before Monday the Army must publish new plume maps two days ahead and then every hour, the court has not ruled, and within a day after the blast it must start sampling parks and consenting homes where the final map shows the heaviest dust.
+
+## The plan
+
+Headline: Army delays Iowa lead azide blast to Monday as groups ask court to stop it (to be set in stage two; if the page publishes after the blast, the headline is what happened Monday)
+
+What happened (sentence 1; the event, what it means, where it stands):
+1. What was postponed? Two controlled detonations of degraded lead azide at the Iowa Army Ammunition Plant, set for noon Friday, Nov. 20, moved to Monday, Nov. 23 [army-postponement-2026-11-19: "until Monday, November 23"] [army-advisory-2026-11-15: "Two controlled detonations are scheduled at Iowa Army Ammunition Plant on Nov. 20 at approximately noon"]
+2. How much? 68 drums [epa-emergency-permit-2026-11-13: "Quantity: There are 68 drums of Lead Azide,"], 9,700 pounds by the lawmakers' letter and the groups' filing [lawmakers-letter-2026-11-19: "planned detonation of 9,700 pounds of lead azide"]; Earthjustice's release says about 9,500 [ej-press-release-2026-11-19: "There are 68 barrels, amounting to about 9,500 pounds, of lead azide on-site"].
+3. What is lead azide and why blow it up? An explosive used to set off munitions [army-openhouse-faq-2026-10: "Lead azide is a primary explosive used to initiate munitions"]; it sat about 20 years in two bunkers in an ethanol-and-water bath, which a March inspection found had evaporated [isl-barati-2026-11-17: "stored in two earth-covered magazines at the Iowa Army Ammunition Plant for roughly 20 years"] [isl-barati-2026-11-17: "the ethanol and water bath used to keep the lead azide from exploding had evaporated"], and it crystallized and became too shock- and friction-sensitive to move [army-environmental-assessment-2026-11-18: "Lead azide in a crystallized state becomes extremely shock-and-friction sensitive"].
+4. What does the blast do to the people around it? A plume with lead in it that settles on the ground [army-advisory-2026-11-18: "These measures should reduce the amount of lead that migrates from the detonation through the air off the installation"]; residents near Middletown City Park and Butterfly Park asked to leave for window damage, hours for Monday not yet given [army-advisory-2026-11-18: "Butterfly Park in Middletown"] [army-advisory-2026-11-15: "Due to the potential for localized window damage, the U.S. Army recommends that residents in the Middletown City Park neighborhood temporarily vacate the area"].
+5. Who delayed it and who wants it stopped? Telle, on X [telle-x-2026-11-19: "I have directed Army Materiel Command to postpone tomorrow’s controlled detonation"]; the Iowa Environmental Council and Sierra Club asked the Eighth Circuit for a stay [ej-emergency-motion-2026-11-19: "that it grant an administrative stay of the emergency permit"].
+
+The plume (sentence 2): opens on "how far does the lead go, and how much?"
+1. What do the maps draw? Two maps: lead in the air and lead settling on surfaces [army-advisory-maps-2026-11-17: "LEAD SURFACE"].
+2. Are they a forecast of what will happen? They assume all the lead is released [epa-emergency-permit-2026-11-13: "with an Emission Factor of 1.00 to generate air dispersion and dust deposition modeling"]; EPA and the Army agree they are not a prediction of actual conditions [epa-emergency-permit-2026-11-13: "Technical experts from both the EPA and the Army agree that the modeling on which public notifications will be based is not necessarily representative of actual conditions that may result from the treatment activity"].
+3. Where is the edge of the air map? At 0.18 micrograms per cubic meter, which the Army's map labels the detection limit of its air sampling [army-advisory-maps-2026-11-17: "Lead Air Sampling Method Detection Limit"] [epa-emergency-permit-2026-11-13: "Airborne lead shall be modeled to an outer concentration of 0.18"].
+4. How far? The first maps (Nov. 15) ran airborne lead about 100 miles north; the Nov. 17 maps cut it to about 60 [nyt-toxic-cloud-2026-11-19: "Late Wednesday it issued an updated prediction estimating that lead dust could travel up to 60 miles."]; the settling-dust area in the Nov. 17 map runs about 25 miles north toward Wapello (map scale).
+5. Illinois? Illinois EPA said the Nov. 15 modeling could reach Mercer County [idph-iepa-release-2026-11-18: "this could impact Mercer County, Illinois"]; Friday's maps say nothing about Monday [linn-ema-postponed-2026-11-19: "Previous forecast maps should not be relied upon to determine potential impacts associated with the rescheduled operation."], and Monday's are redrawn [epa-emergency-permit-2026-11-13: "No later than 48 hours prior to the treatment activity, the Permittee shall update and publicly distribute the plume impact estimate"].
+6. How much lead in the air? The Army says "well below" the level at which EPA would require protective action [army-advisory-2026-11-18: "may be elevated but well below the level at which EPA would require protective actions be taken"]; its own assessment says the worst case could exceed the first protective-action tier, temporary discomfort, and not the higher two [army-environmental-assessment-2026-11-18: "airborne concentrations of pollutants could exceed the Protective Action Criteria (PAC)-1 level, which may cause temporary and reversible discomfort"]. The one qualifier sits here.
+7. What are residents told to do? Stay in, windows shut, then wet-clean [army-advisory-2026-11-18: "Wet-clean surfaces that may be contacted by children"]; for how long: the Army says the dust lingers no more than an hour [army-advisory-2026-11-15: "dust is expected to linger for no more than one hour"], Iowa's health department says keep windows shut 24 to 48 hours [iowa-hhs-fact-sheet-2026-11-20: "Keep windows and doors closed for 24–48 hours"]; the Army's advisory repeats the permit's line that cleaning instructions "should include specific cleaning and dust mitigation procedures" without giving them [army-advisory-2026-11-18: "Such instructions should include specific cleaning and dust mitigation procedures"]; the spokesperson's version [radioiowa-barati-2026-11-17: "all they have to do is hose that off, and it’s gone"]; a University of Iowa scientist: hosing moves it [intercept-rinse-2026-11-19: "Hosing lead dust off of cars and other surfaces will indeed move it to the soil or into surface water"].
+
+Why now (sentence 3): opens on "why Monday, and why this way?"
+1. Why can't it wait? Cold makes it worse [army-environmental-assessment-2026-11-18: "The crystallization process is especially evident during colder months, when temperatures are below freezing"]; Telle's reason for Monday [army-postponement-2026-11-19: "This will delay the detonation until the latest possible moment prior to a forecasted temperature drop, which would risk further destabilization of the material"].
+2. Why this method? The Army rejected chemical neutralization because it means 7 to 22 days of handling drums [army-environmental-assessment-2026-11-18: "processing an estimated 3 to 10 drums per day (requiring 7 to 22 total operational days)"] and moving drums to the plant's detonation range [army-environmental-assessment-2026-11-18: "it was eliminated from detailed study due to unacceptable risk to human safety"].
+3. Why was it delayed? Telle's statement gives the weather; Reynolds says she asked [kcrg-reynolds-2026-11-19: "Earlier today, I spoke with Acting Secretary of the Army Adam Telle and asked him to delay the planned detonation at the Iowa Army Ammunition Plant. I’m grateful for his decision to do so."]; Grassley gives a different reason [grassley-x-2026-11-19: "The Army is delaying the controlled detonation until Monday to further educate the public."]. Attributed, no cause authored.
+
+The sides (sentence 4): opens on "what are the groups asking the court, and what does the Army say?"
+1. The groups' four claims in their words: the permit lacks the protections the open-detonation rules require [ej-emergency-motion-2026-11-19: "Petitioners challenge: EPA’s failure to incorporate applicable environmental performance standards"]; alternatives [ej-emergency-motion-2026-11-19: "listing MuniRem as a treatment technology that has been implemented for lead azide"] [ej-emergency-motion-2026-11-19: "the Army seemingly failed to consider using mobile treatment units as an alternative to open detonation"]; no comment period [ej-emergency-motion-2026-11-19: "nor provide any opportunity for public comment at all"]; notice [ej-emergency-motion-2026-11-19: "IAAP did not broadly notice its plan or information about the potential scope of the exposure area until November 15, just five days before the scheduled open detonations"].
+2. What the groups concede [ej-press-release-2026-11-19: "It very well could be the case that the U.S. Army has no other safe alternative to disposing of the toxic lead azide"].
+3. The rule behind it: open detonation is for explosives that cannot be safely treated another way [epa-explosive-hazardous-wastes: "which cannot safely be disposed of through other modes of treatment"]. The Army and EPA: in place is the only safe way [epa-public-notice-2026-11-16: "The Army’s evaluation of a range of potential alternatives for the treatment of lead azide culminated in the secretary of the Army selecting in-place, controlled, intentional detonation"]; EPA to The Intercept [intercept-rinse-2026-11-19: "concluded that this material cannot safely be handled or moved and therefore, cannot be treated by any method other than in-place detonation"].
+4. What both agree on: the material is dangerous to leave [ej-press-release-2026-11-19: "It very well could be the case that the U.S. Army has no other safe alternative"] [millermeeks-x-2026-11-18: "Because the material cannot be relocated and no one can say when it might detonate on its own"].
+5. What would settle it: the Army's alternatives analysis (letters of Aug. 12 and Sept. 4, permit application section 1.4) is not public [epa-emergency-permit-2026-11-13: "correspondence dated August 12, 2026, and September 4, 2026, providing its analysis of potential alternatives"].
+
+The Catch (sentence 4, second half): opens on "did the Army warn people from March, as Telle says?"
+1. Telle's claim [army-postponement-2026-11-19: "In March of this year, the Army uncovered degrading Lead Azide housed in bunkers at the installation and immediately began communicating with stakeholders and the public in Middletown and the modeled impact area about the danger it posed"].
+2. March: the plant commander told the public "There is no immediate danger to the public." [kwqc-pause-2026-03-19: "There is no immediate danger to the public."].
+3. October 8: the Army announced the plan, for Middletown, with window damage the warning [army-openhouse-release-2026-10-08: "to address upcoming safety operations to dispose of lead azide via controlled detonation on the installation in November"]. October 15: the Army's own handout answers "Why are we just hearing about this now?" by saying it waited to have a plan [army-openhouse-faq-2026-10: "The Army prioritized developing a scientifically validated, fully coordinated safety plan before engaging the public"]; the open house showed a window-damage area for one neighborhood [army-openhouse-slides-2026-10: "the Army recommends vacating of homes in the Middletown City Park neighborhood"]; the plume model went to EPA on Oct. 23, after it [epa-emergency-permit-2026-11-13: "October 23, 2026: Predictive plume model"].
+4. The modeled impact area first saw a map on Nov. 15, five days out [ej-emergency-motion-2026-11-19: "IAAP did not broadly notice its plan or information about the potential scope of the exposure area until November 15, just five days before the scheduled open detonations"]; the Army's spokesperson, two days later: "I understand that it’s shocking to the people that we haven’t told before" [isl-barati-2026-11-17: "But to the other areas, yeah, it is shocking. It’s new information."]; the governor's office learned Nov. 16 [ipr-safety-maps-2026-11-19: "Reynolds’ office said it learned of the planned detonation Monday after the Army issued a public advisory"]; Illinois EPA was not told [idph-iepa-release-2026-11-18: "Illinois EPA was not notified of the planned detonation by U.S. EPA Region 7"].
+5. Five days is the permit's floor for the first map, and the Army says it met it [isl-barati-2026-11-17: "This is what the permit says that we are to do."] [epa-emergency-permit-2026-11-13: "No later than five (5) days prior to the treatment activity, the Permittee shall develop and publicly distribute a preliminary plume impact estimate"].
+
+What happens next (sentence 5):
+1. Maps: 48 hours before, then hourly from six hours before, then a final map within six hours after [epa-emergency-permit-2026-11-13: "Beginning 6 hours before the treatment activity and every hour thereafter until completion of the treatment activity"] [epa-emergency-permit-2026-11-13: "Within 6 hours of completion of the treatment activity, the Permittee shall update and publicly distribute a final plume impact estimate"].
+2. Weather can call it off [epa-emergency-permit-2026-11-13: "When surface wind speed is less than 1 mile per hour and more than 15 miles per hour"].
+3. Sampling, inside the final map's heaviest-dust zone only [epa-emergency-permit-2026-11-13: "wipe sampling of high-touch surfaces at all parks, public facilities, and private properties to which the Permittee has been granted Rights of Entry"] [epa-emergency-permit-2026-11-13: "within the area of"].
+4. The court: no ruling held as of Nov. 20; the motion asked for one by 10 a.m. Nov. 20 [ej-emergency-motion-2026-11-19: "respectfully request a ruling on this motion by 10:00 AM Central"].
+
+Background held: the Army's 2026 storage permits and their dates; the FONSI's soil cleanup level (industrial 800 mg/kg, which the groups compare with EPA's 200 mg/kg residential level); the 44 soil decision units to 3,000 feet; the "incinerates" line in the October FAQ; the Media Advisory inviting press to watch; the University of Iowa's own monitoring; the lawmakers' Superfund point; Iowa Agriculture livestock guidance; school closings; Duckworth, Sand, Pritzker, Miller-Meeks, Grassley's office statements; the groups' blood-testing ask; the Iowa HHS and Illinois guidance; the Nov. 17 map's shift west; the 2014 Army article on a deteriorating 40-year-old lead azide stockpile at the plant, which prompted a replacement program in 2004 [army-picatinny-2014: "in response to the Department of Defense's concerns over a 40-year-old stockpile of lead azide deteriorating at the Iowa Army Ammunition Plant"] (not shown to be these drums); the July 10 Army release on reclassifying the material as hazardous waste [army-storage-extension-2026-07-10: "it has been reclassified as hazardous waste"]; Iowa HHS's fact sheet still giving Friday's date on Nov. 20.
+
+## The explanations
+
+Question 1: why open detonation in place, rather than another treatment?
+- A. The material is too sensitive to move or handle; every alternative means handling drums; in-place detonation with mitigation is the lowest-risk option (the Army; EPA). If true: an alternatives analysis rejecting each option on handling risk; an explosives-disposal order not to move it. Should not find: a feasible alternative the Army admits rejecting for cost or time.
+- B. Safer treatments exist (chemical neutralization such as MuniRem, mobile treatment units) and EPA accepted the Army's dismissal without data (Iowa Environmental Council, Sierra Club). If true: an alternatives list missing classes of technology, rejections without supporting data. Should not find: a public analysis showing each was evaluated and ruled unsafe with data.
+- C. The method was chosen partly for speed: the Army's mission and timeline (plain alternative; the plant itself reopened March 30 [isl-barati-2026-11-17: "The Army said the plant would reopen March 30 with the volatile lead azide still in storage underground"], so not to end that shutdown). If true: speed or production among the Army's stated criteria. Should not find: criteria that leave time out.
+
+| Evidence | A | B | C |
+|---|---|---|---|
+| Explosives-disposal personnel directed not to move it [army-fonsi-2026-11-18: "issued a formal safety directive to not move the material"] | C | C | |
+| EA rejects chemical neutralization for 7 to 22 days of drum handling [army-environmental-assessment-2026-11-18: "processing an estimated 3 to 10 drums per day (requiring 7 to 22 total operational days)"] | C | C | |
+| EA's eliminated list is neutralization, transport to the detonation range, unmitigated detonation; no mobile treatment unit [ej-emergency-motion-2026-11-19: "the Army seemingly failed to consider using mobile treatment units as an alternative to open detonation"] | | C | |
+| EPA's own compendium lists MuniRem as used on lead azide (per the motion) [ej-emergency-motion-2026-11-19: "listing MuniRem as a treatment technology that has been implemented for lead azide"] | | C | |
+| The Army's alternatives analysis went to EPA in August and September [epa-emergency-permit-2026-11-13: "correspondence dated August 12, 2026, and September 4, 2026, providing its analysis of potential alternatives"] | C | | |
+| Cold makes the material worse [army-environmental-assessment-2026-11-18: "The crystallization process is especially evident during colder months, when temperatures are below freezing"] | C | C | C |
+| Timeline and production are one of the Army's five criteria [army-environmental-assessment-2026-11-18: "Mission Compatibility and Timeline"] | C | C | C |
+
+Survives: A, B and C; none is ruled out. C is not exclusive of A: the Army lists speed as a criterion beside safety, and nothing shows how they were weighed. The analysis that would separate A from B (the August and September letters, permit application section 1.4) is not public, and the court is the forum asked to read it. The cold-weather and criteria rows fit all three and move to Background held. The result turns on the alternatives analysis, and would change if it showed mobile units or MuniRem were evaluated with data (rules out B) or rejected for time (rules out A).
+
+Question 2: how far does the lead go, and how much?
+- A. The maps are a worst case by EPA's order; real release is lower; air levels stay well below EPA's protective-action level; most lead stays on the plant (the Army; EPA). If true: the permit's all-lead assumption; an offsite concentration below a stated level. Should not find: the Army's own modeling above a protective level.
+- B. A lead plume will blanket communities up to 100 miles away; the modeling is incomplete and cleanup inadequate (The Intercept; Earthjustice; University of Iowa researchers). If true: deposition modeled across a 100-mile area. Should not find: deposition confined to a far smaller zone.
+- C. Toxic lead dust heads into northwest Illinois (CBS News Chicago framing). If true: the maps reach Illinois. Should not find: maps entirely in Iowa.
+
+| Evidence | A | B | C |
+|---|---|---|---|
+| Permit orders modeling with all lead released [epa-emergency-permit-2026-11-13: "with an Emission Factor of 1.00 to generate air dispersion and dust deposition modeling"]; both agencies say it is not representative [epa-emergency-permit-2026-11-13: "the realistic airborne release of lead will, in fact, be less than 100 percent due to considerable measures the Permittee will implement to mitigate blast effects"] | C | | |
+| Air map edge at 0.18 µg/m³, the sampling detection limit [army-advisory-maps-2026-11-17: "Lead Air Sampling Method Detection Limit"] | C | I, for "blanketing": the 100-mile reach is airborne lead at the detection limit, not settled dust | |
+| Settled-dust zone in the maps: about 25 miles (Nov. 17) and more than 40 (Nov. 15), by the groups' own count [ej-emergency-motion-2026-11-19: "Both models show dispersion of lead in the air along an area stretching over more than 100 miles"] | | I, for deposition at 100 miles | |
+| EA: worst case could exceed PAC-1 [army-environmental-assessment-2026-11-18: "airborne concentrations of pollutants could exceed the Protective Action Criteria (PAC)-1 level, which may cause temporary and reversible discomfort"] | no bearing until the advisory's "level at which EPA would require protective actions" is named | C | |
+| Army gave The Intercept no offsite concentration [intercept-rinse-2026-11-19: "Asked what concentrations of airborne lead it expected in surrounding communities, the Army did not provide specific projections"] | | C | |
+| Illinois EPA: Nov. 15 modeling could reach Mercer County [idph-iepa-release-2026-11-18: "this could impact Mercer County, Illinois"]; Nov. 17 maps in Iowa only (map) | | | C for Nov. 15; I for Nov. 17 |
+
+Survives: A's core (the maps are a worst case by order) and B's harm concern; neither the size of the real release nor the deposition is measured until sampling. Ruled out: one version of B, The Intercept's "blanketing communities ... up to 100 miles away", by the Army's maps and the groups' own filing, which put settling dust at 25 to 40 miles and the 100 miles on airborne lead at the detection limit. The groups' own claim, airborne lead over 100 miles, stands: it is what the maps drew. A's "well below" stays unproven: the advisory does not name the level it compares with, and the Army's assessment says its worst case could pass the first protective-action tier. C held for the Nov. 15 maps and not the Nov. 17 ones; Monday's maps decide it for Monday. The result turns on the map legend and the permit's emission factor, both read at the primary record.
+
+Question 3: what produced the postponement?
+- A. Weather: Monday is the latest moment before a temperature drop (Telle).
+- B. Requests from officials: Gov. Reynolds asked; eight officials wrote (Reynolds; the letter).
+- C. The lawsuit (implied by timing in coverage).
+- D. To further educate the public (Grassley).
+
+| Evidence | A | B | C | D |
+|---|---|---|---|---|
+| Telle names only the weather [army-postponement-2026-11-19: "This will delay the detonation until the latest possible moment prior to a forecasted temperature drop, which would risk further destabilization of the material"] | C | | | |
+| Reynolds: she asked him that day [kcrg-reynolds-2026-11-19: "Earlier today, I spoke with Acting Secretary of the Army Adam Telle and asked him to delay the planned detonation at the Iowa Army Ammunition Plant. I’m grateful for his decision to do so."] | | C | | |
+| Suit filed hours before the announcement [icd-lawsuit-delay-2026-11-19: "The lawsuit was filed hours before acting Secretary of the Army, Hon. Adam Telle announced the detonation would be postponed"] | | | C | |
+| Grassley's reason [grassley-x-2026-11-19: "The Army is delaying the controlled detonation until Monday to further educate the public."] | | | | C |
+
+Survives: all four; nothing rules any out and the record cannot separate them. The page states each in its speaker's words and authors no cause.
+
+Question 4: did the Army warn the area from March, as Telle says?
+- A. Yes: from March the Army communicated with Middletown and the modeled impact area about the danger (Telle).
+- B. No: communities in both states learned this week; no notice beyond Middletown (the eight officials; the groups).
+- C. The Oct. 15 meeting reached Middletown and communities within 50 miles (Grassley's office; Miller-Meeks).
+- D. Notice came on the permit's own schedule, five days ahead (plain alternative).
+
+| Evidence | A | B | C | D |
+|---|---|---|---|---|
+| March: commander says no immediate danger to the public [kwqc-pause-2026-03-19: "There is no immediate danger to the public."] | I, for "about the danger": the March public message was no immediate danger (it does not show no contact with officials) | C | | |
+| Army spokesperson, Nov. 17, on people outside Middletown [isl-barati-2026-11-17: "I understand that it’s shocking to the people that we haven’t told before"] | I, for the modeled impact area | C | I | C |
+| October handout: waited to have a plan before engaging the public [army-openhouse-faq-2026-10: "The Army prioritized developing a scientifically validated, fully coordinated safety plan before engaging the public"] | I: not immediately | C | | |
+| October open house map was a window-damage area for one neighborhood [army-openhouse-slides-2026-10: "the Army recommends vacating of homes in the Middletown City Park neighborhood"]; plume model reached EPA Oct. 23 [epa-emergency-permit-2026-11-13: "October 23, 2026: Predictive plume model"] | I: no modeled impact area existed for the public before Nov. 15 | C | I, as notice of lead exposure | |
+| First plume maps Nov. 15 [army-advisory-pdf-2026-11-15: "Extensive modeling efforts predict that the potential level of lead particles in the air may be elevated"]; governor's office learned Nov. 16 [ipr-safety-maps-2026-11-19: "Reynolds’ office said it learned of the planned detonation Monday after the Army issued a public advisory"] | I | C | | C |
+| Permit floor: five days [epa-emergency-permit-2026-11-13: "No later than five (5) days prior to the treatment activity, the Permittee shall develop and publicly distribute a preliminary plume impact estimate"] | | C | | C |
+| Groups say the permit set no notice deadline [ej-emergency-motion-2026-11-19: "Yet the permit lacks even a clear deadline by which such notice had to be provided"] | | unproven: the permit sets five days for the first map, and separately requires best efforts to notify everyone potentially affected with no date [epa-emergency-permit-2026-11-13: "make reasonable best efforts to notify all members of the public"] | | C |
+
+Survives: B and D, together: the area got five days, which is what the permit required; Middletown had the plan from Oct. 8 [army-openhouse-release-2026-10-08: "to address upcoming safety operations to dispose of lead azide via controlled detonation on the installation in November"]. Ruled out: A, in both its parts. "Immediately ... about the danger": in March the commander said there was no immediate danger, the plan was first announced Oct. 8, and the Army's October handout says it waited to have a plan before engaging the public. "The modeled impact area": the plume model reached EPA Oct. 23 and the first maps Nov. 15. C survives as a meeting held, not as notice of lead exposure. The result turns on the October handout and the permit's appendix dates, both read at the primary record; it would change if an Army record before Nov. 15 showed plume or lead-exposure information given to communities outside Middletown.
+
+## The event
+
+On Nov. 15, 2026, the Army announced two controlled detonations of degraded lead azide at the Iowa Army Ammunition Plant for about noon on Nov. 20 [army-advisory-2026-11-15: "Two controlled detonations are scheduled at Iowa Army Ammunition Plant on Nov. 20 at approximately noon"]. EPA Region 7 had issued an emergency permit on Nov. 13 authorizing the detonation, effective through Feb. 11, 2027 [epa-public-notice-2026-11-16: "November 13, 2026, through February 11, 2027"]. On Nov. 19, eight Illinois and Iowa officials asked for a delay [lawmakers-letter-2026-11-19: "We call on you to consider delaying this detonation until there is an opportunity to explore safer alternatives"], two environmental groups asked the Eighth Circuit to stay the permit [ej-emergency-motion-2026-11-19: "respectfully request a ruling on this motion by 10:00 AM Central"], and at 6:31 p.m. Central Acting Army Secretary Adam Telle postponed the blast to Monday, Nov. 23 [telle-x-2026-11-19: "Fri Nov 20 00:31:18 +0000 2026"]. The same day the Eighth Circuit granted an administrative stay of the permit until it rules on the motion [ca8-stay-order-2026-11-19: "An administrative stay of the emergency permit issued by the Environmental Protection Agency is granted until the emergency motion for stay is ruled upon by this court."], entered on the docket at 9:04 p.m., zone not stated [ca8-docket-26-3374: "[Entered: 11/19/2026 09:04 PM]"].
+
+## The people it happens to
+
+Middletown's City Park neighborhood, asked to leave from 8 a.m. to 2 p.m. for window damage [army-advisory-2026-11-15: "Due to the potential for localized window damage, the U.S. Army recommends that residents in the Middletown City Park neighborhood temporarily vacate the area"]. Residents under the plume maps, told to stay in and wet-clean [army-advisory-2026-11-18: "Keep windows and doors closed"]. Mediapolis' fire department planned to hose down playgrounds [ap-iowans-brace-2026-11-19: "the local fire department planned to hose down playgrounds that could be covered in lead particles"].
+
+## How it came to this
+
+| Date | What happened | Source |
+|---|---|---|
+| Mar. 12 | Plant paused for a safety review [kwqc-pause-2026-03-19: "The plant paused operations on March 12 for a safety review"] | kwqc-pause-2026-03-19 |
+| Mar. 19 | Commander: no immediate danger [kwqc-pause-2026-03-19: "There is no immediate danger to the public."] | kwqc-pause-2026-03-19 |
+| Apr. | EPA attends Army decision briefing [epa-emergency-permit-2026-11-13: "The EPA’s personnel also attended a briefing for Army decisionmakers in April 2026"] | permit |
+| Jul. 13 | Storage extension; disposal plan being finalized [kcrg-storage-extension-2026-07-13: "while we actively finalize our long-term disposal plans"] | KCRG |
+| Aug. 12, Sept. 4 | Army sends EPA its alternatives analysis [epa-emergency-permit-2026-11-13: "correspondence dated August 12, 2026, and September 4, 2026, providing its analysis of potential alternatives"] | permit |
+| Sept. 29 | Third emergency storage permit [epa-public-notice-storage-2026-09-29: "has issued a third emergency permit to store hazardous waste"] | EPA |
+| Oct. 15 | Open house, nearly 200 people [army-openhouse-recap-2026-10-28: "welcomed nearly 200 residents and community leaders"] | Army |
+| Oct. 23 | Plume model submitted to EPA [epa-emergency-permit-2026-11-13: "October 23, 2026: Predictive plume model"] | permit |
+| Nov. 13 | Emergency permit issued | EPA notice |
+| Nov. 15 | Date and first plume maps published | Army advisory |
+| Nov. 17 | Updated maps | Army maps |
+| Nov. 18 | EA and signed FONSI [army-fonsi-2026-11-18: "Date: 2026.11.18"]; Illinois release | Army; Illinois |
+| Nov. 19 | Letter; suit; Reynolds' call; Telle postpones | as above |
+
+## Why: the stated reasons
+
+The Army: the material cannot be moved [army-advisory-2026-11-18: "The degraded lead azide has been deemed unsafe for relocation."]; neutralization means too much handling [army-environmental-assessment-2026-11-18: "it was eliminated from detailed study due to unacceptable risk to human safety"]; the fall was chosen for reduced thermal cycling [army-environmental-assessment-2026-11-18: "The intent is to execute the detonation during the fall to take advantage of periods of reduced thermal cycling"]. EPA: the crystallized material is more sensitive [epa-public-notice-2026-11-16: "The recrystallization of the stored lead azide has increased the material’s sensitivity to friction and shock"]. Telle on Monday's date [army-postponement-2026-11-19: "This will delay the detonation until the latest possible moment prior to a forecasted temperature drop, which would risk further destabilization of the material"].
+
+## The sides
+
+The groups: as in the plan. The Army and EPA: as in the plan. Miller-Meeks backs the plan [millermeeks-x-2026-11-18: "a controlled detonation is the safest and best option"]. Rob Sand [sand-x-2026-11-19: "If it isn’t as safe as possible to do this tomorrow, it shouldn’t happen tomorrow."]. Both sides agree leaving it carries risk.
+
+## The numbers
+
+| Figure | What it counts | As of | Source |
+|---|---|---|---|
+| 68 drums | lead azide containers | Nov. 13 | epa-emergency-permit-2026-11-13 |
+| 9,700 lb | lead azide weight, per the letter and motion | Nov. 19 | lawmakers-letter-2026-11-19 |
+| 0.18 µg/m³ | edge of the air map; sampling detection limit | Nov. 17 | army-advisory-maps-2026-11-17 |
+| 1.00 | emission factor: all lead assumed released | Nov. 13 | epa-emergency-permit-2026-11-13 |
+| 5 days | permit's minimum lead for the first plume map | Nov. 13 | epa-emergency-permit-2026-11-13 |
+| ~100 mi, ~60 mi | air-map reach Nov. 15 and Nov. 17 | Nov. 19 | nyt-toxic-cloud-2026-11-19 |
+
+## What coverage says that the records do not
+
+- The Intercept: "blanketing communities in lead-containing particles up to 100 miles away" [intercept-rinse-2026-11-19: "blanketing communities in lead-containing particles up to 100 miles away"]. The Army's maps put settling dust at about 25 miles (Nov. 17) and the 100-mile reach on airborne lead at the sampling detection limit [army-advisory-maps-2026-11-17: "Lead Air Sampling Method Detection Limit"], under an all-lead-released assumption.
+- AP: an advisory "to communities as far as 100 miles" [ap-iowans-brace-2026-11-19: "prompted Sunday’s advisory to communities as far as 100 miles (160 kilometers) away"]. The Nov. 15 advisory was a web post and PDF with maps; the groups say no community beyond Middletown got direct notice [ej-emergency-motion-2026-11-19: "it provided no direct notice to any of the other communities within the zone of potential exposure"].
+- KCRG: the court "granted an emergency injunction" [kcrg-stay-2026-11-20: "has granted an emergency injunction to pause the lead azide detonation"]. The order is an administrative stay of EPA's permit pending the motion [ca8-stay-order-2026-11-19: "An administrative stay of the emergency permit"].
+- CBS News Chicago headline on northwest Illinois [cbs-chicago-plume-2026-11-18: "A plume of dust containing toxic lead particles is expected to spread across portions of eastern Iowa and northwest Illinois Friday"]: held for the Nov. 15 map, not the Nov. 17 maps; the article itself says the plume stays west of Chicago [cbs-chicago-plume-2026-11-18: "keeping it well west of the Chicago metropolitan area"].
+
+## What is next
+
+Monday, Nov. 23: the detonation, weather permitting [epa-emergency-permit-2026-11-13: "During an inversion (air temperature increase with increasing altitude)"]. Maps 48 hours before and hourly from six hours before. Final map within six hours after. Sampling within 24 hours. The administrative stay holds until the Eighth Circuit rules on the emergency motion [ca8-stay-order-2026-11-19: "until the emergency motion for stay is ruled upon by this court"]. Briefing on the petition: administrative record due Dec. 29, groups' brief Jan. 12, 2027 [ca8-docket-26-3374: "Administrative Record due 12/29/2026"].
+
+## Reactions
+
+Duckworth [duckworth-x-2026-11-19: "This whole operation was poorly planned and poorly communicated."]. Pritzker [pritzker-x-2026-11-19: "Illinois is monitoring the planned detonation in Iowa, as it could affect Mercer County and surrounding areas."]. Grassley's office before the delay [grassleypress-x-2026-11-19: "On October 15, the Army held a town meeting to speak directly with residents of Middletown and communities within a 50-mile radius regarding the detonation."]. Iowa HHS [iowa-hhs-fact-sheet-2026-11-20: "Iowa HHS was recently made aware of the planned detonation"].
+
+## Unknowns
+
+- Whether the Eighth Circuit has ruled: no order found in coverage or the Earthjustice page as of Nov. 20; the filings' case number line is blank in the copy held.
+- The Army's alternatives analysis and permit application: not public [epa-emergency-permit-2026-11-13: "correspondence dated August 12, 2026, and September 4, 2026, providing its analysis of potential alternatives"].
+- The forecast temperature drop Telle cites: no forecast admitted.
+- Whether the permit's five-day preliminary-forecast floor applies anew to Monday's date: the permit text counts from "the treatment activity"; no EPA statement on the new date found.
+- The hours of the Monday operation and the evacuation window: not in the Nov. 19 postponement.
+- Offsite modeled concentrations in numbers: the EA gives none; the Army gave The Intercept none.
+- Which level the Nov. 18 advisory means by "the level at which EPA would require protective actions": not named in the advisory; the EA's own comparison is with PAC-1, PAC-2 and PAC-3.
+
+## Leads not admitted
+
+- https://x.com/PopBase/status/2123482418221105286: "warned communities with[in] 100 miles"; widely shared, not a record of the event; the 100-mile framing is handled through The Intercept and AP.
+- https://www.motherjones.com/politics/2026/11/army-military-iowa-lead-azide-toxic-detonation-dust-health/: "It Forgot to Warn People", 11,000 pounds; not opened at source by this author.
+- Des Moines Register stories (Barati: "equivalent of living in a mining town for one hour"; no blood-lead testing planned): not captured; paywalled.
+- https://www.wqad.com/...josh-turek-senator-elect-statement: capture returned a consent page, no text.
+- Hinson's post, quoted on a reporter's post: not read at source.
+- Earthjustice motion's "Maquoketa (115 miles north)": distance not checked; not used.
+- Review round 2: 40 C.F.R. 270.61 (emergency permits) as EPA's possible answer on public comment: not admitted; EPA declined comment on the suit and the page does not argue EPA's case for it. EPA's alternatives compendium caveat (a listed technology is not a site-specific finding): noted; the page states MuniRem only as the groups' claim.
+- Review round 1, finding 10 (FONSI unsigned): declined. The captured PDF's text carries the digital signature [army-fonsi-2026-11-18: "Date: 2026.11.18"]; the reviewer's copy rendered without it.
