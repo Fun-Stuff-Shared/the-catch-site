@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -10,10 +11,10 @@ import { event, n, computed, publications, statements, chronology } from "../../
 const fmt = computed.fmt;
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/trump-media-lawsuits/">Trump's media lawsuits</a><span>November 19, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Trump's media lawsuits &middot; November 19, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Trump's media lawsuits" href="/events/trump-media-lawsuits/" published="2026-11-19" updated={event.updated} />
       <h1 data-layer="fact" data-claims="six-book-one-baker book-counts-penguin-authors times-counts-baker ruling-seven-survive">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="anyone-rule" /><Cite c="fpf-statement" /></p>
       <ReadingModes />
@@ -90,12 +91,12 @@ const fmt = computed.fmt;
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>The tax-fraud claims are against the book's authors and publisher, not the Times<Cite c="book-counts-penguin-authors" /></h3>
+              <h3>The tax-fraud claims are against the book's authors and publisher, not the Times</h3>
               <p data-layer="narrative">The Freedom of the Press Foundation's own release said Merryday "declined to dismiss claims that the Times defamed Trump by, according to Merryday, suggesting he and his relatives committed tax crimes."<Cite c="fpf-error" /> Deadline and Insurance Journal's reprint of a Bloomberg story also tied the tax statements to the Times; their words are in the table below.<Cite c="deadline-error" /><Cite c="bloomberg-error" /></p>
               <p data-layer="narrative">The six tax statements are from the book, and the claims over the book name only Penguin, Craig and Buettner.<Cite c="six-book-one-baker" /><Cite c="book-counts-penguin-authors" /> What the Times faces is Baker's sentence about the Mafia, money-laundering rules and stock-trade rules.<Cite c="times-counts-baker" /><Cite c="statement-baker" /></p>
             </li>
             <li>
-              <h3>Other reports dropped claims that go forward<Cite c="craig-buettner-on-both" /></h3>
+              <h3>Other reports dropped claims that go forward</h3>
               <p data-layer="narrative">The Washington Examiner reported that the judge dismissed the claims over Baker's article.<Cite c="examiner-error" /> All three reporters remain in the case, and the claim over Baker's article goes forward against Baker and the Times.<Cite c="craig-buettner-on-both" /><Cite c="times-counts-baker" /></p>
             </li>
           </ol>

@@ -55,9 +55,10 @@
   font-size: var(--text-section);
   letter-spacing: -0.01em;
   margin: 2.8rem 0 0.9rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 2px solid var(--rule-strong);
+  padding: 0;
+  border: 0;
 }
+.story h3 { font: 700 1.15rem/1.3 var(--display); margin: 2rem 0 .7rem; }
 .story section { scroll-margin-top: 4.5rem; }
 .story p, .story li {
   font-family: var(--serif);
@@ -133,8 +134,8 @@
 
 /* ── The Catch ── */
 .the-catch {
-  border-left: 4px solid var(--blue, #1e4f7a);
-  padding: 0.2rem 0 0.2rem 1.2rem;
+  background: var(--surface);
+  padding: 1.2rem;
   margin: 0 0 1.5rem;
 }
 .the-catch .tt-label {
@@ -171,7 +172,7 @@
   font-weight: 700;
   line-height: 1.25;
 }
-.the-catch li:first-child h3 { font-size: var(--text-section); }
+.the-catch li:first-child h3 { font-size: 1.25rem; }
 .the-catch .catch-jump {
   display: block;
   width: fit-content;
@@ -222,7 +223,7 @@
   .story-toc ol {
     flex-direction: column;
     gap: 0;
-    border-left: 1px solid var(--rule);
+      border-left: 0;
   }
   .story-toc li { padding: 0; }
   .toc-label { font-size: 0.62rem; }
@@ -232,7 +233,7 @@
     color: var(--slate);
     padding: 0.35rem 0 0.35rem 0.9rem;
     margin-left: -1px;
-    border-left: 2px solid transparent;
+      border-left: 0;
     line-height: 1.35;
   }
   .story-toc a:hover {
@@ -242,8 +243,8 @@
   }
   .story-toc li.toc-active a {
     color: var(--ink);
-    border-left: 3px solid var(--blue);
-    background: var(--blue-tint);
+      border-left: 0;
+      background: transparent;
     font-weight: 600;
   }
 }
@@ -490,6 +491,7 @@ ol.src-list li {
 
 /* ── Decision timeline ── */
 .decision-timeline {
+  width: 100%;
   border: 1px solid var(--rule);
   margin: 1.2rem 0;
   font-family: var(--sans);
@@ -497,7 +499,7 @@ ol.src-list li {
 }
 .dt-head {
   display: grid;
-  grid-template-columns: 7rem 1fr;
+  grid-template-columns: 7rem minmax(0, 1fr);
   font-family: var(--sans);
   font-size: 0.68rem;
   font-weight: 700;
@@ -510,7 +512,7 @@ ol.src-list li {
 }
 .dt-row {
   display: grid;
-  grid-template-columns: 7rem 1fr;
+  grid-template-columns: 7rem minmax(0, 1fr);
   padding: 0.55rem 0.9rem;
   border-bottom: 1px solid var(--rule);
 }
@@ -531,7 +533,7 @@ ol.src-list li {
 .dt-body a:hover { color: var(--blue); text-decoration: underline; }
 
 /* ── Data table ── */
-.data-table-wrap { margin: 1.2rem 0; overflow-x: auto; }
+.data-table-wrap { margin: 1.2rem 0; max-width: 100%; overflow-x: auto; }
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -649,7 +651,18 @@ ol.src-list li {
 .src-ref-more::before { content: ", "; white-space: pre; color: var(--muted, #6b7280); font-size: 0.72em; }
 
 /* Tables must scroll inside the document sheet, not widen the page canvas. */
-.story-figure:has(> .data-table) { margin-inline: 0; max-width: 100%; overflow-x: auto; }
+.story-figure { margin-inline: 0; max-width: 100%; }
+.story-figure:has(> table) { overflow-x: auto; }
+.story :is(th, td), .dt-date, .dt-body { overflow-wrap: anywhere; }
+@media (max-width: 480px) {
+  /* Dated prose needs the whole panel, not a fixed date column beside it. */
+  .dt-head, .dt-row { grid-template-columns: minmax(0, 1fr); gap: .35rem; padding: .75rem; }
+  .dt-row .dt-date { font-weight: 600; }
+  .story table { width: 100%; table-layout: fixed; }
+  .story :is(th, td) { padding-inline: .4rem; }
+  /* Genuine multi-column comparisons remain locally scrollable. */
+  .story :is(.data-table, .rev-table):has(tr > :nth-child(4)) { min-width: 32rem; }
+}
 .story-figure figcaption { display: flex; flex-direction: column; gap: .2rem; margin-bottom: .6rem; }
 .story-figure figcaption strong { font: 600 .95rem/1.3 var(--sans); }
 .story-figure figcaption span { font: 400 .8rem/1.4 var(--sans); color: var(--slate); }

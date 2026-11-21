@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -13,10 +14,10 @@ const story = "myanmar-genocide-case--2026-11-19-icj-rules-myanmar-committed-gen
 const fmt = computed.fmt;
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/myanmar-genocide-case/">Myanmar's genocide case</a><span>November 19, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Myanmar's genocide case &middot; November 19, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Myanmar's genocide case" href="/events/myanmar-genocide-case/" published="2026-11-19" updated={event.updated} />
       <h1 data-layer="fact" data-claims="ruling-genocide rohingya-group">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="ruling-genocide" /><Cite c="ruling-2017-operations" /><Cite c="majority-intent" /><Cite c="dissent-intent" /></p>
       <ReadingModes />
@@ -110,11 +111,11 @@ const fmt = computed.fmt;
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Myanmar was found responsible, not guilty<Cite c="first-commit" /><Cite c="not-criminal" /></h3>
+              <h3>Myanmar was found responsible, not guilty</h3>
               <p data-layer="narrative">Al Jazeera's headline said the court "convicts Myanmar," and other outlets, including the UN's own news service, wrote "guilty."<Cite c="aj-convicts" /><Cite c="outlets-guilty" /><Cite c="un-news-guilty" /> The court says a country's responsibilities under the Genocide Convention are "not of a criminal nature."<Cite c="not-criminal" /> It is not a criminal court and cannot send military officials to prison.<Cite c="not-criminal-court" /> Separately, the prosecutor of the International Criminal Court applied in 2024 for a warrant to arrest Min Aung Hlaing, alleging the crimes against humanity of deportation and persecution; no charges have been confirmed.<Cite c="icc-application" /> Amnesty International said on Nov. 19 that no decision on that request had been made public.<Cite c="icc-no-decision" /></p>
             </li>
             <li>
-              <h3>Not the first country found to break the Genocide Convention<Cite c="serbia-2007-prevent" /></h3>
+              <h3>Not the first country found to break the Genocide Convention</h3>
               <p data-layer="narrative">The New York Times wrote that the ruling makes Myanmar "the first state to be held to account for violating the 1948 Genocide Convention."<Cite c="nyt-first" /> In 2007 the same court found that Serbia violated the convention by failing to prevent the genocide at Srebrenica, while finding that Serbia did not commit genocide itself.<Cite c="serbia-2007-prevent" /><Cite c="serbia-2007-not-committed" /> What is new on Nov. 19 is that the court found a country itself committed genocide.<Cite c="first-commit" /></p>
             </li>
           </ol>

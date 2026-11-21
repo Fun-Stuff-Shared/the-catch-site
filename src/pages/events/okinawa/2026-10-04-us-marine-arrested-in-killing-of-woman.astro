@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -16,10 +17,10 @@ if (!state) throw new Error("Missing publication selection: event-okinawa-2026-1
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/okinawa/">Okinawa</a><span>October 4, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Okinawa &middot; October 4, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Okinawa" href="/events/okinawa/" published="2026-10-04" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
       <ReadingModes />

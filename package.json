@@ -8,7 +8,8 @@
     "build": "node scripts/build.mjs",
     "build:news-records": "node scripts/build-news-records.mjs",
     "check": "node scripts/check-events.mjs",
-    "test:design": "node --test scripts/theme-test.mjs",
+    "test:design": "node --test scripts/theme-test.mjs scripts/design-rules-test.mjs",
+    "check:design-layout": "node scripts/check-design-layout.mjs",
     "dev": "astro dev",
     "test:state": "node --test scripts/state-fixture-test.mjs scripts/v2-test.mjs",
     "test:copy": "node --test scripts/story-copy-rules-test.mjs",
@@ -28,6 +29,7 @@
     "astro": "^7.0.9",
     "aws4fetch": "^1.0.20",
     "parse5": "^7.3.0",
+    "playwright": "1.58.2",
     "sharp": "0.35.3"
   }
 }

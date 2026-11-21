@@ -6,7 +6,6 @@ a, button, input, summary { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
 .sheet { width: calc(100% - 2 * var(--sheet-margin)); max-width: var(--sheet-max); min-height: 100vh; margin-inline: auto; border: 1px solid var(--sheet-edge); display: flex; flex-direction: column; }
 .sheet > * { flex: 0 0 auto; }
-.sheet > .content, .sheet > main { border-left: 3px solid var(--brand-highlight); }
 .band-inner { padding: 1.3rem var(--gutter); align-items: center; gap: 2rem; }
 .wordmark { font-size: 2rem; line-height: 1; }
 .wordmark-highlight { display: inline-block; padding: .12em .16em .02em; background: var(--brand-highlight); color: var(--brand-ink); }
@@ -88,8 +87,13 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
 .series-stories { margin: 2.5rem 0; border-top: 2px solid var(--ink); }
 .series-stories > .section-title { font: 600 .75rem/1.4 var(--sans); margin: 1.3rem 0 0; border: 0; padding: 0; }
 .series-stories .story-link h2 { border: 0; }
-.src-ref a { border-radius: 2px; padding: .15rem 0; text-decoration: none; }
+.src-ref { font-size: .65em; line-height: 0; vertical-align: baseline; position: relative; top: -.5em; }
+.src-ref a { border-radius: 2px; padding: .2rem .12rem; text-decoration: none; }
 .src-ref a:hover, .src-ref a:focus-visible { background: var(--blue-tint); }
+@media (pointer: coarse) {
+  /* Inline padding enlarges touch targets without changing the line box. */
+  .src-ref a { padding: 9px 10px; }
+}
 .evidence-preview { position: fixed; inset: auto; margin: 0; width: 22rem; max-width: calc(100vw - 2rem); padding: 1rem 1.2rem; border: 1px solid var(--rule); border-top: 3px solid var(--blue); background: var(--paper); color: var(--ink); box-shadow: 0 6px 24px #14181b20; }
 .preview-title { font: 600 .78rem/1.4 var(--sans); margin: 0 0 .6rem; }
 .preview-copy { font: 1rem/1.4 var(--serif); margin: 0 0 .65rem; }
@@ -435,13 +439,14 @@ nav.story-toc { background: var(--paper); padding: 0; }
     background: transparent;
     padding: 0;
   }
-  .story nav.story-toc .toc-disclosure > summary { padding: 0 .65rem 1rem; min-height: 0; color: var(--ink); font-size: .8rem; border-bottom: 0; }
+  .story nav.story-toc .toc-disclosure > summary { padding: 0 .65rem 1rem; min-height: 0; color: var(--ink); font-size: .8rem; border-bottom: 0; cursor: default; }
+  .story nav.story-toc .toc-disclosure > summary::after { display: none; }
   .toc-current { display: none; }
   .story nav.story-toc ol { max-height: none; padding: .5rem 0 0; border-left: 0; }
   .story nav.story-toc li + li { margin-top: .15rem; }
-  .story nav.story-toc a { padding: .6rem .65rem; margin: 0; font-size: .82rem; line-height: 1.5; color: var(--slate); border-left: 2px solid transparent; }
-  .story nav.story-toc a:hover { color: var(--ink); background: transparent; border-left-color: var(--rule); }
-  .story nav.story-toc li.toc-active a { color: var(--ink); background: transparent; border-left: 2px solid var(--ink); font-weight: 600; }
+  .story nav.story-toc a { padding: .6rem .65rem; margin: 0; font-size: .82rem; line-height: 1.5; color: var(--slate); border: 0; }
+  .story nav.story-toc a:hover { color: var(--ink); background: transparent; text-decoration: underline; }
+  .story nav.story-toc li.toc-active a { color: var(--ink); background: transparent; border: 0; font-weight: 700; }
   .story section[id], .story aside[id] { scroll-margin-top: 70px; }
 }
 @media (max-width: 640px) {
@@ -475,11 +480,6 @@ nav.story-toc { background: var(--paper); padding: 0; }
 [data-v2-statement] blockquote { margin: 0 0 .35rem; padding-left: 1rem; border-left: 2px solid var(--rule); }
 .record-ledger .ledger-row[data-v2-claim] { display: block; }
 
-/* A native button cycles themes; its name announces the current and next choice. */
-.theme-control { display: flex; flex: none; }
-.theme-control button { display: inline-flex; align-items: center; gap: .35rem; min-height: 44px; min-width: 44px; padding: .25rem .2rem; border: 0; background: transparent; color: var(--band-ink); font: .75rem var(--mono); }
-.theme-control button:hover { color: var(--brand-highlight); }
-.theme-control [data-theme-label] { min-width: 3.2em; text-align: left; }
 .band :focus-visible, .colophon :focus-visible { outline-color: var(--brand-highlight); }
 ::selection { background: var(--highlight); color: var(--on-highlight); }
 input::placeholder { color: var(--slate); opacity: 1; }

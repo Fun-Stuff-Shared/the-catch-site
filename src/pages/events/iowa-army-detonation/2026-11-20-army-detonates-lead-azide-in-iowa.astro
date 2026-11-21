@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -10,10 +11,10 @@ import { event, n, computed, maps, warnings } from "../../../data/iowa-army-deto
 const fmt = computed.fmt;
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iowa-army-detonation/">Iowa Army detonation</a><span>November 20, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Iowa Army detonation &middot; November 20, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Iowa Army detonation" href="/events/iowa-army-detonation/" published="2026-11-20" updated={event.updated} />
       <h1 data-layer="fact" data-claims="stay-granted postponed-to-monday lead-azide-what">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="stay-granted" /><Cite c="suit-stay-ask" /><Cite c="sixty-eight-drums" /><Cite c="plume-contains-lead" /></p>
       <ReadingModes />
@@ -91,7 +92,7 @@ const fmt = computed.fmt;
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>When did the Army publish its plume maps?<Cite c="first-maps-nov15" /></h3>
+              <h3>When did the Army publish its plume maps?</h3>
               <p data-layer="narrative">Postponing the blast, Telle wrote:</p>
               <QuoteCard speaker="Adam Telle, acting secretary of the Army" when="Nov. 19, 2026" where="Post on X, republished by the Army">
                 <p>"In March of this year, the Army uncovered degrading Lead Azide housed in bunkers at the installation and immediately began communicating with stakeholders and the public in Middletown and the modeled impact area about the danger it posed."<Cite c="telle-immediately" /></p>

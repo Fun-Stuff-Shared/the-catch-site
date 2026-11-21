@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -14,10 +15,10 @@ const pts = (m) => (m > 0 ? `R+${m.toFixed(1)}` : m < 0 ? `D+${(-m).toFixed(1)}`
 const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterms-2026/">2026 midterms</a><span>November 3, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">2026 midterms &middot; November 3, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="2026 midterms" href="/events/midterms-2026/" published="2026-11-03" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dems-win-both-chambers" /></p>
       <ReadingModes />

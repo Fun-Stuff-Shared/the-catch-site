@@ -5,83 +5,49 @@ import { runInNewContext } from 'node:vm';
 
 const script = readFileSync(new URL('../public/assets/theme.js', import.meta.url), 'utf8');
 function page({ saved = null, dark = false, blocked = false } = {}) {
-  const events = {}, deviceEvents = {}, controlEvents = {};
+  const deviceEvents = {};
   const storage = new Map(saved === null ? [] : [['catch-theme', saved]]);
   const system = { matches: dark, addEventListener: (type, fn) => { deviceEvents[type] = fn; } };
-  const wrapper = { hidden: true };
-  const label = { textContent: '' }, attributes = {};
-  const control = { value: '', closest: () => wrapper, querySelector: () => label, setAttribute: (name, value) => { attributes[name] = value; }, addEventListener: (type, fn) => { controlEvents[type] = fn; } };
-  const document = { documentElement: { dataset: {} }, getElementById: () => control, addEventListener: (type, fn) => { events[type] = fn; } };
+  const document = { documentElement: { dataset: {} } };
   const localStorage = {
     getItem: key => { if (blocked) throw new Error('Storage blocked'); return storage.get(key) ?? null; },
     setItem: (key, value) => { if (blocked) throw new Error('Storage blocked'); storage.set(key, value); },
     removeItem: key => { if (blocked) throw new Error('Storage blocked'); storage.delete(key); },
   };
-  runInNewContext(script, { document, localStorage, window: { matchMedia: () => system, addEventListener: (type, fn) => { events[type] = fn; } } });
+  runInNewContext(script, { document, localStorage, window: { matchMedia: () => system } });
   const theme = () => document.documentElement.dataset.theme;
   const bootTheme = theme();
-  events.DOMContentLoaded();
-  return { theme, bootTheme, control, wrapper, storage, label, attributes,
-    click() { controlEvents.click(); },
-    choose(value) {
-      for (let i = 0; i < 3 && control.value !== value; i++) controlEvents.click();
-      assert.equal(control.value, value);
-    },
+  return { theme, bootTheme, storage,
     device(value) { system.matches = value; deviceEvents.change(); },
-    remote(key, newValue) { events.storage({ key, newValue }); },
   };
 }
 
-test('first paint follows the device; Auto keeps following later device changes', () => {
+test('first paint follows the device and keeps following later device changes', () => {
   const p = page({ dark: true });
   assert.equal(p.bootTheme, 'dark');
-  assert.equal(p.control.value, 'system');
-  assert.equal(p.wrapper.hidden, false);
   p.device(false);
   assert.equal(p.theme(), 'light');
+  p.device(true);
+  assert.equal(p.theme(), 'dark');
 });
-test('the theme button cycles Auto, Light and Dark with a current-state label and next-choice name', () => {
-  const p = page({ dark: true });
-  for (const [label, next] of [['Auto', 'Light'], ['Light', 'Dark'], ['Dark', 'Auto']]) {
-    assert.equal(p.label.textContent, label);
-    assert.match(p.attributes['aria-label'], new RegExp(`Color theme: ${label}.*Switch to ${next}`));
-    p.click();
+test('legacy saved choices cannot override the device or change first paint', () => {
+  for (const saved of ['light', 'dark', 'system', 'invalid']) {
+    for (const dark of [true, false]) {
+      const p = page({ saved, dark });
+      assert.equal(p.bootTheme, dark ? 'dark' : 'light');
+      p.device(!dark);
+      assert.equal(p.theme(), dark ? 'light' : 'dark');
+      assert.equal(p.storage.get('catch-theme'), saved);
+    }
   }
-  assert.equal(p.control.value, 'system');
-  assert.equal(p.theme(), 'dark');
-  assert.equal(p.storage.has('catch-theme'), false);
 });
-test('a saved choice wins before paint, persists, and ignores device changes', () => {
-  const p = page({ saved: 'light', dark: true });
-  assert.equal(p.bootTheme, 'light');
-  p.choose('dark');
-  assert.equal(p.storage.get('catch-theme'), 'dark');
-  p.device(false);
-  assert.equal(p.theme(), 'dark');
-  p.choose('system');
-  assert.equal(p.storage.has('catch-theme'), false);
-  assert.equal(p.theme(), 'light');
-  p.device(true);
-  assert.equal(p.theme(), 'dark');
-});
-test('blocked storage still permits selection; invalid saved values follow the device', () => {
+test('the system theme needs neither storage nor a masthead control', () => {
   const p = page({ blocked: true, dark: true });
-  p.choose('light');
+  assert.equal(p.bootTheme, 'dark');
+  p.device(false);
   assert.equal(p.theme(), 'light');
-  p.device(true);
-  assert.equal(p.theme(), 'light');
-  assert.equal(page({ saved: 'invalid', dark: true }).theme(), 'dark');
-});
-test('another tab updates the control and theme; unrelated storage does not', () => {
-  const p = page();
-  p.remote('unrelated', 'dark');
-  assert.equal(p.theme(), 'light');
-  p.remote('catch-theme', 'dark');
-  assert.equal(p.theme(), 'dark');
-  assert.equal(p.control.value, 'dark');
-  p.remote(null, null);
-  assert.equal(p.theme(), 'light');
-  assert.equal(p.control.value, 'system');
+  const layout = readFileSync(new URL('../src/layouts/BaseLayout.astro', import.meta.url), 'utf8');
+  assert.doesNotMatch(layout, /id="color-theme"|class="theme-control"/);
 });
 
 const css = readFileSync(new URL('../public/assets/tokens.css', import.meta.url), 'utf8');

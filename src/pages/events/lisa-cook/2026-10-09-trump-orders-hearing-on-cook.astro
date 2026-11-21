@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -17,10 +18,10 @@ if (!state) throw new Error("Missing publication selection: event-lisa-cook-2026
 if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 301);
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/lisa-cook/">Lisa Cook and the Fed</a><span>October 9, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Lisa Cook and the Fed &middot; October 9, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Lisa Cook and the Fed" href="/events/lisa-cook/" published="2026-10-09" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
       <ReadingModes />

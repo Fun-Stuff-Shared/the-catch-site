@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EventRecordContext from "../../../components/EventRecordContext.astro";
 import "../../../styles/story.css";
@@ -29,10 +30,10 @@ const path = "M" + pts.join(" L");
 const endX = x("2026-07-29"), endY = y(prev);
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/fed-rate/">The federal funds rate</a><span>July 29, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story">
-      <p class="story-kicker"><a href="/events/fed-rate/">The federal funds rate</a> &middot; July 2026 decision</p>
+      <StoryKicker series="The federal funds rate" href="/events/fed-rate/" published="2026-07-29" />
       <h1>{event.title}</h1>
       <p class="story-dek">{event.dek}</p>
 
