@@ -30,7 +30,7 @@ if (process.argv.at(-1) === 'plain') {
     process.exitCode = 2;
 }
 `, { mode: 0o755 });
-    const result = spawnSync('zsh', [script, 'subject--story', 'A public hearing took place.'], {
+    const result = spawnSync('zsh', ['-f', script, 'subject--story', 'A public hearing took place.'], {
         cwd,
         encoding: 'utf8',
         env: { ...process.env, PATH: [cwd, process.env.PATH].join(delimiter), GROK_LENGTH_SALVAGE: '' },
