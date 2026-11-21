@@ -135,6 +135,29 @@ assert len(match_previous(twins, {"exact": previous["exact"]}, {"a", "b"})) == 1
   assert.equal(result.status, 0, result.stderr);
 });
 
+test('repeat matching gives a prior finding to the strongest revision, not the first block', (t) => {
+  const { root } = fixture(t);
+  const result = spawnSync('python3', ['-c', `
+import sys
+from difflib import SequenceMatcher
+sys.path.insert(0, ${JSON.stringify(dirname(script))})
+from bind import REPEAT_THRESHOLD, match_previous
+text = "An agency announced a Monday launch."
+previous = {"prior": {"text": text, "claims": ["date"]}}
+blocks = [
+    {"hash": "a", "text": "An agency offered a Tuesday launch.", "claims": [{"id": "date"}]},
+    {"hash": "b", "text": "An agency announced a Monday launch soon.", "claims": [{"id": "date"}]},
+]
+weak, strong = [SequenceMatcher(None, text, b["text"]).ratio() for b in blocks]
+assert REPEAT_THRESHOLD <= weak < strong
+matched = match_previous(blocks, previous, {"a", "b"})
+assert matched == {"b": "prior"}, matched
+assert match_previous(list(reversed(blocks)), previous, {"a", "b"}) == matched
+`], { cwd: root, encoding: 'utf8', env: { ...process.env, HOME: root,
+    GIT_CONFIG_GLOBAL: join(root, '.gitconfig') } });
+  assert.equal(result.status, 0, result.stderr);
+});
+
 for (const extension of ['astro', 'mdx']) {
   test(`bind accepts a fresh ${extension} story with no changed blocks`, (t) => {
     const { root, run } = fixture(t, extension);
