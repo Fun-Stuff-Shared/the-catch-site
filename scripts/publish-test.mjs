@@ -80,3 +80,44 @@ test('--no-push keeps the local fast-forward without pushing', (t) => {
   assert.notEqual(f.git('rev-parse', 'main'), f.before);
   assert.equal(f.git('rev-parse', 'origin/main'), f.before);
 });
+
+const patterns = [
+  ['Mapbox', 'pk.' + 'a'.repeat(30) + '.' + 'b'.repeat(22)],
+  ['Mapbox', 'sk.' + 'a'.repeat(30) + '.' + 'b'.repeat(22)],
+  ['AWS', 'AKIA' + 'A'.repeat(16)],
+  ['GitHub', 'ghp_' + 'a'.repeat(36)],
+  ['GitHub', 'github_pat_' + 'a'.repeat(40)],
+  ['Slack', 'xoxb-' + '1234567890-'.repeat(2) + 'a'.repeat(24)],
+  ['Google', 'AIza' + 'a'.repeat(35)],
+  ['Stripe', 'sk_live_' + 'a'.repeat(24)],
+  ['private key', '-----BEGIN RSA PRIVATE KEY-----'],
+];
+
+for (const [pattern, token] of patterns) {
+  test(`source scan blocks ${pattern} before merging without logging source bytes`, (t) => {
+    const f = fixture(t, { files: { 'data/sources/capture file.txt': `source\n${token}\n` } });
+    const r = f.run();
+    assert.notEqual(r.status, 0);
+    assert.equal(f.git('rev-parse', 'main'), f.before);
+    assert.equal(f.git('branch', '--list', 'publish-*'), '');
+    assert.match(r.stderr, /data\/sources\/capture file.txt:2:/);
+    assert.ok(r.stderr.includes(pattern), r.stderr);
+    assert.ok(!r.stderr.includes(token), r.stderr);
+    assert.match(r.stderr, /CATCH_SOURCE_SCAN_ALLOW=1/);
+  });
+}
+
+test('source scan override reports modified capture and preserves exact bytes', (t) => {
+  const capture = `first\n${patterns[0][1]}\r\n`;
+  const f = fixture(t, { files: { 'data/sources/existing.txt': capture } });
+  const r = f.run([], { CATCH_SOURCE_SCAN_ALLOW: '1' });
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stderr, /data\/sources\/existing.txt:2: Mapbox/);
+  assert.equal(readFileSync(join(f.site, 'data/sources/existing.txt'), 'utf8'), capture);
+});
+
+test('source scan ignores files outside sources and accepts clean changed captures', (t) => {
+  const f = fixture(t, { files: { 'outside.txt': patterns[0][1], 'data/sources/clean.txt': 'ordinary text\n' } });
+  const r = f.run();
+  assert.equal(r.status, 0, r.stderr);
+});

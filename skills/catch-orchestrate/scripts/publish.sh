@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 # usage: publish.sh [--merge <branch>]... [--no-push] <story-id>...
 # CATCH_BASE names the branch to publish to (main); CATCH_LIVE the site that branch serves.
+# Incoming data/sources/ captures are scanned before merging. CATCH_SOURCE_SCAN_ALLOW=1
+# allows reviewed public tokens to remain byte-exact; findings are still reported.
+# This heuristic is not GitHub push protection approval and never edits source bytes.
 set -euo pipefail
 here=${0:A:h}
 site=/Volumes/4/GitHub/the-catch-site
@@ -17,6 +20,41 @@ done
 (( ${#stories} )) || { print "name at least one story id" >&2; exit 2 }
 git() { command git -c core.hooksPath=/dev/null "$@" }
 for b in $merges; do git -C $site rev-parse -q --verify "$b^{commit}" >/dev/null || { print "no branch $b" >&2; exit 2 }; done
+
+python3 -I - $site $base $merges <<'EOF'
+import os, re, subprocess, sys
+
+site, base, *branches = sys.argv[1:]
+def git(*args):
+    return subprocess.check_output(['git', '-C', site, *args])
+
+patterns = [(name, re.compile(pattern)) for name, pattern in [
+    ('Mapbox', rb'\b[ps]k\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{10,}'),
+    ('AWS', rb'\b(?:AKIA|ASIA)[A-Z0-9]{16}\b'),
+    ('GitHub', rb'\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})'),
+    ('Slack', rb'\bxox[a-z]-[A-Za-z0-9-]{10,}'),
+    ('Google', rb'\bAIza[A-Za-z0-9_-]{35}'),
+    ('Stripe', rb'\b[rs]k_live_[A-Za-z0-9]{16,}'),
+    ('private key', rb'-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----'),
+]]
+found = False
+for branch in branches:
+    paths = git('diff', '--name-only', '-z', '--diff-filter=ACMR', f'{base}...{branch}', '--', 'data/sources/')
+    for path in paths.split(b'\0'):
+        if not path:
+            continue
+        name = os.fsdecode(path)
+        content = git('show', f'{branch}:{name}')
+        for number, line in enumerate(content.split(b'\n'), 1):
+            for label, pattern in patterns:
+                if pattern.search(line):
+                    found = True
+                    print(f'{name}:{number}: {label} pattern (branch {branch})', file=sys.stderr)
+if found:
+    if os.environ.get('CATCH_SOURCE_SCAN_ALLOW') != '1':
+        sys.exit('Source key scan stopped publication before merge. Review findings; for public tokens that must remain byte-exact, rerun with CATCH_SOURCE_SCAN_ALLOW=1. No source bytes were changed. GitHub may still reject the push.')
+    print('CATCH_SOURCE_SCAN_ALLOW=1: continuing with reported source patterns unchanged; GitHub may still reject the push.', file=sys.stderr)
+EOF
 
 wt=$site/.worktrees/publish-$(date +%Y%m%d-%H%M%S)
 git -C $site worktree add -q $wt -b ${wt:t} $base
