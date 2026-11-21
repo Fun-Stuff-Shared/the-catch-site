@@ -94,9 +94,11 @@ def computations(claim, records=None, texts=None):
                 publication_dates.update(dates(published))
 
         def reference_date(choices, interval):
-            if re.match(r"\s+publication\b", context[interval.end():], re.I):
+            reference = re.sub(r"^\s*(?:(?:the|a|an|scheduled|proposed|original|revised|expected|final|effective)\s+)*",
+                               "", context[interval.end():], flags=re.I)
+            if re.match(r"publication\b", reference, re.I):
                 return next(iter(publication_dates)) if len(publication_dates) == 1 else None
-            token = DATE.match(context[interval.end():].lstrip())
+            token = DATE.match(reference)
             if token is None:
                 return None
             parsed = dates(token[0], choices[0].year)
