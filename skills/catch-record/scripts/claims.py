@@ -436,8 +436,9 @@ def folded(text):
             if out and out[-1] == " ":
                 continue
             ch = " "
-        out.append(ch.translate(QUOTES).lower())
-        where.append(i)
+        for c in ch.translate(QUOTES).lower():
+            out.append(c)
+            where.append(i)
     return "".join(out), where
 
 
