@@ -5,6 +5,14 @@
 # allows reviewed public tokens to remain byte-exact; findings are still reported.
 # This heuristic is not GitHub push protection approval and never edits source bytes.
 set -euo pipefail
+publish_script=$0 publish_command=initialization publish_line=$LINENO
+trap 'publish_command=$ZSH_DEBUG_CMD publish_line=$LINENO' DEBUG
+TRAPEXIT() {
+  local rc=$?
+  if (( rc )); then
+    print -ru2 -- "$publish_script:$publish_line: failed (status $rc): $publish_command"
+  fi
+}
 here=${0:A:h}
 site=/Volumes/4/GitHub/the-catch-site
 base=${CATCH_BASE:-main}

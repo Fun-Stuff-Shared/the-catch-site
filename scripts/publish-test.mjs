@@ -190,3 +190,12 @@ for (const hostile of ['shell', 'git']) test(`publish fixtures ignore hostile us
   assert.equal(r.status, 0, r.stdout + r.stderr);
   assert.match(r.stdout, /pass 1/);
 });
+
+test('an otherwise silent failing step reports its command, line and exit status', (t) => {
+  const f = fixture(t);
+  writeFileSync(join(f.bin, 'npm'), '#!/bin/sh\nexit 23\n', { mode: 0o755 });
+  const r = f.run();
+  assert.equal(r.status, 23);
+  assert.match(r.stderr, /publish\.sh:\d+:.*status 23.*npm ci/);
+  assert.equal(f.git('rev-parse', 'main'), f.before);
+});
