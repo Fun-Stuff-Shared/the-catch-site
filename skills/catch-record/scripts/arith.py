@@ -160,6 +160,21 @@ def computations(claim, records=None, texts=None):
 
     # Explicit operands keep unrelated numbers in a passage out of calculations.
     sum_operands = rf"{NUM}(?:,\s*{NUM})*,?\s+and\s+{NUM}"
+
+    def sum_inputs(match, source, total):
+        operands = []
+        date_spans = [d.span() for d in DATE.finditer(source)]
+        for token in re.finditer(NUM, match["operands"], re.I):
+            start = match.start("operands") + token.start()
+            if any(a <= start < b for a, b in date_spans):
+                continue
+            if re.fullmatch(r"\d{4},?", token[0]) and re.search(r"\b(?:in|during|since|for|year)\s*$", source[:start], re.I):
+                continue
+            if token[0].startswith("$") != total.startswith("$"):
+                return None
+            operands.append(number(token[0]))
+        return tuple(operands) if len(operands) >= 2 else None
+
     patterns = [
         (rf"(?P<operands>{sum_operands}),?\s+(?:a\s+)?total\s+of\s+(?P<c>{NUM})", "sum"),
         (rf"from\s+(?P<a>{NUM})\s+to\s+(?P<b>{NUM}),?\s+(?:an?\s+)?(?P<direction>increase\s+of|decrease\s+of|up|down)\s+(?P<c>{NUM})(?![\d%]|\.\d)", "difference"),
@@ -171,7 +186,9 @@ def computations(claim, records=None, texts=None):
     for pattern, kind in patterns:
         for m in re.finditer(pattern, says, re.I):
             if kind == "sum":
-                operands = [number(p[0]) for p in re.finditer(NUM, m["operands"], re.I)]
+                operands = sum_inputs(m, says, m["c"])
+                if operands is None:
+                    continue
                 add(m["c"], sum(operands), f"{' + '.join(map(str, operands))} = {sum(operands)}")
                 out[-1] = (f'"{m["c"]}"', out[-1][1], out[-1][2])
                 continue
@@ -224,9 +241,9 @@ def computations(claim, records=None, texts=None):
                     expected = date.fromordinal(publication.toordinal() - (publication.weekday() - weekday) % 7)
                     out.append((f'"completed {day.isoformat()}"', f"cited {weekdays[0]} before {publication} is {expected}", day == expected))
     if not out:
-        operand_lists = {tuple(number(p[0]) for p in re.finditer(NUM, m[0], re.I))
-                         for m in re.finditer(sum_operands, passages, re.I)}
         totals = list(re.finditer(rf"(?:a\s+)?total\s+of\s+({NUM})", says, re.I))
+        operand_lists = {operands for m in re.finditer(rf"(?P<operands>{sum_operands})", passages, re.I)
+                         if len(totals) == 1 and (operands := sum_inputs(m, passages, totals[0][1])) is not None}
         if len(operand_lists) == len(totals) == 1:
             operands = operand_lists.pop()
             add(totals[0][1], sum(operands), f"{' + '.join(map(str, operands))} = {sum(operands)}")
