@@ -121,3 +121,23 @@ test('source scan ignores files outside sources and accepts clean changed captur
   const r = f.run();
   assert.equal(r.status, 0, r.stderr);
 });
+
+test('source scan catches a key removed from the branch tip and deduplicates findings', (t) => {
+  const token = patterns[0][1];
+  const f = fixture(t, { files: { 'data/sources/existing.txt': `source\n${token}\n` } });
+  const introduced = f.git('rev-parse', '--short', 'story');
+  f.git('switch', '-q', 'story');
+  writeFileSync(join(f.site, 'data/sources/existing.txt'), `source\n${token}\nextra line\n`);
+  f.git('commit', '-qam', 'change capture with same token');
+  writeFileSync(join(f.site, 'data/sources/existing.txt'), 'ordinary source\n');
+  f.git('commit', '-qam', 'remove token');
+  f.git('switch', '-q', 'main');
+  const r = f.run(['--merge', 'story']);
+  assert.notEqual(r.status, 0);
+  assert.equal(f.git('rev-parse', 'main'), f.before);
+  assert.equal(f.git('branch', '--list', 'publish-*'), '');
+  const findings = r.stderr.split('\n').filter((line) => line.includes('data/sources/existing.txt:2: Mapbox'));
+  assert.equal(findings.length, 1, r.stderr);
+  assert.ok(findings[0].includes(`commit ${introduced}`), r.stderr);
+  assert.ok(!r.stderr.includes(token), r.stderr);
+});

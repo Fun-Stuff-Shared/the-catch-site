@@ -38,18 +38,26 @@ patterns = [(name, re.compile(pattern)) for name, pattern in [
     ('private key', rb'-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----'),
 ]]
 found = False
+seen_commits = set()
+seen_findings = set()
 for branch in branches:
-    paths = git('diff', '--name-only', '-z', '--diff-filter=ACMR', f'{base}...{branch}', '--', 'data/sources/')
-    for path in paths.split(b'\0'):
-        if not path:
+    commits = git('rev-list', '--reverse', f'{base}..{branch}').decode().splitlines()
+    for commit in commits:
+        if commit in seen_commits:
             continue
-        name = os.fsdecode(path)
-        content = git('show', f'{branch}:{name}')
-        for number, line in enumerate(content.split(b'\n'), 1):
-            for label, pattern in patterns:
-                if pattern.search(line):
-                    found = True
-                    print(f'{name}:{number}: {label} pattern (branch {branch})', file=sys.stderr)
+        seen_commits.add(commit)
+        paths = git('diff-tree', '--root', '-m', '-r', '--no-commit-id', '--name-only', '-z', '--no-renames', '--diff-filter=ACMT', commit, '--', 'data/sources/')
+        short = git('rev-parse', '--short', commit).decode().strip()
+        for path in sorted(set(paths.split(b'\0')) - {b''}):
+            name = os.fsdecode(path)
+            content = git('show', f'{commit}:{name}')
+            for number, line in enumerate(content.split(b'\n'), 1):
+                for label, pattern in patterns:
+                    finding = (name, number, label, line)
+                    if pattern.search(line) and finding not in seen_findings:
+                        seen_findings.add(finding)
+                        found = True
+                        print(f'{name}:{number}: {label} pattern (commit {short}, branch {branch})', file=sys.stderr)
 if found:
     if os.environ.get('CATCH_SOURCE_SCAN_ALLOW') != '1':
         sys.exit('Source key scan stopped publication before merge. Review findings; for public tokens that must remain byte-exact, rerun with CATCH_SOURCE_SCAN_ALLOW=1. No source bytes were changed. GitHub may still reject the push.')
