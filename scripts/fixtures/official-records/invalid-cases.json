@@ -1,0 +1,64 @@
+[
+  {
+    "name": "missing source",
+    "operation": "remove",
+    "path": "/officials/0/identity/evidence",
+    "expected": "required"
+  },
+  {
+    "name": "unsafe field",
+    "operation": "add",
+    "path": "/officials/0/motive",
+    "value": "unsupported",
+    "expected": "additional properties"
+  },
+  {
+    "name": "invalid date",
+    "operation": "replace",
+    "path": "/officials/0/statements/0/date",
+    "value": "2026-02-30",
+    "expected": "format"
+  },
+  {
+    "name": "wrong totals",
+    "operation": "replace",
+    "path": "/roll_calls/0/totals/yea",
+    "value": 3,
+    "expected": "yea total"
+  },
+  {
+    "name": "invented passage",
+    "operation": "replace",
+    "path": "/officials/0/statements/0/evidence/0/passage",
+    "value": "This sentence is not in the saved source.",
+    "expected": "passage missing"
+  },
+  {
+    "name": "missing is not zero",
+    "operation": "replace",
+    "path": "/registrations/0/count",
+    "value": null,
+    "expected": "integer"
+  },
+  {
+    "name": "unknown finance",
+    "operation": "replace",
+    "path": "/officials/0/money/0",
+    "value": "missing-finance",
+    "expected": "unknown or mismatched finance"
+  },
+  {
+    "name": "wrong party at vote",
+    "operation": "replace",
+    "path": "/roll_calls/0/members/0/party",
+    "value": "Wrong Party",
+    "expected": "matching dated office"
+  },
+  {
+    "name": "unpublished appearance",
+    "operation": "replace",
+    "path": "/officials/0/appearances/0/story_url",
+    "value": "/events/unpublished/sample/",
+    "expected": "not a published story"
+  }
+]

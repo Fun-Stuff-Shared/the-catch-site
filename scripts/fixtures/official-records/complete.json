@@ -1,0 +1,468 @@
+{
+  "format": "catch-official-records-v1",
+  "kind": "fixture",
+  "coverage": {
+    "as_of": "2026-02-01",
+    "start": "2020-01-01",
+    "end": "2026-01-31",
+    "selection": "Synthetic examples only; never a claim of real-world coverage.",
+    "completeness": "complete",
+    "missing": []
+  },
+  "officials": [
+    {
+      "id": "example-member-a",
+      "slug": "example-member-a",
+      "identity": {
+        "name": "Example Member A",
+        "evidence": [
+          {
+            "record_id": "sample-record",
+            "passage": "Identity: Example Member A is a fictional official created only for layout and validator tests.",
+            "source_class": "fixture"
+          }
+        ]
+      },
+      "identifiers": [
+        {
+          "scheme": "lis",
+          "value": "SAMPLE-A",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Identifier: fictional Example Member A has the sample LIS identifier SAMPLE-A.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "offices": [
+        {
+          "id": "sample-senate-term",
+          "title": "Sample Senator",
+          "jurisdiction": {
+            "state": "MS"
+          },
+          "chamber": "senate",
+          "party": "Example Party",
+          "period": {
+            "start": "2020-01-01",
+            "end": null
+          },
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Office: Example Member A serves as a sample Senator for Mississippi in Example Party from 2020-01-01; this is fictional.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "sample-statement",
+          "date": "2026-01-01",
+          "topic": "sample-water",
+          "quote": "I support the Sample Water Bill.",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Statement on 2026-01-01: Example Member A said, \"I support the Sample Water Bill.\" This is an invented fixture quotation.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "id": "sample-action",
+          "date": "2026-01-02",
+          "topic": "sample-water",
+          "description": "Voted yea on the Sample Water Bill.",
+          "roll_call_id": "senate-120-1-1",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Action on 2026-01-02: Example Member A voted yea on the fictional Sample Water Bill in Senate roll call 120-1-1.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "money": [
+        "sample-finance"
+      ],
+      "appearances": [
+        {
+          "story_url": "/events/sample-fixture/2026-01-01-sample-record/",
+          "description": "Synthetic story association; not a published story.",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample appearance: fictional Example Member A appears in the synthetic story /events/sample-fixture/2026-01-01-sample-record/; no such story is published.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "roll_calls": [
+    {
+      "id": "senate-120-1-1",
+      "chamber": "senate",
+      "congress": 120,
+      "session": 1,
+      "number": 1,
+      "date": "2026-01-02",
+      "question": "On the Sample Water Bill",
+      "measure": "Sample S. 1",
+      "topics": [
+        "sample-water"
+      ],
+      "membership": "complete",
+      "missing_reason": null,
+      "members": [
+        {
+          "member_id": "SAMPLE-A",
+          "official_id": "example-member-a",
+          "name": "Example Member A",
+          "state": "MS",
+          "party": "Example Party",
+          "cast": "yea",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample member A: Example Member A, Mississippi, Example Party, voted yea.",
+              "source_class": "fixture"
+            }
+          ]
+        },
+        {
+          "member_id": "SAMPLE-B",
+          "name": "Example Member B",
+          "state": "AL",
+          "party": "Example Party",
+          "cast": "yea",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample member B: Example Member B, Alabama, Example Party, voted yea.",
+              "source_class": "fixture"
+            }
+          ]
+        },
+        {
+          "member_id": "SAMPLE-C",
+          "name": "Example Member C",
+          "state": "FL",
+          "party": "Example Party",
+          "cast": "nay",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample member C: Example Member C, Florida, Example Party, voted nay.",
+              "source_class": "fixture"
+            }
+          ]
+        },
+        {
+          "member_id": "SAMPLE-D",
+          "name": "Example Member D",
+          "state": "GA",
+          "party": "Other Example Party",
+          "cast": "not_voting",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample member D: Example Member D, Georgia, Other Example Party, did not vote.",
+              "source_class": "fixture"
+            }
+          ]
+        },
+        {
+          "member_id": "SAMPLE-E",
+          "name": "Example Member E",
+          "state": "TX",
+          "party": "Independent Example",
+          "cast": "present",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample member E: Example Member E, Texas, Independent Example, voted present.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "totals": {
+        "yea": 2,
+        "nay": 1,
+        "not_voting": 1,
+        "present": 1
+      },
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample roll call senate-120-1-1, 2026-01-02: 2 yea, 1 nay, 1 not voting, 1 present. All five members are fictional. Sample bill adopted under a simple majority (synthetic rule).",
+          "source_class": "fixture"
+        }
+      ],
+      "result": "Sample bill adopted",
+      "threshold": "Simple majority (synthetic rule)"
+    }
+  ],
+  "finance": [
+    {
+      "id": "sample-finance",
+      "official_id": "example-member-a",
+      "committee_id": "SAMPLE-COMMITTEE",
+      "period": {
+        "start": "2026-01-01",
+        "end": "2026-01-31"
+      },
+      "grouping_method": "Exact reported contributor names; no employer attribution.",
+      "receipts": [
+        {
+          "id": "sample-receipt-1",
+          "transaction_id": "SAMPLE-T1",
+          "filing_id": "SAMPLE-F2",
+          "amendment": 1,
+          "date": "2026-01-05",
+          "kind": "contribution",
+          "amount_cents": 10000,
+          "contributor": {
+            "name": "Example Donor",
+            "kind": "individual",
+            "employer": "Example Employer"
+          },
+          "exclusion": null,
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample transaction SAMPLE-T1 in filing SAMPLE-F2 amendment 1: Example Donor contributed $100.00 on 2026-01-05; employer Example Employer; individual contribution.",
+              "source_class": "fixture"
+            }
+          ],
+          "report_id": "SAMPLE-REPORT-Q1",
+          "schedule": "SA"
+        },
+        {
+          "id": "sample-receipt-2",
+          "transaction_id": "SAMPLE-T2",
+          "filing_id": "SAMPLE-F2",
+          "amendment": 1,
+          "date": "2026-01-05",
+          "kind": "contribution",
+          "amount_cents": 10000,
+          "contributor": {
+            "name": "Example Donor",
+            "kind": "individual",
+            "employer": "Example Employer"
+          },
+          "exclusion": "memo",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample transaction SAMPLE-T2 in filing SAMPLE-F2 amendment 1: Example Donor memo entry of $100.00 on 2026-01-05 is excluded, not additional money.",
+              "source_class": "fixture"
+            }
+          ],
+          "report_id": "SAMPLE-REPORT-Q1",
+          "schedule": "SA"
+        },
+        {
+          "id": "sample-receipt-3",
+          "transaction_id": "SAMPLE-T3",
+          "filing_id": "SAMPLE-F3",
+          "amendment": 0,
+          "date": "2026-01-06",
+          "kind": "refund",
+          "amount_cents": -1000,
+          "contributor": {
+            "name": "Example Donor",
+            "kind": "individual",
+            "employer": "Example Employer"
+          },
+          "exclusion": null,
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample transaction SAMPLE-T3 in filing SAMPLE-F3 amendment 0: Example Donor received a $10.00 refund on 2026-01-06.",
+              "source_class": "fixture"
+            }
+          ],
+          "report_id": "SAMPLE-REPORT-Q1",
+          "schedule": "SA"
+        }
+      ],
+      "industry_classifications": [
+        {
+          "receipt_id": "sample-receipt-1",
+          "industry": "Example Services",
+          "methodology": "Fictional classification dictionary, for testing only.",
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample classification: the SAMPLE-T1 receipt is classified as Example Services by the fictional classification dictionary; this does not mean the employer donated.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample finance period 2026-01-01 through 2026-01-31: SAMPLE-COMMITTEE is the fictional committee linked to Example Member A; contributor grouping uses exact reported names. All sample finance rows use report SAMPLE-REPORT-Q1 and schedule SA.",
+          "source_class": "fixture"
+        }
+      ]
+    }
+  ],
+  "registrations": [
+    {
+      "id": "sample-registration-1",
+      "date": "2026-01-01",
+      "jurisdiction": {
+        "state": "MS",
+        "county_fips": "28049"
+      },
+      "status": "inactive",
+      "definition": "Sample list-maintenance designation, not removal.",
+      "source_series": "sample-series",
+      "count": 10,
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample registration observation, Hinds County, Mississippi (28049), 2026-01-01: 10 inactive registrants; inactive means the sample list-maintenance designation, not removal; sample-series.",
+          "source_class": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "sample-registration-2",
+      "date": "2026-01-31",
+      "jurisdiction": {
+        "state": "MS",
+        "county_fips": "28049"
+      },
+      "status": "inactive",
+      "definition": "Sample list-maintenance designation, not removal.",
+      "source_series": "sample-series",
+      "count": 12,
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample registration observation, Hinds County, Mississippi (28049), 2026-01-31: 12 inactive registrants under the same sample definition and sample-series.",
+          "source_class": "fixture"
+        }
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "sample-notice",
+      "date": "2026-01-03",
+      "jurisdiction": {
+        "state": "MS",
+        "county_fips": "28049"
+      },
+      "kind": "notice",
+      "count": null,
+      "description": "Notices were sent; count unavailable.",
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample maintenance event, Hinds County, Mississippi (28049), 2026-01-03: notices were sent; the number is not available.",
+          "source_class": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "sample-designation",
+      "date": "2026-01-04",
+      "jurisdiction": {
+        "state": "MS",
+        "county_fips": "28049"
+      },
+      "kind": "inactive_designation",
+      "count": 2,
+      "description": "Recorded inactive designations.",
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample maintenance event, Hinds County, Mississippi (28049), 2026-01-04: 2 inactive designations were recorded.",
+          "source_class": "fixture"
+        }
+      ]
+    },
+    {
+      "id": "sample-removal",
+      "date": "2026-01-07",
+      "jurisdiction": {
+        "state": "MS",
+        "county_fips": "28049"
+      },
+      "kind": "removal",
+      "count": 1,
+      "description": "Explicitly recorded removal.",
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample maintenance event, Hinds County, Mississippi (28049), 2026-01-07: 1 removal was explicitly recorded; it is not inferred from a count change.",
+          "source_class": "fixture"
+        }
+      ]
+    }
+  ],
+  "elections": [
+    {
+      "id": "sample-election",
+      "date": "2026-01-20",
+      "reported_at": "2026-01-21T12:00:00Z",
+      "status": "unofficial",
+      "jurisdiction": {
+        "state": "MS"
+      },
+      "office": "Sample Senate contest",
+      "denominator": {
+        "kind": "valid_candidate_votes",
+        "value": 100
+      },
+      "candidates": [
+        {
+          "id": "sample-candidate-a",
+          "name": "Example Member A",
+          "official_id": "example-member-a",
+          "votes": 60,
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample candidate A: Example Member A received 60 votes in the fictional contest.",
+              "source_class": "fixture"
+            }
+          ]
+        },
+        {
+          "id": "sample-candidate-b",
+          "name": "Example Candidate B",
+          "votes": 40,
+          "evidence": [
+            {
+              "record_id": "sample-record",
+              "passage": "Sample candidate B: Example Candidate B received 40 votes in the fictional contest.",
+              "source_class": "fixture"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record_id": "sample-record",
+          "passage": "Sample Senate contest in Mississippi on 2026-01-20: unofficial results reported 2026-01-21T12:00:00Z show 100 valid candidate votes.",
+          "source_class": "fixture"
+        }
+      ]
+    }
+  ]
+}

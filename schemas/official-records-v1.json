@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thecatchengine.com/schemas/official-records-v1.json",
+  "title": "The Catch record-backed officials and election datasets",
+  "description": "Raw sourced facts, not editorial verdicts. Fixture datasets must never enter live publication.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format","kind","coverage","officials","roll_calls","finance","registrations","maintenance","elections"],
+  "properties": {
+    "format": {"const":"catch-official-records-v1"},
+    "kind": {"enum":["records","fixture"]},
+    "coverage": {"$ref":"#/$defs/coverage"},
+    "officials": {"type":"array","items":{"$ref":"#/$defs/official"},"minItems":0},
+    "roll_calls": {"type":"array","items":{"$ref":"#/$defs/rollCall"},"minItems":0},
+    "finance": {"type":"array","items":{"$ref":"#/$defs/finance"},"minItems":0},
+    "registrations": {"type":"array","items":{"$ref":"#/$defs/registration"},"minItems":0},
+    "maintenance": {"type":"array","items":{"$ref":"#/$defs/maintenance"},"minItems":0},
+    "elections": {"type":"array","items":{"$ref":"#/$defs/election"},"minItems":0}
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id","passage","source_class"],
+      "properties": {
+        "record_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "passage": {"type":"string","minLength":1,"pattern":"\\S"},
+        "source_class": {"enum":["primary","official","coverage","fixture"]},
+        "locator": {"type":"string","minLength":1,"pattern":"\\S"}
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["as_of","start","end","selection","completeness","missing"],
+      "properties": {
+        "as_of": {"type":"string","format":"date"},
+        "start": {"type":"string","format":"date"},
+        "end": {"type":"string","format":"date"},
+        "selection": {"type":"string","minLength":1,"pattern":"\\S"},
+        "completeness": {"enum":["complete","partial"]},
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["section","reason"],
+            "properties": {
+              "section": {
+                "enum": [
+                  "officials",
+                  "roll_calls",
+                  "finance",
+                  "registrations",
+                  "maintenance",
+                  "elections",
+                  "identifiers",
+                  "offices",
+                  "statements",
+                  "actions",
+                  "money",
+                  "appearances",
+                  "industries"
+                ]
+              },
+              "subject_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "reason": {"type":"string","minLength":1,"pattern":"\\S"}
+            }
+          },
+          "minItems": 0
+        }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {"state":{"type":"string","pattern":"^[A-Z]{2}$"},"county_fips":{"type":"string","pattern":"^[0-9]{5}$"}}
+    },
+    "official": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","slug","identity","identifiers","offices","statements","actions","money","appearances"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "slug": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name","evidence"],
+          "properties": {
+            "name": {"type":"string","minLength":1,"pattern":"\\S"},
+            "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+          }
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["scheme","value","evidence"],
+            "properties": {
+              "scheme": {"enum":["lis","bioguide","fec","other"]},
+              "value": {"type":"string","minLength":1,"pattern":"\\S"},
+              "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+            }
+          },
+          "minItems": 0
+        },
+        "offices": {"type":"array","items":{"$ref":"#/$defs/office"},"minItems":0},
+        "statements": {"type":"array","items":{"$ref":"#/$defs/statement"},"minItems":0},
+        "actions": {"type":"array","items":{"$ref":"#/$defs/action"},"minItems":0},
+        "money": {"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"minItems":0},
+        "appearances": {"type":"array","items":{"$ref":"#/$defs/appearance"},"minItems":0}
+      }
+    },
+    "office": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","title","jurisdiction","chamber","party","period","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "title": {"type":"string","minLength":1,"pattern":"\\S"},
+        "jurisdiction": {"$ref":"#/$defs/jurisdiction"},
+        "chamber": {"enum":["senate","house","executive","other"]},
+        "party": {"type":"string","minLength":1,"pattern":"\\S"},
+        "period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start","end"],
+          "properties": {
+            "start": {"type":"string","format":"date"},
+            "end": {"anyOf":[{"type":"string","format":"date"},{"type":"null"}]}
+          }
+        },
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "statement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","date","topic","quote","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "date": {"type":"string","format":"date"},
+        "topic": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "quote": {"type":"string","minLength":1,"pattern":"\\S"},
+        "quoted_via": {"type":"string","minLength":1,"pattern":"\\S"},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","date","topic","description","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "date": {"type":"string","format":"date"},
+        "topic": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "description": {"type":"string","minLength":1,"pattern":"\\S"},
+        "roll_call_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "appearance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story_url","description","evidence"],
+      "properties": {
+        "story_url": {"type":"string","pattern":"^/(?:events|officials)/[a-z0-9/-]+/$"},
+        "description": {"type":"string","minLength":1,"pattern":"\\S"},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "rollCall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "chamber",
+        "congress",
+        "session",
+        "number",
+        "date",
+        "question",
+        "measure",
+        "topics",
+        "membership",
+        "missing_reason",
+        "members",
+        "totals",
+        "evidence",
+        "result",
+        "threshold"
+      ],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "chamber": {"enum":["senate","house"]},
+        "congress": {"type":"integer","minimum":1,"maximum":9007199254740991},
+        "session": {"enum":[1,2]},
+        "number": {"type":"integer","minimum":1,"maximum":9007199254740991},
+        "date": {"type":"string","format":"date"},
+        "question": {"type":"string","minLength":1,"pattern":"\\S"},
+        "measure": {"anyOf":[{"type":"string","minLength":1,"pattern":"\\S"},{"type":"null"}]},
+        "topics": {"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"minItems":0},
+        "membership": {"enum":["complete","partial"]},
+        "missing_reason": {"anyOf":[{"type":"string","minLength":1,"pattern":"\\S"},{"type":"null"}]},
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["member_id","name","state","party","cast","evidence"],
+            "properties": {
+              "member_id": {"type":"string","minLength":1,"pattern":"\\S"},
+              "official_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "name": {"type":"string","minLength":1,"pattern":"\\S"},
+              "state": {"type":"string","pattern":"^[A-Z]{2}$"},
+              "party": {"type":"string","minLength":1,"pattern":"\\S"},
+              "cast": {"enum":["yea","nay","not_voting","present"]},
+              "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+            }
+          },
+          "minItems": 1
+        },
+        "totals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["yea","nay","not_voting","present"],
+          "properties": {
+            "yea": {"type":"integer","minimum":0,"maximum":9007199254740991},
+            "nay": {"type":"integer","minimum":0,"maximum":9007199254740991},
+            "not_voting": {"type":"integer","minimum":0,"maximum":9007199254740991},
+            "present": {"type":"integer","minimum":0,"maximum":9007199254740991}
+          }
+        },
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1},
+        "result": {"type":"string","minLength":1,"pattern":"\\S"},
+        "threshold": {"type":"string","minLength":1,"pattern":"\\S"}
+      }
+    },
+    "finance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","official_id","committee_id","period","grouping_method","receipts","industry_classifications","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "official_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "committee_id": {"type":"string","minLength":1,"pattern":"\\S"},
+        "period": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start","end"],
+          "properties": {"start":{"type":"string","format":"date"},"end":{"type":"string","format":"date"}}
+        },
+        "grouping_method": {"type":"string","minLength":1,"pattern":"\\S"},
+        "receipts": {"type":"array","items":{"$ref":"#/$defs/receipt"},"minItems":1},
+        "industry_classifications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["receipt_id","industry","methodology","evidence"],
+            "properties": {
+              "receipt_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "industry": {"type":"string","minLength":1,"pattern":"\\S"},
+              "methodology": {"type":"string","minLength":1,"pattern":"\\S"},
+              "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+            }
+          },
+          "minItems": 0
+        },
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "transaction_id",
+        "filing_id",
+        "amendment",
+        "date",
+        "kind",
+        "amount_cents",
+        "contributor",
+        "exclusion",
+        "evidence",
+        "report_id",
+        "schedule"
+      ],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "transaction_id": {"type":"string","minLength":1,"pattern":"\\S"},
+        "filing_id": {"type":"string","minLength":1,"pattern":"\\S"},
+        "amendment": {"type":"integer","minimum":0,"maximum":9007199254740991},
+        "date": {"type":"string","format":"date"},
+        "kind": {"enum":["contribution","refund","transfer","other"]},
+        "amount_cents": {"type":"integer","maximum":9007199254740991,"minimum":-9007199254740991},
+        "contributor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name","kind","employer"],
+          "properties": {
+            "name": {"type":"string","minLength":1,"pattern":"\\S"},
+            "kind": {"enum":["individual","committee","organization","other"]},
+            "employer": {"anyOf":[{"type":"string","minLength":1,"pattern":"\\S"},{"type":"null"}]}
+          }
+        },
+        "exclusion": {"anyOf":[{"enum":["memo","interest","exchange","duplicate","other"]},{"type":"null"}]},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1},
+        "report_id": {"type":"string","minLength":1,"pattern":"\\S"},
+        "schedule": {"type":"string","minLength":1,"pattern":"\\S"}
+      }
+    },
+    "registration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","date","jurisdiction","status","definition","source_series","count","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "date": {"type":"string","format":"date"},
+        "jurisdiction": {"$ref":"#/$defs/jurisdiction"},
+        "status": {"enum":["active","inactive","total"]},
+        "definition": {"type":"string","minLength":1,"pattern":"\\S"},
+        "source_series": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "count": {"type":"integer","minimum":0,"maximum":9007199254740991},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","date","jurisdiction","kind","count","description","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "date": {"type":"string","format":"date"},
+        "jurisdiction": {"$ref":"#/$defs/jurisdiction"},
+        "kind": {"enum":["notice","inactive_designation","removal"]},
+        "count": {"anyOf":[{"type":"integer","minimum":0,"maximum":9007199254740991},{"type":"null"}]},
+        "description": {"type":"string","minLength":1,"pattern":"\\S"},
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    },
+    "election": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id","date","reported_at","status","jurisdiction","office","denominator","candidates","evidence"],
+      "properties": {
+        "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "date": {"type":"string","format":"date"},
+        "reported_at": {"type":"string","format":"date-time"},
+        "status": {"enum":["unofficial","certified"]},
+        "jurisdiction": {"$ref":"#/$defs/jurisdiction"},
+        "office": {"type":"string","minLength":1,"pattern":"\\S"},
+        "denominator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind","value"],
+          "properties": {
+            "kind": {"enum":["valid_candidate_votes","total_ballots"]},
+            "value": {"type":"integer","minimum":0,"maximum":9007199254740991}
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id","name","votes","evidence"],
+            "properties": {
+              "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "name": {"type":"string","minLength":1,"pattern":"\\S"},
+              "official_id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+              "votes": {"type":"integer","minimum":0,"maximum":9007199254740991},
+              "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+            }
+          },
+          "minItems": 1
+        },
+        "evidence": {"type":"array","items":{"$ref":"#/$defs/evidence"},"minItems":1}
+      }
+    }
+  }
+}
