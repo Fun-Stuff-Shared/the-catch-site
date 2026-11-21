@@ -31,6 +31,10 @@ function fixture(t, text, says = 'It cost $1,200.50 million on October 7, 2026 i
 const cite = '<a data-claim="c" data-passage="yes"></a>';
 for (const [name, text, says, passage, status, expected] of [
   ['numbers dates money names pass', 'It cost $1200.5 million on October 7, 2026 in Paris.', undefined, undefined, 'fact', null],
+  ['money decimal is indivisible', 'It cost $12.', 'It cost $12.5.', undefined, 'fact', 'tokens'],
+  ['percent decimal is indivisible', 'It fell 5%.', 'It fell 0.5%.', undefined, 'fact', 'tokens'],
+  ['money scale is indivisible', 'It cost $12.', 'It cost $12 million.', undefined, 'fact', 'tokens'],
+  ['matching complete number', 'It cost $12 million.', 'It cost $12 million.', undefined, 'fact', null],
   ['missing tokens and candidates', 'It cost $999 million in London.', undefined, undefined, 'fact', 'tokens'],
   ['attribution passes', 'Jane Smith said it happened.', 'It happened.', 'It happened.', 'said', null],
   ['missing speaker', 'It happened, they said.', 'It happened.', 'It happened.', 'said', 'attribution'],

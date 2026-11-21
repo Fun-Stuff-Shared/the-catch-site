@@ -142,7 +142,8 @@ def token_supported(token, support, name_support):
         month_day = re.sub(r',?\s+\d{4}$', '', canonical(token))
         return any(contains(canonical(s), month_day) for s in support)
     if NUMBER.fullmatch(token):
-        return any(contains(canonical(s), canonical(token)) for s in support)
+        return any(canonical(token) == canonical(m[0])
+                   for s in support for m in NUMBER.finditer(canonical(s)))
     return name_supported(token, name_support)
 
 
