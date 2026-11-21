@@ -67,7 +67,7 @@ def main():
         for text, kind, cid in findings:
             totals[kind] += 1
             claims = [cache[key][cid]] if cid in cache[key] else []
-            issues = prebind.check_block({'text': text, 'claims': claims}, *contexts[key])
+            issues = prebind.check_block({'text': text, 'claims': claims}, *contexts[key], mode='all')
             if issues:
                 caught[kind] += 1
             for lint in {i['lint'] for i in issues}:
@@ -81,6 +81,7 @@ def main():
     bound_count = 0
     fps = collections.Counter()
     runtimes = {}
+    quote_runtimes = {}
     for path in sorted(Path('checks/reads').glob('*-bound.json')):
         story = path.name.removesuffix('-bound.json')
         if not prebind.ledger.ledger_path(story).exists():
@@ -88,8 +89,11 @@ def main():
         started = time.perf_counter()
         bound = set(json.loads(path.read_text()))
         blocks = prebind.ledger.blocks(story)
-        failures, _ = prebind.lint(story, all=True, page=blocks)
+        failures, _ = prebind.lint(story, all=True, page=blocks, mode='all')
         runtimes[story] = round(time.perf_counter() - started, 4)
+        started = time.perf_counter()
+        prebind.lint(story, all=True, page=blocks)
+        quote_runtimes[story] = round(time.perf_counter() - started, 4)
         bound_count += sum(b['hash'] in bound and prebind.ledger.bindable(b) for b in blocks)
         for failure in failures:
             if failure['block']['hash'] in bound:
@@ -102,6 +106,10 @@ def main():
         'bound_blocks': bound_count,
         'false_positives': {k: {'blocks': fps[k], 'rate': fps[k] / bound_count if bound_count else None} for k in ('tokens', 'attribution', 'quotes')},
         'runtime_seconds_per_story': runtimes, 'max_runtime_seconds': max(runtimes.values(), default=0),
+        'default_quote_runtime_seconds_per_story': quote_runtimes,
+        'default_quote_max_runtime_seconds': max(quote_runtimes.values(), default=0),
+        'precision': None,
+        'precision_note': 'Not estimable from separate historical finding instances and current bound-block alerts; manual adjudication on one labeled sample is required.',
     }, indent=2))
 
 

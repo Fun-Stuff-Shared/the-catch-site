@@ -6,10 +6,12 @@ on a strict claim, or a fact no claim holds (cited or not), blocks; one on a bac
 listed for the author. Passing blocks are recorded in checks/reads/<story>-bound.json; an answer
 that is not well-formed records nothing.
 Refuses stale builds; rebuild with npm run build before retrying.
-Usage: bind.py <subject>--<slug> <round> [--strict]   (from the worktree root, after npm run build)
+Usage: bind.py <subject>--<slug> <round> [--strict] [--lint all]   (from the worktree root, after npm run build)
+Quotes only by default; --lint all adds token and attribution checks.
 --strict stops before model review on pre-bind lint findings."""
 
 import json
+import argparse
 import os
 import subprocess
 import sys
@@ -111,7 +113,7 @@ def require_fresh_page(story):
                  + "\n".join(f"  {p}" for p in newer) + f"\n{rebuild}")
 
 
-def main(story, round_, strict=False):
+def main(story, round_, strict=False, lint_mode='quotes'):
     require_fresh_page(story)
     ledger.migrate_bound(story)
     page = ledger.blocks(story)
@@ -121,7 +123,7 @@ def main(story, round_, strict=False):
     matches = match_previous(todo, previous, {b["hash"] for b in page})
     prior = {key: previous[value] for key, value in matches.items()}
     report = Path("checks/reads") / f"{story}-r{round_}-bind.md"
-    lint_failures, lint_report = prebind.lint(story, todo=todo, page=page)
+    lint_failures, lint_report = prebind.lint(story, todo=todo, page=page, mode=lint_mode)
     print(lint_report)
     if strict and lint_failures:
         report.write_text(f"# Bind check\n\n{lint_report}\n\nLint stopped bind before model review. Nothing recorded as bound.\n\nNOT BOUND\n")
@@ -189,6 +191,10 @@ def main(story, round_, strict=False):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) not in (3, 4) or (len(sys.argv) == 4 and sys.argv[3] != '--strict'):
-        sys.exit(USAGE)
-    main(*sys.argv[1:3], strict='--strict' in sys.argv[3:])
+    parser = argparse.ArgumentParser(description=USAGE)
+    parser.add_argument('story')
+    parser.add_argument('round')
+    parser.add_argument('--strict', action='store_true')
+    parser.add_argument('--lint', choices=('quotes', 'all'), default='quotes')
+    args = parser.parse_args()
+    main(args.story, args.round, strict=args.strict, lint_mode=args.lint)

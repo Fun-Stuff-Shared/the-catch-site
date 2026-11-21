@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fast advisory checks, never a binding decision.
 
-Usage: prebind.py <story> [--strict] [--all]
+Usage: prebind.py <story> [--strict] [--all] [--lint all]
+Only quotes are checked by default. --lint all adds token and attribution checks.
 By default checks exactly bind's changed, bindable blocks; --all checks all bindable
 blocks. --strict exits 1 on findings. Missing inputs are errors, not clean results.
 Quotes: extract curly or straight double quotes (not single quotes). Map curly
@@ -10,7 +11,11 @@ Match case-sensitive exact substrings of cited passages or quoted text in says.
 Ellipses (… or ...) split a quote into segments which must match in order within
 one source. Numbers ignore thousands commas and insignificant decimal zeroes;
 percent, money scale and currency ($, €, £, ¥; USD/EUR equal $/€) remain
-significant, and a numeric match must cover the whole number. Spelled cardinal numbers through
+significant, and a numeric match must cover the whole number. Scaled amounts
+equal their expanded values (12 million = 12000000), never their unscaled values.
+Numeric/spelled ordinals equal cardinals. Claim scope is also token support.
+Dates accept ISO and day-month forms as well as month-day forms.
+Spelled cardinal numbers through
 ninety, hundred and thousand (including compounds) equal digits. Join "and"
 only after hundred or thousand, not between independent numbers. Dates accept
 full/abbreviated months and require month plus day, with year optional; their
@@ -28,6 +33,8 @@ integers 1-9 are skipped unless immediately followed by a word (a conservative
 proxy for a unit or noun of measure). Cited blocks still check those integers.
 Attribution accepts a named speaker followed directly by a colon, reporting
 verbs, by-speaker count/estimate phrases, and statement/post phrases.
+A named source labeling an exact supported quotation also counts as attribution.
+Common nationality/party adjective variants are matched to their cited noun forms.
 """
 
 import argparse
@@ -42,17 +49,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "catch-record/scrip
 import claims as ledger
 
 QUOTES = str.maketrans({'“': '"', '”': '"', '‘': "'", '’': "'"})
-STOP = set('the a an this that these those it its he she they we i in on at by for from to of and or but as what why how when where who which after before just according'.split())
+STOP = set('the a an this that these those it its he she they we i in on at by for from to of and or but as what why how when where who which after before just according alleged verdict said all partly supported industry'.split())
 MONTHS = 'January February March April May June July August September October November December'.split()
 MONTH = '(?:' + '|'.join(m + '|' + m[:3] + r'\.?' for m in MONTHS) + r'|Sept\.?)'
 MONTH_ABBREVIATIONS = {m[:3].lower(): m.lower() for m in MONTHS}
 MONTH_ABBREVIATIONS['sept'] = 'september'
 MONTH_ABBREVIATION = re.compile(r'\b(?:' + '|'.join(MONTH_ABBREVIATIONS) + r')(?:\.|\b)')
-NUMBER = re.compile(r'(?<![\w.])(?:[$€£¥]\s*|(?:USD|EUR)\s*)?\d+(?:,\d{3})*(?:\.\d+)?(?:\s*(?:%|percent\b|million\b|billion\b|trillion\b))?', re.I)
-DATE = re.compile(r'\b' + MONTH + r'\s+\d{1,2}(?:,?\s+\d{4})?\b', re.I)
+NUMBER = re.compile(r'(?<![\w.])(?:[$€£¥]\s*|(?:USD|EUR)\s*)?\d+(?:,\d{3})*(?:\.\d+)?(?:st\b|nd\b|rd\b|th\b)?(?:\s*(?:%|percent\b|million\b|billion\b|trillion\b))?', re.I)
+DATE = re.compile(r'\b(?:' + MONTH + r'\s+\d{1,2}(?:st|nd|rd|th)?(?:,?\s+\d{4})?|\d{1,2}(?:st|nd|rd|th)?\s+' + MONTH + r'(?:\s+\d{4})?|\d{4}-\d{2}-\d{2})\b', re.I)
 NAME_WORD = r"(?:U\.S\.|[A-Z][a-zA-Z0-9]*(?:[-'][A-Za-z0-9]+)*)"
 NAME = re.compile(r'\b' + NAME_WORD + r'(?:\s+' + NAME_WORD + r')*')
-TITLES = set('secretary administrator senator senators rep representative representatives president vice department agency minister ministry director acting deputy chief former governor general transportation federal administration national the'.split())
+TITLES = set('secretary administrator senator senators sen sens rep representative representatives president vice department agency minister ministry director acting deputy chief former governor general transportation federal administration national the'.split())
 WEEKDAYS = set('monday tuesday wednesday thursday friday saturday sunday'.split())
 SMALL = dict(zip('zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split(), range(21)))
 SMALL.update(dict(zip('thirty forty fifty sixty seventy eighty ninety'.split(), range(30, 100, 10))))
@@ -61,6 +68,11 @@ WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|(?:(?<=hundred)|(?
 LOWER_WORD_NUMBERS = re.compile(WORD_NUMBERS.pattern)
 VERB = re.compile(r'\b(?:said|says?|told|according to|alleged|alleges|accused|claims?|claimed|stated|states|wrote|writes|argued|argues|announced|testified|warned|warns)\b', re.I)
 ATTRIBUTION = re.compile(r"\b(?:blamed|acknowledged|tied|posted|posting|called|insisted|denied|contended|asserted|noted|added|described|cited|reported|estimated|counted|in a statement|in a post)\b|\bby\s+[^.!?:]+?['’]s\s+(?:count|estimate)\b", re.I)
+REPORTING = re.compile(r'\b(?:blames?|acknowledges?|calls?|reports?|estimates?|counts?|asks?|asked|urged|urges|credits?|credited|promised|promises|testifies|warns|warned|praised|praises|quoted|quoting|argues|describes|described|announces|announced|concludes|concluded|found|finds|by [^.!?]+ account)\b', re.I)
+DEMONYMS = {'chinese': 'china', 'iranian': 'iran', 'american': 'unitedstates', 'republicans': 'republican', 'democrats': 'democrat', 'democratic': 'democrat'}
+ORDINALS = dict(zip('first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth twentieth'.split(), range(1, 21)))
+ORDINAL = re.compile(r'\b(?:' + '|'.join(ORDINALS) + r')\b', re.I)
+LOWER_ORDINAL = re.compile(ORDINAL.pattern)
 
 
 def normalize(text):
@@ -69,15 +81,30 @@ def normalize(text):
 
 def number_words(match):
     total = current = 0
+    previous = None
+    separate = []
     for word in re.findall(r'[a-z]+', match[0].lower()):
         if word == 'hundred':
             current = (current or 1) * 100
+            previous = None
         elif word == 'thousand':
             total += (current or 1) * 1000
             current = 0
+            previous = None
         elif word != 'and':
-            current += SMALL[word]
-    return str(total + current)
+            value = SMALL[word]
+            if previous is not None and not (previous >= 20 and previous % 10 == 0 and value < 10):
+                separate.append(str(total + current))
+                total = current = 0
+            current += value
+            previous = value
+    return ' '.join([*separate, str(total + current)])
+
+
+def ordinal_words(match):
+    if match[0].lower() == 'second' and re.search(r'(?:\d|per|each|a)\s+$', match.string[max(0, match.start() - 32):match.start()], re.I):
+        return match[0]
+    return str(ORDINALS[match[0].lower()])
 
 
 @lru_cache(maxsize=16384)
@@ -86,11 +113,41 @@ def canonical(text):
     text = re.sub(r'\b(usd|eur)\s*(?=\d)', lambda m: '$' if m[1] == 'usd' else '€', text)
     text = re.sub(r'([$€£¥])\s+(?=\d)', r'\1', text)
     text = LOWER_WORD_NUMBERS.sub(number_words, text)
+    text = LOWER_ORDINAL.sub(ordinal_words, text)
+    text = re.sub(r'(?<=\d)(?:st|nd|rd|th)\b', '', text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)
     text = re.sub(r'(?<=\d),(?=\d)', '', text)
     text = re.sub(r'\d+(?:\.\d+)?', lambda m: format(Decimal(m[0]).normalize(), 'f'), text)
     return re.sub(r'\s*(%|\bpercent\b)', '%', text)
+
+
+@lru_cache(maxsize=8192)
+def numeric_values(text):
+    values = set()
+    for match in NUMBER.finditer(canonical(text)):
+        amount = re.fullmatch(r'([$€£¥]?)(\d+(?:\.\d+)?)(?:\s*(%|million|billion|trillion))?', match[0])
+        if amount:
+            currency, number, scale = amount.groups()
+            multiplier = {'million': 10**6, 'billion': 10**9, 'trillion': 10**12}.get(scale, 1)
+            values.add((currency, Decimal(number) * multiplier, scale == '%'))
+    return values
+
+
+@lru_cache(maxsize=8192)
+def date_values(text):
+    values = set()
+    for match in DATE.finditer(text):
+        value = canonical(match[0])
+        iso = re.fullmatch(r'\d{4}-(\d{1,2})-(\d{1,2})', value)
+        if iso:
+            values.add((int(iso[1]), int(iso[2])))
+            continue
+        month = next((i for i, name in enumerate(MONTHS, 1) if name.lower() in value), None)
+        numbers = re.findall(r'\d+', value)
+        if month and numbers:
+            values.add((month, int(numbers[0])))
+    return values
 
 
 def contains(text, token):
@@ -99,6 +156,7 @@ def contains(text, token):
 
 def tokens(text):
     text = WORD_NUMBERS.sub(number_words, normalize(text))
+    text = ORDINAL.sub(ordinal_words, text)
     dates = list(DATE.finditer(text))
     masked = list(text)
     for date in dates:
@@ -134,6 +192,8 @@ def name_supported(name, sources):
     acronym = ''.join(w[0] for w in re.findall(r'\w+', canonical(name)) if w not in STOP)
     for source in sources:
         normalized = canonical(source)
+        if len(words) == 1 and words[0] in DEMONYMS and contains(normalized, DEMONYMS[words[0]]):
+            return True
         if contains(normalized, canonical(name)) or contains(normalized, words[-1]):
             return True
         if len(acronym) > 1 and contains(normalized, acronym):
@@ -145,11 +205,9 @@ def name_supported(name, sources):
 
 def token_supported(token, support, name_support):
     if DATE.fullmatch(token):
-        month_day = re.sub(r',?\s+\d{4}$', '', canonical(token))
-        return any(contains(canonical(s), month_day) for s in support)
+        return any(bool(date_values(token) & date_values(s)) for s in support)
     if NUMBER.fullmatch(token):
-        return any(canonical(token) == canonical(m[0])
-                   for s in support for m in NUMBER.finditer(canonical(s)))
+        return any(bool(numeric_values(token) & numeric_values(s)) for s in support)
     return name_supported(token, name_support)
 
 
@@ -175,13 +233,13 @@ def quote_matches(quote, sources):
 
 def claim_support(claims):
     return [value for c in claims for value in
-            [c['says'], c.get('by', ''), *(e['passage'] for e in c.get('evidence', []))]]
+            [c['says'], c.get('by', ''), c.get('scope', ''), *(e['passage'] for e in c.get('evidence', []))]]
 
 
-def check_block(block, page_support=(), story_year=None):
+def check_all(block, page_support=(), story_year=None):
     text, claims = block['text'], block['claims']
     passages = [e['passage'] for c in claims for e in c.get('evidence', [])]
-    support = passages + [c['says'] for c in claims]
+    support = passages + [value for c in claims for value in (c['says'], c.get('scope', ''))]
     name_support = support + [c.get('by', '') for c in claims]
     if not claims:
         support = name_support = page_support
@@ -206,13 +264,24 @@ def check_block(block, page_support=(), story_year=None):
         distinctive = [w for w in re.findall(r'\w+', by) if w not in STOP and len(w) > 2]
         named = bool(by) and (contains(canonical(text), by) or any(contains(canonical(text), w) for w in distinctive))
         colon = any(re.search(r'(?<!\w)' + re.escape(w) + r'\s*:', canonical(text)) for w in [by, *distinctive] if w)
-        if not named or not (VERB.search(canonical(text)) or ATTRIBUTION.search(text) or colon):
+        labeled_quote = named and bool(quoted(text)) and bool(quote_matches(quoted(text)[0], [normalize(e['passage']) for e in c.get('evidence', [])] + quoted(c['says'])))
+        if not named or not (VERB.search(canonical(text)) or ATTRIBUTION.search(text) or REPORTING.search(text) or colon or labeled_quote):
             issues.append({'lint': 'attribution', 'claim': c['id'], 'missing': [f"name {c.get('by', '')!r} and an attribution verb"]})
     sources = [normalize(p) for p in passages] + [q for c in claims for q in quoted(c['says'])]
     bad_quotes = [q for q in quoted(text) if not quote_matches(q, sources)]
     if bad_quotes:
         issues.append({'lint': 'quotes', 'missing': bad_quotes})
     return issues
+
+
+def check_block(block, page_support=(), story_year=None, mode='quotes'):
+    if mode == 'all':
+        return check_all(block, page_support, story_year)
+    claims = block['claims']
+    sources = [normalize(e['passage']) for c in claims for e in c.get('evidence', [])]
+    sources += [q for c in claims for q in quoted(c['says'])]
+    missing = [q for q in quoted(block['text']) if not quote_matches(q, sources)]
+    return [{'lint': 'quotes', 'missing': missing}] if missing else []
 
 
 def candidates(token, texts):
@@ -239,7 +308,7 @@ def candidate_lines(text):
     return list(zip(lines, normalized))
 
 
-def lint(story, all=False, todo=None, page=None):
+def lint(story, all=False, todo=None, page=None, mode='quotes'):
     started = time.perf_counter()
     if page is None:
         page = ledger.blocks(story)
@@ -253,9 +322,9 @@ def lint(story, all=False, todo=None, page=None):
     failures = []
     texts = None
     candidate_cache = {}
-    lines = ['## Pre-bind lint', '']
+    lines = ['## Pre-bind lint', '', 'Likely to fail bind (advisory, not errors):', '']
     for n, block in enumerate(todo, 1):
-        issues = check_block(block, page_support, story_year)
+        issues = check_block(block, page_support, story_year, mode=mode)
         if not issues:
             continue
         failures.append({'block': block, 'issues': issues})
@@ -278,7 +347,7 @@ def lint(story, all=False, todo=None, page=None):
         if not block['claims']:
             lines.append('  claims: none')
         lines.append('')
-    lines.append(f"{len(todo)} blocks checked; {len(failures)} failing; {time.perf_counter() - started:.3f}s. Advisory only; no blocks recorded as bound.")
+    lines.append(f"{len(todo)} blocks checked; {len(failures)} likely to fail bind; {time.perf_counter() - started:.3f}s. Advisory only; no blocks recorded as bound.")
     return failures, '\n'.join(lines)
 
 
@@ -287,7 +356,8 @@ if __name__ == '__main__':
     parser.add_argument('story')
     parser.add_argument('--strict', action='store_true')
     parser.add_argument('--all', action='store_true')
+    parser.add_argument('--lint', choices=('quotes', 'all'), default='quotes')
     args = parser.parse_args()
-    failures, report = lint(args.story, all=args.all)
+    failures, report = lint(args.story, all=args.all, mode=args.lint)
     print(report)
     sys.exit(1 if args.strict and failures else 0)

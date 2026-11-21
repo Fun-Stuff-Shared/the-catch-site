@@ -222,7 +222,8 @@ publish without them.
 
 ## 5. Read it cold, then bind it
 
-Run `python3 skills/catch-story/scripts/prebind.py <story>` before bind for a fast advisory pre-check. Bind runs it too; `--strict` on either command stops on lint findings.
+Run `python3 skills/catch-story/scripts/prebind.py <story>` before bind for a quote pre-check. Bind runs it too; `--lint all` adds token and attribution checks, and opt-in `--strict` stops on findings. Prebind's `--all` selects all blocks, not all checks.
+Fix a flagged block only when the cited claim truly does not hold the detail; bind decides.
 
 ```bash
 zsh skills/catch-story/scripts/thread.sh <story> <N>      # N = 1, 2, ...

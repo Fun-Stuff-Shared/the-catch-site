@@ -25,7 +25,7 @@ function fixture(t, text, says = 'It cost $1,200.50 million on October 7, 2026 i
   put('bin/claude', '#!/usr/bin/env python3\nfrom pathlib import Path\nPath("called").touch()\nprint("[]")\n');
   chmodSync(join(root, 'bin/claude'), 0o755);
   const env = { ...process.env, HOME: root, GIT_CONFIG_GLOBAL: join(root, '.gitconfig'), PATH: `${root}/bin:${process.env.PATH}` };
-  const run = (script = 'prebind.py', args = []) => spawnSync('python3', [dir + script, story, ...args], { cwd: root, env, encoding: 'utf8' });
+  const run = (script = 'prebind.py', args = [], mode = 'all') => spawnSync('python3', [dir + script, story, ...args, ...(mode ? ['--lint', mode] : [])], { cwd: root, env, encoding: 'utf8' });
   return { root, put, run };
 }
 const cite = '<a data-claim="c" data-passage="yes"></a>';
@@ -35,6 +35,20 @@ for (const [name, text, says, passage, status, expected] of [
   ['percent decimal is indivisible', 'It fell 5%.', 'It fell 0.5%.', undefined, 'fact', 'tokens'],
   ['money scale is indivisible', 'It cost $12.', 'It cost $12 million.', undefined, 'fact', 'tokens'],
   ['matching complete number', 'It cost $12 million.', 'It cost $12 million.', undefined, 'fact', null],
+  ['expanded numeric scale', 'It cost $12000000.', 'It cost $12 million.', undefined, 'fact', null],
+  ['scaled numeric form', 'It cost $12 million.', 'It cost $12000000.', undefined, 'fact', null],
+  ['numeric ordinal', 'It was the 21st meeting.', 'It was meeting 21.', undefined, 'fact', null],
+  ['spelled ordinal', 'It was the fifth meeting.', 'It was meeting 5.', undefined, 'fact', null],
+  ['separate adjacent number words', 'It was two one-way flights.', 'It was 2 one-way flights.', undefined, 'fact', null],
+  ['second time unit not ordinal', 'It took 1 second.', 'It took one second.', undefined, 'fact', null],
+  ['ISO date support', 'It ended November 14, 2026.', 'It ended 2026-11-14.', undefined, 'fact', null],
+  ['zero padded ISO date', 'It ended January 5, 2026.', 'It ended 2026-01-05.', undefined, 'fact', null],
+  ['day month support', 'It ended 14 November 2026.', 'It ended Nov. 14.', undefined, 'fact', null],
+  ['name in passage', 'It was Jane Smith.', 'It happened.', 'Jane Smith witnessed it.', 'fact', null],
+  ['demonym noun support', 'It was a Chinese company.', 'It was a company in China.', undefined, 'fact', null],
+  ['named exact quote label', 'Jane Smith “it happened”.', 'It happened.', 'it happened', 'said', null],
+  ['quote label wrong speaker', 'James Jones “it happened”.', 'It happened.', 'it happened', 'said', 'attribution'],
+  ['present tense reporting', 'Smith blames the weather.', 'It happened.', undefined, 'said', null],
   ['masked number breaks name run', 'It was Boeing 737 MAX.', 'It was Airbus 737 MAX.', undefined, 'fact', 'tokens'],
   ['separate names around number supported', 'It was Boeing 737 MAX.', 'It was Boeing 737 MAX.', undefined, 'fact', null],
   ['masked date breaks name run', 'It was Boeing November 14, 2026 MAX.', 'It was Airbus November 14, 2026 MAX.', undefined, 'fact', 'tokens'],
@@ -100,7 +114,7 @@ test('uncited and empty blocks; default advisory exit', t => {
   assert.equal(run().status, 0);
   assert.equal(run('prebind.py', ['--strict']).status, 1);
   put('dist/events/example/story/index.html', '<main></main>', 2000);
-  assert.match(run().stdout, /0 blocks checked; 0 failing/);
+  assert.match(run().stdout, /0 blocks checked; 0 likely to fail bind/);
 });
 test('bound filter and --all', t => {
   const { run, put, root } = fixture(t, 'It cost 999.' + cite);
@@ -173,4 +187,31 @@ test('cited bare year uses page support, but other cited numbers do not', t => {
   assert.equal(run('prebind.py', ['--strict']).status, 0);
   put('dist/events/example/story/index.html', `<main><p>There were 47 flights.${cite}</p><p data-claims="other">In 2024 there were 47 flights.</p></main>`, 2000);
   assert.equal(run('prebind.py', ['--strict']).status, 1);
+});
+for (const script of ['prebind.py', 'bind.py']) {
+  test(`${script} default quote-only versus lint all`, t => {
+    const { run, put, root } = fixture(t, 'It cost 999.' + cite, 'It happened.', 'It happened.', 'said');
+    const args = script === 'bind.py' ? ['1', '--strict'] : ['--strict', '--all'];
+    const result = run(script, args, null);
+    assert.equal(result.status, 0, result.stdout + result.stderr);
+    assert.match(result.stdout, /likely to fail bind/i);
+    if (script === 'bind.py') put(`checks/reads/${story}-bound.json`, '[]');
+    const all = run(script, args, 'all');
+    assert.equal(all.status, 1, all.stdout + all.stderr);
+    assert.match(all.stdout, /- tokens:/);
+    assert.match(all.stdout, /- attribution:/);
+    assert.ok(existsSync(join(root, 'checks/reads')));
+  });
+  test(`${script} default still checks quotes`, t => {
+    const { run } = fixture(t, 'They said “invented words”.' + cite, 'It happened.');
+    const result = run(script, script === 'bind.py' ? ['1', '--strict'] : ['--strict'], null);
+    assert.equal(result.status, 1, result.stdout + result.stderr);
+    assert.match(result.stdout, /- quotes:/);
+    assert.doesNotMatch(result.stdout, /- tokens:|- attribution:/);
+  });
+}
+test('claim scope supports number and date', t => {
+  const { run, put } = fixture(t, 'It took 47 hours on November 14, 2026.' + cite, 'It happened.');
+  put(`checks/claims/${story}.json`, JSON.stringify({ claims: [{ id: 'c', says: 'It happened.', scope: '47 hours on 2026-11-14', status: 'fact', evidence: [] }] }));
+  assert.equal(run('prebind.py', ['--strict']).status, 0);
 });
