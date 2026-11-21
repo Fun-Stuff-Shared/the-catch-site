@@ -17,6 +17,13 @@ capitalized runs, skipping sentence-initial runs and title-only runs. A name is
 supported by its full run, acronym (in either direction), or last distinctive
 word, including cited claims' by fields. US, U.S. and United States are equivalent.
 No metadata blocks are skipped without structural information.
+Uncited blocks use says, passages and by from every claim cited on the page for
+token support, but not quote support. Bare years can also use page-wide support
+or the manifest date's year, even in cited blocks. In uncited blocks only, bare
+integers 1-9 are skipped unless immediately followed by a word (a conservative
+proxy for a unit or noun of measure). Cited blocks still check those integers.
+Attribution accepts a named speaker followed directly by a colon, reporting
+verbs, by-speaker count/estimate phrases, and statement/post phrases.
 """
 
 import argparse
@@ -47,7 +54,9 @@ SMALL = dict(zip('zero one two three four five six seven eight nine ten eleven t
 SMALL.update(dict(zip('thirty forty fifty sixty seventy eighty ninety'.split(), range(30, 100, 10))))
 NUMBER_WORD = r'(?:' + '|'.join([*SMALL, 'hundred', 'thousand']) + r')'
 WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|\s+and\s+)' + NUMBER_WORD + r')*\b', re.I)
+LOWER_WORD_NUMBERS = re.compile(WORD_NUMBERS.pattern)
 VERB = re.compile(r'\b(?:said|says?|told|according to|alleged|alleges|accused|claims?|claimed|stated|states|wrote|writes|argued|argues|announced|testified|warned|warns)\b', re.I)
+ATTRIBUTION = re.compile(r"\b(?:blamed|acknowledged|tied|posted|posting|called|insisted|denied|contended|asserted|noted|added|described|cited|reported|estimated|counted|in a statement|in a post)\b|\bby\s+[^.!?:]+?['’]s\s+(?:count|estimate)\b", re.I)
 
 
 def normalize(text):
@@ -71,7 +80,7 @@ def number_words(match):
 def canonical(text):
     text = normalize(text).casefold()
     text = re.sub(r'(?<!\w)(?:united states|u\.s\.|us)(?!\w)', 'us', text)
-    text = WORD_NUMBERS.sub(number_words, text)
+    text = LOWER_WORD_NUMBERS.sub(number_words, text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)
     text = re.sub(r'(?<=\d),(?=\d)', '', text)
@@ -157,12 +166,29 @@ def quote_matches(quote, sources):
     return False
 
 
-def check_block(block):
+def claim_support(claims):
+    return [value for c in claims for value in
+            [c['says'], c.get('by', ''), *(e['passage'] for e in c.get('evidence', []))]]
+
+
+def check_block(block, page_support=(), story_year=None):
     text, claims = block['text'], block['claims']
     passages = [e['passage'] for c in claims for e in c.get('evidence', [])]
     support = passages + [c['says'] for c in claims]
     name_support = support + [c.get('by', '') for c in claims]
-    missing = [t for t in tokens(text) if not token_supported(t, support, name_support)]
+    if not claims:
+        support = name_support = page_support
+    missing = []
+    for token in tokens(text):
+        if re.fullmatch(r'\d{4}', token) and (token == story_year or any(contains(canonical(s), token) for s in page_support)):
+            continue
+        if not claims and re.fullmatch(r'[1-9]', token):
+            numbered = WORD_NUMBERS.sub(number_words, normalize(text))
+            uses = list(re.finditer(r'(?<!\w)' + token + r'(?!\w)', numbered))
+            if uses and not any(re.match(r'\s+[A-Za-z]', numbered[m.end():]) for m in uses):
+                continue
+        if not token_supported(token, support, name_support):
+            missing.append(token)
     issues = []
     if missing:
         issues.append({'lint': 'tokens', 'missing': missing})
@@ -172,7 +198,8 @@ def check_block(block):
         by = re.sub(r"'s\b", '', normalize(c.get('by', '')).casefold())
         distinctive = [w for w in re.findall(r'\w+', by) if w not in STOP and len(w) > 2]
         named = bool(by) and (contains(canonical(text), by) or any(contains(canonical(text), w) for w in distinctive))
-        if not named or not VERB.search(text):
+        colon = any(re.search(r'(?<!\w)' + re.escape(w) + r'\s*:', canonical(text)) for w in [by, *distinctive] if w)
+        if not named or not (VERB.search(text) or ATTRIBUTION.search(text) or colon):
             issues.append({'lint': 'attribution', 'claim': c['id'], 'missing': [f"name {c.get('by', '')!r} and an attribution verb"]})
     sources = [normalize(p) for p in passages] + [q for c in claims for q in quoted(c['says'])]
     bad_quotes = [q for q in quoted(text) if not quote_matches(q, sources)]
@@ -199,17 +226,29 @@ def candidates(token, texts):
     return found
 
 
-def lint(story, all=False, todo=None):
+def candidate_lines(text):
+    lines = re.split(r'\n|(?<=[.!?])\s+', text)
+    normalized = canonical('\0'.join(lines)).split('\0')
+    return list(zip(lines, normalized))
+
+
+def lint(story, all=False, todo=None, page=None):
     started = time.perf_counter()
+    if page is None:
+        page = ledger.blocks(story)
     if todo is None:
         bound = set(ledger.read_json(ledger.bound_path(story), []))
-        todo = [b for b in ledger.blocks(story) if ledger.bindable(b) and (all or b['hash'] not in bound)]
+        todo = [b for b in page if ledger.bindable(b) and (all or b['hash'] not in bound)]
+    page_claims = {c['id']: c for b in page for c in b['claims']}
+    page_support = claim_support(page_claims.values())
+    manifest = ledger.read_json(Path('checks/manifests') / f'{story}.json', {})
+    story_year = str(manifest.get('date', ''))[:4]
     failures = []
     texts = None
     candidate_cache = {}
     lines = ['## Pre-bind lint', '']
     for n, block in enumerate(todo, 1):
-        issues = check_block(block)
+        issues = check_block(block, page_support, story_year)
         if not issues:
             continue
         failures.append({'block': block, 'issues': issues})
@@ -219,7 +258,7 @@ def lint(story, all=False, todo=None):
             if issue['lint'] == 'tokens':
                 if texts is None:
                     _, raw = ledger.record_texts(story)
-                    texts = {rid: [(line, canonical(line)) for line in re.split(r'\n|(?<=[.!?])\s+', text)] for rid, text in raw.items()}
+                    texts = {rid: candidate_lines(text) for rid, text in raw.items()}
                 for token in issue['missing']:
                     key = canonical(token)
                     if key not in candidate_cache:

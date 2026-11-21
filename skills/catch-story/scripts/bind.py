@@ -87,7 +87,7 @@ def main(story, round_, strict=False):
     bound = set(ledger.read_json(ledger.bound_path(story), []))
     todo = [b for b in page if b["hash"] not in bound and ledger.bindable(b)]
     report = Path("checks/reads") / f"{story}-r{round_}-bind.md"
-    lint_failures, lint_report = prebind.lint(story, todo=todo)
+    lint_failures, lint_report = prebind.lint(story, todo=todo, page=page)
     print(lint_report)
     if strict and lint_failures:
         report.write_text(f"# Bind check\n\n{lint_report}\n\nLint stopped bind before model review. Nothing recorded as bound.\n\nNOT BOUND\n")

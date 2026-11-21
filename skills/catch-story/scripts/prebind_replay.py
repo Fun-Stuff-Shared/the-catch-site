@@ -5,6 +5,9 @@ Run from the repository root after npm run build. Output is JSON on stdout.
 History approximations: use the commit that last changed each report, ledger at
 that commit, truncated block text, and only the finding's named claim. Unnamed
 findings are treated as uncited. Counts are finding instances, not unique bugs.
+Historical page-wide token support is approximated from literal c="..." cites
+in the story source at that commit; computed cites are not resolved. Historical
+manifest dates supply story years. Missing historical sources give no page support.
 FP means a lint alert on a currently bound hash, not an editorial adjudication.
 """
 import collections
@@ -30,6 +33,7 @@ def main():
     named_lints = collections.defaultdict(collections.Counter)
     skipped = []
     cache = {}
+    contexts = {}
     pattern = re.compile(r'^- "(.*)" \((beyond|status|scope|actor)(?:, claim ([^)]+))?\):', re.M)
     for report in sorted(Path('checks/reads').glob('*-r*-bind.md')):
         content = report.read_text()
@@ -48,10 +52,22 @@ def main():
                 skipped.append(str(report))
                 continue
             cache[key] = {c['id']: c for c in json.loads(result.stdout)['claims']}
+            subject, slug = story.split('--', 1)
+            source = ''
+            for ext in ('astro', 'mdx', 'md'):
+                result = subprocess.run(['git', 'show', f'{commit}:src/pages/events/{subject}/{slug}.{ext}'], capture_output=True, text=True)
+                if result.returncode == 0:
+                    source = result.stdout
+                    break
+            ids = set(cid for value in re.findall(r'\bc=["\']([^"\']+)["\']', source) for cid in value.split())
+            page_support = prebind.claim_support(c for cid, c in cache[key].items() if cid in ids)
+            result = subprocess.run(['git', 'show', f'{commit}:checks/manifests/{story}.json'], capture_output=True, text=True)
+            year = str(json.loads(result.stdout).get('date', ''))[:4] if result.returncode == 0 else ''
+            contexts[key] = page_support, year
         for text, kind, cid in findings:
             totals[kind] += 1
             claims = [cache[key][cid]] if cid in cache[key] else []
-            issues = prebind.check_block({'text': text, 'claims': claims})
+            issues = prebind.check_block({'text': text, 'claims': claims}, *contexts[key])
             if issues:
                 caught[kind] += 1
             for lint in {i['lint'] for i in issues}:
@@ -72,7 +88,7 @@ def main():
         started = time.perf_counter()
         bound = set(json.loads(path.read_text()))
         blocks = prebind.ledger.blocks(story)
-        failures, _ = prebind.lint(story, all=True)
+        failures, _ = prebind.lint(story, all=True, page=blocks)
         runtimes[story] = round(time.perf_counter() - started, 4)
         bound_count += sum(b['hash'] in bound and prebind.ledger.bindable(b) for b in blocks)
         for failure in failures:

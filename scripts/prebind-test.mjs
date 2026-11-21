@@ -56,6 +56,12 @@ for (const [name, text, says, passage, status, expected] of [
   ['by supports name', 'It was Jane Smith.', 'It happened.', undefined, 'fact', null],
   ['United States to US', 'It was in the United States.', 'It was in the US.', undefined, 'fact', null],
   ['US to United States', 'It was in the U.S.', 'It was in the United States.', undefined, 'fact', null],
+  ['colon attribution', 'Smith: “it happened”.', 'It happened.', 'it happened', 'said', null],
+  ...['blamed', 'acknowledged', 'tied', 'posted', 'posting', 'called', 'insisted', 'denied', 'contended', 'asserted', 'noted', 'added', 'described', 'cited', 'reported', 'estimated', 'counted'].map(verb => [`attribution ${verb}`, `Smith ${verb} it.`, 'It happened.', undefined, 'said', null]),
+  ['count attribution', "It happened, by Smith's count.", 'It happened.', undefined, 'said', null],
+  ['estimate attribution', 'It happened, by Smith’s estimate.', 'It happened.', undefined, 'said', null],
+  ['statement attribution', 'Smith, in a statement, disputed it.', 'It happened.', undefined, 'said', null],
+  ['post attribution', 'Smith, in a post, disputed it.', 'It happened.', undefined, 'said', null],
 ]) {
   test(name, t => {
     const { run } = fixture(t, text + cite, says, passage, status);
@@ -98,4 +104,36 @@ test('missing admitted inputs are errors, not clean', t => {
   const { run, root } = fixture(t, 'It cost 999.' + cite);
   rmSync(join(root, `checks/manifests/${story}.json`));
   assert.notEqual(run().status, 0);
+});
+
+for (const [name, heading, cited, date, fails] of [
+  ['uncited page fact', 'There were 47 flights.', 'There were 47 flights.', '', false],
+  ['uncited unsupported fact', 'There were 48 flights.', 'There were 47 flights.', '', true],
+  ['uncited by support', 'It was Jane Smith.', 'It happened.', '', false],
+  ['manifest year', 'The date: 2026', 'It happened.', '2026-11-13', false],
+  ['page supported year', 'The date: 2024', 'It happened in 2024.', '', false],
+  ['unsupported year', 'The date: 2023', 'It happened.', '2026-11-13', true],
+  ['bare rank', 'Rank: 3', 'It happened.', '', false],
+  ['measured small integer', 'It took 3 hours.', 'It happened.', '', true],
+]) test(name, t => {
+  const { run, put } = fixture(t, '', cited);
+  put(`checks/manifests/${story}.json`, JSON.stringify({ date, records: [] }));
+  put('dist/events/example/story/index.html', `<main><h2>${heading}</h2><p>${cited}${cite}</p></main>`, 2000);
+  const result = run('prebind.py', ['--strict']);
+  assert.equal(result.status, fails ? 1 : 0, result.stdout + result.stderr);
+});
+test('small integer stays checked in cited block', t => {
+  const { run } = fixture(t, 'Rank: 3' + cite, 'It happened.');
+  assert.equal(run('prebind.py', ['--strict']).status, 1);
+});
+test('cited bare year uses page support, but other cited numbers do not', t => {
+  const { run, put } = fixture(t, '', 'It happened.');
+  put(`checks/claims/${story}.json`, JSON.stringify({ claims: [
+    { id: 'c', says: 'It happened.', status: 'fact', evidence: [] },
+    { id: 'other', says: 'In 2024 there were 47 flights.', status: 'fact', evidence: [] },
+  ] }));
+  put('dist/events/example/story/index.html', `<main><p>The date: 2024${cite}</p><p data-claims="other">In 2024 there were 47 flights.</p></main>`, 2000);
+  assert.equal(run('prebind.py', ['--strict']).status, 0);
+  put('dist/events/example/story/index.html', `<main><p>There were 47 flights.${cite}</p><p data-claims="other">In 2024 there were 47 flights.</p></main>`, 2000);
+  assert.equal(run('prebind.py', ['--strict']).status, 1);
 });
