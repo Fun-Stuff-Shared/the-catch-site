@@ -36,11 +36,13 @@ const topics = [...new Set(stories.map(s => s.topic))];
   if (topicRail && topicControls && earlierTopics && moreTopics) {
     const updateCue = () => {
       topicControls.hidden = topicRail.scrollWidth <= topicRail.parentElement!.clientWidth + 1;
-      earlierTopics.disabled = topicRail.scrollLeft <= 1;
-      moreTopics.disabled = topicRail.scrollWidth - topicRail.clientWidth - topicRail.scrollLeft <= 1;
+      earlierTopics.setAttribute('aria-disabled', String(topicRail.scrollLeft <= 1));
+      moreTopics.setAttribute('aria-disabled', String(topicRail.scrollWidth - topicRail.clientWidth - topicRail.scrollLeft <= 1));
     };
     for (const [button, direction] of [[earlierTopics, -1], [moreTopics, 1]] as const) {
-      button.addEventListener('click', () => topicRail.scrollBy({ left: direction * Math.max(44, topicRail.clientWidth * .8) }));
+      button.addEventListener('click', () => {
+        if (button.getAttribute('aria-disabled') !== 'true') topicRail.scrollBy({ left: direction * Math.max(44, topicRail.clientWidth * .8) });
+      });
     }
     topicRail.addEventListener('focusin', event => {
       if (!(event.target instanceof HTMLElement)) return;
