@@ -1,6 +1,7 @@
 ---
 import Cite from "../Cite.astro";
 import { recordById } from "../../lib/record-manifests.mjs";
+import { claim as ledgerClaim, storyId } from "../../lib/claims.mjs";
 
 interface Props {
   outlet?: string;
@@ -15,7 +16,10 @@ interface Props {
 const { outlet, claim, verdict, chip, status = "ok", date, folded = false, cites } = Astro.props;
 const claimIds = cites?.map((c) => c.c).filter(Boolean).join(" ") || undefined;
 const sourceMarkup = Astro.slots.has("default") ? await Astro.slots.render("default") : "";
-const sourceId = sourceMarkup.match(/data-record-href="\/records\/([^/]+)\//)?.[1];
+const pageEvent = (Astro.url.pathname.match(/^\/events\/(.+?)\/?$/) || [])[1];
+const firstCite = cites?.[0];
+const sourceId = sourceMarkup.match(/data-record-href="\/records\/([^/]+)\//)?.[1]
+  ?? (firstCite?.c ? ledgerClaim(pageEvent && storyId(pageEvent), firstCite.c).evidence[0]?.record : firstCite?.s);
 const recordDate = sourceId ? recordById.get(sourceId)?.date : undefined;
 const displayDate = date ?? (recordDate
   ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${recordDate}T12:00:00Z`))
