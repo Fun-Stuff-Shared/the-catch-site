@@ -1,5 +1,6 @@
 import { readingReturn } from '../lib/reading-return.mjs';
-const from = readingReturn(new URLSearchParams(location.search).get('from'), location.origin);
+import { articleReturnRoutes } from './article-return-routes';
+const from = readingReturn(new URLSearchParams(location.search).get('from'), location.origin, articleReturnRoutes);
 if (from) {
   const back = document.querySelector<HTMLAnchorElement>('[data-return-reading]');
   if (back) { back.href = from; back.hidden = false; back.textContent = new URL(from, location.origin).pathname === '/records/' ? 'Return to the source library' : new URL(from, location.origin).pathname === '/' ? 'Return to the homepage' : 'Return to reading'; }
