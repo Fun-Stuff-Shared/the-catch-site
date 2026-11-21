@@ -5,6 +5,7 @@ check:   claims.py check <story>                         the ledger's shape, and
 pack:    claims.py pack <story> <pack.md> <records.md>   the claims not yet held, for the claim check
 hold:    claims.py hold <story> <pack.md>                record the packed claims as held (CLAIMS HOLD)
 blocks:  claims.py blocks <story>                        the built page's blocks and the claims each cites (JSON lines)
+migrate-bound: claims.py migrate-bound <story>           preserve legacy bind passes with current block hashes
 verify:  claims.py verify <story>                        every claim the page cites is held, every block that cites one is bound
 lint:    claims.py lint <story>                          each short form states nothing its says does not (numbers,
                                                          dates, names, qualifiers); reports, before the claim check
@@ -75,6 +76,13 @@ def claim_hash(claim):
 
 def strict(claim):
     return bool(claim.get("load"))
+
+
+def bind_claim_hash(claim):
+    judged = {k: claim.get(k) for k in ("says", "status", "by", "scope")}
+    judged["strict"] = strict(claim)
+    body = json.dumps(judged, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(body.encode()).hexdigest()[:16]
 
 
 def loose(passage):
@@ -234,9 +242,20 @@ def blocks(story):
     out = []
     for text, ids in p.blocks:
         cited = [by_id[i] for i in ids]
-        key = json.dumps([html.unescape(text), [(c["id"], claim_hash(c)) for c in cited]], ensure_ascii=False)
-        out.append({"hash": hashlib.sha256(key.encode()).hexdigest()[:16], "text": text, "claims": cited})
+        hashes = {}
+        for name, hash_claim in (("hash", bind_claim_hash), ("legacy_hash", claim_hash)):
+            key = json.dumps([html.unescape(text), [(c["id"], hash_claim(c)) for c in cited]], ensure_ascii=False)
+            hashes[name] = hashlib.sha256(key.encode()).hexdigest()[:16]
+        out.append({**hashes, "text": text, "claims": cited})
     return out
+
+
+def migrate_bound(story):
+    path = bound_path(story)
+    bound = set(read_json(path, []))
+    upgraded = bound | {b["hash"] for b in blocks(story) if b["legacy_hash"] in bound}
+    if upgraded != bound:
+        path.write_text(json.dumps(sorted(upgraded), indent=2) + "\n")
 
 
 def bindable(block):
@@ -244,6 +263,7 @@ def bindable(block):
 
 
 def verify(story):
+    migrate_bound(story)
     ok = check(story)
     held = read_json(held_path(story), {})
     bound = set(read_json(bound_path(story), []))
@@ -656,5 +676,7 @@ if __name__ == "__main__":
         sys.exit(0 if lint(a[1]) else 1)
     elif len(a) >= 2 and a[0] == "add":
         sys.exit(0 if add(a[1], a[2:]) else 1)
+    elif len(a) == 2 and a[0] == "migrate-bound":
+        migrate_bound(a[1])
     else:
         sys.exit(USAGE)

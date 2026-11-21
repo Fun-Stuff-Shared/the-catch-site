@@ -238,7 +238,7 @@ reader (Claude, no context) then reads the whole story once and retells it in fi
 sentences.
 
 The bind check reads every block of the built page against the claims it cites, and only
-the blocks that changed since they last passed: does the block say what its claims say, no
+the blocks whose text or cited claims' words, status, scope, speaker or strictness changed since they last passed: does the block say what its claims say, no
 more, with each claim's status, scope and speaker? Sonnet reads each changed block, and Opus
 reads again each one that cites a claim with a load. A finding on a claim with a load, or a
 fact no claim holds, must be fixed; one on a background claim is listed for you to judge. It
