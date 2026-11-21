@@ -406,6 +406,7 @@ footer.colophon p + p { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top:
 .story .mode-switcher { position: sticky; top: 0; z-index: 20; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; background: var(--paper); border: 0; border-bottom: 1px solid var(--rule); border-radius: 0; margin: 1.5rem 0; }
 .story .mode-btn { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: .6rem .4rem; border: 0; border-bottom: 2px solid transparent; text-align: center; }
 .story .mode-btn.active { color: var(--ink); background: var(--paper); border-bottom-color: var(--ink); }
+.story .mode-btn.active:focus-visible { outline: 3px solid var(--blue); outline-offset: -4px; }
 .story .mode-btn:hover { background: var(--blue-tint); }
 nav.story-toc { background: var(--paper); padding: 0; }
 .toc-disclosure > summary { display: flex; align-items: center; gap: .75rem; padding: .75rem 0; min-height: 48px; font: 600 .8rem/1.4 var(--sans); cursor: pointer; list-style: none; }
