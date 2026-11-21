@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 
@@ -14,8 +14,25 @@ function fixture(t, { reject = false, files = {} } = {}) {
     mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, text, { mode });
   };
+  const bin = join(root, 'bin');
+  mkdirSync(bin);
+  for (const name of ['git', 'zsh', 'python3']) {
+    const resolved = spawnSync('/bin/sh', ['-c', `command -v ${name}`], { encoding: 'utf8' });
+    assert.equal(resolved.status, 0, `fixture requires ${name}: ${resolved.stderr}`);
+    const executable = resolved.stdout.trim();
+    assert.ok(executable.startsWith('/'), `fixture requires an absolute ${name} path`);
+    symlinkSync(executable, join(bin, name));
+  }
+  put(join(root, '.gitconfig'), '');
+  const isolated = {
+    HOME: root, ZDOTDIR: root, GIT_CONFIG_GLOBAL: join(root, '.gitconfig'),
+    GIT_CONFIG_NOSYSTEM: '1', PATH: bin, LC_ALL: 'C',
+    CATCH_BASE: 'main', CATCH_SOURCE_SCAN_ALLOW: '',
+  };
+  for (const name of ['npm', 'fd', 'node']) put(join(bin, name), '#!/bin/sh\nexit 0\n', 0o755);
+  put(join(bin, 'date'), '#!/bin/sh\nprintf "20990101-000000\\n"\n', 0o755);
   const git = (...args) => {
-    const r = spawnSync('git', ['-C', site, ...args], { encoding: 'utf8' });
+    const r = spawnSync(join(bin, 'git'), ['-C', site, ...args], { encoding: 'utf8', env: isolated });
     assert.equal(r.status, 0, r.stderr);
     return r.stdout.trim();
   };
@@ -33,7 +50,7 @@ function fixture(t, { reject = false, files = {} } = {}) {
   git('commit', '-qm', 'base');
   const before = git('rev-parse', 'main');
   const origin = join(root, 'origin.git');
-  assert.equal(spawnSync('git', ['init', '--bare', origin]).status, 0);
+  assert.equal(spawnSync(join(bin, 'git'), ['init', '--bare', origin], { env: isolated }).status, 0);
   git('remote', 'add', 'origin', origin);
   git('push', '-q', 'origin', 'main');
   if (reject) put(join(origin, 'hooks/pre-receive'), '#!/bin/sh\necho "fixture rejects push" >&2\nexit 1\n', 0o755);
@@ -44,13 +61,16 @@ function fixture(t, { reject = false, files = {} } = {}) {
   git('commit', '-qm', 'story');
   git('switch', '-q', 'main');
   const script = join(root, 'publish.sh');
-  put(script, source.replace('site=/Volumes/4/GitHub/the-catch-site', `site=${site}`));
+  const assignment = 'site=/Volumes/4/GitHub/the-catch-site';
+  assert.equal(source.split(assignment).length, 2, 'fixture must replace exactly one production site assignment');
+  const patched = source.replace(assignment, `site=${JSON.stringify(site)}`);
+  assert.ok(!patched.includes('/Volumes/4/GitHub/the-catch-site'), 'fixture must never reference the production site');
+  put(script, patched);
   put(join(root, 'fetch-pinned.sh'), 'exit 0\n');
-  for (const name of ['npm', 'fd']) put(join(root, 'bin', name), '#!/bin/sh\nexit 0\n', 0o755);
-  const run = (args = [], env = {}) => spawnSync('zsh', [script, '--merge', 'story', ...args, 'test--story'], {
-    encoding: 'utf8', env: { ...process.env, CATCH_BASE: 'main', CATCH_SOURCE_SCAN_ALLOW: '', PATH: `${root}/bin:${process.env.PATH}`, ...env },
+  const run = (args = [], env = {}) => spawnSync(join(bin, 'zsh'), ['-f', script, '--merge', 'story', ...args, 'test--story'], {
+    encoding: 'utf8', env: { ...isolated, ...env },
   });
-  return { site, before, git, run };
+  return { site, before, git, run, bin };
 }
 
 test('a rejected push restores main and preserves the publish commit for retry', (t) => {
@@ -155,4 +175,18 @@ test('merging main into a story does not rescan captures already on main', (t) =
   assert.ok(!r.stderr.includes('Mapbox'), r.stderr);
   assert.notEqual(f.git('rev-parse', 'main'), before);
   assert.equal(f.git('rev-parse', 'main'), f.git('rev-parse', 'origin/main'));
+});
+
+for (const hostile of ['shell', 'git']) test(`publish fixtures ignore hostile user ${hostile} configuration`, (t) => {
+  const home = mkdtempSync(join(tmpdir(), 'catch-hostile-'));
+  t.after(() => rmSync(home, { recursive: true, force: true }));
+  writeFileSync(join(home, '.zshenv'), hostile === 'shell' ? 'exit 1\n' : '');
+  mkdirSync(join(home, 'hooks'));
+  writeFileSync(join(home, 'hooks/pre-commit'), '#!/bin/sh\nexit 1\n', { mode: 0o755 });
+  writeFileSync(join(home, '.gitconfig'), hostile === 'git' ? `[core]\n hooksPath = ${home}/hooks\n` : '');
+  const r = spawnSync(process.execPath, ['--test', '--test-name-pattern=^a successful publish pushes main$', new URL(import.meta.url).pathname], {
+    encoding: 'utf8', env: { ...process.env, NODE_TEST_CONTEXT: undefined, HOME: home, ZDOTDIR: home, GIT_CONFIG_GLOBAL: join(home, '.gitconfig') },
+  });
+  assert.equal(r.status, 0, r.stdout + r.stderr);
+  assert.match(r.stdout, /pass 1/);
 });
