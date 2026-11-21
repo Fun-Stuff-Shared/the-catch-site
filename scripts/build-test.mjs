@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { spawnSync } from "node:child_process";
 import { detectTime, parseTimeOutput, runBuild, stages } from "./build.mjs";
 
 test("GNU and BSD time output parsing and detection", () => {
@@ -29,6 +30,16 @@ test("timing-only fallback runs the command and reports unavailable RSS", () => 
     assert.equal(report.stages[0].peakRssKiB, null);
     assert.equal(report.total.peakRssKiB, null);
     assert.ok(report.total.wallMs > 0);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test("resource reporting preserves stage stderr", () => {
+  const dir = mkdtempSync(join(tmpdir(), "build-stderr-"));
+  try {
+    const code = `import {runBuild} from ${JSON.stringify(new URL('./build.mjs', import.meta.url).href)}; runBuild({ steps: [['stderr', process.execPath, ['-e', 'process.stderr.write("stage stderr stays visible")']]], reportPath: ${JSON.stringify(join(dir, 'report.json'))} });`;
+    const result = spawnSync(process.execPath, ["--input-type=module", "-e", code], { encoding: "utf8" });
+    assert.equal(result.status, 0);
+    assert.match(result.stderr, /stage stderr stays visible/);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 

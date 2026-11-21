@@ -45,7 +45,7 @@ export function runBuild({ steps = stages, reportPath = ".build-report.json", en
       try {
         result = timer
           ? spawnSync("/usr/bin/time", [timer.flag, "/bin/sh", "-c", 'exec "$@" 2>&3', "build-stage", command, ...args], {
-            env: { ...env, ...overrides }, stdio: ["inherit", "inherit", fd, "inherit"],
+            env: { ...env, ...overrides }, stdio: ["inherit", "inherit", fd, 2],
           })
           : spawnSync(command, args, { env: { ...env, ...overrides }, stdio: "inherit" });
       } finally {
