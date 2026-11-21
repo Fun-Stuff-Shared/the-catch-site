@@ -142,6 +142,17 @@ test('small integer stays checked in cited block', t => {
   const { run } = fixture(t, 'Rank: 3' + cite, 'It happened.');
   assert.equal(run('prebind.py', ['--strict']).status, 1);
 });
+for (const text of ['The United States said it happened.', 'U.S. said it happened.', 'US: it happened.']) {
+  test(`canonical speaker attribution: ${text}`, t => {
+    const { run } = fixture(t, text + cite, 'It happened.', 'It happened.', 'said', 'United States');
+    const result = run('prebind.py', ['--strict']);
+    assert.equal(result.status, 0, result.stdout + result.stderr);
+  });
+}
+test('canonical speaker still requires attribution', t => {
+  const { run } = fixture(t, 'The United States witnessed it.' + cite, 'It happened.', 'It happened.', 'said', 'United States');
+  assert.equal(run('prebind.py', ['--strict']).status, 1);
+});
 test('cited bare year uses page support, but other cited numbers do not', t => {
   const { run, put } = fixture(t, '', 'It happened.');
   put(`checks/claims/${story}.json`, JSON.stringify({ claims: [

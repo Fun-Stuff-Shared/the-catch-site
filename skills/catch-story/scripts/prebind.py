@@ -201,11 +201,11 @@ def check_block(block, page_support=(), story_year=None):
     for c in claims:
         if c.get('status') not in {'said', 'alleged'}:
             continue
-        by = re.sub(r"'s\b", '', normalize(c.get('by', '')).casefold())
+        by = canonical(c.get('by', ''))
         distinctive = [w for w in re.findall(r'\w+', by) if w not in STOP and len(w) > 2]
         named = bool(by) and (contains(canonical(text), by) or any(contains(canonical(text), w) for w in distinctive))
         colon = any(re.search(r'(?<!\w)' + re.escape(w) + r'\s*:', canonical(text)) for w in [by, *distinctive] if w)
-        if not named or not (VERB.search(text) or ATTRIBUTION.search(text) or colon):
+        if not named or not (VERB.search(canonical(text)) or ATTRIBUTION.search(text) or colon):
             issues.append({'lint': 'attribution', 'claim': c['id'], 'missing': [f"name {c.get('by', '')!r} and an attribution verb"]})
     sources = [normalize(p) for p in passages] + [q for c in claims for q in quoted(c['says'])]
     bad_quotes = [q for q in quoted(text) if not quote_matches(q, sources)]
