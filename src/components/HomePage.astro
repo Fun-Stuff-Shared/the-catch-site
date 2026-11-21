@@ -12,7 +12,7 @@ const topics = [...new Set(stories.map(s => s.topic))];
   <main class="discovery newsroom" id="main-content" data-home-catalog>
     {synthetic && <p class="sample-notice">Design preview · {stories.length} fictional stories for testing this layout. <a href="/">Return to published reporting</a></p>}
     <header class="edition-intro"><h1 class="sr-only">The Catch: latest reporting</h1><p>Understand the story. Follow the evidence.</p><a href="/methodology/">How our reporting works <span aria-hidden="true">↗</span></a></header>
-    <div class="topic-filters edition-topics" aria-label="Filter stories by topic"><button data-topic-filter="" aria-pressed="true">All topics</button>{topics.map(topic => <button data-topic-filter={topic} aria-pressed="false">{topic}</button>)}</div>
+    <div class="topic-rail"><div class="topic-filters edition-topics" aria-label="Filter stories by topic"><button data-topic-filter="" aria-pressed="true">All topics</button>{topics.map(topic => <button data-topic-filter={topic} aria-pressed="false">{topic}</button>)}</div></div>
     <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
     <div class="newsroom-layout">
       <section class:list={["front-stories", { "front-with-developments": developments.length > 0 }]} aria-label="Leading stories"><div data-featured-stories data-count={count}>{featured.map((story, i) => <StoryLink story={story} lead={i === 0} visual={i === 0} showSeries related={story.series?.startsWith('/events/') ? stories.filter(item => item.series === story.series && item.href !== story.href) : []} />)}</div>{developments.length > 0 && <div class="latest-developments" data-latest-developments><h2>Latest developments</h2><ul>{developments.map(entry => <li><a href={entry.href} data-extracted>{entry.title}</a></li>)}</ul><a class="read-link" href="/developments/">All developments <span aria-hidden="true">↗</span></a></div>}</section>
@@ -21,4 +21,14 @@ const topics = [...new Set(stories.map(s => s.topic))];
     </div>
   </main>
 </BaseLayout>
-<script>import '../scripts/discovery';</script>
+<script>
+  import '../scripts/discovery';
+  const topicRail = document.querySelector<HTMLElement>('.edition-topics');
+  if (topicRail) {
+    const updateCue = () => topicRail.parentElement?.toggleAttribute('data-more-topics', topicRail.scrollWidth - topicRail.clientWidth - topicRail.scrollLeft > 1);
+    topicRail.addEventListener('scroll', updateCue, { passive: true });
+    new ResizeObserver(updateCue).observe(topicRail);
+    document.fonts.ready.then(updateCue);
+    updateCue();
+  }
+</script>
