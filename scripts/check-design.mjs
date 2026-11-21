@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, sep } from 'node:path';
 import { parse } from 'parse5';
 
 function* files(path) {
@@ -23,7 +23,12 @@ if (enabled) {
   for (const file of files('dist/design')) {
     const html = readFileSync(file, 'utf8');
     assert.ok([...nodes(parse(html))].some(node => node.tagName === 'meta' && attr(node, 'name') === 'robots' && attr(node, 'content')?.split(/[\s,]+/).includes('noindex')), `${file} must be noindex`);
-    assert.match(html, /Fictional|fictional|Synthetic/, `${file} must disclose fictional content`);
+    // The identity kit previews real brand assets, not fictional reporting.
+    if (file.startsWith(join('dist/design', 'identity') + sep)) {
+      assert.match(html, /Design preview only/, `${file} must disclose the identity preview`);
+    } else {
+      assert.match(html, /Fictional|fictional|Synthetic/, `${file} must disclose fictional content`);
+    }
   }
 }
 console.log(`design gate passed: ${enabled ? 'opt-in fixtures are noindex' : 'no design routes'}, published discovery excludes fixtures`);
