@@ -86,10 +86,23 @@ def computations(claim, records=None, texts=None):
     if ";" in says:
         intervals = []
     if len(intervals) == 1:
+        publication_dates = set()
         if re.search(r"\bpublication\b", says, re.I):
             for e in evidence:
                 published = (records or {}).get(e.get("record"), {}).get("date", "") or ""
                 context += " " + published
+                publication_dates.update(dates(published))
+
+        def reference_date(choices, interval):
+            if re.match(r"\s+publication\b", context[interval.end():], re.I):
+                return next(iter(publication_dates)) if len(publication_dates) == 1 else None
+            token = DATE.match(context[interval.end():].lstrip())
+            if token is None:
+                return None
+            parsed = dates(token[0], choices[0].year)
+            candidates = [d for d in choices if parsed and (d.month, d.day) == (parsed[0].month, parsed[0].day)
+                          and (not (token[1] or token[6]) or d.year == parsed[0].year)]
+            return candidates[0] if len(candidates) == 1 else None
         explicit = dates(context)
         years = {d.year for d in explicit}
         if not years:
@@ -101,10 +114,22 @@ def computations(claim, records=None, texts=None):
             interval = intervals[0]
             expected_days = float(interval[1]) * (7 if interval[2].lower().startswith("week") else
                                                 365.2425 / 12 if interval[2].lower().startswith("month") else 1)
-            inferred = [min((d.replace(year=y) for y in (anchor.year - 1, anchor.year, anchor.year + 1)
-                             if not (d.month == 2 and d.day == 29 and not calendar.isleap(y))),
-                            key=lambda candidate: abs(abs((candidate - anchor).days) - expected_days))
-                        if d != anchor else d for d in inferred]
+            variants = []
+            for year in (anchor.year - 1, anchor.year, anchor.year + 1):
+                try:
+                    choices = [d.replace(year=year) if d != anchor else d for d in inferred]
+                except ValueError:
+                    continue
+                direction = interval[3].lower()
+                reference = reference_date(choices, interval)
+                if direction in {"from", "between"} and choices[0] > choices[1]:
+                    continue
+                if direction in {"before", "after"} and reference is not None:
+                    event = next((d for d in choices if d != reference), reference)
+                    if (event > reference) != (direction == "after"):
+                        continue
+                variants.append(choices)
+            inferred = min(variants, key=lambda pair: abs(abs((pair[1] - pair[0]).days) - expected_days)) if variants else []
         ds = sorted(set(inferred))
         if len(ds) == 2:
             a, b = ds
@@ -123,13 +148,21 @@ def computations(claim, records=None, texts=None):
                 add(m[1], actual, f"{a:%b %d, %Y} → {b:%b %d, %Y} is {actual.normalize():f} {unit}")
                 if re.search(r"\bwithin\s*$", says[:m.start()], re.I) and actual <= number(m[1]):
                     out[-1] = (out[-1][0], out[-1][1], True)
+                if m[3].lower() in {"before", "after"}:
+                    reference = reference_date(ds, m)
+                    if reference is None:
+                        out.pop()
+                        continue
+                    event = b if reference == a else a
+                    if (event > reference) != (m[3].lower() == "after"):
+                        out[-1] = (out[-1][0], out[-1][1] + f"; {event} is not {m[3]} {reference}", False)
                 out[-1] = (f'"{m[1]} {m[2]}"', out[-1][1], out[-1][2])
 
     # Explicit operands keep unrelated numbers in a passage out of calculations.
     sum_operands = rf"{NUM}(?:,\s*{NUM})*,?\s+and\s+{NUM}"
     patterns = [
         (rf"(?P<operands>{sum_operands}),?\s+(?:a\s+)?total\s+of\s+(?P<c>{NUM})", "sum"),
-        (rf"from\s+(?P<a>{NUM})\s+to\s+(?P<b>{NUM}),?\s+(?:(?:an?\s+)?(?:increase|decrease)\s+of|up|down)\s+(?P<c>{NUM})(?![\d%]|\.\d)", "difference"),
+        (rf"from\s+(?P<a>{NUM})\s+to\s+(?P<b>{NUM}),?\s+(?:an?\s+)?(?P<direction>increase\s+of|decrease\s+of|up|down)\s+(?P<c>{NUM})(?![\d%]|\.\d)", "difference"),
         (rf"(?P<a>{NUM})\s+of\s+(?P<b>{NUM}),?\s+or\s+(?P<c>\d+(?:\.\d+)?)%", "share"),
         (rf"(?P<a>{NUM})\s+[a-z]+\s+of\s+(?P<b>{NUM})\s+[a-z]+\s+\((?P<c>\d+(?:\.\d+)?)%\)", "share"),
         (rf"(?P<direction>up|down)\s+(?P<c>\d+(?:\.\d+)?)%\s+from\s+(?P<a>{NUM})\s+to\s+(?P<b>{NUM})", "change"),
@@ -146,7 +179,8 @@ def computations(claim, records=None, texts=None):
             if kind in {"share", "change"} and not (b if kind == "share" else a):
                 continue
             if kind == "difference":
-                actual, formula = abs(b - a), f"|{b} - {a}|"
+                sign = -1 if m["direction"].lower().startswith(("decrease", "down")) else 1
+                actual, formula = (b - a) * sign, f"({b} - {a}) × {sign}"
             elif kind == "share":
                 actual, formula = a / b * 100, f"{a} / {b} × 100"
             else:
@@ -154,6 +188,8 @@ def computations(claim, records=None, texts=None):
                 actual, formula = (b - a) / a * 100 * sign, f"({b} - {a}) / {a} × {100 * sign}"
             suffix = "%" if kind in {"share", "change"} else ""
             add(m["c"], actual, f"{formula} = {actual:.8f}".rstrip("0").rstrip(".") + suffix)
+            if kind == "difference" and actual <= 0:
+                out[-1] = (out[-1][0], out[-1][1] + "; direction does not match", False)
             out[-1] = (f'"{m["c"]}{suffix}"', out[-1][1], out[-1][2])
     ratios = list(re.finditer(rf"(?P<a>\${NUM})\s+of\s+(?P<b>\${NUM})", says, re.I))
     per_hundred = list(re.finditer(r"\b(\d+(?:\.\d+)?) of every 100\b", says, re.I))
@@ -195,14 +231,18 @@ def computations(claim, records=None, texts=None):
             operands = operand_lists.pop()
             add(totals[0][1], sum(operands), f"{' + '.join(map(str, operands))} = {sum(operands)}")
         for operand_pattern, result_pattern, operation, symbol in [
-            (rf"from\s+({NUM})\s+to\s+({NUM})", rf"(?:increase|decrease)\s+of\s+({NUM})(?![\d%]|\.\d)", lambda a, b: abs(b - a), "difference"),
+            (rf"from\s+({NUM})\s+to\s+({NUM})", rf"(?:increase|decrease)\s+of\s+({NUM})(?![\d%]|\.\d)", lambda a, b: b - a, "difference"),
         ]:
             pairs = {(number(p[1]), number(p[2])) for p in re.finditer(operand_pattern, passages, re.I)}
             results = list(re.finditer(result_pattern, says, re.I))
             if len(pairs) == 1 and len(results) == 1:
                 a, b = pairs.pop()
                 actual = operation(a, b)
+                if results[0][0].lower().startswith("decrease"):
+                    actual = -actual
                 add(results[0][1], actual, f"{a} {symbol} {b} = {actual}")
+                if actual <= 0:
+                    out[-1] = (out[-1][0], out[-1][1] + "; direction does not match", False)
     for m in re.finditer(rf"(?P<c>\d+(?:\.\d+)?)%\s+of\s+(?P<b>{NUM})", says, re.I):
         if any(stated == f'"{m["c"]}%"' for stated, _, _ in out):
             continue
