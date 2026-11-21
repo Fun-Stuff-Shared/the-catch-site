@@ -13,7 +13,9 @@ one source. Numbers ignore thousands commas and insignificant decimal zeroes;
 percent, money scale and currency ($, €, £, ¥; USD/EUR equal $/€) remain
 significant, and a numeric match must cover the whole number. Scaled amounts
 equal their expanded values (12 million = 12000000), never their unscaled values.
-Numeric/spelled ordinals equal cardinals. Claim scope is also token support.
+Numeric/spelled ordinals equal cardinals, except capitalized ordinal words
+followed by another capitalized name word (First Republic Bank). Name initials
+are preserved in both directions. Claim scope is also token support.
 Dates accept ISO and day-month forms as well as month-day forms.
 Spelled cardinal numbers through
 ninety, hundred and thousand (including compounds) equal digits. Join "and"
@@ -72,7 +74,6 @@ REPORTING = re.compile(r'\b(?:blames?|acknowledges?|calls?|reports?|estimates?|c
 DEMONYMS = {'chinese': 'china', 'iranian': 'iran', 'american': 'unitedstates', 'republicans': 'republican', 'democrats': 'democrat', 'democratic': 'democrat'}
 ORDINALS = dict(zip('first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth thirteenth fourteenth fifteenth sixteenth seventeenth eighteenth nineteenth twentieth'.split(), range(1, 21)))
 ORDINAL = re.compile(r'\b(?:' + '|'.join(ORDINALS) + r')\b', re.I)
-LOWER_ORDINAL = re.compile(ORDINAL.pattern)
 
 
 def normalize(text):
@@ -102,6 +103,8 @@ def number_words(match):
 
 
 def ordinal_words(match):
+    if match[0][0].isupper() and re.match(r'\s+[A-Z][A-Za-z0-9]', match.string[match.end():]):
+        return match[0]
     if match[0].lower() == 'second' and re.search(r'(?:\d|per|each|a)\s+$', match.string[max(0, match.start() - 32):match.start()], re.I):
         return match[0]
     return str(ORDINALS[match[0].lower()])
@@ -109,11 +112,11 @@ def ordinal_words(match):
 
 @lru_cache(maxsize=16384)
 def canonical(text):
-    text = re.sub(r'(?<!\w)(?:United States|U\.S\.|US)(?!\w)', 'unitedstates', normalize(text)).casefold()
+    text = re.sub(r'(?<!\w)(?:United States|U\.S\.|US)(?!\w)', 'unitedstates', normalize(text))
+    text = ORDINAL.sub(ordinal_words, text).casefold()
     text = re.sub(r'\b(usd|eur)\s*(?=\d)', lambda m: '$' if m[1] == 'usd' else '€', text)
     text = re.sub(r'([$€£¥])\s+(?=\d)', r'\1', text)
     text = LOWER_WORD_NUMBERS.sub(number_words, text)
-    text = LOWER_ORDINAL.sub(ordinal_words, text)
     text = re.sub(r'(?<=\d)(?:st|nd|rd|th)\b', '', text)
     text = MONTH_ABBREVIATION.sub(lambda m: MONTH_ABBREVIATIONS[m[0].rstrip('.')], text)
     text = re.sub(r"'s\b", '', text)
