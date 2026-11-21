@@ -45,7 +45,7 @@ const topics = [...new Set(stories.map(s => s.topic))];
       });
     }
     topicRail.addEventListener('focusin', event => {
-      if (!(event.target instanceof HTMLElement)) return;
+      if (!(event.target instanceof HTMLElement) || !event.target.matches(':focus-visible')) return;
       const button = event.target.getBoundingClientRect();
       const viewport = topicRail.getBoundingClientRect();
       const cueWidth = parseFloat(getComputedStyle(topicRail).paddingInlineEnd);
