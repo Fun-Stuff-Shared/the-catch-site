@@ -18,6 +18,12 @@ its claim's `short` form and cites the claim (`cites: [{ c: "<id>" }]` on a time
 so the cell keeps the claim's "may" or "signalled": `assets/example-claims.md`. The seen-on
 pages below cite records directly, from before the ledger.
 
+`KpiStrip` accepts `cites: [{ c: "<id>" }]` on each KPI, just like a
+`DecisionTimeline` entry or `ShareBar` part. `OutletCheck` accepts the same array
+as a card-level `cites` prop, in both full and folded form; it binds the card's
+claim and verdict to those claims. Without a ledger, use `{ s: "<record-id>",
+passage: "<exact passage>" }` instead. Existing source slots still work.
+
 ## Which one, for which question
 
 | The reader is asking | Show it with | Component and props | Seen on |
@@ -25,10 +31,10 @@ pages below cite records directly, from before the ledger.
 | How did we get here? In what order? | A dated chronology | `DataTable` (`columns`, `rows`, `caption`) in a `<figure class="story-figure">`, or `DecisionTimeline` (`entries: [{date, title, sub?, current?, cites?}]`, `heading`) | `okinawa/2026-10-04…astro` "From U.S. rule to this case"; `jobs/2026-10-02…astro:245` |
 | How long between these steps? | Dates on a line with the days between | `DateLine` (`points: [{label, date}]`, `intervals: [{days}]`, `highlight?`, `ariaLabel`) | `mail-voting/2026-09-14…astro:137` |
 | What exactly did they say? | The speaker's words as a card | `QuoteCard` (`speaker`, `when`, `where`, `label?`), the quote and its `Cite` in the slot; introduced by the paragraph before it | `space-weapons/2026-09-14…astro:76` |
-| How big, against what? | The key figures in a row | `KpiStrip` (`kpis: [{value, unit?, label}]`) | `fed-rate/2026-09-16…astro:53` |
+| How big, against what? | The key figures in a row | `KpiStrip` (`kpis: [{value, unit?, label, cites?}]`) | `fed-rate/2026-09-16…astro:53` |
 | How has it moved? | A chart of the series | `StepChart` (rates and other step series), `BarChart` (`bars: [{label, value}]`, `signed?`), or a page chart like `DieselChart` | `fed-rate/2026-09-16…astro:72`; `canada-tariffs/2026-09-08…astro:166`; `fuel-reserves/2026-10-02…astro` |
 | How do the two sides, two documents, two places compare? | A side-by-side table | `DataTable` with one column per side and one row per point | `fuel-reserves/2026-10-02…astro` "The March pledge and what is left of it" |
-| What did each outlet get right or wrong? | Outlet cards | `OutletCheck`, `OutletCheckFold` (the section menu says when) | `mail-voting/2026-09-14…astro:189` |
+| What did each outlet get right or wrong? | Outlet cards | `OutletCheck` (`cites?`, including when `folded`), `OutletCheckFold` (the section menu says when) | `mail-voting/2026-09-14…astro:189` |
 
 Import each from `src/components/story/<Name>.astro`; every prop above is read from the
 component's own `Props`.
