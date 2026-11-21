@@ -2,11 +2,13 @@
 /**
  * KPI strip: a row of key figures at the top of a story.
  * Props:
- *   kpis: Array<{ value: string, unit?: string, label: string, live?: boolean }>
+ *   kpis: Array<{ value: string, unit?: string, label: string, live?: boolean, cites?: Array<{ c?: string, s?: string, passage?: string }> }>
  *   liveId?: string  — prefix for live-counter element IDs (default: "kpi")
  */
+import Cite from "../Cite.astro";
+
 interface Props {
-  kpis: Array<{ value: string; unit?: string; label: string; live?: boolean }>;
+  kpis: Array<{ value: string; unit?: string; label: string; live?: boolean; cites?: Array<{ c?: string; s?: string; passage?: string }> }>;
   liveId?: string;
 }
 const { kpis, liveId = "kpi" } = Astro.props;
@@ -18,7 +20,7 @@ const { kpis, liveId = "kpi" } = Astro.props;
         {k.value}<small>{k.unit ? ` ${k.unit}` : ""}</small>
       </span>
       <span class="kpi-label" id={k.live ? `${liveId}-days-label` : undefined}>
-        {k.label}
+        {k.label}{k.cites?.map((c) => <Cite c={c.c} s={c.s} passage={c.passage} />)}
       </span>
     </div>
   ))}
