@@ -10,7 +10,8 @@ Match case-sensitive exact substrings of cited passages or quoted text in says.
 Ellipses (… or ...) split a quote into segments which must match in order within
 one source. Numbers ignore thousands commas and insignificant decimal zeroes;
 percent and money units remain significant. Spelled cardinal numbers through
-ninety, hundred and thousand (including compounds) equal digits. Dates accept
+ninety, hundred and thousand (including compounds) equal digits. Join "and"
+only after hundred or thousand, not between independent numbers. Dates accept
 full/abbreviated months and require month plus day, with year optional; their
 components are not checked separately. Weekdays are not names. Names are whole
 capitalized runs, skipping sentence-initial runs and title-only runs. A name is
@@ -53,7 +54,7 @@ WEEKDAYS = set('monday tuesday wednesday thursday friday saturday sunday'.split(
 SMALL = dict(zip('zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split(), range(21)))
 SMALL.update(dict(zip('thirty forty fifty sixty seventy eighty ninety'.split(), range(30, 100, 10))))
 NUMBER_WORD = r'(?:' + '|'.join([*SMALL, 'hundred', 'thousand']) + r')'
-WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|\s+and\s+)' + NUMBER_WORD + r')*\b', re.I)
+WORD_NUMBERS = re.compile(r'\b' + NUMBER_WORD + r'(?:(?:[ -]+|(?:(?<=hundred)|(?<=thousand))\s+and\s+)' + NUMBER_WORD + r')*\b', re.I)
 LOWER_WORD_NUMBERS = re.compile(WORD_NUMBERS.pattern)
 VERB = re.compile(r'\b(?:said|says?|told|according to|alleged|alleges|accused|claims?|claimed|stated|states|wrote|writes|argued|argues|announced|testified|warned|warns)\b', re.I)
 ATTRIBUTION = re.compile(r"\b(?:blamed|acknowledged|tied|posted|posting|called|insisted|denied|contended|asserted|noted|added|described|cited|reported|estimated|counted|in a statement|in a post)\b|\bby\s+[^.!?:]+?['’]s\s+(?:count|estimate)\b", re.I)
