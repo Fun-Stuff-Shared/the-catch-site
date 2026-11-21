@@ -1,21 +1,40 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { writeFile, unlink, readdir, readFile } from "node:fs/promises";
+import { writeFile, mkdtemp, mkdir, copyFile, symlink, rm, access } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { createServer } from "node:net";
 import { spawn } from "node:child_process";
 import { once } from "node:events";
 import { execFileSync } from "node:child_process";
 
 test("story components render and validate citations without restructuring blocks", async (t) => {
-  const fixture = new URL(`../src/pages/cites-test-${process.pid}.ts`, import.meta.url);
-  const ledgers = await readdir("checks/claims");
-  const ledger = JSON.parse(await readFile(`checks/claims/${ledgers.find((name) => name.endsWith('.json'))}`, "utf8"));
-  const claim = ledger.claims.find((entry) => entry.evidence.length);
-  const manifests = await Promise.all((await readdir("checks/manifests")).filter((name) => name.endsWith(".json")).map(async (name) => JSON.parse(await readFile(`checks/manifests/${name}`, "utf8"))));
-  const record = manifests.flatMap((manifest) => manifest.records ?? []).find((record) => record.id === claim.evidence[0].record);
-  assert.ok(record?.date);
+  const root = fileURLToPath(new URL("..", import.meta.url));
+  const project = await mkdtemp(join(tmpdir(), "story-cites-"));
+  t.after(async () => {
+    await rm(project, {recursive: true, force: true});
+    await assert.rejects(access(project), {code: "ENOENT"});
+  });
+  const fixture = join(project, "src/pages/cites-test.ts");
+  const claim = {id: "reported-count", says: "Reported count.", evidence: [{record: "test-record", passage: "Exact passage"}]};
+  const ledger = {story: "test--story", claims: [claim]};
+  const record = {id: "test-record", date: "2026-01-07"};
   const expectedDate = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${record.date}T12:00:00Z`));
   const event = ledger.story.replace("--", "/");
-  const endpoint = `http://localhost:4397/cites-test-${process.pid}`;
+  for (const dir of ["src/pages", "src/components/story", "src/lib", "src/data", "checks/claims", "checks/manifests"]) await mkdir(join(project, dir), {recursive: true});
+  for (const file of ["src/components/story/OutletCheck.astro", "src/components/story/KpiStrip.astro", "src/components/Cite.astro", "src/lib/claims.mjs", "src/lib/record-manifests.mjs"]) await copyFile(join(root, file), join(project, file));
+  await symlink(join(root, "node_modules"), join(project, "node_modules"), "dir");
+  await writeFile(join(project, "package.json"), JSON.stringify({type: "module"}));
+  await writeFile(join(project, "src/data/news-records.json"), JSON.stringify({records: []}));
+  await writeFile(join(project, "checks/claims/test--story.json"), JSON.stringify(ledger));
+  await writeFile(join(project, "checks/manifests/test--story.json"), JSON.stringify({event, records: [record], story_sources: [{id: record.id, group: "primary"}]}));
+  const socket = createServer();
+  socket.listen(0, "127.0.0.1");
+  await once(socket, "listening");
+  const port = socket.address().port;
+  await new Promise((resolve, reject) => socket.close((error) => error ? reject(error) : resolve()));
+  const endpoint = `http://localhost:${port}/cites-test`;
   await writeFile(fixture, `
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import OutletCheck from '../components/story/OutletCheck.astro';
@@ -34,13 +53,13 @@ export async function GET({ request }) {
   }
 }
 `);
-  const server = spawn(process.execPath, ["node_modules/astro/bin/astro.mjs", "dev", "--port", "4397"], { stdio: "pipe" });
+  const server = spawn(process.execPath, [join(root, "node_modules/astro/bin/astro.mjs"), "dev", "--port", String(port)], { cwd: project, stdio: "pipe" });
   let logs = "";
   server.stdout.on("data", (data) => { logs += data; });
   server.stderr.on("data", (data) => { logs += data; });
   try {
-    for (let i = 0; !logs.includes('localhost:4397') && i < 200; i++) await new Promise((resolve) => setTimeout(resolve, 100));
-    assert.ok(logs.includes('localhost:4397'), logs);
+    for (let i = 0; !logs.includes(`localhost:${port}`) && server.exitCode === null && i < 200; i++) await new Promise((resolve) => setTimeout(resolve, 100));
+    assert.ok(logs.includes(`localhost:${port}`), logs);
     for (const variant of ["", "folded&", "kpi&"]) {
       await t.test(variant || "card", async () => {
         const response = await fetch(`${endpoint}?${variant}`);
@@ -70,6 +89,5 @@ export async function GET({ request }) {
       server.kill();
       await once(server, "exit");
     }
-    await unlink(fixture);
   }
 });
