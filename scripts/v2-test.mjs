@@ -321,6 +321,70 @@ async function serve(t, store) {
   return `http://127.0.0.1:${server.address().port}`;
 }
 
+function siteFixture(destination, id, overrides = {}) {
+  const bytes = Buffer.from(JSON.stringify({ format: 'sai-news-view/5', id, views: ['subject-a'], moved: { folded: 'subject-a' }, ...overrides }));
+  mkdirSync(join(destination, 'site'), { recursive: true });
+  writeFileSync(join(destination, 'site', `${id}.json`), bytes);
+  writeFileSync(join(destination, 'CURRENT'), `${id}\n`);
+  writeFileSync(join(destination, 'SITE_CURRENT'), `${id} ${sha256(bytes)}\n`);
+  return bytes;
+}
+
+test('a site-only snapshot resolves subjects, refuses bodies, and rechecks both pins and bytes on every open', (t) => {
+  const destination = temp(t, 'v2-site-only-');
+  const id = 'a'.repeat(24);
+  const bytes = siteFixture(destination, id);
+  const opened = readV2(destination);
+  assert.equal(opened.views.size, 1);
+  assert.deepEqual([...opened.views.keys()], ['subject-a']);
+  assert.deepEqual(storySubjects(opened, { story: STORY, subjects: ['folded', 'subject-a'] }), ['subject-a']);
+  assert.throws(() => opened.views.get('subject-a'), /view bodies require the full snapshot/);
+  assert.throws(() => opened.views.values(), /view bodies require the full snapshot/);
+  assert.deepEqual(pullV2({ destination }), { source: 'pinned', snapshot: id, views: 1 });
+  writeFileSync(join(destination, 'site', `${id}.json`), 'corrupted');
+  assert.throws(() => readV2(destination), /site hash mismatch/);
+  writeFileSync(join(destination, 'site', `${id}.json`), bytes);
+  writeFileSync(join(destination, 'SITE_CURRENT'), `${'b'.repeat(24)} ${sha256(bytes)}\n`);
+  assert.throws(() => readV2(destination), /site pointer id does not match CURRENT/);
+  siteFixture(destination, id, { id: 'b'.repeat(24) });
+  assert.throws(() => readV2(destination), /site id does not match CURRENT/);
+  siteFixture(destination, id, { views: [] });
+  assert.equal(readV2(destination).views.size, 0);
+  assert.throws(() => storySubjects(readV2(destination), { story: STORY, subjects: ['subject-a'] }), /lacks subjects/);
+  process.env.CATCH_DEVELOPMENTS = '1';
+  try { assert.throws(() => readV2(destination), /CATCH_DEVELOPMENTS=1 requires the full snapshot/); }
+  finally { delete process.env.CATCH_DEVELOPMENTS; }
+});
+
+test('a production pull fetches only the pinned site artifact and refuses invalid downloads', async (t) => {
+  const store = temp(t, 'v2-site-store-');
+  const destination = temp(t, 'v2-site-only-');
+  const id = 'a'.repeat(24);
+  const bytes = siteFixture(store, id);
+  writeFileSync(join(destination, 'CURRENT'), `${id}\n`);
+  copyFileSync(join(store, 'SITE_CURRENT'), join(destination, 'SITE_CURRENT'));
+  const options = { destination, store: await serve(t, store), accessKeyId: undefined };
+  writeFileSync(join(store, 'site', `${id}.json`), 'corrupted');
+  await assert.rejects(fetchPinned(options), /site hash mismatch/);
+  assert.equal(existsSync(join(destination, 'site', `${id}.json`)), false);
+  writeFileSync(join(store, 'site', `${id}.json`), bytes);
+  await fetchPinned(options);
+  assert.equal(existsSync(join(destination, 'snapshots')), false);
+  assert.equal(readV2(destination).views.size, 1);
+  await fetchPinned({ destination, accessKeyId: undefined });
+});
+
+test('developments still fetch the full archive when a site pointer exists, and prefer the full snapshot', async (t) => {
+  const { id, store } = packedFixture(t);
+  const destination = temp(t, 'v2-site-only-');
+  siteFixture(destination, id);
+  process.env.CATCH_DEVELOPMENTS = '1';
+  try {
+    await fetchPinned({ destination, store: await serve(t, store), accessKeyId: undefined });
+    assert.equal(readV2(destination).views.get('subject-a').label, 'Ballot rejections');
+  } finally { delete process.env.CATCH_DEVELOPMENTS; }
+});
+
 test('a build fetches the snapshot git pins, checks it against the pin and keeps only it', async (t) => {
   const { id, store } = packedFixture(t);
   const destination = temp(t, 'v2-site-');

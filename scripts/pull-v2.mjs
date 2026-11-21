@@ -5,7 +5,7 @@ import { Readable } from "node:stream";
 import { pipeline } from "node:stream/promises";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { AwsClient } from "aws4fetch";
-import { readSnapshot, readV2, snapshotId } from "../src/lib/v2.mjs";
+import { openSiteSnapshot, readSnapshot, readV2, sitePointer, snapshotId } from "../src/lib/v2.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
@@ -62,6 +62,30 @@ export async function fetchPinned({
   const snapshots = join(destination, "snapshots");
   const final = join(snapshots, id);
   if (existsSync(final)) return;
+  if (process.env.CATCH_DEVELOPMENTS !== "1" && existsSync(join(destination, "SITE_CURRENT"))) {
+    sitePointer(destination);
+    const site = join(destination, "site");
+    const path = join(site, `${id}.json`);
+    if (existsSync(path)) { openSiteSnapshot(destination); return; }
+    if (!store) throw new Error(`v2 site ${id} is not here and SAI_SNAPSHOTS_URL is not set`);
+    const url = `${store.replace(/\/$/, "")}/site/${id}.json`;
+    const response = accessKeyId ? await new AwsClient({ accessKeyId, secretAccessKey, service: "s3", region: "auto" }).fetch(url) : await fetch(url);
+    if (!response.ok) throw new Error(`v2 site ${id} answered ${response.status}`);
+    const bytes = Buffer.from(await response.arrayBuffer());
+    openSiteSnapshot(destination, bytes);
+    mkdirSync(site, { recursive: true });
+    const temporary = mkdtempSync(join(site, ".pull-"));
+    try {
+      const file = join(temporary, `${id}.json`);
+      writeFileSync(file, bytes);
+      fsyncPath(file);
+      renameSync(file, path);
+      fsyncPath(site);
+    } finally {
+      rmSync(temporary, { recursive: true, force: true });
+    }
+    return;
+  }
   if (!store) throw new Error(`v2 snapshot ${id} is not here and SAI_SNAPSHOTS_URL is not set`);
   const url = `${store.replace(/\/$/, "")}/${id}.tgz`;
   const response = accessKeyId ? await new AwsClient({ accessKeyId, secretAccessKey, service: "s3", region: "auto" }).fetch(url) : await fetch(url);

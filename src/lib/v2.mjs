@@ -89,6 +89,35 @@ export function openSnapshot(folder, id) {
   return { id, manifest, views };
 }
 
+export function sitePointer(directory) {
+  const pointer = readFileSync(join(directory, "SITE_CURRENT"), "utf8").trim();
+  const match = /^([0-9a-f]{24}) ([0-9a-f]{64})$/.exec(pointer);
+  if (!match) throw new Error(`Invalid v2 site pointer in ${directory}`);
+  const id = snapshotId(directory);
+  if (match[1] !== id) throw new Error(`v2 site pointer id does not match CURRENT: ${match[1]} != ${id}`);
+  return { id, hash: match[2] };
+}
+
+export function openSiteSnapshot(directory, bytes) {
+  const { id, hash } = sitePointer(directory);
+  bytes ??= readFileSync(join(directory, "site", `${id}.json`));
+  if (sha256(bytes) !== hash) throw new Error(`v2 site hash mismatch: ${id}`);
+  const site = JSON.parse(bytes);
+  if (site.id !== id) throw new Error(`v2 site id does not match CURRENT: ${site.id} != ${id}`);
+  if (site.format !== FORMAT) throw new Error(`Unknown v2 site format: ${site.format}`);
+  if (!Array.isArray(site.views) || site.views.some((subject) => typeof subject !== "string" || !subject) || new Set(site.views).size !== site.views.length) throw new Error(`Invalid v2 site views: ${id}`);
+  if (!site.moved || typeof site.moved !== "object" || Array.isArray(site.moved)) throw new Error(`Invalid v2 site moved map: ${id}`);
+  const subjects = new Set(site.views);
+  const bodiesUnavailable = () => { throw new Error(`v2 snapshot ${id}: view bodies require the full snapshot; only the site artifact is present`); };
+  return { id, manifest: { format: site.format, moved: site.moved }, views: {
+    size: subjects.size,
+    has: (subject) => subjects.has(subject),
+    keys: () => subjects.keys(),
+    get: bodiesUnavailable,
+    values: bodiesUnavailable,
+  } };
+}
+
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
 // manifest names, every statement's quote against the code points its span names in the shipped text, and
 // its story index against its views. A development may be indexed under several stories; every view is
@@ -139,6 +168,10 @@ const verified = new Map();
 export function readV2(directory = v2Directory) {
   const id = snapshotId(directory);
   const folder = join(directory, "snapshots", id);
+  if (!existsSync(folder) && existsSync(join(directory, "SITE_CURRENT"))) {
+    if (process.env.CATCH_DEVELOPMENTS === "1") throw new Error(`v2 snapshot ${id}: CATCH_DEVELOPMENTS=1 requires the full snapshot`);
+    return openSiteSnapshot(directory);
+  }
   if (!verified.has(folder)) verified.set(folder, openSnapshot(folder, id));
   return verified.get(folder);
 }
