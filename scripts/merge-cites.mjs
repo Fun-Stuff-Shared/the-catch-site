@@ -6,10 +6,9 @@
 // marked src-ref-more so the comma separating them is drawn there and nowhere else (a CSS
 // sibling selector cannot see the sentence text between two citations). Runs on the built
 // pages after astro build.
-import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
+import { readingPages } from './article-pages.mjs';
 
-const root = process.argv[2] || join(process.cwd(), "dist", "events");
 const sup = /<sup class="src-ref(?: src-ref-more)?"><a href="#src-(\d+)"([^>]*)>\d+<\/a><\/sup>/g;
 const attr = (s, name) => (s.match(new RegExp(`\\s${name}="([^"]*)"`)) || [])[1];
 
@@ -58,17 +57,10 @@ function markRuns(html) {
   return out + html.slice(cursor);
 }
 
-function walk(dir, files = []) {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) walk(p, files); else if (name === "index.html") files.push(p);
-  }
-  return files;
-}
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   let merged = 0;
-  for (const file of walk(root)) {
+  for (const { file } of readingPages({ input: process.argv[2] })) {
     const html = readFileSync(file, "utf8");
     const next = mergeCites(html);
     if (next !== html) { writeFileSync(file, next); merged++; }

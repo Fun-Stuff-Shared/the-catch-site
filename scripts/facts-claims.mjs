@@ -4,11 +4,10 @@
 // in, without the text after the last citation.
 // Built from the narrative paragraphs and list items after astro build; the lists are typed
 // "claims" and show only in Just the facts.
-import { existsSync, readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
-import { join, relative, sep } from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
 import { parse } from "parse5";
+import { readingPages, claimText } from './article-pages.mjs';
 
-const root = process.argv[2] || join(process.cwd(), "dist", "events");
 const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
 
 function* walk(node) {
@@ -89,26 +88,12 @@ export function factsClaims(html, says = null) {
   return out;
 }
 
-function pages(dir, files = []) {
-  for (const name of readdirSync(dir)) {
-    const p = join(dir, name);
-    if (statSync(p).isDirectory()) pages(p, files); else if (name === "index.html") files.push(p);
-  }
-  return files;
-}
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   let n = 0;
-  for (const file of pages(root)) {
+  for (const { file, claims: pageClaims } of readingPages({ input: process.argv[2] })) {
     const html = readFileSync(file, "utf8");
-    const [subject, slug] = relative(root, file).split(sep);
-    const ledgerPath = join(process.cwd(), "checks/claims", `${subject}--${slug}.json`);
-    const ledger = slug && existsSync(ledgerPath) ? JSON.parse(readFileSync(ledgerPath, "utf8")) : null;
-    const says = ledger && ((id) => {
-      const found = ledger.claims.find((c) => c.id === id);
-      if (!found) throw new Error(`claim_unknown:${subject}--${slug}:${id}`);
-      return found.says;
-    });
+    const says = claimText(pageClaims, file);
     const next = factsClaims(html, says);
     if (next !== html) { writeFileSync(file, next); n++; }
   }
