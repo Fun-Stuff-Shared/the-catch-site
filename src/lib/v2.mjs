@@ -14,12 +14,108 @@ export function snapshotId(directory) {
   return id;
 }
 
-// Spans count code points. A text with no surrogate pairs has one code unit per code point, so only a text with
-// them pays for an array, which keeps a snapshot's hundreds of megabytes of text from holding gigabytes of heap.
-function spanReader(text) {
+// Spans count code points, not UTF-16 code units.
+export function spanReader(text) {
   if (!/[\uD800-\uDFFF]/.test(text)) return (start, end) => text.slice(start, end);
-  const points = Array.from(text);
-  return (start, end) => points.slice(start, end).join("");
+  let length = 0;
+  for (const point of text) length++;
+  const bound = (value) => {
+    const index = Math.trunc(Number(value)) || 0;
+    return index < 0 ? Math.max(length + index, 0) : Math.min(index, length);
+  };
+  return (start, end) => {
+    start = bound(start);
+    end = end === undefined ? length : bound(end);
+    let point = 0, from = text.length, to = text.length;
+    for (let offset = 0; offset < text.length; point++) {
+      if (point === start) from = offset;
+      if (point === end) { to = offset; break; }
+      offset += text.codePointAt(offset) > 0xffff ? 2 : 1;
+    }
+    return text.slice(from, Math.max(from, to));
+  };
+}
+
+function readManifest(folder, id) {
+  if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
+  const bytes = readFileSync(join(folder, "manifest.json"));
+  if (sha256(bytes).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
+  const manifest = JSON.parse(bytes);
+  if (manifest.format !== FORMAT) throw new Error(`Unknown v2 snapshot format: ${manifest.format}`);
+  if (manifest.moved === null || typeof manifest.moved !== "object" || Array.isArray(manifest.moved)) throw new Error("v2 manifest has no moved map");
+  return manifest;
+}
+
+function checkStoryIndex(manifest, views, id) {
+  if (!manifest.stories || typeof manifest.stories !== "object" || Array.isArray(manifest.stories)) throw new Error(`v2 snapshot has no story index: ${id}`);
+  const indexed = new Set();
+  for (const [story, subjects] of Object.entries(manifest.stories)) {
+    if (!Array.isArray(subjects) || !subjects.length) throw new Error(`v2 story lists no subjects: ${story}`);
+    for (const subject of subjects) {
+      if (!views.has(subject)) throw new Error(`v2 story names a subject the snapshot lacks: ${story} ${subject}`);
+      indexed.add(subject);
+    }
+    if (new Set(subjects).size !== subjects.length) throw new Error(`v2 story lists a subject twice: ${story}`);
+  }
+  for (const subject of views.keys()) if (!indexed.has(subject)) throw new Error(`v2 view is under no story: ${subject}`);
+}
+
+export function openSnapshot(folder, id) {
+  const manifest = readManifest(folder, id);
+  const entries = new Map(Object.entries(manifest.views));
+  const cached = new Map();
+  const load = (subject) => {
+    const entry = entries.get(subject);
+    if (!entry) return undefined;
+    if (!/^views\/[0-9a-f]{24}\.json$/.test(entry.path)) throw new Error(`v2 view path is not a view file: ${entry.path}`);
+    const view = JSON.parse(readFileSync(join(folder, entry.path), "utf8"));
+    if (view.format !== FORMAT || view.id !== subject) throw new Error(`v2 view differs from its manifest entry: ${subject}`);
+    return view;
+  };
+  const views = {
+    size: entries.size,
+    has: (subject) => entries.has(subject),
+    keys: () => entries.keys(),
+    get(subject) {
+      if (!entries.has(subject)) return undefined;
+      if (!cached.has(subject)) cached.set(subject, load(subject));
+      return cached.get(subject);
+    },
+    *values() {
+      for (const subject of entries.keys()) yield cached.has(subject) ? cached.get(subject) : load(subject);
+    },
+  };
+  checkStoryIndex(manifest, views, id);
+  return { id, manifest, views };
+}
+
+export function sitePointer(directory) {
+  const pointer = readFileSync(join(directory, "SITE_CURRENT"), "utf8").trim();
+  const match = /^([0-9a-f]{24}) ([0-9a-f]{64})$/.exec(pointer);
+  if (!match) throw new Error(`Invalid v2 site pointer in ${directory}`);
+  const id = snapshotId(directory);
+  if (match[1] !== id) throw new Error(`v2 site pointer id does not match CURRENT: ${match[1]} != ${id}`);
+  return { id, hash: match[2] };
+}
+
+export function openSiteSnapshot(directory, bytes) {
+  const { id, hash } = sitePointer(directory);
+  bytes ??= readFileSync(join(directory, "site", `${id}.json`));
+  if (sha256(bytes) !== hash) throw new Error(`v2 site hash mismatch: ${id}`);
+  const site = JSON.parse(bytes);
+  if (site.id !== id) throw new Error(`v2 site id does not match CURRENT: ${site.id} != ${id}`);
+  if (site.format !== FORMAT) throw new Error(`Unknown v2 site format: ${site.format}`);
+  if (!Array.isArray(site.views) || site.views.some((subject) => typeof subject !== "string" || !subject) || new Set(site.views).size !== site.views.length) throw new Error(`Invalid v2 site views: ${id}`);
+  if (!site.moved || typeof site.moved !== "object" || Array.isArray(site.moved)) throw new Error(`Invalid v2 site moved map: ${id}`);
+  const subjects = new Set(site.views);
+  const bodiesUnavailable = () => { throw new Error(`v2 snapshot ${id}: view bodies require the full snapshot; only the site artifact is present`); };
+  return { id, manifest: { format: site.format, moved: site.moved }, views: {
+    size: subjects.size,
+    has: (subject) => subjects.has(subject),
+    keys: () => subjects.keys(),
+    get: bodiesUnavailable,
+    values: bodiesUnavailable,
+  } };
 }
 
 // A snapshot is named by the hash of its manifest's bytes and read whole: every file against the hash its
@@ -28,12 +124,7 @@ function spanReader(text) {
 // under at least one, and every subject a story lists exists. Within a view, a claim's statements are exactly
 // the live statements that name it, so the brief and the claim's page draw on the same evidence.
 export function readSnapshot(folder, id) {
-  if (!SNAPSHOT.test(id)) throw new Error(`Invalid v2 snapshot id: ${id}`);
-  const manifestBytes = readFileSync(join(folder, "manifest.json"));
-  if (sha256(manifestBytes).slice(0, 24) !== id) throw new Error(`v2 snapshot manifest does not hash to its id: ${id}`);
-  const manifest = JSON.parse(manifestBytes);
-  if (manifest.format !== FORMAT) throw new Error(`Unknown v2 snapshot format: ${manifest.format}`);
-  if (manifest.moved === null || typeof manifest.moved !== "object" || Array.isArray(manifest.moved)) throw new Error("v2 manifest has no moved map");
+  const manifest = readManifest(folder, id);
   const texts = new Map();
   for (const [hash, path] of Object.entries(manifest.texts)) {
     if (path !== `texts/${hash}.txt`) throw new Error(`v2 text path differs from its hash: ${path}`);
@@ -68,23 +159,20 @@ export function readSnapshot(folder, id) {
     if (!Array.isArray(view.related) || view.related.some((op) => !Array.isArray(op) || op.length !== 3 || op.some((part) => typeof part !== "string" || !part))) throw new Error(`v2 view related is not a list of (op, target, other): ${subject}`);
     views.set(subject, view);
   }
-  if (!manifest.stories || typeof manifest.stories !== "object" || Array.isArray(manifest.stories)) throw new Error(`v2 snapshot has no story index: ${id}`);
-  for (const [story, subjects] of Object.entries(manifest.stories)) {
-    if (!Array.isArray(subjects) || !subjects.length) throw new Error(`v2 story lists no subjects: ${story}`);
-    for (const subject of subjects) if (!views.has(subject)) throw new Error(`v2 story names a subject the snapshot lacks: ${story} ${subject}`);
-    if (new Set(subjects).size !== subjects.length) throw new Error(`v2 story lists a subject twice: ${story}`);
-  }
-  const indexed = new Set(Object.values(manifest.stories).flat());
-  for (const subject of views.keys()) if (!indexed.has(subject)) throw new Error(`v2 view is under no story: ${subject}`);
+  checkStoryIndex(manifest, views, id);
   return { id, manifest, views };
 }
 
-// Snapshots are immutable and named by their content, so one verified read serves every page of a build.
+// Snapshots are immutable and named by their content, so one open serves every page of a build.
 const verified = new Map();
 export function readV2(directory = v2Directory) {
   const id = snapshotId(directory);
   const folder = join(directory, "snapshots", id);
-  if (!verified.has(folder)) verified.set(folder, readSnapshot(folder, id));
+  if (!existsSync(folder) && existsSync(join(directory, "SITE_CURRENT"))) {
+    if (process.env.CATCH_DEVELOPMENTS === "1") throw new Error(`v2 snapshot ${id}: CATCH_DEVELOPMENTS=1 requires the full snapshot`);
+    return openSiteSnapshot(directory);
+  }
+  if (!verified.has(folder)) verified.set(folder, openSnapshot(folder, id));
   return verified.get(folder);
 }
 

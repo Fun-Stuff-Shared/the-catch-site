@@ -126,10 +126,17 @@ export const DEVELOPMENTS_PER_PAGE = 50;
 
 export const latestSource = (view) => view.sources.map((source) => source.published_at ?? "").sort().at(-1) ?? "";
 
+const selections = new WeakMap();
 export function selectedDevelopments(snapshot) {
-  return [...snapshot.views.values()]
-    .filter((view) => shownClaims(view).some((claim) => claim.independent >= INDEPENDENT_SOURCES))
-    .sort((a, b) => latestSource(b).localeCompare(latestSource(a)) || a.id.localeCompare(b.id));
+  if (!selections.has(snapshot)) {
+    const selected = [];
+    for (const view of snapshot.views.values()) {
+      if (shownClaims(view).some((claim) => claim.independent >= INDEPENDENT_SOURCES)) selected.push(snapshot.views.get(view.id));
+    }
+    selected.sort((a, b) => latestSource(b).localeCompare(latestSource(a)) || a.id.localeCompare(b.id));
+    selections.set(snapshot, selected);
+  }
+  return selections.get(snapshot);
 }
 
 // Machine-made development pages stay out of the site unless a build asks for them.
