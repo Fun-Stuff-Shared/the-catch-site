@@ -69,6 +69,7 @@ export function validateOfficialRecords(dataset, { records, readText, root, publ
     check(vote.id === `${vote.chamber}-${vote.congress}-${vote.session}-${vote.number}`, `${vote.id}: roll-call identity differs`);
     withinCoverage(vote.date, vote.id);
     check(vote.membership === "partial" ? Boolean(vote.missing_reason) : vote.missing_reason === null, `${vote.id}: membership completeness needs the matching missing-data reason`);
+    if (vote.membership === "partial") check(missing("roll_calls"), `${vote.id}: partial membership needs a roll_calls missing-data reason`);
     index(vote.members, `${vote.id}.members`, "member_id");
     index(vote.members.filter((m) => m.official_id), `${vote.id}.officials`, "official_id");
     const counts = { yea: 0, nay: 0, not_voting: 0, present: 0 };

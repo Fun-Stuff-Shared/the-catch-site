@@ -82,7 +82,10 @@ test("partial membership is explicit and cannot manufacture absent members", () 
   data.roll_calls[0].members.pop();
   assert.match(validateOfficialRecords(data, context()).join("\n"), /present total/);
   Object.assign(data.roll_calls[0], { membership: "partial", missing_reason: "One member row has not arrived." });
+  assert.match(validateOfficialRecords(data, context()).join("\n"), /partial membership needs a roll_calls missing-data reason/);
   data.coverage.completeness = "partial";
+  data.coverage.missing.push({ section: "finance", reason: "Unrelated reporting gap." });
+  assert.match(validateOfficialRecords(data, context()).join("\n"), /partial membership needs a roll_calls missing-data reason/);
   data.coverage.missing.push({ section: "roll_calls", reason: "One member row has not arrived." });
   assert.deepEqual(validateOfficialRecords(data, context()), []);
   rejects((d) => d.roll_calls[0].missing_reason = "Not actually complete", /membership completeness/);
