@@ -88,6 +88,7 @@ export function validateOfficialRecords(dataset, { records, readText, root, publ
     period(finance.period, finance.id);
     const receipts = index(finance.receipts, `${finance.id}.receipts`);
     for (const receipt of finance.receipts) {
+      withinCoverage(receipt.date, receipt.id);
       const key = JSON.stringify([finance.committee_id, receipt.report_id, receipt.schedule, receipt.transaction_id]);
       check(!transactions.has(key), `${finance.id}: transaction ${receipt.transaction_id} is repeated; amendments must replace originals`);
       transactions.add(key);

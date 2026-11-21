@@ -109,6 +109,21 @@ test("finance links are bidirectional and amendments replace the same report tra
   assert.equal(data.finance[0].receipts[2].amount_cents, -1000);
 });
 
+test("finance receipts stay within declared coverage even when a report spans longer", () => {
+  rejects((d) => {
+    d.finance[0].period.start = "2019-01-01";
+    d.finance[0].receipts[0].date = "2019-12-31";
+  }, /outside dataset coverage/);
+  rejects((d) => {
+    d.finance[0].period.end = "2027-01-01";
+    d.finance[0].receipts[0].date = "2026-02-02";
+  }, /outside dataset coverage/);
+  const data = fixture();
+  data.finance[0].period.start = "2025-01-01";
+  data.finance[0].period.end = "2027-01-01";
+  assert.deepEqual(validateOfficialRecords(data, context()), []);
+});
+
 test("finance deduplication spans overlapping sets but preserves different committees", () => {
   const overlap = (d) => {
     const copy = structuredClone(d.finance[0]);
