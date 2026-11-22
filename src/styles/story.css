@@ -134,18 +134,22 @@
 
 /* ── The Catch ── */
 .the-catch {
-  background: var(--surface);
-  padding: 1.2rem;
+  background: transparent;
+  border: 2px solid var(--brand-highlight);
+  padding: 1.25rem;
   margin: 0 0 1.5rem;
 }
-.the-catch .tt-label {
+.the-catch > .tt-label {
+  display: block;
+  background: var(--brand-highlight);
   font-family: var(--sans);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--amber, #9a6200);
-  margin: 0 0 0.8rem;
+  color: var(--brand-ink);
+  margin: -1.25rem -1.25rem 1.1rem;
+  padding: .55rem 1.25rem;
 }
 .the-catch ol {
   margin: 0;
@@ -569,6 +573,9 @@ ol.src-list li {
 }
 .data-table td { font-variant-numeric: tabular-nums; }
 .data-table .hl { background: var(--blue-tint); font-weight: 600; }
+/* Catch tables stay on the page paper; highlighted data retains its blue tint. */
+.the-catch .data-table th, .the-catch .dt-head { background: transparent; }
+.the-catch .data-table th.hl { background: var(--blue-tint); }
 
 /* ── Summary boxes (two-surveys, etc.) ── */
 .summary-box {

@@ -24,7 +24,7 @@ const quotes = [
     <main class="story treatment-preview">
       <p class="sample-notice">Design preview only. Real Iowa reporting, repeated for comparison. Not linked from the published site.</p>
       <h1>Two choices, independently.</h1>
-      <p>Choose one Catch treatment and one quote treatment. All use the same authored Iowa words, claim citations and dated table. No option uses a vertical sidebar. The page follows your system theme.</p>
+      <p>Original comparison options, kept for reference. Real stories now use a yellow-framed Catch with a yellow label band, and hanging quotes with attribution above. All options use the same authored Iowa words, claim citations and dated table. The page follows your system theme.</p>
       <nav class="comparison-index" aria-label="Comparison sections"><a href="#catch-options">Catch options</a><a href="#quote-options">Quote options</a></nav>
       <section id="catch-options">
         <h2>1. The Catch</h2>
@@ -53,13 +53,16 @@ const quotes = [
   .option-label { margin-bottom: 1.5rem; }
   .option-label h3 { font: 700 1rem/1.4 var(--sans); margin: 0 0 .3rem; }
   .option-label p { font: .85rem/1.5 var(--sans); color: var(--slate); margin: 0; }
-  .treatment-preview .the-catch { padding: 1.25rem; margin: 0; }
+  /* Keep the original options separate from the chosen production treatment. */
+  :where(.treatment-preview) .the-catch { padding: 1.25rem; margin: 0; background: var(--surface); border: 0; }
+  :where(.treatment-preview) .the-catch > .tt-label { background: transparent; color: var(--amber); margin: 0 0 .8rem; padding: 0; }
   .treatment-preview .the-catch ol { list-style: none; padding: 0; }
   .treatment-preview .the-catch li::before { display: none; }
   .treatment-preview .the-catch h3 { margin-top: 1.1rem; }
   .treatment-preview .quote-card { margin: 1.5rem 0; padding: 0; border: 0; }
   .treatment-preview .qc-head { font: 500 .78rem/1.5 var(--sans); color: var(--slate); margin: 0 0 .65rem; }
   .treatment-preview .qc-words { margin: 0; font: 1.05rem/1.55 var(--serif); border: 0; padding: 0; }
+  .treatment-preview .qc-words::before { content: none; }
   .treatment-preview .qc-words p { margin: 0 0 .5rem; }
   .treatment-band { background: transparent; border-block: 1px solid var(--rule); }
   .treatment-band > .tt-label { background: var(--ink-band); color: var(--band-ink); margin: -1.25rem -1.25rem 1.5rem; padding: .75rem 1.25rem; }

@@ -236,9 +236,11 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .swing-num { font-size: 0.8rem; color: var(--ink); }
   .quotes { align-items: start; }
   .row-source { display: block; font-size: 0.75rem; color: var(--slate); }
-  .said { margin: 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--gold, #9a6200); font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; }
-  .said p { margin: 0 0 0.4rem; }
-  .said .said-who { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .said { margin: 0; padding: 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; }
+  .said p { margin: 0 0 .5rem 1.5rem; }
+  .said .said-who { margin: 0 0 .65rem; font: 500 .78rem/1.5 var(--sans); color: var(--slate); }
+  .said-who + p { position: relative; }
+  .said-who + p::before { content: '“'; position: absolute; left: -1.65rem; top: -.3rem; font: 3.5rem/1 var(--serif); color: var(--red); }
   @media (max-width: 640px) {
       .split-bars li, .swing-bars li { grid-template-columns: 7.5rem 1fr; column-gap: 0.5rem; }
     .split-label, .swing-label { font-size: 0.8rem; }

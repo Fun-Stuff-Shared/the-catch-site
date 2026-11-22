@@ -74,7 +74,7 @@ for (const [theme, tokens] of [['light', light], ['dark', dark]]) {
         assert.ok(ratio >= 4.5, `${foreground} on ${background}: ${ratio.toFixed(2)}:1`);
       }
     }
-    for (const [foreground, background] of [['--on-highlight', '--highlight'], ['--band-ink', '--ink-band'], ['--band-muted', '--ink-band'], ['--on-blue', '--blue'], ['--on-red', '--red'], ['--on-amber', '--amber'], ['--on-alert', '--alert-fill'], ['--on-ink', '--ink']]) {
+    for (const [foreground, background] of [['--brand-ink', '--brand-highlight'], ['--on-highlight', '--highlight'], ['--band-ink', '--ink-band'], ['--band-muted', '--ink-band'], ['--on-blue', '--blue'], ['--on-red', '--red'], ['--on-amber', '--amber'], ['--on-alert', '--alert-fill'], ['--on-ink', '--ink']]) {
       assert.ok(contrast(color(tokens, foreground), color(tokens, background)) >= 4.5, `${foreground} on ${background}`);
     }
     for (const foreground of ['--control-border', '--chart-main', '--chart-accent', '--chart-secondary', '--chart-neutral']) {
