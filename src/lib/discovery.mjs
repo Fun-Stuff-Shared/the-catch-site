@@ -16,7 +16,8 @@ export function storyCatalog() {
   });
   const events = [...state.events.values()].filter(v => v.status === 'published').map(v => {
     const href = eventPath(v.event.id), copy = editorial.get(href);
-    const group = series.find(s => s.path === eventRecordPath(v.event.id));
+    const recordPath = eventRecordPath(v.event.id);
+    const group = series.find(s => s.path === recordPath);
     return { href, title: v.event.label, summary: copy?.dek ?? '', date: copy?.date ?? v.event.period, updated: copy?.updated, topic: group?.topic ?? v.desk ?? 'Reporting', series: group?.path, visual: copy?.visual, keywords: `${group?.title ?? ''} ${group?.keywords ?? ''}` };
   });
   const people = [zika, immigration].map(e => ({ href: `/officials/marco-rubio/${e.slug}/`, title: e.title, summary: e.dek, date: e.statements[0]?.date, topic: e.slug === 'zika-2016' ? 'Health' : 'Politics', series: '/officials/marco-rubio/', keywords: `Marco Rubio ${e.kicker}` }));

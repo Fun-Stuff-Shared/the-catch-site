@@ -35,19 +35,19 @@ def findings_path(story):
 def match_previous(blocks, previous, current_hashes):
     matched = {b["hash"]: b["hash"] for b in blocks if b["hash"] in previous}
     available = set(previous) - set(current_hashes) - set(matched.values())
+    candidates = []
     for b in blocks:
         if b["hash"] in matched:
             continue
         ids = {c["id"] for c in b["claims"]}
-        candidates = []
         for key in sorted(available):
             old = previous[key]
             ratio = SequenceMatcher(None, old["text"], b["text"]).ratio()
             if ratio >= REPEAT_THRESHOLD:
-                candidates.append((set(old["claims"]) == ids, ratio, key))
-        if candidates:
-            key = max(candidates)[2]
-            matched[b["hash"]] = key
+                candidates.append((set(old["claims"]) == ids, ratio, b["hash"], key))
+    for _, _, block_hash, key in sorted(candidates, reverse=True):
+        if block_hash not in matched and key in available:
+            matched[block_hash] = key
             available.remove(key)
     return matched
 
