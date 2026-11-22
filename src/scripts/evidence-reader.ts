@@ -1,7 +1,7 @@
 import { readingReturn } from '../lib/reading-return.mjs';
 import { articleReturnRoutes } from './article-return-routes';
-import { sourceContext } from '../lib/evidence-context.mjs';
-type Source = { title: string; byline: string; quote: string; saved: string | null; href: string; text?: string; excerpt?: boolean };
+import { sourcePassages } from '../lib/evidence-context.mjs';
+type Source = { title: string; byline: string; quote: string; passages?: string[]; saved: string | null; href: string; text?: string; excerpt?: boolean };
 const panel = document.querySelector<HTMLDialogElement>('#evidence-reader')!;
 const preview = document.querySelector<HTMLElement>('#evidence-preview')!;
 const cache = new Map<string, Promise<Source>>();
@@ -47,27 +47,28 @@ async function showPreview(a: HTMLAnchorElement) {
 function render(full = false) {
   if (!current) return;
   body.replaceChildren();
-  const context = sourceContext(current.text, current.quote);
-  const mark = document.createElement('mark');
+  const quotes = [current.quote, ...(current.passages ?? [])];
+  const context = sourcePassages(current.text, quotes, full);
   controls.hidden = !current.text;
   panel.querySelector('[data-context-view]')!.setAttribute('aria-pressed', String(!full));
   panel.querySelector('[data-full-view]')!.setAttribute('aria-pressed', String(full));
-  if (current.text && full) {
-    if (context) {
-      body.append(document.createTextNode(current.text.slice(0, context.start)));
-      mark.textContent = context.match; body.append(mark, document.createTextNode(current.text.slice(context.start + context.match.length)));
-    } else body.textContent = current.text;
-    purpose.textContent = current.excerpt ? 'The saved copy contains an excerpt of the source.' : 'The complete text of the saved copy.';
-  } else if (context) {
-    body.append(document.createTextNode((context.trimmedBefore ? '…\n' : '') + context.before));
-    mark.textContent = context.match;
-    body.append(mark, document.createTextNode(context.after + (context.trimmedAfter ? '\n…' : '')));
-    purpose.textContent = 'The recorded passage is marked below, with the surrounding text from the saved source.';
+  if (current.text && (full || context.found && !context.missing.length)) {
+    for (const segment of context.segments) {
+      if (segment.marked) {
+        const mark = document.createElement('mark');
+        mark.textContent = segment.text; body.append(mark);
+      } else body.append(document.createTextNode(segment.text));
+    }
+    purpose.textContent = full
+      ? (current.excerpt ? 'The saved copy contains an excerpt of the source.' : 'The complete text of the saved copy.')
+      : (context.found > 1 ? 'The recorded passages are marked below, with the surrounding text from the saved source.' : 'The recorded passage is marked below, with the surrounding text from the saved source.');
   } else {
-    body.textContent = current.quote;
+    body.textContent = quotes.join('\n\n');
     purpose.textContent = current.text ? 'We could not locate this passage exactly in the saved text. Open the full saved text to inspect the document.' : 'Only the recorded passage is available here. Source details may provide another way to inspect the document.';
   }
-  if (mark.isConnected) {
+  const marks = [...body.querySelectorAll('mark')];
+  const mark = marks.find(mark => context.primary && mark.textContent?.includes(context.primary)) ?? marks[0];
+  if (mark) {
     const scroller = panel.querySelector<HTMLElement>('.evidence-scroll')!;
     scroller.scrollTop = Math.max(0, scroller.scrollTop + mark.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 80);
   }
@@ -98,7 +99,7 @@ async function openSource(a: HTMLAnchorElement) {
     if (id !== request) return;
     panel.querySelector('#evidence-title')!.textContent = data.title;
     panel.querySelector('.evidence-byline')!.textContent = data.byline;
-    current = { ...data, quote: a.dataset.passages ? `${a.dataset.passage}\n\n${a.dataset.passages}` : (a.dataset.passage ?? data.quote) };
+    current = { ...data, quote: a.dataset.passage ?? data.quote, passages: a.dataset.passages?.split('\n') };
     if (data.saved) {
       saved.href = `${data.saved}?from=${encodeURIComponent(returnTo)}`; saved.hidden = false;
       try {
