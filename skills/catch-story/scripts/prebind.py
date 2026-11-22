@@ -7,7 +7,9 @@ By default checks exactly bind's changed, bindable blocks; --all checks all bind
 blocks. --strict exits 1 on findings. Missing inputs are errors, not clean results.
 Quotes: extract curly or straight double quotes (not single quotes). Map curly
 double/single quotes and apostrophes to straight, collapse whitespace and trim.
-Match case-sensitive exact substrings of cited passages or quoted text in says.
+Ignore leading/trailing commas, periods, ellipses and double quotes on the
+extracted quote. Match the remaining words and internal punctuation as
+case-sensitive exact substrings of cited passages or quoted text in says.
 Ellipses (… or ...) split a quote into segments which must match in order within
 one source. Numbers ignore thousands commas and insignificant decimal zeroes;
 percent, money scale and currency ($, €, £, ¥; USD/EUR equal $/€) remain
@@ -220,7 +222,8 @@ def quoted(text):
 
 
 def quote_matches(quote, sources):
-    segments = [s.strip() for s in re.split(r'…|\.{3}', normalize(quote)) if s.strip()]
+    quote = normalize(quote).strip(' ,. …"')
+    segments = [s.strip() for s in re.split(r'…|\.{3}', quote) if s.strip()]
     if not segments:
         return False
     for source in sources:
