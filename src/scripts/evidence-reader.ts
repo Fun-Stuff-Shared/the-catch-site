@@ -88,10 +88,12 @@ async function openSource(a: HTMLAnchorElement) {
   details.href = `${href}?from=${encodeURIComponent(returnTo)}`; saved.hidden = true;
   if (!panel.open) {
     const top = a.getBoundingClientRect().top;
-    if (!isMobile()) returnScroll = scrollY;
+    // Mobile scroll locking can shorten the document and clamp a near-end
+    // position too, so remember it before opening either reader layout.
+    returnScroll = scrollY;
     isMobile() ? panel.showModal() : panel.show();
     document.body.classList.add('evidence-open');
-    if (returnScroll !== null) window.scrollBy(0, a.getBoundingClientRect().top - top);
+    if (!isMobile()) window.scrollBy(0, a.getBoundingClientRect().top - top);
   }
   panel.querySelector<HTMLButtonElement>('[data-close-evidence]')!.focus({preventScroll: true});
   try {
