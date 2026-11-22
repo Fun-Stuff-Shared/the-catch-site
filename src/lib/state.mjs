@@ -194,13 +194,21 @@ export function publishedState() {
   return published ??= readPublishedState();
 }
 
-export function eventRecordPath(id, manifests = join(process.cwd(), 'checks/manifests')) {
+const recordRoutes = new Map();
+
+export function eventRecordRoutes(manifests = join(process.cwd(), 'checks/manifests'), fresh = import.meta.env?.DEV) {
+  if (!fresh && recordRoutes.has(manifests)) return recordRoutes.get(manifests);
+  const routes = new Map();
   for (const name of readdirSync(manifests).filter((name) => name.endsWith('.json'))) {
     const manifest = JSON.parse(readFileSync(join(manifests, name), 'utf8'));
-    if (manifest.state_event_id !== id) continue;
-    const route = manifest.event_record;
-    if (route != null && !/^\/events\/[a-z0-9-]+\/$/.test(route)) throw new Error(`Invalid event record route: ${name}`);
-    return route ?? null;
+    if (manifest.state_event_id && !routes.has(manifest.state_event_id)) routes.set(manifest.state_event_id, { route: manifest.event_record ?? null, name });
   }
-  return null;
+  if (!fresh) recordRoutes.set(manifests, routes);
+  return routes;
+}
+
+export function eventRecordPath(id, manifests = join(process.cwd(), 'checks/manifests'), fresh = import.meta.env?.DEV) {
+  const entry = eventRecordRoutes(manifests, fresh).get(id);
+  if (entry?.route != null && !/^\/events\/[a-z0-9-]+\/$/.test(entry.route)) throw new Error(`Invalid event record route: ${entry.name}`);
+  return entry?.route ?? null;
 }

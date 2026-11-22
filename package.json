@@ -5,7 +5,7 @@
   "scripts": {
     "brand:export": "node scripts/export-brand.mjs",
     "test:brand": "node --test scripts/brand-assets-test.mjs",
-    "build": "NODE_OPTIONS=--max-old-space-size=6144 node scripts/pull-state.mjs && node scripts/pull-v2.mjs && node scripts/build-news-records.mjs && astro build && node scripts/merge-cites.mjs && node scripts/work-evidence.mjs && node scripts/facts-claims.mjs && node scripts/check-events.mjs && node scripts/check-shell.mjs",
+    "build": "node scripts/build.mjs",
     "build:news-records": "node scripts/build-news-records.mjs",
     "check": "node scripts/check-events.mjs",
     "dev": "astro dev",
@@ -14,12 +14,12 @@
     "test:reader": "node --test scripts/evidence-context-test.mjs scripts/catalog-page-test.mjs scripts/front-page-test.mjs",
     "test:fec": "node --test scripts/fec-test.mjs",
     "test:officials": "node --test scripts/official-records-test.mjs",
-    "test:record": "node --test scripts/grok-sweep-test.mjs scripts/claims-arith-test.mjs",
+    "test:record": "node --test scripts/grok-sweep-test.mjs scripts/claims-arith-test.mjs scripts/claims-find-lint-test.mjs",
     "test:bind": "node --test scripts/bind-test.mjs scripts/block-hashes-test.mjs",
     "test:scaffold": "node --test scripts/new-event-test.mjs",
     "test:cites": "node --test scripts/merge-cites-test.mjs scripts/facts-claims-test.mjs scripts/story-cites-test.mjs",
     "test:articles": "node --test scripts/article-pages-test.mjs",
-    "test:publish": "node --test scripts/live-ready-test.mjs scripts/deploy-wait-test.mjs"
+    "test:publish": "node --test scripts/live-ready-test.mjs scripts/deploy-wait-test.mjs scripts/publish-test.mjs"
   },
   "devDependencies": {
     "ajv": "8.17.1",
