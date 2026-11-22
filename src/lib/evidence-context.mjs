@@ -17,7 +17,18 @@ export function sourceContext(text, quote, radius = 1000) {
 // exact source ranges. Full-text segments reconstruct the saved bytes unchanged.
 export function sourcePassages(text, quotes, full = false, radius = 1000) {
   const passages = [...new Set(quotes.filter(quote => quote?.trim()))];
-  const contexts = passages.map(quote => sourceContext(text, quote, radius));
+  const groups = [];
+  for (const quote of passages) {
+    const previous = groups.at(-1);
+    const joined = previous && sourceContext(text, `${previous.quote}\n\n${quote}`, radius);
+    // Preserve contiguous authored spans before locating separate ones. A short
+    // repeated fragment must not jump away from its disambiguating lead-in.
+    if (joined) {
+      previous.quote += `\n\n${quote}`;
+      previous.context = joined;
+    } else groups.push({ quote, context: sourceContext(text, quote, radius) });
+  }
+  const contexts = groups.map(group => group.context);
   const found = contexts.filter(Boolean);
   const merge = ranges => ranges.sort((a, b) => a.start - b.start).reduce((out, range) => {
     const last = out.at(-1);
@@ -44,5 +55,5 @@ export function sourcePassages(text, quotes, full = false, radius = 1000) {
     cursor = window.end;
   }
   if (windows.length && cursor < text.length) segments.push({ text: '\n…', marked: false });
-  return { segments, primary: contexts[0]?.match, found: found.length, missing: passages.filter((_, index) => !contexts[index]) };
+  return { segments, primary: contexts[0]?.match, found: found.length, missing: groups.filter(group => !group.context).map(group => group.quote) };
 }

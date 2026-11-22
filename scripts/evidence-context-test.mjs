@@ -82,3 +82,22 @@ test('distant passages get bounded context in source order while missing quotes 
   assert.ok(excerpt.startsWith('…\n') && excerpt.endsWith('\n…'));
   assert.deepEqual(sourcePassages(null, ['Missing.']).missing, ['Missing.']);
 });
+
+test('contiguous approval passages disambiguate a repeated BYD quantity even among other claims', () => {
+  const ledger = JSON.parse(readFileSync(new URL('../checks/claims/ai-chip-exports--2026-11-19-house-committee-releases-china-chip-license-data.json', import.meta.url), 'utf8'));
+  const text = readFileSync(new URL('../data/sources/ai-chip-exports/hfac-summary-2026-11-19.txt', import.meta.url), 'utf8');
+  for (const ids of [['four-approved'], ['four-approved', 'approved', 'summary-june-list'], ['approved', 'four-approved']]) {
+    const quotes = ids.flatMap(id => ledger.claims.find(claim => claim.id === id).evidence.filter(evidence => evidence.record === 'hfac-summary-2026-11-19').map(evidence => evidence.passage));
+    const result = sourcePassages(text, quotes, true);
+    assert.deepEqual(result.missing, []);
+    assert.equal(result.segments.map(segment => segment.text).join(''), text);
+    let offset = 0;
+    const byd = [];
+    for (const segment of result.segments) {
+      if (segment.marked && segment.text.replace(/\s+/g, ' ').includes('and 4,000 for BYD.')) byd.push(offset);
+      offset += segment.text.length;
+    }
+    assert.equal(byd.length, 1);
+    assert.ok(byd[0] >= text.indexOf('BIS approved'), `${ids}: BYD must be marked in the approval, not application, paragraph`);
+  }
+});
