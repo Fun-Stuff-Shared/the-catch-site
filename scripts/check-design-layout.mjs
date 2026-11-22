@@ -94,6 +94,28 @@ try {
     }
   }
   assert.deepEqual(failures, [], `390px table overflow or citation targets below 24px:\n${JSON.stringify(failures, null, 2)}`);
+  // Preview-only historical options must not inherit the final story treatment.
+  // Check rendered styles: source-only checks miss cascade/bundle-order regressions.
+  if (await stat(join(root, 'design/story-treatments/index.html')).catch(() => null)) {
+    for (const colorScheme of ['light', 'dark']) {
+      await page.emulateMedia({ colorScheme });
+      await page.goto(origin + '/design/story-treatments/');
+      const options = await page.evaluate(() => [...document.querySelectorAll('#catch-options .the-catch')].map(panel => {
+        const style = getComputedStyle(panel);
+        return {
+          borders: ['Top', 'Right', 'Bottom', 'Left'].map(side => style[`border${side}Width`]),
+          label: getComputedStyle(panel.querySelector('.tt-label')).backgroundColor,
+        };
+      }));
+      assert.deepEqual(options.map(option => option.borders), [
+        ['0px', '0px', '0px', '0px'], ['1px', '0px', '1px', '0px'],
+        ['1px', '1px', '1px', '1px'], ['0px', '0px', '0px', '0px'],
+      ], `${colorScheme} comparison frames must stay distinct from production`);
+      assert.equal(options[0].label, 'rgba(0, 0, 0, 0)', `${colorScheme} tinted option has no label band`);
+      assert.ok(options.every(option => option.label !== 'rgb(242, 216, 59)'), `${colorScheme} historical labels must not inherit the selected yellow band`);
+    }
+    console.log('comparison isolation gate passed: four distinct historical Catch options in both themes');
+  }
   console.log(`design layout gate passed: ${views} table views and their citation touch targets at 390px, both system themes and all reading modes; negative controls detected`);
 } finally {
   await browser?.close();
