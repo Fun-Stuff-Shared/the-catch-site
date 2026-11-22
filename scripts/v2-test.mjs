@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
 import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { createServer } from 'node:http';
@@ -314,9 +314,9 @@ test('a quantity renders as a point or as a range between its bounds', () => {
   assert.equal(valueText({ type: 'forecast', outcome: { type: 'quantity', amount: '1', upper: '2', unit: 'cuts', dimension: 'n' }, horizon: { at: '2026-12-31' } }), '1–2 cuts by December 31, 2026');
 });
 
-const packedFixture = (t) => {
+const packedFixture = (t, options = {}) => {
   const source = temp(t, 'v2-source-');
-  const id = snapshot(source);
+  const id = snapshot(source, options);
   const archive = join(temp(t, 'v2-store-'), `${id}.tgz`);
   execFileSync('tar', ['-czf', archive, '-C', join(source, 'snapshots', id), 'manifest.json', 'views', 'texts']);
   return { id, archive, store: dirname(archive) };
@@ -450,6 +450,27 @@ test('author tooling can request the full archive with a site pointer and develo
     if (previous === undefined) delete process.env.CATCH_FULL_SNAPSHOT;
     else process.env.CATCH_FULL_SNAPSHOT = previous;
   }
+});
+
+test('the candidate command fetches full view bodies after a site-only fetch', async (t) => {
+  const { id, store } = packedFixture(t, { claim: { independent: 3 } });
+  const worktree = temp(t, 'v2-candidates-');
+  const destination = join(worktree, 'data/v2');
+  mkdirSync(destination, { recursive: true });
+  mkdirSync(join(worktree, 'checks/manifests'), { recursive: true });
+  siteFixture(destination, id);
+  assert.equal(existsSync(join(destination, 'snapshots')), false);
+  const url = await serve(t, store);
+  const script = join(process.cwd(), 'scripts/v2-candidates.mjs');
+  const output = await new Promise((resolve, reject) => {
+    execFile(process.execPath, [script, '--days', '36500'], {
+      cwd: worktree,
+      env: { ...process.env, SAI_SNAPSHOTS_URL: url, SAI_SNAPSHOTS_ACCESS_KEY: '', SAI_SNAPSHOTS_SECRET_KEY: '' },
+    }, (error, stdout, stderr) => error ? reject(new Error(`${error.message}\n${stderr}`)) : resolve(stdout));
+  });
+  assert.match(output, /subject-a\n  Ballot rejections/);
+  assert.match(output, /most independent sources behind a claim: 3/);
+  assert.ok(existsSync(join(destination, 'snapshots', id, 'manifest.json')));
 });
 
 test('a build fetches the snapshot git pins, checks it against the pin and keeps only it', async (t) => {

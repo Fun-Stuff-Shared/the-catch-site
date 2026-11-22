@@ -57,7 +57,7 @@ def upload(archive: Path, store: str, key: str) -> None:
         "RCLONE_CONFIG_STORE_ACCESS_KEY_ID": os.environ["SAI_SNAPSHOTS_ACCESS_KEY"],
         "RCLONE_CONFIG_STORE_SECRET_ACCESS_KEY": os.environ["SAI_SNAPSHOTS_SECRET_KEY"],
     }
-    subprocess.run(["rclone", "copyto", str(archive), f"store:{bucket}/{key}", "--s3-no-check-bucket", "--immutable"], env=env, check=True)
+    subprocess.run(["rclone", "copyto", str(archive), f"store:{bucket}/{key}", "--s3-no-check-bucket", "--immutable", "--checksum"], env=env, check=True)
 
 
 def check(checkout: Path, archive: Path, snapshot: str) -> None:
@@ -111,6 +111,8 @@ def main() -> None:
         site = Path(folder) / "site" / f"{snapshot}.json"
         site.parent.mkdir()
         site.write_bytes(data)
+        # Content-addressed uploads may leave harmless orphans; immutable retries reuse identical objects.
+        # Neither pin changes until both uploads succeed.
         upload(archive, os.environ["SAI_SNAPSHOTS_URL"], f"{snapshot}.tgz")
         upload(site, os.environ["SAI_SNAPSHOTS_URL"], f"site/{snapshot}.json")
         moved = commit_pin(str(checkout), args.branch, snapshot, site_pin)
