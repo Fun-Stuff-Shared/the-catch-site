@@ -28,17 +28,13 @@ done
 (( ${#stories} )) || { print "name at least one story id" >&2; exit 2 }
 git() { command git -c core.hooksPath=/dev/null "$@" }
 for b in $merges; do git -C $site rev-parse -q --verify "$b^{commit}" >/dev/null || { print "no branch $b" >&2; exit 2 }; done
-if (( push )); then
+if (( push )) && [[ $base == main ]]; then
   git -C $site fetch -q origin $base
   local_base=$(git -C $site rev-parse $base) remote_base=$(git -C $site rev-parse origin/$base)
   if [[ $local_base != $remote_base ]]; then
     git -C $site merge-base --is-ancestor $local_base $remote_base || {
       print "$base has commits that are not on origin/$base; push or drop them before publishing." >&2; exit 1 }
-    if [[ $base == main ]]; then
-      git -C $site merge -q --ff-only origin/$base
-    else
-      git -C $site update-ref refs/heads/$base $remote_base $local_base
-    fi
+    git -C $site merge -q --ff-only origin/$base
   fi
 fi
 
@@ -141,8 +137,9 @@ if ! git -C $site push -q origin $base; then
     git -C $site update-ref refs/heads/$base $before $pushed
     print "push failed; restored $base to $before." >&2
   fi
-  git -C $site fetch -q origin $base
-  if [[ -z ${CATCH_PUBLISH_RETRY:-} && $(git -C $site rev-parse $base) == $before ]] \
+  if [[ $base == main && -z ${CATCH_PUBLISH_RETRY:-} && $(git -C $site rev-parse $base) == $before ]] \
+      && git -C $site fetch -q origin $base \
+      && [[ $(git -C $site rev-parse origin/$base) != $before ]] \
       && git -C $site merge-base --is-ancestor $before origin/$base; then
     print "origin/$base moved during the build; rebuilding on it once." >&2
     cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}

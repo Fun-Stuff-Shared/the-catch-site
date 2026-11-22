@@ -85,6 +85,53 @@ test('a rejected push restores main and preserves the publish commit for retry',
   assert.match(r.stderr, /zsh .*publish.sh --merge publish-/);
 });
 
+test('a rejected push with origin unchanged does not rebuild', (t) => {
+  const f = fixture(t, { reject: true });
+  const r = f.run();
+  assert.notEqual(r.status, 0);
+  assert.doesNotMatch(r.stderr, /rebuilding on it once/);
+  assert.match(r.stderr, /Publish commit \w+ is preserved/);
+});
+
+test('local main behind origin is brought up to origin before building', (t) => {
+  const f = fixture(t);
+  f.git('switch', '-qc', 'other');
+  f.git('commit', '-q', '--allow-empty', '-m', 'pushed elsewhere');
+  const other = f.git('rev-parse', 'HEAD');
+  f.git('push', '-q', 'origin', 'other:main');
+  f.git('switch', '-q', 'main');
+  const r = f.run();
+  assert.equal(r.status, 0, r.stderr);
+  assert.equal(f.git('rev-parse', 'main'), f.git('rev-parse', 'origin/main'));
+  f.git('merge-base', '--is-ancestor', other, 'main');
+});
+
+test('local main with commits not on origin stops before building', (t) => {
+  const f = fixture(t);
+  f.git('commit', '-q', '--allow-empty', '-m', 'local only');
+  const local = f.git('rev-parse', 'main');
+  const r = f.run();
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /commits that are not on origin\/main/);
+  assert.equal(f.git('rev-parse', 'main'), local);
+  assert.equal(f.git('branch', '--list', 'publish-*'), '');
+});
+
+test('origin moving during the build triggers one rebuild on the new origin', (t) => {
+  const f = fixture(t);
+  f.git('switch', '-qc', 'other');
+  f.git('commit', '-q', '--allow-empty', '-m', 'refresh during build');
+  const other = f.git('rev-parse', 'HEAD');
+  f.git('switch', '-q', 'main');
+  const marker = join(f.bin, '..', 'moved');
+  writeFileSync(join(f.bin, 'npm'), `#!/bin/sh\n[ -f ${marker} ] || { : > ${marker}; ${join(f.bin, 'git')} -C ${f.site} push -q origin other:main; }\nexit 0\n`, { mode: 0o755 });
+  const r = f.run();
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stderr, /rebuilding on it once/);
+  assert.equal(f.git('rev-parse', 'main'), f.git('rev-parse', 'origin/main'));
+  f.git('merge-base', '--is-ancestor', other, 'main');
+});
+
 test('a successful publish pushes main', (t) => {
   const f = fixture(t);
   const r = f.run();
@@ -166,6 +213,7 @@ test('merging main into a story does not rescan captures already on main', (t) =
   const f = fixture(t, { files: { 'data/sources/clean.txt': 'ordinary source\n' } });
   writeFileSync(join(f.site, 'data/sources/existing.txt'), `${patterns[0][1]}\n`);
   f.git('commit', '-qam', 'capture already on main');
+  f.git('push', '-q', 'origin', 'main');
   const before = f.git('rev-parse', 'main');
   f.git('switch', '-q', 'story');
   f.git('merge', '-q', '--no-ff', '-m', 'merge main into story', 'main');
