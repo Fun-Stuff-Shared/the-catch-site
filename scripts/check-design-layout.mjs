@@ -73,6 +73,49 @@ try {
   // Include a subpixel miss: 23.84px is not a 24px target, even if taps work.
   await page.setContent('<sup class="src-ref"><a style="display:inline-block;width:23.84px;height:28.5px">1</a><a style="display:inline-block;width:28px;height:23.84px">2</a><a style="display:inline-block;width:24px;height:24px">3</a></sup>');
   assert.deepEqual((await page.evaluate(undersizedCitations)).map(target => target.text), ['1', '2'], 'Touch-target detector missed its negative controls or rejected a 24px target');
+  // The framed Catch exposed inline-block breakpoints between adjacent refs.
+  // Both reported groups must stay on one line with their preceding word.
+  for (const hasTouch of [false, true]) {
+    const readingPage = await browser.newPage({ viewport: { width: 390, height: 844 }, hasTouch });
+    try {
+      for (const width of [390, 1440]) {
+        await readingPage.setViewportSize({ width, height: 844 });
+        for (const colorScheme of ['light', 'dark']) {
+          await readingPage.emulateMedia({ colorScheme });
+          for (const [route, numbers] of [
+            ['/events/iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa/', '7,17'],
+            ['/events/midterms-2026/2026-11-07-trump-election-3-trillion-market-loss/', '5,1'],
+          ]) {
+            await readingPage.goto(origin + route);
+            await readingPage.evaluate(() => document.fonts.ready);
+            const attachment = await readingPage.evaluate(numbers => {
+              const runs = [];
+              for (const ref of document.querySelectorAll('.the-catch .src-ref')) {
+                if (ref.classList.contains('src-ref-more') && runs.length) runs.at(-1).push(ref);
+                else runs.push([ref]);
+              }
+              const run = runs.find(run => run.map(ref => ref.querySelector('a').textContent).join(',') === numbers);
+              if (!run) return null;
+              const before = run[0].previousSibling;
+              const word = before?.nodeType === Node.TEXT_NODE && before.textContent.match(/\S+\s*$/);
+              if (!word) return null;
+              const range = document.createRange();
+              range.setStart(before, word.index);
+              range.setEnd(before, before.textContent.trimEnd().length);
+              const wordBox = [...range.getClientRects()].at(-1);
+              const refs = run.map(ref => ref.querySelector('a').getBoundingClientRect());
+              return {
+                together: refs.every(ref => Math.abs(ref.top - refs[0].top) < 1),
+                withWord: Math.abs((refs[0].top + refs[0].bottom - wordBox.top - wordBox.bottom) / 2) < wordBox.height * .75,
+              };
+            }, numbers);
+            assert.deepEqual(attachment, { together: true, withWord: true }, `${route} citations ${numbers}: ${width}px ${colorScheme}, ${hasTouch ? 'coarse' : 'fine'} pointer`);
+          }
+        }
+      }
+    } finally { await readingPage.close(); }
+  }
+  console.log('citation attachment gate passed: reported groups stay with their word at 390/1440px in both themes and pointer modes');
   const failures = [];
   let views = 0;
   for (const colorScheme of ['light', 'dark']) {
