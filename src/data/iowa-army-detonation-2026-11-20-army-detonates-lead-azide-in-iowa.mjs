@@ -33,8 +33,8 @@ export const computed = { fmt };
 
 export const event = {
   slug: "iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa",
-  title: "Government says the Army intends to blow up Iowa lead azide by Nov. 24 without the paused permit",
-  dek: `The government told the appeals court an emergency exclusion lets the Army act without EPA's permit, which the court has put on hold. The Army says blowing up the ${n.drums} drums would send up a plume carrying lead.`,
+  title: "Army reschedules Iowa lead azide blast for Nov. 25; government says it can act without the paused permit",
+  dek: `The Army says Wednesday allows better weather and time to put mitigation in place. The government told the appeals court an emergency exclusion lets the Army act without EPA's permit, which the court has put on hold.`,
   name: "The Army's lead azide detonation in Iowa",
   date: "2026-11-20",
   updated: "2026-11-22",
@@ -46,7 +46,7 @@ export const event = {
       { date: "Nov. 15", title: "Army sets Nov. 20 and publishes plume maps" },
       { date: "Nov. 19", title: "Groups sue; Army moves the blast to Monday; court pauses the permit" },
       { date: "Nov. 21", title: "Government tells the court the Army intends to act by Nov. 24 without the permit" },
-      { date: "Nov. 22", title: "EPA asks the court to lift the pause; groups file expert statements", current: true },
+      { date: "Nov. 22", title: "EPA asks the court to lift the pause; Army moves the blast to Nov. 25", current: true },
     ],
   },
 };
