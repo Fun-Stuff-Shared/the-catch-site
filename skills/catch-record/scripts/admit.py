@@ -43,7 +43,7 @@ import sys
 from pathlib import Path
 
 WT = Path.cwd()
-RUNS = Path(os.environ.get("CAPTURE_RUNS", "/Volumes/4/CF/news-fqs-pilot/runs"))
+RUNS = Path(os.environ.get("CAPTURE_RUNS", "/Volumes/4/CF/capture/runs"))
 CITE = re.compile(r'\[([a-z0-9-]+): (?:"([^"]+)"|“([^”]+)”)\]')
 
 
