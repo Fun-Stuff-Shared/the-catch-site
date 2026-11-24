@@ -126,4 +126,7 @@ const timeline = chronology.map((e) => ({ date: e.date, title: cap(short(e.c)), 
   .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
   .words-table th:first-child, .words-table td:first-child { width: 34%; }
   .on-record { display: block; font-size: 0.8em; opacity: 0.75; margin-top: 0.2em; }
+  @media (max-width: 480px) {
+    .story-figure .data-table td, .story-figure .data-table th { overflow-wrap: anywhere; }
+  }
 </style>
