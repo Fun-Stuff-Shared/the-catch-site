@@ -33,11 +33,11 @@ export const computed = { fmt };
 
 export const event = {
   slug: "iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa",
-  title: "Appeals court lifts its pause on EPA's permit for the Army's Iowa lead azide blast, set for Nov. 25",
-  dek: `The court said the groups suing had failed to show they are likely to prevail, and that the choice is between a controlled detonation and an unplanned explosion. The Army says Wednesday allows better weather and time to put mitigation in place.`,
+  title: "Army says it will blow up the Iowa lead azide Wednesday morning after appeals court lifts its pause",
+  dek: `The court said the groups suing had failed to show they are likely to prevail. Earlier, President Trump posted that he had ordered the military to hold off until the court agreed, subject to Gov.-elect Rob Sand agreeing. Sand said the administration should decide on information from the people it brought in to do the job.`,
   name: "The Army's lead azide detonation in Iowa",
   date: "2026-11-20",
-  updated: "2026-11-23",
+  updated: "2026-11-24",
   kpis: [],
   visual: {
     kind: "timeline",
@@ -46,7 +46,7 @@ export const event = {
       { date: "Nov. 15", title: "Army sets Nov. 20 and publishes plume maps" },
       { date: "Nov. 19", title: "Groups sue; Army moves the blast to Monday; court pauses the permit" },
       { date: "Nov. 22", title: "EPA asks the court to lift the pause; Army moves the blast to Nov. 25" },
-      { date: "Nov. 23", title: "Court denies the groups' stay request and lifts the pause", current: true },
+      { date: "Nov. 23", title: "Trump orders a hold; court lifts the pause; Army sets Wednesday morning", current: true },
     ],
   },
 };
