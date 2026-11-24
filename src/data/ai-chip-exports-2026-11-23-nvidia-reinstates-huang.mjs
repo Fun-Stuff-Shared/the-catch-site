@@ -51,7 +51,7 @@ export const chronology = [
 export const words = [
   { who: "Trump, on CNBC, asked what the attorney general told him", on: "On the record", said: "\"they felt that he himself was was exonerated. I don't know what word you want to use.\"", c: "trump-exonerated" },
   { who: "Trump's post, the morning of the announcement", on: "On the record", said: "The attorney general \"has confirmed that the U.S. Government does not possess evidence that he has engaged in any unlawful conduct.\"", c: "trump-post-no-evidence" },
-  { who: "Attorney General Todd Blanche, on Fox News, asked whether the investigation was closed", on: "On the record", said: "\"That assumes there's an investigation that's open. And that's never been discussed publicly.\"", c: "blanche-fox" },
+  { who: "Attorney General Todd Blanche, on Fox News, asked whether the investigation was closed", on: "On the record", said: "\"That assumes there’s an investigation that’s open.\" \"And that’s never been discussed publicly.\"", c: "blanche-fox" },
   { who: "U.S. officials, to The Wall Street Journal", on: "Anonymous", said: "Blanche told Trump and Vance that Huang \"wasn't the target or the subject of any Justice Department investigation.\"", c: "wsj-not-target" },
   { who: "A law-enforcement source, to the Washington Examiner", on: "Anonymous", said: "The department \"never opened an investigation into Jensen Huang or Nvidia as part of the Megaspeed case.\"", c: "examiner-never-opened" },
 ];
@@ -82,8 +82,8 @@ export const explanations = [
     summary: ["No Justice Department finding about Huang has been made public, and the attorney general, asked on air, described none.", c("no-doj-statement"), c("blanche-fox")],
     claim: [["Trump said they \"felt that he himself was was exonerated,\" adding \"I don't know what word you want to use.\"", c("trump-exonerated")]],
     evidenceFor: [["Trump's post says the attorney general confirmed the government does not possess evidence of unlawful conduct by Huang.", c("trump-post-no-evidence")]],
-    evidenceAgainst: [["Blanche, asked whether the investigation was closed: \"That assumes there's an investigation that's open.\" U.S. officials told the Journal Huang was not a target or subject of any Justice Department investigation.", c("blanche-fox"), c("wsj-not-target")]],
-    conclusion: [["The record holds a statement about evidence the government does not have, relayed by Trump; it holds no finding that cleared him.", c("trump-post-no-evidence"), c("no-doj-statement")]],
+    evidenceAgainst: [["Blanche, asked whether the investigation was closed: \"That assumes there’s an investigation that’s open.\" U.S. officials told the Journal Huang was not a target or subject of any Justice Department investigation.", c("blanche-fox"), c("wsj-not-target")]],
+    conclusion: [["Trump relays a statement about evidence the government does not have; no record holds a finding that cleared Huang.", c("trump-post-no-evidence"), c("no-doj-statement")]],
   },
   {
     id: "no-evidence",
@@ -94,7 +94,7 @@ export const explanations = [
     claim: [["The attorney general \"has confirmed that the U.S. Government does not possess evidence that he has engaged in any unlawful conduct.\"", c("trump-post-no-evidence")]],
     evidenceFor: [["A Justice Department official told reporters the department has no evidence of wrongdoing by Huang or Nvidia.", c("no-doj-statement")]],
     evidenceAgainst: [["The department has published nothing of its own on Huang, and it declined to comment to Reuters.", c("no-doj-statement"), c("federal-status-unknown")]],
-    conclusion: [["Supported as a statement about evidence held; it is not a finding of innocence.", c("trump-post-no-evidence"), c("no-doj-statement")]],
+    conclusion: [["That is the government's position as relayed; it speaks of evidence held, not of innocence found.", c("trump-post-no-evidence"), c("no-doj-statement")]],
   },
   {
     id: "never-investigated",
@@ -105,7 +105,7 @@ export const explanations = [
     claim: [["Blanche told Trump and Vance that Huang was not the target or subject of any Justice Department investigation, according to U.S. officials.", c("wsj-not-target")]],
     evidenceFor: [["A law-enforcement source says the department never opened an investigation into Huang or Nvidia in the Megaspeed case.", c("examiner-never-opened")]],
     evidenceAgainst: [["Reuters could not determine the status of federal criminal probes, and the department declined to comment.", c("federal-status-unknown")]],
-    conclusion: [["Consistent with everything on the record, but resting on anonymous sources.", c("wsj-not-target"), c("examiner-never-opened"), c("federal-status-unknown")]],
+    conclusion: [["Two anonymous accounts say it and no record contradicts it; the attorney general has not said it on the record.", c("wsj-not-target"), c("examiner-never-opened"), c("federal-status-unknown")]],
   },
   {
     id: "still-investigated",
