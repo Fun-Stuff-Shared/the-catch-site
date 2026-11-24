@@ -20,13 +20,13 @@ export const n = {
 export const event = {
   slug: "ai-chip-exports/2026-11-23-nvidia-reinstates-huang",
   title: "Nvidia brings Jensen Huang back as CEO; Trump says he 'convinced' the board",
-  dek: "The board cites input from senior government officials, which it does not describe, and says its own investigation continues.",
+  dek: "The board cites input from senior government officials, which it does not describe, and says its own investigation of whether Huang was targeted by a foreign intelligence effort continues.",
   name: "Nvidia's reinstatement of Jensen Huang as chief executive",
   date: "2026-11-23",
   updated: "2026-11-24",
   kpis: [
     { value: String(daysOut), unit: "days", label: "From the board accepting Huang's resignation to its vote to bring him back", cites: [{ c: "resigned-nov-12" }, { c: "board-vote-nov-22" }] },
-    { value: n.stockUp, label: "Nvidia's stock on Monday, November 23, the day the board announced it", cites: [{ c: "stock-up-31" }] },
+    { value: n.stockUp, label: "Change in Nvidia's stock in Monday's trading, November 23, the day of the announcement", cites: [{ c: "stock-up-31" }] },
     { value: String(n.listed), unit: "companies", label: "Added to the Entity List that afternoon, Megaspeed among them", cites: [{ c: "entity-list" }] },
   ],
 };
@@ -58,7 +58,7 @@ export const words = [
 
 // What is still open, and into what.
 export const inquiries = [
-  { who: "Justice Department", into: "A criminal investigation of Megaspeed, which Commerce began in 2024", c: ["doj-megaspeed-case"] },
+  { who: "Justice Department", into: "A criminal investigation of Megaspeed, which it took over after Commerce's 2024 export-control investigation; \"still going strong,\" a law-enforcement source told the Examiner", c: ["doj-megaspeed-case", "examiner-never-opened"] },
   { who: "Nvidia's board", into: "Whether Huang was the target of a foreign intelligence effort; it will \"proceed to conclusion\"", c: ["board-probe-continues"] },
   { who: "Securities and Exchange Commission", into: "Nvidia's accounting, according to two people cited by Reuters", c: ["sec-probe"] },
   { who: "California attorney general", into: "Whether Nvidia's chips or confidential information went to China, and whether it misled investors", c: ["california-probe"] },
@@ -67,7 +67,8 @@ export const inquiries = [
 
 // The dates ahead.
 export const steps = [
-  { when: "Dec. 1 and 2", what: "Huang, then Nvidia's general counsel, sit for transcribed interviews with three House committees", c: ["house-interviews"] },
+  { when: "Dec. 1", what: "Huang sits for a transcribed interview with three House committees", href: "/events/ai-chip-exports/2026-11-19-house-committee-releases-china-chip-license-data/", c: ["house-interviews"] },
+  { when: "Dec. 2", what: "Nvidia's general counsel does the same", c: ["house-interviews"] },
   { when: "Dec. 3", what: "Huang testifies publicly before the Senate Banking Committee, the only witness", c: ["senate-hearing"] },
   { when: "No date", what: "Nvidia's search for a chief compliance officer who reports to the board's Nominating and Corporate Governance Committee", c: ["cco"] },
 ];
@@ -125,8 +126,8 @@ export const explanations = [
     verdict: "untestable",
     summary: ["The board did rely on an assurance the administration arranged; no record shows why officials gave it beyond what they say.", c("board-govt-input"), c("board-needed-two"), c("schumer")],
     claim: [["Schumer: Trump is putting \"his own financial interests and the needs of his billionaire buddies before our national security.\"", c("schumer")]],
-    evidenceFor: [["Trump's accounts have traded Nvidia shares at least 103 times since January 2025, by CNBC's count, and Nvidia pledged $25 million to his planned ballroom.", c("trump-trades"), c("ballroom")]],
+    evidenceFor: [["Trump's accounts have traded Nvidia shares at least 103 times from January 2025 through August 2026, by CNBC's count of his disclosures, and Nvidia, already a $1 million donor to his inaugural fund, went on to pledge $25 million to his planned ballroom.", c("trump-trades"), c("ballroom")]],
     evidenceAgainst: [["The White House says independent advisers manage Trump's portfolio without his input.", c("trump-trades")]],
-    conclusion: [["A motive claim no record settles.", c("schumer"), c("trump-trades")]],
+    conclusion: [["Schumer says Trump is putting his own financial interests before national security; the board says input from senior levels of the government made it confident Huang's return poses no national security risk.", c("schumer"), c("board-govt-input")]],
   },
 ];
