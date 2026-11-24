@@ -62,22 +62,23 @@ These are not exclusive: A explains why a listing was due, not why it came that 
 
 ## The story
 
-On Sunday, November 22, 11 days after Jensen Huang resigned over affairs that included one with a former Megaspeed executive whom U.S. officials suspect of spying for China, Nvidia's board voted to make him chief executive again, and announced it the next morning.
+On Sunday, November 22, 11 days after Jensen Huang resigned over affairs that included one with Alice Huang, a former Megaspeed executive who U.S. intelligence reports say kept in contact with an officer of China's spy agency, according to people cited by The New York Times, Nvidia's board voted to make him chief executive again, and announced it the next morning.
 The board said meetings with him left it satisfied with his candor and that input from senior government officials made it confident his return posed no national security risk, while its own investigation will run to its end and a new chief compliance officer will report to a board committee.
-Six days after the board said it did not intend to bring him back, and with the stock down by about a third, President Trump says he "convinced" it, with Vice President Vance working the board.
+Six days after the board said it did not intend to bring him back, and with the stock down by about a third, President Trump says he "convinced" it; the Times reports he asked Vice President Vance to work with the board.
 Trump said Huang was "exonerated," but the only government statement on record is Trump's own report that the attorney general confirmed the government "does not possess evidence" of unlawful conduct, and no Justice Department finding about Huang has been made public.
 Huang faces House investigators on December 1 and a public Senate hearing on December 3, while the Justice Department's case against Megaspeed, which Commerce blacklisted that afternoon, and separate SEC, California and Missouri inquiries into Nvidia remain open.
 
 ## The plan
 
-Headline: Nvidia brings Jensen Huang back as CEO after Trump steps in
+Headline: Nvidia brings Jensen Huang back as CEO; Trump says he 'convinced' the board
+Dek: The board cites input from senior government officials, which it does not describe; its own investigation continues.
 
 What happened (sentence 1, 2; the event, what it means, where it stands):
 1. What happened? The board voted unanimously on November 22 to reinstate Huang, 11 days after it accepted his resignation, and announced it the next morning [nvidia-8k-2026-11-23: "On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang"] [nvidia-reinstate-2026-11-23: "NVIDIA (NASDAQ: NVDA) today announced that effective immediately, Jensen Huang has been reinstated as President and Chief Executive Officer and as a member of the Board."] [nvidia-8k-2026-11-12: "On November 11, 2026, the Board of Directors, or the Board, of NVIDIA Corporation accepted the resignation of Jen-Hsun Huang"]
 2. Who is he and why did he leave? Nvidia's co-founder; resigned after affairs, one with Alice Huang, a former Megaspeed executive U.S. officials suspect of spying for China (link the November 16 story for Megaspeed) [nvidia-call-q3-2026-11-17: "after disclosure of personal behavior inconsistent with the company's code of conduct, standards, and cultural norms, Jensen Huang voluntarily resigned"] [businesstimes-nyt-alice-2026-11-23: "The woman, Alice Huang, was in touch with an officer of China’s Ministry of State Security from the spring of 2025 until the fall of this year, the people with knowledge of the intelligence said."]
 3. What did the board say? Satisfied with his candor after meetings with him; based on input from senior government officials, it is confident his return poses no national security risk (the board's judgment on the officials' input, which it does not describe) [nvidia-reinstate-2026-11-23: "after which the Board was satisfied with respect to Mr. Huang’s candor and ability to lead NVIDIA"].
 4. Where does it stand? The board's investigation will "proceed to conclusion"; a new chief compliance officer will report to the board's Nominating and Corporate Governance Committee; Nvidia will keep cooperating with government investigations [nvidia-reinstate-2026-11-23: "NVIDIA is commencing a search to fill a new position, Chief Compliance Officer, to oversee compliance across NVIDIA and report to the Nominating and Corporate Governance Committee."]. Named, not argued: Trump says he made it happen and calls Huang cleared; the record says less (one clause, pointing to The Catch).
-Visual: none here; the headline and the KPI strip carry the stock move (closed up 31%) [cnbc-stock-2026-11-23: "Shares of Nvidia closed up 31% following Huang's reinstatement."].
+Visual: none here; the KPI strip carries the stock move (closed up 31% on Monday, November 23) [cnbc-stock-2026-11-23: "Shares of Nvidia closed up 31% following Huang's reinstatement."].
 
 Eleven days (sentence 3; the story in order, opens on what changed between "no" and "yes"):
 1. What did the board say before? November 17: "does not intend to reinstate Jensen as CEO," the day Huang posted that he would return if asked [nvidia-call-q3-2026-11-17: "does not intend to reinstate Jensen as CEO"] [huang-x-2026-11-17: "I would be honored to answer these calls and return as CEO."].
@@ -227,3 +228,6 @@ Round 2 (RECORD INCOMPLETE, 12 findings), judged:
 11. Malaysia: admitted in round 1; background.
 12. Democrats widening the inquiry to Trump: verified (Washington Post), admitted; added to What happens next.
 Stopping after two rounds: the round-2 findings that changed the five sentences are fixed; the rest deepen sections without changing what a reader takes away.
+
+Claim check r1 (CLAIMS DO NOT HOLD, 1 of 61): the compliance officer claim had status "plans"; the release says the search is commencing. Now "said", by Nvidia.
+Orchestrator notes on the plan: the suspicion about Alice Huang is attributed to the Times's sources; the headline carries Trump's claim in his word, the board's reason goes in the dek; Vance's role is the Times's account; the stock figure is Monday's session; the reaction section is one line per side.
