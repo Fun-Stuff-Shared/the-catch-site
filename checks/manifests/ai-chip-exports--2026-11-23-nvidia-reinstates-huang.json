@@ -7,7 +7,67 @@
   "v2_subjects": [
     "development-nvidia-reinstates-jensen-huang-as-ceo"
   ],
-  "sub_events": [],
+  "sub_events": [
+    {
+      "id": "board-probe-2026-11-08",
+      "date": "2026-11-08",
+      "label": "Nvidia's board opens an investigation",
+      "section_anchor": "eleven-days",
+      "records": [
+        "nvidia-board-2026-11-08"
+      ]
+    },
+    {
+      "id": "resignation-2026-11-11",
+      "date": "2026-11-11",
+      "label": "The board accepts Huang's resignation",
+      "section_anchor": "what-happened",
+      "records": [
+        "nvidia-8k-2026-11-12",
+        "nvidia-transition-2026-11-12"
+      ]
+    },
+    {
+      "id": "no-reinstate-2026-11-17",
+      "date": "2026-11-17",
+      "label": "Jones: the board does not intend to reinstate Huang",
+      "section_anchor": "eleven-days",
+      "records": [
+        "nvidia-call-q3-2026-11-17",
+        "huang-x-2026-11-17"
+      ]
+    },
+    {
+      "id": "vote-2026-11-22",
+      "date": "2026-11-22",
+      "label": "The board votes to reinstate Huang",
+      "section_anchor": "what-happened",
+      "records": [
+        "nvidia-8k-2026-11-23",
+        "trump-nvidia-post-2026-11-22"
+      ]
+    },
+    {
+      "id": "announce-2026-11-23",
+      "date": "2026-11-23",
+      "label": "Nvidia announces it; Trump says Huang was exonerated",
+      "section_anchor": "the-catch",
+      "records": [
+        "nvidia-reinstate-2026-11-23",
+        "trump-nvidia-post-2026-11-23",
+        "cnbc-trump-transcript-2026-11-23"
+      ]
+    },
+    {
+      "id": "entity-list-2026-11-23",
+      "date": "2026-11-23",
+      "label": "Commerce adds Megaspeed to the Entity List",
+      "section_anchor": "next",
+      "records": [
+        "fr-pi-2026-23999"
+      ]
+    }
+  ],
   "records": [
     {
       "id": "curtis-x-2026-11-23",
@@ -210,13 +270,13 @@
       "captured_at": "2026-11-24T11:55:55.466595Z"
     },
     {
-      "id": "trump-truth-2026-11-23",
+      "id": "trump-nvidia-post-2026-11-23",
       "title": "Trump on Truth Social: the Nvidia board's decision",
       "publisher": "Truth Social (@realDonaldTrump), via the Trump's Truth archive",
       "date": "2026-11-23",
       "url": "https://www.trumpstruth.org/statuses/43714",
-      "pinned_path": "data/sources/ai-chip-exports/trump-truth-2026-11-23.html",
-      "text_path": "data/sources/ai-chip-exports/trump-truth-2026-11-23.txt",
+      "pinned_path": "data/sources/ai-chip-exports/trump-nvidia-post-2026-11-23.html",
+      "text_path": "data/sources/ai-chip-exports/trump-nvidia-post-2026-11-23.txt",
       "text_sha256": "sha256:8be616f97a1dc617dae927eb8480d3f28ea7b57a6689a863ec61778520d52753",
       "quote": "The Attorney General of the United States has confirmed that the U.S. Government does not possess evidence that he has engaged in any unlawful conduct.",
       "quote_span_check": "byte_exact",
@@ -226,13 +286,13 @@
       "captured_at": "2026-11-24T11:56:44.254717Z"
     },
     {
-      "id": "trump-truth-2026-11-22",
+      "id": "trump-nvidia-post-2026-11-22",
       "title": "Trump on Truth Social: hope the board rehires Huang",
       "publisher": "Truth Social (@realDonaldTrump), via the Trump's Truth archive",
       "date": "2026-11-22",
       "url": "https://www.trumpstruth.org/statuses/43709",
-      "pinned_path": "data/sources/ai-chip-exports/trump-truth-2026-11-22.html",
-      "text_path": "data/sources/ai-chip-exports/trump-truth-2026-11-22.txt",
+      "pinned_path": "data/sources/ai-chip-exports/trump-nvidia-post-2026-11-22.html",
+      "text_path": "data/sources/ai-chip-exports/trump-nvidia-post-2026-11-22.txt",
       "text_sha256": "sha256:4994e24ae97d20072a3041710150a6a3b8aa809d43a6ac4f741086baf0586122",
       "quote": "I hope the Board of Nvidia rehires Jensen Huang. It would be the best thing for the Company, and also, for the U.S.A.",
       "quote_span_check": "byte_exact",
@@ -895,14 +955,14 @@
       "usage": "The date of the board's vote"
     },
     {
-      "id": "trump-truth-2026-11-23",
+      "id": "trump-nvidia-post-2026-11-23",
       "group": "primary",
       "label": "President Trump, Truth Social post",
       "meta": " · posted 2026-11-23, 9:07 a.m. Eastern",
       "usage": "The government statement as Trump gave it: the attorney general's words on evidence"
     },
     {
-      "id": "trump-truth-2026-11-22",
+      "id": "trump-nvidia-post-2026-11-22",
       "group": "primary",
       "label": "President Trump, Truth Social post",
       "meta": " · posted 2026-11-22, 9:54 p.m. Eastern",
@@ -1152,6 +1212,73 @@
       "label": "Associated Press",
       "meta": " · published 2026-11-24",
       "usage": "The stock's rise on Monday, November 23"
+    }
+  ],
+  "story_title": "Nvidia brings Jensen Huang back as CEO; Trump says he 'convinced' the board",
+  "completed_by": "claude (ai-chip-exports author session, worktree nvidia-huang-reinstated)",
+  "date_completed": "2026-11-24",
+  "steps": {
+    "sources_admitted": {
+      "done": true,
+      "evidence": "51 records pinned under data/sources/ai-chip-exports and data/sources/coverage with text and hash, led by Nvidia's November 23 release and both 8-Ks, Trump's Truth Social posts, CNBC's interview transcript and the Entity List rule; seven records are reused from the November 16 and 19 stories."
+    },
+    "derived_numbers_computed": {
+      "done": true,
+      "evidence": "The page computes one number: 11 days from the board accepting Huang's resignation on November 11 to its vote on November 22, both dates from Nvidia's 8-Ks; the data module refuses to build if the count differs."
+    },
+    "outlet_claims_verified": {
+      "done": true,
+      "evidence": "Forbes's headline that a government investigation found Huang 'did nothing wrong' was compared with CNBC's transcript, Trump's post and the attorney general's Fox remarks; the Washington Examiner's and the Wall Street Journal's anonymous accounts are attributed, not stated as fact."
+    },
+    "live_elements_guarded": {
+      "done": true,
+      "evidence": "The page has no live data; the stock figure is Monday November 23's close, and every open inquiry is dated to statements of November 19 to 24, 2026."
+    },
+    "subject_page_updated": {
+      "done": true,
+      "evidence": "The ai-chip-exports subject data module's description now covers the November 23 reinstatement, and its current figures add the 11 days from resignation to reinstatement vote."
+    }
+  },
+  "figures": [
+    {
+      "figure": "days_out",
+      "label": "Days from Huang's resignation to the board's vote to reinstate him",
+      "value": "11",
+      "unit": "days",
+      "kind": "computed",
+      "formula": "date_difference_days",
+      "inputs": [
+        {
+          "source_id": "nvidia-8k-2026-11-12",
+          "quote_span": "On November 11, 2026, the Board of Directors, or the Board, of NVIDIA Corporation accepted the resignation of Jen-Hsun Huang"
+        },
+        {
+          "source_id": "nvidia-8k-2026-11-23",
+          "quote_span": "On November 22, 2026, the Board of Directors of NVIDIA Corporation reinstated Jen-Hsun Huang"
+        }
+      ]
+    },
+    {
+      "figure": "stock_up",
+      "label": "Nvidia's stock on Monday, November 23",
+      "value": "31",
+      "unit": "percent",
+      "kind": "sourced",
+      "source": {
+        "source_id": "cnbc-stock-2026-11-23",
+        "quote_span": "Shares of Nvidia closed up 31% following Huang's reinstatement."
+      }
+    },
+    {
+      "figure": "entities_listed",
+      "label": "Companies added to the Entity List on November 23",
+      "value": "7",
+      "unit": "companies",
+      "kind": "sourced",
+      "source": {
+        "source_id": "fr-pi-2026-23999",
+        "quote_span": "adding 7 entities to the Entity List"
+      }
     }
   ]
 }
