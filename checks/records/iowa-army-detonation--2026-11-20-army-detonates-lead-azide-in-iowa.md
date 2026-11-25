@@ -93,6 +93,14 @@ Background held: the Army's 2026 storage permits and their dates; the FONSI's so
 7. Maps updated 6:30 p.m. Nov. 24 (army.mil/article/297076, images; labels transcribed): areas 30 and 146 square miles [army-maps-update-2026-11-24: "100 µg/ft2 30 mi2"] [army-maps-update-2026-11-24: "5 µg/ft2 146 mi2"], against 27 and 148 in the morning PDF; air plume at T+0.5, 3, 5.5 and 9 hours [army-maps-update-2026-11-24: "T + 9"]. The plume runs southwest into Missouri, read off the image; the page keeps "southwest" only.
 8. Maps updated 3 a.m. Nov. 25 (army.mil/article/297078, images; labels transcribed): 27 and 199 square miles [army-maps-update-2026-11-25-0300: "5 µg/ft2 199 mi2"]; air plume at T+0.5, 3 and 5 hours [army-maps-update-2026-11-25-0300: "T + 5"]; stamped [army-maps-update-2026-11-25-0300: "a/o 250300NOV26"]. Both captions on the army.mil page read Map 1. The permit's hourly maps start six hours out; the page will move only on material changes and the final map.
 
+## Update, Nov. 25: the detonation
+
+1. Time and outcome, EPA [epa-x-2026-11-25: "At 9:00am CT, @USArmy Sustainment Command executed the controlled mitigated detonation"]; first readings, posted 10:15 a.m. CST [epa-x-2026-11-25: "ALL EPA real-time air monitors are reporting ZERO detection of airborne lead throughout the region."].
+2. Still zero at 12:12 p.m. CST [epar7-x-2026-11-25: "At this point, ALL EPA real-time air monitors continue to report ZERO detection of airborne lead throughout the region."]; pre-blast baseline [epar7-x-2026-11-25: "Prior to the event, we collected 1,200 air, land, dust, and water samples"].
+3. The Army, through Telle [secarmy-x-2026-11-25: "The threat of an uncontrolled spontaneous detonation has been eliminated."]. The Army's 8:50 a.m. notice (army.mil/article/297089) promised a status update by 11 a.m.; the 11 a.m. livestream was not transcribed and no Army article on it was posted as of 12:47 p.m. CST.
+4. Iowa HHS, updated 12:30 p.m. [iowa-hhs-complete-2026-11-25: "Iowa HHS believes the risk of breathing in harmful amounts of lead from this event is low."]; soil results to come [iowa-hhs-complete-2026-11-25: "including soil sampling results as they become available"].
+5. Not yet out: the permit's final dust map within 6 hours after the blast; soil and wipe results; the Army's 12 p.m. air-sampling dashboard (ArcGIS, linked from army.mil/asc) not captured. Gov. Reynolds's posts relay EPA's zero reading; not admitted.
+
 ## The explanations
 
 Question 1: why open detonation in place, rather than another treatment?
