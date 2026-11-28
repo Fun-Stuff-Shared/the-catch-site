@@ -31,7 +31,7 @@ and that is the point of having it. What reaches the page is decided by the plan
 Work in the story's worktree. Paths below are relative to it. `<story>` is
 `<subject>--<slug>`, e.g. `immigration-detention--2026-10-01-supreme-court-takes-up-bond-hearings`.
 The core (sai-core v2) holds two views of the event, and both are leads, not the record: everything on the page is admitted and read at its source below.
-- The pinned snapshot, `data/v2` in this worktree, is what the page builds from: `node scripts/v2-candidates.mjs <words>` finds a development in it, and the manifest's `v2_subjects` must name a subject the snapshot holds.
+- The pinned snapshot, `data/v2` in this worktree, is what the page builds from: `zsh skills/catch-orchestrate/scripts/candidates.sh <words>` finds a development in it, and the manifest's `v2_subjects` must name a subject the snapshot holds.
 - `sai` reads the core as it is now, past the pin (`sai --help`): `sai brief <subject>` for sources that arrived since, `sai search-all "<words>"` for statements on other subjects that cover the same event, `sai statements <subject> --speaker <name>` for who said what, with publisher and URL, and `sai claim <subject> <claim id>` for where a claim came from and how many independent roots stand behind it. Open each source it names and admit what you use.
 
 Outputs, all committed together at the end:
