@@ -33,20 +33,20 @@ export const computed = { fmt };
 
 export const event = {
   slug: "iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa",
-  title: "Army blows up lead azide in Iowa at 9 a.m.; EPA says its monitors detect no airborne lead",
-  dek: `The Army says the threat of an uncontrolled explosion is gone. Iowa's health department says that, from the Army's information and the air data it has reviewed so far, the risk of breathing in harmful amounts of lead from the blast is low; it will review soil samples as results come in.`,
+  title: "All clear given after Iowa lead azide blast; EPA's first lab results find no lead in 38 public water samples",
+  dek: `The Army blew up the lead azide at 9 a.m. Nov. 25. EPA says its air monitors read zero airborne lead for 30 hours afterward. Its lab results for soil, dust, tap water and air are still to come.`,
   name: "The Army's lead azide detonation in Iowa",
   date: "2026-11-20",
-  updated: "2026-11-25",
+  updated: "2026-11-28",
   kpis: [],
   visual: {
     kind: "timeline",
     title: "The lead azide detonation",
     entries: [
-      { date: "Nov. 22", title: "EPA asks the court to lift the pause; Army moves the blast to Nov. 25" },
       { date: "Nov. 23", title: "Trump orders a hold; court lifts the pause; Army sets Wednesday morning" },
       { date: "Nov. 24", title: "Army sets about 9 a.m.; FEMA supports a recommended relocation from Middletown" },
-      { date: "Nov. 25", title: "Army detonates the lead azide at 9 a.m.; EPA reports no airborne lead detected", current: true },
+      { date: "Nov. 25", title: "Army detonates the lead azide at 9 a.m.; FEMA gives an all clear that evening" },
+      { date: "Nov. 28", title: "EPA's first lab results: no lead in 38 water samples at public water supplies", current: true },
     ],
   },
 };
