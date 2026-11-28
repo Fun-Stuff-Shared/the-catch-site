@@ -7,8 +7,9 @@
 // usage: node scripts/v2-candidates.mjs [--days 7] [--limit 40] [words...]
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync } from "node:fs";
-import { readV2 } from "../src/lib/v2.mjs";
+import { readV2, v2Directory } from "../src/lib/v2.mjs";
 import { developmentEntry, latestSource, selectedDevelopments, shownClaims } from "../src/lib/v2-brief.mjs";
+import { fetchPinned } from "./pull-v2.mjs";
 
 const args = process.argv.slice(2);
 const option = (name, fallback) => { const at = args.indexOf(name); return at < 0 ? fallback : Number(args.splice(at, 2)[1]); };
@@ -24,6 +25,7 @@ for (const file of readdirSync("checks/manifests").filter((name) => name.endsWit
   for (const subject of manifest.v2_subjects ?? []) told.set(subject, [...(told.get(subject) ?? []), story]);
 }
 
+await fetchPinned({ destination: v2Directory, fullSnapshot: true });
 const snapshot = readV2();
 const uris = (view) => new Set(view.sources.map((source) => source.uri));
 const toldViews = [...told.keys()].map((id) => snapshot.views.get(id)).filter(Boolean).map((view) => ({ id: view.id, uris: uris(view) }));

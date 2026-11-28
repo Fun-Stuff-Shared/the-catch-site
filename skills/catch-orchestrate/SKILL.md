@@ -26,7 +26,7 @@ Repo: `/Volumes/4/GitHub/the-catch-site`. Candidates and evidence: the pinned sa
 
 ## 1. Open the story
 
-Find the candidate with `node scripts/v2-candidates.mjs [--days 7] [words...]` (a development a published story already tells is marked with that story and the sources since it, the leads for a follow-up), read enough of its view and sources to fix the moment and its date, check the live core for what the pin lacks (`sai brief <subject>` for newer sources, `sai search-all "<words>"` for the same event under another subject; the manifest can name only a subject the pinned snapshot holds), and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
+Find the candidate with `zsh skills/catch-orchestrate/scripts/candidates.sh [--days 7] [words...]` (a development a published story already tells is marked with that story and the sources since it, the leads for a follow-up), read enough of its view and sources to fix the moment and its date, check the live core for what the pin lacks (`sai brief <subject>` for newer sources, `sai search-all "<words>"` for the same event under another subject; the manifest can name only a subject the pinned snapshot holds), and decide whether it continues an earlier story: the next jobs report, a later ruling in a case already on the site. Then:
 
 ```bash
 CATCH_ORCHESTRATOR=<your name in ListAgents> zsh skills/catch-orchestrate/scripts/open-story.sh \
