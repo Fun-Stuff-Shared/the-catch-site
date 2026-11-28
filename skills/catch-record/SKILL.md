@@ -231,9 +231,17 @@ python3 -I skills/catch-record/scripts/admit.py check <story>
 python3 -I skills/catch-record/scripts/claims.py check <story>
 ```
 
+Run `python3 -I skills/catch-record/scripts/claims.py arith <story>` to report arithmetic mismatches before the claim check; `claims.sh` runs it automatically. It does not hold claims or replace the claim check.
+
 The first verifies every pin, hash and quote, and finds every brief citation in its
 record's text; the second checks the ledger's shape and finds every claim's passages in
-their records. Fix every failure. Commit the brief, manifest, ledger, pins and grok output
+their records. Fix every failure.
+
+To find a claim's passage, `claims.py add <story> --find "<words>"` lists the passages in
+the admitted records that hold the words, with their record ids; given `--id`, `--says`,
+`--status` (and `--by`, `--scope`, `--short`, `--load` as the claim needs) it writes the
+chosen passage into the ledger byte-exact from the saved text, or adds it as more evidence
+to an existing claim. Commit the brief, manifest, ledger, pins and grok output
 by path with a `record: <story>` message.
 
 ### 9. Review until the record holds
