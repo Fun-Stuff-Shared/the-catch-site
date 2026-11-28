@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -14,10 +15,10 @@ const short = (id) => claim(story, id).short;
 const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), current: e.current, cites: [{ c: e.c }] }));
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/air-traffic-control/">Air traffic control</a><span>November 13, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Air traffic control &middot; November 13, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Air traffic control" href="/events/air-traffic-control/" published="2026-11-13" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="national-stop-order" /><Cite c="stop-lifted" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /><Cite c="sat-fault-undetermined" /></p>
       <ReadingModes />
@@ -76,8 +77,8 @@ const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), curre
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Duffy blamed old switches, then a router at a remote site<Cite c="briefing-that-night" /><Cite c="duffy-switches-overloaded" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /></h3>
-              <p data-layer="narrative">On Friday night Duffy put the failure on old equipment: the FAA's analog switches and routers were overloaded and went down everywhere, he said, and he wanted ${n.duffyAsk} billion from Congress, warning of more outages without it.<Cite c="duffy-switches-overloaded" /><Cite c="duffy-everywhere" /><Cite c="duffy-wants-50b" /> Asked what was different on Friday, he said the FAA was still working on the details of what went wrong.<Cite c="duffy-still-working" /></p>
+              <h3>Duffy blamed old switches, then a router at a remote site</h3>
+              <p data-layer="narrative">On Friday night Duffy put the failure on old equipment: the FAA's analog switches and routers were overloaded and went down everywhere, he said, and he wanted ${n.duffyAsk} billion from Congress, warning of more outages without it.<Cite c="briefing-that-night" /><Cite c="duffy-switches-overloaded" /><Cite c="duffy-everywhere" /><Cite c="duffy-wants-50b" /> Asked what was different on Friday, he said the FAA was still working on the details of what went wrong.<Cite c="duffy-still-working" /></p>
               <p data-layer="narrative">On Saturday Duffy gave a source for the overload: what the FAA believes was a router at a remote site, which he thinks was the only site involved, where L3Harris was moving a line from copper to fiber.<Cite c="sat-router-flood" /><Cite c="sat-duffy-believe-site" /><Cite c="sat-l3harris-owns" /> Rebecca Guy, the FAA's chief technology officer, said at the same press conference that the FAA had found two places pinging the network at that rate and disabled both.<Cite c="sat-guy-two-places" /></p>
               <p data-layer="narrative">Duffy said such switchovers have been done thousands of times without this, and that small sites are worked on during the day because they shouldn't have this kind of impact.<Cite c="sat-routine-thousands" /><Cite c="sat-shouldnt-impact" /> In November 2009, while Harris Corporation, now part of L3Harris, was moving the network's traffic onto a new fiber optic network, one of its technicians incorrectly configured a router, and 129 of the nation's air traffic facilities had an outage of FAA telecommunications, the Transportation Department's inspector general found.<Cite c="oig-2009-fti-outage" /><Cite c="harris-became-l3harris" /> Bedford said the job was upkeep of the existing network, not part of the modernization effort.<Cite c="sat-bedford-sustainment" /></p>
               <p data-layer="narrative">Duffy said the FAA believes the failure started with the work at that site, and the old network spread it: there is only one network, Bedford said, and the flood moved from one center's routers to other centers' backups.<Cite c="sat-duffy-believe-site" /><Cite c="sat-router-flood" /><Cite c="sat-bedford-one-network" /> He said the network will keep breaking until it is replaced.<Cite c="sat-bedford-break" /></p>

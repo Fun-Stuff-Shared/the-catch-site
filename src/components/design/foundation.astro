@@ -1,0 +1,85 @@
+---
+const colors = [
+  ['Ink', '--ink'], ['Paper', '--paper'], ['Document surface', '--surface'],
+  ['Muted text', '--slate'], ['Highlight yellow', '--highlight'],
+  ['Source / alert red', '--red'], ['Link blue', '--blue'],
+];
+const spaces = [1, 2, 3, 4, 6, 8, 12, 16];
+---
+<div class="foundation">
+  <h3>Color roles</h3>
+  <p>Black ground, cream paper, a yellow marker, red source labels, and blue links. Text and document surfaces adapt to the selected theme.</p>
+  <ul class="swatches" role="list">
+    {colors.map(([label, token]) => <li><span class="swatch" style={`background: var(${token})`} aria-hidden="true"></span><b>{label}</b><code>{token}</code></li>)}
+  </ul>
+
+  <h3 id="type-example">Type roles</h3>
+  <div class="type-examples">
+    <div><span class="example-label">Headline · Public Sans / Body · Newsreader</span><p class="editorial-example">A story, with the record beside it.</p><p class="prose-example">This is fictional sample text. A reader can follow a story, open the passage behind a sentence, and return to the same place.</p></div>
+    <div><span class="example-label">Interface · Public Sans</span><p class="interface-example">Read the story. Open the source.</p><span class="example-label">Record · IBM Plex Mono</span><p class="record-example">Fictional record · page 04 · 12:30</p></div>
+  </div>
+
+  <h3>Publication name</h3>
+  <div class="name-example"><span>The <span class="wordmark-highlight">Catch</span></span><p>Provisional text lockup with the selected yellow block. Final identity assets follow separately.</p></div>
+
+  <h3>Sheets on the black canvas</h3>
+  <p>Light keeps cream paper on black, including on a dark device. Dark uses a dim sheet with cream text. Auto follows the device. Both are available in the header; the black outer margin stays at least 16 pixels.</p>
+
+  <h3>Marked passages</h3>
+  <div class="paper-example">
+    <p class="source-label">Fictional notice · sample only</p>
+    <p class="prose-example">The example notice says <mark class="catch-highlight">the reading room opens at ten.</mark></p>
+    <p class="prose-example">The fictional draft said <s class="catch-strike">nine</s>; the fictional record says ten.</p>
+  </div>
+  <p class="example-note">These treatments are opt-in. A strike is never a substitute for explaining a correction.</p>
+
+  <h3>Spacing</h3>
+  <ol class="spacing" role="list">{spaces.map(space => <li><code>--space-{space}</code><span style={`width: var(--space-${space})`} aria-hidden="true"></span></li>)}</ol>
+
+  <h3>Focus and controls</h3>
+  <p>Tab through a link, a field, a button, and an expandable note. Each keeps a visible focus outline.</p>
+  <div class="control-examples">
+    <a href="#type-example">Back to the type sample</a>
+    <label>Fictional record filter<input type="search" placeholder="Type a sample title" /></label>
+    <button type="button">Example button</button>
+    <details><summary>Open a fictional note</summary><p>This is a sample note, not a saved source or a checked claim.</p></details>
+  </div>
+</div>
+
+<style>
+  h3 { font: 600 1rem/1.4 var(--sans); margin: var(--space-12) 0 var(--space-4); }
+  h3:first-child { margin-top: 0; }
+  p { line-height: var(--leading-prose); max-width: var(--measure); }
+  code { font: .75rem/1.5 var(--mono); overflow-wrap: anywhere; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: var(--space-6); list-style: none; padding: 0; margin: var(--space-6) 0; }
+  .swatches li { display: flex; flex-direction: column; gap: var(--space-2); }
+  .swatches b { font: 600 var(--text-small)/1.4 var(--sans); }
+  .swatches code, .example-label, .example-note { color: var(--slate); }
+  .swatch { display: block; height: 5rem; border: 1px solid var(--rule-strong); }
+  .type-examples { display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--space-8); }
+  .example-label { font: .75rem/1.5 var(--sans); }
+  .editorial-example { font: 700 clamp(1.75rem, 3vw, 2.5rem)/1.12 var(--display); letter-spacing: -.015em; margin: var(--space-4) 0; }
+  .prose-example { font: var(--text-prose)/var(--leading-prose) var(--serif); }
+  .interface-example { font: 600 1.05rem/1.5 var(--sans); }
+  .record-example { font: .8rem/1.6 var(--mono); }
+  .name-example { padding: var(--space-8); background: var(--ink-band); color: var(--band-ink); }
+  .name-example > span { font: 700 2.5rem/1.1 var(--serif); letter-spacing: -.02em; }
+  .name-example > p { color: var(--band-muted); font-size: var(--text-small); margin-bottom: 0; }
+  .paper-example { padding: var(--space-6); background: var(--surface); border: 1px solid var(--rule); }
+  .paper-example > :first-child { margin-top: 0; }
+  .paper-example > :last-child { margin-bottom: 0; }
+  .example-note { font-size: var(--text-small); }
+  .spacing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); list-style: none; padding: 0; }
+  .spacing li { display: flex; align-items: center; gap: var(--space-4); }
+  .spacing code { width: 6.5rem; flex: none; }
+  .spacing span { display: block; height: 1rem; background: var(--blue); }
+  .control-examples { display: grid; gap: var(--space-6); }
+  .control-examples > a { width: fit-content; padding-block: var(--space-2); }
+  .control-examples label { display: grid; gap: var(--space-2); font-size: var(--text-small); }
+  input, button { min-height: 44px; padding: var(--space-3); border: 1px solid var(--control-border); background: var(--paper); color: var(--ink); font: var(--text-base) var(--sans); }
+  input { width: 100%; max-width: 24rem; min-width: 0; }
+  button { width: fit-content; background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
+  summary { min-height: 44px; padding-block: var(--space-3); color: var(--blue); }
+  details p { margin-top: 0; }
+  @media (max-width: 600px) { .type-examples, .spacing { grid-template-columns: 1fr; } }
+</style>

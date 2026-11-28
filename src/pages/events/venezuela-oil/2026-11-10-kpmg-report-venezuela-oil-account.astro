@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -17,10 +18,10 @@ const augustDeal = "/events/venezuela-oil/2026-08-31-100-year-oil-rights-claim/"
 const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), cites: [{ c: e.c }] }));
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/venezuela-oil/">Venezuela oil</a><span>November 10, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Venezuela oil &middot; November 10, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Venezuela oil" href="/events/venezuela-oil/" published="2026-11-10" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="deposits-total" /><Cite c="paid-out-total" /><Cite c="approval" /><Cite c="channels" /><Cite c="how-intervention-works" /></p>
       <ReadingModes />
@@ -140,5 +141,4 @@ const timeline = chronology.map((e) => ({ date: e.date, title: short(e.c), cites
 </BaseLayout>
 
 <style>
-  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
 </style>

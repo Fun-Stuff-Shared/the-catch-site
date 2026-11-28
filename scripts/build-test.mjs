@@ -70,8 +70,8 @@ for (const unavailable of ["temporary", "report", "both"]) for (const status of 
 }
 
 test("build stages preserve the original order without overriding NODE_OPTIONS", () => {
-  assert.equal(stages.length, 9);
-  assert.deepEqual(stages.map(([name]) => name), ["pull-state", "pull-v2", "build-news-records", "astro build", "merge-cites", "work-evidence", "facts-claims", "check-events", "check-shell"]);
+  assert.equal(stages.length, 10);
+  assert.deepEqual(stages.map(([name]) => name), ["pull-state", "pull-v2", "build-news-records", "astro build", "merge-cites", "work-evidence", "facts-claims", "check-events", "check-shell", "check-design"]);
   assert.ok(stages.every((stage) => stage[3] === undefined));
 });
 

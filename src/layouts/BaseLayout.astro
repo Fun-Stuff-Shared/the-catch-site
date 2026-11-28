@@ -14,16 +14,17 @@ const navItems = [["Latest", "/", "Home"], ["Series", "/events/", "Events"], ["P
     {noindex && <meta name="robots" content="noindex" />}
     {canonicalPath && <link rel="canonical" href={canonicalPath} />}
     {redirectPath && <meta http-equiv="refresh" content={`0; url=${redirectPath}`} />}
+    <script is:inline src="/assets/theme.js"></script>
+    <link rel="stylesheet" href="/assets/tokens.css" />
     <link rel="stylesheet" href="/assets/the-catch.css" />
     <link rel="stylesheet" href="/assets/reader.css" />
-    <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0a54e4673bbe4a83aaca4665fb15a576"}'></script>
   </head>
   <body>
     <a class="skip-link" href="#page-content">Skip to content</a>
     <div class="sheet">
       <header class="band">
         <div class="band-inner">
-          <a class="wordmark" href="/">The Catch<b>.</b></a>
+          <a class="wordmark" href="/">The <span class="wordmark-highlight">Catch</span></a>
           <span class="desc">A permanent record of checked claims</span>
           <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu <span aria-hidden="true">☰</span></button>
           <nav id="site-navigation" aria-label="Main navigation">

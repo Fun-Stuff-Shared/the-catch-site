@@ -1,0 +1,25 @@
+---
+interface Props {
+  id: string;
+  date: string;
+  dateLabel: string;
+  previous: string;
+  corrected: string;
+}
+const { id, date, dateLabel, previous, corrected } = Astro.props;
+---
+<aside class="correction-note" data-layer="fact" role="note" aria-labelledby={`${id}-label`}>
+  <p class="correction-date" id={`${id}-label`}><strong>Correction</strong> · <time datetime={date}>{dateLabel}</time></p>
+  <p class="correction-values"><span class="sr-only">Previous value: </span><s class="catch-strike">{previous}</s><span aria-hidden="true"> → </span><span class="sr-only">Correct value: </span><strong>{corrected}</strong></p>
+  <div class="correction-explanation"><slot /></div>
+</aside>
+
+<style>
+  .correction-note { border-block: 1px solid var(--rule); padding: var(--space-6) 0; margin-block: var(--space-8); }
+  .correction-date { margin: 0 0 var(--space-3); color: var(--red); font: 500 .8rem/1.6 var(--mono); }
+  .correction-date strong { font-weight: 500; }
+  .correction-values { margin: 0 0 var(--space-3); font: 500 1.3rem/1.5 var(--serif); }
+  .correction-values s { color: var(--slate); }
+  .correction-explanation { font: 400 1rem/1.6 var(--serif); }
+  .correction-explanation :global(p) { margin: 0; }
+</style>

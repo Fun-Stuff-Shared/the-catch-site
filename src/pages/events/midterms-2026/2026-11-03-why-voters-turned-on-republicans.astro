@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -14,10 +15,10 @@ const pts = (m) => (m > 0 ? `R+${m.toFixed(1)}` : m < 0 ? `D+${(-m).toFixed(1)}`
 const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterms-2026/">2026 midterms</a><span>November 3, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">2026 midterms &middot; November 3, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="2026 midterms" href="/events/midterms-2026/" published="2026-11-03" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dems-win-both-chambers" /></p>
       <ReadingModes />
@@ -218,7 +219,6 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .share-bar { display: block; height: 100%; background: var(--blue); }
   .side-by-side { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .side-by-side .num, .story-figure td.num { text-align: right; white-space: nowrap; }
-  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
   .party-key { margin: 0 0 0.5rem; font: 600 0.75rem/1.4 var(--sans); display: flex; gap: 1rem; }
   .pk::before { content: ""; display: inline-block; width: 0.7rem; height: 0.7rem; margin-right: 0.35rem; vertical-align: -0.05rem; }
   .pk.d::before { background: var(--blue); } .pk.r::before { background: var(--red, #b3261e); }
@@ -227,18 +227,20 @@ const warStory = "/events/iran-war/2026-09-15-cbo-estimates-38-billion-war-cost/
   .split-bars, .swing-bars { list-style: none; padding: 0; margin: 0; font-family: var(--sans); }
   .split-bars li, .swing-bars li { display: grid; grid-template-columns: minmax(9rem, 1fr) 2fr; align-items: center; column-gap: 1rem; padding: 0.3rem 0; border-bottom: 1px solid var(--rule); }
   .split-label, .swing-label { font-size: 0.88rem; color: var(--ink); }
-  .split-track { display: flex; justify-content: space-between; height: 1.15rem; background: var(--rule); font: 600 0.72rem/1.15rem var(--sans); color: #fff; }
-  .split-d { background: var(--blue); padding-left: 0.3rem; }
-  .split-r { background: var(--red, #b3261e); text-align: right; padding-right: 0.3rem; }
+  .split-track { display: flex; justify-content: space-between; height: 1.15rem; background: var(--rule); font: 600 0.72rem/1.15rem var(--sans); }
+  .split-d { background: var(--blue); color: var(--on-blue); padding-left: 0.3rem; }
+  .split-r { background: var(--red); color: var(--on-red); text-align: right; padding-right: 0.3rem; }
   .swing-region { color: var(--slate); font-size: 0.75rem; }
   .swing-track { display: flex; align-items: center; gap: 0.4rem; }
   .swing-bar { display: block; height: 0.8rem; background: var(--blue); }
   .swing-num { font-size: 0.8rem; color: var(--ink); }
   .quotes { align-items: start; }
   .row-source { display: block; font-size: 0.75rem; color: var(--slate); }
-  .said { margin: 0; padding: 0.7rem 0.9rem; border-left: 3px solid var(--gold, #9a6200); font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; }
-  .said p { margin: 0 0 0.4rem; }
-  .said .said-who { font: 600 0.72rem/1.3 var(--sans); letter-spacing: 0.04em; text-transform: uppercase; color: var(--slate); }
+  .said { margin: 0; padding: 0; font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; }
+  .said p { margin: 0 0 .5rem 1.5rem; }
+  .said .said-who { margin: 0 0 .65rem; font: 500 .78rem/1.5 var(--sans); color: var(--slate); }
+  .said-who + p { position: relative; }
+  .said-who + p::before { content: '“'; position: absolute; left: -1.65rem; top: -.3rem; font: 3.5rem/1 var(--serif); color: var(--red); }
   @media (max-width: 640px) {
       .split-bars li, .swing-bars li { grid-template-columns: 7.5rem 1fr; column-gap: 0.5rem; }
     .split-label, .swing-label { font-size: 0.8rem; }

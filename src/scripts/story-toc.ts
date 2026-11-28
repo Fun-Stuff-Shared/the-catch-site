@@ -8,6 +8,11 @@ if (nav && disclosure && sections.length) {
   const adapt = () => { disclosure.open = wide.matches; };
   adapt();
   wide.addEventListener('change', adapt);
+  // The desktop list is navigation, not a collapsible menu. Preserve its
+  // semantic disclosure for narrow screens and prevent closing it when wide.
+  disclosure.querySelector('summary')?.addEventListener('click', event => {
+    if (wide.matches) event.preventDefault();
+  });
   let scheduled = false;
   const update = () => {
     scheduled = false;

@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -9,10 +10,10 @@ import QuoteCard from "../../../components/story/QuoteCard.astro";
 import { event, lean, primaries, caught, corrections, trackers } from "../../../data/midterm-polls-2026-10-20-wedgewood-polls-admits-fabricating-polls.mjs";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/midterm-polls/">Midterm polls</a><span>October 20, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Midterm polls &middot; October 20, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Midterm polls" href="/events/midterm-polls/" published="2026-10-20" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="usatoday-all-removed-claim" /><Cite c="usatoday-live-blog-still-cites" /></p>
       <ReadingModes />

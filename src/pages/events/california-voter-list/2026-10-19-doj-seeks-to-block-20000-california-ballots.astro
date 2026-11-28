@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -12,10 +13,10 @@ import StorySources from "../../../components/StorySources.astro";
 import { event, figures, computed, timeline, listFigures, orderTable } from "../../../data/california-voter-list-2026-10-19-doj-seeks-to-block-20000-california-ballots.mjs";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/california-voter-list/">California's voter list</a><span>October 19, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">California's voter list &middot; October 19, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="California's voter list" href="/events/california-voter-list/" published="2026-10-19" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="ca9-motion-filed" /><Cite c="constructive-denial" /><Cite c="carter-hearing" /><Cite c="county-letters" /><Cite c="county-letters-58" /></p>
       <ReadingModes />
@@ -46,7 +47,7 @@ import { event, figures, computed, timeline, listFigures, orderTable } from "../
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Essayli calls the {figures.listed} verified. The officials who built the list swore to "highly likely" and "reasonably believe."<Cite c="essayli-verified" /><Cite c="list-highly-likely" /></h3>
+              <h3>Essayli calls the {figures.listed} verified. The officials who built the list swore to "highly likely" and "reasonably believe."</h3>
               <p data-layer="narrative">Essayli wrote on X on Oct. 16 that the {figures.listed} were noncitizens "confirmed by a review of federal databases," and on Oct. 20 that "we verified that at least 20,000 noncitizens are receiving ballots."<Cite c="essayli-verified" /> Fox News put "verified" in its Oct. 22 headline on its interview with him: "DOJ has verified 20,000 noncitizens on California voter rolls, federal prosecutor says."<Cite c="fox-headline" /></p>
               <QuoteCard speaker="Bill Essayli, first assistant U.S. attorney in Los Angeles" when="October 20, 2026" where="Post on X">
                 <p>"we verified that at least 20,000 noncitizens are receiving ballots."<Cite c="essayli-verified" /></p>

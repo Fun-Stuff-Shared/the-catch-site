@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StorySources from './StorySources.astro';
+import '../styles/story.css';
+import source from '../pages/events/iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa.astro?raw';
+import { warnings } from '../data/iowa-army-detonation-2026-11-20-army-detonates-lead-azide-in-iowa.mjs';
+import { iowaTreatments } from '../lib/design-story-treatments.mjs';
+const { catchHTML, quotesHTML } = iowaTreatments(source, warnings);
+const catches = [
+  ['A', 'Tinted panel', 'tint', 'A quiet change of paper, with no frame.'],
+  ['B', 'Ink label band', 'band', 'An ink header separates the question from the story.'],
+  ['C', 'Exhibit frame', 'exhibit', 'A thin, equal-weight frame with the label set into its top.'],
+  ['D', 'Inverted ink', 'inverted', 'A full ink panel gives the Catch the strongest contrast.'],
+];
+const quotes = [
+  ['A', 'Hanging quotation mark', 'hanging', 'A large opening mark; the source follows the words.'],
+  ['B', 'Attribution above', 'attribution', 'Small-caps attribution above a simple indented quotation.'],
+  ['C', 'Tinted inset', 'tint', 'A shallow paper inset groups the words and their source.'],
+  ['D', 'Source line below', 'source', 'Unframed words followed by a compact record line.'],
+];
+---
+<BaseLayout title="Catch and quote treatments | Design preview" current="Events" noindex>
+  <div class="content">
+    <main class="story treatment-preview">
+      <p class="sample-notice">Design preview only. Real Iowa reporting, repeated for comparison. Not linked from the published site.</p>
+      <h1>Two choices, independently.</h1>
+      <p>Original comparison options, kept for reference. Real stories now use a yellow-framed Catch with a yellow label band, and hanging quotes with attribution above. All options use the same authored Iowa words, claim citations and dated table. The page follows your system theme.</p>
+      <nav class="comparison-index" aria-label="Comparison sections"><a href="#catch-options">Catch options</a><a href="#quote-options">Quote options</a></nav>
+      <section id="catch-options">
+        <h2>1. The Catch</h2>
+        {catches.map(([letter, title, treatment, note]) => <section class="comparison-option" id={`catch-${letter.toLowerCase()}`}>
+          <header class="option-label"><h3>Catch {letter} — {title}</h3><p>{note}</p></header>
+          <aside class={`the-catch treatment-${treatment}`}><Fragment set:html={catchHTML} /></aside>
+        </section>)}
+      </section>
+      <section id="quote-options">
+        <h2>2. Quotes and attributed statements</h2>
+        {quotes.map(([letter, title, treatment, note]) => <section class="comparison-option" id={`quote-${letter.toLowerCase()}`}>
+          <header class="option-label"><h3>Quote {letter} — {title}</h3><p>{note}</p></header>
+          <div class={`quote-treatment quote-${treatment}`}><Fragment set:html={quotesHTML} /></div>
+        </section>)}
+      </section>
+      <details class="comparison-sources"><summary>Original Iowa sources for these citations</summary><StorySources event="iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa" /></details>
+    </main>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .treatment-preview { --reading: 42rem; }
+  .treatment-preview .sample-notice { margin-bottom: 1.5rem; }
+  .comparison-index { display: flex; gap: 1.5rem; margin: 1.5rem 0 3rem; font: 600 .85rem var(--sans); }
+  .comparison-option { margin: 2rem 0 4rem; }
+  .option-label { margin-bottom: 1.5rem; }
+  .option-label h3 { font: 700 1rem/1.4 var(--sans); margin: 0 0 .3rem; }
+  .option-label p { font: .85rem/1.5 var(--sans); color: var(--slate); margin: 0; }
+  /* Keep the original options separate from the chosen production treatment. */
+  .treatment-preview .the-catch { padding: 1.25rem; margin: 0; background: var(--surface); border: 0; }
+  .treatment-preview .the-catch > .tt-label { background: transparent; color: var(--amber); margin: 0 0 .8rem; padding: 0; }
+  .treatment-preview .the-catch ol { list-style: none; padding: 0; }
+  .treatment-preview .the-catch li::before { display: none; }
+  .treatment-preview .the-catch h3 { margin-top: 1.1rem; }
+  .treatment-preview .quote-card { margin: 1.5rem 0; padding: 0; border: 0; }
+  .treatment-preview .qc-head { font: 500 .78rem/1.5 var(--sans); color: var(--slate); margin: 0 0 .65rem; }
+  .treatment-preview .qc-words { margin: 0; font: 1.05rem/1.55 var(--serif); border: 0; padding: 0; }
+  .treatment-preview .qc-words::before { content: none; }
+  .treatment-preview .qc-words p { margin: 0 0 .5rem; }
+  .treatment-preview .treatment-band { background: transparent; border-block: 1px solid var(--rule); }
+  .treatment-preview .treatment-band > .tt-label { background: var(--ink-band); color: var(--band-ink); margin: -1.25rem -1.25rem 1.5rem; padding: .75rem 1.25rem; }
+  .treatment-preview .treatment-exhibit { border: 1px solid var(--rule-strong); background: transparent; }
+  .treatment-preview .treatment-exhibit > .tt-label { background: var(--paper); padding: 0 .5rem; display: table; margin: -1.85rem 0 1rem; }
+  .treatment-inverted { background: var(--ink-band); --ink: var(--band-ink); --slate: var(--band-muted); --rule: var(--band-rule); --rule-strong: var(--band-rule); --surface: #25241f; --blue: #b7d6ee; --blue-tint: #243745; color: var(--ink); }
+  .treatment-preview .treatment-inverted { background: var(--ink-band); }
+  .quote-treatment { padding: .25rem 0; }
+  .quote-hanging .quote-card, .quote-source .quote-card { display: flex; flex-direction: column; }
+  .quote-hanging .qc-head, .quote-source .qc-head { order: 1; margin: .7rem 0 0; }
+  .quote-hanging .qc-words { position: relative; padding-left: 1.5rem; }
+  .quote-hanging .qc-words::before { content: '“'; position: absolute; left: -.15rem; top: -.3rem; font: 3.5rem/1 var(--serif); color: var(--red); }
+  .quote-attribution .qc-head { font-variant-caps: all-small-caps; font-size: .9rem; letter-spacing: .025em; }
+  .quote-attribution .qc-words { margin-left: 1rem; }
+  .quote-tint .quote-card { background: var(--surface); padding: 1.25rem; }
+  .quote-source .qc-head { font: .73rem/1.55 var(--mono); }
+  .quote-source .qc-head::before { content: 'Source / '; color: var(--red); }
+  .comparison-sources { font-size: .85rem; }
+</style>

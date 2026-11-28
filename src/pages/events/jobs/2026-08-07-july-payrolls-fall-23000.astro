@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import PayrollChart from "../../../components/PayrollChart.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
@@ -16,13 +17,13 @@ if (state.status === "merged") return Astro.redirect(eventPath(state.survivor), 
 
 ---
 {state.status === "retired" ? <StateEvent view={state} /> : <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/jobs/">The job market</a><span>July jobs report &middot; August 7, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
 
 
 
-      <p class="story-kicker" data-layer="narrative">The jobs report &middot; July 2026</p>
+      <StoryKicker series="The job market" href="/events/jobs/" published="2026-08-07" />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}</p>
       <p class="railed rail-note" data-layer="fact"><strong>Revised, September 4, 2026.</strong> The figures on this page are the July report as first published on August 7. In its September 4 release the agency revised July: "the change for July was revised up by 44,000, from -23,000 to +21,000," and June from 20,000 to 31,000. On today's series the twelve months to July hold four negative months, not five, and add 371,000 jobs; the seven-month revision total is minus 56,000, not minus 111,000. July gets a second revision on October 2. The <a href="/events/jobs/2026-09-04-august-payrolls-rise-162000/">August story</a> carries the current figures.<Cite s="bls-empsit-2026-08-revision" passage="the change for July was revised up by 44,000, from -23,000 to +21,000" /></p>

@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -14,10 +15,10 @@ const effectivelyOverStory = "/events/iran-war/2026-11-09-trump-iran-war-effecti
 const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-months/";
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/iran-war/">Iran war</a><span>November 11, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Iran war &middot; November 11, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Iran war" href="/events/iran-war/" published="2026-11-11" updated={event.updated} />
       <h1 data-layer="fact" data-claims="treasury-confirmed bessent-confirms-move fox-recent-weeks rubio-hegseth-mcnair-2025 rubio-own-words miller-moved-2025 war-began-feb28">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="fox-recent-weeks" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /></p>
       <ReadingModes />
@@ -69,7 +70,7 @@ const hewittStory = "/events/iran-war/2026-11-12-trump-no-soldiers-killed-five-m
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Fox put Rubio's and Miller's moves in "recent weeks." They were reported on bases in 2025<Cite c="fox-recent-weeks" /><Cite c="rubio-hegseth-mcnair-2025" /><Cite c="miller-moved-2025" /></h3>
+              <h3>Fox put Rubio's and Miller's moves in "recent weeks." They were reported on bases in 2025</h3>
               <p data-layer="narrative">Fox News reported on November 11 that Tehran had ramped up efforts to target senior officials, with White House chief of staff Stephen Miller and Secretary of State Marco Rubio "also relocating to military or protected housing in recent weeks."<Cite c="fox-recent-weeks" /> But Rubio and Defense Secretary Pete Hegseth were living on Fort McNair by October 2025, four months before the war began, State and Defense Department officials told The Atlantic.<Cite c="rubio-hegseth-mcnair-2025" /> Miller and his family had moved to military housing that year.<Cite c="miller-moved-2025" /> Rubio described his own "military house," two doors from Hegseth's, in August.<Cite c="rubio-own-words" /></p>
               <p data-layer="narrative">Treasury tied Bessent's move to Iran, saying he would not be deterred by "the Iranian regime’s threats."<Cite c="treasury-confirmed" /></p>
               <p data-layer="narrative">Other outlets also tied Rubio's and other officials' moves to Iran. Israel Hayom's November 14 report, describing officials relocated in response to Iranian threats, said, citing Fox News, that Rubio "had also been moved to secure housing on a military base."<Cite c="israelhayom-rubio" /> USA Today's story the same day put Bessent "on a growing list of senior Trump administration figures under U.S. protection against alleged retaliatory threats from Tehran."<Cite c="usatoday-frame" /> By contrast, the Times' own report said at least half a dozen officials had moved the year before, and that not all the threats against top officials involve Iran.<Cite c="nyt-last-year" /> Fox's later reports said the moves "have not all stemmed from the same threats."<Cite c="fox-different-causes" /> None of these reports quotes an official saying that Rubio, Miller or Hegseth moved because of Iran.<Cite c="only-bessent-says-iran" /></p>

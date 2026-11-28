@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import PayrollChart from "../../../components/PayrollChart.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
@@ -18,10 +19,10 @@ const prior12Jobs = (averages.prior12 * 1000).toLocaleString("en-US");
 const yearJobs = (averages.year2026 * 1000).toLocaleString("en-US");
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/jobs/">The job market</a><span>September jobs report &middot; October 2, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="narrative">The jobs report &middot; September 2026</p>
+      <StoryKicker series="The job market" href="/events/jobs/" published="2026-10-02" />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite s="reuters-september-jobs-preview" passage="Nonfarm payrolls likely increased by 90,000 last month" /><Cite s="bls-empsit-2026-09" passage="Both nonfarm payroll employment (+29,000) and the unemployment rate (4.2 percent) changed little in September" /><Cite s="bls-empsit-2026-09" passage="employment in July and August combined is 60,000 lower than previously reported" /></p>
       <ReadingModes />

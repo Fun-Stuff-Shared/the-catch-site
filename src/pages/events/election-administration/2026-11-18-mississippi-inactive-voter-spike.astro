@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -11,10 +12,10 @@ const fmt = computed.fmt;
 const maxCount = Math.max(...counts.map((c) => c.value));
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/election-administration/">Election administration</a><span>November 18, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Election administration &middot; November 18, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="Election administration" href="/events/election-administration/" published="2026-11-18" updated={event.updated} />
       <h1 data-layer="fact" data-claims="rise-64000 experian-partnership contract-50000 fifty-thousand-address watson-rise-experian caucus-request">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="dek-request" /><Cite c="dek-counts" /></p>
       <ReadingModes />
@@ -76,11 +77,11 @@ const maxCount = Math.max(...counts.map((c) => c.value));
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>{fmt(n.inactive2026)} is the whole inactive list, not this year's flags<Cite c="inactive-is-total" /></h3>
+              <h3>{fmt(n.inactive2026)} is the whole inactive list, not this year's flags</h3>
               <p data-layer="narrative">The figure counts every voter on inactive status, including people made inactive in earlier years.<Cite c="inactive-is-total" /> Some coverage read the whole figure as this year's flags. UPI reported that Watson "flagged 230,000 voter registrations as inactive," and WAPT that Experian's data "listed 230,000 registered Mississippi voters as inactive."<Cite c="upi-flagged-230000" /><Cite c="wapt-experian-listed" /> The secretary of state's office says the lists it sent counties in 2025, from Postal Service and Experian records together, flagged about {fmt(n.flagged2025)} people for county officials to review.<Cite c="flagged-113000" /></p>
             </li>
             <li>
-              <h3>Watson says the total built up over years; the rise since 2024 is the part he tied to Experian<Cite c="watson-five-years" /><Cite c="watson-rise-experian" /></h3>
+              <h3>Watson says the total built up over years; the rise since 2024 is the part he tied to Experian</h3>
               <p data-layer="narrative">Watson calls reports that 230,000 voters were taken off the rolls at once "an egregious lie," and says the figure is everyone marked inactive over more than five years, many of whom died or moved.<Cite c="watson-five-years" /> He told WLOX that "the process didn't change."<Cite c="watson-process-same" /> But the list is about 60,000 larger than after the 2024 election, and Watson himself told the AP that this year's rise was caused by folding the Experian data into the state's checks.<Cite c="rise-64000" /><Cite c="watson-rise-experian" /> In February 2025, announcing the contract for all 82 counties, he had called that data "the first of its kind in Mississippi."<Cite c="first-of-its-kind" /></p>
               <p data-layer="narrative">He also says this year's affidavit count reflects "a normal, high-engagement election."<Cite c="watson-normal-election" /> His office calls this year's {fmt(n.affidavits2026)} affidavit ballots nearly identical to the {fmt(n.affidavits2024)} in 2024.<Cite c="affidavits-21484" /> But 2024 was a presidential year, with higher turnout, so about the same number of affidavit ballots is a larger share of this year's vote.<Cite c="turnout-higher-2024" /></p>
             </li>

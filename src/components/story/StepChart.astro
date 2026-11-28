@@ -96,12 +96,12 @@ const years = yearLabels ?? (() => {
     {/* Y axis: tick lines and labels */}
     {yTicks.map((v) => (
       <g>
-        <line x1={PAD_L} y1={y(v)} x2={W - PAD_R} y2={y(v)} stroke="#e9ebee" stroke-width="1" />
+        <line x1={PAD_L} y1={y(v)} x2={W - PAD_R} y2={y(v)} stroke="var(--rule)" stroke-width="1" />
         <text x={PAD_L - 6} y={y(v) + 3.5} text-anchor="end" class="chart-axis">{v.toFixed(v % 1 === 0 ? 0 : 2)}%</text>
       </g>
     ))}
-    <path d={path} fill="none" stroke="#7a9cc4" stroke-width="2.5" />
-    <circle cx={endX} cy={endY} r="4.5" fill="#c98a1b" />
+    <path d={path} fill="none" stroke="var(--chart-main)" stroke-width="2.5" />
+    <circle cx={endX} cy={endY} r="4.5" fill="var(--chart-accent)" />
     {annotations.map((a) => (
       <text
         x={x(a.date)}

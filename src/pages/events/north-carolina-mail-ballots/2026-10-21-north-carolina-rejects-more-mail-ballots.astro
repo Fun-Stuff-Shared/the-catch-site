@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -14,10 +15,10 @@ const short = (id) => claim(story, id).short;
 const maxRate = Math.max(...rates.map((r) => r.value));
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/north-carolina-mail-ballots/">North Carolina mail ballots</a><span>October 21, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">Election administration &middot; October 21, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="North Carolina mail ballots" href="/events/north-carolina-mail-ballots/" published="2026-10-21" updated={event.updated} />
       <h1 data-layer="fact">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="rule-2026" /><Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /><Cite c="board-rate-all-reasons" /></p>
       <ReadingModes />
@@ -109,7 +110,7 @@ const maxRate = Math.max(...rates.map((r) => r.value));
           <p class="tt-label">The Catch</p>
           <ol>
             <li>
-              <h3>Stein's figure came from a volunteer count in 27 counties, set against the state's 2022 rate<Cite c="stein-source" /><Cite c="cc-sample" /><Cite c="dd-first-wording" /></h3>
+              <h3>Stein's figure came from a volunteer count in 27 counties, set against the state's 2022 rate</h3>
               <p data-layer="narrative">On Oct. 20, Stein wrote that the Board's "last-minute changes" were leading to "thousands more" mail ballots being rejected.<Cite c="stein-claim" /></p>
               <QuoteCard speaker="Gov. Josh Stein" when="Oct. 20, 2026" where="Post on X">
                 <p>"at a rejection rate twice as high as in 2022"<Cite c="stein-claim" /></p>
@@ -117,7 +118,7 @@ const maxRate = Math.max(...rates.map((r) => r.value));
               <p data-layer="narrative">Asked where the figure came from, his office pointed PolitiFact to an article by Democracy Docket.<Cite c="stein-source" /> It reported a count by Common Cause North Carolina and the Southern Coalition for Social Justice from 27 of the state's 100 counties, gathered by volunteer monitors and attorneys, showing about {n.rateVolunteer}% of mail ballots rejected.<Cite c="cc-sample" /> The article called that double "the rejection rate the state saw in its 2022 election," and a copy saved on Oct. 21, which already mentions Stein's post, still said so.<Cite c="dd-first-wording" /><Cite c="dd-state-after-post" /> Common Cause itself says its volunteers' reports are not official counts.<Cite c="cc-not-official" /></p>
             </li>
             <li>
-              <h3>The Board's figures do not show a doubling<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /></h3>
+              <h3>The Board's figures do not show a doubling</h3>
               <p data-layer="narrative">The Board's numbers for the same point in each election are {n.rate2026}% this year and {n.rate2022}% in 2022.<Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> The volunteers' {n.rateVolunteer}% would be double a rate of {n.rateNational2022}%, which was the national rate for all of 2022. North Carolina's own rate for all of 2022, once every ballot was in, was {n.rate2022Final}%.<Cite c="cc-sample" /><Cite c="national-2022" /><Cite c="nc-final-2022" /></p>
               <figure class="story-figure rate-figure" data-layer="fact">
                 <figcaption><strong>Mail ballots rejected, by each measure</strong></figcaption>
@@ -135,7 +136,7 @@ const maxRate = Math.max(...rates.map((r) => r.value));
               <p data-layer="narrative">Stein's "thousands more" does not hold as a count against 2022 either.<Cite c="stein-claim" /> Through Oct. 20, {n.mailDown}% fewer mail ballots had been cast than at the same point in 2022, so even at a higher rate counties had rejected fewer of them, {n.rejected2026} against {n.rejected2022}, by the Board's count.<Cite c="mail-volume-down" /><Cite c="board-rate-2026" /><Cite c="board-rate-2022-same-stage" /> Read another way, as ballots the new rule spoils that the old one would have counted, the words could be true.<Cite c="rule-2024" /><Cite c="rule-2026" /> The Board's figures cannot show how many those are, because they cover every reason for rejection.<Cite c="board-rate-all-reasons" /></p>
             </li>
             <li>
-              <h3>The source changed its comparison and did not say so<Cite c="dd-updated-wording" /><Cite c="dd-no-note" /></h3>
+              <h3>The source changed its comparison and did not say so</h3>
               <p data-layer="narrative">Democracy Docket's article now says the {n.rateVolunteer}% is double the rate "the entire nation" saw in 2022 and higher than the state's.<Cite c="dd-updated-wording" /> The copy saved on Oct. 21 and the current one both carry the line "This story has been updated." and neither says what changed.<Cite c="dd-no-note" /> As of Oct. 24, Stein's post still said the rate was twice as high as in 2022.<Cite c="stein-post-stands" /> PolitiFact rated his claim Mostly False.<Cite c="politifact-rating" /></p>
             </li>
           </ol>
@@ -167,7 +168,6 @@ const maxRate = Math.max(...rates.map((r) => r.value));
 
 <style>
   .envelope-table tr.changed td { background: var(--blue-tint); font-weight: 600; }
-  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
   @media (max-width: 640px) { .story-figure .data-table td, .story-figure .data-table th { padding: 0.5rem 0.45rem; } }
   .voter-steps { padding-left: 0; list-style: none; }
   .voter-steps .dt-row { grid-template-columns: 10rem 1fr; column-gap: 1rem; }

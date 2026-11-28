@@ -1,4 +1,5 @@
 ---
+import StoryKicker from "../../../components/story/StoryKicker.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import "../../../styles/story.css";
 import ReadingModes from "../../../components/ReadingModes.astro";
@@ -15,10 +16,10 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const timeline = chronology.map((e) => ({ date: e.date, title: cap(short(e.c)), current: e.current, cites: [{ c: e.c }] }));
 ---
 <BaseLayout title={`${event.title} | The Catch`} current="Events">
-  <div slot="locator" class="locator"><a href="/events/">Series</a><a href="/events/ai-chip-exports/">AI chip exports</a><span>November 16, 2026</span></div>
+  <div slot="locator" class="locator"><a href="/events/">Series</a></div>
   <div class="content">
     <main class="story" id="story-root">
-      <p class="story-kicker" data-layer="fact">AI chip exports &middot; November 16, 2026 &middot; updated {event.updated}</p>
+      <StoryKicker series="AI chip exports" href="/events/ai-chip-exports/" published="2026-11-16" updated={event.updated} />
       <h1 data-layer="fact" data-claims="rule-issued data-center-license d5-includes-china abroad-only existing-90-days">{event.title}</h1>
       <p class="story-dek" data-layer="fact">{event.dek}<Cite c="existing-90-days" /><Cite c="installed-chips" /><Cite c="data-center-license" /></p>
       <ReadingModes />
@@ -120,6 +121,5 @@ const timeline = chronology.map((e) => ({ date: e.date, title: cap(short(e.c)), 
 </BaseLayout>
 
 <style>
-  .story-figure .data-table td, .story-figure .data-table th { word-break: normal; overflow-wrap: normal; hyphens: none; }
   .catch-compare th:first-child, .catch-compare td:first-child { width: 34%; }
 </style>
