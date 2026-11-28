@@ -33,20 +33,20 @@ export const computed = { fmt };
 
 export const event = {
   slug: "iowa-army-detonation/2026-11-20-army-detonates-lead-azide-in-iowa",
-  title: "Appeals court pauses permit for Iowa lead azide blast; Army moves it to Monday",
-  dek: `EPA's emergency permit is on hold until the court rules on two environmental groups' emergency motion. The Army says blowing up the ${n.drums} drums would send up a plume carrying lead.`,
+  title: "Army blows up lead azide in Iowa at 9 a.m.; EPA says its monitors detect no airborne lead",
+  dek: `The Army says the threat of an uncontrolled explosion is gone. Iowa's health department says that, from the Army's information and the air data it has reviewed so far, the risk of breathing in harmful amounts of lead from the blast is low; it will review soil samples as results come in.`,
   name: "The Army's lead azide detonation in Iowa",
   date: "2026-11-20",
-  updated: "2026-11-20",
+  updated: "2026-11-25",
   kpis: [],
   visual: {
     kind: "timeline",
     title: "The lead azide detonation",
     entries: [
-      { date: "March 2026", title: "Degraded lead azide found at the plant" },
-      { date: "Nov. 13", title: "EPA permits the detonation" },
-      { date: "Nov. 15", title: "Army sets Nov. 20 and publishes plume maps" },
-      { date: "Nov. 19", title: "Groups sue; Army moves the blast to Monday; court pauses the permit", current: true },
+      { date: "Nov. 22", title: "EPA asks the court to lift the pause; Army moves the blast to Nov. 25" },
+      { date: "Nov. 23", title: "Trump orders a hold; court lifts the pause; Army sets Wednesday morning" },
+      { date: "Nov. 24", title: "Army sets about 9 a.m.; FEMA supports a recommended relocation from Middletown" },
+      { date: "Nov. 25", title: "Army detonates the lead azide at 9 a.m.; EPA reports no airborne lead detected", current: true },
     ],
   },
 };

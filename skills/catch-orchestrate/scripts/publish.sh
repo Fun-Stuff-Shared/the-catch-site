@@ -17,7 +17,7 @@ here=${0:A:h}
 site=/Volumes/4/GitHub/the-catch-site
 base=${CATCH_BASE:-main}
 live=${CATCH_LIVE:-https://thecatchengine.com}
-merges=() stories=() push=1
+merges=() stories=() push=1 args=("$@")
 while (( $# )); do
   case $1 in
     --merge) merges+=$2; shift 2 ;;
@@ -28,6 +28,15 @@ done
 (( ${#stories} )) || { print "name at least one story id" >&2; exit 2 }
 git() { command git -c core.hooksPath=/dev/null "$@" }
 for b in $merges; do git -C $site rev-parse -q --verify "$b^{commit}" >/dev/null || { print "no branch $b" >&2; exit 2 }; done
+if (( push )) && [[ $base == main ]]; then
+  git -C $site fetch -q origin $base
+  local_base=$(git -C $site rev-parse $base) remote_base=$(git -C $site rev-parse origin/$base)
+  if [[ $local_base != $remote_base ]]; then
+    git -C $site merge-base --is-ancestor $local_base $remote_base || {
+      print "$base has commits that are not on origin/$base; push or drop them before publishing." >&2; exit 1 }
+    git -C $site merge -q --ff-only origin/$base
+  fi
+fi
 
 python3 -I - $site $base $merges <<'EOF'
 import os, re, subprocess, sys
@@ -127,6 +136,14 @@ if ! git -C $site push -q origin $base; then
   else
     git -C $site update-ref refs/heads/$base $before $pushed
     print "push failed; restored $base to $before." >&2
+  fi
+  if [[ $base == main && -z ${CATCH_PUBLISH_RETRY:-} && $(git -C $site rev-parse $base) == $before ]] \
+      && git -C $site fetch -q origin $base \
+      && [[ $(git -C $site rev-parse origin/$base) != $before ]] \
+      && git -C $site merge-base --is-ancestor $before origin/$base; then
+    print "origin/$base moved during the build; rebuilding on it once." >&2
+    cd $site; git worktree remove --force $wt; git branch -q -D ${wt:t}
+    CATCH_PUBLISH_RETRY=1 exec zsh $here/publish.sh $args
   fi
   print "Publish commit $pushed is preserved in $wt (branch ${wt:t})." >&2
   print "Retry after resolving the push rejection (this reruns checks and deployment monitoring):" >&2

@@ -17,13 +17,16 @@ function fixture(t) {
   for (const name of ["claims.sh", "ask.sh"])
     writeFileSync(join(root, "scripts", name), readFileSync(new URL(`scripts/${name}`, source), "utf8").replaceAll("/Volumes/4", root));
   copyFileSync(new URL("scripts/claims.py", source), join(root, "scripts/claims.py"));
+  copyFileSync(new URL("scripts/arith.py", source), join(root, "scripts/arith.py"));
   copyFileSync(new URL("assets/claims-prompt.txt", source), join(root, "assets/claims-prompt.txt"));
   writeFileSync(join(root, `checks/claims/${story}.json`), JSON.stringify({ story, claims: [{
-    id: "vote", says: "The vote was unanimous.", status: "fact", evidence: [{ record: "minutes", passage: "The vote was unanimous." }],
+    id: "vote", says: "1 and 2, a total of 4.", status: "fact", evidence: [{ record: "minutes", passage: "1 and 2, a total of 4." }],
   }] }));
   writeFileSync(join(root, `checks/manifests/${story}.json`), JSON.stringify({ records: [{ id: "minutes", text_path: "checks/records/minutes.txt" }] }));
-  writeFileSync(join(root, "checks/records/minutes.txt"), "The vote was unanimous.");
-  execFileSync("git", ["init", "-q", "-b", "feat/ask", join(root, "GitHub/codex-chatgpt-web")]);
+  writeFileSync(join(root, "checks/records/minutes.txt"), "1 and 2, a total of 4.");
+  execFileSync("git", ["init", "-q", "-b", "feat/ask", join(root, "GitHub/codex-chatgpt-web")], {
+    cwd: root, env: { ...process.env, HOME: root, GIT_CONFIG_GLOBAL: join(root, ".gitconfig") },
+  });
   writeFileSync(join(root, ".bun/bin/bun"), String.raw`#!/bin/sh
 if [ "$4" = --wait ]; then
   touch "$HOME/started"
@@ -38,8 +41,8 @@ fi
 
 function claims(root, round, seconds) {
   let stdout = "", stderr = "";
-  const child = spawn("zsh", ["scripts/claims.sh", story, round], {
-    cwd: root, env: { ...process.env, HOME: root, CATCH_ASK_LOCK_TIMEOUT: seconds }, detached: true,
+  const child = spawn("zsh", ["-f", "scripts/claims.sh", story, round], {
+    cwd: root, env: { ...process.env, HOME: root, GIT_CONFIG_GLOBAL: join(root, ".gitconfig"), CATCH_ASK_LOCK_TIMEOUT: seconds }, detached: true,
   });
   const timer = setTimeout(() => { if (child.pid) process.kill(-child.pid, "SIGKILL"); }, 6000);
   const done = new Promise((resolve, reject) => {
@@ -61,6 +64,33 @@ async function until(ready) {
     await delay(25);
   }
 }
+
+test("claims reports an arithmetic exception and still calls the model", async (t) => {
+  const root = fixture(t);
+  const path = join(root, `checks/claims/${story}.json`);
+  const ledger = JSON.parse(readFileSync(path, "utf8"));
+  ledger.claims[0].says = `1 of 3, or 33.${"0".repeat(40)}%.`;
+  writeFileSync(path, JSON.stringify(ledger));
+  writeFileSync(join(root, "release"), "");
+  const result = await claims(root, "1", "5").done;
+  assert.equal(result.code, 0, JSON.stringify(result));
+  assert.match(result.stderr, /^arith pre-check failed: InvalidOperation: .+$/m);
+  assert.equal(result.stderr.includes("Traceback"), false);
+  assert.match(result.stdout, /CLAIMS DO NOT HOLD/);
+  assert.ok(existsSync(join(root, "started")));
+  assert.ok(existsSync(join(root, `checks/records/${story}-claims-r1.md`)));
+});
+
+test("claims guards an uncaught nonzero arithmetic exit and still calls the model", async (t) => {
+  const root = fixture(t);
+  writeFileSync(join(root, "scripts/arith.py"), "raise SystemExit(7)\n");
+  writeFileSync(join(root, "release"), "");
+  const result = await claims(root, "1", "5").done;
+  assert.equal(result.code, 0, JSON.stringify(result));
+  assert.match(result.stderr, /^arith pre-check failed: command exited with status 7$/m);
+  assert.match(result.stdout, /CLAIMS DO NOT HOLD/);
+  assert.ok(existsSync(join(root, "started")));
+});
 
 test("claims waits for the shared ask lock, names its holder on timeout, and retries when released", async (t) => {
   const root = fixture(t);
@@ -85,6 +115,7 @@ test("claims waits for the shared ask lock, names its holder on timeout, and ret
     for (const job of [holder, waiter]) {
       const result = await job.done;
       assert.equal(result.code, 0, JSON.stringify(result));
+      assert.match(result.stdout, /MISMATCH claim vote:/);
       assert.match(result.stdout, /CLAIMS DO NOT HOLD/);
     }
     assert.ok(!existsSync(join(root, "tmp/chatgpt-web-ask.lock")));
